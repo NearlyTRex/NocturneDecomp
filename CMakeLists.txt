@@ -22,6 +22,9 @@ project(NocturneDecomp LANGUAGES C CXX)
 
 option(NOCTURNE_BUILD_CHECK "Build syntax-only verification target" ON)
 option(NOCTURNE_BUILD_EXE   "Build full linked executable"          OFF)
+option(NOCTURNE_ASAN
+    "Enable AddressSanitizer + UBSan on the exe build (requires 32-bit sanitizer runtime)"
+    OFF)
 
 set(NOCTURNE_PSEUDOCODE_DIR "${CMAKE_SOURCE_DIR}/annotations/nocedit.exe/pseudocode"
     CACHE PATH "Root of the exported pseudocode tree")
@@ -149,6 +152,17 @@ endif()
 # One OBJECT library per module plus the shims and our main.cpp.
 # -----------------------------------------------------------------------------
 if(NOCTURNE_BUILD_EXE)
+    # Sanitizer flags (applied to compile AND link for every exe-side target).
+    # Empty list when disabled — keeps the option a single toggle.
+    set(NOCTURNE_SANITIZE_FLAGS "")
+    if(NOCTURNE_ASAN)
+        list(APPEND NOCTURNE_SANITIZE_FLAGS
+            -fsanitize=address,undefined
+            -fno-omit-frame-pointer
+            -fno-sanitize-recover=all)
+        message(STATUS "AddressSanitizer + UBSan enabled (32-bit runtime required)")
+    endif()
+
     set(_module_libs "")
     foreach(_module IN LISTS NOCTURNE_MODULES)
         file(STRINGS "${NOCTURNE_GEN_DIR}/sources_${_module}.txt" _sources)
@@ -157,7 +171,8 @@ if(NOCTURNE_BUILD_EXE)
             target_include_directories(nocturne_${_module} PRIVATE
                 "${NOCTURNE_INCLUDE_DIR}" "${NOCTURNE_SHIMS_DIR}")
             target_compile_options(nocturne_${_module} PRIVATE
-                -m32 -mmmx -fasm-blocks ${NOCTURNE_COMMON_WARNINGS})
+                -m32 -mmmx -fasm-blocks ${NOCTURNE_COMMON_WARNINGS}
+                ${NOCTURNE_SANITIZE_FLAGS})
             target_compile_features(nocturne_${_module} PRIVATE cxx_std_17)
             list(APPEND _module_libs nocturne_${_module})
         endif()
@@ -171,7 +186,8 @@ if(NOCTURNE_BUILD_EXE)
     target_include_directories(nocturne_shims PRIVATE
         "${NOCTURNE_INCLUDE_DIR}" "${NOCTURNE_SHIMS_DIR}")
     target_compile_options(nocturne_shims PRIVATE
-        -m32 -mmmx -fasm-blocks ${NOCTURNE_COMMON_WARNINGS})
+        -m32 -mmmx -fasm-blocks ${NOCTURNE_COMMON_WARNINGS}
+        ${NOCTURNE_SANITIZE_FLAGS})
     target_compile_features(nocturne_shims PRIVATE cxx_std_17)
 
     add_executable(nocturne)
@@ -179,8 +195,9 @@ if(NOCTURNE_BUILD_EXE)
     target_include_directories(nocturne PRIVATE
         "${NOCTURNE_INCLUDE_DIR}" "${NOCTURNE_SHIMS_DIR}")
     target_compile_options(nocturne PRIVATE
-        -m32 -mmmx -fasm-blocks ${NOCTURNE_COMMON_WARNINGS})
-    target_link_options(nocturne PRIVATE -m32)
+        -m32 -mmmx -fasm-blocks ${NOCTURNE_COMMON_WARNINGS}
+        ${NOCTURNE_SANITIZE_FLAGS})
+    target_link_options(nocturne PRIVATE -m32 ${NOCTURNE_SANITIZE_FLAGS})
 
     foreach(_lib IN LISTS _module_libs)
         target_link_libraries(nocturne PRIVATE ${_lib})

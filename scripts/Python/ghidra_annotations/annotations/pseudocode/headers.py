@@ -665,7 +665,7 @@ def generate_individual_struct_header(currentProgram, struct, type_to_path_map=N
         field_type = resolve_field_type_for_component(currentProgram, comp)
         # Use Ghidra decompiler naming convention: field{index}_0x{offset_hex}
         # This matches what the decompiler outputs for unnamed struct fields
-        field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field%d_0x%x" % (field_index, comp.getOffset()))
+        field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field_%d" % comp.getOffset())
         field_offset = comp.getOffset()
         comment_parts = []
         comment_parts.append("0x%x" % field_offset)
@@ -757,7 +757,7 @@ def generate_individual_union_header(currentProgram, union, type_to_path_map=Non
     for field_index, comp in enumerate(union.getComponents()):
         field_type = resolve_field_type_for_component(currentProgram, comp)
         # Use Ghidra decompiler naming convention: field{index}_0x{offset_hex}
-        field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field%d_0x%x" % (field_index, comp.getOffset()))
+        field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field_%d" % comp.getOffset())
         comment = " // %s" % comp.getComment() if comp.getComment() else ""
         field_decl = format_field_declaration(field_type, field_name)
         content.append("    %s;%s" % (field_decl, comment))
@@ -1038,7 +1038,7 @@ def generate_structs_header(currentProgram, structs):
         for field_index, comp in enumerate(struct.getComponents()):
             field_type = resolve_field_type_for_component(currentProgram, comp)
             # Use Ghidra decompiler naming convention: field{index}_0x{offset_hex}
-            field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field%d_0x%x" % (field_index, comp.getOffset()))
+            field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field_%d" % comp.getOffset())
             comment = " // %s" % comp.getComment() if comp.getComment() else ""
             field_decl = format_field_declaration(field_type, field_name)
             content.append("    %s;%s" % (field_decl, comment))
@@ -1076,7 +1076,7 @@ def generate_unions_header(currentProgram, unions):
         for field_index, comp in enumerate(union.getComponents()):
             field_type = resolve_field_type_for_component(currentProgram, comp)
             # Use Ghidra decompiler naming convention: field{index}_0x{offset_hex}
-            field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field%d_0x%x" % (field_index, comp.getOffset()))
+            field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field_%d" % comp.getOffset())
             comment = " // %s" % comp.getComment() if comp.getComment() else ""
             field_decl = format_field_declaration(field_type, field_name)
             content.append("    %s;%s" % (field_decl, comment))
@@ -1650,7 +1650,7 @@ def generate_type_definition(currentProgram, dt):
         for field_index, comp in enumerate(dt.getComponents()):
             field_type = resolve_field_type_for_component(currentProgram, comp)
             # Use Ghidra decompiler naming convention: field{index}_0x{offset_hex}
-            field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field%d_0x%x" % (field_index, comp.getOffset()))
+            field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field_%d" % comp.getOffset())
             comment = " // %s" % comp.getComment() if comp.getComment() else ""
             field_decl = format_field_declaration(field_type, field_name)
             lines.append("    %s;%s" % (field_decl, comment))
@@ -1673,7 +1673,7 @@ def generate_type_definition(currentProgram, dt):
         for field_index, comp in enumerate(dt.getComponents()):
             field_type = resolve_field_type_for_component(currentProgram, comp)
             # Use Ghidra decompiler naming convention: field{index}_0x{offset_hex}
-            field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field%d_0x%x" % (field_index, comp.getOffset()))
+            field_name = sanitize_c_identifier(comp.getFieldName()) if comp.getFieldName() else ("field_%d" % comp.getOffset())
             comment = " // %s" % comp.getComment() if comp.getComment() else ""
             field_decl = format_field_declaration(field_type, field_name)
             lines.append("    %s;%s" % (field_decl, comment))

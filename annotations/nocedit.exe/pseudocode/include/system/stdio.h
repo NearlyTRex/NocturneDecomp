@@ -87,10 +87,10 @@ typedef struct FileDescriptor {
 
 // Structure: FileEmbeddedData
 typedef struct FileEmbeddedData {
-    uint field_0;
+    uint flags;
     struct _FILE* stream;
-    uint field_8;
-    uint field_c;
+    uint index;
+    uint pos;
     uint state_field;
     uint error_mask;
 } FileEmbeddedData;

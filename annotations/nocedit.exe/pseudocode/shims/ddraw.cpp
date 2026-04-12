@@ -217,13 +217,13 @@ static DDSurface_ShimData* create_surface_shim(DDraw_ShimData* ddraw,
     surf->desc.dwFlags = DDSD_CAPS | DDSD_HEIGHT | DDSD_WIDTH | DDSD_PITCH | DDSD_PIXELFORMAT;
     surf->desc.dwHeight = height;
     surf->desc.dwWidth = width;
-    surf->desc.field_16.lPitch = surf->sdl_surface->pitch;
+    surf->desc.dwPitchOrLinearSize.lPitch = surf->sdl_surface->pitch;
     surf->desc.ddpfPixelFormat.dwSize = sizeof(DDPIXELFORMAT);
     surf->desc.ddpfPixelFormat.dwFlags = DDPF_RGB;
-    surf->desc.ddpfPixelFormat.field_12.dwRGBBitCount = bpp;
-    surf->desc.ddpfPixelFormat.field_16.dwRBitMask = rmask;
-    surf->desc.ddpfPixelFormat.field_20.dwGBitMask = gmask;
-    surf->desc.ddpfPixelFormat.field_24.dwBBitMask = bmask;
+    surf->desc.ddpfPixelFormat.dwBitCount.dwRGBBitCount = bpp;
+    surf->desc.ddpfPixelFormat.dwRedYMask.dwRBitMask = rmask;
+    surf->desc.ddpfPixelFormat.dwGreenUMask.dwGBitMask = gmask;
+    surf->desc.ddpfPixelFormat.dwBlueVMask.dwBBitMask = bmask;
 
     return surf;
 }
@@ -296,7 +296,7 @@ static HRESULT ddraw_GetDisplayMode(IDirectDraw* this_ptr, DDSURFACEDESC* desc) 
     desc->dwHeight = ddraw->display_height;
     desc->ddpfPixelFormat.dwSize = sizeof(DDPIXELFORMAT);
     desc->ddpfPixelFormat.dwFlags = DDPF_RGB;
-    desc->ddpfPixelFormat.field_12.dwRGBBitCount = ddraw->display_bpp;
+    desc->ddpfPixelFormat.dwBitCount.dwRGBBitCount = ddraw->display_bpp;
     return DD_OK;
 }
 
@@ -647,7 +647,7 @@ static HRESULT surface_Lock(IDirectDrawSurface* this_ptr, RECT* dest_rect,
     // Fill in the surface description with pixel access info
     memcpy(surface_desc, &shim->desc, sizeof(DDSURFACEDESC));
     surface_desc->lpSurface = shim->sdl_surface->pixels;
-    surface_desc->field_16.lPitch = shim->sdl_surface->pitch;
+    surface_desc->dwPitchOrLinearSize.lPitch = shim->sdl_surface->pitch;
 
     return DD_OK;
 }

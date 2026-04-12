@@ -13,7 +13,7 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_freeSample_FUN_005af190(CDirectS
   
   if ((((buffer_id < 1) || (0x18 < buffer_id)) ||
       (g_DirectSoundSampleBuffers[buffer_id] == (IDirectSoundBuffer *)0x0)) ||
-     (g_DirectSoundBufferMetadata[buffer_id].field0_0x0 < 1)) {
+     ((int)g_DirectSoundBufferMetadata[buffer_id].dwBytesPerSample < 1)) {
     g_CurrentFilename = "..\\sound\\snddx.cpp";
     g_CurrentLineNumber = 0x2b1;
     core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::freeSample - Invalid handle: %d",buffer_id);
@@ -23,6 +23,6 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_freeSample_FUN_005af190(CDirectS
     (*this_ptr_00->vtable->Release)((IUnknown *)this_ptr_00);
     g_DirectSoundSampleBuffers[buffer_id] = (IDirectSoundBuffer *)0x0;
   }
-  g_DirectSoundBufferMetadata[buffer_id].field0_0x0 = 0;
+  g_DirectSoundBufferMetadata[buffer_id].dwBytesPerSample = 0;
   return;
 }

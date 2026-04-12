@@ -34,13 +34,13 @@ void __cdecl wincore_wddvmem_cpp_analyzePixelFormat_FUN_005ed730(void)
     core_main_c_displayErrorAndQuit_FUN_00506f10("setColorTable16 - Unable to unlock back buffer!");
   }
   g_RedBitPosition.dword = 0;
-  for (DVar2 = local_70.ddpfPixelFormat.field_16; (DVar2.dwRBitMask & 1) == 0;
+  for (DVar2 = local_70.ddpfPixelFormat.dwRedYMask; (DVar2.dwRBitMask & 1) == 0;
       DVar2.dwRBitMask = DVar2.dwRBitMask >> 1) {
     g_RedBitPosition.dword = g_RedBitPosition.dword + 1;
   }
   g_RedScaleFactor =
        (int)(0xff / (ulonglong)
-                    (local_70.ddpfPixelFormat.field_16.dwRBitMask >>
+                    (local_70.ddpfPixelFormat.dwRedYMask.dwRBitMask >>
                     (g_RedBitPosition.bytes[0] & 0x1f)));
   g_RedBitCount.dword = 0;
   uVar3 = g_RedScaleFactor;
@@ -53,13 +53,13 @@ void __cdecl wincore_wddvmem_cpp_analyzePixelFormat_FUN_005ed730(void)
     }
   }
   g_GreenBitPosition.dword = 0;
-  for (DVar4 = local_70.ddpfPixelFormat.field_20; (DVar4.dwGBitMask & 1) == 0;
+  for (DVar4 = local_70.ddpfPixelFormat.dwGreenUMask; (DVar4.dwGBitMask & 1) == 0;
       DVar4.dwGBitMask = DVar4.dwGBitMask >> 1) {
     g_GreenBitPosition.dword = g_GreenBitPosition.dword + 1;
   }
   g_GreenScaleFactor =
        (int)(0xff / (ulonglong)
-                    (local_70.ddpfPixelFormat.field_20.dwGBitMask >>
+                    (local_70.ddpfPixelFormat.dwGreenUMask.dwGBitMask >>
                     (g_GreenBitPosition.bytes[0] & 0x1f)));
   g_GreenBitCount.dword = 0;
   uVar4 = g_GreenScaleFactor;
@@ -72,13 +72,13 @@ void __cdecl wincore_wddvmem_cpp_analyzePixelFormat_FUN_005ed730(void)
     }
   }
   g_BlueBitPosition.dword = 0;
-  for (DVar5 = local_70.ddpfPixelFormat.field_24; (DVar5.dwBBitMask & 1) == 0;
+  for (DVar5 = local_70.ddpfPixelFormat.dwBlueVMask; (DVar5.dwBBitMask & 1) == 0;
       DVar5.dwBBitMask = DVar5.dwBBitMask >> 1) {
     g_BlueBitPosition.dword = g_BlueBitPosition.dword + 1;
   }
   g_BlueScaleFactor =
        (int)(0xff / (ulonglong)
-                    (local_70.ddpfPixelFormat.field_24.dwBBitMask >>
+                    (local_70.ddpfPixelFormat.dwBlueVMask.dwBBitMask >>
                     (g_BlueBitPosition.bytes[0] & 0x1f)));
   g_BlueBitCount.dword = 0;
   uVar4 = g_BlueScaleFactor;

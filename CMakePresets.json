@@ -25,10 +25,21 @@
         "NOCTURNE_BUILD_CHECK": "OFF",
         "NOCTURNE_BUILD_EXE":   "ON"
       }
+    },
+    {
+      "name": "exe-linux-asan",
+      "displayName": "Full exe (Linux 32-bit) with ASan + UBSan",
+      "description": "Compile and link nocturne with AddressSanitizer and UBSan.",
+      "inherits": "exe-linux",
+      "binaryDir": "${sourceDir}/build/exe-linux-asan",
+      "cacheVariables": {
+        "NOCTURNE_ASAN": "ON"
+      }
     }
   ],
   "buildPresets": [
-    { "name": "check-linux", "configurePreset": "check-linux", "targets": ["nocturne_check"] },
-    { "name": "exe-linux",   "configurePreset": "exe-linux",   "targets": ["nocturne"] }
+    { "name": "check-linux",     "configurePreset": "check-linux",     "targets": ["nocturne_check"] },
+    { "name": "exe-linux",       "configurePreset": "exe-linux",       "targets": ["nocturne"] },
+    { "name": "exe-linux-asan",  "configurePreset": "exe-linux-asan",  "targets": ["nocturne"] }
   ]
 }

@@ -24,7 +24,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_005af410(CDirectS
   
   if ((((sample_buffer_id < 1) || (0x18 < sample_buffer_id)) ||
       (g_DirectSoundSampleBuffers[sample_buffer_id] == (IDirectSoundBuffer *)0x0)) ||
-     (g_DirectSoundBufferMetadata[sample_buffer_id].field0_0x0 < 1)) {
+     (g_DirectSoundBufferMetadata[sample_buffer_id].dwBytesPerSample < 1)) {
     g_CurrentFilename = "..\\sound\\snddx.cpp";
     g_CurrentLineNumber = 0x2ed;
     core_main_c_displayErrorAndQuit_FUN_00506f10

@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: game
-// Structs : 510
+// Structs : 509
 
 #include "nocturne.h"
 
@@ -9457,14 +9457,6 @@ static_assert(__builtin_offsetof(SPoint2i, x) == 0,
               "offsetof(SPoint2i, x) != 0");
 static_assert(__builtin_offsetof(SPoint2i, y) == 4,
               "offsetof(SPoint2i, y) != 4");
-
-// ---- SPolyDataFileRecord (8 bytes) ----
-static_assert(sizeof(SPolyDataFileRecord) == 8,
-              "sizeof(SPolyDataFileRecord) != 8");
-static_assert(__builtin_offsetof(SPolyDataFileRecord, field0_0x0) == 0,
-              "offsetof(SPolyDataFileRecord, field0_0x0) != 0");
-static_assert(__builtin_offsetof(SPolyDataFileRecord, vertex_count) == 4,
-              "offsetof(SPolyDataFileRecord, vertex_count) != 4");
 
 // ---- SPolygonScreenData (20 bytes) ----
 static_assert(sizeof(SPolygonScreenData) == 20,

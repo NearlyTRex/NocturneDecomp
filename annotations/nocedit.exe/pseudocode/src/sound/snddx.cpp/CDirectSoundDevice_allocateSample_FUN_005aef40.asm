@@ -23,8 +23,8 @@
 ;   undefined4 g_DirectSoundSampleBuffers[1]
 ;   undefined4 g_DirectSoundSampleBuffers[2]
 ;   undefined4 g_DirectSoundSampleBuffers[3]
-;   undefined4 g_DirectSoundBufferMetadata[2].field0_0x0
-;   undefined4 g_DirectSoundBufferMetadata[2].field1_0x4
+;   undefined4 g_DirectSoundBufferMetadata[2].dwBytesPerSample
+;   undefined4 g_DirectSoundBufferMetadata[2].pvLockedAudio1
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005fde40
@@ -158,7 +158,7 @@ section .text
         ;   Label: LAB_005af0cf
     ADD EAX,EBX                         ; 005af0d6
     XOR EBX,EBX                         ; 005af0d8
-    MOV dword ptr [EAX*0x4 + 0x3f6ab3c],EBX ; 005af0da | g_DirectSoundBufferMetadata[2].field0_0x0
+    MOV dword ptr [EAX*0x4 + 0x3f6ab3c],EBX ; 005af0da | g_DirectSoundBufferMetadata[2].dwBytesPerSample
     XOR EAX,EAX                         ; 005af0e1
     ADD ESP,0x1b8                       ; 005af0e3
     POP EBP                             ; 005af0e9
@@ -192,8 +192,8 @@ section .text
     LEA EAX,[EBX*0x4 + 0x0]             ; 005af126
     ADD EAX,EBX                         ; 005af12d
     XOR EDX,EDX                         ; 005af12f
-    MOV dword ptr [EAX*0x4 + 0x3f6ab40],EDX ; 005af131 | g_DirectSoundBufferMetadata[2].field1_0x4
-    MOV dword ptr [EAX*0x4 + 0x3f6ab3c],EDI ; 005af138 | g_DirectSoundBufferMetadata[2].field0_0x0
+    MOV dword ptr [EAX*0x4 + 0x3f6ab40],EDX ; 005af131 | g_DirectSoundBufferMetadata[2].pvLockedAudio1
+    MOV dword ptr [EAX*0x4 + 0x3f6ab3c],EDI ; 005af138 | g_DirectSoundBufferMetadata[2].dwBytesPerSample
     MOV EAX,EBX                         ; 005af13f
     ADD ESP,0x1b8                       ; 005af141
     POP EBP                             ; 005af147

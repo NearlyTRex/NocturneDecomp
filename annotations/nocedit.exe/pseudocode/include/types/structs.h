@@ -140,7 +140,6 @@
 #include "types/structs/SPlayerInput.h"
 #include "types/structs/SPodManageRecord.h"
 #include "types/structs/SPoint2i.h"
-#include "types/structs/SPolyDataFileRecord.h"
 #include "types/structs/SPolygonScreenData.h"
 #include "types/structs/SPose.h"
 #include "types/structs/SPoseData.h"

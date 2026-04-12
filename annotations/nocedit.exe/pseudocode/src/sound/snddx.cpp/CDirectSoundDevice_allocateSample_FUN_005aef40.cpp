@@ -50,8 +50,8 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_005aef40(CDire
                               (LPUNKNOWN)0x0);
       if (error_code == 0) {
         if (g_DirectSoundSampleBuffers[iVar4] != (IDirectSoundBuffer *)0x0) {
-          g_DirectSoundBufferMetadata[iVar4].field1_0x4 = 0;
-          g_DirectSoundBufferMetadata[iVar4].field0_0x0 = channel_count * iVar2;
+          g_DirectSoundBufferMetadata[iVar4].pvLockedAudio1 = (LPVOID)0x0;
+          g_DirectSoundBufferMetadata[iVar4].dwBytesPerSample = channel_count * iVar2;
           return iVar4;
         }
       }
@@ -68,7 +68,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_005aef40(CDire
         (*this_ptr_00->vtable->Release)((IUnknown *)this_ptr_00);
         g_DirectSoundSampleBuffers[iVar4] = (IDirectSoundBuffer *)0x0;
       }
-      g_DirectSoundBufferMetadata[iVar4].field0_0x0 = 0;
+      g_DirectSoundBufferMetadata[iVar4].dwBytesPerSample = 0;
       return 0;
     }
   }

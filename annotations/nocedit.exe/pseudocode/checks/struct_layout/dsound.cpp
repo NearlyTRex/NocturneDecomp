@@ -287,16 +287,16 @@ static_assert(__builtin_offsetof(IDirectSoundBuffer, vtable) == 0,
 // ---- IDirectSoundBufferMetadata (20 bytes) ----
 static_assert(sizeof(IDirectSoundBufferMetadata) == 20,
               "sizeof(IDirectSoundBufferMetadata) != 20");
-static_assert(__builtin_offsetof(IDirectSoundBufferMetadata, field0_0x0) == 0,
-              "offsetof(IDirectSoundBufferMetadata, field0_0x0) != 0");
-static_assert(__builtin_offsetof(IDirectSoundBufferMetadata, field1_0x4) == 4,
-              "offsetof(IDirectSoundBufferMetadata, field1_0x4) != 4");
-static_assert(__builtin_offsetof(IDirectSoundBufferMetadata, field2_0x8) == 8,
-              "offsetof(IDirectSoundBufferMetadata, field2_0x8) != 8");
-static_assert(__builtin_offsetof(IDirectSoundBufferMetadata, field3_0xc) == 12,
-              "offsetof(IDirectSoundBufferMetadata, field3_0xc) != 12");
-static_assert(__builtin_offsetof(IDirectSoundBufferMetadata, ref_count) == 16,
-              "offsetof(IDirectSoundBufferMetadata, ref_count) != 16");
+static_assert(__builtin_offsetof(IDirectSoundBufferMetadata, dwBytesPerSample) == 0,
+              "offsetof(IDirectSoundBufferMetadata, dwBytesPerSample) != 0");
+static_assert(__builtin_offsetof(IDirectSoundBufferMetadata, pvLockedAudio1) == 4,
+              "offsetof(IDirectSoundBufferMetadata, pvLockedAudio1) != 4");
+static_assert(__builtin_offsetof(IDirectSoundBufferMetadata, pvLockedAudio2) == 8,
+              "offsetof(IDirectSoundBufferMetadata, pvLockedAudio2) != 8");
+static_assert(__builtin_offsetof(IDirectSoundBufferMetadata, dwLockedBytes1) == 12,
+              "offsetof(IDirectSoundBufferMetadata, dwLockedBytes1) != 12");
+static_assert(__builtin_offsetof(IDirectSoundBufferMetadata, dwLockedBytes2) == 16,
+              "offsetof(IDirectSoundBufferMetadata, dwLockedBytes2) != 16");
 
 // ---- IDirectSoundBuffer_vtable (84 bytes) ----
 static_assert(sizeof(IDirectSoundBuffer_vtable) == 84,

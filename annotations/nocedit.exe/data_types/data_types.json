@@ -2721,19 +2721,11 @@
       "type":"struct"
     },
     {
-      "name":"IDirectDrawPalette",
-      "type":"struct"
-    },
-    {
       "name":"IDirectSound",
       "type":"struct"
     },
     {
       "name":"IDirectSoundBuffer",
-      "type":"struct"
-    },
-    {
-      "name":"IDirectSoundBufferMetadata",
       "type":"struct"
     },
     {
@@ -3439,6 +3431,14 @@
     {
       "name":"GLOBAL_LOCK_FUNC",
       "type":"function_definition"
+    },
+    {
+      "name":"IDirectDrawPalette",
+      "type":"struct"
+    },
+    {
+      "name":"IDirectSoundBufferMetadata",
+      "type":"struct"
     },
     {
       "name":"IDirectSoundBuffer_Unlock",
@@ -4522,10 +4522,6 @@
     },
     {
       "name":"SPoint2i",
-      "type":"struct"
-    },
-    {
-      "name":"SPolyDataFileRecord",
       "type":"struct"
     },
     {
@@ -48502,31 +48498,31 @@
         },
         {
           "len":4,
-          "name":"field_12",
+          "name":"dwBitCount",
           "offset":12,
           "type":"DDPIXELFORMAT_union1"
         },
         {
           "len":4,
-          "name":"field_16",
+          "name":"dwRedYMask",
           "offset":16,
           "type":"DDPIXELFORMAT_union2"
         },
         {
           "len":4,
-          "name":"field_20",
+          "name":"dwGreenUMask",
           "offset":20,
           "type":"DDPIXELFORMAT_union3"
         },
         {
           "len":4,
-          "name":"field_24",
+          "name":"dwBlueVMask",
           "offset":24,
           "type":"DDPIXELFORMAT_union4"
         },
         {
           "len":4,
-          "name":"field_28",
+          "name":"dwAlphaBitMask",
           "offset":28,
           "type":"DDPIXELFORMAT_union5"
         }
@@ -48586,7 +48582,7 @@
         },
         {
           "len":4,
-          "name":"field_16",
+          "name":"dwPitchOrLinearSize",
           "offset":16,
           "type":"DDSURFACEDESC_union1"
         },
@@ -48598,7 +48594,7 @@
         },
         {
           "len":4,
-          "name":"field_24",
+          "name":"dwMipMapOrRefresh",
           "offset":24,
           "type":"DDSURFACEDESC_union2"
         },
@@ -49486,7 +49482,7 @@
       "fields":[
         {
           "len":4,
-          "name":"field_0",
+          "name":"flags",
           "offset":0,
           "type":"uint"
         },
@@ -49498,13 +49494,13 @@
         },
         {
           "len":4,
-          "name":"field_8",
+          "name":"index",
           "offset":8,
           "type":"uint"
         },
         {
           "len":4,
-          "name":"field_c",
+          "name":"pos",
           "offset":12,
           "type":"uint"
         },
@@ -50416,9 +50412,9 @@
       "fields":[
         {
           "len":4,
-          "name":"field_0",
+          "name":"lpVtbl",
           "offset":0,
-          "type":"int"
+          "type":"LPVOID"
         }
       ],
       "importable":true,
@@ -51226,33 +51222,33 @@
       "fields":[
         {
           "len":4,
-          "name":"field_0",
+          "name":"dwBytesPerSample",
           "offset":0,
-          "type":"int"
+          "type":"DWORD"
         },
         {
           "len":4,
-          "name":"field_4",
+          "name":"pvLockedAudio1",
           "offset":4,
-          "type":"int"
+          "type":"LPVOID"
         },
         {
           "len":4,
-          "name":"field_8",
+          "name":"pvLockedAudio2",
           "offset":8,
-          "type":"int"
+          "type":"LPVOID"
         },
         {
           "len":4,
-          "name":"field_12",
+          "name":"dwLockedBytes1",
           "offset":12,
-          "type":"int"
+          "type":"DWORD"
         },
         {
           "len":4,
-          "name":"ref_count",
+          "name":"dwLockedBytes2",
           "offset":16,
-          "type":"int"
+          "type":"DWORD"
         }
       ],
       "importable":true,
@@ -58753,30 +58749,6 @@
       "fields":[
         {
           "len":4,
-          "name":"field_0",
-          "offset":0,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"vertex_count",
-          "offset":4,
-          "type":"int"
-        }
-      ],
-      "importable":true,
-      "len":8,
-      "name":"SPolyDataFileRecord",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
           "name":"center_x",
           "offset":0,
           "type":"int"
@@ -62114,7 +62086,7 @@
       "type":"struct"
     },
     {
-      "alig":4,
+      "alig":1,
       "cat":"/Nocturne/Struct/System/watcom.h",
       "desc":"",
       "fields":[
@@ -62611,10 +62583,10 @@
       "desc":"",
       "fields":[
         {
-          "len":38,
-          "name":"field_0",
+          "len":48,
+          "name":"bits",
           "offset":0,
-          "type":"byte[38]"
+          "type":"byte[48]"
         }
       ],
       "importable":true,
@@ -62894,7 +62866,7 @@
       "type":"struct"
     },
     {
-      "alig":4,
+      "alig":1,
       "cat":"/Nocturne/Struct/System/winsock.h",
       "desc":"",
       "fields":[

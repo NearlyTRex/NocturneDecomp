@@ -71,7 +71,7 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void)
                 iVar2 = iVar3;
               } while (iVar3 != 0 && bVar4);
               puVar11 = (ulonglong *)((int)local_20 + iVar4);
-              local_8c.lpSurface = (LPVOID)((int)local_18 + local_8c.field_16.lPitch);
+              local_8c.lpSurface = (LPVOID)((int)local_18 + local_8c.dwPitchOrLinearSize.lPitch);
               local_14 = local_14 + 1;
               iVar2 = iVar4;
               local_18 = local_8c.lpSurface;

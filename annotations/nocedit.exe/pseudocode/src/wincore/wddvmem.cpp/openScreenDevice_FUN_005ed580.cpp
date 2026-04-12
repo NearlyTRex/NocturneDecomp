@@ -30,7 +30,8 @@ void __cdecl wincore_wddvmem_cpp_openScreenDevice_FUN_005ed580(void)
       do {
         *(LPVOID *)((int)g_ScreenBufferArray + iVar3) = local_74.lpSurface;
         iVar3 = iVar3 + 4;
-        local_74.lpSurface = (LPVOID)((int)local_74.lpSurface + local_74.field_16.lPitch);
+        local_74.lpSurface = (LPVOID)((int)local_74.lpSurface + local_74.dwPitchOrLinearSize.lPitch)
+        ;
       } while (iVar3 < iVar1);
       return;
     }

@@ -67,7 +67,7 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void)
         for (int y = 0; y < g_WindowHeight; y++) {
             memcpy(dst_row, src_row, row_bytes);
             src_row += row_bytes;
-            dst_row += surf_desc.field_16.lPitch;
+            dst_row += surf_desc.dwPitchOrLinearSize.lPitch;
         }
 
         hr = (*g_DirectDrawSurface->vtable->Unlock)

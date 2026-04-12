@@ -25,6 +25,7 @@ typedef struct ReentrantCriticalSection {
 } ReentrantCriticalSection;
 
 // Structure: ThreadData
+#pragma pack(push, 1)
 typedef struct ThreadData {
     uint stack_limit;
     int errno_value;
@@ -43,6 +44,7 @@ typedef struct ThreadData {
     uchar unknown_E2[18];
     uint heap_info;
 } ThreadData;
+#pragma pack(pop)
 
 // Structure: ThreadRegistryEntry
 typedef struct ThreadRegistryEntry {
@@ -80,17 +82,7 @@ typedef struct WatcomDestructorCall {
 // Structure: WatcomDestructorFlags
 #pragma pack(push, 1)
 typedef struct WatcomDestructorFlags {
-    byte field0_0x0[38];
-    undefined1 field1_0x26;
-    undefined1 field2_0x27;
-    undefined1 field3_0x28;
-    undefined1 field4_0x29;
-    undefined1 field5_0x2a;
-    undefined1 field6_0x2b;
-    undefined1 field7_0x2c;
-    undefined1 field8_0x2d;
-    undefined1 field9_0x2e;
-    undefined1 field10_0x2f;
+    byte bits[48];
 } WatcomDestructorFlags;
 #pragma pack(pop)
 

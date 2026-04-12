@@ -84,6 +84,7 @@ typedef struct SOCKADDR_IN {
 #pragma pack(pop)
 
 // Structure: WSADATA
+#pragma pack(push, 1)
 typedef struct WSADATA {
     WORD wVersion;
     WORD wHighVersion;
@@ -93,6 +94,7 @@ typedef struct WSADATA {
     ushort iMaxUdpDg;
     char* lpVendorInfo;
 } WSADATA;
+#pragma pack(pop)
 
 // Function Definition: WSA_CLEANUP_FUNC
 typedef int WSA_CLEANUP_FUNC(void);

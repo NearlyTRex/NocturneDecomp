@@ -17,7 +17,30 @@ cmake --build --preset check-linux
 # Full executable (32-bit Linux ELF, links against modern libc/libstdc++)
 cmake --preset exe-linux
 cmake --build --preset exe-linux
+
+# Same exe, with AddressSanitizer + UBSan
+cmake --preset exe-linux-asan
+cmake --build --preset exe-linux-asan
 ```
+
+## AddressSanitizer / UBSan
+
+Enable with `-DNOCTURNE_ASAN=ON` on any `exe` configure, or use the
+`exe-linux-asan` preset. Flags applied to compile and link of every
+exe-side target: `-fsanitize=address,undefined -fno-omit-frame-pointer
+-fno-sanitize-recover=all`.
+
+**Runtime prerequisite:** the 32-bit sanitizer runtime. On Debian/Ubuntu
+with the matching clang version:
+
+```sh
+sudo dpkg --add-architecture i386
+sudo apt install libc6-dbg:i386 libstdc++6:i386 libclang-rt-dev:i386
+```
+
+Without it, link fails with `cannot find -lclang_rt.asan-i386`. Point at
+the installed runtime with `LDFLAGS="-L/usr/lib/clang/<version>/lib/linux"`
+if CMake can't locate it automatically.
 
 ## Source priority
 

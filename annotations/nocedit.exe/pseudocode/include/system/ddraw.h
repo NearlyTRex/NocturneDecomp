@@ -60,11 +60,11 @@ typedef struct DDPIXELFORMAT {
     DWORD dwSize;
     DWORD dwFlags;
     DWORD dwFourCC;
-    DDPIXELFORMAT_union1 field_12;
-    DDPIXELFORMAT_union2 field_16;
-    DDPIXELFORMAT_union3 field_20;
-    DDPIXELFORMAT_union4 field_24;
-    DDPIXELFORMAT_union5 field_28;
+    DDPIXELFORMAT_union1 dwBitCount;
+    DDPIXELFORMAT_union2 dwRedYMask;
+    DDPIXELFORMAT_union3 dwGreenUMask;
+    DDPIXELFORMAT_union4 dwBlueVMask;
+    DDPIXELFORMAT_union5 dwAlphaBitMask;
 } DDPIXELFORMAT;
 
 // Structure: DDSCAPS
@@ -91,9 +91,9 @@ typedef struct DDSURFACEDESC {
     DWORD dwFlags;
     DWORD dwHeight;
     DWORD dwWidth;
-    DDSURFACEDESC_union1 field_16;
+    DDSURFACEDESC_union1 dwPitchOrLinearSize;
     DWORD dwBackBufferCount;
-    DDSURFACEDESC_union2 field_24;
+    DDSURFACEDESC_union2 dwMipMapOrRefresh;
     DWORD dwAlphaBitDepth;
     DWORD dwReserved;
     LPVOID lpSurface;
@@ -117,7 +117,7 @@ typedef struct IDirectDrawClipper {
 
 // Structure: IDirectDrawPalette
 typedef struct IDirectDrawPalette {
-    int field_0;
+    LPVOID lpVtbl;
 } IDirectDrawPalette;
 
 // Structure: IDirectDrawSurface

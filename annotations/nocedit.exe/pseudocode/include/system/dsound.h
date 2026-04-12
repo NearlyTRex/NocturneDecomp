@@ -247,11 +247,11 @@ typedef struct IDirectSoundBuffer {
 // Structure: IDirectSoundBufferMetadata
 #pragma pack(push, 1)
 typedef struct IDirectSoundBufferMetadata {
-    int field0_0x0;
-    int field1_0x4;
-    int field2_0x8;
-    int field3_0xc;
-    int ref_count;
+    DWORD dwBytesPerSample;
+    LPVOID pvLockedAudio1;
+    LPVOID pvLockedAudio2;
+    DWORD dwLockedBytes1;
+    DWORD dwLockedBytes2;
 } IDirectSoundBufferMetadata;
 #pragma pack(pop)
 
