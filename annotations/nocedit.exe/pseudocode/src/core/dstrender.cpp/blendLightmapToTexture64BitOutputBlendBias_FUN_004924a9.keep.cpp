@@ -1,0 +1,90 @@
+// Name: core_dstrender.cpp_blendLightmapToTexture64BitOutputBlendBias_FUN_004924a9
+// Address: 004924a9
+// MANUAL RECONSTRUCTION
+// Address Range: [[004924a9, 004925c4]]
+// Convention: __cdecl
+// Signature: void __cdecl core_dstrender_cpp_blendLightmapToTexture64BitOutputBlendBias_FUN_004924a9(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
+
+#include "nocturne.h"
+
+void __cdecl core_dstrender_cpp_blendLightmapToTexture64BitOutputBlendBias_FUN_004924a9(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
+{
+  ushort solid_ws[4];
+  uint solid_raw;
+  ulonglong xor_mask_bits;
+  uint palette;
+  uint lm_idx;
+  ulonglong lm_data;
+  ulonglong lm_xored;
+  ulonglong tex64;
+  ulonglong out64;
+  ulonglong bias_val;
+  int pair;
+  int subpixel;
+  int c;
+  int byte_pos;
+  ushort pix;
+  ushort pal_byte;
+  ushort pix_pal_low;
+  short lm_x_w;
+  short lm_w;
+  short mul1_hi;
+  short solid_hi;
+  short bias_w;
+  short sum16;
+  ushort shifted;
+  int clamped;
+
+  solid_raw = (uint)g_SolidColorMode;
+  solid_ws[0] = (ushort)((solid_raw & 0xff) << 6);
+  solid_ws[1] = (ushort)(((solid_raw >> 8) & 0xff) << 6);
+  solid_ws[2] = (ushort)(((solid_raw >> 16) & 0xff) << 6);
+  solid_ws[3] = (ushort)(((solid_raw >> 24) & 0xff) << 6);
+
+  xor_mask_bits = __BITCAST_UINT64(g_LightmapXorMask);
+
+  do {
+    palette = g_LightmapTexturePalette[texture_indices[0]];
+    lm_idx = (uint)lightmap_indices[0] + ((uint)texture_indices[0] >> 1);
+    lm_data = *(ulonglong *)((char *)g_LightmapData + lm_idx * 8);
+    lm_xored = lm_data ^ xor_mask_bits;
+
+    for (pair = 0; pair < 2; pair = pair + 1) {
+      tex64 = texture_buffer[pair];
+      out64 = 0;
+      for (subpixel = 0; subpixel < 2; subpixel = subpixel + 1) {
+        bias_val = (subpixel == 0) ? g_LightmapBlendBias1.mm : g_LightmapBlendBias2.mm;
+        for (c = 0; c < 4; c = c + 1) {
+          byte_pos = subpixel * 4 + c;
+          pix = (ushort)((tex64 >> (byte_pos * 8)) & 0xff);
+          pal_byte = (ushort)((palette >> (c * 8)) & 0xff);
+
+          pix_pal_low = (ushort)(pix * pal_byte);
+
+          lm_x_w = (short)((lm_xored >> (c * 16)) & 0xffff);
+          mul1_hi = (short)(((int)(short)pix_pal_low * (int)lm_x_w) >> 16);
+
+          lm_w = (short)((lm_data >> (c * 16)) & 0xffff);
+          solid_hi = (short)(((int)(short)solid_ws[c] * (int)lm_w) >> 16);
+
+          bias_w = (short)((bias_val >> (c * 16)) & 0xffff);
+
+          sum16 = (short)(mul1_hi + solid_hi + bias_w);
+          shifted = (ushort)sum16 >> 4;
+
+          clamped = (shifted > 0xff) ? 0xff : (int)shifted;
+
+          out64 = out64 | ((ulonglong)(uchar)clamped << (byte_pos * 8));
+        }
+      }
+      output_buffer[pair] = out64;
+    }
+
+    texture_buffer = texture_buffer + 2;
+    output_buffer = output_buffer + 2;
+    texture_indices = texture_indices + 1;
+    lightmap_indices = lightmap_indices + 1;
+    pixel_count = pixel_count - 4;
+  } while (pixel_count > 0);
+  return;
+}
