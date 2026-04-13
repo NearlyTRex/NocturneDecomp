@@ -2,14 +2,7 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": [
-      {
-        "category": "other",
-        "column": 18,
-        "line": 84,
-        "message": "array comparison always evaluates to true [-Wtautological-compare]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 347,
@@ -280,6 +273,22 @@
       }
     ],
     "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CHostage_getCarryObjToBodyXForm_FUN_004f6550.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 14,
+          "line": 56,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

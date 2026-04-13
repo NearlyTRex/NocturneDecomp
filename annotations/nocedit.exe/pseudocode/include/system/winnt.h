@@ -31,11 +31,9 @@ typedef int FARPROC_FUNC(void);
 typedef FARPROC_FUNC* FARPROC;
 
 // Structure: HKEY__
-#pragma pack(push, 1)
 typedef struct HKEY__ {
     void* unused;
-} __attribute__((aligned(4))) HKEY__;
-#pragma pack(pop)
+} HKEY__;
 
 // Typedef: LPGUID
 // pointer to _GUID
@@ -80,7 +78,6 @@ typedef union _BIT_INTEGER32 {
 #pragma pack(pop)
 
 // Structure: _EXCEPTION_RECORD
-#pragma pack(push, 1)
 typedef struct _EXCEPTION_RECORD {
     DWORD ExceptionCode;
     DWORD ExceptionFlags;
@@ -88,8 +85,7 @@ typedef struct _EXCEPTION_RECORD {
     PVOID ExceptionAddress;
     DWORD NumberParameters;
     ULONG_PTR ExceptionInformation[15];
-} __attribute__((aligned(4))) _EXCEPTION_RECORD;
-#pragma pack(pop)
+} _EXCEPTION_RECORD;
 
 // Typedef: EXCEPTION_RECORD
 typedef _EXCEPTION_RECORD EXCEPTION_RECORD;
@@ -99,7 +95,6 @@ typedef _EXCEPTION_RECORD EXCEPTION_RECORD;
 typedef EXCEPTION_RECORD* PEXCEPTION_RECORD;
 
 // Structure: _FLOATING_SAVE_AREA
-#pragma pack(push, 1)
 typedef struct _FLOATING_SAVE_AREA {
     DWORD ControlWord;
     DWORD StatusWord;
@@ -110,14 +105,12 @@ typedef struct _FLOATING_SAVE_AREA {
     DWORD DataSelector;
     BYTE RegisterArea[80];
     DWORD Cr0NpxState;
-} __attribute__((aligned(4))) _FLOATING_SAVE_AREA;
-#pragma pack(pop)
+} _FLOATING_SAVE_AREA;
 
 // Typedef: FLOATING_SAVE_AREA
 typedef _FLOATING_SAVE_AREA FLOATING_SAVE_AREA;
 
 // Structure: _CONTEXT
-#pragma pack(push, 1)
 typedef struct _CONTEXT {
     DWORD ContextFlags;
     DWORD Dr0;
@@ -144,8 +137,7 @@ typedef struct _CONTEXT {
     DWORD Esp;
     DWORD SegSs;
     BYTE ExtendedRegisters[512];
-} __attribute__((aligned(4))) _CONTEXT;
-#pragma pack(pop)
+} _CONTEXT;
 
 // Typedef: CONTEXT
 typedef _CONTEXT CONTEXT;
@@ -170,12 +162,10 @@ typedef struct EXCEPTION_REGISTRATION_RECORD {
 #pragma pack(pop)
 
 // Structure: _EXCEPTION_POINTERS
-#pragma pack(push, 1)
 typedef struct _EXCEPTION_POINTERS {
     PEXCEPTION_RECORD ExceptionRecord;
     PCONTEXT ContextRecord;
-} __attribute__((aligned(4))) _EXCEPTION_POINTERS;
-#pragma pack(pop)
+} _EXCEPTION_POINTERS;
 
 // Structure: _GUID
 typedef struct _GUID {
@@ -189,12 +179,10 @@ typedef struct _GUID {
 typedef _GUID GUID;
 
 // Structure: _LIST_ENTRY
-#pragma pack(push, 1)
 typedef struct _LIST_ENTRY {
     struct _LIST_ENTRY* Flink;
     struct _LIST_ENTRY* Blink;
-} __attribute__((aligned(4))) _LIST_ENTRY;
-#pragma pack(pop)
+} _LIST_ENTRY;
 
 // Typedef: LIST_ENTRY
 typedef _LIST_ENTRY LIST_ENTRY;
@@ -209,7 +197,6 @@ typedef union _MMX_INTEGER {
 #pragma pack(pop)
 
 // Structure: _RTL_CRITICAL_SECTION_DEBUG
-#pragma pack(push, 1)
 typedef struct _RTL_CRITICAL_SECTION_DEBUG {
     WORD Type;
     WORD CreatorBackTraceIndex;
@@ -220,11 +207,9 @@ typedef struct _RTL_CRITICAL_SECTION_DEBUG {
     DWORD Flags;
     WORD CreatorBackTraceIndexHigh;
     WORD SpareWORD;
-} __attribute__((aligned(4))) _RTL_CRITICAL_SECTION_DEBUG;
-#pragma pack(pop)
+} _RTL_CRITICAL_SECTION_DEBUG;
 
 // Structure: _RTL_CRITICAL_SECTION
-#pragma pack(push, 1)
 typedef struct _RTL_CRITICAL_SECTION {
     PRTL_CRITICAL_SECTION_DEBUG DebugInfo;
     LONG LockCount;
@@ -232,8 +217,7 @@ typedef struct _RTL_CRITICAL_SECTION {
     HANDLE OwningThread;
     HANDLE LockSemaphore;
     ULONG_PTR SpinCount;
-} __attribute__((aligned(4))) _RTL_CRITICAL_SECTION;
-#pragma pack(pop)
+} _RTL_CRITICAL_SECTION;
 
 // Typedef: CRITICAL_SECTION
 typedef _RTL_CRITICAL_SECTION CRITICAL_SECTION;
@@ -251,39 +235,31 @@ typedef struct _floatx2 {
 #pragma pack(pop)
 
 // Structure: _struct_19
-#pragma pack(push, 1)
 typedef struct _struct_19 {
     DWORD LowPart;
     LONG HighPart;
-} __attribute__((aligned(4))) _struct_19;
-#pragma pack(pop)
+} _struct_19;
 
 // Union: _LARGE_INTEGER
-#pragma pack(push, 1)
 typedef union _LARGE_INTEGER {
     _struct_19 s;
     LONGLONG QuadPart;
-} __attribute__((aligned(4))) _LARGE_INTEGER;
-#pragma pack(pop)
+} _LARGE_INTEGER;
 
 // Typedef: LARGE_INTEGER
 typedef _LARGE_INTEGER LARGE_INTEGER;
 
 // Structure: _struct_20
-#pragma pack(push, 1)
 typedef struct _struct_20 {
     DWORD LowPart;
     LONG HighPart;
-} __attribute__((aligned(4))) _struct_20;
-#pragma pack(pop)
+} _struct_20;
 
 // Structure: _struct_519
-#pragma pack(push, 1)
 typedef struct _struct_519 {
     DWORD Offset;
     DWORD OffsetHigh;
-} __attribute__((aligned(4))) _struct_519;
-#pragma pack(pop)
+} _struct_519;
 
 // Structure: _uintx2
 #pragma pack(push, 1)
@@ -302,10 +278,8 @@ typedef union _SPLIT_DOUBLE {
 #pragma pack(pop)
 
 // Union: _union_518
-#pragma pack(push, 1)
 typedef union _union_518 {
     _struct_519 s;
     PVOID Pointer;
-} __attribute__((aligned(4))) _union_518;
-#pragma pack(pop)
+} _union_518;
 

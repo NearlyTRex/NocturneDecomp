@@ -13,22 +13,18 @@
 typedef struct HWAVEIN__* HWAVEIN;
 
 // Structure: HWAVEIN__
-#pragma pack(push, 1)
 typedef struct HWAVEIN__ {
     int unused;
-} __attribute__((aligned(4))) HWAVEIN__;
-#pragma pack(pop)
+} HWAVEIN__;
 
 // Typedef: HWAVEOUT
 // pointer to HWAVEOUT__
 typedef struct HWAVEOUT__* HWAVEOUT;
 
 // Structure: HWAVEOUT__
-#pragma pack(push, 1)
 typedef struct HWAVEOUT__ {
     int unused;
-} __attribute__((aligned(4))) HWAVEOUT__;
-#pragma pack(pop)
+} HWAVEOUT__;
 
 // Structure: JOYINFOEX
 #pragma pack(push, 1)
@@ -131,20 +127,17 @@ typedef MMRESULT WAVE_OUT_CLOSE_FUNC(HWAVEOUT hwo);
 typedef MMRESULT WAVE_OUT_RESET_FUNC(HWAVEOUT hwo);
 
 // Structure: joyinfo_tag
-#pragma pack(push, 1)
 typedef struct joyinfo_tag {
     UINT wXpos;
     UINT wYpos;
     UINT wZpos;
     UINT wButtons;
-} __attribute__((aligned(4))) joyinfo_tag;
-#pragma pack(pop)
+} joyinfo_tag;
 
 // Function Definition: JOY_GET_POS_FUNC
 typedef MMRESULT JOY_GET_POS_FUNC(UINT uJoyID, LPJOYINFO pji);
 
 // Structure: tWAVEFORMATEX
-#pragma pack(push, 1)
 typedef struct tWAVEFORMATEX {
     WORD wFormatTag;
     WORD nChannels;
@@ -153,8 +146,7 @@ typedef struct tWAVEFORMATEX {
     WORD nBlockAlign;
     WORD wBitsPerSample;
     WORD cbSize;
-} __attribute__((aligned(4))) tWAVEFORMATEX;
-#pragma pack(pop)
+} tWAVEFORMATEX;
 
 // Typedef: WAVEFORMATEX
 typedef tWAVEFORMATEX WAVEFORMATEX;
@@ -170,7 +162,6 @@ typedef MMRESULT WAVE_IN_OPEN_FUNC(LPHWAVEIN phwi, UINT uDeviceID, LPCWAVEFORMAT
 typedef MMRESULT WAVE_OUT_OPEN_FUNC(LPHWAVEOUT phwo, UINT uDeviceID, LPCWAVEFORMATEX pwfx, DWORD dwCallback, DWORD dwInstance, DWORD fdwOpen);
 
 // Structure: tagJOYCAPSA
-#pragma pack(push, 1)
 typedef struct tagJOYCAPSA {
     WORD wMid;
     WORD wPid;
@@ -196,14 +187,12 @@ typedef struct tagJOYCAPSA {
     UINT wMaxButtons;
     CHAR szRegKey[32];
     CHAR szOEMVxD[260];
-} __attribute__((aligned(4))) tagJOYCAPSA;
-#pragma pack(pop)
+} tagJOYCAPSA;
 
 // Function Definition: JOY_GET_DEV_CAPS_A_FUNC
 typedef MMRESULT JOY_GET_DEV_CAPS_A_FUNC(UINT uJoyID, LPJOYCAPSA pjc, UINT cbjc);
 
 // Structure: tagWAVEINCAPSA
-#pragma pack(push, 1)
 typedef struct tagWAVEINCAPSA {
     WORD wMid;
     WORD wPid;
@@ -212,14 +201,12 @@ typedef struct tagWAVEINCAPSA {
     DWORD dwFormats;
     WORD wChannels;
     WORD wReserved1;
-} __attribute__((aligned(4))) tagWAVEINCAPSA;
-#pragma pack(pop)
+} tagWAVEINCAPSA;
 
 // Function Definition: WAVE_IN_GET_DEV_CAPS_A_FUNC
 typedef MMRESULT WAVE_IN_GET_DEV_CAPS_A_FUNC(UINT uDeviceID, LPWAVEINCAPSA pwic, UINT cbwic);
 
 // Structure: tagWAVEOUTCAPSA
-#pragma pack(push, 1)
 typedef struct tagWAVEOUTCAPSA {
     WORD wMid;
     WORD wPid;
@@ -229,14 +216,12 @@ typedef struct tagWAVEOUTCAPSA {
     WORD wChannels;
     WORD wReserved1;
     DWORD dwSupport;
-} __attribute__((aligned(4))) tagWAVEOUTCAPSA;
-#pragma pack(pop)
+} tagWAVEOUTCAPSA;
 
 // Function Definition: WAVE_OUT_GET_DEV_CAPS_A_FUNC
 typedef MMRESULT WAVE_OUT_GET_DEV_CAPS_A_FUNC(UINT uDeviceID, LPWAVEOUTCAPSA pwoc, UINT cbwoc);
 
 // Structure: wavehdr_tag
-#pragma pack(push, 1)
 typedef struct wavehdr_tag {
     LPSTR lpData;
     DWORD dwBufferLength;
@@ -246,8 +231,7 @@ typedef struct wavehdr_tag {
     DWORD dwLoops;
     struct wavehdr_tag* lpNext;
     DWORD_PTR reserved;
-} __attribute__((aligned(4))) wavehdr_tag;
-#pragma pack(pop)
+} wavehdr_tag;
 
 // Function Definition: WAVE_IN_ADD_BUFFER_FUNC
 typedef MMRESULT WAVE_IN_ADD_BUFFER_FUNC(HWAVEIN hwi, LPWAVEHDR pwh, UINT cbwh);

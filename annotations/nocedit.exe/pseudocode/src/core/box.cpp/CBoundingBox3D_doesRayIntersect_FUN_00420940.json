@@ -2,14 +2,7 @@
   "compilation_status": {
     "errors": [],
     "success": true,
-    "warnings": [
-      {
-        "category": "other",
-        "column": 15,
-        "line": 147,
-        "message": "result of comparison of constant 2 with expression of type 'bool' is always true [-Wtautological-constant-out-of-range-compare]"
-      }
-    ]
+    "warnings": []
   },
   "complexity": {
     "assembly_lines": 434,
@@ -357,6 +350,35 @@
       }
     ],
     "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CBoundingBox3D_doesRayIntersect_FUN_00420940.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 14,
+          "line": 180,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        }
+      ],
+      "error": null
+    },
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "compareBoolExpressionWithInt",
+          "column": 15,
+          "line": 171,
+          "message": "Comparison of a boolean expression with an integer other than 0 or 1.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

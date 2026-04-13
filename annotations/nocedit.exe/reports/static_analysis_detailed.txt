@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Clang-Tidy (quick) (1155 diagnostics)
+Clang-Tidy (quick) (1170 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-bugprone-assignment-in-if-condition (544)
+bugprone-assignment-in-if-condition (554)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CActorProperty_editInteractive_FUN_ line 102
@@ -134,6 +134,10 @@ bugprone-assignment-in-if-condition (544)
 
   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90     line 422
     File: core/boneguy.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0 line 180
+    File: core/box.cpp
     an assignment within an 'if' condition is bug-prone
 
   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00425cc line 45
@@ -626,6 +630,10 @@ bugprone-assignment-in-if-condition (544)
 
   core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004 line 67
     File: core/hero.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  core_hostage.cpp_CHostage_getCarryObjToBodyXForm_F line 56
+    File: core/hostage.cpp
     an assignment within an 'if' condition is bug-prone
 
   core_hostage.cpp_CHostage_process_FUN_004f4bd0     line 182
@@ -1906,6 +1914,38 @@ bugprone-assignment-in-if-condition (544)
 
   core_zombie.cpp_CZombie_process_FUN_005f9470       line 1032
     File: core/zombie.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  engine_2d.c_drawTextWrappedColor_FUN_00401eb0      line 35
+    File: engine/2d.c
+    an assignment within an 'if' condition is bug-prone
+
+  engine_2d.c_drawTextWrappedColor_FUN_00401eb0      line 35
+    File: engine/2d.c
+    an assignment within an 'if' condition is bug-prone
+
+  engine_2d.c_drawTextWrappedColor_FUN_00401eb0      line 42
+    File: engine/2d.c
+    an assignment within an 'if' condition is bug-prone
+
+  engine_2d.c_drawTextWrappedColor_FUN_00401eb0      line 42
+    File: engine/2d.c
+    an assignment within an 'if' condition is bug-prone
+
+  engine_2d.c_drawTextWrapped_FUN_00401c60           line 35
+    File: engine/2d.c
+    an assignment within an 'if' condition is bug-prone
+
+  engine_2d.c_drawTextWrapped_FUN_00401c60           line 35
+    File: engine/2d.c
+    an assignment within an 'if' condition is bug-prone
+
+  engine_2d.c_drawTextWrapped_FUN_00401c60           line 42
+    File: engine/2d.c
+    an assignment within an 'if' condition is bug-prone
+
+  engine_2d.c_drawTextWrapped_FUN_00401c60           line 42
+    File: engine/2d.c
     an assignment within an 'if' condition is bug-prone
 
   engine_drender.cpp_CDemonRenderer_renderGeometryBa line 97
@@ -4553,6 +4593,34 @@ bugprone-switch-missing-default-case (56)
     switching on non-enum value without default case may not cover all cases
 
 ----------------------------------------------------------------------------------------------------
+ (6)
+----------------------------------------------------------------------------------------------------
+
+  core_texlist.cpp_CTextureList_buildMasterTextureLi line 28
+    File: core/texlist.cpp
+    declaration uses identifier '_Stack_1e0', which is a reserved identifier [cert-dcl37-c,cert-dcl51-cpp]
+
+  engine_2d.c_drawStringHighlighted_FUN_004020e0     line 31
+    File: engine/2d.c
+    'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first. [bugprone-signed-char-misuse,cert-str34-c]
+
+  engine_2d.c_drawStringMasked_FUN_00402030          line 31
+    File: engine/2d.c
+    'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first. [bugprone-signed-char-misuse,cert-str34-c]
+
+  engine_2d.c_drawString_FUN_00402080                line 31
+    File: engine/2d.c
+    'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first. [bugprone-signed-char-misuse,cert-str34-c]
+
+  engine_2d.c_drawTextWrappedColor_FUN_00401eb0      line 38
+    File: engine/2d.c
+    'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first. [bugprone-signed-char-misuse,cert-str34-c]
+
+  engine_2d.c_drawTextWrapped_FUN_00401c60           line 38
+    File: engine/2d.c
+    'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first. [bugprone-signed-char-misuse,cert-str34-c]
+
+----------------------------------------------------------------------------------------------------
 cert-msc30-c (4)
 ----------------------------------------------------------------------------------------------------
 
@@ -4680,16 +4748,8 @@ bugprone-swapped-arguments (1)
     File: core/skeledit.cpp
     argument with implicit conversion from 'int' to 'float' followed by argument converted from 'float' to 'int', potentially swapped arguments.
 
-----------------------------------------------------------------------------------------------------
- (1)
-----------------------------------------------------------------------------------------------------
-
-  core_texlist.cpp_CTextureList_buildMasterTextureLi line 28
-    File: core/texlist.cpp
-    declaration uses identifier '_Stack_1e0', which is a reserved identifier [cert-dcl37-c,cert-dcl51-cpp]
-
 ====================================================================================================
-Cppcheck (quick) (378 diagnostics)
+Cppcheck (quick) (379 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -6239,6 +6299,14 @@ arrayIndexOutOfBoundsCond (1)
   engine_clipper.c_clipPolygonToViewFrustum_FUN_0043 line 165
     File: engine/clipper.c
     Either the condition '0<vertex_count' is redundant or the array 'auStack_150[32]' is accessed at index 32, which is out of bounds.
+
+----------------------------------------------------------------------------------------------------
+compareBoolExpressionWithInt (1)
+----------------------------------------------------------------------------------------------------
+
+  core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0 line 171
+    File: core/box.cpp
+    Comparison of a boolean expression with an integer other than 0 or 1.
 
 ----------------------------------------------------------------------------------------------------
 AssignmentIntegerToAddress (1)

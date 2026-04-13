@@ -13,44 +13,36 @@
 typedef struct HBITMAP__* HBITMAP;
 
 // Structure: HBITMAP__
-#pragma pack(push, 1)
 typedef struct HBITMAP__ {
     int unused;
-} __attribute__((aligned(4))) HBITMAP__;
-#pragma pack(pop)
+} HBITMAP__;
 
 // Typedef: HBRUSH
 // pointer to HBRUSH__
 typedef struct HBRUSH__* HBRUSH;
 
 // Structure: HBRUSH__
-#pragma pack(push, 1)
 typedef struct HBRUSH__ {
     int unused;
-} __attribute__((aligned(4))) HBRUSH__;
-#pragma pack(pop)
+} HBRUSH__;
 
 // Typedef: HFONT
 // pointer to HFONT__
 typedef struct HFONT__* HFONT;
 
 // Structure: HFONT__
-#pragma pack(push, 1)
 typedef struct HFONT__ {
     int unused;
-} __attribute__((aligned(4))) HFONT__;
-#pragma pack(pop)
+} HFONT__;
 
 // Typedef: HICON
 // pointer to HICON__
 typedef struct HICON__* HICON;
 
 // Structure: HICON__
-#pragma pack(push, 1)
 typedef struct HICON__ {
     int unused;
-} __attribute__((aligned(4))) HICON__;
-#pragma pack(pop)
+} HICON__;
 
 // Typedef: HCURSOR
 // pointer to HICON__
@@ -61,22 +53,18 @@ typedef HICON HCURSOR;
 typedef struct HMENU__* HMENU;
 
 // Structure: HMENU__
-#pragma pack(push, 1)
 typedef struct HMENU__ {
     int unused;
-} __attribute__((aligned(4))) HMENU__;
-#pragma pack(pop)
+} HMENU__;
 
 // Typedef: HWND
 // Signed Integer (compiler-specific size)
 typedef int HWND;
 
 // Structure: HWND__
-#pragma pack(push, 1)
 typedef struct HWND__ {
     int unused;
-} __attribute__((aligned(4))) HWND__;
-#pragma pack(pop)
+} HWND__;
 
 // Function Definition: IS_SPECIAL_DEVICE_FUNC
 typedef int IS_SPECIAL_DEVICE_FUNC(int file_handle_index);
@@ -126,7 +114,6 @@ typedef LRESULT WNDPROC_FUNC(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPar
 typedef WNDPROC_FUNC* WNDPROC;
 
 // Structure: tagMSG
-#pragma pack(push, 1)
 typedef struct tagMSG {
     HWND hwnd;
     UINT message;
@@ -134,14 +121,12 @@ typedef struct tagMSG {
     LPARAM lParam;
     DWORD time;
     POINT pt;
-} __attribute__((aligned(4))) tagMSG;
-#pragma pack(pop)
+} tagMSG;
 
 // Typedef: MSG
 typedef tagMSG MSG;
 
 // Structure: tagWNDCLASSA
-#pragma pack(push, 1)
 typedef struct tagWNDCLASSA {
     UINT style;
     WNDPROC lpfnWndProc;
@@ -153,8 +138,7 @@ typedef struct tagWNDCLASSA {
     HBRUSH hbrBackground;
     LPCSTR lpszMenuName;
     LPCSTR lpszClassName;
-} __attribute__((aligned(4))) tagWNDCLASSA;
-#pragma pack(pop)
+} tagWNDCLASSA;
 
 // Typedef: WNDCLASSA
 typedef tagWNDCLASSA WNDCLASSA;

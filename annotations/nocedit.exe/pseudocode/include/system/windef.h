@@ -12,11 +12,9 @@
 typedef struct HINSTANCE__* HINSTANCE;
 
 // Structure: HINSTANCE__
-#pragma pack(push, 1)
 typedef struct HINSTANCE__ {
     int unused;
-} __attribute__((aligned(4))) HINSTANCE__;
-#pragma pack(pop)
+} HINSTANCE__;
 
 // Typedef: HMODULE
 // pointer to HINSTANCE__
@@ -43,10 +41,8 @@ typedef WORD* LPWORD;
 typedef HANDLE* PHANDLE;
 
 // Structure: tagPOINT
-#pragma pack(push, 1)
 typedef struct tagPOINT {
     LONG x;
     LONG y;
-} __attribute__((aligned(4))) tagPOINT;
-#pragma pack(pop)
+} tagPOINT;
 

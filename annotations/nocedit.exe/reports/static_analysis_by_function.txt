@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 256
-  Total diagnostics: 1533
-  Functions flagged by multiple tools: 68
-  .keep.cpp files: 256, raw .cpp files: 0
+  Functions with findings: 263
+  Total diagnostics: 1549
+  Functions flagged by multiple tools: 69
+  .keep.cpp files: 263, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -1630,6 +1630,26 @@ core_zombie.cpp_CZombie_processPickup_FUN_005fb530  [.keep] [Clang-Tidy (quick)]
   Line  162: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
 
 ----------------------------------------------------------------------------------------------------
+engine_2d.c_drawTextWrappedColor_FUN_00401eb0  [.keep] [Clang-Tidy (quick)]
+  File: engine/2d.c  (5 diagnostics)
+
+  Line   35: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   35: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   38: [] 'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first. [bugprone-signed-char-misuse,cert-str34-c]
+  Line   42: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   42: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+engine_2d.c_drawTextWrapped_FUN_00401c60  [.keep] [Clang-Tidy (quick)]
+  File: engine/2d.c  (5 diagnostics)
+
+  Line   35: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   35: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   38: [] 'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first. [bugprone-signed-char-misuse,cert-str34-c]
+  Line   42: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line   42: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
 engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0  [.keep] [Clang-Tidy (quick)]
   File: engine/fileio.cpp  (5 diagnostics)
 
@@ -2123,6 +2143,13 @@ core_biggs.cpp_CBiggs_process_FUN_00418700  [.keep] [Clang-Tidy (quick)]
   Line  120: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
 
 ----------------------------------------------------------------------------------------------------
+core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
+  File: core/box.cpp  (2 diagnostics)
+
+  Line  171: [compareBoolExpressionWithInt] Comparison of a boolean expression with an integer other than 0 or 1.
+  Line  180: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
 core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00425cc0  [.keep] [Clang-Tidy (quick)]
   File: core/bugs.cpp  (2 diagnostics)
 
@@ -2568,6 +2595,12 @@ core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80  [.keep] [
   Line  195: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
 
 ----------------------------------------------------------------------------------------------------
+core_hostage.cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550  [.keep] [Clang-Tidy (quick)]
+  File: core/hostage.cpp  (1 diagnostics)
+
+  Line   56: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
 core_hotdemon.cpp_CHotDemon_process_FUN_004f6f20  [.keep] [Clang-Tidy (quick)]
   File: core/hotdemon.cpp  (1 diagnostics)
 
@@ -2656,6 +2689,24 @@ core_xform.cpp_slerpQuaternion_FUN_005f77e0  [.keep] [Clang-Tidy (quick)]
   File: core/xform.cpp  (1 diagnostics)
 
   Line   37: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+engine_2d.c_drawStringHighlighted_FUN_004020e0  [.keep] [Clang-Tidy (quick)]
+  File: engine/2d.c  (1 diagnostics)
+
+  Line   31: [] 'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first. [bugprone-signed-char-misuse,cert-str34-c]
+
+----------------------------------------------------------------------------------------------------
+engine_2d.c_drawStringMasked_FUN_00402030  [.keep] [Clang-Tidy (quick)]
+  File: engine/2d.c  (1 diagnostics)
+
+  Line   31: [] 'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first. [bugprone-signed-char-misuse,cert-str34-c]
+
+----------------------------------------------------------------------------------------------------
+engine_2d.c_drawString_FUN_00402080  [.keep] [Clang-Tidy (quick)]
+  File: engine/2d.c  (1 diagnostics)
+
+  Line   31: [] 'signed char' to 'uint' (aka 'unsigned int') conversion; consider casting to 'unsigned char' first. [bugprone-signed-char-misuse,cert-str34-c]
 
 ----------------------------------------------------------------------------------------------------
 engine_clipper.c_clipPolygonNearPlane_FUN_00436420  [.keep] [Clang-Tidy (quick)]

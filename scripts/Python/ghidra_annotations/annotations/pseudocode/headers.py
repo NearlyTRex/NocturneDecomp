@@ -706,15 +706,19 @@ def _packing_and_alignment(dt):
     except Exception:
         pass
     if is_packed:
-        explicit_pv = None
+        # Ghidra has three packing modes: DISABLED, DEFAULT (alignment-based,
+        # getExplicitPackingValue returns -1), and EXPLICIT (user-set value).
+        # Only EXPLICIT with a positive value translates to #pragma pack(N);
+        # DEFAULT packing means "use natural alignment", so no pragma needed.
         try:
             pv = dt.getExplicitPackingValue()
-            if pv and pv > 0:
-                explicit_pv = int(pv)
+            if pv is not None and pv > 0:
+                pack_value = int(pv)
         except Exception:
             pass
-        pack_value = explicit_pv if explicit_pv is not None else 1
-    elif alignment is not None and alignment < 4:
+    if pack_value is None and alignment is not None and alignment < 4:
+        # Not explicitly packed but struct-level alignment is below natural —
+        # force it with pack(alignment).
         pack_value = alignment
 
     align_attr = None
