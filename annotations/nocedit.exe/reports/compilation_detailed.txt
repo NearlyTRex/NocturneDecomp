@@ -5,5 +5,210 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6454 (100.0%)
-Failed: 0
+Successful: 6407 (99.3%)
+Failed: 47
+
+ERROR CATEGORIES
+--------------------------------------------------
+  undeclared_identifier            183
+  other                            175
+  type_error                        36
+  missing_member                    36
+  incompatible_types                 9
+  cast_error                         5
+  format_error                       3
+
+====================================================================================================
+CATEGORY: undeclared_identifier (183 errors)
+====================================================================================================
+
+  core_dcamera.cpp_blendCoronaTextureSpan_FUN_004517f0
+    Line 51: use of undeclared identifier 'int3'; did you mean 'int'?
+  core_dstrender.cpp_alphaBlendPixelsMMX_FUN_00492e8a
+    Line 31: use of undeclared identifier 'int3'; did you mean 'int'?
+  core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutputOffset_FUN_00491c9a
+    Line 50: use of undeclared identifier 'int3'; did you mean 'int'?
+  core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutput_FUN_004917bc
+    Line 49: use of undeclared identifier 'int3'; did you mean 'int'?
+  core_dstrender.cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450
+    Line 50: use of undeclared identifier 'int3'; did you mean 'int'?
+  core_dstrender.cpp_blendLightmapToTexture32BitInputOutput_FUN_004926e1
+    Line 38: use of undeclared identifier 'int3'; did you mean 'int'?
+  core_dstrender.cpp_blendLightmapToTexture32BitOutputAmbient_FUN_00492bd5
+    Line 37: use of undeclared identifier 'int3'; did you mean 'int'?
+  core_dstrender.cpp_blendLightmapToTexture64BitOutputAmbient_FUN_004925c5
+    Line 46: use of undeclared identifier 'int3'; did you mean 'int'?
+  core_dstrender.cpp_blendLightmapToTexture64BitOutputBlendBias_FUN_004924a9
+    Line 46: use of undeclared identifier 'int3'; did you mean 'int'?
+  core_dstrender.cpp_blendLightmapToTextureMMX32BitBlendBias_FUN_00492f03
+    Line 49: use of undeclared identifier 'int3'; did you mean 'int'?
+  core_dstrender.cpp_blendLightmapToTextureMMX64BitAmbient_FUN_00493dc4
+    Line 38: use of undeclared identifier 'int3'; did you mean 'int'?
+  core_dstrender.cpp_blendSinglePixelLightmapMMX_FUN_004937b6
+    Line 35: use of undeclared identifier 'int3'; did you mean 'int'?
+  core_dstrender.cpp_blendSinglePixelLightmapNoRoundingMMX_FUN_00491f90
+    Line 34: use of undeclared identifier 'int3'; did you mean 'int'?
+  core_dstrender.cpp_blendTextureWithLightmapMMX_FUN_00493860
+    Line 40: use of undeclared identifier 'int3'; did you mean 'int'?
+  core_dstrender.cpp_spatialFilter9TapMMX_FUN_004923ff
+    Line 43: use of undeclared identifier 'int3'; did you mean 'int'?
+  core_flies.cpp_drawFlyPixel_FUN_004cc230
+    Line 33: use of undeclared identifier 'int3'; did you mean 'int'?
+  engine_font.cpp_drawAlphaBlendedPixels_FUN_004ce240
+    Line 42: use of undeclared identifier 'int3'; did you mean 'int'?
+  wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7
+    Line 41: use of undeclared identifier 'int3'; did you mean 'int'?
+  wincore_windll.cpp_renderAlphaRow32_FUN_005b555c
+    Line 39: use of undeclared identifier 'int3'; did you mean 'int'?
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
+    Line 295: use of undeclared identifier 'stack0xffff9f14'
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
+    Line 154: use of undeclared identifier 'stack0xfffffdbc'; did you mean 'in_stack_fffffdbc'?
+  core_actor.cpp_drawBoundingBox_FUN_0040d470
+    Line 141: use of undeclared identifier 'stack0xfffffea0'
+  core_course.cpp_CCourse_preview_FUN_00443bc0
+    Line 157: use of undeclared identifier 'stack0xfffffea0'
+  core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
+    Line 83: use of undeclared identifier 'stack0xfffffeb4'
+  shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
+    Line 129: use of undeclared identifier 'stack0xfffffec0'
+  core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10
+    Line 194: use of undeclared identifier 'stack0xfffffee8'; did you mean 'in_stack_fffffee8'?
+  shape_design.c_renderPolygonWireframe_FUN_0045d300
+    Line 101: use of undeclared identifier 'stack0xffffff28'
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930
+    Line 150: use of undeclared identifier 'stack0xffffff54'
+  core_ladder.cpp_CLadder_renderOpaque_FUN_00502620
+    Line 91: use of undeclared identifier 'stack0xffffff58'
+  engine_3d.c_drawLineStrip2D_FUN_00404570
+    Line 95: use of undeclared identifier 'stack0xffffff60'
+  engine_3d.c_drawLineStrip3D_FUN_00404600
+    Line 95: use of undeclared identifier 'stack0xffffff60'
+  engine_3d.c_drawLine2DFromIndices_FUN_00407cf0
+    Line 48: use of undeclared identifier 'stack0xffffff68'
+  engine_3d.c_drawLine3DFromIndices_FUN_00407ff0
+    Line 48: use of undeclared identifier 'stack0xffffff68'
+  sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90
+    Line 125: use of undeclared identifier 'stack0xffffff68'
+  core_actor.cpp_draw3DLineSegment_FUN_0040d330
+    Line 95: use of undeclared identifier 'stack0xffffff7c'
+  core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640
+    Line 96: use of undeclared identifier 'stack0xffffff84'
+  shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40
+    Line 60: use of undeclared identifier 'stack0xffffff94'
+  sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
+    Line 85: use of undeclared identifier 'stack0xffffff94'; did you mean 'in_stack_ffffff94'?
+  shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
+    Line 80: use of undeclared identifier 'stack0xffffff9c'
+  shape_meshlod.cpp_CLodMesh_renderWireframe_FUN_0051e770
+    Line 77: use of undeclared identifier 'stack0xffffffb4'
+  shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830
+    Line 110: use of undeclared identifier 'stack0xffffffb8'
+  wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+    Line 175: use of undeclared identifier 'uRam00682694'
+  wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031
+    Line 174: use of undeclared identifier 'uRam00682694'
+
+====================================================================================================
+CATEGORY: other (175 errors)
+====================================================================================================
+
+  wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+    Line 17: unknown type name 'uint3'; did you mean 'uint'?
+  core_dcamera.cpp_blendCoronaTextureSpan_FUN_004517f0
+    Line 23: unknown type name 'uint5'; did you mean 'uint'?
+  core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutputOffset_FUN_00491c9a
+    Line 30: unknown type name 'uint5'; did you mean 'uint'?
+  core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutput_FUN_004917bc
+    Line 30: unknown type name 'uint5'; did you mean 'uint'?
+  core_dstrender.cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450
+    Line 30: unknown type name 'uint5'; did you mean 'uint'?
+  core_dstrender.cpp_blendLightmapToTexture32BitInputOutput_FUN_004926e1
+    Line 21: unknown type name 'uint5'; did you mean 'uint'?
+  core_dstrender.cpp_blendLightmapToTexture32BitOutputAmbient_FUN_00492bd5
+    Line 22: unknown type name 'uint5'; did you mean 'uint'?
+  core_dstrender.cpp_blendLightmapToTexture64BitOutputAmbient_FUN_004925c5
+    Line 28: unknown type name 'uint5'; did you mean 'uint'?
+  core_dstrender.cpp_blendLightmapToTexture64BitOutputBlendBias_FUN_004924a9
+    Line 28: unknown type name 'uint5'; did you mean 'uint'?
+  core_dstrender.cpp_blendLightmapToTextureMMX32BitBlendBias_FUN_00492f03
+    Line 30: unknown type name 'uint5'; did you mean 'uint'?
+  core_dstrender.cpp_blendLightmapToTextureMMX64BitAmbient_FUN_00493dc4
+    Line 23: unknown type name 'uint5'; did you mean 'uint'?
+  core_dstrender.cpp_blendSinglePixelLightmapMMX_FUN_004937b6
+    Line 19: unknown type name 'uint5'; did you mean 'uint'?
+  core_dstrender.cpp_blendSinglePixelLightmapNoRoundingMMX_FUN_00491f90
+    Line 19: unknown type name 'uint5'; did you mean 'uint'?
+  core_dstrender.cpp_blendTextureWithLightmapMMX_FUN_00493860
+    Line 21: unknown type name 'uint5'; did you mean 'uint'?
+  core_dstrender.cpp_spatialFilter9TapMMX_FUN_004923ff
+    Line 28: unknown type name 'uint5'; did you mean 'uint'?
+  core_flies.cpp_drawFlyPixel_FUN_004cc230
+    Line 24: unknown type name 'uint5'; did you mean 'uint'?
+  engine_font.cpp_drawAlphaBlendedPixels_FUN_004ce240
+    Line 23: unknown type name 'uint5'; did you mean 'uint'?
+  wincore_windll.cpp_renderAlphaRow32_FUN_005b555c
+    Line 25: unknown type name 'uint5'; did you mean 'uint'?
+  core_dstrender.cpp_alphaBlendPixelsMMX_FUN_00492e8a
+    Line 31: unknown type name 'uint7'; did you mean 'uint'?
+  wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031
+    Line 17: unknown type name 'undefined6'
+  wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7
+    Line 16: unknown type name 'undefined7'
+
+====================================================================================================
+CATEGORY: type_error (36 errors)
+====================================================================================================
+
+  core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10
+    Line 151: member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union
+  sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
+    Line 92: member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union
+  shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
+    Line 135: member reference base type 'int' is not a structure or union
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
+    Line 310: member reference base type 'int' is not a structure or union
+  core_dcamera.cpp_blendCoronaTextureSpan_FUN_004517f0
+    Line 50: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
+  core_flies.cpp_drawFlyPixel_FUN_004cc230
+    Line 32: member reference base type 'uint' (aka 'unsigned int') is not a structure or union
+
+====================================================================================================
+CATEGORY: missing_member (36 errors)
+====================================================================================================
+
+  core_dstrender.cpp_verticalBlur3TapMMXStride128_FUN_004922c8
+    Line 39: no member named '_0_4_' in '_MMX_INTEGER'
+  core_dstrender.cpp_verticalBlur3TapMMXStride256_FUN_00492185
+    Line 39: no member named '_0_4_' in '_MMX_INTEGER'
+  core_dstrender.cpp_verticalBlur3TapMMXStride320_FUN_00492042
+    Line 39: no member named '_0_4_' in '_MMX_INTEGER'
+
+====================================================================================================
+CATEGORY: incompatible_types (9 errors)
+====================================================================================================
+
+  core_moon.cpp_CMoon_render_FUN_00529ed0
+    Line 107: assigning to 'ulonglong *' (aka 'unsigned long long *') from incompatible type 'void *'
+  wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+    Line 148: cannot convert 'SAlphaEntry' to '__m64' (vector of 1 'long long' value) without a conversion operator
+  wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031
+    Line 147: cannot convert 'SAlphaEntry' to '__m64' (vector of 1 'long long' value) without a conversion operator
+  wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7
+    Line 47: cannot convert 'SAlphaEntry' to 'ulonglong' (aka 'unsigned long long') without a conversion operator
+  wincore_windll.cpp_renderAlphaRow32_FUN_005b555c
+    Line 45: cannot convert 'SAlphaEntry' to 'ulonglong' (aka 'unsigned long long') without a conversion operator
+
+====================================================================================================
+CATEGORY: cast_error (5 errors)
+====================================================================================================
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
+    Line 187: C-style cast from 'CKeys *' to 'float' is not allowed
+
+====================================================================================================
+CATEGORY: format_error (3 errors)
+====================================================================================================
+
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
+    Line 152: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]

@@ -449,13 +449,11 @@ def load_function_info_from_json(json_path):
         if not func_name:
             return None
 
-        # Derive source path from json path - prefer .keep > .mmx/.byval > .cpp/.c
+        # Derive source path from json path - prefer .keep > .cpp/.c
+        # .mmx/.byval/.chunked variants are generated but not compiled
         base_path = json_path[:-5]  # Remove '.json'
-        # Priority order: manual overrides first, then asm replacements, then original
         _SRC_EXTENSIONS = (
             '.keep.cpp', '.keep.c',
-            '.mmx.cpp', '.mmx.c',
-            '.byval.cpp', '.byval.c',
             '.cpp', '.c',
         )
         src_path = base_path + '.cpp'  # Default fallback

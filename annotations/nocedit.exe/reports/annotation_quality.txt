@@ -684,7 +684,7 @@ Wrong calling convention - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Unresolved stack params - .keep overrides (10)
+Unresolved stack params - .keep overrides (11)
 --------------------------------------------------------------------------------
 
   CWavInDevice_setMode
@@ -709,6 +709,12 @@ Unresolved stack params - .keep overrides (10)
     Address: 0x0040a210  File: core/actor.cpp
     Evidence: in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74
     Signature: int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,int hit_type)
+    Suggested: Signature is missing stack parameters entirely
+
+  CDemonActor_renderBoundingBox
+    Address: 0x0040d940  File: core/actor.cpp
+    Evidence: in_stack_0000000c, in_stack_00000010, in_stack_00000010, in_stack_0000000c
+    Signature: void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,uint32_t color)
     Suggested: Signature is missing stack parameters entirely
 
   CDemonMission_enemyRandomizer
@@ -754,7 +760,7 @@ Unresolved stack params - MMX functions (0)
   (none)
 
 --------------------------------------------------------------------------------
-Unresolved stack params - by-value struct passing (5)
+Unresolved stack params - by-value struct passing (4)
 --------------------------------------------------------------------------------
 
   nextMixingBuffer
@@ -767,12 +773,6 @@ Unresolved stack params - by-value struct passing (5)
     Address: 0x00583170  File: core/setedit.cpp
     Evidence: in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdcc, in_stack_fffffdcc, in_stack_fffffdcc, in_stack_fffffdcc, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdcc, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdcc
     Signature: void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDemonActor_renderBoundingBox
-    Address: 0x0040d940  File: core/actor.cpp
-    Evidence: in_stack_0000000c, in_stack_00000010, in_stack_00000010, in_stack_0000000c
-    Signature: void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,uint32_t color)
     Suggested: Signature is missing stack parameters entirely
 
   CStairs_renderOpaque
