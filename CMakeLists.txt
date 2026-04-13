@@ -167,6 +167,7 @@ if(NOCTURNE_BUILD_EXE)
     foreach(_module IN LISTS NOCTURNE_MODULES)
         file(STRINGS "${NOCTURNE_GEN_DIR}/sources_${_module}.txt" _sources)
         if(_sources)
+            set_source_files_properties(${_sources} PROPERTIES LANGUAGE CXX)
             add_library(nocturne_${_module} OBJECT ${_sources})
             target_include_directories(nocturne_${_module} PRIVATE
                 "${NOCTURNE_INCLUDE_DIR}" "${NOCTURNE_SHIMS_DIR}")
@@ -182,6 +183,7 @@ if(NOCTURNE_BUILD_EXE)
         "${NOCTURNE_SHIMS_DIR}/*.cpp"
         "${NOCTURNE_SHIMS_DIR}/*.c"
     )
+    set_source_files_properties(${_shim_sources} PROPERTIES LANGUAGE CXX)
     add_library(nocturne_shims OBJECT ${_shim_sources})
     target_include_directories(nocturne_shims PRIVATE
         "${NOCTURNE_INCLUDE_DIR}" "${NOCTURNE_SHIMS_DIR}")
