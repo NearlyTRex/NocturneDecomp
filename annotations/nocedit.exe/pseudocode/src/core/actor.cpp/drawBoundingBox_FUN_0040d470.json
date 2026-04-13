@@ -1,44 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 141,
-        "message": "use of undeclared identifier 'stack0xfffffea0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 160,
-        "message": "use of undeclared identifier 'stack0xfffffe70'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 224,
-        "message": "use of undeclared identifier 'stack0xfffffea0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 243,
-        "message": "use of undeclared identifier 'stack0xfffffe70'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 307,
-        "message": "use of undeclared identifier 'stack0xfffffea0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 327,
-        "message": "use of undeclared identifier 'stack0xfffffe70'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -580,6 +543,52 @@
       }
     ],
     "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "drawBoundingBox_FUN_0040d470.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 6,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 30,
+          "line": 44,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 30,
+          "line": 45,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 30,
+          "line": 46,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 31,
+          "line": 50,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 31,
+          "line": 51,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 31,
+          "line": 52,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_point,CVector3f *direction_offset)
+; void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3f *start_point,CVector3f *direction_offset)
 ;
 ; Parameters:
-; CVector3i *      Stack[0x4]:4   start_point
+; CVector3f *      Stack[0x4]:4   start_point
 ; CVector3f *      Stack[0x8]:4   direction_offset
 ; Local Variables:
 ; CVector3i        Stack[-0x54]:12  local_54

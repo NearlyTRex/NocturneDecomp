@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 263
-  Total diagnostics: 1549
+  Functions with findings: 267
+  Total diagnostics: 1573
   Functions flagged by multiple tools: 69
-  .keep.cpp files: 263, raw .cpp files: 0
+  .keep.cpp files: 267, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -1418,6 +1418,39 @@ core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80  [.keep] [Cppc
   Line  115: [selfAssignment] Redundant assignment of 'pcVar8' to itself.
 
 ----------------------------------------------------------------------------------------------------
+core_actor.cpp_draw3DLineSegment_FUN_0040d330  [.keep] [Clang-Tidy (quick)]
+  File: core/actor.cpp  (6 diagnostics)
+
+  Line   29: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   30: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   31: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   35: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   36: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   37: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+----------------------------------------------------------------------------------------------------
+core_actor.cpp_drawBoundingBox_FUN_0040d470  [.keep] [Clang-Tidy (quick)]
+  File: core/actor.cpp  (6 diagnostics)
+
+  Line   44: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   45: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   46: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   50: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   51: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   52: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+----------------------------------------------------------------------------------------------------
+core_course.cpp_CCourse_preview_FUN_00443bc0  [.keep] [Clang-Tidy (quick)]
+  File: core/course.cpp  (6 diagnostics)
+
+  Line   92: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   93: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   94: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   97: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   98: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   99: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0  [.keep] [Clang-Tidy (quick)]
   File: core/dcamera.cpp  (6 diagnostics)
 
@@ -1460,6 +1493,17 @@ core_mobster.cpp_CMobster_process_FUN_00525840  [.keep] [Clang-Tidy (quick)]
   Line  179: [bugprone-switch-missing-default-case] switching on non-enum value without default case may not cover all cases
   Line  242: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
   Line  554: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_moon.cpp_CMoon_render_FUN_00529ed0  [.keep] [Clang-Tidy (quick)]
+  File: core/moon.cpp  (6 diagnostics)
+
+  Line   80: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   80: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   91: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   91: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  143: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  143: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
 
 ----------------------------------------------------------------------------------------------------
 core_set.cpp_CDemonSet_processActors_FUN_0056b810  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]

@@ -22,7 +22,6 @@
 #include "types/classes/CRuleList.h"
 #include "types/classes/CTextureCache.h"
 #include "types/classes/CVector3f.h"
-#include "types/classes/CVector3i.h"
 #include "types/enums/EActorPropertyType.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EGroundType.h"
@@ -360,7 +359,7 @@ void __cdecl core_actor_cpp_drawTwoColumnPropertyLine_FUN_0040d1e0(int *y_positi
 void __cdecl core_actor_cpp_drawTextLine_FUN_0040d240(int *y_position,char *text);
 int __cdecl core_actor_cpp_CDemonActor_propertyValidatorCallback_FUN_0040d270(CDemonActor *this_ptr,int new_value);
 void __cdecl core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(CDemonActor *this_ptr,CActorPropertyList *property_list);
-void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_point,CVector3f *direction_offset);
+void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3f *start_point,CVector3f *direction_offset);
 void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,int line_color);
 void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,uint32_t color);
 void __cdecl core_actor_cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0(CDemonActor *this_ptr,int red,int green,int blue,int alpha);

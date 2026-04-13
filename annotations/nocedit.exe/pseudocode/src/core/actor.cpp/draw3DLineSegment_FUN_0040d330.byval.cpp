@@ -2,11 +2,11 @@
 // Address: 0040d330
 // Address Range: [[0040d330, 0040d469] [00604780, 00604830]]
 // Convention: __cdecl
-// Signature: void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_point,CVector3f *direction_offset)
+// Signature: void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3f *start_point,CVector3f *direction_offset)
 
 #include "nocturne.h"
 
-void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3i *start_point,CVector3f *direction_offset)
+void __cdecl core_actor_cpp_draw3DLineSegment_FUN_0040d330(CVector3f *start_point,CVector3f *direction_offset)
 {
 __asm {
         mov EDX,dword ptr [ESP + 0x58]

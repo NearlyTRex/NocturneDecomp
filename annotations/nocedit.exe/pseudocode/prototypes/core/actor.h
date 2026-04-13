@@ -529,7 +529,7 @@ void __cdecl CDemonActor::getPropertyList(CDemonActor *this_ptr,CActorPropertyLi
 
 // Original: core_actor.cpp_draw3DLineSegment_FUN_0040d330
 // Address: 0040d330
-void __cdecl draw3DLineSegment(CVector3i *start_point,CVector3f *direction_offset);
+void __cdecl draw3DLineSegment(CVector3f *start_point,CVector3f *direction_offset);
 
 // Original: core_actor.cpp_drawBoundingBox_FUN_0040d470
 // Address: 0040d470
