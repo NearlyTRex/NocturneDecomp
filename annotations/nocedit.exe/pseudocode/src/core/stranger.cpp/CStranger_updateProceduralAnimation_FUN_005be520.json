@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 1541,
-    "complexity_score": 546,
+    "complexity_score": 531,
     "cross_reference_count": 2,
     "function_call_count": 24,
     "global_count": 33,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 516,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "warning_inlined_function",
-      "wrong_global"
+      "warning_inlined_function"
     ],
     "total_lines": 2057
   },
@@ -1211,14 +1210,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Global g_TriListTextureNames used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
-      "line": 448,
-      "match": "g_TriListTextureNames",
-      "severity": "moderate",
-      "text": "if (&local_res0 != g_TriListTextureNames[0] + 0x24) {",
-      "type": "wrong_global"
     }
   ]
 }

@@ -19,14 +19,14 @@ int __cdecl sound_mp3_cpp_calculateMainDataSize_FUN_00533c50(SMpegFrame frame_in
                            g_MpegSampleRateTable[(frame_info.header)->mpeg_version]
                            [(frame_info.header)->sampling_rate_index]));
   if ((frame_info.header)->mpeg_version == 0) {
-    if (frame_info.samples_per_granule == 1) {
+    if (frame_info.channel_count == 1) {
       local_10 = iVar1 / 2 + -9;
     }
     else {
       local_10 = iVar1 / 2 + -0x11;
     }
   }
-  else if (frame_info.samples_per_granule == 1) {
+  else if (frame_info.channel_count == 1) {
     local_10 = iVar1 + -0x11;
   }
   else {

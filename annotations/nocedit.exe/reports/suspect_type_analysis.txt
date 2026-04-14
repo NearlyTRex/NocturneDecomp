@@ -4,15 +4,15 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    4364 ( 49.6%)
+  pointer_cast                    4364 ( 49.9%)
   unknown_field                    859 (  9.8%)
   special_crt_function             439 (  5.0%)
   stack_param                      351 (  4.0%)
-  unnamed_param                    329 (  3.7%)
-  fpu_register_input               311 (  3.5%)
-  nonstandard_int                  267 (  3.0%)
+  unnamed_param                    329 (  3.8%)
+  fpu_register_input               311 (  3.6%)
+  nonstandard_int                  267 (  3.1%)
   warning_inlined_function         264 (  3.0%)
-  stack_ref                        250 (  2.8%)
+  stack_ref                        250 (  2.9%)
   unresolved_funcptr               141 (  1.6%)
   warning_type_propagation         133 (  1.5%)
   param_count_too_few              120 (  1.4%)
@@ -21,7 +21,6 @@ SUSPECT TYPE COUNTS
   stack_alignment_array             95 (  1.1%)
   warning_unreachable               86 (  1.0%)
   negative_offset                   86 (  1.0%)
-  wrong_global                      81 (  0.9%)
   register_param                    69 (  0.8%)
   param_count_too_many              41 (  0.5%)
   unknown_type                      40 (  0.5%)
@@ -30,7 +29,7 @@ SUSPECT TYPE COUNTS
   extra_output                      29 (  0.3%)
   format_string_mismatch            24 (  0.3%)
   undefined_ram                     24 (  0.3%)
-  byvalue_struct_passing            22 (  0.2%)
+  byvalue_struct_passing            22 (  0.3%)
   undefined_type                    15 (  0.2%)
   special_math_intrinsic            15 (  0.2%)
   warning_jumptable                  8 (  0.1%)
@@ -39,7 +38,9 @@ SUSPECT TYPE COUNTS
   undefined_data                     7 (  0.1%)
   displaced_global_access            7 (  0.1%)
   fnstsw_flag_artifact               7 (  0.1%)
+  wrong_global                       7 (  0.1%)
   unknown_param                      6 (  0.1%)
+  suspicious_cast                    5 (  0.1%)
   warning_deadcode_restart           5 (  0.1%)
   warning_noreturn                   4 (  0.0%)
   warning_max_restarts               4 (  0.0%)
@@ -922,90 +923,6 @@ Example functions:
     ((_istream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);...
 
 ====================================================================================================
-TYPE: wrong_global (81 occurrences)
-====================================================================================================
-
-Unique patterns:
-    12x  g_SfxOptions
-     9x  g_KeyboardState
-     4x  g_ColorCubeLookup
-     4x  g_CDemonCameraInstance
-     3x  g_GetLastErrorFunc
-     2x  g_PositiveInfinity
-     2x  g_QuadVertex3
-     2x  g_RenderVertexBuffer
-     2x  g_CommandTemplates
-     2x  g_DeformableModelPool
-     1x  g_MMXSupported
-     1x  DAT_80000010
-     1x  g_QuadVertex2
-     1x  g_VersionControlSession
-     1x  g_SoundDevices
-     1x  g_RecordingDevices
-     1x  g_CSoundDevicePtr
-     1x  g_SoundBusyFlag
-     1x  g_RenderStateFlags
-     1x  g_CKeyFramedModelInstanceInstance
-
-Example functions:
-  cockpit_ckptutil.c_getColorConversionFunction_FUN_00431760
-    if (g_MMXSupported != 0) {...
-  crt_io.c_chdir_FUN_006012a0
-    windows_error = (*g_GetLastErrorFunc)();...
-  crt_watcom.c__mkdir_FUN_00600e10
-    windows_error = (*g_GetLastErrorFunc)();...
-  crt_time.c_determine_dst_status_FUN_006079b4
-    iVar1 = *(int *)((int)&g_PositiveInfinity + iVar9 * 2 + 6);...
-  crt_unknown.c_FUN_00607858
-    iVar2 = *(int *)((int)&g_PositiveInfinity + *(int *)(param_1 + 0x10) * 2 + 6);...
-  crt_stdio.c_remove_FUN_00606600
-    windows_error = (*g_GetLastErrorFunc)();...
-  engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
-    point->screen_x = (int)&DAT_80000010;...
-  engine_3d.c_clipAndDrawLine2D_FUN_00407d70
-    g_QuadVertex2.projected_vertex.transformed_x = vertex1.projected_vertex.transfor...
-  engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470
-    g_RenderVertexBuffer[iVar3].projected_vertex.transformed_x;...
-  engine_3d.c_clipAndDrawLine3D_FUN_00408070
-    g_QuadVertex3.projected_vertex.transformed_x = vertex2.projected_vertex.transfor...
-  engine_fileio.cpp_logOffVersionControl_FUN_004b2830
-    if (g_VersionControlSession.session_handle == (HANDLE)0x0) {...
-  sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0
-    g_SfxOptions[g_SfxLastSlot].trigger_time = trigger_time;...
-  sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940
-    g_SfxOptions[g_SfxLastSlot].position_format = 1;...
-  sound_sndmain.cpp_clearNextSfxFlagBits_FUN_005a8bb0
-    g_SfxOptions[g_SfxLastSlot].flags = g_SfxOptions[g_SfxLastSlot].flags & ~flag_ma...
-  sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40
-    g_SfxOptions[g_SfxLastSlot].delay_remaining = delay_seconds;...
-  sound_sndmain.cpp_initializeSoundDevice_FUN_005ab5b0
-    if (g_SoundDevices[g_CurrentSoundDevice].api_type == 0) {...
-  sound_sndmain.cpp_setNextSfxVolume_FUN_005a8a60
-    g_SfxOptions[g_SfxLastSlot].current_volume = volume;...
-  sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_005a8a80
-    g_SfxOptions[g_SfxLastSlot].base_frequency = base_frequency;...
-  sound_sndmain.cpp_setNextSfxFlagBits_FUN_005a8b90
-    g_SfxOptions[g_SfxLastSlot].flags = g_SfxOptions[g_SfxLastSlot].flags | flag_mas...
-  sound_sndmain.cpp_setNextSfxTrackedVelocity2_FUN_005a8a30
-    g_SfxOptions[g_SfxLastSlot].velocity_format = 2;...
-  sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0
-    g_SfxOptions[g_SfxLastSlot].position.x = pos_x;...
-  sound_sndmain.cpp_initializeRecordingDevice_FUN_005ab8d0
-    if (g_RecordingDevices[g_CurrentRecordingDevice].api_type == 0) {...
-  sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_005a8a00
-    g_SfxOptions[g_SfxLastSlot].velocity_format = 1;...
-  sound_sndmain.cpp_setNextSfxTrackedDoublePosition_FUN_005a8970
-    g_SfxOptions[g_SfxLastSlot].position_format = 2;...
-  sound_sndmain.cpp_setNextSfxFlags_FUN_005a8b70
-    g_SfxOptions[g_SfxLastSlot].flags = flags;...
-  sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0
-    if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {...
-  core_dpart.cpp_setupTriangleEdgeInterpolation_FUN_00482fb0
-    if ((g_RenderStateFlags.bytes[1] & 2) != 0) {...
-  core_baron.cpp_staticInit_FUN_00412b20
-    core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&g_CKeyFramedModelInst...
-
-====================================================================================================
 TYPE: register_param (69 occurrences)
 ====================================================================================================
 
@@ -1651,6 +1568,32 @@ Example functions:
     CONCAT22((short)uVar7 * (short)(uVar38 >> 0x10)...
 
 ====================================================================================================
+TYPE: wrong_global (7 occurrences)
+====================================================================================================
+
+Unique patterns:
+     2x  g_PathfindingVisitedMinus1
+     1x  g_DynamicLightCount
+     1x  g_CoronaGlobeCount
+     1x  g_SetDisplayListCount
+     1x  g_GlobeLightCount
+     1x  g_UseMultimediaTimer
+
+Example functions:
+  core_set.cpp_CDemonSet_addDynamicLight_FUN_0056d090
+    (&g_DynamicLightCount)[g_DynamicLightCount] = (int)light;...
+  core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110
+    (&g_CoronaGlobeCount)[g_CoronaGlobeCount + 1] = (int)globe;...
+  core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0
+    (&g_SetDisplayListCount)[iVar1 * 2] =...
+  core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0
+    (&g_GlobeLightCount)[g_GlobeLightCount] = iVar7;...
+  core_path.cpp_CPathMap_searchGrid_FUN_005487a0
+    if (((0 < grid_x) && ((&g_PathfindingVisitedMinus1)[grid_z * 100 + grid_x] == '\...
+  wincore_winrun.cpp_enqueueInput_FUN_005f2f30
+    (&g_UseMultimediaTimer)[g_InputWriteIndex] = input_value;...
+
+====================================================================================================
 TYPE: unknown_param (6 occurrences)
 ====================================================================================================
 
@@ -1660,6 +1603,23 @@ Unique patterns:
 Example functions:
   crt_string.c_strtok_FUN_005fff50
     str = *(char **)pTVar2->unknown_10;...
+
+====================================================================================================
+TYPE: suspicious_cast (5 occurrences)
+====================================================================================================
+
+Unique patterns:
+     2x  g_DaysInMonth_Normal
+     2x  g_DaysInMonth_Leap
+     1x  g_LookupTableStruct
+
+Example functions:
+  crt_errno.c_convertWindowsErrorToErrno_FUN_00608390
+    error_code = *(int *)(&g_LookupTableStruct + windows_error) >> 0x18;...
+  crt_time.c_determine_dst_status_FUN_006079b4
+    iVar8 = *(int *)(&g_DaysInMonth_Normal + iVar9);...
+  crt_unknown.c_FUN_00607858
+    iVar5 = *(int *)(&g_DaysInMonth_Normal + *(int *)(param_1 + 0x10));...
 
 ====================================================================================================
 TYPE: warning_deadcode_restart (5 occurrences)

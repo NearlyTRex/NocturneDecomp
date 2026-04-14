@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 320,
-    "complexity_score": 190,
+    "complexity_score": 200,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 19,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 125,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "special_crt_function",
-      "wrong_global"
+      "suspicious_cast"
     ],
     "total_lines": 445
   },
@@ -301,12 +301,20 @@
       "type": "special_crt_function"
     },
     {
-      "description": "Global g_PositiveInfinity used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
-      "line": 35,
-      "match": "g_PositiveInfinity",
+      "description": "Cast-and-add on &g_DaysInMonth_Normal \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: SHORT_00665f50 (at 0x00665f50, +24 bytes).",
+      "line": 34,
+      "match": "g_DaysInMonth_Normal",
       "severity": "moderate",
-      "text": "iVar1 = *(int *)((int)&g_PositiveInfinity + iVar9 * 2 + 6);",
-      "type": "wrong_global"
+      "text": "iVar8 = *(int *)(&g_DaysInMonth_Normal + iVar9);",
+      "type": "suspicious_cast"
+    },
+    {
+      "description": "Cast-and-add on &g_DaysInMonth_Leap \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_StreambufVTable (at 0x00665f70, +30 bytes).",
+      "line": 38,
+      "match": "g_DaysInMonth_Leap",
+      "severity": "moderate",
+      "text": "iVar8 = *(int *)(&g_DaysInMonth_Leap + iVar9);",
+      "type": "suspicious_cast"
     }
   ]
 }

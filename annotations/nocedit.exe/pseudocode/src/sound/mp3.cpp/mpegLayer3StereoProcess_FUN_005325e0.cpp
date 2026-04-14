@@ -96,7 +96,7 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
   short sVar2;
   ushort uVar3;
   
-  local_f0 = frame->samples_per_granule;
+  local_f0 = frame->channel_count;
   if ((frame->header->channel_mode == 1) && ((frame->header->mode_extension & 2) != 0)) {
     local_ec = 1;
   }
@@ -126,7 +126,7 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
     iVar5 = iVar5;
   } while (iVar5 != 0x480);
   if ((local_f0 == 2) && (local_ac != 0)) {
-    if ((frame_info->samples_per_granule == 0) || (frame_info->js_bound != 2)) {
+    if ((frame_info->channel_count == 0) || (frame_info->js_bound != 2)) {
       iVar12 = 0x1f;
       iVar10 = 0x11;
       iVar11 = 0;

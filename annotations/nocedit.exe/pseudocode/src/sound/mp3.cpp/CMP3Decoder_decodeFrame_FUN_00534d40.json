@@ -2,100 +2,16 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "format_error",
-        "column": 112,
-        "line": 152,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "category": "incompatible_types",
+        "column": 17,
+        "line": 348,
+        "message": "no matching function for call to 'sound_mp3_cpp_antiAliasingButterfly_FUN_005334b0'"
       },
       {
-        "category": "format_error",
-        "column": 85,
-        "line": 165,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 295,
-        "message": "use of undeclared identifier 'stack0xffff9f14'"
-      },
-      {
-        "category": "type_error",
-        "column": 39,
-        "line": 310,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 39,
-        "line": 311,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 39,
-        "line": 312,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 28,
-        "line": 313,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 28,
-        "line": 314,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 60,
-        "line": 329,
-        "message": "use of undeclared identifier '_local_4d8'; did you mean 'local_4d8'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 340,
-        "message": "use of undeclared identifier 'stack0xffff9f14'"
-      },
-      {
-        "category": "type_error",
-        "column": 42,
-        "line": 355,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 42,
-        "line": 356,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 42,
-        "line": 357,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 31,
-        "line": 358,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 31,
-        "line": 359,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "format_error",
-        "column": 95,
-        "line": 366,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "category": "incompatible_types",
+        "column": 19,
+        "line": 354,
+        "message": "no matching function for call to 'sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0'"
       }
     ],
     "success": false,
@@ -965,6 +881,46 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CMP3Decoder_decodeFrame_FUN_00534d40.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 5,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 22,
+          "line": 117,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 28,
+          "line": 117,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-assignment-in-if-condition",
+          "column": 55,
+          "line": 305,
+          "message": "an assignment within an 'if' condition is bug-prone"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 25,
+          "line": 428,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        },
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 31,
+          "line": 428,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Decompiler inlined a function call",
@@ -1043,7 +999,7 @@
       "line": 303,
       "match": "._0_1_",
       "severity": "mild",
-      "text": "frame_info.samples_per_granule._0_1_ = uVar17;",
+      "text": "frame_info.channel_count._0_1_ = uVar17;",
       "type": "unknown_field"
     },
     {
@@ -1051,7 +1007,7 @@
       "line": 304,
       "match": "._1_1_",
       "severity": "mild",
-      "text": "frame_info.samples_per_granule._1_1_ = uVar18;",
+      "text": "frame_info.channel_count._1_1_ = uVar18;",
       "type": "unknown_field"
     },
     {
@@ -1059,7 +1015,7 @@
       "line": 305,
       "match": "._2_2_",
       "severity": "mild",
-      "text": "frame_info.samples_per_granule._2_2_ = uVar19;",
+      "text": "frame_info.channel_count._2_2_ = uVar19;",
       "type": "unknown_field"
     },
     {
@@ -1099,7 +1055,7 @@
       "line": 348,
       "match": "._0_1_",
       "severity": "mild",
-      "text": "frame_info_00.samples_per_granule._0_1_ = uVar17;",
+      "text": "frame_info_00.channel_count._0_1_ = uVar17;",
       "type": "unknown_field"
     },
     {
@@ -1107,7 +1063,7 @@
       "line": 349,
       "match": "._1_1_",
       "severity": "mild",
-      "text": "frame_info_00.samples_per_granule._1_1_ = uVar18;",
+      "text": "frame_info_00.channel_count._1_1_ = uVar18;",
       "type": "unknown_field"
     },
     {
@@ -1115,7 +1071,7 @@
       "line": 350,
       "match": "._2_2_",
       "severity": "mild",
-      "text": "frame_info_00.samples_per_granule._2_2_ = uVar19;",
+      "text": "frame_info_00.channel_count._2_2_ = uVar19;",
       "type": "unknown_field"
     },
     {

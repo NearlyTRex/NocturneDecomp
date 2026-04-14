@@ -16,8 +16,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0(CMP3Decoder *t
   float local_94 [18];
   float local_4c [18];
   
-  if (((frame_info->samples_per_granule == 0) || (frame_info->sblimit == 0)) || (1 < subband_index))
-  {
+  if (((frame_info->channel_count == 0) || (frame_info->sblimit == 0)) || (1 < subband_index)) {
     iVar1 = frame_info->js_bound;
   }
   else {

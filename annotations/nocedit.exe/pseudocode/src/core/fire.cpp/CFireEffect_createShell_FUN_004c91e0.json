@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 26,
+    "complexity_score": 11,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 11,
-    "suspect_count": 1,
-    "suspect_types": [
-      "wrong_global"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 51
   },
   "cross_references": [
@@ -197,14 +195,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Global g_ShellPool used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
-      "line": 6,
-      "match": "g_ShellPool",
-      "severity": "moderate",
-      "text": "(g_ShellPool + g_ShellAllocIndex,position,euler_angles,velocity,model_ptr);",
-      "type": "wrong_global"
-    }
-  ]
+  "suspects": []
 }

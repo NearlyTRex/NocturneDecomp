@@ -6,17 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 122,
+    "complexity_score": 97,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 57,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
-      "stack_alignment_array",
-      "wrong_global"
+      "stack_alignment_array"
     ],
     "total_lines": 74
   },
@@ -188,22 +187,6 @@
       "severity": "mild",
       "text": "*(int *)((int)&CStack_24 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Global g_CScriptPtr used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
-      "line": 25,
-      "match": "g_CScriptPtr",
-      "severity": "moderate",
-      "text": "this_ptr_00 = g_CScriptPtr->focus_actor;",
-      "type": "wrong_global"
-    },
-    {
-      "description": "Global g_CDemonCameraInstance used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
-      "line": 40,
-      "match": "g_CDemonCameraInstance",
-      "severity": "moderate",
-      "text": "(&g_CDemonCameraInstance,&CStack_54,&CStack_24);",
-      "type": "wrong_global"
     }
   ]
 }

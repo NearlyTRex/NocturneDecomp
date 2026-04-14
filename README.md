@@ -83,8 +83,9 @@ cmake --preset exe-linux
 cmake --build --preset exe-linux
 ```
 
-Per-function source selection priority:
-`.keep.{cpp,c}` > `.mmx.{cpp,c}` / `.byval.{cpp,c}` > raw `.cpp`/`.c`.
+Per-function source selection priority: `.keep.{cpp,c}` > raw `.cpp`/`.c`.
+`.mmx.{cpp,c}` and `.byval.{cpp,c}` variants are generated as references but
+are never compiled — promote them to `.keep.*` to fix a function.
 The decompiled `entry/` and `crt/` directories are excluded from the exe build —
 `src/main/main.cpp` provides the entry point and linking uses the system
 C/C++ runtime bridged through `shims/`.

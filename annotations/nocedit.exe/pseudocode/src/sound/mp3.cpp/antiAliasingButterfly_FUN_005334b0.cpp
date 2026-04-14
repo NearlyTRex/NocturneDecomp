@@ -68,9 +68,9 @@ void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_005334b0(float *input_sampl
     iVar11 = iVar11 + 1;
     local_24 = local_24 + 0x12;
   } while (iVar11 < 0x20);
-  if (((frame_info->samples_per_granule == 0) || (frame_info->js_bound != 2)) ||
+  if (((frame_info->channel_count == 0) || (frame_info->js_bound != 2)) ||
      (frame_info->sblimit != 0)) {
-    if (((frame_info->samples_per_granule == 0) || (frame_info->sblimit == 0)) ||
+    if (((frame_info->channel_count == 0) || (frame_info->sblimit == 0)) ||
        (frame_info->js_bound != 2)) {
       local_14 = 0x1f;
     }

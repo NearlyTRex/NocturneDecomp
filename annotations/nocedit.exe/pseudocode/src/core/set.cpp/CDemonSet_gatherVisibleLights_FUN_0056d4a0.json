@@ -6,16 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 562,
-    "complexity_score": 401,
+    "complexity_score": 416,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 34,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 261,
-    "suspect_count": 13,
+    "suspect_count": 14,
     "suspect_types": [
       "displaced_global_access",
-      "pointer_cast"
+      "pointer_cast",
+      "wrong_global"
     ],
     "total_lines": 823
   },
@@ -641,6 +642,14 @@
       "severity": "moderate",
       "text": "// 0056d820: MOV dword ptr [EDX*0x4 + 0x32c17ac],EAX  ; g_GlobeLights[1]",
       "type": "displaced_global_access"
+    },
+    {
+      "description": "Scalar global g_GlobeLightCount accessed via (&g_GlobeLightCount)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_GlobeLights (at 0x032c17b0, +4 bytes).",
+      "line": 191,
+      "match": "g_GlobeLightCount",
+      "severity": "moderate",
+      "text": "(&g_GlobeLightCount)[g_GlobeLightCount] = iVar7;",
+      "type": "wrong_global"
     }
   ]
 }

@@ -6,15 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 28,
+    "complexity_score": 43,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 13,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "displaced_global_access"
+      "displaced_global_access",
+      "wrong_global"
     ],
     "total_lines": 38
   },
@@ -150,6 +151,14 @@
       "severity": "moderate",
       "text": "// 005f2f42: MOV dword ptr [EDX*0x4 + 0x3f96bc4],EBX  ; g_UseMultimediaTimer",
       "type": "displaced_global_access"
+    },
+    {
+      "description": "Scalar global g_UseMultimediaTimer accessed via (&g_UseMultimediaTimer)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_InputBuffer (at 0x03f96bc8, +4 bytes).",
+      "line": 6,
+      "match": "g_UseMultimediaTimer",
+      "severity": "moderate",
+      "text": "(&g_UseMultimediaTimer)[g_InputWriteIndex] = input_value;",
+      "type": "wrong_global"
     }
   ]
 }

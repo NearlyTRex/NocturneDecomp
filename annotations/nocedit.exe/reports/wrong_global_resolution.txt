@@ -37,8 +37,8 @@ SUMMARY
     g_CWeaponClassInfo                                 1 functions
     g_SourcePaletteData                                1 functions
 
-  .keep files with issues: 7 (these need manual review)
-  Raw .cpp files with issues: 59
+  .keep files with issues: 10 (these need manual review)
+  Raw .cpp files with issues: 56
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -97,11 +97,35 @@ core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0  [.keep]  (1 s
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+engine_3d.c_drawLineStrip2D_FUN_00404570  [.keep]  (1 suspicious globals)
+  File: engine/3d.c
+
+  g_RenderVertexBuffer
+    Used at lines: 17, 18
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+engine_3d.c_drawLineStrip3D_FUN_00404600  [.keep]  (1 suspicious globals)
+  File: engine/3d.c
+
+  g_RenderVertexBuffer
+    Used at lines: 17, 18
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 shape_design.c_mouseWheelPolygonReducer_FUN_004648e0  [.keep]  (1 suspicious globals)
   File: shape/design.c
 
   g_KeyboardState
     Used at lines: 38, 38, 39, 129, 130
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_renderPolygonWireframe_FUN_0045d300  [.keep]  (1 suspicious globals)
+  File: shape/design.c
+
+  g_RenderVertexBuffer
+    Used at lines: 22, 23, 25, 26
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -541,22 +565,6 @@ engine_3d.c_clipAndDrawLine3D_FUN_00408070  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-engine_3d.c_drawLineStrip2D_FUN_00404570  [.cpp]  (1 suspicious globals)
-  File: engine/3d.c
-
-  g_RenderVertexBuffer
-    Used at lines: 55, 57, 59, 60, 61, ...
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-engine_3d.c_drawLineStrip3D_FUN_00404600  [.cpp]  (1 suspicious globals)
-  File: engine/3d.c
-
-  g_RenderVertexBuffer
-    Used at lines: 55, 57, 59, 60, 61, ...
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470  [.cpp]  (1 suspicious globals)
   File: engine/3d.c
 
@@ -610,14 +618,6 @@ shape_design.c_renderPolygonWireframeAntialiased_FUN_0045d470  [.cpp]  (1 suspic
 
   g_RenderVertexBuffer
     Used at lines: 25, 26, 27, 28, 29, ...
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_renderPolygonWireframe_FUN_0045d300  [.cpp]  (1 suspicious globals)
-  File: shape/design.c
-
-  g_RenderVertexBuffer
-    Used at lines: 63, 64, 65, 66, 67, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

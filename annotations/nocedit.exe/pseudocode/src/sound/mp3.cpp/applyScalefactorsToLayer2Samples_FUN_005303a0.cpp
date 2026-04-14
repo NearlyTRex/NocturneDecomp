@@ -17,7 +17,7 @@ void __cdecl sound_mp3_cpp_applyScalefactorsToLayer2Samples_FUN_005303a0(float *
   int iVar6;
   
   iVar6 = 0;
-  iVar1 = frame_info->samples_per_granule;
+  iVar1 = frame_info->channel_count;
   do {
     iVar5 = 0;
     if (0 < iVar1) {

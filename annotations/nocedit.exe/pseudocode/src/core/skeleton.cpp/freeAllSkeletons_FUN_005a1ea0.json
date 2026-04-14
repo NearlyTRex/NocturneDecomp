@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 27,
+    "complexity_score": 12,
     "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 12,
-    "suspect_count": 1,
-    "suspect_types": [
-      "wrong_global"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 33
   },
   "cross_references": [
@@ -197,14 +195,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Global g_CSlewInstance used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
-      "line": 12,
-      "match": "g_CSlewInstance",
-      "severity": "moderate",
-      "text": "} while (this_ptr != (CSkeleton *)&g_CSlewInstance);",
-      "type": "wrong_global"
-    }
-  ]
+  "suspects": []
 }

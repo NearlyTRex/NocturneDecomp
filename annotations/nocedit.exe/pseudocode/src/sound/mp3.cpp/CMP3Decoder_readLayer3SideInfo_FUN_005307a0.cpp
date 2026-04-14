@@ -38,7 +38,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3SideInfo_FUN_005307a0(CMP3Decod
   int iVar2;
   int iVar11;
   
-  iVar1 = frame->samples_per_granule;
+  iVar1 = frame->channel_count;
   if (frame->header->mpeg_version == 0) {
     uVar6 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(bit_stream,8);
     side_info_array->main_data_begin = uVar6;

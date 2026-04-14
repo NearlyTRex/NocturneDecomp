@@ -1,16 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 9,
-    "complexity_score": 43,
+    "complexity_score": 28,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 13,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "special_crt_function",
-      "wrong_global"
+      "special_crt_function"
     ],
     "total_lines": 22
   },
@@ -197,14 +196,6 @@
       "match": "crt_",
       "text": "CRT function (runtime support) at 006012a0",
       "type": "special_crt_function"
-    },
-    {
-      "description": "Global g_GetLastErrorFunc used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
-      "line": 13,
-      "match": "g_GetLastErrorFunc",
-      "severity": "moderate",
-      "text": "windows_error = (*g_GetLastErrorFunc)();",
-      "type": "wrong_global"
     }
   ]
 }

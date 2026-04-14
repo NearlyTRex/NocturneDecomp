@@ -307,9 +307,9 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
         frame_info.header = (SMpegFrameHeader *)iVar9;
         frame_info.allocation_table = (SBitAllocationTable *)iVar8;
         frame_info.table_index = iVar16;
-        frame_info.samples_per_granule._0_1_ = uVar17;
-        frame_info.samples_per_granule._1_1_ = uVar18;
-        frame_info.samples_per_granule._2_2_ = uVar19;
+        frame_info.channel_count._0_1_ = uVar17;
+        frame_info.channel_count._1_1_ = uVar18;
+        frame_info.channel_count._2_2_ = uVar19;
         frame_info.js_bound._0_2_ = uVar20;
         frame_info.js_bound._2_2_ = uVar21;
         frame_info.sblimit = iVar22;
@@ -352,9 +352,9 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
         frame_info_00.header = (SMpegFrameHeader *)iVar9;
         frame_info_00.allocation_table = (SBitAllocationTable *)iVar8;
         frame_info_00.table_index = iVar16;
-        frame_info_00.samples_per_granule._0_1_ = uVar17;
-        frame_info_00.samples_per_granule._1_1_ = uVar18;
-        frame_info_00.samples_per_granule._2_2_ = uVar19;
+        frame_info_00.channel_count._0_1_ = uVar17;
+        frame_info_00.channel_count._1_1_ = uVar18;
+        frame_info_00.channel_count._2_2_ = uVar19;
         frame_info_00.js_bound._0_2_ = uVar20;
         frame_info_00.js_bound._2_2_ = uVar21;
         frame_info_00.sblimit = iVar22;

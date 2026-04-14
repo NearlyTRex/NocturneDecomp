@@ -72,7 +72,8 @@ from ghidra_annotations.annotations.pseudocode.suspects import (
     identify_format_string_mismatch, identify_stack_align_anchor,
     identify_direct_call_esp_uncertainty, identify_lea_esp_stack_addr,
     identify_special_functions, identify_displaced_global_access,
-    identify_wrong_global_suspects, build_global_interval_map
+    identify_wrong_global_suspects, identify_suspicious_cast_suspects,
+    build_global_interval_map
 )
 from ghidra_annotations.annotations.pseudocode.stack_patterns import (
     summarize_stack_patterns
@@ -518,9 +519,13 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map,
     displaced_suspects = identify_displaced_global_access(result.assembly_code, global_interval_map)
     suspects.extend(displaced_suspects)
 
-    # Identify wrong global resolution (Watcom 1-based indexing base shift)
-    wrong_global_suspects = identify_wrong_global_suspects(decompiled_code, result.func_globals)
-    suspects.extend(wrong_global_suspects)
+    # Identify Watcom base-shift resolutions: (&g_Scalar)[idx] and
+    # *(T *)(&g_Scalar +/- expr) — both indicate Ghidra resolved the access
+    # base to a scalar that precedes the real array in memory.
+    suspects.extend(identify_wrong_global_suspects(
+        decompiled_code, result.func_globals, global_interval_map))
+    suspects.extend(identify_suspicious_cast_suspects(
+        decompiled_code, global_interval_map))
 
     # Filter out suspect types that are no longer useful
     suspects = [s for s in suspects if s.get('type') not in OMIT_SUSPECT_TYPES]

@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 39,
+    "complexity_score": 54,
     "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 24,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "special_crt_function"
+      "special_crt_function",
+      "suspicious_cast"
     ],
     "total_lines": 75
   },
@@ -201,6 +202,14 @@
       "match": "crt_",
       "text": "CRT function (runtime support) at 00608390",
       "type": "special_crt_function"
+    },
+    {
+      "description": "Cast-and-add on &g_LookupTableStruct \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory.",
+      "line": 23,
+      "match": "g_LookupTableStruct",
+      "severity": "moderate",
+      "text": "error_code = *(int *)(&g_LookupTableStruct + windows_error) >> 0x18;",
+      "type": "suspicious_cast"
     }
   ]
 }

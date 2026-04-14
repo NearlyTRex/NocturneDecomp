@@ -6,15 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 38,
+    "complexity_score": 53,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 23,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "displaced_global_access"
+      "displaced_global_access",
+      "wrong_global"
     ],
     "total_lines": 71
   },
@@ -258,6 +259,14 @@
       "severity": "moderate",
       "text": "// 0056d0d3: MOV dword ptr [ESI*0x4 + 0x32776b4],EBX  ; g_DynamicLightCount",
       "type": "displaced_global_access"
+    },
+    {
+      "description": "Scalar global g_DynamicLightCount accessed via (&g_DynamicLightCount)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DynamicLights (at 0x032776b8, +4 bytes).",
+      "line": 23,
+      "match": "g_DynamicLightCount",
+      "severity": "moderate",
+      "text": "(&g_DynamicLightCount)[g_DynamicLightCount] = (int)light;",
+      "type": "wrong_global"
     }
   ]
 }

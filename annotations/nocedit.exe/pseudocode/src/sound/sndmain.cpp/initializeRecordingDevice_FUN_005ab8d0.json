@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 35,
+    "complexity_score": 20,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 20,
-    "suspect_count": 1,
-    "suspect_types": [
-      "wrong_global"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 59
   },
   "cross_references": [],
@@ -118,14 +116,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Global g_RecordingDevices used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
-      "line": 13,
-      "match": "g_RecordingDevices",
-      "severity": "moderate",
-      "text": "if (g_RecordingDevices[g_CurrentRecordingDevice].api_type == 0) {",
-      "type": "wrong_global"
-    }
-  ]
+  "suspects": []
 }

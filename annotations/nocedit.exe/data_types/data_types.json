@@ -4037,7 +4037,7 @@
       "type":"struct"
     },
     {
-      "name":"SMRGLPrimitiveClippedIndex",
+      "name":"SMRGLPrimitivePolyIndex",
       "type":"struct"
     },
     {
@@ -4078,6 +4078,10 @@
     },
     {
       "name":"SMRGLVertex",
+      "type":"struct"
+    },
+    {
+      "name":"SMRGLPrimitivePoly",
       "type":"struct"
     },
     {
@@ -4346,6 +4350,10 @@
     },
     {
       "name":"SMpegFrame",
+      "type":"struct"
+    },
+    {
+      "name":"SMpegFrameDecodeContext",
       "type":"struct"
     },
     {
@@ -40344,7 +40352,7 @@
           "len":56,
           "name":"clip_primitive",
           "offset":232,
-          "type":"SMRGLPrimitiveClippedIndex"
+          "type":"SMRGLPrimitivePolyIndex"
         }
       ],
       "importable":true,
@@ -56895,7 +56903,7 @@
         },
         {
           "len":4,
-          "name":"samples_per_granule",
+          "name":"channel_count",
           "offset":16,
           "type":"int"
         },
@@ -56915,6 +56923,54 @@
       "importable":true,
       "len":28,
       "name":"SMpegFrame",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":28,
+          "name":"frame",
+          "offset":0,
+          "type":"SMpegFrame"
+        },
+        {
+          "len":4,
+          "name":"dead1",
+          "offset":28,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"dead2",
+          "offset":32,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"group_counter",
+          "offset":36,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"channel_count",
+          "offset":40,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"dead3",
+          "offset":44,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":48,
+      "name":"SMpegFrameDecodeContext",
       "pack":false,
       "type":"struct"
     },
@@ -57608,6 +57664,30 @@
           "type":"SMRGLHeaderPrimitive"
         },
         {
+          "len":96,
+          "name":"vertices",
+          "offset":24,
+          "type":"SMRGLVertex[8]"
+        }
+      ],
+      "importable":true,
+      "len":120,
+      "name":"SMRGLPrimitivePoly",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":24,
+          "name":"base",
+          "offset":0,
+          "type":"SMRGLHeaderPrimitive"
+        },
+        {
           "len":32,
           "name":"vertices",
           "offset":24,
@@ -57616,7 +57696,7 @@
       ],
       "importable":true,
       "len":56,
-      "name":"SMRGLPrimitiveClippedIndex",
+      "name":"SMRGLPrimitivePolyIndex",
       "pack":false,
       "type":"struct"
     },

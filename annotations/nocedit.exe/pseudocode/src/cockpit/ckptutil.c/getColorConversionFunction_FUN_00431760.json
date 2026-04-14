@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 8,
-    "complexity_score": 28,
+    "complexity_score": 13,
     "cross_reference_count": 11,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 13,
-    "suspect_count": 1,
-    "suspect_types": [
-      "wrong_global"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 21
   },
   "cross_references": [
@@ -250,14 +248,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Global g_MMXSupported used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
-      "line": 6,
-      "match": "g_MMXSupported",
-      "severity": "moderate",
-      "text": "if (g_MMXSupported != 0) {",
-      "type": "wrong_global"
-    }
-  ]
+  "suspects": []
 }

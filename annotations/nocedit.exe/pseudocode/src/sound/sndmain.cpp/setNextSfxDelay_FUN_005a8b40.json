@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 35,
+    "complexity_score": 20,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 5,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "wrong_global"
+      "param_count_too_few"
     ],
     "total_lines": 16
   },
@@ -165,14 +164,6 @@
       "param_delta": 1,
       "text": "Function declares 1 params but call sites push 2 (1 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "description": "Global g_SfxOptions used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
-      "line": 5,
-      "match": "g_SfxOptions",
-      "severity": "moderate",
-      "text": "g_SfxOptions[g_SfxLastSlot].delay_remaining = delay_seconds;",
-      "type": "wrong_global"
     }
   ]
 }

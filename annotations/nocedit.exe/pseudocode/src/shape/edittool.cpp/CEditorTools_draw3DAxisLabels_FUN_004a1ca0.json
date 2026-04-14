@@ -1,122 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 80,
-        "message": "use of undeclared identifier 'stack0xffffff9c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 97,
-        "message": "use of undeclared identifier 'stack0xffffff6c'"
-      },
-      {
-        "category": "type_error",
-        "column": 12,
-        "line": 135,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 12,
-        "line": 136,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 12,
-        "line": 137,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 12,
-        "line": 138,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 12,
-        "line": 139,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 153,
-        "message": "use of undeclared identifier 'stack0xffffff9c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 170,
-        "message": "use of undeclared identifier 'stack0xffffff6c'"
-      },
-      {
-        "category": "type_error",
-        "column": 15,
-        "line": 208,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 15,
-        "line": 209,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 15,
-        "line": 210,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 15,
-        "line": 211,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 15,
-        "line": 212,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 226,
-        "message": "use of undeclared identifier 'stack0xffffff9c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 20,
-        "line": 243,
-        "message": "use of undeclared identifier 'stack0xffffff6c'"
-      },
-      {
-        "category": "type_error",
-        "column": 15,
-        "line": 281,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 15,
-        "line": 282,
-        "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "type_error",
-        "column": 15,
-        "line": 283,
-        "message": "member reference base type 'int' is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -660,6 +545,22 @@
       }
     ],
     "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CEditorTools_draw3DAxisLabels_FUN_004a1ca0.keep.cpp",
+    "clang_tidy_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_name": "bugprone-incorrect-roundings",
+          "column": 20,
+          "line": 27,
+          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

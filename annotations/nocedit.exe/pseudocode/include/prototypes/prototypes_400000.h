@@ -156,7 +156,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_setRelativeCoord_FUN_00404450(SMRGLHea
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureNormalized_FUN_004044a0(SMRGLHeaderPrimitive *primitive);
 void __cdecl engine_3d_c_setActiveRenderColor_FUN_00404540(void);
 SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip2D_FUN_00404570(SLineStrip *line_strip);
-void __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip);
+SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip);
 SMRGLHeaderExtended * __cdecl engine_3d_c_oldFunction7_FUN_00404690(SMRGLHeaderExtended *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrimitivePlaneMaskedComplex_FUN_004046c0(SMRGLHeaderPrimitive *primitive);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrimitiveAdaptivePlaneMasked_FUN_00404840(SMRGLHeaderPrimitive *primitive);

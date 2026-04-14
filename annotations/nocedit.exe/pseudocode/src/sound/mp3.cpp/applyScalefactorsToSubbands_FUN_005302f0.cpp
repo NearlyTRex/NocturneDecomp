@@ -17,7 +17,7 @@ void __cdecl sound_mp3_cpp_applyScalefactorsToSubbands_FUN_005302f0(float *spect
   int iVar3;
   int iVar2;
   
-  iVar1 = frame_info->samples_per_granule;
+  iVar1 = frame_info->channel_count;
   iVar2 = frame_info->sblimit;
   if (0 < iVar2) {
     iVar7 = 0;

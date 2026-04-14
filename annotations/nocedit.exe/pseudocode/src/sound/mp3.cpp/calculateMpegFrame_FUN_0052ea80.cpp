@@ -23,13 +23,13 @@ void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_0052ea80(SMpegFrame *frame)
   pSVar1 = frame->header;
   iVar1 = pSVar1->channel_mode;
   frame->channel_mode = iVar1;
-  frame->samples_per_granule = (iVar1 != 3) + 1;
+  frame->channel_count = (iVar1 != 3) + 1;
   if (pSVar1->layer == 2) {
     iVar3 = frame->sblimit;
     pSVar3 = frame->header;
     iVar4 = pSVar3->mpeg_version;
     iVar5 = g_MpegBitrateTable[iVar4 + -1][pSVar3->layer + 2][pSVar3->bitrate_index] /
-            frame->samples_per_granule;
+            frame->channel_count;
     iVar1 = (int)ROUND(ROUND(g_MpegSampleRateTable[iVar4][pSVar3->sampling_rate_index]));
     if (iVar4 == 1) {
       if (((iVar1 == 0x30) && (0x37 < iVar5)) || ((0x37 < iVar5 && (iVar5 < 0x51)))) {

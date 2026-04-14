@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 267
-  Total diagnostics: 1573
+  Functions with findings: 276
+  Total diagnostics: 1670
   Functions flagged by multiple tools: 69
-  .keep.cpp files: 267, raw .cpp files: 0
+  .keep.cpp files: 276, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -410,6 +410,67 @@ core_zombie.cpp_CZombie_process_FUN_005f9470  [.keep] [Clang-Tidy (quick)]
   Line 1032: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
 
 ----------------------------------------------------------------------------------------------------
+core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170  [.keep] [Clang-Tidy (quick)]
+  File: core/setedit.cpp  (27 diagnostics)
+
+  Line  232: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  240: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  241: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  242: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  246: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  247: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  248: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  252: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  253: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  254: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  258: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  259: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  260: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  266: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  267: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  268: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  272: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  273: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  274: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  278: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  279: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  280: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  284: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  285: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  286: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  558: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  559: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_setedit.cpp_drawCameraFrustum_FUN_00582930  [.keep] [Clang-Tidy (quick)]
+  File: core/setedit.cpp  (24 diagnostics)
+
+  Line   23: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   24: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   25: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   28: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   29: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   30: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   33: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   34: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   35: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   38: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   39: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   40: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   43: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   44: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   45: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   48: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   49: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   50: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   53: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   54: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   55: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   58: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   59: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   60: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+----------------------------------------------------------------------------------------------------
 shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
   File: shape/meshlod.cpp  (24 diagnostics)
 
@@ -671,6 +732,27 @@ core_inv.cpp_getItemModel_FUN_004fcda0  [.keep] [Clang-Tidy (quick)]
   Line   33: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
   Line   34: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
   Line   35: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+
+----------------------------------------------------------------------------------------------------
+core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10  [.keep] [Clang-Tidy (quick)]
+  File: core/stairs.cpp  (16 diagnostics)
+
+  Line   51: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   52: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   53: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   56: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   59: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   60: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   63: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  136: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  137: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  138: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  142: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  143: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  144: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  148: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  149: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  150: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
 
 ----------------------------------------------------------------------------------------------------
 shape_design.c_cramTextureList_FUN_0046bb80  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
@@ -1144,6 +1226,19 @@ core_gabriela.cpp_CGabriella_process_FUN_004d2ea0  [.keep] [Clang-Tidy (quick)]
   Line  615: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
 
 ----------------------------------------------------------------------------------------------------
+core_ladder.cpp_CLadder_renderOpaque_FUN_00502620  [.keep] [Clang-Tidy (quick)]
+  File: core/ladder.cpp  (8 diagnostics)
+
+  Line   33: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   34: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   42: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   43: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   44: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   47: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   48: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   49: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+----------------------------------------------------------------------------------------------------
 core_script.cpp_editParameterValue_FUN_00562920  [.keep] [Clang-Tidy (quick), Cppcheck (quick)]
   File: core/script.cpp  (8 diagnostics)
 
@@ -1583,6 +1678,28 @@ shape_design.c_loadModelBinary_FUN_00458170  [.keep] [Cppcheck (quick)]
   Line  159: [uninitvar] Uninitialized variable: local_44
 
 ----------------------------------------------------------------------------------------------------
+shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050  [.keep] [Clang-Tidy (quick)]
+  File: shape/edittool.cpp  (6 diagnostics)
+
+  Line   35: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   36: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   37: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   39: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   40: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   41: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+----------------------------------------------------------------------------------------------------
+shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40  [.keep] [Clang-Tidy (quick)]
+  File: shape/edittool.cpp  (6 diagnostics)
+
+  Line   15: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   16: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   17: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   19: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   20: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   21: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_parseWavFile_FUN_005a3fe0  [.keep] [Cppcheck (quick)]
   File: sound/sndmain.cpp  (6 diagnostics)
 
@@ -1744,6 +1861,16 @@ shape_design.c_optimizePolygonMesh_FUN_004658e0  [.keep] [Clang-Tidy (quick), Cp
   Line   85: [selfAssignment] Redundant assignment of 'pcVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
+sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40  [.keep] [Clang-Tidy (quick)]
+  File: sound/mp3.cpp  (5 diagnostics)
+
+  Line  117: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  117: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  305: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
+  Line  428: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line  428: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+----------------------------------------------------------------------------------------------------
 sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750  [.keep] [Clang-Tidy (quick)]
   File: sound/snddx.cpp  (5 diagnostics)
 
@@ -1842,6 +1969,15 @@ core_skeledit.cpp_CDeformableModel_importFacesS3D_FUN_0058b9b0  [.keep] [Clang-T
   Line   80: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
   Line   82: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
   Line   82: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+----------------------------------------------------------------------------------------------------
+core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640  [.keep] [Clang-Tidy (quick)]
+  File: core/skeleton.cpp  (4 diagnostics)
+
+  Line   31: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   32: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   33: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+  Line   54: [bugprone-assignment-in-if-condition] an assignment within an 'if' condition is bug-prone
 
 ----------------------------------------------------------------------------------------------------
 core_sound.cpp_CSound_process_FUN_005b2fd0  [.keep] [Clang-Tidy (quick)]
@@ -2823,6 +2959,12 @@ shape_design.c_createPolygonFromVertexList_FUN_0045cc80  [.keep] [Clang-Tidy (qu
   File: shape/design.c  (1 diagnostics)
 
   Line   35: [cert-err34-c] 'sscanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead
+
+----------------------------------------------------------------------------------------------------
+shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0  [.keep] [Clang-Tidy (quick)]
+  File: shape/edittool.cpp  (1 diagnostics)
+
+  Line   27: [bugprone-incorrect-roundings] casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
 
 ----------------------------------------------------------------------------------------------------
 shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0  [.keep] [Clang-Tidy (quick)]

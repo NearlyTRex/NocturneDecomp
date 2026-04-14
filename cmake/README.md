@@ -49,12 +49,13 @@ may contain multiple variants for the same function. `cmake/collect_sources.py`
 picks exactly one, with this priority (highest first):
 
 1. `*.keep.cpp` / `*.keep.c` — hand-written overrides
-2. `*.mmx.cpp`  / `*.mmx.c`  — inline-assembly MMX rewrites
-3. `*.byval.cpp`/ `*.byval.c`— pass-by-value variants
-4. `*.cpp`     / `*.c`       — raw decompiler output
+2. `*.cpp`     / `*.c`       — raw decompiler output
 
-Companion files (currently `*.chunked.{cpp,c}`) are analysis artifacts and
-are never compiled.
+Companion files (`*.chunked.{cpp,c}`, `*.mmx.{cpp,c}`, `*.byval.{cpp,c}`)
+are exporter-generated references and are never compiled. `.mmx` and
+`.byval` variants exist so humans writing a `.keep` can see what the
+decompiler produced for MMX inline assembly or Watcom by-value struct
+passing; promote them to `.keep.*` to make them participate in the build.
 
 ## Directory layout under `pseudocode/`
 

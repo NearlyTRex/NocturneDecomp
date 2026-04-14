@@ -2,11 +2,11 @@
 // Address: 00404600
 // Address Range: [[00404600, 0040468f] [00599474, 0059952c] [03fc2964, 03fc2a23]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip)
 
 #include "nocturne.h"
 
-void __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip)
+SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip)
 {
 __asm {
         call engine_3d_c_setActiveRenderColor_FUN_00404540

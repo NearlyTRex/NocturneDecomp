@@ -73,6 +73,7 @@ SUSPECT_SEVERITY = {
     'nonstandard_int': 'mild',
     'displaced_global_access': 'moderate',
     'wrong_global': 'moderate',
+    'suspicious_cast': 'moderate',
 }
 
 
@@ -593,82 +594,156 @@ def identify_displaced_global_access(assembly_code, global_interval_map=None):
     return suspects
 
 
-def identify_wrong_global_suspects(decompiled_code, func_globals):
-    """Detect globals referenced in decompiled code but absent from function references.
+# Canonical Watcom base-shift shape: (&g_Scalar)[idx]
+# Ghidra emits this when SIB addressing like [REG*S + &scalar] resolves its
+# base to a scalar global that sits immediately before the real array. The
+# intent is g_Array[idx] where g_Array starts at &g_Scalar + sizeof(g_Scalar).
+_WRONG_GLOBAL_RE = re.compile(
+    r'\(\s*&\s*(g_[A-Za-z_][A-Za-z0-9_]*)\s*\)\s*\['
+)
 
-    The Watcom compiler uses 1-based array indexing which shifts the base address
-    down by one entry size. This causes Ghidra's decompiler to resolve memory
-    accesses to the wrong overlapping global, while Ghidra's reference analysis
-    (which uses exact address lookup) remains correct.
+# Byte-offset variant: *(type *)(&g_Scalar + expr) or *(type *)(&g_Scalar - expr)
+# Same root cause as _WRONG_GLOBAL_RE but with byte-level arithmetic rather
+# than a scaled index, so the cast names an explicit element type.
+_SUSPICIOUS_CAST_RE = re.compile(
+    r'\*\s*\(\s*[\w\s*]+?\s*\*\s*\)'              # *(int *) / *(char *) / *(code *) etc.
+    r'\s*\(\s*&\s*(g_[A-Za-z_][A-Za-z0-9_]*)\s*[+\-]'
+)
 
-    Globals in the pseudocode that don't appear in the function's reference list
-    (func_globals from Ghidra's reference manager) are flagged as potential wrong
-    resolutions.
+
+def _find_neighbor_after(addr_int, global_interval_map):
+    """Find the global whose interval begins at or just after addr_int.
+
+    For wrong_global / suspicious_cast, the likely real target of the access
+    is the global that sits immediately after the flagged scalar in memory.
+
+    Returns (name, type, start_addr) or None.
+    """
+    if not global_interval_map:
+        return None
+    starts = [iv[0] for iv in global_interval_map]
+    idx = bisect.bisect_left(starts, addr_int + 1)
+    if idx >= len(global_interval_map):
+        return None
+    start, _end, name, gtype = global_interval_map[idx]
+    return (name, gtype, start)
+
+
+def identify_wrong_global_suspects(decompiled_code, func_globals=None, global_interval_map=None):
+    """Detect Watcom base-shift mis-resolutions of the form (&g_Scalar)[idx].
+
+    Watcom 1-based indexing emits `[REG*S + base]` where base is placed
+    `sizeof(element)` bytes before the real array. Ghidra's decompiler resolves
+    that base to whatever scalar global sits at that address — typically the
+    count variable or control field right before the real array. In the C
+    output this manifests as `(&g_ScalarNeighbor)[idx]`, a dead giveaway:
+    taking the address of a scalar and indexing into it only makes sense when
+    the real target is the array immediately following that scalar.
 
     Args:
-        decompiled_code: The decompiled C pseudocode string
-        func_globals: List of global reference dicts from Ghidra, each with
-                      'name', 'addr', 'type' keys
+        decompiled_code: The decompiled C pseudocode string.
+        func_globals: Unused; kept for signature compatibility with callers.
+        global_interval_map: Sorted (start, end, name, type) intervals from
+            build_global_interval_map(). If provided, the suspect description
+            names the likely real target (the neighbor global).
 
     Returns:
-        List of suspect dicts
+        List of suspect dicts.
     """
     suspects = []
-    if not decompiled_code or not func_globals:
+    if not decompiled_code:
         return suspects
 
-    # Build set of known global base names from Ghidra's reference analysis
-    known_globals = set()
-    for g in func_globals:
-        name = g.get('name', '')
-        if name:
-            # Strip field suffixes: g_Foo.bar -> g_Foo, g_Foo[0].x -> g_Foo
-            base = name.split('.')[0].split('[')[0]
-            known_globals.add(base)
+    name_to_addr = {}
+    if global_interval_map:
+        for start, _end, name, _gtype in global_interval_map:
+            name_to_addr.setdefault(name, start)
 
-    if not known_globals:
-        return suspects
-
-    # Extract global names from decompiled code
-    cpp_global_re = re.compile(
-        r'\b(g_[A-Za-z_][A-Za-z0-9_.]*'
-        r'|DAT_[0-9a-fA-F]+'
-        r'|INT_[0-9a-fA-F]+'
-        r'|UINT_[0-9a-fA-F]+'
-        r'|BYTE_[0-9a-fA-F]+'
-        r'|SHORT_[0-9a-fA-F]+'
-        r'|LONG_[0-9a-fA-F]+'
-        r')\b'
-    )
-
-    seen_globals = set()
+    seen = set()
     for line_no, line in enumerate(decompiled_code.split('\n'), 1):
-        # Skip comments and preprocessor directives
         stripped = line.strip()
         if stripped.startswith('//') or stripped.startswith('#') or stripped.startswith('/*'):
             continue
-
-        for m in cpp_global_re.finditer(line):
+        for m in _WRONG_GLOBAL_RE.finditer(line):
             name = m.group(1)
-            base_name = name.split('.')[0]
-
-            # Skip types that don't have base-shift issues
-            if base_name.startswith('s_'):
+            key = (name, line_no)
+            if key in seen:
                 continue
+            seen.add(key)
 
-            if base_name not in known_globals and base_name not in seen_globals:
-                seen_globals.add(base_name)
-                suspects.append({
-                    'line': line_no,
-                    'type': 'wrong_global',
-                    'match': base_name,
-                    'text': stripped,
-                    'description': (
-                        'Global %s used in pseudocode but not in function reference '
-                        'list — possible Watcom 1-based indexing wrong resolution'
-                        % base_name),
-                    'severity': SUSPECT_SEVERITY.get('wrong_global', 'moderate'),
-                })
+            desc = 'Scalar global %s accessed via (&%s)[idx] — Watcom base-shift: the real target is likely the array following this scalar in memory.' % (name, name)
+            addr = name_to_addr.get(name)
+            if addr is not None:
+                neighbor = _find_neighbor_after(addr, global_interval_map)
+                if neighbor and neighbor[0] != name:
+                    desc += ' Likely true target: %s (at 0x%08x, +%d bytes).' % (
+                        neighbor[0], neighbor[2], neighbor[2] - addr)
+
+            suspects.append({
+                'line': line_no,
+                'type': 'wrong_global',
+                'match': name,
+                'text': stripped,
+                'description': desc,
+                'severity': SUSPECT_SEVERITY.get('wrong_global', 'moderate'),
+            })
+
+    return suspects
+
+
+def identify_suspicious_cast_suspects(decompiled_code, global_interval_map=None):
+    """Detect Watcom base-shift accesses of the form *(T *)(&g_Scalar +/- expr).
+
+    Same root cause as the wrong_global `(&g_Scalar)[idx]` pattern, but with a
+    byte-offset arithmetic shape rather than a scaled index. The cast names the
+    element type explicitly because the compiler couldn't hide the stride in a
+    SIB scale factor (e.g. stride not a power of two, or a byte-level table).
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+        global_interval_map: Sorted interval map for naming the likely real
+            target (the global immediately following the scalar).
+
+    Returns:
+        List of suspect dicts.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+
+    name_to_addr = {}
+    if global_interval_map:
+        for start, _end, name, _gtype in global_interval_map:
+            name_to_addr.setdefault(name, start)
+
+    seen = set()
+    for line_no, line in enumerate(decompiled_code.split('\n'), 1):
+        stripped = line.strip()
+        if stripped.startswith('//') or stripped.startswith('#') or stripped.startswith('/*'):
+            continue
+        for m in _SUSPICIOUS_CAST_RE.finditer(line):
+            name = m.group(1)
+            key = (name, line_no)
+            if key in seen:
+                continue
+            seen.add(key)
+
+            desc = 'Cast-and-add on &%s — Watcom base-shift: the real target is likely the array following this scalar in memory.' % name
+            addr = name_to_addr.get(name)
+            if addr is not None:
+                neighbor = _find_neighbor_after(addr, global_interval_map)
+                if neighbor and neighbor[0] != name:
+                    desc += ' Likely true target: %s (at 0x%08x, +%d bytes).' % (
+                        neighbor[0], neighbor[2], neighbor[2] - addr)
+
+            suspects.append({
+                'line': line_no,
+                'type': 'suspicious_cast',
+                'match': name,
+                'text': stripped,
+                'description': desc,
+                'severity': SUSPECT_SEVERITY.get('suspicious_cast', 'moderate'),
+            })
 
     return suspects
 

@@ -113,7 +113,7 @@ SMRGLHeaderExtended * __cdecl drawLineStrip2D(SLineStrip *line_strip);
 
 // Original: engine_3d.c_drawLineStrip3D_FUN_00404600
 // Address: 00404600
-void __cdecl drawLineStrip3D(SLineStrip *line_strip);
+SMRGLHeaderExtended * __cdecl drawLineStrip3D(SLineStrip *line_strip);
 
 // Original: engine_3d.c_oldFunction7_FUN_00404690
 // Address: 00404690

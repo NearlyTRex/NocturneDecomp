@@ -2,11 +2,11 @@
 // Address: 00404600
 // Address Range: [[00404600, 0040468f] [00599474, 0059952c] [03fc2964, 03fc2a23]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip)
+// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip)
 
 #include "nocturne.h"
 
-void __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip)
+SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip)
 
 {
   SRenderVertex vertex1;
@@ -145,5 +145,5 @@ void __cdecl engine_3d_c_drawLineStrip3D_FUN_00404600(SLineStrip *line_strip)
     vertex2.a = iVar31;
     engine_3d_c_clipAndDrawLine3D_FUN_00408070(vertex1,vertex2);
   }
-  return;
+  return (SMRGLHeaderExtended *)(&line_strip[1].primitive_type + line_strip->vertex_count);
 }

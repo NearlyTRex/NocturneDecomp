@@ -559,11 +559,11 @@
       "type": "displaced_global_access"
     },
     {
-      "description": "Global g_VertexNormalArray used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
-      "line": 111,
-      "match": "g_VertexNormalArray",
+      "description": "Scalar global g_SetDisplayListCount accessed via (&g_SetDisplayListCount)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_SetDisplayListSortBuffer (at 0x03342b50, +4 bytes).",
+      "line": 113,
+      "match": "g_SetDisplayListCount",
       "severity": "moderate",
-      "text": "(&g_VertexNormalArray[20000].y)[g_SetDisplayListCount * 2] = (float)this_ptr_00;",
+      "text": "(&g_SetDisplayListCount)[iVar1 * 2] =",
       "type": "wrong_global"
     }
   ]

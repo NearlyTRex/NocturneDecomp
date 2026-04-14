@@ -6,15 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 24,
+    "complexity_score": 39,
     "cross_reference_count": 6,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 9,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "displaced_global_access"
+      "displaced_global_access",
+      "wrong_global"
     ],
     "total_lines": 26
   },
@@ -211,6 +212,14 @@
       "severity": "moderate",
       "text": "// 0056d130: MOV dword ptr [EDX*0x4 + 0x32776c8],ECX  ; g_CoronaGlobeCount",
       "type": "displaced_global_access"
+    },
+    {
+      "description": "Scalar global g_CoronaGlobeCount accessed via (&g_CoronaGlobeCount)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_CoronaGlobes (at 0x032776cc, +4 bytes).",
+      "line": 6,
+      "match": "g_CoronaGlobeCount",
+      "severity": "moderate",
+      "text": "(&g_CoronaGlobeCount)[g_CoronaGlobeCount + 1] = (int)globe;",
+      "type": "wrong_global"
     }
   ]
 }

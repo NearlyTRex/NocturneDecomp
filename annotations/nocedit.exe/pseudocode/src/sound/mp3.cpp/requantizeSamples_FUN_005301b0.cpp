@@ -21,7 +21,7 @@ void __cdecl sound_mp3_cpp_requantizeSamples_FUN_005301b0(SMpegSubbandScalefacto
   byte bVar3;
   float fVar2;
   
-  iVar1 = frame->samples_per_granule;
+  iVar1 = frame->channel_count;
   local_28 = 0;
   do {
     local_18 = 0;

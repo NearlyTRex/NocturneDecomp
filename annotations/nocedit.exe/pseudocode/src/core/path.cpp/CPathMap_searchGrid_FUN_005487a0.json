@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 358,
-    "complexity_score": 117,
+    "complexity_score": 142,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 30,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 117,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "wrong_global"
+    ],
     "total_lines": 475
   },
   "cross_references": [
@@ -328,5 +330,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Scalar global g_PathfindingVisitedMinus1 accessed via (&g_PathfindingVisitedMinus1)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_PathfindingVisited (at 0x030d2858, +1 bytes).",
+      "line": 102,
+      "match": "g_PathfindingVisitedMinus1",
+      "severity": "moderate",
+      "text": "if (((0 < grid_x) && ((&g_PathfindingVisitedMinus1)[grid_z * 100 + grid_x] == '\\0')) &&",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Scalar global g_PathfindingVisitedMinus1 accessed via (&g_PathfindingVisitedMinus1)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_PathfindingVisited (at 0x030d2858, +1 bytes).",
+      "line": 105,
+      "match": "g_PathfindingVisitedMinus1",
+      "severity": "moderate",
+      "text": "(&g_PathfindingVisitedMinus1)[grid_x + grid_z * 100] = '\\x04';",
+      "type": "wrong_global"
+    }
+  ]
 }

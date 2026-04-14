@@ -28,7 +28,7 @@ void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scale
   float *local_18;
   int iVar1;
   
-  iVar1 = frame_info->samples_per_granule;
+  iVar1 = frame_info->channel_count;
   iVar2 = frame_info->sblimit;
   local_58 = frame_info->allocation_table;
   if (0 < iVar2) {

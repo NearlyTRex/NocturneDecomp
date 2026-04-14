@@ -122,26 +122,18 @@ def scan_pseudocode_directory(pseudocode_dir):
             if not filename.endswith('.cpp'):
                 continue
 
-            # Skip lower-priority files when higher-priority ones exist
-            # Priority: .keep.cpp > .mmx.cpp > .cpp
-            if not '.keep.' in filename and not '.mmx.' in filename:
-                # Regular .cpp - skip if .keep.cpp or .mmx.cpp exists
+            # Skip .mmx/.byval variants - generated but not compiled
+            if '.mmx.' in filename or '.byval.' in filename:
+                continue
+            # Prefer .keep.cpp: skip regular .cpp if a .keep.cpp exists
+            if not '.keep.' in filename:
                 keep_version = filename.replace('.cpp', '.keep.cpp')
-                mmx_version = filename.replace('.cpp', '.mmx.cpp')
-                if keep_version in files or mmx_version in files:
-                    continue
-            elif '.mmx.' in filename:
-                # .mmx.cpp - skip if .keep.cpp exists
-                keep_version = filename.replace('.mmx.cpp', '.keep.cpp')
                 if keep_version in files:
                     continue
 
             cpp_path = os.path.join(root, filename)
 
-            # Get caller function name from filename
-            # e.g., "CDemonActor_processInEditor_FUN_0040d040.cpp" -> "CDemonActor_processInEditor_FUN_0040d040"
-            # Handle .keep.cpp, .mmx.cpp, and .cpp
-            caller_name = filename.replace('.keep.cpp', '').replace('.mmx.cpp', '').replace('.cpp', '')
+            caller_name = filename.replace('.keep.cpp', '').replace('.cpp', '')
 
             calls = find_vtable_calls_in_file(cpp_path)
 

@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 154,
+    "complexity_score": 89,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 89,
-    "suspect_count": 6,
-    "suspect_types": [
-      "wrong_global"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 100
   },
   "cross_references": [],
@@ -94,54 +92,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Global g_CMoonInstance used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
-      "line": 26,
-      "match": "g_CMoonInstance",
-      "severity": "moderate",
-      "text": "core_moon_cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0(&g_CMoonInstance);",
-      "type": "wrong_global"
-    },
-    {
-      "description": "Global g_MediumFont used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
-      "line": 29,
-      "match": "g_MediumFont",
-      "severity": "moderate",
-      "text": "iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_MediumFont,pcVar2);",
-      "type": "wrong_global"
-    },
-    {
-      "description": "Global g_JoyXPos used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
-      "line": 34,
-      "match": "g_JoyXPos",
-      "severity": "moderate",
-      "text": "_sprintf(acStack_224,\"%d,%d,%x\",g_JoyXPos,g_JoyYPos,g_JoyButtons)",
-      "type": "wrong_global"
-    },
-    {
-      "description": "Global g_JoyYPos used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
-      "line": 34,
-      "match": "g_JoyYPos",
-      "severity": "moderate",
-      "text": "_sprintf(acStack_224,\"%d,%d,%x\",g_JoyXPos,g_JoyYPos,g_JoyButtons)",
-      "type": "wrong_global"
-    },
-    {
-      "description": "Global g_JoyButtons used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
-      "line": 34,
-      "match": "g_JoyButtons",
-      "severity": "moderate",
-      "text": "_sprintf(acStack_224,\"%d,%d,%x\",g_JoyXPos,g_JoyYPos,g_JoyButtons)",
-      "type": "wrong_global"
-    },
-    {
-      "description": "Global g_CKeysPtr used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
-      "line": 39,
-      "match": "g_CKeysPtr",
-      "severity": "moderate",
-      "text": "iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN);",
-      "type": "wrong_global"
-    }
-  ]
+  "suspects": []
 }

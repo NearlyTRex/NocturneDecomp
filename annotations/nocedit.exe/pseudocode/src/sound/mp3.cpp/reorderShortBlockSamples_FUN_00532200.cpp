@@ -57,7 +57,7 @@ void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_00532200(SMpegSubbandSam
     } while (pafVar1 != pafVar17);
     iVar6 = iVar6 + 1;
   } while (iVar6 < 0x20);
-  if ((frame_info->samples_per_granule == 0) || (frame_info->js_bound != 2)) {
+  if ((frame_info->channel_count == 0) || (frame_info->js_bound != 2)) {
     local_58 = (float *)output_samples;
     iVar18 = 0;
     pfVar20 = (float *)input_samples;

@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 473,
-    "complexity_score": 179,
+    "complexity_score": 164,
     "cross_reference_count": 3,
     "function_call_count": 14,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 149,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_ref",
-      "wrong_global"
+      "stack_ref"
     ],
     "total_lines": 622
   },
@@ -413,14 +412,6 @@
       "severity": "moderate",
       "text": "if ((int *)&stack0x00000000 != g_DeformableModelPool[0].vertex_count + 3) {",
       "type": "stack_ref"
-    },
-    {
-      "description": "Global g_DeformableModelPool used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
-      "line": 138,
-      "match": "g_DeformableModelPool",
-      "severity": "moderate",
-      "text": "if ((int *)&stack0x00000000 != g_DeformableModelPool[0].vertex_count + 3) {",
-      "type": "wrong_global"
     }
   ]
 }

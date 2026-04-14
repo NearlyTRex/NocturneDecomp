@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Clang-Tidy (quick) (1194 diagnostics)
+Clang-Tidy (quick) (1291 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-bugprone-assignment-in-if-condition (554)
+bugprone-assignment-in-if-condition (559)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CActorProperty_editInteractive_FUN_ line 102
@@ -1440,6 +1440,18 @@ bugprone-assignment-in-if-condition (554)
     File: core/setedit.cpp
     an assignment within an 'if' condition is bug-prone
 
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 232
+    File: core/setedit.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 558
+    File: core/setedit.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 559
+    File: core/setedit.cpp
+    an assignment within an 'if' condition is bug-prone
+
   core_skeledit.cpp_CBoneStructure_readBONheader_FUN line 243
     File: core/skeledit.cpp
     an assignment within an 'if' condition is bug-prone
@@ -1522,6 +1534,10 @@ bugprone-assignment-in-if-condition (554)
 
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1790
     File: core/skeledit.cpp
+    an assignment within an 'if' condition is bug-prone
+
+  core_skeleton.cpp_CDeformableModel_renderSkeleton_ line 54
+    File: core/skeleton.cpp
     an assignment within an 'if' condition is bug-prone
 
   core_smiley.cpp_CSmiley_process_FUN_005a2800       line 78
@@ -2196,6 +2212,10 @@ bugprone-assignment-in-if-condition (554)
     File: shape/superopt.cpp
     an assignment within an 'if' condition is bug-prone
 
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 line 305
+    File: sound/mp3.cpp
+    an assignment within an 'if' condition is bug-prone
+
   sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN line 51
     File: sound/snddx.cpp
     an assignment within an 'if' condition is bug-prone
@@ -2229,7 +2249,7 @@ bugprone-assignment-in-if-condition (554)
     an assignment within an 'if' condition is bug-prone
 
 ----------------------------------------------------------------------------------------------------
-bugprone-incorrect-roundings (340)
+bugprone-incorrect-roundings (432)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 173
@@ -2816,6 +2836,38 @@ bugprone-incorrect-roundings (340)
     File: core/inv.cpp
     casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
 
+  core_ladder.cpp_CLadder_renderOpaque_FUN_00502620  line 33
+    File: core/ladder.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_ladder.cpp_CLadder_renderOpaque_FUN_00502620  line 34
+    File: core/ladder.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_ladder.cpp_CLadder_renderOpaque_FUN_00502620  line 42
+    File: core/ladder.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_ladder.cpp_CLadder_renderOpaque_FUN_00502620  line 43
+    File: core/ladder.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_ladder.cpp_CLadder_renderOpaque_FUN_00502620  line 44
+    File: core/ladder.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_ladder.cpp_CLadder_renderOpaque_FUN_00502620  line 47
+    File: core/ladder.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_ladder.cpp_CLadder_renderOpaque_FUN_00502620  line 48
+    File: core/ladder.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_ladder.cpp_CLadder_renderOpaque_FUN_00502620  line 49
+    File: core/ladder.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
   core_moon.cpp_CMoon_render_FUN_00529ed0            line 80
     File: core/moon.cpp
     casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
@@ -2960,6 +3012,198 @@ bugprone-incorrect-roundings (340)
     File: core/setedit.cpp
     casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
 
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 240
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 241
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 242
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 246
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 247
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 248
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 252
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 253
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 254
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 258
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 259
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 260
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 266
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 267
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 268
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 272
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 273
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 274
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 278
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 279
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 280
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 284
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 285
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_0 line 286
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930    line 23
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930    line 24
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930    line 25
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930    line 28
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930    line 29
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930    line 30
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930    line 33
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930    line 34
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930    line 35
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930    line 38
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930    line 39
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930    line 40
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930    line 43
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930    line 44
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930    line 45
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930    line 48
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930    line 49
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930    line 50
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930    line 53
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930    line 54
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930    line 55
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930    line 58
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930    line 59
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_setedit.cpp_drawCameraFrustum_FUN_00582930    line 60
+    File: core/setedit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
   core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90 line 83
     File: core/setutil.cpp
     casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
@@ -3022,6 +3266,82 @@ bugprone-incorrect-roundings (340)
 
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 829
     File: core/skeledit.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_skeleton.cpp_CDeformableModel_renderSkeleton_ line 31
+    File: core/skeleton.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_skeleton.cpp_CDeformableModel_renderSkeleton_ line 32
+    File: core/skeleton.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_skeleton.cpp_CDeformableModel_renderSkeleton_ line 33
+    File: core/skeleton.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10  line 51
+    File: core/stairs.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10  line 52
+    File: core/stairs.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10  line 53
+    File: core/stairs.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10  line 56
+    File: core/stairs.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10  line 59
+    File: core/stairs.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10  line 60
+    File: core/stairs.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10  line 63
+    File: core/stairs.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10  line 136
+    File: core/stairs.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10  line 137
+    File: core/stairs.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10  line 138
+    File: core/stairs.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10  line 142
+    File: core/stairs.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10  line 143
+    File: core/stairs.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10  line 144
+    File: core/stairs.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10  line 148
+    File: core/stairs.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10  line 149
+    File: core/stairs.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10  line 150
+    File: core/stairs.cpp
     casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
 
   core_stranger.cpp_CStranger_processMotionEvents_FU line 198
@@ -3344,6 +3664,58 @@ bugprone-incorrect-roundings (340)
     File: shape/design.c
     casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
 
+  shape_edittool.cpp_CEditorTools_draw3DAxisLabels_F line 27
+    File: shape/edittool.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_edittool.cpp_CEditorTools_draw3DWireframeCub line 35
+    File: shape/edittool.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_edittool.cpp_CEditorTools_draw3DWireframeCub line 36
+    File: shape/edittool.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_edittool.cpp_CEditorTools_draw3DWireframeCub line 37
+    File: shape/edittool.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_edittool.cpp_CEditorTools_draw3DWireframeCub line 39
+    File: shape/edittool.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_edittool.cpp_CEditorTools_draw3DWireframeCub line 40
+    File: shape/edittool.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_edittool.cpp_CEditorTools_draw3DWireframeCub line 41
+    File: shape/edittool.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a line 15
+    File: shape/edittool.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a line 16
+    File: shape/edittool.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a line 17
+    File: shape/edittool.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a line 19
+    File: shape/edittool.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a line 20
+    File: shape/edittool.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a line 21
+    File: shape/edittool.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
   shape_meshlod.cpp_CLodMesh_computeSamplePointDista line 83
     File: shape/meshlod.cpp
     casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
@@ -3454,6 +3826,22 @@ bugprone-incorrect-roundings (340)
 
   shape_quantize.cpp_CColorQuantizer_importBitmap_FU line 88
     File: shape/quantize.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 line 117
+    File: sound/mp3.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 line 117
+    File: sound/mp3.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 line 428
+    File: sound/mp3.cpp
+    casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
+
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 line 428
+    File: sound/mp3.cpp
     casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead
 
   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005 line 113

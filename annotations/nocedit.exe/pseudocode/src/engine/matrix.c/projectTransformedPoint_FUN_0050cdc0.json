@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 68,
+    "complexity_score": 53,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 38,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "wrong_global"
+      "undefined_data"
     ],
     "total_lines": 117
   },
@@ -180,14 +179,6 @@
       "severity": "mild",
       "text": "point->screen_x = (int)&DAT_80000010;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Global DAT_80000010 used in pseudocode but not in function reference list \u2014 possible Watcom 1-based indexing wrong resolution",
-      "line": 17,
-      "match": "DAT_80000010",
-      "severity": "moderate",
-      "text": "point->screen_x = (int)&DAT_80000010;",
-      "type": "wrong_global"
     }
   ]
 }
