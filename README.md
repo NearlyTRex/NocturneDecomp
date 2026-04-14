@@ -53,6 +53,7 @@ Technical research documentation. See **[research/README.md](research/README.md)
 | `04-mp3_audio_system/` | MP3 decoder and DirectSound integration |
 | `05-badspacebase_investigation/` | Ghidra decompiler fixes for Watcom code |
 | `06-per_function_decompiler_helpers/` | Per-function decompiler control system |
+| `07-mmx_functions/` | MMX/SIMD function inventory and portable rewrites |
 
 ### `/scripts`
 Python automation scripts for Ghidra (PyGhidra headless):

@@ -39,6 +39,8 @@ Investigation into Nocturne's MRGL (Model/Rendering Graphics Library) 3D renderi
 | `MRGL-file-format.md` | MRGL file format specification |
 | `MRGL_DISPATCH_TABLE_ANALYSIS.md` | Vtable and dispatch analysis |
 | `FUNCTION_RENAMING_GUIDE.md` | Naming conventions for render functions |
+| `VERTEX_PREPROCESS_MODE_VERIFIED.md` | Ground-truth dispatch for `g_VertexPreprocessMode` (renamed from `g_RenderStateFlag2`; supersedes the inferred equate names) |
+| `RENDER_STATE_FLAGS_VERIFIED.md` | Bit-by-bit semantics for `g_RenderStateFlags`; 3 bits need renames, all combo `#define`s should be deleted |
 | `*.py` | Analysis scripts |
 
 **Status:** Complete - Rendering system documented
@@ -136,6 +138,24 @@ modifying the program database. Builds on solutions from the BADSPACEBASE invest
 
 ---
 
+### [07-mmx_functions/](07-mmx_functions/)
+
+Inventory and byte-for-byte decoding of the 34 MMX/SIMD functions in `nocedit.exe`.
+Ghidra cannot produce compilable pseudocode for these (nested `CONCAT`/`SUB`/`uint7`
+artifacts), so the pipeline replaces them with `__asm { }` blocks and tracks portable
+`.keep.cpp` rewrites here.
+
+| File | Description |
+|------|-------------|
+| `MMX_FUNCTIONS_ANALYSIS.md` | Full inventory of all 34 MMX functions, categories, and rewrite feasibility |
+| `MMX_BLEND_FAMILY_DECODED.md` | Unified blend formula covering ~10 pixel-blend variants + blur/corona routines |
+| `RENDER_PERSPECTIVE_SCANLINE16_DECODED.md` | `renderMMXPerspectiveScanline16/32` decoded into portable C |
+| `RECOMMENDED_MMX_RENAMES.md` | Consistent naming proposal for the 12 blend-family functions + outliers |
+
+**Status:** Active - Inventory complete; portable rewrites in progress
+
+---
+
 ## Standalone Documents
 
 ### [ghidra_suspect_patterns.md](ghidra_suspect_patterns.md)
@@ -202,6 +222,19 @@ Ghidra source location: `~/Repositories/Ghidra/`
 ---
 
 ## Changelog
+
+### 2026-04-14
+- Drafted recommended MMX blend-family renames (`RECOMMENDED_MMX_RENAMES.md`)
+
+### 2026-04-13
+- Added `07-mmx_functions/` section to this index
+- Decoded `renderMMXPerspectiveScanline16/32` into portable C
+
+### 2026-04-12
+- MMX blend family decoded — unified formula for ~10 blend variants + blur/corona
+
+### 2026-02-08
+- Completed inventory of all 34 MMX/SIMD functions (29 MMX-only, 5 with fallbacks)
 
 ### 2026-01-11
 - **CORRECTED**: Document 18 status - `resolveSpacebaseRelative()` patch was designed but never committed
