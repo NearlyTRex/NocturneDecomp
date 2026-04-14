@@ -2,11 +2,11 @@
 // Address: 00533ba0
 // Address Range: [[00533ba0, 00533c4a]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0(CMP3Decoder *this_ptr,float *input_samples,float *output_buffer,int subband_index,int channel,SMpegFrame *frame_info,SMpegFrameHeader *header)
+// Signature: void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0(CMP3Decoder *this_ptr,float *input_samples,float *output_buffer,int subband_index,int channel,SMpegLayer3GranuleInfo *granule,SMpegFrameHeader *header)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0(CMP3Decoder *this_ptr,float *input_samples,float *output_buffer,int subband_index,int channel,SMpegFrame *frame_info,SMpegFrameHeader *header)
+void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0(CMP3Decoder *this_ptr,float *input_samples,float *output_buffer,int subband_index,int channel,SMpegLayer3GranuleInfo *granule,SMpegFrameHeader *header)
 
 {
   int iVar1;
@@ -16,8 +16,9 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0(CMP3Decoder *t
   float local_94 [18];
   float local_4c [18];
   
-  if (((frame_info->channel_count == 0) || (frame_info->sblimit == 0)) || (1 < subband_index)) {
-    iVar1 = frame_info->js_bound;
+  if (((granule->window_switching_flag == 0) || (granule->mixed_block_flag == 0)) ||
+     (1 < subband_index)) {
+    iVar1 = granule->block_type;
   }
   else {
     iVar1 = 0;

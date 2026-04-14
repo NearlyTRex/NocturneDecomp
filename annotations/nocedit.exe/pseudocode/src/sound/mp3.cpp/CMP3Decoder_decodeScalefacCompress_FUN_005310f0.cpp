@@ -2,11 +2,11 @@
 // Address: 005310f0
 // Address Range: [[005310f0, 00531474]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *granule_info,int channel,int granule,SMpegFrame *frame)
+// Signature: void __cdecl sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *side_info,int channel,int granule,SMpegFrame *frame)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *granule_info,int channel,int granule,SMpegFrame *frame)
+void __cdecl sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *side_info,int channel,int granule,SMpegFrame *frame)
 
 {
   int iVar1;
@@ -22,27 +22,25 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0(CMP3D
   SMpegFrameHeader *pSVar1;
   int iVar2;
   
-  iVar1 = channel * 0x48 + granule * 0xa0 + 0x18;
   pSVar1 = frame->header;
   sStack_1c = 0;
-  uVar2 = *(uint *)((int)granule_info->granules + iVar1 + -0xc);
-  if ((*(int *)((int)granule_info->granules + iVar1 + -4) == 2) &&
-     (*(int *)((int)granule_info->granules + iVar1) == 0)) {
+  uVar2 = side_info->channels[granule].granules[channel].scalefac_compress;
+  if ((side_info->channels[granule].granules[channel].block_type == 2) &&
+     (side_info->channels[granule].granules[channel].mixed_block_flag == 0)) {
     sStack_1c = 1;
   }
-  if ((*(int *)((int)granule_info->granules + iVar1 + -4) == 2) &&
-     (*(int *)((int)granule_info->granules + iVar1) == 1)) {
+  if ((side_info->channels[granule].granules[channel].block_type == 2) &&
+     (side_info->channels[granule].granules[channel].mixed_block_flag == 1)) {
     sStack_1c = 2;
   }
   iVar2 = pSVar1->mode_extension;
   if (((iVar2 != 1) && (iVar2 != 3)) || (granule != 1)) {
-    iVar1 = channel * 0x48 + granule * 0xa0;
     if (uVar2 < 400) {
       local_34[0] = (uVar2 >> 4) / 5;
       local_34[2] = (uVar2 & 0xf) >> 2;
       local_34[1] = (uVar2 >> 4) % 5;
       local_34[3] = uVar2 & 3;
-      *(uint *)((int)granule_info->granules + iVar1 + 0x3c) = 0;
+      side_info->channels[granule].granules[channel].preflag = 0;
       local_1a = local_1a & 0xffff;
     }
     else if (uVar2 < 500) {
@@ -52,7 +50,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0(CMP3D
       local_34[1] = (local_34[4] >> 2) % 5;
       local_34[3] = 0;
       local_1a = CONCAT22(1,(ushort)local_1a);
-      *(uint *)((int)granule_info->granules + iVar1 + 0x3c) = 0;
+      side_info->channels[granule].granules[channel].preflag = 0;
     }
     else if (uVar2 < 0x200) {
       local_34[0] = (uVar2 - 500) / 3;
@@ -60,7 +58,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0(CMP3D
       local_34[2] = 0;
       local_34[3] = 0;
       local_1a = CONCAT22(2,(ushort)local_1a);
-      *(uint *)((int)granule_info->granules + iVar1 + 0x3c) = 1;
+      side_info->channels[granule].granules[channel].preflag = 1;
     }
   }
   if (((pSVar1->mode_extension == 1) || (pSVar1->mode_extension == 3)) && (granule == 1)) {
@@ -70,7 +68,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0(CMP3D
       local_34[1] = (uint)(((ulonglong)uVar2 % 0x24) / 6);
       local_34[3] = 0;
       local_34[2] = (uint)(((ulonglong)uVar2 % 0x24) % 6);
-      granule_info[1].granules[channel].region0_count = 0;
+      side_info->channels[1].granules[channel].preflag = 0;
       local_1a = CONCAT22(3,(ushort)local_1a);
     }
     else if (uVar2 < 0xf4) {
@@ -79,7 +77,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0(CMP3D
       local_34[3] = 0;
       local_34[2] = uVar2 & 3;
       local_34[1] = (uVar2 & 0xf) >> 2;
-      granule_info[1].granules[channel].region0_count = 0;
+      side_info->channels[1].granules[channel].preflag = 0;
       local_1a = CONCAT22(4,(ushort)local_1a);
     }
     else if (uVar2 < 0xff) {
@@ -87,7 +85,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0(CMP3D
       local_34[2] = 0;
       local_34[3] = 0;
       local_34[1] = (uVar2 - 0xf4) % 3;
-      granule_info[1].granules[channel].region0_count = 0;
+      side_info->channels[1].granules[channel].preflag = 0;
       local_1a = CONCAT22(5,(ushort)local_1a);
     }
   }

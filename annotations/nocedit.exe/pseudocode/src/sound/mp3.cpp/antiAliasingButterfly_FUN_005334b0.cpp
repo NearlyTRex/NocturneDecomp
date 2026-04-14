@@ -2,11 +2,11 @@
 // Address: 005334b0
 // Address Range: [[005334b0, 00533684]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_005334b0(float *input_samples,float *output_samples,SMpegFrame *frame_info,SMpegFrameHeader *header)
+// Signature: void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_005334b0(float *input_samples,float *output_samples,SMpegLayer3GranuleInfo *granule,SMpegFrameHeader *header)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_005334b0(float *input_samples,float *output_samples,SMpegFrame *frame_info,SMpegFrameHeader *header)
+void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_005334b0(float *input_samples,float *output_samples,SMpegLayer3GranuleInfo *granule,SMpegFrameHeader *header)
 
 {
   float fVar1;
@@ -68,10 +68,10 @@ void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_005334b0(float *input_sampl
     iVar11 = iVar11 + 1;
     local_24 = local_24 + 0x12;
   } while (iVar11 < 0x20);
-  if (((frame_info->channel_count == 0) || (frame_info->js_bound != 2)) ||
-     (frame_info->sblimit != 0)) {
-    if (((frame_info->channel_count == 0) || (frame_info->sblimit == 0)) ||
-       (frame_info->js_bound != 2)) {
+  if (((granule->window_switching_flag == 0) || (granule->block_type != 2)) ||
+     (granule->mixed_block_flag != 0)) {
+    if (((granule->window_switching_flag == 0) || (granule->mixed_block_flag == 0)) ||
+       (granule->block_type != 2)) {
       local_14 = 0x1f;
     }
     else {

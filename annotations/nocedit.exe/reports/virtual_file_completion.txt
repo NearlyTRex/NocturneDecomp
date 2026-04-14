@@ -6,7 +6,7 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 5097 (79.0%)
+Clean functions: 5098 (79.0%)
 Files at 100%: 46
 Files at 90%+: 83
 Files at 50%+: 207
@@ -1689,6 +1689,37 @@ Total: 124 files
 ====================================================================================================
 FILES BELOW 50%
 ====================================================================================================
+   49.1% | sound/mp3.cpp
+         28/57 clean, 29 remaining
+           - sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_0052fee0 (100 lines) [pointer_cast]
+           - sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_0052f670 (69 lines) [pointer_cast]
+           - sound_mp3.cpp_validateLayer2AllocationTable_FUN_0052e8d0 (43 lines) [warning_inlined_function]
+           - sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_005307a0 (247 lines) [pointer_cast]
+           - sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20 (142 lines) [pointer_cast]
+           - sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 (509 lines) [byvalue_struct_passing, format_string_mismatch, pointer_cast, stack_ref, unknown_field, warning_deadcode_restart, warning_inlined_function]
+           - sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480 (92 lines) [pointer_cast]
+           - sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30 (111 lines) [pointer_cast]
+           - sound_mp3.cpp_applyScalefactorsToSubbands_FUN_005302f0 (33 lines) [pointer_cast]
+           - sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_0052f850 (32 lines) [pointer_cast]
+           - sound_mp3.cpp_requantizeSamples_FUN_005301b0 (52 lines) [pointer_cast]
+           - sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50 (176 lines) [pointer_cast]
+           - sound_mp3.cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0 (48 lines) [pointer_cast]
+           - sound_mp3.cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50 (111 lines) [pointer_cast]
+           - sound_mp3.cpp_calculateMainDataSize_FUN_00533c50 (31 lines) [param_count_too_few, warning_inlined_function]
+           - sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540 (23 lines) [param_count_too_few]
+           - sound_mp3.cpp_antiAliasingButterfly_FUN_005334b0 (106 lines) [pointer_cast, sub84_truncation]
+           - sound_mp3.cpp_applyScalefactorsToLayer2Samples_FUN_005303a0 (27 lines) [pointer_cast]
+           - sound_mp3.cpp_initializeHuffmanTablesOnce_FUN_00533f80 (119 lines) [pointer_cast]
+           - sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680 (212 lines) [pointer_cast]
+           - sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50 (60 lines) [pointer_cast]
+           - sound_mp3.cpp_applyPolyphaseWindow_FUN_00533690 (273 lines) [pointer_cast]
+           - sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (541 lines) [pointer_cast]
+           - sound_mp3.cpp_calculateMpegFrame_FUN_0052ea80 (67 lines) [warning_inlined_function]
+           - sound_mp3.cpp_reorderShortBlockSamples_FUN_00532200 (148 lines) [pointer_cast]
+           - sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_0052f350 (86 lines) [unresolved_funcptr]
+           - sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630 (135 lines) [warning_inlined_function]
+           - sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0 (123 lines) [pointer_cast]
+           - sound_mp3.cpp_CMP3Decoder_read_FUN_00534a60 (73 lines) [pointer_cast]
    49.1% | cockpit/ckptutil.c
          27/55 clean, 28 remaining
            - cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540 (56 lines) [pointer_cast]
@@ -1719,38 +1750,6 @@ FILES BELOW 50%
            - cockpit_ckptutil.c_setEdgeData_FUN_00434a50 (18 lines) [pointer_cast]
            - cockpit_ckptutil.c_copyScreenRegion_FUN_00432d90 (30 lines) [pointer_cast]
            - cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690 (60 lines) [unknown_field]
-   47.4% | sound/mp3.cpp
-         27/57 clean, 30 remaining
-           - sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_0052fee0 (100 lines) [pointer_cast]
-           - sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_0052f670 (69 lines) [pointer_cast]
-           - sound_mp3.cpp_validateLayer2AllocationTable_FUN_0052e8d0 (43 lines) [warning_inlined_function]
-           - sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_005307a0 (236 lines) [pointer_cast]
-           - sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20 (139 lines) [pointer_cast]
-           - sound_mp3.cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0 (104 lines) [pointer_cast]
-           - sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 (506 lines) [byvalue_struct_passing, format_string_mismatch, pointer_cast, stack_ref, unknown_field, warning_deadcode_restart, warning_inlined_function]
-           - sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480 (93 lines) [pointer_cast]
-           - sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30 (111 lines) [pointer_cast]
-           - sound_mp3.cpp_applyScalefactorsToSubbands_FUN_005302f0 (33 lines) [pointer_cast]
-           - sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_0052f850 (32 lines) [pointer_cast]
-           - sound_mp3.cpp_requantizeSamples_FUN_005301b0 (52 lines) [pointer_cast]
-           - sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50 (176 lines) [pointer_cast]
-           - sound_mp3.cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0 (48 lines) [pointer_cast]
-           - sound_mp3.cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50 (111 lines) [pointer_cast]
-           - sound_mp3.cpp_calculateMainDataSize_FUN_00533c50 (31 lines) [param_count_too_few, warning_inlined_function]
-           - sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540 (23 lines) [param_count_too_few]
-           - sound_mp3.cpp_antiAliasingButterfly_FUN_005334b0 (106 lines) [pointer_cast, sub84_truncation]
-           - sound_mp3.cpp_applyScalefactorsToLayer2Samples_FUN_005303a0 (27 lines) [pointer_cast]
-           - sound_mp3.cpp_initializeHuffmanTablesOnce_FUN_00533f80 (119 lines) [pointer_cast]
-           - sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680 (214 lines) [pointer_cast]
-           - sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50 (60 lines) [pointer_cast]
-           - sound_mp3.cpp_applyPolyphaseWindow_FUN_00533690 (273 lines) [pointer_cast]
-           - sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (541 lines) [pointer_cast]
-           - sound_mp3.cpp_calculateMpegFrame_FUN_0052ea80 (67 lines) [warning_inlined_function]
-           - sound_mp3.cpp_reorderShortBlockSamples_FUN_00532200 (148 lines) [pointer_cast]
-           - sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_0052f350 (86 lines) [unresolved_funcptr]
-           - sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630 (135 lines) [warning_inlined_function]
-           - sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0 (123 lines) [pointer_cast]
-           - sound_mp3.cpp_CMP3Decoder_read_FUN_00534a60 (73 lines) [pointer_cast]
    33.3% | core/dglobe.cpp
          2/6 clean, 4 remaining
            - core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310 (15 lines) [warning_inlined_function]

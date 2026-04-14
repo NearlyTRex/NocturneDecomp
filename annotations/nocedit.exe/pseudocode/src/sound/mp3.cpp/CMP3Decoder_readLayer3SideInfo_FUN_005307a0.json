@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 520,
-    "complexity_score": 371,
+    "complexity_score": 332,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 236,
-    "suspect_count": 13,
+    "pseudocode_lines": 247,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 756
+    "total_lines": 767
   },
   "cross_references": [
     {
@@ -274,10 +274,10 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 70,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)piVar9 + iVar7 + 0x34) = uVar6;",
+      "text": "*(uint *)((int)piVar9 + iVar3 + 0x34) = uVar1;",
       "type": "pointer_cast"
     },
     {
@@ -285,55 +285,15 @@
       "line": 95,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)side_info_array->granules + iVar7 + 0x28) = uVar9;",
+      "text": "*(uint *)((int)side_info_array->channels[local_30].granules[0].subblock_gain + uVar1) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 97,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "iVar7 = *(int *)((int)side_info_array->granules + local_30 * 0xa0 + 0x14);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 105,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "(*(int *)((int)side_info_array->granules + local_30 * 0xa0 + 0x18) == 0)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 106,
+      "line": 178,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)side_info_array->granules + local_30 * 0xa0 + 0x34) = 8;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 177,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)side_info_array->granules + iVar2 + 0x1c) = uVar6;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 180,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)side_info_array->granules + iVar3 + 0x34) = uVar6;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 182,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)side_info_array->granules + iVar3 + 0x14) = 0;",
+      "text": "*(uint *)((int)side_info_array->channels[local_34].granules[0].table_select +",
       "type": "pointer_cast"
     },
     {
@@ -341,23 +301,23 @@
       "line": 183,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)side_info_array->granules + iVar3 + 0x38) = uVar6;",
+      "text": "*(uint *)((int)side_info_array->channels[local_34].granules[0].subblock_gain +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 204,
+      "line": 189,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)side_info_array->granules + iVar3 + 0x28) = uVar6;",
+      "text": "*(uint *)((int)side_info_array->channels[local_34].granules[0].subblock_gain +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 206,
-      "match": "(int *)((int)",
+      "line": 209,
+      "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "iVar3 = *(int *)((int)side_info_array->granules + iVar7 + 0x14);",
+      "text": "*(uint *)((int)side_info_array->channels[local_34].granules[0].subblock_gain +",
       "type": "pointer_cast"
     },
     {
@@ -365,15 +325,15 @@
       "line": 213,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "else if ((iVar3 == 2) && (*(int *)((int)side_info_array->granules + iVar7 + 0x18) == 0))",
+      "text": "iVar3 = *(int *)((int)side_info_array->channels[local_34].granules[0].table_select +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 215,
-      "match": "(uint *)((int)",
+      "line": 222,
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)side_info_array->granules + iVar7 + 0x34) = 8;",
+      "text": "(*(int *)((int)side_info_array->channels[local_34].granules[0].table_select +",
       "type": "pointer_cast"
     }
   ]

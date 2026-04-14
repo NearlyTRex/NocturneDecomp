@@ -27,7 +27,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
   int iVar12;
   short *psVar13;
   SMpegSubbandScalefactors *subband_samples;
-  SMpegLayer3SideInfo *side_info;
+  SMpegLayer3GranuleInfo *side_info;  // granule cursor passed to requantizeLayer3Samples; Ghidra mistyped as SMpegLayer3SideInfo *
   int iVar16;
   uint local_60d0;
   uint local_60cc;
@@ -42,8 +42,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
   SMpegSubbandScalefactors local_cc8 [2];
   SMpegSubbandScalefactors local_9c8 [2];
   SMpegScalefactorBandData local_6c8;
-  char local_4d8;
-  SMpegLayer3SideInfo local_4c0;
+  SMpegLayer3SideInfo local_4d8;  // was char; readLayer3SideInfo fills this as a full SMpegLayer3SideInfo. Ghidra split it from local_4c0 which was really &local_4d8.channels[0].granules[0]
   SMpegSubbandSCFSI local_390 [2];
   SMpegSubbandAllocation local_290 [2];
   float local_190 [32];
@@ -73,12 +72,12 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
   SMpegSubbandSamples *local_58;
   float *local_54;
   int local_50;
-  SMpegFrame *local_4c;
+  SMpegLayer3GranuleInfo *local_4c;  // granule cursor; Ghidra mistyped as SMpegFrame *
   SMpegSubbandSamples *local_48;
-  SMpegFrame *local_44;
+  SMpegLayer3GranuleInfo *local_44;  // granule cursor; Ghidra mistyped as SMpegFrame *
   short *local_40;
   int local_3c;
-  SMpegLayer3SideInfo *local_38;
+  SMpegLayer3GranuleInfo *local_38;  // granule cursor; Ghidra mistyped as SMpegLayer3SideInfo *
   int local_34;
   short *local_30;
   int local_2c;
@@ -272,7 +271,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
           local_60cc = 0x480;
         }
         sound_mp3_cpp_CMP3Decoder_readLayer3SideInfo_FUN_005307a0
-                  (this_ptr,&this_ptr->file_bitstream,(SMpegLayer3SideInfo *)&local_4d8,
+                  (this_ptr,&this_ptr->file_bitstream,&local_4d8,
                    &local_e0.frame);
         for (iVar5 = sound_mp3_cpp_calculateMainDataSize_FUN_00533c50(local_e0.frame); 0 < iVar5;
             iVar5 = iVar5 + -1) {
@@ -287,7 +286,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
           uVar10 = uVar10 + 1;
           sound_mp3_cpp_CMP3Decoder_readBits_FUN_0052f170(this_ptr,8 - uVar3 % 8);
         }
-        local_70 = (this_ptr->main_data_offset - uVar10) - ((SMpegLayer3SideInfo *)&local_4d8)->main_data_begin;
+        local_70 = (this_ptr->main_data_offset - uVar10) - local_4d8.main_data_begin;
         if (0x1000 < uVar10) {
           this_ptr->main_data_offset = this_ptr->main_data_offset + -0x1000;
           sound_mp3_cpp_CMP3Decoder_rewindBytes_FUN_0052f320(this_ptr,0x1000);
@@ -303,42 +302,42 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
           sound_mp3_cpp_CMP3Decoder_readBits_FUN_0052f170(this_ptr,8);
         }
         if ((pcm_output != (short *)0x0) && (local_74 = 0, iVar6 != 0)) {
-          local_38 = &local_4c0;
+          local_38 = local_4d8.channels[0].granules;
           local_34 = 0;
           do {
             iVar5 = 0;
             if (0 < local_e0.channel_count) {
               local_58 = local_4ec8.channels;
-              side_info = (SMpegLayer3SideInfo *)((int)local_4c0.scfsi + local_34 + -8);
+              side_info = (SMpegLayer3GranuleInfo *)((char *)local_4d8.channels[0].granules + local_34);
               do {
                 uVar10 = sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_0052f160(this_ptr);
                 if (local_110.mpeg_version == 0) {
                   sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480
-                            (this_ptr,(int *)&local_6c8,(SMpegLayer3SideInfo *)&local_4d8,local_74,
+                            (this_ptr,(int *)&local_6c8,&local_4d8,local_74,
                              iVar5,&local_e0.frame);
                 }
                 else {
                   sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20
-                            (this_ptr,(int *)&local_6c8,(SMpegLayer3SideInfo *)&local_4d8,local_74,
+                            (this_ptr,(int *)&local_6c8,&local_4d8,local_74,
                              iVar5,&local_e0.frame);
                 }
                 sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680
-                          (this_ptr,&local_3cc8,(SMpegLayer3SideInfo *)&local_4d8,iVar5,local_74,
+                          (this_ptr,&local_3cc8,&local_4d8,iVar5,local_74,
                            uVar10,&local_e0.frame);
                 sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50
                           (&local_3cc8,local_58,(int *)&local_6c8,side_info,iVar5,
                            &local_e0.frame);
                 iVar5 = iVar5 + 1;
-                side_info = (SMpegLayer3SideInfo *)&side_info->granules[1].scalefac_scale;
+                side_info = (SMpegLayer3GranuleInfo *)((char *)side_info + sizeof(SMpegLayer3SideInfoChannel));
                 local_58 = local_58 + 1;
               } while (iVar5 < local_e0.channel_count);
             }
             sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0
-                      (&local_4ec8,&local_60c8,&local_6c8,(SMpegFrame *)local_38,
+                      (&local_4ec8,&local_60c8,&local_6c8,local_38,
                        &local_e0.frame);
             local_1c = 0;
             if (0 < local_e0.channel_count) {
-              local_4c = (SMpegFrame *)((int)local_4c0.scfsi + local_34 + -8);
+              local_4c = (SMpegLayer3GranuleInfo *)((char *)local_4d8.channels[0].granules + local_34);
               local_48 = local_60c8.channels;
               local_40 = local_33c8;
               local_44 = local_4c;
@@ -346,13 +345,13 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
                 sound_mp3_cpp_reorderShortBlockSamples_FUN_00532200
                           (local_48,&local_21c8,local_44,&local_e0.frame);
                 sound_mp3_cpp_antiAliasingButterfly_FUN_005334b0
-                          ((float *)&local_21c8,local_2ac8,local_44,&local_e0);
+                          ((float *)&local_21c8,local_2ac8,local_44,local_e0.frame.header);
                 pfVar7 = local_18c8;
                 local_54 = local_2ac8;
                 iVar5 = 0;
                 do {
                   sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0
-                            (this_ptr,local_54,pfVar7,iVar5,local_1c,local_4c,&local_e0);
+                            (this_ptr,local_54,pfVar7,iVar5,local_1c,local_4c,local_e0.frame.header);
                   iVar5 = iVar5 + 1;
                   local_54 = local_54 + 0x12;
                   pfVar7 = pfVar7 + 0x12;
@@ -389,9 +388,9 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
                             (this_ptr,local_190,local_1c,psVar13);
                   psVar13 = psVar13 + 0x20;
                 } while (iVar5 != 0x48);
-                local_4c = (SMpegFrame *)&local_4c[5].js_bound;
+                local_4c = (SMpegLayer3GranuleInfo *)((char *)local_4c + sizeof(SMpegLayer3SideInfoChannel));
                 local_48 = local_48 + 1;
-                local_44 = (SMpegFrame *)&local_44[5].js_bound;
+                local_44 = (SMpegLayer3GranuleInfo *)((char *)local_44 + sizeof(SMpegLayer3SideInfoChannel));
                 local_40 = local_40 + 0x240;
                 local_1c = local_1c + 1;
               } while (local_1c < local_e0.channel_count);
@@ -416,7 +415,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
               } while (iVar5 != 0x40);
               local_3c = local_3c + 0x40;
             } while (local_3c != 0x480);
-            local_38 = (SMpegLayer3SideInfo *)(local_38->granules[0].subblock_gain + 2);
+            local_38 = local_38 + 1;
             local_34 = local_34 + 0x48;
             local_74 = local_74 + 1;
           } while (local_74 < iVar6);

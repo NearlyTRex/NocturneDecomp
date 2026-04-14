@@ -4369,6 +4369,10 @@
       "type":"struct"
     },
     {
+      "name":"SMpegLayer3SideInfoChannel",
+      "type":"struct"
+    },
+    {
       "name":"SMpegLayer3SideInfo",
       "type":"struct"
     },
@@ -57226,21 +57230,39 @@
           "type":"int"
         },
         {
+          "len":320,
+          "name":"channels",
+          "offset":8,
+          "type":"SMpegLayer3SideInfoChannel[2]"
+        }
+      ],
+      "importable":true,
+      "len":328,
+      "name":"SMpegLayer3SideInfo",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":16,
           "name":"scfsi",
-          "offset":8,
+          "offset":0,
           "type":"int[4]"
         },
         {
           "len":144,
           "name":"granules",
-          "offset":24,
+          "offset":16,
           "type":"SMpegLayer3GranuleInfo[2]"
         }
       ],
       "importable":true,
-      "len":168,
-      "name":"SMpegLayer3SideInfo",
+      "len":160,
+      "name":"SMpegLayer3SideInfoChannel",
       "pack":false,
       "type":"struct"
     },

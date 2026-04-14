@@ -2,11 +2,11 @@
 // Address: 00531480
 // Address Range: [[00531480, 0053167a]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *granule_info,int channel,int granule,SMpegFrame *frame)
+// Signature: void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *side_info,int channel,int granule,SMpegFrame *frame)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *granule_info,int channel,int granule,SMpegFrame *frame)
+void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *side_info,int channel,int granule,SMpegFrame *frame)
 
 {
   int iVar1;
@@ -24,14 +24,13 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480(CM
   int iVar11;
   int *piVar6;
   
-  iVar10 = channel * 0x48 + granule * 0xa0 + 0x18;
   iVar8 = 0;
   sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0
-            (this_ptr,scalefactor_dest,granule_info,channel,granule,frame);
-  if ((*(int *)((int)granule_info->granules + iVar10 + -8) != 0) &&
-     (*(int *)((int)granule_info->granules + iVar10 + -4) == 2)) {
+            (this_ptr,scalefactor_dest,side_info,channel,granule,frame);
+  if ((side_info->channels[granule].granules[channel].window_switching_flag != 0) &&
+     (side_info->channels[granule].granules[channel].block_type == 2)) {
     piVar1 = scalefactor_dest + granule * 0x3e;
-    if (*(int *)((int)granule_info->granules + iVar10) != 0) {
+    if (side_info->channels[granule].granules[channel].mixed_block_flag != 0) {
       piVar2 = piVar1;
       pCVar6 = this_ptr;
       do {

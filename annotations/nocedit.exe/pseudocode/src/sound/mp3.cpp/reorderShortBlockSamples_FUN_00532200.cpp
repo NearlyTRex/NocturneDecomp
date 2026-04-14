@@ -2,11 +2,11 @@
 // Address: 00532200
 // Address Range: [[00532200, 0053253d]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_00532200(SMpegSubbandSamples *input_samples,SMpegSubbandSamples *output_samples,SMpegFrame *frame_info,SMpegFrame *frame)
+// Signature: void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_00532200(SMpegSubbandSamples *input_samples,SMpegSubbandSamples *output_samples,SMpegLayer3GranuleInfo *granule,SMpegFrame *frame)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_00532200(SMpegSubbandSamples *input_samples,SMpegSubbandSamples *output_samples,SMpegFrame *frame_info,SMpegFrame *frame)
+void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_00532200(SMpegSubbandSamples *input_samples,SMpegSubbandSamples *output_samples,SMpegLayer3GranuleInfo *granule,SMpegFrame *frame)
 
 {
   float (*pafVar1) [18];
@@ -57,7 +57,7 @@ void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_00532200(SMpegSubbandSam
     } while (pafVar1 != pafVar17);
     iVar6 = iVar6 + 1;
   } while (iVar6 < 0x20);
-  if ((frame_info->channel_count == 0) || (frame_info->js_bound != 2)) {
+  if ((granule->window_switching_flag == 0) || (granule->block_type != 2)) {
     local_58 = (float *)output_samples;
     iVar18 = 0;
     pfVar20 = (float *)input_samples;
@@ -75,7 +75,7 @@ void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_00532200(SMpegSubbandSam
       local_58 = local_58 + 0x12;
     } while (iVar18 < 0x20);
   }
-  else if (frame_info->sblimit == 0) {
+  else if (granule->mixed_block_flag == 0) {
     local_4c = iVar7 * 0x94;
     iVar18 = 0;
     local_38 = g_Layer3BandIndex[iVar7].s[1];

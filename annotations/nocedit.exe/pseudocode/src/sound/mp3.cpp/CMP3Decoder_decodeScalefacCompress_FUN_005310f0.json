@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 312,
-    "complexity_score": 189,
+    "complexity_score": 102,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 104,
-    "suspect_count": 8,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 416
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 102,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 414
   },
   "cross_references": [
     {
@@ -36,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_mp3.cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0",
-    "signature": "void __cdecl sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *granule_info,int channel,int granule,SMpegFrame *frame)"
+    "signature": "void __cdecl sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *side_info,int channel,int granule,SMpegFrame *frame)"
   },
   "function_calls": [
     {
@@ -160,7 +158,7 @@
       },
       {
         "is_param": true,
-        "name": "granule_info",
+        "name": "side_info",
         "offset": 12,
         "size": 4,
         "type": "SMpegLayer3SideInfo *"
@@ -188,70 +186,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uVar2 = *(uint *)((int)granule_info->granules + iVar1 + -0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if ((*(int *)((int)granule_info->granules + iVar1 + -4) == 2) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 23,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "(*(int *)((int)granule_info->granules + iVar1) == 0)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if ((*(int *)((int)granule_info->granules + iVar1 + -4) == 2) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 27,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "(*(int *)((int)granule_info->granules + iVar1) == 1)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)granule_info->granules + iVar1 + 0x3c) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)granule_info->granules + iVar1 + 0x3c) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 56,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)granule_info->granules + iVar1 + 0x3c) = 1;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

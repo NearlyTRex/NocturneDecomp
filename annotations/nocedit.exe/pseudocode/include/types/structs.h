@@ -114,6 +114,7 @@
 #include "types/structs/SMpegLayer3GranuleInfo.h"
 #include "types/structs/SMpegLayer3ScalefactorGranule.h"
 #include "types/structs/SMpegLayer3SideInfo.h"
+#include "types/structs/SMpegLayer3SideInfoChannel.h"
 #include "types/structs/SMpegScalefactorBandData.h"
 #include "types/structs/SMpegStereoSubbandSamples.h"
 #include "types/structs/SMpegSubbandAllocation.h"

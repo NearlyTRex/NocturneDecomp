@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 196,
-    "complexity_score": 158,
+    "complexity_score": 127,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 93,
-    "suspect_count": 6,
+    "pseudocode_lines": 92,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 289
+    "total_lines": 288
   },
   "cross_references": [
     {
@@ -36,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480",
-    "signature": "void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *granule_info,int channel,int granule,SMpegFrame *frame)"
+    "signature": "void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *side_info,int channel,int granule,SMpegFrame *frame)"
   },
   "function_calls": [
     {
@@ -118,7 +118,7 @@
       },
       {
         "is_param": true,
-        "name": "granule_info",
+        "name": "side_info",
         "offset": 12,
         "size": 4,
         "type": "SMpegLayer3SideInfo *"
@@ -149,31 +149,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if ((*(int *)((int)granule_info->granules + iVar10 + -8) != 0) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 25,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "(*(int *)((int)granule_info->granules + iVar10 + -4) == 2)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 27,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if (*(int *)((int)granule_info->granules + iVar10) != 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 50,
+      "line": 49,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "} while (piVar3 != (int *)((int)scalefactor_dest + iVar10 + granule * 0xf8));",
@@ -181,7 +157,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 73,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "} while (piVar5 != (int *)((int)piVar1 + iVar10));",
@@ -189,7 +165,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 91,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)scalefactor_dest + iVar10) = *piVar1;",

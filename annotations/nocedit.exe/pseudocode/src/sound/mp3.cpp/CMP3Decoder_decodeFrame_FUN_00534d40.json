@@ -1,31 +1,18 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 17,
-        "line": 348,
-        "message": "no matching function for call to 'sound_mp3_cpp_antiAliasingButterfly_FUN_005334b0'"
-      },
-      {
-        "category": "incompatible_types",
-        "column": 19,
-        "line": 354,
-        "message": "no matching function for call to 'sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 1165,
-    "complexity_score": 861,
+    "complexity_score": 844,
     "cross_reference_count": 3,
     "function_call_count": 29,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 506,
-    "suspect_count": 32,
+    "pseudocode_lines": 509,
+    "suspect_count": 30,
     "suspect_types": [
       "byvalue_struct_passing",
       "format_string_mismatch",
@@ -35,7 +22,7 @@
       "warning_deadcode_restart",
       "warning_inlined_function"
     ],
-    "total_lines": 1671
+    "total_lines": 1674
   },
   "cross_references": [
     {
@@ -522,7 +509,7 @@
         "is_param": false,
         "name": "local_4c0",
         "offset": -1216,
-        "size": 168,
+        "size": 328,
         "type": "SMpegLayer3SideInfo"
       },
       {
@@ -889,31 +876,31 @@
         {
           "check_name": "bugprone-incorrect-roundings",
           "column": 22,
-          "line": 117,
+          "line": 116,
           "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
         },
         {
           "check_name": "bugprone-incorrect-roundings",
           "column": 28,
-          "line": 117,
+          "line": 116,
           "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
         },
         {
           "check_name": "bugprone-assignment-in-if-condition",
           "column": 55,
-          "line": 305,
+          "line": 304,
           "message": "an assignment within an 'if' condition is bug-prone"
         },
         {
           "check_name": "bugprone-incorrect-roundings",
           "column": 25,
-          "line": 428,
+          "line": 427,
           "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
         },
         {
           "check_name": "bugprone-incorrect-roundings",
           "column": 31,
-          "line": 428,
+          "line": 427,
           "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
         }
       ],
@@ -1092,23 +1079,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 371,
-      "match": "(SMpegLayer3SideInfo *)((int)",
-      "severity": "mild",
-      "text": "side_info = (SMpegLayer3SideInfo *)((int)local_4c0.scfsi + local_34 + -8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 400,
-      "match": "(SMpegFrame *)((int)",
-      "severity": "mild",
-      "text": "local_4c = (SMpegFrame *)((int)local_4c0.scfsi + local_34 + -8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 426,
+      "line": 429,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)local_18c8 + iVar5) = -*(float *)((int)local_18c8 + iVar5);",
@@ -1116,7 +1087,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 426,
+      "line": 429,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)local_18c8 + iVar5) = -*(float *)((int)local_18c8 + iVar5);",
@@ -1124,7 +1095,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 441,
+      "line": 444,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar1 = (uint *)((int)local_18c8 + iVar4);",
@@ -1132,7 +1103,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 443,
+      "line": 446,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)local_190 + iVar9) = *puVar1;",
@@ -1140,7 +1111,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 469,
+      "line": 472,
       "match": "(short *)((int)",
       "severity": "mild",
       "text": "*psVar13 = *(short *)((int)local_33c8 + iVar4);",

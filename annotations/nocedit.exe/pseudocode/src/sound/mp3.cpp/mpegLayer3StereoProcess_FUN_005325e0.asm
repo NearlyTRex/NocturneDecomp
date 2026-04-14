@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubbandSamples *input_lr_samples,SMpegStereoSubbandSamples *output_samples,SMpegScalefactorBandData *scalefactor_data,SMpegFrame *frame_info,SMpegFrame *frame)
+; void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubbandSamples *input_lr_samples,SMpegStereoSubbandSamples *output_samples,SMpegScalefactorBandData *scalefactor_data,SMpegLayer3GranuleInfo *granule,SMpegFrame *frame)
 ;
 ; Parameters:
 ; SMpegStereoSubbandSamples * Stack[0x4]:4   input_lr_samples
 ; SMpegStereoSubbandSamples * Stack[0x8]:4   output_samples
 ; SMpegScalefactorBandData * Stack[0xc]:4   scalefactor_data
-; SMpegFrame *     Stack[0x10]:4   frame_info
+; SMpegLayer3GranuleInfo * Stack[0x10]:4   granule
 ; SMpegFrame *     Stack[0x14]:4   frame
 ; Local Variables:
 ; undefined4       Stack[-0x2080]:4  local_2080

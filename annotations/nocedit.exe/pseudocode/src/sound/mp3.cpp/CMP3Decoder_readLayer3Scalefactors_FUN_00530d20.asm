@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *granule_info,int channel,int granule_index,SMpegFrame *frame)
+; void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20(CMP3Decoder *this_ptr,int *scalefactor_dest,SMpegLayer3SideInfo *side_info,int channel,int granule_index,SMpegFrame *frame)
 ;
 ; Parameters:
 ; CMP3Decoder *    Stack[0x4]:4   this_ptr
 ; int *            Stack[0x8]:4   scalefactor_dest
-; SMpegLayer3SideInfo * Stack[0xc]:4   granule_info
+; SMpegLayer3SideInfo * Stack[0xc]:4   side_info
 ; int              Stack[0x10]:4   channel
 ; int              Stack[0x14]:4   granule_index
 ; SMpegFrame *     Stack[0x18]:4   frame

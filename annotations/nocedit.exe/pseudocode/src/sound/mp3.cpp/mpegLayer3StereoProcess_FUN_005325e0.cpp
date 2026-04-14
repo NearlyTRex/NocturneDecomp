@@ -2,11 +2,11 @@
 // Address: 005325e0
 // Address Range: [[005325e0, 005334a8]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubbandSamples *input_lr_samples,SMpegStereoSubbandSamples *output_samples,SMpegScalefactorBandData *scalefactor_data,SMpegFrame *frame_info,SMpegFrame *frame)
+// Signature: void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubbandSamples *input_lr_samples,SMpegStereoSubbandSamples *output_samples,SMpegScalefactorBandData *scalefactor_data,SMpegLayer3GranuleInfo *granule,SMpegFrame *frame)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubbandSamples *input_lr_samples,SMpegStereoSubbandSamples *output_samples,SMpegScalefactorBandData *scalefactor_data,SMpegFrame *frame_info,SMpegFrame *frame)
+void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubbandSamples *input_lr_samples,SMpegStereoSubbandSamples *output_samples,SMpegScalefactorBandData *scalefactor_data,SMpegLayer3GranuleInfo *granule,SMpegFrame *frame)
 
 {
   float fVar2;
@@ -110,7 +110,7 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
     local_ac = 0;
   }
   local_e0 = (uint)(frame->header->mpeg_version == 0);
-  if ((frame_info->table_index & 1U) == 1) {
+  if ((granule->scalefac_compress & 1U) == 1) {
     local_2080 = 0x667f6ee7;
     local_207c = 0x3fe6a09e;
   }
@@ -126,7 +126,7 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
     iVar5 = iVar5;
   } while (iVar5 != 0x480);
   if ((local_f0 == 2) && (local_ac != 0)) {
-    if ((frame_info->channel_count == 0) || (frame_info->js_bound != 2)) {
+    if ((granule->window_switching_flag == 0) || (granule->block_type != 2)) {
       iVar12 = 0x1f;
       iVar10 = 0x11;
       iVar11 = 0;
@@ -212,10 +212,10 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
     }
     else {
       iVar11 = local_f4 * 0x94;
-      if (frame_info->sblimit == 0) {
+      if (granule->mixed_block_flag == 0) {
         local_9c = iVar11;
         local_bc = iVar11;
-        local_e4 = frame_info->sblimit;
+        local_e4 = granule->mixed_block_flag;
         local_74 = (int *)scalefactor_data;
         do {
           iVar11 = 0xc;

@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_00532200(SMpegSubbandSamples *input_samples,SMpegSubbandSamples *output_samples,SMpegFrame *frame_info,SMpegFrame *frame)
+; void __cdecl sound_mp3_cpp_reorderShortBlockSamples_FUN_00532200(SMpegSubbandSamples *input_samples,SMpegSubbandSamples *output_samples,SMpegLayer3GranuleInfo *granule,SMpegFrame *frame)
 ;
 ; Parameters:
 ; SMpegSubbandSamples * Stack[0x4]:4   input_samples
 ; SMpegSubbandSamples * Stack[0x8]:4   output_samples
-; SMpegFrame *     Stack[0xc]:4   frame_info
+; SMpegLayer3GranuleInfo * Stack[0xc]:4   granule
 ; SMpegFrame *     Stack[0x10]:4   frame
 ; Local Variables:
 ; float[18] *      Stack[-0x5c]:4  local_5c

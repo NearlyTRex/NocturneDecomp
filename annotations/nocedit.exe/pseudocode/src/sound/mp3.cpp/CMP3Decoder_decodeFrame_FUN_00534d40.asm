@@ -21,7 +21,7 @@
 ; SMpegSubbandScalefactors[2] Stack[-0x9c8]:768  local_9c8
 ; SMpegScalefactorBandData Stack[-0x6c8]:496  local_6c8
 ; char             Stack[-0x4d8]:1  local_4d8
-; SMpegLayer3SideInfo Stack[-0x4c0]:168  local_4c0
+; SMpegLayer3SideInfo Stack[-0x4c0]:328  local_4c0
 ; SMpegSubbandSCFSI[2] Stack[-0x390]:256  local_390
 ; SMpegSubbandAllocation[2] Stack[-0x290]:256  local_290
 ; float[32]        Stack[-0x190]:128  local_190
@@ -988,7 +988,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0053581f
     PUSH EAX                            ; 00535822
     CALL sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20 ; 00535823
-        ;   XREF to: 00530d20 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20(CMP3Decoder * this_ptr, int * scalefactor_dest, SMpegLayer3SideInfo * granule_info, int channel, ...)
+        ;   XREF to: 00530d20 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20(CMP3Decoder * this_ptr, int * scalefactor_dest, SMpegLayer3SideInfo * side_info, int channel, ...)
     ADD ESP,0x18                        ; 00535828
         ;   Label: LAB_00535828
     LEA EAX,[ESP + 0x5ff0]              ; 0053582b
@@ -1018,7 +1018,7 @@ section .text
     LEA EAX,[ESP + 0x241c]              ; 0053587a
     PUSH EAX                            ; 00535881
     CALL sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50 ; 00535882
-        ;   XREF to: 00531d50 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50(SMpegSubbandQuantizedSamples * quantized_samples, SMpegSubbandSamples * output_samples, int * scalefactor_data, SMpegLayer3SideInfo * side_info, ...)
+        ;   XREF to: 00531d50 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50(SMpegSubbandQuantizedSamples * quantized_samples, SMpegSubbandSamples * output_samples, int * scalefactor_data, SMpegLayer3GranuleInfo * granule, ...)
     ADD ESP,0x18                        ; 00535887
     INC ESI                             ; 0053588a
     MOV EDX,dword ptr [ESP + 0x6078]    ; 0053588b
@@ -1041,7 +1041,7 @@ section .text
     LEA EAX,[ESP + 0x1218]              ; 005358d1
     PUSH EAX                            ; 005358d8
     CALL sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 ; 005358d9
-        ;   XREF to: 005325e0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubbandSamples * input_lr_samples, SMpegStereoSubbandSamples * output_samples, SMpegScalefactorBandData * scalefactor_data, SMpegFrame * frame_info, ...)
+        ;   XREF to: 005325e0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubbandSamples * input_lr_samples, SMpegStereoSubbandSamples * output_samples, SMpegScalefactorBandData * scalefactor_data, SMpegLayer3GranuleInfo * granule, ...)
     ADD ESP,0x14                        ; 005358de
     XOR EDI,EDI                         ; 005358e1
     MOV EAX,dword ptr [ESP + 0x6018]    ; 005358e3
@@ -1069,7 +1069,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x6094]    ; 0053594b
     PUSH EDI                            ; 00535952
     CALL sound_mp3.cpp_reorderShortBlockSamples_FUN_00532200 ; 00535953
-        ;   XREF to: 00532200 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_reorderShortBlockSamples_FUN_00532200(SMpegSubbandSamples * input_samples, SMpegSubbandSamples * output_samples, SMpegFrame * frame_info, SMpegFrame * frame)
+        ;   XREF to: 00532200 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_reorderShortBlockSamples_FUN_00532200(SMpegSubbandSamples * input_samples, SMpegSubbandSamples * output_samples, SMpegLayer3GranuleInfo * granule, SMpegFrame * frame)
     ADD ESP,0x10                        ; 00535958
     LEA EAX,[ESP + 0x5ff0]              ; 0053595b
     PUSH EAX                            ; 00535962
@@ -1079,7 +1079,7 @@ section .text
     LEA EAX,[ESP + 0x3f14]              ; 0053596c
     PUSH EAX                            ; 00535973
     CALL sound_mp3.cpp_antiAliasingButterfly_FUN_005334b0 ; 00535974
-        ;   XREF to: 005334b0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_antiAliasingButterfly_FUN_005334b0(float * input_samples, float * output_samples, SMpegFrame * frame_info, SMpegFrameHeader * header)
+        ;   XREF to: 005334b0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_antiAliasingButterfly_FUN_005334b0(float * input_samples, float * output_samples, SMpegLayer3GranuleInfo * granule, SMpegFrameHeader * header)
     ADD ESP,0x10                        ; 00535979
     MOV EAX,dword ptr [ESP + 0x6084]    ; 0053597c
     LEA EDI,[ESP + 0x4808]              ; 00535983
@@ -1262,7 +1262,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 00535bfc
     PUSH EDX                            ; 00535bff
     CALL sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480 ; 00535c00
-        ;   XREF to: 00531480 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480(CMP3Decoder * this_ptr, int * scalefactor_dest, SMpegLayer3SideInfo * granule_info, int channel, ...)
+        ;   XREF to: 00531480 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480(CMP3Decoder * this_ptr, int * scalefactor_dest, SMpegLayer3SideInfo * side_info, int channel, ...)
     JMP 0x00535828                      ; 00535c05
         ;   XREF to: 00535828 (UNCONDITIONAL_JUMP)  ; LAB_00535828
     CMP EDI,0x2                         ; 00535c0a

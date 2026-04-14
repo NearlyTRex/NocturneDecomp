@@ -2,11 +2,11 @@
 // Address: 00531d50
 // Address Range: [[00531d50, 005321fc]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50(SMpegSubbandQuantizedSamples *quantized_samples,SMpegSubbandSamples *output_samples,int *scalefactor_data,SMpegLayer3SideInfo *side_info,int channel_index,SMpegFrame *frame)
+// Signature: void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50(SMpegSubbandQuantizedSamples *quantized_samples,SMpegSubbandSamples *output_samples,int *scalefactor_data,SMpegLayer3GranuleInfo *granule,int channel_index,SMpegFrame *frame)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50(SMpegSubbandQuantizedSamples *quantized_samples,SMpegSubbandSamples *output_samples,int *scalefactor_data,SMpegLayer3SideInfo *side_info,int channel_index,SMpegFrame *frame)
+void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50(SMpegSubbandQuantizedSamples *quantized_samples,SMpegSubbandSamples *output_samples,int *scalefactor_data,SMpegLayer3GranuleInfo *granule,int channel_index,SMpegFrame *frame)
 
 {
   int iVar2;
@@ -40,10 +40,10 @@ void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50(SMpegSubbandQuan
   
   iVar6 = 0;
   iVar7 = frame->header->sampling_rate_index + frame->header->mpeg_version * 3;
-  if ((side_info->scfsi[2] == 0) || (side_info->scfsi[3] != 2)) {
+  if ((granule->window_switching_flag == 0) || (granule->block_type != 2)) {
     local_1c = (float *)g_Layer3BandIndex[iVar7].l[1];
   }
-  else if (side_info->granules[0].part_2_3_length == 0) {
+  else if (granule->mixed_block_flag == 0) {
     local_1c = (float *)(g_Layer3BandIndex[iVar7].s[1] * 3);
     local_28 = g_Layer3BandIndex[iVar7].s[1];
     local_2c = 0;
@@ -92,13 +92,13 @@ void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50(SMpegSubbandQuan
     do {
       iVar6 = iVar3;
       if (local_20 == local_1c) {
-        if ((side_info->scfsi[2] == 0) || (side_info->scfsi[3] != 2)) {
+        if ((granule->window_switching_flag == 0) || (granule->block_type != 2)) {
           iVar6 = iVar3 + 1;
           local_1c = (float *)g_Layer3BandIndex[iVar7].l[iVar3 + 2];
         }
         else {
           iVar6 = iVar3 + 1;
-          if (side_info->granules[0].part_2_3_length == 0) {
+          if (granule->mixed_block_flag == 0) {
 LAB_00532050:
             iVar4 = g_Layer3BandIndex[iVar7].s[iVar3 + 2];
             iVar1 = g_Layer3BandIndex[iVar7].s[iVar3 + 1];
@@ -126,19 +126,19 @@ LAB_00531ee0:
         *(uint *)((int)output_samples->samples[0] + iVar8 + local_68) = 0;
       }
       else {
-        iVar5 = side_info->scfsi[0] + -0xd2;
-        if ((side_info->scfsi[2] == 0) ||
-           (((side_info->scfsi[3] != 2 || (side_info->granules[0].part_2_3_length != 0)) &&
-            ((side_info->scfsi[3] != 2 ||
-             ((side_info->granules[0].part_2_3_length == 0 || (local_44 < 2)))))))) {
-          iVar3 = (side_info->granules[0].subblock_gain[0] + 1) * -2 *
+        iVar5 = granule->global_gain + -0xd2;
+        if ((granule->window_switching_flag == 0) ||
+           (((granule->block_type != 2 || (granule->mixed_block_flag != 0)) &&
+            ((granule->block_type != 2 || ((granule->mixed_block_flag == 0 || (local_44 < 2))))))))
+        {
+          iVar3 = (granule->scalefac_scale + 1) * -2 *
                   (scalefactor_data[channel_index * 0x3e + iVar6] +
-                  side_info->granules[0].table_select[2] * g_Layer3Pretab[iVar6]);
+                  granule->preflag * g_Layer3Pretab[iVar6]);
         }
         else {
           iVar2 = ((int)local_38 - local_2c) / local_28;
-          iVar5 = iVar5 + side_info->granules[0].table_select[iVar2 + -3] * -8;
-          iVar3 = (side_info->granules[0].subblock_gain[0] + 1) * -2 *
+          iVar5 = iVar5 + granule->subblock_gain[iVar2] * -8;
+          iVar3 = (granule->scalefac_scale + 1) * -2 *
                   scalefactor_data[channel_index * 0x3e + iVar2 * 0xd + iVar6 + 0x17];
         }
         iVar3 = iVar5 + iVar3;

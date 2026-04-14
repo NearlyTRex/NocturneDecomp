@@ -5,32 +5,13 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6447 (99.9%)
-Failed: 7
+Successful: 6452 (100.0%)
+Failed: 2
 
 ERROR CATEGORIES
 --------------------------------------------------
-  undeclared_identifier             33
   type_error                         7
-  other                              7
-  incompatible_types                 6
-
-====================================================================================================
-CATEGORY: undeclared_identifier (33 errors)
-====================================================================================================
-
-  sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90
-    Line 125: use of undeclared identifier 'stack0xffffff68'
-  sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
-    Line 85: use of undeclared identifier 'stack0xffffff94'; did you mean 'in_stack_ffffff94'?
-  shape_meshlod.cpp_CLodMesh_renderWireframe_FUN_0051e770
-    Line 77: use of undeclared identifier 'stack0xffffffb4'
-  shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830
-    Line 110: use of undeclared identifier 'stack0xffffffb8'
-  wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823
-    Line 175: use of undeclared identifier 'uRam00682694'
-  wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031
-    Line 174: use of undeclared identifier 'uRam00682694'
+  undeclared_identifier              2
 
 ====================================================================================================
 CATEGORY: type_error (7 errors)
@@ -40,21 +21,10 @@ CATEGORY: type_error (7 errors)
     Line 92: member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union
 
 ====================================================================================================
-CATEGORY: other (7 errors)
+CATEGORY: undeclared_identifier (2 errors)
 ====================================================================================================
 
-  wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823
-    Line 17: unknown type name 'uint3'; did you mean 'uint'?
-  wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031
-    Line 17: unknown type name 'undefined6'
-
-====================================================================================================
-CATEGORY: incompatible_types (6 errors)
-====================================================================================================
-
-  wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823
-    Line 148: cannot convert 'SAlphaEntry' to '__m64' (vector of 1 'long long' value) without a conversion operator
-  wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031
-    Line 147: cannot convert 'SAlphaEntry' to '__m64' (vector of 1 'long long' value) without a conversion operator
-  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
-    Line 348: no matching function for call to 'sound_mp3_cpp_antiAliasingButterfly_FUN_005334b0'
+  sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90
+    Line 125: use of undeclared identifier 'stack0xffffff68'
+  sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
+    Line 85: use of undeclared identifier 'stack0xffffff94'; did you mean 'in_stack_ffffff94'?
