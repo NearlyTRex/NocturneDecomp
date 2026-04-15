@@ -66,7 +66,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
   g_CurrentZBufferPtr  = zbuf_ptr;
 
   // Z-only fill path (LAB_005b47e0 in the 32-bit asm; mirrors LAB_005b50a9 in 16-bit).
-  if (g_RenderStateFlags.dword == 0x80) {
+  if (g_RenderStateFlags.dword == RENDER_DEPTH_WRITE) {
     start_w = (lo->base).w_current;
     delta_w = (int)(((longlong)((hi->base).w_current - start_w)
                      * (longlong)(int)g_ReciprocalLookupTable[pixel_count + 1]) >> 32);
@@ -116,7 +116,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
   g_VertexAlphaDelta = delta_alpha;
 
   // Color accumulator (MM5/MM6) — 4-way branch on render flags.
-  if ((g_RenderStateFlags.dword & 0x200) != 0) {
+  if ((g_RenderStateFlags.dword & RENDER_COLOR_FROM_VERTEX) != 0) {
     red_s   = ((uint)(lo->base).z_current >> 1) & 0xffff;
     red_d   = (uint)(int)(((longlong)(int)(((uint)(hi->base).z_current >> 1)
                                            - ((uint)(lo->base).z_current >> 1))
@@ -135,7 +135,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
     color_current = ((ulonglong)red_s   << 32) | ((ulonglong)green_s << 16) | blue_s;
     color_delta   = ((ulonglong)red_d   << 32) | ((ulonglong)green_d << 16) | blue_d;
   }
-  else if ((g_RenderStateFlags.dword & 0x4) != 0) {
+  else if ((g_RenderStateFlags.dword & RENDER_FOG_COLOR) != 0) {
     hi_val = (uint)(hi->base).z_current - 0x100;
     lo_val = (uint)(lo->base).z_current - 0x100;
     if (0xfff < hi_val) hi_val = 0xfff;
@@ -149,7 +149,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
     color_current = ((ulonglong)red_s << 32) | ((ulonglong)red_s << 16) | red_s;
     color_delta   = ((ulonglong)red_d << 32) | ((ulonglong)red_d << 16) | red_d;
   }
-  else if ((g_RenderStateFlags.dword & 0x10) != 0) {
+  else if ((g_RenderStateFlags.dword & RENDER_LIGHTING_COLOR) != 0) {
     light_idx = ((uint)g_CurrentLightingValue - 0x100) >> 4;
     if (0xff < light_idx) light_idx = 0xff;
     color_current = *(ulonglong *)&g_AlphaTable[light_idx];
@@ -169,22 +169,22 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
   int edi       = 0;
   ulonglong clear_bits = __BITCAST_UINT64(g_SelectedClearColor);
 
-  if (g_CurrentTextureOpacityData == (void *)0x0 && (g_RenderStateFlags.dword & 2) == 0) {
+  if (g_CurrentTextureOpacityData == (void *)0x0 && (g_RenderStateFlags.dword & RENDER_FORCE_SOLID_LOOP) == 0) {
     // Loop C — untextured solid-color path.
     uint solid_raw = (uint)g_SolidColorMode;
-    if ((g_RenderStateFlags.dword & 8) == 0) {
+    if ((g_RenderStateFlags.dword & RENDER_SOLID_ALPHA_BLEND) == 0) {
       cur_alpha = 0;
       g_VertexAlphaDelta = 0;
     }
     while (1) {
-      if ((g_RenderStateFlags.dword & 0x40) == 0 || cur_w >= ((int *)g_CurrentZBufferPtr)[edi / 4]) {
+      if ((g_RenderStateFlags.dword & RENDER_DEPTH_TEST) == 0 || cur_w >= ((int *)g_CurrentZBufferPtr)[edi / 4]) {
         uint pix;
-        if ((g_RenderStateFlags.dword & 1) != 0) {
+        if ((g_RenderStateFlags.dword & RENDER_TEX_ENABLE) != 0) {
           uint tex_idx = ((uint)cur_u >> g_TextureShift1.mm) & g_TextureMask1.u32[0];
           tex_idx += ((uint)cur_v >> g_TextureShift2.mm) & g_TextureMask2.u32[0];
           pix = g_Hardware32BitPalette[*((byte *)g_CurrentTextureData + tex_idx)];
         }
-        else if ((g_RenderStateFlags.dword & 0x200) != 0) {
+        else if ((g_RenderStateFlags.dword & RENDER_COLOR_FROM_VERTEX) != 0) {
           pix = (uint)g_SpecialColor;
         }
         else {
@@ -202,7 +202,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
         }
 
         uint out_pix = lit_pix;
-        if ((g_RenderStateFlags.dword & 8) != 0) {
+        if ((g_RenderStateFlags.dword & RENDER_SOLID_ALPHA_BLEND) != 0) {
           int alpha_idx = cur_alpha >> 8;
           ulonglong alpha_q     = *(ulonglong *)&g_AlphaTable[alpha_idx];
           ulonglong inv_alpha_q = alpha_q ^ *(ulonglong *)&g_AlphaTable[0xff];
@@ -221,7 +221,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
         // 32-bit direct write (diff from 16-bit: no pack, direct uint store at edi).
         *(uint *)((char *)g_CurrentScreenPtr + edi) = out_pix;
 
-        if ((g_RenderStateFlags.dword & 0x80) != 0) {
+        if ((g_RenderStateFlags.dword & RENDER_DEPTH_WRITE) != 0) {
           *(int *)((char *)g_CurrentZBufferPtr + edi) = cur_w;
         }
       }
@@ -249,7 +249,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
     return;
   }
 
-  if ((g_RenderStateFlags.dword & 0x100) == 0) {
+  if ((g_RenderStateFlags.dword & RENDER_ALPHA_FROM_VERTEX) == 0) {
     cur_alpha = g_CurrentAlphaValue << 8;
     g_VertexAlphaDelta = 0;
   }
@@ -257,7 +257,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
   if (g_CurrentTextureOpacityData != (void *)0x0) {
     // Loop B — textured with opacity map.
     while (1) {
-      if ((g_RenderStateFlags.dword & 0x40) == 0 || cur_w >= ((int *)g_CurrentZBufferPtr)[edi / 4]) {
+      if ((g_RenderStateFlags.dword & RENDER_DEPTH_TEST) == 0 || cur_w >= ((int *)g_CurrentZBufferPtr)[edi / 4]) {
         uint tex_idx = ((uint)cur_u >> g_TextureShift1.mm) & g_TextureMask1.u32[0];
         tex_idx += ((uint)cur_v >> g_TextureShift2.mm) & g_TextureMask2.u32[0];
         uint pix = g_Hardware32BitPalette[*((byte *)g_CurrentTextureData + tex_idx)];
@@ -321,7 +321,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
           // 32-bit direct write (diff from 16-bit).
           *(uint *)((char *)g_CurrentScreenPtr + edi) = out_pix;
 
-          if ((g_RenderStateFlags.dword & 0x80) != 0) {
+          if ((g_RenderStateFlags.dword & RENDER_DEPTH_WRITE) != 0) {
             *(int *)((char *)g_CurrentZBufferPtr + edi) = cur_w;
           }
         }
@@ -352,14 +352,14 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
 
   // Loop A — textured, no opacity map. Always alpha-blends.
   while (1) {
-    if ((g_RenderStateFlags.dword & 0x40) == 0 || cur_w >= ((int *)g_CurrentZBufferPtr)[edi / 4]) {
+    if ((g_RenderStateFlags.dword & RENDER_DEPTH_TEST) == 0 || cur_w >= ((int *)g_CurrentZBufferPtr)[edi / 4]) {
       uint tex_idx = ((uint)cur_u >> g_TextureShift1.mm) & g_TextureMask1.u32[0];
       tex_idx += ((uint)cur_v >> g_TextureShift2.mm) & g_TextureMask2.u32[0];
       uint pix = g_Hardware32BitPalette[*((byte *)g_CurrentTextureData + tex_idx)];
 
       if (pix != 0) {
         ulonglong mm4 = 0;
-        if ((g_RenderStateFlags.dword & 0x20) != 0) {
+        if ((g_RenderStateFlags.dword & RENDER_BLEND_READ_DEST) != 0) {
           // Diff from 16-bit: direct uint load, no 16→32 unpack.
           uint pix32 = *(uint *)((char *)g_CurrentScreenPtr + edi);
           int c;
@@ -402,7 +402,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
         // 32-bit direct write (diff from 16-bit).
         *(uint *)((char *)g_CurrentScreenPtr + edi) = out_pix;
 
-        if ((g_RenderStateFlags.dword & 0x80) != 0) {
+        if ((g_RenderStateFlags.dword & RENDER_DEPTH_WRITE) != 0) {
           *(int *)((char *)g_CurrentZBufferPtr + edi) = cur_w;
         }
       }

@@ -67,14 +67,14 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(
           } while (iVar4 < vertices_per_face);
         }
         if ((this_ptr->face_capture_enabled == 0) &&
-           (((this_ptr->face_count != 0 && ((g_RenderStateFlags.dword & 1) == 0)) ||
-            ((g_RenderStateFlags.dword & 5) == 0)))) {
+           (((this_ptr->face_count != 0 && ((g_RenderStateFlags.dword & RENDER_TEX_ENABLE) == 0)) ||
+            ((g_RenderStateFlags.dword & (RENDER_TEX_ENABLE | RENDER_FOG_COLOR)) == 0)))) {
           core_xform_cpp_transformAndClipGeometry_FUN_005f8550(iVar4,&local_68[0].x);
           if (2 < g_ClippedVertexCount) {
             engine_3d_c_rasterizeTriangle_FUN_005fcfc0(g_ClippedVertexBuffer,g_ClippedVertexCount);
           }
         }
-        else if ((g_RenderStateFlags.dword & 0x200) == 0) {
+        else if ((g_RenderStateFlags.dword & RENDER_COLOR_FROM_VERTEX) == 0) {
           engine_clipper_c_clipAndRasterize_FUN_004371b0(iVar4,&local_68[0].x);
         }
         else {

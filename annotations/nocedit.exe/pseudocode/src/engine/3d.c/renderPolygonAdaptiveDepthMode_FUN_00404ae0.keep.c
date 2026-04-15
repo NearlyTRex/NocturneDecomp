@@ -32,7 +32,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveDepthMode_FUN_004
         else {
           pcVar3 = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
         }
-        g_RenderStateFlags.dword = 0x10;
+        g_RenderStateFlags.dword = RENDER_LIGHTING_COLOR;
         g_VertexPreprocessMode = PREPROCESS_NONE;
         g_ScanlineRenderFunc = pcVar3;
       }
@@ -51,7 +51,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveDepthMode_FUN_004
         else {
           pcVar3 = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
         }
-        g_RenderStateFlags.dword = 0xd0;
+        g_RenderStateFlags.dword = (RENDER_LIGHTING_COLOR | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
         g_VertexPreprocessMode = PREPROCESS_Z_PASS_INVW;
         g_ScanlineRenderFunc = pcVar3;
       }

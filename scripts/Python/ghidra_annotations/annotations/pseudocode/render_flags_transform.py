@@ -98,6 +98,18 @@ _BINOP_LITERAL_FIRST = re.compile(
     r'(' + _GLOBAL_DWORD + r')'
 )
 
+# Byte-sliced access: g_RenderStateFlags.bytes[N]. Only read-bit-ops are safe to
+# rewrite — the byte access gets normalized to the equivalent .dword expression
+# with the mask shifted into the right position. Writes and equality tests on
+# .bytes[N] are deliberately NOT handled (they'd need wider rewrites that could
+# change semantics; leave them as literals for manual cleanup).
+_GLOBAL_BYTES = r'g_RenderStateFlags\.bytes\[(\d+)\]'
+_BINOP_BYTES_BITOP = re.compile(
+    _GLOBAL_BYTES
+    + r'(\s*[&|^]\s*)'
+    + r'(' + _INT_LITERAL + r')'
+)
+
 
 def _parse_int(literal):
     if literal.startswith(('0x', '0X')):
@@ -124,6 +136,17 @@ def transform_render_state_flags(code):
         value = _parse_int(literal)
         return decompose_render_flags_value(value) + operator + global_expr
 
+    def repl_bytes_bitop(m):
+        byte_idx = int(m.group(1))
+        operator = m.group(2)
+        literal = m.group(3)
+        if byte_idx > 3:
+            # Out of range for a 32-bit dword; leave as-is for manual review.
+            return m.group(0)
+        shifted = _parse_int(literal) << (byte_idx * 8)
+        return 'g_RenderStateFlags.dword' + operator + decompose_render_flags_value(shifted)
+
     result = _BINOP_GLOBAL_FIRST.sub(repl_global_first, code)
     result = _BINOP_LITERAL_FIRST.sub(repl_literal_first, result)
+    result = _BINOP_BYTES_BITOP.sub(repl_bytes_bitop, result)
     return result

@@ -15,7 +15,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspectiveTextured_FUN_004
   if ((this_ptr->plane_culling_enabled == 0) ||
      (iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal), iVar1 != 0)) {
     if (this_ptr->face_count == 0) {
-      g_RenderStateFlags.dword = 1;
+      g_RenderStateFlags.dword = RENDER_TEX_ENABLE;
       g_VertexPreprocessMode = PREPROCESS_W_DEPTH_REPLACEMENT;
       g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9;
     }

@@ -104,7 +104,7 @@ void __cdecl core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00482fb0(SSoftwar
       iVar5 = (vertex_a->base).x_current;
     }
     g_EdgeInterpolationArray[iVar2].base.w_current = iVar5 + uVar3;
-    if ((g_RenderStateFlags.bytes[1] & 2) != 0) {
+    if ((g_RenderStateFlags.dword & RENDER_COLOR_FROM_VERTEX) != 0) {
       lVar2 = (longlong)iVar6 * (longlong)((pSVar6->base).v_gradient - (vertex_a->base).v_gradient);
       uVar3 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
       g_EdgeInterpolationArray[iVar2].color_gradient = uVar3;
