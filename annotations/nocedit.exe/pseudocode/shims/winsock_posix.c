@@ -1,4 +1,8 @@
-/* POSIX socket wrappers - called from winsock.cpp to avoid name collisions */
+/* POSIX socket wrappers - called from winsock.cpp to avoid name collisions.
+ *
+ * The extern "C" guard keeps symbols unmangled even when this file is compiled
+ * as C++ (which the CMake shim target does via LANGUAGE CXX). winsock.cpp
+ * declares these inside its own extern "C" block, so linkage must match. */
 
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -8,6 +12,10 @@
 #include <netdb.h>
 #include <unistd.h>
 #include <string.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 int posix_socket(int domain, int type, int protocol) {
     return socket(domain, type, protocol);
@@ -83,3 +91,7 @@ int posix_gethostname(char* name, unsigned long namelen) {
 struct servent* posix_getservbyport(int port, const char* proto) {
     return getservbyport(port, proto);
 }
+
+#ifdef __cplusplus
+} /* extern "C" */
+#endif

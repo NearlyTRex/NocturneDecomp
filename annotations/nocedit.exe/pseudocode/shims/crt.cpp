@@ -241,9 +241,9 @@ _tm* _localtime(const void* timer) {
     return reinterpret_cast<_tm*>(localtime(reinterpret_cast<const time_t*>(timer)));
 }
 
-time_t _time(int* timer) {
+time_t _time(time_t* timer) {
     time_t t = time(nullptr);
-    if (timer) *timer = (int)t;
+    if (timer) *timer = t;
     return t;
 }
 
