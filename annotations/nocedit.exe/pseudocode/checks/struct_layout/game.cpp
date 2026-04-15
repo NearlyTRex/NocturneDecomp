@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: game
-// Structs : 509
+// Structs : 512
 
 #include "nocturne.h"
 
@@ -8816,13 +8816,21 @@ static_assert(__builtin_offsetof(SMRGLModelBounds, radius_scaled) == 36,
 static_assert(__builtin_offsetof(SMRGLModelBounds, extent) == 40,
               "offsetof(SMRGLModelBounds, extent) != 40");
 
-// ---- SMRGLPrimitiveClippedIndex (56 bytes) ----
-static_assert(sizeof(SMRGLPrimitiveClippedIndex) == 56,
-              "sizeof(SMRGLPrimitiveClippedIndex) != 56");
-static_assert(__builtin_offsetof(SMRGLPrimitiveClippedIndex, base) == 0,
-              "offsetof(SMRGLPrimitiveClippedIndex, base) != 0");
-static_assert(__builtin_offsetof(SMRGLPrimitiveClippedIndex, vertices) == 24,
-              "offsetof(SMRGLPrimitiveClippedIndex, vertices) != 24");
+// ---- SMRGLPrimitivePoly (120 bytes) ----
+static_assert(sizeof(SMRGLPrimitivePoly) == 120,
+              "sizeof(SMRGLPrimitivePoly) != 120");
+static_assert(__builtin_offsetof(SMRGLPrimitivePoly, base) == 0,
+              "offsetof(SMRGLPrimitivePoly, base) != 0");
+static_assert(__builtin_offsetof(SMRGLPrimitivePoly, vertices) == 24,
+              "offsetof(SMRGLPrimitivePoly, vertices) != 24");
+
+// ---- SMRGLPrimitivePolyIndex (56 bytes) ----
+static_assert(sizeof(SMRGLPrimitivePolyIndex) == 56,
+              "sizeof(SMRGLPrimitivePolyIndex) != 56");
+static_assert(__builtin_offsetof(SMRGLPrimitivePolyIndex, base) == 0,
+              "offsetof(SMRGLPrimitivePolyIndex, base) != 0");
+static_assert(__builtin_offsetof(SMRGLPrimitivePolyIndex, vertices) == 24,
+              "offsetof(SMRGLPrimitivePolyIndex, vertices) != 24");
 
 // ---- SMRGLPrimitiveQuad (72 bytes) ----
 static_assert(sizeof(SMRGLPrimitiveQuad) == 72,
@@ -9025,12 +9033,28 @@ static_assert(__builtin_offsetof(SMpegFrame, allocation_table) == 8,
               "offsetof(SMpegFrame, allocation_table) != 8");
 static_assert(__builtin_offsetof(SMpegFrame, table_index) == 12,
               "offsetof(SMpegFrame, table_index) != 12");
-static_assert(__builtin_offsetof(SMpegFrame, samples_per_granule) == 16,
-              "offsetof(SMpegFrame, samples_per_granule) != 16");
+static_assert(__builtin_offsetof(SMpegFrame, channel_count) == 16,
+              "offsetof(SMpegFrame, channel_count) != 16");
 static_assert(__builtin_offsetof(SMpegFrame, js_bound) == 20,
               "offsetof(SMpegFrame, js_bound) != 20");
 static_assert(__builtin_offsetof(SMpegFrame, sblimit) == 24,
               "offsetof(SMpegFrame, sblimit) != 24");
+
+// ---- SMpegFrameDecodeContext (48 bytes) ----
+static_assert(sizeof(SMpegFrameDecodeContext) == 48,
+              "sizeof(SMpegFrameDecodeContext) != 48");
+static_assert(__builtin_offsetof(SMpegFrameDecodeContext, frame) == 0,
+              "offsetof(SMpegFrameDecodeContext, frame) != 0");
+static_assert(__builtin_offsetof(SMpegFrameDecodeContext, dead1) == 28,
+              "offsetof(SMpegFrameDecodeContext, dead1) != 28");
+static_assert(__builtin_offsetof(SMpegFrameDecodeContext, dead2) == 32,
+              "offsetof(SMpegFrameDecodeContext, dead2) != 32");
+static_assert(__builtin_offsetof(SMpegFrameDecodeContext, group_counter) == 36,
+              "offsetof(SMpegFrameDecodeContext, group_counter) != 36");
+static_assert(__builtin_offsetof(SMpegFrameDecodeContext, channel_count) == 40,
+              "offsetof(SMpegFrameDecodeContext, channel_count) != 40");
+static_assert(__builtin_offsetof(SMpegFrameDecodeContext, dead3) == 44,
+              "offsetof(SMpegFrameDecodeContext, dead3) != 44");
 
 // ---- SMpegFrameHeader (48 bytes) ----
 static_assert(sizeof(SMpegFrameHeader) == 48,
@@ -9110,17 +9134,23 @@ static_assert(__builtin_offsetof(SMpegLayer3ScalefactorGranule, long_sentinel) =
 static_assert(__builtin_offsetof(SMpegLayer3ScalefactorGranule, short_scalefactors) == 92,
               "offsetof(SMpegLayer3ScalefactorGranule, short_scalefactors) != 92");
 
-// ---- SMpegLayer3SideInfo (168 bytes) ----
-static_assert(sizeof(SMpegLayer3SideInfo) == 168,
-              "sizeof(SMpegLayer3SideInfo) != 168");
+// ---- SMpegLayer3SideInfo (328 bytes) ----
+static_assert(sizeof(SMpegLayer3SideInfo) == 328,
+              "sizeof(SMpegLayer3SideInfo) != 328");
 static_assert(__builtin_offsetof(SMpegLayer3SideInfo, main_data_begin) == 0,
               "offsetof(SMpegLayer3SideInfo, main_data_begin) != 0");
 static_assert(__builtin_offsetof(SMpegLayer3SideInfo, private_bits) == 4,
               "offsetof(SMpegLayer3SideInfo, private_bits) != 4");
-static_assert(__builtin_offsetof(SMpegLayer3SideInfo, scfsi) == 8,
-              "offsetof(SMpegLayer3SideInfo, scfsi) != 8");
-static_assert(__builtin_offsetof(SMpegLayer3SideInfo, granules) == 24,
-              "offsetof(SMpegLayer3SideInfo, granules) != 24");
+static_assert(__builtin_offsetof(SMpegLayer3SideInfo, channels) == 8,
+              "offsetof(SMpegLayer3SideInfo, channels) != 8");
+
+// ---- SMpegLayer3SideInfoChannel (160 bytes) ----
+static_assert(sizeof(SMpegLayer3SideInfoChannel) == 160,
+              "sizeof(SMpegLayer3SideInfoChannel) != 160");
+static_assert(__builtin_offsetof(SMpegLayer3SideInfoChannel, scfsi) == 0,
+              "offsetof(SMpegLayer3SideInfoChannel, scfsi) != 0");
+static_assert(__builtin_offsetof(SMpegLayer3SideInfoChannel, granules) == 16,
+              "offsetof(SMpegLayer3SideInfoChannel, granules) != 16");
 
 // ---- SMpegScalefactorBandData (496 bytes) ----
 static_assert(sizeof(SMpegScalefactorBandData) == 496,
