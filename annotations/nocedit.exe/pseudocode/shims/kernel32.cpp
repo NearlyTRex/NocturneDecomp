@@ -1330,7 +1330,10 @@ static BOOL shim_SetEnvironmentVariableW(LPCWSTR lpName, LPCWSTR lpValue) {
 }
 
 static BOOL shim_GetComputerNameA(LPSTR lpBuffer, LPDWORD nSize) {
-    if (gethostname(lpBuffer, *nSize) == 0) {
+    // Explicit cast picks the POSIX unistd.h overload (size_t) over the
+    // winsock.h extern (int) — both are in scope because nocturne.h pulls
+    // in winsock.h and this shim also needs unistd.h directly.
+    if (gethostname(lpBuffer, (size_t)*nSize) == 0) {
         *nSize = (DWORD)strlen(lpBuffer);
         return 1;
     }

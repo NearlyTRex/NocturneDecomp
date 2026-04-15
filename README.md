@@ -72,7 +72,30 @@ Custom Ghidra processor specifications for the x86 Watcom compiler. Includes lan
 The repository ships a CMake project that drives two pipelines from the exported
 pseudocode — see [`cmake/README.md`](cmake/README.md) for the full reference.
 
-**Prerequisites:** `cmake ≥ 3.20`, `clang`/`clang++` with 32-bit support, `python3`, `ninja`.
+### Prerequisites
+
+**Core toolchain (all presets):** `cmake ≥ 3.20`, `clang`/`clang++` with 32-bit support, `python3`, `ninja`, `pkg-config`.
+
+```sh
+sudo apt install cmake clang ninja-build pkg-config python3 \
+                 libc6-dev-i386 libstdc++-dev:i386
+```
+
+**Additional for `exe-linux` / `exe-linux-asan` (full link):** 32-bit development
+packages for SDL2, SDL2_ttf, and FFmpeg. The shims consume these to provide a
+cross-platform substrate for the decompiled game's Windows APIs.
+
+```sh
+sudo apt install libsdl2-dev:i386 libsdl2-ttf-dev:i386 \
+                 libavformat-dev:i386 libavcodec-dev:i386 \
+                 libavutil-dev:i386 libswscale-dev:i386
+```
+
+The `check-linux` preset is dependency-free beyond the core toolchain — it runs
+per-file `-fsyntax-only` and never links the shims. Only the exe presets pull
+in SDL2/FFmpeg.
+
+### Build commands
 
 ```sh
 # Syntax-only verification (reproduces the 100% clang++ milestone)
@@ -82,6 +105,10 @@ cmake --build --preset check-linux
 # Full executable build (32-bit Linux ELF)
 cmake --preset exe-linux
 cmake --build --preset exe-linux
+
+# Exe with AddressSanitizer + UBSan
+cmake --preset exe-linux-asan
+cmake --build --preset exe-linux-asan
 ```
 
 Per-function source selection priority: `.keep.{cpp,c}` > raw `.cpp`/`.c`.

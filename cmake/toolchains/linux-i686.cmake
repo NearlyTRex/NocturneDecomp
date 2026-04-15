@@ -21,3 +21,10 @@ set(CMAKE_SHARED_LINKER_FLAGS_INIT "-m32")
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY BOTH)
 set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE BOTH)
+
+# Pin pkg-config to the i386 multiarch path so pkg_check_modules resolves to
+# the 32-bit .pc files (e.g. libsdl2-dev:i386's sdl2.pc), which carry the
+# correct arch-specific include dir for headers like SDL2/_real_SDL_config.h.
+# Without this, pkg-config picks the amd64 sdl2.pc and clang can't find the
+# dispatch header for the 32-bit build.
+set(ENV{PKG_CONFIG_LIBDIR} "/usr/lib/i386-linux-gnu/pkgconfig:/usr/share/pkgconfig")

@@ -39,6 +39,17 @@ set(NOCTURNE_CHECKS_DIR   "${NOCTURNE_PSEUDOCODE_DIR}/checks")
 
 find_package(Python3 REQUIRED COMPONENTS Interpreter)
 
+# SDL2 — consumed by the DirectDraw/DirectSound/kernel32 shims. Required only
+# when linking the exe; the check-linux preset skips the shims. pkg-config is
+# used because it handles the Ubuntu multi-arch i386 sysroot cleanly.
+if(NOCTURNE_BUILD_EXE)
+    find_package(PkgConfig REQUIRED)
+    pkg_check_modules(SDL2    REQUIRED sdl2)
+    pkg_check_modules(SDL2TTF REQUIRED SDL2_ttf)
+    # FFmpeg libs consumed by the mci_video shim (video playback).
+    pkg_check_modules(FFMPEG REQUIRED libavformat libavcodec libavutil libswscale)
+endif()
+
 # -----------------------------------------------------------------------------
 # Per-module source lists (priority-resolved) generated at configure time.
 # Re-running cmake regenerates the lists; adding a new .keep/.mmx/.byval
@@ -186,23 +197,28 @@ if(NOCTURNE_BUILD_EXE)
     set_source_files_properties(${_shim_sources} PROPERTIES LANGUAGE CXX)
     add_library(nocturne_shims OBJECT ${_shim_sources})
     target_include_directories(nocturne_shims PRIVATE
-        "${NOCTURNE_INCLUDE_DIR}" "${NOCTURNE_SHIMS_DIR}")
+        "${NOCTURNE_INCLUDE_DIR}" "${NOCTURNE_SHIMS_DIR}"
+        ${SDL2_INCLUDE_DIRS} ${SDL2TTF_INCLUDE_DIRS} ${FFMPEG_INCLUDE_DIRS})
     target_compile_options(nocturne_shims PRIVATE
         -m32 -mmmx -fasm-blocks ${NOCTURNE_COMMON_WARNINGS}
-        ${NOCTURNE_SANITIZE_FLAGS})
+        ${NOCTURNE_SANITIZE_FLAGS}
+        ${SDL2_CFLAGS_OTHER} ${SDL2TTF_CFLAGS_OTHER} ${FFMPEG_CFLAGS_OTHER})
     target_compile_features(nocturne_shims PRIVATE cxx_std_17)
 
     add_executable(nocturne)
     target_compile_features(nocturne PRIVATE cxx_std_17)
     target_include_directories(nocturne PRIVATE
-        "${NOCTURNE_INCLUDE_DIR}" "${NOCTURNE_SHIMS_DIR}")
+        "${NOCTURNE_INCLUDE_DIR}" "${NOCTURNE_SHIMS_DIR}"
+        ${SDL2_INCLUDE_DIRS} ${SDL2TTF_INCLUDE_DIRS} ${FFMPEG_INCLUDE_DIRS})
     target_compile_options(nocturne PRIVATE
         -m32 -mmmx -fasm-blocks ${NOCTURNE_COMMON_WARNINGS}
-        ${NOCTURNE_SANITIZE_FLAGS})
+        ${NOCTURNE_SANITIZE_FLAGS}
+        ${SDL2_CFLAGS_OTHER} ${SDL2TTF_CFLAGS_OTHER} ${FFMPEG_CFLAGS_OTHER})
     target_link_options(nocturne PRIVATE -m32 ${NOCTURNE_SANITIZE_FLAGS})
 
     foreach(_lib IN LISTS _module_libs)
         target_link_libraries(nocturne PRIVATE ${_lib})
     endforeach()
-    target_link_libraries(nocturne PRIVATE nocturne_shims)
+    target_link_libraries(nocturne PRIVATE nocturne_shims
+        ${SDL2_LIBRARIES} ${SDL2TTF_LIBRARIES} ${FFMPEG_LIBRARIES})
 endif()
