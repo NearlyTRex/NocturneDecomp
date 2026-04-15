@@ -29,7 +29,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048c
         g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
       }
       g_RenderStateFlags.dword = render_flags;
-      g_RenderStateFlag2 = 6;
+      g_VertexPreprocessMode = 6;
       if (g_UseExternalRenderer == 0) {
         for (; 0 < primitive_count; primitive_count = primitive_count + -1) {
           local_28.x = primitive_array[1].base.type;
@@ -95,7 +95,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048c
     else {
       g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
       g_RenderStateFlags.dword = 0;
-      g_RenderStateFlag2 = g_RenderStateFlags.dword;
+      g_VertexPreprocessMode = g_RenderStateFlags.dword;
       for (; 0 < primitive_count; primitive_count = primitive_count + -1) {
         local_28.x = primitive_array[1].base.type;
         local_28.y = primitive_array[1].surface_normal.B;

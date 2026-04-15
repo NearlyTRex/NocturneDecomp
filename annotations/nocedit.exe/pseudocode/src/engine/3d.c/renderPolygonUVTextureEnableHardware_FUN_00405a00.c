@@ -23,8 +23,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVTextureEnableHardware_F
   else {
     g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
   }
-  g_RenderStateFlag2 = PREPROCESS_NONE;
-  g_RenderStateFlags.dword = RENDER_TEXTURE_ENABLE;
+  g_VertexPreprocessMode = PREPROCESS_NONE;
+  g_RenderStateFlags.dword = RENDER_TEX_ENABLE;
   if (g_BypassClipping != 0) {
     engine_3d_c_rasterizePolygonHardware_FUN_004d1340
               ((SRenderVertex **)(prim + 1),(prim->base).count);

@@ -22,7 +22,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(
   int local_14;
   
   if (render_mode == -1) {
-    render_mode = RENDER_ENGINE_CORE_PREMIUM;
+    render_mode = 0x2cd;
   }
   if (this_ptr->texture_capture_enabled != 0) {
     g_CurrentFilename = "..\\engine\\drender.cpp";
@@ -39,7 +39,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(
     else {
       g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
-    g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;
+    g_VertexPreprocessMode = PREPROCESS_W_DEPTH_REPLACEMENT;
     g_RenderStateFlags.dword = render_mode;
     if (0 < face_count) {
       do {
@@ -90,7 +90,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(
   }
   else {
     g_RenderStateFlags.dword = 0;
-    g_RenderStateFlag2 = PREPROCESS_NONE;
+    g_VertexPreprocessMode = PREPROCESS_NONE;
     g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
     for (; 0 < face_count; face_count = face_count + -1) {
       if ((g_CullingMode == 0) ||

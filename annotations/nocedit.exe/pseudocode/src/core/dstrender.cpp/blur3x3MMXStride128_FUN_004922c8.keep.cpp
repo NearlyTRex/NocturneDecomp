@@ -1,13 +1,13 @@
-// Name: core_dstrender.cpp_verticalBlur3TapMMXStride128_FUN_004922c8
+// Name: core_dstrender.cpp_blur3x3MMXStride128_FUN_004922c8
 // Address: 004922c8
 // MANUAL RECONSTRUCTION
 // Address Range: [[004922c8, 004923fe]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_verticalBlur3TapMMXStride128_FUN_004922c8(ulonglong *output_buffer,ulonglong *input_buffer,int pixel_count)
+// Signature: void __cdecl core_dstrender_cpp_blur3x3MMXStride128_FUN_004922c8(ulonglong *output_buffer,ulonglong *input_buffer,int pixel_count)
 
 #include "nocturne.h"
 
-void __cdecl core_dstrender_cpp_verticalBlur3TapMMXStride128_FUN_004922c8(ulonglong *output_buffer,ulonglong *input_buffer,int pixel_count)
+void __cdecl core_dstrender_cpp_blur3x3MMXStride128_FUN_004922c8(ulonglong *output_buffer,ulonglong *input_buffer,int pixel_count)
 {
   byte fc_bytes[8];
   byte *in_bytes;

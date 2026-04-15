@@ -43,8 +43,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970(C
         else {
           g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
         }
-        g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;
-        g_RenderStateFlags.dword = RENDER_ENGINE_CORE_ULTRA;
+        g_VertexPreprocessMode = PREPROCESS_W_DEPTH_REPLACEMENT;
+        g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_FOG_COLOR | RENDER_BLEND_READ_DEST | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE | RENDER_COLOR_FROM_VERTEX);
         if ((this_ptr->skip_uv_extraction == 0) && (iVar5 = 0, 0 < (prim->base).count)) {
           iVar6 = 0;
           pSVar2 = prim;
@@ -59,8 +59,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970(C
         }
       }
       else {
-        g_RenderStateFlags.dword = RENDER_TEXTURE_ENABLE;
-        g_RenderStateFlag2 = PREPROCESS_NONE;
+        g_RenderStateFlags.dword = RENDER_TEX_ENABLE;
+        g_VertexPreprocessMode = PREPROCESS_NONE;
         g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_004907e7;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740

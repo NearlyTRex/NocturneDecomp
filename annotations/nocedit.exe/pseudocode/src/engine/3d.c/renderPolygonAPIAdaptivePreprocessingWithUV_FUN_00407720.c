@@ -36,14 +36,14 @@ void __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_0040772
            engine_light_cpp_calculateLighting_FUN_00505780
                      ((prim->surface_normal).A,(prim->surface_normal).B,(prim->surface_normal).C);
     }
-    g_RenderStateFlag2 = render_state_flags;
+    g_VertexPreprocessMode = render_state_flags;
     if (render_state_flags == 0) {
       if ((render_flags & 0xc0U) != 0) {
-        g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
+        g_VertexPreprocessMode = PREPROCESS_Z_PASS_INVW;
       }
     }
     else {
-      g_RenderStateFlag2 = PREPROCESS_TEXTURE_NORMALIZE_ALT;
+      g_VertexPreprocessMode = PREPROCESS_PERSPECTIVE_TEXTURE;
     }
     iVar2 = 0;
     if (0 < (prim->base).count) {

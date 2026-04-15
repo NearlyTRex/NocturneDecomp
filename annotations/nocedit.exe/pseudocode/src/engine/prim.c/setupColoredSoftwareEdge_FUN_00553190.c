@@ -86,7 +86,7 @@ void __cdecl engine_prim_c_setupColoredSoftwareEdge_FUN_00553190(SRenderVertex *
     lVar2 = (longlong)(int)uVar8 * (longlong)(int)uVar3;
     g_SoftwareEdgeTable[iVar2].base.fog_current =
          vertex0->a + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-    if (g_RenderStateFlag2 == 1) {
+    if (g_VertexPreprocessMode == 1) {
       if (g_ProcessorType == 0) {
         local_14 = (vertex0->projected_vertex).inv_z;
         iVar5 = (pSVar6->projected_vertex).inv_z;

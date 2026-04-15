@@ -78,7 +78,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
     g_ScanlinePixelCount = iVar11 * 4;
     puVar19 = g_ZBufferScanlineArray[scanline_y] + uVar9;
     g_CurrentZBufferPtr = (int *)puVar19;
-    if (g_RenderStateFlags.dword == 0x80) {
+    if (g_RenderStateFlags.dword == RENDER_DEPTH_WRITE) {
       uVar20 = (pSVar17->base).w_current;
       iVar18 = (int)((ulonglong)
                      ((longlong)(int)((left_vertex->base).w_current - uVar20) *
@@ -96,7 +96,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
       } while (iVar13 != 0 && bVar2);
       return;
     }
-    if (g_RenderStateFlag2 == PREPROCESS_TEXTURE_NORMALIZE_ALT) {
+    if (g_VertexPreprocessMode == PREPROCESS_PERSPECTIVE_TEXTURE) {
       uVar20 = (pSVar17->base).u_current;
       g_StartTextureU =
            (int)(CONCAT44(((int)uVar20 >> 0x1f) << 0x18 | uVar20 >> 8,uVar20 << 0x18) /
@@ -142,9 +142,9 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
          (int)((ulonglong)
                ((longlong)((left_vertex->base).fog_current - g_VertexAlphaStart) *
                (longlong)(int)g_ReciprocalLookupTable[iVar11 + 1]) >> 0x20);
-    if ((g_RenderStateFlags.dword & 0x200) == 0) {
-      if ((g_RenderStateFlags.dword & 4) == 0) {
-        if ((g_RenderStateFlags.dword & 0x10) == 0) {
+    if ((g_RenderStateFlags.dword & RENDER_COLOR_FROM_VERTEX) == 0) {
+      if ((g_RenderStateFlags.dword & RENDER_FOG_COLOR) == 0) {
+        if ((g_RenderStateFlags.dword & RENDER_LIGHTING_COLOR) == 0) {
           uVar39 = psllw(g_AlphaTable[0xff],7);
           uVar44 = 0;
         }
@@ -212,7 +212,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
     sVar46 = (short)(uVar44 >> 0x20);
     sVar47 = (short)(uVar44 >> 0x30);
     g_StartDepthW = iVar18;
-    if ((g_CurrentTextureOpacityData == (void *)0x0) && ((g_RenderStateFlags.dword & 2) == 0)) {
+    if ((g_CurrentTextureOpacityData == (void *)0x0) && ((g_RenderStateFlags.dword & RENDER_FORCE_SOLID_LOOP) == 0)) {
       uVar35 = (ulonglong)_g_SolidColorMode >> 0x10;
       uVar38 = (ushort)(((uint7)(byte)((ulonglong)_g_SolidColorMode >> 0x18) << 0x30) >> 0x28);
       uVar44 = (ulonglong)_g_SolidColorMode >> 8;
@@ -220,7 +220,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
       uVar12 = g_StartTextureU;
       uVar9 = g_StartTextureV;
       iVar11 = g_VertexAlphaStart;
-      if ((g_RenderStateFlags.dword & 8) == 0) {
+      if ((g_RenderStateFlags.dword & RENDER_SOLID_ALPHA_BLEND) == 0) {
         iVar11 = 0;
         g_VertexAlphaDelta = 0;
       }
@@ -228,11 +228,11 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
         uVar48 = (ushort)(uVar39 >> 0x10);
         uVar49 = (ushort)(uVar39 >> 0x20);
         uVar21 = (ushort)(uVar39 >> 0x30);
-        if (((g_RenderStateFlags.dword & 0x40) == 0) ||
+        if (((g_RenderStateFlags.dword & RENDER_DEPTH_TEST) == 0) ||
            (*(int *)(uVar20 + (int)g_CurrentZBufferPtr) <= iVar18)) {
-          if ((g_RenderStateFlags.dword & 1) == 0) {
+          if ((g_RenderStateFlags.dword & RENDER_TEX_ENABLE) == 0) {
             uVar10 = g_SpecialColor;
-            if ((g_RenderStateFlags.dword & 0x200) == 0) {
+            if ((g_RenderStateFlags.dword & RENDER_COLOR_FROM_VERTEX) == 0) {
               uVar10 = g_ActiveRenderColor;
             }
           }
@@ -265,7 +265,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
                   (0xff < sVar37);
           uVar10 = CONCAT13(cVar6,CONCAT12(cVar5,uVar22));
           uVar34 = (ulonglong)(uint6)uVar10;
-          if ((g_RenderStateFlags.dword & 8) != 0) {
+          if ((g_RenderStateFlags.dword & RENDER_SOLID_ALPHA_BLEND) != 0) {
             SVar1 = g_AlphaTable[iVar11 >> 8];
             uVar34 = (ulonglong)SVar1 ^ (ulonglong)g_AlphaTable[0xff];
             uVar10 = (uint)(CONCAT34((int3)(CONCAT25((short)(CONCAT16(cVar6,(uint6)uVar10) >> 0x28),
@@ -297,7 +297,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
                (ushort)((uVar34 & g_BlueMask32.mm) >> g_BlueBitShift.mm) |
                (ushort)((uVar34 & g_GreenMask32.mm) >> g_GreenBlueBits.mm) |
                (ushort)((uVar34 & g_RedMask32.mm) >> g_TotalColorBits.mm);
-          if ((g_RenderStateFlags.dword & 0x80) != 0) {
+          if ((g_RenderStateFlags.dword & RENDER_DEPTH_WRITE) != 0) {
             *(int *)((int)g_CurrentZBufferPtr + uVar20) = iVar18;
           }
         }
@@ -322,7 +322,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
     }
     else {
       iVar11 = g_VertexAlphaStart;
-      if ((g_RenderStateFlags.dword & 0x100) == 0) {
+      if ((g_RenderStateFlags.dword & RENDER_ALPHA_FROM_VERTEX) == 0) {
         iVar11 = g_CurrentAlphaValue << 8;
         g_VertexAlphaDelta = 0;
       }
@@ -334,7 +334,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
           uVar48 = (ushort)(uVar39 >> 0x10);
           uVar49 = (ushort)(uVar39 >> 0x20);
           uVar21 = (ushort)(uVar39 >> 0x30);
-          if (((g_RenderStateFlags.dword & 0x40) == 0) ||
+          if (((g_RenderStateFlags.dword & RENDER_DEPTH_TEST) == 0) ||
              (*(int *)(uVar20 + (int)g_CurrentZBufferPtr) <= iVar18)) {
             pbVar16 = (byte *)((uVar12 >> g_TextureShift1.mm & g_TextureMask1.u32[0]) +
                                (uVar9 >> g_TextureShift2.mm & g_TextureMask2.u32[0]) +
@@ -452,7 +452,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
                    (ushort)((uVar39 & g_BlueMask32.mm) >> g_BlueBitShift.mm) |
                    (ushort)((uVar39 & g_GreenMask32.mm) >> g_GreenBlueBits.mm) |
                    (ushort)((uVar39 & g_RedMask32.mm) >> g_TotalColorBits.mm);
-              if ((g_RenderStateFlags.dword & 0x80) != 0) {
+              if ((g_RenderStateFlags.dword & RENDER_DEPTH_WRITE) != 0) {
                 *(int *)(uVar20 + (int)g_CurrentZBufferPtr) = iVar18;
               }
             }
@@ -480,14 +480,14 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
         uVar38 = (ushort)(uVar39 >> 0x10);
         uVar48 = (ushort)(uVar39 >> 0x20);
         uVar49 = (ushort)(uVar39 >> 0x30);
-        if ((((g_RenderStateFlags.dword & 0x40) == 0) ||
+        if ((((g_RenderStateFlags.dword & RENDER_DEPTH_TEST) == 0) ||
             (*(int *)(uVar20 + (int)g_CurrentZBufferPtr) <= iVar18)) &&
            (uVar10 = g_Hardware32BitPalette
                      [*(byte *)((uVar12 >> g_TextureShift1.mm & g_TextureMask1.u32[0]) +
                                 (uVar9 >> g_TextureShift2.mm & g_TextureMask2.u32[0]) +
                                (int)g_CurrentTextureData)], uVar10 != 0)) {
           uVar44 = 0;
-          if ((g_RenderStateFlags.dword & 0x20) != 0) {
+          if ((g_RenderStateFlags.dword & RENDER_BLEND_READ_DEST) != 0) {
             uVar15 = (uint)*(ushort *)((uVar20 >> 1) + (int)g_CurrentScreenPtr);
             uVar36 = (uint7)((uVar15 & g_BlueMask16.mm) << g_BlueBitShift.mm) |
                      (uint7)((uVar15 & g_GreenMask16.mm) << g_GreenBlueBits.mm) |
@@ -568,7 +568,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
                (ushort)((uVar44 & g_BlueMask32.mm) >> g_BlueBitShift.mm) |
                (ushort)((uVar44 & g_GreenMask32.mm) >> g_GreenBlueBits.mm) |
                (ushort)((uVar44 & g_RedMask32.mm) >> g_TotalColorBits.mm);
-          if ((g_RenderStateFlags.dword & 0x80) != 0) {
+          if ((g_RenderStateFlags.dword & RENDER_DEPTH_WRITE) != 0) {
             *(int *)(uVar20 + (int)g_CurrentZBufferPtr) = iVar18;
           }
         }

@@ -20,7 +20,7 @@
 ;   int g_UseExternalRenderer
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_calculatePolygonLighting_FUN_00403a00
@@ -75,7 +75,7 @@ section .text
     XOR EDI,EDI                         ; 0040429e
     XOR EBX,EBX                         ; 004042a0
     XOR ESI,ESI                         ; 004042a2
-    MOV dword ptr [0x02d052a4],ECX      ; 004042a4 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],ECX      ; 004042a4 | g_VertexPreprocessMode
     MOV ECX,EBP                         ; 004042aa
     MOV EAX,dword ptr [ESP + 0x14]      ; 004042ac
         ;   Label: LAB_004042ac

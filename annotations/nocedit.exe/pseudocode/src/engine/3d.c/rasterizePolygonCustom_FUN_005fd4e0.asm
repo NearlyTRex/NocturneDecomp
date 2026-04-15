@@ -20,7 +20,7 @@
 ;   int g_ViewportCenterYFixed
 ;   int g_ViewportRightFixed
 ;   int g_ViewportBottomFixed
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;   int g_RenderedTriangleCount
 ;   int g_RasterizerEdgeCount
 ;   SSoftwareEdge[16] g_RasterizerEdgeArray
@@ -79,7 +79,7 @@ section .text
         ;   Label: LAB_005fd533
     MOV ESI,dword ptr [0x03f9ad5c]      ; 005fd539 | g_RasterizerEdgeCount
     INC EDX                             ; 005fd53f
-    MOV EAX,[0x02d052a4]                ; 005fd540 | g_RenderStateFlag2
+    MOV EAX,[0x02d052a4]                ; 005fd540 | g_VertexPreprocessMode
     MOV dword ptr [0x030e56b8],EDX      ; 005fd545 | g_RenderedTriangleCount
     CMP EAX,0x6                         ; 005fd54b
     JA 0x005fd557                       ; 005fd54e

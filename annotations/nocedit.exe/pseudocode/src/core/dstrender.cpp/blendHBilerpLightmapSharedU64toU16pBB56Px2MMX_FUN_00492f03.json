@@ -1,0 +1,890 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 283,
+    "complexity_score": 260,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 106,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 120,
+    "suspect_count": 13,
+    "suspect_types": [
+      "mmx_assembly",
+      "nonstandard_int"
+    ],
+    "total_lines": 403
+  },
+  "cross_references": [
+    {
+      "addr": "00453270",
+      "from_addr": "0045343a",
+      "name": "core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00492f03",
+    "address_range": [
+      [
+        "00492f03",
+        "0049333c"
+      ],
+      [
+        "00493340",
+        "0049344f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_dstrender.cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00492f03",
+    "signature": "void __cdecl core_dstrender_cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00492f03(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00676498",
+      "name": "g_LightmapBlendBias5",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "006764a0",
+      "name": "g_LightmapBlendBias6",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "006779f0",
+      "name": "g_LightmapData",
+      "type": "ushort[384]",
+      "value": null
+    },
+    {
+      "addr": "00677a10",
+      "name": "g_LightmapData[16]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677a30",
+      "name": "g_LightmapData[32]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677a50",
+      "name": "g_LightmapData[48]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677a70",
+      "name": "g_LightmapData[64]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677a90",
+      "name": "g_LightmapData[80]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677ab0",
+      "name": "g_LightmapData[96]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677ad0",
+      "name": "g_LightmapData[112]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677af0",
+      "name": "g_LightmapData[128]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677b10",
+      "name": "g_LightmapData[144]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677b30",
+      "name": "g_LightmapData[160]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677b50",
+      "name": "g_LightmapData[176]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677b70",
+      "name": "g_LightmapData[192]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677b90",
+      "name": "g_LightmapData[208]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677bb0",
+      "name": "g_LightmapData[224]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677bd0",
+      "name": "g_LightmapData[240]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677bf0",
+      "name": "g_LightmapData[256]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677c10",
+      "name": "g_LightmapData[272]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677c30",
+      "name": "g_LightmapData[288]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677c50",
+      "name": "g_LightmapData[304]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677c70",
+      "name": "g_LightmapData[320]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677c90",
+      "name": "g_LightmapData[336]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677cb0",
+      "name": "g_LightmapData[352]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677cd0",
+      "name": "g_LightmapData[368]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677cf0",
+      "name": "g_LightmapBlendConstants",
+      "type": "uchar[1272]",
+      "value": null
+    },
+    {
+      "addr": "00677d10",
+      "name": "g_LightmapBlendConstants+0x20",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677d30",
+      "name": "g_LightmapBlendConstants+0x40",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677d50",
+      "name": "g_LightmapBlendConstants+0x60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677d70",
+      "name": "g_LightmapBlendConstants+0x80",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677d90",
+      "name": "g_LightmapBlendConstants+0xa0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677db0",
+      "name": "g_LightmapBlendConstants+0xc0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677dd0",
+      "name": "g_LightmapBlendConstants+0xe0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677df0",
+      "name": "g_LightmapBlendConstants+0x100",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677e10",
+      "name": "g_LightmapBlendConstants+0x120",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677e30",
+      "name": "g_LightmapBlendConstants+0x140",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677e50",
+      "name": "g_LightmapBlendConstants+0x160",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677e70",
+      "name": "g_LightmapBlendConstants+0x180",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677e90",
+      "name": "g_LightmapBlendConstants+0x1a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677eb0",
+      "name": "g_LightmapBlendConstants+0x1c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677ed0",
+      "name": "g_LightmapBlendConstants+0x1e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677ef0",
+      "name": "g_LightmapBlendConstants+0x200",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677f10",
+      "name": "g_LightmapBlendConstants+0x220",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677f30",
+      "name": "g_LightmapBlendConstants+0x240",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677f50",
+      "name": "g_LightmapBlendConstants+0x260",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677f70",
+      "name": "g_LightmapBlendConstants+0x280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677f90",
+      "name": "g_LightmapBlendConstants+0x2a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677fb0",
+      "name": "g_LightmapBlendConstants+0x2c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677fd0",
+      "name": "g_LightmapBlendConstants+0x2e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00677ff0",
+      "name": "g_LightmapBlendConstants+0x300",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00678010",
+      "name": "g_LightmapBlendConstants+0x320",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00678030",
+      "name": "g_LightmapBlendConstants+0x340",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00678050",
+      "name": "g_LightmapBlendConstants+0x360",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00678070",
+      "name": "g_LightmapBlendConstants+0x380",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00678090",
+      "name": "g_LightmapBlendConstants+0x3a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006780b0",
+      "name": "g_LightmapBlendConstants+0x3c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006780d0",
+      "name": "g_LightmapBlendConstants+0x3e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006780f0",
+      "name": "g_LightmapBlendConstants+0x400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00678110",
+      "name": "g_LightmapBlendConstants+0x420",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00678130",
+      "name": "g_LightmapBlendConstants+0x440",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00678150",
+      "name": "g_LightmapBlendConstants+0x460",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00678170",
+      "name": "g_LightmapBlendConstants+0x480",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00678190",
+      "name": "g_LightmapBlendConstants+0x4a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006781b0",
+      "name": "g_LightmapBlendConstants+0x4c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006781d0",
+      "name": "g_LightmapBlendConstants+0x4e0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006781e8",
+      "name": "g_LightmapXorMask",
+      "type": "double",
+      "value": "0.126945525291829"
+    },
+    {
+      "addr": "00682760",
+      "name": "g_RedMask32",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "00682780",
+      "name": "g_GreenMask32",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "006827a0",
+      "name": "g_BlueMask32",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "006827a8",
+      "name": "g_TotalColorBits",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "006827c8",
+      "name": "g_GreenBlueBits",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "006827e8",
+      "name": "g_BlueBitShift",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "00c19dfc",
+      "name": "g_LightmapTexturePalette",
+      "type": "uint[256]",
+      "value": null
+    },
+    {
+      "addr": "00c19e1c",
+      "name": "g_LightmapTexturePalette[8]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19e3c",
+      "name": "g_LightmapTexturePalette[16]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19e5c",
+      "name": "g_LightmapTexturePalette[24]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19e7c",
+      "name": "g_LightmapTexturePalette[32]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19e9c",
+      "name": "g_LightmapTexturePalette[40]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19ebc",
+      "name": "g_LightmapTexturePalette[48]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19edc",
+      "name": "g_LightmapTexturePalette[56]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19efc",
+      "name": "g_LightmapTexturePalette[64]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19f1c",
+      "name": "g_LightmapTexturePalette[72]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19f3c",
+      "name": "g_LightmapTexturePalette[80]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19f5c",
+      "name": "g_LightmapTexturePalette[88]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19f7c",
+      "name": "g_LightmapTexturePalette[96]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19f9c",
+      "name": "g_LightmapTexturePalette[104]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19fbc",
+      "name": "g_LightmapTexturePalette[112]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19fdc",
+      "name": "g_LightmapTexturePalette[120]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c19ffc",
+      "name": "g_LightmapTexturePalette[128]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a01c",
+      "name": "g_LightmapTexturePalette[136]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a03c",
+      "name": "g_LightmapTexturePalette[144]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a05c",
+      "name": "g_LightmapTexturePalette[152]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a07c",
+      "name": "g_LightmapTexturePalette[160]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a09c",
+      "name": "g_LightmapTexturePalette[168]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a0bc",
+      "name": "g_LightmapTexturePalette[176]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a0dc",
+      "name": "g_LightmapTexturePalette[184]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a0fc",
+      "name": "g_LightmapTexturePalette[192]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a11c",
+      "name": "g_LightmapTexturePalette[200]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a13c",
+      "name": "g_LightmapTexturePalette[208]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a15c",
+      "name": "g_LightmapTexturePalette[216]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a17c",
+      "name": "g_LightmapTexturePalette[224]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a19c",
+      "name": "g_LightmapTexturePalette[232]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a1bc",
+      "name": "g_LightmapTexturePalette[240]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00c1a1dc",
+      "name": "g_LightmapTexturePalette[248]",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d052a8",
+      "name": "g_SolidColorMode",
+      "type": "ulong",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0045343a",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.8315412186379927,
+    "instruction_count": 279,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALLOTHER": 4,
+      "CBRANCH": 1,
+      "COPY": 283,
+      "INT_ADD": 152,
+      "INT_AND": 21,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 15,
+      "INT_LEFT": 1,
+      "INT_LESS": 1,
+      "INT_MULT": 59,
+      "INT_NOTEQUAL": 1,
+      "INT_OR": 5,
+      "INT_RIGHT": 20,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 39,
+      "INT_SLESSEQUAL": 16,
+      "INT_SUB": 5,
+      "INT_XOR": 2,
+      "INT_ZEXT": 6,
+      "LOAD": 117,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 5,
+      "SUBPIECE": 17
+    },
+    "pcode_op_count": 790
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "uint *"
+      },
+      {
+        "is_param": true,
+        "name": "texture_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "ulonglong *"
+      },
+      {
+        "is_param": true,
+        "name": "texture_indices",
+        "offset": 12,
+        "size": 4,
+        "type": "byte *"
+      },
+      {
+        "is_param": true,
+        "name": "lightmap_indices",
+        "offset": 16,
+        "size": 4,
+        "type": "byte *"
+      },
+      {
+        "is_param": true,
+        "name": "pixel_count",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 23,
+      "match": "uint5",
+      "severity": "mild",
+      "text": "uint5 uVar19;",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 29,
+      "match": "uint5",
+      "severity": "mild",
+      "text": "uint5 uVar25;",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 32,
+      "match": "uint7",
+      "severity": "mild",
+      "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 32,
+      "match": "uint7",
+      "severity": "mild",
+      "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 42,
+      "match": "int3",
+      "severity": "mild",
+      "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 42,
+      "match": "uint7",
+      "severity": "mild",
+      "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 45,
+      "match": "uint5",
+      "severity": "mild",
+      "text": "uVar25 = (uint5)uVar4 & 0xffffffff00;",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 46,
+      "match": "uint7",
+      "severity": "mild",
+      "text": "uVar7 = (ushort)(((uint7)(byte)(uVar9 >> 0x18) << 0x30) >> 0x28);",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 47,
+      "match": "int3",
+      "severity": "mild",
+      "text": "uVar5 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 47,
+      "match": "uint7",
+      "severity": "mild",
+      "text": "uVar5 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 50,
+      "match": "uint5",
+      "severity": "mild",
+      "text": "uVar19 = (uint5)uVar5 & 0xffffffff00;",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 55,
+      "match": "uint7",
+      "severity": "mild",
+      "text": "uVar10 = (ushort)(((uint7)(byte)(uVar9 >> 0x38) << 0x30) >> 0x28);",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "MMX/SIMD assembly - may not decompile to clean C code",
+      "line": 12,
+      "match": "EMMS, MOVD, MOVQ, PACKUSWB, PADDW",
+      "text": "Function uses MMX instructions",
+      "type": "mmx_assembly"
+    }
+  ]
+}

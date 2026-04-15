@@ -43,8 +43,8 @@ LAB_004047c8:
     g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
   }
   piVar3 = g_ProcessedVertexIndices;
-  g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
-  g_RenderStateFlags.dword = RENDER_FULL_FEATURED;
+  g_VertexPreprocessMode = PREPROCESS_Z_PASS_INVW;
+  g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_SOLID_ALPHA_BLEND | RENDER_LIGHTING_COLOR | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
   pSVar2 = primitive + 1;
   for (iVar1 = 0; iVar1 < (primitive->base).count * 3; iVar1 = iVar1 + 3) {
     *piVar3 = (pSVar2->base).type + g_ProcessedVertexOffset;

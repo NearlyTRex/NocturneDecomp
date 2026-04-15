@@ -787,6 +787,13 @@ def _enum_typedef_type(enum):
     return "int"
 
 
+def _format_enum_value(value):
+    """Format an enum value for header emission. Hex for non-negative, decimal otherwise."""
+    if value >= 0:
+        return "0x%X" % value
+    return "%d" % value
+
+
 def generate_individual_enum_header(currentProgram, enum, type_to_path_map=None):
     """Generate header content for an individual enum.
 
@@ -813,7 +820,7 @@ def generate_individual_enum_header(currentProgram, enum, type_to_path_map=None)
     enum_values = []
     for name in enum.getNames():
         value = enum.getValue(name)
-        enum_values.append("    %s = %d" % (name, value))
+        enum_values.append("    %s = %s" % (name, _format_enum_value(value)))
     content.append(",\n".join(enum_values))
     content.append("};")
     content.append("typedef %s %s;" % (typedef_type, enum.getName()))
@@ -1120,7 +1127,7 @@ def generate_enums_header(currentProgram, enums):
         enum_values = []
         for name in enum.getNames():
             value = enum.getValue(name)
-            enum_values.append("    %s = %d" % (name, value))
+            enum_values.append("    %s = %s" % (name, _format_enum_value(value)))
         content.append(",\n".join(enum_values))
         content.append("};")
         content.append("typedef %s %s;" % (_enum_typedef_type(enum), enum.getName()))

@@ -72,7 +72,7 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_00553b10(int *vertex
   }
   if ((g_UseExternalRenderer == 0) || (g_TexturesDisabled != 0)) {
     g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
-    switch(g_RenderStateFlag2) {
+    switch(g_VertexPreprocessMode) {
     case 1:
       iVar7 = 0;
       piVar13 = vertex_indices;
@@ -209,7 +209,7 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_00553b10(int *vertex
           lVar2 = (longlong)(int)uVar10 * (longlong)(int)uVar8;
           g_SoftwareEdgeTable[iVar7].base.fog_current =
                pSVar8->a + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-          if (g_RenderStateFlag2 == 1) {
+          if (g_VertexPreprocessMode == 1) {
             if (g_ProcessorType == 0) {
               local_20 = (pSVar8->projected_vertex).inv_z;
               iVar12 = (pSVar12->projected_vertex).inv_z;

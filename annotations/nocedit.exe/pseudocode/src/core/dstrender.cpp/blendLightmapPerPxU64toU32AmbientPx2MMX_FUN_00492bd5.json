@@ -1,0 +1,268 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "complexity": {
+    "assembly_lines": 153,
+    "complexity_score": 221,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 96,
+    "suspect_count": 11,
+    "suspect_types": [
+      "mmx_assembly",
+      "nonstandard_int",
+      "pointer_cast"
+    ],
+    "total_lines": 249
+  },
+  "cross_references": [
+    {
+      "addr": "00453270",
+      "from_addr": "004535c6",
+      "name": "core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00492bd5",
+    "address_range": [
+      [
+        "00492bd5",
+        "00492e89"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_dstrender.cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00492bd5",
+    "signature": "void __cdecl core_dstrender_cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00492bd5(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "00676488",
+      "name": "g_AmbientLightMMX1",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "00676490",
+      "name": "g_AmbientLightMMX2",
+      "type": "_MMX_INTEGER",
+      "value": null
+    },
+    {
+      "addr": "006779f0",
+      "name": "g_LightmapData",
+      "type": "ushort[384]",
+      "value": null
+    },
+    {
+      "addr": "006781e8",
+      "name": "g_LightmapXorMask",
+      "type": "double",
+      "value": "0.126945525291829"
+    },
+    {
+      "addr": "00c19dfc",
+      "name": "g_LightmapTexturePalette",
+      "type": "uint[256]",
+      "value": null
+    },
+    {
+      "addr": "02d052a8",
+      "name": "g_SolidColorMode",
+      "type": "ulong",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004535c6",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.46,
+    "instruction_count": 150,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 1,
+      "CALLOTHER": 5,
+      "CBRANCH": 1,
+      "COPY": 167,
+      "INT_ADD": 135,
+      "INT_AND": 28,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 27,
+      "INT_LESS": 1,
+      "INT_MULT": 60,
+      "INT_NOTEQUAL": 2,
+      "INT_RIGHT": 10,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 45,
+      "INT_SLESSEQUAL": 16,
+      "INT_SUB": 5,
+      "INT_XOR": 3,
+      "INT_ZEXT": 7,
+      "LOAD": 100,
+      "POPCOUNT": 13,
+      "RETURN": 1,
+      "STORE": 6,
+      "SUBPIECE": 18
+    },
+    "pcode_op_count": 669
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "uint *"
+      },
+      {
+        "is_param": true,
+        "name": "texture_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "ulonglong *"
+      },
+      {
+        "is_param": true,
+        "name": "texture_indices",
+        "offset": 12,
+        "size": 4,
+        "type": "byte *"
+      },
+      {
+        "is_param": true,
+        "name": "lightmap_indices",
+        "offset": 16,
+        "size": 4,
+        "type": "byte *"
+      },
+      {
+        "is_param": true,
+        "name": "pixel_count",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 15,
+      "match": "uint5",
+      "severity": "mild",
+      "text": "uint5 uVar11;",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 20,
+      "match": "uint7",
+      "severity": "mild",
+      "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 20,
+      "match": "uint7",
+      "severity": "mild",
+      "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 29,
+      "match": "uint7",
+      "severity": "mild",
+      "text": "uVar6 = (ushort)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28);",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 30,
+      "match": "int3",
+      "severity": "mild",
+      "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 30,
+      "match": "uint7",
+      "severity": "mild",
+      "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 33,
+      "match": "uint5",
+      "severity": "mild",
+      "text": "uVar11 = (uint5)uVar4 & 0xffffffff00;",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(ulonglong *)((int)",
+      "severity": "mild",
+      "text": "uVar7 = *(ulonglong *)((int)texture_buffer + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 61,
+      "match": "uint7",
+      "severity": "mild",
+      "text": "uVar6 = (ushort)(((uint7)(byte)((ulonglong)uVar7 >> 0x18) << 0x30) >> 0x28);",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 62,
+      "match": "uint7",
+      "severity": "mild",
+      "text": "uVar8 = (ushort)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28);",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "MMX/SIMD assembly - may not decompile to clean C code",
+      "line": 12,
+      "match": "EMMS, MOVD, MOVQ, PACKUSWB, PADDW",
+      "text": "Function uses MMX instructions",
+      "type": "mmx_assembly"
+    }
+  ]
+}

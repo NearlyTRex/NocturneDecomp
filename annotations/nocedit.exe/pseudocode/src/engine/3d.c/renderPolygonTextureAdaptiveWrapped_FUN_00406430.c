@@ -50,12 +50,12 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureAdaptiveWrapped_FU
           else {
             g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
           }
-          g_RenderStateFlag2 = PREPROCESS_NONE;
-          g_RenderStateFlags.dword = RENDER_TEXTURE_LIT;
+          g_VertexPreprocessMode = PREPROCESS_NONE;
+          g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
         }
         else {
-          g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
-          g_RenderStateFlags.dword = RENDER_TEXTURE_LIT;
+          g_VertexPreprocessMode = PREPROCESS_Z_PASS_INVW;
+          g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
         }
       }
       else {
@@ -75,8 +75,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureAdaptiveWrapped_FU
         else {
           g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
         }
-        g_RenderStateFlags.dword = RENDER_TEXTURE_BASE;
-        g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
+        g_RenderStateFlags.dword = (RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
+        g_VertexPreprocessMode = PREPROCESS_Z_PASS_INVW;
         engine_light_cpp_calculateLighting_FUN_00505780
                   ((prim->surface_normal).A,(prim->surface_normal).B,(prim->surface_normal).C);
         g_ActiveRenderColor =
@@ -100,7 +100,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureAdaptiveWrapped_FU
         g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
       }
       g_RenderStateFlags.dword = 0;
-      g_RenderStateFlag2 = PREPROCESS_NONE;
+      g_VertexPreprocessMode = PREPROCESS_NONE;
     }
     piVar3 = g_ProcessedVertexIndices;
     pSVar2 = prim + 1;

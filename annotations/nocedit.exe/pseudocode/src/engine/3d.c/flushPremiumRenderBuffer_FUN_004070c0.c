@@ -50,9 +50,9 @@ void __cdecl engine_3d_c_flushPremiumRenderBuffer_FUN_004070c0(void)
     else {
       g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
-    g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
+    g_VertexPreprocessMode = PREPROCESS_Z_PASS_INVW;
     local_c = 0;
-    g_RenderStateFlags.dword = RENDER_ENGINE_PREMIUM_QUALITY;
+    g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_FOG_COLOR | RENDER_BLEND_READ_DEST | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE | RENDER_ALPHA_FROM_VERTEX);
     if (0 < g_RenderBufferCount) {
       local_10 = 0;
       do {

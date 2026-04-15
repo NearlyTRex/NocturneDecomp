@@ -15,7 +15,7 @@
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403950
@@ -57,7 +57,7 @@ section .text
     MOV EAX,0x4                         ; 004056dc
     PUSH EDX                            ; 004056e1
     MOV dword ptr [0x02d052a0],EBP      ; 004056e2 | g_RenderStateFlags
-    MOV [0x02d052a4],EAX                ; 004056e8 | g_RenderStateFlag2
+    MOV [0x02d052a4],EAX                ; 004056e8 | g_VertexPreprocessMode
     CALL engine_clipper.c_clipAndRasterize_FUN_004371b0 ; 004056ed
         ;   XREF to: 004371b0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_clipAndRasterize_FUN_004371b0(int vertex_count, int * vertex_indices)
     ADD ESP,0x8                         ; 004056f2
@@ -100,7 +100,7 @@ section .text
     XOR EAX,EAX                         ; 00405756
     PUSH EDX                            ; 00405758
     MOV dword ptr [0x02d052a0],EBP      ; 00405759 | g_RenderStateFlags
-    MOV [0x02d052a4],EAX                ; 0040575f | g_RenderStateFlag2
+    MOV [0x02d052a4],EAX                ; 0040575f | g_VertexPreprocessMode
     CALL engine_clipper.c_clipPolygonToViewport_FUN_00438420 ; 00405764
         ;   XREF to: 00438420 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_clipPolygonToViewport_FUN_00438420(int vertex_count, int * vertex_indices)
     ADD ESP,0x8                         ; 00405769

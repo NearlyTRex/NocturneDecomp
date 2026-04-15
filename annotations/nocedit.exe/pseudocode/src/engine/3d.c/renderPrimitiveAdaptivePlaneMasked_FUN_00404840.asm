@@ -20,7 +20,7 @@
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_calculatePolygonLighting_FUN_00403a00
@@ -60,7 +60,7 @@ section .text
     MOV dword ptr [0x02d0257c],0x5b50ec ; 0040487e | g_ScanlineRenderFunc
     XOR EBX,EBX                         ; 00404888
         ;   Label: LAB_00404888
-    MOV dword ptr [0x02d052a4],EBX      ; 0040488a | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],EBX      ; 0040488a | g_VertexPreprocessMode
     MOV dword ptr [0x02d052a0],EBX      ; 00404890 | g_RenderStateFlags
     MOV EAX,ESI                         ; 00404896
         ;   Label: LAB_00404896
@@ -118,7 +118,7 @@ section .text
     MOV EAX,0x3                         ; 00404933
     PUSH EBP                            ; 00404938
     MOV dword ptr [0x02d052a0],EDI      ; 00404939 | g_RenderStateFlags
-    MOV [0x02d052a4],EAX                ; 0040493f | g_RenderStateFlag2
+    MOV [0x02d052a4],EAX                ; 0040493f | g_VertexPreprocessMode
     CALL engine_3d.c_calculatePolygonLighting_FUN_00403a00 ; 00404944
         ;   XREF to: 00403a00 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_00403a00(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 00404949
@@ -157,7 +157,7 @@ section .text
     MOV EDX,0x1                         ; 004049aa
     PUSH EDI                            ; 004049af
     MOV [0x02d052a0],EAX                ; 004049b0 | g_RenderStateFlags
-    MOV dword ptr [0x02d052a4],EDX      ; 004049b5 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],EDX      ; 004049b5 | g_VertexPreprocessMode
     CALL engine_light.cpp_calculateLighting_FUN_00505780 ; 004049bb
         ;   XREF to: 00505780 (UNCONDITIONAL_CALL)  ; int engine_light.cpp_calculateLighting_FUN_00505780(int normal_x, int normal_y, int normal_z)
     ADD ESP,0xc                         ; 004049c0

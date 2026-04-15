@@ -1,13 +1,13 @@
-// Name: core_dstrender.cpp_blendLightmapToTexture32BitOutputAmbient_FUN_00492bd5
+// Name: core_dstrender.cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00492bd5
 // Address: 00492bd5
 // MANUAL RECONSTRUCTION
 // Address Range: [[00492bd5, 00492e89]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_blendLightmapToTexture32BitOutputAmbient_FUN_00492bd5(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
+// Signature: void __cdecl core_dstrender_cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00492bd5(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 
 #include "nocturne.h"
 
-void __cdecl core_dstrender_cpp_blendLightmapToTexture32BitOutputAmbient_FUN_00492bd5(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
+void __cdecl core_dstrender_cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00492bd5(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 {
   ushort solid_ws[4];
   uint solid_raw;

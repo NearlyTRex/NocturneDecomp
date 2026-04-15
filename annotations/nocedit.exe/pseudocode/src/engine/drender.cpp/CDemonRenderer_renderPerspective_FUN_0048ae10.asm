@@ -25,7 +25,7 @@
 ;   int g_BitsPerPixel = 0x8
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403950
@@ -58,7 +58,7 @@ section .text
     XOR EBP,EBP                         ; 0048ae36
     MOV ESI,0x49072f                    ; 0048ae38
     MOV dword ptr [0x02d052a0],EBP      ; 0048ae3d | g_RenderStateFlags
-    MOV dword ptr [0x02d052a4],EBP      ; 0048ae43 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],EBP      ; 0048ae43 | g_VertexPreprocessMode
     MOV dword ptr [0x02d0257c],ESI      ; 0048ae49 | g_ScanlineRenderFunc
     LEA EAX,[EDI + 0x18]                ; 0048ae4f
         ;   Label: LAB_0048ae4f
@@ -94,7 +94,7 @@ section .text
     MOV ECX,0x6                         ; 0048ae8a
         ;   Label: LAB_0048ae8a
     MOV dword ptr [0x02d052a0],ESI      ; 0048ae8f | g_RenderStateFlags
-    MOV dword ptr [0x02d052a4],ECX      ; 0048ae95 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],ECX      ; 0048ae95 | g_VertexPreprocessMode
     JMP 0x0048ae4f                      ; 0048ae9b
         ;   XREF to: 0048ae4f (UNCONDITIONAL_JUMP)  ; LAB_0048ae4f
     MOV dword ptr [0x02d0257c],0x5b4823 ; 0048ae9d | g_ScanlineRenderFunc

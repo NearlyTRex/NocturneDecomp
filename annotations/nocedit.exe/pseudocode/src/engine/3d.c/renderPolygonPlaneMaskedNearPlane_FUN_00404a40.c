@@ -27,8 +27,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPlaneMaskedNearPlane_FUN_
     else {
       g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
-    g_RenderStateFlags.dword = RENDER_PLANE_MASKED_LIT;
-    g_RenderStateFlag2 = PREPROCESS_NEAR_PLANE_CORRECT;
+    g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_LIGHTING_COLOR | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
+    g_VertexPreprocessMode = PREPROCESS_NEAR_PLANE_CORRECT;
     engine_3d_c_calculatePolygonLighting_FUN_00403a00(prim);
     engine_clipper_c_clipAndRasterize_FUN_004371b0((prim->base).count,(int *)(prim + 1));
   }

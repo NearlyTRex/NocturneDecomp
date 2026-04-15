@@ -21,7 +21,7 @@
 ;   int g_PerspectiveReciprocal
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403950
@@ -62,7 +62,7 @@ section .text
     MOV EBX,0x1                         ; 00405ba9
         ;   Label: LAB_00405ba9
     MOV ECX,0xcd                        ; 00405bae
-    MOV dword ptr [0x02d052a4],EBX      ; 00405bb3 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],EBX      ; 00405bb3 | g_VertexPreprocessMode
     MOV dword ptr [0x02d052a0],ECX      ; 00405bb9 | g_RenderStateFlags
     MOV EBX,0x772a98                    ; 00405bbf | g_ProcessedVertexIndices
         ;   Label: LAB_00405bbf
@@ -119,7 +119,7 @@ section .text
     MOV ECX,0x1                         ; 00405c5c
         ;   Label: LAB_00405c5c
     MOV EDX,0xc5                        ; 00405c61
-    MOV dword ptr [0x02d052a4],ECX      ; 00405c66 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],ECX      ; 00405c66 | g_VertexPreprocessMode
     MOV dword ptr [0x02d052a0],EDX      ; 00405c6c | g_RenderStateFlags
     JMP 0x00405bbf                      ; 00405c72
         ;   XREF to: 00405bbf (UNCONDITIONAL_JUMP)  ; LAB_00405bbf

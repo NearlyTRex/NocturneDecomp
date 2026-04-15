@@ -18,7 +18,7 @@
 ;   int g_ClippedVertexCount
 ;   SRenderVertex[16] g_ClippedVertexBuffer
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   core_xform.cpp_transformAndClipGeometry_FUN_005f8550
@@ -75,7 +75,7 @@ section .text
     MOV EDI,0x6                         ; 0048c91c
     PUSH EBP                            ; 0048c921
     MOV dword ptr [0x02d052a0],ESI      ; 0048c922 | g_RenderStateFlags
-    MOV dword ptr [0x02d052a4],EDI      ; 0048c928 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],EDI      ; 0048c928 | g_VertexPreprocessMode
     CALL core_xform.cpp_transformAndClipGeometry_FUN_005f8550 ; 0048c92e
         ;   XREF to: 005f8550 (UNCONDITIONAL_CALL)  ; SRenderVertex * core_xform.cpp_transformAndClipGeometry_FUN_005f8550(int vertex_count, int * vertex_indices)
     MOV EAX,[0x00824e24]                ; 0048c933 | g_ClippedVertexCount

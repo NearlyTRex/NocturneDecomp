@@ -19,7 +19,7 @@
 ;   undefined4 g_VertexIndexBuffer[2]
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0
@@ -61,7 +61,7 @@ section .text
     XOR EBX,EBX                         ; 0048b079
     MOV EDX,0x49072f                    ; 0048b07b
     MOV dword ptr [0x02d052a0],EBX      ; 0048b080 | g_RenderStateFlags
-    MOV dword ptr [0x02d052a4],EBX      ; 0048b086 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],EBX      ; 0048b086 | g_VertexPreprocessMode
     MOV dword ptr [0x02d0257c],EDX      ; 0048b08c | g_ScanlineRenderFunc
     PUSH 0x2c6d5ac                      ; 0048b092 | g_VertexIndexBuffer
     PUSH 0x3                            ; 0048b097
@@ -124,7 +124,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x14]      ; 0048b114
         ;   Label: LAB_0048b114
     MOV [0x02d052a0],EAX                ; 0048b118 | g_RenderStateFlags
-    MOV dword ptr [0x02d052a4],0x6      ; 0048b11d | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],0x6      ; 0048b11d | g_VertexPreprocessMode
     PUSH 0x2c6d5ac                      ; 0048b127 | g_VertexIndexBuffer
     PUSH 0x3                            ; 0048b12c
     PUSH ECX                            ; 0048b12e

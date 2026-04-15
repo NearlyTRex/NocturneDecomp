@@ -41,6 +41,7 @@
 #include "types/enums/ENetworkMode.h"
 #include "types/enums/EPlatformStateType.h"
 #include "types/enums/EPlatformType.h"
+#include "types/enums/ERenderStateFlagBits.h"
 #include "types/enums/ETextAlignment.h"
 #include "types/enums/ETriggerEventType.h"
 #include "types/enums/ETurretState.h"

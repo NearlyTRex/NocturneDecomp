@@ -47,13 +47,13 @@ LAB_00404350:
     g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
   }
   engine_3d_c_calculatePolygonLighting_FUN_00403a00(prim);
-  g_RenderStateFlags.dword = RENDER_LIT_DETAILED;
+  g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_LIGHTING_COLOR);
   if (g_CurrentAlphaValue < 0xff) {
-    g_RenderStateFlags.dword = RENDER_ALPHA_DETAILED;
+    g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_LIGHTING_COLOR | RENDER_BLEND_READ_DEST);
   }
   vertex_count = 0;
   iVar6 = 0;
-  g_RenderStateFlag2 = PREPROCESS_NONE;
+  g_VertexPreprocessMode = PREPROCESS_NONE;
   for (iVar2 = 0; iVar2 < (prim->base).count * 3; iVar2 = iVar2 + 3) {
     *(int *)((int)g_ProcessedVertexIndices + iVar6) = (pSVar4->base).type;
     iVar3 = (pSVar4->base).count;

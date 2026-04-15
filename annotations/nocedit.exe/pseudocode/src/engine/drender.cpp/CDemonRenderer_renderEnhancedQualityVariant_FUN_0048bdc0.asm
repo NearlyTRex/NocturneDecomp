@@ -22,7 +22,7 @@
 ;   undefined4 g_VertexIndexBuffer[1]
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403950
@@ -85,7 +85,7 @@ section .text
     XOR ESI,ESI                         ; 0048be33
     MOV ECX,0x49072f                    ; 0048be35
     MOV dword ptr [0x02d052a0],ESI      ; 0048be3a | g_RenderStateFlags
-    MOV dword ptr [0x02d052a4],ESI      ; 0048be40 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],ESI      ; 0048be40 | g_VertexPreprocessMode
     MOV dword ptr [0x02d0257c],ECX      ; 0048be46 | g_ScanlineRenderFunc
     LEA EAX,[EAX]                       ; 0048be4c
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0048be50
@@ -125,7 +125,7 @@ section .text
         ;   Label: LAB_0048be9a
     MOV EDI,0x267                       ; 0048be9f
     MOV EAX,dword ptr [EBX + 0x20]      ; 0048bea4
-    MOV dword ptr [0x02d052a4],EBP      ; 0048bea7 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],EBP      ; 0048bea7 | g_VertexPreprocessMode
     MOV dword ptr [0x02d052a0],EDI      ; 0048bead | g_RenderStateFlags
     TEST EAX,EAX                        ; 0048beb3
     JNZ 0x0048be50                      ; 0048beb5

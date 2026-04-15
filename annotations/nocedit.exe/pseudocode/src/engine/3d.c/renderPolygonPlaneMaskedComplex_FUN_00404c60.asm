@@ -15,7 +15,7 @@
 ;   int g_PerspectiveReciprocal
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_calculatePolygonLighting_FUN_00403a00
@@ -55,7 +55,7 @@ section .text
     MOV ECX,0x1                         ; 00404ca7
     PUSH EBX                            ; 00404cac
     MOV dword ptr [0x02d052a0],EDX      ; 00404cad | g_RenderStateFlags
-    MOV dword ptr [0x02d052a4],ECX      ; 00404cb3 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],ECX      ; 00404cb3 | g_VertexPreprocessMode
     CALL engine_3d.c_calculatePolygonLighting_FUN_00403a00 ; 00404cb9
         ;   XREF to: 00403a00 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_00403a00(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 00404cbe

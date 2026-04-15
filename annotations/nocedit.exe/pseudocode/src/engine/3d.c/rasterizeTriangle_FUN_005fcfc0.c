@@ -34,11 +34,11 @@ void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex *vertex_bu
   if ((g_VertexProcessingEnabled != 0) && (iVar8 = 0, pSVar6 = vertex_buffer, 0 < vertex_count)) {
     do {
       if ((int)((pSVar6->projected_vertex).screen_x & -0x80000000) != 0) {
-        if ((g_RenderStateFlag2 & 6U) != 0) {
+        if ((g_VertexPreprocessMode & 6U) != 0) {
           (pSVar6->projected_vertex).inv_z =
                (int)(0x7fffffff / (longlong)(pSVar6->projected_vertex).transformed_z);
         }
-        if ((g_RenderStateFlag2 & 1U) != 0) {
+        if ((g_VertexPreprocessMode & 1U) != 0) {
           (pSVar6->projected_vertex).inv_z =
                (int)(0x7fffffff / (longlong)(pSVar6->projected_vertex).transformed_z);
         }
@@ -66,11 +66,11 @@ void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex *vertex_bu
     ;
     return;
   }
-  if (g_RenderStateFlag2 != 0) {
-    if ((uint)g_RenderStateFlag2 < PREPROCESS_TEXTURE_COORD_NORMALIZE) {
+  if (g_VertexPreprocessMode != 0) {
+    if ((uint)g_VertexPreprocessMode < PREPROCESS_TEXTURE_COORD_NORMALIZE) {
       engine_prim_c_prepareDepthBuffer_FUN_00551fb0(vertex_buffer,vertex_count);
     }
-    else if (g_RenderStateFlag2 == PREPROCESS_W_DEPTH_REPLACEMENT) {
+    else if (g_VertexPreprocessMode == PREPROCESS_W_DEPTH_REPLACEMENT) {
       engine_prim_c_replaceWWithDepth_FUN_00552110(vertex_buffer,vertex_count);
     }
   }

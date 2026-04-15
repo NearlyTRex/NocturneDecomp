@@ -22,7 +22,7 @@
 ;   int g_MMXSupported
 ;   int g_BlendMode
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   crt_stdlib.c__qsort_FUN_005fdf38
@@ -80,7 +80,7 @@ section .text
     MOV ESI,0x1e7                       ; 00407145
     MOV EAX,[0x00772afc]                ; 0040714a | g_RenderBufferCount
     XOR EBP,EBP                         ; 0040714f
-    MOV dword ptr [0x02d052a4],EDI      ; 00407151 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],EDI      ; 00407151 | g_VertexPreprocessMode
     MOV dword ptr [ESP + 0x10],EBP      ; 00407157
     MOV dword ptr [0x02d052a0],ESI      ; 0040715b | g_RenderStateFlags
     TEST EAX,EAX                        ; 00407161

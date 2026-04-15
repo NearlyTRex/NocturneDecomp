@@ -67,7 +67,7 @@ section .text
     CMP dword ptr [0x02d052a0],0x80     ; 005b4079 | g_RenderStateFlags
     JZ 0x005b47e0                       ; 005b4083
         ;   XREF to: 005b47e0 (CONDITIONAL_JUMP)  ; LAB_005b47e0
-    CMP dword ptr [0x02d052a4],0x5      ; 005b4089 | g_RenderStateFlag2
+    CMP dword ptr [0x02d052a4],0x5      ; 005b4089 | g_VertexPreprocessMode
     JNZ 0x005b4102                      ; 005b4090
         ;   XREF to: 005b4102 (CONDITIONAL_JUMP)  ; LAB_005b4102
     MOV EAX,dword ptr [ESI + 0x18]      ; 005b4092

@@ -27,11 +27,11 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPerspectiveAlphaSpecial_F
     else {
       g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
-    g_RenderStateFlags.dword = RENDER_TEXTURE_PERSPECTIVE;
+    g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
     if (g_CurrentAlphaValue < 0xff) {
-      g_RenderStateFlags.dword = RENDER_ALPHA_PERSPECTIVE;
+      g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_BLEND_READ_DEST | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
     }
-    g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
+    g_VertexPreprocessMode = PREPROCESS_Z_PASS_INVW;
     engine_3d_c_calculatePolygonLighting_FUN_00403a00(prim);
     engine_clipper_c_clipAndRasterize_FUN_004371b0((prim->base).count,(int *)(prim + 1));
   }

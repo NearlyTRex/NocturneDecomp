@@ -19,7 +19,7 @@
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403950
@@ -73,7 +73,7 @@ section .text
     TEST EDX,EDX                        ; 0040778c
     JZ 0x00407835                       ; 0040778e
         ;   XREF to: 00407835 (CONDITIONAL_JUMP)  ; LAB_00407835
-    MOV dword ptr [0x02d052a4],0x5      ; 00407794 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],0x5      ; 00407794 | g_VertexPreprocessMode
     MOV EBP,dword ptr [EDI + 0x4]       ; 0040779e
         ;   Label: LAB_0040779e
     XOR ECX,ECX                         ; 004077a1
@@ -134,10 +134,10 @@ section .text
         ;   Label: LAB_00407835
     JZ 0x00407849                       ; 00407838
         ;   XREF to: 00407849 (CONDITIONAL_JUMP)  ; LAB_00407849
-    MOV dword ptr [0x02d052a4],0x1      ; 0040783a | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],0x1      ; 0040783a | g_VertexPreprocessMode
     JMP 0x0040779e                      ; 00407844
         ;   XREF to: 0040779e (UNCONDITIONAL_JUMP)  ; LAB_0040779e
-    MOV dword ptr [0x02d052a4],EDX      ; 00407849 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],EDX      ; 00407849 | g_VertexPreprocessMode
         ;   Label: LAB_00407849
     JMP 0x0040779e                      ; 0040784f
         ;   XREF to: 0040779e (UNCONDITIONAL_JUMP)  ; LAB_0040779e

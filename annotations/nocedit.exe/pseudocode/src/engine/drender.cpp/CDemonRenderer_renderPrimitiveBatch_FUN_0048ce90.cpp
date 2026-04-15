@@ -12,7 +12,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90
   int iVar1;
   
   if (render_flags == -1) {
-    render_flags = RENDER_ENGINE_CORE_PREMIUM;
+    render_flags = 0x2cd;
   }
   if (this_ptr->texture_capture_enabled == 0) {
     engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00

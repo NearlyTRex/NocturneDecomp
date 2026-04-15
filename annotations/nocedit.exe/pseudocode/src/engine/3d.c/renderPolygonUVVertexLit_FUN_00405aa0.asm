@@ -13,7 +13,7 @@
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_rasterizePolygonHardware_FUN_004d1340
@@ -48,7 +48,7 @@ section .text
         ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     MOV EAX,[0x00772a6c]                ; 00405adf | g_BypassClipping
     ADD ESP,0x4                         ; 00405ae4
-    MOV dword ptr [0x02d052a4],EBP      ; 00405ae7 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],EBP      ; 00405ae7 | g_VertexPreprocessMode
     TEST EAX,EAX                        ; 00405aed
     JZ 0x00405b35                       ; 00405aef
         ;   XREF to: 00405b35 (CONDITIONAL_JUMP)  ; LAB_00405b35

@@ -37,8 +37,8 @@ int __cdecl engine_drender_cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa5
   }
   if (((local_14 & 0x80000000) == 0) || ((local_14 & 0x1f) == 0)) {
     if (this_ptr->face_count == 0) {
-      g_RenderStateFlags.dword = RENDER_TEXTURE_BASE;
-      g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;
+      g_RenderStateFlags.dword = (RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
+      g_VertexPreprocessMode = PREPROCESS_W_DEPTH_REPLACEMENT;
       g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_00490d35;
     }
     else {

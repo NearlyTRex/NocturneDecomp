@@ -27,7 +27,7 @@
 ;   int g_ViewportBottomFixed
 ;   int g_UseExternalRenderer
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;   int g_RenderedTriangleCount
 ;   int g_RasterizerEdgeCount
 ;   SSoftwareEdge[16] g_RasterizerEdgeArray
@@ -67,7 +67,7 @@ section .text
     TEST AH,0x80                        ; 005fcff9
     JZ 0x005fd071                       ; 005fcffc
         ;   XREF to: 005fd071 (CONDITIONAL_JUMP)  ; LAB_005fd071
-    TEST byte ptr [0x02d052a4],0x6      ; 005fcffe | g_RenderStateFlag2
+    TEST byte ptr [0x02d052a4],0x6      ; 005fcffe | g_VertexPreprocessMode
     JZ 0x005fd019                       ; 005fd005
         ;   XREF to: 005fd019 (CONDITIONAL_JUMP)  ; LAB_005fd019
     MOV EAX,0x7fffffff                  ; 005fd007
@@ -76,7 +76,7 @@ section .text
     SAR EDX,0x1f                        ; 005fd011
     IDIV EBX                            ; 005fd014
     MOV dword ptr [ECX + 0xc],EAX       ; 005fd016
-    MOV DH,byte ptr [0x02d052a4]        ; 005fd019 | g_RenderStateFlag2
+    MOV DH,byte ptr [0x02d052a4]        ; 005fd019 | g_VertexPreprocessMode
         ;   Label: LAB_005fd019
     MOV dword ptr [0x03f9ad5c],EBP      ; 005fd01f | g_RasterizerEdgeCount
     TEST DH,0x1                         ; 005fd025
@@ -129,7 +129,7 @@ section .text
     CMP dword ptr [0x00772a74],0x0      ; 005fd0ad | g_TexturesDisabled
     JZ 0x005fd29f                       ; 005fd0b4
         ;   XREF to: 005fd29f (CONDITIONAL_JUMP)  ; LAB_005fd29f
-    MOV EAX,[0x02d052a4]                ; 005fd0ba | g_RenderStateFlag2
+    MOV EAX,[0x02d052a4]                ; 005fd0ba | g_VertexPreprocessMode
         ;   Label: LAB_005fd0ba
     MOV EBP,dword ptr [0x03f9ad5c]      ; 005fd0bf | g_RasterizerEdgeCount
     CMP EAX,0x1                         ; 005fd0c5

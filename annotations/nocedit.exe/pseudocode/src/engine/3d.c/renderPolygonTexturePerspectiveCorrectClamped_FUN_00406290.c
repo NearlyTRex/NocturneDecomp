@@ -35,9 +35,9 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturePerspectiveCorrect
       g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
     vertex_count = 0;
-    g_RenderStateFlags.dword = RENDER_TEXTURE_PERSPECTIVE;
+    g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
     engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
-    g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
+    g_VertexPreprocessMode = 1;
     iVar2 = 0;
     for (iVar6 = 0; iVar6 < (prim->base).count * 3; iVar6 = iVar6 + 3) {
       *(int *)((int)g_ProcessedVertexIndices + iVar2) = (pSVar4->base).type;

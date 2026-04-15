@@ -1,13 +1,13 @@
-// Name: core_dstrender.cpp_blendSinglePixelLightmapNoRoundingMMX_FUN_00491f90
+// Name: core_dstrender.cpp_blendLightmapSharedU32toU32NoBiasPx1MMX_FUN_00491f90
 // Address: 00491f90
 // MANUAL RECONSTRUCTION
 // Address Range: [[00491f90, 00492000]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_blendSinglePixelLightmapNoRoundingMMX_FUN_00491f90(uint *output_pixel,uint *texture_pixel,byte *texture_index,byte *lightmap_index)
+// Signature: void __cdecl core_dstrender_cpp_blendLightmapSharedU32toU32NoBiasPx1MMX_FUN_00491f90(uint *output_pixel,uint *texture_pixel,byte *texture_index,byte *lightmap_index)
 
 #include "nocturne.h"
 
-void __cdecl core_dstrender_cpp_blendSinglePixelLightmapNoRoundingMMX_FUN_00491f90(uint *output_pixel,uint *texture_pixel,byte *texture_index,byte *lightmap_index)
+void __cdecl core_dstrender_cpp_blendLightmapSharedU32toU32NoBiasPx1MMX_FUN_00491f90(uint *output_pixel,uint *texture_pixel,byte *texture_index,byte *lightmap_index)
 {
   ushort solid_ws[4];
   uint solid_raw;

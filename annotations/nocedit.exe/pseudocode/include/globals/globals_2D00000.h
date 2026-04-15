@@ -103,7 +103,7 @@ extern int g_CPUModel;
 extern int g_CalibratedCPUSpeed;
 extern int g_BlendMode;
 extern int g_ProcessorType;
-extern int g_RenderStateFlag2;
+extern int g_VertexPreprocessMode;
 extern int g_SolidRedComponent;
 extern int g_SolidGreenComponent;
 extern int g_SolidBlueComponent;

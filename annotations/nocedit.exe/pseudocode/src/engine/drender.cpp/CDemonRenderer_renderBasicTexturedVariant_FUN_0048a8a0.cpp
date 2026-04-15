@@ -27,13 +27,13 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_00
       } while (iVar3 < (prim->base).count);
     }
     if (this_ptr->face_count == 0) {
-      g_RenderStateFlags.dword = RENDER_TEXTURE_BASE;
-      g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;
+      g_RenderStateFlags.dword = (RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
+      g_VertexPreprocessMode = PREPROCESS_W_DEPTH_REPLACEMENT;
       g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58;
     }
     else {
       g_RenderStateFlags.dword = 0;
-      g_RenderStateFlag2 = PREPROCESS_NONE;
+      g_VertexPreprocessMode = PREPROCESS_NONE;
       g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740

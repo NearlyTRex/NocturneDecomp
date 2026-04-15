@@ -65,7 +65,7 @@ section .text
     XOR ECX,ECX                         ; 00406489
         ;   Label: LAB_00406489
     MOV dword ptr [0x00772a60],EBP      ; 0040648b | g_ProcessedVertexOffset
-    MOV dword ptr [0x02d052a4],ECX      ; 00406491 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],ECX      ; 00406491 | g_VertexPreprocessMode
     MOV dword ptr [0x02d052a0],ECX      ; 00406497 | g_RenderStateFlags
         ;   Label: LAB_00406497
     MOV EBX,0x772a98                    ; 0040649d | g_ProcessedVertexIndices
@@ -137,7 +137,7 @@ section .text
     MOV dword ptr [0x02d0257c],0x5b50ec ; 0040656c | g_ScanlineRenderFunc
     XOR EDX,EDX                         ; 00406576
         ;   Label: LAB_00406576
-    MOV dword ptr [0x02d052a4],EDX      ; 00406578 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],EDX      ; 00406578 | g_VertexPreprocessMode
     MOV ECX,0xc1                        ; 0040657e
     MOV dword ptr [0x00772a60],EBP      ; 00406583 | g_ProcessedVertexOffset
     JMP 0x00406497                      ; 00406589
@@ -172,7 +172,7 @@ section .text
         ;   Label: LAB_004065dc
     JMP 0x00406576                      ; 004065e6
         ;   XREF to: 00406576 (UNCONDITIONAL_JUMP)  ; LAB_00406576
-    MOV dword ptr [0x02d052a4],0x1      ; 004065e8 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],0x1      ; 004065e8 | g_VertexPreprocessMode
         ;   Label: LAB_004065e8
     MOV ECX,0xc1                        ; 004065f2
     MOV dword ptr [0x00772a60],EBP      ; 004065f7 | g_ProcessedVertexOffset
@@ -196,7 +196,7 @@ section .text
     MOV ECX,dword ptr [EDI + 0x8]       ; 00406631
     MOV EBX,0x1                         ; 00406634
     PUSH ECX                            ; 00406639
-    MOV dword ptr [0x02d052a4],EBX      ; 0040663a | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],EBX      ; 0040663a | g_VertexPreprocessMode
     CALL engine_light.cpp_calculateLighting_FUN_00505780 ; 00406640
         ;   XREF to: 00505780 (UNCONDITIONAL_CALL)  ; int engine_light.cpp_calculateLighting_FUN_00505780(int normal_x, int normal_y, int normal_z)
     ADD ESP,0xc                         ; 00406645

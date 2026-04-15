@@ -61,7 +61,7 @@ section .text
         ;   Label: LAB_004074ba
     MOV ECX,0x1e7                       ; 004074bf
     MOV EDI,dword ptr [0x00772af8]      ; 004074c4 | g_RenderBufferEnabled
-    MOV dword ptr [0x02d052a4],ESI      ; 004074ca | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],ESI      ; 004074ca | g_VertexPreprocessMode
     MOV dword ptr [0x02d052a0],ECX      ; 004074d0 | g_RenderStateFlags
     TEST EDI,EDI                        ; 004074d6
     JZ 0x00407606                       ; 004074d8

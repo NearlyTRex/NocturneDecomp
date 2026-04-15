@@ -27,8 +27,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVVertexLitNormalized_FUN
     else {
       g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
-    g_RenderStateFlags.dword = RENDER_ADVANCED_TEXTURED;
-    g_RenderStateFlag2 = PREPROCESS_TEXTURE_COORD_NORMALIZE;
+    g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_SOLID_ALPHA_BLEND);
+    g_VertexPreprocessMode = PREPROCESS_TEXTURE_COORD_NORMALIZE;
     engine_3d_c_calculatePolygonLighting_FUN_00403a00(prim);
     engine_clipper_c_clipAndRasterize_FUN_004371b0((prim->base).count,(int *)(prim + 1));
   }

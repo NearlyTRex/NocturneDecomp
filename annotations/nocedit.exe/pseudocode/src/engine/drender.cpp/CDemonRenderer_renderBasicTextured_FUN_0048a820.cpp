@@ -14,13 +14,13 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820(
   if ((this_ptr->plane_culling_enabled == 0) ||
      (iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal), iVar1 != 0)) {
     if (this_ptr->face_count == 0) {
-      g_RenderStateFlags.dword = RENDER_TEXTURE_BASE;
-      g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;
+      g_RenderStateFlags.dword = (RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
+      g_VertexPreprocessMode = PREPROCESS_W_DEPTH_REPLACEMENT;
       g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58;
     }
     else {
       g_RenderStateFlags.dword = 0;
-      g_RenderStateFlag2 = PREPROCESS_NONE;
+      g_VertexPreprocessMode = PREPROCESS_NONE;
       g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740

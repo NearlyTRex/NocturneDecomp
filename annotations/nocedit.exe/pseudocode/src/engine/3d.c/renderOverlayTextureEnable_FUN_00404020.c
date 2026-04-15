@@ -28,8 +28,8 @@ void * __cdecl engine_3d_c_renderOverlayTextureEnable_FUN_00404020(SMRGLHeaderPr
   else {
     g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
   }
-  g_RenderStateFlags.dword = RENDER_TEXTURE_ENABLE;
-  g_RenderStateFlag2 = PREPROCESS_NONE;
+  g_RenderStateFlags.dword = RENDER_TEX_ENABLE;
+  g_VertexPreprocessMode = PREPROCESS_NONE;
   engine_3d_c_calculatePolygonLighting_FUN_00403a00(prim);
   piVar3 = g_ProcessedVertexIndices;
   pSVar2 = prim + 1;

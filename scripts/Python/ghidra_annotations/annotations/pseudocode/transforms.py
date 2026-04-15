@@ -164,6 +164,7 @@ import re
 
 from ghidra_annotations.util.log import log_info
 from ghidra_annotations.annotations.pseudocode.json_cache import JsonCacheManager
+from ghidra_annotations.annotations.pseudocode.render_flags_transform import transform_render_state_flags
 
 
 # Type replacement mappings for undefined types
@@ -1374,6 +1375,7 @@ def apply_all_transforms(code, transforms=None, var_info=None):
         ('void_pointer_casts', transform_void_pointer_casts),
         ('funcptr_assignments', transform_funcptr_assignments),
         ('adjusted_pointer_types', transform_adjusted_pointer_types),
+        ('render_state_flags', transform_render_state_flags),
     ]
 
     if transforms is None:

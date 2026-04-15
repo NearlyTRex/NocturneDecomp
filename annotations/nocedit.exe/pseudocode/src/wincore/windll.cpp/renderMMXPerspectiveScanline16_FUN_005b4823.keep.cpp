@@ -75,7 +75,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
   // Texture U/V setup — perspective-corrected vs linear.
   // Perspective: start = (u_current << 24) / w_current per vertex, then delta
   // is the inter-pixel step of that quotient scaled by recip[pixel_count].
-  if (g_RenderStateFlag2 == PREPROCESS_TEXTURE_NORMALIZE_ALT) {
+  if (g_VertexPreprocessMode == PREPROCESS_PERSPECTIVE_TEXTURE) {
     start_u = (int)(((longlong)(lo->base).u_current << 24) / (longlong)(lo->base).w_current);
     delta_u = (int)(((longlong)(
                       (int)(((longlong)(hi->base).u_current << 24) / (longlong)(hi->base).w_current)

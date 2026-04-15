@@ -25,7 +25,7 @@
 ;   int g_ViewportBottomFixed
 ;   int g_UseExternalRenderer
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;   int g_SoftwareEdgeCount
 ;   SSoftwareEdge[16] g_SoftwareEdgeBuffer
 ;   undefined4 g_SoftwareEdgeBuffer[0].base.y_max
@@ -146,7 +146,7 @@ section .text
     MOV EBX,dword ptr [0x030e56b8]      ; 00552602 | g_RenderedTriangleCount
         ;   Label: LAB_00552602
     INC EBX                             ; 00552608
-    MOV EAX,[0x02d052a4]                ; 00552609 | g_RenderStateFlag2
+    MOV EAX,[0x02d052a4]                ; 00552609 | g_VertexPreprocessMode
     MOV dword ptr [0x030e56b8],EBX      ; 0055260e | g_RenderedTriangleCount
     CMP EAX,0x6                         ; 00552614
     JA 0x00552620                       ; 00552617

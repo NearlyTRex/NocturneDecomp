@@ -32,7 +32,7 @@ __asm {
         mov dword ptr [g_CurrentZBufferPtr],EBP
         cmp dword ptr [g_RenderStateFlags],0x80
         jz LAB_005b50a9
-        cmp dword ptr [g_RenderStateFlag2],0x5
+        cmp dword ptr [g_VertexPreprocessMode],0x5
         jnz LAB_005b48f4
         mov EAX,dword ptr [ESI + 0x18]
         mov EBX,dword ptr [ESI + 0x28]

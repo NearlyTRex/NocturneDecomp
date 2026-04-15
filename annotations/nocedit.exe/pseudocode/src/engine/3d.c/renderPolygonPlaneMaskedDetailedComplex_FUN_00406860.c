@@ -34,13 +34,13 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPlaneMaskedDetailedComple
     else {
       g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
-    g_RenderStateFlags.dword = RENDER_PLANE_MASKED_COMPLEX;
+    g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_LIGHTING_COLOR | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
     engine_3d_c_calculatePolygonLighting_FUN_00403a00(prim);
     if (g_CurrentAlphaValue < 0xff) {
-      g_RenderStateFlags.dword = g_RenderStateFlags.dword | 0x20;
+      g_RenderStateFlags.dword = g_RenderStateFlags.dword | RENDER_BLEND_READ_DEST;
     }
     iVar6 = 0;
-    g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
+    g_VertexPreprocessMode = PREPROCESS_Z_PASS_INVW;
     vertex_count = 0;
     for (iVar2 = 0; iVar2 < (prim->base).count * 3; iVar2 = iVar2 + 3) {
       *(int *)((int)g_ProcessedVertexIndices + iVar6) = (pSVar4->base).type;

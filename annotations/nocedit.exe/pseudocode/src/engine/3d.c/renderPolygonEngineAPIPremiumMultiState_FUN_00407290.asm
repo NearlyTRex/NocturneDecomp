@@ -67,7 +67,7 @@ section .text
     MOV ECX,0x772a98                    ; 004072dc | g_ProcessedVertexIndices
     MOV EAX,ESI                         ; 004072e1
     MOV dword ptr [0x02d052a0],EBX      ; 004072e3 | g_RenderStateFlags
-    MOV dword ptr [0x02d052a4],EDI      ; 004072e9 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],EDI      ; 004072e9 | g_VertexPreprocessMode
     XOR EBX,EBX                         ; 004072ef
     MOV EDX,dword ptr [EBP + 0x4]       ; 004072f1
         ;   Label: LAB_004072f1

@@ -17,7 +17,7 @@
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403950
@@ -61,7 +61,7 @@ section .text
     XOR EBP,EBP                         ; 00403b1b
     PUSH ECX                            ; 00403b1d
     MOV dword ptr [0x02d052a0],EDI      ; 00403b1e | g_RenderStateFlags
-    MOV dword ptr [0x02d052a4],EBP      ; 00403b24 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],EBP      ; 00403b24 | g_VertexPreprocessMode
     CALL engine_light.cpp_calculateLighting_FUN_00505780 ; 00403b2a
         ;   XREF to: 00505780 (UNCONDITIONAL_CALL)  ; int engine_light.cpp_calculateLighting_FUN_00505780(int normal_x, int normal_y, int normal_z)
     ADD ESP,0xc                         ; 00403b2f

@@ -58,7 +58,7 @@ void __cdecl engine_3d_c_rasterizePolygonCustom_FUN_005fd4e0(SRenderVertex *vert
     return;
   }
   g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
-  switch(g_RenderStateFlag2) {
+  switch(g_VertexPreprocessMode) {
   case 1:
     engine_prim_c_prepareDepthBuffer_FUN_00551fb0(vertex_buffer,vertex_count);
     break;

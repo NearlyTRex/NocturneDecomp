@@ -20,7 +20,7 @@
 ;   undefined4 g_VertexIndexBuffer[1]
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -128,7 +128,7 @@ section .text
     MOV ECX,0x6                         ; 0048ab24
     MOV EAX,0x490d35                    ; 0048ab29
     MOV dword ptr [0x02d052a0],EDX      ; 0048ab2e | g_RenderStateFlags
-    MOV dword ptr [0x02d052a4],ECX      ; 0048ab34 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],ECX      ; 0048ab34 | g_VertexPreprocessMode
     MOV [0x02d0257c],EAX                ; 0048ab3a | g_ScanlineRenderFunc
     JMP 0x0048aae6                      ; 0048ab3f
         ;   XREF to: 0048aae6 (UNCONDITIONAL_JUMP)  ; LAB_0048aae6

@@ -19,7 +19,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0048d170(CDemo
   _BIT_INTEGER32 _Var1;
   
   if (render_flags == -1) {
-    render_flags = RENDER_ENGINE_CORE_PREMIUM;
+    render_flags = 0x2cd;
   }
   if (this_ptr->texture_capture_enabled == 0) {
     if (((this_ptr->face_capture_enabled == 0) && (this_ptr->plane_culling_enabled == 0)) &&
@@ -32,7 +32,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0048d170(CDemo
           g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
         }
         g_RenderStateFlags.dword = render_flags;
-        g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;
+        g_VertexPreprocessMode = PREPROCESS_W_DEPTH_REPLACEMENT;
         if (g_UseExternalRenderer == 0) {
           for (; 0 < face_count; face_count = face_count + -1) {
             local_24.x = (int)(face_array->vertex_indices).vertex_index_0;
@@ -85,12 +85,12 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0048d170(CDemo
       else {
         g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
         g_RenderStateFlags.dword = 0;
-        g_RenderStateFlag2 = 0;
+        g_VertexPreprocessMode = 0;
         _Var1.dword = 0;
         iVar4 = 0;
         if (0 < face_count) {
           do {
-            g_RenderStateFlag2 = iVar4;
+            g_VertexPreprocessMode = iVar4;
             g_RenderStateFlags = _Var1;
             local_24.x = (int)(face_array->vertex_indices).vertex_index_0;
             local_24.y = (int)(face_array->vertex_indices).vertex_index_1;
@@ -99,7 +99,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0048d170(CDemo
             face_array = face_array + 1;
             engine_drender_cpp_renderTriangleSimple_FUN_004839f0(&local_24,3);
             _Var1 = g_RenderStateFlags;
-            iVar4 = g_RenderStateFlag2;
+            iVar4 = g_VertexPreprocessMode;
           } while (0 < face_count);
           return;
         }

@@ -20,7 +20,7 @@
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   int g_UseExternalRenderer
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;   int g_RenderedTriangleCount
 ;
 ; Called Functions:
@@ -53,7 +53,7 @@ section .text
     XOR EAX,EAX                         ; 0048ab7f
     MOV EBP,0x490cb5                    ; 0048ab81
     MOV [0x02d052a0],EAX                ; 0048ab86 | g_RenderStateFlags
-    MOV [0x02d052a4],EAX                ; 0048ab8b | g_RenderStateFlag2
+    MOV [0x02d052a4],EAX                ; 0048ab8b | g_VertexPreprocessMode
     MOV dword ptr [0x02d0257c],EBP      ; 0048ab90 | g_ScanlineRenderFunc
     MOV ECX,dword ptr [0x02d03e94]      ; 0048ab96 | g_UseExternalRenderer
         ;   Label: LAB_0048ab96
@@ -115,7 +115,7 @@ section .text
     MOV ECX,0x6                         ; 0048ac11
     MOV EAX,0x490c37                    ; 0048ac16
     MOV dword ptr [0x02d052a0],EDX      ; 0048ac1b | g_RenderStateFlags
-    MOV dword ptr [0x02d052a4],ECX      ; 0048ac21 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],ECX      ; 0048ac21 | g_VertexPreprocessMode
     MOV [0x02d0257c],EAX                ; 0048ac27 | g_ScanlineRenderFunc
     JMP 0x0048ab96                      ; 0048ac2c
         ;   XREF to: 0048ab96 (UNCONDITIONAL_JUMP)  ; LAB_0048ab96

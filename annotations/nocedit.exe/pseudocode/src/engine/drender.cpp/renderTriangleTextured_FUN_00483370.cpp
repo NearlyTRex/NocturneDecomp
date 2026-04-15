@@ -148,7 +148,7 @@ void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00483370(int *vertex_
           }
           iVar4 = iVar4 + local_2c;
           g_EdgeInterpolationArray[iVar14].base.w_current = iVar4;
-          if ((g_RenderStateFlags.dword & 0x200) != 0) {
+          if ((g_RenderStateFlags.dword & RENDER_COLOR_FROM_VERTEX) != 0) {
             lVar11 = (longlong)iVar12 * (longlong)(local_1c->g - pSVar9->g);
             uVar13 = (uint)lVar11 >> 0x10 | (int)((ulonglong)lVar11 >> 0x20) << 0x10;
             g_EdgeInterpolationArray[iVar14].color_gradient = uVar13;
@@ -259,7 +259,7 @@ LAB_00483606:
           (local_18->base).w_current = (local_18->base).w_current + (local_18->base).w_gradient;
           (local_18->base).fog_current =
                (local_18->base).fog_current + (local_18->base).fog_gradient;
-          if ((g_RenderStateFlags.dword & 0x200) != 0) {
+          if ((g_RenderStateFlags.dword & RENDER_COLOR_FROM_VERTEX) != 0) {
             iVar12 = local_1c[1].projected_vertex.screen_x;
             iVar1 = local_1c[1].projected_vertex.screen_y;
             local_1c[1].projected_vertex.transformed_z =

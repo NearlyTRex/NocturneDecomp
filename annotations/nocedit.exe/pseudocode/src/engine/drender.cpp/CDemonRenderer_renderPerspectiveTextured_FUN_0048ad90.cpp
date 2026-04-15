@@ -15,11 +15,11 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspectiveTextured_FUN_004
      (iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal), iVar1 != 0)) {
     g_RenderStateFlags.bytes[0] = this_ptr->face_count == 0;
     if ((bool)g_RenderStateFlags.bytes[0]) {
-      g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;
+      g_VertexPreprocessMode = PREPROCESS_W_DEPTH_REPLACEMENT;
       g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9;
     }
     else {
-      g_RenderStateFlag2 = 0;
+      g_VertexPreprocessMode = 0;
       g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
     }
     g_RenderStateFlags.dword._1_3_ = 0;

@@ -19,7 +19,7 @@
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_calculatePolygonLighting_FUN_00403a00
@@ -70,7 +70,7 @@ section .text
     MOV ECX,EBP                         ; 004068d6
     XOR EBX,EBX                         ; 004068d8
     XOR ESI,ESI                         ; 004068da
-    MOV dword ptr [0x02d052a4],EDI      ; 004068dc | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],EDI      ; 004068dc | g_VertexPreprocessMode
     XOR EDI,EDI                         ; 004068e2
     MOV EAX,dword ptr [ESP + 0x14]      ; 004068e4
         ;   Label: LAB_004068e4

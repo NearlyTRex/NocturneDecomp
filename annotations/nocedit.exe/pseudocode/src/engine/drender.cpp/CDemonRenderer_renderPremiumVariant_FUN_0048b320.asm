@@ -14,7 +14,7 @@
 ;   undefined4 g_VertexIndexBuffer[2]
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
@@ -57,7 +57,7 @@ section .text
     MOV EBX,0x6                         ; 0048b383
         ;   Label: LAB_0048b383
     MOV EDX,0x2cd                       ; 0048b388
-    MOV dword ptr [0x02d052a4],EBX      ; 0048b38d | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],EBX      ; 0048b38d | g_VertexPreprocessMode
     MOV dword ptr [0x02d052a0],EDX      ; 0048b393 | g_RenderStateFlags
     PUSH 0x2c6d5ac                      ; 0048b399 | g_VertexIndexBuffer
         ;   Label: LAB_0048b399
@@ -101,7 +101,7 @@ section .text
         ;   Label: LAB_0048b3eb
     MOV ESI,0x49072f                    ; 0048b3ed
     MOV dword ptr [0x02d052a0],EDI      ; 0048b3f2 | g_RenderStateFlags
-    MOV dword ptr [0x02d052a4],EDI      ; 0048b3f8 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],EDI      ; 0048b3f8 | g_VertexPreprocessMode
     MOV dword ptr [0x02d0257c],ESI      ; 0048b3fe | g_ScanlineRenderFunc
     JMP 0x0048b399                      ; 0048b404
         ;   XREF to: 0048b399 (UNCONDITIONAL_JUMP)  ; LAB_0048b399

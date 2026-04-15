@@ -28,12 +28,12 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineEnhancedDepthLit_FU
       g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
     if (g_AdvancedClippingEnabled == 0) {
-      g_RenderStateFlags.dword = RENDER_ENGINE_ULTRA_QUALITY;
+      g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_FOG_COLOR | RENDER_BLEND_READ_DEST | RENDER_DEPTH_TEST | RENDER_COLOR_FROM_VERTEX);
     }
     else {
-      g_RenderStateFlags.dword = 0x67;
+      g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_FOG_COLOR | RENDER_BLEND_READ_DEST | RENDER_DEPTH_TEST);
     }
-    g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
+    g_VertexPreprocessMode = PREPROCESS_Z_PASS_INVW;
     engine_3d_c_calculatePolygonLighting_FUN_00403a00(prim);
     if (g_AdvancedClippingEnabled == 0) {
       engine_clipper_c_clipPolygonToViewport_FUN_00438420((prim->base).count,(int *)(prim + 1));

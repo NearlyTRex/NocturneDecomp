@@ -27,8 +27,8 @@ void * __cdecl engine_3d_c_renderPolygonVertexLitNormalized2_FUN_00405020(SMRGLH
     else {
       g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
-    g_RenderStateFlags.dword = RENDER_ADVANCED_TEXTURED;
-    g_RenderStateFlag2 = PREPROCESS_TEXTURE_COORD_NORMALIZE;
+    g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_SOLID_ALPHA_BLEND);
+    g_VertexPreprocessMode = PREPROCESS_TEXTURE_COORD_NORMALIZE;
     engine_clipper_c_clipAndRasterize_FUN_004371b0((prim->base).count,(int *)(prim + 1));
   }
   return &prim[1].base.type + (prim->base).count;

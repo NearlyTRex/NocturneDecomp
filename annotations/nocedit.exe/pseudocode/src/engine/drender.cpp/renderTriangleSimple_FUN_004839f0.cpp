@@ -47,8 +47,8 @@ void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i *ver
   }
   g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
   if ((g_UseExternalRenderer == 0) || (g_TexturesDisabled != 0)) {
-    if (g_RenderStateFlag2 != 0) {
-      if ((uint)g_RenderStateFlag2 < 2) {
+    if (g_VertexPreprocessMode != 0) {
+      if ((uint)g_VertexPreprocessMode < 2) {
         iVar7 = 0;
         pCVar8 = vertex_indices;
         if (0 < vertex_count) {
@@ -59,7 +59,7 @@ void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i *ver
           } while (iVar7 < vertex_count);
         }
       }
-      else if ((g_RenderStateFlag2 == PREPROCESS_W_DEPTH_REPLACEMENT) &&
+      else if ((g_VertexPreprocessMode == PREPROCESS_W_DEPTH_REPLACEMENT) &&
               (iVar7 = 0, pCVar9 = vertex_indices, 0 < vertex_count)) {
         do {
           piVar2 = &pCVar9->x;

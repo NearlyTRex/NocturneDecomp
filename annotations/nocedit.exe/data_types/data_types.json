@@ -2357,6 +2357,10 @@
       "type":"enum"
     },
     {
+      "name":"ERenderStateFlagBits",
+      "type":"enum"
+    },
+    {
       "name":"ETextAlignment",
       "type":"enum"
     },
@@ -9900,6 +9904,55 @@
         {
           "name":"PLATFORM_TYPE_BOTH",
           "val":3
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"ERenderStateFlagBits",
+      "size":4,
+      "type":"enum",
+      "values":[
+        {
+          "name":"RENDER_TEX_ENABLE",
+          "val":1
+        },
+        {
+          "name":"RENDER_FORCE_SOLID_LOOP",
+          "val":2
+        },
+        {
+          "name":"RENDER_FOG_COLOR",
+          "val":4
+        },
+        {
+          "name":"RENDER_SOLID_ALPHA_BLEND",
+          "val":8
+        },
+        {
+          "name":"RENDER_LIGHTING_COLOR",
+          "val":16
+        },
+        {
+          "name":"RENDER_BLEND_READ_DEST",
+          "val":32
+        },
+        {
+          "name":"RENDER_DEPTH_TEST",
+          "val":64
+        },
+        {
+          "name":"RENDER_DEPTH_WRITE",
+          "val":128
+        },
+        {
+          "name":"RENDER_ALPHA_FROM_VERTEX",
+          "val":256
+        },
+        {
+          "name":"RENDER_COLOR_FROM_VERTEX",
+          "val":512
         }
       ]
     },

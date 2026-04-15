@@ -18,7 +18,7 @@
 ;   void*[1200] g_ScreenBufferArray
 ;
 ; Called Functions:
-;   core_dstrender.cpp_blendSinglePixelLightmapMMX_FUN_004937b6
+;   core_dstrender.cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_004937b6
 ;
 ; *****************************************************************************
 
@@ -68,8 +68,8 @@ section .text
     PUSH EDX                            ; 00453e38
     PUSH EDI                            ; 00453e39
     PUSH EBP                            ; 00453e3a
-    CALL core_dstrender.cpp_blendSinglePixelLightmapMMX_FUN_004937b6 ; 00453e3b
-        ;   XREF to: 004937b6 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_blendSinglePixelLightmapMMX_FUN_004937b6(ushort * output_pixel, uint * texture_pixel, byte * texture_index, byte * lightmap_index)
+    CALL core_dstrender.cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_004937b6 ; 00453e3b
+        ;   XREF to: 004937b6 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_004937b6(ushort * output_pixel, uint * texture_pixel, byte * texture_index, byte * lightmap_index)
     ADD ESP,0x10                        ; 00453e40
     ADD ESP,0x4                         ; 00453e43
     POP EBP                             ; 00453e46

@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   int g_ProcessorType
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;   int g_SoftwareEdgeCount
 ;   SSoftwareEdge[16] g_SoftwareEdgeBuffer
 ;   undefined4 g_SoftwareEdgeBuffer[0].base.y_max
@@ -169,7 +169,7 @@ section .text
     MOV EAX,dword ptr [ESI + 0x2c]      ; 00551ecc
     ADD EAX,EDX                         ; 00551ecf
     MOV dword ptr [ECX + 0x30],EAX      ; 00551ed1 | g_SoftwareEdgeBuffer[0].base.fog_current
-    CMP dword ptr [0x02d052a4],0x1      ; 00551ed4 | g_RenderStateFlag2
+    CMP dword ptr [0x02d052a4],0x1      ; 00551ed4 | g_VertexPreprocessMode
     JNZ 0x00551f39                      ; 00551edb
         ;   XREF to: 00551f39 (CONDITIONAL_JUMP)  ; LAB_00551f39
     CMP dword ptr [0x02d0529c],0x0      ; 00551edd | g_ProcessorType

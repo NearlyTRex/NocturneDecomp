@@ -27,8 +27,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureNormalized_FUN_004
     else {
       g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
-    g_RenderStateFlags.dword = RENDER_TEXTURE_ENABLE;
-    g_RenderStateFlag2 = PREPROCESS_TEXTURE_COORD_NORMALIZE;
+    g_RenderStateFlags.dword = RENDER_TEX_ENABLE;
+    g_VertexPreprocessMode = PREPROCESS_TEXTURE_COORD_NORMALIZE;
     engine_clipper_c_clipAndRasterize_FUN_004371b0((primitive->base).count,(int *)(primitive + 1));
   }
   return (SMRGLHeaderExtended *)(&primitive[1].base.type + (primitive->base).count);

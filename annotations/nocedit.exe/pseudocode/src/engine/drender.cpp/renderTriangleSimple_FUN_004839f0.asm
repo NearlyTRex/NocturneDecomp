@@ -375,7 +375,7 @@ section .text
         ;   XREF to: 00483d58 (CONDITIONAL_JUMP)  ; LAB_00483d58
     JMP 0x00483b20                      ; 00483d73
         ;   XREF to: 00483b20 (UNCONDITIONAL_JUMP)  ; LAB_00483b20
-    MOV EAX,[0x02d052a4]                ; 00483d78 | g_RenderStateFlag2
+    MOV EAX,[0x02d052a4]                ; 00483d78 | g_VertexPreprocessMode
         ;   Label: LAB_00483d78
     CMP EAX,0x1                         ; 00483d7d
     JC 0x00483b20                       ; 00483d80

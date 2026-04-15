@@ -11,7 +11,7 @@
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_calculatePolygonLighting_FUN_00403a00
@@ -54,7 +54,7 @@ section .text
     ADD ESP,0x4                         ; 004060ec
     MOV EBP,0x1                         ; 004060ef
     PUSH EBX                            ; 004060f4
-    MOV dword ptr [0x02d052a4],EBP      ; 004060f5 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],EBP      ; 004060f5 | g_VertexPreprocessMode
     CALL engine_3d.c_calculatePolygonLighting_FUN_00403a00 ; 004060fb
         ;   XREF to: 00403a00 (UNCONDITIONAL_CALL)  ; void engine_3d.c_calculatePolygonLighting_FUN_00403a00(SMRGLHeaderPrimitive * prim)
     ADD ESP,0x4                         ; 00406100

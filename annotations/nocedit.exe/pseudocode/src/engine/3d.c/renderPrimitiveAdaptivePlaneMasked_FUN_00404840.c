@@ -35,8 +35,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrimitiveAdaptivePlaneMasked_FUN
         else {
           g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
         }
-        g_RenderStateFlags.dword = RENDER_PLANE_MASKED_LIT;
-        g_RenderStateFlag2 = PREPROCESS_NEAR_PLANE_CORRECT;
+        g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_LIGHTING_COLOR | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
+        g_VertexPreprocessMode = PREPROCESS_NEAR_PLANE_CORRECT;
         engine_3d_c_calculatePolygonLighting_FUN_00403a00(primitive);
       }
       else {
@@ -56,8 +56,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrimitiveAdaptivePlaneMasked_FUN
         else {
           g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
         }
-        g_RenderStateFlags.dword = RENDER_PLANE_MASKED;
-        g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
+        g_RenderStateFlags.dword = (RENDER_LIGHTING_COLOR | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
+        g_VertexPreprocessMode = PREPROCESS_Z_PASS_INVW;
         engine_light_cpp_calculateLighting_FUN_00505780
                   ((primitive->surface_normal).A,(primitive->surface_normal).B,
                    (primitive->surface_normal).C);
@@ -81,7 +81,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrimitiveAdaptivePlaneMasked_FUN
       else {
         g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
       }
-      g_RenderStateFlag2 = 0;
+      g_VertexPreprocessMode = 0;
       g_RenderStateFlags.dword = 0;
     }
     iVar2 = 0;

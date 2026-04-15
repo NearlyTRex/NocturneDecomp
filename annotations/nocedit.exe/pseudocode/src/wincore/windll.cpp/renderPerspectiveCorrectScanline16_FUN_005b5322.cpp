@@ -37,7 +37,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005
     g_ScanlinePixelCount = iVar4 * 4;
     puVar9 = g_ZBufferScanlineArray[scanline_y] + uVar3;
     g_CurrentZBufferPtr = (int *)puVar9;
-    if (g_RenderStateFlags.dword == 0x80) {
+    if (g_RenderStateFlags.dword == RENDER_DEPTH_WRITE) {
       uVar10 = (pSVar7->base).w_current;
       iVar8 = (int)((ulonglong)
                     ((longlong)(int)((left_vertex->base).w_current - uVar10) *
@@ -55,7 +55,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005
       } while (iVar5 != 0 && bVar1);
       return;
     }
-    if (g_RenderStateFlag2 == 5) {
+    if (g_VertexPreprocessMode == 5) {
       uVar10 = (pSVar7->base).u_current;
       g_StartTextureU =
            (int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
@@ -99,11 +99,11 @@ void __edi_esi_ebx wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005
     uVar10 = 0;
     g_StartDepthW = iVar8;
     if ((g_CurrentTextureOpacityData == (void *)0x0) &&
-       (uVar6 = g_StartTextureV, uVar3 = g_StartTextureU, (g_RenderStateFlags.dword & 2) == 0)) {
+       (uVar6 = g_StartTextureV, uVar3 = g_StartTextureU, (g_RenderStateFlags.dword & RENDER_FORCE_SOLID_LOOP) == 0)) {
       while( true ) {
-        if (((g_RenderStateFlags.dword & 0x40) == 0) ||
+        if (((g_RenderStateFlags.dword & RENDER_DEPTH_TEST) == 0) ||
            (*(int *)(uVar10 + (int)g_CurrentZBufferPtr) <= iVar8)) {
-          if ((g_RenderStateFlags.dword & 1) == 0) {
+          if ((g_RenderStateFlags.dword & RENDER_TEX_ENABLE) == 0) {
             uVar2 = (ushort)g_ActiveRenderColor;
           }
           else {
@@ -115,7 +115,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005
                               g_TextureMask1.u32[0]))];
           }
           *(ushort *)((uVar10 >> 1) + (int)g_CurrentScreenPtr) = uVar2;
-          if ((g_RenderStateFlags.dword & 0x80) != 0) {
+          if ((g_RenderStateFlags.dword & RENDER_DEPTH_WRITE) != 0) {
             *(int *)((int)g_CurrentZBufferPtr + uVar10) = iVar8;
           }
         }

@@ -461,7 +461,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x2c]      ; 00552ea1 | g_RenderVertexBuffer[0].a
     ADD EAX,EDX                         ; 00552ea4
     MOV dword ptr [EBP + 0x30],EAX      ; 00552ea6 | g_SoftwareEdgeBuffer[0].base.fog_current
-    CMP dword ptr [0x02d052a4],0x1      ; 00552ea9 | g_RenderStateFlag2
+    CMP dword ptr [0x02d052a4],0x1      ; 00552ea9 | g_VertexPreprocessMode
     JNZ 0x00552f0b                      ; 00552eb0
         ;   XREF to: 00552f0b (CONDITIONAL_JUMP)  ; LAB_00552f0b
     CMP dword ptr [0x02d0529c],0x0      ; 00552eb2 | g_ProcessorType

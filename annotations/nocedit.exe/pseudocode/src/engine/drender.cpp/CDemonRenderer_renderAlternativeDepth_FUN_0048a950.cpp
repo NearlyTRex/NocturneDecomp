@@ -44,13 +44,13 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a9
         this_ptr->face_capture_enabled = local_18;
       }
       if (this_ptr->face_count == 0) {
-        g_RenderStateFlags.dword = RENDER_ALTERNATIVE_DEPTH;
-        g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;
+        g_RenderStateFlags.dword = (RENDER_LIGHTING_COLOR | RENDER_DEPTH_WRITE);
+        g_VertexPreprocessMode = PREPROCESS_W_DEPTH_REPLACEMENT;
         g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderZBufferFill16xUnrolled_FUN_00490902;
       }
       else {
         g_RenderStateFlags.dword = 0;
-        g_RenderStateFlag2 = PREPROCESS_NONE;
+        g_VertexPreprocessMode = PREPROCESS_NONE;
         g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepth16BitConditional_FUN_0049077d;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740

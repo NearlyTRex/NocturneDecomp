@@ -85,7 +85,7 @@ void __cdecl engine_prim_c_setupSoftwareEdgeWithZMode_FUN_00551d60(SRenderVertex
     lVar2 = (longlong)(int)uVar8 * (longlong)(int)uVar3;
     g_SoftwareEdgeBuffer[iVar2].base.fog_current =
          start_vertex->a + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-    if (g_RenderStateFlag2 != 1) {
+    if (g_VertexPreprocessMode != 1) {
       lVar2 = (longlong)iVar5 *
               (longlong)
               ((pSVar5->projected_vertex).transformed_z -

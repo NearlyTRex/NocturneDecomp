@@ -525,7 +525,7 @@ section .text
     MOV ESI,dword ptr [0x030e56b8]      ; 00553fdf | g_RenderedTriangleCount
         ;   Label: LAB_00553fdf
     INC ESI                             ; 00553fe5
-    MOV EAX,[0x02d052a4]                ; 00553fe6 | g_RenderStateFlag2
+    MOV EAX,[0x02d052a4]                ; 00553fe6 | g_VertexPreprocessMode
     MOV dword ptr [0x030e56b8],ESI      ; 00553feb | g_RenderedTriangleCount
     CMP EAX,0x6                         ; 00553ff1
     JA 0x00553d60                       ; 00553ff4
@@ -654,7 +654,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x2c]      ; 00554149 | g_RenderVertexBuffer[0].a
     ADD EAX,EDX                         ; 0055414c
     MOV dword ptr [EBP + 0x30],EAX      ; 0055414e | g_SoftwareEdgeTable[0].base.fog_current
-    CMP dword ptr [0x02d052a4],0x1      ; 00554151 | g_RenderStateFlag2
+    CMP dword ptr [0x02d052a4],0x1      ; 00554151 | g_VertexPreprocessMode
     JNZ 0x0055422f                      ; 00554158
         ;   XREF to: 0055422f (CONDITIONAL_JUMP)  ; LAB_0055422f
     CMP dword ptr [0x02d0529c],0x0      ; 0055415e | g_ProcessorType

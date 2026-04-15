@@ -27,8 +27,8 @@ void * __cdecl engine_3d_c_renderPolygonVertexLitNearPlane_FUN_00404e40(SMRGLHea
     else {
       g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
-    g_RenderStateFlags.dword = RENDER_ADVANCED_TEXTURED;
-    g_RenderStateFlag2 = PREPROCESS_NEAR_PLANE_CORRECT;
+    g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_SOLID_ALPHA_BLEND);
+    g_VertexPreprocessMode = PREPROCESS_NEAR_PLANE_CORRECT;
     engine_clipper_c_clipAndRasterize_FUN_004371b0((prim->base).count,(int *)(prim + 1));
   }
   return &prim[1].base.type + (prim->base).count;

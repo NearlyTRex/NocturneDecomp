@@ -28,7 +28,7 @@
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   int g_UseExternalRenderer
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -96,7 +96,7 @@ section .text
         ;   XREF to: 0048cfbb (CONDITIONAL_JUMP)  ; LAB_0048cfbb
     MOV ESI,0x49072f                    ; 0048cf5d
     MOV dword ptr [0x02d052a0],EDX      ; 0048cf62 | g_RenderStateFlags
-    MOV dword ptr [0x02d052a4],EDX      ; 0048cf68 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],EDX      ; 0048cf68 | g_VertexPreprocessMode
     MOV dword ptr [0x02d0257c],ESI      ; 0048cf6e | g_ScanlineRenderFunc
     TEST EDI,EDI                        ; 0048cf74
     JLE 0x0048cf40                      ; 0048cf76
@@ -141,7 +141,7 @@ section .text
     MOV [0x02d052a0],EAX                ; 0048cfd6 | g_RenderStateFlags
     MOV EAX,0x6                         ; 0048cfdb
     MOV EDX,dword ptr [0x02d03e94]      ; 0048cfe0 | g_UseExternalRenderer
-    MOV [0x02d052a4],EAX                ; 0048cfe6 | g_RenderStateFlag2
+    MOV [0x02d052a4],EAX                ; 0048cfe6 | g_VertexPreprocessMode
     TEST EDX,EDX                        ; 0048cfeb
     JNZ 0x0048d0cf                      ; 0048cfed
         ;   XREF to: 0048d0cf (CONDITIONAL_JUMP)  ; LAB_0048d0cf

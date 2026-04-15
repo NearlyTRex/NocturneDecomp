@@ -149,7 +149,7 @@ void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_00552a40(int *vertex
           lVar2 = (longlong)(int)uVar10 * (longlong)(int)uVar8;
           g_SoftwareEdgeBuffer[iVar7].base.fog_current =
                pSVar8->a + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-          if (g_RenderStateFlag2 == 1) {
+          if (g_VertexPreprocessMode == 1) {
             if (g_ProcessorType == 0) {
               iVar10 = (pSVar12->projected_vertex).inv_z;
               iVar12 = (pSVar8->projected_vertex).inv_z;

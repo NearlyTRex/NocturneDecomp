@@ -34,8 +34,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSpecialEffectsPlaneMasked
       else {
         g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
       }
-      g_RenderStateFlags.dword = RENDER_SPECIAL_EFFECTS;
-      g_RenderStateFlag2 = PREPROCESS_NONE;
+      g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FOG_COLOR | RENDER_SOLID_ALPHA_BLEND | RENDER_DEPTH_WRITE | RENDER_COLOR_FROM_VERTEX);
+      g_VertexPreprocessMode = PREPROCESS_NONE;
       engine_clipper_c_clipPolygonToViewport_FUN_00438420((prim->base).count,(int *)(prim + 1));
       return (SMRGLHeaderExtended *)(&prim[1].base.type + (prim->base).count);
     }
@@ -53,8 +53,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSpecialEffectsPlaneMasked
     else {
       g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
-    g_RenderStateFlags.dword = RENDER_COMPLEX_EFFECTS;
-    g_RenderStateFlag2 = PREPROCESS_PRIMITIVE_SPECIAL;
+    g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FOG_COLOR | RENDER_SOLID_ALPHA_BLEND | RENDER_DEPTH_WRITE);
+    g_VertexPreprocessMode = 4;
     engine_clipper_c_clipAndRasterize_FUN_004371b0((prim->base).count,(int *)(prim + 1));
   }
   return (SMRGLHeaderExtended *)(&prim[1].base.type + (prim->base).count);

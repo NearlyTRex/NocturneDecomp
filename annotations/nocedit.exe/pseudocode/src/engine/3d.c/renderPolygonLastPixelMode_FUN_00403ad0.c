@@ -27,8 +27,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLastPixelMode_FUN_00403ad
     else {
       g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
-    g_RenderStateFlags.dword = RENDER_LASTPIXEL;
-    g_RenderStateFlag2 = PREPROCESS_NONE;
+    g_RenderStateFlags.dword = RENDER_LIGHTING_COLOR;
+    g_VertexPreprocessMode = PREPROCESS_NONE;
     g_CurrentLightingValue =
          engine_light_cpp_calculateLighting_FUN_00505780
                    ((primitive->surface_normal).A,(primitive->surface_normal).B,

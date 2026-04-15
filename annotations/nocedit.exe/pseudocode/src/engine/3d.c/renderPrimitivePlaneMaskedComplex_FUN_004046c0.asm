@@ -20,7 +20,7 @@
 ;   int g_PerspectiveReciprocal
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_calculatePolygonLighting_FUN_00403a00
@@ -83,7 +83,7 @@ section .text
     MOV EDX,0xd9                        ; 00404746
     MOV EBX,0x772a98                    ; 0040474b | g_ProcessedVertexIndices
     XOR ECX,ECX                         ; 00404750
-    MOV [0x02d052a4],EAX                ; 00404752 | g_RenderStateFlag2
+    MOV [0x02d052a4],EAX                ; 00404752 | g_VertexPreprocessMode
     MOV dword ptr [0x02d052a0],EDX      ; 00404757 | g_RenderStateFlags
     MOV EAX,ESI                         ; 0040475d
     MOV EDX,dword ptr [EDI + 0x4]       ; 0040475f

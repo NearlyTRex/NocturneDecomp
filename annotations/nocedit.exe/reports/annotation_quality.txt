@@ -684,13 +684,19 @@ Wrong calling convention - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Unresolved stack params - .keep overrides (14)
+Unresolved stack params - .keep overrides (15)
 --------------------------------------------------------------------------------
 
   CWavInDevice_setMode
     Address: 0x005b0f70  File: sound/sndwav.cpp
     Evidence: in_stack_00000018, in_stack_00000018
     Signature: int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int stereo_flag)
+    Suggested: Signature is missing stack parameters entirely
+
+  nextMixingBuffer
+    Address: 0x005a59c0  File: sound/sndmain.cpp
+    Evidence: in_stack_ffffff94, in_stack_ffffffb0, in_stack_ffffffb0, in_stack_ffffffb0, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94
+    Signature: void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_005a59c0(void)
     Suggested: Signature is missing stack parameters entirely
 
   CVehicle_renderOpaque
@@ -778,17 +784,13 @@ Unresolved stack params - MMX functions (0)
   (none)
 
 --------------------------------------------------------------------------------
-Unresolved stack params - by-value struct passing (1)
+Unresolved stack params - by-value struct passing (0)
 --------------------------------------------------------------------------------
 
-  nextMixingBuffer
-    Address: 0x005a59c0  File: sound/sndmain.cpp
-    Evidence: in_stack_ffffff94, in_stack_ffffffb0, in_stack_ffffffb0, in_stack_ffffffb0, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94
-    Signature: void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_005a59c0(void)
-    Suggested: Signature is missing stack parameters entirely
+  (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (113)
+Undefined types - .keep overrides (114)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -909,6 +911,11 @@ Undefined types - .keep overrides (113)
   CFileManager_rebuildLastPod
     Address: 0x004b5a50  File: engine/fileio.cpp
     Locals:  local_8a8 (undefined4[10]), local_770 (undefined4[10]), local_638 (undefined4[10]), local_500 (undefined4[78]), local_3c8 (undefined4[10]), local_c8 (undefined1), local_c7 (undefined1), local_c6 (undefined1), local_c5 (undefined1)
+    Suggested: Resolve undefined types to concrete types
+
+  pollAndMixSfx
+    Address: 0x005aca90  File: sound/sndmain.cpp
+    Locals:  local_6c (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CDeformableModel_importFacesS3D
@@ -1363,13 +1370,10 @@ Undefined types - MMX functions (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - by-value struct passing (1)
+Undefined types - by-value struct passing (0)
 --------------------------------------------------------------------------------
 
-  pollAndMixSfx
-    Address: 0x005aca90  File: sound/sndmain.cpp
-    Locals:  local_6c (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
+  (none)
 
 ====================================================================================================
 FUNCTION NAME / ADDRESS MISMATCHES (0)

@@ -1,13 +1,13 @@
-// Name: core_dstrender.cpp_blendLightmapToTextureMMX32BitBlendBias_FUN_00492f03
+// Name: core_dstrender.cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00492f03
 // Address: 00492f03
 // MANUAL RECONSTRUCTION
 // Address Range: [[00492f03, 0049333c] [00493340, 0049344f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_blendLightmapToTextureMMX32BitBlendBias_FUN_00492f03(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
+// Signature: void __cdecl core_dstrender_cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00492f03(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 
 #include "nocturne.h"
 
-void __cdecl core_dstrender_cpp_blendLightmapToTextureMMX32BitBlendBias_FUN_00492f03(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
+void __cdecl core_dstrender_cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00492f03(uint *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 {
   ushort solid_ws[4];
   uint solid_raw;

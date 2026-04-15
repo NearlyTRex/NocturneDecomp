@@ -13,7 +13,7 @@
 ;   RenderScanlineFunc* g_ScanlineRenderFunc
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
-;   int g_RenderStateFlag2
+;   int g_VertexPreprocessMode
 ;
 ; Called Functions:
 ;   engine_3d.c_rasterizePolygonHardware_FUN_004d1340
@@ -41,7 +41,7 @@ section .text
         ;   Label: LAB_00405a27
     XOR EDI,EDI                         ; 00405a2c
     MOV EBP,dword ptr [0x00772a6c]      ; 00405a2e | g_BypassClipping
-    MOV dword ptr [0x02d052a4],EDI      ; 00405a34 | g_RenderStateFlag2
+    MOV dword ptr [0x02d052a4],EDI      ; 00405a34 | g_VertexPreprocessMode
     MOV dword ptr [0x02d052a0],ESI      ; 00405a3a | g_RenderStateFlags
     TEST EBP,EBP                        ; 00405a40
     JZ 0x00405a87                       ; 00405a42

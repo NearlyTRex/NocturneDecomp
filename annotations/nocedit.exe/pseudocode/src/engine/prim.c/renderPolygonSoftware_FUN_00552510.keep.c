@@ -88,7 +88,7 @@ void __cdecl engine_prim_c_renderPolygonSoftware_FUN_00552510(SRenderVertex *ver
     return;
   }
   g_RenderedTriangleCount = g_RenderedTriangleCount + 1;
-  switch(g_RenderStateFlag2) {
+  switch(g_VertexPreprocessMode) {
   case 1:
     engine_prim_c_prepareDepthBuffer_FUN_00551fb0(vertices,vertex_count);
     break;

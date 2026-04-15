@@ -18,7 +18,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048ae
   int iVar1;
   
   if (render_flags == -1) {
-    render_flags = RENDER_ENGINE_CORE_PREMIUM;
+    render_flags = 0x2cd;
   }
   if (this_ptr->texture_capture_enabled == 0) {
     if ((this_ptr->plane_culling_enabled == 0) ||
@@ -62,11 +62,11 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048ae
           g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
         }
         g_RenderStateFlags.dword = render_flags;
-        g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;
+        g_VertexPreprocessMode = PREPROCESS_W_DEPTH_REPLACEMENT;
       }
       else {
         g_RenderStateFlags.dword = 0;
-        g_RenderStateFlag2 = PREPROCESS_NONE;
+        g_VertexPreprocessMode = PREPROCESS_NONE;
         g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740

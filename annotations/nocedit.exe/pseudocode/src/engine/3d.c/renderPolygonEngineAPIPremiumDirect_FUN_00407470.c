@@ -43,8 +43,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineAPIPremiumDirect_FU
     else {
       g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
-    g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
-    g_RenderStateFlags.dword = RENDER_ENGINE_PREMIUM_QUALITY;
+    g_VertexPreprocessMode = PREPROCESS_Z_PASS_INVW;
+    g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_FORCE_SOLID_LOOP | RENDER_FOG_COLOR | RENDER_BLEND_READ_DEST | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE | RENDER_ALPHA_FROM_VERTEX);
     if (((g_RenderBufferEnabled == 0) || (0x9c3 < g_RenderBufferCount)) ||
        (4 < (primitive->base).count)) {
       engine_clipper_c_clipAndRasterize_FUN_004371b0((primitive->base).count,(int *)vertex_indices);

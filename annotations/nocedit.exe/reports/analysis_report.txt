@@ -23,8 +23,8 @@ Average complexity score: 59.8
 COMPILATION STATUS
 ----------------------------------------
 Functions compiled: 6454
-Successful: 6452 (100.0%)
-Failed: 2
+Successful: 6454 (100.0%)
+Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
@@ -190,12 +190,12 @@ FUNCTIONS BY SUSPECT TYPE
     004517f0: core_dcamera.cpp_blendCoronaTextureSpan_FUN_004517f0
     004cc230: core_flies.cpp_drawFlyPixel_FUN_004cc230
     005769a0: core_setedit.cpp_loadCameraThumbnail_FUN_005769a0
-    004924a9: core_dstrender.cpp_blendLightmapToTexture64BitOutputBlendBias_FUN_004924a9
-    00493450: core_dstrender.cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450
+    004917bc: core_dstrender.cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_004917bc
     00492e8a: core_dstrender.cpp_alphaBlendPixelsMMX_FUN_00492e8a
-    004926e1: core_dstrender.cpp_blendLightmapToTexture32BitInputOutput_FUN_004926e1
-    00491f90: core_dstrender.cpp_blendSinglePixelLightmapNoRoundingMMX_FUN_00491f90
-    00492bd5: core_dstrender.cpp_blendLightmapToTexture32BitOutputAmbient_FUN_00492bd5
+    00493dc4: core_dstrender.cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4
+    004926e1: core_dstrender.cpp_blendLightmapPerPxU32toU32BB12Px2MMX_FUN_004926e1
+    004923ff: core_dstrender.cpp_spatialFilter9TapMMX_FUN_004923ff
+    00493450: core_dstrender.cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_00493450
     ... and 12 more
 
   warning_inlined_function (258 functions):
@@ -347,11 +347,11 @@ FUNCTIONS BY SUSPECT TYPE
     004517f0: core_dcamera.cpp_blendCoronaTextureSpan_FUN_004517f0
     004cc230: core_flies.cpp_drawFlyPixel_FUN_004cc230
     00529ed0: core_moon.cpp_CMoon_render_FUN_00529ed0
-    004924a9: core_dstrender.cpp_blendLightmapToTexture64BitOutputBlendBias_FUN_004924a9
-    00493450: core_dstrender.cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450
+    004917bc: core_dstrender.cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_004917bc
     00492e8a: core_dstrender.cpp_alphaBlendPixelsMMX_FUN_00492e8a
-    004926e1: core_dstrender.cpp_blendLightmapToTexture32BitInputOutput_FUN_004926e1
-    00491f90: core_dstrender.cpp_blendSinglePixelLightmapNoRoundingMMX_FUN_00491f90
+    00493dc4: core_dstrender.cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4
+    004926e1: core_dstrender.cpp_blendLightmapPerPxU32toU32BB12Px2MMX_FUN_004926e1
+    004906b0: core_dstrender.cpp_saveMMXRegisters_FUN_004906b0
     ... and 24 more
 
   negative_offset (21 functions):
