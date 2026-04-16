@@ -25,9 +25,9 @@
 ;   int g_StartDepthW = 0x0
 ;   int* g_CurrentScreenPtr = 00000000
 ;   int* g_CurrentZBufferPtr = 00000000
-;   int g_DeltaTextureU = 0x0
-;   int g_DeltaTextureV = 0x0
-;   int g_DeltaDepthW = 0x0
+;   int g_HardwareDeltaTextureU = 0x0
+;   int g_HardwareDeltaTextureV = 0x0
+;   int g_HardwareDeltaDepthZ = 0x0
 ;   double g_SelectedClearColor = 0.0
 ;   int g_VertexRedStart = 0x0
 ;   int g_VertexGreenStart = 0x0
@@ -85,7 +85,7 @@ section .text
     IDIV EBX                            ; 005b48a7
     SUB EAX,dword ptr [0x006821e0]      ; 005b48a9 | g_StartTextureU
     IMUL dword ptr [ECX + 0x2d02584]    ; 005b48af | g_ReciprocalLookupTable[1]
-    MOV dword ptr [0x00682610],EDX      ; 005b48b5 | g_DeltaTextureU
+    MOV dword ptr [0x00682610],EDX      ; 005b48b5 | g_HardwareDeltaTextureU
     MOV EAX,dword ptr [ESI + 0x20]      ; 005b48bb
     MOV EBX,dword ptr [ESI + 0x28]      ; 005b48be
     CDQ                                 ; 005b48c1
@@ -101,7 +101,7 @@ section .text
     IDIV EBX                            ; 005b48de
     SUB EAX,dword ptr [0x006821e4]      ; 005b48e0 | g_StartTextureV
     IMUL dword ptr [ECX + 0x2d02584]    ; 005b48e6 | g_ReciprocalLookupTable[1]
-    MOV dword ptr [0x00682614],EDX      ; 005b48ec | g_DeltaTextureV
+    MOV dword ptr [0x00682614],EDX      ; 005b48ec | g_HardwareDeltaTextureV
     JMP 0x005b4928                      ; 005b48f2
         ;   XREF to: 005b4928 (UNCONDITIONAL_JUMP)  ; LAB_005b4928
     MOV EAX,dword ptr [EDI + 0x18]      ; 005b48f4
@@ -110,20 +110,20 @@ section .text
     SUB EAX,EBX                         ; 005b48fa
     IMUL dword ptr [ECX + 0x2d02584]    ; 005b48fc | g_ReciprocalLookupTable[1]
     MOV dword ptr [0x006821e0],EBX      ; 005b4902 | g_StartTextureU
-    MOV dword ptr [0x00682610],EDX      ; 005b4908 | g_DeltaTextureU
+    MOV dword ptr [0x00682610],EDX      ; 005b4908 | g_HardwareDeltaTextureU
     MOV EAX,dword ptr [EDI + 0x20]      ; 005b490e
     MOV EBX,dword ptr [ESI + 0x20]      ; 005b4911
     SUB EAX,EBX                         ; 005b4914
     IMUL dword ptr [ECX + 0x2d02584]    ; 005b4916 | g_ReciprocalLookupTable[1]
     MOV dword ptr [0x006821e4],EBX      ; 005b491c | g_StartTextureV
-    MOV dword ptr [0x00682614],EDX      ; 005b4922 | g_DeltaTextureV
+    MOV dword ptr [0x00682614],EDX      ; 005b4922 | g_HardwareDeltaTextureV
     MOV EAX,dword ptr [EDI + 0x28]      ; 005b4928
         ;   Label: LAB_005b4928
     MOV EBX,dword ptr [ESI + 0x28]      ; 005b492b
     SUB EAX,EBX                         ; 005b492e
     IMUL dword ptr [ECX + 0x2d02584]    ; 005b4930 | g_ReciprocalLookupTable[1]
     MOV dword ptr [0x006821ec],EBX      ; 005b4936 | g_StartDepthW
-    MOV dword ptr [0x00682618],EDX      ; 005b493c | g_DeltaDepthW
+    MOV dword ptr [0x00682618],EDX      ; 005b493c | g_HardwareDeltaDepthZ
     MOV EAX,dword ptr [EDI + 0x30]      ; 005b4942
     MOV EBX,dword ptr [ESI + 0x30]      ; 005b4945
     SUB EAX,EBX                         ; 005b4948
@@ -362,11 +362,11 @@ section .text
     CMP EDI,dword ptr [0x006821a4]      ; 005b4ce7 | g_ScanlinePixelCount
     JNC 0x005b4d1c                      ; 005b4ced
         ;   XREF to: 005b4d1c (CONDITIONAL_JUMP)  ; LAB_005b4d1c
-    ADD ECX,dword ptr [0x00682610]      ; 005b4cef | g_DeltaTextureU
+    ADD ECX,dword ptr [0x00682610]      ; 005b4cef | g_HardwareDeltaTextureU
     PADDW MM5,MM6                       ; 005b4cf5
-    ADD EDX,dword ptr [0x00682614]      ; 005b4cf8 | g_DeltaTextureV
+    ADD EDX,dword ptr [0x00682614]      ; 005b4cf8 | g_HardwareDeltaTextureV
     MOVQ MM0,MM5                        ; 005b4cfe
-    ADD ESI,dword ptr [0x00682618]      ; 005b4d01 | g_DeltaDepthW
+    ADD ESI,dword ptr [0x00682618]      ; 005b4d01 | g_HardwareDeltaDepthZ
     PCMPGTW MM5,qword ptr [0x0068261c]  ; 005b4d07 | g_SelectedClearColor
     ADD EBP,dword ptr [0x006826d8]      ; 005b4d0e | g_VertexAlphaDelta
     PAND MM5,MM0                        ; 005b4d14
@@ -498,11 +498,11 @@ section .text
     CMP EDI,dword ptr [0x006821a4]      ; 005b4ed6 | g_ScanlinePixelCount
     JNC 0x005b4f0b                      ; 005b4edc
         ;   XREF to: 005b4f0b (CONDITIONAL_JUMP)  ; LAB_005b4f0b
-    ADD ECX,dword ptr [0x00682610]      ; 005b4ede | g_DeltaTextureU
+    ADD ECX,dword ptr [0x00682610]      ; 005b4ede | g_HardwareDeltaTextureU
     PADDW MM5,MM6                       ; 005b4ee4
-    ADD EDX,dword ptr [0x00682614]      ; 005b4ee7 | g_DeltaTextureV
+    ADD EDX,dword ptr [0x00682614]      ; 005b4ee7 | g_HardwareDeltaTextureV
     MOVQ MM0,MM5                        ; 005b4eed
-    ADD ESI,dword ptr [0x00682618]      ; 005b4ef0 | g_DeltaDepthW
+    ADD ESI,dword ptr [0x00682618]      ; 005b4ef0 | g_HardwareDeltaDepthZ
     PCMPGTW MM5,qword ptr [0x0068261c]  ; 005b4ef6 | g_SelectedClearColor
     ADD EBP,dword ptr [0x006826d8]      ; 005b4efd | g_VertexAlphaDelta
     PAND MM5,MM0                        ; 005b4f03
@@ -595,11 +595,11 @@ section .text
     CMP EDI,dword ptr [0x006821a4]      ; 005b5046 | g_ScanlinePixelCount
     JNC 0x005b4d1c                      ; 005b504c
         ;   XREF to: 005b4d1c (CONDITIONAL_JUMP)  ; LAB_005b4d1c
-    ADD ECX,dword ptr [0x00682610]      ; 005b5052 | g_DeltaTextureU
+    ADD ECX,dword ptr [0x00682610]      ; 005b5052 | g_HardwareDeltaTextureU
     PADDW MM5,MM6                       ; 005b5058
-    ADD EDX,dword ptr [0x00682614]      ; 005b505b | g_DeltaTextureV
+    ADD EDX,dword ptr [0x00682614]      ; 005b505b | g_HardwareDeltaTextureV
     MOVQ MM0,MM5                        ; 005b5061
-    ADD ESI,dword ptr [0x00682618]      ; 005b5064 | g_DeltaDepthW
+    ADD ESI,dword ptr [0x00682618]      ; 005b5064 | g_HardwareDeltaDepthZ
     PCMPGTW MM5,qword ptr [0x0068261c]  ; 005b506a | g_SelectedClearColor
     ADD EBP,dword ptr [0x006826d8]      ; 005b5071 | g_VertexAlphaDelta
     PAND MM5,MM0                        ; 005b5077
@@ -622,9 +622,9 @@ section .text
     SUB EAX,EBX                         ; 005b50af
     IMUL dword ptr [ECX + 0x2d02584]    ; 005b50b1 | g_ReciprocalLookupTable[1]
     MOV dword ptr [0x006821ec],EBX      ; 005b50b7 | g_StartDepthW
-    MOV dword ptr [0x00682618],EDX      ; 005b50bd | g_DeltaDepthW
+    MOV dword ptr [0x00682618],EDX      ; 005b50bd | g_HardwareDeltaDepthZ
     MOV EAX,[0x006821ec]                ; 005b50c3 | g_StartDepthW
-    MOV EBX,dword ptr [0x00682618]      ; 005b50c8 | g_DeltaDepthW
+    MOV EBX,dword ptr [0x00682618]      ; 005b50c8 | g_HardwareDeltaDepthZ
     MOV ESI,dword ptr [0x0068220c]      ; 005b50ce | g_CurrentZBufferPtr
     MOV ECX,dword ptr [0x006821a4]      ; 005b50d4 | g_ScanlinePixelCount
     MOV dword ptr [ESI],EAX             ; 005b50da

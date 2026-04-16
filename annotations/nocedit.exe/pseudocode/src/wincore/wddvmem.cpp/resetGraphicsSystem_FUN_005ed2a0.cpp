@@ -13,7 +13,7 @@ void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_005ed2a0(void)
   HRESULT HVar2;
   
   g_GraphicsResetFlag = 1;
-  if (g_FullscreenMode != 0) {
+  if (g_ExternalRendererActive != 0) {
     if (g_BitsPerPixel < 0x10) {
       wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(g_WindowWidth,g_WindowHeight,0x10);
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -47,7 +47,7 @@ void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_005ed2a0(void)
                       (g_WindowWidth,g_WindowHeight,g_BitsPerPixel);
     if (iVar1 == 0) {
       g_UseExternalRenderer = iVar1;
-      g_FullscreenMode = iVar1;
+      g_ExternalRendererActive = iVar1;
       if (g_DirectDrawUnknown != (IUnknown *)0x0) {
         (*g_DirectDrawUnknown->vtable->Release)(g_DirectDrawUnknown);
         g_DirectDrawUnknown = (IUnknown *)0x0;

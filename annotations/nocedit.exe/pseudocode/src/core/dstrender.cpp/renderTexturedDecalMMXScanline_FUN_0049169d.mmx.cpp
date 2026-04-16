@@ -33,19 +33,19 @@ __asm {
         sub EAX,EBX
         imul dword ptr [ECX + 0x2d02584]
         mov dword ptr [g_PerspectiveNextU],EBX
-        mov dword ptr [g_DeltaTextureU],EDX
+        mov dword ptr [g_SoftwareDeltaTextureU],EDX
         mov EAX,dword ptr [EDI + 0x20]
         mov EBX,dword ptr [ESI + 0x20]
         sub EAX,EBX
         imul dword ptr [ECX + 0x2d02584]
         mov dword ptr [g_PerspectiveNextV],EBX
-        mov dword ptr [g_DeltaTextureV],EDX
+        mov dword ptr [g_SoftwareDeltaTextureV],EDX
         mov EAX,dword ptr [EDI + 0x28]
         mov EBX,dword ptr [ESI + 0x28]
         sub EAX,EBX
         imul dword ptr [ECX + 0x2d02584]
         mov dword ptr [g_StartDepthZ],EBX
-        mov dword ptr [g_DeltaDepthZ],EDX
+        mov dword ptr [g_SoftwareDeltaDepthZ],EDX
         mov ECX,dword ptr [g_PerspectiveNextU]
         mov EDX,dword ptr [g_PerspectiveNextV]
         mov EDI,0x0
@@ -73,9 +73,9 @@ __asm {
         add EDI,0x4
         cmp EDI,dword ptr [g_PerspectiveScanlinePixelCount]
         ja LAB_004917b6
-        add ECX,dword ptr [g_DeltaTextureU]
-        add EDX,dword ptr [g_DeltaTextureV]
-        add ESI,dword ptr [g_DeltaDepthZ]
+        add ECX,dword ptr [g_SoftwareDeltaTextureU]
+        add EDX,dword ptr [g_SoftwareDeltaTextureV]
+        add ESI,dword ptr [g_SoftwareDeltaDepthZ]
         jmp LAB_0049174a
     LAB_004917b6:
         pop EBP

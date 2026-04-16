@@ -432,7 +432,7 @@ section .text
     MOV EBX,dword ptr [0x006793a8]      ; 005f357d | g_InputKeyMask
     SAR EAX,0x10                        ; 005f3583
     AND EAX,EBX                         ; 005f3586
-    MOV dword ptr [EAX*0x4 + 0x3f9847c],0x1 ; 005f3588 | g_MessageFlags[1]
+    MOV dword ptr [EAX*0x4 + 0x3f9847c],0x1 ; 005f3588 | g_MessageFlags
     JMP 0x005f31d4                      ; 005f3593
         ;   XREF to: 005f31d4 (UNCONDITIONAL_JUMP)  ; LAB_005f31d4
     JBE 0x005f32fb                      ; 005f3598

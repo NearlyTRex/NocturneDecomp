@@ -40,7 +40,7 @@ section .text
     XOR EDX,EDX                         ; 005b5d22
     MOV EBX,dword ptr [0x03f6b97c]      ; 005b5d24 | g_RendererDLLHandle
     MOV dword ptr [0x02d03e94],EDX      ; 005b5d2a | g_UseExternalRenderer
-    MOV dword ptr [0x03f6b978],EDX      ; 005b5d30 | g_ExternalRendererActive
+    MOV dword ptr [0x03f6b978],EDX      ; 005b5d30 | g_LoadedExternalDLLRenderer
     TEST EBX,EBX                        ; 005b5d36
     JNZ 0x005b5e99                      ; 005b5d38
         ;   XREF to: 005b5e99 (CONDITIONAL_JUMP)  ; LAB_005b5e99

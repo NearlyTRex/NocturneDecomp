@@ -173,7 +173,7 @@ section .text
     PUSH 0x1e0                          ; 00507bdc
     XOR EBX,EBX                         ; 00507be1
     PUSH 0x280                          ; 00507be3
-    MOV dword ptr [0x03f6b878],EBX      ; 00507be8 | g_FullscreenMode
+    MOV dword ptr [0x03f6b878],EBX      ; 00507be8 | g_ExternalRendererActive
     CALL wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0 ; 00507bee
         ;   XREF to: 005ecef0 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 00507bf3
@@ -483,7 +483,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 ; 00507e98
         ;   XREF to: 0049e6f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00507e9d
-    CMP dword ptr [0x03f98478],0xc800000 ; 00507ea0 | g_MessageFlags
+    CMP dword ptr [0x03f98478],0xc800000 ; 00507ea0 | g_AvailableSwapSpace
         ;   Label: LAB_00507ea0
     JGE 0x0050802a                      ; 00507eaa
         ;   XREF to: 0050802a (CONDITIONAL_JUMP)  ; LAB_0050802a
@@ -509,7 +509,7 @@ section .text
         ;   XREF to: 00507ec2 (CONDITIONAL_JUMP)  ; LAB_00507ec2
     POP EDI                             ; 00507eda
         ;   Label: LAB_00507eda
-    FILD dword ptr [0x03f98478]         ; 00507edb | g_MessageFlags
+    FILD dword ptr [0x03f98478]         ; 00507edb | g_AvailableSwapSpace
     FMUL float ptr [0x006355ce]         ; 00507ee1 | g_AvailableMemMultiplier
     SUB ESP,0x8                         ; 00507ee7
     FSTP double ptr [ESP]               ; 00507eea
@@ -845,7 +845,7 @@ section .text
     MOV dword ptr [EAX],0x280           ; 0050821b | g_CGameInstance
     MOV dword ptr [0x02db8a64],EDI      ; 00508221 | g_SkipIntroVideo
     MOV dword ptr [EAX + 0x4],0x1e0     ; 00508227 | g_CGameInstance.game_pixy
-    MOV dword ptr [0x03f6b878],EDI      ; 0050822e | g_FullscreenMode
+    MOV dword ptr [0x03f6b878],EDI      ; 0050822e | g_ExternalRendererActive
     MOV dword ptr [EAX + 0x8],0x20      ; 00508234 | g_CGameInstance.game_bpp
     CALL core_menu.cpp_showCalibrationTest_FUN_00510ba0 ; 0050823b
         ;   XREF to: 00510ba0 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_showCalibrationTest_FUN_00510ba0()

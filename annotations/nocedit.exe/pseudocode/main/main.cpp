@@ -17,9 +17,23 @@
 #include "nocturne.h"
 #include "shim_init.h"
 
+// Entries 0..154 are game static initializers (actor registration, vtable
+// setup, etc.). Entries 155..165 are Watcom CRT init handlers that we skip
+// since we link against a modern C/C++ runtime.
+static void runStaticInitializers(void)
+{
+    for (int i = 0; i < 155; i++) {
+        if (g_InitHandlers[i].func != (RUNTIME_HANDLER_FUNC *)0) {
+            g_InitHandlers[i].func();
+            g_InitHandlers[i].status = 0x02;
+        }
+    }
+}
+
 int main(int argc, char** argv)
 {
     shims_init_all();
+    runStaticInitializers();
 
     HINSTANCE hInstance     = (*g_GetModuleHandleAFunc)((LPCSTR)0);
     HINSTANCE hPrevInstance = (HINSTANCE)0;

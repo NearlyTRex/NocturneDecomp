@@ -11,9 +11,9 @@
 ;   uint g_PerspectiveNextU = 0x0
 ;   uint g_PerspectiveNextV = 0x0
 ;   uint g_StartDepthZ = 0x0
-;   int g_DeltaTextureU = 0x0
-;   int g_DeltaTextureV = 0x0
-;   int g_DeltaDepthZ = 0x0
+;   int g_SoftwareDeltaTextureU = 0x0
+;   int g_SoftwareDeltaTextureV = 0x0
+;   int g_SoftwareDeltaDepthZ = 0x0
 ;   void* g_PerspectiveScanlineColorPtr = 00000000
 ;   int g_PerspectiveScanlinePixelCount = 0x0
 ;   uint* g_PerspectiveScanlineZPtr = 00000000
@@ -59,19 +59,19 @@ section .text
     SUB EAX,EBX                         ; 004916eb
     IMUL dword ptr [ECX + 0x2d02584]    ; 004916ed | g_ReciprocalLookupTable[1]
     MOV dword ptr [0x006723a8],EBX      ; 004916f3 | g_PerspectiveNextU
-    MOV dword ptr [0x006723c4],EDX      ; 004916f9 | g_DeltaTextureU
+    MOV dword ptr [0x006723c4],EDX      ; 004916f9 | g_SoftwareDeltaTextureU
     MOV EAX,dword ptr [EDI + 0x20]      ; 004916ff
     MOV EBX,dword ptr [ESI + 0x20]      ; 00491702
     SUB EAX,EBX                         ; 00491705
     IMUL dword ptr [ECX + 0x2d02584]    ; 00491707 | g_ReciprocalLookupTable[1]
     MOV dword ptr [0x006723ac],EBX      ; 0049170d | g_PerspectiveNextV
-    MOV dword ptr [0x006723c8],EDX      ; 00491713 | g_DeltaTextureV
+    MOV dword ptr [0x006723c8],EDX      ; 00491713 | g_SoftwareDeltaTextureV
     MOV EAX,dword ptr [EDI + 0x28]      ; 00491719
     MOV EBX,dword ptr [ESI + 0x28]      ; 0049171c
     SUB EAX,EBX                         ; 0049171f
     IMUL dword ptr [ECX + 0x2d02584]    ; 00491721 | g_ReciprocalLookupTable[1]
     MOV dword ptr [0x006723b4],EBX      ; 00491727 | g_StartDepthZ
-    MOV dword ptr [0x006723cc],EDX      ; 0049172d | g_DeltaDepthZ
+    MOV dword ptr [0x006723cc],EDX      ; 0049172d | g_SoftwareDeltaDepthZ
     MOV ECX,dword ptr [0x006723a8]      ; 00491733 | g_PerspectiveNextU
     MOV EDX,dword ptr [0x006723ac]      ; 00491739 | g_PerspectiveNextV
     MOV EDI,0x0                         ; 0049173f
@@ -101,9 +101,9 @@ section .text
     CMP EDI,dword ptr [0x006723d4]      ; 0049179a | g_PerspectiveScanlinePixelCount
     JA 0x004917b6                       ; 004917a0
         ;   XREF to: 004917b6 (CONDITIONAL_JUMP)  ; LAB_004917b6
-    ADD ECX,dword ptr [0x006723c4]      ; 004917a2 | g_DeltaTextureU
-    ADD EDX,dword ptr [0x006723c8]      ; 004917a8 | g_DeltaTextureV
-    ADD ESI,dword ptr [0x006723cc]      ; 004917ae | g_DeltaDepthZ
+    ADD ECX,dword ptr [0x006723c4]      ; 004917a2 | g_SoftwareDeltaTextureU
+    ADD EDX,dword ptr [0x006723c8]      ; 004917a8 | g_SoftwareDeltaTextureV
+    ADD ESI,dword ptr [0x006723cc]      ; 004917ae | g_SoftwareDeltaDepthZ
     JMP 0x0049174a                      ; 004917b4
         ;   XREF to: 0049174a (UNCONDITIONAL_JUMP)  ; LAB_0049174a
     POP EBP                             ; 004917b6

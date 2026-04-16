@@ -15,7 +15,7 @@
 ;   int g_WindowHeight = 0xc8
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   int g_FullscreenMode
+;   int g_ExternalRendererActive
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270
@@ -50,7 +50,7 @@ section .text
         ;   XREF to: 00451231 (CONDITIONAL_JUMP)  ; LAB_00451231
     CALL wincore_windll.cpp_unlockHoldBuffer_FUN_005b7e10 ; 004511ee
         ;   XREF to: 005b7e10 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_unlockHoldBuffer_FUN_005b7e10()
-    CMP dword ptr [0x03f6b878],0x0      ; 004511f3 | g_FullscreenMode
+    CMP dword ptr [0x03f6b878],0x0      ; 004511f3 | g_ExternalRendererActive
     JNZ 0x00451247                      ; 004511fa
         ;   XREF to: 00451247 (CONDITIONAL_JUMP)  ; LAB_00451247
     POP EDI                             ; 004511fc
@@ -80,7 +80,7 @@ section .text
     CALL wincore_windll.cpp_unlockFrame_FUN_005b7250 ; 00451233
         ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
     ADD ESP,0x4                         ; 00451238
-    CMP dword ptr [0x03f6b878],0x0      ; 0045123b | g_FullscreenMode
+    CMP dword ptr [0x03f6b878],0x0      ; 0045123b | g_ExternalRendererActive
     JNZ 0x00451247                      ; 00451242
         ;   XREF to: 00451247 (CONDITIONAL_JUMP)  ; LAB_00451247
     POP EDI                             ; 00451244

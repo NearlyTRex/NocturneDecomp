@@ -1,7 +1,20 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 3,
+        "line": 70,
+        "message": "use of undeclared identifier 'g_FullscreenMode'; did you mean 'g_FullscreenMovie'?"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 5,
+        "line": 125,
+        "message": "use of undeclared identifier 'g_FullscreenMode'; did you mean 'g_FullscreenMovie'?"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
@@ -792,7 +805,7 @@
     },
     {
       "addr": "03f6b878",
-      "name": "g_FullscreenMode",
+      "name": "g_ExternalRendererActive",
       "type": "int",
       "value": null
     },
@@ -810,8 +823,8 @@
     },
     {
       "addr": "03f98478",
-      "name": "g_MessageFlags",
-      "type": "int[513]",
+      "name": "g_AvailableSwapSpace",
+      "type": "int",
       "value": null
     }
   ],

@@ -97,7 +97,7 @@ section .text
         ;   XREF to: 00441890 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_00441890(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 004daff1
     MOV dword ptr [EBP + -0x8],EBX      ; 004daff4
-    MOV EBX,dword ptr [0x03f98478]      ; 004daff7 | g_MessageFlags
+    MOV EBX,dword ptr [0x03f98478]      ; 004daff7 | g_AvailableSwapSpace
     PUSH EBX                            ; 004daffd
     PUSH 0x62b69f                       ; 004daffe | = "Swap file: %d\n"
     MOV ESI,dword ptr [0x0066e8e0]      ; 004db003 | g_CConsolePtr

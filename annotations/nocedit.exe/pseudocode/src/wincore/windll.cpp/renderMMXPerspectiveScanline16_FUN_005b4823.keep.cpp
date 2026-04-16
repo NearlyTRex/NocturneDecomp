@@ -62,7 +62,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
     delta_w = (int)(((longlong)((hi->base).w_current - start_w)
                      * (longlong)(int)g_ReciprocalLookupTable[pixel_count + 1]) >> 32);
     g_StartDepthW = start_w;
-    g_DeltaDepthW = delta_w;
+    g_HardwareDeltaDepthZ = delta_w;
     for (i = 0; i < pixel_count; i++) {
       zbuf_ptr[i] = start_w;
       start_w += delta_w;
@@ -94,15 +94,15 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
     delta_v = (int)(((longlong)((hi->base).v_current - start_v) * (longlong)recip) >> 32);
   }
   g_StartTextureU = start_u;
-  g_DeltaTextureU = delta_u;
+  g_HardwareDeltaTextureU = delta_u;
   g_StartTextureV = start_v;
-  g_DeltaTextureV = delta_v;
+  g_HardwareDeltaTextureV = delta_v;
 
   // Depth (W).
   start_w = (lo->base).w_current;
   delta_w = (int)(((longlong)((hi->base).w_current - start_w) * (longlong)recip) >> 32);
   g_StartDepthW = start_w;
-  g_DeltaDepthW = delta_w;
+  g_HardwareDeltaDepthZ = delta_w;
 
   // Vertex alpha tracks fog_current.
   start_alpha = (lo->base).fog_current;
@@ -243,9 +243,9 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
       // Advance (LAB_005b5043 → LAB_005b4f36 test Z again)
       edi += 4;
       if ((uint)edi >= (uint)g_ScanlinePixelCount) break;
-      cur_u     += g_DeltaTextureU;
-      cur_v     += g_DeltaTextureV;
-      cur_w     += g_DeltaDepthW;
+      cur_u     += g_HardwareDeltaTextureU;
+      cur_v     += g_HardwareDeltaTextureV;
+      cur_w     += g_HardwareDeltaDepthZ;
       cur_alpha += g_VertexAlphaDelta;
       // color_current += color_delta with per-channel wrap-around protection
       {
@@ -359,9 +359,9 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
       // Advance (LAB_005b4ed3)
       edi += 4;
       if ((uint)edi >= (uint)g_ScanlinePixelCount) break;
-      cur_u     += g_DeltaTextureU;
-      cur_v     += g_DeltaTextureV;
-      cur_w     += g_DeltaDepthW;
+      cur_u     += g_HardwareDeltaTextureU;
+      cur_v     += g_HardwareDeltaTextureV;
+      cur_w     += g_HardwareDeltaDepthZ;
       cur_alpha += g_VertexAlphaDelta;
       {
         ulonglong stepped = 0;
@@ -453,9 +453,9 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
     // Advance
     edi += 4;
     if ((uint)edi >= (uint)g_ScanlinePixelCount) break;
-    cur_u     += g_DeltaTextureU;
-    cur_v     += g_DeltaTextureV;
-    cur_w     += g_DeltaDepthW;
+    cur_u     += g_HardwareDeltaTextureU;
+    cur_v     += g_HardwareDeltaTextureV;
+    cur_w     += g_HardwareDeltaDepthZ;
     cur_alpha += g_VertexAlphaDelta;
     {
       ulonglong stepped = 0;

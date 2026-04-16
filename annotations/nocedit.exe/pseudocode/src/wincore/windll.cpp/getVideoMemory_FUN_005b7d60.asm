@@ -13,13 +13,13 @@
 ;
 ; Referenced Globals:
 ;   APIDLL_getVideoMemory* g_APIDLL_getVideoMemory
-;   int g_ExternalRendererActive
+;   int g_LoadedExternalDLLRenderer
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x03f6b978],0x0      ; 005b7d60 | g_ExternalRendererActive
+    CMP dword ptr [0x03f6b978],0x0      ; 005b7d60 | g_LoadedExternalDLLRenderer
         ;   Label: wincore_windll.cpp_getVideoMemory_FUN_005b7d60
     JNZ 0x005b7d6c                      ; 005b7d67
         ;   XREF to: 005b7d6c (CONDITIONAL_JUMP)  ; LAB_005b7d6c

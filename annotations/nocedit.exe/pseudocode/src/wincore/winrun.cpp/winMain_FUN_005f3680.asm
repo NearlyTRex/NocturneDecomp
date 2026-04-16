@@ -287,7 +287,7 @@ section .text
     MOV [0x03f98474],EAX                ; 005f38e9 | g_TotalPhysicalMemory
     MOV EAX,dword ptr [ESP + 0x40]      ; 005f38ee
     PUSH EBP                            ; 005f38f2
-    MOV [0x03f98478],EAX                ; 005f38f3 | g_MessageFlags
+    MOV [0x03f98478],EAX                ; 005f38f3 | g_AvailableSwapSpace
     CALL core_main.c_initializeGameSystems_FUN_00507a60 ; 005f38f8
         ;   XREF to: 00507a60 (UNCONDITIONAL_CALL)  ; void core_main.c_initializeGameSystems_FUN_00507a60()
     ADD ESP,0x8                         ; 005f38fd

@@ -10,8 +10,8 @@
 ; Referenced Globals:
 ;   uint g_PerspectiveNextU = 0x0
 ;   uint g_PerspectiveNextV = 0x0
-;   int g_DeltaTextureU = 0x0
-;   int g_DeltaTextureV = 0x0
+;   int g_SoftwareDeltaTextureU = 0x0
+;   int g_SoftwareDeltaTextureV = 0x0
 ;   void* g_PerspectiveScanlineColorPtr = 00000000
 ;   int g_PerspectiveScanlinePixelCount = 0x0
 ;   _MMX_INTEGER g_TextureShift1
@@ -53,13 +53,13 @@ section .text
     SUB EAX,EBX                         ; 00494126
     IMUL dword ptr [ECX + 0x2d02584]    ; 00494128 | g_ReciprocalLookupTable[1]
     MOV dword ptr [0x006723a8],EBX      ; 0049412e | g_PerspectiveNextU
-    MOV dword ptr [0x006723c4],EDX      ; 00494134 | g_DeltaTextureU
+    MOV dword ptr [0x006723c4],EDX      ; 00494134 | g_SoftwareDeltaTextureU
     MOV EAX,dword ptr [EDI + 0x20]      ; 0049413a
     MOV EBX,dword ptr [ESI + 0x20]      ; 0049413d
     SUB EAX,EBX                         ; 00494140
     IMUL dword ptr [ECX + 0x2d02584]    ; 00494142 | g_ReciprocalLookupTable[1]
     MOV dword ptr [0x006723ac],EBX      ; 00494148 | g_PerspectiveNextV
-    MOV dword ptr [0x006723c8],EDX      ; 0049414e | g_DeltaTextureV
+    MOV dword ptr [0x006723c8],EDX      ; 0049414e | g_SoftwareDeltaTextureV
     MOV ECX,dword ptr [0x006723a8]      ; 00494154 | g_PerspectiveNextU
     MOV EDX,dword ptr [0x006723ac]      ; 0049415a | g_PerspectiveNextV
     MOV EDI,0x0                         ; 00494160
@@ -82,9 +82,9 @@ section .text
     CMP EDI,dword ptr [0x006723d4]      ; 004941a7 | g_PerspectiveScanlinePixelCount
     JNC 0x004941d0                      ; 004941ad
         ;   XREF to: 004941d0 (CONDITIONAL_JUMP)  ; LAB_004941d0
-    ADD ECX,dword ptr [0x006723c4]      ; 004941af | g_DeltaTextureU
+    ADD ECX,dword ptr [0x006723c4]      ; 004941af | g_SoftwareDeltaTextureU
     PADDW MM5,MM6                       ; 004941b5
-    ADD EDX,dword ptr [0x006723c8]      ; 004941b8 | g_DeltaTextureV
+    ADD EDX,dword ptr [0x006723c8]      ; 004941b8 | g_SoftwareDeltaTextureV
     MOVQ MM0,MM5                        ; 004941be
     JMP 0x00494165                      ; 004941c1
         ;   XREF to: 00494165 (UNCONDITIONAL_JUMP)  ; LAB_00494165

@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   APIDLL_buildCardList* g_APIDLL_buildCardList
-;   int g_ExternalRendererActive
+;   int g_LoadedExternalDLLRenderer
 ;
 ; *****************************************************************************
 
@@ -23,7 +23,7 @@ section .text
 
     PUSH EBP                            ; 005b7db0
         ;   Label: wincore_windll.cpp_buildCardList_FUN_005b7db0
-    CMP dword ptr [0x03f6b978],0x0      ; 005b7db1 | g_ExternalRendererActive
+    CMP dword ptr [0x03f6b978],0x0      ; 005b7db1 | g_LoadedExternalDLLRenderer
     JNZ 0x005b7dbe                      ; 005b7db8
         ;   XREF to: 005b7dbe (CONDITIONAL_JUMP)  ; LAB_005b7dbe
     XOR EAX,EAX                         ; 005b7dba

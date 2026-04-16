@@ -10,7 +10,7 @@
 // =============================================================================
 
 // CMP3Decoder
-extern CMP3Decoder g_CMP3DecoderInstance;
+extern CMP3Decoder g_CMP3DecoderInstanceOther;
 
 // CSfxSlot[64]
 extern CSfxSlot g_SfxSlots[64];

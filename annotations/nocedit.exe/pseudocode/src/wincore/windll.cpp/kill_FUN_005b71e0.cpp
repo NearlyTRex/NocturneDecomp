@@ -9,7 +9,7 @@
 int __cdecl wincore_windll_cpp_kill_FUN_005b71e0(void)
 
 {
-  if (g_ExternalRendererActive == 0) {
+  if (g_LoadedExternalDLLRenderer == 0) {
     return 1;
   }
   (*g_APIDLL_kill)();

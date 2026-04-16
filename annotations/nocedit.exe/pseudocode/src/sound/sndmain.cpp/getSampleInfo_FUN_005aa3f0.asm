@@ -29,7 +29,7 @@
 ;   WatcomStaticDestructorNode g_CMP3DecoderDestructorNode2
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   CMP3Decoder g_CMP3DecoderInstance
+;   CMP3Decoder g_CMP3DecoderInstanceOther
 ;   ... and 8 more
 ;
 ; Called Functions:
@@ -232,7 +232,7 @@ section .text
         ;   XREF to: 005aa5ad (CONDITIONAL_JUMP)  ; LAB_005aa5ad
     MOV DH,DL                           ; 005aa588
     OR DH,0x1                           ; 005aa58a
-    PUSH 0x3f55248                      ; 005aa58d | g_CMP3DecoderInstance
+    PUSH 0x3f55248                      ; 005aa58d | g_CMP3DecoderInstanceOther
     MOV byte ptr [0x03f5d878],DH        ; 005aa592 | g_GlobalMP3DecoderInitializedOther
     CALL sound_mp3.cpp_CMP3Decoder_ctor_FUN_005344f0 ; 005aa598
         ;   XREF to: 005344f0 (UNCONDITIONAL_CALL)  ; CMP3Decoder * sound_mp3.cpp_CMP3Decoder_ctor_FUN_005344f0(CMP3Decoder * this_ptr)
@@ -243,16 +243,16 @@ section .text
     ADD ESP,0x4                         ; 005aa5aa
     PUSH EBP                            ; 005aa5ad
         ;   Label: LAB_005aa5ad
-    PUSH 0x3f55248                      ; 005aa5ae | g_CMP3DecoderInstance
+    PUSH 0x3f55248                      ; 005aa5ae | g_CMP3DecoderInstanceOther
     CALL sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550 ; 005aa5b3
         ;   XREF to: 00534550 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550(CMP3Decoder * this_ptr, char * filename)
     MOV dword ptr [EBP + 0x104],0x10    ; 005aa5b8
-    MOV EAX,[0x03f5534c]                ; 005aa5c2 | g_CMP3DecoderInstance.num_channels
+    MOV EAX,[0x03f5534c]                ; 005aa5c2 | g_CMP3DecoderInstanceOther.num_channels
     MOV dword ptr [EBP + 0x108],EAX     ; 005aa5c7
     ADD ESP,0x8                         ; 005aa5cd
-    MOV EAX,[0x03f55348]                ; 005aa5d0 | g_CMP3DecoderInstance.sample_rate
+    MOV EAX,[0x03f55348]                ; 005aa5d0 | g_CMP3DecoderInstanceOther.sample_rate
     MOV dword ptr [EBP + 0x110],0xffffffff ; 005aa5d5
-    PUSH 0x3f55248                      ; 005aa5df | g_CMP3DecoderInstance
+    PUSH 0x3f55248                      ; 005aa5df | g_CMP3DecoderInstanceOther
     MOV dword ptr [EBP + 0x10c],EAX     ; 005aa5e4
     CALL sound_mp3.cpp_CMP3Decoder_free_FUN_005349e0 ; 005aa5ea
         ;   XREF to: 005349e0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CMP3Decoder_free_FUN_005349e0(CMP3Decoder * this_ptr)

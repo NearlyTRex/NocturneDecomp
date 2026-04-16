@@ -13,13 +13,13 @@
 ;
 ; Referenced Globals:
 ;   APIDLL_selectCard* g_APIDLL_selectCard
-;   int g_ExternalRendererActive
+;   int g_LoadedExternalDLLRenderer
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x03f6b978],0x0      ; 005b7d90 | g_ExternalRendererActive
+    CMP dword ptr [0x03f6b978],0x0      ; 005b7d90 | g_LoadedExternalDLLRenderer
         ;   Label: wincore_windll.cpp_selectCard_FUN_005b7d90
     JNZ 0x005b7d9c                      ; 005b7d97
         ;   XREF to: 005b7d9c (CONDITIONAL_JUMP)  ; LAB_005b7d9c

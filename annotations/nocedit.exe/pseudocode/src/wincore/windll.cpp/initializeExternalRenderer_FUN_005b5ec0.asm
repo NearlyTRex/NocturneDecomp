@@ -47,7 +47,7 @@ section .text
     TEST EAX,EAX                        ; 005b5edc
     JNZ 0x005b5ef0                      ; 005b5ede
         ;   XREF to: 005b5ef0 (CONDITIONAL_JUMP)  ; LAB_005b5ef0
-    MOV [0x03f6b878],EAX                ; 005b5ee0 | g_FullscreenMode
+    MOV [0x03f6b878],EAX                ; 005b5ee0 | g_ExternalRendererActive
     ADD ESP,0x3b90                      ; 005b5ee5
     POP EBP                             ; 005b5eeb
     POP EDI                             ; 005b5eec
@@ -670,7 +670,7 @@ section .text
     JNZ 0x005b6727                      ; 005b66dc
         ;   XREF to: 005b6727 (CONDITIONAL_JUMP)  ; LAB_005b6727
     MOV EAX,0x1                         ; 005b66de
-    MOV [0x03f6b978],EAX                ; 005b66e3 | g_ExternalRendererActive
+    MOV [0x03f6b978],EAX                ; 005b66e3 | g_LoadedExternalDLLRenderer
     ADD ESP,0x3b90                      ; 005b66e8
     POP EBP                             ; 005b66ee
     POP EDI                             ; 005b66ef
@@ -682,7 +682,7 @@ section .text
         ;   Label: LAB_005b66f3
     XOR ECX,ECX                         ; 005b66f8
     XOR EAX,EAX                         ; 005b66fa
-    MOV dword ptr [0x03f6b878],ECX      ; 005b66fc | g_FullscreenMode
+    MOV dword ptr [0x03f6b878],ECX      ; 005b66fc | g_ExternalRendererActive
     ADD ESP,0x3b90                      ; 005b6702
     POP EBP                             ; 005b6708
     POP EDI                             ; 005b6709
@@ -694,7 +694,7 @@ section .text
         ;   Label: LAB_005b670d
     XOR EBX,EBX                         ; 005b6712
     XOR EAX,EAX                         ; 005b6714
-    MOV dword ptr [0x03f6b878],EBX      ; 005b6716 | g_FullscreenMode
+    MOV dword ptr [0x03f6b878],EBX      ; 005b6716 | g_ExternalRendererActive
     ADD ESP,0x3b90                      ; 005b671c
     POP EBP                             ; 005b6722
     POP EDI                             ; 005b6723
@@ -706,7 +706,7 @@ section .text
         ;   Label: LAB_005b6727
     XOR EDX,EDX                         ; 005b672c
     XOR EAX,EAX                         ; 005b672e
-    MOV dword ptr [0x03f6b878],EDX      ; 005b6730 | g_FullscreenMode
+    MOV dword ptr [0x03f6b878],EDX      ; 005b6730 | g_ExternalRendererActive
     ADD ESP,0x3b90                      ; 005b6736
     POP EBP                             ; 005b673c
     POP EDI                             ; 005b673d

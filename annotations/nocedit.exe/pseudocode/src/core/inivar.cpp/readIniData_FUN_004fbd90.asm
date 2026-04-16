@@ -99,7 +99,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30 ; 004fbe21
         ;   XREF to: 004fbc30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004fbe26
-    PUSH 0x3f6b878                      ; 004fbe29 | g_FullscreenMode
+    PUSH 0x3f6b878                      ; 004fbe29 | g_ExternalRendererActive
     PUSH 0x62fde6                       ; 004fbe2e | = "useDirect3D"
     LEA EAX,[ESP + 0x14]                ; 004fbe33
     PUSH EAX                            ; 004fbe37

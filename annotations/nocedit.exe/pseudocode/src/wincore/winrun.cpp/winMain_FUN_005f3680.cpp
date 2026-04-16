@@ -127,7 +127,7 @@ LAB_005f37d1:
   memStatus.dwLength = 0x20;
   (*g_GlobalMemoryStatusFunc)(&memStatus);
   g_TotalPhysicalMemory = memStatus.dwTotalPhys;
-  g_MessageFlags[0] = memStatus.dwAvailPageFile;
+  g_AvailableSwapSpace = memStatus.dwAvailPageFile;
   core_main_c_initializeGameSystems_FUN_00507a60();
   core_main_c_enterMainGameMenu_FUN_00507a50();
   core_main_c_finalizeGameSystems_FUN_00508570();

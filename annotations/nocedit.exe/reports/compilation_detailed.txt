@@ -5,5 +5,22 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6454
-Successful: 6454 (100.0%)
-Failed: 0
+Successful: 6450 (99.9%)
+Failed: 4
+
+ERROR CATEGORIES
+--------------------------------------------------
+  undeclared_identifier             12
+
+====================================================================================================
+CATEGORY: undeclared_identifier (12 errors)
+====================================================================================================
+
+  core_game.cpp_CGame_processFrame_FUN_004da100
+    Line 304: use of undeclared identifier 'g_FullscreenMode'; did you mean 'g_FullscreenMovie'?
+  core_main.c_initializeGameSystems_FUN_00507a60
+    Line 70: use of undeclared identifier 'g_FullscreenMode'; did you mean 'g_FullscreenMovie'?
+  wincore_windll.cpp_initializeExternalRenderer_FUN_005b5ec0
+    Line 19: use of undeclared identifier 'g_FullscreenMode'; did you mean 'g_FullscreenMovie'?
+  wincore_windll.cpp_loadExternalRenderer_FUN_005b6750
+    Line 26: use of undeclared identifier 'g_FullscreenMode'; did you mean 'g_FullscreenMovie'?

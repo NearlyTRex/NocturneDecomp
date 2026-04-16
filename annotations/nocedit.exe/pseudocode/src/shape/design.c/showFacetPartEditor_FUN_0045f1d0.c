@@ -135,7 +135,7 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
       local_68.z = 0.0;
       engine_3d_c_processCameraRelativePoint_FUN_004037e0(&local_68);
       engine_matrix_c_matrixPushAndTransform_FUN_0050cee0(local_58,local_3c,local_38,0,0,0);
-      if (g_WireframeMode != 0) {
+      if (g_FacetWireframeMode != 0) {
         iVar12 = (int)ROUND(ROUND(((float)((fVar16 * fVar2) / fVar8) / (fVar6 * fVar5)) * fVar4));
         iVar1 = (int)ROUND(ROUND(((float)((fVar18 * fVar3) / fVar17) / (fVar10 * fVar9)) * fVar7));
         g_TransformMatrix.m[0].x =
@@ -364,7 +364,7 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
       }
       if ((g_KeyboardState[0x21] != '\0') && (g_KeyboardState[0x2a] != '\0')) {
         g_KeyboardState[0x21] = '\0';
-        g_WireframeMode = 1 - g_WireframeMode;
+        g_FacetWireframeMode = 1 - g_FacetWireframeMode;
       }
       if (g_KeyboardState[0x34] != '\0') {
         g_KeyboardState[0x34] = '\0';

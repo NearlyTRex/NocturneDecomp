@@ -12,7 +12,7 @@ void __cdecl wincore_wddvmem_cpp_reinitializeGraphicsSystem_FUN_005ed4b0(void)
   HRESULT HVar1;
   
   g_GraphicsResetFlag = 0;
-  if (g_FullscreenMode == 0) {
+  if (g_ExternalRendererActive == 0) {
     return;
   }
   wincore_windll_cpp_restoreVideoMode_FUN_005b75b0();

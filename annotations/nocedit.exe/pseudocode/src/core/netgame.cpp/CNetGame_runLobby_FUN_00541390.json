@@ -743,40 +743,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CNetGame_runLobby_FUN_00541390.keep.cpp",
-    "clang_tidy_quick": {
-      "diagnostic_count": 4,
-      "diagnostics": [
-        {
-          "check_name": "cert-msc30-c",
-          "column": 15,
-          "line": 50,
-          "message": "rand() has limited randomness; use C++11 random library instead"
-        },
-        {
-          "check_name": "bugprone-incorrect-roundings",
-          "column": 27,
-          "line": 116,
-          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
-        },
-        {
-          "check_name": "bugprone-incorrect-roundings",
-          "column": 33,
-          "line": 116,
-          "message": "casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead"
-        },
-        {
-          "check_name": "bugprone-assignment-in-if-condition",
-          "column": 17,
-          "line": 282,
-          "message": "an assignment within an 'if' condition is bug-prone"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
   "suspects": [
     {
       "description": "Decompiler inlined a function call",

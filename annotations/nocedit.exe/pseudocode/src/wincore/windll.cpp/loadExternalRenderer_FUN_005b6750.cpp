@@ -22,19 +22,19 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
   }
   g_StoredWindowHandle = HVar1;
   HVar1 = g_StoredWindowHandle;
-  if (g_FullscreenMode == 0) {
+  if (g_ExternalRendererActive == 0) {
     return 0;
   }
   g_RendererDLLHandle = wincore_wddvmem_cpp_loadLibrary_FUN_005ede10(g_RendererDllName);
   if (g_RendererDLLHandle == (HMODULE)0x0) {
-    g_FullscreenMode = (int)g_RendererDLLHandle;
+    g_ExternalRendererActive = (int)g_RendererDLLHandle;
     return 0;
   }
   pFVar2 = wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                      (g_RendererDLLHandle,"APIDLLInformation");
   if (pFVar2 == (FARPROC)0x0) {
     wincore_windll_cpp_shutdownExternalRenderer_FUN_005b5d20();
-    g_FullscreenMode = 0;
+    g_ExternalRendererActive = 0;
     return 0;
   }
   (*pFVar2)(g_RendererDLLHandle,&pvStack_3c2c);
@@ -376,7 +376,7 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
          wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                    (g_RendererDLLHandle,"APIDLLsetFog");
     if (g_DLLFunctionsMissing == 0) {
-      g_ExternalRendererActive = 1;
+      g_LoadedExternalDLLRenderer = 1;
       memset(&CStack_9c,0,0x8c);
       CStack_9c.red_bit_position = (int *)&g_RedBitPosition;
       CStack_9c.red_scale_factor = &g_RedScaleFactor;
@@ -419,11 +419,11 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
         wincore_windll_cpp_selectCard_FUN_005b7d90(g_RendererHandle);
         return 1;
       }
-      g_FullscreenMode = iVar3;
+      g_ExternalRendererActive = iVar3;
       return 0;
     }
   }
   wincore_windll_cpp_shutdownExternalRenderer_FUN_005b5d20();
-  g_FullscreenMode = 0;
+  g_ExternalRendererActive = 0;
   return 0;
 }

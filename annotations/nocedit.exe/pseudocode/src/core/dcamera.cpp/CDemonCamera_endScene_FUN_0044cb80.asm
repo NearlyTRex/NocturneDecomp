@@ -30,7 +30,7 @@
 ;   int g_UseExternalRenderer
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   int g_FullscreenMode
+;   int g_ExternalRendererActive
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_0044c410
@@ -53,7 +53,7 @@ section .text
     JZ 0x0044cc2c                       ; 0044cb8e
         ;   XREF to: 0044cc2c (CONDITIONAL_JUMP)  ; LAB_0044cc2c
     MOV dword ptr [EBX + 0x11e4],0x0    ; 0044cb94
-    CMP dword ptr [0x03f6b878],0x0      ; 0044cb9e | g_FullscreenMode
+    CMP dword ptr [0x03f6b878],0x0      ; 0044cb9e | g_ExternalRendererActive
         ;   Label: LAB_0044cb9e
     JZ 0x0044cbac                       ; 0044cba5
         ;   XREF to: 0044cbac (CONDITIONAL_JUMP)  ; LAB_0044cbac

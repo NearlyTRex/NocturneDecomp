@@ -10,7 +10,7 @@ void __cdecl wincore_windll_cpp_shutdownExternalRenderer_FUN_005b5d20(void)
 
 {
   g_UseExternalRenderer = 0;
-  g_ExternalRendererActive = 0;
+  g_LoadedExternalDLLRenderer = 0;
   if (g_RendererDLLHandle != (HMODULE)0x0) {
     wincore_wddvmem_cpp_freeLibrary_FUN_005ede00(g_RendererDLLHandle);
     g_RendererDLLHandle = (HMODULE)0x0;

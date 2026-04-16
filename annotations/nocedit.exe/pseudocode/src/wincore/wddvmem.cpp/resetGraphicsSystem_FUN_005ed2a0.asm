@@ -17,7 +17,7 @@
 ;   int g_WindowHeight = 0xc8
 ;   int g_BitsPerPixel = 0x8
 ;   int g_UseExternalRenderer
-;   int g_FullscreenMode
+;   int g_ExternalRendererActive
 ;   IDirectDraw* g_DirectDrawObject
 ;   IDirectDrawSurface* g_DirectDrawSurface
 ;   IDirectDrawSurface* g_SoftwareRenderSurface
@@ -44,7 +44,7 @@ section .text
     PUSH EDI                            ; 005ed2a2
     PUSH EBP                            ; 005ed2a3
     MOV EDX,0x1                         ; 005ed2a4
-    MOV ECX,dword ptr [0x03f6b878]      ; 005ed2a9 | g_FullscreenMode
+    MOV ECX,dword ptr [0x03f6b878]      ; 005ed2a9 | g_ExternalRendererActive
     MOV dword ptr [0x03f95938],EDX      ; 005ed2af | g_GraphicsResetFlag
     TEST ECX,ECX                        ; 005ed2b5
     JZ 0x005ed40c                       ; 005ed2b7
@@ -113,7 +113,7 @@ section .text
     JNZ 0x005ed40c                      ; 005ed35a
         ;   XREF to: 005ed40c (CONDITIONAL_JUMP)  ; LAB_005ed40c
     MOV EDI,dword ptr [0x03f9592c]      ; 005ed360 | g_DirectDrawUnknown
-    MOV [0x03f6b878],EAX                ; 005ed366 | g_FullscreenMode
+    MOV [0x03f6b878],EAX                ; 005ed366 | g_ExternalRendererActive
     MOV [0x02d03e94],EAX                ; 005ed36b | g_UseExternalRenderer
     TEST EDI,EDI                        ; 005ed370
     JNZ 0x005ed492                      ; 005ed372

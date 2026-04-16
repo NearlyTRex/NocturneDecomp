@@ -19,7 +19,7 @@ int __cdecl wincore_windll_cpp_setResolutionAndColorTable_FUN_005b7460(int width
   if (bits_per_pixel < 0x10) {
     bits_per_pixel = 0x10;
   }
-  if ((g_ExternalRendererActive == 0) &&
+  if ((g_LoadedExternalDLLRenderer == 0) &&
      (iVar4 = wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(g_StoredWindowHandle), iVar4 == 0
      )) {
     return 0;

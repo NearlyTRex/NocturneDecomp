@@ -44,7 +44,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005
                     (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
       iVar4 = g_ScanlinePixelCount;
       g_StartDepthW = uVar10;
-      g_DeltaDepthW = iVar8;
+      g_HardwareDeltaDepthZ = iVar8;
       do {
         *puVar9 = uVar10;
         uVar10 = uVar10 + iVar8;
@@ -61,7 +61,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005
            (int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
                 (longlong)(pSVar7->base).w_current);
       uVar10 = (left_vertex->base).u_current;
-      g_DeltaTextureU =
+      g_HardwareDeltaTextureU =
            (int)((ulonglong)
                  ((longlong)
                   ((int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
@@ -72,7 +72,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005
            (int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
                 (longlong)(pSVar7->base).w_current);
       uVar10 = (left_vertex->base).v_current;
-      g_DeltaTextureV =
+      g_HardwareDeltaTextureV =
            (int)((ulonglong)
                  ((longlong)
                   ((int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
@@ -81,18 +81,18 @@ void __edi_esi_ebx wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005
     }
     else {
       g_StartTextureU = (pSVar7->base).u_current;
-      g_DeltaTextureU =
+      g_HardwareDeltaTextureU =
            (int)((ulonglong)
                  ((longlong)((left_vertex->base).u_current - g_StartTextureU) *
                  (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
       g_StartTextureV = (pSVar7->base).v_current;
-      g_DeltaTextureV =
+      g_HardwareDeltaTextureV =
            (int)((ulonglong)
                  ((longlong)((left_vertex->base).v_current - g_StartTextureV) *
                  (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
     }
     iVar8 = (pSVar7->base).w_current;
-    g_DeltaDepthW =
+    g_HardwareDeltaDepthZ =
          (int)((ulonglong)
                ((longlong)((left_vertex->base).w_current - iVar8) *
                (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
@@ -121,9 +121,9 @@ void __edi_esi_ebx wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005
         }
         uVar10 = uVar10 + 4;
         if ((uint)g_ScanlinePixelCount <= uVar10) break;
-        uVar3 = uVar3 + g_DeltaTextureU;
-        uVar6 = uVar6 + g_DeltaTextureV;
-        iVar8 = iVar8 + g_DeltaDepthW;
+        uVar3 = uVar3 + g_HardwareDeltaTextureU;
+        uVar6 = uVar6 + g_HardwareDeltaTextureV;
+        iVar8 = iVar8 + g_HardwareDeltaDepthZ;
       }
     }
   }

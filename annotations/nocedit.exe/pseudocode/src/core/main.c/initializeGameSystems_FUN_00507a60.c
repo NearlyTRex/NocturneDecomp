@@ -77,7 +77,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
   engine_2d_c_initGraphicsSystem_FUN_00401010();
   wincore_winrun_cpp_calibrateCPUSpeed_FUN_005f2b80();
   wincore_winrun_cpp_initJoystick_FUN_005f4310();
-  g_FullscreenMode = 0;
+  g_ExternalRendererActive = 0;
   iVar9 = wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(0x280,0x1e0,0x20);
   if (iVar9 == 0) {
     g_CurrentFilename = "..\\core\\main.c";
@@ -316,7 +316,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
     } while (cVar2 != '\0');
     shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0(g_CEditorToolsPtr,low_memory_message);
   }
-  if (g_MessageFlags[0] < 0xc800000) {
+  if (g_AvailableSwapSpace < 0xc800000) {
     pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Windows is reporting ");
     do {
       cVar2 = *pcVar8;
@@ -329,7 +329,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
     } while (cVar2 != '\0');
     _sprintf
               (temp_buffer,"%.1f",
-               (double)((float)g_MessageFlags[0] * 9.536743e-07f));
+               (double)((float)g_AvailableSwapSpace * 9.536743e-07f));
     pcVar6 = temp_buffer;
     iVar9 = -1;
     pcVar8 = acStack_728;
@@ -466,7 +466,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
     g_CGamePtr->game_pixx = GAME_WINDOW_RESOLUTION_640;
     g_SkipIntroVideo = 0;
     pCVar5->game_pixy = GAME_WINDOW_RESOLUTION_480;
-    g_FullscreenMode = 0;
+    g_ExternalRendererActive = 0;
     pCVar5->game_bpp = 0x20;
     core_menu_cpp_showCalibrationTest_FUN_00510ba0();
   }

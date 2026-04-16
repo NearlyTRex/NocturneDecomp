@@ -162,7 +162,7 @@ static void shim_PostQuitMessage(int nExitCode) {
     SDL_PushEvent(&ev);
 }
 
-static ATOM shim_RegisterClassA(const WNDCLASSA* lpWndClass) {
+static ATOM shim_RegisterClassA(WNDCLASSA* lpWndClass) {
     if (lpWndClass) {
         s_wndProc = lpWndClass->lpfnWndProc;
     }

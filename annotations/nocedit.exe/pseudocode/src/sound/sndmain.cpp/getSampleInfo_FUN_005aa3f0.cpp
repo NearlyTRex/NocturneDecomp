@@ -64,16 +64,17 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(CSfxSample *out_sample)
       if (iVar1 == 0) {
         if ((g_GlobalMP3DecoderInitializedOther & 1) == 0) {
           g_GlobalMP3DecoderInitializedOther = g_GlobalMP3DecoderInitializedOther | 1;
-          sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(&g_CMP3DecoderInstance);
+          sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(&g_CMP3DecoderInstanceOther);
           _atexit(&g_CMP3DecoderDestructorNode2);
         }
-        sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550(&g_CMP3DecoderInstance,(char *)out_sample);
+        sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550
+                  (&g_CMP3DecoderInstanceOther,(char *)out_sample);
         (out_sample->sample_info).bit_depth = 0x10;
-        (out_sample->sample_info).num_channels = g_CMP3DecoderInstance.num_channels;
-        iVar1 = g_CMP3DecoderInstance.sample_rate;
+        (out_sample->sample_info).num_channels = g_CMP3DecoderInstanceOther.num_channels;
+        iVar1 = g_CMP3DecoderInstanceOther.sample_rate;
         (out_sample->sample_info).sample_count = -1;
         (out_sample->sample_info).sample_rate = iVar1;
-        sound_mp3_cpp_CMP3Decoder_free_FUN_005349e0(&g_CMP3DecoderInstance);
+        sound_mp3_cpp_CMP3Decoder_free_FUN_005349e0(&g_CMP3DecoderInstanceOther);
       }
       else {
         g_CurrentFilename = "..\\sound\\sndmain.cpp";

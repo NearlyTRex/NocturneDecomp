@@ -167,6 +167,7 @@ int g_CrosshairBrightness = {};
 int g_InputDisabled = {};
 int g_ApplicationActive = {};
 int g_TotalPhysicalMemory = {};
+int g_AvailableSwapSpace = {};
 int g_LeftMouseReleased = {};
 int g_RightMouseReleased = {};
 int g_MiddleMouseReleased = {};
@@ -195,8 +196,8 @@ int DAT_03F9C150 = {};
 // int[20]
 int g_InputBuffer[20] = {};
 
-// int[513]
-int g_MessageFlags[513] = {};
+// int[512]
+int g_MessageFlags[512] = {};
 
 // uint
 uint UINT_03f96b40 = {};

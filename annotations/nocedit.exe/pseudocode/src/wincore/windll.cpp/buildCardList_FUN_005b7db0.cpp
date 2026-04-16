@@ -11,7 +11,7 @@ int __cdecl wincore_windll_cpp_buildCardList_FUN_005b7db0(int *out_card_count,vo
 {
   int iVar1;
   
-  if (g_ExternalRendererActive == 0) {
+  if (g_LoadedExternalDLLRenderer == 0) {
     return 0;
   }
   iVar1 = (*g_APIDLL_buildCardList)

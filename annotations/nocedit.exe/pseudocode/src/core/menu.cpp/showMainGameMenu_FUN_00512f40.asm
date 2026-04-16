@@ -56,7 +56,7 @@ section .text
     CMP dword ptr [0x00679398],0x1e0    ; 00512f44 | g_WindowHeight
     JL 0x0051337c                       ; 00512f4e
         ;   XREF to: 0051337c (CONDITIONAL_JUMP)  ; LAB_0051337c
-    CMP dword ptr [0x03f6b878],0x0      ; 00512f54 | g_FullscreenMode
+    CMP dword ptr [0x03f6b878],0x0      ; 00512f54 | g_ExternalRendererActive
     JZ 0x00513386                       ; 00512f5b
         ;   XREF to: 00513386 (CONDITIONAL_JUMP)  ; LAB_00513386
     PUSH EDI                            ; 00512f61
@@ -376,7 +376,7 @@ section .text
     TEST EAX,EAX                        ; 0051326a
     JZ 0x0051343f                       ; 0051326c
         ;   XREF to: 0051343f (CONDITIONAL_JUMP)  ; LAB_0051343f
-    CMP dword ptr [0x03f6b878],0x0      ; 00513272 | g_FullscreenMode
+    CMP dword ptr [0x03f6b878],0x0      ; 00513272 | g_ExternalRendererActive
         ;   Label: LAB_00513272
     JZ 0x005132b1                       ; 00513279
         ;   XREF to: 005132b1 (CONDITIONAL_JUMP)  ; LAB_005132b1
@@ -404,7 +404,7 @@ section .text
         ;   Label: LAB_005132b1
     XOR ECX,ECX                         ; 005132b7
     PUSH EBX                            ; 005132b9 | g_CSoundInstance
-    MOV dword ptr [0x03f6b878],ECX      ; 005132ba | g_FullscreenMode
+    MOV dword ptr [0x03f6b878],ECX      ; 005132ba | g_ExternalRendererActive
     CALL core_sound.cpp_CSound_reset_FUN_005b39a0 ; 005132c0
         ;   XREF to: 005b39a0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_reset_FUN_005b39a0(CSound * this_ptr)
     ADD ESP,0x4                         ; 005132c5

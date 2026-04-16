@@ -1,7 +1,14 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "undeclared_identifier",
+        "column": 13,
+        "line": 304,
+        "message": "use of undeclared identifier 'g_FullscreenMode'; did you mean 'g_FullscreenMovie'?"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
@@ -771,7 +778,7 @@
     },
     {
       "addr": "03f6b878",
-      "name": "g_FullscreenMode",
+      "name": "g_ExternalRendererActive",
       "type": "int",
       "value": null
     }
@@ -1066,34 +1073,6 @@
         "type": "CGame *"
       }
     ]
-  },
-  "static_analysis": {
-    "analyzed_file": "CGame_processFrame_FUN_004da100.keep.cpp",
-    "clang_tidy_quick": {
-      "diagnostic_count": 3,
-      "diagnostics": [
-        {
-          "check_name": "bugprone-assignment-in-if-condition",
-          "column": 19,
-          "line": 153,
-          "message": "an assignment within an 'if' condition is bug-prone"
-        },
-        {
-          "check_name": "bugprone-assignment-in-if-condition",
-          "column": 17,
-          "line": 154,
-          "message": "an assignment within an 'if' condition is bug-prone"
-        },
-        {
-          "check_name": "bugprone-assignment-in-if-condition",
-          "column": 19,
-          "line": 168,
-          "message": "an assignment within an 'if' condition is bug-prone"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
   },
   "suspects": [
     {

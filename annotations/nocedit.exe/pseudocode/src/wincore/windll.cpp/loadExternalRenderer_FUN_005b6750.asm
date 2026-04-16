@@ -54,7 +54,7 @@ section .text
     JNZ 0x005b6781                      ; 005b6763
         ;   XREF to: 005b6781 (CONDITIONAL_JUMP)  ; LAB_005b6781
     MOV EBX,dword ptr [0x03f6b98c]      ; 005b6765 | g_StoredWindowHandle
-    CMP dword ptr [0x03f6b878],0x0      ; 005b676b | g_FullscreenMode
+    CMP dword ptr [0x03f6b878],0x0      ; 005b676b | g_ExternalRendererActive
         ;   Label: LAB_005b676b
     JNZ 0x005b6789                      ; 005b6772
         ;   XREF to: 005b6789 (CONDITIONAL_JUMP)  ; LAB_005b6789
@@ -78,7 +78,7 @@ section .text
     TEST EAX,EAX                        ; 005b679b
     JNZ 0x005b67b1                      ; 005b679d
         ;   XREF to: 005b67b1 (CONDITIONAL_JUMP)  ; LAB_005b67b1
-    MOV [0x03f6b878],EAX                ; 005b679f | g_FullscreenMode
+    MOV [0x03f6b878],EAX                ; 005b679f | g_ExternalRendererActive
     XOR EAX,EAX                         ; 005b67a4
     ADD ESP,0x3c1c                      ; 005b67a6
     POP EBP                             ; 005b67ac
@@ -705,7 +705,7 @@ section .text
         ;   Label: LAB_005b6f9f
     CALL wincore_windll.cpp_shutdownExternalRenderer_FUN_005b5d20 ; 005b6fa1
         ;   XREF to: 005b5d20 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_shutdownExternalRenderer_FUN_005b5d20()
-    MOV dword ptr [0x03f6b878],EBX      ; 005b6fa6 | g_FullscreenMode
+    MOV dword ptr [0x03f6b878],EBX      ; 005b6fa6 | g_ExternalRendererActive
     XOR EAX,EAX                         ; 005b6fac
     ADD ESP,0x3c1c                      ; 005b6fae
     POP EBP                             ; 005b6fb4
@@ -717,7 +717,7 @@ section .text
         ;   Label: LAB_005b6fb9
     CALL wincore_windll.cpp_shutdownExternalRenderer_FUN_005b5d20 ; 005b6fbb
         ;   XREF to: 005b5d20 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_shutdownExternalRenderer_FUN_005b5d20()
-    MOV dword ptr [0x03f6b878],ESI      ; 005b6fc0 | g_FullscreenMode
+    MOV dword ptr [0x03f6b878],ESI      ; 005b6fc0 | g_ExternalRendererActive
     XOR EAX,EAX                         ; 005b6fc6
     ADD ESP,0x3c1c                      ; 005b6fc8
     POP EBP                             ; 005b6fce
@@ -734,7 +734,7 @@ section .text
     MOV EDI,0x2d01f2c                   ; 005b6fea | g_RedBitCount
     PUSH EAX                            ; 005b6fef
     MOV EBP,0x2d01f30                   ; 005b6ff0 | g_GreenBitPosition
-    MOV dword ptr [0x03f6b978],EDX      ; 005b6ff5 | g_ExternalRendererActive
+    MOV dword ptr [0x03f6b978],EDX      ; 005b6ff5 | g_LoadedExternalDLLRenderer
     CALL crt_memory.c_memset_FUN_005fde40 ; 005b6ffb
         ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     MOV ECX,0x2d01f24                   ; 005b7000 | g_RedBitPosition
@@ -812,7 +812,7 @@ section .text
     TEST EAX,EAX                        ; 005b71a5
     JNZ 0x005b71b9                      ; 005b71a7
         ;   XREF to: 005b71b9 (CONDITIONAL_JUMP)  ; LAB_005b71b9
-    MOV [0x03f6b878],EAX                ; 005b71a9 | g_FullscreenMode
+    MOV [0x03f6b878],EAX                ; 005b71a9 | g_ExternalRendererActive
     ADD ESP,0x3c1c                      ; 005b71ae
     POP EBP                             ; 005b71b4
     POP EDI                             ; 005b71b5

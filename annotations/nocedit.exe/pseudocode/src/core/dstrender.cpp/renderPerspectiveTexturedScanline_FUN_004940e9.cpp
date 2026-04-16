@@ -31,12 +31,12 @@ void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_0049
     g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 4);
     g_PerspectiveScanlinePixelCount = iVar2 * 4;
     uVar3 = (pSVar5->base).u_current;
-    g_DeltaTextureU =
+    g_SoftwareDeltaTextureU =
          (int)((ulonglong)
                ((longlong)(int)((left_edge->base).u_current - uVar3) *
                (longlong)(int)g_ReciprocalLookupTable[iVar2 + 1]) >> 0x20);
     uVar4 = (pSVar5->base).v_current;
-    g_DeltaTextureV =
+    g_SoftwareDeltaTextureV =
          (int)((ulonglong)
                ((longlong)(int)((left_edge->base).v_current - uVar4) *
                (longlong)(int)g_ReciprocalLookupTable[iVar2 + 1]) >> 0x20);
@@ -51,8 +51,8 @@ void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_0049
       ;
       uVar1 = uVar1 + 4;
       if ((uint)g_PerspectiveScanlinePixelCount <= uVar1) break;
-      uVar3 = uVar3 + g_DeltaTextureU;
-      uVar4 = uVar4 + g_DeltaTextureV;
+      uVar3 = uVar3 + g_SoftwareDeltaTextureU;
+      uVar4 = uVar4 + g_SoftwareDeltaTextureV;
     }
   }
   return;

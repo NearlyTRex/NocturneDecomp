@@ -266,7 +266,7 @@ section .text
     CALL engine_matrix.c_matrixPushAndTransform_FUN_0050cee0 ; 0045f488
         ;   XREF to: 0050cee0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_matrixPushAndTransform_FUN_0050cee0(int rot_x, int rot_y, int rot_z, int translate_x, ...)
     ADD ESP,0x18                        ; 0045f48d
-    CMP dword ptr [0x015c4834],0x0      ; 0045f490 | g_WireframeMode
+    CMP dword ptr [0x015c4834],0x0      ; 0045f490 | g_FacetWireframeMode
     JZ 0x0045f543                       ; 0045f497
         ;   XREF to: 0045f543 (CONDITIONAL_JUMP)  ; LAB_0045f543
     FLD float ptr [EBP + -0x10]         ; 0045f49d
@@ -828,7 +828,7 @@ section .text
     CALL engine_2d.c_drawTextColor_FUN_00402430 ; 0045fb9d
         ;   XREF to: 00402430 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawTextColor_FUN_00402430(char * text, int x, int y)
     ADD ESP,0xc                         ; 0045fba2
-    CMP dword ptr [0x015c4834],0x0      ; 0045fba5 | g_WireframeMode
+    CMP dword ptr [0x015c4834],0x0      ; 0045fba5 | g_FacetWireframeMode
     JZ 0x0045fbb9                       ; 0045fbac
         ;   XREF to: 0045fbb9 (CONDITIONAL_JUMP)  ; LAB_0045fbb9
     FLD float ptr [EBP + -0x1c]         ; 0045fbae
@@ -1020,8 +1020,8 @@ section .text
     MOV byte ptr [0x02d03eb9],0x0       ; 0045fdf4 | CHAR_ARRAY_02d03eb9
         ;   Label: LAB_0045fdf4
     MOV EAX,0x1                         ; 0045fdfb
-    SUB EAX,dword ptr [0x015c4834]      ; 0045fe00 | g_WireframeMode
-    MOV [0x015c4834],EAX                ; 0045fe06 | g_WireframeMode
+    SUB EAX,dword ptr [0x015c4834]      ; 0045fe00 | g_FacetWireframeMode
+    MOV [0x015c4834],EAX                ; 0045fe06 | g_FacetWireframeMode
     CMP byte ptr [0x02d03ecc],0x0       ; 0045fe0b | CHAR_ARRAY_02d03ecc
         ;   Label: LAB_0045fe0b
     JZ 0x0045fe5d                       ; 0045fe12

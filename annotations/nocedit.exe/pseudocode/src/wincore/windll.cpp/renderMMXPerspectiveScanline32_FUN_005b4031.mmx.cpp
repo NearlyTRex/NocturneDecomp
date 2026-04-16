@@ -49,7 +49,7 @@ __asm {
         idiv EBX
         sub EAX,dword ptr [g_StartTextureU]
         imul dword ptr [ECX + 0x2d02584]
-        mov dword ptr [g_DeltaTextureU],EDX
+        mov dword ptr [g_HardwareDeltaTextureU],EDX
         mov EAX,dword ptr [ESI + 0x20]
         mov EBX,dword ptr [ESI + 0x28]
         cdq
@@ -65,7 +65,7 @@ __asm {
         idiv EBX
         sub EAX,dword ptr [g_StartTextureV]
         imul dword ptr [ECX + 0x2d02584]
-        mov dword ptr [g_DeltaTextureV],EDX
+        mov dword ptr [g_HardwareDeltaTextureV],EDX
         jmp LAB_005b4136
     LAB_005b4102:
         mov EAX,dword ptr [EDI + 0x18]
@@ -73,20 +73,20 @@ __asm {
         sub EAX,EBX
         imul dword ptr [ECX + 0x2d02584]
         mov dword ptr [g_StartTextureU],EBX
-        mov dword ptr [g_DeltaTextureU],EDX
+        mov dword ptr [g_HardwareDeltaTextureU],EDX
         mov EAX,dword ptr [EDI + 0x20]
         mov EBX,dword ptr [ESI + 0x20]
         sub EAX,EBX
         imul dword ptr [ECX + 0x2d02584]
         mov dword ptr [g_StartTextureV],EBX
-        mov dword ptr [g_DeltaTextureV],EDX
+        mov dword ptr [g_HardwareDeltaTextureV],EDX
     LAB_005b4136:
         mov EAX,dword ptr [EDI + 0x28]
         mov EBX,dword ptr [ESI + 0x28]
         sub EAX,EBX
         imul dword ptr [ECX + 0x2d02584]
         mov dword ptr [g_StartDepthW],EBX
-        mov dword ptr [g_DeltaDepthW],EDX
+        mov dword ptr [g_HardwareDeltaDepthZ],EDX
         mov EAX,dword ptr [EDI + 0x30]
         mov EBX,dword ptr [ESI + 0x30]
         sub EAX,EBX
@@ -279,11 +279,11 @@ __asm {
         add EDI,0x4
         cmp EDI,dword ptr [g_ScanlinePixelCount]
         jnc LAB_005b44e0
-        add ECX,dword ptr [g_DeltaTextureU]
+        add ECX,dword ptr [g_HardwareDeltaTextureU]
         paddw MM5,MM6
-        add EDX,dword ptr [g_DeltaTextureV]
+        add EDX,dword ptr [g_HardwareDeltaTextureV]
         movq MM0,MM5
-        add ESI,dword ptr [g_DeltaDepthW]
+        add ESI,dword ptr [g_HardwareDeltaDepthZ]
         pcmpgtw MM5,qword ptr [g_SelectedClearColor]
         add EBP,dword ptr [g_VertexAlphaDelta]
         pand MM5,MM0
@@ -378,11 +378,11 @@ __asm {
         add EDI,0x4
         cmp EDI,dword ptr [g_ScanlinePixelCount]
         jnc LAB_005b4670
-        add ECX,dword ptr [g_DeltaTextureU]
+        add ECX,dword ptr [g_HardwareDeltaTextureU]
         paddw MM5,MM6
-        add EDX,dword ptr [g_DeltaTextureV]
+        add EDX,dword ptr [g_HardwareDeltaTextureV]
         movq MM0,MM5
-        add ESI,dword ptr [g_DeltaDepthW]
+        add ESI,dword ptr [g_HardwareDeltaDepthZ]
         pcmpgtw MM5,qword ptr [g_SelectedClearColor]
         add EBP,dword ptr [g_VertexAlphaDelta]
         pand MM5,MM0
@@ -455,11 +455,11 @@ __asm {
         add EDI,0x4
         cmp EDI,dword ptr [g_ScanlinePixelCount]
         jnc LAB_005b44e0
-        add ECX,dword ptr [g_DeltaTextureU]
+        add ECX,dword ptr [g_HardwareDeltaTextureU]
         paddw MM5,MM6
-        add EDX,dword ptr [g_DeltaTextureV]
+        add EDX,dword ptr [g_HardwareDeltaTextureV]
         movq MM0,MM5
-        add ESI,dword ptr [g_DeltaDepthW]
+        add ESI,dword ptr [g_HardwareDeltaDepthZ]
         pcmpgtw MM5,qword ptr [g_SelectedClearColor]
         add EBP,dword ptr [g_VertexAlphaDelta]
         pand MM5,MM0
@@ -478,9 +478,9 @@ __asm {
         sub EAX,EBX
         imul dword ptr [ECX + 0x2d02584]
         mov dword ptr [g_StartDepthW],EBX
-        mov dword ptr [g_DeltaDepthW],EDX
+        mov dword ptr [g_HardwareDeltaDepthZ],EDX
         mov EAX,[g_StartDepthW]
-        mov EBX,dword ptr [g_DeltaDepthW]
+        mov EBX,dword ptr [g_HardwareDeltaDepthZ]
         mov ESI,dword ptr [g_CurrentZBufferPtr]
         mov ECX,dword ptr [g_ScanlinePixelCount]
     LAB_005b4811:

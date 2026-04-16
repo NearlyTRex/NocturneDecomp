@@ -62,7 +62,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
     core_moon_cpp_CMoon_update_FUN_00529d60(&g_CMoonInstance,g_CGamePtr->delta_time_float);
     core_moon_cpp_CMoon_render_FUN_00529ed0(&g_CMoonInstance);
     pCVar2 = g_CGamePtr;
-    if ((0 < g_GraphicsCardCount) && (g_FullscreenMode != 0)) {
+    if ((0 < g_GraphicsCardCount) && (g_ExternalRendererActive != 0)) {
       if ((g_GraphicsCardVendorIDs[g_GraphicsCardHandle] == 0x121a) &&
          (g_GraphicsCardDeviceIDs[g_GraphicsCardHandle] < 6)) {
         g_CGamePtr->game_bpp = 0x10;
@@ -84,8 +84,8 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_00510c80(void)
           } while (cVar2 != '\0');
           wincore_windll_cpp_kill_FUN_005b71e0();
           wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(0);
-          iVar7 = g_FullscreenMode;
-          if (g_FullscreenMode != 0) {
+          iVar7 = g_ExternalRendererActive;
+          if (g_ExternalRendererActive != 0) {
 LAB_00510e1f:
             wincore_windll_cpp_buildCardList_FUN_005b7db0
                       (&g_GraphicsCardCount,g_GraphicsCardDriverData,g_GraphicsCardNames,
@@ -112,8 +112,8 @@ LAB_00510e1f:
           } while (cVar2 != '\0');
           wincore_windll_cpp_kill_FUN_005b71e0();
           wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(0);
-          if (g_FullscreenMode != 0) goto LAB_00510e1f;
-          g_GraphicsCardCount = g_FullscreenMode;
+          if (g_ExternalRendererActive != 0) goto LAB_00510e1f;
+          g_GraphicsCardCount = g_ExternalRendererActive;
           iVar7 = g_GraphicsCardCount;
         }
       }
@@ -141,7 +141,7 @@ LAB_00510e1f:
       }
     }
     pCVar4 = g_CGamePtr;
-    if ((g_FullscreenMode == 0) && (0x1e0 < g_CGamePtr->game_pixy)) {
+    if ((g_ExternalRendererActive == 0) && (0x1e0 < g_CGamePtr->game_pixy)) {
       g_CGamePtr->game_pixy = 0x1e0;
       pCVar4->game_pixx = 0x280;
     }
@@ -189,7 +189,7 @@ LAB_00510f71:
         goto LAB_00510f71;
       }
     }
-    g_FullscreenMode = 0;
+    g_ExternalRendererActive = 0;
     pcVar14 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                         ("Acceleration disabled in editor");
     _sprintf(g_GraphicsMenuTextBuffers[2],pcVar14);
@@ -514,7 +514,7 @@ LAB_0051164c:
       break;
     case 2:
       g_GraphicsCardCount = 0;
-      g_FullscreenMode = 0;
+      g_ExternalRendererActive = 0;
       iVar3 = g_GraphicsCardCount;
       break;
     case 3:
@@ -554,8 +554,8 @@ LAB_005116c3:
         wincore_windll_cpp_kill_FUN_005b71e0();
         wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(0);
         iVar6 = g_GraphicsCardHandle;
-        iVar3 = g_FullscreenMode;
-        if (g_FullscreenMode != 0) {
+        iVar3 = g_ExternalRendererActive;
+        if (g_ExternalRendererActive != 0) {
           wincore_windll_cpp_buildCardList_FUN_005b7db0
                     (&g_GraphicsCardCount,g_GraphicsCardDriverData,g_GraphicsCardNames,
                      g_GraphicsCardVendorIDs,g_GraphicsCardDeviceIDs);

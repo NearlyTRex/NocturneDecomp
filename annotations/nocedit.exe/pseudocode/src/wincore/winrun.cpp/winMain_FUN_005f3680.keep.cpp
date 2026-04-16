@@ -11,7 +11,6 @@ int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680(HINSTANCE hInstance,HINSTA
 
 {
   byte *pbVar1;
-  char cVar2;
   byte bVar3;
   HWND existingWindow;
   HWND activePopup;
@@ -22,15 +21,11 @@ int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680(HINSTANCE hInstance,HINSTA
   HANDLE currentProcess;
   int iVar7;
   uint uVar8;
-  WNDCLASSA *stackProbe;
   char *pcVar9;
-  byte bVar10;
   WNDCLASSA windowClass;
   _MEMORYSTATUS memStatus;
-  
-  bVar10 = 0;
+
   existingWindow = (*g_FindWindowAFunc)(g_ApplicationTitle,(LPCSTR)0x0);
-  stackProbe = &windowClass;
   if (existingWindow != 0) {
     activePopup = (*g_GetLastActivePopupFunc)(existingWindow);
     if (activePopup != 0) {
@@ -44,23 +39,10 @@ int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680(HINSTANCE hInstance,HINSTA
     (*g_SetForegroundWindowFunc)(existingWindow);
     return 0;
   }
-  do {
-    iVar7 = *(int *)stackProbe;
-    stackProbe = (WNDCLASSA *)((int)stackProbe + -0x80);
-  } while (iVar7 < (int)stackProbe);
   seed = (*g_timeGetTimeFunc)();
   srand(seed);
-  pcVar9 = g_CommandLineBuffer;
   pCVar5 = (*g_GetCommandLineAFunc)();
-  do {
-    cVar2 = *pCVar5;
-    *pcVar9 = cVar2;
-    if (cVar2 == '\0') break;
-    cVar2 = pCVar5[1];
-    pCVar5 = pCVar5 + 2;
-    pcVar9[1] = cVar2;
-    pcVar9 = pcVar9 + 2;
-  } while (cVar2 != '\0');
+  strcpy(g_CommandLineBuffer, pCVar5);
   pcVar9 = g_CommandLineBuffer;
   if (g_CommandLineBuffer[0] != '\0') {
     pbVar1 = (byte *)pcVar9;
@@ -86,21 +68,14 @@ int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680(HINSTANCE hInstance,HINSTA
   }
   (*g_GetCurrentDirectoryAFunc)(0x100,g_CurrentDirectory);
   (*g_GetModuleFileNameAFunc)(hInstance,g_ModuleFileName,0x100);
-  uVar8 = 0xffffffff;
-  pcVar9 = g_ModuleFileName;
-  do {
-    if (uVar8 == 0) break;
+  uVar8 = strlen(g_ModuleFileName);
+  while ((int)uVar8 > 0) {
     uVar8 = uVar8 - 1;
-    cVar2 = *pcVar9;
-    pcVar9 = pcVar9 + (uint)bVar10 * -2 + 1;
-  } while (cVar2 != '\0');
-  uVar8 = ~uVar8;
-  do {
-    uVar8 = uVar8 - 1;
-    if ((int)uVar8 < 1) goto LAB_005f37d1;
-  } while (g_ModuleFileName[uVar8] != '\\');
-  g_ModuleFileName[uVar8] = '\0';
-LAB_005f37d1:
+    if (g_ModuleFileName[uVar8] == '\\') {
+      g_ModuleFileName[uVar8] = '\0';
+      break;
+    }
+  }
   (*g_SetCurrentDirectoryAFunc)(g_ModuleFileName);
   windowClass.lpfnWndProc = wincore_winrun_cpp_mainWindowProc_FUN_005f3150;
   windowClass.cbClsExtra = 0;
@@ -128,7 +103,7 @@ LAB_005f37d1:
   memStatus.dwLength = 0x20;
   (*g_GlobalMemoryStatusFunc)(&memStatus);
   g_TotalPhysicalMemory = memStatus.dwTotalPhys;
-  g_MessageFlags[0] = memStatus.dwAvailPageFile;
+  g_AvailableSwapSpace = memStatus.dwAvailPageFile;
   core_main_c_initializeGameSystems_FUN_00507a60();
   core_main_c_enterMainGameMenu_FUN_00507a50();
   core_main_c_finalizeGameSystems_FUN_00508570();

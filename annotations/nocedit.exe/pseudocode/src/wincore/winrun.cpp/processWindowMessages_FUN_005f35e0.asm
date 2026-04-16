@@ -23,8 +23,8 @@
 ;   char[512] g_KeyboardState
 ;   undefined4 CHAR_ARRAY_02d03e99
 ;   int g_InputDisabled
+;   int[512] g_MessageFlags
 ;   undefined4 g_MessageFlags[1]
-;   undefined4 g_MessageFlags[2]
 ;
 ; Called Functions:
 ;   DispatchMessageA
@@ -43,14 +43,14 @@ section .text
     XOR EDX,EDX                         ; 005f35e6
     XOR EAX,EAX                         ; 005f35e8
     XOR EBX,EBX                         ; 005f35ea
-    CMP dword ptr [EDX + 0x3f9847c],0x1 ; 005f35ec | g_MessageFlags[1] | g_MessageFlags[2]
+    CMP dword ptr [EDX + 0x3f9847c],0x1 ; 005f35ec | g_MessageFlags | g_MessageFlags[1]
         ;   Label: LAB_005f35ec
     JZ 0x005f3633                       ; 005f35f3
         ;   XREF to: 005f3633 (CONDITIONAL_JUMP)  ; LAB_005f3633
     ADD EDX,0x4                         ; 005f35f5
         ;   Label: LAB_005f35f5
     INC EAX                             ; 005f35f8
-    MOV dword ptr [EDX + 0x3f98478],EBX ; 005f35f9 | g_MessageFlags[1] | g_MessageFlags[2]
+    MOV dword ptr [EDX + 0x3f98478],EBX ; 005f35f9 | g_MessageFlags | g_MessageFlags[1]
     CMP EAX,0x258                       ; 005f35ff
     JL 0x005f35ec                       ; 005f3604
         ;   XREF to: 005f35ec (CONDITIONAL_JUMP)  ; LAB_005f35ec

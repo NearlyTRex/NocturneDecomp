@@ -17,11 +17,11 @@ void __cdecl wincore_winrun_cpp_processWindowMessages_FUN_005f35e0(void)
   iVar1 = 0;
   iVar3 = 0;
   do {
-    if (*(int *)((int)g_MessageFlags + iVar3 + 4) == 1) {
+    if (*(int *)((int)g_MessageFlags + iVar3) == 1) {
       g_KeyboardState[iVar1] = '\0';
     }
     iVar1 = iVar1 + 1;
-    *(uint *)((int)g_MessageFlags + iVar3 + 4) = 0;
+    *(uint *)((int)g_MessageFlags + iVar3) = 0;
     iVar3 = iVar3 + 4;
   } while (iVar1 < 600);
   while( true ) {

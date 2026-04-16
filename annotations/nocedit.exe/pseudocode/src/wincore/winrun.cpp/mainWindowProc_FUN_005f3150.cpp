@@ -175,7 +175,7 @@ LAB_005f32d1:
     if (message < 0x105) goto LAB_005f32d1;
     if (message != 0x105) goto LAB_005f31de;
   }
-  g_MessageFlags[(lParam >> 0x10 & g_InputKeyMask) + 1] = 1;
+  g_MessageFlags[lParam >> 0x10 & g_InputKeyMask] = 1;
 LAB_005f31de:
   LVar2 = (*g_DefWindowProcAFunc)(hWnd,message,wParam,lParam);
   return LVar2;

@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   APIDLL_kill* g_APIDLL_kill
-;   int g_ExternalRendererActive
+;   int g_LoadedExternalDLLRenderer
 ;
 ; Called Functions:
 ;   wincore_windll.cpp_shutdownExternalRenderer_FUN_005b5d20
@@ -20,7 +20,7 @@
 
 section .text
 
-    CMP dword ptr [0x03f6b978],0x0      ; 005b71e0 | g_ExternalRendererActive
+    CMP dword ptr [0x03f6b978],0x0      ; 005b71e0 | g_LoadedExternalDLLRenderer
         ;   Label: wincore_windll.cpp_kill_FUN_005b71e0
     JNZ 0x005b71ef                      ; 005b71e7
         ;   XREF to: 005b71ef (CONDITIONAL_JUMP)  ; LAB_005b71ef

@@ -136,13 +136,13 @@
     },
     {
       "addr": "03f9847c",
-      "name": "g_MessageFlags[1]",
-      "type": "undefined4",
+      "name": "g_MessageFlags",
+      "type": "int[512]",
       "value": null
     },
     {
       "addr": "03f98480",
-      "name": "g_MessageFlags[2]",
+      "name": "g_MessageFlags[1]",
       "type": "undefined4",
       "value": null
     }
@@ -196,7 +196,7 @@
       "line": 13,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)g_MessageFlags + iVar3 + 4) == 1) {",
+      "text": "if (*(int *)((int)g_MessageFlags + iVar3) == 1) {",
       "type": "pointer_cast"
     },
     {
@@ -204,7 +204,7 @@
       "line": 17,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)g_MessageFlags + iVar3 + 4) = 0;",
+      "text": "*(uint *)((int)g_MessageFlags + iVar3) = 0;",
       "type": "pointer_cast"
     }
   ]

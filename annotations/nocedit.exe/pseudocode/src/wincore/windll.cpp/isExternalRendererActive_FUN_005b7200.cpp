@@ -9,5 +9,5 @@
 int __cdecl wincore_windll_cpp_isExternalRendererActive_FUN_005b7200(void)
 
 {
-  return g_ExternalRendererActive;
+  return g_LoadedExternalDLLRenderer;
 }

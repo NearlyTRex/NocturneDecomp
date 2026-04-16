@@ -11,7 +11,7 @@ int __cdecl wincore_windll_cpp_selectCard_FUN_005b7d90(int card_index)
 {
   int iVar1;
   
-  if (g_ExternalRendererActive == 0) {
+  if (g_LoadedExternalDLLRenderer == 0) {
     return 0;
   }
   iVar1 = (*g_APIDLL_selectCard)(card_index);

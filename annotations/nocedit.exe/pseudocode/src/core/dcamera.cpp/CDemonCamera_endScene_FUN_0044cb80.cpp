@@ -21,7 +21,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(CDemonCamera *t
   else {
     this_ptr->scene_open_flag = 0;
   }
-  if (g_FullscreenMode != 0) {
+  if (g_ExternalRendererActive != 0) {
     wincore_windll_cpp_endScene_FUN_005b72a0();
   }
   if ((this_ptr->skip_clear_buffer_flag == 0) && (skip_zbuffer_copy == 0)) {

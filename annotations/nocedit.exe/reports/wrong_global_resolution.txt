@@ -12,8 +12,8 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6908
-  Functions with suspicious globals: 66
-  Total suspicious global references: 112
+  Functions with suspicious globals: 70
+  Total suspicious global references: 118
 
   Most commonly misresolved globals:
     g_SfxOptions                                       12 functions
@@ -21,10 +21,11 @@ SUMMARY
     g_RenderVertexBuffer                               5 functions
     g_ColorCubeLookup                                  4 functions
     g_CDemonCameraInstance                             4 functions
+    g_FullscreenMode                                   4 functions
     g_WindowHeight                                     3 functions
     g_GetLastErrorFunc                                 3 functions
     g_WindowWidth                                      2 functions
-    g_FullscreenMode                                   2 functions
+    g_ExternalRendererActive                           2 functions
     g_CMoonInstance                                    2 functions
     g_CKeysPtr                                         2 functions
     g_CommandTemplates                                 2 functions
@@ -35,9 +36,8 @@ SUMMARY
     g_CBaronWeaponClassInfo                            1 functions
     g_CBaronWeaponClassVersion                         1 functions
     g_CWeaponClassInfo                                 1 functions
-    g_SourcePaletteData                                1 functions
 
-  .keep files with issues: 10 (these need manual review)
+  .keep files with issues: 14 (these need manual review)
   Raw .cpp files with issues: 56
 
 ====================================================================================================
@@ -73,6 +73,30 @@ core_menu.cpp_checkAndCalibrateGamepad_FUN_00511840  [.keep]  (6 suspicious glob
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_processFrame_FUN_004da100  [.keep]  (2 suspicious globals)
+  File: core/game.cpp
+
+  g_ColorCubeLookup
+    Used at lines: 358
+    NOT found in function reference list
+
+  g_FullscreenMode
+    Used at lines: 304
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_showFacetPartEditor_FUN_0045f1d0  [.keep]  (2 suspicious globals)
+  File: shape/design.c
+
+  g_KeyboardState
+    Used at lines: 174, 175, 181, 182, 188, ...
+    NOT found in function reference list
+
+  g_WireframeMode
+    Used at lines: 139, 368, 368
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_dpart.cpp_setupTriangleEdgeInterpolation_FUN_00482fb0  [.keep]  (1 suspicious globals)
   File: core/dpart.cpp
 
@@ -81,11 +105,11 @@ core_dpart.cpp_setupTriangleEdgeInterpolation_FUN_00482fb0  [.keep]  (1 suspicio
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_game.cpp_CGame_processFrame_FUN_004da100  [.keep]  (1 suspicious globals)
-  File: core/game.cpp
+core_main.c_initializeGameSystems_FUN_00507a60  [.keep]  (1 suspicious globals)
+  File: core/main.c
 
-  g_ColorCubeLookup
-    Used at lines: 358
+  g_FullscreenMode
+    Used at lines: 70, 125
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -129,19 +153,35 @@ shape_design.c_renderPolygonWireframe_FUN_0045d300  [.keep]  (1 suspicious globa
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-shape_design.c_showFacetPartEditor_FUN_0045f1d0  [.keep]  (1 suspicious globals)
-  File: shape/design.c
-
-  g_KeyboardState
-    Used at lines: 174, 175, 181, 182, 188, ...
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 shape_design.c_showPointEditor_FUN_0045c6c0  [.keep]  (1 suspicious globals)
   File: shape/design.c
 
   g_KeyboardState
     Used at lines: 29, 30, 36, 37, 40, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0  [.keep]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  g_CMP3DecoderInstance
+    Used at lines: 68, 71, 73, 74, 77
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+wincore_windll.cpp_initializeExternalRenderer_FUN_005b5ec0  [.keep]  (1 suspicious globals)
+  File: wincore/windll.cpp
+
+  g_FullscreenMode
+    Used at lines: 19, 26, 36, 374
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+wincore_windll.cpp_loadExternalRenderer_FUN_005b6750  [.keep]  (1 suspicious globals)
+  File: wincore/windll.cpp
+
+  g_FullscreenMode
+    Used at lines: 26, 31, 38, 423, 428
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -168,7 +208,7 @@ core_main.c_enterMainGameMenu_FUN_00507a50  [.cpp]  (14 suspicious globals)
     Used at lines: 114, 139, 145, 159, 174, ...
     NOT found in function reference list
 
-  g_FullscreenMode
+  g_ExternalRendererActive
     Used at lines: 27, 165, 173
     NOT found in function reference list
 
@@ -224,7 +264,7 @@ engine_2d.c_reinitializeGraphicsSystem_FUN_00402a80  [.cpp]  (10 suspicious glob
     Used at lines: 19, 20, 20, 21
     NOT found in function reference list
 
-  g_FullscreenMode
+  g_ExternalRendererActive
     Used at lines: 15
     NOT found in function reference list
 

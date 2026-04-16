@@ -84,7 +84,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
                      (longlong)(int)g_ReciprocalLookupTable[iVar10 + 1]) >> 0x20);
       iVar10 = g_ScanlinePixelCount;
       g_StartDepthW = uVar19;
-      g_DeltaDepthW = iVar17;
+      g_HardwareDeltaDepthZ = iVar17;
       do {
         *puVar18 = uVar19;
         uVar19 = uVar19 + iVar17;
@@ -101,7 +101,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
            (int)(CONCAT44(((int)uVar19 >> 0x1f) << 0x18 | uVar19 >> 8,uVar19 << 0x18) /
                 (longlong)(pSVar16->base).w_current);
       uVar19 = (left_vertex->base).u_current;
-      g_DeltaTextureU =
+      g_HardwareDeltaTextureU =
            (int)((ulonglong)
                  ((longlong)
                   ((int)(CONCAT44(((int)uVar19 >> 0x1f) << 0x18 | uVar19 >> 8,uVar19 << 0x18) /
@@ -112,7 +112,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
            (int)(CONCAT44(((int)uVar19 >> 0x1f) << 0x18 | uVar19 >> 8,uVar19 << 0x18) /
                 (longlong)(pSVar16->base).w_current);
       uVar19 = (left_vertex->base).v_current;
-      g_DeltaTextureV =
+      g_HardwareDeltaTextureV =
            (int)((ulonglong)
                  ((longlong)
                   ((int)(CONCAT44(((int)uVar19 >> 0x1f) << 0x18 | uVar19 >> 8,uVar19 << 0x18) /
@@ -121,18 +121,18 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
     }
     else {
       g_StartTextureU = (pSVar16->base).u_current;
-      g_DeltaTextureU =
+      g_HardwareDeltaTextureU =
            (int)((ulonglong)
                  ((longlong)((left_vertex->base).u_current - g_StartTextureU) *
                  (longlong)(int)g_ReciprocalLookupTable[iVar10 + 1]) >> 0x20);
       g_StartTextureV = (pSVar16->base).v_current;
-      g_DeltaTextureV =
+      g_HardwareDeltaTextureV =
            (int)((ulonglong)
                  ((longlong)((left_vertex->base).v_current - g_StartTextureV) *
                  (longlong)(int)g_ReciprocalLookupTable[iVar10 + 1]) >> 0x20);
     }
     iVar17 = (pSVar16->base).w_current;
-    g_DeltaDepthW =
+    g_HardwareDeltaDepthZ =
          (int)((ulonglong)
                ((longlong)((left_vertex->base).w_current - iVar17) *
                (longlong)(int)g_ReciprocalLookupTable[iVar10 + 1]) >> 0x20);
@@ -297,13 +297,13 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
         }
         uVar19 = uVar19 + 4;
         if ((uint)g_ScanlinePixelCount <= uVar19) break;
-        uVar11 = uVar11 + g_DeltaTextureU;
+        uVar11 = uVar11 + g_HardwareDeltaTextureU;
         sVar36 = (ushort)uVar38 + sVar42;
         sVar39 = uVar47 + sVar44;
         sVar40 = uVar48 + sVar45;
         sVar41 = uVar20 + sVar46;
-        uVar8 = uVar8 + g_DeltaTextureV;
-        iVar17 = iVar17 + g_DeltaDepthW;
+        uVar8 = uVar8 + g_HardwareDeltaTextureV;
+        iVar17 = iVar17 + g_HardwareDeltaDepthZ;
         iVar10 = iVar10 + g_VertexAlphaDelta;
         uVar38 = CONCAT26(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x30) < sVar41),
                           CONCAT24(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x20) <
@@ -448,9 +448,9 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
           }
           uVar19 = uVar19 + 4;
           if ((uint)g_ScanlinePixelCount <= uVar19) break;
-          uVar11 = uVar11 + g_DeltaTextureU;
-          uVar8 = uVar8 + g_DeltaTextureV;
-          iVar17 = iVar17 + g_DeltaDepthW;
+          uVar11 = uVar11 + g_HardwareDeltaTextureU;
+          uVar8 = uVar8 + g_HardwareDeltaTextureV;
+          iVar17 = iVar17 + g_HardwareDeltaDepthZ;
           iVar10 = iVar10 + g_VertexAlphaDelta;
           uVar38 = CONCAT26(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x30) <
                                      (short)(uVar20 + sVar46)),
@@ -557,13 +557,13 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
         }
         uVar19 = uVar19 + 4;
         if ((uint)g_ScanlinePixelCount <= uVar19) break;
-        uVar11 = uVar11 + g_DeltaTextureU;
+        uVar11 = uVar11 + g_HardwareDeltaTextureU;
         sVar36 = (ushort)uVar38 + sVar42;
         sVar39 = uVar37 + sVar44;
         sVar40 = uVar47 + sVar45;
         sVar41 = uVar48 + sVar46;
-        uVar8 = uVar8 + g_DeltaTextureV;
-        iVar17 = iVar17 + g_DeltaDepthW;
+        uVar8 = uVar8 + g_HardwareDeltaTextureV;
+        iVar17 = iVar17 + g_HardwareDeltaDepthZ;
         iVar10 = iVar10 + g_VertexAlphaDelta;
         uVar38 = CONCAT26(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x30) < sVar41),
                           CONCAT24(-(ushort)((short)((ulonglong)g_SelectedClearColor >> 0x20) <

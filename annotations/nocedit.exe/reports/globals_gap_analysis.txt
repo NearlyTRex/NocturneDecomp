@@ -2,14 +2,14 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      19610
-  Named globals:             19599
+Total globals analyzed:      19615
+  Named globals:             19604
   DAT_ globals:              11
-Gaps found:                  1830
-  With exact size bounds:    1737
+Gaps found:                  1829
+  With exact size bounds:    1736
   With estimated bounds:     93
-Total gap bytes:             13,420,097
-  Exact gap bytes:           13,411,048
+Total gap bytes:             13,385,733
+  Exact gap bytes:           13,376,684
 Overlaps (size <= 0):        13382
 
 --------------------------------------------------------------------------------
@@ -19,9 +19,9 @@ GAP SIZE DISTRIBUTION
   5-16 bytes (small vars)                       487
   17-64 bytes (structs/small arrays)            388
   65-256 bytes (medium data)                    173
-  257-1024 bytes (large structs/arrays)         91
-  1-4 KB                                        72
-  4-64 KB                                       108
+  257-1024 bytes (large structs/arrays)         92
+  1-4 KB                                        71
+  4-64 KB                                       107
   64+ KB                                        17
 
 --------------------------------------------------------------------------------
@@ -123,9 +123,6 @@ LARGEST GAPS (top 50)
       38,352 bytes  at 0x0055803c
     after: switchdataD_00558038                     void*                at 0x00558038  size=4
     before: switchdataD_0056160c                     void*                at 0x0056160c
-      34,356 bytes  at 0x03f4900c
-    after: g_CSmileyClassInfo                       CDemonActorType      at 0x03f48fd0  size=60
-    before: g_GlobalMP3DecoderInitialized            uchar                at 0x03f51640
       34,100 bytes  at 0x0044c430
     after: PTR_caseD_3_0044c42c                     void*                at 0x0044c42c  size=4
     before: PTR_caseD_1_00454964                     void*                at 0x00454964
@@ -177,9 +174,12 @@ LARGEST GAPS (top 50)
       23,368 bytes  at 0x004890f8
     after: switchdataD_004890f4                     void*                at 0x004890f4  size=4
     before: switchdataD_0048ec40                     void*                at 0x0048ec40
+      22,972 bytes  at 0x00438418
+    after: PTR_caseD_3_00438414                     void*                at 0x00438414  size=4
+    before: switchdataD_0043ddd4                     void*                at 0x0043ddd4
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (1737) - size bounds are known precisely
+ALL EXACT GAPS (1736) - size bounds are known precisely
 --------------------------------------------------------------------------------
    4,185,048 bytes  at 0x00002428  between DAT_00002424                   and IMAGE_DOS_HEADER_00400000
    3,350,789 bytes  at 0x00ff0103  between g_ColorMagenta                 and g_CoronaLightCache
@@ -213,7 +213,6 @@ ALL EXACT GAPS (1737) - size bounds are known precisely
       39,952 bytes  at 0x004c7b7c  between switchdataD_004c7b78           and switchdataD_004d178c
       38,800 bytes  at 0x00465048  between switchdataD_00465044           and switchdataD_0046e7d8
       38,352 bytes  at 0x0055803c  between switchdataD_00558038           and switchdataD_0056160c
-      34,356 bytes  at 0x03f4900c  between g_CSmileyClassInfo             and g_GlobalMP3DecoderInitialized
       34,100 bytes  at 0x0044c430  between PTR_caseD_3_0044c42c           and PTR_caseD_1_00454964
       32,637 bytes  at 0x005b2fc0  between switchdataD_005b2fbc           and caseD_3
       32,144 bytes  at 0x0052f8c8  between switchdataD_0052f8c4           and switchdataD_00537658
@@ -242,7 +241,7 @@ ALL EXACT GAPS (1737) - size bounds are known precisely
       17,332 bytes  at 0x00417640  between switchdataD_0041763c           and switchdataD_0041b9f4
       16,374 bytes  at 0x031101c9  between g_CurrentLineBuffer+6          and g_CurrentLineBuffer+0x4000
       15,540 bytes  at 0x005f854c  between PTR_caseD_3_005f8548           and switchdataD_005fc200
-      15,351 bytes  at 0x03f51651  between g_SfxStreamReadBuffer+5        and g_CMP3DecoderInstance
+      15,351 bytes  at 0x03f51651  between g_SfxStreamReadBuffer+5        and g_CMP3DecoderInstanceOther
       15,092 bytes  at 0x0054e9f4  between switchdataD_0054e9f0           and switchdataD_005524e8
       14,888 bytes  at 0x004a2580  between switchdataD_004a257c           and switchdataD_004a5fa8
       14,024 bytes  at 0x00553af0  between switchdataD_00553aec           and switchdataD_005571b8
@@ -375,7 +374,7 @@ ALL EXACT GAPS (1737) - size bounds are known precisely
        1,112 bytes  at 0x0060a564  between SUB_0060a560                   and g_FPExceptionJumpTable
        1,100 bytes  at 0x005fc70c  between switchdataD_005fc708           and switchdataD_005fcb58
        1,060 bytes  at 0x0067c6e4  between s_.RAW_0067c6e0                and g_FootstepCornerMultipliers
-       1,032 bytes  at 0x00682210  between g_CurrentZBufferPtr            and g_DeltaDepthW
+       1,024 bytes  at 0x00682210  between g_CurrentZBufferPtr            and g_HardwareDeltaTextureU
        1,024 bytes  at 0x02fa88d0  between g_NetworkReceivePacket+4       and g_MessageCount
        1,020 bytes  at 0x02cf0134  between g_ConfirmationMessageBuffer+0x and g_YesNoDialogBuffer
        1,017 bytes  at 0x02d0a597  between g_FileTransferErrorMessage+3   and g_FileTransferBuffer
@@ -1166,7 +1165,7 @@ ALL EXACT GAPS (1737) - size bounds are known precisely
           12 bytes  at 0x0066e0d4  between g_ColorLookupTable             and s_3D_vector_0066e0e0
           12 bytes  at 0x0066e4b8  between g_CBatClassVersion             and g_CBatCreatureClassVersion
           12 bytes  at 0x00672364  between g_SkyDomeVertexScale           and g_PerspectiveLeftU
-          12 bytes  at 0x006723b8  between g_StartDepthZ                  and g_DeltaTextureU
+          12 bytes  at 0x006723b8  between g_StartDepthZ                  and g_SoftwareDeltaTextureU
           12 bytes  at 0x006793c4  between g_ProjectionScale              and g_CEventListPtr
           12 bytes  at 0x0067b55c  between g_TempFilenameBuffer           and s_CART_Precision_Racing_v1_006
           12 bytes  at 0x0067b9a4  between g_CGorePtr                     and g_BloodParticleTexture
@@ -1794,7 +1793,6 @@ ALL EXACT GAPS (1737) - size bounds are known precisely
            4 bytes  at 0x00ba8c74  between g_PrecomputedSurfaceNormals    and g_CoronaBlurOutputBuffer
            4 bytes  at 0x013bc25c  between g_CoronaCameraRotationMatrix   and g_CameraDownscaleIterations
            4 bytes  at 0x0151bfa4  between g_CameraOutOfBoundsZ           and g_CameraIndexedImageData
-           4 bytes  at 0x015c4834  between g_PolygonVertexDisplayEnabled  and g_ShowUVCoordinates
            4 bytes  at 0x015c488c  between g_SavedPolygonCount            and g_SavedModelName
            4 bytes  at 0x01626364  between g_StoredWorldYCoordinate       and g_EditorColorIndex
            4 bytes  at 0x0162636c  between g_EditorColorIndex             and g_TempTextureName
@@ -1833,6 +1831,7 @@ ALL EXACT GAPS (1737) - size bounds are known precisely
            4 bytes  at 0x032c1cbc  between g_LightingRotationMatrix       and g_ColorCorrectionLightMultipli
            4 bytes  at 0x0365436c  between g_GroundTextureCount           and g_GroundTextureNames
            4 bytes  at 0x036712e4  between g_SkeletonViewModelScreenshotC and g_SkeletonViewModelScreenshotF
+           4 bytes  at 0x03f4900c  between g_CSmileyClassInfo             and g_CMP3DecoderInstance
            4 bytes  at 0x03f624d4  between g_SfxOptions[0].velocity.x+4   and g_SfxOptions[0].velocity.y+4
            4 bytes  at 0x03f624dc  between g_SfxOptions[0].velocity.y+4   and g_SfxOptions[0].velocity.z+4
            4 bytes  at 0x03f68838  between g_Cached3DListenerPos.x+4      and g_Cached3DListenerPos.y+4

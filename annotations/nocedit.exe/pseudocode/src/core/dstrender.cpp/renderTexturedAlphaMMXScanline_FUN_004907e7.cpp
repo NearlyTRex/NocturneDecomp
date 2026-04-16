@@ -33,17 +33,17 @@ void __edi_esi_ebx core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_004907e
     g_PerspectiveScanlinePixelCount = iVar3 * 2;
     g_PerspectiveScanlineZPtr = (uint *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 2);
     uVar4 = (pSVar6->base).u_current;
-    g_DeltaTextureU =
+    g_SoftwareDeltaTextureU =
          (int)((ulonglong)
                ((longlong)(int)((left_edge->base).u_current - uVar4) *
                (longlong)(int)g_ReciprocalLookupTable[iVar3 + 1]) >> 0x20);
     uVar5 = (pSVar6->base).v_current;
-    g_DeltaTextureV =
+    g_SoftwareDeltaTextureV =
          (int)((ulonglong)
                ((longlong)(int)((left_edge->base).v_current - uVar5) *
                (longlong)(int)g_ReciprocalLookupTable[iVar3 + 1]) >> 0x20);
     uVar1 = (pSVar6->base).w_current;
-    g_DeltaDepthZ =
+    g_SoftwareDeltaDepthZ =
          (int)((ulonglong)
                ((longlong)(int)((left_edge->base).w_current - uVar1) *
                (longlong)(int)g_ReciprocalLookupTable[iVar3 + 1]) >> 0x20);
@@ -65,9 +65,9 @@ void __edi_esi_ebx core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_004907e
       }
       uVar7 = uVar7 + 2;
       if ((uint)g_PerspectiveScanlinePixelCount < uVar7) break;
-      uVar4 = uVar4 + g_DeltaTextureU;
-      uVar5 = uVar5 + g_DeltaTextureV;
-      uVar1 = uVar1 + g_DeltaDepthZ;
+      uVar4 = uVar4 + g_SoftwareDeltaTextureU;
+      uVar5 = uVar5 + g_SoftwareDeltaTextureV;
+      uVar1 = uVar1 + g_SoftwareDeltaDepthZ;
     }
   }
   return;

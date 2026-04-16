@@ -15,14 +15,14 @@ int __cdecl wincore_windll_cpp_initializeExternalRenderer_FUN_005b5ec0(void)
   
   g_RendererDLLHandle = wincore_wddvmem_cpp_loadLibrary_FUN_005ede10(g_RendererDllName);
   if (g_RendererDLLHandle == (HMODULE)0x0) {
-    g_FullscreenMode = (int)g_RendererDLLHandle;
+    g_ExternalRendererActive = (int)g_RendererDLLHandle;
     return 0;
   }
   pFVar1 = wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                      (g_RendererDLLHandle,"APIDLLInformation");
   if (pFVar1 == (FARPROC)0x0) {
     wincore_windll_cpp_shutdownExternalRenderer_FUN_005b5d20();
-    g_FullscreenMode = 0;
+    g_ExternalRendererActive = 0;
     return 0;
   }
   (*pFVar1)(g_RendererDLLHandle,&CStack_3ba0);
@@ -32,7 +32,7 @@ int __cdecl wincore_windll_cpp_initializeExternalRenderer_FUN_005b5ec0(void)
                     (&CStack_3ba0,(CExternalRenderer *)CStack_3ba0.renderer_dll_name);
   if (iVar2 == 0) {
     wincore_windll_cpp_shutdownExternalRenderer_FUN_005b5d20();
-    g_FullscreenMode = 0;
+    g_ExternalRendererActive = 0;
     return 0;
   }
   g_DLLFunctionsMissing = 0;
@@ -366,10 +366,10 @@ int __cdecl wincore_windll_cpp_initializeExternalRenderer_FUN_005b5ec0(void)
        (APIDLL_unknown *)
        wincore_wddvmem_cpp_getProcAddress_FUN_005ede20(g_RendererDLLHandle,"APIDLLsetFog");
   if (g_DLLFunctionsMissing == 0) {
-    g_ExternalRendererActive = 1;
+    g_LoadedExternalDLLRenderer = 1;
     return 1;
   }
   wincore_windll_cpp_shutdownExternalRenderer_FUN_005b5d20();
-  g_FullscreenMode = 0;
+  g_ExternalRendererActive = 0;
   return 0;
 }

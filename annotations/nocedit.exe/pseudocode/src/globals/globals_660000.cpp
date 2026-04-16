@@ -6696,7 +6696,7 @@ WatcomDestructorCall WatcomDestructorCall_0066311c = {
 WatcomDestructorCall WatcomDestructorCall_00663128 = {
     .delete_flags = 0x00000004,
     .destructor_func = (void *)sound_mp3_cpp_CMP3Decoder_dtor_FUN_00534530,
-    .object_instance = (void *)&g_CMP3DecoderInstance
+    .object_instance = (void *)&g_CMP3DecoderInstanceOther
 };
 WatcomDestructorCall WatcomDestructorCall_006632e0 = {
     .delete_flags = 0x00000004,

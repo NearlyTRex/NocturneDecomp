@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   SHOW_WINDOW_FUNC* g_ShowWindowFunc = 00211c06
-;   int g_FullscreenMode
+;   int g_ExternalRendererActive
 ;   int g_GraphicsResetFlag
 ;   HWND g_MainWindowHandle
 ;
@@ -21,7 +21,7 @@
 
 section .text
 
-    CMP dword ptr [0x03f6b878],0x0      ; 005edc50 | g_FullscreenMode
+    CMP dword ptr [0x03f6b878],0x0      ; 005edc50 | g_ExternalRendererActive
         ;   Label: wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_005edc50
     JZ 0x005edc62                       ; 005edc57
         ;   XREF to: 005edc62 (CONDITIONAL_JUMP)  ; LAB_005edc62

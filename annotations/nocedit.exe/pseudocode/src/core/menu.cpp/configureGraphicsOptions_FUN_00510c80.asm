@@ -127,7 +127,7 @@ section .text
     CMP EBX,ECX                         ; 00510d73
     JGE 0x00510f05                      ; 00510d75
         ;   XREF to: 00510f05 (CONDITIONAL_JUMP)  ; LAB_00510f05
-    CMP EBX,dword ptr [0x03f6b878]      ; 00510d7b | g_FullscreenMode
+    CMP EBX,dword ptr [0x03f6b878]      ; 00510d7b | g_ExternalRendererActive
     JZ 0x00510f05                       ; 00510d81
         ;   XREF to: 00510f05 (CONDITIONAL_JUMP)  ; LAB_00510f05
     MOV EAX,[0x02f275f4]                ; 00510d87 | g_GraphicsCardHandle
@@ -173,7 +173,7 @@ section .text
     PUSH EBX                            ; 00510e08
     CALL wincore_windll.cpp_loadExternalRenderer_FUN_005b6750 ; 00510e09
         ;   XREF to: 005b6750 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_loadExternalRenderer_FUN_005b6750(HWND window_handle)
-    MOV ESI,dword ptr [0x03f6b878]      ; 00510e0e | g_FullscreenMode
+    MOV ESI,dword ptr [0x03f6b878]      ; 00510e0e | g_ExternalRendererActive
     ADD ESP,0x4                         ; 00510e14
     CMP EBX,ESI                         ; 00510e17
     JZ 0x005111f6                       ; 00510e19
@@ -235,7 +235,7 @@ section .text
     MOV dword ptr [EAX + 0x8],0x10      ; 00510ef1 | g_CGameInstance.game_bpp
     MOV dword ptr [EAX],0x280           ; 00510ef8 | g_CGameInstance
     MOV dword ptr [EAX + 0x4],0x1e0     ; 00510efe | g_CGameInstance.game_pixy
-    CMP EBX,dword ptr [0x03f6b878]      ; 00510f05 | g_FullscreenMode
+    CMP EBX,dword ptr [0x03f6b878]      ; 00510f05 | g_ExternalRendererActive
         ;   Label: LAB_00510f05
     JNZ 0x00510f28                      ; 00510f0b
         ;   XREF to: 00510f28 (CONDITIONAL_JUMP)  ; LAB_00510f28
@@ -281,7 +281,7 @@ section .text
     ADD ESP,0x8                         ; 00510f84
     PUSH 0x6368c2                       ; 00510f87 | = "Acceleration disabled in editor"
         ;   Label: LAB_00510f87
-    MOV dword ptr [0x03f6b878],EBX      ; 00510f8c | g_FullscreenMode
+    MOV dword ptr [0x03f6b878],EBX      ; 00510f8c | g_ExternalRendererActive
     CALL support_newmsg.cpp_getLocalizedString_FUN_005441f0 ; 00510f92
         ;   XREF to: 005441f0 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_005441f0(char * key)
     ADD ESP,0x4                         ; 00510f97
@@ -548,7 +548,7 @@ section .text
     PUSH EBX                            ; 00511244
     CALL wincore_windll.cpp_loadExternalRenderer_FUN_005b6750 ; 00511245
         ;   XREF to: 005b6750 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_loadExternalRenderer_FUN_005b6750(HWND window_handle)
-    MOV ECX,dword ptr [0x03f6b878]      ; 0051124a | g_FullscreenMode
+    MOV ECX,dword ptr [0x03f6b878]      ; 0051124a | g_ExternalRendererActive
     ADD ESP,0x4                         ; 00511250
     CMP EBX,ECX                         ; 00511253
     JNZ 0x00510e1f                      ; 00511255
@@ -970,7 +970,7 @@ section .text
         ;   XREF to: 005111d3 (UNCONDITIONAL_JUMP)  ; default
     MOV dword ptr [0x02f275f8],EBX      ; 00511685 | g_GraphicsCardCount
         ;   Label: caseD_2
-    MOV dword ptr [0x03f6b878],EBX      ; 0051168b | g_FullscreenMode
+    MOV dword ptr [0x03f6b878],EBX      ; 0051168b | g_ExternalRendererActive
     JMP 0x005111d3                      ; 00511691
         ;   XREF to: 005111d3 (UNCONDITIONAL_JUMP)  ; default
     MOV EAX,[0x02f275f4]                ; 00511696 | g_GraphicsCardHandle
@@ -1011,7 +1011,7 @@ section .text
     PUSH EBX                            ; 005116e4
     CALL wincore_windll.cpp_loadExternalRenderer_FUN_005b6750 ; 005116e5
         ;   XREF to: 005b6750 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_loadExternalRenderer_FUN_005b6750(HWND window_handle)
-    MOV ECX,dword ptr [0x03f6b878]      ; 005116ea | g_FullscreenMode
+    MOV ECX,dword ptr [0x03f6b878]      ; 005116ea | g_ExternalRendererActive
     ADD ESP,0x4                         ; 005116f0
     CMP EBX,ECX                         ; 005116f3
     JNZ 0x00511750                      ; 005116f5

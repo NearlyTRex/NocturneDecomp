@@ -28,7 +28,7 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004fbd90(void)
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
             (&local_204,"gameBPP",&g_CGamePtr->game_bpp);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
-            (&local_204,"useDirect3D",&g_FullscreenMode);
+            (&local_204,"useDirect3D",&g_ExternalRendererActive);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
             (&local_204,"useAGPFlag",&g_PodSystemVersion);
   engine_ini_cpp_CIniFile_getString_FUN_004fbb20

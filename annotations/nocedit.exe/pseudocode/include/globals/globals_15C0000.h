@@ -58,7 +58,7 @@ extern int g_CoronaTargetX;
 extern int g_CoronaTargetY;
 extern int g_CoronaTargetDepth;
 extern int g_PolygonVertexDisplayEnabled;
-extern int g_WireframeMode;
+extern int g_FacetWireframeMode;
 extern int g_ShowUVCoordinates;
 extern int g_ShowVertexCoordinates;
 extern int g_MouseButtonClickCounter;

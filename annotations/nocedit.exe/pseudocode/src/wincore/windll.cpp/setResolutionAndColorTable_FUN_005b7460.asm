@@ -22,7 +22,7 @@
 ;   APIDLL_setVideoMode2* g_APIDLL_setVideoMode2
 ;   APIDLL_setFogColor* g_APIDLL_setFogColor
 ;   APIDLL_setColorTable16* g_APIDLL_setColorTable16
-;   int g_ExternalRendererActive
+;   int g_LoadedExternalDLLRenderer
 ;   int g_FogColorRed
 ;   int g_FogColorGreen
 ;   int g_FogColorBlue
@@ -51,7 +51,7 @@ section .text
     JGE 0x005b747a                      ; 005b7473
         ;   XREF to: 005b747a (CONDITIONAL_JUMP)  ; LAB_005b747a
     MOV EBX,0x10                        ; 005b7475
-    CMP dword ptr [0x03f6b978],0x0      ; 005b747a | g_ExternalRendererActive
+    CMP dword ptr [0x03f6b978],0x0      ; 005b747a | g_LoadedExternalDLLRenderer
         ;   Label: LAB_005b747a
     JNZ 0x005b749a                      ; 005b7481
         ;   XREF to: 005b749a (CONDITIONAL_JUMP)  ; LAB_005b749a

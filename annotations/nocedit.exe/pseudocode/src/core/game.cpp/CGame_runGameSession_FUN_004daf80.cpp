@@ -44,7 +44,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
             (g_CConsolePtr,"System RAM: %d\n",g_TotalPhysicalMemory);
   bVar3 = true;
   engine_console_cpp_CConsole_printf_FUN_00441890
-            (g_CConsolePtr,"Swap file: %d\n",g_MessageFlags[0]);
+            (g_CConsolePtr,"Swap file: %d\n",g_AvailableSwapSpace);
   shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590(g_CEditorToolsPtr,local_120)
   ;
   engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"%s\n",local_120);
