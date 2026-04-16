@@ -10,13 +10,9 @@
 _FILE * __cdecl shape_memdbg_cpp_openFile_FUN_0050f7a0(char *filename,char *directory,char *mode,char *source_file,int line_number)
 
 {
-  char cVar1;
   int iVar2;
   _FILE *p_Var3;
-  SFileTrackingEntry *pSVar4;
-  char *pcVar5;
-  _FILE *opened_file;
-  
+
   if (g_RecursiveCallFlag == 0) {
     if (g_FileMutex == (HANDLE)0x0) {
       g_FileMutex = wincore_winrun_cpp_createMutex_FUN_005f3fe0();
@@ -31,7 +27,7 @@ _FILE * __cdecl shape_memdbg_cpp_openFile_FUN_0050f7a0(char *filename,char *dire
     shape_memdbg_cpp_traceFile_FUN_0050f180
               ("Opening %s in %s for %s in %s line %d",directory,filename,mode,source_file,line_number);
   }
-  p_Var3 = (_FILE *)fopen(filename,mode);
+  p_Var3 = _fopen(filename,mode);
   if (p_Var3 == (_FILE *)0x0) {
     wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);
     shape_memdbg_cpp_traceFile_FUN_0050f180("  Open failed");
@@ -48,51 +44,15 @@ _FILE * __cdecl shape_memdbg_cpp_openFile_FUN_0050f7a0(char *filename,char *dire
               ("Too many open files trying to open %s, %s line %d",filename,source_file,line_number);
   }
   iVar2 = g_OpenFileCount;
-  pSVar4 = g_FileRegistry + g_OpenFileCount;
   g_OpenFileCount = g_OpenFileCount + 1;
-  do {
-    cVar1 = *filename;
-    pSVar4->filename[0] = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = filename[1];
-    filename = filename + 2;
-    pSVar4->filename[1] = cVar1;
-    pSVar4 = (SFileTrackingEntry *)(pSVar4->filename + 2);
-  } while (cVar1 != '\0');
-  pcVar5 = g_FileRegistry[iVar2].mode;
-  do {
-    cVar1 = *mode;
-    *pcVar5 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = mode[1];
-    mode = mode + 2;
-    pcVar5[1] = cVar1;
-    pcVar5 = pcVar5 + 2;
-  } while (cVar1 != '\0');
-  pcVar5 = g_FileRegistry[iVar2].source_file;
-  do {
-    cVar1 = *source_file;
-    *pcVar5 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = source_file[1];
-    source_file = source_file + 2;
-    pcVar5[1] = cVar1;
-    pcVar5 = pcVar5 + 2;
-  } while (cVar1 != '\0');
+  strcpy(g_FileRegistry[iVar2].filename, filename);
+  strcpy(g_FileRegistry[iVar2].mode, mode);
+  strcpy(g_FileRegistry[iVar2].source_file, source_file);
   if (directory == (char *)0x0) {
     g_FileRegistry[iVar2].directory[0] = '\0';
   }
   else {
-    pcVar5 = g_FileRegistry[iVar2].directory;
-    do {
-      cVar1 = *directory;
-      *pcVar5 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = directory[1];
-      directory = directory + 2;
-      pcVar5[1] = cVar1;
-      pcVar5 = pcVar5 + 2;
-    } while (cVar1 != '\0');
+    strcpy(g_FileRegistry[iVar2].directory, directory);
   }
   g_FileRegistry[iVar2].line_number = line_number;
   g_FileRegistry[iVar2].file_ptr = p_Var3;
