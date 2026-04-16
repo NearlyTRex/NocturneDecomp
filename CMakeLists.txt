@@ -139,7 +139,7 @@ if(NOCTURNE_BUILD_CHECK)
             add_custom_command(
                 OUTPUT  "${_stamp}"
                 COMMAND "${CMAKE_CXX_COMPILER}"
-                        -m32 -mmmx -fasm-blocks -fsyntax-only -std=gnu++11
+                        -m32 -fsyntax-only -std=gnu++11
                         -x c++
                         ${NOCTURNE_COMMON_WARNINGS}
                         ${NOCTURNE_INCLUDE_FLAGS}
@@ -183,7 +183,7 @@ if(NOCTURNE_BUILD_EXE)
             target_include_directories(nocturne_${_module} PRIVATE
                 "${NOCTURNE_INCLUDE_DIR}" "${NOCTURNE_SHIMS_DIR}")
             target_compile_options(nocturne_${_module} PRIVATE
-                -m32 -mmmx -fasm-blocks ${NOCTURNE_COMMON_WARNINGS}
+                -m32 ${NOCTURNE_COMMON_WARNINGS}
                 ${NOCTURNE_SANITIZE_FLAGS})
             target_compile_features(nocturne_${_module} PRIVATE cxx_std_17)
             list(APPEND _module_libs nocturne_${_module})
@@ -200,7 +200,7 @@ if(NOCTURNE_BUILD_EXE)
         "${NOCTURNE_INCLUDE_DIR}" "${NOCTURNE_SHIMS_DIR}"
         ${SDL2_INCLUDE_DIRS} ${SDL2TTF_INCLUDE_DIRS} ${FFMPEG_INCLUDE_DIRS})
     target_compile_options(nocturne_shims PRIVATE
-        -m32 -mmmx -fasm-blocks ${NOCTURNE_COMMON_WARNINGS}
+        -m32 ${NOCTURNE_COMMON_WARNINGS}
         ${NOCTURNE_SANITIZE_FLAGS}
         ${SDL2_CFLAGS_OTHER} ${SDL2TTF_CFLAGS_OTHER} ${FFMPEG_CFLAGS_OTHER})
     target_compile_features(nocturne_shims PRIVATE cxx_std_17)
@@ -211,7 +211,7 @@ if(NOCTURNE_BUILD_EXE)
         "${NOCTURNE_INCLUDE_DIR}" "${NOCTURNE_SHIMS_DIR}"
         ${SDL2_INCLUDE_DIRS} ${SDL2TTF_INCLUDE_DIRS} ${FFMPEG_INCLUDE_DIRS})
     target_compile_options(nocturne PRIVATE
-        -m32 -mmmx -fasm-blocks ${NOCTURNE_COMMON_WARNINGS}
+        -m32 ${NOCTURNE_COMMON_WARNINGS}
         ${NOCTURNE_SANITIZE_FLAGS}
         ${SDL2_CFLAGS_OTHER} ${SDL2TTF_CFLAGS_OTHER} ${FFMPEG_CFLAGS_OTHER})
     target_link_options(nocturne PRIVATE -m32 ${NOCTURNE_SANITIZE_FLAGS})
