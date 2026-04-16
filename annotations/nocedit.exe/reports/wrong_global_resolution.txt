@@ -12,8 +12,8 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6908
-  Functions with suspicious globals: 70
-  Total suspicious global references: 118
+  Functions with suspicious globals: 67
+  Total suspicious global references: 114
 
   Most commonly misresolved globals:
     g_SfxOptions                                       12 functions
@@ -21,7 +21,6 @@ SUMMARY
     g_RenderVertexBuffer                               5 functions
     g_ColorCubeLookup                                  4 functions
     g_CDemonCameraInstance                             4 functions
-    g_FullscreenMode                                   4 functions
     g_WindowHeight                                     3 functions
     g_GetLastErrorFunc                                 3 functions
     g_WindowWidth                                      2 functions
@@ -36,8 +35,9 @@ SUMMARY
     g_CBaronWeaponClassInfo                            1 functions
     g_CBaronWeaponClassVersion                         1 functions
     g_CWeaponClassInfo                                 1 functions
+    g_SourcePaletteData                                1 functions
 
-  .keep files with issues: 14 (these need manual review)
+  .keep files with issues: 11 (these need manual review)
   Raw .cpp files with issues: 56
 
 ====================================================================================================
@@ -73,18 +73,6 @@ core_menu.cpp_checkAndCalibrateGamepad_FUN_00511840  [.keep]  (6 suspicious glob
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_game.cpp_CGame_processFrame_FUN_004da100  [.keep]  (2 suspicious globals)
-  File: core/game.cpp
-
-  g_ColorCubeLookup
-    Used at lines: 358
-    NOT found in function reference list
-
-  g_FullscreenMode
-    Used at lines: 304
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 shape_design.c_showFacetPartEditor_FUN_0045f1d0  [.keep]  (2 suspicious globals)
   File: shape/design.c
 
@@ -105,11 +93,11 @@ core_dpart.cpp_setupTriangleEdgeInterpolation_FUN_00482fb0  [.keep]  (1 suspicio
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_main.c_initializeGameSystems_FUN_00507a60  [.keep]  (1 suspicious globals)
-  File: core/main.c
+core_game.cpp_CGame_processFrame_FUN_004da100  [.keep]  (1 suspicious globals)
+  File: core/game.cpp
 
-  g_FullscreenMode
-    Used at lines: 70, 125
+  g_ColorCubeLookup
+    Used at lines: 358
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -166,22 +154,6 @@ sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0  [.keep]  (1 suspicious globals)
 
   g_CMP3DecoderInstance
     Used at lines: 68, 71, 73, 74, 77
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-wincore_windll.cpp_initializeExternalRenderer_FUN_005b5ec0  [.keep]  (1 suspicious globals)
-  File: wincore/windll.cpp
-
-  g_FullscreenMode
-    Used at lines: 19, 26, 36, 374
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-wincore_windll.cpp_loadExternalRenderer_FUN_005b6750  [.keep]  (1 suspicious globals)
-  File: wincore/windll.cpp
-
-  g_FullscreenMode
-    Used at lines: 26, 31, 38, 423, 428
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
