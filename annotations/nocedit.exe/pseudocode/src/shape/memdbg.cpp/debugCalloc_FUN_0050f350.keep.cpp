@@ -10,11 +10,9 @@
 void * __cdecl shape_memdbg_cpp_debugCalloc_FUN_0050f350(SIZE_T count,SIZE_T size,char *filename,int line_number)
 
 {
-  SMemHead *dest;
-  char *pcVar1;
   SMemHead *header;
   ulong count_00;
-  
+
   if (g_RecursiveCallFlag == 0) {
     if (g_FileMutex == (HANDLE)0x0) {
       g_FileMutex = wincore_winrun_cpp_createMutex_FUN_005f3fe0();
@@ -34,18 +32,15 @@ void * __cdecl shape_memdbg_cpp_debugCalloc_FUN_0050f350(SIZE_T count,SIZE_T siz
     header->num_bytes = count_00;
     shape_memdbg_cpp_SMemHead_recordSourceFile_FUN_0050eea0(header,filename);
     header->source_line = line_number;
-    dest = header + 1;
     header->front_guard = GAME_DEADBEEF;
-    pcVar1 = dest->source_file + header->num_bytes + -0xc;
-    pcVar1[0] = -0x53;
-    pcVar1[1] = -0x22;
-    pcVar1[2] = -0x11;
-    pcVar1[3] = -0x42;
+    void *user_data = (void *)(header + 1);
+    uint back_guard = GAME_BEEFDEAD;
+    memcpy((char *)user_data + count_00, &back_guard, sizeof(back_guard));
     shape_memdbg_cpp_SMemHead_add_FUN_0050eef0(header);
-    memset(dest,0,count_00);
-    shape_memdbg_cpp_traceMemory_FUN_0050f150("   Returns %08X",(uint)dest);
+    memset(user_data,0,count_00);
+    shape_memdbg_cpp_traceMemory_FUN_0050f150("   Returns %08X",(uint)user_data);
     wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);
-    return dest;
+    return user_data;
   }
   shape_memdbg_cpp_traceMemory_FUN_0050f150("   Returns NULL");
   wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);

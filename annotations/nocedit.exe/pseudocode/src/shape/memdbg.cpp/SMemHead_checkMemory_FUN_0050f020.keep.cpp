@@ -28,7 +28,9 @@ void __cdecl shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(SMemHead *header
               ("Head memory corruption detected in %d-byte block (%08X), allocated %s, line %d, detected at %s line %d.\n(Last ok check was at %s line %d)",iVar2,(uint)(header + 1),header->source_file,iVar1,
                filename,line_number,pcVar4,iVar5);
   }
-  if (*(int *)(header[1].source_file + header->num_bytes + -0xc) != GAME_BEEFDEAD) {
+  int back_guard_val;
+  memcpy(&back_guard_val, (char *)(header + 1) + header->num_bytes, sizeof(back_guard_val));
+  if (back_guard_val != GAME_BEEFDEAD) {
     g_CurrentFilename = "..\\shape\\memdbg.cpp";
     g_CurrentLineNumber = 0xb2;
     core_main_c_displayErrorAndQuit_FUN_00506f10

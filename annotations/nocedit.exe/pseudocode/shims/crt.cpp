@@ -8,9 +8,11 @@
 //
 
 #include "system/crt.h"
-// Needed for the full _FILE struct layout (crt.h only forward-declares it).
-// _FILE_to_FILE inspects _handle to route Watcom static streams to libc.
-#include "system/stdio.h"
+// Full struct layouts for Watcom types that crt.h only forward-declares.
+// The shims bridge these to libc equivalents field-by-field.
+#include "system/stdio.h"   // _FILE  (for _FILE_to_FILE)
+#include "system/stat.h"    // _stat  (for getFileStat)
+#include "system/time.h"    // _tm    (for _mktime/_localtime)
 
 // ---------------------------------------------------------------------------
 // String Comparison
@@ -451,12 +453,53 @@ char* _strncpy(void* dest, const void* src, size_t count) {
 // Time Manipulation
 // ---------------------------------------------------------------------------
 
-time_t _mktime(_tm* t) {
-    return mktime(reinterpret_cast<tm*>(t));
+// Watcom _tm is 36 bytes (9 ints); glibc struct tm is 44 bytes (adds
+// tm_gmtoff + tm_zone). ASan's mktime interceptor unpoisonsthe full
+// 44-byte struct, overflowing the 36-byte Watcom buffer. Bridge by
+// copying into a properly-sized local, calling libc, and copying back.
+static void watcom_to_libc_tm(const _tm* src, struct tm* dst) {
+    memset(dst, 0, sizeof(*dst));
+    dst->tm_sec   = src->tm_sec;
+    dst->tm_min   = src->tm_min;
+    dst->tm_hour  = src->tm_hour;
+    dst->tm_mday  = src->tm_mday;
+    dst->tm_mon   = src->tm_mon;
+    dst->tm_year  = src->tm_year;
+    dst->tm_wday  = src->tm_wday;
+    dst->tm_yday  = src->tm_yday;
+    dst->tm_isdst = src->tm_isdst;
 }
 
+static void libc_to_watcom_tm(const struct tm* src, _tm* dst) {
+    dst->tm_sec   = src->tm_sec;
+    dst->tm_min   = src->tm_min;
+    dst->tm_hour  = src->tm_hour;
+    dst->tm_mday  = src->tm_mday;
+    dst->tm_mon   = src->tm_mon;
+    dst->tm_year  = src->tm_year;
+    dst->tm_wday  = src->tm_wday;
+    dst->tm_yday  = src->tm_yday;
+    dst->tm_isdst = src->tm_isdst;
+}
+
+time_t _mktime(_tm* t) {
+    struct tm libc_tm;
+    watcom_to_libc_tm(t, &libc_tm);
+    time_t result = mktime(&libc_tm);
+    libc_to_watcom_tm(&libc_tm, t);
+    return result;
+}
+
+// Thread-local buffer for _localtime — libc's localtime returns a static
+// pointer to its own struct tm, but we need to hand back a _tm*. Copy
+// into a thread-local _tm so the caller gets the right layout.
+static thread_local _tm s_localtime_buf;
+
 _tm* _localtime(const void* timer) {
-    return reinterpret_cast<_tm*>(localtime(reinterpret_cast<const time_t*>(timer)));
+    struct tm* libc_result = localtime(reinterpret_cast<const time_t*>(timer));
+    if (!libc_result) return nullptr;
+    libc_to_watcom_tm(libc_result, &s_localtime_buf);
+    return &s_localtime_buf;
 }
 
 time_t _time(time_t* timer) {
@@ -484,8 +527,27 @@ size_t _strftime(char* dest_buffer, size_t buffer_size, const char* format_strin
 // File Status / Timestamps
 // ---------------------------------------------------------------------------
 
+// Watcom _stat is 70 bytes; glibc struct stat is 88 on 32-bit. ASan's
+// stat interceptor writes the full 88 bytes, overflowing the 70-byte
+// Watcom buffer. Bridge the same way as _mktime/_tm.
 int getFileStat(const char* path, struct _stat* buf) {
-    return stat(normalize_path(path).c_str(), (struct stat*)buf);
+    struct stat libc_st;
+    int rc = stat(normalize_path(path).c_str(), &libc_st);
+    if (rc == 0 && buf) {
+        memset(buf, 0, sizeof(*buf));
+        buf->_st_dev   = libc_st.st_dev;
+        buf->_st_ino   = libc_st.st_ino;
+        buf->_st_mode  = libc_st.st_mode;
+        buf->_st_nlink = libc_st.st_nlink;
+        buf->_st_uid   = libc_st.st_uid;
+        buf->_st_gid   = libc_st.st_gid;
+        buf->_st_rdev  = libc_st.st_rdev;
+        buf->_st_size  = libc_st.st_size;
+        buf->_st_atime = libc_st.st_atime;
+        buf->_st_mtime = libc_st.st_mtime;
+        buf->_st_ctime = libc_st.st_ctime;
+    }
+    return rc;
 }
 
 int _utime(const char* path, void* times) {
