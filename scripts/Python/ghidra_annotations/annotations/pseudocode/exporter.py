@@ -400,7 +400,8 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map,
                 var_info[var_name] = {'size': var_size, 'is_array': is_array}
 
     # Apply post-processing transforms
-    decompiled_code = apply_all_transforms(decompiled_code, var_info=var_info)
+    decompiled_code = apply_all_transforms(
+        decompiled_code, var_info=var_info, func_name=func_name)
 
     # Generate MMX inline assembly version (kept separate from original pseudocode)
     from ghidra_annotations.annotations.pseudocode.asm_transform import generate_mmx_asm_cpp, generate_byval_asm_cpp
@@ -719,6 +720,16 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False):
     log_info("Building global symbols map for assembly annotations")
     global_symbols = build_global_symbols_map(symbol_table)
     log_info("Built global symbols map with %d symbols" % len(global_symbols))
+    timer.end_phase()
+
+    # Initialize the adjacency-sentinel transform. Depends on both
+    # globals_list (for pool array counts) and global_symbols (for the
+    # next-global-after-pool lookup that gates each rewrite).
+    timer.start_phase("Init adjacency-sentinel context")
+    from ghidra_annotations.annotations.pseudocode.adjacency_sentinel_transform import (
+        init_context as init_adjacency_context,
+    )
+    init_adjacency_context(globals_list, global_symbols)
     timer.end_phase()
 
     # Load vtable data
@@ -1281,6 +1292,15 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False):
     timer.start_phase("Generate actor cast mismatch report")
     log_info("Generating actor cast mismatch report...")
     generate_actor_cast_report(pseudocode_src_dir, reports_dir)
+    timer.end_phase()
+
+    # Log every adjacency-sentinel rewrite applied during this export.
+    # Grepping this file is the fastest way to audit the transform's output.
+    timer.start_phase("Write adjacency-sentinel rewrites report")
+    from ghidra_annotations.annotations.pseudocode.adjacency_sentinel_transform import (
+        write_rewrite_report as write_adjacency_report,
+    )
+    write_adjacency_report(reports_dir)
     timer.end_phase()
 
     # Log timing profile

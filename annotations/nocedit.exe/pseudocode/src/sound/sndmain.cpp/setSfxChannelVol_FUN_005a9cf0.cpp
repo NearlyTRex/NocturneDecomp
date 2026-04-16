@@ -31,7 +31,7 @@ void __cdecl sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(int channel_index,f
           (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr,slot,8);
         }
         slot = slot + 1;
-      } while (slot != (CSfxSlot *)&g_SfxLastSlot);
+      } while (slot != g_SfxSlots + 64);
       sound_sndmain_cpp_unlockSound_FUN_005abdc0();
       return;
     }

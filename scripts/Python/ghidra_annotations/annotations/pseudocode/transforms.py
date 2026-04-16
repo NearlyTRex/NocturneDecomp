@@ -165,6 +165,9 @@ import re
 from ghidra_annotations.util.log import log_info
 from ghidra_annotations.annotations.pseudocode.json_cache import JsonCacheManager
 from ghidra_annotations.annotations.pseudocode.render_flags_transform import transform_render_state_flags
+from ghidra_annotations.annotations.pseudocode.adjacency_sentinel_transform import (
+    transform_adjacency_sentinels,
+)
 
 
 # Type replacement mappings for undefined types
@@ -1349,7 +1352,7 @@ def transform_sub_float_bitcast(code):
     return ''.join(result)
 
 
-def apply_all_transforms(code, transforms=None, var_info=None):
+def apply_all_transforms(code, transforms=None, var_info=None, func_name=None):
     """Apply all or specified transforms to decompiled code.
 
     Args:
@@ -1359,6 +1362,8 @@ def apply_all_transforms(code, transforms=None, var_info=None):
         var_info: Optional dict mapping variable names to info dicts with
                   'size' and 'is_array' keys. Used by transform_partial_access
                   for safety checks.
+        func_name: Optional function name, used by transforms that log
+                  per-function audit info (adjacency_sentinels).
 
     Returns:
         Transformed code
@@ -1376,6 +1381,7 @@ def apply_all_transforms(code, transforms=None, var_info=None):
         ('funcptr_assignments', transform_funcptr_assignments),
         ('adjusted_pointer_types', transform_adjusted_pointer_types),
         ('render_state_flags', transform_render_state_flags),
+        ('adjacency_sentinels', transform_adjacency_sentinels),
     ]
 
     if transforms is None:
@@ -1391,6 +1397,8 @@ def apply_all_transforms(code, transforms=None, var_info=None):
         # Special handling for transforms that need extra context
         if name == 'partial_access':
             result = transform_func(result, var_info=var_info)
+        elif name == 'adjacency_sentinels':
+            result = transform_func(result, func_name=func_name)
         else:
             result = transform_func(result)
 

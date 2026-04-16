@@ -16,7 +16,7 @@ void __cdecl sound_sndmain_cpp_killAllSfx_FUN_005a9cc0(void)
   do {
     sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(slot);
     slot = slot + 1;
-  } while (slot != (CSfxSlot *)&g_SfxLastSlot);
+  } while (slot != g_SfxSlots + 64);
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return;
 }

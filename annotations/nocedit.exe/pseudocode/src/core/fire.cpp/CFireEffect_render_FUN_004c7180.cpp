@@ -46,7 +46,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_004c7180(CFireEffect *this_ptr
       (*((this_ptr_00->base).vtable)->render)(&this_ptr_00->base);
     }
     this_ptr_00 = this_ptr_00 + 1;
-  } while (this_ptr_00 != (CRock *)&g_LaserBeamActiveCount);
+  } while (this_ptr_00 != g_RockPool + 64);
   this_ptr_01 = g_FireballPool;
   core_fire_cpp_CFireball_setupRenderState_FUN_004c0d80(g_FireballPool);
   do {
@@ -54,12 +54,12 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_004c7180(CFireEffect *this_ptr
       (*((this_ptr_01->base).vtable)->render)(&this_ptr_01->base);
     }
     this_ptr_01 = this_ptr_01 + 1;
-  } while (this_ptr_01 != (CFireball *)&g_RockAllocIndex);
+  } while (this_ptr_01 != g_FireballPool + 64);
   this_ptr_02 = g_ShellPool;
   do {
     (*((this_ptr_02->base).vtable)->render)(&this_ptr_02->base);
     this_ptr_02 = this_ptr_02 + 1;
-  } while (this_ptr_02 != (CShell *)&g_PopcornAllocIndex);
+  } while (this_ptr_02 != g_ShellPool + 50);
   iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar2 == 0) {
     core_set_cpp_CDemonSet_setLightingParameters_FUN_0056d380
@@ -85,14 +85,14 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_004c7180(CFireEffect *this_ptr
         core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(this_ptr_03);
       }
       this_ptr_03 = this_ptr_03 + 1;
-    } while (this_ptr_03 != (CSmokeParticle *)&g_BulletHoleActiveCount);
+    } while (this_ptr_03 != g_SmokeParticlePool + 2048);
     this_ptr_04 = g_MuzzleFlashPool;
     do {
       if (this_ptr_04->frames_remaining != 0) {
         core_fire_cpp_CMuzzleFlash_render_FUN_004c1a30(this_ptr_04);
       }
       this_ptr_04 = this_ptr_04 + 1;
-    } while (this_ptr_04 != (CMuzzleFlash *)&g_GlassParticleAllocIndex);
+    } while (this_ptr_04 != g_MuzzleFlashPool + 20);
     iVar2 = 0;
     if (0 < g_LaserBeamActiveCount) {
       this_ptr_15 = g_LaserBeamPool;
@@ -109,60 +109,60 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_004c7180(CFireEffect *this_ptr
         (*((this_ptr_05->base).vtable)->render)(&this_ptr_05->base);
       }
       this_ptr_05 = this_ptr_05 + 1;
-    } while (this_ptr_05 != (CSpark *)&g_MuzzleFlashAllocIndex);
+    } while (this_ptr_05 != g_SparkPool + 256);
     this_ptr_06 = g_GlassParticlePool;
     do {
       if (0.0 < (this_ptr_06->base).lifetime_remaining) {
         (*((this_ptr_06->base).vtable)->render)(&this_ptr_06->base);
       }
       this_ptr_06 = this_ptr_06 + 1;
-    } while (this_ptr_06 != (CGlassParticle *)&g_BulletTrailAllocIndex);
+    } while (this_ptr_06 != g_GlassParticlePool + 256);
     this_ptr_07 = g_BulletTrailPool;
     do {
       if (this_ptr_07->frames_remaining != 0) {
         core_fire_cpp_CBulletTrail_render_FUN_004c21f0(this_ptr_07);
       }
       this_ptr_07 = this_ptr_07 + 1;
-    } while (this_ptr_07 != (CBulletTrail *)&g_FireballAllocIndex);
+    } while (this_ptr_07 != g_BulletTrailPool + 10);
     this_ptr_08 = g_ExplosionPool;
     do {
       core_fire_cpp_CExplosion_render_FUN_004c3b10(this_ptr_08);
       this_ptr_08 = this_ptr_08 + 1;
-    } while (this_ptr_08 != (CExplosion *)&g_TossAllocIndex);
+    } while (this_ptr_08 != g_ExplosionPool + 10);
     this_ptr_09 = g_TossPool;
     do {
       core_fire_cpp_CToss_render_FUN_004c4160(this_ptr_09);
       this_ptr_09 = this_ptr_09 + 1;
-    } while (this_ptr_09 != (CToss *)&g_CraterAllocIndex);
+    } while (this_ptr_09 != g_TossPool + 20);
     this_ptr_10 = g_GunFlamePool;
     do {
       core_fire_cpp_CGunFlame_render_FUN_004c50b0(this_ptr_10);
       this_ptr_10 = this_ptr_10 + 1;
-    } while (this_ptr_10 != (CGunFlame *)&g_LightningBoltAllocIndex);
+    } while (this_ptr_10 != g_GunFlamePool + 500);
     this_ptr_11 = g_LightningBoltPool;
     do {
       core_fire_cpp_CLightningBolt_render_FUN_004c5720(this_ptr_11);
       this_ptr_11 = this_ptr_11 + 1;
-    } while (this_ptr_11 != (CLightningBolt *)&g_TrailAllocIndex);
+    } while (this_ptr_11 != g_LightningBoltPool + 10);
     this_ptr_12 = g_TrailPool;
     do {
       core_fire_cpp_CTrail_render_FUN_004c5e90(this_ptr_12);
       this_ptr_12 = this_ptr_12 + 1;
-    } while (this_ptr_12 != (CTrail *)&g_ShellAllocIndex);
+    } while (this_ptr_12 != g_TrailPool + 100);
     this_ptr_13 = g_PopcornPool;
     do {
       if (0.0 < (this_ptr_13->base).lifetime_remaining) {
         (*((this_ptr_13->base).vtable)->render)(&this_ptr_13->base);
       }
       this_ptr_13 = this_ptr_13 + 1;
-    } while (this_ptr_13 != (CPopcorn *)&g_RainDropAllocIndex);
+    } while (this_ptr_13 != g_PopcornPool + 256);
     this_ptr_14 = g_RainDropPool;
     do {
       if (0.0 < (this_ptr_14->base).lifetime_remaining) {
         (*((this_ptr_14->base).vtable)->render)(&this_ptr_14->base);
       }
       this_ptr_14 = this_ptr_14 + 1;
-    } while ((CDemonActorType *)this_ptr_14 != &g_CFlameClassInfo);
+    } while (this_ptr_14 != g_RainDropPool + 256);
   }
   return;
 }

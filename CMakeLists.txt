@@ -77,7 +77,7 @@ file(MAKE_DIRECTORY "${NOCTURNE_GEN_DIR}")
 # Crt/ is excluded — we link against a modern C/C++ runtime.
 set(_collect_excludes --exclude-module entry --exclude-module crt)
 
-message(STATUS "Collecting Nocturne sources (priority: .keep > .mmx/.byval > .cpp/.c)")
+message(STATUS "Collecting Nocturne sources (priority: .keep > .cpp/.c; .mmx/.byval/.chunked are reference-only, skipped)")
 execute_process(
     COMMAND "${Python3_EXECUTABLE}"
             "${CMAKE_SOURCE_DIR}/cmake/collect_sources.py"
@@ -95,7 +95,17 @@ execute_process(
 if(NOT _collect_rc EQUAL 0)
     message(FATAL_ERROR "collect_sources.py failed:\n${_collect_out}${_collect_err}")
 endif()
-message(STATUS "${_collect_out}")
+# Emit the per-module file counts as individual STATUS lines so CMake
+# prefixes each with `-- ` instead of leaving the tail of a multi-line
+# message unprefixed and offset.
+string(STRIP "${_collect_out}" _collect_out_stripped)
+string(REPLACE "\n" ";" _collect_lines "${_collect_out_stripped}")
+foreach(_line IN LISTS _collect_lines)
+    string(STRIP "${_line}" _line_stripped)
+    if(_line_stripped)
+        message(STATUS "${_line_stripped}")
+    endif()
+endforeach()
 
 file(STRINGS "${NOCTURNE_GEN_DIR}/modules.txt" NOCTURNE_MODULES)
 

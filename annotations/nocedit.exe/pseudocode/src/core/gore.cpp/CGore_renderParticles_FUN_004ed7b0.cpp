@@ -25,7 +25,7 @@ void __cdecl core_gore_cpp_CGore_renderParticles_FUN_004ed7b0(CGore *this_ptr)
         (*((this_ptr_00->base).vtable)->render)(&this_ptr_00->base);
       }
       this_ptr_00 = this_ptr_00 + 1;
-    } while (this_ptr_00 != (CBloodParticle *)&g_BloodSplatIndex);
+    } while (this_ptr_00 != g_BloodParticles + 256);
   }
   return;
 }

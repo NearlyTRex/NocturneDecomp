@@ -21,6 +21,6 @@ void __cdecl core_fire_cpp_CFireEffect_load_FUN_004c9300(CFireEffect *this_ptr,_
   do {
     core_fire_cpp_CCrater_load_FUN_004c4880(this_ptr_00,file_handle);
     this_ptr_00 = this_ptr_00 + 1;
-  } while (this_ptr_00 != (CCrater *)&g_GunFlameAllocIndex);
+  } while (this_ptr_00 != g_CraterPool + 20);
   return;
 }

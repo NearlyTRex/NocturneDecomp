@@ -15,7 +15,7 @@ void __cdecl core_skeleton_cpp_freeAllModels_FUN_005a1dc0(void)
   do {
     core_skeleton_cpp_CDeformableModel_free_FUN_0059a2b0(this_ptr);
     this_ptr = this_ptr + 1;
-  } while (this_ptr != (CDeformableModel *)&g_SkeletonPoolCount);
+  } while (this_ptr != g_DeformableModelPool + 64);
   g_DeformableModelCount = 0;
   return;
 }

@@ -41,6 +41,6 @@ void __cdecl sound_sndmain_cpp_pollAllSfxSlots_FUN_005acdb0(void)
       sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0(this_ptr);
     }
     this_ptr = this_ptr + 1;
-  } while (this_ptr != (CSfxSlot *)&g_SfxLastSlot);
+  } while (this_ptr != g_SfxSlots + 64);
   return;
 }

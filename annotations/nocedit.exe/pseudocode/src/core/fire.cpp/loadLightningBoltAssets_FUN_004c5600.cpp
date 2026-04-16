@@ -15,6 +15,6 @@ void __cdecl core_fire_cpp_loadLightningBoltAssets_FUN_004c5600(void)
   do {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,texture);
     texture = texture + 1;
-  } while (texture != &g_FireEffectPopcornTexture);
+  } while (texture != g_FireEffectLightningBoltTextures + 6);
   return;
 }
