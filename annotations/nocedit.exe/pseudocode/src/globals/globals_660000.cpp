@@ -7753,11 +7753,11 @@ filebuf_vtable g_FilebufVTable = {
 
 // int
 int g_Istrstream_IstreamLastReadLength = 0x48;
-int g_DefaultStreamBufferSize = 0x1a4;
+int g_DefaultStreamBufferSize = 0x1A4;
 int g_TextWrapEnabled = 0x1;
-int g_CurrentTextColor = 0xf8;
+int g_CurrentTextColor = 0xF8;
 int INT_0066df80 = 0x1;
-int g_CurrentRenderColor = 0xffffff;
+int g_CurrentRenderColor = 0xFFFFFF;
 int g_CDemonActorClassVersion = 0x7;
 int g_CAmmoClassVersion = 0x1;
 int g_CAmmoBoxClassVersion = 0x4;
@@ -7775,14 +7775,14 @@ int g_CBeastClassVersion = 0x1;
 int g_CBiggsClassVersion = 0x1;
 int g_CBodyPartClassVersion = 0x5;
 int g_CBoneGuyClassVersion = 0x5;
-int g_CBoxActorClassVersion = 0xf;
+int g_CBoxActorClassVersion = 0xF;
 int g_CLightActorClassVersion = 0x2;
 int g_CBrideClassVersion = 0x4;
 int g_CBugsClassVersion = 0x1;
 int g_CCharacterClassVersion = 0x6;
 int g_CChainClassVersion = 0x4;
 int g_LineClippingDisabled = 0x1;
-int g_NearPlaneDistance = 0x7fffffff;
+int g_NearPlaneDistance = 0x7FFFFFFF;
 int g_CColonelClassVersion = 0x1;
 int g_CConveyorClassVersion = 0x2;
 int g_CZombieCowClassVersion = 0x2;
@@ -7790,13 +7790,13 @@ int g_CCrateClassVersion = 0x2;
 int g_CCrossbowClassVersion = 0x1;
 int g_CCurtainClassVersion = 0x6;
 int g_CameraShakePeakValue = 0x10000;
-int g_CameraShakeSustainValue = 0xc80000;
+int g_CameraShakeSustainValue = 0xC80000;
 int g_CameraShakeState = 0x3;
 int g_FogColorIndexR = 0x40;
 int g_FogColorIndexG = 0x40;
 int g_FogColorIndexB = 0x40;
-int INT_0066ed68 = 0x2D;
-int g_EditorDetailLevel = 0xffff;
+int INT_0066ed68 = -1;
+int g_EditorDetailLevel = 0xFFFF;
 int g_MouseReferenceY = 0x64;
 int g_EditorColorMode = 0x5;
 int g_EditorCurrentTexture = 0x2;
@@ -7827,9 +7827,9 @@ int g_CameraEdgeOffsetX[8] = {0x00000000, 0x00000001, 0x00000001, 0x00000001, 0x
 int g_CameraEdgeOffsetY[8] = {-1, -1, 0x00000000, 0x00000001, 0x00000001, 0x00000001, 0x00000000, -1};
 
 // short
-short g_DaysInMonth_Normal = 0x0;
-short SHORT_00665f50 = 0x16d;
-short g_DaysInMonth_Leap = 0x0;
+short g_DaysInMonth_Normal = 0;
+short SHORT_00665f50 = 0x16D;
+short g_DaysInMonth_Leap = 0;
 
 // streambuf_vtable
 streambuf_vtable g_StreambufVTable = {

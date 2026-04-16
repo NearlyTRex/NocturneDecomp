@@ -5,11 +5,11 @@
 // =============================================================================
 
 // BYTE
-BYTE g_WindowsMinorVersion = 0x00;
-BYTE g_InitHandlerStatusStart = 0x00;
+BYTE g_WindowsMinorVersion = 0;
+BYTE g_InitHandlerStatusStart = 0;
 BYTE g_InitHandlerPriorityStart = 0x40;
-BYTE g_ExitHandlerTableStart = 0x00;
-BYTE g_ExitHandlerPriorityEnd = 0x01;
+BYTE g_ExitHandlerTableStart = 0;
+BYTE g_ExitHandlerPriorityEnd = 0x1;
 
 // CDemonPod*
 CDemonPod* g_CDemonPodPtr = (CDemonPod*)&g_CDemonPodInstance;
@@ -62,10 +62,10 @@ CWater* g_CWaterPtr = (CWater*)&g_CWaterInstance;
 CWeather* g_CWeatherPtr = (CWeather*)&g_CWeatherInstance;
 
 // DWORD
-DWORD g_TLSIndex = 0xffffffff;
-DWORD g_WinMainCmdShow = 0x0;
-DWORD g_StackAllocSize = 0x0;
-DWORD g_RuntimeBufferSize = 0xf4;
+DWORD g_TLSIndex = 0xFFFFFFFF;
+DWORD g_WinMainCmdShow = 0;
+DWORD g_StackAllocSize = 0;
+DWORD g_RuntimeBufferSize = 0xF4;
 
 // EXCEPTION_CLEANUP_FUNC*
 EXCEPTION_CLEANUP_FUNC* g_ExceptionCleanup = nullptr;
@@ -3549,8 +3549,8 @@ TerminatedCString s_EST_006850bc = "EST";
 TerminatedCString s_EDT_0068513d = "EDT";
 
 // UINT
-UINT g_WaveOutDeviceID = 0xffffffff;
-UINT g_WaveInDeviceID = 0xffffffff;
+UINT g_WaveOutDeviceID = 0xFFFFFFFF;
+UINT g_WaveInDeviceID = 0xFFFFFFFF;
 
 // WCHAR*
 WCHAR* g_CommandLineArgsW = nullptr;
@@ -3558,7 +3558,7 @@ WCHAR* g_ExeFileNameW = nullptr;
 WCHAR* g_DllFileNameW = nullptr;
 
 // WORD
-WORD g_WindowsPlatformVersion = 0x0;
+WORD g_WindowsPlatformVersion = 0;
 
 // WatcomStaticDestructorNode
 WatcomStaticDestructorNode g_CEdCheckDestructorNode = {
@@ -3766,14 +3766,14 @@ _MMX_INTEGER g_GreenBlueBits = {0x0000000000000005ULL};
 _MMX_INTEGER g_BlueBitShift = {0x0000000000000003ULL};
 
 // byte
-byte DAT_00684ACC = 0x0;
-byte DAT_00684ACD = 0x0;
-byte DAT_0068500C = 0x0;
-byte g_WindowsMajorVersion = 0x0;
-byte g_UseSoftwareMath = 0x0;
+byte DAT_00684ACC = 0;
+byte DAT_00684ACD = 0;
+byte DAT_0068500C = 0;
+byte g_WindowsMajorVersion = 0;
+byte g_UseSoftwareMath = 0;
 byte g_TimezoneInitFlags = 0x1;
-byte g_DebuggerIsAttached = 0x0;
-byte g_ConsoleHandlerRegistered = 0x0;
+byte g_DebuggerIsAttached = 0;
+byte g_ConsoleHandlerRegistered = 0;
 
 // byte[16]
 byte g_IEEE754ExponentClassTable[16] = {0x00, 0x01, 0x00, 0x00, 0x04, 0x00, 0x00, 0x07, 0x00, 0x00, 0x0A, 0x00, 0x00, 0x0D, 0x00, 0x00};
@@ -3830,15 +3830,15 @@ float FLOAT_00680818 = 1e+10f;
 float g_MaxSoftwareLatency = 0.5f;
 
 // int
-int INT_00680648 = 0x2D;
+int INT_00680648 = -1;
 int g_DynamicRenderMode = 0x1;
 int g_ConfirmNewActorNames = 0x1;
 int INT_00680a04 = 0x1;
 int g_CNPCClassVersion = 0x4;
 int g_CPassengerClassVersion = 0x6;
 int g_CPendulumClassVersion = 0x8;
-int g_CPlatformClassVersion = 0xb;
-int g_MaxViewportScanline = 0x4b0;
+int g_CPlatformClassVersion = 0xB;
+int g_MaxViewportScanline = 0x4B0;
 int g_CScatClassVersion = 0x1;
 int g_AutoIndentEnabled = 0x1;
 int g_CSentinelClassVersion = 0x2;
@@ -3854,47 +3854,47 @@ int g_MaxSoundChannels = 0x20;
 int g_AudioBitsPerSample = 0x10;
 int g_AudioChannelCount = 0x2;
 int g_AudioSampleRate = 0x5622;
-int g_SoundDeviceCount = 0x2D;
-int g_CurrentSoundDevice = 0x2D;
+int g_SoundDeviceCount = -1;
+int g_CurrentSoundDevice = -1;
 int g_HardwareMixingEnabled = 0x1;
 int g_MinimumSoundMemoryBudget = 0x200000;
 int g_MaximumSoundMemoryBudget = 0x400000;
-int g_RecordingDeviceCount = 0x2D;
-int g_CurrentRecordingDevice = 0x2D;
+int g_RecordingDeviceCount = -1;
+int g_CurrentRecordingDevice = -1;
 int g_RecordingBitsPerSample = 0x8;
 int g_RecordingChannelCount = 0x1;
-int g_RecordingSampleRate = 0x2b11;
-int g_DirectSoundDeviceCount = 0x2D;
-int g_ScanlinePixelCount = 0x0;
-int g_StartTextureU = 0x0;
-int g_StartTextureV = 0x0;
-int g_StartDepthW = 0x0;
-int g_HardwareDeltaTextureU = 0x0;
-int g_HardwareDeltaTextureV = 0x0;
-int g_HardwareDeltaDepthZ = 0x0;
-int g_SavedRegisterEAX = 0x0;
-int g_SavedRegisterEBX = 0x0;
-int g_SavedRegisterECX = 0x0;
-int g_SavedRegisterEDX = 0x0;
-int g_TempX = 0x0;
-int g_TempY = 0x0;
-int g_TempZ = 0x0;
-int g_TempTransformedX = 0x0;
-int g_TempTransformedY = 0x0;
-int g_TempTransformedZ = 0x0;
-int g_VertexRedStart = 0x0;
-int g_VertexGreenStart = 0x0;
-int g_VertexBlueStart = 0x0;
-int g_VertexRedDelta = 0x0;
-int g_VertexGreenDelta = 0x0;
-int g_VertexBlueDelta = 0x0;
-int g_VertexAlphaStart = 0x0;
-int g_VertexAlphaDelta = 0x0;
-int g_SpecialColor = 0xffffff;
+int g_RecordingSampleRate = 0x2B11;
+int g_DirectSoundDeviceCount = -1;
+int g_ScanlinePixelCount = 0;
+int g_StartTextureU = 0;
+int g_StartTextureV = 0;
+int g_StartDepthW = 0;
+int g_HardwareDeltaTextureU = 0;
+int g_HardwareDeltaTextureV = 0;
+int g_HardwareDeltaDepthZ = 0;
+int g_SavedRegisterEAX = 0;
+int g_SavedRegisterEBX = 0;
+int g_SavedRegisterECX = 0;
+int g_SavedRegisterEDX = 0;
+int g_TempX = 0;
+int g_TempY = 0;
+int g_TempZ = 0;
+int g_TempTransformedX = 0;
+int g_TempTransformedY = 0;
+int g_TempTransformedZ = 0;
+int g_VertexRedStart = 0;
+int g_VertexGreenStart = 0;
+int g_VertexBlueStart = 0;
+int g_VertexRedDelta = 0;
+int g_VertexGreenDelta = 0;
+int g_VertexBlueDelta = 0;
+int g_VertexAlphaStart = 0;
+int g_VertexAlphaDelta = 0;
+int g_SpecialColor = 0xFFFFFF;
 int g_SystemInitialized = 0x1;
 int g_VideoMemorySize = 0x1;
 int g_MaxTextureSize = 0x40;
-int g_SystemMemorySize = 0x3c000;
+int g_SystemMemorySize = 0x3C000;
 int g_CSpikeClassVersion = 0x1;
 int g_CStairsClassVersion = 0x2;
 int g_CTempleStoneClassVersion = 0x1;
@@ -3910,7 +3910,7 @@ int g_TexturePreviewEnabled = 0x1;
 int g_CTommyGunClassVersion = 0x1;
 int g_CTrapClassVersion = 0x1;
 int g_CTrashClassVersion = 0x1;
-int g_CTriggerClassVersion = 0xb;
+int g_CTriggerClassVersion = 0xB;
 int g_CTurretClassVersion = 0x2;
 int g_CTVBatClassVersion = 0x5;
 int g_CVampireBossVersion = 0x4;
@@ -3922,42 +3922,42 @@ int g_CWayPointClassVersion = 0x2;
 int g_CWeaponClassVersion = 0x7;
 int g_CWerewolfClassVersion = 0x6;
 int g_BrightnessDirection = 0x8;
-int g_WindowActive = 0x2D;
+int g_WindowActive = -1;
 int g_ForceMessagePump = 0x1;
-int g_PreviousActiveState = 0x2D;
-int g_CZombieClassVersion = 0xb;
+int g_PreviousActiveState = -1;
+int g_CZombieClassVersion = 0xB;
 int g_MaxErrnoValue = 0x28;
-int DAT_00684CCC = 0x0;
+int DAT_00684CCC = 0;
 int INT_00684cd0 = 0x1;
 int INT_00684ed0 = 0x100;
-int INT_00684edc = 0x0;
-int g_SpecialExitHandler = 0x0;
-int DAT_00684F30 = 0x0;
-int INT_00684fd0 = 0x0;
-int g_ConsoleInitializationFlag = 0x0;
-int INT_00685038 = 0x0;
-int INT_00685094 = 0x0;
-int g_DstTransitionSecond = 0x0;
-int g_DstTransitionMinute = 0x0;
+int INT_00684edc = 0;
+int g_SpecialExitHandler = 0;
+int DAT_00684F30 = 0;
+int INT_00684fd0 = 0;
+int g_ConsoleInitializationFlag = 0;
+int INT_00685038 = 0;
+int INT_00685094 = 0;
+int g_DstTransitionSecond = 0;
+int g_DstTransitionMinute = 0;
 int g_DstTransitionHour = 0x1;
 int INT_006850a4 = 0x5;
 int INT_006850a8 = 0x9;
-int INT_006850b0 = 0x0;
-int INT_006850b4 = 0x0;
-int INT_006850b8 = 0x0;
+int INT_006850b0 = 0;
+int INT_006850b4 = 0;
+int INT_006850b8 = 0;
 int g_TimezoneOffset = 0x4650;
 int g_DaylightSavingActive = 0x1;
-int g_DaylightSavingOffset = 0xe10;
-int INT_00685210 = 0x2D;
-int g_CurrentHandleCount = 0x0;
-int g_FakeHandleCounter = 0x2D;
-int INT_00685280 = 0x0;
+int g_DaylightSavingOffset = 0xE10;
+int INT_00685210 = -16709626;
+int g_CurrentHandleCount = 0;
+int g_FakeHandleCounter = -2147483648;
+int INT_00685280 = 0;
 int g_ProcessSpawnEnabled = 0x1;
-int g_ConsoleInputState = 0x0;
-int INT_006854ec = 0x0;
+int g_ConsoleInputState = 0;
+int INT_006854ec = 0;
 int INT_006854f0 = 0x1;
 int g_HeapFlags = 0x10000;
-int INT_006855d8 = 0xfffffff;
+int INT_006855d8 = 0xFFFFFFF;
 
 // int*
 int* g_CurrentScreenPtr = nullptr;
@@ -4010,13 +4010,13 @@ int g_PathfindingDeltaZ[9] = {
 };
 
 // short
-short g_PureVirtualCallFlag = 0x0;
+short g_PureVirtualCallFlag = 0;
 
 // uint
-uint g_WindowsPlatformVersionExt = 0x0;
-uint g_WindowsVersionLow = 0x0;
-uint g_WindowsVersionMid = 0x0;
-uint g_WindowsVersionCombined = 0x0;
+uint g_WindowsPlatformVersionExt = 0;
+uint g_WindowsVersionLow = 0;
+uint g_WindowsVersionMid = 0;
+uint g_WindowsVersionCombined = 0;
 uint g_MaxHandleCount = 0x14;
 uint g_CodePage = 0x1;
 
@@ -4024,7 +4024,7 @@ uint g_CodePage = 0x1;
 uint* g_HeapBound = nullptr;
 
 // undefined4
-undefined4 DAT_0068528c = 0;
+undefined4 DAT_0068528c = 0x00000000;
 
 // void*
 void* g_CrtStackBuffer = nullptr;

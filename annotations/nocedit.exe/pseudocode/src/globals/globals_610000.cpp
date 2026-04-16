@@ -572,23 +572,23 @@ WSA_CLEANUP_FUNC* g_WSACleanupFunc = nullptr; // DAT_80000074
 WSA_STARTUP_FUNC* g_WSAStartupFunc = nullptr; // DAT_80000073
 
 // dword
-dword DWORD_00611000 = 0x2110b4;
-dword DAT_00611004 = 0x0;
-dword DAT_00611008 = 0x0;
-dword DAT_00611018 = 0x0;
-dword DAT_0061101C = 0x0;
-dword DAT_0061102C = 0x0;
-dword DAT_00611030 = 0x0;
-dword DAT_00611040 = 0x0;
-dword DAT_00611044 = 0x0;
-dword DAT_00611054 = 0x0;
-dword DAT_00611058 = 0x0;
-dword DAT_00611068 = 0x0;
-dword DAT_0061106C = 0x0;
-dword DAT_0061107C = 0x0;
-dword DAT_00611080 = 0x0;
-dword DAT_00611090 = 0x0;
-dword DAT_00611094 = 0x0;
+dword DWORD_00611000 = 0x2110B4;
+dword DAT_00611004 = 0;
+dword DAT_00611008 = 0;
+dword DAT_00611018 = 0;
+dword DAT_0061101C = 0;
+dword DAT_0061102C = 0;
+dword DAT_00611030 = 0;
+dword DAT_00611040 = 0;
+dword DAT_00611044 = 0;
+dword DAT_00611054 = 0;
+dword DAT_00611058 = 0;
+dword DAT_00611068 = 0;
+dword DAT_0061106C = 0;
+dword DAT_0061107C = 0;
+dword DAT_00611080 = 0;
+dword DAT_00611090 = 0;
+dword DAT_00611094 = 0;
 
 // int
 int INT_00613000 = 0x10101;

@@ -998,6 +998,12 @@ def format_char_bytes_as_string(field_bytes):
 
     Returns:
         A quoted string like '"hello"' or None if not a valid string
+
+    Returns None (so the caller falls back to a byte-array initializer)
+    when the bytes aren't a natural C string — specifically when there's
+    a null at position 0 followed by non-zero data. `char x[3] = "";`
+    zero-pads to the array size, which would silently discard the
+    trailing bytes.
     """
     # Find null terminator
     null_pos = -1
@@ -1005,6 +1011,13 @@ def format_char_bytes_as_string(field_bytes):
         if b == 0:
             null_pos = i
             break
+
+    # Reject inputs where a leading null is followed by non-zero bytes.
+    # Otherwise we'd emit "" and C's zero-padding would drop the data.
+    # (A leading null with *all* subsequent bytes zero is fine — the
+    # byte-array and "" representations are equivalent.)
+    if null_pos == 0 and any(b != 0 for b in field_bytes):
+        return None
 
     # Extract string bytes (up to null or all if no null)
     if null_pos == -1:
@@ -1117,8 +1130,18 @@ def extract_globals_and_constants(currentProgram, string_map=None, write_xref_ad
         is_guid_type = base_type_for_check in ('GUID', 'IID', 'CLSID')
 
         def get_int(val, base=10, default_val=None):
+            # Ghidra's Scalar.toString() returns hex like "-0x1" or "0x5622",
+            # which int(s) can't parse without base=0. Fall through to base=0
+            # (auto-detect 0x/0b/0o prefixes with optional sign) so negative
+            # hex values don't collapse to the ord() fallback below, which
+            # silently produced 0x2D (= ord('-')) for every negative int.
+            s = str(val)
             try:
-                return int(str(val))
+                return int(s)
+            except Exception:
+                pass
+            try:
+                return int(s, 0)
             except Exception:
                 return default_val
 
@@ -1513,11 +1536,17 @@ def extract_globals_and_constants(currentProgram, string_map=None, write_xref_ad
                         initializer_value = "'\\0'"  # Default for unknown formats
 
             elif "bool" in type_name.lower():
+                # A parsed int value is authoritative — val=0 is "false",
+                # not a fallback case. Previous code used `if val:` which
+                # routed val=0 to get_safe_str() and emitted whatever raw
+                # string Ghidra returned (often literally "0") instead of
+                # the C literal "false". Only fall back to the raw string
+                # when parsing failed entirely.
                 val = get_int(ghidra_value)
-                if val:
+                if val is not None:
                     initializer_value = "true" if val != 0 else "false"
                 else:
-                    initializer_value = get_safe_str(ghidra_value)
+                    initializer_value = "false"
 
             elif "float" in type_name.lower() and "[" not in type_name:
                 # Single float value (not an array)
@@ -1681,30 +1710,36 @@ def extract_globals_and_constants(currentProgram, string_map=None, write_xref_ad
                     initializer_value = "nullptr"
 
             elif data_length <= 8 and any(t in type_name.lower() for t in ["int", "word", "dword", "qword", "byte", "short", "long"]):
-                int_val = get_int(ghidra_value, default_val=None)
-                if int_val is not None:
-                    if int_val >= 0x100:
-                        initializer_value = "0x%X" % int_val
-                    elif int_val == 0:
-                        initializer_value = "0"
-                    else:
-                        initializer_value = str(int_val)
+                # Prefer raw_bytes from memory as ground truth. Ghidra's
+                # Data.getValue() representation varies by type: Scalar for
+                # some, Java Byte/Integer for others, sometimes decoding
+                # byte-as-character for BYTE types (so str() returns "@"
+                # for 0x40), sometimes decimal, sometimes hex. All these
+                # paths have historically misformatted something. Raw
+                # bytes are unambiguous and already read from memory above.
+                int_val = None
+                if raw_bytes is not None and len(raw_bytes) == data_length:
+                    int_val = bytes_to_int_le(raw_bytes)
                 else:
-                    # Try to get integer from raw string representation
-                    str_val = get_safe_str(ghidra_value)
-                    if str_val:
-                        # Check if it's a single character (Ghidra sometimes returns byte as char)
-                        if len(str_val) == 1:
-                            initializer_value = "0x%02X" % ord(str_val)
-                        elif str_val.startswith("0x") or str_val.startswith("0X"):
-                            initializer_value = str_val
-                        else:
-                            try:
-                                initializer_value = str(int(str_val))
-                            except ValueError:
-                                initializer_value = "0x%02X" % ord(str_val[0]) if str_val else "0"
-                    else:
+                    int_val = get_int(ghidra_value, default_val=None)
+
+                if int_val is not None:
+                    if int_val == 0:
                         initializer_value = "0"
+                    elif is_signed_int_type(type_name) and int_val >= (1 << (data_length * 8 - 1)):
+                        # Signed type with high bit set → emit as negative
+                        # decimal (e.g. int bytes FF FF FF FF -> "-1"). This
+                        # is the fix for the original "-0x1 -> 0x2D" bug
+                        # that started this investigation.
+                        signed_val = int_val - (1 << (data_length * 8))
+                        initializer_value = str(signed_val)
+                    else:
+                        initializer_value = "0x%X" % int_val
+                else:
+                    log_info("globals: no value for int initializer %s type=%s; defaulting to 0" % (
+                        name, type_name,
+                    ))
+                    initializer_value = "0"
 
             elif "undefined" in type_name.lower() and data_length <= 8:
                 # Handle undefined types - convert to single hex value

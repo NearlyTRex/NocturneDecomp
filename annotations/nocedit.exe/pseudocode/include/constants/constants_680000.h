@@ -404,7 +404,7 @@ static float10 DAT_00687548 = -0.090907585f;
 static float10 DAT_00687552 = 0.076416908f;
 
 // int constants
-static int DAT_00684F34 = 0x2D;
+static int DAT_00684F34 = -1610612736;
 
 // short constants
 static short DAT_00684F38 = 0x4002;

@@ -6078,9 +6078,9 @@ WatcomTypeInfo g_CHighPriestOfGardathTypeInfo = {
 char g_SpaceCharacter = ' ';
 
 // int
-int INT_00658bf4 = 0xa;
-int INT_00658c04 = 0x4d41;
-int INT_00658c08 = 0x4d50;
+int INT_00658bf4 = 0xA;
+int INT_00658c04 = 0x4D41;
+int INT_00658c08 = 0x4D50;
 int INT_00658c0c = 0x9;
-int g_CramInvalidMarker = 0x2D;
+int g_CramInvalidMarker = -1;
 
