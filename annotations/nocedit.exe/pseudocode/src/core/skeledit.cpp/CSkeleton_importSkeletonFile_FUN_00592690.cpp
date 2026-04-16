@@ -267,7 +267,7 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
             (g_CEditorToolsPtr,"Reading home pose filename");
   p_Var3 = local_11c;
   iVar4 = 1;
-  pcVar18 = "(file error)";
+  pcVar18 = g_FileErrorBuffer;
   pcVar7 = local_1e74;
   for (iVar16 = 0x41; iVar16 != 0; iVar16 = iVar16 + -1) {
     *(uint *)pcVar7 = *(uint *)pcVar18;

@@ -63,8 +63,8 @@ LAB_00537aa5:
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_5b0,0);
     }
     iVar3 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-                      (g_CEditorToolsPtr,"Enter enemy types to process","CEnemy",200,1
-                      );
+                      (g_CEditorToolsPtr,"Enter enemy types to process",g_ActorEnemyBuffer,200,
+                       1);
     if (iVar3 == 0) {
       in_stack_fffff2fc = ZEXT48(string_data) << 0x20;
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_5b0,0);
@@ -112,7 +112,7 @@ LAB_00537aa5:
               if (((actor_ptr != (CEnemy *)0x0) &&
                   (((INT_02f797e0 != 0 || (actor_ptr->randomize_me != 0)) &&
                    (iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0
-                                      ((CDemonActor *)actor_ptr,"CEnemy"), iVar3 != 0))))
+                                      ((CDemonActor *)actor_ptr,g_ActorEnemyBuffer), iVar3 != 0))))
                  && (iVar3 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
                                        (g_ActorWildcardBuffer,(char *)actor_ptr,0), iVar3 != 0)) {
                 fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10

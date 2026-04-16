@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_groundTypeDirectory_00648e45
-;   TerminatedCString s_GroundTypes_006816d8
+;   char[260] g_GroundTypesBuffer
 ;
 ; Called Functions:
 ;   engine_ini.cpp_CIniFile_getString_FUN_004fbb20
@@ -23,7 +23,7 @@ section .text
 
     PUSH 0x104                          ; 00584900
         ;   Label: core_setedit.cpp_CDemonSet_readIni_FUN_00584900
-    PUSH 0x6816d8                       ; 00584905 | = ".\\GroundTypes"
+    PUSH 0x6816d8                       ; 00584905 | g_GroundTypesBuffer
     PUSH 0x648e45                       ; 0058490a | = "groundTypeDirectory"
     MOV EDX,dword ptr [ESP + 0x14]      ; 0058490f
     PUSH EDX                            ; 00584913

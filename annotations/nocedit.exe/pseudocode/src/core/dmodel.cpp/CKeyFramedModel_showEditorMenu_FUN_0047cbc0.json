@@ -7,12 +7,12 @@
   },
   "complexity": {
     "assembly_lines": 2523,
-    "complexity_score": 1095,
+    "complexity_score": 1097,
     "cross_reference_count": 2,
     "function_call_count": 72,
     "global_count": 128,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 855,
+    "pseudocode_lines": 857,
     "suspect_count": 22,
     "suspect_types": [
       "negative_offset",
@@ -20,7 +20,7 @@
       "stack_ref",
       "warning_inlined_function"
     ],
-    "total_lines": 3378
+    "total_lines": 3380
   },
   "cross_references": [
     {
@@ -1026,8 +1026,8 @@
     },
     {
       "addr": "00670108",
-      "name": "s_t_00670108",
-      "type": "TerminatedCString",
+      "name": "g_NetworkModelFilename",
+      "type": "char[260]",
       "value": null
     },
     {
@@ -2150,15 +2150,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 533,
+      "line": 534,
       "match": "&stack0xfffff150",
       "severity": "moderate",
-      "text": "iVar18 = core_dmodel_cpp_copyFile_FUN_0047c930(\"t:\\\\\",&stack0xfffff150,1);",
+      "text": "(g_NetworkModelFilename,&stack0xfffff150,1);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 704,
+      "line": 706,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_108.x = (float)*(int *)((int)&this_ptr->vertex_list->x + iVar18) * fVar3;",
@@ -2166,7 +2166,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 705,
+      "line": 707,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_108.y = (float)*(int *)((int)&this_ptr->vertex_list->y + iVar18) * fVar3;",
@@ -2174,7 +2174,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 706,
+      "line": 708,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_108.z = (float)*(int *)((int)&this_ptr->vertex_list->z + iVar18) * fVar3;",
@@ -2182,7 +2182,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 715,
+      "line": 717,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_list->x + iVar18) =",
@@ -2190,7 +2190,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 717,
+      "line": 719,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_list->y + iVar18) =",
@@ -2198,7 +2198,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 719,
+      "line": 721,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_list->z + iVar18) =",
@@ -2206,7 +2206,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 746,
+      "line": 748,
       "match": "collision_triangle_list[-1].",
       "severity": "mild",
       "text": "shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].area);",

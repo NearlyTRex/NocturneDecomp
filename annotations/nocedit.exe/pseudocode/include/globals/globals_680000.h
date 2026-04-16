@@ -218,7 +218,6 @@ extern SRenderVertex g_RenderVertexBuffer[16];
 extern SSoundModeEntry g_SoundModeTable[27];
 
 // TerminatedCString
-extern TerminatedCString g_RendererDllName;
 extern TerminatedCString s_EST_006850bc;
 extern TerminatedCString s_EDT_0068513d;
 
@@ -326,6 +325,7 @@ extern char g_ActorRefDefaultBuffer[200];
 // char[256]
 extern char g_DefaultSoundDeviceName[256];
 extern char g_DefaultDeviceName[256];
+extern char g_RendererDllName[256];
 
 // char[260]
 extern char g_TempDirectoryBuffer[260];

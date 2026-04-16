@@ -28,7 +28,7 @@
 ;   TerminatedCString s_at_00618dff
 ;   TerminatedCString s_s_00618e02
 ;   TerminatedCString s_engine_console_cpp_00618e05
-;   TerminatedCString s_console_txt_0066e8e8
+;   char[28] g_ConsoleLogFilename
 ;
 ; Called Functions:
 ;   crt_stdio.c__vsprintf_FUN_005fdba8
@@ -108,7 +108,7 @@ section .text
     PUSH 0x618de9                       ; 0044191f | = "..\\engine\\console.cpp"
     PUSH 0x618dff                       ; 00441924 | = "at"
     PUSH 0x0                            ; 00441929
-    PUSH 0x66e8e8                       ; 0044192b | = "console.txt"
+    PUSH 0x66e8e8                       ; 0044192b | g_ConsoleLogFilename
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 00441930
         ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     MOV EBX,EAX                         ; 00441935

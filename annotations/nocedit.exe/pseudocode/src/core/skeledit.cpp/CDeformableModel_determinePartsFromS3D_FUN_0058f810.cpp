@@ -380,7 +380,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
             pcVar23 = pcVar23 + 0x100;
           } while (iVar31 < local_e4);
         }
-        pcVar38 = "gore";
+        pcVar38 = g_GoreBuffer;
         pcVar30 = local_388;
         for (iVar31 = 0x19; iVar31 != 0; iVar31 = iVar31 + -1) {
           pcVar30 = pcVar30 + (uint)bVar39 * -8 + 4;

@@ -31,7 +31,7 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_00523990(CDem
       _fputc(iVar1,file);
       iVar1 = _fscanf(file,"%[^\"]",local_dc);
       if (iVar1 == 1) {
-        iVar1 = _stricmp(local_dc,"(none)");
+        iVar1 = _stricmp(local_dc,g_DefaultMissionIdentifier);
         if (iVar1 == 0) {
           local_e1 = (CDemonActor *)0x0;
         }

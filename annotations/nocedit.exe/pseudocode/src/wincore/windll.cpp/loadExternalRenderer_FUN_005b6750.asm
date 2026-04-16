@@ -69,7 +69,7 @@ section .text
         ;   Label: LAB_005b6781
     JMP 0x005b676b                      ; 005b6787
         ;   XREF to: 005b676b (UNCONDITIONAL_JUMP)  ; LAB_005b676b
-    PUSH 0x684010                       ; 005b6789 | = "trid3d.dll"
+    PUSH 0x684010                       ; 005b6789 | g_RendererDllName
         ;   Label: LAB_005b6789
     CALL wincore_wddvmem.cpp_loadLibrary_FUN_005ede10 ; 005b678e
         ;   XREF to: 005ede10 (UNCONDITIONAL_CALL)  ; HMODULE wincore_wddvmem.cpp_loadLibrary_FUN_005ede10(LPCSTR lpLibFileName)

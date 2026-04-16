@@ -3544,7 +3544,6 @@ SSoundModeEntry g_SoundModeTable[27] = {
 };
 
 // TerminatedCString
-TerminatedCString g_RendererDllName = "trid3d.dll";
 TerminatedCString s_EST_006850bc = "EST";
 TerminatedCString s_EDT_0068513d = "EDT";
 
@@ -3803,6 +3802,7 @@ char g_ActorRefDefaultBuffer[] = "";
 // char[256]
 char g_DefaultSoundDeviceName[] = "";
 char g_DefaultDeviceName[] = "";
+char g_RendererDllName[] = "trid3d.dll";
 
 // char[260]
 char g_TempDirectoryBuffer[] = "";

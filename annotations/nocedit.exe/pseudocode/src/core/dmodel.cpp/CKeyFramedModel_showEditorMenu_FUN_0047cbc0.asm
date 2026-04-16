@@ -1441,7 +1441,7 @@ section .text
         ;   Label: LAB_0047d967
     LEA EAX,[EBP + 0xfffff1de]          ; 0047d969
     PUSH EAX                            ; 0047d96f
-    PUSH 0x670108                       ; 0047d970 | = "t:\\"
+    PUSH 0x670108                       ; 0047d970 | g_NetworkModelFilename
     CALL core_dmodel.cpp_copyFile_FUN_0047c930 ; 0047d975
         ;   XREF to: 0047c930 (UNCONDITIONAL_CALL)  ; int core_dmodel.cpp_copyFile_FUN_0047c930(char * source_filename, char * destination_filename, int show_error_if_missing)
     ADD ESP,0xc                         ; 0047d97a
@@ -1514,11 +1514,11 @@ section .text
     CMP EAX,0x1                         ; 0047da39
     JL 0x0047db0d                       ; 0047da3c
         ;   XREF to: 0047db0d (CONDITIONAL_JUMP)  ; LAB_0047db0d
-    MOV EDI,0x670108                    ; 0047da42 | = "t:\\"
+    MOV EDI,0x670108                    ; 0047da42 | g_NetworkModelFilename
     PUSH 0x1                            ; 0047da47
         ;   Label: LAB_0047da47
     PUSH 0xc8                           ; 0047da49
-    PUSH EDI                            ; 0047da4e | = "t:\\"
+    PUSH EDI                            ; 0047da4e | g_NetworkModelFilename
     PUSH 0x620a18                       ; 0047da4f | = "Enter network model filename (*.KFM)"
     MOV ECX,dword ptr [0x00678a60]      ; 0047da54 | g_CEditorToolsPtr
     PUSH ECX                            ; 0047da5a | g_CEditorToolsInstance
@@ -1536,7 +1536,7 @@ section .text
     PUSH EAX                            ; 0047da7f
     LEA EAX,[EBP + 0x7a]                ; 0047da80
     PUSH EAX                            ; 0047da83
-    PUSH EDI                            ; 0047da84 | = "t:\\"
+    PUSH EDI                            ; 0047da84 | g_NetworkModelFilename
     CALL crt_string.c_splitpath_FUN_005ff178 ; 0047da85
         ;   XREF to: 005ff178 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_005ff178(char * path, char * drive, char * dir, char * fname, ...)
     MOV CH,byte ptr [EBP + 0xfffff7f6]  ; 0047da8a
@@ -1544,7 +1544,7 @@ section .text
     TEST CH,CH                          ; 0047da93
     JZ 0x0047db27                       ; 0047da95
         ;   XREF to: 0047db27 (CONDITIONAL_JUMP)  ; LAB_0047db27
-    PUSH EDI                            ; 0047da9b | = "t:\\"
+    PUSH EDI                            ; 0047da9b | g_NetworkModelFilename
     MOV EBX,dword ptr [EBP + 0x92]      ; 0047da9c
     PUSH EBX                            ; 0047daa2
     CALL core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10 ; 0047daa3
@@ -1604,7 +1604,7 @@ section .text
     PUSH EAX                            ; 0047db39
     LEA EAX,[EBP + 0x7a]                ; 0047db3a
     PUSH EAX                            ; 0047db3d
-    PUSH EDI                            ; 0047db3e | = "t:\\"
+    PUSH EDI                            ; 0047db3e | g_NetworkModelFilename
     CALL crt_file.c_makepath_FUN_005febfc ; 0047db3f
         ;   XREF to: 005febfc (UNCONDITIONAL_CALL)  ; void crt_file.c_makepath_FUN_005febfc(char * path_buffer, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 0047db44
@@ -2609,8 +2609,8 @@ section .text
     JBE 0x0047d8bc                      ; 0047e73d
         ;   XREF to: 0047d8bc (CONDITIONAL_JUMP)  ; LAB_0047d8bc
     PUSH 0x1                            ; 0047e743
-    MOV EAX,0x670108                    ; 0047e745 | = "t:\\"
-    PUSH EAX                            ; 0047e74a | = "t:\\"
+    MOV EAX,0x670108                    ; 0047e745 | g_NetworkModelFilename
+    PUSH EAX                            ; 0047e74a | g_NetworkModelFilename
     MOV EAX,0x6209c2                    ; 0047e74b | = "*.kfm"
     PUSH EAX                            ; 0047e750 | = "*.kfm"
     MOV EAX,0x6209c8                    ; 0047e751 | = "Get model and textures from network"
@@ -2631,8 +2631,8 @@ section .text
     PUSH EAX                            ; 0047e782
     LEA EAX,[EBP + 0x76]                ; 0047e783
     PUSH EAX                            ; 0047e786
-    MOV EAX,0x670108                    ; 0047e787 | = "t:\\"
-    PUSH EAX                            ; 0047e78c | = "t:\\"
+    MOV EAX,0x670108                    ; 0047e787 | g_NetworkModelFilename
+    PUSH EAX                            ; 0047e78c | g_NetworkModelFilename
     CALL crt_string.c_splitpath_FUN_005ff178 ; 0047e78d
         ;   XREF to: 005ff178 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_005ff178(char * path, char * drive, char * dir, char * fname, ...)
     ADD ESP,0x14                        ; 0047e792

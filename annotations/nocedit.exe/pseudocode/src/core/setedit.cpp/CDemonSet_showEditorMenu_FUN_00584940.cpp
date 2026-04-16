@@ -162,7 +162,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
       }
     }
     else if (uVar3 == 0x49) {
-      pcVar4 = ".\\GroundTypes";
+      pcVar4 = g_GroundTypesBuffer;
       pcVar5 = local_36c;
       do {
         cVar2 = *pcVar4;
@@ -174,7 +174,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
         pcVar5 = pcVar5 + 2;
       } while (cVar2 != '\0');
       if (this_ptr->geometry_filename[0] != '\0') {
-        engine_dosio_c_ensureTrailingSlash_FUN_00481f80(".\\GroundTypes",local_14,local_168);
+        engine_dosio_c_ensureTrailingSlash_FUN_00481f80(g_GroundTypesBuffer,local_14,local_168);
         engine_dosio_c_splitPath_FUN_00481f20
                   (this_ptr->geometry_filename,(char *)0x0,(char *)0x0,local_268,(char *)0x0);
         engine_dosio_c_makePath_FUN_00481f50(local_36c,local_14,local_168,local_268,".txt");

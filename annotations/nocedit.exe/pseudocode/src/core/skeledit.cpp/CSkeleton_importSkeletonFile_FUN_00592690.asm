@@ -459,12 +459,12 @@ section .text
     MOV ECX,dword ptr [0x00678a60]      ; 005928a3 | g_CEditorToolsPtr
     PUSH ECX                            ; 005928a9 | g_CEditorToolsInstance
     LEA EDI,[EBP + 0xffffe216]          ; 005928aa
-    MOV ESI,0x6818e0                    ; 005928b0 | = "(file error)"
+    MOV ESI,0x6818e0                    ; 005928b0 | g_FileErrorBuffer
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790 ; 005928b5
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * format)
     MOV ECX,0x41                        ; 005928ba
     MOV EBX,0x1                         ; 005928bf
-    MOVSD.REP ES:EDI,ESI                ; 005928c4 | = "(file error)" | s_file_error_006818e0+4
+    MOVSD.REP ES:EDI,ESI                ; 005928c4 | g_FileErrorBuffer | g_FileErrorBuffer+4
     ADD ESP,0x8                         ; 005928c6
     MOV ESI,dword ptr [EBP + 0xffffff6e] ; 005928c9
     PUSH ESI                            ; 005928cf

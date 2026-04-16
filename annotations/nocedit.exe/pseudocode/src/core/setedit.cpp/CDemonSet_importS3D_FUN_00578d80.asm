@@ -900,7 +900,7 @@ section .text
     LEA EAX,[ESP + 0x2468]              ; 0057967d
     PUSH EAX                            ; 00579684
     XOR EDX,EDX                         ; 00579685
-    PUSH 0x6816d8                       ; 00579687 | = ".\\GroundTypes"
+    PUSH 0x6816d8                       ; 00579687 | g_GroundTypesBuffer
     MOV dword ptr [0x03654368],EDX      ; 0057968c | g_GroundTextureCount
     CALL engine_dosio.c_ensureTrailingSlash_FUN_00481f80 ; 00579692
         ;   XREF to: 00481f80 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_ensureTrailingSlash_FUN_00481f80(char * input_path, char * drive, char * output_path)

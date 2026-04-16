@@ -24,13 +24,16 @@ fi
 : "${ASAN_SYMBOLIZER_PATH:=@LLVM_SYMBOLIZER_PATH@}"
 : "${UBSAN_SYMBOLIZER_PATH:=@LLVM_SYMBOLIZER_PATH@}"
 
-# UBSan: full stack trace on every hit, abort on first hit. Flip halt_on_error
-# to 0 when you want to batch-triage multiple UBSan reports in one run.
+# Sanitizer reports go to stderr by default. The game `_freopen`s stderr
+# to stderr.txt very early in init, so ASan/UBSan output ends up
+# interleaved with the game's own stderr in that file. That's the
+# intended destination — `tail -f stderr.txt` follows everything.
+#
+# UBSan: full stack trace on every hit, abort on first hit. Flip
+# halt_on_error to 0 when you want to batch-triage multiple reports.
+# ASan: skip leak detection (game leaks at shutdown by design), don't
+# abort on first report so full UBSan context appears if both fire.
 : "${UBSAN_OPTIONS:=print_stacktrace=1:halt_on_error=1:symbolize=1}"
-
-# ASan: skip leak detection (game leaks at shutdown by design), keep
-# symbolization on, don't abort on first report so you see the full UBSan
-# context if both fire at once. Set abort_on_error=1 if you want a coredump.
 : "${ASAN_OPTIONS:=detect_leaks=0:abort_on_error=0:symbolize=1:print_stacktrace=1}"
 
 export ASAN_SYMBOLIZER_PATH UBSAN_SYMBOLIZER_PATH UBSAN_OPTIONS ASAN_OPTIONS

@@ -186,7 +186,7 @@ LAB_00578fc0:
     local_28 = this_ptr->geometry_filename;
     do {
       g_GroundTextureCount = 0;
-      engine_dosio_c_ensureTrailingSlash_FUN_00481f80(".\\GroundTypes",local_14,local_1a0);
+      engine_dosio_c_ensureTrailingSlash_FUN_00481f80(g_GroundTypesBuffer,local_14,local_1a0);
       engine_dosio_c_splitPath_FUN_00481f20(local_28,(char *)0x0,(char *)0x0,local_3a0,(char *)0x0);
       engine_dosio_c_makePath_FUN_00481f50(local_6a8,local_14,local_1a0,local_3a0,".txt");
       core_setedit_cpp_loadGroundTypes_FUN_00578420(local_6a8);

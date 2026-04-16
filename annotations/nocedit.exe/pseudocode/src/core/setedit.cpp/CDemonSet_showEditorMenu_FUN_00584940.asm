@@ -356,11 +356,11 @@ section .text
     MOV dword ptr [EBP + 0x161668],0x0  ; 00584c5b
     JMP 0x00584b04                      ; 00584c65
         ;   XREF to: 00584b04 (UNCONDITIONAL_JUMP)  ; LAB_00584b04
-    MOV ESI,0x6816d8                    ; 00584c6a | = ".\\GroundTypes"
+    MOV ESI,0x6816d8                    ; 00584c6a | g_GroundTypesBuffer
         ;   Label: LAB_00584c6a
     LEA EDI,[ESP + 0x3a8]               ; 00584c6f
     PUSH EDI                            ; 00584c76
-    MOV AL,byte ptr [ESI]               ; 00584c77 | = ".\\GroundTypes" | s_GroundTypes_006816da
+    MOV AL,byte ptr [ESI]               ; 00584c77 | g_GroundTypesBuffer | s_GroundTypes_006816da
         ;   Label: LAB_00584c77
     MOV byte ptr [EDI],AL               ; 00584c79
     CMP AL,0x0                          ; 00584c7b
@@ -382,7 +382,7 @@ section .text
     PUSH EAX                            ; 00584ca0
     LEA EAX,[ESP + 0x704]               ; 00584ca1
     PUSH EAX                            ; 00584ca8
-    PUSH 0x6816d8                       ; 00584ca9 | = ".\\GroundTypes"
+    PUSH 0x6816d8                       ; 00584ca9 | g_GroundTypesBuffer
     CALL engine_dosio.c_ensureTrailingSlash_FUN_00481f80 ; 00584cae
         ;   XREF to: 00481f80 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_ensureTrailingSlash_FUN_00481f80(char * input_path, char * drive, char * output_path)
     ADD ESP,0xc                         ; 00584cb3

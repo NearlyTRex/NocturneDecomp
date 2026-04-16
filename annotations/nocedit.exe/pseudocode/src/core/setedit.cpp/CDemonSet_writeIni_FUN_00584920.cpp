@@ -10,6 +10,6 @@ void __cdecl core_setedit_cpp_CDemonSet_writeIni_FUN_00584920(CDemonSet *set,CIn
 
 {
   engine_ini_cpp_CIniFile_setString_FUN_004fbbb0
-            (ini_file,"groundTypeDirectory",".\\GroundTypes");
+            (ini_file,"groundTypeDirectory",g_GroundTypesBuffer);
   return;
 }

@@ -17,7 +17,7 @@ void __cdecl core_game_cpp_joinNetworkGame_FUN_004e2fc0(void)
   char local_74 [100];
   uint local_10;
   
-  pcVar2 = "10.0.0.105";
+  pcVar2 = g_IpAddress;
   pcVar3 = local_74;
   for (iVar1 = 0x19; iVar1 != 0; iVar1 = iVar1 + -1) {
     *(uint *)pcVar3 = *(uint *)pcVar2;

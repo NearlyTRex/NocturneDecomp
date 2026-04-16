@@ -19,7 +19,7 @@
 ;   TerminatedCString s_s_00639077
 ;   TerminatedCString s_s_0063907c
 ;   TerminatedCString s_anon_00639085
-;   TerminatedCString s_none_0067d690
+;   char[20] g_DefaultMissionIdentifier
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
@@ -37,7 +37,7 @@ section .text
     CMP EBX,0xff000000                  ; 00523afa
     JNC 0x00523b49                      ; 00523b00
         ;   XREF to: 00523b49 (CONDITIONAL_JUMP)  ; LAB_00523b49
-    MOV EAX,0x67d690                    ; 00523b02 | = "(none)"
+    MOV EAX,0x67d690                    ; 00523b02 | g_DefaultMissionIdentifier
     TEST EBX,EBX                        ; 00523b07
     JZ 0x00523b20                       ; 00523b09
         ;   XREF to: 00523b20 (CONDITIONAL_JUMP)  ; LAB_00523b20
@@ -48,7 +48,7 @@ section .text
         ;   XREF to: 0040ac80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor * this_ptr, char * context_file, int context_line)
     ADD ESP,0xc                         ; 00523b1b
     MOV EAX,EBX                         ; 00523b1e
-    PUSH EAX                            ; 00523b20 | = "(none)"
+    PUSH EAX                            ; 00523b20 | g_DefaultMissionIdentifier
         ;   Label: LAB_00523b20
     PUSH 0x639077                       ; 00523b21 | = "\"%s\""
     PUSH ESI                            ; 00523b26

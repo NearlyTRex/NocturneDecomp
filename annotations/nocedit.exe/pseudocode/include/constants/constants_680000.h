@@ -10,7 +10,6 @@
 // =============================================================================
 
 // TerminatedCString constants
-static TerminatedCString s_CEnemy_006804b8 = "CEnemy";
 static TerminatedCString s_UNDO_TMP_00680800 = "$$UNDO$$.TMP";
 static TerminatedCString s_PLAYMSN_TMP_00680820 = "$PLAYMSN.TMP";
 static TerminatedCString s_DUPACTOR_TMP_006808f8 = "DUPACTOR.TMP";
@@ -41,13 +40,10 @@ static TerminatedCString s_SIntersectXZCylinder_00681479 = "$SIntersectXZCylinde
 static TerminatedCString s_SCollisionReturnInfo_00681495 = "$SCollisionReturnInfo$$";
 static TerminatedCString s_SRaytraceState_006814b1 = "$SRaytraceState$$";
 static TerminatedCString s_CZThumb_00681688 = "$CZThumb$$";
-static TerminatedCString s_GroundTypes_006816d8 = ".\\GroundTypes";
 static TerminatedCString s_CShotgun_0068181c = "$CShotgun$$";
 static TerminatedCString s_CShovel_00681830 = "$CShovel$$";
 static TerminatedCString s_CSimBox_00681844 = "$CSimBox$$";
 static TerminatedCString s_skeledit_ini_00681868 = "skeledit.ini";
-static TerminatedCString s_gore_00681878 = "gore";
-static TerminatedCString s_file_error_006818e0 = "(file error)";
 static TerminatedCString s_TEST_MOT_00681a08 = "$$TEST$$.MOT";
 static TerminatedCString s_BatchDfm_txt_00681a18 = "BatchDfm.txt";
 static TerminatedCString s_BatchDfm_log_00681a28 = "BatchDfm.log";
@@ -252,6 +248,7 @@ static char g_DeleteActorsWildcardBuffer[104] = {
     (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
     (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00
 };
+static char g_GoreBuffer[] = "gore";
 
 // char[116] constants
 static char g_MsnEditImportWildcardPattern[116] = {
@@ -298,6 +295,7 @@ static char g_MonthNamesShort[12][4] = {
 static char g_HexLookupTable[] = "0123456789abcdef";
 
 // char[200] constants
+static char g_ActorEnemyBuffer[] = "CEnemy";
 static char g_ActorWildcardBuffer[200] = {
     (char)0x2A, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
     (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
@@ -343,6 +341,10 @@ static char g_ShiftJIS_TrailByteTable[256] = {
     (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C, (char)0x0C,
     (char)0x0C, (char)0x00, (char)0x00, (char)0x00
 };
+
+// char[260] constants
+static char g_GroundTypesBuffer[] = ".\\GroundTypes";
+static char g_FileErrorBuffer[] = "(file error)";
 
 // char[36] constants
 static char g_AlphaNumericCharacters1[] = "0123456789abcdefghijklmnopqrstuvwxyz";

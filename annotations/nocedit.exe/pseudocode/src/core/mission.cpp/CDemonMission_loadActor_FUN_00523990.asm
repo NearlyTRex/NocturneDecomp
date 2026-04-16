@@ -24,7 +24,7 @@
 ;   TerminatedCString s_WARNING_Can_t_find_actor_00639001
 ;   TerminatedCString s_x_0063905b
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   TerminatedCString s_none_0067d690
+;   char[20] g_DefaultMissionIdentifier
 ;   uchar[257] g_CharacterClassificationTable
 ;   CEditorTools g_CEditorToolsInstance
 ;   char* g_CurrentFilename
@@ -127,7 +127,7 @@ section .text
     CMP EAX,0x1                         ; 00523a53
     JNZ 0x005239f4                      ; 00523a56
         ;   XREF to: 005239f4 (CONDITIONAL_JUMP)  ; LAB_005239f4
-    PUSH 0x67d690                       ; 00523a58 | = "(none)"
+    PUSH 0x67d690                       ; 00523a58 | g_DefaultMissionIdentifier
     LEA EAX,[ESP + 0x4]                 ; 00523a5d
     PUSH EAX                            ; 00523a61
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00523a62

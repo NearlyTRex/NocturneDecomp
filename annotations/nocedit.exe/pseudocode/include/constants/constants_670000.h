@@ -10,7 +10,6 @@
 
 // TerminatedCString constants
 static TerminatedCString s_CDemonLight_006700c4 = "$CDemonLight$$";
-static TerminatedCString s_t_00670108 = "t:\\";
 static TerminatedCString s_ra4hqpoint_00670284 = "$__ra4hqpoint$$";
 static TerminatedCString s_CCourse_006702a4 = "$CCourse$$";
 static TerminatedCString s_CKeyFramedModel_006702b4 = "$CKeyFramedModel$$";
@@ -67,7 +66,6 @@ static TerminatedCString s_CGabriella_0067b5ac = "$CGabriella$$";
 static TerminatedCString s_save_SAVE_TMP_0067b670 = "save\\$$SAVE$$.TMP";
 static TerminatedCString s_EFD_0067b684 = "EFD";
 static TerminatedCString s_file_corrupt_0067b688 = "(file corrupt)";
-static TerminatedCString s_s_10_0_0_105_0067b868 = "10.0.0.105";
 static TerminatedCString s_CAlphaBitmap_0067b8d4 = "$CAlphaBitmap$$";
 static TerminatedCString s_CGame_0067b8f4 = "$CGame$$";
 static TerminatedCString s_CGargoyle_0067b908 = "$CGargoyle$$";
@@ -134,7 +132,6 @@ static TerminatedCString s_CMimic_0067d518 = "$CMimic$$";
 static TerminatedCString s_CMineCar_0067d52c = "$CMineCar$$";
 static TerminatedCString s_SClipPlane_0067d53c = "$SClipPlane$$";
 static TerminatedCString s_corrupt_0067d558 = "corrupt!";
-static TerminatedCString s_none_0067d690 = "(none)";
 static TerminatedCString s_CDemonMission_0067d6a4 = "$CDemonMission$$";
 static TerminatedCString s_GenuineIntel_0067d6c0 = "GenuineIntel";
 static TerminatedCString s_CMobster_0067d6ec = "$CMobster$$";
@@ -187,6 +184,9 @@ static char* g_MenuBitmapFilenames[8] = {
     "f0100", "f0300", "f0500", "f0700",
     "f0900", "f1100", "f1300", "f1500"
 };
+
+// char[100] constants
+static char g_IpAddress[] = "10.0.0.105";
 
 // char[1024] constants
 static char g_HuffmanData12[1024] = {
@@ -595,6 +595,9 @@ static char g_HuffmanData01[16] = {
     (char)0x00, (char)0x11, (char)0x00, (char)0x00
 };
 
+// char[20] constants
+static char g_DefaultMissionIdentifier[] = "(none)";
+
 // char[256] constants
 static char g_HuffmanData09[256] = {
     (char)0x02, (char)0x01, (char)0x00, (char)0x00, (char)0x04, (char)0x01, (char)0x02, (char)0x01, (char)0x00, (char)0x10, (char)0x00, (char)0x01,
@@ -668,6 +671,9 @@ static char g_HuffmanData11[256] = {
     (char)0x00, (char)0x75, (char)0x00, (char)0x57, (char)0x02, (char)0x01, (char)0x00, (char)0x76, (char)0x02, (char)0x01, (char)0x00, (char)0x67,
     (char)0x00, (char)0x77, (char)0x00, (char)0x00
 };
+
+// char[260] constants
+static char g_NetworkModelFilename[] = "t:\\";
 
 // char[40] constants
 static char g_HuffmanData02[40] = {

@@ -11,7 +11,7 @@
 ;   engine_console.cpp_CConsole_ctor_FUN_00441810 at 0044185c
 ;
 ; Referenced Globals:
-;   TerminatedCString s_console_txt_0066e8e8
+;   char[28] g_ConsoleLogFilename
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005fde40
@@ -32,7 +32,7 @@ section .text
         ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 00441a55
     MOV dword ptr [EBX + 0xfa4],0x0     ; 00441a58
-    PUSH 0x66e8e8                       ; 00441a62 | = "console.txt"
+    PUSH 0x66e8e8                       ; 00441a62 | g_ConsoleLogFilename
     MOV dword ptr [EBX + 0xfa8],0x0     ; 00441a67
     CALL crt_stdio.c_remove_FUN_005ff9d0 ; 00441a71
         ;   XREF to: 005ff9d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005ff9d0(char * filename)

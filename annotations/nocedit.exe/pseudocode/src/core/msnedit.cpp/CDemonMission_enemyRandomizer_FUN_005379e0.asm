@@ -139,7 +139,7 @@ section .text
     PUSH EDI                            ; 00537abc
         ;   Label: LAB_00537abc
     PUSH 0xc8                           ; 00537abd
-    PUSH 0x6804b8                       ; 00537ac2 | = "CEnemy"
+    PUSH 0x6804b8                       ; 00537ac2 | g_ActorEnemyBuffer
     PUSH 0x63bb0c                       ; 00537ac7 | = "Enter enemy types to process"
     MOV EBX,dword ptr [0x00678a60]      ; 00537acc | g_CEditorToolsPtr | g_CEditorToolsInstance
     PUSH EBX                            ; 00537ad2 | g_CEditorToolsInstance
@@ -325,7 +325,7 @@ section .text
         ;   Label: LAB_00537cb4
     JZ 0x00537d5f                       ; 00537cbb
         ;   XREF to: 00537d5f (CONDITIONAL_JUMP)  ; LAB_00537d5f
-    PUSH 0x6804b8                       ; 00537cc1 | = "CEnemy"
+    PUSH 0x6804b8                       ; 00537cc1 | g_ActorEnemyBuffer
         ;   Label: LAB_00537cc1
     PUSH EBX                            ; 00537cc6
     CALL core_actor.cpp_isOfClass_FUN_0040c6d0 ; 00537cc7

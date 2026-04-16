@@ -529,15 +529,16 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
             else {
               iVar18 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
                                  (g_CEditorToolsPtr,"Get model and textures from network",
-                                  "*.kfm","t:\\",1);
+                                  "*.kfm",g_NetworkModelFilename,1);
               if (iVar18 != 0) {
                 splitpath
-                          ("t:\\",local_18,local_998,local_698,local_b98);
+                          (g_NetworkModelFilename,local_18,local_998,local_698,local_b98);
                 makepath
                           (&stack0xfffff150,(char *)0x0,"models",local_698,local_b98);
                 iVar18 = engine_dosio_c_findFile_FUN_00481760((SFoundFileInfo *)&stack0xfffff150);
                 if ((iVar18 == 0) || (local_ca8 == 0)) {
-                  iVar18 = core_dmodel_cpp_copyFile_FUN_0047c930("t:\\",&stack0xfffff150,1);
+                  iVar18 = core_dmodel_cpp_copyFile_FUN_0047c930
+                                     (g_NetworkModelFilename,&stack0xfffff150,1);
                   if (iVar18 != 0) {
                     makepath
                               (local_408,(char *)0x0,(char *)0x0,local_698,local_b98);
@@ -576,15 +577,16 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                 while( true ) {
                   iVar18 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                                      (g_CEditorToolsPtr,"Enter network model filename (*.KFM)",
-                                      "t:\\",200,1);
+                                      g_NetworkModelFilename,200,1);
                   if (iVar18 == 0) goto LAB_0047d6c7;
                   splitpath
-                            ("t:\\",local_14,local_a98,local_798,local_898);
+                            (g_NetworkModelFilename,local_14,local_a98,local_798,local_898);
                   if (local_898[0] != '\0') break;
                   makepath
-                            ("t:\\",local_14,local_a98,local_798,"kfm");
+                            (g_NetworkModelFilename,local_14,local_a98,local_798,"kfm");
                 }
-                core_dmodel_cpp_CKeyFramedModel_export_FUN_00478e10(this_ptr,"t:\\");
+                core_dmodel_cpp_CKeyFramedModel_export_FUN_00478e10(this_ptr,g_NetworkModelFilename)
+                ;
                 iVar18 = 0;
                 if (0 < this_ptr->texture_count) {
                   pcVar19 = this_ptr->texture_list[0].textures[0].texture_name;

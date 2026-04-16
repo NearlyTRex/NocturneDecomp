@@ -39,7 +39,7 @@ section .text
     PUSH EDI                            ; 005b5ec2
     PUSH EBP                            ; 005b5ec3
     SUB ESP,0x3b90                      ; 005b5ec4
-    PUSH 0x684010                       ; 005b5eca | = "trid3d.dll"
+    PUSH 0x684010                       ; 005b5eca | g_RendererDllName
     CALL wincore_wddvmem.cpp_loadLibrary_FUN_005ede10 ; 005b5ecf
         ;   XREF to: 005ede10 (UNCONDITIONAL_CALL)  ; HMODULE wincore_wddvmem.cpp_loadLibrary_FUN_005ede10(LPCSTR lpLibFileName)
     ADD ESP,0x4                         ; 005b5ed4

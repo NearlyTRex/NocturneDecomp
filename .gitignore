@@ -21,7 +21,12 @@
 *.POD
 *.pod
 *.AVI
+# Ignore files named *.exe anywhere in the tree, but re-include directories
+# whose name happens to end in .exe (e.g. `annotations/nocedit.exe/`).
+# The trailing `/` on the negation makes it directory-only; the ignore line
+# above still catches every real `.exe` file.
 *.exe
+!*.exe/
 *.jpg
 *.gif
 *.html

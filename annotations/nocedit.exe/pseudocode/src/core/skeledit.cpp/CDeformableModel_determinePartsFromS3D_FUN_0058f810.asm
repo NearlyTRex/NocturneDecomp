@@ -706,9 +706,9 @@ section .text
     MOV ECX,0x19                        ; 0058fdbb
         ;   Label: LAB_0058fdbb
     LEA EDI,[ESP + 0x9e70]              ; 0058fdc0
-    MOV ESI,0x681878                    ; 0058fdc7 | = "gore"
+    MOV ESI,0x681878                    ; 0058fdc7 | g_GoreBuffer
     MOV EAX,dword ptr [EBP + 0x18]      ; 0058fdcc
-    MOVSD.REP ES:EDI,ESI                ; 0058fdcf | = "gore" | s_gore_00681878+4
+    MOVSD.REP ES:EDI,ESI                ; 0058fdcf | g_GoreBuffer | g_GoreBuffer+4
     CMP dword ptr [EAX + 0x308],0x0     ; 0058fdd1
     JNZ 0x0058fdfa                      ; 0058fdd8
         ;   XREF to: 0058fdfa (CONDITIONAL_JUMP)  ; LAB_0058fdfa

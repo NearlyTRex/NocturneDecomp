@@ -88,10 +88,19 @@ typedef unsigned long long undefined8;
 // Generic pointer type
 typedef void* pointer;
 
-// Ghidra string types (const for C++ string literal compatibility)
-typedef char* TerminatedCString;
-typedef wchar_t* TerminatedUnicode;
-typedef char* string;  // Ghidra's generic string type
+// Ghidra string types. Typed `const char *` on purpose: Ghidra auto-detects
+// some statically-initialized buffers as C string literals and emits them as
+// TerminatedCString (e.g. g_RendererDllName = "trid3d.dll"). If the game
+// actually writes to that buffer at runtime \u2014 which it does, because the
+// original binary declared it as a fixed-size `char[N]` \u2014 we want the WRITE
+// call site to fail to compile (via -Wincompatible-pointer-types / -Werror),
+// not silently SEGV at runtime when the literal turns out to live in .rodata.
+// Real const strings that are only read (e.g. g_AxisLabelChars="XYZ") still
+// compile fine. Fix a compile error by retyping the global in Ghidra from
+// `char *` to `char[N]`, then re-exporting.
+typedef const char* TerminatedCString;
+typedef const wchar_t* TerminatedUnicode;
+typedef const char* string;  // Ghidra's generic string type
 
 // Extended precision float (x87 80-bit)
 typedef long double float10;

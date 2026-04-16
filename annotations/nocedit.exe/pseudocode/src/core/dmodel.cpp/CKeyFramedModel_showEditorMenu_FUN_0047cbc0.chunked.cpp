@@ -407,7 +407,7 @@ static int CKeyFramedModel_showEditorMenu_else_3(CKeyFramedModel_showEditorMenu_
     return 0;
 }
 
-// Chunk: check_bVar10_4_check_local_84_0_check_local_84_0 (lines 311-422 of original)
+// Chunk: check_bVar10_4_check_local_84_0_check_local_84_0 (lines 311-423 of original)
 static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_local_84_0(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
     CKeyFramedModel *&this_ptr = ctx->this_ptr;
     char &cVar1 = ctx->cVar1;
@@ -502,15 +502,16 @@ static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_
             else {
               iVar18 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
                                  (g_CEditorToolsPtr,"Get model and textures from network",
-                                  "*.kfm","t:\\",1);
+                                  "*.kfm",g_NetworkModelFilename,1);
               if (iVar18 != 0) {
                 splitpath
-                          ("t:\\",local_18,local_998,local_698,local_b98);
+                          (g_NetworkModelFilename,local_18,local_998,local_698,local_b98);
                 makepath
                           (&stack0xfffff150,(char *)0x0,"models",local_698,local_b98);
                 iVar18 = engine_dosio_c_findFile_FUN_00481760((SFoundFileInfo *)&stack0xfffff150);
                 if ((iVar18 == 0) || (local_ca8 == 0)) {
-                  iVar18 = core_dmodel_cpp_copyFile_FUN_0047c930("t:\\",&stack0xfffff150,1);
+                  iVar18 = core_dmodel_cpp_copyFile_FUN_0047c930
+                                     (g_NetworkModelFilename,&stack0xfffff150,1);
                   if (iVar18 != 0) {
                     makepath
                               (local_408,(char *)0x0,(char *)0x0,local_698,local_b98);
@@ -541,7 +542,7 @@ static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_
     return 0;
 }
 
-// Chunk: check_bVar10_4_check_local_84_0_check_local_84_1 (lines 422-455 of original)
+// Chunk: check_bVar10_4_check_local_84_0_check_local_84_1 (lines 423-457 of original)
 static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_local_84_1(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
     CKeyFramedModel *&this_ptr = ctx->this_ptr;
     int &iVar12 = ctx->iVar12;
@@ -561,15 +562,16 @@ static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_
                 while( true ) {
                   iVar18 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                                      (g_CEditorToolsPtr,"Enter network model filename (*.KFM)",
-                                      "t:\\",200,1);
+                                      g_NetworkModelFilename,200,1);
  return GOTO_LAB_0047d6c7;
                   splitpath
-                            ("t:\\",local_14,local_a98,local_798,local_898);
+                            (g_NetworkModelFilename,local_14,local_a98,local_798,local_898);
                   if (local_898[0] != '\0') break;
                   makepath
-                            ("t:\\",local_14,local_a98,local_798,"kfm");
+                            (g_NetworkModelFilename,local_14,local_a98,local_798,"kfm");
                 }
-                core_dmodel_cpp_CKeyFramedModel_export_FUN_00478e10(this_ptr,"t:\\");
+                core_dmodel_cpp_CKeyFramedModel_export_FUN_00478e10(this_ptr,g_NetworkModelFilename)
+                ;
                 iVar18 = 0;
                 if (0 < this_ptr->texture_count) {
                   pcVar19 = this_ptr->texture_list[0].textures[0].texture_name;
@@ -586,7 +588,7 @@ static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_
     return 0;
 }
 
-// Chunk: check_bVar10_4_check_local_84_0_check_local_84_2 (lines 455-485 of original)
+// Chunk: check_bVar10_4_check_local_84_0_check_local_84_2 (lines 457-487 of original)
 static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_local_84_2(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
     CKeyFramedModel *&this_ptr = ctx->this_ptr;
     int &iVar12 = ctx->iVar12;
@@ -626,7 +628,7 @@ static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_
     return 0;
 }
 
-// Chunk: check_bVar10_4_check_local_84_0_check_local_84_3 (lines 485-508 of original)
+// Chunk: check_bVar10_4_check_local_84_0_check_local_84_3 (lines 487-510 of original)
 static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_local_84_3(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
     CKeyFramedModel *&this_ptr = ctx->this_ptr;
     int &iVar18 = ctx->iVar18;
@@ -657,7 +659,7 @@ static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_
     return 0;
 }
 
-// Chunk: check_bVar10_4_check_local_84_1 (lines 550-622 of original)
+// Chunk: check_bVar10_4_check_local_84_1 (lines 552-624 of original)
 static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_1(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
     CKeyFramedModel *&this_ptr = ctx->this_ptr;
     float &fVar3 = ctx->fVar3;
@@ -749,7 +751,7 @@ static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_1(CKeyFr
     return 0;
 }
 
-// Chunk: check_bVar10_4_check_local_84_2 (lines 631-674 of original)
+// Chunk: check_bVar10_4_check_local_84_2 (lines 633-676 of original)
 static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_2(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
     CKeyFramedModel *&this_ptr = ctx->this_ptr;
     int &iVar18 = ctx->iVar18;

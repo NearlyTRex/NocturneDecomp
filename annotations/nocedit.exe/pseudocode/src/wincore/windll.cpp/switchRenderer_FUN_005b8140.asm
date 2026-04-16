@@ -11,7 +11,7 @@
 ;   wincore_windll.cpp_CExternalRenderer_switchRenderer_FUN_005b8117 at 005b812f
 ;
 ; Referenced Globals:
-;   TerminatedCString g_RendererDllName
+;   char[256] g_RendererDllName
 ;   undefined4 g_RendererDllName+1
 ;   undefined4 s_id3d_dll_00684012
 ;   undefined4 s_d3d.dll_00684013
@@ -33,12 +33,12 @@ section .text
         ;   XREF to: 005b71e0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_kill_FUN_005b71e0()
     MOV EAX,dword ptr [ESP + 0x10]      ; 005b8147
     MOV ESI,dword ptr [ESP + 0xc]       ; 005b814b
-    MOV EDI,0x684010                    ; 005b814f | = "trid3d.dll"
+    MOV EDI,0x684010                    ; 005b814f | g_RendererDllName
     MOV [0x03f6b87c],EAX                ; 005b8154 | g_RendererHandle
-    PUSH EDI                            ; 005b8159 | = "trid3d.dll"
+    PUSH EDI                            ; 005b8159 | g_RendererDllName
     MOV AL,byte ptr [ESI]               ; 005b815a
         ;   Label: LAB_005b815a
-    MOV byte ptr [EDI],AL               ; 005b815c | = "trid3d.dll" | s_id3d_dll_00684012
+    MOV byte ptr [EDI],AL               ; 005b815c | g_RendererDllName | s_id3d_dll_00684012
     CMP AL,0x0                          ; 005b815e
     JZ 0x005b8172                       ; 005b8160
         ;   XREF to: 005b8172 (CONDITIONAL_JUMP)  ; LAB_005b8172

@@ -62,7 +62,6 @@ static TerminatedCString s_istrstream_0066e88c = "$istrstream$$";
 static TerminatedCString s_ostrstream_0066e89e = "$ostrstream$$";
 static TerminatedCString s_CCodec_0066e8b0 = "$CCodec$$";
 static TerminatedCString s_CColonel_0066e8c4 = "$CColonel$$";
-static TerminatedCString s_console_txt_0066e8e8 = "console.txt";
 static TerminatedCString s_CConsole_0066e904 = "$CConsole$$";
 static TerminatedCString s_CPlatform_0066e918 = "$CPlatform$$";
 static TerminatedCString s_CConveyor_0066e92c = "$CConveyor$$";
@@ -81,6 +80,9 @@ static TerminatedCString s_CFilterCache_0066efec = "$CFilterCache$$";
 
 // char*[4] constants
 static char* g_CourseAxisLabels[4] = {nullptr, "x", "y", "z"};
+
+// char[28] constants
+static char g_ConsoleLogFilename[] = "console.txt";
 
 // char[5][32] constants
 static char g_EditorTextureModeNames[5][32] = {
