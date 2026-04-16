@@ -17,7 +17,7 @@ struct CCharacter_ptr_12060 {
     template<typename T> CCharacter_ptr_12060(T* p) : _raw((void*)p) {}
     template<typename T> CCharacter_ptr_12060& operator=(T* p) { _raw = (void*)p; return *this; }
     SFire* operator->() const { return (SFire*)_raw; }
-    CCharacter* adj() const { return (CCharacter*)_raw; }
+    CCharacter* adj() const { return (CCharacter*)((char*)_raw - 12060); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

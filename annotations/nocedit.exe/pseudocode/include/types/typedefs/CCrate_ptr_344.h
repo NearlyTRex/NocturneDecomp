@@ -17,7 +17,7 @@ struct CCrate_ptr_344 {
     template<typename T> CCrate_ptr_344(T* p) : _raw((void*)p) {}
     template<typename T> CCrate_ptr_344& operator=(T* p) { _raw = (void*)p; return *this; }
     CKeyFramedModelInstance* operator->() const { return (CKeyFramedModelInstance*)_raw; }
-    CCrate* adj() const { return (CCrate*)_raw; }
+    CCrate* adj() const { return (CCrate*)((char*)_raw - 344); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

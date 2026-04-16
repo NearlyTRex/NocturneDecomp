@@ -16,7 +16,7 @@ struct CMineCar_ptr_784 {
     template<typename T> CMineCar_ptr_784(T* p) : _raw((void*)p) {}
     template<typename T> CMineCar_ptr_784& operator=(T* p) { _raw = (void*)p; return *this; }
     CMineCar* operator->() const { return (CMineCar*)_raw; }
-    CMineCar* adj() const { return (CMineCar*)_raw; }
+    CMineCar* adj() const { return (CMineCar*)((char*)_raw - 784); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

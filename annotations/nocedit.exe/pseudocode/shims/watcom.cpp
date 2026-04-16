@@ -23,6 +23,9 @@
 // Array Construction Functions
 // =============================================================================
 
+// WATCOM_TRAMPOLINE is defined in system/watcom.h — see the comment there.
+
+WATCOM_TRAMPOLINE
 void* __arrinit(void* array_start, int count, WatcomTypeInfo* ti) {
     char* p = (char*)array_start;
     for (int i = 0; i < count; i++, p += ti->instance_size)
@@ -49,6 +52,7 @@ void* __vec_new(void* dest, int count, WatcomTypeInfo* ti) {
     return __vec_new_(dest, count, ti);
 }
 
+WATCOM_TRAMPOLINE
 void* __arrcopy(void* dest, void* src, int count, WatcomTypeInfo* ti) {
     char* d = (char*)dest;
     char* s = (char*)src;
@@ -63,6 +67,7 @@ void* __arrcopy(void* dest, void* src, int count, WatcomTypeInfo* ti) {
 // Array Destruction Functions
 // =============================================================================
 
+WATCOM_TRAMPOLINE
 void* __arrdtor(WatcomTypeArrayInfo* info) {
     char* p = (char*)info->obj_array + (info->obj_count - 1) * info->type_info->instance_size;
     for (int i = info->obj_count - 1; i >= 0; i--, p -= info->type_info->instance_size)

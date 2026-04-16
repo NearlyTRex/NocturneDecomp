@@ -17,7 +17,7 @@ struct CTire_ptr_20 {
     template<typename T> CTire_ptr_20(T* p) : _raw((void*)p) {}
     template<typename T> CTire_ptr_20& operator=(T* p) { _raw = (void*)p; return *this; }
     CKeyFramedModelInstance* operator->() const { return (CKeyFramedModelInstance*)_raw; }
-    CTire* adj() const { return (CTire*)_raw; }
+    CTire* adj() const { return (CTire*)((char*)_raw - 20); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

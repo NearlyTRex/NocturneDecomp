@@ -17,7 +17,7 @@ struct CDemonSet_ptr_1422356 {
     template<typename T> CDemonSet_ptr_1422356(T* p) : _raw((void*)p) {}
     template<typename T> CDemonSet_ptr_1422356& operator=(T* p) { _raw = (void*)p; return *this; }
     SVDBox* operator->() const { return (SVDBox*)_raw; }
-    CDemonSet* adj() const { return (CDemonSet*)_raw; }
+    CDemonSet* adj() const { return (CDemonSet*)((char*)_raw - 1422356); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

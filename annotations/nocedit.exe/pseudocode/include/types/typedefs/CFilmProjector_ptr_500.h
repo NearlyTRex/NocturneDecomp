@@ -17,7 +17,7 @@ struct CFilmProjector_ptr_500 {
     template<typename T> CFilmProjector_ptr_500(T* p) : _raw((void*)p) {}
     template<typename T> CFilmProjector_ptr_500& operator=(T* p) { _raw = (void*)p; return *this; }
     CKeyFramedModelInstance* operator->() const { return (CKeyFramedModelInstance*)_raw; }
-    CFilmProjector* adj() const { return (CFilmProjector*)_raw; }
+    CFilmProjector* adj() const { return (CFilmProjector*)((char*)_raw - 500); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

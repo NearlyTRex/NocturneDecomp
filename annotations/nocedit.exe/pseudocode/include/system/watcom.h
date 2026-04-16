@@ -166,6 +166,23 @@ typedef struct _heapinfo {
 // =============================================================================
 
 // ---------------------------------------------------------------------------
+// UBSan helpers
+// ---------------------------------------------------------------------------
+// Watcom's array/ctor/dtor runtime dispatches through generic function-pointer
+// slots whose signatures never match the real per-class targets. UBSan's
+// -fsanitize=function flags every such indirect call even though the
+// indirection is safe by construction (the compiler emits matching TypeInfo).
+// WATCOM_TRAMPOLINE marks the trampoline functions (both this header's inline
+// template __arr_op and the out-of-line shims in shims/watcom.cpp) exempt
+// from the function-type check. Keep the attribute list narrow on purpose so
+// real UBSan hits elsewhere still fire.
+#if defined(__clang__) || defined(__GNUC__)
+#  define WATCOM_TRAMPOLINE __attribute__((no_sanitize("function")))
+#else
+#  define WATCOM_TRAMPOLINE
+#endif
+
+// ---------------------------------------------------------------------------
 // Array Construction Functions
 // ---------------------------------------------------------------------------
 
@@ -177,8 +194,12 @@ extern void* __vec_new(void* dest, int count, WatcomTypeInfo* ti);
 extern void* __arrcopy(void* dest, void* src, int count, WatcomTypeInfo* ti);
 
 // __arr_op - Generic array operation with function pointer
-// Templated to accept any function pointer type (callers pass typed copy funcs)
+// Templated to accept any function pointer type (callers pass typed copy funcs).
+// WATCOM_TRAMPOLINE suppresses UBSan -fsanitize=function: Watcom dispatches
+// through a generic void(*)(void*,void*) slot while the real target is a
+// per-class member function. The indirection is safe by construction.
 template<typename CopyFunc>
+WATCOM_TRAMPOLINE
 inline void* __arr_op(void* dest, void* src, int count, int size, CopyFunc copy_func) {
     char* d = (char*)dest;
     char* s = (char*)src;

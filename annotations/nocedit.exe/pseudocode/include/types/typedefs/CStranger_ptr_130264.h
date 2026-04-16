@@ -17,7 +17,7 @@ struct CStranger_ptr_130264 {
     template<typename T> CStranger_ptr_130264(T* p) : _raw((void*)p) {}
     template<typename T> CStranger_ptr_130264& operator=(T* p) { _raw = (void*)p; return *this; }
     CKeyFramedModelInstance* operator->() const { return (CKeyFramedModelInstance*)_raw; }
-    CStranger* adj() const { return (CStranger*)_raw; }
+    CStranger* adj() const { return (CStranger*)((char*)_raw - 130264); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

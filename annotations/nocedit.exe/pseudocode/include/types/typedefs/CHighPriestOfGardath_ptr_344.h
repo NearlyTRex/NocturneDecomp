@@ -16,7 +16,7 @@ struct CHighPriestOfGardath_ptr_344 {
     template<typename T> CHighPriestOfGardath_ptr_344(T* p) : _raw((void*)p) {}
     template<typename T> CHighPriestOfGardath_ptr_344& operator=(T* p) { _raw = (void*)p; return *this; }
     CHighPriestOfGardath* operator->() const { return (CHighPriestOfGardath*)_raw; }
-    CHighPriestOfGardath* adj() const { return (CHighPriestOfGardath*)_raw; }
+    CHighPriestOfGardath* adj() const { return (CHighPriestOfGardath*)((char*)_raw - 344); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

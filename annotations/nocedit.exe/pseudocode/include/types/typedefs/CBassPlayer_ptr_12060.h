@@ -16,7 +16,7 @@ struct CBassPlayer_ptr_12060 {
     template<typename T> CBassPlayer_ptr_12060(T* p) : _raw((void*)p) {}
     template<typename T> CBassPlayer_ptr_12060& operator=(T* p) { _raw = (void*)p; return *this; }
     CBassPlayer* operator->() const { return (CBassPlayer*)_raw; }
-    CBassPlayer* adj() const { return (CBassPlayer*)_raw; }
+    CBassPlayer* adj() const { return (CBassPlayer*)((char*)_raw - 12060); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

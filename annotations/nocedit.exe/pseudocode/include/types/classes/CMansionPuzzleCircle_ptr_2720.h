@@ -17,7 +17,7 @@ struct CMansionPuzzleCircle_ptr_2720 {
     template<typename T> CMansionPuzzleCircle_ptr_2720(T* p) : _raw((void*)p) {}
     template<typename T> CMansionPuzzleCircle_ptr_2720& operator=(T* p) { _raw = (void*)p; return *this; }
     SGem* operator->() const { return (SGem*)_raw; }
-    CMansionPuzzleCircle* adj() const { return (CMansionPuzzleCircle*)_raw; }
+    CMansionPuzzleCircle* adj() const { return (CMansionPuzzleCircle*)((char*)_raw - 2720); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

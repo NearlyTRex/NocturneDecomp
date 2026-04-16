@@ -17,7 +17,7 @@ struct CCryptVessel_ptr_1644 {
     template<typename T> CCryptVessel_ptr_1644(T* p) : _raw((void*)p) {}
     template<typename T> CCryptVessel_ptr_1644& operator=(T* p) { _raw = (void*)p; return *this; }
     CKeyFramedModelInstance* operator->() const { return (CKeyFramedModelInstance*)_raw; }
-    CCryptVessel* adj() const { return (CCryptVessel*)_raw; }
+    CCryptVessel* adj() const { return (CCryptVessel*)((char*)_raw - 1644); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

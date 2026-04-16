@@ -17,7 +17,7 @@ struct CMoloch_ptr_139100 {
     template<typename T> CMoloch_ptr_139100(T* p) : _raw((void*)p) {}
     template<typename T> CMoloch_ptr_139100& operator=(T* p) { _raw = (void*)p; return *this; }
     CMorph* operator->() const { return (CMorph*)_raw; }
-    CMoloch* adj() const { return (CMoloch*)_raw; }
+    CMoloch* adj() const { return (CMoloch*)((char*)_raw - 139100); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

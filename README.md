@@ -91,6 +91,15 @@ sudo apt install libsdl2-dev:i386 libsdl2-ttf-dev:i386 \
                  libavutil-dev:i386 libswscale-dev:i386
 ```
 
+**Additional for `exe-linux-asan` (readable sanitizer reports):** `llvm` provides
+`llvm-symbolizer`, which turns raw addresses in ASan/UBSan output into
+`function at file.cpp:line`. Without it the generated `build/<preset>/run.sh`
+still works, but reports fall back to unresolved addresses.
+
+```sh
+sudo apt install llvm
+```
+
 The `check-linux` preset is dependency-free beyond the core toolchain — it runs
 per-file `-fsyntax-only` and never links the shims. Only the exe presets pull
 in SDL2/FFmpeg.
@@ -109,6 +118,7 @@ cmake --build --preset exe-linux
 # Exe with AddressSanitizer + UBSan
 cmake --preset exe-linux-asan
 cmake --build --preset exe-linux-asan
+./build/exe-linux-asan/run.sh   # generated launcher with sanitizer env defaults
 ```
 
 Per-function source selection priority: `.keep.{cpp,c}` > raw `.cpp`/`.c`.

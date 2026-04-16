@@ -17,7 +17,7 @@ struct CDemonActor_ptr_296 {
     template<typename T> CDemonActor_ptr_296(T* p) : _raw((void*)p) {}
     template<typename T> CDemonActor_ptr_296& operator=(T* p) { _raw = (void*)p; return *this; }
     CDemonActorTransformState* operator->() const { return (CDemonActorTransformState*)_raw; }
-    CDemonActor* adj() const { return (CDemonActor*)_raw; }
+    CDemonActor* adj() const { return (CDemonActor*)((char*)_raw - 296); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

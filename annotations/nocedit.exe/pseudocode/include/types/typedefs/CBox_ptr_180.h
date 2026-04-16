@@ -17,7 +17,7 @@ struct CBox_ptr_180 {
     template<typename T> CBox_ptr_180(T* p) : _raw((void*)p) {}
     template<typename T> CBox_ptr_180& operator=(T* p) { _raw = (void*)p; return *this; }
     SScrape* operator->() const { return (SScrape*)_raw; }
-    CBox* adj() const { return (CBox*)_raw; }
+    CBox* adj() const { return (CBox*)((char*)_raw - 180); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

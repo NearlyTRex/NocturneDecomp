@@ -17,7 +17,7 @@ struct CBat_ptr_376 {
     template<typename T> CBat_ptr_376(T* p) : _raw((void*)p) {}
     template<typename T> CBat_ptr_376& operator=(T* p) { _raw = (void*)p; return *this; }
     CCourse* operator->() const { return (CCourse*)_raw; }
-    CBat* adj() const { return (CBat*)_raw; }
+    CBat* adj() const { return (CBat*)((char*)_raw - 376); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

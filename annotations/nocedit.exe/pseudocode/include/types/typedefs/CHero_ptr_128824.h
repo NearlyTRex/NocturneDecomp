@@ -17,7 +17,7 @@ struct CHero_ptr_128824 {
     template<typename T> CHero_ptr_128824(T* p) : _raw((void*)p) {}
     template<typename T> CHero_ptr_128824& operator=(T* p) { _raw = (void*)p; return *this; }
     CInventory* operator->() const { return (CInventory*)_raw; }
-    CHero* adj() const { return (CHero*)_raw; }
+    CHero* adj() const { return (CHero*)((char*)_raw - 128824); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

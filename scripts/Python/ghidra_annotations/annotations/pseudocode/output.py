@@ -4,7 +4,7 @@
 import os
 import re
 import json
-from ghidra_annotations.util import make_dirs
+from ghidra_annotations.util import make_dirs, write_if_changed
 from ghidra_annotations.util.log import log_info
 from ghidra_annotations.annotations.pseudocode.strings import sanitize_string
 from ghidra_annotations.annotations.pseudocode.functions import (
@@ -616,25 +616,23 @@ def write_function_files(output_base_path, source_filename, func_name, func_addr
     # Ensure directory exists
     make_dirs(os.path.dirname(contents['cpp_path']))
 
-    # Write files
+    # Write files — skip the write when bytes are unchanged so Ninja/ccache
+    # don't invalidate TUs after a no-op re-export.
     try:
-        with open(contents['cpp_path'], 'w') as f:
-            f.write(contents['cpp_content'])
+        write_if_changed(contents['cpp_path'], contents['cpp_content'])
     except Exception as e:
         log_info("Failed to write .cpp file: %s" % str(e))
         return False
 
     if contents.get('asm_content'):
         try:
-            with open(contents['asm_path'], 'w') as f:
-                f.write(contents['asm_content'])
+            write_if_changed(contents['asm_path'], contents['asm_content'])
         except Exception as e:
             log_info("Failed to write .asm file: %s" % str(e))
 
     if contents.get('json_content'):
         try:
-            with open(contents['json_path'], 'w') as f:
-                f.write(contents['json_content'])
+            write_if_changed(contents['json_path'], contents['json_content'])
         except Exception as e:
             log_info("Failed to write .json file: %s" % str(e))
 
@@ -664,8 +662,7 @@ def write_batched_files(file_list):
             dirs_created.add(dir_path)
 
         try:
-            with open(path, 'w') as f:
-                f.write(content)
+            write_if_changed(path, content)
             written += 1
         except Exception as e:
             log_info("Batch write failed for %s: %s" % (path, str(e)))
@@ -715,9 +712,8 @@ def export_function_prototypes(currentProgram, pseudocode_dir, function_groups):
 
         # Write the header file
         try:
-            with open(header_path, 'w') as f:
-                f.write("\n".join(content))
-            log_info("Created prototype header: %s with %d functions" % (virtual_filename, len(functions)))
+            if write_if_changed(header_path, "\n".join(content)):
+                log_info("Created prototype header: %s with %d functions" % (virtual_filename, len(functions)))
             headers_created += 1
         except Exception as e:
             log_info("Failed to write prototype header %s: %s" % (virtual_filename, str(e)))

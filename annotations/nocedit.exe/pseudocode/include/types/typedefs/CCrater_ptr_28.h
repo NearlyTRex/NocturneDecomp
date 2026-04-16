@@ -17,7 +17,7 @@ struct CCrater_ptr_28 {
     template<typename T> CCrater_ptr_28(T* p) : _raw((void*)p) {}
     template<typename T> CCrater_ptr_28& operator=(T* p) { _raw = (void*)p; return *this; }
     CVector3f* operator->() const { return (CVector3f*)_raw; }
-    CCrater* adj() const { return (CCrater*)_raw; }
+    CCrater* adj() const { return (CCrater*)((char*)_raw - 28); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

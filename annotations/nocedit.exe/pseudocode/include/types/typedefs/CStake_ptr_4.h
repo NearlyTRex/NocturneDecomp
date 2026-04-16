@@ -17,7 +17,7 @@ struct CStake_ptr_4 {
     template<typename T> CStake_ptr_4(T* p) : _raw((void*)p) {}
     template<typename T> CStake_ptr_4& operator=(T* p) { _raw = (void*)p; return *this; }
     CBox* operator->() const { return (CBox*)_raw; }
-    CStake* adj() const { return (CStake*)_raw; }
+    CStake* adj() const { return (CStake*)((char*)_raw - 4); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

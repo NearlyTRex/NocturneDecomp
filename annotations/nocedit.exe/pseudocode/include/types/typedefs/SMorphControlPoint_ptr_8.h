@@ -17,7 +17,7 @@ struct SMorphControlPoint_ptr_8 {
     template<typename T> SMorphControlPoint_ptr_8(T* p) : _raw((void*)p) {}
     template<typename T> SMorphControlPoint_ptr_8& operator=(T* p) { _raw = (void*)p; return *this; }
     CVector3f* operator->() const { return (CVector3f*)_raw; }
-    SMorphControlPoint* adj() const { return (SMorphControlPoint*)_raw; }
+    SMorphControlPoint* adj() const { return (SMorphControlPoint*)((char*)_raw - 8); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

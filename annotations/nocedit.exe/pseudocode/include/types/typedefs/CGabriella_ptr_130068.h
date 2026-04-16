@@ -17,7 +17,7 @@ struct CGabriella_ptr_130068 {
     template<typename T> CGabriella_ptr_130068(T* p) : _raw((void*)p) {}
     template<typename T> CGabriella_ptr_130068& operator=(T* p) { _raw = (void*)p; return *this; }
     CCloth* operator->() const { return (CCloth*)_raw; }
-    CGabriella* adj() const { return (CGabriella*)_raw; }
+    CGabriella* adj() const { return (CGabriella*)((char*)_raw - 130068); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

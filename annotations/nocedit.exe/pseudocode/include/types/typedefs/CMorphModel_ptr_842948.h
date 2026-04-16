@@ -16,7 +16,7 @@ struct CMorphModel_ptr_842948 {
     template<typename T> CMorphModel_ptr_842948(T* p) : _raw((void*)p) {}
     template<typename T> CMorphModel_ptr_842948& operator=(T* p) { _raw = (void*)p; return *this; }
     CMorphModel* operator->() const { return (CMorphModel*)_raw; }
-    CMorphModel* adj() const { return (CMorphModel*)_raw; }
+    CMorphModel* adj() const { return (CMorphModel*)((char*)_raw - 842948); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

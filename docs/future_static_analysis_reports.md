@@ -119,19 +119,85 @@ These are off-the-shelf tools that can run on the `.keep` files (and the raw `.c
 
 ### 11. AddressSanitizer / UBSan (runtime validation)
 
-**What it catches:** Runtime memory errors — out-of-bounds access, stack buffer overflow, use-after-free, undefined behavior (signed overflow, null dereference, type punning violations).
+**Status:** Wired up behind the `NOCTURNE_ASAN` CMake option (preset `exe-linux-asan`). `build/<preset>/run.sh` is generated at configure time with sanitizer-friendly env defaults and execs the binary.
 
-**How to run:** Compile with `-fsanitize=address,undefined` and run the binary against DirectDraw/DirectSound shims.
+**What it catches:** Runtime memory errors — out-of-bounds access, stack buffer overflow, use-after-free, undefined behavior (signed overflow, null dereference, type punning violations, wrong-type dynamic casts, misaligned loads, out-of-range enum stores).
 
-**Relevance:** The ultimate validation. Every wrong global, wrong struct field, and arg count mismatch will surface as a runtime error with a full stack trace pointing to the exact `.keep` file and line. This is the end-state validation tool — the static reports (1-10) are about catching as much as possible *before* hitting runtime so the first link-and-run session isn't just a wall of crashes.
+**Flag set.** For a decomp project the instinct is to disable UBSan checks that "seem noisy," but most of them catch exactly the type/layout mistakes we want to find. Disable only what's genuinely architectural and can't be fixed by correcting a decompilation:
+
+- **Keep on** — `vptr` (wrong class casts, ties directly into the actor cast mismatch report), `enum` (Ghidra-mistyped fields), `bounds` (wrong array sizes and real overruns), `alignment` (wrong struct layout — usually means a field offset is shifted), `unsigned-integer-overflow`, `null`, `return`, `shift`, `object-size`, `integer-divide-by-zero`.
+- **Triage per-hit, don't globally disable** — `signed-integer-overflow`. Intentional in hashes/RNGs (noise), bug elsewhere (usually a wrong integer type). Suppress per-function via an ignorelist when confirmed noise.
+- **Suppress narrowly** — `function`. Watcom's array ctor/copy/dtor runtime dispatches through type-erased `void(*)(void*)` slots; every target has a different real signature. Marked with `WATCOM_TRAMPOLINE` (`__attribute__((no_sanitize("function")))`) on the trampoline entry points only, so real indirect-call mismatches elsewhere still fire.
+- **ASan side** — turn off leak detection by default (`ASAN_OPTIONS=detect_leaks=0`) because game engines intentionally leak at shutdown; flip back on for leak-hunting sessions.
+
+**Env knobs** (baked into the generated `run.sh`; overridable inline):
+
+```sh
+ASAN_SYMBOLIZER_PATH=$(which llvm-symbolizer)        # readable stack traces, not raw addresses
+UBSAN_OPTIONS=print_stacktrace=1:halt_on_error=1     # full backtrace on first hit
+ASAN_OPTIONS=detect_leaks=0:print_stacktrace=1       # suppress shutdown-leak noise
+```
+
+Without `llvm-symbolizer` installed (`apt install llvm`), every report prints `nocturne+0xNNNNNN` instead of `function at file.cpp:line`, which makes triage roughly impossible on a codebase this size.
+
+**Bug classes discovered via ASan once wired up:**
+
+1. **Broken `adj()` in `*_ptr_N` adjusted-pointer typedefs.** The exporter emits a wrapper struct per Watcom adjusted-pointer type (`CDeformableModelInstance_ptr_88` = "pointer that is 88 bytes past a `CDeformableModelInstance`"). The name encodes the offset but the generated `adj()` method was casting the raw pointer without subtracting it, so every `ADJ(ptr)->field` write landed at `base + N + field_offset` instead of `base + field_offset`. Fixed in `scripts/Python/ghidra_annotations/annotations/pseudocode/headers.py`. Re-export regenerates every typedef with the correction.
+
+2. **Adjacency-sentinel init loops.** See §12 — the decompiler faithfully preserves `while (p != &next_global)` loop bounds that only work if the linker replicates the original binary's memory layout. Surfaced as global-buffer-overflow across every pool-init function in the game.
+
+**Relevance:** The ultimate validation. Every wrong global, wrong struct field, and arg count mismatch surfaces as a runtime error with a full stack trace pointing to the exact `.keep` file and line. The static reports (1-10, 13) exist to catch as much as possible *before* hitting runtime; ASan/UBSan catch what's left plus the classes of bug that are genuinely runtime-only (like the adjacency-sentinel pattern, which is invisible to any static check that doesn't know the target memory layout).
 
 ### 12. Linker-stage global address validation
 
-**What it catches:** Globals that the decompiler placed at the wrong address, or that overlap in ways the original binary intended but our reconstruction doesn't preserve.
+**What it catches:** Decompiled code that depends on the original binary's global-to-global memory layout.
 
-**Method:** When linking, emit a map file and compare every global's linked address against its expected address from the original binary's symbol table. Flag any global that moved relative to its neighbors — if `g_SetDisplayListSortBuffer` isn't adjacent to `g_SetDisplayListCount` in the linked binary, the Watcom base-shift code will break.
+**Concrete pattern observed** (`CFireEffect::init`, every pool-init in the game):
 
-**Relevance:** Critical for the Watcom base-shift pattern. Even if we fix the `.keep` files to use the right global names, the linker might place them at different relative offsets than the original Watcom linker did. We may need linker scripts or explicit section placement to guarantee layout.
+```cpp
+this_ptr_00 = g_SmokeParticlePool;
+do {
+    CSmokeParticle_reset(this_ptr_00);
+    this_ptr_00 = this_ptr_00 + 1;
+} while (this_ptr_00 != (CSmokeParticle *)&g_BulletHoleActiveCount);
+```
+
+Watcom emitted this loop because in the original `.exe`, `&g_BulletHoleActiveCount` was placed immediately after `g_SmokeParticlePool[2047]`, so pointer-equality against the next global was a cheap end-of-array check. Our linker places globals in arbitrary order, so the sentinel never matches and the loop walks past the pool.
+
+**Three candidate fixes — tradeoffs below:**
+
+#### Option A: Per-function `.keep.cpp` rewrites (what we're doing today)
+
+Replace each `while (p != &next_global)` with `while (p != &pool[N])` using the array size from the global's declaration. Confirmed working on `CFireEffect::init`.
+
+- **Pro:** targeted, obviously correct per-function, plays well with existing `.keep` workflow, doesn't change build infra.
+- **Con:** every pool-init in the game likely has the same shape — this is hand-patching a *category* of bugs one function at a time.
+
+#### Option B: Exporter-side detector and rewrite
+
+Teach the exporter to recognize `while (<iter> != (T*)&<global>)` where `<iter>` was derived from a declared array pool, and rewrite the sentinel to `&pool[size]`.
+
+- **Pro:** one implementation fixes every instance. Re-exports stay clean.
+- **Con:** pattern-matching on decompiled source is fragile — Ghidra sometimes emits the sentinel as `(<T>*)&g_Other + N`, through a local, or via `do/while` vs `while`, each needing its own matcher. Initial investment is real, and ongoing maintenance grows as Ghidra's output drifts.
+
+#### Option C: Linker script that reproduces original `.data`/`.bss` order
+
+Emit an `ld` linker script at export time that places every global at its original binary address (or at least preserves pairwise adjacency). Original addresses come from the Ghidra symbol table we already produce.
+
+- **Pro:** fixes every adjacency-sentinel loop at once, **without touching a single source file**. Also fixes hypothetical `&g_A + k == &g_B` pointer arithmetic patterns the decompiler might have baked in elsewhere.
+- **Cons (the important part):**
+  1. **It silences the tool that just caught the bug.** ASan pads global-variable redzones between every global *because* the linker normally places them with gaps. If we force globals into a specific contiguous layout via a linker script with hard addresses, ASan either can't insert redzones (if we pin addresses explicitly) or its redzones sit *outside* our enforced region — either way, overruns like the ones we just found will silently succeed instead of tripping ASan. You end up with a binary that runs, but any *real* out-of-bounds bug that was being masked by the wrong-sentinel behavior now corrupts the next global instead of being caught. The bug category gets hidden, not fixed.
+  2. **Watcom padding/alignment isn't reproducible by ld.** Watcom's linker applied its own rules for `.data`/`.bss` padding, section alignment, and segment-start alignment. Even with identical global ordering, byte-for-byte layout is unlikely to match, so the adjacency loops might still end at the wrong offset (`&pool[2048]` vs `&pool[2048] + padding`). Partial fix at best.
+  3. **Unnamed / synthesized globals can't be placed.** Original Watcom output includes globals that our export doesn't name — compiler-generated thunks, string literals coalesced by the CRT, `.bss` tail blocks, etc. These sat between named globals in the original layout; we have no symbol to place them by. Ordering the named globals only reproduces a subset of the original adjacencies — the rest are random.
+  4. **COMDAT / weak sections interfere.** C++ inline functions, template instantiations, and vtables live in COMDAT sections whose ordering is controlled by the toolchain, not our script. Anywhere the original binary placed a COMDAT between two named globals, our layout diverges.
+  5. **Every generated global declaration needs an attribute.** To put a global into a script-addressable section, each declaration needs `__attribute__((section("nocturne_data_<N>")))`. That means modifying the globals generator to emit the attribute, and the linker script has to list every section name. Re-exports must stay in sync with the script; a renamed global becomes a link failure.
+  6. **Struct-size mismatches aren't addressed.** Option C ensures globals *start* at the right offset but does nothing if `sizeof(CSmokeParticle)` differs between clang and Watcom (padding, alignment, a missing field). The pool still ends at the wrong byte, and an ending-based sentinel still walks past. Report #13 (struct layout verification) is the real fix for that, and is prerequisite.
+  7. **Couples the rebuild to a specific original binary.** The decomp project's end goal is a *portable, runnable* reconstruction, not a byte-identical re-link. Locking memory layout to the original `.exe` makes future modernization (replacing hand-written pools with STL containers, moving globals into namespaces, 64-bit port) much harder.
+  8. **Fragile across re-exports.** Any rename or global-removal in Ghidra breaks the script silently (link errors at best, wrong placement at worst). The script becomes a parallel source of truth that must be regenerated on every export.
+
+**Recommendation.** Start with Option A for immediate progress, build Option B once the pattern is well-understood enough that the detector is cheap. Option C is a last resort, mostly because con #1 (silencing ASan) actively works against the goal of catching the decomp misunderstandings we care about most.
+
+**Address-table validation as a lighter-weight alternative:** the original spirit of §12 (comparing linked addresses against expected ones) is still useful as a *report*, not a *fix*. Emit a link-map diff after every build and flag globals whose distance from their neighbors changed. That tells us which adjacency sentinels are at risk of breaking before the first run, without trying to enforce layout.
 
 ### 13. Struct layout verification
 
@@ -209,5 +275,5 @@ For math tests, known-good values from:
 - Reports can run on all `.cpp` and `.keep.cpp` files, not just ones with compilation errors
 - False positive rate matters — a report that flags 500 things where 490 are fine won't get used
 - Report #13 (struct layout) should be implemented early — it's a compile-time check that's cheap to run and catches silent corruption that no other tool would find until runtime
-- Report #12 (linker address validation) becomes critical once we start linking — will need the original binary's global address table as the reference
-- ASan (#11) should be enabled from the very first successful link — the earlier we catch memory issues, the fewer cascading bugs to untangle
+- Report #12: the "validate, don't enforce" framing (link-map diff vs original) is the practical version. Enforcing layout via a linker script silences ASan on exactly the bug class that motivated #12, so it trades a catchable runtime error for a silent miscompile.
+- ASan (#11) is live behind `NOCTURNE_ASAN`. Keep the UBSan check list wide — disable narrowly via `WATCOM_TRAMPOLINE` or per-site ignorelist entries, not via flag removal. The decomp-misunderstanding bugs we want to find show up as `vptr`, `bounds`, `alignment`, and `enum` reports, which are the exact checks one would be tempted to turn off for "noise."

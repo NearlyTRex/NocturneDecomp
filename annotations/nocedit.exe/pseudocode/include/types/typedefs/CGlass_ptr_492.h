@@ -17,7 +17,7 @@ struct CGlass_ptr_492 {
     template<typename T> CGlass_ptr_492(T* p) : _raw((void*)p) {}
     template<typename T> CGlass_ptr_492& operator=(T* p) { _raw = (void*)p; return *this; }
     CMirror* operator->() const { return (CMirror*)_raw; }
-    CGlass* adj() const { return (CGlass*)_raw; }
+    CGlass* adj() const { return (CGlass*)((char*)_raw - 492); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

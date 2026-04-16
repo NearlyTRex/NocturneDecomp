@@ -17,7 +17,7 @@ struct CSvetlana_ptr_130012 {
     template<typename T> CSvetlana_ptr_130012(T* p) : _raw((void*)p) {}
     template<typename T> CSvetlana_ptr_130012& operator=(T* p) { _raw = (void*)p; return *this; }
     CCloth* operator->() const { return (CCloth*)_raw; }
-    CSvetlana* adj() const { return (CSvetlana*)_raw; }
+    CSvetlana* adj() const { return (CSvetlana*)((char*)_raw - 130012); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

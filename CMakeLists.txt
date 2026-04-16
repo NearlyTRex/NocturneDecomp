@@ -25,6 +25,21 @@ option(NOCTURNE_BUILD_EXE   "Build full linked executable"          OFF)
 option(NOCTURNE_ASAN
     "Enable AddressSanitizer + UBSan on the exe build (requires 32-bit sanitizer runtime)"
     OFF)
+option(NOCTURNE_USE_CCACHE
+    "Route the compiler through ccache if available"
+    ON)
+
+# ccache — survives re-exports and branch switches. Auto-enabled when found.
+if(NOCTURNE_USE_CCACHE)
+    find_program(CCACHE_PROGRAM ccache)
+    if(CCACHE_PROGRAM)
+        message(STATUS "ccache: ${CCACHE_PROGRAM}")
+        set(CMAKE_C_COMPILER_LAUNCHER   "${CCACHE_PROGRAM}")
+        set(CMAKE_CXX_COMPILER_LAUNCHER "${CCACHE_PROGRAM}")
+    else()
+        message(STATUS "ccache: not found (install with apt/brew for faster rebuilds)")
+    endif()
+endif()
 
 set(NOCTURNE_PSEUDOCODE_DIR "${CMAKE_SOURCE_DIR}/annotations/nocedit.exe/pseudocode"
     CACHE PATH "Root of the exported pseudocode tree")
@@ -174,6 +189,10 @@ if(NOCTURNE_BUILD_EXE)
         message(STATUS "AddressSanitizer + UBSan enabled (32-bit runtime required)")
     endif()
 
+    # PCH: every decompiled TU opens with #include "nocturne.h", which pulls in
+    # the full type/global/prototype tree. Precompiling it once and REUSE_FROM
+    # across every module OBJECT library cuts full-rebuild cost dramatically.
+    set(_pch_source "")
     set(_module_libs "")
     foreach(_module IN LISTS NOCTURNE_MODULES)
         file(STRINGS "${NOCTURNE_GEN_DIR}/sources_${_module}.txt" _sources)
@@ -186,6 +205,16 @@ if(NOCTURNE_BUILD_EXE)
                 -m32 ${NOCTURNE_COMMON_WARNINGS}
                 ${NOCTURNE_SANITIZE_FLAGS})
             target_compile_features(nocturne_${_module} PRIVATE cxx_std_17)
+
+            if(_pch_source STREQUAL "")
+                target_precompile_headers(nocturne_${_module} PRIVATE
+                    "${NOCTURNE_INCLUDE_DIR}/nocturne.h")
+                set(_pch_source nocturne_${_module})
+            else()
+                target_precompile_headers(nocturne_${_module}
+                    REUSE_FROM ${_pch_source})
+            endif()
+
             list(APPEND _module_libs nocturne_${_module})
         endif()
     endforeach()
@@ -221,4 +250,38 @@ if(NOCTURNE_BUILD_EXE)
     endforeach()
     target_link_libraries(nocturne PRIVATE nocturne_shims
         ${SDL2_LIBRARIES} ${SDL2TTF_LIBRARIES} ${FFMPEG_LIBRARIES})
+
+    # -------------------------------------------------------------------------
+    # run.sh — launcher that sets sanitizer-friendly env defaults (symbolizer
+    # path, UBSan stack traces, LSan off) and execs the built binary. Drops
+    # next to the exe so `./run.sh` just works from any build preset.
+    # -------------------------------------------------------------------------
+    find_program(LLVM_SYMBOLIZER_PATH
+        NAMES llvm-symbolizer llvm-symbolizer-18 llvm-symbolizer-17
+              llvm-symbolizer-16 llvm-symbolizer-15 llvm-symbolizer-14)
+    if(LLVM_SYMBOLIZER_PATH)
+        message(STATUS "llvm-symbolizer: ${LLVM_SYMBOLIZER_PATH}")
+    else()
+        message(STATUS "llvm-symbolizer: not found — sanitizer reports will "
+                       "show raw addresses. Install via apt/brew for readable "
+                       "stack traces.")
+        set(LLVM_SYMBOLIZER_PATH "")
+    endif()
+
+    # Best-effort preset name for the "not built" hint in the script.
+    if(DEFINED ENV{CMAKE_PRESET_NAME})
+        set(NOCTURNE_PRESET_NAME "$ENV{CMAKE_PRESET_NAME}")
+    else()
+        get_filename_component(NOCTURNE_PRESET_NAME "${CMAKE_BINARY_DIR}" NAME)
+    endif()
+
+    configure_file(
+        "${CMAKE_SOURCE_DIR}/cmake/run_nocturne.sh.in"
+        "${CMAKE_BINARY_DIR}/run.sh"
+        @ONLY
+        FILE_PERMISSIONS
+            OWNER_READ OWNER_WRITE OWNER_EXECUTE
+            GROUP_READ GROUP_EXECUTE
+            WORLD_READ WORLD_EXECUTE
+    )
 endif()

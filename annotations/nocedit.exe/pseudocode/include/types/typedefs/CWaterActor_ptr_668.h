@@ -17,7 +17,7 @@ struct CWaterActor_ptr_668 {
     template<typename T> CWaterActor_ptr_668(T* p) : _raw((void*)p) {}
     template<typename T> CWaterActor_ptr_668& operator=(T* p) { _raw = (void*)p; return *this; }
     SWaterVertex* operator->() const { return (SWaterVertex*)_raw; }
-    CWaterActor* adj() const { return (CWaterActor*)_raw; }
+    CWaterActor* adj() const { return (CWaterActor*)((char*)_raw - 668); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

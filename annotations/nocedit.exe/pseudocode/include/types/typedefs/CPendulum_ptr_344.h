@@ -17,7 +17,7 @@ struct CPendulum_ptr_344 {
     template<typename T> CPendulum_ptr_344(T* p) : _raw((void*)p) {}
     template<typename T> CPendulum_ptr_344& operator=(T* p) { _raw = (void*)p; return *this; }
     CKeyFramedModelInstance* operator->() const { return (CKeyFramedModelInstance*)_raw; }
-    CPendulum* adj() const { return (CPendulum*)_raw; }
+    CPendulum* adj() const { return (CPendulum*)((char*)_raw - 344); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

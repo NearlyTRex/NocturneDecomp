@@ -17,7 +17,7 @@ struct CTVBat_ptr_48832 {
     template<typename T> CTVBat_ptr_48832(T* p) : _raw((void*)p) {}
     template<typename T> CTVBat_ptr_48832& operator=(T* p) { _raw = (void*)p; return *this; }
     CKeyFramedModelInstance* operator->() const { return (CKeyFramedModelInstance*)_raw; }
-    CTVBat* adj() const { return (CTVBat*)_raw; }
+    CTVBat* adj() const { return (CTVBat*)((char*)_raw - 48832); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

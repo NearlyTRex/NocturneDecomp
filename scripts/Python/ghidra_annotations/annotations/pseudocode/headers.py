@@ -11,7 +11,7 @@ from ghidra.program.model.data import Union
 from ghidra.program.model.data import TypeDef
 from ghidra.program.model.data import Pointer
 from ghidra.program.model.data import Array
-from ghidra_annotations.util import make_dirs
+from ghidra_annotations.util import make_dirs, write_if_changed
 from ghidra_annotations.util.log import log_info
 from ghidra_annotations.util.data_type import collect_type_dependencies_with_context, get_ghidra_primitive_types
 from ghidra_annotations.annotations.pseudocode.basetypes import get_types_needing_basetypes, get_all_basetypes
@@ -584,9 +584,8 @@ def write_header_file(file_path, content):
         content: Content to write
     """
     try:
-        with open(file_path, 'w') as f:
-            f.write(sanitize_string(content, preserve_newlines=True))
-            f.write("\n")
+        body = sanitize_string(content, preserve_newlines=True) + "\n"
+        write_if_changed(file_path, body)
     except Exception as e:
         log_info("Failed to write header file %s: %s" % (file_path, str(e)))
 
@@ -902,7 +901,13 @@ def generate_individual_typedef_header(currentProgram, typedef, type_to_path_map
         content.append("    template<typename T> %s(T* p) : _raw((void*)p) {}" % td_name)
         content.append("    template<typename T> %s& operator=(T* p) { _raw = (void*)p; return *this; }" % td_name)
         content.append("    %s* operator->() const { return (%s*)_raw; }" % (member_type_name, member_type_name))
-        content.append("    %s* adj() const { return (%s*)_raw; }" % (struct_name, struct_name))
+        # adj() subtracts the encoded offset to recover the base pointer.
+        # _raw holds the Watcom-adjusted pointer (base + offset); callers that
+        # want the base must go through adj() / ADJ(). Without the subtraction,
+        # every ADJ(ptr)->field write lands at the wrong struct offset — ASan
+        # catches it as a global-buffer-overflow when the base global's size
+        # leaves less than `offset` bytes of room past the last declared field.
+        content.append("    %s* adj() const { return (%s*)((char*)_raw - %d); }" % (struct_name, struct_name, offset))
         content.append("    template<typename T> operator T*() const { return (T*)_raw; }")
         content.append("    explicit operator bool() const { return _raw != 0; }")
         content.append("};")
@@ -2008,6 +2013,23 @@ def generate_watcom_runtime_inlines():
     lines.append("// =============================================================================")
     lines.append("")
     lines.append("// ---------------------------------------------------------------------------")
+    lines.append("// UBSan helpers")
+    lines.append("// ---------------------------------------------------------------------------")
+    lines.append("// Watcom's array/ctor/dtor runtime dispatches through generic function-pointer")
+    lines.append("// slots whose signatures never match the real per-class targets. UBSan's")
+    lines.append("// -fsanitize=function flags every such indirect call even though the")
+    lines.append("// indirection is safe by construction (the compiler emits matching TypeInfo).")
+    lines.append("// WATCOM_TRAMPOLINE marks the trampoline functions (both this header's inline")
+    lines.append("// template __arr_op and the out-of-line shims in shims/watcom.cpp) exempt")
+    lines.append("// from the function-type check. Keep the attribute list narrow on purpose so")
+    lines.append("// real UBSan hits elsewhere still fire.")
+    lines.append("#if defined(__clang__) || defined(__GNUC__)")
+    lines.append("#  define WATCOM_TRAMPOLINE __attribute__((no_sanitize(\"function\")))")
+    lines.append("#else")
+    lines.append("#  define WATCOM_TRAMPOLINE")
+    lines.append("#endif")
+    lines.append("")
+    lines.append("// ---------------------------------------------------------------------------")
     lines.append("// Array Construction Functions")
     lines.append("// ---------------------------------------------------------------------------")
     lines.append("")
@@ -2019,8 +2041,12 @@ def generate_watcom_runtime_inlines():
     lines.append("extern void* __arrcopy(void* dest, void* src, int count, WatcomTypeInfo* ti);")
     lines.append("")
     lines.append("// __arr_op - Generic array operation with function pointer")
-    lines.append("// Templated to accept any function pointer type (callers pass typed copy funcs)")
+    lines.append("// Templated to accept any function pointer type (callers pass typed copy funcs).")
+    lines.append("// WATCOM_TRAMPOLINE suppresses UBSan -fsanitize=function: Watcom dispatches")
+    lines.append("// through a generic void(*)(void*,void*) slot while the real target is a")
+    lines.append("// per-class member function. The indirection is safe by construction.")
     lines.append("template<typename CopyFunc>")
+    lines.append("WATCOM_TRAMPOLINE")
     lines.append("inline void* __arr_op(void* dest, void* src, int count, int size, CopyFunc copy_func) {")
     lines.append("    char* d = (char*)dest;")
     lines.append("    char* s = (char*)src;")

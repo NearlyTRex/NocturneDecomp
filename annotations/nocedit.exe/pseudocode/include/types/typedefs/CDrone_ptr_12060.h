@@ -16,7 +16,7 @@ struct CDrone_ptr_12060 {
     template<typename T> CDrone_ptr_12060(T* p) : _raw((void*)p) {}
     template<typename T> CDrone_ptr_12060& operator=(T* p) { _raw = (void*)p; return *this; }
     CDrone* operator->() const { return (CDrone*)_raw; }
-    CDrone* adj() const { return (CDrone*)_raw; }
+    CDrone* adj() const { return (CDrone*)((char*)_raw - 12060); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

@@ -17,7 +17,7 @@ struct SClothVertex_ptr_236 {
     template<typename T> SClothVertex_ptr_236(T* p) : _raw((void*)p) {}
     template<typename T> SClothVertex_ptr_236& operator=(T* p) { _raw = (void*)p; return *this; }
     CVector3f* operator->() const { return (CVector3f*)_raw; }
-    SClothVertex* adj() const { return (SClothVertex*)_raw; }
+    SClothVertex* adj() const { return (SClothVertex*)((char*)_raw - 236); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

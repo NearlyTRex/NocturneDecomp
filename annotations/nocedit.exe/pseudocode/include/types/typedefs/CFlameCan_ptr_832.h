@@ -17,7 +17,7 @@ struct CFlameCan_ptr_832 {
     template<typename T> CFlameCan_ptr_832(T* p) : _raw((void*)p) {}
     template<typename T> CFlameCan_ptr_832& operator=(T* p) { _raw = (void*)p; return *this; }
     CFlame* operator->() const { return (CFlame*)_raw; }
-    CFlameCan* adj() const { return (CFlameCan*)_raw; }
+    CFlameCan* adj() const { return (CFlameCan*)((char*)_raw - 832); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

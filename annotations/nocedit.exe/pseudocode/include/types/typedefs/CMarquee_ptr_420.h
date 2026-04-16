@@ -17,7 +17,7 @@ struct CMarquee_ptr_420 {
     template<typename T> CMarquee_ptr_420(T* p) : _raw((void*)p) {}
     template<typename T> CMarquee_ptr_420& operator=(T* p) { _raw = (void*)p; return *this; }
     CCourse* operator->() const { return (CCourse*)_raw; }
-    CMarquee* adj() const { return (CMarquee*)_raw; }
+    CMarquee* adj() const { return (CMarquee*)((char*)_raw - 420); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

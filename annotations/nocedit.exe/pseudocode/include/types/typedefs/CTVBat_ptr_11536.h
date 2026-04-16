@@ -16,7 +16,7 @@ struct CTVBat_ptr_11536 {
     template<typename T> CTVBat_ptr_11536(T* p) : _raw((void*)p) {}
     template<typename T> CTVBat_ptr_11536& operator=(T* p) { _raw = (void*)p; return *this; }
     CTVBat* operator->() const { return (CTVBat*)_raw; }
-    CTVBat* adj() const { return (CTVBat*)_raw; }
+    CTVBat* adj() const { return (CTVBat*)((char*)_raw - 11536); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

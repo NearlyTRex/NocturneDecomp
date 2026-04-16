@@ -17,7 +17,7 @@ struct CCharacter_ptr_10900 {
     template<typename T> CCharacter_ptr_10900(T* p) : _raw((void*)p) {}
     template<typename T> CCharacter_ptr_10900& operator=(T* p) { _raw = (void*)p; return *this; }
     CClothList* operator->() const { return (CClothList*)_raw; }
-    CCharacter* adj() const { return (CCharacter*)_raw; }
+    CCharacter* adj() const { return (CCharacter*)((char*)_raw - 10900); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

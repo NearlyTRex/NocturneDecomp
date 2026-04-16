@@ -17,7 +17,7 @@ struct CBodyPart_ptr_1872 {
     template<typename T> CBodyPart_ptr_1872(T* p) : _raw((void*)p) {}
     template<typename T> CBodyPart_ptr_1872& operator=(T* p) { _raw = (void*)p; return *this; }
     SBodyPartFire* operator->() const { return (SBodyPartFire*)_raw; }
-    CBodyPart* adj() const { return (CBodyPart*)_raw; }
+    CBodyPart* adj() const { return (CBodyPart*)((char*)_raw - 1872); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

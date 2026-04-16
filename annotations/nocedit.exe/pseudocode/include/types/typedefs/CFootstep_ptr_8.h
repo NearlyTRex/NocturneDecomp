@@ -17,7 +17,7 @@ struct CFootstep_ptr_8 {
     template<typename T> CFootstep_ptr_8(T* p) : _raw((void*)p) {}
     template<typename T> CFootstep_ptr_8& operator=(T* p) { _raw = (void*)p; return *this; }
     CVector3f* operator->() const { return (CVector3f*)_raw; }
-    CFootstep* adj() const { return (CFootstep*)_raw; }
+    CFootstep* adj() const { return (CFootstep*)((char*)_raw - 8); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

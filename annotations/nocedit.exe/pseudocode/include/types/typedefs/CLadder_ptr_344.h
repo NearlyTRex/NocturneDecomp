@@ -17,7 +17,7 @@ struct CLadder_ptr_344 {
     template<typename T> CLadder_ptr_344(T* p) : _raw((void*)p) {}
     template<typename T> CLadder_ptr_344& operator=(T* p) { _raw = (void*)p; return *this; }
     CKeyFramedModelInstance* operator->() const { return (CKeyFramedModelInstance*)_raw; }
-    CLadder* adj() const { return (CLadder*)_raw; }
+    CLadder* adj() const { return (CLadder*)((char*)_raw - 344); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

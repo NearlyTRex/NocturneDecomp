@@ -17,7 +17,7 @@ struct CSpike_ptr_344 {
     template<typename T> CSpike_ptr_344(T* p) : _raw((void*)p) {}
     template<typename T> CSpike_ptr_344& operator=(T* p) { _raw = (void*)p; return *this; }
     CKeyFramedModelInstance* operator->() const { return (CKeyFramedModelInstance*)_raw; }
-    CSpike* adj() const { return (CSpike*)_raw; }
+    CSpike* adj() const { return (CSpike*)((char*)_raw - 344); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

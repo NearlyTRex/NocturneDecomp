@@ -17,7 +17,7 @@ struct CCurtain_ptr_520 {
     template<typename T> CCurtain_ptr_520(T* p) : _raw((void*)p) {}
     template<typename T> CCurtain_ptr_520& operator=(T* p) { _raw = (void*)p; return *this; }
     SCurtainVertex* operator->() const { return (SCurtainVertex*)_raw; }
-    CCurtain* adj() const { return (CCurtain*)_raw; }
+    CCurtain* adj() const { return (CCurtain*)((char*)_raw - 520); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

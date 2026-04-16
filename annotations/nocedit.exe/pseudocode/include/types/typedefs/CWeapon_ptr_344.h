@@ -17,7 +17,7 @@ struct CWeapon_ptr_344 {
     template<typename T> CWeapon_ptr_344(T* p) : _raw((void*)p) {}
     template<typename T> CWeapon_ptr_344& operator=(T* p) { _raw = (void*)p; return *this; }
     CKeyFramedModelInstance* operator->() const { return (CKeyFramedModelInstance*)_raw; }
-    CWeapon* adj() const { return (CWeapon*)_raw; }
+    CWeapon* adj() const { return (CWeapon*)((char*)_raw - 344); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

@@ -17,7 +17,7 @@ struct CSuccubus_ptr_57712 {
     template<typename T> CSuccubus_ptr_57712(T* p) : _raw((void*)p) {}
     template<typename T> CSuccubus_ptr_57712& operator=(T* p) { _raw = (void*)p; return *this; }
     CClothList* operator->() const { return (CClothList*)_raw; }
-    CSuccubus* adj() const { return (CSuccubus*)_raw; }
+    CSuccubus* adj() const { return (CSuccubus*)((char*)_raw - 57712); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

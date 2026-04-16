@@ -17,7 +17,7 @@ struct CLZWCompress_ptr_4 {
     template<typename T> CLZWCompress_ptr_4(T* p) : _raw((void*)p) {}
     template<typename T> CLZWCompress_ptr_4& operator=(T* p) { _raw = (void*)p; return *this; }
     CLZWDictionary* operator->() const { return (CLZWDictionary*)_raw; }
-    CLZWCompress* adj() const { return (CLZWCompress*)_raw; }
+    CLZWCompress* adj() const { return (CLZWCompress*)((char*)_raw - 4); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

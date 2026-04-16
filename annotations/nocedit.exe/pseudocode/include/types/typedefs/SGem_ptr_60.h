@@ -17,7 +17,7 @@ struct SGem_ptr_60 {
     template<typename T> SGem_ptr_60(T* p) : _raw((void*)p) {}
     template<typename T> SGem_ptr_60& operator=(T* p) { _raw = (void*)p; return *this; }
     CDemonTriangle* operator->() const { return (CDemonTriangle*)_raw; }
-    SGem* adj() const { return (SGem*)_raw; }
+    SGem* adj() const { return (SGem*)((char*)_raw - 60); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

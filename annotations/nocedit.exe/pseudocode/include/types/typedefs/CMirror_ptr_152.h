@@ -17,7 +17,7 @@ struct CMirror_ptr_152 {
     template<typename T> CMirror_ptr_152(T* p) : _raw((void*)p) {}
     template<typename T> CMirror_ptr_152& operator=(T* p) { _raw = (void*)p; return *this; }
     SClipPlane* operator->() const { return (SClipPlane*)_raw; }
-    CMirror* adj() const { return (CMirror*)_raw; }
+    CMirror* adj() const { return (CMirror*)((char*)_raw - 152); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

@@ -17,7 +17,7 @@ struct CVampireBoss_ptr_319456 {
     template<typename T> CVampireBoss_ptr_319456(T* p) : _raw((void*)p) {}
     template<typename T> CVampireBoss_ptr_319456& operator=(T* p) { _raw = (void*)p; return *this; }
     CCloth* operator->() const { return (CCloth*)_raw; }
-    CVampireBoss* adj() const { return (CVampireBoss*)_raw; }
+    CVampireBoss* adj() const { return (CVampireBoss*)((char*)_raw - 319456); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

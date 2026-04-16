@@ -17,7 +17,7 @@ struct CGasMask_ptr_344 {
     template<typename T> CGasMask_ptr_344(T* p) : _raw((void*)p) {}
     template<typename T> CGasMask_ptr_344& operator=(T* p) { _raw = (void*)p; return *this; }
     CKeyFramedModelInstance* operator->() const { return (CKeyFramedModelInstance*)_raw; }
-    CGasMask* adj() const { return (CGasMask*)_raw; }
+    CGasMask* adj() const { return (CGasMask*)((char*)_raw - 344); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

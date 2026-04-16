@@ -17,7 +17,7 @@ struct CBiggs_ptr_49216 {
     template<typename T> CBiggs_ptr_49216(T* p) : _raw((void*)p) {}
     template<typename T> CBiggs_ptr_49216& operator=(T* p) { _raw = (void*)p; return *this; }
     CMorph* operator->() const { return (CMorph*)_raw; }
-    CBiggs* adj() const { return (CBiggs*)_raw; }
+    CBiggs* adj() const { return (CBiggs*)((char*)_raw - 49216); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

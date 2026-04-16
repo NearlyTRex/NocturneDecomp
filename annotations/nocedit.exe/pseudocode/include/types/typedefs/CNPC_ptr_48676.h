@@ -17,7 +17,7 @@ struct CNPC_ptr_48676 {
     template<typename T> CNPC_ptr_48676(T* p) : _raw((void*)p) {}
     template<typename T> CNPC_ptr_48676& operator=(T* p) { _raw = (void*)p; return *this; }
     CPathMap* operator->() const { return (CPathMap*)_raw; }
-    CNPC* adj() const { return (CNPC*)_raw; }
+    CNPC* adj() const { return (CNPC*)((char*)_raw - 48676); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

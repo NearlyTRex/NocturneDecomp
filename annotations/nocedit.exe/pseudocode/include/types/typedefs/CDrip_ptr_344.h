@@ -17,7 +17,7 @@ struct CDrip_ptr_344 {
     template<typename T> CDrip_ptr_344(T* p) : _raw((void*)p) {}
     template<typename T> CDrip_ptr_344& operator=(T* p) { _raw = (void*)p; return *this; }
     CKeyFramedModelInstance* operator->() const { return (CKeyFramedModelInstance*)_raw; }
-    CDrip* adj() const { return (CDrip*)_raw; }
+    CDrip* adj() const { return (CDrip*)((char*)_raw - 344); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

@@ -16,7 +16,7 @@ struct CDrummer_ptr_13260 {
     template<typename T> CDrummer_ptr_13260(T* p) : _raw((void*)p) {}
     template<typename T> CDrummer_ptr_13260& operator=(T* p) { _raw = (void*)p; return *this; }
     CDrummer* operator->() const { return (CDrummer*)_raw; }
-    CDrummer* adj() const { return (CDrummer*)_raw; }
+    CDrummer* adj() const { return (CDrummer*)((char*)_raw - 13260); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

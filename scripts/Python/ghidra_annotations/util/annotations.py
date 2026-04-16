@@ -24,6 +24,24 @@ def make_dirs(path):
         if e.errno != errno.EEXIST or not os.path.isdir(path):
             raise
 
+def write_if_changed(path, content, mode='w'):
+    # Skip the write (and the mtime bump) when the file already contains these
+    # exact bytes. Keeps downstream build systems (Ninja, ccache) from treating
+    # a re-export as an invalidation of every TU.
+    # Returns True if the file was (re)written, False if it was already current.
+    binary = 'b' in mode
+    if os.path.exists(path):
+        try:
+            with open(path, 'rb' if binary else 'r') as f:
+                existing = f.read()
+            if existing == content:
+                return False
+        except Exception:
+            pass
+    with open(path, mode) as f:
+        f.write(content)
+    return True
+
 def delete_dir_contents(path):
     if not os.path.isdir(path):
         return
@@ -36,9 +54,8 @@ def delete_dir_contents(path):
 
 def save_json(path, data):
     make_dirs(os.path.dirname(path))
-    with open(path, "w") as f:
-        json.dump(data, f, indent=2, separators=(",", ":"), sort_keys=True)
-        f.write('\n')
+    content = json.dumps(data, indent=2, separators=(",", ":"), sort_keys=True) + '\n'
+    write_if_changed(path, content)
 
 def load_json(path):
     with open(path, "r") as f:

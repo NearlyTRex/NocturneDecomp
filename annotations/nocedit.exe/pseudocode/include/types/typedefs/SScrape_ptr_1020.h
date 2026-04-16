@@ -16,7 +16,7 @@ struct SScrape_ptr_1020 {
     template<typename T> SScrape_ptr_1020(T* p) : _raw((void*)p) {}
     template<typename T> SScrape_ptr_1020& operator=(T* p) { _raw = (void*)p; return *this; }
     SScrape* operator->() const { return (SScrape*)_raw; }
-    SScrape* adj() const { return (SScrape*)_raw; }
+    SScrape* adj() const { return (SScrape*)((char*)_raw - 1020); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

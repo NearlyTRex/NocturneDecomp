@@ -16,7 +16,7 @@ struct CLightActor_ptr_916 {
     template<typename T> CLightActor_ptr_916(T* p) : _raw((void*)p) {}
     template<typename T> CLightActor_ptr_916& operator=(T* p) { _raw = (void*)p; return *this; }
     CLightActor* operator->() const { return (CLightActor*)_raw; }
-    CLightActor* adj() const { return (CLightActor*)_raw; }
+    CLightActor* adj() const { return (CLightActor*)((char*)_raw - 916); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

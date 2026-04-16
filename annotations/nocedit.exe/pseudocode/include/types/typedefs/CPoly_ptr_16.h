@@ -17,7 +17,7 @@ struct CPoly_ptr_16 {
     template<typename T> CPoly_ptr_16(T* p) : _raw((void*)p) {}
     template<typename T> CPoly_ptr_16& operator=(T* p) { _raw = (void*)p; return *this; }
     CP2D* operator->() const { return (CP2D*)_raw; }
-    CPoly* adj() const { return (CPoly*)_raw; }
+    CPoly* adj() const { return (CPoly*)((char*)_raw - 16); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

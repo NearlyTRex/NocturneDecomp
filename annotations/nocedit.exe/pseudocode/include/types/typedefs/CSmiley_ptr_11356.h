@@ -16,7 +16,7 @@ struct CSmiley_ptr_11356 {
     template<typename T> CSmiley_ptr_11356(T* p) : _raw((void*)p) {}
     template<typename T> CSmiley_ptr_11356& operator=(T* p) { _raw = (void*)p; return *this; }
     CSmiley* operator->() const { return (CSmiley*)_raw; }
-    CSmiley* adj() const { return (CSmiley*)_raw; }
+    CSmiley* adj() const { return (CSmiley*)((char*)_raw - 11356); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

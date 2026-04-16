@@ -17,7 +17,7 @@ struct CEmitter_ptr_584 {
     template<typename T> CEmitter_ptr_584(T* p) : _raw((void*)p) {}
     template<typename T> CEmitter_ptr_584& operator=(T* p) { _raw = (void*)p; return *this; }
     CKeyFramedModelInstance* operator->() const { return (CKeyFramedModelInstance*)_raw; }
-    CEmitter* adj() const { return (CEmitter*)_raw; }
+    CEmitter* adj() const { return (CEmitter*)((char*)_raw - 584); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

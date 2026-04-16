@@ -16,7 +16,7 @@ struct CImp_ptr_10900 {
     template<typename T> CImp_ptr_10900(T* p) : _raw((void*)p) {}
     template<typename T> CImp_ptr_10900& operator=(T* p) { _raw = (void*)p; return *this; }
     CImp* operator->() const { return (CImp*)_raw; }
-    CImp* adj() const { return (CImp*)_raw; }
+    CImp* adj() const { return (CImp*)((char*)_raw - 10900); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

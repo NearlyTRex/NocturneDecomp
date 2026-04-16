@@ -17,7 +17,7 @@ struct CFrankenstienMachine_ptr_768 {
     template<typename T> CFrankenstienMachine_ptr_768(T* p) : _raw((void*)p) {}
     template<typename T> CFrankenstienMachine_ptr_768& operator=(T* p) { _raw = (void*)p; return *this; }
     CCourse* operator->() const { return (CCourse*)_raw; }
-    CFrankenstienMachine* adj() const { return (CFrankenstienMachine*)_raw; }
+    CFrankenstienMachine* adj() const { return (CFrankenstienMachine*)((char*)_raw - 768); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

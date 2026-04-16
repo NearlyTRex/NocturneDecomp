@@ -17,7 +17,7 @@ struct CBugs_ptr_74440 {
     template<typename T> CBugs_ptr_74440(T* p) : _raw((void*)p) {}
     template<typename T> CBugs_ptr_74440& operator=(T* p) { _raw = (void*)p; return *this; }
     CKeyFramedModelInstance* operator->() const { return (CKeyFramedModelInstance*)_raw; }
-    CBugs* adj() const { return (CBugs*)_raw; }
+    CBugs* adj() const { return (CBugs*)((char*)_raw - 74440); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

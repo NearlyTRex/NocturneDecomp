@@ -10,6 +10,20 @@ You are fixing compilation errors in Ghidra-decompiled C/C++ pseudocode for a ga
 - The `.keep` file replaces the original for compilation — the build system picks it up automatically.
 - Path: same directory and base name, with `.keep.cpp`/`.keep.c` extension.
 
+### If a `.keep` Already Exists for the Target Function
+
+When the user asks about a function that already has a `.keep.cpp`/`.keep.c`, **audit the existing `.keep` before doing anything else**. An existing `.keep` is not a signal that the function is "done" — it may be:
+
+1. **Out of date.** The original `.cpp` has been re-exported from Ghidra since the `.keep` was written, and the upstream decompilation has improved (better types, better signatures, a bug fix). Diff the `.keep` body against the current `.cpp` body to see whether the `.keep` is still solving a real problem. If the current `.cpp` compiles and is semantically correct, the `.keep` may be obsolete and a candidate for deletion.
+2. **Fixing compilation but harboring a runtime trap.** The `.keep` was written to get the function to compile, but the *logic* it ported over may itself be a decompilation artifact that compiles cleanly and silently misbehaves at runtime. Specifically check for:
+   - **Adjacency-sentinel loops** (§16) — `while (p != &g_SomeOtherGlobal)` style pool-init loops that depend on original-binary memory layout. These compile fine and trip AddressSanitizer as `global-buffer-overflow` at runtime.
+   - **Wrong-global accesses from Watcom 1-based indexing** (§15) — `.keep` carried forward a `g_VertexNormalArray[20000]` that Ghidra resolved incorrectly.
+   - **Broken `ADJ()` usage** — an older `.keep` may have kept raw `ADJ(ptr)->field` writes that were landing at the wrong offset before the exporter's `adj()` fix. If the `.keep` pre-dates that fix, it might have worked-around the symptoms (by bypassing ADJ) in a way that's now unnecessary or actively wrong.
+   - **Stale pointer-reuse workarounds** — `(float *)&` casts to paper over Watcom stack-slot reuse that has since been correctly retyped upstream.
+3. **Reporting `.keep` status honestly.** Before editing an existing `.keep`, tell the user what you found: "this `.keep` predates the `adj()` fix and rewrites the loop bounds manually — both are now unnecessary," or "this `.keep` still fixes a real compile error but the loop inside is pattern §16 and will crash at runtime." Let the user decide between "update minimally," "rewrite to remove obsolete workarounds," or "delete since the upstream `.cpp` now compiles."
+
+Rule of thumb: a `.keep` is a liability that needs to justify its existence on every re-export. Treat the existing one as a hypothesis about what the decompiler got wrong, not as a finished answer.
+
 ### Converting `.mmx` or `.byval` Variants into a `.keep`
 The `.mmx.*` and `.byval.*` variants are generated alongside the original but are **not compiled** by the build — they exist only as references. When a function has one of these variants, it's usually a sign that the original `.cpp`/`.c` won't compile cleanly and the variant was the historical escape hatch.
 
@@ -267,6 +281,49 @@ This is distinct from the byte buffer pattern (#12) — here the variables have 
 // FIXED (correct global with proper struct access):
 g_SetDisplayListSortBuffer[g_SetDisplayListCount].actor = (CDemonActor *)this_ptr_00;
 ```
+
+### 16. Adjacency-sentinel init loops (runtime bug, compiles cleanly)
+
+**Cause:** Watcom emitted pool-initialization loops that use "pointer reaches next global" as the end-of-array check, because in the original binary the next global sat immediately after the array. Our linker places globals in arbitrary order, so the sentinel never matches the pool's true end and the loop walks past it, corrupting every global in between. This compiles without warnings — AddressSanitizer catches it at runtime as `global-buffer-overflow`.
+
+**Symptoms in the `.cpp`:**
+- A `do/while` or `while` loop whose exit condition is `p != (T *)&g_SomeGlobal` where `g_SomeGlobal` is NOT the pool being iterated
+- The iterator was initialized from a pool declared as `g_PoolName[N]` earlier in the same function
+- The loop body resets one element per iteration (calls a reset/ctor function, or writes a field directly)
+
+**Canonical examples from `CFireEffect::init`:**
+```cpp
+// Style A — calls reset function:
+this_ptr_00 = g_SmokeParticlePool;
+do {
+    CSmokeParticle_reset(this_ptr_00);
+    this_ptr_00 = this_ptr_00 + 1;
+} while (this_ptr_00 != (CSmokeParticle *)&g_BulletHoleActiveCount);   // !! adjacency sentinel
+
+// Style B — inline field write:
+pCVar1 = g_SparkPool;
+do {
+    pCVar2 = pCVar1 + 1;
+    (pCVar1->base).lifetime_remaining = 0.0;
+    pCVar1 = pCVar2;
+} while (pCVar2 != (CSpark *)&g_MuzzleFlashAllocIndex);                // !! adjacency sentinel
+```
+
+**Diagnosis:** Grep the function for `!= (<Type> *)&g_<something>`. If that `g_<something>` is not the same as the pool the iterator was initialized from, it's the adjacency-sentinel pattern.
+
+**Fix:** Rewrite the loop with the declared pool size as an explicit bound. Pool sizes come from the pool's global declaration in `src/globals/` (e.g., `CSmokeParticle g_SmokeParticlePool[2048] = {};`):
+
+```cpp
+// FIXED (Style A):
+for (int i = 0; i < 2048; i++)
+    CSmokeParticle_reset(&g_SmokeParticlePool[i]);
+
+// FIXED (Style B):
+for (int i = 0; i < 256; i++)
+    g_SparkPool[i].base.lifetime_remaining = 0.0f;
+```
+
+**Scope:** Every `*_static_init` / pool-init in the game likely has this shape. If you're fixing one, eyeball the rest of the function — they often come in clusters (one init function sets up a dozen pools).
 
 ## Workflow
 

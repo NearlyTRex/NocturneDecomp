@@ -17,7 +17,7 @@ struct CChain_ptr_652 {
     template<typename T> CChain_ptr_652(T* p) : _raw((void*)p) {}
     template<typename T> CChain_ptr_652& operator=(T* p) { _raw = (void*)p; return *this; }
     SChainVertex* operator->() const { return (SChainVertex*)_raw; }
-    CChain* adj() const { return (CChain*)_raw; }
+    CChain* adj() const { return (CChain*)((char*)_raw - 652); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

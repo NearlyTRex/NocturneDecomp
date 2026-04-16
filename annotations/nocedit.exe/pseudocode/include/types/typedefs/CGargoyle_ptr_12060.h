@@ -16,7 +16,7 @@ struct CGargoyle_ptr_12060 {
     template<typename T> CGargoyle_ptr_12060(T* p) : _raw((void*)p) {}
     template<typename T> CGargoyle_ptr_12060& operator=(T* p) { _raw = (void*)p; return *this; }
     CGargoyle* operator->() const { return (CGargoyle*)_raw; }
-    CGargoyle* adj() const { return (CGargoyle*)_raw; }
+    CGargoyle* adj() const { return (CGargoyle*)((char*)_raw - 12060); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

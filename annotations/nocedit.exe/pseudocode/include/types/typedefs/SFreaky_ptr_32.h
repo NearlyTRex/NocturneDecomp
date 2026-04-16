@@ -17,7 +17,7 @@ struct SFreaky_ptr_32 {
     template<typename T> SFreaky_ptr_32(T* p) : _raw((void*)p) {}
     template<typename T> SFreaky_ptr_32& operator=(T* p) { _raw = (void*)p; return *this; }
     CVector3f* operator->() const { return (CVector3f*)_raw; }
-    SFreaky* adj() const { return (SFreaky*)_raw; }
+    SFreaky* adj() const { return (SFreaky*)((char*)_raw - 32); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

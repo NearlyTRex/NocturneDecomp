@@ -16,7 +16,7 @@ struct CConveyor_ptr_784 {
     template<typename T> CConveyor_ptr_784(T* p) : _raw((void*)p) {}
     template<typename T> CConveyor_ptr_784& operator=(T* p) { _raw = (void*)p; return *this; }
     CConveyor* operator->() const { return (CConveyor*)_raw; }
-    CConveyor* adj() const { return (CConveyor*)_raw; }
+    CConveyor* adj() const { return (CConveyor*)((char*)_raw - 784); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

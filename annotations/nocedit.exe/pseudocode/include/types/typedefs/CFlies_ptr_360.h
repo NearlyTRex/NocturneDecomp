@@ -17,7 +17,7 @@ struct CFlies_ptr_360 {
     template<typename T> CFlies_ptr_360(T* p) : _raw((void*)p) {}
     template<typename T> CFlies_ptr_360& operator=(T* p) { _raw = (void*)p; return *this; }
     SFly* operator->() const { return (SFly*)_raw; }
-    CFlies* adj() const { return (CFlies*)_raw; }
+    CFlies* adj() const { return (CFlies*)((char*)_raw - 360); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

@@ -16,7 +16,7 @@ struct CDeformableModel_ptr_33100 {
     template<typename T> CDeformableModel_ptr_33100(T* p) : _raw((void*)p) {}
     template<typename T> CDeformableModel_ptr_33100& operator=(T* p) { _raw = (void*)p; return *this; }
     CDeformableModel* operator->() const { return (CDeformableModel*)_raw; }
-    CDeformableModel* adj() const { return (CDeformableModel*)_raw; }
+    CDeformableModel* adj() const { return (CDeformableModel*)((char*)_raw - 33100); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

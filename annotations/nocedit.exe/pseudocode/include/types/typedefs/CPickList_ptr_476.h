@@ -17,7 +17,7 @@ struct CPickList_ptr_476 {
     template<typename T> CPickList_ptr_476(T* p) : _raw((void*)p) {}
     template<typename T> CPickList_ptr_476& operator=(T* p) { _raw = (void*)p; return *this; }
     CEdButton* operator->() const { return (CEdButton*)_raw; }
-    CPickList* adj() const { return (CPickList*)_raw; }
+    CPickList* adj() const { return (CPickList*)((char*)_raw - 476); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };

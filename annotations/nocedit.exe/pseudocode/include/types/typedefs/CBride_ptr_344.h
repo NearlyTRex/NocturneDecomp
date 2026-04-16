@@ -16,7 +16,7 @@ struct CBride_ptr_344 {
     template<typename T> CBride_ptr_344(T* p) : _raw((void*)p) {}
     template<typename T> CBride_ptr_344& operator=(T* p) { _raw = (void*)p; return *this; }
     CBride* operator->() const { return (CBride*)_raw; }
-    CBride* adj() const { return (CBride*)_raw; }
+    CBride* adj() const { return (CBride*)((char*)_raw - 344); }
     template<typename T> operator T*() const { return (T*)_raw; }
     explicit operator bool() const { return _raw != 0; }
 };
