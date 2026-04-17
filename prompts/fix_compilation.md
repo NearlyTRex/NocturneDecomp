@@ -325,6 +325,46 @@ for (int i = 0; i < 256; i++)
 
 **Scope:** Every `*_static_init` / pool-init in the game likely has this shape. If you're fixing one, eyeball the rest of the function — they often come in clusters (one init function sets up a dozen pools).
 
+### 17. Unrolled string/memory copies
+
+**Cause:** Watcom frequently unrolled `strcpy`, `memcpy`, and struct copies into sequences of byte/word/dword moves. The decompiler reproduces these as chains of individual assignments instead of recognizing the higher-level operation.
+
+**Symptoms:**
+- A sequence of byte-by-byte or word-by-word assignments copying from one buffer to another
+- A `do/while` loop copying two bytes at a time with an early-exit check on null terminator (unrolled `strcpy`)
+- Field-by-field struct copies like `dst[0] = src.field_a; dst[1] = src.field_b; ...` across all fields
+
+**Fix:** When the pattern is clearly a string or memory copy, replace with the appropriate standard library call:
+```cpp
+// BROKEN (unrolled strcpy — 2-byte-at-a-time copy loop):
+pcVar4 = dest;
+do {
+    cVar2 = *src;
+    *pcVar4 = cVar2;
+    if (cVar2 == '\0') break;
+    cVar2 = src[1];
+    src = src + 2;
+    pcVar4[1] = cVar2;
+    pcVar4 = pcVar4 + 2;
+} while (cVar2 != '\0');
+
+// FIXED:
+strcpy(dest, src);
+
+// BROKEN (field-by-field struct copy into int array):
+g_Scratch[0] = g_Buffer[i].field_a;
+g_Scratch[1] = g_Buffer[i].field_b;
+// ... all 12 fields ...
+g_Scratch[11] = g_Buffer[i].field_l;
+
+// FIXED (if types match):
+g_Scratch = g_Buffer[i];
+// Or if raw memory:
+memcpy(g_Scratch, &g_Buffer[i], sizeof(g_Buffer[i]));
+```
+
+**When to suggest:** Only when the pattern is unambiguous — the copy is complete (all bytes/fields), contiguous, and the source/destination types are compatible. Don't collapse partial copies or copies with interleaved logic.
+
 ## Workflow
 
 1. **Check for a `.chunked.cpp` file** (same base name, `.chunked.cpp` extension). If one exists, read it first — it splits the function into a context struct and small static helper functions, making it much easier to understand and fix large functions. Use it as a reference to understand which chunk each error falls in, but the `.keep` file is still based on the original `.cpp`.

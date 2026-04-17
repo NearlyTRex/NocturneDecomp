@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: game
-// Structs : 512
+// Structs : 518
 
 #include "nocturne.h"
 
@@ -2322,9 +2322,9 @@ static_assert(__builtin_offsetof(CDemonRaytrace, grid_bounds_min) == 84,
 static_assert(__builtin_offsetof(CDemonRaytrace, grid_bounds_max) == 96,
               "offsetof(CDemonRaytrace, grid_bounds_max) != 96");
 
-// ---- CDemonRenderer (36 bytes) ----
-static_assert(sizeof(CDemonRenderer) == 36,
-              "sizeof(CDemonRenderer) != 36");
+// ---- CDemonRenderer (44 bytes) ----
+static_assert(sizeof(CDemonRenderer) == 44,
+              "sizeof(CDemonRenderer) != 44");
 static_assert(__builtin_offsetof(CDemonRenderer, vertex_buffer_ptr) == 0,
               "offsetof(CDemonRenderer, vertex_buffer_ptr) != 0");
 static_assert(__builtin_offsetof(CDemonRenderer, face_count) == 4,
@@ -2343,6 +2343,10 @@ static_assert(__builtin_offsetof(CDemonRenderer, texture_capture_enabled) == 28,
               "offsetof(CDemonRenderer, texture_capture_enabled) != 28");
 static_assert(__builtin_offsetof(CDemonRenderer, skip_uv_extraction) == 32,
               "offsetof(CDemonRenderer, skip_uv_extraction) != 32");
+static_assert(__builtin_offsetof(CDemonRenderer, projection_reciprocal) == 36,
+              "offsetof(CDemonRenderer, projection_reciprocal) != 36");
+static_assert(__builtin_offsetof(CDemonRenderer, aspect_ratio_fixed) == 40,
+              "offsetof(CDemonRenderer, aspect_ratio_fixed) != 40");
 
 // ---- CDemonSet (1447532 bytes) ----
 static_assert(sizeof(CDemonSet) == 1447532,
@@ -8284,6 +8288,32 @@ static_assert(__builtin_offsetof(SEnumPair, name) == 0,
 static_assert(__builtin_offsetof(SEnumPair, value) == 4,
               "offsetof(SEnumPair, value) != 4");
 
+// ---- SEpdDirEntry (80 bytes) ----
+static_assert(sizeof(SEpdDirEntry) == 80,
+              "sizeof(SEpdDirEntry) != 80");
+static_assert(__builtin_offsetof(SEpdDirEntry, filename) == 0,
+              "offsetof(SEpdDirEntry, filename) != 0");
+static_assert(__builtin_offsetof(SEpdDirEntry, size) == 64,
+              "offsetof(SEpdDirEntry, size) != 64");
+static_assert(__builtin_offsetof(SEpdDirEntry, offset) == 68,
+              "offsetof(SEpdDirEntry, offset) != 68");
+static_assert(__builtin_offsetof(SEpdDirEntry, unk1) == 72,
+              "offsetof(SEpdDirEntry, unk1) != 72");
+static_assert(__builtin_offsetof(SEpdDirEntry, checksum) == 76,
+              "offsetof(SEpdDirEntry, checksum) != 76");
+
+// ---- SEpdHeader (272 bytes) ----
+static_assert(sizeof(SEpdHeader) == 272,
+              "sizeof(SEpdHeader) != 272");
+static_assert(__builtin_offsetof(SEpdHeader, header_data) == 0,
+              "offsetof(SEpdHeader, header_data) != 0");
+static_assert(__builtin_offsetof(SEpdHeader, description) == 4,
+              "offsetof(SEpdHeader, description) != 4");
+static_assert(__builtin_offsetof(SEpdHeader, file_count) == 260,
+              "offsetof(SEpdHeader, file_count) != 260");
+static_assert(__builtin_offsetof(SEpdHeader, unk1) == 264,
+              "offsetof(SEpdHeader, unk1) != 264");
+
 // ---- SEventNameBlock (3204 bytes) ----
 static_assert(sizeof(SEventNameBlock) == 3204,
               "sizeof(SEventNameBlock) != 3204");
@@ -9443,6 +9473,66 @@ static_assert(__builtin_offsetof(SPlayerInput, turn_speed) == 36,
               "offsetof(SPlayerInput, turn_speed) != 36");
 static_assert(__builtin_offsetof(SPlayerInput, look_up_down_speed) == 40,
               "offsetof(SPlayerInput, look_up_down_speed) != 40");
+
+// ---- SPod1DirEntry (40 bytes) ----
+static_assert(sizeof(SPod1DirEntry) == 40,
+              "sizeof(SPod1DirEntry) != 40");
+static_assert(__builtin_offsetof(SPod1DirEntry, filename) == 0,
+              "offsetof(SPod1DirEntry, filename) != 0");
+static_assert(__builtin_offsetof(SPod1DirEntry, size) == 32,
+              "offsetof(SPod1DirEntry, size) != 32");
+static_assert(__builtin_offsetof(SPod1DirEntry, offset) == 36,
+              "offsetof(SPod1DirEntry, offset) != 36");
+
+// ---- SPod1Header (84 bytes) ----
+static_assert(sizeof(SPod1Header) == 84,
+              "sizeof(SPod1Header) != 84");
+static_assert(__builtin_offsetof(SPod1Header, file_count) == 0,
+              "offsetof(SPod1Header, file_count) != 0");
+static_assert(__builtin_offsetof(SPod1Header, description) == 4,
+              "offsetof(SPod1Header, description) != 4");
+
+// ---- SPod2Header (96 bytes) ----
+static_assert(sizeof(SPod2Header) == 96,
+              "sizeof(SPod2Header) != 96");
+static_assert(__builtin_offsetof(SPod2Header, header_data) == 0,
+              "offsetof(SPod2Header, header_data) != 0");
+static_assert(__builtin_offsetof(SPod2Header, description) == 8,
+              "offsetof(SPod2Header, description) != 8");
+static_assert(__builtin_offsetof(SPod2Header, file_count) == 88,
+              "offsetof(SPod2Header, file_count) != 88");
+static_assert(__builtin_offsetof(SPod2Header, audit_count) == 92,
+              "offsetof(SPod2Header, audit_count) != 92");
+
+// ---- SPod3Header (288 bytes) ----
+static_assert(sizeof(SPod3Header) == 288,
+              "sizeof(SPod3Header) != 288");
+static_assert(__builtin_offsetof(SPod3Header, header_data) == 0,
+              "offsetof(SPod3Header, header_data) != 0");
+static_assert(__builtin_offsetof(SPod3Header, description) == 8,
+              "offsetof(SPod3Header, description) != 8");
+static_assert(__builtin_offsetof(SPod3Header, author) == 92,
+              "offsetof(SPod3Header, author) != 92");
+static_assert(__builtin_offsetof(SPod3Header, copyright) == 172,
+              "offsetof(SPod3Header, copyright) != 172");
+static_assert(__builtin_offsetof(SPod3Header, file_count) == 252,
+              "offsetof(SPod3Header, file_count) != 252");
+static_assert(__builtin_offsetof(SPod3Header, data_start_offset) == 256,
+              "offsetof(SPod3Header, data_start_offset) != 256");
+static_assert(__builtin_offsetof(SPod3Header, unk1) == 260,
+              "offsetof(SPod3Header, unk1) != 260");
+static_assert(__builtin_offsetof(SPod3Header, mount_priority) == 264,
+              "offsetof(SPod3Header, mount_priority) != 264");
+static_assert(__builtin_offsetof(SPod3Header, total_file_size) == 268,
+              "offsetof(SPod3Header, total_file_size) != 268");
+static_assert(__builtin_offsetof(SPod3Header, dependency_count) == 272,
+              "offsetof(SPod3Header, dependency_count) != 272");
+static_assert(__builtin_offsetof(SPod3Header, unk2) == 276,
+              "offsetof(SPod3Header, unk2) != 276");
+static_assert(__builtin_offsetof(SPod3Header, audit_count) == 280,
+              "offsetof(SPod3Header, audit_count) != 280");
+static_assert(__builtin_offsetof(SPod3Header, unk3) == 284,
+              "offsetof(SPod3Header, unk3) != 284");
 
 // ---- SPodManageRecord (924 bytes) ----
 static_assert(sizeof(SPodManageRecord) == 924,

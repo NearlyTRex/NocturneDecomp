@@ -194,18 +194,12 @@ if(NOCTURNE_BUILD_EXE)
     if(NOCTURNE_ASAN)
         list(APPEND NOCTURNE_SANITIZE_FLAGS
             -fsanitize=address,undefined
-            -fno-sanitize=function
+            -fno-sanitize=function,shift
             -fno-omit-frame-pointer
             -fno-sanitize-recover=all)
-        # -fno-sanitize=function: every C++ vtable dispatch in the decompiled
-        # code trips this (vtable slot typed `void (*)(CPod *)` but the real
-        # target is `CDemonPod::load(CDemonPod *)`). This is normal C++
-        # covariance, but the C-level function-pointer types mismatch.
-        # WATCOM_TRAMPOLINE narrows the same check on the array-ctor/dtor
-        # runtime; disabling globally covers the thousands of vtable calls
-        # too. The -fsanitize=vptr check (still on) catches actual wrong-
-        # class casts without flooding the log.
-        message(STATUS "AddressSanitizer + UBSan enabled (function-type check disabled for vtable compat)")
+        # -fno-sanitize=function: vtable dispatch type mismatches (normal C++ covariance)
+        # -fno-sanitize=shift: fixed-point math left-shifts negative values pervasively
+        message(STATUS "AddressSanitizer + UBSan enabled (function-type and shift checks disabled)")
     endif()
 
     # PCH: every decompiled TU opens with #include "nocturne.h", which pulls in
