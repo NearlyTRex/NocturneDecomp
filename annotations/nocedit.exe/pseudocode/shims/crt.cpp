@@ -7,7 +7,15 @@
 // These were previously inline functions in system/crt.h.
 //
 
+// Needed for fopencookie / cookie_io_functions_t / off64_t when compiling
+// with strict C++ standards. Must come before any <stdio.h> include.
+#ifndef _GNU_SOURCE
+#define _GNU_SOURCE
+#endif
+
 #include "system/crt.h"
+#include "debug_log.h"
+#include <cerrno>
 // Full struct layouts for Watcom types that crt.h only forward-declares.
 // The shims bridge these to libc equivalents field-by-field.
 #include "system/stdio.h"   // _FILE  (for _FILE_to_FILE)
@@ -281,8 +289,90 @@ static _FILE* make_file_wrapper(FILE* fp) {
     return w;
 }
 
+// Linux has no "text mode" in stdio — fopen ignores 't' in mode strings and
+// never translates line endings. Watcom/MSVC on Windows strip \r\n -> \n on
+// text-mode reads, which the game's text parsers (KFM model files, etc.)
+// depend on: they use fscanf("%[^\n]\n", ...) and would otherwise pull the
+// trailing \r into tokens like texture names.
+//
+// Wrap text-mode streams in a fopencookie layer that drops \r on read. Seek
+// is supported for round-trip ftell/fseek because POD archives are opened
+// in the caller's mode and seeked to the inner file's offset — but note
+// that byte offsets in the underlying file don't correspond 1:1 with the
+// logical (CR-stripped) stream, so arbitrary SEEK_SET offsets computed
+// externally would be wrong. In practice the game only seeks text files
+// via rewind() or offsets returned from ftell() on the same stream, which
+// both round-trip correctly through the underlying fseeko.
+static bool mode_is_text(const char* mode) {
+    if (!mode) return false;
+    for (const char* p = mode; *p; ++p) {
+        if (*p == 'b') return false;
+    }
+    return true;
+}
+
+static ssize_t text_cookie_read(void* cookie, char* buf, size_t size) {
+    FILE* underlying = static_cast<FILE*>(cookie);
+    size_t out = 0;
+    while (out < size) {
+        int c = fgetc(underlying);
+        if (c == EOF) break;
+        if (c == '\r') continue;
+        buf[out++] = static_cast<char>(c);
+    }
+    return static_cast<ssize_t>(out);
+}
+
+static ssize_t text_cookie_write(void* cookie, const char* buf, size_t size) {
+    FILE* underlying = static_cast<FILE*>(cookie);
+    return static_cast<ssize_t>(fwrite(buf, 1, size, underlying));
+}
+
+static int text_cookie_seek(void* cookie, off64_t* offset, int whence) {
+    FILE* underlying = static_cast<FILE*>(cookie);
+    if (fseeko(underlying, static_cast<off_t>(*offset), whence) != 0) {
+        return -1;
+    }
+    *offset = static_cast<off64_t>(ftello(underlying));
+    return 0;
+}
+
+static int text_cookie_close(void* cookie) {
+    return fclose(static_cast<FILE*>(cookie));
+}
+
+static FILE* fopen_text_aware(const char* path, const char* mode) {
+    if (!mode_is_text(mode)) {
+        return fopen(path, mode);
+    }
+    // Strip 't' for the underlying open so the mode string is portable.
+    std::string effective;
+    for (const char* p = mode; *p; ++p) {
+        if (*p != 't') effective += *p;
+    }
+    FILE* underlying = fopen(path, effective.c_str());
+    if (!underlying) return nullptr;
+    cookie_io_functions_t ops = {
+        text_cookie_read, text_cookie_write, text_cookie_seek, text_cookie_close
+    };
+    FILE* cooked = fopencookie(underlying, effective.c_str(), ops);
+    if (!cooked) {
+        fclose(underlying);
+        return nullptr;
+    }
+    // Disable the cooked stream's own buffer. glibc otherwise aligns fseek
+    // targets to BUFSIZ (8192) and consumes the delta via cookie_read —
+    // which breaks here because CR stripping means "N output bytes" does
+    // NOT equal "N underlying bytes". Unbuffered mode sends every fseek
+    // straight to cookie_seek with the caller's exact offset. The
+    // underlying FILE* keeps its own libc buffer, so per-byte fgetc from
+    // the cookie stream is still fast.
+    setvbuf(cooked, nullptr, _IONBF, 0);
+    return cooked;
+}
+
 _FILE* _fopen(const char* filename, const char* mode) {
-    return make_file_wrapper(fopen(normalize_path(filename).c_str(), mode));
+    return make_file_wrapper(fopen_text_aware(normalize_path(filename).c_str(), mode));
 }
 
 int _fclose(_FILE* f) {
