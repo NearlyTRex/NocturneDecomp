@@ -23,10 +23,10 @@
 ;   ... and 7 more
 ;
 ; Referenced Globals:
-;   undefined4 g_ProjectedScreenX1
-;   undefined4 g_ProjectedScreenY1
-;   undefined4 g_ProjectedScreenX2
-;   undefined4 g_ProjectedScreenY2
+;   undefined4 g_RenderVertexBuffer[19998].projected_vertex.screen_x
+;   undefined4 g_RenderVertexBuffer[19998].projected_vertex.screen_y
+;   undefined4 g_RenderVertexBuffer[19999].projected_vertex.screen_x
+;   undefined4 g_RenderVertexBuffer[19999].projected_vertex.screen_y
 ;
 ; Called Functions:
 ;   engine_2d.c_drawLine_FUN_004011b0
@@ -268,17 +268,17 @@ section .text
     PUSH 0x4e1f                         ; 00407fad
     CALL engine_matrix.c_projectCachedPointUnchecked_FUN_0050ce60 ; 00407fb2
         ;   XREF to: 0050ce60 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_projectCachedPointUnchecked_FUN_0050ce60(int cache_index)
-    MOV EAX,[0x007725f8]                ; 00407fb7 | g_ProjectedScreenY2
+    MOV EAX,[0x007725f8]                ; 00407fb7 | g_RenderVertexBuffer[19999].projected_vertex.screen_y
     ADD ESP,0x4                         ; 00407fbc
     SAR EAX,0x10                        ; 00407fbf
     PUSH EAX                            ; 00407fc2
-    MOV EAX,[0x007725f4]                ; 00407fc3 | g_ProjectedScreenX2
+    MOV EAX,[0x007725f4]                ; 00407fc3 | g_RenderVertexBuffer[19999].projected_vertex.screen_x
     SAR EAX,0x10                        ; 00407fc8
     PUSH EAX                            ; 00407fcb
-    MOV EAX,[0x007725c8]                ; 00407fcc | g_ProjectedScreenY1
+    MOV EAX,[0x007725c8]                ; 00407fcc | g_RenderVertexBuffer[19998].projected_vertex.screen_y
     SAR EAX,0x10                        ; 00407fd1
     PUSH EAX                            ; 00407fd4
-    MOV EAX,[0x007725c4]                ; 00407fd5 | g_ProjectedScreenX1
+    MOV EAX,[0x007725c4]                ; 00407fd5 | g_RenderVertexBuffer[19998].projected_vertex.screen_x
     SAR EAX,0x10                        ; 00407fda
     PUSH EAX                            ; 00407fdd
     CALL engine_2d.c_drawLine_FUN_004011b0 ; 00407fde

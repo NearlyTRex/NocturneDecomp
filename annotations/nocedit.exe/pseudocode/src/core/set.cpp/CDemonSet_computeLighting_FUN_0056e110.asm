@@ -21,7 +21,7 @@
 ;   core_weather.cpp_CWeather_renderParticles_FUN_005ef190 at 005ef3ae
 ;
 ; Referenced Globals:
-;   SRenderVertex[16] g_RenderVertexBuffer
+;   SRenderVertex[20000] g_RenderVertexBuffer
 ;   undefined4 g_RenderVertexBuffer[0].r
 ;   undefined4 g_RenderVertexBuffer[0].g
 ;   undefined4 g_RenderVertexBuffer[0].b

@@ -14,7 +14,7 @@
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   int g_TexturePreviewEnabled = 0x1
-;   SRenderVertex[16] g_RenderVertexBuffer
+;   SRenderVertex[20000] g_RenderVertexBuffer
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.transformed_y
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.transformed_z
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.screen_x

@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   SRenderVertex[16] g_RenderVertexBuffer
+;   SRenderVertex[20000] g_RenderVertexBuffer
 ;   int g_RenderFaceCount
 ;   SMRGLHeaderPrimitive*[2000] g_RenderFaceArray
 ;   undefined4 g_RenderFaceArray[1]

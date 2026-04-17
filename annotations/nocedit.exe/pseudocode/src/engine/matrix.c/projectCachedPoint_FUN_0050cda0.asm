@@ -11,7 +11,7 @@
 ;   engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0 at 004ce5c5
 ;
 ; Referenced Globals:
-;   SRenderVertex[16] g_RenderVertexBuffer
+;   SRenderVertex[20000] g_RenderVertexBuffer
 ;
 ; Called Functions:
 ;   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0

@@ -160,40 +160,46 @@ void __cdecl engine_3d_c_clipAndDrawLine3D_FUN_00408070(SRenderVertex vertex1,SR
            -vertex2.projected_vertex.transformed_z < vertex2.projected_vertex.transformed_y)))))) &&
        ((0 < vertex1.projected_vertex.transformed_z && (0 < vertex2.projected_vertex.transformed_z))
        )) {
-      g_QuadVertex2.projected_vertex.transformed_x = vertex1.projected_vertex.transformed_x;
-      g_QuadVertex2.projected_vertex.transformed_y = vertex1.projected_vertex.transformed_y;
-      g_QuadVertex2.projected_vertex.transformed_z = vertex1.projected_vertex.transformed_z;
-      g_QuadVertex2.projected_vertex.inv_z = vertex1.projected_vertex.inv_z;
-      g_QuadVertex2.projected_vertex.screen_x = vertex1.projected_vertex.screen_x;
-      g_QuadVertex2.projected_vertex.screen_y = vertex1.projected_vertex.screen_y;
-      g_QuadVertex2.u = vertex1.u;
-      g_QuadVertex2.v = vertex1.v;
-      g_QuadVertex2.r = vertex1.r;
-      g_QuadVertex2.g = vertex1.g;
-      g_QuadVertex2.b = vertex1.b;
-      g_QuadVertex2.a = vertex1.a;
-      g_QuadVertex3.projected_vertex.transformed_x = vertex2.projected_vertex.transformed_x;
-      g_QuadVertex3.projected_vertex.transformed_y = vertex2.projected_vertex.transformed_y;
-      g_QuadVertex3.projected_vertex.transformed_z = vertex2.projected_vertex.transformed_z;
-      g_QuadVertex3.projected_vertex.inv_z = vertex2.projected_vertex.inv_z;
-      g_QuadVertex3.projected_vertex.screen_x = vertex2.projected_vertex.screen_x;
-      g_QuadVertex3.projected_vertex.screen_y = vertex2.projected_vertex.screen_y;
-      g_QuadVertex3.u = vertex2.u;
-      g_QuadVertex3.v = vertex2.v;
-      g_QuadVertex3.r = vertex2.r;
-      g_QuadVertex3.g = vertex2.g;
-      g_QuadVertex3.b = vertex2.b;
-      g_QuadVertex3.a = vertex2.a;
+      g_RenderVertexBuffer[0x4e1e].projected_vertex.transformed_x =
+           vertex1.projected_vertex.transformed_x;
+      g_RenderVertexBuffer[0x4e1e].projected_vertex.transformed_y =
+           vertex1.projected_vertex.transformed_y;
+      g_RenderVertexBuffer[0x4e1e].projected_vertex.transformed_z =
+           vertex1.projected_vertex.transformed_z;
+      g_RenderVertexBuffer[0x4e1e].projected_vertex.inv_z = vertex1.projected_vertex.inv_z;
+      g_RenderVertexBuffer[0x4e1e].projected_vertex.screen_x = vertex1.projected_vertex.screen_x;
+      g_RenderVertexBuffer[0x4e1e].projected_vertex.screen_y = vertex1.projected_vertex.screen_y;
+      g_RenderVertexBuffer[0x4e1e].u = vertex1.u;
+      g_RenderVertexBuffer[0x4e1e].v = vertex1.v;
+      g_RenderVertexBuffer[0x4e1e].r = vertex1.r;
+      g_RenderVertexBuffer[0x4e1e].g = vertex1.g;
+      g_RenderVertexBuffer[0x4e1e].b = vertex1.b;
+      g_RenderVertexBuffer[0x4e1e].a = vertex1.a;
+      g_RenderVertexBuffer[19999].projected_vertex.transformed_x =
+           vertex2.projected_vertex.transformed_x;
+      g_RenderVertexBuffer[19999].projected_vertex.transformed_y =
+           vertex2.projected_vertex.transformed_y;
+      g_RenderVertexBuffer[19999].projected_vertex.transformed_z =
+           vertex2.projected_vertex.transformed_z;
+      g_RenderVertexBuffer[19999].projected_vertex.inv_z = vertex2.projected_vertex.inv_z;
+      g_RenderVertexBuffer[19999].projected_vertex.screen_x = vertex2.projected_vertex.screen_x;
+      g_RenderVertexBuffer[19999].projected_vertex.screen_y = vertex2.projected_vertex.screen_y;
+      g_RenderVertexBuffer[19999].u = vertex2.u;
+      g_RenderVertexBuffer[19999].v = vertex2.v;
+      g_RenderVertexBuffer[19999].r = vertex2.r;
+      g_RenderVertexBuffer[19999].g = vertex2.g;
+      g_RenderVertexBuffer[19999].b = vertex2.b;
+      g_RenderVertexBuffer[19999].a = vertex2.a;
       engine_matrix_c_projectCachedPointUnchecked_FUN_0050ce60(0x4e1e);
       engine_matrix_c_projectCachedPointUnchecked_FUN_0050ce60(19999);
-      engine_prim_c_prepareDepthBuffer_FUN_00551fb0(&g_QuadVertex2,2);
+      engine_prim_c_prepareDepthBuffer_FUN_00551fb0(g_RenderVertexBuffer + 0x4e1e,2);
       engine_2d_c_drawLine3D_FUN_00401320
-                (g_QuadVertex2.projected_vertex.screen_x >> 0x10,
-                 g_QuadVertex2.projected_vertex.screen_y >> 0x10,
-                 g_QuadVertex2.projected_vertex.transformed_z,
-                 g_QuadVertex3.projected_vertex.screen_x >> 0x10,
-                 g_QuadVertex3.projected_vertex.screen_y >> 0x10,
-                 g_QuadVertex3.projected_vertex.transformed_z);
+                (g_RenderVertexBuffer[0x4e1e].projected_vertex.screen_x >> 0x10,
+                 g_RenderVertexBuffer[0x4e1e].projected_vertex.screen_y >> 0x10,
+                 g_RenderVertexBuffer[0x4e1e].projected_vertex.transformed_z,
+                 g_RenderVertexBuffer[19999].projected_vertex.screen_x >> 0x10,
+                 g_RenderVertexBuffer[19999].projected_vertex.screen_y >> 0x10,
+                 g_RenderVertexBuffer[19999].projected_vertex.transformed_z);
       return;
     }
   }

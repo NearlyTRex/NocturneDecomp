@@ -16,7 +16,7 @@
 ;   engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170 at 0048d384
 ;
 ; Referenced Globals:
-;   SRenderVertex[16] g_RenderVertexBuffer
+;   SRenderVertex[20000] g_RenderVertexBuffer
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.screen_x
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.screen_y
 ;   int g_CullingMode

@@ -10,7 +10,7 @@
 ;   engine_drender.cpp_staticInit_FUN_0048a6b0 at 0048a6b5
 ;
 ; Referenced Globals:
-;   SRenderVertex[16] g_RenderVertexBuffer
+;   SRenderVertex[20000] g_RenderVertexBuffer
 ;
 ; *****************************************************************************
 

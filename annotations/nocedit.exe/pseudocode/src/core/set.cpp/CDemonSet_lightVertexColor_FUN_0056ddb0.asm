@@ -21,7 +21,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_00645e2b
 ;   TerminatedCString s_CDemonSet_lightVertexCol_00645e3b
-;   SRenderVertex[16] g_RenderVertexBuffer
+;   SRenderVertex[20000] g_RenderVertexBuffer
 ;   undefined4 g_RenderVertexBuffer[0].r
 ;   undefined4 g_RenderVertexBuffer[0].g
 ;   undefined4 g_RenderVertexBuffer[0].b

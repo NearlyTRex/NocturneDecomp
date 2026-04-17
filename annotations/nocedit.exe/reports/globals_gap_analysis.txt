@@ -2,22 +2,22 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      19612
-  Named globals:             19601
+Total globals analyzed:      19587
+  Named globals:             19576
   DAT_ globals:              11
-Gaps found:                  1828
-  With exact size bounds:    1736
+Gaps found:                  1821
+  With exact size bounds:    1729
   With estimated bounds:     92
-Total gap bytes:             13,385,415
-  Exact gap bytes:           13,376,374
-Overlaps (size <= 0):        13380
+Total gap bytes:             13,385,507
+  Exact gap bytes:           13,376,466
+Overlaps (size <= 0):        13372
 
 --------------------------------------------------------------------------------
 GAP SIZE DISTRIBUTION
 --------------------------------------------------------------------------------
-  1-4 bytes (likely padding/alignment)          495
-  5-16 bytes (small vars)                       486
-  17-64 bytes (structs/small arrays)            388
+  1-4 bytes (likely padding/alignment)          492
+  5-16 bytes (small vars)                       484
+  17-64 bytes (structs/small arrays)            386
   65-256 bytes (medium data)                    173
   257-1024 bytes (large structs/arrays)         91
   1-4 KB                                        71
@@ -36,9 +36,9 @@ LARGEST GAPS (top 50)
      739,452 bytes  at 0x009305f8
     after: g_PrecomputedWorldPositions              CVector3i[15499]     at 0x00902f74  size=185,988
     before: g_TempWorldPositions                     CVector3i[241][320]  at 0x009e4e74
-     570,861 bytes  at 0x006e6f67
-    after: INT_006e6f63                             int                  at 0x006e6f63  size=4
-    before: g_QuadVertex0                            SRenderVertex        at 0x00772554
+     571,073 bytes  at 0x006e6f67
+    after: g_RenderVertexBuffer[8102].a+3           undefined4           at 0x006e6f63  size=4
+    before: g_RenderingMode                          int                  at 0x00772628
      483,033 bytes  at 0x0078a127
     after: g_ActorMagicNumber                       int                  at 0x0078a123  size=4
     before: DAT_00800000                             undefined4           at 0x00800000
@@ -48,18 +48,18 @@ LARGEST GAPS (top 50)
      305,276 bytes  at 0x0151c72c
     after: g_CameraIndexedImageData+0x780           undefined4           at 0x0151c728  size=4
     before: g_CameraTextureWorkBuffer                uint[16384]          at 0x01566fa8
-     290,663 bytes  at 0x0069fffc
-    after: g_AALineVertex2[5]                       undefined4           at 0x0069fff8  size=4
-    before: INT_006e6f63                             int                  at 0x006e6f63
+     290,664 bytes  at 0x0069fffb
+    after: g_RenderVertexBuffer[2047].projected_ver undefined4           at 0x0069fff7  size=4
+    before: g_RenderVertexBuffer[8102].a+3           undefined4           at 0x006e6f63
      144,064 bytes  at 0x03f9c17c
     after: g_TempProjectedCoord                     CVector3i            at 0x03f9c170  size=12
     before: Rsrc_GroupIcon_65_0                      GroupIconResource    at 0x03fbf43c
      121,180 bytes  at 0x00800004
     after: DAT_00800000                             undefined4           at 0x00800000  size=4
     before: g_RenderBufferSortArray                  SRenderBufferEntry*[ at 0x0081d960
-      98,105 bytes  at 0x0068808b
+      98,108 bytes  at 0x0068808b
     after: g_RenderVertexBuffer[2].projected_vertex undefined4           at 0x00688087  size=4
-    before: g_AALineVertex1[4]                       undefined4           at 0x0069ffc4
+    before: g_RenderVertexBuffer[2046].projected_ver undefined4           at 0x0069ffc7
       90,372 bytes  at 0x004fab4c
     after: switchdataD_004fab48                     void*                at 0x004fab48  size=4
     before: switchdataD_00510c50                     void*                at 0x00510c50
@@ -179,19 +179,19 @@ LARGEST GAPS (top 50)
     before: switchdataD_0043ddd4                     void*                at 0x0043ddd4
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (1736) - size bounds are known precisely
+ALL EXACT GAPS (1729) - size bounds are known precisely
 --------------------------------------------------------------------------------
    4,185,048 bytes  at 0x00002428  between DAT_00002424                   and IMAGE_DOS_HEADER_00400000
    3,350,789 bytes  at 0x00ff0103  between g_ColorMagenta                 and g_CoronaLightCache
      739,452 bytes  at 0x009305f8  between g_PrecomputedWorldPositions    and g_TempWorldPositions
-     570,861 bytes  at 0x006e6f67  between INT_006e6f63                   and g_QuadVertex0
+     571,073 bytes  at 0x006e6f67  between g_RenderVertexBuffer[8102].a+3 and g_RenderingMode
      483,033 bytes  at 0x0078a127  between g_ActorMagicNumber             and DAT_00800000
      399,991 bytes  at 0x01626415  between g_LoadedVertices[0].vertex.y+1 and g_VertexNormals
      305,276 bytes  at 0x0151c72c  between g_CameraIndexedImageData+0x780 and g_CameraTextureWorkBuffer
-     290,663 bytes  at 0x0069fffc  between g_AALineVertex2[5]             and INT_006e6f63
+     290,664 bytes  at 0x0069fffb  between g_RenderVertexBuffer[2047].pro and g_RenderVertexBuffer[8102].a+3
      144,064 bytes  at 0x03f9c17c  between g_TempProjectedCoord           and Rsrc_GroupIcon_65_0
      121,180 bytes  at 0x00800004  between DAT_00800000                   and g_RenderBufferSortArray
-      98,105 bytes  at 0x0068808b  between g_RenderVertexBuffer[2].projec and g_AALineVertex1[4]
+      98,108 bytes  at 0x0068808b  between g_RenderVertexBuffer[2].projec and g_RenderVertexBuffer[2046].pro
       90,372 bytes  at 0x004fab4c  between switchdataD_004fab48           and switchdataD_00510c50
       81,644 bytes  at 0x0057e780  between switchdataD_0057e77c           and switchdataD_0059266c
       76,932 bytes  at 0x005c5ee8  between switchdataD_005c5ee4           and switchdataD_005d8b6c
@@ -718,7 +718,7 @@ ALL EXACT GAPS (1736) - size bounds are known precisely
           44 bytes  at 0x0068429c  between g_CTeleportClassVersion        and g_CTentacleClassVersion
           44 bytes  at 0x0068802b  between g_RenderVertexBuffer[0].projec and g_RenderVertexBuffer[1].projec
           44 bytes  at 0x0068805b  between g_RenderVertexBuffer[1].projec and g_RenderVertexBuffer[2].projec
-          44 bytes  at 0x007725fc  between g_ProjectedScreenY2            and g_RenderingMode
+          44 bytes  at 0x0069ffcb  between g_RenderVertexBuffer[2046].pro and g_RenderVertexBuffer[2047].pro
           44 bytes  at 0x00821fc8  between CHAR_ARRAY_00821fc4            and g_CurrentProcessingActor
           43 bytes  at 0x0064333f  between s_arning!_Duplicate_wav_string and s_s_wav_0064336a
           42 bytes  at 0x0063542f  between s_octurne_requires_at_least_64 and s_anon_00635459
@@ -743,8 +743,6 @@ ALL EXACT GAPS (1736) - size bounds are known precisely
           40 bytes  at 0x0067d528  between g_CMineCarClassVersion         and g_CDemonMissionPtr
           40 bytes  at 0x00684488  between PTR_s_Right_front_00684484     and g_CryptVesselVisualTypePairs
           40 bytes  at 0x00684874  between g_CWaterActorVersion           and g_CWayPointClassVersion
-          40 bytes  at 0x0069ffcc  between g_AALineVertex1[5]             and g_AALineVertex2[4]
-          40 bytes  at 0x0077258c  between g_QuadVertex1_Y                and g_QuadVertex2
           38 bytes  at 0x00625383  between s_alid_relational_operator_in_ and s_core_event_cpp_006253a9
           37 bytes  at 0x0062540c  between s_'t_use_hasItem_condition_in_ and s_n_00625431
           36 bytes  at 0x004c7648  between switchdataD_004c7644           and switchdataD_004c766c
@@ -1084,8 +1082,6 @@ ALL EXACT GAPS (1736) - size bounds are known precisely
           16 bytes  at 0x00684948  between g_SnowflakeTexture             and g_CWerewolfClassVersion
           16 bytes  at 0x006849b4  between g_CZombieClassVersion          and g_CharacterClassificationTable
           16 bytes  at 0x00685460  between g_AlphaNumericCharacters2      and g_ConsoleInputState
-          16 bytes  at 0x00772564  between g_QuadVertex0_V                and g_CurrentRenderColorRed
-          16 bytes  at 0x007725d4  between g_TempTextureV                 and g_QuadVertex3
           16 bytes  at 0x0151be88  between g_BackgroundSavedBlueBitPositi and g_BackgroundSavedCameraState
           16 bytes  at 0x02d831dc  between g_InputHistory+1               and g_IrisFadeType
           16 bytes  at 0x032bd780  between g_InMirrorRenderPass           and g_RenderingShadows
@@ -1785,9 +1781,6 @@ ALL EXACT GAPS (1736) - size bounds are known precisely
            4 bytes  at 0x006852b4  between g_SpecialDeviceWriteFuncPtr    and g_SpecialConsoleInputHandler
            4 bytes  at 0x006852bc  between g_SpecialConsoleInputHandler   and g_SpecialConsoleOutputHandler
            4 bytes  at 0x00685438  between g_AlphaNumericCharacters1      and g_AlphaNumericCharacters2
-           4 bytes  at 0x00772580  between g_CurrentRenderColorBlue       and g_QuadVertex1
-           4 bytes  at 0x007725c0  between g_QuadVertex2_U                and g_ProjectedScreenX1
-           4 bytes  at 0x007725f0  between g_QuadVertex3_U                and g_ProjectedScreenX2
            4 bytes  at 0x00823e2b  between g_TracedEdgeBuffer[0].y1+1     and g_TracedEdgeBuffer[1].y1+1
            4 bytes  at 0x00888e4c  between g_CCurtainClassInfo            and g_CameraLoadImageReadBuffer
            4 bytes  at 0x00ba8c74  between g_PrecomputedSurfaceNormals    and g_CoronaBlurOutputBuffer
@@ -1919,7 +1912,7 @@ ALL EXACT GAPS (1736) - size bounds are known precisely
            1 bytes  at 0x0068572d  between g_ShiftJIS_TrailByteTable      and g_InitHandlerStatusStart
 
 --------------------------------------------------------------------------------
-OVERLAPS (13380) - next global starts inside previous
+OVERLAPS (13372) - next global starts inside previous
 --------------------------------------------------------------------------------
   241 bytes overlap ~
     s_engine_2d_c_00613004                   TerminatedCString    at 0x00613004  size=256
@@ -41401,33 +41394,9 @@ OVERLAPS (13380) - next global starts inside previous
   3 bytes overlap
     g_TempDirectoryBuffer+2                  undefined4           at 0x006852de  size=4
     s__006852df                              undefined4           at 0x006852df
-  749 bytes overlap
-    g_RenderVertexBuffer                     SRenderVertex[16]    at 0x00688014  size=768
+  959981 bytes overlap
+    g_RenderVertexBuffer                     SRenderVertex[20000] at 0x00688014  size=960,000
     g_RenderVertexBuffer[0].projected_vertex undefined4           at 0x00688027
-  1 bytes overlap
-    g_AALineVertex1[4]                       undefined4           at 0x0069ffc4  size=4
-    g_AALineVertex1[4]+3                     undefined4           at 0x0069ffc7
-  3 bytes overlap
-    g_AALineVertex1[4]+3                     undefined4           at 0x0069ffc7  size=4
-    g_AALineVertex1[5]                       undefined4           at 0x0069ffc8
-  1 bytes overlap
-    g_AALineVertex2[4]                       undefined4           at 0x0069fff4  size=4
-    g_AALineVertex2[4]+3                     undefined4           at 0x0069fff7
-  3 bytes overlap
-    g_AALineVertex2[4]+3                     undefined4           at 0x0069fff7  size=4
-    g_AALineVertex2[5]                       undefined4           at 0x0069fff8
-  44 bytes overlap
-    g_QuadVertex0                            SRenderVertex        at 0x00772554  size=48
-    g_QuadVertex0_Y                          undefined4           at 0x00772558
-  44 bytes overlap
-    g_QuadVertex1                            SRenderVertex        at 0x00772584  size=48
-    g_QuadVertex1_Y                          undefined4           at 0x00772588
-  44 bytes overlap
-    g_QuadVertex2                            SRenderVertex        at 0x007725b4  size=48
-    g_QuadVertex2_Y                          undefined4           at 0x007725b8
-  44 bytes overlap
-    g_QuadVertex3                            SRenderVertex        at 0x007725e4  size=48
-    g_QuadVertex3_Y                          undefined4           at 0x007725e8
   48 bytes overlap
     g_ActorDebugBuffer                       char[52]             at 0x00821fc0  size=52
     CHAR_ARRAY_00821fc4                      undefined4           at 0x00821fc4

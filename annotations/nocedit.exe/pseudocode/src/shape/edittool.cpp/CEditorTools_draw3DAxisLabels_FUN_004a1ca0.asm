@@ -30,7 +30,7 @@
 ;   undefined4 g_AxisLabelChars+1
 ;   TerminatedCString s_c_006235af
 ;   double g_AxisScaleMultiplier = 256
-;   SRenderVertex[16] g_RenderVertexBuffer
+;   SRenderVertex[20000] g_RenderVertexBuffer
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.transformed_y
 ;   undefined4 g_RenderVertexBuffer[1].projected_vertex.transformed_x
 ;   undefined4 g_RenderVertexBuffer[1].projected_vertex.transformed_y

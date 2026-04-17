@@ -15,7 +15,7 @@
 ;   engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00 at 0048d0de
 ;
 ; Referenced Globals:
-;   SRenderVertex[16] g_RenderVertexBuffer
+;   SRenderVertex[20000] g_RenderVertexBuffer
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.screen_x
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.screen_y
 ;   int g_CullingMode

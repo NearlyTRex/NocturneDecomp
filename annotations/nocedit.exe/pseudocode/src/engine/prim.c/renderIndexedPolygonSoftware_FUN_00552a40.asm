@@ -19,7 +19,7 @@
 ;
 ; Referenced Globals:
 ;   int g_MaxViewportScanline = 0x4b0
-;   SRenderVertex[16] g_RenderVertexBuffer
+;   SRenderVertex[20000] g_RenderVertexBuffer
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.transformed_z
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.inv_z
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.screen_x

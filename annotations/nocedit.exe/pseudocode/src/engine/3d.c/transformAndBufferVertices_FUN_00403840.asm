@@ -15,7 +15,7 @@
 ;   TerminatedCString s_engine_3d_c_006133d2
 ;   TerminatedCString s_vlist_too_many_verticies_006133e1
 ;   uint g_VertexProcessingEnabled = 0x1
-;   SRenderVertex[16] g_RenderVertexBuffer
+;   SRenderVertex[20000] g_RenderVertexBuffer
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.screen_x+3
 ;   undefined4 g_RenderVertexBuffer[0].a
 ;   uint g_ProcessedVertexOffset

@@ -55,7 +55,7 @@
 ;   float g_CubeEdgeScale2 = 0.8000000
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   float g_WorldToScreenScale2 = 256
-;   SRenderVertex[16] g_RenderVertexBuffer
+;   SRenderVertex[20000] g_RenderVertexBuffer
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.transformed_y
 ;   undefined4 g_RenderVertexBuffer[1].projected_vertex.transformed_x
 ;   undefined4 g_RenderVertexBuffer[1].projected_vertex.transformed_y

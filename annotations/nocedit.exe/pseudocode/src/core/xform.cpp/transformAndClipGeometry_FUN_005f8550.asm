@@ -28,7 +28,7 @@
 ;   void* PTR_caseD_3_005f8538 = 005f88b0
 ;   void* PTR_caseD_1_005f8540 = 005f8baa
 ;   void* PTR_caseD_3_005f8548 = 005f897b
-;   SRenderVertex[16] g_RenderVertexBuffer
+;   SRenderVertex[20000] g_RenderVertexBuffer
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.transformed_y
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.transformed_z
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.inv_z

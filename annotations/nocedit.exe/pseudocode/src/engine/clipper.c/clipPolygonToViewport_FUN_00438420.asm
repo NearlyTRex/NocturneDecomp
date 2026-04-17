@@ -36,7 +36,7 @@
 ;   void* PTR_caseD_1_0043840c = 00438abd
 ;   void* PTR_caseD_3_00438414 = 004388df
 ;   uint g_VertexProcessingEnabled = 0x1
-;   SRenderVertex[16] g_RenderVertexBuffer
+;   SRenderVertex[20000] g_RenderVertexBuffer
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.transformed_y
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.screen_x
 ;   int g_CullingMode

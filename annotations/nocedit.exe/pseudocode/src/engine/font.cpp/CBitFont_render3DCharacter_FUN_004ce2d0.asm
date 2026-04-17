@@ -31,16 +31,16 @@
 ;   undefined4 g_FontTextureInfo.texture_name[1]
 ;   undefined4 g_FontTextureInfo.texture_name[2]
 ;   undefined4 g_FontTextureInfo.texture_name[3]
-;   SRenderVertex g_QuadVertex0
-;   undefined4 g_QuadVertex0_Y
-;   undefined4 g_QuadVertex0_U
-;   undefined4 g_QuadVertex0_V
-;   undefined4 g_QuadVertex0.u
-;   undefined4 g_QuadVertex0.v
-;   undefined4 g_CurrentRenderColorRed
-;   undefined4 g_CurrentRenderColorGreen
-;   undefined4 g_CurrentRenderColorBlue
-;   SRenderVertex g_QuadVertex1
+;   undefined4 g_RenderVertexBuffer[19996].projected_vertex.transformed_x
+;   undefined4 g_RenderVertexBuffer[19996].projected_vertex.transformed_y
+;   undefined4 g_RenderVertexBuffer[19996].projected_vertex.transformed_z
+;   undefined4 g_RenderVertexBuffer[19996].projected_vertex.inv_z
+;   undefined4 g_RenderVertexBuffer[19996].u
+;   undefined4 g_RenderVertexBuffer[19996].v
+;   undefined4 g_RenderVertexBuffer[19996].r
+;   undefined4 g_RenderVertexBuffer[19996].g
+;   undefined4 g_RenderVertexBuffer[19996].b
+;   undefined4 g_RenderVertexBuffer[19997].projected_vertex.transformed_x
 ;   ... and 23 more
 ;
 ; Called Functions:
@@ -110,16 +110,16 @@ section .text
     XOR EAX,EBX                         ; 004ce367
     MOV AL,byte ptr [ECX + 0x2d01f48]   ; 004ce369 | g_SourcePaletteData
     SHL EAX,0x8                         ; 004ce36f
-    MOV [0x00772574],EAX                ; 004ce372 | g_CurrentRenderColorRed
+    MOV [0x00772574],EAX                ; 004ce372 | g_RenderVertexBuffer[19996].r
     XOR EAX,EAX                         ; 004ce377
     MOV AL,byte ptr [ECX + 0x2d01f49]   ; 004ce379 | CHAR_ARRAY_02d01f49
     SHL EAX,0x8                         ; 004ce37f
-    MOV [0x00772578],EAX                ; 004ce382 | g_CurrentRenderColorGreen
+    MOV [0x00772578],EAX                ; 004ce382 | g_RenderVertexBuffer[19996].g
     XOR EAX,EAX                         ; 004ce387
     MOV AL,byte ptr [ECX + 0x2d01f4a]   ; 004ce389 | CHAR_ARRAY_02d01f4a
     SHL EAX,0x8                         ; 004ce38f
         ;   Label: LAB_004ce38f
-    MOV [0x0077257c],EAX                ; 004ce392 | g_CurrentRenderColorBlue
+    MOV [0x0077257c],EAX                ; 004ce392 | g_RenderVertexBuffer[19996].b
     MOV EAX,dword ptr [ESP + 0x3c]      ; 004ce397
         ;   Label: LAB_004ce397
     LEA ECX,[EAX*0x4 + 0x0]             ; 004ce39b
@@ -130,9 +130,9 @@ section .text
     LEA ESI,[EDX*0x4 + 0x0]             ; 004ce3af
     SHL EAX,0x4                         ; 004ce3b6
     SUB ESI,EDX                         ; 004ce3b9
-    MOV dword ptr [EAX + 0x68801c],EBX  ; 004ce3bb | g_QuadVertex0_U
+    MOV dword ptr [EAX + 0x68801c],EBX  ; 004ce3bb | g_RenderVertexBuffer[19996].projected_vertex.transformed_z
     SHL ESI,0x4                         ; 004ce3c1
-    MOV dword ptr [EAX + 0x688020],EBX  ; 004ce3c4 | g_QuadVertex0_V
+    MOV dword ptr [EAX + 0x688020],EBX  ; 004ce3c4 | g_RenderVertexBuffer[19996].projected_vertex.inv_z
     JMP 0x03fc3535                      ; 004ce3ca
         ;   XREF to: 03fc3535 (UNCONDITIONAL_JUMP)  ; LAB_03fc3535
     LEA ESI,[EBP*0x4 + 0x0]             ; 004ce3dd
@@ -180,7 +180,7 @@ section .text
     SUB ECX,EDX                         ; 004ce49b
     SHL ECX,0x4                         ; 004ce49d
     MOV EDX,dword ptr [0x02d02554]      ; 004ce4a0 | g_ViewportBottomFixed
-    MOV dword ptr [ECX + 0x688014],EAX  ; 004ce4a6 | g_QuadVertex0
+    MOV dword ptr [ECX + 0x688014],EAX  ; 004ce4a6 | g_RenderVertexBuffer[19996].projected_vertex.transformed_x
     MOV EAX,dword ptr [ESP + 0x30]      ; 004ce4ac
     MOV EBX,dword ptr [0x02d0254c]      ; 004ce4b0 | g_ViewportCenterYFixed
     SUB EAX,EDX                         ; 004ce4b6
@@ -188,7 +188,7 @@ section .text
     IMUL EDX                            ; 004ce4bd
     IDIV EBX                            ; 004ce4bf
     MOV EDX,0x10000                     ; 004ce4c1
-    MOV dword ptr [ECX + 0x688018],EAX  ; 004ce4c6 | g_QuadVertex0_Y
+    MOV dword ptr [ECX + 0x688018],EAX  ; 004ce4c6 | g_RenderVertexBuffer[19996].projected_vertex.transformed_y
     MOV ECX,dword ptr [0x02d02550]      ; 004ce4cc | g_ViewportRightFixed
     MOV EAX,ESI                         ; 004ce4d2
     MOV EBX,dword ptr [0x02d02548]      ; 004ce4d4 | g_ViewportCenterXFixed
@@ -201,14 +201,14 @@ section .text
     SUB ECX,EAX                         ; 004ce4ed
     SHL ECX,0x4                         ; 004ce4ef
     MOV EAX,dword ptr [ESP + 0x30]      ; 004ce4f2
-    MOV dword ptr [ECX + 0x688014],EDX  ; 004ce4f6 | g_QuadVertex1
+    MOV dword ptr [ECX + 0x688014],EDX  ; 004ce4f6 | g_RenderVertexBuffer[19997].projected_vertex.transformed_x
     MOV EDX,dword ptr [0x02d02554]      ; 004ce4fc | g_ViewportBottomFixed
     MOV EBX,dword ptr [0x02d0254c]      ; 004ce502 | g_ViewportCenterYFixed
     SUB EAX,EDX                         ; 004ce508
     MOV EDX,0x10000                     ; 004ce50a
     IMUL EDX                            ; 004ce50f
     IDIV EBX                            ; 004ce511
-    MOV dword ptr [ECX + 0x688018],EAX  ; 004ce513 | g_QuadVertex1_Y
+    MOV dword ptr [ECX + 0x688018],EAX  ; 004ce513 | g_RenderVertexBuffer[19997].projected_vertex.transformed_y
     MOV ECX,dword ptr [0x02d02550]      ; 004ce519 | g_ViewportRightFixed
     MOV EAX,ESI                         ; 004ce51f
     MOV EDX,0x10000                     ; 004ce521
@@ -220,7 +220,7 @@ section .text
     IDIV EBX                            ; 004ce539
     SHL ECX,0x4                         ; 004ce53b
     MOV EDX,dword ptr [0x02d02554]      ; 004ce53e | g_ViewportBottomFixed
-    MOV dword ptr [ECX + 0x688014],EAX  ; 004ce544 | g_QuadVertex2
+    MOV dword ptr [ECX + 0x688014],EAX  ; 004ce544 | g_RenderVertexBuffer[19998].projected_vertex.transformed_x
     MOV EAX,EDI                         ; 004ce54a
     MOV EBX,dword ptr [0x02d0254c]      ; 004ce54c | g_ViewportCenterYFixed
     SUB EAX,EDX                         ; 004ce552
@@ -228,7 +228,7 @@ section .text
     IMUL EDX                            ; 004ce559
     IDIV EBX                            ; 004ce55b
     MOV EDX,0x10000                     ; 004ce55d
-    MOV dword ptr [ECX + 0x688018],EAX  ; 004ce562 | g_QuadVertex2_Y
+    MOV dword ptr [ECX + 0x688018],EAX  ; 004ce562 | g_RenderVertexBuffer[19998].projected_vertex.transformed_y
     MOV EAX,dword ptr [ESP + 0x34]      ; 004ce568
     MOV ECX,dword ptr [0x02d02550]      ; 004ce56c | g_ViewportRightFixed
     MOV EBX,dword ptr [0x02d02548]      ; 004ce572 | g_ViewportCenterXFixed
@@ -239,7 +239,7 @@ section .text
     LEA ECX,[EDX*0x4 + 0x0]             ; 004ce582
     SUB ECX,EDX                         ; 004ce589
     SHL ECX,0x4                         ; 004ce58b
-    MOV dword ptr [ECX + 0x688014],EAX  ; 004ce58e | g_QuadVertex3
+    MOV dword ptr [ECX + 0x688014],EAX  ; 004ce58e | g_RenderVertexBuffer[19999].projected_vertex.transformed_x
     MOV EDX,dword ptr [0x02d02554]      ; 004ce594 | g_ViewportBottomFixed
     MOV EAX,EDI                         ; 004ce59a
     MOV EBX,dword ptr [0x02d0254c]      ; 004ce59c | g_ViewportCenterYFixed
@@ -247,7 +247,7 @@ section .text
     MOV EDX,0x10000                     ; 004ce5a4
     IMUL EDX                            ; 004ce5a9
     IDIV EBX                            ; 004ce5ab
-    MOV dword ptr [ECX + 0x688018],EAX  ; 004ce5ad | g_QuadVertex3_Y
+    MOV dword ptr [ECX + 0x688018],EAX  ; 004ce5ad | g_RenderVertexBuffer[19999].projected_vertex.transformed_y
     MOV ECX,dword ptr [ESP + 0x3c]      ; 004ce5b3
     PUSH ECX                            ; 004ce5b7
     CALL engine_matrix.c_projectCachedPoint_FUN_0050cda0 ; 004ce5b8
@@ -311,34 +311,34 @@ section .text
     SHL ECX,0x2                         ; 004ce670
     SUB ECX,EDI                         ; 004ce673
     SHL ECX,0x4                         ; 004ce675
-    MOV dword ptr [ECX + 0x68802c],EBX  ; 004ce678 | g_QuadVertex0.u
-    MOV dword ptr [ECX + 0x688030],EDX  ; 004ce67e | g_QuadVertex0.v
+    MOV dword ptr [ECX + 0x68802c],EBX  ; 004ce678 | g_RenderVertexBuffer[19996].u
+    MOV dword ptr [ECX + 0x688030],EDX  ; 004ce67e | g_RenderVertexBuffer[19996].v
     MOV ECX,dword ptr [ESP + 0x40]      ; 004ce684
     MOV dword ptr [ESP + 0x2c],ECX      ; 004ce688
     MOV EDI,dword ptr [ESP + 0x2c]      ; 004ce68c
     SHL ECX,0x2                         ; 004ce690
     SUB ECX,EDI                         ; 004ce693
     SHL ECX,0x4                         ; 004ce695
-    MOV dword ptr [ECX + 0x68802c],EAX  ; 004ce698 | g_QuadVertex1.u
-    MOV dword ptr [ECX + 0x688030],EDX  ; 004ce69e | g_QuadVertex1.v
+    MOV dword ptr [ECX + 0x68802c],EAX  ; 004ce698 | g_RenderVertexBuffer[19997].u
+    MOV dword ptr [ECX + 0x688030],EDX  ; 004ce69e | g_RenderVertexBuffer[19997].v
     MOV EDX,EBP                         ; 004ce6a4
     LEA ECX,[EBP*0x4 + 0x0]             ; 004ce6a6
     SUB ECX,EBP                         ; 004ce6ad
     PUSH 0xffff                         ; 004ce6af
     SHL ECX,0x4                         ; 004ce6b4
     MOV dword ptr [ESP + 0x24],EBP      ; 004ce6b7
-    MOV dword ptr [ECX + 0x68802c],EAX  ; 004ce6bb | g_TempTextureU
+    MOV dword ptr [ECX + 0x68802c],EAX  ; 004ce6bb | g_RenderVertexBuffer[19998].u
     MOV EAX,dword ptr [ESP + 0x3c]      ; 004ce6c1
-    MOV dword ptr [ECX + 0x688030],ESI  ; 004ce6c5 | g_TempTextureV
+    MOV dword ptr [ECX + 0x688030],ESI  ; 004ce6c5 | g_RenderVertexBuffer[19998].v
     LEA ECX,[EAX*0x4 + 0x0]             ; 004ce6cb
     XOR EDX,EBP                         ; 004ce6d2
     SUB ECX,EAX                         ; 004ce6d4
     MOV dword ptr [ESP + 0x18],EDX      ; 004ce6d6
     SHL ECX,0x4                         ; 004ce6da
     MOV EAX,0x4                         ; 004ce6dd
-    MOV dword ptr [ECX + 0x68802c],EBX  ; 004ce6e2 | g_QuadVertex3.u
+    MOV dword ptr [ECX + 0x68802c],EBX  ; 004ce6e2 | g_RenderVertexBuffer[19999].u
     MOV dword ptr [ESP + 0x8],EAX       ; 004ce6e8
-    MOV dword ptr [ECX + 0x688030],ESI  ; 004ce6ec | g_QuadVertex3.v
+    MOV dword ptr [ECX + 0x688030],ESI  ; 004ce6ec | g_RenderVertexBuffer[19999].v
     XOR ECX,ECX                         ; 004ce6f2
     MOV EAX,dword ptr [ESP + 0x40]      ; 004ce6f4
     MOV dword ptr [ESP + 0x14],ECX      ; 004ce6f8
@@ -373,18 +373,18 @@ section .text
     MOV EAX,[0x02d7b418]                ; 004ce746 | g_ShadowColorRed
         ;   Label: LAB_004ce746
     SHL EAX,0x8                         ; 004ce74b
-    MOV [0x00772574],EAX                ; 004ce74e | g_CurrentRenderColorRed
+    MOV [0x00772574],EAX                ; 004ce74e | g_RenderVertexBuffer[19996].r
     MOV EAX,[0x02d7b41c]                ; 004ce753 | g_ShadowColorGreen
     SHL EAX,0x8                         ; 004ce758
-    MOV [0x00772578],EAX                ; 004ce75b | g_CurrentRenderColorGreen
+    MOV [0x00772578],EAX                ; 004ce75b | g_RenderVertexBuffer[19996].g
     MOV EAX,[0x02d7b420]                ; 004ce760 | g_ShadowColorBlue
     JMP 0x004ce38f                      ; 004ce765
         ;   XREF to: 004ce38f (UNCONDITIONAL_JUMP)  ; LAB_004ce38f
     MOV EAX,0xffff                      ; 004ce76a
         ;   Label: LAB_004ce76a
-    MOV [0x00772578],EAX                ; 004ce76f | g_CurrentRenderColorGreen
-    MOV [0x0077257c],EAX                ; 004ce774 | g_CurrentRenderColorBlue
-    MOV [0x00772574],EAX                ; 004ce779 | g_CurrentRenderColorRed
+    MOV [0x00772578],EAX                ; 004ce76f | g_RenderVertexBuffer[19996].g
+    MOV [0x0077257c],EAX                ; 004ce774 | g_RenderVertexBuffer[19996].b
+    MOV [0x00772574],EAX                ; 004ce779 | g_RenderVertexBuffer[19996].r
     JMP 0x004ce397                      ; 004ce77e
         ;   XREF to: 004ce397 (UNCONDITIONAL_JUMP)  ; LAB_004ce397
     ADD EDI,0x8000                      ; 004ce783

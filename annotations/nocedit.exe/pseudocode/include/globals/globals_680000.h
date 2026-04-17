@@ -211,8 +211,8 @@ extern SPECIAL_DEVICE_READ_FUNC* g_SpecialDeviceReadFuncPtr;
 // SPECIAL_DEVICE_WRITE_FUNC*
 extern SPECIAL_DEVICE_WRITE_FUNC* g_SpecialDeviceWriteFuncPtr;
 
-// SRenderVertex[16]
-extern SRenderVertex g_RenderVertexBuffer[16];
+// SRenderVertex[20000]
+extern SRenderVertex g_RenderVertexBuffer[20000];
 
 // SSoundModeEntry[27]
 extern SSoundModeEntry g_SoundModeTable[27];

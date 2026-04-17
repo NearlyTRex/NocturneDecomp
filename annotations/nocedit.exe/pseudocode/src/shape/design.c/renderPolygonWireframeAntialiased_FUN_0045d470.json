@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 258,
-    "complexity_score": 94,
+    "complexity_score": 124,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 79,
+    "pseudocode_lines": 109,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 337
+    "total_lines": 367
   },
   "cross_references": [
     {
@@ -58,37 +58,37 @@
   "globals": [
     {
       "addr": "0069ffc4",
-      "name": "g_AALineVertex1[4]",
+      "name": "g_RenderVertexBuffer[2046].projected_vertex.screen_x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0069ffc7",
-      "name": "g_AALineVertex1[4]+3",
+      "name": "g_RenderVertexBuffer[2046].projected_vertex.screen_x+3",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0069ffc8",
-      "name": "g_AALineVertex1[5]",
+      "name": "g_RenderVertexBuffer[2046].projected_vertex.screen_y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0069fff4",
-      "name": "g_AALineVertex2[4]",
+      "name": "g_RenderVertexBuffer[2047].projected_vertex.screen_x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0069fff7",
-      "name": "g_AALineVertex2[4]+3",
+      "name": "g_RenderVertexBuffer[2047].projected_vertex.screen_x+3",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0069fff8",
-      "name": "g_AALineVertex2[5]",
+      "name": "g_RenderVertexBuffer[2047].projected_vertex.screen_y",
       "type": "undefined4",
       "value": null
     }
@@ -180,7 +180,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 64,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar1 = *(int *)((int)pSVar1 + (polygon_data->base).count * 4 + -4);",

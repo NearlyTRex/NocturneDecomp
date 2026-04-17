@@ -14,7 +14,7 @@
 ;   TerminatedCString s_Unknown_primitive_d_00613522
 ;   TerminatedCString s_engine_3d_c_00613539
 ;   uint g_VertexProcessingEnabled = 0x1
-;   SRenderVertex[16] g_RenderVertexBuffer
+;   SRenderVertex[20000] g_RenderVertexBuffer
 ;   int g_RenderFaceCount
 ;   SMRGLHeaderPrimitive*[2000] g_RenderFaceArray
 ;   undefined4 g_RenderFaceArray[1]

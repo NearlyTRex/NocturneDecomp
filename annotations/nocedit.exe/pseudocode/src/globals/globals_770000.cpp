@@ -7,12 +7,6 @@
 // SRenderBufferEntry[256]
 SRenderBufferEntry g_RenderBufferPool[256] = {};
 
-// SRenderVertex
-SRenderVertex g_QuadVertex0 = {};
-SRenderVertex g_QuadVertex1 = {};
-SRenderVertex g_QuadVertex2 = {};
-SRenderVertex g_QuadVertex3 = {};
-
 // float[256]
 float g_PaletteLuminanceCache[256] = {};
 

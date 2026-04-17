@@ -3320,8 +3320,8 @@ SPECIAL_DEVICE_READ_FUNC* g_SpecialDeviceReadFuncPtr = nullptr;
 // SPECIAL_DEVICE_WRITE_FUNC*
 SPECIAL_DEVICE_WRITE_FUNC* g_SpecialDeviceWriteFuncPtr = nullptr;
 
-// SRenderVertex[16]
-SRenderVertex g_RenderVertexBuffer[16] = {};
+// SRenderVertex[20000]
+SRenderVertex g_RenderVertexBuffer[20000] = {};
 
 // SSoundModeEntry[27]
 SSoundModeEntry g_SoundModeTable[27] = {

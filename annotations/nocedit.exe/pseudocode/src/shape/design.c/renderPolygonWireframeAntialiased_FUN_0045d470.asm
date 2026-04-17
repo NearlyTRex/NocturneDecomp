@@ -13,12 +13,12 @@
 ;   shape_design.c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0 at 0045d2ed
 ;
 ; Referenced Globals:
-;   undefined4 g_AALineVertex1[4]
-;   undefined4 g_AALineVertex1[4]+3
-;   undefined4 g_AALineVertex1[5]
-;   undefined4 g_AALineVertex2[4]
-;   undefined4 g_AALineVertex2[4]+3
-;   undefined4 g_AALineVertex2[5]
+;   undefined4 g_RenderVertexBuffer[2046].projected_vertex.screen_x
+;   undefined4 g_RenderVertexBuffer[2046].projected_vertex.screen_x+3
+;   undefined4 g_RenderVertexBuffer[2046].projected_vertex.screen_y
+;   undefined4 g_RenderVertexBuffer[2047].projected_vertex.screen_x
+;   undefined4 g_RenderVertexBuffer[2047].projected_vertex.screen_x+3
+;   undefined4 g_RenderVertexBuffer[2047].projected_vertex.screen_y
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_drawLineAA_FUN_00433c90
@@ -73,13 +73,13 @@ section .text
     IMUL ESI,dword ptr [EAX + 0x4],0x30 ; 0045d4e2
     JMP 0x03fc2a87                      ; 0045d4e6
         ;   XREF to: 03fc2a87 (UNCONDITIONAL_JUMP)  ; LAB_03fc2a87
-    TEST byte ptr [0x0069ffc7],0x80     ; 0045d4f8 | g_AALineVertex1[4]+3
+    TEST byte ptr [0x0069ffc7],0x80     ; 0045d4f8 | g_RenderVertexBuffer[2046].projected_vertex.screen_x+3
         ;   Label: LAB_0045d4f8
     JZ 0x0045d503                       ; 0045d4ff
         ;   XREF to: 0045d503 (CONDITIONAL_JUMP)  ; LAB_0045d503
     JMP 0x0045d53e                      ; 0045d501
         ;   XREF to: 0045d53e (UNCONDITIONAL_JUMP)  ; LAB_0045d53e
-    TEST byte ptr [0x0069fff7],0x80     ; 0045d503 | g_AALineVertex2[4]+3
+    TEST byte ptr [0x0069fff7],0x80     ; 0045d503 | g_RenderVertexBuffer[2047].projected_vertex.screen_x+3
         ;   Label: LAB_0045d503
     JZ 0x0045d50e                       ; 0045d50a
         ;   XREF to: 0045d50e (CONDITIONAL_JUMP)  ; LAB_0045d50e
@@ -88,16 +88,16 @@ section .text
     MOV EAX,dword ptr [EBP + 0x18]      ; 0045d50e
         ;   Label: LAB_0045d50e
     PUSH EAX                            ; 0045d511
-    MOV EAX,[0x0069fff8]                ; 0045d512 | g_AALineVertex2[5]
+    MOV EAX,[0x0069fff8]                ; 0045d512 | g_RenderVertexBuffer[2047].projected_vertex.screen_y
     SAR EAX,0x10                        ; 0045d517
     PUSH EAX                            ; 0045d51a
-    MOV EAX,[0x0069fff4]                ; 0045d51b | g_AALineVertex2[4]
+    MOV EAX,[0x0069fff4]                ; 0045d51b | g_RenderVertexBuffer[2047].projected_vertex.screen_x
     SAR EAX,0x10                        ; 0045d520
     PUSH EAX                            ; 0045d523
-    MOV EAX,[0x0069ffc8]                ; 0045d524 | g_AALineVertex1[5]
+    MOV EAX,[0x0069ffc8]                ; 0045d524 | g_RenderVertexBuffer[2046].projected_vertex.screen_y
     SAR EAX,0x10                        ; 0045d529
     PUSH EAX                            ; 0045d52c
-    MOV EAX,[0x0069ffc4]                ; 0045d52d | g_AALineVertex1[4]
+    MOV EAX,[0x0069ffc4]                ; 0045d52d | g_RenderVertexBuffer[2046].projected_vertex.screen_x
     SAR EAX,0x10                        ; 0045d532
     PUSH EAX                            ; 0045d535
     CALL cockpit_ckptutil.c_drawLineAA_FUN_00433c90 ; 0045d536
@@ -119,11 +119,11 @@ section .text
     IMUL ESI,dword ptr [EAX],0x30       ; 0045d568
     JMP 0x03fc2b4d                      ; 0045d56b
         ;   XREF to: 03fc2b4d (UNCONDITIONAL_JUMP)  ; LAB_03fc2b4d
-    TEST byte ptr [0x0069ffc7],0x80     ; 0045d57d | g_AALineVertex1[4]+3
+    TEST byte ptr [0x0069ffc7],0x80     ; 0045d57d | g_RenderVertexBuffer[2046].projected_vertex.screen_x+3
         ;   Label: LAB_0045d57d
     JNZ 0x0045d58f                      ; 0045d584
         ;   XREF to: 0045d58f (CONDITIONAL_JUMP)  ; LAB_0045d58f
-    TEST byte ptr [0x0069fff7],0x80     ; 0045d586 | g_AALineVertex2[4]+3
+    TEST byte ptr [0x0069fff7],0x80     ; 0045d586 | g_RenderVertexBuffer[2047].projected_vertex.screen_x+3
     JZ 0x0045d591                       ; 0045d58d
         ;   XREF to: 0045d591 (CONDITIONAL_JUMP)  ; LAB_0045d591
     JMP 0x0045d5c1                      ; 0045d58f
@@ -132,16 +132,16 @@ section .text
     MOV EAX,dword ptr [EBP + 0x18]      ; 0045d591
         ;   Label: LAB_0045d591
     PUSH EAX                            ; 0045d594
-    MOV EAX,[0x0069fff8]                ; 0045d595 | g_AALineVertex2[5]
+    MOV EAX,[0x0069fff8]                ; 0045d595 | g_RenderVertexBuffer[2047].projected_vertex.screen_y
     SAR EAX,0x10                        ; 0045d59a
     PUSH EAX                            ; 0045d59d
-    MOV EAX,[0x0069fff4]                ; 0045d59e | g_AALineVertex2[4]
+    MOV EAX,[0x0069fff4]                ; 0045d59e | g_RenderVertexBuffer[2047].projected_vertex.screen_x
     SAR EAX,0x10                        ; 0045d5a3
     PUSH EAX                            ; 0045d5a6
-    MOV EAX,[0x0069ffc8]                ; 0045d5a7 | g_AALineVertex1[5]
+    MOV EAX,[0x0069ffc8]                ; 0045d5a7 | g_RenderVertexBuffer[2046].projected_vertex.screen_y
     SAR EAX,0x10                        ; 0045d5ac
     PUSH EAX                            ; 0045d5af
-    MOV EAX,[0x0069ffc4]                ; 0045d5b0 | g_AALineVertex1[4]
+    MOV EAX,[0x0069ffc4]                ; 0045d5b0 | g_RenderVertexBuffer[2046].projected_vertex.screen_x
     SAR EAX,0x10                        ; 0045d5b5
     PUSH EAX                            ; 0045d5b8
     CALL cockpit_ckptutil.c_drawLineAA_FUN_00433c90 ; 0045d5b9

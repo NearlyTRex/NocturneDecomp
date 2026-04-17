@@ -12,7 +12,7 @@
 ; int              Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
-;   SRenderVertex[16] g_RenderVertexBuffer
+;   SRenderVertex[20000] g_RenderVertexBuffer
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.screen_x
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.screen_y
 ;   int g_CullingMode

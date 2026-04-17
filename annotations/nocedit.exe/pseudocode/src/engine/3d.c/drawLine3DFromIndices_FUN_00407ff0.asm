@@ -11,7 +11,7 @@
 ; SRenderVertex    Stack[-0x38]:48  local_38
 ;
 ; Referenced Globals:
-;   SRenderVertex[16] g_RenderVertexBuffer
+;   SRenderVertex[20000] g_RenderVertexBuffer
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.transformed_y
 ;
 ; Called Functions:

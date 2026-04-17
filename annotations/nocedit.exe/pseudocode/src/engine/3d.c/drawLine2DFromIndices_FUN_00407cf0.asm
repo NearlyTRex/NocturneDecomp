@@ -14,7 +14,7 @@
 ;   core_waypoint.cpp_CWaypoint_renderOpaque_FUN_005ebf70 at 005ec24e
 ;
 ; Referenced Globals:
-;   SRenderVertex[16] g_RenderVertexBuffer
+;   SRenderVertex[20000] g_RenderVertexBuffer
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.transformed_y
 ;
 ; Called Functions:

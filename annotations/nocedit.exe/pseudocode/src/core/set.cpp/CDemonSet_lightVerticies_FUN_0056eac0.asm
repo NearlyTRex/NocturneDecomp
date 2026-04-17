@@ -86,7 +86,7 @@
 ;   double DOUBLE_00645fd3 = 65535
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   void* g_BackBuffer
-;   SRenderVertex[16] g_RenderVertexBuffer
+;   SRenderVertex[20000] g_RenderVertexBuffer
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.transformed_y
 ;   undefined4 g_RenderVertexBuffer[0].projected_vertex.transformed_z
 ;   undefined4 g_RenderVertexBuffer[0].r

@@ -12,15 +12,15 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6908
-  Functions with suspicious globals: 67
-  Total suspicious global references: 114
+  Functions with suspicious globals: 64
+  Total suspicious global references: 110
 
   Most commonly misresolved globals:
     g_SfxOptions                                       12 functions
     g_KeyboardState                                    9 functions
-    g_RenderVertexBuffer                               5 functions
     g_ColorCubeLookup                                  4 functions
     g_CDemonCameraInstance                             4 functions
+    g_RenderVertexBuffer                               4 functions
     g_WindowHeight                                     3 functions
     g_GetLastErrorFunc                                 3 functions
     g_WindowWidth                                      2 functions
@@ -29,16 +29,16 @@ SUMMARY
     g_CKeysPtr                                         2 functions
     g_CommandTemplates                                 2 functions
     g_PositiveInfinity                                 2 functions
-    g_QuadVertex3                                      2 functions
     g_MMXSupported                                     1 functions
     g_CKeyFramedModelInstanceInstance                  1 functions
     g_CBaronWeaponClassInfo                            1 functions
     g_CBaronWeaponClassVersion                         1 functions
     g_CWeaponClassInfo                                 1 functions
     g_SourcePaletteData                                1 functions
+    g_RenderStateFlags                                 1 functions
 
   .keep files with issues: 12 (these need manual review)
-  Raw .cpp files with issues: 55
+  Raw .cpp files with issues: 52
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -385,18 +385,6 @@ core_game.cpp_CGame_beginFadeOut_FUN_004e0960  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-engine_3d.c_clipAndDrawLine2D_FUN_00407d70  [.cpp]  (2 suspicious globals)
-  File: engine/3d.c
-
-  g_QuadVertex2
-    Used at lines: 163, 164, 165, 166, 167, ...
-    NOT found in function reference list
-
-  g_QuadVertex3
-    Used at lines: 175, 176, 177, 178, 179, ...
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0  [.cpp]  (2 suspicious globals)
   File: sound/sndmain.cpp
 
@@ -569,14 +557,6 @@ crt_watcom.c__mkdir_FUN_00600e10  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-engine_3d.c_clipAndDrawLine3D_FUN_00408070  [.cpp]  (1 suspicious globals)
-  File: engine/3d.c
-
-  g_QuadVertex3
-    Used at lines: 175, 176, 177, 178, 179, ...
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470  [.cpp]  (1 suspicious globals)
   File: engine/3d.c
 
@@ -622,14 +602,6 @@ shape_design.c_renderPolygonVerticesWithLabels_FUN_0045c2f0  [.cpp]  (1 suspicio
 
   g_KeyboardState
     Used at lines: 23, 23, 24
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_renderPolygonWireframeAntialiased_FUN_0045d470  [.cpp]  (1 suspicious globals)
-  File: shape/design.c
-
-  g_RenderVertexBuffer
-    Used at lines: 25, 26, 27, 28, 29, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

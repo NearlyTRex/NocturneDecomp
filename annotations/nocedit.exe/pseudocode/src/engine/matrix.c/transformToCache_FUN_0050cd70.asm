@@ -17,7 +17,7 @@
 ;   shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40 at 004a1f7d
 ;
 ; Referenced Globals:
-;   SRenderVertex[16] g_RenderVertexBuffer
+;   SRenderVertex[20000] g_RenderVertexBuffer
 ;
 ; Called Functions:
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c

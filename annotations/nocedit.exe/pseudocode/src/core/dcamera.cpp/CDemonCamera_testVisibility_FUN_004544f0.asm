@@ -13,7 +13,7 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   SRenderVertex[16] g_RenderVertexBuffer
+;   SRenderVertex[20000] g_RenderVertexBuffer
 ;   undefined4 g_RenderVertexBuffer[1].projected_vertex.transformed_x
 ;   SCameraViewportState g_BackgroundSavedCameraState
 ;   SCameraViewportState g_SavedCameraState
