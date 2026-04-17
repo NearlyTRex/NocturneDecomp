@@ -50,14 +50,14 @@ LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_005f3150(HWND hWnd, UINT
                         g_MouseX = lParam & 0xffff;
                         g_MouseY = uVar3;
                         g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] | 1;
-                        g_LeftMousePressed = 1;
+                        g_KeyboardState[0x200] = '\x01';
                         return 0;
                     }
                     if (message < 0x203) {
                         // WM_LBUTTONUP
                         g_MouseX = lParam & 0xffff;
                         g_MouseY = uVar3;
-                        g_LeftMouseReleased = 1;
+                        g_MessageFlags[512] = 1;
                         g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] & 0xfe;
                         return 0;
                     }
@@ -65,7 +65,7 @@ LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_005f3150(HWND hWnd, UINT
                         // WM_RBUTTONDOWN
                         g_MouseX = lParam & 0xffff;
                         g_MouseY = uVar3;
-                        g_RightMousePressed = 1;
+                        g_KeyboardState[0x201] = '\x01';
                         g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] | 2;
                         return 0;
                     }
@@ -76,7 +76,7 @@ LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_005f3150(HWND hWnd, UINT
                     // WM_RBUTTONUP
                     g_MouseX = lParam & 0xffff;
                     g_MouseY = uVar3;
-                    g_RightMouseReleased = 1;
+                    g_MessageFlags[513] = 1;
                     g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] & 0xfd;
                     return 0;
                 }
@@ -87,14 +87,14 @@ LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_005f3150(HWND hWnd, UINT
                             g_MouseX = lParam & 0xffff;
                             g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] | 4;
                             g_MouseY = uVar3;
-                            g_MiddleMousePressed = 1;
+                            g_KeyboardState[0x20c] = '\x01';
                             return 0;
                         }
                         if (message == 0x208) {
                             // WM_MBUTTONUP
                             g_MouseX = lParam & 0xffff;
                             g_MouseY = uVar3;
-                            g_MiddleMouseReleased = 1;
+                            g_MessageFlags[524] = 1;
                             g_MouseButtonFlags.bytes[0] = g_MouseButtonFlags.bytes[0] & 0xfb;
                             return 0;
                         }

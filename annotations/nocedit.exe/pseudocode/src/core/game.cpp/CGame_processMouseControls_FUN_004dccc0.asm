@@ -22,7 +22,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   int g_MouseX
 ;   int g_MouseY
-;   char[512] g_KeyboardState
+;   char[4952] g_KeyboardState
 ;   int g_StoredCameraValue
 ;   undefined4 g_CDemonSetInstance.selected_camera_index
 ;

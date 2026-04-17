@@ -19,7 +19,6 @@ void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFon
   byte *pbVar4;
   byte *pbVar6;
   byte *pbVar5;
-  int iVar8;
   int iVar9;
   int iVar6;
   int iVar7;
@@ -36,7 +35,7 @@ void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFon
   byte *local_1c;
   int local_18;
   byte *local_14;
-  
+
   ptr = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                   (bitmap_height * 4,"..\\engine\\font.cpp",0x1b7);
   if (ptr == (int *)0x0) {
@@ -95,24 +94,23 @@ void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFon
       local_14 = (byte *)((int)this_ptr->bitmap_data[bitmap_count] + *local_30 * bitmap_width);
       bVar1 = false;
       local_1c = local_14 + bitmap_width;
-      iVar8 = (int)(this_ptr->bitmap_files + -1) + 0x4c + iVar9 * 4;
       for (iVar7 = 0; iVar2 = iVar7 - local_28, iVar7 < bitmap_width; iVar7 = iVar7 + 1) {
         if (bVar1) {
           if (*local_14 != local_20) {
-            *(int *)(iVar8 + 0x2568) = iVar2;
+            this_ptr->char_widths[iVar9] = iVar2;
             bVar1 = false;
             if (this_ptr->max_char_width < iVar2) {
               this_ptr->max_char_width = iVar2;
             }
             iVar3 = engine_font_cpp_CBitFont_calculateCharacterHeight_FUN_004cda20
-                              (this_ptr,*(uchar **)(iVar8 + 0x1d68),*(int *)(iVar8 + 0x2568),
+                              (this_ptr,(uchar *)this_ptr->char_positions[iVar9],
+                               this_ptr->char_widths[iVar9],
                                local_30[1] - (*local_30 + 1),bitmap_width);
-            *(int *)(iVar8 + 0x2968) = iVar3;
+            this_ptr->char_heights[iVar9] = iVar3;
             if (this_ptr->max_char_height < iVar3) {
               this_ptr->max_char_height = iVar3;
             }
             iVar9 = iVar9 + 1;
-            iVar8 = iVar8 + 4;
           }
         }
         else if (*local_14 == local_20) {
@@ -125,23 +123,23 @@ void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFon
             g_CurrentFilename = "..\\engine\\font.cpp";
             core_main_c_displayErrorAndQuit_FUN_00506f10(local_16c);
           }
-          *(byte **)(iVar8 + 0x1d68) = local_1c;
+          this_ptr->char_positions[iVar9] = (int)local_1c;
           local_28 = iVar7;
         }
         local_1c = local_1c + 1;
         local_14 = local_14 + 1;
       }
       if (bVar1) {
-        *(int *)(iVar8 + 0x2568) = iVar2;
+        this_ptr->char_widths[iVar9] = iVar2;
         if (this_ptr->max_char_width < iVar2) {
           this_ptr->max_char_width = iVar2;
         }
-        iVar8 = engine_font_cpp_CBitFont_calculateCharacterHeight_FUN_004cda20
+        iVar3 = engine_font_cpp_CBitFont_calculateCharacterHeight_FUN_004cda20
                           (this_ptr,(uchar *)this_ptr->char_positions[iVar9],
                            this_ptr->char_widths[iVar9],local_30[1] - (*local_30 + 1),bitmap_width);
-        this_ptr->char_heights[iVar9] = iVar8;
-        if (this_ptr->max_char_height < iVar8) {
-          this_ptr->max_char_height = iVar8;
+        this_ptr->char_heights[iVar9] = iVar3;
+        if (this_ptr->max_char_height < iVar3) {
+          this_ptr->max_char_height = iVar3;
         }
         iVar9 = iVar9 + 1;
       }
@@ -150,11 +148,9 @@ void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFon
     } while (local_38 < local_34 + -1);
   }
   if (first_char < iVar9) {
-    iVar8 = (int)(this_ptr->bitmap_files + -1) + 0x4c + first_char * 4;
     do {
+      this_ptr->char_bitmap_index[first_char] = bitmap_count;
       first_char = first_char + 1;
-      *(int *)(iVar8 + 0x2168) = bitmap_count;
-      iVar8 = iVar8 + 4;
     } while (first_char < iVar9);
   }
   this_ptr->current_line_height = this_ptr->max_char_height;

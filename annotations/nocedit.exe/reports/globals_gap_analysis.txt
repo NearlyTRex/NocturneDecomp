@@ -2,24 +2,24 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      19615
-  Named globals:             19604
+Total globals analyzed:      19612
+  Named globals:             19601
   DAT_ globals:              11
-Gaps found:                  1831
-  With exact size bounds:    1739
+Gaps found:                  1828
+  With exact size bounds:    1736
   With estimated bounds:     92
-Total gap bytes:             13,385,769
-  Exact gap bytes:           13,376,728
-Overlaps (size <= 0):        13379
+Total gap bytes:             13,385,415
+  Exact gap bytes:           13,376,374
+Overlaps (size <= 0):        13380
 
 --------------------------------------------------------------------------------
 GAP SIZE DISTRIBUTION
 --------------------------------------------------------------------------------
   1-4 bytes (likely padding/alignment)          495
-  5-16 bytes (small vars)                       487
-  17-64 bytes (structs/small arrays)            389
+  5-16 bytes (small vars)                       486
+  17-64 bytes (structs/small arrays)            388
   65-256 bytes (medium data)                    173
-  257-1024 bytes (large structs/arrays)         92
+  257-1024 bytes (large structs/arrays)         91
   1-4 KB                                        71
   4-64 KB                                       107
   64+ KB                                        17
@@ -179,7 +179,7 @@ LARGEST GAPS (top 50)
     before: switchdataD_0043ddd4                     void*                at 0x0043ddd4
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (1739) - size bounds are known precisely
+ALL EXACT GAPS (1736) - size bounds are known precisely
 --------------------------------------------------------------------------------
    4,185,048 bytes  at 0x00002428  between DAT_00002424                   and IMAGE_DOS_HEADER_00400000
    3,350,789 bytes  at 0x00ff0103  between g_ColorMagenta                 and g_CoronaLightCache
@@ -300,7 +300,7 @@ ALL EXACT GAPS (1739) - size bounds are known precisely
        4,728 bytes  at 0x00561610  between switchdataD_0056160c           and switchdataD_00562888
        4,624 bytes  at 0x00685b48  between g_ExitHandlerTableEnd          and GUID_00686d58
        4,476 bytes  at 0x0053d860  between switchdataD_0053d85c           and switchdataD_0053e9dc
-       4,427 bytes  at 0x02d040a5  between g_MiddleMousePressed           and g_SoftwareRenderingForced
+       4,424 bytes  at 0x02d040a8  between g_KeyboardState+0x20c          and g_SoftwareRenderingForced
        4,257 bytes  at 0x00411aa0  between switchdataD_00411a9c           and DAT_00412b41
        4,196 bytes  at 0x004e551c  between switchdataD_004e5518           and switchdataD_004e6580
        4,108 bytes  at 0x004366dc  between PTR_caseD_3_004366d8           and switchdataD_004376e8
@@ -420,7 +420,7 @@ ALL EXACT GAPS (1739) - size bounds are known precisely
          476 bytes  at 0x005f8330  between PTR_caseD_3_005f832c           and switchdataD_005f850c
          472 bytes  at 0x00680e30  between PTR_s_anon_006441c9_00680e2c   and PTR_s_cmp_counterUsed_relOp_co
          442 bytes  at 0x00684d12  between g_StderrLogFile                and g_StaticFilePoolEnd
-         428 bytes  at 0x02d03eec  between CHAR_ARRAY_02d03ee8            and g_LeftMousePressed
+         428 bytes  at 0x02d03eec  between CHAR_ARRAY_02d03ee8            and g_KeyboardState+0x200
          420 bytes  at 0x00437ab8  between PTR_caseD_3_00437ab4           and switchdataD_00437c5c
          416 bytes  at 0x00681f10  between PTR_s_GENERIC_00681f0c         and g_SoundResultBufferTemplate
          404 bytes  at 0x03f6af94  between g_SoundListenerOrient          and g_SoundFileList
@@ -451,7 +451,6 @@ ALL EXACT GAPS (1739) - size bounds are known precisely
          304 bytes  at 0x004376f8  between PTR_caseD_3_004376f4           and PTR_caseD_1_00437828
          300 bytes  at 0x0043619c  between PTR_caseD_3_00436198           and switchdataD_004362c8
          300 bytes  at 0x00437980  between PTR_caseD_3_0043797c           and PTR_caseD_1_00437aac
-         300 bytes  at 0x03f98cb0  between g_MiddleMouseReleased          and g_NumWindowMessageHandlers
          297 bytes  at 0x02d0a467  between g_EventErrorMessageBuffer+3    and g_FileTransferErrorMessage
          292 bytes  at 0x0066e1e8  between s__0066e1e4                    and g_PropertyFlagDefinitions
          292 bytes  at 0x03f5d97c  between g_SoundTestErrorBuffer         and g_SoundReferenceVolumeDistance
@@ -746,7 +745,6 @@ ALL EXACT GAPS (1739) - size bounds are known precisely
           40 bytes  at 0x00684874  between g_CWaterActorVersion           and g_CWayPointClassVersion
           40 bytes  at 0x0069ffcc  between g_AALineVertex1[5]             and g_AALineVertex2[4]
           40 bytes  at 0x0077258c  between g_QuadVertex1_Y                and g_QuadVertex2
-          40 bytes  at 0x03f98c84  between g_RightMouseReleased           and g_MiddleMouseReleased
           38 bytes  at 0x00625383  between s_alid_relational_operator_in_ and s_core_event_cpp_006253a9
           37 bytes  at 0x0062540c  between s_'t_use_hasItem_condition_in_ and s_n_00625431
           36 bytes  at 0x004c7648  between switchdataD_004c7644           and switchdataD_004c766c
@@ -1219,7 +1217,6 @@ ALL EXACT GAPS (1739) - size bounds are known precisely
           10 bytes  at 0x00648b69  between s_room_selected_00648b62+3     and s_Select_default_room_size_006
           10 bytes  at 0x006565ee  between s_aracter_006565ea             and DOUBLE_006565f8
           10 bytes  at 0x00684cd4  between INT_00684cd0                   and g_StdoutLogFile
-          10 bytes  at 0x02d0409a  between g_RightMousePressed            and g_MiddleMousePressed
            9 bytes  at 0x006170a1  between s_dlite.raw_0061709d           and DOUBLE_006170aa
            9 bytes  at 0x006210ab  between s_aultDoorOpen_006210a7        and s_defaultDoorClose_006210b4
            9 bytes  at 0x006210cc  between s_r-locked.wav_006210c8        and s_defaultDoorOpen_006210d5
@@ -1400,7 +1397,6 @@ ALL EXACT GAPS (1739) - size bounds are known precisely
            8 bytes  at 0x00685270  between g_IOControlBlock               and g_PureVirtualCallFlag
            8 bytes  at 0x00772630  between g_SoftwareZBuffer              and g_PaletteLuminanceCache
            8 bytes  at 0x015c48bc  between g_PolygonToolMode              and g_PolygonScreenCache
-           8 bytes  at 0x02c6d59c  between g_CDemonRendererInstance       and g_RenderPixelCounter
            8 bytes  at 0x02d03ed4  between CHAR_ARRAY_02d03ed0            and CHAR_ARRAY_02d03edc
            8 bytes  at 0x02d7b008  between g_SplineBasisTable             and g_TempTextBuffer
            8 bytes  at 0x02db8a68  between g_SkipIntroVideo               and g_ErrorMessageBuffer_02db8a70
@@ -1427,6 +1423,7 @@ ALL EXACT GAPS (1739) - size bounds are known precisely
            7 bytes  at 0x006439f6  between s_Timer_006439f2               and s_Timer_006439fd
            7 bytes  at 0x00643a0c  between s_RelOp_00643a08               and s_RelOp_00643a13
            7 bytes  at 0x00643a58  between s_niVariable_00643a54          and s_SCmdParm_setTemplateText_006
+           7 bytes  at 0x02d0409d  between g_KeyboardState+0x201          and g_KeyboardState+0x20c
            6 bytes  at 0x0061450b  between s_d_a_rule)_00614507           and s_s_s_00614511
            6 bytes  at 0x0061bef8  between s_Hit_a_key_0061bef1+3         and g_SpatialTreeScale
            6 bytes  at 0x006252be  between s_tax_error_006252ba           and s_Game_Flag_s_006252c4
@@ -1922,7 +1919,7 @@ ALL EXACT GAPS (1739) - size bounds are known precisely
            1 bytes  at 0x0068572d  between g_ShiftJIS_TrailByteTable      and g_InitHandlerStatusStart
 
 --------------------------------------------------------------------------------
-OVERLAPS (13379) - next global starts inside previous
+OVERLAPS (13380) - next global starts inside previous
 --------------------------------------------------------------------------------
   241 bytes overlap ~
     s_engine_2d_c_00613004                   TerminatedCString    at 0x00613004  size=256
@@ -41602,8 +41599,8 @@ OVERLAPS (13379) - next global starts inside previous
   3 bytes overlap
     UCHAR_ARRAY_02d0224c                     undefined4           at 0x02d0224c  size=4
     UCHAR_ARRAY_02d0224d                     undefined4           at 0x02d0224d
-  511 bytes overlap
-    g_KeyboardState                          char[512]            at 0x02d03e98  size=512
+  4951 bytes overlap
+    g_KeyboardState                          char[4952]           at 0x02d03e98  size=4,952
     CHAR_ARRAY_02d03e99                      undefined4           at 0x02d03e99
   1 bytes overlap
     CHAR_ARRAY_02d03e99                      undefined4           at 0x02d03e99  size=4
@@ -41713,6 +41710,9 @@ OVERLAPS (13379) - next global starts inside previous
   2 bytes overlap
     CHAR_ARRAY_02d03ee6                      undefined4           at 0x02d03ee6  size=4
     CHAR_ARRAY_02d03ee8                      undefined4           at 0x02d03ee8
+  3 bytes overlap
+    g_KeyboardState+0x200                    undefined4           at 0x02d04098  size=4
+    g_KeyboardState+0x201                    undefined4           at 0x02d04099
   1 bytes overlap
     g_JoyButtons+1                           undefined4           at 0x02d05209  size=4
     g_JoystickPresent                        int                  at 0x02d0520c

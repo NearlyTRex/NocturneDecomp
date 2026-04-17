@@ -188,9 +188,6 @@ extern int g_InputDisabled;
 extern int g_ApplicationActive;
 extern int g_TotalPhysicalMemory;
 extern int g_AvailableSwapSpace;
-extern int g_LeftMouseReleased;
-extern int g_RightMouseReleased;
-extern int g_MiddleMouseReleased;
 extern int g_NumWindowMessageHandlers;
 extern int g_ArgCount;
 extern int g_MoviePlaying;
@@ -216,8 +213,8 @@ extern int DAT_03F9C150;
 // int[20]
 extern int g_InputBuffer[20];
 
-// int[512]
-extern int g_MessageFlags[512];
+// int[600]
+extern int g_MessageFlags[600];
 
 // uint
 extern uint UINT_03f96b40;

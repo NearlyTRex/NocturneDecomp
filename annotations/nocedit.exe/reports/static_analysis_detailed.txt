@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (379 diagnostics)
+Cppcheck (quick) (378 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -720,7 +720,7 @@ uninitvar (65)
     File: core/xform.cpp
     Uninitialized variable: extraout_EAX_06
 
-  engine_font.cpp_CBitFont_parseCharacterMetrics_FUN line 99
+  engine_font.cpp_CBitFont_parseCharacterMetrics_FUN line 97
     File: engine/font.cpp
     Uninitialized variable: local_28
 
@@ -1579,14 +1579,6 @@ nullPointerArithmetic (1)
   core_main.c_displayErrorAndQuit_FUN_00506f10       line 83
     File: core/main.c
     Pointer addition with NULL pointer.
-
-----------------------------------------------------------------------------------------------------
-memleakOnRealloc (1)
-----------------------------------------------------------------------------------------------------
-
-  shape_memdbg.cpp_debugRealloc_FUN_0050f540         line 36
-    File: shape/memdbg.cpp
-    Common realloc mistake: 'header' nulled but not freed upon failure
 
 ----------------------------------------------------------------------------------------------------
 invalidTestForOverflow (1)

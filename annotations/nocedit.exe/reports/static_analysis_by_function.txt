@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 122
-  Total diagnostics: 379
+  Functions with findings: 121
+  Total diagnostics: 378
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 122, raw .cpp files: 0
+  .keep.cpp files: 121, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -939,7 +939,7 @@ engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60  [.keep] [Cppcheck (quick)]
 engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550  [.keep] [Cppcheck (quick)]
   File: engine/font.cpp  (1 diagnostics)
 
-  Line   99: [uninitvar] Uninitialized variable: local_28
+  Line   97: [uninitvar] Uninitialized variable: local_28
 
 ----------------------------------------------------------------------------------------------------
 engine_prim.c_renderScanlinePolygon_FUN_00553470  [.keep] [Cppcheck (quick)]
@@ -952,12 +952,6 @@ shape_design.c_generateOctant_FUN_00469420  [.keep] [Cppcheck (quick)]
   File: shape/design.c  (1 diagnostics)
 
   Line   83: [selfAssignment] Redundant assignment of 'pcVar4' to itself.
-
-----------------------------------------------------------------------------------------------------
-shape_memdbg.cpp_debugRealloc_FUN_0050f540  [.keep] [Cppcheck (quick)]
-  File: shape/memdbg.cpp  (1 diagnostics)
-
-  Line   36: [memleakOnRealloc] Common realloc mistake: 'header' nulled but not freed upon failure
 
 ----------------------------------------------------------------------------------------------------
 shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910  [.keep] [Cppcheck (quick)]

@@ -39,11 +39,6 @@ _MMX_INTEGER g_SavedMMX5 = {};
 _MMX_INTEGER g_SavedMMX6 = {};
 _MMX_INTEGER g_SavedMMX7 = {};
 
-// byte
-byte g_LeftMousePressed = {};
-byte g_RightMousePressed = {};
-byte g_MiddleMousePressed = {};
-
 // byte*
 byte* g_CurrentPalette = {};
 
@@ -56,8 +51,8 @@ char g_EventErrorMessageBuffer[256] = {};
 // char[32768]
 char g_FileTransferBuffer[32768] = {};
 
-// char[512]
-char g_KeyboardState[512] = {};
+// char[4952]
+char g_KeyboardState[4952] = {};
 
 // char[768]
 char g_SourcePaletteData[768] = {};

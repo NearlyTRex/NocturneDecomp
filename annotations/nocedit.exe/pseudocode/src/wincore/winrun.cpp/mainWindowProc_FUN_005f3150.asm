@@ -24,10 +24,10 @@
 ;   int g_MouseX
 ;   int g_MouseY
 ;   _BIT_INTEGER32 g_MouseButtonFlags
-;   char[512] g_KeyboardState
-;   byte g_LeftMousePressed
-;   byte g_RightMousePressed
-;   byte g_MiddleMousePressed
+;   char[4952] g_KeyboardState
+;   undefined4 g_KeyboardState+0x200
+;   undefined4 g_KeyboardState+0x201
+;   undefined4 g_KeyboardState+0x20c
 ;   ... and 10 more
 ;
 ; Called Functions:
@@ -254,7 +254,7 @@ section .text
     OR byte ptr [0x02cf6a94],0x1        ; 005f3355 | g_MouseButtonFlags
     MOV AH,0x1                          ; 005f335c
     XOR EDI,EDI                         ; 005f335e
-    MOV byte ptr [0x02d04098],AH        ; 005f3360 | g_LeftMousePressed
+    MOV byte ptr [0x02d04098],AH        ; 005f3360 | g_KeyboardState+0x200
     MOV EAX,EDI                         ; 005f3366
     POP EBP                             ; 005f3368
     POP EDI                             ; 005f3369
@@ -270,7 +270,7 @@ section .text
     MOV CH,byte ptr [0x02cf6a94]        ; 005f3386 | g_MouseButtonFlags
     MOV [0x02cf6a90],EAX                ; 005f338c | g_MouseY
     AND CH,0xfe                         ; 005f3391
-    MOV dword ptr [0x03f98c7c],EDI      ; 005f3394 | g_LeftMouseReleased
+    MOV dword ptr [0x03f98c7c],EDI      ; 005f3394 | g_MessageFlags[512]
     MOV byte ptr [0x02cf6a94],CH        ; 005f339a | g_MouseButtonFlags
     XOR EDI,EDI                         ; 005f33a0
     MOV EAX,EDI                         ; 005f33a2
@@ -289,7 +289,7 @@ section .text
     XOR EDI,EDI                         ; 005f33c5
     MOV [0x02cf6a90],EAX                ; 005f33c7 | g_MouseY
     OR BH,0x2                           ; 005f33cc
-    MOV byte ptr [0x02d04099],CL        ; 005f33cf | g_RightMousePressed
+    MOV byte ptr [0x02d04099],CL        ; 005f33cf | g_KeyboardState+0x201
     MOV byte ptr [0x02cf6a94],BH        ; 005f33d5 | g_MouseButtonFlags
     MOV EAX,EDI                         ; 005f33db
     POP EBP                             ; 005f33dd
@@ -307,7 +307,7 @@ section .text
     XOR EDI,EDI                         ; 005f3401
     MOV [0x02cf6a90],EAX                ; 005f3403 | g_MouseY
     AND BL,0xfd                         ; 005f3408
-    MOV dword ptr [0x03f98c80],ESI      ; 005f340b | g_RightMouseReleased
+    MOV dword ptr [0x03f98c80],ESI      ; 005f340b | g_MessageFlags[513]
     MOV byte ptr [0x02cf6a94],BL        ; 005f3411 | g_MouseButtonFlags
     MOV EAX,EDI                         ; 005f3417
     POP EBP                             ; 005f3419
@@ -326,7 +326,7 @@ section .text
     MOV byte ptr [0x02cf6a94],DL        ; 005f343d | g_MouseButtonFlags
     MOV DH,0x1                          ; 005f3443
     MOV [0x02cf6a90],EAX                ; 005f3445 | g_MouseY
-    MOV byte ptr [0x02d040a4],DH        ; 005f344a | g_MiddleMousePressed
+    MOV byte ptr [0x02d040a4],DH        ; 005f344a | g_KeyboardState+0x20c
     MOV EAX,EDI                         ; 005f3450
     POP EBP                             ; 005f3452
     POP EDI                             ; 005f3453
@@ -343,7 +343,7 @@ section .text
     MOV AH,byte ptr [0x02cf6a94]        ; 005f3475 | g_MouseButtonFlags
     XOR EDI,EDI                         ; 005f347b
     AND AH,0xfb                         ; 005f347d
-    MOV dword ptr [0x03f98cac],EBX      ; 005f3480 | g_MiddleMouseReleased
+    MOV dword ptr [0x03f98cac],EBX      ; 005f3480 | g_MessageFlags[524]
     MOV byte ptr [0x02cf6a94],AH        ; 005f3486 | g_MouseButtonFlags
     MOV EAX,EDI                         ; 005f348c
     POP EBP                             ; 005f348e

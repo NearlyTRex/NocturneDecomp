@@ -17,6 +17,8 @@
 
 #include "system/ddraw.h"
 
+extern SDL_Window* g_sdlWindow;
+
 // =============================================================================
 // DirectDraw constants (from the original Windows SDK)
 // =============================================================================
@@ -177,14 +179,27 @@ static HRESULT ddraw_CreateClipper(IDirectDraw* this_ptr, DWORD flags,
     return DD_OK;
 }
 
+// Minimal palette stub — needs a vtable with at least Release so cleanup
+// code that does g_DirectDrawUnknown->vtable->Release() doesn't null-deref.
+struct PaletteShimData {
+    IUnknown_vtable* vtable;
+    IUnknown_vtable vtable_data;
+};
+
+static ULONG palette_Release(IUnknown* this_ptr) {
+    free(this_ptr);
+    return 0;
+}
+
 static HRESULT ddraw_CreatePalette(IDirectDraw* this_ptr, DWORD flags,
                                     PALETTEENTRY* entries, IDirectDrawPalette** palette,
                                     IUnknown* outer) {
     (void)this_ptr; (void)flags; (void)entries; (void)outer;
-    // Stub: palettes are rarely used in 16/24/32-bit modes
-    IDirectDrawPalette* pal = (IDirectDrawPalette*)calloc(1, sizeof(IDirectDrawPalette));
+    PaletteShimData* pal = (PaletteShimData*)calloc(1, sizeof(PaletteShimData));
     if (!pal) return DDERR_OUTOFMEMORY;
-    *palette = pal;
+    pal->vtable_data.Release = palette_Release;
+    pal->vtable = &pal->vtable_data;
+    *palette = reinterpret_cast<IDirectDrawPalette*>(pal);
     return DD_OK;
 }
 
@@ -364,14 +379,16 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD width, DWORD he
     ddraw->display_bpp = bpp;
 
     if (!ddraw->window) {
-        Uint32 flags = SDL_WINDOW_SHOWN;
-        if (ddraw->cooperative_level & DDSCL_FULLSCREEN) {
-            flags |= SDL_WINDOW_FULLSCREEN;
+        if (g_sdlWindow) {
+            ddraw->window = g_sdlWindow;
+        } else {
+            Uint32 flags = SDL_WINDOW_SHOWN;
+            ddraw->window = SDL_CreateWindow("Nocturne",
+                                              SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+                                              width, height, flags);
+            if (!ddraw->window) return DDERR_GENERIC;
         }
-        ddraw->window = SDL_CreateWindow("Nocturne",
-                                          SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-                                          width, height, flags);
-        if (!ddraw->window) return DDERR_GENERIC;
+        SDL_SetWindowSize(ddraw->window, width, height);
 
         ddraw->renderer = SDL_CreateRenderer(ddraw->window, -1,
                                               SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
@@ -382,7 +399,7 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD width, DWORD he
     } else {
         SDL_SetWindowSize(ddraw->window, width, height);
         if (ddraw->cooperative_level & DDSCL_FULLSCREEN) {
-            SDL_SetWindowFullscreen(ddraw->window, SDL_WINDOW_FULLSCREEN);
+            //SDL_SetWindowFullscreen(ddraw->window, SDL_WINDOW_FULLSCREEN);
         }
     }
 

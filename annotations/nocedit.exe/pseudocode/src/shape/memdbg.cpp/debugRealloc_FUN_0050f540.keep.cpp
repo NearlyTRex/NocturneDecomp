@@ -30,10 +30,10 @@ void * __cdecl shape_memdbg_cpp_debugRealloc_FUN_0050f540(void *ptr,int new_size
         g_CurrentLineNumber = 0x99;
         core_main_c_displayErrorAndQuit_FUN_00506f10("headFromPtr - NULL ptr");
       }
-      header = (SMemHead *)((int)ptr + -0x28);
-      shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(header,filename,line_number);
-      shape_memdbg_cpp_SMemHead_remove_FUN_0050ef20(header);
-      header = (SMemHead *)realloc(header,new_size + GAME_SMEMHEAD_AND_BACKGUARD_SIZE);
+      SMemHead *old_header = (SMemHead *)((int)ptr + -0x28);
+      shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(old_header,filename,line_number);
+      shape_memdbg_cpp_SMemHead_remove_FUN_0050ef20(old_header);
+      header = (SMemHead *)realloc(old_header,new_size + GAME_SMEMHEAD_AND_BACKGUARD_SIZE);
       if (header != (SMemHead *)0x0) {
         header->num_bytes = new_size;
         shape_memdbg_cpp_SMemHead_recordSourceFile_FUN_0050eea0(header,filename);
@@ -47,7 +47,7 @@ void * __cdecl shape_memdbg_cpp_debugRealloc_FUN_0050f540(void *ptr,int new_size
         wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);
         return user_data;
       }
-      shape_memdbg_cpp_SMemHead_add_FUN_0050eef0(header);
+      shape_memdbg_cpp_SMemHead_add_FUN_0050eef0(old_header);
       shape_memdbg_cpp_traceMemory_FUN_0050f150("   !!FAILED!!");
     }
     wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);

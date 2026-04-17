@@ -168,9 +168,6 @@ int g_InputDisabled = {};
 int g_ApplicationActive = {};
 int g_TotalPhysicalMemory = {};
 int g_AvailableSwapSpace = {};
-int g_LeftMouseReleased = {};
-int g_RightMouseReleased = {};
-int g_MiddleMouseReleased = {};
 int g_NumWindowMessageHandlers = {};
 int g_ArgCount = {};
 int g_MoviePlaying = {};
@@ -196,8 +193,8 @@ int DAT_03F9C150 = {};
 // int[20]
 int g_InputBuffer[20] = {};
 
-// int[512]
-int g_MessageFlags[512] = {};
+// int[600]
+int g_MessageFlags[600] = {};
 
 // uint
 uint UINT_03f96b40 = {};

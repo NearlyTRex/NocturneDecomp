@@ -47,11 +47,6 @@ extern _MMX_INTEGER g_SavedMMX5;
 extern _MMX_INTEGER g_SavedMMX6;
 extern _MMX_INTEGER g_SavedMMX7;
 
-// byte
-extern byte g_LeftMousePressed;
-extern byte g_RightMousePressed;
-extern byte g_MiddleMousePressed;
-
 // byte*
 extern byte* g_CurrentPalette;
 
@@ -64,8 +59,8 @@ extern char g_EventErrorMessageBuffer[256];
 // char[32768]
 extern char g_FileTransferBuffer[32768];
 
-// char[512]
-extern char g_KeyboardState[512];
+// char[4952]
+extern char g_KeyboardState[4952];
 
 // char[768]
 extern char g_SourcePaletteData[768];

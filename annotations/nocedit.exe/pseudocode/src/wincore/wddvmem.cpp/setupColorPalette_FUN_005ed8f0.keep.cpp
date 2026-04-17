@@ -20,7 +20,7 @@ void __cdecl wincore_wddvmem_cpp_setupColorPalette_FUN_005ed8f0(void)
     wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004f41c0();
     return;
   }
-  if (g_DirectDrawUnknown != (IUnknown *)0x0) {
+  if (g_DirectDrawUnknown != (IUnknown *)0x0 && g_DirectDrawUnknown->vtable != (IUnknown_vtable *)0x0) {
     (*g_DirectDrawUnknown->vtable->Release)(g_DirectDrawUnknown);
     g_DirectDrawUnknown = (IUnknown *)0x0;
   }

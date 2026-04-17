@@ -8,7 +8,7 @@
 ; int *            Stack[0x8]:4   output_state
 ;
 ; Referenced Globals:
-;   char[512] g_KeyboardState
+;   char[4952] g_KeyboardState
 ;   char[600] g_PrevKeyboardState
 ;
 ; *****************************************************************************
