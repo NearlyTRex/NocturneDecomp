@@ -1,3 +1,9 @@
+// For case-insensitive _findfirst/_findnext (portable, no glibc extensions).
+#include <fnmatch.h>
+#include <strings.h>
+#include <vector>
+#include <string>
+
 // =============================================================================
 // WATCOM SHIM - Watcom C++ runtime and CRT bridge implementations
 // =============================================================================
@@ -154,47 +160,75 @@ char* _getcwd(char* buffer, int size) {
 // =============================================================================
 // File Find Functions (Watcom io.h)
 // =============================================================================
-// Cross-platform implementation using glob()
+// Windows FindFirstFile/FindNextFile is case-insensitive. Linux glob() is not,
+// and GLOB_NOCASE is unreliable across glibc versions. This implementation
+// uses opendir/readdir + fnmatch(FNM_CASEFOLD) for portable case-insensitive
+// file matching. Results are collected up front so _findnext is a simple
+// index bump (matches Watcom's iterator-style API).
 
 struct FindHandle {
-    glob_t glob_result;
+    std::vector<std::string> matches;
     size_t current_index;
-    int valid;
 };
+
+static void split_filespec(const char* filespec, std::string& dir, std::string& pattern) {
+    std::string spec(filespec);
+    // Normalize backslashes
+    for (char& c : spec) {
+        if (c == '\\') c = '/';
+    }
+    size_t sep = spec.rfind('/');
+    if (sep == std::string::npos) {
+        dir = ".";
+        pattern = spec;
+    } else {
+        dir = spec.substr(0, sep);
+        pattern = spec.substr(sep + 1);
+    }
+}
 
 long _findfirst(const char* filespec, void* fileinfo) {
     (void)fileinfo;
-    FindHandle* handle = (FindHandle*)malloc(sizeof(FindHandle));
-    if (!handle) return -1;
 
-    int result = glob(filespec, GLOB_NOSORT, nullptr, &handle->glob_result);
-    if (result != 0 || handle->glob_result.gl_pathc == 0) {
-        if (result == 0) globfree(&handle->glob_result);
-        free(handle);
+    std::string dir, pattern;
+    split_filespec(filespec, dir, pattern);
+
+    DIR* d = opendir(dir.c_str());
+    if (!d) return -1;
+
+    FindHandle* handle = new FindHandle();
+    while (struct dirent* entry = readdir(d)) {
+        if (fnmatch(pattern.c_str(), entry->d_name, FNM_CASEFOLD) == 0) {
+            if (dir == ".") {
+                handle->matches.push_back(entry->d_name);
+            } else {
+                handle->matches.push_back(dir + "/" + entry->d_name);
+            }
+        }
+    }
+    closedir(d);
+
+    if (handle->matches.empty()) {
+        delete handle;
         return -1;
     }
-
     handle->current_index = 0;
-    handle->valid = 1;
     return (long)(intptr_t)handle;
 }
 
 int _findnext(long handle_val, void* fileinfo) {
     (void)fileinfo;
     FindHandle* handle = (FindHandle*)(intptr_t)handle_val;
-    if (!handle || !handle->valid) return -1;
+    if (!handle) return -1;
 
     handle->current_index++;
-    if (handle->current_index >= handle->glob_result.gl_pathc) return -1;
+    if (handle->current_index >= handle->matches.size()) return -1;
     return 0;
 }
 
 int _findclose(long handle_val) {
     FindHandle* handle = (FindHandle*)(intptr_t)handle_val;
-    if (handle) {
-        if (handle->valid) globfree(&handle->glob_result);
-        free(handle);
-    }
+    delete handle;
     return 0;
 }
 

@@ -543,6 +543,23 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "debugRealloc_FUN_0050f540.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "memleakOnRealloc",
+          "column": 7,
+          "line": 36,
+          "message": "Common realloc mistake: 'header' nulled but not freed upon failure",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Complex pointer cast",

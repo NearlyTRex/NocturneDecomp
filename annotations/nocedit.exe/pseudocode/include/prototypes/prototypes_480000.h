@@ -74,9 +74,10 @@ void __cdecl core_door_cpp_CDoor_addFilesToExtract_FUN_00481630(CDoor *this_ptr,
 CRuleList * __cdecl core_door_cpp_clearRuleList_FUN_00481650(CRuleList *rule_list);
 CDoor * __cdecl core_door_cpp_CDoor_dtor_FUN_00481670(CDoor *this_ptr,uint flags);
 void __cdecl engine_dosio_c_getRelativeFilePath_FUN_004816c0(char *dest_path,char *directory,char *filename);
+void __cdecl engine_dosio_c_addGetFileInfoHook_FUN_00481710(FileSearchHandlerFunc *handler);
 template<typename T_func0>
 inline void engine_dosio_c_addGetFileInfoHook_FUN_00481710(T_func0 handler) {
-    (void)handler;
+    engine_dosio_c_addGetFileInfoHook_FUN_00481710((FileSearchHandlerFunc *)handler);
 }
 int __cdecl engine_dosio_c_findFile_FUN_00481760(SFoundFileInfo *context);
 int __cdecl engine_dosio_c_findFileNormally_FUN_004817c0(SFoundFileInfo *info);
@@ -289,9 +290,10 @@ float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN
 float __cdecl engine_drender_cpp_CDemonRenderer_calculateProjectionFactor_FUN_0048c870(CDemonRenderer *this_ptr);
 void __cdecl engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890(CDemonRenderer *this_ptr,int x,int y,int width,int height);
 void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0(void);
+void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim, RenderScanlineFunc *scanline_renderer);
 template<typename T_func0>
 inline void engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,T_func0 scanline_renderer) {
-    (void)this_ptr; (void)prim; (void)scanline_renderer;
+    engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(this_ptr, prim, (RenderScanlineFunc *)scanline_renderer);
 }
 void __cdecl engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(CDemonRenderer *this_ptr,int color);
 void __cdecl engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(CDemonRenderer *this_ptr,int red_component,int green_component,int blue_component);

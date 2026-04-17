@@ -5,6 +5,7 @@
 
 REPO_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 INCLUDE_DIR="$REPO_ROOT/annotations/nocedit.exe/pseudocode/include"
+SHIMS_DIR="$REPO_ROOT/annotations/nocedit.exe/pseudocode/shims"
 
 CFLAGS=(
     -m32 -mmmx -fasm-blocks -fsyntax-only -std=gnu++11
@@ -15,6 +16,7 @@ CFLAGS=(
     -Wincompatible-pointer-types -Wint-conversion
     -Wreturn-type -Wtautological-compare
     -I "$INCLUDE_DIR"
+    -I "$SHIMS_DIR"
 )
 
 pass=0

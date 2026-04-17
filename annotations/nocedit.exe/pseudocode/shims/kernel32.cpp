@@ -32,6 +32,8 @@
 #include <string.h>
 #include <time.h>
 #include <unistd.h>
+#include <vector>
+#include <string>
 #include <wchar.h>
 #include <stdint.h>
 
@@ -74,9 +76,8 @@ struct EventHandle {
 
 struct FindHandle {
     int tag;
-    glob_t globResult;
+    std::vector<std::string> matches;
     size_t currentIndex;
-    char pattern[260];
 };
 
 // =============================================================================
@@ -260,8 +261,7 @@ static BOOL shim_CloseHandle(HANDLE hObject) {
     }
     case HANDLE_TAG_FIND: {
         FindHandle* fh = (FindHandle*)hObject;
-        globfree(&fh->globResult);
-        free(fh);
+        delete fh;
         return 1;
     }
     default:
@@ -468,30 +468,51 @@ static void populate_find_data(const char* path, LPWIN32_FIND_DATAA lpFindFileDa
     }
 }
 
+// Windows FindFirstFileA is case-insensitive. Replace glob() (which is
+// case-sensitive on Linux) with opendir/readdir + fnmatch(FNM_CASEFOLD)
+// for portable case-insensitive file matching.
 static HANDLE shim_FindFirstFileA(LPCSTR lpFileName, LPWIN32_FIND_DATAA lpFindFileData) {
-    FindHandle* fh = (FindHandle*)malloc(sizeof(FindHandle));
-    if (!fh) { s_lastError = 8; return INVALID_HANDLE; } // ERROR_NOT_ENOUGH_MEMORY
+    // Split "dir/pattern" or just "pattern"
+    std::string spec(lpFileName);
+    for (char& c : spec) { if (c == '\\') c = '/'; }
 
-    memset(fh, 0, sizeof(FindHandle));
-    fh->tag = HANDLE_TAG_FIND;
-    strncpy(fh->pattern, lpFileName, 259);
-    fh->pattern[259] = '\0';
-
-    // Convert backslashes to forward slashes
-    for (char* p = fh->pattern; *p; p++) {
-        if (*p == '\\') *p = '/';
+    std::string dir, pattern;
+    size_t sep = spec.rfind('/');
+    if (sep == std::string::npos) {
+        dir = ".";
+        pattern = spec;
+    } else {
+        dir = spec.substr(0, sep);
+        pattern = spec.substr(sep + 1);
     }
 
-    int ret = glob(fh->pattern, GLOB_NOSORT, NULL, &fh->globResult);
-    if (ret != 0 || fh->globResult.gl_pathc == 0) {
-        if (ret == 0) globfree(&fh->globResult);
-        free(fh);
+    DIR* d = opendir(dir.c_str());
+    if (!d) {
+        s_lastError = 2;
+        return INVALID_HANDLE;
+    }
+
+    FindHandle* fh = new FindHandle();
+    fh->tag = HANDLE_TAG_FIND;
+    while (struct dirent* entry = readdir(d)) {
+        if (fnmatch(pattern.c_str(), entry->d_name, FNM_CASEFOLD) == 0) {
+            if (dir == ".") {
+                fh->matches.push_back(entry->d_name);
+            } else {
+                fh->matches.push_back(dir + "/" + entry->d_name);
+            }
+        }
+    }
+    closedir(d);
+
+    if (fh->matches.empty()) {
+        delete fh;
         s_lastError = 2; // ERROR_FILE_NOT_FOUND
         return INVALID_HANDLE;
     }
 
     fh->currentIndex = 0;
-    populate_find_data(fh->globResult.gl_pathv[0], lpFindFileData);
+    populate_find_data(fh->matches[0].c_str(), lpFindFileData);
     fh->currentIndex = 1;
     return (HANDLE)fh;
 }
@@ -499,11 +520,11 @@ static HANDLE shim_FindFirstFileA(LPCSTR lpFileName, LPWIN32_FIND_DATAA lpFindFi
 static BOOL shim_FindNextFileA(HANDLE hFindFile, LPWIN32_FIND_DATAA lpFindFileData) {
     FindHandle* fh = (FindHandle*)hFindFile;
     if (!fh || fh->tag != HANDLE_TAG_FIND) return 0;
-    if (fh->currentIndex >= fh->globResult.gl_pathc) {
+    if (fh->currentIndex >= fh->matches.size()) {
         s_lastError = 18; // ERROR_NO_MORE_FILES
         return 0;
     }
-    populate_find_data(fh->globResult.gl_pathv[fh->currentIndex], lpFindFileData);
+    populate_find_data(fh->matches[fh->currentIndex].c_str(), lpFindFileData);
     fh->currentIndex++;
     return 1;
 }
@@ -511,8 +532,7 @@ static BOOL shim_FindNextFileA(HANDLE hFindFile, LPWIN32_FIND_DATAA lpFindFileDa
 static BOOL shim_FindClose(HANDLE hFindFile) {
     FindHandle* fh = (FindHandle*)hFindFile;
     if (!fh || fh->tag != HANDLE_TAG_FIND) return 0;
-    globfree(&fh->globResult);
-    free(fh);
+    delete fh;
     return 1;
 }
 

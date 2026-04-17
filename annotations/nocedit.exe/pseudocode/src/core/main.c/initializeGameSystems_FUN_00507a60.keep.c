@@ -6,6 +6,7 @@
 // Signature: void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
 
 #include "nocturne.h"
+#include "debug_log.h"
 
 void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
 
@@ -51,8 +52,10 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
   core_inivar_cpp_readIniData_FUN_004fbd90();
   g_PodSystemVersion = 2;
   engine_pod_cpp_CPod_init_FUN_00550c30((CPod *)g_CDemonPodPtr);
-  engine_dosio_c_addGetFileInfoHook_FUN_00481710(engine_pod_cpp_findFileInPod_FUN_00551960);
-  engine_dosio_c_addGetFileInfoHook_FUN_00481710(engine_dosio_c_findFileNormally_FUN_004817c0);
+  DLOG("registering search handlers (count before=%d)", g_NumSearchHandlers);
+  engine_dosio_c_addGetFileInfoHook_FUN_00481710((FileSearchHandlerFunc *)engine_pod_cpp_findFileInPod_FUN_00551960);
+  engine_dosio_c_addGetFileInfoHook_FUN_00481710((FileSearchHandlerFunc *)engine_dosio_c_findFileNormally_FUN_004817c0);
+  DLOG("handlers registered (count after=%d)", g_NumSearchHandlers);
   support_newmsg_cpp_readMessageFile_FUN_00543e40("msglist.txt");
   core_mmx_c_detectCPUFeatures_FUN_00524f10();
   if (g_MMXSupported == 0) {

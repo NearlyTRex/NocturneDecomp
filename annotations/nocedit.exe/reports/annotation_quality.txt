@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        112 ( 1.7%)
+  Functions with type issues:        111 ( 1.7%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,7 +22,7 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          1
-    Undefined types in variables:      105
+    Undefined types in variables:      104
     Unresolved stack params:           6
 
   Excluded (.keep / MMX / by-value):   125 functions
@@ -119,7 +119,7 @@ Unresolved stack parameters (missing from signature) (6)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (105)
+Undefined types in variables (104)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -185,11 +185,6 @@ Undefined types in variables (105)
   saveScreenshotGeneral
     Address: 0x005490c0  File: engine/pcx.c
     Locals:  local_88 (undefined1), local_87 (undefined1), local_86 (undefined1), local_85 (undefined1), local_84 (undefined2), local_82 (undefined2), local_47 (undefined1), local_44 (undefined2)
-    Suggested: Resolve undefined types to concrete types
-
-  CPodFile_mountFromFile
-    Address: 0x0054f650  File: engine/pod.cpp
-    Locals:  local_490 (undefined1[8]), local_370 (undefined1[4]), local_160 (undefined1[8]), local_6c (undefined4), local_68 (undefined4), local_60 (undefined4), local_3c (undefined4), local_38 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   exportModelToBIN

@@ -6,17 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 834,
-    "complexity_score": 523,
+    "complexity_score": 587,
     "cross_reference_count": 15,
     "function_call_count": 14,
     "global_count": 27,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 388,
-    "suspect_count": 13,
+    "pseudocode_lines": 367,
+    "suspect_count": 21,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unknown_field"
     ],
-    "total_lines": 1222
+    "total_lines": 1201
   },
   "cross_references": [
     {
@@ -531,92 +532,15 @@
         "is_param": false,
         "name": "local_490",
         "offset": -1168,
-        "size": 8,
-        "type": "undefined1[8]"
-      },
-      {
-        "is_param": false,
-        "name": "local_488",
-        "offset": -1160,
-        "size": 84,
-        "type": "char[84]"
-      },
-      {
-        "is_param": false,
-        "name": "local_434",
-        "offset": -1076,
-        "size": 80,
-        "type": "char[80]"
-      },
-      {
-        "is_param": false,
-        "name": "local_3e4",
-        "offset": -996,
-        "size": 80,
-        "type": "char[80]"
-      },
-      {
-        "is_param": false,
-        "name": "local_394",
-        "offset": -916,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "local_390",
-        "offset": -912,
-        "size": 4,
-        "type": "long"
-      },
-      {
-        "is_param": false,
-        "name": "local_388",
-        "offset": -904,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "local_384",
-        "offset": -900,
-        "size": 4,
-        "type": "SIZE_T"
-      },
-      {
-        "is_param": false,
-        "name": "local_380",
-        "offset": -896,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "local_378",
-        "offset": -888,
-        "size": 4,
-        "type": "int"
+        "size": 288,
+        "type": "SPod3Header"
       },
       {
         "is_param": false,
         "name": "local_370",
         "offset": -880,
-        "size": 4,
-        "type": "undefined1[4]"
-      },
-      {
-        "is_param": false,
-        "name": "local_36c",
-        "offset": -876,
-        "size": 256,
-        "type": "char[256]"
-      },
-      {
-        "is_param": false,
-        "name": "local_26c",
-        "offset": -620,
-        "size": 4,
-        "type": "int"
+        "size": 272,
+        "type": "SEpdHeader"
       },
       {
         "is_param": false,
@@ -629,92 +553,29 @@
         "is_param": false,
         "name": "local_160",
         "offset": -352,
-        "size": 8,
-        "type": "undefined1[8]"
-      },
-      {
-        "is_param": false,
-        "name": "local_158",
-        "offset": -344,
-        "size": 80,
-        "type": "char[80]"
-      },
-      {
-        "is_param": false,
-        "name": "local_108",
-        "offset": -264,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "local_104",
-        "offset": -260,
-        "size": 4,
-        "type": "int"
+        "size": 96,
+        "type": "SPod2Header"
       },
       {
         "is_param": false,
         "name": "local_100",
         "offset": -256,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "local_fc",
-        "offset": -252,
-        "size": 80,
-        "type": "char[80]"
+        "size": 84,
+        "type": "SPod1Header"
       },
       {
         "is_param": false,
         "name": "local_ac",
         "offset": -172,
-        "size": 64,
-        "type": "char[64]"
-      },
-      {
-        "is_param": false,
-        "name": "local_6c",
-        "offset": -108,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_68",
-        "offset": -104,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_60",
-        "offset": -96,
-        "size": 4,
-        "type": "undefined4"
+        "size": 80,
+        "type": "SEpdDirEntry"
       },
       {
         "is_param": false,
         "name": "local_5c",
         "offset": -92,
-        "size": 32,
-        "type": "char[32]"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 4,
-        "type": "undefined4"
+        "size": 40,
+        "type": "SPod1DirEntry"
       },
       {
         "is_param": false,
@@ -727,29 +588,8 @@
         "is_param": false,
         "name": "local_30",
         "offset": -48,
-        "size": 1,
-        "type": "char"
-      },
-      {
-        "is_param": false,
-        "name": "local_2f",
-        "offset": -47,
-        "size": 1,
-        "type": "char"
-      },
-      {
-        "is_param": false,
-        "name": "local_2e",
-        "offset": -46,
-        "size": 1,
-        "type": "char"
-      },
-      {
-        "is_param": false,
-        "name": "local_2d",
-        "offset": -45,
-        "size": 1,
-        "type": "char"
+        "size": 4,
+        "type": "char[4] *"
       },
       {
         "is_param": false,
@@ -819,7 +659,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 127,
+      "line": 105,
       "match": "(SIZE_T *)((int)",
       "severity": "mild",
       "text": "*(SIZE_T *)((int)&this_ptr->directory_entries->name + local_18) = size;",
@@ -827,7 +667,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 150,
+      "line": 112,
+      "match": "(SEpdDirEntry *)((int)",
+      "severity": "mild",
+      "text": "pSVar11 = (SEpdDirEntry *)((int)pSVar11 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 128,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->directory_entries->name + local_18);",
@@ -835,47 +683,103 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 160,
+      "line": 138,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&this_ptr->directory_entries->size + local_18) = local_6c;",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->size + local_18) = local_ac.size;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 161,
+      "line": 139,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&this_ptr->directory_entries->offset + local_18) = local_68;",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->offset + local_18) = local_ac.offset;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 162,
+      "line": 140,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&this_ptr->directory_entries->checksum + local_18) = local_60;",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->checksum + local_18) = local_ac.checksum;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 164,
+      "line": 142,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->directory_entries->timestamp + local_18) = this_ptr->timestamp;",
       "type": "pointer_cast"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 155,
+      "match": "._1_1_",
+      "severity": "mild",
+      "text": "if (((((char)local_30 == 'P') && (local_30._1_1_ == 'O')) && (local_30._2_1_ == 'D')) &&",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 155,
+      "match": "._2_1_",
+      "severity": "mild",
+      "text": "if (((((char)local_30 == 'P') && (local_30._1_1_ == 'O')) && (local_30._2_1_ == 'D')) &&",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 156,
+      "match": "._3_1_",
+      "severity": "mild",
+      "text": "(local_30._3_1_ == '3')) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 229,
+      "match": "._1_1_",
+      "severity": "mild",
+      "text": "if ((((char)local_30 == 'P') && (local_30._1_1_ == 'O')) &&",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 230,
+      "match": "._2_1_",
+      "severity": "mild",
+      "text": "((local_30._2_1_ == 'D' && (local_30._3_1_ == '2')))) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 230,
+      "match": "._3_1_",
+      "severity": "mild",
+      "text": "((local_30._2_1_ == 'D' && (local_30._3_1_ == '2')))) {",
+      "type": "unknown_field"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 316,
+      "line": 295,
       "match": "(SIZE_T *)((int)",
       "severity": "mild",
-      "text": "*(SIZE_T *)((int)&this_ptr->directory_entries->name + local_14) = local_384;",
+      "text": "*(SIZE_T *)((int)&this_ptr->directory_entries->name + local_14) = size;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 339,
+      "line": 302,
+      "match": "(SPod1DirEntry *)((int)",
+      "severity": "mild",
+      "text": "pSVar12 = (SPod1DirEntry *)((int)pSVar12 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 318,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->directory_entries->name + local_14);",
@@ -883,23 +787,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 349,
+      "line": 328,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&this_ptr->directory_entries->size + local_14) = local_3c;",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->size + local_14) = local_5c.size;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 350,
+      "line": 329,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&this_ptr->directory_entries->offset + local_14) = local_38;",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->offset + local_14) = local_5c.offset;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 351,
+      "line": 330,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->directory_entries->checksum + local_14) = 0;",
@@ -907,7 +811,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 353,
+      "line": 332,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->directory_entries->timestamp + local_14) = this_ptr->timestamp;",
@@ -915,7 +819,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 380,
+      "line": 359,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar5 = (int *)((int)&this_ptr->directory_entries->name + iVar7);",

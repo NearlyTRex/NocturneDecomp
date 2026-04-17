@@ -4,18 +4,18 @@ STRUCT QUALITY REPORT
 
 SUMMARY
 ----------------------------------------------------------------------
-Total structs:              512
-Fully clean structs:        509
-Structs with issues:        3
+Total structs:              518
+Fully clean structs:        512
+Structs with issues:        6
 Unreferenced structs:       13
 
-Total fields:               4086
-Clean fields:               4082
-Unknown (unk*) fields:      0
+Total fields:               4117
+Clean fields:               4108
+Unknown (unk*) fields:      5
 Padding (pad*) fields:      4
 Reserved (reserved*) fields:0
 Default (field_*) fields:   0
-Overall field quality:      99.9%
+Overall field quality:      99.8%
 
 ======================================================================
 UNREFERENCED STRUCTS (13)
@@ -37,8 +37,20 @@ These structs are not referenced in any source or header file.
   SNetPacket_ServerAccept                   /Nocturne/Struct/Game
 
 ======================================================================
-STRUCTS WITH PROBLEMATIC FIELDS (3)
+STRUCTS WITH PROBLEMATIC FIELDS (6)
 ----------------------------------------------------------------------
+
+SEpdHeader                                 75.0% complete  (3/4 fields clean)
+  Issues: 1 unknown
+  Fields: unk1
+
+SPod3Header                                76.9% complete  (10/13 fields clean)
+  Issues: 3 unknown
+  Fields: unk1, unk2, unk3
+
+SEpdDirEntry                               80.0% complete  (4/5 fields clean)
+  Issues: 1 unknown
+  Fields: unk1
 
 CCramTex                                   89.5% complete  (17/19 fields clean)
   Issues: 2 padding
@@ -53,7 +65,7 @@ SMpegFrameHeader                           91.7% complete  (11/12 fields clean)
   Fields: padding
 
 ======================================================================
-FULLY CLEAN STRUCTS (509)
+FULLY CLEAN STRUCTS (512)
 ----------------------------------------------------------------------
   C3DSCamera
   C3DSLight
@@ -509,6 +521,9 @@ FULLY CLEAN STRUCTS (509)
   SPlayer
   SPlayerActionState
   SPlayerInput
+  SPod1DirEntry
+  SPod1Header
+  SPod2Header
   SPodManageRecord
   SPoint2i
   SPolygonScreenData

@@ -63,8 +63,14 @@ static void populate_ds3dlistener_vtable(IDirectSound3DListener_vtable* vt);
 static void populate_dscapture_vtable(IDirectSoundCapture_vtable* vt);
 static void populate_dscapturebuffer_vtable(IDirectSoundCaptureBuffer_vtable* vt);
 
+// COM vtable layout: the game reads offset 0 as a POINTER to the vtable
+// struct, not the vtable struct itself. Each ShimData must start with a
+// vtable POINTER, with the actual vtable data stored separately (inline
+// as vtable_data here; wired up in the populate_*_vtable + assignment).
+
 struct DSound_ShimData {
-    IDirectSound_vtable vtable;
+    IDirectSound_vtable* vtable;
+    IDirectSound_vtable vtable_data;
     ULONG ref_count;
     SDL_AudioDeviceID device_id;
     SDL_AudioSpec obtained_spec;
@@ -74,7 +80,8 @@ struct DSound_ShimData {
 };
 
 struct DSoundBuffer_ShimData {
-    IDirectSoundBuffer_vtable vtable;
+    IDirectSoundBuffer_vtable* vtable;
+    IDirectSoundBuffer_vtable vtable_data;
     ULONG ref_count;
     DSound_ShimData* dsound;
     Uint8* audio_data;
@@ -92,24 +99,28 @@ struct DSoundBuffer_ShimData {
 };
 
 struct DSound3DBuffer_ShimData {
-    IDirectSound3DBuffer_vtable vtable;
+    IDirectSound3DBuffer_vtable* vtable;
+    IDirectSound3DBuffer_vtable vtable_data;
     ULONG ref_count;
     DS3DBUFFER params;
 };
 
 struct DSound3DListener_ShimData {
-    IDirectSound3DListener_vtable vtable;
+    IDirectSound3DListener_vtable* vtable;
+    IDirectSound3DListener_vtable vtable_data;
     ULONG ref_count;
     DS3DLISTENER params;
 };
 
 struct DSoundCapture_ShimData {
-    IDirectSoundCapture_vtable vtable;
+    IDirectSoundCapture_vtable* vtable;
+    IDirectSoundCapture_vtable vtable_data;
     ULONG ref_count;
 };
 
 struct DSoundCaptureBuffer_ShimData {
-    IDirectSoundCaptureBuffer_vtable vtable;
+    IDirectSoundCaptureBuffer_vtable* vtable;
+    IDirectSoundCaptureBuffer_vtable vtable_data;
     ULONG ref_count;
 };
 
@@ -194,7 +205,8 @@ static HRESULT dsound_CreateSoundBuffer(LPDIRECTSOUND this_ptr, LPDSBUFFERDESC p
     DSoundBuffer_ShimData* buf = (DSoundBuffer_ShimData*)calloc(1, sizeof(DSoundBuffer_ShimData));
     if (!buf) return DSERR_OUTOFMEMORY;
 
-    populate_dsbuffer_vtable(&buf->vtable);
+    populate_dsbuffer_vtable(&buf->vtable_data);
+    buf->vtable = &buf->vtable_data;
     buf->ref_count = 1;
     buf->dsound = ds;
     buf->volume = 0; // Full volume
@@ -261,7 +273,8 @@ static HRESULT dsound_DuplicateSoundBuffer(LPDIRECTSOUND this_ptr,
     DSoundBuffer_ShimData* dup = (DSoundBuffer_ShimData*)calloc(1, sizeof(DSoundBuffer_ShimData));
     if (!dup) return DSERR_OUTOFMEMORY;
 
-    populate_dsbuffer_vtable(&dup->vtable);
+    populate_dsbuffer_vtable(&dup->vtable_data);
+    dup->vtable = &dup->vtable_data;
     dup->ref_count = 1;
     dup->dsound = ds;
     dup->buffer_size = orig->buffer_size;
@@ -336,7 +349,8 @@ static HRESULT dsbuf_QueryInterface(IDirectSoundBuffer* this_ptr, void* riid, vo
         // Allocate a 3D buffer shim (most common query from secondary buffers)
         DSound3DBuffer_ShimData* d3d = (DSound3DBuffer_ShimData*)calloc(1, sizeof(DSound3DBuffer_ShimData));
         if (d3d) {
-            populate_ds3dbuffer_vtable(&d3d->vtable);
+            populate_ds3dbuffer_vtable(&d3d->vtable_data);
+            d3d->vtable = &d3d->vtable_data;
             d3d->ref_count = 1;
             d3d->params.dwSize = sizeof(DS3DBUFFER);
             d3d->params.flMinDistance = 1.0f;
@@ -775,7 +789,8 @@ static HRESULT dscap_CreateCaptureBuffer(IDirectSoundCapture* this_ptr, void* pc
     (void)this_ptr; (void)pcDesc; (void)outer;
     DSoundCaptureBuffer_ShimData* buf = (DSoundCaptureBuffer_ShimData*)calloc(1, sizeof(DSoundCaptureBuffer_ShimData));
     if (!buf) return DSERR_OUTOFMEMORY;
-    populate_dscapturebuffer_vtable(&buf->vtable);
+    populate_dscapturebuffer_vtable(&buf->vtable_data);
+    buf->vtable = &buf->vtable_data;
     buf->ref_count = 1;
     *ppBuf = reinterpret_cast<IDirectSoundCaptureBuffer*>(buf);
     return DS_OK;
@@ -966,7 +981,8 @@ HRESULT DirectSoundCreate(LPGUID lpGuid, LPDIRECTSOUND* ppDS, LPUNKNOWN pUnkOute
     DSound_ShimData* shim = (DSound_ShimData*)calloc(1, sizeof(DSound_ShimData));
     if (!shim) return DSERR_OUTOFMEMORY;
 
-    populate_dsound_vtable(&shim->vtable);
+    populate_dsound_vtable(&shim->vtable_data);
+    shim->vtable = &shim->vtable_data;
     shim->ref_count = 1;
     shim->initialized = 1;
 

@@ -12,8 +12,8 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6908
-  Functions with suspicious globals: 66
-  Total suspicious global references: 113
+  Functions with suspicious globals: 67
+  Total suspicious global references: 114
 
   Most commonly misresolved globals:
     g_SfxOptions                                       12 functions
@@ -37,7 +37,7 @@ SUMMARY
     g_CWeaponClassInfo                                 1 functions
     g_SourcePaletteData                                1 functions
 
-  .keep files with issues: 11 (these need manual review)
+  .keep files with issues: 12 (these need manual review)
   Raw .cpp files with issues: 55
 
 ====================================================================================================
@@ -98,6 +98,14 @@ core_game.cpp_CGame_processFrame_FUN_004da100  [.keep]  (1 suspicious globals)
 
   g_ColorCubeLookup
     Used at lines: 358
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_main.c_initializeGameSystems_FUN_00507a60  [.keep]  (1 suspicious globals)
+  File: core/main.c
+
+  g_NumSearchHandlers
+    Used at lines: 55, 58
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

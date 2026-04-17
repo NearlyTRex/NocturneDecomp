@@ -109,13 +109,15 @@ void __cdecl core_msnedit_cpp_CDemonMission_moveActorToScreenPos_FUN_0053c970(CD
 void __cdecl core_msnedit_cpp_CDemonMission_moveActorToMousePos_FUN_0053ca00(CDemonMission *this_ptr,CDemonActor *actor);
 CDemonActor * __cdecl core_msnedit_cpp_CDemonMission_findNextVisibleActor_FUN_0053ca30(CDemonMission *this_ptr,CDemonActor *actor);
 CDemonActor * __cdecl core_msnedit_cpp_CDemonMission_findPrevVisibleActor_FUN_0053ca80(CDemonMission *this_ptr,CDemonActor *actor);
+int __cdecl core_msnedit_cpp_CDemonMission_pickActorDialog_FUN_0053cad0(CDemonMission *this_ptr,CDemonActor *class_type,char *title,CDemonActor **out_actor, int allow_none,char *class_name,CActorPropertyFilterFunc *filter_func,int preselect);
 template<typename T_func0>
 inline int core_msnedit_cpp_CDemonMission_pickActorDialog_FUN_0053cad0(CDemonMission *this_ptr,CDemonActor *class_type,char *title,CDemonActor **out_actor,int allow_none,char *class_name,T_func0 filter_func,int preselect) {
-    (void)this_ptr; (void)class_type; (void)title; (void)out_actor; (void)allow_none; (void)class_name; (void)filter_func; (void)preselect; return (int)0;
+    return core_msnedit_cpp_CDemonMission_pickActorDialog_FUN_0053cad0(this_ptr, class_type, title, out_actor, allow_none, class_name, (CActorPropertyFilterFunc *)filter_func, preselect);
 }
+void __cdecl core_msnedit_cpp_CDemonMission_buildFilteredActorList_FUN_0053cc30(CDemonMission *this_ptr,CStrList *name_list,CDemonActor *class_type,char *class_name ,CActorPropertyFilterFunc *filter_func);
 template<typename T_func0>
 inline void core_msnedit_cpp_CDemonMission_buildFilteredActorList_FUN_0053cc30(CDemonMission *this_ptr,CStrList *name_list,CDemonActor *class_type,char *class_name,T_func0 filter_func) {
-    (void)this_ptr; (void)name_list; (void)class_type; (void)class_name; (void)filter_func;
+    core_msnedit_cpp_CDemonMission_buildFilteredActorList_FUN_0053cc30(this_ptr, name_list, class_type, class_name, (CActorPropertyFilterFunc *)filter_func);
 }
 void __cdecl core_msnedit_cpp_CDemonMission_makeOptimizedPalette_FUN_0053ccc0(CDemonMission *this_ptr);
 void __cdecl core_msnedit_cpp_CDemonMission_importActors_FUN_0053ccf0(CDemonMission *this_ptr);

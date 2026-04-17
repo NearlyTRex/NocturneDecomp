@@ -68242,6 +68242,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650",
     "ret":"int",
@@ -68531,68 +68532,20 @@
           "type":"int"
         },
         {
-          "name":"local_2d",
-          "storage":{
-            "offset":-45,
-            "size":1,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x2d]",
-                "offset":-45,
-                "size":1
-              }
-            ]
-          },
-          "type":"char"
-        },
-        {
-          "name":"local_2e",
-          "storage":{
-            "offset":-46,
-            "size":1,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x2e]",
-                "offset":-46,
-                "size":1
-              }
-            ]
-          },
-          "type":"char"
-        },
-        {
-          "name":"local_2f",
-          "storage":{
-            "offset":-47,
-            "size":1,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x2f]",
-                "offset":-47,
-                "size":1
-              }
-            ]
-          },
-          "type":"char"
-        },
-        {
           "name":"local_30",
           "storage":{
             "offset":-48,
-            "size":1,
+            "size":4,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x30]",
                 "offset":-48,
-                "size":1
+                "size":4
               }
             ]
           },
-          "type":"char"
+          "type":"char[4]*"
         },
         {
           "name":"local_34",
@@ -68611,212 +68564,68 @@
           "type":"int"
         },
         {
-          "name":"local_38",
-          "storage":{
-            "offset":-56,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x38]",
-                "offset":-56,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4"
-        },
-        {
-          "name":"local_3c",
-          "storage":{
-            "offset":-60,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x3c]",
-                "offset":-60,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4"
-        },
-        {
           "name":"local_5c",
           "storage":{
             "offset":-92,
-            "size":32,
+            "size":40,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x5c]",
                 "offset":-92,
-                "size":32
+                "size":40
               }
             ]
           },
-          "type":"char[32]"
-        },
-        {
-          "name":"local_60",
-          "storage":{
-            "offset":-96,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x60]",
-                "offset":-96,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4"
-        },
-        {
-          "name":"local_68",
-          "storage":{
-            "offset":-104,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x68]",
-                "offset":-104,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4"
-        },
-        {
-          "name":"local_6c",
-          "storage":{
-            "offset":-108,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x6c]",
-                "offset":-108,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4"
+          "type":"SPod1DirEntry"
         },
         {
           "name":"local_ac",
           "storage":{
             "offset":-172,
-            "size":64,
+            "size":80,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0xac]",
                 "offset":-172,
-                "size":64
-              }
-            ]
-          },
-          "type":"char[64]"
-        },
-        {
-          "name":"local_fc",
-          "storage":{
-            "offset":-252,
-            "size":80,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0xfc]",
-                "offset":-252,
                 "size":80
               }
             ]
           },
-          "type":"char[80]"
+          "type":"SEpdDirEntry"
         },
         {
           "name":"local_100",
           "storage":{
             "offset":-256,
-            "size":4,
+            "size":84,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x100]",
                 "offset":-256,
-                "size":4
+                "size":84
               }
             ]
           },
-          "type":"int"
-        },
-        {
-          "name":"local_104",
-          "storage":{
-            "offset":-260,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x104]",
-                "offset":-260,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"local_108",
-          "storage":{
-            "offset":-264,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x108]",
-                "offset":-264,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"local_158",
-          "storage":{
-            "offset":-344,
-            "size":80,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x158]",
-                "offset":-344,
-                "size":80
-              }
-            ]
-          },
-          "type":"char[80]"
+          "type":"SPod1Header"
         },
         {
           "name":"local_160",
           "storage":{
             "offset":-352,
-            "size":8,
+            "size":96,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x160]",
                 "offset":-352,
-                "size":8
+                "size":96
               }
             ]
           },
-          "type":"undefined1[8]"
+          "type":"SPod2Header"
         },
         {
           "name":"local_260",
@@ -68835,212 +68644,36 @@
           "type":"char[256]"
         },
         {
-          "name":"local_26c",
-          "storage":{
-            "offset":-620,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x26c]",
-                "offset":-620,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"local_36c",
-          "storage":{
-            "offset":-876,
-            "size":256,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x36c]",
-                "offset":-876,
-                "size":256
-              }
-            ]
-          },
-          "type":"char[256]"
-        },
-        {
           "name":"local_370",
           "storage":{
             "offset":-880,
-            "size":4,
+            "size":272,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x370]",
                 "offset":-880,
-                "size":4
+                "size":272
               }
             ]
           },
-          "type":"undefined1[4]"
-        },
-        {
-          "name":"local_378",
-          "storage":{
-            "offset":-888,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x378]",
-                "offset":-888,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"local_380",
-          "storage":{
-            "offset":-896,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x380]",
-                "offset":-896,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"local_384",
-          "storage":{
-            "offset":-900,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x384]",
-                "offset":-900,
-                "size":4
-              }
-            ]
-          },
-          "type":"SIZE_T"
-        },
-        {
-          "name":"local_388",
-          "storage":{
-            "offset":-904,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x388]",
-                "offset":-904,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"local_390",
-          "storage":{
-            "offset":-912,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x390]",
-                "offset":-912,
-                "size":4
-              }
-            ]
-          },
-          "type":"long"
-        },
-        {
-          "name":"local_394",
-          "storage":{
-            "offset":-916,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x394]",
-                "offset":-916,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
-          "name":"local_3e4",
-          "storage":{
-            "offset":-996,
-            "size":80,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x3e4]",
-                "offset":-996,
-                "size":80
-              }
-            ]
-          },
-          "type":"char[80]"
-        },
-        {
-          "name":"local_434",
-          "storage":{
-            "offset":-1076,
-            "size":80,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x434]",
-                "offset":-1076,
-                "size":80
-              }
-            ]
-          },
-          "type":"char[80]"
-        },
-        {
-          "name":"local_488",
-          "storage":{
-            "offset":-1160,
-            "size":84,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x488]",
-                "offset":-1160,
-                "size":84
-              }
-            ]
-          },
-          "type":"char[84]"
+          "type":"SEpdHeader"
         },
         {
           "name":"local_490",
           "storage":{
             "offset":-1168,
-            "size":8,
+            "size":288,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x490]",
                 "offset":-1168,
-                "size":8
+                "size":288
               }
             ]
           },
-          "type":"undefined1[8]"
+          "type":"SPod3Header"
         },
         {
           "name":"local_6a4",

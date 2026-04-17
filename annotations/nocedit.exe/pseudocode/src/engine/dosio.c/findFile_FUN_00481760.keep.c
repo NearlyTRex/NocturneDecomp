@@ -6,6 +6,7 @@
 // Signature: int __cdecl engine_dosio_c_findFile_FUN_00481760(SFoundFileInfo *context)
 
 #include "nocturne.h"
+#include "debug_log.h"
 
 int __cdecl engine_dosio_c_findFile_FUN_00481760(SFoundFileInfo *context)
 
@@ -13,6 +14,7 @@ int __cdecl engine_dosio_c_findFile_FUN_00481760(SFoundFileInfo *context)
   int iVar1;
   int iVar3;
 
+  DLOG("findFile: path='%s' handlers=%d", context->found_path, g_NumSearchHandlers);
   if (g_NumSearchHandlers < 1) {
     iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0(context);
     return iVar3;

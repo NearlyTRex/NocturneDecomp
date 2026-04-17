@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 121
-  Total diagnostics: 378
+  Functions with findings: 122
+  Total diagnostics: 379
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 121, raw .cpp files: 0
+  .keep.cpp files: 122, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -952,6 +952,12 @@ shape_design.c_generateOctant_FUN_00469420  [.keep] [Cppcheck (quick)]
   File: shape/design.c  (1 diagnostics)
 
   Line   83: [selfAssignment] Redundant assignment of 'pcVar4' to itself.
+
+----------------------------------------------------------------------------------------------------
+shape_memdbg.cpp_debugRealloc_FUN_0050f540  [.keep] [Cppcheck (quick)]
+  File: shape/memdbg.cpp  (1 diagnostics)
+
+  Line   36: [memleakOnRealloc] Common realloc mistake: 'header' nulled but not freed upon failure
 
 ----------------------------------------------------------------------------------------------------
 shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910  [.keep] [Cppcheck (quick)]

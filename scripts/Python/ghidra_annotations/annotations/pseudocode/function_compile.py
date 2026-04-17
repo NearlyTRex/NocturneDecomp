@@ -371,9 +371,13 @@ def compile_function_cpp(cpp_path, include_dir, compiler=DEFAULT_COMPILER, timeo
     }
 
     try:
+        # Include both the types/globals headers AND the shims directory
+        # (for debug_log.h and other shim headers used by .keep files).
+        shims_dir = os.path.join(os.path.dirname(include_dir), "shims")
         cmd = [compiler] + DEFAULT_COMPILE_FLAGS + [
             '-fno-diagnostics-color',  # Prevent ANSI color codes in output
             '-I', include_dir,
+            '-I', shims_dir,
             cpp_path,
         ]
 

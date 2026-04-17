@@ -196,9 +196,10 @@ void __cdecl engine_3d_c_addRasterizerEdge_FUN_005fcd20(SRenderVertex *v0,SRende
 void __cdecl engine_3d_c_addRasterizerEdgeWithDepth_FUN_005fce40(SRenderVertex *v0,SRenderVertex *v1);
 SSoftwareEdge * __cdecl engine_3d_c_findRasterizerEdge_FUN_005fcf80(int y_start,SSoftwareEdge *exclude_edge);
 void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex *vertex_buffer,int vertex_count);
+void __cdecl engine_3d_c_rasterizePolygonCustom_FUN_005fd4e0(SRenderVertex *vertex_buffer,int vertex_count,RenderScanlineFunc *scanline_renderer);
 template<typename T_func0>
 inline void engine_3d_c_rasterizePolygonCustom_FUN_005fd4e0(SRenderVertex *vertex_buffer,int vertex_count,T_func0 scanline_renderer) {
-    (void)vertex_buffer; (void)vertex_count; (void)scanline_renderer;
+    engine_3d_c_rasterizePolygonCustom_FUN_005fd4e0(vertex_buffer, vertex_count, (RenderScanlineFunc *)scanline_renderer);
 }
 SIZE_T __cdecl crt_stdio_c_fread_FUN_005fd990(void *buffer,SIZE_T size,SIZE_T count,_FILE *file);
 void __cdecl crt_stdio_c_StringBufferCallback_FUN_005fdb90(StringOutputContext *context,char character);
@@ -206,14 +207,16 @@ int __cdecl crt_stdio_c__vsprintf_FUN_005fdba8(char *buffer,char *format,va_list
 int __cdecl crt_stdio_c__sprintf_FUN_005fdbd0(char *buffer,char *format,...) __attribute__((format(printf, 2, 3)));
 SIZE_T __cdecl crt_stdio_c_fwrite_FUN_005fdc00(void *ptr,SIZE_T size,SIZE_T count,_FILE *file);
 void * __cdecl crt_memory_c_memset_FUN_005fde40(void *dest,int value,ulong count);
+void * __watcallStack crt_stdlib_c_median_of_3_FUN_005fdea0(void *a,void *b,void *c,QSORT_COMPARATOR compar);
 template<typename T_func0>
 inline void * crt_stdlib_c_median_of_3_FUN_005fdea0(void *a,void *b,void *c,T_func0 compar) {
-    (void)a; (void)b; (void)c; (void)compar; return (void *)0;
+    return crt_stdlib_c_median_of_3_FUN_005fdea0(a, b, c, (QSORT_COMPARATOR)compar);
 }
 void __watcallRegister crt_stdlib_c_memory_swap_FUN_005fdf10(void *ptr1,void *ptr2,SIZE_T bytes);
+void __cdecl crt_stdlib_c__qsort_FUN_005fdf38(void *base,SIZE_T num,SIZE_T size,QSORT_COMPARATOR compar);
 template<typename T_func0>
 inline void crt_stdlib_c__qsort_FUN_005fdf38(void *base,SIZE_T num,SIZE_T size,T_func0 compar) {
-    (void)base; (void)num; (void)size; (void)compar;
+    crt_stdlib_c__qsort_FUN_005fdf38(base, num, size, (QSORT_COMPARATOR)compar);
 }
 void * __cdecl crt_string_c_memmove_FUN_005fe5e0(void *dest,void *src,SIZE_T n);
 void __cdecl crt_memory_c___vec_delete_FUN_005fe632(void *object_ptr,WatcomTypeInfo *type_info);

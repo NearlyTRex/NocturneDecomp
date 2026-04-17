@@ -78,7 +78,8 @@ static void populate_ddraw_vtable(IDirectDraw_vtable* vt);
 static void populate_surface_vtable(IDirectDrawSurface_vtable* vt);
 
 struct DDraw_ShimData {
-    IDirectDraw_vtable vtable;
+    IDirectDraw_vtable* vtable;
+    IDirectDraw_vtable vtable_data;
     ULONG ref_count;
     SDL_Window* window;
     SDL_Renderer* renderer;
@@ -90,7 +91,8 @@ struct DDraw_ShimData {
 };
 
 struct DDSurface_ShimData {
-    IDirectDrawSurface_vtable vtable;
+    IDirectDrawSurface_vtable* vtable;
+    IDirectDrawSurface_vtable vtable_data;
     ULONG ref_count;
     DDraw_ShimData* ddraw;
     SDL_Surface* sdl_surface;
@@ -191,7 +193,8 @@ static DDSurface_ShimData* create_surface_shim(DDraw_ShimData* ddraw,
     DDSurface_ShimData* surf = (DDSurface_ShimData*)calloc(1, sizeof(DDSurface_ShimData));
     if (!surf) return nullptr;
 
-    populate_surface_vtable(&surf->vtable);
+    populate_surface_vtable(&surf->vtable_data);
+    surf->vtable = &surf->vtable_data;
     surf->ref_count = 1;
     surf->ddraw = ddraw;
 
@@ -345,6 +348,11 @@ static HRESULT ddraw_RestoreDisplayMode(IDirectDraw* this_ptr) {
 static HRESULT ddraw_SetCooperativeLevel(IDirectDraw* this_ptr, HWND window, DWORD flags) {
     DDraw_ShimData* ddraw = reinterpret_cast<DDraw_ShimData*>(this_ptr);
     ddraw->cooperative_hwnd = window;
+    // Strip DDSCL_FULLSCREEN — force windowed mode for debugging.
+    // The game requests exclusive fullscreen but that fights with the
+    // window manager, GDB, and sanitizer output. Remove this line
+    // once rendering is stable enough to test fullscreen.
+    flags &= ~DDSCL_FULLSCREEN;
     ddraw->cooperative_level = flags;
     return DD_OK;
 }
@@ -826,7 +834,8 @@ HRESULT DirectDrawCreate(GUID* lpGUID, LPDIRECTDRAW* lplpDD, IUnknown* pUnkOuter
     DDraw_ShimData* shim = (DDraw_ShimData*)calloc(1, sizeof(DDraw_ShimData));
     if (!shim) return DDERR_OUTOFMEMORY;
 
-    populate_ddraw_vtable(&shim->vtable);
+    populate_ddraw_vtable(&shim->vtable_data);
+    shim->vtable = &shim->vtable_data;
     shim->ref_count = 1;
 
     // Default display mode

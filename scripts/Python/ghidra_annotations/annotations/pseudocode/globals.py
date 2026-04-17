@@ -2504,11 +2504,30 @@ def _generate_template_prototype(signature, funcdef_param_indices):
     lines.append("inline %s %s(%s) {" % (
         return_type, func_name, ",".join(new_params)))
 
-    void_casts = " ".join("(void)%s;" % name for name in all_param_names)
+    # Build a forwarding call that casts each template-typed arg back to
+    # the original funcdef type. The extern declaration (emitted just above
+    # this template) has the canonical types; the template just adapts the
+    # caller's specific function-pointer type via a C-style cast.
+    cast_args = []
+    original_params = params_str.split(',')
+    for i, name in enumerate(all_param_names):
+        if i in funcdef_set:
+            # Cast back to the original funcdef type. The parameter string
+            # looks like "CDemonActor_FactoryFunc *factor_func" — strip the
+            # trailing param name to get "CDemonActor_FactoryFunc *".
+            orig_param = original_params[i].strip()
+            orig_type_only = re.sub(r'\b' + re.escape(name) + r'\s*$', '', orig_param).strip()
+            if not orig_type_only:
+                orig_type_only = orig_param
+            cast_args.append("(%s)%s" % (orig_type_only, name))
+        else:
+            cast_args.append(name)
+
+    call_expr = "%s(%s)" % (func_name, ", ".join(cast_args))
     if return_type.strip() == "void":
-        lines.append("    %s" % void_casts)
+        lines.append("    %s;" % call_expr)
     else:
-        lines.append("    %s return (%s)0;" % (void_casts, return_type))
+        lines.append("    return %s;" % call_expr)
 
     lines.append("}")
     return "\n".join(lines)
@@ -2602,8 +2621,12 @@ def generate_prototypes_header_file(functions_list, range_key="", type_to_path_m
             sig, funcdef_types, funcptr_typedefs)
 
         if funcdef_param_indices:
-            # Generate template inline function that accepts any function
-            # pointer type for the funcdef-typed parameters
+            # Emit a regular extern declaration (so the linker resolves to
+            # the real implementation) PLUS a forwarding template that casts
+            # the caller's function-pointer args to the declared types.
+            # The old template was a no-op stub that silently discarded the
+            # call; the new one forwards with an explicit cast.
+            content.append(sig + ";")
             content.append(_generate_template_prototype(
                 sig, funcdef_param_indices))
         else:

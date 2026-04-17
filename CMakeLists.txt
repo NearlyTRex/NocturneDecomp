@@ -303,4 +303,13 @@ if(NOCTURNE_BUILD_EXE)
             GROUP_READ GROUP_EXECUTE
             WORLD_READ WORLD_EXECUTE
     )
+    configure_file(
+        "${CMAKE_SOURCE_DIR}/cmake/debug_nocturne.sh.in"
+        "${CMAKE_BINARY_DIR}/debug.sh"
+        @ONLY
+        FILE_PERMISSIONS
+            OWNER_READ OWNER_WRITE OWNER_EXECUTE
+            GROUP_READ GROUP_EXECUTE
+            WORLD_READ WORLD_EXECUTE
+    )
 endif()
