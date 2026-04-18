@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 246,
-    "complexity_score": 155,
+    "complexity_score": 140,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 39,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 125,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_many",
-      "pointer_cast"
+      "param_count_too_many"
     ],
     "total_lines": 371
   },
@@ -437,6 +437,17 @@
     },
     "pcode_op_count": 854
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(WNDCLASSA *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "stackProbe = (WNDCLASSA *)((int)stackProbe + -0x80);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 112,
     "local_size": 92,
@@ -496,14 +507,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(WNDCLASSA *)((int)",
-      "severity": "mild",
-      "text": "stackProbe = (WNDCLASSA *)((int)stackProbe + -0x80);",
-      "type": "pointer_cast"
-    },
     {
       "call_site_count": 1,
       "declared_params": 5,

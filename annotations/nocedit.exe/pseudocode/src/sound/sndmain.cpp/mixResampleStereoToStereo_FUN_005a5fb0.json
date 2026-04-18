@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 141,
+    "complexity_score": 96,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 51,
-    "suspect_count": 7,
+    "suspect_count": 3,
     "suspect_types": [
       "param_count_too_few",
-      "unknown_field",
       "warning_deadcode_restart",
       "warning_inlined_function"
     ],
@@ -119,6 +119,44 @@
     },
     "pcode_op_count": 568
   },
+  "resolved_suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 25,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_34._0_4_ = (uint)(longlong)ROUND(ROUND(dVar12));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 28,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_34._0_4_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 32,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_34._0_4_ = (uint)(longlong)ROUND(ROUND(dVar1));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 35,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_34._0_4_ =",
+      "type": "unknown_field"
+    }
+  ],
   "stack_frame": {
     "frame_size": 88,
     "local_size": 56,
@@ -193,38 +231,6 @@
       "severity": "mild",
       "text": "/* WARNING: Restarted to delay deadcode elimination for space: stack */",
       "type": "warning_deadcode_restart"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 25,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_34._0_4_ = (uint)(longlong)ROUND(ROUND(dVar12));",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 28,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_34._0_4_ =",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 32,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_34._0_4_ = (uint)(longlong)ROUND(ROUND(dVar1));",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 35,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_34._0_4_ =",
-      "type": "unknown_field"
     },
     {
       "call_site_count": 1,

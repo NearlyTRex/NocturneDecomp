@@ -4,18 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 360,
-    "complexity_score": 261,
+    "complexity_score": 271,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 21,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 141,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
       "stack_param",
-      "stack_ref"
+      "unnamed_local"
     ],
     "total_lines": 501
   },
@@ -278,6 +279,35 @@
     },
     "pcode_op_count": 1138
   },
+  "resolved_suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 99,
+      "match": "&stack0xfffff300",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff300);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 130,
+      "match": "&stack0xfffff300",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CPickList *)&stack0xfffff300,local_e0 + 4,-1,0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 132,
+      "match": "&stack0xfffff300",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff300,0);",
+      "type": "stack_ref"
+    }
+  ],
   "stack_frame": {
     "frame_size": 2400,
     "local_size": 2396,
@@ -394,36 +424,48 @@
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 99,
-      "match": "&stack0xfffff300",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff300);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 130,
-      "match": "&stack0xfffff300",
-      "severity": "moderate",
-      "text": "((CPickList *)&stack0xfffff300,local_e0 + 4,-1,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 132,
-      "match": "&stack0xfffff300",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff300,0);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 138,
       "match": "in_stack_fffff2fc",
       "severity": "moderate",
       "text": "in_stack_fffff2fc = uVar5 & 0xffffffff00000000;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 26,
+      "match": "local_d00",
+      "severity": "mild",
+      "text": "CPickList local_d00;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 108,
+      "match": "local_d00",
+      "severity": "mild",
+      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_d00);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 139,
+      "match": "local_d00",
+      "severity": "mild",
+      "text": "(&local_d00,local_e0 + 4,-1,0);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 141,
+      "match": "local_d00",
+      "severity": "mild",
+      "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_d00,0);",
+      "type": "unnamed_local"
     }
   ]
 }

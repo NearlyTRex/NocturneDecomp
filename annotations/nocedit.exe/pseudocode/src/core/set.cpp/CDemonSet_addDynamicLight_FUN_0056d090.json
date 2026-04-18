@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 53,
+    "complexity_score": 38,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 23,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "displaced_global_access",
-      "wrong_global"
+      "displaced_global_access"
     ],
     "total_lines": 71
   },
@@ -223,6 +223,17 @@
     },
     "pcode_op_count": 146
   },
+  "resolved_suspects": [
+    {
+      "description": "Scalar global g_DynamicLightCount accessed via (&g_DynamicLightCount)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DynamicLights (at 0x032776b8, +4 bytes).",
+      "line": 23,
+      "match": "g_DynamicLightCount",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&g_DynamicLightCount)[g_DynamicLightCount] = (int)light;",
+      "type": "wrong_global"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -259,14 +270,6 @@
       "severity": "moderate",
       "text": "// 0056d0d3: MOV dword ptr [ESI*0x4 + 0x32776b4],EBX  ; g_DynamicLightCount",
       "type": "displaced_global_access"
-    },
-    {
-      "description": "Scalar global g_DynamicLightCount accessed via (&g_DynamicLightCount)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_DynamicLights (at 0x032776b8, +4 bytes).",
-      "line": 23,
-      "match": "g_DynamicLightCount",
-      "severity": "moderate",
-      "text": "(&g_DynamicLightCount)[g_DynamicLightCount] = (int)light;",
-      "type": "wrong_global"
     }
   ]
 }

@@ -4,6 +4,7 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3947,
     "complexity_score": 1773,
@@ -15,7 +16,7 @@
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
-      "sub84_truncation",
+      "raw_address_constant",
       "unresolved_funcptr"
     ],
     "total_lines": 5675
@@ -1488,6 +1489,17 @@
     },
     "pcode_op_count": 16632
   },
+  "resolved_suspects": [
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 327,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_2b4 = SUB84(__BITCAST_UINT64(dVar3),0);",
+      "type": "sub84_truncation"
+    }
+  ],
   "stack_frame": {
     "frame_size": 1128,
     "local_size": 1124,
@@ -2766,20 +2778,20 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 327,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "local_2b4 = SUB84(__BITCAST_UINT64(dVar3),0);",
-      "type": "sub84_truncation"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 1444,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar6 = *(int *)((int)g_CDemonSetPtr->characters + iStack_40);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Raw hex literal 0xff00ff matches address of g_LightBufferPool (+4022007 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 1273,
+      "match": "0xff00ff",
+      "severity": "moderate",
+      "text": "(&g_CDemonCameraInstance,0xff00ff);",
+      "type": "raw_address_constant"
     }
   ]
 }

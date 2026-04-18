@@ -4,6 +4,7 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 92,
     "complexity_score": 61,
@@ -127,6 +128,17 @@
     },
     "pcode_op_count": 520
   },
+  "resolved_suspects": [
+    {
+      "description": "Raw hex literal 0x67e2d0 matches address of g_MpegBitrateTable (+120 bytes into) (type int[2][3][15]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 10,
+      "match": "0x67e2d0",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar1 = (int)ROUND(ROUND((double)(*(int *)((frame_info.header)->mpeg_version * 0xb4 + 0x67e2d0 +",
+      "type": "raw_address_constant"
+    }
+  ],
   "stack_frame": {
     "frame_size": 48,
     "local_size": 20,

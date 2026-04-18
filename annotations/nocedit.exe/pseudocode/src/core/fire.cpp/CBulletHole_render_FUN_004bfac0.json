@@ -4,16 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 256,
-    "complexity_score": 88,
+    "complexity_score": 113,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 28,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 88,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "raw_address_constant"
+    ],
     "total_lines": 344
   },
   "cross_references": [
@@ -399,5 +402,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Raw hex literal 0x780000 matches address of g_RenderBufferPool (+54528 bytes into) (type SRenderBufferEntry[256]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 30,
+      "match": "0x780000",
+      "severity": "moderate",
+      "text": "g_RenderVertexBuffer[1].u = iVar2 + 0x780000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x780000 matches address of g_RenderBufferPool (+54528 bytes into) (type SRenderBufferEntry[256]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 31,
+      "match": "0x780000",
+      "severity": "moderate",
+      "text": "g_RenderVertexBuffer[0].v = iVar1 + 0x780000;",
+      "type": "raw_address_constant"
+    }
+  ]
 }

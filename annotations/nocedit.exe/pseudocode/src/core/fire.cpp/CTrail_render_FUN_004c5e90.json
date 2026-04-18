@@ -4,17 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 217,
-    "complexity_score": 90,
+    "complexity_score": 235,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 24,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 75,
-    "suspect_count": 1,
+    "suspect_count": 15,
     "suspect_types": [
-      "stack_ref"
+      "raw_address_constant",
+      "unnamed_local"
     ],
     "total_lines": 292
   },
@@ -288,6 +290,17 @@
     },
     "pcode_op_count": 947
   },
+  "resolved_suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 74,
+      "match": "&stack0xffffff88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff88);",
+      "type": "stack_ref"
+    }
+  ],
   "stack_frame": {
     "frame_size": 88,
     "local_size": 84,
@@ -362,12 +375,135 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 74,
-      "match": "&stack0xffffff88",
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+3563000 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 54,
+      "match": "0xf80000",
       "severity": "moderate",
-      "text": "(g_CDemonRendererPtr2,(SMRGLHeaderPrimitive *)&stack0xffffff88);",
-      "type": "stack_ref"
+      "text": "g_RenderVertexBuffer[0].v = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+3563000 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 55,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "g_RenderVertexBuffer[1].u = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+3563000 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 56,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "g_RenderVertexBuffer[1].v = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+3563000 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 57,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "g_RenderVertexBuffer[2].u = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 14,
+      "match": "local_78",
+      "severity": "mild",
+      "text": "SMRGLPrimitiveQuad local_78;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 29,
+      "match": "local_78",
+      "severity": "mild",
+      "text": "local_78.base.base.count = 4;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 30,
+      "match": "local_78",
+      "severity": "mild",
+      "text": "local_78.base.surface_normal.A = 0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 31,
+      "match": "local_78",
+      "severity": "mild",
+      "text": "local_78.base.surface_normal.B = 0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 32,
+      "match": "local_78",
+      "severity": "mild",
+      "text": "local_78.base.surface_normal.C = 0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 33,
+      "match": "local_78",
+      "severity": "mild",
+      "text": "local_78.base.surface_normal.D = 0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 34,
+      "match": "local_78",
+      "severity": "mild",
+      "text": "local_78.vertices[0].vertex_index = 0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 35,
+      "match": "local_78",
+      "severity": "mild",
+      "text": "local_78.vertices[1].vertex_index = 1;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 36,
+      "match": "local_78",
+      "severity": "mild",
+      "text": "local_78.vertices[2].vertex_index = 2;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 37,
+      "match": "local_78",
+      "severity": "mild",
+      "text": "local_78.vertices[3].vertex_index = 3;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 92,
+      "match": "local_78",
+      "severity": "mild",
+      "text": "(g_CDemonRendererPtr2,&local_78.base);",
+      "type": "unnamed_local"
     }
   ]
 }

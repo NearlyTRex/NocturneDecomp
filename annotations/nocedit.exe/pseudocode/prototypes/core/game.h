@@ -217,7 +217,7 @@ void __cdecl disableUnavailableChapters(CPickList *pick_list,int chapter_index);
 
 // Original: core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0
 // Address: 004e1cb0
-void __cdecl CGame::showChapterSelect(CGame *this_ptr,int unknown);
+void __cdecl CGame::showChapterSelect(CGame *this_ptr,int select_mode);
 
 // Original: core_game.cpp_CGame_displayBitmap_FUN_004e2890
 // Address: 004e2890

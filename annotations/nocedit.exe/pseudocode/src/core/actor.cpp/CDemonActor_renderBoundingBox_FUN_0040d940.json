@@ -4,20 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 623,
-    "complexity_score": 577,
+    "complexity_score": 372,
     "cross_reference_count": 9,
     "function_call_count": 10,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 357,
-    "suspect_count": 20,
+    "suspect_count": 1,
     "suspect_types": [
-      "byvalue_struct_passing",
-      "pointer_cast",
-      "stack_param",
-      "stack_ref"
+      "byvalue_struct_passing"
     ],
     "total_lines": 980
   },
@@ -328,6 +326,179 @@
     },
     "pcode_op_count": 2497
   },
+  "resolved_suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_0000000c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CDemonActor *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000010",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 76,
+      "match": "&stack0xfffffeb4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr,(CBoundingBox3D *)&stack0xfffffeb4);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 78,
+      "match": "in_stack_00000010",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_ActiveRenderColor = in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 121,
+      "match": "&stack0xfffffe8c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar8 = (int *)&stack0xfffffe8c;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 125,
+      "match": "(SRenderVertex *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 140,
+      "match": "&stack0xfffffe5c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar8 = (int *)&stack0xfffffe5c;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 144,
+      "match": "(SRenderVertex *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 213,
+      "match": "&stack0xfffffe8c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar8 = (int *)&stack0xfffffe8c;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 217,
+      "match": "(SRenderVertex *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 232,
+      "match": "&stack0xfffffe5c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar8 = (int *)&stack0xfffffe5c;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 236,
+      "match": "(SRenderVertex *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 288,
+      "match": "&stack0xffffffe8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "core_actor_cpp_CVector3f_toFixed8_FUN_004103d0(&CStack_9c,(CVector3f *)&stack0xffffffe8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 290,
+      "match": "&stack0xffffffe8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&pCVar1->vertex_buffer_ptr[1].projected_vertex,(CVector3i *)&stack0xffffffe8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 305,
+      "match": "&stack0xfffffe8c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar8 = (int *)&stack0xfffffe8c;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 309,
+      "match": "(SRenderVertex *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 325,
+      "match": "&stack0xfffffe5c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar8 = (int *)&stack0xfffffe5c;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 329,
+      "match": "(SRenderVertex *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 358,
+      "match": "in_stack_0000000c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_0000000c);",
+      "type": "stack_param"
+    }
+  ],
   "stack_frame": {
     "frame_size": 32,
     "local_size": 24,
@@ -411,158 +582,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "CDemonActor *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 76,
-      "match": "&stack0xfffffeb4",
-      "severity": "moderate",
-      "text": "(this_ptr,(CBoundingBox3D *)&stack0xfffffeb4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 78,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "g_ActiveRenderColor = in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 121,
-      "match": "&stack0xfffffe8c",
-      "severity": "moderate",
-      "text": "piVar8 = (int *)&stack0xfffffe8c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 125,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar9 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 140,
-      "match": "&stack0xfffffe5c",
-      "severity": "moderate",
-      "text": "piVar8 = (int *)&stack0xfffffe5c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 144,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar9 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 213,
-      "match": "&stack0xfffffe8c",
-      "severity": "moderate",
-      "text": "piVar8 = (int *)&stack0xfffffe8c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 217,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar9 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 232,
-      "match": "&stack0xfffffe5c",
-      "severity": "moderate",
-      "text": "piVar8 = (int *)&stack0xfffffe5c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 236,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar9 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 288,
-      "match": "&stack0xffffffe8",
-      "severity": "moderate",
-      "text": "core_actor_cpp_CVector3f_toFixed8_FUN_004103d0(&CStack_9c,(CVector3f *)&stack0xffffffe8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 290,
-      "match": "&stack0xffffffe8",
-      "severity": "moderate",
-      "text": "(&pCVar1->vertex_buffer_ptr[1].projected_vertex,(CVector3i *)&stack0xffffffe8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 305,
-      "match": "&stack0xfffffe8c",
-      "severity": "moderate",
-      "text": "piVar8 = (int *)&stack0xfffffe8c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 309,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar9 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 325,
-      "match": "&stack0xfffffe5c",
-      "severity": "moderate",
-      "text": "piVar8 = (int *)&stack0xfffffe5c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 329,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar9 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 358,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_0000000c);",
-      "type": "stack_param"
-    },
     {
       "description": "Calls clipAndDrawLine2D - decompiler cannot recognize by-value pattern",
       "line": 1,

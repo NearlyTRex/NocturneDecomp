@@ -5,18 +5,20 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3400,
-    "complexity_score": 2238,
+    "complexity_score": 2373,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 125,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 1443,
-    "suspect_count": 78,
+    "suspect_count": 91,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
+      "unnamed_local",
       "warning_inlined_function"
     ],
     "total_lines": 4843
@@ -3050,6 +3052,123 @@
       "severity": "mild",
       "text": "shape_memdbg_cpp_free_FUN_005fe659(&local_188[-1].max.z);",
       "type": "negative_offset"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 78,
+      "match": "local_a1ec",
+      "severity": "mild",
+      "text": "char local_a1ec [32552];",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 80,
+      "match": "local_844",
+      "severity": "mild",
+      "text": "char local_844 [260];",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 84,
+      "match": "local_478",
+      "severity": "mild",
+      "text": "byte local_478 [120];",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 86,
+      "match": "local_388",
+      "severity": "mild",
+      "text": "char local_388 [100];",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 185,
+      "match": "local_154",
+      "severity": "mild",
+      "text": "int local_154;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 189,
+      "match": "local_144",
+      "severity": "mild",
+      "text": "int local_144;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 190,
+      "match": "local_140",
+      "severity": "mild",
+      "text": "SPart *local_140;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 194,
+      "match": "local_12c",
+      "severity": "mild",
+      "text": "int local_12c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 210,
+      "match": "local_e8",
+      "severity": "mild",
+      "text": "int local_e8;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 215,
+      "match": "local_d4",
+      "severity": "mild",
+      "text": "int local_d4;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 313,
+      "match": "local_e8",
+      "severity": "mild",
+      "text": "_fscanf(local_ec,\"%d\\n\",&local_e8);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 353,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)local_478 + local_144),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 354,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)local_400 + local_144));",
+      "type": "pointer_cast"
     }
   ]
 }

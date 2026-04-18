@@ -4,20 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 522,
-    "complexity_score": 514,
+    "complexity_score": 404,
     "cross_reference_count": 1,
     "function_call_count": 27,
     "global_count": 51,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 204,
-    "suspect_count": 29,
+    "suspect_count": 19,
     "suspect_types": [
       "param_count_too_few",
-      "pointer_cast",
-      "stack_alignment_array",
-      "unknown_field"
+      "unnamed_local"
     ],
     "total_lines": 726
   },
@@ -549,6 +548,260 @@
     },
     "pcode_op_count": 2085
   },
+  "resolved_suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 18,
+      "match": "aiStackY_114c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int aiStackY_114c [1009];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "iVar5 = iVar5 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar6) + -2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 65,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(double *)((int)&((local_58.vertex_data)->position).x + iVar3) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(float *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(double *)((int)&((local_58.vertex_data)->position).y + iVar3) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 68,
+      "match": "(float *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(double *)((int)&((local_58.vertex_data)->position).z + iVar3) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(float *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(float *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 74,
+      "match": "(float *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 75,
+      "match": "(float *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 93,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_168.vertex_idx_0 = *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 95,
+      "match": "(float *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_u + local_28) * 0.00390625;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 97,
+      "match": "(float *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_v + local_28) * 0.00390625;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 134,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "if (2 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_28 + -0x14)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 137,
+      "match": "(float *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(double)*(float *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 0x3c) *",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 140,
+      "match": "(float *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_u + iVar4 + 0x3c) * 0.00390625;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 142,
+      "match": "(float *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_u + iVar4) * 0.00390625;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 144,
+      "match": "(float *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_v + iVar4) * 0.00390625;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 145,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_168.vertex_idx_1 = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + -4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 146,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_168.vertex_idx_2 = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 161,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "puVar3[0x10] = local_168.normal.impl.x._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 162,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "puVar3[0x11] = local_168.normal.impl.x._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 163,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "puVar3[0x12] = local_168.normal.impl.y._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 164,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "puVar3[0x13] = local_168.normal.impl.y._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 165,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "puVar3[0x14] = local_168.normal.impl.z._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 166,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "puVar3[0x15] = local_168.normal.impl.z._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 174,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "} while (local_18 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_28 + -0x14));",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4432,
     "local_size": 4432,
@@ -682,230 +935,6 @@
   },
   "suspects": [
     {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 18,
-      "match": "aiStackY_114c",
-      "severity": "moderate",
-      "text": "int aiStackY_114c [1009];",
-      "type": "stack_alignment_array"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "iVar5 = iVar5 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar6) + -2;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 65,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "*(double *)((int)&((local_58.vertex_data)->position).x + iVar3) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 67,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "*(double *)((int)&((local_58.vertex_data)->position).y + iVar3) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 68,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "*(double *)((int)&((local_58.vertex_data)->position).z + iVar3) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 70,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 73,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar4),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 74,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar4),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 75,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar4));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 93,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "local_168.vertex_idx_0 = *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 95,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_u + local_28) * 0.00390625;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 97,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_v + local_28) * 0.00390625;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 134,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if (2 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_28 + -0x14)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 137,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "(double)*(float *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 0x3c) *",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 140,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_u + iVar4 + 0x3c) * 0.00390625;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 142,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_u + iVar4) * 0.00390625;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 144,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_v + iVar4) * 0.00390625;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 145,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "local_168.vertex_idx_1 = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + -4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 146,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "local_168.vertex_idx_2 = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 161,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "puVar3[0x10] = local_168.normal.impl.x._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 162,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "puVar3[0x11] = local_168.normal.impl.x._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 163,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "puVar3[0x12] = local_168.normal.impl.y._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 164,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "puVar3[0x13] = local_168.normal.impl.y._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 165,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "puVar3[0x14] = local_168.normal.impl.z._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 166,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "puVar3[0x15] = local_168.normal.impl.z._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 174,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "} while (local_18 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_28 + -0x14));",
-      "type": "pointer_cast"
-    },
-    {
       "call_site_count": 1,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
@@ -915,6 +944,168 @@
       "param_delta": 3,
       "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 25,
+      "match": "local_30",
+      "severity": "mild",
+      "text": "int local_30;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 28,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "int local_18;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 73,
+      "match": "local_30",
+      "severity": "mild",
+      "text": "local_30 = 0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 77,
+      "match": "local_30",
+      "severity": "mild",
+      "text": "local_2c = g_ModelPolygonData[local_30].texture_name;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 80,
+      "match": "local_30",
+      "severity": "mild",
+      "text": "local_168.vertex_idx_0 = g_ModelPolygonData[local_30].vertex_indices[0];",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 82,
+      "match": "local_30",
+      "severity": "mild",
+      "text": "(double)g_ModelPolygonData[local_30].uv_u[0] * 0.00390625;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 84,
+      "match": "local_30",
+      "severity": "mild",
+      "text": "(double)g_ModelPolygonData[local_30].uv_v[0] * 0.00390625;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 107,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "local_18 = 2;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 110,
+      "match": "local_30",
+      "severity": "mild",
+      "text": "if (2 < (int)g_ModelPolygonData[local_30].vertex_indices_count) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 113,
+      "match": "local_30",
+      "severity": "mild",
+      "text": "(double)g_ModelPolygonData[local_30].uv_u[local_18 - 1] * 0.00390625;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 113,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "(double)g_ModelPolygonData[local_30].uv_u[local_18 - 1] * 0.00390625;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 115,
+      "match": "local_30",
+      "severity": "mild",
+      "text": "(double)g_ModelPolygonData[local_30].uv_v[local_18 - 1] * 0.00390625;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 115,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "(double)g_ModelPolygonData[local_30].uv_v[local_18 - 1] * 0.00390625;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 117,
+      "match": "local_30",
+      "severity": "mild",
+      "text": "(double)g_ModelPolygonData[local_30].uv_u[local_18] * 0.00390625;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 117,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "(double)g_ModelPolygonData[local_30].uv_u[local_18] * 0.00390625;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 119,
+      "match": "local_30",
+      "severity": "mild",
+      "text": "(double)g_ModelPolygonData[local_30].uv_v[local_18] * 0.00390625;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 119,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "(double)g_ModelPolygonData[local_30].uv_v[local_18] * 0.00390625;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 120,
+      "match": "local_30",
+      "severity": "mild",
+      "text": "local_168.vertex_idx_1 = g_ModelPolygonData[local_30].vertex_indices[local_18 - 1];",
+      "type": "unnamed_local"
     }
   ]
 }

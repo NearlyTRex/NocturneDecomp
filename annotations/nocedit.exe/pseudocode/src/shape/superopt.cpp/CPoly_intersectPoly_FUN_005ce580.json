@@ -5,21 +5,17 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1929,
-    "complexity_score": 2319,
+    "complexity_score": 809,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 809,
-    "suspect_count": 149,
-    "suspect_types": [
-      "pointer_cast",
-      "stack_alignment_array",
-      "sub84_truncation",
-      "unknown_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 2738
   },
   "cross_references": [],
@@ -137,6 +133,1349 @@
     },
     "pcode_op_count": 11760
   },
+  "resolved_suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 41,
+      "match": "aiStackY_19c4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int aiStackY_19c4 [1261];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 302,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_5e0._0_4_ = *(uint *)&(pCVar26->position).x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 303,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_5e0._4_4_ = *(uint *)((int)&(pCVar26->position).x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 303,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_5e0._4_4_ = *(uint *)((int)&(pCVar26->position).x + 4);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 304,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_5d8._0_4_ = *(uint *)&(pCVar26->position).y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 305,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_5d8._4_4_ = *(uint *)((int)&(pCVar26->position).y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 305,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_5d8._4_4_ = *(uint *)((int)&(pCVar26->position).y + 4);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 306,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_5d0._0_4_ = *(uint *)&(pCVar26->position).z;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 307,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_5d0._4_4_ = *(uint *)((int)&(pCVar26->position).z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 307,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_5d0._4_4_ = *(uint *)((int)&(pCVar26->position).z + 4);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 310,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_5c4 = *(uint *)((int)&(pCVar26->position).x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 312,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_5bc = *(uint *)((int)&(pCVar26->position).y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 314,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_5b4 = *(uint *)((int)&(pCVar26->position).z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 317,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_5ac = *(uint *)((int)&(pCVar26->position).x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 319,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_5a4 = *(uint *)((int)&(pCVar26->position).y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 321,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_59c = *(uint *)((int)&(pCVar26->position).z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 323,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_568._0_4_ = *(uint *)&this_ptr->uv_coords[0].impl.x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 324,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_568._4_4_ = *(uint *)((int)&this_ptr->uv_coords[0].impl.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 324,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_568._4_4_ = *(uint *)((int)&this_ptr->uv_coords[0].impl.x + 4);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 325,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_560._0_4_ = *(uint *)&this_ptr->uv_coords[0].impl.y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 326,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_560._4_4_ = *(uint *)((int)&this_ptr->uv_coords[0].impl.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 326,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_560._4_4_ = *(uint *)((int)&this_ptr->uv_coords[0].impl.y + 4);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 328,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_554 = *(uint *)((int)&this_ptr->uv_coords[1].impl.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 330,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_54c = *(uint *)((int)&this_ptr->uv_coords[1].impl.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 332,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_544 = *(uint *)((int)&this_ptr->uv_coords[2].impl.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 334,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_53c = *(uint *)((int)&this_ptr->uv_coords[2].impl.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 336,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dStack_320._0_4_ = *(uint *)&(pCVar26->position).x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 337,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dStack_320._4_4_ = *(uint *)((int)&(pCVar26->position).x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 337,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dStack_320._4_4_ = *(uint *)((int)&(pCVar26->position).x + 4);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 339,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dStack_318._0_4_ = *(uint *)pdVar20;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 340,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dStack_318._4_4_ = *(uint *)((int)&(pCVar26->position).y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 340,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dStack_318._4_4_ = *(uint *)((int)&(pCVar26->position).y + 4);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 342,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dStack_310._0_4_ = *(uint *)pdVar24;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 343,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dStack_310._4_4_ = *(uint *)((int)&(pCVar26->position).z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 343,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dStack_310._4_4_ = *(uint *)((int)&(pCVar26->position).z + 4);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 346,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_214 = *(uint *)((int)&(other_poly->normal).impl.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 349,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_20c = *(uint *)((int)&(other_poly->normal).impl.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 352,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_204 = *(uint *)((int)&(other_poly->normal).impl.z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 353,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dStack_4e8 = (pCVar1->impl).x * __BITCAST_DOUBLE(CONCAT44(uStack_5e0._4_4_,(uint)uStack_5e0));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 354,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dStack_4e0 = *pdVar25 * __BITCAST_DOUBLE(CONCAT44(uStack_5d8._4_4_,(uint)uStack_5d8));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 355,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dStack_4d8 = *pdVar28 * __BITCAST_DOUBLE(CONCAT44(uStack_5d0._4_4_,(uint)uStack_5d0));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 369,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 370,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 390,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "if (((((ulonglong)dStack_3f8 & 0x7fffffff00000000) != 0) || (dStack_3f8._0_4_ != 0)) &&",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 391,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(((((ulonglong)dStack_3f0 & 0x7fffffff00000000) != 0 || (dStack_3f0._0_4_ != 0)) &&",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 392,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "((((ulonglong)dStack_3e8 & 0x7fffffff00000000) != 0 || (dStack_3e8._0_4_ != 0)))))) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 424,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 425,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 434,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 435,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 444,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 453,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dStack_180._4_4_ = (double *)((ulonglong)dStack_1b0 >> 0x20);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 458,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dStack_110._4_4_ = (double *)((ulonglong)dStack_1c0 >> 0x20);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 459,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dStack_538 = *dStack_110._4_4_ - uStack_118;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 460,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dVar17 = dStack_110._4_4_[1] - dStack_1c0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 474,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 475,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 483,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar14 = (double *)((int)pdVar14 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 485,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 495,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar12 = (double *)((int)pdVar12 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 510,
+      "match": "._4_8_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "aiStack_d4._4_8_ = (double)(&uStack_560)[iStack_58 * 2] - dStack_150;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 512,
+      "match": "._4_8_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dStack_1e0 = (double)aiStack_d4._4_8_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 513,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_1e8._0_4_ = SUB84(uStack_158,0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 513,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_1e8._0_4_ = SUB84(uStack_158,0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 515,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_1e8._4_4_ = (int)((ulonglong)uStack_158 >> 0x20);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 516,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "aiStack_d4[0] = uStack_1e8._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 517,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dStack_1e0._4_4_ = (double *)((ulonglong)aiStack_d4._4_8_ >> 0x20);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 517,
+      "match": "._4_8_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dStack_1e0._4_4_ = (double *)((ulonglong)aiStack_d4._4_8_ >> 0x20);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 542,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pCVar4->x = *dStack_1e0._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 543,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(out_result->poly1).vertices[2].y = dStack_1e0._4_4_[1];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 544,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(out_result->poly1).vertices[2].z = dStack_1e0._4_4_[2];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 546,
+      "match": "._4_8_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(out_result->poly1).uvs[2].y = (double)aiStack_d4._4_8_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 556,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pCVar12->x = *dStack_180._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 557,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(out_result->poly2).uvs[1].y = dStack_180._4_4_[1];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 563,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)&(out_result->poly2).vertices[3].x = *(uint *)dStack_1e0._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 564,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[3].x + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 565,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)dStack_1e0._4_4_ + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 565,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)dStack_1e0._4_4_ + 4);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 566,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)&(out_result->poly2).vertices[3].y = *(uint *)(dStack_1e0._4_4_ + 1);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 567,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[3].y + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 568,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)dStack_1e0._4_4_ + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 568,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)dStack_1e0._4_4_ + 0xc);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 569,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)&(out_result->poly2).vertices[3].z = *(uint *)(dStack_1e0._4_4_ + 2);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 570,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[3].z + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 571,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)dStack_1e0._4_4_ + 0x14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 571,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)dStack_1e0._4_4_ + 0x14);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 573,
+      "match": "._4_8_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(out_result->poly2).uvs[3].y = (double)aiStack_d4._4_8_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 585,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pCVar5->x = *dStack_180._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 586,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(out_result->poly1).uvs[1].y = dStack_180._4_4_[1];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 592,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(out_result->poly1).vertices[3].x = *dStack_1e0._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 593,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(out_result->poly1).vertices[3].y = dStack_1e0._4_4_[1];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 594,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(out_result->poly1).vertices[3].z = dStack_1e0._4_4_[2];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 596,
+      "match": "._4_8_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(out_result->poly1).uvs[3].y = (double)aiStack_d4._4_8_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 599,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[0].x + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 600,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&uStack_5e0 + iStack_50 * 0x18 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 603,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[0].y + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 604,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&uStack_5d8 + iStack_50 * 0x18 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 609,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].x + 4) = uStack_34c;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 611,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].y + 4) = uStack_344;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 613,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].z + 4) = uStack_33c;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 616,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar11->x = *(uint *)dStack_1e0._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 617,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[2].x + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 618,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)dStack_1e0._4_4_ + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 618,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)dStack_1e0._4_4_ + 4);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 619,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)&(out_result->poly2).vertices[2].y = *(uint *)(dStack_1e0._4_4_ + 1);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 620,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[2].y + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 621,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)dStack_1e0._4_4_ + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 621,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)dStack_1e0._4_4_ + 0xc);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 622,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)&(out_result->poly2).vertices[2].z = *(uint *)(dStack_1e0._4_4_ + 2);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 623,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[2].z + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 624,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)dStack_1e0._4_4_ + 0x14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 624,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)dStack_1e0._4_4_ + 0x14);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 626,
+      "match": "._4_8_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(out_result->poly2).uvs[2].y = (double)aiStack_d4._4_8_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 629,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "if ((((ulonglong)dStack_3f8 & 0x7fffffff00000000) == 0) && (dStack_3f8._0_4_ == 0)) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 634,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "else if ((((ulonglong)dStack_3f0 & 0x7fffffff00000000) == 0) && (dStack_3f0._0_4_ == 0)) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 654,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 655,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 664,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 665,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 674,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 693,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dStack_130._0_4_ = SUB84(dStack_f0,0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 693,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "dStack_130._0_4_ = SUB84(dStack_f0,0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 694,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_530 = dStack_130._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 730,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[0].x + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 731,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&uStack_5e0 + iVar19 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 734,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[0].y + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 735,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&uStack_5d8 + iVar19 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 738,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[0].z + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 739,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&uStack_5d0 + iVar19 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 741,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly2).uvs[0].x + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 742,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&uStack_568 + iVar7 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 744,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly2).uvs[0].y + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 745,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&uStack_560 + iVar7 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 747,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].x + 4) = uStack_3dc;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 749,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].y + 4) = uStack_3d4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 751,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].z + 4) = uStack_3cc;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 779,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly1).vertices[0].x + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 780,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&uStack_5e0 + iVar19 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 783,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly1).vertices[0].y + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 784,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&uStack_5d8 + iVar19 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 787,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly1).vertices[0].z + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 788,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&uStack_5d0 + iVar19 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 790,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly1).uvs[0].x + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 791,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&uStack_568 + iVar7 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 793,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly1).uvs[0].y + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 794,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&uStack_560 + iVar7 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 796,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly1).vertices[1].x + 4) = uStack_3dc;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 798,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly1).vertices[1].y + 4) = uStack_3d4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 800,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly1).vertices[1].z + 4) = uStack_3cc;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 6612,
     "local_size": 6600,
@@ -1703,1200 +3042,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 41,
-      "match": "aiStackY_19c4",
-      "severity": "moderate",
-      "text": "int aiStackY_19c4 [1261];",
-      "type": "stack_alignment_array"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 302,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "uStack_5e0._0_4_ = *(uint *)&(pCVar26->position).x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 303,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_5e0._4_4_ = *(uint *)((int)&(pCVar26->position).x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 303,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "uStack_5e0._4_4_ = *(uint *)((int)&(pCVar26->position).x + 4);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 304,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "uStack_5d8._0_4_ = *(uint *)&(pCVar26->position).y;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 305,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_5d8._4_4_ = *(uint *)((int)&(pCVar26->position).y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 305,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "uStack_5d8._4_4_ = *(uint *)((int)&(pCVar26->position).y + 4);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 306,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "uStack_5d0._0_4_ = *(uint *)&(pCVar26->position).z;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 307,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_5d0._4_4_ = *(uint *)((int)&(pCVar26->position).z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 307,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "uStack_5d0._4_4_ = *(uint *)((int)&(pCVar26->position).z + 4);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 310,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_5c4 = *(uint *)((int)&(pCVar26->position).x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 312,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_5bc = *(uint *)((int)&(pCVar26->position).y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 314,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_5b4 = *(uint *)((int)&(pCVar26->position).z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 317,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_5ac = *(uint *)((int)&(pCVar26->position).x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 319,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_5a4 = *(uint *)((int)&(pCVar26->position).y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 321,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_59c = *(uint *)((int)&(pCVar26->position).z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 323,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "uStack_568._0_4_ = *(uint *)&this_ptr->uv_coords[0].impl.x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 324,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_568._4_4_ = *(uint *)((int)&this_ptr->uv_coords[0].impl.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 324,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "uStack_568._4_4_ = *(uint *)((int)&this_ptr->uv_coords[0].impl.x + 4);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 325,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "uStack_560._0_4_ = *(uint *)&this_ptr->uv_coords[0].impl.y;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 326,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_560._4_4_ = *(uint *)((int)&this_ptr->uv_coords[0].impl.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 326,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "uStack_560._4_4_ = *(uint *)((int)&this_ptr->uv_coords[0].impl.y + 4);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 328,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_554 = *(uint *)((int)&this_ptr->uv_coords[1].impl.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 330,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_54c = *(uint *)((int)&this_ptr->uv_coords[1].impl.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 332,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_544 = *(uint *)((int)&this_ptr->uv_coords[2].impl.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 334,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_53c = *(uint *)((int)&this_ptr->uv_coords[2].impl.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 336,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "dStack_320._0_4_ = *(uint *)&(pCVar26->position).x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 337,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "dStack_320._4_4_ = *(uint *)((int)&(pCVar26->position).x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 337,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "dStack_320._4_4_ = *(uint *)((int)&(pCVar26->position).x + 4);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 339,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "dStack_318._0_4_ = *(uint *)pdVar20;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 340,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "dStack_318._4_4_ = *(uint *)((int)&(pCVar26->position).y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 340,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "dStack_318._4_4_ = *(uint *)((int)&(pCVar26->position).y + 4);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 342,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "dStack_310._0_4_ = *(uint *)pdVar24;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 343,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "dStack_310._4_4_ = *(uint *)((int)&(pCVar26->position).z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 343,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "dStack_310._4_4_ = *(uint *)((int)&(pCVar26->position).z + 4);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 346,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_214 = *(uint *)((int)&(other_poly->normal).impl.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 349,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_20c = *(uint *)((int)&(other_poly->normal).impl.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 352,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_204 = *(uint *)((int)&(other_poly->normal).impl.z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 353,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "dStack_4e8 = (pCVar1->impl).x * __BITCAST_DOUBLE(CONCAT44(uStack_5e0._4_4_,(uint)uStack_5e0));",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 354,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "dStack_4e0 = *pdVar25 * __BITCAST_DOUBLE(CONCAT44(uStack_5d8._4_4_,(uint)uStack_5d8));",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 355,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "dStack_4d8 = *pdVar28 * __BITCAST_DOUBLE(CONCAT44(uStack_5d0._4_4_,(uint)uStack_5d0));",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 369,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 370,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 390,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "if (((((ulonglong)dStack_3f8 & 0x7fffffff00000000) != 0) || (dStack_3f8._0_4_ != 0)) &&",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 391,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "(((((ulonglong)dStack_3f0 & 0x7fffffff00000000) != 0 || (dStack_3f0._0_4_ != 0)) &&",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 392,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "((((ulonglong)dStack_3e8 & 0x7fffffff00000000) != 0 || (dStack_3e8._0_4_ != 0)))))) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 424,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 425,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 434,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 435,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 444,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 453,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "dStack_180._4_4_ = (double *)((ulonglong)dStack_1b0 >> 0x20);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 458,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "dStack_110._4_4_ = (double *)((ulonglong)dStack_1c0 >> 0x20);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 459,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "dStack_538 = *dStack_110._4_4_ - uStack_118;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 460,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "dVar17 = dStack_110._4_4_[1] - dStack_1c0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 474,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 475,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 483,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar14 = (double *)((int)pdVar14 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 485,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 495,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar12 = (double *)((int)pdVar12 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 510,
-      "match": "._4_8_",
-      "severity": "mild",
-      "text": "aiStack_d4._4_8_ = (double)(&uStack_560)[iStack_58 * 2] - dStack_150;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 512,
-      "match": "._4_8_",
-      "severity": "mild",
-      "text": "dStack_1e0 = (double)aiStack_d4._4_8_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 513,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "uStack_1e8._0_4_ = SUB84(uStack_158,0);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 513,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "uStack_1e8._0_4_ = SUB84(uStack_158,0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 515,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "uStack_1e8._4_4_ = (int)((ulonglong)uStack_158 >> 0x20);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 516,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "aiStack_d4[0] = uStack_1e8._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 517,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "dStack_1e0._4_4_ = (double *)((ulonglong)aiStack_d4._4_8_ >> 0x20);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 517,
-      "match": "._4_8_",
-      "severity": "mild",
-      "text": "dStack_1e0._4_4_ = (double *)((ulonglong)aiStack_d4._4_8_ >> 0x20);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 542,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "pCVar4->x = *dStack_1e0._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 543,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "(out_result->poly1).vertices[2].y = dStack_1e0._4_4_[1];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 544,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "(out_result->poly1).vertices[2].z = dStack_1e0._4_4_[2];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 546,
-      "match": "._4_8_",
-      "severity": "mild",
-      "text": "(out_result->poly1).uvs[2].y = (double)aiStack_d4._4_8_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 556,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "pCVar12->x = *dStack_180._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 557,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "(out_result->poly2).uvs[1].y = dStack_180._4_4_[1];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 563,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "*(uint *)&(out_result->poly2).vertices[3].x = *(uint *)dStack_1e0._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 564,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[3].x + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 565,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)dStack_1e0._4_4_ + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 565,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "*(uint *)((int)dStack_1e0._4_4_ + 4);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 566,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "*(uint *)&(out_result->poly2).vertices[3].y = *(uint *)(dStack_1e0._4_4_ + 1);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 567,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[3].y + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 568,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)dStack_1e0._4_4_ + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 568,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "*(uint *)((int)dStack_1e0._4_4_ + 0xc);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 569,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "*(uint *)&(out_result->poly2).vertices[3].z = *(uint *)(dStack_1e0._4_4_ + 2);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 570,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[3].z + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 571,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)dStack_1e0._4_4_ + 0x14);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 571,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "*(uint *)((int)dStack_1e0._4_4_ + 0x14);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 573,
-      "match": "._4_8_",
-      "severity": "mild",
-      "text": "(out_result->poly2).uvs[3].y = (double)aiStack_d4._4_8_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 585,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "pCVar5->x = *dStack_180._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 586,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "(out_result->poly1).uvs[1].y = dStack_180._4_4_[1];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 592,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "(out_result->poly1).vertices[3].x = *dStack_1e0._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 593,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "(out_result->poly1).vertices[3].y = dStack_1e0._4_4_[1];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 594,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "(out_result->poly1).vertices[3].z = dStack_1e0._4_4_[2];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 596,
-      "match": "._4_8_",
-      "severity": "mild",
-      "text": "(out_result->poly1).uvs[3].y = (double)aiStack_d4._4_8_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 599,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[0].x + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 600,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5e0 + iStack_50 * 0x18 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 603,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[0].y + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 604,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d8 + iStack_50 * 0x18 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 609,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].x + 4) = uStack_34c;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 611,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].y + 4) = uStack_344;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 613,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].z + 4) = uStack_33c;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 616,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar11->x = *(uint *)dStack_1e0._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 617,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[2].x + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 618,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)dStack_1e0._4_4_ + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 618,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "*(uint *)((int)dStack_1e0._4_4_ + 4);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 619,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "*(uint *)&(out_result->poly2).vertices[2].y = *(uint *)(dStack_1e0._4_4_ + 1);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 620,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[2].y + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 621,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)dStack_1e0._4_4_ + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 621,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "*(uint *)((int)dStack_1e0._4_4_ + 0xc);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 622,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "*(uint *)&(out_result->poly2).vertices[2].z = *(uint *)(dStack_1e0._4_4_ + 2);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 623,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[2].z + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 624,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)dStack_1e0._4_4_ + 0x14);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 624,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "*(uint *)((int)dStack_1e0._4_4_ + 0x14);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 626,
-      "match": "._4_8_",
-      "severity": "mild",
-      "text": "(out_result->poly2).uvs[2].y = (double)aiStack_d4._4_8_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 629,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "if ((((ulonglong)dStack_3f8 & 0x7fffffff00000000) == 0) && (dStack_3f8._0_4_ == 0)) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 634,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "else if ((((ulonglong)dStack_3f0 & 0x7fffffff00000000) == 0) && (dStack_3f0._0_4_ == 0)) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 654,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 655,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 664,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 665,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 674,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 693,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "dStack_130._0_4_ = SUB84(dStack_f0,0);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 693,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "dStack_130._0_4_ = SUB84(dStack_f0,0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 694,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "uStack_530 = dStack_130._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 730,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[0].x + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 731,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5e0 + iVar19 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 734,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[0].y + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 735,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d8 + iVar19 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 738,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[0].z + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 739,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d0 + iVar19 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 741,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).uvs[0].x + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 742,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_568 + iVar7 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 744,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).uvs[0].y + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 745,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_560 + iVar7 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 747,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].x + 4) = uStack_3dc;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 749,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].y + 4) = uStack_3d4;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 751,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].z + 4) = uStack_3cc;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 779,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly1).vertices[0].x + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 780,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5e0 + iVar19 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 783,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly1).vertices[0].y + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 784,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d8 + iVar19 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 787,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly1).vertices[0].z + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 788,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d0 + iVar19 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 790,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly1).uvs[0].x + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 791,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_568 + iVar7 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 793,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly1).uvs[0].y + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 794,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_560 + iVar7 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 796,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly1).vertices[1].x + 4) = uStack_3dc;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 798,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly1).vertices[1].y + 4) = uStack_3d4;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 800,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly1).vertices[1].z + 4) = uStack_3cc;",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

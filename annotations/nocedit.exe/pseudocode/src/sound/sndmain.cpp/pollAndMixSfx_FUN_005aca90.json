@@ -4,19 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 293,
-    "complexity_score": 278,
+    "complexity_score": 213,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 22,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 173,
-    "suspect_count": 9,
+    "suspect_count": 3,
     "suspect_types": [
       "byvalue_struct_passing",
-      "pointer_cast",
-      "stack_ref"
+      "pointer_cast"
     ],
     "total_lines": 466
   },
@@ -289,6 +289,80 @@
     },
     "pcode_op_count": 1252
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "if (*(int *)((int)g_ChannelPrimaryBuffers + iVar2) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 89,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "piVar1 = (int *)((int)g_ChannelPrimaryBuffers + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 103,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)local_6c + iVar2) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 104,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)g_ChannelPrimaryBuffers + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 118,
+      "match": "&stack0xffffff68",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar8 = (uint *)&stack0xffffff68;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 163,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(int *)((int)g_ChannelPrimaryBuffers + iVar5)),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 166,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(int *)((int)local_44 + iVar5 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 167,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(int *)((int)local_44 + iVar5 + 4) + block_align * iVar3;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 136,
     "local_size": 112,
@@ -422,75 +496,29 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if (*(int *)((int)g_ChannelPrimaryBuffers + iVar2) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 89,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "piVar1 = (int *)((int)g_ChannelPrimaryBuffers + iVar3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 103,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)local_6c + iVar2) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 104,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)g_ChannelPrimaryBuffers + iVar2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 118,
-      "match": "&stack0xffffff68",
-      "severity": "moderate",
-      "text": "puVar8 = (uint *)&stack0xffffff68;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 163,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)g_ChannelPrimaryBuffers + iVar5)),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 166,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)local_44 + iVar5 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 167,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)local_44 + iVar5 + 4) + block_align * iVar3;",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Calls CSfxSlot_mix - decompiler cannot recognize by-value pattern",
       "line": 1,
       "match": "CSfxSlot_mix",
       "text": "Function calls by-value struct passing functions",
       "type": "byvalue_struct_passing"
+    },
+    {
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 56,
+      "match": "(void *)((int)",
+      "severity": "mild",
+      "text": "(void *)((int)g_ChannelPrimaryBuffers[iVar5] + bytes_per_buffer),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 58,
+      "match": "(void *)((int)",
+      "severity": "mild",
+      "text": "memset((void *)((int)g_ChannelPrimaryBuffers[iVar5] + tail_bytes), 0, bytes_per_buffer);",
+      "type": "pointer_cast"
     }
   ]
 }

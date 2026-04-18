@@ -2110,6 +2110,7 @@ int g_MpegLayer2AllocationTables[4][4] = {
 };
 
 // int[5]
+int g_ChapterDisplayYears[5] = {0x00000787, 0x0000078B, 0x0000078D, 0x0000078F, 0x00000796};
 int g_Layer3LongBandGroupCounts[5] = {0x00000000, 0x00000006, 0x0000000B, 0x00000010, 0x00000015};
 
 // int[6][3][4]

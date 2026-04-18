@@ -256,7 +256,7 @@ LAB_004e14f5:
         local_14 = 0;
         if (0 < g_HeroCount) {
           do {
-            pcVar7 = "(file corrupt)";
+            pcVar7 = g_LoadSavefileStatus;
             pcVar5 = local_230;
             for (iVar4 = 0x32; iVar4 != 0; iVar4 = iVar4 + -1) {
               *(uint *)pcVar5 = *(uint *)pcVar7;

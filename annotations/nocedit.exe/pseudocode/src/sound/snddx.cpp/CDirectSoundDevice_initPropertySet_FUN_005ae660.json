@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 184,
+    "complexity_score": 209,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 59,
-    "suspect_count": 11,
+    "suspect_count": 14,
     "suspect_types": [
-      "unknown_field",
-      "unresolved_funcptr",
+      "unnamed_local",
       "warning_max_restarts"
     ],
     "total_lines": 205
@@ -128,6 +128,98 @@
     },
     "pcode_op_count": 460
   },
+  "resolved_suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 37,
+      "match": "._12_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "if (local_2c._12_4_ == 0) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 39,
+      "match": "code *",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)local_2c.nAvgBytesPerSec + 8))(local_2c.nAvgBytesPerSec);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 43,
+      "match": "._12_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(*(code *)**(uint **)local_2c._12_4_)",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 43,
+      "match": "code *",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(code *)**(uint **)local_2c._12_4_)",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 44,
+      "match": "._12_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(local_2c._12_4_,&g_IID_IKsPropertySet,&g_DirectSoundPropertySet);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 46,
+      "match": "code *",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)DStack_40.lpwfxFormat + 8))(DStack_40.lpwfxFormat);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 49,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "if (local_2c._0_4_ != 0) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 50,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)local_2c._0_4_ + 8))(local_2c._0_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 50,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)local_2c._0_4_ + 8))(local_2c._0_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 50,
+      "match": "code *",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)local_2c._0_4_ + 8))(local_2c._0_4_);",
+      "type": "unresolved_funcptr"
+    }
+  ],
   "stack_frame": {
     "frame_size": 472,
     "local_size": 468,
@@ -206,84 +298,121 @@
       "type": "warning_max_restarts"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 37,
-      "match": "._12_4_",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 20,
+      "match": "local_18",
       "severity": "mild",
-      "text": "if (local_2c._12_4_ == 0) {",
-      "type": "unknown_field"
+      "text": "IDirectSoundBuffer *local_18;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 39,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)local_2c.nAvgBytesPerSec + 8))(local_2c.nAvgBytesPerSec);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 43,
-      "match": "._12_4_",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 21,
+      "match": "local_14",
       "severity": "mild",
-      "text": "(*(code *)**(uint **)local_2c._12_4_)",
-      "type": "unknown_field"
+      "text": "IDirectSound3DBuffer *local_14;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 43,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(*(code *)**(uint **)local_2c._12_4_)",
-      "type": "unresolved_funcptr"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 27,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "local_18 = (IDirectSoundBuffer *)0x0;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unknown/mangled field access",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 28,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "local_14 = (IDirectSound3DBuffer *)0x0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 42,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "(g_DirectSound,&DStack_40,&local_18,(LPUNKNOWN)0x0);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
       "line": 44,
-      "match": "._12_4_",
+      "match": "local_18",
       "severity": "mild",
-      "text": "(local_2c._12_4_,&g_IID_IKsPropertySet,&g_DirectSoundPropertySet);",
-      "type": "unknown_field"
+      "text": "(*local_18->vtable->QueryInterface)((IUnknown *)local_18,&g_IID_IDirectSound3DBuffer,(void **)&local_14);",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 44,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "(*local_18->vtable->QueryInterface)((IUnknown *)local_18,&g_IID_IDirectSound3DBuffer,(void **)&local_14);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 44,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "(*local_18->vtable->QueryInterface)((IUnknown *)local_18,&g_IID_IDirectSound3DBuffer,(void **)&local_14);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 45,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "if (local_14 == (IDirectSound3DBuffer *)0x0) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
       "line": 46,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)DStack_40.lpwfxFormat + 8))(DStack_40.lpwfxFormat);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 49,
-      "match": "._0_4_",
+      "match": "local_18",
       "severity": "mild",
-      "text": "if (local_2c._0_4_ != 0) {",
-      "type": "unknown_field"
+      "text": "if (local_18 != (IDirectSoundBuffer *)0x0) {",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 50,
-      "match": "._0_4_",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 47,
+      "match": "local_18",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)local_2c._0_4_ + 8))(local_2c._0_4_);",
-      "type": "unknown_field"
+      "text": "(*local_18->vtable->Release)((IUnknown *)local_18);",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 50,
-      "match": "._0_4_",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 51,
+      "match": "local_14",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)local_2c._0_4_ + 8))(local_2c._0_4_);",
-      "type": "unknown_field"
+      "text": "(*local_14->vtable->QueryInterface)((IUnknown *)local_14,&g_IID_IKsPropertySet,(void **)&g_DirectSoundPropertySet);",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 50,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)local_2c._0_4_ + 8))(local_2c._0_4_);",
-      "type": "unresolved_funcptr"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 51,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "(*local_14->vtable->QueryInterface)((IUnknown *)local_14,&g_IID_IKsPropertySet,(void **)&g_DirectSoundPropertySet);",
+      "type": "unnamed_local"
     }
   ]
 }

@@ -25,10 +25,10 @@ SUMMARY STATISTICS
     Undefined types in variables:      103
     Unresolved stack params:           5
 
-  Excluded (.keep / MMX / by-value):   126 functions
-    Wrong calling convention:          2
+  Excluded (.keep / MMX / by-value):   117 functions
+    Wrong calling convention:          1
     Undefined types in variables:      114
-    Unresolved stack params:           16
+    Unresolved stack params:           3
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
@@ -640,14 +640,8 @@ manual .keep.cpp files, MMX inline assembly transforms, or by-value struct
 passing patterns. Issues here are expected and not actionable.
 
 --------------------------------------------------------------------------------
-Wrong calling convention - .keep overrides (2)
+Wrong calling convention - .keep overrides (1)
 --------------------------------------------------------------------------------
-
-  CCharacter_updateCarriedObjects
-    Address: 0x0042d090  File: core/charactr.cpp
-    Evidence: unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP
-    Signature: void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCharacter *this_ptr,float delta_time)
-    Suggested: Calling convention may be wrong (preserved registers being used)
 
   quantizeRawPixelData
     Address: 0x00556490  File: shape/quantize.cpp
@@ -668,55 +662,13 @@ Wrong calling convention - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Unresolved stack params - .keep overrides (16)
+Unresolved stack params - .keep overrides (3)
 --------------------------------------------------------------------------------
-
-  CWavInDevice_setMode
-    Address: 0x005b0f70  File: sound/sndwav.cpp
-    Evidence: in_stack_00000018, in_stack_00000018
-    Signature: int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int stereo_flag)
-    Suggested: Signature is missing stack parameters entirely
-
-  CWavOutDevice_setMode
-    Address: 0x005b0a30  File: sound/sndwav.cpp
-    Evidence: in_stack_00000018, in_stack_00000018
-    Signature: int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_buffer_size)
-    Suggested: Signature is missing stack parameters entirely
-
-  nextMixingBuffer
-    Address: 0x005a59c0  File: sound/sndmain.cpp
-    Evidence: in_stack_ffffff94, in_stack_ffffffb0, in_stack_ffffffb0, in_stack_ffffffb0, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94, in_stack_ffffff94
-    Signature: void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_005a59c0(void)
-    Suggested: Signature is missing stack parameters entirely
 
   CVehicle_renderOpaque
     Address: 0x005e88c0  File: core/vehicle.cpp
     Evidence: in_stack_0000000c, in_stack_0000000c
     Signature: int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005e88c0(CVehicle *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDemonSet_showVdirBoxEditor
-    Address: 0x00583170  File: core/setedit.cpp
-    Evidence: in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdcc, in_stack_fffffdcc, in_stack_fffffdcc, in_stack_fffffdcc, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdcc, in_stack_fffffdbc, in_stack_fffffdc0, in_stack_fffffdc4, in_stack_fffffdcc
-    Signature: void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDemonSet_buildCameraCoverageMap
-    Address: 0x0057fd00  File: core/setedit.cpp
-    Evidence: in_stack_ffffffb0, in_stack_ffffffb0
-    Signature: void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDemonSet *this_ptr,char *coverage_map,int exclude_camera_index)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDemonActor_processMeleeHit
-    Address: 0x0040a210  File: core/actor.cpp
-    Evidence: in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74, in_stack_fffffd70, in_stack_fffffd74
-    Signature: int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,int hit_type)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDemonActor_renderBoundingBox
-    Address: 0x0040d940  File: core/actor.cpp
-    Evidence: in_stack_0000000c, in_stack_00000010, in_stack_00000010, in_stack_0000000c
-    Signature: void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,uint32_t color)
     Suggested: Signature is missing stack parameters entirely
 
   CDemonMission_enemyRandomizer
@@ -725,46 +677,10 @@ Unresolved stack params - .keep overrides (16)
     Signature: void __cdecl core_msnedit_cpp_CDemonMission_enemyRandomizer_FUN_005379e0(CDemonMission *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  CWerewolf_process
-    Address: 0x005efde0  File: core/werewolf.cpp
-    Evidence: in_stack_fffffcec, in_stack_fffffcec
-    Signature: void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_ptr,float delta_time)
-    Suggested: Signature is missing stack parameters entirely
-
-  CStranger_processFrame
-    Address: 0x005bb960  File: core/stranger.cpp
-    Evidence: in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd10, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd10, in_stack_fffffd14
-    Signature: void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_005bb960(CStranger *this_ptr,float delta_time)
-    Suggested: Signature is missing stack parameters entirely
-
-  CGhoul_process
-    Address: 0x004e6600  File: core/ghoul.cpp
-    Evidence: in_stack_fffffc88, in_stack_fffffc8c, in_stack_fffffc94, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc8c, in_stack_fffffc88, in_stack_fffffc94, in_stack_fffffc8c, in_stack_fffffc94, in_stack_fffffc8c, in_stack_fffffc94, in_stack_fffffc88, in_stack_fffffc94, in_stack_fffffc8c, in_stack_fffffc94, in_stack_fffffc94, in_stack_fffffc88, in_stack_fffffc8c, in_stack_fffffc94, in_stack_fffffc8c, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc94, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc94, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc8c, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88, in_stack_fffffc88
-    Signature: void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float delta_time)
-    Suggested: Signature is missing stack parameters entirely
-
   CLarva_process
     Address: 0x00503080  File: core/larva.cpp
     Evidence: in_stack_fffffe18, in_stack_fffffe18
     Signature: void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float delta_time)
-    Suggested: Signature is missing stack parameters entirely
-
-  CCharacter_updateCarriedObjects
-    Address: 0x0042d090  File: core/charactr.cpp
-    Evidence: in_stack_fffffd80, in_stack_fffffd80, in_stack_fffffd80
-    Signature: void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCharacter *this_ptr,float delta_time)
-    Suggested: Signature is missing stack parameters entirely
-
-  CStairs_renderOpaque
-    Address: 0x005b9c10  File: core/stairs.cpp
-    Evidence: in_stack_0000000c, in_stack_fffffee8, in_stack_fffffeec, in_stack_fffffef0, in_stack_fffffef4, in_stack_fffffef8, in_stack_fffffefc, in_stack_ffffff00, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_fffffee8, in_stack_fffffeec, in_stack_fffffef0, in_stack_fffffef4, in_stack_fffffef8, in_stack_fffffefc, in_stack_ffffff00, in_stack_fffffeec, in_stack_fffffee8, in_stack_fffffef0, in_stack_fffffef4, in_stack_fffffef8, in_stack_fffffefc, in_stack_ffffff00, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_fffffeec, in_stack_fffffee8, in_stack_fffffef0, in_stack_fffffef4, in_stack_fffffef8, in_stack_fffffefc, in_stack_ffffff00, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c
-    Signature: int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  renderPolygonWireframe
-    Address: 0x0045d300  File: shape/design.c
-    Evidence: in_stack_fffffef8
-    Signature: void __cdecl shape_design_c_renderPolygonWireframe_FUN_0045d300(SMRGLHeaderPrimitive *polygon_data)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------

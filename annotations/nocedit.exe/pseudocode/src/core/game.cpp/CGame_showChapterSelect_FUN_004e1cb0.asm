@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,int unknown)
+; void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,int select_mode)
 ;
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   unknown
+; int              Stack[0x8]:4   select_mode
 ; Local Variables:
 ; CPickList        Stack[-0x6ec]:936  local_6ec
 ; CIniFile         Stack[-0x344]:512  local_344
@@ -129,7 +129,7 @@ section .text
     LEA EAX,[ESP + 0x3b0]               ; 004e1da4
     PUSH EAX                            ; 004e1dab
     CALL engine_ini.cpp_CIniFile_ctor_FUN_004fba70 ; 004e1dac
-        ;   XREF to: 004fba70 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004fba70(CIniFile * this_ptr, char * filename, int read_mode)
+        ;   XREF to: 004fba70 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004fba70(CIniFile * this_ptr, char * filename, char * section)
     ADD ESP,0xc                         ; 004e1db1
     LEA EAX,[ESP + 0x6c0]               ; 004e1db4
     XOR EDX,EDX                         ; 004e1dbb
@@ -257,9 +257,9 @@ section .text
         ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     MOV ECX,0x41000000                  ; 004e1f70
     ADD ESP,0xc                         ; 004e1f75
-    MOV EBX,dword ptr [EBP*0x4 + 0x67b854] ; 004e1f78 | g_ChapterMissionFiles[4][12] | g_ChapterDisplayTexts
+    MOV EBX,dword ptr [EBP*0x4 + 0x67b854] ; 004e1f78 | g_ChapterMissionFiles[4][12] | g_ChapterDisplayYears
     MOV ESI,dword ptr [ESP + EBP*0x4 + 0x6ac] ; 004e1f7f
-    MOV dword ptr [0x02d831a8],EBX      ; 004e1f86 | g_ChapterDisplayNumber
+    MOV dword ptr [0x02d831a8],EBX      ; 004e1f86 | g_ChapterDisplayYear
     PUSH EDI                            ; 004e1f8c | g_ChapterDisplayName
     MOV AL,byte ptr [ESI]               ; 004e1f8d
         ;   Label: LAB_004e1f8d
@@ -1153,7 +1153,7 @@ section .text
         ;   XREF to: 004e208f (CONDITIONAL_JUMP)  ; LAB_004e208f
     XOR EAX,EAX                         ; 004e2866
     XOR EDX,EDX                         ; 004e2868
-    MOV [0x02d831a8],EAX                ; 004e286a | g_ChapterDisplayNumber
+    MOV [0x02d831a8],EAX                ; 004e286a | g_ChapterDisplayYear
     XOR AH,AH                           ; 004e286f
     MOV dword ptr [0x02d831ac],EDX      ; 004e2871 | g_OverlayDisplayTimer
     MOV byte ptr [0x02d830a8],AH        ; 004e2877 | g_ChapterDisplayName

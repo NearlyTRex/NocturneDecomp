@@ -4,20 +4,20 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 620,
-    "complexity_score": 315,
+    "complexity_score": 231,
     "cross_reference_count": 1,
     "function_call_count": 49,
     "global_count": 54,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 215,
-    "suspect_count": 9,
+    "pseudocode_lines": 216,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_alignment_array",
-      "unknown_field"
+      "stack_alignment_array"
     ],
-    "total_lines": 835
+    "total_lines": 836
   },
   "cross_references": [
     {
@@ -666,6 +666,80 @@
     },
     "pcode_op_count": 1875
   },
+  "resolved_suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 147,
+      "match": "._0_1_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "aiStack_1c[0]._0_1_ = \"memdump.txt\"[4];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 148,
+      "match": "._1_1_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "aiStack_1c[0]._1_1_ = \"memdump.txt\"[5];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 149,
+      "match": "._2_1_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "aiStack_1c[0]._2_1_ = \"memdump.txt\"[6];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 150,
+      "match": "._3_1_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "aiStack_1c[0]._3_1_ = \"memdump.txt\"[7];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 151,
+      "match": "._0_1_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "aiStack_1c[1]._0_1_ = \"memdump.txt\"[8];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 152,
+      "match": "._1_1_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "aiStack_1c[1]._1_1_ = \"memdump.txt\"[9];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 153,
+      "match": "._2_1_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "aiStack_1c[1]._2_1_ = \"memdump.txt\"[10];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 154,
+      "match": "._3_1_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "aiStack_1c[1]._3_1_ = \"memdump.txt\"[0xb];",
+      "type": "unknown_field"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4108,
     "local_size": 4108,
@@ -746,70 +820,6 @@
       "severity": "moderate",
       "text": "int aiStackY_1008 [690];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 146,
-      "match": "._0_1_",
-      "severity": "mild",
-      "text": "aiStack_1c[0]._0_1_ = \"memdump.txt\"[4];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 147,
-      "match": "._1_1_",
-      "severity": "mild",
-      "text": "aiStack_1c[0]._1_1_ = \"memdump.txt\"[5];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 148,
-      "match": "._2_1_",
-      "severity": "mild",
-      "text": "aiStack_1c[0]._2_1_ = \"memdump.txt\"[6];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 149,
-      "match": "._3_1_",
-      "severity": "mild",
-      "text": "aiStack_1c[0]._3_1_ = \"memdump.txt\"[7];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 150,
-      "match": "._0_1_",
-      "severity": "mild",
-      "text": "aiStack_1c[1]._0_1_ = \"memdump.txt\"[8];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 151,
-      "match": "._1_1_",
-      "severity": "mild",
-      "text": "aiStack_1c[1]._1_1_ = \"memdump.txt\"[9];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 152,
-      "match": "._2_1_",
-      "severity": "mild",
-      "text": "aiStack_1c[1]._2_1_ = \"memdump.txt\"[10];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 153,
-      "match": "._3_1_",
-      "severity": "mild",
-      "text": "aiStack_1c[1]._3_1_ = \"memdump.txt\"[0xb];",
-      "type": "unknown_field"
     }
   ]
 }

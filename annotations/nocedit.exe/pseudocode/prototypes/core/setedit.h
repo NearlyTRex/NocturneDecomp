@@ -221,11 +221,11 @@ void __cdecl CDemonSet::showVdirBoxEditor(CDemonSet *this_ptr);
 
 // Original: core_setedit.cpp_CDemonSet_readIni_FUN_00584900
 // Address: 00584900
-void __cdecl CDemonSet::readIni(CDemonSet *set_ptr,CIniFile *ini_file);
+void __cdecl CDemonSet::readIni(CDemonSet *this_ptr,CIniFile *ini_file);
 
 // Original: core_setedit.cpp_CDemonSet_writeIni_FUN_00584920
 // Address: 00584920
-void __cdecl CDemonSet::writeIni(CDemonSet *set,CIniFile *ini_file);
+void __cdecl CDemonSet::writeIni(CDemonSet *this_ptr,CIniFile *ini_file);
 
 // Original: core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940
 // Address: 00584940

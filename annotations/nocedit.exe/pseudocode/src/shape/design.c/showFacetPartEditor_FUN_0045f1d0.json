@@ -4,17 +4,20 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 1920,
-    "complexity_score": 694,
+    "complexity_score": 794,
     "cross_reference_count": 1,
     "function_call_count": 60,
     "global_count": 143,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 604,
-    "suspect_count": 8,
+    "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
+      "raw_address_constant",
+      "unnamed_local",
       "warning_inlined_function"
     ],
     "total_lines": 2524
@@ -1269,6 +1272,17 @@
     },
     "pcode_op_count": 9732
   },
+  "resolved_suspects": [
+    {
+      "description": "Raw hex literal 0x16e9964 matches address of g_ModelPolygonData (+84 bytes into) (type SShapeEditorPolygon[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 440,
+      "match": "0x16e9964",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(local_b8,\"Texture : %s (%s)\",g_SelectedPolygonIndex * 0x184 + 0x16e9964);",
+      "type": "raw_address_constant"
+    }
+  ],
   "stack_frame": {
     "frame_size": 188,
     "local_size": 188,
@@ -1506,6 +1520,85 @@
       "severity": "mild",
       "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Raw hex literal 0x1000000 matches address of g_LightBufferPool (+4087288 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 176,
+      "match": "0x1000000",
+      "severity": "moderate",
+      "text": "if (0x1000000 < g_ProjectionScale) {",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x1000000 matches address of g_LightBufferPool (+4087288 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 177,
+      "match": "0x1000000",
+      "severity": "moderate",
+      "text": "g_ProjectionScale = 0x1000000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 41,
+      "match": "local_58",
+      "severity": "mild",
+      "text": "int local_58;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 46,
+      "match": "local_44",
+      "severity": "mild",
+      "text": "int local_44;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 48,
+      "match": "local_3c",
+      "severity": "mild",
+      "text": "int local_3c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 49,
+      "match": "local_38",
+      "severity": "mild",
+      "text": "int local_38;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 349,
+      "match": "local_44",
+      "severity": "mild",
+      "text": "for (local_44 = g_WindowWidth + -10; local_44 < g_WindowWidth; local_44 = local_44 + 1) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 349,
+      "match": "local_44",
+      "severity": "mild",
+      "text": "for (local_44 = g_WindowWidth + -10; local_44 < g_WindowWidth; local_44 = local_44 + 1) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 349,
+      "match": "local_44",
+      "severity": "mild",
+      "text": "for (local_44 = g_WindowWidth + -10; local_44 < g_WindowWidth; local_44 = local_44 + 1) {",
+      "type": "unnamed_local"
     }
   ]
 }

@@ -4,17 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 87,
+    "complexity_score": 112,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 52,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "raw_address_constant"
     ],
     "total_lines": 208
   },
@@ -271,6 +273,22 @@
       "severity": "mild",
       "text": "(*(int *)((int)this_ptr->zbuffer_data +",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Raw hex literal 0xffffff matches address of g_LightBufferPool (+4087287 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 24,
+      "match": "0xffffff",
+      "severity": "moderate",
+      "text": "uVar2 = (uint)(0xffffff /",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xffffff matches address of g_LightBufferPool (+4087287 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 40,
+      "match": "0xffffff",
+      "severity": "moderate",
+      "text": "uVar1 = (uint)(0xffffff /",
+      "type": "raw_address_constant"
     }
   ]
 }

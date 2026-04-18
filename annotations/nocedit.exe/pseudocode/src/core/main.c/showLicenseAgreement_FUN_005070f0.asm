@@ -61,7 +61,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00507104
     PUSH EAX                            ; 00507108
     CALL engine_ini.cpp_CIniFile_ctor_FUN_004fba70 ; 00507109
-        ;   XREF to: 004fba70 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004fba70(CIniFile * this_ptr, char * filename, int read_mode)
+        ;   XREF to: 004fba70 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004fba70(CIniFile * this_ptr, char * filename, char * section)
     ADD ESP,0xc                         ; 0050710e
     LEA EAX,[ESP + 0x3fc]               ; 00507111
     PUSH EAX                            ; 00507118

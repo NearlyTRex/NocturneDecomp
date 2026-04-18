@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setedit_cpp_CDemonSet_readIni_FUN_00584900(CDemonSet *set_ptr,CIniFile *ini_file)
+; void __cdecl core_setedit_cpp_CDemonSet_readIni_FUN_00584900(CDemonSet *this_ptr,CIniFile *ini_file)
 ;
 ; Parameters:
-; CDemonSet *      Stack[0x4]:4   set_ptr
+; CDemonSet *      Stack[0x4]:4   this_ptr
 ; CIniFile *       Stack[0x8]:4   ini_file
 ;
 ; XREF[1]:

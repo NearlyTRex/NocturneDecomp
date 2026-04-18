@@ -4,18 +4,17 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 88,
+    "complexity_score": 23,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 23,
-    "suspect_count": 6,
-    "suspect_types": [
-      "unknown_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 77
   },
   "cross_references": [
@@ -149,6 +148,62 @@
     },
     "pcode_op_count": 414
   },
+  "resolved_suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 13,
+      "match": "._0_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "iVar1._0_2_ = box_ptr->avg_red;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 14,
+      "match": "._2_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "iVar1._2_2_ = box_ptr->avg_green;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 15,
+      "match": "._0_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "iVar2._0_2_ = box_ptr->avg_green;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 16,
+      "match": "._2_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "iVar2._2_2_ = box_ptr->avg_blue;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 20,
+      "match": "._0_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "iVar3._0_2_ = box_ptr->avg_blue;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 21,
+      "match": "._2_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "iVar3._2_2_ = box_ptr->avg_intensity;",
+      "type": "unknown_field"
+    }
+  ],
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -179,54 +234,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unknown/mangled field access",
-      "line": 13,
-      "match": "._0_2_",
-      "severity": "mild",
-      "text": "iVar1._0_2_ = box_ptr->avg_red;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 14,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "iVar1._2_2_ = box_ptr->avg_green;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 15,
-      "match": "._0_2_",
-      "severity": "mild",
-      "text": "iVar2._0_2_ = box_ptr->avg_green;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 16,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "iVar2._2_2_ = box_ptr->avg_blue;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 20,
-      "match": "._0_2_",
-      "severity": "mild",
-      "text": "iVar3._0_2_ = box_ptr->avg_blue;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 21,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "iVar3._2_2_ = box_ptr->avg_intensity;",
-      "type": "unknown_field"
-    }
-  ]
+  "suspects": []
 }

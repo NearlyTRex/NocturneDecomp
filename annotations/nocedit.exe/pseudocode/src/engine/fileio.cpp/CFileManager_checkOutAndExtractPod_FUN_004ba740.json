@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 730,
-    "complexity_score": 366,
+    "complexity_score": 331,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 40,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 306,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "stack_ref"
+      "pointer_cast"
     ],
     "total_lines": 1036
   },
@@ -492,6 +492,35 @@
     },
     "pcode_op_count": 2541
   },
+  "resolved_suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 105,
+      "match": "&stack0xfffff964",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&stack0xfffff964,\"A writable copy of %s exists.  Replace it?\",local_340);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 107,
+      "match": "&stack0xfffff964",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&stack0xfffff964,&g_VersionControlSession.overwrite_writeable_choice);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 290,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&optional_pod_file[0xc04f]._cnt + 2) = 0;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 1208,
     "local_size": 1196,
@@ -638,30 +667,6 @@
       "match": "(_FILE *)((int)",
       "severity": "mild",
       "text": "p_Var6 = (_FILE *)((int)&p_Var6->_ptr + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 105,
-      "match": "&stack0xfffff964",
-      "severity": "moderate",
-      "text": "(&stack0xfffff964,\"A writable copy of %s exists.  Replace it?\",local_340);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 107,
-      "match": "&stack0xfffff964",
-      "severity": "moderate",
-      "text": "(&stack0xfffff964,&g_VersionControlSession.overwrite_writeable_choice);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 290,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&optional_pod_file[0xc04f]._cnt + 2) = 0;",
       "type": "pointer_cast"
     }
   ]

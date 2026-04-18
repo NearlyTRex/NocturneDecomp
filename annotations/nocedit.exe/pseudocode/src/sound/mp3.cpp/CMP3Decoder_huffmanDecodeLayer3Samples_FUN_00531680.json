@@ -4,17 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 570,
-    "complexity_score": 317,
+    "complexity_score": 342,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 38,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 212,
-    "suspect_count": 10,
+    "suspect_count": 12,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "raw_address_constant"
     ],
     "total_lines": 782
   },
@@ -599,6 +601,22 @@
       "severity": "mild",
       "text": "local_28 = g_HuffmanTables + *(int *)((int)piVar2 + iVar12 + 0x5c) + 0x20;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Raw hex literal 0x67e6cc matches address of g_Layer3BandIndex (+4 bytes into) (type SMpegLayer3BandIndex[6]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 142,
+      "match": "0x67e6cc",
+      "severity": "moderate",
+      "text": "local_20 = *(int *)(local_34 * 0x94 + 0x67e6cc + iVar12 * 4);",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x67e6d0 matches address of g_Layer3BandIndex (+8 bytes into) (type SMpegLayer3BandIndex[6]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 143,
+      "match": "0x67e6d0",
+      "severity": "moderate",
+      "text": "iVar8 = *(int *)(local_34 * 0x94 + 0x67e6d0 +",
+      "type": "raw_address_constant"
     }
   ]
 }

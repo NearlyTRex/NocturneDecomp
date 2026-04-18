@@ -53,7 +53,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004fc521
     PUSH EAX                            ; 004fc525
     CALL engine_ini.cpp_CIniFile_ctor_FUN_004fba70 ; 004fc526
-        ;   XREF to: 004fba70 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004fba70(CIniFile * this_ptr, char * filename, int read_mode)
+        ;   XREF to: 004fba70 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004fba70(CIniFile * this_ptr, char * filename, char * section)
     ADD ESP,0xc                         ; 004fc52b
     PUSH 0x67cd08                       ; 004fc52e | = "Graphics"
     LEA EAX,[ESP + 0x4]                 ; 004fc533
@@ -598,7 +598,7 @@ section .text
     MOV EBP,dword ptr [0x006810c8]      ; 004fcbb8 | g_CDemonSetPtr
     PUSH EBP                            ; 004fcbbe | g_CDemonSetInstance
     CALL core_setedit.cpp_CDemonSet_writeIni_FUN_00584920 ; 004fcbbf
-        ;   XREF to: 00584920 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_writeIni_FUN_00584920(CDemonSet * set, CIniFile * ini_file)
+        ;   XREF to: 00584920 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_CDemonSet_writeIni_FUN_00584920(CDemonSet * this_ptr, CIniFile * ini_file)
     ADD ESP,0x8                         ; 004fcbc4
     ADD ESP,0x200                       ; 004fcbc7
     POP EBP                             ; 004fcbcd

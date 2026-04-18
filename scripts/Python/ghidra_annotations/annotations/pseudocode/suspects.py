@@ -74,6 +74,7 @@ SUSPECT_SEVERITY = {
     'displaced_global_access': 'moderate',
     'wrong_global': 'moderate',
     'suspicious_cast': 'moderate',
+    'raw_address_constant': 'moderate',
 }
 
 
@@ -610,6 +611,10 @@ _SUSPICIOUS_CAST_RE = re.compile(
     r'\s*\(\s*&\s*(g_[A-Za-z_][A-Za-z0-9_]*)\s*[+\-]'
 )
 
+# Raw hex literal with at least 6 hex digits (>= 0x100000 = 1 MiB). Smaller
+# constants are almost always numeric values, not addresses.
+_RAW_ADDR_RE = re.compile(r'\b0x([0-9a-fA-F]{6,})\b')
+
 
 def _find_neighbor_after(addr_int, global_interval_map):
     """Find the global whose interval begins at or just after addr_int.
@@ -746,6 +751,119 @@ def identify_suspicious_cast_suspects(decompiled_code, global_interval_map=None)
             })
 
     return suspects
+
+
+def identify_raw_address_constant_suspects(decompiled_code, address_interval_map=None):
+    """Detect raw hex literals that match the address of a known global or string.
+
+    When the Ghidra decompiler loses the symbolic reference to a string or
+    data symbol, it emits the raw address as a hex constant. At runtime
+    these addresses point nowhere in the relinked binary, causing SEGV the
+    moment the value is dereferenced.
+
+    Canonical example (engine/ini.cpp caller):
+        engine_ini_cpp_CIniFile_ctor(&ini, ".\\system\\nocturne.ini", 0x63169a);
+        # 0x63169a is the address of the string "Editor" in the original
+        # binary. The call should pass the literal "Editor".
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+        address_interval_map: Sorted (start, end, name, type) intervals
+            covering BOTH globals and constants (strings). Built by
+            combining globals_list + constants_list before calling
+            build_global_interval_map(). Required for the detector to run.
+
+    Returns:
+        List of suspect dicts.
+    """
+    suspects = []
+    if not decompiled_code or not address_interval_map:
+        return suspects
+
+    seen = set()
+    for line_no, line in enumerate(decompiled_code.split('\n'), 1):
+        stripped = line.strip()
+        if (stripped.startswith('//') or stripped.startswith('#') or
+                stripped.startswith('/*') or stripped.startswith('*')):
+            continue
+        # case labels in a switch can legitimately contain large hex values
+        # when Ghidra fails to reconstruct the switch (jump targets into
+        # .text). Those are not dropped-symbol references.
+        if stripped.startswith('case '):
+            continue
+
+        for m in _RAW_ADDR_RE.finditer(line):
+            try:
+                addr = int(m.group(1), 16)
+            except ValueError:
+                continue
+            # Skip very low values (unlikely to be real addresses in this
+            # binary's layout) and absurdly high ones (likely bitmasks).
+            if addr < 0x400000 or addr >= 0x10000000:
+                continue
+
+            hit = _find_global_at(addr, address_interval_map)
+            if hit is None:
+                continue
+
+            gname, gtype, gstart = hit
+            key = (line_no, m.start())
+            if key in seen:
+                continue
+            seen.add(key)
+
+            offset = addr - gstart
+            offset_note = '' if offset == 0 else ' (+%d bytes into)' % offset
+            desc = ('Raw hex literal 0x%x matches address of %s%s (type %s). '
+                    'The decompiler dropped the symbolic reference — this is a '
+                    'pointer bit-pattern baked in as a constant and will SEGV '
+                    'when dereferenced in the relinked binary.' % (
+                        addr, gname, offset_note, gtype or 'unknown'))
+
+            suspects.append({
+                'line': line_no,
+                'type': 'raw_address_constant',
+                'match': '0x%x' % addr,
+                'text': stripped[:200],
+                'description': desc,
+                'severity': SUSPECT_SEVERITY.get('raw_address_constant', 'moderate'),
+            })
+
+    return suspects
+
+
+def detect_content_suspects(code, func_globals=None, global_interval_map=None,
+                            address_interval_map=None, func_calls=None):
+    """Run all content-based (source-text) suspect detectors on a code blob.
+
+    Used to re-evaluate a .keep file against the original .cpp to determine
+    which content suspects the manual rewrite has resolved. Only runs the
+    detectors that read source text — asm/pcode/stack-frame detectors are
+    properties of the underlying binary and cannot be changed by a .keep.
+
+    Args:
+        code: Source text to analyze.
+        func_globals: Per-function globals list (for wrong_global context).
+        global_interval_map: Global interval map (for wrong_global / suspicious_cast).
+        address_interval_map: Combined globals+constants map (for raw_address_constant).
+        func_calls: Function-call metadata (for format_string_mismatch).
+
+    Returns:
+        Flat list of suspect dicts, all of CONTENT_SUSPECT_TYPES.
+    """
+    if not code:
+        return []
+    found = []
+    found.extend(identify_suspect_lines(code))
+    found.extend(identify_wrong_global_suspects(
+        code, func_globals, global_interval_map))
+    found.extend(identify_suspicious_cast_suspects(
+        code, global_interval_map))
+    found.extend(identify_raw_address_constant_suspects(
+        code, address_interval_map))
+    found.extend(identify_format_string_mismatch(
+        code, func_calls))
+    return found
 
 
 def calculate_complexity_metrics(decompiled_code, assembly_code, suspects, xrefs, globals_list, func_calls):

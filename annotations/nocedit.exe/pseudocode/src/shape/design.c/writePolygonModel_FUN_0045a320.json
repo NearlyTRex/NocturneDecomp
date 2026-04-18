@@ -4,16 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 73,
+    "complexity_score": 123,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 32,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 58,
-    "suspect_count": 1,
+    "suspect_count": 5,
     "suspect_types": [
+      "decompiler_intrinsic",
+      "unnamed_local",
       "warning_inlined_function"
     ],
     "total_lines": 305
@@ -337,6 +340,42 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 19,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "int local_14;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "introduced_by": "keep",
+      "line": 27,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "iVar1 = (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.x * 65535.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "introduced_by": "keep",
+      "line": 27,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "iVar1 = (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.x * 65535.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 38,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "for (local_14 = 0; local_14 < (int)g_ModelPolygonData[polygon_index].vertex_indices_count;",
+      "type": "unnamed_local"
     }
   ]
 }

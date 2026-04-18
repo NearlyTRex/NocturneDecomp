@@ -65,7 +65,6 @@ static TerminatedCString s_CFrankenstienMachine_0067b58c = "$CFrankenstienMachin
 static TerminatedCString s_CGabriella_0067b5ac = "$CGabriella$$";
 static TerminatedCString s_save_SAVE_TMP_0067b670 = "save\\$$SAVE$$.TMP";
 static TerminatedCString s_EFD_0067b684 = "EFD";
-static TerminatedCString s_file_corrupt_0067b688 = "(file corrupt)";
 static TerminatedCString s_CAlphaBitmap_0067b8d4 = "$CAlphaBitmap$$";
 static TerminatedCString s_CGame_0067b8f4 = "$CGame$$";
 static TerminatedCString s_CGargoyle_0067b908 = "$CGargoyle$$";
@@ -156,12 +155,6 @@ static char* g_MoonNocStrings[30] = {
     "noc00020", "noc00021", "noc00022", "noc00023",
     "noc00024", "noc00025", "noc00026", "noc00027",
     "noc00028", "noc00029"
-};
-
-// char*[5] constants
-static char* g_ChapterDisplayTexts[5] = {
-    (char*)0x00000787, (char*)0x0000078B, (char*)0x0000078D, (char*)0x0000078F,
-    (char*)0x00000796
 };
 
 // char*[5][13] constants
@@ -594,6 +587,9 @@ static char g_HuffmanData01[16] = {
     (char)0x02, (char)0x01, (char)0x00, (char)0x00, (char)0x02, (char)0x01, (char)0x00, (char)0x10, (char)0x02, (char)0x01, (char)0x00, (char)0x01,
     (char)0x00, (char)0x11, (char)0x00, (char)0x00
 };
+
+// char[200] constants
+static char g_LoadSavefileStatus[] = "(file corrupt)";
 
 // char[20] constants
 static char g_DefaultMissionIdentifier[] = "(none)";

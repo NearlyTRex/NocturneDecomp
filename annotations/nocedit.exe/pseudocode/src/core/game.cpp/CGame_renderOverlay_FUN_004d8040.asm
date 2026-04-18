@@ -47,7 +47,7 @@
 ;   char[10][256] g_WrappedTextBuffer
 ;   undefined4 g_WrappedTextBuffer[1][0]
 ;   char[256] g_ChapterDisplayName
-;   int g_ChapterDisplayNumber
+;   int g_ChapterDisplayYear
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -138,7 +138,7 @@ section .text
         ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 004d811a
     PUSH 0x2d830a8                      ; 004d811d | g_ChapterDisplayName
-    MOV ECX,dword ptr [0x02d831a8]      ; 004d8122 | g_ChapterDisplayNumber
+    MOV ECX,dword ptr [0x02d831a8]      ; 004d8122 | g_ChapterDisplayYear
     PUSH ECX                            ; 004d8128
     PUSH 0x62b265                       ; 004d8129 | = "%d - %s"
     LEA EAX,[ESP + 0x18]                ; 004d812e

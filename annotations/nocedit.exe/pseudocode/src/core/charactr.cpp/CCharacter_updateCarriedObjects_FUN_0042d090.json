@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 382,
-    "complexity_score": 223,
+    "complexity_score": 108,
     "cross_reference_count": 5,
     "function_call_count": 7,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 108,
-    "suspect_count": 10,
-    "suspect_types": [
-      "pointer_cast",
-      "stack_param",
-      "unaffected_reg"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 490
   },
   "cross_references": [
@@ -213,6 +210,98 @@
     },
     "pcode_op_count": 1327
   },
+  "resolved_suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EBP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_fffffd80",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CMatrix3x4f *in_stack_fffffd80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 46,
+      "match": "in_stack_fffffd80",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr,(int)local_18,in_stack_fffffd80);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(CMatrix3x4f *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "((CMatrix3x4f *)((int)pCVar4->x * 0x30 + iStack_14),&CStack_244);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(CMatrix3x4f *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(&CStack_184,(CMatrix3x4f *)((int)pCVar4->x * 0x30 + iStack_14),&CStack_124);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 91,
+      "match": "unaff_EBP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)(unaff_EBP + 8);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 95,
+      "match": "in_stack_fffffd80",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffd80 = (CMatrix3x4f *)0x42d1f9;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 98,
+      "match": "unaff_EBP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)(unaff_EBP + 8);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 105,
+      "match": "unaff_EBP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)(unaff_EBP + 8));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 107,
+      "match": "(CVector3f *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_18 = (CVector3f *)((int)&local_18->x + 1);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 640,
     "local_size": 632,
@@ -386,86 +475,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_fffffd80",
-      "severity": "moderate",
-      "text": "CMatrix3x4f *in_stack_fffffd80;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_fffffd80",
-      "severity": "moderate",
-      "text": "(this_ptr,(int)local_18,in_stack_fffffd80);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 64,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "((CMatrix3x4f *)((int)pCVar4->x * 0x30 + iStack_14),&CStack_244);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "(&CStack_184,(CMatrix3x4f *)((int)pCVar4->x * 0x30 + iStack_14),&CStack_124);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 91,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "iVar1 = *(int *)(unaff_EBP + 8);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 95,
-      "match": "in_stack_fffffd80",
-      "severity": "moderate",
-      "text": "in_stack_fffffd80 = (CMatrix3x4f *)0x42d1f9;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 98,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "iVar1 = *(int *)(unaff_EBP + 8);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 105,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)(unaff_EBP + 8));",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 107,
-      "match": "(CVector3f *)((int)",
-      "severity": "mild",
-      "text": "local_18 = (CVector3f *)((int)&local_18->x + 1);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

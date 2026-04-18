@@ -1339,7 +1339,7 @@ LAB_0055cd52:
                                                     engine_ini_cpp_CIniFile_ctor_FUN_004fba70
                                                               (&local_3d6c,
                                                                "system\\nocturne.ini",
-                                                               0x64241a);
+                                                               "Game");
                                                     local_d0 = 
                                                   core_event_cpp_CEventList_getCounterValue_FUN_004b0830
                                                             (g_CEventListPtr,local_1e84);
@@ -2651,7 +2651,7 @@ LAB_0055e656:
                                                     engine_ini_cpp_CIniFile_ctor_FUN_004fba70
                                                               (&local_3f6c,
                                                                "system\\nocturne.ini",
-                                                               0x642d3b);
+                                                               "Game");
                                                     engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90
                                                               (&local_3f6c,local_e1c,local_5c);
                                                   }

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 243,
-    "complexity_score": 183,
+    "complexity_score": 103,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 10,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 103,
-    "suspect_count": 7,
-    "suspect_types": [
-      "sub84_truncation",
-      "unknown_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 346
   },
   "cross_references": [
@@ -193,6 +191,71 @@
     },
     "pcode_op_count": 1328
   },
+  "resolved_suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 47,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dVar6._0_4_ = iVar2;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 54,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dVar6._0_4_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 67,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dVar6._0_4_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 78,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dVar6._0_4_ = SUB84(__BITCAST_UINT64(dVar6),0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 78,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "dVar6._0_4_ = SUB84(__BITCAST_UINT64(dVar6),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 100,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dVar6._0_4_ = local_14;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 105,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "return dVar6._0_4_;",
+      "type": "unknown_field"
+    }
+  ],
   "stack_frame": {
     "frame_size": 144,
     "local_size": 144,
@@ -303,62 +366,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Unknown/mangled field access",
-      "line": 47,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "dVar6._0_4_ = iVar2;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 54,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "dVar6._0_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 67,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "dVar6._0_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 78,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "dVar6._0_4_ = SUB84(__BITCAST_UINT64(dVar6),0);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 78,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "dVar6._0_4_ = SUB84(__BITCAST_UINT64(dVar6),0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 100,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "dVar6._0_4_ = local_14;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 105,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "return dVar6._0_4_;",
-      "type": "unknown_field"
-    }
-  ]
+  "suspects": []
 }

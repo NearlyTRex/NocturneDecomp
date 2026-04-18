@@ -4,15 +4,16 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 540,
-    "complexity_score": 204,
+    "complexity_score": 194,
     "cross_reference_count": 2,
     "function_call_count": 31,
     "global_count": 53,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 179,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -603,6 +604,17 @@
     },
     "pcode_op_count": 1840
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 118,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "puVar1 = (uint *)((int)g_MasterLightStateSaveBuffer + iVar4);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 1396,
     "local_size": 1388,
@@ -776,14 +788,6 @@
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar1 = (uint *)((int)g_HeroActors + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 118,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar1 = (uint *)((int)g_MasterLightStateSaveBuffer + iVar4);",
       "type": "pointer_cast"
     }
   ]

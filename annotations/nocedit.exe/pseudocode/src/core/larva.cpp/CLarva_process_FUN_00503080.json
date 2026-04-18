@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 797,
-    "complexity_score": 428,
+    "complexity_score": 403,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 23,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 333,
-    "suspect_count": 7,
+    "suspect_count": 5,
     "suspect_types": [
       "stack_param",
-      "stack_ref",
       "unknown_type",
       "warning_inlined_function",
       "warning_unreachable"
@@ -357,6 +357,26 @@
     },
     "pcode_op_count": 3821
   },
+  "resolved_suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 293,
+      "match": "&stack0xfffffe10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&stack0xfffffe10,\"slime.wav @%f *%f\",(double)(this_ptr->base).base.size_scale,",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 296,
+      "match": "&stack0xfffffe10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CDemonActor *)this_ptr,&stack0xfffffe10);",
+      "type": "stack_ref"
+    }
+  ],
   "stack_frame": {
     "frame_size": 508,
     "local_size": 500,
@@ -700,22 +720,6 @@
       "severity": "moderate",
       "text": "fVar11,in_stack_fffffe18);",
       "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 293,
-      "match": "&stack0xfffffe10",
-      "severity": "moderate",
-      "text": "(&stack0xfffffe10,\"slime.wav @%f *%f\",(double)(this_ptr->base).base.size_scale,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 296,
-      "match": "&stack0xfffffe10",
-      "severity": "moderate",
-      "text": "((CDemonActor *)this_ptr,&stack0xfffffe10);",
-      "type": "stack_ref"
     }
   ],
   "vtable_info": {

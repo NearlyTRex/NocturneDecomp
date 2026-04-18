@@ -5,21 +5,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1745,
-    "complexity_score": 834,
+    "complexity_score": 764,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 39,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 714,
-    "suspect_count": 9,
+    "suspect_count": 4,
     "suspect_types": [
-      "format_string_mismatch",
-      "stack_param",
-      "stack_ref",
-      "sub84_truncation",
-      "unknown_field",
+      "unnamed_local",
       "warning_inlined_function"
     ],
     "total_lines": 2459
@@ -504,6 +501,83 @@
     },
     "pcode_op_count": 7583
   },
+  "resolved_suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_fffffcec",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "float in_stack_fffffcec;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 216,
+      "match": "&stack0xfffffce0",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffce0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 218,
+      "match": "&stack0xfffffce0",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar22 = (SDamageInfo *)&stack0xfffffce0;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 337,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar18._0_4_ = 0.5;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 338,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar18._4_4_ = 0.17453292;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 343,
+      "match": "in_stack_fffffcec",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CVector3f *)uVar18,SUB84(uVar18,4),in_stack_fffffcec);",
+      "type": "stack_param"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 343,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CVector3f *)uVar18,SUB84(uVar18,4),in_stack_fffffcec);",
+      "type": "sub84_truncation"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Phase: %d, Timer: %f\\n\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "Phase: %d, Timer: %f\\n",
+      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
+      "line_number": 277,
+      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"Phase: %d, Timer: %f\\n\");",
+      "resolution_source": "keep",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    }
+  ],
   "stack_frame": {
     "frame_size": 812,
     "local_size": 804,
@@ -992,71 +1066,31 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_fffffcec",
-      "severity": "moderate",
-      "text": "float in_stack_fffffcec;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 216,
-      "match": "&stack0xfffffce0",
-      "severity": "moderate",
-      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffce0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 218,
-      "match": "&stack0xfffffce0",
-      "severity": "moderate",
-      "text": "pSVar22 = (SDamageInfo *)&stack0xfffffce0;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 337,
-      "match": "._0_4_",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 45,
+      "match": "local_320",
       "severity": "mild",
-      "text": "uVar18._0_4_ = 0.5;",
-      "type": "unknown_field"
+      "text": "SDamageInfo local_320;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 338,
-      "match": "._4_4_",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 224,
+      "match": "local_320",
       "severity": "mild",
-      "text": "uVar18._4_4_ = 0.17453292;",
-      "type": "unknown_field"
+      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_320);",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 343,
-      "match": "in_stack_fffffcec",
-      "severity": "moderate",
-      "text": "(CVector3f *)uVar18,SUB84(uVar18,4),in_stack_fffffcec);",
-      "type": "stack_param"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 343,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "(CVector3f *)uVar18,SUB84(uVar18,4),in_stack_fffffcec);",
-      "type": "sub84_truncation"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Phase: %d, Timer: %f\\n\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "Phase: %d, Timer: %f\\n",
-      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
-      "line_number": 277,
-      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"Phase: %d, Timer: %f\\n\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 226,
+      "match": "local_320",
+      "severity": "mild",
+      "text": "pSVar22 = &local_320;",
+      "type": "unnamed_local"
     }
   ],
   "vtable_info": {

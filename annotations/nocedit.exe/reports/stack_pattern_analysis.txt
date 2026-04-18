@@ -175,15 +175,15 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 005dcf5b: MOV ESI,ESP
 
   engine_colquant.c_computeBoxStatistics_FUN_00441260
-    File: engine/colquant.c, Suspects: 18
+    File: engine/colquant.c, Suspects: 6
     - [stack_alignment] at 00441269: AND ESP,0xfffffff8
 
   engine_colquant.c_quantizeColors_FUN_004406c0
-    File: engine/colquant.c, Suspects: 23
+    File: engine/colquant.c, Suspects: 20
     - [stack_alignment] at 004406cc: AND ESP,0xfffffff8
 
   engine_colquant.c_doubleMax_FUN_00441790
-    File: engine/colquant.c, Suspects: 9
+    File: engine/colquant.c, Suspects: 1
     - [stack_alignment] at 00441796: AND ESP,0xfffffff8
 
   engine_2d.c_loadOrBuildColorMap_FUN_00402930
@@ -209,25 +209,25 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00528913: MOV EDI,ESP
 
   engine_3d.c_drawLineStrip3D_FUN_00404600
-    File: engine/3d.c, Suspects: 5
+    File: engine/3d.c, Suspects: 1
     - [alt_frame_pointer] at 00404650: MOV EDI,ESP
     - [alt_frame_pointer] at 00599480: MOV EDI,ESP
     - [alt_frame_pointer] at 005994dc: MOV EDI,ESP
 
   engine_3d.c_drawLine2DFromIndices_FUN_00407cf0
-    File: engine/3d.c, Suspects: 4
+    File: engine/3d.c, Suspects: 1
     - [alt_frame_pointer] at 00407d0a: MOV EDI,ESP
     - [alt_frame_pointer] at 0060e85c: MOV EDI,ESP
     - [alt_frame_pointer] at 0060e8b5: MOV EDI,ESP
 
   engine_3d.c_drawLineStrip2D_FUN_00404570
-    File: engine/3d.c, Suspects: 5
+    File: engine/3d.c, Suspects: 1
     - [alt_frame_pointer] at 004045c0: MOV EDI,ESP
     - [alt_frame_pointer] at 0060e07e: MOV EDI,ESP
     - [alt_frame_pointer] at 0060e0da: MOV EDI,ESP
 
   engine_3d.c_drawLine3DFromIndices_FUN_00407ff0
-    File: engine/3d.c, Suspects: 4
+    File: engine/3d.c, Suspects: 1
     - [alt_frame_pointer] at 0040800a: MOV EDI,ESP
     - [alt_frame_pointer] at 004b1b20: MOV EDI,ESP
     - [alt_frame_pointer] at 004b1b79: MOV EDI,ESP
@@ -277,5 +277,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 4.2 suspects/function
+  With stack patterns:    avg 2.3 suspects/function
   Without stack patterns: avg 0.9 suspects/function

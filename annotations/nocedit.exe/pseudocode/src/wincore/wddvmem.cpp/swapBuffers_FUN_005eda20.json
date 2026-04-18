@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 212,
-    "complexity_score": 181,
+    "complexity_score": 136,
     "cross_reference_count": 134,
     "function_call_count": 7,
     "global_count": 15,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 121,
-    "suspect_count": 5,
+    "suspect_count": 1,
     "suspect_types": [
-      "mmx_assembly",
-      "pointer_cast"
+      "mmx_assembly"
     ],
     "total_lines": 333
   },
@@ -1004,6 +1004,44 @@
     },
     "pcode_op_count": 799
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(ulonglong *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(ulonglong *)((int)local_8c.lpSurface + 8) = uVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 58,
+      "match": "(ulonglong *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(ulonglong *)((int)local_8c.lpSurface + 0x10) = uVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(ulonglong *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(ulonglong *)((int)local_8c.lpSurface + 0x18) = uVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(ulonglong *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "puVar11 = (ulonglong *)((int)local_20 + iVar4);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 144,
     "local_size": 144,
@@ -1049,38 +1087,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(ulonglong *)((int)",
-      "severity": "mild",
-      "text": "*(ulonglong *)((int)local_8c.lpSurface + 8) = uVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 58,
-      "match": "(ulonglong *)((int)",
-      "severity": "mild",
-      "text": "*(ulonglong *)((int)local_8c.lpSurface + 0x10) = uVar2;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 59,
-      "match": "(ulonglong *)((int)",
-      "severity": "mild",
-      "text": "*(ulonglong *)((int)local_8c.lpSurface + 0x18) = uVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(ulonglong *)((int)",
-      "severity": "mild",
-      "text": "puVar11 = (ulonglong *)((int)local_20 + iVar4);",
-      "type": "pointer_cast"
-    },
     {
       "description": "MMX/SIMD assembly - may not decompile to clean C code",
       "line": 157,

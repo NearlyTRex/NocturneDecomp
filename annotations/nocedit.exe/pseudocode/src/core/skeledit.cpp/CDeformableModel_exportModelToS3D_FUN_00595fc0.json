@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 791,
-    "complexity_score": 355,
+    "complexity_score": 320,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 37,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 255,
-    "suspect_count": 9,
+    "suspect_count": 6,
     "suspect_types": [
-      "pointer_cast",
-      "sub84_truncation"
+      "pointer_cast"
     ],
     "total_lines": 1046
   },
@@ -396,6 +396,35 @@
     },
     "pcode_op_count": 3729
   },
+  "resolved_suspects": [
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 136,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(local_340,\"%g,%g,%g\",SUB84(__BITCAST_UINT64((double)local_a8.x),0),",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 156,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(double)puVar2[4] * 0.00390625,SUB84(__BITCAST_UINT64((double)puVar2[7] * 0.00390625),0),",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 180,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "SUB84(__BITCAST_UINT64((double)puVar6[7] * 0.00390625),0),",
+      "type": "sub84_truncation"
+    }
+  ],
   "stack_frame": {
     "frame_size": 852,
     "local_size": 836,
@@ -739,36 +768,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 136,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "(local_340,\"%g,%g,%g\",SUB84(__BITCAST_UINT64((double)local_a8.x),0),",
-      "type": "sub84_truncation"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 153,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)this_ptr->index_data_ptr[lod_level] + local_28),",
       "type": "pointer_cast"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 156,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "(double)puVar2[4] * 0.00390625,SUB84(__BITCAST_UINT64((double)puVar2[7] * 0.00390625),0),",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 180,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "SUB84(__BITCAST_UINT64((double)puVar6[7] * 0.00390625),0),",
-      "type": "sub84_truncation"
     },
     {
       "description": "Complex pointer cast",

@@ -1,4 +1,5 @@
 {
+  "compile_source": "c",
   "complexity": {
     "assembly_lines": 320,
     "complexity_score": 200,
@@ -292,15 +293,6 @@
       "type": "pointer_cast"
     },
     {
-      "address": "006079b4",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_time.c_determine_dst_status_FUN_006079b4",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 006079b4",
-      "type": "special_crt_function"
-    },
-    {
       "description": "Cast-and-add on &g_DaysInMonth_Normal \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: SHORT_00665f50 (at 0x00665f50, +24 bytes).",
       "line": 34,
       "match": "g_DaysInMonth_Normal",
@@ -315,6 +307,15 @@
       "severity": "moderate",
       "text": "iVar8 = *(int *)(&g_DaysInMonth_Leap + iVar9);",
       "type": "suspicious_cast"
+    },
+    {
+      "address": "006079b4",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_time.c_determine_dst_status_FUN_006079b4",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 006079b4",
+      "type": "special_crt_function"
     }
   ]
 }

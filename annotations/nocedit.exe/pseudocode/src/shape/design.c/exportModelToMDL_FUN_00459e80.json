@@ -4,16 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 68,
+    "complexity_score": 213,
     "cross_reference_count": 3,
     "function_call_count": 8,
     "global_count": 32,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 68,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 14,
+    "suspect_types": [
+      "unnamed_local"
+    ],
     "total_lines": 390
   },
   "cross_references": [
@@ -371,6 +374,17 @@
     },
     "pcode_op_count": 1377
   },
+  "resolved_suspects": [
+    {
+      "description": "Raw hex literal 0x16e9914 matches address of g_ModelPolygonData (+4 bytes into) (type SShapeEditorPolygon[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 50,
+      "match": "0x16e9914",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_ModelPolygonData[local_1c].vertex_indices_count,local_1c * 0x184 + 0x16e9914);",
+      "type": "raw_address_constant"
+    }
+  ],
   "stack_frame": {
     "frame_size": 116,
     "local_size": 112,
@@ -415,5 +429,132 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 17,
+      "match": "local_1c",
+      "severity": "mild",
+      "text": "int local_1c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 18,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "int local_18;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 41,
+      "match": "local_1c",
+      "severity": "mild",
+      "text": "for (local_1c = 0; local_1c < g_VertexCount; local_1c = local_1c + 1) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 41,
+      "match": "local_1c",
+      "severity": "mild",
+      "text": "for (local_1c = 0; local_1c < g_VertexCount; local_1c = local_1c + 1) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 41,
+      "match": "local_1c",
+      "severity": "mild",
+      "text": "for (local_1c = 0; local_1c < g_VertexCount; local_1c = local_1c + 1) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 41,
+      "match": "local_1c",
+      "severity": "mild",
+      "text": "for (local_1c = 0; local_1c < g_VertexCount; local_1c = local_1c + 1) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 42,
+      "match": "local_1c",
+      "severity": "mild",
+      "text": "_fprintf(file,\"%f,%f,%f\\n\",(double)g_LoadedVertices[local_1c].vertex.x,",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 43,
+      "match": "local_1c",
+      "severity": "mild",
+      "text": "(double)g_LoadedVertices[local_1c].vertex.y,",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 44,
+      "match": "local_1c",
+      "severity": "mild",
+      "text": "(double)g_LoadedVertices[local_1c].vertex.z);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 47,
+      "match": "local_1c",
+      "severity": "mild",
+      "text": "for (local_1c = 0; local_1c < g_PolygonCount; local_1c = local_1c + 1) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 47,
+      "match": "local_1c",
+      "severity": "mild",
+      "text": "for (local_1c = 0; local_1c < g_PolygonCount; local_1c = local_1c + 1) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 47,
+      "match": "local_1c",
+      "severity": "mild",
+      "text": "for (local_1c = 0; local_1c < g_PolygonCount; local_1c = local_1c + 1) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 65,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "for (local_18 = 0; local_18 < (int)g_ModelPolygonData[local_1c].vertex_indices_count;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 65,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "for (local_18 = 0; local_18 < (int)g_ModelPolygonData[local_1c].vertex_indices_count;",
+      "type": "unnamed_local"
+    }
+  ]
 }

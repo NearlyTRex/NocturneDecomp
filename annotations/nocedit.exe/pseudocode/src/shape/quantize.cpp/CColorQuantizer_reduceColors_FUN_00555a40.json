@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 506,
-    "complexity_score": 435,
+    "complexity_score": 360,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 195,
-    "suspect_count": 23,
+    "suspect_count": 16,
     "suspect_types": [
-      "pointer_cast",
-      "unknown_field"
+      "pointer_cast"
     ],
     "total_lines": 701
   },
@@ -122,6 +122,71 @@
     },
     "pcode_op_count": 2445
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "iVar9 = *(int *)((int)&this_ptr->boxes[local_4c + -1].pixel_count + 2) >> 0x10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 96,
+      "match": "._0_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "iVar9._0_2_ = this_ptr->boxes[local_4c].avg_red;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 97,
+      "match": "._2_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "iVar9._2_2_ = this_ptr->boxes[local_4c].avg_green;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 130,
+      "match": "._0_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "iVar8._0_2_ = this_ptr->boxes[local_4c].avg_green;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 131,
+      "match": "._2_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "iVar8._2_2_ = this_ptr->boxes[local_4c].avg_blue;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 164,
+      "match": "._0_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "iVar1._0_2_ = this_ptr->boxes[local_4c].avg_blue;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 165,
+      "match": "._2_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "iVar1._2_2_ = this_ptr->boxes[local_4c].avg_intensity;",
+      "type": "unknown_field"
+    }
+  ],
   "stack_frame": {
     "frame_size": 104,
     "local_size": 100,
@@ -242,14 +307,6 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 64,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "iVar9 = *(int *)((int)&this_ptr->boxes[local_4c + -1].pixel_count + 2) >> 0x10;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 68,
       "match": "(byte *)((int)",
       "severity": "mild",
@@ -279,22 +336,6 @@
       "severity": "mild",
       "text": "*(uint *)((int)this_ptr->pixel_data + iVar8 * 4) = uVar1;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 96,
-      "match": "._0_2_",
-      "severity": "mild",
-      "text": "iVar9._0_2_ = this_ptr->boxes[local_4c].avg_red;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 97,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "iVar9._2_2_ = this_ptr->boxes[local_4c].avg_green;",
-      "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
@@ -329,22 +370,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 130,
-      "match": "._0_2_",
-      "severity": "mild",
-      "text": "iVar8._0_2_ = this_ptr->boxes[local_4c].avg_green;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 131,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "iVar8._2_2_ = this_ptr->boxes[local_4c].avg_blue;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 136,
       "match": "(byte *)((int)",
@@ -375,22 +400,6 @@
       "severity": "mild",
       "text": "*(uint *)((int)this_ptr->pixel_data + iVar9 * 4) = uVar1;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 164,
-      "match": "._0_2_",
-      "severity": "mild",
-      "text": "iVar1._0_2_ = this_ptr->boxes[local_4c].avg_blue;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 165,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "iVar1._2_2_ = this_ptr->boxes[local_4c].avg_intensity;",
-      "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",

@@ -5,19 +5,21 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2523,
-    "complexity_score": 1097,
+    "complexity_score": 1362,
     "cross_reference_count": 2,
     "function_call_count": 72,
     "global_count": 128,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 857,
-    "suspect_count": 22,
+    "suspect_count": 48,
     "suspect_types": [
+      "decompiler_intrinsic",
       "negative_offset",
       "pointer_cast",
-      "stack_ref",
+      "unnamed_local",
       "warning_inlined_function"
     ],
     "total_lines": 3380
@@ -1260,6 +1262,35 @@
     },
     "pcode_op_count": 9815
   },
+  "resolved_suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 530,
+      "match": "&stack0xfffff150",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&stack0xfffff150,(char *)0x0,\"models\",local_698,local_b98);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 531,
+      "match": "&stack0xfffff150",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar18 = engine_dosio_c_findFile_FUN_00481760((SFoundFileInfo *)&stack0xfffff150);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 534,
+      "match": "&stack0xfffff150",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(g_NetworkModelFilename,&stack0xfffff150,1);",
+      "type": "stack_ref"
+    }
+  ],
   "stack_frame": {
     "frame_size": 3248,
     "local_size": 3244,
@@ -2133,30 +2164,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 530,
-      "match": "&stack0xfffff150",
-      "severity": "moderate",
-      "text": "(&stack0xfffff150,(char *)0x0,\"models\",local_698,local_b98);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 531,
-      "match": "&stack0xfffff150",
-      "severity": "moderate",
-      "text": "iVar18 = engine_dosio_c_findFile_FUN_00481760((SFoundFileInfo *)&stack0xfffff150);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 534,
-      "match": "&stack0xfffff150",
-      "severity": "moderate",
-      "text": "(g_NetworkModelFilename,&stack0xfffff150,1);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 706,
       "match": "(int *)((int)",
@@ -2211,6 +2218,267 @@
       "severity": "mild",
       "text": "shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].area);",
       "type": "negative_offset"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 43,
+      "match": "local_c9c",
+      "severity": "mild",
+      "text": "char local_c9c [260];",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 44,
+      "match": "local_b98",
+      "severity": "mild",
+      "text": "char local_b98 [256];",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 76,
+      "match": "local_174",
+      "severity": "mild",
+      "text": "float local_174;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 77,
+      "match": "local_170",
+      "severity": "mild",
+      "text": "float local_170;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 78,
+      "match": "local_16c",
+      "severity": "mild",
+      "text": "float local_16c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 79,
+      "match": "local_168",
+      "severity": "mild",
+      "text": "float local_168;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 80,
+      "match": "local_164",
+      "severity": "mild",
+      "text": "float local_164;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 81,
+      "match": "local_160",
+      "severity": "mild",
+      "text": "float local_160;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 82,
+      "match": "local_15c",
+      "severity": "mild",
+      "text": "CVector3f local_15c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 90,
+      "match": "local_12c",
+      "severity": "mild",
+      "text": "CVector3f local_12c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 119,
+      "match": "local_70",
+      "severity": "mild",
+      "text": "float local_70;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 154,
+      "match": "local_70",
+      "severity": "mild",
+      "text": "local_70 = 0.0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "introduced_by": "keep",
+      "line": 206,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "(this_ptr,(int)ROUND(ROUND(local_70)),(CKeyFramedModelInstance *)0x0,-1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "introduced_by": "keep",
+      "line": 206,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "(this_ptr,(int)ROUND(ROUND(local_70)),(CKeyFramedModelInstance *)0x0,-1);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "introduced_by": "keep",
+      "line": 229,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "(local_408,\"Frame: %d of %d\",(int)ROUND(ROUND(local_70)),this_ptr->frame_count);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "introduced_by": "keep",
+      "line": 229,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "(local_408,\"Frame: %d of %d\",(int)ROUND(ROUND(local_70)),this_ptr->frame_count);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 696,
+      "match": "local_160",
+      "severity": "mild",
+      "text": "(double)local_160,(double)local_16c,(double)local_15c.x,",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 696,
+      "match": "local_16c",
+      "severity": "mild",
+      "text": "(double)local_160,(double)local_16c,(double)local_15c.x,",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 696,
+      "match": "local_15c",
+      "severity": "mild",
+      "text": "(double)local_160,(double)local_16c,(double)local_15c.x,",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 697,
+      "match": "local_164",
+      "severity": "mild",
+      "text": "(double)local_164,(double)local_170,(double)local_15c.y,",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 697,
+      "match": "local_170",
+      "severity": "mild",
+      "text": "(double)local_164,(double)local_170,(double)local_15c.y,",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 697,
+      "match": "local_15c",
+      "severity": "mild",
+      "text": "(double)local_164,(double)local_170,(double)local_15c.y,",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 698,
+      "match": "local_168",
+      "severity": "mild",
+      "text": "(double)local_168,(double)local_174,(double)local_15c.z);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 698,
+      "match": "local_174",
+      "severity": "mild",
+      "text": "(double)local_168,(double)local_174,(double)local_15c.z);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 698,
+      "match": "local_15c",
+      "severity": "mild",
+      "text": "(double)local_168,(double)local_174,(double)local_15c.z);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 724,
+      "match": "local_15c",
+      "severity": "mild",
+      "text": "(&local_15c,&local_108,&local_214);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 807,
+      "match": "local_15c",
+      "severity": "mild",
+      "text": "(double)local_160,(double)local_16c,(double)local_15c.x,",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 820,
+      "match": "local_12c",
+      "severity": "mild",
+      "text": "iVar18 = sscanf(local_278,\"%f,%f,%f\",&local_12c.x,&local_12c.y,&local_12c.z);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 820,
+      "match": "local_12c",
+      "severity": "mild",
+      "text": "iVar18 = sscanf(local_278,\"%f,%f,%f\",&local_12c.x,&local_12c.y,&local_12c.z);",
+      "type": "unnamed_local"
     }
   ]
 }

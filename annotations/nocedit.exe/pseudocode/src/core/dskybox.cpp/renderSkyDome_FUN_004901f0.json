@@ -4,17 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 362,
-    "complexity_score": 202,
+    "complexity_score": 252,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 13,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 172,
-    "suspect_count": 2,
+    "suspect_count": 7,
     "suspect_types": [
-      "unknown_field",
+      "raw_address_constant",
       "warning_inlined_function"
     ],
     "total_lines": 534
@@ -244,6 +245,17 @@
     },
     "pcode_op_count": 1751
   },
+  "resolved_suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 173,
+      "match": "._3_1_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_28 = (uint)(byte)(uStack_28._3_1_ + 1) << 0x18;",
+      "type": "unknown_field"
+    }
+  ],
   "stack_frame": {
     "frame_size": 196,
     "local_size": 184,
@@ -413,12 +425,52 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 173,
-      "match": "._3_1_",
-      "severity": "mild",
-      "text": "uStack_28 = (uint)(byte)(uStack_28._3_1_ + 1) << 0x18;",
-      "type": "unknown_field"
+      "description": "Raw hex literal 0x1000000 matches address of g_LightBufferPool (+4087288 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 145,
+      "match": "0x1000000",
+      "severity": "moderate",
+      "text": "iVar5 = 0x1000000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xffffff matches address of g_LightBufferPool (+4087287 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 147,
+      "match": "0xffffff",
+      "severity": "moderate",
+      "text": "2 & 0xffffff;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x1000000 matches address of g_LightBufferPool (+4087288 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 158,
+      "match": "0x1000000",
+      "severity": "moderate",
+      "text": "iVar6 = iVar6 + 0x1000000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xffffff matches address of g_LightBufferPool (+4087287 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 160,
+      "match": "0xffffff",
+      "severity": "moderate",
+      "text": "(int)((iVar5 + (iVar5 >> 0x1f) * -4) - (uint)((iVar5 >> 0x1f) << 1 < 0)) >> 2 ^ 0xffffff;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xffffff matches address of g_LightBufferPool (+4087287 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 161,
+      "match": "0xffffff",
+      "severity": "moderate",
+      "text": "local_b4.vertices[0].texture_v = (int)(iVar9 - (uint)(iVar3 << 1 < 0)) >> 2 ^ 0xffffff;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x1000000 matches address of g_LightBufferPool (+4087288 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 162,
+      "match": "0x1000000",
+      "severity": "moderate",
+      "text": "iVar5 = iVar5 + 0x1000000;",
+      "type": "raw_address_constant"
     }
   ]
 }

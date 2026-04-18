@@ -4,16 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 404,
-    "complexity_score": 172,
+    "complexity_score": 217,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 20,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 157,
-    "suspect_count": 1,
+    "suspect_count": 5,
     "suspect_types": [
+      "raw_address_constant",
       "warning_inlined_function"
     ],
     "total_lines": 561
@@ -452,6 +454,38 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
+    },
+    {
+      "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+3956216 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 120,
+      "match": "0xfe0000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[1].u = 0xfe0000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+3956216 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 122,
+      "match": "0xfe0000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[2].u = 0xfe0000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+3956216 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 123,
+      "match": "0xfe0000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[2].v = 0xfe0000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+3956216 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 126,
+      "match": "0xfe0000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[3].v = 0xfe0000;",
+      "type": "raw_address_constant"
     }
   ]
 }

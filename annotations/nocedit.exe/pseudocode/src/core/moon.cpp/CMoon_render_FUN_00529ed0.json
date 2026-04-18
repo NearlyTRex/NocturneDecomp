@@ -4,20 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 300,
-    "complexity_score": 265,
+    "complexity_score": 235,
     "cross_reference_count": 5,
     "function_call_count": 16,
     "global_count": 39,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 125,
-    "suspect_count": 12,
+    "suspect_count": 10,
     "suspect_types": [
       "mmx_assembly",
-      "pointer_cast",
-      "suspect_float",
-      "warning_inlined_function"
+      "pointer_cast"
     ],
     "total_lines": 425
   },
@@ -496,6 +495,26 @@
     },
     "pcode_op_count": 1656
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 87,
+      "match": "7.588293e-39",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_5c.x = 7.588293e-39;",
+      "type": "suspect_float"
+    }
+  ],
   "stack_frame": {
     "frame_size": 100,
     "local_size": 96,
@@ -598,14 +617,6 @@
   },
   "suspects": [
     {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 62,
       "match": "(float *)((int)",
@@ -676,14 +687,6 @@
       "severity": "mild",
       "text": "(float)g_MoonBatCourses[*(int *)((int)&g_MoonBats[0].course_index + iVar5)].len;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 87,
-      "match": "7.588293e-39",
-      "severity": "mild",
-      "text": "local_5c.x = 7.588293e-39;",
-      "type": "suspect_float"
     },
     {
       "description": "MMX/SIMD assembly - may not decompile to clean C code",

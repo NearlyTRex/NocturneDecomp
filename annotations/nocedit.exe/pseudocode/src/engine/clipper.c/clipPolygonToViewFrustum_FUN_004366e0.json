@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 1036,
-    "complexity_score": 751,
+    "complexity_score": 656,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 68,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 581,
-    "suspect_count": 15,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
-      "unknown_field",
       "warning_type_propagation",
       "warning_unreachable"
     ],
@@ -650,6 +650,89 @@
     },
     "pcode_op_count": 3955
   },
+  "resolved_suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 102,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar4._0_4_ = (pSVar17->projected_vertex).transformed_x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 103,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar4._4_4_ = (pSVar17->projected_vertex).transformed_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 428,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "iVar12 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 456,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)plVar20 + 4) = *(uint *)((int)plVar18 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 456,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)plVar20 + 4) = *(uint *)((int)plVar18 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 479,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar2._0_4_ = (pSVar15->projected_vertex).transformed_x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 480,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar2._4_4_ = (pSVar15->projected_vertex).transformed_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 510,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar3._0_4_ = (pSVar19->projected_vertex).transformed_x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 511,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar3._4_4_ = (pSVar19->projected_vertex).transformed_y;",
+      "type": "unknown_field"
+    }
+  ],
   "stack_frame": {
     "frame_size": 600,
     "local_size": 592,
@@ -865,84 +948,12 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 102,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "lVar4._0_4_ = (pSVar17->projected_vertex).transformed_x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 103,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "lVar4._4_4_ = (pSVar17->projected_vertex).transformed_y;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 415,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(pSVar15->projected_vertex).transformed_y = *(int *)((int)plVar14 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 428,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "iVar12 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 456,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)plVar20 + 4) = *(uint *)((int)plVar18 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 456,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)plVar20 + 4) = *(uint *)((int)plVar18 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 479,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "lVar2._0_4_ = (pSVar15->projected_vertex).transformed_x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 480,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "lVar2._4_4_ = (pSVar15->projected_vertex).transformed_y;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 510,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "lVar3._0_4_ = (pSVar19->projected_vertex).transformed_x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 511,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "lVar3._4_4_ = (pSVar19->projected_vertex).transformed_y;",
-      "type": "unknown_field"
     }
   ]
 }

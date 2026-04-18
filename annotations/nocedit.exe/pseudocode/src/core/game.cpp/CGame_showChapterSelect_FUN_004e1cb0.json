@@ -4,17 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1095,
-    "complexity_score": 413,
+    "complexity_score": 414,
     "cross_reference_count": 2,
     "function_call_count": 21,
     "global_count": 96,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 413,
+    "pseudocode_lines": 414,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 1508
+    "total_lines": 1509
   },
   "cross_references": [
     {
@@ -40,7 +41,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0",
-    "signature": "void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,int unknown)"
+    "signature": "void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,int select_mode)"
   },
   "function_calls": [
     {
@@ -614,8 +615,8 @@
     },
     {
       "addr": "0067b854",
-      "name": "g_ChapterDisplayTexts",
-      "type": "char*[5]",
+      "name": "g_ChapterDisplayYears",
+      "type": "int[5]",
       "value": null
     },
     {
@@ -704,7 +705,7 @@
     },
     {
       "addr": "02d831a8",
-      "name": "g_ChapterDisplayNumber",
+      "name": "g_ChapterDisplayYear",
       "type": "int",
       "value": null
     },
@@ -891,7 +892,7 @@
       },
       {
         "is_param": true,
-        "name": "unknown",
+        "name": "select_mode",
         "offset": 8,
         "size": 4,
         "type": "int"

@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 96,
+    "complexity_score": 71,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 46,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "unresolved_funcptr"
+      "unnamed_local"
     ],
     "total_lines": 145
   },
@@ -129,6 +129,44 @@
     ],
     "vtable_offset": 16
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(CPoly *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pCVar2 = (CPoly *)((int)pCVar2 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(CPoly *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pCVar2 = (CPoly *)((int)pCVar2 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 40,
+      "match": "code *",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(code *)**(uint **)(iVar1 + 100))(iVar1,this_ptr);",
+      "type": "unresolved_funcptr"
+    }
+  ],
   "stack_frame": {
     "frame_size": 132,
     "local_size": 124,
@@ -168,36 +206,22 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(CPoly *)((int)",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 15,
+      "match": "local_10",
       "severity": "mild",
-      "text": "pCVar2 = (CPoly *)((int)pCVar2 + (uint)bVar6 * -8 + 4);",
-      "type": "pointer_cast"
+      "text": "uint local_10;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(uint *)((int)",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 23,
+      "match": "local_10",
       "severity": "mild",
-      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(CPoly *)((int)",
-      "severity": "mild",
-      "text": "pCVar2 = (CPoly *)((int)pCVar2 + (uint)bVar6 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 40,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(*(code *)**(uint **)(iVar1 + 100))(iVar1,this_ptr);",
-      "type": "unresolved_funcptr"
+      "text": "local_10 = this_ptr->poly_count;",
+      "type": "unnamed_local"
     }
   ],
   "vtable_info": {

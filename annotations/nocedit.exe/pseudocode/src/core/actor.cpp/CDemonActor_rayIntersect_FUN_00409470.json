@@ -4,17 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 473,
     "complexity_score": 164,
     "cross_reference_count": 3,
     "function_call_count": 14,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 149,
     "suspect_count": 1,
     "suspect_types": [
-      "stack_ref"
+      "unnamed_local"
     ],
     "total_lines": 622
   },
@@ -276,6 +277,17 @@
     },
     "pcode_op_count": 1314
   },
+  "resolved_suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 138,
+      "match": "&stack0x00000000",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((int *)&stack0x00000000 != g_DeformableModelPool[0].vertex_count + 3) {",
+      "type": "stack_ref"
+    }
+  ],
   "stack_frame": {
     "frame_size": 192,
     "local_size": 164,
@@ -406,12 +418,13 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 138,
-      "match": "&stack0x00000000",
-      "severity": "moderate",
-      "text": "if ((int *)&stack0x00000000 != g_DeformableModelPool[0].vertex_count + 3) {",
-      "type": "stack_ref"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 27,
+      "match": "local_54",
+      "severity": "mild",
+      "text": "CVector3f local_54;",
+      "type": "unnamed_local"
     }
   ]
 }

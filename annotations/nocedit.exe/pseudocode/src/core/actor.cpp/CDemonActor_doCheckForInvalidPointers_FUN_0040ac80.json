@@ -4,17 +4,17 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 228,
-    "complexity_score": 216,
+    "complexity_score": 181,
     "cross_reference_count": 51,
     "function_call_count": 2,
     "global_count": 17,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 116,
-    "suspect_count": 9,
+    "suspect_count": 6,
     "suspect_types": [
-      "format_string_mismatch",
       "pointer_cast"
     ],
     "total_lines": 344
@@ -615,6 +615,44 @@
     },
     "pcode_op_count": 1038
   },
+  "resolved_suspects": [
+    {
+      "actual_args": 1,
+      "description": "Format \"NULL actor pointer detected, %s line %d\" has 2 specifiers but 1 arguments after it",
+      "expected_args": 2,
+      "format_string": "NULL actor pointer detected, %s line %d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 30,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"NULL actor pointer detected, %s line %d\",context_file)",
+      "resolution_source": "keep",
+      "text": "Format string expects 2 args but got 1",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Invalid actor pointer %08X detected at %s, line %d\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "Invalid actor pointer %08X detected at %s, line %d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 35,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid actor pointer %08X detected at %s, line %d\");",
+      "resolution_source": "keep",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Dangling/corrupt actor pointer detected at %s line...\" has 5 specifiers but 0 arguments after it",
+      "expected_args": 5,
+      "format_string": "Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\\ncreateStatus = %d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 53,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Dangling/corrupt actor pointer detected at %s line %d:",
+      "resolution_source": "keep",
+      "text": "Format string expects 5 args but got 0",
+      "type": "format_string_mismatch"
+    }
+  ],
   "stack_frame": {
     "frame_size": 64,
     "local_size": 52,
@@ -780,39 +818,6 @@
       "severity": "mild",
       "text": "pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_cast"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"NULL actor pointer detected, %s line %d\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "NULL actor pointer detected, %s line %d",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 30,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"NULL actor pointer detected, %s line %d\",context_file)",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Invalid actor pointer %08X detected at %s, line %d\" has 3 specifiers but 0 arguments after it",
-      "expected_args": 3,
-      "format_string": "Invalid actor pointer %08X detected at %s, line %d",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 35,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid actor pointer %08X detected at %s, line %d\");",
-      "text": "Format string expects 3 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Dangling/corrupt actor pointer detected at %s line...\" has 5 specifiers but 0 arguments after it",
-      "expected_args": 5,
-      "format_string": "Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\\ncreateStatus = %d",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 53,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Dangling/corrupt actor pointer detected at %s line %d:",
-      "text": "Format string expects 5 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

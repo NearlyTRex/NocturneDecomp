@@ -4,6 +4,7 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 369,
     "complexity_score": 179,
@@ -337,6 +338,17 @@
     },
     "pcode_op_count": 1197
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(local_1108.directory_entries)->size + iVar6));",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12540,
     "local_size": 12536,
@@ -466,10 +478,11 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
-      "match": "(uint *)((int)",
+      "introduced_by": "keep",
+      "line": 79,
+      "match": "(char *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&(local_1108.directory_entries)->size + iVar6));",
+      "text": "(char *)((int)&(local_1108.directory_entries)->name + iVar6),",
       "type": "pointer_cast"
     }
   ]

@@ -4,19 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 540,
-    "complexity_score": 340,
+    "complexity_score": 325,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 17,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 255,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
       "byvalue_struct_passing",
-      "pointer_cast",
-      "stack_ref"
+      "unnamed_local"
     ],
     "total_lines": 795
   },
@@ -326,6 +326,62 @@
     },
     "pcode_op_count": 2302
   },
+  "resolved_suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 150,
+      "match": "&stack0xfffffea0",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar10 = (int *)&stack0xfffffea0;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 154,
+      "match": "(SRenderVertex *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar11 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 169,
+      "match": "&stack0xfffffe70",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar10 = (int *)&stack0xfffffe70;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 173,
+      "match": "(SRenderVertex *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar11 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 220,
+      "match": "&stack0xfffffed0",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xfffffed0,\"t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH: %7.4f %7.4f %7.4f\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 221,
+      "match": "&stack0xfffffed0",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,0,0);",
+      "type": "stack_ref"
+    }
+  ],
   "stack_frame": {
     "frame_size": 216,
     "local_size": 208,
@@ -522,59 +578,56 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 150,
-      "match": "&stack0xfffffea0",
-      "severity": "moderate",
-      "text": "piVar10 = (int *)&stack0xfffffea0;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 154,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar11 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 169,
-      "match": "&stack0xfffffe70",
-      "severity": "moderate",
-      "text": "piVar10 = (int *)&stack0xfffffe70;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 173,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar11 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 220,
-      "match": "&stack0xfffffed0",
-      "severity": "moderate",
-      "text": "_sprintf(&stack0xfffffed0,\"t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH: %7.4f %7.4f %7.4f\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 221,
-      "match": "&stack0xfffffed0",
-      "severity": "moderate",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,0,0);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Calls clipAndDrawLine2D - decompiler cannot recognize by-value pattern",
       "line": 1,
       "match": "clipAndDrawLine2D",
       "text": "Function calls by-value struct passing functions",
       "type": "byvalue_struct_passing"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 21,
+      "match": "local_98",
+      "severity": "mild",
+      "text": "CVector3f local_98;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 23,
+      "match": "local_80",
+      "severity": "mild",
+      "text": "CVector3f local_80;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 30,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "float local_18;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 59,
+      "match": "local_80",
+      "severity": "mild",
+      "text": "core_course_cpp_CCourse_evaluate_FUN_00442710(this_ptr,local_1c,&local_80,&local_98);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 59,
+      "match": "local_98",
+      "severity": "mild",
+      "text": "core_course_cpp_CCourse_evaluate_FUN_00442710(this_ptr,local_1c,&local_80,&local_98);",
+      "type": "unnamed_local"
     }
   ]
 }

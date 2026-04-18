@@ -4,15 +4,16 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 250,
-    "complexity_score": 152,
+    "complexity_score": 142,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 3,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 102,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "warning_inlined_function"
@@ -165,6 +166,17 @@
     },
     "pcode_op_count": 1020
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 77,
+      "match": "(ushort *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*puVar4 = *(ushort *)((int)local_3c + iVar1);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 96,
     "local_size": 88,
@@ -323,14 +335,6 @@
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "puVar4 = (ushort *)((int)&(pSVar1->vertex_indices).vertex_index_0 + iVar6);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 77,
-      "match": "(ushort *)((int)",
-      "severity": "mild",
-      "text": "*puVar4 = *(ushort *)((int)local_3c + iVar1);",
       "type": "pointer_cast"
     }
   ]

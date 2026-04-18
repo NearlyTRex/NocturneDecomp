@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 495,
-    "complexity_score": 229,
+    "complexity_score": 214,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 30,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 199,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_alignment_array",
-      "stack_ref"
+      "stack_alignment_array"
     ],
     "total_lines": 694
   },
@@ -349,6 +349,17 @@
     },
     "pcode_op_count": 2443
   },
+  "resolved_suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 195,
+      "match": "&stack0x00000000",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (&stack0x00000000 == (byte *)0x3f6b03c) {",
+      "type": "stack_ref"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4304,
     "local_size": 4304,
@@ -673,14 +684,6 @@
       "severity": "moderate",
       "text": "int aiStackY_10cc [965];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 195,
-      "match": "&stack0x00000000",
-      "severity": "moderate",
-      "text": "if (&stack0x00000000 == (byte *)0x3f6b03c) {",
-      "type": "stack_ref"
     }
   ]
 }

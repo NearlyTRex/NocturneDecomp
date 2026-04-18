@@ -4,6 +4,7 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 18,
     "complexity_score": 6,
@@ -64,7 +65,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_ini.cpp_CIniFile_ctor_FUN_004fba70",
-    "signature": "CIniFile * __cdecl engine_ini_cpp_CIniFile_ctor_FUN_004fba70(CIniFile *this_ptr,char *filename,int read_mode)"
+    "signature": "CIniFile * __cdecl engine_ini_cpp_CIniFile_ctor_FUN_004fba70(CIniFile *this_ptr,char *filename,char *section)"
   },
   "function_calls": [
     {
@@ -208,10 +209,10 @@
       },
       {
         "is_param": true,
-        "name": "read_mode",
+        "name": "section",
         "offset": 12,
         "size": 4,
-        "type": "int"
+        "type": "char *"
       }
     ]
   },

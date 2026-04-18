@@ -4,16 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 158,
-    "complexity_score": 60,
+    "complexity_score": 85,
     "cross_reference_count": 3,
     "function_call_count": 10,
     "global_count": 11,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 60,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "raw_address_constant"
+    ],
     "total_lines": 218
   },
   "cross_references": [
@@ -273,5 +276,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Raw hex literal 0xff00ff matches address of g_LightBufferPool (+4022007 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 43,
+      "match": "0xff00ff",
+      "severity": "moderate",
+      "text": "(*g_SetBkColorFunc)(this_ptr->device_context_handle,0xff00ff);",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xff00ff matches address of g_LightBufferPool (+4022007 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 45,
+      "match": "0xff00ff",
+      "severity": "moderate",
+      "text": "LStack_1c.lbColor = 0xff00ff;",
+      "type": "raw_address_constant"
+    }
+  ]
 }

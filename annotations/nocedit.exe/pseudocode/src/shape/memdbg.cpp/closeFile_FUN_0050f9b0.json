@@ -4,6 +4,7 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 180,
     "complexity_score": 60,
@@ -1443,6 +1444,53 @@
     },
     "pcode_op_count": 620
   },
+  "resolved_suspects": [
+    {
+      "description": "Raw hex literal 0x2f0db54 matches address of g_FileRegistry (+520 bytes into) (type SFileTrackingEntry[100]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 33,
+      "match": "0x2f0db54",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "source_file,line_number,iVar1 + 0x2f0db54,iVar1 + 0x2f0db68,",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x2f0db68 matches address of g_FileRegistry (+540 bytes into) (type SFileTrackingEntry[100]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 33,
+      "match": "0x2f0db68",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "source_file,line_number,iVar1 + 0x2f0db54,iVar1 + 0x2f0db68,",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x2f0da50 matches address of g_FileRegistry (+260 bytes into) (type SFileTrackingEntry[100]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 38,
+      "match": "0x2f0da50",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(\"Closing %s in %s at %s line %d, originally opened for %s in %s line %d\",iVar1 + 0x2f0da50,",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x2f0db54 matches address of g_FileRegistry (+520 bytes into) (type SFileTrackingEntry[100]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 39,
+      "match": "0x2f0db54",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_FileRegistry[0].filename + iVar1,source_file,line_number,iVar1 + 0x2f0db54,",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x2f0db68 matches address of g_FileRegistry (+540 bytes into) (type SFileTrackingEntry[100]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 40,
+      "match": "0x2f0db68",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar1 + 0x2f0db68,",
+      "type": "raw_address_constant"
+    }
+  ],
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,

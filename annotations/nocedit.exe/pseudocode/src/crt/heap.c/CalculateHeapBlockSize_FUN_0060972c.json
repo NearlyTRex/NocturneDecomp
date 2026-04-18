@@ -1,14 +1,16 @@
 {
+  "compile_source": "c",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 38,
+    "complexity_score": 53,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 23,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "raw_address_constant",
       "special_crt_function"
     ],
     "total_lines": 63
@@ -103,6 +105,14 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Raw hex literal 0xfffff0 matches address of g_LightBufferPool (+4087272 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 23,
+      "match": "0xfffff0",
+      "severity": "moderate",
+      "text": "uVar1 = uVar1 + 0xfff >> 8 & 0xfffff0;",
+      "type": "raw_address_constant"
+    },
     {
       "address": "0060972c",
       "crt_type": "runtime support",

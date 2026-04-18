@@ -364,6 +364,7 @@ extern int g_Layer3ShortBandGroupCounts[3];
 extern int g_MpegLayer2AllocationTables[4][4];
 
 // int[5]
+extern int g_ChapterDisplayYears[5];
 extern int g_Layer3LongBandGroupCounts[5];
 
 // int[6][3][4]

@@ -4,17 +4,17 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 644,
-    "complexity_score": 305,
+    "complexity_score": 290,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 22,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 275,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unresolved_funcptr",
       "warning_inlined_function"
     ],
     "total_lines": 919
@@ -330,6 +330,17 @@
     },
     "pcode_op_count": 2153
   },
+  "resolved_suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 89,
+      "match": "code *",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(**(code **)((int)local_14 + 0x20))(this_ptr,pCVar4,EVar3);",
+      "type": "unresolved_funcptr"
+    }
+  ],
   "stack_frame": {
     "frame_size": 188,
     "local_size": 180,
@@ -455,14 +466,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 89,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)((int)local_14 + 0x20))(this_ptr,pCVar4,EVar3);",
-      "type": "unresolved_funcptr"
     }
   ]
 }

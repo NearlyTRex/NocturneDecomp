@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 271,
-    "complexity_score": 142,
+    "complexity_score": 157,
     "cross_reference_count": 2,
     "function_call_count": 14,
     "global_count": 15,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 102,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
-      "stack_param",
-      "stack_ref"
+      "unnamed_local"
     ],
     "total_lines": 373
   },
@@ -282,6 +282,35 @@
     },
     "pcode_op_count": 953
   },
+  "resolved_suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_ffffffb0",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int in_stack_ffffffb0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 43,
+      "match": "&stack0xffffffb0",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&g_CDemonCameraInstance,&local_44,(CVector3i *)&stack0xffffffb0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_ffffffb0",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar3->x = in_stack_ffffffb0;",
+      "type": "stack_param"
+    }
+  ],
   "stack_frame": {
     "frame_size": 84,
     "local_size": 72,
@@ -377,28 +406,49 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_ffffffb0",
-      "severity": "moderate",
-      "text": "int in_stack_ffffffb0;",
-      "type": "stack_param"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 18,
+      "match": "local_50",
+      "severity": "mild",
+      "text": "CVector3i local_50;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 43,
-      "match": "&stack0xffffffb0",
-      "severity": "moderate",
-      "text": "(&g_CDemonCameraInstance,&local_44,(CVector3i *)&stack0xffffffb0);",
-      "type": "stack_ref"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 49,
+      "match": "local_50",
+      "severity": "mild",
+      "text": "(&g_CDemonCameraInstance,&local_44,&local_50);",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 44,
-      "match": "in_stack_ffffffb0",
-      "severity": "moderate",
-      "text": "pCVar3->x = in_stack_ffffffb0;",
-      "type": "stack_param"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 50,
+      "match": "local_50",
+      "severity": "mild",
+      "text": "pCVar3->x = local_50.x;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 51,
+      "match": "local_50",
+      "severity": "mild",
+      "text": "pCVar3->y = local_50.y;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 52,
+      "match": "local_50",
+      "severity": "mild",
+      "text": "pCVar3->z = local_50.z;",
+      "type": "unnamed_local"
     }
   ]
 }

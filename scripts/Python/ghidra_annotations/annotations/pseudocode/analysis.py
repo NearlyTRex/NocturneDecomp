@@ -1060,7 +1060,9 @@ def generate_graphs(functions, files, output_path):
         output_path: Directory to write graphs to
     """
     # 0. Overall progress bar (combined decompilation + compilation)
-    # Extract compilation results from function data
+    # Extract compilation results from function data.
+    # Build from the full list (so compilation_results keys match the set
+    # create_overall_progress_svg iterates after its own CRT filter).
     compilation_results = {}
     for func in functions:
         func_name = func.get('function', {}).get('name', '')
@@ -1074,6 +1076,11 @@ def generate_graphs(functions, files, output_path):
 
     overall_svg_path = os.path.join(output_path, 'overall_progress.svg')
     create_overall_progress_svg(functions, compilation_results, overall_svg_path)
+
+    # For the remaining per-function charts, drop CRT/entry — they're not
+    # part of the reverse-engineering scope and their suspects skew the
+    # remaining-work view.
+    functions = [f for f in functions if not _is_crt_or_entry(f.get('_virtual_file', ''))]
 
     # 1. Overall completion pie chart
     total_funcs = len(functions)
@@ -1329,6 +1336,10 @@ def generate_virtual_file_report(files, output_path):
 
 def generate_function_breakdown(functions, output_path):
     """Generate detailed function-by-function breakdown."""
+    # Exclude CRT and entry functions — we're not reversing those, so their
+    # suspects are noise in the remaining-work breakdown.
+    functions = [f for f in functions if not _is_crt_or_entry(f.get('_virtual_file', ''))]
+
     lines = []
     lines.append("=" * 120)
     lines.append("FUNCTION SUSPECT BREAKDOWN")
@@ -1414,6 +1425,9 @@ def generate_function_breakdown(functions, output_path):
 
 def generate_suspect_type_analysis(functions, output_path):
     """Analyze suspects by type across all functions."""
+    # Exclude CRT and entry functions — they're out of scope for RE work.
+    functions = [f for f in functions if not _is_crt_or_entry(f.get('_virtual_file', ''))]
+
     lines = []
     lines.append("=" * 100)
     lines.append("SUSPECT TYPE ANALYSIS")

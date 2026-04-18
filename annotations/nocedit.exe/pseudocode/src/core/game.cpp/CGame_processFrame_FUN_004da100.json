@@ -4,18 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1158,
-    "complexity_score": 547,
+    "complexity_score": 507,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 77,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 382,
-    "suspect_count": 15,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
-      "sub84_truncation",
+      "unnamed_local",
       "warning_type_propagation"
     ],
     "total_lines": 1540
@@ -841,6 +842,116 @@
     },
     "pcode_op_count": 4642
   },
+  "resolved_suspects": [
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 137,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(g_CConsolePtr,\"screen paint : %3.2f ms\\n\",SUB84(__BITCAST_UINT64(dVar4),0),",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 255,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(local_3dc,\"FR: %f, AVG: %f, PC: %d\",SUB84(__BITCAST_UINT64(dVar4),0),",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 257,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "SUB84(__BITCAST_UINT64((double)(int)FLOAT_02d7c2e8 / DOUBLE_02d7c2e0),0),",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 269,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(double)(pCVar2->base).base.location.position.x,SUB84(__BITCAST_UINT64(dVar2),0),",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 270,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)((ulonglong)dVar2 >> 0x20),SUB84(__BITCAST_UINT64(dVar1),0),(int)((ulonglong)dVar1 >> 0x20),",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 271,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "SUB84(__BITCAST_UINT64(dVar6),0),(int)((ulonglong)dVar6 >> 0x20),SUB84(__BITCAST_UINT64(dVar7),0),",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 271,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "SUB84(__BITCAST_UINT64(dVar6),0),(int)((ulonglong)dVar6 >> 0x20),SUB84(__BITCAST_UINT64(dVar7),0),",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 272,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)((ulonglong)dVar7 >> 0x20),SUB84(__BITCAST_UINT64(dVar8),0),(int)((ulonglong)dVar8 >> 0x20));",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 281,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(local_3dc,\"Fudge: %g,%g,%g\",SUB84(__BITCAST_UINT64((double)pCVar5->x),0),",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 282,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)((ulonglong)(double)pCVar5->x >> 0x20),SUB84(__BITCAST_UINT64((double)pCVar5->y),0),",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 283,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)((ulonglong)(double)pCVar5->y >> 0x20),SUB84(__BITCAST_UINT64((double)pCVar5->z),0),",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Raw hex literal 0x3275924 matches address of g_CDemonCameraInstance (+64 bytes into) (type CDemonCamera). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 248,
+      "match": "0x3275924",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(local_3dc,\"Camera: \\\"%s\\\" Group %d\",0x3275924,",
+      "type": "raw_address_constant"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4228,
     "local_size": 4224,
@@ -1077,100 +1188,12 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 137,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "(g_CConsolePtr,\"screen paint : %3.2f ms\\n\",SUB84(__BITCAST_UINT64(dVar4),0),",
-      "type": "sub84_truncation"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 202,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_ScreenBufferArray + local_24));",
       "type": "pointer_cast"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 255,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "(local_3dc,\"FR: %f, AVG: %f, PC: %d\",SUB84(__BITCAST_UINT64(dVar4),0),",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 257,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "SUB84(__BITCAST_UINT64((double)(int)FLOAT_02d7c2e8 / DOUBLE_02d7c2e0),0),",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 269,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "(double)(pCVar2->base).base.location.position.x,SUB84(__BITCAST_UINT64(dVar2),0),",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 270,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "(int)((ulonglong)dVar2 >> 0x20),SUB84(__BITCAST_UINT64(dVar1),0),(int)((ulonglong)dVar1 >> 0x20),",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 271,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "SUB84(__BITCAST_UINT64(dVar6),0),(int)((ulonglong)dVar6 >> 0x20),SUB84(__BITCAST_UINT64(dVar7),0),",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 271,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "SUB84(__BITCAST_UINT64(dVar6),0),(int)((ulonglong)dVar6 >> 0x20),SUB84(__BITCAST_UINT64(dVar7),0),",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 272,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "(int)((ulonglong)dVar7 >> 0x20),SUB84(__BITCAST_UINT64(dVar8),0),(int)((ulonglong)dVar8 >> 0x20));",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 281,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "(local_3dc,\"Fudge: %g,%g,%g\",SUB84(__BITCAST_UINT64((double)pCVar5->x),0),",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 282,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "(int)((ulonglong)(double)pCVar5->x >> 0x20),SUB84(__BITCAST_UINT64((double)pCVar5->y),0),",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 283,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "(int)((ulonglong)(double)pCVar5->y >> 0x20),SUB84(__BITCAST_UINT64((double)pCVar5->z),0),",
-      "type": "sub84_truncation"
     },
     {
       "description": "Complex pointer cast",
@@ -1187,6 +1210,69 @@
       "severity": "mild",
       "text": "piVar20 = (int *)((int)piVar20 + 2);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 47,
+      "match": "local_5c",
+      "severity": "mild",
+      "text": "int local_5c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 48,
+      "match": "local_58",
+      "severity": "mild",
+      "text": "int local_58;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 49,
+      "match": "local_54",
+      "severity": "mild",
+      "text": "int local_54;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 50,
+      "match": "local_50",
+      "severity": "mild",
+      "text": "int local_50;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 52,
+      "match": "local_48",
+      "severity": "mild",
+      "text": "int local_48;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 290,
+      "match": "local_58",
+      "severity": "mild",
+      "text": "(&local_5c,&local_58,&local_54,&local_50,&local_4c,&local_48);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 290,
+      "match": "local_50",
+      "severity": "mild",
+      "text": "(&local_5c,&local_58,&local_54,&local_50,&local_4c,&local_48);",
+      "type": "unnamed_local"
     }
   ]
 }

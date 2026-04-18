@@ -19,7 +19,7 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004fbd90(void)
     g_CurrentLineNumber = 0x57;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Please copy Nocturne to your hard drive");
   }
-  engine_ini_cpp_CIniFile_ctor_FUN_004fba70(&local_204,".\\system\\nocturne.ini",0);
+  engine_ini_cpp_CIniFile_ctor_FUN_004fba70(&local_204,".\\system\\nocturne.ini",(char *)0x0);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004fbae0(&local_204,"Graphics");
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
             (&local_204,"gamePIXX",&g_CGamePtr->game_pixx);

@@ -2,11 +2,11 @@
 // Address: 00584900
 // Address Range: [[00584900, 0058491c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_setedit_cpp_CDemonSet_readIni_FUN_00584900(CDemonSet *set_ptr,CIniFile *ini_file)
+// Signature: void __cdecl core_setedit_cpp_CDemonSet_readIni_FUN_00584900(CDemonSet *this_ptr,CIniFile *ini_file)
 
 #include "nocturne.h"
 
-void __cdecl core_setedit_cpp_CDemonSet_readIni_FUN_00584900(CDemonSet *set_ptr,CIniFile *ini_file)
+void __cdecl core_setedit_cpp_CDemonSet_readIni_FUN_00584900(CDemonSet *this_ptr,CIniFile *ini_file)
 
 {
   engine_ini_cpp_CIniFile_getString_FUN_004fbb20

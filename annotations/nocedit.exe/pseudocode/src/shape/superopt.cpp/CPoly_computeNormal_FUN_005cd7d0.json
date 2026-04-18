@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 559,
-    "complexity_score": 344,
+    "complexity_score": 319,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 214,
-    "suspect_count": 12,
+    "suspect_count": 10,
     "suspect_types": [
-      "pointer_cast",
-      "unknown_field"
+      "pointer_cast"
     ],
     "total_lines": 773
   },
@@ -128,6 +128,26 @@
     ],
     "vtable_offset": 68
   },
+  "resolved_suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 120,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_2ec = local_2d8._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 162,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_2ec = local_2e8._4_4_;",
+      "type": "unknown_field"
+    }
+  ],
   "stack_frame": {
     "frame_size": 760,
     "local_size": 756,
@@ -700,14 +720,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 120,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "uStack_2ec = local_2d8._4_4_;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 135,
       "match": "(double *)((int)",
@@ -738,14 +750,6 @@
       "severity": "mild",
       "text": "pdVar11 = (double *)((int)pdVar11 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 162,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "uStack_2ec = local_2e8._4_4_;",
-      "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",

@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 296,
+    "complexity_score": 171,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 156,
-    "suspect_count": 13,
+    "suspect_count": 1,
     "suspect_types": [
-      "mmx_assembly",
-      "unknown_field"
+      "mmx_assembly"
     ],
     "total_lines": 240
   },
@@ -80,6 +80,116 @@
     },
     "pcode_op_count": 323
   },
+  "resolved_suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 32,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar7 = (byte)((uint)g_FilterBlendConstant._0_4_ >> 0x18);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 33,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar6 = (byte)((uint)g_FilterBlendConstant._0_4_ >> 0x10);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 34,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar5 = (byte)((uint)g_FilterBlendConstant._0_4_ >> 8);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 51,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar5 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 8);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 52,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar6 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 0x10);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 53,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar7 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 0x18);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 78,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar5 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 8);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 79,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar6 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 0x10);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 80,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar7 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 0x18);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 107,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar7 = (byte)((uint)g_FilterBlendConstant._0_4_ >> 0x18);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 108,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar6 = (byte)((uint)g_FilterBlendConstant._0_4_ >> 0x10);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 109,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar5 = (byte)((uint)g_FilterBlendConstant._0_4_ >> 8);",
+      "type": "unknown_field"
+    }
+  ],
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -111,102 +221,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unknown/mangled field access",
-      "line": 32,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "uVar7 = (byte)((uint)g_FilterBlendConstant._0_4_ >> 0x18);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 33,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "uVar6 = (byte)((uint)g_FilterBlendConstant._0_4_ >> 0x10);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 34,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "uVar5 = (byte)((uint)g_FilterBlendConstant._0_4_ >> 8);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 51,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "uVar5 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 8);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 52,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "uVar6 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 0x10);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 53,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "uVar7 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 0x18);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 78,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "uVar5 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 8);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 79,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "uVar6 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 0x10);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 80,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "uVar7 = (byte)((uint)g_FilterBlendConstant._4_4_ >> 0x18);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 107,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "uVar7 = (byte)((uint)g_FilterBlendConstant._0_4_ >> 0x18);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 108,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "uVar6 = (byte)((uint)g_FilterBlendConstant._0_4_ >> 0x10);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 109,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "uVar5 = (byte)((uint)g_FilterBlendConstant._0_4_ >> 8);",
-      "type": "unknown_field"
-    },
     {
       "description": "MMX/SIMD assembly - may not decompile to clean C code",
       "line": 9,

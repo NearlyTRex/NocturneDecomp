@@ -4,19 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 793,
-    "complexity_score": 990,
+    "complexity_score": 785,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 53,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 490,
-    "suspect_count": 48,
+    "suspect_count": 28,
     "suspect_types": [
       "extra_output",
       "pointer_cast",
-      "unknown_field",
       "warning_unreachable"
     ],
     "total_lines": 1283
@@ -669,6 +669,188 @@
     },
     "pcode_op_count": 3324
   },
+  "resolved_suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 84,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar1._0_4_ = (pSVar7->projected_vertex).transformed_x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 85,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar1._4_4_ = (pSVar7->projected_vertex).transformed_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 120,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar2._0_4_ = (pSVar8->projected_vertex).transformed_x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 121,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar2._4_4_ = (pSVar8->projected_vertex).transformed_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 163,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar3._0_4_ = (pSVar7->projected_vertex).transformed_x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 164,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar3._4_4_ = (pSVar7->projected_vertex).transformed_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 191,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar7._0_4_ = (pSVar8->projected_vertex).transformed_x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 192,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar7._4_4_ = (pSVar8->projected_vertex).transformed_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 240,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar4._0_4_ = (pSVar7->projected_vertex).transformed_x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 241,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar4._4_4_ = (pSVar7->projected_vertex).transformed_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 268,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar8._0_4_ = (pSVar19->projected_vertex).transformed_x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 269,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar8._4_4_ = (pSVar19->projected_vertex).transformed_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 316,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar5._0_4_ = (pSVar7->projected_vertex).transformed_x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 317,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar5._4_4_ = (pSVar7->projected_vertex).transformed_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 346,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar9._0_4_ = (pSVar7->projected_vertex).transformed_x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 347,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar9._4_4_ = (pSVar7->projected_vertex).transformed_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 395,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar6._0_4_ = (pSVar7->projected_vertex).transformed_x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 396,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar6._4_4_ = (pSVar7->projected_vertex).transformed_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 426,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar10._0_4_ = (pSVar20->projected_vertex).transformed_x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 427,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "lVar10._4_4_ = (pSVar20->projected_vertex).transformed_y;",
+      "type": "unknown_field"
+    }
+  ],
   "stack_frame": {
     "frame_size": 52,
     "local_size": 44,
@@ -954,60 +1136,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 84,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "lVar1._0_4_ = (pSVar7->projected_vertex).transformed_x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 85,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "lVar1._4_4_ = (pSVar7->projected_vertex).transformed_y;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 100,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
       "text": "local_24 = (SRenderVertex *)((int)&(local_24->projected_vertex).transformed_x + 1);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 120,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "lVar2._0_4_ = (pSVar8->projected_vertex).transformed_x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 121,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "lVar2._4_4_ = (pSVar8->projected_vertex).transformed_y;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 163,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "lVar3._0_4_ = (pSVar7->projected_vertex).transformed_x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 164,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "lVar3._4_4_ = (pSVar7->projected_vertex).transformed_y;",
-      "type": "unknown_field"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -1018,44 +1152,12 @@
       "type": "extra_output"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 191,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "lVar7._0_4_ = (pSVar8->projected_vertex).transformed_x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 192,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "lVar7._4_4_ = (pSVar8->projected_vertex).transformed_y;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 210,
       "match": "extraout_EAX_00",
       "severity": "moderate",
       "text": "local_24 = extraout_EAX_00;",
       "type": "extra_output"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 240,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "lVar4._0_4_ = (pSVar7->projected_vertex).transformed_x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 241,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "lVar4._4_4_ = (pSVar7->projected_vertex).transformed_y;",
-      "type": "unknown_field"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -1066,44 +1168,12 @@
       "type": "extra_output"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 268,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "lVar8._0_4_ = (pSVar19->projected_vertex).transformed_x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 269,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "lVar8._4_4_ = (pSVar19->projected_vertex).transformed_y;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 288,
       "match": "extraout_EAX_02",
       "severity": "moderate",
       "text": "local_24 = extraout_EAX_02;",
       "type": "extra_output"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 316,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "lVar5._0_4_ = (pSVar7->projected_vertex).transformed_x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 317,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "lVar5._4_4_ = (pSVar7->projected_vertex).transformed_y;",
-      "type": "unknown_field"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
@@ -1114,22 +1184,6 @@
       "type": "extra_output"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 346,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "lVar9._0_4_ = (pSVar7->projected_vertex).transformed_x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 347,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "lVar9._4_4_ = (pSVar7->projected_vertex).transformed_y;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 367,
       "match": "extraout_EAX_04",
@@ -1138,44 +1192,12 @@
       "type": "extra_output"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 395,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "lVar6._0_4_ = (pSVar7->projected_vertex).transformed_x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 396,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "lVar6._4_4_ = (pSVar7->projected_vertex).transformed_y;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 419,
       "match": "extraout_EAX_05",
       "severity": "moderate",
       "text": "local_24 = extraout_EAX_05;",
       "type": "extra_output"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 426,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "lVar10._0_4_ = (pSVar20->projected_vertex).transformed_x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 427,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "lVar10._4_4_ = (pSVar20->projected_vertex).transformed_y;",
-      "type": "unknown_field"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

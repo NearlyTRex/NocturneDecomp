@@ -11,7 +11,7 @@ void __cdecl core_inivar_cpp_writeIniData_FUN_004fc510(void)
 {
   CIniFile local_210;
   
-  engine_ini_cpp_CIniFile_ctor_FUN_004fba70(&local_210,".\\system\\nocturne.ini",0);
+  engine_ini_cpp_CIniFile_ctor_FUN_004fba70(&local_210,".\\system\\nocturne.ini",(char *)0x0);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004fbae0(&local_210,"Graphics");
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90
             (&local_210,"gamePIXX",g_CGamePtr->game_pixx);

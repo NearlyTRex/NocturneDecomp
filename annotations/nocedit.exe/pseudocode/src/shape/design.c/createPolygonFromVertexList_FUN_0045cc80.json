@@ -4,16 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 43,
+    "complexity_score": 58,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 12,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 43,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "unnamed_local"
+    ],
     "total_lines": 169
   },
   "cross_references": [
@@ -308,5 +311,15 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 14,
+      "match": "local_58",
+      "severity": "mild",
+      "text": "uint local_58;",
+      "type": "unnamed_local"
+    }
+  ]
 }

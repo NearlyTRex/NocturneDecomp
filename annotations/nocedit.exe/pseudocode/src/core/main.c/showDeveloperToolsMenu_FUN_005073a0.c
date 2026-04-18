@@ -44,7 +44,8 @@ void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
   if (iVar1 == 0) {
     return;
   }
-  engine_ini_cpp_CIniFile_ctor_FUN_004fba70(&local_528,".\\system\\nocturne.ini",0x63169a);
+  engine_ini_cpp_CIniFile_ctor_FUN_004fba70
+            (&local_528,".\\system\\nocturne.ini","Editor");
   aiStack_1c[2] = 0;
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
             (&local_528,"AcceptedLicenseAgreement",aiStack_1c + 2);

@@ -4,17 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 53,
     "complexity_score": 37,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 22,
     "suspect_count": 1,
     "suspect_types": [
-      "stack_ref"
+      "unnamed_local"
     ],
     "total_lines": 75
   },
@@ -157,6 +158,17 @@
     },
     "pcode_op_count": 589
   },
+  "resolved_suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 23,
+      "match": "&stack0xfffffff4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while (pbVar4 != &stack0xfffffff4);",
+      "type": "stack_ref"
+    }
+  ],
   "stack_frame": {
     "frame_size": 792,
     "local_size": 784,
@@ -189,12 +201,13 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xfffffff4",
-      "severity": "moderate",
-      "text": "} while (pbVar4 != &stack0xfffffff4);",
-      "type": "stack_ref"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 17,
+      "match": "local_30c",
+      "severity": "mild",
+      "text": "byte local_30c [768];",
+      "type": "unnamed_local"
     }
   ]
 }

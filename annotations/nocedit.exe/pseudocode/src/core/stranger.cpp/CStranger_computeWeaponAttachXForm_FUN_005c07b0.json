@@ -4,17 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1698,
-    "complexity_score": 528,
+    "complexity_score": 573,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 498,
-    "suspect_count": 2,
+    "suspect_count": 6,
     "suspect_types": [
       "param_count_too_many",
+      "unnamed_local",
       "warning_type_propagation"
     ],
     "total_lines": 2196
@@ -1145,6 +1147,42 @@
       "param_delta": -1,
       "text": "Function declares 4 params but call sites push 3 (1 extra)",
       "type": "param_count_too_many"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 122,
+      "match": "local_150",
+      "severity": "mild",
+      "text": "CVector3f local_150;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 358,
+      "match": "local_150",
+      "severity": "mild",
+      "text": "local_150.x = (local_21c.min.x + local_21c.max.x) * 0.5f;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 359,
+      "match": "local_150",
+      "severity": "mild",
+      "text": "local_150.y = (local_21c.min.y + local_21c.max.y) * 0.5f;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 360,
+      "match": "local_150",
+      "severity": "mild",
+      "text": "local_150.z = (local_21c.min.z + local_21c.max.z) * 0.5f;",
+      "type": "unnamed_local"
     }
   ]
 }

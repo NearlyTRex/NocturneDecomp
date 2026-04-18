@@ -22,7 +22,8 @@ int __cdecl core_main_c_showLicenseAgreement_FUN_005070f0(void)
   int bottom_pos;
   int right_pos;
   
-  engine_ini_cpp_CIniFile_ctor_FUN_004fba70(&local_410,".\\system\\nocturne.ini",0x63169a);
+  engine_ini_cpp_CIniFile_ctor_FUN_004fba70
+            (&local_410,".\\system\\nocturne.ini","Editor");
   local_14 = 0;
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
             (&local_410,"AcceptedLicenseAgreement",&local_14);

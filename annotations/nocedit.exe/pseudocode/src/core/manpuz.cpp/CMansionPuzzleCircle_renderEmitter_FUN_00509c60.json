@@ -4,17 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 37,
+    "complexity_score": 47,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 22,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "stack_ref"
+      "unnamed_local"
     ],
     "total_lines": 107
   },
@@ -152,6 +153,17 @@
     },
     "pcode_op_count": 283
   },
+  "resolved_suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 14,
+      "match": "&stack0xffffffd8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(g_CDemonRendererPtr2,&g_ZeroVector.i,(CVector3i *)&stack0xffffffd8);",
+      "type": "stack_ref"
+    }
+  ],
   "stack_frame": {
     "frame_size": 40,
     "local_size": 32,
@@ -191,12 +203,22 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 14,
-      "match": "&stack0xffffffd8",
-      "severity": "moderate",
-      "text": "(g_CDemonRendererPtr2,&g_ZeroVector.i,(CVector3i *)&stack0xffffffd8);",
-      "type": "stack_ref"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 13,
+      "match": "local_28",
+      "severity": "mild",
+      "text": "CVector3i local_28;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 23,
+      "match": "local_28",
+      "severity": "mild",
+      "text": "(g_CDemonRendererPtr2,&g_ZeroVector.i,&local_28);",
+      "type": "unnamed_local"
     }
   ]
 }

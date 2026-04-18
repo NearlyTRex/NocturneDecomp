@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1027,
-    "complexity_score": 1186,
+    "complexity_score": 506,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 506,
-    "suspect_count": 67,
-    "suspect_types": [
-      "pointer_cast",
-      "sub84_truncation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1533
   },
   "cross_references": [
@@ -279,6 +277,611 @@
     },
     "pcode_op_count": 4912
   },
+  "resolved_suspects": [
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 154,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_308 = SUB84(__BITCAST_UINT64(dVar9),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 190,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_244 = *(uint *)((int)&edges[uVar2].start_pos.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 192,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_23c = *(uint *)((int)&edges[uVar2].start_pos.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 194,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_234 = *(uint *)((int)&edges[uVar2].start_pos.z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 198,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_244 = *(uint *)((int)&edges[uVar2].end_pos.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 200,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_23c = *(uint *)((int)&edges[uVar2].end_pos.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 202,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_234 = *(uint *)((int)&edges[uVar2].end_pos.z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 211,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_1cc = *(uint *)((int)&edges[uVar2].start_pos.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 213,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_1c4 = *(uint *)((int)&edges[uVar2].start_pos.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 215,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_1bc = *(uint *)((int)&edges[uVar2].start_pos.z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 219,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_1cc = *(uint *)((int)&edges[uVar2].end_pos.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 221,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_1c4 = *(uint *)((int)&edges[uVar2].end_pos.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 223,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_1bc = *(uint *)((int)&edges[uVar2].end_pos.z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 248,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_1e4 = *(uint *)((int)&edges[uVar2].start_pos.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 250,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_1dc = *(uint *)((int)&edges[uVar2].start_pos.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 252,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_1d4 = *(uint *)((int)&edges[uVar2].start_pos.z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 256,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_1e4 = *(uint *)((int)&edges[uVar2].end_pos.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 258,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_1dc = *(uint *)((int)&edges[uVar2].end_pos.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 260,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_1d4 = *(uint *)((int)&edges[uVar2].end_pos.z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 285,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar17 = (double *)((int)pdVar17 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 286,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar18 = (double *)((int)pdVar18 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 304,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar17 = (double *)((int)pdVar17 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 305,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar18 = (double *)((int)pdVar18 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 320,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_2bc = *(uint *)((int)&edges[uVar2].end_pos.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 322,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_2b4 = *(uint *)((int)&edges[uVar2].end_pos.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 324,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar11 = *(uint *)((int)&edges[uVar2].end_pos.z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 331,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_2bc = *(uint *)((int)&edges[uVar2].start_pos.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 333,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_2b4 = *(uint *)((int)&edges[uVar2].start_pos.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 335,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar11 = *(uint *)((int)&edges[uVar2].start_pos.z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 342,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_f4 = *(uint *)((int)&edges[uVar1].end_pos.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 344,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_ec = *(uint *)((int)&edges[uVar1].end_pos.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 345,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_e4 = *(uint *)((int)&edges[uVar1].end_pos.z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 353,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_f4 = *(uint *)((int)&edges[uVar1].start_pos.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 355,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_ec = *(uint *)((int)&edges[uVar1].start_pos.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 357,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_e4 = *(uint *)((int)&edges[uVar1].start_pos.z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 366,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar17 = (double *)((int)pdVar17 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 367,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar18 = (double *)((int)pdVar18 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 416,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_25c = *(uint *)((int)&edges[uVar2].start_pos.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 418,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_254 = *(uint *)((int)&edges[uVar2].start_pos.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 420,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_24c = *(uint *)((int)&edges[uVar2].start_pos.z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 424,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_25c = *(uint *)((int)&edges[uVar2].end_pos.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 426,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_254 = *(uint *)((int)&edges[uVar2].end_pos.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 428,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_24c = *(uint *)((int)&edges[uVar2].end_pos.z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 433,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_16c = *(uint *)((int)&edges[uVar2].start_pos.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 435,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_164 = *(uint *)((int)&edges[uVar2].start_pos.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 437,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_15c = *(uint *)((int)&edges[uVar2].start_pos.z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 441,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_16c = *(uint *)((int)&edges[uVar2].end_pos.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 443,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_164 = *(uint *)((int)&edges[uVar2].end_pos.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 445,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_15c = *(uint *)((int)&edges[uVar2].end_pos.z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 465,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&edges[uVar2].start_pos.x + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 466,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&edges[uVar3].end_pos.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 468,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&edges[uVar2].start_pos.y + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 469,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&edges[uVar3].end_pos.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 471,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&edges[uVar2].start_pos.z + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 472,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&edges[uVar3].end_pos.z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 474,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)edges[uVar2].start_uv + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 475,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)edges[uVar3].end_uv + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 477,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)edges[uVar2].start_uv + 0xc) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 478,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)edges[uVar3].end_uv + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 481,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&edges[uVar2].end_pos.x + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 482,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&edges[uVar3].start_pos.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 484,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&edges[uVar2].end_pos.y + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 485,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&edges[uVar3].start_pos.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 487,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&edges[uVar2].end_pos.z + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 488,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&edges[uVar3].start_pos.z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 491,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)edges[uVar2].end_uv + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 492,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)edges[uVar3].start_uv + 4);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 812,
     "local_size": 796,
@@ -1064,542 +1667,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 154,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "local_308 = SUB84(__BITCAST_UINT64(dVar9),0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 190,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_244 = *(uint *)((int)&edges[uVar2].start_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 192,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_23c = *(uint *)((int)&edges[uVar2].start_pos.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 194,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_234 = *(uint *)((int)&edges[uVar2].start_pos.z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 198,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_244 = *(uint *)((int)&edges[uVar2].end_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 200,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_23c = *(uint *)((int)&edges[uVar2].end_pos.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 202,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_234 = *(uint *)((int)&edges[uVar2].end_pos.z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 211,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_1cc = *(uint *)((int)&edges[uVar2].start_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 213,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_1c4 = *(uint *)((int)&edges[uVar2].start_pos.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 215,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_1bc = *(uint *)((int)&edges[uVar2].start_pos.z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 219,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_1cc = *(uint *)((int)&edges[uVar2].end_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 221,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_1c4 = *(uint *)((int)&edges[uVar2].end_pos.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 223,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_1bc = *(uint *)((int)&edges[uVar2].end_pos.z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 248,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_1e4 = *(uint *)((int)&edges[uVar2].start_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 250,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_1dc = *(uint *)((int)&edges[uVar2].start_pos.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 252,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_1d4 = *(uint *)((int)&edges[uVar2].start_pos.z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 256,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_1e4 = *(uint *)((int)&edges[uVar2].end_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 258,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_1dc = *(uint *)((int)&edges[uVar2].end_pos.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 260,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_1d4 = *(uint *)((int)&edges[uVar2].end_pos.z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 285,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar17 = (double *)((int)pdVar17 + (uint)bVar17 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 286,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar18 = (double *)((int)pdVar18 + (uint)bVar17 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 304,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar17 = (double *)((int)pdVar17 + (uint)bVar17 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 305,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar18 = (double *)((int)pdVar18 + (uint)bVar17 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 320,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_2bc = *(uint *)((int)&edges[uVar2].end_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 322,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_2b4 = *(uint *)((int)&edges[uVar2].end_pos.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 324,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uVar11 = *(uint *)((int)&edges[uVar2].end_pos.z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 331,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_2bc = *(uint *)((int)&edges[uVar2].start_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 333,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_2b4 = *(uint *)((int)&edges[uVar2].start_pos.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 335,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uVar11 = *(uint *)((int)&edges[uVar2].start_pos.z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 342,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_f4 = *(uint *)((int)&edges[uVar1].end_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 344,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_ec = *(uint *)((int)&edges[uVar1].end_pos.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 345,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_e4 = *(uint *)((int)&edges[uVar1].end_pos.z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 353,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_f4 = *(uint *)((int)&edges[uVar1].start_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 355,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_ec = *(uint *)((int)&edges[uVar1].start_pos.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 357,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_e4 = *(uint *)((int)&edges[uVar1].start_pos.z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 366,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar17 = (double *)((int)pdVar17 + (uint)bVar17 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 367,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar18 = (double *)((int)pdVar18 + (uint)bVar17 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 416,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_25c = *(uint *)((int)&edges[uVar2].start_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 418,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_254 = *(uint *)((int)&edges[uVar2].start_pos.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 420,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_24c = *(uint *)((int)&edges[uVar2].start_pos.z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 424,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_25c = *(uint *)((int)&edges[uVar2].end_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 426,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_254 = *(uint *)((int)&edges[uVar2].end_pos.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 428,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_24c = *(uint *)((int)&edges[uVar2].end_pos.z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 433,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_16c = *(uint *)((int)&edges[uVar2].start_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 435,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_164 = *(uint *)((int)&edges[uVar2].start_pos.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 437,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_15c = *(uint *)((int)&edges[uVar2].start_pos.z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 441,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_16c = *(uint *)((int)&edges[uVar2].end_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 443,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_164 = *(uint *)((int)&edges[uVar2].end_pos.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 445,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_15c = *(uint *)((int)&edges[uVar2].end_pos.z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 465,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&edges[uVar2].start_pos.x + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 466,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&edges[uVar3].end_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 468,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&edges[uVar2].start_pos.y + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 469,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&edges[uVar3].end_pos.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 471,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&edges[uVar2].start_pos.z + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 472,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&edges[uVar3].end_pos.z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 474,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)edges[uVar2].start_uv + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 475,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)edges[uVar3].end_uv + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 477,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)edges[uVar2].start_uv + 0xc) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 478,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)edges[uVar3].end_uv + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 481,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&edges[uVar2].end_pos.x + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 482,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&edges[uVar3].start_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 484,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&edges[uVar2].end_pos.y + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 485,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&edges[uVar3].start_pos.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 487,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&edges[uVar2].end_pos.z + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 488,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&edges[uVar3].start_pos.z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 491,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)edges[uVar2].end_uv + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 492,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)edges[uVar3].start_uv + 4);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

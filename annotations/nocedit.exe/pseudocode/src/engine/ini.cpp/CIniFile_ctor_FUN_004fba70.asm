@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CIniFile * __cdecl engine_ini_cpp_CIniFile_ctor_FUN_004fba70(CIniFile *this_ptr,char *filename,int read_mode)
+; CIniFile * __cdecl engine_ini_cpp_CIniFile_ctor_FUN_004fba70(CIniFile *this_ptr,char *filename,char *section)
 ;
 ; Parameters:
 ; CIniFile *       Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
-; int              Stack[0xc]:4   read_mode
+; char *           Stack[0xc]:4   section
 ;
 ; XREF[6]:
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 at 004e1dac

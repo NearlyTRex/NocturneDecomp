@@ -305,7 +305,7 @@ def create_function_json(func_name, func_addr, func_addr_range, func_convention,
                          vtable_info=None, existing_pcode_overrides=None, resolved_suspects=None,
                          is_ebp_frame=False, existing_proto_overrides=None,
                          existing_decompiler_fixes=None, compilation_status=None,
-                         chunked=False):
+                         chunked=False, compile_source=None):
     """Create function metadata JSON.
 
     Args:
@@ -395,6 +395,11 @@ def create_function_json(func_name, func_addr, func_addr_range, func_convention,
     # Preserve chunked flag if enabled
     if chunked:
         function_json["chunked"] = True
+    # Record which file the build system will actually compile
+    # ('cpp' | 'c' | 'keep.cpp' | 'keep.c'). Consumed by reports to
+    # separate suspect counts that a .keep has already addressed.
+    if compile_source:
+        function_json["compile_source"] = compile_source
     return function_json
 
 
@@ -410,7 +415,7 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
                                      mmx_decompiled_code=None,
                                      byval_decompiled_code=None,
                                      chunked_decompiled_code=None,
-                                     chunked=False):
+                                     chunked=False, compile_source=None):
     """Generate file contents for a function without writing to disk.
 
     Args:
@@ -554,7 +559,7 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
             existing_replacements, stack_patterns, param_estimates, vtable_info,
             existing_pcode_overrides, resolved_suspects, is_ebp_frame,
             existing_proto_overrides, existing_decompiler_fixes, compilation_status,
-            chunked=chunked)
+            chunked=chunked, compile_source=compile_source)
         # Add P-code summary to JSON if available
         if pcode_data:
             function_json['pcode_summary'] = create_pcode_summary(pcode_data)

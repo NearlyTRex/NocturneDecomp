@@ -4,17 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 652,
-    "complexity_score": 312,
+    "complexity_score": 532,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 34,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 287,
-    "suspect_count": 2,
+    "suspect_count": 24,
     "suspect_types": [
-      "unknown_field"
+      "unnamed_local"
     ],
     "total_lines": 939
   },
@@ -342,6 +343,26 @@
     },
     "pcode_op_count": 3073
   },
+  "resolved_suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 137,
+      "match": "._0_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar11._0_2_ = (ushort)(pSVar7->projected_vertex).screen_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 138,
+      "match": "._0_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar11._0_2_ = (ushort)uVar11 ^ 0xffff;",
+      "type": "unknown_field"
+    }
+  ],
   "stack_frame": {
     "frame_size": 40,
     "local_size": 32,
@@ -398,20 +419,220 @@
   },
   "suspects": [
     {
-      "description": "Unknown/mangled field access",
-      "line": 137,
-      "match": "._0_2_",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 32,
+      "match": "local_14",
       "severity": "mild",
-      "text": "uVar11._0_2_ = (ushort)(pSVar7->projected_vertex).screen_y;",
-      "type": "unknown_field"
+      "text": "SSoftwareEdge *local_14;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 138,
-      "match": "._0_2_",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 221,
+      "match": "local_14",
       "severity": "mild",
-      "text": "uVar11._0_2_ = (ushort)uVar11 ^ 0xffff;",
-      "type": "unknown_field"
+      "text": "local_14 = g_SoftwareEdgeTable;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 224,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "if ((g_MinScanline == (local_14->base).y_min) && (local_14 != right)) goto LAB_0055365c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 224,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "if ((g_MinScanline == (local_14->base).y_min) && (local_14 != right)) goto LAB_0055365c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 226,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "local_14 = local_14 + 1;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 226,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "local_14 = local_14 + 1;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 229,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "local_14 = (SSoftwareEdge *)0x0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 231,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "if (local_14 != (SSoftwareEdge *)0x0) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 240,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "if ((iVar7 == (right->base).y_min) && (right != local_14)) goto LAB_005536b2;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 252,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "if ((local_14->base).y_max <= iVar7) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 253,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "(local_14->base).y_min = -1;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 254,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "local_14 = g_SoftwareEdgeTable;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 259,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "while ((iVar7 != (local_14->base).y_min || (local_14 == right))) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 259,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "while ((iVar7 != (local_14->base).y_min || (local_14 == right))) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 261,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "local_14 = local_14 + 1;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 261,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "local_14 = local_14 + 1;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 266,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "if (local_14 == (SSoftwareEdge *)0x0) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 270,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "wincore_windll_cpp_renderScanline_FUN_005b5710(&local_14->base,&right->base,iVar7);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 284,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "(local_14->base).x_current = (int)((longlong)(local_14->base).x_current + (longlong)(local_14->base).x_gradient);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 284,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "(local_14->base).x_current = (int)((longlong)(local_14->base).x_current + (longlong)(local_14->base).x_gradient);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 284,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "(local_14->base).x_current = (int)((longlong)(local_14->base).x_current + (longlong)(local_14->base).x_gradient);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 285,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "(local_14->base).u_current = (int)((longlong)(local_14->base).u_current + (longlong)(local_14->base).u_gradient);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 285,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "(local_14->base).u_current = (int)((longlong)(local_14->base).u_current + (longlong)(local_14->base).u_gradient);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 285,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "(local_14->base).u_current = (int)((longlong)(local_14->base).u_current + (longlong)(local_14->base).u_gradient);",
+      "type": "unnamed_local"
     }
   ]
 }

@@ -4,18 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 798,
-    "complexity_score": 564,
+    "complexity_score": 544,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 96,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 514,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
       "param_count_too_few",
-      "pointer_cast"
+      "raw_address_constant"
     ],
     "total_lines": 1312
   },
@@ -868,6 +869,35 @@
     },
     "pcode_op_count": 3162
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 492,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "puVar1 = (uint *)((int)g_GlobalFilters + iVar11);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 504,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)(*(int *)((int)g_PlayerFilters + iVar9) + 4) = 0x100;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 505,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "puVar1 = (uint *)((int)g_PlayerFilters + iVar9);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 1324,
     "local_size": 1324,
@@ -981,28 +1011,12 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 492,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar1 = (uint *)((int)g_GlobalFilters + iVar11);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 504,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)(*(int *)((int)g_PlayerFilters + iVar9) + 4) = 0x100;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 505,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar1 = (uint *)((int)g_PlayerFilters + iVar9);",
-      "type": "pointer_cast"
+      "description": "Raw hex literal 0x3c00000 matches address of g_SkeletonPool (+3356508 bytes into) (type CSkeleton[40]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 81,
+      "match": "0x3c00000",
+      "severity": "moderate",
+      "text": "if (g_TotalPhysicalMemory < 0x3c00000) {",
+      "type": "raw_address_constant"
     },
     {
       "call_site_count": 1,

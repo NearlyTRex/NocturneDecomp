@@ -2,11 +2,11 @@
 // Address: 004e1cb0
 // Address Range: [[004e1cb0, 004e2881]]
 // Convention: __cdecl
-// Signature: void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,int unknown)
+// Signature: void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,int select_mode)
 
 #include "nocturne.h"
 
-void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,int unknown)
+void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,int select_mode)
 
 {
   char cVar2;
@@ -56,12 +56,13 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
   if (p_Var3 != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\game.cpp",0xeec);
   }
-  bVar8 = unknown == 1;
+  bVar8 = select_mode == 1;
   if (local_14 != 0) {
-    unknown = 1;
+    select_mode = 1;
   }
   local_18 = 0;
-  engine_ini_cpp_CIniFile_ctor_FUN_004fba70(&local_344,"system\\nocturne.ini",0x62ccd7);
+  engine_ini_cpp_CIniFile_ctor_FUN_004fba70
+            (&local_344,"system\\nocturne.ini","Game");
   local_2c = 0;
   local_28 = 0;
   local_24 = 0;
@@ -91,7 +92,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
       g_EditorFont = local_1c;
       return;
     }
-    g_ChapterDisplayNumber = 0;
+    g_ChapterDisplayYear = 0;
     g_OverlayDisplayTimer = 0.0;
     g_ChapterDisplayName[0] = '\0';
   }
@@ -145,16 +146,16 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
         return;
       }
       if ((iVar3 == 0) && (local_2c == 0x331)) {
-        unknown = 1;
+        select_mode = 1;
       }
       if ((iVar3 == 1) && (local_28 == 0x3cc)) {
-        unknown = 1;
+        select_mode = 1;
       }
       if ((iVar3 == 2) && (local_24 == 0x3ac)) {
-        unknown = 1;
+        select_mode = 1;
       }
       if ((iVar3 == 3) && (local_20 == 0xd6)) {
-        unknown = 1;
+        select_mode = 1;
 LAB_004e2250:
         shape_edittool_cpp_CPickList_clear_FUN_004a5770(&local_6ec);
         if (iVar3 == 0) {
@@ -352,7 +353,7 @@ LAB_004e2250:
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_6ec,0);
       }
       else {
-        if (unknown != 0) goto LAB_004e2250;
+        if (select_mode != 0) goto LAB_004e2250;
         iVar6 = 0;
 LAB_004e2376:
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_6ec,0);
@@ -376,7 +377,7 @@ LAB_004e2376:
     }
     pcVar9 = g_ChapterDisplayName;
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\game.cpp",0xf77);
-    g_ChapterDisplayNumber = (int)g_ChapterDisplayTexts[iVar3];
+    g_ChapterDisplayYear = g_ChapterDisplayYears[iVar3];
     pcVar8 = local_40[iVar3];
     do {
       cVar2 = *pcVar8;

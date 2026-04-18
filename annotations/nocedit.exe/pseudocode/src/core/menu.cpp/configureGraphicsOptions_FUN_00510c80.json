@@ -4,16 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1082,
-    "complexity_score": 607,
+    "complexity_score": 632,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 110,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 607,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "raw_address_constant"
+    ],
     "total_lines": 1689
   },
   "cross_references": [
@@ -891,5 +894,22 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Raw hex literal 0xb71b01 matches address of g_PrecomputedSurfaceNormals (+699789 bytes into) (type CVector3f[241][320]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 453,
+      "match": "0xb71b01",
+      "severity": "moderate",
+      "text": "else if (((local_1c[0] < 0xb71b01) || (g_CGamePtr->game_pixy != 0x1e0)) || (!bVar12)) {",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x16e3601 matches address of g_VertexNormals (+374645 bytes into) (type SVertexData[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 456,
+      "match": "0x16e3601",
+      "severity": "moderate",
+      "text": "if (((local_1c[0] < 0x16e3601) || (g_CGamePtr->game_pixy != 0x300)) || (!bVar12)) {",
+      "type": "raw_address_constant"
+    }
+  ]
 }

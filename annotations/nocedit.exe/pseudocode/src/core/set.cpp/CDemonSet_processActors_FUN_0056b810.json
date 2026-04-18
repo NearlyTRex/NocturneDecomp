@@ -4,18 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 576,
-    "complexity_score": 418,
+    "complexity_score": 428,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 25,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 268,
-    "suspect_count": 14,
+    "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
-      "stack_ref"
+      "unnamed_local"
     ],
     "total_lines": 844
   },
@@ -319,6 +320,26 @@
     },
     "pcode_op_count": 2237
   },
+  "resolved_suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 153,
+      "match": "&stack0xffffff60",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff60);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 159,
+      "match": "&stack0xffffff60",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "damage_info = (CPathMap *)&stack0xffffff60;",
+      "type": "stack_ref"
+    }
+  ],
   "stack_frame": {
     "frame_size": 156,
     "local_size": 152,
@@ -533,22 +554,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 153,
-      "match": "&stack0xffffff60",
-      "severity": "moderate",
-      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff60);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 159,
-      "match": "&stack0xffffff60",
-      "severity": "moderate",
-      "text": "damage_info = (CPathMap *)&stack0xffffff60;",
-      "type": "stack_ref"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 215,
       "match": "(int *)((int)",
@@ -635,6 +640,33 @@
       "severity": "mild",
       "text": "puVar2 = (uint *)((int)g_ActorProfileActors + iVar8);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 29,
+      "match": "local_a0",
+      "severity": "mild",
+      "text": "SDamageInfo local_a0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 166,
+      "match": "local_a0",
+      "severity": "mild",
+      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&local_a0);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 172,
+      "match": "local_a0",
+      "severity": "mild",
+      "text": "damage_info = (CPathMap *)&local_a0;",
+      "type": "unnamed_local"
     }
   ]
 }

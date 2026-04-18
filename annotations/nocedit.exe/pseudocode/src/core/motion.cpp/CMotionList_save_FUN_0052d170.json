@@ -4,17 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 294,
-    "complexity_score": 121,
+    "complexity_score": 151,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 25,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 96,
-    "suspect_count": 2,
+    "suspect_count": 5,
     "suspect_types": [
-      "sub84_truncation"
+      "unnamed_local"
     ],
     "total_lines": 390
   },
@@ -244,6 +245,26 @@
     },
     "pcode_op_count": 1184
   },
+  "resolved_suspects": [
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 49,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "SUB84(__BITCAST_UINT64((double)local_14->exit_backward_to_frame),0),",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 66,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "SUB84(__BITCAST_UINT64((double)*pfVar2),0),(int)((ulonglong)(double)*pfVar2 >> 0x20),*piVar1);",
+      "type": "sub84_truncation"
+    }
+  ],
   "stack_frame": {
     "frame_size": 36,
     "local_size": 28,
@@ -283,20 +304,49 @@
   },
   "suspects": [
     {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 49,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "SUB84(__BITCAST_UINT64((double)local_14->exit_backward_to_frame),0),",
-      "type": "sub84_truncation"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 21,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "SMotion *local_14;",
+      "type": "unnamed_local"
     },
     {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 66,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "SUB84(__BITCAST_UINT64((double)*pfVar2),0),(int)((ulonglong)(double)*pfVar2 >> 0x20),*piVar1);",
-      "type": "sub84_truncation"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 46,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "local_14 = this_ptr->motions;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 49,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "_fprintf(file_handle,\"\\\"%s\\\",%g,%d,%d,%d\\n\",local_14->motion_name,(double)local_14->fps,",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 49,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "_fprintf(file_handle,\"\\\"%s\\\",%g,%d,%d,%d\\n\",local_14->motion_name,(double)local_14->fps,",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 50,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "local_14->state_index,local_14->frame_start,local_14->frame_count);",
+      "type": "unnamed_local"
     }
   ]
 }

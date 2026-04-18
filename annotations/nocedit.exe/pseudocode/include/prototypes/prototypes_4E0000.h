@@ -50,7 +50,7 @@ void __cdecl core_game_cpp_CGame_setStatusDisplay_FUN_004e0bf0(CGame *this_ptr,c
 void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *save_filename);
 void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0(CGame *this_ptr,char *save_filename,int load_mode);
 void __cdecl core_game_cpp_disableUnavailableChapters_FUN_004e1c30(CPickList *pick_list,int chapter_index);
-void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,int unknown);
+void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,int select_mode);
 void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004e2890(CGame *this_ptr,char *filename,int width,int height);
 void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_ptr);
 void __cdecl core_game_cpp_hostNetworkGame_FUN_004e2f10(void);

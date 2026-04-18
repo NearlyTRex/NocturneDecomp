@@ -65,7 +65,7 @@ extern int g_InputResetFlag;
 extern int g_StoredCameraValue;
 extern int g_CheatSystemEnabled;
 extern int g_HasSavedLightState;
-extern int g_ChapterDisplayNumber;
+extern int g_ChapterDisplayYear;
 extern int g_MovieRecordingArmed;
 extern int g_MovieRecordingActive;
 extern int g_MovieRecordingMaxFrames;

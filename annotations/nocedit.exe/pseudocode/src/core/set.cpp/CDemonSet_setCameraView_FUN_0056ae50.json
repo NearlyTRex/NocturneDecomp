@@ -4,17 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 792,
-    "complexity_score": 332,
+    "complexity_score": 347,
     "cross_reference_count": 13,
     "function_call_count": 36,
     "global_count": 42,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 297,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "warning_unable_to_use_type"
     ],
     "total_lines": 1089
   },
@@ -870,6 +872,15 @@
       "severity": "mild",
       "text": "puVar2 = (uint *)((int)g_SpotLightList + iVar7);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Ghidra could not apply type to a symbol",
+      "introduced_by": "keep",
+      "line": 10,
+      "match": "WARNING: Unable to use type for symbol",
+      "severity": "moderate",
+      "text": "/* WARNING: Unable to use type for symbol fVar3 */",
+      "type": "warning_unable_to_use_type"
     }
   ]
 }

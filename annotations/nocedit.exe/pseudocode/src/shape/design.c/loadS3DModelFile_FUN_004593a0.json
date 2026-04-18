@@ -4,16 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 656,
-    "complexity_score": 237,
+    "complexity_score": 252,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 64,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 237,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "raw_address_constant"
+    ],
     "total_lines": 893
   },
   "cross_references": [
@@ -554,6 +557,26 @@
     },
     "pcode_op_count": 2233
   },
+  "resolved_suspects": [
+    {
+      "description": "Raw hex literal 0x1626410 matches address of g_LoadedVertices (+4 bytes into) (type SVertexData[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 208,
+      "match": "0x1626410",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_40 * 0x14 + 0x1626410,local_40 * 0x14 + 0x1626414);",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x1626414 matches address of g_LoadedVertices (+8 bytes into) (type SVertexData[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 208,
+      "match": "0x1626414",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_40 * 0x14 + 0x1626410,local_40 * 0x14 + 0x1626414);",
+      "type": "raw_address_constant"
+    }
+  ],
   "stack_frame": {
     "frame_size": 2540,
     "local_size": 2536,
@@ -699,5 +722,14 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Raw hex literal 0x766880 matches address of g_RenderVertexBuffer (+911468 bytes into) (type SRenderVertex[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 154,
+      "match": "0x766880",
+      "severity": "moderate",
+      "text": "memset(g_ModelPolygonData,0,0x766880);",
+      "type": "raw_address_constant"
+    }
+  ]
 }

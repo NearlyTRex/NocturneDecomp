@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 464,
-    "complexity_score": 251,
+    "complexity_score": 146,
     "cross_reference_count": 13,
     "function_call_count": 8,
     "global_count": 33,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 146,
-    "suspect_count": 9,
-    "suspect_types": [
-      "format_string_mismatch",
-      "sub84_truncation",
-      "unknown_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 610
   },
   "cross_references": [
@@ -516,6 +513,95 @@
     },
     "pcode_op_count": 2364
   },
+  "resolved_suspects": [
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 76,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_38 = SUB84(__BITCAST_UINT64(dVar2),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 94,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dVar2 = 1.0 / __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 94,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dVar2 = 1.0 / __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 98,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_)) < local_60) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 98,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_)) < local_60) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 99,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_60 = __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 99,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_60 = __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));",
+      "type": "unknown_field"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"SFXDBG: sample = %s\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "SFXDBG: sample = %s\\n",
+      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
+      "line_number": 34,
+      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"SFXDBG: sample = %s\\n\");",
+      "resolution_source": "keep",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Killing %s in compute()\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Killing %s in compute()\\n",
+      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
+      "line_number": 145,
+      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"Killing %s in compute()\\n\");",
+      "resolution_source": "keep",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    }
+  ],
   "stack_frame": {
     "frame_size": 108,
     "local_size": 100,
@@ -577,84 +663,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 76,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "local_38 = SUB84(__BITCAST_UINT64(dVar2),0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 94,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "dVar2 = 1.0 / __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 94,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "dVar2 = 1.0 / __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 98,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_)) < local_60) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 98,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_)) < local_60) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 99,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_60 = __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 99,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_60 = __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));",
-      "type": "unknown_field"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"SFXDBG: sample = %s\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "SFXDBG: sample = %s\\n",
-      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
-      "line_number": 34,
-      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"SFXDBG: sample = %s\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Killing %s in compute()\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Killing %s in compute()\\n",
-      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
-      "line_number": 145,
-      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"Killing %s in compute()\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    }
-  ]
+  "suspects": []
 }

@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 573,
-    "complexity_score": 224,
+    "complexity_score": 209,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 194,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "unresolved_funcptr"
+      "pointer_cast"
     ],
     "total_lines": 767
   },
@@ -165,6 +165,17 @@
     },
     "pcode_op_count": 3411
   },
+  "resolved_suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 133,
+      "match": "code *",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar2 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x34))(iVar1,&SStack_d0);",
+      "type": "unresolved_funcptr"
+    }
+  ],
   "stack_frame": {
     "frame_size": 220,
     "local_size": 212,
@@ -371,14 +382,6 @@
       "severity": "mild",
       "text": "iVar1 = *(int *)((int)g_CDemonSetPtr->characters + iVar4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 133,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar2 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x34))(iVar1,&SStack_d0);",
-      "type": "unresolved_funcptr"
     }
   ],
   "vtable_info": {

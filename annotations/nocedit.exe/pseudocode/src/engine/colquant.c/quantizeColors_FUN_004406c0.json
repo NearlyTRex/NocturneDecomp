@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 388,
-    "complexity_score": 449,
+    "complexity_score": 414,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 204,
-    "suspect_count": 23,
+    "suspect_count": 20,
     "suspect_types": [
       "pointer_cast",
-      "unknown_field",
       "warning_inlined_function"
     ],
     "total_lines": 592
@@ -193,6 +193,35 @@
     },
     "pcode_op_count": 1835
   },
+  "resolved_suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 153,
+      "match": "._0_1_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].red));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 155,
+      "match": "._0_1_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].green));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 157,
+      "match": "._0_1_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].blue));",
+      "type": "unknown_field"
+    }
+  ],
   "stack_frame": {
     "frame_size": 372,
     "local_size": 356,
@@ -444,30 +473,6 @@
       "severity": "mild",
       "text": "pSVar11 = (SColorQuantMapper *)((int)pSVar11->sort_keys[0] + 0x1c);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 153,
-      "match": "._0_1_",
-      "severity": "mild",
-      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].red));",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 155,
-      "match": "._0_1_",
-      "severity": "mild",
-      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].green));",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 157,
-      "match": "._0_1_",
-      "severity": "mild",
-      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].blue));",
-      "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",

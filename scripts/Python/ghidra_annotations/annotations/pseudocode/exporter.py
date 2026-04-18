@@ -67,13 +67,12 @@ from ghidra_annotations.annotations.pseudocode.transforms import (
     replacements_cache, pcode_overrides_cache
 )
 from ghidra_annotations.annotations.pseudocode.suspects import (
-    identify_suspect_lines, identify_assembly_suspects, calculate_complexity_metrics,
+    identify_assembly_suspects, calculate_complexity_metrics,
     identify_pcode_suspects, identify_param_count_mismatch, identify_variadic_calls,
-    identify_format_string_mismatch, identify_stack_align_anchor,
+    identify_stack_align_anchor,
     identify_direct_call_esp_uncertainty, identify_lea_esp_stack_addr,
     identify_special_functions, identify_displaced_global_access,
-    identify_wrong_global_suspects, identify_suspicious_cast_suspects,
-    build_global_interval_map
+    detect_content_suspects, build_global_interval_map
 )
 from ghidra_annotations.annotations.pseudocode.stack_patterns import (
     summarize_stack_patterns
@@ -328,7 +327,8 @@ def build_prototypes_from_decompile_results(decompile_results, functions_to_proc
 
 
 def process_decompile_result(result, pseudocode_src_dir, constants_map,
-                             global_interval_map=None):
+                             global_interval_map=None,
+                             address_interval_map=None):
     """Process a decompilation result in the main thread.
 
     This function does Python-only processing (transforms, suspect detection,
@@ -340,6 +340,10 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map,
         constants_map: Map of constant names to values
         global_interval_map: Optional sorted interval map for displaced global
                              access detection (from build_global_interval_map)
+        address_interval_map: Optional sorted interval map covering BOTH
+                              globals and constants (strings), used to detect
+                              raw hex literals that match known symbol
+                              addresses.
 
     Returns:
         Dictionary with processed result data
@@ -453,8 +457,16 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map,
     # Summarize stack patterns (Python-only processing of worker data)
     stack_patterns = summarize_stack_patterns(result.stack_patterns_raw)
 
-    # Identify suspect patterns (Python regex matching on decompiled code)
-    suspects = identify_suspect_lines(decompiled_code)
+    # Identify content-based suspects (source-text pattern matching only).
+    # Collected separately so we can diff against a .keep rewrite below.
+    content_suspects_cpp = detect_content_suspects(
+        decompiled_code,
+        func_globals=result.func_globals,
+        global_interval_map=global_interval_map,
+        address_interval_map=address_interval_map,
+        func_calls=result.func_calls,
+    )
+    suspects = list(content_suspects_cpp)
 
     # Identify assembly-based suspects (MMX, by-value callers, etc.)
     assembly_suspects = identify_assembly_suspects(result.assembly_code, result.func_calls)
@@ -479,11 +491,6 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map,
         result.pcode_data, result.func_calls, has_stack_issues, pcode_overrides, result.stack_frame)
     suspects.extend(variadic_suspects)
     resolved_suspects.extend(variadic_resolved)
-
-    # Identify format string mismatches in variadic calls
-    format_mismatch_suspects = identify_format_string_mismatch(
-        decompiled_code, result.func_calls)
-    suspects.extend(format_mismatch_suspects)
 
     # Build partial json_data for new suspect detectors that need it
     partial_json_data = {
@@ -520,17 +527,103 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map,
     displaced_suspects = identify_displaced_global_access(result.assembly_code, global_interval_map)
     suspects.extend(displaced_suspects)
 
-    # Identify Watcom base-shift resolutions: (&g_Scalar)[idx] and
-    # *(T *)(&g_Scalar +/- expr) — both indicate Ghidra resolved the access
-    # base to a scalar that precedes the real array in memory.
-    suspects.extend(identify_wrong_global_suspects(
-        decompiled_code, result.func_globals, global_interval_map))
-    suspects.extend(identify_suspicious_cast_suspects(
-        decompiled_code, global_interval_map))
-
     # Filter out suspect types that are no longer useful
     suspects = [s for s in suspects if s.get('type') not in OMIT_SUSPECT_TYPES]
     resolved_suspects = [s for s in resolved_suspects if s.get('type') not in OMIT_SUSPECT_TYPES]
+
+    # Tag existing resolved suspects with their resolution source for reports.
+    for s in resolved_suspects:
+        s.setdefault('resolution_source', 'pcode')
+
+    # Keep-aware suspect resolution. If a .keep.cpp / .keep.c exists alongside
+    # the exported .cpp / .c, re-run the content-based detectors on its source
+    # to see which suspects the manual rewrite has resolved. Resolved entries
+    # move from `suspects` into `resolved_suspects`. Any suspects the .keep
+    # *introduces* (keep-only matches) stay in `suspects` so they remain
+    # visible in reports.
+    compile_source = None
+    keep_path = None
+    if source_filename.endswith('.cpp'):
+        candidate = os.path.join(pseudocode_src_dir, json_base + '.keep.cpp')
+        if os.path.exists(candidate):
+            keep_path = candidate
+            compile_source = 'keep.cpp'
+    elif source_filename.endswith('.c'):
+        candidate = os.path.join(pseudocode_src_dir, json_base + '.keep.c')
+        if os.path.exists(candidate):
+            keep_path = candidate
+            compile_source = 'keep.c'
+    if compile_source is None:
+        compile_source = 'cpp' if source_filename.endswith('.cpp') else 'c'
+
+    if keep_path:
+        try:
+            with open(keep_path, 'r') as kf:
+                keep_source = kf.read()
+            content_suspects_keep = detect_content_suspects(
+                keep_source,
+                func_globals=result.func_globals,
+                global_interval_map=global_interval_map,
+                address_interval_map=address_interval_map,
+                func_calls=result.func_calls,
+            )
+
+            def _key(s):
+                return (s.get('type'), s.get('match'))
+
+            cpp_counts = {}
+            for s in content_suspects_cpp:
+                cpp_counts[_key(s)] = cpp_counts.get(_key(s), 0) + 1
+            keep_counts = {}
+            for s in content_suspects_keep:
+                keep_counts[_key(s)] = keep_counts.get(_key(s), 0) + 1
+
+            # Keys the keep still carries (unresolved) — capped at cpp count
+            # so we don't classify a keep-introduced duplicate as unresolved.
+            unresolved_keep_keys = {
+                k: min(cpp_counts[k], keep_counts.get(k, 0))
+                for k in cpp_counts
+            }
+            # Identity set: the content-suspect dicts live at the head of
+            # `suspects` since we seeded the list from content_suspects_cpp.
+            # Using id() avoids ambiguity if two content entries hash equal.
+            content_ids = {id(s) for s in content_suspects_cpp}
+            # Walk the current `suspects` list and split content entries into
+            # resolved vs unresolved based on multiset membership in the keep.
+            still = []
+            resolved_by_keep = []
+            carry = dict(unresolved_keep_keys)
+            for s in suspects:
+                if id(s) not in content_ids:
+                    still.append(s)
+                    continue
+                k = _key(s)
+                if carry.get(k, 0) > 0:
+                    carry[k] -= 1
+                    still.append(s)
+                else:
+                    s2 = dict(s)
+                    s2['resolution_source'] = 'keep'
+                    resolved_by_keep.append(s2)
+            # Any suspect the keep introduced (types/matches not in cpp) is
+            # added back into `suspects` so the report doesn't hide it.
+            keep_introduced_keys = {
+                k: keep_counts[k] - cpp_counts.get(k, 0)
+                for k in keep_counts if keep_counts[k] > cpp_counts.get(k, 0)
+            }
+            if keep_introduced_keys:
+                for s in content_suspects_keep:
+                    k = _key(s)
+                    if keep_introduced_keys.get(k, 0) > 0:
+                        s2 = dict(s)
+                        s2['introduced_by'] = 'keep'
+                        still.append(s2)
+                        keep_introduced_keys[k] -= 1
+
+            suspects = still
+            resolved_suspects.extend(resolved_by_keep)
+        except Exception as e:
+            log_info("keep-resolution failed for %s: %s" % (func_name, str(e)))
 
     # Calculate complexity metrics (Python-only)
     complexity = calculate_complexity_metrics(
@@ -559,7 +652,7 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map,
         decompiler_fixes, mmx_decompiled_code=mmx_decompiled_code,
         byval_decompiled_code=byval_decompiled_code,
         chunked_decompiled_code=chunked_decompiled_code,
-        chunked=is_chunked)
+        chunked=is_chunked, compile_source=compile_source)
     output_time = time.time() - output_start
 
     total_process_time = time.time() - process_start
@@ -1066,11 +1159,18 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False):
     global_interval_map = build_global_interval_map(globals_list)
     log_info("Built global interval map with %d entries for displaced access detection" % len(global_interval_map))
 
+    # Build combined map (globals + constants/strings) for raw-address
+    # constant detection. Dropped-symbol literals usually point at strings
+    # in the constants pool, which globals_list alone does not cover.
+    address_interval_map = build_global_interval_map(list(globals_list) + list(constants_list))
+    log_info("Built address interval map with %d entries for raw-address constant detection" % len(address_interval_map))
+
     process_start = time.time()
     for i, result in enumerate(decompile_results):
         try:
             processed = process_decompile_result(
-                result, pseudocode_src_dir, constants_map, global_interval_map)
+                result, pseudocode_src_dir, constants_map, global_interval_map,
+                address_interval_map)
 
             # Collect timing data
             function_timings.append((

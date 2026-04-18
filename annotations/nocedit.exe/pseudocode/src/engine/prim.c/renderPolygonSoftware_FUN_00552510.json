@@ -4,18 +4,17 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 514,
-    "complexity_score": 257,
+    "complexity_score": 232,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 30,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 232,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unknown_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 746
   },
   "cross_references": [
@@ -323,6 +322,26 @@
     },
     "pcode_op_count": 2428
   },
+  "resolved_suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 139,
+      "match": "._0_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar10._0_2_ = (ushort)(pSVar7->projected_vertex).screen_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 140,
+      "match": "._0_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar10._0_2_ = (ushort)uVar10 ^ 0xffff;",
+      "type": "unknown_field"
+    }
+  ],
   "stack_frame": {
     "frame_size": 40,
     "local_size": 32,
@@ -360,22 +379,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unknown/mangled field access",
-      "line": 139,
-      "match": "._0_2_",
-      "severity": "mild",
-      "text": "uVar10._0_2_ = (ushort)(pSVar7->projected_vertex).screen_y;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 140,
-      "match": "._0_2_",
-      "severity": "mild",
-      "text": "uVar10._0_2_ = (ushort)uVar10 ^ 0xffff;",
-      "type": "unknown_field"
-    }
-  ]
+  "suspects": []
 }

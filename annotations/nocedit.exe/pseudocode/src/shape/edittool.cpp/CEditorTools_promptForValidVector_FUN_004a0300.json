@@ -4,16 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 32,
+    "complexity_score": 67,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 3,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 32,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_local"
+    ],
     "total_lines": 122
   },
   "cross_references": [
@@ -249,5 +252,33 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 16,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "CVector3f local_18;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 32,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "iVar2 = sscanf(local_40,\"%f%*[ ,]%f%*[ ,]%f\",&local_18.x,&local_18.y,&local_18.z);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 32,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "iVar2 = sscanf(local_40,\"%f%*[ ,]%f%*[ ,]%f\",&local_18.x,&local_18.y,&local_18.z);",
+      "type": "unnamed_local"
+    }
+  ]
 }

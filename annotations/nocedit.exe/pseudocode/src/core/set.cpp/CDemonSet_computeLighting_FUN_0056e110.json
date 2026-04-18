@@ -4,16 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 14,
+    "complexity_score": 29,
     "cross_reference_count": 8,
     "function_call_count": 1,
     "global_count": 10,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 14,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "raw_address_constant"
+    ],
     "total_lines": 60
   },
   "cross_references": [
@@ -341,5 +344,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Raw hex literal 0x688044 matches address of g_RenderVertexBuffer (+48 bytes into) (type SRenderVertex[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 9,
+      "match": "0x688044",
+      "severity": "moderate",
+      "text": "iVar1 = start_vertex_index * 0x30 + 0x688044;",
+      "type": "raw_address_constant"
+    }
+  ]
 }

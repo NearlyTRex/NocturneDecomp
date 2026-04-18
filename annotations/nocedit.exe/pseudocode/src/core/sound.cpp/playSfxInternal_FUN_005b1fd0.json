@@ -4,17 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 665,
-    "complexity_score": 317,
+    "complexity_score": 337,
     "cross_reference_count": 6,
     "function_call_count": 27,
     "global_count": 43,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 262,
-    "suspect_count": 5,
+    "suspect_count": 7,
     "suspect_types": [
-      "format_string_mismatch"
+      "unnamed_local"
     ],
     "total_lines": 927
   },
@@ -580,6 +581,68 @@
     },
     "pcode_op_count": 2391
   },
+  "resolved_suspects": [
+    {
+      "actual_args": 0,
+      "description": "Format \"Invalid sfx string: %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Invalid sfx string: %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 52,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid sfx string: %s\");",
+      "resolution_source": "keep",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Can't find wav: %s\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Can't find wav: %s\\n",
+      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
+      "line_number": 175,
+      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"Can't find wav: %s\\n\");",
+      "resolution_source": "keep",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Invalid sfx string: %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Invalid sfx string: %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 219,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid sfx string: %s\");",
+      "resolution_source": "keep",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Invalid sfx string: %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Invalid sfx string: %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 232,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid sfx string: %s\");",
+      "resolution_source": "keep",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Invalid sfx string: %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Invalid sfx string: %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 242,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid sfx string: %s\");",
+      "resolution_source": "keep",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    }
+  ],
   "stack_frame": {
     "frame_size": 416,
     "local_size": 388,
@@ -804,59 +867,67 @@
   },
   "suspects": [
     {
-      "actual_args": 0,
-      "description": "Format \"Invalid sfx string: %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Invalid sfx string: %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 52,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid sfx string: %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 27,
+      "match": "local_114",
+      "severity": "mild",
+      "text": "char local_114 [100];",
+      "type": "unnamed_local"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"Can't find wav: %s\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Can't find wav: %s\\n",
-      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
-      "line_number": 175,
-      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"Can't find wav: %s\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 33,
+      "match": "local_34",
+      "severity": "mild",
+      "text": "int local_34;",
+      "type": "unnamed_local"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"Invalid sfx string: %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Invalid sfx string: %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 219,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid sfx string: %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 34,
+      "match": "local_30",
+      "severity": "mild",
+      "text": "int local_30;",
+      "type": "unnamed_local"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"Invalid sfx string: %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Invalid sfx string: %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 232,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid sfx string: %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 35,
+      "match": "local_2c",
+      "severity": "mild",
+      "text": "int local_2c;",
+      "type": "unnamed_local"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"Invalid sfx string: %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Invalid sfx string: %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 242,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid sfx string: %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 37,
+      "match": "local_24",
+      "severity": "mild",
+      "text": "int local_24;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 38,
+      "match": "local_20",
+      "severity": "mild",
+      "text": "int local_20;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 51,
+      "match": "local_114",
+      "severity": "mild",
+      "text": "pcVar7 = local_114;",
+      "type": "unnamed_local"
     }
   ]
 }

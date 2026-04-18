@@ -4,6 +4,7 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 810,
     "complexity_score": 322,
@@ -529,8 +530,8 @@
     },
     {
       "addr": "0067b688",
-      "name": "s_file_corrupt_0067b688",
-      "type": "TerminatedCString",
+      "name": "g_LoadSavefileStatus",
+      "type": "char[200]",
       "value": null
     },
     {
@@ -787,6 +788,17 @@
     },
     "pcode_op_count": 2701
   },
+  "resolved_suspects": [
+    {
+      "description": "Raw hex literal 0x2d82d88 matches address of g_MasterLightStateSaveBuffer (+4 bytes into) (type int[201]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 298,
+      "match": "0x2d82d88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar4 = 0x2d82d88;",
+      "type": "raw_address_constant"
+    }
+  ],
   "stack_frame": {
     "frame_size": 1608,
     "local_size": 1596,

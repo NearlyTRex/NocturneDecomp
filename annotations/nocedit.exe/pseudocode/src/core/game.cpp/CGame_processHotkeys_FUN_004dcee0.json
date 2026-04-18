@@ -4,18 +4,17 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 885,
-    "complexity_score": 274,
+    "complexity_score": 249,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 38,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 249,
-    "suspect_count": 2,
-    "suspect_types": [
-      "stack_ref"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1134
   },
   "cross_references": [
@@ -425,6 +424,26 @@
     },
     "pcode_op_count": 2941
   },
+  "resolved_suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 221,
+      "match": "&stack0xfffffe58",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&stack0xfffffe58,\"Gamma : %f\",(double)this_ptr->gamma * 1.52587890625e-05);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 222,
+      "match": "&stack0xfffffe58",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,&stack0xfffffe58,1.0);",
+      "type": "stack_ref"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -441,22 +460,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Direct stack address reference",
-      "line": 221,
-      "match": "&stack0xfffffe58",
-      "severity": "moderate",
-      "text": "(&stack0xfffffe58,\"Gamma : %f\",(double)this_ptr->gamma * 1.52587890625e-05);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 222,
-      "match": "&stack0xfffffe58",
-      "severity": "moderate",
-      "text": "core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,&stack0xfffffe58,1.0);",
-      "type": "stack_ref"
-    }
-  ]
+  "suspects": []
 }

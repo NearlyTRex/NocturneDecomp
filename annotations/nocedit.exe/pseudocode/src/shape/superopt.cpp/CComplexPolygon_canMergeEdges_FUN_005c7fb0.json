@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 221,
+    "complexity_score": 71,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 71,
-    "suspect_count": 14,
-    "suspect_types": [
-      "pointer_cast",
-      "unknown_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 234
   },
   "cross_references": [
@@ -108,6 +106,134 @@
     },
     "pcode_op_count": 937
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar3 = (double *)((int)pdVar3 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 44,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_40.x._0_4_ = local_58[0];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 45,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_40.x._4_4_ = local_58[1];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 46,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_40.y._0_4_ = local_58[2];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 47,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_40.y._4_4_ = local_58[3];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 48,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_40.z._0_4_ = local_48;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 49,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_40.z._4_4_ = uStack_44;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar2 = (double *)((int)pdVar2 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 60,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_a0.x._0_4_ = local_28[0];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 61,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_a0.x._4_4_ = local_28[1];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 62,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_a0.y._0_4_ = local_28[2];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 63,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_a0.y._4_4_ = local_28[3];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 64,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_a0.z._0_4_ = local_18;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 65,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_a0.z._4_4_ = uStack_14;",
+      "type": "unknown_field"
+    }
+  ],
   "stack_frame": {
     "frame_size": 176,
     "local_size": 164,
@@ -253,118 +379,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar3 = (double *)((int)pdVar3 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 44,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_40.x._0_4_ = local_58[0];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 45,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_40.x._4_4_ = local_58[1];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 46,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_40.y._0_4_ = local_58[2];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 47,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_40.y._4_4_ = local_58[3];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 48,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_40.z._0_4_ = local_48;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 49,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_40.z._4_4_ = uStack_44;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar2 = (double *)((int)pdVar2 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 60,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_a0.x._0_4_ = local_28[0];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 61,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_a0.x._4_4_ = local_28[1];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 62,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_a0.y._0_4_ = local_28[2];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 63,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_a0.y._4_4_ = local_28[3];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 64,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_a0.z._0_4_ = local_18;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 65,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_a0.z._4_4_ = uStack_14;",
-      "type": "unknown_field"
-    }
-  ]
+  "suspects": []
 }

@@ -5,18 +5,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 5057,
-    "complexity_score": 2248,
+    "complexity_score": 2663,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 177,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 2168,
-    "suspect_count": 7,
+    "suspect_count": 49,
     "suspect_types": [
-      "format_string_mismatch",
-      "stack_ref"
+      "unnamed_local"
     ],
     "total_lines": 7225
   },
@@ -1435,6 +1435,83 @@
     },
     "pcode_op_count": 18751
   },
+  "resolved_suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 375,
+      "match": "&stack0xffffe9c4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((char *)local_ec,\"( %[^ ,], %d, %d )%n\",&stack0xffffe9c4,&local_d8,&local_d4);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 385,
+      "match": "&stack0xffffe9c4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar2 = engine_dosio_c_getFileSize_FUN_00481880(\"art\",&stack0xffffe9c4);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 397,
+      "match": "&stack0xffffe9c4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(g_CGamePtr,&stack0xffffe9c4,local_d8,local_d4);",
+      "type": "stack_ref"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Event name %s is too long\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Event name %s is too long",
+      "function_name": "core_event_cpp_formatEventError_FUN_004aa2a0",
+      "line_number": 165,
+      "match": "iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0(\"Event name %s is too long\");",
+      "resolution_source": "keep",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Event name %s is not valid\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Event name %s is not valid",
+      "function_name": "core_event_cpp_formatEventError_FUN_004aa2a0",
+      "line_number": 207,
+      "match": "iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0(\"Event name %s is not valid\");",
+      "resolution_source": "keep",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"SpotLight %s doesn't exist.\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "SpotLight %s doesn't exist.",
+      "function_name": "core_event_cpp_formatEventError_FUN_004aa2a0",
+      "line_number": 226,
+      "match": "iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0(\"SpotLight %s doesn't exist.\");",
+      "resolution_source": "keep",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Can't find CDemonLight for light %s in advanceLigh...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Can't find CDemonLight for light %s in advanceLightFilter meta-command",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 233,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't find CDemonLight for light %s in advanceLightFil",
+      "resolution_source": "keep",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    }
+  ],
   "stack_frame": {
     "frame_size": 5449,
     "local_size": 5441,
@@ -2268,72 +2345,445 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 375,
-      "match": "&stack0xffffe9c4",
-      "severity": "moderate",
-      "text": "((char *)local_ec,\"( %[^ ,], %d, %d )%n\",&stack0xffffe9c4,&local_d8,&local_d4);",
-      "type": "stack_ref"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 38,
+      "match": "local_163c",
+      "severity": "mild",
+      "text": "char local_163c [256];",
+      "type": "unnamed_local"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 385,
-      "match": "&stack0xffffe9c4",
-      "severity": "moderate",
-      "text": "iVar2 = engine_dosio_c_getFileSize_FUN_00481880(\"art\",&stack0xffffe9c4);",
-      "type": "stack_ref"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 42,
+      "match": "local_12e5",
+      "severity": "mild",
+      "text": "char local_12e5 [200];",
+      "type": "unnamed_local"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 397,
-      "match": "&stack0xffffe9c4",
-      "severity": "moderate",
-      "text": "(g_CGamePtr,&stack0xffffe9c4,local_d8,local_d4);",
-      "type": "stack_ref"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 46,
+      "match": "local_fc4",
+      "severity": "mild",
+      "text": "char local_fc4 [199];",
+      "type": "unnamed_local"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"Event name %s is too long\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Event name %s is too long",
-      "function_name": "core_event_cpp_formatEventError_FUN_004aa2a0",
-      "line_number": 165,
-      "match": "iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0(\"Event name %s is too long\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 48,
+      "match": "local_e35",
+      "severity": "mild",
+      "text": "char local_e35 [200];",
+      "type": "unnamed_local"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"Event name %s is not valid\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Event name %s is not valid",
-      "function_name": "core_event_cpp_formatEventError_FUN_004aa2a0",
-      "line_number": 207,
-      "match": "iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0(\"Event name %s is not valid\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 56,
+      "match": "local_7f4",
+      "severity": "mild",
+      "text": "char local_7f4 [199];",
+      "type": "unnamed_local"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"SpotLight %s doesn't exist.\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "SpotLight %s doesn't exist.",
-      "function_name": "core_event_cpp_formatEventError_FUN_004aa2a0",
-      "line_number": 226,
-      "match": "iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0(\"SpotLight %s doesn't exist.\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 62,
+      "match": "local_344",
+      "severity": "mild",
+      "text": "char local_344 [99];",
+      "type": "unnamed_local"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"Can't find CDemonLight for light %s in advanceLigh...\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Can't find CDemonLight for light %s in advanceLightFilter meta-command",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 233,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't find CDemonLight for light %s in advanceLightFil",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 63,
+      "match": "local_2e1",
+      "severity": "mild",
+      "text": "char local_2e1 [101];",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 64,
+      "match": "local_27c",
+      "severity": "mild",
+      "text": "char local_27c [99];",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 65,
+      "match": "local_219",
+      "severity": "mild",
+      "text": "char local_219 [101];",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 79,
+      "match": "local_e4",
+      "severity": "mild",
+      "text": "int local_e4;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 83,
+      "match": "local_d0",
+      "severity": "mild",
+      "text": "int local_d0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 86,
+      "match": "local_c4",
+      "severity": "mild",
+      "text": "int local_c4;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 89,
+      "match": "local_b8",
+      "severity": "mild",
+      "text": "int local_b8;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 90,
+      "match": "local_b4",
+      "severity": "mild",
+      "text": "int local_b4;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 93,
+      "match": "local_a8",
+      "severity": "mild",
+      "text": "int local_a8;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 94,
+      "match": "local_a4",
+      "severity": "mild",
+      "text": "int local_a4;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 98,
+      "match": "local_94",
+      "severity": "mild",
+      "text": "int local_94;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 100,
+      "match": "local_8c",
+      "severity": "mild",
+      "text": "int local_8c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 102,
+      "match": "local_84",
+      "severity": "mild",
+      "text": "int local_84;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 104,
+      "match": "local_7c",
+      "severity": "mild",
+      "text": "int local_7c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 106,
+      "match": "local_74",
+      "severity": "mild",
+      "text": "int local_74;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 108,
+      "match": "local_6c",
+      "severity": "mild",
+      "text": "int local_6c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 112,
+      "match": "local_5c",
+      "severity": "mild",
+      "text": "int local_5c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 113,
+      "match": "local_58",
+      "severity": "mild",
+      "text": "int local_58;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 117,
+      "match": "local_48",
+      "severity": "mild",
+      "text": "int local_48;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 119,
+      "match": "local_40",
+      "severity": "mild",
+      "text": "int local_40;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 121,
+      "match": "local_38",
+      "severity": "mild",
+      "text": "int local_38;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 122,
+      "match": "local_34",
+      "severity": "mild",
+      "text": "int local_34;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 126,
+      "match": "local_24",
+      "severity": "mild",
+      "text": "int local_24;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 127,
+      "match": "local_20",
+      "severity": "mild",
+      "text": "int local_20;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 128,
+      "match": "local_1c",
+      "severity": "mild",
+      "text": "int local_1c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 129,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "int local_18;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 230,
+      "match": "local_fc4",
+      "severity": "mild",
+      "text": "pcVar18 = core_event_cpp_extractParenArg_FUN_004aa6c0((char **)&local_ec,local_fc4,200);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 255,
+      "match": "local_e4",
+      "severity": "mild",
+      "text": "local_e4 = -1;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 256,
+      "match": "local_e4",
+      "severity": "mild",
+      "text": "sscanf((char *)local_ec,\"( %f , %n\",local_e0,&local_e4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 257,
+      "match": "local_e4",
+      "severity": "mild",
+      "text": "if (local_e4 < 0) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 384,
+      "match": "local_163c",
+      "severity": "mild",
+      "text": "((char *)local_ec,\"( %[^ ,], %d, %d )%n\",local_163c,&local_d8,&local_d4,&local_d0);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 394,
+      "match": "local_163c",
+      "severity": "mild",
+      "text": "iVar2 = engine_dosio_c_getFileSize_FUN_00481880(\"art\",local_163c);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 406,
+      "match": "local_163c",
+      "severity": "mild",
+      "text": "(g_CGamePtr,local_163c,local_d8,local_d4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 723,
+      "match": "local_a4",
+      "severity": "mild",
+      "text": "local_a4 = -1;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 728,
+      "match": "local_a4",
+      "severity": "mild",
+      "text": "&local_9c,&local_a4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 878,
+      "match": "local_8c",
+      "severity": "mild",
+      "text": "local_8c = -1;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 990,
+      "match": "local_7c",
+      "severity": "mild",
+      "text": "local_7c = -1;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 1206,
+      "match": "local_6c",
+      "severity": "mild",
+      "text": "local_6c = -1;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 1320,
+      "match": "local_7f4",
+      "severity": "mild",
+      "text": "((char *)local_ec,\"( %[^ ,] , %d )%n\",local_7f4,",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 1900,
+      "match": "local_1c",
+      "severity": "mild",
+      "text": "local_1c = -1;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 1984,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "local_18 = -1;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 1987,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "local_bdd + 1,local_59d + 1,&local_18);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 1988,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "if (local_18 < 5) {",
+      "type": "unnamed_local"
     }
   ]
 }

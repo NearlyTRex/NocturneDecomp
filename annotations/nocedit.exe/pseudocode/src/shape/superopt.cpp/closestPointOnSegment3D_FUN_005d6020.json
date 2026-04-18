@@ -4,20 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 238,
-    "complexity_score": 330,
+    "complexity_score": 185,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 170,
-    "suspect_count": 14,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_many",
-      "pointer_cast",
-      "sub84_truncation",
-      "unknown_field"
+      "param_count_too_many"
     ],
     "total_lines": 408
   },
@@ -108,6 +106,125 @@
     },
     "pcode_op_count": 1187
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_14 = *(uint *)((int)&segment_start->x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_34 = *(uint *)((int)&segment_start->y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_1c = *(uint *)((int)&segment_end->x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_2c = *(uint *)((int)&segment_end->y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 88,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_24 = *(uint *)((int)&query_point->x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 91,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar2 = *(uint *)((int)&query_point->y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 96,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 116,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 129,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_158 = SUB84(__BITCAST_UINT64(dVar3),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 141,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_14c = local_148._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 165,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 169,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&out_point->x + 4) = local_98[1];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 171,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&out_point->y + 4) = local_98[3];",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 376,
     "local_size": 364,
@@ -555,110 +672,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 71,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_14 = *(uint *)((int)&segment_start->x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 73,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_34 = *(uint *)((int)&segment_start->y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 81,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_1c = *(uint *)((int)&segment_end->x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 84,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_2c = *(uint *)((int)&segment_end->y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 88,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_24 = *(uint *)((int)&query_point->x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 91,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uVar2 = *(uint *)((int)&query_point->y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 96,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 116,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 129,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "local_158 = SUB84(__BITCAST_UINT64(dVar3),0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 141,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_14c = local_148._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 165,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 169,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&out_point->x + 4) = local_98[1];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 171,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&out_point->y + 4) = local_98[3];",
-      "type": "pointer_cast"
-    },
     {
       "call_site_count": 1,
       "declared_params": 4,

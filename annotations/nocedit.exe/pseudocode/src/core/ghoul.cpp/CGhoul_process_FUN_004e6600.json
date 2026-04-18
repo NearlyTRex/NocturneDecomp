@@ -5,20 +5,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2368,
-    "complexity_score": 1778,
+    "complexity_score": 1213,
     "cross_reference_count": 0,
     "function_call_count": 40,
     "global_count": 71,
-    "max_suspect_severity": "severe",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 1053,
-    "suspect_count": 70,
+    "suspect_count": 15,
     "suspect_types": [
-      "fnstsw_flag_artifact",
-      "stack_param",
-      "stack_ref",
-      "unresolved_funcptr",
+      "unnamed_local",
       "warning_inlined_function"
     ],
     "total_lines": 3421
@@ -726,6 +724,629 @@
     },
     "pcode_op_count": 10623
   },
+  "resolved_suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 32,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "char *in_stack_fffffc88;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_fffffc8c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CGore *in_stack_fffffc8c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_fffffc94",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CGhoul *in_stack_fffffc94;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 146,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)(this_ptr->base).victim;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 147,
+      "match": "code *",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar14 = (**(code **)((int)(&((UOrientationVector *)",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 148,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CPathMap *)in_stack_fffffc88)->height_cache)->vec)[0x18].y +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 149,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "0x108))((CCharacter *)in_stack_fffffc88);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 151,
+      "match": "in_stack_fffffc8c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc8c = (CGore *)0x0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 153,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)this_ptr;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 158,
+      "match": "in_stack_fffffc94",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc94 = (CGhoul *)&local_1c8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 161,
+      "match": "in_stack_fffffc8c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc8c = (CGore *)0x4e6aec;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 163,
+      "match": "in_stack_fffffc94",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CDemonActor *)this_ptr,(CVector3f *)in_stack_fffffc94,&local_174);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 171,
+      "match": "in_stack_fffffc8c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc8c = (CGore *)0x4e6b5b;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 172,
+      "match": "in_stack_fffffc94",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc94 = this_ptr;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 212,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)0x4e6c71;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 221,
+      "match": "in_stack_fffffc94",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc94 = (CGhoul *)&local_29c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 225,
+      "match": "in_stack_fffffc8c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc8c = (CGore *)0x4e6cc0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 227,
+      "match": "in_stack_fffffc94",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pCVar3,(SDamageInfo *)in_stack_fffffc94);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 232,
+      "match": "in_stack_fffffc94",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc94 = (CGhoul *)0x0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 233,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)0x4e6d0a;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 234,
+      "match": "in_stack_fffffc8c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc8c = g_CGorePtr;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 241,
+      "match": "in_stack_fffffc94",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc94 = (CGhoul *)0x4e6d3f;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 251,
+      "match": "in_stack_fffffc8c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc8c = (CGore *)0x1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 254,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)pCVar11;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 258,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)0x1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 371,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)0x4e75e4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 375,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)this_ptr;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 440,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)0x4e77fa;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 443,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)&(this_ptr->base).base.model;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 445,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CMotionController *)in_stack_fffffc88,0,1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 467,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)(*((pCVar3->base).vtable._ub)->getPathMap)(&pCVar3->base);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 471,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CPathMap *)in_stack_fffffc88,pCVar12,fVar23,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 472,
+      "match": "in_stack_fffffc94",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(float)in_stack_fffffc94);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 474,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)0x4e7a07;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 532,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)(*((pCVar14->vtable)._ub)->getPathMap)(pCVar14);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 536,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CPathMap *)in_stack_fffffc88,pCVar12,fVar23,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 537,
+      "match": "in_stack_fffffc94",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(float)in_stack_fffffc94);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 539,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)0x4e777f;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 549,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)0x4e77bc;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 585,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)0x3db2b8c2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 599,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(float)in_stack_fffffc88,(float)in_stack_fffffc8c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 599,
+      "match": "in_stack_fffffc8c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(float)in_stack_fffffc88,(float)in_stack_fffffc8c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 601,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)0x4e7b00;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 605,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)&(this_ptr->base).base.model;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 607,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CMotionController *)in_stack_fffffc88,this_ptr->pending_eat_state,1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 611,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)this_ptr;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 620,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)0x1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 636,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)0x3f000000;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 644,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)pCVar11;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 654,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)&local_2d8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 666,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&this_ptr->base,pCVar12,fVar23,(SDamageInfo *)in_stack_fffffc88);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 668,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = \"gh-hits?.wav\";",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 676,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)0x1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 804,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)(this_ptr->base).victim;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 806,
+      "match": "code *",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(**(code **)((int)(&((UOrientationVector *)",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 807,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CPathMap *)in_stack_fffffc88)->height_cache)->vec)[0x18].y",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 808,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "+ 0x108))((CCharacter *)in_stack_fffffc88);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 810,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)0x1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 822,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)0x3f000000;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 830,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)pCVar11;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 841,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)&local_314;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 853,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&this_ptr->base,pCVar12,fVar23,(SDamageInfo *)in_stack_fffffc88);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 855,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = \"gh-hits?.wav\";",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 871,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)CONCAT22((short)((uint)local_14 >> 0x10),in_FPUControlWord);",
+      "type": "stack_param"
+    },
+    {
+      "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
+      "line": 871,
+      "match": "CONCAT22((short)((uint)local_14 >> 0x10",
+      "resolution_source": "keep",
+      "severity": "severe",
+      "text": "in_stack_fffffc88 = (char *)CONCAT22((short)((uint)local_14 >> 0x10),in_FPUControlWord);",
+      "type": "fnstsw_flag_artifact"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 876,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "in_stack_fffffc88 = (char *)0x0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 896,
+      "match": "in_stack_fffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(float)in_stack_fffffc88);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 997,
+      "match": "&stack0xfffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&stack0xfffffc88,\"ghoul-walk-?.wav *%f\",(double)(this_ptr->base).speed);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 999,
+      "match": "&stack0xfffffc88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CDemonActor *)this_ptr,&stack0xfffffc88);",
+      "type": "stack_ref"
+    }
+  ],
   "stack_frame": {
     "frame_size": 908,
     "local_size": 900,
@@ -1595,556 +2216,130 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "char *in_stack_fffffc88;",
-      "type": "stack_param"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 44,
+      "match": "local_260",
+      "severity": "mild",
+      "text": "char local_260 [32];",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_fffffc8c",
-      "severity": "moderate",
-      "text": "CGore *in_stack_fffffc8c;",
-      "type": "stack_param"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 66,
+      "match": "local_174",
+      "severity": "mild",
+      "text": "CVector3f local_174;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_fffffc94",
-      "severity": "moderate",
-      "text": "CGhoul *in_stack_fffffc94;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 146,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)(this_ptr->base).victim;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 147,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "pCVar14 = (**(code **)((int)(&((UOrientationVector *)",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 148,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "((CPathMap *)in_stack_fffffc88)->height_cache)->vec)[0x18].y +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
       "line": 149,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "0x108))((CCharacter *)in_stack_fffffc88);",
-      "type": "stack_param"
+      "match": "local_174",
+      "severity": "mild",
+      "text": "local_174.z = 2.5f;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 150,
+      "match": "local_174",
+      "severity": "mild",
+      "text": "local_174.x = 0.0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
       "line": 151,
-      "match": "in_stack_fffffc8c",
-      "severity": "moderate",
-      "text": "in_stack_fffffc8c = (CGore *)0x0;",
-      "type": "stack_param"
+      "match": "local_174",
+      "severity": "mild",
+      "text": "local_174.y = 0.0;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
       "line": 153,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)this_ptr;",
-      "type": "stack_param"
+      "match": "local_174",
+      "severity": "mild",
+      "text": "((CDemonActor *)this_ptr,(CVector3f *)&local_1c8,&local_174);",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 158,
-      "match": "in_stack_fffffc94",
-      "severity": "moderate",
-      "text": "in_stack_fffffc94 = (CGhoul *)&local_1c8;",
-      "type": "stack_param"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 297,
+      "match": "local_260",
+      "severity": "mild",
+      "text": "pcVar18 = local_260;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 161,
-      "match": "in_stack_fffffc8c",
-      "severity": "moderate",
-      "text": "in_stack_fffffc8c = (CGore *)0x4e6aec;",
-      "type": "stack_param"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 435,
+      "match": "local_174",
+      "severity": "mild",
+      "text": "local_174.x = 0.0;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 163,
-      "match": "in_stack_fffffc94",
-      "severity": "moderate",
-      "text": "((CDemonActor *)this_ptr,(CVector3f *)in_stack_fffffc94,&local_174);",
-      "type": "stack_param"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 436,
+      "match": "local_174",
+      "severity": "mild",
+      "text": "local_174.y = 0.0;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 171,
-      "match": "in_stack_fffffc8c",
-      "severity": "moderate",
-      "text": "in_stack_fffffc8c = (CGore *)0x4e6b5b;",
-      "type": "stack_param"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 437,
+      "match": "local_174",
+      "severity": "mild",
+      "text": "local_174.z = 2.5f;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 172,
-      "match": "in_stack_fffffc94",
-      "severity": "moderate",
-      "text": "in_stack_fffffc94 = this_ptr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 212,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)0x4e6c71;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 221,
-      "match": "in_stack_fffffc94",
-      "severity": "moderate",
-      "text": "in_stack_fffffc94 = (CGhoul *)&local_29c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 225,
-      "match": "in_stack_fffffc8c",
-      "severity": "moderate",
-      "text": "in_stack_fffffc8c = (CGore *)0x4e6cc0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 227,
-      "match": "in_stack_fffffc94",
-      "severity": "moderate",
-      "text": "(pCVar3,(SDamageInfo *)in_stack_fffffc94);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 232,
-      "match": "in_stack_fffffc94",
-      "severity": "moderate",
-      "text": "in_stack_fffffc94 = (CGhoul *)0x0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 233,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)0x4e6d0a;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 234,
-      "match": "in_stack_fffffc8c",
-      "severity": "moderate",
-      "text": "in_stack_fffffc8c = g_CGorePtr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 241,
-      "match": "in_stack_fffffc94",
-      "severity": "moderate",
-      "text": "in_stack_fffffc94 = (CGhoul *)0x4e6d3f;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 251,
-      "match": "in_stack_fffffc8c",
-      "severity": "moderate",
-      "text": "in_stack_fffffc8c = (CGore *)0x1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 254,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)pCVar11;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 258,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)0x1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 371,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)0x4e75e4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 375,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)this_ptr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 440,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)0x4e77fa;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
       "line": 443,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)&(this_ptr->base).base.model;",
-      "type": "stack_param"
+      "match": "local_174",
+      "severity": "mild",
+      "text": "pCVar11,&local_174,1.0f,fVar23);",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 445,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "((CMotionController *)in_stack_fffffc88,0,1);",
-      "type": "stack_param"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 551,
+      "match": "local_174",
+      "severity": "mild",
+      "text": "local_174.x = 0.0;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 467,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)(*((pCVar3->base).vtable._ub)->getPathMap)(&pCVar3->base);",
-      "type": "stack_param"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 552,
+      "match": "local_174",
+      "severity": "mild",
+      "text": "local_174.y = 0.0;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 471,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "(CPathMap *)in_stack_fffffc88,pCVar12,fVar23,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 472,
-      "match": "in_stack_fffffc94",
-      "severity": "moderate",
-      "text": "(float)in_stack_fffffc94);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 474,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)0x4e7a07;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 532,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)(*((pCVar14->vtable)._ub)->getPathMap)(pCVar14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 536,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "(CPathMap *)in_stack_fffffc88,pCVar12,fVar23,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 537,
-      "match": "in_stack_fffffc94",
-      "severity": "moderate",
-      "text": "(float)in_stack_fffffc94);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 539,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)0x4e777f;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 549,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)0x4e77bc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 585,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)0x3db2b8c2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 599,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "(float)in_stack_fffffc88,(float)in_stack_fffffc8c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 599,
-      "match": "in_stack_fffffc8c",
-      "severity": "moderate",
-      "text": "(float)in_stack_fffffc88,(float)in_stack_fffffc8c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 601,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)0x4e7b00;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 605,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)&(this_ptr->base).base.model;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 607,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "((CMotionController *)in_stack_fffffc88,this_ptr->pending_eat_state,1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 611,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)this_ptr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 620,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)0x1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 636,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)0x3f000000;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 644,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)pCVar11;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 654,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)&local_2d8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 666,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "(&this_ptr->base,pCVar12,fVar23,(SDamageInfo *)in_stack_fffffc88);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 668,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = \"gh-hits?.wav\";",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 676,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)0x1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 804,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)(this_ptr->base).victim;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 806,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)((int)(&((UOrientationVector *)",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 807,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "((CPathMap *)in_stack_fffffc88)->height_cache)->vec)[0x18].y",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 808,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "+ 0x108))((CCharacter *)in_stack_fffffc88);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 810,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)0x1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 822,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)0x3f000000;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 830,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)pCVar11;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 841,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)&local_314;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 853,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "(&this_ptr->base,pCVar12,fVar23,(SDamageInfo *)in_stack_fffffc88);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 855,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = \"gh-hits?.wav\";",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 871,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)CONCAT22((short)((uint)local_14 >> 0x10),in_FPUControlWord);",
-      "type": "stack_param"
-    },
-    {
-      "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
-      "line": 871,
-      "match": "CONCAT22((short)((uint)local_14 >> 0x10",
-      "severity": "severe",
-      "text": "in_stack_fffffc88 = (char *)CONCAT22((short)((uint)local_14 >> 0x10),in_FPUControlWord);",
-      "type": "fnstsw_flag_artifact"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 876,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "in_stack_fffffc88 = (char *)0x0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 896,
-      "match": "in_stack_fffffc88",
-      "severity": "moderate",
-      "text": "(float)in_stack_fffffc88);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 997,
-      "match": "&stack0xfffffc88",
-      "severity": "moderate",
-      "text": "(&stack0xfffffc88,\"ghoul-walk-?.wav *%f\",(double)(this_ptr->base).speed);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 999,
-      "match": "&stack0xfffffc88",
-      "severity": "moderate",
-      "text": "((CDemonActor *)this_ptr,&stack0xfffffc88);",
-      "type": "stack_ref"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 553,
+      "match": "local_174",
+      "severity": "mild",
+      "text": "local_174.z = local_2c;",
+      "type": "unnamed_local"
     }
   ],
   "vtable_info": {

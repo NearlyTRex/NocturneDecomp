@@ -4,18 +4,17 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 662,
-    "complexity_score": 482,
+    "complexity_score": 277,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 277,
-    "suspect_count": 20,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 939
   },
   "cross_references": [
@@ -138,6 +137,188 @@
     },
     "pcode_op_count": 3175
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 86,
+      "match": "(CVector3d *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pCVar12 = (CVector3d *)((int)pCVar12 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 95,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar10 = (double *)((int)pdVar10 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 145,
+      "match": "(SExpandedEdge *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 146,
+      "match": "(SExpandedEdge *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 150,
+      "match": "(SExpandedEdge *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 151,
+      "match": "(SExpandedEdge *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 160,
+      "match": "(SExpandedEdge *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 161,
+      "match": "(SExpandedEdge *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 165,
+      "match": "(SExpandedEdge *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 166,
+      "match": "(SExpandedEdge *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 181,
+      "match": "(CVector3d *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pCVar8 = (CVector3d *)((int)pCVar8 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 193,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar7 = (double *)((int)pdVar7 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 230,
+      "match": "(SExpandedEdge *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 231,
+      "match": "(SExpandedEdge *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 235,
+      "match": "(SExpandedEdge *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 236,
+      "match": "(SExpandedEdge *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 250,
+      "match": "(SExpandedEdge *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 251,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "piVar9 = (int *)((int)piVar9 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 254,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "piVar9 = (int *)((int)piVar9 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 256,
+      "match": "(SExpandedEdge *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 308,
     "local_size": 304,
@@ -357,166 +538,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 86,
-      "match": "(CVector3d *)((int)",
-      "severity": "mild",
-      "text": "pCVar12 = (CVector3d *)((int)pCVar12 + (uint)bVar10 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 95,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar10 = (double *)((int)pdVar10 + (uint)bVar10 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 145,
-      "match": "(SExpandedEdge *)((int)",
-      "severity": "mild",
-      "text": "pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 146,
-      "match": "(SExpandedEdge *)((int)",
-      "severity": "mild",
-      "text": "pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 150,
-      "match": "(SExpandedEdge *)((int)",
-      "severity": "mild",
-      "text": "pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 151,
-      "match": "(SExpandedEdge *)((int)",
-      "severity": "mild",
-      "text": "pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 160,
-      "match": "(SExpandedEdge *)((int)",
-      "severity": "mild",
-      "text": "pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 161,
-      "match": "(SExpandedEdge *)((int)",
-      "severity": "mild",
-      "text": "pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 165,
-      "match": "(SExpandedEdge *)((int)",
-      "severity": "mild",
-      "text": "pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 166,
-      "match": "(SExpandedEdge *)((int)",
-      "severity": "mild",
-      "text": "pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 181,
-      "match": "(CVector3d *)((int)",
-      "severity": "mild",
-      "text": "pCVar8 = (CVector3d *)((int)pCVar8 + (uint)bVar10 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 193,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar7 = (double *)((int)pdVar7 + (uint)bVar10 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 230,
-      "match": "(SExpandedEdge *)((int)",
-      "severity": "mild",
-      "text": "pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 231,
-      "match": "(SExpandedEdge *)((int)",
-      "severity": "mild",
-      "text": "pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 235,
-      "match": "(SExpandedEdge *)((int)",
-      "severity": "mild",
-      "text": "pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 236,
-      "match": "(SExpandedEdge *)((int)",
-      "severity": "mild",
-      "text": "pSVar13 = (SExpandedEdge *)((int)pSVar13 + (uint)bVar10 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 250,
-      "match": "(SExpandedEdge *)((int)",
-      "severity": "mild",
-      "text": "pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 251,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "piVar9 = (int *)((int)piVar9 + (uint)bVar10 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 254,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "piVar9 = (int *)((int)piVar9 + (uint)bVar10 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 256,
-      "match": "(SExpandedEdge *)((int)",
-      "severity": "mild",
-      "text": "pSVar11 = (SExpandedEdge *)((int)pSVar11 + (uint)bVar10 * -2 + 1);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

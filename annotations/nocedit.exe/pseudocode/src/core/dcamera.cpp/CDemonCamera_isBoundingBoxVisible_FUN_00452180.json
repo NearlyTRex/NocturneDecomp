@@ -4,18 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 362,
-    "complexity_score": 184,
+    "complexity_score": 194,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 16,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 139,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
-      "stack_ref",
+      "unnamed_local",
       "warning_inlined_function"
     ],
     "total_lines": 501
@@ -244,6 +245,17 @@
     },
     "pcode_op_count": 1614
   },
+  "resolved_suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 109,
+      "match": "&stack0xfffffed4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(CVector3i *)&stack0xfffffed4);",
+      "type": "stack_ref"
+    }
+  ],
   "stack_frame": {
     "frame_size": 316,
     "local_size": 296,
@@ -683,20 +695,30 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 109,
-      "match": "&stack0xfffffed4",
-      "severity": "moderate",
-      "text": "(CVector3i *)&stack0xfffffed4);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 131,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar1 = (uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 19,
+      "match": "local_130",
+      "severity": "mild",
+      "text": "CVector3i local_130;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 118,
+      "match": "local_130",
+      "severity": "mild",
+      "text": "&local_130);",
+      "type": "unnamed_local"
     }
   ]
 }

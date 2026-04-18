@@ -1,4 +1,5 @@
 {
+  "compile_source": "c",
   "complexity": {
     "assembly_lines": 110,
     "complexity_score": 303,
@@ -310,6 +311,22 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Cast-and-add on &g_DaysInMonth_Normal \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: SHORT_00665f50 (at 0x00665f50, +24 bytes).",
+      "line": 15,
+      "match": "g_DaysInMonth_Normal",
+      "severity": "moderate",
+      "text": "iVar5 = *(int *)(&g_DaysInMonth_Normal + *(int *)(param_1 + 0x10));",
+      "type": "suspicious_cast"
+    },
+    {
+      "description": "Cast-and-add on &g_DaysInMonth_Leap \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_StreambufVTable (at 0x00665f70, +30 bytes).",
+      "line": 19,
+      "match": "g_DaysInMonth_Leap",
+      "severity": "moderate",
+      "text": "iVar5 = *(int *)(&g_DaysInMonth_Leap + *(int *)(param_1 + 0x10));",
+      "type": "suspicious_cast"
+    },
+    {
       "call_site_count": 2,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
@@ -341,22 +358,6 @@
       "severity": "moderate",
       "text": "// 0060788f: MOV EAX,dword ptr [EAX*0x2 + 0x665f50]  ; SHORT_00665f50",
       "type": "displaced_global_access"
-    },
-    {
-      "description": "Cast-and-add on &g_DaysInMonth_Normal \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: SHORT_00665f50 (at 0x00665f50, +24 bytes).",
-      "line": 15,
-      "match": "g_DaysInMonth_Normal",
-      "severity": "moderate",
-      "text": "iVar5 = *(int *)(&g_DaysInMonth_Normal + *(int *)(param_1 + 0x10));",
-      "type": "suspicious_cast"
-    },
-    {
-      "description": "Cast-and-add on &g_DaysInMonth_Leap \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_StreambufVTable (at 0x00665f70, +30 bytes).",
-      "line": 19,
-      "match": "g_DaysInMonth_Leap",
-      "severity": "moderate",
-      "text": "iVar5 = *(int *)(&g_DaysInMonth_Leap + *(int *)(param_1 + 0x10));",
-      "type": "suspicious_cast"
     }
   ]
 }

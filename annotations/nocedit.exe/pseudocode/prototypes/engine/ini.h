@@ -33,7 +33,7 @@ void __cdecl writeProfileString(char *section,char *key,char *value,char *filena
 
 // Original: engine_ini.cpp_CIniFile_ctor_FUN_004fba70
 // Address: 004fba70
-CIniFile * __cdecl CIniFile::ctor(CIniFile *this_ptr,char *filename,int read_mode);
+CIniFile * __cdecl CIniFile::ctor(CIniFile *this_ptr,char *filename,char *section);
 
 // Original: engine_ini.cpp_CIniFile_init_FUN_004fbaa0
 // Address: 004fbaa0

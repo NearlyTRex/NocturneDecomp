@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 541,
-    "complexity_score": 183,
+    "complexity_score": 148,
     "cross_reference_count": 1,
     "function_call_count": 29,
     "global_count": 41,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 133,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_ref",
-      "unknown_field"
+      "pointer_cast"
     ],
     "total_lines": 674
   },
@@ -496,6 +496,44 @@
     },
     "pcode_op_count": 1783
   },
+  "resolved_suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 50,
+      "match": "._252_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "acStack_138._252_4_ = (g_CSlewPtr->position).x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 74,
+      "match": "._252_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "if (((((float)acStack_138._252_4_ != (g_CSlewPtr->position).x) ||",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 87,
+      "match": "&stack0xfffffae0",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr,g_MouseX,g_MouseY,(int *)&stack0xfffffae0,-1);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 92,
+      "match": "&stack0xfffffae0",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)(&stack0xfffffae0 + iVar11);",
+      "type": "stack_ref"
+    }
+  ],
   "stack_frame": {
     "frame_size": 320,
     "local_size": 316,
@@ -591,36 +629,13 @@
   },
   "suspects": [
     {
-      "description": "Unknown/mangled field access",
-      "line": 50,
-      "match": "._252_4_",
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 101,
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "acStack_138._252_4_ = (g_CSlewPtr->position).x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 74,
-      "match": "._252_4_",
-      "severity": "mild",
-      "text": "if (((((float)acStack_138._252_4_ != (g_CSlewPtr->position).x) ||",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 87,
-      "match": "&stack0xfffffae0",
-      "severity": "moderate",
-      "text": "(this_ptr,g_MouseX,g_MouseY,(int *)&stack0xfffffae0,-1);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 92,
-      "match": "&stack0xfffffae0",
-      "severity": "moderate",
-      "text": "piVar1 = (int *)(&stack0xfffffae0 + iVar11);",
-      "type": "stack_ref"
+      "text": "piVar1 = (int *)((int)visible_cameras + iVar11);",
+      "type": "pointer_cast"
     }
   ]
 }

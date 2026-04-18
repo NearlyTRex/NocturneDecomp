@@ -82,7 +82,7 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 005073d0
     PUSH EAX                            ; 005073d4
     CALL engine_ini.cpp_CIniFile_ctor_FUN_004fba70 ; 005073d5
-        ;   XREF to: 004fba70 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004fba70(CIniFile * this_ptr, char * filename, int read_mode)
+        ;   XREF to: 004fba70 (UNCONDITIONAL_CALL)  ; CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004fba70(CIniFile * this_ptr, char * filename, char * section)
     ADD ESP,0xc                         ; 005073da
     LEA EAX,[ESP + 0x514]               ; 005073dd
     PUSH EAX                            ; 005073e4
@@ -407,7 +407,7 @@ section .text
     MOV EAX,[0x0067b654]                ; 00507775 | g_CGameInstance | g_CGamePtr
     PUSH EAX                            ; 0050777a | g_CGameInstance
     CALL core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 ; 0050777b
-        ;   XREF to: 004e1cb0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame * this_ptr, int unknown)
+        ;   XREF to: 004e1cb0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame * this_ptr, int select_mode)
     ADD ESP,0x8                         ; 00507780
     JMP 0x00507522                      ; 00507783
         ;   XREF to: 00507522 (UNCONDITIONAL_JUMP)  ; LAB_00507522

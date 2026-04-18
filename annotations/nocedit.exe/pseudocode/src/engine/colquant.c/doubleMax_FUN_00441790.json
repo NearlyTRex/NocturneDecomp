@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 112,
+    "complexity_score": 27,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 12,
-    "suspect_count": 9,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "unknown_field"
+      "param_count_too_few"
     ],
     "total_lines": 43
   },
@@ -158,6 +158,80 @@
     },
     "pcode_op_count": 123
   },
+  "resolved_suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 8,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_18._0_4_ = b._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 8,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_18._0_4_ = b._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 9,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "a._4_4_ = b._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 9,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "a._4_4_ = b._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 12,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_18._0_4_ = a._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 12,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_18._0_4_ = a._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 14,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "return __BITCAST_DOUBLE(CONCAT44(a._4_4_,local_18._0_4_));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 14,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "return __BITCAST_DOUBLE(CONCAT44(a._4_4_,local_18._0_4_));",
+      "type": "unknown_field"
+    }
+  ],
   "stack_frame": {
     "frame_size": 44,
     "local_size": 28,
@@ -206,70 +280,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Unknown/mangled field access",
-      "line": 8,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_18._0_4_ = b._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 8,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_18._0_4_ = b._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 9,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "a._4_4_ = b._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 9,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "a._4_4_ = b._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 12,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_18._0_4_ = a._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 12,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_18._0_4_ = a._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 14,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "return __BITCAST_DOUBLE(CONCAT44(a._4_4_,local_18._0_4_));",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 14,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "return __BITCAST_DOUBLE(CONCAT44(a._4_4_,local_18._0_4_));",
-      "type": "unknown_field"
-    },
     {
       "call_site_count": 7,
       "declared_params": 2,

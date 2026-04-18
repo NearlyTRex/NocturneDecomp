@@ -4,15 +4,16 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 383,
-    "complexity_score": 173,
+    "complexity_score": 163,
     "cross_reference_count": 1,
     "function_call_count": 24,
     "global_count": 26,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 148,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -369,6 +370,17 @@
     },
     "pcode_op_count": 1351
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 103,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "puVar1 = (uint *)((int)&this_ptr->parsed_lines->line_number + iVar2);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 1952,
     "local_size": 1940,
@@ -479,14 +491,6 @@
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar2 = (uint *)((int)&this_ptr->parsed_lines->text + iVar2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 103,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar1 = (uint *)((int)&this_ptr->parsed_lines->line_number + iVar2);",
       "type": "pointer_cast"
     }
   ]

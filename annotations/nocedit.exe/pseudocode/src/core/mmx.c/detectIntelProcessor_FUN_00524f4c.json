@@ -4,20 +4,20 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 187,
+    "complexity_score": 172,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 10,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 77,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
       "cpuid_assembly",
       "cpuid_intrinsic",
       "special_cpu_detection",
-      "unresolved_register",
       "warning_overlapping_globals",
       "warning_unreachable"
     ],
@@ -142,6 +142,17 @@
     },
     "pcode_op_count": 700
   },
+  "resolved_suspects": [
+    {
+      "description": "Unresolved register reference",
+      "line": 56,
+      "match": "register0x0000000c",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "register0x0000000c = piVar3[1];",
+      "type": "unresolved_register"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -314,14 +325,6 @@
       "severity": "mild",
       "text": "piVar3 = (int *)cpuid_basic_info(0);",
       "type": "cpuid_intrinsic"
-    },
-    {
-      "description": "Unresolved register reference",
-      "line": 56,
-      "match": "register0x0000000c",
-      "severity": "mild",
-      "text": "register0x0000000c = piVar3[1];",
-      "type": "unresolved_register"
     },
     {
       "description": "CPUID intrinsic (CPU detection)",

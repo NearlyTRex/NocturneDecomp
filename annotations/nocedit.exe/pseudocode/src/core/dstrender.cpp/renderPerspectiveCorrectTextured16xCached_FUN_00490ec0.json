@@ -4,17 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 589,
-    "complexity_score": 372,
+    "complexity_score": 397,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 56,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 357,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "raw_address_constant"
     ],
     "total_lines": 946
   },
@@ -490,6 +492,22 @@
       "severity": "mild",
       "text": "g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Raw hex literal 0x1000000 matches address of g_LightBufferPool (+4087288 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 71,
+      "match": "0x1000000",
+      "severity": "moderate",
+      "text": "g_PerspectiveLeftW * 0x1000000) / (longlong)(int)g_PerspectiveRightW);",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x1000000 matches address of g_LightBufferPool (+4087288 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 74,
+      "match": "0x1000000",
+      "severity": "moderate",
+      "text": "g_PerspectiveInterpolatedW >> 8,g_PerspectiveInterpolatedW * 0x1000000) /",
+      "type": "raw_address_constant"
     }
   ]
 }

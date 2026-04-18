@@ -4,17 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 617,
-    "complexity_score": 312,
+    "complexity_score": 367,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 34,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 187,
-    "suspect_count": 12,
+    "suspect_count": 17,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unnamed_local"
     ],
     "total_lines": 804
   },
@@ -489,6 +491,51 @@
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "for (iVar2 = 0; iVar2 < *(int *)((int)this_ptr->cap_tri_count + local_34); iVar2 = iVar2 + 1)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 29,
+      "match": "local_24",
+      "severity": "mild",
+      "text": "int local_24;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 65,
+      "match": "local_24",
+      "severity": "mild",
+      "text": "local_24 = 0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 69,
+      "match": "local_24",
+      "severity": "mild",
+      "text": "_fprintf(file_handle,\"\\\"%s\\\", %d, %d\\n\",this_ptr->parts[local_24].part_name,this_ptr->parts[local_24].dominant_bone,this_ptr->parts[local_24].adj_part_count);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 69,
+      "match": "local_24",
+      "severity": "mild",
+      "text": "_fprintf(file_handle,\"\\\"%s\\\", %d, %d\\n\",this_ptr->parts[local_24].part_name,this_ptr->parts[local_24].dominant_bone,this_ptr->parts[local_24].adj_part_count);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 122,
+      "match": "(ushort *)((int)",
+      "severity": "mild",
+      "text": "puVar6 = (ushort *)((int)&pSVar14->u_coord_2 + iVar21);",
       "type": "pointer_cast"
     }
   ]

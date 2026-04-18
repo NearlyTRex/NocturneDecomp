@@ -4,6 +4,7 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 805,
     "complexity_score": 322,
@@ -606,6 +607,71 @@
     },
     "pcode_op_count": 3318
   },
+  "resolved_suspects": [
+    {
+      "description": "Raw hex literal 0x1626410 matches address of g_LoadedVertices (+4 bytes into) (type SVertexData[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 150,
+      "match": "0x1626410",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "_fscanf(file,\"%f,%f,%f\\n\",g_LoadedVertices + local_20,local_20 * 0x14 + 0x1626410,",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x1626414 matches address of g_LoadedVertices (+8 bytes into) (type SVertexData[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 151,
+      "match": "0x1626414",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_20 * 0x14 + 0x1626414);",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x16e99c8 matches address of g_ModelPolygonData (+184 bytes into) (type SShapeEditorPolygon[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 196,
+      "match": "0x16e99c8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "_fscanf(file,\"%d,%f,%f\\n\",local_20 * 0x184 + 0x16e99c8 + local_1c * 4,",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x16e9a08 matches address of g_ModelPolygonData (+248 bytes into) (type SShapeEditorPolygon[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 197,
+      "match": "0x16e9a08",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_20 * 0x184 + 0x16e9a08 + local_1c * 4,",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x16e9a48 matches address of g_ModelPolygonData (+312 bytes into) (type SShapeEditorPolygon[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 198,
+      "match": "0x16e9a48",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_20 * 0x184 + 0x16e9a48 + local_1c * 4);",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x16e9a88 matches address of g_ModelPolygonData (+376 bytes into) (type SShapeEditorPolygon[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 219,
+      "match": "0x16e9a88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "_fscanf(file,\"%d\\n\",local_20 * 0x184 + 0x16e9a88);",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x16e9a8c matches address of g_ModelPolygonData (+380 bytes into) (type SShapeEditorPolygon[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 240,
+      "match": "0x16e9a8c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "_fscanf(file,\"%d\\n\",local_20 * 0x184 + 0x16e9a8c);",
+      "type": "raw_address_constant"
+    }
+  ],
   "stack_frame": {
     "frame_size": 376,
     "local_size": 372,

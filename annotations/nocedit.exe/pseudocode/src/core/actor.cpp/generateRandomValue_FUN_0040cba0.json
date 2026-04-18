@@ -4,17 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 8,
-    "complexity_score": 20,
+    "complexity_score": 35,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 5,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few"
+      "param_count_too_few",
+      "raw_address_constant"
     ],
     "total_lines": 13
   },
@@ -147,6 +149,14 @@
     "variables": []
   },
   "suspects": [
+    {
+      "description": "Raw hex literal 0xffffff matches address of g_LightBufferPool (+4087287 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 5,
+      "match": "0xffffff",
+      "severity": "moderate",
+      "text": "g_RandomSeedValue = g_RandomSeedValue * 0x2ff0bd + 1 & 0xffffff;",
+      "type": "raw_address_constant"
+    },
     {
       "call_site_count": 4,
       "declared_params": 0,

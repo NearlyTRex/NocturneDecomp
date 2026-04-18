@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 290,
-    "complexity_score": 277,
+    "complexity_score": 132,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 106,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 117,
-    "suspect_count": 15,
+    "suspect_count": 1,
     "suspect_types": [
-      "mmx_assembly",
-      "nonstandard_int"
+      "mmx_assembly"
     ],
     "total_lines": 407
   },
@@ -733,6 +733,134 @@
     },
     "pcode_op_count": 835
   },
+  "resolved_suspects": [
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 14,
+      "match": "uint5",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uint5 uVar12;",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 19,
+      "match": "uint5",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uint5 uVar15;",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 24,
+      "match": "uint7",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 24,
+      "match": "uint7",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 33,
+      "match": "int3",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 33,
+      "match": "uint7",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 36,
+      "match": "uint5",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar12 = (uint5)uVar4 & 0xffffffff00;",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 37,
+      "match": "int3",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar5 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 37,
+      "match": "uint7",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar5 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 40,
+      "match": "uint5",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar15 = (uint5)uVar5 & 0xffffffff00;",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 70,
+      "match": "int3",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 70,
+      "match": "uint7",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 73,
+      "match": "uint5",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar12 = (uint5)uVar4 & 0xffffffff00;",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 74,
+      "match": "uint7",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar7 = (ushort)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28);",
+      "type": "nonstandard_int"
+    }
+  ],
   "stack_frame": {
     "frame_size": 24,
     "local_size": 4,
@@ -778,118 +906,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 14,
-      "match": "uint5",
-      "severity": "mild",
-      "text": "uint5 uVar12;",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 19,
-      "match": "uint5",
-      "severity": "mild",
-      "text": "uint5 uVar15;",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 24,
-      "match": "uint7",
-      "severity": "mild",
-      "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 24,
-      "match": "uint7",
-      "severity": "mild",
-      "text": "CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uint7)(byte)(g_SolidColorMode >>",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 33,
-      "match": "int3",
-      "severity": "mild",
-      "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 33,
-      "match": "uint7",
-      "severity": "mild",
-      "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 36,
-      "match": "uint5",
-      "severity": "mild",
-      "text": "uVar12 = (uint5)uVar4 & 0xffffffff00;",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 37,
-      "match": "int3",
-      "severity": "mild",
-      "text": "uVar5 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 37,
-      "match": "uint7",
-      "severity": "mild",
-      "text": "uVar5 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 40,
-      "match": "uint5",
-      "severity": "mild",
-      "text": "uVar15 = (uint5)uVar5 & 0xffffffff00;",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 70,
-      "match": "int3",
-      "severity": "mild",
-      "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 70,
-      "match": "uint7",
-      "severity": "mild",
-      "text": "uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 73,
-      "match": "uint5",
-      "severity": "mild",
-      "text": "uVar12 = (uint5)uVar4 & 0xffffffff00;",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 74,
-      "match": "uint7",
-      "severity": "mild",
-      "text": "uVar7 = (ushort)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28);",
-      "type": "nonstandard_int"
-    },
     {
       "description": "MMX/SIMD assembly - may not decompile to clean C code",
       "line": 12,

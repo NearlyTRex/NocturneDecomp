@@ -4,15 +4,16 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 584,
-    "complexity_score": 217,
+    "complexity_score": 257,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 24,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 192,
-    "suspect_count": 2,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -404,6 +405,42 @@
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "} while (iVar5 < *(int *)((int)pSVar1->vertices + local_20 + -0x14));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 107,
+      "match": "(CVector3i *)((int)",
+      "severity": "mild",
+      "text": "CVector3i *vertex = (CVector3i *)((int)&this_ptr->vertex_list->x + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 122,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "_fscanf(file,\"%d,%d\",(int *)((int)this_ptr->poly_texture_index_list + local_24),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 123,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "(int *)((int)pSVar1->vertices + local_20 + -0x14));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 125,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "if (0 < *(int *)((int)pSVar1->vertices + local_20 + -0x14)) {",
       "type": "pointer_cast"
     }
   ]

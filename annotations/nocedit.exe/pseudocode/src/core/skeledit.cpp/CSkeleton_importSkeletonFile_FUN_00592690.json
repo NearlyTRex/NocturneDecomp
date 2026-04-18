@@ -5,18 +5,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 5207,
-    "complexity_score": 1997,
+    "complexity_score": 2657,
     "cross_reference_count": 0,
     "function_call_count": 57,
     "global_count": 186,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 1852,
-    "suspect_count": 13,
+    "suspect_count": 79,
     "suspect_types": [
-      "format_string_mismatch",
       "pointer_cast",
+      "unnamed_local",
       "warning_inlined_function"
     ],
     "total_lines": 7059
@@ -1504,6 +1505,20 @@
     },
     "pcode_op_count": 18360
   },
+  "resolved_suspects": [
+    {
+      "actual_args": 0,
+      "description": "Format \"No motions defined in %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "No motions defined in %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 365,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"No motions defined in %s\");",
+      "resolution_source": "keep",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    }
+  ],
   "stack_frame": {
     "frame_size": 57056,
     "local_size": 57048,
@@ -3168,15 +3183,607 @@
       "type": "pointer_cast"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"No motions defined in %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "No motions defined in %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 365,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"No motions defined in %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 56,
+      "match": "local_21d0",
+      "severity": "mild",
+      "text": "char local_21d0 [6];",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 58,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "char local_20a4 [2];",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 62,
+      "match": "local_1e74",
+      "severity": "mild",
+      "text": "char local_1e74 [260];",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 86,
+      "match": "local_7ec",
+      "severity": "mild",
+      "text": "char local_7ec [100];",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 88,
+      "match": "local_724",
+      "severity": "mild",
+      "text": "char local_724 [100];",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 140,
+      "match": "local_15c",
+      "severity": "mild",
+      "text": "CVector3f local_15c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 144,
+      "match": "local_13c",
+      "severity": "mild",
+      "text": "float local_13c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 150,
+      "match": "local_114",
+      "severity": "mild",
+      "text": "int local_114;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 158,
+      "match": "local_f4",
+      "severity": "mild",
+      "text": "int local_f4;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 176,
+      "match": "local_a8",
+      "severity": "mild",
+      "text": "float *local_a8;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 178,
+      "match": "local_a0",
+      "severity": "mild",
+      "text": "int local_a0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 186,
+      "match": "local_80",
+      "severity": "mild",
+      "text": "int local_80;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 187,
+      "match": "local_7c",
+      "severity": "mild",
+      "text": "int local_7c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 190,
+      "match": "local_70",
+      "severity": "mild",
+      "text": "int local_70;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 192,
+      "match": "local_68",
+      "severity": "mild",
+      "text": "int local_68;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 193,
+      "match": "local_64",
+      "severity": "mild",
+      "text": "int local_64;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 208,
+      "match": "local_24",
+      "severity": "mild",
+      "text": "char local_24 [4];",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 209,
+      "match": "local_20",
+      "severity": "mild",
+      "text": "char local_20 [4];",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 272,
+      "match": "local_1e74",
+      "severity": "mild",
+      "text": "pcVar7 = local_1e74;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 282,
+      "match": "local_1e74",
+      "severity": "mild",
+      "text": "iVar16 = _fscanf(local_11c,\"\\\"%[^\\\"]\\\"\\n\",local_1e74);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 319,
+      "match": "local_21d0",
+      "severity": "mild",
+      "text": "local_c8 = core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(local_21d0,local_11c,0);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 321,
+      "match": "local_21d0",
+      "severity": "mild",
+      "text": "(iVar4 = _strnicmp(local_21d0,\"animation\",9),",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 449,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "iVar16 = core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(local_20a4,p_Var3,1);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 455,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "iVar4 = _strnicmp(local_20a4,\"animation\",9);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 496,
+      "match": "local_13c",
+      "severity": "mild",
+      "text": "local_13c = 0.0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 500,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(local_20a4,local_11c,1);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 501,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "iVar16 = _strnicmp(local_20a4,\"fps\",3);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 511,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "filename,local_20a4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 517,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "iVar16 = _strnicmp(local_20a4,\"if\",2);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 530,
+      "match": "local_a0",
+      "severity": "mild",
+      "text": "local_a0 = -1;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 531,
+      "match": "local_a0",
+      "severity": "mild",
+      "text": "sscanf(local_a4,\"%s %s%n\",local_468,local_28c,&local_a0);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 532,
+      "match": "local_a0",
+      "severity": "mild",
+      "text": "if (local_a0 < 3) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 535,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "filename,local_20a4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 547,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "local_ec->motion_name,filename,local_20a4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 571,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "local_ec->motion_name,filename,local_20a4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 584,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "local_ec->motion_name,filename,local_20a4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 596,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "local_ec->motion_name,filename,local_20a4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 610,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "local_ec->motion_name,filename,local_20a4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 621,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "local_ec->motion_name,filename,local_20a4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 648,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": ",local_ec->motion_name,filename,local_20a4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 656,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": ",local_ec->motion_name,filename,local_20a4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 683,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "local_ec->motion_name,filename,local_20a4,pcVar18);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 690,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "iVar16 = _strnicmp(local_20a4,\"->\",2);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 716,
+      "match": "local_64",
+      "severity": "mild",
+      "text": "local_64 = -1;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 717,
+      "match": "local_64",
+      "severity": "mild",
+      "text": "sscanf(pcVar18,\" \\\"%[^\\\"]\\\" %n\",local_b70,&local_64);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 718,
+      "match": "local_64",
+      "severity": "mild",
+      "text": "if (local_64 < 0) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 721,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "local_ec->motion_name,filename,local_20a4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 733,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "local_ec->motion_name,filename,local_20a4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 747,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "local_ec->motion_name,filename,local_20a4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 758,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "local_ec->motion_name,filename,local_20a4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 791,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "local_ec->motion_name,filename,local_20a4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 809,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": ",local_ec->motion_name,filename,local_20a4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 817,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": ",local_ec->motion_name,filename,local_20a4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 835,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": ",local_ec->motion_name,filename,local_20a4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 864,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "filename,local_20a4,pcVar7);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 870,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "iVar16 = _strnicmp(local_20a4,\"signal\",6);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 888,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "filename,local_20a4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 897,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "filename,local_20a4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 904,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "filename,local_20a4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 914,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "(local_20a4,\"reverse\",7);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 920,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "(local_20a4,\"filename\",5);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 923,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "(local_20a4,\"frames\",6), iVar16 != 0)) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 925,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "(local_20a4,\"cancel\",6);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 973,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "(local_20a4,\"bias\",4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 988,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "local_ec->motion_name,filename,local_20a4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 1001,
+      "match": "local_20a4",
+      "severity": "mild",
+      "text": "local_ec->motion_name,filename,local_20a4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 1688,
+      "match": "local_21d0",
+      "severity": "mild",
+      "text": "iVar16 = _strnicmp(local_21d0,\"animation\",9);",
+      "type": "unnamed_local"
     }
   ]
 }

@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 261,
-    "complexity_score": 237,
+    "complexity_score": 142,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 15,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 107,
-    "suspect_count": 12,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast",
-      "unknown_field"
+      "unnamed_local"
     ],
     "total_lines": 368
   },
@@ -246,6 +246,116 @@
     },
     "pcode_op_count": 954
   },
+  "resolved_suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 36,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dVar2 = __BITCAST_DOUBLE(CONCAT44(9.9999999999999997e+34._4_4_,9.9999999999999997e+34._0_4_)) *",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 36,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dVar2 = __BITCAST_DOUBLE(CONCAT44(9.9999999999999997e+34._4_4_,9.9999999999999997e+34._0_4_)) *",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_18 = (int *)((int)local_34 + local_1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 53,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_18[2] = 9.9999999999999997e+34._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 54,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_18[3] = 9.9999999999999997e+34._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "if (*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + local_1c + -0x28) != *local_18",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + local_1c + -0x24)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 92,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar1[iVar1].collapse_cost = *(uint *)((int)pvVar5 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 93,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&pCVar1[iVar1].collapse_cost + 4) = *(uint *)((int)pvVar5 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 93,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)&pCVar1[iVar1].collapse_cost + 4) = *(uint *)((int)pvVar5 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 94,
+      "match": "(float *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "this_ptr->edges_ptr[iVar1].collapse_error = *(float *)((int)pvVar5 + 0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 97,
+      "match": "(void *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pvVar5 = (void *)((int)pvVar5 + 0xf0);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 68,
     "local_size": 60,
@@ -351,100 +461,31 @@
   },
   "suspects": [
     {
-      "description": "Unknown/mangled field access",
-      "line": 36,
-      "match": "._4_4_",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 19,
+      "match": "local_24",
       "severity": "mild",
-      "text": "dVar2 = __BITCAST_DOUBLE(CONCAT44(9.9999999999999997e+34._4_4_,9.9999999999999997e+34._0_4_)) *",
-      "type": "unknown_field"
+      "text": "int local_24;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 36,
-      "match": "._0_4_",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 37,
+      "match": "local_24",
       "severity": "mild",
-      "text": "dVar2 = __BITCAST_DOUBLE(CONCAT44(9.9999999999999997e+34._4_4_,9.9999999999999997e+34._0_4_)) *",
-      "type": "unknown_field"
+      "text": "local_24 = 0;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(int *)((int)",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 41,
+      "match": "local_24",
       "severity": "mild",
-      "text": "local_18 = (int *)((int)local_34 + local_1c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 53,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_18[2] = 9.9999999999999997e+34._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 54,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_18[3] = 9.9999999999999997e+34._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 64,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if (*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + local_1c + -0x28) != *local_18",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + local_1c + -0x24)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 92,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1[iVar1].collapse_cost = *(uint *)((int)pvVar5 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 93,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&pCVar1[iVar1].collapse_cost + 4) = *(uint *)((int)pvVar5 + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 93,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&pCVar1[iVar1].collapse_cost + 4) = *(uint *)((int)pvVar5 + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 94,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "this_ptr->edges_ptr[iVar1].collapse_error = *(float *)((int)pvVar5 + 0x10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 97,
-      "match": "(void *)((int)",
-      "severity": "mild",
-      "text": "pvVar5 = (void *)((int)pvVar5 + 0xf0);",
-      "type": "pointer_cast"
+      "text": "record = (CLodEdge *)local_34 + local_24;",
+      "type": "unnamed_local"
     }
   ]
 }

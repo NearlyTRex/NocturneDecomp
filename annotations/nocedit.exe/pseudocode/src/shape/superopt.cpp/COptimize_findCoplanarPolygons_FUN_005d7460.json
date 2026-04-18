@@ -4,18 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 232,
-    "complexity_score": 170,
+    "complexity_score": 120,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 90,
-    "suspect_count": 7,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "unresolved_funcptr"
+      "decompiler_intrinsic",
+      "unnamed_local"
     ],
     "total_lines": 322
   },
@@ -103,6 +104,71 @@
     ],
     "vtable_offset": 48
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(byte *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pbVar1 = (byte *)((int)&polygon->flags + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 36,
+      "match": "code *",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "dVar3 = (double)(**(code **)(*(int *)(iVar7 + 100) + 0x84))(iVar7);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 49,
+      "match": "code *",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "dVar1 = (double)(**(code **)(*(int *)(iVar8 + 100) + 0x84))(iVar8);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 55,
+      "match": "code *",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(iVar5 = (**(code **)(*(int *)(iVar7 + 100) + 0x74))(iVar7,iVar8), iVar5 != 0)) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 64,
+      "match": "code *",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((iVar6 = (**(code **)(*(int *)(iVar8 + 100) + 0x7c))(iVar8,iVar3),",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 66,
+      "match": "code *",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((iVar2 = (**(code **)(*(int *)(iVar8 + 100) + 0x78))(iVar8,iVar3),",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 68,
+      "match": "code *",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(iVar3 = (**(code **)(*(int *)(iVar8 + 100) + 0x80))(iVar8,iVar3),",
+      "type": "unresolved_funcptr"
+    }
+  ],
   "stack_frame": {
     "frame_size": 80,
     "local_size": 68,
@@ -194,60 +260,22 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(byte *)((int)",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 18,
+      "match": "local_30",
       "severity": "mild",
-      "text": "pbVar1 = (byte *)((int)&polygon->flags + 1);",
-      "type": "pointer_cast"
+      "text": "uint local_30;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 36,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "dVar3 = (double)(**(code **)(*(int *)(iVar7 + 100) + 0x84))(iVar7);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 49,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "dVar1 = (double)(**(code **)(*(int *)(iVar8 + 100) + 0x84))(iVar8);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 55,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar5 = (**(code **)(*(int *)(iVar7 + 100) + 0x74))(iVar7,iVar8), iVar5 != 0)) {",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 64,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "((iVar6 = (**(code **)(*(int *)(iVar8 + 100) + 0x7c))(iVar8,iVar3),",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 66,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "((iVar2 = (**(code **)(*(int *)(iVar8 + 100) + 0x78))(iVar8,iVar3),",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 68,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar3 = (**(code **)(*(int *)(iVar8 + 100) + 0x80))(iVar8,iVar3),",
-      "type": "unresolved_funcptr"
+      "description": "Decompiler intrinsic (not real C)",
+      "introduced_by": "keep",
+      "line": 48,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "if ((ABS(dVar1 - dVar3) <= this_ptr->coplanar_distance_threshold) &&",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

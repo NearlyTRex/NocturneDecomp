@@ -4,18 +4,17 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 92,
+    "complexity_score": 77,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 10,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 77,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unresolved_funcptr"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 236
   },
   "cross_references": [],
@@ -152,6 +151,17 @@
     },
     "pcode_op_count": 538
   },
+  "resolved_suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 61,
+      "match": "code *",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar2 = (**(code **)(*piVar1 + 0x48))(piVar1);",
+      "type": "unresolved_funcptr"
+    }
+  ],
   "stack_frame": {
     "frame_size": 1228,
     "local_size": 1224,
@@ -196,16 +206,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 61,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar2 = (**(code **)(*piVar1 + 0x48))(piVar1);",
-      "type": "unresolved_funcptr"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

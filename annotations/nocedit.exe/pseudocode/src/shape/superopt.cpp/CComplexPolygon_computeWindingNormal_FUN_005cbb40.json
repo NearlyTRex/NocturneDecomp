@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 226,
-    "complexity_score": 156,
+    "complexity_score": 191,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 96,
-    "suspect_count": 5,
+    "suspect_count": 9,
     "suspect_types": [
-      "pointer_cast",
-      "unknown_field"
+      "unnamed_local"
     ],
     "total_lines": 322
   },
@@ -106,6 +106,53 @@
     },
     "pcode_op_count": 1460
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar10 = (double *)((int)pdVar10 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar7 = (double *)((int)pdVar7 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(double *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 84,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uStack_fc = local_110._4_4_;",
+      "type": "unknown_field"
+    }
+  ],
   "stack_frame": {
     "frame_size": 292,
     "local_size": 276,
@@ -302,44 +349,85 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 56,
-      "match": "(double *)((int)",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 26,
+      "match": "local_18",
       "severity": "mild",
-      "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
-      "type": "pointer_cast"
+      "text": "uint local_18;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(double *)((int)",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 28,
+      "match": "local_18",
       "severity": "mild",
-      "text": "pdVar10 = (double *)((int)pdVar10 + 4);",
-      "type": "pointer_cast"
+      "text": "local_18 = 0;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 71,
-      "match": "(double *)((int)",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 32,
+      "match": "local_18",
       "severity": "mild",
-      "text": "pdVar7 = (double *)((int)pdVar7 + 4);",
-      "type": "pointer_cast"
+      "text": "uVar4 = local_18 + 1;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 72,
-      "match": "(double *)((int)",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 36,
+      "match": "local_18",
       "severity": "mild",
-      "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
-      "type": "pointer_cast"
+      "text": "dir_a.x = edges[local_18].end_pos.x - edges[local_18].start_pos.x;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 84,
-      "match": "._4_4_",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 36,
+      "match": "local_18",
       "severity": "mild",
-      "text": "uStack_fc = local_110._4_4_;",
-      "type": "unknown_field"
+      "text": "dir_a.x = edges[local_18].end_pos.x - edges[local_18].start_pos.x;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 37,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "dir_a.y = edges[local_18].end_pos.y - edges[local_18].start_pos.y;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 37,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "dir_a.y = edges[local_18].end_pos.y - edges[local_18].start_pos.y;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 38,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "dir_a.z = edges[local_18].end_pos.z - edges[local_18].start_pos.z;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 38,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "dir_a.z = edges[local_18].end_pos.z - edges[local_18].start_pos.z;",
+      "type": "unnamed_local"
     }
   ]
 }

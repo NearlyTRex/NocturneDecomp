@@ -295,7 +295,7 @@ section .text
     MOV ESI,dword ptr [0x0067b654]      ; 005131a8 | g_CGamePtr
     PUSH ESI                            ; 005131ae | g_CGameInstance
     CALL core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 ; 005131af
-        ;   XREF to: 004e1cb0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame * this_ptr, int unknown)
+        ;   XREF to: 004e1cb0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame * this_ptr, int select_mode)
         ;   Label: LAB_005131af
     ADD ESP,0x8                         ; 005131b4
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 005131b7

@@ -4,18 +4,20 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1033,
-    "complexity_score": 588,
+    "complexity_score": 643,
     "cross_reference_count": 4,
     "function_call_count": 7,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 358,
-    "suspect_count": 22,
+    "suspect_count": 27,
     "suspect_types": [
       "pointer_cast",
-      "stack_alignment_array"
+      "stack_alignment_array",
+      "unnamed_local"
     ],
     "total_lines": 1391
   },
@@ -1062,6 +1064,51 @@
       "match": "(CQuaternion4f *)((int)",
       "severity": "mild",
       "text": "((CQuaternion4f *)((int)&local_6c->w + local_80),&local_10c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 88,
+      "match": "local_5c",
+      "severity": "mild",
+      "text": "CDeformableModelInstance *local_5c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 133,
+      "match": "(CDeformableModelInstance *)((int)",
+      "severity": "mild",
+      "text": "local_5c = (CDeformableModelInstance *)((int)local_5c + 0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 169,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)aiStack_5ac + local_38) = iVar10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 174,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&local_bec[0].w + local_54) = local_cc;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 200,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "if (-1 < *(int *)((int)aiStack_5ac + local_58)) {",
       "type": "pointer_cast"
     }
   ]

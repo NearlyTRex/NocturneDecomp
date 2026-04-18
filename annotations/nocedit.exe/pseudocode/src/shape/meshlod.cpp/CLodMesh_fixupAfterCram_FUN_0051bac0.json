@@ -4,17 +4,17 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 195,
-    "complexity_score": 109,
+    "complexity_score": 94,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 79,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "format_string_mismatch",
       "pointer_cast"
     ],
     "total_lines": 274
@@ -202,6 +202,20 @@
     },
     "pcode_op_count": 851
   },
+  "resolved_suspects": [
+    {
+      "actual_args": 0,
+      "description": "Format \"LodMesh::fixupAfterCram - texture %s not found in ...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "LodMesh::fixupAfterCram - texture %s not found in cram list.",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 34,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"LodMesh::fixupAfterCram - texture %s not found in cram",
+      "resolution_source": "keep",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    }
+  ],
   "stack_frame": {
     "frame_size": 52,
     "local_size": 48,
@@ -275,17 +289,6 @@
       "severity": "mild",
       "text": "piVar5 = (int *)((int)this_ptr->tri_data->attribute_indices + local_20);",
       "type": "pointer_cast"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"LodMesh::fixupAfterCram - texture %s not found in ...\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "LodMesh::fixupAfterCram - texture %s not found in cram list.",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 34,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"LodMesh::fixupAfterCram - texture %s not found in cram",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

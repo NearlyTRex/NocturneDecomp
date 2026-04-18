@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 142,
+    "complexity_score": 117,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 82,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast",
-      "unknown_field"
+      "pointer_cast"
     ],
     "total_lines": 188
   },
@@ -82,6 +82,26 @@
     },
     "pcode_op_count": 330
   },
+  "resolved_suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 57,
+      "match": "._0_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_48._0_2_ = this_ptr->players[0].addr.port;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 58,
+      "match": "._2_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_48._2_2_ = this_ptr->players[0].addr.other;",
+      "type": "unknown_field"
+    }
+  ],
   "stack_frame": {
     "frame_size": 148,
     "local_size": 140,
@@ -340,22 +360,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Unknown/mangled field access",
-      "line": 57,
-      "match": "._0_2_",
-      "severity": "mild",
-      "text": "local_48._0_2_ = this_ptr->players[0].addr.port;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 58,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "local_48._2_2_ = this_ptr->players[0].addr.other;",
-      "type": "unknown_field"
-    },
     {
       "description": "Complex pointer cast",
       "line": 75,

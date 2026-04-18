@@ -4,17 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 568,
-    "complexity_score": 224,
+    "complexity_score": 234,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 13,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 209,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "stack_ref"
+      "unnamed_local"
     ],
     "total_lines": 777
   },
@@ -274,6 +275,17 @@
     },
     "pcode_op_count": 1975
   },
+  "resolved_suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 55,
+      "match": "&stack0xfffffdd4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "m,(CMatrix3x4f *)&stack0xfffffdd4);",
+      "type": "stack_ref"
+    }
+  ],
   "stack_frame": {
     "frame_size": 516,
     "local_size": 512,
@@ -446,12 +458,22 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 55,
-      "match": "&stack0xfffffdd4",
-      "severity": "moderate",
-      "text": "m,(CMatrix3x4f *)&stack0xfffffdd4);",
-      "type": "stack_ref"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 22,
+      "match": "local_22c",
+      "severity": "mild",
+      "text": "CMatrix3x4f local_22c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 64,
+      "match": "local_22c",
+      "severity": "mild",
+      "text": "m,&local_22c);",
+      "type": "unnamed_local"
     }
   ],
   "vtable_info": {

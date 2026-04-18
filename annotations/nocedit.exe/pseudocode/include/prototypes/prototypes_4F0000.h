@@ -234,7 +234,7 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004fb660(CIni *this_ptr,c
 void __cdecl engine_ini_cpp_getProfileString_FUN_004fb960(char *section,char *key,char *default_value,char *output_buffer,int buffer_size, char *filename);
 int __cdecl engine_ini_cpp_getProfileInteger_FUN_004fb9a0(char *section,char *key,int default_value,char *filename);
 void __cdecl engine_ini_cpp_writeProfileString_FUN_004fba40(char *section,char *key,char *value,char *filename);
-CIniFile * __cdecl engine_ini_cpp_CIniFile_ctor_FUN_004fba70(CIniFile *this_ptr,char *filename,int read_mode);
+CIniFile * __cdecl engine_ini_cpp_CIniFile_ctor_FUN_004fba70(CIniFile *this_ptr,char *filename,char *section);
 void __cdecl engine_ini_cpp_CIniFile_init_FUN_004fbaa0(char *dest,char *source);
 void __cdecl engine_ini_cpp_CIniFile_readIniHeader_FUN_004fbae0(CIniFile *this_ptr,char *section);
 void __cdecl engine_ini_cpp_CIniFile_getString_FUN_004fbb20(CIniFile *this_ptr,char *key,char *output_buffer,int buffer_size);

@@ -5,19 +5,20 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3423,
-    "complexity_score": 1168,
+    "complexity_score": 1668,
     "cross_reference_count": 2,
     "function_call_count": 90,
     "global_count": 144,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1078,
-    "suspect_count": 7,
+    "suspect_count": 57,
     "suspect_types": [
       "pointer_cast",
-      "stack_ref",
-      "suspect_float",
+      "raw_address_constant",
+      "unnamed_local",
       "warning_inlined_function"
     ],
     "total_lines": 4501
@@ -1457,6 +1458,35 @@
     },
     "pcode_op_count": 13819
   },
+  "resolved_suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 467,
+      "match": "&stack0xffffcc64",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr,(SPose *)&stack0xffffcc64);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 476,
+      "match": "&stack0xffffcc64",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr,(SPose *)&stack0xffffcc64);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 542,
+      "match": "3.57331e-43",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "fVar9 = 3.57331e-43;",
+      "type": "suspect_float"
+    }
+  ],
   "stack_frame": {
     "frame_size": 6408,
     "local_size": 6404,
@@ -2371,28 +2401,477 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 467,
-      "match": "&stack0xffffcc64",
+      "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+3956216 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 505,
+      "match": "0xfe0000",
       "severity": "moderate",
-      "text": "(this_ptr,(SPose *)&stack0xffffcc64);",
-      "type": "stack_ref"
+      "text": "local_3a4.vertices[1].texture_u = 0xfe0000;",
+      "type": "raw_address_constant"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 476,
-      "match": "&stack0xffffcc64",
+      "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+3956216 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 506,
+      "match": "0xfe0000",
       "severity": "moderate",
-      "text": "(this_ptr,(SPose *)&stack0xffffcc64);",
-      "type": "stack_ref"
+      "text": "local_3a4.vertices[2].texture_u = 0xfe0000;",
+      "type": "raw_address_constant"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 542,
-      "match": "3.57331e-43",
+      "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+3956216 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 507,
+      "match": "0xfe0000",
+      "severity": "moderate",
+      "text": "local_3a4.vertices[2].texture_v = 0xfe0000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfe0000 matches address of g_LightBufferPool (+3956216 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 508,
+      "match": "0xfe0000",
+      "severity": "moderate",
+      "text": "local_3a4.vertices[3].texture_v = 0xfe0000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 50,
+      "match": "local_46c",
       "severity": "mild",
-      "text": "fVar9 = 3.57331e-43;",
-      "type": "suspect_float"
+      "text": "char local_46c [100];",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 61,
+      "match": "local_1e4",
+      "severity": "mild",
+      "text": "CBoundingBox3D local_1e4;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 62,
+      "match": "local_1cc",
+      "severity": "mild",
+      "text": "float local_1cc;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 63,
+      "match": "local_1c8",
+      "severity": "mild",
+      "text": "float local_1c8;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 64,
+      "match": "local_1c4",
+      "severity": "mild",
+      "text": "float local_1c4;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 65,
+      "match": "local_1c0",
+      "severity": "mild",
+      "text": "float local_1c0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 66,
+      "match": "local_1bc",
+      "severity": "mild",
+      "text": "float local_1bc;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 67,
+      "match": "local_1b8",
+      "severity": "mild",
+      "text": "float local_1b8;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 68,
+      "match": "local_1b4",
+      "severity": "mild",
+      "text": "float local_1b4;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 69,
+      "match": "local_1b0",
+      "severity": "mild",
+      "text": "float local_1b0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 70,
+      "match": "local_1ac",
+      "severity": "mild",
+      "text": "float local_1ac;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 71,
+      "match": "local_1a8",
+      "severity": "mild",
+      "text": "float local_1a8;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 75,
+      "match": "local_190",
+      "severity": "mild",
+      "text": "CVector3f local_190;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 76,
+      "match": "local_184",
+      "severity": "mild",
+      "text": "CVector3f local_184;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 78,
+      "match": "local_174",
+      "severity": "mild",
+      "text": "float local_174;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 79,
+      "match": "local_170",
+      "severity": "mild",
+      "text": "float local_170;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 80,
+      "match": "local_16c",
+      "severity": "mild",
+      "text": "CVector3f local_16c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 111,
+      "match": "local_a8",
+      "severity": "mild",
+      "text": "uint local_a8;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 114,
+      "match": "local_9c",
+      "severity": "mild",
+      "text": "uint local_9c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 121,
+      "match": "local_80",
+      "severity": "mild",
+      "text": "float local_80;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 132,
+      "match": "local_54",
+      "severity": "mild",
+      "text": "CMatrix3x4f *local_54;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 139,
+      "match": "local_38",
+      "severity": "mild",
+      "text": "float local_38;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 140,
+      "match": "local_34",
+      "severity": "mild",
+      "text": "SPart *local_34;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 146,
+      "match": "local_1c",
+      "severity": "mild",
+      "text": "int local_1c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 147,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "float local_18;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 197,
+      "match": "local_184",
+      "severity": "mild",
+      "text": "local_184.x = g_ZeroVector.f.x;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 198,
+      "match": "local_184",
+      "severity": "mild",
+      "text": "local_184.y = g_ZeroVector.f.y;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 209,
+      "match": "local_34",
+      "severity": "mild",
+      "text": "local_34 = this_ptr_01->parts;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 234,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "local_18 = (float)(pSVar11->frame_count + -1);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 339,
+      "match": "local_174",
+      "severity": "mild",
+      "text": "local_174 = -local_6c->y;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 340,
+      "match": "local_170",
+      "severity": "mild",
+      "text": "local_170 = -local_6c->z;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 343,
+      "match": "local_174",
+      "severity": "mild",
+      "text": "local_6c->y = local_174;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 344,
+      "match": "local_170",
+      "severity": "mild",
+      "text": "local_6c->z = local_170;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 454,
+      "match": "local_16c",
+      "severity": "mild",
+      "text": "pCVar10 = (CSlew *)core_xform_cpp_getTranslation_FUN_005f6110(&local_2f0,&local_16c);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 574,
+      "match": "local_34",
+      "severity": "mild",
+      "text": "local_34 = core_skeleton_cpp_CDeformableModel_getPartPtr_FUN_0059c220(this_ptr_01,local_44);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 592,
+      "match": "local_16c",
+      "severity": "mild",
+      "text": "(double)local_174,(double)local_170,(double)local_16c.x);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 595,
+      "match": "local_190",
+      "severity": "mild",
+      "text": "(double)local_190.y,(double)local_184.x,(double)local_190.z);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 595,
+      "match": "local_190",
+      "severity": "mild",
+      "text": "(double)local_190.y,(double)local_184.x,(double)local_190.z);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 681,
+      "match": "local_190",
+      "severity": "mild",
+      "text": "((CMatrix3x3f *)&local_260,&local_190);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 754,
+      "match": "local_1e4",
+      "severity": "mild",
+      "text": "(&local_1e4,this_ptr_01->vertex_count[this_ptr->cached_skinned_lod_index],",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 759,
+      "match": "local_1e4",
+      "severity": "mild",
+      "text": "(double)local_1e4.max.y,(double)local_1c8,(double)(local_1c8 - local_1e4.max.y),",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 759,
+      "match": "local_1c8",
+      "severity": "mild",
+      "text": "(double)local_1e4.max.y,(double)local_1c8,(double)(local_1c8 - local_1e4.max.y),",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 759,
+      "match": "local_1e4",
+      "severity": "mild",
+      "text": "(double)local_1e4.max.y,(double)local_1c8,(double)(local_1c8 - local_1e4.max.y),",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 760,
+      "match": "local_1c4",
+      "severity": "mild",
+      "text": "(double)local_1e4.max.z,(double)local_1c4,(double)(local_1c4 - local_1e4.max.z),",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 761,
+      "match": "local_1cc",
+      "severity": "mild",
+      "text": "(double)local_1cc,(double)local_1c0,(double)(local_1c0 - local_1cc));",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 761,
+      "match": "local_1c0",
+      "severity": "mild",
+      "text": "(double)local_1cc,(double)local_1c0,(double)(local_1c0 - local_1cc));",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 876,
+      "match": "local_190",
+      "severity": "mild",
+      "text": "(double)local_190.y,(double)local_184.x,(double)local_190.z);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 876,
+      "match": "local_190",
+      "severity": "mild",
+      "text": "(double)local_190.y,(double)local_184.x,(double)local_190.z);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 939,
+      "match": "local_1bc",
+      "severity": "mild",
+      "text": "sscanf(pcVar18,\"%f%n\",&local_1bc + iVar7,&local_1c);",
+      "type": "unnamed_local"
     }
   ]
 }

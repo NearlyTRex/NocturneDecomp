@@ -48,8 +48,8 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
 void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3d_lines);
 void __cdecl core_setedit_cpp_showVdirBoxEditorHelp_FUN_00582f30(void);
 void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet *this_ptr);
-void __cdecl core_setedit_cpp_CDemonSet_readIni_FUN_00584900(CDemonSet *set_ptr,CIniFile *ini_file);
-void __cdecl core_setedit_cpp_CDemonSet_writeIni_FUN_00584920(CDemonSet *set,CIniFile *ini_file);
+void __cdecl core_setedit_cpp_CDemonSet_readIni_FUN_00584900(CDemonSet *this_ptr,CIniFile *ini_file);
+void __cdecl core_setedit_cpp_CDemonSet_writeIni_FUN_00584920(CDemonSet *this_ptr,CIniFile *ini_file);
 void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *this_ptr);
 void __cdecl core_setedit_cpp_CDemonSet_writeFileDependencies_FUN_00584e70(CDemonSet *this_ptr,_FILE *file_handle);
 void __cdecl core_setutil_cpp_CDemonLight_setPosition_FUN_005851a0(CDemonLight *this_ptr,CVector3i *position);

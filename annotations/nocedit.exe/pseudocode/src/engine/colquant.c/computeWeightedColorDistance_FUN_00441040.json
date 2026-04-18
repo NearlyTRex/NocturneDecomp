@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 106,
+    "complexity_score": 26,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 26,
-    "suspect_count": 7,
-    "suspect_types": [
-      "pointer_cast",
-      "unknown_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 88
   },
   "cross_references": [
@@ -150,6 +148,71 @@
     },
     "pcode_op_count": 551
   },
+  "resolved_suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 15,
+      "match": "._0_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "iVar1._0_2_ = workspace->boxes[box_index].avg_red;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 16,
+      "match": "._2_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "iVar1._2_2_ = workspace->boxes[box_index].avg_green;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 17,
+      "match": "._0_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "iVar2._0_2_ = workspace->boxes[box_index].avg_green;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 18,
+      "match": "._2_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "iVar2._2_2_ = workspace->boxes[box_index].avg_blue;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(*(int *)((int)&workspace->boxes[box_index + -1].count + 2) >> 0x10));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 23,
+      "match": "._0_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "iVar3._0_2_ = workspace->boxes[box_index].avg_blue;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 24,
+      "match": "._2_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "iVar3._2_2_ = workspace->boxes[box_index].avg_intensity;",
+      "type": "unknown_field"
+    }
+  ],
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -180,62 +243,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unknown/mangled field access",
-      "line": 15,
-      "match": "._0_2_",
-      "severity": "mild",
-      "text": "iVar1._0_2_ = workspace->boxes[box_index].avg_red;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 16,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "iVar1._2_2_ = workspace->boxes[box_index].avg_green;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 17,
-      "match": "._0_2_",
-      "severity": "mild",
-      "text": "iVar2._0_2_ = workspace->boxes[box_index].avg_green;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 18,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "iVar2._2_2_ = workspace->boxes[box_index].avg_blue;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 20,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "(*(int *)((int)&workspace->boxes[box_index + -1].count + 2) >> 0x10));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 23,
-      "match": "._0_2_",
-      "severity": "mild",
-      "text": "iVar3._0_2_ = workspace->boxes[box_index].avg_blue;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 24,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "iVar3._2_2_ = workspace->boxes[box_index].avg_intensity;",
-      "type": "unknown_field"
-    }
-  ]
+  "suspects": []
 }

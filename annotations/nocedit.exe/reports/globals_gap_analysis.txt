@@ -480,7 +480,7 @@ ALL EXACT GAPS (1729) - size bounds are known precisely
          249 bytes  at 0x00684017  between s_d3d.dll_00684013             and g_SystemInitialized
          249 bytes  at 0x02d129bf  between g_CurrentFilenameBuffer+3      and g_CurrentFileTimestamp
          249 bytes  at 0x02d82c87  between g_CurrentSaveFile+3            and g_HasSavedLightState
-         249 bytes  at 0x02d830af  between g_ChapterDisplayName+3         and g_ChapterDisplayNumber
+         249 bytes  at 0x02d830af  between g_ChapterDisplayName+3         and g_ChapterDisplayYear
          249 bytes  at 0x02f6818f  between g_CurrentMp3Filename+3         and g_HuffmanTables
          248 bytes  at 0x00681b68  between s__00681b64                    and g_DefaultDeviceName
          248 bytes  at 0x03f98ff8  between g_CommandLineBuffer+4          and g_ArgCount
@@ -489,7 +489,7 @@ ALL EXACT GAPS (1729) - size bounds are known precisely
          220 bytes  at 0x006088b4  between CAVE_cave_006088b0             and SUB_00608990
          208 bytes  at 0x00670218  between g_ModelLastScaleInput+4        and g_CZombieDogClassVersion
          208 bytes  at 0x00680838  between g_MsnEditCameraStatusBuffer+4  and g_MsnEditLastSelectedPropertyN
-         203 bytes  at 0x0067b789  between PTR_s_train_msn_0067b784+1     and g_ChapterDisplayTexts
+         203 bytes  at 0x0067b789  between PTR_s_train_msn_0067b784+1     and g_ChapterDisplayYears
          200 bytes  at 0x006813fc  between g_EnvMapTexture                and g_CZThumbPoolDestructorNode
          195 bytes  at 0x03f96a7d  between g_WeatherParticleHitGround+1   and UINT_03f96b40
          192 bytes  at 0x006793e0  between g_DefaultSfxHandleName+4       and g_DefaultCommandArg
@@ -41201,9 +41201,9 @@ OVERLAPS (13372) - next global starts inside previous
     s_FD_0067b684+1                          undefined4           at 0x0067b685
   1 bytes overlap
     s_FD_0067b684+1                          undefined4           at 0x0067b685  size=4
-    s_file_corrupt_0067b688                  TerminatedCString    at 0x0067b688
-  252 bytes overlap ~
-    s_file_corrupt_0067b688                  TerminatedCString    at 0x0067b688  size=256
+    g_LoadSavefileStatus                     char[200]            at 0x0067b688
+  196 bytes overlap
+    g_LoadSavefileStatus                     char[200]            at 0x0067b688  size=200
     s_e_corrupt)_0067b68c                    undefined4           at 0x0067b68c
   259 bytes overlap ~
     g_ChapterMissionFiles                    char*[5][13]         at 0x0067b750  size=260

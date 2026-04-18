@@ -4,21 +4,20 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1165,
-    "complexity_score": 844,
+    "complexity_score": 854,
     "cross_reference_count": 3,
     "function_call_count": 29,
     "global_count": 13,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 509,
-    "suspect_count": 30,
+    "suspect_count": 32,
     "suspect_types": [
       "byvalue_struct_passing",
-      "format_string_mismatch",
       "pointer_cast",
-      "stack_ref",
-      "unknown_field",
+      "unnamed_local",
       "warning_deadcode_restart",
       "warning_inlined_function"
     ],
@@ -400,6 +399,170 @@
     },
     "pcode_op_count": 4950
   },
+  "resolved_suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 288,
+      "match": "&stack0xffff9f14",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar11 = (int *)&stack0xffff9f14;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 296,
+      "match": "(SMpegFrameHeader *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar14 = (SMpegFrameHeader *)((int)pSVar14 + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 303,
+      "match": "._0_1_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "frame_info.channel_count._0_1_ = uVar17;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 304,
+      "match": "._1_1_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "frame_info.channel_count._1_1_ = uVar18;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 305,
+      "match": "._2_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "frame_info.channel_count._2_2_ = uVar19;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 306,
+      "match": "._0_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "frame_info.js_bound._0_2_ = uVar20;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 307,
+      "match": "._2_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "frame_info.js_bound._2_2_ = uVar21;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 333,
+      "match": "&stack0xffff9f14",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar11 = (int *)&stack0xffff9f14;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 341,
+      "match": "(SMpegFrameHeader *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar14 = (SMpegFrameHeader *)((int)pSVar14 + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 348,
+      "match": "._0_1_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "frame_info_00.channel_count._0_1_ = uVar17;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 349,
+      "match": "._1_1_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "frame_info_00.channel_count._1_1_ = uVar18;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 350,
+      "match": "._2_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "frame_info_00.channel_count._2_2_ = uVar19;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 351,
+      "match": "._0_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "frame_info_00.js_bound._0_2_ = uVar20;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 352,
+      "match": "._2_2_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "frame_info_00.js_bound._2_2_ = uVar21;",
+      "type": "unknown_field"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"MPEG Layer 2 - pick_table - can't load tables!  Fi...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "MPEG Layer 2 - pick_table - can't load tables!  File: %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 145,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"MPEG Layer 2 - pick_table - can't load tables!  File: ",
+      "resolution_source": "keep",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"js_bound bad layer/modext (%d/%d)  File: %s\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "js_bound bad layer/modext (%d/%d)  File: %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 158,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"js_bound bad layer/modext (%d/%d)  File: %s\");",
+      "resolution_source": "keep",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Not enough main data to decode frame %d.\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Not enough main data to decode frame %d.",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 359,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Not enough main data to decode frame %d.\");",
+      "resolution_source": "keep",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    }
+  ],
   "stack_frame": {
     "frame_size": 24796,
     "local_size": 24788,
@@ -926,118 +1089,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 288,
-      "match": "&stack0xffff9f14",
-      "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xffff9f14;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 296,
-      "match": "(SMpegFrameHeader *)((int)",
-      "severity": "mild",
-      "text": "pSVar14 = (SMpegFrameHeader *)((int)pSVar14 + (uint)bVar15 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 303,
-      "match": "._0_1_",
-      "severity": "mild",
-      "text": "frame_info.channel_count._0_1_ = uVar17;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 304,
-      "match": "._1_1_",
-      "severity": "mild",
-      "text": "frame_info.channel_count._1_1_ = uVar18;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 305,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "frame_info.channel_count._2_2_ = uVar19;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 306,
-      "match": "._0_2_",
-      "severity": "mild",
-      "text": "frame_info.js_bound._0_2_ = uVar20;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 307,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "frame_info.js_bound._2_2_ = uVar21;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 333,
-      "match": "&stack0xffff9f14",
-      "severity": "moderate",
-      "text": "piVar11 = (int *)&stack0xffff9f14;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 341,
-      "match": "(SMpegFrameHeader *)((int)",
-      "severity": "mild",
-      "text": "pSVar14 = (SMpegFrameHeader *)((int)pSVar14 + (uint)bVar15 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 348,
-      "match": "._0_1_",
-      "severity": "mild",
-      "text": "frame_info_00.channel_count._0_1_ = uVar17;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 349,
-      "match": "._1_1_",
-      "severity": "mild",
-      "text": "frame_info_00.channel_count._1_1_ = uVar18;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 350,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "frame_info_00.channel_count._2_2_ = uVar19;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 351,
-      "match": "._0_2_",
-      "severity": "mild",
-      "text": "frame_info_00.js_bound._0_2_ = uVar20;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 352,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "frame_info_00.js_bound._2_2_ = uVar21;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 429,
       "match": "(float *)((int)",
@@ -1085,37 +1136,175 @@
       "type": "byvalue_struct_passing"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"MPEG Layer 2 - pick_table - can't load tables!  Fi...\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "MPEG Layer 2 - pick_table - can't load tables!  File: %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 145,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"MPEG Layer 2 - pick_table - can't load tables!  File: ",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 45,
+      "match": "local_4d8",
+      "severity": "mild",
+      "text": "SMpegLayer3SideInfo local_4d8;  // was char; readLayer3SideInfo fills this as a full SMpegLayer3SideInfo. Ghidra split it from local_4c0 which was really &local_4d8.channels[0].granules[0]",
+      "type": "unnamed_local"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"js_bound bad layer/modext (%d/%d)  File: %s\" has 3 specifiers but 0 arguments after it",
-      "expected_args": 3,
-      "format_string": "js_bound bad layer/modext (%d/%d)  File: %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 158,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"js_bound bad layer/modext (%d/%d)  File: %s\");",
-      "text": "Format string expects 3 args but got 0",
-      "type": "format_string_mismatch"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 45,
+      "match": "local_4c0",
+      "severity": "mild",
+      "text": "SMpegLayer3SideInfo local_4d8;  // was char; readLayer3SideInfo fills this as a full SMpegLayer3SideInfo. Ghidra split it from local_4c0 which was really &local_4d8.channels[0].granules[0]",
+      "type": "unnamed_local"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"Not enough main data to decode frame %d.\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Not enough main data to decode frame %d.",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 359,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Not enough main data to decode frame %d.\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 45,
+      "match": "local_4d8",
+      "severity": "mild",
+      "text": "SMpegLayer3SideInfo local_4d8;  // was char; readLayer3SideInfo fills this as a full SMpegLayer3SideInfo. Ghidra split it from local_4c0 which was really &local_4d8.channels[0].granules[0]",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 49,
+      "match": "local_110",
+      "severity": "mild",
+      "text": "SMpegFrameHeader local_110;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 54,
+      "match": "local_a4",
+      "severity": "mild",
+      "text": "uint local_a4 = 0;  // asm inits to 0, decompiler dropped the init; read once as (local_a4 - 1) for a \"frame %d\" error message that effectively always prints -1",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 54,
+      "match": "local_a4",
+      "severity": "mild",
+      "text": "uint local_a4 = 0;  // asm inits to 0, decompiler dropped the init; read once as (local_a4 - 1) for a \"frame %d\" error message that effectively always prints -1",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 91,
+      "match": "local_110",
+      "severity": "mild",
+      "text": "local_e0.frame.header = &local_110;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 110,
+      "match": "local_110",
+      "severity": "mild",
+      "text": "local_e0.frame.channel_mode = local_110.channel_mode;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 112,
+      "match": "local_110",
+      "severity": "mild",
+      "text": "if (local_110.layer == 2) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 113,
+      "match": "local_110",
+      "severity": "mild",
+      "text": "iVar9 = local_110.mpeg_version;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 114,
+      "match": "local_110",
+      "severity": "mild",
+      "text": "iVar4 = g_MpegBitrateTable[iVar9][1][local_110.bitrate_index] /",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 116,
+      "match": "local_110",
+      "severity": "mild",
+      "text": "iVar5 = (int)ROUND(ROUND(g_MpegSampleRateTable[iVar9][local_110.sampling_rate_index]));",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 146,
+      "match": "local_110",
+      "severity": "mild",
+      "text": "if (local_110.channel_mode == 1) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 147,
+      "match": "local_110",
+      "severity": "mild",
+      "text": "iVar5 = local_110.layer;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 148,
+      "match": "local_110",
+      "severity": "mild",
+      "text": "iVar6 = local_110.mode_extension;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 157,
+      "match": "local_110",
+      "severity": "mild",
+      "text": "iVar6 = (local_110.mpeg_version != 0) + 1;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 274,
+      "match": "local_4d8",
+      "severity": "mild",
+      "text": "(this_ptr,&this_ptr->file_bitstream,&local_4d8,",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 289,
+      "match": "local_4d8",
+      "severity": "mild",
+      "text": "local_70 = (this_ptr->main_data_offset - uVar10) - local_4d8.main_data_begin;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 305,
+      "match": "local_4d8",
+      "severity": "mild",
+      "text": "local_38 = local_4d8.channels[0].granules;",
+      "type": "unnamed_local"
     }
   ]
 }

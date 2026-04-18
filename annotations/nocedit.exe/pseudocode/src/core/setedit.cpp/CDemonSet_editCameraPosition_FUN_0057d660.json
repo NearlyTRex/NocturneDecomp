@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1112,
-    "complexity_score": 471,
+    "complexity_score": 456,
     "cross_reference_count": 1,
     "function_call_count": 42,
     "global_count": 75,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 411,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast",
-      "stack_ref"
+      "pointer_cast"
     ],
     "total_lines": 1523
   },
@@ -803,6 +803,26 @@
     },
     "pcode_op_count": 4783
   },
+  "resolved_suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 150,
+      "match": "&stack0xffffee80",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)(&stack0xffffee80 + iVar20) = (int)uVar11 / 3 + (int)fStack_50 + iStack_4c;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 327,
+      "match": "&stack0xffffee8c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uStack_38 = *(uint *)(&stack0xffffee8c + (uint)*pbVar18 * 4);",
+      "type": "stack_ref"
+    }
+  ],
   "stack_frame": {
     "frame_size": 3468,
     "local_size": 3460,
@@ -1101,14 +1121,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 150,
-      "match": "&stack0xffffee80",
-      "severity": "moderate",
-      "text": "*(int *)(&stack0xffffee80 + iVar20) = (int)uVar11 / 3 + (int)fStack_50 + iStack_4c;",
-      "type": "stack_ref"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 282,
       "match": "(int *)((int)",
@@ -1125,12 +1137,13 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 327,
-      "match": "&stack0xffffee8c",
-      "severity": "moderate",
-      "text": "uStack_38 = *(uint *)(&stack0xffffee8c + (uint)*pbVar18 * 4);",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 159,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)auStack_1180 + iVar20) = (int)uVar11 / 3 + (int)fStack_50 + iStack_4c;",
+      "type": "pointer_cast"
     }
   ]
 }

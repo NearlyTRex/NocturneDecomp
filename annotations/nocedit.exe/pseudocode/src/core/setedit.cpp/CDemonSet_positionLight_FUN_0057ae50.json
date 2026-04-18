@@ -4,17 +4,17 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 593,
-    "complexity_score": 226,
+    "complexity_score": 181,
     "cross_reference_count": 3,
     "function_call_count": 23,
     "global_count": 35,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 166,
-    "suspect_count": 5,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_ref",
       "warning_inlined_function"
     ],
     "total_lines": 759
@@ -458,6 +458,44 @@
     },
     "pcode_op_count": 1929
   },
+  "resolved_suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 103,
+      "match": "&stack0xfffffe90",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&stack0xfffffe90,\"%f\",(double)(1.0 / g_CGamePtr->delta_time_float));",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 104,
+      "match": "&stack0xfffffe90",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe90,0,g_WindowHeight + -0xb);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 106,
+      "match": "&stack0xfffffe90",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&stack0xfffffe90,\"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f\",(double)(g_CSlewPtr->position).x,",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 112,
+      "match": "&stack0xfffffe90",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe90,0,0x16);",
+      "type": "stack_ref"
+    }
+  ],
   "stack_frame": {
     "frame_size": 144,
     "local_size": 136,
@@ -524,38 +562,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 103,
-      "match": "&stack0xfffffe90",
-      "severity": "moderate",
-      "text": "(&stack0xfffffe90,\"%f\",(double)(1.0 / g_CGamePtr->delta_time_float));",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 104,
-      "match": "&stack0xfffffe90",
-      "severity": "moderate",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe90,0,g_WindowHeight + -0xb);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 106,
-      "match": "&stack0xfffffe90",
-      "severity": "moderate",
-      "text": "(&stack0xfffffe90,\"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f\",(double)(g_CSlewPtr->position).x,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 112,
-      "match": "&stack0xfffffe90",
-      "severity": "moderate",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe90,0,0x16);",
-      "type": "stack_ref"
     }
   ]
 }

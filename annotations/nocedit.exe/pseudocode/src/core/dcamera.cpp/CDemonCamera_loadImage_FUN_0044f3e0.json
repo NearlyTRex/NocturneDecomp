@@ -4,17 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1081,
-    "complexity_score": 561,
+    "complexity_score": 596,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 91,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 486,
-    "suspect_count": 7,
+    "suspect_count": 10,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "raw_address_constant"
     ],
     "total_lines": 1567
   },
@@ -1149,6 +1151,30 @@
       "severity": "mild",
       "text": "pSVar24 = (SRGBColorPalette *)((int)pSVar24 + (uint)bVar31 * -2 + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Raw hex literal 0xfcfcfc matches address of g_LightBufferPool (+3889908 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 290,
+      "match": "0xfcfcfc",
+      "severity": "moderate",
+      "text": "((g_CameraConvertedPalette[pbVar7[1]] & 0xfcfcfc) >> 2) +",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfcfcfc matches address of g_LightBufferPool (+3889908 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 291,
+      "match": "0xfcfcfc",
+      "severity": "moderate",
+      "text": "((g_CameraConvertedPalette[pbVar7[0x280]] & 0xfcfcfc) >> 2) +",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfcfcfc matches address of g_LightBufferPool (+3889908 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 292,
+      "match": "0xfcfcfc",
+      "severity": "moderate",
+      "text": "((g_CameraConvertedPalette[pbVar7[0x281]] & 0xfcfcfc) >> 2);",
+      "type": "raw_address_constant"
     }
   ]
 }

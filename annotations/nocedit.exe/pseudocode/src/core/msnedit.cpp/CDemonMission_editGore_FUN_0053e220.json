@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 647,
-    "complexity_score": 313,
+    "complexity_score": 238,
     "cross_reference_count": 1,
     "function_call_count": 43,
     "global_count": 43,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 223,
-    "suspect_count": 8,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_alignment_array",
-      "unknown_field"
+      "stack_alignment_array"
     ],
     "total_lines": 870
   },
@@ -581,6 +581,71 @@
     },
     "pcode_op_count": 2512
   },
+  "resolved_suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 146,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "auStack_94._0_4_ = (float)CStack_58.x * 0.00390625f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 147,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "auStack_94._4_4_ = (float)CStack_58.y * 0.00390625f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 148,
+      "match": "._8_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "auStack_94._8_4_ = (float)CStack_58.z * 0.00390625f;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 150,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_bc.position.x = (float)auStack_94._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 151,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_bc.position.y = (float)auStack_94._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 152,
+      "match": "._8_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_bc.position.z = (float)auStack_94._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 197,
+      "match": "._12_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "auStack_94._12_4_ = CStack_7c.x + (CStack_a0.x - CStack_7c.x) * fVar4;",
+      "type": "unknown_field"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4168,
     "local_size": 4164,
@@ -790,62 +855,6 @@
       "severity": "moderate",
       "text": "float afStackY_1040 [984];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 146,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "auStack_94._0_4_ = (float)CStack_58.x * 0.00390625f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 147,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "auStack_94._4_4_ = (float)CStack_58.y * 0.00390625f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 148,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "auStack_94._8_4_ = (float)CStack_58.z * 0.00390625f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 150,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_bc.position.x = (float)auStack_94._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 151,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_bc.position.y = (float)auStack_94._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 152,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "local_bc.position.z = (float)auStack_94._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 197,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "auStack_94._12_4_ = CStack_7c.x + (CStack_a0.x - CStack_7c.x) * fVar4;",
-      "type": "unknown_field"
     }
   ]
 }

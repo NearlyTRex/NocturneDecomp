@@ -4,9 +4,10 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 365,
-    "complexity_score": 221,
+    "complexity_score": 216,
     "cross_reference_count": 6,
     "function_call_count": 7,
     "global_count": 24,
@@ -15,8 +16,7 @@
     "suspect_count": 4,
     "suspect_types": [
       "displaced_global_access",
-      "stack_ref",
-      "wrong_global"
+      "unnamed_local"
     ],
     "total_lines": 531
   },
@@ -392,6 +392,26 @@
     },
     "pcode_op_count": 1810
   },
+  "resolved_suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 104,
+      "match": "&stack0xffffff78",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CDemonActor *)this_ptr_00,(CBoundingBox3D *)&stack0xffffff78);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Scalar global g_SetDisplayListCount accessed via (&g_SetDisplayListCount)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_SetDisplayListSortBuffer (at 0x03342b50, +4 bytes).",
+      "line": 113,
+      "match": "g_SetDisplayListCount",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&g_SetDisplayListCount)[iVar1 * 2] =",
+      "type": "wrong_global"
+    }
+  ],
   "stack_frame": {
     "frame_size": 124,
     "local_size": 116,
@@ -525,14 +545,6 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 104,
-      "match": "&stack0xffffff78",
-      "severity": "moderate",
-      "text": "((CDemonActor *)this_ptr_00,(CBoundingBox3D *)&stack0xffffff78);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Compiler displaced index base: [reg*8 + 0x3342b48] lands in g_VertexNormalArray but intended target is g_SetDisplayListCount at 0x3342b4c (displaced by 4 bytes)",
       "displaced_from": "g_VertexNormalArray",
       "displacement": "0x3342b48",
@@ -559,12 +571,22 @@
       "type": "displaced_global_access"
     },
     {
-      "description": "Scalar global g_SetDisplayListCount accessed via (&g_SetDisplayListCount)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_SetDisplayListSortBuffer (at 0x03342b50, +4 bytes).",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 21,
+      "match": "local_88",
+      "severity": "mild",
+      "text": "CBoundingBox3D local_88;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
       "line": 113,
-      "match": "g_SetDisplayListCount",
-      "severity": "moderate",
-      "text": "(&g_SetDisplayListCount)[iVar1 * 2] =",
-      "type": "wrong_global"
+      "match": "local_88",
+      "severity": "mild",
+      "text": "((CDemonActor *)this_ptr_00,&local_88);",
+      "type": "unnamed_local"
     }
   ]
 }

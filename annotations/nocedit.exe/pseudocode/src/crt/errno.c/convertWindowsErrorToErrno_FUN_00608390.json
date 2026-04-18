@@ -1,4 +1,5 @@
 {
+  "compile_source": "c",
   "complexity": {
     "assembly_lines": 51,
     "complexity_score": 54,
@@ -195,6 +196,14 @@
   },
   "suspects": [
     {
+      "description": "Cast-and-add on &g_LookupTableStruct \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory.",
+      "line": 23,
+      "match": "g_LookupTableStruct",
+      "severity": "moderate",
+      "text": "error_code = *(int *)(&g_LookupTableStruct + windows_error) >> 0x18;",
+      "type": "suspicious_cast"
+    },
+    {
       "address": "00608390",
       "crt_type": "runtime support",
       "description": "C runtime function with non-standard stack patterns",
@@ -202,14 +211,6 @@
       "match": "crt_",
       "text": "CRT function (runtime support) at 00608390",
       "type": "special_crt_function"
-    },
-    {
-      "description": "Cast-and-add on &g_LookupTableStruct \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory.",
-      "line": 23,
-      "match": "g_LookupTableStruct",
-      "severity": "moderate",
-      "text": "error_code = *(int *)(&g_LookupTableStruct + windows_error) >> 0x18;",
-      "type": "suspicious_cast"
     }
   ]
 }

@@ -4,23 +4,18 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 540,
-    "complexity_score": 993,
+    "complexity_score": 583,
     "cross_reference_count": 77,
     "function_call_count": 0,
     "global_count": 38,
-    "max_suspect_severity": "severe",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 568,
-    "suspect_count": 39,
+    "suspect_count": 1,
     "suspect_types": [
-      "fnstsw_flag_artifact",
-      "mmx_assembly",
-      "nonstandard_int",
-      "pointer_cast",
-      "undefined_ram",
-      "undefined_type",
-      "warning_overlapping_globals"
+      "mmx_assembly"
     ],
     "total_lines": 1108
   },
@@ -831,6 +826,350 @@
     },
     "pcode_op_count": 3075
   },
+  "resolved_suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 10,
+      "match": "undefined6 uVar7",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "undefined6 uVar7;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 33,
+      "match": "uint5",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uint5 uVar25;",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "g_CurrentScreenPtr = (int *)((int)g_ScreenBufferArray[scanline_y] + uVar8 * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined RAM reference",
+      "line": 167,
+      "match": "uRam00682694",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar38 = ((CONCAT44(uRam00682694,uVar8) & 0xffffffff0000ffff) << 0x10 |",
+      "type": "undefined_ram"
+    },
+    {
+      "description": "Undefined RAM reference",
+      "line": 168,
+      "match": "uRam00682694",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "CONCAT44(uRam00682694,uVar8) & 0xffffffff0000ffff) << 0x10 |",
+      "type": "undefined_ram"
+    },
+    {
+      "description": "Undefined RAM reference",
+      "line": 169,
+      "match": "uRam00682694",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "CONCAT44(uRam00682694,uVar8) & 0xffffffff0000ffff;",
+      "type": "undefined_ram"
+    },
+    {
+      "description": "Undefined RAM reference",
+      "line": 170,
+      "match": "uRam006826b4",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar43 = ((CONCAT44(uRam006826b4,uVar19) & 0xffffffff0000ffff) << 0x10 |",
+      "type": "undefined_ram"
+    },
+    {
+      "description": "Undefined RAM reference",
+      "line": 171,
+      "match": "uRam006826b4",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "CONCAT44(uRam006826b4,uVar19) & 0xffffffff0000ffff) << 0x10 |",
+      "type": "undefined_ram"
+    },
+    {
+      "description": "Undefined RAM reference",
+      "line": 172,
+      "match": "uRam006826b4",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "CONCAT44(uRam006826b4,uVar19) & 0xffffffff0000ffff;",
+      "type": "undefined_ram"
+    },
+    {
+      "description": "Undefined RAM reference",
+      "line": 194,
+      "match": "uRam00682694",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar38 = ((CONCAT44(uRam00682694,uVar9) & 0xffffffff0000ffff) << 0x10 |",
+      "type": "undefined_ram"
+    },
+    {
+      "description": "Undefined RAM reference",
+      "line": 195,
+      "match": "uRam0068269c",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "CONCAT44(uRam0068269c,uVar13) & 0xffffffff0000ffff) << 0x10 |",
+      "type": "undefined_ram"
+    },
+    {
+      "description": "Undefined RAM reference",
+      "line": 196,
+      "match": "uRam006826a4",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "CONCAT44(uRam006826a4,uVar14) & 0xffffffff0000ffff;",
+      "type": "undefined_ram"
+    },
+    {
+      "description": "Undefined RAM reference",
+      "line": 197,
+      "match": "uRam006826b4",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar43 = ((CONCAT44(uRam006826b4,uVar19) & 0xffffffff0000ffff) << 0x10 |",
+      "type": "undefined_ram"
+    },
+    {
+      "description": "Undefined RAM reference",
+      "line": 198,
+      "match": "uRam006826bc",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "CONCAT44(uRam006826bc,uVar11) & 0xffffffff0000ffff) << 0x10 |",
+      "type": "undefined_ram"
+    },
+    {
+      "description": "Undefined RAM reference",
+      "line": 199,
+      "match": "uRam006826c4",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "CONCAT44(uRam006826c4,uVar8) & 0xffffffff0000ffff;",
+      "type": "undefined_ram"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 209,
+      "match": "uint7",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar37 = (ushort)(((uint7)(byte)((ulonglong)_g_SolidColorMode >> 0x18) << 0x30) >> 0x28);",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 238,
+      "match": "int5",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "CONCAT52((int5)(CONCAT43((int)(((uint7)CONCAT21((short)(((uint7)(byte)(",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 238,
+      "match": "uint7",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "CONCAT52((int5)(CONCAT43((int)(((uint7)CONCAT21((short)(((uint7)(byte)(",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 238,
+      "match": "uint7",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "CONCAT52((int5)(CONCAT43((int)(((uint7)CONCAT21((short)(((uint7)(byte)(",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 262,
+      "match": "int3",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar9 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)bVar6 << 0x30) >> 0x28),",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 262,
+      "match": "uint7",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar9 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)bVar6 << 0x30) >> 0x28),",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 265,
+      "match": "uint5",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar25 = (uint5)uVar9 & 0xffffffff00;",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 286,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(uint *)((int)g_CurrentScreenPtr + uVar19) = uVar22;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 288,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "*(int *)((int)g_CurrentZBufferPtr + uVar19) = iVar17;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 331,
+      "match": "int3",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar9",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 331,
+      "match": "uint7",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar9",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 342,
+      "match": "uint7",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar24 = (ushort)(((uint7)(byte)((uint)uVar22 >> 0x18) << 0x30) >> 0x28);",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 344,
+      "match": "int3",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "CONCAT34((int3)(CONCAT25(uVar24,CONCAT14((char)((uint)uVar22 >> 0x10),",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 347,
+      "match": "int5",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar7 = CONCAT51((int5)(uVar43 >> 0x18),(char)((uint)uVar22 >> 8));",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 358,
+      "match": "uint7",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar29 = (ushort)(((uint7)(byte)((0 < sVar41) * (sVar41 < 0x100) *",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
+      "line": 377,
+      "match": "CONCAT22((short)uVar7 * (short)(uVar38 >> 0x10",
+      "resolution_source": "keep",
+      "severity": "severe",
+      "text": "CONCAT22((short)uVar7 * (short)(uVar38 >> 0x10)",
+      "type": "fnstsw_flag_artifact"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 475,
+      "match": "int3",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 475,
+      "match": "uint7",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 482,
+      "match": "int3",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 482,
+      "match": "uint7",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "Non-standard integer size (decompiler artifact)",
+      "line": 496,
+      "match": "uint7",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "uVar24 = (ushort)(((uint7)(byte)((0 < sVar41) * (sVar41 < 0x100) *",
+      "type": "nonstandard_int"
+    },
+    {
+      "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
+      "line": 511,
+      "match": "CONCAT22((short)(uVar43 >> 0x10",
+      "resolution_source": "keep",
+      "severity": "severe",
+      "text": "CONCAT22((short)(uVar43 >> 0x10) *",
+      "type": "fnstsw_flag_artifact"
+    }
+  ],
   "stack_frame": {
     "frame_size": 0,
     "local_size": 0,
@@ -840,310 +1179,6 @@
     "variables": []
   },
   "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved type",
-      "line": 10,
-      "match": "undefined6 uVar7",
-      "severity": "moderate",
-      "text": "undefined6 uVar7;",
-      "type": "undefined_type"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 33,
-      "match": "uint5",
-      "severity": "mild",
-      "text": "uint5 uVar25;",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "g_CurrentScreenPtr = (int *)((int)g_ScreenBufferArray[scanline_y] + uVar8 * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 167,
-      "match": "uRam00682694",
-      "severity": "mild",
-      "text": "uVar38 = ((CONCAT44(uRam00682694,uVar8) & 0xffffffff0000ffff) << 0x10 |",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 168,
-      "match": "uRam00682694",
-      "severity": "mild",
-      "text": "CONCAT44(uRam00682694,uVar8) & 0xffffffff0000ffff) << 0x10 |",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 169,
-      "match": "uRam00682694",
-      "severity": "mild",
-      "text": "CONCAT44(uRam00682694,uVar8) & 0xffffffff0000ffff;",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 170,
-      "match": "uRam006826b4",
-      "severity": "mild",
-      "text": "uVar43 = ((CONCAT44(uRam006826b4,uVar19) & 0xffffffff0000ffff) << 0x10 |",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 171,
-      "match": "uRam006826b4",
-      "severity": "mild",
-      "text": "CONCAT44(uRam006826b4,uVar19) & 0xffffffff0000ffff) << 0x10 |",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 172,
-      "match": "uRam006826b4",
-      "severity": "mild",
-      "text": "CONCAT44(uRam006826b4,uVar19) & 0xffffffff0000ffff;",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 194,
-      "match": "uRam00682694",
-      "severity": "mild",
-      "text": "uVar38 = ((CONCAT44(uRam00682694,uVar9) & 0xffffffff0000ffff) << 0x10 |",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 195,
-      "match": "uRam0068269c",
-      "severity": "mild",
-      "text": "CONCAT44(uRam0068269c,uVar13) & 0xffffffff0000ffff) << 0x10 |",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 196,
-      "match": "uRam006826a4",
-      "severity": "mild",
-      "text": "CONCAT44(uRam006826a4,uVar14) & 0xffffffff0000ffff;",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 197,
-      "match": "uRam006826b4",
-      "severity": "mild",
-      "text": "uVar43 = ((CONCAT44(uRam006826b4,uVar19) & 0xffffffff0000ffff) << 0x10 |",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 198,
-      "match": "uRam006826bc",
-      "severity": "mild",
-      "text": "CONCAT44(uRam006826bc,uVar11) & 0xffffffff0000ffff) << 0x10 |",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 199,
-      "match": "uRam006826c4",
-      "severity": "mild",
-      "text": "CONCAT44(uRam006826c4,uVar8) & 0xffffffff0000ffff;",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 209,
-      "match": "uint7",
-      "severity": "mild",
-      "text": "uVar37 = (ushort)(((uint7)(byte)((ulonglong)_g_SolidColorMode >> 0x18) << 0x30) >> 0x28);",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 238,
-      "match": "int5",
-      "severity": "mild",
-      "text": "CONCAT52((int5)(CONCAT43((int)(((uint7)CONCAT21((short)(((uint7)(byte)(",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 238,
-      "match": "uint7",
-      "severity": "mild",
-      "text": "CONCAT52((int5)(CONCAT43((int)(((uint7)CONCAT21((short)(((uint7)(byte)(",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 238,
-      "match": "uint7",
-      "severity": "mild",
-      "text": "CONCAT52((int5)(CONCAT43((int)(((uint7)CONCAT21((short)(((uint7)(byte)(",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 262,
-      "match": "int3",
-      "severity": "mild",
-      "text": "uVar9 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)bVar6 << 0x30) >> 0x28),",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 262,
-      "match": "uint7",
-      "severity": "mild",
-      "text": "uVar9 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)bVar6 << 0x30) >> 0x28),",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 265,
-      "match": "uint5",
-      "severity": "mild",
-      "text": "uVar25 = (uint5)uVar9 & 0xffffffff00;",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 286,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)g_CurrentScreenPtr + uVar19) = uVar22;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 288,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)g_CurrentZBufferPtr + uVar19) = iVar17;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 331,
-      "match": "int3",
-      "severity": "mild",
-      "text": "CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar9",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 331,
-      "match": "uint7",
-      "severity": "mild",
-      "text": "CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar9",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 342,
-      "match": "uint7",
-      "severity": "mild",
-      "text": "uVar24 = (ushort)(((uint7)(byte)((uint)uVar22 >> 0x18) << 0x30) >> 0x28);",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 344,
-      "match": "int3",
-      "severity": "mild",
-      "text": "CONCAT34((int3)(CONCAT25(uVar24,CONCAT14((char)((uint)uVar22 >> 0x10),",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 347,
-      "match": "int5",
-      "severity": "mild",
-      "text": "uVar7 = CONCAT51((int5)(uVar43 >> 0x18),(char)((uint)uVar22 >> 8));",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 358,
-      "match": "uint7",
-      "severity": "mild",
-      "text": "uVar29 = (ushort)(((uint7)(byte)((0 < sVar41) * (sVar41 < 0x100) *",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
-      "line": 377,
-      "match": "CONCAT22((short)uVar7 * (short)(uVar38 >> 0x10",
-      "severity": "severe",
-      "text": "CONCAT22((short)uVar7 * (short)(uVar38 >> 0x10)",
-      "type": "fnstsw_flag_artifact"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 475,
-      "match": "int3",
-      "severity": "mild",
-      "text": "CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 475,
-      "match": "uint7",
-      "severity": "mild",
-      "text": "CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 482,
-      "match": "int3",
-      "severity": "mild",
-      "text": "CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 482,
-      "match": "uint7",
-      "severity": "mild",
-      "text": "CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 496,
-      "match": "uint7",
-      "severity": "mild",
-      "text": "uVar24 = (ushort)(((uint7)(byte)((0 < sVar41) * (sVar41 < 0x100) *",
-      "type": "nonstandard_int"
-    },
-    {
-      "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
-      "line": 511,
-      "match": "CONCAT22((short)(uVar43 >> 0x10",
-      "severity": "severe",
-      "text": "CONCAT22((short)(uVar43 >> 0x10) *",
-      "type": "fnstsw_flag_artifact"
-    },
     {
       "description": "MMX/SIMD assembly - may not decompile to clean C code",
       "line": 93,

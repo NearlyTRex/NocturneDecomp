@@ -664,9 +664,9 @@ section .text
     MOV ECX,0x32                        ; 004e1967
     PUSH 0x62cc17                       ; 004e196c | = "%[^\n]\n"
     LEA EDI,[ESP + 0x410]               ; 004e1971
-    MOV ESI,0x67b688                    ; 004e1978 | = "(file corrupt)"
+    MOV ESI,0x67b688                    ; 004e1978 | g_LoadSavefileStatus
     PUSH EBX                            ; 004e197d
-    MOVSD.REP ES:EDI,ESI                ; 004e197e | = "(file corrupt)" | s_e_corrupt)_0067b68c
+    MOVSD.REP ES:EDI,ESI                ; 004e197e | g_LoadSavefileStatus | s_e_corrupt)_0067b68c
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 004e1980
         ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 004e1985

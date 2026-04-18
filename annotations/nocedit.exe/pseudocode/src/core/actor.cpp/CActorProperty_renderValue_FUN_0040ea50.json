@@ -4,9 +4,10 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 555,
-    "complexity_score": 403,
+    "complexity_score": 398,
     "cross_reference_count": 6,
     "function_call_count": 5,
     "global_count": 44,
@@ -14,7 +15,6 @@
     "pseudocode_lines": 278,
     "suspect_count": 11,
     "suspect_types": [
-      "format_string_mismatch",
       "pointer_cast",
       "unnamed_param"
     ],
@@ -483,6 +483,20 @@
     },
     "pcode_op_count": 2142
   },
+  "resolved_suspects": [
+    {
+      "actual_args": 0,
+      "description": "Format \"Unknown CActorProperty type: %d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Unknown CActorProperty type: %d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 277,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Unknown CActorProperty type: %d\");",
+      "resolution_source": "keep",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    }
+  ],
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -595,15 +609,13 @@
       "type": "pointer_cast"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"Unknown CActorProperty type: %d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Unknown CActorProperty type: %d",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 277,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Unknown CActorProperty type: %d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 271,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&g_PropertyFlagDefinitions[0].mask + iVar13)) != 0) {",
+      "type": "pointer_cast"
     }
   ]
 }

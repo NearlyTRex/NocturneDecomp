@@ -4,18 +4,19 @@
     "success": true,
     "warnings": []
   },
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 215,
-    "complexity_score": 121,
+    "complexity_score": 131,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 81,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_param",
-      "stack_ref"
+      "unnamed_local"
     ],
     "total_lines": 296
   },
@@ -147,6 +148,17 @@
     },
     "pcode_op_count": 757
   },
+  "resolved_suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 54,
+      "match": "&stack0xffffff88",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffff88);",
+      "type": "stack_ref"
+    }
+  ],
   "stack_frame": {
     "frame_size": 104,
     "local_size": 100,
@@ -247,12 +259,22 @@
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 54,
-      "match": "&stack0xffffff88",
-      "severity": "moderate",
-      "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffff88);",
-      "type": "stack_ref"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 14,
+      "match": "local_78",
+      "severity": "mild",
+      "text": "CBoundingBox3D local_78;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 63,
+      "match": "local_78",
+      "severity": "mild",
+      "text": "(&this_ptr->base,&local_78);",
+      "type": "unnamed_local"
     }
   ],
   "vtable_info": {
