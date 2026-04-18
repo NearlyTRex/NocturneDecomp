@@ -105,10 +105,10 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
     do {
       pal1 = g_Hardware32BitPalette[
           (byte)pcVar3[((uVar4 >> 1) + iVar4 & 0xff) * 0x100 +
-                       ((local_28 >> 1) + iVar6 & 0xff)]] >> 2;
+                       ((local_28 >> 1) + iVar6 & 0xff)] >> 2];
       pal2 = g_Hardware32BitPalette[
           (byte)pcVar3[((uVar4 >> 2) + iVar4 & 0xff) * 0x100 +
-                       ((local_28 >> 2) + iVar6 & 0xff)]] >> 2;
+                       ((local_28 >> 2) + iVar6 & 0xff)] >> 2];
 
       pix = puVar6[0];
       layer_sum = 0;
