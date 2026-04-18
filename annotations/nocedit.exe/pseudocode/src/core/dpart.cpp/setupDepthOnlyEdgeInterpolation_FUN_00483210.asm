@@ -13,8 +13,8 @@
 ;   undefined4 g_EdgeInterpolationArray[0].base.y_max
 ;   undefined4 g_EdgeInterpolationArray[0].base.x_current
 ;   undefined4 g_EdgeInterpolationArray[0].base.x_gradient
-;   undefined4 g_EdgeInterpolationArray[0].base.w_current
-;   undefined4 g_EdgeInterpolationArray[0].base.w_gradient
+;   undefined4 g_EdgeInterpolationArray[0].base.depth_current
+;   undefined4 g_EdgeInterpolationArray[0].base.depth_gradient
 ;   int g_RenderTriangleMinScanlineY
 ;   int g_RenderTriangleMaxScanlineY
 ;   int g_RasterizerDepthBias
@@ -90,7 +90,7 @@ section .text
     MOV EAX,ECX                         ; 004832b5
     IMUL EDX                            ; 004832b7
     SHRD EAX,EDX,0x10                   ; 004832b9
-    MOV dword ptr [ESI + 0x2c],EAX      ; 004832bd | g_EdgeInterpolationArray[0].base.w_gradient
+    MOV dword ptr [ESI + 0x2c],EAX      ; 004832bd | g_EdgeInterpolationArray[0].base.depth_gradient
     MOV ECX,dword ptr [EBX + 0x14]      ; 004832c0
     AND ECX,0xffff                      ; 004832c3
     XOR CX,0xffff                       ; 004832c9
@@ -102,7 +102,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x10]      ; 004832da
     MOV EDI,dword ptr [0x02c6d03c]      ; 004832dd | g_RasterizerDepthBias
     ADD EAX,EDX                         ; 004832e3
-    MOV EDX,dword ptr [ESI + 0x2c]      ; 004832e5 | g_EdgeInterpolationArray[0].base.w_gradient
+    MOV EDX,dword ptr [ESI + 0x2c]      ; 004832e5 | g_EdgeInterpolationArray[0].base.depth_gradient
     MOV dword ptr [ESI + 0x8],EAX       ; 004832e8 | g_EdgeInterpolationArray[0].base.x_current
     MOV EAX,ECX                         ; 004832eb
     MOV EBX,dword ptr [EBX + 0x8]       ; 004832ed
@@ -114,7 +114,7 @@ section .text
     INC EBP                             ; 00483301
     ADD EBX,EAX                         ; 00483302
     MOV dword ptr [0x02c6cb70],EBP      ; 00483304 | g_RenderTriangleEdgeCount
-    MOV dword ptr [ESI + 0x28],EBX      ; 0048330a | g_EdgeInterpolationArray[0].base.w_current
+    MOV dword ptr [ESI + 0x28],EBX      ; 0048330a | g_EdgeInterpolationArray[0].base.depth_current
     POP ESI                             ; 0048330d
     POP EBP                             ; 0048330e
         ;   Label: LAB_0048330e

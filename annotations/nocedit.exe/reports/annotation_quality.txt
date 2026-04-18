@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        110 ( 1.7%)
+  Functions with type issues:        109 ( 1.7%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -23,12 +23,12 @@ SUMMARY STATISTICS
     Missing register params:           0
     Wrong calling convention:          1
     Undefined types in variables:      103
-    Unresolved stack params:           6
+    Unresolved stack params:           5
 
   Excluded (.keep / MMX / by-value):   126 functions
     Wrong calling convention:          2
-    Undefined types in variables:      115
-    Unresolved stack params:           15
+    Undefined types in variables:      114
+    Unresolved stack params:           16
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
@@ -79,19 +79,13 @@ Wrong calling convention (unaffected register usage) (1)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (6)
+Unresolved stack parameters (missing from signature) (5)
 --------------------------------------------------------------------------------
 
   CWinFont_setColorAndDrawText
     Address: 0x005f2440  File: engine/winfont.cpp
     Evidence: in_stack_0000002c, in_stack_0000002c
     Signature: void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont *this_ptr,HDC device_context,char *text_string,int x_position,int y_position,int foreground_color,int background_color)
-    Suggested: Signature is missing stack parameters entirely
-
-  CWavOutDevice_setMode
-    Address: 0x005b0a30  File: sound/sndwav.cpp
-    Evidence: in_stack_00000018, in_stack_00000018
-    Signature: int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_buffer_size)
     Suggested: Signature is missing stack parameters entirely
 
   CBugs_renderOpaque
@@ -674,13 +668,19 @@ Wrong calling convention - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Unresolved stack params - .keep overrides (15)
+Unresolved stack params - .keep overrides (16)
 --------------------------------------------------------------------------------
 
   CWavInDevice_setMode
     Address: 0x005b0f70  File: sound/sndwav.cpp
     Evidence: in_stack_00000018, in_stack_00000018
     Signature: int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int stereo_flag)
+    Suggested: Signature is missing stack parameters entirely
+
+  CWavOutDevice_setMode
+    Address: 0x005b0a30  File: sound/sndwav.cpp
+    Evidence: in_stack_00000018, in_stack_00000018
+    Signature: int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_buffer_size)
     Suggested: Signature is missing stack parameters entirely
 
   nextMixingBuffer
@@ -780,7 +780,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (115)
+Undefined types - .keep overrides (114)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -1351,11 +1351,6 @@ Undefined types - .keep overrides (115)
   getSfxSample
     Address: 0x005a4c80  File: sound/sndmain.cpp
     Locals:  local_113 (undefined1[255])
-    Suggested: Resolve undefined types to concrete types
-
-  parseWavFile
-    Address: 0x005a3fe0  File: sound/sndmain.cpp
-    Locals:  local_24 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
 --------------------------------------------------------------------------------

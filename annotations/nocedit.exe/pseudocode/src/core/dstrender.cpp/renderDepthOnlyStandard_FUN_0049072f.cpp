@@ -35,10 +35,10 @@ void __edi_esi_ebx core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f(SSoft
   iVar7 = (uVar6 >> 0x10) - uVar5;
   if (iVar7 != 0 && uVar5 <= uVar6 >> 0x10) {
     puVar9 = (ushort *)((int)g_ScreenBufferArray[scanline_y] + uVar5 * 2);
-    iVar2 = (left_edge->base).w_current;
-    iVar3 = (pSVar10->base).w_current;
+    iVar2 = (left_edge->base).depth_current;
+    iVar3 = (pSVar10->base).depth_current;
     uVar1 = g_ReciprocalLookupTable[iVar7 + 1];
-    iVar11 = (pSVar10->base).w_current;
+    iVar11 = (pSVar10->base).depth_current;
     do {
       if ((uint)(iVar11 >> 8) < (uint)*puVar9) {
         *puVar9 = (ushort)((uint)iVar11 >> 8);

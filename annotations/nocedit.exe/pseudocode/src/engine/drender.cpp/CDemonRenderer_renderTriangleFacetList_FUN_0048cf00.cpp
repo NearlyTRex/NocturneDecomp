@@ -13,8 +13,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048c
   int iVar2;
   int iVar3;
   int polygon_count;
-  CVector3i local_28;
-  int local_1c;
+  int local_28 [4];
   int local_18;
   int local_14;
   SMRGLHeaderBasic *pSVar1;
@@ -32,26 +31,26 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048c
       g_VertexPreprocessMode = 6;
       if (g_UseExternalRenderer == 0) {
         for (; 0 < primitive_count; primitive_count = primitive_count + -1) {
-          local_28.x = primitive_array[1].base.type;
-          local_28.y = primitive_array[1].surface_normal.B;
-          local_28.z = primitive_array[2].base.type;
+          local_28[0] = primitive_array[1].base.type;
+          local_28[1] = primitive_array[1].surface_normal.B;
+          local_28[2] = primitive_array[2].base.type;
           if ((primitive_array->base).count == 4) {
-            local_1c = primitive_array[2].surface_normal.B;
+            local_28[3] = primitive_array[2].surface_normal.B;
           }
           if (this_ptr->skip_uv_extraction == 0) {
-            this_ptr->vertex_buffer_ptr[local_28.x].u = primitive_array[1].base.count;
-            this_ptr->vertex_buffer_ptr[local_28.x].v = primitive_array[1].surface_normal.A;
-            this_ptr->vertex_buffer_ptr[local_28.y].u = primitive_array[1].surface_normal.C;
-            this_ptr->vertex_buffer_ptr[local_28.y].v = primitive_array[1].surface_normal.D;
-            this_ptr->vertex_buffer_ptr[local_28.z].u = primitive_array[2].base.count;
-            this_ptr->vertex_buffer_ptr[local_28.z].v = primitive_array[2].surface_normal.A;
+            this_ptr->vertex_buffer_ptr[local_28[0]].u = primitive_array[1].base.count;
+            this_ptr->vertex_buffer_ptr[local_28[0]].v = primitive_array[1].surface_normal.A;
+            this_ptr->vertex_buffer_ptr[local_28[1]].u = primitive_array[1].surface_normal.C;
+            this_ptr->vertex_buffer_ptr[local_28[1]].v = primitive_array[1].surface_normal.D;
+            this_ptr->vertex_buffer_ptr[local_28[2]].u = primitive_array[2].base.count;
+            this_ptr->vertex_buffer_ptr[local_28[2]].v = primitive_array[2].surface_normal.A;
             if ((primitive_array->base).count == 4) {
-              this_ptr->vertex_buffer_ptr[local_1c].u = primitive_array[2].surface_normal.C;
-              this_ptr->vertex_buffer_ptr[local_1c].v = primitive_array[2].surface_normal.D;
+              this_ptr->vertex_buffer_ptr[local_28[3]].u = primitive_array[2].surface_normal.C;
+              this_ptr->vertex_buffer_ptr[local_28[3]].v = primitive_array[2].surface_normal.D;
             }
           }
           engine_drender_cpp_renderTriangleTextured_FUN_00483370
-                    (&local_28.x,(primitive_array->base).count);
+                    (local_28,(primitive_array->base).count);
           primitive_array =
                (SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + primitive_stride);
         }
@@ -97,13 +96,16 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048c
       g_RenderStateFlags.dword = 0;
       g_VertexPreprocessMode = g_RenderStateFlags.dword;
       for (; 0 < primitive_count; primitive_count = primitive_count + -1) {
-        local_28.x = primitive_array[1].base.type;
-        local_28.y = primitive_array[1].surface_normal.B;
-        local_28.z = primitive_array[2].base.type;
+        local_28[0] = primitive_array[1].base.type;
+        local_28[1] = primitive_array[1].surface_normal.B;
+        local_28[2] = primitive_array[2].base.type;
+        if ((primitive_array->base).count == 4) {
+          local_28[3] = primitive_array[2].surface_normal.B;
+        }
         pSVar1 = &primitive_array->base;
         primitive_array =
              (SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + primitive_stride);
-        engine_drender_cpp_renderTriangleSimple_FUN_004839f0(&local_28,pSVar1->count);
+        engine_drender_cpp_renderTriangleSimple_FUN_004839f0((CVector3i *)local_28,pSVar1->count);
       }
     }
   }

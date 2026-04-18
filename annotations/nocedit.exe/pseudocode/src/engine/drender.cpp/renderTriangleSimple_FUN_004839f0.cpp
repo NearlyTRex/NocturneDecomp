@@ -123,16 +123,17 @@ void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i *ver
                   (longlong)
                   (((local_28->projected_vertex).transformed_z -
                    (pSVar11->projected_vertex).transformed_z) * 0x100);
-          g_EdgeInterpolationArray[iVar7].base.w_gradient =
+          g_EdgeInterpolationArray[iVar7].base.depth_gradient =
                (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
           uVar4 = (uint)(ushort)((ushort)(pSVar11->projected_vertex).screen_y ^ 0xffff);
           lVar1 = (longlong)(int)uVar4 * (longlong)g_EdgeInterpolationArray[iVar7].base.x_gradient;
           g_EdgeInterpolationArray[iVar7].base.x_current =
                (pSVar11->projected_vertex).screen_x +
                ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-          lVar1 = (longlong)(int)uVar4 * (longlong)g_EdgeInterpolationArray[iVar7].base.w_gradient;
+          lVar1 = (longlong)(int)uVar4 *
+                  (longlong)g_EdgeInterpolationArray[iVar7].base.depth_gradient;
           g_RenderTriangleEdgeCount = g_RenderTriangleEdgeCount + 1;
-          g_EdgeInterpolationArray[iVar7].base.w_current =
+          g_EdgeInterpolationArray[iVar7].base.depth_current =
                ((pSVar11->projected_vertex).transformed_z * 0x100 - g_RasterizerDepthBias) +
                ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
         }
@@ -213,7 +214,8 @@ LAB_00483cc8:
             return;
           }
           (local_18->base).x_current = (local_18->base).x_current + (local_18->base).x_gradient;
-          (local_18->base).w_current = (local_18->base).w_current + (local_18->base).w_gradient;
+          (local_18->base).depth_current =
+               (local_18->base).depth_current + (local_18->base).depth_gradient;
           *(int *)(scanline_y + 8) = *(int *)(scanline_y + 8) + *(int *)(scanline_y + 0xc);
           *(int *)(scanline_y + 0x28) = *(int *)(scanline_y + 0x28) + *(int *)(scanline_y + 0x2c);
           scanline_y = (byte *)((int)&(local_20->projected_vertex).transformed_x + 1);

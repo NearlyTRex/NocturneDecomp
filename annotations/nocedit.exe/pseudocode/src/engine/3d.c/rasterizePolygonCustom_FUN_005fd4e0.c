@@ -109,9 +109,9 @@ void __cdecl engine_3d_c_rasterizePolygonCustom_FUN_005fd4e0(SRenderVertex *vert
           g_RasterizerMaxY = iVar6;
         }
         g_RasterizerEdgeArray[(int)pSVar11].base.x_current = (pSVar9->projected_vertex).screen_x;
-        g_RasterizerEdgeArray[(int)pSVar11].base.w_current =
+        g_RasterizerEdgeArray[(int)pSVar11].base.depth_current =
              (pSVar9->projected_vertex).transformed_z << 8;
-        g_RasterizerEdgeArray[(int)pSVar11].base.z_current = pSVar9->r;
+        g_RasterizerEdgeArray[(int)pSVar11].base.red_current = pSVar9->r;
         uVar9 = (pSVar10->projected_vertex).screen_y - (pSVar9->projected_vertex).screen_y;
         if (uVar9 < 0x10000) {
           iVar5 = 0;
@@ -129,26 +129,26 @@ void __cdecl engine_3d_c_rasterizePolygonCustom_FUN_005fd4e0(SRenderVertex *vert
                 (longlong)
                 (((pSVar10->projected_vertex).transformed_z -
                  (pSVar9->projected_vertex).transformed_z) * 0x100);
-        g_RasterizerEdgeArray[(int)pSVar11].base.w_gradient =
+        g_RasterizerEdgeArray[(int)pSVar11].base.depth_gradient =
              (uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10;
         lVar3 = (longlong)iVar5 * (longlong)(pSVar10->r - pSVar9->r);
-        g_RasterizerEdgeArray[(int)pSVar11].base.z_gradient =
+        g_RasterizerEdgeArray[(int)pSVar11].base.red_gradient =
              (uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10;
         uVar8 = (uint)(ushort)((ushort)(pSVar9->projected_vertex).screen_y ^ 0xffff);
         lVar3 = (longlong)(int)uVar8 * (longlong)g_RasterizerEdgeArray[(int)pSVar11].base.x_gradient
         ;
         piVar1 = &g_RasterizerEdgeArray[(int)pSVar11].base.x_current;
         *piVar1 = *piVar1 + ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
-        lVar3 = (longlong)(int)uVar8 * (longlong)g_RasterizerEdgeArray[(int)pSVar11].base.w_gradient
-        ;
-        iVar5 = g_RasterizerEdgeArray[(int)pSVar11].base.z_gradient;
-        g_RasterizerEdgeArray[(int)pSVar11].base.w_current =
-             g_RasterizerEdgeArray[(int)pSVar11].base.w_current +
+        lVar3 = (longlong)(int)uVar8 *
+                (longlong)g_RasterizerEdgeArray[(int)pSVar11].base.depth_gradient;
+        iVar5 = g_RasterizerEdgeArray[(int)pSVar11].base.red_gradient;
+        g_RasterizerEdgeArray[(int)pSVar11].base.depth_current =
+             g_RasterizerEdgeArray[(int)pSVar11].base.depth_current +
              ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
         lVar3 = (longlong)(int)uVar8 * (longlong)iVar5;
         right = (SHardwareEdge *)(g_RasterizerEdgeCount + 1);
-        g_RasterizerEdgeArray[(int)pSVar11].base.z_current =
-             g_RasterizerEdgeArray[(int)pSVar11].base.z_current +
+        g_RasterizerEdgeArray[(int)pSVar11].base.red_current =
+             g_RasterizerEdgeArray[(int)pSVar11].base.red_current +
              ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
       }
       local_18 = (SSoftwareEdge *)((int)&(local_18->base).y_min + 1);
@@ -225,12 +225,12 @@ LAB_005fd6c4:
         (*scanline_renderer)(&left->base,right,(int)scanline_y);
         piVar2 = &(pSVar5->base).x_current;
         *piVar2 = *piVar2 + (pSVar5->base).x_gradient;
-        (pSVar5->base).w_current = (pSVar5->base).w_current + (pSVar5->base).w_gradient;
-        (pSVar5->base).z_current = (pSVar5->base).z_current + (pSVar5->base).z_gradient;
+        (pSVar5->base).depth_current = (pSVar5->base).depth_current + (pSVar5->base).depth_gradient;
+        (pSVar5->base).red_current = (pSVar5->base).red_current + (pSVar5->base).red_gradient;
         (left->base).x_current = (left->base).x_current + (left->base).x_gradient;
         scanline_y = (SSoftwareEdge *)((int)&(local_18->base).y_min + 1);
-        (left->base).w_current = (left->base).w_current + (left->base).w_gradient;
-        (left->base).z_current = (left->base).z_current + (left->base).z_gradient;
+        (left->base).depth_current = (left->base).depth_current + (left->base).depth_gradient;
+        (left->base).red_current = (left->base).red_current + (left->base).red_gradient;
         local_18 = scanline_y;
       } while( true );
     }

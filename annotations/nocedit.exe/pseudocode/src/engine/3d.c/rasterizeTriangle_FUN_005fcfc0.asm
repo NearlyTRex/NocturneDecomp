@@ -425,7 +425,7 @@ section .text
     IMUL EDX                            ; 005fd3bf
     SHRD EAX,EDX,0x10                   ; 005fd3c1
     MOV EDX,EAX                         ; 005fd3c5
-    MOV dword ptr [EBX + 0x2c],EAX      ; 005fd3c7 | g_RasterizerEdgeArray[0].base.w_gradient
+    MOV dword ptr [EBX + 0x2c],EAX      ; 005fd3c7 | g_RasterizerEdgeArray[0].base.depth_gradient
     MOV EAX,dword ptr [ESP]             ; 005fd3ca
     MOV ECX,dword ptr [ESI + 0x8]       ; 005fd3cd
     MOV ESI,dword ptr [0x02c6d03c]      ; 005fd3d0 | g_RasterizerDepthBias
@@ -436,7 +436,7 @@ section .text
     MOV EBP,dword ptr [0x03f9ad5c]      ; 005fd3e1 | g_RasterizerEdgeCount
     ADD ECX,EAX                         ; 005fd3e7
     INC EBP                             ; 005fd3e9
-    MOV dword ptr [EBX + 0x28],ECX      ; 005fd3ea | g_RasterizerEdgeArray[0].base.w_current
+    MOV dword ptr [EBX + 0x28],ECX      ; 005fd3ea | g_RasterizerEdgeArray[0].base.depth_current
     JMP 0x005fd132                      ; 005fd3ed
         ;   XREF to: 005fd132 (UNCONDITIONAL_JUMP)  ; LAB_005fd132
     MOV EAX,0xffffffff                  ; 005fd3f2

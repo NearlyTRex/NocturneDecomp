@@ -200,6 +200,8 @@
 #include "types/structs/SVoxelCubeMetadata.h"
 #include "types/structs/SVoxelGrid.h"
 #include "types/structs/SWaterVertex.h"
+#include "types/structs/SWavChunkHeader.h"
+#include "types/structs/SWavFmtChunk.h"
 #include "types/structs/SWayPointAdjacency.h"
 #include "types/structs/SWindow.h"
 

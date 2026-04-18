@@ -54,8 +54,8 @@ void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_
          (int)((ulonglong)
                ((longlong)(int)(g_PerspectiveRightV - g_PerspectiveLeftV) *
                (longlong)(int)g_ReciprocalLookupTable[iVar3 + 1]) >> 0x20) << 4;
-    uVar1 = (pSVar12->base).w_current;
-    g_PerspectiveRightZ = (left_edge->base).w_current;
+    uVar1 = (pSVar12->base).depth_current;
+    g_PerspectiveRightZ = (left_edge->base).depth_current;
     g_PerspectiveSubdivDeltaZ =
          (int)((ulonglong)
                ((longlong)(int)(g_PerspectiveRightZ - uVar1) *

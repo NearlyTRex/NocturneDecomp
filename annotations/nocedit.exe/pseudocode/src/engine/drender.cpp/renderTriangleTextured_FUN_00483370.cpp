@@ -115,22 +115,22 @@ void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00483370(int *vertex_
                pSVar9->v + ((uint)lVar11 >> 0x10 | (int)((ulonglong)lVar11 >> 0x20) << 0x10);
           lVar11 = (longlong)iVar12 * (longlong)(local_1c->r - pSVar9->r);
           uVar13 = (uint)lVar11 >> 0x10 | (int)((ulonglong)lVar11 >> 0x20) << 0x10;
-          g_EdgeInterpolationArray[iVar14].base.z_gradient = uVar13;
+          g_EdgeInterpolationArray[iVar14].base.red_gradient = uVar13;
           lVar11 = (longlong)(int)uVar10 * (longlong)(int)uVar13;
-          g_EdgeInterpolationArray[iVar14].base.z_current =
+          g_EdgeInterpolationArray[iVar14].base.red_current =
                pSVar9->r + ((uint)lVar11 >> 0x10 | (int)((ulonglong)lVar11 >> 0x20) << 0x10);
           lVar11 = (longlong)iVar12 * (longlong)(local_1c->a - pSVar9->a);
           uVar13 = (uint)lVar11 >> 0x10 | (int)((ulonglong)lVar11 >> 0x20) << 0x10;
-          g_EdgeInterpolationArray[iVar14].base.fog_gradient = uVar13;
+          g_EdgeInterpolationArray[iVar14].base.alpha_gradient = uVar13;
           lVar11 = (longlong)(int)uVar10 * (longlong)(int)uVar13;
-          g_EdgeInterpolationArray[iVar14].base.fog_current =
+          g_EdgeInterpolationArray[iVar14].base.alpha_current =
                pSVar9->a + ((uint)lVar11 >> 0x10 | (int)((ulonglong)lVar11 >> 0x20) << 0x10);
           if (g_TexturesDisabled == 0) {
             lVar11 = (longlong)iVar12 *
                      (longlong)
                      ((local_1c->projected_vertex).inv_z - (pSVar9->projected_vertex).inv_z);
             uVar13 = (uint)lVar11 >> 0x10 | (int)((ulonglong)lVar11 >> 0x20) << 0x10;
-            g_EdgeInterpolationArray[iVar14].base.w_gradient = uVar13;
+            g_EdgeInterpolationArray[iVar14].base.depth_gradient = uVar13;
             lVar11 = (longlong)(int)uVar10 * (longlong)(int)uVar13;
             local_2c = (uint)lVar11 >> 0x10 | (int)((ulonglong)lVar11 >> 0x20) << 0x10;
             iVar4 = (pSVar9->projected_vertex).inv_z;
@@ -141,25 +141,25 @@ void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00483370(int *vertex_
                      ((local_1c->projected_vertex).transformed_z -
                      (pSVar9->projected_vertex).transformed_z);
             uVar13 = (uint)lVar11 >> 0x10 | (int)((ulonglong)lVar11 >> 0x20) << 0x10;
-            g_EdgeInterpolationArray[iVar14].base.w_gradient = uVar13;
+            g_EdgeInterpolationArray[iVar14].base.depth_gradient = uVar13;
             lVar11 = (longlong)(int)uVar10 * (longlong)(int)uVar13;
             local_2c = (uint)lVar11 >> 0x10 | (int)((ulonglong)lVar11 >> 0x20) << 0x10;
             iVar4 = (pSVar9->projected_vertex).transformed_z;
           }
           iVar4 = iVar4 + local_2c;
-          g_EdgeInterpolationArray[iVar14].base.w_current = iVar4;
+          g_EdgeInterpolationArray[iVar14].base.depth_current = iVar4;
           if ((g_RenderStateFlags.dword & RENDER_COLOR_FROM_VERTEX) != 0) {
             lVar11 = (longlong)iVar12 * (longlong)(local_1c->g - pSVar9->g);
             uVar13 = (uint)lVar11 >> 0x10 | (int)((ulonglong)lVar11 >> 0x20) << 0x10;
-            g_EdgeInterpolationArray[iVar14].color_gradient = uVar13;
+            g_EdgeInterpolationArray[iVar14].green_gradient = uVar13;
             lVar11 = (longlong)(int)uVar10 * (longlong)(int)uVar13;
-            g_EdgeInterpolationArray[iVar14].color_current =
+            g_EdgeInterpolationArray[iVar14].green_current =
                  pSVar9->g + ((uint)lVar11 >> 0x10 | (int)((ulonglong)lVar11 >> 0x20) << 0x10);
             lVar11 = (longlong)iVar12 * (longlong)(local_1c->b - pSVar9->b);
             uVar13 = (uint)lVar11 >> 0x10 | (int)((ulonglong)lVar11 >> 0x20) << 0x10;
-            g_EdgeInterpolationArray[iVar14].alpha_gradient = uVar13;
+            g_EdgeInterpolationArray[iVar14].blue_gradient = uVar13;
             lVar11 = (longlong)(int)uVar10 * (longlong)(int)uVar13;
-            g_EdgeInterpolationArray[iVar14].alpha_current =
+            g_EdgeInterpolationArray[iVar14].blue_current =
                  pSVar9->b + ((uint)lVar11 >> 0x10 | (int)((ulonglong)lVar11 >> 0x20) << 0x10);
           }
           iVar14 = g_RenderTriangleEdgeCount + 1;
@@ -255,18 +255,20 @@ LAB_00483606:
           (local_18->base).x_current = (local_18->base).x_current + (local_18->base).x_gradient;
           (local_18->base).u_current = (local_18->base).u_current + (local_18->base).u_gradient;
           (local_18->base).v_current = (local_18->base).v_current + (local_18->base).v_gradient;
-          (local_18->base).z_current = (local_18->base).z_current + (local_18->base).z_gradient;
-          (local_18->base).w_current = (local_18->base).w_current + (local_18->base).w_gradient;
-          (local_18->base).fog_current =
-               (local_18->base).fog_current + (local_18->base).fog_gradient;
+          (local_18->base).red_current =
+               (local_18->base).red_current + (local_18->base).red_gradient;
+          (local_18->base).depth_current =
+               (local_18->base).depth_current + (local_18->base).depth_gradient;
+          (local_18->base).alpha_current =
+               (local_18->base).alpha_current + (local_18->base).alpha_gradient;
           if ((g_RenderStateFlags.dword & RENDER_COLOR_FROM_VERTEX) != 0) {
             iVar12 = local_1c[1].projected_vertex.screen_x;
             iVar1 = local_1c[1].projected_vertex.screen_y;
             local_1c[1].projected_vertex.transformed_z =
                  local_1c[1].projected_vertex.transformed_z + local_1c[1].projected_vertex.inv_z;
             local_1c[1].projected_vertex.screen_x = iVar12 + iVar1;
-            local_18->color_current = local_18->color_current + local_18->color_gradient;
-            local_18->alpha_current = local_18->alpha_current + local_18->alpha_gradient;
+            local_18->green_current = local_18->green_current + local_18->green_gradient;
+            local_18->blue_current = local_18->blue_current + local_18->blue_gradient;
           }
         } while( true );
       }

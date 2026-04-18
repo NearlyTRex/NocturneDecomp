@@ -139,15 +139,15 @@ void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_00552a40(int *vertex
                pSVar8->v + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
           lVar2 = (longlong)iVar6 * (longlong)(pSVar12->r - pSVar8->r);
           uVar8 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-          g_SoftwareEdgeBuffer[iVar7].base.z_gradient = uVar8;
+          g_SoftwareEdgeBuffer[iVar7].base.red_gradient = uVar8;
           lVar2 = (longlong)(int)uVar10 * (longlong)(int)uVar8;
-          g_SoftwareEdgeBuffer[iVar7].base.z_current =
+          g_SoftwareEdgeBuffer[iVar7].base.red_current =
                pSVar8->r + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
           lVar2 = (longlong)iVar6 * (longlong)(pSVar12->a - pSVar8->a);
           uVar8 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-          g_SoftwareEdgeBuffer[iVar7].base.fog_gradient = uVar8;
+          g_SoftwareEdgeBuffer[iVar7].base.alpha_gradient = uVar8;
           lVar2 = (longlong)(int)uVar10 * (longlong)(int)uVar8;
-          g_SoftwareEdgeBuffer[iVar7].base.fog_current =
+          g_SoftwareEdgeBuffer[iVar7].base.alpha_current =
                pSVar8->a + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
           if (g_VertexPreprocessMode == 1) {
             if (g_ProcessorType == 0) {
@@ -160,9 +160,9 @@ void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_00552a40(int *vertex
             }
             lVar2 = (longlong)iVar6 * (longlong)(iVar10 - iVar12);
             uVar8 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-            g_SoftwareEdgeBuffer[iVar7].base.w_gradient = uVar8;
+            g_SoftwareEdgeBuffer[iVar7].base.depth_gradient = uVar8;
             lVar2 = (longlong)(int)uVar10 * (longlong)(int)uVar8;
-            g_SoftwareEdgeBuffer[iVar7].base.w_current =
+            g_SoftwareEdgeBuffer[iVar7].base.depth_current =
                  iVar12 + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
             g_SoftwareEdgeCount = g_SoftwareEdgeCount + 1;
           }
@@ -172,9 +172,9 @@ void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_00552a40(int *vertex
                     ((pSVar12->projected_vertex).transformed_z -
                     (pSVar8->projected_vertex).transformed_z);
             uVar8 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-            g_SoftwareEdgeBuffer[iVar7].base.w_gradient = uVar8;
+            g_SoftwareEdgeBuffer[iVar7].base.depth_gradient = uVar8;
             lVar2 = (longlong)(int)uVar10 * (longlong)(int)uVar8;
-            g_SoftwareEdgeBuffer[iVar7].base.w_current =
+            g_SoftwareEdgeBuffer[iVar7].base.depth_current =
                  (pSVar8->projected_vertex).transformed_z +
                  ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
             g_SoftwareEdgeCount = g_SoftwareEdgeCount + 1;
@@ -212,9 +212,9 @@ void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_00552a40(int *vertex
         *piVar1 = *piVar1 + (edge_ptr->base).x_gradient;
         (edge_ptr->base).u_current = (edge_ptr->base).u_current + (edge_ptr->base).u_gradient;
         (edge_ptr->base).v_current = (edge_ptr->base).v_current + (edge_ptr->base).v_gradient;
-        (edge_ptr->base).z_current = (edge_ptr->base).z_current + (edge_ptr->base).z_gradient;
-        (edge_ptr->base).w_current = (edge_ptr->base).w_current + (edge_ptr->base).w_gradient;
-        (edge_ptr->base).fog_current = (edge_ptr->base).fog_current + (edge_ptr->base).fog_gradient;
+        (edge_ptr->base).red_current = (edge_ptr->base).red_current + (edge_ptr->base).red_gradient;
+        (edge_ptr->base).depth_current = (edge_ptr->base).depth_current + (edge_ptr->base).depth_gradient;
+        (edge_ptr->base).alpha_current = (edge_ptr->base).alpha_current + (edge_ptr->base).alpha_gradient;
         *(int *)(iVar7 + 8) = *(int *)(iVar7 + 8) + *(int *)(iVar7 + 0xc);
         *(int *)(iVar7 + 0x18) = *(int *)(iVar7 + 0x18) + *(int *)(iVar7 + 0x1c);
         *(int *)(iVar7 + 0x20) = *(int *)(iVar7 + 0x20) + *(int *)(iVar7 + 0x24);

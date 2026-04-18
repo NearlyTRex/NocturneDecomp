@@ -169,24 +169,24 @@ void __cdecl engine_prim_c_renderPolygonSoftware_FUN_00552510(SRenderVertex *ver
              pSVar7->v + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
         lVar1 = (longlong)iVar2 * (longlong)(pSVar12->r - pSVar7->r);
         uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        g_SoftwareEdgeBuffer[iVar10].base.z_gradient = uVar4;
+        g_SoftwareEdgeBuffer[iVar10].base.red_gradient = uVar4;
         lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar4;
-        g_SoftwareEdgeBuffer[iVar10].base.z_current =
+        g_SoftwareEdgeBuffer[iVar10].base.red_current =
              pSVar7->r + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
         lVar1 = (longlong)iVar2 * (longlong)(pSVar12->a - pSVar7->a);
         uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        g_SoftwareEdgeBuffer[iVar10].base.fog_gradient = uVar4;
+        g_SoftwareEdgeBuffer[iVar10].base.alpha_gradient = uVar4;
         lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar4;
-        g_SoftwareEdgeBuffer[iVar10].base.fog_current =
+        g_SoftwareEdgeBuffer[iVar10].base.alpha_current =
              pSVar7->a + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
         lVar1 = (longlong)iVar2 *
                 (longlong)
                 ((pSVar12->projected_vertex).transformed_z -
                 (pSVar7->projected_vertex).transformed_z);
         uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-        g_SoftwareEdgeBuffer[iVar10].base.w_gradient = uVar4;
+        g_SoftwareEdgeBuffer[iVar10].base.depth_gradient = uVar4;
         lVar1 = (longlong)(int)uVar10 * (longlong)(int)uVar4;
-        g_SoftwareEdgeBuffer[iVar10].base.w_current =
+        g_SoftwareEdgeBuffer[iVar10].base.depth_current =
              (pSVar7->projected_vertex).transformed_z +
              ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
         g_SoftwareEdgeCount = g_SoftwareEdgeCount + 1;
@@ -221,9 +221,11 @@ void __cdecl engine_prim_c_renderPolygonSoftware_FUN_00552510(SRenderVertex *ver
       *piVar1 = *piVar1 + (edge_ptr->base).x_gradient;
       (edge_ptr->base).u_current = (edge_ptr->base).u_current + (edge_ptr->base).u_gradient;
       (edge_ptr->base).v_current = (edge_ptr->base).v_current + (edge_ptr->base).v_gradient;
-      (edge_ptr->base).z_current = (edge_ptr->base).z_current + (edge_ptr->base).z_gradient;
-      (edge_ptr->base).w_current = (edge_ptr->base).w_current + (edge_ptr->base).w_gradient;
-      (edge_ptr->base).fog_current = (edge_ptr->base).fog_current + (edge_ptr->base).fog_gradient;
+      (edge_ptr->base).red_current = (edge_ptr->base).red_current + (edge_ptr->base).red_gradient;
+      (edge_ptr->base).depth_current =
+           (edge_ptr->base).depth_current + (edge_ptr->base).depth_gradient;
+      (edge_ptr->base).alpha_current =
+           (edge_ptr->base).alpha_current + (edge_ptr->base).alpha_gradient;
       *(int *)(iVar10 + 8) = *(int *)(iVar10 + 8) + *(int *)(iVar10 + 0xc);
       *(int *)(iVar10 + 0x18) = *(int *)(iVar10 + 0x18) + *(int *)(iVar10 + 0x1c);
       *(int *)(iVar10 + 0x20) = *(int *)(iVar10 + 0x20) + *(int *)(iVar10 + 0x24);

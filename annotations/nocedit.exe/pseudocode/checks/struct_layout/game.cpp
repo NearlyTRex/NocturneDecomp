@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: game
-// Structs : 518
+// Structs : 520
 
 #include "nocturne.h"
 
@@ -8519,10 +8519,10 @@ static_assert(__builtin_offsetof(SHardwareEdge, x_current) == 8,
               "offsetof(SHardwareEdge, x_current) != 8");
 static_assert(__builtin_offsetof(SHardwareEdge, x_gradient) == 12,
               "offsetof(SHardwareEdge, x_gradient) != 12");
-static_assert(__builtin_offsetof(SHardwareEdge, z_current) == 16,
-              "offsetof(SHardwareEdge, z_current) != 16");
-static_assert(__builtin_offsetof(SHardwareEdge, z_gradient) == 20,
-              "offsetof(SHardwareEdge, z_gradient) != 20");
+static_assert(__builtin_offsetof(SHardwareEdge, red_current) == 16,
+              "offsetof(SHardwareEdge, red_current) != 16");
+static_assert(__builtin_offsetof(SHardwareEdge, red_gradient) == 20,
+              "offsetof(SHardwareEdge, red_gradient) != 20");
 static_assert(__builtin_offsetof(SHardwareEdge, u_current) == 24,
               "offsetof(SHardwareEdge, u_current) != 24");
 static_assert(__builtin_offsetof(SHardwareEdge, u_gradient) == 28,
@@ -8531,14 +8531,14 @@ static_assert(__builtin_offsetof(SHardwareEdge, v_current) == 32,
               "offsetof(SHardwareEdge, v_current) != 32");
 static_assert(__builtin_offsetof(SHardwareEdge, v_gradient) == 36,
               "offsetof(SHardwareEdge, v_gradient) != 36");
-static_assert(__builtin_offsetof(SHardwareEdge, w_current) == 40,
-              "offsetof(SHardwareEdge, w_current) != 40");
-static_assert(__builtin_offsetof(SHardwareEdge, w_gradient) == 44,
-              "offsetof(SHardwareEdge, w_gradient) != 44");
-static_assert(__builtin_offsetof(SHardwareEdge, fog_current) == 48,
-              "offsetof(SHardwareEdge, fog_current) != 48");
-static_assert(__builtin_offsetof(SHardwareEdge, fog_gradient) == 52,
-              "offsetof(SHardwareEdge, fog_gradient) != 52");
+static_assert(__builtin_offsetof(SHardwareEdge, depth_current) == 40,
+              "offsetof(SHardwareEdge, depth_current) != 40");
+static_assert(__builtin_offsetof(SHardwareEdge, depth_gradient) == 44,
+              "offsetof(SHardwareEdge, depth_gradient) != 44");
+static_assert(__builtin_offsetof(SHardwareEdge, alpha_current) == 48,
+              "offsetof(SHardwareEdge, alpha_current) != 48");
+static_assert(__builtin_offsetof(SHardwareEdge, alpha_gradient) == 52,
+              "offsetof(SHardwareEdge, alpha_gradient) != 52");
 
 // ---- SHuffmanTable (2088 bytes) ----
 static_assert(sizeof(SHuffmanTable) == 2088,
@@ -9913,14 +9913,14 @@ static_assert(sizeof(SSoftwareEdge) == 72,
               "sizeof(SSoftwareEdge) != 72");
 static_assert(__builtin_offsetof(SSoftwareEdge, base) == 0,
               "offsetof(SSoftwareEdge, base) != 0");
-static_assert(__builtin_offsetof(SSoftwareEdge, color_current) == 56,
-              "offsetof(SSoftwareEdge, color_current) != 56");
-static_assert(__builtin_offsetof(SSoftwareEdge, color_gradient) == 60,
-              "offsetof(SSoftwareEdge, color_gradient) != 60");
-static_assert(__builtin_offsetof(SSoftwareEdge, alpha_current) == 64,
-              "offsetof(SSoftwareEdge, alpha_current) != 64");
-static_assert(__builtin_offsetof(SSoftwareEdge, alpha_gradient) == 68,
-              "offsetof(SSoftwareEdge, alpha_gradient) != 68");
+static_assert(__builtin_offsetof(SSoftwareEdge, green_current) == 56,
+              "offsetof(SSoftwareEdge, green_current) != 56");
+static_assert(__builtin_offsetof(SSoftwareEdge, green_gradient) == 60,
+              "offsetof(SSoftwareEdge, green_gradient) != 60");
+static_assert(__builtin_offsetof(SSoftwareEdge, blue_current) == 64,
+              "offsetof(SSoftwareEdge, blue_current) != 64");
+static_assert(__builtin_offsetof(SSoftwareEdge, blue_gradient) == 68,
+              "offsetof(SSoftwareEdge, blue_gradient) != 68");
 
 // ---- SSoundDeviceInfo (280 bytes) ----
 static_assert(sizeof(SSoundDeviceInfo) == 280,
@@ -10259,6 +10259,26 @@ static_assert(__builtin_offsetof(SWaterVertex, u) == 24,
               "offsetof(SWaterVertex, u) != 24");
 static_assert(__builtin_offsetof(SWaterVertex, v) == 28,
               "offsetof(SWaterVertex, v) != 28");
+
+// ---- SWavChunkHeader (8 bytes) ----
+static_assert(sizeof(SWavChunkHeader) == 8,
+              "sizeof(SWavChunkHeader) != 8");
+static_assert(__builtin_offsetof(SWavChunkHeader, id) == 0,
+              "offsetof(SWavChunkHeader, id) != 0");
+static_assert(__builtin_offsetof(SWavChunkHeader, size) == 4,
+              "offsetof(SWavChunkHeader, size) != 4");
+
+// ---- SWavFmtChunk (12 bytes) ----
+static_assert(sizeof(SWavFmtChunk) == 12,
+              "sizeof(SWavFmtChunk) != 12");
+static_assert(__builtin_offsetof(SWavFmtChunk, format_tag) == 0,
+              "offsetof(SWavFmtChunk, format_tag) != 0");
+static_assert(__builtin_offsetof(SWavFmtChunk, num_channels) == 2,
+              "offsetof(SWavFmtChunk, num_channels) != 2");
+static_assert(__builtin_offsetof(SWavFmtChunk, sample_rate) == 4,
+              "offsetof(SWavFmtChunk, sample_rate) != 4");
+static_assert(__builtin_offsetof(SWavFmtChunk, byte_rate) == 8,
+              "offsetof(SWavFmtChunk, byte_rate) != 8");
 
 // ---- SWayPointAdjacency (8 bytes) ----
 static_assert(sizeof(SWayPointAdjacency) == 8,

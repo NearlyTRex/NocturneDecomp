@@ -37,15 +37,15 @@ void __cdecl core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320(SSoftwareEd
     }
     if (uVar3 < (uint)g_CoronaLeftExtent[iVar8]) {
       g_CoronaLeftExtent[iVar8] = uVar3;
-      g_CoronaLeftIntensity[iVar8] = (right_edge->base).z_current;
+      g_CoronaLeftIntensity[iVar8] = (right_edge->base).red_current;
     }
     if ((uint)g_CoronaRightExtent[iVar8] < uVar9) {
       g_CoronaRightExtent[iVar8] = uVar9;
-      g_CoronaRightIntensity[iVar8] = (pSVar5->base).z_current;
+      g_CoronaRightIntensity[iVar8] = (pSVar5->base).red_current;
     }
-    iVar4 = (right_edge->base).w_current;
+    iVar4 = (right_edge->base).depth_current;
     iVar2 = uVar9 - uVar3;
-    iVar6 = (pSVar5->base).w_current - iVar4;
+    iVar6 = (pSVar5->base).depth_current - iVar4;
     piVar1 = g_CoronaDepthBuffer[iVar8] + uVar3;
     for (; (int)uVar3 < (int)uVar9; uVar3 = uVar3 + 1) {
       iVar8 = iVar4 >> 8;

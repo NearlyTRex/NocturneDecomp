@@ -8,8 +8,7 @@
 ; char *           Stack[0x8]:4   key
 ; int              Stack[0xc]:4   value
 ; Local Variables:
-; char[12]         Stack[-0x68]:12  local_68
-; char             Stack[-0x5c]:1  local_5c
+; char[100]        Stack[-0x68]:100  local_68
 ;
 ; XREF[6]:
 ;   core_inivar.cpp_writeIniData_FUN_004fc510 at 004fc740

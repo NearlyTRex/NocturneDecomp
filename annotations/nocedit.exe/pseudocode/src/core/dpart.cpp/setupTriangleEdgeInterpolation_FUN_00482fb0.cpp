@@ -23,12 +23,12 @@ void __cdecl core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00482fb0(SSoftwar
   longlong lVar1;
   
   iVar2 = g_RenderTriangleEdgeCount;
-  iVar3 = (vertex_b->base).z_gradient >> 0x10;
-  iVar7 = (vertex_a->base).z_gradient >> 0x10;
+  iVar3 = (vertex_b->base).red_gradient >> 0x10;
+  iVar7 = (vertex_a->base).red_gradient >> 0x10;
   if (iVar7 != iVar3) {
     iVar4 = iVar3;
     pSVar6 = vertex_b;
-    if ((vertex_b->base).z_gradient < (vertex_a->base).z_gradient) {
+    if ((vertex_b->base).red_gradient < (vertex_a->base).red_gradient) {
       iVar4 = iVar7;
       pSVar6 = vertex_a;
       vertex_a = vertex_b;
@@ -43,22 +43,22 @@ void __cdecl core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00482fb0(SSoftwar
     if (g_RenderTriangleMaxScanlineY < iVar4) {
       g_RenderTriangleMaxScanlineY = iVar4;
     }
-    uVar5 = (pSVar6->base).z_gradient - (vertex_a->base).z_gradient;
+    uVar5 = (pSVar6->base).red_gradient - (vertex_a->base).red_gradient;
     if (uVar5 < 0x10000) {
       iVar6 = 0;
     }
     else {
       iVar6 = (int)(0xffffffff / (ulonglong)uVar5);
     }
-    uVar8._0_2_ = (ushort)(vertex_a->base).z_gradient;
+    uVar8._0_2_ = (ushort)(vertex_a->base).red_gradient;
     uVar8._0_2_ = (ushort)uVar8 ^ 0xffff;
     uVar8 = (uint)(ushort)uVar8;
-    lVar1 = (longlong)iVar6 * (longlong)((pSVar6->base).z_current - (vertex_a->base).z_current);
+    lVar1 = (longlong)iVar6 * (longlong)((pSVar6->base).red_current - (vertex_a->base).red_current);
     uVar3 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     g_EdgeInterpolationArray[iVar2].base.x_gradient = uVar3;
     lVar2 = (longlong)(int)uVar8 * (longlong)(int)uVar3;
     g_EdgeInterpolationArray[iVar2].base.x_current =
-         (vertex_a->base).z_current +
+         (vertex_a->base).red_current +
          ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     lVar2 = (longlong)iVar6 * (longlong)((pSVar6->base).u_current - (vertex_a->base).u_current);
     uVar3 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
@@ -76,22 +76,23 @@ void __cdecl core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00482fb0(SSoftwar
          ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     lVar2 = (longlong)iVar6 * (longlong)((pSVar6->base).v_current - (vertex_a->base).v_current);
     uVar3 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-    g_EdgeInterpolationArray[iVar2].base.z_gradient = uVar3;
+    g_EdgeInterpolationArray[iVar2].base.red_gradient = uVar3;
     lVar2 = (longlong)(int)uVar8 * (longlong)(int)uVar3;
-    g_EdgeInterpolationArray[iVar2].base.z_current =
+    g_EdgeInterpolationArray[iVar2].base.red_current =
          (vertex_a->base).v_current +
          ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-    lVar2 = (longlong)iVar6 * (longlong)((pSVar6->base).w_gradient - (vertex_a->base).w_gradient);
+    lVar2 = (longlong)iVar6 *
+            (longlong)((pSVar6->base).depth_gradient - (vertex_a->base).depth_gradient);
     uVar3 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-    g_EdgeInterpolationArray[iVar2].base.fog_gradient = uVar3;
+    g_EdgeInterpolationArray[iVar2].base.alpha_gradient = uVar3;
     lVar2 = (longlong)(int)uVar8 * (longlong)(int)uVar3;
-    g_EdgeInterpolationArray[iVar2].base.fog_current =
-         (vertex_a->base).w_gradient +
+    g_EdgeInterpolationArray[iVar2].base.alpha_current =
+         (vertex_a->base).depth_gradient +
          ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     if (g_TexturesDisabled == 0) {
       lVar2 = (longlong)iVar6 * (longlong)((pSVar6->base).x_gradient - (vertex_a->base).x_gradient);
       uVar3 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-      g_EdgeInterpolationArray[iVar2].base.w_gradient = uVar3;
+      g_EdgeInterpolationArray[iVar2].base.depth_gradient = uVar3;
       lVar2 = (longlong)(int)uVar8 * (longlong)(int)uVar3;
       uVar3 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
       iVar5 = (vertex_a->base).x_gradient;
@@ -99,26 +100,27 @@ void __cdecl core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00482fb0(SSoftwar
     else {
       lVar2 = (longlong)iVar6 * (longlong)((pSVar6->base).x_current - (vertex_a->base).x_current);
       uVar3 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-      g_EdgeInterpolationArray[iVar2].base.w_gradient = uVar3;
+      g_EdgeInterpolationArray[iVar2].base.depth_gradient = uVar3;
       lVar2 = (longlong)(int)uVar8 * (longlong)(int)uVar3;
       uVar3 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
       iVar5 = (vertex_a->base).x_current;
     }
-    g_EdgeInterpolationArray[iVar2].base.w_current = iVar5 + uVar3;
+    g_EdgeInterpolationArray[iVar2].base.depth_current = iVar5 + uVar3;
     if ((g_RenderStateFlags.dword & RENDER_COLOR_FROM_VERTEX) != 0) {
       lVar2 = (longlong)iVar6 * (longlong)((pSVar6->base).v_gradient - (vertex_a->base).v_gradient);
       uVar3 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-      g_EdgeInterpolationArray[iVar2].color_gradient = uVar3;
+      g_EdgeInterpolationArray[iVar2].green_gradient = uVar3;
       lVar2 = (longlong)(int)uVar8 * (longlong)(int)uVar3;
-      g_EdgeInterpolationArray[iVar2].color_current =
+      g_EdgeInterpolationArray[iVar2].green_current =
            (vertex_a->base).v_gradient +
            ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-      lVar2 = (longlong)iVar6 * (longlong)((pSVar6->base).w_current - (vertex_a->base).w_current);
+      lVar2 = (longlong)iVar6 *
+              (longlong)((pSVar6->base).depth_current - (vertex_a->base).depth_current);
       uVar3 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-      g_EdgeInterpolationArray[iVar2].alpha_gradient = uVar3;
+      g_EdgeInterpolationArray[iVar2].blue_gradient = uVar3;
       lVar2 = (longlong)(int)uVar8 * (longlong)(int)uVar3;
-      g_EdgeInterpolationArray[iVar2].alpha_current =
-           (vertex_a->base).w_current +
+      g_EdgeInterpolationArray[iVar2].blue_current =
+           (vertex_a->base).depth_current +
            ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     }
     g_RenderTriangleEdgeCount = g_RenderTriangleEdgeCount + 1;

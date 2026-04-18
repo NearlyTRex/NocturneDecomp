@@ -5,12 +5,12 @@ FUNCTION SUSPECT BREAKDOWN
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
   0 suspects: 5098 functions
-  1 suspects: 767 functions
+  1 suspects: 768 functions
   2 suspects: 302 functions
   3 suspects: 161 functions
   4 suspects: 97 functions
   5 suspects: 100 functions
-  6 suspects: 62 functions
+  6 suspects: 61 functions
   7 suspects: 45 functions
   8 suspects: 34 functions
   9 suspects: 35 functions
@@ -479,6 +479,25 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_actor.cpp_CActorPropertyList_addFile_FUN_0040 ( 31 lines)
       (pCVar2->param1).v_int = allow_none;...
 
+  [unknown_field] (8 functions)
+  ------------------------------------------------------------
+    shape_design.c_normalizeVertex_FUN_00461e60        ( 12 lines)
+      if ((((ulonglong)local_18 & 0x7fffffff00000000) == 0) && (lo...
+    engine_drender.cpp_CDemonRenderer_renderPerspectiv ( 20 lines)
+      g_RenderStateFlags.dword._1_3_ = 0;...
+    shape_design.c_calculatePolygonNormal_FUN_0045caa0 ( 45 lines)
+      if ((((ulonglong)local_28 & 0x7fffffff00000000) == 0) && (lo...
+    cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434 ( 60 lines)
+      local_14._0_1_ = (char)iVar1;...
+    support_codec.cpp_readBitsFromStream_FUN_0043e530  ( 71 lines)
+      bit_count._0_1_ = (byte)iVar3;...
+    sound_sndmain.cpp_parseWavFile_FUN_005a3fe0        (123 lines)
+      (local_88,"Invalid \"fmt\" chunk tag: %04X  (Must be 0001h =...
+    core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00426 (142 lines)
+      fVar3 = 0.5f * 1.6018581507970269e-314._0_4_ * (float)0.5;...
+    core_msnedit.cpp_CDemonMission_replicateActor_FUN_ (142 lines)
+      local_20 = (char  [4])"DUPACTOR.TMP"._0_4_;...
+
   [sub84_truncation] (8 functions)
   ------------------------------------------------------------
     sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9 ( 31 lines)
@@ -497,23 +516,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       local_98 = SUB84(__BITCAST_UINT64(dVar5),0);...
     shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e (178 lines)
       local_a0 = SUB84(__BITCAST_UINT64(dVar4),0);...
-
-  [unknown_field] (7 functions)
-  ------------------------------------------------------------
-    shape_design.c_normalizeVertex_FUN_00461e60        ( 12 lines)
-      if ((((ulonglong)local_18 & 0x7fffffff00000000) == 0) && (lo...
-    engine_drender.cpp_CDemonRenderer_renderPerspectiv ( 20 lines)
-      g_RenderStateFlags.dword._1_3_ = 0;...
-    shape_design.c_calculatePolygonNormal_FUN_0045caa0 ( 45 lines)
-      if ((((ulonglong)local_28 & 0x7fffffff00000000) == 0) && (lo...
-    cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434 ( 60 lines)
-      local_14._0_1_ = (char)iVar1;...
-    support_codec.cpp_readBitsFromStream_FUN_0043e530  ( 71 lines)
-      bit_count._0_1_ = (byte)iVar3;...
-    core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00426 (142 lines)
-      fVar3 = 0.5f * 1.6018581507970269e-314._0_4_ * (float)0.5;...
-    core_msnedit.cpp_CDemonMission_replicateActor_FUN_ (142 lines)
-      local_20 = (char  [4])"DUPACTOR.TMP"._0_4_;...
 
   [negative_offset] (6 functions)
   ------------------------------------------------------------

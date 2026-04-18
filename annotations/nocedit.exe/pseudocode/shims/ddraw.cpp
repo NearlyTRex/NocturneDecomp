@@ -276,6 +276,14 @@ static HRESULT ddraw_CreateSurface(IDirectDraw* this_ptr, DDSURFACEDESC* desc,
         surf->sdl_texture = SDL_CreateTexture(ddraw->renderer, format,
                                                SDL_TEXTUREACCESS_STREAMING,
                                                width, height);
+        // Game writes alpha=0 in every pixel (MMX scanline / moon / font paths
+        // don't populate the alpha byte). With BLENDMODE_BLEND default on some
+        // drivers that pre-multiplies RGB by alpha, everything comes out zeroed
+        // on the red/green channels and we see only what the clear + stale
+        // back-buffer leaves behind. Force NONE so alpha is ignored.
+        if (surf->sdl_texture) {
+            SDL_SetTextureBlendMode(surf->sdl_texture, SDL_BLENDMODE_NONE);
+        }
 
         // If complex (has back buffer), create the back buffer
         if ((caps & DDSCAPS_COMPLEX) && (caps & DDSCAPS_FLIP)) {
@@ -285,6 +293,9 @@ static HRESULT ddraw_CreateSurface(IDirectDraw* this_ptr, DDSURFACEDESC* desc,
                 back->sdl_texture = SDL_CreateTexture(ddraw->renderer, format,
                                                        SDL_TEXTUREACCESS_STREAMING,
                                                        width, height);
+                if (back->sdl_texture) {
+                    SDL_SetTextureBlendMode(back->sdl_texture, SDL_BLENDMODE_NONE);
+                }
                 surf->back_buffer = back;
             }
         }

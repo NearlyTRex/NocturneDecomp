@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 148,
+    "complexity_score": 150,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 113,
+    "pseudocode_lines": 115,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 358
+    "total_lines": 360
   },
   "cross_references": [
     {
@@ -218,15 +218,8 @@
         "is_param": false,
         "name": "local_28",
         "offset": -40,
-        "size": 12,
-        "type": "CVector3i"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "int"
+        "size": 16,
+        "type": "int[4]"
       },
       {
         "is_param": false,
@@ -282,7 +275,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 48,
       "match": "(SMRGLHeaderPrimitive *)((int)",
       "severity": "mild",
       "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + primitive_stride);",
@@ -290,7 +283,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 100,
       "match": "(SMRGLHeaderPrimitive *)((int)",
       "severity": "mild",
       "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + primitive_stride);",
@@ -298,7 +291,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 111,
+      "line": 113,
       "match": "(SMRGLHeaderPrimitive *)((int)",
       "severity": "mild",
       "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + primitive_stride);",

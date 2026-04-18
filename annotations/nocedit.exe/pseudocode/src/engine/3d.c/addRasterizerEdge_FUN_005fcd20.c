@@ -62,11 +62,11 @@ void __cdecl engine_3d_c_addRasterizerEdge_FUN_005fcd20(SRenderVertex *v0,SRende
             (longlong)
             (((v1->projected_vertex).transformed_z - (pSVar7->projected_vertex).transformed_z) *
             0x100);
-    g_RasterizerEdgeArray[iVar2].base.w_gradient =
+    g_RasterizerEdgeArray[iVar2].base.depth_gradient =
          (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-    lVar2 = (longlong)(int)uVar8 * (longlong)g_RasterizerEdgeArray[iVar2].base.w_gradient;
+    lVar2 = (longlong)(int)uVar8 * (longlong)g_RasterizerEdgeArray[iVar2].base.depth_gradient;
     g_RasterizerEdgeCount = g_RasterizerEdgeCount + 1;
-    g_RasterizerEdgeArray[iVar2].base.w_current =
+    g_RasterizerEdgeArray[iVar2].base.depth_current =
          ((pSVar7->projected_vertex).transformed_z * 0x100 - g_RasterizerDepthBias) +
          ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
   }

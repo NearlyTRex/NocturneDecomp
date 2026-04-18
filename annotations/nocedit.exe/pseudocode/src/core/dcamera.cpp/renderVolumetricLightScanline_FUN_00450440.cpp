@@ -48,14 +48,14 @@ void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_00450440(SSoftwa
       iVar16 = iVar13;
       right_edge = (SSoftwareEdge *)iVar1;
     }
-    iVar2 = (right_edge->base).w_current;
+    iVar2 = (right_edge->base).depth_current;
     iVar6 = (int)((iVar2 + (iVar2 >> 0x1f) * -0x100) - (uint)((iVar2 >> 0x1f) << 7 < 0)) >> 8;
     iVar1 = *(int *)(scanline_y + 0x28);
     iVar9 = *(int *)(scanline_y + 0x28) >> 0x1f;
-    iVar3 = (right_edge->base).w_current;
+    iVar3 = (right_edge->base).depth_current;
     iVar10 = iVar3 >> 0x1f;
     iVar7 = (iVar16 - iVar14) + 1;
-    iVar12 = (right_edge->base).z_current;
+    iVar12 = (right_edge->base).red_current;
     iVar11 = *(int *)(scanline_y + 0x10) - iVar12;
     bVar5 = g_CameraDownscaleIterations.bytes[0] & 0x1f;
     puVar3 = g_ZBufferScanlineArray[iVar15 << (g_CameraDownscaleIterations.bytes[0] & 0x1f)];

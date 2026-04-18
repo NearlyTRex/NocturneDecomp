@@ -130,10 +130,10 @@ void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex *vertex_bu
                 (((local_20->projected_vertex).transformed_z -
                  (pSVar9->projected_vertex).transformed_z) * 0x100);
         uVar9 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-        g_RasterizerEdgeArray[iVar6].base.w_gradient = uVar9;
+        g_RasterizerEdgeArray[iVar6].base.depth_gradient = uVar9;
         lVar2 = (longlong)(int)uVar8 * (longlong)(int)uVar9;
         g_RasterizerEdgeCount = g_RasterizerEdgeCount + 1;
-        g_RasterizerEdgeArray[iVar6].base.w_current =
+        g_RasterizerEdgeArray[iVar6].base.depth_current =
              ((pSVar9->projected_vertex).transformed_z * 0x100 - g_RasterizerDepthBias) +
              ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
       }
@@ -211,7 +211,8 @@ LAB_005fd24c:
           return;
         }
         (local_18->base).x_current = (local_18->base).x_current + (local_18->base).x_gradient;
-        (local_18->base).w_current = (local_18->base).w_current + (local_18->base).w_gradient;
+        (local_18->base).depth_current =
+             (local_18->base).depth_current + (local_18->base).depth_gradient;
         *(int *)(scanline_y + 8) = *(int *)(scanline_y + 8) + *(int *)(scanline_y + 0xc);
         *(int *)(scanline_y + 0x28) = *(int *)(scanline_y + 0x28) + *(int *)(scanline_y + 0x2c);
         scanline_y = (int)((int)&(local_20->projected_vertex).transformed_x + 1);

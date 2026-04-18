@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 371,
-    "complexity_score": 194,
+    "complexity_score": 138,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 129,
-    "suspect_count": 6,
+    "pseudocode_lines": 123,
+    "suspect_count": 1,
     "suspect_types": [
       "unknown_field"
     ],
-    "total_lines": 500
+    "total_lines": 494
   },
   "cross_references": [
     {
@@ -254,85 +254,22 @@
         "is_param": false,
         "name": "local_88",
         "offset": -136,
-        "size": 1,
-        "type": "char"
-      },
-      {
-        "is_param": false,
-        "name": "local_87",
-        "offset": -135,
-        "size": 1,
-        "type": "char"
-      },
-      {
-        "is_param": false,
-        "name": "local_86",
-        "offset": -134,
-        "size": 1,
-        "type": "char"
-      },
-      {
-        "is_param": false,
-        "name": "local_85",
-        "offset": -133,
-        "size": 1,
-        "type": "char"
+        "size": 100,
+        "type": "char[100]"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "uint"
+        "size": 12,
+        "type": "SWavFmtChunk"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
-        "size": 1,
-        "type": "char"
-      },
-      {
-        "is_param": false,
-        "name": "local_17",
-        "offset": -23,
-        "size": 1,
-        "type": "char"
-      },
-      {
-        "is_param": false,
-        "name": "local_16",
-        "offset": -22,
-        "size": 1,
-        "type": "char"
-      },
-      {
-        "is_param": false,
-        "name": "local_15",
-        "offset": -21,
-        "size": 1,
-        "type": "char"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "uint"
+        "size": 8,
+        "type": "SWavChunkHeader"
       },
       {
         "is_param": true,
@@ -357,105 +294,13 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "parseWavFile_FUN_005a3fe0.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 6,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 35,
-          "line": 38,
-          "message": "Uninitialized variable: local_17",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 57,
-          "line": 38,
-          "message": "Uninitialized variable: local_16",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 79,
-          "line": 38,
-          "message": "Uninitialized variable: local_15",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 38,
-          "line": 42,
-          "message": "Uninitialized variable: local_87",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 61,
-          "line": 42,
-          "message": "Uninitialized variable: local_86",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 81,
-          "line": 42,
-          "message": "Uninitialized variable: local_85",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
   "suspects": [
     {
       "description": "Unknown/mangled field access",
-      "line": 64,
-      "match": "._2_2_",
+      "line": 51,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "if ((local_24._2_2_ == 0) || (2 < local_24._2_2_)) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 64,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "if ((local_24._2_2_ == 0) || (2 < local_24._2_2_)) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 66,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "(&local_88,\"Invalid number of channels: %u  (must be 1 or 2)\",(uint)local_24._2_2_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 71,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "sVar1 = local_24._2_2_ * (short)local_20;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 109,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "(sfx_sample->sample_info).num_channels = (uint)local_24._2_2_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 112,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "(int)(((ulonglong)local_14 / (ulonglong)local_24._2_2_) /",
+      "text": "(local_88,\"Invalid \\\"fmt\\\" chunk tag: %04X  (Must be 0001h = Pulse Code Modulation)\",local_24._0_4_ & 0xffff);",
       "type": "unknown_field"
     }
   ]

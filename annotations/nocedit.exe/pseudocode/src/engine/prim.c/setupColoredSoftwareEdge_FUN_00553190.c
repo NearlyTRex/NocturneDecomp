@@ -76,15 +76,15 @@ void __cdecl engine_prim_c_setupColoredSoftwareEdge_FUN_00553190(SRenderVertex *
          vertex0->v + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     lVar2 = (longlong)iVar6 * (longlong)(pSVar6->r - vertex0->r);
     uVar3 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-    g_SoftwareEdgeTable[iVar2].base.z_gradient = uVar3;
+    g_SoftwareEdgeTable[iVar2].base.red_gradient = uVar3;
     lVar2 = (longlong)(int)uVar8 * (longlong)(int)uVar3;
-    g_SoftwareEdgeTable[iVar2].base.z_current =
+    g_SoftwareEdgeTable[iVar2].base.red_current =
          vertex0->r + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     lVar2 = (longlong)iVar6 * (longlong)(pSVar6->a - vertex0->a);
     uVar3 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-    g_SoftwareEdgeTable[iVar2].base.fog_gradient = uVar3;
+    g_SoftwareEdgeTable[iVar2].base.alpha_gradient = uVar3;
     lVar2 = (longlong)(int)uVar8 * (longlong)(int)uVar3;
-    g_SoftwareEdgeTable[iVar2].base.fog_current =
+    g_SoftwareEdgeTable[iVar2].base.alpha_current =
          vertex0->a + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     if (g_VertexPreprocessMode == 1) {
       if (g_ProcessorType == 0) {
@@ -97,9 +97,9 @@ void __cdecl engine_prim_c_setupColoredSoftwareEdge_FUN_00553190(SRenderVertex *
       }
       lVar2 = (longlong)iVar6 * (longlong)(iVar5 - local_14);
       uVar3 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-      g_SoftwareEdgeTable[iVar2].base.w_gradient = uVar3;
+      g_SoftwareEdgeTable[iVar2].base.depth_gradient = uVar3;
       lVar2 = (longlong)(int)uVar8 * (longlong)(int)uVar3;
-      g_SoftwareEdgeTable[iVar2].base.w_current =
+      g_SoftwareEdgeTable[iVar2].base.depth_current =
            local_14 + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     }
     else {
@@ -108,24 +108,24 @@ void __cdecl engine_prim_c_setupColoredSoftwareEdge_FUN_00553190(SRenderVertex *
               ((pSVar6->projected_vertex).transformed_z - (vertex0->projected_vertex).transformed_z)
       ;
       uVar3 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-      g_SoftwareEdgeTable[iVar2].base.w_gradient = uVar3;
+      g_SoftwareEdgeTable[iVar2].base.depth_gradient = uVar3;
       lVar2 = (longlong)(int)uVar8 * (longlong)(int)uVar3;
-      g_SoftwareEdgeTable[iVar2].base.w_current =
+      g_SoftwareEdgeTable[iVar2].base.depth_current =
            (vertex0->projected_vertex).transformed_z +
            ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     }
     lVar2 = (longlong)iVar6 * (longlong)(pSVar6->g - vertex0->g);
     uVar3 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-    g_SoftwareEdgeTable[iVar2].color_gradient = uVar3;
+    g_SoftwareEdgeTable[iVar2].green_gradient = uVar3;
     lVar2 = (longlong)(int)uVar8 * (longlong)(int)uVar3;
-    g_SoftwareEdgeTable[iVar2].color_current =
+    g_SoftwareEdgeTable[iVar2].green_current =
          vertex0->g + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     lVar2 = (longlong)iVar6 * (longlong)(pSVar6->b - vertex0->b);
     uVar3 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-    g_SoftwareEdgeTable[iVar2].alpha_gradient = uVar3;
+    g_SoftwareEdgeTable[iVar2].blue_gradient = uVar3;
     lVar2 = (longlong)(int)uVar8 * (longlong)(int)uVar3;
     g_ActiveEdgeCount = g_ActiveEdgeCount + 1;
-    g_SoftwareEdgeTable[iVar2].alpha_current =
+    g_SoftwareEdgeTable[iVar2].blue_current =
          vertex0->b + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
   }
   return;

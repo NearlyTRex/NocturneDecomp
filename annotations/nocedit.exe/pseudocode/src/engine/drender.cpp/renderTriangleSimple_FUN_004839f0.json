@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 465,
-    "complexity_score": 243,
+    "complexity_score": 245,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 22,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 228,
+    "pseudocode_lines": 230,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 693
+    "total_lines": 695
   },
   "cross_references": [
     {
@@ -152,13 +152,13 @@
     },
     {
       "addr": "02c6cb9c",
-      "name": "g_EdgeInterpolationArray[0].base.w_current",
+      "name": "g_EdgeInterpolationArray[0].base.depth_current",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02c6cba0",
-      "name": "g_EdgeInterpolationArray[0].base.w_gradient",
+      "name": "g_EdgeInterpolationArray[0].base.depth_gradient",
       "type": "undefined4",
       "value": null
     },
@@ -405,7 +405,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 212,
+      "line": 214,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "scanline_y = (byte *)((int)&(local_20->projected_vertex).transformed_x + 1);",

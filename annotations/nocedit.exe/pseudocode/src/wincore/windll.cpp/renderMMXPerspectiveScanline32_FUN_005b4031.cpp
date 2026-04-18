@@ -78,9 +78,9 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
     puVar18 = g_ZBufferScanlineArray[scanline_y] + uVar8;
     g_CurrentZBufferPtr = (int *)puVar18;
     if (g_RenderStateFlags.dword == RENDER_DEPTH_WRITE) {
-      uVar19 = (pSVar16->base).w_current;
+      uVar19 = (pSVar16->base).depth_current;
       iVar17 = (int)((ulonglong)
-                     ((longlong)(int)((left_vertex->base).w_current - uVar19) *
+                     ((longlong)(int)((left_vertex->base).depth_current - uVar19) *
                      (longlong)(int)g_ReciprocalLookupTable[iVar10 + 1]) >> 0x20);
       iVar10 = g_ScanlinePixelCount;
       g_StartDepthW = uVar19;
@@ -99,24 +99,24 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
       uVar19 = (pSVar16->base).u_current;
       g_StartTextureU =
            (int)(CONCAT44(((int)uVar19 >> 0x1f) << 0x18 | uVar19 >> 8,uVar19 << 0x18) /
-                (longlong)(pSVar16->base).w_current);
+                (longlong)(pSVar16->base).depth_current);
       uVar19 = (left_vertex->base).u_current;
       g_HardwareDeltaTextureU =
            (int)((ulonglong)
                  ((longlong)
                   ((int)(CONCAT44(((int)uVar19 >> 0x1f) << 0x18 | uVar19 >> 8,uVar19 << 0x18) /
-                        (longlong)(left_vertex->base).w_current) - g_StartTextureU) *
+                        (longlong)(left_vertex->base).depth_current) - g_StartTextureU) *
                  (longlong)(int)g_ReciprocalLookupTable[iVar10 + 1]) >> 0x20);
       uVar19 = (pSVar16->base).v_current;
       g_StartTextureV =
            (int)(CONCAT44(((int)uVar19 >> 0x1f) << 0x18 | uVar19 >> 8,uVar19 << 0x18) /
-                (longlong)(pSVar16->base).w_current);
+                (longlong)(pSVar16->base).depth_current);
       uVar19 = (left_vertex->base).v_current;
       g_HardwareDeltaTextureV =
            (int)((ulonglong)
                  ((longlong)
                   ((int)(CONCAT44(((int)uVar19 >> 0x1f) << 0x18 | uVar19 >> 8,uVar19 << 0x18) /
-                        (longlong)(left_vertex->base).w_current) - g_StartTextureV) *
+                        (longlong)(left_vertex->base).depth_current) - g_StartTextureV) *
                  (longlong)(int)g_ReciprocalLookupTable[iVar10 + 1]) >> 0x20);
     }
     else {
@@ -131,15 +131,15 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
                  ((longlong)((left_vertex->base).v_current - g_StartTextureV) *
                  (longlong)(int)g_ReciprocalLookupTable[iVar10 + 1]) >> 0x20);
     }
-    iVar17 = (pSVar16->base).w_current;
+    iVar17 = (pSVar16->base).depth_current;
     g_HardwareDeltaDepthZ =
          (int)((ulonglong)
-               ((longlong)((left_vertex->base).w_current - iVar17) *
+               ((longlong)((left_vertex->base).depth_current - iVar17) *
                (longlong)(int)g_ReciprocalLookupTable[iVar10 + 1]) >> 0x20);
-    g_VertexAlphaStart = (pSVar16->base).fog_current;
+    g_VertexAlphaStart = (pSVar16->base).alpha_current;
     g_VertexAlphaDelta =
          (int)((ulonglong)
-               ((longlong)((left_vertex->base).fog_current - g_VertexAlphaStart) *
+               ((longlong)((left_vertex->base).alpha_current - g_VertexAlphaStart) *
                (longlong)(int)g_ReciprocalLookupTable[iVar10 + 1]) >> 0x20);
     if ((g_RenderStateFlags.dword & RENDER_COLOR_FROM_VERTEX) == 0) {
       if ((g_RenderStateFlags.dword & RENDER_FOG_COLOR) == 0) {
@@ -157,8 +157,8 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
         }
       }
       else {
-        uVar19 = (left_vertex->base).z_current - 0x100;
-        uVar11 = (pSVar16->base).z_current - 0x100;
+        uVar19 = (left_vertex->base).red_current - 0x100;
+        uVar11 = (pSVar16->base).red_current - 0x100;
         if (0xfff < uVar19) {
           uVar19 = 0xfff;
         }
@@ -180,21 +180,21 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
       }
     }
     else {
-      uVar9 = (uint)(pSVar16->base).z_current >> 1;
+      uVar9 = (uint)(pSVar16->base).red_current >> 1;
       uVar19 = (uint)((ulonglong)
-                      ((longlong)(int)(((uint)(left_vertex->base).z_current >> 1) - uVar9) *
+                      ((longlong)(int)(((uint)(left_vertex->base).red_current >> 1) - uVar9) *
                       (longlong)(int)g_ReciprocalLookupTable[iVar10 + 1]) >> 0x20);
       g_VertexRedStart = uVar9 & 0xffff;
       g_VertexRedDelta = uVar19 & 0xffff;
-      uVar13 = (uint)pSVar16->color_current >> 1;
+      uVar13 = (uint)pSVar16->green_current >> 1;
       uVar11 = (uint)((ulonglong)
-                      ((longlong)(int)(((uint)left_vertex->color_current >> 1) - uVar13) *
+                      ((longlong)(int)(((uint)left_vertex->green_current >> 1) - uVar13) *
                       (longlong)(int)g_ReciprocalLookupTable[iVar10 + 1]) >> 0x20);
       g_VertexGreenStart = uVar13 & 0xffff;
       g_VertexGreenDelta = uVar11 & 0xffff;
-      uVar14 = (uint)pSVar16->alpha_current >> 1;
+      uVar14 = (uint)pSVar16->blue_current >> 1;
       uVar8 = (uint)((ulonglong)
-                     ((longlong)(int)(((uint)left_vertex->alpha_current >> 1) - uVar14) *
+                     ((longlong)(int)(((uint)left_vertex->blue_current >> 1) - uVar14) *
                      (longlong)(int)g_ReciprocalLookupTable[iVar10 + 1]) >> 0x20);
       g_VertexBlueStart = uVar14 & 0xffff;
       g_VertexBlueDelta = uVar8 & 0xffff;

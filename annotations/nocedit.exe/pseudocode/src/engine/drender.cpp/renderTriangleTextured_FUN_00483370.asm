@@ -459,7 +459,7 @@ section .text
     IMUL EDX                            ; 004837fd
     SHRD EAX,EDX,0x10                   ; 004837ff
     MOV EDX,EAX                         ; 00483803
-    MOV dword ptr [ECX + 0x14],EAX      ; 00483805 | g_EdgeInterpolationArray[0].base.z_gradient
+    MOV dword ptr [ECX + 0x14],EAX      ; 00483805 | g_EdgeInterpolationArray[0].base.red_gradient
     MOV EAX,EDI                         ; 00483808
     IMUL EDX                            ; 0048380a
     SHRD EAX,EDX,0x10                   ; 0048380c
@@ -467,7 +467,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x40]      ; 00483814
     MOV EAX,dword ptr [ESI + 0x20]      ; 00483818 | g_RenderVertexBuffer[0].r
     ADD EAX,EDX                         ; 0048381b
-    MOV dword ptr [ECX + 0x10],EAX      ; 0048381d | g_EdgeInterpolationArray[0].base.z_current
+    MOV dword ptr [ECX + 0x10],EAX      ; 0048381d | g_EdgeInterpolationArray[0].base.red_current
     MOV EAX,dword ptr [ESP + 0x50]      ; 00483820
     MOV EDX,dword ptr [ESI + 0x2c]      ; 00483824 | g_RenderVertexBuffer[0].a
     MOV EAX,dword ptr [EAX + 0x2c]      ; 00483827 | g_RenderVertexBuffer[0].a
@@ -477,7 +477,7 @@ section .text
     IMUL EDX                            ; 00483830
     SHRD EAX,EDX,0x10                   ; 00483832
     MOV EDX,EAX                         ; 00483836
-    MOV dword ptr [ECX + 0x34],EAX      ; 00483838 | g_EdgeInterpolationArray[0].base.fog_gradient
+    MOV dword ptr [ECX + 0x34],EAX      ; 00483838 | g_EdgeInterpolationArray[0].base.alpha_gradient
     MOV EAX,EDI                         ; 0048383b
     IMUL EDX                            ; 0048383d
     SHRD EAX,EDX,0x10                   ; 0048383f
@@ -485,7 +485,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x40]      ; 00483847
     MOV EAX,dword ptr [ESI + 0x2c]      ; 0048384b | g_RenderVertexBuffer[0].a
     ADD EAX,EDX                         ; 0048384e
-    MOV dword ptr [ECX + 0x30],EAX      ; 00483850 | g_EdgeInterpolationArray[0].base.fog_current
+    MOV dword ptr [ECX + 0x30],EAX      ; 00483850 | g_EdgeInterpolationArray[0].base.alpha_current
     CMP dword ptr [0x00772a74],0x0      ; 00483853 | g_TexturesDisabled
     JZ 0x0048391e                       ; 0048385a
         ;   XREF to: 0048391e (CONDITIONAL_JUMP)  ; LAB_0048391e
@@ -498,7 +498,7 @@ section .text
     IMUL EDX                            ; 00483870
     SHRD EAX,EDX,0x10                   ; 00483872
     MOV EDX,EAX                         ; 00483876
-    MOV dword ptr [ECX + 0x2c],EAX      ; 00483878 | g_EdgeInterpolationArray[0].base.w_gradient
+    MOV dword ptr [ECX + 0x2c],EAX      ; 00483878 | g_EdgeInterpolationArray[0].base.depth_gradient
     MOV EAX,EDI                         ; 0048387b
     IMUL EDX                            ; 0048387d
     SHRD EAX,EDX,0x10                   ; 0048387f
@@ -507,7 +507,7 @@ section .text
     MOV EAX,dword ptr [ESI + 0x8]       ; 0048388b | g_RenderVertexBuffer[0].projected_vertex.transformed_z
     ADD EAX,EDX                         ; 0048388e
         ;   Label: LAB_0048388e
-    MOV dword ptr [ECX + 0x28],EAX      ; 00483890 | g_EdgeInterpolationArray[0].base.w_current
+    MOV dword ptr [ECX + 0x28],EAX      ; 00483890 | g_EdgeInterpolationArray[0].base.depth_current
     TEST byte ptr [0x02d052a1],0x2      ; 00483893 | g_RenderStateFlags+1
     JZ 0x004838fc                       ; 0048389a
         ;   XREF to: 004838fc (CONDITIONAL_JUMP)  ; LAB_004838fc
@@ -520,7 +520,7 @@ section .text
     IMUL EDX                            ; 004838ac
     SHRD EAX,EDX,0x10                   ; 004838ae
     MOV EDX,EAX                         ; 004838b2
-    MOV dword ptr [ECX + 0x3c],EAX      ; 004838b4 | g_EdgeInterpolationArray[0].color_gradient
+    MOV dword ptr [ECX + 0x3c],EAX      ; 004838b4 | g_EdgeInterpolationArray[0].green_gradient
     MOV EAX,EDI                         ; 004838b7
     IMUL EDX                            ; 004838b9
     SHRD EAX,EDX,0x10                   ; 004838bb
@@ -528,7 +528,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x40]      ; 004838c3
     MOV EAX,dword ptr [ESI + 0x24]      ; 004838c7 | g_RenderVertexBuffer[0].g
     ADD EAX,EDX                         ; 004838ca
-    MOV dword ptr [ECX + 0x38],EAX      ; 004838cc | g_EdgeInterpolationArray[0].color_current
+    MOV dword ptr [ECX + 0x38],EAX      ; 004838cc | g_EdgeInterpolationArray[0].green_current
     MOV EAX,dword ptr [ESP + 0x50]      ; 004838cf
     MOV EDX,dword ptr [ESI + 0x28]      ; 004838d3 | g_RenderVertexBuffer[0].b
     MOV EAX,dword ptr [EAX + 0x28]      ; 004838d6 | g_RenderVertexBuffer[0].b
@@ -538,14 +538,14 @@ section .text
     IMUL EDX                            ; 004838df
     SHRD EAX,EDX,0x10                   ; 004838e1
     MOV EDX,EAX                         ; 004838e5
-    MOV dword ptr [ECX + 0x44],EAX      ; 004838e7 | g_EdgeInterpolationArray[0].alpha_gradient
+    MOV dword ptr [ECX + 0x44],EAX      ; 004838e7 | g_EdgeInterpolationArray[0].blue_gradient
     MOV EAX,EDI                         ; 004838ea
     IMUL EDX                            ; 004838ec
     SHRD EAX,EDX,0x10                   ; 004838ee
     MOV EDX,EAX                         ; 004838f2
     MOV EAX,dword ptr [ESI + 0x28]      ; 004838f4 | g_RenderVertexBuffer[0].b
     ADD EAX,EDX                         ; 004838f7
-    MOV dword ptr [ECX + 0x40],EAX      ; 004838f9 | g_EdgeInterpolationArray[0].alpha_current
+    MOV dword ptr [ECX + 0x40],EAX      ; 004838f9 | g_EdgeInterpolationArray[0].blue_current
     MOV EBP,dword ptr [0x02c6cb70]      ; 004838fc | g_RenderTriangleEdgeCount
         ;   Label: LAB_004838fc
     INC EBP                             ; 00483902
@@ -569,7 +569,7 @@ section .text
     IMUL EDX                            ; 0048392e
     SHRD EAX,EDX,0x10                   ; 00483930
     MOV EDX,EAX                         ; 00483934
-    MOV dword ptr [ECX + 0x2c],EAX      ; 00483936 | g_EdgeInterpolationArray[0].base.w_gradient
+    MOV dword ptr [ECX + 0x2c],EAX      ; 00483936 | g_EdgeInterpolationArray[0].base.depth_gradient
     MOV EAX,EDI                         ; 00483939
     IMUL EDX                            ; 0048393b
     SHRD EAX,EDX,0x10                   ; 0048393d

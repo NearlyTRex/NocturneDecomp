@@ -201,11 +201,23 @@ int_ptr = (int *)uint_ptr;
 
 **Cause:** Ghidra fails to identify the type of stack-allocated structs, especially when the compiler reuses stack slots across different lifetimes. The decompiler emits raw `byte[N]` arrays with `._offset_size_` sub-accesses instead of proper field names.
 
-**Diagnosis:** Compare the byte buffer size and access patterns against known struct layouts:
+**Before reaching for a char buffer in a `.keep`, search for an existing struct.** Any time a function's memory layout (sized byte buffer, fixed-offset field accesses, `._N_M_` sub-accesses, a constructor/initializer call, a cast to a typed pointer) suggests the local is really a struct:
+
+1. **Search the project for an existing struct that matches** by size and field pattern. Look in `annotations/nocedit.exe/pseudocode/include/types/{structs,classes}/` — grep for the byte count (`Ghidra size: 0x<N>`) and cross-check field offsets. Also scan callers/callees: if the buffer is passed to a function, that callee's signature names the real type.
+2. **If a matching struct exists:** fix the Ghidra-side type (retype the stack local to that struct) rather than declaring a char buffer in the `.keep`. The `.keep` becomes unnecessary once Ghidra re-exports with the proper type.
+3. **If no matching struct exists:** STOP and tell the user what to create. Give them:
+   - The proposed struct name and size.
+   - The inferred field layout (offsets, names, types) with evidence from the assembly or callsite usage.
+   - Which stack locals to retype in which functions after the struct is added.
+
+   Do **not** invent a `char local_XX[N]` buffer as a workaround — that lands in the `.keep` as pure debt that the next re-export won't clean up.
+
+**Diagnosis heuristics:**
 - A `byte[56]` or `byte[60]` with a constructor call and field writes at known offsets → likely a struct (e.g., `SDamageInfo` at 60 bytes). Check if an adjacent 4-byte variable completes the struct size.
 - A large `byte[N]` accessed at many different sub-offsets with `CVector3f`-sized (12-byte) patterns → likely multiple `CVector3f` temporaries that the compiler packed into overlapping stack slots.
+- Sequential fread/fwrite targets with distinct sub-offsets → likely a file-format struct (chunk header, section header, record). Parse the binary format spec and propose the matching struct.
 
-**Fix (in Ghidra, not in .keep):** This is best fixed upstream in Ghidra by retyping stack variables. **Stack locals in Ghidra cannot overlap** — each byte of stack space can only belong to one variable. With that constraint:
+**Fix (in Ghidra, not in `.keep`):** This is best fixed upstream in Ghidra by retyping stack variables. **Stack locals in Ghidra cannot overlap** — each byte of stack space can only belong to one variable. With that constraint:
 1. Open the function in the decompiler, right-click the byte array variable, and retype it to the correct struct.
 2. If the struct is split across two adjacent variables (e.g., `auStack_cc[56]` + `pCStack_94[4]` = 60 bytes = `SDamageInfo`), merge them by retyping the first variable to the full struct size — the adjacent variable will be absorbed.
 3. For scratch buffers where the compiler reuses stack slots across different code phases (e.g., `CVector3f` temporaries for both rotation and bounding-box calculations), you must choose one phase's interpretation per slot since locals cannot overlap. Pick the interpretation that makes the most important code path readable.

@@ -13,10 +13,10 @@
 ;   undefined4 g_RasterizerEdgeArray[0].base.y_max
 ;   undefined4 g_RasterizerEdgeArray[0].base.x_current
 ;   undefined4 g_RasterizerEdgeArray[0].base.x_gradient
-;   undefined4 g_RasterizerEdgeArray[0].base.z_current
-;   undefined4 g_RasterizerEdgeArray[0].base.z_gradient
-;   undefined4 g_RasterizerEdgeArray[0].base.w_current
-;   undefined4 g_RasterizerEdgeArray[0].base.w_gradient
+;   undefined4 g_RasterizerEdgeArray[0].base.red_current
+;   undefined4 g_RasterizerEdgeArray[0].base.red_gradient
+;   undefined4 g_RasterizerEdgeArray[0].base.depth_current
+;   undefined4 g_RasterizerEdgeArray[0].base.depth_gradient
 ;   int g_RasterizerMinY
 ;   int g_RasterizerMaxY
 ;
@@ -71,9 +71,9 @@ section .text
     MOV dword ptr [ECX + 0x8],EAX       ; 005fceb1 | g_RasterizerEdgeArray[0].base.x_current
     MOV EAX,dword ptr [ESI + 0x8]       ; 005fceb4
     SHL EAX,0x8                         ; 005fceb7
-    MOV dword ptr [ECX + 0x28],EAX      ; 005fceba | g_RasterizerEdgeArray[0].base.w_current
+    MOV dword ptr [ECX + 0x28],EAX      ; 005fceba | g_RasterizerEdgeArray[0].base.depth_current
     MOV EAX,dword ptr [ESI + 0x20]      ; 005fcebd
-    MOV dword ptr [ECX + 0x10],EAX      ; 005fcec0 | g_RasterizerEdgeArray[0].base.z_current
+    MOV dword ptr [ECX + 0x10],EAX      ; 005fcec0 | g_RasterizerEdgeArray[0].base.red_current
     MOV EBX,dword ptr [EDI + 0x14]      ; 005fcec3
     SUB EBX,dword ptr [ESI + 0x14]      ; 005fcec6
     CMP EBX,0x10000                     ; 005fcec9
@@ -96,14 +96,14 @@ section .text
     MOV EAX,EBX                         ; 005fcef7
     IMUL EDX                            ; 005fcef9
     SHRD EAX,EDX,0x10                   ; 005fcefb
-    MOV dword ptr [ECX + 0x2c],EAX      ; 005fceff | g_RasterizerEdgeArray[0].base.w_gradient
+    MOV dword ptr [ECX + 0x2c],EAX      ; 005fceff | g_RasterizerEdgeArray[0].base.depth_gradient
     MOV EDX,dword ptr [EDI + 0x20]      ; 005fcf02
     MOV EDI,dword ptr [ESI + 0x20]      ; 005fcf05
     MOV EAX,EBX                         ; 005fcf08
     SUB EDX,EDI                         ; 005fcf0a
     IMUL EDX                            ; 005fcf0c
     SHRD EAX,EDX,0x10                   ; 005fcf0e
-    MOV dword ptr [ECX + 0x14],EAX      ; 005fcf12 | g_RasterizerEdgeArray[0].base.z_gradient
+    MOV dword ptr [ECX + 0x14],EAX      ; 005fcf12 | g_RasterizerEdgeArray[0].base.red_gradient
     MOV EBX,dword ptr [ESI + 0x14]      ; 005fcf15
     AND EBX,0xffff                      ; 005fcf18
     XOR BX,0xffff                       ; 005fcf1e
@@ -112,23 +112,23 @@ section .text
     IMUL EDX                            ; 005fcf27
     SHRD EAX,EDX,0x10                   ; 005fcf29
     MOV EBP,dword ptr [ECX + 0x8]       ; 005fcf2d | g_RasterizerEdgeArray[0].base.x_current
-    MOV EDX,dword ptr [ECX + 0x2c]      ; 005fcf30 | g_RasterizerEdgeArray[0].base.w_gradient
+    MOV EDX,dword ptr [ECX + 0x2c]      ; 005fcf30 | g_RasterizerEdgeArray[0].base.depth_gradient
     ADD EBP,EAX                         ; 005fcf33
     MOV EAX,EBX                         ; 005fcf35
     MOV dword ptr [ECX + 0x8],EBP       ; 005fcf37 | g_RasterizerEdgeArray[0].base.x_current
     IMUL EDX                            ; 005fcf3a
     SHRD EAX,EDX,0x10                   ; 005fcf3c
-    ADD dword ptr [ECX + 0x28],EAX      ; 005fcf40 | g_RasterizerEdgeArray[0].base.w_current
+    ADD dword ptr [ECX + 0x28],EAX      ; 005fcf40 | g_RasterizerEdgeArray[0].base.depth_current
     MOV EAX,EBX                         ; 005fcf43
-    MOV EDX,dword ptr [ECX + 0x14]      ; 005fcf45 | g_RasterizerEdgeArray[0].base.z_gradient
+    MOV EDX,dword ptr [ECX + 0x14]      ; 005fcf45 | g_RasterizerEdgeArray[0].base.red_gradient
     IMUL EDX                            ; 005fcf48
     SHRD EAX,EDX,0x10                   ; 005fcf4a
     MOV ESI,dword ptr [0x03f9ad5c]      ; 005fcf4e | g_RasterizerEdgeCount
-    MOV EBX,dword ptr [ECX + 0x10]      ; 005fcf54 | g_RasterizerEdgeArray[0].base.z_current
+    MOV EBX,dword ptr [ECX + 0x10]      ; 005fcf54 | g_RasterizerEdgeArray[0].base.red_current
     INC ESI                             ; 005fcf57
     ADD EBX,EAX                         ; 005fcf58
     MOV dword ptr [0x03f9ad5c],ESI      ; 005fcf5a | g_RasterizerEdgeCount
-    MOV dword ptr [ECX + 0x10],EBX      ; 005fcf60 | g_RasterizerEdgeArray[0].base.z_current
+    MOV dword ptr [ECX + 0x10],EBX      ; 005fcf60 | g_RasterizerEdgeArray[0].base.red_current
     POP EBP                             ; 005fcf63
         ;   Label: LAB_005fcf63
     POP EDI                             ; 005fcf64

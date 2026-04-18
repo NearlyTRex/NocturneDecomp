@@ -198,15 +198,15 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_00553b10(int *vertex
                pSVar8->v + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
           lVar2 = (longlong)iVar6 * (longlong)(pSVar12->r - pSVar8->r);
           uVar8 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-          g_SoftwareEdgeTable[iVar7].base.z_gradient = uVar8;
+          g_SoftwareEdgeTable[iVar7].base.red_gradient = uVar8;
           lVar2 = (longlong)(int)uVar10 * (longlong)(int)uVar8;
-          g_SoftwareEdgeTable[iVar7].base.z_current =
+          g_SoftwareEdgeTable[iVar7].base.red_current =
                pSVar8->r + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
           lVar2 = (longlong)iVar6 * (longlong)(pSVar12->a - pSVar8->a);
           uVar8 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-          g_SoftwareEdgeTable[iVar7].base.fog_gradient = uVar8;
+          g_SoftwareEdgeTable[iVar7].base.alpha_gradient = uVar8;
           lVar2 = (longlong)(int)uVar10 * (longlong)(int)uVar8;
-          g_SoftwareEdgeTable[iVar7].base.fog_current =
+          g_SoftwareEdgeTable[iVar7].base.alpha_current =
                pSVar8->a + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
           if (g_VertexPreprocessMode == 1) {
             if (g_ProcessorType == 0) {
@@ -219,9 +219,9 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_00553b10(int *vertex
             }
             lVar2 = (longlong)iVar6 * (longlong)(iVar12 - local_20);
             uVar8 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-            g_SoftwareEdgeTable[iVar7].base.w_gradient = uVar8;
+            g_SoftwareEdgeTable[iVar7].base.depth_gradient = uVar8;
             lVar2 = (longlong)(int)uVar10 * (longlong)(int)uVar8;
-            g_SoftwareEdgeTable[iVar7].base.w_current =
+            g_SoftwareEdgeTable[iVar7].base.depth_current =
                  local_20 + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
           }
           else {
@@ -230,23 +230,23 @@ void __cdecl engine_prim_c_renderIndexedPolygonAdvanced_FUN_00553b10(int *vertex
                     ((pSVar12->projected_vertex).transformed_z -
                     (pSVar8->projected_vertex).transformed_z);
             uVar8 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-            g_SoftwareEdgeTable[iVar7].base.w_gradient = uVar8;
+            g_SoftwareEdgeTable[iVar7].base.depth_gradient = uVar8;
             lVar2 = (longlong)(int)uVar10 * (longlong)(int)uVar8;
-            g_SoftwareEdgeTable[iVar7].base.w_current =
+            g_SoftwareEdgeTable[iVar7].base.depth_current =
                  (pSVar8->projected_vertex).transformed_z +
                  ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
           }
           lVar2 = (longlong)iVar6 * (longlong)(pSVar12->g - pSVar8->g);
           uVar8 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-          g_SoftwareEdgeTable[iVar7].color_gradient = uVar8;
+          g_SoftwareEdgeTable[iVar7].green_gradient = uVar8;
           lVar2 = (longlong)(int)uVar10 * (longlong)(int)uVar8;
-          g_SoftwareEdgeTable[iVar7].color_current =
+          g_SoftwareEdgeTable[iVar7].green_current =
                pSVar8->g + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
           lVar2 = (longlong)iVar6 * (longlong)(pSVar12->b - pSVar8->b);
           uVar8 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
-          g_SoftwareEdgeTable[iVar7].alpha_gradient = uVar8;
+          g_SoftwareEdgeTable[iVar7].blue_gradient = uVar8;
           lVar2 = (longlong)(int)uVar10 * (longlong)(int)uVar8;
-          g_SoftwareEdgeTable[iVar7].alpha_current =
+          g_SoftwareEdgeTable[iVar7].blue_current =
                pSVar8->b + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
           g_ActiveEdgeCount = g_ActiveEdgeCount + 1;
         }
@@ -329,16 +329,16 @@ LAB_00553f00:
           (left->base).x_current = (left->base).x_current + (left->base).x_gradient;
           (left->base).u_current = (left->base).u_current + (left->base).u_gradient;
           (left->base).v_current = (left->base).v_current + (left->base).v_gradient;
-          iVar6 = left->color_current;
-          iVar12 = left->alpha_current;
-          iVar10 = (left->base).fog_current;
-          (left->base).w_current = (left->base).w_current + (left->base).w_gradient;
-          iVar1 = left->color_gradient;
-          (left->base).z_current = (left->base).z_current + (left->base).z_gradient;
-          left->color_current = iVar6 + iVar1;
-          iVar6 = (left->base).fog_gradient;
-          left->alpha_current = iVar12 + left->alpha_gradient;
-          (left->base).fog_current = iVar10 + iVar6;
+          iVar6 = left->green_current;
+          iVar12 = left->blue_current;
+          iVar10 = (left->base).alpha_current;
+          (left->base).depth_current = (left->base).depth_current + (left->base).depth_gradient;
+          iVar1 = left->green_gradient;
+          (left->base).red_current = (left->base).red_current + (left->base).red_gradient;
+          left->green_current = iVar6 + iVar1;
+          iVar6 = (left->base).alpha_gradient;
+          left->blue_current = iVar12 + left->blue_gradient;
+          (left->base).alpha_current = iVar10 + iVar6;
         } while( true );
       }
     }

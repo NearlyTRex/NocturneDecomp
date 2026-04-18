@@ -38,9 +38,9 @@ void __edi_esi_ebx wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005
     puVar9 = g_ZBufferScanlineArray[scanline_y] + uVar3;
     g_CurrentZBufferPtr = (int *)puVar9;
     if (g_RenderStateFlags.dword == RENDER_DEPTH_WRITE) {
-      uVar10 = (pSVar7->base).w_current;
+      uVar10 = (pSVar7->base).depth_current;
       iVar8 = (int)((ulonglong)
-                    ((longlong)(int)((left_vertex->base).w_current - uVar10) *
+                    ((longlong)(int)((left_vertex->base).depth_current - uVar10) *
                     (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
       iVar4 = g_ScanlinePixelCount;
       g_StartDepthW = uVar10;
@@ -59,24 +59,24 @@ void __edi_esi_ebx wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005
       uVar10 = (pSVar7->base).u_current;
       g_StartTextureU =
            (int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
-                (longlong)(pSVar7->base).w_current);
+                (longlong)(pSVar7->base).depth_current);
       uVar10 = (left_vertex->base).u_current;
       g_HardwareDeltaTextureU =
            (int)((ulonglong)
                  ((longlong)
                   ((int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
-                        (longlong)(left_vertex->base).w_current) - g_StartTextureU) *
+                        (longlong)(left_vertex->base).depth_current) - g_StartTextureU) *
                  (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
       uVar10 = (pSVar7->base).v_current;
       g_StartTextureV =
            (int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
-                (longlong)(pSVar7->base).w_current);
+                (longlong)(pSVar7->base).depth_current);
       uVar10 = (left_vertex->base).v_current;
       g_HardwareDeltaTextureV =
            (int)((ulonglong)
                  ((longlong)
                   ((int)(CONCAT44(((int)uVar10 >> 0x1f) << 0x18 | uVar10 >> 8,uVar10 << 0x18) /
-                        (longlong)(left_vertex->base).w_current) - g_StartTextureV) *
+                        (longlong)(left_vertex->base).depth_current) - g_StartTextureV) *
                  (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
     }
     else {
@@ -91,10 +91,10 @@ void __edi_esi_ebx wincore_windll_cpp_renderPerspectiveCorrectScanline16_FUN_005
                  ((longlong)((left_vertex->base).v_current - g_StartTextureV) *
                  (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
     }
-    iVar8 = (pSVar7->base).w_current;
+    iVar8 = (pSVar7->base).depth_current;
     g_HardwareDeltaDepthZ =
          (int)((ulonglong)
-               ((longlong)((left_vertex->base).w_current - iVar8) *
+               ((longlong)((left_vertex->base).depth_current - iVar8) *
                (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20);
     uVar10 = 0;
     g_StartDepthW = iVar8;

@@ -5437,6 +5437,14 @@
       "type":"struct"
     },
     {
+      "name":"SWavChunkHeader",
+      "type":"struct"
+    },
+    {
+      "name":"SWavFmtChunk",
+      "type":"struct"
+    },
+    {
       "name":"SWindow",
       "type":"struct"
     },
@@ -55880,13 +55888,13 @@
         },
         {
           "len":4,
-          "name":"z_current",
+          "name":"red_current",
           "offset":16,
           "type":"int"
         },
         {
           "len":4,
-          "name":"z_gradient",
+          "name":"red_gradient",
           "offset":20,
           "type":"int"
         },
@@ -55916,25 +55924,25 @@
         },
         {
           "len":4,
-          "name":"w_current",
+          "name":"depth_current",
           "offset":40,
           "type":"int"
         },
         {
           "len":4,
-          "name":"w_gradient",
+          "name":"depth_gradient",
           "offset":44,
           "type":"int"
         },
         {
           "len":4,
-          "name":"fog_current",
+          "name":"alpha_current",
           "offset":48,
           "type":"int"
         },
         {
           "len":4,
-          "name":"fog_gradient",
+          "name":"alpha_gradient",
           "offset":52,
           "type":"int"
         }
@@ -60195,25 +60203,25 @@
         },
         {
           "len":4,
-          "name":"color_current",
+          "name":"green_current",
           "offset":56,
           "type":"int"
         },
         {
           "len":4,
-          "name":"color_gradient",
+          "name":"green_gradient",
           "offset":60,
           "type":"int"
         },
         {
           "len":4,
-          "name":"alpha_current",
+          "name":"blue_current",
           "offset":64,
           "type":"int"
         },
         {
           "len":4,
-          "name":"alpha_gradient",
+          "name":"blue_gradient",
           "offset":68,
           "type":"int"
         }
@@ -61715,6 +61723,66 @@
       "importable":true,
       "len":32,
       "name":"SWaterVertex",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"id",
+          "offset":0,
+          "type":"char[4]"
+        },
+        {
+          "len":4,
+          "name":"size",
+          "offset":4,
+          "type":"uint"
+        }
+      ],
+      "importable":true,
+      "len":8,
+      "name":"SWavChunkHeader",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":2,
+          "name":"format_tag",
+          "offset":0,
+          "type":"ushort"
+        },
+        {
+          "len":2,
+          "name":"num_channels",
+          "offset":2,
+          "type":"ushort"
+        },
+        {
+          "len":4,
+          "name":"sample_rate",
+          "offset":4,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"byte_rate",
+          "offset":8,
+          "type":"uint"
+        }
+      ],
+      "importable":true,
+      "len":12,
+      "name":"SWavFmtChunk",
       "pack":false,
       "type":"struct"
     },

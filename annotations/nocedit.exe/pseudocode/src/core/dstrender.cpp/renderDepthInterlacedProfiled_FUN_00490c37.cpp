@@ -36,7 +36,7 @@ void __edi_esi_ebx core_dstrender_cpp_renderDepthInterlacedProfiled_FUN_00490c37
   iVar4 = (uVar3 >> 0x10) - uVar2;
   if (iVar4 != 0 && uVar2 <= uVar3 >> 0x10) {
     puVar7 = g_ZBufferScanlineArray[scanline_y] + uVar2;
-    uVar9 = (pSVar8->base).w_current;
+    uVar9 = (pSVar8->base).depth_current;
     iVar5 = iVar4;
     do {
       if (((int)*puVar7 <= (int)(uVar9 >> 8)) &&
@@ -46,7 +46,8 @@ void __edi_esi_ebx core_dstrender_cpp_renderDepthInterlacedProfiled_FUN_00490c37
         return;
       }
       uVar9 = uVar9 + (int)((ulonglong)
-                            ((longlong)((left_edge->base).w_current - (pSVar8->base).w_current) *
+                            ((longlong)
+                             ((left_edge->base).depth_current - (pSVar8->base).depth_current) *
                             (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20) * 2;
       puVar7 = puVar7 + 2;
       iVar6 = iVar5 + -2;

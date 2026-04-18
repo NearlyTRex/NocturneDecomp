@@ -42,10 +42,10 @@ void __edi_esi_ebx core_dstrender_cpp_renderTexturedDecalMMXScanline_FUN_0049169
          (int)((ulonglong)
                ((longlong)(int)((left_edge->base).v_current - uVar4) *
                (longlong)(int)g_ReciprocalLookupTable[iVar2 + 1]) >> 0x20);
-    uVar1 = (pSVar5->base).w_current;
+    uVar1 = (pSVar5->base).depth_current;
     g_SoftwareDeltaDepthZ =
          (int)((ulonglong)
-               ((longlong)(int)((left_edge->base).w_current - uVar1) *
+               ((longlong)(int)((left_edge->base).depth_current - uVar1) *
                (longlong)(int)g_ReciprocalLookupTable[iVar2 + 1]) >> 0x20);
     uVar6 = 0;
     g_PerspectiveNextU = uVar3;

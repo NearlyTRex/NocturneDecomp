@@ -36,8 +36,8 @@
 ;   undefined4 g_EdgeInterpolationArray[0].base.y_max
 ;   undefined4 g_EdgeInterpolationArray[0].base.x_current
 ;   undefined4 g_EdgeInterpolationArray[0].base.x_gradient
-;   undefined4 g_EdgeInterpolationArray[0].base.w_current
-;   undefined4 g_EdgeInterpolationArray[0].base.w_gradient
+;   undefined4 g_EdgeInterpolationArray[0].base.depth_current
+;   undefined4 g_EdgeInterpolationArray[0].base.depth_gradient
 ;   undefined4 g_EdgeInterpolationArray[1].base.y_min
 ;   int g_RenderTriangleMinScanlineY
 ;   ... and 7 more
@@ -444,7 +444,7 @@ section .text
     MOV EAX,ECX                         ; 00483e29
     IMUL EDX                            ; 00483e2b
     SHRD EAX,EDX,0x10                   ; 00483e2d
-    MOV dword ptr [EBX + 0x2c],EAX      ; 00483e31 | g_EdgeInterpolationArray[0].base.w_gradient
+    MOV dword ptr [EBX + 0x2c],EAX      ; 00483e31 | g_EdgeInterpolationArray[0].base.depth_gradient
     MOV ECX,dword ptr [ESI + 0x14]      ; 00483e34 | g_RenderVertexBuffer[0].projected_vertex.screen_y
     AND ECX,0xffff                      ; 00483e37
     XOR CX,0xffff                       ; 00483e3d
@@ -460,7 +460,7 @@ section .text
     MOV ESI,dword ptr [ESI + 0x8]       ; 00483e5c | g_RenderVertexBuffer[0].projected_vertex.transformed_z
     MOV EAX,[0x02c6d03c]                ; 00483e5f | g_RasterizerDepthBias
     SHL ESI,0x8                         ; 00483e64
-    MOV EDX,dword ptr [EBX + 0x2c]      ; 00483e67 | g_EdgeInterpolationArray[0].base.w_gradient
+    MOV EDX,dword ptr [EBX + 0x2c]      ; 00483e67 | g_EdgeInterpolationArray[0].base.depth_gradient
     SUB ESI,EAX                         ; 00483e6a
     MOV EAX,ECX                         ; 00483e6c
     IMUL EDX                            ; 00483e6e
@@ -468,7 +468,7 @@ section .text
     MOV EBP,dword ptr [0x02c6cb70]      ; 00483e74 | g_RenderTriangleEdgeCount
     ADD ESI,EAX                         ; 00483e7a
     INC EBP                             ; 00483e7c
-    MOV dword ptr [EBX + 0x28],ESI      ; 00483e7d | g_EdgeInterpolationArray[0].base.w_current
+    MOV dword ptr [EBX + 0x28],ESI      ; 00483e7d | g_EdgeInterpolationArray[0].base.depth_current
     JMP 0x00483b9f                      ; 00483e80
         ;   XREF to: 00483b9f (UNCONDITIONAL_JUMP)  ; LAB_00483b9f
     MOV EAX,0xffffffff                  ; 00483e85

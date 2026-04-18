@@ -13,16 +13,16 @@
 ;   undefined4 g_SoftwareEdgeBuffer[0].base.y_max
 ;   undefined4 g_SoftwareEdgeBuffer[0].base.x_current
 ;   undefined4 g_SoftwareEdgeBuffer[0].base.x_gradient
-;   undefined4 g_SoftwareEdgeBuffer[0].base.z_current
-;   undefined4 g_SoftwareEdgeBuffer[0].base.z_gradient
+;   undefined4 g_SoftwareEdgeBuffer[0].base.red_current
+;   undefined4 g_SoftwareEdgeBuffer[0].base.red_gradient
 ;   undefined4 g_SoftwareEdgeBuffer[0].base.u_current
 ;   undefined4 g_SoftwareEdgeBuffer[0].base.u_gradient
 ;   undefined4 g_SoftwareEdgeBuffer[0].base.v_current
 ;   undefined4 g_SoftwareEdgeBuffer[0].base.v_gradient
-;   undefined4 g_SoftwareEdgeBuffer[0].base.w_current
-;   undefined4 g_SoftwareEdgeBuffer[0].base.w_gradient
-;   undefined4 g_SoftwareEdgeBuffer[0].base.fog_current
-;   undefined4 g_SoftwareEdgeBuffer[0].base.fog_gradient
+;   undefined4 g_SoftwareEdgeBuffer[0].base.depth_current
+;   undefined4 g_SoftwareEdgeBuffer[0].base.depth_gradient
+;   undefined4 g_SoftwareEdgeBuffer[0].base.alpha_current
+;   undefined4 g_SoftwareEdgeBuffer[0].base.alpha_gradient
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -143,7 +143,7 @@ section .text
     IMUL EDX                            ; 00551cc6
     SHRD EAX,EDX,0x10                   ; 00551cc8
     MOV EDX,EAX                         ; 00551ccc
-    MOV dword ptr [ECX + 0x14],EAX      ; 00551cce | g_SoftwareEdgeBuffer[0].base.z_gradient
+    MOV dword ptr [ECX + 0x14],EAX      ; 00551cce | g_SoftwareEdgeBuffer[0].base.red_gradient
     MOV EAX,EDI                         ; 00551cd1
     IMUL EDX                            ; 00551cd3
     SHRD EAX,EDX,0x10                   ; 00551cd5
@@ -151,7 +151,7 @@ section .text
     MOV EDX,dword ptr [ESP]             ; 00551cdc
     MOV EAX,dword ptr [ESI + 0x20]      ; 00551cdf
     ADD EAX,EDX                         ; 00551ce2
-    MOV dword ptr [ECX + 0x10],EAX      ; 00551ce4 | g_SoftwareEdgeBuffer[0].base.z_current
+    MOV dword ptr [ECX + 0x10],EAX      ; 00551ce4 | g_SoftwareEdgeBuffer[0].base.red_current
     MOV EAX,dword ptr [EBP + 0x2c]      ; 00551ce7
     MOV EDX,dword ptr [ESI + 0x2c]      ; 00551cea
     SUB EAX,EDX                         ; 00551ced
@@ -160,7 +160,7 @@ section .text
     IMUL EDX                            ; 00551cf3
     SHRD EAX,EDX,0x10                   ; 00551cf5
     MOV EDX,EAX                         ; 00551cf9
-    MOV dword ptr [ECX + 0x34],EAX      ; 00551cfb | g_SoftwareEdgeBuffer[0].base.fog_gradient
+    MOV dword ptr [ECX + 0x34],EAX      ; 00551cfb | g_SoftwareEdgeBuffer[0].base.alpha_gradient
     MOV EAX,EDI                         ; 00551cfe
     IMUL EDX                            ; 00551d00
     SHRD EAX,EDX,0x10                   ; 00551d02
@@ -168,14 +168,14 @@ section .text
     MOV EDX,dword ptr [ESP]             ; 00551d09
     MOV EAX,dword ptr [ESI + 0x2c]      ; 00551d0c
     ADD EAX,EDX                         ; 00551d0f
-    MOV dword ptr [ECX + 0x30],EAX      ; 00551d11 | g_SoftwareEdgeBuffer[0].base.fog_current
+    MOV dword ptr [ECX + 0x30],EAX      ; 00551d11 | g_SoftwareEdgeBuffer[0].base.alpha_current
     MOV EDX,dword ptr [EBP + 0x8]       ; 00551d14
     SUB EDX,dword ptr [ESI + 0x8]       ; 00551d17
     MOV EAX,EBX                         ; 00551d1a
     IMUL EDX                            ; 00551d1c
     SHRD EAX,EDX,0x10                   ; 00551d1e
     MOV EDX,EAX                         ; 00551d22
-    MOV dword ptr [ECX + 0x2c],EAX      ; 00551d24 | g_SoftwareEdgeBuffer[0].base.w_gradient
+    MOV dword ptr [ECX + 0x2c],EAX      ; 00551d24 | g_SoftwareEdgeBuffer[0].base.depth_gradient
     MOV EAX,EDI                         ; 00551d27
     IMUL EDX                            ; 00551d29
     SHRD EAX,EDX,0x10                   ; 00551d2b
@@ -184,7 +184,7 @@ section .text
     INC EDX                             ; 00551d38
     ADD EBX,EAX                         ; 00551d39
     MOV dword ptr [0x030e5228],EDX      ; 00551d3b | g_SoftwareEdgeCount
-    MOV dword ptr [ECX + 0x28],EBX      ; 00551d41 | g_SoftwareEdgeBuffer[0].base.w_current
+    MOV dword ptr [ECX + 0x28],EBX      ; 00551d41 | g_SoftwareEdgeBuffer[0].base.depth_current
     ADD ESP,0x4                         ; 00551d44
         ;   Label: LAB_00551d44
     POP EBP                             ; 00551d47

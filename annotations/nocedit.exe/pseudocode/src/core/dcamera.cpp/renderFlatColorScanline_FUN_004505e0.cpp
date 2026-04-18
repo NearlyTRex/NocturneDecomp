@@ -39,12 +39,12 @@ void __cdecl core_dcamera_cpp_renderFlatColorScanline_FUN_004505e0(SSoftwareEdge
       iVar5 = local_18;
       local_18 = iVar10;
     }
-    iVar2 = (right_edge->base).w_current;
+    iVar2 = (right_edge->base).depth_current;
     local_14 = g_ZBufferScanlineArray[uVar6] + iVar5;
     iVar1 = local_18 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f);
     iVar11 = iVar5 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f);
     iVar9 = (int)uVar6 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f);
-    iVar3 = ((pSVar7->base).w_current - iVar2) / ((iVar1 - iVar11) + 1);
+    iVar3 = ((pSVar7->base).depth_current - iVar2) / ((iVar1 - iVar11) + 1);
     cVar2 = (char)((g_FlatShadingLightLevel + (g_FlatShadingLightLevel >> 0x1f) * -0x100) -
                    (uint)((g_FlatShadingLightLevel >> 0x1f) << 7 < 0) >> 8);
     if (g_ImageBytesPerPixel < 2) {

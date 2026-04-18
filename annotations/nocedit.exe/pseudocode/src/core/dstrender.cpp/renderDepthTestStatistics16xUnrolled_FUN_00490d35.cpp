@@ -34,9 +34,9 @@ void __edi_esi_ebx core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_0
   if (iVar2 != 0 && uVar1 <= uVar8 >> 0x10) {
     puVar5 = g_ZBufferScanlineArray[scanline_y] + uVar1;
     iVar4 = (int)((ulonglong)
-                  ((longlong)((left_edge->base).w_current - (pSVar7->base).w_current) *
+                  ((longlong)((left_edge->base).depth_current - (pSVar7->base).depth_current) *
                   (longlong)(int)g_ReciprocalLookupTable[iVar2 + 1]) >> 0x20);
-    uVar9 = (pSVar7->base).w_current;
+    uVar9 = (pSVar7->base).depth_current;
     while (iVar3 = iVar2 + -4, puVar6 = puVar5, 3 < iVar2) {
       uVar8 = uVar9 + iVar4 + iVar4;
       uVar1 = uVar8 + iVar4;

@@ -15,14 +15,14 @@
 ;   undefined4 g_SoftwareEdgeBuffer[0].base.y_max
 ;   undefined4 g_SoftwareEdgeBuffer[0].base.x_current
 ;   undefined4 g_SoftwareEdgeBuffer[0].base.x_gradient
-;   undefined4 g_SoftwareEdgeBuffer[0].base.z_current
-;   undefined4 g_SoftwareEdgeBuffer[0].base.z_gradient
+;   undefined4 g_SoftwareEdgeBuffer[0].base.red_current
+;   undefined4 g_SoftwareEdgeBuffer[0].base.red_gradient
 ;   undefined4 g_SoftwareEdgeBuffer[0].base.u_current
 ;   undefined4 g_SoftwareEdgeBuffer[0].base.u_gradient
 ;   undefined4 g_SoftwareEdgeBuffer[0].base.v_current
 ;   undefined4 g_SoftwareEdgeBuffer[0].base.v_gradient
-;   undefined4 g_SoftwareEdgeBuffer[0].base.w_current
-;   undefined4 g_SoftwareEdgeBuffer[0].base.w_gradient
+;   undefined4 g_SoftwareEdgeBuffer[0].base.depth_current
+;   undefined4 g_SoftwareEdgeBuffer[0].base.depth_gradient
 ;   ... and 4 more
 ;
 ; *****************************************************************************
@@ -143,7 +143,7 @@ section .text
     IMUL EDX                            ; 00551e86
     SHRD EAX,EDX,0x10                   ; 00551e88
     MOV EDX,EAX                         ; 00551e8c
-    MOV dword ptr [ECX + 0x14],EAX      ; 00551e8e | g_SoftwareEdgeBuffer[0].base.z_gradient
+    MOV dword ptr [ECX + 0x14],EAX      ; 00551e8e | g_SoftwareEdgeBuffer[0].base.red_gradient
     MOV EAX,EDI                         ; 00551e91
     IMUL EDX                            ; 00551e93
     SHRD EAX,EDX,0x10                   ; 00551e95
@@ -151,7 +151,7 @@ section .text
     MOV EDX,dword ptr [ESP]             ; 00551e9c
     MOV EAX,dword ptr [ESI + 0x20]      ; 00551e9f
     ADD EAX,EDX                         ; 00551ea2
-    MOV dword ptr [ECX + 0x10],EAX      ; 00551ea4 | g_SoftwareEdgeBuffer[0].base.z_current
+    MOV dword ptr [ECX + 0x10],EAX      ; 00551ea4 | g_SoftwareEdgeBuffer[0].base.red_current
     MOV EAX,dword ptr [EBP + 0x2c]      ; 00551ea7
     MOV EDX,dword ptr [ESI + 0x2c]      ; 00551eaa
     SUB EAX,EDX                         ; 00551ead
@@ -160,7 +160,7 @@ section .text
     IMUL EDX                            ; 00551eb3
     SHRD EAX,EDX,0x10                   ; 00551eb5
     MOV EDX,EAX                         ; 00551eb9
-    MOV dword ptr [ECX + 0x34],EAX      ; 00551ebb | g_SoftwareEdgeBuffer[0].base.fog_gradient
+    MOV dword ptr [ECX + 0x34],EAX      ; 00551ebb | g_SoftwareEdgeBuffer[0].base.alpha_gradient
     MOV EAX,EDI                         ; 00551ebe
     IMUL EDX                            ; 00551ec0
     SHRD EAX,EDX,0x10                   ; 00551ec2
@@ -168,7 +168,7 @@ section .text
     MOV EDX,dword ptr [ESP]             ; 00551ec9
     MOV EAX,dword ptr [ESI + 0x2c]      ; 00551ecc
     ADD EAX,EDX                         ; 00551ecf
-    MOV dword ptr [ECX + 0x30],EAX      ; 00551ed1 | g_SoftwareEdgeBuffer[0].base.fog_current
+    MOV dword ptr [ECX + 0x30],EAX      ; 00551ed1 | g_SoftwareEdgeBuffer[0].base.alpha_current
     CMP dword ptr [0x02d052a4],0x1      ; 00551ed4 | g_VertexPreprocessMode
     JNZ 0x00551f39                      ; 00551edb
         ;   XREF to: 00551f39 (CONDITIONAL_JUMP)  ; LAB_00551f39
@@ -187,12 +187,12 @@ section .text
     IMUL EDX                            ; 00551efb
     SHRD EAX,EDX,0x10                   ; 00551efd
     MOV EDX,EAX                         ; 00551f01
-    MOV dword ptr [ECX + 0x2c],EAX      ; 00551f03 | g_SoftwareEdgeBuffer[0].base.w_gradient
+    MOV dword ptr [ECX + 0x2c],EAX      ; 00551f03 | g_SoftwareEdgeBuffer[0].base.depth_gradient
     MOV EAX,EDI                         ; 00551f06
     IMUL EDX                            ; 00551f08
     SHRD EAX,EDX,0x10                   ; 00551f0a
     ADD ESI,EAX                         ; 00551f0e
-    MOV dword ptr [ECX + 0x28],ESI      ; 00551f10 | g_SoftwareEdgeBuffer[0].base.w_current
+    MOV dword ptr [ECX + 0x28],ESI      ; 00551f10 | g_SoftwareEdgeBuffer[0].base.depth_current
     INC dword ptr [0x030e5228]          ; 00551f13 | g_SoftwareEdgeCount
     ADD ESP,0x4                         ; 00551f19
         ;   Label: LAB_00551f19
@@ -222,14 +222,14 @@ section .text
     IMUL EDX                            ; 00551f45
     SHRD EAX,EDX,0x10                   ; 00551f47
     MOV EDX,EAX                         ; 00551f4b
-    MOV dword ptr [ECX + 0x2c],EAX      ; 00551f4d | g_SoftwareEdgeBuffer[0].base.w_gradient
+    MOV dword ptr [ECX + 0x2c],EAX      ; 00551f4d | g_SoftwareEdgeBuffer[0].base.depth_gradient
     MOV EAX,EDI                         ; 00551f50
     IMUL EDX                            ; 00551f52
     SHRD EAX,EDX,0x10                   ; 00551f54
     MOV EDX,EAX                         ; 00551f58
     MOV EAX,dword ptr [ESI + 0x8]       ; 00551f5a
     ADD EAX,EDX                         ; 00551f5d
-    MOV dword ptr [ECX + 0x28],EAX      ; 00551f5f | g_SoftwareEdgeBuffer[0].base.w_current
+    MOV dword ptr [ECX + 0x28],EAX      ; 00551f5f | g_SoftwareEdgeBuffer[0].base.depth_current
     INC dword ptr [0x030e5228]          ; 00551f62 | g_SoftwareEdgeCount
     ADD ESP,0x4                         ; 00551f68
     POP EBP                             ; 00551f6b

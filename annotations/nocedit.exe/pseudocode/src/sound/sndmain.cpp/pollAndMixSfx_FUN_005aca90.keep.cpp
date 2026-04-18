@@ -12,7 +12,6 @@ void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90(LPVOID *channel_buffer
 {
   SMixBuffer mix_buffer;
   CSfxSlot *this_ptr;
-  CSfxSlot *pCVar4;
   int iVar5;
   int iVar3;
   int bytes_per_buffer;
@@ -65,16 +64,12 @@ void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90(LPVOID *channel_buffer
         mix_buffer.channel_buffers[iVar5] = g_ChannelPrimaryBuffers[iVar5];
       }
       delta_time = (float)g_MixBufferSize / (float)g_AudioSampleRate;
-      pCVar4 = g_SfxSlots;
-      do {
-        sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(pCVar4,delta_time);
-        pCVar4 = pCVar4 + 1;
-      } while (pCVar4 != (CSfxSlot *)&g_SfxLastSlot);
-      pCVar4 = g_SfxSlots;
-      do {
-        sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(pCVar4,mix_buffer);
-        pCVar4 = pCVar4 + 1;
-      } while (pCVar4 != (CSfxSlot *)&g_SfxLastSlot);
+      for (iVar5 = 0; iVar5 < 64; iVar5 = iVar5 + 1) {
+        sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(&g_SfxSlots[iVar5],delta_time);
+      }
+      for (iVar5 = 0; iVar5 < 64; iVar5 = iVar5 + 1) {
+        sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(&g_SfxSlots[iVar5],mix_buffer);
+      }
       g_MixBufferReadIndex = g_MixBufferSize;
       g_MixBufferCount = g_MixBufferCount + 1;
       g_MixBufferWriteIndex = 0;

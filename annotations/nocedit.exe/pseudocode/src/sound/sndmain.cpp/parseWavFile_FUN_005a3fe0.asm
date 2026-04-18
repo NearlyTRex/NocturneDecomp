@@ -8,18 +8,9 @@
 ; int *            Stack[0x8]:4   file_offset_ptr
 ; CSfxSample *     Stack[0xc]:4   sfx_sample
 ; Local Variables:
-; char             Stack[-0x88]:1  local_88
-; char             Stack[-0x87]:1  local_87
-; char             Stack[-0x86]:1  local_86
-; char             Stack[-0x85]:1  local_85
-; undefined4       Stack[-0x24]:4  local_24
-; uint             Stack[-0x20]:4  local_20
-; uint             Stack[-0x1c]:4  local_1c
-; char             Stack[-0x18]:1  local_18
-; char             Stack[-0x17]:1  local_17
-; char             Stack[-0x16]:1  local_16
-; char             Stack[-0x15]:1  local_15
-; uint             Stack[-0x14]:4  local_14
+; char[100]        Stack[-0x88]:100  local_88
+; SWavFmtChunk     Stack[-0x24]:12  local_24
+; SWavChunkHeader  Stack[-0x18]:8  local_18
 ;
 ; XREF[4]:
 ;   sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0 at 005aa51d

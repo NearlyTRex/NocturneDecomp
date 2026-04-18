@@ -40,8 +40,8 @@ void __cdecl engine_3d_c_addRasterizerEdgeWithDepth_FUN_005fce40(SRenderVertex *
       g_RasterizerMaxY = iVar6;
     }
     g_RasterizerEdgeArray[iVar3].base.x_current = (pSVar8->projected_vertex).screen_x;
-    g_RasterizerEdgeArray[iVar3].base.w_current = (pSVar8->projected_vertex).transformed_z << 8;
-    g_RasterizerEdgeArray[iVar3].base.z_current = pSVar8->r;
+    g_RasterizerEdgeArray[iVar3].base.depth_current = (pSVar8->projected_vertex).transformed_z << 8;
+    g_RasterizerEdgeArray[iVar3].base.red_current = pSVar8->r;
     uVar7 = (v1->projected_vertex).screen_y - (pSVar8->projected_vertex).screen_y;
     if (uVar7 < 0x10000) {
       iVar6 = 0;
@@ -57,24 +57,24 @@ void __cdecl engine_3d_c_addRasterizerEdgeWithDepth_FUN_005fce40(SRenderVertex *
             (longlong)
             (((v1->projected_vertex).transformed_z - (pSVar8->projected_vertex).transformed_z) *
             0x100);
-    g_RasterizerEdgeArray[iVar3].base.w_gradient =
+    g_RasterizerEdgeArray[iVar3].base.depth_gradient =
          (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
     lVar2 = (longlong)iVar6 * (longlong)(v1->r - pSVar8->r);
-    g_RasterizerEdgeArray[iVar3].base.z_gradient =
+    g_RasterizerEdgeArray[iVar3].base.red_gradient =
          (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
     uVar7 = (uint)(ushort)((ushort)(pSVar8->projected_vertex).screen_y ^ 0xffff);
     lVar2 = (longlong)(int)uVar7 * (longlong)g_RasterizerEdgeArray[iVar3].base.x_gradient;
-    iVar6 = g_RasterizerEdgeArray[iVar3].base.w_gradient;
+    iVar6 = g_RasterizerEdgeArray[iVar3].base.depth_gradient;
     g_RasterizerEdgeArray[iVar3].base.x_current =
          g_RasterizerEdgeArray[iVar3].base.x_current +
          ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     lVar2 = (longlong)(int)uVar7 * (longlong)iVar6;
-    piVar1 = &g_RasterizerEdgeArray[iVar3].base.w_current;
+    piVar1 = &g_RasterizerEdgeArray[iVar3].base.depth_current;
     *piVar1 = *piVar1 + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-    lVar2 = (longlong)(int)uVar7 * (longlong)g_RasterizerEdgeArray[iVar3].base.z_gradient;
+    lVar2 = (longlong)(int)uVar7 * (longlong)g_RasterizerEdgeArray[iVar3].base.red_gradient;
     g_RasterizerEdgeCount = g_RasterizerEdgeCount + 1;
-    g_RasterizerEdgeArray[iVar3].base.z_current =
-         g_RasterizerEdgeArray[iVar3].base.z_current +
+    g_RasterizerEdgeArray[iVar3].base.red_current =
+         g_RasterizerEdgeArray[iVar3].base.red_current +
          ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
   }
   return;

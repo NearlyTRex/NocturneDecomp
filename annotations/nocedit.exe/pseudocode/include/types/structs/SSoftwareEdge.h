@@ -9,10 +9,10 @@
 #pragma pack(push, 1)
 typedef struct SSoftwareEdge {
     SHardwareEdge base; // 0x0
-    int color_current; // 0x38
-    int color_gradient; // 0x3c
-    int alpha_current; // 0x40
-    int alpha_gradient; // 0x44
+    int green_current; // 0x38
+    int green_gradient; // 0x3c
+    int blue_current; // 0x40
+    int blue_gradient; // 0x44
 } SSoftwareEdge;
 #pragma pack(pop)
 

@@ -8,8 +8,7 @@
 ; char *           Stack[0x8]:4   key
 ; float            Stack[0xc]:4   value
 ; Local Variables:
-; char[4]          Stack[-0x64]:4  local_64
-; char             Stack[-0x60]:1  local_60
+; char[100]        Stack[-0x64]:100  local_64
 ;
 ; XREF[1]:
 ;   sound_sndmain.cpp_writeIni_FUN_005ac220 at 005ac3d1
