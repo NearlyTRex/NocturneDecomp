@@ -89,9 +89,9 @@ typedef struct CCharacter {
     int damage_decal_count; // 0x2df4
     SDamageDecal damage_decals[5]; // 0x2df8
     int fire_count; // 0x2f10
-    float fire_spread_rate; // 0x2f14
-    int fire_allow_hero; // 0x2f18
-    SFire fire_effects[50]; // 0x2f1c
+    int pending_flame_type; // 0x2f14
+    float flame_scale; // 0x2f18
+    SFire fires[50]; // 0x2f1c
     CFlame flames[50]; // 0x33cc
     uint sfx_handle; // 0xb7d4
     int is_fully_burned; // 0xb7d8

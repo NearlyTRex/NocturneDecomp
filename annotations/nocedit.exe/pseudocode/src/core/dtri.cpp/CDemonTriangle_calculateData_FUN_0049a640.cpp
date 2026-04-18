@@ -51,14 +51,14 @@ void __cdecl core_dtri_cpp_CDemonTriangle_calculateData_FUN_0049a640(CDemonTrian
        (-(fVar2 * (triangle->normal).x) - fVar1 * (triangle->normal).y) -
        (triangle->vertex1).z * (triangle->normal).z;
   if ((ABS(fVar9) < fVar8) && (ABS((triangle->normal).z) < fVar8)) {
-    triangle->area = 0.0;
+    triangle->dominant_axis = 0;
     return;
   }
   fVar8 = ABS((triangle->normal).y);
   if ((ABS((triangle->normal).x) < fVar8) && (ABS((triangle->normal).z) < fVar8)) {
-    triangle->area = 1.4013e-45;
+    triangle->dominant_axis = 1;
     return;
   }
-  triangle->area = 2.8026e-45;
+  triangle->dominant_axis = 2;
   return;
 }

@@ -19,6 +19,6 @@ CGun * __cdecl core_gun_cpp_CGun_ctor_FUN_004f02f0(CGun *this_ptr)
   pCVar1->fire_mode = 1;
   pCVar1->can_penetrate = 1;
   pCVar1->bolt_velocity = 50.0;
-  pCVar1->fire_cooldown = 0.0;
+  pCVar1->fire_cooldown = 0;
   return (CGun *)pCVar1;
 }

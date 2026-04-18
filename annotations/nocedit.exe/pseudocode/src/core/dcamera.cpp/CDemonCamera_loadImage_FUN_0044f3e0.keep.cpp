@@ -448,7 +448,7 @@ LAB_0044f4fd:
         puVar28 = puVar28;
       }
       pSVar24 = &g_CameraImagePaletteData;
-      pbVar13 = g_CurrentPalette;
+      pbVar13 = (byte *)g_CurrentPalette;
       for (iVar2 = 0xc0; iVar2 != 0; iVar2 = iVar2 + -1) {
         *(uint *)pbVar13 = *(uint *)pSVar24->colors;
         pSVar24 = (SRGBColorPalette *)((int)pSVar24 + (uint)bVar31 * -8 + 4);

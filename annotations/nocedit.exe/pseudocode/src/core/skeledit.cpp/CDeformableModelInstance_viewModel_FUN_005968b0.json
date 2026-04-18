@@ -8,17 +8,18 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3423,
-    "complexity_score": 1668,
+    "complexity_score": 1683,
     "cross_reference_count": 2,
     "function_call_count": 90,
     "global_count": 144,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1078,
-    "suspect_count": 57,
+    "suspect_count": 58,
     "suspect_types": [
       "pointer_cast",
       "raw_address_constant",
       "unnamed_local",
+      "unrolled_strcpy",
       "warning_inlined_function"
     ],
     "total_lines": 4501
@@ -2432,6 +2433,14 @@
       "severity": "moderate",
       "text": "local_3a4.vertices[3].texture_v = 0xfe0000;",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 1063,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     },
     {
       "description": "Unnamed local variable",

@@ -19,7 +19,7 @@ typedef struct CWeapon {
     int weapon_type; // 0x2e0
     int can_penetrate; // 0x2e4
     float bolt_velocity; // 0x2e8
-    float fire_cooldown; // 0x2ec
+    int fire_cooldown; // 0x2ec
     int can_attach_light; // 0x2f0
     CColor3i muzzle_flash_color; // 0x2f4
     float fire_cooldown_timer; // 0x300

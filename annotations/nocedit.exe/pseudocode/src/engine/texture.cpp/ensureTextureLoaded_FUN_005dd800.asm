@@ -21,7 +21,7 @@
 ;
 ; Referenced Globals:
 ;   int g_TexturesDisabled
-;   byte* g_CurrentPalette
+;   SRGBColorPalette* g_CurrentPalette
 ;   int g_UseExternalRenderer
 ;   int g_CurrentTextureIndex
 ;   CTextureCache* g_TextureCacheInstance

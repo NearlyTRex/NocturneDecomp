@@ -20,7 +20,7 @@
 ;   _MMX_INTEGER g_TextureShift2
 ;   _MMX_INTEGER g_TextureMask1
 ;   _MMX_INTEGER g_TextureMask2
-;   byte* g_CurrentPalette
+;   SRGBColorPalette* g_CurrentPalette
 ;   uint[256] g_Hardware32BitPalette
 ;   undefined4 g_GlobalPalette[1]
 ;   ushort[256] g_Hardware16BitPalette

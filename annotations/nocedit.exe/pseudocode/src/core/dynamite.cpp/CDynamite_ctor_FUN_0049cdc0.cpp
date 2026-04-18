@@ -25,7 +25,7 @@ CDynamite * __cdecl core_dynamite_cpp_CDynamite_ctor_FUN_0049cdc0(CDynamite *thi
   (pCVar1->base).weapon_type = 3;
   (pCVar1->base).can_penetrate = 0;
   (pCVar1->base).bolt_velocity = 200.0;
-  (pCVar1->base).fire_cooldown = 0.0;
+  (pCVar1->base).fire_cooldown = 0;
   (pCVar1->base).can_attach_light = 0;
   pCVar1->sfx_handle = 0;
   return pCVar1;

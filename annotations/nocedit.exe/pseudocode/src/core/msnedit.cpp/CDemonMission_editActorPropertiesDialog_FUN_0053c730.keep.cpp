@@ -16,7 +16,6 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c7
   int iVar5;
   char *pcVar3;
   char *pcVar6;
-  int iVar4;
   char *pcVar5;
   byte bVar6;
   CPickList CStack_540;
@@ -42,16 +41,15 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c7
       iVar5 = 0;
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&CStack_540);
       if (0 < g_MsnEditPropertyList.count) {
-        iVar4 = 0x2f7a030;
         do {
           core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50
                     (g_MsnEditPropertyList.properties + iVar5,this_ptr->selected_actor,
                      g_MsnEditPropertyValueBuffer);
           _sprintf
-                    (g_MsnEditPropertyFormatBuffer,"%s\t%s",(char *)iVar4,g_MsnEditPropertyValueBuffer
-                    );
+                    (g_MsnEditPropertyFormatBuffer,"%s\t%s",
+                     g_MsnEditPropertyList.properties[iVar5].name,
+                     g_MsnEditPropertyValueBuffer);
           iVar5 = iVar5 + 1;
-          iVar4 = iVar4 + 0xec;
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
                     (&CStack_540.base,g_MsnEditPropertyFormatBuffer);
         } while (iVar5 < g_MsnEditPropertyList.count);

@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 228,
+    "complexity_score": 213,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 58,
-    "suspect_count": 14,
+    "suspect_count": 13,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast",
       "undefined_data",
       "unresolved_funcptr",
@@ -107,7 +106,7 @@
         "call_addr": "00475fea",
         "call_type": "direct",
         "caller": "core_dlight.cpp_CDemonLight_initializeVisibilityBuffer_FUN_00475fc0",
-        "estimated_params": 6,
+        "estimated_params": 5,
         "instructions_analyzed": 13,
         "method": "push_count",
         "reg_params": [
@@ -116,14 +115,14 @@
           "ECX",
           "EDX"
         ],
-        "stack_bytes": 8,
-        "stack_params": 2
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "0045116c",
         "call_type": "direct",
         "caller": "core_dcamera.cpp_CDemonCamera_processCorona_FUN_00451130",
-        "estimated_params": 6,
+        "estimated_params": 5,
         "instructions_analyzed": 18,
         "method": "push_count",
         "reg_params": [
@@ -132,8 +131,8 @@
           "ECX",
           "EDX"
         ],
-        "stack_bytes": 8,
-        "stack_params": 2
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "00472c54",
@@ -151,11 +150,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
+    "confidence": "medium",
     "declared_params": 3,
     "declared_stack_bytes": 4,
-    "estimated_params": 6,
-    "matches_declared": false
+    "estimated_params": 5,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.914285714285715,
@@ -308,17 +307,6 @@
       "severity": "mild",
       "text": "(**(code **)(&DAT_00679d50 + uVar3 * 4))();",
       "type": "undefined_data"
-    },
-    {
-      "call_site_count": 4,
-      "declared_params": 3,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 6,
-      "fix_type": "add_params",
-      "match": "declared:3 vs estimated:6",
-      "param_delta": 3,
-      "text": "Function declares 3 params but call sites push 6 (3 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

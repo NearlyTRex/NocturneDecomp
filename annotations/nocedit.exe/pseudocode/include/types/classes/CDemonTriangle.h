@@ -13,7 +13,7 @@ typedef struct CDemonTriangle {
     CVector3f vertex3; // 0x18
     CVector3f normal; // 0x24
     float plane_distance; // 0x30
-    float area; // 0x34
+    int dominant_axis; // 0x34
 } CDemonTriangle;
 #pragma pack(pop)
 

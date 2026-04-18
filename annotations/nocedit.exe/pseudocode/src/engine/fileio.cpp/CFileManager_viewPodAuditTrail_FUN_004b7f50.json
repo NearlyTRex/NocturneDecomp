@@ -7,14 +7,17 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 295,
-    "complexity_score": 127,
+    "complexity_score": 167,
     "cross_reference_count": 2,
     "function_call_count": 15,
     "global_count": 17,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 127,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 3,
+    "suspect_types": [
+      "unrolled_memcpy",
+      "unrolled_strcpy"
+    ],
     "total_lines": 422
   },
   "cross_references": [
@@ -364,5 +367,30 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 41,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 108,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "line": 72,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "mild",
+      "text": "for (iVar3 = 0x19; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

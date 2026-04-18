@@ -20,6 +20,9 @@ DWORD g_JoyButtons = {};
 // RenderScanlineFunc*
 RenderScanlineFunc* g_ScanlineRenderFunc = {};
 
+// SRGBColorPalette*
+SRGBColorPalette* g_CurrentPalette = {};
+
 // _BIT_INTEGER32
 _BIT_INTEGER32 g_RedBitPosition = {};
 _BIT_INTEGER32 g_RedBitCount = {};
@@ -38,9 +41,6 @@ _MMX_INTEGER g_SavedMMX4 = {};
 _MMX_INTEGER g_SavedMMX5 = {};
 _MMX_INTEGER g_SavedMMX6 = {};
 _MMX_INTEGER g_SavedMMX7 = {};
-
-// byte*
-byte* g_CurrentPalette = {};
 
 // char[1024]
 char g_FileTransferErrorMessage[1024] = {};

@@ -7,16 +7,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 381,
-    "complexity_score": 180,
+    "complexity_score": 195,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 140,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
-      "stack_param"
+      "stack_param",
+      "unrolled_strcpy"
     ],
     "total_lines": 521
   },
@@ -323,6 +324,14 @@
       "severity": "mild",
       "text": "puVar8 = (ushort *)((int)g_ScreenBufferArray[(int)pcVar8] + x_position * 2);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 38,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

@@ -114,7 +114,7 @@
     {
       "addr": "02d01920",
       "name": "g_CurrentPalette",
-      "type": "byte*",
+      "type": "SRGBColorPalette*",
       "value": null
     },
     {
@@ -170,6 +170,26 @@
     },
     "pcode_op_count": 603
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(SRGBColorPalette *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar7 = (SRGBColorPalette *)((int)pSVar7 + (uint)bVar11 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(SRGBColorPalette *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar10 = (SRGBColorPalette *)((int)pSVar10 + (uint)bVar11 * -2 + 1);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -245,10 +265,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 56,
       "match": "(SRGBColorPalette *)((int)",
       "severity": "mild",
-      "text": "pSVar7 = (SRGBColorPalette *)((int)pSVar7 + (uint)bVar11 * -2 + 1);",
+      "text": "pSVar10 = (SRGBColorPalette *)((int)pSVar10 + (uint)bVar11 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

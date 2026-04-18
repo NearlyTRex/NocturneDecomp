@@ -28,10 +28,10 @@ SMRGLHeaderExtended * __cdecl engine_texture_cpp_ensureTextureLoaded_FUN_005dd80
     ;
     if (g_UseExternalRenderer != 0) {
       if (bVar1) {
-        wincore_windll_cpp_updateTexture_FUN_005b7380(texture,(SRGBColorPalette *)g_CurrentPalette);
+        wincore_windll_cpp_updateTexture_FUN_005b7380(texture,g_CurrentPalette);
         return (SMRGLHeaderExtended *)(texture + 1);
       }
-      wincore_windll_cpp_selectTexture_FUN_005b7340(texture,g_CurrentPalette);
+      wincore_windll_cpp_selectTexture_FUN_005b7340(texture,(byte *)g_CurrentPalette);
     }
     return (SMRGLHeaderExtended *)(texture + 1);
   }

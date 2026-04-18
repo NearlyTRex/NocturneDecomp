@@ -270,7 +270,7 @@ section .text
     PUSH EBX                            ; 004c9ebb
     PUSH EDI                            ; 004c9ebc
     CALL core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0 ; 004c9ebd
-        ;   XREF to: 0042b5b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter * this_ptr, CVector3f * position, int fire_type, float spread_rate, ...)
+        ;   XREF to: 0042b5b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter * this_ptr, CVector3f * position, int fire_type, int flame_type, ...)
     ADD ESP,0x18                        ; 004c9ec2
     CMP dword ptr [ESI + 0x28c],0x0     ; 004c9ec5
         ;   Label: LAB_004c9ec5
@@ -436,7 +436,7 @@ section .text
     PUSH EDI                            ; 004ca0ee
     PUSH EBX                            ; 004ca0ef
     CALL core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0 ; 004ca0f0
-        ;   XREF to: 0042b5b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter * this_ptr, CVector3f * position, int fire_type, float spread_rate, ...)
+        ;   XREF to: 0042b5b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter * this_ptr, CVector3f * position, int fire_type, int flame_type, ...)
     ADD ESP,0x18                        ; 004ca0f5
     INC dword ptr [ESI + 0x29c]         ; 004ca0f8
         ;   Label: LAB_004ca0f8

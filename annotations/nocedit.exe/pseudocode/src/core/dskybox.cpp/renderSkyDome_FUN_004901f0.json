@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 362,
-    "complexity_score": 252,
+    "complexity_score": 267,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 172,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
       "raw_address_constant",
+      "unrolled_strcpy",
       "warning_inlined_function"
     ],
     "total_lines": 534
@@ -472,6 +473,14 @@
       "severity": "moderate",
       "text": "iVar5 = iVar5 + 0x1000000;",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 40,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

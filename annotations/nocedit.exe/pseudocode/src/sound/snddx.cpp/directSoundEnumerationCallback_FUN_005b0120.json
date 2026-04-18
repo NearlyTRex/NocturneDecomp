@@ -7,14 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 102,
+    "complexity_score": 117,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 13,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 87,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "unrolled_strcpy",
       "warning_max_restarts"
     ],
     "total_lines": 287
@@ -282,6 +283,14 @@
       "severity": "severe",
       "text": "/* WARNING: Exceeded maximum restarts with more pending */",
       "type": "warning_max_restarts"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 77,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

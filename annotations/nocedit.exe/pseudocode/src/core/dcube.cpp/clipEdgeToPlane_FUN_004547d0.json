@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 176,
-    "complexity_score": 54,
+    "complexity_score": 39,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 39,
-    "suspect_count": 1,
-    "suspect_types": [
-      "sub84_truncation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 215
   },
   "cross_references": [
@@ -256,6 +254,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 13,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_28 = SUB84(__BITCAST_UINT64(dVar1),0);",
+      "type": "sub84_truncation"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 24,
       "match": "._0_4_",
@@ -419,14 +426,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 13,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "local_28 = SUB84(__BITCAST_UINT64(dVar1),0);",
-      "type": "sub84_truncation"
-    }
-  ]
+  "suspects": []
 }

@@ -7,16 +7,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 19,
+    "complexity_score": 4,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 4,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_few"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 7
   },
   "cross_references": [
@@ -61,12 +59,12 @@
         "call_addr": "0040e861",
         "call_type": "direct",
         "caller": "core_actor.cpp_CActorPropertyList_render_FUN_0040e850",
-        "estimated_params": 4,
-        "instructions_analyzed": 6,
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
         "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 16,
-        "stack_params": 4
+        "stack_bytes": 0,
+        "stack_params": 0
       },
       {
         "call_addr": "004893ab",
@@ -80,11 +78,11 @@
         "stack_params": 0
       }
     ],
-    "confidence": "low",
+    "confidence": "high",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 4,
-    "matches_declared": false
+    "estimated_params": 0,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 2.0,
@@ -105,17 +103,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:4",
-      "param_delta": 4,
-      "text": "Function declares 0 params but call sites push 4 (4 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

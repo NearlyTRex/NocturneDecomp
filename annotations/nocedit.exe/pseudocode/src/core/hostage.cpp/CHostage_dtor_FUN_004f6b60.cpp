@@ -28,7 +28,7 @@ CHostage * __cdecl core_hostage_cpp_CHostage_dtor_FUN_004f6b60(CHostage *this_pt
   pCVar2 = (CHostage_ptr_13260)
            core_armour_cpp_CFlame_arrdtor_FUN_00412720(ADJ(pCVar1)->base.base.flames,0);
   pSVar1 = (CHostage_ptr_12060)
-           core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar2)->base.base.fire_effects,0);
+           core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar2)->base.base.fires,0);
   pCVar3 = (CHostage_ptr_11536)
            core_armour_cpp_CVector3f_arrdtor_FUN_004126e0
                      (ADJ(pSVar1)->base.base.collision_test_normals,0);

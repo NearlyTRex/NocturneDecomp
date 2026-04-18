@@ -7,16 +7,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 47,
+    "complexity_score": 32,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 32,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_few"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 35
   },
   "cross_references": [
@@ -54,12 +52,12 @@
         "call_addr": "004daed4",
         "call_type": "direct",
         "caller": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0",
-        "estimated_params": 1,
-        "instructions_analyzed": 2,
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
         "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
+        "stack_bytes": 0,
+        "stack_params": 0
       },
       {
         "call_addr": "004609ea",
@@ -73,11 +71,11 @@
         "stack_params": 0
       }
     ],
-    "confidence": "low",
+    "confidence": "high",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 1,
-    "matches_declared": false
+    "estimated_params": 0,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 1.0,
@@ -95,17 +93,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 1,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:1",
-      "param_delta": 1,
-      "text": "Function declares 0 params but call sites push 1 (1 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

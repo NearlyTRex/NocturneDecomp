@@ -38,7 +38,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(CKeyFramedModel *
   g_CurrentDebugFilename = "..\\core\\dmodel.cpp";
   g_CurrentDebugLine = 0x1b7;
   if (this_ptr->collision_triangle_list != (CDemonTriangle *)0x0) {
-    shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].area);
+    shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].dominant_axis);
   }
   this_ptr->vertex_count = 0;
   this_ptr->poly_count = 0;

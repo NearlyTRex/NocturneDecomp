@@ -121,7 +121,7 @@ void __cdecl CCharacter::addDamageDecal(CCharacter *this_ptr);
 
 // Original: core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0
 // Address: 0042b5b0
-void __cdecl CCharacter::igniteBone(CCharacter *this_ptr,CVector3f *position,int fire_type,float spread_rate,int allow_hero,int include_hero);
+void __cdecl CCharacter::igniteBone(CCharacter *this_ptr,CVector3f *position,int fire_type,int flame_type,float flame_scale,int include_hero);
 
 // Original: core_charactr.cpp_CCharacter_processDamageDecals_FUN_0042b670
 // Address: 0042b670

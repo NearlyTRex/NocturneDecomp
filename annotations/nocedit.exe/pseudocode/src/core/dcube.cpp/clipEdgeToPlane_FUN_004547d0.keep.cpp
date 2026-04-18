@@ -11,15 +11,11 @@ void __cdecl core_dcube_cpp_clipEdgeToPlane_FUN_004547d0(CVector3f *vertex1,CVec
 
 {
   float fVar1;
-  int local_28;
-  double dVar1;
   float fVar2;
-  
+
   fVar2 = (vertex2->z - vertex1->z) * (float)plane_nz +
           (vertex2->x - vertex1->x) * (float)plane_nx + (vertex2->y - vertex1->y) * (float)plane_ny;
-  dVar1 = (double)fVar2;
-  local_28 = SUB84(__BITCAST_UINT64(dVar1),0);
-  if ((((ulonglong)dVar1 & 0x7fffffff00000000) == 0) && (local_28 == 0)) {
+  if (fVar2 == 0.0) {
     g_CurrentFilename = "..\\core\\dcube.cpp";
     g_CurrentLineNumber = 0x6e;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Bad clip!");
@@ -29,15 +25,14 @@ void __cdecl core_dcube_cpp_clipEdgeToPlane_FUN_004547d0(CVector3f *vertex1,CVec
   output_vertex->x = (vertex2->x - vertex1->x) * fVar1 + vertex1->x;
   output_vertex->y = (vertex2->y - vertex1->y) * fVar1 + vertex1->y;
   output_vertex->z = (vertex2->z - vertex1->z) * fVar1 + vertex1->z;
-  if ((plane_nx != 0.0) && (plane_ny == 0.0) && (plane_nz == 0.0)) {
-    output_vertex->x = (float)(-(float10)plane_nx * (float10)plane_d);
+  if (plane_nx != 0.0 && plane_ny == 0.0 && plane_nz == 0.0) {
+    output_vertex->x = (float)(-plane_nx * plane_d);
   }
-  if ((plane_nx == 0.0) && (plane_ny != 0.0) && (plane_nz == 0.0)) {
-    output_vertex->y = (float)(-(float10)plane_ny * (float10)plane_d);
+  if (plane_nx == 0.0 && plane_ny != 0.0 && plane_nz == 0.0) {
+    output_vertex->y = (float)(-plane_ny * plane_d);
   }
-  if ((plane_nx == 0.0) && (plane_ny == 0.0) && (plane_nz != 0.0)) {
-    output_vertex->z = (float)(-(float10)plane_nz * (float10)plane_d);
-    return;
+  if (plane_nx == 0.0 && plane_ny == 0.0 && plane_nz != 0.0) {
+    output_vertex->z = (float)(-plane_nz * plane_d);
   }
   return;
 }

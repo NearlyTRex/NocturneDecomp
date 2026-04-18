@@ -1,0 +1,42 @@
+// Name: core_dcube.cpp_CDemonCube_freeMemory_FUN_004569b0
+// Address: 004569b0
+// MANUAL RECONSTRUCTION
+// Address Range: [[004569b0, 00456a8a]]
+// Convention: __cdecl
+// Signature: void __cdecl core_dcube_cpp_CDemonCube_freeMemory_FUN_004569b0(CDemonCube *this_ptr)
+
+#include "nocturne.h"
+
+void __cdecl core_dcube_cpp_CDemonCube_freeMemory_FUN_004569b0(CDemonCube *this_ptr)
+
+{
+  if (this_ptr->vertex_buffer != (CVector3f *)0x0) {
+    g_CurrentDebugLine = 0x614;
+    g_CurrentDebugFilename = "..\\core\\dcube.cpp";
+    shape_memdbg_cpp_free_FUN_005fe659((char *)this_ptr->vertex_buffer - 4);
+    this_ptr->vertex_buffer = (CVector3f *)0x0;
+  }
+  if (this_ptr->triangle_buffer != (CDemonCubeTriangle *)0x0) {
+    g_CurrentDebugFilename = "..\\core\\dcube.cpp";
+    g_CurrentDebugLine = 0x618;
+    shape_memdbg_cpp_free_FUN_005fe659(this_ptr->triangle_buffer);
+    this_ptr->triangle_buffer = (CDemonCubeTriangle *)0x0;
+  }
+  if (this_ptr->ground_type_memory != (void *)0x0) {
+    shape_memdbg_cpp_debugFree_FUN_0050f460
+              (this_ptr->ground_type_memory,"..\\core\\dcube.cpp",0x61c);
+    this_ptr->ground_type_memory = (void *)0x0;
+  }
+  if (this_ptr->voxel_buffer1 != (SVoxelGrid *)0x0) {
+    shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->voxel_buffer1,"..\\core\\dcube.cpp",0x620)
+    ;
+    this_ptr->voxel_buffer1 = (SVoxelGrid *)0x0;
+  }
+  if (this_ptr->voxel_buffer2 != (SVoxelGrid *)0x0) {
+    shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->voxel_buffer2,"..\\core\\dcube.cpp",0x624)
+    ;
+    this_ptr->voxel_buffer2 = (SVoxelGrid *)0x0;
+    return;
+  }
+  return;
+}

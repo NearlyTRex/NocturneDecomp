@@ -7,18 +7,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 281,
-    "complexity_score": 168,
+    "complexity_score": 182,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 22,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 118,
-    "suspect_count": 4,
+    "pseudocode_lines": 122,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "warning_unreachable"
     ],
-    "total_lines": 399
+    "total_lines": 403
   },
   "cross_references": [
     {
@@ -87,7 +87,7 @@
     {
       "addr": "02d01920",
       "name": "g_CurrentPalette",
-      "type": "byte*",
+      "type": "SRGBColorPalette*",
       "value": null
     },
     {
@@ -287,7 +287,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 34,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_Hardware32BitPalette + iVar1) =",
@@ -295,7 +295,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 45,
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "*(ushort *)((int)g_Hardware16BitPalette + iVar7) =",
@@ -303,7 +303,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 62,
+      "match": "(byte *)((int)",
+      "severity": "mild",
+      "text": "pbVar6 = (byte *)((int)pbVar6 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 63,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_Hardware32BitPalette + local_14) = uVar5;",

@@ -659,7 +659,7 @@ static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_
     return 0;
 }
 
-// Chunk: check_bVar10_4_check_local_84_1 (lines 552-624 of original)
+// Chunk: check_bVar10_4_check_local_84_1 (lines 552-625 of original)
 static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_1(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
     CKeyFramedModel *&this_ptr = ctx->this_ptr;
     float &fVar3 = ctx->fVar3;
@@ -733,7 +733,8 @@ static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_1(CKeyFr
             else {
               g_CurrentDebugLine = 0xdca;
               g_CurrentDebugFilename = "..\\core\\dmodel.cpp";
-              shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].area);
+              shape_memdbg_cpp_free_FUN_005fe659
+                        (&this_ptr->collision_triangle_list[-1].dominant_axis);
               this_ptr->collision_triangle_count = 0;
               this_ptr->collision_triangle_list = (CDemonTriangle *)0x0;
             }
@@ -751,7 +752,7 @@ static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_1(CKeyFr
     return 0;
 }
 
-// Chunk: check_bVar10_4_check_local_84_2 (lines 633-676 of original)
+// Chunk: check_bVar10_4_check_local_84_2 (lines 634-677 of original)
 static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_2(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
     CKeyFramedModel *&this_ptr = ctx->this_ptr;
     int &iVar18 = ctx->iVar18;

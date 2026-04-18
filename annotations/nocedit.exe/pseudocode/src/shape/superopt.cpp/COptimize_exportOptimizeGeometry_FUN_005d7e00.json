@@ -7,16 +7,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 270,
-    "complexity_score": 245,
+    "complexity_score": 270,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 44,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 165,
-    "suspect_count": 7,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
-      "raw_address_constant"
+      "raw_address_constant",
+      "unrolled_strcpy"
     ],
     "total_lines": 435
   },
@@ -537,6 +538,22 @@
       "severity": "moderate",
       "text": "memset(g_ModelPolygonData,0,0x766880);",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 98,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 109,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

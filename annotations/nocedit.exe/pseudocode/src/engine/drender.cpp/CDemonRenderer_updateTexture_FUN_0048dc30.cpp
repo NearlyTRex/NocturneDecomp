@@ -9,9 +9,6 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_updateTexture_FUN_0048dc30(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture,SRGBColorPalette *palette)
 
 {
-  SRGBColorPalette *unaff_retaddr;
-  
-  engine_texture_cpp_loadAndUpdateTexture_FUN_005dd930
-            (texture,(SMRGLTextureBasic *)palette,unaff_retaddr);
+  engine_texture_cpp_loadAndUpdateTexture_FUN_005dd930(texture,palette);
   return;
 }

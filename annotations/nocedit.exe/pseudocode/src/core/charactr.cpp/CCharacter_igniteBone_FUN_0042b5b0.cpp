@@ -2,11 +2,11 @@
 // Address: 0042b5b0
 // Address Range: [[0042b5b0, 0042b662]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter *this_ptr,CVector3f *position,int fire_type,float spread_rate,int allow_hero,int include_hero)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter *this_ptr,CVector3f *position,int fire_type,int flame_type,float flame_scale,int include_hero)
 
 #include "nocturne.h"
 
-void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter *this_ptr,CVector3f *position,int fire_type,float spread_rate,int allow_hero,int include_hero)
+void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter *this_ptr,CVector3f *position,int fire_type,int flame_type,float flame_scale,int include_hero)
 
 {
   int iVar1;
@@ -24,15 +24,15 @@ void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter *th
     pCVar3 = this_ptr;
     if (0 < this_ptr->fire_count) {
       do {
-        if (iVar1 == pCVar3->fire_effects[0].bone_index) {
+        if (iVar1 == pCVar3->fires[0].bone_index) {
           return;
         }
         iVar2 = iVar2 + 1;
         pCVar3 = (CCharacter *)((pCVar3->base).actor_name + 0x18);
       } while (iVar2 < this_ptr->fire_count);
     }
-    this_ptr->fire_spread_rate = spread_rate;
-    this_ptr->fire_allow_hero = allow_hero;
+    this_ptr->pending_flame_type = flame_type;
+    this_ptr->flame_scale = flame_scale;
     skeleton = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                          (&this_ptr->model);
     core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(this_ptr,skeleton,iVar1);

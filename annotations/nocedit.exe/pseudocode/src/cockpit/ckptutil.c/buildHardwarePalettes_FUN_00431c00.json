@@ -7,18 +7,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 86,
+    "complexity_score": 107,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 46,
-    "suspect_count": 3,
+    "pseudocode_lines": 47,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "warning_unreachable"
     ],
-    "total_lines": 142
+    "total_lines": 143
   },
   "cross_references": [],
   "function": {
@@ -31,7 +31,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_ckptutil.c_buildHardwarePalettes_FUN_00431c00",
-    "signature": "void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_00431c00(char *rgb_palette_data)"
+    "signature": "void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_00431c00(SRGBColorPalette *rgb_palette_data)"
   },
   "function_calls": [],
   "globals": [
@@ -44,7 +44,7 @@
     {
       "addr": "02d01920",
       "name": "g_CurrentPalette",
-      "type": "byte*",
+      "type": "SRGBColorPalette*",
       "value": null
     },
     {
@@ -155,7 +155,7 @@
         "name": "rgb_palette_data",
         "offset": 4,
         "size": 4,
-        "type": "char *"
+        "type": "SRGBColorPalette *"
       }
     ]
   },
@@ -170,6 +170,14 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(SRGBColorPalette *)((int)",
+      "severity": "mild",
+      "text": "rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 27,
       "match": "(ushort *)((int)",
       "severity": "mild",
@@ -179,6 +187,14 @@
     {
       "description": "Complex pointer cast",
       "line": 43,
+      "match": "(SRGBColorPalette *)((int)",
+      "severity": "mild",
+      "text": "rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_Hardware32BitPalette + iVar4) =",

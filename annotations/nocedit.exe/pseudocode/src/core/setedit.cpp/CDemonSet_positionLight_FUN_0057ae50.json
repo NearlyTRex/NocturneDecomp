@@ -7,14 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 593,
-    "complexity_score": 181,
+    "complexity_score": 206,
     "cross_reference_count": 3,
     "function_call_count": 23,
     "global_count": 35,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 166,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
+      "unrolled_strcpy",
       "warning_inlined_function"
     ],
     "total_lines": 759
@@ -563,6 +564,22 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 45,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 155,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

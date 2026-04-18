@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 272,
-    "complexity_score": 132,
+    "complexity_score": 147,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 26,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 117,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_strcpy"
     ],
     "total_lines": 389
   },
@@ -437,6 +438,14 @@
       "severity": "mild",
       "text": "local_20 = (SChatOutMessage *)((int)&local_20->timestamp + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 81,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 50,
-    "complexity_score": 32,
+    "complexity_score": 17,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 17,
-    "suspect_count": 1,
-    "suspect_types": [
-      "negative_offset"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 67
   },
   "cross_references": [
@@ -167,6 +165,17 @@
     },
     "pcode_op_count": 115
   },
+  "resolved_suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 8,
+      "match": "triangle_list[-1].",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->triangle_list[-1].dominant_axis);",
+      "type": "negative_offset"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -183,14 +192,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 8,
-      "match": "triangle_list[-1].",
-      "severity": "mild",
-      "text": "shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->triangle_list[-1].area);",
-      "type": "negative_offset"
-    }
-  ]
+  "suspects": []
 }

@@ -12,7 +12,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_freeTriList_FUN_00494690(CDemonRaytr
   if (this_ptr->triangle_list != (CDemonTriangle *)0x0) {
     g_CurrentDebugLine = 0x104;
     g_CurrentDebugFilename = "..\\core\\dtrace.cpp";
-    shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->triangle_list[-1].area);
+    shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->triangle_list[-1].dominant_axis);
   }
   if (this_ptr->triangle_flags != (uchar *)0x0) {
     g_CurrentDebugFilename = "..\\core\\dtrace.cpp";

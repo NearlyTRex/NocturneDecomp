@@ -7,16 +7,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 26,
+    "complexity_score": 11,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 11,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_few"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 29
   },
   "cross_references": [
@@ -85,60 +83,60 @@
         "call_addr": "0048c76b",
         "call_type": "direct",
         "caller": "engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760",
-        "estimated_params": 3,
-        "instructions_analyzed": 6,
-        "method": "push_count",
-        "reg_params": [
-          "ESI"
-        ],
-        "stack_bytes": 8,
-        "stack_params": 2
-      },
-      {
-        "call_addr": "0048c790",
-        "call_type": "direct",
-        "caller": "engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780",
-        "estimated_params": 4,
-        "instructions_analyzed": 8,
-        "method": "push_count",
-        "reg_params": [
-          "ESI"
-        ],
-        "stack_bytes": 12,
-        "stack_params": 3
-      },
-      {
-        "call_addr": "00453957",
-        "call_type": "direct",
-        "caller": "core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_00453950",
-        "estimated_params": 3,
+        "estimated_params": 1,
         "instructions_analyzed": 4,
         "method": "push_count",
         "reg_params": [
           "ESI"
         ],
-        "stack_bytes": 8,
-        "stack_params": 2
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "0048c790",
+        "call_type": "direct",
+        "caller": "engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780",
+        "estimated_params": 1,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "00453957",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_00453950",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [
+          "ESI"
+        ],
+        "stack_bytes": 0,
+        "stack_params": 0
       },
       {
         "call_addr": "004efc9c",
         "call_type": "direct",
         "caller": "core_ground.cpp_CGround_render_FUN_004efc90",
-        "estimated_params": 4,
-        "instructions_analyzed": 6,
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
         "method": "push_count",
         "reg_params": [
           "ESI"
         ],
-        "stack_bytes": 12,
-        "stack_params": 3
+        "stack_bytes": 0,
+        "stack_params": 0
       }
     ],
-    "confidence": "low",
+    "confidence": "high",
     "declared_params": 1,
     "declared_stack_bytes": 0,
-    "estimated_params": 3,
-    "matches_declared": false
+    "estimated_params": 1,
+    "matches_declared": true
   },
   "pcode_overrides": {
     "0x0050e2e7": [
@@ -208,17 +206,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "call_site_count": 4,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:3",
-      "param_delta": 2,
-      "text": "Function declares 1 params but call sites push 3 (2 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

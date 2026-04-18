@@ -78,7 +78,7 @@ void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacte
       if (0 < local_2c) {
         local_40 = (this_ptr->model).bone_transform.bone_world_matrices;
         local_3c = this_ptr->flames;
-        local_38 = this_ptr->fire_effects;
+        local_38 = this_ptr->fires;
         local_30 = &this_ptr->model;
         local_34 = local_18 + 2;
         while (this_ptr->fire_count < 0x32) {
@@ -113,18 +113,17 @@ void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacte
           local_3c[iVar7].base.location.position.x = pCVar9->x;
           local_3c[iVar7].base.location.position.y = pCVar9->y;
           local_3c[iVar7].base.location.position.z = pCVar9->z;
-          *(uint *)((int)this_ptr->fire_effects + this_ptr->fire_count * 0x2a4 + 0x3b8) = 0;
+          *(uint *)((int)this_ptr->fires + this_ptr->fire_count * 0x2a4 + 0x3b8) = 0;
           pSVar9->size = 0.5;
           fVar4 = (float)0.5;
-          *(float *)((int)this_ptr->fire_effects + this_ptr->fire_count * 0x2a4 + 0x364) =
+          *(float *)((int)this_ptr->fires + this_ptr->fire_count * 0x2a4 + 0x364) =
                pSVar9->size * fVar4;
-          *(float *)((int)this_ptr->fire_effects + this_ptr->fire_count * 0x2a4 + 0x368) =
-               pSVar9->size;
-          *(float *)((int)this_ptr->fire_effects + this_ptr->fire_count * 0x2a4 + 0x36c) =
+          *(float *)((int)this_ptr->fires + this_ptr->fire_count * 0x2a4 + 0x368) = pSVar9->size;
+          *(float *)((int)this_ptr->fires + this_ptr->fire_count * 0x2a4 + 0x36c) =
                fVar4 * pSVar9->size;
           iVar11 = iVar11 + 1;
-          *(float *)((int)this_ptr->fire_effects + this_ptr->fire_count * 0x2a4 + 0x3b4) =
-               this_ptr->fire_spread_rate;
+          *(int *)((int)this_ptr->fires + this_ptr->fire_count * 0x2a4 + 0x3b4) =
+               this_ptr->pending_flame_type;
           if (local_2c <= iVar11) {
             return;
           }

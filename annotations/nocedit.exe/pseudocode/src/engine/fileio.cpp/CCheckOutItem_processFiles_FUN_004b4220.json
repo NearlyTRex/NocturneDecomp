@@ -7,16 +7,17 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1287,
-    "complexity_score": 539,
+    "complexity_score": 584,
     "cross_reference_count": 0,
     "function_call_count": 43,
     "global_count": 63,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 484,
-    "suspect_count": 4,
+    "suspect_count": 8,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
+      "unrolled_strcpy",
       "warning_unreachable"
     ],
     "total_lines": 1771
@@ -988,6 +989,38 @@
       "severity": "mild",
       "text": "pcVar10 = (char *)((int)&pSVar8[-1].container_timestamp + 3);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 96,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 167,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 213,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 267,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

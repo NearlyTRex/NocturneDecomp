@@ -59,7 +59,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00433f59: AND ESP,0xfffffff8
 
   cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
-    File: cockpit/ckptutil.c, Suspects: 0
+    File: cockpit/ckptutil.c, Suspects: 2
     - [alt_frame_pointer] at 00431ad7: MOV EDI,ESP
     - [alt_frame_pointer] at 00431af5: MOV ESI,ESP
     - [alt_frame_pointer] at 00431b15: MOV ESI,ESP
@@ -77,7 +77,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00433c99: AND ESP,0xfffffff8
 
   crt_process.c_buildFileInfoEnv_FUN_0060ffd0
-    File: crt/process.c, Suspects: 3
+    File: crt/process.c, Suspects: 10
     - [alt_frame_pointer] at 00610075: MOV EDI,ESP
     - [alt_frame_pointer] at 006100a6: MOV EDI,ESP
     - [alt_frame_pointer] at 006100e2: MOV EDI,ESP
@@ -119,11 +119,11 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0050d9d4: MOV ESI,ESP
 
   engine_matrix.c_getCameraOrigin_FUN_0050e2c0
-    File: engine/matrix.c, Suspects: 1
+    File: engine/matrix.c, Suspects: 0
     - [alt_frame_pointer] at 0050e2e1: MOV ESI,ESP
 
   engine_matrix.c_getCameraRotation_FUN_0050e2f0
-    File: engine/matrix.c, Suspects: 1
+    File: engine/matrix.c, Suspects: 0
     - [alt_frame_pointer] at 0050e311: MOV ESI,ESP
 
   engine_matrix.c_initializeTrigTables_FUN_0050c530
@@ -144,12 +144,12 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 0050c646: AND ESP,0xfffffff8
 
   engine_pcx.c_saveScreenRaw32_FUN_00548f00
-    File: engine/pcx.c, Suspects: 0
+    File: engine/pcx.c, Suspects: 1
     - [alt_frame_pointer] at 00548f0b: MOV EDI,ESP
     - [alt_frame_pointer] at 00548f29: MOV ESI,ESP
 
   engine_pcx.c_saveScreenRaw16_FUN_00548d20
-    File: engine/pcx.c, Suspects: 0
+    File: engine/pcx.c, Suspects: 1
     - [alt_frame_pointer] at 00548d2b: MOV EDI,ESP
     - [alt_frame_pointer] at 00548d49: MOV ESI,ESP
 
@@ -158,15 +158,15 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00550ba8: MOV EDI,ESP
 
   engine_pod.cpp_CPod_remount_FUN_00550af0
-    File: engine/pod.cpp, Suspects: 0
+    File: engine/pod.cpp, Suspects: 1
     - [alt_frame_pointer] at 00550b0e: MOV EDI,ESP
 
   engine_pod.cpp_findFilesByExtension_FUN_00550ce0
-    File: engine/pod.cpp, Suspects: 1
+    File: engine/pod.cpp, Suspects: 2
     - [alt_frame_pointer] at 00550de5: MOV EDI,ESP
 
   engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00
-    File: engine/texture.cpp, Suspects: 0
+    File: engine/texture.cpp, Suspects: 1
     - [alt_frame_pointer] at 005dccf4: MOV EDI,ESP
     - [alt_frame_pointer] at 005dcd12: MOV ESI,ESP
     - [alt_frame_pointer] at 005dceb2: MOV EDI,ESP
@@ -192,7 +192,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00402958: MOV ESI,ESP
 
   engine_2d.c_wrapTextToWidth_FUN_00401d80
-    File: engine/2d.c, Suspects: 0
+    File: engine/2d.c, Suspects: 1
     - [alt_frame_pointer] at 00401e0d: MOV EDI,ESP
 
   engine_ini.cpp_CIni_getProfileString_FUN_004fb250
@@ -266,7 +266,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 03fc0b48: MOV ESI,ESP
 
   engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
-    File: engine/fileio.cpp, Suspects: 3
+    File: engine/fileio.cpp, Suspects: 4
     - [alt_frame_pointer] at 004b82e1: MOV EDI,ESP
 
   ... and 649 more functions
@@ -277,5 +277,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 2.2 suspects/function
+  With stack patterns:    avg 2.5 suspects/function
   Without stack patterns: avg 0.8 suspects/function

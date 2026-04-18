@@ -7,16 +7,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 85,
+    "complexity_score": 100,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 55,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
-      "sub84_truncation"
+      "sub84_truncation",
+      "unrolled_strcpy"
     ],
     "total_lines": 173
   },
@@ -299,6 +300,14 @@
       "severity": "mild",
       "text": "*(int *)((int)&dest->playback_position + 4) = iStack_1c;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 36,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

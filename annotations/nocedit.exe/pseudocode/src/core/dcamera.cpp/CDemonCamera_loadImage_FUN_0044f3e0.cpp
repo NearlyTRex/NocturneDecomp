@@ -46,7 +46,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
   uint uVar26;
   int *piVar27;
   uint *puVar28;
-  byte *pbVar13;
+  SRGBColorPalette *pSVar13;
   uint uVar29;
   uint uVar30;
   byte bVar31;
@@ -447,17 +447,17 @@ LAB_0044f4fd:
         puVar28 = puVar28;
       }
       pSVar24 = &g_CameraImagePaletteData;
-      pbVar13 = g_CurrentPalette;
+      pSVar13 = g_CurrentPalette;
       for (iVar2 = 0xc0; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *(uint *)pbVar13 = *(uint *)pSVar24->colors;
+        *(uint *)pSVar13->colors = *(uint *)pSVar24->colors;
         pSVar24 = (SRGBColorPalette *)((int)pSVar24 + (uint)bVar31 * -8 + 4);
-        pbVar13 = pbVar13 + (uint)bVar31 * -8 + 4;
+        pSVar13 = (SRGBColorPalette *)((int)pSVar13 + (uint)bVar31 * -8 + 4);
       }
       for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
         pSVar24 = (SRGBColorPalette *)((int)pSVar24 + (uint)bVar31 * -2 + 1);
-        *pbVar13 = pSVar24->colors[0].r;
+        pSVar13->colors[0].r = pSVar24->colors[0].r;
         pSVar24 = pSVar24;
-        pbVar13 = pbVar13 + (uint)bVar31 * -2 + 1;
+        pSVar13 = (SRGBColorPalette *)((int)pSVar13 + (uint)bVar31 * -2 + 1);
       }
       engine_drender_cpp_CDemonRenderer_updateTexture_FUN_0048dc30
                 (g_CDemonRendererPtr2,&g_CameraBackdropTexture,&g_CameraImagePaletteData);

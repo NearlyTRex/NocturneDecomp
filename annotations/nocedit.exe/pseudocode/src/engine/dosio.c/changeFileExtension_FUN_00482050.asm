@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_dosio_c_changeFileExtension_FUN_00482050(char *source_path,char *destination_buffer,char *new_extension)
+; void __cdecl engine_dosio_c_changeFileExtension_FUN_00482050(char *path,char *new_extension)
 ;
 ; Parameters:
-; char *           Stack[0x4]:4   source_path
-; char *           Stack[0x8]:4   destination_buffer
-; char *           Stack[0xc]:4   new_extension
+; char *           Stack[0x4]:4   path
+; char *           Stack[0x8]:4   new_extension
 ; Local Variables:
 ; char[256]        Stack[-0x208]:256  local_208
 ; char[256]        Stack[-0x108]:256  local_108

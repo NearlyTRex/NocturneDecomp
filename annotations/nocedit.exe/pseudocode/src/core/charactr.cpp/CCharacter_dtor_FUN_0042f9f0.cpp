@@ -24,8 +24,7 @@ CDemonActor * __cdecl core_charactr_cpp_CCharacter_dtor_FUN_0042f9f0(CCharacter 
     return &this_ptr->base;
   }
   pCVar1 = (CCharacter_ptr_13260)core_armour_cpp_CFlame_arrdtor_FUN_00412720(this_ptr->flames,0);
-  pSVar1 = (CCharacter_ptr_12060)
-           core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar1)->fire_effects,0);
+  pSVar1 = (CCharacter_ptr_12060)core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar1)->fires,0);
   pCVar2 = (CCharacter_ptr_11536)
            core_armour_cpp_CVector3f_arrdtor_FUN_004126e0(ADJ(pSVar1)->collision_test_normals,0);
   pCVar3 = (CCharacter_ptr_11356)

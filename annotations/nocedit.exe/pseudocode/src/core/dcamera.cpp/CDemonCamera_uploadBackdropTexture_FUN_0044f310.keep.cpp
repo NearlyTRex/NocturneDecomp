@@ -57,7 +57,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_0044f310(CD
     puVar9 = (uint *)((int)puVar9 + (uint)bVar11 * -2 + 1);
   }
   pSVar7 = &g_CameraImagePaletteData;
-  pbVar10 = g_CurrentPalette;
+  pbVar10 = (byte *)g_CurrentPalette;
   for (iVar5 = 0xc0; iVar5 != 0; iVar5 = iVar5 + -1) {
     *(uint *)pbVar10 = *(uint *)pSVar7->colors;
     pSVar7 = (SRGBColorPalette *)((int)pSVar7 + (uint)bVar11 * -8 + 4);

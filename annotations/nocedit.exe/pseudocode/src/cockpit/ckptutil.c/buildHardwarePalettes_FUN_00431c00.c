@@ -2,18 +2,18 @@
 // Address: 00431c00
 // Address Range: [[00431c00, 00431cf9]]
 // Convention: __cdecl
-// Signature: void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_00431c00(char *rgb_palette_data)
+// Signature: void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_00431c00(SRGBColorPalette *rgb_palette_data)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x00431c6d) */
 
-void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_00431c00(char *rgb_palette_data)
+void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_00431c00(SRGBColorPalette *rgb_palette_data)
 
 {
-  byte *pbVar3;
-  byte *pbVar4;
-  byte bVar5;
+  uchar *puVar1;
+  uchar *puVar2;
+  SRGBColor *pSVar3;
   int iVar4;
   int iVar5;
   int iVar6;
@@ -22,31 +22,32 @@ void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_00431c00(char *rgb_pal
   byte *pbVar2;
   byte *pbVar1;
   
-  g_CurrentPalette = (byte *)rgb_palette_data;
+  g_CurrentPalette = rgb_palette_data;
   if (g_BitsPerPixel != 0x20) {
     iVar6 = 0;
     do {
-      bVar5 = *rgb_palette_data;
-      pbVar3 = (byte *)(rgb_palette_data + 1);
-      pbVar4 = (byte *)(rgb_palette_data + 2);
+      pSVar3 = (SRGBColor *)&rgb_palette_data->colors[0].r;
+      puVar1 = &rgb_palette_data->colors[0].g;
+      puVar2 = &rgb_palette_data->colors[0].b;
       iVar7 = iVar6 + 2;
-      rgb_palette_data = rgb_palette_data + 3;
+      rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);
       *(ushort *)((int)g_Hardware16BitPalette + iVar6) =
-           (ushort)((uint)*pbVar3 / (uint)g_GreenScaleFactor << (g_GreenBitPosition.bytes[0] & 0x1f)
+           (ushort)((uint)*puVar1 / (uint)g_GreenScaleFactor << (g_GreenBitPosition.bytes[0] & 0x1f)
                    ) |
-           (ushort)((uint)bVar5 / (uint)g_RedScaleFactor << (g_RedBitPosition.bytes[0] & 0x1f)) |
-           (ushort)((uint)*pbVar4 / (uint)g_BlueScaleFactor << (g_BlueBitPosition.bytes[0] & 0x1f));
+           (ushort)((uint)pSVar3->r / (uint)g_RedScaleFactor << (g_RedBitPosition.bytes[0] & 0x1f))
+           | (ushort)((uint)*puVar2 / (uint)g_BlueScaleFactor << (g_BlueBitPosition.bytes[0] & 0x1f)
+                     );
       iVar6 = iVar7;
     } while (iVar7 != 0x200);
     return;
   }
   iVar4 = 0;
   do {
-    pbVar1 = (byte *)(rgb_palette_data + 1);
-    bVar3 = *rgb_palette_data;
-    pbVar2 = (byte *)(rgb_palette_data + 2);
+    pbVar1 = &rgb_palette_data->colors[0].g;
+    bVar3 = ((SRGBColor *)&rgb_palette_data->colors[0].r)->r;
+    pbVar2 = &rgb_palette_data->colors[0].b;
     iVar5 = iVar4 + 4;
-    rgb_palette_data = rgb_palette_data + 3;
+    rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);
     *(uint *)((int)g_Hardware32BitPalette + iVar4) =
          (uint)*pbVar2 << (g_BlueBitPosition.bytes[0] & 0x1f) |
          (uint)bVar3 << (g_RedBitPosition.bytes[0] & 0x1f) |

@@ -7,15 +7,17 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 665,
-    "complexity_score": 337,
+    "complexity_score": 367,
     "cross_reference_count": 6,
     "function_call_count": 27,
     "global_count": 43,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 262,
-    "suspect_count": 7,
+    "suspect_count": 9,
     "suspect_types": [
-      "unnamed_local"
+      "unnamed_local",
+      "unrolled_memcpy",
+      "unrolled_strcpy"
     ],
     "total_lines": 927
   },
@@ -867,6 +869,22 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 95,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "line": 107,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "mild",
+      "text": "for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",

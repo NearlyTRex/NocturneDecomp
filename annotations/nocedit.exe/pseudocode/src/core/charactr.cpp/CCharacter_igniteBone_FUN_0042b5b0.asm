@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter *this_ptr,CVector3f *position,int fire_type,float spread_rate,int allow_hero,int include_hero)
+; void __cdecl core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter *this_ptr,CVector3f *position,int fire_type,int flame_type,float flame_scale,int include_hero)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   position
 ; int              Stack[0xc]:4   fire_type
-; float            Stack[0x10]:4   spread_rate
-; int              Stack[0x14]:4   allow_hero
+; int              Stack[0x10]:4   flame_type
+; float            Stack[0x14]:4   flame_scale
 ; int              Stack[0x18]:4   include_hero
 ;
 ; XREF[8]:

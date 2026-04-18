@@ -28,7 +28,7 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_dtor_FUN_0041da40(CBoneGuy *this_pt
   pCVar1 = (CBoneGuy_ptr_13260)
            core_armour_cpp_CFlame_arrdtor_FUN_00412720(ADJ(pSVar1)->base.base.flames,0);
   pSVar2 = (CBoneGuy_ptr_12060)
-           core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar1)->base.base.fire_effects,0);
+           core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar1)->base.base.fires,0);
   pCVar2 = (CBoneGuy_ptr_11536)
            core_armour_cpp_CVector3f_arrdtor_FUN_004126e0
                      (ADJ(pSVar2)->base.base.collision_test_normals,0);

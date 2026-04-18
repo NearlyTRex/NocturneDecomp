@@ -27,7 +27,7 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00427e20(CCharacter *
                      (ADJ(pCVar3)->collision_test_points,0xf,&g_CVectorTypeInfo);
   pvVar2 = __arrinit
                      (ADJ(pvVar1)->collision_test_normals,0xf,&g_CVectorTypeInfo);
-  pvVar3 = __arrinit(ADJ(pvVar2)->fire_effects,0x32,&g_SFireTypeInfo);
+  pvVar3 = __arrinit(ADJ(pvVar2)->fires,0x32,&g_SFireTypeInfo);
   pvVar4 = __arrinit(ADJ(pvVar3)->flames,0x32,&g_CFlameTypeInfo);
   ADJ(pvVar4)->base.vtable._ub = &g_CCharacterVTable;
   ADJ(pvVar4)->render_active = 0;
@@ -43,7 +43,7 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00427e20(CCharacter *
   ADJ(pvVar4)->collision_cylinder_top = -999.0;
   ADJ(pvVar4)->damage_decal_count = 0;
   ADJ(pvVar4)->fire_count = 0;
-  ADJ(pvVar4)->fire_allow_hero = 0x40000000;
+  ADJ(pvVar4)->flame_scale = 2.0;
   ADJ(pvVar4)->gesture_motion_index = -1;
   ADJ(pvVar4)->gesture_branch_root = -1;
   ADJ(pvVar4)->sound_cooldown = 0.0;

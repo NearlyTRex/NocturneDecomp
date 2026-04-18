@@ -1,17 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_texture_cpp_updateTextureWithPalette_FUN_005dd900(SMRGLTextureBasic *texture_to_load,SMRGLTextureBasic *texture_to_update)
+; void __cdecl engine_texture_cpp_updateTextureWithPalette_FUN_005dd900(SMRGLTextureBasic *texture)
 ;
 ; Parameters:
-; SMRGLTextureBasic * Stack[0x4]:4   texture_to_load
-; SMRGLTextureBasic * Stack[0x8]:4   texture_to_update
+; SMRGLTextureBasic * Stack[0x4]:4   texture
 ;
 ; XREF[1]:
 ;   engine_drender.cpp_CDemonRenderer_updateTextureWithPalette_FUN_0048dc20 at 0048dc25
 ;
 ; Referenced Globals:
-;   byte* g_CurrentPalette
+;   SRGBColorPalette* g_CurrentPalette
 ;
 ; Called Functions:
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_005dd800

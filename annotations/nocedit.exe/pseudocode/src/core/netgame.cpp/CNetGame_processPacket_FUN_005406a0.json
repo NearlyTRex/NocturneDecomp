@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1175,
-    "complexity_score": 538,
+    "complexity_score": 563,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 41,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 438,
-    "suspect_count": 9,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
+      "unrolled_strcpy",
       "warning_unreachable"
     ],
     "total_lines": 1613
@@ -718,6 +719,22 @@
       "severity": "mild",
       "text": "dest = (SSimFrame *)((int)g_SimFrameHistory[0].player_input + iVar5 + -0xc);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 97,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 108,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

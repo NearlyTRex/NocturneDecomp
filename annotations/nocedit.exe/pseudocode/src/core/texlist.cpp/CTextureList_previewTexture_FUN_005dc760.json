@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 218,
-    "complexity_score": 144,
+    "complexity_score": 159,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 40,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 99,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
-      "raw_address_constant"
+      "raw_address_constant",
+      "unrolled_strcpy"
     ],
     "total_lines": 317
   },
@@ -413,6 +414,14 @@
       "severity": "moderate",
       "text": "g_RenderVertexBuffer[3].v = 0xf80000;",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 69,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

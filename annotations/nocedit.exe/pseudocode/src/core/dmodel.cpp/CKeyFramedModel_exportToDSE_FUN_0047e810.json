@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 275,
+    "complexity_score": 290,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 30,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 100,
-    "suspect_count": 17,
+    "suspect_count": 18,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_strcpy"
     ],
     "total_lines": 259
   },
@@ -457,6 +458,14 @@
       "severity": "mild",
       "text": "pcVar9 = this_ptr->texture_list[*(int *)((int)this_ptr->poly_texture_index_list + local_20)].",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 88,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

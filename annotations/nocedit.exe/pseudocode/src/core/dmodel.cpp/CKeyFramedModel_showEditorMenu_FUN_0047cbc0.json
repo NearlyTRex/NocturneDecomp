@@ -8,21 +8,23 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2523,
-    "complexity_score": 1362,
+    "complexity_score": 1393,
     "cross_reference_count": 2,
     "function_call_count": 72,
     "global_count": 128,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 857,
-    "suspect_count": 48,
+    "pseudocode_lines": 858,
+    "suspect_count": 50,
     "suspect_types": [
       "decompiler_intrinsic",
       "negative_offset",
       "pointer_cast",
       "unnamed_local",
+      "unrolled_memcpy",
+      "unrolled_strcpy",
       "warning_inlined_function"
     ],
-    "total_lines": 3380
+    "total_lines": 3381
   },
   "cross_references": [
     {
@@ -1290,6 +1292,15 @@
       "severity": "moderate",
       "text": "(g_NetworkModelFilename,&stack0xfffff150,1);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 749,
+      "match": "collision_triangle_list[-1].",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(&this_ptr->collision_triangle_list[-1].dominant_axis);",
+      "type": "negative_offset"
     }
   ],
   "stack_frame": {
@@ -2213,12 +2224,28 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 748,
-      "match": "collision_triangle_list[-1].",
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 482,
+      "match": "do {",
       "severity": "mild",
-      "text": "shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].area);",
-      "type": "negative_offset"
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 511,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "line": 794,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "mild",
+      "text": "for (iVar18 = 0x19; iVar18 != 0; iVar18 = iVar18 + -1) {",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "Unnamed local variable",

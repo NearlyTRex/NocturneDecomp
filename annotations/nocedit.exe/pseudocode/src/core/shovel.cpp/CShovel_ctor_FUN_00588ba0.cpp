@@ -22,6 +22,6 @@ CShovel * __cdecl core_shovel_cpp_CShovel_ctor_FUN_00588ba0(CShovel *this_ptr)
   pCVar1->fire_mode = 0;
   pCVar1->can_penetrate = 0;
   pCVar1->bolt_velocity = 5.0;
-  pCVar1->fire_cooldown = 0.0;
+  pCVar1->fire_cooldown = 0;
   return (CShovel *)pCVar1;
 }

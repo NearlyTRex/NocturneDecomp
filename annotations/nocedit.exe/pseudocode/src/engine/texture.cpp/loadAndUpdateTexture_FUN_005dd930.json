@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 21,
+    "complexity_score": 6,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 6,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_many"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 22
   },
   "cross_references": [
@@ -37,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_texture.cpp_loadAndUpdateTexture_FUN_005dd930",
-    "signature": "void __cdecl engine_texture_cpp_loadAndUpdateTexture_FUN_005dd930(SMRGLTextureBasic *tex_to_load,SMRGLTextureBasic *tex_to_update,SRGBColorPalette *palette_data)"
+    "signature": "void __cdecl engine_texture_cpp_loadAndUpdateTexture_FUN_005dd930(SMRGLTextureBasic *texture,SRGBColorPalette *palette)"
   },
   "function_calls": [
     {
@@ -67,11 +65,11 @@
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 3,
-    "declared_stack_bytes": 12,
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.0,
@@ -94,46 +92,27 @@
     "pcode_op_count": 52
   },
   "stack_frame": {
-    "frame_size": 16,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": true,
-        "name": "tex_to_load",
+        "name": "texture",
         "offset": 4,
         "size": 4,
         "type": "SMRGLTextureBasic *"
       },
       {
         "is_param": true,
-        "name": "tex_to_update",
+        "name": "palette",
         "offset": 8,
-        "size": 4,
-        "type": "SMRGLTextureBasic *"
-      },
-      {
-        "is_param": true,
-        "name": "palette_data",
-        "offset": 12,
         "size": 4,
         "type": "SRGBColorPalette *"
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 1,
-      "declared_params": 3,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 2,
-      "fix_type": "remove_params",
-      "match": "declared:3 vs estimated:2",
-      "param_delta": -1,
-      "text": "Function declares 3 params but call sites push 2 (1 extra)",
-      "type": "param_count_too_many"
-    }
-  ]
+  "suspects": []
 }

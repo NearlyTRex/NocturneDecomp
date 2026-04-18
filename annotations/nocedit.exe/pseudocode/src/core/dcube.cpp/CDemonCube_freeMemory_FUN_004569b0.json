@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 47,
+    "complexity_score": 32,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 7,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 32,
-    "suspect_count": 1,
-    "suspect_types": [
-      "negative_offset"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 119
   },
   "cross_references": [
@@ -139,6 +137,17 @@
     },
     "pcode_op_count": 235
   },
+  "resolved_suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 8,
+      "match": "vertex_buffer[-1].",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->vertex_buffer[-1].z);",
+      "type": "negative_offset"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -155,14 +164,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 8,
-      "match": "vertex_buffer[-1].",
-      "severity": "mild",
-      "text": "shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->vertex_buffer[-1].z);",
-      "type": "negative_offset"
-    }
-  ]
+  "suspects": []
 }

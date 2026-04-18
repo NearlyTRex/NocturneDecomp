@@ -8,14 +8,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2528,
-    "complexity_score": 1076,
+    "complexity_score": 1091,
     "cross_reference_count": 0,
     "function_call_count": 49,
     "global_count": 74,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1031,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "unrolled_strcpy",
       "warning_inlined_function",
       "warning_type_propagation",
       "warning_unreachable"
@@ -1809,6 +1810,14 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 401,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ],
   "vtable_info": {

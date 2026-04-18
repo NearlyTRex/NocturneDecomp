@@ -19,7 +19,7 @@ section .text
         ;   Label: engine_drender.cpp_CDemonRenderer_updateTextureWithPalette_FUN_0048dc20
     PUSH EDX                            ; 0048dc24
     CALL engine_texture.cpp_updateTextureWithPalette_FUN_005dd900 ; 0048dc25
-        ;   XREF to: 005dd900 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_updateTextureWithPalette_FUN_005dd900(SMRGLTextureBasic * texture_to_load, SMRGLTextureBasic * texture_to_update)
+        ;   XREF to: 005dd900 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_updateTextureWithPalette_FUN_005dd900(SMRGLTextureBasic * texture)
     ADD ESP,0x4                         ; 0048dc2a
     RET                                 ; 0048dc2d
 

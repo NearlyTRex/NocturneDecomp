@@ -2,15 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 71,
+    "complexity_score": 86,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 9,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 56,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data"
+      "undefined_data",
+      "unrolled_strcpy"
     ],
     "total_lines": 162
   },
@@ -174,6 +175,14 @@
       "severity": "mild",
       "text": "(&DAT_006852db)[uVar3] = 0x5c;",
       "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 34,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

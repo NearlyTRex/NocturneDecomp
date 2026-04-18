@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_texture_cpp_loadAndUpdateTexture_FUN_005dd930(SMRGLTextureBasic *tex_to_load,SMRGLTextureBasic *tex_to_update,SRGBColorPalette *palette_data)
+; void __cdecl engine_texture_cpp_loadAndUpdateTexture_FUN_005dd930(SMRGLTextureBasic *texture,SRGBColorPalette *palette)
 ;
 ; Parameters:
-; SMRGLTextureBasic * Stack[0x4]:4   tex_to_load
-; SMRGLTextureBasic * Stack[0x8]:4   tex_to_update
-; SRGBColorPalette * Stack[0xc]:4   palette_data
+; SMRGLTextureBasic * Stack[0x4]:4   texture
+; SRGBColorPalette * Stack[0x8]:4   palette
 ;
 ; XREF[1]:
 ;   engine_drender.cpp_CDemonRenderer_updateTexture_FUN_0048dc30 at 0048dc3a

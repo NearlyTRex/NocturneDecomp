@@ -29,7 +29,7 @@ CWeapon * __cdecl core_weapon_cpp_CWeapon_ctor_FUN_005ede70(CWeapon *this_ptr)
   ADJ(pCVar3)->weapon_type = 0;
   ADJ(pCVar3)->can_penetrate = 0;
   ADJ(pCVar3)->bolt_velocity = 200.0;
-  ADJ(pCVar3)->fire_cooldown = 0.0;
+  ADJ(pCVar3)->fire_cooldown = 0;
   ADJ(pCVar3)->can_attach_light = 1;
   (ADJ(pCVar3)->muzzle_flash_color).r = 0xff;
   (ADJ(pCVar3)->muzzle_flash_color).g = 0;

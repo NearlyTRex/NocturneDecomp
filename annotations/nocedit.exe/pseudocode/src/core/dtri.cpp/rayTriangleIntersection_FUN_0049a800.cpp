@@ -41,7 +41,7 @@ float __cdecl core_dtri_cpp_rayTriangleIntersection_FUN_0049a800(CDemonTriangle 
   fVar7 = fVar3 / fVar7;
   fVar4 = fVar7 * rayDirection->x + rayOrigin->x;
   fVar5 = fVar7 * rayDirection->y + rayOrigin->y;
-  fVar2 = triangle->area;
+  fVar2 = (float)triangle->dominant_axis;
   if (fVar2 == 0.0) {
     fVar6 = (triangle->vertex2).z;
     fVar1 = (triangle->vertex3).z;

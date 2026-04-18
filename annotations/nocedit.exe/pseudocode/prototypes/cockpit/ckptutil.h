@@ -65,7 +65,7 @@ void __cdecl loadACTPaletteFile(char *base_filename,uchar *output_buffer);
 
 // Original: cockpit_ckptutil.c_buildHardwarePalettes_FUN_00431c00
 // Address: 00431c00
-void __cdecl buildHardwarePalettes(char *rgb_palette_data);
+void __cdecl buildHardwarePalettes(SRGBColorPalette *rgb_palette_data);
 
 // Original: cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00431d00
 // Address: 00431d00

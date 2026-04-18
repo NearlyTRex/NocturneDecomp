@@ -7,16 +7,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 502,
-    "complexity_score": 432,
+    "complexity_score": 447,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 272,
-    "suspect_count": 15,
+    "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
-      "stack_alignment_array"
+      "stack_alignment_array",
+      "unrolled_strcpy"
     ],
     "total_lines": 774
   },
@@ -633,6 +634,14 @@
       "severity": "mild",
       "text": "pSVar9 = (SNetPlayer *)((int)pSVar9 + (uint)bVar17 * -8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 112,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

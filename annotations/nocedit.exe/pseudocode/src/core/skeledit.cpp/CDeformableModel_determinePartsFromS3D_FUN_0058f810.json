@@ -8,17 +8,17 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3400,
-    "complexity_score": 2373,
+    "complexity_score": 2363,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 125,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 1443,
-    "suspect_count": 91,
+    "suspect_count": 90,
     "suspect_types": [
-      "negative_offset",
       "pointer_cast",
       "unnamed_local",
+      "unrolled_memcpy",
       "warning_inlined_function"
     ],
     "total_lines": 4843
@@ -993,6 +993,26 @@
     },
     "pcode_op_count": 14411
   },
+  "resolved_suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 1385,
+      "match": "local_188[-1].",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "shape_memdbg_cpp_free_FUN_005fe659(&local_188[-1].max.z);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 1422,
+      "match": "local_188[-1].",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "shape_memdbg_cpp_free_FUN_005fe659(&local_188[-1].max.z);",
+      "type": "negative_offset"
+    }
+  ],
   "stack_frame": {
     "frame_size": 41468,
     "local_size": 41460,
@@ -3039,20 +3059,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 1385,
-      "match": "local_188[-1].",
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "line": 378,
+      "match": "for (...; != 0; ... + -1)",
       "severity": "mild",
-      "text": "shape_memdbg_cpp_free_FUN_005fe659(&local_188[-1].max.z);",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 1422,
-      "match": "local_188[-1].",
-      "severity": "mild",
-      "text": "shape_memdbg_cpp_free_FUN_005fe659(&local_188[-1].max.z);",
-      "type": "negative_offset"
+      "text": "for (iVar31 = 0x19; iVar31 != 0; iVar31 = iVar31 + -1) {",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "Unnamed local variable",

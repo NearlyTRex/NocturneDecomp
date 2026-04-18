@@ -902,7 +902,7 @@ LAB_004d4152:
   }
   this_ptr->fire_state = 0;
   core_gabriela_cpp_CGabriella_tryFireWeapon_FUN_004d5fe0(this_ptr);
-  if (((this_ptr->base).inventory.selected_weapon)->fire_cooldown == 0.0) {
+  if (((this_ptr->base).inventory.selected_weapon)->fire_cooldown == 0) {
     (this_ptr->base).player_input.action_state.fire = 0;
   }
 LAB_004d368e:

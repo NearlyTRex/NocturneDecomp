@@ -7,15 +7,16 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 306,
-    "complexity_score": 333,
+    "complexity_score": 348,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 39,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 168,
-    "suspect_count": 16,
+    "suspect_count": 17,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_strcpy"
     ],
     "total_lines": 474
   },
@@ -582,6 +583,14 @@
       "severity": "mild",
       "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 66,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

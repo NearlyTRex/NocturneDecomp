@@ -29,7 +29,7 @@ CHiram * __cdecl core_hiram_cpp_CHiram_dtor_FUN_004f4450(CHiram *this_ptr,uint f
   pCVar2 = (CHiram_ptr_13260)
            core_armour_cpp_CFlame_arrdtor_FUN_00412720(ADJ(pCVar1)->base.base.flames,0);
   pSVar1 = (CHiram_ptr_12060)
-           core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar2)->base.base.fire_effects,0);
+           core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar2)->base.base.fires,0);
   pCVar3 = (CHiram_ptr_11536)
            core_armour_cpp_CVector3f_arrdtor_FUN_004126e0
                      (ADJ(pSVar1)->base.base.collision_test_normals,0);

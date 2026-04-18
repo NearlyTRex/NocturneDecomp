@@ -44,7 +44,7 @@ void __cdecl core_bride_cpp_CBride_processDamage_FUN_00424830(CBride *this_ptr,S
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,&local_30,input_local_point);
     core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0
-              ((CCharacter *)this_ptr,&local_30,0,0.0,0x41200000,0);
+              ((CCharacter *)this_ptr,&local_30,0,0,10.0,0);
   }
   core_bride_cpp_CBride_processDismemberment_FUN_00424600(this_ptr,damage_info);
   iVar1 = this_ptr->part_indices[8];

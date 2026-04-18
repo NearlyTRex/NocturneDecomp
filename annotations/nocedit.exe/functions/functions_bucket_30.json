@@ -9719,7 +9719,7 @@
           "type":"int"
         },
         {
-          "name":"spread_rate",
+          "name":"flame_type",
           "storage":{
             "offset":16,
             "size":4,
@@ -9732,10 +9732,10 @@
               }
             ]
           },
-          "type":"float"
+          "type":"int"
         },
         {
-          "name":"allow_hero",
+          "name":"flame_scale",
           "storage":{
             "offset":20,
             "size":4,
@@ -9748,7 +9748,7 @@
               }
             ]
           },
-          "type":"int"
+          "type":"float"
         },
         {
           "name":"include_hero",
@@ -95155,7 +95155,7 @@
     "vars":{
       "params":[
         {
-          "name":"tex_to_load",
+          "name":"texture",
           "storage":{
             "offset":4,
             "size":4,
@@ -95171,7 +95171,7 @@
           "type":"SMRGLTextureBasic*"
         },
         {
-          "name":"tex_to_update",
+          "name":"palette",
           "storage":{
             "offset":8,
             "size":4,
@@ -95180,22 +95180,6 @@
               {
                 "addr":"Stack[0x8]",
                 "offset":8,
-                "size":4
-              }
-            ]
-          },
-          "type":"SMRGLTextureBasic*"
-        },
-        {
-          "name":"palette_data",
-          "storage":{
-            "offset":12,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0xc]",
-                "offset":12,
                 "size":4
               }
             ]

@@ -69,10 +69,10 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
         fVar2 = (float)65535;
         pCVar10 = this_ptr;
         do {
-          iVar11 = pCVar10->fire_effects[0].bone_index;
+          iVar11 = pCVar10->fires[0].bone_index;
           iVar6 = iVar6 + 1;
           g_BoneBurnIntensity[iVar11] =
-               g_BoneBurnIntensity[iVar11] + (pCVar10->fire_effects[0].size * fVar2) / fVar3;
+               g_BoneBurnIntensity[iVar11] + (pCVar10->fires[0].size * fVar2) / fVar3;
           pCVar10 = (CCharacter *)((pCVar10->base).actor_name + 0x18);
         } while (iVar6 < this_ptr->fire_count);
       }
@@ -128,7 +128,7 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
   }
   local_28 = 0;
   if (0 < this_ptr->fire_count) {
-    pSVar10 = this_ptr->fire_effects;
+    pSVar10 = this_ptr->fires;
     local_24 = this_ptr;
     pCVar11 = &this_ptr->flames[0].base.location;
     do {
@@ -157,12 +157,12 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
     } while (local_28 < this_ptr->fire_count);
   }
   if ((this_ptr->is_ethereal == 0) && (0 < this_ptr->fire_count)) {
-    local_20 = this_ptr->fire_effects;
+    local_20 = this_ptr->fires;
     fVar3 = delta_time * 2.0f;
     local_30 = 0;
     do {
       if (((this_ptr->model).part_data.visibility_flags[local_20->bone_part] != 0) &&
-         (fVar4 = fVar3 * (float)this_ptr->fire_allow_hero + local_20->size, local_20->size = fVar4,
+         (fVar4 = fVar3 * this_ptr->flame_scale + local_20->size, local_20->size = fVar4,
          3.0f < fVar4)) {
         local_20->size = 3.0f;
         iVar6 = 0;
@@ -175,7 +175,7 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
               pCVar9 = this_ptr;
               if (0 < this_ptr->fire_count) {
                 do {
-                  if (iVar6 == pCVar9->fire_effects[0].bone_index) break;
+                  if (iVar6 == pCVar9->fires[0].bone_index) break;
                   uVar7 = uVar7 + 1;
                   pCVar9 = (CCharacter *)((pCVar9->base).actor_name + 0x18);
                 } while ((int)uVar7 < this_ptr->fire_count);
@@ -193,7 +193,7 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
           pCVar10 = this_ptr;
           do {
             if (skeleton->bone_list[local_20->bone_index].parent_index ==
-                pCVar10->fire_effects[0].bone_index) break;
+                pCVar10->fires[0].bone_index) break;
             iVar6 = iVar6 + 1;
             pCVar10 = (CCharacter *)((pCVar10->base).actor_name + 0x18);
           } while (iVar6 < this_ptr->fire_count);

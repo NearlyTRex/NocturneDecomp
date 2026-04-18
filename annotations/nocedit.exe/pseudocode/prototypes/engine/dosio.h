@@ -93,11 +93,11 @@ void __cdecl ensureTrailingSlash(char *input_path,char *drive,char *output_path)
 
 // Original: engine_dosio.c_removeFileExtension_FUN_00482040
 // Address: 00482040
-void __cdecl removeFileExtension(char *source_path,char *destination_buffer);
+void __cdecl removeFileExtension(char *source_path);
 
 // Original: engine_dosio.c_changeFileExtension_FUN_00482050
 // Address: 00482050
-void __cdecl changeFileExtension(char *source_path,char *destination_buffer,char *new_extension);
+void __cdecl changeFileExtension(char *path,char *new_extension);
 
 // Original: engine_dosio.c_getFullPath_FUN_004820c0
 // Address: 004820c0

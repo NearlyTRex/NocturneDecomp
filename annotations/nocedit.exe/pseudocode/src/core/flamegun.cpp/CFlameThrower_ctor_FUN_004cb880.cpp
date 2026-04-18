@@ -23,7 +23,7 @@ CFlameThrower * __cdecl core_flamegun_cpp_CFlameThrower_ctor_FUN_004cb880(CFlame
   (pCVar2->base).weapon_type = 2;
   (pCVar2->base).can_penetrate = 0;
   (pCVar2->base).bolt_velocity = 15.0;
-  (pCVar2->base).fire_cooldown = 1.4013e-45;
+  (pCVar2->base).fire_cooldown = 1;
   fVar1 = 8.0f;
   pCVar2->fire_rate_timer = 0.0;
   pCVar2->was_firing_prev_frame = 0;

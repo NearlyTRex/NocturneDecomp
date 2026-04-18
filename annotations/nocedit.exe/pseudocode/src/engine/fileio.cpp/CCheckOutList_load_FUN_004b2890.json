@@ -7,14 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 179,
-    "complexity_score": 91,
+    "complexity_score": 106,
     "cross_reference_count": 5,
     "function_call_count": 10,
     "global_count": 16,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 76,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "unrolled_strcpy",
       "warning_unreachable"
     ],
     "total_lines": 255
@@ -384,6 +385,14 @@
       "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x004b29c8) */",
       "type": "warning_unreachable"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 42,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

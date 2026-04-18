@@ -2,16 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 197,
-    "complexity_score": 203,
+    "complexity_score": 218,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 93,
-    "suspect_count": 10,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
-      "register_param"
+      "register_param",
+      "unrolled_memcpy"
     ],
     "total_lines": 290
   },
@@ -226,6 +227,14 @@
       "severity": "mild",
       "text": "*(byte *)((int)g_EnvironStringArea + n) = 0;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "line": 68,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "mild",
+      "text": "for (iVar4 = 0; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "unrolled_memcpy"
     }
   ]
 }

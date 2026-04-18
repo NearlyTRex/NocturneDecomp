@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 217,
-    "complexity_score": 79,
+    "complexity_score": 64,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 64,
-    "suspect_count": 1,
-    "suspect_types": [
-      "sub84_truncation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 281
   },
   "cross_references": [
@@ -111,6 +109,17 @@
     },
     "pcode_op_count": 1359
   },
+  "resolved_suspects": [
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 42,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_34 = SUB84(__BITCAST_UINT64(dVar3),0);",
+      "type": "sub84_truncation"
+    }
+  ],
   "stack_frame": {
     "frame_size": 84,
     "local_size": 80,
@@ -162,14 +171,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 42,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "local_34 = SUB84(__BITCAST_UINT64(dVar3),0);",
-      "type": "sub84_truncation"
-    }
-  ]
+  "suspects": []
 }

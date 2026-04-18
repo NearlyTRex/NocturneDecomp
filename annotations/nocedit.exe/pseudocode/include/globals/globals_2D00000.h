@@ -7,6 +7,7 @@
 #include "types/classes/CEventList.h"
 #include "types/classes/CMatrix3x3i.h"
 #include "types/funcdefs/RenderScanlineFunc.h"
+#include "types/structs/SRGBColorPalette.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2D00000
@@ -28,6 +29,9 @@ extern DWORD g_JoyButtons;
 // RenderScanlineFunc*
 extern RenderScanlineFunc* g_ScanlineRenderFunc;
 
+// SRGBColorPalette*
+extern SRGBColorPalette* g_CurrentPalette;
+
 // _BIT_INTEGER32
 extern _BIT_INTEGER32 g_RedBitPosition;
 extern _BIT_INTEGER32 g_RedBitCount;
@@ -46,9 +50,6 @@ extern _MMX_INTEGER g_SavedMMX4;
 extern _MMX_INTEGER g_SavedMMX5;
 extern _MMX_INTEGER g_SavedMMX6;
 extern _MMX_INTEGER g_SavedMMX7;
-
-// byte*
-extern byte* g_CurrentPalette;
 
 // char[1024]
 extern char g_FileTransferErrorMessage[1024];

@@ -29,6 +29,7 @@
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SEdge.h"
 #include "types/structs/SEdgeList.h"
+#include "types/structs/SRGBColorPalette.h"
 #include "types/structs/SRenderVertex.h"
 
 // =============================================================================
@@ -64,7 +65,7 @@ void * __cdecl cockpit_ckptutil_c_readBitmapFile_FUN_00431870(char *filename,voi
 void __cdecl cockpit_ckptutil_c_applyActPalette_FUN_004319b0(char *filename,void *bitmap_buffer,int bitmap_size,int palette_index);
 void __cdecl cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00431a30(char *filename,uchar *output_palette);
 void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_00431ac0(char *base_filename,uchar *output_buffer);
-void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_00431c00(char *rgb_palette_data);
+void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_00431c00(SRGBColorPalette *rgb_palette_data);
 void __cdecl cockpit_ckptutil_c_blitSpanBasedSprite_FUN_00431d00(void *sprite_data,void *span_data,int screen_x,int screen_y,int src_x,int src_y, int width,int height);
 void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteClipped_FUN_00431f40(void *sprite_data,void *span_data,int screen_x,int screen_y,int src_x,int src_y, int width,int height);
 void __cdecl cockpit_ckptutil_c_blitRectangleClipped_FUN_00432190(void *sprite_data,int dest_x,int dest_y,int width,int height);

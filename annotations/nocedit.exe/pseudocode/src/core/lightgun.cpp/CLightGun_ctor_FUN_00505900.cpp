@@ -24,7 +24,7 @@ CLightGun * __cdecl core_lightgun_cpp_CLightGun_ctor_FUN_00505900(CLightGun *thi
   (pCVar3->base).weapon_type = 2;
   (pCVar3->base).can_penetrate = 0;
   (pCVar3->base).bolt_velocity = 32.0;
-  (pCVar3->base).fire_cooldown = 1.4013e-45;
+  (pCVar3->base).fire_cooldown = 1;
   fVar1 = 8.0f;
   (pCVar3->base).can_attach_light = 0;
   fVar2 = 30.0f;

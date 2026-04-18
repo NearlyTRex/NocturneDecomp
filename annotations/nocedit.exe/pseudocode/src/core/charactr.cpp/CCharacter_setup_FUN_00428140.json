@@ -15,7 +15,7 @@
     "pseudocode_lines": 114,
     "suspect_count": 1,
     "suspect_types": [
-      "suspect_float"
+      "unrolled_strcpy"
     ],
     "total_lines": 336
   },
@@ -281,7 +281,7 @@
         {
           "check_id": "selfAssignment",
           "column": 16,
-          "line": 92,
+          "line": 94,
           "message": "Redundant assignment of 'pCVar4' to itself.",
           "severity": "warning"
         }
@@ -292,12 +292,12 @@
   },
   "suspects": [
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 66,
-      "match": "5.60519e-45",
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 106,
+      "match": "do {",
       "severity": "mild",
-      "text": "this_ptr->fire_spread_rate = 5.60519e-45;",
-      "type": "suspect_float"
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ],
   "vtable_info": {

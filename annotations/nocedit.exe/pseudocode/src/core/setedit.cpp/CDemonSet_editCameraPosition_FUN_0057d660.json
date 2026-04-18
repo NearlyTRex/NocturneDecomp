@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1112,
-    "complexity_score": 456,
+    "complexity_score": 471,
     "cross_reference_count": 1,
     "function_call_count": 42,
     "global_count": 75,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 411,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_strcpy"
     ],
     "total_lines": 1523
   },
@@ -1136,6 +1137,14 @@
       "severity": "mild",
       "text": "if (*(int *)((int)pvStack_1c + 0x144) == 0) {",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 74,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     },
     {
       "description": "Complex pointer cast",

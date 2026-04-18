@@ -24,8 +24,7 @@ CEnemy * __cdecl core_armour_cpp_CEnemy_dtor_FUN_004125c0(CEnemy *this_ptr,uint 
     return this_ptr;
   }
   pCVar1 = (CEnemy_ptr_13260)core_armour_cpp_CFlame_arrdtor_FUN_00412720((this_ptr->base).flames,0);
-  pSVar1 = (CEnemy_ptr_12060)
-           core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar1)->base.fire_effects,0);
+  pSVar1 = (CEnemy_ptr_12060)core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar1)->base.fires,0);
   pCVar2 = (CEnemy_ptr_11536)
            core_armour_cpp_CVector3f_arrdtor_FUN_004126e0(ADJ(pSVar1)->base.collision_test_normals,0)
   ;

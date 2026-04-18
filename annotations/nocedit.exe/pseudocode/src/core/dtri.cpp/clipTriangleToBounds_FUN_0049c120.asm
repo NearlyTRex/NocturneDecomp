@@ -898,7 +898,7 @@ section .text
     ADD ECX,0x2cee9a4                   ; 0049c9ee | g_ClippedTriangleBuffer[6].vertex3.z | g_ClipBuffer5Vertices
     PUSH ECX                            ; 0049c9f4 | g_ClippedTriangleBuffer[6].vertex3.z
     PUSH EDX                            ; 0049c9f5 | g_ClipBuffer4Vertices[1].x
-    PUSH EDI                            ; 0049c9f6 | g_ClippedTriangleBuffer[3].area
+    PUSH EDI                            ; 0049c9f6 | g_ClippedTriangleBuffer[3].dominant_axis
     CALL core_dtri.cpp_clipLineToPlane_FUN_0049b6c0 ; 0049c9f7
         ;   XREF to: 0049b6c0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_0049b6c0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)
     MOV EDX,dword ptr [0x02cee9a0]      ; 0049c9fc | g_ClipBuffer5VertexCount
@@ -935,7 +935,7 @@ section .text
     PUSH 0x0                            ; 0049ca59
     ADD ECX,0x2cee9a4                   ; 0049ca5b | g_ClippedTriangleBuffer[6].normal.z | g_ClipBuffer5Vertices
     PUSH ECX                            ; 0049ca61 | g_ClippedTriangleBuffer[6].normal.z
-    PUSH EDI                            ; 0049ca62 | g_ClippedTriangleBuffer[3].area
+    PUSH EDI                            ; 0049ca62 | g_ClippedTriangleBuffer[3].dominant_axis
     PUSH EDX                            ; 0049ca63 | g_ClipBuffer4Vertices[1].x
     CALL core_dtri.cpp_clipLineToPlane_FUN_0049b6c0 ; 0049ca64
         ;   XREF to: 0049b6c0 (UNCONDITIONAL_CALL)  ; void core_dtri.cpp_clipLineToPlane_FUN_0049b6c0(CVector3f * point1_ptr, CVector3f * point2_ptr, CVector3f * result_ptr, double plane_nx, ...)

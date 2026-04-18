@@ -22,7 +22,7 @@ CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_ctor_FUN_004cbbc0(CFlashligh
   pCVar2->can_penetrate = 0;
   pCVar2->bolt_velocity = 0.0;
   fVar1 = 8.0f;
-  pCVar2->fire_cooldown = 0.0;
+  pCVar2->fire_cooldown = 0;
   pCVar2->ammo_count = 0;
   pCVar2->weight = fVar1;
   return (CFlashlight *)pCVar2;

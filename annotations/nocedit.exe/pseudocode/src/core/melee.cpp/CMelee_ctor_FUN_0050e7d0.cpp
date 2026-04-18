@@ -25,7 +25,7 @@ CMelee * __cdecl core_melee_cpp_CMelee_ctor_FUN_0050e7d0(CMelee *this_ptr)
   (pCVar2->base).fire_mode = 0;
   (pCVar2->base).can_penetrate = 0;
   (pCVar2->base).bolt_velocity = 5.0;
-  (pCVar2->base).fire_cooldown = 0.0;
+  (pCVar2->base).fire_cooldown = 0;
   (pCVar2->base).can_attach_light = 0;
   pCVar2->allowed_attack_types = 1;
   pCVar2->strength_lo = 10.0;

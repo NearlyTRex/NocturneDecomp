@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 254,
-    "complexity_score": 128,
+    "complexity_score": 143,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 17,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 103,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_strcpy"
     ],
     "total_lines": 357
   },
@@ -343,6 +344,14 @@
       "severity": "mild",
       "text": "(&CStack_448.base,(char *)(*(int *)((int)g_ActorClassRegistrations + iVar6) + 1));",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 55,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

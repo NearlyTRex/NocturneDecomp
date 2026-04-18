@@ -7,16 +7,17 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1081,
-    "complexity_score": 596,
+    "complexity_score": 631,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 91,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 486,
-    "suspect_count": 10,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
-      "raw_address_constant"
+      "raw_address_constant",
+      "unrolled_strcpy"
     ],
     "total_lines": 1567
   },
@@ -615,7 +616,7 @@
     {
       "addr": "02d01920",
       "name": "g_CurrentPalette",
-      "type": "byte*",
+      "type": "SRGBColorPalette*",
       "value": null
     },
     {
@@ -717,6 +718,26 @@
     },
     "pcode_op_count": 5834
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 450,
+      "match": "(SRGBColorPalette *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar24 = (SRGBColorPalette *)((int)pSVar24 + (uint)bVar31 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 453,
+      "match": "(SRGBColorPalette *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar13 = (SRGBColorPalette *)((int)pSVar13 + (uint)bVar31 * -2 + 1);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 336,
     "local_size": 328,
@@ -1147,10 +1168,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 450,
+      "line": 447,
       "match": "(SRGBColorPalette *)((int)",
       "severity": "mild",
-      "text": "pSVar24 = (SRGBColorPalette *)((int)pSVar24 + (uint)bVar31 * -2 + 1);",
+      "text": "pSVar13 = (SRGBColorPalette *)((int)pSVar13 + (uint)bVar31 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1176,6 +1197,30 @@
       "severity": "moderate",
       "text": "((g_CameraConvertedPalette[pbVar7[0x281]] & 0xfcfcfc) >> 2);",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 118,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 135,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 161,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

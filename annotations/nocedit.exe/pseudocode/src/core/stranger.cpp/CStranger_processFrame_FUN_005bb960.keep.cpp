@@ -37,8 +37,6 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_005bb960(CStranger *th
   int iVar24;
   int iDesiredState;
   int iForceImmediate;
-  uint uVar25;
-  uint local_2dc;
   float local_2d8;
   float local_2d0;
   float local_2c4;
@@ -909,18 +907,14 @@ LAB_005bd5e6:
                   (g_CConsolePtr,"Splat at %3.2f fps\n",
                    (double)(this_ptr->base).base.velocity.y);
         fVar17 = -this_ptr->fall_velocity_snapshot;
-        uVar25 = SUB84(__BITCAST_UINT64((double)fVar17),0);
-        local_2dc = (uint)((ulonglong)(double)fVar17 >> 0x20);
         if (fVar17 < (float)20) {
           if (((local_20 == 0xd) || (local_20 == 9)) || (local_20 == 0xf)) goto LAB_005bd763;
         }
         else {
           local_74 = 0;
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_2bc);
-          local_2bc.damage_amount =
-               (float)(((float10)__BITCAST_DOUBLE(CONCAT44(local_2dc,uVar25)) + (float10)-20) *
-                       (float10)0.050000000000000003 * (float10)100);
-          if (0x42c80000 < (int)local_2bc.damage_amount) {
+          local_2bc.damage_amount = (fVar17 - 20.0f) * 5.0f;
+          if (local_2bc.damage_amount > 100.0f) {
             local_74 = 1;
             local_2bc.damage_amount = 9999.0;
           }

@@ -1393,7 +1393,7 @@ LAB_00591835:
           g_CurrentDebugLine = 0xff5;
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           if (local_188 != (CBoundingBox3D *)0x0) {
-            shape_memdbg_cpp_free_FUN_005fe659(&local_188[-1].max.z);
+            shape_memdbg_cpp_free_FUN_005fe659((char *)local_188 - 4);
           }
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xff6;
@@ -1430,7 +1430,7 @@ LAB_0058f8e7:
   g_CurrentDebugLine = 0xbe4;
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   if (local_188 != (CBoundingBox3D *)0x0) {
-    shape_memdbg_cpp_free_FUN_005fe659(&local_188[-1].max.z);
+    shape_memdbg_cpp_free_FUN_005fe659((char *)local_188 - 4);
   }
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0xbe5;

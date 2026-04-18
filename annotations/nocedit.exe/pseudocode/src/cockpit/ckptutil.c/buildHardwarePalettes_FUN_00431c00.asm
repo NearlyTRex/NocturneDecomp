@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_00431c00(char *rgb_palette_data)
+; void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_00431c00(SRGBColorPalette *rgb_palette_data)
 ;
 ; Parameters:
-; char *           Stack[0x4]:4   rgb_palette_data
+; SRGBColorPalette * Stack[0x4]:4   rgb_palette_data
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   byte* g_CurrentPalette
+;   SRGBColorPalette* g_CurrentPalette
 ;   uint[256] g_Hardware32BitPalette
 ;   undefined4 g_GlobalPalette[1]
 ;   ushort[256] g_Hardware16BitPalette

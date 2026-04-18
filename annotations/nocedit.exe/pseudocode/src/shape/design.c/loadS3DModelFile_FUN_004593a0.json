@@ -7,15 +7,16 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 656,
-    "complexity_score": 252,
+    "complexity_score": 307,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 64,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 237,
-    "suspect_count": 1,
+    "suspect_count": 6,
     "suspect_types": [
-      "raw_address_constant"
+      "raw_address_constant",
+      "unrolled_strcpy"
     ],
     "total_lines": 893
   },
@@ -731,6 +732,46 @@
       "severity": "moderate",
       "text": "memset(g_ModelPolygonData,0,0x766880);",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 43,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 142,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 172,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 183,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 224,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

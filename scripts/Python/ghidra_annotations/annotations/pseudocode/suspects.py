@@ -75,6 +75,8 @@ SUSPECT_SEVERITY = {
     'wrong_global': 'moderate',
     'suspicious_cast': 'moderate',
     'raw_address_constant': 'moderate',
+    'unrolled_strcpy': 'mild',
+    'unrolled_memcpy': 'mild',
 }
 
 
@@ -836,6 +838,173 @@ def identify_raw_address_constant_suspects(decompiled_code, address_interval_map
     return suspects
 
 
+# Watcom's loop-unrolled strcpy copies 2 bytes per iteration and checks for
+# null termination in the middle of the body. The distinguishing line is
+# `if (<byte_var> == '\0') break;` immediately after `*<dst> = <byte_var>;`
+# — normal code never breaks on null right after a byte store.
+_UNROLLED_BYTE_STORE_RE = re.compile(
+    r"^\s*\*?(\w+)(?:\[\d+\])?\s*=\s*(\w+)\s*;\s*$")
+_UNROLLED_NULL_BREAK_RE = re.compile(
+    r"^\s*if\s*\(\s*(\w+)\s*==\s*'\\0'\s*\)\s*break\s*;\s*$")
+_UNROLLED_DO_RE = re.compile(r"^\s*do\s*\{?\s*$")
+_UNROLLED_WHILE_RE = re.compile(
+    r"^\s*\}\s*while\s*\(\s*\w+\s*!=\s*'\\0'\s*\)\s*;\s*$")
+
+
+def identify_unrolled_strcpy_loops(decompiled_code):
+    """Detect Watcom's loop-unrolled byte-by-byte strcpy artifacts.
+
+    The canonical shape is a do-while copying 2 bytes per iteration:
+        do {
+            cVar1 = *src;
+            *dst = cVar1;
+            if (cVar1 == '\\0') break;
+            cVar2 = src[1];
+            src = src + 2;
+            dst[1] = cVar2;
+            dst = dst + 2;
+        } while (cVar2 != '\\0');
+
+    These should be replaced with `strcpy(dst, src);` in a .keep.
+
+    The match anchor is the `if (<var> == '\\0') break;` line that sits
+    immediately after a byte store — a combination specific to this pattern.
+    The detector then confirms by looking for the `do {` opener above and
+    the `} while (<var> != '\\0')` closer below.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts, one per detected loop (located at the
+        loop's `do {` line so the user can jump straight to it).
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    lines = decompiled_code.split('\n')
+    n = len(lines)
+    for i in range(n - 1):
+        # Require `*dst = cVar;` followed by `if (cVar == '\0') break;`
+        store_m = _UNROLLED_BYTE_STORE_RE.match(lines[i])
+        if not store_m:
+            continue
+        null_m = _UNROLLED_NULL_BREAK_RE.match(lines[i + 1])
+        if not null_m or store_m.group(2) != null_m.group(1):
+            continue
+        # Look upward for the `do {` header
+        loop_start = None
+        for back in range(1, 8):
+            if i - back < 0:
+                break
+            if _UNROLLED_DO_RE.match(lines[i - back]):
+                loop_start = i - back
+                break
+        if loop_start is None:
+            continue
+        # Look downward for the `} while (<var> != '\0');` closer
+        loop_end = None
+        for fwd in range(2, 14):
+            if i + fwd >= n:
+                break
+            if _UNROLLED_WHILE_RE.match(lines[i + fwd]):
+                loop_end = i + fwd
+                break
+        if loop_end is None:
+            continue
+        suspects.append({
+            'line': loop_start + 1,
+            'type': 'unrolled_strcpy',
+            'match': 'do {',
+            'text': lines[loop_start].strip()[:120],
+            'description': (
+                'Watcom loop-unrolled strcpy (2-byte-at-a-time do-while '
+                'with mid-body null check). Replace the whole loop with '
+                'strcpy() in a .keep.'),
+            'severity': 'mild',
+        })
+    return suspects
+
+
+# Watcom's loop-unrolled memcpy copies N dwords (or words/bytes) per
+# iteration inside a countdown for loop. The tell-tale combination is a
+# countdown header plus the `((uint)<bool> * -2 + 1)` arithmetic, which is
+# Watcom's direction-select idiom for REP MOVSD emulation.
+_UNROLLED_MEMCPY_FOR_RE = re.compile(
+    r"^\s*for\s*\(\s*(\w+)\s*=\s*[^;]+?;\s*\1\s*!=\s*0\s*;\s*"
+    r"\1\s*=\s*\1\s*\+\s*-?1\s*\)\s*\{?\s*$")
+_UNROLLED_MEMCPY_STORE_RE = re.compile(
+    r"^\s*\*\s*\(\s*\w+\s*\*\s*\)\s*\w+\s*=\s*"
+    r"\*\s*\(\s*\w+\s*\*\s*\)\s*\w+\s*;\s*$")
+# The `(uint)bVar * -2 + 1` direction trick — very specific to Watcom's
+# REP MOVSD lowering. `* -8 + 4` is the dword-scaled variant.
+_UNROLLED_MEMCPY_DIR_RE = re.compile(
+    r"\(\s*uint\s*\)\s*\w+\s*\*\s*-?\d+\s*\+\s*\d+")
+
+
+def identify_unrolled_memcpy_loops(decompiled_code):
+    """Detect Watcom's loop-unrolled memcpy artifacts.
+
+    Canonical shape:
+        for (iVar = N; iVar != 0; iVar = iVar + -1) {
+            *(uint *)dst = *(uint *)src;
+            src = src + ((uint)bVar * -2 + 1) * 4;
+            dst = dst + (uint)bVar * -8 + 4;
+        }
+
+    These should be replaced with `memcpy(dst, src, N);` (or `memmove` if
+    direction bool can be 1) in a .keep.
+
+    Detection requires all three pieces (countdown for, typed store, and
+    the `(uint)bool` direction idiom) to be confident the loop is a memcpy
+    and not a generic "do N times" countdown.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts, one per detected loop.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    lines = decompiled_code.split('\n')
+    n = len(lines)
+    for i in range(n - 2):
+        if not _UNROLLED_MEMCPY_FOR_RE.match(lines[i]):
+            continue
+        # Walk up to 6 lines forward looking for a matching close brace
+        # and checking the body for the store + direction-idiom signals.
+        has_store = False
+        has_direction = False
+        close_line = None
+        for fwd in range(1, 8):
+            if i + fwd >= n:
+                break
+            body = lines[i + fwd]
+            if _UNROLLED_MEMCPY_STORE_RE.match(body):
+                has_store = True
+            if _UNROLLED_MEMCPY_DIR_RE.search(body):
+                has_direction = True
+            if body.strip().startswith('}'):
+                close_line = i + fwd
+                break
+        if not (has_store and has_direction and close_line):
+            continue
+        suspects.append({
+            'line': i + 1,
+            'type': 'unrolled_memcpy',
+            'match': 'for (...; != 0; ... + -1)',
+            'text': lines[i].strip()[:120],
+            'description': (
+                'Watcom loop-unrolled memcpy (countdown for-loop with typed '
+                'word/dword store and direction-bool arithmetic). Replace '
+                'the whole loop with memcpy(dst, src, N) in a .keep.'),
+            'severity': 'mild',
+        })
+    return suspects
+
+
 def detect_content_suspects(code, func_globals=None, global_interval_map=None,
                             address_interval_map=None, func_calls=None):
     """Run all content-based (source-text) suspect detectors on a code blob.
@@ -867,6 +1036,8 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
         code, address_interval_map))
     found.extend(identify_format_string_mismatch(
         code, func_calls))
+    found.extend(identify_unrolled_strcpy_loops(code))
+    found.extend(identify_unrolled_memcpy_loops(code))
     return found
 
 

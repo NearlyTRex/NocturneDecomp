@@ -759,7 +759,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
             else {
               g_CurrentDebugLine = 0xdca;
               g_CurrentDebugFilename = "..\\core\\dmodel.cpp";
-              shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].area);
+              shape_memdbg_cpp_free_FUN_005fe659((char *)this_ptr->collision_triangle_list - 4);
               this_ptr->collision_triangle_count = 0;
               this_ptr->collision_triangle_list = (CDemonTriangle *)0x0;
             }

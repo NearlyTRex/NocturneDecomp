@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 383,
-    "complexity_score": 163,
+    "complexity_score": 178,
     "cross_reference_count": 1,
     "function_call_count": 24,
     "global_count": 26,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 148,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_strcpy"
     ],
     "total_lines": 531
   },
@@ -493,6 +494,14 @@
       "severity": "mild",
       "text": "puVar2 = (uint *)((int)&this_ptr->parsed_lines->text + iVar2);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 53,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

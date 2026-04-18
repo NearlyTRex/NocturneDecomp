@@ -39,7 +39,7 @@ void __cdecl core_fire_cpp_CGunFlame_init_FUN_004c4c00(CGunFlame *this_ptr)
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                   (&this_ptr_02->base,local_40,&this_ptr->position);
         core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0
-                  (this_ptr_02,local_40,0,0.0,0x3f800000,(uint)(this_ptr->flame_type == 2));
+                  (this_ptr_02,local_40,0,0,1.0,(uint)(this_ptr->flame_type == 2));
       }
       local_20 = local_20 + 4;
       iVar4 = iVar4 + 1;

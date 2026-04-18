@@ -99,8 +99,8 @@ void __cdecl engine_dosio_c_CFileFinder_convertStruct_FUN_00481dc0(CFileFinder *
 void __cdecl engine_dosio_c_splitPath_FUN_00481f20(char *full_path,char *drive,char *directory,char *filename,char *extension);
 void __cdecl engine_dosio_c_makePath_FUN_00481f50(char *full_path,char *drive,char *directory,char *filename,char *extension);
 void __cdecl engine_dosio_c_ensureTrailingSlash_FUN_00481f80(char *input_path,char *drive,char *output_path);
-void __cdecl engine_dosio_c_removeFileExtension_FUN_00482040(char *source_path,char *destination_buffer);
-void __cdecl engine_dosio_c_changeFileExtension_FUN_00482050(char *source_path,char *destination_buffer,char *new_extension);
+void __cdecl engine_dosio_c_removeFileExtension_FUN_00482040(char *source_path);
+void __cdecl engine_dosio_c_changeFileExtension_FUN_00482050(char *path,char *new_extension);
 int __cdecl engine_dosio_c_getFullPath_FUN_004820c0(char *output_path,char *input_path);
 CDemonPart * __cdecl core_dpart_cpp_CDemonPart_ctor_FUN_00482110(CDemonPart *this_ptr);
 CDemonPart * __cdecl core_dpart_cpp_CDemonPart_dtor_FUN_00482160(CDemonPart *this_ptr,uint flags);

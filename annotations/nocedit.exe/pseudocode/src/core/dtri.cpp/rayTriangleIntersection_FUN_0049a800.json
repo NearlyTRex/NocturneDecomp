@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 202,
-    "complexity_score": 86,
+    "complexity_score": 71,
     "cross_reference_count": 6,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 71,
-    "suspect_count": 1,
-    "suspect_types": [
-      "suspect_float"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 273
   },
   "cross_references": [
@@ -207,6 +205,17 @@
     },
     "pcode_op_count": 1388
   },
+  "resolved_suspects": [
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 47,
+      "match": "2.8026e-45",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "if (fVar2 == 2.8026e-45) {",
+      "type": "suspect_float"
+    }
+  ],
   "stack_frame": {
     "frame_size": 60,
     "local_size": 48,
@@ -296,14 +305,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 47,
-      "match": "2.8026e-45",
-      "severity": "mild",
-      "text": "if (fVar2 == 2.8026e-45) {",
-      "type": "suspect_float"
-    }
-  ]
+  "suspects": []
 }

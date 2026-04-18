@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 102,
+    "complexity_score": 117,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 7,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 62,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "unnamed_local",
+      "unrolled_strcpy",
       "warning_inlined_function"
     ],
     "total_lines": 234
@@ -221,6 +222,14 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 44,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     },
     {
       "description": "Unnamed local variable",

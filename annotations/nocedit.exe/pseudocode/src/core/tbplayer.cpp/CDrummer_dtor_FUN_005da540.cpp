@@ -28,7 +28,7 @@ CDrummer * __cdecl core_tbplayer_cpp_CDrummer_dtor_FUN_005da540(CDrummer *this_p
   pCVar2 = (CDrummer_ptr_13260)
            core_armour_cpp_CFlame_arrdtor_FUN_00412720(ADJ(pCVar1)->base.base.flames,0);
   pSVar1 = (CDrummer_ptr_12060)
-           core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar2)->base.base.fire_effects,0);
+           core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar2)->base.base.fires,0);
   pCVar3 = (CDrummer_ptr_11536)
            core_armour_cpp_CVector3f_arrdtor_FUN_004126e0
                      (ADJ(pSVar1)->base.base.collision_test_normals,0);

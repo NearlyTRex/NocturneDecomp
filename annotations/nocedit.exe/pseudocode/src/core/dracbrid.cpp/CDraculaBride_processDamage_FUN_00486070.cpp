@@ -45,7 +45,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_processDamage_FUN_00486070(CDracula
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,&local_24,input_local_point);
     core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0
-              ((CCharacter *)this_ptr,&local_24,0,0.0,0x41200000,0);
+              ((CCharacter *)this_ptr,&local_24,0,0,10.0,0);
   }
   core_dracbrid_cpp_CDraculaBride_checkHeartShot_FUN_00486020(this_ptr,damage_info);
   fVar1 = (this_ptr->base).base.hit_points - damage_info->damage_amount;

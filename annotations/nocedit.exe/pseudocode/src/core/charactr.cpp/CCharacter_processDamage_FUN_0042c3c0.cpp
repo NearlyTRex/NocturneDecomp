@@ -69,7 +69,7 @@ LAB_0042c429:
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               (&this_ptr->base,&local_28,&damage_info->impact_direction);
     core_charactr_cpp_CCharacter_igniteBone_FUN_0042b5b0
-              (this_ptr,&local_28,damage_info->hit_part_index,0.0,0x3f800000,0);
+              (this_ptr,&local_28,damage_info->hit_part_index,0,1.0,0);
   }
   if (0.0 < damage_info->gore_multiplier) {
     fVar1 = damage_info->damage_amount;

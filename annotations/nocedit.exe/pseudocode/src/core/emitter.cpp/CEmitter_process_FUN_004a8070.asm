@@ -458,7 +458,7 @@ section .text
     MOV ESI,dword ptr [EAX*0x4 + 0x2db87c0] ; 004a851e | g_HeroActors
     PUSH ESI                            ; 004a8525
     CALL core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0 ; 004a8526
-        ;   XREF to: 0042b5b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter * this_ptr, CVector3f * position, int fire_type, float spread_rate, ...)
+        ;   XREF to: 0042b5b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter * this_ptr, CVector3f * position, int fire_type, int flame_type, ...)
     ADD ESP,0x18                        ; 004a852b
     JMP 0x004a8201                      ; 004a852e
         ;   XREF to: 004a8201 (UNCONDITIONAL_JUMP)  ; caseD_a

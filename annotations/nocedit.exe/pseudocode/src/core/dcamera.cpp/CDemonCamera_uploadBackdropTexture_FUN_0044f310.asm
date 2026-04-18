@@ -18,7 +18,7 @@
 ;   undefined4 g_CameraTextureWorkBuffer[1]
 ;   undefined4 g_CameraTextureWorkBuffer[1]+1
 ;   CDemonRenderer g_CDemonRendererInstance
-;   byte* g_CurrentPalette
+;   SRGBColorPalette* g_CurrentPalette
 ;   void* g_CurrentTextureData
 ;
 ; Called Functions:

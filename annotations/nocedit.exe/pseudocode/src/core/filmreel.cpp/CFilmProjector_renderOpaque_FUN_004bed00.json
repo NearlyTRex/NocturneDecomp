@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 47,
+    "complexity_score": 32,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 32,
-    "suspect_count": 1,
-    "suspect_types": [
-      "suspect_float"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 121
   },
   "cross_references": [],
@@ -119,6 +117,17 @@
     },
     "pcode_op_count": 309
   },
+  "resolved_suspects": [
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 32,
+      "match": "6.972979e-39",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "fStack_3c = 6.972979e-39;",
+      "type": "suspect_float"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -135,16 +144,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 32,
-      "match": "6.972979e-39",
-      "severity": "mild",
-      "text": "fStack_3c = 6.972979e-39;",
-      "type": "suspect_float"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

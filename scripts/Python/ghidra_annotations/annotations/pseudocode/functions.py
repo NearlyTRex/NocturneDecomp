@@ -581,6 +581,7 @@ def analyze_call_site(listing, call_addr, caller_func, uses_register_params=True
         return None
 
     caller_body = caller_func.getBody()
+    caller_entry = caller_func.getEntryPoint()
     current_instr = call_instr.getPrevious()
     while current_instr and instructions_checked < max_instructions:
 
@@ -601,6 +602,18 @@ def analyze_call_site(listing, call_addr, caller_func, uses_register_params=True
                     break
             if has_branch_ref:
                 break
+
+        # Stop at the prologue. `SUB ESP,N` marks the end of prologue
+        # register saves; anything before it is `PUSH EBX/ESI/EDI/EBP`
+        # etc., which are not parameter pushes for our call site.
+        if mnemonic == 'SUB':
+            dest = current_instr.getDefaultOperandRepresentation(0)
+            if dest and dest.upper() == 'ESP':
+                break
+        # Also stop when we reach the caller's entry instruction — catches
+        # leaf callers with no SUB ESP (pure register-save prologues).
+        if current_instr.getAddress() == caller_entry:
+            break
 
         if mnemonic == 'PUSH':
             stack_params += 1

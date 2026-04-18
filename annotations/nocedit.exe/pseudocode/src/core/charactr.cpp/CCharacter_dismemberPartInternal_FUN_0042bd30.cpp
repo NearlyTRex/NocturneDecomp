@@ -55,7 +55,7 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30(CCh
     }
     iVar3 = 0;
     if (0 < this_ptr->fire_count) {
-      pSVar2 = this_ptr->fire_effects;
+      pSVar2 = this_ptr->fires;
       do {
         if ((part_index == pSVar2->bone_part) && (-1 < pSVar2->bone_index)) {
           core_xform_cpp_transformVector3x4_FUN_005f4dc0

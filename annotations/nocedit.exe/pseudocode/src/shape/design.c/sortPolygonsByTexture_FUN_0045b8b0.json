@@ -7,15 +7,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 109,
+    "complexity_score": 94,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 49,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast"
     ],
     "total_lines": 126
@@ -81,30 +80,30 @@
         "call_addr": "00459e8c",
         "call_type": "direct",
         "caller": "shape_design.c_exportModelToMDL_FUN_00459e80",
-        "estimated_params": 4,
-        "instructions_analyzed": 6,
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
         "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 16,
-        "stack_params": 4
+        "stack_bytes": 0,
+        "stack_params": 0
       },
       {
         "call_addr": "0045aa8c",
         "call_type": "direct",
         "caller": "shape_design.c_exportModelToBIN_FUN_0045aa80",
-        "estimated_params": 4,
-        "instructions_analyzed": 6,
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
         "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 16,
-        "stack_params": 4
+        "stack_bytes": 0,
+        "stack_params": 0
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 4,
-    "matches_declared": false
+    "estimated_params": 0,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.360655737704918,
@@ -198,17 +197,6 @@
       "severity": "mild",
       "text": "pSVar3 = (SShapeEditorPolygon *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:4",
-      "param_delta": 4,
-      "text": "Function declares 0 params but call sites push 4 (4 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

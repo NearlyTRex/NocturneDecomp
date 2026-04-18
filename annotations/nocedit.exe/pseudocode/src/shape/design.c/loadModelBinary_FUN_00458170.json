@@ -7,16 +7,17 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 803,
-    "complexity_score": 273,
+    "complexity_score": 308,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 38,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 243,
-    "suspect_count": 2,
+    "suspect_count": 5,
     "suspect_types": [
       "raw_address_constant",
-      "unnamed_local"
+      "unnamed_local",
+      "unrolled_strcpy"
     ],
     "total_lines": 1046
   },
@@ -740,6 +741,30 @@
       "severity": "moderate",
       "text": "_fread((void *)(local_28 * 4 + g_PolygonCount * 0x184 + 0x16e99c8),1,4,local_38);",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 106,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 138,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 190,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     },
     {
       "description": "Unnamed local variable",

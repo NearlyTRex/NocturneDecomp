@@ -13,6 +13,7 @@ void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_005dd200(CTexture
 {
   int iVar1;
   int iVar4;
+  uint uVar2;
   uint uVar5;
   byte *pbVar6;
   int iVar7;
@@ -27,16 +28,16 @@ void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_005dd200(CTexture
   g_CurrentTextureOffsetV = 0;
   g_CurrentTextureDimension = cache->texture_dimensions[texture_index];
   pbVar6 = cache->texture_palette_ptrs[texture_index];
-  g_CurrentPalette = pbVar6;
+  g_CurrentPalette = (SRGBColorPalette *)pbVar6;
   if (g_UseExternalRenderer == 0) {
     if (g_BitsPerPixel == 0x20) {
       iVar1 = 0;
       do {
-        pbVar1 = pbVar6 + 1;
-        bVar3 = *pbVar6;
-        pbVar2 = pbVar6 + 2;
+        pbVar1 = &((SRGBColorPalette *)pbVar6)->colors[0].g;
+        bVar3 = ((SRGBColorPalette *)pbVar6)->colors[0].r;
+        pbVar2 = &((SRGBColorPalette *)pbVar6)->colors[0].b;
         iVar4 = iVar1 + 4;
-        pbVar6 = pbVar6 + 3;
+        pbVar6 = &((SRGBColorPalette *)pbVar6)->colors[1].r;
         *(uint *)((int)g_Hardware32BitPalette + iVar1) =
              (uint)*pbVar2 << (g_BlueBitPosition.bytes[0] & 0x1f) |
              (uint)*pbVar1 << (g_GreenBitPosition.bytes[0] & 0x1f) |
@@ -49,20 +50,23 @@ void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_005dd200(CTexture
       iVar7 = 0;
       do {
         *(ushort *)((int)g_Hardware16BitPalette + iVar7) =
-             (ushort)((uint)pbVar6[1] / (uint)g_GreenScaleFactor <<
+             (ushort)((uint)((SRGBColor *)pbVar6)->g / (uint)g_GreenScaleFactor <<
                      (g_GreenBitPosition.bytes[0] & 0x1f)) |
-             (ushort)((uint)*pbVar6 / (uint)g_RedScaleFactor << (g_RedBitPosition.bytes[0] & 0x1f))
-             | (ushort)((uint)pbVar6[2] / (uint)g_BlueScaleFactor <<
-                       (g_BlueBitPosition.bytes[0] & 0x1f));
+             (ushort)((uint)((SRGBColor *)&((SRGBColor *)pbVar6)->r)->r / (uint)g_RedScaleFactor <<
+                     (g_RedBitPosition.bytes[0] & 0x1f)) |
+             (ushort)((uint)((SRGBColor *)pbVar6)->b / (uint)g_BlueScaleFactor <<
+                     (g_BlueBitPosition.bytes[0] & 0x1f));
+        uVar2 = (uint)((SRGBColor *)&((SRGBColor *)pbVar6)->r)->r;
         if (g_BitsPerPixel == 0x20) {
-          uVar5 = (uint)pbVar6[2] << (g_BlueBitPosition.bytes[0] & 0x1f) |
-                  (uint)*pbVar6 << (g_RedBitPosition.bytes[0] & 0x1f) |
-                  (uint)pbVar6[1] << (g_GreenBitPosition.bytes[0] & 0x1f);
+          uVar5 = (uint)((SRGBColor *)pbVar6)->b << (g_BlueBitPosition.bytes[0] & 0x1f) |
+                  uVar2 << (g_RedBitPosition.bytes[0] & 0x1f) |
+                  (uint)((SRGBColor *)pbVar6)->g << (g_GreenBitPosition.bytes[0] & 0x1f);
         }
         else {
-          uVar5 = (uint)pbVar6[1] << 8 | (uint)*pbVar6 << 0x10 | (uint)pbVar6[2];
+          uVar5 = (uint)((SRGBColor *)pbVar6)->g << 8 | uVar2 << 0x10 |
+                  (uint)((SRGBColor *)pbVar6)->b;
         }
-        pbVar6 = pbVar6 + 3;
+        pbVar6 = (byte *)((int)pbVar6 + 3);
         *(uint *)((int)g_Hardware32BitPalette + local_14) = uVar5;
         local_14 = local_14 + 4;
         iVar7 = iVar7 + 2;

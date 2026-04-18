@@ -26,7 +26,7 @@ CSmiley * __cdecl core_smiley_cpp_CSmiley_dtor_FUN_005a3880(CSmiley *this_ptr,ui
   pCVar1 = (CSmiley_ptr_13260)
            core_armour_cpp_CFlame_arrdtor_FUN_00412720((this_ptr->base).base.flames,0);
   pSVar1 = (CSmiley_ptr_12060)
-           core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar1)->base.base.fire_effects,0);
+           core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar1)->base.base.fires,0);
   pCVar2 = (CSmiley_ptr_11536)
            core_armour_cpp_CVector3f_arrdtor_FUN_004126e0
                      (ADJ(pSVar1)->base.base.collision_test_normals,0);

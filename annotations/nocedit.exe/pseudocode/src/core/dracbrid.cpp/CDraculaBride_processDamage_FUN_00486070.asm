@@ -81,7 +81,7 @@ section .text
     PUSH EAX                            ; 004860d2
     PUSH ESI                            ; 004860d3
     CALL core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0 ; 004860d4
-        ;   XREF to: 0042b5b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter * this_ptr, CVector3f * position, int fire_type, float spread_rate, ...)
+        ;   XREF to: 0042b5b0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0(CCharacter * this_ptr, CVector3f * position, int fire_type, int flame_type, ...)
     ADD ESP,0x18                        ; 004860d9
     PUSH EDI                            ; 004860dc
         ;   Label: LAB_004860dc

@@ -36,7 +36,7 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_dtor_FUN_005e7700(CVampire
   pCVar6 = (CVampireBoss_ptr_13260)
            core_armour_cpp_CFlame_arrdtor_FUN_00412720(ADJ(pCVar5)->base.base.flames,0);
   pSVar1 = (CVampireBoss_ptr_12060)
-           core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar6)->base.base.fire_effects,0);
+           core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar6)->base.base.fires,0);
   pCVar7 = (CVampireBoss_ptr_11536)
            core_armour_cpp_CVector3f_arrdtor_FUN_004126e0
                      (ADJ(pSVar1)->base.base.collision_test_normals,0);

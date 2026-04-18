@@ -25,7 +25,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0xc]       ; 0048dc35
     PUSH ECX                            ; 0048dc39
     CALL engine_texture.cpp_loadAndUpdateTexture_FUN_005dd930 ; 0048dc3a
-        ;   XREF to: 005dd930 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_loadAndUpdateTexture_FUN_005dd930(SMRGLTextureBasic * tex_to_load, SMRGLTextureBasic * tex_to_update, SRGBColorPalette * palette_data)
+        ;   XREF to: 005dd930 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_loadAndUpdateTexture_FUN_005dd930(SMRGLTextureBasic * texture, SRGBColorPalette * palette)
     ADD ESP,0x8                         ; 0048dc3f
     RET                                 ; 0048dc42
 

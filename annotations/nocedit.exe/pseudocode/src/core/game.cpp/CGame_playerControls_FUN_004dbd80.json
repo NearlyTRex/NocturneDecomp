@@ -7,14 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 64,
+    "complexity_score": 79,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 16,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 49,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "unrolled_memcpy",
       "warning_unreachable"
     ],
     "total_lines": 150
@@ -245,6 +246,14 @@
       "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x004dbe2e) */",
       "type": "warning_unreachable"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "line": 38,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "mild",
+      "text": "for (iVar2 = 0x96; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
     }
   ]
 }

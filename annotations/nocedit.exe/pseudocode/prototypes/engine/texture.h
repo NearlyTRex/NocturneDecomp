@@ -69,11 +69,11 @@ void __cdecl doNothing(int detail_level);
 
 // Original: engine_texture.cpp_updateTextureWithPalette_FUN_005dd900
 // Address: 005dd900
-void __cdecl updateTextureWithPalette(SMRGLTextureBasic *texture_to_load,SMRGLTextureBasic *texture_to_update);
+void __cdecl updateTextureWithPalette(SMRGLTextureBasic *texture);
 
 // Original: engine_texture.cpp_loadAndUpdateTexture_FUN_005dd930
 // Address: 005dd930
-void __cdecl loadAndUpdateTexture(SMRGLTextureBasic *tex_to_load,SMRGLTextureBasic *tex_to_update,SRGBColorPalette *palette_data);
+void __cdecl loadAndUpdateTexture(SMRGLTextureBasic *texture,SRGBColorPalette *palette);
 
 // Original: engine_texture.cpp_enableTextureFiltering_FUN_005dd960
 // Address: 005dd960
