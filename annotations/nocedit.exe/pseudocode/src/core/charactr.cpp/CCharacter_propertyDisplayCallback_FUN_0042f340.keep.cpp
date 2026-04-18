@@ -21,15 +21,7 @@ void __cdecl core_charactr_cpp_CCharacter_propertyDisplayCallback_FUN_0042f340(C
            core_actor_cpp_castToClassHash_FUN_0040c790
                      (&this_ptr->base,g_CCharacterClassInfo.name_hash);
   pcVar4 = output_buffer;
-  do {
-    cVar1 = *pcVar3;
-    *pcVar4 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar3[1];
-    pcVar3 = pcVar3 + 2;
-    pcVar4[1] = cVar1;
-    pcVar4 = pcVar4 + 2;
-  } while (cVar1 != '\0');
+  strcpy(pcVar4,pcVar3);
   pcVar4 = (pCVar2->base).create_event + 0x10;
   pcVar3 = output_buffer;
   do {

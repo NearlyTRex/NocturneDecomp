@@ -10,21 +10,18 @@
 void __cdecl core_motion_cpp_CMotionController_render_FUN_0052e700(CMotionController *this_ptr,CDemonActor *actor)
 
 {
-  char cVar2;
   int iVar3;
   CBoundingBox3D *pCVar3;
   SMotion *pSVar4;
   SMotion *pSVar5;
   char *pcVar5;
   int iVar6;
-  char *pcVar7;
   char acStack_a8[100];
   CBoundingBox3D local_44;
   CVector3i local_2c;
   float local_20;
   float local_1c;
   int local_14;
-  char cVar1;
   SRenderVertex *pSVar2;
   
   if ((INT_02f43978 != 0) &&
@@ -45,16 +42,7 @@ void __cdecl core_motion_cpp_CMotionController_render_FUN_0052e700(CMotionContro
          (pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(this_ptr),
          pSVar4->state_index == this_ptr->state_index)) {
         pcVar5 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_0052dcf0(this_ptr);
-        pcVar7 = acStack_a8;
-        do {
-          cVar1 = *pcVar5;
-          *pcVar7 = cVar1;
-          if (cVar1 == '\0') break;
-          cVar2 = pcVar5[1];
-          pcVar5 = pcVar5 + 2;
-          pcVar7[1] = cVar2;
-          pcVar7 = pcVar7 + 2;
-        } while (cVar2 != '\0');
+        strcpy(acStack_a8,pcVar5);
       }
       else {
         CMotionList *pMotionList = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(this_ptr);

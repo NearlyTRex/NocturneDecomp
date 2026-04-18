@@ -10,7 +10,6 @@
 int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
 
 {
-  char cVar2;
   bool bVar3;
   char *pcVar2;
   int iVar3;
@@ -22,7 +21,6 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   int iVar7;
   uint uVar9;
   char *pcVar10;
-  char *pcVar7;
   CPickList local_870;
   CPickList local_4c8;
   char local_120 [256];
@@ -30,7 +28,6 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   int local_1c;
   int local_18;
   float local_14;
-  char cVar1;
   uint uVar8;
   
   local_14 = 0.0;
@@ -90,17 +87,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
     this_ptr->velocity_debug_enabled = 1;
   }
   core_dlight_cpp_CDemonLight_init_FUN_004727c0(&g_CDemonLightInstance);
-  pcVar10 = "Flashlight";
-  pcVar7 = g_CDemonLightInstance.base.camera_name;
-  do {
-    cVar1 = *pcVar10;
-    *pcVar7 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar2 = pcVar10[1];
-    pcVar10 = pcVar10 + 2;
-    pcVar7[1] = cVar2;
-    pcVar7 = pcVar7 + 2;
-  } while (cVar2 != '\0');
+  strcpy(g_CDemonLightInstance.base.camera_name,"Flashlight");
   g_CDemonLightInstance.light_enabled_flag = 0;
   g_CDemonLightInstance.base.max_distance = 64.0;
   core_set_cpp_CDemonSet_initScene_FUN_0056aa10(g_CDemonSetPtr);

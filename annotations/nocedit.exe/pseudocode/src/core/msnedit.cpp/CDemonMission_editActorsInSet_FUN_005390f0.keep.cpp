@@ -186,14 +186,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
     wincore_winrun_cpp_doNothing1_FUN_005f2f80();
     local_38 = -1;
     if (INT_02f7c634 != 2) {
-      pcVar13 = g_MsnEditCameraStatusBuffer;
-      pcVar12 = local_2b0;
-      for (iVar14 = 0x32; iVar14 != 0; iVar14 = iVar14 + -1) {
-        pcVar12 = pcVar12 + (uint)bVar14 * -8 + 4;
-        *(uint *)pcVar12 = *(uint *)pcVar13;
-        pcVar13 = pcVar13 + ((uint)bVar14 * -2 + 1) * 4;
-        pcVar12 = pcVar12;
-      }
+      memcpy(local_2b0,g_MsnEditCameraStatusBuffer,200);
       switch(INT_02f7c53c) {
       case 0:
         if ((g_CEdCheckInstance.checked_state != 0) && (g_MouseButtonFlags.dword == 0)) {

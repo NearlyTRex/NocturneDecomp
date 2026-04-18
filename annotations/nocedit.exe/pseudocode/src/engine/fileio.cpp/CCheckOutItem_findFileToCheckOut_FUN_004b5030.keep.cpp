@@ -10,16 +10,12 @@
 int __cdecl engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030(CCheckOutItem *this_ptr,char *file_pattern,char *output_filename_buffer)
 
 {
-  char cVar2;
   int iVar2;
   int iVar4;
   int iVar3;
   int iVar5;
   CCheckOutItem *pCVar4;
   char *pcVar5;
-  char *pcVar6;
-  char *pcVar7;
-  byte bVar7;
   CPickList local_86c;
   char local_4c4 [400];
   CFileFinder local_334;
@@ -27,9 +23,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030(CChe
   char local_11c [256];
   CCheckOutList local_1c;
   char local_14 [4];
-  char cVar1;
-  
-  bVar7 = 0;
+
   iVar2 = engine_fileio_cpp_establishUserIdentity_FUN_004b1c00();
   if (iVar2 == 0) {
     return 0;
@@ -43,26 +37,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030(CChe
   }
   engine_dosio_c_ensureTrailingSlash_FUN_00481f80(this_ptr->name,local_14,local_11c);
   engine_dosio_c_makePath_FUN_00481f50(local_220,local_14,local_11c,(char *)0x0,(char *)0x0);
-  iVar4 = -1;
-  pcVar6 = local_220;
-  do {
-    pcVar6 = pcVar6;
-    if (iVar4 == 0) break;
-    iVar4 = iVar4 + -1;
-    pcVar6 = pcVar6 + (uint)bVar7 * -2 + 1;
-    cVar1 = *pcVar6;
-    pcVar6 = pcVar6;
-  } while (cVar1 != '\0');
-  pcVar7 = pcVar6 + -1;
-  do {
-    cVar2 = *file_pattern;
-    *pcVar7 = cVar2;
-    if (cVar2 == '\0') break;
-    cVar2 = file_pattern[1];
-    file_pattern = file_pattern + 2;
-    pcVar7[1] = cVar2;
-    pcVar7 = pcVar7 + 2;
-  } while (cVar2 != '\0');
+  strcat(local_220,file_pattern);
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_86c);
   shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10(&local_86c,1);
   engine_dosio_c_CFileFinder_ctor_FUN_00481c30(&local_334);

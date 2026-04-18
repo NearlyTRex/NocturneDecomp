@@ -1,0 +1,69 @@
+// Name: sound_sndmain.cpp_testSoundFile_FUN_005ad3b0
+// Address: 005ad3b0
+// MANUAL RECONSTRUCTION
+// Address Range: [[005ad3b0, 005ad5b8]]
+// Convention: __cdecl
+// Signature: char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name)
+
+#include "nocturne.h"
+
+char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name)
+
+{
+  int iVar2;
+  uint sfx_handle;
+  int iVar3;
+  char *pcVar5;
+  double dVar6;
+  char local_170 [272];
+  int local_60;
+  double local_20;
+  float local_18;
+  float fStack_14;
+
+  sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)local_170);
+  strcpy(local_170,sample_name);
+  iVar2 = sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0((CSfxSample *)local_170);
+  if (iVar2 == 0) {
+    _sprintf
+              (g_SoundTestErrorBuffer,"Can't get sample info for %s",sample_name);
+    pcVar5 = g_SoundTestErrorBuffer;
+  }
+  else if (local_60 < 1) {
+    _sprintf
+              (g_SoundTestErrorBuffer,"Sample %s has unknown or invalid length",sample_name);
+    pcVar5 = g_SoundTestErrorBuffer;
+  }
+  else {
+    sound_sndmain_cpp_set3DListenerPos_FUN_005aa020(0.0,0.0,0.0);
+    sound_sndmain_cpp_set3DListenerOrient_FUN_005aa0a0(1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0);
+    sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
+    sound_sndmain_cpp_setNextSfxStaticPosition_FUN_005a88e0(0.0,0.0,20.0);
+    sound_sndmain_cpp_setNextSfxBaseFrequency_FUN_005a8a80(10.0);
+    sfx_handle = sound_sndmain_cpp_startSfx_FUN_005a8e90(sample_name);
+    sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
+    if (sfx_handle == 0) {
+      _sprintf
+                (g_SoundTestErrorBuffer,"Error playing %s",sample_name);
+      pcVar5 = g_SoundTestErrorBuffer;
+    }
+    else {
+      dVar6 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(sfx_handle,0);
+      local_18 = (float)dVar6;
+      if (0.0 <= local_18) {
+        while (iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(sfx_handle), iVar3 != 0) {
+          iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
+          if (iVar3 != 0) {
+            return "Canceled";
+          }
+          dVar6 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(sfx_handle,0);
+          if ((float)dVar6 < local_18) break;
+          wincore_winrun_cpp_sleep_FUN_005f40e0(0.05);
+          local_18 = (float)dVar6;
+        }
+      }
+      pcVar5 = (char *)0x0;
+    }
+  }
+  return pcVar5;
+}

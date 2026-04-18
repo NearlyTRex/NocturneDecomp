@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 885,
-    "complexity_score": 264,
+    "complexity_score": 249,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 38,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 249,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_strcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1134
   },
   "cross_references": [
@@ -445,6 +443,15 @@
       "severity": "moderate",
       "text": "core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,&stack0xfffffe58,1.0);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 150,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ],
   "stack_frame": {
@@ -463,14 +470,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 150,
-      "match": "do {",
-      "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    }
-  ]
+  "suspects": []
 }

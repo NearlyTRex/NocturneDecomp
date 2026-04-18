@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 626,
-    "complexity_score": 199,
+    "complexity_score": 184,
     "cross_reference_count": 4,
     "function_call_count": 11,
     "global_count": 56,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 184,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_strcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 810
   },
   "cross_references": [
@@ -485,6 +483,17 @@
     },
     "pcode_op_count": 2676
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 175,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 172,
     "local_size": 164,
@@ -603,8 +612,8 @@
       "diagnostics": [
         {
           "check_id": "nullPointer",
-          "column": 6,
-          "line": 185,
+          "column": 10,
+          "line": 166,
           "message": "Possible null pointer dereference: pcVar4",
           "severity": "warning"
         }
@@ -613,14 +622,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 175,
-      "match": "do {",
-      "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    }
-  ]
+  "suspects": []
 }

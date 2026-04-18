@@ -10,52 +10,23 @@
 int __cdecl engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220(char *base_directory,char *filename)
 
 {
-  char cVar2;
   _FILE *stream_ptr;
   int *piVar2;
   _FILE *dest_file;
   uint uVar3;
-  int iVar4;
-  char *pcVar5;
   int iVar3;
-  char *pcVar6;
   char *pcVar4;
-  SFoundFileInfo *pSVar8;
-  byte bVar9;
   SFoundFileInfo *pSVar5;
   SFoundFileInfo local_53c;
   SFoundFileInfo local_328;
   char local_114 [256];
   char local_14 [4];
-  char cVar1;
-  SFoundFileInfo *pSVar7;
-  
-  bVar9 = 0;
+
   engine_dosio_c_ensureTrailingSlash_FUN_00481f80(base_directory,local_14,local_114);
   engine_dosio_c_makePath_FUN_00481f50
             (local_53c.found_path,local_14,local_114,(char *)0x0,(char *)0x0);
   pSVar5 = &local_53c;
-  iVar4 = -1;
-  pcVar6 = local_53c.found_path;
-  do {
-    pcVar6 = pcVar6;
-    if (iVar4 == 0) break;
-    iVar4 = iVar4 + -1;
-    pcVar6 = pcVar6 + (uint)bVar9 * -2 + 1;
-    cVar1 = *pcVar6;
-    pcVar6 = pcVar6;
-  } while (cVar1 != '\0');
-  pcVar4 = pcVar6 + -1;
-  pcVar5 = filename;
-  do {
-    cVar2 = *pcVar5;
-    *pcVar4 = cVar2;
-    if (cVar2 == '\0') break;
-    cVar2 = pcVar5[1];
-    pcVar5 = pcVar5 + 2;
-    pcVar4[1] = cVar2;
-    pcVar4 = pcVar4 + 2;
-  } while (cVar2 != '\0');
+  strcat(local_53c.found_path,filename);
   iVar3 = 0;
   do {
     stream_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
@@ -81,16 +52,7 @@ LAB_004b32cc:
     pcVar4 = "Can't access %s.\nPerhaps someone else is checking it in, and it's taking a while?\nTry again in a few minutes, and if that doesn't work, get Fletch";
   }
   else {
-    pSVar8 = &local_328;
-    do {
-      cVar2 = *filename;
-      pSVar8->found_path[0] = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = filename[1];
-      filename = filename + 2;
-      pSVar8->found_path[1] = cVar2;
-      pSVar8 = (SFoundFileInfo *)(pSVar8->found_path + 2);
-    } while (cVar2 != '\0');
+    strcpy(local_328.found_path,filename);
     iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_328);
     if (iVar3 == 0) {
       local_328.file_size = 0xffffffff;

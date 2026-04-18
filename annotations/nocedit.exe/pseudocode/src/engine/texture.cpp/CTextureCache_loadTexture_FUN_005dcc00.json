@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 519,
-    "complexity_score": 256,
+    "complexity_score": 241,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 33,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 241,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 760
   },
   "cross_references": [
@@ -342,6 +340,17 @@
     },
     "pcode_op_count": 1828
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "line": 108,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "for (iVar6 = 0xc0; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 288,
     "local_size": 280,
@@ -431,14 +440,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 108,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "mild",
-      "text": "for (iVar6 = 0xc0; iVar6 != 0; iVar6 = iVar6 + -1) {",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

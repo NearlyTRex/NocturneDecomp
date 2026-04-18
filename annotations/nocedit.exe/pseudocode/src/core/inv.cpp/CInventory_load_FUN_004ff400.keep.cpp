@@ -50,35 +50,12 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr,_FIL
   pCVar6 = this_ptr;
   if (0 < this_ptr->item_count) {
     do {
-      pcVar6 = g_DefaultInventoryKey;
-      pcVar7 = local_dc;
-      for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {
-        *(uint *)pcVar7 = *(uint *)pcVar6;
-        pcVar6 = pcVar6 + ((uint)bVar10 * -2 + 1) * 4;
-        pcVar7 = pcVar7 + (uint)bVar10 * -8 + 4;
-      }
-      puVar8 = (uint *)g_DefaultInventoryValue;
-      pcVar6 = local_78;
-      for (iVar3 = 0x19; iVar3 != 0; iVar3 = iVar3 + -1) {
-        puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
-        *(uint *)pcVar6 = *puVar8;
-        puVar8 = puVar8;
-        pcVar6 = pcVar6 + (uint)bVar10 * -8 + 4;
-      }
+      memcpy(local_dc,g_DefaultInventoryKey,100);
+      memcpy(local_78,g_DefaultInventoryValue,100);
       _fscanf(file_handle," %s \"%[^\"]\"\n",local_dc,local_78);
       if (g_CDemonMissionPtr->has_inventory_actors == 0) {
-        pcVar9 = local_78;
         pCVar3 = core_actor_cpp_createActorByName_FUN_0040c430(local_dc);
-        pCVar8 = pCVar3;
-        do {
-          cVar1 = *pcVar9;
-          pCVar8->actor_name[0] = cVar1;
-          if (cVar1 == '\0') break;
-          cVar2 = pcVar9[1];
-          pcVar9 = pcVar9 + 2;
-          pCVar8->actor_name[1] = cVar2;
-          pCVar8 = (CDemonActor *)(pCVar8->actor_name + 2);
-        } while (cVar2 != '\0');
+        strcpy(pCVar3->actor_name,local_78);
         pCVar6->items[0] = pCVar3;
       }
       else {

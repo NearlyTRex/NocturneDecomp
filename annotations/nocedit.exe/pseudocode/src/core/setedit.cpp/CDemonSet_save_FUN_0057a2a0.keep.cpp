@@ -10,21 +10,17 @@
 void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,char *filename)
 
 {
-  char cVar2;
   _FILE *file;
   C3DSLight *this_ptr_00;
   int iVar3;
   SRoom *pSVar2;
   SVDBox *pSVar3;
   C3DSCamera *pCVar4;
-  char *pcVar5;
   char *pcVar6;
   char *pcVar4;
-  char *pcVar7;
   char *pcVar8;
   int iVar8;
   C3DSCamera *this_ptr_01;
-  char *pcVar9;
   char local_a0 [100];
   CVector3f local_3c;
   CVector3f local_30;
@@ -32,7 +28,6 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
   SRoom *local_20;
   CMatrix3x3f *local_1c;
   CMatrix3x3f *local_18;
-  char cVar1;
   
   this_ptr->set_file_version = 0x1c;
   file = engine_dosio_c_getFile_FUN_00481a50("models",filename,"wt");
@@ -41,7 +36,6 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
     g_CurrentLineNumber = 0x6d6;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonSet::Unable to save output");
   }
-  pcVar9 = local_a0;
   pcVar8 = local_a0;
   _fprintf(file,"%d\n",this_ptr->set_file_version);
   _fprintf(file,"%f\n",(double)this_ptr->set_scale_factor);
@@ -145,18 +139,8 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
     } while (iVar3 < this_ptr->camera_count);
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",0x74d);
-  pcVar5 = this_ptr->geometry_filename;
-  do {
-    cVar1 = *pcVar5;
-    *pcVar9 = cVar1;
-    pcVar6 = local_a0;
-    if (cVar1 == '\0') break;
-    cVar2 = pcVar5[1];
-    pcVar5 = pcVar5 + 2;
-    pcVar9[1] = cVar2;
-    pcVar9 = pcVar9 + 2;
-    pcVar6 = local_a0;
-  } while (cVar2 != '\0');
+  strcpy(local_a0,this_ptr->geometry_filename);
+  pcVar6 = local_a0;
   do {
     pcVar4 = pcVar6;
     if (*pcVar6 == '.') goto LAB_0057a874;
@@ -179,16 +163,7 @@ LAB_0057a874:
     pcVar4 = (char *)0x0;
   }
 LAB_0057a87e:
-  pcVar7 = ".zth";
-  do {
-    cVar2 = *pcVar7;
-    *pcVar4 = cVar2;
-    if (cVar2 == '\0') break;
-    cVar2 = pcVar7[1];
-    pcVar7 = pcVar7 + 2;
-    pcVar4[1] = cVar2;
-    pcVar4 = pcVar4 + 2;
-  } while (cVar2 != '\0');
+  strcpy(pcVar4,".zth");
   core_setdir_cpp_CDemonSet_saveThumbsNoFile_FUN_00575f60(this_ptr);
   core_setdir_cpp_CDemonSet_writeThumbs_FUN_00575e40(this_ptr,local_a0);
   return;

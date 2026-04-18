@@ -11,10 +11,7 @@ void __cdecl core_setutil_cpp_C3DSCamera_apply_FUN_00585870(C3DSCamera *this_ptr
 
 {
   UVector3 *pUVar1;
-  char cVar2;
-  C3DSCamera *pCVar3;
-  char *pcVar4;
-  
+
   if (this_ptr->is_panning != 0) {
     g_CurrentFilename = "..\\core\\setutil.cpp";
     g_CurrentLineNumber = 0xf7;
@@ -36,18 +33,8 @@ void __cdecl core_setutil_cpp_C3DSCamera_apply_FUN_00585870(C3DSCamera *this_ptr
   (camera->base).rotation_matrix.m[2].y = (this_ptr->rotation_matrix).m[2].y;
   (camera->base).rotation_matrix.m[2].z = (this_ptr->rotation_matrix).m[2].z;
   (camera->base).dead = this_ptr->dead;
-  pcVar4 = camera->camera_name;
   (camera->base).focal_length = this_ptr->projection_scale;
-  pCVar3 = this_ptr;
-  do {
-    cVar2 = pCVar3->name[0];
-    *pcVar4 = cVar2;
-    if (cVar2 == '\0') break;
-    cVar2 = pCVar3->name[1];
-    pCVar3 = (C3DSCamera *)(pCVar3->name + 2);
-    pcVar4[1] = cVar2;
-    pcVar4 = pcVar4 + 2;
-  } while (cVar2 != '\0');
+  strcpy(camera->camera_name,this_ptr->name);
   core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_004528e0(camera,this_ptr->ambient_value);
   if (this_ptr->ambient_value < g_CDemonSetPtr->min_ambient_value) {
     engine_console_cpp_CConsole_printf_FUN_00441890

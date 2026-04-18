@@ -237,9 +237,9 @@ section .text
     LEA EDI,[ESP + 0x8]                 ; 00523088
     PUSH 0x638bac                       ; 0052308c | = "%s %d\n"
     MOV EDX,dword ptr [ESP + 0x16c]     ; 00523091
-    MOV ESI,0x67d558                    ; 00523098 | = "corrupt!"
+    MOV ESI,0x67d558                    ; 00523098 | g_MissionDataStatus
     PUSH EDX                            ; 0052309d
-    MOVSD.REP ES:EDI,ESI                ; 0052309e | = "corrupt!" | s_upt!_0067d55c
+    MOVSD.REP ES:EDI,ESI                ; 0052309e | g_MissionDataStatus | s_upt!_0067d55c
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 005230a0
         ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     ADD ESP,0x10                        ; 005230a5

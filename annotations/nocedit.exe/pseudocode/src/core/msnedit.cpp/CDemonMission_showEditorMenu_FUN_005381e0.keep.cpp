@@ -11,15 +11,12 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
 
 {
   char *input_buffer;
-  char cVar2;
   uint uVar2;
   int iVar3;
   int iVar5;
   CPodFile *pCVar3;
   int iVar4;
-  char *pcVar5;
   char (*text) [256];
-  char *pcVar6;
   int iVar7;
   CPickList local_7dc;
   CFileFinder local_434;
@@ -29,7 +26,6 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
   char (*local_1c) [256];
   char (*local_18) [256];
   char *local_14;
-  char cVar1;
   CEditorTools *this_ptr_00;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -46,17 +42,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Demented(R) Mission editor",0,0);
     if (this_ptr->mission_name[0] == '\0') {
-      pcVar5 = "No misison loaded";
-      pcVar6 = local_21c;
-      do {
-        cVar1 = *pcVar5;
-        *pcVar6 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar2 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar6[1] = cVar2;
-        pcVar6 = pcVar6 + 2;
-      } while (cVar2 != '\0');
+      strcpy(local_21c,"No misison loaded");
     }
     else {
       _sprintf(local_21c,"Current mission: %s.msn",input_buffer);

@@ -10,7 +10,6 @@
 void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *this_ptr)
 
 {
-  char cVar2;
   SRoom *pSVar3;
   CVector3f *pCVar3;
   CVector3f *pCVar4;
@@ -19,9 +18,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
   int iVar4;
   int iVar7;
   CVector3f *world_position;
-  char *pcVar5;
   int iVar6;
-  char *pcVar7;
   CPickList local_c8c;
   CPickList local_8e4;
   CPickList local_53c;
@@ -58,7 +55,6 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
   SRoom *local_18;
   CMatrix3x3f *local_14;
   SRoom *pSVar2;
-  char cVar1;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Preparing set.");
@@ -161,17 +157,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
       } while (iVar6 < this_ptr->room_count);
     }
     if (local_18 == (SRoom *)0x0) {
-      pcVar5 = "No room selected";
-      pcVar7 = local_194;
-      do {
-        cVar1 = *pcVar5;
-        *pcVar7 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar2 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar7[1] = cVar2;
-        pcVar7 = pcVar7 + 2;
-      } while (cVar2 != '\0');
+      strcpy(local_194,"No room selected");
     }
     else {
       _sprintf(local_194,"Room size: %d",local_18->reverb_size);

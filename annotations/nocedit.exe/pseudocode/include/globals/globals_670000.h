@@ -133,9 +133,6 @@ extern SMRGLTextureBasic g_AudioSpectrumTextures[8];
 // SMpegLayer3BandIndex[6]
 extern SMpegLayer3BandIndex g_Layer3BandIndex[6];
 
-// TerminatedCString
-extern TerminatedCString s_meshlod_0067d3a0;
-
 // WatcomStaticDestructorNode
 extern WatcomStaticDestructorNode g_CKeyFramedModelPoolDestructorNode;
 extern WatcomStaticDestructorNode WatcomStaticDestructorNode_006703a0;
@@ -232,6 +229,9 @@ extern char g_DefaultAuditRecordPath[116];
 
 // char[200]
 extern char g_DefaultSfxHandleName[200];
+
+// char[256]
+extern char g_MeshLodIdentifier[256];
 
 // char[260]
 extern char g_FilePathBuffer[260];

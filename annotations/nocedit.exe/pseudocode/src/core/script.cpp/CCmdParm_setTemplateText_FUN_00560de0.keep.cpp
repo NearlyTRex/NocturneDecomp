@@ -16,9 +16,7 @@ int __cdecl core_script_cpp_CCmdParm_setTemplateText_FUN_00560de0(CCmdParm *this
   char *pcVar3;
   char *pcVar6;
   char *pcVar7;
-  char *pcVar4;
   char *pcVar5;
-  char cVar1;
   
   pcVar3 = template_text + *parse_cursor;
   if (*pcVar3 != '<') {
@@ -336,16 +334,7 @@ LAB_00560e30:
       }
     }
   }
-  pcVar4 = this_ptr->default_value;
-  do {
-    cVar1 = *pcVar7;
-    *pcVar4 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar2 = pcVar7[1];
-    pcVar7 = pcVar7 + 2;
-    pcVar4[1] = cVar2;
-    pcVar4 = pcVar4 + 2;
-  } while (cVar2 != '\0');
+  strcpy(this_ptr->default_value,pcVar7);
 LAB_00560ead:
   if (pcVar6 == (char *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740

@@ -127,13 +127,13 @@ Manual inspection is needed to determine the expected class.
   core/inv.cpp/CInventory_load_FUN_004ff400.keep.cpp
 --------------------------------------------------------------------------------
 
-  Line 71: createActorByName()
-    69:       if (g_CDemonMissionPtr->has_inventory_actors == 0) {
-    70:         pcVar9 = local_78;
-    71:         pCVar3 = core_actor_cpp_createActorByName_FUN_0040c430(local_dc);
-    72:         pCVar8 = pCVar3;
-    73:         do {
-    74:           cVar1 = *pcVar9;
+  Line 57: createActorByName()
+    55:       _fscanf(file_handle," %s \"%[^\"]\"\n",local_dc,local_78);
+    56:       if (g_CDemonMissionPtr->has_inventory_actors == 0) {
+    57:         pCVar3 = core_actor_cpp_createActorByName_FUN_0040c430(local_dc);
+    58:         strcpy(pCVar3->actor_name,local_78);
+    59:         pCVar6->items[0] = pCVar3;
+    60:       }
 
 --------------------------------------------------------------------------------
   core/inv.cpp/getItemModel_FUN_004fcda0.keep.cpp

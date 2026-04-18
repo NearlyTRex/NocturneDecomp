@@ -217,11 +217,11 @@ section .text
     ADD ESP,0xc                         ; 00599116
     MOV ESI,0x64e12c                    ; 00599119 | = "z:\\meshlod"
         ;   Label: LAB_00599119
-    MOV EDI,0x67d3a0                    ; 0059911e | = "meshlod"
-    PUSH EDI                            ; 00599123 | = "meshlod"
+    MOV EDI,0x67d3a0                    ; 0059911e | g_MeshLodIdentifier
+    PUSH EDI                            ; 00599123 | g_MeshLodIdentifier
     MOV AL,byte ptr [ESI]               ; 00599124 | = "z:\\meshlod" | s_\meshlod_0064e12e
         ;   Label: LAB_00599124
-    MOV byte ptr [EDI],AL               ; 00599126 | = "meshlod" | s_shlod_0067d3a2
+    MOV byte ptr [EDI],AL               ; 00599126 | g_MeshLodIdentifier | s_shlod_0067d3a2
     CMP AL,0x0                          ; 00599128
     JZ 0x0059913c                       ; 0059912a
         ;   XREF to: 0059913c (CONDITIONAL_JUMP)  ; LAB_0059913c

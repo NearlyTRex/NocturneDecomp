@@ -23,15 +23,7 @@ void __cdecl engine_fileio_cpp_CFileManager_searchMountedPods_FUN_004bcb70(CFile
     default_wildcard = "*";
   }
   pcVar3 = local_108;
-  do {
-    cVar1 = *default_wildcard;
-    *pcVar3 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar2 = default_wildcard[1];
-    default_wildcard = default_wildcard + 2;
-    pcVar3[1] = cVar2;
-    pcVar3 = pcVar3 + 2;
-  } while (cVar2 != '\0');
+  strcpy(pcVar3,default_wildcard);
   iVar2 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                     (g_CEditorToolsPtr,"Enter filename wildcard",local_108,0x100,1);
   if (iVar2 == 0) {

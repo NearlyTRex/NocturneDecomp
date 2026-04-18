@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 5075 (78.6%)
-Functions with suspects: 1379 (21.4%)
+Clean functions: 5179 (80.2%)
+Functions with suspects: 1275 (19.8%)
 
-Total suspect patterns: 5540
-Average suspects per function: 0.86
+Total suspect patterns: 5436
+Average suspects per function: 0.84
 
-Virtual files: 214 total, 34 at 100%, 75 at 90%+
+Virtual files: 214 total, 42 at 100%, 83 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3415, Average: 47.8
 
-Average complexity score: 57.8
+Average complexity score: 57.6
 
 COMPILATION STATUS
 ----------------------------------------
@@ -29,15 +29,15 @@ Failed: 0
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
   pointer_cast              3267
-  unrolled_strcpy           566
   unnamed_local             547
+  unrolled_strcpy           468
   warning_inlined_function  259
   raw_address_constant      225
   warning_type_propagation  133
   stack_alignment_array     92
   warning_unreachable       76
   unnamed_param             73
-  unrolled_memcpy           46
+  unrolled_memcpy           40
   stack_param               36
   mmx_assembly              34
   param_count_too_few       30
@@ -113,7 +113,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 5025 more
+  ... and 5129 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -136,7 +136,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   005bb960: core_stranger.cpp_CStranger_processFrame_FUN_005bb960 (score: 1140, suspects: 0, lines: 1140)
   005f9470: core_zombie.cpp_CZombie_process_FUN_005f9470 (score: 1091, suspects: 4, lines: 1031)
   0058c190: core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 (score: 1012, suspects: 28, lines: 717)
-  005390f0: core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 (score: 1011, suspects: 1, lines: 996)
+  005390f0: core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 (score: 996, suspects: 0, lines: 996)
   00446160: shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (score: 987, suspects: 15, lines: 832)
   00511e50: core_menu.cpp_configureSoundOptions_FUN_00511e50 (score: 976, suspects: 21, lines: 746)
   00562920: core_script.cpp_editParameterValue_FUN_00562920 (score: 959, suspects: 19, lines: 754)
@@ -164,19 +164,6 @@ FUNCTIONS BY SUSPECT TYPE
     0054aa20: cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
     ... and 677 more
 
-  unrolled_strcpy (250 functions):
-    00431ac0: cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
-    00543e40: support_newmsg.cpp_readMessageFile_FUN_00543e40
-    00548f00: engine_pcx.c_saveScreenRaw32_FUN_00548f00
-    00548d20: engine_pcx.c_saveScreenRaw16_FUN_00548d20
-    004817c0: engine_dosio.c_findFileNormally_FUN_004817c0
-    005501b0: engine_pod.cpp_CPodFile_populateFileInfo_FUN_005501b0
-    00550af0: engine_pod.cpp_CPod_remount_FUN_00550af0
-    00550ea0: engine_pod.cpp_CPod_initSearch_FUN_00550ea0
-    00550ce0: engine_pod.cpp_findFilesByExtension_FUN_00550ce0
-    00401d80: engine_2d.c_wrapTextToWidth_FUN_00401d80
-    ... and 240 more
-
   unnamed_local (69 functions):
     00431a30: cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30
     0054f650: engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
@@ -189,6 +176,19 @@ FUNCTIONS BY SUSPECT TYPE
     005e88c0: core_vehicle.cpp_CVehicle_renderOpaque_FUN_005e88c0
     00509c60: core_manpuz.cpp_CMansionPuzzleCircle_renderEmitter_FUN_00509c60
     ... and 59 more
+
+  unrolled_strcpy (152 functions):
+    00431ac0: cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
+    00543e40: support_newmsg.cpp_readMessageFile_FUN_00543e40
+    00550ce0: engine_pod.cpp_findFilesByExtension_FUN_00550ce0
+    00545180: engine_palette.cpp_CPaletteManager_createOutputPalette_FUN_00545180
+    005f2440: engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440
+    004ce2d0: engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0
+    004050c0: engine_3d.c_updateAnimatedTexture_FUN_004050c0
+    004b82a0: engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
+    004b6e10: engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
+    004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
+    ... and 142 more
 
   warning_inlined_function (256 functions):
     00488630: cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630
@@ -268,18 +268,18 @@ FUNCTIONS BY SUSPECT TYPE
     0040e3b0: core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
     ... and 10 more
 
-  unrolled_memcpy (37 functions):
+  unrolled_memcpy (31 functions):
     00431ac0: cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
-    005dcc00: engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00
     00545180: engine_palette.cpp_CPaletteManager_createOutputPalette_FUN_00545180
-    004ba4f0: engine_fileio.cpp_CFileManager_parsePodConfigFile_FUN_004ba4f0
     004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
     004b7f50: engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
     004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
     004bd190: engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
     00533d30: sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30
     00533f80: sound_mp3.cpp_initializeHuffmanTablesOnce_FUN_00533f80
-    ... and 27 more
+    00531680: sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680
+    0044cdf0: core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0
+    ... and 21 more
 
   stack_param (8 functions):
     005f2440: engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440

@@ -12,8 +12,8 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6908
-  Functions with suspicious globals: 66
-  Total suspicious global references: 112
+  Functions with suspicious globals: 67
+  Total suspicious global references: 113
 
   Most commonly misresolved globals:
     g_SfxOptions                                       12 functions
@@ -38,7 +38,7 @@ SUMMARY
     g_RenderStateFlags                                 1 functions
 
   .keep files with issues: 14 (these need manual review)
-  Raw .cpp files with issues: 52
+  Raw .cpp files with issues: 53
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -634,6 +634,14 @@ shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060  [.cpp]  (1 suspic
 
   g_ConfirmationMessageBuffer
     Used at lines: 18, 24
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0  [.cpp]  (1 suspicious globals)
+  File: shape/meshlod.cpp
+
+  g_ReplayLodFilename
+    Used at lines: 31, 32, 33, 34, 35, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

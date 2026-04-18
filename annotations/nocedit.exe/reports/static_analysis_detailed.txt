@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (372 diagnostics)
+Cppcheck (quick) (366 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (132)
+selfAssignment (122)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 170
@@ -52,7 +52,7 @@ selfAssignment (132)
     File: core/charactr.cpp
     Redundant assignment of 'pSVar12' to itself.
 
-  core_charactr.cpp_CCharacter_setup_FUN_00428140    line 94
+  core_charactr.cpp_CCharacter_setup_FUN_00428140    line 91
     File: core/charactr.cpp
     Redundant assignment of 'pCVar4' to itself.
 
@@ -100,10 +100,6 @@ selfAssignment (132)
     File: core/game.cpp
     Redundant assignment of 'pcVar8' to itself.
 
-  core_inv.cpp_CInventory_load_FUN_004ff400          line 65
-    File: core/inv.cpp
-    Redundant assignment of 'puVar8' to itself.
-
   core_inv.cpp_CInventory_renderAllItems_FUN_0050069 line 208
     File: core/inv.cpp
     Redundant assignment of 'pcVar10' to itself.
@@ -144,21 +140,9 @@ selfAssignment (132)
     File: core/mission.cpp
     Redundant assignment of 'puVar8' to itself.
 
-  core_msnedit.cpp_CDemonMission_editActorsInSet_FUN line 195
-    File: core/msnedit.cpp
-    Redundant assignment of 'pcVar12' to itself.
-
   core_msnedit.cpp_CDemonMission_replicateActor_FUN_ line 143
     File: core/msnedit.cpp
     Redundant assignment of 'pCVar5' to itself.
-
-  core_msnedit.cpp_buildActorClassHierarchy_FUN_0053 line 44
-    File: core/msnedit.cpp
-    Redundant assignment of 'pcVar5' to itself.
-
-  core_msnedit.cpp_buildActorClassHierarchy_FUN_0053 line 49
-    File: core/msnedit.cpp
-    Redundant assignment of 'pcVar5' to itself.
 
   core_script.cpp_CScript_loadScript_FUN_00559f80    line 53
     File: core/script.cpp
@@ -316,14 +300,6 @@ selfAssignment (132)
     File: engine/fileio.cpp
     Redundant assignment of 'pcVar8' to itself.
 
-  engine_fileio.cpp_CCheckOutItem_findFileToCheckOut line 49
-    File: engine/fileio.cpp
-    Redundant assignment of 'pcVar6' to itself.
-
-  engine_fileio.cpp_CCheckOutItem_findFileToCheckOut line 54
-    File: engine/fileio.cpp
-    Redundant assignment of 'pcVar6' to itself.
-
   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_0 line 96
     File: engine/fileio.cpp
     Redundant assignment of 'pSVar8' to itself.
@@ -400,14 +376,6 @@ selfAssignment (132)
     File: engine/fileio.cpp
     Redundant assignment of 'piVar7' to itself.
 
-  engine_fileio.cpp_getLatestFileFromRepository_FUN_ line 41
-    File: engine/fileio.cpp
-    Redundant assignment of 'pcVar6' to itself.
-
-  engine_fileio.cpp_getLatestFileFromRepository_FUN_ line 46
-    File: engine/fileio.cpp
-    Redundant assignment of 'pcVar6' to itself.
-
   engine_model.c_getMRGLBounds_FUN_00528140          line 179
     File: engine/model.c
     Redundant assignment of 'puVar11' to itself.
@@ -463,14 +431,6 @@ selfAssignment (132)
   shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 157
     File: shape/design.c
     Redundant assignment of 'pSVar9' to itself.
-
-  shape_design.c_optimizePolygonMesh_FUN_004658e0    line 80
-    File: shape/design.c
-    Redundant assignment of 'pcVar5' to itself.
-
-  shape_design.c_optimizePolygonMesh_FUN_004658e0    line 85
-    File: shape/design.c
-    Redundant assignment of 'pcVar5' to itself.
 
   shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 578
     File: shape/design.c
@@ -541,7 +501,7 @@ selfAssignment (132)
     Redundant assignment of 'pcVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (59)
+uninitvar (60)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 71
@@ -779,6 +739,10 @@ uninitvar (59)
   shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d line 198
     File: shape/superopt.cpp
     Uninitialized variable: local_288
+
+  sound_sndmain.cpp_testSoundFile_FUN_005ad3b0       line 32
+    File: sound/sndmain.cpp
+    Uninitialized variable: local_60
 
 ----------------------------------------------------------------------------------------------------
 shiftTooManyBitsSigned (44)
@@ -1437,8 +1401,12 @@ nullPointerRedundantCheck (10)
     Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
 
 ----------------------------------------------------------------------------------------------------
-nullPointer (7)
+nullPointer (8)
 ----------------------------------------------------------------------------------------------------
+
+  core_script.cpp_trimLine_FUN_005592c0              line 39
+    File: core/script.cpp
+    Possible null pointer dereference: pcVar2
 
   core_set.cpp_CDemonSet_load_FUN_00569410           line 410
     File: core/set.cpp
@@ -1452,7 +1420,7 @@ nullPointer (7)
     File: core/setedit.cpp
     Possible null pointer dereference: pcVar12
 
-  core_setedit.cpp_CDemonSet_save_FUN_0057a2a0       line 185
+  core_setedit.cpp_CDemonSet_save_FUN_0057a2a0       line 166
     File: core/setedit.cpp
     Possible null pointer dereference: pcVar4
 
@@ -1541,6 +1509,14 @@ compareBoolExpressionWithInt (1)
     Comparison of a boolean expression with an integer other than 0 or 1.
 
 ----------------------------------------------------------------------------------------------------
+stringLiteralWrite (1)
+----------------------------------------------------------------------------------------------------
+
+  core_skeledit.cpp_viewModel_FUN_00598fc0           line 130
+    File: core/skeledit.cpp
+    Modifying string literal "meshlod" directly or indirectly is undefined behaviour.
+
+----------------------------------------------------------------------------------------------------
 AssignmentIntegerToAddress (1)
 ----------------------------------------------------------------------------------------------------
 
@@ -1555,6 +1531,14 @@ nullPointerArithmetic (1)
   core_main.c_displayErrorAndQuit_FUN_00506f10       line 83
     File: core/main.c
     Pointer addition with NULL pointer.
+
+----------------------------------------------------------------------------------------------------
+invalidFunctionArgStr (1)
+----------------------------------------------------------------------------------------------------
+
+  shape_edittool.cpp_CStrList_populateFromFileSearch line 33
+    File: shape/edittool.cpp
+    Invalid strlen() argument nr 1. A nul-terminated string is required.
 
 ----------------------------------------------------------------------------------------------------
 invalidTestForOverflow (1)

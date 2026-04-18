@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        107 ( 1.7%)
+  Functions with type issues:        104 ( 1.6%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          1
-    Undefined types in variables:      101
+    Undefined types in variables:      98
     Unresolved stack params:           5
 
-  Excluded (.keep / MMX / by-value):   119 functions
+  Excluded (.keep / MMX / by-value):   122 functions
     Wrong calling convention:          1
-    Undefined types in variables:      116
+    Undefined types in variables:      119
     Unresolved stack params:           3
 
 ====================================================================================================
@@ -113,7 +113,7 @@ Unresolved stack parameters (missing from signature) (5)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (101)
+Undefined types in variables (98)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -471,11 +471,6 @@ Undefined types in variables (101)
     Locals:  local_bc (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CNetGame_initializeNetworkToJoin
-    Address: 0x0053f900  File: core/netgame.cpp
-    Locals:  uStack_53 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CNetGame_processPacket
     Address: 0x005406a0  File: core/netgame.cpp
     Locals:  uStack_77 (undefined4)
@@ -499,11 +494,6 @@ Undefined types in variables (101)
   CPlatform_renderOpaque
     Address: 0x0054d720  File: core/platfrm.cpp
     Locals:  auStack_30 (undefined1[24])
-    Suggested: Resolve undefined types to concrete types
-
-  CScript_getDialogDuration
-    Address: 0x0055ff00  File: core/script.cpp
-    Locals:  uStack_20 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CDeformableModel_extractBoneScales
@@ -584,11 +574,6 @@ Undefined types in variables (101)
   CStrList_insertSortedFileRecord
     Address: 0x004a3360  File: shape/edittool.cpp
     Locals:  local_3fb (undefined1[255])
-    Suggested: Resolve undefined types to concrete types
-
-  CStrList_populateFromFileSearch
-    Address: 0x004a35b0  File: shape/edittool.cpp
-    Locals:  local_20f (undefined1[255])
     Suggested: Resolve undefined types to concrete types
 
   CDirectSoundDevice_commitDeferredSettings
@@ -686,7 +671,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (116)
+Undefined types - .keep overrides (119)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -1139,9 +1124,19 @@ Undefined types - .keep overrides (116)
     Locals:  auStack_94 (undefined1[16])
     Suggested: Resolve undefined types to concrete types
 
+  CNetGame_initializeNetworkToJoin
+    Address: 0x0053f900  File: core/netgame.cpp
+    Locals:  uStack_53 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CParticle_process
     Address: 0x00545760  File: core/particle.cpp
     Locals:  local_68 (undefined1[52])
+    Suggested: Resolve undefined types to concrete types
+
+  CScript_getDialogDuration
+    Address: 0x0055ff00  File: core/script.cpp
+    Locals:  uStack_20 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   editParameterValue
@@ -1222,6 +1217,11 @@ Undefined types - .keep overrides (116)
   CEditorTools_createModalWindow
     Address: 0x004a0970  File: shape/edittool.cpp
     Locals:  local_14 (undefined4 *)
+    Suggested: Resolve undefined types to concrete types
+
+  CStrList_populateFromFileSearch
+    Address: 0x004a35b0  File: shape/edittool.cpp
+    Locals:  local_20f (undefined1[255])
     Suggested: Resolve undefined types to concrete types
 
   CStrList_populateFromFilesNoDuplicates

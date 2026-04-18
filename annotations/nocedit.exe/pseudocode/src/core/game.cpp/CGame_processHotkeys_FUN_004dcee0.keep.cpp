@@ -10,14 +10,12 @@
 void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
 
 {
-  char cVar1;
   CScript *pCVar2;
   CDemonSet *pCVar3;
   int iVar4;
   int iVar5;
   _FILE *file_ptr;
   char *pcVar6;
-  char *pcVar7;
   uint clear_enabled;
   float fVar8;
   float fStack_184;
@@ -152,18 +150,8 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
         iVar4 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
                           (g_CEditorToolsPtr,pcVar6);
         if (iVar4 != 0) {
-          pcVar7 = "quicksavedgame.noc";
-          pcVar6 = this_ptr->chapter_reload_filename;
           this_ptr->need_chapter_reload = 1;
-          do {
-            cVar1 = *pcVar7;
-            *pcVar6 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar7[1];
-            pcVar7 = pcVar7 + 2;
-            pcVar6[1] = cVar1;
-            pcVar6 = pcVar6 + 2;
-          } while (cVar1 != '\0');
+          strcpy(this_ptr->chapter_reload_filename,"quicksavedgame.noc");
         }
       }
     }

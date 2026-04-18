@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 287,
-    "complexity_score": 116,
+    "complexity_score": 101,
     "cross_reference_count": 1,
     "function_call_count": 20,
     "global_count": 8,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 101,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_strcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 388
   },
   "cross_references": [
@@ -243,6 +241,17 @@
     },
     "pcode_op_count": 1032
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 49,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 2172,
     "local_size": 2160,
@@ -322,38 +331,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CCheckOutItem_findFileToCheckOut_FUN_004b5030.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 12,
-          "line": 49,
-          "message": "Redundant assignment of 'pcVar6' to itself.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "selfAssignment",
-          "column": 12,
-          "line": 54,
-          "message": "Redundant assignment of 'pcVar6' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 49,
-      "match": "do {",
-      "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    }
-  ]
+  "suspects": []
 }

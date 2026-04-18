@@ -18,7 +18,7 @@ _FILE * __cdecl shape_meshlod_cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(CLodM
   uint local_10;
   char local_c [4];
   
-  splitpath("meshlod",local_c,local_110,local_310,local_210);
+  splitpath(g_MeshLodIdentifier,local_c,local_110,local_310,local_210);
   makepath(local_410,(char *)0x0,local_110,local_310,local_210);
   local_10 = 0;
   shape_meshlod_cpp_CLodMesh_computeMeshCRC32_FUN_0051c6f0(this_ptr,&local_10);

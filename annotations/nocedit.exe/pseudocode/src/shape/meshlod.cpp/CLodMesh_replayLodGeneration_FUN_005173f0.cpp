@@ -28,13 +28,13 @@ void __cdecl shape_meshlod_cpp_CLodMesh_replayLodGeneration_FUN_005173f0(CLodMes
   
   bVar3 = 0;
   shape_meshlod_cpp_CLodMesh_initializeLodGeneration_FUN_00516d50(this_ptr);
-  local_24[0] = "replay.txt"[0];
-  local_24[1] = "replay.txt"[1];
-  local_24[2] = "replay.txt"[2];
-  local_24[3] = "replay.txt"[3];
-  acStack_1c[0] = "replay.txt"[8];
-  acStack_1c[1] = "replay.txt"[9];
-  acStack_1c[(uint)bVar3 * -4 + 2] = "replay.txt"[(uint)bVar3 * -4 + 10];
+  local_24[0] = g_ReplayLodFilename[0];
+  local_24[1] = g_ReplayLodFilename[1];
+  local_24[2] = g_ReplayLodFilename[2];
+  local_24[3] = g_ReplayLodFilename[3];
+  acStack_1c[0] = g_ReplayLodFilename[8];
+  acStack_1c[1] = g_ReplayLodFilename[9];
+  acStack_1c[(uint)bVar3 * -4 + 2] = g_ReplayLodFilename[(uint)bVar3 * -4 + 10];
   file_handle = shape_memdbg_cpp_openFile_FUN_0050f7a0
                           (local_24,(char *)0x0,"rt","..\\shape\\meshlod.cpp",0x5f5);
   if (file_handle == (_FILE *)0x0) {

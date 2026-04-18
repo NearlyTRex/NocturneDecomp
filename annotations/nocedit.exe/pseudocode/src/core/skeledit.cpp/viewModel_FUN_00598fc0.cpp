@@ -126,7 +126,7 @@ LAB_00599106:
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\skeledit.cpp",0x13f);
 LAB_00599119:
   pcVar5 = "z:\\meshlod";
-  pcVar6 = "meshlod";
+  pcVar6 = g_MeshLodIdentifier;
   do {
     cVar1 = *pcVar5;
     *pcVar6 = cVar1;

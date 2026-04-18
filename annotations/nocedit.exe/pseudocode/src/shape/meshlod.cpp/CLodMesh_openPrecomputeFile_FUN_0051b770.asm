@@ -27,7 +27,7 @@
 ;   TerminatedCString s_s_08X_00637d25
 ;   TerminatedCString s_lod_00637d2a
 ;   TerminatedCString s_shape_meshlod_cpp_00637d2e
-;   TerminatedCString s_meshlod_0067d3a0
+;   char[256] g_MeshLodIdentifier
 ;
 ; Called Functions:
 ;   crt_file.c_makepath_FUN_005febfc
@@ -52,7 +52,7 @@ section .text
     PUSH EAX                            ; 0051b78f
     LEA EAX,[ESP + 0x514]               ; 0051b790
     PUSH EAX                            ; 0051b797
-    PUSH 0x67d3a0                       ; 0051b798 | = "meshlod"
+    PUSH 0x67d3a0                       ; 0051b798 | g_MeshLodIdentifier
     CALL crt_string.c_splitpath_FUN_005ff178 ; 0051b79d
         ;   XREF to: 005ff178 (UNCONDITIONAL_CALL)  ; void crt_string.c_splitpath_FUN_005ff178(char * path, char * drive, char * dir, char * fname, ...)
     ADD ESP,0x14                        ; 0051b7a2

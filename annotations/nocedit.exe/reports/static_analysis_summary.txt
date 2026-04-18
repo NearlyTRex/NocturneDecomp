@@ -9,30 +9,30 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 120
+  Functions with static analysis data: 118
   Functions flagged by multiple tools: 0
 
   Cppcheck (quick):
-    Files analyzed:      120
-    Files with findings: 120
-    Total diagnostics:   372
+    Files analyzed:      118
+    Files with findings: 118
+    Total diagnostics:   366
 
 ====================================================================================================
 TOP FINDINGS - Cppcheck (quick)
 ====================================================================================================
 
-  selfAssignment                                            132  [likely decompiler artifact]
-  uninitvar                                                  59
+  selfAssignment                                            122  [likely decompiler artifact]
+  uninitvar                                                  60  [likely decompiler artifact]
   shiftTooManyBitsSigned                                     44
   legacyUninitvar                                            41
   invalidscanf                                               40
   objectIndex                                                12
   invalidPointerCast                                         11
   nullPointerRedundantCheck                                  10
-  nullPointer                                                 7
+  nullPointer                                                 8
   identicalInnerCondition                                     5
   shiftNegativeLHS                                            3
   arrayIndexOutOfBounds                                       3
   arrayIndexOutOfBoundsCond                                   1
   compareBoolExpressionWithInt                                1
-  AssignmentIntegerToAddress                                  1
+  stringLiteralWrite                                          1

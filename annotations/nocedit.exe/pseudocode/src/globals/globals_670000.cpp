@@ -1601,9 +1601,6 @@ SMpegLayer3BandIndex g_Layer3BandIndex[6] = {
     }
 };
 
-// TerminatedCString
-TerminatedCString s_meshlod_0067d3a0 = "meshlod";
-
 // WatcomStaticDestructorNode
 WatcomStaticDestructorNode g_CKeyFramedModelPoolDestructorNode = {
     .next = nullptr,
@@ -1960,6 +1957,9 @@ char g_DefaultAuditRecordPath[] = "";
 
 // char[200]
 char g_DefaultSfxHandleName[] = "";
+
+// char[256]
+char g_MeshLodIdentifier[] = "meshlod";
 
 // char[260]
 char g_FilePathBuffer[] = "";

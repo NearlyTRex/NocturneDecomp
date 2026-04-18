@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 120
-  Total diagnostics: 372
+  Functions with findings: 118
+  Total diagnostics: 366
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 120, raw .cpp files: 0
+  .keep.cpp files: 118, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -584,13 +584,6 @@ core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0  [.keep] [Cppcheck (
   Line  161: [selfAssignment] Redundant assignment of 'puVar8' to itself.
 
 ----------------------------------------------------------------------------------------------------
-core_msnedit.cpp_buildActorClassHierarchy_FUN_00537330  [.keep] [Cppcheck (quick)]
-  File: core/msnedit.cpp  (2 diagnostics)
-
-  Line   44: [selfAssignment] Redundant assignment of 'pcVar5' to itself.
-  Line   49: [selfAssignment] Redundant assignment of 'pcVar5' to itself.
-
-----------------------------------------------------------------------------------------------------
 core_script.cpp_CScript_loadScript_FUN_00559f80  [.keep] [Cppcheck (quick)]
   File: core/script.cpp  (2 diagnostics)
 
@@ -661,13 +654,6 @@ engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920  [.keep]
   Line  109: [selfAssignment] Redundant assignment of 'pcVar8' to itself.
 
 ----------------------------------------------------------------------------------------------------
-engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030  [.keep] [Cppcheck (quick)]
-  File: engine/fileio.cpp  (2 diagnostics)
-
-  Line   49: [selfAssignment] Redundant assignment of 'pcVar6' to itself.
-  Line   54: [selfAssignment] Redundant assignment of 'pcVar6' to itself.
-
-----------------------------------------------------------------------------------------------------
 engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740  [.keep] [Cppcheck (quick)]
   File: engine/fileio.cpp  (2 diagnostics)
 
@@ -680,13 +666,6 @@ engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50  [.keep] [Cppcheck
 
   Line   94: [selfAssignment] Redundant assignment of 'piVar5' to itself.
   Line   95: [selfAssignment] Redundant assignment of 'piVar7' to itself.
-
-----------------------------------------------------------------------------------------------------
-engine_fileio.cpp_getLatestFileFromRepository_FUN_004b3220  [.keep] [Cppcheck (quick)]
-  File: engine/fileio.cpp  (2 diagnostics)
-
-  Line   41: [selfAssignment] Redundant assignment of 'pcVar6' to itself.
-  Line   46: [selfAssignment] Redundant assignment of 'pcVar6' to itself.
 
 ----------------------------------------------------------------------------------------------------
 shape_design.c_configureSinglePassPolygonReduction_FUN_00465560  [.keep] [Cppcheck (quick)]
@@ -708,13 +687,6 @@ shape_design.c_mergeTrianglesIntoQuad_FUN_00462190  [.keep] [Cppcheck (quick)]
 
   Line  205: [selfAssignment] Redundant assignment of 'pSVar5' to itself.
   Line  206: [selfAssignment] Redundant assignment of 'pSVar6' to itself.
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_optimizePolygonMesh_FUN_004658e0  [.keep] [Cppcheck (quick)]
-  File: shape/design.c  (2 diagnostics)
-
-  Line   80: [selfAssignment] Redundant assignment of 'pcVar5' to itself.
-  Line   85: [selfAssignment] Redundant assignment of 'pcVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
 shape_design.c_showFacetPartEditor_FUN_0045f1d0  [.keep] [Cppcheck (quick)]
@@ -778,7 +750,7 @@ core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40  [.keep] [Cppcheck (qui
 core_charactr.cpp_CCharacter_setup_FUN_00428140  [.keep] [Cppcheck (quick)]
   File: core/charactr.cpp  (1 diagnostics)
 
-  Line   94: [selfAssignment] Redundant assignment of 'pCVar4' to itself.
+  Line   91: [selfAssignment] Redundant assignment of 'pCVar4' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_cloth.cpp_CCloth_boneEditor_FUN_0043c880  [.keep] [Cppcheck (quick)]
@@ -799,12 +771,6 @@ core_event.cpp_parseVectorLocation_FUN_004aa530  [.keep] [Cppcheck (quick)]
   Line   25: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-core_inv.cpp_CInventory_load_FUN_004ff400  [.keep] [Cppcheck (quick)]
-  File: core/inv.cpp  (1 diagnostics)
-
-  Line   65: [selfAssignment] Redundant assignment of 'puVar8' to itself.
-
-----------------------------------------------------------------------------------------------------
 core_main.c_displayErrorAndQuit_FUN_00506f10  [.keep] [Cppcheck (quick)]
   File: core/main.c  (1 diagnostics)
 
@@ -817,12 +783,6 @@ core_mission.cpp_CDemonMission_loadActor_FUN_00523990  [.keep] [Cppcheck (quick)
   Line   64: [legacyUninitvar] Uninitialized variable: local_e1
 
 ----------------------------------------------------------------------------------------------------
-core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0  [.keep] [Cppcheck (quick)]
-  File: core/msnedit.cpp  (1 diagnostics)
-
-  Line  195: [selfAssignment] Redundant assignment of 'pcVar12' to itself.
-
-----------------------------------------------------------------------------------------------------
 core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80  [.keep] [Cppcheck (quick)]
   File: core/msnedit.cpp  (1 diagnostics)
 
@@ -833,6 +793,12 @@ core_script.cpp_parseBodyPartMask_FUN_00559730  [.keep] [Cppcheck (quick)]
   File: core/script.cpp  (1 diagnostics)
 
   Line   30: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+
+----------------------------------------------------------------------------------------------------
+core_script.cpp_trimLine_FUN_005592c0  [.keep] [Cppcheck (quick)]
+  File: core/script.cpp  (1 diagnostics)
+
+  Line   39: [nullPointer] Possible null pointer dereference: pcVar2
 
 ----------------------------------------------------------------------------------------------------
 core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0  [.keep] [Cppcheck (quick)]
@@ -856,7 +822,7 @@ core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660  [.keep] [Cppcheck (q
 core_setedit.cpp_CDemonSet_save_FUN_0057a2a0  [.keep] [Cppcheck (quick)]
   File: core/setedit.cpp  (1 diagnostics)
 
-  Line  185: [nullPointer] Possible null pointer dereference: pcVar4
+  Line  166: [nullPointer] Possible null pointer dereference: pcVar4
 
 ----------------------------------------------------------------------------------------------------
 core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0  [.keep] [Cppcheck (quick)]
@@ -875,6 +841,12 @@ core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240  [.keep] [Cpp
   File: core/skeledit.cpp  (1 diagnostics)
 
   Line   58: [identicalInnerCondition] Identical inner 'if' condition is always true.
+
+----------------------------------------------------------------------------------------------------
+core_skeledit.cpp_viewModel_FUN_00598fc0  [.keep] [Cppcheck (quick)]
+  File: core/skeledit.cpp  (1 diagnostics)
+
+  Line  130: [stringLiteralWrite] Modifying string literal "meshlod" directly or indirectly is undefined behaviour.
 
 ----------------------------------------------------------------------------------------------------
 core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970  [.keep] [Cppcheck (quick)]
@@ -943,6 +915,12 @@ shape_design.c_generateOctant_FUN_00469420  [.keep] [Cppcheck (quick)]
   Line   83: [selfAssignment] Redundant assignment of 'pcVar4' to itself.
 
 ----------------------------------------------------------------------------------------------------
+shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004a35b0  [.keep] [Cppcheck (quick)]
+  File: shape/edittool.cpp  (1 diagnostics)
+
+  Line   33: [invalidFunctionArgStr] Invalid strlen() argument nr 1. A nul-terminated string is required.
+
+----------------------------------------------------------------------------------------------------
 shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910  [.keep] [Cppcheck (quick)]
   File: shape/meshlod.cpp  (1 diagnostics)
 
@@ -989,3 +967,9 @@ sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0  [.keep] [Cppcheck (quick)]
   File: sound/sndmain.cpp  (1 diagnostics)
 
   Line   37: [selfAssignment] Redundant assignment of 'pcVar5' to itself.
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_testSoundFile_FUN_005ad3b0  [.keep] [Cppcheck (quick)]
+  File: sound/sndmain.cpp  (1 diagnostics)
+
+  Line   32: [uninitvar] Uninitialized variable: local_60

@@ -12,7 +12,6 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_pt
 {
   UOrientationVector *euler_00;
   CLocation *position_00;
-  char cVar2;
   CSkeleton *pCVar3;
   int iVar3;
   CSkeleton *skeleton;
@@ -21,13 +20,11 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_pt
   char *pcVar4;
   int iVar6;
   CCharacter *pCVar6;
-  char *pcVar7;
   char *pcVar8;
   CDemonActor *this_ptr_01;
   float fVar2;
   CClothList *this_ptr_00;
   int iVar9;
-  char cVar1;
   UOrientationVector *euler;
   CLocation *position;
 
@@ -111,17 +108,7 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_pt
     return;
   }
   pcVar4 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(&this_ptr->base);
-  pcVar4 = pcVar4 + 1;
-  pcVar7 = this_ptr->descriptive_name;
-  do {
-    cVar1 = *pcVar4;
-    *pcVar7 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar2 = pcVar4[1];
-    pcVar4 = pcVar4 + 2;
-    pcVar7[1] = cVar2;
-    pcVar7 = pcVar7 + 2;
-  } while (cVar2 != '\0');
+  strcpy(this_ptr->descriptive_name,pcVar4 + 1);
   this_ptr->sfx_handle = 0;
   return;
 }

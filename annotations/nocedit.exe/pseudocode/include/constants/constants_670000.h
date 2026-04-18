@@ -123,14 +123,12 @@ static TerminatedCString s_unknown_0067d200 = "(unknown)";
 static TerminatedCString s_CLeakChecker_0067d214 = "$CLeakChecker$$";
 static TerminatedCString s_CMoon_0067d368 = "$CMoon$$";
 static TerminatedCString s_meshlod_simplify_log_0067d4a0 = "meshlod\\simplify.log";
-static TerminatedCString s_replay_txt_0067d4b8 = "replay.txt";
 static TerminatedCString s_LodMesh_0067d4d4 = "$LodMesh$$";
 static TerminatedCString s_CSpotView_0067d4e4 = "$CSpotView$$";
 static TerminatedCString s_LodFace_0067d504 = "$LodFace$$";
 static TerminatedCString s_CMimic_0067d518 = "$CMimic$$";
 static TerminatedCString s_CMineCar_0067d52c = "$CMineCar$$";
 static TerminatedCString s_SClipPlane_0067d53c = "$SClipPlane$$";
-static TerminatedCString s_corrupt_0067d558 = "corrupt!";
 static TerminatedCString s_CDemonMission_0067d6a4 = "$CDemonMission$$";
 static TerminatedCString s_GenuineIntel_0067d6c0 = "GenuineIntel";
 static TerminatedCString s_CMobster_0067d6ec = "$CMobster$$";
@@ -180,6 +178,7 @@ static char* g_MenuBitmapFilenames[8] = {
 
 // char[100] constants
 static char g_IpAddress[] = "10.0.0.105";
+static char s_corrupt_0067d558[] = "corrupt!";
 
 // char[1024] constants
 static char g_HuffmanData12[1024] = {
@@ -670,6 +669,9 @@ static char g_HuffmanData11[256] = {
 
 // char[260] constants
 static char g_NetworkModelFilename[] = "t:\\";
+
+// char[28] constants
+static char g_ReplayLodFilename[] = "replay.txt";
 
 // char[40] constants
 static char g_HuffmanData02[40] = {
