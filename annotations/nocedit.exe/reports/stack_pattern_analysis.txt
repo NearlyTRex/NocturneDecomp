@@ -21,14 +21,14 @@ HIGH SEVERITY - Severe decompilation impact
 
   crt_io.c_write_FUN_006084ec
     Address: 006084ec
-    Suspect count: 20
+    Suspect count: 19
     Note: Function contains stack manipulation that severely impacts decompilation quality.
     - [dynamic_alloca] at 0060868e: SUB ESP,EAX
     - [alt_frame_pointer] at 0060869e: MOV ESI,ESP
 
   crt_startup.cpp_WinMainBootstrap_FUN_00609e70
     Address: 00609e70
-    Suspect count: 9
+    Suspect count: 8
     Note: Function contains stack manipulation that severely impacts decompilation quality.
     - [dynamic_alloca] at 00609e8b: SUB ESP,EAX
     - [dynamic_alloca] at 00609ede: SUB ESP,EAX
@@ -77,7 +77,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00433c99: AND ESP,0xfffffff8
 
   crt_process.c_buildFileInfoEnv_FUN_0060ffd0
-    File: crt/process.c, Suspects: 4
+    File: crt/process.c, Suspects: 3
     - [alt_frame_pointer] at 00610075: MOV EDI,ESP
     - [alt_frame_pointer] at 006100a6: MOV EDI,ESP
     - [alt_frame_pointer] at 006100e2: MOV EDI,ESP
@@ -87,27 +87,27 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 006101a4: MOV ESI,ESP
 
   crt_watcom.c_getcwd_FUN_00608d20
-    File: crt/watcom.c, Suspects: 1
+    File: crt/watcom.c, Suspects: 0
     - [alt_frame_pointer] at 00608da2: MOV ESI,ESP
 
   crt_time.c_formatTwoDigits_FUN_00601640
-    File: crt/time.c, Suspects: 1
+    File: crt/time.c, Suspects: 0
     - [alt_frame_pointer] at 0060164d: MOV ESI,ESP
 
   crt_time.c__strftime_FUN_006002d4
-    File: crt/time.c, Suspects: 1
+    File: crt/time.c, Suspects: 0
     - [alt_frame_pointer] at 0060030d: MOV ESI,ESP
 
   crt_time.c_asctimeFormat_FUN_00601678
-    File: crt/time.c, Suspects: 1
+    File: crt/time.c, Suspects: 0
     - [alt_frame_pointer] at 00601729: MOV ESI,ESP
 
   crt_unknown.c_FUN_0060ade0
-    File: crt/unknown.c, Suspects: 12
+    File: crt/unknown.c, Suspects: 11
     - [alt_frame_pointer] at 0060adef: MOV EDI,ESP
 
   crt_string.c_wcstombs_FUN_0060c0c0
-    File: crt/string.c, Suspects: 1
+    File: crt/string.c, Suspects: 0
     - [alt_frame_pointer] at 0060c11b: MOV ESI,ESP
 
   support_trisock.cpp_connectSocket_FUN_005e1bd0
@@ -115,7 +115,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 005e1be6: MOV EDI,ESP
 
   engine_matrix.c_normalizeVector3DFixed_FUN_0050d970
-    File: engine/matrix.c, Suspects: 2
+    File: engine/matrix.c, Suspects: 1
     - [alt_frame_pointer] at 0050d9d4: MOV ESI,ESP
 
   engine_matrix.c_getCameraOrigin_FUN_0050e2c0
@@ -136,7 +136,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0050e5c3: MOV EDI,ESP
 
   engine_matrix.c_transformWorldToView_FUN_0050cc40
-    File: engine/matrix.c, Suspects: 1
+    File: engine/matrix.c, Suspects: 0
     - [alt_frame_pointer] at 0050ccff: MOV ESI,ESP
 
   engine_matrix.c_invertTransformMatrix_FUN_0050c640
@@ -183,7 +183,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 004406cc: AND ESP,0xfffffff8
 
   engine_colquant.c_doubleMax_FUN_00441790
-    File: engine/colquant.c, Suspects: 1
+    File: engine/colquant.c, Suspects: 0
     - [stack_alignment] at 00441796: AND ESP,0xfffffff8
 
   engine_2d.c_loadOrBuildColorMap_FUN_00402930
@@ -237,7 +237,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00501f39: AND ESP,0xfffffff8
 
   engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
-    File: engine/drender.cpp, Suspects: 1
+    File: engine/drender.cpp, Suspects: 0
     - [alt_frame_pointer] at 0048c767: MOV ESI,ESP
     - [alt_frame_pointer] at 0048c770: MOV ESI,ESP
 
@@ -247,7 +247,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0048c80e: MOV ESI,ESP
 
   engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
-    File: engine/drender.cpp, Suspects: 1
+    File: engine/drender.cpp, Suspects: 0
     - [alt_frame_pointer] at 0048c7e7: MOV ESI,ESP
     - [alt_frame_pointer] at 0048c7f0: MOV ESI,ESP
 
@@ -277,5 +277,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 2.3 suspects/function
-  Without stack patterns: avg 0.9 suspects/function
+  With stack patterns:    avg 2.2 suspects/function
+  Without stack patterns: avg 0.8 suspects/function

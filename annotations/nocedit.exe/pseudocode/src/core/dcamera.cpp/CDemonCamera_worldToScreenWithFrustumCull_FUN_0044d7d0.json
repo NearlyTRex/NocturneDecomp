@@ -7,15 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 278,
-    "complexity_score": 125,
+    "complexity_score": 110,
     "cross_reference_count": 5,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 95,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_many",
       "stack_alignment_array"
     ],
     "total_lines": 373
@@ -102,10 +101,12 @@
         "call_addr": "004e0883",
         "call_type": "direct",
         "caller": "core_game.cpp_CGame_beginFadeIn_FUN_004e0920",
-        "estimated_params": 2,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -113,10 +114,12 @@
         "call_addr": "0044e265",
         "call_type": "direct",
         "caller": "core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10",
-        "estimated_params": 2,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -124,10 +127,12 @@
         "call_addr": "00450d16",
         "call_type": "direct",
         "caller": "core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0",
-        "estimated_params": 2,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -135,10 +140,12 @@
         "call_addr": "0045193e",
         "call_type": "direct",
         "caller": "core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0",
-        "estimated_params": 2,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -146,10 +153,12 @@
         "call_addr": "00450890",
         "call_type": "direct",
         "caller": "core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_004507a0",
-        "estimated_params": 2,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 8,
         "stack_params": 2
       }
@@ -157,7 +166,8 @@
     "confidence": "high",
     "declared_params": 3,
     "declared_stack_bytes": 8,
-    "estimated_params": 2
+    "estimated_params": 3,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.68724279835391,
@@ -323,17 +333,6 @@
       "severity": "moderate",
       "text": "int aiStackY_1018 [1017];",
       "type": "stack_alignment_array"
-    },
-    {
-      "call_site_count": 5,
-      "declared_params": 3,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 2,
-      "fix_type": "remove_params",
-      "match": "declared:3 vs estimated:2",
-      "param_delta": -1,
-      "text": "Function declares 3 params but call sites push 2 (1 extra)",
-      "type": "param_count_too_many"
     }
   ]
 }

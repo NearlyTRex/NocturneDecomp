@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 258,
+    "complexity_score": 243,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 128,
-    "suspect_count": 11,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
-      "special_crt_function",
       "stack_param",
       "stack_ref"
     ],
@@ -64,7 +63,8 @@
     "confidence": "medium",
     "declared_params": 3,
     "declared_stack_bytes": 12,
-    "estimated_params": 3
+    "estimated_params": 3,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.8604651162790695,
@@ -245,15 +245,6 @@
       "severity": "mild",
       "text": "*(uint *)((int)result + 4) = local_28;",
       "type": "pointer_cast"
-    },
-    {
-      "address": "00605b9b",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_string.c_parseFloatString_FUN_00605b9b",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 00605b9b",
-      "type": "special_crt_function"
     }
   ]
 }

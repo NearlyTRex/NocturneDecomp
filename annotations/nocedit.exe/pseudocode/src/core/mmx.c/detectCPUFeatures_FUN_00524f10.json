@@ -7,16 +7,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 24,
+    "complexity_score": 9,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 9,
-    "suspect_count": 1,
-    "suspect_types": [
-      "special_cpu_detection"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 25
   },
   "cross_references": [
@@ -107,7 +105,8 @@
     "confidence": "medium",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 0
+    "estimated_params": 0,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.076923076923077,
@@ -137,15 +136,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "address": "00524f10",
-      "cpu_function": "detectcpu",
-      "description": "CPU detection code with EFLAGS/CPUID manipulation - expected unusual patterns",
-      "function_name": "core_mmx.c_detectCPUFeatures_FUN_00524f10",
-      "match": "detectcpu",
-      "text": "CPU detection function at 00524f10",
-      "type": "special_cpu_detection"
-    }
-  ]
+  "suspects": []
 }

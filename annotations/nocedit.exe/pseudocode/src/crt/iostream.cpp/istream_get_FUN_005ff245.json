@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 62,
+    "complexity_score": 47,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 32,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "special_crt_function",
       "unresolved_funcptr"
     ],
     "total_lines": 113
@@ -128,7 +127,8 @@
     "confidence": "high",
     "declared_params": 2,
     "declared_stack_bytes": 8,
-    "estimated_params": 2
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.7868852459016393,
@@ -188,15 +188,6 @@
       "severity": "moderate",
       "text": "(iVar4 = (**(code **)(*(int *)(iVar3 + 0x28) + 0x10))(iVar3), iVar4 != -1)) {",
       "type": "unresolved_funcptr"
-    },
-    {
-      "address": "005ff245",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_iostream.cpp_istream_get_FUN_005ff245",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 005ff245",
-      "type": "special_crt_function"
     }
   ]
 }

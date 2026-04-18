@@ -73,12 +73,11 @@
         "call_addr": "0048c7eb",
         "call_type": "direct",
         "caller": "engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0",
-        "estimated_params": 4,
+        "estimated_params": 3,
         "instructions_analyzed": 6,
         "method": "push_count",
         "reg_params": [
-          "EBX",
-          "EDX"
+          "ESI"
         ],
         "stack_bytes": 8,
         "stack_params": 2
@@ -91,16 +90,17 @@
         "instructions_analyzed": 8,
         "method": "push_count",
         "reg_params": [
-          "EBX"
+          "ESI"
         ],
         "stack_bytes": 12,
         "stack_params": 3
       }
     ],
-    "confidence": "medium",
+    "confidence": "low",
     "declared_params": 1,
     "declared_stack_bytes": 0,
-    "estimated_params": 4
+    "estimated_params": 3,
+    "matches_declared": false
   },
   "pcode_overrides": {
     "0x0050e317": [
@@ -175,11 +175,11 @@
       "call_site_count": 2,
       "declared_params": 1,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
+      "estimated_params": 3,
       "fix_type": "add_params",
-      "match": "declared:1 vs estimated:4",
-      "param_delta": 3,
-      "text": "Function declares 1 params but call sites push 4 (3 missing)",
+      "match": "declared:1 vs estimated:3",
+      "param_delta": 2,
+      "text": "Function declares 1 params but call sites push 3 (2 missing)",
       "type": "param_count_too_few"
     }
   ]

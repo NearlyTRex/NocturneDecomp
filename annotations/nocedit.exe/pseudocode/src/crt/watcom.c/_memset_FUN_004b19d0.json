@@ -2,17 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 243,
+    "complexity_score": 228,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 58,
-    "suspect_count": 15,
+    "suspect_count": 14,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
-      "special_crt_function",
       "undefined_data",
       "unresolved_funcptr",
       "warning_indirect_jump",
@@ -155,7 +154,8 @@
     "confidence": "low",
     "declared_params": 3,
     "declared_stack_bytes": 4,
-    "estimated_params": 6
+    "estimated_params": 6,
+    "matches_declared": false
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.914285714285715,
@@ -319,15 +319,6 @@
       "param_delta": 3,
       "text": "Function declares 3 params but call sites push 6 (3 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "address": "004b19d0",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_watcom.c__memset_FUN_004b19d0",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 004b19d0",
-      "type": "special_crt_function"
     }
   ]
 }

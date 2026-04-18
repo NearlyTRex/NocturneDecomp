@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 186,
+    "complexity_score": 171,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 36,
-    "suspect_count": 13,
+    "suspect_count": 12,
     "suspect_types": [
-      "special_crt_function",
       "stack_param",
       "stack_ref",
       "sub84_truncation"
@@ -229,15 +228,6 @@
       "severity": "moderate",
       "text": "local_10 = SUB84(__BITCAST_UINT64(dVar1),0);",
       "type": "sub84_truncation"
-    },
-    {
-      "address": "0060c02b",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_math.c_handle_math_error_FUN_0060c02b",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 0060c02b",
-      "type": "special_crt_function"
     }
   ]
 }

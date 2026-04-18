@@ -7,17 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3947,
-    "complexity_score": 1773,
+    "complexity_score": 1758,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 197,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1728,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "raw_address_constant",
-      "unresolved_funcptr"
+      "raw_address_constant"
     ],
     "total_lines": 5675
   },
@@ -1441,7 +1440,8 @@
     "confidence": "medium",
     "declared_params": 1,
     "declared_stack_bytes": 4,
-    "estimated_params": 1
+    "estimated_params": 1,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.2105263157894735,
@@ -2769,14 +2769,6 @@
     "file_variant": "keep"
   },
   "suspects": [
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 241,
-      "match": "code",
-      "severity": "moderate",
-      "text": "pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(\"Enter cheat code\");",
-      "type": "unresolved_funcptr"
-    },
     {
       "description": "Complex pointer cast",
       "line": 1444,

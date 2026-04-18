@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 32,
+    "complexity_score": 17,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 17,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_many"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 53
   },
   "cross_references": [
@@ -64,10 +62,12 @@
         "call_addr": "0059ea44",
         "call_type": "direct",
         "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -75,10 +75,12 @@
         "call_addr": "0059e8a6",
         "call_type": "direct",
         "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -86,10 +88,12 @@
         "call_addr": "0059e9e6",
         "call_type": "direct",
         "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -97,10 +101,12 @@
         "call_addr": "0059eaa7",
         "call_type": "direct",
         "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -108,10 +114,12 @@
         "call_addr": "0059e5ab",
         "call_type": "direct",
         "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -119,10 +127,12 @@
         "call_addr": "0059f175",
         "call_type": "direct",
         "caller": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -130,10 +140,12 @@
         "call_addr": "0059f65b",
         "call_type": "direct",
         "caller": "core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       }
@@ -141,7 +153,8 @@
     "confidence": "high",
     "declared_params": 2,
     "declared_stack_bytes": 4,
-    "estimated_params": 1
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.838709677419355,
@@ -200,17 +213,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "call_site_count": 7,
-      "declared_params": 2,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 1,
-      "fix_type": "remove_params",
-      "match": "declared:2 vs estimated:1",
-      "param_delta": -1,
-      "text": "Function declares 2 params but call sites push 1 (1 extra)",
-      "type": "param_count_too_many"
-    }
-  ]
+  "suspects": []
 }

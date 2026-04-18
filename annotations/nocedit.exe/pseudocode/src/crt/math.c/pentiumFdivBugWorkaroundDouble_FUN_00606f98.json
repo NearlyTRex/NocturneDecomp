@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 177,
+    "complexity_score": 162,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 17,
-    "suspect_count": 14,
+    "suspect_count": 13,
     "suspect_types": [
       "fpu_register_input",
-      "special_math_intrinsic",
       "unknown_field",
       "unnamed_param"
     ],
@@ -191,15 +190,6 @@
       "severity": "mild",
       "text": "fVar1 = pentiumFdivpWorkaround(in_ST2,in_ST3);",
       "type": "fpu_register_input"
-    },
-    {
-      "address": "00606f98",
-      "description": "Math library function with FPU stack or unusual patterns",
-      "function_name": "crt_math.c_pentiumFdivBugWorkaroundDouble_FUN_00606f98",
-      "match": "round",
-      "math_function": "round",
-      "text": "Math intrinsic (round) at 00606f98",
-      "type": "special_math_intrinsic"
     }
   ]
 }

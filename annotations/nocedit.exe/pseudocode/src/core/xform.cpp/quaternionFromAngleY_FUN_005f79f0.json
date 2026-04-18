@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 27,
+    "complexity_score": 12,
     "cross_reference_count": 9,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 12,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_many"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 50
   },
   "cross_references": [
@@ -107,10 +105,12 @@
         "call_addr": "005be760",
         "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -118,10 +118,12 @@
         "call_addr": "00558562",
         "call_type": "direct",
         "caller": "core_scat.cpp_CScat_blendAimBones_FUN_005584a0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -129,10 +131,12 @@
         "call_addr": "005bea62",
         "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -140,10 +144,12 @@
         "call_addr": "005585a4",
         "call_type": "direct",
         "caller": "core_scat.cpp_CScat_blendAimBones_FUN_005584a0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -151,10 +157,12 @@
         "call_addr": "005beb65",
         "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -162,10 +170,12 @@
         "call_addr": "005584e6",
         "call_type": "direct",
         "caller": "core_scat.cpp_CScat_blendAimBones_FUN_005584a0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -173,10 +183,12 @@
         "call_addr": "005bf0e7",
         "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -184,10 +196,12 @@
         "call_addr": "005c0407",
         "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_applyArmAimRotation_FUN_005c02b0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -195,10 +209,12 @@
         "call_addr": "005bef88",
         "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -206,10 +222,12 @@
         "call_addr": "0042dd2b",
         "call_type": "direct",
         "caller": "core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       }
@@ -217,7 +235,8 @@
     "confidence": "high",
     "declared_params": 2,
     "declared_stack_bytes": 4,
-    "estimated_params": 1
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.454545454545454,
@@ -278,17 +297,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "call_site_count": 29,
-      "declared_params": 2,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 1,
-      "fix_type": "remove_params",
-      "match": "declared:2 vs estimated:1",
-      "param_delta": -1,
-      "text": "Function declares 2 params but call sites push 1 (1 extra)",
-      "type": "param_count_too_many"
-    }
-  ]
+  "suspects": []
 }

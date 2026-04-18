@@ -7,16 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 324,
-    "complexity_score": 151,
+    "complexity_score": 136,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 18,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 121,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "suspect_float",
-      "unresolved_funcptr"
+      "suspect_float"
     ],
     "total_lines": 445
   },
@@ -271,7 +270,8 @@
     "confidence": "high",
     "declared_params": 2,
     "declared_stack_bytes": 8,
-    "estimated_params": 2
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.910852713178294,
@@ -428,14 +428,6 @@
       "severity": "mild",
       "text": "local_1c = 1.4013e-45;",
       "type": "suspect_float"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 107,
-      "match": "code",
-      "severity": "moderate",
-      "text": "_sprintf(local_94,\"Waiting on sync code %d from server...\",sync_stage);",
-      "type": "unresolved_funcptr"
     }
   ]
 }

@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 107,
-    "complexity_score": 160,
+    "complexity_score": 145,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 60,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
-      "special_crt_function",
       "unknown_field"
     ],
     "total_lines": 167
@@ -80,7 +79,8 @@
     "confidence": "medium",
     "declared_params": 2,
     "declared_stack_bytes": 8,
-    "estimated_params": 2
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.337662337662338,
@@ -239,15 +239,6 @@
       "severity": "mild",
       "text": "dVar3 = __BITCAST_DOUBLE(CONCAT44(local_20._4_4_,(uint)local_20));",
       "type": "unknown_field"
-    },
-    {
-      "address": "00605d5d",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_string.c_strtod_main_FUN_00605d5d",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 00605d5d",
-      "type": "special_crt_function"
     }
   ]
 }

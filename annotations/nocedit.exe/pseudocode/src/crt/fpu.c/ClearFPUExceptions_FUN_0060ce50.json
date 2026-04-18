@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 19,
+    "complexity_score": 4,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 4,
-    "suspect_count": 1,
-    "suspect_types": [
-      "special_crt_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 7
   },
   "cross_references": [
@@ -59,15 +57,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "address": "0060ce50",
-      "crt_type": "exception handling",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_fpu.c_ClearFPUExceptions_FUN_0060ce50",
-      "match": "crt_",
-      "text": "CRT function (exception handling) at 0060ce50",
-      "type": "special_crt_function"
-    }
-  ]
+  "suspects": []
 }

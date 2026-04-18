@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 204,
-    "complexity_score": 99,
+    "complexity_score": 84,
     "cross_reference_count": 15,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 69,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_many",
       "warning_inlined_function"
     ],
     "total_lines": 273
@@ -151,10 +150,12 @@
         "call_addr": "005c0680",
         "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_applyArmAimRotation_FUN_005c02b0",
-        "estimated_params": 3,
+        "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -162,10 +163,12 @@
         "call_addr": "004d54c1",
         "call_type": "direct",
         "caller": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80",
-        "estimated_params": 2,
+        "estimated_params": 3,
         "instructions_analyzed": 16,
         "method": "push_count",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -173,10 +176,12 @@
         "call_addr": "005c0481",
         "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_applyArmAimRotation_FUN_005c02b0",
-        "estimated_params": 3,
+        "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -184,10 +189,12 @@
         "call_addr": "0059f802",
         "call_type": "direct",
         "caller": "core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750",
-        "estimated_params": 3,
+        "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -195,10 +202,12 @@
         "call_addr": "004428e5",
         "call_type": "direct",
         "caller": "core_course.cpp_CCourse_interpolate_FUN_004427a0",
-        "estimated_params": 3,
+        "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -206,10 +215,12 @@
         "call_addr": "0059f085",
         "call_type": "direct",
         "caller": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50",
-        "estimated_params": 3,
+        "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -217,10 +228,12 @@
         "call_addr": "0059f5c5",
         "call_type": "direct",
         "caller": "core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260",
-        "estimated_params": 3,
+        "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -228,10 +241,12 @@
         "call_addr": "0059f348",
         "call_type": "direct",
         "caller": "core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260",
-        "estimated_params": 3,
+        "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -239,10 +254,12 @@
         "call_addr": "005c04ee",
         "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_applyArmAimRotation_FUN_005c02b0",
-        "estimated_params": 3,
+        "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -250,10 +267,12 @@
         "call_addr": "0054cb94",
         "call_type": "direct",
         "caller": "core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0",
-        "estimated_params": 3,
+        "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 12,
         "stack_params": 3
       }
@@ -261,7 +280,8 @@
     "confidence": "high",
     "declared_params": 4,
     "declared_stack_bytes": 12,
-    "estimated_params": 3
+    "estimated_params": 4,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.212290502793296,
@@ -423,17 +443,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "call_site_count": 22,
-      "declared_params": 4,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 3,
-      "fix_type": "remove_params",
-      "match": "declared:4 vs estimated:3",
-      "param_delta": -1,
-      "text": "Function declares 4 params but call sites push 3 (1 extra)",
-      "type": "param_count_too_many"
     }
   ]
 }

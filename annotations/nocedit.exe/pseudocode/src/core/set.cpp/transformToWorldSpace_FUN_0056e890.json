@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 53,
+    "complexity_score": 38,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 12,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 38,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_many"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 108
   },
   "cross_references": [
@@ -121,10 +119,12 @@
         "call_addr": "0056ee64",
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -132,10 +132,12 @@
         "call_addr": "0056f110",
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -143,10 +145,12 @@
         "call_addr": "0056ed14",
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -154,10 +158,12 @@
         "call_addr": "0056f07f",
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       }
@@ -165,7 +171,8 @@
     "confidence": "high",
     "declared_params": 2,
     "declared_stack_bytes": 4,
-    "estimated_params": 1
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_overrides": {
     "0x0056e94f": [
@@ -251,17 +258,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "call_site_count": 4,
-      "declared_params": 2,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 1,
-      "fix_type": "remove_params",
-      "match": "declared:2 vs estimated:1",
-      "param_delta": -1,
-      "text": "Function declares 2 params but call sites push 1 (1 extra)",
-      "type": "param_count_too_many"
-    }
-  ]
+  "suspects": []
 }

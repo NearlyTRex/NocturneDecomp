@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 233,
+    "complexity_score": 218,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 58,
-    "suspect_count": 16,
+    "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
-      "special_crt_function",
       "unaffected_reg"
     ],
     "total_lines": 146
@@ -201,15 +200,6 @@
       "severity": "moderate",
       "text": "*(uint *)(unaff_EBX + 0x14) = uVar5;",
       "type": "unaffected_reg"
-    },
-    {
-      "address": "00609410",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_heap.c_AllocateFromFreeList_FUN_00609410",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 00609410",
-      "type": "special_crt_function"
     }
   ]
 }

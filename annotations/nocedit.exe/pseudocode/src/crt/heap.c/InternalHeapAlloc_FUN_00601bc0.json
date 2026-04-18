@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 97,
+    "complexity_score": 82,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 57,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "register_param",
-      "special_crt_function"
+      "register_param"
     ],
     "total_lines": 179
   },
@@ -158,7 +157,8 @@
     "confidence": "high",
     "declared_params": 1,
     "declared_stack_bytes": 4,
-    "estimated_params": 1
+    "estimated_params": 1,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.113636363636363,
@@ -227,15 +227,6 @@
       "severity": "mild",
       "text": "(size,(HeapBlock *)(uint)in_DS,(ushort)pvVar6), pvVar6 != (void *)0x0",
       "type": "register_param"
-    },
-    {
-      "address": "00601bc0",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_heap.c_InternalHeapAlloc_FUN_00601bc0",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 00601bc0",
-      "type": "special_crt_function"
     }
   ]
 }

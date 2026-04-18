@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 106,
+    "complexity_score": 91,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 16,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
-      "special_crt_function",
       "unnamed_param"
     ],
     "total_lines": 52
@@ -36,7 +35,8 @@
     "confidence": "unknown",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 0
+    "estimated_params": 0,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.88,
@@ -123,15 +123,6 @@
       "severity": "mild",
       "text": "if ((param_1[1] == 0) && (*param_1 == 0)) {",
       "type": "unnamed_param"
-    },
-    {
-      "address": "0060b07a",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_unknown.c_FUN_0060b07a",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 0060b07a",
-      "type": "special_crt_function"
     }
   ]
 }

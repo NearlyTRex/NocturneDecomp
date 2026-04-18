@@ -2,17 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 81,
+    "complexity_score": 66,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 16,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "fnstsw_flag_artifact",
-      "register_param",
-      "special_crt_function"
+      "register_param"
     ],
     "total_lines": 48
   },
@@ -97,7 +96,8 @@
     "confidence": "high",
     "declared_params": 2,
     "declared_stack_bytes": 8,
-    "estimated_params": 2
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.285714285714286,
@@ -180,15 +180,6 @@
       "severity": "severe",
       "text": "(in_DS,(void *)CONCAT22((short)(new_size >> 0x10),in_DS),(ulong)ptr,pExtraNeeded",
       "type": "fnstsw_flag_artifact"
-    },
-    {
-      "address": "00609974",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_heap.c_TryResizeInPlace_FUN_00609974",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 00609974",
-      "type": "special_crt_function"
     }
   ]
 }

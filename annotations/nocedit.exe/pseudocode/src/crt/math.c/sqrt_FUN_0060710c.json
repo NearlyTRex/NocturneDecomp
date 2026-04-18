@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 28,
+    "complexity_score": 13,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 13,
-    "suspect_count": 1,
-    "suspect_types": [
-      "special_math_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 49
   },
   "cross_references": [
@@ -100,15 +98,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "address": "0060710c",
-      "description": "Math library function with FPU stack or unusual patterns",
-      "function_name": "crt_math.c_sqrt_FUN_0060710c",
-      "match": "sqrt",
-      "math_function": "sqrt",
-      "text": "Math intrinsic (sqrt) at 0060710c",
-      "type": "special_math_intrinsic"
-    }
-  ]
+  "suspects": []
 }

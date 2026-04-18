@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 63,
+    "complexity_score": 48,
     "cross_reference_count": 10,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 23,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "special_crt_function",
       "stack_param"
     ],
     "total_lines": 89
@@ -224,15 +223,6 @@
       "severity": "moderate",
       "text": "in_stack_00000010);",
       "type": "stack_param"
-    },
-    {
-      "address": "00606690",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_stdio.c_lseek_FUN_00606690",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 00606690",
-      "type": "special_crt_function"
     }
   ]
 }

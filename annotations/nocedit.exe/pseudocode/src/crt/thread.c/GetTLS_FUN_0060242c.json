@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 19,
+    "complexity_score": 4,
     "cross_reference_count": 17,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 4,
-    "suspect_count": 1,
-    "suspect_types": [
-      "special_crt_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 7
   },
   "cross_references": [
@@ -155,15 +153,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "address": "0060242c",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_thread.c_GetTLS_FUN_0060242c",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 0060242c",
-      "type": "special_crt_function"
-    }
-  ]
+  "suspects": []
 }

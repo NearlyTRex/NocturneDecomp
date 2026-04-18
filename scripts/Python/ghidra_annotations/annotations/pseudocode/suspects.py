@@ -137,8 +137,12 @@ _SUSPECT_PATTERN_DEFS = [
     (r'\(\w+\s*\*\s*\)\s*\(\s*\(int\)', 'pointer_cast', 'Complex pointer cast'),
     # _._N_N_ field access patterns (mangled/unknown field names)
     (r'\._\d+_\d+_', 'unknown_field', 'Unknown/mangled field access'),
-    # code / code * - Unresolved function pointer (failed vtable lookup)
-    (r'\bcode\s*\*|\bcode\b', 'unresolved_funcptr', 'Unresolved function pointer (vtable lookup failed)'),
+    # `code *` — Ghidra's placeholder type for unresolved function pointers
+    # (e.g. `code *pcVar1;` or `(code **)(...)`). The lookbehind excludes
+    # identifiers ending in "code" (search_code, findCode, decodeCode); the
+    # explicit `*` avoids false matches on the English word in string
+    # literals or struct field names (pCVar->code).
+    (r'(?<![A-Za-z0-9_])code\s*\*', 'unresolved_funcptr', 'Unresolved function pointer (vtable lookup failed)'),
     # WARNING: Removing unreachable block
     (r'WARNING:\s*Removing unreachable block', 'warning_unreachable', 'Unreachable code block removed'),
     # WARNING: Could not recover jumptable
@@ -1434,7 +1438,7 @@ def get_prologue_offset(pcode_data):
     return prologue_offset, has_ebp_frame
 
 
-def identify_param_count_mismatch(param_estimates, vtable_info):
+def identify_param_count_mismatch(param_estimates, vtable_info, func_signature=None):
     """Detect parameter count mismatch for non-vtable functions.
 
     Compares declared parameter count against estimated count from call sites.
@@ -1443,8 +1447,13 @@ def identify_param_count_mismatch(param_estimates, vtable_info):
 
     Args:
         param_estimates: Dict with 'declared_params', 'estimated_params',
-                        'call_site_count', 'confidence'
+                        'call_site_count', 'confidence',
+                        and 'declared_stack_bytes' (for multi-slot param
+                        detection — doubles and structs take multiple slots).
         vtable_info: Dict with 'in_vtable' bool
+        func_signature: Optional function signature string. Used to skip
+                        variadic functions (trailing `...`) whose call sites
+                        legitimately push more args than declared.
 
     Returns:
         A suspect dict if mismatch found, None otherwise
@@ -1454,6 +1463,11 @@ def identify_param_count_mismatch(param_estimates, vtable_info):
 
     # Skip vtable functions - indirect call analysis is unreliable
     if vtable_info and vtable_info.get('in_vtable', False):
+        return None
+
+    # Skip variadic — callers push format-string + arbitrary extras; any
+    # "too few" count is expected and not actionable.
+    if func_signature and '...' in func_signature:
         return None
 
     declared = param_estimates.get('declared_params')
@@ -1468,6 +1482,18 @@ def identify_param_count_mismatch(param_estimates, vtable_info):
 
     # Check for mismatch
     if declared != estimated:
+        # `estimate_call_site_params` computes a `matches_declared` flag
+        # that already accounts for multi-slot params (doubles, structs)
+        # and register-passed params. If it says the call sites agree
+        # with the signature, trust it and skip the mismatch.
+        if param_estimates.get('matches_declared', False):
+            return None
+        # Backstop for JSONs written before `matches_declared` was stored:
+        # skip when estimated stack bytes match declared stack bytes
+        # (double/struct multi-slot case).
+        declared_stack_bytes = param_estimates.get('declared_stack_bytes')
+        if declared_stack_bytes is not None and estimated * 4 == declared_stack_bytes:
+            return None
         delta = estimated - declared
 
         if delta > 0:

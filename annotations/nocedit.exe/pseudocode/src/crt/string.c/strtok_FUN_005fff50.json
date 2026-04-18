@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 148,
+    "complexity_score": 133,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 43,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
-      "special_crt_function",
       "unknown_param"
     ],
     "total_lines": 129
@@ -113,7 +112,8 @@
     "confidence": "high",
     "declared_params": 2,
     "declared_stack_bytes": 8,
-    "estimated_params": 2
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.6875,
@@ -240,15 +240,6 @@
       "severity": "mild",
       "text": "pTVar3->unknown_10[3] = '\\0';",
       "type": "unknown_param"
-    },
-    {
-      "address": "005fff50",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_string.c_strtok_FUN_005fff50",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 005fff50",
-      "type": "special_crt_function"
     }
   ]
 }

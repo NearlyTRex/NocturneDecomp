@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 2,
-    "complexity_score": 19,
+    "complexity_score": 4,
     "cross_reference_count": 33,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 4,
-    "suspect_count": 1,
-    "suspect_types": [
-      "special_crt_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 6
   },
   "cross_references": [
@@ -246,15 +244,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "address": "00602434",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_sync.c_CriticalSectionStub_FUN_00602434",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 00602434",
-      "type": "special_crt_function"
-    }
-  ]
+  "suspects": []
 }

@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 72,
+    "complexity_score": 57,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 42,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "special_crt_function"
+      "param_count_too_few"
     ],
     "total_lines": 131
   },
@@ -101,7 +100,8 @@
     "confidence": "low",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 4
+    "estimated_params": 4,
+    "matches_declared": false
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.615384615384615,
@@ -149,15 +149,6 @@
       "param_delta": 4,
       "text": "Function declares 0 params but call sites push 4 (4 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "address": "00600ad0",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_watcom.c__heapchk_FUN_00600ad0",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 00600ad0",
-      "type": "special_crt_function"
     }
   ]
 }

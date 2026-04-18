@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 7,
-    "complexity_score": 21,
+    "complexity_score": 6,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 6,
-    "suspect_count": 1,
-    "suspect_types": [
-      "special_crt_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 13
   },
   "cross_references": [
@@ -61,7 +59,8 @@
     "confidence": "medium",
     "declared_params": 1,
     "declared_stack_bytes": 4,
-    "estimated_params": 1
+    "estimated_params": 1,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.2,
@@ -99,17 +98,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "address": "00602438",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_io.c_register_handler_wrapper_FUN_00602438",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 00602438",
-      "type": "special_crt_function"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

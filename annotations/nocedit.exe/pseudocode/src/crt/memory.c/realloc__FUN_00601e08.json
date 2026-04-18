@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 83,
+    "complexity_score": 68,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 43,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "special_crt_function"
+      "pointer_cast"
     ],
     "total_lines": 133
   },
@@ -76,7 +75,8 @@
     "confidence": "medium",
     "declared_params": 2,
     "declared_stack_bytes": 8,
-    "estimated_params": 2
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.671232876712328,
@@ -146,15 +146,6 @@
       "severity": "mild",
       "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);",
       "type": "pointer_cast"
-    },
-    {
-      "address": "00601e08",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_memory.c_realloc__FUN_00601e08",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 00601e08",
-      "type": "special_crt_function"
     }
   ]
 }

@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 91,
-    "complexity_score": 48,
+    "complexity_score": 33,
     "cross_reference_count": 9,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 33,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_many"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 124
   },
   "cross_references": [
@@ -96,10 +94,12 @@
         "call_addr": "005b1d43",
         "call_type": "direct",
         "caller": "core_sound.cpp_updateListeners_FUN_005b1870",
-        "estimated_params": 2,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -107,10 +107,12 @@
         "call_addr": "00535ca5",
         "call_type": "direct",
         "caller": "core_msnedit.cpp_screenToWorldPosition_FUN_00535c60",
-        "estimated_params": 2,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -118,10 +120,12 @@
         "call_addr": "00580145",
         "call_type": "direct",
         "caller": "core_setedit.cpp_CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0",
-        "estimated_params": 2,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -129,10 +133,12 @@
         "call_addr": "004da30a",
         "call_type": "direct",
         "caller": "core_game.cpp_CGame_processFrame_FUN_004da100",
-        "estimated_params": 2,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -140,10 +146,12 @@
         "call_addr": "0045422d",
         "call_type": "direct",
         "caller": "core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060",
-        "estimated_params": 2,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -151,10 +159,12 @@
         "call_addr": "0044e44f",
         "call_type": "direct",
         "caller": "core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360",
-        "estimated_params": 2,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -162,10 +172,12 @@
         "call_addr": "0053e617",
         "call_type": "direct",
         "caller": "core_msnedit.cpp_CDemonMission_editGore_FUN_0053e220",
-        "estimated_params": 2,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -173,10 +185,12 @@
         "call_addr": "0045293e",
         "call_type": "direct",
         "caller": "core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00452900",
-        "estimated_params": 2,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -184,10 +198,12 @@
         "call_addr": "0057fdf4",
         "call_type": "direct",
         "caller": "core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00",
-        "estimated_params": 2,
+        "estimated_params": 3,
         "instructions_analyzed": 6,
         "method": "push_count",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 8,
         "stack_params": 2
       }
@@ -195,7 +211,8 @@
     "confidence": "high",
     "declared_params": 3,
     "declared_stack_bytes": 8,
-    "estimated_params": 2
+    "estimated_params": 3,
+    "matches_declared": true
   },
   "pcode_overrides": {
     "0x0044d465": [
@@ -306,17 +323,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "call_site_count": 9,
-      "declared_params": 3,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 2,
-      "fix_type": "remove_params",
-      "match": "declared:3 vs estimated:2",
-      "param_delta": -1,
-      "text": "Function declares 3 params but call sites push 2 (1 extra)",
-      "type": "param_count_too_many"
-    }
-  ]
+  "suspects": []
 }

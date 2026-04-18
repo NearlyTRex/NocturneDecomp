@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 442,
+    "complexity_score": 427,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 77,
-    "suspect_count": 34,
+    "suspect_count": 33,
     "suspect_types": [
       "pointer_cast",
-      "special_crt_function",
       "unresolved_funcptr",
       "warning_indirect_jump",
       "warning_jumptable"
@@ -403,15 +402,6 @@
       "severity": "moderate",
       "text": "(*(code *)(&INT_00679d94)[uVar2])();",
       "type": "unresolved_funcptr"
-    },
-    {
-      "address": "004b1a78",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_watcom.c__memcpy_FUN_004b1a78",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 004b1a78",
-      "type": "special_crt_function"
     }
   ]
 }

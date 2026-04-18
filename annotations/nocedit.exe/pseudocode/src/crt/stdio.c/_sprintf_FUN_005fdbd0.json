@@ -2,17 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 38,
+    "complexity_score": 8,
     "cross_reference_count": 320,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 8,
-    "suspect_count": 2,
-    "suspect_types": [
-      "param_count_too_few",
-      "special_crt_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 25
   },
   "cross_references": [
@@ -2074,7 +2071,8 @@
     "confidence": "low",
     "declared_params": 2,
     "declared_stack_bytes": 8,
-    "estimated_params": 3
+    "estimated_params": 3,
+    "matches_declared": false
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.0,
@@ -2128,26 +2126,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 50,
-      "declared_params": 2,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:2 vs estimated:3",
-      "param_delta": 1,
-      "text": "Function declares 2 params but call sites push 3 (1 missing)",
-      "type": "param_count_too_few"
-    },
-    {
-      "address": "005fdbd0",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_stdio.c__sprintf_FUN_005fdbd0",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 005fdbd0",
-      "type": "special_crt_function"
-    }
-  ]
+  "suspects": []
 }

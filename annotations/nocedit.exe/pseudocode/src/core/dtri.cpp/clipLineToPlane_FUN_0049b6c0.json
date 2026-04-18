@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 176,
-    "complexity_score": 71,
+    "complexity_score": 56,
     "cross_reference_count": 7,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 41,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
       "sub84_truncation"
     ],
     "total_lines": 217
@@ -227,7 +226,8 @@
     "confidence": "high",
     "declared_params": 7,
     "declared_stack_bytes": 44,
-    "estimated_params": 11
+    "estimated_params": 11,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.496551724137931,
@@ -433,17 +433,6 @@
       "severity": "moderate",
       "text": "local_28 = SUB84(__BITCAST_UINT64(dVar1),0);",
       "type": "sub84_truncation"
-    },
-    {
-      "call_site_count": 24,
-      "declared_params": 7,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 11,
-      "fix_type": "add_params",
-      "match": "declared:7 vs estimated:11",
-      "param_delta": 4,
-      "text": "Function declares 7 params but call sites push 11 (4 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

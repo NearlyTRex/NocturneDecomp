@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 52,
+    "complexity_score": 37,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 22,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "special_crt_function",
       "sub84_truncation"
     ],
     "total_lines": 59
@@ -36,7 +35,8 @@
     "confidence": "unknown",
     "declared_params": 1,
     "declared_stack_bytes": 8,
-    "estimated_params": 1
+    "estimated_params": 1,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.033333333333333,
@@ -85,15 +85,6 @@
       "severity": "moderate",
       "text": "uVar4 = SUB84(val,0);",
       "type": "sub84_truncation"
-    },
-    {
-      "address": "0060b26c",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_math.c_doubleToFloat_FUN_0060b26c",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 0060b26c",
-      "type": "special_crt_function"
     }
   ]
 }

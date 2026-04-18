@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 54,
+    "complexity_score": 39,
     "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 24,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "special_crt_function",
       "suspicious_cast"
     ],
     "total_lines": 75
@@ -147,7 +146,8 @@
     "confidence": "high",
     "declared_params": 1,
     "declared_stack_bytes": 4,
-    "estimated_params": 1
+    "estimated_params": 1,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.0,
@@ -202,15 +202,6 @@
       "severity": "moderate",
       "text": "error_code = *(int *)(&g_LookupTableStruct + windows_error) >> 0x18;",
       "type": "suspicious_cast"
-    },
-    {
-      "address": "00608390",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_errno.c_convertWindowsErrorToErrno_FUN_00608390",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 00608390",
-      "type": "special_crt_function"
     }
   ]
 }

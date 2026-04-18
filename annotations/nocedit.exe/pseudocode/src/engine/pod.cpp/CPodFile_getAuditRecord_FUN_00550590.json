@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 103,
-    "complexity_score": 57,
+    "complexity_score": 42,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 11,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 42,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_many"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 145
   },
   "cross_references": [
@@ -153,10 +151,12 @@
         "call_addr": "004b8068",
         "call_type": "direct",
         "caller": "engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50",
-        "estimated_params": 2,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -164,10 +164,12 @@
         "call_addr": "004b5c3e",
         "call_type": "direct",
         "caller": "engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50",
-        "estimated_params": 2,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -175,10 +177,12 @@
         "call_addr": "004bd40f",
         "call_type": "direct",
         "caller": "engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190",
-        "estimated_params": 2,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 8,
         "stack_params": 2
       }
@@ -186,7 +190,8 @@
     "confidence": "high",
     "declared_params": 3,
     "declared_stack_bytes": 8,
-    "estimated_params": 2
+    "estimated_params": 3,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.729411764705882,
@@ -249,17 +254,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 3,
-      "declared_params": 3,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 2,
-      "fix_type": "remove_params",
-      "match": "declared:3 vs estimated:2",
-      "param_delta": -1,
-      "text": "Function declares 3 params but call sites push 2 (1 extra)",
-      "type": "param_count_too_many"
-    }
-  ]
+  "suspects": []
 }

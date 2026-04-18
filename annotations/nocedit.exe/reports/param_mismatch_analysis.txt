@@ -13,15 +13,15 @@ Mismatches may indicate:
 
 SUMMARY
 --------------------------------------------------
-Functions with parameter estimates: 6741
+Functions with parameter estimates: 6742
 Functions with no callers: 3139
-Parameter mismatches detected: 96
+Parameter mismatches detected: 98
 Signature accuracy rate: 97.3%
 
 Mismatches by confidence:
   High confidence:   1 (multiple call sites agree)
-  Medium confidence: 25 (some agreement)
-  Low confidence:    70 (limited data)
+  Medium confidence: 23 (some agreement)
+  Low confidence:    74 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -46,8 +46,7 @@ MEDIUM CONFIDENCE MISMATCHES
   crt_unknown.c_FUN_00607c88                         declared:0 est:4 (+4) [2 calls]
   shape_design.c_sortPolygonsByTexture_FUN_0045b8b0  declared:0 est:4 (+4) [2 calls]
   crt_unknown.c_FUN_00607858                         declared:0 est:3 (+3) [2 calls]
-  engine_matrix.c_getCameraOrigin_FUN_0050e2c0       declared:1 est:4 (+3) [4 calls]
-  engine_matrix.c_getCameraRotation_FUN_0050e2f0     declared:1 est:4 (+3) [2 calls]
+  core_xform.cpp_buildRotationX_FUN_005f6c40         declared:2 est:4 (+2) [4 calls]
   crt_unknown.c_FUN_0060b133                         declared:0 est:2 (+2) [1 calls]
   engine_2d.c_drawTextRightAlignedColorFormatted_FUN declared:3 est:5 (+2) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:4 est:5 (+1) [2 calls]
@@ -61,7 +60,6 @@ MEDIUM CONFIDENCE MISMATCHES
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:4 est:5 (+1) [2 calls]
   core_sound.cpp_CSound_dtor_FUN_005b2d60            declared:0 est:1 (+1) [2 calls]
   core_terrain.cpp_CTerrain_render_FUN_005e1f50      declared:1 est:2 (+1) [2 calls]
-  core_xform.cpp_buildRotationX_FUN_005f6c40         declared:2 est:3 (+1) [4 calls]
   crt_fstream.cpp_fstreambase_ctor_FUN_00606456      declared:6 est:5 (-1) [2 calls]
   crt_heap.c_CoalesceAndAddFreeBlock_FUN_006094c0    declared:3 est:2 (-1) [1 calls]
   crt_init.c_ProcessInitTermHandlers_FUN_0060ac30    declared:1 est:0 (-1) [3 calls]
@@ -71,7 +69,7 @@ MEDIUM CONFIDENCE MISMATCHES
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  70 functions with low-confidence mismatches
+  74 functions with low-confidence mismatches
   Sample:
     cockpit_ckptutil.c_isLineClippingDisabled_FUN declared:0 est:4 (+4)
     crt_windows.c_has_active_window_FUN_0060a710  declared:0 est:4 (+4)
@@ -91,17 +89,17 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 11
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 85
+Functions where declaration has FEWER params than estimated: 87
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
   -4 params: 1 functions
   -3 params: 1 functions
-  -2 params: 2 functions
-  -1 params: 7 functions
-  +1 params: 42 functions
-  +2 params: 11 functions
-  +3 params: 11 functions
+  -2 params: 1 functions
+  -1 params: 8 functions
+  +1 params: 43 functions
+  +2 params: 14 functions
+  +3 params: 9 functions
   +4 params: 12 functions
   +5 params: 2 functions
   +6 params: 1 functions

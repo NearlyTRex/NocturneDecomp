@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 57,
+    "complexity_score": 42,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 42,
-    "suspect_count": 1,
-    "suspect_types": [
-      "special_crt_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 141
   },
   "cross_references": [
@@ -104,15 +102,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "address": "005fe940",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_stdio.c_FillInputBuffer_FUN_005fe940",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 005fe940",
-      "type": "special_crt_function"
-    }
-  ]
+  "suspects": []
 }

@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 37,
+    "complexity_score": 22,
     "cross_reference_count": 16,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 7,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "special_math_intrinsic",
       "warning_is_inlined"
     ],
     "total_lines": 27
@@ -163,15 +162,6 @@
       "severity": "mild",
       "text": "/* WARNING: This is an inlined function */",
       "type": "warning_is_inlined"
-    },
-    {
-      "address": "006013b1",
-      "description": "Math library function with FPU stack or unusual patterns",
-      "function_name": "crt_math.c_atan2_FUN_006013b1",
-      "match": "tan",
-      "math_function": "tan",
-      "text": "Math intrinsic (tan) at 006013b1",
-      "type": "special_math_intrinsic"
     }
   ]
 }

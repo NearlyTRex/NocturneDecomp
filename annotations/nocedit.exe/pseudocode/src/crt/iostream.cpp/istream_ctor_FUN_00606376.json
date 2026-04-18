@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 52,
+    "complexity_score": 37,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 22,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "negative_offset",
-      "special_crt_function"
+      "negative_offset"
     ],
     "total_lines": 51
   },
@@ -114,7 +113,8 @@
     "confidence": "high",
     "declared_params": 2,
     "declared_stack_bytes": 8,
-    "estimated_params": 2
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.478260869565218,
@@ -173,15 +173,6 @@
       "severity": "mild",
       "text": "this_ptr = (_istream *)&piVar3[-1].__xalloc_list;",
       "type": "negative_offset"
-    },
-    {
-      "address": "00606376",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_iostream.cpp_istream_ctor_FUN_00606376",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 00606376",
-      "type": "special_crt_function"
     }
   ],
   "vtable_info": {

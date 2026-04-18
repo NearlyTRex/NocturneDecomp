@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 101,
+    "complexity_score": 86,
     "cross_reference_count": 86,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 16,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
-      "special_crt_function",
       "unnamed_param"
     ],
     "total_lines": 52
@@ -665,7 +664,8 @@
     "confidence": "high",
     "declared_params": 3,
     "declared_stack_bytes": 12,
-    "estimated_params": 3
+    "estimated_params": 3,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.387096774193548,
@@ -779,15 +779,6 @@
       "severity": "mild",
       "text": "param0 = (void *)((int)param0 + iVar2);",
       "type": "unnamed_param"
-    },
-    {
-      "address": "005fe667",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_memory.c___arrinit_FUN_005fe667",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 005fe667",
-      "type": "special_crt_function"
     }
   ]
 }

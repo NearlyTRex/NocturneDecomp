@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 30,
+    "complexity_score": 15,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 15,
-    "suspect_count": 1,
-    "suspect_types": [
-      "special_crt_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 46
   },
   "cross_references": [
@@ -109,15 +107,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "address": "0060ce60",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_signal.c_setSignalHandler_FUN_0060ce60",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 0060ce60",
-      "type": "special_crt_function"
-    }
-  ]
+  "suspects": []
 }

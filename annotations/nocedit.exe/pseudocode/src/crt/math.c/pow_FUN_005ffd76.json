@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 285,
+    "complexity_score": 270,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 90,
-    "suspect_count": 17,
+    "suspect_count": 16,
     "suspect_types": [
       "nan_function_artifact",
-      "special_math_intrinsic",
       "stack_param",
       "sub84_truncation",
       "warning_unreachable"
@@ -309,15 +308,6 @@
       "severity": "moderate",
       "text": "__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64((double)exp),0),(int)((ulonglong)dVar6 >> 0x20))),",
       "type": "sub84_truncation"
-    },
-    {
-      "address": "005ffd76",
-      "description": "Math library function with FPU stack or unusual patterns",
-      "function_name": "crt_math.c_pow_FUN_005ffd76",
-      "match": "pow",
-      "math_function": "pow",
-      "text": "Math intrinsic (pow) at 005ffd76",
-      "type": "special_math_intrinsic"
     }
   ]
 }

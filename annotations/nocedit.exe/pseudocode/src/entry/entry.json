@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 165,
+    "complexity_score": 150,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 65,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
-      "special_entry_point",
       "stack_ref",
       "warning_spacebase"
     ],
@@ -38,7 +37,8 @@
     "confidence": "unknown",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 0
+    "estimated_params": 0,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 1.0,
@@ -120,14 +120,6 @@
       "severity": "mild",
       "text": "*(uint *)((int)aiStack_1c + iVar5 + 4) = 0x609ed4;",
       "type": "pointer_cast"
-    },
-    {
-      "address": "0060239a",
-      "description": "Entry point has no caller; stack state is OS-provided",
-      "function_name": "entry",
-      "match": "entry",
-      "text": "Program entry point at 0060239a",
-      "type": "special_entry_point"
     }
   ]
 }

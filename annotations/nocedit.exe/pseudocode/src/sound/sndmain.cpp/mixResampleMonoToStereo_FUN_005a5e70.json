@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 96,
+    "complexity_score": 81,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 51,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few",
       "warning_deadcode_restart",
       "warning_inlined_function"
     ],
@@ -80,7 +79,8 @@
     "confidence": "medium",
     "declared_params": 6,
     "declared_stack_bytes": 32,
-    "estimated_params": 8
+    "estimated_params": 8,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.5588235294117645,
@@ -231,17 +231,6 @@
       "severity": "mild",
       "text": "/* WARNING: Restarted to delay deadcode elimination for space: stack */",
       "type": "warning_deadcode_restart"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 6,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 8,
-      "fix_type": "add_params",
-      "match": "declared:6 vs estimated:8",
-      "param_delta": 2,
-      "text": "Function declares 6 params but call sites push 8 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

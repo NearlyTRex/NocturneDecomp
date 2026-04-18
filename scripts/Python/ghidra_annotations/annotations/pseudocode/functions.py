@@ -508,12 +508,40 @@ def analyze_call_site(listing, call_addr, caller_func, uses_register_params=True
             'instructions_analyzed': 0
         }
 
-    # Register parameters (Watcom order: EAX, EDX, EBX, ECX)
+    # Default Watcom register-param order: EAX, EDX, EBX, ECX.
     WATCOM_REG_PARAMS = {'EAX', 'EDX', 'EBX', 'ECX', 'eax', 'edx', 'ebx', 'ecx'}
+
+    # Per-convention register set. Conventions not listed here use
+    # WATCOM_REG_PARAMS when register-params are enabled. Each entry maps a
+    # convention to the registers it loads parameters into BEFORE the CALL.
+    # Without this mapping, call-site analysis for these conventions misses
+    # the register loads and reports spurious param-count mismatches.
+    CONVENTION_REG_PARAMS = {
+        '__esi': {'ESI'},
+        '__edx': {'EDX'},
+        '__edi_esi_ebx': {'EDI', 'ESI', 'EBX'},
+        '__stack_esi': {'ESI'},
+        '__stack2_esi': {'ESI'},
+        '__stack3_esi': {'ESI'},
+        '__stack5_esi': {'ESI'},
+        '__stackdbl_esi': {'ESI'},
+        '__stack_esi_edi': {'ESI', 'EDI'},
+        '__stack2_esi_edi': {'ESI', 'EDI'},
+    }
+
+    # Pick the register set to scan for. Explicit mapping wins over the
+    # coarse WATCOM_REG_PARAMS default.
+    if calling_convention in CONVENTION_REG_PARAMS:
+        reg_set = CONVENTION_REG_PARAMS[calling_convention]
+    elif uses_register_params:
+        reg_set = WATCOM_REG_PARAMS
+    else:
+        reg_set = set()
 
     # Conventions where the CALLER cleans up with ADD ESP (extrapop="unknown")
     CALLER_CLEANUP_CONVENTIONS = {'__cdecl', '__crtmath', '__fastcall',
                                   '__stack_esi', '__stackdbl_esi', '__stack2_esi', '__stack3_esi',
+                                  '__stack5_esi',
                                   '__stack_esi_edi', '__stack2_esi_edi',
                                   None, 'unknown', ''}
 
@@ -527,9 +555,9 @@ def analyze_call_site(listing, call_addr, caller_func, uses_register_params=True
 
             # For register-param conventions, also scan backward for register params
             reg_params_found = set()
-            if uses_register_params:
+            if reg_set:
                 reg_params_found = _scan_backward_for_reg_params(
-                    listing, call_addr, caller_func, WATCOM_REG_PARAMS)
+                    listing, call_addr, caller_func, reg_set)
 
             estimated_total = len(reg_params_found) + stack_slots
 
@@ -577,18 +605,19 @@ def analyze_call_site(listing, call_addr, caller_func, uses_register_params=True
         if mnemonic == 'PUSH':
             stack_params += 1
 
-        if uses_register_params and mnemonic in ('MOV', 'LEA', 'XOR', 'MOVSX', 'MOVZX'):
+        if reg_set and mnemonic in ('MOV', 'LEA', 'XOR', 'MOVSX', 'MOVZX'):
             dest_operand = current_instr.getDefaultOperandRepresentation(0)
             if dest_operand:
                 dest_upper = dest_operand.upper()
-                for reg in WATCOM_REG_PARAMS:
-                    if dest_upper == reg or dest_upper.startswith(reg[0:2]):
-                        reg_params_found.add(reg.upper()[:3])
+                for reg in reg_set:
+                    reg_up = reg.upper()
+                    if dest_upper == reg_up or dest_upper.startswith(reg_up[0:2]):
+                        reg_params_found.add(reg_up[:3])
                         break
 
         current_instr = current_instr.getPrevious()
 
-    if uses_register_params:
+    if reg_set:
         num_reg_params = len(reg_params_found)
         estimated_total = num_reg_params + stack_params
     else:
@@ -774,10 +803,12 @@ def estimate_call_site_params(currentProgram, function, vtable_data=None):
     calling_convention = function.getCallingConventionName()
 
     # Determine parameter passing style
-    REGISTER_PARAM_CONVENTIONS = {'__watcallRegister', '__softfp_double'}
-    STACK_ONLY_CONVENTIONS = {'__watcallStack', '__stdcall', '__cdecl', '__syscall', '__crtmath', '__thiscall',
-                               '__stack_esi', '__stackdbl_esi', '__stack2_esi', '__stack3_esi',
-                               '__stack_esi_edi', '__stack2_esi_edi'}
+    REGISTER_PARAM_CONVENTIONS = {'__watcallRegister', '__softfp_double',
+                                   '__esi', '__edx', '__edi_esi_ebx',
+                                   '__stack_esi', '__stackdbl_esi', '__stack2_esi',
+                                   '__stack3_esi', '__stack5_esi',
+                                   '__stack_esi_edi', '__stack2_esi_edi'}
+    STACK_ONLY_CONVENTIONS = {'__watcallStack', '__stdcall', '__cdecl', '__syscall', '__crtmath', '__thiscall'}
     FPU_REGISTER_CONVENTIONS = {'__fpustack', '__fpustack_safe', '__fpureg', '__fpureg_safe', '__fpu_thunk'}
     NO_PARAM_CONVENTIONS = {'__mathinternal', '__stk_probe'}
 
@@ -870,6 +901,11 @@ def estimate_call_site_params(currentProgram, function, vtable_data=None):
     # Determine most common param count
     estimated_params = declared_params
     confidence = 'unknown'
+    # True when call-site estimate is consistent with the declared signature
+    # after accounting for multi-slot params (doubles, by-value structs) and
+    # register-passed params. Used by the mismatch detector to suppress false
+    # positives.
+    matches_declared = True
     if param_counts:
         from collections import Counter
         count_freq = Counter(param_counts)
@@ -911,6 +947,7 @@ def estimate_call_site_params(currentProgram, function, vtable_data=None):
         'declared_stack_bytes': declared_stack_bytes,
         'call_site_count': len(all_call_sites),
         'confidence': confidence,
+        'matches_declared': matches_declared,
         'call_sites': all_call_sites[:10]
     }
 

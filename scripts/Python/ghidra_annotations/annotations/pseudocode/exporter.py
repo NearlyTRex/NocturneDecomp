@@ -105,6 +105,13 @@ OMIT_SUSPECT_TYPES = {
     'stack_align_anchor', 'lea_esp_stack_addr',
     'unnamed_local',
     'decompiler_intrinsic',
+    # Classification tags for functions we're not reversing. The suspect is
+    # descriptive ("this is CRT / math / CPU-detect code, expect quirky asm")
+    # rather than actionable, so it just inflates suspect_count without
+    # pointing at any fix.
+    'special_entry_point', 'special_math_intrinsic',
+    'special_crt_function', 'special_cpu_detection',
+    'cpuid_assembly',
 }
 
 
@@ -480,7 +487,7 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map,
 
     # Identify parameter count mismatch (non-vtable functions only)
     param_mismatch = identify_param_count_mismatch(
-        result.param_estimates, result.vtable_info)
+        result.param_estimates, result.vtable_info, result.func_signature)
     if param_mismatch:
         suspects.append(param_mismatch)
 

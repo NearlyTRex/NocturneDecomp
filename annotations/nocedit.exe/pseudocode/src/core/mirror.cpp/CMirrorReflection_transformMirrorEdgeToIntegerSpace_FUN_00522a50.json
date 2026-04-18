@@ -7,15 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 155,
-    "complexity_score": 87,
+    "complexity_score": 72,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 57,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_many",
       "stack_alignment_array"
     ],
     "total_lines": 212
@@ -78,10 +77,12 @@
         "call_addr": "0056dd84",
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80",
-        "estimated_params": 3,
+        "estimated_params": 4,
         "instructions_analyzed": 10,
         "method": "push_count",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 12,
         "stack_params": 3
       }
@@ -89,7 +90,8 @@
     "confidence": "medium",
     "declared_params": 4,
     "declared_stack_bytes": 12,
-    "estimated_params": 3
+    "estimated_params": 4,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.214285714285714,
@@ -223,17 +225,6 @@
       "severity": "moderate",
       "text": "int aiStackY_1024 [1006];",
       "type": "stack_alignment_array"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 4,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 3,
-      "fix_type": "remove_params",
-      "match": "declared:4 vs estimated:3",
-      "param_delta": -1,
-      "text": "Function declares 4 params but call sites push 3 (1 extra)",
-      "type": "param_count_too_many"
     }
   ]
 }

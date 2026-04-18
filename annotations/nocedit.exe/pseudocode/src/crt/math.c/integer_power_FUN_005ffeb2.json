@@ -2,17 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 237,
+    "complexity_score": 222,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 32,
-    "suspect_count": 19,
+    "suspect_count": 18,
     "suspect_types": [
       "fpu_register_input",
-      "register_param",
-      "special_math_intrinsic"
+      "register_param"
     ],
     "total_lines": 63
   },
@@ -236,15 +235,6 @@
       "severity": "mild",
       "text": "fVar4 = fVar4 * in_ST0;",
       "type": "fpu_register_input"
-    },
-    {
-      "address": "005ffeb2",
-      "description": "Math library function with FPU stack or unusual patterns",
-      "function_name": "crt_math.c_integer_power_FUN_005ffeb2",
-      "match": "pow",
-      "math_function": "pow",
-      "text": "Math intrinsic (pow) at 005ffeb2",
-      "type": "special_math_intrinsic"
     }
   ]
 }

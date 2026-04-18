@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1698,
-    "complexity_score": 573,
+    "complexity_score": 558,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 498,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
-      "param_count_too_many",
       "unnamed_local",
       "warning_type_propagation"
     ],
@@ -226,10 +225,12 @@
         "call_addr": "005c0706",
         "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_updateWeaponPosition_FUN_005c06b0",
-        "estimated_params": 3,
+        "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -237,10 +238,12 @@
         "call_addr": "005c5196",
         "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_getCarryObjToBodyXForm_FUN_005c5170",
-        "estimated_params": 5,
+        "estimated_params": 6,
         "instructions_analyzed": 15,
         "method": "push_count",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 20,
         "stack_params": 5
       }
@@ -248,7 +251,8 @@
     "confidence": "medium",
     "declared_params": 4,
     "declared_stack_bytes": 12,
-    "estimated_params": 3
+    "estimated_params": 4,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.788243152972612,
@@ -1136,17 +1140,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 4,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 3,
-      "fix_type": "remove_params",
-      "match": "declared:4 vs estimated:3",
-      "param_delta": -1,
-      "text": "Function declares 4 params but call sites push 3 (1 extra)",
-      "type": "param_count_too_many"
     },
     {
       "description": "Unnamed local variable",

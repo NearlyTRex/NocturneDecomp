@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 255,
-    "complexity_score": 101,
+    "complexity_score": 86,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 86,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unresolved_funcptr"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 341
   },
   "cross_references": [
@@ -123,7 +121,8 @@
     "confidence": "high",
     "declared_params": 6,
     "declared_stack_bytes": 24,
-    "estimated_params": 6
+    "estimated_params": 6,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.432160804020101,
@@ -215,14 +214,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 49,
-      "match": "code",
-      "severity": "moderate",
-      "text": "(\"Illegal Huffman code in data.  File: %s\",g_CurrentMp3Filename);",
-      "type": "unresolved_funcptr"
-    }
-  ]
+  "suspects": []
 }

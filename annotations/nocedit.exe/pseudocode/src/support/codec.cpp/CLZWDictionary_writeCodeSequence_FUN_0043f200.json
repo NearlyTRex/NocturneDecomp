@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 97,
+    "complexity_score": 12,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 12,
-    "suspect_count": 8,
-    "suspect_types": [
-      "unresolved_funcptr"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 63
   },
   "cross_references": [
@@ -82,7 +80,8 @@
     "confidence": "high",
     "declared_params": 3,
     "declared_stack_bytes": 12,
-    "estimated_params": 3
+    "estimated_params": 3,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.844444444444444,
@@ -141,70 +140,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 2,
-      "match": "code",
-      "severity": "moderate",
-      "text": "int __cdecl support_codec_cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200(CLZWDictionary *this_ptr,int code,_ostream *ostream)",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 7,
-      "match": "code",
-      "severity": "moderate",
-      "text": "iVar1 = this_ptr->node_table[code].parent_index;",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 10,
-      "match": "code",
-      "severity": "moderate",
-      "text": "crt_iostream_cpp_ostream_put_FUN_005ff2d7(ostream,(uint)(byte)this_ptr->node_table[code].code);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 10,
-      "match": "code",
-      "severity": "moderate",
-      "text": "crt_iostream_cpp_ostream_put_FUN_005ff2d7(ostream,(uint)(byte)this_ptr->node_table[code].code);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 13,
-      "match": "code",
-      "severity": "moderate",
-      "text": "crt_iostream_cpp_ostream_put_FUN_005ff2d7(ostream,(uint)(byte)this_ptr->node_table[code].code);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 13,
-      "match": "code",
-      "severity": "moderate",
-      "text": "crt_iostream_cpp_ostream_put_FUN_005ff2d7(ostream,(uint)(byte)this_ptr->node_table[code].code);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 14,
-      "match": "code",
-      "severity": "moderate",
-      "text": "return this_ptr->node_table[code].code;",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 14,
-      "match": "code",
-      "severity": "moderate",
-      "text": "return this_ptr->node_table[code].code;",
-      "type": "unresolved_funcptr"
-    }
-  ]
+  "suspects": []
 }

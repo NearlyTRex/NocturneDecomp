@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 255,
+    "complexity_score": 240,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 35,
-    "suspect_count": 20,
+    "suspect_count": 19,
     "suspect_types": [
       "fpu_register_input",
-      "special_crt_function",
       "unaffected_reg",
       "unnamed_param"
     ],
@@ -60,7 +59,8 @@
     "confidence": "medium",
     "declared_params": 2,
     "declared_stack_bytes": 0,
-    "estimated_params": 2
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.875,
@@ -253,15 +253,6 @@
       "severity": "mild",
       "text": "return (double)in_ST0;",
       "type": "fpu_register_input"
-    },
-    {
-      "address": "0060b5e8",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_unknown.c_FUN_0060b5e8",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 0060b5e8",
-      "type": "special_crt_function"
     }
   ]
 }

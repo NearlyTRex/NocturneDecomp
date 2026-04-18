@@ -2,17 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 36,
+    "complexity_score": 6,
     "cross_reference_count": 5,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 6,
-    "suspect_count": 2,
-    "suspect_types": [
-      "param_count_too_few",
-      "special_math_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 27
   },
   "cross_references": [
@@ -141,7 +138,8 @@
     "confidence": "high",
     "declared_params": 1,
     "declared_stack_bytes": 8,
-    "estimated_params": 2
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.526315789473684,
@@ -183,26 +181,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 6,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:2",
-      "param_delta": 1,
-      "text": "Function declares 1 params but call sites push 2 (1 missing)",
-      "type": "param_count_too_few"
-    },
-    {
-      "address": "006001b2",
-      "description": "Math library function with FPU stack or unusual patterns",
-      "function_name": "crt_math.c_ceil_FUN_006001b2",
-      "match": "ceil",
-      "math_function": "ceil",
-      "text": "Math intrinsic (ceil) at 006001b2",
-      "type": "special_math_intrinsic"
-    }
-  ]
+  "suspects": []
 }

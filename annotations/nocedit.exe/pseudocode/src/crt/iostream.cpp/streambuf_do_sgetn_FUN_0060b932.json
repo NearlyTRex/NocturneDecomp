@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 92,
+    "complexity_score": 77,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 47,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "special_crt_function",
       "unresolved_funcptr"
     ],
     "total_lines": 118
@@ -37,7 +36,8 @@
     "confidence": "unknown",
     "declared_params": 3,
     "declared_stack_bytes": 12,
-    "estimated_params": 3
+    "estimated_params": 3,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.372881355932203,
@@ -124,15 +124,6 @@
       "severity": "mild",
       "text": "output_buffer = (void *)((int)output_buffer + uVar1);",
       "type": "pointer_cast"
-    },
-    {
-      "address": "0060b932",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_iostream.cpp_streambuf_do_sgetn_FUN_0060b932",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 0060b932",
-      "type": "special_crt_function"
     }
   ],
   "vtable_info": {

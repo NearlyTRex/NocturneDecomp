@@ -60,10 +60,12 @@
         "call_addr": "005c088e",
         "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0",
-        "estimated_params": 3,
+        "estimated_params": 4,
         "instructions_analyzed": 8,
         "method": "push_count",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -71,10 +73,12 @@
         "call_addr": "004d5610",
         "call_type": "direct",
         "caller": "core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550",
-        "estimated_params": 3,
+        "estimated_params": 4,
         "instructions_analyzed": 13,
         "method": "push_count",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -82,10 +86,12 @@
         "call_addr": "005c0edc",
         "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0",
-        "estimated_params": 3,
+        "estimated_params": 4,
         "instructions_analyzed": 8,
         "method": "push_count",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 12,
         "stack_params": 3
       },
@@ -93,10 +99,12 @@
         "call_addr": "0042b43e",
         "call_type": "direct",
         "caller": "core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042b190",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       }
@@ -104,7 +112,8 @@
     "confidence": "medium",
     "declared_params": 2,
     "declared_stack_bytes": 4,
-    "estimated_params": 3
+    "estimated_params": 4,
+    "matches_declared": false
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.769230769230769,
@@ -215,11 +224,11 @@
       "call_site_count": 4,
       "declared_params": 2,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
+      "estimated_params": 4,
       "fix_type": "add_params",
-      "match": "declared:2 vs estimated:3",
-      "param_delta": 1,
-      "text": "Function declares 2 params but call sites push 3 (1 missing)",
+      "match": "declared:2 vs estimated:4",
+      "param_delta": 2,
+      "text": "Function declares 2 params but call sites push 4 (2 missing)",
       "type": "param_count_too_few"
     }
   ]

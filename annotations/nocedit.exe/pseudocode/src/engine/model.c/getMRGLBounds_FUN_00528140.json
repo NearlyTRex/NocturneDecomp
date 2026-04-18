@@ -7,15 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 407,
-    "complexity_score": 214,
+    "complexity_score": 199,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 184,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_many",
       "warning_inlined_function"
     ],
     "total_lines": 591
@@ -127,10 +126,12 @@
         "call_addr": "0048ff39",
         "call_type": "direct",
         "caller": "shape_dsemodel.cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -138,10 +139,12 @@
         "call_addr": "004588c3",
         "call_type": "direct",
         "caller": "shape_design.c_loadModelBinary_FUN_00458170",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       }
@@ -149,7 +152,8 @@
     "confidence": "high",
     "declared_params": 2,
     "declared_stack_bytes": 4,
-    "estimated_params": 1
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.59375,
@@ -501,17 +505,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 2,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 1,
-      "fix_type": "remove_params",
-      "match": "declared:2 vs estimated:1",
-      "param_delta": -1,
-      "text": "Function declares 2 params but call sites push 1 (1 extra)",
-      "type": "param_count_too_many"
     }
   ]
 }

@@ -7,15 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 70,
+    "complexity_score": 55,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_many",
       "stack_alignment_array",
       "warning_inlined_function"
     ],
@@ -71,10 +70,12 @@
         "call_addr": "0049a179",
         "call_type": "direct",
         "caller": "core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160",
-        "estimated_params": 2,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -82,10 +83,12 @@
         "call_addr": "0049a299",
         "call_type": "direct",
         "caller": "core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a280",
-        "estimated_params": 2,
+        "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 8,
         "stack_params": 2
       }
@@ -93,7 +96,8 @@
     "confidence": "high",
     "declared_params": 3,
     "declared_stack_bytes": 8,
-    "estimated_params": 2
+    "estimated_params": 3,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.830508474576271,
@@ -190,17 +194,6 @@
       "severity": "moderate",
       "text": "int aiStackY_1004 [1016];",
       "type": "stack_alignment_array"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 3,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 2,
-      "fix_type": "remove_params",
-      "match": "declared:3 vs estimated:2",
-      "param_delta": -1,
-      "text": "Function declares 3 params but call sites push 2 (1 extra)",
-      "type": "param_count_too_many"
     }
   ]
 }

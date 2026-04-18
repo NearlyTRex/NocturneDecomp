@@ -7,14 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 165,
-    "complexity_score": 50,
+    "complexity_score": 65,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 35,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "param_count_too_few",
       "warning_type_propagation"
     ],
     "total_lines": 200
@@ -89,10 +90,12 @@
         "call_addr": "005dba57",
         "call_type": "direct",
         "caller": "core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0",
-        "estimated_params": 2,
+        "estimated_params": 3,
         "instructions_analyzed": 7,
         "method": "push_count",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 8,
         "stack_params": 2
       },
@@ -100,18 +103,21 @@
         "call_addr": "005db204",
         "call_type": "direct",
         "caller": "core_tentacle.cpp_CTentacle_process_FUN_005db050",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "medium",
+    "confidence": "low",
     "declared_params": 2,
     "declared_stack_bytes": 4,
-    "estimated_params": 2
+    "estimated_params": 3,
+    "matches_declared": false
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.5369127516778525,
@@ -201,6 +207,17 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 2,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:2 vs estimated:3",
+      "param_delta": 1,
+      "text": "Function declares 2 params but call sites push 3 (1 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

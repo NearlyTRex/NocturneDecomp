@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 4,
-    "complexity_score": 35,
+    "complexity_score": 20,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 5,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "special_crt_function"
+      "pointer_cast"
     ],
     "total_lines": 9
   },
@@ -43,7 +42,8 @@
     "confidence": "unknown",
     "declared_params": 2,
     "declared_stack_bytes": 8,
-    "estimated_params": 2
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.0,
@@ -94,15 +94,6 @@
       "severity": "mild",
       "text": "state->input_ptr = (void *)((int)state->input_ptr + -1);",
       "type": "pointer_cast"
-    },
-    {
-      "address": "006000f8",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_stdio.c_string_ungetc_FUN_006000f8",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 006000f8",
-      "type": "special_crt_function"
     }
   ]
 }

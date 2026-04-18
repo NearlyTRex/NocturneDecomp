@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 61,
+    "complexity_score": 46,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 16,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
       "param_count_too_few",
-      "special_crt_function",
       "warning_max_restarts"
     ],
     "total_lines": 39
@@ -92,7 +91,8 @@
     "confidence": "low",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 4
+    "estimated_params": 4,
+    "matches_declared": false
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.315789473684211,
@@ -142,15 +142,6 @@
       "param_delta": 4,
       "text": "Function declares 0 params but call sites push 4 (4 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "address": "0060a710",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_windows.c_has_active_window_FUN_0060a710",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 0060a710",
-      "type": "special_crt_function"
     }
   ]
 }

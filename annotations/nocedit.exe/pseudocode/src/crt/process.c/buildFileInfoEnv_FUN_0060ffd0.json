@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 294,
-    "complexity_score": 256,
+    "complexity_score": 241,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 15,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 206,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
-      "special_crt_function",
       "unknown_field"
     ],
     "total_lines": 500
@@ -143,7 +142,8 @@
     "confidence": "unknown",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 0
+    "estimated_params": 0,
+    "matches_declared": true
   },
   "pcode_overrides": {
     "0x0061002f": [
@@ -318,15 +318,6 @@
       "severity": "mild",
       "text": "*(uint *)(pcVar3 + 8) = \"C_FILE_INFO=\"._8_4_;",
       "type": "unknown_field"
-    },
-    {
-      "address": "0060ffd0",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_process.c_buildFileInfoEnv_FUN_0060ffd0",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 0060ffd0",
-      "type": "special_crt_function"
     }
   ]
 }

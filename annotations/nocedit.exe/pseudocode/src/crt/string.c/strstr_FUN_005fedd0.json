@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 135,
-    "complexity_score": 139,
+    "complexity_score": 124,
     "cross_reference_count": 9,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 109,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "special_crt_function",
       "warning_overlapping_instructions"
     ],
     "total_lines": 244
@@ -191,7 +190,8 @@
     "confidence": "high",
     "declared_params": 2,
     "declared_stack_bytes": 8,
-    "estimated_params": 2
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.87037037037037,
@@ -254,15 +254,6 @@
       "severity": "mild",
       "text": "/* WARNING: Instruction at (ram,0x005fee62) overlaps instruction at (ram,0x005fee60)",
       "type": "warning_overlapping_instructions"
-    },
-    {
-      "address": "005fedd0",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_string.c_strstr_FUN_005fedd0",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 005fedd0",
-      "type": "special_crt_function"
     }
   ]
 }

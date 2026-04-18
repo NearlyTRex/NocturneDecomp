@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 24,
+    "complexity_score": 9,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 9,
-    "suspect_count": 1,
-    "suspect_types": [
-      "special_crt_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 25
   },
   "cross_references": [
@@ -100,7 +98,8 @@
     "confidence": "high",
     "declared_params": 1,
     "declared_stack_bytes": 4,
-    "estimated_params": 1
+    "estimated_params": 1,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.8181818181818183,
@@ -143,15 +142,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "address": "0060b534",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_startup.c_ExitApplication_FUN_0060b534",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 0060b534",
-      "type": "special_crt_function"
-    }
-  ]
+  "suspects": []
 }

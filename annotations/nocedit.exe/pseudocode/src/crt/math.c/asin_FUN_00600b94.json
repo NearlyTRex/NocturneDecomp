@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 53,
+    "complexity_score": 38,
     "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 8,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "special_math_intrinsic",
       "warning_inlined_function",
       "warning_unreachable"
     ],
@@ -130,15 +129,6 @@
       "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x00600ba7) */",
       "type": "warning_unreachable"
-    },
-    {
-      "address": "00600b94",
-      "description": "Math library function with FPU stack or unusual patterns",
-      "function_name": "crt_math.c_asin_FUN_00600b94",
-      "match": "sin",
-      "math_function": "sin",
-      "text": "Math intrinsic (sin) at 00600b94",
-      "type": "special_math_intrinsic"
     }
   ]
 }

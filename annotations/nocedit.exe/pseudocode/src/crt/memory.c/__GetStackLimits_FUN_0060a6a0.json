@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 38,
+    "complexity_score": 23,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 23,
-    "suspect_count": 1,
-    "suspect_types": [
-      "special_crt_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 71
   },
   "cross_references": [
@@ -79,7 +77,8 @@
     "confidence": "medium",
     "declared_params": 2,
     "declared_stack_bytes": 8,
-    "estimated_params": 2
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.428571428571429,
@@ -143,15 +142,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "address": "0060a6a0",
-      "crt_type": "stack manipulation",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_memory.c___GetStackLimits_FUN_0060a6a0",
-      "match": "crt_",
-      "text": "CRT function (stack manipulation) at 0060a6a0",
-      "type": "special_crt_function"
-    }
-  ]
+  "suspects": []
 }

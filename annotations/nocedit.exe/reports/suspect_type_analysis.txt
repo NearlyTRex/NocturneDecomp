@@ -4,36 +4,33 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    3264 ( 64.3%)
-  unnamed_local                    547 ( 10.8%)
-  warning_inlined_function         259 (  5.1%)
-  raw_address_constant             227 (  4.5%)
-  warning_type_propagation         133 (  2.6%)
-  stack_alignment_array             92 (  1.8%)
-  param_count_too_few               82 (  1.6%)
+  pointer_cast                    3264 ( 65.7%)
+  unnamed_local                    547 ( 11.0%)
+  warning_inlined_function         259 (  5.2%)
+  raw_address_constant             227 (  4.6%)
+  warning_type_propagation         133 (  2.7%)
+  stack_alignment_array             92 (  1.9%)
   warning_unreachable               76 (  1.5%)
-  unnamed_param                     73 (  1.4%)
+  unnamed_param                     73 (  1.5%)
+  param_count_too_few               41 (  0.8%)
   sub84_truncation                  40 (  0.8%)
-  param_count_too_many              36 (  0.7%)
   stack_param                       36 (  0.7%)
   mmx_assembly                      34 (  0.7%)
-  unresolved_funcptr                33 (  0.6%)
-  negative_offset                   33 (  0.6%)
+  negative_offset                   33 (  0.7%)
   byvalue_struct_passing            22 (  0.4%)
   suspect_float                     19 (  0.4%)
   decompiler_intrinsic              16 (  0.3%)
   extra_output                      16 (  0.3%)
   unaffected_reg                     9 (  0.2%)
   displaced_global_access            6 (  0.1%)
+  param_count_too_many               5 (  0.1%)
   warning_deadcode_restart           5 (  0.1%)
   unknown_type                       4 (  0.1%)
-  special_cpu_detection              4 (  0.1%)
   warning_max_restarts               3 (  0.1%)
   cpuid_intrinsic                    2 (  0.0%)
   wrong_global                       2 (  0.0%)
   warning_unable_to_use_type         1 (  0.0%)
   warning_overlapping_globals        1 (  0.0%)
-  cpuid_assembly                     1 (  0.0%)
   warning_noreturn                   1 (  0.0%)
   warning_jumptable                  1 (  0.0%)
   warning_indirect_jump              1 (  0.0%)
@@ -377,94 +374,6 @@ Example functions:
     float afStackY_185c [1519];...
 
 ====================================================================================================
-TYPE: param_count_too_few (82 occurrences)
-====================================================================================================
-
-Unique patterns:
-    14x  declared:1 vs estimated:2
-     8x  declared:4 vs estimated:5
-     7x  declared:2 vs estimated:3
-     7x  declared:0 vs estimated:1
-     5x  declared:0 vs estimated:4
-     5x  declared:0 vs estimated:2
-     4x  declared:3 vs estimated:6
-     2x  declared:6 vs estimated:7
-     2x  declared:5 vs estimated:6
-     2x  declared:1 vs estimated:4
-     2x  declared:2 vs estimated:4
-     2x  declared:2 vs estimated:24
-     2x  declared:6 vs estimated:8
-     2x  declared:4 vs estimated:7
-     2x  declared:7 vs estimated:11
-     1x  declared:3 vs estimated:5
-     1x  declared:7 vs estimated:8
-     1x  declared:1 vs estimated:5
-     1x  declared:1 vs estimated:7
-     1x  declared:4 vs estimated:8
-
-Example functions:
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520
-    Function declares 4 params but call sites push 5 (1 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
-    Function declares 2 params but call sites push 3 (1 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30
-    Function declares 6 params but call sites push 7 (1 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860
-    Function declares 5 params but call sites push 6 (1 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0
-    Function declares 4 params but call sites push 5 (1 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0
-    Function declares 4 params but call sites push 5 (1 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
-    Function declares 4 params but call sites push 5 (1 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790
-    Function declares 4 params but call sites push 5 (1 missing)...
-  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940
-    Function declares 5 params but call sites push 6 (1 missing)...
-  cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660
-    Function declares 0 params but call sites push 4 (4 missing)...
-  support_trisock.cpp_bindSocketWrapper_FUN_005e1af0
-    Function declares 1 params but call sites push 2 (1 missing)...
-  engine_matrix.c_getCameraOrigin_FUN_0050e2c0
-    Function declares 1 params but call sites push 4 (3 missing)...
-  engine_matrix.c_getCameraRotation_FUN_0050e2f0
-    Function declares 1 params but call sites push 4 (3 missing)...
-  engine_matrix.c_invertTransformMatrix_FUN_0050c640
-    Function declares 0 params but call sites push 2 (2 missing)...
-  engine_colquant.c_doubleMax_FUN_00441790
-    Function declares 2 params but call sites push 4 (2 missing)...
-  engine_2d.c_getTextWrapEnabled_FUN_004027f0
-    Function declares 0 params but call sites push 4 (4 missing)...
-  engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580
-    Function declares 3 params but call sites push 5 (2 missing)...
-  engine_2d.c_reinitializeGraphicsSystem_FUN_00402a80
-    Function declares 0 params but call sites push 1 (1 missing)...
-  engine_console.cpp_CConsole_printf_FUN_00441890
-    Function declares 2 params but call sites push 3 (1 missing)...
-  engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30
-    Function declares 7 params but call sites push 8 (1 missing)...
-  engine_font.cpp_CBitFont_drawTextF_FUN_004cdc20
-    Function declares 6 params but call sites push 7 (1 missing)...
-  engine_boss.c_modelStructNotSupported4_FUN_0041dbe0
-    Function declares 1 params but call sites push 2 (1 missing)...
-  engine_3d.c_clipAndDrawLine2D_FUN_00407d70
-    Function declares 2 params but call sites push 24 (22 missing)...
-  engine_3d.c_clipAndDrawLine3D_FUN_00408070
-    Function declares 2 params but call sites push 24 (22 missing)...
-  engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0
-    Function declares 0 params but call sites push 1 (1 missing)...
-  engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0048c630
-    Function declares 1 params but call sites push 5 (4 missing)...
-  sound_mp3.cpp_calculateMainDataSize_FUN_00533c50
-    Function declares 1 params but call sites push 7 (6 missing)...
-  sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540
-    Function declares 4 params but call sites push 5 (1 missing)...
-  sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0
-    Function declares 2 params but call sites push 3 (1 missing)...
-  sound_sndmain.cpp_set3DListenerVelocity_FUN_005aa1c0
-    Function declares 3 params but call sites push 6 (3 missing)...
-
-====================================================================================================
 TYPE: warning_unreachable (76 occurrences)
 ====================================================================================================
 
@@ -535,6 +444,90 @@ Example functions:
     (g_CEditorToolsPtr,local_2a0,(int *)&local_2c,(this_ptr->param1).v_int,...
 
 ====================================================================================================
+TYPE: param_count_too_few (41 occurrences)
+====================================================================================================
+
+Unique patterns:
+     9x  declared:1 vs estimated:2
+     7x  declared:0 vs estimated:1
+     5x  declared:0 vs estimated:4
+     5x  declared:0 vs estimated:2
+     3x  declared:2 vs estimated:3
+     2x  declared:1 vs estimated:3
+     1x  declared:1 vs estimated:5
+     1x  declared:0 vs estimated:23
+     1x  declared:2 vs estimated:4
+     1x  declared:0 vs estimated:76
+     1x  declared:2 vs estimated:5
+     1x  declared:4 vs estimated:5
+     1x  declared:0 vs estimated:18
+     1x  declared:0 vs estimated:3
+     1x  declared:4 vs estimated:7
+     1x  declared:0 vs estimated:3812
+
+Example functions:
+  cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660
+    Function declares 0 params but call sites push 4 (4 missing)...
+  support_trisock.cpp_bindSocketWrapper_FUN_005e1af0
+    Function declares 1 params but call sites push 2 (1 missing)...
+  engine_matrix.c_getCameraOrigin_FUN_0050e2c0
+    Function declares 1 params but call sites push 3 (2 missing)...
+  engine_matrix.c_getCameraRotation_FUN_0050e2f0
+    Function declares 1 params but call sites push 3 (2 missing)...
+  engine_matrix.c_invertTransformMatrix_FUN_0050c640
+    Function declares 0 params but call sites push 2 (2 missing)...
+  engine_2d.c_getTextWrapEnabled_FUN_004027f0
+    Function declares 0 params but call sites push 4 (4 missing)...
+  engine_2d.c_reinitializeGraphicsSystem_FUN_00402a80
+    Function declares 0 params but call sites push 1 (1 missing)...
+  engine_boss.c_modelStructNotSupported4_FUN_0041dbe0
+    Function declares 1 params but call sites push 2 (1 missing)...
+  engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0
+    Function declares 0 params but call sites push 1 (1 missing)...
+  engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0048c630
+    Function declares 1 params but call sites push 5 (4 missing)...
+  sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970
+    Function declares 0 params but call sites push 1 (1 missing)...
+  sound_sndmain.cpp_countActiveSfx_FUN_005a9ff0
+    Function declares 0 params but call sites push 2 (2 missing)...
+  core_dcamera.cpp_initializeCoronaBuffers_FUN_004502e0
+    Function declares 0 params but call sites push 23 (23 missing)...
+  core_bugs.cpp_CBugs_updateBoundingBox_FUN_00426410
+    Function declares 1 params but call sites push 2 (1 missing)...
+  core_baron.cpp_CBaron_updateMountedPosition_FUN_004135e0
+    Function declares 1 params but call sites push 2 (1 missing)...
+  core_xform.cpp_buildRotationX_FUN_005f6c40
+    Function declares 2 params but call sites push 4 (2 missing)...
+  core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0
+    Function declares 2 params but call sites push 3 (1 missing)...
+  core_terrain.cpp_CTerrain_render_FUN_005e1f50
+    Function declares 1 params but call sites push 2 (1 missing)...
+  core_dtri.cpp_getClippedTriangleCount_FUN_0049cb30
+    Function declares 0 params but call sites push 1 (1 missing)...
+  core_actor.cpp_generateRandomValue_FUN_0040cba0
+    Function declares 0 params but call sites push 2 (2 missing)...
+  core_sound.cpp_CSound_dtor_FUN_005b2d60
+    Function declares 0 params but call sites push 1 (1 missing)...
+  core_fire.cpp_updateTextureAnimCounts_FUN_004c3870
+    Function declares 0 params but call sites push 4 (4 missing)...
+  core_morph.cpp_CMorph_previewMorph_FUN_0052ca90
+    Function declares 1 params but call sites push 2 (1 missing)...
+  core_msnedit.cpp_drawMotionBar_FUN_00536e20
+    Function declares 0 params but call sites push 76 (76 missing)...
+  core_stranger.cpp_CStranger_handleFireButton_FUN_005c5f10
+    Function declares 1 params but call sites push 2 (1 missing)...
+  core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
+    Function declares 2 params but call sites push 3 (1 missing)...
+  core_texlist.cpp_CTextureList_captureTexture_FUN_005dc270
+    Function declares 2 params but call sites push 5 (3 missing)...
+  core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90
+    Function declares 2 params but call sites push 3 (1 missing)...
+  core_skeleton.cpp_CDeformableModel_skinVertices_FUN_0059a880
+    Function declares 4 params but call sites push 5 (1 missing)...
+  core_main.c_initializeGameSystems_FUN_00507a60
+    Function declares 0 params but call sites push 2 (2 missing)...
+
+====================================================================================================
 TYPE: sub84_truncation (40 occurrences)
 ====================================================================================================
 
@@ -576,79 +569,6 @@ Example functions:
     local_108 = SUB84(__BITCAST_UINT64(dVar20),0);...
   shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300
     local_28 = SUB84(__BITCAST_UINT64(dVar2),0);...
-
-====================================================================================================
-TYPE: param_count_too_many (36 occurrences)
-====================================================================================================
-
-Unique patterns:
-    15x  declared:2 vs estimated:1
-    14x  declared:3 vs estimated:2
-     5x  declared:4 vs estimated:3
-     1x  declared:4 vs estimated:2
-     1x  declared:5 vs estimated:1
-
-Example functions:
-  support_trisock.cpp_buildSockaddrIn_FUN_005e19d0
-    Function declares 2 params but call sites push 1 (1 extra)...
-  engine_matrix.c_normalizeVector3DFixed_FUN_0050d970
-    Function declares 2 params but call sites push 1 (1 extra)...
-  engine_matrix.c_transformWorldToView_FUN_0050cc40
-    Function declares 2 params but call sites push 1 (1 extra)...
-  engine_dosio.c_changeFileExtension_FUN_00482050
-    Function declares 3 params but call sites push 2 (1 extra)...
-  engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
-    Function declares 3 params but call sites push 2 (1 extra)...
-  engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590
-    Function declares 3 params but call sites push 2 (1 extra)...
-  engine_texture.cpp_loadAndUpdateTexture_FUN_005dd930
-    Function declares 3 params but call sites push 2 (1 extra)...
-  engine_texture.cpp_updateTextureWithPalette_FUN_005dd900
-    Function declares 2 params but call sites push 1 (1 extra)...
-  engine_model.c_getMRGLBounds_FUN_00528140
-    Function declares 2 params but call sites push 1 (1 extra)...
-  engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
-    Function declares 2 params but call sites push 1 (1 extra)...
-  engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
-    Function declares 2 params but call sites push 1 (1 extra)...
-  core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
-    Function declares 4 params but call sites push 3 (1 extra)...
-  core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
-    Function declares 3 params but call sites push 2 (1 extra)...
-  core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
-    Function declares 3 params but call sites push 2 (1 extra)...
-  core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090
-    Function declares 3 params but call sites push 2 (1 extra)...
-  core_xform.cpp_lerpMatrix3x4_FUN_005f7140
-    Function declares 4 params but call sites push 2 (2 extra)...
-  core_xform.cpp_quaternionFromAngleY_FUN_005f79f0
-    Function declares 2 params but call sites push 1 (1 extra)...
-  core_xform.cpp_negateFirstComponent_FUN_005f75e0
-    Function declares 2 params but call sites push 1 (1 extra)...
-  core_xform.cpp_buildXFlipMatrix_FUN_005f6ee0
-    Function declares 2 params but call sites push 1 (1 extra)...
-  core_xform.cpp_quaternionFromAngleZ_FUN_005f7a30
-    Function declares 2 params but call sites push 1 (1 extra)...
-  core_xform.cpp_buildZFlipMatrix_FUN_005f6fa0
-    Function declares 2 params but call sites push 1 (1 extra)...
-  core_xform.cpp_quaternionFromAxisAngle_FUN_005f7a70
-    Function declares 3 params but call sites push 2 (1 extra)...
-  core_xform.cpp_slerpQuaternion_FUN_005f77e0
-    Function declares 4 params but call sites push 3 (1 extra)...
-  core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10
-    Function declares 3 params but call sites push 2 (1 extra)...
-  core_xform.cpp_multiplyQuaternion_FUN_005f7640
-    Function declares 3 params but call sites push 2 (1 extra)...
-  core_xform.cpp_quaternionFromAngleX_FUN_005f79b0
-    Function declares 2 params but call sites push 1 (1 extra)...
-  core_set.cpp_transformToWorldSpace_FUN_0056e890
-    Function declares 2 params but call sites push 1 (1 extra)...
-  core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
-    Function declares 4 params but call sites push 3 (1 extra)...
-  core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
-    Function declares 3 params but call sites push 2 (1 extra)...
-  core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0
-    Function declares 3 params but call sites push 2 (1 extra)...
 
 ====================================================================================================
 TYPE: stack_param (36 occurrences)
@@ -762,35 +682,6 @@ Example functions:
     Function uses MMX instructions...
   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
     Function uses MMX instructions...
-
-====================================================================================================
-TYPE: unresolved_funcptr (33 occurrences)
-====================================================================================================
-
-Unique patterns:
-    33x  code
-
-Example functions:
-  support_codec.cpp_CLZWDictionary_initTable_FUN_0043eef0
-    *(int *)((int)&this_ptr->node_table->code + iVar1) = iVar2;...
-  support_codec.cpp_CLZWDictionary_decodeCodeToBuffer_FUN_0043f270
-    int __cdecl support_codec_cpp_CLZWDictionary_decodeCodeToBuffer_FUN_0043f270(CLZ...
-  support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200
-    int __cdecl support_codec_cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200(CLZW...
-  support_codec.cpp_CLZWDictionary_findCode_FUN_0043ef50
-    if (search_code == pCVar2->code) break;...
-  support_codec.cpp_CLZWDictionary_addNode_FUN_0043ef90
-    int __cdecl support_codec_cpp_CLZWDictionary_addNode_FUN_0043ef90(CLZWDictionary...
-  engine_3d.c_dispatchMRGLBlockChain_FUN_00407890
-    core_main_c_displayErrorAndQuit_FUN_00506f10("Bad code!");...
-  sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
-    return "DSERR_ELIFINO: Unknown error status code.";...
-  sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_0052f350
-    ("Illegal Huffman code in data.  File: %s",g_CurrentMp3Filename);...
-  core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
-    _sprintf(local_94,"Waiting on sync code %d from server...",sync_stage);...
-  core_script.cpp_editParameterValue_FUN_00562920
-    (g_CEditorToolsPtr,"WARNING! chooseParm - unknown parm type %d (code needs to be...
 
 ====================================================================================================
 TYPE: negative_offset (33 occurrences)
@@ -1040,6 +931,27 @@ Example functions:
     // 005f2f42: MOV dword ptr [EDX*0x4 + 0x3f96bc4],EBX  ; g_UseMultimediaTimer...
 
 ====================================================================================================
+TYPE: param_count_too_many (5 occurrences)
+====================================================================================================
+
+Unique patterns:
+     2x  declared:3 vs estimated:2
+     2x  declared:2 vs estimated:1
+     1x  declared:5 vs estimated:1
+
+Example functions:
+  engine_dosio.c_changeFileExtension_FUN_00482050
+    Function declares 3 params but call sites push 2 (1 extra)...
+  engine_texture.cpp_loadAndUpdateTexture_FUN_005dd930
+    Function declares 3 params but call sites push 2 (1 extra)...
+  engine_texture.cpp_updateTextureWithPalette_FUN_005dd900
+    Function declares 2 params but call sites push 1 (1 extra)...
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
+    Function declares 2 params but call sites push 1 (1 extra)...
+  wincore_winrun.cpp_winMain_FUN_005f3680
+    Function declares 5 params but call sites push 1 (4 extra)...
+
+====================================================================================================
 TYPE: warning_deadcode_restart (5 occurrences)
 ====================================================================================================
 
@@ -1074,26 +986,6 @@ Example functions:
     unkbyte10 Var8;...
   core_larva.cpp_CLarva_process_FUN_00503080
     unkbyte10 Var18;...
-
-====================================================================================================
-TYPE: special_cpu_detection (4 occurrences)
-====================================================================================================
-
-Unique patterns:
-     1x  detectmmx
-     1x  detectintel
-     1x  getcpuinfo
-     1x  detectcpu
-
-Example functions:
-  core_mmx.c_detectMMXSupport_FUN_00524ff9
-    CPU detection function at 00524ff9...
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c
-    CPU detection function at 00524f4c...
-  core_mmx.c_getCPUInfo_FUN_0052500f
-    CPU detection function at 0052500f...
-  core_mmx.c_detectCPUFeatures_FUN_00524f10
-    CPU detection function at 00524f10...
 
 ====================================================================================================
 TYPE: warning_max_restarts (3 occurrences)
@@ -1154,17 +1046,6 @@ Unique patterns:
 Example functions:
   core_mmx.c_detectIntelProcessor_FUN_00524f4c
     /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
-
-====================================================================================================
-TYPE: cpuid_assembly (1 occurrences)
-====================================================================================================
-
-Unique patterns:
-     1x  CPUID
-
-Example functions:
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c
-    Function uses CPUID instruction...
 
 ====================================================================================================
 TYPE: warning_noreturn (1 occurrences)

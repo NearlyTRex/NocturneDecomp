@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 8,
-    "complexity_score": 21,
+    "complexity_score": 6,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 6,
-    "suspect_count": 1,
-    "suspect_types": [
-      "special_math_intrinsic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 14
   },
   "cross_references": [
@@ -80,15 +78,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "address": "00606f13",
-      "description": "Math library function with FPU stack or unusual patterns",
-      "function_name": "crt_math.c_pentiumFdivpWorkaround_FUN_00606f13",
-      "match": "round",
-      "math_function": "round",
-      "text": "Math intrinsic (round) at 00606f13",
-      "type": "special_math_intrinsic"
-    }
-  ]
+  "suspects": []
 }

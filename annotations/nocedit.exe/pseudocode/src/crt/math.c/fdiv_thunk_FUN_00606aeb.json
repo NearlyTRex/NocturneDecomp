@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 168,
+    "complexity_score": 153,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 13,
-    "suspect_count": 13,
+    "suspect_count": 12,
     "suspect_types": [
       "fpu_register_input",
-      "special_crt_function",
       "stack_param",
       "undefined_type",
       "unknown_type"
@@ -179,15 +178,6 @@
       "severity": "moderate",
       "text": "return (float10)CONCAT64(uStack00000020,in_stack_0000001c);",
       "type": "stack_param"
-    },
-    {
-      "address": "00606aeb",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_math.c_fdiv_thunk_FUN_00606aeb",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 00606aeb",
-      "type": "special_crt_function"
     }
   ],
   "vtable_info": {

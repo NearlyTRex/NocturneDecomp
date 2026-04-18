@@ -1380,7 +1380,7 @@ def generate_function_breakdown(functions, output_path):
         lines.append("")
         lines.append("  [%s] (%d functions)" % (stype, len(funcs)))
         lines.append("  " + "-" * 60)
-        for func in funcs[:20]:  # Show first 20
+        for func in funcs:
             func_info = func.get('function', {})
             complexity = func.get('complexity', {})
             suspects = func.get('suspects', [])
@@ -1388,8 +1388,6 @@ def generate_function_breakdown(functions, output_path):
             name = func_info.get('name', 'unknown')[:50]
             lines.append("    %-50s (%3d lines)" % (name, complexity.get('pseudocode_lines', 0)))
             lines.append("      %s..." % suspect_text)
-        if len(funcs) > 20:
-            lines.append("    ... and %d more" % (len(funcs) - 20))
     lines.append("")
 
     # Functions with 2-3 suspects
@@ -1399,16 +1397,13 @@ def generate_function_breakdown(functions, output_path):
     few_suspects = by_suspect_count.get(2, []) + by_suspect_count.get(3, [])
     few_suspects.sort(key=lambda x: (x.get('complexity', {}).get('suspect_count', 0),
                                       x.get('complexity', {}).get('pseudocode_lines', 0)))
-    for func in few_suspects[:50]:
+    for func in few_suspects:
         func_info = func.get('function', {})
         complexity = func.get('complexity', {})
         suspect_types = complexity.get('suspect_types', [])
         vfile = func.get('_virtual_file', '')
         lines.append("  %s" % func_info.get('name', 'unknown')[:60])
         lines.append("    File: %s, Lines: %d, Types: %s" % (vfile, complexity.get('pseudocode_lines', 0), suspect_types))
-    if len(few_suspects) > 50:
-        lines.append("")
-        lines.append("  ... and %d more" % (len(few_suspects) - 50))
 
     report_text = "\n".join(lines)
 

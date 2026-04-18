@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 51,
+    "complexity_score": 36,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 11,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "special_crt_function"
+      "pointer_cast"
     ],
     "total_lines": 43
   },
@@ -141,15 +140,6 @@
       "severity": "mild",
       "text": "pvVar1 = (void *)((int)pvVar1 + element_size);",
       "type": "pointer_cast"
-    },
-    {
-      "address": "006020c2",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_memory.c___arr_op_FUN_006020c2",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 006020c2",
-      "type": "special_crt_function"
     }
   ]
 }

@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 24,
+    "complexity_score": 9,
     "cross_reference_count": 7,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 9,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_many"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 38
   },
   "cross_references": [
@@ -94,10 +92,12 @@
         "call_addr": "004c0de1",
         "call_type": "direct",
         "caller": "core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -105,10 +105,12 @@
         "call_addr": "004bf251",
         "call_type": "direct",
         "caller": "core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -116,10 +118,12 @@
         "call_addr": "004eba31",
         "call_type": "direct",
         "caller": "core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -127,10 +131,12 @@
         "call_addr": "004c039b",
         "call_type": "direct",
         "caller": "core_fire.cpp_CSpark_setupRenderState_FUN_004c0300",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -138,10 +144,12 @@
         "call_addr": "004c654c",
         "call_type": "direct",
         "caller": "core_fire.cpp_CPopcorn_render_FUN_004c64c0",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -149,10 +157,12 @@
         "call_addr": "004c68bf",
         "call_type": "direct",
         "caller": "core_fire.cpp_CRainDrop_render_FUN_004c6830",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -160,10 +170,12 @@
         "call_addr": "004ca219",
         "call_type": "direct",
         "caller": "core_flame.cpp_CFlame_renderTransparent_FUN_004ca110",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       },
@@ -171,10 +183,12 @@
         "call_addr": "004ca28b",
         "call_type": "direct",
         "caller": "core_flame.cpp_CFlame_renderTransparent_FUN_004ca110",
-        "estimated_params": 1,
+        "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [],
+        "reg_params": [
+          "ESI"
+        ],
         "stack_bytes": 4,
         "stack_params": 1
       }
@@ -182,7 +196,8 @@
     "confidence": "high",
     "declared_params": 2,
     "declared_stack_bytes": 4,
-    "estimated_params": 1
+    "estimated_params": 2,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.4347826086956523,
@@ -247,17 +262,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "call_site_count": 8,
-      "declared_params": 2,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 1,
-      "fix_type": "remove_params",
-      "match": "declared:2 vs estimated:1",
-      "param_delta": -1,
-      "text": "Function declares 2 params but call sites push 1 (1 extra)",
-      "type": "param_count_too_many"
-    }
-  ]
+  "suspects": []
 }

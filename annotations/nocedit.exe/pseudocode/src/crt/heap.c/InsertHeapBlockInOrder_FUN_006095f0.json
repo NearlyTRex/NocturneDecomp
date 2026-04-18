@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 50,
-    "complexity_score": 71,
+    "complexity_score": 56,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 41,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "negative_offset",
-      "special_crt_function"
+      "negative_offset"
     ],
     "total_lines": 91
   },
@@ -62,7 +61,8 @@
     "confidence": "medium",
     "declared_params": 1,
     "declared_stack_bytes": 4,
-    "estimated_params": 1
+    "estimated_params": 1,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.789473684210526,
@@ -114,15 +114,6 @@
       "severity": "mild",
       "text": "puVar1 = pHVar3[-1].free_list_area + (new_block->size - 0x20);",
       "type": "negative_offset"
-    },
-    {
-      "address": "006095f0",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_heap.c_InsertHeapBlockInOrder_FUN_006095f0",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 006095f0",
-      "type": "special_crt_function"
     }
   ]
 }

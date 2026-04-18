@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 58,
+    "complexity_score": 43,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 13,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "special_crt_function",
       "stack_param",
       "undefined_type"
     ],
@@ -109,15 +108,6 @@
       "severity": "moderate",
       "text": "undefined3 in_stack_00000005;",
       "type": "undefined_type"
-    },
-    {
-      "address": "00610a70",
-      "crt_type": "runtime support",
-      "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_locale.c_istrailbyte_FUN_00610a70",
-      "match": "crt_",
-      "text": "CRT function (runtime support) at 00610a70",
-      "type": "special_crt_function"
     }
   ]
 }
