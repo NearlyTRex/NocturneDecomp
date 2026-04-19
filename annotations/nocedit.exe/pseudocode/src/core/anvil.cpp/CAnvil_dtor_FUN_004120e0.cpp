@@ -13,7 +13,7 @@ CAnvil * __cdecl core_anvil_cpp_CAnvil_dtor_FUN_004120e0(CAnvil *this_ptr,uint f
   void *ptr_00;
   
   if ((flags & 4) != 0) {
-    __vec_delete(this_ptr,&g_CAnvilTypeInfo);
+    ptr_00 = __vec_delete(this_ptr,&g_CAnvilTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }

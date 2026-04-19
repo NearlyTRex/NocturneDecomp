@@ -53,7 +53,7 @@ section .text
     MOV dword ptr [0x0067d20c],ECX      ; 0059a2d9 | g_CurrentDebugFilename
     MOV dword ptr [0x02f0d944],EBP      ; 0059a2df | g_CurrentDebugLine
     CALL crt_memory.c___vec_delete_FUN_005fe632 ; 0059a2e5
-        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void crt_memory.c___vec_delete_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 0059a2ea
     PUSH EAX                            ; 0059a2ed
     ADD EBX,0x4                         ; 0059a2ee

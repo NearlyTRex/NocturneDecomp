@@ -13,7 +13,7 @@ CDynamite * __cdecl core_dynamite_cpp_CDynamite_dtor_FUN_0049d120(CDynamite *thi
   void *ptr_00;
   
   if ((flags & 4) != 0) {
-    __vec_delete(this_ptr,&g_CDynamiteTypeInfo);
+    ptr_00 = __vec_delete(this_ptr,&g_CDynamiteTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }

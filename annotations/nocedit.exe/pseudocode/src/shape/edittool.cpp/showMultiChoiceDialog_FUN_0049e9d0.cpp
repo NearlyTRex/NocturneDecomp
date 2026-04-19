@@ -254,7 +254,7 @@ LAB_0049eae7:
   } while (iVar3 == -2);
   g_CurrentDebugFilename = "..\\shape\\edittool.cpp";
   g_CurrentDebugLine = 0x49d;
-  __vec_delete(object_ptr,&g_CEdButtonTypeInfo);
+  ptr = __vec_delete(object_ptr,&g_CEdButtonTypeInfo);
   shape_memdbg_cpp_free_FUN_005fe659(ptr);
   g_InputKeyMask = iVar4;
   engine_2d_c_clearInputAndWait_FUN_00403260();

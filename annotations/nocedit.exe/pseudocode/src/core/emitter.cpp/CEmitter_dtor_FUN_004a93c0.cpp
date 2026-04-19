@@ -13,7 +13,7 @@ CEmitter * __cdecl core_emitter_cpp_CEmitter_dtor_FUN_004a93c0(CEmitter *this_pt
   void *ptr_00;
   
   if ((flags & 4) != 0) {
-    __vec_delete(this_ptr,&g_CEmitterTypeInfo);
+    ptr_00 = __vec_delete(this_ptr,&g_CEmitterTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }

@@ -25,7 +25,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510(CDeformabl
   }
   g_CurrentDebugFilename = "..\\core\\skeleton.cpp";
   g_CurrentDebugLine = 0x28f;
-  __vec_delete(this_ptr->vertex_data_ptr[lod_index],&g_SVertTypeInfo);
+  ptr = __vec_delete(this_ptr->vertex_data_ptr[lod_index],&g_SVertTypeInfo);
   shape_memdbg_cpp_free_FUN_005fe659(ptr);
   g_CurrentDebugLine = 0x290;
   g_CurrentDebugFilename = "..\\core\\skeleton.cpp";

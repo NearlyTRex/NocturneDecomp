@@ -19,7 +19,7 @@ CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_dtor_FUN_004e5bd0(CGargoyle *thi
   void *ptr_00;
   
   if ((flags & 4) != 0) {
-    __vec_delete(this_ptr,&g_CGargoyleTypeInfo);
+    ptr_00 = __vec_delete(this_ptr,&g_CGargoyleTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }

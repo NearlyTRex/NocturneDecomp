@@ -20,7 +20,7 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_dtor_FUN_0041da40(CBoneGuy *this_pt
   void *ptr_00;
   
   if ((flags & 4) != 0) {
-    __vec_delete(this_ptr,&g_CBoneGuyTypeInfo);
+    ptr_00 = __vec_delete(this_ptr,&g_CBoneGuyTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }

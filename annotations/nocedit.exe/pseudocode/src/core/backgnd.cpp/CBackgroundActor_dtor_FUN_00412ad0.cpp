@@ -13,7 +13,7 @@ CBackgroundActor * __cdecl core_backgnd_cpp_CBackgroundActor_dtor_FUN_00412ad0(C
   void *ptr_00;
   
   if ((flags & 4) != 0) {
-    __vec_delete(this_ptr,&g_CBackgroundActorTypeInfo);
+    ptr_00 = __vec_delete(this_ptr,&g_CBackgroundActorTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }

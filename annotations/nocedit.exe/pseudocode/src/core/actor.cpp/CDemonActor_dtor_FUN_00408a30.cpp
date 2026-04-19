@@ -12,7 +12,7 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor *
   void *ptr;
   
   if ((flags & 4) != 0) {
-    __vec_delete(this_ptr,&g_CDemonActorTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CDemonActorTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr);
     return this_ptr;
   }

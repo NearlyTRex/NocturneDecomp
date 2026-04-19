@@ -12,7 +12,7 @@ CPod * __cdecl engine_pod_cpp_CPod_dtor_FUN_005509b0(CPod *this_ptr,uint flags)
   void *ptr;
   
   if ((flags & 4) != 0) {
-    __vec_delete(this_ptr,&g_CPodTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_CPodTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr);
     return this_ptr;
   }

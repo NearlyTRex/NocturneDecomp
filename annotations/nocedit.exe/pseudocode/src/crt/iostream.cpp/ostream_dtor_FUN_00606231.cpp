@@ -30,7 +30,7 @@ _ostream * __cdecl crt_iostream_cpp_ostream_dtor_FUN_00606231(_ostream *this_ptr
     shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(this_ptr);
   }
   else {
-    __vec_delete(this_ptr,&g_OStreamTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_OStreamTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr);
   }
   return this_ptr;

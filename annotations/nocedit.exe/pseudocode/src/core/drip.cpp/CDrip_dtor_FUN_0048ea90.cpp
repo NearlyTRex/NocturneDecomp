@@ -13,7 +13,7 @@ CDrip * __cdecl core_drip_cpp_CDrip_dtor_FUN_0048ea90(CDrip *this_ptr,uint flags
   void *ptr_00;
   
   if ((flags & 4) != 0) {
-    __vec_delete(this_ptr,&g_CDripTypeInfo);
+    ptr_00 = __vec_delete(this_ptr,&g_CDripTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }

@@ -14,7 +14,7 @@ CFlies * __cdecl core_flies_cpp_CFlies_dtor_FUN_004cccb0(CFlies *this_ptr,uint f
   void *ptr_00;
   
   if ((flags & 4) != 0) {
-    __vec_delete(this_ptr,&g_CFliesTypeInfo);
+    ptr_00 = __vec_delete(this_ptr,&g_CFliesTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }

@@ -16,9 +16,8 @@ void __cdecl engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b
   CPodFile *object_ptr;
   char *pcVar8;
   int iVar3;
-  void *ptr;
-  void *ptr_00;
-  int iVar9;
+  void *pvVar9;
+  int iVar10;
   int iVar4;
   CPodFile *this_ptr_00;
   CPodFile *pCVar5;
@@ -107,8 +106,8 @@ void __cdecl engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b
                   (g_CEditorToolsPtr,"Can't mount %s",pcVar8);
         g_CurrentDebugFilename = "..\\engine\\fileio.cpp";
         g_CurrentDebugLine = 0xe3f;
-        __vec_delete(object_ptr,&g_CPodFileTypeInfo);
-        shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
+        pvVar9 = __vec_delete(object_ptr,&g_CPodFileTypeInfo);
+        shape_memdbg_cpp_free_FUN_005fe659(pvVar9);
         shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_50,0);
         return;
       }
@@ -135,8 +134,8 @@ void __cdecl engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b
           if (0 < local_50.item_count) {
             do {
               if ((iVar5 != local_1c) &&
-                 (iVar9 = engine_pod_cpp_CPodFile_findFileIndex_FUN_00550140(pCVar5,pcVar8),
-                 -1 < iVar9)) {
+                 (iVar10 = engine_pod_cpp_CPodFile_findFileIndex_FUN_00550140(pCVar5,pcVar8),
+                 -1 < iVar10)) {
                 if (iVar5 < local_1c) break;
                 if (bVar3) {
                   shape_edittool_cpp_CStrList_add_FUN_004a2b80
@@ -148,7 +147,7 @@ void __cdecl engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b
                   bVar3 = false;
                 }
                 _sprintf(local_154,"\t%s\t%08X",pCVar5->filename,
-                           pCVar5->directory_entries[iVar9].checksum);
+                           pCVar5->directory_entries[iVar10].checksum);
                 shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_4fc.base,local_154);
               }
               iVar5 = iVar5 + 1;
@@ -165,8 +164,8 @@ void __cdecl engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b
   }
   g_CurrentDebugFilename = "..\\engine\\fileio.cpp";
   g_CurrentDebugLine = 0xe63;
-  __vec_delete(object_ptr,&g_CPodFileTypeInfo);
-  shape_memdbg_cpp_free_FUN_005fe659(ptr);
+  pvVar9 = __vec_delete(object_ptr,&g_CPodFileTypeInfo);
+  shape_memdbg_cpp_free_FUN_005fe659(pvVar9);
   if (0 < local_4fc.base.item_count) {
     shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10(&local_4fc,1);
     shape_edittool_cpp_CPickList_setCancelButtonText_FUN_004a3d90(&local_4fc,(char *)0x0);

@@ -7,18 +7,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 462,
-    "complexity_score": 204,
+    "complexity_score": 203,
     "cross_reference_count": 1,
     "function_call_count": 26,
     "global_count": 26,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 174,
+    "pseudocode_lines": 173,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "unrolled_strcpy"
     ],
-    "total_lines": 636
+    "total_lines": 635
   },
   "cross_references": [
     {
@@ -516,7 +516,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 138,
+      "line": 137,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_40->directory_entries->checksum + local_34)",
@@ -524,7 +524,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 50,
+      "line": 49,
       "match": "do {",
       "severity": "mild",
       "text": "do {",

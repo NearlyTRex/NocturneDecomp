@@ -19,7 +19,7 @@ CDemonActor * __cdecl core_hotdemon_cpp_CHotDemon_dtor_FUN_004f7a40(CHotDemon *t
   void *ptr_00;
   
   if ((flags & 4) != 0) {
-    __vec_delete(this_ptr,&g_CHotDemonTypeInfo);
+    ptr_00 = __vec_delete(this_ptr,&g_CHotDemonTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return (CDemonActor *)this_ptr;
   }

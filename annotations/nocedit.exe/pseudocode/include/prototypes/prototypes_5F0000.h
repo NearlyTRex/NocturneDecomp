@@ -219,7 +219,7 @@ inline void crt_stdlib_c__qsort_FUN_005fdf38(void *base,SIZE_T num,SIZE_T size,T
     crt_stdlib_c__qsort_FUN_005fdf38(base, num, size, (QSORT_COMPARATOR)compar);
 }
 void * __cdecl crt_string_c_memmove_FUN_005fe5e0(void *dest,void *src,SIZE_T n);
-void __cdecl crt_memory_c___vec_delete_FUN_005fe632(void *object_ptr,WatcomTypeInfo *type_info);
+void * __cdecl crt_memory_c___vec_delete_FUN_005fe632(void *object_ptr,WatcomTypeInfo *type_info);
 void __cdecl shape_memdbg_cpp_free_FUN_005fe659(void *ptr);
 void * __cdecl crt_memory_c___arrinit_FUN_005fe667(void *array_start,int element_count,WatcomTypeInfo *type_info);
 double __fpureg_safe crt_math_c_round_FUN_005fe6b0(double value);

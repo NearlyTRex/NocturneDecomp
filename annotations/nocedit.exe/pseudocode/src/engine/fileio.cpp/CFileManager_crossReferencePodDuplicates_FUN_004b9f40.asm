@@ -321,7 +321,7 @@ section .text
     MOV [0x0067d20c],EAX                ; 004ba289 | g_CurrentDebugFilename
     MOV dword ptr [0x02f0d944],EDX      ; 004ba28e | g_CurrentDebugLine
     CALL crt_memory.c___vec_delete_FUN_005fe632 ; 004ba294
-        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void crt_memory.c___vec_delete_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004ba299
     PUSH EAX                            ; 004ba29c
     CALL shape_memdbg.cpp_free_FUN_005fe659 ; 004ba29d
@@ -402,7 +402,7 @@ section .text
     MOV dword ptr [0x0067d20c],EDX      ; 004ba373 | g_CurrentDebugFilename
     MOV dword ptr [0x02f0d944],ECX      ; 004ba379 | g_CurrentDebugLine
     CALL crt_memory.c___vec_delete_FUN_005fe632 ; 004ba37f
-        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void crt_memory.c___vec_delete_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___vec_delete_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
     ADD ESP,0x8                         ; 004ba384
     PUSH EAX                            ; 004ba387
     CALL shape_memdbg.cpp_free_FUN_005fe659 ; 004ba388

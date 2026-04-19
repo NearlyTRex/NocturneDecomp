@@ -31,7 +31,7 @@ ifstream * __cdecl crt_fstream_cpp_ifstream_dtor_FUN_005ff856(void *this_ptr,uin
     shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(this_ptr);
   }
   else {
-    __vec_delete(this_ptr,&g_IFStreamTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_IFStreamTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr);
   }
   return this_ptr;

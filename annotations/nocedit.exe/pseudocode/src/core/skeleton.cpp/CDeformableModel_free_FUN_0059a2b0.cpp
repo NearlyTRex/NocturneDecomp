@@ -19,7 +19,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_free_FUN_0059a2b0(CDeformableMod
     do {
       g_CurrentDebugFilename = "..\\core\\skeleton.cpp";
       g_CurrentDebugLine = 0x23a;
-      __vec_delete(pCVar1->vertex_data_ptr[0],&g_SVertTypeInfo);
+      ptr = __vec_delete(pCVar1->vertex_data_ptr[0],&g_SVertTypeInfo);
       shape_memdbg_cpp_free_FUN_005fe659(ptr);
       pCVar1->vertex_data_ptr[0] = (SVert *)0x0;
       g_CurrentDebugFilename = "..\\core\\skeleton.cpp";

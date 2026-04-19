@@ -13,7 +13,7 @@ CBattery * __cdecl core_battery_cpp_CBattery_dtor_FUN_00418160(CBattery *this_pt
   void *ptr_00;
   
   if ((flags & 4) != 0) {
-    __vec_delete(this_ptr,&g_CBatteryTypeInfo);
+    ptr_00 = __vec_delete(this_ptr,&g_CBatteryTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }

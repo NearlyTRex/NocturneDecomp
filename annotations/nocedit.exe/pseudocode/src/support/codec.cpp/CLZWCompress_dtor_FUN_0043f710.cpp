@@ -14,7 +14,7 @@ CLZWCompress * __cdecl support_codec_cpp_CLZWCompress_dtor_FUN_0043f710(CLZWComp
   void *ptr_00;
   
   if ((flags & 4) != 0) {
-    __vec_delete(this_ptr,&g_CLZWCompressTypeInfo);
+    ptr_00 = __vec_delete(this_ptr,&g_CLZWCompressTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }

@@ -20,7 +20,7 @@ ios * __cdecl crt_iostream_cpp_ios_dtor_FUN_0060632c(ios *this_ptr,uint flags)
     shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(this_ptr);
   }
   else {
-    __vec_delete(this_ptr,&g_IOSTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_IOSTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr);
   }
   return this_ptr;

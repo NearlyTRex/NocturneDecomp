@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl crt_memory_c___vec_delete_FUN_005fe632(void *object_ptr,WatcomTypeInfo *type_info)
+; void * __cdecl crt_memory_c___vec_delete_FUN_005fe632(void *object_ptr,WatcomTypeInfo *type_info)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   object_ptr

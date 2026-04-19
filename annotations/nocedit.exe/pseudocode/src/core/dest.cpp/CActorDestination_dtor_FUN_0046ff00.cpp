@@ -13,7 +13,7 @@ CActorDestination * __cdecl core_dest_cpp_CActorDestination_dtor_FUN_0046ff00(CA
   void *ptr_00;
   
   if ((flags & 4) != 0) {
-    __vec_delete(this_ptr,&g_CActorDestination);
+    ptr_00 = __vec_delete(this_ptr,&g_CActorDestination);
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }

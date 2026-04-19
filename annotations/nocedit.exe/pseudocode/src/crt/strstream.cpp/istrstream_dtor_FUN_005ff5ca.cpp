@@ -32,7 +32,7 @@ _istrstream * __cdecl crt_strstream_cpp_istrstream_dtor_FUN_005ff5ca(void *this_
     shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(this_ptr);
   }
   else {
-    __vec_delete(this_ptr,&g_IStrStreamTypeInfo);
+    ptr = __vec_delete(this_ptr,&g_IStrStreamTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr);
   }
   return this_ptr;

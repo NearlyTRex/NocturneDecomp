@@ -19,7 +19,7 @@ CMobster * __cdecl core_mobster_cpp_CMobster_dtor_FUN_00527c70(CMobster *this_pt
   void *ptr_00;
   
   if ((flags & 4) != 0) {
-    __vec_delete(this_ptr,&g_CMobsterTypeInfo);
+    ptr_00 = __vec_delete(this_ptr,&g_CMobsterTypeInfo);
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
