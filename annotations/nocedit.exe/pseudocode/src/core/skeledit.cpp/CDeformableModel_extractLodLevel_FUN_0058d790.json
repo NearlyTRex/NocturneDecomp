@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 512,
-    "complexity_score": 322,
+    "complexity_score": 347,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 10,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 242,
-    "suspect_count": 7,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
+      "unrolled_memcpy",
       "warning_inlined_function"
     ],
     "total_lines": 754
@@ -487,6 +488,22 @@
       "severity": "mild",
       "text": "*(char *)((int)pfVar18 + *(byte *)pfVar18 + 1) = (char)iVar16;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "line": 185,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "mild",
+      "text": "for (iVar10 = 0xfa; iVar10 != 0; iVar10 = iVar10 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "line": 193,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "mild",
+      "text": "for (iVar3 = 0x32; iVar3 != 0; iVar3 = iVar3 + -1) {",
+      "type": "unrolled_memcpy"
     }
   ]
 }

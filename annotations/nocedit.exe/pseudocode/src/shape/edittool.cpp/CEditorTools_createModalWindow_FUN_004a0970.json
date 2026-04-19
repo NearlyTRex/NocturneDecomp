@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 359,
-    "complexity_score": 195,
+    "complexity_score": 220,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 52,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 160,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 519
   },
@@ -589,6 +590,22 @@
       "severity": "mild",
       "text": "local_14 = (uint *)((int)local_14 + uVar7);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "line": 126,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "mild",
+      "text": "for (uVar9 = uVar7 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "line": 131,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "mild",
+      "text": "for (uVar2 = uVar7 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {",
+      "type": "unrolled_memcpy"
     }
   ]
 }

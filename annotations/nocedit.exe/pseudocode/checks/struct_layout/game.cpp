@@ -1065,12 +1065,12 @@ static_assert(__builtin_offsetof(CCharacter, damage_decals) == 11768,
               "offsetof(CCharacter, damage_decals) != 11768");
 static_assert(__builtin_offsetof(CCharacter, fire_count) == 12048,
               "offsetof(CCharacter, fire_count) != 12048");
-static_assert(__builtin_offsetof(CCharacter, fire_spread_rate) == 12052,
-              "offsetof(CCharacter, fire_spread_rate) != 12052");
-static_assert(__builtin_offsetof(CCharacter, fire_allow_hero) == 12056,
-              "offsetof(CCharacter, fire_allow_hero) != 12056");
-static_assert(__builtin_offsetof(CCharacter, fire_effects) == 12060,
-              "offsetof(CCharacter, fire_effects) != 12060");
+static_assert(__builtin_offsetof(CCharacter, pending_flame_type) == 12052,
+              "offsetof(CCharacter, pending_flame_type) != 12052");
+static_assert(__builtin_offsetof(CCharacter, flame_scale) == 12056,
+              "offsetof(CCharacter, flame_scale) != 12056");
+static_assert(__builtin_offsetof(CCharacter, fires) == 12060,
+              "offsetof(CCharacter, fires) != 12060");
 static_assert(__builtin_offsetof(CCharacter, flames) == 13260,
               "offsetof(CCharacter, flames) != 13260");
 static_assert(__builtin_offsetof(CCharacter, sfx_handle) == 47060,
@@ -2551,8 +2551,8 @@ static_assert(__builtin_offsetof(CDemonTriangle, normal) == 36,
               "offsetof(CDemonTriangle, normal) != 36");
 static_assert(__builtin_offsetof(CDemonTriangle, plane_distance) == 48,
               "offsetof(CDemonTriangle, plane_distance) != 48");
-static_assert(__builtin_offsetof(CDemonTriangle, area) == 52,
-              "offsetof(CDemonTriangle, area) != 52");
+static_assert(__builtin_offsetof(CDemonTriangle, dominant_axis) == 52,
+              "offsetof(CDemonTriangle, dominant_axis) != 52");
 
 // ---- CDirectSoundDevice (4 bytes) ----
 static_assert(sizeof(CDirectSoundDevice) == 4,

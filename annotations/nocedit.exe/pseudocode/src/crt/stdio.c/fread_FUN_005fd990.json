@@ -2,16 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 240,
-    "complexity_score": 153,
+    "complexity_score": 178,
     "cross_reference_count": 51,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 113,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
-      "raw_address_constant"
+      "raw_address_constant",
+      "unrolled_memcpy"
     ],
     "total_lines": 353
   },
@@ -597,6 +598,22 @@
       "severity": "moderate",
       "text": "uVar3 = (uVar8 >> 8 & 0xfffffe) << 8;",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "line": 71,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "mild",
+      "text": "for (uVar5 = uVar3 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "line": 76,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "mild",
+      "text": "for (uVar5 = uVar3 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {",
+      "type": "unrolled_memcpy"
     }
   ]
 }

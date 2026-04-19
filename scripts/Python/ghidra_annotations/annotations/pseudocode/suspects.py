@@ -77,6 +77,9 @@ SUSPECT_SEVERITY = {
     'raw_address_constant': 'moderate',
     'unrolled_strcpy': 'mild',
     'unrolled_memcpy': 'mild',
+    'unrolled_strlen': 'mild',
+    'unrolled_strcat': 'mild',
+    'unrolled_strchr': 'mild',
 }
 
 
@@ -931,11 +934,11 @@ def identify_unrolled_strcpy_loops(decompiled_code):
 # countdown header plus the `((uint)<bool> * -2 + 1)` arithmetic, which is
 # Watcom's direction-select idiom for REP MOVSD emulation.
 _UNROLLED_MEMCPY_FOR_RE = re.compile(
-    r"^\s*for\s*\(\s*(\w+)\s*=\s*[^;]+?;\s*\1\s*!=\s*0\s*;\s*"
-    r"\1\s*=\s*\1\s*\+\s*-?1\s*\)\s*\{?\s*$")
+    r"^\s*for\s*\(\s*(\w+)\s*=\s*[^;]+?;\s*[^;]*?\1\s*!=\s*0\s*;\s*"
+    r"\1\s*=\s*\1\s*(?:\+\s*-?1|-\s*1)\s*\)\s*\{?\s*$")
 _UNROLLED_MEMCPY_STORE_RE = re.compile(
-    r"^\s*\*\s*\(\s*\w+\s*\*\s*\)\s*\w+\s*=\s*"
-    r"\*\s*\(\s*\w+\s*\*\s*\)\s*\w+\s*;\s*$")
+    r"^\s*\*\s*(?:\(\s*\w+\s*\*\s*\)\s*)?\w+\s*=\s*"
+    r"\*\s*(?:\(\s*\w+\s*\*\s*\)\s*)?\w+\s*;\s*$")
 # The `(uint)bVar * -2 + 1` direction trick — very specific to Watcom's
 # REP MOVSD lowering. `* -8 + 4` is the dword-scaled variant.
 _UNROLLED_MEMCPY_DIR_RE = re.compile(
@@ -1005,6 +1008,326 @@ def identify_unrolled_memcpy_loops(decompiled_code):
     return suspects
 
 
+# Watcom's REP SCASB strlen idiom. ECX is initialized to -1 (0xFFFFFFFF),
+# then decremented inside a do-while that reads a byte per iteration. The
+# `(uint)<bool> * -2 + 1` direction trick picks the step (1 forward, -1
+# backward — always 1 in practice). Length is recovered downstream as
+# `~uVar - 1` (strlen) or `~uVar` (strlen + 1, the malloc-sized form).
+_UNROLLED_STRLEN_INIT_RE = re.compile(
+    r"^\s*(\w+)\s*=\s*(?:0xffffffff|-1)\s*;\s*$")
+_UNROLLED_STRLEN_ECX_BREAK_RE = re.compile(
+    r"^\s*if\s*\(\s*(\w+)\s*==\s*0\s*\)\s*break\s*;\s*$")
+_UNROLLED_STRLEN_DECR_RE = re.compile(
+    r"^\s*(\w+)\s*=\s*\1\s*(?:-\s*1|\+\s*-\s*1)\s*;\s*$")
+_UNROLLED_STRLEN_LOAD_RE = re.compile(
+    r"^\s*(\w+)\s*=\s*\*\s*(\w+)\s*;\s*$")
+_UNROLLED_STRLEN_STEP_RE = re.compile(
+    r"^\s*(\w+)\s*=\s*\1\s*\+\s*\(\s*uint\s*\)\s*\w+\s*\*\s*-?\d+\s*\+\s*\d+\s*;\s*$")
+
+
+def identify_unrolled_strlen_loops(decompiled_code):
+    """Detect Watcom's loop-unrolled strlen (REP SCASB) artifacts.
+
+    Canonical shape:
+        uVar = 0xffffffff;
+        pVar = <src>;
+        do {
+            if (uVar == 0) break;
+            uVar = uVar - 1;
+            cVar = *pVar;
+            pVar = pVar + (uint)bVar * -2 + 1;
+        } while (cVar != '\\0');
+
+    The length is then used as `~uVar - 1` (strlen) or `~uVar` (strlen + 1),
+    often as an argument to strncmp/malloc/etc. Replace the whole loop with
+    a `strlen(src)` call in a .keep.
+
+    The match anchor is the ECX-zero guard `if (<v> == 0) break;` followed
+    by the decrement `<v> = <v> - 1;` — a unique combination specific to
+    the SCASB lowering, distinct from the strcpy null-break pattern which
+    breaks on the byte value, not the counter.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts, one per detected loop.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    lines = decompiled_code.split('\n')
+    n = len(lines)
+    for i in range(n - 4):
+        # Anchor: `if (<v> == 0) break;` followed by `<v> = <v> - 1;` or
+        # `<v> = <v> + -1;` (Ghidra emits both forms).
+        break_m = _UNROLLED_STRLEN_ECX_BREAK_RE.match(lines[i])
+        if not break_m:
+            continue
+        decr_m = _UNROLLED_STRLEN_DECR_RE.match(lines[i + 1])
+        if not decr_m or decr_m.group(1) != break_m.group(1):
+            continue
+        # Walk upward for the `do {` header.
+        loop_start = None
+        for back in range(1, 6):
+            if i - back < 0:
+                break
+            if _UNROLLED_DO_RE.match(lines[i - back]):
+                loop_start = i - back
+                break
+        if loop_start is None:
+            continue
+        # Walk downward for `} while (cVar != '\0');` closer.
+        loop_end = None
+        for fwd in range(2, 14):
+            if i + fwd >= n:
+                break
+            if _UNROLLED_WHILE_RE.match(lines[i + fwd]):
+                loop_end = i + fwd
+                break
+        if loop_end is None:
+            continue
+        # Body must contain both the byte load and the direction-stepped
+        # pointer walk. Order varies (load may come before or after step,
+        # and the decompile sometimes inserts no-op `p = p;` lines).
+        has_load = False
+        has_step = False
+        for idx in range(loop_start + 1, loop_end):
+            if _UNROLLED_STRLEN_LOAD_RE.match(lines[idx]):
+                has_load = True
+            if _UNROLLED_STRLEN_STEP_RE.match(lines[idx]):
+                has_step = True
+        if not (has_load and has_step):
+            continue
+        suspects.append({
+            'line': loop_start + 1,
+            'type': 'unrolled_strlen',
+            'match': 'do { if (v==0) break; v=v-1; ... }',
+            'text': lines[loop_start].strip()[:120],
+            'description': (
+                'Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init '
+                'and direction-bool step). Replace the whole loop with '
+                'strlen(src) in a .keep; the length downstream appears as '
+                '`~uVar - 1` (strlen) or `~uVar` (strlen + 1).'),
+            'severity': 'mild',
+        })
+    return suspects
+
+
+# Strcat = strlen-scan followed by an unrolled strcpy copying src onto the
+# null terminator of dst. After the strlen loop, the code sets
+# `<pcat> = <pend> + -1;` positioning at the null, then falls into a
+# standard 2-byte-at-a-time strcpy loop writing onto that position.
+_UNROLLED_STRCAT_ADJUST_RE = re.compile(
+    r"^\s*(\w+)\s*=\s*(\w+)\s*\+\s*-\s*1\s*;\s*$")
+
+
+def identify_unrolled_strcat_loops(decompiled_code):
+    """Detect Watcom's loop-unrolled strcat (strlen + strcpy onto null).
+
+    Canonical shape (after a matched strlen scan on `pend`):
+        pcat = pend + -1;
+        do {
+            cVar = *src;
+            *pcat = cVar;
+            if (cVar == '\\0') break;
+            cVar = src[1];
+            src = src + 2;
+            pcat[1] = cVar;
+            pcat = pcat + 2;
+        } while (cVar != '\\0');
+
+    The adjust `pcat = pend + -1` is the tell-tale sign: the pointer is
+    being positioned at the null terminator (one before the byte past null)
+    before falling into a strcpy copying src onto the tail.
+
+    Replace the whole strlen + adjust + strcpy block with a single
+    `strcat(dst, src)` in a .keep.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts, one per detected strlen+strcpy pairing.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    # Find all strlen loops first; then look for the adjust + strcpy that
+    # immediately follows the strlen's `} while` close.
+    strlen_hits = identify_unrolled_strlen_loops(decompiled_code)
+    if not strlen_hits:
+        return suspects
+    lines = decompiled_code.split('\n')
+    n = len(lines)
+    for hit in strlen_hits:
+        # `hit['line']` is 1-based, pointing at the strlen's `do {` header.
+        # Find the matching `} while (... != '\0');` close after that.
+        start = hit['line'] - 1
+        close_idx = None
+        for fwd in range(1, 16):
+            if start + fwd >= n:
+                break
+            if _UNROLLED_WHILE_RE.match(lines[start + fwd]):
+                close_idx = start + fwd
+                break
+        if close_idx is None:
+            continue
+        # Scan a few lines after the close for `pcat = pend + -1;`
+        adjust_idx = None
+        for fwd in range(1, 6):
+            if close_idx + fwd >= n:
+                break
+            if _UNROLLED_STRCAT_ADJUST_RE.match(lines[close_idx + fwd]):
+                adjust_idx = close_idx + fwd
+                break
+        if adjust_idx is None:
+            continue
+        # The adjust should be followed by a strcpy `do {` within a few
+        # lines. Confirm via the byte-store + null-break anchor.
+        for fwd in range(1, 6):
+            if adjust_idx + fwd >= n - 1:
+                break
+            if not _UNROLLED_DO_RE.match(lines[adjust_idx + fwd]):
+                continue
+            # Confirm the do-block contains the strcpy store + null-break
+            # anchor within the next few lines.
+            for inner in range(1, 6):
+                idx = adjust_idx + fwd + inner
+                if idx + 1 >= n:
+                    break
+                store_m = _UNROLLED_BYTE_STORE_RE.match(lines[idx])
+                if not store_m:
+                    continue
+                null_m = _UNROLLED_NULL_BREAK_RE.match(lines[idx + 1])
+                if null_m and store_m.group(2) == null_m.group(1):
+                    suspects.append({
+                        'line': hit['line'],
+                        'type': 'unrolled_strcat',
+                        'match': 'strlen + <p> + -1 + strcpy',
+                        'text': lines[start].strip()[:120],
+                        'description': (
+                            'Watcom loop-unrolled strcat (strlen scan '
+                            'followed by `= <p> + -1` adjust and a '
+                            '2-byte strcpy onto the null terminator). '
+                            'Replace the whole strlen + strcpy pair '
+                            'with strcat(dst, src) in a .keep.'),
+                        'severity': 'mild',
+                    })
+                    break
+            else:
+                continue
+            break
+    return suspects
+
+
+# Watcom's loop-unrolled strchr checks 2 bytes per iteration, each looked
+# up against the target char OR the null terminator. The pointer snapshot
+# `pA = pB;` at the top preserves the hit position when goto-ing out.
+_UNROLLED_STRCHR_SNAPSHOT_RE = re.compile(
+    r"^\s*(\w+)\s*=\s*(\w+)\s*;\s*$")
+_UNROLLED_STRCHR_CHAR_HIT_RE = re.compile(
+    r"^\s*if\s*\(\s*\*\s*(\w+)\s*==\s*'((?:\\.|[^'\\])+)'\s*\)\s*goto\s+\w+\s*;\s*$")
+_UNROLLED_STRCHR_NULL_BREAK_RE = re.compile(
+    r"^\s*if\s*\(\s*\*\s*(\w+)\s*==\s*'\\0'\s*\)\s*break\s*;\s*$")
+_UNROLLED_STRCHR_STEP1_RE = re.compile(
+    r"^\s*(\w+)\s*=\s*(\w+)\s*\+\s*1\s*;\s*$")
+_UNROLLED_STRCHR_STEP2_RE = re.compile(
+    r"^\s*(\w+)\s*=\s*\1\s*\+\s*2\s*;\s*$")
+_UNROLLED_STRCHR_WHILE_RE = re.compile(
+    r"^\s*\}\s*while\s*\(\s*\*\s*\w+\s*!=\s*'\\0'\s*\)\s*;\s*$")
+
+
+def identify_unrolled_strchr_loops(decompiled_code):
+    """Detect Watcom's loop-unrolled strchr artifacts.
+
+    Canonical shape (scanning for literal char X):
+        do {
+            pA = pB;
+            if (*pB == 'X') goto LAB_...;
+            if (*pB == '\\0') break;
+            pA = pB + 1;
+            if (*pA == 'X') goto LAB_...;
+            pB = pB + 2;
+        } while (*pA != '\\0');
+        pA = (char *)0x0;
+
+    Two char-equality checks against the same literal, separated by a null
+    check — highly specific to Watcom's 2-byte-unrolled inline strchr.
+    Replace the whole loop + `pA = NULL` fallback with `strchr(ptr, 'X')`
+    in a .keep.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts, one per detected strchr scan.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    lines = decompiled_code.split('\n')
+    n = len(lines)
+    for i in range(n - 6):
+        if not _UNROLLED_DO_RE.match(lines[i]):
+            continue
+        # Body line 1: `pA = pB;`
+        snap_m = _UNROLLED_STRCHR_SNAPSHOT_RE.match(lines[i + 1])
+        if not snap_m:
+            continue
+        pA, pB = snap_m.group(1), snap_m.group(2)
+        # Body line 2: `if (*pB == '<lit>') goto LAB_...;`
+        hit1_m = _UNROLLED_STRCHR_CHAR_HIT_RE.match(lines[i + 2])
+        if not hit1_m or hit1_m.group(1) != pB:
+            continue
+        lit = hit1_m.group(2)
+        # Reject null-termination as the "char hit" — that's a different
+        # idiom (the scan-for-null loop we see in CDemonSet_save).
+        if lit == '\\0':
+            continue
+        # Body line 3: `if (*pB == '\0') break;`
+        null_m = _UNROLLED_STRCHR_NULL_BREAK_RE.match(lines[i + 3])
+        if not null_m or null_m.group(1) != pB:
+            continue
+        # Body line 4: `pA = pB + 1;`
+        step1_m = _UNROLLED_STRCHR_STEP1_RE.match(lines[i + 4])
+        if (not step1_m or step1_m.group(1) != pA
+                or step1_m.group(2) != pB):
+            continue
+        # Body line 5: `if (*pA == '<same_lit>') goto LAB_...;`
+        hit2_m = _UNROLLED_STRCHR_CHAR_HIT_RE.match(lines[i + 5])
+        if (not hit2_m or hit2_m.group(1) != pA
+                or hit2_m.group(2) != lit):
+            continue
+        # Body line 6: `pB = pB + 2;`
+        step2_m = _UNROLLED_STRCHR_STEP2_RE.match(lines[i + 6])
+        if not step2_m or step2_m.group(1) != pB:
+            continue
+        # Closer: `} while (*<ptr> != '\0');` — within a couple lines.
+        close_idx = None
+        for fwd in range(7, 10):
+            if i + fwd >= n:
+                break
+            if _UNROLLED_STRCHR_WHILE_RE.match(lines[i + fwd]):
+                close_idx = i + fwd
+                break
+        if close_idx is None:
+            continue
+        suspects.append({
+            'line': i + 1,
+            'type': 'unrolled_strchr',
+            'match': "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+            'text': lines[i].strip()[:120],
+            'description': (
+                "Watcom loop-unrolled strchr (2-byte-at-a-time scan for "
+                "literal '{lit}' with null-terminator break). Replace the "
+                "whole loop + fallback `= NULL` with strchr(ptr, '{lit}') "
+                "in a .keep.").format(lit=lit),
+            'severity': 'mild',
+        })
+    return suspects
+
+
 def detect_content_suspects(code, func_globals=None, global_interval_map=None,
                             address_interval_map=None, func_calls=None):
     """Run all content-based (source-text) suspect detectors on a code blob.
@@ -1038,6 +1361,9 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
         code, func_calls))
     found.extend(identify_unrolled_strcpy_loops(code))
     found.extend(identify_unrolled_memcpy_loops(code))
+    found.extend(identify_unrolled_strlen_loops(code))
+    found.extend(identify_unrolled_strcat_loops(code))
+    found.extend(identify_unrolled_strchr_loops(code))
     return found
 
 

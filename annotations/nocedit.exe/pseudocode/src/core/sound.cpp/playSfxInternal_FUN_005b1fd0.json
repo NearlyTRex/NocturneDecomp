@@ -7,16 +7,17 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 665,
-    "complexity_score": 367,
+    "complexity_score": 392,
     "cross_reference_count": 6,
     "function_call_count": 27,
     "global_count": 43,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 262,
-    "suspect_count": 9,
+    "suspect_count": 11,
     "suspect_types": [
       "unnamed_local",
       "unrolled_memcpy",
+      "unrolled_strchr",
       "unrolled_strcpy"
     ],
     "total_lines": 927
@@ -884,6 +885,22 @@
       "severity": "mild",
       "text": "for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
+      "line": 72,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '!' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '!') in a .keep.",
+      "line": 113,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strchr"
     },
     {
       "description": "Unnamed local variable",

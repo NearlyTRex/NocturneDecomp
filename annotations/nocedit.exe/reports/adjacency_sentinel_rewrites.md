@@ -6,8 +6,8 @@ globals so the sentinel never matches. See `prompts/fix_compilation.md` §16.
 
 ## Summary
 
-- Rewrites applied: **70**
-- Functions touched: **25**
+- Rewrites applied: **72**
+- Functions touched: **26**
 - Pools indexed: **497**
 - Adjacency pairs in lookup: **497**
 
@@ -199,6 +199,12 @@ globals so the sentinel never matches. See `prompts/fix_compilation.md` §16.
   - Before: `while (texture != &g_FireEffectPopcornTexture)`
   - After:  `while (texture != g_FireEffectLightningBoltTextures + 6)`
 
+### `core_gore.cpp_CGore_loadAssets_FUN_004ede60`
+
+- Pool `g_BloodSplatTextures` sentinel `g_BloodSplatAnimTextures` (count 4)
+  - Before: `while (pSVar1 != g_BloodSplatAnimTextures)`
+  - After:  `while (pSVar1 != g_BloodSplatTextures + 4)`
+
 ### `core_gore.cpp_CGore_process_FUN_004ed9e0`
 
 - Pool `g_BloodParticles` sentinel `g_BloodSplatIndex` (count 256)
@@ -219,6 +225,9 @@ globals so the sentinel never matches. See `prompts/fix_compilation.md` §16.
 
 ### `core_moon.cpp_CMoon_free_FUN_00529ce0`
 
+- Pool `g_MoonBatCourses` sentinel `g_MoonBats` (count 3)
+  - Before: `while ((SBat *)this_ptr_00 != g_MoonBats)`
+  - After:  `while (this_ptr_00 != g_MoonBatCourses + 3)`
 - Pool `g_MoonAnimTextures` sentinel `g_MoonCloudScrollX` (count 30)
   - Before: `while (this_ptr_01 != (CAlphaBitmap *)&g_MoonCloudScrollX)`
   - After:  `while (this_ptr_01 != g_MoonAnimTextures + 30)`

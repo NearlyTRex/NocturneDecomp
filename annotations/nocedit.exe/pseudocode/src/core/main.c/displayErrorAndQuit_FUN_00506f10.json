@@ -7,14 +7,15 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 198,
-    "complexity_score": 91,
+    "complexity_score": 106,
     "cross_reference_count": 745,
     "function_call_count": 14,
     "global_count": 20,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 76,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "unrolled_strchr",
       "warning_noreturn"
     ],
     "total_lines": 274
@@ -4901,6 +4902,14 @@
       "severity": "mild",
       "text": "/* WARNING: Subroutine does not return */",
       "type": "warning_noreturn"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\\\' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\\\') in a .keep.",
+      "line": 65,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strchr"
     }
   ]
 }

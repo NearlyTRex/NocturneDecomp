@@ -7,17 +7,18 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 811,
-    "complexity_score": 441,
+    "complexity_score": 456,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 336,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
-      "sub84_truncation"
+      "sub84_truncation",
+      "unrolled_memcpy"
     ],
     "total_lines": 1147
   },
@@ -733,6 +734,14 @@
       "severity": "mild",
       "text": "*(uint *)((int)this_ptr->poly_texture_index_list + iVar18) =",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "line": 308,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "mild",
+      "text": "for (iVar15 = 0x12; iVar15 != 0; iVar15 = iVar15 + -1) {",
+      "type": "unrolled_memcpy"
     }
   ]
 }

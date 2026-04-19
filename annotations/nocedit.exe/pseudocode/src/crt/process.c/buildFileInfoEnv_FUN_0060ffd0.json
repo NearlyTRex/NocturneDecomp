@@ -2,16 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 294,
-    "complexity_score": 316,
+    "complexity_score": 346,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 15,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 206,
-    "suspect_count": 10,
+    "suspect_count": 12,
     "suspect_types": [
       "unknown_field",
-      "unrolled_strcpy"
+      "unrolled_strcat",
+      "unrolled_strcpy",
+      "unrolled_strlen"
     ],
     "total_lines": 500
   },
@@ -375,6 +377,22 @@
       "severity": "mild",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 57,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 57,
+      "match": "strlen + <p> + -1 + strcpy",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcat"
     }
   ]
 }

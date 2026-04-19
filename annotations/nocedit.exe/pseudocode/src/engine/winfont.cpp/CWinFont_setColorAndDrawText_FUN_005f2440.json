@@ -7,17 +7,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 381,
-    "complexity_score": 195,
+    "complexity_score": 210,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 140,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
-      "unrolled_strcpy"
+      "unrolled_strcpy",
+      "unrolled_strlen"
     ],
     "total_lines": 521
   },
@@ -332,6 +333,14 @@
       "severity": "mild",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 53,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strlen"
     }
   ]
 }

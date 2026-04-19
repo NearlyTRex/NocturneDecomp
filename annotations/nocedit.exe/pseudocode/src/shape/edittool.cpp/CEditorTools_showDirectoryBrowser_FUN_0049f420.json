@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 618,
-    "complexity_score": 247,
+    "complexity_score": 272,
     "cross_reference_count": 11,
     "function_call_count": 24,
     "global_count": 19,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 212,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
-      "unrolled_memcpy"
+      "unrolled_memcpy",
+      "unrolled_strlen"
     ],
     "total_lines": 830
   },
@@ -787,6 +788,22 @@
       "severity": "mild",
       "text": "for (iVar6 = 0x41; iVar6 != 0; iVar6 = iVar6 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 100,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 153,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strlen"
     }
   ]
 }

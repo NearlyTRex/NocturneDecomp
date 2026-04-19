@@ -8,18 +8,19 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 5207,
-    "complexity_score": 2687,
+    "complexity_score": 2702,
     "cross_reference_count": 0,
     "function_call_count": 57,
     "global_count": 186,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 1852,
-    "suspect_count": 81,
+    "suspect_count": 82,
     "suspect_types": [
       "pointer_cast",
       "unnamed_local",
       "unrolled_memcpy",
       "unrolled_strcpy",
+      "unrolled_strlen",
       "warning_inlined_function"
     ],
     "total_lines": 7059
@@ -3200,6 +3201,14 @@
       "severity": "mild",
       "text": "for (iVar16 = 0x41; iVar16 != 0; iVar16 = iVar16 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 1687,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strlen"
     },
     {
       "description": "Unnamed local variable",

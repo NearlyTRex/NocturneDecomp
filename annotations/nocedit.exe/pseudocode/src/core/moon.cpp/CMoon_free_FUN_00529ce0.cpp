@@ -25,7 +25,7 @@ void __cdecl core_moon_cpp_CMoon_free_FUN_00529ce0(CMoon *this_ptr)
   do {
     core_course_cpp_CCourse_free_FUN_004426c0(this_ptr_00);
     this_ptr_00 = this_ptr_00 + 1;
-  } while ((SBat *)this_ptr_00 != g_MoonBats);
+  } while (this_ptr_00 != g_MoonBatCourses + 3);
   core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(&this_ptr->moon);
   core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(&g_MoonBatModel);
   return;

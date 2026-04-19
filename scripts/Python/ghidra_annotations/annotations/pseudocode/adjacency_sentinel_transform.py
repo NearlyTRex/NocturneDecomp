@@ -131,15 +131,17 @@ def init_context(globals_list, global_symbols):
 # Pattern scan + rewrite
 # =============================================================================
 
-# Three loop-exit shapes seen in the decompiled code. Group 1 is always the
-# iterator variable; group 2 is always the sentinel global.
+# Loop-exit shapes seen in the decompiled code. Group 1 is always the
+# iterator variable; group 2 is always the sentinel global. The `&` is
+# optional because array-typed sentinels decay to pointers and are emitted
+# without it (e.g. `!= g_MoonBats` where `g_MoonBats` is `SBat[30]`).
 _SENTINEL_PATTERNS = [
-    # while (iter != (T *)&g_Global)
-    re.compile(r'\bwhile\s*\(\s*(\w+)\s*!=\s*\(\s*\w+\s*\*\s*\)\s*&\s*(g_\w+)\s*\)'),
-    # while ((T *)iter != &g_Global)
-    re.compile(r'\bwhile\s*\(\s*\(\s*\w+\s*\*\s*\)\s*(\w+)\s*!=\s*&\s*(g_\w+)\s*\)'),
-    # while (iter != &g_Global)  (no cast)
-    re.compile(r'\bwhile\s*\(\s*(\w+)\s*!=\s*&\s*(g_\w+)\s*\)'),
+    # while (iter != (T *)&?g_Global)
+    re.compile(r'\bwhile\s*\(\s*(\w+)\s*!=\s*\(\s*\w+\s*\*\s*\)\s*&?\s*(g_\w+)\s*\)'),
+    # while ((T *)iter != &?g_Global)
+    re.compile(r'\bwhile\s*\(\s*\(\s*\w+\s*\*\s*\)\s*(\w+)\s*!=\s*&?\s*(g_\w+)\s*\)'),
+    # while (iter != &?g_Global)  (no cast)
+    re.compile(r'\bwhile\s*\(\s*(\w+)\s*!=\s*&?\s*(g_\w+)\s*\)'),
 ]
 
 
