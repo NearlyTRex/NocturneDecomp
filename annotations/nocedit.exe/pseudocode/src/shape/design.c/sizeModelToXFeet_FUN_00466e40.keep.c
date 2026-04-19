@@ -1,0 +1,68 @@
+// Name: shape_design.c_sizeModelToXFeet_FUN_00466e40
+// Address: 00466e40
+// MANUAL RECONSTRUCTION
+// Address Range: [[00466e40, 00467000]]
+// Convention: __cdecl
+// Signature: void __cdecl shape_design_c_sizeModelToXFeet_FUN_00466e40(void)
+
+#include "nocturne.h"
+
+void __cdecl shape_design_c_sizeModelToXFeet_FUN_00466e40(void)
+
+{
+  float fVar1;
+  int iVar2;
+  char local_7c [80];
+  int local_2c;
+  int local_28;
+  int local_24;
+  float local_20 [2];
+  float local_18;
+  float local_14;
+  float fVar2;
+
+  local_18 = 999999.9;
+  local_14 = -999999.9;
+  wincore_windll_cpp_clearScreen_FUN_005b3e70();
+  engine_2d_c_getInputWithPrompt_FUN_004032c0
+            (local_7c,0x14,0,0x16,"Enter X distance in feet (,min,max for user-defined min/max points) : ");
+  if (local_7c[0] == '\0') {
+    return;
+  }
+  iVar2 = sscanf(local_7c,"%f,%d,%d",local_20,&local_24,&local_28);
+  if (iVar2 < 2) {
+    for (local_2c = 0; local_2c < g_VertexCount; local_2c = local_2c + 1) {
+      fVar2 = g_LoadedVertices[local_2c].vertex.x;
+      if (local_14 < fVar2) {
+        local_14 = fVar2;
+      }
+      if (fVar2 < local_18) {
+        local_18 = fVar2;
+      }
+    }
+  }
+  else {
+    if (iVar2 != 3) {
+      engine_2d_c_drawText_FUN_00401fd0("Need distance and two points.",0,0x2c);
+      wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
+      wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
+      return;
+    }
+    if ((((local_24 < 0) || (local_28 < 0)) || (g_VertexCount + -1 < local_24)) ||
+       (g_VertexCount + -1 < local_28)) {
+      engine_2d_c_drawText_FUN_00401fd0("Invalid point.",0,0x2c);
+      wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
+      wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
+      return;
+    }
+    local_14 = g_LoadedVertices[local_28].vertex.x;
+    local_18 = g_LoadedVertices[local_24].vertex.x;
+  }
+  fVar1 = local_20[0] / (local_14 - local_18);
+  for (local_2c = 0; local_2c < g_VertexCount; local_2c = local_2c + 1) {
+    g_LoadedVertices[local_2c].vertex.x = g_LoadedVertices[local_2c].vertex.x * fVar1;
+    g_LoadedVertices[local_2c].vertex.y = g_LoadedVertices[local_2c].vertex.y * fVar1;
+    g_LoadedVertices[local_2c].vertex.z = g_LoadedVertices[local_2c].vertex.z * fVar1;
+  }
+  return;
+}

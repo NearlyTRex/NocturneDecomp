@@ -16,9 +16,7 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
   SRoom *pSVar2;
   SVDBox *pSVar3;
   C3DSCamera *pCVar4;
-  char *pcVar6;
   char *pcVar4;
-  char *pcVar8;
   int iVar8;
   C3DSCamera *this_ptr_01;
   char local_a0 [100];
@@ -36,7 +34,6 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
     g_CurrentLineNumber = 0x6d6;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonSet::Unable to save output");
   }
-  pcVar8 = local_a0;
   _fprintf(file,"%d\n",this_ptr->set_file_version);
   _fprintf(file,"%f\n",(double)this_ptr->set_scale_factor);
   _fprintf(file,"unused.act\n");
@@ -140,29 +137,10 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",0x74d);
   strcpy(local_a0,this_ptr->geometry_filename);
-  pcVar6 = local_a0;
-  do {
-    pcVar4 = pcVar6;
-    if (*pcVar6 == '.') goto LAB_0057a874;
-    if (*pcVar6 == '\0') break;
-    pcVar4 = pcVar6 + 1;
-    if (*pcVar4 == '.') goto LAB_0057a874;
-    pcVar6 = pcVar6 + 2;
-  } while (*pcVar4 != '\0');
-  pcVar4 = (char *)0x0;
-LAB_0057a874:
+  pcVar4 = strchr(local_a0,'.');
   if (pcVar4 == (char *)0x0) {
-    do {
-      pcVar4 = pcVar8;
-      if (*pcVar8 == '\0') goto LAB_0057a87e;
-      if (*pcVar8 == '\0') break;
-      pcVar4 = pcVar8 + 1;
-      if (*pcVar4 == '\0') goto LAB_0057a87e;
-      pcVar8 = pcVar8 + 2;
-    } while (*pcVar4 != '\0');
-    pcVar4 = (char *)0x0;
+    pcVar4 = local_a0 + strlen(local_a0);
   }
-LAB_0057a87e:
   strcpy(pcVar4,".zth");
   core_setdir_cpp_CDemonSet_saveThumbsNoFile_FUN_00575f60(this_ptr);
   core_setdir_cpp_CDemonSet_writeThumbs_FUN_00575e40(this_ptr,local_a0);

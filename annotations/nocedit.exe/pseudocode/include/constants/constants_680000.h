@@ -248,7 +248,7 @@ static char g_DeleteActorsWildcardBuffer[104] = {
     (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
     (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00
 };
-static char g_GoreBuffer[] = "gore";
+static char g_GoreBuffer[104] = "gore";
 
 // char[116] constants
 static char g_MsnEditImportWildcardPattern[116] = {
@@ -280,9 +280,9 @@ static char g_OSFontName[128] = {
 };
 
 // char[12] constants
-static char g_MonthInitial[] = "JFMAMJJASOND";
-static char g_MonthSecondInitial[] = "aeapauuuecoe";
-static char g_MonthThirdInitial[] = "nbrrynlgptvc";
+static char g_MonthInitial[12] = { 'J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D' };
+static char g_MonthSecondInitial[12] = { 'a', 'e', 'a', 'p', 'a', 'u', 'u', 'u', 'e', 'c', 'o', 'e' };
+static char g_MonthThirdInitial[12] = { 'n', 'b', 'r', 'r', 'y', 'n', 'l', 'g', 'p', 't', 'v', 'c' };
 
 // char[12][4] constants
 static char g_MonthNamesShort[12][4] = {
@@ -292,10 +292,10 @@ static char g_MonthNamesShort[12][4] = {
 };
 
 // char[17] constants
-static char g_HexLookupTable[] = "0123456789abcdef";
+static char g_HexLookupTable[17] = "0123456789abcdef";
 
 // char[200] constants
-static char g_ActorEnemyBuffer[] = "CEnemy";
+static char g_ActorEnemyBuffer[200] = "CEnemy";
 static char g_ActorWildcardBuffer[200] = {
     (char)0x2A, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
     (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00, (char)0x00,
@@ -343,12 +343,12 @@ static char g_ShiftJIS_TrailByteTable[256] = {
 };
 
 // char[260] constants
-static char g_GroundTypesBuffer[] = ".\\GroundTypes";
-static char g_FileErrorBuffer[] = "(file error)";
+static char g_GroundTypesBuffer[260] = ".\\GroundTypes";
+static char g_FileErrorBuffer[260] = "(file error)";
 
 // char[36] constants
-static char g_AlphaNumericCharacters1[] = "0123456789abcdefghijklmnopqrstuvwxyz";
-static char g_AlphaNumericCharacters2[] = "0123456789abcdefghijklmnopqrstuvwxyz";
+static char g_AlphaNumericCharacters1[36] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+static char g_AlphaNumericCharacters2[36] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
 
 // char[64] constants
 static char g_HuffmanData16[64] = {
@@ -369,15 +369,15 @@ static char g_HuffmanData17[64] = {
 };
 
 // char[7] constants
-static char g_WeekdayInitial[] = "SMTWTFS";
-static char g_WeekdaySecondInitial[] = "uouehra";
-static char g_WeekdayThirdInitial[] = "nneduit";
+static char g_WeekdayInitial[7] = { 'S', 'M', 'T', 'W', 'T', 'F', 'S' };
+static char g_WeekdaySecondInitial[7] = { 'u', 'o', 'u', 'e', 'h', 'r', 'a' };
+static char g_WeekdayThirdInitial[7] = { 'n', 'n', 'e', 'd', 'u', 'i', 't' };
 
 // char[7][4] constants
 static char g_WeekdayNamesShort[7][4] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
 
 // char[8] constants
-static char s_filebuf_00685484[] = "$filebuf";
+static char s_filebuf_00685484[8] = { '$', 'f', 'i', 'l', 'e', 'b', 'u', 'f' };
 
 // double constants
 static double g_ExpUnderflowLimit = 709.78271289338397;

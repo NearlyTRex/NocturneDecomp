@@ -336,17 +336,9 @@ LAB_00565363:
       bVar2 = true;
     }
     core_script_cpp_CScript_loadLineToBuffer_FUN_00566230(this_ptr,g_CurrentEditingLine);
-    uVar6 = 0xffffffff;
-    pcVar7 = g_CurrentLineBuffer + 1;
-    do {
-      if (uVar6 == 0) break;
-      uVar6 = uVar6 - 1;
-      cVar1 = *pcVar7;
-      pcVar7 = pcVar7 + (uint)bVar8 * -2 + 1;
-    } while (cVar1 != '\0');
     iVar10 = core_script_cpp_CScript_editorX2Index_FUN_00566a90
                        (this_ptr,g_CurrentEditingLine,g_CurrentEditingColumn);
-    for (iVar5 = ~uVar6 - 1; iVar5 < iVar10; iVar5 = iVar5 + 1) {
+    for (iVar5 = strlen(g_CurrentLineBuffer + 1); iVar5 < iVar10; iVar5 = iVar5 + 1) {
       g_CurrentLineBuffer[iVar5 + 1] = ' ';
     }
     g_CurrentLineBuffer[iVar10 + 1] = cVar4;

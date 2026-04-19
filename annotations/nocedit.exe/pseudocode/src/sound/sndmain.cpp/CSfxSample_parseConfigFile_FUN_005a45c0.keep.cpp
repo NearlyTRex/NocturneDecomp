@@ -19,10 +19,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSampl
   long lVar8;
   char *pcVar8;
   char *pcVar9;
-  uint uVar10;
-  char *pcVar10;
   char *pcVar11;
-  byte bVar11;
   uint local_480;
   uint uStack_47c;
   uint local_478;
@@ -44,13 +41,11 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSampl
   int local_1c;
   int local_18;
   _FILE *stream;
-  char cVar3;
   float fVar5;
   double dVar2;
   float fVar1;
   float fVar4;
   
-  bVar11 = 0;
   fVar4 = (float)g_Cached3DDistanceFactorInverse;
   fVar2 = 20.0f * fVar4;
   fVar5 = g_SoundReferenceVolumeDistance * fVar4;
@@ -91,35 +86,17 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSampl
     pcVar8 = _fgets(local_464,300,stream);
     if (pcVar8 == (char *)0x0) break;
     pcVar9 = strstr(local_464,"//");
-    pcVar10 = local_464;
     if (pcVar9 != (char *)0x0) {
       *pcVar9 = '\0';
     }
-    do {
-      pcVar11 = pcVar10;
-      if (*pcVar10 == '\0') goto joined_r0x005a47dc;
-      if (*pcVar10 == '\0') break;
-      pcVar11 = pcVar10 + 1;
-      if (*pcVar11 == '\0') goto joined_r0x005a47dc;
-      pcVar10 = pcVar10 + 2;
-    } while (*pcVar11 != '\0');
-    pcVar11 = (char *)0x0;
-joined_r0x005a47dc:
+    pcVar11 = local_464 + strlen(local_464);
     while ((local_464 < pcVar11 &&
            ((g_CharacterClassificationTable[(byte)(pcVar11[-1] + 1)] & 2) != 0))) {
       pcVar11 = pcVar11 + -1;
     }
     *pcVar11 = '\0';
     while ((g_CharacterClassificationTable[(byte)(local_464[0] + 1)] & 2) != 0) {
-      uVar10 = 0xffffffff;
-      pcVar10 = local_464;
-      do {
-        if (uVar10 == 0) break;
-        uVar10 = uVar10 - 1;
-        cVar3 = *pcVar10;
-        pcVar10 = pcVar10 + (uint)bVar11 * -2 + 1;
-      } while (cVar3 != '\0');
-      memmove(local_464,local_464 + 1,~uVar10 - 1);
+      memmove(local_464,local_464 + 1,strlen(local_464));
     }
     if (local_464[0] != '\0') {
       iVar7 = sscanf(local_464,"refDist =%f",local_34);

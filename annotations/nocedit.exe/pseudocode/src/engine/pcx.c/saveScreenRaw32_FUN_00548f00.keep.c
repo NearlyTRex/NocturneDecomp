@@ -14,7 +14,6 @@ void __cdecl engine_pcx_c_saveScreenRaw32_FUN_00548f00(char *filename)
   uint uVar4;
   uint *puVar2;
   uint uVar3;
-  char *pcVar5;
   char *pcVar7;
   int iVar5;
   char local_6c [80];
@@ -23,17 +22,7 @@ void __cdecl engine_pcx_c_saveScreenRaw32_FUN_00548f00(char *filename)
   int local_14;
 
   strcpy(local_6c,filename);
-  pcVar5 = local_6c;
-  do {
-    pcVar7 = pcVar5;
-    if (*pcVar5 == '.') goto LAB_00548f43;
-    if (*pcVar5 == '\0') break;
-    pcVar7 = pcVar5 + 1;
-    if (*pcVar7 == '.') goto LAB_00548f43;
-    pcVar5 = pcVar5 + 2;
-  } while (*pcVar7 != '\0');
-  pcVar7 = (char *)0x0;
-LAB_00548f43:
+  pcVar7 = strchr(local_6c,'.');
   if (pcVar7 == (char *)0x0) {
     g_CurrentFilename = "..\\engine\\pcx.c";
     g_CurrentLineNumber = 0x98;

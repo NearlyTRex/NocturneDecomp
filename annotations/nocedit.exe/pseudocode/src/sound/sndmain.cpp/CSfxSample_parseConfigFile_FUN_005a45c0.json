@@ -15,7 +15,7 @@
     "pseudocode_lines": 228,
     "suspect_count": 1,
     "suspect_types": [
-      "unrolled_strlen"
+      "unnamed_local"
     ],
     "total_lines": 769
   },
@@ -540,6 +540,15 @@
       "severity": "moderate",
       "text": "local_480 = SUB84(__BITCAST_UINT64((double)local_468),0);",
       "type": "sub84_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 108,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strlen"
     }
   ],
   "stack_frame": {
@@ -715,31 +724,15 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CSfxSample_parseConfigFile_FUN_005a45c0.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "nullPointer",
-          "column": 52,
-          "line": 109,
-          "message": "Possible null pointer dereference: pcVar11",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
   "suspects": [
     {
-      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 108,
-      "match": "do { if (v==0) break; v=v-1; ... }",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 30,
+      "match": "local_464",
       "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strlen"
+      "text": "char local_464 [300];",
+      "type": "unnamed_local"
     }
   ]
 }

@@ -1939,45 +1939,45 @@ char* g_MemCheckLastFile = (char*)s_none_00636540;
 char* g_CurrentDebugFilename = (char*)s_unknown_0067d200;
 
 // char[100]
-char g_EventCommandBuffer[] = "";
-char g_DefaultInventoryValue[] = "";
+char g_EventCommandBuffer[100] = "";
+char g_DefaultInventoryValue[100] = "";
 
 // char[104]
-char g_DefaultAuditPath[] = "";
-char g_DefaultInventoryKey[] = "";
-char g_DefaultMissionActorClass[] = "";
-char g_DefaultMissionActorName[] = "";
+char g_DefaultAuditPath[104] = "";
+char g_DefaultInventoryKey[104] = "";
+char g_DefaultMissionActorClass[104] = "";
+char g_DefaultMissionActorName[104] = "";
 
 // char[112]
-char g_DefaultCommandArg[] = "";
+char g_DefaultCommandArg[112] = "";
 
 // char[116]
-char g_ModelLastScaleInput[] = "";
-char g_DefaultAuditRecordPath[] = "";
+char g_ModelLastScaleInput[116] = "";
+char g_DefaultAuditRecordPath[116] = "";
 
 // char[200]
-char g_DefaultSfxHandleName[] = "";
+char g_DefaultSfxHandleName[200] = "";
 
 // char[256]
-char g_MeshLodIdentifier[] = "meshlod";
+char g_MeshLodIdentifier[256] = "meshlod";
 
 // char[260]
-char g_FilePathBuffer[] = "";
+char g_FilePathBuffer[260] = "";
 
 // char[264]
-char g_BrowserLastSelectedFile[] = "";
-char g_BrowserLastEnteredPath[] = "";
-char g_DefaultCheckOutPath[] = "";
-char g_DefaultPodDirectoryPath[] = "";
-char g_DirectoryBufferTemplate[] = "";
-char g_FilenameBufferTemplate[] = "";
+char g_BrowserLastSelectedFile[264] = "";
+char g_BrowserLastEnteredPath[264] = "";
+char g_DefaultCheckOutPath[264] = "";
+char g_DefaultPodDirectoryPath[264] = "";
+char g_DirectoryBufferTemplate[264] = "";
+char g_FilenameBufferTemplate[264] = "";
 
 // char[512]
-char g_Field1ParseBuffer[] = "";
-char g_Field2ParseBuffer[] = "";
+char g_Field1ParseBuffer[512] = "";
+char g_Field2ParseBuffer[512] = "";
 
 // char[60]
-char g_DefaultRicochetSound[] = "";
+char g_DefaultRicochetSound[60] = "";
 
 // float
 float g_DashAnimationThreshold = 0.1f;

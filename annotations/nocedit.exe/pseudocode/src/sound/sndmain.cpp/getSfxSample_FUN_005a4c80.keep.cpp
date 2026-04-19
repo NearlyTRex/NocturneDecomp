@@ -10,7 +10,6 @@
 CSfxSample * __cdecl sound_sndmain_cpp_getSfxSample_FUN_005a4c80(char *filename)
 
 {
-  char cVar2;
   int iVar2;
   CSfxSample *this_ptr;
   long lVar3;
@@ -18,23 +17,17 @@ CSfxSample * __cdecl sound_sndmain_cpp_getSfxSample_FUN_005a4c80(char *filename)
   SIZE_T size;
   SIZE_T SVar4;
   short *output_buffer;
-  uint uVar5;
   CSfxSample *pCVar6;
   int iVar3;
-  char *pcVar4;
   int iVar7;
-  CSfxSample *pCVar8;
   bool bVar9;
-  byte bVar10;
   SIZE_T count;
   char local_114;
   byte local_113 [255];
   _FILE *local_14;
   char *pcVar11;
   _FILE *file;
-  char cVar1;
-  
-  bVar10 = 0;
+
   pCVar6 = g_SfxSamples;
   iVar7 = 0;
   do {
@@ -73,29 +66,11 @@ LAB_005a4cea:
   }
   local_14 = (_FILE *)0x0;
   iVar3 = engine_dosio_c_getFileSize_FUN_00481880("sound",filename);
-  pcVar4 = filename;
-  pCVar8 = this_ptr;
   if (iVar3 < 1) goto LAB_005a4ef8;
-  do {
-    cVar1 = *pcVar4;
-    (pCVar8->sample_info).name[0] = cVar1;
-    if (cVar1 == '\0') break;
-    cVar2 = pcVar4[1];
-    (pCVar8->sample_info).name[1] = cVar2;
-    pcVar4 = pcVar4 + 2;
-    pCVar8 = (CSfxSample *)((pCVar8->sample_info).name + 2);
-  } while (cVar2 != '\0');
+  strcpy((this_ptr->sample_info).name,filename);
   engine_dosio_c_splitPath_FUN_00481f20(filename,(char *)0x0,(char *)0x0,(char *)0x0,&local_114);
   if (local_114 == '.') {
-    uVar5 = 0xffffffff;
-    pcVar4 = &local_114;
-    do {
-      if (uVar5 == 0) break;
-      uVar5 = uVar5 - 1;
-      cVar2 = *pcVar4;
-      pcVar4 = pcVar4 + (uint)bVar10 * -2 + 1;
-    } while (cVar2 != '\0');
-    memmove(&local_114,local_113,~uVar5 - 1);
+    memmove(&local_114,local_113,strlen(&local_114));
   }
   iVar3 = _stricmp(&local_114,"wav");
   if (iVar3 == 0) {

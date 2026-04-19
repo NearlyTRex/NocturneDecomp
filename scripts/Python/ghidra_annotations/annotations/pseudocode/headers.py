@@ -2448,6 +2448,30 @@ def export_system_grouped_files(currentProgram, pseudocode_dir, system_grouped_t
             content.append('#define VA_END_T(ap) do { (ap).value[0] = (char*)0; } while(0)')
             content.append("")
 
+        # Special case: defer to the system <stdint.h>. Ghidra's typedefs
+        # here (e.g. `typedef int intptr_t`, `typedef uint uintptr_t`) use
+        # project base types that clash with glibc's definitions
+        # (`__intptr_t` / `unsigned long`) when a shim transitively pulls
+        # in <unistd.h>. The standard names in `<stdint.h>` cover every
+        # type Ghidra puts in this bucket (uint8_t, uint16_t, uint32_t,
+        # intptr_t, uintptr_t), so using the system header is safe.
+        if header_name == "stdint":
+            content = [
+                "#pragma once",
+                "",
+                "// =============================================================================",
+                "// STDINT - System Header",
+                "// =============================================================================",
+                "//",
+                "// Defer to the host <stdint.h> rather than redefine intptr_t / uintptr_t /",
+                "// uint{8,16,32}_t with project base types. Redefining these with different",
+                "// underlying types (e.g. `typedef int intptr_t` vs glibc's `__intptr_t` alias)",
+                "// collides in any translation unit that also pulls in <unistd.h>.",
+                "",
+                "#include <stdint.h>",
+                "",
+            ]
+
         # Write header file
         header_path = os.path.join(system_dir, "%s.h" % header_name)
         write_header_file(header_path, "\n".join(content))

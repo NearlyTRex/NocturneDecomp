@@ -14,8 +14,7 @@ void __cdecl shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0(CSt
   CFileFinder local_528;
   char local_414 [260];
   char local_310 [256];
-  char local_210;
-  byte local_20f [255];
+  char local_210 [256];
   char local_110 [256];
 
   if ((directory_path == (char *)0x0) || (*directory_path == '\0')) {
@@ -28,11 +27,11 @@ void __cdecl shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0(CSt
     engine_pod_cpp_CPod_initSearch_FUN_00550ea0((CPod *)g_CDemonPodPtr,local_310,&local_844);
     while (local_844.current_file_info.found_path[0] != '\0') {
       engine_dosio_c_splitPath_FUN_00481f20
-                ((char *)&local_844,(char *)0x0,(char *)0x0,local_110,&local_210);
-      if (local_210 == '.') {
-        memmove(&local_210,local_20f,strlen(&local_210));
+                ((char *)&local_844,(char *)0x0,(char *)0x0,local_110,local_210);
+      if (local_210[0] == '.') {
+        memmove(local_210,local_210 + 1,strlen(local_210));
       }
-      engine_dosio_c_makePath_FUN_00481f50(local_414,(char *)0x0,(char *)0x0,local_110,&local_210);
+      engine_dosio_c_makePath_FUN_00481f50(local_414,(char *)0x0,(char *)0x0,local_110,local_210);
       shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360
                 (this_ptr,local_414,local_844.current_file_info.target_path,
                  local_844.current_file_info.file_size,local_844.current_file_info.timestamp);

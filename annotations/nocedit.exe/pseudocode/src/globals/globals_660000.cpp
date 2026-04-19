@@ -7718,23 +7718,23 @@ WatcomVirtualBaseDescriptor g_Strstream_VirtualLayout = {.flags = 0x00000000, .o
 WatcomVirtualBaseDescriptor g_FStreamBase_VirtualBaseLayout = {.flags = 0x00000000, .offset_to_vbase = 0x00000048};
 
 // char[104]
-char g_PropertyNamePrefix[] = "";
+char g_PropertyNamePrefix[104] = "";
 
 // char[256]
-char g_CourseLastBonPath[] = "";
+char g_CourseLastBonPath[256] = "";
 
 // char[264]
-char g_CourseLastPthPath[] = "";
-char g_CourseLastCrsPath[] = "";
+char g_CourseLastPthPath[264] = "";
+char g_CourseLastCrsPath[264] = "";
 
 // char[2]
-char g_PropertyNamePrefixMinusTwo[] = "";
+char g_PropertyNamePrefixMinusTwo[2] = "";
 
 // char[300]
-char g_LocalizationTemplate[] = "";
+char g_LocalizationTemplate[300] = "";
 
 // char[80]
-char g_LoadedModelName[] = "";
+char g_LoadedModelName[80] = "";
 
 // filebuf_vtable
 filebuf_vtable g_FilebufVTable = {

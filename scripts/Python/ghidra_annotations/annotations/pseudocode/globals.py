@@ -516,13 +516,21 @@ def format_char_pointer_array(currentProgram, raw_bytes, type_name, string_map=N
 
 
 def format_1d_char_array_as_string(raw_bytes):
-    """Format a 1D char array as a C string literal.
+    """Format a 1D char array as a C string literal or brace-list initializer.
+
+    When the raw bytes contain a null terminator, returns a string literal
+    ("...") — C will zero-pad any remaining array slots.
+
+    When no null terminator is present, the printable bytes fill the array
+    exactly. A string literal would overflow in C++ (the implicit null has
+    nowhere to go), so emit a brace-list of char constants instead. This
+    preserves the declared size without a bogus null.
 
     Args:
         raw_bytes: List of raw byte values
 
     Returns:
-        Formatted string literal or None if not a valid string
+        Formatted initializer ("..." or {...}) or None if not printable
     """
     if not raw_bytes:
         return None
@@ -534,30 +542,48 @@ def format_1d_char_array_as_string(raw_bytes):
             null_pos = i
             break
 
-    # If no null found, use all bytes
+    # If no null found, use all bytes; otherwise truncate at null
     if null_pos == -1:
         string_bytes = raw_bytes
     else:
         string_bytes = raw_bytes[:null_pos]
 
     # Check if all bytes are printable
-    string_chars = []
     for b in string_bytes:
-        if 32 <= b <= 126:
-            string_chars.append(chr(b))
-        elif b in (9, 10, 13):  # Tab, newline, carriage return
-            string_chars.append(chr(b))
-        else:
-            # Non-printable character
+        if not (32 <= b <= 126 or b in (9, 10, 13)):
             return None
 
     # Need at least one character for a valid string
-    if not string_chars:
+    if not string_bytes:
         return '""'
 
-    string_val = ''.join(string_chars)
+    # No null terminator: emit brace-list so the string literal's implicit
+    # null doesn't push the initializer past the declared array size (C++
+    # rejects `char buf[N] = "<N chars>"` even though C quietly truncates).
+    if null_pos == -1:
+        char_literals = [_format_char_literal(b) for b in string_bytes]
+        return "{ %s }" % ", ".join(char_literals)
+
+    string_val = ''.join(chr(b) for b in string_bytes)
     escaped = escape_c_string(string_val)
     return '"%s"' % escaped
+
+
+def _format_char_literal(b):
+    """Format a single byte as a C char literal."""
+    if b == ord("'"):
+        return "'\\''"
+    if b == ord('\\'):
+        return "'\\\\'"
+    if b == 9:
+        return "'\\t'"
+    if b == 10:
+        return "'\\n'"
+    if b == 13:
+        return "'\\r'"
+    if 32 <= b <= 126:
+        return "'%s'" % chr(b)
+    return "'\\x%02x'" % b
 
 
 def format_guid_initializer(raw_bytes):
@@ -1592,7 +1618,21 @@ def extract_globals_and_constants(currentProgram, string_map=None, write_xref_ad
                     escaped = escape_c_string(str_val)
                     # Use L"" prefix for wide string types (TerminatedUnicode, wchar_t*, etc.)
                     is_wide_string = 'unicode' in type_name.lower() or 'wchar' in type_name.lower()
-                    if is_wide_string:
+                    # If the symbol is a fixed-size char array whose backing
+                    # bytes hold no null terminator (string fills the array
+                    # exactly), a string literal would overflow in C++. Emit
+                    # a brace-list so the declared size is preserved.
+                    fills_array_exactly = (
+                        not is_wide_string
+                        and raw_bytes is not None
+                        and len(raw_bytes) > 0
+                        and 0 not in raw_bytes
+                        and len(str_val) >= len(raw_bytes)
+                    )
+                    if fills_array_exactly:
+                        char_literals = [_format_char_literal(b) for b in raw_bytes]
+                        initializer_value = "{ %s }" % ", ".join(char_literals)
+                    elif is_wide_string:
                         initializer_value = 'L"%s"' % escaped
                     else:
                         initializer_value = '"%s"' % escaped
@@ -1649,8 +1689,10 @@ def extract_globals_and_constants(currentProgram, string_map=None, write_xref_ad
                 if not embedded_content and has_nonzero_bytes and raw_bytes:
                     try:
                         string_chars = []
+                        saw_null = False
                         for b in raw_bytes:
                             if b == 0:
+                                saw_null = True
                                 break
                             if 32 <= b <= 126:
                                 string_chars.append(chr(b))
@@ -1658,9 +1700,17 @@ def extract_globals_and_constants(currentProgram, string_map=None, write_xref_ad
                                 string_chars = []
                                 break
                         if string_chars and len(string_chars) > 1:
-                            string_val = ''.join(string_chars)
-                            escaped = escape_c_string(string_val)
-                            embedded_content = '"%s"' % escaped
+                            if saw_null:
+                                string_val = ''.join(string_chars)
+                                escaped = escape_c_string(string_val)
+                                embedded_content = '"%s"' % escaped
+                            else:
+                                # No null terminator: the printable bytes fill the
+                                # array exactly. A string literal would overflow
+                                # in C++ (implicit null has no room). Emit a
+                                # brace-list to preserve the declared size.
+                                char_literals = [_format_char_literal(ord(c)) for c in string_chars]
+                                embedded_content = "{ %s }" % ", ".join(char_literals)
                     except Exception:
                         pass
                 if embedded_content:
@@ -1972,15 +2022,14 @@ def generate_constants_file(constants_list, type_to_path_map=None, needed_protot
                     r'(void *)(\1\2)',
                     initializer
                 )
-                # For char arrays initialized with string literals, omit array size
-                # to let compiler determine correct size (including null terminator)
-                if ('char' in base_type.lower() and '[' in full_var_name and
-                    (initializer.startswith('"') or initializer.startswith('L"'))):
-                    # Remove array dimensions from variable name
-                    var_name_no_dims = full_var_name.split('[')[0] + '[]'
-                    line = "static %s %s = %s;" % (base_type, var_name_no_dims, initializer)
-                else:
-                    line = "static %s %s = %s;" % (base_type, full_var_name, initializer)
+                # Keep the declared array dimension verbatim. C's string-literal
+                # initialization rules zero-pad when the array is larger than the
+                # literal (`char buf[100] = "corrupt!";` → 100 bytes, first 9 from
+                # the literal, remaining 91 zero-filled) — which is what we want
+                # when Ghidra has typed the symbol as a fixed-size padded array.
+                # Omitting the size here silently shrinks the backing store and
+                # causes REP MOVSD copies sized from the array type to overread.
+                line = "static %s %s = %s;" % (base_type, full_var_name, initializer)
                 if const.get('comment'):
                     line += " // %s" % const['comment']
                 content.append(line)
@@ -2191,15 +2240,10 @@ def generate_globals_cpp_file(globals_list, range_key=""):
                 content.append(line)
             elif global_var['is_initialized'] and global_var['initializer']:
                 initializer = global_var['initializer']
-                # For char arrays initialized with string literals, omit array size
-                # to let compiler determine correct size (including null terminator)
-                if ('char' in base_type.lower() and '[' in full_var_name and
-                    (initializer.startswith('"') or initializer.startswith('L"'))):
-                    # Remove array dimensions from variable name
-                    var_name_no_dims = full_var_name.split('[')[0] + '[]'
-                    line = "%s %s = %s;" % (base_type, var_name_no_dims, initializer)
-                else:
-                    line = "%s %s = %s;" % (base_type, full_var_name, initializer)
+                # Keep the declared array dimension. See generate_constants_file
+                # above for the rationale — omitting the size shrinks the backing
+                # store and causes fixed-count REP MOVSD copies to overread.
+                line = "%s %s = %s;" % (base_type, full_var_name, initializer)
                 if global_var.get('comment'):
                     line += " // %s" % global_var['comment']
                 content.append(line)

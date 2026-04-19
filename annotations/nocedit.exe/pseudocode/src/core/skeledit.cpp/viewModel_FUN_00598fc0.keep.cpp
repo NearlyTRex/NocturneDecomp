@@ -10,7 +10,6 @@
 void __cdecl core_skeledit_cpp_viewModel_FUN_00598fc0(void)
 
 {
-  char cVar2;
   _FILE *p_Var2;
   int iVar3;
   int iVar5;
@@ -20,11 +19,8 @@ void __cdecl core_skeledit_cpp_viewModel_FUN_00598fc0(void)
   int iVar4;
   int iVar6;
   char *pcVar7;
-  char *pcVar5;
-  char *pcVar6;
   char local_118 [260];
   int local_14;
-  char cVar1;
   
   p_Var2 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      ("skeledit.ini",(char *)0x0,"rt","..\\core\\skeledit.cpp"
@@ -126,17 +122,7 @@ LAB_005990c3:
 LAB_00599106:
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\skeledit.cpp",0x13f);
 LAB_00599119:
-  pcVar5 = "z:\\meshlod";
-  pcVar6 = "meshlod";
-  do {
-    cVar1 = *pcVar5;
-    *pcVar6 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar2 = pcVar5[1];
-    pcVar5 = pcVar5 + 2;
-    pcVar6[1] = cVar2;
-    pcVar6 = pcVar6 + 2;
-  } while (cVar2 != '\0');
+  strcpy(g_MeshLodIdentifier,"z:\\meshlod");
   do {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Nocturne(R) Skeleton system editor menu",0,0);

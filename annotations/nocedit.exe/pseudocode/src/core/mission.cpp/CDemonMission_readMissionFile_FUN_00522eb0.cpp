@@ -94,7 +94,7 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
     iVar3 = 0;
     if (0 < local_20) {
       do {
-        pcVar4 = s_corrupt_0067d558;
+        pcVar4 = g_DefaultActorTypeClass;
         pcVar10 = local_158;
         for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {
           pcVar10 = pcVar10 + (uint)bVar11 * -8 + 4;

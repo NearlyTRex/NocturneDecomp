@@ -95,14 +95,7 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
     iVar3 = 0;
     if (0 < local_20) {
       do {
-        pcVar4 = "corrupt!";
-        pcVar10 = local_158;
-        for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {
-          pcVar10 = pcVar10 + (uint)bVar11 * -8 + 4;
-          *(uint *)pcVar10 = *(uint *)pcVar4;
-          pcVar4 = pcVar4 + ((uint)bVar11 * -2 + 1) * 4;
-          pcVar10 = pcVar10;
-        }
+        memcpy(local_158,g_DefaultActorTypeClass,100);
                     /* this reads actorClassName, actorClassType (version num) */
         _fscanf(file_handle,"%s %d\n",local_158,&local_1c);
         pCVar3 = core_actor_cpp_getActorClassByName_FUN_0040c3c0(local_158);
@@ -146,21 +139,8 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
   this_ptr->next_inventory_actor = (CDemonActor *)0x0;
   local_14 = 0;
   while (local_14 < local_28 + local_24) {
-    pcVar4 = g_DefaultMissionActorClass;
-    pcVar5 = local_90;
-    for (iVar3 = 0x19; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(uint *)pcVar5 = *(uint *)pcVar4;
-      pcVar4 = pcVar4 + ((uint)bVar11 * -2 + 1) * 4;
-      pcVar5 = pcVar5 + (uint)bVar11 * -8 + 4;
-    }
-    puVar8 = (uint *)g_DefaultMissionActorName;
-    pcVar4 = local_f4;
-    for (iVar3 = 0x19; iVar3 != 0; iVar3 = iVar3 + -1) {
-      puVar8 = puVar8 + (uint)bVar11 * -2 + 1;
-      *(uint *)pcVar4 = *puVar8;
-      puVar8 = puVar8;
-      pcVar4 = pcVar4 + (uint)bVar11 * -8 + 4;
-    }
+    memcpy(local_90,g_DefaultMissionActorClass,100);
+    memcpy(local_f4,g_DefaultMissionActorName,100);
                     /* this pulls in the actor className and name fields */
     _fscanf(file_handle,"%s \"%[^\"]\"\n",local_90,local_f4);
     pcVar9 = local_f4;

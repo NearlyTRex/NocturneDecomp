@@ -20,17 +20,7 @@ void __cdecl core_texlist_cpp_CTextureList_save_FUN_005dc0d0(CTextureList *this_
   int *piVar1;
 
   strcpy(local_114,filename);
-  pcVar3 = local_114;
-  do {
-    pcVar2 = pcVar3;
-    if (*pcVar3 == '.') goto LAB_005dc120;
-    if (*pcVar3 == '\0') break;
-    pcVar2 = pcVar3 + 1;
-    if (*pcVar2 == '.') goto LAB_005dc120;
-    pcVar3 = pcVar3 + 2;
-  } while (*pcVar2 != '\0');
-  pcVar2 = (char *)0x0;
-LAB_005dc120:
+  pcVar2 = strchr(local_114,'.');
   if (pcVar2 == (char *)0x0) {
     g_CurrentFilename = "..\\core\\texlist.cpp";
     g_CurrentLineNumber = 0xad;

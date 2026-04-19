@@ -1,29 +1,13 @@
 #pragma once
 
-// Dependencies
-#include "system/basetypes.h"
-
 // =============================================================================
 // STDINT - System Header
 // =============================================================================
+//
+// Defer to the host <stdint.h> rather than redefine intptr_t / uintptr_t /
+// uint{8,16,32}_t with project base types. Redefining these with different
+// underlying types (e.g. `typedef int intptr_t` vs glibc's `__intptr_t` alias)
+// collides in any translation unit that also pulls in <unistd.h>.
 
-// Typedef: intptr_t
-// Signed Integer (compiler-specific size)
-typedef int intptr_t;
-
-// Typedef: uint16_t
-// Unsigned Short Integer (compiler-specific size)
-typedef ushort uint16_t;
-
-// Typedef: uint32_t
-// Unsigned Integer (compiler-specific size)
-typedef uint uint32_t;
-
-// Typedef: uint8_t
-// Unsigned Character (ASCII)
-typedef uchar uint8_t;
-
-// Typedef: uintptr_t
-// Unsigned Integer (compiler-specific size)
-typedef uint uintptr_t;
+#include <stdint.h>
 

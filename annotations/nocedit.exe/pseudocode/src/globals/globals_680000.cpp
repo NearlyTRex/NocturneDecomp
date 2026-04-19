@@ -3787,25 +3787,25 @@ char* g_DllFileNameA = nullptr;
 char* g_EnvironmentStrings = nullptr;
 
 // char[104]
-char g_MsnEditHideByTypeBuffer[] = "";
-char g_MsnEditDeleteByTypePattern[] = "";
-char g_MsnEditLastSelectedPropertyName[] = "";
-char g_SoundResultBufferTemplate[] = "";
+char g_MsnEditHideByTypeBuffer[104] = "";
+char g_MsnEditDeleteByTypePattern[104] = "";
+char g_MsnEditLastSelectedPropertyName[104] = "";
+char g_SoundResultBufferTemplate[104] = "";
 
 // char[108]
-char g_TrainSoundFilenameTemplate[] = "";
+char g_TrainSoundFilenameTemplate[108] = "";
 
 // char[200]
-char g_MsnEditCameraStatusBuffer[] = "";
-char g_ActorRefDefaultBuffer[] = "";
+char g_MsnEditCameraStatusBuffer[200] = "";
+char g_ActorRefDefaultBuffer[200] = "";
 
 // char[256]
-char g_DefaultSoundDeviceName[] = "";
-char g_DefaultDeviceName[] = "";
-char g_RendererDllName[] = "trid3d.dll";
+char g_DefaultSoundDeviceName[256] = "";
+char g_DefaultDeviceName[256] = "";
+char g_RendererDllName[256] = "trid3d.dll";
 
 // char[260]
-char g_TempDirectoryBuffer[] = "";
+char g_TempDirectoryBuffer[260] = "";
 
 // double
 double g_Cached3DDistanceFactor = 1;
