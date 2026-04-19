@@ -23,6 +23,36 @@
 #include "system/time.h"    // _tm    (for _mktime/_localtime)
 
 // ---------------------------------------------------------------------------
+// rand() — Watcom/Win32 semantics
+// ---------------------------------------------------------------------------
+//
+// The original binary was compiled assuming `rand()` returns 0..0x7FFF
+// (Watcom/MSVCRT RAND_MAX = 32767). Many call sites bake in the constant
+// 3.051851e-05f ≈ 1/32767 as the "rand() → [0, 1)" scale factor. glibc's
+// rand() returns 0..2^31-1, so those formulas over-scale by ~65000× and
+// blow past int range when cast back (caught by UBSan in e.g.
+// CGhoul_ctor's `(int)ROUND(fVar2 * 65536)`).
+//
+// Bring the distribution in line with the original runtime by implementing
+// the same linear-congruential generator Watcom shipped in its CRT
+// (seed = seed*0x41c64e6d + 0x3039; return (seed >> 16) & 0x7FFF).
+// This also makes `srand()` behave as callers expect.
+//
+// Overriding libc's rand/srand is safe: the game's decompile is the only
+// user of these names, and the shims live in the main executable so the
+// dynamic linker resolves references here before libc.so.
+static unsigned int g_WatcomRandSeed = 1;
+
+extern "C" int rand(void) {
+    g_WatcomRandSeed = g_WatcomRandSeed * 0x41c64e6du + 0x3039u;
+    return (int)((g_WatcomRandSeed >> 16) & 0x7fff);
+}
+
+extern "C" void srand(unsigned int seed) {
+    g_WatcomRandSeed = seed;
+}
+
+// ---------------------------------------------------------------------------
 // String Comparison
 // ---------------------------------------------------------------------------
 
@@ -164,9 +194,17 @@ static void sync_file_flags(_FILE* f) {
     if (!f) return;
     FILE* fp = _FILE_to_FILE(f);
     if (!fp) return;
+    unsigned int old_flag = f->_flag;
     f->_flag = (f->_flag & ~0x30u)
              | (feof(fp)   ? 0x10u : 0u)
              | (ferror(fp) ? 0x20u : 0u);
+    // Probe: surface the moment ferror flips on. Game archive loaders
+    // branch on `_flag & 0x20` and bail out without logging why, so this
+    // catches the transition instead of the downstream panic.
+    if (((old_flag & 0x20u) == 0) && ((f->_flag & 0x20u) != 0)) {
+        DWARN("_FILE ferror set (fd=%d, errno=%d, feof=%d)",
+              f->_handle, errno, feof(fp) ? 1 : 0);
+    }
 }
 
 // ---------------------------------------------------------------------------
@@ -519,8 +557,23 @@ _FILE* _freopen(const char* filename, const char* mode, _FILE* stream) {
 // Printf/Scanf Type Bridges
 // ---------------------------------------------------------------------------
 
+// Watcom's va_list is a struct whose sole member is a `char*` into the
+// caller's stack arg block. glibc's va_list on i386 SysV happens to be
+// the same size (char*), so we can convert by raw bit-copy.
+//
+// The previous `return vsprintf(buffer, format, reinterpret_cast<va_list&>(args));`
+// relied on strict-aliasing punning of `va_list_t` ↔ `va_list`, which under
+// -O2 across TU boundaries miscompiled (the call looked fine in isolation,
+// but in the full game build vsprintf read zeros). Copying the raw pointer
+// byte-wise into a real `va_list` sidesteps the aliasing question entirely.
 int _vsprintf(char* buffer, const char* format, va_list_t args) {
-    return vsprintf(buffer, format, reinterpret_cast<va_list&>(args));
+#if defined(__i386__)
+    static_assert(sizeof(va_list) == sizeof(char*),
+                  "this bridge assumes i386 SysV va_list == char*");
+#endif
+    va_list va;
+    __builtin_memcpy(&va, &args.value[0], sizeof(char*));
+    return vsprintf(buffer, format, va);
 }
 
 int _sprintf(void* buffer, const char* format, ...) {
