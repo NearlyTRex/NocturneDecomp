@@ -23,7 +23,7 @@
 ;   undefined4 s_ameMePlease_0063e7a4
 ;   undefined4 s_meMePlease_0063e7a5
 ;   undefined4 s_eMePlease_0063e7a6
-;   CDemonActor_vtable g_CPassengerVTable
+;   CCharacter_full_vtable g_CPassengerVTable
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorph_ctor_FUN_0052b310

@@ -865,8 +865,8 @@ section .text
     PUSH 0x630f40                       ; 0050390b | = "slime.wav @%f *%f"
     LEA EAX,[EBP + 0xfffffe9a]          ; 00503910
     PUSH EAX                            ; 00503916
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00503917
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00503917
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x18                        ; 0050391c
     LEA EAX,[EBP + 0xfffffe9a]          ; 0050391f
     PUSH EAX                            ; 00503925

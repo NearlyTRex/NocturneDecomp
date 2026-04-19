@@ -29,8 +29,7 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_005af320(CDirec
                             g_DirectSoundBufferMetadata[buffer_id].dwLockedBytes2);
     if (error_code != 0) {
       pcVar1 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
-      _sprintf
-                (acStack_1a0,"DirectSux: Unable to %s.  (%s)","Unlock hw sample buffer",
+      _sprintf(acStack_1a0,"DirectSux: Unable to %s.  (%s)","Unlock hw sample buffer",
                  pcVar1);
       sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_1a0);
     }

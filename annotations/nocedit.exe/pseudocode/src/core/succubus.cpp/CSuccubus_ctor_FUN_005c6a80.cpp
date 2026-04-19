@@ -23,7 +23,7 @@ CSuccubus * __cdecl core_succubus_cpp_CSuccubus_ctor_FUN_005c6a80(CSuccubus *thi
   pCVar7 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(&pCVar6->hotdemon_model);
   pCVar8 = core_cloth_cpp_CClothList_ctor_FUN_0043bf40(&ADJ(pCVar7)->hotdemon_cloth_list);
   pCVar9 = core_morph_cpp_CMorph_ctor_FUN_0052b310(&ADJ(pCVar8)->morph);
-  ADJ(pCVar9)->base.base.base.vtable._ub = &g_CSuccubusVTable;
+  ADJ(pCVar9)->base.base.base.vtable._ub = &g_CSuccubusVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&ADJ(pCVar9)->base.base.model,"succubus.dfm");
   pcVar4 = "hdwing.cth";

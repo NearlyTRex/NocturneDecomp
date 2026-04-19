@@ -22,7 +22,7 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_ctor_FUN_005e5590(CVampire
   pCVar6 = core_cloth_cpp_CCloth_ctor_FUN_00438ba0(&ADJ(pCVar5)->cape_cloth);
   pCVar7 = core_cloth_cpp_CCloth_ctor_FUN_00438ba0(&ADJ(pCVar6)->skirt_cloth);
   pCVar8 = core_morph_cpp_CMorph_ctor_FUN_0052b310(&ADJ(pCVar7)->morph);
-  ADJ(pCVar8)->base.base.base.vtable._ub = &g_CVampireBossVTable;
+  ADJ(pCVar8)->base.base.base.vtable._ub = &g_CVampireBossVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&ADJ(pCVar8)->base.base.model,"nosfer.dfm");
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840

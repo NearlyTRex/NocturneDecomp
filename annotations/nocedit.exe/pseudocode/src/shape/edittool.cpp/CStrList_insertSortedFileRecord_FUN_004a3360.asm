@@ -38,7 +38,7 @@
 ;   undefined4 g_FilePathBuffer+4
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_stdio.c_sscanf_FUN_0060013c
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;   crt_string.c_memmove_FUN_005fe5e0
@@ -214,8 +214,8 @@ section .text
     PUSH 0x6239d0                       ; 004a3548 | = "%s\t%s\t%d\t%s\t%s"
     LEA EAX,[ESP + 0xa20]               ; 004a354d
     PUSH EAX                            ; 004a3554
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004a3555
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004a3555
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x1c                        ; 004a355a
     LEA EAX,[ESP + 0xa08]               ; 004a355d
     PUSH EAX                            ; 004a3564

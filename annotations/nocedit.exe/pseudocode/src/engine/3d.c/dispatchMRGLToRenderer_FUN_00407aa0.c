@@ -59,8 +59,7 @@ void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SMRGLHeaderExtended
         }
         else {
 LAB_00407c82:
-          _sprintf
-                    (local_110,"Unknown primitive : %d",
+          _sprintf(local_110,"Unknown primitive : %d",
                      (uint)(byte)(((SMRGLHeaderPrimitive *)mrgl)->base).type);
           g_CurrentLineNumber = 0xcf1;
           g_CurrentFilename = "..\\engine\\3d.c";

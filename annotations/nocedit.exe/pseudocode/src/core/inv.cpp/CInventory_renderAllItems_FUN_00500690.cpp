@@ -262,8 +262,7 @@ LAB_005009c0:
              core_actor_cpp_castToClassHash_FUN_0040c790
                        (this_ptr->selected_item,g_CHealthItemClassInfo.name_hash);
     if (pCVar7 != (CHealthItem *)0x0) {
-      _sprintf
-                (local_378,"%d x%3.0f%%",pCVar7->use_count,(double)pCVar7->hp_restored);
+      _sprintf(local_378,"%d x%3.0f%%",pCVar7->use_count,(double)pCVar7->hp_restored);
       iVar5 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0((CBitFont *)local_44,0x58);
       iVar7 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80((CBitFont *)local_44,local_378);
       engine_font_cpp_CBitFont_drawText_FUN_004cda80

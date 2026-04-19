@@ -80,8 +80,7 @@ void __cdecl engine_fileio_cpp_CFileManager_catalogPodFile_FUN_004b7460(CFileMan
         } while (cVar1 != '\0');
         memmove(&local_32c,local_32b,~uVar3 - 1);
       }
-      _sprintf
-                (local_52c,"%s\t%s\t%s\t%d\t%s",local_22c,local_12c,&local_32c,
+      _sprintf(local_52c,"%s\t%s\t%s\t%d\t%s",local_22c,local_12c,&local_32c,
                  *(uint *)((int)&(local_d00.directory_entries)->size + iVar4),local_2c);
       strupr(local_52c);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8d4.base,local_52c);

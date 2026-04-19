@@ -18,7 +18,7 @@
 ;   undefined4 s_Alien_00615ad4
 ;   float FLOAT_0065ac08 = 50
 ;   float FLOAT_0065ac0c = 100
-;   CDemonActor_vtable g_CBiggsVTable
+;   CEnemy_full_vtable g_CBiggsVTable
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0

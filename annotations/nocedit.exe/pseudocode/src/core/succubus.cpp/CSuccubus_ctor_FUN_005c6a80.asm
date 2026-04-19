@@ -18,7 +18,7 @@
 ;   undefined4 s_ing.cth_00653ff5
 ;   float FLOAT_0066392c = 50
 ;   float FLOAT_00663930 = 100
-;   CDemonActor_vtable g_CSuccubusVTable
+;   CEnemy_full_vtable g_CSuccubusVTable
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CClothList_ctor_FUN_0043bf40

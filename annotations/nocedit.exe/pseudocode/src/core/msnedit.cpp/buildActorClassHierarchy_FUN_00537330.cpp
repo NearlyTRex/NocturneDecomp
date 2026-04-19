@@ -32,8 +32,7 @@ void __cdecl core_msnedit_cpp_buildActorClassHierarchy_FUN_00537330(CStrList *cl
       parent_class_00 = *(CDemonActor **)((int)g_ActorClassRegistrations + iVar3);
       if (parent_class == (CDemonActor *)(parent_class_00->location).position.z) {
         memset(local_80,0x20,100);
-        _sprintf
-                  (local_80 + indent_level * 2,"%s\t%d",parent_class_00,
+        _sprintf(local_80 + indent_level * 2,"%s\t%d",parent_class_00,
                    (parent_class_00->orient).vec.y);
         if ((parent_class_00->location).area_id == 0) {
           pcVar4 = "\t(abstract)";

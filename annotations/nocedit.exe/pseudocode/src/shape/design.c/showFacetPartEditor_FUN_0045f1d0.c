@@ -311,8 +311,7 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
       engine_2d_c_drawTextColor_FUN_00402430(local_b8,g_WindowWidth / 2 + 10,0x16);
       _sprintf(local_b8," : %d");
       engine_2d_c_drawTextColor_FUN_00402430(local_b8,g_WindowWidth / 2 + 10 + iVar12,0x16);
-      _sprintf
-                (local_b8,"Zoom : %4.2f  FOV : %4.1f",65536 / (double)g_ProjectionScale,
+      _sprintf(local_b8,"Zoom : %4.2f  FOV : %4.1f",65536 / (double)g_ProjectionScale,
                  0);
       engine_2d_c_drawTextColor_FUN_00402430(local_b8,g_WindowWidth / 2 + 10,0x2c);
       if ((g_KeyboardState[0x13] != '\0') && (g_KeyboardState[0x1d] != '\0')) {
@@ -388,8 +387,7 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
         _sprintf(local_b8,"%s");
       }
       engine_2d_c_drawTextColor_FUN_00402430(local_b8,0,g_WindowHeight + -0x21);
-      _sprintf
-                (local_b8,"X: %0.4f Y: %0.4f Z: %0.4f",
+      _sprintf(local_b8,"X: %0.4f Y: %0.4f Z: %0.4f",
                  (double)local_4c * 1.52587890625e-05,
                  (double)local_1c * 1.52587890625e-05,
                  (double)local_40 * 1.52587890625e-05);
@@ -415,15 +413,13 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
           g_KeyboardState[0x17] = '\0';
           g_ShowVertexCoordinates = g_ShowVertexCoordinates ^ 1;
         }
-        _sprintf
-                  (local_b8,"V order : %3d %3d %3d   N : %d",
+        _sprintf(local_b8,"V order : %3d %3d %3d   N : %d",
                    g_ModelPolygonData[g_SelectedPolygonIndex].vertex_indices[0],
                    g_ModelPolygonData[g_SelectedPolygonIndex].vertex_indices[1],
                    g_ModelPolygonData[g_SelectedPolygonIndex].vertex_indices[2]);
         engine_2d_c_drawTextColor_FUN_00402430
                   (local_b8,g_WindowWidth / 2 + 10,g_WindowHeight + -0x16);
-        _sprintf
-                  (local_b8,"Normal : %6.2f %6.2f %6.2f",
+        _sprintf(local_b8,"Normal : %6.2f %6.2f %6.2f",
                    (double)g_ModelPolygonData[g_SelectedPolygonIndex].normal.x,
                    (double)g_ModelPolygonData[g_SelectedPolygonIndex].normal.y,
                    (double)g_ModelPolygonData[g_SelectedPolygonIndex].normal.z);
@@ -434,8 +430,7 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
         _sprintf(local_b8,"Angle sum : %10.6lf",dVar9);
         engine_2d_c_drawTextColor_FUN_00402430
                   (local_b8,g_WindowWidth / 2 + 10,g_WindowHeight + -0x21);
-        _sprintf
-                  (local_b8,"Part number : %d (%s)",
+        _sprintf(local_b8,"Part number : %d (%s)",
                    g_ModelPolygonData[g_SelectedPolygonIndex].part_assignment);
         engine_2d_c_drawTextColor_FUN_00402430
                   (local_b8,g_WindowWidth / 2 + 10,g_WindowHeight + -0x37);
@@ -443,8 +438,7 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
           _sprintf(local_b8,"Texture : %s");
         }
         else {
-          _sprintf
-                    (local_b8,"Texture : %s (%s)",g_SelectedPolygonIndex * 0x184 + 0x16e9964);
+          _sprintf(local_b8,"Texture : %s (%s)",g_SelectedPolygonIndex * 0x184 + 0x16e9964);
         }
         engine_2d_c_drawTextColor_FUN_00402430
                   (local_b8,g_WindowWidth / 2 + 10,g_WindowHeight + -0x42);
@@ -454,8 +448,7 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
           for (local_44 = 0;
               local_44 < (int)g_ModelPolygonData[g_SelectedPolygonIndex].vertex_indices_count;
               local_44 = local_44 + 1) {
-            _sprintf
-                      (local_b8,"%03d : %010.6f %010.6f / %08.6f %08.6f",
+            _sprintf(local_b8,"%03d : %010.6f %010.6f / %08.6f %08.6f",
                        g_ModelPolygonData[g_SelectedPolygonIndex].vertex_indices[local_44],
                        (double)g_ModelPolygonData[g_SelectedPolygonIndex].uv_u[local_44],
                        (double)g_ModelPolygonData[g_SelectedPolygonIndex].uv_v[local_44],

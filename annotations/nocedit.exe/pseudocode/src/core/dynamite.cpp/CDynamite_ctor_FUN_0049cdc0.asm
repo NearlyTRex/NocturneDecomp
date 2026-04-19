@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_dynamitestick_kfm_00622e81
-;   CDemonActor_vtable g_CDynamiteVTable
+;   CWeapon_full_vtable g_CDynamiteVTable
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0

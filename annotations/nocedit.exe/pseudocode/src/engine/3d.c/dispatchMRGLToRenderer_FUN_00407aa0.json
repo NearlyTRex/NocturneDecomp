@@ -7,17 +7,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 242,
-    "complexity_score": 152,
+    "complexity_score": 151,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 12,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 117,
+    "pseudocode_lines": 116,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 359
+    "total_lines": 358
   },
   "cross_references": [],
   "function": {
@@ -41,7 +41,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00407890",
@@ -240,7 +240,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 73,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar2 = (uint *)((int)g_RenderFaceArray + iVar6);",
@@ -248,7 +248,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 116,
       "match": "(SMRGLHeaderExtended *)((int)",
       "severity": "mild",
       "text": "mrgl = (SMRGLHeaderExtended *)((int)&(((SMRGLHeaderPrimitive *)mrgl)->base).type + iVar4);",

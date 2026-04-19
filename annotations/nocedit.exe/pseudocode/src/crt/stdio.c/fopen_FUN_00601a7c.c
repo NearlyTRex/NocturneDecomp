@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-_FILE * __cdecl fopen(char *filename,char *mode)
+_FILE * __cdecl _fopen(char *filename,char *mode)
 
 {
   _FILE *p_Var1;

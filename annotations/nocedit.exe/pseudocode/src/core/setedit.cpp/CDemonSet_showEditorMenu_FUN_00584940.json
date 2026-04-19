@@ -7,19 +7,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 488,
-    "complexity_score": 239,
+    "complexity_score": 238,
     "cross_reference_count": 1,
     "function_call_count": 29,
     "global_count": 39,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 184,
+    "pseudocode_lines": 183,
     "suspect_count": 4,
     "suspect_types": [
       "unrolled_strcat",
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 672
+    "total_lines": 671
   },
   "cross_references": [
     {
@@ -105,7 +105,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00600770",
@@ -543,7 +543,7 @@
   "suspects": [
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 83,
+      "line": 82,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -551,7 +551,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 160,
+      "line": 159,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -559,7 +559,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 74,
+      "line": 73,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "mild",
       "text": "do {",
@@ -567,7 +567,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 74,
+      "line": 73,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "mild",
       "text": "do {",

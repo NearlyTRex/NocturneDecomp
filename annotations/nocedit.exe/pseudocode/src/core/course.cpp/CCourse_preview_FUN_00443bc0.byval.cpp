@@ -313,7 +313,7 @@ __asm {
         push 0x619402
         lea EAX,[EBP + 0xffffff5a]
         push EAX
-        call crt_stdio_c__sprintf_FUN_005fdbd0
+        call crt_stdio_c_sprintf_FUN_005fdbd0
         add ESP,0x40
         push 0x0
         push 0x0

@@ -22,7 +22,7 @@
 ;   TerminatedCString s_d_0062fd85
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_ini.cpp_CIniFile_setString_FUN_004fbbb0
 ;
 ; *****************************************************************************
@@ -37,8 +37,8 @@ section .text
     PUSH 0x62fd85                       ; 004fbc99 | = "%d"
     LEA EAX,[ESP + 0x8]                 ; 004fbc9e
     PUSH EAX                            ; 004fbca2
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004fbca3
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004fbca3
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004fbca8
     MOV EAX,ESP                         ; 004fbcab
     PUSH EAX                            ; 004fbcad

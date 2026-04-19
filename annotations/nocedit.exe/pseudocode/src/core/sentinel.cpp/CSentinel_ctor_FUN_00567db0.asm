@@ -13,7 +13,7 @@
 ;   TerminatedCString s_sentinel_dfm_00645719
 ;   float FLOAT_0066267c = 50
 ;   float FLOAT_00662680 = 100
-;   CDemonActor_vtable g_CSentinelVTable
+;   CEnemy_full_vtable g_CSentinelVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500

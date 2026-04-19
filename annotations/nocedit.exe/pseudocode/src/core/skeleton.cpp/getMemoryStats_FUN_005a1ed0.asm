@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_calculateMemorySize_FUN_0059dd60
 ;   core_skeleton.cpp_CSkeleton_calculateFrameDataSize_FUN_0059a140
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -85,8 +85,8 @@ section .text
     PUSH 0x64f0e6                       ; 005a1f50 | = "%d skeletons, %d bytes, %d models, %d..."
     MOV EBX,dword ptr [ESP + 0x28]      ; 005a1f55
     PUSH EBX                            ; 005a1f59
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005a1f5a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005a1f5a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x18                        ; 005a1f5f
     POP EBP                             ; 005a1f62
     POP EDI                             ; 005a1f63

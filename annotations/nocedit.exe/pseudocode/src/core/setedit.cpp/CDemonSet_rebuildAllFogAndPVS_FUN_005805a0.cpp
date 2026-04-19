@@ -48,8 +48,7 @@ void __cdecl core_setedit_cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0(CDemonS
     do {
       core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,index);
       core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(this_ptr,0);
-      _sprintf
-                (local_74,"Computing fog/pvs %d of %d.  Press ESC to cancel.",index,this_ptr->camera_count);
+      _sprintf(local_74,"Computing fog/pvs %d of %d.  Press ESC to cancel.",index,this_ptr->camera_count);
       engine_2d_c_drawText_FUN_00401fd0(local_74,1,1);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       while (iVar1 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00(), iVar1 != 0) {

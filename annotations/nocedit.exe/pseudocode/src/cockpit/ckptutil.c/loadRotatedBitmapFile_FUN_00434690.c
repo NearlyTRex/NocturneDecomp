@@ -45,8 +45,7 @@ char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690(char *filen
         do {
           iVar1 = _fgetc(file);
           if (iVar1 == -1) {
-            _sprintf(local_6c,"Unable to read bitmap file (%s).",filename)
-            ;
+            _sprintf(local_6c,"Unable to read bitmap file (%s).",filename);
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\cockpit\\ckptutil.c",0x7d5);
             g_CurrentLineNumber = 0x7d6;
             g_CurrentFilename = "..\\cockpit\\ckptutil.c";

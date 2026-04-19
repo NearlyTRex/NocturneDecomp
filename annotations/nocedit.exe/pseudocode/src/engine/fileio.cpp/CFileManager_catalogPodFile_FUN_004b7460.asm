@@ -31,7 +31,7 @@
 ;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c_memmove_FUN_005fe5e0
 ;   crt_string.c_strupr_FUN_00600770
 ;   crt_time.c__localtime_FUN_00600288
@@ -193,8 +193,8 @@ section .text
     PUSH 0x627dee                       ; 004b75dd | = "%s\t%s\t%s\t%d\t%s"
     LEA EAX,[ESP + 0x7f0]               ; 004b75e2
     PUSH EAX                            ; 004b75e9
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b75ea
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b75ea
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x1c                        ; 004b75ef
     LEA EAX,[ESP + 0x7d8]               ; 004b75f2
     PUSH EAX                            ; 004b75f9
@@ -220,8 +220,8 @@ section .text
     PUSH 0x627dfd                       ; 004b7632 | = "Contents of pod file:\n%s"
     LEA EAX,[ESP + 0x7e0]               ; 004b7637
     PUSH EAX                            ; 004b763e
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b763f
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b763f
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b7644
     PUSH 0x0                            ; 004b7647
     PUSH -0x1                           ; 004b7649

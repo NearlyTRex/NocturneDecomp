@@ -41,8 +41,8 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_errno.c__errno_FUN_00601450
-;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_setvbuf_FUN_00601490
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_dosio.c_ensureTrailingSlash_FUN_00481f80
 ;   engine_dosio.c_getFileSizeWithFinder_FUN_00481960
@@ -402,8 +402,8 @@ section .text
     PUSH 0x62654c                       ; 004baab5 | = "A writable copy of %s exists.  Replac..."
     LEA EAX,[ESP + 0x8]                 ; 004baaba
     PUSH EAX                            ; 004baabe
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004baabf
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004baabf
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004baac4
     PUSH 0x2d12bf4                      ; 004baac7 | g_VersionControlSession.overwrite_writeable_choice
     LEA EAX,[ESP + 0x4]                 ; 004baacc

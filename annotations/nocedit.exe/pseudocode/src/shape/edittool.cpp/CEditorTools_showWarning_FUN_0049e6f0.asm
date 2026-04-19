@@ -28,7 +28,7 @@
 ;   int g_WarningTextColor
 ;
 ; Called Functions:
-;   crt_stdio.c__vsprintf_FUN_005fdba8
+;   crt_stdio.c_vsprintf_FUN_005fdba8
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130
 ;
 ; *****************************************************************************
@@ -45,8 +45,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 0049e6fe
     PUSH EDX                            ; 0049e702
     PUSH 0x2cef130                      ; 0049e703 | g_DialogMessageBuffer_02cef130
-    CALL crt_stdio.c__vsprintf_FUN_005fdba8 ; 0049e708
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
+    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0049e708
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0049e70d
     MOV EBX,dword ptr [0x02cf2a90]      ; 0049e710 | g_WarningTextColor
     PUSH EBX                            ; 0049e716

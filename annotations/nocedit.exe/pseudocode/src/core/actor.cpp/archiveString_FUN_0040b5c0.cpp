@@ -27,7 +27,7 @@ void __cdecl core_actor_cpp_archiveString_FUN_0040b5c0(char *string_buffer,char 
     *string_buffer = '\0';
   }
   else {
-    _fputc(iVar1,g_ActorDataFile);
+    _ungetc(iVar1,g_ActorDataFile);
     iVar1 = _fscanf(g_ActorDataFile,"%[^\"]",string_buffer);
     if (iVar1 != 1) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040b210("String",property_type);

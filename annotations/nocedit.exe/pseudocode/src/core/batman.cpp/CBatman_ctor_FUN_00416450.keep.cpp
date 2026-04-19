@@ -13,7 +13,7 @@ CBatman * __cdecl core_batman_cpp_CBatman_ctor_FUN_00416450(CBatman *this_ptr)
   CBatman *pCVar4;
 
   pCVar4 = (CBatman *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
-  (pCVar4->base).base.base.vtable._ub = &g_CBatmanVTable;
+  (pCVar4->base).base.base.vtable._ub = &g_CBatmanVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar4->base).base.model,"batman.dfm");
   (pCVar4->base).base.collision_cylinder_height = 0.6;

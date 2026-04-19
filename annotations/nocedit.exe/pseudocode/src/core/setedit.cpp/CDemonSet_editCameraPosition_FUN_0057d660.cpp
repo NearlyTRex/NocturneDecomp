@@ -299,15 +299,13 @@ LAB_0057db4e:
       engine_2d_c_drawText_FUN_00401fd0
                 (CStack_574.cancel_button.button_text + 0xbc,0,g_WindowHeight + -0xb);
       if (*(int *)((int)pvStack_1c + 0x144) == 0) {
-        _sprintf
-                  (CStack_574.cancel_button.button_text + 0xbc,"FIXED CAMERA: x: %f, y: %f, z: %f, p : %f, h : %f, fov : %f",
+        _sprintf(CStack_574.cancel_button.button_text + 0xbc,"FIXED CAMERA: x: %f, y: %f, z: %f, p : %f, h : %f, fov : %f",
                    (double)(g_CSlewPtr->position).x,(double)(g_CSlewPtr->position).y,
                    (double)(g_CSlewPtr->position).z,
                    180 * (double)g_CSlewPtr->pitch * 0.31830988619288902);
       }
       else {
-        _sprintf
-                  (CStack_574.cancel_button.button_text + 0xbc,"PANNING CAMERA: x: %f, y: %f, z: %f",
+        _sprintf(CStack_574.cancel_button.button_text + 0xbc,"PANNING CAMERA: x: %f, y: %f, z: %f",
                    (double)(g_CSlewPtr->position).x);
       }
       engine_2d_c_drawText_FUN_00401fd0(CStack_574.cancel_button.button_text + 0xbc,0,0xb);

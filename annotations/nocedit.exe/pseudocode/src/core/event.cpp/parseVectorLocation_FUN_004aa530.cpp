@@ -23,8 +23,7 @@ int __cdecl core_event_cpp_parseVectorLocation_FUN_004aa530(char *buffer,int *of
   }
   sscanf(buffer + *offset," %[^ ,(){}]%n",local_78,&local_14);
   if (local_14 < 0) {
-    _sprintf(g_EventErrorMessageBuffer,"Error parsing vector location")
-    ;
+    _sprintf(g_EventErrorMessageBuffer,"Error parsing vector location");
     return -1;
   }
   pCVar1 = core_event_cpp_resolveActorByName_FUN_004aa400

@@ -212,8 +212,7 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
       if (iVar4 < 0x8000) {
         this_ptr->gamma = 0x8000;
       }
-      _sprintf
-                (acStack_118,"Gamma : %f",(double)this_ptr->gamma * 1.52587890625e-05);
+      _sprintf(acStack_118,"Gamma : %f",(double)this_ptr->gamma * 1.52587890625e-05);
       core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,acStack_118,1.0);
       core_set_cpp_CDemonSet_setGamma_FUN_00570d60(g_CDemonSetPtr,this_ptr->gamma);
     }
@@ -224,8 +223,7 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
       if (0x10000 < iVar4) {
         this_ptr->gamma = 0x10000;
       }
-      _sprintf
-                (&stack0xfffffe58,"Gamma : %f",(double)this_ptr->gamma * 1.52587890625e-05);
+      _sprintf(&stack0xfffffe58,"Gamma : %f",(double)this_ptr->gamma * 1.52587890625e-05);
       core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,&stack0xfffffe58,1.0);
       core_set_cpp_CDemonSet_setGamma_FUN_00570d60(g_CDemonSetPtr,this_ptr->gamma);
     }

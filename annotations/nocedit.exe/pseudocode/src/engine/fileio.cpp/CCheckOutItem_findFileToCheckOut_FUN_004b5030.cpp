@@ -70,8 +70,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030(CChe
     iVar4 = _sprintf(local_4c4,"%s\t",&local_334);
     iVar3 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(&local_1c,local_334.filename);
     if (-1 < iVar3) {
-      _sprintf
-                (local_4c4 + iVar4,"Checked out by %s",local_1c.items[iVar3].value);
+      _sprintf(local_4c4 + iVar4,"Checked out by %s",local_1c.items[iVar3].value);
     }
     shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_86c.base,local_4c4);
     engine_dosio_c_CFileFinder_findNext_FUN_00481cf0(&local_334);

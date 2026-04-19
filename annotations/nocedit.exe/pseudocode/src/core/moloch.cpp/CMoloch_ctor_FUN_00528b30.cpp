@@ -19,7 +19,7 @@ CMoloch * __cdecl core_moloch_cpp_CMoloch_ctor_FUN_00528b30(CMoloch *this_ptr)
   pCVar3 = (CMoloch *)core_hero_cpp_CHero_ctor_FUN_004f2340(&this_ptr->base);
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(&pCVar3->model);
   pCVar5 = core_morph_cpp_CMorph_ctor_FUN_0052b310(&ADJ(pCVar4)->morph);
-  ADJ(pCVar5)->base.base.base.vtable._ub = &g_CMolochVTable;
+  ADJ(pCVar5)->base.base.base.vtable._ub = &g_CMolochVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&ADJ(pCVar5)->base.base.model,"moloch_h.dfm");
   pcVar2 = "molochToDemon";

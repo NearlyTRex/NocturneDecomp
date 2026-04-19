@@ -34,8 +34,8 @@
 ;   core_actor.cpp_handleActorPropertyParseError_FUN_0040b210
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
-;   crt_stdio.c_fputc_FUN_005fea10
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
+;   crt_stdio.c_ungetc_FUN_005fea10
 ;
 ; *****************************************************************************
 
@@ -83,8 +83,8 @@ section .text
     MOV EDX,dword ptr [0x00822034]      ; 0040b622 | g_ActorDataFile
     PUSH EDX                            ; 0040b628
     PUSH EAX                            ; 0040b629
-    CALL crt_stdio.c_fputc_FUN_005fea10 ; 0040b62a
-        ;   XREF to: 005fea10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005fea10(int character, _FILE * stream)
+    CALL crt_stdio.c_ungetc_FUN_005fea10 ; 0040b62a
+        ;   XREF to: 005fea10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_ungetc_FUN_005fea10(int character, _FILE * stream)
     ADD ESP,0x8                         ; 0040b62f
     PUSH ESI                            ; 0040b632
     PUSH 0x613f07                       ; 0040b633 | = "%[^\"]"

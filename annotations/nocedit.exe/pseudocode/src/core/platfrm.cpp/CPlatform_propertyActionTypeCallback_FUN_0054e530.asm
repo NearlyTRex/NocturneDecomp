@@ -32,7 +32,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_course.cpp_CCourse_free_FUN_004426c0
 ;   core_course.cpp_CCourse_interpolate_FUN_004427a0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -88,8 +88,8 @@ section .text
     PUSH 0x63fa46                       ; 0054e5a8 | = "Change course setting for platform %s"
     LEA EAX,[ESP + 0x3b0]               ; 0054e5ad
     PUSH EAX                            ; 0054e5b4
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0054e5b5
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0054e5b5
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0054e5ba
     PUSH 0x0                            ; 0054e5bd
     PUSH -0x1                           ; 0054e5bf
@@ -187,8 +187,8 @@ section .text
     PUSH 0x63fa77                       ; 0054e6ac | = "Select a course for platform %s"
     LEA EAX,[ESP + 0x478]               ; 0054e6b1
     PUSH EAX                            ; 0054e6b8
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0054e6b9
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0054e6b9
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0054e6be
     PUSH 0x0                            ; 0054e6c1
     PUSH ESI                            ; 0054e6c3

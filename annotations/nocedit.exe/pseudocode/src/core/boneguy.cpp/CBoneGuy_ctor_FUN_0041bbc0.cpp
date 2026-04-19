@@ -27,7 +27,7 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy *this_pt
   
   pCVar4 = (CBoneGuy *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
   dest = __arrinit(pCVar4->boxes,0x14,&g_SBoneGuyBoxTypeInfo);
-  ADJ(dest)->base.base.base.vtable._ub = &g_CBoneGuyVTable;
+  ADJ(dest)->base.base.base.vtable._ub = &g_CBoneGuyVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&ADJ(dest)->base.base.model,"boneguy.dfm");
   ADJ(dest)->base.base.collision_cylinder_height = 0.6;

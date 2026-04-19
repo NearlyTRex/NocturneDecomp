@@ -6,6 +6,7 @@
 // Signature: void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor *this_ptr,char *context_file,int context_line)
 
 #include "nocturne.h"
+#include "debug_log.h"
 
 void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor *this_ptr,char *context_file,int context_line)
 
@@ -30,14 +31,19 @@ void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(C
   float fVar3;
   char cVar4;
   float fVar1;
-  
+
   bVar9 = 0;
-  if (this_ptr == (CDemonActor *)0x0) {
-    g_CurrentFilename = "..\\core\\actor.cpp";
-    g_CurrentLineNumber = 0x70a;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("NULL actor pointer detected, %s line %d",context_file,context_line);
-  }
-  if (((CDemonActor *)0xfeffffff < this_ptr) || ((int)this_ptr < 0x1000)) {
+  // Reject NULL and obvious sentinel values (e.g. -1, 0x1, small ints) before
+  // the magic-number dereference at offset 0x68 below. The original asm also
+  // rejected pointers above 0xfeffffff (Win32 kernel/DLL region) and used a
+  // signed < 0x1000 test, but neither is portable: modern 32-bit Linux hands
+  // out heap pointers with the high bit set, and any address space works as
+  // long as we don't walk into an obvious sentinel. `uintptr_t` keeps this
+  // correct on any target.
+  if (this_ptr == nullptr || (uintptr_t)this_ptr < 0x1000) {
+    DWARN("Invalid actor pointer %p from %s:%d",
+          (void *)this_ptr,
+          context_file ? context_file : "(null)", context_line);
     g_CurrentFilename = "..\\core\\actor.cpp";
     g_CurrentLineNumber = 0x70e;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid actor pointer %08X detected at %s, line %d",(uint)this_ptr,context_file,context_line);

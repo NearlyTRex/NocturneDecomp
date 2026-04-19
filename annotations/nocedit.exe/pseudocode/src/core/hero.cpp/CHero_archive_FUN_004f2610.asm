@@ -50,7 +50,7 @@
 ;   core_charactr.cpp_CCharacter_archive_FUN_004283a0
 ;   core_inv.cpp_CInventory_load_FUN_004ff400
 ;   core_inv.cpp_CInventory_save_FUN_004ff210
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -203,8 +203,8 @@ section .text
     PUSH 0x62eb4d                       ; 004f27aa | = "keyNameList[%d]"
     LEA EAX,[ESP + 0x6c]                ; 004f27af
     PUSH EAX                            ; 004f27b3
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004f27b4
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004f27b4
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004f27b9
     LEA EAX,[ESP + 0x64]                ; 004f27bc
     PUSH EAX                            ; 004f27c0

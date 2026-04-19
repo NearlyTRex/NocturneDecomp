@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   handle_index
 ;
 ; XREF[1]:
-;   crt_stdio.c__fclose_FUN_00601fd0 at 006020ac
+;   crt_stdio.c_fclose_FUN_00601fd0 at 006020ac
 ;
 ; *****************************************************************************
 

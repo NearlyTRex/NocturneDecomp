@@ -7,12 +7,12 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 1920,
-    "complexity_score": 794,
+    "complexity_score": 787,
     "cross_reference_count": 1,
     "function_call_count": 60,
     "global_count": 143,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 604,
+    "pseudocode_lines": 597,
     "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
@@ -20,7 +20,7 @@
       "unnamed_local",
       "warning_inlined_function"
     ],
-    "total_lines": 2524
+    "total_lines": 2517
   },
   "cross_references": [
     {
@@ -52,7 +52,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00403260",
@@ -1276,11 +1276,11 @@
   "resolved_suspects": [
     {
       "description": "Raw hex literal 0x16e9964 matches address of g_ModelPolygonData (+84 bytes into) (type SShapeEditorPolygon[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 440,
+      "line": 434,
       "match": "0x16e9964",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(local_b8,\"Texture : %s (%s)\",g_SelectedPolygonIndex * 0x184 + 0x16e9964);",
+      "text": "_sprintf(local_b8,\"Texture : %s (%s)\",g_SelectedPolygonIndex * 0x184 + 0x16e9964);",
       "type": "raw_address_constant"
     }
   ],
@@ -1468,7 +1468,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 486,
+      "line": 479,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
       "text": "pSVar14 = (SShapeEditorPolygon *)((int)pSVar14 + ((uint)bVar7 * -2 + 1) * 4);",
@@ -1476,7 +1476,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 487,
+      "line": 480,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
       "text": "pSVar15 = (SShapeEditorPolygon *)((int)pSVar15 + ((uint)bVar7 * -2 + 1) * 4);",
@@ -1484,7 +1484,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 492,
+      "line": 485,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_ModelPolygonData +",
@@ -1492,7 +1492,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 495,
+      "line": 488,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)g_ModelPolygonData +",
@@ -1500,7 +1500,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 498,
+      "line": 491,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)g_ModelPolygonData +",
@@ -1508,7 +1508,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 556,
+      "line": 549,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
       "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar7 * -8 + 4);",
@@ -1516,7 +1516,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 557,
+      "line": 550,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
       "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + (uint)bVar7 * -8 + 4);",

@@ -455,8 +455,7 @@ LAB_0046c5b7:
               wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
               goto LAB_0046ca24;
             }
-            _sprintf
-                      (local_154,"  %02d : %04d x %04d    xp: %04d  yp: %04d  r: %d  map: %d    %s",local_5c,
+            _sprintf(local_154,"  %02d : %04d x %04d    xp: %04d  yp: %04d  r: %d  map: %d    %s",local_5c,
                        g_TextureAtlasEntries[local_5c].atlas_width,
                        g_TextureAtlasEntries[local_5c].atlas_height,
                        g_TextureAtlasEntries[local_5c].atlas_x,
@@ -496,8 +495,7 @@ LAB_0046ca24:
                           g_TextureAtlasEntries[local_70].atlas_height;
             }
           }
-          _sprintf
-                    (local_154,"  map %d : %4.1lf%%",local_34,
+          _sprintf(local_154,"  map %d : %4.1lf%%",local_34,
                      100 -
                      ((double)local_a28 / (double)(int)(local_74 * local_60)) * 100);
           local_5c = local_5c + 1;
@@ -746,8 +744,7 @@ LAB_0046cf33:
               _sprintf(local_258 + uVar7,"%X.RAW");
             }
             else {
-              _sprintf(local_258,"%s%X.RAW",g_CurrentModelFilename)
-              ;
+              _sprintf(local_258,"%s%X.RAW",g_CurrentModelFilename);
             }
           }
           else {

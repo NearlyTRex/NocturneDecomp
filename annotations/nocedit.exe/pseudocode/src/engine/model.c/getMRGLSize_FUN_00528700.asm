@@ -29,7 +29,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -139,8 +139,8 @@ section .text
     PUSH 0x639c36                       ; 00528826 | = "MRGLSize: Bad type : %d"
     LEA EAX,[ESP + 0x8]                 ; 0052882b
     PUSH EAX                            ; 0052882f
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00528830
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00528830
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EDX,0x639c4e                    ; 00528835 | = "..\\engine\\model.c"
     ADD ESP,0xc                         ; 0052883a
     MOV EAX,ESP                         ; 0052883d

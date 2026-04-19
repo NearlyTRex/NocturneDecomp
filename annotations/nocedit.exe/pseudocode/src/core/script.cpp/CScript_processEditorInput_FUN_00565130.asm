@@ -473,8 +473,8 @@ section .text
     PUSH 0x310fd58                      ; 0056550a | g_ScriptFindText
     PUSH 0x643e66                       ; 0056550f | = "Found %s"
     PUSH 0x310fdc0                      ; 00565514 | g_ScriptEditorStatusText
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00565519
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00565519
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0056551e
     MOV EAX,dword ptr [ESP]             ; 00565521
     MOV [0x0310fd48],EAX                ; 00565524 | g_CurrentEditingLine
@@ -548,8 +548,8 @@ section .text
     PUSH 0x310fd58                      ; 005655e7 | g_ScriptFindText
     PUSH 0x643e82                       ; 005655ec | = "Found %s"
     PUSH 0x310fdc0                      ; 005655f1 | g_ScriptEditorStatusText
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005655f6
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005655f6
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005655fb
     MOV EAX,dword ptr [ESP + 0x14]      ; 005655fe
     MOV [0x0310fd48],EAX                ; 00565602 | g_CurrentEditingLine
@@ -764,8 +764,8 @@ section .text
         ;   Label: LAB_0056580b
     PUSH 0x643e6f                       ; 00565810 | = "Can't find %s"
     PUSH 0x310fdc0                      ; 00565815 | g_ScriptEditorStatusText
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0056581a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0056581a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0056581f
     JMP 0x0056554e                      ; 00565822
         ;   XREF to: 0056554e (UNCONDITIONAL_JUMP)  ; LAB_0056554e
@@ -773,8 +773,8 @@ section .text
         ;   Label: LAB_00565827
     PUSH 0x643e8b                       ; 0056582c | = "Can't find %s"
     PUSH 0x310fdc0                      ; 00565831 | g_ScriptEditorStatusText
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00565836
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00565836
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0056583b
     JMP 0x0056562d                      ; 0056583e
         ;   XREF to: 0056562d (UNCONDITIONAL_JUMP)  ; LAB_0056562d

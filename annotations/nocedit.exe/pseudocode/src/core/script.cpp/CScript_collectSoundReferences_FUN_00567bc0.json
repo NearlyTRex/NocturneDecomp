@@ -7,17 +7,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 59,
+    "complexity_score": 58,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 44,
+    "pseudocode_lines": 43,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 145
+    "total_lines": 144
   },
   "cross_references": [
     {
@@ -53,7 +53,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "004a2b80",
@@ -198,7 +198,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 32,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->parsed_lines->line_number + local_1c));",

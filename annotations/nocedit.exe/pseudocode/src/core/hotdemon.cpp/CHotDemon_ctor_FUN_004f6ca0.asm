@@ -14,7 +14,7 @@
 ;   TerminatedCString s_hotdemon_dfm_0062f357
 ;   float FLOAT_0065fcd0 = 50
 ;   float FLOAT_0065fcd4 = 100
-;   CDemonActor_vtable g_CHotDemonVTable
+;   CEnemy_full_vtable g_CHotDemonVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500

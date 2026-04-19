@@ -27,7 +27,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_memdbg.cpp_debugFree_FUN_0050f460
 ;   shape_memdbg.cpp_debugMalloc_FUN_0050f250
 ;
@@ -135,8 +135,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00434976
     PUSH EAX                            ; 0043497a
     MOV EBX,0x80a                       ; 0043497b
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00434980
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00434980
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00434985
     MOV EAX,ESP                         ; 00434988
     MOV ECX,0x617f75                    ; 0043498a | = "..\\cockpit\\ckptutil.c"

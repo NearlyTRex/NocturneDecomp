@@ -43,7 +43,7 @@
 ;   ... and 1 more
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__strcmp_FUN_005fef20
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_dosio.c_getFileSize_FUN_00481880
@@ -374,8 +374,8 @@ section .text
     PUSH EAX                            ; 00459cf6 | = "  NO TEXTURE    (object not mapped)"
     LEA EAX,[EBP + 0xfffffec4]          ; 00459cf7
     PUSH EAX                            ; 00459cfd
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00459cfe
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00459cfe
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00459d03
     MOV EAX,dword ptr [EBP + -0x4]      ; 00459d06
     INC EAX                             ; 00459d09
@@ -399,8 +399,8 @@ section .text
     PUSH EAX                            ; 00459d30 | = "  %-12s  (texture not found)"
     LEA EAX,[EBP + 0xfffffec4]          ; 00459d31
     PUSH EAX                            ; 00459d37
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00459d38
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00459d38
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00459d3d
     MOV EAX,dword ptr [EBP + -0x4]      ; 00459d40
     INC EAX                             ; 00459d43
@@ -421,8 +421,8 @@ section .text
     PUSH EAX                            ; 00459d64 | = "  %-12s  (invalid texture size)"
     LEA EAX,[EBP + 0xfffffec4]          ; 00459d65
     PUSH EAX                            ; 00459d6b
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00459d6c
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00459d6c
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00459d71
     MOV EAX,dword ptr [EBP + -0x4]      ; 00459d74
     INC EAX                             ; 00459d77

@@ -97,8 +97,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
       pcVar8[1] = cVar2;
       pcVar8 = pcVar8 + 2;
     } while (cVar2 != '\0');
-    _sprintf
-              (memory_amount_str,"%.1f",
+    _sprintf(memory_amount_str,"%.1f",
                (double)((float)g_TotalPhysicalMemory * 9.536743e-07f));
     pcVar8 = memory_amount_str;
     iVar9 = -1;
@@ -327,8 +326,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
       pcVar6[1] = cVar2;
       pcVar6 = pcVar6 + 2;
     } while (cVar2 != '\0');
-    _sprintf
-              (temp_buffer,"%.1f",
+    _sprintf(temp_buffer,"%.1f",
                (double)((float)g_AvailableSwapSpace * 9.536743e-07f));
     pcVar6 = temp_buffer;
     iVar9 = -1;

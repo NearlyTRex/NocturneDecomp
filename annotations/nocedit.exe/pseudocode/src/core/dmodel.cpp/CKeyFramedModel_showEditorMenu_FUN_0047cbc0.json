@@ -8,12 +8,12 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2523,
-    "complexity_score": 1393,
+    "complexity_score": 1392,
     "cross_reference_count": 2,
     "function_call_count": 72,
     "global_count": 128,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 858,
+    "pseudocode_lines": 857,
     "suspect_count": 50,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -24,7 +24,7 @@
       "unrolled_strcpy",
       "warning_inlined_function"
     ],
-    "total_lines": 3381
+    "total_lines": 3380
   },
   "cross_references": [
     {
@@ -232,7 +232,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "0060013c",
@@ -1268,7 +1268,7 @@
   "resolved_suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 530,
+      "line": 529,
       "match": "&stack0xfffff150",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1277,7 +1277,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 531,
+      "line": 530,
       "match": "&stack0xfffff150",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1286,7 +1286,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 534,
+      "line": 533,
       "match": "&stack0xfffff150",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1295,7 +1295,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 749,
+      "line": 748,
       "match": "collision_triangle_list[-1].",
       "resolution_source": "keep",
       "severity": "mild",
@@ -2113,7 +2113,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 367,
+      "line": 366,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar1 = (int *)((int)&pCVar4->x + iVar18);",
@@ -2121,7 +2121,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 369,
+      "line": 368,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&pCVar4->y + iVar18) =",
@@ -2129,7 +2129,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 370,
+      "line": 369,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&pCVar4->y + iVar18) + (int)ROUND(fVar4);",
@@ -2137,7 +2137,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 371,
+      "line": 370,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&pCVar4->z + iVar18) =",
@@ -2145,7 +2145,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 372,
+      "line": 371,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&pCVar4->z + iVar18) + (int)ROUND(fVar6);",
@@ -2153,7 +2153,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 506,
+      "line": 505,
       "match": "(CKeyFramedModel *)((int)",
       "severity": "mild",
       "text": "pCVar13 = (CKeyFramedModel *)((int)pCVar13 + (uint)bVar15 * -2 + 1);",
@@ -2161,7 +2161,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 510,
+      "line": 509,
       "match": "pCVar13[-1].",
       "severity": "mild",
       "text": "pcVar20 = (char *)((int)&pCVar13[-1].dead + 3);",
@@ -2169,7 +2169,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 510,
+      "line": 509,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "pcVar20 = (char *)((int)&pCVar13[-1].dead + 3);",
@@ -2177,7 +2177,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 706,
+      "line": 705,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_108.x = (float)*(int *)((int)&this_ptr->vertex_list->x + iVar18) * fVar3;",
@@ -2185,7 +2185,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 707,
+      "line": 706,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_108.y = (float)*(int *)((int)&this_ptr->vertex_list->y + iVar18) * fVar3;",
@@ -2193,7 +2193,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 708,
+      "line": 707,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_108.z = (float)*(int *)((int)&this_ptr->vertex_list->z + iVar18) * fVar3;",
@@ -2201,7 +2201,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 717,
+      "line": 716,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_list->x + iVar18) =",
@@ -2209,7 +2209,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 719,
+      "line": 718,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_list->y + iVar18) =",
@@ -2217,7 +2217,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 721,
+      "line": 720,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_list->z + iVar18) =",
@@ -2225,7 +2225,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 482,
+      "line": 481,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -2233,7 +2233,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 511,
+      "line": 510,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -2241,7 +2241,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 794,
+      "line": 793,
       "match": "for (...; != 0; ... + -1)",
       "severity": "mild",
       "text": "for (iVar18 = 0x19; iVar18 != 0; iVar18 = iVar18 + -1) {",

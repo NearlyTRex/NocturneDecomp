@@ -18,7 +18,7 @@
 ;   TerminatedCString s_Total_d_32_d_64_d_128_d__00655416
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -96,8 +96,8 @@ section .text
     PUSH 0x655416                       ; 005dd720 | = "Total: %d, 32: %d, 64: %d, 128: %d, 2..."
     MOV EDI,dword ptr [ESP + 0x40]      ; 005dd725
     PUSH EDI                            ; 005dd729
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005dd72a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005dd72a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x24                        ; 005dd72f
     ADD ESP,0x8                         ; 005dd732
     POP EBP                             ; 005dd735
@@ -111,8 +111,8 @@ section .text
         ;   Label: LAB_005dd741
     MOV EAX,dword ptr [ESP + 0x24]      ; 005dd746
     PUSH EAX                            ; 005dd74a
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005dd74b
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005dd74b
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 005dd750
     ADD ESP,0x8                         ; 005dd753
     POP EBP                             ; 005dd756

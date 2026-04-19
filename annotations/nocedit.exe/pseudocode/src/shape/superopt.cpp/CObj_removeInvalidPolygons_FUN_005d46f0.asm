@@ -15,7 +15,7 @@
 ;   TerminatedCString s_Deleting_invalid_polygon_006544ce
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1d0
 ;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;
@@ -93,8 +93,8 @@ section .text
     PUSH 0x6544ce                       ; 005d4768 | = "Deleting invalid polygons (%d deleted..."
     LEA EAX,[ESP + 0x8]                 ; 005d476d
     PUSH EAX                            ; 005d4771
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005d4772
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005d4772
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005d4777
     JMP 0x005d471c                      ; 005d477a
         ;   XREF to: 005d471c (UNCONDITIONAL_JUMP)  ; LAB_005d471c

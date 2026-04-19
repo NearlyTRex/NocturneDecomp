@@ -14,7 +14,7 @@ CLarva * __cdecl core_larva_cpp_CLarva_ctor_FUN_00502f90(CLarva *this_ptr)
   CLarva *pCVar3;
   
   pCVar3 = (CLarva *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
-  (pCVar3->base).base.base.vtable._ub = &g_CLarvaVTable;
+  (pCVar3->base).base.base.vtable._ub = &g_CLarvaVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar3->base).base.model,"worm.dfm");
   (pCVar3->base).base.collision_cylinder_height = 0.25;

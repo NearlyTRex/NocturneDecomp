@@ -114,8 +114,7 @@ LAB_0049f47a:
         }
         time_ptr = _localtime((time_t *)&local_18f0.attributes);
         _strftime(local_34,0x1e,"\t%m/%d/%y %I:%M:%S %p",time_ptr);
-        _sprintf
-                  (local_fc,"%s\t%s\t%d%s",local_dc4,&local_4c4,local_18f0.timestamp,local_34);
+        _sprintf(local_fc,"%s\t%s\t%d%s",local_dc4,&local_4c4,local_18f0.timestamp,local_34);
         strupr(local_fc);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1ec8.base,local_fc);
       }

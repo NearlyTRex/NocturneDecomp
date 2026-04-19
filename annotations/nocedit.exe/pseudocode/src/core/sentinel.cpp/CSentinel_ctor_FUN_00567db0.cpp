@@ -14,7 +14,7 @@ CSentinel * __cdecl core_sentinel_cpp_CSentinel_ctor_FUN_00567db0(CSentinel *thi
   CSentinel *pCVar3;
   
   pCVar3 = (CSentinel *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
-  (pCVar3->base).base.base.vtable._ub = &g_CSentinelVTable;
+  (pCVar3->base).base.base.vtable._ub = &g_CSentinelVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar3->base).base.model,"sentinel.dfm");
   fVar1 = 50.0f;

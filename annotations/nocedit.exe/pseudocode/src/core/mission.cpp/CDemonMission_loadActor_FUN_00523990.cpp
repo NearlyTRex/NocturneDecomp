@@ -28,7 +28,7 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_00523990(CDem
   if (iVar2 == 0x22) {
     iVar1 = _fgetc(file);
     if (iVar1 != 0x22) {
-      _fputc(iVar1,file);
+      _ungetc(iVar1,file);
       iVar1 = _fscanf(file,"%[^\"]",local_dc);
       if (iVar1 == 1) {
         iVar1 = _stricmp(local_dc,g_DefaultMissionIdentifier);
@@ -50,7 +50,7 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_00523990(CDem
     }
   }
   else {
-    _fputc(iVar2,file);
+    _ungetc(iVar2,file);
     iVar1 = _fscanf(file,"%x",&local_14);
     pCVar1 = local_14;
     if (iVar1 == 1) goto LAB_00523a18;

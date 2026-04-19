@@ -23,7 +23,7 @@
 ;   undefined4 s_hvl-s?.wav_00635bf9
 ;   undefined4 s_vl-s?.wav_00635bfa
 ;   undefined4 s_l-s?.wav_00635bfb
-;   CDemonActor_vtable g_CMeleeVTable
+;   CWeapon_full_vtable g_CMeleeVTable
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0

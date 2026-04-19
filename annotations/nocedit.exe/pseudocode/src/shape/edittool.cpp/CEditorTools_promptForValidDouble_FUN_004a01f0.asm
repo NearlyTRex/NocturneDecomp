@@ -25,7 +25,7 @@
 ;   TerminatedCString s_Please_enter_a_valid_int_0062327f
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_stdio.c_sscanf_FUN_0060013c
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
@@ -86,8 +86,8 @@ section .text
     PUSH 0x623258                       ; 004a0255 | = "%.15g"
     LEA EAX,[ESP + 0x24]                ; 004a025a
     PUSH EAX                            ; 004a025e
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004a025f
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004a025f
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004a0264
     JMP 0x004a022d                      ; 004a0267
         ;   XREF to: 004a022d (UNCONDITIONAL_JUMP)  ; LAB_004a022d

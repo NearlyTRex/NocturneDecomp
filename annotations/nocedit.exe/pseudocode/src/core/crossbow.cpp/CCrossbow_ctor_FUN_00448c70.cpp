@@ -14,7 +14,7 @@ CCrossbow * __cdecl core_crossbow_cpp_CCrossbow_ctor_FUN_00448c70(CCrossbow *thi
   
   pCVar2 = (CCrossbow *)core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base);
   pCVar3 = core_flame_cpp_CFlame_ctor_FUN_004c9aa0(&pCVar2->bolt_flame);
-  ADJ(pCVar3)->base.base.vtable._ub = &g_CCrossbowVTable;
+  ADJ(pCVar3)->base.base.vtable._ub = &g_CCrossbowVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&ADJ(pCVar3)->base.model,"crossbow.kfm");
   ADJ(pCVar3)->base.fire_cooldown_timer = 0.0;

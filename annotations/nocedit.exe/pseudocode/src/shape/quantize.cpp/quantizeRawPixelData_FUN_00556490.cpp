@@ -113,8 +113,7 @@ LAB_00556524:
   iVar4 = 0;
   if (iVar3 != 0) {
     if (show_progress != 0) {
-      _sprintf
-                (local_dc,"%d-color palette created                                                       ",pCVar2->num_colors);
+      _sprintf(local_dc,"%d-color palette created                                                       ",pCVar2->num_colors);
       engine_2d_c_drawText_FUN_00401fd0(local_dc,0,(line_number + 2) * 0xb);
       engine_2d_c_drawText_FUN_00401fd0("                                    ",0,(line_number + 4) * 0xb);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

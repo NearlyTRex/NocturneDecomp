@@ -20,8 +20,7 @@ void __cdecl core_dpart_cpp_CDemonPart_alloc_FUN_00482180(CDemonPart *this_ptr)
                        (this_ptr->vertex_count,0xc,"..\\core\\dpart.cpp",0x87);
     this_ptr->vertex_positions = pCVar1;
     if (pCVar1 == (CVector3i *)0x0) {
-      _sprintf
-                (local_10c,"CDemonPart::alloc - Out of vertex %d memory!",this_ptr->vertex_count);
+      _sprintf(local_10c,"CDemonPart::alloc - Out of vertex %d memory!",this_ptr->vertex_count);
       g_CurrentLineNumber = 0x8b;
       g_CurrentFilename = "..\\core\\dpart.cpp";
       core_main_c_displayErrorAndQuit_FUN_00506f10(local_10c);

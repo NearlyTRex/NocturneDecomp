@@ -7,18 +7,18 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1759,
-    "complexity_score": 752,
+    "complexity_score": 749,
     "cross_reference_count": 1,
     "function_call_count": 49,
     "global_count": 101,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 702,
+    "pseudocode_lines": 699,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "unrolled_strlen"
     ],
-    "total_lines": 2461
+    "total_lines": 2458
   },
   "cross_references": [
     {
@@ -128,11 +128,6 @@
       "name": "core_setutil.cpp_C3DSLight_importS3D_FUN_00587710"
     },
     {
-      "addr": "005fdbd0",
-      "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
-    },
-    {
       "addr": "005fe840",
       "is_variadic": false,
       "name": "crt_stdio.c_fgetc_FUN_005fe840"
@@ -156,6 +151,11 @@
       "addr": "005ff9d0",
       "is_variadic": false,
       "name": "crt_stdio.c_remove_FUN_005ff9d0"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005ffef0",
@@ -1404,7 +1404,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 371,
+      "line": 369,
       "match": "(C3DSCamera *)((int)",
       "severity": "mild",
       "text": "pCVar18 = (C3DSCamera *)((int)pCVar18 + (uint)bVar19 * -8 + 4);",
@@ -1412,7 +1412,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 373,
+      "line": 371,
       "match": "(C3DSCamera *)((int)",
       "severity": "mild",
       "text": "pCVar15 = (C3DSCamera *)((int)pCVar15 + (uint)bVar19 * -8 + 4);",
@@ -1428,7 +1428,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 639,
+      "line": 636,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "mild",
       "text": "do {",

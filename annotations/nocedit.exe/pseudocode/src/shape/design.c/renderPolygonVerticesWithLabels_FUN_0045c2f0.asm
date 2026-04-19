@@ -36,7 +36,7 @@
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_drawTextColor_FUN_00402430
 ;   engine_2d.c_plotPixel_FUN_00401140
 ;   engine_matrix.c_transformToCache_FUN_0050cd70
@@ -216,8 +216,8 @@ section .text
     PUSH EAX                            ; 0045c4b7 | = "%d"
     LEA EAX,[EBP + -0x6c]               ; 0045c4b8
     PUSH EAX                            ; 0045c4bb
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0045c4bc
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0045c4bc
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0045c4c1
     MOV EAX,dword ptr [EBP + -0x8]      ; 0045c4c4
     INC EAX                             ; 0045c4c7

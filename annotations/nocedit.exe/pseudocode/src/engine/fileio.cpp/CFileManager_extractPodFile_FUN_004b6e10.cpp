@@ -131,8 +131,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileMan
         _strftime(local_344,0x100,"%A, %B, %d, %Y, %I:%M:%S %p",p_Var4);
         p_Var4 = _localtime(local_40 + 2);
         _strftime(local_144,0x100,"%A, %B, %d, %Y, %I:%M:%S %p",p_Var4);
-        _sprintf
-                  (acStack_a58,"%s already exists on disk.\n\nWould you like to replace the existing file\n\n%d bytes\nmodified on %s\n\nwith this one?\n\n%d bytes\nmodified on %s\n",local_658.target_path,
+        _sprintf(acStack_a58,"%s already exists on disk.\n\nWould you like to replace the existing file\n\n%d bytes\nmodified on %s\n\nwith this one?\n\n%d bytes\nmodified on %s\n",local_658.target_path,
                    local_658.file_size,local_344,local_40[0],local_144);
         local_14 = shape_edittool_cpp_CEditorTools_showYesAllNoCancelDialog_FUN_0049f180
                              (g_CEditorToolsPtr,acStack_a58);

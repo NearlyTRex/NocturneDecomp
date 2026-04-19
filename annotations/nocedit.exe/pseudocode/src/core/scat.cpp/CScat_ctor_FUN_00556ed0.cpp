@@ -12,7 +12,7 @@ CScat * __cdecl core_scat_cpp_CScat_ctor_FUN_00556ed0(CScat *this_ptr)
   CScat *this_ptr_00;
   
   this_ptr_00 = (CScat *)core_hero_cpp_CHero_ctor_FUN_004f2340(&this_ptr->base);
-  (this_ptr_00->base).base.base.vtable._ub = &g_CScatVTable;
+  (this_ptr_00->base).base.base.vtable._ub = &g_CScatVTable._ub;
   this_ptr_00->guns_drawn = 0;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(this_ptr_00->base).base.model,"scat.dfm");

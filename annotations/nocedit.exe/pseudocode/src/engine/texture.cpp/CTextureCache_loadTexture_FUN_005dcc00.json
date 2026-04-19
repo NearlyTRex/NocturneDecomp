@@ -7,17 +7,17 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 519,
-    "complexity_score": 276,
+    "complexity_score": 275,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 33,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 241,
+    "pseudocode_lines": 240,
     "suspect_count": 3,
     "suspect_types": [
       "unrolled_strchr"
     ],
-    "total_lines": 760
+    "total_lines": 759
   },
   "cross_references": [
     {
@@ -51,14 +51,14 @@
       "name": "crt_memory.c_memset_FUN_005fde40"
     },
     {
-      "addr": "005fdbd0",
-      "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
-    },
-    {
       "addr": "005fd990",
       "is_variadic": false,
       "name": "crt_stdio.c_fread_FUN_005fd990"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00481a50",
@@ -345,7 +345,7 @@
   "resolved_suspects": [
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 108,
+      "line": 107,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "mild",
@@ -354,7 +354,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 113,
+      "line": 112,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "mild",
@@ -454,7 +454,7 @@
   "suspects": [
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 88,
+      "line": 87,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "mild",
       "text": "do {",
@@ -462,7 +462,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 169,
+      "line": 168,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "mild",
       "text": "do {",
@@ -470,7 +470,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 201,
+      "line": 200,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "mild",
       "text": "do {",

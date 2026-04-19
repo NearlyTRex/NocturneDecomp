@@ -232,16 +232,13 @@ LAB_00458835:
     }
     engine_model_c_getMRGLBounds_FUN_00528140(local_1c,&local_198);
     engine_model_c_freeMRGLData_FUN_005280b0(local_1c);
-    _sprintf
-              (local_160,"X size : %f",
+    _sprintf(local_160,"X size : %f",
                (double)(local_198.max_scaled.x - local_198.min_scaled.x) * 0.00390625);
     engine_2d_c_drawText_FUN_00401fd0(local_160,0,0);
-    _sprintf
-              (local_160,"Y size : %f",
+    _sprintf(local_160,"Y size : %f",
                (double)(local_198.max_scaled.y - local_198.min_scaled.y) * 0.00390625);
     engine_2d_c_drawText_FUN_00401fd0(local_160,0,0xb);
-    _sprintf
-              (local_160,"Z size : %f",
+    _sprintf(local_160,"Z size : %f",
                (double)(local_198.max_scaled.z - local_198.min_scaled.z) * 0.00390625);
     engine_2d_c_drawText_FUN_00401fd0(local_160,0,0x16);
     engine_2d_c_drawText_FUN_00401fd0("Hit a key...",0,0x2c);

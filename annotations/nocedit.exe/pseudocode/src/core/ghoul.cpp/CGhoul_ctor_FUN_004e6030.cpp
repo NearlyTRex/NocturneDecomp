@@ -19,7 +19,7 @@ CGhoul * __cdecl core_ghoul_cpp_CGhoul_ctor_FUN_004e6030(CGhoul *this_ptr)
   int iVar4;
   
   pCVar1 = (CGhoul *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
-  (pCVar1->base).base.base.vtable._ub = &g_CGhoulVTable;
+  (pCVar1->base).base.base.vtable._ub = &g_CGhoulVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar1->base).base.model,"guul.dfm");
   fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(20.0,35.0);

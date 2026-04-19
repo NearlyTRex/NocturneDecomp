@@ -13,7 +13,7 @@
 ;   TerminatedCString s_gabriela_dfm_0062acca
 ;   TerminatedCString s_gabgun_kfm_0062acd7
 ;   float FLOAT_0065e7ec = 10
-;   CDemonActor_vtable g_CGabriellaVTable
+;   CHero_full_vtable g_CGabriellaVTable
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_ctor_FUN_00438ba0

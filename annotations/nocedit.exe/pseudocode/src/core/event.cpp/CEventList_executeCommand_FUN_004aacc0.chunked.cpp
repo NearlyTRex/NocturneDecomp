@@ -329,7 +329,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_branch_0(CEven
     return 0;
 }
 
-// Chunk: chunk_0_else_2_else_1_else_1_else_1_branch_0 (lines 396-444 of original)
+// Chunk: chunk_0_else_2_else_1_else_1_else_1_branch_0 (lines 395-442 of original)
 static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_branch_0(CEventList_executeCommand_Ctx *ctx) {
     CEventList *&this_ptr = ctx->this_ptr;
     char *&command_buffer = ctx->command_buffer;
@@ -346,8 +346,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_branch_
                 sscanf
                           ((char *)local_ec,"(%[^,], %f, %f )%n",local_108d + 1,&local_c0,&local_bc);
                 if (local_b8 < 0) {
-                  _sprintf
-                            (g_EventErrorMessageBuffer,"Error parsing fadeSfx parms");
+                  _sprintf(g_EventErrorMessageBuffer,"Error parsing fadeSfx parms");
                   return 0;
                 }
                 local_ec = local_ec + local_b8;
@@ -386,7 +385,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_branch_
     return 0;
 }
 
-// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_branch_0 (lines 446-475 of original)
+// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_branch_0 (lines 444-473 of original)
 static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_branch_0(CEventList_executeCommand_Ctx *ctx) {
     CEventList *&this_ptr = ctx->this_ptr;
     char *&command_buffer = ctx->command_buffer;
@@ -423,7 +422,7 @@ LAB_004aaf38:
     return 0;
 }
 
-// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_branch_0x2c (lines 996-1048 of original)
+// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_branch_0x2c (lines 988-1038 of original)
 static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_branch_0x2c(CEventList_executeCommand_Ctx *ctx) {
     char &cVar1 = ctx->cVar1;
     uint &uVar14 = ctx->uVar14;
@@ -434,8 +433,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
                                         sscanf
                                                   ((char *)local_ec,",%[^)]%n",local_b15 + 1);
                                         if (local_7c < 3) {
-                                          _sprintf
-                                                    (g_EventErrorMessageBuffer,
+                                          _sprintf(g_EventErrorMessageBuffer,
                                                      "Error parsing playSfx parms");
                                           return 0;
                                         }
@@ -474,8 +472,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
                                           pcVar18 = pcVar18 + (uint)bVar20 * -2 + 1;
                                         } while (cVar1 != '\0');
                                         if (0x13 < ~uVar14 - 1) {
-                                          _sprintf
-                                                    (g_EventErrorMessageBuffer,
+                                          _sprintf(g_EventErrorMessageBuffer,
                                                      "handle name %s is too long, max %d chars",
                                                      local_b15 + 1,0x13);
                                           return 0;
@@ -483,7 +480,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
     return 0;
 }
 
-// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_check_local_f0_1 (lines 1060-1088 of original)
+// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_check_local_f0_1 (lines 1049-1077 of original)
 static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_check_local_f0_1(CEventList_executeCommand_Ctx *ctx) {
     CEventList *&this_ptr = ctx->this_ptr;
     int &iVar2 = ctx->iVar2;
@@ -518,7 +515,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
     return 0;
 }
 
-// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_check_pCVar4_0 (lines 1513-1537 of original)
+// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_check_pCVar4_0 (lines 1492-1515 of original)
 static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_check_pCVar4_0(CEventList_executeCommand_Ctx *ctx) {
     int &iVar2 = ctx->iVar2;
     CCharacter *&pCVar4 = ctx->pCVar4;
@@ -534,8 +531,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
                                                   core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0
                                                             (pCVar10,pcVar18,iVar2);
                                                   if (iVar2 < 0) {
-                                                    _sprintf
-                                                              (g_EventErrorMessageBuffer,
+                                                    _sprintf(g_EventErrorMessageBuffer,
                                                                "Model %s does not have state %s",
                                                                (pCVar4->model).model_name,
                                                                local_8bd + 1);
@@ -550,7 +546,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
     return 0;
 }
 
-// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_else_1_check_pCVar7_0 (lines 1817-1849 of original)
+// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_else_1_check_pCVar7_0 (lines 1788-1819 of original)
 static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_else_1_check_pCVar7_0(CEventList_executeCommand_Ctx *ctx) {
     CDeformableModelInstance *&this_ptr_00 = ctx->this_ptr_00;
     int &iVar2 = ctx->iVar2;
@@ -569,8 +565,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
                                                   core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
                                                             (pCVar10,pcVar18,iVar2);
                                                   if (iVar2 < 0) {
-                                                    _sprintf
-                                                              (g_EventErrorMessageBuffer,
+                                                    _sprintf(g_EventErrorMessageBuffer,
                                                                "Model %s does not have motion %s",
                                                                (pCVar7->base).model.model_name,
                                                                local_40d + 1);
@@ -592,7 +587,7 @@ static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_
     return 0;
 }
 
-// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_else_1_else_1 (lines 1929-2119 of original)
+// Chunk: chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_else_1_else_1 (lines 1899-2089 of original)
 static int CEventList_executeCommand_chunk_0_else_2_else_1_else_1_else_1_else_1_else_1_else_2_else_1_else_1(CEventList_executeCommand_Ctx *ctx) {
     char *&command_buffer = ctx->command_buffer;
     char &cVar1 = ctx->cVar1;
@@ -981,8 +976,7 @@ LAB_004aad41:
               sscanf((char *)local_ec,"(%f, %f )%n",&local_cc,&local_c8)
               ;
               if (local_c4 < 0) {
-                _sprintf
-                          (g_EventErrorMessageBuffer,"Error parsing fadeAmbientSound parms");
+                _sprintf(g_EventErrorMessageBuffer,"Error parsing fadeAmbientSound parms");
                 return 0;
               }
               local_ec = local_ec + local_c4;
@@ -1161,8 +1155,7 @@ LAB_004aad41:
                             sscanf
                                       ((char *)local_ec,"( %[^ )] )%n",local_121d + 1);
                             if (local_a8 < 5) {
-                              _sprintf
-                                        (g_EventErrorMessageBuffer,
+                              _sprintf(g_EventErrorMessageBuffer,
                                          "Error parsing incCounter arguments");
                               return 0;
                             }
@@ -1370,8 +1363,7 @@ LAB_004aad41:
                                   sscanf
                                             ((char *)local_ec,"(%[^,)]%n",local_efd + 1);
                                   if (local_8c < 3) {
-                                    _sprintf
-                                              (g_EventErrorMessageBuffer,
+                                    _sprintf(g_EventErrorMessageBuffer,
                                                "Error parsing killSfx parms");
                                     return 0;
                                   }
@@ -1407,8 +1399,7 @@ LAB_004aad41:
                                     sscanf
                                               ((char *)local_ec,",%f%n",&local_88);
                                     if (local_8c < 3) {
-                                      _sprintf
-                                                (g_EventErrorMessageBuffer,
+                                      _sprintf(g_EventErrorMessageBuffer,
                                                  "Error parsing killSfx parms");
                                       return 0;
                                     }
@@ -1421,8 +1412,7 @@ LAB_004aad41:
                                            ) != 0);
                                   if (*pbVar12 != 0x29) {
                                     local_ec = pbVar12;
-                                    _sprintf
-                                              (g_EventErrorMessageBuffer,
+                                    _sprintf(g_EventErrorMessageBuffer,
                                                "Can't find matching ) in killSfx command");
                                     return 0;
                                   }
@@ -1456,8 +1446,7 @@ LAB_004aad41:
                                     local_84 = -1;
                                     sscanf((char *)local_ec,"( )%n");
                                     if (local_84 < 2) {
-                                      _sprintf
-                                                (g_EventErrorMessageBuffer,
+                                      _sprintf(g_EventErrorMessageBuffer,
                                                  "Error parsing lightning command");
                                       return 0;
                                     }
@@ -1482,8 +1471,7 @@ LAB_004aad41:
                                       sscanf
                                                 ((char *)local_ec,"(%[^,)]%n",local_13ad + 1);
                                       if (local_7c < 3) {
-                                        _sprintf
-                                                  (g_EventErrorMessageBuffer,
+                                        _sprintf(g_EventErrorMessageBuffer,
                                                    "Error parsing playSfx parms");
                                         return 0;
                                       }
@@ -1531,8 +1519,7 @@ LAB_004aad41:
                                                & 2) != 0);
                                       if (*pbVar12 != 0x29) {
                                         local_ec = pbVar12;
-                                        _sprintf
-                                                  (g_EventErrorMessageBuffer,
+                                        _sprintf(g_EventErrorMessageBuffer,
                                                    "Can't find matching ) in playSfx command");
                                         return 0;
                                       }
@@ -1557,8 +1544,7 @@ LAB_004aad41:
                                                   ((char *)local_ec,"(%[^,], %f)%n",local_12e5 + 1,
                                                    &local_78);
                                         if (local_74 < 3) {
-                                          _sprintf
-                                                    (g_EventErrorMessageBuffer,
+                                          _sprintf(g_EventErrorMessageBuffer,
                                                      "Error parsing setCameraAmbient parms");
                                           return 0;
                                         }
@@ -1591,14 +1577,12 @@ LAB_004aad41:
                                         iVar2 = core_set_cpp_CDemonSet_findCameraByName_FUN_0056b790
                                                           (g_CDemonSetPtr,local_12e5 + 1);
                                         if (iVar2 < 0) {
-                                          _sprintf
-                                                    (g_EventErrorMessageBuffer,
+                                          _sprintf(g_EventErrorMessageBuffer,
                                                      "Camera \"%s\" does not exist.");
                                           return 0;
                                         }
                                         if ((local_78 < 0.0) || (0x42c80000 < (int)local_78)) {
-                                          _sprintf
-                                                    (g_EventErrorMessageBuffer,
+                                          _sprintf(g_EventErrorMessageBuffer,
                                                      "Ambient value %g is out of range (1..100)",
                                                      (double)local_78);
                                           return 0;
@@ -1624,8 +1608,7 @@ LAB_004aad41:
                                           sscanf
                                                     ((char *)local_ec,"( %[^,)]%n",local_ca5 + 1);
                                           if (local_6c < 5) {
-                                            _sprintf
-                                                      (g_EventErrorMessageBuffer,
+                                            _sprintf(g_EventErrorMessageBuffer,
                                                        "Error parsing setCounter arguments");
                                             return 0;
                                           }
@@ -1661,8 +1644,7 @@ LAB_004aad41:
                                             sscanf
                                                       ((char *)local_ec,",%d%n",&local_68);
                                             if (local_6c < 1) {
-                                              _sprintf
-                                                        (g_EventErrorMessageBuffer,
+                                              _sprintf(g_EventErrorMessageBuffer,
                                                          "Error parsing setCounter value argument");
                                               return 0;
                                             }
@@ -1673,8 +1655,7 @@ LAB_004aad41:
                                             }
                                           }
                                           if (*local_ec != 0x29) {
-                                            _sprintf
-                                                      (g_EventErrorMessageBuffer,
+                                            _sprintf(g_EventErrorMessageBuffer,
                                                        "Error parsing setCounter arguments");
                                             return 0;
                                           }
@@ -1701,15 +1682,13 @@ LAB_004aad41:
                                                       ((char *)local_ec,"(%d, %f)%n",&local_64,
                                                        &local_60);
                                             if (local_5c < 3) {
-                                              _sprintf
-                                                        (g_EventErrorMessageBuffer,
+                                              _sprintf(g_EventErrorMessageBuffer,
                                                          "Error parsing setGroupAmbient parms");
                                               return 0;
                                             }
                                             local_ec = local_ec + local_5c;
                                             if ((local_60 < 0.0) || (0x42c80000 < (int)local_60)) {
-                                              _sprintf
-                                                        (g_EventErrorMessageBuffer,
+                                              _sprintf(g_EventErrorMessageBuffer,
                                                          "Ambient value %g is out of range (1..100)",
                                                          (double)local_60);
                                               return 0;
@@ -1789,8 +1768,7 @@ LAB_004aad41:
                                                           ((char *)local_ec,"(%[^,], %[^)])%n",
                                                            local_d6d + 1,local_1475 + 1);
                                                 if (local_48 < 5) {
-                                                  _sprintf
-                                                            (g_EventErrorMessageBuffer,
+                                                  _sprintf(g_EventErrorMessageBuffer,
                                                              "Error parsing setLeverState command parms");
                                                   return 0;
                                                 }
@@ -1897,8 +1875,7 @@ LAB_004aad41:
                                                             ((char *)local_ec,"(%[^,], %[^)])%n",
                                                              local_985 + 1,local_8bd + 1);
                                                   if (local_40 < 5) {
-                                                    _sprintf
-                                                              (g_EventErrorMessageBuffer,
+                                                    _sprintf(g_EventErrorMessageBuffer,
                                                                "Error parsing setModelState command parms");
                                                     return 0;
                                                   }
@@ -1986,8 +1963,7 @@ LAB_004aad41:
                                                               ((char *)local_ec,"(%[^,], %f)%n",
                                                                local_a4d + 1,&local_3c);
                                                     if (local_38 < 3) {
-                                                      _sprintf
-                                                                (g_EventErrorMessageBuffer,
+                                                      _sprintf(g_EventErrorMessageBuffer,
                                                                  "Error parsing setTimer command parms"
                                                                 );
                                                       return 0;
@@ -2029,15 +2005,13 @@ LAB_004aad41:
                                                       pcVar18 = pcVar18 + (uint)bVar20 * -2 + 1;
                                                     } while (cVar1 != '\0');
                                                     if (0x1f < ~uVar14 - 1) {
-                                                      _sprintf
-                                                                (g_EventErrorMessageBuffer,
+                                                      _sprintf(g_EventErrorMessageBuffer,
                                                                  "Timer name \"%s\" is too long, (max %d chars)"
                                                                  ,local_a4d + 1,0x1f);
                                                       return 0;
                                                     }
                                                     if (local_3c < 0.0) {
-                                                      _sprintf
-                                                                (g_EventErrorMessageBuffer,
+                                                      _sprintf(g_EventErrorMessageBuffer,
                                                                  "Invalid timer duration");
                                                       return 0;
                                                     }
@@ -2065,8 +2039,7 @@ LAB_004aad41:
                                                                 ((char *)local_ec,"(%[^)])%n",
                                                                  local_e35 + 1);
                                                       if (local_34 < 3) {
-                                                        _sprintf
-                                                                  (g_EventErrorMessageBuffer,
+                                                        _sprintf(g_EventErrorMessageBuffer,
                                                                                                                                       
                                                   "Error parsing setWeather command parms");
                                                   return 0;
@@ -2113,8 +2086,7 @@ LAB_004aad41:
                                                                         (local_e35 + 1,
                                                                          "snow");
                                                       if (iVar2 != 0) {
-                                                        _sprintf
-                                                                  (g_EventErrorMessageBuffer,
+                                                        _sprintf(g_EventErrorMessageBuffer,
                                                                    "Invalid weather type: %s"
                                                                   );
                                                         return 0;
@@ -2147,8 +2119,7 @@ LAB_004aad41:
                                                                  "( %f, %f, %f, %f )%n",&local_30,
                                                                  &local_2c,&local_80,&local_28);
                                                       if (local_24 < 5) {
-                                                        _sprintf
-                                                                  (g_EventErrorMessageBuffer,
+                                                        _sprintf(g_EventErrorMessageBuffer,
                                                                                                                                       
                                                   "Error parsing shakeScreen command parms");
                                                   return 0;
@@ -2180,8 +2151,7 @@ LAB_004aad41:
                                                                 ((char *)local_ec,"(%[^,], %[^)])%n",
                                                                  local_72d + 1,local_40d + 1);
                                                       if (local_20 < 5) {
-                                                        _sprintf
-                                                                  (g_EventErrorMessageBuffer,
+                                                        _sprintf(g_EventErrorMessageBuffer,
                                                                                                                                       
                                                   "Error parsing slamModelToMotion command parms");
                                                   return 0;

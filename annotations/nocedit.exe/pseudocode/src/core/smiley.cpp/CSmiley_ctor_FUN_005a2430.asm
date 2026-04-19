@@ -13,7 +13,7 @@
 ;   TerminatedCString s_smiley_dfm_0064f165
 ;   float FLOAT_00662f6c = 50
 ;   float FLOAT_00662f70 = 100
-;   CDemonActor_vtable g_CSmileyVTable
+;   CEnemy_full_vtable g_CSmileyVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500

@@ -53,7 +53,7 @@
 ; Called Functions:
 ;   core_script.cpp_CScript_getLetterboxHeight_FUN_00559ac0
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_fillRectColor_FUN_00403170
 ;   engine_2d.c_fillRectWithBorder_FUN_00403200
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
@@ -143,8 +143,8 @@ section .text
     PUSH 0x62b265                       ; 004d8129 | = "%d - %s"
     LEA EAX,[ESP + 0x18]                ; 004d812e
     PUSH EAX                            ; 004d8132
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004d8133
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004d8133
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004d8138
     PUSH 0x0                            ; 004d813b
     PUSH 0xf8                           ; 004d813d

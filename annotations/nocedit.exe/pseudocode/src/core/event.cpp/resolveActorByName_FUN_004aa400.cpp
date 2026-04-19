@@ -40,15 +40,13 @@ CDemonActor * __cdecl core_event_cpp_resolveActorByName_FUN_004aa400(char *name,
       actor_ptr = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
                             (g_CDemonMissionPtr,name);
       if ((CHero *)actor_ptr == (CHero *)0x0) {
-        _sprintf
-                  (g_EventErrorMessageBuffer,"Actor \"%s\" does not exist.",name);
+        _sprintf(g_EventErrorMessageBuffer,"Actor \"%s\" does not exist.",name);
         return (CDemonActor *)0x0;
       }
       goto LAB_004aa48f;
     }
     if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
-      _sprintf
-                (g_EventErrorMessageBuffer,"Can't use '$' actor specifier in multi-player");
+      _sprintf(g_EventErrorMessageBuffer,"Can't use '$' actor specifier in multi-player");
       return (CDemonActor *)0x0;
     }
     actor_ptr = (CDemonActor *)g_HeroActors[g_LocalHeroIndex];
@@ -65,7 +63,6 @@ LAB_004aa48f:
     return g_ActorNameSentinel;
   }
   pcVar3 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(actor_ptr);
-  _sprintf
-            (g_EventErrorMessageBuffer,"Actor \"%s\" is of type %s, this command requires an actor of type %s.",name,pcVar3,class_name);
+  _sprintf(g_EventErrorMessageBuffer,"Actor \"%s\" is of type %s, this command requires an actor of type %s.",name,pcVar3,class_name);
   return (CDemonActor *)0x0;
 }

@@ -37,8 +37,8 @@
 ; Called Functions:
 ;   core_setedit.cpp_CDemonSet_importA3D_FUN_00578c60
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80
-;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_remove_FUN_005ff9d0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_dosio.c_makePath_FUN_00481f50
@@ -202,8 +202,8 @@ section .text
     PUSH 0x646b08                       ; 00578bac | = "Can't open %s"
     LEA EAX,[ESP + 0x408]               ; 00578bb1
     PUSH EAX                            ; 00578bb8
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00578bb9
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00578bb9
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00578bbe
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00578bc1
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()

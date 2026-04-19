@@ -23,7 +23,7 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
 ;   core_flame.cpp_CFlame_renderTransparent_FUN_004ca110
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0048c640
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
@@ -196,8 +196,8 @@ section .text
     PUSH 0x657076                       ; 005e9a51 | = "BWATER%d.RAW"
     ADD EAX,0x12c                       ; 005e9a56
     PUSH EAX                            ; 005e9a5b
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005e9a5c
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005e9a5c
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005e9a61
     PUSH 0xbb80                         ; 005e9a64
     MOV ESI,dword ptr [0x006703ec]      ; 005e9a69 | g_CDemonRendererPtr2

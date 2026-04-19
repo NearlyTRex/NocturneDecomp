@@ -61,8 +61,7 @@ void __cdecl shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(int show_textu
   else {
     pcVar6 = "result";
   }
-  _sprintf
-            (local_100,"CramTex II %s:  N=%d  Map %d/%d  Coverage: %4.1f%%  Shrink: %4.1f%%  Size: %u (%u)\n",pcVar6,g_CramTextureCount,
+  _sprintf(local_100,"CramTex II %s:  N=%d  Map %d/%d  Coverage: %4.1f%%  Shrink: %4.1f%%  Size: %u (%u)\n",pcVar6,g_CramTextureCount,
              g_CramMapNumber + 1,g_CramTotalMaps,
              ((double)iVar4 * 100) /
              (double)(g_CramCurrentAcceptableSize * g_CramCurrentAcceptableSize * g_CramTotalMaps),

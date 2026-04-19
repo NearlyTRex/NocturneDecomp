@@ -19,7 +19,7 @@ CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_005f8fe0(CZombie *this_ptr)
   float fVar2;
 
   pCVar3 = (CZombie *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
-  (pCVar3->base).base.base.vtable._ub = &g_CZombieVTable;
+  (pCVar3->base).base.base.vtable._ub = &g_CZombieVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar3->base).base.model,"zombie1.dfm");
   (pCVar3->base).base.collision_cylinder_height = 0.5;

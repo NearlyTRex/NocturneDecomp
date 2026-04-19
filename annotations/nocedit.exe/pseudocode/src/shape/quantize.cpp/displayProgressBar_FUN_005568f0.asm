@@ -22,7 +22,7 @@
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_memory.c_memset_FUN_005fde40
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
 ;
@@ -51,8 +51,8 @@ section .text
     CALL crt_math.c_round_FUN_005fe6b0  ; 0055692e
         ;   XREF to: 005fe6b0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005fe6b0(double value)
     FISTP dword ptr [ESP + 0x70]        ; 00556933
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00556937
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00556937
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055693c
     MOV DL,0x5b                         ; 0055693f
     MOV ECX,dword ptr [ESP + 0x64]      ; 00556941
@@ -115,8 +115,8 @@ section .text
     PUSH 0x6410ae                       ; 005569b6 | = "%s [....................]\n"
     LEA EAX,[ESP + 0x8]                 ; 005569bb
     PUSH EAX                            ; 005569bf
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005569c0
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005569c0
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EDX,dword ptr [0x03106158]      ; 005569c5 | g_QuantizeCurrentLineNumber
     ADD EDX,0x4                         ; 005569cb
     LEA EAX,[EDX*0x4 + 0x0]             ; 005569ce

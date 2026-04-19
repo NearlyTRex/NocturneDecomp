@@ -13,7 +13,7 @@
 ;   TerminatedCString s_cow_dfm_00619470
 ;   float FLOAT_0065c09c = 50
 ;   float FLOAT_0065c0a0 = 100
-;   CDemonActor_vtable g_CZombieCowVTable
+;   CEnemy_full_vtable g_CZombieCowVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500

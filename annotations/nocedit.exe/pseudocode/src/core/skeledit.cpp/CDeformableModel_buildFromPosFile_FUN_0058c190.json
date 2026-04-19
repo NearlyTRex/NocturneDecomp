@@ -8,19 +8,19 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1804,
-    "complexity_score": 1012,
+    "complexity_score": 1010,
     "cross_reference_count": 0,
     "function_call_count": 64,
     "global_count": 65,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 717,
+    "pseudocode_lines": 715,
     "suspect_count": 28,
     "suspect_types": [
       "pointer_cast",
       "unnamed_local",
       "unrolled_strcpy"
     ],
-    "total_lines": 2521
+    "total_lines": 2519
   },
   "cross_references": [],
   "function": {
@@ -161,11 +161,6 @@
       "name": "crt_file.c_makepath_FUN_005febfc"
     },
     {
-      "addr": "005fdbd0",
-      "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
-    },
-    {
       "addr": "005fe840",
       "is_variadic": false,
       "name": "crt_stdio.c_fgetc_FUN_005fe840"
@@ -179,6 +174,11 @@
       "addr": "005fe7c0",
       "is_variadic": true,
       "name": "crt_stdio.c_fscanf_FUN_005fe7c0"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005ff178",
@@ -802,7 +802,7 @@
   "resolved_suspects": [
     {
       "description": "Unknown/mangled field access",
-      "line": 206,
+      "line": 205,
       "match": "._0_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -811,7 +811,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 226,
+      "line": 225,
       "match": "._0_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -820,7 +820,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 392,
+      "line": 390,
       "match": "._0_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -829,7 +829,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 504,
+      "line": 502,
       "match": "._0_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -838,7 +838,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 531,
+      "line": 529,
       "match": "._0_4_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -1393,7 +1393,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 211,
+      "line": 210,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&local_2520[0].m[0].w + iVar5) = local_11c.m[0].w;",
@@ -1401,7 +1401,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 212,
+      "line": 211,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&local_2520[0].m[0].x + iVar5) = local_11c.m[0].x;",
@@ -1409,7 +1409,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 213,
+      "line": 212,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&local_2520[0].m[0].y + iVar5) = local_11c.m[0].y;",
@@ -1417,7 +1417,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 214,
+      "line": 213,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&local_2520[0].m[0].z + iVar5) = local_11c.m[0].z;",
@@ -1425,7 +1425,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 215,
+      "line": 214,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&local_2520[0].m[1].w + iVar5) = local_11c.m[1].w;",
@@ -1433,7 +1433,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 216,
+      "line": 215,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&local_2520[0].m[1].x + iVar5) = local_11c.m[1].x;",
@@ -1441,7 +1441,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 217,
+      "line": 216,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&local_2520[0].m[1].y + iVar5) = local_11c.m[1].y;",
@@ -1449,7 +1449,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 218,
+      "line": 217,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&local_2520[0].m[1].z + iVar5) = local_11c.m[1].z;",
@@ -1457,7 +1457,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 219,
+      "line": 218,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&local_2520[0].m[2].w + iVar5) = local_11c.m[2].w;",
@@ -1465,7 +1465,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 220,
+      "line": 219,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&local_2520[0].m[2].x + iVar5) = local_11c.m[2].x;",
@@ -1473,7 +1473,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 221,
+      "line": 220,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&local_2520[0].m[2].y + iVar5) = local_11c.m[2].y;",
@@ -1481,7 +1481,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 222,
+      "line": 221,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&local_2520[0].m[2].z + iVar5) = local_11c.m[2].z;",
@@ -1489,7 +1489,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 379,
+      "line": 377,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)pcVar21 = *(uint *)((int)pSVar2->bone_weights + local_68 + 0xc);",
@@ -1497,7 +1497,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 380,
+      "line": 378,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)(pcVar21 + 4) = *(uint *)((int)pSVar2->bone_weights + local_68 + 0x10);",
@@ -1505,7 +1505,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 381,
+      "line": 379,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)(pcVar21 + 8) = *(uint *)((int)pSVar2->bone_weights + local_68 + 0x14);",
@@ -1513,7 +1513,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 425,
+      "line": 423,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar17 = (uint *)((int)(local_1f4.tri_data)->attribute_indices + local_58);",
@@ -1521,7 +1521,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 429,
+      "line": 427,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar3 = *(uint *)((int)this_ptr->index_data_ptr[0] + local_60);",
@@ -1529,7 +1529,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 467,
+      "line": 465,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar13 = (uint *)((int)(local_1f4.tri_data)->attribute_indices + local_48);",
@@ -1537,7 +1537,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 471,
+      "line": 469,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar3 = *(uint *)((int)this_ptr->index_data_ptr[0] + local_50);",
@@ -1545,7 +1545,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 512,
+      "line": 510,
       "match": "(SMRGLTextureLod *)((int)",
       "severity": "mild",
       "text": "pSVar21 = (SMRGLTextureLod *)((int)pSVar21 + (uint)bVar23 * -8 + 4);",
@@ -1553,7 +1553,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 513,
+      "line": 511,
       "match": "(STextureSet *)((int)",
       "severity": "mild",
       "text": "pSVar17 = (STextureSet *)((int)pSVar17 + (uint)bVar23 * -8 + 4);",
@@ -1561,7 +1561,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 592,
+      "line": 590,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar9 = *(int *)((int)local_d8 + iVar5);",
@@ -1569,7 +1569,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 614,
+      "line": 612,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(&local_1f4,*(int *)((int)local_ec + local_40),&local_2dc);",
@@ -1577,7 +1577,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 323,
+      "line": 321,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -1585,7 +1585,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 630,
+      "line": 628,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -1593,7 +1593,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 694,
+      "line": 692,
       "match": "do {",
       "severity": "mild",
       "text": "do {",

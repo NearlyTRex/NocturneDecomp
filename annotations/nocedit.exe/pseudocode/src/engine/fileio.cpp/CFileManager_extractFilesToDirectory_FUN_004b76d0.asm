@@ -41,7 +41,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_time.c__localtime_FUN_00600288
 ;   crt_time.c__strftime_FUN_006002d4
 ;   engine_dosio.c_findFileNormally_FUN_004817c0
@@ -134,8 +134,8 @@ section .text
     PUSH 0x627e6c                       ; 004b7795 | = "%s\t%d"
     LEA EAX,[ESP + 0xffc]               ; 004b779a
     PUSH EAX                            ; 004b77a1
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b77a2
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b77a2
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004b77a7
     LEA EAX,[ESP + 0xff0]               ; 004b77aa
     PUSH EAX                            ; 004b77b1
@@ -276,8 +276,8 @@ section .text
     PUSH 0x627ef6                       ; 004b7947 | = "%s already exists on disk.\n\nWould y..."
     LEA EAX,[ESP + 0x44c]               ; 004b794c
     PUSH EAX                            ; 004b7953
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b7954
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b7954
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x1c                        ; 004b7959
     LEA EAX,[ESP + 0x434]               ; 004b795c
     PUSH EAX                            ; 004b7963

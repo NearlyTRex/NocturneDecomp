@@ -139,8 +139,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
             *piVar5 = local_b8.item_count;
             core_skeleton_cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00
                       (this_ptr,&local_a8,lod_level,local_1c,bone_matrices);
-            _sprintf
-                      (local_340,"%g,%g,%g",SUB84(__BITCAST_UINT64((double)local_a8.x),0),
+            _sprintf(local_340,"%g,%g,%g",SUB84(__BITCAST_UINT64((double)local_a8.x),0),
                        (int)((ulonglong)(double)local_a8.x >> 0x20),(double)local_a8.y,
                        (double)local_a8.z);
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_b8,local_340);
@@ -155,8 +154,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
         puVar2 = (ushort *)
                  ((int)&(this_ptr->tri_data_ptr[lod_level]->vertex_indices).vertex_index_0 +
                  local_2c);
-        _sprintf
-                  (local_340,"%d, %d,%g,%g, %d,%g,%g, %d,%g,%g",
+        _sprintf(local_340,"%d, %d,%g,%g, %d,%g,%g, %d,%g,%g",
                    *(uint *)((int)this_ptr->index_data_ptr[lod_level] + local_28),
                    dest[*puVar2],(double)puVar2[3] * 0.00390625,
                    (double)puVar2[6] * 0.00390625,dest[puVar2[1]],
@@ -179,8 +177,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
           puVar6 = (ushort *)
                    ((int)&(this_ptr->tri_data_ptr[lod_level]->vertex_indices).vertex_index_0 +
                    local_38);
-          _sprintf
-                    (local_340,"%d, %d,%g,%g, %d,%g,%g, %d,%g,%g",
+          _sprintf(local_340,"%d, %d,%g,%g, %d,%g,%g, %d,%g,%g",
                      this_ptr->index_data_ptr[lod_level][local_3c],dest[*puVar6],
                      (double)puVar6[3] * 0.00390625,(double)puVar6[6] * 0.00390625,
                      dest[puVar6[1]],(double)puVar6[4] * 0.00390625,

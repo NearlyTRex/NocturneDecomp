@@ -36,7 +36,7 @@
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_motion.cpp_CMotionController_getCurrentStateName_FUN_0052dcf0
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
@@ -158,8 +158,8 @@ section .text
     PUSH 0x63ac46                       ; 0052e82d | = "%s -> %s"
     LEA EAX,[EBP + -0x1e]               ; 0052e832
     PUSH EAX                            ; 0052e835
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0052e836
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0052e836
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0052e83b
     LEA EAX,[EBX + 0xb]                 ; 0052e83e
         ;   Label: LAB_0052e83e
@@ -183,8 +183,8 @@ section .text
     PUSH 0x63ac4f                       ; 0052e86b | = "%s : %5.2f"
     LEA EAX,[EBP + -0x1e]               ; 0052e870
     PUSH EAX                            ; 0052e873
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0052e874
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0052e874
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 0052e879
     ADD EBX,0x16                        ; 0052e87c
     PUSH EBX                            ; 0052e87f

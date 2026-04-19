@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_svetlana_dfm_006548f9
-;   CDemonActor_vtable g_CSvetlanaVTable
+;   CHero_full_vtable g_CSvetlanaVTable
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_ctor_FUN_00438ba0

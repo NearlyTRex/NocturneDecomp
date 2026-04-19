@@ -32,7 +32,7 @@
 ; Called Functions:
 ;   core_script.cpp_CScript_drawLine_FUN_005664d0
 ;   core_script.cpp_updateSelection_FUN_00564500
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_drawHLine_FUN_00402ee0
 ;   engine_2d.c_drawVLine_FUN_00402ff0
 ;   engine_2d.c_fillRectColor_FUN_00403170
@@ -171,8 +171,8 @@ section .text
     PUSH 0x643d74                       ; 00564738 | = "Ln %d, Col %d"
     LEA EAX,[ESP + 0xc]                 ; 0056473d
     PUSH EAX                            ; 00564741
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00564742
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00564742
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00564747
     MOV EAX,ESP                         ; 0056474a
     PUSH EAX                            ; 0056474c

@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_flashlit_kfm_0062a3c9
 ;   float FLOAT_0065e3cc = 8
-;   CDemonActor_vtable g_CFlashlightVTable
+;   CWeapon_full_vtable g_CFlashlightVTable
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0

@@ -36,8 +36,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showSoundFilesInMission_FUN_0053ec80
         if ((this_ptr_01->type == PROP_SOUND) &&
            (core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50
                       (this_ptr_01,this_ptr_00,acStack_d8), acStack_d8[0] != '\0')) {
-          _sprintf
-                    (acStack_204,"%s\t%s %s",acStack_d8,this_ptr_00,this_ptr_01->name);
+          _sprintf(acStack_204,"%s\t%s %s",acStack_d8,this_ptr_00,this_ptr_01->name);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5ac.base,acStack_204);
         }
         iVar1 = iVar1 + 1;

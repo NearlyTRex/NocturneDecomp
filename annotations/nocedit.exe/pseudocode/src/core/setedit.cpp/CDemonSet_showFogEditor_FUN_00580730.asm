@@ -50,7 +50,7 @@
 ;   core_sound.cpp_CSound_getSoundModeName_FUN_005b3c70
 ;   core_sound.cpp_CSound_selectReverbPreset_FUN_005b3d20
 ;   core_sound.cpp_CSound_setReverbPreset_FUN_005b3cc0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_stdio.c_sscanf_FUN_0060013c
 ;   crt_string.c__strtod_FUN_005ff0f3
 ;   crt_string.c_strupr_FUN_00600770
@@ -136,8 +136,8 @@ section .text
     PUSH 0x648682                       ; 00580831 | = "2.  Fog color : %d,%d,%d"
     LEA EAX,[ESP + 0x4b8]               ; 00580836
     PUSH EAX                            ; 0058083d
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0058083e
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0058083e
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 00580843
     PUSH 0x2c                           ; 00580846
     PUSH 0x0                            ; 00580848
@@ -158,8 +158,8 @@ section .text
     PUSH 0x64869b                       ; 00580875 | = "3.  Fog velocity : %f,%f,%f"
     LEA EAX,[ESP + 0x4c4]               ; 0058087a
     PUSH EAX                            ; 00580881
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00580882
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00580882
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x20                        ; 00580887
     PUSH 0x37                           ; 0058088a
     PUSH 0x0                            ; 0058088c
@@ -174,8 +174,8 @@ section .text
     PUSH 0x6486b7                       ; 005808a7 | = "4.  Fog taper : %f"
     LEA EAX,[ESP + 0x4b4]               ; 005808ac
     PUSH EAX                            ; 005808b3
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005808b4
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005808b4
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005808b9
     PUSH 0x42                           ; 005808bc
     PUSH 0x0                            ; 005808be
@@ -190,8 +190,8 @@ section .text
     PUSH 0x6486ca                       ; 005808d9 | = "5.  Fog density : %f"
     LEA EAX,[ESP + 0x4b4]               ; 005808de
     PUSH EAX                            ; 005808e5
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005808e6
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005808e6
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005808eb
     PUSH 0x4d                           ; 005808ee
     PUSH 0x0                            ; 005808f0
@@ -206,8 +206,8 @@ section .text
     PUSH 0x6486df                       ; 0058090b | = "T.  Temperature (F) : %3.2f"
     LEA EAX,[ESP + 0x4b4]               ; 00580910
     PUSH EAX                            ; 00580917
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00580918
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00580918
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0058091d
     PUSH 0x58                           ; 00580920
     PUSH 0x0                            ; 00580922
@@ -264,8 +264,8 @@ section .text
     PUSH 0x648787                       ; 005809c5 | = "R.  Default set reverb : %s"
     LEA EAX,[ESP + 0x4b0]               ; 005809ca
     PUSH EAX                            ; 005809d1
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005809d2
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005809d2
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005809d7
     PUSH 0xa5                           ; 005809da
         ;   Label: LAB_005809da
@@ -372,8 +372,8 @@ section .text
     PUSH 0x648663                       ; 00580b11 | = "1.  Fog settings for camera %s"
     LEA EAX,[ESP + 0x3b0]               ; 00580b16
     PUSH EAX                            ; 00580b1d
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00580b1e
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00580b1e
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00580b23
     PUSH 0x16                           ; 00580b26
     PUSH 0x0                            ; 00580b28
@@ -397,8 +397,8 @@ section .text
     PUSH 0x6487a3                       ; 00580b62 | = "R.  Reverb for camera %s : %s"
     LEA EAX,[ESP + 0x4b4]               ; 00580b67
     PUSH EAX                            ; 00580b6e
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00580b6f
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00580b6f
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00580b74
     JMP 0x005809da                      ; 00580b77
         ;   XREF to: 005809da (UNCONDITIONAL_JUMP)  ; LAB_005809da
@@ -720,8 +720,8 @@ section .text
     PUSH 0x6488b8                       ; 00580f07 | = "Edit reverb for camera %s"
     LEA EAX,[ESP + 0x4b0]               ; 00580f0c
     PUSH EAX                            ; 00580f13
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00580f14
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00580f14
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00580f19
     MOV EAX,dword ptr [EBP + 0x14]      ; 00580f1c
     IMUL EAX,dword ptr [EAX + 0x15aea4],0x1a4 ; 00580f1f

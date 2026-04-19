@@ -45,7 +45,7 @@
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
 ;   core_game.cpp_CGame_updateDT_FUN_004d7d90
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_2d.c_fillRectColor_FUN_00403170
@@ -215,8 +215,8 @@ section .text
     PUSH 0x638296                       ; 0051d6b4 | = "%d faces, %d original"
     LEA EAX,[ESP + 0xc]                 ; 0051d6b9
     PUSH EAX                            ; 0051d6bd
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0051d6be
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0051d6be
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0051d6c3
     PUSH 0x0                            ; 0051d6c6
     PUSH 0x0                            ; 0051d6c8
@@ -292,8 +292,8 @@ section .text
     PUSH 0x6382ac                       ; 0051d78d | = "Pixel Height: %d"
     LEA EAX,[ESP + 0x8]                 ; 0051d792
     PUSH EAX                            ; 0051d796
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0051d797
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0051d797
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0051d79c
     PUSH 0x16                           ; 0051d79f
     PUSH 0x0                            ; 0051d7a1

@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBoth_FUN_00489730
-;   crt_stdio.c__vsprintf_FUN_005fdba8
+;   crt_stdio.c_vsprintf_FUN_005fdba8
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     PUSH EDX                            ; 004897b6
     LEA EAX,[ESP + 0x8]                 ; 004897b7
     PUSH EAX                            ; 004897bb
-    CALL crt_stdio.c__vsprintf_FUN_005fdba8 ; 004897bc
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
+    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 004897bc
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 004897c1
     MOV EBX,dword ptr [ESP + 0x101c]    ; 004897c4
     PUSH EBX                            ; 004897cb

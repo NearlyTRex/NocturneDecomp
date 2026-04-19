@@ -32,7 +32,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_sound.cpp_CSound_getSoundDuration_FUN_005b3ba0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
 ;
 ; *****************************************************************************
@@ -106,8 +106,8 @@ section .text
     PUSH 0x6399fa                       ; 00527a74 | = "mobster-cheese-%c-%c-%d.wav"
     LEA EAX,[ESP + 0x10]                ; 00527a79
     PUSH EAX                            ; 00527a7d
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00527a7e
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00527a7e
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 00527a83
     MOV EAX,ESP                         ; 00527a86
     PUSH EAX                            ; 00527a88

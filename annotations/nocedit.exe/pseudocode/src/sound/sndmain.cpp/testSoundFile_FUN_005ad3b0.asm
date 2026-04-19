@@ -25,7 +25,7 @@
 ;   char[220] g_SoundTestErrorBuffer
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   sound_sndmain.cpp_CSfxSample_init_FUN_005a8480
 ;   sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720
@@ -181,8 +181,8 @@ section .text
     PUSH EDX                            ; 005ad4eb
     PUSH 0x651233                       ; 005ad4ec | = "Can't get sample info for %s"
     PUSH 0x3f5d8a0                      ; 005ad4f1 | g_SoundTestErrorBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005ad4f6
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005ad4f6
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x3f5d8a0                   ; 005ad4fb | g_SoundTestErrorBuffer
     ADD ESP,0xc                         ; 005ad500
     JMP 0x005ad4e1                      ; 005ad503
@@ -192,8 +192,8 @@ section .text
     PUSH EDI                            ; 005ad508
     PUSH 0x651250                       ; 005ad509 | = "Sample %s has unknown or invalid length"
     PUSH 0x3f5d8a0                      ; 005ad50e | g_SoundTestErrorBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005ad513
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005ad513
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x3f5d8a0                   ; 005ad518 | g_SoundTestErrorBuffer
     ADD ESP,0xc                         ; 005ad51d
     JMP 0x005ad4e1                      ; 005ad520
@@ -203,8 +203,8 @@ section .text
     PUSH ESI                            ; 005ad525
     PUSH 0x651278                       ; 005ad526 | = "Error playing %s"
     PUSH 0x3f5d8a0                      ; 005ad52b | g_SoundTestErrorBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005ad530
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005ad530
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x3f5d8a0                   ; 005ad535 | g_SoundTestErrorBuffer
     ADD ESP,0xc                         ; 005ad53a
     JMP 0x005ad4e1                      ; 005ad53d

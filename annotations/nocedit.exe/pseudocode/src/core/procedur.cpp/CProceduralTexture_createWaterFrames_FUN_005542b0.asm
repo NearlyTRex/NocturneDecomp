@@ -42,9 +42,9 @@
 ;   core_procedur.cpp_CProceduralTexture_applyRipple_FUN_00554670
 ;   core_procedur.cpp_CProceduralTexture_calculateWaveOffset_FUN_00554620
 ;   crt_memory.c_memset_FUN_005fde40
-;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fputc_FUN_006007a0
 ;   crt_stdio.c_fwrite_FUN_005fdc00
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_stdlib.c_rand_FUN_005feb5c
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -171,8 +171,8 @@ section .text
     PUSH 0x640938                       ; 00554468 | = "water%d.raw"
     LEA EAX,[ESP + 0x8]                 ; 0055446d
     PUSH EAX                            ; 00554471
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00554472
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00554472
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00554477
     PUSH 0x640944                       ; 0055447a | = "wb"
     LEA EAX,[ESP + 0x4]                 ; 0055447f
@@ -213,8 +213,8 @@ section .text
     PUSH 0x64098d                       ; 005544ed | = "water%d.act"
     LEA EAX,[ESP + 0x8]                 ; 005544f2
     PUSH EAX                            ; 005544f6
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005544f7
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005544f7
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005544fc
     PUSH 0x640999                       ; 005544ff | = "wb"
     LEA EAX,[ESP + 0x4]                 ; 00554504

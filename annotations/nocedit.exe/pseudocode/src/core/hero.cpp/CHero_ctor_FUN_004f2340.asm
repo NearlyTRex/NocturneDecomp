@@ -18,7 +18,7 @@
 ;   core_svetlana.cpp_CSvetlana_ctor_FUN_005d8850 at 005d8856
 ;
 ; Referenced Globals:
-;   CDemonActor_vtable g_CHeroVTable
+;   CHero_full_vtable g_CHeroVTable
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_ctor_FUN_00427e20

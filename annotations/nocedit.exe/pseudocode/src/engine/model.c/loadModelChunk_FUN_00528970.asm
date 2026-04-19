@@ -30,8 +30,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fread_FUN_005fd990
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_debugMalloc_FUN_0050f250
@@ -74,8 +74,8 @@ section .text
     PUSH 0x639ca7                       ; 005289b9 | = "Out of partial model mem : %s"
     LEA EAX,[ESP + 0x8]                 ; 005289be
     PUSH EAX                            ; 005289c2
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005289c3
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005289c3
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x2ee                       ; 005289c8
     ADD ESP,0xc                         ; 005289cd
     MOV [0x02f0ca4c],EAX                ; 005289d0 | g_CurrentLineNumber
@@ -133,8 +133,8 @@ section .text
     PUSH 0x639c6a                       ; 00528a50 | = "Unable to open model: %s"
     LEA EAX,[ESP + 0x8]                 ; 00528a55
     PUSH EAX                            ; 00528a59
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00528a5a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00528a5a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EDX,0x639c83                    ; 00528a5f | = "..\\engine\\model.c"
     ADD ESP,0xc                         ; 00528a64
     MOV EAX,ESP                         ; 00528a67

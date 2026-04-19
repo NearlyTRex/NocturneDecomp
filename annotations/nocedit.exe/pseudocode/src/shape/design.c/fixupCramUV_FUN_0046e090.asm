@@ -41,7 +41,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -238,8 +238,8 @@ section .text
     PUSH EAX                            ; 0046e2a5 | = "fixupCramUV - UV out of range: %f, %f"
     LEA EAX,[EBP + 0xffffff7c]          ; 0046e2a6
     PUSH EAX                            ; 0046e2ac
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0046e2ad
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0046e2ad
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x18                        ; 0046e2b2
     MOV dword ptr [0x02f0ca48],0x61de44 ; 0046e2b5 | g_CurrentFilename | = "..\\shape\\design.c"
     MOV dword ptr [0x02f0ca4c],0x2c3b   ; 0046e2bf | g_CurrentLineNumber

@@ -1077,8 +1077,8 @@ section .text
     PUSH 0x624896                       ; 004ab552 | = "Error parsing fadeAmbientSound parms"
         ;   Label: LAB_004ab552
     PUSH 0x2d0a460                      ; 004ab557 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ab55c
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ab55c
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004ab561
     XOR EAX,EAX                         ; 004ab564
     LEA ESP,[EBP + 0x7e]                ; 004ab566
@@ -1183,8 +1183,8 @@ section .text
     PUSH 0x6248d6                       ; 004ab650 | = "Error parsing fadeSfx parms"
         ;   Label: LAB_004ab650
     PUSH 0x2d0a460                      ; 004ab655 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ab65a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ab65a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004ab65f
     XOR EAX,EAX                         ; 004ab662
     LEA ESP,[EBP + 0x7e]                ; 004ab664
@@ -1772,8 +1772,8 @@ section .text
     PUSH 0x6249a8                       ; 004abbc0 | = "Error parsing incCounter arguments"
         ;   Label: LAB_004abbc0
     PUSH 0x2d0a460                      ; 004abbc5 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004abbca
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004abbca
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004abbcf
     XOR EAX,EAX                         ; 004abbd2
     LEA ESP,[EBP + 0x7e]                ; 004abbd4
@@ -2324,8 +2324,8 @@ section .text
     PUSH 0x624b2c                       ; 004ac100 | = "Error parsing killSfx parms"
         ;   Label: LAB_004ac100
     PUSH 0x2d0a460                      ; 004ac105 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ac10a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ac10a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004ac10f
     XOR EAX,EAX                         ; 004ac112
     LEA ESP,[EBP + 0x7e]                ; 004ac114
@@ -2386,8 +2386,8 @@ section .text
     PUSH 0x624b4e                       ; 004ac17e | = "Error parsing killSfx parms"
         ;   Label: LAB_004ac17e
     PUSH 0x2d0a460                      ; 004ac183 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ac188
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ac188
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004ac18d
     XOR EAX,EAX                         ; 004ac190
     LEA ESP,[EBP + 0x7e]                ; 004ac192
@@ -2437,8 +2437,8 @@ section .text
     PUSH 0x624b6a                       ; 004ac1f7 | = "Can't find matching ) in killSfx command"
         ;   Label: LAB_004ac1f7
     PUSH 0x2d0a460                      ; 004ac1fc | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ac201
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ac201
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004ac206
     XOR EAX,EAX                         ; 004ac209
     LEA ESP,[EBP + 0x7e]                ; 004ac20b
@@ -2521,8 +2521,8 @@ section .text
     PUSH 0x624ba3                       ; 004ac2c9 | = "Error parsing lightning command"
         ;   Label: LAB_004ac2c9
     PUSH 0x2d0a460                      ; 004ac2ce | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ac2d3
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ac2d3
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004ac2d8
     XOR EAX,EAX                         ; 004ac2db
     LEA ESP,[EBP + 0x7e]                ; 004ac2dd
@@ -2624,8 +2624,8 @@ section .text
     PUSH 0x624bd5                       ; 004ac3be | = "Error parsing playSfx parms"
         ;   Label: LAB_004ac3be
     PUSH 0x2d0a460                      ; 004ac3c3 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ac3c8
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ac3c8
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004ac3cd
     XOR EAX,EAX                         ; 004ac3d0
     LEA ESP,[EBP + 0x7e]                ; 004ac3d2
@@ -2728,8 +2728,8 @@ section .text
     PUSH 0x624bfa                       ; 004ac4ad | = "Error parsing playSfx parms"
         ;   Label: LAB_004ac4ad
     PUSH 0x2d0a460                      ; 004ac4b2 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ac4b7
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ac4b7
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004ac4bc
     XOR EAX,EAX                         ; 004ac4bf
     LEA ESP,[EBP + 0x7e]                ; 004ac4c1
@@ -2762,8 +2762,8 @@ section .text
     PUSH EAX                            ; 004ac4f2
     PUSH 0x624c16                       ; 004ac4f3 | = "handle name %s is too long, max %d chars"
     PUSH 0x2d0a460                      ; 004ac4f8 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ac4fd
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ac4fd
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004ac502
     XOR EAX,EAX                         ; 004ac505
     LEA ESP,[EBP + 0x7e]                ; 004ac507
@@ -2832,8 +2832,8 @@ section .text
     PUSH 0x624c3f                       ; 004ac5af | = "Can't find matching ) in playSfx command"
         ;   Label: LAB_004ac5af
     PUSH 0x2d0a460                      ; 004ac5b4 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ac5b9
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ac5b9
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004ac5be
     XOR EAX,EAX                         ; 004ac5c1
     LEA ESP,[EBP + 0x7e]                ; 004ac5c3
@@ -2960,8 +2960,8 @@ section .text
     PUSH 0x624c8b                       ; 004ac6f1 | = "Error parsing setCameraAmbient parms"
         ;   Label: LAB_004ac6f1
     PUSH 0x2d0a460                      ; 004ac6f6 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ac6fb
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ac6fb
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004ac700
     XOR EAX,EAX                         ; 004ac703
     LEA ESP,[EBP + 0x7e]                ; 004ac705
@@ -3019,8 +3019,8 @@ section .text
     PUSH EAX                            ; 004ac778
     PUSH 0x624cb0                       ; 004ac779 | = "Camera \"%s\" does not exist."
     PUSH 0x2d0a460                      ; 004ac77e | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ac783
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ac783
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004ac788
     XOR EAX,EAX                         ; 004ac78b
     LEA ESP,[EBP + 0x7e]                ; 004ac78d
@@ -3035,8 +3035,8 @@ section .text
     FSTP double ptr [ESP]               ; 004ac79b
     PUSH 0x624ccc                       ; 004ac79e | = "Ambient value %g is out of range (1....."
     PUSH 0x2d0a460                      ; 004ac7a3 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ac7a8
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ac7a8
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004ac7ad
     XOR EAX,EAX                         ; 004ac7b0
     LEA ESP,[EBP + 0x7e]                ; 004ac7b2
@@ -3136,8 +3136,8 @@ section .text
     PUSH 0x624d0c                       ; 004ac894 | = "Error parsing setCounter arguments"
         ;   Label: LAB_004ac894
     PUSH 0x2d0a460                      ; 004ac899 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ac89e
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ac89e
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004ac8a3
     XOR EAX,EAX                         ; 004ac8a6
     LEA ESP,[EBP + 0x7e]                ; 004ac8a8
@@ -3215,8 +3215,8 @@ section .text
     PUSH 0x624d35                       ; 004ac942 | = "Error parsing setCounter value argument"
         ;   Label: LAB_004ac942
     PUSH 0x2d0a460                      ; 004ac947 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ac94c
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ac94c
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004ac951
     XOR EAX,EAX                         ; 004ac954
     LEA ESP,[EBP + 0x7e]                ; 004ac956
@@ -3232,8 +3232,8 @@ section .text
     PUSH 0x624d5d                       ; 004ac966 | = "Error parsing setCounter arguments"
         ;   Label: LAB_004ac966
     PUSH 0x2d0a460                      ; 004ac96b | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ac970
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ac970
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004ac975
     XOR EAX,EAX                         ; 004ac978
     LEA ESP,[EBP + 0x7e]                ; 004ac97a
@@ -3319,8 +3319,8 @@ section .text
     PUSH 0x624d9b                       ; 004aca40 | = "Error parsing setGroupAmbient parms"
         ;   Label: LAB_004aca40
     PUSH 0x2d0a460                      ; 004aca45 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004aca4a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004aca4a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004aca4f
     XOR EAX,EAX                         ; 004aca52
     LEA ESP,[EBP + 0x7e]                ; 004aca54
@@ -3335,8 +3335,8 @@ section .text
     FSTP double ptr [ESP]               ; 004aca62
     PUSH 0x624dbf                       ; 004aca65 | = "Ambient value %g is out of range (1....."
     PUSH 0x2d0a460                      ; 004aca6a | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004aca6f
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004aca6f
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004aca74
     XOR EAX,EAX                         ; 004aca77
     LEA ESP,[EBP + 0x7e]                ; 004aca79
@@ -3578,8 +3578,8 @@ section .text
     PUSH 0x624ef4                       ; 004acccc | = "Error parsing setLeverState command p..."
         ;   Label: LAB_004acccc
     PUSH 0x2d0a460                      ; 004accd1 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004accd6
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004accd6
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004accdb
     XOR EAX,EAX                         ; 004accde
     LEA ESP,[EBP + 0x7e]                ; 004acce0
@@ -3805,8 +3805,8 @@ section .text
     PUSH 0x624f3d                       ; 004aced8 | = "Error parsing setModelState command p..."
         ;   Label: LAB_004aced8
     PUSH 0x2d0a460                      ; 004acedd | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004acee2
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004acee2
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004acee7
     XOR EAX,EAX                         ; 004aceea
     LEA ESP,[EBP + 0x7e]                ; 004aceec
@@ -3922,8 +3922,8 @@ section .text
     PUSH EAX                            ; 004acfe3
     PUSH 0x624f67                       ; 004acfe4 | = "Model %s does not have state %s"
     PUSH 0x2d0a460                      ; 004acfe9 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004acfee
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004acfee
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004acff3
     XOR EAX,EAX                         ; 004acff6
     LEA ESP,[EBP + 0x7e]                ; 004acff8
@@ -4025,8 +4025,8 @@ section .text
     PUSH 0x624f9e                       ; 004ad0de | = "Error parsing setTimer command parms"
         ;   Label: LAB_004ad0de
     PUSH 0x2d0a460                      ; 004ad0e3 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ad0e8
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ad0e8
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004ad0ed
     XOR EAX,EAX                         ; 004ad0f0
     LEA ESP,[EBP + 0x7e]                ; 004ad0f2
@@ -4080,8 +4080,8 @@ section .text
     PUSH EAX                            ; 004ad153
     PUSH 0x624fc3                       ; 004ad154 | = "Timer name \"%s\" is too long, (max %..."
     PUSH 0x2d0a460                      ; 004ad159 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ad15e
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ad15e
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004ad163
     XOR EAX,EAX                         ; 004ad166
     LEA ESP,[EBP + 0x7e]                ; 004ad168
@@ -4093,8 +4093,8 @@ section .text
     PUSH 0x624fef                       ; 004ad170 | = "Invalid timer duration"
         ;   Label: LAB_004ad170
     PUSH 0x2d0a460                      ; 004ad175 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ad17a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ad17a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004ad17f
     XOR EAX,EAX                         ; 004ad182
     LEA ESP,[EBP + 0x7e]                ; 004ad184
@@ -4195,8 +4195,8 @@ section .text
     PUSH 0x62501b                       ; 004ad267 | = "Error parsing setWeather command parms"
         ;   Label: LAB_004ad267
     PUSH 0x2d0a460                      ; 004ad26c | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ad271
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ad271
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004ad276
     XOR EAX,EAX                         ; 004ad279
     LEA ESP,[EBP + 0x7e]                ; 004ad27b
@@ -4266,8 +4266,8 @@ section .text
     PUSH EAX                            ; 004ad306
     PUSH 0x625051                       ; 004ad307 | = "Invalid weather type: %s"
     PUSH 0x2d0a460                      ; 004ad30c | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ad311
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ad311
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004ad316
     XOR EAX,EAX                         ; 004ad319
     LEA ESP,[EBP + 0x7e]                ; 004ad31b
@@ -4348,8 +4348,8 @@ section .text
     PUSH 0x62508b                       ; 004ad3d1 | = "Error parsing shakeScreen command parms"
         ;   Label: LAB_004ad3d1
     PUSH 0x2d0a460                      ; 004ad3d6 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ad3db
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ad3db
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004ad3e0
     XOR EAX,EAX                         ; 004ad3e3
     LEA ESP,[EBP + 0x7e]                ; 004ad3e5
@@ -4452,8 +4452,8 @@ section .text
     PUSH 0x6250d6                       ; 004ad4cf | = "Error parsing slamModelToMotion comma..."
         ;   Label: LAB_004ad4cf
     PUSH 0x2d0a460                      ; 004ad4d4 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ad4d9
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ad4d9
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004ad4de
     XOR EAX,EAX                         ; 004ad4e1
     LEA ESP,[EBP + 0x7e]                ; 004ad4e3
@@ -4580,8 +4580,8 @@ section .text
     PUSH EAX                            ; 004ad5f2
     PUSH 0x625104                       ; 004ad5f3 | = "Model %s does not have motion %s"
     PUSH 0x2d0a460                      ; 004ad5f8 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004ad5fd
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004ad5fd
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004ad602
     XOR EAX,EAX                         ; 004ad605
     LEA ESP,[EBP + 0x7e]                ; 004ad607

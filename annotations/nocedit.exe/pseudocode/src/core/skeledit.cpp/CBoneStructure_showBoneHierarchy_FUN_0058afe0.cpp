@@ -45,8 +45,7 @@ void __cdecl core_skeledit_cpp_CBoneStructure_showBoneHierarchy_FUN_0058afe0(CBo
                     (&local_484,local_dc,-1,0);
   if (iVar1 == local_484.base.item_count + -1) {
     iVar4 = 0;
-    iVar1 = _sprintf
-                      (g_SkeleditClipboardBuffer,"Heirarchy for %s\r\n\r\n",model_name);
+    iVar1 = _sprintf(g_SkeleditClipboardBuffer,"Heirarchy for %s\r\n\r\n",model_name);
     buffer = g_SkeleditClipboardBuffer + iVar1;
     if (0 < this_ptr->bone_count) {
       do {

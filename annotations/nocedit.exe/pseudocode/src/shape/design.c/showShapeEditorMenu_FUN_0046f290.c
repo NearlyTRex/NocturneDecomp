@@ -45,8 +45,7 @@ void __cdecl shape_design_c_showShapeEditorMenu_FUN_0046f290(void)
   g_LightDirectionZ2 = 0;
   do {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
-    _sprintf
-              (local_64,"Demented Shape Editor    Build date: %s %s","Jan 10 2000",
+    _sprintf(local_64,"Demented Shape Editor    Build date: %s %s","Jan 10 2000",
                "12:03:47");
     engine_2d_c_drawText_FUN_00401fd0(local_64,0,0);
     engine_2d_c_drawText_FUN_00401fd0("1. Point Editor",0,0x16);

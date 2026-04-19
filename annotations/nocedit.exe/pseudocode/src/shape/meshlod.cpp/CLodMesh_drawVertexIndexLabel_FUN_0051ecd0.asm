@@ -19,7 +19,7 @@
 ;   CDemonRenderer g_CDemonRendererInstance
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;
 ; *****************************************************************************
@@ -49,8 +49,8 @@ section .text
     MOV ESI,dword ptr [EAX + 0x14]      ; 0051ed01
     LEA EAX,[ESP + 0x10]                ; 0051ed04
     PUSH EAX                            ; 0051ed08
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0051ed09
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0051ed09
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0051ed0e
     SAR ESI,0x10                        ; 0051ed11
     PUSH ESI                            ; 0051ed14

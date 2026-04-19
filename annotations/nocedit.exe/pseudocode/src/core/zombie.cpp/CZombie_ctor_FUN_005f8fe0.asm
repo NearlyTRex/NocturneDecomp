@@ -18,7 +18,7 @@
 ;   TerminatedCString s_mine_geo_00658499
 ;   float FLOAT_006659cc = 50
 ;   float FLOAT_006659d0 = 100
-;   CDemonActor_vtable g_CZombieVTable
+;   CEnemy_full_vtable g_CZombieVTable
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 g_CDemonSetInstance.geometry_filename[0]
 ;

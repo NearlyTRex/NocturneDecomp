@@ -132,14 +132,13 @@ LAB_00459b94:
             local_14 = iVar1;
           }
           else if (uVar4 == 0xffffffff) {
-            _sprintf(local_14c,"  %-12s  (texture not found)",local_84)
-            ;
+            _sprintf(local_14c,"  %-12s  (texture not found)",local_84);
             engine_2d_c_drawText_FUN_00401fd0(local_14c,0,(local_14 + 2) * 0xb);
             local_14 = iVar1;
           }
           else {
-            _sprintf
-                      (local_14c,"  %-12s  (invalid texture size)",local_84);
+            _sprintf(local_14c,"  %-12s  (invalid texture size)",local_84)
+            ;
             engine_2d_c_drawText_FUN_00401fd0(local_14c,0,(local_14 + 2) * 0xb);
             local_14 = iVar1;
           }

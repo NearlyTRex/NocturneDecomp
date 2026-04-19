@@ -7,19 +7,19 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1112,
-    "complexity_score": 486,
+    "complexity_score": 484,
     "cross_reference_count": 1,
     "function_call_count": 42,
     "global_count": 75,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 411,
+    "pseudocode_lines": 409,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "unrolled_strchr",
       "unrolled_strcpy"
     ],
-    "total_lines": 1523
+    "total_lines": 1521
   },
   "cross_references": [
     {
@@ -124,11 +124,6 @@
       "name": "core_slew.cpp_CSlew_processInput_FUN_005a20b0"
     },
     {
-      "addr": "005fdbd0",
-      "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
-    },
-    {
       "addr": "005fe840",
       "is_variadic": false,
       "name": "crt_stdio.c_fgetc_FUN_005fe840"
@@ -137,6 +132,11 @@
       "addr": "005fd990",
       "is_variadic": false,
       "name": "crt_stdio.c_fread_FUN_005fd990"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00403260",
@@ -818,7 +818,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 327,
+      "line": 325,
       "match": "&stack0xffffee8c",
       "resolution_source": "keep",
       "severity": "moderate",

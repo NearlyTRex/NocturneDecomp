@@ -18,7 +18,7 @@ CArmour * __cdecl core_armour_cpp_CArmour_ctor_FUN_004121a0(CArmour *this_ptr)
   
   pCVar4 = (CArmour *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
   pcVar5 = "none";
-  (pCVar4->base).base.base.vtable._ub = &g_CArmourVTable;
+  (pCVar4->base).base.base.vtable._ub = &g_CArmourVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar4->base).base.model,"armour.dfm");
   fVar3 = 100.0f;

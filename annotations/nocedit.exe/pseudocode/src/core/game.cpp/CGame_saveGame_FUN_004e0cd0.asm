@@ -59,9 +59,9 @@
 ;   crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc
 ;   crt_fstream.cpp_openFile_FUN_00600e85
 ;   crt_fstream.cpp_ostream_write_FUN_005ffcb3
-;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fflush_FUN_00600e29
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
+;   crt_stdio.c_remove_FUN_005ff9d0
 ;   ... and 16 more
 ;
 ; *****************************************************************************
@@ -353,8 +353,8 @@ section .text
     PUSH 0x62ca82                       ; 004e0fed | = "%s\\%s"
     LEA EAX,[ESP + 0x214]               ; 004e0ff2
     PUSH EAX                            ; 004e0ff9
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004e0ffa
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004e0ffa
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004e0fff
     PUSH ESI                            ; 004e1002
     PUSH 0x112                          ; 004e1003
@@ -534,8 +534,8 @@ section .text
     PUSH 0x62c981                       ; 004e11ef | = "%s.noc"
     LEA EAX,[ESP + 0x8]                 ; 004e11f4
     PUSH EAX                            ; 004e11f8
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004e11f9
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004e11f9
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004e11fe
     JMP 0x004e0d81                      ; 004e1201
         ;   XREF to: 004e0d81 (UNCONDITIONAL_JUMP)  ; LAB_004e0d81

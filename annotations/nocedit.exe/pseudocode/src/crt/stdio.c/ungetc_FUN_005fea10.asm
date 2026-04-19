@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_stdio_c_fputc_FUN_005fea10(int character,_FILE *stream)
+; int __cdecl crt_stdio_c_ungetc_FUN_005fea10(int character,_FILE *stream)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   character
@@ -26,7 +26,7 @@
 section .text
 
     PUSH EBX                            ; 005fea10
-        ;   Label: crt_stdio.c_fputc_FUN_005fea10
+        ;   Label: crt_stdio.c_ungetc_FUN_005fea10
     PUSH ESI                            ; 005fea11
     PUSH EDI                            ; 005fea12
     PUSH EBP                            ; 005fea13

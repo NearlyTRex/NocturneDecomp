@@ -84,7 +84,7 @@ int __cdecl crt_stdio_c_OpenModeStringParser_FUN_006017d0(char *mode_string,char
 _FILE * __cdecl crt_stdio_c_OpenFileAndInitialize_FUN_0060190c(char *filename,char mode_char,int parsed_mode_flags,int stage1_result, int additional_flags,_FILE *file_struct);
 _FILE * __cdecl crt_stdio_c_fopenWithFlags_FUN_00601a20(char *filename,char *mode,int flags);
 _FILE * __cdecl crt_stdio_c_fopen_FUN_00601a7c(char *filename,char *mode);
-_FILE * __cdecl crt_stdio_c__freopen_FUN_00601b14(char *filename,char *mode,_FILE *stream);
+_FILE * __cdecl crt_stdio_c_freopen_FUN_00601b14(char *filename,char *mode,_FILE *stream);
 void * __cdecl crt_memory_c_malloc_FUN_00601bb0(ulong size);
 void * __cdecl crt_heap_c_InternalHeapAlloc_FUN_00601bc0(ulong size);
 void __cdecl crt_memory_c_free_FUN_00601cd0(void *ptr);
@@ -95,7 +95,7 @@ int __cdecl crt_stdio_c_fclose_FUN_00601ea0(_FILE *file_handle);
 int __cdecl crt_stdio_c___CClose_FUN_00601ee4(_FILE *file_handle,int close_flags);
 char __watcallStack crt_string_c_hexDigitToChar_FUN_00601f0c(int digit);
 void __watcallStack crt_io_c__tempnam_FUN_00601f1c(char *buffer,int file_handle);
-int __cdecl crt_stdio_c__fclose_FUN_00601fd0(_FILE *file_handle,int force_close_flag);
+int __cdecl crt_stdio_c_fclose_FUN_00601fd0(_FILE *file_handle,int force_close_flag);
 void * __cdecl crt_memory_c___arr_op_FUN_006020c2(void *dest,void *source,int count,int element_size,void *copy_func);
 int __cdecl crt_string_c__stricmp_FUN_005fe7f0(char *str1,char *str2);
 double __crtmath crt_math_c_modf_FUN_00602102(double value,double *integer_part);

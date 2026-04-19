@@ -19,7 +19,7 @@
 ;   undefined4 s_Character_006565e8
 ;   undefined4 s_haracter_006565e9
 ;   undefined4 s_aracter_006565ea
-;   CDemonActor_vtable g_CTurretVTable
+;   CWeapon_full_vtable g_CTurretVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

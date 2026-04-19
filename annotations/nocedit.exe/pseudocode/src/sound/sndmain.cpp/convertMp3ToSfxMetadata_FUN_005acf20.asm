@@ -40,9 +40,9 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_file.c_makepath_FUN_005febfc
-;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fgets_FUN_005fefd0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__strnicmp_FUN_005ff070
 ;   crt_string.c_memmove_FUN_005fe5e0
 ;   crt_string.c_splitpath_FUN_005ff178
@@ -223,8 +223,8 @@ section .text
     PUSH 0x6511d1                       ; 005ad0f9 | = "length = %d"
     LEA EAX,[ESP + 0x408]               ; 005ad0fe
     PUSH EAX                            ; 005ad105
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005ad106
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005ad106
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005ad10b
     TEST EBP,EBP                        ; 005ad10e
     JL 0x005ad385                       ; 005ad110

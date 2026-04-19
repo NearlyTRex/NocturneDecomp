@@ -22,7 +22,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_dosio.c_ensureTrailingSlash_FUN_00481f80
 ;   engine_dosio.c_makePath_FUN_00481f50
 ;
@@ -47,8 +47,8 @@ section .text
     PUSH 0x6260d9                       ; 004b1f3d | = "history\\%s.%s"
     LEA ESI,[ESP + 0xc]                 ; 004b1f42
     PUSH ESI                            ; 004b1f46
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b1f47
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b1f47
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004b1f4c
     LEA ESI,[ESP + 0x104]               ; 004b1f4f
     PUSH ESI                            ; 004b1f56

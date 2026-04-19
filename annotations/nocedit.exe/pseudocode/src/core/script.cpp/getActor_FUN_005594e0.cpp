@@ -41,8 +41,7 @@ CDemonActor * __cdecl core_script_cpp_getActor_FUN_005594e0(char *actor_specifie
     actor_ptr = (CHero *)core_event_cpp_CEventList_getActorByVarName_FUN_004b0b80
                                    (g_CEventListPtr,actor_specifier);
     if (actor_ptr == (CHero *)0x0) {
-      _sprintf
-                (g_ScriptErrorBuffer,"Actor variable %s not defined, or doesn't reference an existing actor",actor_specifier);
+      _sprintf(g_ScriptErrorBuffer,"Actor variable %s not defined, or doesn't reference an existing actor",actor_specifier);
       return (CDemonActor *)0x0;
     }
   }
@@ -64,8 +63,7 @@ CDemonActor * __cdecl core_script_cpp_getActor_FUN_005594e0(char *actor_specifie
       actor_ptr = (CHero *)core_mission_cpp_CDemonMission_findActorByName_FUN_00524030
                                      (g_CDemonMissionPtr,actor_specifier);
       if (actor_ptr == (CHero *)0x0) {
-        _sprintf
-                  (g_ScriptErrorBuffer,"Actor \"%s\" does not exist.",actor_specifier);
+        _sprintf(g_ScriptErrorBuffer,"Actor \"%s\" does not exist.",actor_specifier);
         return (CDemonActor *)0x0;
       }
     }
@@ -73,8 +71,7 @@ CDemonActor * __cdecl core_script_cpp_getActor_FUN_005594e0(char *actor_specifie
   iVar2 = core_actor_cpp_isOfClassHash_FUN_0040c760((CDemonActor *)actor_ptr,expected_class_hash);
   if (iVar2 == 0) {
     pcVar3 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90((CDemonActor *)actor_ptr);
-    _sprintf
-              (g_ScriptErrorBuffer,"Actor \"%s\" is of type %s, this command requires an actor of type %s.",actor_specifier,pcVar3,
+    _sprintf(g_ScriptErrorBuffer,"Actor \"%s\" is of type %s, this command requires an actor of type %s.",actor_specifier,pcVar3,
                expected_class);
     return (CDemonActor *)0x0;
   }

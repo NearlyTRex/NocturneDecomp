@@ -14,7 +14,7 @@ CBatCreature * __cdecl core_batcreat_cpp_CBatCreature_ctor_FUN_004150f0(CBatCrea
   CBatCreature *pCVar3;
   
   pCVar3 = (CBatCreature *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
-  (pCVar3->base).base.base.vtable._ub = &g_CBatCreatureVTable;
+  (pCVar3->base).base.base.vtable._ub = &g_CBatCreatureVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar3->base).base.model,"batcreat.dfm");
   fVar2 = 100.0f;

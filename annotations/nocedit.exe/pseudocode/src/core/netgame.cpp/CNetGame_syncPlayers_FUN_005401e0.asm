@@ -44,7 +44,7 @@
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_005405b0
 ;   core_netgame.cpp_CNetGame_send_FUN_005411c0
 ;   core_netgame.cpp_CNetGame_updatePing_FUN_00541c80
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
@@ -118,8 +118,8 @@ section .text
     PUSH 0x63d599                       ; 00540296 | = "Syncing stage %d."
     LEA EAX,[ESP + 0xc]                 ; 0054029b
     PUSH EAX                            ; 0054029f
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005402a0
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005402a0
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005402a5
     PUSH 0xb                            ; 005402a8
     PUSH 0x0                            ; 005402aa
@@ -165,8 +165,8 @@ section .text
     PUSH 0x63d5b7                       ; 0054031e | = "%d"
     LEA EAX,[ESP + 0xc]                 ; 00540323
     PUSH EAX                            ; 00540327
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00540328
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00540328
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0054032d
     MOV EAX,dword ptr [ESP + 0x180]     ; 00540330
     PUSH EAX                            ; 00540337
@@ -328,8 +328,8 @@ section .text
     PUSH 0x63d5f8                       ; 005404c4 | = "Waiting on sync code %d from server..."
     LEA EAX,[ESP + 0x10c]               ; 005404c9
     PUSH EAX                            ; 005404d0
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005404d1
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005404d1
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005404d6
     PUSH 0xb                            ; 005404d9
     PUSH EDI                            ; 005404db

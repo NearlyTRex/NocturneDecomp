@@ -2691,8 +2691,8 @@ section .text
     PUSH EAX                            ; 004afa16 | = "Spotlight %s doesn't exist."
     LEA EAX,[ESP + 0x14]                ; 004afa17
     PUSH EAX                            ; 004afa1b
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004afa1c
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004afa1c
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004afa21
     LEA ESI,[ESP + 0xc]                 ; 004afa24
     MOV EDI,0x2d0a460                   ; 004afa28 | g_EventErrorMessageBuffer

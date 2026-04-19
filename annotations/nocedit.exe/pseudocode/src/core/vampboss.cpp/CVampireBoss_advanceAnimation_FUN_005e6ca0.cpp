@@ -42,8 +42,7 @@ LAB_005e6d59:
           local_78 = this_ptr->morph_t;
         }
         if (0.0 < (double)local_78) {
-          _sprintf
-                    (local_74,"wing?.wav @%f",(double)local_78 * 2.5);
+          _sprintf(local_74,"wing?.wav @%f",(double)local_78 * 2.5);
           sound_name = local_74;
           goto LAB_005e6d59;
         }

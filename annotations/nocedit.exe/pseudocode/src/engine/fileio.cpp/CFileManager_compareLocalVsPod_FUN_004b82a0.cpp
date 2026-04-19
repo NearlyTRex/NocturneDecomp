@@ -103,8 +103,7 @@ void __cdecl engine_fileio_cpp_CFileManager_compareLocalVsPod_FUN_004b82a0(CFile
         local_14 = local_14 + 1;
       }
       else {
-        _sprintf(local_1208,"%s\tLocal file has different size",&local_234)
-        ;
+        _sprintf(local_1208,"%s\tLocal file has different size",&local_234);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5dc.base,local_1208);
         local_1c = local_1c + 1;
       }
@@ -112,8 +111,7 @@ void __cdecl engine_fileio_cpp_CFileManager_compareLocalVsPod_FUN_004b82a0(CFile
       iVar5 = iVar5 + 0x14;
     } while (iVar4 < local_a08.file_count);
   }
-  iVar5 = _sprintf
-                    (local_1208,"Comparing files in:\n%s\n",local_a08.filename);
+  iVar5 = _sprintf(local_1208,"Comparing files in:\n%s\n",local_a08.filename);
   iVar6 = _sprintf(local_1208 + iVar5,"-----------------------\n");
   pcVar7 = local_1208 + iVar5 + iVar6;
   if (0 < local_14) {
@@ -137,8 +135,7 @@ void __cdecl engine_fileio_cpp_CFileManager_compareLocalVsPod_FUN_004b82a0(CFile
     pcVar7 = pcVar7 + iVar5;
   }
   iVar5 = _sprintf(pcVar7,"-----------------------\n");
-  _sprintf
-            (pcVar7 + iVar5,"%d total files in pod",local_a08.file_count);
+  _sprintf(pcVar7 + iVar5,"%d total files in pod",local_a08.file_count);
   shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10(&local_5dc,1);
   shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
             (&local_5dc,local_1208,-1,0);

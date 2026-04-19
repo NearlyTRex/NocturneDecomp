@@ -103,8 +103,7 @@ int __cdecl core_script_cpp_CScript_browseEventXRefs_FUN_005677a0(CScript *this_
         core_actor_cpp_CActorPropertyList_init_FUN_0040e130(&CStack_2c4c);
         (*(((*(CDemonActor **)(pcVar8 + 0x104))->vtable)._ub)->getPropertyList)
                   (*(CDemonActor **)(pcVar8 + 0x104),&CStack_2c4c);
-        _sprintf
-                  (local_e4,"%s\t%s",*(CDemonActor **)(pcVar8 + 0x104),
+        _sprintf(local_e4,"%s\t%s",*(CDemonActor **)(pcVar8 + 0x104),
                    CStack_2c4c.properties[*(int *)(pcVar8 + 0x108)].name);
       }
       _sprintf(local_3a0,"\t%s\t%s",local_1ac,local_e4);

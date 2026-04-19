@@ -29,7 +29,7 @@
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_0054a990
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;
@@ -68,8 +68,8 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 0054b8a0
     PUSH EAX                            ; 0054b8a4
     MOV EDI,0x4fc                       ; 0054b8a5
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0054b8aa
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0054b8aa
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0054b8af
     LEA EAX,[ESP + 0x4]                 ; 0054b8b2
     MOV ECX,0x63f220                    ; 0054b8b6 | = "..\\cockpit\\pkbitmap.cpp"

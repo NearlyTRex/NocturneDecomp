@@ -32,9 +32,9 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fread_FUN_005fd990
 ;   crt_stdio.c_fwrite_FUN_005fdc00
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_buildColorLookupTable_FUN_00402870
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -103,8 +103,8 @@ section .text
     PUSH 0x613109                       ; 0040299b | = ".map"
         ;   Label: LAB_0040299b
     PUSH EBX                            ; 004029a0
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004029a1
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format) | s_Please_run_SETUP_0061302e
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004029a1
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format) | s_Please_run_SETUP_0061302e
     ADD ESP,0x8                         ; 004029a6
     PUSH 0x61310e                       ; 004029a9 | = "rb"
     LEA EAX,[ESP + 0x4]                 ; 004029ae

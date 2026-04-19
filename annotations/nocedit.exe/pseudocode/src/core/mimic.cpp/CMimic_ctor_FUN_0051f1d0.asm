@@ -16,7 +16,7 @@
 ;   undefined4 s_oul_00638557
 ;   float FLOAT_0066140c = 50
 ;   float FLOAT_00661410 = 100
-;   CDemonActor_vtable g_CMimicVTable
+;   CEnemy_full_vtable g_CMimicVTable
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_ctor_FUN_00438ba0

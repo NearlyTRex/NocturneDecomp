@@ -13,7 +13,7 @@
 ;   TerminatedCString s_gargoyle_dfm_0062d7d6
 ;   float FLOAT_0065ea30 = 50
 ;   float FLOAT_0065ea34 = 100
-;   CDemonActor_vtable g_CGargoyleVTable
+;   CEnemy_full_vtable g_CGargoyleVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500

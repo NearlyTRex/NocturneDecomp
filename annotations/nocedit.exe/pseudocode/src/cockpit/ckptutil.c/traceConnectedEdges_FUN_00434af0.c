@@ -110,8 +110,7 @@ SEdge * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *e
         iVar14 = *(int *)((int)piVar2 + local_e0 + 0x44) + iVar2;
         iVar15 = iVar14 + -1;
         if (0x1ff < iVar11) {
-          _sprintf
-                    (local_1f4,"Reached max trace edges: edges %d, scanline %d",iVar11,iVar13);
+          _sprintf(local_1f4,"Reached max trace edges: edges %d, scanline %d",iVar11,iVar13);
           g_CurrentFilename = "..\\cockpit\\ckptutil.c";
           g_CurrentLineNumber = 0x886;
           core_main_c_displayErrorAndQuit_FUN_00506f10(local_1f4);
@@ -224,8 +223,7 @@ LAB_00434df6:
           }
         }
         if (0x1ff < iVar11) {
-          _sprintf
-                    (local_1f4,"Reached max trace edges: edges %d, scanline %d",iVar11,iVar13);
+          _sprintf(local_1f4,"Reached max trace edges: edges %d, scanline %d",iVar11,iVar13);
           g_CurrentFilename = "..\\cockpit\\ckptutil.c";
           g_CurrentLineNumber = 0x8c0;
           core_main_c_displayErrorAndQuit_FUN_00506f10(local_1f4);

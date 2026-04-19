@@ -29,8 +29,7 @@ double __cdecl sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60
                     (g_DirectSoundHardwareSfxBuffers[iVar1],&local_14,&local_18);
   if (uVar2 != 0) {
     pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar2);
-    _sprintf
-              (acStack_1b0,"DirectSux: Unable to %s.  (%s)","Get playback cursor of hardware sfx secondary buffer",
+    _sprintf(acStack_1b0,"DirectSux: Unable to %s.  (%s)","Get playback cursor of hardware sfx secondary buffer",
                pcVar3);
     sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_1b0);
     return -1.0;

@@ -11,13 +11,13 @@ SIZE_T __cdecl fread(void *buffer,SIZE_T size,SIZE_T count,_FILE *file);
 // Address: 005fdb90
 void __cdecl StringBufferCallback(StringOutputContext *context,char character);
 
-// Original: crt_stdio.c__vsprintf_FUN_005fdba8
+// Original: crt_stdio.c_vsprintf_FUN_005fdba8
 // Address: 005fdba8
-int __cdecl ::vsprintf(char *buffer,char *format,va_list_t args);
+int __cdecl vsprintf(char *buffer,char *format,va_list_t args);
 
-// Original: crt_stdio.c__sprintf_FUN_005fdbd0
+// Original: crt_stdio.c_sprintf_FUN_005fdbd0
 // Address: 005fdbd0
-int __cdecl ::sprintf(char *buffer,char *format,...) __attribute__((format(printf, 2, 3)));
+int __cdecl sprintf(char *buffer,char *format,...) __attribute__((format(printf, 2, 3)));
 
 // Original: crt_stdio.c_fwrite_FUN_005fdc00
 // Address: 005fdc00
@@ -55,9 +55,9 @@ int __watcallStack FillBufferAndGetChar(_FILE *file);
 // Address: 005fe940
 int __watcallStack FillInputBuffer(_FILE *file);
 
-// Original: crt_stdio.c_fputc_FUN_005fea10
+// Original: crt_stdio.c_ungetc_FUN_005fea10
 // Address: 005fea10
-int __cdecl fputc(int character,_FILE *stream);
+int __cdecl ungetc(int character,_FILE *stream);
 
 // Original: crt_stdio.c_fgets_FUN_005fefd0
 // Address: 005fefd0
@@ -143,9 +143,9 @@ _FILE * __cdecl fopenWithFlags(char *filename,char *mode,int flags);
 // Address: 00601a7c
 _FILE * __cdecl fopen(char *filename,char *mode);
 
-// Original: crt_stdio.c__freopen_FUN_00601b14
+// Original: crt_stdio.c_freopen_FUN_00601b14
 // Address: 00601b14
-_FILE * __cdecl ::freopen(char *filename,char *mode,_FILE *stream);
+_FILE * __cdecl freopen(char *filename,char *mode,_FILE *stream);
 
 // Original: crt_stdio.c_fclose_FUN_00601ea0
 // Address: 00601ea0
@@ -155,9 +155,9 @@ int __cdecl fclose(_FILE *file_handle);
 // Address: 00601ee4
 int __cdecl ::_CClose(_FILE *file_handle,int close_flags);
 
-// Original: crt_stdio.c__fclose_FUN_00601fd0
+// Original: crt_stdio.c_fclose_FUN_00601fd0
 // Address: 00601fd0
-int __cdecl ::fclose(_FILE *file_handle,int force_close_flag);
+int __cdecl fclose(_FILE *file_handle,int force_close_flag);
 
 // Original: crt_stdio.c_fprintf_FUN_006021c0
 // Address: 006021c0

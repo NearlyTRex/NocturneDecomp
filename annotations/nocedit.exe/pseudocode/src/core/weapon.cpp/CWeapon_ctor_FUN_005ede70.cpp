@@ -16,7 +16,7 @@ CWeapon * __cdecl core_weapon_cpp_CWeapon_ctor_FUN_005ede70(CWeapon *this_ptr)
   pCVar1 = (CWeapon *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar1->model);
   pCVar3 = core_box_cpp_CBox_ctor_FUN_0041dc50(&ADJ(pCVar2)->physics_box);
-  ADJ(pCVar3)->base.vtable._ub = &g_CWeaponVTable;
+  ADJ(pCVar3)->base.vtable._ub = &g_CWeaponVTable._ub;
   ADJ(pCVar3)->weight = 5.0;
   ADJ(pCVar3)->fire_cooldown_timer = 0.0;
   ADJ(pCVar3)->weapon_state = 0;

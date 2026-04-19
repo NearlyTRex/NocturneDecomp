@@ -40,7 +40,7 @@
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
 ;   engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950
@@ -185,8 +185,8 @@ section .text
     LEA EAX,[ESP + 0x414]               ; 004e39b1
     PUSH EAX                            ; 004e39b8
     XOR ESI,ESI                         ; 004e39b9
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004e39bb
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004e39bb
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV DL,0x30                         ; 004e39c0
     ADD ESP,0x18                        ; 004e39c2
     LEA EDI,[ESP + 0x400]               ; 004e39c5
@@ -291,8 +291,8 @@ section .text
     PUSH 0x62d521                       ; 004e3a85 | = "%d\n\n"
     LEA EAX,[ESP + 0x408]               ; 004e3a8a
     PUSH EAX                            ; 004e3a91
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004e3a92
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004e3a92
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004e3a97
     LEA ESI,[ESP + 0x400]               ; 004e3a9a
     MOV EDI,ESP                         ; 004e3aa1

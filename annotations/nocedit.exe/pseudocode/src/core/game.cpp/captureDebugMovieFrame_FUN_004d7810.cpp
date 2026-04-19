@@ -50,8 +50,7 @@ void __cdecl core_game_cpp_captureDebugMovieFrame_FUN_004d7810(void)
       return;
     }
     if (g_MovieRecordingActive != 0) {
-      _sprintf
-                (acStack_98,"noc%05d.raw",g_MovieRecordingFrameCounter);
+      _sprintf(acStack_98,"noc%05d.raw",g_MovieRecordingFrameCounter);
       _sprintf(acStack_160,"Movie recording active: movie\\%s",acStack_98);
       p_Stack_2c = engine_dosio_c_getFile_FUN_00481a50("movie",acStack_98,"wb");
       if (p_Stack_2c != (_FILE *)0x0) {

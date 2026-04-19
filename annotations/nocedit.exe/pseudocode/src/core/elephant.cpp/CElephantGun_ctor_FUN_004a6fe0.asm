@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_elephantgun_kfm_00623fc4
 ;   float FLOAT_0065d52c = 8
-;   CDemonActor_vtable g_CElephantGunVTable
+;   CWeapon_full_vtable g_CElephantGunVTable
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0

@@ -14,7 +14,7 @@ CBeast * __cdecl core_beast_cpp_CBeast_ctor_FUN_00418220(CBeast *this_ptr)
   CEnemy *pCVar3;
   
   pCVar3 = core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
-  (pCVar3->base).base.vtable._ub = &g_CBeastVTable;
+  (pCVar3->base).base.vtable._ub = &g_CBeastVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar3->base).model,"beast.dfm");
   fVar2 = 100.0f;

@@ -14,7 +14,7 @@
 ;   double DOUBLE_0062db0a = 65536
 ;   float FLOAT_0065ed30 = 50
 ;   float FLOAT_0065ed34 = 100
-;   CDemonActor_vtable g_CGhoulVTable
+;   CEnemy_full_vtable g_CGhoulVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10

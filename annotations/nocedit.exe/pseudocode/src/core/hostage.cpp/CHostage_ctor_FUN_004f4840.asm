@@ -15,7 +15,7 @@
 ;   undefined4 s_rue_0062ee3c
 ;   undefined4 s_ue_0062ee3d
 ;   undefined4 s_e_0062ee3e
-;   CDemonActor_vtable g_CHostageVTable
+;   CCharacter_full_vtable g_CHostageVTable
 ;
 ; Called Functions:
 ;   core_npc.cpp_CNPC_ctor_FUN_005447e0

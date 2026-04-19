@@ -12,7 +12,7 @@ CDynamite * __cdecl core_dynamite_cpp_CDynamite_ctor_FUN_0049cdc0(CDynamite *thi
   CDynamite *pCVar1;
   
   pCVar1 = (CDynamite *)core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base);
-  (pCVar1->base).base.vtable._ub = &g_CDynamiteVTable;
+  (pCVar1->base).base.vtable._ub = &g_CDynamiteVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&(pCVar1->base).model,"dynamitestick.kfm");
   (pCVar1->base).weight = 1.0;

@@ -33,12 +33,10 @@ int __cdecl core_script_cpp_validateActorVariableName_FUN_00559220(char *variabl
       if ((iVar4 != 1) && (*pcVar2 == '\0')) {
         return 1;
       }
-      _sprintf
-                (g_ScriptErrorBuffer,"Actor variable name \"%s\" is not valid",variable_name);
+      _sprintf(g_ScriptErrorBuffer,"Actor variable name \"%s\" is not valid",variable_name);
       return 0;
     }
-    _sprintf
-              (g_ScriptErrorBuffer,"Actor variable name \"%s\" is too long",variable_name);
+    _sprintf(g_ScriptErrorBuffer,"Actor variable name \"%s\" is too long",variable_name);
   }
   else {
     _sprintf(g_ScriptErrorBuffer,"Actor variable name must begin with '@'");

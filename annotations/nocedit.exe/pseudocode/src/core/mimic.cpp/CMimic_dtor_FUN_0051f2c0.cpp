@@ -27,7 +27,7 @@ CMimic * __cdecl core_mimic_cpp_CMimic_dtor_FUN_0051f2c0(CMimic *this_ptr,uint f
     return this_ptr;
   }
   this_ptr_00 = this_ptr->morph_target_actor;
-  (this_ptr->base).base.base.vtable._ub = &g_CMimicVTable;
+  (this_ptr->base).base.base.vtable._ub = &g_CMimicVTable._ub;
   g_CurrentDebugFilename = "..\\core\\mimic.cpp";
   g_CurrentDebugLine = 0xa9;
   if (this_ptr_00 != (CDemonActor *)0x0) {

@@ -27,8 +27,7 @@ void __cdecl core_path_cpp_CPathMap_previewPathfinding_FUN_00547c00(CPathMap *th
     iVar1 = 0;
     iVar4 = local_18;
     do {
-      _sprintf
-                (local_11c,"%s",g_DirectionCharacters[(byte)g_PathfindingVisited[0][iVar4]])
+      _sprintf(local_11c,"%s",g_DirectionCharacters[(byte)g_PathfindingVisited[0][iVar4]])
       ;
       if ((iVar1 == g_PathfindingCurrentX) && (iVar2 == g_PathfindingCurrentZ)) {
         local_11c[0] = 's';

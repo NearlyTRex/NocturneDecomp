@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_haystack_dfm_0062e7fa
-;   CDemonActor_vtable g_CHaystackVTable
+;   CHero_full_vtable g_CHaystackVTable
 ;
 ; Called Functions:
 ;   core_hero.cpp_CHero_ctor_FUN_004f2340

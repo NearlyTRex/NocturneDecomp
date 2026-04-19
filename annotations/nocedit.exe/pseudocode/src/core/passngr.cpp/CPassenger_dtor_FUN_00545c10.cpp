@@ -27,7 +27,7 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00545c10(CPassenger *t
     return this_ptr;
   }
   this_ptr_00 = this_ptr->werewolf_actor;
-  (this_ptr->base).base.base.vtable._ub = &g_CPassengerVTable;
+  (this_ptr->base).base.base.vtable._ub = &g_CPassengerVTable._ub;
   if (this_ptr_00 != (CWerewolf *)0x0) {
     g_CurrentDebugLine = 0x50;
     g_CurrentDebugFilename = "..\\core\\passngr.cpp";

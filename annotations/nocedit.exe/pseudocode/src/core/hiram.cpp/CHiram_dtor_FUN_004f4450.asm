@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   CDemonActor_vtable g_CHiramVTable
+;   CCharacter_full_vtable g_CHiramVTable
 ;   WatcomTypeInfo g_CHiramTypeInfo
 ;
 ; Called Functions:

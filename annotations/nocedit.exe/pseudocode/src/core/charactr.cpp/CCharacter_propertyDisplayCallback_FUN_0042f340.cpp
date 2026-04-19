@@ -42,8 +42,8 @@ void __cdecl core_charactr_cpp_CCharacter_propertyDisplayCallback_FUN_0042f340(C
       iVar2 = _sprintf(pcVar3,", ");
       pcVar3 = pcVar3 + iVar2;
     }
-    iVar2 = _sprintf
-                      (pcVar3,"%s",pCVar2->carry_hands[0].carry_actor);
+    iVar2 = _sprintf(pcVar3,"%s",pCVar2->carry_hands[0].carry_actor)
+    ;
     pcVar3 = pcVar3 + iVar2;
     pCVar2 = (CCharacter *)&(pCVar2->base).orient_matrix.m[0].z;
   } while (pCVar2 != (CCharacter *)pcVar4);

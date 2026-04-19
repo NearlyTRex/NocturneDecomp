@@ -7,18 +7,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 273,
-    "complexity_score": 379,
+    "complexity_score": 378,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 24,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 119,
+    "pseudocode_lines": 118,
     "suspect_count": 25,
     "suspect_types": [
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 392
+    "total_lines": 391
   },
   "cross_references": [],
   "function": {
@@ -57,7 +57,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     }
   ],
   "globals": [
@@ -375,7 +375,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 50,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_positions->x + local_24) =",
@@ -383,7 +383,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 52,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_positions->y + local_24) =",
@@ -391,7 +391,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 54,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_positions->z + local_24) =",
@@ -399,7 +399,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 58,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_positions->x + local_1c) =",
@@ -407,7 +407,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 60,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_positions->y + local_1c) =",
@@ -415,7 +415,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 62,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_positions->z + local_1c) =",
@@ -423,7 +423,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 72,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar7) = 0xffffffff;",
@@ -431,7 +431,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 73,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->face_data->vertex_index_1 + iVar7) = local_28;",
@@ -439,7 +439,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 74,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->face_data->vertex_index_2 + iVar7) = local_30;",
@@ -447,7 +447,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 75,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->face_data->vertex_index_3 + iVar7) = local_2c;",
@@ -455,7 +455,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 77,
+      "line": 76,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&g_LoadedVertices[0].vertex.x + local_20) = *pfVar6;",
@@ -463,7 +463,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 77,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&g_LoadedVertices[0].vertex.y + local_20) = pfVar6[1];",
@@ -471,7 +471,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 78,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&g_LoadedVertices[0].vertex.z + local_20) = pfVar6[2];",
@@ -479,7 +479,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 91,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 8) = local_2c;",
@@ -487,7 +487,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 92,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + -0x14) = 3;",
@@ -495,7 +495,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 94,
+      "line": 93,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_ModelPolygonData[0].uv_u + iVar4) = 0;",
@@ -503,7 +503,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 94,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + iVar4) = 0;",
@@ -511,7 +511,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 95,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_ModelPolygonData[0].uv_u + iVar4 + 4) = 0;",
@@ -519,7 +519,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 97,
+      "line": 96,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + iVar4 + 4) = 0;",
@@ -527,7 +527,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 97,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_ModelPolygonData[0].uv_u + iVar4 + 8) = 0;",
@@ -535,7 +535,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 99,
+      "line": 98,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + iVar4 + 8) = 0;",
@@ -543,7 +543,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 101,
+      "line": 100,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + iVar4 + 0x40) = 0;",
@@ -551,7 +551,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 103,
+      "line": 102,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4) = local_28;",
@@ -559,7 +559,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 104,
+      "line": 103,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 4) = local_30;",

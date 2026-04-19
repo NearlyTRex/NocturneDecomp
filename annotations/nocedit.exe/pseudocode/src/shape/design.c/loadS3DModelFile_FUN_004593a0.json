@@ -7,12 +7,12 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 656,
-    "complexity_score": 362,
+    "complexity_score": 357,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 64,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 237,
+    "pseudocode_lines": 232,
     "suspect_count": 10,
     "suspect_types": [
       "raw_address_constant",
@@ -21,7 +21,7 @@
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 893
+    "total_lines": 888
   },
   "cross_references": [
     {
@@ -51,11 +51,6 @@
       "name": "crt_memory.c_memset_FUN_005fde40"
     },
     {
-      "addr": "005fdbd0",
-      "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
-    },
-    {
       "addr": "005fefd0",
       "is_variadic": false,
       "name": "crt_stdio.c_fgets_FUN_005fefd0"
@@ -64,6 +59,11 @@
       "addr": "005fe7c0",
       "is_variadic": true,
       "name": "crt_stdio.c_fscanf_FUN_005fe7c0"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005ff178",
@@ -565,7 +565,7 @@
   "resolved_suspects": [
     {
       "description": "Raw hex literal 0x1626410 matches address of g_LoadedVertices (+4 bytes into) (type SVertexData[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 208,
+      "line": 203,
       "match": "0x1626410",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -574,7 +574,7 @@
     },
     {
       "description": "Raw hex literal 0x1626414 matches address of g_LoadedVertices (+8 bytes into) (type SVertexData[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 208,
+      "line": 203,
       "match": "0x1626414",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -730,7 +730,7 @@
   "suspects": [
     {
       "description": "Raw hex literal 0x766880 matches address of g_RenderVertexBuffer (+911468 bytes into) (type SRenderVertex[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 154,
+      "line": 149,
       "match": "0x766880",
       "severity": "moderate",
       "text": "memset(g_ModelPolygonData,0,0x766880);",
@@ -746,7 +746,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 142,
+      "line": 137,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -754,7 +754,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 172,
+      "line": 167,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -762,7 +762,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 183,
+      "line": 178,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -770,7 +770,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 224,
+      "line": 219,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -778,7 +778,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 133,
+      "line": 128,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "mild",
       "text": "do {",
@@ -786,7 +786,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 133,
+      "line": 128,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "mild",
       "text": "do {",
@@ -794,7 +794,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\n' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\n') in a .keep.",
-      "line": 103,
+      "line": 98,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "mild",
       "text": "do {",
@@ -802,7 +802,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\n' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\n') in a .keep.",
-      "line": 115,
+      "line": 110,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "mild",
       "text": "do {",

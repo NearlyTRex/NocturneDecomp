@@ -34,7 +34,7 @@
 ;   int g_PolygonOptimizationPasses
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__strcmp_FUN_005fef20
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   shape_design.c_findVertexMatches_FUN_00461ae0
@@ -242,8 +242,8 @@ section .text
     PUSH EAX                            ; 00465ad4 | = "Original polygons: %d    New total: %..."
     LEA EAX,[EBP + -0x60]               ; 00465ad5
     PUSH EAX                            ; 00465ad8
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00465ad9
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00465ad9
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 00465ade
     CMP dword ptr [EBP + 0x1c],0x0      ; 00465ae1
     JLE 0x00465b11                      ; 00465ae5

@@ -127,8 +127,8 @@ void __cdecl engine_fileio_cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50(CFile
       record_index = record_index + 1;
     } while (record_index < local_cdc.audit_count);
   }
-  _sprintf
-            (local_508,"Viewing audit history for:\n%s",local_cdc.filename);
+  _sprintf(local_508,"Viewing audit history for:\n%s",local_cdc.filename)
+  ;
   shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(&local_8b0,local_508,-1,0)
   ;
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_8b0,0);

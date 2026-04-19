@@ -15,7 +15,7 @@ CGabriella * __cdecl core_gabriela_cpp_CGabriella_ctor_FUN_004d2b20(CGabriella *
   
   pCVar2 = (CGabriella *)core_hero_cpp_CHero_ctor_FUN_004f2340(&this_ptr->base);
   pCVar3 = core_cloth_cpp_CCloth_ctor_FUN_00438ba0(&pCVar2->coat_cloth);
-  ADJ(pCVar3)->base.base.base.vtable._ub = &g_CGabriellaVTable;
+  ADJ(pCVar3)->base.base.base.vtable._ub = &g_CGabriellaVTable._ub;
   ADJ(pCVar3)->weapon_state_flags = 0;
   ADJ(pCVar3)->holster_blend = 0.0;
   ADJ(pCVar3)->draw_blend = 0.0;

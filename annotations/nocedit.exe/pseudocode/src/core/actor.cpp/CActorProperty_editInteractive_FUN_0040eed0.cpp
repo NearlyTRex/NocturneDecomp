@@ -204,8 +204,7 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
     }
     break;
   case PROP_MODEL_KFM:
-    _sprintf
-              (local_2a0,"Select model for actor %s.  Current model is %s.",actor,
+    _sprintf(local_2a0,"Select model for actor %s.  Current model is %s.",actor,
                ((this_ptr->data).v_kfm_ptr)->model_name);
     pcVar6 = local_854;
     pcVar8 = ((this_ptr->data).v_clothlist_ptr)->filenames[2] + 0x24;
@@ -251,8 +250,7 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_37ec,0);
     return 1;
   case PROP_MODEL_DFM:
-    _sprintf
-              (local_2a0,"Select model for actor %s.  Current model is %s.",actor,
+    _sprintf(local_2a0,"Select model for actor %s.  Current model is %s.",actor,
                ((this_ptr->data).v_dfm_ptr)->model_name);
     pCVar14 = (CActorProperty *)local_548;
     pcVar6 = ((this_ptr->data).v_dfm_ptr)->model_name;
@@ -459,8 +457,7 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
       pSVar15 = local_18->motions;
       local_24 = local_18;
       do {
-        _sprintf
-                  (local_980,"%s\t%s",pSVar15,local_1c + local_24->motions[0].state_index);
+        _sprintf(local_980,"%s\t%s",pSVar15,local_1c + local_24->motions[0].state_index);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_21fc.base,local_980);
         pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                            ((this_ptr->data).v_motion_ptr);
@@ -491,8 +488,7 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
               (&local_294c.base,"models","*.cth");
     shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(&local_294c.base);
     if ((this_ptr->param1).v_int < ((this_ptr->data).v_kfm_ptr)->part_visibility_flags[0]) {
-      _sprintf
-                (local_2a0,"Select %s for actor %s.  Current is %s.",pcVar6,actor,
+      _sprintf(local_2a0,"Select %s for actor %s.  Current is %s.",pcVar6,actor,
                  ((this_ptr->data).v_kfm_ptr)->part_visibility_flags +
                  (this_ptr->param1).v_int * 10 + 1);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_294c.base,"(remove cloth)");
@@ -569,8 +565,7 @@ LAB_00410163:
     pCVar5 = (this_ptr->data).v_rulelist_ptr;
     iVar3 = (this_ptr->param1).v_int;
     if (iVar3 < pCVar5->list_size) {
-      _sprintf
-                (local_444,"%s => %s",pCVar5->conditions + iVar3,pCVar5->events + iVar3);
+      _sprintf(local_444,"%s => %s",pCVar5->conditions + iVar3,pCVar5->events + iVar3);
     }
     else {
       pcVar8 = "Condition => Event";
@@ -716,8 +711,7 @@ LAB_0040fdd3:
             *(uint *)((int)&g_PropertyFlagDefinitions[0].mask + iVar20)) != 0) {
           pcVar6 = "enable";
         }
-        _sprintf
-                  (local_368,"%s\t%s",
+        _sprintf(local_368,"%s\t%s",
                    *(uint *)((int)&g_PropertyFlagDefinitions[0].name + iVar20),pcVar6);
         iVar20 = iVar20 + 8;
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_25a4.base,local_368);

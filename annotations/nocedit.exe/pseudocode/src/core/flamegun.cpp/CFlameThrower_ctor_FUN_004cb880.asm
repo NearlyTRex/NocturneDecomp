@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_flamegun_kfm_0062a38e
 ;   float FLOAT_0065e26c = 8
-;   CDemonActor_vtable g_CFlameThrowerVTable
+;   CWeapon_full_vtable g_CFlameThrowerVTable
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0

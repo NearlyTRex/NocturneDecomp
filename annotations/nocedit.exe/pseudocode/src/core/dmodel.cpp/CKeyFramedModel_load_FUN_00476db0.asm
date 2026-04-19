@@ -40,7 +40,7 @@
 ;   core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00477110
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c_fgetc_FUN_005fe840
-;   crt_stdio.c_fputc_FUN_005fea10
+;   crt_stdio.c_ungetc_FUN_005fea10
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;
@@ -95,8 +95,8 @@ section .text
     PUSH EBP                            ; 00476e0b
     PUSH EAX                            ; 00476e0c
     MOV ESI,EAX                         ; 00476e0d
-    CALL crt_stdio.c_fputc_FUN_005fea10 ; 00476e0f
-        ;   XREF to: 005fea10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005fea10(int character, _FILE * stream)
+    CALL crt_stdio.c_ungetc_FUN_005fea10 ; 00476e0f
+        ;   XREF to: 005fea10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_ungetc_FUN_005fea10(int character, _FILE * stream)
     ADD ESP,0x8                         ; 00476e14
     CMP ESI,0x2f                        ; 00476e17
     JNZ 0x00476f0b                      ; 00476e1a

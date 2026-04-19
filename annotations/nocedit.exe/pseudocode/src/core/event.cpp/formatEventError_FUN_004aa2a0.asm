@@ -15,7 +15,7 @@
 ;   char[256] g_EventErrorMessageBuffer
 ;
 ; Called Functions:
-;   crt_stdio.c__vsprintf_FUN_005fdba8
+;   crt_stdio.c_vsprintf_FUN_005fdba8
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 004aa2ad
     PUSH EDX                            ; 004aa2b1
     PUSH 0x2d0a460                      ; 004aa2b2 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__vsprintf_FUN_005fdba8 ; 004aa2b7
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
+    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 004aa2b7
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 004aa2bc
     XOR ECX,ECX                         ; 004aa2bf
     XOR EAX,EAX                         ; 004aa2c1

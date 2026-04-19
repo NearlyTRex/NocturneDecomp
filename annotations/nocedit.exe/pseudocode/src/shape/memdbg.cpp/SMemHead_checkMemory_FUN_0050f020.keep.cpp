@@ -6,6 +6,7 @@
 // Signature: void __cdecl shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(SMemHead *header,char *filename,int line_number)
 
 #include "nocturne.h"
+#include "debug_log.h"
 
 void __cdecl shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(SMemHead *header,char *filename,int line_number)
 
@@ -15,10 +16,20 @@ void __cdecl shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(SMemHead *header
   SMemHead *pSVar3;
   char *pcVar4;
   int iVar5;
-  
+
   iVar5 = g_MemCheckLastLine;
   pcVar4 = g_MemCheckLastFile;
   if (header->front_guard != GAME_DEADBEEF) {
+    // Emit a clean backtrace BEFORE the game's displayErrorAndQuit path —
+    // that path tries to %s the block's source_file field, which is random
+    // stack memory when the "header" pointer was reached via a corrupt list
+    // `next`, and the resulting SDL MessageBox crashes without a usable
+    // stack. DERROR + DBACKTRACE give us the real caller chain.
+    DERROR("SMemHead front_guard mismatch: header=%p guard=0x%08x "
+           "(expected 0x%08x). caller-ctx=%s:%d last-ok=%s:%d",
+           (void *)header, header->front_guard, (unsigned)GAME_DEADBEEF,
+           filename ? filename : "(null)", line_number,
+           pcVar4 ? pcVar4 : "(null)", iVar5);
     g_CurrentFilename = "..\\shape\\memdbg.cpp";
     g_CurrentLineNumber = 0xaf;
     iVar1 = header->source_line;

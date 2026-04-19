@@ -34,8 +34,8 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
 ;   crt_stdio.c_fgetc_FUN_005fe840
-;   crt_stdio.c_fputc_FUN_005fea10
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
+;   crt_stdio.c_ungetc_FUN_005fea10
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;
@@ -114,8 +114,8 @@ section .text
     PUSH EBX                            ; 00523a38
         ;   Label: LAB_00523a38
     PUSH EAX                            ; 00523a39
-    CALL crt_stdio.c_fputc_FUN_005fea10 ; 00523a3a
-        ;   XREF to: 005fea10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005fea10(int character, _FILE * stream)
+    CALL crt_stdio.c_ungetc_FUN_005fea10 ; 00523a3a
+        ;   XREF to: 005fea10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_ungetc_FUN_005fea10(int character, _FILE * stream)
     ADD ESP,0x8                         ; 00523a3f
     MOV EAX,ESP                         ; 00523a42
     PUSH EAX                            ; 00523a44
@@ -174,8 +174,8 @@ section .text
     PUSH EBX                            ; 00523aba
         ;   Label: LAB_00523aba
     PUSH EAX                            ; 00523abb
-    CALL crt_stdio.c_fputc_FUN_005fea10 ; 00523abc
-        ;   XREF to: 005fea10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005fea10(int character, _FILE * stream)
+    CALL crt_stdio.c_ungetc_FUN_005fea10 ; 00523abc
+        ;   XREF to: 005fea10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_ungetc_FUN_005fea10(int character, _FILE * stream)
     ADD ESP,0x8                         ; 00523ac1
     LEA EAX,[ESP + 0xc8]                ; 00523ac4
     PUSH EAX                            ; 00523acb

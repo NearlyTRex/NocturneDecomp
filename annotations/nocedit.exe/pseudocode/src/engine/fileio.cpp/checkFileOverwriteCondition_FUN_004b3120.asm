@@ -18,7 +18,7 @@
 ;   undefined4 g_VersionControlSession.overwrite_writeable_choice
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_dosio.c_getFileSizeWithFinder_FUN_00481960
 ;   engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90
@@ -74,8 +74,8 @@ section .text
     PUSH 0x626502                       ; 004b3178 | = "You currently have %s checked out.  R..."
     LEA EAX,[ESP + 0x8]                 ; 004b317d
     PUSH EAX                            ; 004b3181
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b3182
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b3182
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b3187
     PUSH 0x2d12bf0                      ; 004b318a | g_VersionControlSession.overwrite_own_choice
     LEA EAX,[ESP + 0x4]                 ; 004b318f
@@ -90,8 +90,8 @@ section .text
     PUSH 0x62654c                       ; 004b319f | = "A writable copy of %s exists.  Replac..."
     LEA EAX,[ESP + 0x1fc]               ; 004b31a4
     PUSH EAX                            ; 004b31ab
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b31ac
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b31ac
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b31b1
     PUSH 0x2d12bf4                      ; 004b31b4 | g_VersionControlSession.overwrite_writeable_choice
     LEA EAX,[ESP + 0x1f8]               ; 004b31b9

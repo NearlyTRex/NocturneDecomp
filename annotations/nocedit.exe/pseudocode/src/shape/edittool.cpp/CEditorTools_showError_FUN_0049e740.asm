@@ -28,7 +28,7 @@
 ;   int g_ErrorTextColor
 ;
 ; Called Functions:
-;   crt_stdio.c__vsprintf_FUN_005fdba8
+;   crt_stdio.c_vsprintf_FUN_005fdba8
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130
 ;
 ; *****************************************************************************
@@ -45,8 +45,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 0049e74e
     PUSH EDX                            ; 0049e752
     PUSH 0x2cef530                      ; 0049e753 | g_ErrorMessageBuffer_02cef530
-    CALL crt_stdio.c__vsprintf_FUN_005fdba8 ; 0049e758
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
+    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0049e758
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0049e75d
     MOV EBX,dword ptr [0x02cf2a94]      ; 0049e760 | g_ErrorTextColor
     PUSH EBX                            ; 0049e766

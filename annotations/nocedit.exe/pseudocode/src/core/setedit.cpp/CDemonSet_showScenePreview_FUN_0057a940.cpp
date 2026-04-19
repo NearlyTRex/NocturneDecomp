@@ -104,17 +104,14 @@ void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet 
       }
       shape_edittool_cpp_CEditorTools_drawMousePointer_FUN_004a1380(g_CEditorToolsPtr,0);
     }
-    _sprintf
-              (acStack_13c,"Visit %d, rotate: %d, zcheck %d, render %d",g_CubesTestedCount,
+    _sprintf(acStack_13c,"Visit %d, rotate: %d, zcheck %d, render %d",g_CubesTestedCount,
                g_CubesWithVoxelsCount,g_CubesVisibleCount);
     engine_2d_c_drawText_FUN_00401fd0(acStack_13c,0,0x16);
-    _sprintf
-              (acStack_13c,"Viewer pos: %8.4f,%8.4f,%8.4f pbh: %6.3f,%6.3f,%6.3f",(double)(g_CSlewPtr->position).x,
+    _sprintf(acStack_13c,"Viewer pos: %8.4f,%8.4f,%8.4f pbh: %6.3f,%6.3f,%6.3f",(double)(g_CSlewPtr->position).x,
                (double)(g_CSlewPtr->position).y,(double)(g_CSlewPtr->position).z,
                (double)g_CSlewPtr->pitch,(double)g_CSlewPtr->roll,(double)g_CSlewPtr->yaw);
     engine_2d_c_drawText_FUN_00401fd0(acStack_13c,0,g_WindowHeight + -0x2c);
-    _sprintf
-              (acStack_13c,"%f",(double)(1.0 / g_CGamePtr->delta_time_float));
+    _sprintf(acStack_13c,"%f",(double)(1.0 / g_CGamePtr->delta_time_float));
     engine_2d_c_drawText_FUN_00401fd0(acStack_13c,0,g_WindowHeight + -0xb);
     wincore_windll_cpp_unlockFrame_FUN_005b7250(0);
     wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630();

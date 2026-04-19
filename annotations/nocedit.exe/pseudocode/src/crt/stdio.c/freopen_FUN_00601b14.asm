@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; _FILE * __cdecl crt_stdio_c__freopen_FUN_00601b14(char *filename,char *mode,_FILE *stream)
+; _FILE * __cdecl crt_stdio_c_freopen_FUN_00601b14(char *filename,char *mode,_FILE *stream)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
@@ -27,7 +27,7 @@
 section .text
 
     PUSH EBX                            ; 00601b14
-        ;   Label: crt_stdio.c__freopen_FUN_00601b14
+        ;   Label: crt_stdio.c_freopen_FUN_00601b14
     PUSH ESI                            ; 00601b15
     PUSH EDI                            ; 00601b16
     PUSH EBP                            ; 00601b17

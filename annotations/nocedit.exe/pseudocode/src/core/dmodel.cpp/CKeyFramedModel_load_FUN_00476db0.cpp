@@ -34,7 +34,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(CKeyFramedModel *
     pCVar3 = (CKeyFramedModel *)(pCVar3->model_filename + 2);
   } while (cVar1 != '\0');
   iVar2 = _fgetc(file);
-  _fputc(iVar2,file);
+  _ungetc(iVar2,file);
   if (iVar2 == 0x2f) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\dmodel.cpp",0xc3);
     file = engine_dosio_c_getFile_FUN_00481a50("models",filename,"rt");

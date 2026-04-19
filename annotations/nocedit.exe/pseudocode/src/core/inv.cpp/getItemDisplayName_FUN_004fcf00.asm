@@ -21,7 +21,7 @@
 ;
 ; Called Functions:
 ;   core_inv.cpp_getItemModel_FUN_004fcda0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
@@ -65,8 +65,8 @@ section .text
         ;   Label: LAB_004fcf44
     PUSH 0x630379                       ; 004fcf45 | = "Add to dict: %s"
     PUSH 0x2db8a70                      ; 004fcf4a | g_ErrorMessageBuffer_02db8a70
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004fcf4f
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004fcf4f
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x2db8a70                   ; 004fcf54 | g_ErrorMessageBuffer_02db8a70
     ADD ESP,0xc                         ; 004fcf59
     POP EBP                             ; 004fcf5c

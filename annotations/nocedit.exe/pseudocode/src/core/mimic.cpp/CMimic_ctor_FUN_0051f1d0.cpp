@@ -23,7 +23,7 @@ CMimic * __cdecl core_mimic_cpp_CMimic_ctor_FUN_0051f1d0(CMimic *this_ptr)
   pCVar5 = (CMimic *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
   pCVar6 = core_cloth_cpp_CCloth_ctor_FUN_00438ba0(&pCVar5->cloth);
   pCVar7 = core_morph_cpp_CMorph_ctor_FUN_0052b310(&ADJ(pCVar6)->morph);
-  ADJ(pCVar7)->base.base.base.vtable._ub = &g_CMimicVTable;
+  ADJ(pCVar7)->base.base.base.vtable._ub = &g_CMimicVTable._ub;
   ADJ(pCVar7)->base.base.collision_cylinder_height = 0.5;
   pcVar4 = "CGhoul";
   ADJ(pCVar7)->base.base.collision_cylinder_radius = 1.0;

@@ -25,7 +25,7 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_resolveActorByName_FUN_004aa400
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_stdio.c_sscanf_FUN_0060013c
 ;
 ; *****************************************************************************
@@ -126,8 +126,8 @@ section .text
     PUSH 0x624514                       ; 004aa60e | = "Error parsing vector location"
         ;   Label: LAB_004aa60e
     PUSH 0x2d0a460                      ; 004aa613 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004aa618
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004aa618
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0xffffffff                  ; 004aa61d
     ADD ESP,0x8                         ; 004aa622
     ADD ESP,0x68                        ; 004aa625

@@ -13,7 +13,7 @@
 ;   TerminatedCString s_drone_dfm_0062236d
 ;   float FLOAT_0065d0ac = 50
 ;   float FLOAT_0065d0b0 = 100
-;   CDemonActor_vtable g_CDroneVTable
+;   CEnemy_full_vtable g_CDroneVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500

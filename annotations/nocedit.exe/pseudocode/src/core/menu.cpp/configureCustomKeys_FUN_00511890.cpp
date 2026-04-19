@@ -108,8 +108,7 @@ LAB_005119ab:
       (*(char (*) [256])pcVar11)[1] = cVar2;
       pcVar11 = *(char (*) [256])pcVar11 + 2;
     } while (cVar2 != '\0');
-    _sprintf
-              (local_114,"%5.2f",(double)g_CGamePtr->x_mouse_sensitivity * 1.52587890625e-05
+    _sprintf(local_114,"%5.2f",(double)g_CGamePtr->x_mouse_sensitivity * 1.52587890625e-05
               );
     iVar5 = -1;
     pacVar12 = g_ControlsMenuTextBuffers + 5;
@@ -143,8 +142,7 @@ LAB_005119ab:
       pcVar7 = pcVar7 + 2;
     } while (cVar2 != '\0');
     iVar5 = 7;
-    _sprintf
-              (local_114,"%5.2f",(double)g_CGamePtr->y_mouse_sensitivity * 1.52587890625e-05
+    _sprintf(local_114,"%5.2f",(double)g_CGamePtr->y_mouse_sensitivity * 1.52587890625e-05
               );
     iVar6 = -1;
     pacVar9 = g_ControlsMenuTextBuffers + 6;

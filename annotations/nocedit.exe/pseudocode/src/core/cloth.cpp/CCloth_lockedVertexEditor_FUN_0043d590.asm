@@ -55,7 +55,7 @@
 ;   core_game.cpp_CGame_saveClockTime_FUN_004d7d80
 ;   core_game.cpp_CGame_updateDT_FUN_004d7d90
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawLine_FUN_004011b0
 ;   engine_2d.c_drawText_FUN_00401fd0
@@ -640,8 +640,8 @@ section .text
     MOV dword ptr [ESP + 0x4c],EAX      ; 0043dbb3
     LEA EAX,[ESP + 0x20]                ; 0043dbb7
     PUSH EAX                            ; 0043dbbb
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0043dbbc
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0043dbbc
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0043dbc1
     MOV ECX,dword ptr [ESP + 0x44]      ; 0043dbc4
     PUSH ECX                            ; 0043dbc8

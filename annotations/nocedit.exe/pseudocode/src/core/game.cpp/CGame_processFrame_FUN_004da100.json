@@ -7,19 +7,19 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1158,
-    "complexity_score": 507,
+    "complexity_score": 499,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 77,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 382,
+    "pseudocode_lines": 374,
     "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "unnamed_local",
       "warning_type_propagation"
     ],
-    "total_lines": 1540
+    "total_lines": 1532
   },
   "cross_references": [
     {
@@ -168,14 +168,14 @@
       "name": "crt_env.c_getenv_FUN_006013f0"
     },
     {
-      "addr": "005fdbd0",
-      "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
-    },
-    {
       "addr": "006007a0",
       "is_variadic": false,
       "name": "crt_stdio.c_fputc_FUN_006007a0"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00401fd0",
@@ -855,16 +855,16 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 255,
+      "line": 251,
       "match": "SUB84(",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(local_3dc,\"FR: %f, AVG: %f, PC: %d\",SUB84(__BITCAST_UINT64(dVar4),0),",
+      "text": "_sprintf(local_3dc,\"FR: %f, AVG: %f, PC: %d\",SUB84(__BITCAST_UINT64(dVar4),0),",
       "type": "sub84_truncation"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 257,
+      "line": 253,
       "match": "SUB84(",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -873,7 +873,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 269,
+      "line": 264,
       "match": "SUB84(",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -882,7 +882,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 270,
+      "line": 265,
       "match": "SUB84(",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -891,7 +891,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 271,
+      "line": 266,
       "match": "SUB84(",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -900,7 +900,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 271,
+      "line": 266,
       "match": "SUB84(",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -909,7 +909,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 272,
+      "line": 267,
       "match": "SUB84(",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -918,16 +918,16 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 281,
+      "line": 274,
       "match": "SUB84(",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(local_3dc,\"Fudge: %g,%g,%g\",SUB84(__BITCAST_UINT64((double)pCVar5->x),0),",
+      "text": "_sprintf(local_3dc,\"Fudge: %g,%g,%g\",SUB84(__BITCAST_UINT64((double)pCVar5->x),0),",
       "type": "sub84_truncation"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 282,
+      "line": 275,
       "match": "SUB84(",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -936,7 +936,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 283,
+      "line": 276,
       "match": "SUB84(",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -945,11 +945,11 @@
     },
     {
       "description": "Raw hex literal 0x3275924 matches address of g_CDemonCameraInstance (+64 bytes into) (type CDemonCamera). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 248,
+      "line": 245,
       "match": "0x3275924",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(local_3dc,\"Camera: \\\"%s\\\" Group %d\",0x3275924,",
+      "text": "_sprintf(local_3dc,\"Camera: \\\"%s\\\" Group %d\",0x3275924,",
       "type": "raw_address_constant"
     }
   ],
@@ -1190,7 +1190,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 202,
+      "line": 200,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_ScreenBufferArray + local_24));",
@@ -1198,7 +1198,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 347,
+      "line": 339,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "*(char *)((int)piVar20 + 1) = cVar1;",
@@ -1206,7 +1206,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 348,
+      "line": 340,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar20 = (int *)((int)piVar20 + 2);",

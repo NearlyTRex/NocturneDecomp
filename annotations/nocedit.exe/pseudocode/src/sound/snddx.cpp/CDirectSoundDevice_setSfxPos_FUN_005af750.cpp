@@ -71,8 +71,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_005af750(CDirectSou
                        (float)(slot->options).position.y,(float)(slot->options).position.z,1);
     if (uVar5 != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar5);
-      _sprintf
-                (acStack_804,"DirectSux: Unable to %s.  (%s)","Set hardware sfx 3d buffer position")
+      _sprintf(acStack_804,"DirectSux: Unable to %s.  (%s)","Set hardware sfx 3d buffer position")
       ;
       sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_804);
     }
@@ -85,8 +84,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_005af750(CDirectSou
                        (float)(slot->options).velocity.y,(float)(slot->options).velocity.z,1);
     if (uVar3 != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar3);
-      _sprintf
-                (acStack_994,"DirectSux: Unable to %s.  (%s)","Set hardware sfx 3d buffer velocity")
+      _sprintf(acStack_994,"DirectSux: Unable to %s.  (%s)","Set hardware sfx 3d buffer velocity")
       ;
       uVar4 = 0;
       sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_994);
@@ -117,8 +115,7 @@ LAB_005af8a8:
     uVar5 = (*this_ptr_01->vtable->SetVolume)(this_ptr_01,lStack_1c);
     if (uVar5 != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar5);
-      _sprintf
-                (acStack_4e4,"DirectSux: Unable to %s.  (%s)","Set hardware sfx secondary buffer volume")
+      _sprintf(acStack_4e4,"DirectSux: Unable to %s.  (%s)","Set hardware sfx secondary buffer volume")
       ;
       uVar4 = 0;
       sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_4e4);
@@ -131,8 +128,7 @@ LAB_005af8a8:
                                 ROUND(ROUND((float)(slot->sample->sample_info).sample_rate *
                                             (slot->options).base_frequency))), uVar5 != 0)) {
     sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar5);
-    _sprintf
-              (acStack_b24,"DirectSux: Unable to %s.  (%s)","Set hardware sfx secondary buffer frequency");
+    _sprintf(acStack_b24,"DirectSux: Unable to %s.  (%s)","Set hardware sfx secondary buffer frequency");
     uVar4 = 0;
     sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_b24);
   }
@@ -144,8 +140,7 @@ LAB_005af8a8:
     uVar5 = (*this_ptr_00->vtable->SetMode)(this_ptr_00,dwMode,1);
     if (uVar5 != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar5);
-      _sprintf
-                (acStack_674,"DirectSux: Unable to %s.  (%s)","Set hardware sfx 3d buffer mode")
+      _sprintf(acStack_674,"DirectSux: Unable to %s.  (%s)","Set hardware sfx 3d buffer mode")
       ;
       uVar4 = 0;
       sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_674);
@@ -159,8 +154,7 @@ LAB_005af8a8:
     uVar5 = (*this_ptr_00->vtable->SetMinDistance)(this_ptr_00,local_2c,1);
     if (uVar5 != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar5);
-      _sprintf
-                (acStack_354,"DirectSux: Unable to %s.  (%s)","Set hardware sfx 3d buffer minimum distance")
+      _sprintf(acStack_354,"DirectSux: Unable to %s.  (%s)","Set hardware sfx 3d buffer minimum distance")
       ;
       uVar4 = 0;
       sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_354);
@@ -168,8 +162,7 @@ LAB_005af8a8:
     uVar5 = (*this_ptr_00->vtable->SetMaxDistance)(this_ptr_00,local_28,1);
     if (uVar5 != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar5);
-      _sprintf
-                (acStack_cb4,"DirectSux: Unable to %s.  (%s)","Set hardware sfx 3d buffer maximum distance")
+      _sprintf(acStack_cb4,"DirectSux: Unable to %s.  (%s)","Set hardware sfx 3d buffer maximum distance")
       ;
       uVar4 = 0;
       sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_cb4);
@@ -183,8 +176,7 @@ LAB_005af982:
     uVar5 = (*g_DirectSound3DListener->vtable->CommitDeferredSettings)(g_DirectSound3DListener);
     if (uVar5 != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar5);
-      _sprintf
-                (acStack_1c4,"DirectSux: Unable to %s.  (%s)","Commit hardware sfx 3d buffer settings")
+      _sprintf(acStack_1c4,"DirectSux: Unable to %s.  (%s)","Commit hardware sfx 3d buffer settings")
       ;
       sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_1c4);
       goto LAB_005af9c4;

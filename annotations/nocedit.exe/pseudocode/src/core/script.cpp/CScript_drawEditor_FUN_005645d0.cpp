@@ -49,8 +49,7 @@ void __cdecl core_script_cpp_CScript_drawEditor_FUN_005645d0(CScript *this_ptr)
     }
   }
   engine_matrix_c_popViewport_FUN_0050e480();
-  _sprintf
-            (local_204,"Ln %d, Col %d",g_CurrentEditingLine + 1,g_CurrentEditingColumn + 1);
+  _sprintf(local_204,"Ln %d, Col %d",g_CurrentEditingLine + 1,g_CurrentEditingColumn + 1);
   engine_font_cpp_CBitFont_drawTextRight_FUN_004cdce0
             (g_ScriptEditorFont,g_ScriptStatusBarRight,g_ScriptStatusBarY,0xff,-1,local_204);
   engine_font_cpp_CBitFont_drawTextWrapper_FUN_004cdbf0

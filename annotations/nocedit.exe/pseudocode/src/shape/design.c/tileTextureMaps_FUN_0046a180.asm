@@ -39,7 +39,7 @@
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
 ;   engine_texture.cpp_clearTextureCache_FUN_005dd8e0
@@ -560,8 +560,8 @@ section .text
     PUSH EAX                            ; 0046a6d1 | = "Model name to save [%s] : "
     LEA EAX,[EBP + 0xfffffe64]          ; 0046a6d2
     PUSH EAX                            ; 0046a6d8
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0046a6d9
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0046a6d9
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0046a6de
     LEA EAX,[EBP + 0xfffffe64]          ; 0046a6e1
     PUSH EAX                            ; 0046a6e7

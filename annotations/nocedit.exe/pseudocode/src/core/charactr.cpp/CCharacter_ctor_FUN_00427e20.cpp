@@ -29,7 +29,7 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00427e20(CCharacter *
                      (ADJ(pvVar1)->collision_test_normals,0xf,&g_CVectorTypeInfo);
   pvVar3 = __arrinit(ADJ(pvVar2)->fires,0x32,&g_SFireTypeInfo);
   pvVar4 = __arrinit(ADJ(pvVar3)->flames,0x32,&g_CFlameTypeInfo);
-  ADJ(pvVar4)->base.vtable._ub = &g_CCharacterVTable;
+  ADJ(pvVar4)->base.vtable._ub = &g_CCharacterVTable._ub;
   ADJ(pvVar4)->render_active = 0;
   (ADJ(pvVar4)->velocity).z = 0.0;
   (ADJ(pvVar4)->velocity).y = (ADJ(pvVar4)->velocity).z;

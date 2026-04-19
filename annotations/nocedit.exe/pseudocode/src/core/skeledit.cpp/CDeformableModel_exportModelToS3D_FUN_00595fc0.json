@@ -7,17 +7,17 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 791,
-    "complexity_score": 320,
+    "complexity_score": 317,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 37,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 255,
+    "pseudocode_lines": 252,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 1046
+    "total_lines": 1043
   },
   "cross_references": [
     {
@@ -56,14 +56,14 @@
       "name": "crt_memory.c_memset_FUN_005fde40"
     },
     {
-      "addr": "005fdbd0",
-      "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
-    },
-    {
       "addr": "005fe6d0",
       "is_variadic": true,
       "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "0049e740",
@@ -400,16 +400,16 @@
   "resolved_suspects": [
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 136,
+      "line": 135,
       "match": "SUB84(",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(local_340,\"%g,%g,%g\",SUB84(__BITCAST_UINT64((double)local_a8.x),0),",
+      "text": "_sprintf(local_340,\"%g,%g,%g\",SUB84(__BITCAST_UINT64((double)local_a8.x),0),",
       "type": "sub84_truncation"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 156,
+      "line": 154,
       "match": "SUB84(",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -418,7 +418,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 180,
+      "line": 177,
       "match": "SUB84(",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -770,7 +770,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 153,
+      "line": 151,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)this_ptr->index_data_ptr[lod_level] + local_28),",
@@ -778,7 +778,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 219,
+      "line": 216,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "_fprintf(file,\"%d,%d,%d,%d,\\\"%s\\\"\\n\",local_88,*(uint *)((int)aiStack_140 + iVar1),",
@@ -786,7 +786,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 221,
+      "line": 218,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_88 = local_88 + *(int *)((int)aiStack_140 + iVar1);",

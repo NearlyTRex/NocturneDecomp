@@ -46,7 +46,7 @@
 ;   core_xform.cpp_eulerToQuaternion_FUN_005f7b20
 ;   core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0
 ;   core_xform.cpp_slerpQuaternion_FUN_005f77e0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720
 ;   sound_sndmain.cpp_killSfx_FUN_005a9c40
 ;   sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40
@@ -408,8 +408,8 @@ section .text
     PUSH 0x656654                       ; 005e2881 | = "turret-loop.wav * %f"
     LEA EAX,[ESP + 0x10]                ; 005e2886
     PUSH EAX                            ; 005e288a
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005e288b
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005e288b
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005e2890
     LEA EAX,[ESP + 0x4]                 ; 005e2893
     PUSH EAX                            ; 005e2897

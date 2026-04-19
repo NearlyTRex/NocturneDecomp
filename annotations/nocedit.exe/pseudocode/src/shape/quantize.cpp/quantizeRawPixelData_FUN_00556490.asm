@@ -39,7 +39,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
@@ -92,8 +92,8 @@ section .text
     PUSH 0x640e49                       ; 005564f2 | = "Invalid bit depth [%d] for bitmap"
     LEA EAX,[ESP + 0x8]                 ; 005564f7
     PUSH EAX                            ; 005564fb
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005564fc
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005564fc
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x40a                       ; 00556501
     ADD ESP,0xc                         ; 00556506
     MOV [0x02f0ca4c],EAX                ; 00556509 | g_CurrentLineNumber
@@ -127,8 +127,8 @@ section .text
     PUSH 0x640e81                       ; 0055655f | = "%d-bit color                         ..."
     LEA EAX,[ESP + 0x8]                 ; 00556564
     PUSH EAX                            ; 00556568
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00556569
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00556569
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055656e
     MOV EAX,dword ptr [ESP + 0xf8]      ; 00556571
     LEA EBX,[EAX*0x4 + 0x0]             ; 00556578
@@ -200,8 +200,8 @@ section .text
     PUSH 0x640f4e                       ; 00556631 | = "%d-color palette created             ..."
     LEA EAX,[ESP + 0x8]                 ; 00556636
     PUSH EAX                            ; 0055663a
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0055663b
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055663b
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00556640
     MOV EAX,dword ptr [ESP + 0xf8]      ; 00556643
     ADD EAX,0x2                         ; 0055664a
@@ -345,8 +345,8 @@ section .text
     PUSH 0x640dfb                       ; 005567e7 | = "Unable to allocate %d-bit bitmap for ..."
     LEA EAX,[ESP + 0x8]                 ; 005567ec
     PUSH EAX                            ; 005567f0
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005567f1
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005567f1
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EDX,0x640e33                    ; 005567f6 | = "..\\shape\\quantize.cpp"
     ADD ESP,0xc                         ; 005567fb
     MOV EAX,ESP                         ; 005567fe

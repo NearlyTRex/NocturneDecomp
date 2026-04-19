@@ -18,7 +18,7 @@
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_ctor_FUN_0054bcd0
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_init_FUN_0054bd00
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -65,8 +65,8 @@ section .text
     PUSH EDX                            ; 0054c42a
     LEA EAX,[ESP + 0x8]                 ; 0054c42b
     PUSH EAX                            ; 0054c42f
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0054c430
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0054c430
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0054c435
     MOV ECX,dword ptr [ESP + 0x88]      ; 0054c438
     PUSH ECX                            ; 0054c43f

@@ -106,11 +106,9 @@ LAB_0057af67:
   }
   engine_2d_c_drawText_FUN_00401fd0("Position light.  Press SPACE when done",0,0);
   engine_2d_c_drawText_FUN_00401fd0(local_84,0,0xb);
-  _sprintf
-            (&stack0xfffffe90,"%f",(double)(1.0 / g_CGamePtr->delta_time_float));
+  _sprintf(&stack0xfffffe90,"%f",(double)(1.0 / g_CGamePtr->delta_time_float));
   engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe90,0,g_WindowHeight + -0xb);
-  _sprintf
-            (&stack0xfffffe90,"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f",(double)(g_CSlewPtr->position).x,
+  _sprintf(&stack0xfffffe90,"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f",(double)(g_CSlewPtr->position).x,
              (double)(g_CSlewPtr->position).y,(double)(g_CSlewPtr->position).z,
              180 * (double)g_CSlewPtr->pitch * 0.31830988619288902,
              (double)g_CSlewPtr->roll * 0.31830988619288902 * 180,

@@ -14,7 +14,7 @@ CImp * __cdecl core_imp_cpp_CImp_ctor_FUN_004f98a0(CImp *this_ptr)
   CImp *pCVar3;
   
   pCVar3 = (CImp *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
-  (pCVar3->base).base.base.vtable._ub = &g_CImpVTable;
+  (pCVar3->base).base.base.vtable._ub = &g_CImpVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar3->base).base.model,"imp.dfm");
   fVar1 = 50.0f;

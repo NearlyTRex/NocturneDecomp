@@ -718,8 +718,8 @@ section .text
     PUSH 0x620686                       ; 0047d1d4 | = "%d"
     LEA EAX,[EBP + 0xfffffdb2]          ; 0047d1d9
     PUSH EAX                            ; 0047d1df
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0047d1e0
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0047d1e0
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0047d1e5
     MOV ECX,dword ptr [EBP + 0x42]      ; 0047d1e8
     PUSH ECX                            ; 0047d1eb
@@ -744,8 +744,8 @@ section .text
     PUSH 0x620689                       ; 0047d21d | = "Frame: %d of %d"
     LEA EAX,[EBP + 0xfffffc86]          ; 0047d222
     PUSH EAX                            ; 0047d228
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0047d229
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0047d229
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,[0x00679398]                ; 0047d22e | g_WindowHeight
     ADD ESP,0x10                        ; 0047d233
     SUB EAX,0x37                        ; 0047d236
@@ -847,8 +847,8 @@ section .text
     PUSH 0x6207d8                       ; 0047d33f | = "I.  Interactive bias is now %s"
     LEA EAX,[EBP + 0xfffffc86]          ; 0047d344
     PUSH EAX                            ; 0047d34a
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0047d34b
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0047d34b
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0047d350
     PUSH 0xc6                           ; 0047d353
     PUSH 0x0                            ; 0047d358
@@ -904,8 +904,8 @@ section .text
     PUSH 0x620884                       ; 0047d3fb | = "E.  Exact collision (currently %s)"
     LEA EAX,[EBP + 0xfffffc86]          ; 0047d400
     PUSH EAX                            ; 0047d406
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0047d407
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0047d407
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0047d40c
     PUSH 0x13f                          ; 0047d40f
     PUSH 0x0                            ; 0047d414
@@ -925,8 +925,8 @@ section .text
     PUSH 0x6208b8                       ; 0047d43f | = "T.  Transparent pixel (currently %s)"
     LEA EAX,[EBP + 0xfffffc86]          ; 0047d444
     PUSH EAX                            ; 0047d44a
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0047d44b
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0047d44b
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0047d450
     PUSH 0x14a                          ; 0047d453
     PUSH 0x0                            ; 0047d458
@@ -941,8 +941,8 @@ section .text
     PUSH 0x6208dd                       ; 0047d476 | = "Vertex count: %d"
     LEA EAX,[EBP + 0xfffffc86]          ; 0047d47b
     PUSH EAX                            ; 0047d481
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0047d482
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0047d482
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,[0x00679398]                ; 0047d487 | g_WindowHeight
     ADD ESP,0xc                         ; 0047d48c
     SUB EAX,0x2c                        ; 0047d48f
@@ -959,8 +959,8 @@ section .text
     PUSH 0x6208ee                       ; 0047d4b1 | = "Poly count: %d"
     LEA EAX,[EBP + 0xfffffc86]          ; 0047d4b6
     PUSH EAX                            ; 0047d4bc
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0047d4bd
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0047d4bd
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,[0x00679398]                ; 0047d4c2 | g_WindowHeight
     ADD ESP,0xc                         ; 0047d4c7
     SUB EAX,0x21                        ; 0047d4ca
@@ -977,8 +977,8 @@ section .text
     PUSH 0x6208fd                       ; 0047d4ec | = "Frame count: %d"
     LEA EAX,[EBP + 0xfffffc86]          ; 0047d4f1
     PUSH EAX                            ; 0047d4f7
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0047d4f8
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0047d4f8
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,[0x00679398]                ; 0047d4fd | g_WindowHeight
     ADD ESP,0xc                         ; 0047d502
     SUB EAX,0x16                        ; 0047d505
@@ -1024,8 +1024,8 @@ section .text
     PUSH 0x62090d                       ; 0047d562 | = "noc%d.pcx"
     PUSH 0x2c14c88                      ; 0047d567 | g_KFMShowEditorScreenshotFile
     MOV dword ptr [0x02c14c84],ECX      ; 0047d56c | g_KeyFrameModelPoolEnd
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0047d572
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0047d572
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0047d577
     PUSH 0x2c14c88                      ; 0047d57a | g_KFMShowEditorScreenshotFile
     CALL engine_pcx.c_saveScreenshotGeneral_FUN_005490c0 ; 0047d57f
@@ -2086,8 +2086,8 @@ section .text
     PUSH EAX                            ; 0047e0d7 | = "Current dimensions on frame %d\nX: (%..."
     LEA EAX,[EBP + 0xfffffaf6]          ; 0047e0d8
     PUSH EAX                            ; 0047e0de
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0047e0df
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0047e0df
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x54                        ; 0047e0e4
     PUSH 0x0                            ; 0047e0e7
     LEA EAX,[EBP + 0xffffff56]          ; 0047e0e9
@@ -2526,8 +2526,8 @@ section .text
     PUSH EAX                            ; 0047e64c
     LEA EDI,[EBP + 0xfffffe16]          ; 0047e64d
     MOV ESI,0x670210                    ; 0047e653 | g_ModelLastScaleInput
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0047e658
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0047e658
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV ECX,0x19                        ; 0047e65d
     ADD ESP,0x54                        ; 0047e662
     MOVSD.REP ES:EDI,ESI                ; 0047e665 | g_ModelLastScaleInput | g_ModelLastScaleInput+4

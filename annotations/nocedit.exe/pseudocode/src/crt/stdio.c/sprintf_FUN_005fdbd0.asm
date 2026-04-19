@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_stdio_c__sprintf_FUN_005fdbd0(char *buffer,char *format,...)
+; int __cdecl crt_stdio_c_sprintf_FUN_005fdbd0(char *buffer,char *format,...)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   buffer
@@ -23,14 +23,14 @@
 ;   ... and 310 more
 ;
 ; Called Functions:
-;   crt_stdio.c__vsprintf_FUN_005fdba8
+;   crt_stdio.c_vsprintf_FUN_005fdba8
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 005fdbd0
-        ;   Label: crt_stdio.c__sprintf_FUN_005fdbd0
+        ;   Label: crt_stdio.c_sprintf_FUN_005fdbd0
     SUB ESP,0x4                         ; 005fdbd1
     LEA EAX,[ESP + 0x14]                ; 005fdbd4
     MOV dword ptr [ESP],EAX             ; 005fdbd8
@@ -40,8 +40,8 @@ section .text
     PUSH EDX                            ; 005fdbe2
     MOV EBX,dword ptr [ESP + 0x14]      ; 005fdbe3
     PUSH EBX                            ; 005fdbe7
-    CALL crt_stdio.c__vsprintf_FUN_005fdba8 ; 005fdbe8
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
+    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 005fdbe8
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 005fdbed
     ADD ESP,0x4                         ; 005fdbf0
     POP EBX                             ; 005fdbf3

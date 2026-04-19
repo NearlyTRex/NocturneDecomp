@@ -63,8 +63,7 @@ int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_005dcc00(CTextureCa
       }
     }
   }
-  _sprintf(local_114,"CTextureCache::load - Bad texture length : %s,%d",texture_name,size)
-  ;
+  _sprintf(local_114,"CTextureCache::load - Bad texture length : %s,%d",texture_name,size);
   g_CurrentLineNumber = 0x101;
   g_CurrentFilename = "..\\engine\\texture.cpp";
   core_main_c_displayErrorAndQuit_FUN_00506f10(local_114);

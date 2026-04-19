@@ -13,7 +13,7 @@
 ;   TerminatedCString s_imp_dfm_0062f833
 ;   float FLOAT_006601e0 = 50
 ;   float FLOAT_006601e4 = 100
-;   CDemonActor_vtable g_CImpVTable
+;   CEnemy_full_vtable g_CImpVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500

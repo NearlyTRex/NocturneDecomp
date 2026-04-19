@@ -38,7 +38,7 @@
 ;   core_menu.cpp_showCalibrationTest_FUN_00510ba0
 ;   core_moon.cpp_CMoon_render_FUN_00529ed0
 ;   core_moon.cpp_CMoon_update_FUN_00529d60
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;   support_newmsg.cpp_getLocalizedString_FUN_005441f0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
@@ -258,8 +258,8 @@ section .text
     ADD ESP,0x4                         ; 00510f46
     PUSH EAX                            ; 00510f49
     PUSH 0x2f26cd0                      ; 00510f4a | g_GraphicsMenuTextBuffers
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00510f4f
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00510f4f
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00510f54
     MOV EAX,[0x0067b654]                ; 00510f57 | g_CGamePtr
     MOV EAX,dword ptr [EAX + 0xc]       ; 00510f5c | g_CGameInstance.halo_mode
@@ -276,8 +276,8 @@ section .text
     ADD ESP,0x4                         ; 00510f76
     PUSH EAX                            ; 00510f79
     PUSH 0x2f26dd0                      ; 00510f7a | g_GraphicsMenuTextBuffers[1][0]
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00510f7f
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00510f7f
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00510f84
     PUSH 0x6368c2                       ; 00510f87 | = "Acceleration disabled in editor"
         ;   Label: LAB_00510f87
@@ -287,8 +287,8 @@ section .text
     ADD ESP,0x4                         ; 00510f97
     PUSH EAX                            ; 00510f9a
     PUSH 0x2f26ed0                      ; 00510f9b | g_GraphicsMenuTextBuffers[2][0]
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00510fa0
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00510fa0
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV AH,byte ptr [0x00684010]        ; 00510fa5 | g_RendererDllName
     ADD ESP,0x8                         ; 00510fab
     CMP BL,AH                           ; 00510fae
@@ -301,8 +301,8 @@ section .text
     ADD ESP,0x4                         ; 00510fc0
     PUSH EAX                            ; 00510fc3
     PUSH 0x2f26fd0                      ; 00510fc4 | g_GraphicsMenuTextBuffers[3][0]
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00510fc9
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00510fc9
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00510fce
     CMP EBX,dword ptr [0x02f275f8]      ; 00510fd1 | g_GraphicsCardCount
     JNZ 0x00511376                      ; 00510fd7
@@ -313,8 +313,8 @@ section .text
     ADD ESP,0x4                         ; 00510fe7
     PUSH EAX                            ; 00510fea
     PUSH 0x2f270d0                      ; 00510feb | g_GraphicsMenuTextBuffers[4][0]
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00510ff0
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00510ff0
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00510ff5
     PUSH 0x6369ae                       ; 00510ff8 | = "Bits per pixel : "
         ;   Label: LAB_00510ff8
@@ -345,8 +345,8 @@ section .text
     PUSH 0x6369c0                       ; 0051102f | = "%d"
     LEA EAX,[ESP + 0x8]                 ; 00511034
     PUSH EAX                            ; 00511038
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00511039
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00511039
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0051103e
     MOV ESI,ESP                         ; 00511041
     PUSH EDI                            ; 00511043 | g_GraphicsMenuTextBuffers[5][0]
@@ -376,8 +376,8 @@ section .text
     ADD ESP,0x4                         ; 0051106f
     PUSH EAX                            ; 00511072
     PUSH 0x2f272d0                      ; 00511073 | g_GraphicsMenuTextBuffers[6][0]
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00511078
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00511078
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,[0x0067b654]                ; 0051107d | g_CGameInstance | g_CGamePtr
     MOV ECX,dword ptr [EAX + 0x10]      ; 00511082 | g_CGameInstance.subtitle_mode
     ADD ESP,0x8                         ; 00511085
@@ -721,8 +721,8 @@ section .text
     PUSH 0x6369a8                       ; 005113da | = " (%d)"
     LEA EAX,[ESP + 0x108]               ; 005113df
     PUSH EAX                            ; 005113e6
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005113e7
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005113e7
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005113ec
     LEA ESI,[ESP + 0x100]               ; 005113ef
     MOV EDI,0x2f270d0                   ; 005113f6 | g_GraphicsMenuTextBuffers[4][0]

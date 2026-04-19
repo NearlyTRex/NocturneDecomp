@@ -51,7 +51,7 @@
 ;   core_slew.cpp_CSlew_init_FUN_005a2060
 ;   core_slew.cpp_CSlew_processInput_FUN_005a20b0
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   ... and 8 more
 ;
 ; *****************************************************************************
@@ -374,8 +374,8 @@ section .text
     PUSH 0x6476fe                       ; 0057b140 | = "%f"
     LEA EAX,[ESP + 0x10]                ; 0057b145
     PUSH EAX                            ; 0057b149
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0057b14a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0057b14a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,[0x00679398]                ; 0057b14f | g_WindowHeight
     ADD ESP,0x10                        ; 0057b154
     SUB EAX,0xb                         ; 0057b157
@@ -420,8 +420,8 @@ section .text
     PUSH 0x647701                       ; 0057b1c7 | = "pos: %4.1f %4.1f %4.1f   pbh: %3.1f %..."
     LEA EAX,[ESP + 0x40]                ; 0057b1cc
     PUSH EAX                            ; 0057b1d0
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0057b1d1
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0057b1d1
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x40                        ; 0057b1d6
     PUSH 0x16                           ; 0057b1d9
     PUSH 0x0                            ; 0057b1db

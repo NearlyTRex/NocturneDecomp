@@ -11,7 +11,7 @@
 ;   TerminatedCString s_d_0065652e
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   support_trisock.cpp_formatIPAddress_FUN_005e17c0
 ;
 ; *****************************************************************************
@@ -55,8 +55,8 @@ section .text
         ;   Label: LAB_005e1a6e
     PUSH ESI                            ; 005e1a70
         ;   Label: LAB_005e1a70
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005e1a71
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005e1a71
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005e1a76
     POP ESI                             ; 005e1a79
     POP EBX                             ; 005e1a7a

@@ -79,8 +79,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemo
       }
       else {
         shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(&local_6ac.base);
-        _sprintf
-                  (acStack_304,"Actors relevent to \"%s\"",property->name);
+        _sprintf(acStack_304,"Actors relevent to \"%s\"",property->name)
+        ;
         iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                           (&local_6ac,acStack_304,-1,0);
         if (-1 < iVar2) {
@@ -101,8 +101,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemo
         str1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_38,iStack_1c);
         iVar2 = _stricmp(str1,this_ptr_00->actor_name);
         if (iVar2 == 0) {
-          _sprintf(acStack_304,"%s\tReferenced by name",this_ptr_00)
-          ;
+          _sprintf(acStack_304,"%s\tReferenced by name",this_ptr_00);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ac.base,acStack_304);
         }
         iStack_14 = 0;
@@ -146,8 +145,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemo
                   str2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_48,iVar2);
                   iVar6 = _stricmp(str1,str2);
                   if (iVar6 == 0) {
-                    _sprintf
-                              (acStack_304,"%s\tChecks for \"%s\" in \"%s\"",this_ptr_00,str1,
+                    _sprintf(acStack_304,"%s\tChecks for \"%s\" in \"%s\"",this_ptr_00,str1,
                                pcStack_24);
                     shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ac.base,acStack_304);
                     break;

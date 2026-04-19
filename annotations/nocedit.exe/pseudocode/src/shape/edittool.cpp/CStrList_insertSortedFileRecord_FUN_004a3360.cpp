@@ -101,8 +101,7 @@ void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360(CSt
     } while (cVar1 != '\0');
     memmove(&local_3fc,local_3fb,~uVar4 - 1);
   }
-  _sprintf
-            (local_fc,"%s\t%s\t%d\t%s\t%s",local_2fc,&local_3fc,file_size,local_34,local_704);
+  _sprintf(local_fc,"%s\t%s\t%d\t%s\t%s",local_2fc,&local_3fc,file_size,local_34,local_704);
   strupr(local_fc);
   (*this_ptr->vtable->insert)(this_ptr,local_14,local_fc);
   return;

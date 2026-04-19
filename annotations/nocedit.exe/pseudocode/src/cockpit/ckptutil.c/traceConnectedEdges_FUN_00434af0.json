@@ -7,18 +7,18 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 702,
-    "complexity_score": 587,
+    "complexity_score": 585,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 19,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 317,
+    "pseudocode_lines": 315,
     "suspect_count": 26,
     "suspect_types": [
       "pointer_cast",
       "unrolled_memcpy"
     ],
-    "total_lines": 1019
+    "total_lines": 1017
   },
   "cross_references": [],
   "function": {
@@ -42,7 +42,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "0050f540",
@@ -712,7 +712,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 116,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar7 = (int *)((int)scanline_data + iVar16 * 0x84);",
@@ -720,7 +720,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 121,
+      "line": 120,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar3 = *(int *)((int)piVar6 + local_c4 + 4);",
@@ -728,7 +728,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 131,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(iVar2 <= *(int *)((int)piVar6 + local_c4 + 0x44) + iVar3 + -1)) {",
@@ -736,7 +736,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 146,
+      "line": 145,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
@@ -744,10 +744,18 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 147,
+      "line": 146,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 159,
+      "match": "(byte *)((int)",
+      "severity": "mild",
+      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
       "type": "pointer_cast"
     },
     {
@@ -755,15 +763,15 @@
       "line": 160,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
+      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 161,
+      "line": 187,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
+      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
       "type": "pointer_cast"
     },
     {
@@ -771,15 +779,15 @@
       "line": 188,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
+      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 189,
+      "line": 202,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
+      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
       "type": "pointer_cast"
     },
     {
@@ -787,20 +795,12 @@
       "line": 203,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 204,
-      "match": "(byte *)((int)",
-      "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 230,
+      "line": 228,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar10 = *(int *)((int)piVar7 + local_50 + 4);",
@@ -808,7 +808,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 232,
+      "line": 230,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar6 = (int *)((int)scanline_data + iVar13 * 0x84);",
@@ -816,7 +816,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 233,
+      "line": 231,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar4 = iVar10 + *(int *)((int)piVar7 + local_50 + 0x44) + -1;",
@@ -824,7 +824,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 234,
+      "line": 232,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if ((local_20 < *piVar6 + -1) && (*(int *)((int)piVar6 + local_e0 + 8) < iVar4)) {",
@@ -832,7 +832,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 240,
+      "line": 238,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if ((local_b4 < *piVar7 + -1) && (*(int *)((int)piVar7 + local_50 + 8) < iVar15)) {",
@@ -840,7 +840,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 256,
+      "line": 254,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
@@ -848,7 +848,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 257,
+      "line": 255,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
@@ -856,7 +856,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 272,
+      "line": 270,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
@@ -864,7 +864,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 273,
+      "line": 271,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
@@ -872,7 +872,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 315,
+      "line": 313,
       "match": "(SEdge *)((int)",
       "severity": "mild",
       "text": "pSVar12 = (SEdge *)((int)pSVar12 + (uint)bVar17 * -2 + 1);",
@@ -880,7 +880,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 316,
+      "line": 314,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar17 = (uint *)((int)puVar17 + (uint)bVar17 * -2 + 1);",
@@ -888,7 +888,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 308,
+      "line": 306,
       "match": "for (...; != 0; ... + -1)",
       "severity": "mild",
       "text": "for (uVar8 = (iVar11 & 0x1fffffffU) << 1; uVar8 != 0; uVar8 = uVar8 - 1) {",

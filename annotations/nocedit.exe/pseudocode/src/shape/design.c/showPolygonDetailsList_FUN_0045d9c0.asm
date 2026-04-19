@@ -31,7 +31,7 @@
 ;   int g_WireframeMode
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
@@ -114,8 +114,8 @@ section .text
     PUSH EAX                            ; 0045da82 | = "Poly %d :"
     LEA EAX,[EBP + 0xfffffef4]          ; 0045da83
     PUSH EAX                            ; 0045da89
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0045da8a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0045da8a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0045da8f
     MOV dword ptr [EBP + -0x4],0x0      ; 0045da92
     JMP 0x0045daa1                      ; 0045da99
@@ -138,8 +138,8 @@ section .text
     PUSH ESI                            ; 0045dacd | = " %d"
     LEA ESI,[EBP + -0x1c]               ; 0045dace
     PUSH ESI                            ; 0045dad1
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0045dad2
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0045dad2
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0045dad7
     LEA ESI,[EBP + -0x1c]               ; 0045dada
     LEA EDI,[EBP + 0xfffffef4]          ; 0045dadd
@@ -176,8 +176,8 @@ section .text
     PUSH ESI                            ; 0045db22 | = " Part : %s"
     LEA ESI,[EBP + -0x6c]               ; 0045db23
     PUSH ESI                            ; 0045db26
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0045db27
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0045db27
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0045db2c
     LEA ESI,[EBP + -0x6c]               ; 0045db2f
     LEA EDI,[EBP + 0xfffffef4]          ; 0045db32
@@ -208,8 +208,8 @@ section .text
     PUSH ESI                            ; 0045db6c | = " Color : %d"
     LEA ESI,[EBP + -0x6c]               ; 0045db6d
     PUSH ESI                            ; 0045db70
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0045db71
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0045db71
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0045db76
     LEA ESI,[EBP + -0x6c]               ; 0045db79
     LEA EDI,[EBP + 0xfffffef4]          ; 0045db7c

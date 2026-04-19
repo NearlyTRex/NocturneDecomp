@@ -27,7 +27,7 @@
 ;   CDemonPod g_CDemonPodInstance
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0
 ;   engine_pod.cpp_CPod_initSearch_FUN_00550ea0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
@@ -116,8 +116,8 @@ section .text
     PUSH 0x629229                       ; 004bcc20 | = "%s\t%s"
     LEA EAX,[ESP + 0x6d4]               ; 004bcc25
     PUSH EAX                            ; 004bcc2c
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004bcc2d
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004bcc2d
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004bcc32
     LEA EAX,[ESP + 0x6c8]               ; 004bcc35
     PUSH EAX                            ; 004bcc3c

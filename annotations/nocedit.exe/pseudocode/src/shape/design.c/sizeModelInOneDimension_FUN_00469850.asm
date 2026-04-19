@@ -37,7 +37,7 @@
 ;
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005ff9e0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_stdio.c_sscanf_FUN_0060013c
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
@@ -177,8 +177,8 @@ section .text
     PUSH ECX                            ; 00469987 | = "Enter %c distance in feet (,min,max f..."
     LEA ECX,[EBP + 0xffffff1c]          ; 00469988
     PUSH ECX                            ; 0046998e
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0046998f
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0046998f
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00469994
     LEA ECX,[EBP + 0xffffff1c]          ; 00469997
     PUSH ECX                            ; 0046999d

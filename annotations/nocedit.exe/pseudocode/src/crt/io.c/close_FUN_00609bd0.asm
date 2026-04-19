@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   fd
 ;
 ; XREF[1]:
-;   crt_stdio.c__fclose_FUN_00601fd0 at 0060203e
+;   crt_stdio.c_fclose_FUN_00601fd0 at 0060203e
 ;
 ; Referenced Globals:
 ;   CLOSE_HANDLE_FUNC* g_CloseHandleFunc = 00211c38

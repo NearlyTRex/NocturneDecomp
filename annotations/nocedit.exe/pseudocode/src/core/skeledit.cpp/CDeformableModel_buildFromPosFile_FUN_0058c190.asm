@@ -525,8 +525,8 @@ section .text
     PUSH EBX                            ; 0058c61a
     PUSH 0x64aaed                       ; 0058c61b | = "%s is corrupt!"
     PUSH 0x3670650                      ; 0058c620 | g_SkeleditStatusMessage
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0058c625
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0058c625
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0058c62a
     PUSH 0x647                          ; 0058c62d
     PUSH 0x64aafc                       ; 0058c632 | = "..\\core\\skeledit.cpp"
@@ -550,8 +550,8 @@ section .text
     PUSH 0x64aa88                       ; 0058c65e | = "Can't open %s"
     PUSH 0x3670650                      ; 0058c663 | g_SkeleditStatusMessage
     XOR EBX,EBX                         ; 0058c668
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0058c66a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0058c66a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0058c66f
     MOV EAX,EBX                         ; 0058c672
     ADD ESP,0xa218                      ; 0058c674
@@ -567,8 +567,8 @@ section .text
     PUSH EBP                            ; 0058c68d
     PUSH 0x64aa9a                       ; 0058c68e | = "Heirarchy in %s does not match that i..."
     PUSH 0x3670650                      ; 0058c693 | g_SkeleditStatusMessage
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0058c698
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0058c698
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EDX,dword ptr [EBP + 0x308]     ; 0058c69d
     ADD ESP,0x10                        ; 0058c6a3
     CMP EDX,0x2                         ; 0058c6a6
@@ -583,8 +583,8 @@ section .text
     PUSH 0x64aacd                       ; 0058c6c0 | = "Display %s"
     LEA EAX,[ESP + 0x9e18]              ; 0058c6c5
     PUSH EAX                            ; 0058c6cc
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0058c6cd
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0058c6cd
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0058c6d2
     LEA EAX,[ESP + 0x9e10]              ; 0058c6d5
     PUSH EAX                            ; 0058c6dc
@@ -597,8 +597,8 @@ section .text
     PUSH 0x64aad8                       ; 0058c6ee | = "Display %s"
     LEA EAX,[ESP + 0x9e18]              ; 0058c6f3
     PUSH EAX                            ; 0058c6fa
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0058c6fb
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0058c6fb
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0058c700
     LEA EAX,[ESP + 0x9e10]              ; 0058c703
     PUSH EAX                            ; 0058c70a
@@ -816,8 +816,8 @@ section .text
     PUSH 0x64abc9                       ; 0058c980 | = "Can't open %s.  Keep going anyway?"
     LEA EAX,[ESP + 0x9378]              ; 0058c985
     PUSH EAX                            ; 0058c98c
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0058c98d
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0058c98d
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0058c992
     LEA EAX,[ESP + 0x9370]              ; 0058c995
     PUSH EAX                            ; 0058c99c
@@ -1644,8 +1644,8 @@ section .text
     PUSH 0x64adcd                       ; 0058d4ab | = "%s%d"
     LEA EAX,[ESP + 0xa0b4]              ; 0058d4b0
     PUSH EAX                            ; 0058d4b7
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0058d4b8
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0058d4b8
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0058d4bd
     PUSH 0x0                            ; 0058d4c0
     PUSH ESI                            ; 0058d4c2

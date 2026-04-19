@@ -47,7 +47,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_math.c_floor_FUN_005feb90
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 ;   sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90
 ;   sound_sndmain.cpp_logSoundError_FUN_005adba0
@@ -332,8 +332,8 @@ section .text
     PUSH 0x651a6c                       ; 005afa60 | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0x4c8]               ; 005afa65
     PUSH EAX                            ; 005afa6c
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005afa6d
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005afa6d
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005afa72
     LEA EAX,[ESP + 0x4bc]               ; 005afa75
     PUSH EAX                            ; 005afa7c
@@ -353,8 +353,8 @@ section .text
     PUSH 0x651a6c                       ; 005afa9b | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0x338]               ; 005afaa0
     PUSH EAX                            ; 005afaa7
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005afaa8
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005afaa8
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005afaad
     LEA EAX,[ESP + 0x32c]               ; 005afab0
     PUSH EAX                            ; 005afab7
@@ -416,8 +416,8 @@ section .text
     PUSH 0x651a6c                       ; 005afb55 | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0x7e8]               ; 005afb5a
     PUSH EAX                            ; 005afb61
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005afb62
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005afb62
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005afb67
     LEA EAX,[ESP + 0x7dc]               ; 005afb6a
     PUSH EAX                            ; 005afb71
@@ -437,8 +437,8 @@ section .text
     PUSH 0x651a6c                       ; 005afb90 | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0x1a8]               ; 005afb95
     PUSH EAX                            ; 005afb9c
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005afb9d
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005afb9d
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005afba2
     LEA EAX,[ESP + 0x19c]               ; 005afba5
     PUSH EAX                            ; 005afbac
@@ -458,8 +458,8 @@ section .text
     PUSH 0x651a6c                       ; 005afbcb | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0x658]               ; 005afbd0
     PUSH EAX                            ; 005afbd7
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005afbd8
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005afbd8
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005afbdd
     LEA EAX,[ESP + 0x64c]               ; 005afbe0
     PUSH EAX                            ; 005afbe7
@@ -479,8 +479,8 @@ section .text
     PUSH 0x651a6c                       ; 005afc06 | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0x978]               ; 005afc0b
     PUSH EAX                            ; 005afc12
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005afc13
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005afc13
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005afc18
     LEA EAX,[ESP + 0x96c]               ; 005afc1b
     PUSH EAX                            ; 005afc22
@@ -500,8 +500,8 @@ section .text
     PUSH 0x651a6c                       ; 005afc41 | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0x18]                ; 005afc46
     PUSH EAX                            ; 005afc4a
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005afc4b
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005afc4b
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005afc50
     LEA EAX,[ESP + 0xc]                 ; 005afc53
     PUSH EAX                            ; 005afc57
@@ -527,8 +527,8 @@ section .text
     PUSH 0x651a6c                       ; 005afc89 | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0xb08]               ; 005afc8e
     PUSH EAX                            ; 005afc95
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005afc96
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005afc96
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005afc9b
     LEA EAX,[ESP + 0xafc]               ; 005afc9e
     PUSH EAX                            ; 005afca5

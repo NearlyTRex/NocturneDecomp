@@ -17,7 +17,7 @@
 ;   engine_font.cpp_CBitFont_printCenterF_FUN_004ce050 at 004ce07c
 ;
 ; Called Functions:
-;   crt_stdio.c__vsprintf_FUN_005fdba8
+;   crt_stdio.c_vsprintf_FUN_005fdba8
 ;   engine_font.cpp_CBitFont_drawTextCenterInClip_FUN_004cdff0
 ;
 ; *****************************************************************************
@@ -36,8 +36,8 @@ section .text
     PUSH ECX                            ; 004ce0a9
     LEA EAX,[ESP + 0x8]                 ; 004ce0aa
     PUSH EAX                            ; 004ce0ae
-    CALL crt_stdio.c__vsprintf_FUN_005fdba8 ; 004ce0af
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
+    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 004ce0af
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 004ce0b4
     MOV EAX,ESP                         ; 004ce0b7
     PUSH EAX                            ; 004ce0b9

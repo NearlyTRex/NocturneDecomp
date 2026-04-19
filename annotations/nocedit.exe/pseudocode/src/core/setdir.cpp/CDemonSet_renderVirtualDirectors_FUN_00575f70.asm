@@ -36,7 +36,7 @@
 ;
 ; Called Functions:
 ;   core_setdir.cpp_CZThumb_render_FUN_00574f20
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;
 ; *****************************************************************************
@@ -165,8 +165,8 @@ section .text
     PUSH 0x646588                       ; 005760ca | = "%g"
     LEA EAX,[ESP + 0xc]                 ; 005760cf
     PUSH EAX                            ; 005760d3
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005760d4
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005760d4
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005760d9
     IMUL EAX,dword ptr [ESP + 0x84],0xf0 ; 005760dc
     MOV EAX,dword ptr [EAX + 0x334710c] ; 005760e7 | g_CZThumbPool[0].height

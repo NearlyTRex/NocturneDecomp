@@ -34,9 +34,9 @@
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
 ;   crt_math.c_atan2_FUN_006013b1
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fgets_FUN_005fefd0
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_keys.cpp_CKeys_getInputKey_FUN_00502460
@@ -318,8 +318,8 @@ section .text
     PUSH 0x649426                       ; 00585fa4 | = "Warning! Camera %s has unknown lens : %f"
     LEA EAX,[ESP + 0x114]               ; 00585fa9
     PUSH EAX                            ; 00585fb0
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00585fb1
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00585fb1
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 00585fb6
     CALL wincore_windll.cpp_clearScreen_FUN_005b3e70 ; 00585fb9
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()

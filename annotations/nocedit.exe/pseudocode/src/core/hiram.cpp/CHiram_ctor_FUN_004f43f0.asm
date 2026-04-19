@@ -15,7 +15,7 @@
 ;   undefined4 s_illHiram_0062edf3
 ;   undefined4 s_llHiram_0062edf4
 ;   undefined4 s_lHiram_0062edf5
-;   CDemonActor_vtable g_CHiramVTable
+;   CCharacter_full_vtable g_CHiramVTable
 ;
 ; Called Functions:
 ;   core_npc.cpp_CNPC_ctor_FUN_005447e0

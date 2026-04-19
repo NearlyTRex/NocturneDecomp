@@ -438,8 +438,7 @@ LAB_004bba53:
         }
         iVar3 = iVar3 + 1;
         if (iVar3 == 1) {
-          _sprintf
-                    (local_d1c,"Waiting for %s to become available.\nPress ESC to cancel check in.",&local_16dc);
+          _sprintf(local_d1c,"Waiting for %s to become available.\nPress ESC to cancel check in.",&local_16dc);
           shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
                     (g_CEditorToolsPtr,local_d1c);
         }

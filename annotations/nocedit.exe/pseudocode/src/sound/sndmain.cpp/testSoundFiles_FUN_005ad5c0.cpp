@@ -98,8 +98,7 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
                     (acStack_550,(char *)0x0,(char *)0x0,acStack_144,"wav");
           iVar4 = engine_dosio_c_getFileSize_FUN_00481880("sound",acStack_550);
           if (-1 < iVar4) {
-            _sprintf
-                      (acStack_750,"%s found in both wav and mp3 format",acStack_144);
+            _sprintf(acStack_750,"%s found in both wav and mp3 format",acStack_144);
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_f20.base,acStack_750);
           }
           makepath
@@ -110,8 +109,7 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_f20.base,acStack_750);
           }
           else if (SStack_b78.timestamp < SStack_964.timestamp) {
-            _sprintf
-                      (acStack_750,"%s older than %s",&SStack_b78,&SStack_964);
+            _sprintf(acStack_750,"%s older than %s",&SStack_b78,&SStack_964);
             shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_f20.base,acStack_750);
           }
           else {

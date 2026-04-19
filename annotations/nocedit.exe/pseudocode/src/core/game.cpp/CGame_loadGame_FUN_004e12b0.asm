@@ -319,8 +319,8 @@ section .text
     PUSH 0x62cad7                       ; 004e154e | = "%s\\%s"
     LEA EAX,[ESP + 0x110]               ; 004e1553
     PUSH EAX                            ; 004e155a
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004e155b
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004e155b
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004e1560
     MOV EBX,dword ptr [0x00665c50]      ; 004e1563 | g_DefaultStreamBufferSize
     PUSH EBX                            ; 004e1569

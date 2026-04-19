@@ -7,12 +7,12 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 7459,
-    "complexity_score": 3545,
+    "complexity_score": 3467,
     "cross_reference_count": 4,
     "function_call_count": 81,
     "global_count": 341,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 3415,
+    "pseudocode_lines": 3337,
     "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
@@ -22,7 +22,7 @@
       "unrolled_strlen",
       "warning_type_propagation"
     ],
-    "total_lines": 10874
+    "total_lines": 10796
   },
   "cross_references": [
     {
@@ -412,7 +412,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "0060013c",
@@ -3822,7 +3822,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 951,
+      "line": 937,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)local_c8c + iVar30) != 0) {",
@@ -3830,7 +3830,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 1408,
+      "line": 1382,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "SUB84(__BITCAST_UINT64(dVar1),0),",
@@ -3846,7 +3846,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 760,
+      "line": 751,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -3854,7 +3854,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 824,
+      "line": 813,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -3862,7 +3862,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3047,
+      "line": 2979,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -3870,7 +3870,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 3151,
+      "line": 3080,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -3878,7 +3878,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1513,
+      "line": 1485,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "mild",
       "text": "do {",
@@ -3886,7 +3886,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal ',' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, ',') in a .keep.",
-      "line": 3023,
+      "line": 2955,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "mild",
       "text": "do {",

@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   CDemonActor_vtable g_CMolochVTable
+;   CHero_full_vtable g_CMolochVTable
 ;   WatcomTypeInfo g_CMolochTypeInfo
 ;
 ; Called Functions:

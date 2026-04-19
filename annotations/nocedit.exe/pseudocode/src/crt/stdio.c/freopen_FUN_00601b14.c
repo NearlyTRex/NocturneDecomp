@@ -1,8 +1,8 @@
-// Name: crt_stdio.c__freopen_FUN_00601b14
+// Name: crt_stdio.c_freopen_FUN_00601b14
 // Address: 00601b14
 // Address Range: [[00601b14, 00601ba5]]
 // Convention: __cdecl
-// Signature: _FILE * __cdecl crt_stdio_c__freopen_FUN_00601b14(char *filename,char *mode,_FILE *stream)
+// Signature: _FILE * __cdecl crt_stdio_c_freopen_FUN_00601b14(char *filename,char *mode,_FILE *stream)
 
 #include "nocturne.h"
 

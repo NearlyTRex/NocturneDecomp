@@ -13,7 +13,7 @@
 ;   TerminatedCString s_scat_dfm_00641211
 ;   TerminatedCString s_draw_stand2coatPocket_0064121a
 ;   TerminatedCString s_draw_coatPocket2aimPisto_00641230
-;   CDemonActor_vtable g_CScatVTable
+;   CHero_full_vtable g_CScatVTable
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_addLayerAction_FUN_0042e5d0

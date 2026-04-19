@@ -296,8 +296,7 @@ LAB_00503184:
       fVar16 = (float10)f2xm1(fVar15 - (fVar15 / fVar17) * fVar17);
       fVar17 = (float10)fscale(fVar16 + fVar17,fVar15);
       local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.99,1.01);
-      _sprintf
-                (&stack0xfffffe10,"slime.wav @%f *%f",(double)(this_ptr->base).base.size_scale,
+      _sprintf(&stack0xfffffe10,"slime.wav @%f *%f",(double)(this_ptr->base).base.size_scale,
                  (double)(local_14 * (float)fVar17));
       uVar12 = (*((this_ptr->base).base.base.vtable._ub)->playAmbientSound)
                          ((CDemonActor *)this_ptr,&stack0xfffffe10);

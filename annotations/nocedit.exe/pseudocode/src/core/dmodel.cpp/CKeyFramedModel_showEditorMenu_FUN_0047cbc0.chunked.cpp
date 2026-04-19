@@ -148,7 +148,7 @@ typedef struct CKeyFramedModel_showEditorMenu_Ctx {
 #define GOTO_LAB_0047d6c7 1
 #define GOTO_LAB_0047dc33 2
 
-// Chunk: check_bVar2_0 (lines 31-84 of original)
+// Chunk: check_bVar2_0 (lines 31-83 of original)
 static int CKeyFramedModel_showEditorMenu_check_bVar2_0(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
     CKeyFramedModel *&this_ptr = ctx->this_ptr;
     bool &bVar7 = ctx->bVar7;
@@ -220,14 +220,13 @@ static int CKeyFramedModel_showEditorMenu_check_bVar2_0(CKeyFramedModel_showEdit
         shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(g_CEditorToolsPtr,4.0,3);
       }
       if (!bVar9) {
-        _sprintf
-                  (local_408,"Frame: %d of %d",(int)ROUND(ROUND(local_70)));
+        _sprintf(local_408,"Frame: %d of %d",(int)ROUND(ROUND(local_70)));
         engine_2d_c_drawText_FUN_00401fd0(local_408,0,g_WindowHeight + -0x37);
       }
     return 0;
 }
 
-// Chunk: chunk_1 (lines 87-138 of original)
+// Chunk: chunk_1 (lines 86-137 of original)
 static int CKeyFramedModel_showEditorMenu_chunk_1(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
     CKeyFramedModel *&this_ptr = ctx->this_ptr;
     bool &bVar8 = ctx->bVar8;
@@ -286,7 +285,7 @@ static int CKeyFramedModel_showEditorMenu_chunk_1(CKeyFramedModel_showEditorMenu
     return 0;
 }
 
-// Chunk: check_bVar8_2 (lines 188-238 of original)
+// Chunk: check_bVar8_2 (lines 187-237 of original)
 static int CKeyFramedModel_showEditorMenu_check_bVar8_2(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
     CKeyFramedModel *&this_ptr = ctx->this_ptr;
     float &fVar3 = ctx->fVar3;
@@ -357,7 +356,7 @@ static int CKeyFramedModel_showEditorMenu_check_bVar8_2(CKeyFramedModel_showEdit
     return 0;
 }
 
-// Chunk: else_3 (lines 238-273 of original)
+// Chunk: else_3 (lines 237-272 of original)
 static int CKeyFramedModel_showEditorMenu_else_3(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
     float &fVar4 = ctx->fVar4;
     bool &bVar10 = ctx->bVar10;
@@ -407,7 +406,7 @@ static int CKeyFramedModel_showEditorMenu_else_3(CKeyFramedModel_showEditorMenu_
     return 0;
 }
 
-// Chunk: check_bVar10_4_check_local_84_0_check_local_84_0 (lines 311-423 of original)
+// Chunk: check_bVar10_4_check_local_84_0_check_local_84_0 (lines 310-422 of original)
 static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_local_84_0(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
     CKeyFramedModel *&this_ptr = ctx->this_ptr;
     char &cVar1 = ctx->cVar1;
@@ -542,7 +541,7 @@ static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_
     return 0;
 }
 
-// Chunk: check_bVar10_4_check_local_84_0_check_local_84_1 (lines 423-457 of original)
+// Chunk: check_bVar10_4_check_local_84_0_check_local_84_1 (lines 422-456 of original)
 static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_local_84_1(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
     CKeyFramedModel *&this_ptr = ctx->this_ptr;
     int &iVar12 = ctx->iVar12;
@@ -588,7 +587,7 @@ static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_
     return 0;
 }
 
-// Chunk: check_bVar10_4_check_local_84_0_check_local_84_2 (lines 457-487 of original)
+// Chunk: check_bVar10_4_check_local_84_0_check_local_84_2 (lines 456-486 of original)
 static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_local_84_2(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
     CKeyFramedModel *&this_ptr = ctx->this_ptr;
     int &iVar12 = ctx->iVar12;
@@ -628,7 +627,7 @@ static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_
     return 0;
 }
 
-// Chunk: check_bVar10_4_check_local_84_0_check_local_84_3 (lines 487-510 of original)
+// Chunk: check_bVar10_4_check_local_84_0_check_local_84_3 (lines 486-509 of original)
 static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_local_84_3(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
     CKeyFramedModel *&this_ptr = ctx->this_ptr;
     int &iVar18 = ctx->iVar18;
@@ -659,7 +658,7 @@ static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_
     return 0;
 }
 
-// Chunk: check_bVar10_4_check_local_84_1 (lines 552-625 of original)
+// Chunk: check_bVar10_4_check_local_84_1 (lines 551-624 of original)
 static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_1(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
     CKeyFramedModel *&this_ptr = ctx->this_ptr;
     float &fVar3 = ctx->fVar3;
@@ -752,7 +751,7 @@ static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_1(CKeyFr
     return 0;
 }
 
-// Chunk: check_bVar10_4_check_local_84_2 (lines 634-677 of original)
+// Chunk: check_bVar10_4_check_local_84_2 (lines 633-676 of original)
 static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_2(CKeyFramedModel_showEditorMenu_Ctx *ctx) {
     CKeyFramedModel *&this_ptr = ctx->this_ptr;
     int &iVar18 = ctx->iVar18;

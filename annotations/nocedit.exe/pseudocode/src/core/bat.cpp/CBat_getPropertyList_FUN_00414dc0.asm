@@ -27,7 +27,7 @@
 ;   core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
 ;   core_actor.cpp_CActorPropertyList_addSound_FUN_0040e2d0
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
     PUSH 0x6153a5                       ; 00414e01 | = "Parameter (0..%d)"
     LEA EAX,[ESP + 0x8]                 ; 00414e06
     PUSH EAX                            ; 00414e0a
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00414e0b
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00414e0b
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00414e10
     PUSH 0x0                            ; 00414e13
     LEA EAX,[EBX + 0x304]               ; 00414e15

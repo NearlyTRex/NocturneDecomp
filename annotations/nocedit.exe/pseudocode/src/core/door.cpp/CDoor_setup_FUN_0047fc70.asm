@@ -15,7 +15,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408bb0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__strcmp_FUN_005fef20
 ;
 ; *****************************************************************************
@@ -47,8 +47,8 @@ section .text
     PUSH EBX                            ; 0047fca6
     PUSH 0x6210e5                       ; 0047fca7 | = "%sOpen"
     PUSH ESI                            ; 0047fcac
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0047fcad
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0047fcad
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0047fcb2
     PUSH 0x6210ec                       ; 0047fcb5 | = "defaultDoorClose"
         ;   Label: LAB_0047fcb5
@@ -67,8 +67,8 @@ section .text
         ;   Label: LAB_0047fcd0
     PUSH 0x6210fd                       ; 0047fcd1 | = "%sClose"
     PUSH ESI                            ; 0047fcd6
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0047fcd7
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0047fcd7
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0047fcdc
     POP ESI                             ; 0047fcdf
     POP EBX                             ; 0047fce0

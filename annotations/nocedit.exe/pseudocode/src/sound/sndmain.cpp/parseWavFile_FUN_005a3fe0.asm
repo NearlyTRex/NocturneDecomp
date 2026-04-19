@@ -32,9 +32,9 @@
 ;   TerminatedCString s_No_data_chunk_found_0064f538
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fread_FUN_005fd990
 ;   crt_stdio.c_fseek_FUN_005ffacc
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   sound_sndmain.cpp_logSoundError_FUN_005adba0
 ;
@@ -318,8 +318,8 @@ section .text
     PUSH 0x64f49c                       ; 005a4277 | = "Invalid \"fmt\" chunk tag: %04X  (Mus..."
     LEA EAX,[ESP + 0x8]                 ; 005a427c
     PUSH EAX                            ; 005a4280
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005a4281
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005a4281
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     LEA EAX,[ESP + 0xc]                 ; 005a4286
     ADD ESP,0xc                         ; 005a428a
     PUSH EAX                            ; 005a428d
@@ -336,8 +336,8 @@ section .text
     PUSH 0x64f4e3                       ; 005a42a8 | = "Invalid number of channels: %u  (must..."
     LEA EAX,[ESP + 0x8]                 ; 005a42ad
     PUSH EAX                            ; 005a42b1
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005a42b2
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005a42b2
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     LEA EAX,[ESP + 0xc]                 ; 005a42b7
     ADD ESP,0xc                         ; 005a42bb
     PUSH EAX                            ; 005a42be
@@ -364,8 +364,8 @@ section .text
     PUSH 0x64f514                       ; 005a42f5 | = "Invalid bytes/sec value: %u (%04Xh)"
     LEA EAX,[ESP + 0xc]                 ; 005a42fa
     PUSH EAX                            ; 005a42fe
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005a42ff
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005a42ff
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     LEA EAX,[ESP + 0x10]                ; 005a4304
     ADD ESP,0x10                        ; 005a4308
     PUSH EAX                            ; 005a430b

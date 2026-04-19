@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_tentacle_dfm_00654db3
-;   CDemonActor_vtable g_CTentacleVTable
+;   CEnemy_full_vtable g_CTentacleVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500

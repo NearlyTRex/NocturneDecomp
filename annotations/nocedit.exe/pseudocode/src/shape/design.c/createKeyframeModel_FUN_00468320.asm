@@ -36,8 +36,8 @@
 ;   crt_ctype.c_toupper_FUN_005ff9e0
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_memory.c_memset_FUN_005fde40
-;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fwrite_FUN_005fdc00
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_stdlib.c_atoi_FUN_005ffef0
 ;   crt_string.c__strtod_FUN_005ff0f3
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
@@ -148,8 +148,8 @@ section .text
     PUSH ECX                            ; 004683ff | = "Enter key frame of object %d : "
     LEA ECX,[EBP + 0xffffff54]          ; 00468400
     PUSH ECX                            ; 00468406
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00468407
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00468407
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0046840c
     LEA ECX,[EBP + 0xffffff54]          ; 0046840f
     PUSH ECX                            ; 00468415

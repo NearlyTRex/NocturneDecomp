@@ -13,7 +13,7 @@
 ;   TerminatedCString s_cre_kfm_00631455
 ;   float FLOAT_00660a3c = 8
 ;   float FLOAT_00660a40 = 30
-;   CDemonActor_vtable g_CLightGunVTable
+;   CWeapon_full_vtable g_CLightGunVTable
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0

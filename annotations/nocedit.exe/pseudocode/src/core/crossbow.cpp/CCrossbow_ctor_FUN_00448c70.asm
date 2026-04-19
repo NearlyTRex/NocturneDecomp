@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_crossbow_kfm_00619b79
-;   CDemonActor_vtable g_CCrossbowVTable
+;   CWeapon_full_vtable g_CCrossbowVTable
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0

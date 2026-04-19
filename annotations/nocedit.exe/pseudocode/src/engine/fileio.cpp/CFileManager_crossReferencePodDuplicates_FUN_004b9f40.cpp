@@ -141,15 +141,13 @@ void __cdecl engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b
                 if (bVar3) {
                   shape_edittool_cpp_CStrList_add_FUN_004a2b80
                             (&local_4fc.base,&s_EmptyChar_00628c6a);
-                  _sprintf
-                            (local_154,"%s\t%s\t%08X",pcVar8,local_40->filename,
+                  _sprintf(local_154,"%s\t%s\t%08X",pcVar8,local_40->filename,
                              *(uint *)((int)&local_40->directory_entries->checksum + local_34)
                             );
                   shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_4fc.base,local_154);
                   bVar3 = false;
                 }
-                _sprintf
-                          (local_154,"\t%s\t%08X",pCVar5->filename,
+                _sprintf(local_154,"\t%s\t%08X",pCVar5->filename,
                            pCVar5->directory_entries[iVar9].checksum);
                 shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_4fc.base,local_154);
               }

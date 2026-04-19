@@ -74,8 +74,7 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
           (this_ptr_00->box_max).y = pCVar3[1].y;
           (this_ptr_00->box_max).z = pCVar3[1].z;
         }
-        _sprintf
-                  (local_174,"Camera box (%7.2f, %7.2f, %7.2f) - (%7.2f, %7.2f, %7.2f)",
+        _sprintf(local_174,"Camera box (%7.2f, %7.2f, %7.2f) - (%7.2f, %7.2f, %7.2f)",
                    (double)local_3c->cameras[0].box_min.x,(double)local_3c->cameras[0].box_min.y,
                    (double)local_3c->cameras[0].box_min.z,(double)local_3c->cameras[0].box_max.x,
                    (double)local_3c->cameras[0].box_max.y,(double)local_3c->cameras[0].box_max.z);

@@ -85,8 +85,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
                                );
             this_ptr->packed_data = (ushort *)pcVar5;
             if (pcVar5 == (char *)0x0) {
-              _sprintf
-                        (local_154,"Out of memory packing file \"%s\" on row %u trying to get %u bytes",this_ptr,local_24,local_18);
+              _sprintf(local_154,"Out of memory packing file \"%s\" on row %u trying to get %u bytes",this_ptr,local_24,local_18);
               g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
               g_CurrentLineNumber = 0x3b2;
               core_main_c_displayErrorAndQuit_FUN_00506f10(local_154);

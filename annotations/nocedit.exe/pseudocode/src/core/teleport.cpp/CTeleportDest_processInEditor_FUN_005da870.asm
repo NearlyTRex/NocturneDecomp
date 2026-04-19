@@ -22,7 +22,7 @@
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
 ;   core_msnedit.cpp_CDemonMission_buildFilteredActorList_FUN_0053cc30
 ;   core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -88,8 +88,8 @@ section .text
     PUSH 0x654c6c                       ; 005da8f8 | = "Teleporters which go to %s"
     LEA EAX,[ESP + 0x3b4]               ; 005da8fd
     PUSH EAX                            ; 005da904
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005da905
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005da905
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005da90a
     PUSH 0x0                            ; 005da90d
     PUSH -0x1                           ; 005da90f

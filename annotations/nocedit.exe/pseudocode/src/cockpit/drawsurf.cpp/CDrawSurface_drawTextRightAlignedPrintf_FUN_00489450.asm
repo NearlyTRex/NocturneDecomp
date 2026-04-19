@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0
-;   crt_stdio.c__vsprintf_FUN_005fdba8
+;   crt_stdio.c_vsprintf_FUN_005fdba8
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     PUSH EDX                            ; 00489476
     LEA EAX,[ESP + 0x8]                 ; 00489477
     PUSH EAX                            ; 0048947b
-    CALL crt_stdio.c__vsprintf_FUN_005fdba8 ; 0048947c
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
+    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0048947c
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 00489481
     MOV EBX,dword ptr [ESP + 0x101c]    ; 00489484
     PUSH EBX                            ; 0048948b

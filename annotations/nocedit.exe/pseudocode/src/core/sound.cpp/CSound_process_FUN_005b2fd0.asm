@@ -58,7 +58,7 @@
 ;   core_sound.cpp_CSound_killSound_FUN_005b3b90
 ;   core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70
 ;   core_sound.cpp_updateListeners_FUN_005b1870
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_stdlib.c_rand_FUN_005feb5c
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;   crt_string.c__strnicmp_FUN_005ff070
@@ -599,8 +599,8 @@ section .text
     LEA EAX,[ESP + 0x78]                ; 005b36b4
     PUSH EAX                            ; 005b36b8
     FSTP float ptr [ESP + 0xc]          ; 005b36b9
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005b36bd
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005b36bd
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005b36c2
     PUSH 0x40000000                     ; 005b36c5
         ;   Label: default
@@ -635,8 +635,8 @@ section .text
     PUSH 0x65274c                       ; 005b373a | = "%s @ %g"
     LEA EAX,[ESP + 0x1c]                ; 005b373f
     PUSH EAX                            ; 005b3743
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005b3744
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005b3744
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 005b3749
     MOV ECX,dword ptr [ESP + 0x124]     ; 005b374c
     PUSH ECX                            ; 005b3753

@@ -223,8 +223,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
         shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(g_CEditorToolsPtr,4.0,3);
       }
       if (!bVar9) {
-        _sprintf
-                  (local_408,"Frame: %d of %d",(int)ROUND(ROUND(local_70)));
+        _sprintf(local_408,"Frame: %d of %d",(int)ROUND(ROUND(local_70)));
         engine_2d_c_drawText_FUN_00401fd0(local_408,0,g_WindowHeight + -0x37);
       }
     }

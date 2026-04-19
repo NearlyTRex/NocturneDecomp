@@ -11,6 +11,6 @@ int __watcallStack ungetc_helper(int character,scanf_state_t *state)
 {
   int iVar1;
   
-  iVar1 = _fputc(character,state->input_ptr);
+  iVar1 = _ungetc(character,state->input_ptr);
   return iVar1;
 }

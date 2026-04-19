@@ -14,7 +14,7 @@ CHotDemon * __cdecl core_hotdemon_cpp_CHotDemon_ctor_FUN_004f6ca0(CHotDemon *thi
   CHotDemon *pCVar3;
   
   pCVar3 = (CHotDemon *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
-  (pCVar3->base).base.base.vtable._ub = &g_CHotDemonVTable;
+  (pCVar3->base).base.base.vtable._ub = &g_CHotDemonVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar3->base).base.model,"hotdemon.dfm");
   fVar2 = 100.0f;

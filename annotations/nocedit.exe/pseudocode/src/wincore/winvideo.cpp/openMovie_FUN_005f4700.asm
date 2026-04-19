@@ -29,7 +29,7 @@
 ;   int g_FullscreenMovie
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_stdlib.c_atoi_FUN_005ffef0
 ;   wincore_winvideo.cpp_closeMovie_FUN_005f46b0
 ;
@@ -58,8 +58,8 @@ section .text
     PUSH 0x6581f8                       ; 005f472c | = "open \"%s\" alias mov style child par..."
     LEA EAX,[ESP + 0xc]                 ; 005f4731
     PUSH EAX                            ; 005f4735
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005f4736
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005f4736
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005f473b
     PUSH 0x0                            ; 005f473e
     PUSH 0x0                            ; 005f4740

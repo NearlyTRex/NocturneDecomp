@@ -10,7 +10,7 @@
 ;   TerminatedCString s_d_006465a5
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_stdlib.c_atoi_FUN_005ffef0
 ;
 ; *****************************************************************************
@@ -57,8 +57,8 @@ section .text
     PUSH EAX                            ; 0057698b
     PUSH 0x6465a5                       ; 0057698c | = "%d"
     PUSH EBX                            ; 00576991
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00576992
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00576992
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00576997
     POP EDI                             ; 0057699a
     POP EBX                             ; 0057699b

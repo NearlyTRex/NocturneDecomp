@@ -13,7 +13,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_tommygun_kfm_006554a0
 ;   float FLOAT_0066466c = 8
-;   CDemonActor_vtable g_CTommyGunVTable
+;   CWeapon_full_vtable g_CTommyGunVTable
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0

@@ -13,7 +13,7 @@
 ;   TerminatedCString s_batcreat_dfm_0061546b
 ;   float FLOAT_0065a5b0 = 50
 ;   float FLOAT_0065a5b4 = 100
-;   CDemonActor_vtable g_CBatCreatureVTable
+;   CEnemy_full_vtable g_CBatCreatureVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500

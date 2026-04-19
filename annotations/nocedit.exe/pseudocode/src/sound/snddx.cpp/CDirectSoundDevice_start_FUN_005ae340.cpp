@@ -53,15 +53,13 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_start_FUN_005ae340(CDirectSoundDe
         return 1;
       }
       pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
-      _sprintf
-                (acStack_330,"DirectSux: Unable to %s.  (%s)","Play the secondary buffer",
+      _sprintf(acStack_330,"DirectSux: Unable to %s.  (%s)","Play the secondary buffer",
                  pcVar3);
       pcVar4 = acStack_330;
     }
     else {
       pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar2);
-      _sprintf
-                (acStack_1a0,"DirectSux: Unable to %s.  (%s)","Position secondary buffer to 0",
+      _sprintf(acStack_1a0,"DirectSux: Unable to %s.  (%s)","Position secondary buffer to 0",
                  pcVar4);
       pcVar4 = acStack_1a0;
     }

@@ -34,7 +34,7 @@
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
 ;   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
 ;   core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004a3c80
@@ -102,8 +102,8 @@ section .text
     PUSH EDI                            ; 0053c7d1 | g_MsnEditPropertyList.properties[0].name[0]
     PUSH 0x63c881                       ; 0053c7d2 | = "%s\t%s"
     PUSH 0x2f79c20                      ; 0053c7d7 | g_MsnEditPropertyFormatBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053c7dc
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0053c7dc
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0053c7e1
     PUSH 0x2f79c20                      ; 0053c7e4 | g_MsnEditPropertyFormatBuffer
     LEA EAX,[ESP + 0xc]                 ; 0053c7e9
@@ -123,8 +123,8 @@ section .text
     PUSH 0x63c887                       ; 0053c80b | = "Edit %s properties"
     LEA EAX,[ESP + 0x3b8]               ; 0053c810
     PUSH EAX                            ; 0053c817
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053c818
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0053c818
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0053c81d
     PUSH 0x0                            ; 0053c820
     LEA EAX,[ESP + 0x4e0]               ; 0053c822

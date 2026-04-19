@@ -60,7 +60,7 @@
 ;   crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc
 ;   crt_fstream.cpp_ostream_write_FUN_005ffcb3
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   support_codec.cpp_CCodec_dtor_FUN_0043e9b0
@@ -104,8 +104,8 @@ section .text
     PUSH 0x61a34a                       ; 00452a17 | = "%s.fog"
     LEA EAX,[ESP + 0x8]                 ; 00452a1c
     PUSH EAX                            ; 00452a20
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00452a21
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00452a21
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00452a26
     PUSH 0x61a351                       ; 00452a29 | = "rb"
     LEA EAX,[ESP + 0x4]                 ; 00452a2e
@@ -122,8 +122,8 @@ section .text
     PUSH 0x61a371                       ; 00452a4b | = "backdrop\\%s"
     LEA EAX,[ESP + 0x184]               ; 00452a50
     PUSH EAX                            ; 00452a57
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00452a58
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00452a58
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00452a5d
     MOV EDX,dword ptr [0x00665c50]      ; 00452a60 | g_DefaultStreamBufferSize
     PUSH EDX                            ; 00452a66

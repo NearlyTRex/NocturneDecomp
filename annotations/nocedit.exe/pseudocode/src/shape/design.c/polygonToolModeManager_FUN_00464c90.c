@@ -135,23 +135,19 @@ int __cdecl shape_design_c_polygonToolModeManager_FUN_00464c90(int input_paramet
         } while (cVar2 != '\0');
         switch(g_PolygonToolMode) {
         case 1:
-          _sprintf
-                    (local_68," - Polygon merger (tol = %4.2f degs)",(double)local_14);
+          _sprintf(local_68," - Polygon merger (tol = %4.2f degs)",(double)local_14);
           break;
         case 2:
-          _sprintf
-                    (local_68," - Polygon attacher (tol = %4.2f units)",(double)local_14);
+          _sprintf(local_68," - Polygon attacher (tol = %4.2f units)",(double)local_14);
           break;
         case 3:
           _sprintf(local_68," - Polygon detacher");
           break;
         case 4:
-          _sprintf
-                    (local_68," - Polygon vertex welder (tol = %4.2f units)",(double)local_14);
+          _sprintf(local_68," - Polygon vertex welder (tol = %4.2f units)",(double)local_14);
           break;
         case 5:
-          _sprintf
-                    (local_68," - Vertex welder (tol = %4.2f units)",(double)local_14);
+          _sprintf(local_68," - Vertex welder (tol = %4.2f units)",(double)local_14);
         }
         pcVar8 = local_68;
         iVar4 = -1;

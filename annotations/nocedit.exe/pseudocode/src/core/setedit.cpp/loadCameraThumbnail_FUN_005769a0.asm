@@ -44,8 +44,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fread_FUN_005fd990
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   engine_dosio.c_getFileSize_FUN_00481880
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
@@ -76,16 +76,16 @@ section .text
     PUSH 0x6465cd                       ; 005769c1 | = "%s%s.raw"
     LEA EAX,[ESP + 0xc]                 ; 005769c6
     PUSH EAX                            ; 005769ca
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005769cb
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005769cb
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005769d0
     PUSH EBX                            ; 005769d3
     PUSH ESI                            ; 005769d4
     PUSH 0x6465d6                       ; 005769d5 | = "%s%s.act"
     LEA EAX,[ESP + 0x1c]                ; 005769da
     PUSH EAX                            ; 005769de
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005769df
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005769df
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005769e4
     PUSH 0x6465df                       ; 005769e7 | = "rb"
     LEA EAX,[ESP + 0x4]                 ; 005769ec

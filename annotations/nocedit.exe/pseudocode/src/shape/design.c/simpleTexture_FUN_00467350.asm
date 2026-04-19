@@ -37,7 +37,7 @@
 ;
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005ff9e0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
@@ -313,8 +313,8 @@ section .text
     ADD EAX,EDX                         ; 0046768f
     ADD EAX,0x4                         ; 00467691
     PUSH EAX                            ; 00467694
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00467695
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00467695
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0046769a
     JMP 0x004675cb                      ; 0046769d
         ;   XREF to: 004675cb (UNCONDITIONAL_JUMP)  ; LAB_004675cb

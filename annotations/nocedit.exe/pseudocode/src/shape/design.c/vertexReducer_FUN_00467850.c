@@ -189,8 +189,7 @@ LAB_00467b49:
     } while (g_VertexCount != iVar6);
     shape_design_c_removeDegenerateTriangles_FUN_00463a20();
     g_VertexOptimizationPasses = g_VertexOptimizationPasses + 1;
-    _sprintf
-              ((char *)local_134,"Original vertices: %d    New total: %d\n\nTotal passes: %d\n\nPolys removed: %d",iVar7,g_VertexCount,
+    _sprintf((char *)local_134,"Original vertices: %d    New total: %d\n\nTotal passes: %d\n\nPolys removed: %d",iVar7,g_VertexCount,
                g_VertexOptimizationPasses);
     if (0 < ui_mode) {
       pcVar4 = "\n\nHit a key...";

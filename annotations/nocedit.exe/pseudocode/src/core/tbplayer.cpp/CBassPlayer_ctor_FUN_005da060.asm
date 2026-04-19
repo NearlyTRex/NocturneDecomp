@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_bassplayer_dfm_00654baf
-;   CDemonActor_vtable g_CBassPlayerVTable
+;   CCharacter_full_vtable g_CBassPlayerVTable
 ;
 ; Called Functions:
 ;   core_npc.cpp_CNPC_ctor_FUN_005447e0

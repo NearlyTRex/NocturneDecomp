@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_icepick_dfm_0062f5a8
-;   CDemonActor_vtable g_CIcePickVTable
+;   CHero_full_vtable g_CIcePickVTable
 ;
 ; Called Functions:
 ;   core_hero.cpp_CHero_ctor_FUN_004f2340

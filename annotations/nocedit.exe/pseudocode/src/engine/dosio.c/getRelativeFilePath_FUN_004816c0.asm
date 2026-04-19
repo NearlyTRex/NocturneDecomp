@@ -21,7 +21,7 @@
 ;   TerminatedCString s_s_s_00621571
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
     PUSH EAX                            ; 004816d8
     PUSH 0x621571                       ; 004816d9 | = "%s\\%s"
     PUSH EDI                            ; 004816de
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004816df
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004816df
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004816e4
     POP EDI                             ; 004816e7
     POP ESI                             ; 004816e8

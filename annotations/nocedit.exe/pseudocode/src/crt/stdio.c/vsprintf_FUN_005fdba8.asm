@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_stdio_c__vsprintf_FUN_005fdba8(char *buffer,char *format,va_list_t args)
+; int __cdecl crt_stdio_c_vsprintf_FUN_005fdba8(char *buffer,char *format,va_list_t args)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   buffer
@@ -26,7 +26,7 @@
 section .text
 
     PUSH EBX                            ; 005fdba8
-        ;   Label: crt_stdio.c__vsprintf_FUN_005fdba8
+        ;   Label: crt_stdio.c_vsprintf_FUN_005fdba8
     PUSH 0x5fdb90                       ; 005fdba9
     MOV EDX,dword ptr [ESP + 0x14]      ; 005fdbae
     PUSH EDX                            ; 005fdbb2

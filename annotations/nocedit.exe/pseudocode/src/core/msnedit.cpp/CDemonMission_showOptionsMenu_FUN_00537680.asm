@@ -33,7 +33,7 @@
 ; Called Functions:
 ;   core_inivar.cpp_readIniData_FUN_004fbd90
 ;   core_inivar.cpp_writeIniData_FUN_004fc510
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470
@@ -106,8 +106,8 @@ section .text
     PUSH 0x63b911                       ; 00537709 | = "1. Draw sky in dynamic views: %s"
     LEA EAX,[ESP + 0x8]                 ; 0053770e
     PUSH EAX                            ; 00537712
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00537713
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00537713
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00537718
     PUSH 0x2c                           ; 0053771b
     PUSH 0x0                            ; 0053771d
@@ -126,8 +126,8 @@ section .text
     PUSH 0x63b932                       ; 0053773d | = "2. Draw water in dynamic views: %s"
     LEA EAX,[ESP + 0x8]                 ; 00537742
     PUSH EAX                            ; 00537746
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00537747
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00537747
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0053774c
     PUSH 0x37                           ; 0053774f
     PUSH 0x0                            ; 00537751
@@ -146,8 +146,8 @@ section .text
     PUSH 0x63b955                       ; 00537771 | = "3. Force full lighting in static view..."
     LEA EAX,[ESP + 0x8]                 ; 00537776
     PUSH EAX                            ; 0053777a
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053777b
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0053777b
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00537780
     PUSH 0x42                           ; 00537783
     PUSH 0x0                            ; 00537785
@@ -166,8 +166,8 @@ section .text
     PUSH 0x63b97f                       ; 005377a7 | = "4. Disable mouse selection of CBarrie..."
     LEA EAX,[ESP + 0x8]                 ; 005377ac
     PUSH EAX                            ; 005377b0
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005377b1
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005377b1
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005377b6
     PUSH 0x4d                           ; 005377b9
     PUSH 0x0                            ; 005377bb
@@ -186,8 +186,8 @@ section .text
     MOV ECX,0x1                         ; 005377e1
     PUSH EAX                            ; 005377e6
     MOV dword ptr [0x00680810],ECX      ; 005377e7 | g_DynamicRenderMode
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005377ed
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005377ed
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
         ;   Label: LAB_005377ed
     ADD ESP,0x8                         ; 005377f2
     PUSH 0x58                           ; 005377f5
@@ -207,8 +207,8 @@ section .text
     PUSH 0x63ba17                       ; 00537819 | = "6. Confirm new actor names: %s"
     LEA EAX,[ESP + 0x8]                 ; 0053781e
     PUSH EAX                            ; 00537822
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00537823
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00537823
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00537828
     PUSH 0x63                           ; 0053782b
     PUSH 0x0                            ; 0053782d
@@ -226,8 +226,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0053784d
     PUSH EAX                            ; 00537851
     MOV dword ptr [EBP + 0x40],0x0      ; 00537852
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00537859
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00537859
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
         ;   Label: LAB_00537859
     ADD ESP,0x8                         ; 0053785e
     PUSH 0x6e                           ; 00537861
@@ -278,8 +278,8 @@ section .text
     PUSH 0x63b8e7                       ; 005378d1 | = "Current mission: %s.msn"
     LEA EAX,[ESP + 0x8]                 ; 005378d6
     PUSH EAX                            ; 005378da
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005378db
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005378db
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005378e0
     JMP 0x005376e7                      ; 005378e3
         ;   XREF to: 005376e7 (UNCONDITIONAL_JUMP)  ; LAB_005376e7

@@ -7,18 +7,18 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 373,
-    "complexity_score": 295,
+    "complexity_score": 294,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 165,
+    "pseudocode_lines": 164,
     "suspect_count": 12,
     "suspect_types": [
       "unaffected_reg",
       "unrolled_memcpy"
     ],
-    "total_lines": 538
+    "total_lines": 537
   },
   "cross_references": [
     {
@@ -49,7 +49,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00403260",
@@ -492,7 +492,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 125,
+      "line": 124,
       "match": "for (...; != 0; ... + -1)",
       "severity": "mild",
       "text": "for (uVar2 = (uint)(width * height) >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {",
@@ -500,7 +500,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 130,
+      "line": 129,
       "match": "for (...; != 0; ... + -1)",
       "severity": "mild",
       "text": "for (uVar2 = width * height & 3; uVar2 != 0; uVar2 = uVar2 - 1) {",
@@ -508,7 +508,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 144,
+      "line": 143,
       "match": "for (...; != 0; ... + -1)",
       "severity": "mild",
       "text": "for (iVar7 = 0xc0; iVar7 != 0; iVar7 = iVar7 + -1) {",
@@ -516,7 +516,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 149,
+      "line": 148,
       "match": "for (...; != 0; ... + -1)",
       "severity": "mild",
       "text": "for (iVar4 = 0; iVar4 != 0; iVar4 = iVar4 + -1) {",

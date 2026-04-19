@@ -47,14 +47,14 @@
       "name": "crt_errno.c__errno_FUN_00601450"
     },
     {
-      "addr": "005fdbd0",
-      "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
-    },
-    {
       "addr": "00601490",
       "is_variadic": false,
       "name": "crt_stdio.c_setvbuf_FUN_00601490"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005fe7f0",
@@ -499,11 +499,11 @@
   "resolved_suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 105,
+      "line": 104,
       "match": "&stack0xfffff964",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(&stack0xfffff964,\"A writable copy of %s exists.  Replace it?\",local_340);",
+      "text": "_sprintf(&stack0xfffff964,\"A writable copy of %s exists.  Replace it?\",local_340)",
       "type": "stack_ref"
     },
     {

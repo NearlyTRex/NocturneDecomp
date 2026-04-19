@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -90,8 +90,8 @@ section .text
     PUSH 0x656bcb                       ; 005e6d42 | = "wing?.wav @%f"
     LEA EAX,[ESP + 0x18]                ; 005e6d47
     PUSH EAX                            ; 005e6d4b
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005e6d4c
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005e6d4c
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005e6d51
     LEA EDX,[ESP + 0xc]                 ; 005e6d54
     PUSH EDX                            ; 005e6d58

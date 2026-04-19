@@ -7,12 +7,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1482,
-    "complexity_score": 1006,
+    "complexity_score": 1003,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 63,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 746,
+    "pseudocode_lines": 743,
     "suspect_count": 23,
     "suspect_types": [
       "pointer_cast",
@@ -22,7 +22,7 @@
       "unrolled_strlen",
       "warning_inlined_function"
     ],
-    "total_lines": 2228
+    "total_lines": 2225
   },
   "cross_references": [
     {
@@ -94,7 +94,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "004a3b90",
@@ -937,7 +937,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 519,
+      "line": 516,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "uStack_4c = SUB84(__BITCAST_UINT64(dVar1),0);",
@@ -953,7 +953,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 144,
+      "line": 143,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -961,7 +961,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 165,
+      "line": 164,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -969,7 +969,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 184,
+      "line": 183,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -977,7 +977,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 210,
+      "line": 208,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -985,7 +985,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 230,
+      "line": 228,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -993,7 +993,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 249,
+      "line": 247,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -1001,7 +1001,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 275,
+      "line": 272,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -1009,7 +1009,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 295,
+      "line": 292,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -1017,7 +1017,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 308,
+      "line": 305,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -1025,7 +1025,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 331,
+      "line": 328,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -1033,7 +1033,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 351,
+      "line": 348,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -1041,7 +1041,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 363,
+      "line": 360,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -1049,7 +1049,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 386,
+      "line": 383,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -1057,7 +1057,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 406,
+      "line": 403,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -1065,7 +1065,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 434,
+      "line": 431,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -1073,7 +1073,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 456,
+      "line": 453,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -1081,7 +1081,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 475,
+      "line": 472,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -1089,7 +1089,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 201,
+      "line": 199,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "mild",
       "text": "do {",
@@ -1097,7 +1097,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 201,
+      "line": 199,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "mild",
       "text": "do {",

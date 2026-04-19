@@ -13,7 +13,7 @@
 ;   TerminatedCString s_nbride2_dfm_00621869
 ;   float FLOAT_0065cd70 = 50
 ;   float FLOAT_0065cd74 = 100
-;   CDemonActor_vtable g_CDraculaBrideVTable
+;   CEnemy_full_vtable g_CDraculaBrideVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500

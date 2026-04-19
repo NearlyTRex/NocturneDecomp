@@ -18,7 +18,7 @@
 ;   char[2048] g_ScriptErrorBuffer
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
     PUSH 0x6414a8                       ; 0055925a | = "Actor variable name must begin with '@'"
         ;   Label: LAB_0055925a
     PUSH 0x310eca0                      ; 0055925f | g_ScriptErrorBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00559264
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00559264
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00559269
     XOR EAX,EAX                         ; 0055926c
         ;   Label: LAB_0055926c
@@ -73,8 +73,8 @@ section .text
         ;   Label: LAB_00559272
     PUSH 0x6414d0                       ; 00559273 | = "Actor variable name \"%s\" is too long"
     PUSH 0x310eca0                      ; 00559278 | g_ScriptErrorBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0055927d
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055927d
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00559282
     JMP 0x0055926c                      ; 00559285
         ;   XREF to: 0055926c (UNCONDITIONAL_JUMP)  ; LAB_0055926c
@@ -98,8 +98,8 @@ section .text
         ;   Label: LAB_005592a0
     PUSH 0x6414f5                       ; 005592a1 | = "Actor variable name \"%s\" is not valid"
     PUSH 0x310eca0                      ; 005592a6 | g_ScriptErrorBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005592ab
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005592ab
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005592b0
     XOR EAX,EAX                         ; 005592b3
     POP EDI                             ; 005592b5

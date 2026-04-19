@@ -395,7 +395,7 @@ static int CFileManager_managePodFiles_check_iVar2_0_check_0_1(CFileManager_mana
     return 0;
 }
 
-// Chunk: check_iVar2_0_check_0_2 (lines 337-362 of original)
+// Chunk: check_iVar2_0_check_0_2 (lines 337-360 of original)
 static int CFileManager_managePodFiles_check_iVar2_0_check_0_2(CFileManager_managePodFiles_Ctx *ctx) {
     int &iVar2 = ctx->iVar2;
     char *&pcVar3 = ctx->pcVar3;
@@ -406,8 +406,7 @@ static int CFileManager_managePodFiles_check_iVar2_0_check_0_2(CFileManager_mana
     int &local_48 = ctx->local_48;
 
         do {
-          _sprintf
-                    (local_2338,"%s\t%s\t%s",filename,filename->status_description,
+          _sprintf(local_2338,"%s\t%s\t%s",filename,filename->status_description,
                      g_PodFileActionNames[filename->action_index]);
           if (filename->checked_out_by[0] != '\0') {
             pcVar12 = local_2338;
@@ -421,8 +420,7 @@ static int CFileManager_managePodFiles_check_iVar2_0_check_0_2(CFileManager_mana
             } while (*pcVar3 != '\0');
             pcVar3 = (char *)0x0;
 LAB_004b8df1:
-            _sprintf
-                      (pcVar3,"\tChecked out by %s",filename->checked_out_by);
+            _sprintf(pcVar3,"\tChecked out by %s",filename->checked_out_by);
           }
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_170c.base,local_2338);
           iVar2 = iVar2 + 1;
@@ -431,7 +429,7 @@ LAB_004b8df1:
     return 0;
 }
 
-// Chunk: check_iVar2_0_check_local_60_3 (lines 369-512 of original)
+// Chunk: check_iVar2_0_check_local_60_3 (lines 367-495 of original)
 static int CFileManager_managePodFiles_check_iVar2_0_check_local_60_3(CFileManager_managePodFiles_Ctx *ctx) {
     CFileManager *&this_ptr = ctx->this_ptr;
     int &iVar2 = ctx->iVar2;
@@ -445,38 +443,31 @@ static int CFileManager_managePodFiles_check_iVar2_0_check_local_60_3(CFileManag
     SPodManageRecord *&local_44 = ctx->local_44;
 
         pcVar12 = local_44[local_60].network_path;
-        iVar2 = _sprintf(local_2338,"Select action for %s\n",pcVar12)
-        ;
+        iVar2 = _sprintf(local_2338,"Select action for %s\n",pcVar12);
         pcVar3 = local_2338 + iVar2;
         switch(local_44[local_60].comparison_result) {
         case 0:
-          iVar2 = _sprintf
-                            (pcVar3,"Your pod %s is newer than %s\n",local_44[local_60].pod_name,
+          iVar2 = _sprintf(pcVar3,"Your pod %s is newer than %s\n",local_44[local_60].pod_name,
                              pcVar12);
           break;
         case 1:
-          iVar2 = _sprintf
-                            (pcVar3,"Your pod %s is older than %s\n",local_44[local_60].pod_name,
+          iVar2 = _sprintf(pcVar3,"Your pod %s is older than %s\n",local_44[local_60].pod_name,
                              pcVar12);
           break;
         case 2:
-          iVar2 = _sprintf
-                            (pcVar3,"Your pod %s is different than %s\n",local_44[local_60].pod_name,
+          iVar2 = _sprintf(pcVar3,"Your pod %s is different than %s\n",local_44[local_60].pod_name,
                              pcVar12);
           break;
         case 3:
-          iVar2 = _sprintf
-                            (pcVar3,"Your pod %s is the same as %s\n",local_44[local_60].pod_name,
+          iVar2 = _sprintf(pcVar3,"Your pod %s is the same as %s\n",local_44[local_60].pod_name,
                              pcVar12);
           break;
         case 4:
-          iVar2 = _sprintf
-                            (pcVar3,"You don't have the pod %s\n",local_44[local_60].pod_name)
+          iVar2 = _sprintf(pcVar3,"You don't have the pod %s\n",local_44[local_60].pod_name)
           ;
           break;
         case 5:
-          iVar2 = _sprintf
-                            (pcVar3,"%s is mounted, but %s does not exist\n",local_44[local_60].pod_name,
+          iVar2 = _sprintf(pcVar3,"%s is mounted, but %s does not exist\n",local_44[local_60].pod_name,
                              pcVar12);
           break;
         default:
@@ -489,37 +480,31 @@ static int CFileManager_managePodFiles_check_iVar2_0_check_local_60_3(CFileManag
 LAB_004b9590:
         if (local_44[local_60].comparison_result != 5) {
           iVar2 = _sprintf(pcVar3,"---------------------\n");
-          iVar4 = _sprintf
-                            (pcVar3 + iVar2,"Of the %d files in %s:\n",
+          iVar4 = _sprintf(pcVar3 + iVar2,"Of the %d files in %s:\n",
                              local_44[local_60].total_file_count,local_44[local_60].network_path);
           pcVar12 = pcVar3 + iVar2 + iVar4;
           if (0 < local_44[local_60].count_missing_local) {
-            iVar2 = _sprintf
-                              (pcVar12,"%d files don't exist locally\n",
+            iVar2 = _sprintf(pcVar12,"%d files don't exist locally\n",
                                local_44[local_60].count_missing_local);
             pcVar12 = pcVar12 + iVar2;
           }
           if (0 < local_44[local_60].count_newer_local) {
-            iVar2 = _sprintf
-                              (pcVar12,"%d local files are newer\n",
+            iVar2 = _sprintf(pcVar12,"%d local files are newer\n",
                                local_44[local_60].count_newer_local);
             pcVar12 = pcVar12 + iVar2;
           }
           if (0 < local_44[local_60].count_older_local) {
-            iVar2 = _sprintf
-                              (pcVar12,"%d local files are older\n",
+            iVar2 = _sprintf(pcVar12,"%d local files are older\n",
                                local_44[local_60].count_older_local);
             pcVar12 = pcVar12 + iVar2;
           }
           if (0 < local_44[local_60].count_different) {
-            iVar2 = _sprintf
-                              (pcVar12,"%d local files are different\n",
+            iVar2 = _sprintf(pcVar12,"%d local files are different\n",
                                local_44[local_60].count_different);
             pcVar12 = pcVar12 + iVar2;
           }
           if (0 < local_44[local_60].count_in_sync) {
-            iVar2 = _sprintf
-                              (pcVar12,"%d local files are in sync\n",
+            iVar2 = _sprintf(pcVar12,"%d local files are in sync\n",
                                local_44[local_60].count_in_sync);
             pcVar12 = pcVar12 + iVar2;
           }
@@ -530,12 +515,10 @@ LAB_004b9590:
                               (local_44[local_60].checked_out_by,
                                g_VersionControlSession.primary_username);
             if (iVar2 == 0) {
-              iVar2 = _sprintf(pcVar12,"You currently have this pod checked out\n")
-              ;
+              iVar2 = _sprintf(pcVar12,"You currently have this pod checked out\n");
             }
             else {
-              iVar2 = _sprintf
-                                (pcVar12,"%s currently has this pod checked out\n",
+              iVar2 = _sprintf(pcVar12,"%s currently has this pod checked out\n",
                                  local_44[local_60].checked_out_by);
             }
             pcVar12 = pcVar12 + iVar2;
@@ -588,7 +571,7 @@ LAB_004b9590:
     return 0;
 }
 
-// Chunk: check_iVar2_0_check_0_4 (lines 517-693 of original)
+// Chunk: check_iVar2_0_check_0_4 (lines 500-674 of original)
 static int CFileManager_managePodFiles_check_iVar2_0_check_0_4(CFileManager_managePodFiles_Ctx *ctx) {
     CFileManager *&this_ptr = ctx->this_ptr;
     int &iVar2 = ctx->iVar2;
@@ -667,14 +650,12 @@ static int CFileManager_managePodFiles_check_iVar2_0_check_0_4(CFileManager_mana
                                         (pcVar3,g_VersionControlSession.primary_username),
                      iVar2 != 0)) {
                     if ((uVar5 & 8) != 0) goto LAB_004b9af4;
-                    _sprintf
-                              (local_980,"A writable copy of %s exists.  Replace it?",pcVar12);
+                    _sprintf(local_980,"A writable copy of %s exists.  Replace it?",pcVar12);
                     piVar8 = &g_VersionControlSession.overwrite_writeable_choice;
                     pcVar12 = local_980;
                   }
                   else {
-                    _sprintf
-                              (local_78c,"You currently have %s checked out.  Replace local copy with network copy?",pcVar12);
+                    _sprintf(local_78c,"You currently have %s checked out.  Replace local copy with network copy?",pcVar12);
                     piVar8 = &g_VersionControlSession.overwrite_own_choice;
                     pcVar12 = local_78c;
                   }
@@ -788,7 +769,7 @@ LAB_004b8f32:
     return 0;
 }
 
-// Chunk: check_iVar2_0_else_5 (lines 701-729 of original)
+// Chunk: check_iVar2_0_else_5 (lines 682-710 of original)
 static int CFileManager_managePodFiles_check_iVar2_0_else_5(CFileManager_managePodFiles_Ctx *ctx) {
     int &iVar2 = ctx->iVar2;
     char *&pcVar3 = ctx->pcVar3;
@@ -813,8 +794,8 @@ static int CFileManager_managePodFiles_check_iVar2_0_else_5(CFileManager_manageP
           pcVar12 = pcVar12 + iVar2;
         }
         if (0 < local_4c) {
-          iVar2 = _sprintf
-                            (pcVar12,"%d local pods deleted\n",local_4c);
+          iVar2 = _sprintf(pcVar12,"%d local pods deleted\n",local_4c)
+          ;
           pcVar12 = pcVar12 + iVar2;
         }
         if ((local_58 < 1) && (local_50 < 1)) {

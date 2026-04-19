@@ -540,8 +540,8 @@ section .text
     PUSH 0x6219fa                       ; 00484946 | = "bride-%d?.wav"
     LEA EAX,[EBP + 0xfffffbf6]          ; 0048494b
     PUSH EAX                            ; 00484951
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00484952
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00484952
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00484957
     LEA EAX,[EBP + 0xfffffbf6]          ; 0048495a
     PUSH 0x3f800000                     ; 00484960
@@ -1304,8 +1304,8 @@ section .text
     PUSH 0x621a1f                       ; 0048522d | = "bride-%d?.wav"
     LEA EAX,[EBP + 0xfffffcbe]          ; 00485232
     PUSH EAX                            ; 00485238
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00485239
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00485239
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0048523e
     LEA EAX,[EBP + 0xfffffcbe]          ; 00485241
     PUSH 0x3f800000                     ; 00485247
@@ -1677,8 +1677,8 @@ section .text
     PUSH 0x621a67                       ; 00485655 | = "bride-%d?.wav"
     LEA EAX,[EBP + 0xfffffc5a]          ; 0048565a
     PUSH EAX                            ; 00485660
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00485661
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00485661
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00485666
     LEA EAX,[EBP + 0xfffffc5a]          ; 00485669
     PUSH 0x3f800000                     ; 0048566f
@@ -1729,8 +1729,8 @@ section .text
     PUSH 0x621a8c                       ; 004856f5 | = "bride-%d?.wav"
     LEA EAX,[EBP + 0xfffffd22]          ; 004856fa
     PUSH EAX                            ; 00485700
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00485701
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00485701
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00485706
     LEA EAX,[EBP + 0xfffffd22]          ; 00485709
     PUSH 0x3f800000                     ; 0048570f

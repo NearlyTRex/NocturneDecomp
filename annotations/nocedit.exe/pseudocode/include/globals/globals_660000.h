@@ -6,18 +6,18 @@
 #include "system/iostream.h"
 #include "system/strstream.h"
 #include "system/watcom.h"
-#include "types/classes/CCharacter_vtable.h"
+#include "types/classes/CCharacter_full_vtable.h"
 #include "types/classes/CConsole.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActor_vtable.h"
 #include "types/classes/CDemonFilter.h"
 #include "types/classes/CDemonPod_vtable.h"
-#include "types/classes/CEnemy_vtable.h"
+#include "types/classes/CEnemy_full_vtable.h"
 #include "types/classes/CFileManager_vtable.h"
 #include "types/classes/CFilterCache.h"
 #include "types/classes/CFilterFx.h"
 #include "types/classes/CFont_vtable.h"
-#include "types/classes/CHero_vtable.h"
+#include "types/classes/CHero_full_vtable.h"
 #include "types/classes/CKeys_vtable.h"
 #include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CMotionController_vtable.h"
@@ -30,7 +30,7 @@
 #include "types/classes/CSoundDeviceBasic_vtable.h"
 #include "types/classes/CSoundDeviceFull_vtable.h"
 #include "types/classes/CVector3i.h"
-#include "types/classes/CWeapon_vtable.h"
+#include "types/classes/CWeapon_full_vtable.h"
 #include "types/funcdefs/MRGLBlockHandlerFunc.h"
 #include "types/structs/SEnumPair.h"
 #include "types/structs/SFontGlyph.h"
@@ -43,28 +43,11 @@
 // GLOBAL VARIABLES - Range 0x660000
 // =============================================================================
 
-// CCharacter_vtable
-extern CCharacter_vtable DAT_00660120;
-extern CCharacter_vtable DAT_006602E0;
-extern CCharacter_vtable DAT_00660820;
-extern CCharacter_vtable DAT_00661510;
-extern CCharacter_vtable DAT_00661880;
-extern CCharacter_vtable DAT_00661A30;
-extern CCharacter_vtable DAT_00661E80;
-extern CCharacter_vtable DAT_00662050;
-extern CCharacter_vtable DAT_00662550;
-extern CCharacter_vtable DAT_00662780;
-extern CCharacter_vtable DAT_00663070;
-extern CCharacter_vtable DAT_00663870;
-extern CCharacter_vtable DAT_00663A30;
-extern CCharacter_vtable DAT_00663E50;
-extern CCharacter_vtable DAT_00664000;
-extern CCharacter_vtable DAT_00664160;
-extern CCharacter_vtable DAT_00664560;
-extern CCharacter_vtable DAT_00664DC0;
-extern CCharacter_vtable DAT_00664F80;
-extern CCharacter_vtable DAT_00665870;
-extern CCharacter_vtable DAT_00665AD0;
+// CCharacter_full_vtable
+extern CCharacter_full_vtable g_CNPCVTable;
+extern CCharacter_full_vtable g_CPassengerVTable;
+extern CCharacter_full_vtable g_CBassPlayerVTable;
+extern CCharacter_full_vtable g_CDrummerVTable;
 
 // CConsole*
 extern CConsole* g_CConsolePtr;
@@ -73,57 +56,29 @@ extern CConsole* g_CConsolePtr;
 extern CDemonActor* g_ScriptSentinelActor;
 
 // CDemonActor_vtable
-extern CDemonActor_vtable g_CIcePickVTable;
-extern CDemonActor_vtable g_CImpVTable;
 extern CDemonActor_vtable g_CKeyActorVTable;
 extern CDemonActor_vtable g_CLadderVTable;
-extern CDemonActor_vtable g_CLarvaVTable;
 extern CDemonActor_vtable g_CLeverVTable;
-extern CDemonActor_vtable g_CLightGunVTable;
 extern CDemonActor_vtable g_CLightConeVTable;
 extern CDemonActor_vtable g_CMansionPuzzleCircleVTable;
 extern CDemonActor_vtable g_CMirrorHackVTable;
 extern CDemonActor_vtable g_CMarqueeVTable;
-extern CDemonActor_vtable g_CMeleeVTable;
-extern CDemonActor_vtable g_CMimicVTable;
 extern CDemonActor_vtable g_CMinecarVTable;
-extern CDemonActor_vtable g_CMobsterVTable;
-extern CDemonActor_vtable g_CMolochVTable;
-extern CDemonActor_vtable g_CNPCVTable;
-extern CDemonActor_vtable g_CPassengerVTable;
 extern CDemonActor_vtable g_CPendulumVTable;
 extern CDemonActor_vtable g_CPlatformVTable;
-extern CDemonActor_vtable g_CScatVTable;
-extern CDemonActor_vtable g_CSentinelVTable;
-extern CDemonActor_vtable g_CShotgunVTable;
-extern CDemonActor_vtable g_CShovelVTable;
 extern CDemonActor_vtable g_CSimBoxVTable;
-extern CDemonActor_vtable g_CSmileyVTable;
 extern CDemonActor_vtable g_CSpikeVTable;
 extern CDemonActor_vtable g_CStairsVTable;
 extern CDemonActor_vtable g_CTempleStoneVTable;
-extern CDemonActor_vtable g_CStrangerVTable;
-extern CDemonActor_vtable g_CSuccubusVTable;
-extern CDemonActor_vtable g_CSvetlanaVTable;
-extern CDemonActor_vtable g_CBassPlayerVTable;
-extern CDemonActor_vtable g_CDrummerVTable;
 extern CDemonActor_vtable g_CTeleportDestVTable;
 extern CDemonActor_vtable g_CTeleportVTable;
-extern CDemonActor_vtable g_CTentacleVTable;
-extern CDemonActor_vtable g_CTommyGunVTable;
 extern CDemonActor_vtable g_CTrapVTable;
 extern CDemonActor_vtable g_CTrashVTable;
 extern CDemonActor_vtable g_CTriggerVTable;
-extern CDemonActor_vtable g_CTurretVTable;
-extern CDemonActor_vtable g_CTVBatVTable;
-extern CDemonActor_vtable g_CVampireBossVTable;
 extern CDemonActor_vtable g_CVehicleVTable;
 extern CDemonActor_vtable g_CCryptVesselVTable;
 extern CDemonActor_vtable g_CWaterActorVTable;
 extern CDemonActor_vtable g_CWayPointVTable;
-extern CDemonActor_vtable g_CWeaponVTable;
-extern CDemonActor_vtable g_CWerewolfVTable;
-extern CDemonActor_vtable g_CZombieVTable;
 
 // CDemonFilter*[4]
 extern CDemonFilter* g_PlayerFilters[4];
@@ -134,19 +89,19 @@ extern CDemonFilter* g_GlobalFilters[8];
 // CDemonPod_vtable
 extern CDemonPod_vtable g_CDemonPodVTable;
 
-// CEnemy_vtable
-extern CEnemy_vtable DAT_00660348;
-extern CEnemy_vtable DAT_00660888;
-extern CEnemy_vtable DAT_00661578;
-extern CEnemy_vtable DAT_006618E8;
-extern CEnemy_vtable DAT_006627E8;
-extern CEnemy_vtable DAT_006630D8;
-extern CEnemy_vtable DAT_00663A98;
-extern CEnemy_vtable DAT_006645C8;
-extern CEnemy_vtable DAT_00664E28;
-extern CEnemy_vtable DAT_00664FE8;
-extern CEnemy_vtable DAT_006658D8;
-extern CEnemy_vtable DAT_00665B38;
+// CEnemy_full_vtable
+extern CEnemy_full_vtable g_CImpVTable;
+extern CEnemy_full_vtable g_CLarvaVTable;
+extern CEnemy_full_vtable g_CMimicVTable;
+extern CEnemy_full_vtable g_CMobsterVTable;
+extern CEnemy_full_vtable g_CSentinelVTable;
+extern CEnemy_full_vtable g_CSmileyVTable;
+extern CEnemy_full_vtable g_CSuccubusVTable;
+extern CEnemy_full_vtable g_CTentacleVTable;
+extern CEnemy_full_vtable g_CTVBatVTable;
+extern CEnemy_full_vtable g_CVampireBossVTable;
+extern CEnemy_full_vtable g_CWerewolfVTable;
+extern CEnemy_full_vtable g_CZombieVTable;
 
 // CFileManager_vtable
 extern CFileManager_vtable g_CDemonFileManagerVTable;
@@ -161,12 +116,12 @@ extern CFilterFx* g_CFilterFXPtr;
 extern CFont_vtable g_CFontVTable;
 extern CFont_vtable g_CWinFontVTable;
 
-// CHero_vtable
-extern CHero_vtable DAT_00660188;
-extern CHero_vtable DAT_00661A98;
-extern CHero_vtable DAT_006625B8;
-extern CHero_vtable DAT_006638D8;
-extern CHero_vtable DAT_00663EB8;
+// CHero_full_vtable
+extern CHero_full_vtable g_CIcePickVTable;
+extern CHero_full_vtable g_CMolochVTable;
+extern CHero_full_vtable g_CScatVTable;
+extern CHero_full_vtable g_CStrangerVTable;
+extern CHero_full_vtable g_CSvetlanaVTable;
 
 // CKeys_vtable
 extern CKeys_vtable g_CKeysVTable;
@@ -206,14 +161,14 @@ extern CSoundDeviceFull_vtable g_CWavOutDeviceVTable;
 // CVector3i[62]
 extern CVector3i g_CoronaVertexPositions[62];
 
-// CWeapon_vtable
-extern CWeapon_vtable DAT_00660B50;
-extern CWeapon_vtable DAT_00661260;
-extern CWeapon_vtable DAT_00662B70;
-extern CWeapon_vtable DAT_00662CC0;
-extern CWeapon_vtable DAT_00664760;
-extern CWeapon_vtable DAT_00664C70;
-extern CWeapon_vtable DAT_006656A0;
+// CWeapon_full_vtable
+extern CWeapon_full_vtable g_CLightGunVTable;
+extern CWeapon_full_vtable g_CMeleeVTable;
+extern CWeapon_full_vtable g_CShotgunVTable;
+extern CWeapon_full_vtable g_CShovelVTable;
+extern CWeapon_full_vtable g_CTommyGunVTable;
+extern CWeapon_full_vtable g_CTurretVTable;
+extern CWeapon_full_vtable g_CWeaponVTable;
 
 // MRGLBlockHandlerFunc*[67]
 extern MRGLBlockHandlerFunc* g_MRGLBlockHandlerTable[67];

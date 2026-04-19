@@ -17,7 +17,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_priest_dfm_0063e309
-;   CDemonActor_vtable g_CNPCVTable
+;   CCharacter_full_vtable g_CNPCVTable
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_ctor_FUN_00427e20

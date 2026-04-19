@@ -27,9 +27,9 @@
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_importMatrices_FUN_00442ea0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
@@ -116,8 +116,8 @@ section .text
     PUSH 0x619103                       ; 00442e0e | = "Importing %s"
     LEA EAX,[ESP + 0xc]                 ; 00442e13
     PUSH EAX                            ; 00442e17
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00442e18
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00442e18
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00442e1d
     LEA EAX,[ESP + 0x4]                 ; 00442e20
     PUSH EAX                            ; 00442e24

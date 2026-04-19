@@ -1,8 +1,8 @@
-// Name: crt_stdio.c__sprintf_FUN_005fdbd0
+// Name: crt_stdio.c_sprintf_FUN_005fdbd0
 // Address: 005fdbd0
 // Address Range: [[005fdbd0, 005fdbf4]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_stdio_c__sprintf_FUN_005fdbd0(char *buffer,char *format,...)
+// Signature: int __cdecl crt_stdio_c_sprintf_FUN_005fdbd0(char *buffer,char *format,...)
 
 #include "nocturne.h"
 

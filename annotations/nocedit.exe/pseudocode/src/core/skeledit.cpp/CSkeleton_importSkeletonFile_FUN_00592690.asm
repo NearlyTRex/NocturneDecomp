@@ -1772,8 +1772,8 @@ section .text
     PUSH 0x64c57b                       ; 005937b5 | = "The following motions do not have the..."
     LEA EAX,[EBP + 0xffffdd2a]          ; 005937ba
     PUSH EAX                            ; 005937c0
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005937c1
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005937c1
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005937c6
     PUSH 0x0                            ; 005937c9
     PUSH EDI                            ; 005937cb
@@ -1811,8 +1811,8 @@ section .text
     PUSH 0x64c611                       ; 0059381a | = "%s\r\n"
     PUSH ESI                            ; 0059381f | g_SkeleditClipboardBuffer
     INC EBX                             ; 00593820
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00593821
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00593821
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00593826
     ADD ESI,EAX                         ; 00593829
     JMP 0x005937fe                      ; 0059382b

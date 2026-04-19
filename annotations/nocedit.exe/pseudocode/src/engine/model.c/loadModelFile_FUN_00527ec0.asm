@@ -39,8 +39,8 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_ctype.c_toupper_FUN_005ff9e0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fread_FUN_005fd990
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_boss.c_modelStructNotSupported2_FUN_0041db80
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   engine_dosio.c_getFileSize_FUN_00481880
@@ -97,8 +97,8 @@ section .text
     PUSH 0x639ab2                       ; 00527f04 | = "Unable to get file size: %s"
     LEA EAX,[ESP + 0xc]                 ; 00527f09
     PUSH EAX                            ; 00527f0d
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00527f0e
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00527f0e
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EDX,0x639ace                    ; 00527f13 | = "..\\engine\\model.c"
     ADD ESP,0xc                         ; 00527f18
     LEA EAX,[ESP + 0x4]                 ; 00527f1b
@@ -124,8 +124,8 @@ section .text
     PUSH 0x639aea                       ; 00527f53 | = "Unable to open model: %s"
     LEA EAX,[ESP + 0xc]                 ; 00527f58
     PUSH EAX                            ; 00527f5c
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00527f5d
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00527f5d
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0xf5                        ; 00527f62
     ADD ESP,0xc                         ; 00527f67
     MOV [0x02f0ca4c],EAX                ; 00527f6a | g_CurrentLineNumber
@@ -151,8 +151,8 @@ section .text
     PUSH 0x639b27                       ; 00527fa1 | = "Out of model memory: %s"
     LEA EAX,[ESP + 0xc]                 ; 00527fa6
     PUSH EAX                            ; 00527faa
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00527fab
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00527fab
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EDX,0x639b3f                    ; 00527fb0 | = "..\\engine\\model.c"
     ADD ESP,0xc                         ; 00527fb5
     LEA EAX,[ESP + 0x4]                 ; 00527fb8
@@ -178,8 +178,8 @@ section .text
     PUSH 0x639b51                       ; 00527fe8 | = "Model file read error: %s"
     LEA EAX,[ESP + 0xc]                 ; 00527fed
     PUSH EAX                            ; 00527ff1
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00527ff2
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00527ff2
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x107                       ; 00527ff7
     ADD ESP,0xc                         ; 00527ffc
     MOV [0x02f0ca4c],EAX                ; 00527fff | g_CurrentLineNumber
@@ -208,8 +208,8 @@ section .text
     PUSH 0x639b8f                       ; 0052803c | = "Invalid model: %s"
     LEA EAX,[ESP + 0xc]                 ; 00528041
     PUSH EAX                            ; 00528045
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00528046
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00528046
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EDX,0x639ba1                    ; 0052804b | = "..\\engine\\model.c"
     ADD ESP,0xc                         ; 00528050
     LEA EAX,[ESP + 0x4]                 ; 00528053

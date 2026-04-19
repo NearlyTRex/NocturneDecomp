@@ -13,7 +13,7 @@
 ;   TerminatedCString s_dog_dfm_00620f9c
 ;   float FLOAT_0065ca2c = 50
 ;   float FLOAT_0065ca30 = 100
-;   CDemonActor_vtable g_CZombieDogVTable
+;   CEnemy_full_vtable g_CZombieDogVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500

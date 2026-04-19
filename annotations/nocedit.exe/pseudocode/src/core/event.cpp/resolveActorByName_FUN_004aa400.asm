@@ -36,7 +36,7 @@
 ;   core_actor.cpp_isOfClassHash_FUN_0040c760
 ;   core_event.cpp_CEventList_getActorByVarName_FUN_004b0b80
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
@@ -141,8 +141,8 @@ section .text
     PUSH 0x624466                       ; 004aa4b4 | = "Can't use '$' actor specifier in mult..."
         ;   Label: LAB_004aa4b4
     PUSH 0x2d0a460                      ; 004aa4b9 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004aa4be
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004aa4be
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004aa4c3
     XOR EAX,EAX                         ; 004aa4c6
     POP EBP                             ; 004aa4c8
@@ -164,8 +164,8 @@ section .text
     PUSH EBX                            ; 004aa4e3
     PUSH 0x624494                       ; 004aa4e4 | = "Actor \"%s\" does not exist."
     PUSH 0x2d0a460                      ; 004aa4e9 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004aa4ee
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004aa4ee
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004aa4f3
     XOR EAX,EAX                         ; 004aa4f6
     POP EBP                             ; 004aa4f8
@@ -184,8 +184,8 @@ section .text
     PUSH EBX                            ; 004aa50c
     PUSH 0x6244af                       ; 004aa50d | = "Actor \"%s\" is of type %s, this comm..."
     PUSH 0x2d0a460                      ; 004aa512 | g_EventErrorMessageBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004aa517
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004aa517
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 004aa51c
     XOR EAX,EAX                         ; 004aa51f
     POP EBP                             ; 004aa521

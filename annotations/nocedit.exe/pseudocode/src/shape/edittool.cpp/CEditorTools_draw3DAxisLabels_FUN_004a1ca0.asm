@@ -44,7 +44,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407d70
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
 ;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
@@ -194,8 +194,8 @@ section .text
     PUSH EAX                            ; 004a1e49
     MOV EBP,dword ptr [EBX + 0x10]      ; 004a1e4a | g_RenderVertexBuffer[1].projected_vertex.screen_x | g_RenderVertexBuffer[2].projected_vertex.screen_x
     MOV EDI,dword ptr [EBX + 0x14]      ; 004a1e4d | g_RenderVertexBuffer[1].projected_vertex.screen_y | g_RenderVertexBuffer[2].projected_vertex.screen_y
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004a1e50
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004a1e50
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004a1e55
     PUSH 0xffff                         ; 004a1e58
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 004a1e5d

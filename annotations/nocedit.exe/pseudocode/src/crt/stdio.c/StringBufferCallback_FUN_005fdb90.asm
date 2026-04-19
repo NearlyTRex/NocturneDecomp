@@ -8,7 +8,7 @@
 ; char             Stack[0x8]:1   character
 ;
 ; XREF[1]:
-;   crt_stdio.c__vsprintf_FUN_005fdba8 at 005fdba9
+;   crt_stdio.c_vsprintf_FUN_005fdba8 at 005fdba9
 ;
 ; *****************************************************************************
 

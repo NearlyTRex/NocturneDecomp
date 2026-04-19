@@ -19,7 +19,7 @@ CHero * __cdecl core_hero_cpp_CHero_dtor_FUN_004f2470(CHero *this_ptr,uint flags
   CDeformableModelInstance *pCVar8;
   CHero *pCVar9;
   
-  (this_ptr->base).base.vtable._ub = &g_CHeroVTable;
+  (this_ptr->base).base.vtable._ub = &g_CHeroVTable._ub;
   iVar1 = 0;
   do {
     if (this_ptr == *(CHero **)((int)g_HeroActors + iVar1)) {

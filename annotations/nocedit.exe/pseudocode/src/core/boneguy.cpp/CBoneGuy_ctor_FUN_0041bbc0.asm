@@ -21,7 +21,7 @@
 ;   float FLOAT_00615f95 = 256
 ;   float FLOAT_0065af60 = 50
 ;   float FLOAT_0065af64 = 100
-;   CDemonActor_vtable g_CBoneGuyVTable
+;   CEnemy_full_vtable g_CBoneGuyVTable
 ;   WatcomTypeInfo g_SBoneGuyBoxTypeInfo
 ;
 ; Called Functions:

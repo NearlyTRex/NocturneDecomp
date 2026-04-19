@@ -30,7 +30,7 @@
 ;   int g_ActiveRenderColor
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_drawLine_FUN_004011b0
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;
@@ -115,8 +115,8 @@ section .text
     PUSH EAX                            ; 0045bccc | = "%f,%f,%f"
     LEA EAX,[EBP + -0x60]               ; 0045bccd
     PUSH EAX                            ; 0045bcd0
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0045bcd1
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0045bcd1
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x20                        ; 0045bcd6
     MOV EAX,[0x00679398]                ; 0045bcd9 | g_WindowHeight
     SUB EAX,0xb                         ; 0045bcde

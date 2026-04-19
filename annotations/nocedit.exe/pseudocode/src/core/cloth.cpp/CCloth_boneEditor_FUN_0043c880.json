@@ -7,17 +7,17 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1402,
-    "complexity_score": 411,
+    "complexity_score": 407,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 56,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 386,
+    "pseudocode_lines": 382,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 1788
+    "total_lines": 1784
   },
   "cross_references": [
     {
@@ -144,7 +144,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005fe5e0",
@@ -675,11 +675,11 @@
   "resolved_suspects": [
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 232,
+      "line": 229,
       "match": "SUB84(",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "((char *)&CStack_54c.selection_state,\"%f\",SUB84(__BITCAST_UINT64((double)(1.0 / fStack_550)),0),",
+      "text": "_sprintf((char *)&CStack_54c.selection_state,\"%f\",SUB84(__BITCAST_UINT64((double)(1.0 / fStack_550)),0),",
       "type": "sub84_truncation"
     }
   ],

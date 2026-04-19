@@ -30,13 +30,11 @@ void __cdecl core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50(CActorProper
     _sprintf(output_buffer,"%d");
     break;
   case PROP_FLOAT:
-    _sprintf
-              (output_buffer,"%g",(double)*(this_ptr->data).v_float_ptr);
+    _sprintf(output_buffer,"%g",(double)*(this_ptr->data).v_float_ptr);
     return;
   case PROP_VECTOR:
     pCVar3 = (this_ptr->data).v_vector_ptr;
-    _sprintf
-              (output_buffer,"%g,%g,%g",(double)pCVar3->x,(double)pCVar3->y,(double)pCVar3->z)
+    _sprintf(output_buffer,"%g,%g,%g",(double)pCVar3->x,(double)pCVar3->y,(double)pCVar3->z)
     ;
     return;
   case PROP_STRING:
@@ -168,8 +166,7 @@ void __cdecl core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50(CActorProper
                        ((this_ptr->data).v_motion_ptr);
     pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        ((this_ptr->data).v_motion_ptr);
-    _sprintf
-              (output_buffer,"%s (%s)",pSVar6,pCVar5->state_names + pSVar6->state_index);
+    _sprintf(output_buffer,"%s (%s)",pSVar6,pCVar5->state_names + pSVar6->state_index);
     return;
   case PROP_CLOTH:
     if ((this_ptr->param1).v_int < *(int *)(this_ptr->data).v_string_ptr) {
@@ -231,8 +228,7 @@ void __cdecl core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50(CActorProper
     pCVar4 = (this_ptr->data).v_rulelist_ptr;
     iVar1 = (this_ptr->param1).v_int;
     if (iVar1 < pCVar4->list_size) {
-      _sprintf
-                (output_buffer,"%s => %s",pCVar4->conditions + iVar1,pCVar4->events + iVar1);
+      _sprintf(output_buffer,"%s => %s",pCVar4->conditions + iVar1,pCVar4->events + iVar1);
       return;
     }
     pcVar2 = "(add a rule)";

@@ -15,7 +15,7 @@
 ;   undefined4 s_illPriest_0062f569
 ;   undefined4 s_llPriest_0062f56a
 ;   undefined4 s_lPriest_0062f56b
-;   CDemonActor_vtable g_CHighPriestOfGardathVTable
+;   CCharacter_full_vtable g_CHighPriestOfGardathVTable
 ;
 ; Called Functions:
 ;   core_npc.cpp_CNPC_ctor_FUN_005447e0

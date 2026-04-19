@@ -19,7 +19,7 @@
 ;   undefined4 s_olochToHuman_00639d64
 ;   undefined4 s_lochToHuman_00639d65
 ;   undefined4 s_ochToHuman_00639d66
-;   CDemonActor_vtable g_CMolochVTable
+;   CHero_full_vtable g_CMolochVTable
 ;
 ; Called Functions:
 ;   core_hero.cpp_CHero_ctor_FUN_004f2340

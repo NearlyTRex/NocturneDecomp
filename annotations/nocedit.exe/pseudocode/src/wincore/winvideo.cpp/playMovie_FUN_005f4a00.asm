@@ -36,7 +36,7 @@
 ;   ... and 10 more
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_stdlib.c_atoi_FUN_005ffef0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   GetClientRect
@@ -67,8 +67,8 @@ section .text
     PUSH 0x65828c                       ; 005f4a17 | = "%s\\%s"
     LEA EAX,[ESP + 0x190]               ; 005f4a1c
     PUSH EAX                            ; 005f4a23
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005f4a24
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005f4a24
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005f4a29
     PUSH 0x12e                          ; 005f4a2c
     PUSH 0x658292                       ; 005f4a31 | = "..\\wincore\\winvideo.cpp"
@@ -115,8 +115,8 @@ section .text
     PUSH 0x6581f8                       ; 005f4a9b | = "open \"%s\" alias mov style child par..."
     LEA EAX,[ESP + 0x18]                ; 005f4aa0
     PUSH EAX                            ; 005f4aa4
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005f4aa5
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005f4aa5
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005f4aaa
     PUSH 0x0                            ; 005f4aad
     PUSH 0x0                            ; 005f4aaf

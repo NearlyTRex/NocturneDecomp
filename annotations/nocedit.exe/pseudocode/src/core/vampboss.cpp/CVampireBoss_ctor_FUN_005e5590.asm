@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_nosfer_dfm_00656ac5
 ;   TerminatedCString s_batboss_dfm_00656ad0
-;   CDemonActor_vtable g_CVampireBossVTable
+;   CEnemy_full_vtable g_CVampireBossVTable
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_ctor_FUN_00438ba0

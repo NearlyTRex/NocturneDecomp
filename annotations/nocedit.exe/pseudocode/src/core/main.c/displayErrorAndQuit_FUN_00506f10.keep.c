@@ -6,6 +6,7 @@
 // Signature: void __cdecl core_main_c_displayErrorAndQuit_FUN_00506f10(char *format,...)
 
 #include "nocturne.h"
+#include "debug_log.h"
 
 void __cdecl core_main_c_displayErrorAndQuit_FUN_00506f10(char *format,...)
 
@@ -34,6 +35,10 @@ void __cdecl core_main_c_displayErrorAndQuit_FUN_00506f10(char *format,...)
   g_RecursiveCallFlag = 1;
   _vsprintf(g_ErrorMessageBuffer_02dd3130,format,local_14);
   VA_END_T(local_14);
+  DERROR("%s (orig-src %s:%d)",
+         g_ErrorMessageBuffer_02dd3130,
+         g_CurrentFilename ? g_CurrentFilename : "(null)",
+         g_CurrentLineNumber);
   pcVar1 = g_CurrentFilename;
   do {
     pcVar4 = pcVar1;

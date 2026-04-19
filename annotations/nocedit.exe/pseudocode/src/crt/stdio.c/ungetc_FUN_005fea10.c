@@ -1,12 +1,12 @@
-// Name: crt_stdio.c_fputc_FUN_005fea10
+// Name: crt_stdio.c_ungetc_FUN_005fea10
 // Address: 005fea10
 // Address Range: [[005fea10, 005feb2b]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_stdio_c_fputc_FUN_005fea10(int character,_FILE *stream)
+// Signature: int __cdecl crt_stdio_c_ungetc_FUN_005fea10(int character,_FILE *stream)
 
 #include "nocturne.h"
 
-int __cdecl _fputc(int character,_FILE *stream)
+int __cdecl _ungetc(int character,_FILE *stream)
 
 {
   char *pcVar1;

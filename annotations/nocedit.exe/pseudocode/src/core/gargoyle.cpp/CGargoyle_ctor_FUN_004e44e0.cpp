@@ -14,7 +14,7 @@ CGargoyle * __cdecl core_gargoyle_cpp_CGargoyle_ctor_FUN_004e44e0(CGargoyle *thi
   CGargoyle *pCVar3;
   
   pCVar3 = (CGargoyle *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
-  (pCVar3->base).base.base.vtable._ub = &g_CGargoyleVTable;
+  (pCVar3->base).base.base.vtable._ub = &g_CGargoyleVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar3->base).base.model,"gargoyle.dfm");
   (pCVar3->base).base.collision_cylinder_height = 0.6;

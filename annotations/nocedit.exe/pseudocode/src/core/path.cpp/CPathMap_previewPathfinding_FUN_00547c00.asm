@@ -24,7 +24,7 @@
 ;   undefined4 g_PathfindingVisited[1][0]
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;
 ; *****************************************************************************
@@ -55,8 +55,8 @@ section .text
     PUSH 0x63ea24                       ; 00547c48 | = "%s"
     LEA EAX,[ESP + 0x8]                 ; 00547c4d
     PUSH EAX                            ; 00547c51
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00547c52
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00547c52
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV ECX,dword ptr [0x030c3ddc]      ; 00547c57 | g_PathfindingCurrentX
     ADD ESP,0xc                         ; 00547c5d
     CMP EBX,ECX                         ; 00547c60

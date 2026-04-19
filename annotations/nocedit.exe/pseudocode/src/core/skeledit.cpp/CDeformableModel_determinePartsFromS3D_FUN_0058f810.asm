@@ -227,10 +227,10 @@
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_00420240
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;   crt_string.c_splitpath_FUN_005ff178
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -310,8 +310,8 @@ section .text
     PUSH 0x64b551                       ; 0058f8d5 | = "Can't open %s"
     PUSH 0x3670650                      ; 0058f8da | g_SkeleditStatusMessage
         ;   Label: LAB_0058f8da
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0058f8df
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0058f8df
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0058f8e4
     MOV ECX,dword ptr [ESP + 0xa10c]    ; 0058f8e7
         ;   Label: LAB_0058f8e7
@@ -779,8 +779,8 @@ section .text
     PUSH 0x64b830                       ; 0058fe9e | = "%s.raw"
     ADD EAX,0x8                         ; 0058fea3
     PUSH EAX                            ; 0058fea6
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0058fea7
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0058fea7
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0058feac
     MOV EAX,dword ptr [EBP + 0x14]      ; 0058feaf
     INC dword ptr [EAX + 0xbc]          ; 0058feb2
@@ -1603,8 +1603,8 @@ section .text
     PUSH EAX                            ; 00590a58
     PUSH 0x64b68e                       ; 00590a59 | = "%s has incorrect S3D version %d"
     PUSH 0x3670650                      ; 00590a5e | g_SkeleditStatusMessage
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00590a63
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00590a63
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00590a68
     JMP 0x0058f8e7                      ; 00590a6b
         ;   XREF to: 0058f8e7 (UNCONDITIONAL_JUMP)  ; LAB_0058f8e7
@@ -1633,8 +1633,8 @@ section .text
     PUSH 0x64b80c                       ; 00590aa8 | = "Texture list full determining parts"
         ;   Label: LAB_00590aa8
     PUSH 0x3670650                      ; 00590aad | g_SkeleditStatusMessage
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00590ab2
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00590ab2
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00590ab7
     JMP 0x0058f8e7                      ; 00590aba
         ;   XREF to: 0058f8e7 (UNCONDITIONAL_JUMP)  ; LAB_0058f8e7
@@ -1881,8 +1881,8 @@ section .text
     PUSH 0x64bac4                       ; 00590e4d | = "Deformable model has more faces than ..."
         ;   Label: LAB_00590e4d
     PUSH 0x3670650                      ; 00590e52 | g_SkeleditStatusMessage
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00590e57
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00590e57
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00590e5c
     JMP 0x0058f8e7                      ; 00590e5f
         ;   XREF to: 0058f8e7 (UNCONDITIONAL_JUMP)  ; LAB_0058f8e7
@@ -2338,8 +2338,8 @@ section .text
     PUSH 0x64bc0c                       ; 005914c9 | = "There are %d triangles I couldn't match."
     LEA EAX,[ESP + 0x9cc0]              ; 005914ce
     PUSH EAX                            ; 005914d5
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005914d6
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005914d6
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005914db
     MOV EAX,dword ptr [EBP + 0x18]      ; 005914de
     CMP dword ptr [EAX + 0x308],0x0     ; 005914e1
@@ -3397,8 +3397,8 @@ section .text
     PUSH 0x64be4e                       ; 0059231b | = "%s.raw"
     ADD EAX,0x8                         ; 00592320
     PUSH EAX                            ; 00592323
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00592324
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00592324
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00592329
     MOV EAX,dword ptr [EBP + 0x14]      ; 0059232c
     INC dword ptr [EAX + 0xbc]          ; 0059232f
@@ -3425,8 +3425,8 @@ section .text
     PUSH 0x64be55                       ; 0059236b | = "Can't find good match for capped face..."
         ;   Label: LAB_0059236b
     PUSH 0x3670650                      ; 00592370 | g_SkeleditStatusMessage
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00592375
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00592375
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0059237a
     JMP 0x0058f8e7                      ; 0059237d
         ;   XREF to: 0058f8e7 (UNCONDITIONAL_JUMP)  ; LAB_0058f8e7
@@ -3530,8 +3530,8 @@ section .text
     PUSH 0x64beca                       ; 00592509 | = "Can't find opposing part for capped f..."
         ;   Label: LAB_00592509
     PUSH 0x3670650                      ; 0059250e | g_SkeleditStatusMessage
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00592513
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00592513
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00592518
     JMP 0x0058f8e7                      ; 0059251b
         ;   XREF to: 0058f8e7 (UNCONDITIONAL_JUMP)  ; LAB_0058f8e7

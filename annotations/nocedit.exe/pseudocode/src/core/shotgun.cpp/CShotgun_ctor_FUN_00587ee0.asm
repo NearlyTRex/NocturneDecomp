@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shotgun_kfm_00649afc
 ;   float FLOAT_00662a7c = 8
-;   CDemonActor_vtable g_CShotgunVTable
+;   CWeapon_full_vtable g_CShotgunVTable
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0

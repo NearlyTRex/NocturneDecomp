@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
-;   crt_stdio.c__fclose_FUN_00601fd0 at 0060207e
+;   crt_stdio.c_fclose_FUN_00601fd0 at 0060207e
 ;
 ; Called Functions:
 ;   crt_io.c_getTempDirectory_FUN_00609afc

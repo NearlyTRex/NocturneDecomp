@@ -7,19 +7,19 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 555,
-    "complexity_score": 413,
+    "complexity_score": 409,
     "cross_reference_count": 6,
     "function_call_count": 5,
     "global_count": 44,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 278,
+    "pseudocode_lines": 274,
     "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "unnamed_param",
       "unrolled_strcpy"
     ],
-    "total_lines": 833
+    "total_lines": 829
   },
   "cross_references": [
     {
@@ -95,7 +95,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     }
   ],
   "globals": [
@@ -492,7 +492,7 @@
       "expected_args": 1,
       "format_string": "Unknown CActorProperty type: %d",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 277,
+      "line_number": 273,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Unknown CActorProperty type: %d\");",
       "resolution_source": "keep",
       "text": "Format string expects 1 args but got 0",
@@ -532,7 +532,7 @@
   "suspects": [
     {
       "description": "Unnamed function parameter",
-      "line": 168,
+      "line": 165,
       "match": "param1",
       "severity": "mild",
       "text": "if ((this_ptr->param1).v_int < *(int *)(this_ptr->data).v_string_ptr) {",
@@ -540,7 +540,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 169,
+      "line": 166,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar9 = (int *)((int)(this_ptr->data).v_string_ptr + ((this_ptr->param1).v_int * 10 + 1) * 4)",
@@ -548,7 +548,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 169,
+      "line": 166,
       "match": "param1",
       "severity": "mild",
       "text": "piVar9 = (int *)((int)(this_ptr->data).v_string_ptr + ((this_ptr->param1).v_int * 10 + 1) * 4)",
@@ -556,7 +556,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 177,
+      "line": 174,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "cVar1 = *(char *)((int)piVar9 + 1);",
@@ -564,7 +564,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 178,
+      "line": 175,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar9 = (int *)((int)piVar9 + 2);",
@@ -572,7 +572,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 200,
+      "line": 197,
       "match": "param1",
       "severity": "mild",
       "text": "if (0 < (this_ptr->param1).v_int) {",
@@ -580,7 +580,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 201,
+      "line": 198,
       "match": "param2",
       "severity": "mild",
       "text": "puVar10 = (this_ptr->param2).v_ptr;",
@@ -588,7 +588,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 209,
+      "line": 206,
       "match": "param1",
       "severity": "mild",
       "text": "} while (iVar1 < (this_ptr->param1).v_int);",
@@ -596,7 +596,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 225,
+      "line": 222,
       "match": "param1",
       "severity": "mild",
       "text": "iVar1 = (this_ptr->param1).v_int;",
@@ -604,7 +604,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 263,
+      "line": 259,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&g_PropertyFlagDefinitions[0].mask + iVar13)) != 0) {",
@@ -612,7 +612,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 250,
+      "line": 246,
       "match": "do {",
       "severity": "mild",
       "text": "do {",

@@ -43,8 +43,8 @@
 ;   core_netgame.cpp_CNetGame_init_FUN_0053f780
 ;   core_sound.cpp_CSound_findAllSoundFiles_FUN_005b2d00
 ;   crt_env.c_getenv_FUN_006013f0
-;   crt_stdio.c__freopen_FUN_00601b14
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_freopen_FUN_00601b14
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010
 ;   engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520
 ;   ... and 24 more
@@ -114,8 +114,8 @@ section .text
     PUSH 0x63530e                       ; 00507b1f | = "wt"
     PUSH 0x635311                       ; 00507b24 | = "stderr.txt"
     MOV EBX,0x4                         ; 00507b29
-    CALL crt_stdio.c__freopen_FUN_00601b14 ; 00507b2e
-        ;   XREF to: 00601b14 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c__freopen_FUN_00601b14(char * filename, char * mode, _FILE * stream)
+    CALL crt_stdio.c_freopen_FUN_00601b14 ; 00507b2e
+        ;   XREF to: 00601b14 (UNCONDITIONAL_CALL)  ; _FILE * crt_stdio.c_freopen_FUN_00601b14(char * filename, char * mode, _FILE * stream)
     ADD ESP,0xc                         ; 00507b33
     MOV dword ptr [0x00772628],EBX      ; 00507b36 | g_RenderingMode
     CALL core_flattn.cpp_doNothing_FUN_004cbce0 ; 00507b3c
@@ -223,8 +223,8 @@ section .text
     PUSH 0x635411                       ; 00507c74 | = "%.1f"
     LEA EAX,[ESP + 0x60c]               ; 00507c79
     PUSH EAX                            ; 00507c80
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00507c81
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00507c81
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00507c86
     LEA ESI,[ESP + 0x600]               ; 00507c89
     LEA EDI,[ESP + 0x200]               ; 00507c90
@@ -516,8 +516,8 @@ section .text
     PUSH 0x6354e6                       ; 00507eed | = "%.1f"
     LEA EAX,[ESP + 0x40c]               ; 00507ef2
     PUSH EAX                            ; 00507ef9
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00507efa
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00507efa
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00507eff
     LEA ESI,[ESP + 0x400]               ; 00507f02
     MOV EDI,ESP                         ; 00507f09

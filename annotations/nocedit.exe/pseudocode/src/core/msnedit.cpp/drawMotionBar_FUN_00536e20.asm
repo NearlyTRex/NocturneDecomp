@@ -43,7 +43,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
 ;   crt_math.c_ceil_FUN_006001b2
 ;   crt_math.c_floor_FUN_005feb90
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_fillRectWithBorder_FUN_00403200
 ;   shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
 ;
@@ -141,8 +141,8 @@ section .text
     PUSH 0x63b6f4                       ; 00536f20 | = "%s (%s)"
     LEA EAX,[ESP + 0x10]                ; 00536f25
     PUSH EAX                            ; 00536f29
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00536f2a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00536f2a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00536f2f
     PUSH 0x0                            ; 00536f32
     PUSH 0x1                            ; 00536f34
@@ -196,8 +196,8 @@ section .text
     PUSH 0x63b700                       ; 00536fbe | = "%6.2f"
     LEA EAX,[ESP + 0x10]                ; 00536fc3
     PUSH EAX                            ; 00536fc7
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00536fc8
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00536fc8
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00536fcd
     PUSH 0x0                            ; 00536fd0
     MOV EAX,dword ptr [ESP + 0xdc]      ; 00536fd2

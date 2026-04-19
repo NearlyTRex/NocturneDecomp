@@ -1023,8 +1023,7 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                   core_set_cpp_CDemonSet_addLightFilter_FUN_00570f10
                             (g_CDemonSetPtr,local_218,&local_4c,&local_48);
                   if (local_4c == (C3DSLight *)0x0) {
-                    _sprintf
-                              (local_a84,"Spotlight %s doesn't exist.",local_218);
+                    _sprintf(local_a84,"Spotlight %s doesn't exist.",local_218);
                     pcVar19 = local_a84;
                     pcVar4 = g_EventErrorMessageBuffer;
                     do {

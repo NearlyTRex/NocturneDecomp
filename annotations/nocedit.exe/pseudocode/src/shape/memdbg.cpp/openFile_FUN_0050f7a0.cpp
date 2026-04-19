@@ -30,7 +30,7 @@ _FILE * __cdecl shape_memdbg_cpp_openFile_FUN_0050f7a0(char *filename,char *dire
     shape_memdbg_cpp_traceFile_FUN_0050f180
               ("Opening %s in %s for %s in %s line %d",directory,filename,mode,source_file,line_number);
   }
-  p_Var3 = fopen(filename,mode);
+  p_Var3 = _fopen(filename,mode);
   if (p_Var3 == (_FILE *)0x0) {
     wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);
     shape_memdbg_cpp_traceFile_FUN_0050f180("  Open failed");

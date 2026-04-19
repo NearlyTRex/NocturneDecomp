@@ -12,8 +12,8 @@
 ; _FILE *          Stack[0x18]:4   file_struct
 ;
 ; XREF[2]:
-;   crt_stdio.c__freopen_FUN_00601b14 at 00601b88
 ;   crt_stdio.c_fopenWithFlags_FUN_00601a20 at 00601a66
+;   crt_stdio.c_freopen_FUN_00601b14 at 00601b88
 ;
 ; Called Functions:
 ;   crt_ctype.c_tolower_FUN_005feb30

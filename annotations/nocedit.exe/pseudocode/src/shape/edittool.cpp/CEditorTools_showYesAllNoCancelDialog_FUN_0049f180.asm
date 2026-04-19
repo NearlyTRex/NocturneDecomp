@@ -21,7 +21,7 @@
 ;   char[1024] g_DialogMessageBuffer_02cf0930
 ;
 ; Called Functions:
-;   crt_stdio.c__vsprintf_FUN_005fdba8
+;   crt_stdio.c_vsprintf_FUN_005fdba8
 ;   shape_edittool.cpp_CStrList_add_FUN_004a2b80
 ;   shape_edittool.cpp_CStrList_ctor_FUN_004a2a20
 ;   shape_edittool.cpp_CStrList_dtor_FUN_004a2a40
@@ -41,8 +41,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x24]      ; 0049f191
     PUSH EDX                            ; 0049f195
     PUSH 0x2cf0930                      ; 0049f196 | g_DialogMessageBuffer_02cf0930
-    CALL crt_stdio.c__vsprintf_FUN_005fdba8 ; 0049f19b
-        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
+    CALL crt_stdio.c_vsprintf_FUN_005fdba8 ; 0049f19b
+        ;   XREF to: 005fdba8 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_005fdba8(char * buffer, char * format, va_list_t args)
     ADD ESP,0xc                         ; 0049f1a0
     MOV EAX,ESP                         ; 0049f1a3
     XOR ECX,ECX                         ; 0049f1a5

@@ -43,7 +43,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_004cda20
 ;   shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0
 ;   shape_memdbg.cpp_free_FUN_005fe659
@@ -106,8 +106,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004cd602
     PUSH EAX                            ; 004cd606
     MOV EBX,0x1cd                       ; 004cd607
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004cd60c
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004cd60c
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004cd611
     MOV EAX,ESP                         ; 004cd614
     MOV ECX,0x62a632                    ; 004cd616 | = "..\\engine\\font.cpp"
@@ -265,8 +265,8 @@ section .text
     PUSH 0x62a645                       ; 004cd841 | = "Too many chars: fontfile %s, chars %d"
     LEA EAX,[ESP + 0xc]                 ; 004cd846
     PUSH EAX                            ; 004cd84a
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004cd84b
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004cd84b
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x201                       ; 004cd850
     ADD ESP,0x10                        ; 004cd855
     MOV [0x02f0ca4c],EAX                ; 004cd858 | g_CurrentLineNumber

@@ -124,7 +124,7 @@ __asm {
         push EAX
         mov EBP,dword ptr [EBX + 0x10]
         mov EDI,dword ptr [EBX + 0x14]
-        call crt_stdio_c__sprintf_FUN_005fdbd0
+        call crt_stdio_c_sprintf_FUN_005fdbd0
         add ESP,0xc
         push 0xffff
         call engine_3d_c_setRenderAlpha_FUN_00406d80

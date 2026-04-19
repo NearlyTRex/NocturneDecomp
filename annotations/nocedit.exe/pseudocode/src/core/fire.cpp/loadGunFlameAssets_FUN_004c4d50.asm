@@ -16,7 +16,7 @@
 ;   undefined4 g_GunFlameTextures[1].texture_name[0]
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;
 ; *****************************************************************************
@@ -39,8 +39,8 @@ section .text
     MOV EBP,0x2d13cd4                   ; 004c4d6c | g_GunFlameTextures
     PUSH EDI                            ; 004c4d71 | g_GunFlameTextures[0].texture_name[0] | g_GunFlameTextures[1].texture_name[0]
     ADD EBP,EAX                         ; 004c4d72
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004c4d74
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004c4d74
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004c4d79
     PUSH EBP                            ; 004c4d7c | g_GunFlameTextures
     MOV EDX,dword ptr [0x006703ec]      ; 004c4d7d | g_CDemonRendererInstance | g_CDemonRendererPtr2

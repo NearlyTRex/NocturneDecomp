@@ -159,8 +159,7 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F4);
     if (iVar2 != 0) {
       g_ClothBoneScreenshotCounter = g_ClothBoneScreenshotCounter + 1;
-      _sprintf
-                (g_ClothBoneScreenshotFilename,"noc%d.pcx",g_ClothBoneScreenshotCounter);
+      _sprintf(g_ClothBoneScreenshotFilename,"noc%d.pcx",g_ClothBoneScreenshotCounter);
       engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(g_ClothBoneScreenshotFilename);
     }
     if (local_44 != 0) {
@@ -201,8 +200,7 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
       } while (iVar2 < this_ptr->collide_bone_count);
     }
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
-    _sprintf
-              ((char *)&CStack_54c.selection_state,"Model motion : %s frame %f",local_20,
+    _sprintf((char *)&CStack_54c.selection_state,"Model motion : %s frame %f",local_20,
                (int)((ulonglong)
                      (double)g_CDeformableModelInstanceInstance.motion_controller.
                              current_frame_number >> 0x20));
@@ -235,8 +233,7 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
     if (iVar2 != 0) {
       shape_spotview_cpp_CSpotView_reset_FUN_005b9620(g_CSpotViewPtr,0x1f);
     }
-    _sprintf
-              ((char *)&CStack_54c.selection_state,"%f",SUB84(__BITCAST_UINT64((double)(1.0 / fStack_550)),0),
+    _sprintf((char *)&CStack_54c.selection_state,"%f",SUB84(__BITCAST_UINT64((double)(1.0 / fStack_550)),0),
                (int)((ulonglong)(double)(1.0 / fStack_550) >> 0x20));
     engine_2d_c_drawTextRightAligned_FUN_004021c0
               ((char *)&CStack_54c.selection_state,g_WindowWidth + -2,g_WindowHeight + -0xd);
@@ -288,8 +285,7 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
       engine_2d_c_drawText_FUN_00401fd0("Use TAB/Shift-TAB to select cylinder",0,0xc6);
       engine_2d_c_drawText_FUN_00401fd0("Use CTRL to slew cylinder",0,0xd1);
       pSVar4 = local_40 + iVar2;
-      _sprintf
-                ((char *)&CStack_54c.selection_state,"Editing cylinder %d, on bone %s",iVar2,
+      _sprintf((char *)&CStack_54c.selection_state,"Editing cylinder %d, on bone %s",iVar2,
                  pSVar4);
       engine_2d_c_drawText_FUN_00401fd0
                 ((char *)&CStack_54c.selection_state,0,g_WindowHeight + -0x16);

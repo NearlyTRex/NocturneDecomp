@@ -93,8 +93,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
     if (0 < g_MasterLightCount) {
       local_20 = 0;
       do {
-        _sprintf
-                  (local_134,"%2d. %s",iVar8,
+        _sprintf(local_134,"%2d. %s",iVar8,
                    *(int *)((int)g_MasterLightList + local_20) + 0x40);
         engine_2d_c_drawText_FUN_00401fd0(local_134,iVar6,iVar4);
         iVar4 = iVar4 + 0xb;

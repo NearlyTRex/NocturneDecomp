@@ -61,8 +61,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_changeActorType_FUN_0053d8b0(CDemonM
   }
   shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(&local_624.base);
   pcVar3 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(this_ptr->selected_actor);
-  _sprintf
-            (local_27c,"Change %s of type %s to new type",this_ptr->selected_actor,pcVar3);
+  _sprintf(local_27c,"Change %s of type %s to new type",this_ptr->selected_actor,pcVar3);
   iVar4 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                     (&local_624,local_27c,-1,0);
   if (-1 < iVar4) {

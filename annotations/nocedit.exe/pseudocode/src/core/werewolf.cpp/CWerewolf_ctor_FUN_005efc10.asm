@@ -14,7 +14,7 @@
 ;   float FLOAT_00665760 = 50
 ;   float FLOAT_00665764 = 100
 ;   float FLOAT_00665768 = 10
-;   CDemonActor_vtable g_CWerewolfVTable
+;   CEnemy_full_vtable g_CWerewolfVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500

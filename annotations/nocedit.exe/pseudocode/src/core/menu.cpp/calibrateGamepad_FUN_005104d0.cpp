@@ -57,8 +57,7 @@ int __cdecl core_menu_cpp_calibrateGamepad_FUN_005104d0(void)
     iVar5 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_MediumFont,0x58);
     engine_font_cpp_CBitFont_drawText_FUN_004cda80
               (g_MediumFont,text,0x140 - iVar4 / 2,0xf0 - iVar5 / 2,7,0);
-    _sprintf(acStack_124,"%d,%d,%x",g_JoyXPos,g_JoyYPos,g_JoyButtons)
-    ;
+    _sprintf(acStack_124,"%d,%d,%x",g_JoyXPos,g_JoyYPos,g_JoyButtons);
     engine_2d_c_drawText_FUN_00401fd0(acStack_124,0,0);
     core_game_cpp_CGame_resetKeyState_FUN_004dbe60(g_CGamePtr);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

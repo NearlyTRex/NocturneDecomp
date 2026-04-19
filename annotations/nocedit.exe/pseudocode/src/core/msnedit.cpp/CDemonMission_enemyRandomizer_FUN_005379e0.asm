@@ -38,7 +38,7 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
 ;   shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
 ;   shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
@@ -362,8 +362,8 @@ section .text
     PUSH 0x63bbf4                       ; 00537d30 | = "%s\n%7.3f"
     LEA EAX,[ESP + 0xb08]               ; 00537d35
     PUSH EAX                            ; 00537d3c
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00537d3d
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00537d3d
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 00537d42
     LEA EAX,[ESP + 0xaf8]               ; 00537d45
     PUSH EAX                            ; 00537d4c
@@ -385,8 +385,8 @@ section .text
     PUSH 0x63bc30                       ; 00537d72 | = "%d enemy speeds randomized"
     LEA EAX,[ESP + 0xc2c]               ; 00537d77
     PUSH EAX                            ; 00537d7e
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00537d7f
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00537d7f
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00537d84
     PUSH 0x0                            ; 00537d87
     PUSH -0x1                           ; 00537d89

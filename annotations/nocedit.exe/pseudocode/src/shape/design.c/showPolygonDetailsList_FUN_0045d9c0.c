@@ -45,8 +45,7 @@ void __cdecl shape_design_c_showPolygonDetailsList_FUN_0045d9c0(void)
         _sprintf(local_11c,"Poly %d :",local_18);
         for (local_14 = 0; local_14 < (int)g_ModelPolygonData[local_18].vertex_indices_count;
             local_14 = local_14 + 1) {
-          _sprintf
-                    (local_2c," %d",g_ModelPolygonData[local_18].vertex_indices[local_14]);
+          _sprintf(local_2c," %d",g_ModelPolygonData[local_18].vertex_indices[local_14]);
           pcVar3 = local_2c;
           iVar2 = -1;
           pcVar4 = local_11c;
@@ -69,8 +68,7 @@ void __cdecl shape_design_c_showPolygonDetailsList_FUN_0045d9c0(void)
             pcVar6 = pcVar6 + 2;
           } while (cVar2 != '\0');
         }
-        _sprintf
-                  (local_7c," Part : %s",
+        _sprintf(local_7c," Part : %s",
                    g_ModelPartNames + g_ModelPolygonData[local_18].part_assignment);
         pcVar6 = local_7c;
         iVar3 = -1;
@@ -93,8 +91,7 @@ void __cdecl shape_design_c_showPolygonDetailsList_FUN_0045d9c0(void)
           pcVar7[1] = cVar2;
           pcVar7 = pcVar7 + 2;
         } while (cVar2 != '\0');
-        _sprintf
-                  (local_7c," Color : %d",g_ModelPolygonData[local_18].material_id);
+        _sprintf(local_7c," Color : %d",g_ModelPolygonData[local_18].material_id);
         pcVar6 = local_7c;
         iVar3 = -1;
         pcVar5 = local_11c;

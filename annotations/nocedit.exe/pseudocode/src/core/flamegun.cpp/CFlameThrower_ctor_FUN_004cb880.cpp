@@ -13,7 +13,7 @@ CFlameThrower * __cdecl core_flamegun_cpp_CFlameThrower_ctor_FUN_004cb880(CFlame
   CFlameThrower *pCVar2;
   
   pCVar2 = (CFlameThrower *)core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base);
-  (pCVar2->base).base.vtable._ub = &g_CFlameThrowerVTable;
+  (pCVar2->base).base.vtable._ub = &g_CFlameThrowerVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&(pCVar2->base).model,"flamegun.kfm");
   pCVar2->sfx_handle = 0;

@@ -18,7 +18,7 @@ CStranger * __cdecl core_stranger_cpp_CStranger_ctor_FUN_005bb120(CStranger *thi
   pCVar5 = (CStranger *)core_hero_cpp_CHero_ctor_FUN_004f2340(&this_ptr->base);
   pCVar6 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar5->model);
   this_ptr_00 = ADJ(pCVar6);
-  ADJ(pCVar6)->base.base.base.vtable._ub = &g_CStrangerVTable;
+  ADJ(pCVar6)->base.base.base.vtable._ub = &g_CStrangerVTable._ub;
   ADJ(pCVar6)->guns_drawn = 0;
   ADJ(pCVar6)->guns_drawn_blend = 0.0;
   ADJ(pCVar6)->frame_cleared = 0.0;

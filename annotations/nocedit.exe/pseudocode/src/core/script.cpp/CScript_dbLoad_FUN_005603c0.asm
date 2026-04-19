@@ -39,9 +39,9 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_script.cpp_CScript_findDialogEntry_FUN_005606e0
 ;   core_script.cpp_trimString_FUN_00559360
-;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
 ;   crt_stdio.c_ftell_FUN_00601560
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;   crt_string.c_splitpath_FUN_005ff178
 ;   engine_dosio.c_getFile_FUN_00481a50
@@ -230,8 +230,8 @@ section .text
     PUSH 0x64336a                       ; 00560594 | = "%s.wav"
     LEA EAX,[ESP + 0x4c]                ; 00560599
     PUSH EAX                            ; 0056059d
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0056059e
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0056059e
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005605a3
     LEA EAX,[ESP + 0x44]                ; 005605a6
     PUSH EAX                            ; 005605aa
@@ -290,8 +290,8 @@ section .text
     PUSH 0x643377                       ; 00560645 | = "%s.mp3"
     LEA EAX,[ESP + 0x4c]                ; 0056064a
     PUSH EAX                            ; 0056064e
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0056064f
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0056064f
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00560654
     LEA EAX,[ESP + 0x44]                ; 00560657
     PUSH EAX                            ; 0056065b

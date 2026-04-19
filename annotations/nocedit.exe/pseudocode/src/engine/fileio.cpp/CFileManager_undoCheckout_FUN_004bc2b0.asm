@@ -32,7 +32,7 @@
 ;   undefined4 g_CDemonPodInstance.vtable
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0
 ;   engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50
 ;   engine_fileio.cpp_CFileManager_createPodConfigWizard_FUN_004bccf0
@@ -222,8 +222,8 @@ section .text
     PUSH 0x629045                       ; 004bc476 | = "Undo checkout on %s"
     LEA EAX,[ESP + 0x3b0]               ; 004bc47b
     PUSH EAX                            ; 004bc482
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004bc483
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004bc483
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004bc488
     PUSH 0x0                            ; 004bc48b
     PUSH -0x1                           ; 004bc48d

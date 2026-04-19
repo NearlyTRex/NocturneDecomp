@@ -38,7 +38,7 @@
 ; Called Functions:
 ;   core_game.cpp_CGame_resetKeyState_FUN_004dbe60
 ;   core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_font.cpp_CBitFont_drawText_FUN_004cda80
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004d01d0
@@ -115,8 +115,8 @@ section .text
     PUSH 0x6365f8                       ; 0051057e | = "%d,%d,%x"
     LEA EAX,[ESP + 0x10]                ; 00510583
     PUSH EAX                            ; 00510587
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00510588
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00510588
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 0051058d
     PUSH 0x0                            ; 00510590
     PUSH 0x0                            ; 00510592
@@ -196,8 +196,8 @@ section .text
     PUSH 0x6365f8                       ; 00510661 | = "%d,%d,%x"
     LEA EAX,[ESP + 0x110]               ; 00510666
     PUSH EAX                            ; 0051066d
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0051066e
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0051066e
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 00510673
     PUSH 0x0                            ; 00510676
     PUSH 0x0                            ; 00510678

@@ -35,7 +35,7 @@
 ;   ... and 4 more
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
     MOV EAX,dword ptr [EBP + -0x4]      ; 00469255
     ADD EAX,0x4                         ; 00469258
     PUSH EAX                            ; 0046925b
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0046925c
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0046925c
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00469261
     MOV EAX,dword ptr [EBP + -0x4]      ; 00469264
     MOV dword ptr [EAX + 0xa4],0x4      ; 00469267 | g_ModelPolygonData[0].vertex_indices_count

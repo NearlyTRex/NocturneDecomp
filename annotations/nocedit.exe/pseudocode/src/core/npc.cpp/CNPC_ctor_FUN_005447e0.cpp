@@ -14,7 +14,7 @@ CNPC * __cdecl core_npc_cpp_CNPC_ctor_FUN_005447e0(CNPC *this_ptr)
   
   pCVar1 = (CNPC *)core_charactr_cpp_CCharacter_ctor_FUN_00427e20(&this_ptr->base);
   pCVar2 = core_path_cpp_CPathMap_ctor_FUN_00546450(&pCVar1->path_map);
-  ADJ(pCVar2)->base.base.vtable._ub = &g_CNPCVTable;
+  ADJ(pCVar2)->base.base.vtable._ub = &g_CNPCVTable._ub;
   ADJ(pCVar2)->base.collision_cylinder_height = 0.6;
   ADJ(pCVar2)->base.collision_cylinder_radius = 0.9;
   ADJ(pCVar2)->base.collision_cylinder_bottom = 1.6;

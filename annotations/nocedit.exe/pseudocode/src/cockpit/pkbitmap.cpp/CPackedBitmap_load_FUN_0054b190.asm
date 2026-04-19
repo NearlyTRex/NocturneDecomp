@@ -37,7 +37,7 @@
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0054a8e0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0
 ;   shape_memdbg.cpp_debugRealloc_FUN_0050f540
 ;
@@ -160,8 +160,8 @@ section .text
     PUSH 0x63f00e                       ; 0054b2e2 | = "Out of memory packing file \"%s\" on ..."
     LEA EAX,[ESP + 0x10]                ; 0054b2e7
     PUSH EAX                            ; 0054b2eb
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0054b2ec
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0054b2ec
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EDX,0x63f04f                    ; 0054b2f1 | = "..\\cockpit\\pkbitmap.cpp"
     ADD ESP,0x14                        ; 0054b2f6
     MOV EAX,ESP                         ; 0054b2f9

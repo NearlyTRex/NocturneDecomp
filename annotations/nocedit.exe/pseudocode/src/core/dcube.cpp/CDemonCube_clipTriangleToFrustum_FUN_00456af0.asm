@@ -40,7 +40,7 @@
 ;   core_dcube.cpp_clipPolygonAgainstMinX_FUN_00454da0
 ;   core_dcube.cpp_clipPolygonAgainstMinY_FUN_00454ad0
 ;   core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00454f00
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -337,8 +337,8 @@ section .text
     PUSH 0x61a7b7                       ; 00456e7f | = "%d"
     ADD EAX,0x4                         ; 00456e84
     PUSH EAX                            ; 00456e87
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00456e88
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00456e88
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EDI,dword ptr [0x016e990c]      ; 00456e8d | g_PolygonCount
     IMUL EAX,EDI,0x184                  ; 00456e93
     ADD EBX,0xc                         ; 00456e99

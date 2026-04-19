@@ -70,9 +70,9 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_errno.c__errno_FUN_00601450
 ;   crt_memory.c_memset_FUN_005fde40
-;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_remove_FUN_005ff9d0
 ;   crt_stdio.c_setvbuf_FUN_00601490
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;   engine_dosio.c_copyFileTimestamp_FUN_00481910
 ;   engine_dosio.c_findFileNormally_FUN_004817c0
@@ -633,8 +633,8 @@ section .text
     PUSH 0x62869d                       ; 004b8dab | = "%s\t%s\t%s"
     LEA EAX,[ESP + 0x10]                ; 004b8db0
     PUSH EAX                            ; 004b8db4
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b8db5
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b8db5
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV CL,byte ptr [EBX + 0x308]       ; 004b8dba
     ADD ESP,0x14                        ; 004b8dc0
     TEST CL,CL                          ; 004b8dc3
@@ -666,8 +666,8 @@ section .text
         ;   Label: LAB_004b8def
     PUSH ESI                            ; 004b8df1
         ;   Label: LAB_004b8df1
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b8df2
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b8df2
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b8df7
     MOV EAX,ESP                         ; 004b8dfa
         ;   Label: LAB_004b8dfa
@@ -1255,8 +1255,8 @@ section .text
     PUSH EAX                            ; 004b957f
     PUSH 0x62870e                       ; 004b9580 | = "You don't have the pod %s\n"
     PUSH EBX                            ; 004b9585
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b9586
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b9586
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b958b
     ADD EBX,EAX                         ; 004b958e
         ;   Label: LAB_004b958e
@@ -1266,8 +1266,8 @@ section .text
         ;   XREF to: 004b96b3 (CONDITIONAL_JUMP)  ; LAB_004b96b3
     PUSH 0x6287ed                       ; 004b959d | = "---------------------\n"
     PUSH EBX                            ; 004b95a2
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b95a3
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b95a3
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004b95a8
     ADD EBX,EAX                         ; 004b95ab
     LEA EAX,[EBP + 0x204]               ; 004b95ad
@@ -1276,8 +1276,8 @@ section .text
     PUSH EAX                            ; 004b95ba
     PUSH 0x628804                       ; 004b95bb | = "Of the %d files in %s:\n"
     PUSH EBX                            ; 004b95c0
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b95c1
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b95c1
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004b95c6
     MOV EDX,dword ptr [EBP + 0x384]     ; 004b95c9
     ADD EBX,EAX                         ; 004b95cf
@@ -1287,8 +1287,8 @@ section .text
     PUSH EDX                            ; 004b95d5
     PUSH 0x62881c                       ; 004b95d6 | = "%d files don't exist locally\n"
     PUSH EBX                            ; 004b95db
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b95dc
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b95dc
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b95e1
     ADD EBX,EAX                         ; 004b95e4
     MOV ESI,dword ptr [EBP + 0x37c]     ; 004b95e6
@@ -1299,8 +1299,8 @@ section .text
     PUSH ESI                            ; 004b95f0
     PUSH 0x62883a                       ; 004b95f1 | = "%d local files are newer\n"
     PUSH EBX                            ; 004b95f6
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b95f7
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b95f7
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b95fc
     ADD EBX,EAX                         ; 004b95ff
     MOV EAX,dword ptr [EBP + 0x380]     ; 004b9601
@@ -1311,8 +1311,8 @@ section .text
     PUSH EAX                            ; 004b960b
     PUSH 0x628854                       ; 004b960c | = "%d local files are older\n"
     PUSH EBX                            ; 004b9611
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b9612
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b9612
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b9617
     ADD EBX,EAX                         ; 004b961a
     MOV ECX,dword ptr [EBP + 0x388]     ; 004b961c
@@ -1323,8 +1323,8 @@ section .text
     PUSH ECX                            ; 004b9626
     PUSH 0x62886e                       ; 004b9627 | = "%d local files are different\n"
     PUSH EBX                            ; 004b962c
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b962d
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b962d
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b9632
     ADD EBX,EAX                         ; 004b9635
     MOV EDI,dword ptr [EBP + 0x38c]     ; 004b9637
@@ -1335,15 +1335,15 @@ section .text
     PUSH EDI                            ; 004b9641
     PUSH 0x62888c                       ; 004b9642 | = "%d local files are in sync\n"
     PUSH EBX                            ; 004b9647
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b9648
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b9648
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b964d
     ADD EBX,EAX                         ; 004b9650
     PUSH 0x6288a8                       ; 004b9652 | = "---------------------\n"
         ;   Label: LAB_004b9652
     PUSH EBX                            ; 004b9657
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b9658
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b9658
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004b965d
     MOV DH,byte ptr [EBP + 0x308]       ; 004b9660
     ADD EBX,EAX                         ; 004b9666
@@ -1361,8 +1361,8 @@ section .text
         ;   XREF to: 004b98e8 (CONDITIONAL_JUMP)  ; LAB_004b98e8
     PUSH 0x6288bf                       ; 004b9688 | = "You currently have this pod checked o..."
     PUSH EBX                            ; 004b968d
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b968e
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b968e
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004b9693
     ADD EBX,EAX                         ; 004b9696
         ;   Label: LAB_004b9696
@@ -1373,8 +1373,8 @@ section .text
     PUSH 0x62890f                       ; 004b96a5 | = "Your currently have this pod mounted.\n"
     PUSH EBX                            ; 004b96aa
         ;   Label: LAB_004b96aa
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b96ab
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b96ab
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004b96b0
     LEA EAX,[ESP + 0xfd4]               ; 004b96b3
         ;   Label: LAB_004b96b3
@@ -1495,8 +1495,8 @@ section .text
     PUSH EAX                            ; 004b9800
     PUSH 0x628729                       ; 004b9801 | = "Your pod %s is newer than %s\n"
     PUSH EBX                            ; 004b9806
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b9807
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b9807
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004b980c
     JMP 0x004b958e                      ; 004b980f
         ;   XREF to: 004b958e (UNCONDITIONAL_JUMP)  ; LAB_004b958e
@@ -1506,8 +1506,8 @@ section .text
     PUSH EAX                            ; 004b981b
     PUSH 0x628747                       ; 004b981c | = "Your pod %s is older than %s\n"
     PUSH EBX                            ; 004b9821
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b9822
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b9822
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004b9827
     JMP 0x004b958e                      ; 004b982a
         ;   XREF to: 004b958e (UNCONDITIONAL_JUMP)  ; LAB_004b958e
@@ -1517,8 +1517,8 @@ section .text
     PUSH EAX                            ; 004b9836
     PUSH 0x628765                       ; 004b9837 | = "Your pod %s is different than %s\n"
     PUSH EBX                            ; 004b983c
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b983d
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b983d
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004b9842
     JMP 0x004b958e                      ; 004b9845
         ;   XREF to: 004b958e (UNCONDITIONAL_JUMP)  ; LAB_004b958e
@@ -1528,8 +1528,8 @@ section .text
     PUSH EAX                            ; 004b9851
     PUSH 0x628787                       ; 004b9852 | = "Your pod %s is the same as %s\n"
     PUSH EBX                            ; 004b9857
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b9858
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b9858
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004b985d
     JMP 0x004b958e                      ; 004b9860
         ;   XREF to: 004b958e (UNCONDITIONAL_JUMP)  ; LAB_004b958e
@@ -1539,8 +1539,8 @@ section .text
     PUSH EAX                            ; 004b986c
     PUSH 0x6287a6                       ; 004b986d | = "%s is mounted, but %s does not exist\n"
     PUSH EBX                            ; 004b9872
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b9873
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b9873
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004b9878
     JMP 0x004b958e                      ; 004b987b
         ;   XREF to: 004b958e (UNCONDITIONAL_JUMP)  ; LAB_004b958e
@@ -1565,8 +1565,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004b98c3
     PUSH EAX                            ; 004b98c7
     LEA EBX,[ESP + 0xc]                 ; 004b98c8
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b98cc
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b98cc
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD EBX,EAX                         ; 004b98d1
     MOV EAX,dword ptr [EBP + 0x370]     ; 004b98d3
     ADD ESP,0xc                         ; 004b98d9
@@ -1579,8 +1579,8 @@ section .text
         ;   Label: LAB_004b98e8
     PUSH 0x6288e8                       ; 004b98e9 | = "%s currently has this pod checked out\n"
     PUSH EBX                            ; 004b98ee
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b98ef
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b98ef
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b98f4
     JMP 0x004b9696                      ; 004b98f7
         ;   XREF to: 004b9696 (UNCONDITIONAL_JUMP)  ; LAB_004b9696
@@ -1758,8 +1758,8 @@ section .text
     PUSH 0x626502                       ; 004b9abc | = "You currently have %s checked out.  R..."
     LEA EAX,[ESP + 0x1bb4]              ; 004b9ac1
     PUSH EAX                            ; 004b9ac8
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b9ac9
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b9ac9
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b9ace
     PUSH 0x2d12bf0                      ; 004b9ad1 | g_VersionControlSession.overwrite_own_choice
     LEA EAX,[ESP + 0x1bb0]              ; 004b9ad6
@@ -1864,8 +1864,8 @@ section .text
     PUSH 0x62654c                       ; 004b9be9 | = "A writable copy of %s exists.  Replac..."
     LEA EAX,[ESP + 0x19c0]              ; 004b9bee
     PUSH EAX                            ; 004b9bf5
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b9bf6
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b9bf6
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b9bfb
     PUSH 0x2d12bf4                      ; 004b9bfe | g_VersionControlSession.overwrite_writeable_choice
     LEA EAX,[ESP + 0x19bc]              ; 004b9c03
@@ -2092,8 +2092,8 @@ section .text
     PUSH EDX                            ; 004b9e7e
     PUSH 0x628ab1                       ; 004b9e7f | = "%d pods copied\n"
     PUSH EDI                            ; 004b9e84
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b9e85
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b9e85
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     LEA EDI,[ESP + 0x1dac]              ; 004b9e8a
     ADD ESP,0xc                         ; 004b9e91
     ADD EDI,EAX                         ; 004b9e94
@@ -2105,8 +2105,8 @@ section .text
     PUSH EBX                            ; 004b9ea1
     PUSH 0x628ac1                       ; 004b9ea2 | = "%d pods extracted\n"
     PUSH EDI                            ; 004b9ea7
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b9ea8
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b9ea8
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b9ead
     ADD EDI,EAX                         ; 004b9eb0
     MOV EBP,dword ptr [ESP + 0x22e0]    ; 004b9eb2
@@ -2117,8 +2117,8 @@ section .text
     PUSH EBP                            ; 004b9ebd
     PUSH 0x628ad4                       ; 004b9ebe | = "%d pods mounted\n"
     PUSH EDI                            ; 004b9ec3
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b9ec4
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b9ec4
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b9ec9
     ADD EDI,EAX                         ; 004b9ecc
     MOV EDX,dword ptr [ESP + 0x22e8]    ; 004b9ece
@@ -2129,8 +2129,8 @@ section .text
     PUSH EDX                            ; 004b9ed9
     PUSH 0x628ae5                       ; 004b9eda | = "%d pods dismounted\n"
     PUSH EDI                            ; 004b9edf
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b9ee0
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b9ee0
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b9ee5
     ADD EDI,EAX                         ; 004b9ee8
     MOV EBX,dword ptr [ESP + 0x22ec]    ; 004b9eea
@@ -2141,8 +2141,8 @@ section .text
     PUSH EBX                            ; 004b9ef5
     PUSH 0x628af9                       ; 004b9ef6 | = "%d local pods deleted\n"
     PUSH EDI                            ; 004b9efb
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b9efc
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b9efc
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b9f01
     ADD EDI,EAX                         ; 004b9f04
     CMP dword ptr [ESP + 0x22e0],0x0    ; 004b9f06
@@ -2152,8 +2152,8 @@ section .text
     PUSH 0x628b10                       ; 004b9f10 | = "POD.INI re-written\n"
         ;   Label: LAB_004b9f10
     PUSH EDI                            ; 004b9f15
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b9f16
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b9f16
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004b9f1b
     ADD EDI,EAX                         ; 004b9f1e
     MOV ESI,0x628b24                    ; 004b9f20 | = "To apply these changes, you should re..."

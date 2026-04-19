@@ -58,12 +58,12 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_errno.c__errno_FUN_00601450
-;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fflush_FUN_00601540
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   crt_stdio.c_remove_FUN_005ff9d0
 ;   crt_stdio.c_rename_FUN_006015d0
 ;   crt_stdio.c_setvbuf_FUN_00601490
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_time.c__localtime_FUN_00600288
 ;   crt_time.c__time_FUN_006001f0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
@@ -222,8 +222,8 @@ section .text
     PUSH 0x6260d9                       ; 004b43cb | = "history\\%s.%s"
     LEA EAX,[ESP + 0xc78]               ; 004b43d0
     PUSH EAX                            ; 004b43d7
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b43d8
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b43d8
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004b43dd
     LEA EAX,[ESP + 0x1278]              ; 004b43e0
     PUSH EAX                            ; 004b43e7
@@ -480,8 +480,8 @@ section .text
     PUSH 0x626c39                       ; 004b4653 | = "$$$.%s.$$$"
     LEA EAX,[ESP + 0xe7c]               ; 004b4658
     PUSH EAX                            ; 004b465f
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b4660
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b4660
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b4665
     LEA EAX,[ESP + 0xf78]               ; 004b4668
     PUSH EAX                            ; 004b466f
@@ -1025,8 +1025,8 @@ section .text
     PUSH 0x626e66                       ; 004b4c73 | = "Waiting for %s to become available.\n..."
     LEA EAX,[ESP + 0x7d8]               ; 004b4c78
     PUSH EAX                            ; 004b4c7f
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b4c80
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b4c80
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b4c85
     LEA EAX,[ESP + 0x7d0]               ; 004b4c88
     PUSH EAX                            ; 004b4c8f

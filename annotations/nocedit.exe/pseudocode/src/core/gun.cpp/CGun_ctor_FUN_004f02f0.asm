@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gat_kfm_0062e798
-;   CDemonActor_vtable g_CGunVTable
+;   CWeapon_full_vtable g_CGunVTable
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0

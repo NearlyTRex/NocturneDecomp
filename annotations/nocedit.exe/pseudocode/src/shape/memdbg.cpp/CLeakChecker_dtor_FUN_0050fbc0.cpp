@@ -18,7 +18,7 @@ CLeakChecker * __cdecl shape_memdbg_cpp_CLeakChecker_dtor_FUN_0050fbc0(CLeakChec
     g_IsDestroyingLeakChecker = 1;
     if (0 < g_OpenFileCount) {
       shape_memdbg_cpp_traceFile_FUN_0050f180("!!!!!Files left open:");
-      p_Var2 = fopen("memdbg.txt","at");
+      p_Var2 = _fopen("memdbg.txt","at");
       if (p_Var2 == (_FILE *)0x0) {
         g_CurrentFilename = "..\\shape\\memdbg.cpp";
         g_CurrentLineNumber = 0x26e;
@@ -48,7 +48,7 @@ CLeakChecker * __cdecl shape_memdbg_cpp_CLeakChecker_dtor_FUN_0050fbc0(CLeakChec
     }
     if (g_MemoryListHead != (SMemHead *)0x0) {
       shape_memdbg_cpp_traceFile_FUN_0050f180("!!!!!Memory leaks detected:");
-      p_Var2 = fopen("memdbg.txt","at");
+      p_Var2 = _fopen("memdbg.txt","at");
       pSVar1 = g_MemoryListHead;
       if (p_Var2 == (_FILE *)0x0) {
         g_CurrentFilename = "..\\shape\\memdbg.cpp";

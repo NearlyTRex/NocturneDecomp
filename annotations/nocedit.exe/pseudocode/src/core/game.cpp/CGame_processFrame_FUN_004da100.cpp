@@ -178,10 +178,8 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         if ((g_MovieRecordingMaxFrames < 1) ||
            (g_MovieRecordingFrameCounter < g_MovieRecordingMaxFrames)) {
           if (g_MovieRecordingActive != 0) {
-            _sprintf
-                      (local_114,"noc%05d.raw",g_MovieRecordingFrameCounter);
-            _sprintf
-                      (local_1dc,"Movie recording active: movie\\%s",local_114);
+            _sprintf(local_114,"noc%05d.raw",g_MovieRecordingFrameCounter);
+            _sprintf(local_1dc,"Movie recording active: movie\\%s",local_114);
             local_34 = engine_dosio_c_getFile_FUN_00481a50("movie",local_114,"wb")
             ;
             if (local_34 != (_FILE *)0x0) {
@@ -251,15 +249,13 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         FLOAT_02d7c2e8 = 0.0;
       }
       else {
-        _sprintf
-                  (local_3dc,"Camera: \"%s\" Group %d",0x3275924,
+        _sprintf(local_3dc,"Camera: \"%s\" Group %d",0x3275924,
                    g_CDemonSetPtr->cameras[g_CDemonSetPtr->selected_camera_index].camera_group);
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x16);
         FLOAT_02d7c2e8 = (float)((int)FLOAT_02d7c2e8 + 1);
         DOUBLE_02d7c2e0 = DOUBLE_02d7c2e0 + (double)this_ptr->delta_time_float;
         dVar4 = 1.0 / (double)this_ptr->delta_time_float;
-        _sprintf
-                  (local_3dc,"FR: %f, AVG: %f, PC: %d",SUB84(__BITCAST_UINT64(dVar4),0),
+        _sprintf(local_3dc,"FR: %f, AVG: %f, PC: %d",SUB84(__BITCAST_UINT64(dVar4),0),
                    (int)((ulonglong)dVar4 >> 0x20),
                    SUB84(__BITCAST_UINT64((double)(int)FLOAT_02d7c2e8 / DOUBLE_02d7c2e0),0),
                    (int)((ulonglong)((double)(int)FLOAT_02d7c2e8 / DOUBLE_02d7c2e0) >> 0x20),
@@ -271,21 +267,18 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         dVar6 = 180 * (double)(pCVar2->base).base.orient.vec.x * 0.31830988619288902;
         dVar1 = (double)(pCVar2->base).base.location.position.z;
         dVar2 = (double)(pCVar2->base).base.location.position.y;
-        _sprintf
-                  (local_3dc,"Hero : %4.2f,%4.2f,%4.2f xyz and %3.2f,%3.2f,%3.2f pbh",
+        _sprintf(local_3dc,"Hero : %4.2f,%4.2f,%4.2f xyz and %3.2f,%3.2f,%3.2f pbh",
                    (double)(pCVar2->base).base.location.position.x,SUB84(__BITCAST_UINT64(dVar2),0),
                    (int)((ulonglong)dVar2 >> 0x20),SUB84(__BITCAST_UINT64(dVar1),0),(int)((ulonglong)dVar1 >> 0x20),
                    SUB84(__BITCAST_UINT64(dVar6),0),(int)((ulonglong)dVar6 >> 0x20),SUB84(__BITCAST_UINT64(dVar7),0),
                    (int)((ulonglong)dVar7 >> 0x20),SUB84(__BITCAST_UINT64(dVar8),0),(int)((ulonglong)dVar8 >> 0x20));
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,0);
-        _sprintf
-                  (local_3dc,"Slew : %s, Virtual Director : %s",g_OnOffLabels[this_ptr->is_paused],
+        _sprintf(local_3dc,"Slew : %s, Virtual Director : %s",g_OnOffLabels[this_ptr->is_paused],
                    g_OnOffLabels[this_ptr->is_game_active]);
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,0xb);
         pCVar5 = this_ptr->debug_fudge_target;
         if (pCVar5 != (CVector3f *)0x0) {
-          _sprintf
-                    (local_3dc,"Fudge: %g,%g,%g",SUB84(__BITCAST_UINT64((double)pCVar5->x),0),
+          _sprintf(local_3dc,"Fudge: %g,%g,%g",SUB84(__BITCAST_UINT64((double)pCVar5->x),0),
                      (int)((ulonglong)(double)pCVar5->x >> 0x20),SUB84(__BITCAST_UINT64((double)pCVar5->y),0),
                      (int)((ulonglong)(double)pCVar5->y >> 0x20),SUB84(__BITCAST_UINT64((double)pCVar5->z),0),
                      (int)((ulonglong)(double)pCVar5->z >> 0x20));
@@ -309,8 +302,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
           iVar11 = wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x80);
           iVar12 = wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x40);
           iVar13 = wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x20);
-          _sprintf
-                    (local_3dc,"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d",iVar13,iVar12,iVar11,iVar10,iVar5
+          _sprintf(local_3dc,"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d",iVar13,iVar12,iVar11,iVar10,iVar5
                     );
           engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,0x2c);
         }

@@ -24,7 +24,7 @@
 ;   undefined4 s_ne_00624309+1
 ;   undefined4 s_e_00624309+2
 ;   undefined4 s__00624309+3
-;   CDemonActor_vtable g_CEnemyVTable
+;   CEnemy_full_vtable g_CEnemyVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10

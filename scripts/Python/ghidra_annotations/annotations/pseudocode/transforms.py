@@ -738,18 +738,21 @@ def transform_file_pointer_casts(code):
     Returns:
         Transformed code with stdio functions renamed to wrapper versions
     """
-    # All stdio functions that take FILE* arguments
-    file_funcs = [
+    # Stdio functions that the project shims behind a leading-underscore name
+    # (mostly FILE*-taking, plus the sprintf/vsprintf printf-family entries
+    # whose shim bridges the Watcom va_list_t → glibc va_list layout).
+    stdio_shim_funcs = [
         'fread', 'fwrite', 'fgets', 'fputs', 'fputc', 'fgetc', 'ungetc',
-        'fclose', 'ftell', 'fflush', 'feof', 'ferror', 'rewind',
+        'fopen', 'freopen', 'fclose', 'ftell', 'fflush', 'feof', 'ferror', 'rewind',
         'fprintf', 'fscanf', 'fseek', 'fsetpos', 'fgetpos', 'setvbuf', 'setbuf',
+        'sprintf', 'vsprintf',
     ]
 
     result = code
 
     # Rename each function call: func( -> _func(
     # Use word boundary to avoid matching partial names or already-prefixed functions
-    for func in file_funcs:
+    for func in stdio_shim_funcs:
         # Match function name followed by ( but not already prefixed with _
         # Negative lookbehind ensures we don't match _fread, etc.
         pattern = r'(?<!_)\b' + func + r'\s*\('

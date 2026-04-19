@@ -27,7 +27,7 @@
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_meshlod.cpp_CLodMesh_closePrecomputeFile_FUN_0051b870
 ;   shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
 ;   shape_meshlod.cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0
@@ -97,8 +97,8 @@ section .text
     PUSH EAX                            ; 00516c20
     PUSH 0x637615                       ; 00516c21 | = "Mesh degredation in progress...%d:%02..."
     PUSH 0x2f31258                      ; 00516c26 | g_LodMeshProgressBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00516c2b
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00516c2b
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00516c30
     CMP dword ptr [ESP + 0x14],0x5      ; 00516c33
     JLE 0x00516cbc                      ; 00516c38
@@ -159,8 +159,8 @@ section .text
         ;   Label: LAB_00516cb1
     PUSH ESI                            ; 00516cb3 | g_LodMeshProgressBuffer+3 | g_LodMeshProgressBuffer+2
         ;   Label: LAB_00516cb3
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00516cb4
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00516cb4
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00516cb9
     MOV ESI,dword ptr [EBP + 0x1c]      ; 00516cbc
         ;   Label: LAB_00516cbc

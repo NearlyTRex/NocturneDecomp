@@ -30,7 +30,7 @@
 ;   TerminatedCString s_s_s_0061d46b
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_time.c__localtime_FUN_00600288
 ;   crt_time.c__strftime_FUN_006002d4
 ;   crt_time.c__time_FUN_006001f0
@@ -222,8 +222,8 @@ section .text
     PUSH EAX                            ; 0046bb39 | = "%s%s"
     LEA EAX,[EBP + 0xfffffb34]          ; 0046bb3a
     PUSH EAX                            ; 0046bb40
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0046bb41
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0046bb41
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0046bb46
     LEA EAX,[EBP + 0xfffffb34]          ; 0046bb49
     PUSH EAX                            ; 0046bb4f

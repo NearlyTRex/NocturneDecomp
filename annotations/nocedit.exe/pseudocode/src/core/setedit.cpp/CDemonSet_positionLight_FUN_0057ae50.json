@@ -7,18 +7,18 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 593,
-    "complexity_score": 206,
+    "complexity_score": 204,
     "cross_reference_count": 3,
     "function_call_count": 23,
     "global_count": 35,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 166,
+    "pseudocode_lines": 164,
     "suspect_count": 3,
     "suspect_types": [
       "unrolled_strcpy",
       "warning_inlined_function"
     ],
-    "total_lines": 759
+    "total_lines": 757
   },
   "cross_references": [
     {
@@ -127,7 +127,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00403260",
@@ -463,16 +463,16 @@
   "resolved_suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 103,
+      "line": 102,
       "match": "&stack0xfffffe90",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(&stack0xfffffe90,\"%f\",(double)(1.0 / g_CGamePtr->delta_time_float));",
+      "text": "_sprintf(&stack0xfffffe90,\"%f\",(double)(1.0 / g_CGamePtr->delta_time_float));",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 104,
+      "line": 103,
       "match": "&stack0xfffffe90",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -481,16 +481,16 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 106,
+      "line": 104,
       "match": "&stack0xfffffe90",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(&stack0xfffffe90,\"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f\",(double)(g_CSlewPtr->position).x,",
+      "text": "_sprintf(&stack0xfffffe90,\"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f\",(double)(g_CSlewPtr->position).x,",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 112,
+      "line": 110,
       "match": "&stack0xfffffe90",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -575,7 +575,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 155,
+      "line": 153,
       "match": "do {",
       "severity": "mild",
       "text": "do {",

@@ -38,8 +38,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showOptionsMenu_FUN_00537680(CDemonM
       } while (cVar2 != '\0');
     }
     else {
-      _sprintf
-                (local_114,"Current mission: %s.msn",this_ptr->mission_name);
+      _sprintf(local_114,"Current mission: %s.msn",this_ptr->mission_name);
     }
     engine_2d_c_drawText_FUN_00401fd0(local_114,0,0x16);
     if (this_ptr->render_sky_in_editor == 0) {

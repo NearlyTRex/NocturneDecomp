@@ -17,7 +17,7 @@
 ;   core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
 ;   core_frankgen.cpp_findLeader_FUN_004d2330
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     PUSH 0x62abdf                       ; 004d2522 | = "Master frame (%0..%g)"
     LEA EAX,[ESP + 0xc]                 ; 004d2527
     PUSH EAX                            ; 004d252b
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004d252c
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004d252c
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004d2531
     PUSH 0x0                            ; 004d2534
     CALL core_frankgen.cpp_findLeader_FUN_004d2330 ; 004d2536

@@ -21,7 +21,7 @@ CBiggs * __cdecl core_biggs_cpp_CBiggs_ctor_FUN_004185c0(CBiggs *this_ptr)
   pCVar4 = (CBiggs *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
   pCVar6 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar4->model);
   pCVar7 = core_morph_cpp_CMorph_ctor_FUN_0052b310(&ADJ(pCVar6)->morph);
-  ADJ(pCVar7)->base.base.base.vtable._ub = &g_CBiggsVTable;
+  ADJ(pCVar7)->base.base.base.vtable._ub = &g_CBiggsVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&ADJ(pCVar7)->base.base.model,"biggs.dfm");
   pcVar4 = "bigAlien";

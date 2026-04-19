@@ -37,7 +37,7 @@
 ;   core_event.cpp_CEventList_getActorByVarName_FUN_004b0b80
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
 ;   core_script.cpp_validateActorVariableName_FUN_00559220
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
@@ -132,8 +132,8 @@ section .text
         ;   Label: LAB_0055957d
     PUSH 0x64157e                       ; 0055957e | = "Actor variable %s not defined, or doe..."
     PUSH 0x310eca0                      ; 00559583 | g_ScriptErrorBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00559588
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00559588
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055958d
     XOR EAX,EAX                         ; 00559590
     POP EBP                             ; 00559592
@@ -163,8 +163,8 @@ section .text
     MOV EDI,0x1                         ; 005595c9
     PUSH 0x310eca0                      ; 005595ce | g_ScriptErrorBuffer
     MOV dword ptr [0x0310f4ac],EDI      ; 005595d3 | g_ActorLookedUpByVariable
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005595d9
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005595d9
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 005595de
     XOR EAX,EAX                         ; 005595e1
     POP EBP                             ; 005595e3
@@ -175,8 +175,8 @@ section .text
     PUSH 0x6415c6                       ; 005595e8 | = "Can't use '$' actor specifier in mult..."
         ;   Label: LAB_005595e8
     PUSH 0x310eca0                      ; 005595ed | g_ScriptErrorBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005595f2
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005595f2
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 005595f7
     XOR EAX,EAX                         ; 005595fa
     POP EBP                             ; 005595fc
@@ -198,8 +198,8 @@ section .text
     PUSH EBX                            ; 0055961b
     PUSH 0x64160b                       ; 0055961c | = "Actor \"%s\" does not exist."
     PUSH 0x310eca0                      ; 00559621 | g_ScriptErrorBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00559626
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00559626
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055962b
     XOR EAX,EAX                         ; 0055962e
     POP EBP                             ; 00559630
@@ -218,8 +218,8 @@ section .text
     PUSH EBX                            ; 00559644
     PUSH 0x641626                       ; 00559645 | = "Actor \"%s\" is of type %s, this comm..."
     PUSH 0x310eca0                      ; 0055964a | g_ScriptErrorBuffer
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0055964f
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0055964f
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 00559654
     XOR EAX,EAX                         ; 00559657
     POP EBP                             ; 00559659

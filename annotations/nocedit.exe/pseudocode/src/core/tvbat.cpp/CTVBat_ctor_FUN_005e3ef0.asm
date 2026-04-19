@@ -13,7 +13,7 @@
 ;   TerminatedCString s_bat_kfm_0065689b
 ;   float FLOAT_006568a6 = 10
 ;   float FLOAT_006568aa = 2
-;   CDemonActor_vtable g_CTVBatVTable
+;   CEnemy_full_vtable g_CTVBatVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10

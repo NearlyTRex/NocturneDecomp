@@ -69,8 +69,7 @@ void __cdecl shape_design_c_optimizePolygonMesh_FUN_004658e0(float angle_toleran
   shape_design_c_removeDegeneratePolygons_FUN_00465310();
   shape_design_c_removeUnusedVertices_FUN_00463830();
   g_PolygonOptimizationPasses = g_PolygonOptimizationPasses + 1;
-  _sprintf
-            (local_70,"Original polygons: %d    New total: %d\n\nTotal passes: %d",iVar4,g_PolygonCount);
+  _sprintf(local_70,"Original polygons: %d    New total: %d\n\nTotal passes: %d",iVar4,g_PolygonCount);
   if (0 < display_progress) {
     pcVar4 = "\n\nHit a key...";
     iVar3 = -1;

@@ -22,7 +22,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -67,8 +67,8 @@ section .text
     PUSH 0x617dbc                       ; 0043374e | = "Edge out of range: edge %d"
     LEA EAX,[ESP + 0x8]                 ; 00433753
     PUSH EAX                            ; 00433757
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00433758
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00433758
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x617dd7                    ; 0043375d | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0xc                         ; 00433762
     MOV [0x02f0ca48],EAX                ; 00433765 | g_CurrentFilename
@@ -103,8 +103,8 @@ section .text
     PUSH 0x617ded                       ; 004337b6 | = "Edge out of range: edge %d"
     LEA EAX,[ESP + 0x8]                 ; 004337bb
     PUSH EAX                            ; 004337bf
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004337c0
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004337c0
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x617e08                    ; 004337c5 | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0xc                         ; 004337ca
     MOV [0x02f0ca48],EAX                ; 004337cd | g_CurrentFilename

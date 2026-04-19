@@ -17,7 +17,7 @@
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   WatcomTypeInfo g_CFlameTypeInfo
 ;   WatcomTypeInfo g_SFireTypeInfo
-;   CDemonActor_vtable g_CCharacterVTable
+;   CCharacter_full_vtable g_CCharacterVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_004088b0

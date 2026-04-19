@@ -29,7 +29,7 @@
 ;   core_actor.cpp_CActorPropertyList_addString_FUN_0040e290
 ;   core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260
 ;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -74,8 +74,8 @@ section .text
     PUSH 0x656f7b                       ; 005e8c18 | = "%s tire"
     LEA EAX,[ESP + 0x10]                ; 005e8c1d
     PUSH EAX                            ; 005e8c21
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005e8c22
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005e8c22
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     IMUL EAX,EBX,0x1b4                  ; 005e8c27
     ADD ESP,0xc                         ; 005e8c2d
     PUSH 0x0                            ; 005e8c30

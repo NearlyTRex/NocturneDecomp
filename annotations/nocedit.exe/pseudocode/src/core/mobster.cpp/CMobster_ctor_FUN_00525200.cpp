@@ -18,7 +18,7 @@ CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_00525200(CMobster *this_pt
   char *pcVar7;
   
   pCVar4 = (CMobster *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
-  (pCVar4->base).base.base.vtable._ub = &g_CMobsterVTable;
+  (pCVar4->base).base.base.vtable._ub = &g_CMobsterVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar4->base).base.model,"mobster1.dfm");
   fVar2 = 50.0f;

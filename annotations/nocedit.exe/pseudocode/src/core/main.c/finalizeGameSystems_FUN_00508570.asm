@@ -36,7 +36,7 @@
 ;   core_skeleton.cpp_freeAllModels_FUN_005a1dc0
 ;   core_skeleton.cpp_freeAllSkeletons_FUN_005a1ea0
 ;   core_sound.cpp_CSound_dtor_FUN_005b2d60
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_stdlib.c_rand_FUN_005feb5c
 ;   engine_2d.c_cleanupGraphicsSystem_FUN_00401130
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
@@ -89,8 +89,8 @@ section .text
     PUSH 0x6355e6                       ; 005085d4 | = "load%d"
     LEA EAX,[ESP + 0x8]                 ; 005085d9
     PUSH EAX                            ; 005085dd
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005085de
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005085de
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005085e3
     PUSH 0x1e0                          ; 005085e6
     PUSH 0x280                          ; 005085eb

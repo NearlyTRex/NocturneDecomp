@@ -18,7 +18,7 @@ CTurret * __cdecl core_turret_cpp_CTurret_ctor_FUN_005e20f0(CTurret *this_ptr)
 
   pCVar2 = (CTurret *)core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar2->model);
-  ADJ(this_ptr_00)->base.base.vtable._ub = &g_CTurretVTable;
+  ADJ(this_ptr_00)->base.base.vtable._ub = &g_CTurretVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&ADJ(this_ptr_00)->base.model,"gturret_head.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0

@@ -36,8 +36,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40(CP
   size = bitmap_width * bitmap_height;
   iVar2 = iVar1 / (int)size;
   if (size * iVar2 - iVar1 != 0) {
-    _sprintf
-              (local_144,"Size of %s is %lu, must be a multiple of frame size %ux%u in CPackedBitmapSet::loadJoinedRAW",filename,iVar1,bitmap_width,
+    _sprintf(local_144,"Size of %s is %lu, must be a multiple of frame size %ux%u in CPackedBitmapSet::loadJoinedRAW",filename,iVar1,bitmap_width,
                bitmap_height);
     g_CurrentLineNumber = 199;
     g_CurrentFilename = "..\\cockpit\\pkbmpset.cpp";

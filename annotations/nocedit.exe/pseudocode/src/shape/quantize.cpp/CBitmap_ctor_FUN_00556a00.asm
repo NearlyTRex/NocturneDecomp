@@ -33,7 +33,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_memory.c_memset_FUN_005fde40
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_memdbg.cpp_debugAllocTracked1_FUN_0050f1b0
 ;   shape_memdbg.cpp_debugAllocTracked2_FUN_0050f1f0
 ;   shape_memdbg.cpp_free_FUN_005fe659
@@ -69,8 +69,8 @@ section .text
     PUSH 0x6410d3                       ; 00556a38 | = "Invalid bit depth [%d] for bitmap"
     LEA EAX,[ESP + 0x8]                 ; 00556a3d
     PUSH EAX                            ; 00556a41
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00556a42
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00556a42
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EDX,0x640a89                    ; 00556a47 | = "..\\shape\\quantize.cpp"
     ADD ESP,0xc                         ; 00556a4c
     MOV EAX,ESP                         ; 00556a4f

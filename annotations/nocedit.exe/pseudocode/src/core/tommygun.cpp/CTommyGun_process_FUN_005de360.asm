@@ -23,7 +23,7 @@
 ;   core_weapon.cpp_CWeapon_process_FUN_005ee110
 ;   crt_math.c_floor_FUN_005feb90
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   sound_sndmain.cpp_CSfxSample_init_FUN_005a8480
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720
 ;   sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0
@@ -94,8 +94,8 @@ section .text
     PUSH 0x6554e9                       ; 005de3f0 | = "m-gun1.wav @ 2.3 * %f"
     LEA EAX,[ESP + 0x170]               ; 005de3f5
     PUSH EAX                            ; 005de3fc
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005de3fd
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005de3fd
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005de402
     MOV ESI,dword ptr [EBX + 0x580]     ; 005de405
     PUSH ESI                            ; 005de40b

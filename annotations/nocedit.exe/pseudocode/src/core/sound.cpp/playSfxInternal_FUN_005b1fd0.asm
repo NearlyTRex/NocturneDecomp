@@ -65,8 +65,8 @@
 ;   core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_0056fac0
 ;   core_sound.cpp_CSound_findRandomSoundFile_FUN_005b1ed0
 ;   crt_env.c_getenv_FUN_006013f0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_stdio.c_sscanf_FUN_0060013c
 ;   crt_stdlib.c__atexit_FUN_005ff060
 ;   crt_time.c__asctime_FUN_00601768
@@ -371,8 +371,8 @@ section .text
     PUSH 0x65258d                       ; 005b22bb | = "?"
         ;   Label: LAB_005b22bb
     PUSH ESI                            ; 005b22c0
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005b22c1
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005b22c1
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 005b22c6
     ADD ESI,EAX                         ; 005b22c9
     CMP dword ptr [ESP + 0x154],0x9     ; 005b22cb
@@ -380,8 +380,8 @@ section .text
         ;   XREF to: 005b22e5 (CONDITIONAL_JUMP)  ; LAB_005b22e5
     PUSH 0x65258f                       ; 005b22d5 | = "?"
     PUSH ESI                            ; 005b22da
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005b22db
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005b22db
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 005b22e0
     ADD ESI,EAX                         ; 005b22e3
     MOV EAX,dword ptr [ESP + 0x14c]     ; 005b22e5

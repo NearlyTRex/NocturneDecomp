@@ -401,8 +401,8 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0               ( 42 lines)
     core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_005bb010          ( 42 lines)
     engine_2d.c_findBestPaletteMatch_FUN_00401460                          ( 43 lines)
+    core_script.cpp_CScript_collectSoundReferences_FUN_00567bc0            ( 43 lines)
     core_setedit.cpp_CDemonSet_editSpotLight_FUN_0057b500                  ( 44 lines)
-    core_script.cpp_CScript_collectSoundReferences_FUN_00567bc0            ( 44 lines)
     engine_drender.cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550    ( 45 lines)
     core_dstrender.cpp_renderDepthOnlyStandard_FUN_0049072f                ( 45 lines)
     core_course.cpp_CCourse_load_FUN_00442580                              ( 45 lines)
@@ -414,7 +414,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_msnedit.cpp_CDemonMission_pickActorByName_FUN_0053c210            ( 49 lines)
     core_dstrender.cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5 ( 49 lines)
 
-  [warning_inlined_function] - 63 functions
+  [warning_inlined_function] - 64 functions
     engine_drender.cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670 (  6 lines)
     core_script.cpp_CScript_getLetterboxHeight_FUN_00559ac0                (  6 lines)
     core_setutil.cpp_CDemonLight_setTransformScale_FUN_00585220            (  6 lines)
@@ -478,6 +478,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0                         ( 47 lines)
     core_glass.cpp_CGlass_onLaserHit_FUN_004eb250                          ( 48 lines)
     core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170   ( 48 lines)
+    shape_design.c_renderPolygonVerticesWithLabels_FUN_0045c2f0            ( 49 lines)
 
   [warning_type_propagation] - 20 functions
     core_zombie.cpp_CZombie_canPickupWithHand_FUN_005fbda0                 ( 11 lines)
@@ -683,11 +684,11 @@ PRIORITY 3: Files at 90%+ (finish them off!)
     4 functions remaining:
       core_event.cpp_CEventList_updateSfxEntries_FUN_004b0db0 (55 lines)
         Types: ['pointer_cast', 'sub84_truncation', 'unrolled_strcpy']
-      core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (1592 lines)
+      core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (1591 lines)
         Types: ['unrolled_strlen', 'warning_type_propagation']
       core_event.cpp_CEventList_saveState_FUN_004b1380 (90 lines)
         Types: ['unnamed_local']
-      core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (2168 lines)
+      core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (2138 lines)
         Types: ['unnamed_local', 'unrolled_memcpy', 'unrolled_strchr', 'unrolled_strlen']
 
   core/hotdemon.cpp (92.9% complete)
@@ -733,7 +734,7 @@ PRIORITY 3: Files at 90%+ (finish them off!)
 
   core/larva.cpp (92.3% complete)
     1 functions remaining:
-      core_larva.cpp_CLarva_process_FUN_00503080 (333 lines)
+      core_larva.cpp_CLarva_process_FUN_00503080 (332 lines)
         Types: ['stack_param', 'unknown_type', 'warning_inlined_function', 'warning_unreachable']
 
   core/dest.cpp (92.3% complete)
@@ -758,7 +759,7 @@ PRIORITY 3: Files at 90%+ (finish them off!)
     2 functions remaining:
       core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_00485b20 (22 lines)
         Types: ['warning_type_propagation']
-      core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 (760 lines)
+      core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 (756 lines)
         Types: ['warning_inlined_function', 'warning_type_propagation']
 
   core/fileman.cpp (91.7% complete)
@@ -782,7 +783,7 @@ PRIORITY 3: Files at 90%+ (finish them off!)
 
   engine/texture.cpp (90.9% complete)
     2 functions remaining:
-      engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00 (241 lines)
+      engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00 (240 lines)
         Types: ['unrolled_strchr']
       engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200 (122 lines)
         Types: ['pointer_cast', 'warning_unreachable']

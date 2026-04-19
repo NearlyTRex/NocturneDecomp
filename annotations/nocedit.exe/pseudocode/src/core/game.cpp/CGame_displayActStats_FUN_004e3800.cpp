@@ -92,8 +92,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
     pcVar12 = pcVar12 + 2;
   } while (cVar2 != '\0');
   uVar8 = 0;
-  _sprintf
-            (local_148,"%2d:%2d:%2d.%2d\n\n",iVar8,(int)ROUND(ROUND(fVar2 * fVar5)),iVar6,
+  _sprintf(local_148,"%2d:%2d:%2d.%2d\n\n",iVar8,(int)ROUND(ROUND(fVar2 * fVar5)),iVar6,
              (int)ROUND(ROUND(fVar4 * fVar3)));
   do {
     uVar6 = 0xffffffff;

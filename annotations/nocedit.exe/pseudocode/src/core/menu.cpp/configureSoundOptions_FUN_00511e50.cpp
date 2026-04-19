@@ -132,8 +132,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
       pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Sound effects : ");
       _sprintf(g_SoundMenuTextBuffers[1],pcVar4);
       fVar4 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(0);
-      _sprintf
-                (local_348,"%d",
+      _sprintf(local_348,"%d",
                  (int)ROUND(ROUND((fVar4 * 100.0f) / 0.25f + (float)0.001
                                  )));
       pcVar4 = local_348;
@@ -198,8 +197,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
         pcVar12 = pcVar12 + 2;
       } while (cVar2 != '\0');
       fVar5 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(2);
-      _sprintf
-                (local_148,"%d",
+      _sprintf(local_148,"%d",
                  (int)ROUND(ROUND((fVar5 * 100.0f) / 1.0f + (float)0.001
                                  )));
       pcVar12 = local_148;
@@ -263,8 +261,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
         pcVar12 = pcVar12 + 2;
       } while (cVar2 != '\0');
       fVar5 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(1);
-      _sprintf
-                (local_448,"%d",
+      _sprintf(local_448,"%d",
                  (int)ROUND(ROUND((fVar5 * 100.0f) / 0.25f + (float)0.001
                                  )));
       pcVar12 = local_448;

@@ -10,7 +10,7 @@
 ;   core_baron.cpp_factoryFuncBaronWeapon_FUN_00413d00 at 00413d1d
 ;
 ; Referenced Globals:
-;   CDemonActor_vtable g_CBaronWeaponVTable
+;   CWeapon_full_vtable g_CBaronWeaponVTable
 ;
 ; Called Functions:
 ;   core_weapon.cpp_CWeapon_ctor_FUN_005ede70

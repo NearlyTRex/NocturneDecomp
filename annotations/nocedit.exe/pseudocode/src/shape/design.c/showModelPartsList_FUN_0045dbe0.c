@@ -20,8 +20,7 @@ void __cdecl shape_design_c_showModelPartsList_FUN_0045dbe0(void)
     local_1c = 0;
     for (local_18 = local_20; local_18 < g_WindowHeight / 0xb + local_20; local_18 = local_18 + 1) {
       if (local_18 < g_PartsCount) {
-        _sprintf
-                  (local_cc,"Part %d : %s",local_18,g_ModelPartNames + local_18);
+        _sprintf(local_cc,"Part %d : %s",local_18,g_ModelPartNames + local_18);
         engine_2d_c_drawText_FUN_00401fd0(local_cc,0,local_1c);
         local_1c = local_1c + 0xb;
       }

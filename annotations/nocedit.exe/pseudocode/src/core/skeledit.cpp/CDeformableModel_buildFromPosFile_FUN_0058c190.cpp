@@ -148,8 +148,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDe
                     ((CBoneStructure *)local_a228,&local_6d04);
   if (iVar5 == 0) {
     pcVar16 = this_ptr->model_name;
-    _sprintf
-              (g_SkeleditStatusMessage,"Heirarchy in %s does not match that in skeleton %s",entry,pcVar16);
+    _sprintf(g_SkeleditStatusMessage,"Heirarchy in %s does not match that in skeleton %s",entry,pcVar16);
     if (entry->skip_generation != 2) {
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1260);
       _sprintf(local_418,"Display %s",entry);
@@ -273,8 +272,7 @@ LAB_0058c613:
                       (g_CEditorToolsPtr,"Copying %s -> %s",local_a1c,local_c24);
             if (file == (_FILE *)0x0) {
               if (entry->skip_generation != 2) {
-                _sprintf
-                          (local_eb8,"Can't open %s.  Keep going anyway?",local_a1c);
+                _sprintf(local_eb8,"Can't open %s.  Keep going anyway?",local_a1c);
                 iVar5 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
                                   (g_CEditorToolsPtr,local_eb8);
                 if (iVar5 == 0) {

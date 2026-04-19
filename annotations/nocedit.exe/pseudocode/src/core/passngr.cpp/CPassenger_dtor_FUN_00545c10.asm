@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_passngr_cpp_0063e7b0
-;   CDemonActor_vtable g_CPassengerVTable
+;   CCharacter_full_vtable g_CPassengerVTable
 ;   WatcomTypeInfo g_CPassengerTypeInfo
 ;   char* g_CurrentDebugFilename = 0067d200
 ;   int g_CurrentDebugLine

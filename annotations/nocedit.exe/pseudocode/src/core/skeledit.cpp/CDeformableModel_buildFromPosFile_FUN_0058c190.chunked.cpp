@@ -125,7 +125,7 @@ typedef struct CDeformableModel_buildFromPosFile_Ctx {
 #define GOTO_LAB_0058c613 2
 #define GOTO_LAB_0058d5ef 3
 
-// Chunk: branch_0 (lines 27-54 of original)
+// Chunk: branch_0 (lines 27-53 of original)
 static int CDeformableModel_buildFromPosFile_branch_0(CDeformableModel_buildFromPosFile_Ctx *ctx) {
     CDeformableModel *&this_ptr = ctx->this_ptr;
     CLodMeshPrecomputeEntry *&entry = ctx->entry;
@@ -138,8 +138,7 @@ static int CDeformableModel_buildFromPosFile_branch_0(CDeformableModel_buildFrom
     auto &local_418 = ctx->local_418;
 
     pcVar16 = this_ptr->model_name;
-    _sprintf
-              (g_SkeleditStatusMessage,"Heirarchy in %s does not match that in skeleton %s",entry,pcVar16);
+    _sprintf(g_SkeleditStatusMessage,"Heirarchy in %s does not match that in skeleton %s",entry,pcVar16);
     if (entry->skip_generation != 2) {
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1260);
       _sprintf(local_418,"Display %s",entry);
@@ -165,7 +164,7 @@ static int CDeformableModel_buildFromPosFile_branch_0(CDeformableModel_buildFrom
     return 0;
 }
 
-// Chunk: check_0_1 (lines 91-113 of original)
+// Chunk: check_0_1 (lines 90-112 of original)
 static int CDeformableModel_buildFromPosFile_check_0_1(CDeformableModel_buildFromPosFile_Ctx *ctx) {
     int &iVar5 = ctx->iVar5;
     auto &local_a228 = ctx->local_a228;
@@ -198,7 +197,7 @@ static int CDeformableModel_buildFromPosFile_check_0_1(CDeformableModel_buildFro
     return 0;
 }
 
-// Chunk: check_local_d28_2 (lines 122-197 of original)
+// Chunk: check_local_d28_2 (lines 121-195 of original)
 static int CDeformableModel_buildFromPosFile_check_local_d28_2(CDeformableModel_buildFromPosFile_Ctx *ctx) {
     CDeformableModel *&this_ptr = ctx->this_ptr;
     CLodMeshPrecomputeEntry *&entry = ctx->entry;
@@ -251,8 +250,7 @@ static int CDeformableModel_buildFromPosFile_check_local_d28_2(CDeformableModel_
                       (g_CEditorToolsPtr,"Copying %s -> %s",local_a1c,local_c24);
             if (file == (_FILE *)0x0) {
               if (entry->skip_generation != 2) {
-                _sprintf
-                          (local_eb8,"Can't open %s.  Keep going anyway?",local_a1c);
+                _sprintf(local_eb8,"Can't open %s.  Keep going anyway?",local_a1c);
                 iVar5 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
                                   (g_CEditorToolsPtr,local_eb8);
                 if (iVar5 == 0) {
@@ -296,7 +294,7 @@ static int CDeformableModel_buildFromPosFile_check_local_d28_2(CDeformableModel_
     return 0;
 }
 
-// Chunk: else_3 (lines 218-244 of original)
+// Chunk: else_3 (lines 216-242 of original)
 static int CDeformableModel_buildFromPosFile_else_3(CDeformableModel_buildFromPosFile_Ctx *ctx) {
     CDeformableModel *&this_ptr = ctx->this_ptr;
     CLodMeshPrecomputeEntry *&entry = ctx->entry;
@@ -333,7 +331,7 @@ static int CDeformableModel_buildFromPosFile_else_3(CDeformableModel_buildFromPo
     return 0;
 }
 
-// Chunk: check_0_4 (lines 258-298 of original)
+// Chunk: check_0_4 (lines 256-296 of original)
 static int CDeformableModel_buildFromPosFile_check_0_4(CDeformableModel_buildFromPosFile_Ctx *ctx) {
     CDeformableModel *&this_ptr = ctx->this_ptr;
     int &iVar5 = ctx->iVar5;
@@ -394,7 +392,7 @@ LAB_0058c601:
     return 0;
 }
 
-// Chunk: check_0_5 (lines 300-341 of original)
+// Chunk: check_0_5 (lines 298-339 of original)
 static int CDeformableModel_buildFromPosFile_check_0_5(CDeformableModel_buildFromPosFile_Ctx *ctx) {
     CDeformableModel *&this_ptr = ctx->this_ptr;
     int &iVar5 = ctx->iVar5;
@@ -456,7 +454,7 @@ static int CDeformableModel_buildFromPosFile_check_0_5(CDeformableModel_buildFro
     return 0;
 }
 
-// Chunk: check_0_6 (lines 342-383 of original)
+// Chunk: check_0_6 (lines 340-381 of original)
 static int CDeformableModel_buildFromPosFile_check_0_6(CDeformableModel_buildFromPosFile_Ctx *ctx) {
     CDeformableModel *&this_ptr = ctx->this_ptr;
     float &fVar3 = ctx->fVar3;
@@ -518,7 +516,7 @@ static int CDeformableModel_buildFromPosFile_check_0_6(CDeformableModel_buildFro
     return 0;
 }
 
-// Chunk: branch_2 (lines 420-463 of original)
+// Chunk: branch_2 (lines 418-461 of original)
 static int CDeformableModel_buildFromPosFile_branch_2(CDeformableModel_buildFromPosFile_Ctx *ctx) {
     CLodMeshPrecomputeEntry *&entry = ctx->entry;
     int &iVar5 = ctx->iVar5;
@@ -572,7 +570,7 @@ static int CDeformableModel_buildFromPosFile_branch_2(CDeformableModel_buildFrom
     return 0;
 }
 
-// Chunk: chunk_8 (lines 465-601 of original)
+// Chunk: chunk_8 (lines 463-599 of original)
 static int CDeformableModel_buildFromPosFile_chunk_8(CDeformableModel_buildFromPosFile_Ctx *ctx) {
     CDeformableModel *&this_ptr = ctx->this_ptr;
     CLodMeshPrecomputeEntry *&entry = ctx->entry;

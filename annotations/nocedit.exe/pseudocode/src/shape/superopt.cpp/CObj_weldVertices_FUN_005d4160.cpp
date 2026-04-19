@@ -53,8 +53,7 @@ int __cdecl shape_superopt_cpp_CObj_weldVertices_FUN_005d4160(CObj *this_ptr,dou
     iStack_24 = 0;
     do {
       if ((pvStack_28 != (void *)0x0) && ((char)uStack_18 == '\0')) {
-        _sprintf(acStack_100,"Welding vertices (%d removed so far)",iStack_20)
-        ;
+        _sprintf(acStack_100,"Welding vertices (%d removed so far)",iStack_20);
       }
       local_108 = SUB84(weld_tolerance,0);
       pdVar3 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_24);

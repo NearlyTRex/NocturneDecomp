@@ -78,8 +78,7 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
       iVar6 = core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(g_CSoundPtr,this_ptr->sfx_handle);
       if (iVar6 == 0) {
         fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.95,1.05);
-        _sprintf
-                  ((char *)&local_f8,"torch.wav * %f",SUB84(__BITCAST_UINT64((double)fVar3),0),
+        _sprintf((char *)&local_f8,"torch.wav * %f",SUB84(__BITCAST_UINT64((double)fVar3),0),
                    (int)((ulonglong)(double)fVar3 >> 0x20));
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
         iVar6 = 2;

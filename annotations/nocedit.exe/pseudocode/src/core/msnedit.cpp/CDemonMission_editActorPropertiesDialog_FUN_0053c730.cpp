@@ -46,8 +46,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c7
           core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50
                     (g_MsnEditPropertyList.properties + iVar5,this_ptr->selected_actor,
                      g_MsnEditPropertyValueBuffer);
-          _sprintf
-                    (g_MsnEditPropertyFormatBuffer,"%s\t%s",iVar4,g_MsnEditPropertyValueBuffer
+          _sprintf(g_MsnEditPropertyFormatBuffer,"%s\t%s",iVar4,g_MsnEditPropertyValueBuffer
                     );
           iVar5 = iVar5 + 1;
           iVar4 = iVar4 + 0xec;
@@ -55,8 +54,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c7
                     (&CStack_540.base,g_MsnEditPropertyFormatBuffer);
         } while (iVar5 < g_MsnEditPropertyList.count);
       }
-      _sprintf
-                (acStack_198,"Edit %s properties",this_ptr->selected_actor);
+      _sprintf(acStack_198,"Edit %s properties",this_ptr->selected_actor);
       window_flags = 0;
       iVar5 = shape_edittool_cpp_CStrList_findByFirstField_FUN_004a3070(&CStack_540.base,local_6c);
       iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20

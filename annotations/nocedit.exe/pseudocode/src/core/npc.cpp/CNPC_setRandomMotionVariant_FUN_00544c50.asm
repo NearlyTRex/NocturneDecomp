@@ -21,7 +21,7 @@
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
 ;   core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     PUSH 0x63e3ac                       ; 00544c7c | = "%s_%d"
     LEA EAX,[ESP + 0xc]                 ; 00544c81
     PUSH EAX                            ; 00544c85
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00544c86
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00544c86
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00544c8b
     PUSH EDI                            ; 00544c8e
     LEA EAX,[ESP + 0x4]                 ; 00544c8f
@@ -79,8 +79,8 @@ section .text
     PUSH 0x63e3b2                       ; 00544cb5 | = "%s_%d"
     LEA EAX,[ESP + 0xc]                 ; 00544cba
     PUSH EAX                            ; 00544cbe
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00544cbf
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00544cbf
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00544cc4
     PUSH 0x0                            ; 00544cc7
         ;   Label: LAB_00544cc7

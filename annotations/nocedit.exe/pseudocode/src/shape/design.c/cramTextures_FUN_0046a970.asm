@@ -40,7 +40,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
@@ -213,8 +213,8 @@ section .text
     PUSH EAX                            ; 0046aafc | = "Too many textures to cram, max is %d"
     LEA EAX,[EBP + 0xfffffe2c]          ; 0046aafd
     PUSH EAX                            ; 0046ab03
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0046ab04
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0046ab04
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0046ab09
     MOV dword ptr [0x02f0ca48],0x61d27d ; 0046ab0c | g_CurrentFilename | = "..\\shape\\design.c"
     MOV dword ptr [0x02f0ca4c],0x26f8   ; 0046ab16 | g_CurrentLineNumber

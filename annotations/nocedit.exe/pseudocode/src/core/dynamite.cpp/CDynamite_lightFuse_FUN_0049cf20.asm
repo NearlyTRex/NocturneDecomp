@@ -16,7 +16,7 @@
 ;   float FLOAT_0065d30c = 3.5
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     FLD float ptr [0x0065d30c]          ; 0049cf31 | FLOAT_0065d30c
     PUSH EAX                            ; 0049cf37
     FSTP float ptr [EBX + 0x578]        ; 0049cf38
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0049cf3e
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0049cf3e
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0049cf43
     MOV EAX,ESP                         ; 0049cf46
     PUSH EAX                            ; 0049cf48

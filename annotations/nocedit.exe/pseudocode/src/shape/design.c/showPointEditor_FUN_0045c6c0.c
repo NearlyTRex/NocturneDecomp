@@ -47,8 +47,7 @@ void __cdecl shape_design_c_showPointEditor_FUN_0045c6c0(void)
     else if (g_PointEditorMode == 1) {
       _sprintf(local_84,"Move point : %d");
       engine_2d_c_drawText_FUN_00401fd0(local_84,0,0xb);
-      _sprintf
-                (local_84,"from %f,%f,%f",
+      _sprintf(local_84,"from %f,%f,%f",
                  (double)g_LoadedVertices[g_SelectedPointIndex].vertex.x,
                  (double)g_LoadedVertices[g_SelectedPointIndex].vertex.y,
                  (double)g_LoadedVertices[g_SelectedPointIndex].vertex.z);

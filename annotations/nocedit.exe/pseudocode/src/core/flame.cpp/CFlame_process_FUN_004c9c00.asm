@@ -54,7 +54,7 @@
 ;   core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80
 ;   core_sound.cpp_CSound_killSound_FUN_005b3b90
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
 ;   sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0
@@ -310,8 +310,8 @@ section .text
     PUSH 0x62a0ef                       ; 004c9f32 | = "torch.wav * %f"
     LEA EAX,[ESP + 0x1c]                ; 004c9f37
     PUSH EAX                            ; 004c9f3b
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004c9f3c
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004c9f3c
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004c9f41
     CALL sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30 ; 004c9f44
         ;   XREF to: 005a8c30 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30()

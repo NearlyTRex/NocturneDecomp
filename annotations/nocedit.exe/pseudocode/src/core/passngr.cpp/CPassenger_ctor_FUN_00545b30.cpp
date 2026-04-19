@@ -19,7 +19,7 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_00545b30(CPassenger *t
   pcVar2 = "wolfbrn.dfm";
   pCVar3 = core_morph_cpp_CMorph_ctor_FUN_0052b310(&pCVar2->morph);
   pcVar3 = ADJ(pCVar3)->wolf_model_name;
-  ADJ(pCVar3)->base.base.base.vtable._ub = &g_CPassengerVTable;
+  ADJ(pCVar3)->base.base.base.vtable._ub = &g_CPassengerVTable._ub;
   do {
     cVar1 = *pcVar2;
     *pcVar3 = cVar1;

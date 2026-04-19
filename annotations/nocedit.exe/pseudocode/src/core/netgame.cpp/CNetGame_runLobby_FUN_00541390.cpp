@@ -110,8 +110,7 @@ LAB_005415cb:
             pcVar7 = "?";
             goto LAB_005415cb;
           }
-          _sprintf
-                    (local_130,"%dms",
+          _sprintf(local_130,"%dms",
                      (int)ROUND(ROUND(*(float *)(pcVar10 + 0x28) * 1000.0f)));
         }
         engine_2d_c_drawText_FUN_00401fd0(local_130,200,iVar4);

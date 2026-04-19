@@ -41,7 +41,7 @@
 ;   ... and 4 more
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_dosio.c_findFileNormally_FUN_004817c0
 ;   engine_pod.cpp_CPodFile_ctor_FUN_0054f5a0
 ;   engine_pod.cpp_CPodFile_dtor_FUN_0054f610
@@ -177,8 +177,8 @@ section .text
     PUSH 0x628288                       ; 004b83d8 | = "%s\tLocal file is newer"
     LEA EAX,[ESP + 0xc]                 ; 004b83dd
     PUSH EAX                            ; 004b83e1
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b83e2
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b83e2
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b83e7
     LEA EAX,[ESP + 0x4]                 ; 004b83ea
     PUSH EAX                            ; 004b83ee
@@ -201,15 +201,15 @@ section .text
     PUSH 0x6282df                       ; 004b8421 | = "Comparing files in:\n%s\n"
     LEA EAX,[ESP + 0xc]                 ; 004b8426
     PUSH EAX                            ; 004b842a
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b842b
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b842b
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b8430
     LEA EBX,[ESP + 0x4]                 ; 004b8433
     PUSH 0x6282f7                       ; 004b8437 | = "-----------------------\n"
     ADD EBX,EAX                         ; 004b843c
     PUSH EBX                            ; 004b843e
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b843f
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b843f
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004b8444
     MOV ESI,dword ptr [ESP + 0x11f8]    ; 004b8447
     ADD EBX,EAX                         ; 004b844e
@@ -219,8 +219,8 @@ section .text
     PUSH ESI                            ; 004b8454
     PUSH 0x628310                       ; 004b8455 | = "%d files in sync with local files\n"
     PUSH EBX                            ; 004b845a
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b845b
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b845b
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b8460
     ADD EBX,EAX                         ; 004b8463
     MOV EBP,dword ptr [ESP + 0x11ec]    ; 004b8465
@@ -231,8 +231,8 @@ section .text
     PUSH EBP                            ; 004b8470
     PUSH 0x628333                       ; 004b8471 | = "%d files in pod don't exist locally\n"
     PUSH EBX                            ; 004b8476
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b8477
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b8477
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b847c
     ADD EBX,EAX                         ; 004b847f
     MOV EDX,dword ptr [ESP + 0x11fc]    ; 004b8481
@@ -243,8 +243,8 @@ section .text
     PUSH EDX                            ; 004b848c
     PUSH 0x628358                       ; 004b848d | = "%d files with local file newer than f..."
     PUSH EBX                            ; 004b8492
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b8493
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b8493
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b8498
     ADD EBX,EAX                         ; 004b849b
     MOV ESI,dword ptr [ESP + 0x11f4]    ; 004b849d
@@ -255,8 +255,8 @@ section .text
     PUSH ESI                            ; 004b84a8
     PUSH 0x628389                       ; 004b84a9 | = "%d files with local file older than f..."
     PUSH EBX                            ; 004b84ae
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b84af
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b84af
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b84b4
     ADD EBX,EAX                         ; 004b84b7
     MOV EBP,dword ptr [ESP + 0x11f0]    ; 004b84b9
@@ -267,23 +267,23 @@ section .text
     PUSH EBP                            ; 004b84c4
     PUSH 0x6283ba                       ; 004b84c5 | = "%d sizeMismatch\n"
     PUSH EBX                            ; 004b84ca
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b84cb
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b84cb
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b84d0
     ADD EBX,EAX                         ; 004b84d3
     PUSH 0x6283cb                       ; 004b84d5 | = "-----------------------\n"
         ;   Label: LAB_004b84d5
     PUSH EBX                            ; 004b84da
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b84db
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b84db
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004b84e0
     MOV EDX,dword ptr [ESP + 0xc14]     ; 004b84e3
     PUSH EDX                            ; 004b84ea
     PUSH 0x6283e4                       ; 004b84eb | = "%d total files in pod"
     ADD EBX,EAX                         ; 004b84f0
     PUSH EBX                            ; 004b84f2
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b84f3
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b84f3
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b84f8
     PUSH 0x1                            ; 004b84fb
     LEA EAX,[ESP + 0xc34]               ; 004b84fd
@@ -344,8 +344,8 @@ section .text
     PUSH 0x628277                       ; 004b8590 | = "%s\tNo local file"
     LEA EAX,[ESP + 0xc]                 ; 004b8595
     PUSH EAX                            ; 004b8599
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b859a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b859a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b859f
     LEA EAX,[ESP + 0x4]                 ; 004b85a2
     PUSH EAX                            ; 004b85a6
@@ -372,8 +372,8 @@ section .text
     PUSH 0x6282b6                       ; 004b85e1 | = "%s\tLocal file has different size"
     LEA EAX,[ESP + 0xc]                 ; 004b85e6
     PUSH EAX                            ; 004b85ea
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b85eb
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b85eb
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b85f0
     LEA EAX,[ESP + 0x4]                 ; 004b85f3
     PUSH EAX                            ; 004b85f7
@@ -391,8 +391,8 @@ section .text
     PUSH 0x62829f                       ; 004b861c | = "%s\tLocal file is older"
     LEA EAX,[ESP + 0xc]                 ; 004b8621
     PUSH EAX                            ; 004b8625
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b8626
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b8626
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b862b
     LEA EAX,[ESP + 0x4]                 ; 004b862e
     PUSH EAX                            ; 004b8632
@@ -410,8 +410,8 @@ section .text
     PUSH 0x6282d7                       ; 004b8657 | = "%s\tsame"
     LEA EAX,[ESP + 0xc]                 ; 004b865c
     PUSH EAX                            ; 004b8660
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b8661
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b8661
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b8666
     LEA EAX,[ESP + 0x4]                 ; 004b8669
     PUSH EAX                            ; 004b866d

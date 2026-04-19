@@ -123,8 +123,7 @@ LAB_0055a34a:
     shape_edittool_cpp_CPickList_clear_FUN_004a5770(&g_ScriptPickList);
     if (piVar8 == (int *)0x0) goto LAB_0055a34a;
     while( true ) {
-      _sprintf
-                (g_ScriptSyntaxErrorMessage,"Syntax error on %s line %d:\n%s",filename,
+      _sprintf(g_ScriptSyntaxErrorMessage,"Syntax error on %s line %d:\n%s",filename,
                  local_1c + 1,piVar8);
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_790);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80

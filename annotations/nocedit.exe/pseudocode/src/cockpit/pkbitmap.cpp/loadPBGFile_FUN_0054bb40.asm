@@ -33,7 +33,7 @@
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_0054a990
 ;   cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;
@@ -117,8 +117,8 @@ section .text
     PUSH 0x63f353                       ; 0054bc04 | = "Unable to open PBG file %s"
     LEA EAX,[ESP + 0x108]               ; 0054bc09
     PUSH EAX                            ; 0054bc10
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0054bc11
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0054bc11
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,0x595                       ; 0054bc16
     ADD ESP,0xc                         ; 0054bc1b
     MOV [0x02f0ca4c],EAX                ; 0054bc1e | g_CurrentLineNumber

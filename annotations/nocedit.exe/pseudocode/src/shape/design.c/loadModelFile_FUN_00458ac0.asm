@@ -40,9 +40,9 @@
 ;
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005ff9e0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fgets_FUN_005fefd0
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_stdlib.c_atoi_FUN_005ffef0
 ;   crt_string.c__strcmp_FUN_005fef20
 ;   crt_string.c_strtok_FUN_005fff50
@@ -312,8 +312,8 @@ section .text
     PUSH ESI                            ; 00458d0e | = "ERROR: Too many vertices! (npoints:%d..."
     LEA ESI,[EBP + 0xffffff44]          ; 00458d0f
     PUSH ESI                            ; 00458d15
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00458d16
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00458d16
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00458d1b
     PUSH 0x16                           ; 00458d1e
     PUSH 0x0                            ; 00458d20
@@ -415,8 +415,8 @@ section .text
     PUSH ESI                            ; 00458e3e | = "ERROR: Too many polygons! (npoly:%d >..."
     LEA ESI,[EBP + 0xfffffef4]          ; 00458e3f
     PUSH ESI                            ; 00458e45
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00458e46
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00458e46
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00458e4b
     PUSH 0x16                           ; 00458e4e
     PUSH 0x0                            ; 00458e50

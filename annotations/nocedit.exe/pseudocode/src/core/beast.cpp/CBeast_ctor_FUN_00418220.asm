@@ -13,7 +13,7 @@
 ;   TerminatedCString s_beast_dfm_00615a6e
 ;   float FLOAT_0065aa58 = 100
 ;   float FLOAT_0065aa5c = 100
-;   CDemonActor_vtable g_CBeastVTable
+;   CEnemy_full_vtable g_CBeastVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500

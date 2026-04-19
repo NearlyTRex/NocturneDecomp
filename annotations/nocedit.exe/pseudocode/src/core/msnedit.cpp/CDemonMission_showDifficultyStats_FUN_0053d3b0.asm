@@ -43,7 +43,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -141,8 +141,8 @@ section .text
     PUSH 0x63cbf2                       ; 0053d492 | = "%s\t%g hp\tx\t%i%%\t=\t%g hp"
     LEA EAX,[EBP + 0xfffffdec]          ; 0053d497
     PUSH EAX                            ; 0053d49d
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053d49e
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0053d49e
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x20                        ; 0053d4a3
     LEA EAX,[EBP + 0xfffffdec]          ; 0053d4a6
     PUSH EAX                            ; 0053d4ac
@@ -175,8 +175,8 @@ section .text
     PUSH 0x63cc0a                       ; 0053d4f5 | = "%s\t%s\t%s\t%d"
     LEA EAX,[EBP + 0xfffffdec]          ; 0053d4fa
     PUSH EAX                            ; 0053d500
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053d501
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0053d501
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x18                        ; 0053d506
     LEA EAX,[EBP + 0xfffffdec]          ; 0053d509
     PUSH EAX                            ; 0053d50f
@@ -212,8 +212,8 @@ section .text
     PUSH 0x63cc16                       ; 0053d567 | = "%s\t%g hp\tx\t%d uses\t=\t%g hp"
     LEA EAX,[EBP + 0xfffffdec]          ; 0053d56c
     PUSH EAX                            ; 0053d572
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053d573
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0053d573
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x20                        ; 0053d578
     LEA EAX,[EBP + 0xfffffdec]          ; 0053d57b
     PUSH EAX                            ; 0053d581
@@ -246,8 +246,8 @@ section .text
     PUSH 0x63cc31                       ; 0053d5ce | = "Total enemy HP\t%g"
     LEA EAX,[EBP + 0xfffffdec]          ; 0053d5d3
     PUSH EAX                            ; 0053d5d9
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053d5da
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0053d5da
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0053d5df
     LEA EAX,[EBP + 0xfffffdec]          ; 0053d5e2
     PUSH EAX                            ; 0053d5e8
@@ -261,8 +261,8 @@ section .text
     PUSH 0x63cc43                       ; 0053d5fa | = "Total\t\t\t\t\t%g hp"
     LEA EAX,[EBP + 0xfffffdec]          ; 0053d5ff
     PUSH EAX                            ; 0053d605
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053d606
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0053d606
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0053d60b
     LEA EAX,[EBP + 0xfffffdec]          ; 0053d60e
     PUSH EAX                            ; 0053d614
@@ -276,8 +276,8 @@ section .text
     PUSH 0x63cc53                       ; 0053d628 | = "Total ammo\t%d"
     LEA EAX,[EBP + 0xfffffdec]          ; 0053d62d
     PUSH EAX                            ; 0053d633
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053d634
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0053d634
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0053d639
     LEA EAX,[EBP + 0xfffffdec]          ; 0053d63c
     PUSH EAX                            ; 0053d642
@@ -291,8 +291,8 @@ section .text
     PUSH 0x63cc61                       ; 0053d656 | = "Total\t\t\t%d"
     LEA EAX,[EBP + 0xfffffdec]          ; 0053d65b
     PUSH EAX                            ; 0053d661
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053d662
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0053d662
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0053d667
     LEA EAX,[EBP + 0xfffffdec]          ; 0053d66a
     PUSH EAX                            ; 0053d670
@@ -310,8 +310,8 @@ section .text
     PUSH 0x63cc6c                       ; 0053d68e | = "Total health items\t%g"
     LEA EAX,[EBP + 0xfffffdec]          ; 0053d693
     PUSH EAX                            ; 0053d699
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053d69a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0053d69a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0053d69f
     LEA EAX,[EBP + 0xfffffdec]          ; 0053d6a2
     PUSH EAX                            ; 0053d6a8
@@ -325,8 +325,8 @@ section .text
     PUSH 0x63cc82                       ; 0053d6ba | = "Total\t\t\t\t\t%g hp"
     LEA EAX,[EBP + 0xfffffdec]          ; 0053d6bf
     PUSH EAX                            ; 0053d6c5
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053d6c6
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0053d6c6
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0053d6cb
     LEA EAX,[EBP + 0xfffffdec]          ; 0053d6ce
     PUSH EAX                            ; 0053d6d4

@@ -24,8 +24,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_0054c1e0(CPackedBi
   
   file = engine_dosio_c_getFile_FUN_00481a50("art",this_ptr->filename,"rb");
   if (file == (_FILE *)0x0) {
-    _sprintf
-              (local_e4,"Unable to open %s in CPackedBitmapSet::reloadJoinedRAW",this_ptr->filename);
+    _sprintf(local_e4,"Unable to open %s in CPackedBitmapSet::reloadJoinedRAW",this_ptr->filename);
     g_CurrentFilename = "..\\cockpit\\pkbmpset.cpp";
     g_CurrentLineNumber = 0x108;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_e4);
@@ -46,8 +45,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_0054c1e0(CPackedBi
       if ((bitmap_index < 0) || (iVar2 == bitmap_index)) {
         SVar1 = _fread(raw_bitmap_data,size,1,file);
         if (SVar1 != 1) {
-          _sprintf
-                    (local_80,"Error reading from %s in CPackedBitmapSet::loadJoinedRAW",this_ptr->filename);
+          _sprintf(local_80,"Error reading from %s in CPackedBitmapSet::loadJoinedRAW",this_ptr->filename);
           g_CurrentLineNumber = 0x128;
           g_CurrentFilename = "..\\cockpit\\pkbmpset.cpp";
           core_main_c_displayErrorAndQuit_FUN_00506f10(local_80);

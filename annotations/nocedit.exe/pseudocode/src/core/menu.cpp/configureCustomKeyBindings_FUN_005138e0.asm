@@ -40,7 +40,7 @@
 ;   core_menu.cpp_calibrateGamepad_FUN_005104d0
 ;   core_menu.cpp_getKeyDisplayName_FUN_005134e0
 ;   core_menu.cpp_isKeyCodeValidForMode_FUN_00513720
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_keys.cpp_CKeys_toggleInputMask_FUN_005024b0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -1275,8 +1275,8 @@ section .text
     PUSH 0x63709a                       ; 0051471d | = "%s\t%s"
     LEA EAX,[ESP + 0x9bc]               ; 00514722
     PUSH EAX                            ; 00514729
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0051472a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0051472a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0051472f
     LEA EAX,[ESP + 0x9b0]               ; 00514732
     PUSH EAX                            ; 00514739

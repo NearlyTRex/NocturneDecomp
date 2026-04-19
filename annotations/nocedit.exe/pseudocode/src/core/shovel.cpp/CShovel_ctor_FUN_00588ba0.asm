@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shoveit_kfm_00649b9a
-;   CDemonActor_vtable g_CShovelVTable
+;   CWeapon_full_vtable g_CShovelVTable
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0

@@ -49,7 +49,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_boss.c_modelStructNotSupported4_FUN_0041dbe0
 ;   engine_model.c_freeMRGLData_FUN_005280b0
 ;   engine_model.c_loadModelFile_FUN_00527ec0
@@ -97,8 +97,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 005281b5
     PUSH EAX                            ; 005281b9
     MOV ESI,0x639c24                    ; 005281ba | = "..\\engine\\model.c"
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005281bf
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005281bf
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 005281c4
     MOV EAX,ESP                         ; 005281c7
     MOV EDI,0x176                       ; 005281c9

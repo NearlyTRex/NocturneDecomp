@@ -197,8 +197,7 @@ LAB_0051e453:
           _sprintf(local_248,"LOD%d: F=%d",iVar8,*local_20);
         }
         else {
-          _sprintf
-                    (local_248,"LOD%d: P=%d F=%d",iVar8,pixel_heights[iVar8],*local_20);
+          _sprintf(local_248,"LOD%d: P=%d F=%d",iVar8,pixel_heights[iVar8],*local_20);
         }
         iVar9 = iVar4 - (*local_2c * (iVar6 + -0x44)) / 0x1e0;
         if (iVar9 < 0x2c) {

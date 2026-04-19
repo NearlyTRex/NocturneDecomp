@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   crt_errno.c__errno_FUN_00601450
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c_strerror_FUN_00601470
 ;
 ; *****************************************************************************
@@ -58,8 +58,8 @@ section .text
         ;   Label: LAB_004b2019
     PUSH ESI                            ; 004b201b
         ;   Label: LAB_004b201b
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b201c
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b201c
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b2021
     POP ESI                             ; 004b2024
     RET                                 ; 004b2025

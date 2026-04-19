@@ -203,8 +203,8 @@ inline void engine_3d_c_rasterizePolygonCustom_FUN_005fd4e0(SRenderVertex *verte
 }
 SIZE_T __cdecl crt_stdio_c_fread_FUN_005fd990(void *buffer,SIZE_T size,SIZE_T count,_FILE *file);
 void __cdecl crt_stdio_c_StringBufferCallback_FUN_005fdb90(StringOutputContext *context,char character);
-int __cdecl crt_stdio_c__vsprintf_FUN_005fdba8(char *buffer,char *format,va_list_t args);
-int __cdecl crt_stdio_c__sprintf_FUN_005fdbd0(char *buffer,char *format,...) __attribute__((format(printf, 2, 3)));
+int __cdecl crt_stdio_c_vsprintf_FUN_005fdba8(char *buffer,char *format,va_list_t args);
+int __cdecl crt_stdio_c_sprintf_FUN_005fdbd0(char *buffer,char *format,...) __attribute__((format(printf, 2, 3)));
 SIZE_T __cdecl crt_stdio_c_fwrite_FUN_005fdc00(void *ptr,SIZE_T size,SIZE_T count,_FILE *file);
 void * __cdecl crt_memory_c_memset_FUN_005fde40(void *dest,int value,ulong count);
 void * __watcallStack crt_stdlib_c_median_of_3_FUN_005fdea0(void *a,void *b,void *c,QSORT_COMPARATOR compar);
@@ -232,7 +232,7 @@ int __cdecl crt_string_c__stricmp_FUN_005fe7f0(char *str1,char *str2);
 int __cdecl crt_stdio_c_fgetc_FUN_005fe840(_FILE *file);
 int __watcallStack crt_stdio_c_FillBufferAndGetChar_FUN_005fe910(_FILE *file);
 int __watcallStack crt_stdio_c_FillInputBuffer_FUN_005fe940(_FILE *file);
-int __cdecl crt_stdio_c_fputc_FUN_005fea10(int character,_FILE *stream);
+int __cdecl crt_stdio_c_ungetc_FUN_005fea10(int character,_FILE *stream);
 int __cdecl crt_ctype_c_tolower_FUN_005feb30(int character);
 uint * __watcallRegister crt_stdlib_c_GetRandomSeedPointer_FUN_005feb50(void);
 int __cdecl crt_stdlib_c_rand_FUN_005feb5c(void);

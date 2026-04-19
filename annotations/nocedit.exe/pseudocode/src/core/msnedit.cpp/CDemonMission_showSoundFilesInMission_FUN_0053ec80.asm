@@ -30,7 +30,7 @@
 ;   core_actor.cpp_CActorPropertyList_init_FUN_0040e130
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0
 ;   core_script.cpp_CScript_collectSoundReferences_FUN_00567bc0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -119,8 +119,8 @@ section .text
     PUSH 0x63d0b6                       ; 0053ed44 | = "%s\t%s %s"
     LEA EAX,[ESP + 0x28bc]              ; 0053ed49
     PUSH EAX                            ; 0053ed50
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053ed51
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0053ed51
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 0053ed56
     LEA EAX,[ESP + 0x28ac]              ; 0053ed59
     PUSH EAX                            ; 0053ed60

@@ -7,17 +7,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 77,
+    "complexity_score": 75,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 62,
+    "pseudocode_lines": 60,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 232
+    "total_lines": 230
   },
   "cross_references": [
     {
@@ -49,7 +49,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005ade70",
@@ -232,7 +232,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 38,
       "match": "(LPVOID *)((int)",
       "severity": "mild",
       "text": "*(LPVOID *)((int)apvStack_40 + iVar3) = pvVar5;",

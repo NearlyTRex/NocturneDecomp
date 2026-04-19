@@ -65,8 +65,7 @@ int __cdecl shape_design_c_loadS3DModelFile_FUN_004593a0(char *filename)
   if (iVar2 == 1) {
     local_30[1] = 0x67;
     if (local_30[0] != 0x67) {
-      _sprintf
-                (local_108,"Invalid .S3D version: %d, we can only handle files version of %d",local_30[0],0x67);
+      _sprintf(local_108,"Invalid .S3D version: %d, we can only handle files version of %d",local_30[0],0x67);
       goto LAB_00459491;
     }
     shape_design_c_skipLines_FUN_00459360(file,1);
@@ -74,18 +73,15 @@ int __cdecl shape_design_c_loadS3DModelFile_FUN_004593a0(char *filename)
                        &g_PartsCount,local_24,local_20,local_1c);
     if (iVar3 == 7) {
       if (20000 < g_PolygonCount) {
-        _sprintf
-                  (local_108,"Too many polygons: %d, max is %d",g_PolygonCount,20000);
+        _sprintf(local_108,"Too many polygons: %d, max is %d",g_PolygonCount,20000);
         goto LAB_00459491;
       }
       if (20000 < g_VertexCount) {
-        _sprintf
-                  (local_108,"Too many vertices: %d, max is %d",g_VertexCount,20000);
+        _sprintf(local_108,"Too many vertices: %d, max is %d",g_VertexCount,20000);
         goto LAB_00459491;
       }
       if (500 < g_PartsCount) {
-        _sprintf
-                  (local_108,"Too many parts: %d, max is %d",g_VertexCount,500);
+        _sprintf(local_108,"Too many parts: %d, max is %d",g_VertexCount,500);
         goto LAB_00459491;
       }
       shape_design_c_skipLines_FUN_00459360(file,1);
@@ -99,8 +95,7 @@ int __cdecl shape_design_c_loadS3DModelFile_FUN_004593a0(char *filename)
         local_38 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                              (local_30[2] * 0x50,"..\\shape\\design.c",0x3ec);
         if (local_38 == (void *)0x0) {
-          _sprintf
-                    (local_108,"Out of memory for texture list, numTextures = %d",local_30[2]);
+          _sprintf(local_108,"Out of memory for texture list, numTextures = %d",local_30[2]);
           goto LAB_00459491;
         }
         for (local_40 = 0; (int)local_40 < local_30[2]; local_40 = local_40 + 1) {

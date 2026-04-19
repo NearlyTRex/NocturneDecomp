@@ -13,7 +13,7 @@ CElephantGun * __cdecl core_elephant_cpp_CElephantGun_ctor_FUN_004a6fe0(CElephan
   CElephantGun *pCVar2;
   
   pCVar2 = (CElephantGun *)core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base);
-  (pCVar2->base).base.vtable._ub = &g_CElephantGunVTable;
+  (pCVar2->base).base.vtable._ub = &g_CElephantGunVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&(pCVar2->base).model,"elephantgun.kfm");
   pCVar2->spread_angle = 10.0;

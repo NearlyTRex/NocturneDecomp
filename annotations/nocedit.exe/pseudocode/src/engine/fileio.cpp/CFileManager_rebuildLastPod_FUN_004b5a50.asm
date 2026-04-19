@@ -81,12 +81,12 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_memory.c_memset_FUN_005fde40
-;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fputc_FUN_006007a0
 ;   crt_stdio.c_fseek_FUN_005ffacc
 ;   crt_stdio.c_ftell_FUN_00601560
 ;   crt_stdio.c_fwrite_FUN_005fdc00
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;   crt_time.c__time_FUN_006001f0
 ;   engine_dosio.c_findFileNormally_FUN_004817c0
@@ -919,8 +919,8 @@ section .text
     PUSH 0x627878                       ; 004b63f0 | = "Couldn't build %s because the followi..."
     LEA EAX,[ESP + 0x16b0]              ; 004b63f5
     PUSH EAX                            ; 004b63fc
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b63fd
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b63fd
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b6402
     PUSH 0x0                            ; 004b6405
     PUSH -0x1                           ; 004b6407
@@ -939,8 +939,8 @@ section .text
     PUSH 0x62795a                       ; 004b642e | = "Building %s..."
     LEA EAX,[ESP + 0xd98]               ; 004b6433
     PUSH EAX                            ; 004b643a
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b643b
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b643b
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b6440
     LEA EAX,[ESP + 0xd90]               ; 004b6443
     PUSH EAX                            ; 004b644a
@@ -1418,8 +1418,8 @@ section .text
     PUSH 0x627a05                       ; 004b6a7f | = "Successfully built %s\n\n%d files tot..."
     LEA EAX,[ESP + 0xdb0]               ; 004b6a84
     PUSH EAX                            ; 004b6a8b
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004b6a8c
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004b6a8c
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x24                        ; 004b6a91
     MOV ESI,dword ptr [ESP + 0x183c]    ; 004b6a94
     MOV EBX,dword ptr [ESP + 0x183c]    ; 004b6a9b

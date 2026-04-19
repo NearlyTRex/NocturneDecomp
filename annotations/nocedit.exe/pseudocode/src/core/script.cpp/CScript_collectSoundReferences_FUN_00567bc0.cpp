@@ -34,8 +34,7 @@ void __cdecl core_script_cpp_CScript_collectSoundReferences_FUN_00567bc0(CScript
           iVar3 = 0;
           do {
             if (*(int *)(local_2274.params[0].modifier_string + iVar3 + -4) == 0xd) {
-              _sprintf
-                        (local_14c,"%s\tScript line %d",
+              _sprintf(local_14c,"%s\tScript line %d",
                          local_2274.params[0].parsed_value + iVar3,
                          *(uint *)((int)&this_ptr->parsed_lines->line_number + local_1c));
               shape_edittool_cpp_CStrList_add_FUN_004a2b80(sounds_out,local_14c);

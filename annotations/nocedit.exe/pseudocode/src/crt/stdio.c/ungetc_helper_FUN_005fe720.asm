@@ -11,7 +11,7 @@
 ;   crt_stdio.c_vfscanf_FUN_005fe738 at 005fe785
 ;
 ; Called Functions:
-;   crt_stdio.c_fputc_FUN_005fea10
+;   crt_stdio.c_ungetc_FUN_005fea10
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
     PUSH EDX                            ; 005fe728
     MOV EBX,dword ptr [ESP + 0xc]       ; 005fe729
     PUSH EBX                            ; 005fe72d
-    CALL crt_stdio.c_fputc_FUN_005fea10 ; 005fe72e
-        ;   XREF to: 005fea10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputc_FUN_005fea10(int character, _FILE * stream)
+    CALL crt_stdio.c_ungetc_FUN_005fea10 ; 005fe72e
+        ;   XREF to: 005fea10 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_ungetc_FUN_005fea10(int character, _FILE * stream)
     ADD ESP,0x8                         ; 005fe733
     POP EBX                             ; 005fe736
     RET                                 ; 005fe737

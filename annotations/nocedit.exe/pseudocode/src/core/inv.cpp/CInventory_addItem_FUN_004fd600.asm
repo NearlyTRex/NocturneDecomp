@@ -53,7 +53,7 @@
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_00524700
 ;   core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0
 ;   core_mission.cpp_CDemonMission_removeActorFromList_FUN_00523be0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   ... and 5 more
 ;
 ; *****************************************************************************
@@ -165,8 +165,8 @@ section .text
     PUSH 0x6304e2                       ; 004fd726 | = "%d "
     LEA EAX,[ESP + 0x208]               ; 004fd72b
     PUSH EAX                            ; 004fd732
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004fd733
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004fd733
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004fd738
     LEA ESI,[ESP + 0x200]               ; 004fd73b
     MOV EDI,ESP                         ; 004fd742

@@ -19,7 +19,7 @@
 ;   core_svetlana.cpp_CSvetlana_dtor_FUN_005d9f50 at 005d9f86
 ;
 ; Referenced Globals:
-;   CDemonActor_vtable g_CHeroVTable
+;   CHero_full_vtable g_CHeroVTable
 ;   CHero*[4] g_HeroActors
 ;   undefined4 g_HeroActors[1]
 ;

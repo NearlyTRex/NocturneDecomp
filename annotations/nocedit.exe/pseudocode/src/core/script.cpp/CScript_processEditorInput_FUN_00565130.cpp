@@ -175,12 +175,10 @@ LAB_00565363:
                         (this_ptr,g_ScriptFindText,g_CurrentEditingColumn,g_CurrentEditingLine,
                          &uStack_30,&iStack_3c,&uStack_38,iVar10);
       if (iVar5 == 0) {
-        _sprintf
-                  (g_ScriptEditorStatusText,"Can't find %s",g_ScriptFindText);
+        _sprintf(g_ScriptEditorStatusText,"Can't find %s",g_ScriptFindText);
       }
       else {
-        _sprintf
-                  (g_ScriptEditorStatusText,"Found %s",g_ScriptFindText);
+        _sprintf(g_ScriptEditorStatusText,"Found %s",g_ScriptFindText);
         g_CurrentEditingLine = iStack_3c;
         g_CurrentEditingColumn = uStack_30;
         bVar2 = false;
@@ -206,12 +204,10 @@ LAB_00565363:
                         (this_ptr,g_ScriptFindText,iVar10 + g_CurrentEditingColumn,
                          g_CurrentEditingLine,&uStack_2c,&iStack_28,&uStack_24,iVar10);
       if (iVar5 == 0) {
-        _sprintf
-                  (g_ScriptEditorStatusText,"Can't find %s",g_ScriptFindText);
+        _sprintf(g_ScriptEditorStatusText,"Can't find %s",g_ScriptFindText);
       }
       else {
-        _sprintf
-                  (g_ScriptEditorStatusText,"Found %s",g_ScriptFindText);
+        _sprintf(g_ScriptEditorStatusText,"Found %s",g_ScriptFindText);
         g_CurrentEditingLine = iStack_28;
         g_CurrentEditingColumn = uStack_2c;
         bVar2 = false;

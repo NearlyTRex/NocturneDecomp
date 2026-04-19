@@ -19,7 +19,7 @@ CMoloch * __cdecl core_moloch_cpp_CMoloch_dtor_FUN_00528bf0(CMoloch *this_ptr,ui
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  (this_ptr->base).base.base.vtable._ub = &g_CMolochVTable;
+  (this_ptr->base).base.base.vtable._ub = &g_CMolochVTable._ub;
   pCVar1 = core_morph_cpp_CMorph_dtor_FUN_0052b330(&this_ptr->morph,0);
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40(&ADJ(pCVar1)->model,0);
   ptr = (CMoloch *)core_hero_cpp_CHero_dtor_FUN_004f2470(&ADJ(pCVar2)->base,1);

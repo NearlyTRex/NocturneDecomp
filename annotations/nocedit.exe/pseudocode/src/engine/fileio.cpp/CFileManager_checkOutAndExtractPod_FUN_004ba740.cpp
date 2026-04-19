@@ -108,8 +108,8 @@ LAB_004ba895:
     iVar4 = 1;
   }
   else {
-    _sprintf
-              (&stack0xfffff964,"A writable copy of %s exists.  Replace it?",local_340);
+    _sprintf(&stack0xfffff964,"A writable copy of %s exists.  Replace it?",local_340)
+    ;
     iVar4 = engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90
                       (&stack0xfffff964,&g_VersionControlSession.overwrite_writeable_choice);
   }

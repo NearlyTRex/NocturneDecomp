@@ -29,8 +29,7 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_killSfx_FUN_005b0030(CDirectSoun
       error_code = (*this_ptr_00->vtable->Stop)(this_ptr_00);
       if (error_code != 0) {
         pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
-        _sprintf
-                  (acStack_1a0,"DirectSux: Unable to %s.  (%s)",
+        _sprintf(acStack_1a0,"DirectSux: Unable to %s.  (%s)",
                    "Stop hardware sfx secondary buffer",pcVar2);
         sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_1a0);
         return;

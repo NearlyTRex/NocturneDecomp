@@ -49,8 +49,7 @@ void __cdecl shape_design_c_renderPolygonVerticesWithLabels_FUN_0045c2f0(int pol
         }
         if (((uVar1 + 8 < (uint)g_WindowWidth) && (y + 0xc < (uint)g_WindowHeight)) &&
            (0 < g_RenderVertexBuffer[local_20].projected_vertex.transformed_z)) {
-          _sprintf
-                    (local_7c,"%d",
+          _sprintf(local_7c,"%d",
                      g_ModelPolygonData[polygon_index].vertex_indices[local_20]);
           engine_2d_c_drawTextColor_FUN_00402430(local_7c,uVar1 + 1,y + 1);
         }

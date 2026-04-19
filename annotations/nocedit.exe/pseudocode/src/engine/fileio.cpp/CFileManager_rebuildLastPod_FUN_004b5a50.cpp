@@ -586,8 +586,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
             engine_pod_cpp_CPod_cleanup_FUN_00550c80((CPod *)g_CDemonPodPtr);
             (*g_CDemonPodPtr->vtable->load)((CPod *)g_CDemonPodPtr);
           }
-          _sprintf
-                    (local_aa8,"Successfully built %s\n\n%d files totaling %d bytes\n\n%d files added\n%d files removed\n%d files changed\n\nTotal pod size %d bytes",local_290,
+          _sprintf(local_aa8,"Successfully built %s\n\n%d files totaling %d bytes\n\n%d files added\n%d files removed\n%d files changed\n\nTotal pod size %d bytes",local_290,
                      this_ptr->tracked_file_count,local_38 - SVar8,local_50,local_4c,local_48,lVar7)
           ;
           do {

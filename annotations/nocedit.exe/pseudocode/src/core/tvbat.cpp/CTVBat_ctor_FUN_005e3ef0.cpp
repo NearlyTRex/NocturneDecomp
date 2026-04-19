@@ -16,7 +16,7 @@ CTVBat * __cdecl core_tvbat_cpp_CTVBat_ctor_FUN_005e3ef0(CTVBat *this_ptr)
   
   pCVar1 = (CTVBat *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar1->model);
-  ADJ(this_ptr_00)->base.base.base.vtable._ub = &g_CTVBatVTable;
+  ADJ(this_ptr_00)->base.base.base.vtable._ub = &g_CTVBatVTable._ub;
   ADJ(this_ptr_00)->anim_frame = 0.0;
   ADJ(this_ptr_00)->anim_rate = 0.0;
   fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.9,1.1);

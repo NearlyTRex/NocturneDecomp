@@ -50,8 +50,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0(CDe
           local_14 = (pCVar2->base).base.create_prob;
         }
       }
-      _sprintf
-                (local_224,"%s\t%g hp\tx\t%i%%\t=\t%g hp",pCVar2,(double)(pCVar2->base).hit_points,
+      _sprintf(local_224,"%s\t%g hp\tx\t%i%%\t=\t%g hp",pCVar2,(double)(pCVar2->base).hit_points,
                  (int)ROUND(ROUND(local_14 * 100.0f)),
                  (double)((pCVar2->base).hit_points * local_14));
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_d1c.base,local_224);
@@ -67,8 +66,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0(CDe
              core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CHealthItemClassInfo.name_hash)
     ;
     if (pCVar4 != (CHealthItem *)0x0) {
-      _sprintf
-                (local_224,"%s\t%g hp\tx\t%d uses\t=\t%g hp",pCVar4,(double)pCVar4->hp_restored,
+      _sprintf(local_224,"%s\t%g hp\tx\t%d uses\t=\t%g hp",pCVar4,(double)pCVar4->hp_restored,
                  pCVar4->use_count,(double)((float)pCVar4->use_count * pCVar4->hp_restored));
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_10c4.base,local_224);
       local_24 = (float)pCVar4->use_count * pCVar4->hp_restored + local_24;

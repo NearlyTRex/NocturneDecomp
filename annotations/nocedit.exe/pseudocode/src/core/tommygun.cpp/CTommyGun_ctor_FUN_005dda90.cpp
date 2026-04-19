@@ -13,7 +13,7 @@ CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_ctor_FUN_005dda90(CTommyGun *thi
   CTommyGun *pCVar2;
   
   pCVar2 = (CTommyGun *)core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base);
-  (pCVar2->base).base.vtable._ub = &g_CTommyGunVTable;
+  (pCVar2->base).base.vtable._ub = &g_CTommyGunVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&(pCVar2->base).model,"tommygun.kfm");
   (pCVar2->base).is_spread_weapon = 0;

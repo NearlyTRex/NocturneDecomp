@@ -17,7 +17,7 @@
 ;   undefined4 s_e_006156ee
 ;   float FLOAT_0065a770 = 50
 ;   float FLOAT_0065a774 = 100
-;   CDemonActor_vtable g_CBatmanVTable
+;   CEnemy_full_vtable g_CBatmanVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500

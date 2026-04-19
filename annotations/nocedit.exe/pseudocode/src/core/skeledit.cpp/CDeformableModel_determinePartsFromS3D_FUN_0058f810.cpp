@@ -310,8 +310,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
     } while ((iVar9 != 10) || (iVar22 = iVar22 + -1, 0 < iVar22));
     _fscanf(local_ec,"%d\n");
     if ((local_e8 < 0x65) || (0x67 < local_e8)) {
-      _sprintf
-                (g_SkeleditStatusMessage,"%s has incorrect S3D version %d",entry->s3d_filename);
+      _sprintf(g_SkeleditStatusMessage,"%s has incorrect S3D version %d",entry->s3d_filename);
       goto LAB_0058f8e7;
     }
     iVar31 = 1;
@@ -408,12 +407,10 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
           }
           if (this_ptr->num_textures <= iVar31) {
             if (0x4f < this_ptr->num_textures) {
-              _sprintf
-                        (g_SkeleditStatusMessage,"Texture list full determining parts");
+              _sprintf(g_SkeleditStatusMessage,"Texture list full determining parts");
               goto LAB_0058f8e7;
             }
-            _sprintf
-                      (this_ptr->texture_sets[0].textures[this_ptr->num_textures].textures[0].
+            _sprintf(this_ptr->texture_sets[0].textures[this_ptr->num_textures].textures[0].
                        texture_name,"%s.raw");
             this_ptr->num_textures = this_ptr->num_textures + 1;
           }
@@ -1244,8 +1241,7 @@ LAB_00591f48:
                           core_main_c_displayErrorAndQuit_FUN_00506f10
                                     ("Too many model textures!");
                         }
-                        _sprintf
-                                  (local_a4->textures[this_ptr->num_textures].textures[0].
+                        _sprintf(local_a4->textures[this_ptr->num_textures].textures[0].
                                    texture_name,"%s.raw");
                         this_ptr->num_textures = this_ptr->num_textures + 1;
                       }
@@ -1286,8 +1282,7 @@ LAB_00591f48:
                         } while (iVar31 < this_ptr->vertex_count[0]);
                       }
                       if ((float)0.20000000000000001 < local_a1f0) {
-                        _sprintf
-                                  (g_SkeleditStatusMessage,"Can't find good match for capped face vertex, probably because there was a new vertex created only for a capped face");
+                        _sprintf(g_SkeleditStatusMessage,"Can't find good match for capped face vertex, probably because there was a new vertex created only for a capped face");
                         goto LAB_0058f8e7;
                       }
                       iVar31 = *(int *)((int)pvVar37 + 0x1c) >> 8;
@@ -1354,8 +1349,7 @@ LAB_00591f48:
                       } while (local_24 < (int)local_16c);
                     }
                     if (local_ac < 0) {
-                      _sprintf
-                                (g_SkeleditStatusMessage,"Can't find opposing part for capped face!");
+                      _sprintf(g_SkeleditStatusMessage,"Can't find opposing part for capped face!");
                       goto LAB_0058f8e7;
                     }
                     this_ptr->cap_index_ptr[0][this_ptr->cap_tri_count[0]] = local_ac;
@@ -1403,8 +1397,7 @@ LAB_00591835:
                     (g_CEditorToolsPtr,"Determined parts using %s OK!");
           return 1;
         }
-        _sprintf
-                  (g_SkeleditStatusMessage,"Deformable model has more faces than segmented model!");
+        _sprintf(g_SkeleditStatusMessage,"Deformable model has more faces than segmented model!");
         goto LAB_0058f8e7;
       }
       pcVar38 = "Too many parts in %s";

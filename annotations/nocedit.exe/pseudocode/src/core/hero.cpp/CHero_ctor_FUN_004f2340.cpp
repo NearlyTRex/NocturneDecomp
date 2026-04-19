@@ -19,7 +19,7 @@ CHero * __cdecl core_hero_cpp_CHero_ctor_FUN_004f2340(CHero *this_ptr)
   pCVar3 = core_inv_cpp_CInventory_ctor_FUN_004fd020(&ADJ(pCVar2)->inventory);
   this_ptr_00 = ADJ(pCVar3);
   pCVar3->owner = (CDemonActor *)this_ptr_00;
-  ADJ(pCVar3)->base.base.vtable._ub = &g_CHeroVTable;
+  ADJ(pCVar3)->base.base.vtable._ub = &g_CHeroVTable._ub;
   memset(&ADJ(pCVar3)->player_input,0,0x2c);
   ADJ(pCVar3)->invincibility_timer = 0.0;
   ADJ(pCVar3)->base.collision_cylinder_height = 0.6;

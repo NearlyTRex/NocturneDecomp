@@ -13,7 +13,7 @@ CShotgun * __cdecl core_shotgun_cpp_CShotgun_ctor_FUN_00587ee0(CShotgun *this_pt
   CShotgun *pCVar2;
   
   pCVar2 = (CShotgun *)core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base);
-  (pCVar2->base).base.vtable._ub = &g_CShotgunVTable;
+  (pCVar2->base).base.vtable._ub = &g_CShotgunVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&(pCVar2->base).model,"shotgun.kfm");
   pCVar2->spread_angle = 10.0;

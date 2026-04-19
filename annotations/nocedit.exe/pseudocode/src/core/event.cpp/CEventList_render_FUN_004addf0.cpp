@@ -62,8 +62,7 @@ void __cdecl core_event_cpp_CEventList_render_FUN_004addf0(CEventList *this_ptr)
     pacVar2 = (this_ptr->timers).names;
     local_24 = this_ptr;
     do {
-      _sprintf
-                (local_2e0,"Timer: %5.2f %s",(double)(local_24->timers).durations[0],pacVar2);
+      _sprintf(local_2e0,"Timer: %5.2f %s",(double)(local_24->timers).durations[0],pacVar2);
       iVar2 = iVar2 + 1;
       engine_2d_c_drawText_FUN_00401fd0(local_2e0,0,y);
       pacVar2 = pacVar2 + 1;
@@ -108,8 +107,7 @@ void __cdecl core_event_cpp_CEventList_render_FUN_004addf0(CEventList *this_ptr)
     pcVar3 = (this_ptr->sfx_handles).entries[0].sound_filename;
     pCVar5 = this_ptr;
     do {
-      _sprintf
-                (local_150,"%s=%s %.1f",local_20,pcVar3,
+      _sprintf(local_150,"%s=%s %.1f",local_20,pcVar3,
                  *(uint *)&(pCVar5->sfx_handles).entries[0].playback_position,
                  *(uint *)((int)&(pCVar5->sfx_handles).entries[0].playback_position + 4));
       pCVar5 = (CEventList *)((pCVar5->events).names[8] + 0x1c);

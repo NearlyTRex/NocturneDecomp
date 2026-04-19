@@ -128,8 +128,7 @@ LAB_004b5706:
   }
   iVar3 = engine_dosio_c_getFileSize_FUN_00481880((char *)0x0,local_64);
   if (iVar7 != iVar3) {
-    _sprintf
-              (local_17c,"%s is not the same size as %s",local_580,local_64);
+    _sprintf(local_17c,"%s is not the same size as %s",local_580,local_64);
     g_CurrentFilename = "..\\engine\\fileio.cpp";
     g_CurrentLineNumber = 0x786;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_17c);

@@ -24,7 +24,7 @@ CHiram * __cdecl core_hiram_cpp_CHiram_dtor_FUN_004f4450(CHiram *this_ptr,uint f
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  (this_ptr->base).base.base.vtable._ub = &g_CHiramVTable;
+  (this_ptr->base).base.base.vtable._ub = &g_CHiramVTable._ub;
   pCVar1 = core_path_cpp_CPathMap_dtor_FUN_005464d0(&(this_ptr->base).path_map,0);
   pCVar2 = (CHiram_ptr_13260)
            core_armour_cpp_CFlame_arrdtor_FUN_00412720(ADJ(pCVar1)->base.base.flames,0);

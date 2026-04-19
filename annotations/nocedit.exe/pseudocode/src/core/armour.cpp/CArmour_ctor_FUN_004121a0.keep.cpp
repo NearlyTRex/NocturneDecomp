@@ -13,7 +13,7 @@ CArmour * __cdecl core_armour_cpp_CArmour_ctor_FUN_004121a0(CArmour *this_ptr)
   CArmour *pCVar4;
 
   pCVar4 = (CArmour *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
-  (pCVar4->base).base.base.vtable._ub = &g_CArmourVTable;
+  (pCVar4->base).base.base.vtable._ub = &g_CArmourVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar4->base).base.model,"armour.dfm");
   (pCVar4->base).base.collision_cylinder_height = 0.6;

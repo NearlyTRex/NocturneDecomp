@@ -56,8 +56,7 @@ void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFon
     } while (iVar1 < bitmap_width * bitmap_height);
   }
   if (local_20 == this_ptr->load_flags) {
-    _sprintf
-              (local_16c,"No character markers found in font file (%s).",this_ptr->bitmap_files + bitmap_count);
+    _sprintf(local_16c,"No character markers found in font file (%s).",this_ptr->bitmap_files + bitmap_count);
     g_CurrentLineNumber = 0x1cd;
     g_CurrentFilename = "..\\engine\\font.cpp";
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_16c);
@@ -117,8 +116,7 @@ void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFon
         else if (*local_14 == local_20) {
           bVar1 = true;
           if (0xff < iVar9) {
-            _sprintf
-                      (local_16c,"Too many chars: fontfile %s, chars %d",
+            _sprintf(local_16c,"Too many chars: fontfile %s, chars %d",
                        this_ptr->bitmap_files + bitmap_count,iVar9);
             g_CurrentLineNumber = 0x201;
             g_CurrentFilename = "..\\engine\\font.cpp";

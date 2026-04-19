@@ -26,8 +26,7 @@ char * __cdecl engine_fileio_cpp_copyFileWithProgress_FUN_004b2030(_FILE *source
   g_FileTransferErrorMessage[0] = '\0';
   bVar1 = 0xc800 < file_size_bytes;
   if (bVar1) {
-    _sprintf
-              (local_208,"Copying %s -> %s (%d bytes)",source_filename,dest_filename,
+    _sprintf(local_208,"Copying %s -> %s (%d bytes)",source_filename,dest_filename,
                file_size_bytes);
     shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
               (g_CEditorToolsPtr,local_208);
@@ -41,8 +40,7 @@ char * __cdecl engine_fileio_cpp_copyFileWithProgress_FUN_004b2030(_FILE *source
       }
       SVar2 = _fread(g_FileTransferBuffer,1,count,source_file);
       if (SVar2 != count) {
-        _sprintf
-                  (g_FileTransferErrorMessage,"Error reading %s",source_filename);
+        _sprintf(g_FileTransferErrorMessage,"Error reading %s",source_filename);
         piVar3 = _errno();
         errnum = *piVar3;
 LAB_004b20b4:
@@ -55,8 +53,7 @@ LAB_004b20b4:
       }
       SVar1 = _fwrite(g_FileTransferBuffer,1,count,dest_file);
       if (SVar1 != count) {
-        _sprintf
-                  (g_FileTransferErrorMessage,"Error writing %s",dest_filename);
+        _sprintf(g_FileTransferErrorMessage,"Error writing %s",dest_filename);
         piVar2 = _errno();
         errnum = *piVar2;
         goto LAB_004b20b4;

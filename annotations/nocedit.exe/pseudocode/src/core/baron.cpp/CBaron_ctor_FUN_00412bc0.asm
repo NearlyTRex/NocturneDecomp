@@ -20,7 +20,7 @@
 ;   undefined4 s_ne_00614ee8
 ;   undefined4 s_e_00614ee9
 ;   TerminatedCString s_baronshell_kfm_00614eeb
-;   CDemonActor_vtable g_CBaronVTable
+;   CHero_full_vtable g_CBaronVTable
 ;   CKeyFramedModelInstance g_CKeyFramedModelInstanceInstance
 ;
 ; Called Functions:

@@ -21,7 +21,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gat_kfm_00657ab1
-;   CDemonActor_vtable g_CWeaponVTable
+;   CWeapon_full_vtable g_CWeaponVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_004088b0

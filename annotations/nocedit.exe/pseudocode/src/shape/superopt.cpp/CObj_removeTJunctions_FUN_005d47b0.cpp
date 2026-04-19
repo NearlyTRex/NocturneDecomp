@@ -124,8 +124,7 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
   if (this_ptr->poly_count != 0) {
     do {
       if ((local_44 != (void *)0x0) && ((char)local_24 == '\0')) {
-        _sprintf
-                  ((char *)((int)&local_1dc.normal.impl.z + 4),"Deleting T-Junctions (%d deleted so far)",0
+        _sprintf((char *)((int)&local_1dc.normal.impl.z + 4),"Deleting T-Junctions (%d deleted so far)",0
                   );
       }
       source = this_ptr->poly_array + local_24;

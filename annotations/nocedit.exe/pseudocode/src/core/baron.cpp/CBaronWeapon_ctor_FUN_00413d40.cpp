@@ -12,7 +12,7 @@ CBaronWeapon * __cdecl core_baron_cpp_CBaronWeapon_ctor_FUN_00413d40(CBaronWeapo
   CBaronWeapon *pCVar1;
   
   pCVar1 = (CBaronWeapon *)core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base);
-  (pCVar1->base).base.vtable._ub = &g_CBaronWeaponVTable;
+  (pCVar1->base).base.vtable._ub = &g_CBaronWeaponVTable._ub;
   (pCVar1->base).weapon_type = 8;
   (pCVar1->base).can_penetrate = 0;
   (pCVar1->base).bolt_velocity = 200.0;

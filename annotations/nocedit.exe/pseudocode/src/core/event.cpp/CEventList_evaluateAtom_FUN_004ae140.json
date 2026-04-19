@@ -7,18 +7,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 3369,
-    "complexity_score": 1742,
+    "complexity_score": 1741,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 231,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1592,
+    "pseudocode_lines": 1591,
     "suspect_count": 14,
     "suspect_types": [
       "unrolled_strlen",
       "warning_type_propagation"
     ],
-    "total_lines": 4961
+    "total_lines": 4960
   },
   "cross_references": [
     {
@@ -130,7 +130,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "0060013c",
@@ -2273,7 +2273,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1090,
+      "line": 1089,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "mild",
       "text": "do {",
@@ -2281,7 +2281,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1415,
+      "line": 1414,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "mild",
       "text": "do {",
@@ -2289,7 +2289,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1438,
+      "line": 1437,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "mild",
       "text": "do {",
@@ -2297,7 +2297,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1461,
+      "line": 1460,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "mild",
       "text": "do {",

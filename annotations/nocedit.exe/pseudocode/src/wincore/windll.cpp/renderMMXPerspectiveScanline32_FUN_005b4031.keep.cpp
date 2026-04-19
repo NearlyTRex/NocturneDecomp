@@ -210,7 +210,12 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
 
         uint out_pix = lit_pix;
         if ((g_RenderStateFlags.dword & RENDER_SOLID_ALPHA_BLEND) != 0) {
+          // Original MMX used `SAR eax,0x8; MOVQ mm2,[eax*8 + g_AlphaTable]`
+          // with no clamp, silently reading neighbouring globals on underflow.
+          // On Linux ASan/UBSan this OOB index is fatal. Clamp to [0, 255] —
+          // semantically "saturate alpha" matches the intent of the blend.
           int alpha_idx = cur_alpha >> 8;
+          if (alpha_idx < 0) alpha_idx = 0; else if (alpha_idx > 0xff) alpha_idx = 0xff;
           ulonglong alpha_q     = *(ulonglong *)&g_AlphaTable[alpha_idx];
           ulonglong inv_alpha_q = alpha_q ^ *(ulonglong *)&g_AlphaTable[0xff];
           out_pix = 0;
@@ -304,6 +309,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
             }
 
             int combined_idx = ((int)opacity * cur_alpha) >> 16;
+            if (combined_idx < 0) combined_idx = 0; else if (combined_idx > 0xff) combined_idx = 0xff;
             ulonglong alpha_q     = *(ulonglong *)&g_AlphaTable[combined_idx];
             ulonglong inv_alpha_q = alpha_q ^ *(ulonglong *)&g_AlphaTable[0xff];
 
@@ -386,6 +392,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b403
         }
 
         int alpha_idx = cur_alpha >> 8;
+        if (alpha_idx < 0) alpha_idx = 0; else if (alpha_idx > 0xff) alpha_idx = 0xff;
         ulonglong alpha_q     = *(ulonglong *)&g_AlphaTable[alpha_idx];
         ulonglong inv_alpha_q = alpha_q ^ *(ulonglong *)&g_AlphaTable[0xff];
 

@@ -83,7 +83,7 @@
 ;   double DOUBLE_00654532 = 0.000100000000000000
 ;
 ; Called Functions:
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1d0
 ;   shape_memdbg.cpp_debugFreeChecked_FUN_0050f210
 ;   shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0
@@ -517,8 +517,8 @@ section .text
     PUSH 0x6544fc                       ; 005d4dac | = "Deleting T-Junctions (%d deleted so far)"
     LEA EAX,[ESP + 0x150]               ; 005d4db1
     PUSH EAX                            ; 005d4db8
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005d4db9
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005d4db9
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005d4dbe
     JMP 0x005d4826                      ; 005d4dc1
         ;   XREF to: 005d4826 (UNCONDITIONAL_JUMP)  ; LAB_005d4826

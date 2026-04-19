@@ -73,8 +73,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
   if (0 < local_1108.file_count) {
     iVar6 = 0;
     do {
-      _sprintf
-                (local_120,"%s\t%d",
+      _sprintf(local_120,"%s\t%d",
                  *(uint *)((int)&(local_1108.directory_entries)->name + iVar6),
                  *(uint *)((int)&(local_1108.directory_entries)->size + iVar6));
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_8dc.base,local_120);
@@ -123,8 +122,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
       _strftime(local_320,0x100,"%A, %B, %d, %Y, %I:%M:%S %p",p_Var4);
       time_ptr = _localtime(local_1c + 2);
       _strftime(local_220,0x100,"%A, %B, %d, %Y, %I:%M:%S %p",time_ptr);
-      _sprintf
-                (local_cdc.found_path,"%s already exists on disk.\n\nWould you like to replace the existing file\n\n%d bytes\nmodified on %s\n\nwith this one?\n\n%d bytes\nmodified on %s\n",local_534.target_path,
+      _sprintf(local_cdc.found_path,"%s already exists on disk.\n\nWould you like to replace the existing file\n\n%d bytes\nmodified on %s\n\nwith this one?\n\n%d bytes\nmodified on %s\n",local_534.target_path,
                  local_534.file_size,local_320,local_1c[0],local_220);
       iVar4 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
                         (g_CEditorToolsPtr,local_cdc.found_path);

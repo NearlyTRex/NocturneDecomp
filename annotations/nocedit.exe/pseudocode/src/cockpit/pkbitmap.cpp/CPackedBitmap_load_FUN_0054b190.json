@@ -7,18 +7,18 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 198,
-    "complexity_score": 171,
+    "complexity_score": 170,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 111,
+    "pseudocode_lines": 110,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "unrolled_memcpy"
     ],
-    "total_lines": 309
+    "total_lines": 308
   },
   "cross_references": [
     {
@@ -60,7 +60,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "0050f1f0",
@@ -322,7 +322,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 87,
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "puVar6 = (ushort *)((int)this_ptr->packed_data + iVar3);",
@@ -330,7 +330,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 103,
+      "line": 102,
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "puVar1 = (ushort *)((int)puVar1 + (uint)bVar11 * -2 + 1);",
@@ -338,7 +338,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 94,
+      "line": 93,
       "match": "for (...; != 0; ... + -1)",
       "severity": "mild",
       "text": "for (uVar7 = (uint)(uVar1 >> 2); uVar7 != 0; uVar7 = uVar7 - 1) {",
@@ -346,7 +346,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 99,
+      "line": 98,
       "match": "for (...; != 0; ... + -1)",
       "severity": "mild",
       "text": "for (uVar2 = (byte)uVar1 & 0xffffff03; uVar2 != 0; uVar2 = uVar2 - 1) {",

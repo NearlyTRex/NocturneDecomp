@@ -7,17 +7,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 264,
-    "complexity_score": 119,
+    "complexity_score": 118,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 17,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 104,
+    "pseudocode_lines": 103,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 368
+    "total_lines": 367
   },
   "cross_references": [],
   "function": {
@@ -34,14 +34,14 @@
   },
   "function_calls": [
     {
-      "addr": "005fdbd0",
-      "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
-    },
-    {
       "addr": "006007a0",
       "is_variadic": false,
       "name": "crt_stdio.c_fputc_FUN_006007a0"
+    },
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00401fd0",
@@ -222,7 +222,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 72,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_ScreenBufferArray + iStack_1c));",

@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_colonel_dfm_00618b8e
-;   CDemonActor_vtable g_CColonelVTable
+;   CHero_full_vtable g_CColonelVTable
 ;
 ; Called Functions:
 ;   core_hero.cpp_CHero_ctor_FUN_004f2340

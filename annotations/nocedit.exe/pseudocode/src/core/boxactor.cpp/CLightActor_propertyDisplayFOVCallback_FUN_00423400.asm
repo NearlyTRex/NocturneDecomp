@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     PUSH 0x6169d8                       ; 00423421 | = "%g mm"
     MOV EBX,dword ptr [ESP + 0x1c]      ; 00423426
     PUSH EBX                            ; 0042342a
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0042342b
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0042342b
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00423430
     POP EBX                             ; 00423433
     RET                                 ; 00423434

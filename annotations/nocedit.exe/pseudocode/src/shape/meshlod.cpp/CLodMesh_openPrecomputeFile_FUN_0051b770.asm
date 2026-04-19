@@ -31,7 +31,7 @@
 ;
 ; Called Functions:
 ;   crt_file.c_makepath_FUN_005febfc
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c_splitpath_FUN_005ff178
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
 ;   shape_meshlod.cpp_CLodMesh_computeMeshCRC32_FUN_0051c6f0
@@ -82,8 +82,8 @@ section .text
     PUSH 0x637d25                       ; 0051b7f8 | = "%08X"
     LEA EAX,[ESP + 0x20c]               ; 0051b7fd
     PUSH EAX                            ; 0051b804
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0051b805
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0051b805
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0051b80a
     PUSH 0x637d2a                       ; 0051b80d | = "lod"
     LEA EAX,[ESP + 0x208]               ; 0051b812

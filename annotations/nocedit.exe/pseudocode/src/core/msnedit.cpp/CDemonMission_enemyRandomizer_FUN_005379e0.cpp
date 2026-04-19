@@ -120,8 +120,7 @@ LAB_00537aa5:
                 pCVar2 = (actor_ptr->base).base.vtable._ub;
                 actor_ptr->speed = fVar4;
                 (*pCVar2->setup)((CDemonActor *)actor_ptr);
-                _sprintf
-                          (local_208 + 4,"%s\n%7.3f",actor_ptr,(double)actor_ptr->speed);
+                _sprintf(local_208 + 4,"%s\n%7.3f",actor_ptr,(double)actor_ptr->speed);
                 string_data = (CEnemy *)(local_208 + 4);
                 shape_edittool_cpp_CStrList_add_FUN_004a2b80(aCStack_cfc,(char *)string_data);
               }
@@ -131,8 +130,7 @@ LAB_00537aa5:
                         (g_CEditorToolsPtr,"No enemies matched criteria, no speeds randomized.");
             }
             else {
-              _sprintf
-                        (local_e0 + 4,"%d enemy speeds randomized",string_data);
+              _sprintf(local_e0 + 4,"%d enemy speeds randomized",string_data);
               shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                         ((CPickList *)&stack0xfffff300,local_e0 + 4,-1,0);
             }

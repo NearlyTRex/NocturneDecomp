@@ -116,8 +116,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004e3b90(CGame *this_ptr)
     pcVar11 = pcVar11 + 2;
   } while (cVar2 != '\0');
   uVar8 = 0;
-  _sprintf
-            (local_14c,"%2d:%2d:%2d.%2d\n\n",iVar8,(int)ROUND(ROUND(fVar2 * fVar4)),iVar7,
+  _sprintf(local_14c,"%2d:%2d:%2d.%2d\n\n",iVar8,(int)ROUND(ROUND(fVar2 * fVar4)),iVar7,
              (int)ROUND(ROUND(fVar3 * fVar5)));
   do {
     uVar7 = 0xffffffff;

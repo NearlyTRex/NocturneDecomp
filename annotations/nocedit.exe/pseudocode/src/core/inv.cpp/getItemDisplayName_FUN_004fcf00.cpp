@@ -27,7 +27,6 @@ char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004fcf00(CDemonActor *actor_p
       str2 = str2 + 1;
     } while (iVar3 < g_ItemDefinitionCount);
   }
-  _sprintf
-            (g_ErrorMessageBuffer_02db8a70,"Add to dict: %s",pCVar1->model_name);
+  _sprintf(g_ErrorMessageBuffer_02db8a70,"Add to dict: %s",pCVar1->model_name);
   return g_ErrorMessageBuffer_02db8a70;
 }

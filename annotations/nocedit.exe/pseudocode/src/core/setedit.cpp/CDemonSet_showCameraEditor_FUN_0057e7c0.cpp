@@ -340,8 +340,7 @@ LAB_0057eb3b:
             } while (0 < iVar11);
           }
           iVar10 = atoi((char *)(abStack_4be + iVar11 + 3));
-          _sprintf
-                    ((char *)(abStack_4be + iVar11 + 3),"%d",iVar10 + 1);
+          _sprintf((char *)(abStack_4be + iVar11 + 3),"%d",iVar10 + 1);
           iVar11 = 0;
           if (0 < this_ptr->camera_count) {
             do {
@@ -360,8 +359,7 @@ LAB_0057eb3b:
                   pbVar17 = pbVar17 + 2;
                 } while (bVar4 != 0);
                 iVar11 = -1;
-                _sprintf((char *)(abStack_4be + 2),"%s1",local_7bc)
-                ;
+                _sprintf((char *)(abStack_4be + 2),"%s1",local_7bc);
               }
               iVar11 = iVar11 + 1;
             } while (iVar11 < this_ptr->camera_count);
@@ -494,8 +492,7 @@ LAB_0057eb3b:
           core_setutil_cpp_C3DSCamera_importS3D_FUN_00585ff0
                     (local_60 + this_ptr->camera_count,p_Var13);
           pCVar15 = local_60;
-          _sprintf
-                    (local_60[this_ptr->camera_count].name,"ncam%d",this_ptr->camera_count)
+          _sprintf(local_60[this_ptr->camera_count].name,"ncam%d",this_ptr->camera_count)
           ;
           core_setedit_cpp_CDemonSet_renderCameraBackdrop_FUN_0057d340
                     (this_ptr,pCVar15 + this_ptr->camera_count);

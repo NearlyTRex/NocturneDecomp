@@ -69,18 +69,14 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
       engine_2d_c_drawText_FUN_00401fd0(pcVar7,0,0x16);
       _sprintf(local_140,"2.  Fog color : %d,%d,%d");
       engine_2d_c_drawText_FUN_00401fd0(local_140,0,0x2c);
-      _sprintf
-                (local_140,"3.  Fog velocity : %f,%f,%f",(double)(pSVar9->scroll).x,
+      _sprintf(local_140,"3.  Fog velocity : %f,%f,%f",(double)(pSVar9->scroll).x,
                  (double)(pSVar9->scroll).y,(double)(pSVar9->scroll).z);
       engine_2d_c_drawText_FUN_00401fd0(local_140,0,0x37);
-      _sprintf
-                (local_140,"4.  Fog taper : %f",(double)pSVar9->height_threshold);
+      _sprintf(local_140,"4.  Fog taper : %f",(double)pSVar9->height_threshold);
       engine_2d_c_drawText_FUN_00401fd0(local_140,0,0x42);
-      _sprintf
-                (local_140,"5.  Fog density : %f",(double)pSVar9->density_multiplier);
+      _sprintf(local_140,"5.  Fog density : %f",(double)pSVar9->density_multiplier);
       engine_2d_c_drawText_FUN_00401fd0(local_140,0,0x4d);
-      _sprintf
-                (local_140,"T.  Temperature (F) : %3.2f",(double)pSVar9->temperature);
+      _sprintf(local_140,"T.  Temperature (F) : %3.2f",(double)pSVar9->temperature);
       engine_2d_c_drawText_FUN_00401fd0(local_140,0,0x58);
       engine_2d_c_drawText_FUN_00401fd0("6.  Reset all cameras to master fog setting",0,99);
       engine_2d_c_drawText_FUN_00401fd0("7.  Precompute fog for selected camera",0,0x6e);
@@ -90,8 +86,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
       if (this_ptr->cameras[this_ptr->selected_camera_index].fog_enabled == 0) {
         core_sound_cpp_CSound_getSoundModeName_FUN_005b3c70
                   (g_CSoundPtr,this_ptr->cameras[this_ptr->selected_camera_index].reverb_preset);
-        _sprintf
-                  (local_140,"R.  Reverb for camera %s : %s",
+        _sprintf(local_140,"R.  Reverb for camera %s : %s",
                    this_ptr->cameras + this_ptr->selected_camera_index);
       }
       else {

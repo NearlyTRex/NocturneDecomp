@@ -59,8 +59,8 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0(CDemo
     engine_2d_c_drawText_FUN_00401fd0(local_154,0,0);
     _sprintf(local_154,"A.  On time : %f",(double)pCVar5->on_time);
     engine_2d_c_drawText_FUN_00401fd0(local_154,0,0x16);
-    _sprintf
-              (local_154,"B.  Total time : %f",(double)pCVar5->cycle_time);
+    _sprintf(local_154,"B.  Total time : %f",(double)pCVar5->cycle_time)
+    ;
     engine_2d_c_drawText_FUN_00401fd0(local_154,0,0x21);
     engine_2d_c_drawText_FUN_00401fd0("C.  Add filter",0,0x2c);
     engine_2d_c_drawText_FUN_00401fd0("D.  Delete filter",0,0x37);
@@ -81,12 +81,10 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0(CDemo
     }
     _sprintf(local_154,pcVar8);
     engine_2d_c_drawText_FUN_00401fd0(local_154,g_WindowWidth / 3,0x16);
-    _sprintf
-              (local_154,"H. Velocity X : %f",(double)(pCVar5->filter_vel).x * 0.00390625)
+    _sprintf(local_154,"H. Velocity X : %f",(double)(pCVar5->filter_vel).x * 0.00390625)
     ;
     engine_2d_c_drawText_FUN_00401fd0(local_154,g_WindowWidth / 3,0x21);
-    _sprintf
-              (local_154,"I. Velocity Y : %f",(double)(pCVar5->filter_vel).y * 0.00390625)
+    _sprintf(local_154,"I. Velocity Y : %f",(double)(pCVar5->filter_vel).y * 0.00390625)
     ;
     engine_2d_c_drawText_FUN_00401fd0(local_154,g_WindowWidth / 3,0x2c);
     _sprintf(local_154,"J. Aspect (Y/X) : %f",(double)pCVar5->aspect);
@@ -102,8 +100,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0(CDemo
       pCVar4 = pCVar5;
       local_20 = pacVar1;
       do {
-        _sprintf
-                  (local_154,"%c.  %s for %1.3f seconds",iVar5,local_20,
+        _sprintf(local_154,"%c.  %s for %1.3f seconds",iVar5,local_20,
                    (double)pCVar4->filter_durations[0]);
         pCVar4 = (C3DSLight *)pCVar4->name;
         iVar7 = iVar7 + 1;

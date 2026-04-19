@@ -13,7 +13,7 @@
 ;   TerminatedCString s_worm_dfm_00630edc
 ;   float FLOAT_00660720 = 20
 ;   float FLOAT_00660724 = 100
-;   CDemonActor_vtable g_CLarvaVTable
+;   CEnemy_full_vtable g_CLarvaVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500

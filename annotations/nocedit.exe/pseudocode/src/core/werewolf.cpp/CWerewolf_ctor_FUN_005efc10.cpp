@@ -15,7 +15,7 @@ CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_ctor_FUN_005efc10(CWerewolf *thi
   CWerewolf *pCVar4;
   
   pCVar4 = (CWerewolf *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
-  (pCVar4->base).base.base.vtable._ub = &g_CWerewolfVTable;
+  (pCVar4->base).base.base.vtable._ub = &g_CWerewolfVTable._ub;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(pCVar4->base).base.model,"wolfbrn.dfm");
   (pCVar4->base).base.collision_cylinder_height = 1.0;

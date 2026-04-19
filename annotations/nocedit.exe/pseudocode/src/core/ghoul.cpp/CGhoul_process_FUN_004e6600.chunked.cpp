@@ -949,7 +949,7 @@ static int CGhoul_process_check_iVar9_2(CGhoul_process_Ctx *ctx) {
     return 0;
 }
 
-// Chunk: branch_0 (lines 882-909 of original)
+// Chunk: branch_0 (lines 881-908 of original)
 static int CGhoul_process_branch_0(CGhoul_process_Ctx *ctx) {
     CGhoul *&this_ptr = ctx->this_ptr;
     int &iVar9 = ctx->iVar9;
@@ -1379,8 +1379,7 @@ LAB_004e6754:
      (float)0.01 < SQRT(fVar2 * fVar2 + fVar1 * fVar1 + fVar23 * fVar23))) {
     iVar9 = core_sound_cpp_CSound_isSoundPlaying_FUN_005b3b80(g_CSoundPtr,this_ptr->sfx_handle);
     if (iVar9 == 0) {
-      _sprintf
-                (&stack0xfffffc88,"ghoul-walk-?.wav *%f",(double)(this_ptr->base).speed);
+      _sprintf(&stack0xfffffc88,"ghoul-walk-?.wav *%f",(double)(this_ptr->base).speed);
       uVar15 = (*((this_ptr->base).base.base.vtable._ub)->playAmbientSound)
                          ((CDemonActor *)this_ptr,&stack0xfffffc88);
       this_ptr->sfx_handle = uVar15;

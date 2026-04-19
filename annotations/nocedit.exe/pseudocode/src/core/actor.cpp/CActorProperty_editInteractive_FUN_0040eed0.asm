@@ -465,8 +465,8 @@ section .text
     PUSH 0x614570                       ; 0040f28d | = "Select model for actor %s.  Current m..."
     LEA EAX,[ESP + 0x3558]              ; 0040f292
     PUSH EAX                            ; 0040f299
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0040f29a
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0040f29a
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0040f29f
     MOV ESI,dword ptr [EBX + 0x68]      ; 0040f2a2
     LEA EDI,[ESP + 0x2f98]              ; 0040f2a5
@@ -641,8 +641,8 @@ section .text
     PUSH 0x6145b5                       ; 0040f447 | = "Select model for actor %s.  Current m..."
     LEA EAX,[ESP + 0x3558]              ; 0040f44c
     PUSH EAX                            ; 0040f453
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0040f454
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0040f454
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0040f459
     MOV ESI,dword ptr [EBX + 0x68]      ; 0040f45c
     LEA EDI,[ESP + 0x32a4]              ; 0040f45f
@@ -1283,8 +1283,8 @@ section .text
     PUSH 0x614601                       ; 0040fab1 | = "%s\t%s"
     LEA EAX,[ESP + 0x2e78]              ; 0040fab6
     PUSH EAX                            ; 0040fabd
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0040fabe
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0040fabe
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0040fac3
     LEA EAX,[ESP + 0x2e6c]              ; 0040fac6
     PUSH EAX                            ; 0040facd
@@ -1399,8 +1399,8 @@ section .text
     PUSH 0x61464b                       ; 0040fbf1 | = "Add %s for actor %s."
     LEA EAX,[ESP + 0x3558]              ; 0040fbf6
     PUSH EAX                            ; 0040fbfd
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0040fbfe
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0040fbfe
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0040fc03
     PUSH 0x0                            ; 0040fc06
         ;   Label: LAB_0040fc06
@@ -1495,8 +1495,8 @@ section .text
     PUSH 0x614614                       ; 0040fcf5 | = "Select %s for actor %s.  Current is %s."
     LEA EAX,[ESP + 0x355c]              ; 0040fcfa
     PUSH EAX                            ; 0040fd01
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0040fd02
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0040fd02
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x14                        ; 0040fd07
     PUSH 0x61463c                       ; 0040fd0a | = "(remove cloth)"
     LEA EAX,[ESP + 0xea4]               ; 0040fd0f
@@ -1576,8 +1576,8 @@ section .text
     PUSH 0x614673                       ; 0040fdbe | = "%s => %s"
     LEA EAX,[ESP + 0x33b4]              ; 0040fdc3
     PUSH EAX                            ; 0040fdca
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0040fdcb
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0040fdcb
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0040fdd0
     PUSH 0x1                            ; 0040fdd3
         ;   Label: LAB_0040fdd3
@@ -2031,8 +2031,8 @@ section .text
     PUSH 0x6146bd                       ; 004101e2 | = "%s\t%s"
     LEA EAX,[ESP + 0x3490]              ; 004101e7
     PUSH EAX                            ; 004101ee
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004101ef
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004101ef
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004101f4
     LEA EAX,[ESP + 0x3484]              ; 004101f7
     PUSH EAX                            ; 004101fe
@@ -2149,8 +2149,8 @@ section .text
     PUSH 0x614560                       ; 00410310 | = "Enter %s for %s"
     LEA EAX,[ESP + 0x3558]              ; 00410315
     PUSH EAX                            ; 0041031c
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0041031d
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 0041031d
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     MOV EAX,dword ptr [EBX]             ; 00410322
     ADD ESP,0x10                        ; 00410324
     CMP EAX,0x12                        ; 00410327

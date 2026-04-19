@@ -59,8 +59,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_pt
           if (pCVar3->players[0].local_sync_stage < sync_stage) {
             local_1c = 0.0;
             engine_2d_c_drawText_FUN_00401fd0(this_ptr->players[iVar1].name,0,local_18);
-            _sprintf
-                      (local_194,"%d",pCVar3->players[0].local_sync_stage);
+            _sprintf(local_194,"%d",pCVar3->players[0].local_sync_stage);
             engine_2d_c_drawText_FUN_00401fd0(local_194,200,local_18);
             local_18 = local_18 + 0xb;
           }

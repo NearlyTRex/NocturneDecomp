@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mimic_cpp_0063855b
-;   CDemonActor_vtable g_CMimicVTable
+;   CEnemy_full_vtable g_CMimicVTable
 ;   WatcomTypeInfo g_CMimicTypeInfo
 ;   char* g_CurrentDebugFilename = 0067d200
 ;   int g_CurrentDebugLine

@@ -115,7 +115,7 @@ void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKey
                 (model_ptr,0,(CKeyFramedModelInstance *)0x0,-1);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
     }
-    crt_stdio_c__sprintf_FUN_005fdbd0(
+    _sprintf(
               text_buffer,
               (char *)"t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH: %7.4f %7.4f %7.4f",
               (double)local_18,

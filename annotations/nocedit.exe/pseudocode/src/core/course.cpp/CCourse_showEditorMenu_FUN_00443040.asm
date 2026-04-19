@@ -57,7 +57,7 @@
 ;   core_xform.cpp_multiplyQuaternion_FUN_005f7640
 ;   core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0
 ;   crt_ctype.c_toupper_FUN_005ff9e0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c_splitpath_FUN_005ff178
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
@@ -145,8 +145,8 @@ section .text
     PUSH 0x61929e                       ; 00443116 | = "L. Loop flag is now %s"
     LEA EAX,[ESP + 0x418]               ; 0044311b
     PUSH EAX                            ; 00443122
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00443123
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00443123
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00443128
     PUSH 0xa5                           ; 0044312b
     PUSH 0x0                            ; 00443130

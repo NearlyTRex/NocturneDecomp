@@ -30,7 +30,7 @@
 ;
 ; Called Functions:
 ;   crt_heap.c__heapwalk_FUN_006012c0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;
 ; *****************************************************************************
 
@@ -124,8 +124,8 @@ section .text
     PUSH 0x6235d2                       ; 004a2638 | = "Blocks: %d Total: %.1fk Max: %.1fk"
     MOV ECX,dword ptr [EBP + 0x18]      ; 004a263d
     PUSH ECX                            ; 004a2640
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004a2641
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004a2641
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x1c                        ; 004a2646
     MOV ESP,EBP                         ; 004a2649
     POP EBP                             ; 004a264b

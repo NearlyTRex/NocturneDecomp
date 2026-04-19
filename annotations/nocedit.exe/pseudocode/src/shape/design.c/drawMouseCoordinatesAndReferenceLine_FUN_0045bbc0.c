@@ -39,8 +39,7 @@ void __cdecl shape_design_c_drawMouseCoordinatesAndReferenceLine_FUN_0045bbc0(vo
   iVar7 = g_StoredWorldYCoordinate;
   g_ActiveRenderColor = 0x1f;
   engine_2d_c_drawLine_FUN_004011b0(0,g_MouseReferenceY,6,g_MouseReferenceY);
-  _sprintf
-            (local_70,"%f,%f,%f",(double)(fVar5 * ((fVar4 * fVar3) / fVar2) * fVar1),
+  _sprintf(local_70,"%f,%f,%f",(double)(fVar5 * ((fVar4 * fVar3) / fVar2) * fVar1),
              (double)fVar6,(double)(float)iVar7);
   engine_2d_c_drawText_FUN_00401fd0(local_70,g_WindowWidth / 2 + 2,g_WindowHeight + -0xb);
   return;

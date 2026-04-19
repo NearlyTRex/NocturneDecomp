@@ -23,7 +23,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70
 ;   sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550
 ;   sound_sndmain.cpp_logSoundError_FUN_005adba0
@@ -112,8 +112,8 @@ section .text
     PUSH 0x651a6c                       ; 005afe3f | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0x14]                ; 005afe44
     PUSH EAX                            ; 005afe48
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 005afe49
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 005afe49
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005afe4e
     LEA EAX,[ESP + 0x8]                 ; 005afe51
     PUSH EAX                            ; 005afe55

@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_drummer_dfm_00654bed
-;   CDemonActor_vtable g_CDrummerVTable
+;   CCharacter_full_vtable g_CDrummerVTable
 ;
 ; Called Functions:
 ;   core_npc.cpp_CNPC_ctor_FUN_005447e0

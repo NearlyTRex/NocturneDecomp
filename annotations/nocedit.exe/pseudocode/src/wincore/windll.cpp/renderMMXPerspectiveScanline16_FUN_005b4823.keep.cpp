@@ -221,7 +221,12 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
         uint out_pix = lit_pix;
         // Alpha blend against solid color (only if flag 0x8 set)
         if ((g_RenderStateFlags.dword & RENDER_SOLID_ALPHA_BLEND) != 0) {
+          // See 32-bit variant for the rationale: original MMX SAR + indexed
+          // MOVQ reads OOB on underflow, silently harmless on Windows but
+          // fatal under ASan/UBSan. Clamp to [0, 255] to match the intended
+          // saturated-alpha behavior.
           int alpha_idx = cur_alpha >> 8;
+          if (alpha_idx < 0) alpha_idx = 0; else if (alpha_idx > 0xff) alpha_idx = 0xff;
           ulonglong alpha_q     = *(ulonglong *)&g_AlphaTable[alpha_idx];
           ulonglong inv_alpha_q = alpha_q ^ *(ulonglong *)&g_AlphaTable[0xff];
           out_pix = 0;
@@ -330,6 +335,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
 
             // Combined alpha = (opacity * cur_alpha) >> 16
             int combined_idx = ((int)opacity * cur_alpha) >> 16;
+            if (combined_idx < 0) combined_idx = 0; else if (combined_idx > 0xff) combined_idx = 0xff;
             ulonglong alpha_q     = *(ulonglong *)&g_AlphaTable[combined_idx];
             ulonglong inv_alpha_q = alpha_q ^ *(ulonglong *)&g_AlphaTable[0xff];
 
@@ -423,6 +429,7 @@ void __edi_esi_ebx wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b482
 
         // Alpha blend (always)
         int alpha_idx = cur_alpha >> 8;
+        if (alpha_idx < 0) alpha_idx = 0; else if (alpha_idx > 0xff) alpha_idx = 0xff;
         ulonglong alpha_q     = *(ulonglong *)&g_AlphaTable[alpha_idx];
         ulonglong inv_alpha_q = alpha_q ^ *(ulonglong *)&g_AlphaTable[0xff];
 

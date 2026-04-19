@@ -17,7 +17,7 @@
 ;   undefined4 s_e_00614dc9
 ;   float FLOAT_00659d28 = 50
 ;   float FLOAT_00659d2c = 100
-;   CDemonActor_vtable g_CArmourVTable
+;   CEnemy_full_vtable g_CArmourVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a9500

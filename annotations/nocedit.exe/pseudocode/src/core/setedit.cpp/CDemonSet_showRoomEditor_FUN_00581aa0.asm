@@ -74,7 +74,7 @@
 ;   core_setedit.cpp_renderColoredBox_FUN_005817d0
 ;   core_slew.cpp_CSlew_init_FUN_005a2060
 ;   core_slew.cpp_CSlew_processInput_FUN_005a20b0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c_memmove_FUN_005fe5e0
 ;   ... and 21 more
 ;
@@ -380,8 +380,8 @@ section .text
     PUSH 0x648b54                       ; 00581de7 | = "Room size: %d"
     LEA EAX,[EBP + 0xfffffefa]          ; 00581dec
     PUSH EAX                            ; 00581df2
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00581df3
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00581df3
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00581df8
     PUSH 0x0                            ; 00581dfb
         ;   Label: LAB_00581dfb

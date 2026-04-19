@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 103,
-    "complexity_score": 60,
+    "complexity_score": 59,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 8,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 60,
+    "pseudocode_lines": 59,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 163
+    "total_lines": 162
   },
   "cross_references": [
     {
@@ -46,7 +46,7 @@
     {
       "addr": "005fdbd0",
       "is_variadic": true,
-      "name": "crt_stdio.c__sprintf_FUN_005fdbd0"
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "004a2b80",
@@ -158,7 +158,7 @@
   "resolved_suspects": [
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 44,
+      "line": 43,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "mild",
@@ -167,7 +167,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 35,
+      "line": 34,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "resolution_source": "keep",
       "severity": "mild",
@@ -176,7 +176,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 35,
+      "line": 34,
       "match": "strlen + <p> + -1 + strcpy",
       "resolution_source": "keep",
       "severity": "mild",

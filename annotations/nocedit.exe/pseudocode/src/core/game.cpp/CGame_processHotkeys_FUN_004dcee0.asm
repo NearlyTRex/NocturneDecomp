@@ -40,7 +40,7 @@
 ;   core_sound.cpp_CSound_init_FUN_005b2dd0
 ;   core_sound.cpp_CSound_shutdown_FUN_005b2f70
 ;   crt_env.c_getenv_FUN_006013f0
-;   crt_stdio.c__sprintf_FUN_005fdbd0
+;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
 ;   ... and 4 more
@@ -369,8 +369,8 @@ section .text
     LEA EAX,[EBP + 0xfffffef8]          ; 004dd21f
     NOP                                 ; 004dd225
     PUSH EAX                            ; 004dd226
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004dd227
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004dd227
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004dd22c
     LEA EAX,[EBP + 0xfffffef8]          ; 004dd22f
     NOP                                 ; 004dd235
@@ -412,8 +412,8 @@ section .text
     PUSH 0x62b973                       ; 004dd2a5 | = "Gamma : %f"
     LEA EAX,[ESP + 0x10]                ; 004dd2aa
     PUSH EAX                            ; 004dd2ae
-    CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004dd2af
-        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
+    CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 004dd2af
+        ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004dd2b4
     LEA EAX,[ESP + 0x4]                 ; 004dd2b7
     PUSH 0x3f800000                     ; 004dd2bb
