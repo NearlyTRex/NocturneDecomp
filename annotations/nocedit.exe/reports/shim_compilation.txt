@@ -7,35 +7,6 @@ Shims directory: annotations/nocedit.exe/pseudocode/shims
 Include directory: annotations/nocedit.exe/pseudocode/include
 SDL2 flags: -I/usr/include/SDL2 -D_REENTRANT -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/x86_64-linux-gnu
 
-Summary: 13 passed, 1 failed out of 14 total (92.9% success)
+Summary: 14 passed, 0 failed out of 14 total (100.0% success)
 
---------------------------------------------------------------------------------
-FAILED FILES (1)
---------------------------------------------------------------------------------
-
-FILE: crt_stubs.cpp
-----------------------------------------
-In file included from annotations/nocedit.exe/pseudocode/shims/crt_stubs.cpp:27:
-In file included from annotations/nocedit.exe/pseudocode/include/nocturne.h:10:
-In file included from annotations/nocedit.exe/pseudocode/include/system.h:22:
-In file included from annotations/nocedit.exe/pseudocode/include/system/misc.h:5:
-In file included from annotations/nocedit.exe/pseudocode/include/types/classes/CDemonActor.h:8:
-annotations/nocedit.exe/pseudocode/include/system/stdint.h:12:13: error: typedef redefinition with different types ('int' vs '__intptr_t' (aka 'long'))
-   12 | typedef int intptr_t;
-      |             ^
-/usr/include/unistd.h:267:20: note: previous definition is here
-  267 | typedef __intptr_t intptr_t;
-      |                    ^
-In file included from annotations/nocedit.exe/pseudocode/shims/crt_stubs.cpp:27:
-In file included from annotations/nocedit.exe/pseudocode/include/nocturne.h:10:
-In file included from annotations/nocedit.exe/pseudocode/include/system.h:22:
-In file included from annotations/nocedit.exe/pseudocode/include/system/misc.h:5:
-In file included from annotations/nocedit.exe/pseudocode/include/types/classes/CDemonActor.h:8:
-annotations/nocedit.exe/pseudocode/include/system/stdint.h:28:14: error: typedef redefinition with different types ('uint' (aka 'unsigned int') vs 'unsigned long')
-   28 | typedef uint uintptr_t;
-      |              ^
-/usr/include/stdint.h:79:27: note: previous definition is here
-   79 | typedef unsigned long int       uintptr_t;
-      |                                 ^
-2 errors generated.
-
+All shim files compiled successfully.

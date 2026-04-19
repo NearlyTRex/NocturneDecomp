@@ -4,18 +4,18 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    3267 ( 56.0%)
-  unnamed_local                    547 (  9.4%)
-  unrolled_strcpy                  468 (  8.0%)
-  warning_inlined_function         259 (  4.4%)
+  pointer_cast                    3266 ( 56.6%)
+  unnamed_local                    550 (  9.5%)
+  unrolled_strcpy                  467 (  8.1%)
+  warning_inlined_function         259 (  4.5%)
   raw_address_constant             225 (  3.9%)
-  unrolled_strlen                  203 (  3.5%)
+  unrolled_strlen                  164 (  2.8%)
   warning_type_propagation         133 (  2.3%)
-  unrolled_memcpy                  116 (  2.0%)
+  unrolled_memcpy                  108 (  1.9%)
   stack_alignment_array             92 (  1.6%)
-  unrolled_strchr                   87 (  1.5%)
   warning_unreachable               76 (  1.3%)
   unnamed_param                     73 (  1.3%)
+  unrolled_strchr                   69 (  1.2%)
   stack_param                       36 (  0.6%)
   mmx_assembly                      34 (  0.6%)
   unrolled_strcat                   31 (  0.5%)
@@ -41,7 +41,7 @@ SUSPECT TYPE COUNTS
   warning_indirect_jump              1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (3267 occurrences)
+TYPE: pointer_cast (3266 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -54,7 +54,7 @@ Unique patterns:
    108x  (SRenderVertex *)((int)
     75x  (ushort *)((int)
     50x  (short *)((int)
-    45x  (char *)((int)
+    44x  (char *)((int)
     37x  (CMatrix3x4f *)((int)
     34x  (SShapeEditorPolygon *)((int)
     21x  (SMRGLHeaderExtended *)((int)
@@ -77,7 +77,7 @@ Example functions:
     if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar9) <...
 
 ====================================================================================================
-TYPE: unnamed_local (547 occurrences)
+TYPE: unnamed_local (550 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -111,11 +111,11 @@ Example functions:
     SSoftwareEdge *local_14;...
 
 ====================================================================================================
-TYPE: unrolled_strcpy (468 occurrences)
+TYPE: unrolled_strcpy (467 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   468x  do {
+   467x  do {
 
 Example functions:
   cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
@@ -265,30 +265,22 @@ Example functions:
     local_20 = *(int *)(local_34 * 0x94 + 0x67e6cc + iVar12 * 4);...
 
 ====================================================================================================
-TYPE: unrolled_strlen (203 occurrences)
+TYPE: unrolled_strlen (164 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   203x  do { if (v==0) break; v=v-1; ... }
+   164x  do { if (v==0) break; v=v-1; ... }
 
 Example functions:
   engine_dosio.c_ensureTrailingSlash_FUN_00481f80
     do {...
   engine_pod.cpp_findFilesByExtension_FUN_00550ce0
     do {...
-  engine_winfont.cpp_CWinFont_getStringWidth_FUN_005f2aa0
-    do {...
   engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440
-    do {...
-  engine_winfont.cpp_CWinFont_getStringHeight_FUN_005f2b00
-    do {...
-  engine_console.cpp_CConsole_printf_FUN_00441890
     do {...
   engine_ini.cpp_CIni_getProfileString_FUN_004fb250
     do {...
   engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
-    do {...
-  engine_fileio.cpp_buildFilePath_FUN_004b1de0
     do {...
   engine_fileio.cpp_CCheckOutList_load_FUN_004b2890
     do {...
@@ -302,21 +294,9 @@ Example functions:
     do {...
   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
     do {...
-  engine_fileio.cpp_buildHistoryFilePath_FUN_004b1f10
-    do {...
-  engine_fileio.cpp_buildCheckoutFilePath_FUN_004b1e60
-    do {...
-  engine_fileio.cpp_CFileManager_load_FUN_004b6c00
-    do {...
   engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920
     do {...
-  sound_sndmain.cpp_getSfxSample_FUN_005a4c80
-    do {...
   sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20
-    do {...
-  sound_sndmain.cpp_trimLineAndRemoveComments_FUN_005a4530
-    do {...
-  sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0
     do {...
   sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0
     do {...
@@ -325,6 +305,14 @@ Example functions:
   core_inv.cpp_CInventory_renderAllItems_FUN_00500690
     do {...
   core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20
+    do {...
+  core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940
+    do {...
+  core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0
+    do {...
+  core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0
+    do {...
+  core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730
     do {...
 
 ====================================================================================================
@@ -397,11 +385,11 @@ Example functions:
     /* WARNING: Type propagation algorithm not settling */...
 
 ====================================================================================================
-TYPE: unrolled_memcpy (116 occurrences)
+TYPE: unrolled_memcpy (108 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   116x  for (...; != 0; ... + -1)
+   108x  for (...; != 0; ... + -1)
 
 Example functions:
   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
@@ -412,8 +400,6 @@ Example functions:
     for (iVar3 = 0xc0; iVar3 != 0; iVar3 = iVar3 + -1) {...
   cockpit_ckptutil.c_rotateBitmap_FUN_00434870
     for (uVar3 = (uint)bytes_per_pixel >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {...
-  engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590
-    for (iVar1 = 0x4e; iVar1 != 0; iVar1 = iVar1 + -1) {...
   engine_palette.cpp_CPaletteManager_createOutputPalette_FUN_00545180
     for (iVar4 = 0xc0; iVar4 != 0; iVar4 = iVar4 + -1) {...
   engine_font.cpp_CBitFont_wrapText_FUN_004d0010
@@ -438,6 +424,8 @@ Example functions:
     for (uVar3 = (uVar5 & 0x7fffffff) >> 1; uVar3 != 0; uVar3 = uVar3 - 1) {...
   sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730
     for (uVar8 = local_14 * iVar2 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {...
+  core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044f310
+    for (iVar5 = 0x4000; iVar5 != 0; iVar5 = iVar5 + -1) {...
 
 ====================================================================================================
 TYPE: stack_alignment_array (92 occurrences)
@@ -528,53 +516,6 @@ Example functions:
     float afStackY_185c [1519];...
 
 ====================================================================================================
-TYPE: unrolled_strchr (87 occurrences)
-====================================================================================================
-
-Unique patterns:
-    87x  do { snap; if (*p=='X') goto; if (*p=='\0') break; ... }
-
-Example functions:
-  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_0054c500
-    do {...
-  cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
-    do {...
-  engine_pcx.c_saveScreenRaw32_FUN_00548f00
-    do {...
-  engine_pcx.c_saveScreenRaw16_FUN_00548d20
-    do {...
-  engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00
-    do {...
-  engine_2d.c_loadOrBuildColorMap_FUN_00402930
-    do {...
-  engine_palette.cpp_CPaletteManager_createOutputPalette_FUN_00545180
-    do {...
-  engine_font.cpp_CBitFont_getTextHeight_FUN_004cff40
-    do {...
-  engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80
-    do {...
-  engine_ini.cpp_CIni_getProfileString_FUN_004fb250
-    do {...
-  engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004fb470
-    do {...
-  engine_model.c_loadModelFile_FUN_00527ec0
-    do {...
-  engine_fileio.cpp_CFileManager_extractTexture_FUN_004b53e0
-    do {...
-  engine_fileio.cpp_CFileManager_registerFiles_FUN_004b5640
-    do {...
-  sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20
-    do {...
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0
-    do {...
-  core_dimage.cpp_CDemonImage_load_FUN_00471ad0
-    do {...
-  core_setedit.cpp_CDemonSet_save_FUN_0057a2a0
-    do {...
-  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80
-    do {...
-
-====================================================================================================
 TYPE: warning_unreachable (76 occurrences)
 ====================================================================================================
 
@@ -643,6 +584,49 @@ Example functions:
     (pCVar1->param1).v_int = 0;...
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
     (g_CEditorToolsPtr,local_2a0,(int *)&local_2c,(this_ptr->param1).v_int,...
+
+====================================================================================================
+TYPE: unrolled_strchr (69 occurrences)
+====================================================================================================
+
+Unique patterns:
+    69x  do { snap; if (*p=='X') goto; if (*p=='\0') break; ... }
+
+Example functions:
+  cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
+    do {...
+  engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00
+    do {...
+  engine_palette.cpp_CPaletteManager_createOutputPalette_FUN_00545180
+    do {...
+  engine_ini.cpp_CIni_getProfileString_FUN_004fb250
+    do {...
+  engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004fb470
+    do {...
+  engine_fileio.cpp_CFileManager_registerFiles_FUN_004b5640
+    do {...
+  sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20
+    do {...
+  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0
+    do {...
+  core_dimage.cpp_CDemonImage_load_FUN_00471ad0
+    do {...
+  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80
+    do {...
+  core_setedit.cpp_loadGroundTypes_FUN_00578420
+    do {...
+  core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70
+    do {...
+  core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660
+    do {...
+  core_script.cpp_CScript_extractCrossReferences_FUN_005671a0
+    do {...
+  core_script.cpp_parseConditionExpression_FUN_00561a30
+    do {...
+  core_script.cpp_CScript_step_FUN_0055a810
+    do {...
+  core_glass.cpp_CGlass_addFilesToExtract_FUN_004eb690
+    do {...
 
 ====================================================================================================
 TYPE: stack_param (36 occurrences)

@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        104 ( 1.6%)
+  Functions with type issues:        102 ( 1.6%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          1
-    Undefined types in variables:      98
+    Undefined types in variables:      96
     Unresolved stack params:           5
 
-  Excluded (.keep / MMX / by-value):   122 functions
+  Excluded (.keep / MMX / by-value):   124 functions
     Wrong calling convention:          1
-    Undefined types in variables:      119
+    Undefined types in variables:      121
     Unresolved stack params:           3
 
 ====================================================================================================
@@ -113,7 +113,7 @@ Unresolved stack parameters (missing from signature) (5)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (98)
+Undefined types in variables (96)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -546,11 +546,6 @@ Undefined types in variables (98)
     Locals:  local_20c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CPodFile_getAuditRecord
-    Address: 0x00550590  File: engine/pod.cpp
-    Locals:  local_144 (undefined4[78])
-    Suggested: Resolve undefined types to concrete types
-
   CPodFile_getDependencyRecord
     Address: 0x005506c0  File: engine/pod.cpp
     Locals:  local_114 (undefined4[66])
@@ -569,11 +564,6 @@ Undefined types in variables (98)
   clampedArccos
     Address: 0x00461c50  File: shape/design.c
     Locals:  local_18 (undefined8)
-    Suggested: Resolve undefined types to concrete types
-
-  CStrList_insertSortedFileRecord
-    Address: 0x004a3360  File: shape/edittool.cpp
-    Locals:  local_3fb (undefined1[255])
     Suggested: Resolve undefined types to concrete types
 
   CDirectSoundDevice_commitDeferredSettings
@@ -671,7 +661,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (119)
+Undefined types - .keep overrides (121)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -1209,6 +1199,11 @@ Undefined types - .keep overrides (119)
     Locals:  auStack_30 (undefined1[8])
     Suggested: Resolve undefined types to concrete types
 
+  CPodFile_getAuditRecord
+    Address: 0x00550590  File: engine/pod.cpp
+    Locals:  local_144 (undefined4[78])
+    Suggested: Resolve undefined types to concrete types
+
   parseSpatialTreeFromFile
     Address: 0x004580a0  File: shape/design.c
     Locals:  local_2c (undefined1[4])
@@ -1217,6 +1212,11 @@ Undefined types - .keep overrides (119)
   CEditorTools_createModalWindow
     Address: 0x004a0970  File: shape/edittool.cpp
     Locals:  local_14 (undefined4 *)
+    Suggested: Resolve undefined types to concrete types
+
+  CStrList_insertSortedFileRecord
+    Address: 0x004a3360  File: shape/edittool.cpp
+    Locals:  local_3fb (undefined1[255])
     Suggested: Resolve undefined types to concrete types
 
   CStrList_populateFromFileSearch

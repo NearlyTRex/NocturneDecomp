@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 118
-  Total diagnostics: 366
+  Functions with findings: 115
+  Total diagnostics: 364
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 118, raw .cpp files: 0
+  .keep.cpp files: 115, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -395,6 +395,14 @@ core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210  [.keep] [Cppcheck (quic
   Line  276: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
+core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0  [.keep] [Cppcheck (quick)]
+  File: core/fire.cpp  (3 diagnostics)
+
+  Line   46: [uninitvar] Uninitialized variable: fStack_24
+  Line   46: [uninitvar] Uninitialized variable: local_2c
+  Line   46: [uninitvar] Uninitialized variable: fStack_28
+
+----------------------------------------------------------------------------------------------------
 core_menu.cpp_configureCustomKeyBindings_FUN_005138e0  [.keep] [Cppcheck (quick)]
   File: core/menu.cpp  (3 diagnostics)
 
@@ -575,13 +583,6 @@ core_mimic.cpp_CMimic_setupCloth_FUN_00520500  [.keep] [Cppcheck (quick)]
 
   Line   46: [selfAssignment] Redundant assignment of 'piVar4' to itself.
   Line   47: [selfAssignment] Redundant assignment of 'pSVar5' to itself.
-
-----------------------------------------------------------------------------------------------------
-core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0  [.keep] [Cppcheck (quick)]
-  File: core/mission.cpp  (2 diagnostics)
-
-  Line  104: [selfAssignment] Redundant assignment of 'pcVar10' to itself.
-  Line  161: [selfAssignment] Redundant assignment of 'puVar8' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_script.cpp_CScript_loadScript_FUN_00559f80  [.keep] [Cppcheck (quick)]
@@ -819,12 +820,6 @@ core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660  [.keep] [Cppcheck (q
   Line  332: [nullPointer] Possible null pointer dereference: p_Stack_20
 
 ----------------------------------------------------------------------------------------------------
-core_setedit.cpp_CDemonSet_save_FUN_0057a2a0  [.keep] [Cppcheck (quick)]
-  File: core/setedit.cpp  (1 diagnostics)
-
-  Line  166: [nullPointer] Possible null pointer dereference: pcVar4
-
-----------------------------------------------------------------------------------------------------
 core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0  [.keep] [Cppcheck (quick)]
   File: core/setedit.cpp  (1 diagnostics)
 
@@ -841,12 +836,6 @@ core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240  [.keep] [Cpp
   File: core/skeledit.cpp  (1 diagnostics)
 
   Line   58: [identicalInnerCondition] Identical inner 'if' condition is always true.
-
-----------------------------------------------------------------------------------------------------
-core_skeledit.cpp_viewModel_FUN_00598fc0  [.keep] [Cppcheck (quick)]
-  File: core/skeledit.cpp  (1 diagnostics)
-
-  Line  130: [stringLiteralWrite] Modifying string literal "meshlod" directly or indirectly is undefined behaviour.
 
 ----------------------------------------------------------------------------------------------------
 core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970  [.keep] [Cppcheck (quick)]
@@ -915,12 +904,6 @@ shape_design.c_generateOctant_FUN_00469420  [.keep] [Cppcheck (quick)]
   Line   83: [selfAssignment] Redundant assignment of 'pcVar4' to itself.
 
 ----------------------------------------------------------------------------------------------------
-shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004a35b0  [.keep] [Cppcheck (quick)]
-  File: shape/edittool.cpp  (1 diagnostics)
-
-  Line   33: [invalidFunctionArgStr] Invalid strlen() argument nr 1. A nul-terminated string is required.
-
-----------------------------------------------------------------------------------------------------
 shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910  [.keep] [Cppcheck (quick)]
   File: shape/meshlod.cpp  (1 diagnostics)
 
@@ -951,12 +934,6 @@ sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120  [.keep] [Cppcheck (
   Line   59: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
-sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0  [.keep] [Cppcheck (quick)]
-  File: sound/sndmain.cpp  (1 diagnostics)
-
-  Line  109: [nullPointer] Possible null pointer dereference: pcVar11
-
-----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730  [.keep] [Cppcheck (quick)]
   File: sound/sndmain.cpp  (1 diagnostics)
 
@@ -967,6 +944,12 @@ sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0  [.keep] [Cppcheck (quick)]
   File: sound/sndmain.cpp  (1 diagnostics)
 
   Line   37: [selfAssignment] Redundant assignment of 'pcVar5' to itself.
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_getSfxSample_FUN_005a4c80  [.keep] [Cppcheck (quick)]
+  File: sound/sndmain.cpp  (1 diagnostics)
+
+  Line   73: [invalidFunctionArgStr] Invalid strlen() argument nr 1. A nul-terminated string is required.
 
 ----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_testSoundFile_FUN_005ad3b0  [.keep] [Cppcheck (quick)]
