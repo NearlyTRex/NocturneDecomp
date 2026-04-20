@@ -37,7 +37,7 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr,float d
   byte bVar12;
   CMatrix3x4f local_1a8;
   CMatrix3x4f local_178;
-  CMatrix3x3f local_148;
+  CMatrix3x4f local_148;
   CMatrix3x4f local_118;
   float local_e8;
   float local_e4;
@@ -263,7 +263,7 @@ LAB_005df3d0:
             (&local_118,&g_ZeroVector.f,&local_34);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_118,&local_1a8,&local_178);
   pCVar10 = &local_178;
-  pCVar11 = &local_148;
+  pCVar11 = (CMatrix3x3f *)&local_148;
   for (iVar19 = 0xc; iVar19 != 0; iVar19 = iVar19 + -1) {
     pCVar11 = (CMatrix3x3f *)((int)pCVar11 + (uint)bVar12 * -8 + 4);
     pCVar10 = (CMatrix3x4f *)((int)pCVar10 + (uint)bVar12 * -8 + 4);

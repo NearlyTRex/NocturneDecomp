@@ -44,7 +44,7 @@ int __cdecl core_werewolf_cpp_CWerewolf_renderTransparent_FUN_005f1820(CWerewolf
       local_50.m[2].x = *(float *)((int)pCVar1->m + 0x24);
       local_50.m[2].y = *(float *)((int)pCVar1->m + 0x28);
       local_50.m[2].z = *(float *)((int)pCVar1->m + 0x2c);
-      core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_50,&local_14);
+      core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_50,&local_14);
       core_xform_cpp_getTranslation_FUN_005f6110(&local_50,&local_20);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr2,&g_ZeroVector.i,(CVector3i *)&local_20);

@@ -65,7 +65,7 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_005205f0(CMimic *this_ptr)
                      (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                      g_MimicIndices[0],(CMatrix3x4f *)&stack0xffffff0c);
           core_xform_cpp_getTranslation_FUN_005f6110(&local_94,&local_4c);
-          core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_94,&local_34);
+          core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_94,&local_34);
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                     (g_CDemonRendererPtr2,(CVector3i *)&local_34,(CVector3i *)&local_4c);
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20

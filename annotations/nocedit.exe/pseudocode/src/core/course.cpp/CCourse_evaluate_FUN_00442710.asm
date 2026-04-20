@@ -9,7 +9,7 @@
 ; CVector3f *      Stack[0xc]:4   out_pos
 ; CVector3f *      Stack[0x10]:4   out_euler
 ; Local Variables:
-; CMatrix3x3f      Stack[-0x88]:36  local_88
+; CMatrix3x4f      Stack[-0x88]:48  local_88
 ; CMatrix3x4f      Stack[-0x58]:48  local_58
 ; CQuaternion4f    Stack[-0x28]:16  local_28
 ; CVector3f        Stack[-0x18]:12  local_18
@@ -61,7 +61,7 @@ section .text
     JMP 0x03fc45a3                      ; 00442758
         ;   XREF to: 03fc45a3 (UNCONDITIONAL_JUMP)  ; LAB_03fc45a3
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005f5690 ; 0044276b
-        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f * matrix_in, CVector3f * euler_out)
+        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x4f * matrix_in, CVector3f * euler_out)
         ;   Label: LAB_0044276b
     ADD ESP,0x8                         ; 00442770
     CMP EBX,EAX                         ; 00442773

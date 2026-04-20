@@ -42,7 +42,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_0041a630(CBodyPart *t
   CMatrix3x4f local_194;
   CMatrix3x4f local_164;
   CMatrix3x4f local_134;
-  CMatrix3x3f local_104;
+  CMatrix3x4f local_104;
   CMatrix3x4f local_d4;
   CMatrix3x3f local_a4;
   CVector3f local_7c;
@@ -156,8 +156,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_applyRotation_FUN_0041a630(CBodyPart *t
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                 (&local_194,&g_ZeroVector.f,euler_angles_01);
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_194,&local_134,&local_1c4);
-      pCVar19 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_134,&local_7c)
-      ;
+      pCVar19 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_134,&local_7c);
       if (euler_angles_01 != pCVar19) {
         euler_angles_01->x = pCVar19->x;
         pCVar20[1].y = pCVar19->y;

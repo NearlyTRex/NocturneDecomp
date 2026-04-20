@@ -42,7 +42,7 @@ CMatrix3x4f * __stack3_esi core_xform_cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f
     core_xform_cpp_matrixToQuaternion_FUN_005f7420((CMatrix3x3f *)matrix_a,&local_20);
     core_xform_cpp_matrixToQuaternion_FUN_005f7420((CMatrix3x3f *)matrix_b,&local_60);
     core_xform_cpp_slerpQuaternion_FUN_005f77e0(&local_70,&local_40,t,&local_50);
-    core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280((CMatrix3x3f *)&local_d0,&local_30);
+    core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280(&local_d0,&local_30);
     fVar1 = 1.0 - t;
     local_d0.m[0].z = matrix_b->m[0].z * t + matrix_a->m[0].z * fVar1;
     local_d0.m[1].z = matrix_b->m[1].z * t + matrix_a->m[1].z * fVar1;

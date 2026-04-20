@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 115
-  Total diagnostics: 364
+  Functions with findings: 118
+  Total diagnostics: 361
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 115, raw .cpp files: 0
+  .keep.cpp files: 118, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -44,26 +44,6 @@ core_event.cpp_CEventList_executeCommand_FUN_004aacc0  [.keep] [Cppcheck (quick)
   Line 1783: [invalidscanf] sscanf() without field width limits can crash with huge input data.
   Line 1912: [invalidscanf] sscanf() without field width limits can crash with huge input data.
   Line 1985: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-
-----------------------------------------------------------------------------------------------------
-core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0  [.keep] [Cppcheck (quick)]
-  File: core/skeleton.cpp  (15 diagnostics)
-
-  Line  128: [uninitvar] Uninitialized variable: auStack_248
-  Line  129: [uninitvar] Uninitialized variable: fStack_244
-  Line  130: [uninitvar] Uninitialized variable: fStack_240
-  Line  175: [legacyUninitvar] Uninitialized variable: afStack_c8[0]
-  Line  189: [legacyUninitvar] Uninitialized variable: afStack_1b8
-  Line  248: [legacyUninitvar] Uninitialized variable: afStack_168[0]
-  Line  262: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
-  Line  263: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
-  Line  264: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
-  Line  265: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
-  Line  270: [legacyUninitvar] Uninitialized variable: afStack_228
-  Line  283: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
-  Line  284: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
-  Line  285: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
-  Line  286: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
 
 ----------------------------------------------------------------------------------------------------
 core_mmx.c_detectIntelProcessor_FUN_00524f4c  [.keep] [Cppcheck (quick)]
@@ -199,6 +179,19 @@ core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  [.keep] [Cppcheck (quick)]
   Line  545: [selfAssignment] Redundant assignment of 'piVar20' to itself.
   Line  560: [selfAssignment] Redundant assignment of 'ppCVar15' to itself.
   Line  561: [selfAssignment] Redundant assignment of 'ppCVar21' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0  [.keep] [Cppcheck (quick)]
+  File: core/skeleton.cpp  (8 diagnostics)
+
+  Line  256: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
+  Line  257: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
+  Line  258: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
+  Line  259: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
+  Line  277: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
+  Line  278: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
+  Line  279: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
+  Line  280: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
 
 ----------------------------------------------------------------------------------------------------
 core_xform.cpp_transformAndClipGeometry_FUN_005f8550  [.keep] [Cppcheck (quick)]
@@ -529,6 +522,13 @@ cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20  [.keep] [C
   Line   40: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
+core_cloth.cpp_CCloth_setup_FUN_00439710  [.keep] [Cppcheck (quick)]
+  File: core/cloth.cpp  (2 diagnostics)
+
+  Line  128: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  129: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044f310  [.keep] [Cppcheck (quick)]
   File: core/dcamera.cpp  (2 diagnostics)
 
@@ -838,10 +838,10 @@ core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240  [.keep] [Cpp
   Line   58: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
-core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970  [.keep] [Cppcheck (quick)]
+core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0  [.keep] [Cppcheck (quick)]
   File: core/skeleton.cpp  (1 diagnostics)
 
-  Line  197: [arrayIndexOutOfBounds] Array 'local_78[2]' accessed at index 2, which is out of bounds.
+  Line   69: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
 core_vehicle.cpp_CVehicle_renderOpaque_FUN_005e88c0  [.keep] [Cppcheck (quick)]
@@ -902,6 +902,18 @@ shape_design.c_generateOctant_FUN_00469420  [.keep] [Cppcheck (quick)]
   File: shape/design.c  (1 diagnostics)
 
   Line   83: [selfAssignment] Redundant assignment of 'pcVar4' to itself.
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_getVertexCountFromModel_FUN_00468080  [.keep] [Cppcheck (quick)]
+  File: shape/design.c  (1 diagnostics)
+
+  Line   15: [nullPointerRedundantCheck] Either the condition 'model_ptr==(SMRGLHeaderExtended*)0x0' is redundant or there is possible null pointer dereference: model_ptr.
+
+----------------------------------------------------------------------------------------------------
+shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0  [.keep] [Cppcheck (quick)]
+  File: shape/memdbg.cpp  (1 diagnostics)
+
+  Line   19: [nullPointerArithmeticRedundantCheck] Either the condition 'user_ptr!=(void*)0x0' is redundant or there is overflow in pointer subtraction.
 
 ----------------------------------------------------------------------------------------------------
 shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910  [.keep] [Cppcheck (quick)]

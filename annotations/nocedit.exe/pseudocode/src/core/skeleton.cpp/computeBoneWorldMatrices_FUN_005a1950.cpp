@@ -34,7 +34,7 @@ void __cdecl core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950(SPose *bone
     local_20 = pCVar1;
     local_1c = bone_data->bone_world_matrices;
     do {
-      core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280((CMatrix3x3f *)local_1c,local_18);
+      core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280(local_1c,local_18);
       if (pSVar2->bone_scales[0] != 1.0) {
         bone_data->bone_world_matrices[local_14].m[0].w =
              pSVar2->bone_scales[0] * bone_data->bone_world_matrices[local_14].m[0].w;

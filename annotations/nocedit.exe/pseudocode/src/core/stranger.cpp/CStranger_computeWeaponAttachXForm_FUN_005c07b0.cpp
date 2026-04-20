@@ -59,7 +59,7 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
   CMatrix3x4f local_a5c;
   float local_a2c [12];
   CMatrix3x4f local_9fc;
-  CMatrix3x3f local_9cc;
+  CMatrix3x4f local_9cc;
   CMatrix3x4f local_99c;
   CMatrix3x4f local_96c;
   CMatrix3x4f local_93c;
@@ -395,8 +395,7 @@ LAB_005c1504:
         core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                   (&local_45c,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar1
                    ,&local_48c);
-        pCVar13 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690
-                            ((CMatrix3x3f *)&local_45c,&local_3c);
+        pCVar13 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_45c,&local_3c);
         if (&local_84 != pCVar13) {
           local_84.x = pCVar13->x;
           local_84.y = pCVar13->y;

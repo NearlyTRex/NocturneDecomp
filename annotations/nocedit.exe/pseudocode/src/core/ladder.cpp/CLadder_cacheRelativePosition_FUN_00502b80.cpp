@@ -16,8 +16,7 @@ void __cdecl core_ladder_cpp_CLadder_cacheRelativePosition_FUN_00502b80(CLadder 
   byte bVar5;
   CMatrix3x4f local_e4;
   CMatrix3x4f local_b4;
-  CMatrix3x3f local_84;
-  float local_58;
+  CMatrix3x4f local_84;
   CMatrix3x4f local_54;
   float local_24;
   float local_20;

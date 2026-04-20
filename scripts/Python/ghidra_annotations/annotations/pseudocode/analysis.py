@@ -1472,15 +1472,11 @@ def generate_suspect_type_analysis(functions, output_path):
         for match, count in sorted(match_counts.items(), key=lambda x: -x[1])[:20]:
             lines.append("  %4dx  %s" % (count, match))
 
-        # Show example functions
+        # Show functions (deduped, alphabetical)
         lines.append("")
-        lines.append("Example functions:")
-        seen_funcs = set()
-        for s in suspects[:30]:
-            if s['func'] not in seen_funcs:
-                seen_funcs.add(s['func'])
-                lines.append("  %s" % s['func'])
-                lines.append("    %s..." % s['text'][:80])
+        lines.append("Functions:")
+        for fname in sorted(set(s['func'] for s in suspects)):
+            lines.append("  %s" % fname)
 
         lines.append("")
 

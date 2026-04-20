@@ -49,8 +49,7 @@ int __cdecl core_tentacle_cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0(CTentac
   (pCVar1->base).location.position.y = pCVar2->y;
   (pCVar1->base).location.position.z = pCVar2->z;
   orientation = (UOrientationVector *)
-                core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_10c,&local_1c)
-  ;
+                core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_10c,&local_1c);
   core_charactr_cpp_CCharacter_setOrientation_FUN_0042ded0((this_ptr->base).victim,orientation);
   return 1;
 }

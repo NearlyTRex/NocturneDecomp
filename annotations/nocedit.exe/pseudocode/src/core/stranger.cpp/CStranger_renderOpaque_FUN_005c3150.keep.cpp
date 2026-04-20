@@ -63,7 +63,7 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *thi
                (this_ptr->base).base.model.bone_transform.bone_world_matrices[g_StrangerIndices[0]].
                m,&local_22c);
     core_xform_cpp_getTranslation_FUN_005f6110(&local_13c,&local_ac);
-    core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_13c,&local_94);
+    core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_13c,&local_94);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
               (g_CDemonRendererPtr2,(CVector3i *)&local_94,(CVector3i *)&local_ac);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
@@ -203,7 +203,7 @@ LAB_005c33d7:
     local_dc.m[2].x = pCVar7->m[2].x;
     local_dc.m[2].y = pCVar7->m[2].y;
     local_dc.m[2].z = pCVar7->m[2].z;
-    core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_dc,&local_40);
+    core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_dc,&local_40);
     core_xform_cpp_getTranslation_FUN_005f6110(&local_dc,&local_4c);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
               (g_CDemonRendererPtr2,(CVector3i *)&local_40,(CVector3i *)&local_4c);

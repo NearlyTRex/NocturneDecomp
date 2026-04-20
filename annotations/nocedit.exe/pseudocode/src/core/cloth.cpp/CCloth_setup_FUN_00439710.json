@@ -4,18 +4,19 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 716,
-    "complexity_score": 439,
+    "complexity_score": 454,
     "cross_reference_count": 9,
     "function_call_count": 8,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 354,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unnamed_local"
     ],
     "total_lines": 1070
   },
@@ -701,6 +702,30 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "CCloth_setup_FUN_00439710.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 53,
+          "line": 128,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 80,
+          "line": 129,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Complex pointer cast",
@@ -765,6 +790,15 @@
       "severity": "mild",
       "text": "pfVar17 = (float *)((int)pfVar17 + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 91,
+      "match": "local_20",
+      "severity": "mild",
+      "text": "int local_20;",
+      "type": "unnamed_local"
     }
   ]
 }

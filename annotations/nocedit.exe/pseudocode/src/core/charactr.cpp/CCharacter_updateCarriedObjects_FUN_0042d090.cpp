@@ -100,8 +100,7 @@ void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCha
       *(float *)(iVar1 + 0x24) = pCVar2->y;
       *(float *)(iVar1 + 0x28) = pCVar2->z;
       in_stack_fffffd80 = (CMatrix3x4f *)0x42d1f9;
-      pCVar3 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690
-                         ((CMatrix3x3f *)&CStack_274,&CStack_34);
+      pCVar3 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&CStack_274,&CStack_34);
       iVar1 = *(int *)(unaff_EBP + 8);
       if ((CVector3f *)(iVar1 + 0x30) != pCVar3) {
         ((CVector3f *)(iVar1 + 0x30))->x = pCVar3->x;

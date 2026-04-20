@@ -262,7 +262,7 @@ section .text
     JMP 0x03fc2f37                      ; 004d742b
         ;   XREF to: 03fc2f37 (UNCONDITIONAL_JUMP)  ; LAB_03fc2f37
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005f5690 ; 004d743f
-        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f * matrix_in, CVector3f * euler_out)
+        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x4f * matrix_in, CVector3f * euler_out)
         ;   Label: LAB_004d743f
     MOV EDX,EAX                         ; 004d7444
     LEA EAX,[ESP + 0x140]               ; 004d7446

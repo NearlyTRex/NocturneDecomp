@@ -18,8 +18,7 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30(CCh
   CMatrix3x4f *pCVar5;
   CMatrix3x3f *pCVar6;
   byte bVar7;
-  CMatrix3x3f local_9c;
-  int local_70;
+  CMatrix3x4f local_9c;
   CMatrix3x4f local_6c;
   CVector3i local_3c;
   CVector3f local_30;
@@ -40,11 +39,13 @@ void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30(CCh
                     (&pSVar1->transform,
                      (this_ptr->model).bone_transform.bone_world_matrices + pSVar1->bone_index,
                      &local_6c);
-          local_9c.m[1].x = local_6c.m[0].z;
-          local_9c.m[2].y = local_6c.m[1].z;
+          local_9c.m[0].z = local_6c.m[0].z;
+          local_9c.m[1].z = local_6c.m[1].z;
+          local_9c.m[2].z = local_6c.m[2].z;
           position = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_9c,&local_24);
-          local_3c.x = (int)local_9c.m[1].x;
-          local_3c.y = (int)local_9c.m[2].y;
+          local_3c.x = (int)local_9c.m[0].z;
+          local_3c.y = (int)local_9c.m[1].z;
+          local_3c.z = (int)local_9c.m[2].z;
           core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_0041add0
                     (body_part,CKeyFramedModelInstance_00823a98.model_name,&local_3c,
                      (CVector3i *)position);

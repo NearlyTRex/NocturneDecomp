@@ -194,12 +194,15 @@ if(NOCTURNE_BUILD_EXE)
     if(NOCTURNE_ASAN)
         list(APPEND NOCTURNE_SANITIZE_FLAGS
             -fsanitize=address,undefined
-            -fno-sanitize=function,shift
+            -fno-sanitize=function,shift,signed-integer-overflow
+            -fwrapv
             -fno-omit-frame-pointer
             -fno-sanitize-recover=all)
         # -fno-sanitize=function: vtable dispatch type mismatches (normal C++ covariance)
         # -fno-sanitize=shift: fixed-point math left-shifts negative values pervasively
-        message(STATUS "AddressSanitizer + UBSan enabled (function-type and shift checks disabled)")
+        # -fno-sanitize=signed-integer-overflow + -fwrapv: Watcom-compiled arithmetic
+        #   assumes x86 two's-complement wrap (e.g. INT_MIN - N), pervasive in the binary
+        message(STATUS "AddressSanitizer + UBSan enabled (function-type, shift, and signed-overflow checks disabled)")
     endif()
 
     # PCH: every decompiled TU opens with #include "nocturne.h", which pulls in

@@ -7,17 +7,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 53,
+    "complexity_score": 52,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 38,
+    "pseudocode_lines": 37,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 144
+    "total_lines": 143
   },
   "cross_references": [
     {
@@ -179,7 +179,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 37,
       "match": "(CPlatform *)((int)",
       "severity": "mild",
       "text": "pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);",

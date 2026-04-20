@@ -15,22 +15,14 @@ void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_0059b970(CDeforma
   int iVar2;
   SPart *pSVar3;
   SPart *pSVar4;
-  float *pfVar4;
   int iVar5;
   int iVar6;
   CVector3f *pCVar6;
   int iVar7;
   SVert *pSVar7;
-  ushort *puVar8;
-  uint local_90;
-  byte local_8c [4];
-  byte local_88 [4];
-  int local_84;
-  byte local_80 [4];
-  byte local_7c [4];
-  ushort local_78 [2];
-  byte local_74 [4];
-  byte local_70 [4];
+  int vi[3];
+  int u[3];
+  int v[3];
   int local_6c;
   int local_68;
   int local_64;
@@ -48,7 +40,6 @@ void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_0059b970(CDeforma
   int local_34;
   int local_30;
   int local_2c;
-  int local_28;
   int local_24;
   SInputFace *local_20;
   int local_1c;
@@ -170,9 +161,9 @@ LAB_0059b9d7:
         if (iVar3 != 1) goto LAB_0059b9b4;
         pSVar7->num_bone_influences = (uchar)local_34;
         for (iVar3 = 0; iVar3 < (int)(uint)pSVar7->num_bone_influences; iVar3 = iVar3 + 1) {
-          pfVar4 = pSVar7->bone_weights + iVar3 * 3 + 3;
-          iVar7 = _fscanf(file_handle,"%d,%f,%f,%f,%f\n",&local_30,pSVar7->bone_weights + iVar3,
-                             pfVar4,pfVar4 + 1,pfVar4 + 2);
+          pCVar6 = (&pSVar7->position) + iVar3;
+          iVar7 = _fscanf(file_handle,"%d,%f,%f,%f,%f\n",&local_30,&pSVar7->bone_weights[iVar3],
+                             &pCVar6->x,&pCVar6->y,&pCVar6->z);
           if (iVar7 != 5) goto LAB_0059b9b4;
           pSVar7->bone_indices[iVar3] = (uchar)local_30;
         }
@@ -187,20 +178,19 @@ LAB_0059b9d7:
           iVar3 < this_ptr->tri_count[local_14] + this_ptr->cap_tri_count[local_14];
           iVar3 = iVar3 + 1) {
         local_20 = this_ptr->tri_data_ptr[local_14] + iVar3;
-        iVar5 = _fscanf(file_handle,"%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\n",&local_2c,(int *)local_78,&local_84,
-                           (int *)&local_90,(int *)local_74,(int *)local_80,(int *)local_8c,(int *)local_70,(int *)local_7c,(int *)local_88);
+        iVar5 = _fscanf(file_handle,"%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\n",&local_2c,
+                           &vi[0],&u[0],&v[0],&vi[1],&u[1],&v[1],&vi[2],&u[2],&v[2]);
         if (iVar5 != 10) goto LAB_0059b9b4;
         this_ptr->index_data_ptr[iVar7][iVar3] = local_2c;
-        iVar7 = 0;
-        do {
-          puVar8 = &(local_20->vertex_indices).vertex_index_0 + iVar7;
-          *puVar8 = local_78[iVar7 * 2];
-          local_28 = *(int *)(local_80 + iVar7 * 4 + -4) >> 8;
-          puVar8[3] = (ushort)((uint)*(int *)(local_80 + iVar7 * 4 + -4) >> 8);
-          iVar6 = iVar7 * 4;
-          iVar7 = iVar7 + 1;
-          puVar8[6] = (ushort)((uint)*(uint *)(local_8c + iVar6 + -4) >> 8);
-        } while (iVar7 < 3);
+        local_20->vertex_indices.vertex_index_0 = (ushort)vi[0];
+        local_20->vertex_indices.vertex_index_1 = (ushort)vi[1];
+        local_20->vertex_indices.vertex_index_2 = (ushort)vi[2];
+        local_20->u_coord_0 = (ushort)((uint)u[0] >> 8);
+        local_20->u_coord_1 = (ushort)((uint)u[1] >> 8);
+        local_20->u_coord_2 = (ushort)((uint)u[2] >> 8);
+        local_20->v_coord_0 = (ushort)((uint)v[0] >> 8);
+        local_20->v_coord_1 = (ushort)((uint)v[1] >> 8);
+        local_20->v_coord_2 = (ushort)((uint)v[2] >> 8);
       }
     }
     do {

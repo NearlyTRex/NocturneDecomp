@@ -976,7 +976,7 @@ static int CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_2_chunk_1(CSke
                     local_1f0 = local_748c.bones[0].world_matrix.m[2].z;
                   }
                   pCVar10 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690
-                                      ((CMatrix3x3f *)&local_748c.bones[0].world_matrix,&local_1b0);
+                                      (&local_748c.bones[0].world_matrix,&local_1b0);
                   if (&local_1bc != pCVar10) {
                     local_1bc.x = pCVar10->x;
                     local_1bc.y = pCVar10->y;
@@ -1038,7 +1038,7 @@ static int CSkeleton_importSkeletonFile_branch_1_branch_0_check_0_2_chunk_1(CSke
                 }
                 else {
                   core_xform_cpp_matrixToEulerAngles_FUN_005f5690
-                            ((CMatrix3x3f *)&local_748c.bones[0].world_matrix,&local_180);
+                            (&local_748c.bones[0].world_matrix,&local_180);
                   if ((local_dc & 1) != 0) {
                     local_180.x = local_1bc.x;
                   }

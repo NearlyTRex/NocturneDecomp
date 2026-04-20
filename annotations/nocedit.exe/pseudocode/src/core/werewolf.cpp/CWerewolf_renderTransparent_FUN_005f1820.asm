@@ -78,7 +78,7 @@ section .text
     JMP 0x03fc3b28                      ; 005f18a9
         ;   XREF to: 03fc3b28 (UNCONDITIONAL_JUMP)  ; LAB_03fc3b28
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005f5690 ; 005f18b1
-        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f * matrix_in, CVector3f * euler_out)
+        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x4f * matrix_in, CVector3f * euler_out)
         ;   Label: LAB_005f18b1
     ADD ESP,0x8                         ; 005f18b6
     LEA EAX,[ESP + 0x38]                ; 005f18b9

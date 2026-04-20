@@ -11,7 +11,7 @@
 ; CMatrix3x4f      Stack[-0x194]:48  local_194
 ; CMatrix3x4f      Stack[-0x164]:48  local_164
 ; CMatrix3x4f      Stack[-0x134]:48  local_134
-; CMatrix3x3f      Stack[-0x104]:36  local_104
+; CMatrix3x4f      Stack[-0x104]:48  local_104
 ; CMatrix3x4f      Stack[-0xd4]:48  local_d4
 ; CMatrix3x3f      Stack[-0xa4]:36  local_a4
 ; CVector3f        Stack[-0x7c]:12  local_7c
@@ -224,7 +224,7 @@ section .text
     JMP 0x03fc490e                      ; 0041a8ad
         ;   XREF to: 03fc490e (UNCONDITIONAL_JUMP)  ; LAB_03fc490e
     CALL core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0 ; 0041a8c4
-        ;   XREF to: 005f5bd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x3f * matrix_ptr, CVector3f * euler_out)
+        ;   XREF to: 005f5bd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x4f * matrix_ptr, CVector3f * euler_out)
         ;   Label: LAB_0041a8c4
     ADD ESP,0x8                         ; 0041a8c9
     CMP EBX,EAX                         ; 0041a8cc
@@ -336,7 +336,7 @@ section .text
     LEA EAX,[ESP + 0x94]                ; 0041a9e3
     PUSH EAX                            ; 0041a9ea
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005f5690 ; 0041a9eb
-        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f * matrix_in, CVector3f * euler_out)
+        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     ADD ESP,0x8                         ; 0041a9f0
     CMP EDI,EAX                         ; 0041a9f3
     JZ 0x0041aa07                       ; 0041a9f5

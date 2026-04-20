@@ -70,7 +70,7 @@ void __cdecl core_fire_cpp_CBulletHole_init_FUN_004bf7f0(CBulletHole *this_ptr,C
       (this_ptr->transformed_pos).y = pCVar2->y;
       (this_ptr->transformed_pos).z = pCVar2->z;
     }
-    pCVar1 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_ac,&local_1c);
+    pCVar1 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_ac,&local_1c);
     if (&this_ptr->euler_angles != pCVar1) {
       (this_ptr->euler_angles).x = pCVar1->x;
       (this_ptr->euler_angles).y = pCVar1->y;

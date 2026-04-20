@@ -50,8 +50,7 @@ void __cdecl core_scat_cpp_CScat_updateWeaponAttachment_FUN_00558fd0(CScat *this
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_70,&local_160,&local_100);
     this_ptr_01 = this_ptr->weapon_actor;
     pCVar1 = (this_ptr_01->base).vtable._ub;
-    new_orientation =
-         core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_a0,&local_34);
+    new_orientation = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_a0,&local_34);
     new_position = core_xform_cpp_getTranslation_FUN_005f6110(&local_a0,&local_1c);
     (*pCVar1->setPositionAndOrientation)(&this_ptr_01->base,new_position,new_orientation);
     return;

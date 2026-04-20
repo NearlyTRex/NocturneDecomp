@@ -71,7 +71,7 @@ void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCha
       carry_actor->location.position.y = pCVar2->y;
       carry_actor->location.position.z = pCVar2->z;
       pCVar3 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690
-                         ((CMatrix3x3f *)&CStack_274,&CStack_34);
+                         (&CStack_274,&CStack_34);
       carry_actor = hand->carry_actor;
       if (&carry_actor->orient.vec != pCVar3) {
         (carry_actor->orient).vec.x = pCVar3->x;

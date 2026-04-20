@@ -324,7 +324,7 @@ static int CDeformableModelInstance_viewModel_branch_0(CDeformableModelInstance_
     return 0;
 }
 
-// Chunk: check_0_2 (lines 298-321 of original)
+// Chunk: check_0_2 (lines 298-320 of original)
 static int CDeformableModelInstance_viewModel_check_0_2(CDeformableModelInstance_viewModel_Ctx *ctx) {
     int &iVar7 = ctx->iVar7;
     CSlew *&pCVar10 = ctx->pCVar10;
@@ -349,8 +349,7 @@ static int CDeformableModelInstance_viewModel_check_0_2(CDeformableModelInstance
         local_200.position.y = (pCVar10->position).y;
         local_200.position.z = (pCVar10->position).z;
       }
-      pCVar13 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690
-                          ((CMatrix3x3f *)&local_2f0,&local_148);
+      pCVar13 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_2f0,&local_148);
       if ((CVector3f *)&local_200.pitch != pCVar13) {
         local_200.pitch = pCVar13->x;
         local_200.yaw = pCVar13->y;
@@ -364,7 +363,7 @@ static int CDeformableModelInstance_viewModel_check_0_2(CDeformableModelInstance
     return 0;
 }
 
-// Chunk: check_local_4c_3 (lines 340-384 of original)
+// Chunk: check_local_4c_3 (lines 339-383 of original)
 static int CDeformableModelInstance_viewModel_check_local_4c_3(CDeformableModelInstance_viewModel_Ctx *ctx) {
     int &x = ctx->x;
     SMRGLPrimitiveQuad &local_3a4 = ctx->local_3a4;
@@ -418,7 +417,7 @@ static int CDeformableModelInstance_viewModel_check_local_4c_3(CDeformableModelI
     return 0;
 }
 
-// Chunk: else_4 (lines 470-515 of original)
+// Chunk: else_4 (lines 469-514 of original)
 static int CDeformableModelInstance_viewModel_else_4(CDeformableModelInstance_viewModel_Ctx *ctx) {
     CDeformableModel *&this_ptr_01 = ctx->this_ptr_01;
     int &iVar7 = ctx->iVar7;
@@ -474,7 +473,7 @@ static int CDeformableModelInstance_viewModel_else_4(CDeformableModelInstance_vi
     return 0;
 }
 
-// Chunk: check_iVar7_5 (lines 536-562 of original)
+// Chunk: check_iVar7_5 (lines 534-560 of original)
 static int CDeformableModelInstance_viewModel_check_iVar7_5(CDeformableModelInstance_viewModel_Ctx *ctx) {
     CDeformableModel *&this_ptr_01 = ctx->this_ptr_01;
     int &iVar7 = ctx->iVar7;
@@ -511,7 +510,7 @@ static int CDeformableModelInstance_viewModel_check_iVar7_5(CDeformableModelInst
     return 0;
 }
 
-// Chunk: check_iVar7_6 (lines 704-815 of original)
+// Chunk: check_iVar7_6 (lines 702-813 of original)
 static int CDeformableModelInstance_viewModel_check_iVar7_6(CDeformableModelInstance_viewModel_Ctx *ctx) {
     char &cVar2 = ctx->cVar2;
     CSkeleton *&this_ptr_02 = ctx->this_ptr_02;
@@ -651,7 +650,7 @@ static int CDeformableModelInstance_viewModel_check_iVar7_6(CDeformableModelInst
     return 0;
 }
 
-// Chunk: check_iVar7_7 (lines 845-912 of original)
+// Chunk: check_iVar7_7 (lines 843-910 of original)
 static int CDeformableModelInstance_viewModel_check_iVar7_7(CDeformableModelInstance_viewModel_Ctx *ctx) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("P",7,0xb);
@@ -1155,8 +1154,7 @@ LAB_005975b4:
         local_184.y = pCVar13->y;
         local_184.z = pCVar13->z;
       }
-      pCVar13 = core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0
-                          ((CMatrix3x3f *)&local_260,&local_190);
+      pCVar13 = core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(&local_260,&local_190);
       if (&local_19c != pCVar13) {
         local_19c.x = pCVar13->x;
         local_19c.y = pCVar13->y;

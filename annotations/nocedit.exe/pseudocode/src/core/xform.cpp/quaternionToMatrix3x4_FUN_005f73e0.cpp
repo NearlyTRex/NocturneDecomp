@@ -15,7 +15,7 @@ CMatrix3x4f * __stack_esi core_xform_cpp_quaternionToMatrix3x4_FUN_005f73e0(CQua
   byte bVar4;
   CMatrix3x4f local_38;
   
-  core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280((CMatrix3x3f *)&local_38,quat_in);
+  core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280(&local_38,quat_in);
   core_xform_cpp_clearTranslation_FUN_005f5370(&local_38);
   matrix_out->m[0].w = local_38.m[0].w;
   matrix_out->m[0].x = local_38.m[0].x;

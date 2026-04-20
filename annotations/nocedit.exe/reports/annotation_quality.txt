@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        102 ( 1.6%)
+  Functions with type issues:        100 ( 1.5%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          1
-    Undefined types in variables:      96
+    Undefined types in variables:      94
     Unresolved stack params:           5
 
-  Excluded (.keep / MMX / by-value):   124 functions
+  Excluded (.keep / MMX / by-value):   126 functions
     Wrong calling convention:          1
-    Undefined types in variables:      121
+    Undefined types in variables:      123
     Unresolved stack params:           3
 
 ====================================================================================================
@@ -113,7 +113,7 @@ Unresolved stack parameters (missing from signature) (5)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (96)
+Undefined types in variables (94)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -271,11 +271,6 @@ Undefined types in variables (96)
     Locals:  local_68 (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CCharacter_buildLayerActionTransitionCosts
-    Address: 0x0042e670  File: core/charactr.cpp
-    Locals:  local_20 (undefined4), local_18 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   renderBackdropImage
     Address: 0x0057ce80  File: core/setedit.cpp
     Locals:  local_2670 (undefined4[1200]), auStack_13b0 (undefined4[1200])
@@ -319,11 +314,6 @@ Undefined types in variables (96)
   requantizeLayer3SamplesSimple
     Address: 0x0052fee0  File: sound/mp3.cpp
     Locals:  local_34 (undefined4 *), local_24 (undefined4 *)
-    Suggested: Resolve undefined types to concrete types
-
-  normalizeAngleToPi
-    Address: 0x0040cd70  File: core/actor.cpp
-    Locals:  local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CBugs_sampleGroundHeight
@@ -661,7 +651,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (121)
+Undefined types - .keep overrides (123)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -969,6 +959,11 @@ Undefined types - .keep overrides (121)
     Locals:  local_10f (undefined1[99]), local_ab (undefined1[99])
     Suggested: Resolve undefined types to concrete types
 
+  CCharacter_buildLayerActionTransitionCosts
+    Address: 0x0042e670  File: core/charactr.cpp
+    Locals:  local_20 (undefined4), local_18 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CEventList_setTimerEvent
     Address: 0x004b05a0  File: core/event.cpp
     Locals:  local_20 (undefined4), uStack_1c (undefined4)
@@ -1032,6 +1027,11 @@ Undefined types - .keep overrides (121)
   winMain
     Address: 0x005f3680  File: wincore/winrun.cpp
     Locals:  windowClass (undefined1[40]), memStatus (undefined1[32])
+    Suggested: Resolve undefined types to concrete types
+
+  normalizeAngleToPi
+    Address: 0x0040cd70  File: core/actor.cpp
+    Locals:  local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CBoneGuy_process

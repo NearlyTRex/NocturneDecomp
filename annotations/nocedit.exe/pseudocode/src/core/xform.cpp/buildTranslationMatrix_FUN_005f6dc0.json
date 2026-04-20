@@ -4,17 +4,19 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 21,
+    "complexity_score": 106,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 21,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 8,
+    "suspect_types": [
+      "unnamed_local"
+    ],
     "total_lines": 53
   },
   "cross_references": [],
@@ -121,5 +123,78 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 16,
+      "match": "local_38",
+      "severity": "mild",
+      "text": "float local_38 [12];",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 18,
+      "match": "local_38",
+      "severity": "mild",
+      "text": "local_38[1] = 0.0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 19,
+      "match": "local_38",
+      "severity": "mild",
+      "text": "local_38[2] = 0.0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 20,
+      "match": "local_38",
+      "severity": "mild",
+      "text": "local_38[3] = translation->x;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 21,
+      "match": "local_38",
+      "severity": "mild",
+      "text": "local_38[0] = 1.0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 22,
+      "match": "local_38",
+      "severity": "mild",
+      "text": "local_38[4] = 0.0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 23,
+      "match": "local_38",
+      "severity": "mild",
+      "text": "local_38[5] = 1.0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 24,
+      "match": "local_38",
+      "severity": "mild",
+      "text": "local_38[6] = 0.0;",
+      "type": "unnamed_local"
+    }
+  ]
 }

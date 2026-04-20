@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (364 diagnostics)
+Cppcheck (quick) (361 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -493,7 +493,7 @@ selfAssignment (120)
     Redundant assignment of 'pcVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (63)
+uninitvar (60)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 71
@@ -611,18 +611,6 @@ uninitvar (63)
   core_skeleton.cpp_CDeformableModelInstance_compute line 53
     File: core/skeleton.cpp
     Uninitialized variable: fStack_50
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 128
-    File: core/skeleton.cpp
-    Uninitialized variable: auStack_248
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 129
-    File: core/skeleton.cpp
-    Uninitialized variable: fStack_244
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 130
-    File: core/skeleton.cpp
-    Uninitialized variable: fStack_240
 
   core_sound.cpp_updateListeners_FUN_005b1870        line 69
     File: core/sound.cpp
@@ -749,7 +737,7 @@ uninitvar (63)
     Uninitialized variable: local_60
 
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (44)
+shiftTooManyBitsSigned (46)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_ line 61
@@ -762,6 +750,14 @@ shiftTooManyBitsSigned (44)
 
   cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenB line 40
     File: cockpit/pkbitmap.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_cloth.cpp_CCloth_setup_FUN_00439710           line 128
+    File: core/cloth.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_cloth.cpp_CCloth_setup_FUN_00439710           line 129
+    File: core/cloth.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 323
@@ -929,174 +925,6 @@ shiftTooManyBitsSigned (44)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-legacyUninitvar (41)
-----------------------------------------------------------------------------------------------------
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 59
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: local_28
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 59
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: local_24
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 62
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: local_20
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 62
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: local_1c
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 63
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: local_18
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 63
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: local_14
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 698
-    File: core/dmodel.cpp
-    Uninitialized variable: local_174
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 697
-    File: core/dmodel.cpp
-    Uninitialized variable: local_170
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 696
-    File: core/dmodel.cpp
-    Uninitialized variable: local_16c
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 698
-    File: core/dmodel.cpp
-    Uninitialized variable: local_168
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 697
-    File: core/dmodel.cpp
-    Uninitialized variable: local_164
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 696
-    File: core/dmodel.cpp
-    Uninitialized variable: local_160
-
-  core_mission.cpp_CDemonMission_loadActor_FUN_00523 line 64
-    File: core/mission.cpp
-    Uninitialized variable: local_e1
-
-  core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fb line 122
-    File: core/set.cpp
-    Uninitialized variable: fStack_68
-
-  core_set.cpp_CDemonSet_processActors_FUN_0056b810  line 112
-    File: core/set.cpp
-    Uninitialized variable: local_3c
-
-  core_set.cpp_CDemonSet_processActors_FUN_0056b810  line 116
-    File: core/set.cpp
-    Uninitialized variable: iStack_18
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 761
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1cc
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 759
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1c8
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 760
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1c4
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 761
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1c0
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 953
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1b8
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 953
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1b4
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 954
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1b0
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 954
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1ac
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 954
-    File: core/skeledit.cpp
-    Uninitialized variable: local_1a8
-
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 571
-    File: core/skeledit.cpp
-    Uninitialized variable: local_38
-
-  core_skeleton.cpp_CDeformableModelInstance_blendMo line 121
-    File: core/skeleton.cpp
-    Uninitialized variable: afStack_120[0]
-
-  core_skeleton.cpp_CDeformableModelInstance_blendMo line 135
-    File: core/skeleton.cpp
-    Uninitialized variable: afStack_f0
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 270
-    File: core/skeleton.cpp
-    Uninitialized variable: afStack_228
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 189
-    File: core/skeleton.cpp
-    Uninitialized variable: afStack_1b8
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 248
-    File: core/skeleton.cpp
-    Uninitialized variable: afStack_168[0]
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 175
-    File: core/skeleton.cpp
-    Uninitialized variable: afStack_c8[0]
-
-  core_sound.cpp_updateListeners_FUN_005b1870        line 118
-    File: core/sound.cpp
-    Uninitialized variable: local_c8
-
-  core_sound.cpp_updateListeners_FUN_005b1870        line 118
-    File: core/sound.cpp
-    Uninitialized variable: local_c4
-
-  core_vampboss.cpp_CVampireBoss_process_FUN_005e597 line 227
-    File: core/vampboss.cpp
-    Uninitialized variable: local_b4
-
-  core_vampboss.cpp_CVampireBoss_process_FUN_005e597 line 205
-    File: core/vampboss.cpp
-    Uninitialized variable: local_b0
-
-  shape_design.c_loadModelBinary_FUN_00458170        line 110
-    File: shape/design.c
-    Uninitialized variable: local_a4
-
-  shape_design.c_loadModelBinary_FUN_00458170        line 88
-    File: shape/design.c
-    Uninitialized variable: local_74
-
-  shape_design.c_loadModelBinary_FUN_00458170        line 90
-    File: shape/design.c
-    Uninitialized variable: local_70
-
-  shape_design.c_loadModelBinary_FUN_00458170        line 128
-    File: shape/design.c
-    Uninitialized variable: local_68
-
-  shape_design.c_loadModelBinary_FUN_00458170        line 82
-    File: shape/design.c
-    Uninitialized variable: local_64
-
-----------------------------------------------------------------------------------------------------
 invalidscanf (40)
 ----------------------------------------------------------------------------------------------------
 
@@ -1261,6 +1089,158 @@ invalidscanf (40)
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
+legacyUninitvar (37)
+----------------------------------------------------------------------------------------------------
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 59
+    File: cockpit/pkbitmap.cpp
+    Uninitialized variable: local_28
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 59
+    File: cockpit/pkbitmap.cpp
+    Uninitialized variable: local_24
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 62
+    File: cockpit/pkbitmap.cpp
+    Uninitialized variable: local_20
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 62
+    File: cockpit/pkbitmap.cpp
+    Uninitialized variable: local_1c
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 63
+    File: cockpit/pkbitmap.cpp
+    Uninitialized variable: local_18
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 63
+    File: cockpit/pkbitmap.cpp
+    Uninitialized variable: local_14
+
+  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 698
+    File: core/dmodel.cpp
+    Uninitialized variable: local_174
+
+  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 697
+    File: core/dmodel.cpp
+    Uninitialized variable: local_170
+
+  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 696
+    File: core/dmodel.cpp
+    Uninitialized variable: local_16c
+
+  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 698
+    File: core/dmodel.cpp
+    Uninitialized variable: local_168
+
+  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 697
+    File: core/dmodel.cpp
+    Uninitialized variable: local_164
+
+  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 696
+    File: core/dmodel.cpp
+    Uninitialized variable: local_160
+
+  core_mission.cpp_CDemonMission_loadActor_FUN_00523 line 64
+    File: core/mission.cpp
+    Uninitialized variable: local_e1
+
+  core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fb line 122
+    File: core/set.cpp
+    Uninitialized variable: fStack_68
+
+  core_set.cpp_CDemonSet_processActors_FUN_0056b810  line 112
+    File: core/set.cpp
+    Uninitialized variable: local_3c
+
+  core_set.cpp_CDemonSet_processActors_FUN_0056b810  line 116
+    File: core/set.cpp
+    Uninitialized variable: iStack_18
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 761
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1cc
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 759
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1c8
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 760
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1c4
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 761
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1c0
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 953
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1b8
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 953
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1b4
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 954
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1b0
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 954
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1ac
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 954
+    File: core/skeledit.cpp
+    Uninitialized variable: local_1a8
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 571
+    File: core/skeledit.cpp
+    Uninitialized variable: local_38
+
+  core_skeleton.cpp_CDeformableModelInstance_blendMo line 121
+    File: core/skeleton.cpp
+    Uninitialized variable: afStack_120[0]
+
+  core_skeleton.cpp_CDeformableModelInstance_blendMo line 135
+    File: core/skeleton.cpp
+    Uninitialized variable: afStack_f0
+
+  core_sound.cpp_updateListeners_FUN_005b1870        line 118
+    File: core/sound.cpp
+    Uninitialized variable: local_c8
+
+  core_sound.cpp_updateListeners_FUN_005b1870        line 118
+    File: core/sound.cpp
+    Uninitialized variable: local_c4
+
+  core_vampboss.cpp_CVampireBoss_process_FUN_005e597 line 227
+    File: core/vampboss.cpp
+    Uninitialized variable: local_b4
+
+  core_vampboss.cpp_CVampireBoss_process_FUN_005e597 line 205
+    File: core/vampboss.cpp
+    Uninitialized variable: local_b0
+
+  shape_design.c_loadModelBinary_FUN_00458170        line 110
+    File: shape/design.c
+    Uninitialized variable: local_a4
+
+  shape_design.c_loadModelBinary_FUN_00458170        line 88
+    File: shape/design.c
+    Uninitialized variable: local_74
+
+  shape_design.c_loadModelBinary_FUN_00458170        line 90
+    File: shape/design.c
+    Uninitialized variable: local_70
+
+  shape_design.c_loadModelBinary_FUN_00458170        line 128
+    File: shape/design.c
+    Uninitialized variable: local_68
+
+  shape_design.c_loadModelBinary_FUN_00458170        line 82
+    File: shape/design.c
+    Uninitialized variable: local_64
+
+----------------------------------------------------------------------------------------------------
 objectIndex (12)
 ----------------------------------------------------------------------------------------------------
 
@@ -1280,37 +1260,85 @@ objectIndex (12)
     File: core/actor.cpp
     The address of local variable 'local_110' is accessed at non-zero index.
 
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 262
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 256
     File: core/skeleton.cpp
     The address of local variable 'local_122c' might be accessed at non-zero index.
 
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 263
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 257
     File: core/skeleton.cpp
     The address of local variable 'local_122c' might be accessed at non-zero index.
 
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 264
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 258
     File: core/skeleton.cpp
     The address of local variable 'local_122c' might be accessed at non-zero index.
 
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 265
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 259
     File: core/skeleton.cpp
     The address of local variable 'local_122c' might be accessed at non-zero index.
 
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 283
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 277
     File: core/skeleton.cpp
     The address of local variable 'local_122c' might be accessed at non-zero index.
 
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 284
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 278
     File: core/skeleton.cpp
     The address of local variable 'local_122c' might be accessed at non-zero index.
 
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 285
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 279
     File: core/skeleton.cpp
     The address of local variable 'local_122c' might be accessed at non-zero index.
 
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 286
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 280
     File: core/skeleton.cpp
     The address of local variable 'local_122c' might be accessed at non-zero index.
+
+----------------------------------------------------------------------------------------------------
+nullPointerRedundantCheck (11)
+----------------------------------------------------------------------------------------------------
+
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 102
+    File: core/actor.cpp
+    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 103
+    File: core/actor.cpp
+    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 104
+    File: core/actor.cpp
+    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+
+  engine_prim.c_renderScanlinePolygon_FUN_00553470   line 259
+    File: engine/prim.c
+    Either the condition 'local_14==(SSoftwareEdge*)0x0' is redundant or there is possible null pointer dereference: local_14.
+
+  shape_design.c_getVertexCountFromModel_FUN_0046808 line 15
+    File: shape/design.c
+    Either the condition 'model_ptr==(SMRGLHeaderExtended*)0x0' is redundant or there is possible null pointer dereference: model_ptr.
+
+  shape_quantize.cpp_CColorQuantizer_applyQuantizati line 45
+    File: shape/quantize.cpp
+    Either the condition 'pCVar6!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: pCVar6.
+
+  shape_quantize.cpp_CColorQuantizer_applyQuantizati line 47
+    File: shape/quantize.cpp
+    Either the condition 'pCVar6!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: pCVar6.
+
+  shape_quantize.cpp_quantizeRawPixelData_FUN_005564 line 131
+    File: shape/quantize.cpp
+    Either the condition 'local_14!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: local_14.
+
+  shape_quantize.cpp_quantizeRawPixelData_FUN_005564 line 150
+    File: shape/quantize.cpp
+    Either the condition 'local_14!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: local_14.
+
+  sound_snddx.cpp_CDirectSoundDevice_initPropertySet line 44
+    File: sound/snddx.cpp
+    Either the condition 'local_18!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: local_18.
+
+  sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005 line 74
+    File: sound/snddx.cpp
+    Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
 
 ----------------------------------------------------------------------------------------------------
 invalidPointerCast (11)
@@ -1361,48 +1389,32 @@ invalidPointerCast (11)
     Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
 
 ----------------------------------------------------------------------------------------------------
-nullPointerRedundantCheck (10)
+identicalInnerCondition (6)
 ----------------------------------------------------------------------------------------------------
 
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 102
-    File: core/actor.cpp
-    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+  core_skeledit.cpp_CDeformableModel_sortFacesByText line 58
+    File: core/skeledit.cpp
+    Identical inner 'if' condition is always true.
 
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 103
-    File: core/actor.cpp
-    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+  core_skeleton.cpp_CDeformableModel_computeBoneBoun line 69
+    File: core/skeleton.cpp
+    Identical inner 'if' condition is always true.
 
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 104
-    File: core/actor.cpp
-    Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost line 336
+    File: shape/meshlod.cpp
+    Identical inner 'if' condition is always true.
 
-  engine_prim.c_renderScanlinePolygon_FUN_00553470   line 259
-    File: engine/prim.c
-    Either the condition 'local_14==(SSoftwareEdge*)0x0' is redundant or there is possible null pointer dereference: local_14.
+  shape_superopt.cpp_CComplexPolygon_closeSplitBound line 241
+    File: shape/superopt.cpp
+    Identical inner 'if' condition is always true.
 
-  shape_quantize.cpp_CColorQuantizer_applyQuantizati line 45
-    File: shape/quantize.cpp
-    Either the condition 'pCVar6!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: pCVar6.
+  shape_superopt.cpp_CComplexPolygon_isConvex_FUN_00 line 65
+    File: shape/superopt.cpp
+    Identical inner 'if' condition is always true.
 
-  shape_quantize.cpp_CColorQuantizer_applyQuantizati line 47
-    File: shape/quantize.cpp
-    Either the condition 'pCVar6!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: pCVar6.
-
-  shape_quantize.cpp_quantizeRawPixelData_FUN_005564 line 131
-    File: shape/quantize.cpp
-    Either the condition 'local_14!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: local_14.
-
-  shape_quantize.cpp_quantizeRawPixelData_FUN_005564 line 150
-    File: shape/quantize.cpp
-    Either the condition 'local_14!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: local_14.
-
-  sound_snddx.cpp_CDirectSoundDevice_initPropertySet line 44
+  sound_snddx.cpp_directSoundEnumerationCallback_FUN line 59
     File: sound/snddx.cpp
-    Either the condition 'local_18!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: local_18.
-
-  sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005 line 74
-    File: sound/snddx.cpp
-    Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
+    Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
 nullPointer (6)
@@ -1433,30 +1445,6 @@ nullPointer (6)
     Possible null pointer dereference: local_20
 
 ----------------------------------------------------------------------------------------------------
-identicalInnerCondition (5)
-----------------------------------------------------------------------------------------------------
-
-  core_skeledit.cpp_CDeformableModel_sortFacesByText line 58
-    File: core/skeledit.cpp
-    Identical inner 'if' condition is always true.
-
-  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost line 336
-    File: shape/meshlod.cpp
-    Identical inner 'if' condition is always true.
-
-  shape_superopt.cpp_CComplexPolygon_closeSplitBound line 241
-    File: shape/superopt.cpp
-    Identical inner 'if' condition is always true.
-
-  shape_superopt.cpp_CComplexPolygon_isConvex_FUN_00 line 65
-    File: shape/superopt.cpp
-    Identical inner 'if' condition is always true.
-
-  sound_snddx.cpp_directSoundEnumerationCallback_FUN line 59
-    File: sound/snddx.cpp
-    Identical inner 'if' condition is always true.
-
-----------------------------------------------------------------------------------------------------
 shiftNegativeLHS (3)
 ----------------------------------------------------------------------------------------------------
 
@@ -1473,7 +1461,7 @@ shiftNegativeLHS (3)
     Shifting a negative value is technically undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-arrayIndexOutOfBounds (3)
+arrayIndexOutOfBounds (2)
 ----------------------------------------------------------------------------------------------------
 
   core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQu line 223
@@ -1483,10 +1471,6 @@ arrayIndexOutOfBounds (3)
   core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQu line 224
     File: core/dmodel.cpp
     Array 'local_f0[4]' accessed at index 9, which is out of bounds.
-
-  core_skeleton.cpp_CDeformableModel_loadStream_FUN_ line 197
-    File: core/skeleton.cpp
-    Array 'local_78[2]' accessed at index 2, which is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
 arrayIndexOutOfBoundsCond (1)
@@ -1527,6 +1511,14 @@ nullPointerArithmetic (1)
   core_main.c_displayErrorAndQuit_FUN_00506f10       line 88
     File: core/main.c
     Pointer addition with NULL pointer.
+
+----------------------------------------------------------------------------------------------------
+nullPointerArithmeticRedundantCheck (1)
+----------------------------------------------------------------------------------------------------
+
+  shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050ef line 19
+    File: shape/memdbg.cpp
+    Either the condition 'user_ptr!=(void*)0x0' is redundant or there is overflow in pointer subtraction.
 
 ----------------------------------------------------------------------------------------------------
 invalidTestForOverflow (1)

@@ -9,30 +9,30 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 115
+  Functions with static analysis data: 118
   Functions flagged by multiple tools: 0
 
   Cppcheck (quick):
-    Files analyzed:      115
-    Files with findings: 115
-    Total diagnostics:   364
+    Files analyzed:      118
+    Files with findings: 118
+    Total diagnostics:   361
 
 ====================================================================================================
 TOP FINDINGS - Cppcheck (quick)
 ====================================================================================================
 
   selfAssignment                                            120  [likely decompiler artifact]
-  uninitvar                                                  63  [likely decompiler artifact]
-  shiftTooManyBitsSigned                                     44
-  legacyUninitvar                                            41
+  uninitvar                                                  60  [likely decompiler artifact]
+  shiftTooManyBitsSigned                                     46
   invalidscanf                                               40
+  legacyUninitvar                                            37
   objectIndex                                                12
+  nullPointerRedundantCheck                                  11
   invalidPointerCast                                         11
-  nullPointerRedundantCheck                                  10
+  identicalInnerCondition                                     6
   nullPointer                                                 6
-  identicalInnerCondition                                     5
   shiftNegativeLHS                                            3
-  arrayIndexOutOfBounds                                       3
+  arrayIndexOutOfBounds                                       2
   arrayIndexOutOfBoundsCond                                   1
   invalidFunctionArgStr                                       1
   compareBoolExpressionWithInt                                1

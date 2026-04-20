@@ -4,17 +4,19 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 57,
+    "complexity_score": 112,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 6,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 57,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 5,
+    "suspect_types": [
+      "unnamed_local"
+    ],
     "total_lines": 257
   },
   "cross_references": [
@@ -229,5 +231,51 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 16,
+      "match": "local_2c",
+      "severity": "mild",
+      "text": "int local_2c[6];",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 19,
+      "match": "local_2c",
+      "severity": "mild",
+      "text": "SVar1 = _fread(local_2c,0x18,1,file);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 22,
+      "match": "local_2c",
+      "severity": "mild",
+      "text": "if ((local_2c[0] < 3) || (4 < local_2c[0])) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 22,
+      "match": "local_2c",
+      "severity": "mild",
+      "text": "if ((local_2c[0] < 3) || (4 < local_2c[0])) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 25,
+      "match": "local_2c",
+      "severity": "mild",
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"KFM file is invalid version %d\",local_2c[0]);",
+      "type": "unnamed_local"
+    }
+  ]
 }

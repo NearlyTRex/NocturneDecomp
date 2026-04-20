@@ -7,8 +7,7 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; CMatrix3x4f      Stack[-0x8c]:48  local_8c
-; CMatrix3x3f      Stack[-0x5c]:36  local_5c
-; int              Stack[-0x30]:4  local_30
+; CMatrix3x4f      Stack[-0x5c]:48  local_5c
 ; CVector3f        Stack[-0x2c]:12  local_2c
 ; CVector3i        Stack[-0x20]:12  local_20
 ; CMatrix3x4f *    Stack[-0x14]:4  local_14
@@ -88,7 +87,7 @@ section .text
     JMP 0x03fc4665                      ; 0042a4a5
         ;   XREF to: 03fc4665 (UNCONDITIONAL_JUMP)  ; LAB_03fc4665
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005f5690 ; 0042a4b6
-        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f * matrix_in, CVector3f * euler_out)
+        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x4f * matrix_in, CVector3f * euler_out)
         ;   Label: LAB_0042a4b6
     ADD ESP,0x8                         ; 0042a4bb
     MOV EAX,dword ptr [ESP + 0x3c]      ; 0042a4be

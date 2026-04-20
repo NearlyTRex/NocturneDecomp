@@ -30,7 +30,7 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 005f73ec
     PUSH EAX                            ; 005f73f0
     CALL core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280 ; 005f73f1
-        ;   XREF to: 005f7280 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x3f * matrix_out, CQuaternion4f * quat_in)
+        ;   XREF to: 005f7280 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x4f * matrix_out, CQuaternion4f * quat_in)
     ADD ESP,0x8                         ; 005f73f6
     MOV EAX,ESP                         ; 005f73f9
     PUSH EAX                            ; 005f73fb

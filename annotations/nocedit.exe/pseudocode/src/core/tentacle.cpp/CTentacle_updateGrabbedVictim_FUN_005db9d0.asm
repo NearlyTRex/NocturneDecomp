@@ -109,7 +109,7 @@ section .text
     PUSH EAX                            ; 005dbaff
     FSTP float ptr [EDX + 0x28]         ; 005dbb00
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005f5690 ; 005dbb03
-        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f * matrix_in, CVector3f * euler_out)
+        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     ADD ESP,0x8                         ; 005dbb08
     PUSH EAX                            ; 005dbb0b
     MOV ECX,dword ptr [EBX + 0xbe3c]    ; 005dbb0c

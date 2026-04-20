@@ -9,7 +9,7 @@
 CVector3f * __cdecl core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(CQuaternion4f *quat_in,CVector3f *vector_out)
 
 {
-  CMatrix3x3f local_34;
+  CMatrix3x4f local_34;
   
   core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280(&local_34,(CQuaternion4f *)vector_out);
   core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_34,(CVector3f *)quat_in);

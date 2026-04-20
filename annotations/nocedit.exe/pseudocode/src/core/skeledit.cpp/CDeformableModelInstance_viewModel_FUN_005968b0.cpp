@@ -456,8 +456,7 @@ LAB_0059722b:
         local_200.position.y = (pCVar10->position).y;
         local_200.position.z = (pCVar10->position).z;
       }
-      pCVar13 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690
-                          ((CMatrix3x3f *)&local_2f0,&local_148);
+      pCVar13 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_2f0,&local_148);
       if ((CVector3f *)&local_200.pitch != pCVar13) {
         local_200.pitch = pCVar13->x;
         local_200.yaw = pCVar13->y;
@@ -675,8 +674,7 @@ LAB_005975b4:
         local_184.y = pCVar13->y;
         local_184.z = pCVar13->z;
       }
-      pCVar13 = core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0
-                          ((CMatrix3x3f *)&local_260,&local_190);
+      pCVar13 = core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(&local_260,&local_190);
       if (&local_19c != pCVar13) {
         local_19c.x = pCVar13->x;
         local_19c.y = pCVar13->y;

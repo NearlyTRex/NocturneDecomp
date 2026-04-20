@@ -4,19 +4,19 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 108,
+    "complexity_score": 88,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 58,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
       "param_count_too_few",
-      "pointer_cast"
+      "unnamed_local"
     ],
     "total_lines": 195
   },
@@ -113,6 +113,35 @@
     },
     "pcode_op_count": 727
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(byte *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(&local_3c,input_vector,bone_matrices + *(byte *)((int)pfVar3 + 1));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(byte *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "(&local_54,input_vector,bone_matrices + *(byte *)((int)pfVar1 + 1));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(float *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pfVar1 = (float *)((int)pfVar1 + 1);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 104,
     "local_size": 88,
@@ -229,30 +258,6 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(byte *)((int)",
-      "severity": "mild",
-      "text": "(&local_3c,input_vector,bone_matrices + *(byte *)((int)pfVar3 + 1));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(byte *)((int)",
-      "severity": "mild",
-      "text": "(&local_54,input_vector,bone_matrices + *(byte *)((int)pfVar1 + 1));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "pfVar1 = (float *)((int)pfVar1 + 1);",
-      "type": "pointer_cast"
-    },
-    {
       "call_site_count": 1,
       "declared_params": 4,
       "description": "Signature has too few params - likely missing this ptr or other params",
@@ -262,6 +267,15 @@
       "param_delta": 1,
       "text": "Function declares 4 params but call sites push 5 (1 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 21,
+      "match": "local_20",
+      "severity": "mild",
+      "text": "int local_20;",
+      "type": "unnamed_local"
     }
   ]
 }

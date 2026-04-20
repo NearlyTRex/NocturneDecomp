@@ -27,7 +27,7 @@
 ; CMatrix3x4f      Stack[-0xa5c]:48  local_a5c
 ; float[12]        Stack[-0xa2c]:48  local_a2c
 ; CMatrix3x4f      Stack[-0x9fc]:48  local_9fc
-; CMatrix3x3f      Stack[-0x9cc]:36  local_9cc
+; CMatrix3x4f      Stack[-0x9cc]:48  local_9cc
 ; CMatrix3x4f      Stack[-0x99c]:48  local_99c
 ; CMatrix3x4f      Stack[-0x96c]:48  local_96c
 ; CMatrix3x4f      Stack[-0x93c]:48  local_93c
@@ -856,7 +856,7 @@ section .text
     JMP 0x03fc059e                      ; 005c120a
         ;   XREF to: 03fc059e (UNCONDITIONAL_JUMP)  ; LAB_03fc059e
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005f5690 ; 005c121f
-        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f * matrix_in, CVector3f * euler_out)
+        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x4f * matrix_in, CVector3f * euler_out)
         ;   Label: LAB_005c121f
     MOV ESI,EAX                         ; 005c1224
     LEA EAX,[EBP + 0x2]                 ; 005c1226
@@ -1102,7 +1102,7 @@ section .text
     JMP 0x03fc06cc                      ; 005c153f
         ;   XREF to: 03fc06cc (UNCONDITIONAL_JUMP)  ; LAB_03fc06cc
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005f5690 ; 005c1554
-        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f * matrix_in, CVector3f * euler_out)
+        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x4f * matrix_in, CVector3f * euler_out)
         ;   Label: LAB_005c1554
     MOV ESI,EAX                         ; 005c1559
     LEA EAX,[EBP + 0x2]                 ; 005c155b

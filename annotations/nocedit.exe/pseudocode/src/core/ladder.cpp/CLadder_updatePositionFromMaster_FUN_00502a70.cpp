@@ -16,8 +16,7 @@ void __cdecl core_ladder_cpp_CLadder_updatePositionFromMaster_FUN_00502a70(CLadd
   byte bVar6;
   CMatrix3x4f local_dc;
   CMatrix3x4f local_ac;
-  CMatrix3x3f local_7c;
-  float local_50;
+  CMatrix3x4f local_7c;
   CMatrix3x4f local_4c;
   float local_1c;
   float local_18;

@@ -30,7 +30,7 @@ void __cdecl core_platfrm_cpp_CPlatform_process_FUN_0054cc30(CPlatform *this_ptr
   bool bVar12;
   char local_324 [256];
   CMatrix3x4f local_224;
-  CMatrix3x3f CStack_1f4;
+  CMatrix3x4f CStack_1f4;
   CMatrix3x4f CStack_1c4;
   CMatrix3x4f CStack_194;
   CMatrix3x4f CStack_164;

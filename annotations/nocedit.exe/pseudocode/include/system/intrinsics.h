@@ -344,7 +344,11 @@ static inline int* _cpuid_intrinsic(int leaf) {
 // =============================================================================
 
 #ifndef ROUND
-#define ROUND(x) ((x) >= 0 ? (int)((x) + 0.5) : (int)((x) - 0.5))
+// Matches Watcom FIST semantics: NaN/inf/out-of-range -> INT_MIN (0x80000000).
+static inline int ROUND(double x) {
+    if (x != x || x >= 2147483647.5 || x < -2147483648.5) return (int)0x80000000;
+    return x >= 0 ? (int)(x + 0.5) : (int)(x - 0.5);
+}
 #endif
 
 #ifndef TRUNC

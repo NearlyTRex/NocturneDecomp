@@ -4,17 +4,19 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 216,
-    "complexity_score": 49,
+    "complexity_score": 114,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 49,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 6,
+    "suspect_types": [
+      "unnamed_local"
+    ],
     "total_lines": 265
   },
   "cross_references": [],
@@ -199,5 +201,60 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 21,
+      "match": "local_1a4",
+      "severity": "mild",
+      "text": "CMatrix3x4f local_1a4;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 22,
+      "match": "local_174",
+      "severity": "mild",
+      "text": "CMatrix3x4f local_174;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 24,
+      "match": "local_114",
+      "severity": "mild",
+      "text": "CMatrix3x4f local_114;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 25,
+      "match": "local_e4",
+      "severity": "mild",
+      "text": "CMatrix3x4f local_e4;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 26,
+      "match": "local_b4",
+      "severity": "mild",
+      "text": "CMatrix3x4f local_b4;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 28,
+      "match": "local_54",
+      "severity": "mild",
+      "text": "CMatrix3x4f local_54;",
+      "type": "unnamed_local"
+    }
+  ]
 }

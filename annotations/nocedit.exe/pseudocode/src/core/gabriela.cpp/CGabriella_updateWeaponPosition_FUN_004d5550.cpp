@@ -86,7 +86,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004d5550(CGab
                       (&((this_ptr->base).inventory.selected_weapon)->base,"CCrossbow");
     if (iVar5 != 0) {
       core_xform_cpp_getTranslation_FUN_005f6110(&local_2ec,&local_40);
-      core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_2ec,&local_34);
+      core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_2ec,&local_34);
       local_34.z = (1.0 - this_ptr->aim_weight) * local_34.z;
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                 (&local_2ec,&local_40,&local_34);
@@ -112,7 +112,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponPosition_FUN_004d5550(CGab
   (pCVar4->base).location.position.y = pCVar3->y;
   (pCVar4->base).location.position.z = pCVar3->z;
   pUVar6 = (UOrientationVector *)
-           core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_31c,&local_4c);
+           core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_31c,&local_4c);
   pCVar4 = (this_ptr->base).inventory.selected_weapon;
   pUVar5 = &(pCVar4->base).orient;
   if (pUVar5 != pUVar6) {

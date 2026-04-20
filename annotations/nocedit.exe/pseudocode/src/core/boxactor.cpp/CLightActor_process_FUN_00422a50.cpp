@@ -19,7 +19,7 @@ void __cdecl core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *thi
   byte bVar7;
   CMatrix3x4f local_e4;
   CMatrix3x4f local_b4;
-  CMatrix3x3f local_84;
+  CMatrix3x4f local_84;
   CMatrix3x4f local_54;
   CVector3f local_24;
   CVector3f local_18;

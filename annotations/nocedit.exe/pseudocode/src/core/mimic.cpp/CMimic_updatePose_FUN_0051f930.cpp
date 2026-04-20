@@ -167,7 +167,7 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
     (this_ptr->base).base.base.location.position.x = local_150.m[0].z;
     (this_ptr->base).base.base.location.position.y = local_150.m[1].z;
     (this_ptr->base).base.base.location.position.z = local_150.m[2].z;
-    pCVar9 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_60,&local_24);
+    pCVar9 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_60,&local_24);
     pUVar14 = &(this_ptr->base).base.base.orient;
     if (pUVar14 != (UOrientationVector *)pCVar9) {
       (pUVar14->vec).x = pCVar9->x;

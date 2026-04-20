@@ -8,18 +8,7 @@
 ; int              Stack[0x8]:4   bone_index
 ; Local Variables:
 ; CMatrix3x4f      Stack[-0xac]:48  local_ac
-; int              Stack[-0x7c]:4  local_7c
-; float            Stack[-0x78]:4  local_78
-; float            Stack[-0x74]:4  local_74
-; float            Stack[-0x70]:4  local_70
-; float            Stack[-0x6c]:4  local_6c
-; float            Stack[-0x68]:4  local_68
-; float            Stack[-0x64]:4  local_64
-; float            Stack[-0x60]:4  local_60
-; float            Stack[-0x5c]:4  local_5c
-; float            Stack[-0x58]:4  local_58
-; float            Stack[-0x54]:4  local_54
-; float            Stack[-0x50]:4  local_50
+; CMatrix3x4f      Stack[-0x7c]:48  local_7c
 ; CMatrix3x4f      Stack[-0x4c]:48  local_4c
 ; CVector3f        Stack[-0x1c]:12  local_1c
 ; int              Stack[-0x10]:4  local_10
@@ -102,7 +91,7 @@ section .text
     LEA EAX,[ESP + 0x34]                ; 0059f8f0
     PUSH EAX                            ; 0059f8f4
     CALL core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280 ; 0059f8f5
-        ;   XREF to: 005f7280 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x3f * matrix_out, CQuaternion4f * quat_in)
+        ;   XREF to: 005f7280 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x4f * matrix_out, CQuaternion4f * quat_in)
     ADD ESP,0x8                         ; 0059f8fa
     MOV EAX,dword ptr [ESP + 0xb4]      ; 0059f8fd
     SHL EAX,0x2                         ; 0059f904

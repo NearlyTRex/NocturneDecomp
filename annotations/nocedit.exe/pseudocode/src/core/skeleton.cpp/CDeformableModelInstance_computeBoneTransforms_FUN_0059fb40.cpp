@@ -36,7 +36,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FU
     local_24 = pCVar1;
     local_20 = pCVar3;
     do {
-      core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280((CMatrix3x3f *)local_24,local_1c);
+      core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280(local_24,local_1c);
       if ((pCVar2->bone_transform).bone_scales[0] != 1.0) {
         (this_ptr->bone_transform).bone_world_matrices[iVar3].m[0].w =
              (pCVar2->bone_transform).bone_scales[0] *

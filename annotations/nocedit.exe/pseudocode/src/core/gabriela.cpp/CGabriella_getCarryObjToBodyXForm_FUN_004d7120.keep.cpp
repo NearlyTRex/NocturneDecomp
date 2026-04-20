@@ -110,7 +110,7 @@ LAB_004d73e5:
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
             (&CStack_d0,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar1,
              &CStack_130);
-  pCVar3 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&CStack_d0,&CStack_4c);
+  pCVar3 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&CStack_d0,&CStack_4c);
   if (&local_58 != pCVar3) {
     local_58.x = pCVar3->x;
     local_58.y = pCVar3->y;

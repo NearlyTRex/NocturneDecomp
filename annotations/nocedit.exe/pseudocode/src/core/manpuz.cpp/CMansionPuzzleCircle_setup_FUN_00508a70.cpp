@@ -164,7 +164,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_setup_FUN_00508a70(CMansionPuz
       local_28->y = pCVar16->y;
       local_28->z = pCVar16->z;
     }
-    pCVar10 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_11c,&local_64);
+    pCVar10 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_11c,&local_64);
     if (&pSVar12->rotation != pCVar10) {
       (pSVar12->rotation).x = pCVar10->x;
       (pSVar12->rotation).y = pCVar10->y;

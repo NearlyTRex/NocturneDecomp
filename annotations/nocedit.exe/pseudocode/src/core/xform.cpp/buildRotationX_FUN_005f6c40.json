@@ -4,18 +4,19 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 45,
+    "complexity_score": 110,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 30,
-    "suspect_count": 1,
+    "suspect_count": 7,
     "suspect_types": [
-      "param_count_too_few"
+      "param_count_too_few",
+      "unnamed_local"
     ],
     "total_lines": 70
   },
@@ -230,6 +231,60 @@
       "param_delta": 2,
       "text": "Function declares 2 params but call sites push 4 (2 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 18,
+      "match": "local_48",
+      "severity": "mild",
+      "text": "float local_48 [12];",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 22,
+      "match": "local_48",
+      "severity": "mild",
+      "text": "local_48[0] = 1.0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 23,
+      "match": "local_48",
+      "severity": "mild",
+      "text": "local_48[1] = 0.0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 24,
+      "match": "local_48",
+      "severity": "mild",
+      "text": "local_48[2] = 0.0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 25,
+      "match": "local_48",
+      "severity": "mild",
+      "text": "local_48[3] = 0.0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 26,
+      "match": "local_48",
+      "severity": "mild",
+      "text": "local_48[4] = 0.0;",
+      "type": "unnamed_local"
     }
   ]
 }

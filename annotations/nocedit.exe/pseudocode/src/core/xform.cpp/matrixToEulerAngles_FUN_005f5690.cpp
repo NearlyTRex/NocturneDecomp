@@ -2,11 +2,11 @@
 // Address: 005f5690
 // Address Range: [[005f5690, 005f5bca]]
 // Convention: __cdecl
-// Signature: CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f *matrix_in,CVector3f *euler_out)
+// Signature: CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x4f *matrix_in,CVector3f *euler_out)
 
 #include "nocturne.h"
 
-CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f *matrix_in,CVector3f *euler_out)
+CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x4f *matrix_in,CVector3f *euler_out)
 
 {
   float fVar5;
@@ -38,30 +38,30 @@ CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f 
   float fVar1;
   float fVar2;
   
-  fVar1 = matrix_in->m[0].y;
-  fVar2 = matrix_in->m[0].x;
-  fVar3 = matrix_in->m[0].z;
+  fVar1 = matrix_in->m[0].x;
+  fVar2 = matrix_in->m[0].w;
+  fVar3 = matrix_in->m[0].y;
   dVar10 = (double)SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1);
   if (0.0 < dVar10) {
     dVar10 = 1.0 / dVar10;
   }
   local_98 = SUB84(__BITCAST_UINT64(dVar10),0);
-  fVar5 = matrix_in->m[1].y;
-  fVar8 = matrix_in->m[1].z;
-  fVar9 = matrix_in->m[2].x;
+  fVar5 = matrix_in->m[1].w;
+  fVar8 = matrix_in->m[1].x;
+  fVar9 = matrix_in->m[1].y;
   fVar5 = SQRT(fVar9 * fVar9 + fVar8 * fVar8 + fVar5 * fVar5);
   if (0.0 < fVar5) {
     fVar5 = 1.0 / fVar5;
   }
-  fVar8 = matrix_in->m[2].z;
-  fVar9 = matrix_in[1].m[0].x;
-  fVar4 = matrix_in[1].m[0].y;
+  fVar8 = matrix_in->m[2].w;
+  fVar9 = matrix_in->m[2].x;
+  fVar4 = matrix_in->m[2].y;
   dVar10 = (double)SQRT(fVar4 * fVar4 + fVar9 * fVar9 + fVar8 * fVar8);
   if (0.0 < dVar10) {
     dVar10 = 1.0 / dVar10;
   }
   local_88 = SUB84(__BITCAST_UINT64(dVar10),0);
-  fVar5 = -matrix_in->m[2].x * fVar5;
+  fVar5 = -matrix_in->m[1].y * fVar5;
   uStack_8c = (uint)((ulonglong)(double)fVar5 >> 0x20);
   if ((float)-1 < fVar5) {
     if ((double)fVar5 < 1.0) {
@@ -75,11 +75,11 @@ CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f 
       if (0.0 < dVar11) {
         dVar11 = 1.0 / dVar11;
         uStack_3c = SUB84(__BITCAST_UINT64(dVar11),0);
-        fVar5 = matrix_in->m[0].z * (float)__BITCAST_DOUBLE(CONCAT44(local_98,uStack_9c)) * (float)dVar11;
+        fVar5 = matrix_in->m[0].y * (float)__BITCAST_DOUBLE(CONCAT44(local_98,uStack_9c)) * (float)dVar11;
         dVar5 = (double)fVar5;
         uStack_34 = SUB84(__BITCAST_UINT64(dVar5),0);
         local_30 = (uint)((ulonglong)dVar5 >> 0x20);
-        dVar11 = (double)(matrix_in[1].m[0].y * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c)) *
+        dVar11 = (double)(matrix_in->m[2].y * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c)) *
                          (float)dVar11);
         uStack_64 = SUB84(__BITCAST_UINT64(dVar11),0);
         if ((0.70699999999999996 <= dVar5) ||
@@ -106,8 +106,8 @@ CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f 
           local_18 = local_18 + -6.283185f;
         }
         euler_out->y = local_18;
-        dVar11 = (double)matrix_in->m[1].y * dVar10 * __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40));
-        dVar10 = (double)matrix_in->m[1].z * dVar10 * __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40));
+        dVar11 = (double)matrix_in->m[1].w * dVar10 * __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40));
+        dVar10 = (double)matrix_in->m[1].x * dVar10 * __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40));
         local_b0 = SUB84(__BITCAST_UINT64(dVar11),0);
         if ((0.70699999999999996 <= dVar11) ||
            (dVar11 <= -0.70699999999999996)) {
@@ -148,9 +148,9 @@ CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f 
     euler_out->x = -1.5707964;
   }
   euler_out->z = 0.0;
-  fVar5 = -matrix_in->m[2].z * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c));
+  fVar5 = -matrix_in->m[2].w * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c));
   dVar10 = (double)fVar5;
-  dVar11 = (double)(matrix_in->m[0].x * (float)__BITCAST_DOUBLE(CONCAT44(local_98,uStack_9c)));
+  dVar11 = (double)(matrix_in->m[0].w * (float)__BITCAST_DOUBLE(CONCAT44(local_98,uStack_9c)));
   if ((0.70699999999999996 <= dVar10) ||
      (dVar10 <= -0.70699999999999996)) {
     if (-1 < dVar11) {

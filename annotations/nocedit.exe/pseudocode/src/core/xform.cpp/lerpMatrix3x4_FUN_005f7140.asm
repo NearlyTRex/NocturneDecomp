@@ -114,7 +114,7 @@ section .text
     LEA ESI,[ESP + 0xc]                 ; 005f7217
     PUSH ESI                            ; 005f721b
     CALL core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280 ; 005f721c
-        ;   XREF to: 005f7280 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x3f * matrix_out, CQuaternion4f * quat_in)
+        ;   XREF to: 005f7280 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x4f * matrix_out, CQuaternion4f * quat_in)
     ADD ESP,0x8                         ; 005f7221
     FLD1                                ; 005f7224
     MOV ESI,dword ptr [EBP + 0x10]      ; 005f7226

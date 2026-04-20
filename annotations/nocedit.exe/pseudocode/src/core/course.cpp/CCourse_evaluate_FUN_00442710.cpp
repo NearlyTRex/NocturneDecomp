@@ -15,7 +15,7 @@ void __cdecl core_course_cpp_CCourse_evaluate_FUN_00442710(CCourse *this_ptr,flo
   CMatrix3x3f *pCVar4;
   byte bVar5;
   CVector3f *euler_out;
-  CMatrix3x3f local_88;
+  CMatrix3x4f local_88;
   CMatrix3x4f local_58;
   CQuaternion4f local_28;
   CVector3f local_18;

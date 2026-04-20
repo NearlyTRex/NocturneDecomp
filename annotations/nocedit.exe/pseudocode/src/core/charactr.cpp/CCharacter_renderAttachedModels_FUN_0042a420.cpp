@@ -16,8 +16,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042a420(CCha
   CMatrix3x3f *pCVar5;
   byte bVar6;
   CMatrix3x4f local_8c;
-  CMatrix3x3f local_5c;
-  int local_30;
+  CMatrix3x4f local_5c;
   CVector3f local_2c;
   CVector3i local_20;
   CMatrix3x4f *local_14;
@@ -31,11 +30,13 @@ void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042a420(CCha
                   (&pSVar2->transform,
                    (this_ptr->model).bone_transform.bone_world_matrices + pSVar2->bone_index,
                    &local_8c);
-        local_5c.m[1].x = local_8c.m[0].z;
-        local_5c.m[2].y = local_8c.m[1].z;
+        local_5c.m[0].z = local_8c.m[0].z;
+        local_5c.m[1].z = local_8c.m[1].z;
+        local_5c.m[2].z = local_8c.m[2].z;
         core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_5c,&local_2c);
-        local_20.x = (int)local_5c.m[1].x;
-        local_20.y = (int)local_5c.m[2].y;
+        local_20.x = (int)local_5c.m[0].z;
+        local_20.y = (int)local_5c.m[1].z;
+        local_20.z = (int)local_5c.m[2].z;
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                   (g_CDemonRendererPtr2,(CVector3i *)&local_2c,&local_20);
         core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20

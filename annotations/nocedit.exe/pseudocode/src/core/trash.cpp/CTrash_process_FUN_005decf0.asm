@@ -9,7 +9,7 @@
 ; Local Variables:
 ; CMatrix3x4f      Stack[-0x1a8]:48  local_1a8
 ; CMatrix3x4f      Stack[-0x178]:48  local_178
-; CMatrix3x3f      Stack[-0x148]:36  local_148
+; CMatrix3x4f      Stack[-0x148]:48  local_148
 ; CMatrix3x4f      Stack[-0x118]:48  local_118
 ; float            Stack[-0xe8]:4  local_e8
 ; float            Stack[-0xe4]:4  local_e4
@@ -625,7 +625,7 @@ section .text
     PUSH EAX                            ; 005df4cf
     MOVSD.REP ES:EDI,ESI                ; 005df4d0
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005f5690 ; 005df4d2
-        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f * matrix_in, CVector3f * euler_out)
+        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     ADD ESP,0x8                         ; 005df4d7
     MOV EDI,dword ptr [ESP + 0x1a0]     ; 005df4da
     CMP EAX,EDI                         ; 005df4e1

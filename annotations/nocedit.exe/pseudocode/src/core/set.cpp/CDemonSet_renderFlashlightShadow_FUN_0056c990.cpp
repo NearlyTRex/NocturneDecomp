@@ -41,7 +41,7 @@ void __cdecl core_set_cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990(CDemonSe
   input_local_point = core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_50,&local_44,matrix);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             ((CDemonActor *)this_ptr_00,&local_2c,input_local_point);
-  core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)matrix,&local_38);
+  core_xform_cpp_matrixToEulerAngles_FUN_005f5690(matrix,&local_38);
   local_20.z = 0.0;
   local_20.x = local_38.x + (float)0.261799387791667;
   g_CDemonLightInstance.volumetric_enabled = 0;

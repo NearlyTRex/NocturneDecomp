@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1033,
-    "complexity_score": 643,
+    "complexity_score": 853,
     "cross_reference_count": 4,
     "function_call_count": 7,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 358,
-    "suspect_count": 27,
+    "suspect_count": 48,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
@@ -778,112 +778,63 @@
   "static_analysis": {
     "analyzed_file": "CDeformableModelInstance_updateMotion_FUN_0059e0a0.keep.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 15,
+      "diagnostic_count": 8,
       "diagnostics": [
         {
           "check_id": "objectIndex",
           "column": 20,
-          "line": 262,
+          "line": 256,
           "message": "The address of local variable 'local_122c' might be accessed at non-zero index.",
           "severity": "warning"
         },
         {
           "check_id": "objectIndex",
           "column": 20,
-          "line": 263,
+          "line": 257,
           "message": "The address of local variable 'local_122c' might be accessed at non-zero index.",
           "severity": "warning"
         },
         {
           "check_id": "objectIndex",
           "column": 20,
-          "line": 264,
+          "line": 258,
           "message": "The address of local variable 'local_122c' might be accessed at non-zero index.",
           "severity": "warning"
         },
         {
           "check_id": "objectIndex",
           "column": 20,
-          "line": 265,
+          "line": 259,
           "message": "The address of local variable 'local_122c' might be accessed at non-zero index.",
           "severity": "warning"
         },
         {
           "check_id": "objectIndex",
           "column": 38,
-          "line": 283,
+          "line": 277,
           "message": "The address of local variable 'local_122c' might be accessed at non-zero index.",
           "severity": "warning"
         },
         {
           "check_id": "objectIndex",
           "column": 38,
-          "line": 284,
+          "line": 278,
           "message": "The address of local variable 'local_122c' might be accessed at non-zero index.",
           "severity": "warning"
         },
         {
           "check_id": "objectIndex",
           "column": 38,
-          "line": 285,
+          "line": 279,
           "message": "The address of local variable 'local_122c' might be accessed at non-zero index.",
           "severity": "warning"
         },
         {
           "check_id": "objectIndex",
           "column": 38,
-          "line": 286,
+          "line": 280,
           "message": "The address of local variable 'local_122c' might be accessed at non-zero index.",
           "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 68,
-          "line": 128,
-          "message": "Uninitialized variable: auStack_248",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 68,
-          "line": 129,
-          "message": "Uninitialized variable: fStack_244",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 68,
-          "line": 130,
-          "message": "Uninitialized variable: fStack_240",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 54,
-          "line": 270,
-          "message": "Uninitialized variable: afStack_228",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 29,
-          "line": 189,
-          "message": "Uninitialized variable: afStack_1b8",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 69,
-          "line": 248,
-          "message": "Uninitialized variable: afStack_168[0]",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 65,
-          "line": 175,
-          "message": "Uninitialized variable: afStack_c8[0]",
-          "severity": "error"
         }
       ],
       "error": null
@@ -1070,47 +1021,236 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 88,
+      "line": 45,
+      "match": "local_24c",
+      "severity": "mild",
+      "text": "CQuaternion4f local_24c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 47,
+      "match": "local_22c",
+      "severity": "mild",
+      "text": "CQuaternion4f local_22c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 48,
+      "match": "local_21c",
+      "severity": "mild",
+      "text": "CQuaternion4f local_21c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 54,
+      "match": "local_1bc",
+      "severity": "mild",
+      "text": "CQuaternion4f local_1bc;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 59,
+      "match": "local_16c",
+      "severity": "mild",
+      "text": "CQuaternion4f local_16c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 69,
+      "match": "local_cc",
+      "severity": "mild",
+      "text": "CQuaternion4f local_cc;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 82,
       "match": "local_5c",
       "severity": "mild",
       "text": "CDeformableModelInstance *local_5c;",
       "type": "unnamed_local"
     },
     {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 120,
+      "match": "local_24c",
+      "severity": "mild",
+      "text": "(this_ptr_00,local_34,local_84,local_88,local_1870,&local_24c);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 121,
+      "match": "local_24c",
+      "severity": "mild",
+      "text": "(local_5c->bone_transform).pose_data.bone_rotations[0].w = local_24c.w;",
+      "type": "unnamed_local"
+    },
+    {
       "description": "Complex pointer cast",
       "introduced_by": "keep",
-      "line": 133,
+      "line": 127,
       "match": "(CDeformableModelInstance *)((int)",
       "severity": "mild",
       "text": "local_5c = (CDeformableModelInstance *)((int)local_5c + 0x10);",
       "type": "pointer_cast"
     },
     {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 166,
+      "match": "local_cc",
+      "severity": "mild",
+      "text": "(this_ptr_00,local_1c,local_84,local_88,local_1870,&local_cc);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 168,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "*(float *)((int)&local_bec[0].w + local_54) = local_cc.w;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 168,
+      "match": "local_cc",
+      "severity": "mild",
+      "text": "*(float *)((int)&local_bec[0].w + local_54) = local_cc.w;",
+      "type": "unnamed_local"
+    },
+    {
       "description": "Complex pointer cast",
       "introduced_by": "keep",
       "line": 169,
-      "match": "(int *)((int)",
+      "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)aiStack_5ac + local_38) = iVar10;",
+      "text": "*(float *)((int)&local_bec[0].x + iVar10) = local_cc.x;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "introduced_by": "keep",
-      "line": 174,
-      "match": "(int *)((int)",
+      "line": 170,
+      "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&local_bec[0].w + local_54) = local_cc;",
+      "text": "*(float *)((int)&local_bec[0].y + iVar10) = local_cc.y;",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 200,
-      "match": "(int *)((int)",
+      "line": 181,
+      "match": "local_1bc",
       "severity": "mild",
-      "text": "if (-1 < *(int *)((int)aiStack_5ac + local_58)) {",
-      "type": "pointer_cast"
+      "text": "(this_ptr_00,iVar10,local_84,local_88,local_1870,&local_1bc);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 182,
+      "match": "local_1bc",
+      "severity": "mild",
+      "text": "local_bec[iVar10].w = local_1bc.w;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 240,
+      "match": "local_16c",
+      "severity": "mild",
+      "text": "(this_ptr_00,local_18,local_84,local_88,local_1870,&local_16c);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 241,
+      "match": "local_16c",
+      "severity": "mild",
+      "text": "*(float *)((int)&local_186c[0].w + local_44) = local_16c.w;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 262,
+      "match": "local_22c",
+      "severity": "mild",
+      "text": "(this_ptr_00,local_78,local_84,local_88,local_1870,&local_22c);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 263,
+      "match": "local_22c",
+      "severity": "mild",
+      "text": "*(float *)((int)&local_186c[0].w + local_80) = local_22c.w;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 350,
+      "match": "local_21c",
+      "severity": "mild",
+      "text": "(this_ptr_00,iVar10,local_84,local_88,local_1870,&local_21c);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 351,
+      "match": "local_21c",
+      "severity": "mild",
+      "text": "(local_60->bone_transform).pose_data.bone_rotations[0].w = local_21c.w;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 352,
+      "match": "local_21c",
+      "severity": "mild",
+      "text": "(local_60->bone_transform).pose_data.bone_rotations[0].x = local_21c.x;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 353,
+      "match": "local_21c",
+      "severity": "mild",
+      "text": "(local_60->bone_transform).pose_data.bone_rotations[0].y = local_21c.y;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 354,
+      "match": "local_21c",
+      "severity": "mild",
+      "text": "(local_60->bone_transform).pose_data.bone_rotations[0].z = local_21c.z;",
+      "type": "unnamed_local"
     }
   ]
 }

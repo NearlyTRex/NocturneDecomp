@@ -2,11 +2,11 @@
 // Address: 005f5bd0
 // Address Range: [[005f5bd0, 005f610a]]
 // Convention: __cdecl
-// Signature: CVector3f * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x3f *matrix_ptr,CVector3f *euler_out)
+// Signature: CVector3f * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x4f *matrix_ptr,CVector3f *euler_out)
 
 #include "nocturne.h"
 
-CVector3f * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x3f *matrix_ptr,CVector3f *euler_out)
+CVector3f * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x4f *matrix_ptr,CVector3f *euler_out)
 
 {
   float fVar4;
@@ -38,24 +38,24 @@ CVector3f * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x
   float fVar3;
   double dVar4;
   
-  fVar1 = matrix_ptr->m[0].y;
-  fVar2 = matrix_ptr->m[0].x;
-  fVar3 = matrix_ptr->m[0].z;
+  fVar1 = matrix_ptr->m[0].x;
+  fVar2 = matrix_ptr->m[0].w;
+  fVar3 = matrix_ptr->m[0].y;
   dVar11 = (double)SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1);
   if (0.0 < dVar11) {
     dVar11 = 1.0 / dVar11;
   }
   uStack_84 = (uint)((ulonglong)dVar11 >> 0x20);
   local_88 = SUB84(__BITCAST_UINT64(dVar11),0);
-  fVar4 = matrix_ptr->m[2].z;
-  fVar7 = matrix_ptr[1].m[0].x;
-  fVar8 = matrix_ptr[1].m[0].y;
+  fVar4 = matrix_ptr->m[2].w;
+  fVar7 = matrix_ptr->m[2].x;
+  fVar8 = matrix_ptr->m[2].y;
   dVar11 = (double)SQRT(fVar8 * fVar8 + fVar7 * fVar7 + fVar4 * fVar4);
   if (0.0 < dVar11) {
     dVar11 = 1.0 / dVar11;
   }
   local_80 = SUB84(__BITCAST_UINT64(dVar11),0);
-  fVar4 = -matrix_ptr[1].m[0].x * (float)dVar11;
+  fVar4 = -matrix_ptr->m[2].x * (float)dVar11;
   if ((float)-1 < fVar4) {
     if ((double)fVar4 < 1.0) {
       fVar5 = (float10)fVar4;
@@ -68,8 +68,8 @@ CVector3f * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x
       if (0.0 < dVar11) {
         dVar11 = 1.0 / dVar11;
         uStack_3c = SUB84(__BITCAST_UINT64(dVar11),0);
-        dVar9 = (double)matrix_ptr->m[2].z * __BITCAST_DOUBLE(CONCAT44(local_80,uStack_84)) * dVar11;
-        dVar11 = (double)matrix_ptr[1].m[0].y * __BITCAST_DOUBLE(CONCAT44(local_80,uStack_84)) * dVar11;
+        dVar9 = (double)matrix_ptr->m[2].w * __BITCAST_DOUBLE(CONCAT44(local_80,uStack_84)) * dVar11;
+        dVar11 = (double)matrix_ptr->m[2].y * __BITCAST_DOUBLE(CONCAT44(local_80,uStack_84)) * dVar11;
         uStack_34 = SUB84(__BITCAST_UINT64(dVar9),0);
         local_30 = (uint)((ulonglong)dVar9 >> 0x20);
         uStack_64 = SUB84(__BITCAST_UINT64(dVar11),0);
@@ -97,10 +97,10 @@ CVector3f * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x
           local_18 = local_18 + -6.283185f;
         }
         euler_out->y = local_18;
-        fVar4 = matrix_ptr->m[0].y * fVar4 * (float)__BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40));
+        fVar4 = matrix_ptr->m[0].x * fVar4 * (float)__BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40));
         dVar11 = (double)fVar4;
         local_b0 = SUB84(__BITCAST_UINT64(dVar11),0);
-        dVar9 = (double)(matrix_ptr->m[1].z * (float)__BITCAST_DOUBLE(CONCAT44(uStack_9c,local_a0)) *
+        dVar9 = (double)(matrix_ptr->m[1].x * (float)__BITCAST_DOUBLE(CONCAT44(uStack_9c,local_a0)) *
                         (float)__BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40)));
         if ((0.70699999999999996 <= dVar11) ||
            (dVar11 <= -0.70699999999999996)) {
@@ -142,9 +142,9 @@ CVector3f * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x
   }
   uStack_8c = (uint)((ulonglong)(double)fVar4 >> 0x20);
   euler_out->z = 0.0;
-  fVar4 = -matrix_ptr->m[0].z * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c));
+  fVar4 = -matrix_ptr->m[0].y * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c));
   dVar11 = (double)fVar4;
-  dVar4 = (double)(matrix_ptr->m[0].x * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c)));
+  dVar4 = (double)(matrix_ptr->m[0].w * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c)));
   if ((0.70699999999999996 <= dVar11) || (dVar11 <= -0.70699999999999996))
   {
     if (-1 < dVar4) {

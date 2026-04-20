@@ -111,7 +111,7 @@ section .text
     PUSH EAX                            ; 0056ca19
     PUSH ESI                            ; 0056ca1a
     CALL core_xform.cpp_matrixToEulerAngles_FUN_005f5690 ; 0056ca1b
-        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x3f * matrix_in, CVector3f * euler_out)
+        ;   XREF to: 005f5690 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x4f * matrix_in, CVector3f * euler_out)
     FLD float ptr [EBP + -0x28]         ; 0056ca20
     FLD float ptr [EBP + -0x24]         ; 0056ca23
     MOV EDX,0x2d7eaf0                   ; 0056ca26 | g_CDemonLightInstance

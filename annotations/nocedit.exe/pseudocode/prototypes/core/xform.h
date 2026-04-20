@@ -57,11 +57,11 @@ float __cdecl atan2Approximation(double sin_value,double cos_value);
 
 // Original: core_xform.cpp_matrixToEulerAngles_FUN_005f5690
 // Address: 005f5690
-CVector3f * __cdecl matrixToEulerAngles(CMatrix3x3f *matrix_in,CVector3f *euler_out);
+CVector3f * __cdecl matrixToEulerAngles(CMatrix3x4f *matrix_in,CVector3f *euler_out);
 
 // Original: core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0
 // Address: 005f5bd0
-CVector3f * __cdecl matrixToEulerAnglesZYX(CMatrix3x3f *matrix_ptr,CVector3f *euler_out);
+CVector3f * __cdecl matrixToEulerAnglesZYX(CMatrix3x4f *matrix_ptr,CVector3f *euler_out);
 
 // Original: core_xform.cpp_getTranslation_FUN_005f6110
 // Address: 005f6110
@@ -141,7 +141,7 @@ CMatrix3x4f * __stack3_esi lerpMatrix3x4(CMatrix3x4f *matrix_a,CMatrix3x4f *matr
 
 // Original: core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280
 // Address: 005f7280
-CQuaternion4f * __cdecl quaternionToMatrix3x3(CMatrix3x3f *matrix_out,CQuaternion4f *quat_in);
+CQuaternion4f * __cdecl quaternionToMatrix3x3(CMatrix3x4f *matrix_out,CQuaternion4f *quat_in);
 
 // Original: core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0
 // Address: 005f73e0
