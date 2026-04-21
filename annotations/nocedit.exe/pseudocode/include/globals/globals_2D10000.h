@@ -2,7 +2,6 @@
 
 // Type dependencies
 #include "system/basetypes.h"
-#include "system/time.h"
 #include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CFireEffect.h"
@@ -42,6 +41,9 @@ extern CKeyFramedModelInstance g_FireEffectGunFlashModel;
 // CKeyFramedModelInstance[5]
 extern CKeyFramedModelInstance g_CFireEffectDebrisModels[5];
 
+// CPodAuditRecord
+extern CPodAuditRecord g_WorkingAuditRecord;
+
 // CPodAuditRecord*
 extern CPodAuditRecord* g_AuditRecordsArray;
 
@@ -61,30 +63,16 @@ extern SMRGLTextureBasic g_GunFlameTextures[20];
 // SVersionControlSession
 extern SVersionControlSession g_VersionControlSession;
 
-// char[256]
-extern char g_CurrentFilenameBuffer[256];
-
 // char[264]
 extern char g_VersionControlDirectory[264];
 
-// char[32]
-extern char g_WorkingDirectoryPath[32];
-
 // int
-extern int g_AuditOperationType;
-extern int g_CurrentFileTimestamp;
-extern int g_CurrentFileSize;
-extern int g_CurrentFileOffset;
-extern int g_CurrentFileCompressedSize;
 extern int g_AuditRecordCount;
 extern int g_TextureAnimCounter2;
 extern int g_TextureAnimCounter1;
 extern int g_CharactersOnFireCount;
 extern int g_FlameCanCount;
 extern int g_SmokeParticleAllocIndex;
-
-// time_t
-extern time_t g_PodCreationTime;
 
 // uint[3]
 extern uint g_ShellBounceSoundHandles[3];

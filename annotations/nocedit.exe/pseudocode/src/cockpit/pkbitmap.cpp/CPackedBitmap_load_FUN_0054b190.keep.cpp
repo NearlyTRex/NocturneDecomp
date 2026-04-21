@@ -97,19 +97,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
           *puVar6 = (ushort)iVar8;
           puVar6[1] = (ushort)(iVar9 - iVar8);
           uVar1 = puVar6[1];
-          puVar10 = local_14 + *puVar6;
-          puVar1 = puVar6 + 2;
-          for (uVar7 = (uint)(uVar1 >> 2); uVar7 != 0; uVar7 = uVar7 - 1) {
-            *(uint *)puVar1 = *(uint *)puVar10;
-            puVar10 = puVar10 + (uint)bVar11 * -8 + 4;
-            puVar1 = puVar1 + (uint)bVar11 * -4 + 2;
-          }
-          for (uVar2 = (byte)uVar1 & 0xffffff03; uVar2 != 0; uVar2 = uVar2 - 1) {
-            puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
-            *(uchar *)puVar1 = *puVar10;
-            puVar10 = puVar10;
-            puVar1 = (ushort *)((int)puVar1 + (uint)bVar11 * -2 + 1);
-          }
+          memcpy(puVar6 + 2,local_14 + *puVar6,uVar1);
         }
         iVar8 = iVar9;
         iVar3 = new_size;

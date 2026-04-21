@@ -8,16 +8,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 5057,
-    "complexity_score": 2938,
+    "complexity_score": 2923,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 177,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 2138,
-    "suspect_count": 78,
+    "suspect_count": 77,
     "suspect_types": [
       "unnamed_local",
-      "unrolled_memcpy",
       "unrolled_strchr",
       "unrolled_strlen"
     ],
@@ -1514,6 +1513,15 @@
       "resolution_source": "keep",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "line": 1011,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "for (iVar2 = 0x32; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -2268,77 +2276,77 @@
         {
           "check_id": "invalidscanf",
           "column": 41,
-          "line": 1035,
+          "line": 1029,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 41,
-          "line": 1139,
+          "line": 1133,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 43,
-          "line": 1207,
+          "line": 1201,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 47,
-          "line": 1319,
+          "line": 1313,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 49,
-          "line": 1371,
+          "line": 1365,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 51,
-          "line": 1479,
+          "line": 1473,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 53,
-          "line": 1589,
+          "line": 1583,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 55,
-          "line": 1668,
+          "line": 1662,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 55,
-          "line": 1783,
+          "line": 1777,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 55,
-          "line": 1912,
+          "line": 1906,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 51,
-          "line": 1985,
+          "line": 1979,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         }
@@ -2348,14 +2356,6 @@
     "file_variant": "keep"
   },
   "suspects": [
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 1011,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "mild",
-      "text": "for (iVar2 = 0x32; iVar2 != 0; iVar2 = iVar2 + -1) {",
-      "type": "unrolled_memcpy"
-    },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
       "line": 158,
@@ -2970,7 +2970,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 1206,
+      "line": 1200,
       "match": "local_6c",
       "severity": "mild",
       "text": "local_6c = -1;",
@@ -2979,7 +2979,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 1320,
+      "line": 1314,
       "match": "local_7f4",
       "severity": "mild",
       "text": "((char *)local_ec,\"( %[^ ,] , %d )%n\",local_7f4,",
@@ -2988,7 +2988,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 1900,
+      "line": 1894,
       "match": "local_1c",
       "severity": "mild",
       "text": "local_1c = -1;",
@@ -2997,7 +2997,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 1984,
+      "line": 1978,
       "match": "local_18",
       "severity": "mild",
       "text": "local_18 = -1;",
@@ -3006,7 +3006,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 1987,
+      "line": 1981,
       "match": "local_18",
       "severity": "mild",
       "text": "local_bdd + 1,local_59d + 1,&local_18);",
@@ -3015,7 +3015,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 1988,
+      "line": 1982,
       "match": "local_18",
       "severity": "mild",
       "text": "if (local_18 < 5) {",

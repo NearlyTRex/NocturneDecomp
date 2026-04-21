@@ -27,13 +27,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c7
   bVar6 = 0;
   core_actor_cpp_CActorPropertyList_resetSelection_FUN_0040e150(&g_MsnEditPropertyList);
   if (this_ptr->selected_actor != (CDemonActor *)0x0) {
-    pcVar4 = g_MsnEditLastSelectedPropertyName;
-    pcVar6 = local_6c;
-    for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(uint *)pcVar6 = *(uint *)pcVar4;
-      pcVar4 = pcVar4 + ((uint)bVar6 * -2 + 1) * 4;
-      pcVar6 = pcVar6 + (uint)bVar6 * -8 + 4;
-    }
+    memcpy(local_6c,g_MsnEditLastSelectedPropertyName,100);
     while( true ) {
       core_actor_cpp_CActorPropertyList_resetSelection_FUN_0040e150(&g_MsnEditPropertyList);
       (*((this_ptr->selected_actor->vtable)._ub)->getPropertyList)

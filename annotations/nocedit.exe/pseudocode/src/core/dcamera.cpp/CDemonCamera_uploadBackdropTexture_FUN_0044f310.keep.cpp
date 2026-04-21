@@ -44,30 +44,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_0044f310(CD
   } while (iVar5 != 0x10000);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,&g_CameraBackdropTexture);
-  puVar6 = g_CameraTextureWorkBuffer;
-  puVar9 = (uint *)g_CurrentTextureData;
-  for (iVar5 = 0x4000; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar9 = *puVar6;
-    puVar6 = puVar6 + (uint)bVar11 * -2 + 1;
-    puVar9 = puVar9 + (uint)bVar11 * -2 + 1;
-  }
-  for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *(char *)puVar9 = (char)*puVar6;
-    puVar6 = (uint *)((int)puVar6 + (uint)bVar11 * -2 + 1);
-    puVar9 = (uint *)((int)puVar9 + (uint)bVar11 * -2 + 1);
-  }
-  pSVar7 = &g_CameraImagePaletteData;
-  pbVar10 = (byte *)g_CurrentPalette;
-  for (iVar5 = 0xc0; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *(uint *)pbVar10 = *(uint *)pSVar7->colors;
-    pSVar7 = (SRGBColorPalette *)((int)pSVar7 + (uint)bVar11 * -8 + 4);
-    pbVar10 = pbVar10 + (uint)bVar11 * -8 + 4;
-  }
-  for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *pbVar10 = pSVar7->colors[0].r;
-    pSVar7 = (SRGBColorPalette *)((int)pSVar7 + (uint)bVar11 * -2 + 1);
-    pbVar10 = pbVar10 + (uint)bVar11 * -2 + 1;
-  }
+  memcpy(g_CurrentTextureData,g_CameraTextureWorkBuffer,0x10000);
+  memcpy(g_CurrentPalette,&g_CameraImagePaletteData,0x300);
   engine_drender_cpp_CDemonRenderer_updateTexture_FUN_0048dc30
             (g_CDemonRendererPtr2,&g_CameraBackdropTexture,&g_CameraImagePaletteData);
   return;

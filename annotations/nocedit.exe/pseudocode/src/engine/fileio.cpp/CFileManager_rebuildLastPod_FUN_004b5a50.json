@@ -7,19 +7,18 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1448,
-    "complexity_score": 866,
+    "complexity_score": 863,
     "cross_reference_count": 4,
     "function_call_count": 43,
     "global_count": 73,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 641,
+    "pseudocode_lines": 643,
     "suspect_count": 21,
     "suspect_types": [
       "pointer_cast",
-      "unrolled_memcpy",
       "unrolled_strcpy"
     ],
-    "total_lines": 2089
+    "total_lines": 2091
   },
   "cross_references": [
     {
@@ -567,92 +566,92 @@
     },
     {
       "addr": "02d12990",
-      "name": "g_WorkingDirectoryPath",
-      "type": "char[32]",
+      "name": "g_WorkingAuditRecord",
+      "type": "CPodAuditRecord",
       "value": null
     },
     {
       "addr": "02d12991",
-      "name": "g_WorkingDirectoryPath+1",
+      "name": "g_WorkingAuditRecord.user_path[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d12992",
-      "name": "g_WorkingDirectoryPath+2",
+      "name": "g_WorkingAuditRecord.user_path[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d12993",
-      "name": "g_WorkingDirectoryPath+3",
+      "name": "g_WorkingAuditRecord.user_path[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d12994",
-      "name": "g_WorkingDirectoryPath+4",
+      "name": "g_WorkingAuditRecord.user_path[4]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d129b0",
-      "name": "g_PodCreationTime",
-      "type": "time_t",
+      "name": "g_WorkingAuditRecord.timestamp",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d129b4",
-      "name": "g_AuditOperationType",
-      "type": "int",
+      "name": "g_WorkingAuditRecord.operation_type",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d129b8",
-      "name": "g_CurrentFilenameBuffer",
-      "type": "char[256]",
+      "name": "g_WorkingAuditRecord.filename[0]",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d129b9",
-      "name": "g_CurrentFilenameBuffer+1",
+      "name": "g_WorkingAuditRecord.filename[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d129ba",
-      "name": "g_CurrentFilenameBuffer+2",
+      "name": "g_WorkingAuditRecord.filename[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d129bb",
-      "name": "g_CurrentFilenameBuffer+3",
+      "name": "g_WorkingAuditRecord.filename[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d12ab8",
-      "name": "g_CurrentFileTimestamp",
-      "type": "int",
+      "name": "g_WorkingAuditRecord.original_timestamp",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d12abc",
-      "name": "g_CurrentFileSize",
-      "type": "int",
+      "name": "g_WorkingAuditRecord.original_file_size",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d12ac0",
-      "name": "g_CurrentFileOffset",
-      "type": "int",
+      "name": "g_WorkingAuditRecord.file_offset",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d12ac4",
-      "name": "g_CurrentFileCompressedSize",
-      "type": "int",
+      "name": "g_WorkingAuditRecord.compressed_size",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -1168,14 +1167,14 @@
         {
           "check_id": "selfAssignment",
           "column": 27,
-          "line": 541,
+          "line": 543,
           "message": "Redundant assignment of 'puVar13' to itself.",
           "severity": "warning"
         },
         {
           "check_id": "selfAssignment",
           "column": 27,
-          "line": 542,
+          "line": 544,
           "message": "Redundant assignment of 'pCVar18' to itself.",
           "severity": "warning"
         }
@@ -1190,7 +1189,7 @@
       "line": 177,
       "match": "(CPodAuditRecord *)((int)",
       "severity": "mild",
-      "text": "pCVar11 = (CPodAuditRecord *)((int)pCVar11 + ((uint)bVar19 * -2 + 1) * 4);",
+      "text": "pCVar15 = (CPodAuditRecord *)((int)pCVar15 + ((uint)bVar19 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -1198,7 +1197,7 @@
       "line": 195,
       "match": "(CPodAuditRecord *)((int)",
       "severity": "mild",
-      "text": "pCVar11 = (CPodAuditRecord *)((int)pCVar11 + (uint)bVar19 * -8 + 4);",
+      "text": "pCVar15 = (CPodAuditRecord *)((int)pCVar15 + (uint)bVar19 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1219,39 +1218,63 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 262,
+      "line": 263,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "g_CurrentFileSize = *(int *)((int)&(local_1838.directory_entries)->size + local_2c);",
+      "text": "*(int *)((int)&(local_1838.directory_entries)->size + local_2c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 286,
+      "line": 268,
       "match": "(CPodAuditRecord *)((int)",
       "severity": "mild",
-      "text": "pCVar11 = (CPodAuditRecord *)((int)pCVar11 + (uint)bVar19 * -8 + 4);",
+      "text": "pCVar15 = (CPodAuditRecord *)((int)pCVar15 + ((uint)bVar19 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 370,
+      "line": 287,
+      "match": "(CPodAuditRecord *)((int)",
+      "severity": "mild",
+      "text": "pCVar15 = (CPodAuditRecord *)((int)pCVar15 + (uint)bVar19 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 371,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "pcVar15 = (char *)((int)ptr_00 + local_30);",
+      "text": "pcVar11 = (char *)((int)ptr_00 + local_30);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 489,
+      "line": 471,
       "match": "(CPodAuditRecord *)((int)",
       "severity": "mild",
-      "text": "pCVar11 = (CPodAuditRecord *)((int)pCVar11 + (uint)bVar19 * -8 + 4);",
+      "text": "pCVar15 = (CPodAuditRecord *)((int)pCVar15 + ((uint)bVar19 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 530,
+      "line": 490,
+      "match": "(CPodAuditRecord *)((int)",
+      "severity": "mild",
+      "text": "pCVar15 = (CPodAuditRecord *)((int)pCVar15 + (uint)bVar19 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 515,
+      "match": "(CPodAuditRecord *)((int)",
+      "severity": "mild",
+      "text": "pCVar15 = (CPodAuditRecord *)((int)pCVar15 + ((uint)bVar19 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 532,
       "match": "(CPodAuditRecord *)((int)",
       "severity": "mild",
       "text": "pCVar18 = (CPodAuditRecord *)((int)pCVar18 + (uint)bVar19 * -8 + 4);",
@@ -1275,14 +1298,6 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 154,
-      "match": "do {",
-      "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 201,
       "match": "do {",
       "severity": "mild",
@@ -1299,7 +1314,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 292,
+      "line": 293,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -1307,7 +1322,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 372,
+      "line": 373,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -1315,7 +1330,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 449,
+      "line": 450,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -1323,7 +1338,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 495,
+      "line": 496,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -1331,27 +1346,11 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 540,
+      "line": 542,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 468,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "mild",
-      "text": "for (iVar3 = 0x4e; iVar3 != 0; iVar3 = iVar3 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 511,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "mild",
-      "text": "for (iVar3 = 0x4e; iVar3 != 0; iVar3 = iVar3 + -1) {",
-      "type": "unrolled_memcpy"
     }
   ]
 }

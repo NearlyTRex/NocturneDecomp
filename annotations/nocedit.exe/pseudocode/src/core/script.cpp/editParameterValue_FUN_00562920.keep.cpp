@@ -690,48 +690,10 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
           return 1;
         }
         if (*(int *)((int)local_a8 + local_14) != 0) {
-          iVar8 = -1;
-          pcVar8 = value_buffer;
-          do {
-            pcVar8 = pcVar8;
-            if (iVar8 == 0) break;
-            iVar8 = iVar8 + -1;
-            pcVar8 = pcVar8 + (uint)bVar9 * -2 + 1;
-            cVar1 = *pcVar8;
-            pcVar8 = pcVar8;
-          } while (cVar1 != '\0');
-          pcVar9 = pcVar8 + -1;
-          do {
-            cVar2 = *local_1c;
-            *pcVar9 = cVar2;
-            if (cVar2 == '\0') break;
-            cVar2 = local_1c[1];
-            local_1c = local_1c + 2;
-            pcVar9[1] = cVar2;
-            pcVar9 = pcVar9 + 2;
-          } while (cVar2 != '\0');
+          strcat(value_buffer,local_1c);
           local_1c = " ";
           pSVar7 = core_skeleton_cpp_CDeformableModel_getPartPtr_FUN_0059c220(local_20,iVar5);
-          iVar8 = -1;
-          pcVar9 = value_buffer;
-          do {
-            pcVar10 = pcVar9;
-            if (iVar8 == 0) break;
-            iVar8 = iVar8 + -1;
-            pcVar10 = pcVar9 + (uint)bVar9 * -2 + 1;
-            cVar2 = *pcVar9;
-            pcVar9 = pcVar10;
-          } while (cVar2 != '\0');
-          pcVar10 = pcVar10 + -1;
-          do {
-            cVar2 = pSVar7->part_name[0];
-            *pcVar10 = cVar2;
-            if (cVar2 == '\0') break;
-            cVar2 = pSVar7->part_name[1];
-            pSVar7 = (SPart *)(pSVar7->part_name + 2);
-            pcVar10[1] = cVar2;
-            pcVar10 = pcVar10 + 2;
-          } while (cVar2 != '\0');
+          strcat(value_buffer,pSVar7->part_name);
         }
         local_14 = local_14 + 4;
         iVar5 = iVar5 + 1;

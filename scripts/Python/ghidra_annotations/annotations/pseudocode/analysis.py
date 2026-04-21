@@ -6,6 +6,7 @@
 # - virtual_file_completion.txt - Virtual file completion status
 # - function_suspect_breakdown.txt - Function-by-function suspect breakdown
 # - suspect_type_analysis.txt - Analysis by suspect type
+# - suspect_by_function.txt - All suspects grouped per function (knock-out list)
 # - easy_wins.txt - Prioritized action list
 # - stack_pattern_analysis.txt - Stack pattern correlation
 # - param_mismatch_analysis.txt - Parameter count mismatch analysis
@@ -2260,6 +2261,83 @@ def generate_compilation_by_function_report(functions, output_path):
     return report_text
 
 
+def generate_suspect_by_function_report(functions, output_path):
+    """Generate suspect report grouped by function, showing all suspects per function.
+
+    Modeled after generate_compilation_by_function_report so we can knock out
+    whole functions from the suspect chain at once.
+
+    Args:
+        functions: List of function data dicts (with suspects)
+        output_path: Directory to write report
+    """
+    # Exclude CRT and entry functions — out of scope for RE work.
+    functions = [f for f in functions if not _is_crt_or_entry(f.get('_virtual_file', ''))]
+
+    lines = []
+    lines.append("=" * 100)
+    lines.append("FUNCTION SUSPECTS (GROUPED BY FUNCTION)")
+    lines.append("=" * 100)
+    lines.append("")
+
+    total = len(functions)
+    funcs_with_suspects = []
+    for func in functions:
+        suspects = func.get('suspects', [])
+        if suspects:
+            func_name = func.get('function', {}).get('name', 'unknown')
+            vfile = func.get('_virtual_file', '')
+            funcs_with_suspects.append({
+                'name': func_name,
+                'vfile': vfile,
+                'suspects': suspects,
+            })
+
+    clean = total - len(funcs_with_suspects)
+    clean_rate = (clean * 100.0 / total) if total > 0 else 0
+    total_suspects = sum(len(f['suspects']) for f in funcs_with_suspects)
+
+    lines.append("SUMMARY")
+    lines.append("-" * 50)
+    lines.append("Total functions analyzed: %d" % total)
+    lines.append("Clean: %d (%.1f%%)" % (clean, clean_rate))
+    lines.append("With suspects: %d" % len(funcs_with_suspects))
+    lines.append("Total suspects: %d" % total_suspects)
+    lines.append("")
+
+    funcs_with_suspects.sort(key=lambda f: f['name'])
+
+    for func_entry in funcs_with_suspects:
+        suspects = func_entry['suspects']
+        lines.append("=" * 100)
+        lines.append("%s (%d suspect%s)" % (
+            func_entry['name'],
+            len(suspects),
+            's' if len(suspects) != 1 else '',
+        ))
+        if func_entry['vfile']:
+            lines.append("  File: %s" % func_entry['vfile'])
+        lines.append("=" * 100)
+        for suspect in sorted(suspects, key=lambda s: s.get('line', 0)):
+            stype = suspect.get('type', 'unknown')
+            line = suspect.get('line', 0)
+            text = suspect.get('text', '').strip()
+            lines.append("  Line %d [%s]: %s" % (line, stype, text))
+        lines.append("")
+
+    report_text = "\n".join(lines)
+
+    report_path = os.path.join(output_path, "suspect_by_function.txt")
+    try:
+        with open(report_path, 'w') as f:
+            f.write(report_text)
+        log_info("Wrote suspect by-function report: %s" % report_path)
+    except Exception as e:
+        log_info("Failed to write suspect by-function report: %s" % str(e))
+
+    return report_text
+
+
 def generate_csv_data(functions, files, output_path):
     """Generate CSV files for further analysis or graphing."""
 
@@ -4483,6 +4561,7 @@ def generate_analysis_report(pseudocode_src_dir, output_path):
     generate_compilation_summary_report(functions, output_path)
     generate_compilation_detailed_report(functions, output_path)
     generate_compilation_by_function_report(functions, output_path)
+    generate_suspect_by_function_report(functions, output_path)
     generate_pass_by_value_report(functions, output_path)
     generate_annotation_quality_report(functions, output_path)
     generate_wrong_global_report(pseudocode_src_dir, output_path)

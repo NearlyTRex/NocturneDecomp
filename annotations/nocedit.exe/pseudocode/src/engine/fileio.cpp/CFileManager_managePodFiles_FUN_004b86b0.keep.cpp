@@ -77,13 +77,7 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
   local_4c = 0;
   iVar2 = engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0(this_ptr);
   if (iVar2 != 0) {
-    pcVar12 = g_DefaultPodDirectoryPath;
-    pcVar3 = local_598;
-    for (iVar2 = 0x41; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(uint *)pcVar3 = *(uint *)pcVar12;
-      pcVar12 = pcVar12 + ((uint)bVar15 * -2 + 1) * 4;
-      pcVar3 = pcVar3 + (uint)bVar15 * -8 + 4;
-    }
+    memcpy(local_598,g_DefaultPodDirectoryPath,0x104);
     if (pod_directory_path != (char *)0x0) {
       pcVar12 = local_598;
       do {

@@ -7,18 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 730,
-    "complexity_score": 396,
+    "complexity_score": 356,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 40,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 306,
-    "suspect_count": 7,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
-      "unrolled_strcat",
-      "unrolled_strcpy",
-      "unrolled_strlen"
+      "unrolled_strcpy"
     ],
     "total_lines": 1036
   },
@@ -523,6 +521,33 @@
       "severity": "mild",
       "text": "*(uint *)((int)&optional_pod_file[0xc04f]._cnt + 2) = 0;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 185,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 123,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 123,
+      "match": "strlen + <p> + -1 + strcpy",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcat"
     }
   ],
   "stack_frame": {
@@ -632,30 +657,6 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CFileManager_checkOutAndExtractPod_FUN_004ba740.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 17,
-          "line": 133,
-          "message": "Redundant assignment of 'pcVar10' to itself.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "selfAssignment",
-          "column": 17,
-          "line": 138,
-          "message": "Redundant assignment of 'pcVar10' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
   "suspects": [
     {
       "description": "Complex pointer cast",
@@ -688,30 +689,6 @@
       "severity": "mild",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 185,
-      "match": "do {",
-      "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 123,
-      "match": "do { if (v==0) break; v=v-1; ... }",
-      "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strlen"
-    },
-    {
-      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 123,
-      "match": "strlen + <p> + -1 + strcpy",
-      "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strcat"
     }
   ]
 }

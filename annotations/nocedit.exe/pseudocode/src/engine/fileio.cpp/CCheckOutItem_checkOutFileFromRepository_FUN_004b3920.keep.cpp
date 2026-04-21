@@ -97,27 +97,7 @@ LAB_004b39fc:
   }
   engine_dosio_c_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_14,local_124);
   engine_dosio_c_makePath_FUN_00481f50(local_228,local_14,local_124,(char *)0x0,(char *)0x0);
-  pcVar6 = "checkout.txt";
-  iVar3 = -1;
-  pcVar8 = local_228;
-  do {
-    pcVar8 = pcVar8;
-    if (iVar3 == 0) break;
-    iVar3 = iVar3 + -1;
-    pcVar8 = pcVar8 + (uint)bVar10 * -2 + 1;
-    cVar1 = *pcVar8;
-    pcVar8 = pcVar8;
-  } while (cVar1 != '\0');
-  pcVar7 = pcVar8 + -1;
-  do {
-    cVar2 = *pcVar6;
-    *pcVar7 = cVar2;
-    if (cVar2 == '\0') break;
-    cVar2 = pcVar6[1];
-    pcVar6 = pcVar6 + 2;
-    pcVar7[1] = cVar2;
-    pcVar7 = pcVar7 + 2;
-  } while (cVar2 != '\0');
+  strcat(local_228,"checkout.txt");
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Marking %s as checked out...",filename);
   iVar3 = 0;

@@ -313,11 +313,7 @@ LAB_0047bb1b:
             puVar20 = (uint *)
                       ((int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->
                              base).base.type + local_8c);
-            for (iVar15 = 0x12; iVar15 != 0; iVar15 = iVar15 + -1) {
-              *puVar20 = *puVar10;
-              puVar10 = puVar10 + (uint)bVar22 * -2 + 1;
-              puVar20 = puVar20 + (uint)bVar22 * -2 + 1;
-            }
+            memcpy(puVar20,puVar10,0x48);
             *(uint *)((int)this_ptr->poly_texture_index_list + iVar18) =
                  *(uint *)(local_80 + (int)this_ptr->poly_texture_index_list);
             puVar2 = this_ptr->env_map_opac_list;

@@ -475,13 +475,7 @@ LAB_00579173:
           }
           pCVar10 = local_1c + this_ptr->light_count;
           pCVar10->light_type = local_2478.light_type;
-          pcVar13 = local_2478.name;
-          pcVar12 = pCVar10->name;
-          for (iVar5 = 0x40; iVar5 != 0; iVar5 = iVar5 + -1) {
-            *(uint *)pcVar12 = *(uint *)pcVar13;
-            pcVar13 = pcVar13 + (uint)bVar22 * -8 + 4;
-            pcVar12 = pcVar12 + (uint)bVar22 * -8 + 4;
-          }
+          memcpy(pCVar10->name,local_2478.name,0x100);
           if (&pCVar10->pos != &local_2478.pos) {
             (pCVar10->pos).x = local_2478.pos.x;
             (pCVar10->pos).y = local_2478.pos.y;
@@ -495,14 +489,7 @@ LAB_00579173:
           pCVar10->fov = local_2478.fov;
           pCVar10->aspect = local_2478.aspect;
           pCVar10->intensity = local_2478.intensity;
-          pcVar13 = local_2478.visible_flags;
-          pcVar12 = pCVar10->visible_flags;
-          for (iVar5 = 0x3e; iVar5 != 0; iVar5 = iVar5 + -1) {
-            *(uint *)pcVar12 = *(uint *)pcVar13;
-            pcVar13 = pcVar13 + (uint)bVar22 * -8 + 4;
-            pcVar12 = pcVar12 + (uint)bVar22 * -8 + 4;
-          }
-          *(ushort *)pcVar12 = *(ushort *)pcVar13;
+          memcpy(pCVar10->visible_flags,local_2478.visible_flags,0xfa);
           pCVar10->camera_light_bounds[0].left = local_2478.camera_light_bounds[0].left;
           pCVar10->camera_light_bounds[0].top = local_2478.camera_light_bounds[0].top;
           pCVar10->camera_light_bounds[0].right = local_2478.camera_light_bounds[0].right;
@@ -519,31 +506,9 @@ LAB_00579173:
           pCVar10->cycle_elapsed = local_2478.cycle_elapsed;
           pCVar10->filter_count = local_2478.filter_count;
           pCVar10->blend_filter = local_2478.blend_filter;
-          pacVar14 = local_2478.filter_names;
-          pacVar18 = pCVar10->filter_names;
-          for (iVar5 = 0x140; iVar5 != 0; iVar5 = iVar5 + -1) {
-            pacVar18 = (char (*) [40])((int)pacVar18 + (uint)bVar22 * -8 + 4);
-            *(uint *)*pacVar18 = *(uint *)*pacVar14;
-            pacVar14 = (char (*) [40])((int)pacVar14 + (uint)bVar22 * -8 + 4);
-            pacVar18 = pacVar18;
-          }
-          pfVar14 = local_2478.filter_durations;
-          pfVar19 = pCVar10->filter_durations;
-          for (iVar5 = 0x20; iVar5 != 0; iVar5 = iVar5 + -1) {
-            pfVar19 = pfVar19 + (uint)bVar22 * -2 + 1;
-            pfVar14 = pfVar14 + (uint)bVar22 * -2 + 1;
-            *pfVar19 = *pfVar14;
-            pfVar14 = pfVar14;
-            pfVar19 = pfVar19;
-          }
-          piVar15 = local_2478.filter_indices;
-          piVar20 = pCVar10->filter_indices;
-          for (iVar5 = 0x20; iVar5 != 0; iVar5 = iVar5 + -1) {
-            piVar20 = piVar20 + (uint)bVar22 * -2 + 1;
-            *piVar20 = *piVar15;
-            piVar15 = piVar15 + (uint)bVar22 * -2 + 1;
-            piVar20 = piVar20;
-          }
+          memcpy(pCVar10->filter_names,local_2478.filter_names,0x500);
+          memcpy(pCVar10->filter_durations,local_2478.filter_durations,0x80);
+          memcpy(pCVar10->filter_indices,local_2478.filter_indices,0x80);
           pCVar10->move_filter = local_2478.move_filter;
           (pCVar10->filter_vel).x = local_2478.filter_vel.x;
           (pCVar10->filter_vel).y = local_2478.filter_vel.y;
@@ -551,15 +516,7 @@ LAB_00579173:
           (pCVar10->filter_pos).y = local_2478.filter_pos.y;
           (pCVar10->size).x = local_2478.size.x;
           (pCVar10->size).y = local_2478.size.y;
-          ppCVar15 = local_2478.filters;
-          ppCVar21 = pCVar10->filters;
-          for (iVar5 = 0x20; iVar5 != 0; iVar5 = iVar5 + -1) {
-            ppCVar21 = ppCVar21 + (uint)bVar22 * -2 + 1;
-            ppCVar15 = ppCVar15 + (uint)bVar22 * -2 + 1;
-            *ppCVar21 = *ppCVar15;
-            ppCVar15 = ppCVar15;
-            ppCVar21 = ppCVar21;
-          }
+          memcpy(pCVar10->filters,local_2478.filters,0x80);
           pCVar10->current_filter_frame = local_2478.current_filter_frame;
           pCVar10->filter_frame_elapsed = local_2478.filter_frame_elapsed;
           this_ptr->light_count = this_ptr->light_count + 1;

@@ -703,27 +703,7 @@ LAB_0046cf33:
             } while (cVar2 != '\0');
           }
           else {
-            pcVar12 = ".RAW";
-            iVar6 = -1;
-            pcVar10 = local_258;
-            do {
-              pcVar10 = pcVar10;
-              if (iVar6 == 0) break;
-              iVar6 = iVar6 + -1;
-              pcVar10 = pcVar10 + (uint)bVar11 * -2 + 1;
-              cVar2 = *pcVar10;
-              pcVar10 = pcVar10;
-            } while (cVar2 != '\0');
-            pcVar13 = pcVar10 + -1;
-            do {
-              cVar2 = *pcVar12;
-              *pcVar13 = cVar2;
-              if (cVar2 == '\0') break;
-              cVar2 = pcVar12[1];
-              pcVar12 = pcVar12 + 2;
-              pcVar13[1] = cVar2;
-              pcVar13 = pcVar13 + 2;
-            } while (cVar2 != '\0');
+            strcat(local_258,".RAW");
           }
         }
         else {

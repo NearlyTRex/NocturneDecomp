@@ -160,27 +160,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
   _sprintf(local_75c,"history\\%s.%s",filename,local_38);
   engine_dosio_c_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_1c,local_150);
   engine_dosio_c_makePath_FUN_00481f50(local_964,local_1c,local_150,(char *)0x0,(char *)0x0);
-  pcVar8 = local_75c;
-  iVar4 = -1;
-  pcVar11 = local_964;
-  do {
-    pcVar11 = pcVar11;
-    if (iVar4 == 0) break;
-    iVar4 = iVar4 + -1;
-    pcVar11 = pcVar11 + (uint)bVar12 * -2 + 1;
-    cVar2 = *pcVar11;
-    pcVar11 = pcVar11;
-  } while (cVar2 != '\0');
-  pcVar9 = pcVar11 + -1;
-  do {
-    cVar2 = *pcVar8;
-    *pcVar9 = cVar2;
-    if (cVar2 == '\0') break;
-    cVar2 = pcVar8[1];
-    pcVar8 = pcVar8 + 2;
-    pcVar9[1] = cVar2;
-    pcVar9 = pcVar9 + 2;
-  } while (cVar2 != '\0');
+  strcat(local_964,local_75c);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Reading %s",local_964);
   local_3c = engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(filename,local_964);

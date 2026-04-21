@@ -246,8 +246,8 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                     fVar8 = (float)iVar16 * fVar5 - fVar12 * fVar7;
                     fVar11 = (float)iVar15 * fVar7 - fVar6 * fVar5;
                     fVar10 = fVar6 * fVar12 - (float)iVar15 * (float)iVar16;
-                    fVar9 = (float)(g_LightAttenuationMax -
-                                   ((int)(fVar10 * fVar10 + fVar11 * fVar11 + fVar8 * fVar8) >> 1))
+                    fVar9 = ((float)g_LightAttenuationMax -
+                            (fVar10 * fVar10 + fVar11 * fVar11 + fVar8 * fVar8) * 0.5f)
                             * (float)65535;
                     *(float *)((int)pvVar14 + 8) = fVar8 * fVar9;
                     *(float *)((int)pvVar14 + 0xc) = fVar11 * fVar9;
@@ -309,9 +309,9 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                   iVar24 = 0;
                   local_64 = 0;
                   do {
-                    fVar5 = (float)(g_LightAttenuationMax -
-                                   ((int)(pCVar23->z * pCVar23->z +
-                                         pCVar23->x * pCVar23->x + pCVar23->y * pCVar23->y) >> 1)) *
+                    fVar5 = ((float)g_LightAttenuationMax -
+                            (pCVar23->z * pCVar23->z +
+                             pCVar23->x * pCVar23->x + pCVar23->y * pCVar23->y) * 0.5f) *
                             (float)65535;
                     pCVar23->x = pCVar23->x * fVar5;
                     pCVar23->y = pCVar23->y * fVar5;

@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 231,
+    "complexity_score": 71,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 71,
-    "suspect_count": 15,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 152
   },
   "cross_references": [
@@ -165,6 +162,143 @@
     },
     "pcode_op_count": 626
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(CLodVert *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pCVar3 = (CLodVert *)((int)pCVar3 + (uint)bVar11 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(CLodVert *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pCVar7 = (CLodVert *)((int)pCVar7 + (uint)bVar11 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(CLodVert *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pCVar3 = (CLodVert *)((int)pCVar3 + (uint)bVar11 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(CLodVert *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pCVar7 = (CLodVert *)((int)pCVar7 + (uint)bVar11 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(CLodFace *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pCVar4 = (CLodFace *)((int)pCVar4 + (uint)bVar11 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(CLodFace *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pCVar8 = (CLodFace *)((int)pCVar8 + (uint)bVar11 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(CLodFace *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pCVar4 = (CLodFace *)((int)pCVar4 + (uint)bVar11 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(CLodFace *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pCVar8 = (CLodFace *)((int)pCVar8 + (uint)bVar11 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(SMRGLTextureLod *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar5 = (SMRGLTextureLod *)((int)pSVar5 + ((uint)bVar11 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(SMRGLTextureLod *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar9 = (SMRGLTextureLod *)((int)pSVar9 + ((uint)bVar11 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 55,
+      "match": "(SMRGLTextureLod *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar5 = (SMRGLTextureLod *)((int)pSVar5 + (uint)bVar11 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(SMRGLTextureLod *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar9 = (SMRGLTextureLod *)((int)pSVar9 + (uint)bVar11 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "piVar6 = (int *)((int)piVar6 + (uint)bVar11 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "piVar10 = (int *)((int)piVar10 + (uint)bVar11 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "line": 63,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "for (iVar2 = 4; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -188,126 +322,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 25,
-      "match": "(CLodVert *)((int)",
-      "severity": "mild",
-      "text": "pCVar3 = (CLodVert *)((int)pCVar3 + (uint)bVar11 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(CLodVert *)((int)",
-      "severity": "mild",
-      "text": "pCVar7 = (CLodVert *)((int)pCVar7 + (uint)bVar11 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(CLodVert *)((int)",
-      "severity": "mild",
-      "text": "pCVar3 = (CLodVert *)((int)pCVar3 + (uint)bVar11 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(CLodVert *)((int)",
-      "severity": "mild",
-      "text": "pCVar7 = (CLodVert *)((int)pCVar7 + (uint)bVar11 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(CLodFace *)((int)",
-      "severity": "mild",
-      "text": "pCVar4 = (CLodFace *)((int)pCVar4 + (uint)bVar11 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(CLodFace *)((int)",
-      "severity": "mild",
-      "text": "pCVar8 = (CLodFace *)((int)pCVar8 + (uint)bVar11 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(CLodFace *)((int)",
-      "severity": "mild",
-      "text": "pCVar4 = (CLodFace *)((int)pCVar4 + (uint)bVar11 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 43,
-      "match": "(CLodFace *)((int)",
-      "severity": "mild",
-      "text": "pCVar8 = (CLodFace *)((int)pCVar8 + (uint)bVar11 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 50,
-      "match": "(SMRGLTextureLod *)((int)",
-      "severity": "mild",
-      "text": "pSVar5 = (SMRGLTextureLod *)((int)pSVar5 + ((uint)bVar11 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 51,
-      "match": "(SMRGLTextureLod *)((int)",
-      "severity": "mild",
-      "text": "pSVar9 = (SMRGLTextureLod *)((int)pSVar9 + ((uint)bVar11 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 55,
-      "match": "(SMRGLTextureLod *)((int)",
-      "severity": "mild",
-      "text": "pSVar5 = (SMRGLTextureLod *)((int)pSVar5 + (uint)bVar11 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 56,
-      "match": "(SMRGLTextureLod *)((int)",
-      "severity": "mild",
-      "text": "pSVar9 = (SMRGLTextureLod *)((int)pSVar9 + (uint)bVar11 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 70,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "piVar6 = (int *)((int)piVar6 + (uint)bVar11 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 71,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "piVar10 = (int *)((int)piVar10 + (uint)bVar11 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 63,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "mild",
-      "text": "for (iVar2 = 4; iVar2 != 0; iVar2 = iVar2 + -1) {",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

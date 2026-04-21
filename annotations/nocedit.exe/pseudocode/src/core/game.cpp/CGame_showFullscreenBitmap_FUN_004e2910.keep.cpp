@@ -66,27 +66,7 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
     return;
   }
   splitpath(pcVar10,(char *)0x0,(char *)0x0,local_130,(char *)0x0);
-  pcVar6 = ".act";
-  iVar4 = -1;
-  pcVar8 = local_130;
-  do {
-    pcVar8 = pcVar8;
-    if (iVar4 == 0) break;
-    iVar4 = iVar4 + -1;
-    pcVar8 = pcVar8 + (uint)bVar10 * -2 + 1;
-    cVar1 = *pcVar8;
-    pcVar8 = pcVar8;
-  } while (cVar1 != '\0');
-  pcVar10 = pcVar8 + -1;
-  do {
-    cVar2 = *pcVar6;
-    *pcVar10 = cVar2;
-    if (cVar2 == '\0') break;
-    cVar2 = pcVar6[1];
-    pcVar6 = pcVar6 + 2;
-    pcVar10[1] = cVar2;
-    pcVar10 = pcVar10 + 2;
-  } while (cVar2 != '\0');
+  strcat(local_130,".act");
   p_Var4 = engine_dosio_c_getFile_FUN_00481a50("art",local_130,"rb");
   if (p_Var4 == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740

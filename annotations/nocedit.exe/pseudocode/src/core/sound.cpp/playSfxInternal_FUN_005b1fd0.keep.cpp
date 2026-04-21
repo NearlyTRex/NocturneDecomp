@@ -110,13 +110,7 @@ LAB_005b2052:
         pcVar8 = pcVar8 + 2;
       } while (cVar5 != '\0');
     }
-    pcVar7 = g_SoundResultBufferTemplate;
-    pcVar6 = local_b0;
-    for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(uint *)pcVar6 = *(uint *)pcVar7;
-      pcVar7 = pcVar7 + ((uint)bVar9 * -2 + 1) * 4;
-      pcVar6 = pcVar6 + ((uint)bVar9 * -2 + 1) * 4;
-    }
+    memcpy(local_b0,g_SoundResultBufferTemplate,100);
     pcVar7 = local_114;
     do {
       pcVar6 = pcVar7;

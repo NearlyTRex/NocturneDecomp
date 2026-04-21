@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (361 diagnostics)
+Cppcheck (quick) (336 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (120)
+selfAssignment (74)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 170
@@ -19,10 +19,6 @@ selfAssignment (120)
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 283
     File: cockpit/ckptutil.c
     Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b1 line 110
-    File: cockpit/pkbitmap.cpp
-    Redundant assignment of 'puVar10' to itself.
 
   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 53
     File: cockpit/pkbitmap.cpp
@@ -60,15 +56,7 @@ selfAssignment (120)
     File: core/dcamera.cpp
     Redundant assignment of 'piVar27' to itself.
 
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 448
-    File: core/dcamera.cpp
-    Redundant assignment of 'puVar28' to itself.
-
   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 460
-    File: core/dcamera.cpp
-    Redundant assignment of 'pSVar24' to itself.
-
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 484
     File: core/dcamera.cpp
     Redundant assignment of 'iVar16' to itself.
 
@@ -92,30 +80,6 @@ selfAssignment (120)
     File: core/game.cpp
     Redundant assignment of 'pbVar21' to itself.
 
-  core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2 line 73
-    File: core/game.cpp
-    Redundant assignment of 'pcVar8' to itself.
-
-  core_game.cpp_CGame_showFullscreenBitmap_FUN_004e2 line 78
-    File: core/game.cpp
-    Redundant assignment of 'pcVar8' to itself.
-
-  core_inv.cpp_CInventory_renderAllItems_FUN_0050069 line 208
-    File: core/inv.cpp
-    Redundant assignment of 'pcVar10' to itself.
-
-  core_inv.cpp_CInventory_renderAllItems_FUN_0050069 line 213
-    File: core/inv.cpp
-    Redundant assignment of 'pcVar10' to itself.
-
-  core_menu.cpp_configureCustomKeyBindings_FUN_00513 line 852
-    File: core/menu.cpp
-    Redundant assignment of 'pcVar35' to itself.
-
-  core_menu.cpp_configureCustomKeyBindings_FUN_00513 line 857
-    File: core/menu.cpp
-    Redundant assignment of 'pcVar35' to itself.
-
   core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc line 113
     File: core/mimic.cpp
     Redundant assignment of 'pCVar9' to itself.
@@ -136,21 +100,13 @@ selfAssignment (120)
     File: core/msnedit.cpp
     Redundant assignment of 'pCVar5' to itself.
 
-  core_script.cpp_CScript_loadScript_FUN_00559f80    line 53
+  core_script.cpp_parseCommandWithTemplates_FUN_0056 line 52
     File: core/script.cpp
-    Redundant assignment of 'pcVar12' to itself.
+    Redundant assignment of 'pCVar6' to itself.
 
-  core_script.cpp_CScript_loadScript_FUN_00559f80    line 58
+  core_script.cpp_parseCommandWithTemplates_FUN_0056 line 53
     File: core/script.cpp
-    Redundant assignment of 'pcVar12' to itself.
-
-  core_script.cpp_editParameterValue_FUN_00562920    line 696
-    File: core/script.cpp
-    Redundant assignment of 'pcVar8' to itself.
-
-  core_script.cpp_editParameterValue_FUN_00562920    line 701
-    File: core/script.cpp
-    Redundant assignment of 'pcVar8' to itself.
+    Redundant assignment of 'pCVar9' to itself.
 
   core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fb line 147
     File: core/set.cpp
@@ -159,30 +115,6 @@ selfAssignment (120)
   core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 line 567
     File: core/set.cpp
     Redundant assignment of 'iVar13' to itself.
-
-  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  line 528
-    File: core/setedit.cpp
-    Redundant assignment of 'pacVar18' to itself.
-
-  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  line 536
-    File: core/setedit.cpp
-    Redundant assignment of 'pfVar14' to itself.
-
-  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  line 537
-    File: core/setedit.cpp
-    Redundant assignment of 'pfVar19' to itself.
-
-  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  line 545
-    File: core/setedit.cpp
-    Redundant assignment of 'piVar20' to itself.
-
-  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  line 560
-    File: core/setedit.cpp
-    Redundant assignment of 'ppCVar15' to itself.
-
-  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  line 561
-    File: core/setedit.cpp
-    Redundant assignment of 'ppCVar21' to itself.
 
   core_setedit.cpp_CDemonSet_showCameraEditor_FUN_00 line 248
     File: core/setedit.cpp
@@ -195,22 +127,6 @@ selfAssignment (120)
   core_setedit.cpp_CDemonSet_showCameraEditor_FUN_00 line 382
     File: core/setedit.cpp
     Redundant assignment of 'pCVar18' to itself.
-
-  core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580 line 303
-    File: core/setedit.cpp
-    Redundant assignment of 'pcVar10' to itself.
-
-  core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580 line 308
-    File: core/setedit.cpp
-    Redundant assignment of 'pcVar10' to itself.
-
-  core_setedit.cpp_CDemonSet_showLightEditor_FUN_005 line 276
-    File: core/setedit.cpp
-    Redundant assignment of 'pcVar9' to itself.
-
-  core_setedit.cpp_CDemonSet_showLightEditor_FUN_005 line 281
-    File: core/setedit.cpp
-    Redundant assignment of 'pcVar9' to itself.
 
   core_setedit.cpp_loadCameraThumbnail_FUN_005769a0  line 146
     File: core/setedit.cpp
@@ -240,19 +156,7 @@ selfAssignment (120)
     File: core/skeledit.cpp
     Redundant assignment of 'pCVar8' to itself.
 
-  core_skeledit.cpp_CDeformableModel_determinePartsF line 392
-    File: core/skeledit.cpp
-    Redundant assignment of 'pcVar30' to itself.
-
-  core_skeledit.cpp_CDeformableModel_determinePartsF line 1173
-    File: core/skeledit.cpp
-    Redundant assignment of 'pSVar29' to itself.
-
-  core_skeledit.cpp_CDeformableModel_determinePartsF line 1174
-    File: core/skeledit.cpp
-    Redundant assignment of 'pSVar34' to itself.
-
-  core_skeledit.cpp_CDeformableModel_determinePartsF line 1191
+  core_skeledit.cpp_CDeformableModel_determinePartsF line 1170
     File: core/skeledit.cpp
     Redundant assignment of 'piVar35' to itself.
 
@@ -284,14 +188,6 @@ selfAssignment (120)
     File: engine/colquant.c
     Redundant assignment of 'puVar15' to itself.
 
-  engine_fileio.cpp_CCheckOutItem_checkOutFileFromRe line 104
-    File: engine/fileio.cpp
-    Redundant assignment of 'pcVar8' to itself.
-
-  engine_fileio.cpp_CCheckOutItem_checkOutFileFromRe line 109
-    File: engine/fileio.cpp
-    Redundant assignment of 'pcVar8' to itself.
-
   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_0 line 96
     File: engine/fileio.cpp
     Redundant assignment of 'pSVar8' to itself.
@@ -300,51 +196,27 @@ selfAssignment (120)
     File: engine/fileio.cpp
     Redundant assignment of 'pSVar8' to itself.
 
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_0 line 167
-    File: engine/fileio.cpp
-    Redundant assignment of 'pcVar11' to itself.
-
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_0 line 172
-    File: engine/fileio.cpp
-    Redundant assignment of 'pcVar11' to itself.
-
   engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60 line 52
     File: engine/fileio.cpp
     Redundant assignment of 'pCVar5' to itself.
 
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_ line 181
+  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_ line 175
     File: engine/fileio.cpp
     Redundant assignment of 'pSVar10' to itself.
 
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_ line 186
+  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_ line 180
     File: engine/fileio.cpp
     Redundant assignment of 'pSVar10' to itself.
-
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_ line 254
-    File: engine/fileio.cpp
-    Redundant assignment of 'pcVar12' to itself.
-
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_ line 259
-    File: engine/fileio.cpp
-    Redundant assignment of 'pcVar12' to itself.
-
-  engine_fileio.cpp_CFileManager_checkOutAndExtractP line 133
-    File: engine/fileio.cpp
-    Redundant assignment of 'pcVar10' to itself.
-
-  engine_fileio.cpp_CFileManager_checkOutAndExtractP line 138
-    File: engine/fileio.cpp
-    Redundant assignment of 'pcVar10' to itself.
 
   engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 186
     File: engine/fileio.cpp
     Redundant assignment of 'puVar15' to itself.
 
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 541
+  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 543
     File: engine/fileio.cpp
     Redundant assignment of 'puVar13' to itself.
 
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 542
+  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 544
     File: engine/fileio.cpp
     Redundant assignment of 'pCVar18' to itself.
 
@@ -380,25 +252,9 @@ selfAssignment (120)
     File: shape/design.c
     Redundant assignment of 'pbVar4' to itself.
 
-  shape_design.c_cramTextureList_FUN_0046bb80        line 710
-    File: shape/design.c
-    Redundant assignment of 'pcVar10' to itself.
-
-  shape_design.c_cramTextureList_FUN_0046bb80        line 715
-    File: shape/design.c
-    Redundant assignment of 'pcVar10' to itself.
-
   shape_design.c_generateOctant_FUN_00469420         line 83
     File: shape/design.c
     Redundant assignment of 'pcVar4' to itself.
-
-  shape_design.c_loadS3DModelFile_FUN_004593a0       line 142
-    File: shape/design.c
-    Redundant assignment of 'pcVar5' to itself.
-
-  shape_design.c_loadS3DModelFile_FUN_004593a0       line 147
-    File: shape/design.c
-    Redundant assignment of 'pcVar5' to itself.
 
   shape_design.c_mergeTrianglesIntoQuad_FUN_00462190 line 205
     File: shape/design.c
@@ -432,22 +288,6 @@ selfAssignment (120)
     File: shape/design.c
     Redundant assignment of 'pSVar6' to itself.
 
-  shape_design.c_showPolygonDetailsList_FUN_0045d9c0 line 55
-    File: shape/design.c
-    Redundant assignment of 'pcVar4' to itself.
-
-  shape_design.c_showPolygonDetailsList_FUN_0045d9c0 line 60
-    File: shape/design.c
-    Redundant assignment of 'pcVar4' to itself.
-
-  shape_design.c_showPolygonDetailsList_FUN_0045d9c0 line 103
-    File: shape/design.c
-    Redundant assignment of 'pcVar5' to itself.
-
-  shape_design.c_showPolygonDetailsList_FUN_0045d9c0 line 108
-    File: shape/design.c
-    Redundant assignment of 'pcVar5' to itself.
-
   shape_design.c_vertexReducer_FUN_00467850          line 202
     File: shape/design.c
     Redundant assignment of 'pbVar5' to itself.
@@ -456,44 +296,20 @@ selfAssignment (120)
     File: shape/design.c
     Redundant assignment of 'pbVar5' to itself.
 
-  shape_edittool.cpp_CEditorTools_createModalWindow_ line 143
-    File: shape/edittool.cpp
-    Redundant assignment of 'puVar12' to itself.
+  shape_superopt.cpp_CComplexPolygon_findBestSplitEd line 72
+    File: shape/superopt.cpp
+    Redundant assignment of 'pdVar4' to itself.
 
-  shape_edittool.cpp_CEditorTools_createModalWindow_ line 144
-    File: shape/edittool.cpp
-    Redundant assignment of 'puVar14' to itself.
-
-  shape_edittool.cpp_paintWindowBackground_FUN_0049e line 57
-    File: shape/edittool.cpp
-    Redundant assignment of 'puVar8' to itself.
-
-  shape_edittool.cpp_paintWindowBackground_FUN_0049e line 58
-    File: shape/edittool.cpp
-    Redundant assignment of 'puVar9' to itself.
-
-  shape_quantize.cpp_CColorQuantizer_importBitmap_FU line 79
-    File: shape/quantize.cpp
-    Redundant assignment of 'puVar9' to itself.
-
-  shape_quantize.cpp_CColorQuantizer_importBitmap_FU line 80
-    File: shape/quantize.cpp
-    Redundant assignment of 'puVar12' to itself.
-
-  shape_quantize.cpp_quantizeRawPixelData_FUN_005564 line 161
-    File: shape/quantize.cpp
-    Redundant assignment of 'puVar8' to itself.
-
-  sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a67 line 199
-    File: sound/sndmain.cpp
-    Redundant assignment of 'pcVar10' to itself.
+  shape_superopt.cpp_CComplexPolygon_findReflexVerte line 73
+    File: shape/superopt.cpp
+    Redundant assignment of 'pdVar4' to itself.
 
   sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0       line 37
     File: sound/sndmain.cpp
     Redundant assignment of 'pcVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (60)
+uninitvar (70)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 71
@@ -640,6 +456,14 @@ uninitvar (60)
     File: core/vehicle.cpp
     Uninitialized variable: in_stack_0000000c
 
+  core_xform.cpp_matrixToEulerAngles_FUN_005f5690    line 134
+    File: core/xform.cpp
+    Uninitialized variable: local_20
+
+  core_xform.cpp_matrixToEulerAngles_FUN_005f5690    line 175
+    File: core/xform.cpp
+    Uninitialized variable: local_18
+
   core_xform.cpp_transformAndClipGeometry_FUN_005f85 line 128
     File: core/xform.cpp
     Uninitialized variable: extraout_EAX
@@ -692,6 +516,38 @@ uninitvar (60)
     File: shape/design.c
     Uninitialized variable: local_44
 
+  shape_superopt.cpp_CObj_transformMasked_FUN_005d2d line 54
+    File: shape/superopt.cpp
+    Uninitialized variable: dStack_98
+
+  shape_superopt.cpp_CObj_transformMasked_FUN_005d2d line 55
+    File: shape/superopt.cpp
+    Uninitialized variable: dStack_a0
+
+  shape_superopt.cpp_CObj_transformMasked_FUN_005d2d line 62
+    File: shape/superopt.cpp
+    Uninitialized variable: dStack_58
+
+  shape_superopt.cpp_CObj_transformMasked_FUN_005d2d line 63
+    File: shape/superopt.cpp
+    Uninitialized variable: dStack_50
+
+  shape_superopt.cpp_CObj_transform_FUN_005d2c40     line 53
+    File: shape/superopt.cpp
+    Uninitialized variable: dStack_38
+
+  shape_superopt.cpp_CObj_transform_FUN_005d2c40     line 54
+    File: shape/superopt.cpp
+    Uninitialized variable: dStack_40
+
+  shape_superopt.cpp_CObj_transform_FUN_005d2c40     line 61
+    File: shape/superopt.cpp
+    Uninitialized variable: dStack_a0
+
+  shape_superopt.cpp_CObj_transform_FUN_005d2c40     line 62
+    File: shape/superopt.cpp
+    Uninitialized variable: dStack_98
+
   shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d line 116
     File: shape/superopt.cpp
     Uninitialized variable: local_178
@@ -737,7 +593,7 @@ uninitvar (60)
     Uninitialized variable: local_60
 
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (46)
+shiftTooManyBitsSigned (47)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_ line 61
@@ -772,7 +628,7 @@ shiftTooManyBitsSigned (46)
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 475
+  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 451
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -814,6 +670,10 @@ shiftTooManyBitsSigned (46)
 
   core_dstrender.cpp_renderPerspectiveCorrectTexture line 175
     File: core/dstrender.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_menu.cpp_configureSoundOptions_FUN_00511e50   line 270
+    File: core/menu.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_ line 109
@@ -925,7 +785,7 @@ shiftTooManyBitsSigned (46)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-invalidscanf (40)
+invalidscanf (41)
 ----------------------------------------------------------------------------------------------------
 
   core_event.cpp_CEventList_executeCommand_FUN_004aa line 266
@@ -972,52 +832,56 @@ invalidscanf (40)
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1035
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1029
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1139
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1133
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1207
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1201
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1319
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1313
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1371
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1365
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1479
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1473
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1589
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1583
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1668
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1662
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1783
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1777
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1912
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1906
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1985
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1979
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
   core_event.cpp_parseVectorLocation_FUN_004aa530    line 25
     File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_fileman.cpp_CDemonFileManager_createPodFromDi line 95
+    File: core/fileman.cpp
     sscanf() without field width limits can crash with huge input data.
 
   core_script.cpp_parseBodyPartMask_FUN_00559730     line 30
@@ -1036,55 +900,55 @@ invalidscanf (40)
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 531
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 525
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 580
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 574
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 606
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 600
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 717
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 711
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 743
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 737
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 774
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 768
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 883
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 877
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 981
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 975
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1181
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1175
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1692
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1686
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1743
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1737
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1780
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1774
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1804
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1798
     File: core/skeledit.cpp
     sscanf() without field width limits can crash with huge input data.
 
@@ -1241,6 +1105,66 @@ legacyUninitvar (37)
     Uninitialized variable: local_64
 
 ----------------------------------------------------------------------------------------------------
+invalidPointerCast (14)
+----------------------------------------------------------------------------------------------------
+
+  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 276
+    File: core/actor.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
+
+  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 683
+    File: core/ghoul.cpp
+    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+
+  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 684
+    File: core/ghoul.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
+
+  core_set.cpp_CDemonSet_load_FUN_00569410           line 80
+    File: core/set.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
+
+  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  line 388
+    File: core/setedit.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
+
+  core_setedit.cpp_CDemonSet_showLightFilterEditor_F line 186
+    File: core/setedit.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  core_skeledit.cpp_CDeformableModelInstance_viewMod line 811
+    File: core/skeledit.cpp
+    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+
+  core_skeledit.cpp_CDeformableModel_buildFromPosFil line 413
+    File: core/skeledit.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  core_skeledit.cpp_CDeformableModel_buildFromPosFil line 414
+    File: core/skeledit.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  core_skeledit.cpp_CDeformableModel_extractLodLevel line 188
+    File: core/skeledit.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  core_skeledit.cpp_CDeformableModel_extractLodLevel line 189
+    File: core/skeledit.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  core_skeledit.cpp_CDeformableModel_extractLodLevel line 190
+    File: core/skeledit.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  core_skeleton.cpp_CDeformableModelInstance_compute line 39
+    File: core/skeleton.cpp
+    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+
+  core_skeleton.cpp_CDeformableModelInstance_compute line 40
+    File: core/skeleton.cpp
+    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+
+----------------------------------------------------------------------------------------------------
 objectIndex (12)
 ----------------------------------------------------------------------------------------------------
 
@@ -1324,11 +1248,11 @@ nullPointerRedundantCheck (11)
     File: shape/quantize.cpp
     Either the condition 'pCVar6!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: pCVar6.
 
-  shape_quantize.cpp_quantizeRawPixelData_FUN_005564 line 131
+  shape_quantize.cpp_quantizeRawPixelData_FUN_005564 line 121
     File: shape/quantize.cpp
     Either the condition 'local_14!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: local_14.
 
-  shape_quantize.cpp_quantizeRawPixelData_FUN_005564 line 150
+  shape_quantize.cpp_quantizeRawPixelData_FUN_005564 line 129
     File: shape/quantize.cpp
     Either the condition 'local_14!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: local_14.
 
@@ -1341,52 +1265,32 @@ nullPointerRedundantCheck (11)
     Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
 
 ----------------------------------------------------------------------------------------------------
-invalidPointerCast (11)
+nullPointer (6)
 ----------------------------------------------------------------------------------------------------
 
-  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 276
-    File: core/actor.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
+  cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0 line 68
+    File: cockpit/ckptutil.c
+    Possible null pointer dereference: pcVar6
 
-  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 683
-    File: core/ghoul.cpp
-    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+  core_script.cpp_trimLine_FUN_005592c0              line 39
+    File: core/script.cpp
+    Possible null pointer dereference: pcVar2
 
-  core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 684
-    File: core/ghoul.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
-
-  core_set.cpp_CDemonSet_load_FUN_00569410           line 80
+  core_set.cpp_CDemonSet_load_FUN_00569410           line 410
     File: core/set.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
+    Possible null pointer dereference: pcVar5
 
-  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  line 388
+  core_setedit.cpp_CDemonSet_editCameraPosition_FUN_ line 332
     File: core/setedit.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
+    Possible null pointer dereference: p_Stack_20
 
-  core_setedit.cpp_CDemonSet_showLightFilterEditor_F line 186
+  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  line 231
     File: core/setedit.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
+    Possible null pointer dereference: pcVar12
 
-  core_skeledit.cpp_CDeformableModelInstance_viewMod line 811
-    File: core/skeledit.cpp
-    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-
-  core_skeledit.cpp_CDeformableModel_buildFromPosFil line 413
-    File: core/skeledit.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  core_skeledit.cpp_CDeformableModel_buildFromPosFil line 414
-    File: core/skeledit.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  core_skeleton.cpp_CDeformableModelInstance_compute line 39
-    File: core/skeleton.cpp
-    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-
-  core_skeleton.cpp_CDeformableModelInstance_compute line 40
-    File: core/skeleton.cpp
-    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+  shape_quantize.cpp_CColorQuantizer_applyQuantizati line 42
+    File: shape/quantize.cpp
+    Possible null pointer dereference: local_20
 
 ----------------------------------------------------------------------------------------------------
 identicalInnerCondition (6)
@@ -1417,34 +1321,6 @@ identicalInnerCondition (6)
     Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
-nullPointer (6)
-----------------------------------------------------------------------------------------------------
-
-  core_script.cpp_trimLine_FUN_005592c0              line 39
-    File: core/script.cpp
-    Possible null pointer dereference: pcVar2
-
-  core_set.cpp_CDemonSet_load_FUN_00569410           line 410
-    File: core/set.cpp
-    Possible null pointer dereference: pcVar5
-
-  core_setedit.cpp_CDemonSet_editCameraPosition_FUN_ line 332
-    File: core/setedit.cpp
-    Possible null pointer dereference: p_Stack_20
-
-  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  line 231
-    File: core/setedit.cpp
-    Possible null pointer dereference: pcVar12
-
-  shape_design.c_loadS3DModelFile_FUN_004593a0       line 133
-    File: shape/design.c
-    Possible null pointer dereference: pcVar7
-
-  shape_quantize.cpp_CColorQuantizer_applyQuantizati line 42
-    File: shape/quantize.cpp
-    Possible null pointer dereference: local_20
-
-----------------------------------------------------------------------------------------------------
 shiftNegativeLHS (3)
 ----------------------------------------------------------------------------------------------------
 
@@ -1459,6 +1335,38 @@ shiftNegativeLHS (3)
   support_codec.cpp_readBitsFromStream_FUN_0043e530  line 61
     File: support/codec.cpp
     Shifting a negative value is technically undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+invalidScanfArgType_int (3)
+----------------------------------------------------------------------------------------------------
+
+  sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Sampl line 68
+    File: sound/mp3.cpp
+    %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
+
+  sound_mp3.cpp_initializeHuffmanTablesOnce_FUN_0053 line 50
+    File: sound/mp3.cpp
+    %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
+
+  sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30 line 49
+    File: sound/mp3.cpp
+    %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
+
+----------------------------------------------------------------------------------------------------
+ignoredReturnValue (3)
+----------------------------------------------------------------------------------------------------
+
+  core_xform.cpp_matrixToEulerAngles_FUN_005f5690    line 132
+    File: core/xform.cpp
+    Return value of function asin() is not used.
+
+  core_xform.cpp_matrixToEulerAngles_FUN_005f5690    line 159
+    File: core/xform.cpp
+    Return value of function acos() is not used.
+
+  core_xform.cpp_matrixToEulerAngles_FUN_005f5690    line 173
+    File: core/xform.cpp
+    Return value of function asin() is not used.
 
 ----------------------------------------------------------------------------------------------------
 arrayIndexOutOfBounds (2)

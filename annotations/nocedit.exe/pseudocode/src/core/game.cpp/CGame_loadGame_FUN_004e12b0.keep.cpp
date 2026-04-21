@@ -245,13 +245,7 @@ LAB_004e14f5:
         local_14 = 0;
         if (0 < g_HeroCount) {
           do {
-            pcVar7 = "(file corrupt)";
-            pcVar5 = local_230;
-            for (iVar4 = 0x32; iVar4 != 0; iVar4 = iVar4 + -1) {
-              *(uint *)pcVar5 = *(uint *)pcVar7;
-              pcVar7 = pcVar7 + ((uint)bVar11 * -2 + 1) * 4;
-              pcVar5 = pcVar5 + ((uint)bVar11 * -2 + 1) * 4;
-            }
+            memcpy(local_230,g_LoadSavefileStatus,0xc8);
             _fscanf(file_handle,"%[^\n]\n",local_230);
             uVar12 = g_CHeroClassInfo.name_hash;
             actor_ptr = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030

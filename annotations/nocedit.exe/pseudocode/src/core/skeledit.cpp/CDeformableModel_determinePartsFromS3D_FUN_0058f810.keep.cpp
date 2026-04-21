@@ -383,14 +383,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
             pcVar23 = pcVar23 + 0x100;
           } while (iVar31 < local_e4);
         }
-        pcVar38 = "gore";
-        pcVar30 = local_388;
-        for (iVar31 = 0x19; iVar31 != 0; iVar31 = iVar31 + -1) {
-          pcVar30 = pcVar30 + (uint)bVar39 * -8 + 4;
-          *(uint *)pcVar30 = *(uint *)pcVar38;
-          pcVar38 = pcVar38 + ((uint)bVar39 * -2 + 1) * 4;
-          pcVar30 = pcVar30;
-        }
+        memcpy(local_388,g_GoreBuffer,100);
         if (entry->skip_generation == 0) {
           shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                     (g_CEditorToolsPtr,"Automap cap faces to texture (blank to leave map as-is) NO EXTENSION",local_388,100,1);
@@ -1158,21 +1151,7 @@ LAB_00591f48:
           uVar25 = this_ptr->tri_count[0] * 0x12;
           pSVar29 = this_ptr->tri_data_ptr[0];
           pSVar34 = local_150;
-          for (uVar18 = uVar25 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
-            uVar7 = (pSVar29->vertex_indices).vertex_index_1;
-            (pSVar34->vertex_indices).vertex_index_0 = (pSVar29->vertex_indices).vertex_index_0;
-            (pSVar34->vertex_indices).vertex_index_1 = uVar7;
-            pSVar29 = (SInputFace *)((int)pSVar29 + (uint)bVar39 * -8 + 4);
-            pSVar34 = (SInputFace *)((int)pSVar34 + (uint)bVar39 * -8 + 4);
-          }
-          for (uVar19 = uVar25 & 3; uVar19 != 0; uVar19 = uVar19 - 1) {
-            pSVar34 = (SInputFace *)((int)pSVar34 + (uint)bVar39 * -2 + 1);
-            pSVar29 = (SInputFace *)((int)pSVar29 + (uint)bVar39 * -2 + 1);
-            *(char *)&(pSVar34->vertex_indices).vertex_index_0 =
-                 (char)(pSVar29->vertex_indices).vertex_index_0;
-            pSVar29 = pSVar29;
-            pSVar34 = pSVar34;
-          }
+          memcpy(pSVar34,pSVar29,uVar25);
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
           g_CurrentDebugLine = 0xf1f;
           shape_memdbg_cpp_free_FUN_005fe659(this_ptr->tri_data_ptr[0]);

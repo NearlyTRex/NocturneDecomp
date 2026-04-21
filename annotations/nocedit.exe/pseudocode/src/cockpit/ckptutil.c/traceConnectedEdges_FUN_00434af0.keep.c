@@ -311,18 +311,7 @@ LAB_00434df6:
     g_CurrentLineNumber = 0x8ff;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_1f4);
   }
-  pSVar12 = g_TracedEdgeBuffer;
-  puVar17 = (uint *)(*max_x * 8 + (int)pvVar5);
-  for (uVar8 = (iVar11 & 0x1fffffffU) << 1; uVar8 != 0; uVar8 = uVar8 - 1) {
-    *puVar17 = *(uint *)pSVar12;
-    pSVar12 = (SEdge *)&pSVar12[-(uint)bVar17].x1;
-    puVar17 = puVar17 + (uint)bVar17 * -2 + 1;
-  }
-  for (iVar16 = 0; iVar16 != 0; iVar16 = iVar16 + -1) {
-    *(char *)puVar17 = (char)pSVar12->x0;
-    pSVar12 = (SEdge *)((int)pSVar12 + (uint)bVar17 * -2 + 1);
-    puVar17 = (uint *)((int)puVar17 + (uint)bVar17 * -2 + 1);
-  }
+  memcpy(&pvVar5[*max_x],g_TracedEdgeBuffer,iVar11 * sizeof(SEdge));
   *max_x = *max_x + iVar11;
   return pvVar5;
 }

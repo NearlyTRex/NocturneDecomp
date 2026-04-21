@@ -37,8 +37,8 @@ SUMMARY
     g_SourcePaletteData                                1 functions
     g_RenderStateFlags                                 1 functions
 
-  .keep files with issues: 14 (these need manual review)
-  Raw .cpp files with issues: 53
+  .keep files with issues: 17 (these need manual review)
+  Raw .cpp files with issues: 50
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -93,6 +93,14 @@ core_dpart.cpp_setupTriangleEdgeInterpolation_FUN_00482fb0  [.keep]  (1 suspicio
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_finishAct_FUN_004e3b90  [.keep]  (1 suspicious globals)
+  File: core/game.cpp
+
+  g_CDemonCameraInstance
+    Used at lines: 54
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_game.cpp_CGame_processFrame_FUN_004da100  [.keep]  (1 suspicious globals)
   File: core/game.cpp
 
@@ -106,6 +114,14 @@ core_main.c_initializeGameSystems_FUN_00507a60  [.keep]  (1 suspicious globals)
 
   g_NumSearchHandlers
     Used at lines: 55, 58
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_script.cpp_parseConditionExpression_FUN_00561a30  [.keep]  (1 suspicious globals)
+  File: core/script.cpp
+
+  g_CommandTemplates
+    Used at lines: 95
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -146,6 +162,14 @@ shape_design.c_mouseWheelPolygonReducer_FUN_004648e0  [.keep]  (1 suspicious glo
 
   g_KeyboardState
     Used at lines: 38, 38, 39, 129, 130
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_polygonToolModeManager_FUN_00464c90  [.keep]  (1 suspicious globals)
+  File: shape/design.c
+
+  g_KeyboardState
+    Used at lines: 36, 36, 37, 41, 66, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -461,14 +485,6 @@ core_fire.cpp_CRainDrop_render_FUN_004c6830  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_game.cpp_CGame_finishAct_FUN_004e3b90  [.cpp]  (1 suspicious globals)
-  File: core/game.cpp
-
-  g_CDemonCameraInstance
-    Used at lines: 53
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_game.cpp_CGame_renderOverlay_FUN_004d8040  [.cpp]  (1 suspicious globals)
   File: core/game.cpp
 
@@ -490,14 +506,6 @@ core_script.cpp_CScript_parseActionTemplate_FUN_00567490  [.cpp]  (1 suspicious 
 
   g_CommandTemplates
     Used at lines: 21
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_script.cpp_parseConditionExpression_FUN_00561a30  [.cpp]  (1 suspicious globals)
-  File: core/script.cpp
-
-  g_CommandTemplates
-    Used at lines: 116
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -594,14 +602,6 @@ shape_design.c_handleEditorHotkeys_FUN_0045b990  [.cpp]  (1 suspicious globals)
 
   g_KeyboardState
     Used at lines: 14, 14, 15, 22, 22, ...
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_polygonToolModeManager_FUN_00464c90  [.cpp]  (1 suspicious globals)
-  File: shape/design.c
-
-  g_KeyboardState
-    Used at lines: 35, 35, 36, 40, 65, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

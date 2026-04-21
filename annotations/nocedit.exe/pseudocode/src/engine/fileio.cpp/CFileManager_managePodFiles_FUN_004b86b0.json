@@ -8,16 +8,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2078,
-    "complexity_score": 919,
+    "complexity_score": 904,
     "cross_reference_count": 0,
     "function_call_count": 51,
     "global_count": 109,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 809,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
-      "unrolled_memcpy",
       "unrolled_strcpy",
       "warning_unreachable"
     ],
@@ -997,6 +996,17 @@
     },
     "pcode_op_count": 7132
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "line": 74,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "for (iVar2 = 0x41; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 9028,
     "local_size": 9020,
@@ -1364,14 +1374,6 @@
       "severity": "mild",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 74,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "mild",
-      "text": "for (iVar2 = 0x41; iVar2 != 0; iVar2 = iVar2 + -1) {",
-      "type": "unrolled_memcpy"
     }
   ]
 }

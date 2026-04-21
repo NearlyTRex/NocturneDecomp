@@ -4,16 +4,16 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 268,
-    "complexity_score": 184,
+    "complexity_score": 174,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 119,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "sub84_truncation",
@@ -123,6 +123,17 @@
     },
     "pcode_op_count": 1206
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 58,
+      "match": "(CVector3d *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pCVar5 = (CVector3d *)((int)pCVar5 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 244,
     "local_size": 232,
@@ -321,15 +332,24 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 58,
-      "match": "(CVector3d *)((int)",
-      "severity": "mild",
-      "text": "pCVar5 = (CVector3d *)((int)pCVar5 + (uint)bVar6 * -8 + 4);",
-      "type": "pointer_cast"
+  "static_analysis": {
+    "analyzed_file": "CComplexPolygon_findBestSplitEdge_FUN_005c8e70.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 16,
+          "line": 72,
+          "message": "Redundant assignment of 'pdVar4' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
     },
+    "file_variant": "keep"
+  },
+  "suspects": [
     {
       "description": "Complex pointer cast",
       "line": 70,

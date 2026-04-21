@@ -4,17 +4,18 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 454,
-    "complexity_score": 237,
+    "complexity_score": 282,
     "cross_reference_count": 28,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 172,
-    "suspect_count": 6,
+    "suspect_count": 10,
     "suspect_types": [
+      "decompiler_intrinsic",
       "sub84_truncation"
     ],
     "total_lines": 626
@@ -549,6 +550,51 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "matrixToEulerAngles_FUN_005f5690.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 5,
+      "diagnostics": [
+        {
+          "check_id": "ignoredReturnValue",
+          "column": 11,
+          "line": 132,
+          "message": "Return value of function asin() is not used.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "ignoredReturnValue",
+          "column": 9,
+          "line": 159,
+          "message": "Return value of function acos() is not used.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "ignoredReturnValue",
+          "column": 5,
+          "line": 173,
+          "message": "Return value of function asin() is not used.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 13,
+          "line": 134,
+          "message": "Uninitialized variable: local_20",
+          "severity": "warning"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 7,
+          "line": 175,
+          "message": "Uninitialized variable: local_18",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
@@ -597,6 +643,42 @@
       "severity": "moderate",
       "text": "local_b0 = SUB84(__BITCAST_UINT64(dVar11),0);",
       "type": "sub84_truncation"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "introduced_by": "keep",
+      "line": 49,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_98 = SUB84(__BITCAST_UINT64(dVar10),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "introduced_by": "keep",
+      "line": 49,
+      "match": "SUB84",
+      "severity": "mild",
+      "text": "local_98 = SUB84(__BITCAST_UINT64(dVar10),0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "introduced_by": "keep",
+      "line": 64,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_88 = SUB84(__BITCAST_UINT64(dVar10),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "introduced_by": "keep",
+      "line": 64,
+      "match": "SUB84",
+      "severity": "mild",
+      "text": "local_88 = SUB84(__BITCAST_UINT64(dVar10),0);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

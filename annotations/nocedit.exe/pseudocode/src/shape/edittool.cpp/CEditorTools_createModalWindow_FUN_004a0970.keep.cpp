@@ -130,19 +130,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970(CEdi
         puVar12 = (uint *)
                   ((int)g_ScreenBufferArray[g_WindowStack[iVar2].backup_y_offset + iVar1] +
                   ((int)((iVar7 + iVar8 * -8) - (uint)(iVar8 << 2 < 0)) >> 3));
-        puVar14 = local_14;
-        for (uVar9 = uVar7 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-          *puVar14 = *puVar12;
-          puVar12 = puVar12 + (uint)bVar15 * -2 + 1;
-          puVar14 = puVar14 + (uint)bVar15 * -2 + 1;
-        }
-        for (uVar2 = uVar7 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {
-          puVar14 = (uint *)((int)puVar14 + (uint)bVar15 * -2 + 1);
-          puVar12 = (uint *)((int)puVar12 + (uint)bVar15 * -2 + 1);
-          *(byte *)puVar14 = *(byte *)puVar12;
-          puVar12 = puVar12;
-          puVar14 = puVar14;
-        }
+        memcpy(local_14,puVar12,uVar7);
         local_14 = (uint *)((int)local_14 + uVar7);
         iVar1 = iVar1 + 1;
       } while (iVar1 < g_WindowStack[iVar2].backup_height);

@@ -154,13 +154,7 @@ int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileMana
   local_54 = (_FILE *)0x0;
   local_38 = (_FILE *)0x0;
   local_34 = (_FILE *)0x0;
-  pcVar9 = g_DefaultCheckOutPath;
-  pcVar10 = local_880;
-  for (iVar3 = 0x41; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *(uint *)pcVar10 = *(uint *)pcVar9;
-    pcVar9 = pcVar9 + ((uint)bVar13 * -2 + 1) * 4;
-    pcVar10 = pcVar10 + (uint)bVar13 * -8 + 4;
-  }
+  memcpy(local_880,g_DefaultCheckOutPath,0x104);
   iVar3 = engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50
                     ((CCheckOutItem *)checkout_item_name,local_77c,local_12b4.found_path,
                      "Select file to check in","*");
@@ -247,27 +241,7 @@ int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileMana
   _sprintf(local_b8c,"history\\%s.%s",pcVar9,"history");
   engine_dosio_c_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_24,local_170);
   engine_dosio_c_makePath_FUN_00481f50(local_984,local_24,local_170,(char *)0x0,(char *)0x0);
-  pcVar9 = local_b8c;
-  iVar3 = -1;
-  pcVar12 = local_984;
-  do {
-    pcVar12 = pcVar12;
-    if (iVar3 == 0) break;
-    iVar3 = iVar3 + -1;
-    pcVar12 = pcVar12 + (uint)bVar13 * -2 + 1;
-    cVar2 = *pcVar12;
-    pcVar12 = pcVar12;
-  } while (cVar2 != '\0');
-  pcVar10 = pcVar12 + -1;
-  do {
-    cVar2 = *pcVar9;
-    *pcVar10 = cVar2;
-    if (cVar2 == '\0') break;
-    cVar2 = pcVar9[1];
-    pcVar9 = pcVar9 + 2;
-    pcVar10[1] = cVar2;
-    pcVar10 = pcVar10 + 2;
-  } while (cVar2 != '\0');
+  strcat(local_984,local_b8c);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Reading %s",local_984);
   local_4c = engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(local_3c,local_984);

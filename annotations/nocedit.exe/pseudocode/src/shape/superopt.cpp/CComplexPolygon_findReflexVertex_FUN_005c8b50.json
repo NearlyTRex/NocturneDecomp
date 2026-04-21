@@ -4,16 +4,16 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 332,
-    "complexity_score": 205,
+    "complexity_score": 195,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 140,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "sub84_truncation",
@@ -128,6 +128,17 @@
     },
     "pcode_op_count": 1382
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(CVector3d *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pCVar5 = (CVector3d *)((int)pCVar5 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 220,
     "local_size": 208,
@@ -326,15 +337,24 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 59,
-      "match": "(CVector3d *)((int)",
-      "severity": "mild",
-      "text": "pCVar5 = (CVector3d *)((int)pCVar5 + (uint)bVar6 * -8 + 4);",
-      "type": "pointer_cast"
+  "static_analysis": {
+    "analyzed_file": "CComplexPolygon_findReflexVertex_FUN_005c8b50.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 16,
+          "line": 73,
+          "message": "Redundant assignment of 'pdVar4' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
     },
+    "file_variant": "keep"
+  },
+  "suspects": [
     {
       "description": "Complex pointer cast",
       "line": 71,

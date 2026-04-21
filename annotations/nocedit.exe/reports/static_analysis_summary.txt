@@ -9,30 +9,30 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 118
+  Functions with static analysis data: 117
   Functions flagged by multiple tools: 0
 
   Cppcheck (quick):
-    Files analyzed:      118
-    Files with findings: 118
-    Total diagnostics:   361
+    Files analyzed:      117
+    Files with findings: 117
+    Total diagnostics:   336
 
 ====================================================================================================
 TOP FINDINGS - Cppcheck (quick)
 ====================================================================================================
 
-  selfAssignment                                            120  [likely decompiler artifact]
-  uninitvar                                                  60  [likely decompiler artifact]
-  shiftTooManyBitsSigned                                     46
-  invalidscanf                                               40
+  selfAssignment                                             74  [likely decompiler artifact]
+  uninitvar                                                  70  [likely decompiler artifact]
+  shiftTooManyBitsSigned                                     47
+  invalidscanf                                               41
   legacyUninitvar                                            37
+  invalidPointerCast                                         14
   objectIndex                                                12
   nullPointerRedundantCheck                                  11
-  invalidPointerCast                                         11
-  identicalInnerCondition                                     6
   nullPointer                                                 6
+  identicalInnerCondition                                     6
   shiftNegativeLHS                                            3
+  invalidScanfArgType_int                                     3
+  ignoredReturnValue                                          3
   arrayIndexOutOfBounds                                       2
   arrayIndexOutOfBoundsCond                                   1
-  invalidFunctionArgStr                                       1
-  compareBoolExpressionWithInt                                1

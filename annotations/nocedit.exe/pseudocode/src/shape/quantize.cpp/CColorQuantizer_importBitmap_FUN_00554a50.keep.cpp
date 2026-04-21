@@ -67,18 +67,7 @@ int __cdecl shape_quantize_cpp_CColorQuantizer_importBitmap_FUN_00554a50(CColorQ
       iVar3 = 0;
       puVar9 = *(uint **)((int)bitmap->row_table + local_2c);
       puVar12 = (uint *)this_ptr->scanline_buffer;
-      for (uVar8 = (uint)(uVar6 >> 2); uVar8 != 0; uVar8 = uVar8 - 1) {
-        *puVar12 = *puVar9;
-        puVar9 = puVar9 + (uint)bVar13 * -2 + 1;
-        puVar12 = puVar12 + (uint)bVar13 * -2 + 1;
-      }
-      for (uVar2 = (byte)uVar6 & 0xffffff03; uVar2 != 0; uVar2 = uVar2 - 1) {
-        puVar12 = (uint *)((int)puVar12 + (uint)bVar13 * -2 + 1);
-        puVar9 = (uint *)((int)puVar9 + (uint)bVar13 * -2 + 1);
-        *(byte *)puVar12 = *(byte *)puVar9;
-        puVar9 = puVar9;
-        puVar12 = puVar12;
-      }
+      memcpy(puVar12,puVar9,uVar6);
       for (iVar10 = 0; iVar10 < (int)(uint)uVar4; iVar10 = iVar10 + 1) {
         pvVar1 = this_ptr->scanline_buffer;
         bVar1 = *(byte *)(iVar3 + (int)pvVar1);

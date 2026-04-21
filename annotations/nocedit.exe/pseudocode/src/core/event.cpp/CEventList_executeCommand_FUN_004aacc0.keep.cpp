@@ -1023,13 +1023,7 @@ LAB_004aaf38:
                                                   (local_13ad + 1,local_13ad + 2,SVar16);
                                         SVar16 = SVar16 - 1;
                                       }
-                                      pcVar18 = g_DefaultSfxHandleName;
-                                      pcVar17 = local_b15 + 1;
-                                      for (iVar2 = 0x32; iVar2 != 0; iVar2 = iVar2 + -1) {
-                                        *(uint *)pcVar17 = *(uint *)pcVar18;
-                                        pcVar18 = pcVar18 + ((uint)bVar20 * -2 + 1) * 4;
-                                        pcVar17 = pcVar17 + (uint)bVar20 * -8 + 4;
-                                      }
+                                      memcpy(local_b15 + 1,g_DefaultSfxHandleName,0xc8);
                                       if (*pbVar12 == 0x2c) {
                                         local_7c = -1;
                                         sscanf

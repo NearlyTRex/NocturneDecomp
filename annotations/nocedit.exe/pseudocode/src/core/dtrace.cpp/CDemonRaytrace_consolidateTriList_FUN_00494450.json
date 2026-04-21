@@ -4,19 +4,18 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 173,
+    "complexity_score": 118,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 7,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 93,
-    "suspect_count": 7,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy"
+      "pointer_cast"
     ],
     "total_lines": 252
   },
@@ -173,6 +172,53 @@
     },
     "pcode_op_count": 773
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(CDemonTriangle *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pCVar9 = (CDemonTriangle *)((int)pCVar9 + (uint)bVar11 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(CDemonTriangle *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pCVar9 = (CDemonTriangle *)((int)pCVar9 + (uint)bVar11 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(float *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pfVar7 = (float *)((int)pfVar7 + (uint)bVar11 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "line": 62,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "for (uVar4 = uVar2 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "line": 67,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "for (uVar2 = uVar2 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 40,
     "local_size": 36,
@@ -226,46 +272,6 @@
       "severity": "mild",
       "text": "puVar6 = (uint *)((int)this_ptr->cube_list->voxel_data + local_20 + -0x14);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 50,
-      "match": "(CDemonTriangle *)((int)",
-      "severity": "mild",
-      "text": "pCVar9 = (CDemonTriangle *)((int)pCVar9 + (uint)bVar11 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(CDemonTriangle *)((int)",
-      "severity": "mild",
-      "text": "pCVar9 = (CDemonTriangle *)((int)pCVar9 + (uint)bVar11 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 54,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "pfVar7 = (float *)((int)pfVar7 + (uint)bVar11 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 62,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "mild",
-      "text": "for (uVar4 = uVar2 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 67,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "mild",
-      "text": "for (uVar2 = uVar2 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {",
-      "type": "unrolled_memcpy"
     }
   ]
 }

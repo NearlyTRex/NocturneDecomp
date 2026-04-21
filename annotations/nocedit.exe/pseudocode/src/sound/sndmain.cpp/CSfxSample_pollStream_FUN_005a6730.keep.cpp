@@ -187,18 +187,7 @@ LAB_005a6adf:
             goto LAB_005a69da;
           }
           iVar2 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
-          pcVar10 = g_SfxStreamReadBuffer;
-          for (uVar8 = local_14 * iVar2 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-            *(uint *)pcVar4 = *(uint *)pcVar10;
-            pcVar10 = pcVar10 + (uint)bVar11 * -8 + 4;
-            pcVar4 = pcVar4 + (uint)bVar11 * -8 + 4;
-          }
-          for (uVar3 = local_14 * iVar2 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-            pcVar10 = pcVar10 + (uint)bVar11 * -2 + 1;
-            *pcVar4 = *pcVar10;
-            pcVar10 = pcVar10;
-            pcVar4 = pcVar4 + (uint)bVar11 * -2 + 1;
-          }
+          memcpy(pcVar4,g_SfxStreamReadBuffer,local_14 * iVar2);
 LAB_005a6b5d:
           sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540(this_ptr);
         }

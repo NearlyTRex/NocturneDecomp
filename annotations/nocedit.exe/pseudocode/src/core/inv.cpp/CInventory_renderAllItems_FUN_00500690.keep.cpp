@@ -202,26 +202,7 @@ LAB_00500870:
              core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->selected_weapon->base),
              pcVar13,pcVar7);
     pcVar13 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(" are loaded.");
-    iVar3 = -1;
-    pcVar10 = local_178;
-    do {
-      pcVar10 = pcVar10;
-      if (iVar3 == 0) break;
-      iVar3 = iVar3 + -1;
-      pcVar10 = pcVar10 + (uint)bVar11 * -2 + 1;
-      cVar2 = *pcVar10;
-      pcVar10 = pcVar10;
-    } while (cVar2 != '\0');
-    pcVar7 = pcVar10 + -1;
-    do {
-      cVar1 = *pcVar13;
-      *pcVar7 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar13[1];
-      pcVar13 = pcVar13 + 2;
-      pcVar7[1] = cVar1;
-      pcVar7 = pcVar7 + 2;
-    } while (cVar1 != '\0');
+    strcat(local_178,pcVar13);
   }
   else {
     pcVar5 = core_inv_cpp_getItemIconName_FUN_004fcf70(&this_ptr->selected_weapon->base);

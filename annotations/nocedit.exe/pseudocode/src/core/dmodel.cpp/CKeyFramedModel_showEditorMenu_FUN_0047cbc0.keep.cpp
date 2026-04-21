@@ -807,13 +807,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                        (double)local_160,(double)local_16c,(double)local_15c.x,
                        (double)local_164,(double)local_170,(double)local_15c.y,
                        (double)local_168,(double)local_174,(double)local_15c.z);
-              pcVar19 = g_ModelLastScaleInput;
-              pcVar20 = local_278;
-              for (iVar18 = 0x19; iVar18 != 0; iVar18 = iVar18 + -1) {
-                *(uint *)pcVar20 = *(uint *)pcVar19;
-                pcVar19 = pcVar19 + ((uint)bVar15 * -2 + 1) * 4;
-                pcVar20 = pcVar20 + (uint)bVar15 * -8 + 4;
-              }
+              memcpy(local_278,g_ModelLastScaleInput,100);
               while (iVar18 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                                         (g_CEditorToolsPtr,local_4d0,local_278,100,1), iVar18 != 0)
               {

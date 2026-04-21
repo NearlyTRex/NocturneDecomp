@@ -41,17 +41,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0(CEdit
         (*g_GlobalFreeFunc)(hMem);
       }
       else {
-        pcVar6 = text_data;
-        for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-          *(uint *)pcVar3 = *(uint *)pcVar6;
-          pcVar6 = pcVar6 + (uint)bVar7 * -8 + 4;
-          pcVar3 = pcVar3 + (uint)bVar7 * -8 + 4;
-        }
-        for (uVar5 = uVar4 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-          *pcVar3 = *pcVar6;
-          pcVar6 = pcVar6 + (uint)bVar7 * -2 + 1;
-          pcVar3 = pcVar3 + (uint)bVar7 * -2 + 1;
-        }
+        memcpy(pcVar3,text_data,uVar4);
         (*g_GlobalUnlockFunc)(hMem);
         (*g_SetClipboardDataFunc)(1,hMem);
       }
@@ -64,16 +54,6 @@ void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0(CEdit
   if (g_ClipboardBackupText == (char *)0x0) {
     return;
   }
-  pcVar3 = g_ClipboardBackupText;
-  for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-    *(uint *)pcVar3 = *(uint *)text_data;
-    text_data = text_data + (uint)bVar7 * -8 + 4;
-    pcVar3 = pcVar3 + (uint)bVar7 * -8 + 4;
-  }
-  for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *pcVar3 = *text_data;
-    text_data = text_data + (uint)bVar7 * -2 + 1;
-    pcVar3 = pcVar3 + (uint)bVar7 * -2 + 1;
-  }
+  memcpy(g_ClipboardBackupText,text_data,uVar4);
   return;
 }

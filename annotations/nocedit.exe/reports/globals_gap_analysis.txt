@@ -2,23 +2,23 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      19587
-  Named globals:             19576
+Total globals analyzed:      19573
+  Named globals:             19562
   DAT_ globals:              11
-Gaps found:                  1807
-  With exact size bounds:    1715
-  With estimated bounds:     92
-Total gap bytes:             13,379,667
-  Exact gap bytes:           13,370,626
-Overlaps (size <= 0):        13372
+Gaps found:                  1804
+  With exact size bounds:    1713
+  With estimated bounds:     91
+Total gap bytes:             13,379,391
+  Exact gap bytes:           13,370,353
+Overlaps (size <= 0):        13365
 
 --------------------------------------------------------------------------------
 GAP SIZE DISTRIBUTION
 --------------------------------------------------------------------------------
-  1-4 bytes (likely padding/alignment)          493
+  1-4 bytes (likely padding/alignment)          492
   5-16 bytes (small vars)                       527
-  17-64 bytes (structs/small arrays)            374
-  65-256 bytes (medium data)                    127
+  17-64 bytes (structs/small arrays)            373
+  65-256 bytes (medium data)                    126
   257-1024 bytes (large structs/arrays)         91
   1-4 KB                                        71
   4-64 KB                                       107
@@ -179,7 +179,7 @@ LARGEST GAPS (top 50)
     before: switchdataD_0043ddd4                     void*                at 0x0043ddd4
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (1715) - size bounds are known precisely
+ALL EXACT GAPS (1713) - size bounds are known precisely
 --------------------------------------------------------------------------------
    4,185,048 bytes  at 0x00002428  between DAT_00002424                   and IMAGE_DOS_HEADER_00400000
    3,350,789 bytes  at 0x00ff0103  between g_ColorMagenta                 and g_CoronaLightCache
@@ -478,7 +478,6 @@ ALL EXACT GAPS (1715) - size bounds are known precisely
          251 bytes  at 0x03f98df5  between CHAR_ARRAY_03f98df1            and g_CurrentDirectory
          249 bytes  at 0x0067d3a7  between s_hlod_0067d3a3                and s_meshlod_simplify_log_0067d4a
          249 bytes  at 0x00684017  between s_d3d.dll_00684013             and g_SystemInitialized
-         249 bytes  at 0x02d129bf  between g_CurrentFilenameBuffer+3      and g_CurrentFileTimestamp
          249 bytes  at 0x02d82c87  between g_CurrentSaveFile+3            and g_HasSavedLightState
          249 bytes  at 0x02d830af  between g_ChapterDisplayName+3         and g_ChapterDisplayYear
          249 bytes  at 0x02f6818f  between g_CurrentMp3Filename+3         and g_HuffmanTables
@@ -890,7 +889,6 @@ ALL EXACT GAPS (1715) - size bounds are known precisely
           24 bytes  at 0x006843fc  between g_CTerrainPtr                  and g_TurretStateTypePairs
           24 bytes  at 0x00685294  between g_SpecialDeviceCloseFunc       and g_SpecialDeviceReadFuncPtr
           24 bytes  at 0x01626348  between g_ZoomLevel                    and g_StoredWorldYCoordinate
-          24 bytes  at 0x02d12998  between g_WorkingDirectoryPath+4       and g_PodCreationTime
           23 bytes  at 0x00625365  between s_or_parsing_cmp_parameters._0 and s_Invalid_relational_opera_006
           23 bytes  at 0x0062a8ae  between s_MaxChar_0062a8ad             and s_CFrankenstienMachine_0062a8c
           23 bytes  at 0x00642f64  between s_or_parsing_out_camera_name_0 and s_Camera_s_doesn_t_exist_00642
@@ -1898,7 +1896,7 @@ ALL EXACT GAPS (1715) - size bounds are known precisely
            1 bytes  at 0x0068572d  between g_ShiftJIS_TrailByteTable      and g_InitHandlerStatusStart
 
 --------------------------------------------------------------------------------
-OVERLAPS (13372) - next global starts inside previous
+OVERLAPS (13365) - next global starts inside previous
 --------------------------------------------------------------------------------
   241 bytes overlap ~
     s_engine_2d_c_00613004                   TerminatedCString    at 0x00613004  size=256
@@ -41695,27 +41693,6 @@ OVERLAPS (13372) - next global starts inside previous
   3 bytes overlap
     g_FileTransferErrorMessage+2             undefined4           at 0x02d0a592  size=4
     g_FileTransferErrorMessage+3             undefined4           at 0x02d0a593
-  31 bytes overlap
-    g_WorkingDirectoryPath                   char[32]             at 0x02d12990  size=32
-    g_WorkingDirectoryPath+1                 undefined4           at 0x02d12991
-  3 bytes overlap
-    g_WorkingDirectoryPath+1                 undefined4           at 0x02d12991  size=4
-    g_WorkingDirectoryPath+2                 undefined4           at 0x02d12992
-  3 bytes overlap
-    g_WorkingDirectoryPath+2                 undefined4           at 0x02d12992  size=4
-    g_WorkingDirectoryPath+3                 undefined4           at 0x02d12993
-  3 bytes overlap
-    g_WorkingDirectoryPath+3                 undefined4           at 0x02d12993  size=4
-    g_WorkingDirectoryPath+4                 undefined4           at 0x02d12994
-  255 bytes overlap
-    g_CurrentFilenameBuffer                  char[256]            at 0x02d129b8  size=256
-    g_CurrentFilenameBuffer+1                undefined4           at 0x02d129b9
-  3 bytes overlap
-    g_CurrentFilenameBuffer+1                undefined4           at 0x02d129b9  size=4
-    g_CurrentFilenameBuffer+2                undefined4           at 0x02d129ba
-  3 bytes overlap
-    g_CurrentFilenameBuffer+2                undefined4           at 0x02d129ba  size=4
-    g_CurrentFilenameBuffer+3                undefined4           at 0x02d129bb
   263 bytes overlap
     g_VersionControlDirectory                char[264]            at 0x02d12ac8  size=264
     g_VersionControlDirectory+1              undefined4           at 0x02d12ac9

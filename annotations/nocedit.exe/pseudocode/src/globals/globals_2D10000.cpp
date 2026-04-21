@@ -27,6 +27,9 @@ CKeyFramedModelInstance g_FireEffectGunFlashModel = {};
 // CKeyFramedModelInstance[5]
 CKeyFramedModelInstance g_CFireEffectDebrisModels[5] = {};
 
+// CPodAuditRecord
+CPodAuditRecord g_WorkingAuditRecord = {};
+
 // CPodAuditRecord*
 CPodAuditRecord* g_AuditRecordsArray = {};
 
@@ -46,30 +49,16 @@ SMRGLTextureBasic g_GunFlameTextures[20] = {};
 // SVersionControlSession
 SVersionControlSession g_VersionControlSession = {};
 
-// char[256]
-char g_CurrentFilenameBuffer[256] = {};
-
 // char[264]
 char g_VersionControlDirectory[264] = {};
 
-// char[32]
-char g_WorkingDirectoryPath[32] = {};
-
 // int
-int g_AuditOperationType = {};
-int g_CurrentFileTimestamp = {};
-int g_CurrentFileSize = {};
-int g_CurrentFileOffset = {};
-int g_CurrentFileCompressedSize = {};
 int g_AuditRecordCount = {};
 int g_TextureAnimCounter2 = {};
 int g_TextureAnimCounter1 = {};
 int g_CharactersOnFireCount = {};
 int g_FlameCanCount = {};
 int g_SmokeParticleAllocIndex = {};
-
-// time_t
-time_t g_PodCreationTime = {};
 
 // uint[3]
 uint g_ShellBounceSoundHandles[3] = {};

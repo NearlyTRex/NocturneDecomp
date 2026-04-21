@@ -845,27 +845,7 @@ LAB_00514913:
           pcVar3[1] = cVar2;
           pcVar3 = pcVar3 + 2;
         } while (cVar2 != '\0');
-        pcVar3 = g_CustomKeyNames[iVar15_00];
-        iVar4_00 = -1;
-        pcVar35 = acStack_4d4;
-        do {
-          pcVar35 = pcVar35;
-          if (iVar4_00 == 0) break;
-          iVar4_00 = iVar4_00 + -1;
-          pcVar35 = pcVar35 + (uint)bVar37 * -2 + 1;
-          cVar2 = *pcVar35;
-          pcVar35 = pcVar35;
-        } while (cVar2 != '\0');
-        pcVar32 = pcVar35 + -1;
-        do {
-          cVar2 = *pcVar3;
-          *pcVar32 = cVar2;
-          if (cVar2 == '\0') break;
-          cVar2 = pcVar3[1];
-          pcVar3 = pcVar3 + 2;
-          pcVar32[1] = cVar2;
-          pcVar32 = pcVar32 + 2;
-        } while (cVar2 != '\0');
+        strcat(acStack_4d4,g_CustomKeyNames[iVar15_00]);
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,acStack_4d4);
         engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(g_CKeysPtr,1);

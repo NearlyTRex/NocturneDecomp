@@ -269,27 +269,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
         else {
           engine_dosio_c_splitPath_FUN_00481f20
                     (this_ptr->geometry_filename,(char *)0x0,(char *)0x0,local_134,(char *)0x0);
-          pcVar6 = ".set";
-          iVar6 = -1;
-          pcVar9 = local_134;
-          do {
-            pcVar9 = pcVar9;
-            if (iVar6 == 0) break;
-            iVar6 = iVar6 + -1;
-            pcVar9 = pcVar9 + (uint)bVar11 * -2 + 1;
-            cVar2 = *pcVar9;
-            pcVar9 = pcVar9;
-          } while (cVar2 != '\0');
-          pcVar7 = pcVar9 + -1;
-          do {
-            cVar3 = *pcVar6;
-            *pcVar7 = cVar3;
-            if (cVar3 == '\0') break;
-            cVar3 = pcVar6[1];
-            pcVar6 = pcVar6 + 2;
-            pcVar7[1] = cVar3;
-            pcVar7 = pcVar7 + 2;
-          } while (cVar3 != '\0');
+          strcat(local_134,".set");
           strupr(local_134);
         }
         iVar6 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70

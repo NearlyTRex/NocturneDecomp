@@ -8,17 +8,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 5207,
-    "complexity_score": 2702,
+    "complexity_score": 2687,
     "cross_reference_count": 0,
     "function_call_count": 57,
     "global_count": 186,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 1852,
-    "suspect_count": 82,
+    "suspect_count": 81,
     "suspect_types": [
       "pointer_cast",
       "unnamed_local",
-      "unrolled_memcpy",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_inlined_function"
@@ -1521,6 +1520,15 @@
       "resolution_source": "keep",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "line": 265,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "for (iVar16 = 0x41; iVar16 != 0; iVar16 = iVar16 + -1) {",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -2996,91 +3004,91 @@
         {
           "check_id": "invalidscanf",
           "column": 21,
-          "line": 531,
+          "line": 525,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 21,
-          "line": 580,
+          "line": 574,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 23,
-          "line": 606,
+          "line": 600,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 27,
-          "line": 717,
+          "line": 711,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 29,
-          "line": 743,
+          "line": 737,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 29,
-          "line": 774,
+          "line": 768,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 34,
-          "line": 883,
+          "line": 877,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 33,
-          "line": 981,
+          "line": 975,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 45,
-          "line": 1181,
+          "line": 1175,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 11,
-          "line": 1692,
+          "line": 1686,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 22,
-          "line": 1743,
+          "line": 1737,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 15,
-          "line": 1780,
+          "line": 1774,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 16,
-          "line": 1804,
+          "line": 1798,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         }
@@ -3193,14 +3201,6 @@
       "severity": "mild",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 265,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "mild",
-      "text": "for (iVar16 = 0x41; iVar16 != 0; iVar16 = iVar16 + -1) {",
-      "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
@@ -3375,16 +3375,16 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 272,
+      "line": 271,
       "match": "local_1e74",
       "severity": "mild",
-      "text": "pcVar7 = local_1e74;",
+      "text": "memcpy(local_1e74,g_FileErrorBuffer,0x104);",
       "type": "unnamed_local"
     },
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 282,
+      "line": 276,
       "match": "local_1e74",
       "severity": "mild",
       "text": "iVar16 = _fscanf(local_11c,\"\\\"%[^\\\"]\\\"\\n\",local_1e74);",
@@ -3393,7 +3393,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 319,
+      "line": 313,
       "match": "local_21d0",
       "severity": "mild",
       "text": "local_c8 = core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(local_21d0,local_11c,0);",
@@ -3402,7 +3402,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 321,
+      "line": 315,
       "match": "local_21d0",
       "severity": "mild",
       "text": "(iVar4 = _strnicmp(local_21d0,\"animation\",9),",
@@ -3411,7 +3411,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 449,
+      "line": 443,
       "match": "local_20a4",
       "severity": "mild",
       "text": "iVar16 = core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(local_20a4,p_Var3,1);",
@@ -3420,7 +3420,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 455,
+      "line": 449,
       "match": "local_20a4",
       "severity": "mild",
       "text": "iVar4 = _strnicmp(local_20a4,\"animation\",9);",
@@ -3429,7 +3429,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 496,
+      "line": 490,
       "match": "local_13c",
       "severity": "mild",
       "text": "local_13c = 0.0;",
@@ -3438,7 +3438,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 500,
+      "line": 494,
       "match": "local_20a4",
       "severity": "mild",
       "text": "core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(local_20a4,local_11c,1);",
@@ -3447,7 +3447,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 501,
+      "line": 495,
       "match": "local_20a4",
       "severity": "mild",
       "text": "iVar16 = _strnicmp(local_20a4,\"fps\",3);",
@@ -3456,7 +3456,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 511,
+      "line": 505,
       "match": "local_20a4",
       "severity": "mild",
       "text": "filename,local_20a4);",
@@ -3465,7 +3465,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 517,
+      "line": 511,
       "match": "local_20a4",
       "severity": "mild",
       "text": "iVar16 = _strnicmp(local_20a4,\"if\",2);",
@@ -3474,7 +3474,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 530,
+      "line": 524,
       "match": "local_a0",
       "severity": "mild",
       "text": "local_a0 = -1;",
@@ -3483,7 +3483,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 531,
+      "line": 525,
       "match": "local_a0",
       "severity": "mild",
       "text": "sscanf(local_a4,\"%s %s%n\",local_468,local_28c,&local_a0);",
@@ -3492,7 +3492,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 532,
+      "line": 526,
       "match": "local_a0",
       "severity": "mild",
       "text": "if (local_a0 < 3) {",
@@ -3501,7 +3501,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 535,
+      "line": 529,
       "match": "local_20a4",
       "severity": "mild",
       "text": "filename,local_20a4);",
@@ -3510,7 +3510,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 547,
+      "line": 541,
       "match": "local_20a4",
       "severity": "mild",
       "text": "local_ec->motion_name,filename,local_20a4);",
@@ -3519,7 +3519,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 571,
+      "line": 565,
       "match": "local_20a4",
       "severity": "mild",
       "text": "local_ec->motion_name,filename,local_20a4);",
@@ -3528,7 +3528,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 584,
+      "line": 578,
       "match": "local_20a4",
       "severity": "mild",
       "text": "local_ec->motion_name,filename,local_20a4);",
@@ -3537,7 +3537,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 596,
+      "line": 590,
       "match": "local_20a4",
       "severity": "mild",
       "text": "local_ec->motion_name,filename,local_20a4);",
@@ -3546,7 +3546,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 610,
+      "line": 604,
       "match": "local_20a4",
       "severity": "mild",
       "text": "local_ec->motion_name,filename,local_20a4);",
@@ -3555,7 +3555,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 621,
+      "line": 615,
       "match": "local_20a4",
       "severity": "mild",
       "text": "local_ec->motion_name,filename,local_20a4);",
@@ -3564,7 +3564,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 648,
+      "line": 642,
       "match": "local_20a4",
       "severity": "mild",
       "text": ",local_ec->motion_name,filename,local_20a4);",
@@ -3573,7 +3573,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 656,
+      "line": 650,
       "match": "local_20a4",
       "severity": "mild",
       "text": ",local_ec->motion_name,filename,local_20a4);",
@@ -3582,7 +3582,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 683,
+      "line": 677,
       "match": "local_20a4",
       "severity": "mild",
       "text": "local_ec->motion_name,filename,local_20a4,pcVar18);",
@@ -3591,7 +3591,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 690,
+      "line": 684,
       "match": "local_20a4",
       "severity": "mild",
       "text": "iVar16 = _strnicmp(local_20a4,\"->\",2);",
@@ -3600,7 +3600,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 716,
+      "line": 710,
       "match": "local_64",
       "severity": "mild",
       "text": "local_64 = -1;",
@@ -3609,7 +3609,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 717,
+      "line": 711,
       "match": "local_64",
       "severity": "mild",
       "text": "sscanf(pcVar18,\" \\\"%[^\\\"]\\\" %n\",local_b70,&local_64);",
@@ -3618,7 +3618,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 718,
+      "line": 712,
       "match": "local_64",
       "severity": "mild",
       "text": "if (local_64 < 0) {",
@@ -3627,7 +3627,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 721,
+      "line": 715,
       "match": "local_20a4",
       "severity": "mild",
       "text": "local_ec->motion_name,filename,local_20a4);",
@@ -3636,7 +3636,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 733,
+      "line": 727,
       "match": "local_20a4",
       "severity": "mild",
       "text": "local_ec->motion_name,filename,local_20a4);",
@@ -3645,7 +3645,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 747,
+      "line": 741,
       "match": "local_20a4",
       "severity": "mild",
       "text": "local_ec->motion_name,filename,local_20a4);",
@@ -3654,7 +3654,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 758,
+      "line": 752,
       "match": "local_20a4",
       "severity": "mild",
       "text": "local_ec->motion_name,filename,local_20a4);",
@@ -3663,7 +3663,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 791,
+      "line": 785,
       "match": "local_20a4",
       "severity": "mild",
       "text": "local_ec->motion_name,filename,local_20a4);",
@@ -3672,7 +3672,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 809,
+      "line": 803,
       "match": "local_20a4",
       "severity": "mild",
       "text": ",local_ec->motion_name,filename,local_20a4);",
@@ -3681,7 +3681,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 817,
+      "line": 811,
       "match": "local_20a4",
       "severity": "mild",
       "text": ",local_ec->motion_name,filename,local_20a4);",
@@ -3690,7 +3690,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 835,
+      "line": 829,
       "match": "local_20a4",
       "severity": "mild",
       "text": ",local_ec->motion_name,filename,local_20a4);",
@@ -3699,7 +3699,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 864,
+      "line": 858,
       "match": "local_20a4",
       "severity": "mild",
       "text": "filename,local_20a4,pcVar7);",
@@ -3708,7 +3708,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 870,
+      "line": 864,
       "match": "local_20a4",
       "severity": "mild",
       "text": "iVar16 = _strnicmp(local_20a4,\"signal\",6);",
@@ -3717,7 +3717,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 888,
+      "line": 882,
       "match": "local_20a4",
       "severity": "mild",
       "text": "filename,local_20a4);",
@@ -3726,7 +3726,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 897,
+      "line": 891,
       "match": "local_20a4",
       "severity": "mild",
       "text": "filename,local_20a4);",
@@ -3735,7 +3735,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 904,
+      "line": 898,
       "match": "local_20a4",
       "severity": "mild",
       "text": "filename,local_20a4);",
@@ -3744,7 +3744,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 914,
+      "line": 908,
       "match": "local_20a4",
       "severity": "mild",
       "text": "(local_20a4,\"reverse\",7);",
@@ -3753,7 +3753,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 920,
+      "line": 914,
       "match": "local_20a4",
       "severity": "mild",
       "text": "(local_20a4,\"filename\",5);",
@@ -3762,7 +3762,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 923,
+      "line": 917,
       "match": "local_20a4",
       "severity": "mild",
       "text": "(local_20a4,\"frames\",6), iVar16 != 0)) {",
@@ -3771,7 +3771,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 925,
+      "line": 919,
       "match": "local_20a4",
       "severity": "mild",
       "text": "(local_20a4,\"cancel\",6);",
@@ -3780,7 +3780,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 973,
+      "line": 967,
       "match": "local_20a4",
       "severity": "mild",
       "text": "(local_20a4,\"bias\",4);",
@@ -3789,7 +3789,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 988,
+      "line": 982,
       "match": "local_20a4",
       "severity": "mild",
       "text": "local_ec->motion_name,filename,local_20a4);",
@@ -3798,7 +3798,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 1001,
+      "line": 995,
       "match": "local_20a4",
       "severity": "mild",
       "text": "local_ec->motion_name,filename,local_20a4);",
@@ -3807,7 +3807,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 1688,
+      "line": 1682,
       "match": "local_21d0",
       "severity": "mild",
       "text": "iVar16 = _strnicmp(local_21d0,\"animation\",9);",

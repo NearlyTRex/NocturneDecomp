@@ -296,27 +296,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
       else {
         engine_dosio_c_splitPath_FUN_00481f20
                   (this_ptr->geometry_filename,(char *)0x0,(char *)0x0,local_140,(char *)0x0);
-        pcVar8 = ".set";
-        iVar5 = -1;
-        pcVar10 = local_140;
-        do {
-          pcVar10 = pcVar10;
-          if (iVar5 == 0) break;
-          iVar5 = iVar5 + -1;
-          pcVar10 = pcVar10 + (uint)bVar11 * -2 + 1;
-          cVar2 = *pcVar10;
-          pcVar10 = pcVar10;
-        } while (cVar2 != '\0');
-        pcVar7 = pcVar10 + -1;
-        do {
-          cVar2 = *pcVar8;
-          *pcVar7 = cVar2;
-          if (cVar2 == '\0') break;
-          cVar2 = pcVar8[1];
-          pcVar8 = pcVar8 + 2;
-          pcVar7[1] = cVar2;
-          pcVar7 = pcVar7 + 2;
-        } while (cVar2 != '\0');
+        strcat(local_140,".set");
         strupr(local_140);
       }
       iVar5 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70

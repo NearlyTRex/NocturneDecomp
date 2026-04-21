@@ -8,19 +8,18 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2523,
-    "complexity_score": 1392,
+    "complexity_score": 1377,
     "cross_reference_count": 2,
     "function_call_count": 72,
     "global_count": 128,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 857,
-    "suspect_count": 50,
+    "suspect_count": 49,
     "suspect_types": [
       "decompiler_intrinsic",
       "negative_offset",
       "pointer_cast",
       "unnamed_local",
-      "unrolled_memcpy",
       "unrolled_strcpy",
       "warning_inlined_function"
     ],
@@ -1301,6 +1300,15 @@
       "severity": "mild",
       "text": "(&this_ptr->collision_triangle_list[-1].dominant_axis);",
       "type": "negative_offset"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "line": 793,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "for (iVar18 = 0x19; iVar18 != 0; iVar18 = iVar18 + -1) {",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -2240,14 +2248,6 @@
       "type": "unrolled_strcpy"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 793,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "mild",
-      "text": "for (iVar18 = 0x19; iVar18 != 0; iVar18 = iVar18 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
       "line": 43,
@@ -2493,7 +2493,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 820,
+      "line": 814,
       "match": "local_12c",
       "severity": "mild",
       "text": "iVar18 = sscanf(local_278,\"%f,%f,%f\",&local_12c.x,&local_12c.y,&local_12c.z);",
@@ -2502,7 +2502,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 820,
+      "line": 814,
       "match": "local_12c",
       "severity": "mild",
       "text": "iVar18 = sscanf(local_278,\"%f,%f,%f\",&local_12c.x,&local_12c.y,&local_12c.z);",

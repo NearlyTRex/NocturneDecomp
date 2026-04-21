@@ -8,13 +8,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3400,
-    "complexity_score": 2366,
+    "complexity_score": 2316,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 125,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 1436,
-    "suspect_count": 91,
+    "suspect_count": 86,
     "suspect_types": [
       "pointer_cast",
       "unnamed_local",
@@ -995,6 +995,42 @@
   },
   "resolved_suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 1151,
+      "match": "(SInputFace *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar29 = (SInputFace *)((int)pSVar29 + (uint)bVar39 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1152,
+      "match": "(SInputFace *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar34 = (SInputFace *)((int)pSVar34 + (uint)bVar39 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1155,
+      "match": "(SInputFace *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar34 = (SInputFace *)((int)pSVar34 + (uint)bVar39 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1156,
+      "match": "(SInputFace *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pSVar29 = (SInputFace *)((int)pSVar29 + (uint)bVar39 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Negative struct offset (wrong base type)",
       "line": 1379,
       "match": "local_188[-1].",
@@ -1011,6 +1047,15 @@
       "severity": "mild",
       "text": "shape_memdbg_cpp_free_FUN_005fe659(&local_188[-1].max.z);",
       "type": "negative_offset"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "line": 1168,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "for (uVar25 = this_ptr->tri_count[0] & 0x3fffffff; uVar25 != 0; uVar25 = uVar25 - 1) {",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -2414,33 +2459,12 @@
   "static_analysis": {
     "analyzed_file": "CDeformableModel_determinePartsFromS3D_FUN_0058f810.keep.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 4,
+      "diagnostic_count": 1,
       "diagnostics": [
         {
           "check_id": "selfAssignment",
-          "column": 19,
-          "line": 392,
-          "message": "Redundant assignment of 'pcVar30' to itself.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "selfAssignment",
           "column": 21,
-          "line": 1173,
-          "message": "Redundant assignment of 'pSVar29' to itself.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "selfAssignment",
-          "column": 21,
-          "line": 1174,
-          "message": "Redundant assignment of 'pSVar34' to itself.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "selfAssignment",
-          "column": 21,
-          "line": 1191,
+          "line": 1170,
           "message": "Redundant assignment of 'piVar35' to itself.",
           "severity": "warning"
         }
@@ -2844,38 +2868,6 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1151,
-      "match": "(SInputFace *)((int)",
-      "severity": "mild",
-      "text": "pSVar29 = (SInputFace *)((int)pSVar29 + (uint)bVar39 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1152,
-      "match": "(SInputFace *)((int)",
-      "severity": "mild",
-      "text": "pSVar34 = (SInputFace *)((int)pSVar34 + (uint)bVar39 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1155,
-      "match": "(SInputFace *)((int)",
-      "severity": "mild",
-      "text": "pSVar34 = (SInputFace *)((int)pSVar34 + (uint)bVar39 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1156,
-      "match": "(SInputFace *)((int)",
-      "severity": "mild",
-      "text": "pSVar29 = (SInputFace *)((int)pSVar29 + (uint)bVar39 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 1174,
       "match": "(int *)((int)",
       "severity": "mild",
@@ -3064,14 +3056,6 @@
       "match": "for (...; != 0; ... + -1)",
       "severity": "mild",
       "text": "for (iVar31 = 0x19; iVar31 != 0; iVar31 = iVar31 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 1168,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "mild",
-      "text": "for (uVar25 = this_ptr->tri_count[0] & 0x3fffffff; uVar25 != 0; uVar25 = uVar25 - 1) {",
       "type": "unrolled_memcpy"
     },
     {

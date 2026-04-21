@@ -46,27 +46,7 @@ int __cdecl core_script_cpp_CScript_loadScript_FUN_00559f80(CScript *this_ptr,ch
       return 1;
     }
     splitpath(filename,(char *)0x0,(char *)0x0,local_1e8,(char *)0x0);
-    pcVar11 = ".txt";
-    iVar10 = -1;
-    pcVar12 = local_1e8;
-    do {
-      pcVar12 = pcVar12;
-      if (iVar10 == 0) break;
-      iVar10 = iVar10 + -1;
-      pcVar12 = pcVar12 + (uint)bVar14 * -2 + 1;
-      cVar3 = *pcVar12;
-      pcVar12 = pcVar12;
-    } while (cVar3 != '\0');
-    pcVar3 = pcVar12 + -1;
-    do {
-      cVar1 = *pcVar11;
-      *pcVar3 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar11[1];
-      pcVar11 = pcVar11 + 2;
-      pcVar3[1] = cVar1;
-      pcVar3 = pcVar3 + 2;
-    } while (cVar1 != '\0');
+    strcat(local_1e8,".txt");
     core_script_cpp_CScript_dbLoad_FUN_005603c0(this_ptr,local_1e8);
     p_Var5 = engine_dosio_c_getFile_FUN_00481a50("world",filename,"rt");
     if (p_Var5 == (_FILE *)0x0) {

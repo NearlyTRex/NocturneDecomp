@@ -26,7 +26,7 @@ int __cdecl shape_design_c_loadS3DModelFile_FUN_004593a0(char *filename)
   int local_8d8 [500];
   char local_108 [200];
   uint local_40;
-  void *local_38;
+  char (*local_38)[80];
   _FILE *local_34;
   int local_30 [3];
   int local_24;
@@ -37,7 +37,7 @@ int __cdecl shape_design_c_loadS3DModelFile_FUN_004593a0(char *filename)
   char cVar1;
   
   bVar6 = 0;
-  local_38 = (void *)0x0;
+  local_38 = (char (*)[80])0x0;
   file = engine_dosio_c_getFile_FUN_00481a50("models",filename,"rt");
   if (file == (_FILE *)0x0) {
     engine_2d_c_drawText_FUN_00401fd0("FILE ERROR! Nothing changed!",0,0x16);
@@ -46,17 +46,7 @@ int __cdecl shape_design_c_loadS3DModelFile_FUN_004593a0(char *filename)
     engine_2d_c_clearInputAndWait_FUN_00403260();
     return 0;
   }
-  pcVar4 = g_LoadedModelName;
-  pcVar3 = filename;
-  do {
-    cVar1 = *pcVar3;
-    *pcVar4 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar2 = pcVar3[1];
-    pcVar3 = pcVar3 + 2;
-    pcVar4[1] = cVar2;
-    pcVar4 = pcVar4 + 2;
-  } while (cVar2 != '\0');
+  strcpy(g_LoadedModelName,filename);
   g_PolygonOptimizationPasses = 0;
   g_VertexOptimizationPasses = 0;
   g_SelectedPolygonIndex = -1;
@@ -97,9 +87,9 @@ int __cdecl shape_design_c_loadS3DModelFile_FUN_004593a0(char *filename)
       }
       shape_design_c_skipLines_FUN_00459360(file,1);
       if (0 < local_30[2]) {
-        local_38 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                             (local_30[2] * 0x50,"..\\shape\\design.c",0x3ec);
-        if (local_38 == (void *)0x0) {
+        local_38 = (char (*)[80])shape_memdbg_cpp_debugMalloc_FUN_0050f250
+                                            (local_30[2] * 0x50,"..\\shape\\design.c",0x3ec);
+        if (local_38 == (char (*)[80])0x0) {
           _sprintf
                     (local_108,"Out of memory for texture list, numTextures = %d",local_30[2]);
           goto LAB_00459491;
@@ -107,55 +97,12 @@ int __cdecl shape_design_c_loadS3DModelFile_FUN_004593a0(char *filename)
         for (local_40 = 0; (int)local_40 < local_30[2]; local_40 = local_40 + 1) {
           pcVar6 = _fgets(local_9e0,0x104,file);
           if (pcVar6 == (char *)0x0) goto LAB_00459478;
-          pcVar6 = local_9e0;
-          do {
-            pcVar7 = pcVar6;
-            if (*pcVar6 == '\n') goto LAB_0045976f;
-            if (*pcVar6 == '\0') break;
-            pcVar7 = pcVar6 + 1;
-            if (*pcVar7 == '\n') goto LAB_0045976f;
-            pcVar6 = pcVar6 + 2;
-          } while (*pcVar7 != '\0');
-          pcVar7 = (char *)0x0;
-LAB_0045976f:
+          pcVar7 = strchr(local_9e0,'\n');
           if (pcVar7 != (char *)0x0) {
-            pcVar6 = local_9e0;
-            do {
-              pcVar7 = pcVar6;
-              if (*pcVar6 == '\n') goto LAB_00459796;
-              if (*pcVar6 == '\0') break;
-              pcVar7 = pcVar6 + 1;
-              if (*pcVar7 == '\n') goto LAB_00459796;
-              pcVar6 = pcVar6 + 2;
-            } while (*pcVar7 != '\0');
-            pcVar7 = (char *)0x0;
-LAB_00459796:
             *pcVar7 = '\0';
           }
-          splitpath
-                    (local_9e0,(char *)0x0,(char *)0x0,(char *)(local_40 * 0x50 + (int)local_38),
-                     (char *)0x0);
-          pcVar6 = ".raw";
-          iVar3 = -1;
-          pcVar5 = (char *)(local_40 * 0x50 + (int)local_38);
-          do {
-            pcVar5 = pcVar5;
-            if (iVar3 == 0) break;
-            iVar3 = iVar3 + -1;
-            pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
-            cVar2 = *pcVar5;
-            pcVar5 = pcVar5;
-          } while (cVar2 != '\0');
-          pcVar7 = pcVar5 + -1;
-          do {
-            cVar2 = *pcVar6;
-            *pcVar7 = cVar2;
-            if (cVar2 == '\0') break;
-            cVar2 = pcVar6[1];
-            pcVar6 = pcVar6 + 2;
-            pcVar7[1] = cVar2;
-            pcVar7 = pcVar7 + 2;
-          } while (cVar2 != '\0');
+          splitpath(local_9e0,(char *)0x0,(char *)0x0,local_38[local_40],(char *)0x0);
+          strcat(local_38[local_40],".raw");
         }
       }
       shape_design_c_skipLines_FUN_00459360(file,1);
@@ -175,28 +122,8 @@ LAB_00459796:
           }
           else {
             local_14->polygon_type = 2;
-            pcVar6 = (char *)(local_9e4 * 0x50 + (int)local_38);
-            pcVar7 = local_14->lightmap_name;
-            do {
-              cVar2 = *pcVar6;
-              *pcVar7 = cVar2;
-              if (cVar2 == '\0') break;
-              cVar2 = pcVar6[1];
-              pcVar6 = pcVar6 + 2;
-              pcVar7[1] = cVar2;
-              pcVar7 = pcVar7 + 2;
-            } while (cVar2 != '\0');
-            pcVar6 = (char *)(local_9e4 * 0x50 + (int)local_38);
-            pcVar7 = local_14->texture_name;
-            do {
-              cVar2 = *pcVar6;
-              *pcVar7 = cVar2;
-              if (cVar2 == '\0') break;
-              cVar2 = pcVar6[1];
-              pcVar6 = pcVar6 + 2;
-              pcVar7[1] = cVar2;
-              pcVar7 = pcVar7 + 2;
-            } while (cVar2 != '\0');
+            strcpy(local_14->lightmap_name,local_38[local_9e4]);
+            strcpy(local_14->texture_name,local_38[local_9e4]);
           }
           local_14 = local_14 + 1;
         }
@@ -205,7 +132,7 @@ LAB_00459796:
       local_40 = 0;
       while( true ) {
         if (g_VertexCount <= (int)local_40) {
-          if (local_38 != (void *)0x0) {
+          if (local_38 != (char (*)[80])0x0) {
             shape_memdbg_cpp_debugFree_FUN_0050f460(local_38,"..\\shape\\design.c",0x42f);
           }
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\design.c",0x433);
@@ -227,21 +154,11 @@ LAB_00459491:
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  pcVar6 = &s_EmptyChar_0061ab51;
-  pcVar7 = g_LoadedModelName;
-  do {
-    cVar2 = *pcVar6;
-    *pcVar7 = cVar2;
-    if (cVar2 == '\0') break;
-    cVar2 = pcVar6[1];
-    pcVar6 = pcVar6 + 2;
-    pcVar7[1] = cVar2;
-    pcVar7 = pcVar7 + 2;
-  } while (cVar2 != '\0');
+  g_LoadedModelName[0] = '\0';
   g_PartsCount = 0;
   g_PolygonCount = 0;
   g_VertexCount = 0;
-  if (local_38 != (void *)0x0) {
+  if (local_38 != (char (*)[80])0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460(local_38,"..\\shape\\design.c",0x3be);
   }
   return 0;

@@ -7,16 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 95,
-    "complexity_score": 115,
+    "complexity_score": 70,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 13,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 55,
-    "suspect_count": 5,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy"
+      "pointer_cast"
     ],
     "total_lines": 150
   },
@@ -202,6 +201,44 @@
     },
     "pcode_op_count": 706
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "puVar7 = (uint *)((int)puVar7 + uVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "line": 40,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "for (uVar2 = uVar1 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "line": 45,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "for (uVar3 = uVar1 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -213,22 +250,8 @@
   "static_analysis": {
     "analyzed_file": "paintWindowBackground_FUN_0049e590.keep.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 4,
+      "diagnostic_count": 2,
       "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 18,
-          "line": 57,
-          "message": "Redundant assignment of 'puVar8' to itself.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "selfAssignment",
-          "column": 18,
-          "line": 58,
-          "message": "Redundant assignment of 'puVar9' to itself.",
-          "severity": "warning"
-        },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 19,
@@ -256,38 +279,6 @@
       "severity": "mild",
       "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar10 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar7 = (uint *)((int)puVar7 + uVar1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 40,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "mild",
-      "text": "for (uVar2 = uVar1 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 45,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "mild",
-      "text": "for (uVar3 = uVar1 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {",
-      "type": "unrolled_memcpy"
     }
   ]
 }

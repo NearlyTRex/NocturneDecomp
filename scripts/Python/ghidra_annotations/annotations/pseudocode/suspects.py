@@ -1022,7 +1022,7 @@ _UNROLLED_STRLEN_DECR_RE = re.compile(
 _UNROLLED_STRLEN_LOAD_RE = re.compile(
     r"^\s*(\w+)\s*=\s*\*\s*(\w+)\s*;\s*$")
 _UNROLLED_STRLEN_STEP_RE = re.compile(
-    r"^\s*(\w+)\s*=\s*\1\s*\+\s*\(\s*uint\s*\)\s*\w+\s*\*\s*-?\d+\s*\+\s*\d+\s*;\s*$")
+    r"^\s*\w+\s*=\s*\w+\s*\+\s*\(\s*uint\s*\)\s*\w+\s*\*\s*-?\d+\s*\+\s*\d+\s*;\s*$")
 
 
 def identify_unrolled_strlen_loops(decompiled_code):

@@ -133,13 +133,7 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
     g_TrainNoiseCooldown = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(1.0,5.0);
     local_20 = 20.0;
     local_11c = 1.0;
-    pcVar10 = g_TrainSoundFilenameTemplate;
-    pcVar11 = local_118;
-    for (iVar6 = 0x19; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *(uint *)pcVar11 = *(uint *)pcVar10;
-      pcVar10 = pcVar10 + ((uint)bVar10 * -2 + 1) * 4;
-      pcVar11 = pcVar11 + (uint)bVar10 * -8 + 4;
-    }
+    memcpy(local_118,g_TrainSoundFilenameTemplate,100);
     iVar6 = rand();
     switch(iVar6 % 5) {
     case 0:
