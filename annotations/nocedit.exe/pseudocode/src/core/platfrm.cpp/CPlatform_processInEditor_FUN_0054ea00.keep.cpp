@@ -1,5 +1,6 @@
 // Name: core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00
 // Address: 0054ea00
+// MANUAL RECONSTRUCTION
 // Address Range: [[0054ea00, 0054f058] [006050a6, 0060511b] [0060f543, 0060f5ae] [03fc23e0, 03fc2565]]
 // Convention: __cdecl
 // Signature: void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *this_ptr)
@@ -169,11 +170,9 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
         core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                   (&CStack_224,local_18,pCStack_20);
         core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_254,&CStack_224,&CStack_284);
-        if ((CVector3f *)&stack0xffffffa8 != pCStack_1c) {
-          pCStack_1c->x = CStack_284.m[0].z;
-          pCStack_1c->y = CStack_284.m[1].z;
-          pCStack_1c->z = CStack_284.m[2].z;
-        }
+        pCStack_1c->x = CStack_284.m[0].z;
+        pCStack_1c->y = CStack_284.m[1].z;
+        pCStack_1c->z = CStack_284.m[2].z;
         core_xform_cpp_matrixToQuaternion_FUN_005f7420((CMatrix3x3f *)&CStack_2b4,&CStack_8c);
         (this_ptr->orig_orient).w = CStack_8c.w;
         (this_ptr->orig_orient).x = CStack_8c.x;

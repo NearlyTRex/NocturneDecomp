@@ -11,7 +11,7 @@
 ; SDamageInfo      Stack[-0x1bc]:60  local_1bc
 ; SDamageInfo      Stack[-0x180]:60  local_180
 ; CBoundingBox3D   Stack[-0x144]:24  local_144
-; CVector3f        Stack[-0x12c]:12  local_12c
+; CQuaternion4f    Stack[-0x12c]:16  local_12c
 ; CQuaternion4f    Stack[-0x11c]:16  local_11c
 ; float            Stack[-0x10c]:4  local_10c
 ; float            Stack[-0x108]:4  local_108
@@ -30,7 +30,7 @@
 ; float            Stack[-0xa4]:4  local_a4
 ; CVector3f        Stack[-0xa0]:12  local_a0
 ; CVector3f        Stack[-0x94]:12  local_94
-; CQuaternion4f    Stack[-0x88]:16  local_88
+; CVector3f        Stack[-0x88]:12  local_88
 ; float            Stack[-0x78]:4  local_78
 ; float            Stack[-0x74]:4  local_74
 ; float            Stack[-0x70]:4  local_70
@@ -245,7 +245,7 @@ section .text
     JMP 0x0060eb39                      ; 0041c164
         ;   XREF to: 0060eb39 (UNCONDITIONAL_JUMP)  ; CAVE_cave_005fde92
     CALL core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0 ; 0041c169
-        ;   XREF to: 005f7ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0(CQuaternion4f * quat_in, CVector3f * vector_out)
+        ;   XREF to: 005f7ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0(CVector3f * out_euler, CQuaternion4f * quat_in)
         ;   Label: LAB_0041c169
     FLD float ptr [EBX + 0xc4e0]        ; 0041c16e
     FMUL double ptr [0x0061615d]        ; 0041c174 | DOUBLE_0061615d

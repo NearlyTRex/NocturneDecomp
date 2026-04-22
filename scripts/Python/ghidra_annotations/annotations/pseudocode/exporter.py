@@ -72,7 +72,8 @@ from ghidra_annotations.annotations.pseudocode.suspects import (
     identify_stack_align_anchor,
     identify_direct_call_esp_uncertainty, identify_lea_esp_stack_addr,
     identify_special_functions, identify_displaced_global_access,
-    detect_content_suspects, build_global_interval_map
+    detect_content_suspects, build_global_interval_map,
+    identify_missing_cave_copy
 )
 from ghidra_annotations.annotations.pseudocode.stack_patterns import (
     summarize_stack_patterns
@@ -478,6 +479,10 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map,
     # Identify assembly-based suspects (MMX, by-value callers, etc.)
     assembly_suspects = identify_assembly_suspects(result.assembly_code, result.func_calls)
     suspects.extend(assembly_suspects)
+
+    # Cross-reference .cpp/.asm: detect missing Watcom cave-block struct memcpys
+    # that leave decompile locals uninitialized.
+    suspects.extend(identify_missing_cave_copy(decompiled_code, result.assembly_code))
 
     # Identify P-code based suspects (fixable patterns like CALLIND+ESP)
     # Pass existing overrides to separate unfixed from resolved suspects

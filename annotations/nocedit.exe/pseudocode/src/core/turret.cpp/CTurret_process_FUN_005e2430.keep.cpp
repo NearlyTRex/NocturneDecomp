@@ -25,12 +25,12 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
   float local_f8;
   char local_f4 [100];
   CQuaternion4f local_90;
-  CVector3f local_80;
+  CQuaternion4f local_80;
   CQuaternion4f local_70;
   CQuaternion4f local_60;
   CQuaternion4f local_50;
   CQuaternion4f local_40;
-  CQuaternion4f local_30;
+  CVector3f local_30;
   double local_30_playback_pos;
   CVector3f *local_1c;
   CVector3f *local_18;
@@ -134,6 +134,7 @@ LAB_005e24c7:
       core_xform_cpp_slerpQuaternion_FUN_005f77e0
                 (&local_90,&local_50,
                  (delta_time / (this_ptr->timer + delta_time)) * (float)2,&local_60);
+      local_80 = local_60;
       pCVar5 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
                          (&local_30,&local_80);
       if (pCVar5 != local_18) {

@@ -36,7 +36,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
   SDamageInfo local_1bc;
   SDamageInfo local_180;
   CBoundingBox3D local_144;
-  CVector3f local_12c;
+  CQuaternion4f local_12c;
   CQuaternion4f local_11c;
   float local_10c;
   float local_108;
@@ -55,7 +55,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
   float local_a4;
   CVector3f local_a0;
   CVector3f local_94;
-  CQuaternion4f local_88;
+  CVector3f local_88;
   float local_78;
   float local_74;
   float local_70;
@@ -130,16 +130,17 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
         local_a4 = local_18->z + ((pSVar8->pos).z - local_18->z) * *local_24;
         core_xform_cpp_slerpQuaternion_FUN_005f77e0
                   (local_28,local_20,this_ptr->recombine_interpolation,&local_11c);
+        local_12c = local_11c;
         core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(&local_88,&local_12c);
-        local_88.w = this_ptr->recombine_interpolation * (float)6.2831853070000001 + local_88.w;
+        local_88.x = this_ptr->recombine_interpolation * (float)6.2831853070000001 + local_88.x;
         (pCVar6->base).location.position.x = local_ac;
         (pCVar6->base).location.position.y = local_a8;
         pUVar1 = &(pCVar6->base).orient;
         (pCVar6->base).location.position.z = local_a4;
-        if ((CQuaternion4f *)pUVar1 != &local_88) {
-          (pUVar1->vec).x = local_88.w;
-          (pCVar6->base).orient.vec.y = local_88.x;
-          (pCVar6->base).orient.vec.z = local_88.y;
+        if ((CVector3f *)pUVar1 != &local_88) {
+          (pUVar1->vec).x = local_88.x;
+          (pCVar6->base).orient.vec.y = local_88.y;
+          (pCVar6->base).orient.vec.z = local_88.z;
         }
         if (&pCVar6->physics_box != (CBox *)&local_ac) {
           (pCVar6->physics_box).position.x = local_ac;
@@ -147,10 +148,10 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
           (pCVar6->physics_box).position.z = local_a4;
         }
         pCVar12 = &(pCVar6->physics_box).orientation;
-        if ((CQuaternion4f *)pCVar12 != &local_88) {
-          pCVar12->x = local_88.w;
-          (pCVar6->physics_box).orientation.y = local_88.x;
-          (pCVar6->physics_box).orientation.z = local_88.y;
+        if ((CVector3f *)pCVar12 != &local_88) {
+          pCVar12->x = local_88.x;
+          (pCVar6->physics_box).orientation.y = local_88.y;
+          (pCVar6->physics_box).orientation.z = local_88.z;
         }
         local_28 = (CQuaternion4f *)&local_28[4].y;
         local_20 = (CQuaternion4f *)&local_20[4].y;
@@ -397,8 +398,7 @@ LAB_0041c60c:
          (this_ptr->base).base.velocity.y - delta_time * (float)32;
     pCVar12 = &(this_ptr->base).base.position_delta;
     pCVar3 = &(this_ptr->base).base.model.accumulated_root_motion;
-    local_88.z = (this_ptr->base).base.velocity.x * delta_time + pCVar12->x;
-    local_dc.x = local_88.z + pCVar3->x;
+    local_dc.x = (this_ptr->base).base.velocity.x * delta_time + pCVar12->x + pCVar3->x;
     local_dc.y = (this_ptr->base).base.velocity.y * delta_time +
                  (this_ptr->base).base.position_delta.y +
                  (this_ptr->base).base.model.accumulated_root_motion.y;

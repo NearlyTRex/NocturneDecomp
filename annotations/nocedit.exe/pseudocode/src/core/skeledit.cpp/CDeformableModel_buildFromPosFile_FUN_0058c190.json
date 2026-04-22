@@ -8,15 +8,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1804,
-    "complexity_score": 1010,
+    "complexity_score": 1025,
     "cross_reference_count": 0,
     "function_call_count": 64,
     "global_count": 65,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 715,
-    "suspect_count": 28,
+    "suspect_count": 29,
     "suspect_types": [
       "pointer_cast",
+      "preinc_loop_idiom",
       "unnamed_local",
       "unrolled_strcpy"
     ],
@@ -1598,6 +1599,14 @@
       "severity": "mild",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar8` (struct-field advance + constant `[0]` index + self-assign no-op). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep.",
+      "line": 588,
+      "match": "do { var = (T *)&var->...; var->arr[0]...; var = var; ...}",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
     },
     {
       "description": "Unnamed local variable",

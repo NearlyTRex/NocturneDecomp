@@ -71,7 +71,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0",
-    "signature": "CVector3f * __cdecl core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(CQuaternion4f *quat_in,CVector3f *vector_out)"
+    "signature": "CVector3f * __cdecl core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(CVector3f *out_euler,CQuaternion4f *quat_in)"
   },
   "function_calls": [
     {
@@ -244,17 +244,17 @@
       },
       {
         "is_param": true,
-        "name": "quat_in",
+        "name": "out_euler",
         "offset": 4,
         "size": 4,
-        "type": "CQuaternion4f *"
+        "type": "CVector3f *"
       },
       {
         "is_param": true,
-        "name": "vector_out",
+        "name": "quat_in",
         "offset": 8,
         "size": 4,
-        "type": "CVector3f *"
+        "type": "CQuaternion4f *"
       }
     ]
   },

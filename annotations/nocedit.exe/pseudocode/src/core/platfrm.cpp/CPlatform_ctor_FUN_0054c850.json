@@ -4,18 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 106,
+    "complexity_score": 91,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 76,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
       "stack_alignment_array"
     ],
     "total_lines": 215
@@ -182,6 +181,26 @@
     },
     "pcode_op_count": 412
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(CPlatform *)((int)",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pCVar6 = (CPlatform *)((int)&(pCVar6->base).orient + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar6` (struct-field advance + constant `[0]` index + self-assign no-op). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep.",
+      "line": 70,
+      "match": "do { var = (T *)&var->...; var->arr[0]...; var = var; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
+    }
+  ],
   "stack_frame": {
     "frame_size": 6136,
     "local_size": 6132,
@@ -220,14 +239,6 @@
       "severity": "moderate",
       "text": "float afStackY_17f0 [1523];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 71,
-      "match": "(CPlatform *)((int)",
-      "severity": "mild",
-      "text": "pCVar6 = (CPlatform *)((int)&(pCVar6->base).orient + 4);",
-      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

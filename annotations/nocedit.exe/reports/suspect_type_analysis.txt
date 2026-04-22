@@ -4,25 +4,26 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    3195 ( 56.5%)
-  unnamed_local                    649 ( 11.5%)
-  unrolled_strcpy                  395 (  7.0%)
-  warning_inlined_function         259 (  4.6%)
-  raw_address_constant             225 (  4.0%)
-  unrolled_strlen                  182 (  3.2%)
-  warning_type_propagation         133 (  2.4%)
+  pointer_cast                    3190 ( 54.5%)
+  unnamed_local                    661 ( 11.3%)
+  unrolled_strcpy                  395 (  6.7%)
+  warning_inlined_function         259 (  4.4%)
+  raw_address_constant             225 (  3.8%)
+  missing_cave_copy                184 (  3.1%)
+  unrolled_strlen                  182 (  3.1%)
+  warning_type_propagation         133 (  2.3%)
   stack_alignment_array             92 (  1.6%)
   warning_unreachable               76 (  1.3%)
-  unnamed_param                     73 (  1.3%)
-  unrolled_strchr                   67 (  1.2%)
+  unnamed_param                     73 (  1.2%)
+  unrolled_strchr                   67 (  1.1%)
   unrolled_strcat                   47 (  0.8%)
   stack_param                       36 (  0.6%)
   mmx_assembly                      34 (  0.6%)
-  sub84_truncation                  32 (  0.6%)
+  sub84_truncation                  32 (  0.5%)
   param_count_too_few               30 (  0.5%)
   negative_offset                   24 (  0.4%)
   byvalue_struct_passing            22 (  0.4%)
-  decompiler_intrinsic              18 (  0.3%)
+  decompiler_intrinsic              19 (  0.3%)
   extra_output                      16 (  0.3%)
   suspect_float                     10 (  0.2%)
   unaffected_reg                     9 (  0.2%)
@@ -31,6 +32,7 @@ SUSPECT TYPE COUNTS
   warning_deadcode_restart           5 (  0.1%)
   unknown_type                       4 (  0.1%)
   warning_max_restarts               3 (  0.1%)
+  preinc_loop_idiom                  2 (  0.0%)
   cpuid_intrinsic                    2 (  0.0%)
   wrong_global                       2 (  0.0%)
   param_count_too_many               2 (  0.0%)
@@ -41,12 +43,12 @@ SUSPECT TYPE COUNTS
   warning_indirect_jump              1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (3195 occurrences)
+TYPE: pointer_cast (3190 occurrences)
 ====================================================================================================
 
 Unique patterns:
   1020x  (int *)((int)
-   858x  (uint *)((int)
+   854x  (uint *)((int)
    275x  (float *)((int)
    139x  (void *)((int)
    123x  (double *)((int)
@@ -58,13 +60,13 @@ Unique patterns:
     37x  (CMatrix3x4f *)((int)
     34x  (SShapeEditorPolygon *)((int)
     20x  (SMRGLHeaderExtended *)((int)
-    19x  (CVector3f *)((int)
+    18x  (CVector3f *)((int)
     16x  (SScriptXRef *)((int)
     14x  (SVoxelGrid *)((int)
     12x  (SMRGLHeaderPrimitive *)((int)
     11x  (CPodAuditRecord *)((int)
     11x  (HGLOBAL *)((int)
-    11x  (CPlatform *)((int)
+    10x  (CPlatform *)((int)
 
 Functions:
   cockpit_ckptutil.c_applyActPalette_FUN_004319b0
@@ -320,7 +322,6 @@ Functions:
   core_path.cpp_resetAllPathMaps_FUN_00548590
   core_platfrm.cpp_CPlatform_archive_FUN_0054dbc0
   core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0
-  core_platfrm.cpp_CPlatform_ctor_FUN_0054c850
   core_platfrm.cpp_CPlatform_onActorDeleted_FUN_0054e2e0
   core_platfrm.cpp_CPlatform_process_FUN_0054cc30
   core_platfrm.cpp_CPlatform_setup_FUN_0054ca20
@@ -744,23 +745,23 @@ Functions:
   wincore_winrun.cpp_processWindowMessages_FUN_005f35e0
 
 ====================================================================================================
-TYPE: unnamed_local (649 occurrences)
+TYPE: unnamed_local (661 occurrences)
 ====================================================================================================
 
 Unique patterns:
     72x  local_14
-    41x  local_18
+    43x  local_18
     38x  local_20a4
     31x  local_38
+    20x  local_1c
     19x  local_30
     19x  local_34
     18x  local_24
     18x  local_174
-    18x  local_1c
-    16x  local_48
+    17x  local_48
     15x  local_20
     15x  local_190
-    13x  local_78
+    14x  local_78
     13x  local_2c
     13x  local_5c
     12x  local_28
@@ -772,7 +773,10 @@ Unique patterns:
 Functions:
   cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30
   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470
+  core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90
+  core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043a2b0
   core_cloth.cpp_CCloth_setup_FUN_00439710
+  core_course.cpp_CCourse_interpolate_FUN_004427a0
   core_course.cpp_CCourse_preview_FUN_00443bc0
   core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
   core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_00476f20
@@ -785,6 +789,7 @@ Functions:
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
   core_manpuz.cpp_CMansionPuzzleCircle_renderEmitter_FUN_00509c60
   core_mimic.cpp_CMimic_renderMirrored_FUN_005205f0
+  core_morph.cpp_CMorph_getReady_FUN_0052b680
   core_motion.cpp_CMotionList_save_FUN_0052d170
   core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
   core_particle.cpp_CParticle_process_FUN_00545760
@@ -809,8 +814,10 @@ Functions:
   core_sound.cpp_playSfxInternal_FUN_005b1fd0
   core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10
   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
+  core_stranger.cpp_CStranger_extractTurnPose_FUN_005bf720
   core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150
   core_trash.cpp_CTrash_renderOpaque_FUN_005df550
+  core_turret.cpp_CTurret_process_FUN_005e2430
   core_vehicle.cpp_CVehicle_renderOpaque_FUN_005e88c0
   core_vessel.cpp_CCryptVessel_renderTransparent_FUN_005e98b0
   core_werewolf.cpp_CWerewolf_process_FUN_005efde0
@@ -1362,6 +1369,57 @@ Functions:
   sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680
   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00
   sound_sndmain.cpp_startSfx_FUN_005a8e90
+
+====================================================================================================
+TYPE: missing_cave_copy (184 occurrences)
+====================================================================================================
+
+Unique patterns:
+     3x  CVector3f local_18; ... f(&local_18, ...);
+     3x  CMatrix3x4f local_ac; ... f(&local_ac, ...);
+     2x  CVector3f local_ac; ... f(&local_ac, ...);
+     2x  CVector3f local_17c; ... f(&local_17c, ...);
+     2x  CVector3f local_110; ... f(&local_110, ...);
+     2x  CMatrix3x4f local_114; ... f(&local_114, ...);
+     2x  CMatrix3x4f local_b4; ... f(&local_b4, ...);
+     2x  CMatrix3x4f local_54; ... f(&local_54, ...);
+     2x  CMatrix3x4f local_70; ... f(&local_70, ...);
+     2x  CVector3f local_1c; ... f(&local_1c, ...);
+     2x  CVector3f local_24; ... f(&local_24, ...);
+     2x  CMatrix3x4f local_1cc; ... f(&local_1cc, ...);
+     2x  CMatrix3x4f local_19c; ... f(&local_19c, ...);
+     2x  CMatrix3x4f local_16c; ... f(&local_16c, ...);
+     2x  CMatrix3x4f local_7c; ... f(&local_7c, ...);
+     2x  CMatrix3x4f local_4c; ... f(&local_4c, ...);
+     2x  CMatrix3x4f CStack_130; ... f(&CStack_130, ...);
+     2x  CVector3f CStack_34; ... f(&CStack_34, ...);
+     2x  CMatrix3x4f CStack_164; ... f(&CStack_164, ...);
+     2x  CMatrix3x4f CStack_134; ... f(&CStack_134, ...);
+
+Functions:
+  core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
+  core_actor.cpp_drawBoundingBox_FUN_0040d470
+  core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80
+  core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090
+  core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043a2b0
+  core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120
+  core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550
+  core_mimic.cpp_CMimic_updatePose_FUN_0051f930
+  core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
+  core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00
+  core_platfrm.cpp_CPlatform_process_FUN_0054cc30
+  core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
+  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
+  core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
+  core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
+  core_stranger.cpp_CStranger_updateWeaponPosition_FUN_005c06b0
+  core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
+  core_tentacle.cpp_CTentacle_process_FUN_005db050
+  core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
+  core_xform.cpp_buildMirrorTransform_FUN_005f7000
+  core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0
 
 ====================================================================================================
 TYPE: unrolled_strlen (182 occurrences)
@@ -2059,15 +2117,17 @@ Functions:
   sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (18 occurrences)
+TYPE: decompiler_intrinsic (19 occurrences)
 ====================================================================================================
 
 Unique patterns:
      9x  ROUND
      7x  ABS
      2x  SUB84
+     1x  ADJ
 
 Functions:
+  core_charactr.cpp_CCharacter_ctor_FUN_00427e20
   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
   core_inv.cpp_CInventory_renderAllItems_FUN_00500690
   core_ladder.cpp_CLadder_renderOpaque_FUN_00502620
@@ -2198,6 +2258,17 @@ Functions:
   sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660
   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830
   sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120
+
+====================================================================================================
+TYPE: preinc_loop_idiom (2 occurrences)
+====================================================================================================
+
+Unique patterns:
+     2x  do { var = (T *)&var->...; var->arr[0]...; var = var; ...}
+
+Functions:
+  core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10
+  core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
 
 ====================================================================================================
 TYPE: cpuid_intrinsic (2 occurrences)

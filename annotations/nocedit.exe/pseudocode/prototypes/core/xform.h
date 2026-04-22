@@ -193,7 +193,7 @@ CQuaternion4f * __stack2_esi quaternionFromAxisAngle(float angle_radians,CVector
 
 // Original: core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0
 // Address: 005f7ac0
-CVector3f * __cdecl quaternionToEulerAngles(CQuaternion4f *quat_in,CVector3f *vector_out);
+CVector3f * __cdecl quaternionToEulerAngles(CVector3f *out_euler,CQuaternion4f *quat_in);
 
 // Original: core_xform.cpp_quaternionToEulerAnglesZYX_FUN_005f7af0
 // Address: 005f7af0

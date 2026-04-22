@@ -535,7 +535,7 @@ section .text
     LEA EAX,[ESP + 0x4c8]               ; 0044355d
     PUSH EAX                            ; 00443564
     CALL core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0 ; 00443565
-        ;   XREF to: 005f7ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0(CQuaternion4f * quat_in, CVector3f * vector_out)
+        ;   XREF to: 005f7ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0(CVector3f * out_euler, CQuaternion4f * quat_in)
     ADD ESP,0x8                         ; 0044356a
     XOR EAX,EAX                         ; 0044356d
     MOV dword ptr [ESP + 0x4cc],EAX     ; 0044356f

@@ -1,6 +1,6 @@
 # Fix Decompiled Function Compilation Errors
 
-You are fixing compilation errors in Ghidra-decompiled C/C++ pseudocode for a game binary (`nocedit.exe`, Watcom C++ 11.0, x86 32-bit). Your goal is to produce a `.keep` file that compiles cleanly and is semantically faithful to what the assembly is actually doing.
+You are fixing compilation or address sanitizer errors in Ghidra-decompiled C/C++ pseudocode for a game binary (`nocedit.exe`, Watcom C++ 11.0, x86 32-bit). Your goal is to produce or improve a `.keep` file that compiles cleanly and is semantically faithful to what the assembly is actually doing.
 
 ## Rules
 
@@ -40,8 +40,9 @@ The `.mmx.*` and `.byval.*` variants are generated alongside the original but ar
 - **The function signature MUST NOT change.** The name, calling convention, parameters, and return type must be identical to the original. This is non-negotiable — the signature comes from Ghidra's analysis and must be preserved exactly. Only the function body internals may be modified.
 - **Semantic correctness over compiler appeasement.** Never just slap a cast on an expression to silence a type error. Understand *what the code is actually doing* from the assembly and express that intent. For example, if a `CDemonActor *` is passed to `%s`, don't cast to `(char *)` — the struct has `actor_name[32]` at offset 0x0, so use `actor->actor_name`. If a `CClothList` is accessed through the wrong union member (e.g., `v_kfm_ptr->part_visibility_flags`), replace with the correct member (`v_clothlist_ptr->filenames[i]`). The decompiler frequently picks wrong union members or loses type info — always check what the data really is.
 - Keep variable names from the original where possible.
-- Keep the overall structure (control flow, variable declarations) as close to the original as possible.
-- Only change what is necessary to make it compile and be semantically correct.
+- Keep the overall structure (control flow, statement order) as close to the original as possible.
+- **Local variable declarations are NOT off-limits.** Retyping a local (e.g., `CVector3f` → `CQuaternion4f` when Ghidra mis-sized a stack slot), merging two adjacent locals into one struct, or splitting one local into two when Watcom reused a stack slot for different types (§13) are all within the scope of a minimal edit. Fix the declaration to match what the asm actually uses, and any required initializer copy from a sibling local — don't paper over with `(T *)&` casts that hide an underlying size/type mismatch.
+- Only change what is necessary to make it compile, be semantically correct, or resolve a flagged suspect (see "Reducing Flagged Suspects" below).
 - Do NOT add comments explaining the fix unless the logic is genuinely non-obvious.
 - **Mark uncertain fixes.** If you can determine the correct types and argument count but cannot precisely verify the exact variables or ordering from the assembly (e.g., which local maps to which bounding box axis), add a `// UNCERTAIN:` comment explaining what is known and what is approximate. This flags the fix for later verification without blocking compilation progress.
 - Do NOT refactor, rename variables for style, or "improve" the code beyond what's needed.
@@ -76,6 +77,28 @@ Some functions are so severely mangled by the decompiler that a `.keep` file wou
 A `.keep` file should be a *minimal* edit of the decompiler output. If you'd have to rewrite more than ~30% of the function body to make it compile, the function needs Ghidra-side fixes or manual reverse engineering first — not a `.keep` workaround.
 
 **Tell the user which function you're skipping and why**, so they can prioritize Ghidra fixes for it.
+
+### Reducing Flagged Suspects in `.keep` Files
+
+Beyond compile errors, the exporter flags decompiler artifacts as **suspects** (unrolled library calls, wrong globals, raw address constants, suspicious casts). These don't block compilation but obscure the code's real intent. A `.keep` is the right place to drive a function's flagged-suspect count to zero.
+
+When you are editing a `.keep` for any reason — creating one for a compile error, auditing an existing one, or fixing a runtime bug — also clean up flagged suspects in the same file, with these constraints:
+
+- **One suspect, one edit.** Target exactly the flagged region. Don't restructure surrounding loops, rename variables, remove dead stores, or "tidy" adjacent code in the same pass. Each edit should be small enough to review independently.
+- **Keep the rest identical.** Variable names, control flow, statement order, and header comments stay as they were. The goal is a diff that reads "this one pattern became that one standard call" — nothing else. Retyping a local to match the suspect fix is fine (see Fidelity Requirements).
+- **Semantics over neatness.** Only rewrite a pattern when it's *unambiguously* equivalent. Unrolled `strcpy`/`memcpy`/`strchr`/`strcat`/`strlen` must be complete, contiguous, and free of interleaved logic. Skip partial copies, copies with bounds checks, or anything with non-obvious control flow — a wrong rewrite silently changes behavior.
+- **Don't create a `.keep` just for `mild` suspects.** If the function otherwise compiles and has no active bug, the per-re-export maintenance cost of a `.keep` outweighs removing a stylistic wart. Suspect cleanup is a free rider on `.keep` work that's already happening for another reason.
+
+**Eligible suspect types** and the error pattern section each maps to:
+- `unrolled_strcpy`, `unrolled_memcpy`, `unrolled_strlen`, `unrolled_strcat`, `unrolled_strchr` — §17 (Unrolled string/memory copies)
+- `wrong_global`, `displaced_global_access` — §15 (Wrong global due to Watcom 1-based indexing)
+- `raw_address_constant` — §11 (Hardcoded memory addresses for known globals)
+- `suspicious_cast` — §1 (Pointer-to-float cast) or §7 (Cannot cast from float to pointer type)
+- `sub84_truncation`, `double_reconstruction` — §2 (Double return splitting) or §3 (Format string errors). These are EAX:EDX Watcom double-return artifacts that Ghidra cannot fix upstream — they are a decompiler limitation. Eligible only when the pattern is **localized** (a few split doubles in printf-family calls or double-returning assignments). If `SUB84`/`CONCAT44`/`._0_4_`/`._4_4_` is pervasive throughout the function body, this falls under "Skip Heavily Mangled Functions" instead.
+- `preinc_loop_idiom` — §19 (Pre-increment-array-walk loop idiom). Always a Ghidra loop-decode artifact; must rewrite as a clean `for`-loop after cross-referencing the asm. The decompile is never correct as-decoded.
+- `missing_cave_copy` — §20 (Missing cave-block struct memcpy). Ghidra dropped a post-call struct copy that Watcom emitted, leaving a struct local uninitialized at runtime. Fix by passing the real source local directly or adding the missing assignment; detected via `.cpp`/`.asm` cross-check.
+
+**Ineligible for `.keep` cleanup — fix upstream in Ghidra instead:** structural suspects like `decompilation_failed`, stack/ESP anchor mismatches, `warning_*` (bad spacebase, unmapped variables, type propagation). See "Prefer Ghidra Fixes Over Code Fixes."
 
 ## Common Error Patterns and Fixes
 
@@ -406,6 +429,96 @@ cost_matrix[i][j] = 1e10f;
 ```
 
 **When to apply vs. suggest:** Apply directly only when the mapping is unambiguous (struct size, exact field offset, bit-for-bit float literal). If there's any ambiguity — two structs with the same size, a constant that's *near* a known value but not equal, a float that rounds differently — leave the hex and flag it for the user to decide. A wrong symbolic substitution silently changes meaning and is worse than a magic number.
+
+### 19. Pre-increment-array-walk loop idiom (Ghidra decode artifact)
+
+**Cause:** Watcom emitted array-init/walk loops using compensated offsets (e.g. `ADD EAX, stride; MOV [EAX + (array_base - stride)], value`) or unrolled struct copies. Ghidra mistranslates these into a `do { ... } while(...)` loop with a pre-incremented pointer walked via struct-field pointer arithmetic, a constant `[0]` index on the advanced pointer, and a `pX = pX;` self-assign no-op.
+
+**Symptoms — always all three in the same `do/while` body:**
+- A pre-increment via struct-field arithmetic: `pX = (T *)&(pX->field)...;` or `pX = (T *)((int)&(pX->field) + N);`
+- A constant-index array access on the advanced pointer: `pX->arr[0].member = value;`
+- A self-assignment no-op on the same variable: `pX = pX;`
+
+**Canonical examples:**
+```cpp
+// CPlatform::ctor — compensated-offset array init:
+pCVar6 = this_ptr;
+do {
+    pCVar6 = (CPlatform *)((int)&(pCVar6->base).orient + 4);
+    pCVar6->attach_actors[0].actor = (CDemonActor *)0x0;   // skips slot 0, corrupts past slot 9
+    pCVar6 = pCVar6;
+} while (pCVar6 != (CPlatform *)((...)->model.model_name + 0x38));
+
+// CDemonCamera::precomputeLight — phantom pre-increment (asm doesn't advance at all):
+pCVar3 = light_source;
+do {
+    pCVar3 = (CDemonLight *)&(pCVar3->base).base.position;
+    pCVar3->left_extent[0] = 999;                           // actually writes same address N times
+    pCVar3->right_extent[0] = 0;
+    pCVar3 = pCVar3;
+} while (iVar8 < count);
+```
+
+**Why this is always wrong:** The decompile is never semantically correct as-decoded. It either:
+1. **Skips element [0]** — asm uses `[EAX + (array_offset - stride)]` with pre-increment, correctly hitting `array[0..N-1]`. Naive translation loses the compensation and starts at `array[1]`, overrunning past the last element.
+2. **Phantom iteration** — asm writes the same address repeatedly without advancing inside the loop body. Decompile invents a pointer advance that isn't there.
+3. **Unrolled struct copy** — asm is a MOVSD/REP or byte-by-byte struct copy, not a repeated-write loop.
+
+**Fix:** cross-reference the asm for the offsets and compensations, then rewrite with a clean `for`-loop (or `memcpy`/assignment when the asm is actually a struct copy). Examples:
+
+```cpp
+// FIXED (compensated-offset init — CPlatform::ctor, CCharacter::ctor):
+for (int i = 0; i < N; i++) {
+    this_ptr->array[i].field = value;
+}
+
+// FIXED (phantom iteration — asm writes same address, decompile shows a fake loop):
+if (count > 0) {
+    base->left_extent[0] = 999;
+    base->right_extent[0] = 0;
+}
+// or, if truly intended as a loop, iterate with an explicit index that the asm uses
+
+// FIXED (unrolled struct copy):
+memcpy(&dst, &src, sizeof(dst));
+```
+
+**Don't mechanically translate the pre-increment** — the decompile's `pX = (T *)&pX->field` advance doesn't reflect the real asm stride. Always check the asm first.
+
+This is a `.keep`-layer fix: it's a Ghidra decode artifact specific to one function, not a type/signature issue that would propagate. Retyping locals or fixing the signature won't change the loop decode.
+
+### 20. Missing cave-block struct memcpy (uninit struct local)
+
+**Cause:** When Watcom calls a function that returns a struct via an output-param-in-register convention (`__stack_esi`, `__stack2_esi`, etc.), the compiler often emits an inline struct memcpy *immediately after the call* to copy the callee's output into a different stack slot. Ghidra models these calls correctly but routinely *drops the post-call memcpy* from the decompile. The extended-block ("cave") is visible in the `.asm` as a run of 12+ consecutive `MOV ECX, [ESI+N] / MOV [EDI+N], ECX` pairs (48 bytes = one `CMatrix3x4f`).
+
+**Symptoms in the `.cpp`:**
+- Multiple struct-type locals (`CMatrix3x4f`, `CQuaternion4f`, etc.) are declared, passed once by address to a function, and *never referenced again* in the body.
+- Typically appear in pairs — one "dead output" (passed as output of call A, never read) paired with an "uninit input" (passed as input to call B, never written).
+- The `.asm` contains 2+ cave-block copies that have no counterpart in the `.cpp`.
+
+**Canonical example (`CCloth::computeBoneTransform`):**
+```cpp
+// BROKEN (decompile has two missing cave copies):
+inverse(parent_matrix, &local_48);          // local_48 is written
+multiply(&local_78,                          // local_78 UNINIT — missing copy from local_48
+         &world_matrix, &local_d8);          // local_d8 is written
+... stores from local_d8 ...
+inverse(&local_138, &local_108);             // local_138 UNINIT — missing copy from local_d8
+... reads from local_108 ...
+
+// FIXED — skip the dropped intermediates and pass the real sources:
+inverse(parent_matrix, &local_48);
+multiply(&local_48, &world_matrix, &local_d8);
+... stores from local_d8 ...
+inverse(&local_d8, &local_108);
+... reads from local_108 ...
+```
+
+**Why uninit is dangerous under ASAN:** On the original Windows build, the uninit stack bytes happened to be zero often enough that the game's defensive checks (e.g. `inverse()` computes `det == 0` and bails as "Singular matrix") mostly stayed quiet. On Linux with a different malloc and stack layout, the same bytes are arbitrary — the determinant can land anywhere, the bail-out fires, or the inverse computes garbage and ripples downstream.
+
+**Fix:** identify which original local the cave-block was copying *from* (the source of the memcpy in the asm) and pass its address directly wherever the decompile now passes the uninit-scratch. Drop the scratch local from the declarations if nothing else references it. Alternative: add an explicit `local_scratch = local_src;` struct assignment just before the call — more faithful to the asm but adds a line.
+
+**Eligibility:** `.keep`-layer fix. Retyping locals or signatures upstream won't change this — it's purely a Ghidra decode artifact. The `missing_cave_copy` suspect type (see "Reducing Flagged Suspects") flags functions whose `.cpp` and `.asm` agree on the pattern.
 
 ## Workflow
 

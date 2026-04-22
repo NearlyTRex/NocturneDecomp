@@ -24,7 +24,8 @@ int __cdecl core_platfrm_cpp_CPlatform_renderOpaque_FUN_0054d720(CPlatform *this
   float fStack_3c;
   float fStack_38;
   float fStack_34;
-  byte auStack_30 [24];
+  CVector3f auStack_30;
+  CVector3f CStack_24;
   float fStack_18;
   float fStack_14;
   float fStack_10;
@@ -81,8 +82,8 @@ LAB_0054d802:
     (pCVar1->position).x = (this_ptr->start_pos).x;
     (pCVar2->base).location.position.y = (this_ptr->start_pos).y;
     (pCVar2->base).location.position.z = (this_ptr->start_pos).z;
-    pCVar6 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
-                       ((CQuaternion4f *)auStack_30,(CVector3f *)&this_ptr->orig_orient);
+    pCVar6 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(&auStack_30,&this_ptr->orig_orient)
+    ;
     if (pUVar7 != (UOrientationVector *)pCVar6) {
       (pUVar7->vec).x = pCVar6->x;
       (pCVar2->base).orient.vec.y = pCVar6->y;
@@ -92,8 +93,7 @@ LAB_0054d802:
     (this_ptr->base).location.position.x = (this_ptr->end_pos).x;
     (this_ptr->base).location.position.y = (this_ptr->end_pos).y;
     (this_ptr->base).location.position.z = (this_ptr->end_pos).z;
-    pCVar3 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
-                       ((CQuaternion4f *)(auStack_30 + 0xc),(CVector3f *)&this_ptr->end_orient);
+    pCVar3 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(&CStack_24,&this_ptr->end_orient);
     pUVar4 = &(this_ptr->base).orient;
     if ((CVector3f *)pUVar4 != pCVar3) {
       (pUVar4->vec).x = pCVar3->x;

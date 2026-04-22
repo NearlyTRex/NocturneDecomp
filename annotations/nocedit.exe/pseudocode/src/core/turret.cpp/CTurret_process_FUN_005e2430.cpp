@@ -24,12 +24,13 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
   float local_f8;
   char local_f4 [100];
   CQuaternion4f local_90;
-  CVector3f local_80;
+  CQuaternion4f local_80;
   CQuaternion4f local_70;
   CQuaternion4f local_60;
   CQuaternion4f local_50;
   CQuaternion4f local_40;
-  byte local_30 [20];
+  CVector3f local_30;
+  double dStack_24;
   CVector3f *local_1c;
   CVector3f *local_18;
   float local_14;
@@ -132,8 +133,7 @@ LAB_005e24c7:
       core_xform_cpp_slerpQuaternion_FUN_005f77e0
                 (&local_90,&local_50,
                  (delta_time / (this_ptr->timer + delta_time)) * (float)2,&local_60);
-      pCVar5 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
-                         ((CQuaternion4f *)local_30,&local_80);
+      pCVar5 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(&local_30,&local_80);
       if (pCVar5 != local_18) {
         local_18->x = pCVar5->x;
         local_18->y = pCVar5->y;
@@ -177,9 +177,8 @@ LAB_005e24c7:
     }
   }
   else {
-    local_30._12_8_ =
-         sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(this_ptr->sfx_handles[0],2);
-    if (0.0 <= (double)local_30._12_8_) {
+    dStack_24 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(this_ptr->sfx_handles[0],2);
+    if (0.0 <= dStack_24) {
       sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[0]);
       (*((this_ptr->base).base.vtable._ub)->playSound)
                 ((CDemonActor *)this_ptr,"turret-tail.wav");

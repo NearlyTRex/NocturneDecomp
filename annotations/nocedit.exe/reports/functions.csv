@@ -1872,7 +1872,7 @@ core_dcamera.cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_0044f290,0044f29
 core_dcamera.cpp_resetFogSamplingOffset_FUN_0044bb70,0044bb70,core/dcamera.cpp,7,0,,7
 core_dcamera.cpp_generateFogGrid_FUN_0044bba0,0044bba0,core/dcamera.cpp,84,0,,84
 core_dcamera.cpp_CDemonCamera_ctor_FUN_0044c030,0044c030,core/dcamera.cpp,14,0,,14
-core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10,0044de10,core/dcamera.cpp,194,8,pointer_cast|stack_alignment_array,284
+core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10,0044de10,core/dcamera.cpp,194,9,pointer_cast|preinc_loop_idiom|stack_alignment_array,299
 core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00453a70,00453a70,core/dcamera.cpp,44,0,,44
 core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0,004528e0,core/dcamera.cpp,7,1,warning_inlined_function,22
 core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044d600,0044d600,core/dcamera.cpp,72,1,stack_alignment_array,87
@@ -2045,7 +2045,7 @@ core_cloth.cpp_CCloth_process_FUN_0043ab80,0043ab80,core/cloth.cpp,5,0,,5
 core_cloth.cpp_CClothList_remove_FUN_0043c170,0043c170,core/cloth.cpp,51,0,,51
 core_cloth.cpp_CClothList_dtor_FUN_0043bf80,0043bf80,core/cloth.cpp,5,0,,5
 core_cloth.cpp_CCloth_setup_FUN_00439710,00439710,core/cloth.cpp,354,9,pointer_cast|unnamed_local,454
-core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043a2b0,0043a2b0,core/cloth.cpp,42,0,,42
+core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043a2b0,0043a2b0,core/cloth.cpp,42,6,missing_cave_copy|unnamed_local,112
 core_cloth.cpp_CClothList_applyRotation_FUN_0043c3a0,0043c3a0,core/cloth.cpp,15,0,,15
 core_cloth.cpp_CCloth_render_FUN_0043bae0,0043bae0,core/cloth.cpp,148,4,pointer_cast|warning_inlined_function,198
 core_cloth.cpp_CCloth_resetState_FUN_0043e170,0043e170,core/cloth.cpp,6,0,,6
@@ -2162,7 +2162,7 @@ core_zombie.cpp_CZombie_setup_FUN_005f9140,005f9140,core/zombie.cpp,101,1,warnin
 core_zombie.cpp_CZombie_renderTransparent_FUN_005fbe70,005fbe70,core/zombie.cpp,54,0,,54
 core_zombie.cpp_CZombie_getGrabbed_FUN_005fc970,005fc970,core/zombie.cpp,19,0,,19
 core_zombie.cpp_CZombie_getTargetPoints_FUN_005fc720,005fc720,core/zombie.cpp,91,1,warning_type_propagation,106
-core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0,005fb1f0,core/zombie.cpp,135,3,pointer_cast|warning_type_propagation,175
+core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0,005fb1f0,core/zombie.cpp,135,5,missing_cave_copy|pointer_cast|warning_type_propagation,200
 core_zombie.cpp_CZombie_ctor_FUN_005f8fe0,005f8fe0,core/zombie.cpp,54,0,,54
 core_zombie.cpp_CZombie_getActorType_FUN_005f8fd0,005f8fd0,core/zombie.cpp,4,0,,4
 core_zombie.cpp_CZombie_canPickupWithHand_FUN_005fbda0,005fbda0,core/zombie.cpp,11,1,warning_type_propagation,26
@@ -2626,7 +2626,7 @@ core_setedit.cpp_drawCameraFrustum_FUN_00582930,00582930,core/setedit.cpp,917,1,
 core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50,0057ae50,core/setedit.cpp,164,3,unrolled_strcpy|warning_inlined_function,204
 core_setedit.cpp_CDemonSet_computeCameraFog_FUN_00581320,00581320,core/setedit.cpp,44,0,,44
 core_setedit.cpp_CDemonSet_importA3D_FUN_00578c60,00578c60,core/setedit.cpp,7,0,,7
-core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170,00583170,core/setedit.cpp,1475,13,byvalue_struct_passing|pointer_cast|unnamed_local,1620
+core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170,00583170,core/setedit.cpp,1475,19,byvalue_struct_passing|missing_cave_copy|pointer_cast|unnamed_local,1685
 core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70,00584e70,core/setedit.cpp,112,4,unrolled_strchr|unrolled_strcpy,162
 core_setedit.cpp_staticInit_FUN_00576930,00576930,core/setedit.cpp,6,0,,6
 core_setedit.cpp_promptYesNo_FUN_00578c90,00578c90,core/setedit.cpp,40,0,,40
@@ -2807,7 +2807,7 @@ core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004e5530,004e5530,core/garg
 core_gargoyle.cpp_factoryFunc_FUN_004e44a0,004e44a0,core/gargoyle.cpp,11,0,,11
 core_gargoyle.cpp_CGargoyle_ctor_FUN_004e44e0,004e44e0,core/gargoyle.cpp,32,0,,32
 core_gargoyle.cpp_CGargoyle_dtor_FUN_004e5bd0,004e5bd0,core/gargoyle.cpp,35,0,,35
-core_xform.cpp_buildMirrorTransform_FUN_005f7000,005f7000,core/xform.cpp,49,6,unnamed_local,114
+core_xform.cpp_buildMirrorTransform_FUN_005f7000,005f7000,core/xform.cpp,49,13,missing_cave_copy|unnamed_local,189
 core_xform.cpp_setIdentityQuaternion_FUN_005f7620,005f7620,core/xform.cpp,8,0,,8
 core_xform.cpp_getTranslation_FUN_005f6110,005f6110,core/xform.cpp,11,0,,11
 core_xform.cpp_buildScaleMatrix_FUN_005f6e80,005f6e80,core/xform.cpp,22,6,unnamed_local,87
@@ -3325,7 +3325,7 @@ core_actor.cpp_checkNameHash_FUN_0040c700,0040c700,core/actor.cpp,11,0,,11
 core_actor.cpp_getRandomFloat_FUN_0040cbc0,0040cbc0,core/actor.cpp,11,0,,11
 core_actor.cpp_CDemonActor_updateCollisionData_FUN_004098c0,004098c0,core/actor.cpp,6,0,,6
 core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10,0040cc10,core/actor.cpp,15,0,,15
-core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940,0040d940,core/actor.cpp,357,1,byvalue_struct_passing,372
+core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940,0040d940,core/actor.cpp,357,7,byvalue_struct_passing|missing_cave_copy,437
 core_actor.cpp_CDemonActor_playAttackHitEffects_FUN_0040ac20,0040ac20,core/actor.cpp,4,0,,4
 core_actor.cpp_CDemonActor_testPointInCylinder_FUN_004090c0,004090c0,core/actor.cpp,19,0,,19
 core_actor.cpp_CDemonActor_process_FUN_00408a80,00408a80,core/actor.cpp,6,0,,6
@@ -3414,7 +3414,7 @@ core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040c8f0,0040c8f0,core/actor.cp
 core_actor.cpp_CVector3f_arrdtor_FUN_00410500,00410500,core/actor.cpp,6,0,,6
 core_actor.cpp_hashClassName_FUN_0040c290,0040c290,core/actor.cpp,17,0,,17
 core_actor.cpp_CDemonActor_processFootstep_FUN_0040c830,0040c830,core/actor.cpp,23,0,,23
-core_actor.cpp_drawBoundingBox_FUN_0040d470,0040d470,core/actor.cpp,351,1,byvalue_struct_passing,366
+core_actor.cpp_drawBoundingBox_FUN_0040d470,0040d470,core/actor.cpp,351,7,byvalue_struct_passing|missing_cave_copy,431
 core_actor.cpp_isOfClassHash_FUN_0040c760,0040c760,core/actor.cpp,11,0,,11
 core_actor.cpp_CDemonActor_onLaserHit_FUN_00409840,00409840,core/actor.cpp,9,0,,9
 core_actor.cpp_CDemonActor_ctor_FUN_004088b0,004088b0,core/actor.cpp,67,0,,67
@@ -3700,7 +3700,7 @@ core_morph.cpp_CMorphModel_findOrAddTexture_FUN_0052ae60,0052ae60,core/morph.cpp
 core_morph.cpp_CMorphModel_animateFromPartVertexBuffer_FUN_0052aa00,0052aa00,core/morph.cpp,6,0,,6
 core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_0052a710,0052a710,core/morph.cpp,39,0,,39
 core_morph.cpp_transformAndProjectVertex_FUN_0052cc10,0052cc10,core/morph.cpp,6,0,,6
-core_morph.cpp_CMorph_getReady_FUN_0052b680,0052b680,core/morph.cpp,151,5,negative_offset|pointer_cast,211
+core_morph.cpp_CMorph_getReady_FUN_0052b680,0052b680,core/morph.cpp,151,6,negative_offset|pointer_cast|unnamed_local,226
 core_morph.cpp_CMorphModel_free_FUN_0052a510,0052a510,core/morph.cpp,16,0,,16
 core_morph.cpp_CMorphModel_animateFromVertexBuffer_FUN_0052a920,0052a920,core/morph.cpp,32,3,pointer_cast,67
 core_morph.cpp_CMorph_updateModelFromKeyframed_FUN_0052b640,0052b640,core/morph.cpp,6,0,,6
@@ -3985,7 +3985,7 @@ core_turret.cpp_CTurret_getBoundingBox_FUN_005e2910,005e2910,core/turret.cpp,62,
 core_turret.cpp_CTurret_getPropertyList_FUN_005e3ca0,005e3ca0,core/turret.cpp,32,0,,32
 core_turret.cpp_CTurret_updateTargeting_FUN_005e2d50,005e2d50,core/turret.cpp,123,0,,123
 core_turret.cpp_CTurret_updateInteraction_FUN_005e34d0,005e34d0,core/turret.cpp,19,0,,19
-core_turret.cpp_CTurret_process_FUN_005e2430,005e2430,core/turret.cpp,180,1,stack_alignment_array,195
+core_turret.cpp_CTurret_process_FUN_005e2430,005e2430,core/turret.cpp,179,3,stack_alignment_array|unnamed_local,219
 core_turret.cpp_CTurret_setup_FUN_005e2240,005e2240,core/turret.cpp,29,0,,29
 core_turret.cpp_CTurret_stopInteraction_FUN_005e3540,005e3540,core/turret.cpp,8,0,,8
 core_turret.cpp_factoryFunc_FUN_005e20b0,005e20b0,core/turret.cpp,10,0,,10
@@ -4096,7 +4096,7 @@ core_scat.cpp_CScat_onActorDeleted_FUN_00559100,00559100,core/scat.cpp,5,0,,5
 core_scat.cpp_CScat_renderOpaque_FUN_00557df0,00557df0,core/scat.cpp,35,0,,35
 core_scat.cpp_CScat_updateWeaponState_FUN_00558060,00558060,core/scat.cpp,107,0,,107
 core_scat.cpp_CScat_getActorType_FUN_00556ec0,00556ec0,core/scat.cpp,4,0,,4
-core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0,00558fd0,core/scat.cpp,48,1,warning_type_propagation,63
+core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0,00558fd0,core/scat.cpp,48,6,missing_cave_copy|warning_type_propagation,118
 core_scat.cpp_CScat_getPropertyList_FUN_00559120,00559120,core/scat.cpp,5,0,,5
 core_scat.cpp_factoryFunc_FUN_00556e90,00556e90,core/scat.cpp,10,0,,10
 core_scat.cpp_CScat_process_FUN_005571f0,005571f0,core/scat.cpp,311,1,stack_alignment_array,326
@@ -4230,7 +4230,7 @@ core_stranger.cpp_CStranger_getCarryLightIntensity_FUN_005be430,005be430,core/st
 core_stranger.cpp_CStranger_drawWeapon_FUN_005c6660,005c6660,core/stranger.cpp,11,0,,11
 core_stranger.cpp_CStranger_dtor_FUN_005c69c0,005c69c0,core/stranger.cpp,16,0,,16
 core_stranger.cpp_CStranger_getPropertyList_FUN_005c68f0,005c68f0,core/stranger.cpp,5,0,,5
-core_stranger.cpp_CStranger_updateWeaponPosition_FUN_005c06b0,005c06b0,core/stranger.cpp,36,0,,36
+core_stranger.cpp_CStranger_updateWeaponPosition_FUN_005c06b0,005c06b0,core/stranger.cpp,36,5,missing_cave_copy,91
 core_stranger.cpp_CStranger_updateClothSimulation_FUN_005c6220,005c6220,core/stranger.cpp,109,0,,109
 core_stranger.cpp_CStranger_tryDescendLadder_FUN_005c2400,005c2400,core/stranger.cpp,135,1,warning_type_propagation,150
 core_stranger.cpp_canPickupObject_FUN_005bafe0,005bafe0,core/stranger.cpp,9,0,,9
@@ -4252,9 +4252,9 @@ core_stranger.cpp_CStranger_updateTurnBlending_FUN_005bf800,005bf800,core/strang
 core_stranger.cpp_CStranger_getHandsMidpoint_FUN_005be490,005be490,core/stranger.cpp,27,0,,27
 core_stranger.cpp_staticInit_FUN_005bae80,005bae80,core/stranger.cpp,13,0,,13
 core_stranger.cpp_CStranger_getDeathState_FUN_005c67c0,005c67c0,core/stranger.cpp,12,0,,12
-core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0,005c07b0,core/stranger.cpp,497,5,unnamed_local|warning_type_propagation,557
+core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0,005c07b0,core/stranger.cpp,497,41,missing_cave_copy|unnamed_local|warning_type_propagation,922
 core_stranger.cpp_CStranger_dropRightHandObject_FUN_005c1f80,005c1f80,core/stranger.cpp,14,0,,14
-core_stranger.cpp_CStranger_extractTurnPose_FUN_005bf720,005bf720,core/stranger.cpp,39,1,warning_type_propagation,54
+core_stranger.cpp_CStranger_extractTurnPose_FUN_005bf720,005bf720,core/stranger.cpp,37,3,unnamed_local|warning_type_propagation,77
 core_stranger.cpp_CStranger_tryClimbLadder_FUN_005c1fe0,005c1fe0,core/stranger.cpp,130,1,warning_type_propagation,145
 core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60,005bfb60,core/stranger.cpp,238,2,stack_alignment_array|warning_type_propagation,268
 core_stranger.cpp_setWindVelocity_FUN_005c6970,005c6970,core/stranger.cpp,10,0,,10
@@ -4299,7 +4299,7 @@ core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80,0058ac80,core
 core_skeledit.cpp_CLodMeshPrecomputeEntry_reset_FUN_00589fc0,00589fc0,core/skeledit.cpp,5,0,,5
 core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0,0058b3a0,core/skeledit.cpp,101,6,pointer_cast,166
 core_skeledit.cpp_drawInfoRow_FUN_00596860,00596860,core/skeledit.cpp,8,0,,8
-core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690,00592690,core/skeledit.cpp,1852,81,pointer_cast|unnamed_local|unrolled_strcpy|unrolled_strlen|warning_inlined_function,2687
+core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690,00592690,core/skeledit.cpp,1852,88,missing_cave_copy|pointer_cast|unnamed_local|unrolled_strcpy|unrolled_strlen|warning_inlined_function,2762
 core_skeledit.cpp_CDeformableModelInstance_addFilesToExtract_FUN_0058a260,0058a260,core/skeledit.cpp,8,0,,8
 core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0,0058a4a0,core/skeledit.cpp,243,7,pointer_cast,318
 core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0,0058adb0,core/skeledit.cpp,32,0,,32
@@ -4309,7 +4309,7 @@ core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0,0058a3d0,core/skeledit.c
 core_skeledit.cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede0,0058ede0,core/skeledit.cpp,85,4,pointer_cast,130
 core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790,0058d790,core/skeledit.cpp,242,7,pointer_cast|warning_inlined_function,322
 core_skeledit.cpp_CLodMeshPrecomputeEntry_save_FUN_0058a0f0,0058a0f0,core/skeledit.cpp,14,0,,14
-core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0,005968b0,core/skeledit.cpp,1076,58,pointer_cast|raw_address_constant|unnamed_local|unrolled_strcpy|warning_inlined_function,1681
+core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0,005968b0,core/skeledit.cpp,1076,65,missing_cave_copy|pointer_cast|raw_address_constant|unnamed_local|unrolled_strcpy|warning_inlined_function,1756
 core_skeledit.cpp_skipLeadingWhitespace_FUN_00589500,00589500,core/skeledit.cpp,7,0,,7
 core_skeledit.cpp_CDeformableModel_scaleAllVertices_FUN_0058e3e0,0058e3e0,core/skeledit.cpp,44,2,pointer_cast,69
 core_skeledit.cpp_CDeformableModel_addTextureSet_FUN_0058e0b0,0058e0b0,core/skeledit.cpp,53,0,,53
@@ -4343,7 +4343,7 @@ core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810,0058f810,c
 core_skeledit.cpp_parseBoneParentToken_FUN_00592520,00592520,core/skeledit.cpp,27,0,,27
 core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00,0058bd00,core/skeledit.cpp,141,1,pointer_cast,156
 core_skeledit.cpp_CSkeleton_save_FUN_0058b2c0,0058b2c0,core/skeledit.cpp,25,0,,25
-core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190,0058c190,core/skeledit.cpp,715,28,pointer_cast|unnamed_local|unrolled_strcpy,1010
+core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190,0058c190,core/skeledit.cpp,715,29,pointer_cast|preinc_loop_idiom|unnamed_local|unrolled_strcpy,1025
 core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120,0058f120,core/skeledit.cpp,187,17,pointer_cast|unnamed_local,367
 core_skeledit.cpp_loadIni_FUN_005897b0,005897b0,core/skeledit.cpp,113,0,,113
 core_skeledit.cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0,0058a1b0,core/skeledit.cpp,18,0,,18
@@ -4359,17 +4359,17 @@ core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10,0058aa10,core/skeledi
 core_skeledit.cpp_CDeformableModel_extractBoneScales_FUN_0058dde0,0058dde0,core/skeledit.cpp,28,0,,28
 core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_005db900,005db900,core/tentacle.cpp,36,1,warning_type_propagation,51
 core_tentacle.cpp_CTentacle_dtor_FUN_005dbcf0,005dbcf0,core/tentacle.cpp,35,0,,35
-core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0,005db9d0,core/tentacle.cpp,45,0,,45
+core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0,005db9d0,core/tentacle.cpp,45,9,missing_cave_copy,140
 core_tentacle.cpp_CTentacle_getPropertyList_FUN_005dbc60,005dbc60,core/tentacle.cpp,13,0,,13
 core_tentacle.cpp_CTentacle_renderOpaque_FUN_005db840,005db840,core/tentacle.cpp,14,0,,14
 core_tentacle.cpp_CTentacle_addFilesToExtract_FUN_005dbcc0,005dbcc0,core/tentacle.cpp,7,0,,7
 core_tentacle.cpp_CTentacle_getActorType_FUN_005daf50,005daf50,core/tentacle.cpp,4,0,,4
 core_tentacle.cpp_staticInit_FUN_005daef0,005daef0,core/tentacle.cpp,7,0,,7
 core_tentacle.cpp_CTentacle_setup_FUN_005dafc0,005dafc0,core/tentacle.cpp,18,0,,18
-core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70,005dbb70,core/tentacle.cpp,35,2,param_count_too_few|warning_type_propagation,65
+core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70,005dbb70,core/tentacle.cpp,35,6,missing_cave_copy|param_count_too_few|warning_type_propagation,110
 core_tentacle.cpp_CTentacle_ctor_FUN_005daf60,005daf60,core/tentacle.cpp,14,0,,14
 core_tentacle.cpp_CTentacle_archive_FUN_005db880,005db880,core/tentacle.cpp,17,0,,17
-core_tentacle.cpp_CTentacle_process_FUN_005db050,005db050,core/tentacle.cpp,258,1,warning_type_propagation,273
+core_tentacle.cpp_CTentacle_process_FUN_005db050,005db050,core/tentacle.cpp,258,9,missing_cave_copy|warning_type_propagation,358
 core_tentacle.cpp_factoryFunc_FUN_005daf20,005daf20,core/tentacle.cpp,11,0,,11
 core_tentacle.cpp_CTentacle_shouldIgnoreForTargeting_FUN_005dbb30,005dbb30,core/tentacle.cpp,15,0,,15
 core_ghoul.cpp_CGhoul_getActorType_FUN_004e6020,004e6020,core/ghoul.cpp,4,0,,4
@@ -4671,7 +4671,7 @@ core_skeleton.cpp_CSkeleton_arrdtor_FUN_005a1fb0,005a1fb0,core/skeleton.cpp,6,0,
 core_skeleton.cpp_CDeformableModelInstance_blendWithPoseData_FUN_0059f230,0059f230,core/skeleton.cpp,7,0,,7
 core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150,005a0150,core/skeleton.cpp,23,0,,23
 core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480,005a0480,core/skeleton.cpp,57,0,,57
-core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820,0059f820,core/skeleton.cpp,71,0,,71
+core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820,0059f820,core/skeleton.cpp,71,2,missing_cave_copy,96
 core_skeleton.cpp_CDeformableModelInstance_offsetAllBonePositions_FUN_0059fd60,0059fd60,core/skeleton.cpp,23,0,,23
 core_skeleton.cpp_CDeformableModel_arrdtor_FUN_005a1fd0,005a1fd0,core/skeleton.cpp,6,0,,6
 core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800,005a1800,core/skeleton.cpp,72,6,pointer_cast|raw_address_constant|warning_inlined_function,147
@@ -4936,7 +4936,7 @@ core_boneguy.cpp_rgbToHsv_FUN_0041b860,0041b860,core/boneguy.cpp,58,0,,58
 core_boneguy.cpp_SBoneGuyBox_dtor_FUN_0041db20,0041db20,core/boneguy.cpp,4,0,,4
 core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40,0041ca40,core/boneguy.cpp,78,3,pointer_cast|warning_type_propagation,118
 core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_0041d8a0,0041d8a0,core/boneguy.cpp,44,2,stack_alignment_array|warning_type_propagation,74
-core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90,0041bf90,core/boneguy.cpp,432,1,warning_type_propagation,447
+core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90,0041bf90,core/boneguy.cpp,431,3,unnamed_local|warning_type_propagation,471
 core_boneguy.cpp_getWorldBoundingBoxCenter_FUN_0041b770,0041b770,core/boneguy.cpp,17,0,,17
 core_boneguy.cpp_SBoneGuyBox_arrdtor_FUN_0041db30,0041db30,core/boneguy.cpp,6,0,,6
 core_boneguy.cpp_hsvToRgb_FUN_0041ba10,0041ba10,core/boneguy.cpp,71,1,warning_inlined_function,86
@@ -4962,7 +4962,7 @@ core_charactr.cpp_CCharacter_computeBoundingBox_FUN_0042d530,0042d530,core/chara
 core_charactr.cpp_CCharacter_isWalkComplete_FUN_0042ca30,0042ca30,core/charactr.cpp,8,0,,8
 core_charactr.cpp_CCharacter_renderBackground_FUN_0042a390,0042a390,core/charactr.cpp,17,0,,17
 core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0,0042a2c0,core/charactr.cpp,32,0,,32
-core_charactr.cpp_CCharacter_ctor_FUN_00427e20,00427e20,core/charactr.cpp,92,0,,92
+core_charactr.cpp_CCharacter_ctor_FUN_00427e20,00427e20,core/charactr.cpp,92,1,decompiler_intrinsic,107
 core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0,00427db0,core/charactr.cpp,18,0,,18
 core_charactr.cpp_CCharacter_testDamageLine_FUN_0042c180,0042c180,core/charactr.cpp,73,1,warning_inlined_function,88
 core_charactr.cpp_CCharacter_processFire_FUN_0042a830,0042a830,core/charactr.cpp,201,3,pointer_cast,236
@@ -5010,7 +5010,7 @@ core_charactr.cpp_CCharacter_advanceLayerAction_FUN_0042e370,0042e370,core/chara
 core_charactr.cpp_CCharacter_followActor_FUN_0042c5f0,0042c5f0,core/charactr.cpp,112,0,,112
 core_charactr.cpp_CCharacter_shatter_FUN_0042b8e0,0042b8e0,core/charactr.cpp,12,0,,12
 core_charactr.cpp_CCharacter_setWalkTargetImmediate_FUN_0042c9d0,0042c9d0,core/charactr.cpp,11,0,,11
-core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80,0042ce80,core/charactr.cpp,51,0,,51
+core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80,0042ce80,core/charactr.cpp,51,4,missing_cave_copy,96
 core_charactr.cpp_CCharacter_processMotion_FUN_0042ec40,0042ec40,core/charactr.cpp,93,0,,93
 core_charactr.cpp_getDeformableModelPartCount_FUN_0042f9c0,0042f9c0,core/charactr.cpp,4,0,,4
 core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_0042d300,0042d300,core/charactr.cpp,24,0,,24
@@ -5038,7 +5038,7 @@ core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042b190,0042b190,core/charactr.
 core_charactr.cpp_CCharacter_processInEditor_FUN_0042f800,0042f800,core/charactr.cpp,25,0,,25
 core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0,0042b5b0,core/charactr.cpp,33,0,,33
 core_charactr.cpp_SPose_ctor_FUN_0042fac0,0042fac0,core/charactr.cpp,4,0,,4
-core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090,0042d090,core/charactr.cpp,107,0,,107
+core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090,0042d090,core/charactr.cpp,107,8,missing_cave_copy,192
 core_charactr.cpp_CCharacter_kill_FUN_00428e30,00428e30,core/charactr.cpp,24,0,,24
 core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042e670,0042e670,core/charactr.cpp,83,0,,83
 core_charactr.cpp_CCharacter_canWalk_FUN_0042ca60,0042ca60,core/charactr.cpp,4,0,,4
@@ -5313,14 +5313,14 @@ core_spline.cpp_computeSplineBasis_FUN_005b90a0,005b90a0,core/spline.cpp,39,0,,3
 core_spline.cpp_evaluateSplineTangentInt_FUN_005b9430,005b9430,core/spline.cpp,5,0,,5
 core_course.cpp_CCourse_free_FUN_004426c0,004426c0,core/course.cpp,14,0,,14
 core_course.cpp_renderCoursePoint_FUN_004436d0,004436d0,core/course.cpp,28,0,,28
-core_course.cpp_CCourse_showEditorMenu_FUN_00443040,00443040,core/course.cpp,279,5,pointer_cast,334
+core_course.cpp_CCourse_showEditorMenu_FUN_00443040,00443040,core/course.cpp,278,5,pointer_cast,333
 core_course.cpp_CCourse_ctor_FUN_004424c0,004424c0,core/course.cpp,7,0,,7
 core_course.cpp_CCourse_importMatrices_FUN_00442ea0,00442ea0,core/course.cpp,61,0,,61
 core_course.cpp_CCourse_importCRS_FUN_00442d70,00442d70,core/course.cpp,37,0,,37
 core_course.cpp_CCourse_evaluate_FUN_00442710,00442710,core/course.cpp,24,0,,24
 core_course.cpp_CCourse_save_FUN_00442a90,00442a90,core/course.cpp,45,7,pointer_cast,120
 core_course.cpp_CCourse_dtor_FUN_004424e0,004424e0,core/course.cpp,5,0,,5
-core_course.cpp_CCourse_interpolate_FUN_004427a0,004427a0,core/course.cpp,113,1,warning_inlined_function,128
+core_course.cpp_CCourse_interpolate_FUN_004427a0,004427a0,core/course.cpp,113,4,unnamed_local|warning_inlined_function,163
 core_course.cpp_renderCourseGizmo_FUN_00443760,00443760,core/course.cpp,125,1,warning_inlined_function,140
 core_course.cpp_CCourse_allocMemory_FUN_00442500,00442500,core/course.cpp,23,1,warning_unreachable,38
 core_course.cpp_CCourse_load_FUN_00442580,00442580,core/course.cpp,45,1,pointer_cast,60
@@ -5521,7 +5521,7 @@ core_crate.cpp_CCrate_getTargetPoints_FUN_004489d0,004489d0,core/crate.cpp,18,0,
 core_crate.cpp_CCrate_renderBackground_FUN_004488f0,004488f0,core/crate.cpp,4,0,,4
 core_mirror.cpp_CMirrorReflection_applyMirrorTransform_FUN_005222f0,005222f0,core/mirror.cpp,6,0,,6
 core_mirror.cpp_SClipPlane_ctor_FUN_00522bf0,00522bf0,core/mirror.cpp,4,0,,4
-core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0,005214c0,core/mirror.cpp,342,0,,342
+core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0,005214c0,core/mirror.cpp,342,21,missing_cave_copy,557
 core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_005225e0,005225e0,core/mirror.cpp,21,0,,21
 core_mirror.cpp_CVector3f_arrdtor_FUN_00522c30,00522c30,core/mirror.cpp,6,0,,6
 core_mirror.cpp_CMirror_renderMirrorQuad_FUN_00522670,00522670,core/mirror.cpp,43,0,,43
@@ -5680,9 +5680,9 @@ core_dtrace.cpp_CDemonRaytrace_transferShadowVoxels_FUN_00499f10,00499f10,core/d
 core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00496c60,00496c60,core/dtrace.cpp,104,1,warning_inlined_function,119
 core_platfrm.cpp_CPlatform_getGroundType_FUN_0054e1c0,0054e1c0,core/platfrm.cpp,4,0,,4
 core_platfrm.cpp_CPlatform_propertyActionStateCallback_FUN_0054e760,0054e760,core/platfrm.cpp,17,0,,17
-core_platfrm.cpp_CPlatform_ctor_FUN_0054c850,0054c850,core/platfrm.cpp,76,2,pointer_cast|stack_alignment_array,106
+core_platfrm.cpp_CPlatform_ctor_FUN_0054c850,0054c850,core/platfrm.cpp,76,1,stack_alignment_array,91
 core_platfrm.cpp_CPlatform_getPropertyList_FUN_0054e7d0,0054e7d0,core/platfrm.cpp,68,0,,68
-core_platfrm.cpp_CPlatform_process_FUN_0054cc30,0054cc30,core/platfrm.cpp,307,2,pointer_cast|warning_type_propagation,337
+core_platfrm.cpp_CPlatform_process_FUN_0054cc30,0054cc30,core/platfrm.cpp,307,5,missing_cave_copy|pointer_cast|warning_type_propagation,372
 core_platfrm.cpp_CPlatform_getBoundingBox_FUN_0054db70,0054db70,core/platfrm.cpp,14,0,,14
 core_platfrm.cpp_staticInit_FUN_0054c7e0,0054c7e0,core/platfrm.cpp,7,0,,7
 core_platfrm.cpp_CPlatform_renderBackground_FUN_0054d9b0,0054d9b0,core/platfrm.cpp,68,0,,68
@@ -5701,12 +5701,12 @@ core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_0054e320,0054e320,core/platf
 core_platfrm.cpp_CPlatform_allowBulletHoles_FUN_0054e1a0,0054e1a0,core/platfrm.cpp,4,0,,4
 core_platfrm.cpp_CPlatform_getBlockVirtualDirectorFlag_FUN_0054e1d0,0054e1d0,core/platfrm.cpp,4,0,,4
 core_platfrm.cpp_CPlatform_startMovement_FUN_0054d690,0054d690,core/platfrm.cpp,22,0,,22
-core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00,0054ea00,core/platfrm.cpp,211,1,stack_alignment_array,226
+core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00,0054ea00,core/platfrm.cpp,210,9,missing_cave_copy|stack_alignment_array,310
 core_platfrm.cpp_CPlatform_showEditorHelp_FUN_0054f060,0054f060,core/platfrm.cpp,79,0,,79
 core_platfrm.cpp_CPlatform_archive_FUN_0054dbc0,0054dbc0,core/platfrm.cpp,113,3,pointer_cast,148
 core_platfrm.cpp_CPlatform_propertyDisplaySlewCallback_FUN_0054e400,0054e400,core/platfrm.cpp,34,0,,34
 core_platfrm.cpp_CPlatform_propertyActionSlewCallback_FUN_0054e480,0054e480,core/platfrm.cpp,22,1,param_count_too_few,37
-core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0,0054cab0,core/platfrm.cpp,71,1,stack_alignment_array,86
+core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0,0054cab0,core/platfrm.cpp,70,1,stack_alignment_array,85
 core_platfrm.cpp_CPlatform_getActorType_FUN_0054c840,0054c840,core/platfrm.cpp,4,0,,4
 core_mission.cpp_CDemonMission_countActors_FUN_00523cc0,00523cc0,core/mission.cpp,10,0,,10
 core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0,00523cf0,core/mission.cpp,51,0,,51
@@ -5790,7 +5790,7 @@ core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004a7e80,004a7e80,core/emitte
 core_emitter.cpp_CEmitter_renderOpaque_FUN_004a8860,004a8860,core/emitter.cpp,79,0,,79
 core_emitter.cpp_CEmitter_getActorType_FUN_004a7c90,004a7c90,core/emitter.cpp,4,0,,4
 core_emitter.cpp_CEmitter_process_FUN_004a8070,004a8070,core/emitter.cpp,253,0,,253
-core_mimic.cpp_CMimic_setup_FUN_0051f3e0,0051f3e0,core/mimic.cpp,134,6,pointer_cast,199
+core_mimic.cpp_CMimic_setup_FUN_0051f3e0,0051f3e0,core/mimic.cpp,134,2,pointer_cast,159
 core_mimic.cpp_CMimic_addFilesToExtract_FUN_00520dd0,00520dd0,core/mimic.cpp,7,0,,7
 core_mimic.cpp_CMimic_renderTransparent_FUN_00520890,00520890,core/mimic.cpp,9,0,,9
 core_mimic.cpp_CMimic_renderBackground_FUN_005208b0,005208b0,core/mimic.cpp,22,0,,22
@@ -5803,7 +5803,7 @@ core_mimic.cpp_factoryFunc_FUN_0051f190,0051f190,core/mimic.cpp,10,0,,10
 core_mimic.cpp_CMimic_dtor_FUN_0051f2c0,0051f2c0,core/mimic.cpp,48,0,,48
 core_mimic.cpp_CMimic_process_FUN_0051f780,0051f780,core/mimic.cpp,65,0,,65
 core_mimic.cpp_CMimic_onActorDeleted_FUN_00520da0,00520da0,core/mimic.cpp,8,0,,8
-core_mimic.cpp_CMimic_updatePose_FUN_0051f930,0051f930,core/mimic.cpp,169,17,pointer_cast|warning_type_propagation,349
+core_mimic.cpp_CMimic_updatePose_FUN_0051f930,0051f930,core/mimic.cpp,169,27,missing_cave_copy|pointer_cast|warning_type_propagation,454
 core_mimic.cpp_CMimic_getPropertyList_FUN_00520d10,00520d10,core/mimic.cpp,18,0,,18
 core_mimic.cpp_CMimic_getCollisionType_FUN_00520a00,00520a00,core/mimic.cpp,23,1,warning_type_propagation,38
 core_mimic.cpp_mirrorXTransform_FUN_0051f130,0051f130,core/mimic.cpp,10,0,,10
@@ -5855,7 +5855,7 @@ core_gabriela.cpp_CGabriella_getFlashlightMaxAngle_FUN_004d4ce0,004d4ce0,core/ga
 core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540,004d6540,core/gabriela.cpp,160,0,,160
 core_gabriela.cpp_CGabriella_tryFireWeapon_FUN_004d5fe0,004d5fe0,core/gabriela.cpp,14,0,,14
 core_gabriela.cpp_aimRotationBlendWeightCallback_FUN_004d2a80,004d2a80,core/gabriela.cpp,20,0,,20
-core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550,004d5550,core/gabriela.cpp,115,1,warning_type_propagation,130
+core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550,004d5550,core/gabriela.cpp,115,14,missing_cave_copy|warning_type_propagation,265
 core_gabriela.cpp_CGabriella_onActorDeleted_FUN_004d75e0,004d75e0,core/gabriela.cpp,9,0,,9
 core_gabriela.cpp_factoryFunc_FUN_004d2ae0,004d2ae0,core/gabriela.cpp,11,0,,11
 core_gabriela.cpp_CGabriella_canFireWeapon_FUN_004d5f70,004d5f70,core/gabriela.cpp,14,0,,14
@@ -5865,7 +5865,7 @@ core_gabriela.cpp_CGabriella_archive_FUN_004d6090,004d6090,core/gabriela.cpp,22,
 core_gabriela.cpp_CGabriella_drawWeapon_FUN_004d75b0,004d75b0,core/gabriela.cpp,9,0,,9
 core_gabriela.cpp_staticInit_FUN_004d2910,004d2910,core/gabriela.cpp,22,0,,22
 core_gabriela.cpp_CGabriella_getActorType_FUN_004d2b10,004d2b10,core/gabriela.cpp,4,0,,4
-core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120,004d7120,core/gabriela.cpp,148,3,pointer_cast|warning_type_propagation,188
+core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120,004d7120,core/gabriela.cpp,148,6,missing_cave_copy|pointer_cast|warning_type_propagation,223
 core_gabriela.cpp_CGabriella_getTorsoCenterPosition_FUN_004d4cf0,004d4cf0,core/gabriela.cpp,27,0,,27
 core_gabriela.cpp_CGabriella_renderTransparent_FUN_004d6230,004d6230,core/gabriela.cpp,8,0,,8
 core_gabriela.cpp_CGabriella_getPropertyList_FUN_004d7610,004d7610,core/gabriela.cpp,5,0,,5

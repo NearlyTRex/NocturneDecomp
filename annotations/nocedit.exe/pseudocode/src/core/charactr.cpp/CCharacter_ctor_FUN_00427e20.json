@@ -4,17 +4,19 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 92,
+    "complexity_score": 107,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 4,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 92,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
     "total_lines": 231
   },
   "cross_references": [
@@ -166,6 +168,17 @@
     },
     "pcode_op_count": 475
   },
+  "resolved_suspects": [
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar4` (struct-field advance + constant `[0]` index + self-assign no-op). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep.",
+      "line": 61,
+      "match": "do { var = (T *)&var->...; var->arr[0]...; var = var; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
+    }
+  ],
   "stack_frame": {
     "frame_size": 20,
     "local_size": 16,
@@ -189,7 +202,17 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "introduced_by": "keep",
+      "line": 26,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "pCVar3 = core_cloth_cpp_CClothList_ctor_FUN_0043bf40(&ADJ(pCVar2)->cloth_list);",
+      "type": "decompiler_intrinsic"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

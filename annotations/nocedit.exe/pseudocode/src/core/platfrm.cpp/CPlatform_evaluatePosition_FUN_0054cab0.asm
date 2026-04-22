@@ -8,14 +8,14 @@
 ; Local Variables:
 ; float[1523]      Stack[-0x1844]:6092  afStackY_1844
 ; CQuaternion4f    Stack[-0x68]:16  local_68
-; CVector3f        Stack[-0x58]:12  local_58
+; CQuaternion4f    Stack[-0x58]:16  local_58
 ; float            Stack[-0x48]:4  local_48
 ; float            Stack[-0x44]:4  local_44
 ; float            Stack[-0x40]:4  local_40
 ; float            Stack[-0x3c]:4  local_3c
 ; float            Stack[-0x38]:4  local_38
 ; float            Stack[-0x34]:4  local_34
-; CQuaternion4f    Stack[-0x30]:16  local_30
+; CVector3f        Stack[-0x30]:12  local_30
 ; float            Stack[-0x20]:4  local_20
 ; float            Stack[-0x1c]:4  local_1c
 ; float            Stack[-0x18]:4  local_18
@@ -127,7 +127,7 @@ section .text
     JMP 0x0060e49e                      ; 0054cba9
         ;   XREF to: 0060e49e (UNCONDITIONAL_JUMP)  ; LAB_0060e49e
     CALL core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0 ; 0054cbae
-        ;   XREF to: 005f7ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0(CQuaternion4f * quat_in, CVector3f * vector_out)
+        ;   XREF to: 005f7ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0(CVector3f * out_euler, CQuaternion4f * quat_in)
         ;   Label: LAB_0054cbae
     ADD ESP,0x8                         ; 0054cbb3
     CMP EBX,EAX                         ; 0054cbb6

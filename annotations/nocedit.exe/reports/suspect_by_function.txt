@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5156 (79.9%)
-With suspects: 1298
-Total suspects: 5659
+Clean: 5148 (79.8%)
+With suspects: 1306
+Total suspects: 5853
 
 ====================================================================================================
 cockpit_ckptutil.c_applyActPalette_FUN_004319b0 (1 suspect)
@@ -683,10 +683,16 @@ core_actor.cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0 (6 suspects)
   Line 36 [pointer_cast]: *(uint *)((int)&this_ptr_00->vertex_buffer_ptr->v + iVar1) = 0x800000;
 
 ====================================================================================================
-core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940 (1 suspect)
+core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940 (7 suspects)
   File: core/actor.cpp
 ====================================================================================================
   Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
+  Line 49 [missing_cave_copy]: CVector3f CStack_120;
+  Line 54 [missing_cave_copy]: CVector3f CStack_e4;
+  Line 57 [missing_cave_copy]: CVector3f CStack_c0;
+  Line 58 [missing_cave_copy]: CVector3f CStack_b4;
+  Line 61 [missing_cave_copy]: CVector3f CStack_90;
+  Line 62 [missing_cave_copy]: CVector3f CStack_84;
 
 ====================================================================================================
 core_actor.cpp_archiveLocalizedString_FUN_0040b6e0 (3 suspects)
@@ -703,10 +709,16 @@ core_actor.cpp_draw3DLineSegment_FUN_0040d330 (1 suspect)
   Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
 
 ====================================================================================================
-core_actor.cpp_drawBoundingBox_FUN_0040d470 (1 suspect)
+core_actor.cpp_drawBoundingBox_FUN_0040d470 (7 suspects)
   File: core/actor.cpp
 ====================================================================================================
   Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
+  Line 49 [missing_cave_copy]: CVector3f local_130;
+  Line 64 [missing_cave_copy]: CVector3f local_dc;
+  Line 65 [missing_cave_copy]: CVector3f local_d0;
+  Line 66 [missing_cave_copy]: CVector3f local_c4;
+  Line 68 [missing_cave_copy]: CVector3f local_ac;
+  Line 69 [missing_cave_copy]: CVector3f local_a0;
 
 ====================================================================================================
 core_actor.cpp_generateRandomValue_FUN_0040cba0 (2 suspects)
@@ -932,10 +944,12 @@ core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40 (3 suspects)
   Line 79 [pointer_cast]: out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar5 * -2 + 1) * 4);
 
 ====================================================================================================
-core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 (1 suspect)
+core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 (3 suspects)
   File: core/boneguy.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
+  Line 39 [unnamed_local]: CQuaternion4f local_12c;
+  Line 40 [unnamed_local]: CQuaternion4f local_11c;
 
 ====================================================================================================
 core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40 (1 suspect)
@@ -1164,6 +1178,21 @@ core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0 (2 suspects)
   Line 11 [stack_alignment_array]: float afStackY_1850 [1522];
 
 ====================================================================================================
+core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80 (4 suspects)
+  File: core/charactr.cpp
+====================================================================================================
+  Line 11 [missing_cave_copy]: CMatrix3x4f local_130;
+  Line 14 [missing_cave_copy]: CMatrix3x4f local_a0;
+  Line 15 [missing_cave_copy]: CMatrix3x4f local_70;
+  Line 16 [missing_cave_copy]: CMatrix3x4f local_40;
+
+====================================================================================================
+core_charactr.cpp_CCharacter_ctor_FUN_00427e20 (1 suspect)
+  File: core/charactr.cpp
+====================================================================================================
+  Line 26 [decompiler_intrinsic]: pCVar3 = core_cloth_cpp_CClothList_ctor_FUN_0043bf40(&ADJ(pCVar2)->cloth_list);
+
+====================================================================================================
 core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40 (4 suspects)
   File: core/charactr.cpp
 ====================================================================================================
@@ -1250,11 +1279,35 @@ core_charactr.cpp_CCharacter_testDamageLine_FUN_0042c180 (1 suspect)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 ====================================================================================================
+core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090 (8 suspects)
+  File: core/charactr.cpp
+====================================================================================================
+  Line 18 [missing_cave_copy]: CMatrix3x4f CStack_244;
+  Line 20 [missing_cave_copy]: CMatrix3x4f CStack_1e4;
+  Line 22 [missing_cave_copy]: CMatrix3x4f CStack_184;
+  Line 23 [missing_cave_copy]: CMatrix3x4f CStack_154;
+  Line 25 [missing_cave_copy]: CMatrix3x4f CStack_f4;
+  Line 27 [missing_cave_copy]: CMatrix3x4f CStack_94;
+  Line 28 [missing_cave_copy]: CMatrix3x4f CStack_64;
+  Line 29 [missing_cave_copy]: CVector3f CStack_34;
+
+====================================================================================================
 core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 (2 suspects)
   File: core/cloth.cpp
 ====================================================================================================
   Line 118 [pointer_cast]: piVar5 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar8);
   Line 123 [pointer_cast]: pCVar7 = (CVector3f *)((int)(pCVar7 + 0x17) + 8);
+
+====================================================================================================
+core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043a2b0 (6 suspects)
+  File: core/cloth.cpp
+====================================================================================================
+  Line 11 [missing_cave_copy]: CMatrix3x4f local_138;
+  Line 18 [missing_cave_copy]: CMatrix3x4f local_78;
+  Line 19 [missing_cave_copy]: CMatrix3x4f local_48;
+  Line 20 [missing_cave_copy]: CVector3f local_18;
+  Line 21 [unnamed_local]: CMatrix3x4f local_d8;
+  Line 27 [unnamed_local]: CMatrix3x4f local_48;
 
 ====================================================================================================
 core_cloth.cpp_CCloth_createFromKFM_FUN_0043dcc0 (2 suspects)
@@ -1342,10 +1395,13 @@ core_course.cpp_CCourse_allocMemory_FUN_00442500 (1 suspect)
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x0044253f) */
 
 ====================================================================================================
-core_course.cpp_CCourse_interpolate_FUN_004427a0 (1 suspect)
+core_course.cpp_CCourse_interpolate_FUN_004427a0 (4 suspects)
   File: core/course.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+  Line 26 [unnamed_local]: float local_78;
+  Line 40 [unnamed_local]: int local_18;
+  Line 47 [unnamed_local]: local_18 = (int)ROUND(ROUND(time));
 
 ====================================================================================================
 core_course.cpp_CCourse_load_FUN_00442580 (1 suspect)
@@ -1383,8 +1439,8 @@ core_course.cpp_CCourse_showEditorMenu_FUN_00443040 (5 suspects)
   Line 199 [pointer_cast]: (&local_74,(CQuaternion4f *)((int)&(this_ptr->frames->orient).w + iVar6),
   Line 201 [pointer_cast]: pfVar1 = (float *)((int)&(this_ptr->frames->orient).w + iVar6);
   Line 234 [pointer_cast]: point = (CVector3f *)((int)&(this_ptr->frames->pos).x + iVar6);
-  Line 254 [pointer_cast]: (CVector3f *)((int)&(this_ptr->frames->orient).w + iVar6));
-  Line 257 [pointer_cast]: pfVar1 = (float *)((int)&(this_ptr->frames->orient).w + iVar6);
+  Line 253 [pointer_cast]: (&local_38,(CQuaternion4f *)((int)&(this_ptr->frames->orient).w + iVar6));
+  Line 256 [pointer_cast]: pfVar1 = (float *)((int)&(this_ptr->frames->orient).w + iVar6);
 
 ====================================================================================================
 core_course.cpp_renderCourseGizmo_FUN_00443760 (1 suspect)
@@ -1591,10 +1647,11 @@ core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0 (11 suspects)
   Line 417 [pointer_cast]: *(char *)((int)g_CameraTextureWorkBuffer + iVar9) =
 
 ====================================================================================================
-core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10 (8 suspects)
+core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10 (9 suspects)
   File: core/dcamera.cpp
 ====================================================================================================
   Line 25 [stack_alignment_array]: void *apvStackY_185c [1523];
+  Line 102 [preinc_loop_idiom]: do {
   Line 127 [pointer_cast]: local_48 = (void *)((int)(light_source->base).base.rotation_matrix.m + (int)local_78 * 4 + -0x10
   Line 133 [pointer_cast]: piVar4 = (int *)((int)light_source->corona_visibility_buffers + iVar8 + local_44);
   Line 134 [pointer_cast]: puVar5 = (uint *)((int)light_source->corona_depth_buffer + iVar8 + local_44);
@@ -3382,10 +3439,13 @@ core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870 (1 suspect)
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
 
 ====================================================================================================
-core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 (3 suspects)
+core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 (6 suspects)
   File: core/gabriela.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
+  Line 18 [missing_cave_copy]: CMatrix3x4f CStack_130;
+  Line 24 [missing_cave_copy]: CVector3f local_70;
+  Line 27 [missing_cave_copy]: CVector3f CStack_4c;
   Line 148 [pointer_cast]: pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar6 * -2 + 1) * 4);
   Line 149 [pointer_cast]: out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar6 * -2 + 1) * 4);
 
@@ -3428,10 +3488,23 @@ core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80 (2 suspect
   Line 16 [stack_alignment_array]: float afStackY_19d0 [1521];
 
 ====================================================================================================
-core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550 (1 suspect)
+core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550 (14 suspects)
   File: core/gabriela.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
+  Line 20 [missing_cave_copy]: CMatrix3x4f local_3ac;
+  Line 21 [missing_cave_copy]: CMatrix3x4f local_37c;
+  Line 25 [missing_cave_copy]: CMatrix3x4f local_2bc;
+  Line 26 [missing_cave_copy]: CMatrix3x4f local_28c;
+  Line 27 [missing_cave_copy]: CMatrix3x4f local_25c;
+  Line 29 [missing_cave_copy]: CMatrix3x4f local_1fc;
+  Line 30 [missing_cave_copy]: CMatrix3x4f local_1cc;
+  Line 31 [missing_cave_copy]: CMatrix3x4f local_19c;
+  Line 32 [missing_cave_copy]: CMatrix3x4f local_16c;
+  Line 36 [missing_cave_copy]: CMatrix3x4f local_ac;
+  Line 37 [missing_cave_copy]: CMatrix3x4f local_7c;
+  Line 38 [missing_cave_copy]: CVector3f local_4c;
+  Line 41 [missing_cave_copy]: CVector3f local_28;
 
 ====================================================================================================
 core_game.cpp_CGame_beginFadeOut_FUN_004e0960 (3 suspects)
@@ -4454,21 +4527,27 @@ core_mimic.cpp_CMimic_setupCloth_FUN_00520500 (4 suspects)
   Line 36 [pointer_cast]: piVar4 = (int *)((int)piVar4 + (uint)bVar6 * -2 + 1);
 
 ====================================================================================================
-core_mimic.cpp_CMimic_setup_FUN_0051f3e0 (6 suspects)
+core_mimic.cpp_CMimic_setup_FUN_0051f3e0 (2 suspects)
   File: core/mimic.cpp
 ====================================================================================================
   Line 98 [pointer_cast]: *(float *)((int)&(pSVar4->position).x + iVar10) =
   Line 99 [pointer_cast]: -*(float *)((int)&(pSVar4->position).x + iVar10);
-  Line 108 [pointer_cast]: puVar2 = (uint *)((int)&pSVar5->vertices[2].vertex_index + iVar10);
-  Line 111 [pointer_cast]: puVar3 = (uint *)((int)&pSVar5->vertices[0].vertex_index + iVar7);
-  Line 115 [pointer_cast]: puVar3 = (uint *)((int)&pSVar5->vertices[0].vertex_index + iVar10);
-  Line 119 [pointer_cast]: puVar2 = (uint *)((int)&pSVar5->vertices[2].vertex_index + iVar7);
 
 ====================================================================================================
-core_mimic.cpp_CMimic_updatePose_FUN_0051f930 (17 suspects)
+core_mimic.cpp_CMimic_updatePose_FUN_0051f930 (27 suspects)
   File: core/mimic.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
+  Line 34 [missing_cave_copy]: CMatrix3x4f local_2d0;
+  Line 35 [missing_cave_copy]: CMatrix3x4f local_2a0;
+  Line 36 [missing_cave_copy]: CMatrix3x4f local_270;
+  Line 37 [missing_cave_copy]: CMatrix3x4f local_240;
+  Line 38 [missing_cave_copy]: CMatrix3x4f local_210;
+  Line 39 [missing_cave_copy]: CMatrix3x4f local_1e0;
+  Line 40 [missing_cave_copy]: CMatrix3x4f local_1b0;
+  Line 41 [missing_cave_copy]: CMatrix3x4f local_180;
+  Line 46 [missing_cave_copy]: CMatrix3x4f local_90;
+  Line 51 [missing_cave_copy]: CVector3f local_24;
   Line 85 [pointer_cast]: *(float *)((int)((local_14->base).base.model.bone_transform.bone_world_matrices[0].m + 1) + 4) =
   Line 86 [pointer_cast]: *(float *)((int)((pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m + 1) + 4)
   Line 88 [pointer_cast]: *(float *)((int)((local_14->base).base.model.bone_transform.bone_world_matrices[0].m + 1) + 8) =
@@ -4485,6 +4564,32 @@ core_mimic.cpp_CMimic_updatePose_FUN_0051f930 (17 suspects)
   Line 132 [pointer_cast]: pCVar22 = (CVector3i *)((int)pCVar22 + (uint)bVar26 * -8 + 4);
   Line 135 [pointer_cast]: pCVar22 = (CVector3i *)((int)pCVar22 + (uint)bVar26 * -2 + 1);
   Line 136 [pointer_cast]: pCVar16 = (CVector3i *)((int)pCVar16 + (uint)bVar26 * -2 + 1);
+
+====================================================================================================
+core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0 (21 suspects)
+  File: core/mirror.cpp
+====================================================================================================
+  Line 18 [missing_cave_copy]: CMatrix3x4f local_4a4;
+  Line 19 [missing_cave_copy]: CMatrix3x4f local_474;
+  Line 20 [missing_cave_copy]: CMatrix3x4f local_444;
+  Line 21 [missing_cave_copy]: CMatrix3x4f local_414;
+  Line 23 [missing_cave_copy]: CMatrix3x4f local_3b4;
+  Line 24 [missing_cave_copy]: CMatrix3x4f local_384;
+  Line 27 [missing_cave_copy]: CMatrix3x4f local_2f4;
+  Line 30 [missing_cave_copy]: CMatrix3x4f local_264;
+  Line 31 [missing_cave_copy]: CMatrix3x4f local_234;
+  Line 32 [missing_cave_copy]: CMatrix3x4f local_204;
+  Line 33 [missing_cave_copy]: CMatrix3x4f local_1d4;
+  Line 38 [missing_cave_copy]: CVector3f local_188;
+  Line 39 [missing_cave_copy]: CVector3f local_17c;
+  Line 50 [missing_cave_copy]: CVector3f local_140;
+  Line 53 [missing_cave_copy]: CVector3f local_11c;
+  Line 54 [missing_cave_copy]: CVector3f local_110;
+  Line 67 [missing_cave_copy]: CVector3f local_8c;
+  Line 68 [missing_cave_copy]: CVector3f local_80;
+  Line 69 [missing_cave_copy]: CVector3f local_74;
+  Line 70 [missing_cave_copy]: CVector3f local_68;
+  Line 72 [missing_cave_copy]: CVector3f local_50;
 
 ====================================================================================================
 core_mirror.cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_00522a50 (1 suspect)
@@ -4747,9 +4852,10 @@ core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 (12 suspects)
   Line 328 [pointer_cast]: *(int *)((int)local_4a8 + iVar6) = local_50;
 
 ====================================================================================================
-core_morph.cpp_CMorph_getReady_FUN_0052b680 (5 suspects)
+core_morph.cpp_CMorph_getReady_FUN_0052b680 (6 suspects)
   File: core/morph.cpp
 ====================================================================================================
+  Line 36 [unnamed_local]: CBoundingBox3D local_c8[2];
   Line 126 [pointer_cast]: local_50.x = *(float *)((int)&(pSVar13->position).x + iVar14);
   Line 127 [pointer_cast]: local_50.y = *(float *)((int)&(pSVar13->position).y + iVar14);
   Line 128 [pointer_cast]: local_50.z = *(float *)((int)&(pSVar13->position).z + iVar14);
@@ -5145,11 +5251,10 @@ core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0 (2 suspects)
   Line 61 [pointer_cast]: pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
 
 ====================================================================================================
-core_platfrm.cpp_CPlatform_ctor_FUN_0054c850 (2 suspects)
+core_platfrm.cpp_CPlatform_ctor_FUN_0054c850 (1 suspect)
   File: core/platfrm.cpp
 ====================================================================================================
   Line 14 [stack_alignment_array]: float afStackY_17f0 [1523];
-  Line 71 [pointer_cast]: pCVar6 = (CPlatform *)((int)&(pCVar6->base).orient + 4);
 
 ====================================================================================================
 core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0 (1 suspect)
@@ -5165,16 +5270,27 @@ core_platfrm.cpp_CPlatform_onActorDeleted_FUN_0054e2e0 (2 suspects)
   Line 16 [pointer_cast]: this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);
 
 ====================================================================================================
-core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00 (1 suspect)
+core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00 (9 suspects)
   File: core/platfrm.cpp
 ====================================================================================================
-  Line 19 [stack_alignment_array]: float afStackY_18a8 [1387];
+  Line 17 [stack_alignment_array]: float afStackY_18a8 [1387];
+  Line 19 [missing_cave_copy]: CMatrix3x4f CStack_2e4;
+  Line 22 [missing_cave_copy]: CMatrix3x4f CStack_254;
+  Line 27 [missing_cave_copy]: CMatrix3x4f CStack_164;
+  Line 28 [missing_cave_copy]: CMatrix3x4f CStack_134;
+  Line 36 [missing_cave_copy]: CVector3f CStack_7c;
+  Line 40 [missing_cave_copy]: CVector3f CStack_64;
+  Line 46 [missing_cave_copy]: CVector3f auStack_40;
+  Line 47 [missing_cave_copy]: CVector3f CStack_34;
 
 ====================================================================================================
-core_platfrm.cpp_CPlatform_process_FUN_0054cc30 (2 suspects)
+core_platfrm.cpp_CPlatform_process_FUN_0054cc30 (5 suspects)
   File: core/platfrm.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
+  Line 25 [missing_cave_copy]: CMatrix3x4f CStack_1f4;
+  Line 28 [missing_cave_copy]: CMatrix3x4f CStack_164;
+  Line 29 [missing_cave_copy]: CMatrix3x4f CStack_134;
   Line 228 [pointer_cast]: iVar3 = *(int *)((int)g_CDemonSetPtr->actors + iStack_24);
 
 ====================================================================================================
@@ -5244,10 +5360,15 @@ core_scat.cpp_CScat_updateAI_FUN_005578e0 (1 suspect)
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
 
 ====================================================================================================
-core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0 (1 suspect)
+core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0 (6 suspects)
   File: core/scat.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
+  Line 16 [missing_cave_copy]: CMatrix3x4f local_100;
+  Line 17 [missing_cave_copy]: CMatrix3x4f local_d0;
+  Line 19 [missing_cave_copy]: CMatrix3x4f local_70;
+  Line 21 [missing_cave_copy]: CVector3f local_34;
+  Line 23 [missing_cave_copy]: CVector3f local_1c;
 
 ====================================================================================================
 core_script.cpp_CCmdParse_applyActorParameters_FUN_00564090 (19 suspects)
@@ -5978,7 +6099,7 @@ core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940 (1 suspect)
   Line 101 [pointer_cast]: piVar1 = (int *)((int)visible_cameras + iVar11);
 
 ====================================================================================================
-core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (13 suspects)
+core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (19 suspects)
   File: core/setedit.cpp
 ====================================================================================================
   Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
@@ -5987,7 +6108,13 @@ core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (13 suspects)
   Line 56 [unnamed_local]: float local_114;
   Line 57 [unnamed_local]: CVector3f local_110;
   Line 62 [unnamed_local]: CVector3f local_d4;
+  Line 75 [missing_cave_copy]: CVector3f local_1dc;
   Line 82 [unnamed_local]: SVDBox *local_40;
+  Line 87 [missing_cave_copy]: CVector3f local_17c;
+  Line 95 [missing_cave_copy]: CVector3f local_134;
+  Line 100 [missing_cave_copy]: CVector3f local_110;
+  Line 103 [missing_cave_copy]: CVector3f local_ec;
+  Line 105 [missing_cave_copy]: CVector3f local_d4;
   Line 113 [unnamed_local]: local_40 = local_44;
   Line 272 [pointer_cast]: local_34 = (CMatrix3x3f *)((int)(pCVar3 + 1) + 0x20);
   Line 602 [unnamed_local]: (&g_CDemonCameraInstance,&local_d4,g_MouseX,g_MouseY);
@@ -6216,11 +6343,14 @@ core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0 (7 suspects)
   Line 195 [pointer_cast]: pSVar6 = (SBoneData *)((int)pSVar6 + (uint)bVar8 * -8 + 4);
 
 ====================================================================================================
-core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (58 suspects)
+core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (65 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+  Line 48 [missing_cave_copy]: CMatrix3x4f local_320;
   Line 50 [unnamed_local]: char local_46c [100];
+  Line 51 [missing_cave_copy]: CMatrix3x4f local_290;
+  Line 55 [missing_cave_copy]: CBoundingBox3D local_1e4;
   Line 61 [unnamed_local]: CBoundingBox3D local_1e4;
   Line 62 [unnamed_local]: float local_1cc;
   Line 63 [unnamed_local]: float local_1c8;
@@ -6229,14 +6359,18 @@ core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (58 suspects)
   Line 66 [unnamed_local]: float local_1bc;
   Line 67 [unnamed_local]: float local_1b8;
   Line 68 [unnamed_local]: float local_1b4;
+  Line 69 [missing_cave_copy]: CVector3f local_190;
   Line 69 [unnamed_local]: float local_1b0;
   Line 70 [unnamed_local]: float local_1ac;
   Line 71 [unnamed_local]: float local_1a8;
+  Line 74 [missing_cave_copy]: CVector3f local_16c;
   Line 75 [unnamed_local]: CVector3f local_190;
   Line 76 [unnamed_local]: CVector3f local_184;
   Line 78 [unnamed_local]: float local_174;
+  Line 79 [missing_cave_copy]: CVector3f local_148;
   Line 79 [unnamed_local]: float local_170;
   Line 80 [unnamed_local]: CVector3f local_16c;
+  Line 88 [missing_cave_copy]: CVector3f local_10c;
   Line 111 [unnamed_local]: uint local_a8;
   Line 114 [unnamed_local]: uint local_9c;
   Line 121 [unnamed_local]: float local_80;
@@ -6279,7 +6413,7 @@ core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (58 suspects)
   Line 1061 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 (28 suspects)
+core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 (29 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
   Line 47 [unnamed_local]: CBoneStructure local_a228;
@@ -6306,6 +6440,7 @@ core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 (28 suspects)
   Line 469 [pointer_cast]: uVar3 = *(uint *)((int)this_ptr->index_data_ptr[0] + local_50);
   Line 510 [pointer_cast]: pSVar21 = (SMRGLTextureLod *)((int)pSVar21 + (uint)bVar23 * -8 + 4);
   Line 511 [pointer_cast]: pSVar17 = (STextureSet *)((int)pSVar17 + (uint)bVar23 * -8 + 4);
+  Line 588 [preinc_loop_idiom]: do {
   Line 590 [pointer_cast]: iVar9 = *(int *)((int)local_d8 + iVar5);
   Line 612 [pointer_cast]: (&local_1f4,*(int *)((int)local_ec + local_40),&local_2dc);
   Line 628 [unrolled_strcpy]: do {
@@ -6517,7 +6652,7 @@ core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240 (4 suspects)
   Line 66 [pointer_cast]: uVar1 = *(ushort *)((int)puVar13 + 10);
 
 ====================================================================================================
-core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (81 suspects)
+core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (88 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
@@ -6526,6 +6661,13 @@ core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (81 suspects)
   Line 62 [unnamed_local]: char local_1e74 [260];
   Line 86 [unnamed_local]: char local_7ec [100];
   Line 88 [unnamed_local]: char local_724 [100];
+  Line 89 [missing_cave_copy]: CMatrix3x4f local_404;
+  Line 90 [missing_cave_copy]: CMatrix3x4f local_3d4;
+  Line 92 [missing_cave_copy]: CMatrix3x4f local_374;
+  Line 93 [missing_cave_copy]: CMatrix3x4f local_344;
+  Line 94 [missing_cave_copy]: CMatrix3x4f local_314;
+  Line 95 [missing_cave_copy]: CMatrix3x3f local_2e4;
+  Line 119 [missing_cave_copy]: CVector3f local_1b0;
   Line 140 [unnamed_local]: CVector3f local_15c;
   Line 144 [unnamed_local]: float local_13c;
   Line 150 [unnamed_local]: int local_114;
@@ -6693,6 +6835,13 @@ core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800 (6
   Line 64 [pointer_cast]: *(int *)((int)&pSVar4->u + iVar5) = iVar2;
   Line 66 [pointer_cast]: *(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->v + iVar5) =
   Line 70 [raw_address_constant]: (longlong)(piVar7[1] - iVar9) * 0x1000000 & 0xffffffffU) / (longlong)iVar8);
+
+====================================================================================================
+core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820 (2 suspects)
+  File: core/skeleton.cpp
+====================================================================================================
+  Line 12 [missing_cave_copy]: CMatrix3x4f local_ac;
+  Line 14 [missing_cave_copy]: CMatrix3x4f local_4c;
 
 ====================================================================================================
 core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10 (4 suspects)
@@ -7026,20 +7175,58 @@ core_stranger.cpp_CStranger_applyArmAimRotation_FUN_005c02b0 (2 suspects)
   Line 20 [stack_alignment_array]: float afStackY_19b8 [1520];
 
 ====================================================================================================
-core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0 (5 suspects)
+core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0 (41 suspects)
   File: core/stranger.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
+  Line 36 [missing_cave_copy]: CMatrix3x4f local_d5c;
+  Line 40 [missing_cave_copy]: CMatrix3x4f local_c9c;
+  Line 41 [missing_cave_copy]: CMatrix3x4f local_c6c;
+  Line 45 [missing_cave_copy]: CMatrix3x4f local_bac;
+  Line 46 [missing_cave_copy]: CMatrix3x4f local_b7c;
+  Line 47 [missing_cave_copy]: CMatrix3x4f local_b4c;
+  Line 48 [missing_cave_copy]: CMatrix3x4f local_b1c;
+  Line 50 [missing_cave_copy]: CMatrix3x4f local_abc;
+  Line 51 [missing_cave_copy]: CMatrix3x4f local_a8c;
+  Line 55 [missing_cave_copy]: CMatrix3x4f local_9cc;
+  Line 56 [missing_cave_copy]: CMatrix3x4f local_99c;
+  Line 57 [missing_cave_copy]: CMatrix3x4f local_96c;
+  Line 58 [missing_cave_copy]: CMatrix3x4f local_93c;
+  Line 61 [missing_cave_copy]: CMatrix3x4f local_8ac;
+  Line 63 [missing_cave_copy]: CMatrix3x4f local_84c;
+  Line 66 [missing_cave_copy]: CMatrix3x4f local_7bc;
+  Line 69 [missing_cave_copy]: CMatrix3x4f local_72c;
+  Line 70 [missing_cave_copy]: CMatrix3x4f local_6fc;
+  Line 72 [missing_cave_copy]: CMatrix3x4f local_69c;
+  Line 73 [missing_cave_copy]: CMatrix3x4f local_66c;
+  Line 74 [missing_cave_copy]: CMatrix3x4f local_63c;
+  Line 75 [missing_cave_copy]: CMatrix3x4f local_60c;
+  Line 76 [missing_cave_copy]: CMatrix3x4f local_5dc;
+  Line 79 [missing_cave_copy]: CMatrix3x4f local_54c;
+  Line 80 [missing_cave_copy]: CMatrix3x4f local_51c;
+  Line 81 [missing_cave_copy]: CMatrix3x4f local_4ec;
+  Line 82 [missing_cave_copy]: CMatrix3x4f local_4bc;
+  Line 83 [missing_cave_copy]: CMatrix3x4f local_48c;
+  Line 85 [missing_cave_copy]: CMatrix3x4f local_42c;
+  Line 88 [missing_cave_copy]: CMatrix3x4f local_39c;
+  Line 89 [missing_cave_copy]: CMatrix3x4f local_36c;
   Line 122 [unnamed_local]: CVector3f local_150;
+  Line 124 [missing_cave_copy]: CVector3f local_114;
+  Line 133 [missing_cave_copy]: CVector3f local_d8;
+  Line 139 [missing_cave_copy]: CVector3f local_90;
+  Line 141 [missing_cave_copy]: CVector3f local_78;
+  Line 146 [missing_cave_copy]: CVector3f local_3c;
   Line 358 [unnamed_local]: local_150.x = (local_21c.min.x + local_21c.max.x) * 0.5f;
   Line 359 [unnamed_local]: local_150.y = (local_21c.min.y + local_21c.max.y) * 0.5f;
   Line 360 [unnamed_local]: local_150.z = (local_21c.min.z + local_21c.max.z) * 0.5f;
 
 ====================================================================================================
-core_stranger.cpp_CStranger_extractTurnPose_FUN_005bf720 (1 suspect)
+core_stranger.cpp_CStranger_extractTurnPose_FUN_005bf720 (3 suspects)
   File: core/stranger.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
+  Line 22 [unnamed_local]: CVector3f local_1c;
+  Line 35 [unnamed_local]: (&local_1c,
 
 ====================================================================================================
 core_stranger.cpp_CStranger_handleFireButton_FUN_005c5f10 (1 suspect)
@@ -7109,6 +7296,16 @@ core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270 (1 suspect)
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005c5793) */
 
 ====================================================================================================
+core_stranger.cpp_CStranger_updateWeaponPosition_FUN_005c06b0 (5 suspects)
+  File: core/stranger.cpp
+====================================================================================================
+  Line 12 [missing_cave_copy]: CMatrix3x4f local_114;
+  Line 14 [missing_cave_copy]: CMatrix3x4f local_b4;
+  Line 16 [missing_cave_copy]: CMatrix3x4f local_54;
+  Line 17 [missing_cave_copy]: CVector3f local_24;
+  Line 18 [missing_cave_copy]: CVector3f local_18;
+
+====================================================================================================
 core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_005bb010 (1 suspect)
   File: core/stranger.cpp
 ====================================================================================================
@@ -7159,11 +7356,15 @@ core_tbplayer.cpp_CDrummer_getCarryObjToBodyXForm_FUN_005da370 (1 suspect)
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
 
 ====================================================================================================
-core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70 (2 suspects)
+core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70 (6 suspects)
   File: core/tentacle.cpp
 ====================================================================================================
   Line 0 [param_count_too_few]: Function declares 2 params but call sites push 3 (1 missing)
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
+  Line 11 [missing_cave_copy]: CMatrix3x4f local_fc;
+  Line 12 [missing_cave_copy]: CMatrix3x4f local_cc;
+  Line 13 [missing_cave_copy]: CMatrix3x4f local_9c;
+  Line 14 [missing_cave_copy]: CMatrix3x4f local_6c;
 
 ====================================================================================================
 core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_005db900 (1 suspect)
@@ -7172,10 +7373,32 @@ core_tentacle.cpp_CTentacle_findNearbyTarget_FUN_005db900 (1 suspect)
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
 
 ====================================================================================================
-core_tentacle.cpp_CTentacle_process_FUN_005db050 (1 suspect)
+core_tentacle.cpp_CTentacle_process_FUN_005db050 (9 suspects)
   File: core/tentacle.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
+  Line 30 [missing_cave_copy]: CMatrix3x4f CStack_250;
+  Line 31 [missing_cave_copy]: CMatrix3x4f CStack_220;
+  Line 33 [missing_cave_copy]: CMatrix3x4f CStack_1c0;
+  Line 36 [missing_cave_copy]: CMatrix3x4f CStack_130;
+  Line 38 [missing_cave_copy]: CMatrix3x4f CStack_d0;
+  Line 40 [missing_cave_copy]: CVector3f CStack_94;
+  Line 43 [missing_cave_copy]: CVector3f CStack_70;
+  Line 45 [missing_cave_copy]: CVector3f CStack_58;
+
+====================================================================================================
+core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0 (9 suspects)
+  File: core/tentacle.cpp
+====================================================================================================
+  Line 13 [missing_cave_copy]: CMatrix3x4f local_1cc;
+  Line 14 [missing_cave_copy]: CMatrix3x4f local_19c;
+  Line 15 [missing_cave_copy]: CMatrix3x4f local_16c;
+  Line 18 [missing_cave_copy]: CMatrix3x4f local_dc;
+  Line 19 [missing_cave_copy]: CMatrix3x4f local_ac;
+  Line 20 [missing_cave_copy]: CMatrix3x4f local_7c;
+  Line 21 [missing_cave_copy]: CMatrix3x4f local_4c;
+  Line 22 [missing_cave_copy]: CVector3f local_1c;
+  Line 23 [missing_cave_copy]: CVector3f local_10;
 
 ====================================================================================================
 core_terrain.cpp_CTerrain_render_FUN_005e1f50 (2 suspects)
@@ -7268,10 +7491,12 @@ core_turret.cpp_CTurret_getBoundingBox_FUN_005e2910 (1 suspect)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 ====================================================================================================
-core_turret.cpp_CTurret_process_FUN_005e2430 (1 suspect)
+core_turret.cpp_CTurret_process_FUN_005e2430 (3 suspects)
   File: core/turret.cpp
 ====================================================================================================
   Line 16 [stack_alignment_array]: float afStackY_186c [1497];
+  Line 28 [unnamed_local]: CQuaternion4f local_80;
+  Line 30 [unnamed_local]: CQuaternion4f local_60;
 
 ====================================================================================================
 core_tvbat.cpp_CTVBat_getBoundingBox_FUN_005e5050 (1 suspect)
@@ -7493,10 +7718,17 @@ core_werewolf.cpp_CWerewolf_renderTransparent_FUN_005f1820 (12 suspects)
   Line 39 [pointer_cast]: local_50.m[2].z = *(float *)((int)pCVar1->m + 0x2c);
 
 ====================================================================================================
-core_xform.cpp_buildMirrorTransform_FUN_005f7000 (6 suspects)
+core_xform.cpp_buildMirrorTransform_FUN_005f7000 (13 suspects)
   File: core/xform.cpp
 ====================================================================================================
+  Line 13 [missing_cave_copy]: CMatrix3x4f local_1a4;
+  Line 14 [missing_cave_copy]: CMatrix3x4f local_174;
+  Line 16 [missing_cave_copy]: CMatrix3x4f local_114;
+  Line 17 [missing_cave_copy]: CMatrix3x4f local_e4;
+  Line 18 [missing_cave_copy]: CMatrix3x4f local_b4;
+  Line 20 [missing_cave_copy]: CMatrix3x4f local_54;
   Line 21 [unnamed_local]: CMatrix3x4f local_1a4;
+  Line 22 [missing_cave_copy]: CVector3f local_18;
   Line 22 [unnamed_local]: CMatrix3x4f local_174;
   Line 24 [unnamed_local]: CMatrix3x4f local_114;
   Line 25 [unnamed_local]: CMatrix3x4f local_e4;
@@ -7724,10 +7956,12 @@ core_zombie.cpp_CZombie_canPickupWithHand_FUN_005fbda0 (1 suspect)
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
 
 ====================================================================================================
-core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0 (3 suspects)
+core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0 (5 suspects)
   File: core/zombie.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
+  Line 19 [missing_cave_copy]: CBoundingBox3D local_c4;
+  Line 20 [missing_cave_copy]: CVector3f local_ac;
   Line 133 [pointer_cast]: pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar7 * -8 + 4);
   Line 136 [pointer_cast]: out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar7 * -2 + 1) * 4);
 

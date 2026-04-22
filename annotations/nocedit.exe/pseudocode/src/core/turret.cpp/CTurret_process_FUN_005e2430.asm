@@ -12,7 +12,7 @@
 ; float            Stack[-0xf8]:4  local_f8
 ; char[100]        Stack[-0xf4]:100  local_f4
 ; CQuaternion4f    Stack[-0x90]:16  local_90
-; CVector3f        Stack[-0x80]:12  local_80
+; CQuaternion4f    Stack[-0x80]:16  local_80
 ; CQuaternion4f    Stack[-0x70]:16  local_70
 ; CQuaternion4f    Stack[-0x60]:16  local_60
 ; CQuaternion4f    Stack[-0x50]:16  local_50
@@ -370,7 +370,7 @@ section .text
     JMP 0x0060e3f4                      ; 005e281a
         ;   XREF to: 0060e3f4 (UNCONDITIONAL_JUMP)  ; LAB_0060e3f4
     CALL core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0 ; 005e281f
-        ;   XREF to: 005f7ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0(CQuaternion4f * quat_in, CVector3f * vector_out)
+        ;   XREF to: 005f7ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0(CVector3f * out_euler, CQuaternion4f * quat_in)
         ;   Label: LAB_005e281f
     ADD ESP,0x8                         ; 005e2824
     MOV EDX,dword ptr [ESP + 0xe0]      ; 005e2827

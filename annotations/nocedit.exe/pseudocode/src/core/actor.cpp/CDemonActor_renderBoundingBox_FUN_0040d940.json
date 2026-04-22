@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 623,
-    "complexity_score": 372,
+    "complexity_score": 437,
     "cross_reference_count": 9,
     "function_call_count": 10,
     "global_count": 5,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 357,
-    "suspect_count": 1,
+    "suspect_count": 7,
     "suspect_types": [
-      "byvalue_struct_passing"
+      "byvalue_struct_passing",
+      "missing_cave_copy"
     ],
     "total_lines": 980
   },
@@ -589,6 +590,54 @@
       "match": "clipAndDrawLine2D",
       "text": "Function calls by-value struct passing functions",
       "type": "byvalue_struct_passing"
+    },
+    {
+      "description": "Struct-type local `CStack_120` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 5 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 49,
+      "match": "CVector3f CStack_120; ... f(&CStack_120, ...);",
+      "severity": "moderate",
+      "text": "CVector3f CStack_120;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `CStack_e4` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 5 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 54,
+      "match": "CVector3f CStack_e4; ... f(&CStack_e4, ...);",
+      "severity": "moderate",
+      "text": "CVector3f CStack_e4;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `CStack_c0` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 5 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 57,
+      "match": "CVector3f CStack_c0; ... f(&CStack_c0, ...);",
+      "severity": "moderate",
+      "text": "CVector3f CStack_c0;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `CStack_b4` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 5 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 58,
+      "match": "CVector3f CStack_b4; ... f(&CStack_b4, ...);",
+      "severity": "moderate",
+      "text": "CVector3f CStack_b4;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `CStack_90` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 5 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 61,
+      "match": "CVector3f CStack_90; ... f(&CStack_90, ...);",
+      "severity": "moderate",
+      "text": "CVector3f CStack_90;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `CStack_84` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 5 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 62,
+      "match": "CVector3f CStack_84; ... f(&CStack_84, ...);",
+      "severity": "moderate",
+      "text": "CVector3f CStack_84;",
+      "type": "missing_cave_copy"
     }
   ]
 }

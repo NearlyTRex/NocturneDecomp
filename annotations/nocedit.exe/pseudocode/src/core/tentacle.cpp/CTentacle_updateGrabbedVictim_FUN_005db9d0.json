@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 231,
-    "complexity_score": 45,
+    "complexity_score": 140,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 45,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 9,
+    "suspect_types": [
+      "missing_cave_copy"
+    ],
     "total_lines": 276
   },
   "cross_references": [],
@@ -207,7 +209,80 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Struct-type local `local_1cc` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 13,
+      "match": "CMatrix3x4f local_1cc; ... f(&local_1cc, ...);",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_1cc;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_19c` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 14,
+      "match": "CMatrix3x4f local_19c; ... f(&local_19c, ...);",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_19c;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_16c` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 15,
+      "match": "CMatrix3x4f local_16c; ... f(&local_16c, ...);",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_16c;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_dc` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 18,
+      "match": "CMatrix3x4f local_dc; ... f(&local_dc, ...);",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_dc;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_ac` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 19,
+      "match": "CMatrix3x4f local_ac; ... f(&local_ac, ...);",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_ac;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_7c` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 20,
+      "match": "CMatrix3x4f local_7c; ... f(&local_7c, ...);",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_7c;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_4c` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 21,
+      "match": "CMatrix3x4f local_4c; ... f(&local_4c, ...);",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_4c;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_1c` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 22,
+      "match": "CVector3f local_1c; ... f(&local_1c, ...);",
+      "severity": "moderate",
+      "text": "CVector3f local_1c;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_10` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 23,
+      "match": "CVector3f local_10; ... f(&local_10, ...);",
+      "severity": "moderate",
+      "text": "CVector3f local_10;",
+      "type": "missing_cave_copy"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

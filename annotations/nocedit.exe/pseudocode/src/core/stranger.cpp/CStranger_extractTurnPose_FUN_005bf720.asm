@@ -10,7 +10,7 @@
 ; SPose            Stack[-0x1ad8]:6812  SStack_1ad8
 ; CQuaternion4f    Stack[-0x3c]:16  local_3c
 ; CQuaternion4f    Stack[-0x2c]:16  local_2c
-; CQuaternion4f    Stack[-0x1c]:16  local_1c
+; CVector3f        Stack[-0x1c]:12  local_1c
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520 at 005be5ce
@@ -63,7 +63,7 @@ section .text
     LEA EAX,[ESP + 0x1ac0]              ; 005bf777
     PUSH EAX                            ; 005bf77e
     CALL core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0 ; 005bf77f
-        ;   XREF to: 005f7ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0(CQuaternion4f * quat_in, CVector3f * vector_out)
+        ;   XREF to: 005f7ac0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0(CVector3f * out_euler, CQuaternion4f * quat_in)
     ADD ESP,0x8                         ; 005bf784
     LEA ESI,[ESP + 0x1aac]              ; 005bf787
     PUSH 0x59ddb0                       ; 005bf78e

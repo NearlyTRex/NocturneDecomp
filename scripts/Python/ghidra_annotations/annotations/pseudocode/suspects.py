@@ -80,6 +80,8 @@ SUSPECT_SEVERITY = {
     'unrolled_strlen': 'mild',
     'unrolled_strcat': 'mild',
     'unrolled_strchr': 'mild',
+    'preinc_loop_idiom': 'moderate',
+    'missing_cave_copy': 'moderate',
 }
 
 
@@ -1328,6 +1330,207 @@ def identify_unrolled_strchr_loops(decompiled_code):
     return suspects
 
 
+_PREINC_ADVANCE_RE = re.compile(
+    r"^\s*(\w+)\s*=\s*\([A-Za-z_]\w*\s*\*\)\s*[^;]*?&[^;]*?\b\1->[^;]*?;\s*$")
+_PREINC_SELFASSIGN_RE = re.compile(
+    r"^\s*(\w+)\s*=\s*\1\s*;\s*$")
+_PREINC_ARRAY0_RE = re.compile(
+    r"\b(\w+)->\w+\[0\]")
+
+
+def identify_preinc_loop_idiom(decompiled_code):
+    """Detect Ghidra's pre-increment-array-walk loop decompile artifact.
+
+    Canonical shape:
+        pX = start;
+        do {
+            pX = (T *)&(pX->field)...;      // advance via struct-field pointer arithmetic
+            pX->array[0].field = value;      // constant-index [0] access on advanced pointer
+            ...
+            pX = pX;                         // self-assignment no-op
+        } while (pX != end_marker);
+
+    This pattern is always a Ghidra loop decode artifact. The underlying asm
+    varies (compensated offsets with pre-increment, same-address repeated
+    writes, or unrolled struct copies), but the decompile is never
+    semantically correct as-decoded. Cross-reference the asm and rewrite
+    as a straightforward `for (i = 0; i < N; i++)` loop in a .keep.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts, one per detected loop.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    lines = decompiled_code.split('\n')
+    n = len(lines)
+    for i in range(n):
+        if not _UNROLLED_DO_RE.match(lines[i]):
+            continue
+        # Collect body up to matching close, capped to keep false-positive risk low.
+        body_lines = []
+        depth = 1
+        for j in range(i + 1, min(i + 40, n)):
+            body_lines.append(lines[j])
+            depth += lines[j].count("{") - lines[j].count("}")
+            if depth == 0:
+                break
+        body_text = "\n".join(body_lines)
+        # Must contain all three markers referring to the same variable.
+        advance_match = None
+        for bl in body_lines:
+            m = _PREINC_ADVANCE_RE.match(bl)
+            if m:
+                advance_match = m
+                break
+        if not advance_match:
+            continue
+        var = advance_match.group(1)
+        has_array0 = any(
+            m.group(1) == var
+            for m in _PREINC_ARRAY0_RE.finditer(body_text))
+        has_selfassign = any(
+            _PREINC_SELFASSIGN_RE.match(bl)
+            and _PREINC_SELFASSIGN_RE.match(bl).group(1) == var
+            for bl in body_lines)
+        if not (has_array0 and has_selfassign):
+            continue
+        suspects.append({
+            'line': i + 1,
+            'type': 'preinc_loop_idiom',
+            'match': "do { var = (T *)&var->...; var->arr[0]...; var = var; ...}",
+            'text': lines[i].strip()[:120],
+            'description': (
+                "Ghidra pre-increment-array-walk loop artifact on `{var}` "
+                "(struct-field advance + constant `[0]` index + self-assign "
+                "no-op). Always wrong as-decoded; cross-reference .asm and "
+                "rewrite as a straightforward for-loop in a .keep.").format(
+                    var=var),
+            'severity': 'moderate',
+        })
+    return suspects
+
+
+# Struct-type locals that the missing-cave-copy bug pattern typically affects.
+_UNREF_STRUCT_TYPES = frozenset({
+    'CMatrix3x4f', 'CMatrix3x3f', 'CQuaternion4f', 'CVector3f', 'CVector3i',
+    'CVector2f', 'CLocation', 'UOrientationVector', 'CBoundingBox3D',
+    'SDamageInfo', 'CBox',
+})
+_UNREF_DECL_RE = re.compile(
+    r"^\s*([A-Z][A-Za-z0-9_]*)\s+([a-zA-Z_]\w*)\s*;\s*$")
+_CAVE_SRC_RE = re.compile(r"MOV\s+ECX,\s*dword ptr\s*\[ESI")
+_CAVE_DST_RE = re.compile(r"MOV\s+dword ptr\s*\[EDI(?:\s*\+\s*0x[0-9a-f]+)?\]\s*,\s*ECX")
+
+
+def _count_cave_copy_blocks(asm_code):
+    """Count consecutive MOV-ECX-from-ESI / MOV-to-EDI-from-ECX pair runs
+    that are ≥ 12 pairs long (48-byte struct copies — i.e. CMatrix3x4f).
+
+    These blocks are the Ghidra-visible signature of Watcom's inline struct
+    memcpy, typically emitted after an output-param-in-register function
+    call to copy the result from the callee's output slot into another local.
+    """
+    if not asm_code:
+        return 0
+    consec = 0
+    blocks = 0
+    for line in asm_code.split("\n"):
+        if _CAVE_SRC_RE.search(line) or _CAVE_DST_RE.search(line):
+            consec += 1
+        else:
+            if consec >= 24:  # 12 MOV-pairs = 48 bytes = one CMatrix3x4f
+                blocks += 1
+            consec = 0
+    if consec >= 24:
+        blocks += 1
+    return blocks
+
+
+def identify_missing_cave_copy(decompiled_code, assembly_code):
+    """Detect Watcom post-call struct-memcpy blocks ("cave copies") that
+    Ghidra failed to translate, leaving struct-type locals uninitialized.
+
+    The signal requires both sources:
+    - `.asm` contains ≥ 2 runs of 12+ consecutive MOV-pairs (48-byte struct
+      copies — Ghidra's signature for Watcom's inline struct memcpy).
+    - `.cpp` decompile has ≥ 2 struct-type locals that are declared and
+      passed once by address with no other reference in the function body.
+
+    When both match, the function likely suffers the cave-copy-omission bug:
+    some local passed as an input to a later call is actually uninitialized
+    at runtime because the pre-call `local_dst = local_src` struct copy was
+    dropped by the decompiler. See §20 for the fix pattern.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+        assembly_code: The function's assembly listing (from `.asm`).
+
+    Returns:
+        List of suspect dicts, one per affected local.
+    """
+    suspects = []
+    if not decompiled_code or not assembly_code:
+        return suspects
+    # Check asm side first — cheaper and rules out most functions.
+    cave_blocks = _count_cave_copy_blocks(assembly_code)
+    if cave_blocks < 2:
+        return suspects
+    lines = decompiled_code.split('\n')
+    decls = []
+    for i, line in enumerate(lines):
+        m = _UNREF_DECL_RE.match(line)
+        if not m:
+            continue
+        type_name, var_name = m.group(1), m.group(2)
+        if type_name not in _UNREF_STRUCT_TYPES:
+            continue
+        decls.append((i, type_name, var_name))
+    candidates = []
+    for decl_line, type_name, var_name in decls:
+        pattern = re.compile(r"\b" + re.escape(var_name) + r"\b")
+        uses = []
+        for j, line in enumerate(lines):
+            if j == decl_line:
+                continue
+            if pattern.search(line):
+                uses.append((j, line))
+        if len(uses) != 1:
+            continue
+        use_line_idx, use_line = uses[0]
+        if not re.search(r"&\s*" + re.escape(var_name) + r"\b", use_line):
+            continue
+        if '(' not in use_line and (use_line_idx == 0
+                                    or '(' not in lines[use_line_idx - 1]):
+            continue
+        candidates.append((decl_line, type_name, var_name))
+    if len(candidates) < 2:
+        return suspects
+    for decl_line, type_name, var_name in candidates:
+        suspects.append({
+            'line': decl_line + 1,
+            'type': 'missing_cave_copy',
+            'match': "{type} {var}; ... f(&{var}, ...);".format(
+                type=type_name, var=var_name),
+            'text': lines[decl_line].strip()[:120],
+            'description': (
+                "Struct-type local `{var}` ({type}) is declared and passed "
+                "once by address with no other reference; the `.asm` has "
+                "{blocks} cave-block struct copies that the decompile "
+                "doesn't reflect. Ghidra dropped a post-call memcpy "
+                "(`local_dst = local_src;`) leaving one local uninitialized "
+                "at runtime. See §20 — typical fix is to pass the real "
+                "source local directly instead of the uninitialized "
+                "scratch.").format(
+                    var=var_name, type=type_name, blocks=cave_blocks),
+            'severity': 'moderate',
+        })
+    return suspects
+
+
 def detect_content_suspects(code, func_globals=None, global_interval_map=None,
                             address_interval_map=None, func_calls=None):
     """Run all content-based (source-text) suspect detectors on a code blob.
@@ -1364,6 +1567,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_unrolled_strlen_loops(code))
     found.extend(identify_unrolled_strcat_loops(code))
     found.extend(identify_unrolled_strchr_loops(code))
+    found.extend(identify_preinc_loop_idiom(code))
     return found
 
 

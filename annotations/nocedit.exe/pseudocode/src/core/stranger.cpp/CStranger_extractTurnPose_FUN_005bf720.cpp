@@ -18,7 +18,7 @@ void __cdecl core_stranger_cpp_CStranger_extractTurnPose_FUN_005bf720(CStranger 
   SPose SStack_1ad8;
   CQuaternion4f local_3c;
   CQuaternion4f local_2c;
-  CQuaternion4f local_1c;
+  CVector3f local_1c;
   int bone_index;
   float blend_weight;
   byte *blend_callback;
@@ -32,14 +32,12 @@ void __cdecl core_stranger_cpp_CStranger_extractTurnPose_FUN_005bf720(CStranger 
              this_ptr->turn_blend_weight * (float)40,-1);
   pCVar1 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
                      (&local_1c,
-                      (CVector3f *)
-                      ((this_ptr->base).base.model.bone_transform.pose_data.bone_rotations +
-                      g_StrangerIndices[0]));
+                      (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations +
+                      g_StrangerIndices[0]);
   blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0;
   bone_index = -1;
-  local_1c.z = -pCVar1->y;
   blend_weight = 1.0;
-  core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(local_1c.z,&local_2c);
+  core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(-pCVar1->y,&local_2c);
   core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
             (this_ptr_00,&local_3c,blend_weight,bone_index,
              (CDeformableModel_MotionBlendWeightFunc *)blend_callback);

@@ -146,7 +146,7 @@ CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(flo
 CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(float angle_radians,CQuaternion4f *quat_out);
 CQuaternion4f * __stack_esi core_xform_cpp_quaternionFromAngleZ_FUN_005f7a30(float angle_radians,CQuaternion4f *quat_out);
 CQuaternion4f * __stack2_esi core_xform_cpp_quaternionFromAxisAngle_FUN_005f7a70 (float angle_radians,CVector3f *axis_ptr,CQuaternion4f *quat_out);
-CVector3f * __cdecl core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(CQuaternion4f *quat_in,CVector3f *vector_out);
+CVector3f * __cdecl core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(CVector3f *out_euler,CQuaternion4f *quat_in);
 CVector3f * __cdecl core_xform_cpp_quaternionToEulerAnglesZYX_FUN_005f7af0(CQuaternion4f *quat_in,CVector3f *vector_out);
 CQuaternion4f * __stack_esi core_xform_cpp_eulerToQuaternion_FUN_005f7b20(CVector3f *euler_angles,CQuaternion4f *quat_out);
 CQuaternion4f * __stack_esi core_xform_cpp_eulerToQuaternionIndirect_FUN_005f7b70 (CVector3f *euler_angles,CQuaternion4f *quat_out);

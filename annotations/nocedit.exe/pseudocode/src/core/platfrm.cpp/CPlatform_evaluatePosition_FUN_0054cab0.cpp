@@ -24,14 +24,14 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_0054cab0(CPlatform 
   byte bVar5;
   float afStackY_1844 [1523];
   CQuaternion4f local_68;
-  CVector3f local_58;
+  CQuaternion4f local_58;
   float local_48;
   float local_44;
   float local_40;
   float local_3c;
   float local_38;
   float local_34;
-  CQuaternion4f local_30;
+  CVector3f local_30;
   float local_20;
   float local_1c;
   float local_18;
@@ -56,10 +56,9 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_0054cab0(CPlatform 
     fVar3 = (this_ptr->end_pos).z;
     fVar4 = *pfVar1;
     fVar7 = 1.0 - this_ptr->param;
-    local_30.z = (this_ptr->start_pos).x * fVar7;
     fVar5 = (this_ptr->start_pos).y;
     fVar6 = (this_ptr->start_pos).z;
-    (out_pos_00->position).x = local_30.z + (this_ptr->end_pos).x * *pfVar1;
+    (out_pos_00->position).x = (this_ptr->start_pos).x * fVar7 + (this_ptr->end_pos).x * *pfVar1;
     (this_ptr->base).location.position.y = fVar5 * fVar7 + fVar1 * fVar2;
     (this_ptr->base).location.position.z = fVar6 * fVar7 + fVar3 * fVar4;
     core_xform_cpp_slerpQuaternion_FUN_005f77e0

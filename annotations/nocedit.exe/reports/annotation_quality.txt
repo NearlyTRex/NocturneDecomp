@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        94 ( 1.5%)
+  Functions with type issues:        90 ( 1.4%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          1
-    Undefined types in variables:      88
+    Undefined types in variables:      84
     Unresolved stack params:           5
 
-  Excluded (.keep / MMX / by-value):   132 functions
+  Excluded (.keep / MMX / by-value):   136 functions
     Wrong calling convention:          1
-    Undefined types in variables:      129
+    Undefined types in variables:      133
     Unresolved stack params:           3
 
 ====================================================================================================
@@ -113,7 +113,7 @@ Unresolved stack parameters (missing from signature) (5)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (88)
+Undefined types in variables (84)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -291,11 +291,6 @@ Undefined types in variables (88)
     Locals:  local_24 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CCharacter_ctor
-    Address: 0x00427e20  File: core/charactr.cpp
-    Locals:  local_c (undefined4[3])
-    Suggested: Resolve undefined types to concrete types
-
   CCharacter_updateWanderToWaypoint
     Address: 0x0042e050  File: core/charactr.cpp
     Locals:  local_1f80 (undefined4[2005])
@@ -304,11 +299,6 @@ Undefined types in variables (88)
   CCloth_applyConstraints
     Address: 0x0043a420  File: core/cloth.cpp
     Locals:  local_40 (undefined1 *)
-    Suggested: Resolve undefined types to concrete types
-
-  CCloth_computeBoneTransform
-    Address: 0x0043a2b0  File: core/cloth.cpp
-    Locals:  local_18 (undefined1[12])
     Suggested: Resolve undefined types to concrete types
 
   CDemonCube_buildGeometryFromPolygonData
@@ -396,11 +386,6 @@ Undefined types in variables (88)
     Locals:  local_24 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  CGlass_setup
-    Address: 0x004e9180  File: core/glass.cpp
-    Locals:  local_d0 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CGround_getNormalAtPosition
     Address: 0x004effb0  File: core/ground.cpp
     Locals:  auStackY_1024 (undefined4[1008])
@@ -444,11 +429,6 @@ Undefined types in variables (88)
   getElapsedSeconds
     Address: 0x0053f440  File: core/netgame.cpp
     Locals:  local_10 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CPlatform_processInEditor
-    Address: 0x0054ea00  File: core/platfrm.cpp
-    Locals:  auStack_40 (undefined1[32])
     Suggested: Resolve undefined types to concrete types
 
   CPlatform_renderOpaque
@@ -621,7 +601,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (129)
+Undefined types - .keep overrides (133)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -1049,6 +1029,16 @@ Undefined types - .keep overrides (129)
     Locals:  local_10 (undefined1[4])
     Suggested: Resolve undefined types to concrete types
 
+  CCharacter_ctor
+    Address: 0x00427e20  File: core/charactr.cpp
+    Locals:  local_c (undefined4[3])
+    Suggested: Resolve undefined types to concrete types
+
+  CCloth_computeBoneTransform
+    Address: 0x0043a2b0  File: core/cloth.cpp
+    Locals:  local_18 (undefined1[12])
+    Suggested: Resolve undefined types to concrete types
+
   CCourse_importBON
     Address: 0x00442bc0  File: core/course.cpp
     Locals:  local_1c (undefined1[4])
@@ -1099,6 +1089,11 @@ Undefined types - .keep overrides (129)
     Locals:  local_20 (undefined1 *)
     Suggested: Resolve undefined types to concrete types
 
+  CGlass_setup
+    Address: 0x004e9180  File: core/glass.cpp
+    Locals:  local_d0 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CLarva_process
     Address: 0x00503080  File: core/larva.cpp
     Locals:  local_1f0 (undefined1)
@@ -1122,6 +1117,11 @@ Undefined types - .keep overrides (129)
   CParticle_process
     Address: 0x00545760  File: core/particle.cpp
     Locals:  local_68 (undefined1[52])
+    Suggested: Resolve undefined types to concrete types
+
+  CPlatform_processInEditor
+    Address: 0x0054ea00  File: core/platfrm.cpp
+    Locals:  auStack_40 (undefined1[32])
     Suggested: Resolve undefined types to concrete types
 
   CScript_getDialogDuration

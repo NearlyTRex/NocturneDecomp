@@ -4,20 +4,21 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 709,
-    "complexity_score": 226,
+    "complexity_score": 310,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 211,
-    "suspect_count": 1,
+    "pseudocode_lines": 210,
+    "suspect_count": 9,
     "suspect_types": [
+      "missing_cave_copy",
       "stack_alignment_array"
     ],
-    "total_lines": 920
+    "total_lines": 919
   },
   "cross_references": [
     {
@@ -201,6 +202,17 @@
     },
     "pcode_op_count": 2294
   },
+  "resolved_suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 165,
+      "match": "&stack0xffffffa8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((CVector3f *)&stack0xffffffa8 != pCStack_1c) {",
+      "type": "stack_ref"
+    }
+  ],
   "stack_frame": {
     "frame_size": 6320,
     "local_size": 6316,
@@ -345,8 +357,8 @@
         "is_param": false,
         "name": "CStack_7c",
         "offset": -124,
-        "size": 16,
-        "type": "CQuaternion4f"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
@@ -366,8 +378,8 @@
         "is_param": false,
         "name": "CStack_64",
         "offset": -100,
-        "size": 16,
-        "type": "CQuaternion4f"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
@@ -461,11 +473,75 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 19,
+      "line": 17,
       "match": "afStackY_18a8",
       "severity": "moderate",
       "text": "float afStackY_18a8 [1387];",
       "type": "stack_alignment_array"
+    },
+    {
+      "description": "Struct-type local `CStack_2e4` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 19,
+      "match": "CMatrix3x4f CStack_2e4; ... f(&CStack_2e4, ...);",
+      "severity": "moderate",
+      "text": "CMatrix3x4f CStack_2e4;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `CStack_254` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 22,
+      "match": "CMatrix3x4f CStack_254; ... f(&CStack_254, ...);",
+      "severity": "moderate",
+      "text": "CMatrix3x4f CStack_254;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `CStack_164` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 27,
+      "match": "CMatrix3x4f CStack_164; ... f(&CStack_164, ...);",
+      "severity": "moderate",
+      "text": "CMatrix3x4f CStack_164;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `CStack_134` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 28,
+      "match": "CMatrix3x4f CStack_134; ... f(&CStack_134, ...);",
+      "severity": "moderate",
+      "text": "CMatrix3x4f CStack_134;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `CStack_7c` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 36,
+      "match": "CVector3f CStack_7c; ... f(&CStack_7c, ...);",
+      "severity": "moderate",
+      "text": "CVector3f CStack_7c;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `CStack_64` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 40,
+      "match": "CVector3f CStack_64; ... f(&CStack_64, ...);",
+      "severity": "moderate",
+      "text": "CVector3f CStack_64;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `auStack_40` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 46,
+      "match": "CVector3f auStack_40; ... f(&auStack_40, ...);",
+      "severity": "moderate",
+      "text": "CVector3f auStack_40;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `CStack_34` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 47,
+      "match": "CVector3f CStack_34; ... f(&CStack_34, ...);",
+      "severity": "moderate",
+      "text": "CVector3f CStack_34;",
+      "type": "missing_cave_copy"
     }
   ],
   "vtable_info": {

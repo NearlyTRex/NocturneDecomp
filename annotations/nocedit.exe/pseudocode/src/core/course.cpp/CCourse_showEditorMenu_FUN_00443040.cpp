@@ -257,8 +257,7 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
           iVar6 = 0;
           do {
             core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
-                      ((CQuaternion4f *)&local_38,
-                       (CVector3f *)((int)&(this_ptr->frames->orient).w + iVar6));
+                      (&local_38,(CQuaternion4f *)((int)&(this_ptr->frames->orient).w + iVar6));
             local_38.z = 0.0;
             core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&local_38,&local_64);
             pfVar1 = (float *)((int)&(this_ptr->frames->orient).w + iVar6);

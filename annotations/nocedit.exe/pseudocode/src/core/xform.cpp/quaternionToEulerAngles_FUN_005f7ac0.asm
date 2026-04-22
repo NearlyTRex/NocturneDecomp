@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CVector3f * __cdecl core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(CQuaternion4f *quat_in,CVector3f *vector_out)
+; CVector3f * __cdecl core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(CVector3f *out_euler,CQuaternion4f *quat_in)
 ;
 ; Parameters:
-; CQuaternion4f *  Stack[0x4]:4   quat_in
-; CVector3f *      Stack[0x8]:4   vector_out
+; CVector3f *      Stack[0x4]:4   out_euler
+; CQuaternion4f *  Stack[0x8]:4   quat_in
 ; Local Variables:
 ; CMatrix3x4f      Stack[-0x34]:48  local_34
 ;
