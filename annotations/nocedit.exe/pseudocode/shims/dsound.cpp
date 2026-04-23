@@ -12,6 +12,7 @@
 #include <cmath>
 
 #include "system/dsound.h"
+#include "debug_log.h"
 
 // =============================================================================
 // DirectSound constants
@@ -92,6 +93,7 @@ struct DSoundBuffer_ShimData {
     int is_playing;
     int is_looping;
     int is_primary;
+    int audio_data_shared; // 1 if audio_data is borrowed from the original buffer (DuplicateSoundBuffer)
     long volume;    // -10000 to 0 (hundredths of dB, 0 = full volume)
     long pan;       // -10000 to 10000
     DWORD frequency;
@@ -132,7 +134,12 @@ static void sdl_audio_callback(void* userdata, Uint8* stream, int len) {
     DSoundBuffer_ShimData* buf = (DSoundBuffer_ShimData*)userdata;
     SDL_memset(stream, 0, len);
 
-    if (!buf || !buf->is_playing || !buf->audio_data) return;
+    if (!buf) { DSND_LOG("cb: buf=NULL"); return; }
+    DSND_LOG_RL(8, 200, "cb dev=%u play=%d loop=%d pc=%u size=%u data=%p len=%d",
+                (unsigned)buf->device_id, buf->is_playing, buf->is_looping,
+                (unsigned)buf->play_cursor, (unsigned)buf->buffer_size,
+                (void*)buf->audio_data, len);
+    if (!buf->is_playing || !buf->audio_data) return;
 
     DWORD remaining = len;
     DWORD dst_offset = 0;
@@ -214,6 +221,13 @@ static HRESULT dsound_CreateSoundBuffer(LPDIRECTSOUND this_ptr, LPDSBUFFERDESC p
     int is_primary = (pcDesc->dwFlags & DSBCAPS_PRIMARYBUFFER) != 0;
     buf->is_primary = is_primary;
 
+    DSND_LOG("CreateSoundBuffer: primary=%d flags=0x%x bytes=%u fmt=tag%u ch%u rate%u bits%u",
+         is_primary, (unsigned)pcDesc->dwFlags, (unsigned)pcDesc->dwBufferBytes,
+         pcDesc->lpwfxFormat ? pcDesc->lpwfxFormat->wFormatTag : 0,
+         pcDesc->lpwfxFormat ? pcDesc->lpwfxFormat->nChannels : 0,
+         pcDesc->lpwfxFormat ? (unsigned)pcDesc->lpwfxFormat->nSamplesPerSec : 0u,
+         pcDesc->lpwfxFormat ? pcDesc->lpwfxFormat->wBitsPerSample : 0);
+
     if (is_primary) {
         // Primary buffer: configure the audio device
         buf->buffer_size = 0;
@@ -244,6 +258,10 @@ static HRESULT dsound_CreateSoundBuffer(LPDIRECTSOUND this_ptr, LPDSBUFFERDESC p
         want.userdata = buf;
 
         buf->device_id = SDL_OpenAudioDevice(nullptr, 0, &want, &have, 0);
+        DSND_LOG("  secondary SDL_OpenAudioDevice: dev=%u want(freq=%d ch=%u fmt=0x%x samp=%u) have(freq=%d ch=%u fmt=0x%x samp=%u)",
+             (unsigned)buf->device_id,
+             want.freq, want.channels, want.format, want.samples,
+             have.freq, have.channels, have.format, have.samples);
     }
 
     *ppBuf = reinterpret_cast<IDirectSoundBuffer*>(buf);
@@ -282,11 +300,11 @@ static HRESULT dsound_DuplicateSoundBuffer(LPDIRECTSOUND this_ptr,
     dup->frequency = orig->frequency;
     memcpy(&dup->format, &orig->format, sizeof(WAVEFORMATEX));
 
-    if (orig->audio_data && orig->buffer_size > 0) {
-        dup->audio_data = (Uint8*)malloc(orig->buffer_size);
-        if (!dup->audio_data) { free(dup); return DSERR_OUTOFMEMORY; }
-        memcpy(dup->audio_data, orig->audio_data, orig->buffer_size);
-    }
+    // Per DirectSound: duplicates share sample memory with the original so
+    // that writes to the original (e.g. streamed music) are seen by the
+    // duplicate's playback. Use a borrow + shared flag to avoid double-free.
+    dup->audio_data = orig->audio_data;
+    dup->audio_data_shared = 1;
 
     // Open a new audio device for the duplicate
     SDL_AudioSpec want, have;
@@ -338,29 +356,43 @@ static HRESULT dsound_Initialize(LPDIRECTSOUND this_ptr, LPGUID pcGuidDevice) {
 // =============================================================================
 
 static HRESULT dsbuf_QueryInterface(IDirectSoundBuffer* this_ptr, void* riid, void** ppv) {
-    (void)riid;
     DSoundBuffer_ShimData* buf = reinterpret_cast<DSoundBuffer_ShimData*>(this_ptr);
+    (void)buf;
+    if (!ppv) return DSERR_INVALIDPARAM;
 
-    // The game queries for IDirectSound3DBuffer and IDirectSound3DListener
-    // from sound buffers. Provide shim objects for these.
-    // We can't check the actual GUID without Windows headers, so we return
-    // 3D buffer or listener objects as needed.
-    if (ppv) {
-        // Allocate a 3D buffer shim (most common query from secondary buffers)
-        DSound3DBuffer_ShimData* d3d = (DSound3DBuffer_ShimData*)calloc(1, sizeof(DSound3DBuffer_ShimData));
-        if (d3d) {
-            populate_ds3dbuffer_vtable(&d3d->vtable_data);
-            d3d->vtable = &d3d->vtable_data;
-            d3d->ref_count = 1;
-            d3d->params.dwSize = sizeof(DS3DBUFFER);
-            d3d->params.flMinDistance = 1.0f;
-            d3d->params.flMaxDistance = 1000000000.0f;
-            *ppv = d3d;
-            (void)buf;
-            return DS_OK;
-        }
+    // Discriminate by GUID. The game queries for either:
+    //   IID_IDirectSound3DBuffer   = {279AFA86-4981-11CE-A521-0020AF0BE560}
+    //   IID_IDirectSound3DListener = {279AFA84-4981-11CE-A521-0020AF0BE560}
+    // These differ only in Data1. Returning the wrong shim type silently
+    // corrupts state: the game then calls vtable methods by slot, and
+    // slot N of the Buffer vtable is a different method than slot N of the
+    // Listener vtable.
+    const GUID* g = reinterpret_cast<const GUID*>(riid);
+    if (g && g->Data1 == 0x279AFA84) {
+        // IDirectSound3DListener
+        DSound3DListener_ShimData* lst = (DSound3DListener_ShimData*)calloc(1, sizeof(DSound3DListener_ShimData));
+        if (!lst) return DSERR_OUTOFMEMORY;
+        populate_ds3dlistener_vtable(&lst->vtable_data);
+        lst->vtable = &lst->vtable_data;
+        lst->ref_count = 1;
+        lst->params.dwSize = sizeof(DS3DLISTENER);
+        lst->params.flDistanceFactor = 1.0f;
+        lst->params.flRolloffFactor = 1.0f;
+        lst->params.flDopplerFactor = 1.0f;
+        *ppv = lst;
+        return DS_OK;
     }
-    return DSERR_UNSUPPORTED;
+    // Default / 0x279AFA86 (IID_IDirectSound3DBuffer): 3D buffer shim.
+    DSound3DBuffer_ShimData* d3d = (DSound3DBuffer_ShimData*)calloc(1, sizeof(DSound3DBuffer_ShimData));
+    if (!d3d) return DSERR_OUTOFMEMORY;
+    populate_ds3dbuffer_vtable(&d3d->vtable_data);
+    d3d->vtable = &d3d->vtable_data;
+    d3d->ref_count = 1;
+    d3d->params.dwSize = sizeof(DS3DBUFFER);
+    d3d->params.flMinDistance = 1.0f;
+    d3d->params.flMaxDistance = 1000000000.0f;
+    *ppv = d3d;
+    return DS_OK;
 }
 
 static ULONG dsbuf_AddRef(IDirectSoundBuffer* this_ptr) {
@@ -372,7 +404,7 @@ static ULONG dsbuf_Release(IDirectSoundBuffer* this_ptr) {
     DSoundBuffer_ShimData* buf = reinterpret_cast<DSoundBuffer_ShimData*>(this_ptr);
     if (--buf->ref_count == 0) {
         if (buf->device_id) SDL_CloseAudioDevice(buf->device_id);
-        free(buf->audio_data);
+        if (!buf->audio_data_shared) free(buf->audio_data);
         free(buf);
         return 0;
     }
@@ -450,6 +482,10 @@ static HRESULT dsbuf_Lock(LPDIRECTSOUNDBUFFER this_ptr, DWORD dwOffset, DWORD dw
     (void)dwFlags;
     DSoundBuffer_ShimData* buf = reinterpret_cast<DSoundBuffer_ShimData*>(this_ptr);
 
+    DSND_LOG_RL(8, 1000, "Lock dev=%u off=%u bytes=%u size=%u pc=%u flags=0x%x",
+                (unsigned)buf->device_id, (unsigned)dwOffset, (unsigned)dwBytes,
+                (unsigned)buf->buffer_size, (unsigned)buf->play_cursor, (unsigned)dwFlags);
+
     if (!buf->audio_data) return DSERR_INVALIDPARAM;
 
     // Handle wrap-around for circular buffer
@@ -478,6 +514,9 @@ static HRESULT dsbuf_Play(LPDIRECTSOUNDBUFFER this_ptr, DWORD dwReserved1,
     DSoundBuffer_ShimData* buf = reinterpret_cast<DSoundBuffer_ShimData*>(this_ptr);
     buf->is_playing = 1;
     buf->is_looping = (dwFlags & DSBPLAY_LOOPING) ? 1 : 0;
+    DSND_LOG("Play: dev=%u size=%u pc=%u flags=0x%x looping=%d primary=%d shared=%d",
+         (unsigned)buf->device_id, (unsigned)buf->buffer_size, (unsigned)buf->play_cursor,
+         (unsigned)dwFlags, buf->is_looping, buf->is_primary, buf->audio_data_shared);
     if (buf->device_id) {
         SDL_PauseAudioDevice(buf->device_id, 0);
     }
@@ -486,7 +525,9 @@ static HRESULT dsbuf_Play(LPDIRECTSOUNDBUFFER this_ptr, DWORD dwReserved1,
 
 static HRESULT dsbuf_SetCurrentPosition(LPDIRECTSOUNDBUFFER this_ptr, DWORD dwNewPosition) {
     DSoundBuffer_ShimData* buf = reinterpret_cast<DSoundBuffer_ShimData*>(this_ptr);
-    buf->play_cursor = dwNewPosition % buf->buffer_size;
+    buf->play_cursor = buf->buffer_size ? (dwNewPosition % buf->buffer_size) : 0;
+    DSND_LOG("SetCurrentPosition: dev=%u pos=%u -> pc=%u",
+         (unsigned)buf->device_id, (unsigned)dwNewPosition, (unsigned)buf->play_cursor);
     return DS_OK;
 }
 
@@ -496,6 +537,12 @@ static HRESULT dsbuf_SetFormat(LPDIRECTSOUNDBUFFER this_ptr, LPCWAVEFORMATEX pcf
         memcpy(&buf->format, pcfxFormat, sizeof(WAVEFORMATEX));
         buf->frequency = pcfxFormat->nSamplesPerSec;
     }
+    DSND_LOG("SetFormat: primary=%d tag=%u ch=%u rate=%u bits=%u",
+         buf->is_primary,
+         pcfxFormat ? pcfxFormat->wFormatTag : 0,
+         pcfxFormat ? pcfxFormat->nChannels : 0,
+         pcfxFormat ? (unsigned)pcfxFormat->nSamplesPerSec : 0u,
+         pcfxFormat ? pcfxFormat->wBitsPerSample : 0);
     return DS_OK;
 }
 
@@ -529,9 +576,24 @@ static HRESULT dsbuf_Stop(LPDIRECTSOUNDBUFFER this_ptr) {
 
 static HRESULT dsbuf_Unlock(LPDIRECTSOUNDBUFFER this_ptr, LPVOID pvAudioPtr1,
                               DWORD dwAudioBytes1, LPVOID pvAudioPtr2, DWORD dwAudioBytes2) {
-    (void)this_ptr; (void)pvAudioPtr1; (void)dwAudioBytes1;
-    (void)pvAudioPtr2; (void)dwAudioBytes2;
-    // Data already written to the buffer directly
+    (void)this_ptr; (void)pvAudioPtr2; (void)dwAudioBytes2;
+    // Peek at the first 16 bytes of what the game just wrote — helps
+    // distinguish "real mixed audio" vs "silent zero-fill" vs "garbage".
+    // Rate-limited to match Lock; same first-8-then-every-1000th cadence.
+    static int unlock_tick = 0;
+    unlock_tick++;
+    if (unlock_tick > 8 && (unlock_tick % 1000) != 0) return DS_OK;
+
+    if (pvAudioPtr1 && dwAudioBytes1 >= 16) {
+        const uint8_t* p = (const uint8_t*)pvAudioPtr1;
+        int nonzero = 0;
+        for (unsigned i = 0; i < 16; i++) if (p[i] != 0) nonzero++;
+        DSND_LOG("Unlock#%d: bytes1=%u nonzero/16=%d head=%02x%02x %02x%02x %02x%02x %02x%02x",
+             unlock_tick, (unsigned)dwAudioBytes1, nonzero,
+             p[0], p[1], p[2], p[3], p[4], p[5], p[6], p[7]);
+    } else {
+        DSND_LOG("Unlock#%d: bytes1=%u (no peek)", unlock_tick, (unsigned)dwAudioBytes1);
+    }
     return DS_OK;
 }
 

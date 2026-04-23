@@ -4,19 +4,18 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 292,
-    "complexity_score": 173,
+    "complexity_score": 158,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 26,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 123,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast",
-      "unrolled_strcpy"
+      "unnamed_local"
     ],
     "total_lines": 415
   },
@@ -318,6 +317,44 @@
     },
     "pcode_op_count": 964
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 122,
+      "match": "(SDialogEntry *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar9 = (SDialogEntry *)((int)pSVar9 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 61,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 74,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 96,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 832,
     "local_size": 824,
@@ -385,36 +422,31 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 122,
-      "match": "(SDialogEntry *)((int)",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 22,
+      "match": "local_2f8",
       "severity": "mild",
-      "text": "pSVar9 = (SDialogEntry *)((int)pSVar9 + (uint)bVar7 * -8 + 4);",
-      "type": "pointer_cast"
+      "text": "char local_2f8 [60];",
+      "type": "unnamed_local"
     },
     {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 61,
-      "match": "do {",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 23,
+      "match": "local_2bc",
       "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strcpy"
+      "text": "char local_2bc [30];",
+      "type": "unnamed_local"
     },
     {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 74,
-      "match": "do {",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 24,
+      "match": "local_29e",
       "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 96,
-      "match": "do {",
-      "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strcpy"
+      "text": "char local_29e [402];",
+      "type": "unnamed_local"
     }
   ]
 }

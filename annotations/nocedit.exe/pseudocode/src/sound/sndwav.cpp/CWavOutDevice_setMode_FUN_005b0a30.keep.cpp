@@ -18,13 +18,9 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice *t
   LPVOID pvVar4;
   MMRESULT MVar5;
   int iVar6;
-  WORD WStack_20;
-  WORD WStack_1e;
-  DWORD DStack_1c;
-  DWORD DStack_18;
-  ushort uStack_14;
-  WORD WStack_12;
-  
+  WAVEFORMATEX format;
+
+
   iVar1 = (*((this_ptr->base).vtable)->close)(&this_ptr->base);
   if (iVar1 == 0) {
     return 0;
@@ -60,14 +56,14 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice *t
       iVar6 = iVar6 + 4;
     } while (iVar1 < g_WaveOutNumBuffers);
   }
-  WStack_20 = 1;
-  WStack_12 = (WORD)g_WaveOutBitsPerSample;
-  WStack_1e = (WORD)g_WaveOutChannels;
-  uStack_14 = (short)((int)(g_WaveOutBitsPerSample & 0xffffU) >> 3) * (WORD)g_WaveOutChannels;
-  DStack_1c = g_WaveOutSampleRate;
-  DStack_18 = g_WaveOutSampleRate * (uint)uStack_14;
-  MVar5 = (*g_waveOutOpenFunc)(&g_WaveOutHandle,g_WaveOutDeviceID,(LPCWAVEFORMATEX)&WStack_20,0,0,0)
-  ;
+  format.wFormatTag = 1;
+  format.wBitsPerSample = (WORD)g_WaveOutBitsPerSample;
+  format.nChannels = (WORD)g_WaveOutChannels;
+  format.nBlockAlign = (short)((int)(g_WaveOutBitsPerSample & 0xffffU) >> 3) * (WORD)g_WaveOutChannels;
+  format.nSamplesPerSec = g_WaveOutSampleRate;
+  format.nAvgBytesPerSec = g_WaveOutSampleRate * (uint)format.nBlockAlign;
+  format.cbSize = 0;
+  MVar5 = (*g_waveOutOpenFunc)(&g_WaveOutHandle,g_WaveOutDeviceID,&format,0,0,0);
   if (MVar5 == 0) {
     *out_buffer_size = g_WaveOutBufferSize;
     return 1;

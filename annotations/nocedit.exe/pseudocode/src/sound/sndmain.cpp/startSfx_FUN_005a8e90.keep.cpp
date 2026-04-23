@@ -12,7 +12,6 @@
 uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
 
 {
-  char cVar1;
   CSfxSample *pCVar2;
   CMP3Decoder *pCVar3;
   float fVar4;
@@ -31,14 +30,9 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
   CSfxSlot *this_ptr_00;
   CSfxOptions *pCVar9;
   CSfxOptions *pCVar13;
-  char *pcVar14;
-  char *pcVar15;
-  char *pcVar16;
   CSfxOptions *pCVar17;
   CSfxSlot *pCVar10;
-  CSfxSample *pCVar18;
   CSfxSample *pCVar12;
-  byte bVar19;
   char local_390 [256];
   char local_290 [256];
   char local_190 [256];
@@ -47,29 +41,17 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
   uint local_1c;
   CSfxSample *local_18;
   CSfxSample *local_14;
-  char cVar2;
   CVector3d *pCVar5;
   float fVar1;
-  
-  bVar19 = 0;
-  pcVar16 = local_390;
-  pcVar14 = local_390;
-  pcVar15 = local_390;
+
+
   if (((filename == (char *)0x0) || (*filename == '\0')) ||
      (iVar3 = sound_sndmain_cpp_isSoundBusy_FUN_005ab540(), iVar3 == 0)) {
     return 0;
   }
   sound_sndmain_cpp_CSfxOptions_reset_FUN_005a8830(&local_90);
-  do {
-    cVar2 = *filename;
-    *pcVar16 = cVar2;
-    if (cVar2 == '\0') break;
-    cVar1 = filename[1];
-    filename = filename + 2;
-    pcVar16[1] = cVar1;
-    pcVar16 = pcVar16 + 2;
-  } while (cVar1 != '\0');
-  memcpy(&local_90, (char *)g_SfxOptions + g_SfxLastSlot, sizeof(CSfxOptions));
+  strcpy(local_390,filename);
+  memcpy(&local_90, &g_SfxOptions[g_SfxLastSlot], sizeof(CSfxOptions));
   iVar7 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0(local_90.channel_index);
   if (iVar7 == 0) {
     return 0;
@@ -81,16 +63,11 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::kill - must be locked!");
   }
   uVar12 = 0;
-  iVar5 = 0;
-  iVar7 = g_SfxSlots[0].playback_state;
-  while (iVar7 != 0) {
+  while (uVar12 < 64 && g_SfxSlots[uVar12].playback_state != 0) {
     uVar12 = uVar12 + 1;
-    if (0x49ff < iVar5 + 0x128) {
-      uVar12 = 0xffffffff;
-      break;
-    }
-    iVar7 = *(int *)((int)g_SfxSlots[1].distance_to_speakers + iVar5 + -0xc);
-    iVar5 = iVar5 + 0x128;
+  }
+  if (uVar12 >= 64) {
+    uVar12 = 0xffffffff;
   }
   if ((int)uVar12 < 0) {
     sound_sndmain_cpp_unlockSound_FUN_005abdc0();
@@ -145,16 +122,7 @@ LAB_005a900a:
             core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory.");
           }
           sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550(local_18->mp3_data,local_390);
-          pCVar18 = local_18;
-          do {
-            cVar1 = *pcVar14;
-            (pCVar18->sample_info).name[0] = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar14[1];
-            pcVar14 = pcVar14 + 2;
-            (pCVar18->sample_info).name[1] = cVar1;
-            pCVar18 = (CSfxSample *)((pCVar18->sample_info).name + 2);
-          } while (cVar1 != '\0');
+          strcpy(local_18->sample_info.name,local_390);
           (local_18->sample_info).streaming_flag = 1;
           pCVar3 = local_18->mp3_data;
           (local_18->sample_info).bit_depth = 0x10;
@@ -183,17 +151,8 @@ joined_r0x005a94f6:
       else {
         p_Var9 = engine_dosio_c_getFile_FUN_00481a50("sound",local_390,"rb");
         local_18->file_handle = p_Var9;
-        pCVar12 = local_18;
         if (p_Var9 != (_FILE *)0x0) {
-          do {
-            cVar1 = *pcVar15;
-            (pCVar12->sample_info).name[0] = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar15[1];
-            pcVar15 = pcVar15 + 2;
-            (pCVar12->sample_info).name[1] = cVar1;
-            pCVar12 = (CSfxSample *)((pCVar12->sample_info).name + 2);
-          } while (cVar1 != '\0');
+          strcpy(local_18->sample_info.name,local_390);
           lVar10 = _ftell(local_18->file_handle);
           local_18->file_offset = lVar10;
           iVar7 = sound_sndmain_cpp_parseWavFile_FUN_005a3fe0

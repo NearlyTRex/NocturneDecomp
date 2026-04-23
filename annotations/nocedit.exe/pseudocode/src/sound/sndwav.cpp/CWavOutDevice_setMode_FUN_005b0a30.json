@@ -11,7 +11,7 @@
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 15,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 68,
     "suspect_count": 6,
     "suspect_types": [
@@ -285,7 +285,7 @@
       "description": "Complex pointer cast",
       "line": 42,
       "match": "(HGLOBAL *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(HGLOBAL *)((int)g_WaveOutBufferHandles + iVar6) = pvVar3;",
       "type": "pointer_cast"
     },
@@ -293,7 +293,7 @@
       "description": "Complex pointer cast",
       "line": 45,
       "match": "(LPVOID *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(LPVOID *)((int)g_WaveOutBuffers + iVar6) = pvVar4;",
       "type": "pointer_cast"
     },
@@ -301,7 +301,7 @@
       "description": "Complex pointer cast",
       "line": 48,
       "match": "(HGLOBAL *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6) = pvVar3;",
       "type": "pointer_cast"
     },
@@ -309,7 +309,7 @@
       "description": "Complex pointer cast",
       "line": 51,
       "match": "(HGLOBAL *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "pvVar4 = (*g_GlobalLockFunc)(*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6));",
       "type": "pointer_cast"
     },
@@ -317,7 +317,7 @@
       "description": "Complex pointer cast",
       "line": 52,
       "match": "(LPVOID *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(LPVOID *)((int)g_WaveOutHeaders + iVar6) = pvVar4;",
       "type": "pointer_cast"
     }

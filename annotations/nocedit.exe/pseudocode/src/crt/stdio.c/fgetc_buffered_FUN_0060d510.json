@@ -112,7 +112,7 @@
       "description": "Complex pointer cast",
       "line": 12,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "iVar1 = *(int *)((int)&stream->_cnt + *(int *)(stream->_ptr + 4));",
       "type": "pointer_cast"
     },
@@ -128,7 +128,7 @@
       "description": "Complex pointer cast",
       "line": 23,
       "match": "(FileEmbeddedData *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "((FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4)),4);",
       "type": "pointer_cast"
     }

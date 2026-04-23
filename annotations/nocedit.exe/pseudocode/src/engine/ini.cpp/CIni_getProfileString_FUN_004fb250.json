@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 236,
-    "complexity_score": 153,
+    "complexity_score": 178,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 8,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 113,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
       "unrolled_strchr",
+      "unrolled_strcpy",
       "unrolled_strlen"
     ],
     "total_lines": 349
@@ -280,6 +281,22 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 77,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 101,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
       "line": 69,

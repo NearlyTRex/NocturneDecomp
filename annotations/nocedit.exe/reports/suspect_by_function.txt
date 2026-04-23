@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5148 (79.8%)
-With suspects: 1306
-Total suspects: 5853
+Clean: 5106 (79.1%)
+With suspects: 1348
+Total suspects: 5937
 
 ====================================================================================================
 cockpit_ckptutil.c_applyActPalette_FUN_004319b0 (1 suspect)
@@ -574,7 +574,7 @@ core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260 (1 suspect)
   Line 9 [unnamed_param]: (pCVar1->param1).v_int = 0;
 
 ====================================================================================================
-core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (53 suspects)
+core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (54 suspects)
   File: core/actor.cpp
 ====================================================================================================
   Line 91 [unnamed_param]: (g_CEditorToolsPtr,local_2a0,(int *)&local_2c,(this_ptr->param1).v_int,
@@ -630,20 +630,32 @@ core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (53 suspects)
   Line 708 [pointer_cast]: *(uint *)((int)&g_PropertyFlagDefinitions[0].name + iVar20),pcVar6);
   Line 741 [pointer_cast]: pcVar8 = (char *)((int)((this_ptr->data).v_dfm_ptr)->transformed_vertices +
   Line 742 [unnamed_param]: (this_ptr->param1).v_int * 100 + 0x1a0);
+  Line 743 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50 (12 suspects)
+core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50 (23 suspects)
   File: core/actor.cpp
 ====================================================================================================
+  Line 38 [unrolled_strcpy]: do {
+  Line 57 [unrolled_strcpy]: do {
+  Line 72 [unrolled_strcpy]: do {
+  Line 86 [unrolled_strcpy]: do {
+  Line 100 [unrolled_strcpy]: do {
+  Line 114 [unrolled_strcpy]: do {
+  Line 128 [unrolled_strcpy]: do {
+  Line 145 [unrolled_strcpy]: do {
   Line 165 [unnamed_param]: if ((this_ptr->param1).v_int < *(int *)(this_ptr->data).v_string_ptr) {
   Line 166 [pointer_cast]: piVar9 = (int *)((int)(this_ptr->data).v_string_ptr + ((this_ptr->param1).v_int * 10 + 1) * 4)
   Line 166 [unnamed_param]: piVar9 = (int *)((int)(this_ptr->data).v_string_ptr + ((this_ptr->param1).v_int * 10 + 1) * 4)
   Line 174 [pointer_cast]: cVar1 = *(char *)((int)piVar9 + 1);
   Line 175 [pointer_cast]: piVar9 = (int *)((int)piVar9 + 2);
+  Line 182 [unrolled_strcpy]: do {
   Line 197 [unnamed_param]: if (0 < (this_ptr->param1).v_int) {
   Line 198 [unnamed_param]: puVar10 = (this_ptr->param2).v_ptr;
   Line 206 [unnamed_param]: } while (iVar1 < (this_ptr->param1).v_int);
+  Line 208 [unrolled_strcpy]: do {
   Line 222 [unnamed_param]: iVar1 = (this_ptr->param1).v_int;
+  Line 228 [unrolled_strcpy]: do {
   Line 246 [unrolled_strcpy]: do {
   Line 259 [pointer_cast]: *(uint *)((int)&g_PropertyFlagDefinitions[0].mask + iVar13)) != 0) {
   Line 271 [pointer_cast]: *(uint *)((int)&g_PropertyFlagDefinitions[0].mask + iVar13)) != 0) {
@@ -746,6 +758,24 @@ core_actor.cpp_syncActorTypeIDs_FUN_0040c7c0 (1 suspect)
   Line 13 [pointer_cast]: piVar1 = (int *)((int)g_ActorClassRegistrations + iVar3);
 
 ====================================================================================================
+core_ammo.cpp_CAmmo_propertyDisplayCallback_FUN_00411200 (1 suspect)
+  File: core/ammo.cpp
+====================================================================================================
+  Line 42 [unrolled_strcpy]: do {
+
+====================================================================================================
+core_ammobox.cpp_CAmmoBox_propertyDisplayCallback_FUN_00411a30 (1 suspect)
+  File: core/ammobox.cpp
+====================================================================================================
+  Line 31 [unrolled_strcpy]: do {
+
+====================================================================================================
+core_anvil.cpp_CAnvil_ctor_FUN_00411ce0 (1 suspect)
+  File: core/anvil.cpp
+====================================================================================================
+  Line 21 [unrolled_strcpy]: do {
+
+====================================================================================================
 core_anvil.cpp_CAnvil_process_FUN_00411d90 (1 suspect)
   File: core/anvil.cpp
 ====================================================================================================
@@ -824,6 +854,12 @@ core_batman.cpp_CBatman_process_FUN_00416870 (1 suspect)
   File: core/batman.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
+
+====================================================================================================
+core_biggs.cpp_CBiggs_ctor_FUN_004185c0 (1 suspect)
+  File: core/biggs.cpp
+====================================================================================================
+  Line 30 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_bodypart.cpp_CBodyPart_addFire_FUN_0041ae50 (2 suspects)
@@ -1003,6 +1039,12 @@ core_boxactor.cpp_CBoxActor_process_FUN_004219e0 (1 suspect)
   File: core/boxactor.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
+====================================================================================================
+core_boxactor.cpp_CLightActor_propertyDisplayTypeCallback_FUN_00423310 (1 suspect)
+  File: core/boxactor.cpp
+====================================================================================================
+  Line 28 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_bride.cpp_CBride_getTargetPoints_FUN_00424a10 (1 suspect)
@@ -1958,6 +2000,12 @@ core_dest.cpp_CActorDestination_process_FUN_0046f9b0 (1 suspect)
   Line 23 [pointer_cast]: iVar1 = *(int *)((int)g_CDemonSetPtr->actors + iVar3);
 
 ====================================================================================================
+core_dfilter.cpp_CDemonFilter_ctor_FUN_004701f0 (1 suspect)
+  File: core/dfilter.cpp
+====================================================================================================
+  Line 14 [unrolled_strcpy]: do {
+
+====================================================================================================
 core_dfilter.cpp_CDemonFilter_init_FUN_004705a0 (2 suspects)
   File: core/dfilter.cpp
 ====================================================================================================
@@ -1965,10 +2013,11 @@ core_dfilter.cpp_CDemonFilter_init_FUN_004705a0 (2 suspects)
   Line 37 [pointer_cast]: fVar3 = (float)*(byte *)((int)this_ptr->data_buffer + this_ptr->size * iVar5 + iVar4) *
 
 ====================================================================================================
-core_dfilter.cpp_CDemonFilter_load_FUN_004702f0 (1 suspect)
+core_dfilter.cpp_CDemonFilter_load_FUN_004702f0 (2 suspects)
   File: core/dfilter.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+  Line 57 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_dfilter.cpp_CFilterFX_process_FUN_004708e0 (1 suspect)
@@ -2045,6 +2094,12 @@ core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160 (3 suspects)
   Line 36 [sub84_truncation]: uStack_94 = SUB84(__BITCAST_UINT64(dVar2),0);
   Line 41 [sub84_truncation]: uStack_84 = SUB84(__BITCAST_UINT64(dVar2),0);
   Line 44 [sub84_truncation]: uStack_5c = SUB84(__BITCAST_UINT64(dVar3),0);
+
+====================================================================================================
+core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770 (1 suspect)
+  File: core/dlight.cpp
+====================================================================================================
+  Line 89 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_dlight.cpp_CDemonLight_beginBackgroundScene_FUN_00472e40 (1 suspect)
@@ -2492,6 +2547,12 @@ core_door.cpp_CDoor_process_FUN_004800c0 (1 suspect)
   Line 131 [pointer_cast]: iVar1 = *(int *)((int)g_CDemonSetPtr->characters + iVar4);
 
 ====================================================================================================
+core_door.cpp_CDoor_propertyDisplayCallback_FUN_00481250 (1 suspect)
+  File: core/door.cpp
+====================================================================================================
+  Line 20 [unrolled_strcpy]: do {
+
+====================================================================================================
 core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_004824f0 (11 suspects)
   File: core/dpart.cpp
 ====================================================================================================
@@ -2600,10 +2661,13 @@ core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 (2 suspects)
   Line 3 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
 
 ====================================================================================================
-core_drip.cpp_CDrip_propertyDisplayCallback_FUN_0048e830 (1 suspect)
+core_drip.cpp_CDrip_propertyDisplayCallback_FUN_0048e830 (4 suspects)
   File: core/drip.cpp
 ====================================================================================================
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x0048e859) */
+  Line 17 [unrolled_strcpy]: do {
+  Line 32 [unrolled_strcpy]: do {
+  Line 47 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_drone.cpp_CDrone_process_FUN_0048ec70 (1 suspect)
@@ -2616,6 +2680,12 @@ core_dskybox.cpp_generateSkyDomeVertex_FUN_004900b0 (1 suspect)
   File: core/dskybox.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
+====================================================================================================
+core_dskybox.cpp_initializeSkyboxTexture_FUN_00490070 (1 suspect)
+  File: core/dskybox.cpp
+====================================================================================================
+  Line 15 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_dskybox.cpp_renderSkyDome_FUN_004901f0 (8 suspects)
@@ -2963,6 +3033,12 @@ core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004a7e80 (1 suspect)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */
 
 ====================================================================================================
+core_enemy.cpp_CEnemy_ctor_FUN_004a9500 (1 suspect)
+  File: core/enemy.cpp
+====================================================================================================
+  Line 39 [unrolled_strcpy]: do {
+
+====================================================================================================
 core_enemy.cpp_CEnemy_testAttackLine_FUN_004a9930 (1 suspect)
   File: core/enemy.cpp
 ====================================================================================================
@@ -2983,26 +3059,68 @@ core_enemy.cpp_CEnemy_updateVictim_FUN_004a9b00 (3 suspects)
   Line 95 [pointer_cast]: local_18 = *(float *)((int)g_EnemyVictimCandidateDistances + iVar8);
 
 ====================================================================================================
-core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (14 suspects)
+core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (50 suspects)
   File: core/event.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
+  Line 129 [unrolled_strcpy]: do {
+  Line 158 [unrolled_strcpy]: do {
+  Line 183 [unrolled_strcpy]: do {
+  Line 223 [unrolled_strcpy]: do {
   Line 239 [unrolled_strlen]: do {
+  Line 277 [unrolled_strcpy]: do {
+  Line 296 [unrolled_strcpy]: do {
   Line 312 [unrolled_strlen]: do {
+  Line 352 [unrolled_strcpy]: do {
   Line 368 [unrolled_strlen]: do {
   Line 391 [unrolled_strlen]: do {
+  Line 435 [unrolled_strcpy]: do {
+  Line 454 [unrolled_strcpy]: do {
+  Line 470 [unrolled_strcpy]: do {
+  Line 486 [unrolled_strcpy]: do {
+  Line 517 [unrolled_strcpy]: do {
   Line 533 [unrolled_strlen]: do {
+  Line 580 [unrolled_strcpy]: do {
+  Line 611 [unrolled_strcpy]: do {
+  Line 651 [unrolled_strcpy]: do {
+  Line 676 [unrolled_strcpy]: do {
+  Line 701 [unrolled_strcpy]: do {
+  Line 724 [unrolled_strcpy]: do {
+  Line 762 [unrolled_strcpy]: do {
   Line 778 [unrolled_strlen]: do {
   Line 801 [unrolled_strlen]: do {
+  Line 848 [unrolled_strcpy]: do {
   Line 864 [unrolled_strlen]: do {
   Line 887 [unrolled_strlen]: do {
+  Line 927 [unrolled_strcpy]: do {
+  Line 943 [unrolled_strcpy]: do {
+  Line 962 [unrolled_strcpy]: do {
+  Line 1003 [unrolled_strcpy]: do {
+  Line 1022 [unrolled_strcpy]: do {
+  Line 1047 [unrolled_strcpy]: do {
+  Line 1073 [unrolled_strcpy]: do {
   Line 1089 [unrolled_strlen]: do {
+  Line 1126 [unrolled_strcpy]: do {
+  Line 1166 [unrolled_strcpy]: do {
+  Line 1226 [unrolled_strcpy]: do {
+  Line 1265 [unrolled_strcpy]: do {
+  Line 1302 [unrolled_strcpy]: do {
+  Line 1322 [unrolled_strcpy]: do {
+  Line 1362 [unrolled_strcpy]: do {
+  Line 1398 [unrolled_strcpy]: do {
   Line 1414 [unrolled_strlen]: do {
   Line 1437 [unrolled_strlen]: do {
   Line 1460 [unrolled_strlen]: do {
+  Line 1519 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (77 suspects)
+core_event.cpp_CEventList_evaluateExpression_FUN_004add80 (1 suspect)
+  File: core/event.cpp
+====================================================================================================
+  Line 18 [unrolled_strcpy]: do {
+
+====================================================================================================
+core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (50 suspects)
   File: core/event.cpp
 ====================================================================================================
   Line 38 [unnamed_local]: char local_163c [256];
@@ -3037,51 +3155,24 @@ core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (77 suspects)
   Line 127 [unnamed_local]: int local_20;
   Line 128 [unnamed_local]: int local_1c;
   Line 129 [unnamed_local]: int local_18;
-  Line 133 [unrolled_strchr]: do {
-  Line 158 [unrolled_strlen]: do {
-  Line 190 [unrolled_strlen]: do {
-  Line 230 [unnamed_local]: pcVar18 = core_event_cpp_extractParenArg_FUN_004aa6c0((char **)&local_ec,local_fc4,200);
-  Line 255 [unnamed_local]: local_e4 = -1;
-  Line 256 [unnamed_local]: sscanf((char *)local_ec,"( %f , %n",local_e0,&local_e4);
-  Line 257 [unnamed_local]: if (local_e4 < 0) {
-  Line 261 [unrolled_strlen]: do {
-  Line 384 [unnamed_local]: ((char *)local_ec,"( %[^ ,], %d, %d )%n",local_163c,&local_d8,&local_d4,&local_d0);
-  Line 394 [unnamed_local]: iVar2 = engine_dosio_c_getFileSize_FUN_00481880("art",local_163c);
-  Line 406 [unnamed_local]: (g_CGamePtr,local_163c,local_d8,local_d4);
-  Line 439 [unrolled_strlen]: do {
-  Line 575 [unrolled_strlen]: do {
-  Line 599 [unrolled_strlen]: do {
-  Line 669 [unrolled_strlen]: do {
-  Line 723 [unnamed_local]: local_a4 = -1;
-  Line 728 [unnamed_local]: &local_9c,&local_a4);
-  Line 737 [unrolled_strlen]: do {
-  Line 762 [unrolled_strlen]: do {
-  Line 877 [unrolled_strlen]: do {
-  Line 878 [unnamed_local]: local_8c = -1;
-  Line 985 [unrolled_strlen]: do {
-  Line 990 [unnamed_local]: local_7c = -1;
-  Line 1028 [unrolled_strlen]: do {
-  Line 1053 [unrolled_strlen]: do {
-  Line 1130 [unrolled_strlen]: do {
-  Line 1194 [unrolled_strlen]: do {
-  Line 1200 [unnamed_local]: local_6c = -1;
-  Line 1314 [unnamed_local]: ((char *)local_ec,"( %[^ ,] , %d )%n",local_7f4,
-  Line 1354 [unrolled_strlen]: do {
-  Line 1379 [unrolled_strlen]: do {
-  Line 1461 [unrolled_strlen]: do {
-  Line 1487 [unrolled_strlen]: do {
-  Line 1570 [unrolled_strlen]: do {
-  Line 1597 [unrolled_strlen]: do {
-  Line 1646 [unrolled_strlen]: do {
-  Line 1758 [unrolled_strlen]: do {
-  Line 1784 [unrolled_strlen]: do {
-  Line 1894 [unnamed_local]: local_1c = -1;
-  Line 1957 [unrolled_strlen]: do {
-  Line 1978 [unnamed_local]: local_18 = -1;
-  Line 1981 [unnamed_local]: local_bdd + 1,local_59d + 1,&local_18);
-  Line 1982 [unnamed_local]: if (local_18 < 5) {
-  Line 1983 [unrolled_strlen]: do {
-  Line 2081 [unrolled_strlen]: do {
+  Line 205 [unnamed_local]: pcVar18 = core_event_cpp_extractParenArg_FUN_004aa6c0((char **)&local_ec,local_fc4,200);
+  Line 230 [unnamed_local]: local_e4 = -1;
+  Line 231 [unnamed_local]: sscanf((char *)local_ec,"( %f , %n",local_e0,&local_e4);
+  Line 232 [unnamed_local]: if (local_e4 < 0) {
+  Line 351 [unnamed_local]: ((char *)local_ec,"( %[^ ,], %d, %d )%n",local_163c,&local_d8,&local_d4,&local_d0);
+  Line 361 [unnamed_local]: iVar2 = engine_dosio_c_getFileSize_FUN_00481880("art",local_163c);
+  Line 373 [unnamed_local]: (g_CGamePtr,local_163c,local_d8,local_d4);
+  Line 483 [unrolled_strcpy]: do {
+  Line 658 [unnamed_local]: local_a4 = -1;
+  Line 663 [unnamed_local]: &local_9c,&local_a4);
+  Line 797 [unnamed_local]: local_8c = -1;
+  Line 901 [unnamed_local]: local_7c = -1;
+  Line 1079 [unnamed_local]: local_6c = -1;
+  Line 1185 [unnamed_local]: ((char *)local_ec,"( %[^ ,] , %d )%n",local_7f4,
+  Line 1693 [unnamed_local]: local_1c = -1;
+  Line 1777 [unnamed_local]: local_18 = -1;
+  Line 1780 [unnamed_local]: local_bdd + 1,local_59d + 1,&local_18);
+  Line 1781 [unnamed_local]: if (local_18 < 5) {
 
 ====================================================================================================
 core_event.cpp_CEventList_saveState_FUN_004b1380 (2 suspects)
@@ -3091,12 +3182,16 @@ core_event.cpp_CEventList_saveState_FUN_004b1380 (2 suspects)
   Line 72 [unnamed_local]: local_14 = 0;
 
 ====================================================================================================
-core_event.cpp_CEventList_updateSfxEntries_FUN_004b0db0 (3 suspects)
+core_event.cpp_resolveActorByName_FUN_004aa400 (1 suspect)
   File: core/event.cpp
 ====================================================================================================
-  Line 25 [sub84_truncation]: local_20 = SUB84(__BITCAST_UINT64(dVar5),0);
-  Line 28 [pointer_cast]: *(int *)((int)&dest->playback_position + 4) = iStack_1c;
-  Line 36 [unrolled_strcpy]: do {
+  Line 14 [unrolled_strcpy]: do {
+
+====================================================================================================
+core_event.cpp_setEventError_FUN_004aa270 (1 suspect)
+  File: core/event.cpp
+====================================================================================================
+  Line 9 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20 (5 suspects)
@@ -3114,6 +3209,12 @@ core_filmreel.cpp_CFilmProjector_ctor_FUN_004bea40 (2 suspects)
 ====================================================================================================
   Line 19 [unrolled_strcpy]: do {
   Line 32 [unrolled_strcpy]: do {
+
+====================================================================================================
+core_filmreel.cpp_CFilmReel_ctor_FUN_004be6b0 (1 suspect)
+  File: core/filmreel.cpp
+====================================================================================================
+  Line 18 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_fire.cpp_CBulletHole_init_FUN_004bf7f0 (1 suspect)
@@ -3523,6 +3624,12 @@ core_game.cpp_CGame_displayActStats_FUN_004e3800 (3 suspects)
   Line 69 [unrolled_strlen]: do {
 
 ====================================================================================================
+core_game.cpp_CGame_displayMessage_FUN_004d7f20 (1 suspect)
+  File: core/game.cpp
+====================================================================================================
+  Line 15 [unrolled_strcpy]: do {
+
+====================================================================================================
 core_game.cpp_CGame_finishAct_FUN_004e3b90 (3 suspects)
   File: core/game.cpp
 ====================================================================================================
@@ -3590,12 +3697,13 @@ core_game.cpp_CGame_rollCredits_FUN_004e4010 (5 suspects)
   Line 140 [pointer_cast]: puVar1 = (uint *)((int)local_1134 + iVar2);
 
 ====================================================================================================
-core_game.cpp_CGame_saveGame_FUN_004e0cd0 (3 suspects)
+core_game.cpp_CGame_saveGame_FUN_004e0cd0 (4 suspects)
   File: core/game.cpp
 ====================================================================================================
   Line 42 [unrolled_strcpy]: do {
   Line 72 [unrolled_strcpy]: do {
   Line 101 [pointer_cast]: puVar1 = (uint *)((int)g_HeroActors + iVar4);
+  Line 170 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 (3 suspects)
@@ -3775,13 +3883,14 @@ core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0 (3 suspects)
   Line 48 [pointer_cast]: *(uint *)((int)&pCVar1->vertex_buffer_ptr->b + iVar3) = 0xffff;
 
 ====================================================================================================
-core_glass.cpp_CGlass_setup_FUN_004e9180 (4 suspects)
+core_glass.cpp_CGlass_setup_FUN_004e9180 (5 suspects)
   File: core/glass.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
   Line 210 [unrolled_strcpy]: do {
   Line 225 [unrolled_strcpy]: do {
   Line 240 [unrolled_strcpy]: do {
+  Line 255 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_glass.cpp_CGlass_shatter_FUN_004eaef0 (9 suspects)
@@ -3989,6 +4098,12 @@ core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220 (1 suspect)
   Line 14 [pointer_cast]: iVar1 = *(int *)((int)g_HeroActors + iVar5);
 
 ====================================================================================================
+core_hiram.cpp_CHiram_ctor_FUN_004f43f0 (1 suspect)
+  File: core/hiram.cpp
+====================================================================================================
+  Line 16 [unrolled_strcpy]: do {
+
+====================================================================================================
 core_hostage.cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550 (6 suspects)
   File: core/hostage.cpp
 ====================================================================================================
@@ -4016,6 +4131,12 @@ core_hotdemon.cpp_CHotDemon_process_FUN_004f6f20 (1 suspect)
   File: core/hotdemon.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
+
+====================================================================================================
+core_hpriest.cpp_CHighPriestOfGardath_ctor_FUN_004f7b70 (1 suspect)
+  File: core/hpriest.cpp
+====================================================================================================
+  Line 16 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004f8970 (1 suspect)
@@ -4272,6 +4393,24 @@ core_lever.cpp_CLever_getHandlePosition_FUN_00504dd0 (1 suspect)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 ====================================================================================================
+core_lever.cpp_CLever_propertyDisplayStateFunc_FUN_005051a0 (1 suspect)
+  File: core/lever.cpp
+====================================================================================================
+  Line 20 [unrolled_strcpy]: do {
+
+====================================================================================================
+core_lever.cpp_CLever_propertyDisplayTypeCallback_FUN_00505100 (1 suspect)
+  File: core/lever.cpp
+====================================================================================================
+  Line 20 [unrolled_strcpy]: do {
+
+====================================================================================================
+core_lever.cpp_CLever_setup_FUN_005048a0 (1 suspect)
+  File: core/lever.cpp
+====================================================================================================
+  Line 17 [unrolled_strcpy]: do {
+
+====================================================================================================
 core_lightgun.cpp_CLightGun_process_FUN_00506450 (1 suspect)
   File: core/lightgun.cpp
 ====================================================================================================
@@ -4365,11 +4504,12 @@ core_marquee.cpp_CMarquee_renderTransparent_FUN_0050c050 (1 suspect)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 ====================================================================================================
-core_melee.cpp_CMelee_ctor_FUN_0050e7d0 (2 suspects)
+core_melee.cpp_CMelee_ctor_FUN_0050e7d0 (3 suspects)
   File: core/melee.cpp
 ====================================================================================================
   Line 33 [unrolled_strcpy]: do {
   Line 44 [unrolled_strcpy]: do {
+  Line 55 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_menu.cpp_configureCustomKeyBindings_FUN_005138e0 (35 suspects)
@@ -4452,13 +4592,23 @@ core_menu.cpp_configureSoundOptions_FUN_00511e50 (9 suspects)
   Line 516 [sub84_truncation]: uStack_4c = SUB84(__BITCAST_UINT64(dVar1),0);
 
 ====================================================================================================
-core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70 (4 suspects)
+core_menu.cpp_getKeyDisplayName_FUN_005134e0 (1 suspect)
   File: core/menu.cpp
 ====================================================================================================
+  Line 77 [unrolled_strcpy]: do {
+
+====================================================================================================
+core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70 (8 suspects)
+  File: core/menu.cpp
+====================================================================================================
+  Line 16 [unnamed_local]: SMRGLPrimitiveQuadIndex local_2c;
   Line 25 [raw_address_constant]: this_ptr->vertex_buffer_ptr->v = 0xf80000;
   Line 26 [raw_address_constant]: this_ptr->vertex_buffer_ptr[1].u = 0xf80000;
   Line 27 [raw_address_constant]: this_ptr->vertex_buffer_ptr[1].v = 0xf80000;
   Line 28 [raw_address_constant]: this_ptr->vertex_buffer_ptr[2].u = 0xf80000;
+  Line 40 [unnamed_local]: local_2c.base.base.count = 4;
+  Line 41 [unnamed_local]: local_2c.base.surface_normal.D = 0;
+  Line 42 [unnamed_local]: local_2c.base.surface_normal.C = 0;
 
 ====================================================================================================
 core_menu.cpp_showCalibrationTestPattern_FUN_00510a50 (1 suspect)
@@ -4632,6 +4782,12 @@ core_mission.cpp_CDemonMission_process_FUN_00524250 (1 suspect)
   File: core/mission.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
+
+====================================================================================================
+core_mission.cpp_CDemonMission_setMissionName_FUN_00524630 (1 suspect)
+  File: core/mission.cpp
+====================================================================================================
+  Line 9 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_mission.cpp_CDemonMission_writeFile_FUN_00523600 (1 suspect)
@@ -5300,6 +5456,24 @@ core_platfrm.cpp_CPlatform_propertyActionSlewCallback_FUN_0054e480 (1 suspect)
   Line 0 [param_count_too_few]: Function declares 1 params but call sites push 2 (1 missing)
 
 ====================================================================================================
+core_platfrm.cpp_CPlatform_propertyDisplaySlewCallback_FUN_0054e400 (1 suspect)
+  File: core/platfrm.cpp
+====================================================================================================
+  Line 25 [unrolled_strcpy]: do {
+
+====================================================================================================
+core_platfrm.cpp_CPlatform_propertyDisplayStateCallback_FUN_0054e700 (1 suspect)
+  File: core/platfrm.cpp
+====================================================================================================
+  Line 21 [unrolled_strcpy]: do {
+
+====================================================================================================
+core_platfrm.cpp_CPlatform_propertyDisplayTypeCallback_FUN_0054e4e0 (1 suspect)
+  File: core/platfrm.cpp
+====================================================================================================
+  Line 18 [unrolled_strcpy]: do {
+
+====================================================================================================
 core_platfrm.cpp_CPlatform_setup_FUN_0054ca20 (2 suspects)
   File: core/platfrm.cpp
 ====================================================================================================
@@ -5401,24 +5575,28 @@ core_script.cpp_CCmdParse_bestParse_FUN_00561db0 (1 suspect)
   Line 62 [pointer_cast]: piVar1 = (int *)((int)aiStack_bc + iVar7);
 
 ====================================================================================================
-core_script.cpp_CCmdParse_parse_FUN_00561fd0 (6 suspects)
+core_script.cpp_CCmdParse_parse_FUN_00561fd0 (9 suspects)
   File: core/script.cpp
 ====================================================================================================
   Line 144 [unrolled_strcpy]: do {
   Line 155 [unrolled_strlen]: do {
+  Line 164 [unrolled_strcpy]: do {
   Line 189 [unrolled_strlen]: do {
   Line 189 [unrolled_strcat]: do {
   Line 198 [unrolled_strcpy]: do {
   Line 225 [unrolled_strlen]: do {
+  Line 234 [unrolled_strcpy]: do {
+  Line 257 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_script.cpp_CCmdParse_toString_FUN_005624f0 (4 suspects)
+core_script.cpp_CCmdParse_toString_FUN_005624f0 (5 suspects)
   File: core/script.cpp
 ====================================================================================================
   Line 21 [unrolled_strcpy]: do {
   Line 42 [unrolled_strcpy]: do {
   Line 67 [unrolled_strcpy]: do {
   Line 88 [unrolled_strcpy]: do {
+  Line 112 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_script.cpp_CScript_addEventXRef_FUN_00567510 (2 suspects)
@@ -5435,11 +5613,12 @@ core_script.cpp_CScript_browseEventXRefs_FUN_005677a0 (2 suspects)
   Line 157 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_script.cpp_CScript_checkSyntax_FUN_00566080 (2 suspects)
+core_script.cpp_CScript_checkSyntax_FUN_00566080 (3 suspects)
   File: core/script.cpp
 ====================================================================================================
   Line 27 [pointer_cast]: cVar1 = *(char *)((int)piVar2 + 1);
   Line 28 [pointer_cast]: piVar2 = (int *)((int)piVar2 + 2);
+  Line 38 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_script.cpp_CScript_collectSoundReferences_FUN_00567bc0 (1 suspect)
@@ -5448,13 +5627,12 @@ core_script.cpp_CScript_collectSoundReferences_FUN_00567bc0 (1 suspect)
   Line 32 [pointer_cast]: *(uint *)((int)&this_ptr->parsed_lines->line_number + local_1c));
 
 ====================================================================================================
-core_script.cpp_CScript_dbLoad_FUN_005603c0 (4 suspects)
+core_script.cpp_CScript_dbLoad_FUN_005603c0 (3 suspects)
   File: core/script.cpp
 ====================================================================================================
-  Line 61 [unrolled_strcpy]: do {
-  Line 74 [unrolled_strcpy]: do {
-  Line 96 [unrolled_strcpy]: do {
-  Line 122 [pointer_cast]: pSVar9 = (SDialogEntry *)((int)pSVar9 + (uint)bVar7 * -8 + 4);
+  Line 22 [unnamed_local]: char local_2f8 [60];
+  Line 23 [unnamed_local]: char local_2bc [30];
+  Line 24 [unnamed_local]: char local_29e [402];
 
 ====================================================================================================
 core_script.cpp_CScript_editParameterAtPosition_FUN_00565ae0 (3 suspects)
@@ -5512,21 +5690,16 @@ core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630 (2 suspects)
   Line 18 [pointer_cast]: puVar1 = (uint *)((int)&this_ptr->parsed_lines->text + iVar2);
 
 ====================================================================================================
-core_script.cpp_CScript_step_FUN_0055a810 (12 suspects)
+core_script.cpp_CScript_showSyntaxHelp_FUN_00565e70 (1 suspect)
+  File: core/script.cpp
+====================================================================================================
+  Line 49 [unrolled_strcpy]: do {
+
+====================================================================================================
+core_script.cpp_CScript_step_FUN_0055a810 (1 suspect)
   File: core/script.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 236 [unrolled_strcpy]: do {
-  Line 751 [unrolled_strcpy]: do {
-  Line 813 [unrolled_strcpy]: do {
-  Line 937 [pointer_cast]: if (*(int *)((int)local_c8c + iVar30) != 0) {
-  Line 1382 [sub84_truncation]: SUB84(__BITCAST_UINT64(dVar1),0),
-  Line 1485 [unrolled_strlen]: do {
-  Line 2955 [unrolled_strchr]: do {
-  Line 2970 [unrolled_strlen]: do {
-  Line 2970 [unrolled_strcat]: do {
-  Line 2979 [unrolled_strcpy]: do {
-  Line 3080 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_script.cpp_clearSelections_FUN_005644e0 (8 suspects)
@@ -5562,6 +5735,18 @@ core_script.cpp_editParameterValue_FUN_00562920 (17 suspects)
   Line 573 [unrolled_strcpy]: do {
   Line 600 [unrolled_strcpy]: do {
   Line 683 [pointer_cast]: if (*(int *)((int)local_a8 + local_14) != 0) {
+
+====================================================================================================
+core_script.cpp_expandTemplateText_FUN_005643d0 (1 suspect)
+  File: core/script.cpp
+====================================================================================================
+  Line 36 [unrolled_strcpy]: do {
+
+====================================================================================================
+core_script.cpp_getActor_FUN_005594e0 (1 suspect)
+  File: core/script.cpp
+====================================================================================================
+  Line 15 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_script.cpp_parseCommandWithTemplates_FUN_00561690 (11 suspects)
@@ -6239,6 +6424,12 @@ core_setutil.cpp_C3DSLight_apply_FUN_00586bf0 (2 suspects)
   Line 28 [unrolled_strcpy]: do {
 
 ====================================================================================================
+core_setutil.cpp_C3DSLight_create_FUN_00586a90 (1 suspect)
+  File: core/setutil.cpp
+====================================================================================================
+  Line 60 [unrolled_strcpy]: do {
+
+====================================================================================================
 core_setutil.cpp_C3DSLight_import3DS_FUN_005874d0 (4 suspects)
   File: core/setutil.cpp
 ====================================================================================================
@@ -6283,11 +6474,18 @@ core_setutil.cpp_CDemonLight_setTransformScale_FUN_00585220 (1 suspect)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 ====================================================================================================
-core_setutil.cpp_readAndParseLine_FUN_00585290 (2 suspects)
+core_setutil.cpp_readAndParseLine_FUN_00585290 (3 suspects)
   File: core/setutil.cpp
 ====================================================================================================
   Line 20 [unrolled_strlen]: do {
   Line 31 [unrolled_strlen]: do {
+  Line 39 [unrolled_strcpy]: do {
+
+====================================================================================================
+core_simbox.cpp_CSimBox_propertyDisplayCallback_FUN_00589270 (1 suspect)
+  File: core/simbox.cpp
+====================================================================================================
+  Line 21 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80 (2 suspects)
@@ -8529,11 +8727,24 @@ engine_console.cpp_CConsole_render_FUN_00441b00 (1 suspect)
   Line 35 [pointer_cast]: pCVar4 = (CConsole *)((int)&pCVar4->file_logging_enabled + 1);
 
 ====================================================================================================
-engine_dosio.c_ensureTrailingSlash_FUN_00481f80 (2 suspects)
+engine_dosio.c_ensureTrailingSlash_FUN_00481f80 (3 suspects)
   File: engine/dosio.c
 ====================================================================================================
   Line 23 [unrolled_strlen]: do {
   Line 33 [unrolled_strlen]: do {
+  Line 42 [unrolled_strcpy]: do {
+
+====================================================================================================
+engine_dosio.c_getFullPath_FUN_004820c0 (1 suspect)
+  File: engine/dosio.c
+====================================================================================================
+  Line 12 [unrolled_strcpy]: do {
+
+====================================================================================================
+engine_dosio.c_getRelativeFilePath_FUN_004816c0 (1 suspect)
+  File: engine/dosio.c
+====================================================================================================
+  Line 11 [unrolled_strcpy]: do {
 
 ====================================================================================================
 engine_dosio.c_reopenFileStream_FUN_00481b50 (1 suspect)
@@ -8546,6 +8757,12 @@ engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 (1 suspect)
   File: engine/drender.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
+====================================================================================================
+engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 (1 suspect)
+  File: engine/drender.cpp
+====================================================================================================
+  Line 22 [unrolled_strcpy]: do {
 
 ====================================================================================================
 engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50 (1 suspect)
@@ -8823,6 +9040,12 @@ engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60 (2 suspects)
   Line 62 [unrolled_strlen]: do {
 
 ====================================================================================================
+engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950 (1 suspect)
+  File: engine/fileio.cpp
+====================================================================================================
+  Line 36 [unrolled_strcpy]: do {
+
+====================================================================================================
 engine_fileio.cpp_CFileManager_buildPodFromResponseFile_FUN_004b7ac0 (1 suspect)
   File: engine/fileio.cpp
 ====================================================================================================
@@ -8970,11 +9193,18 @@ engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190 (7 suspects)
   Line 191 [unrolled_memcpy]: for (iVar3 = 0x19; iVar3 != 0; iVar3 = iVar3 + -1) {
 
 ====================================================================================================
-engine_fileio.cpp_CFileManager_setVersionControlCredentials_FUN_004bc5d0 (2 suspects)
+engine_fileio.cpp_CFileManager_setVersionControlCredentials_FUN_004bc5d0 (3 suspects)
   File: engine/fileio.cpp
 ====================================================================================================
   Line 9 [unrolled_strcpy]: do {
   Line 19 [unrolled_strcpy]: do {
+  Line 29 [unrolled_strcpy]: do {
+
+====================================================================================================
+engine_fileio.cpp_CFileManager_setVersionControlDirectory_FUN_004bc5a0 (1 suspect)
+  File: engine/fileio.cpp
+====================================================================================================
+  Line 9 [unrolled_strcpy]: do {
 
 ====================================================================================================
 engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50 (4 suspects)
@@ -8984,6 +9214,12 @@ engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50 (4 suspects)
   Line 72 [unrolled_memcpy]: for (iVar3 = 0x19; iVar3 != 0; iVar3 = iVar3 + -1) {
   Line 82 [unrolled_memcpy]: for (iVar4 = 0x4e; iVar4 != 0; iVar4 = iVar4 + -1) {
   Line 108 [unrolled_strcpy]: do {
+
+====================================================================================================
+engine_fileio.cpp_parseTimestampRecord_FUN_004b2270 (1 suspect)
+  File: engine/fileio.cpp
+====================================================================================================
+  Line 36 [unrolled_strcpy]: do {
 
 ====================================================================================================
 engine_fileio.cpp_readTimestampFile_FUN_004b23a0 (1 suspect)
@@ -9049,6 +9285,18 @@ engine_font.cpp_setShadowColor_FUN_004ce0f0 (1 suspect)
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x004ce1d7) */
 
 ====================================================================================================
+engine_ini.cpp_CIniFile_init_FUN_004fbaa0 (1 suspect)
+  File: engine/ini.cpp
+====================================================================================================
+  Line 11 [unrolled_strcpy]: do {
+
+====================================================================================================
+engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0 (1 suspect)
+  File: engine/ini.cpp
+====================================================================================================
+  Line 13 [unrolled_strcpy]: do {
+
+====================================================================================================
 engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004fb470 (2 suspects)
   File: engine/ini.cpp
 ====================================================================================================
@@ -9056,12 +9304,14 @@ engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004fb470 (2 suspects)
   Line 65 [unrolled_strchr]: do {
 
 ====================================================================================================
-engine_ini.cpp_CIni_getProfileString_FUN_004fb250 (3 suspects)
+engine_ini.cpp_CIni_getProfileString_FUN_004fb250 (5 suspects)
   File: engine/ini.cpp
 ====================================================================================================
   Line 45 [unrolled_strchr]: do {
   Line 69 [unrolled_strlen]: do {
+  Line 77 [unrolled_strcpy]: do {
   Line 94 [unrolled_strlen]: do {
+  Line 101 [unrolled_strcpy]: do {
 
 ====================================================================================================
 engine_keyframe.c_calculatePackedSurfaceNormal_FUN_00501a00 (1 suspect)
@@ -9246,6 +9496,29 @@ engine_prim.c_normalizeTextureCoords_FUN_00552020 (1 suspect)
   Line 34 [raw_address_constant]: (longlong)iVar4 * 0x1000000 & 0xffffffffU) / (longlong)iVar1);
 
 ====================================================================================================
+engine_prim.c_renderPolygonSoftware_FUN_00552510 (18 suspects)
+  File: engine/prim.c
+====================================================================================================
+  Line 33 [unnamed_local]: SSoftwareEdge *local_14;
+  Line 199 [unnamed_local]: (local_14 = engine_prim_c_findEdgeInBuffer_FUN_00551f70(g_SoftwareMinScanline,edge_ptr),
+  Line 200 [unnamed_local]: iVar10 = g_SoftwareMinScanline, local_14 != (SSoftwareEdge *)0x0)) {
+  Line 206 [unnamed_local]: edge_ptr = engine_prim_c_findEdgeInBuffer_FUN_00551f70(iVar10,local_14);
+  Line 211 [unnamed_local]: if ((local_14->base).y_max <= iVar10) {
+  Line 212 [unnamed_local]: (local_14->base).y_min = -1;
+  Line 213 [unnamed_local]: local_14 = engine_prim_c_findEdgeInBuffer_FUN_00551f70(iVar10,edge_ptr);
+  Line 214 [unnamed_local]: if (local_14 == (SSoftwareEdge *)0x0) {
+  Line 218 [unnamed_local]: wincore_windll_cpp_renderScanline_FUN_005b5710(&local_14->base,&edge_ptr->base,iVar10);
+  Line 226 [unnamed_local]: (local_14->base).x_current = (local_14->base).x_current + (local_14->base).x_gradient;
+  Line 226 [unnamed_local]: (local_14->base).x_current = (local_14->base).x_current + (local_14->base).x_gradient;
+  Line 226 [unnamed_local]: (local_14->base).x_current = (local_14->base).x_current + (local_14->base).x_gradient;
+  Line 227 [unnamed_local]: (local_14->base).u_current = (local_14->base).u_current + (local_14->base).u_gradient;
+  Line 227 [unnamed_local]: (local_14->base).u_current = (local_14->base).u_current + (local_14->base).u_gradient;
+  Line 227 [unnamed_local]: (local_14->base).u_current = (local_14->base).u_current + (local_14->base).u_gradient;
+  Line 228 [unnamed_local]: (local_14->base).v_current = (local_14->base).v_current + (local_14->base).v_gradient;
+  Line 228 [unnamed_local]: (local_14->base).v_current = (local_14->base).v_current + (local_14->base).v_gradient;
+  Line 228 [unnamed_local]: (local_14->base).v_current = (local_14->base).v_current + (local_14->base).v_gradient;
+
+====================================================================================================
 engine_prim.c_renderScanlinePolygon_FUN_00553470 (24 suspects)
   File: engine/prim.c
 ====================================================================================================
@@ -9291,6 +9564,12 @@ engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200 (5 suspects)
   Line 45 [pointer_cast]: *(ushort *)((int)g_Hardware16BitPalette + iVar7) =
   Line 62 [pointer_cast]: pbVar6 = (byte *)((int)pbVar6 + 3);
   Line 63 [pointer_cast]: *(uint *)((int)g_Hardware32BitPalette + local_14) = uVar5;
+
+====================================================================================================
+engine_texture.cpp_getCurrentTexture_FUN_005dd9c0 (1 suspect)
+  File: engine/texture.cpp
+====================================================================================================
+  Line 13 [unrolled_strcpy]: do {
 
 ====================================================================================================
 engine_winfont.cpp_CWinFont_createTextBackground_FUN_005f2860 (2 suspects)
@@ -9967,6 +10246,12 @@ shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970 (1 suspect)
   Line 132 [pointer_cast]: puVar14 = (uint *)((int)puVar14 + (uint)bVar15 * -2 + 1);
 
 ====================================================================================================
+shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590 (1 suspect)
+  File: shape/edittool.cpp
+====================================================================================================
+  Line 43 [unrolled_strcpy]: do {
+
+====================================================================================================
 shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0 (1 suspect)
   File: shape/edittool.cpp
 ====================================================================================================
@@ -10058,6 +10343,18 @@ shape_edittool.cpp_CPickList_ctor_FUN_004a3b90 (2 suspects)
   Line 37 [unrolled_strcpy]: do {
 
 ====================================================================================================
+shape_edittool.cpp_CPickList_setCancelButtonText_FUN_004a3d90 (1 suspect)
+  File: shape/edittool.cpp
+====================================================================================================
+  Line 27 [unrolled_strcpy]: do {
+
+====================================================================================================
+shape_edittool.cpp_CPickList_setOkButtonText_FUN_004a3d20 (1 suspect)
+  File: shape/edittool.cpp
+====================================================================================================
+  Line 27 [unrolled_strcpy]: do {
+
+====================================================================================================
 shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_004a3360 (1 suspect)
   File: shape/edittool.cpp
 ====================================================================================================
@@ -10096,6 +10393,12 @@ shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0 (3 suspects)
   Line 73 [unrolled_strcpy]: do {
   Line 83 [unrolled_strchr]: do {
   Line 96 [unrolled_strcpy]: do {
+
+====================================================================================================
+shape_memdbg.cpp_SMemHead_recordSourceFile_FUN_0050eea0 (1 suspect)
+  File: shape/memdbg.cpp
+====================================================================================================
+  Line 15 [unrolled_strcpy]: do {
 
 ====================================================================================================
 shape_memdbg.cpp_debugFree_FUN_0050f460 (1 suspect)
@@ -11943,13 +12246,6 @@ sound_sndmain.cpp_getRecordingDeviceInfo_FUN_005ab780 (2 suspects)
   Line 20 [pointer_cast]: device_info = (SRecordingDeviceInfo *)((int)device_info + (uint)bVar3 * -8 + 4);
 
 ====================================================================================================
-sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0 (2 suspects)
-  File: sound/sndmain.cpp
-====================================================================================================
-  Line 30 [pointer_cast]: out_sample = (CSfxSample *)((int)out_sample + (uint)bVar6 * -8 + 4);
-  Line 46 [unrolled_strlen]: do {
-
-====================================================================================================
 sound_sndmain.cpp_getSfxOptions_FUN_005a97e0 (2 suspects)
   File: sound/sndmain.cpp
 ====================================================================================================
@@ -12011,12 +12307,10 @@ sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0 (3 suspects)
   Line 36 [pointer_cast]: memset((void *)((int)g_ChannelPrimaryBuffers[iVar5] + tail_bytes), 0, bytes_per_buffer);
 
 ====================================================================================================
-sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90 (3 suspects)
+sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90 (1 suspect)
   File: sound/sndmain.cpp
 ====================================================================================================
   Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
-  Line 56 [pointer_cast]: (void *)((int)g_ChannelPrimaryBuffers[iVar5] + bytes_per_buffer),
-  Line 58 [pointer_cast]: memset((void *)((int)g_ChannelPrimaryBuffers[iVar5] + tail_bytes), 0, bytes_per_buffer);
 
 ====================================================================================================
 sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30 (2 suspects)
@@ -12049,12 +12343,10 @@ sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0 (18 suspects)
   Line 219 [pointer_cast]: *(byte *)((int)psVar9 + 1) = local_18;
 
 ====================================================================================================
-sound_sndmain.cpp_startSfx_FUN_005a8e90 (4 suspects)
+sound_sndmain.cpp_startSfx_FUN_005a8e90 (2 suspects)
   File: sound/sndmain.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 55 [unrolled_strcpy]: do {
-  Line 91 [pointer_cast]: iVar7 = *(int *)((int)g_SfxSlots[1].distance_to_speakers + iVar5 + -0xc);
   Line 256 [raw_address_constant]: if (0xfffffe < iVar7) {
 
 ====================================================================================================
@@ -12139,20 +12431,22 @@ sound_sndwav.cpp_CWavOutDevice_start_FUN_005b08f0 (3 suspects)
   Line 18 [pointer_cast]: *(int *)(*(int *)((int)g_WaveOutHeaders + iVar2) + 4) =
 
 ====================================================================================================
-sound_sndwav.cpp_enumerateWavInDevice_FUN_005b1560 (3 suspects)
+sound_sndwav.cpp_enumerateWavInDevice_FUN_005b1560 (4 suspects)
   File: sound/sndwav.cpp
 ====================================================================================================
   Line 42 [pointer_cast]: pSVar6 = (SRecordingDeviceInfo *)((int)pSVar6 + (uint)bVar7 * -2 + 1);
   Line 46 [negative_offset]: pcVar4 = (char *)((int)&pSVar6[-1].device_id + 3);
   Line 46 [pointer_cast]: pcVar4 = (char *)((int)&pSVar6[-1].device_id + 3);
+  Line 47 [unrolled_strcpy]: do {
 
 ====================================================================================================
-sound_sndwav.cpp_enumerateWavOutDevice_FUN_005b1470 (3 suspects)
+sound_sndwav.cpp_enumerateWavOutDevice_FUN_005b1470 (4 suspects)
   File: sound/sndwav.cpp
 ====================================================================================================
   Line 44 [pointer_cast]: pSVar6 = (SSoundDeviceInfo *)((int)pSVar6 + (uint)bVar7 * -2 + 1);
   Line 48 [negative_offset]: pcVar4 = (char *)((int)&pSVar6[-1].is_emulated + 3);
   Line 48 [pointer_cast]: pcVar4 = (char *)((int)&pSVar6[-1].is_emulated + 3);
+  Line 49 [unrolled_strcpy]: do {
 
 ====================================================================================================
 sound_sndwav.cpp_writeWavOutBuffer_FUN_005b06c0 (4 suspects)

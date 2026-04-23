@@ -18,23 +18,19 @@
 /cmake-build-*/
 
 # Game
-*.noc
-*.POD
-*.pod
-*.AVI
-# Ignore files named *.exe anywhere in the tree, but re-include directories
-# whose name happens to end in .exe (e.g. `annotations/nocedit.exe/`).
-# The trailing `/` on the negation makes it directory-only; the ignore line
-# above still catches every real `.exe` file.
-*.exe
-!*.exe/
-*.jpg
-*.gif
-*.html
-*.INI
-*.ini
-*.dll
-*.isu
-*.js
-stderr.txt
-gtfo.txt
+# Extensions use [xX] character classes so a single line covers every
+# case variant shipped by the Windows build (e.g. *.POD and *.pod).
+*.[nN][oO][cC]
+*.[pP][oO][dD]
+*.[aA][vV][iI]
+*.[eE][xX][eE]
+!*.[eE][xX][eE]/
+*.[jJ][pP][gG]
+*.[gG][iI][fF]
+*.[hH][tT][mM][lL]
+*.[iI][nN][iI]
+*.[iI][nN][xX]
+*.[dD][lL][lL]
+*.[iI][sS][uU]
+*.[jJ][sS]
+*.[tT][xX][tT]

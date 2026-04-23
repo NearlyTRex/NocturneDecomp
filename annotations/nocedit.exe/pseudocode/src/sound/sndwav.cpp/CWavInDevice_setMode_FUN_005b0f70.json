@@ -321,7 +321,7 @@
       "line": 36,
       "match": "(uint *)((int)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "if ((*(uint *)((int)&g_WaveInFormatTable[0].format_flags + iVar8) & uStack_14) != 0) {",
       "type": "pointer_cast"
     },
@@ -330,7 +330,7 @@
       "line": 37,
       "match": "(int *)((int)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "uVar4 = (uint)(channels < *(int *)((int)&g_WaveInFormatTable[0].bits_per_sample + iVar8));",
       "type": "pointer_cast"
     },
@@ -339,7 +339,7 @@
       "line": 38,
       "match": "(int *)((int)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "if (*(int *)((int)&g_WaveInFormatTable[0].bits_per_sample + iVar8) < channels) {",
       "type": "pointer_cast"
     },
@@ -348,7 +348,7 @@
       "line": 41,
       "match": "(int *)((int)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "if (g_WaveInRequestedSampleRate < *(int *)((int)&g_WaveInFormatTable[0].sample_rate + iVar8)",
       "type": "pointer_cast"
     },
@@ -357,7 +357,7 @@
       "line": 45,
       "match": "(int *)((int)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "if (*(int *)((int)&g_WaveInFormatTable[0].sample_rate + iVar8) < g_WaveInRequestedSampleRate",
       "type": "pointer_cast"
     },
@@ -366,7 +366,7 @@
       "line": 49,
       "match": "(int *)((int)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "if (sample_rate < *(int *)((int)&g_WaveInFormatTable[0].channels + iVar8)) {",
       "type": "pointer_cast"
     },
@@ -375,7 +375,7 @@
       "line": 52,
       "match": "(int *)((int)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "if (*(int *)((int)&g_WaveInFormatTable[0].channels + iVar8) < sample_rate) {",
       "type": "pointer_cast"
     },
@@ -384,7 +384,7 @@
       "line": 87,
       "match": "(HGLOBAL *)((int)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(HGLOBAL *)((int)g_WaveInBufferHandles + iVar8) = pvVar5;",
       "type": "pointer_cast"
     },
@@ -393,7 +393,7 @@
       "line": 90,
       "match": "(LPVOID *)((int)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(LPVOID *)((int)g_WaveInBuffers + iVar8) = pvVar6;",
       "type": "pointer_cast"
     },
@@ -402,7 +402,7 @@
       "line": 93,
       "match": "(HGLOBAL *)((int)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(HGLOBAL *)((int)g_WaveInHeaderHandles + iVar8) = pvVar5;",
       "type": "pointer_cast"
     },
@@ -411,7 +411,7 @@
       "line": 96,
       "match": "(HGLOBAL *)((int)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "pvVar6 = (*g_GlobalLockFunc)(*(HGLOBAL *)((int)g_WaveInHeaderHandles + iVar8));",
       "type": "pointer_cast"
     },
@@ -420,7 +420,7 @@
       "line": 98,
       "match": "(LPVOID *)((int)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(LPVOID *)((int)g_WaveInHeaders + iVar8) = pvVar6;",
       "type": "pointer_cast"
     },

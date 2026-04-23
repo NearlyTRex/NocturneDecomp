@@ -13,55 +13,32 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(CSfxSample *out_sample)
   int iVar1;
   int iVar2;
   _FILE *file_handle;
-  uint uVar3;
   int iVar4;
-  char *pcVar5;
-  char *pcVar2;
-  byte bVar6;
-  char local_114;
-  byte local_113 [255];
+  char local_ext[256];
   int local_14;
-  char cVar1;
-  
-  bVar6 = 0;
+
   sound_sndmain_cpp_lockSound_FUN_005abd30();
-  iVar4 = 0;
-  do {
-    if (0 < *(int *)(g_SfxSamples[0].sample_info.name + iVar4 + 0x110)) {
-      pcVar5 = g_SfxSamples[0].sample_info.name + iVar4;
-      iVar2 = _stricmp(pcVar5,(char *)out_sample);
+  for (iVar4 = 0; iVar4 < 64; iVar4 = iVar4 + 1) {
+    if (0 < g_SfxSamples[iVar4].sample_info.sample_count) {
+      iVar2 = _stricmp(g_SfxSamples[iVar4].sample_info.name,(char *)out_sample);
       if (iVar2 == 0) {
-        for (iVar1 = 0x54; iVar1 != 0; iVar1 = iVar1 + -1) {
-          pcVar5 = pcVar5 + (uint)bVar6 * -8 + 4;
-          *(uint *)(out_sample->sample_info).name = *(uint *)pcVar5;
-          pcVar5 = pcVar5;
-          out_sample = (CSfxSample *)((int)out_sample + (uint)bVar6 * -8 + 4);
-        }
+        memcpy(out_sample,&g_SfxSamples[iVar4],0x150);
         sound_sndmain_cpp_unlockSound_FUN_005abdc0();
         return 1;
       }
     }
-    iVar4 = iVar4 + 0x180;
-  } while (iVar4 < 0x6000);
+  }
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   iVar1 = engine_dosio_c_getFileSize_FUN_00481880("sound",(char *)out_sample);
   if (0 < iVar1) {
     engine_dosio_c_splitPath_FUN_00481f20
-              ((char *)out_sample,(char *)0x0,(char *)0x0,(char *)0x0,&local_114);
-    if (local_114 == '.') {
-      uVar3 = 0xffffffff;
-      pcVar2 = &local_114;
-      do {
-        if (uVar3 == 0) break;
-        uVar3 = uVar3 - 1;
-        cVar1 = *pcVar2;
-        pcVar2 = pcVar2 + (uint)bVar6 * -2 + 1;
-      } while (cVar1 != '\0');
-      memmove(&local_114,local_113,~uVar3 - 1);
+              ((char *)out_sample,(char *)0x0,(char *)0x0,(char *)0x0,local_ext);
+    if (local_ext[0] == '.') {
+      memmove(local_ext,local_ext + 1,strlen(local_ext));
     }
-    iVar1 = _stricmp(&local_114,"wav");
+    iVar1 = _stricmp(local_ext,"wav");
     if (iVar1 != 0) {
-      iVar1 = _stricmp(&local_114,"mp3");
+      iVar1 = _stricmp(local_ext,"mp3");
       if (iVar1 == 0) {
         if ((g_GlobalMP3DecoderInitializedOther & 1) == 0) {
           g_GlobalMP3DecoderInitializedOther = g_GlobalMP3DecoderInitializedOther | 1;

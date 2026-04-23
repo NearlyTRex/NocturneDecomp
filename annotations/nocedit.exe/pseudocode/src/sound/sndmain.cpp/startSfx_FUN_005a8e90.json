@@ -7,17 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 556,
-    "complexity_score": 338,
+    "complexity_score": 308,
     "cross_reference_count": 24,
     "function_call_count": 27,
     "global_count": 47,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 278,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
       "raw_address_constant",
-      "unrolled_strcpy",
       "warning_inlined_function"
     ],
     "total_lines": 834
@@ -767,7 +765,7 @@
       "line": 67,
       "match": "(CSfxOptions *)((int)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "pCVar17 = (CSfxOptions *)((int)pCVar17 + (uint)bVar19 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -776,8 +774,17 @@
       "line": 69,
       "match": "(CSfxOptions *)((int)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "pCVar9 = (CSfxOptions *)((int)pCVar9 + ((uint)bVar19 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 91,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar7 = *(int *)((int)g_SfxSlots[1].distance_to_speakers + iVar5 + -0xc);",
       "type": "pointer_cast"
     },
     {
@@ -785,7 +792,7 @@
       "line": 102,
       "match": "(CSfxOptions *)((int)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "pCVar13 = (CSfxOptions *)((int)pCVar13 + (uint)bVar19 * -8 + 4);",
       "type": "pointer_cast"
     },
@@ -794,9 +801,18 @@
       "line": 105,
       "match": "(CSfxSlot *)((int)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "pCVar10 = (CSfxSlot *)((int)pCVar10 + (uint)bVar19 * -8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 55,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     },
     {
       "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar4` (struct-field advance + constant `[0]` index + self-assign no-op). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep.",
@@ -914,28 +930,12 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 91,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "iVar7 = *(int *)((int)g_SfxSlots[1].distance_to_speakers + iVar5 + -0xc);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Raw hex literal 0xfffffe matches address of g_LightBufferPool (+4087286 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 256,
       "match": "0xfffffe",
       "severity": "moderate",
       "text": "if (0xfffffe < iVar7) {",
       "type": "raw_address_constant"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 55,
-      "match": "do {",
-      "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strcpy"
     }
   ]
 }

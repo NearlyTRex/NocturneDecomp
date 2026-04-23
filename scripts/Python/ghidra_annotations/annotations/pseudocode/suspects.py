@@ -68,18 +68,18 @@ SUSPECT_SEVERITY = {
     'register_param': 'mild',
     'negative_offset': 'mild',
     'decompiler_intrinsic': 'mild',
-    'pointer_cast': 'mild',
     'suspect_float': 'mild',
     'nonstandard_int': 'mild',
+    'pointer_cast': 'moderate',
     'displaced_global_access': 'moderate',
     'wrong_global': 'moderate',
     'suspicious_cast': 'moderate',
     'raw_address_constant': 'moderate',
-    'unrolled_strcpy': 'mild',
-    'unrolled_memcpy': 'mild',
-    'unrolled_strlen': 'mild',
-    'unrolled_strcat': 'mild',
-    'unrolled_strchr': 'mild',
+    'unrolled_strcpy': 'moderate',
+    'unrolled_memcpy': 'moderate',
+    'unrolled_strlen': 'moderate',
+    'unrolled_strcat': 'moderate',
+    'unrolled_strchr': 'moderate',
     'preinc_loop_idiom': 'moderate',
     'missing_cave_copy': 'moderate',
 }
@@ -845,12 +845,20 @@ def identify_raw_address_constant_suspects(decompiled_code, address_interval_map
 
 # Watcom's loop-unrolled strcpy copies 2 bytes per iteration and checks for
 # null termination in the middle of the body. The distinguishing line is
-# `if (<byte_var> == '\0') break;` immediately after `*<dst> = <byte_var>;`
-# — normal code never breaks on null right after a byte store.
+# a null-check that exits the loop, immediately after `*<dst> = <byte_var>;`
+# — normal code never exits on null right after a byte store. The exit can be
+# a plain `break;`, an inline `return ...;`, or a `{ ... }` block with a
+# terminal inside (Watcom sometimes emits the divergent branch both ways).
 _UNROLLED_BYTE_STORE_RE = re.compile(
     r"^\s*\*?(\w+)(?:\[\d+\])?\s*=\s*(\w+)\s*;\s*$")
 _UNROLLED_NULL_BREAK_RE = re.compile(
     r"^\s*if\s*\(\s*(\w+)\s*==\s*'\\0'\s*\)\s*break\s*;\s*$")
+_UNROLLED_NULL_RETURN_RE = re.compile(
+    r"^\s*if\s*\(\s*(\w+)\s*==\s*'\\0'\s*\)\s*return\b[^;]*;\s*$")
+_UNROLLED_NULL_BLOCK_RE = re.compile(
+    r"^\s*if\s*\(\s*(\w+)\s*==\s*'\\0'\s*\)\s*\{\s*$")
+_UNROLLED_TERMINAL_RE = re.compile(
+    r"^\s*(?:break|return\b[^;]*|continue|goto\s+\w+)\s*;\s*$")
 _UNROLLED_DO_RE = re.compile(r"^\s*do\s*\{?\s*$")
 _UNROLLED_WHILE_RE = re.compile(
     r"^\s*\}\s*while\s*\(\s*\w+\s*!=\s*'\\0'\s*\)\s*;\s*$")
@@ -890,13 +898,19 @@ def identify_unrolled_strcpy_loops(decompiled_code):
     lines = decompiled_code.split('\n')
     n = len(lines)
     for i in range(n - 1):
-        # Require `*dst = cVar;` followed by `if (cVar == '\0') break;`
+        # Require `*dst = cVar;` followed by a null-check that exits the loop.
         store_m = _UNROLLED_BYTE_STORE_RE.match(lines[i])
         if not store_m:
             continue
-        null_m = _UNROLLED_NULL_BREAK_RE.match(lines[i + 1])
+        null_m = (_UNROLLED_NULL_BREAK_RE.match(lines[i + 1]) or
+                  _UNROLLED_NULL_RETURN_RE.match(lines[i + 1]) or
+                  _UNROLLED_NULL_BLOCK_RE.match(lines[i + 1]))
         if not null_m or store_m.group(2) != null_m.group(1):
             continue
+        # For the block form, require a terminal statement inside the block.
+        if _UNROLLED_NULL_BLOCK_RE.match(lines[i + 1]):
+            if i + 2 >= n or not _UNROLLED_TERMINAL_RE.match(lines[i + 2]):
+                continue
         # Look upward for the `do {` header
         loop_start = None
         for back in range(1, 8):

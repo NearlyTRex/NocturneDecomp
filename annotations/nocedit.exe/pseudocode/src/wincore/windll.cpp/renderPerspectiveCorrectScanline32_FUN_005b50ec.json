@@ -11,7 +11,7 @@
     "cross_reference_count": 57,
     "function_call_count": 0,
     "global_count": 22,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 119,
     "suspect_count": 4,
     "suspect_types": [
@@ -569,7 +569,7 @@
       "description": "Complex pointer cast",
       "line": 29,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "g_CurrentScreenPtr = (int *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 4);",
       "type": "pointer_cast"
     },
@@ -577,7 +577,7 @@
       "description": "Complex pointer cast",
       "line": 102,
       "match": "(byte *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "[*(byte *)((int)g_CurrentTextureData +",
       "type": "pointer_cast"
     },
@@ -585,7 +585,7 @@
       "description": "Complex pointer cast",
       "line": 108,
       "match": "(uint *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(uint *)((int)g_CurrentScreenPtr + uVar10) = uVar3;",
       "type": "pointer_cast"
     },
@@ -593,7 +593,7 @@
       "description": "Complex pointer cast",
       "line": 110,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(int *)((int)g_CurrentZBufferPtr + uVar10) = iVar8;",
       "type": "pointer_cast"
     }

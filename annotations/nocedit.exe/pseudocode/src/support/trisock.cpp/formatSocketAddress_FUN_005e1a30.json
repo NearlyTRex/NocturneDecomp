@@ -11,7 +11,7 @@
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 21,
     "suspect_count": 2,
     "suspect_types": [
@@ -114,7 +114,7 @@
       "description": "Complex pointer cast",
       "line": 14,
       "match": "(SNetworkAddr *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "buffer = (SNetworkAddr *)((int)&network_addr->ip_address + 1);",
       "type": "pointer_cast"
     },
@@ -122,7 +122,7 @@
       "description": "Complex pointer cast",
       "line": 17,
       "match": "(SNetworkAddr *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "network_addr = (SNetworkAddr *)((int)&network_addr->ip_address + 2);",
       "type": "pointer_cast"
     }

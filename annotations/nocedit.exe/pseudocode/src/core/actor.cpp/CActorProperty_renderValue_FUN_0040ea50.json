@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 555,
-    "complexity_score": 409,
+    "complexity_score": 519,
     "cross_reference_count": 6,
     "function_call_count": 5,
     "global_count": 44,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 274,
-    "suspect_count": 12,
+    "suspect_count": 23,
     "suspect_types": [
       "pointer_cast",
       "unnamed_param",
@@ -542,7 +542,7 @@
       "description": "Complex pointer cast",
       "line": 166,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "piVar9 = (int *)((int)(this_ptr->data).v_string_ptr + ((this_ptr->param1).v_int * 10 + 1) * 4)",
       "type": "pointer_cast"
     },
@@ -558,7 +558,7 @@
       "description": "Complex pointer cast",
       "line": 174,
       "match": "(char *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "cVar1 = *(char *)((int)piVar9 + 1);",
       "type": "pointer_cast"
     },
@@ -566,7 +566,7 @@
       "description": "Complex pointer cast",
       "line": 175,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "piVar9 = (int *)((int)piVar9 + 2);",
       "type": "pointer_cast"
     },
@@ -606,9 +606,97 @@
       "description": "Complex pointer cast",
       "line": 259,
       "match": "(uint *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(uint *)((int)&g_PropertyFlagDefinitions[0].mask + iVar13)) != 0) {",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 38,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 57,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 72,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 86,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 100,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 114,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 128,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 145,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 182,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 208,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 228,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
@@ -623,7 +711,7 @@
       "introduced_by": "keep",
       "line": 271,
       "match": "(uint *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(uint *)((int)&g_PropertyFlagDefinitions[0].mask + iVar13)) != 0) {",
       "type": "pointer_cast"
     }

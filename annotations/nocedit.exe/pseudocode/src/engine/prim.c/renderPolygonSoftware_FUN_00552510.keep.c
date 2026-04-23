@@ -223,14 +223,14 @@ void __cdecl engine_prim_c_renderPolygonSoftware_FUN_00552510(SRenderVertex *ver
       (edge_ptr->base).red_current = (edge_ptr->base).red_current + (edge_ptr->base).red_gradient;
       (edge_ptr->base).depth_current = (edge_ptr->base).depth_current + (edge_ptr->base).depth_gradient;
       (edge_ptr->base).alpha_current = (edge_ptr->base).alpha_current + (edge_ptr->base).alpha_gradient;
-      *(int *)(iVar10 + 8) = *(int *)(iVar10 + 8) + *(int *)(iVar10 + 0xc);
-      *(int *)(iVar10 + 0x18) = *(int *)(iVar10 + 0x18) + *(int *)(iVar10 + 0x1c);
-      *(int *)(iVar10 + 0x20) = *(int *)(iVar10 + 0x20) + *(int *)(iVar10 + 0x24);
+      (local_14->base).x_current = (local_14->base).x_current + (local_14->base).x_gradient;
+      (local_14->base).u_current = (local_14->base).u_current + (local_14->base).u_gradient;
+      (local_14->base).v_current = (local_14->base).v_current + (local_14->base).v_gradient;
       local_1c = local_1c + 1;
-      *(int *)(iVar10 + 0x10) = *(int *)(iVar10 + 0x10) + *(int *)(iVar10 + 0x14);
+      (local_14->base).red_current = (local_14->base).red_current + (local_14->base).red_gradient;
       iVar5 = g_MaxViewportScanline;
-      *(int *)(iVar10 + 0x28) = *(int *)(iVar10 + 0x28) + *(int *)(iVar10 + 0x2c);
-      *(int *)(iVar10 + 0x30) = *(int *)(iVar10 + 0x30) + *(int *)(iVar10 + 0x34);
+      (local_14->base).depth_current = (local_14->base).depth_current + (local_14->base).depth_gradient;
+      (local_14->base).alpha_current = (local_14->base).alpha_current + (local_14->base).alpha_gradient;
       iVar2 = local_1c - iVar5;
       bVar12 = SBORROW4(local_1c,iVar5);
     }

@@ -6,7 +6,7 @@
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 16,
     "suspect_count": 3,
     "suspect_types": [
@@ -124,7 +124,7 @@
       "description": "Complex pointer cast",
       "line": 11,
       "match": "(byte *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "bVar1 = *(byte *)((int)&file->_flag + 1);",
       "type": "pointer_cast"
     },
@@ -132,7 +132,7 @@
       "description": "Complex pointer cast",
       "line": 12,
       "match": "(byte *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(byte *)((int)&file->_flag + 1) = bVar1 | 0x20;",
       "type": "pointer_cast"
     },
@@ -140,7 +140,7 @@
       "description": "Complex pointer cast",
       "line": 14,
       "match": "(byte *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(byte *)((int)&file->_flag + 1) = bVar1 | 0x22;",
       "type": "pointer_cast"
     }

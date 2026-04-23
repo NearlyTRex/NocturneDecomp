@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (336 diagnostics)
+Cppcheck (quick) (335 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (74)
+selfAssignment (73)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 170
@@ -303,10 +303,6 @@ selfAssignment (74)
   shape_superopt.cpp_CComplexPolygon_findReflexVerte line 73
     File: shape/superopt.cpp
     Redundant assignment of 'pdVar4' to itself.
-
-  sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0       line 37
-    File: sound/sndmain.cpp
-    Redundant assignment of 'pcVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
 uninitvar (70)
@@ -672,10 +668,6 @@ shiftTooManyBitsSigned (47)
     File: core/dstrender.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_menu.cpp_configureSoundOptions_FUN_00511e50   line 270
-    File: core/menu.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
   core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_ line 109
     File: core/set.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
@@ -784,95 +776,99 @@ shiftTooManyBitsSigned (47)
     File: shape/quantize.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
+  sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0        line 105
+    File: sound/sndmain.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
 ----------------------------------------------------------------------------------------------------
 invalidscanf (41)
 ----------------------------------------------------------------------------------------------------
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 266
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 241
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 383
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 350
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 440
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 407
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 576
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 535
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 670
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 613
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 725
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 660
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 732
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 667
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 738
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 673
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 841
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 760
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 879
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 798
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 991
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 902
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1029
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 932
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1133
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1020
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1201
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1080
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1313
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1184
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1365
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1236
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1473
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1328
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1583
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1422
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1662
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1485
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1777
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1592
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1906
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1705
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1979
+  core_event.cpp_CEventList_executeCommand_FUN_004aa line 1778
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 

@@ -11,7 +11,7 @@
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 16,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 64,
     "suspect_count": 4,
     "suspect_types": [
@@ -219,7 +219,7 @@
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(uint *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "g_PerspectiveScanlineZPtr = (uint *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 2);",
       "type": "pointer_cast"
     },
@@ -227,7 +227,7 @@
       "description": "Complex pointer cast",
       "line": 48,
       "match": "(ushort *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "if (uVar1 < *(ushort *)((int)g_PerspectiveScanlineZPtr + uVar7)) {",
       "type": "pointer_cast"
     },
@@ -235,7 +235,7 @@
       "description": "Complex pointer cast",
       "line": 56,
       "match": "(ushort *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(ushort *)((int)g_PerspectiveScanlineZPtr + uVar7) = (ushort)uVar1;",
       "type": "pointer_cast"
     },

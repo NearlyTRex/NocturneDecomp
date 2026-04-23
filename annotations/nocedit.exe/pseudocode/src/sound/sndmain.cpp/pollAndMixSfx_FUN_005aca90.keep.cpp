@@ -53,9 +53,9 @@ void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90(LPVOID *channel_buffer
       tail_bytes = (g_NumMixBuffers - 1) * bytes_per_buffer;
       for (iVar5 = 0; iVar5 < g_AudioChannelCount; iVar5 = iVar5 + 1) {
         memmove(g_ChannelPrimaryBuffers[iVar5],
-                (void *)((int)g_ChannelPrimaryBuffers[iVar5] + bytes_per_buffer),
+                (char *)g_ChannelPrimaryBuffers[iVar5] + bytes_per_buffer,
                 tail_bytes);
-        memset((void *)((int)g_ChannelPrimaryBuffers[iVar5] + tail_bytes), 0, bytes_per_buffer);
+        memset((char *)g_ChannelPrimaryBuffers[iVar5] + tail_bytes, 0, bytes_per_buffer);
       }
       mix_buffer.num_output_samples = g_MixBufferSize;
       mix_buffer.num_channels = g_AudioChannelCount;

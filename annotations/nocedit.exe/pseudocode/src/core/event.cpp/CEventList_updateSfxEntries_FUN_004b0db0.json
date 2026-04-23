@@ -4,21 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 100,
+    "complexity_score": 55,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 55,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast",
-      "sub84_truncation",
-      "unrolled_strcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 173
   },
   "cross_references": [
@@ -215,6 +211,35 @@
     },
     "pcode_op_count": 441
   },
+  "resolved_suspects": [
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 25,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_20 = SUB84(__BITCAST_UINT64(dVar5),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&dest->playback_position + 4) = iStack_1c;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 36,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 376,
     "local_size": 372,
@@ -284,30 +309,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 25,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "local_20 = SUB84(__BITCAST_UINT64(dVar5),0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)&dest->playback_position + 4) = iStack_1c;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 36,
-      "match": "do {",
-      "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    }
-  ]
+  "suspects": []
 }

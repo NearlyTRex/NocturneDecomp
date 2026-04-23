@@ -11,7 +11,7 @@
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 58,
     "suspect_count": 4,
     "suspect_types": [
@@ -156,7 +156,7 @@
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(CPoly *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "pCVar3 = (CPoly *)((int)&((CPoly *)(((this_ptr->base).poly_array)->uv_coords + -1))->",
       "type": "pointer_cast"
     },
@@ -164,7 +164,7 @@
       "description": "Complex pointer cast",
       "line": 47,
       "match": "(byte *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "bVar1 = *(byte *)((int)&pCVar3->flags + 1);",
       "type": "pointer_cast"
     },
@@ -172,7 +172,7 @@
       "description": "Complex pointer cast",
       "line": 48,
       "match": "(byte *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(byte *)((int)&pCVar3->flags + 1) = bVar1 | 0x80;",
       "type": "pointer_cast"
     },
@@ -180,7 +180,7 @@
       "description": "Complex pointer cast",
       "line": 49,
       "match": "(byte *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(byte *)((int)&pCVar3->flags + 1) = bVar1 & 0xdf | 0x80;",
       "type": "pointer_cast"
     }

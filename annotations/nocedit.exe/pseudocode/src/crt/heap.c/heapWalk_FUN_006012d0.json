@@ -6,7 +6,7 @@
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 47,
     "suspect_count": 4,
     "suspect_types": [
@@ -144,7 +144,7 @@
       "description": "Complex pointer cast",
       "line": 21,
       "match": "(Heap *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "((Heap *)((int)&heap_ptr->heap_size + heap_ptr->heap_size) <= pHVar1))))) {",
       "type": "pointer_cast"
     },
@@ -152,7 +152,7 @@
       "description": "Complex pointer cast",
       "line": 25,
       "match": "(Heap *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "pHVar2 = (Heap *)((int)&pHVar1->heap_size + (pHVar1->heap_size & 0xfffffffeU));",
       "type": "pointer_cast"
     },

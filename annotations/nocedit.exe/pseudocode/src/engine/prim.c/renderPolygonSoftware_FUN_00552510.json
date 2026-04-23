@@ -7,14 +7,16 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 514,
-    "complexity_score": 232,
+    "complexity_score": 417,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 30,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 232,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 18,
+    "suspect_types": [
+      "unnamed_local"
+    ],
     "total_lines": 746
   },
   "cross_references": [
@@ -380,5 +382,168 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 33,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "SSoftwareEdge *local_14;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 199,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "(local_14 = engine_prim_c_findEdgeInBuffer_FUN_00551f70(g_SoftwareMinScanline,edge_ptr),",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 200,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "iVar10 = g_SoftwareMinScanline, local_14 != (SSoftwareEdge *)0x0)) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 206,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "edge_ptr = engine_prim_c_findEdgeInBuffer_FUN_00551f70(iVar10,local_14);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 211,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "if ((local_14->base).y_max <= iVar10) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 212,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "(local_14->base).y_min = -1;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 213,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "local_14 = engine_prim_c_findEdgeInBuffer_FUN_00551f70(iVar10,edge_ptr);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 214,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "if (local_14 == (SSoftwareEdge *)0x0) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 218,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "wincore_windll_cpp_renderScanline_FUN_005b5710(&local_14->base,&edge_ptr->base,iVar10);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 226,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "(local_14->base).x_current = (local_14->base).x_current + (local_14->base).x_gradient;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 226,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "(local_14->base).x_current = (local_14->base).x_current + (local_14->base).x_gradient;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 226,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "(local_14->base).x_current = (local_14->base).x_current + (local_14->base).x_gradient;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 227,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "(local_14->base).u_current = (local_14->base).u_current + (local_14->base).u_gradient;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 227,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "(local_14->base).u_current = (local_14->base).u_current + (local_14->base).u_gradient;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 227,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "(local_14->base).u_current = (local_14->base).u_current + (local_14->base).u_gradient;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 228,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "(local_14->base).v_current = (local_14->base).v_current + (local_14->base).v_gradient;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 228,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "(local_14->base).v_current = (local_14->base).v_current + (local_14->base).v_gradient;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 228,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "(local_14->base).v_current = (local_14->base).v_current + (local_14->base).v_gradient;",
+      "type": "unnamed_local"
+    }
+  ]
 }

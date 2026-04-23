@@ -11,7 +11,7 @@
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 11,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 46,
     "suspect_count": 2,
     "suspect_types": [
@@ -273,7 +273,7 @@
       "description": "Complex pointer cast",
       "line": 46,
       "match": "(void *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "this_ptr->framebuffer_aligned = (void *)((int)this_ptr->framebuffer_raw + 0x10U & 0xfffffff0);",
       "type": "pointer_cast"
     },
@@ -281,7 +281,7 @@
       "description": "Complex pointer cast",
       "line": 47,
       "match": "(void *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "this_ptr->zbuffer_aligned = (void *)((int)this_ptr->zbuffer_raw + 0x10U & 0xfffffff0);",
       "type": "pointer_cast"
     }

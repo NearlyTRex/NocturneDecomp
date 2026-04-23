@@ -1188,23 +1188,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "configureSoundOptions_FUN_00511e50.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 22,
-          "line": 270,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
   "suspects": [
     {
       "description": "Decompiler inlined a function call",
@@ -1218,7 +1201,7 @@
       "description": "Complex pointer cast",
       "line": 88,
       "match": "(char *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(char *)((int)pacVar11 + 1) = cVar2;",
       "type": "pointer_cast"
     },

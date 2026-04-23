@@ -6,7 +6,7 @@
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 26,
     "suspect_count": 5,
     "suspect_types": [
@@ -177,7 +177,7 @@
       "description": "Complex pointer cast",
       "line": 18,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "iVar2 = *(int *)((int)(pfVar1->base).layout_info + 4);",
       "type": "pointer_cast"
     },
@@ -185,7 +185,7 @@
       "description": "Complex pointer cast",
       "line": 22,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(void ***)(buffer_ptr->__unbuffered_get_area + *(int *)((int)pvVar3 + 4) + -0x10) =",
       "type": "pointer_cast"
     },
@@ -193,7 +193,7 @@
       "description": "Complex pointer cast",
       "line": 27,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(int *)((int)(pfVar1->base).layout_info + 4) + -0x38),(char *)buffer_ptr);",
       "type": "pointer_cast"
     }

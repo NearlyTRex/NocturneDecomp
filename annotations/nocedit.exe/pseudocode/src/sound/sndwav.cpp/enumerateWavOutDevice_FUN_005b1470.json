@@ -7,16 +7,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 98,
+    "complexity_score": 113,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 58,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "negative_offset",
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_strcpy"
     ],
     "total_lines": 133
   },
@@ -145,7 +146,7 @@
       "description": "Complex pointer cast",
       "line": 44,
       "match": "(SSoundDeviceInfo *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "pSVar6 = (SSoundDeviceInfo *)((int)pSVar6 + (uint)bVar7 * -2 + 1);",
       "type": "pointer_cast"
     },
@@ -161,9 +162,17 @@
       "description": "Complex pointer cast",
       "line": 48,
       "match": "(char *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "pcVar4 = (char *)((int)&pSVar6[-1].is_emulated + 3);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 49,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

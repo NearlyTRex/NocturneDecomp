@@ -91,6 +91,7 @@ When you are editing a `.keep` for any reason — creating one for a compile err
 
 **Eligible suspect types** and the error pattern section each maps to:
 - `unrolled_strcpy`, `unrolled_memcpy`, `unrolled_strlen`, `unrolled_strcat`, `unrolled_strchr` — §17 (Unrolled string/memory copies)
+- `pointer_cast` — usually §13 (stack slot reuse) **or** §17 when the cast appears inside a countdown `for`-loop body. The `unrolled_memcpy` detector misses loops whose store target has an arrow (`*(T *)pX->field = ...`) or index (`*(T *)pX[i] = ...`), so those land here as bare `pointer_cast`. Look at the loop header — if it's `for (i = N; i != 0; i = i + -1)` with a `(uint)bVar * -8 + 4` direction idiom, treat as §17.
 - `wrong_global`, `displaced_global_access` — §15 (Wrong global due to Watcom 1-based indexing)
 - `raw_address_constant` — §11 (Hardcoded memory addresses for known globals)
 - `suspicious_cast` — §1 (Pointer-to-float cast) or §7 (Cannot cast from float to pointer type)
@@ -368,6 +369,9 @@ for (int i = 0; i < 256; i++)
 - A sequence of byte-by-byte or word-by-word assignments copying from one buffer to another
 - A `do/while` loop copying two bytes at a time with an early-exit check on null terminator (unrolled `strcpy`)
 - Field-by-field struct copies like `dst[0] = src.field_a; dst[1] = src.field_b; ...` across all fields
+- A countdown `for`-loop with `*(uint *)dst = *(uint *)src; src += ...; dst += ...;` and the `(uint)bVar * -8 + 4` direction idiom — Watcom's `REP MOVSD` lowering. **The `unrolled_memcpy` suspect detector misses this shape when the store LHS/RHS has an arrow or index** (e.g. `*(uint *)pSVar9->data = *(uint *)pcVar8;`), so it reaches you flagged only as `pointer_cast` on the `pX = (T *)((int)pX + (uint)bVar * -8 + 4);` line. If you see `pointer_cast` inside a countdown loop with that direction idiom, it's this pattern — collapse per §17 regardless of the suspect label.
+
+**Multi-local span / ASan trap:** When the copy size exceeds the declared size of the source local (e.g. `REP MOVSD` of 0x89 dwords out of a `char[60]`), the original binary had **multiple adjacent stack locals** laid out contiguously and the copy walked all of them as one blob. Under ASan each local gets redzones — the read trips `stack-buffer-overflow` one byte past the first local's end. Fix by issuing **one `memcpy` per source local**, each sized to that local, targeting the matching offset in the destination struct. Cross-reference the `.asm` `LEA` offsets to determine which locals the original `REP MOVSD` was spanning and in what order.
 
 **Fix:** When the pattern is clearly a string or memory copy, replace with the appropriate standard library call:
 ```cpp

@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 540,
-    "complexity_score": 219,
+    "complexity_score": 229,
     "cross_reference_count": 2,
     "function_call_count": 31,
     "global_count": 53,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 179,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "unrolled_strcpy"
@@ -612,7 +612,7 @@
       "line": 118,
       "match": "(uint *)((int)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "puVar1 = (uint *)((int)g_MasterLightStateSaveBuffer + iVar4);",
       "type": "pointer_cast"
     }
@@ -788,7 +788,7 @@
       "description": "Complex pointer cast",
       "line": 101,
       "match": "(uint *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "puVar1 = (uint *)((int)g_HeroActors + iVar4);",
       "type": "pointer_cast"
     },
@@ -803,6 +803,14 @@
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 72,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 170,
       "match": "do {",
       "severity": "mild",
       "text": "do {",

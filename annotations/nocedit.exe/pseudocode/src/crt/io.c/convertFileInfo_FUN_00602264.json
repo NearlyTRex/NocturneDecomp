@@ -2,14 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 47,
+    "complexity_score": 62,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 47,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "unrolled_strcpy"
+    ],
     "total_lines": 121
   },
   "cross_references": [
@@ -127,5 +129,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 38,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
 }

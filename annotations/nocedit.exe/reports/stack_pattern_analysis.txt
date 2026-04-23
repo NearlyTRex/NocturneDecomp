@@ -196,7 +196,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00401e0d: MOV EDI,ESP
 
   engine_ini.cpp_CIni_getProfileString_FUN_004fb250
-    File: engine/ini.cpp, Suspects: 3
+    File: engine/ini.cpp, Suspects: 5
     - [alt_frame_pointer] at 004fb396: MOV ESI,ESP
 
   engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004fb470
@@ -277,5 +277,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 2.8 suspects/function
+  With stack patterns:    avg 2.9 suspects/function
   Without stack patterns: avg 0.9 suspects/function

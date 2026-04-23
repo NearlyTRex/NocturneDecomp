@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        90 ( 1.4%)
+  Functions with type issues:        89 ( 1.4%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          1
-    Undefined types in variables:      84
+    Undefined types in variables:      83
     Unresolved stack params:           5
 
-  Excluded (.keep / MMX / by-value):   136 functions
+  Excluded (.keep / MMX / by-value):   137 functions
     Wrong calling convention:          1
-    Undefined types in variables:      133
+    Undefined types in variables:      134
     Unresolved stack params:           3
 
 ====================================================================================================
@@ -113,7 +113,7 @@ Unresolved stack parameters (missing from signature) (5)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (84)
+Undefined types in variables (83)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -304,11 +304,6 @@ Undefined types in variables (84)
   CDemonCube_buildGeometryFromPolygonData
     Address: 0x00456ed0  File: core/dcube.cpp
     Locals:  local_18 (undefined1)
-    Suggested: Resolve undefined types to concrete types
-
-  CEventList_updateSfxEntries
-    Address: 0x004b0db0  File: core/event.cpp
-    Locals:  local_20 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
   CCrater_activate
@@ -601,7 +596,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (133)
+Undefined types - .keep overrides (134)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -1067,6 +1062,11 @@ Undefined types - .keep overrides (133)
   CKeyFramedModel_exportToS3D
     Address: 0x00479f30  File: core/dmodel.cpp
     Locals:  local_34 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CEventList_updateSfxEntries
+    Address: 0x004b0db0  File: core/event.cpp
+    Locals:  local_20 (undefined8)
     Suggested: Resolve undefined types to concrete types
 
   CGabriella_updateWeaponAndAimAnimation

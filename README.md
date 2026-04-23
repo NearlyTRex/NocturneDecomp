@@ -6,7 +6,11 @@ A work-in-progress reverse engineering and decompilation project for the game **
 
 This project uses [Ghidra](https://ghidra-sre.org/) to decompile and analyze the Nocturne game binary. The goal is to document and understand the inner workings of the Nocturne game engine through systematic reverse engineering efforts.
 
-**Status:** Active Research - This is an ongoing research project with continuous updates as new discoveries are made.
+**This is not a byte-for-byte matching decompilation.** The aim is to reproduce the original game's *functionality* as faithfully as possible — playable on modern systems via cross-platform shims — not to regenerate an executable whose machine code matches the shipped binary. Decompiler artifacts are rewritten into readable, portable C/C++ that preserves observable behavior; exact instruction selection, register allocation, and stack layout are not preserved.
+
+**Portable C/C++ only — no inline assembly.** Architecture-specific code in the original (MMX SIMD loops, x87 FPU idioms, hand-rolled ASM) is ported to equivalent scalar or standard-library C/C++ so the result builds on any target the toolchain supports, not just 32-bit x86. The `.mmx.*` variants in the tree are reference captures of the original assembly intent, never compiled.
+
+**Status:** Active Research — the decompiled binary now launches and runs on Linux. The main menu is interactive with working graphics, sound, and input through the SDL2-backed DirectDraw / DirectSound / DirectInput shims in `annotations/nocedit.exe/pseudocode/shims/`. In-game rendering and audio mixing (both hardware-path and software mixer) are functional; ongoing work targets remaining ASan/UBSan findings flagged by the `exe-linux-asan` preset.
 
 ## Progress
 

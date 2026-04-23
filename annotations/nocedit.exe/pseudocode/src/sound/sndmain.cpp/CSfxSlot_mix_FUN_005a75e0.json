@@ -4,14 +4,14 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 705,
     "complexity_score": 529,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 7,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 319,
     "suspect_count": 20,
     "suspect_types": [
@@ -449,6 +449,23 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CSfxSlot_mix_FUN_005a75e0.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 29,
+          "line": 105,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Decompiler inlined a function call",
@@ -462,7 +479,7 @@
       "description": "Complex pointer cast",
       "line": 164,
       "match": "(byte *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "local_7c[3] = (float)(int)(*(byte *)((int)this_ptr->sample->sample_data +",
       "type": "pointer_cast"
     },
@@ -470,7 +487,7 @@
       "description": "Complex pointer cast",
       "line": 173,
       "match": "(float *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(float *)((int)*ppfVar3 + local_20) =",
       "type": "pointer_cast"
     },
@@ -478,7 +495,7 @@
       "description": "Complex pointer cast",
       "line": 175,
       "match": "(float *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(float *)((int)*ppfVar3 + local_20);",
       "type": "pointer_cast"
     },
@@ -486,7 +503,7 @@
       "description": "Complex pointer cast",
       "line": 187,
       "match": "(byte *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "bVar3 = *(byte *)((int)this_ptr->sample->sample_data + (int)ROUND(ROUND(local_c0)));",
       "type": "pointer_cast"
     },
@@ -494,7 +511,7 @@
       "description": "Complex pointer cast",
       "line": 194,
       "match": "(float *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(float *)((int)*ppfVar1 + iVar12) =",
       "type": "pointer_cast"
     },
@@ -502,7 +519,7 @@
       "description": "Complex pointer cast",
       "line": 196,
       "match": "(float *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(float *)((int)*ppfVar1 + iVar12);",
       "type": "pointer_cast"
     },
@@ -510,7 +527,7 @@
       "description": "Complex pointer cast",
       "line": 225,
       "match": "(float *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(float *)((int)*ppfVar1 + local_24) =",
       "type": "pointer_cast"
     },
@@ -518,7 +535,7 @@
       "description": "Complex pointer cast",
       "line": 227,
       "match": "(float *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(float *)((int)*ppfVar1 + local_24);",
       "type": "pointer_cast"
     },
@@ -526,7 +543,7 @@
       "description": "Complex pointer cast",
       "line": 252,
       "match": "(float *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(float *)((int)*ppfVar1 + iVar12) =",
       "type": "pointer_cast"
     },
@@ -534,7 +551,7 @@
       "description": "Complex pointer cast",
       "line": 253,
       "match": "(float *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "(float)sVar2 * pCVar13->channel_volumes[0] + *(float *)((int)*ppfVar1 + iVar12)",
       "type": "pointer_cast"
     },
@@ -542,7 +559,7 @@
       "description": "Complex pointer cast",
       "line": 285,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "piVar2 = (int *)((int)mix_buffer.channel_buffers + iVar12);",
       "type": "pointer_cast"
     },
@@ -550,7 +567,7 @@
       "description": "Complex pointer cast",
       "line": 298,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "if (*(int *)((int)aiStack_a4 + local_4c) != 0) {",
       "type": "pointer_cast"
     },
@@ -558,7 +575,7 @@
       "description": "Complex pointer cast",
       "line": 300,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "iVar14 = (iVar10 + *(int *)((int)this_ptr->channel_target_buffer_offsets + local_4c)) -",
       "type": "pointer_cast"
     },
@@ -566,7 +583,7 @@
       "description": "Complex pointer cast",
       "line": 301,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(int *)((int)this_ptr->channel_current_buffer_offsets + local_4c);",
       "type": "pointer_cast"
     },
@@ -574,7 +591,7 @@
       "description": "Complex pointer cast",
       "line": 306,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "pfVar1 = (float *)(*(int *)((int)aiStack_a4 + local_4c) + iVar11);",
       "type": "pointer_cast"
     },
@@ -582,7 +599,7 @@
       "description": "Complex pointer cast",
       "line": 308,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(float *)(*(int *)((int)aiStack_a4 + local_4c) + -4 + iVar11) =",
       "type": "pointer_cast"
     },
@@ -590,7 +607,7 @@
       "description": "Complex pointer cast",
       "line": 309,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(float *)(*(int *)((int)g_ChannelTertiaryBuffers + local_4c) +",
       "type": "pointer_cast"
     },
@@ -598,7 +615,7 @@
       "description": "Complex pointer cast",
       "line": 314,
       "match": "(uint *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(uint *)((int)this_ptr->channel_current_buffer_offsets + local_4c) =",
       "type": "pointer_cast"
     },
@@ -606,7 +623,7 @@
       "description": "Complex pointer cast",
       "line": 315,
       "match": "(uint *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(uint *)((int)this_ptr->channel_target_buffer_offsets + local_4c);",
       "type": "pointer_cast"
     }

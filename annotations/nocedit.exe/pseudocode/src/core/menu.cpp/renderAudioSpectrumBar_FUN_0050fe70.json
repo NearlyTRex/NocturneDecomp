@@ -4,18 +4,19 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 94,
+    "complexity_score": 139,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 49,
-    "suspect_count": 4,
+    "suspect_count": 8,
     "suspect_types": [
-      "raw_address_constant"
+      "raw_address_constant",
+      "unnamed_local"
     ],
     "total_lines": 174
   },
@@ -233,6 +234,42 @@
       "severity": "moderate",
       "text": "this_ptr->vertex_buffer_ptr[2].u = 0xf80000;",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 16,
+      "match": "local_2c",
+      "severity": "mild",
+      "text": "SMRGLPrimitiveQuadIndex local_2c;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 40,
+      "match": "local_2c",
+      "severity": "mild",
+      "text": "local_2c.base.base.count = 4;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 41,
+      "match": "local_2c",
+      "severity": "mild",
+      "text": "local_2c.base.surface_normal.D = 0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 42,
+      "match": "local_2c",
+      "severity": "mild",
+      "text": "local_2c.base.surface_normal.C = 0;",
+      "type": "unnamed_local"
     }
   ]
 }

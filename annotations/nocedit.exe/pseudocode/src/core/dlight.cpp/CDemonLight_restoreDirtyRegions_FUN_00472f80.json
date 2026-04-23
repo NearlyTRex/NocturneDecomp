@@ -11,7 +11,7 @@
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 9,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 137,
     "suspect_count": 14,
     "suspect_types": [
@@ -267,7 +267,7 @@
       "description": "Complex pointer cast",
       "line": 89,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "if ((*(int *)((int)g_DirtySpanStarts + iVar1) <= pCVar2->top) &&",
       "type": "pointer_cast"
     },
@@ -275,7 +275,7 @@
       "description": "Complex pointer cast",
       "line": 90,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "(pCVar2->left <= *(int *)((int)g_DirtySpanEnds + iVar1))) {",
       "type": "pointer_cast"
     },
@@ -283,7 +283,7 @@
       "description": "Complex pointer cast",
       "line": 91,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "if ((*(int *)((int)g_DirtySpanStarts + iVar1) <= pCVar2->left) &&",
       "type": "pointer_cast"
     },
@@ -291,7 +291,7 @@
       "description": "Complex pointer cast",
       "line": 92,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "(pCVar2->top <= *(int *)((int)g_DirtySpanEnds + iVar1))) goto LAB_004730f9;",
       "type": "pointer_cast"
     },
@@ -299,7 +299,7 @@
       "description": "Complex pointer cast",
       "line": 93,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "if (pCVar2->left < *(int *)((int)g_DirtySpanStarts + iVar1)) {",
       "type": "pointer_cast"
     },
@@ -307,7 +307,7 @@
       "description": "Complex pointer cast",
       "line": 95,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(int *)((int)g_DirtySpanStarts + iVar1) = pCVar2->left;",
       "type": "pointer_cast"
     },
@@ -315,7 +315,7 @@
       "description": "Complex pointer cast",
       "line": 97,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "if (*(int *)((int)g_DirtySpanEnds + iVar1) < pCVar2->top) {",
       "type": "pointer_cast"
     },
@@ -323,7 +323,7 @@
       "description": "Complex pointer cast",
       "line": 98,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(int *)((int)g_DirtySpanEnds + iVar1) = pCVar2->top;",
       "type": "pointer_cast"
     },
@@ -331,7 +331,7 @@
       "description": "Complex pointer cast",
       "line": 107,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(int *)((int)g_DirtySpanStarts + local_14) = pCVar2->left;",
       "type": "pointer_cast"
     },
@@ -339,7 +339,7 @@
       "description": "Complex pointer cast",
       "line": 108,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(int *)((int)g_DirtySpanEnds + local_14) = pCVar2->top;",
       "type": "pointer_cast"
     },
@@ -347,7 +347,7 @@
       "description": "Complex pointer cast",
       "line": 122,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "piVar1 = (int *)((int)g_DirtySpanStarts + iVar1);",
       "type": "pointer_cast"
     },
@@ -355,7 +355,7 @@
       "description": "Complex pointer cast",
       "line": 123,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "iVar5 = local_18 * this_ptr->shadow_map_width + *(int *)((int)g_DirtySpanStarts + iVar1)",
       "type": "pointer_cast"
     },
@@ -363,7 +363,7 @@
       "description": "Complex pointer cast",
       "line": 125,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "piVar2 = (int *)((int)g_DirtySpanEnds + iVar1);",
       "type": "pointer_cast"
     },
@@ -371,7 +371,7 @@
       "description": "Complex pointer cast",
       "line": 130,
       "match": "(void *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "(void *)((int)this_ptr->master_zbuffer + iVar5 * 2),",
       "type": "pointer_cast"
     }

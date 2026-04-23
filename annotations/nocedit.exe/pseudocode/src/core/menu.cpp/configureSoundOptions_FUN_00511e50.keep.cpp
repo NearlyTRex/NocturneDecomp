@@ -69,6 +69,8 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
   int local_18;
   float local_14;
   double dVar17;
+  int bars_per_channel;
+  int bar_count;
   char cVar1;
   
   bVar15 = 0;
@@ -266,21 +268,19 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
     if (iVar3 != 0) {
       iVar3 = sound_sndmain_cpp_getAudioChannelCount_FUN_005ab270();
       iVar6 = g_WindowWidth / 0x14;
-      iVar8 = g_WindowWidth / iVar3 + iVar6 * -2;
-      iVar10 = iVar8 >> 0x1f;
-      fVar16 = pow
-                         ((float10)50,
-                          (float10)1 /
-                          (float10)((int)((iVar8 + iVar10 * -4) - (uint)(iVar10 << 1 < 0)) >> 2));
+      bars_per_channel = g_WindowWidth / iVar3;
+      iVar8 = bars_per_channel - iVar6 * 2;
+      bar_count = iVar8 / 4;
+      fVar16 = pow((float10)50,(float10)1 / (float10)bar_count);
       iVar8 = 0;
       dVar17 = (double)fVar16;
       if (0 < iVar3) {
         do {
           uStack_a44 = 0;
           local_a40 = 0x40690000;
-          if (0 < (int)local_a30) {
-            iVar10 = iVar6 * iVar8 + iVar3;
-            iVar17 = (int)local_a30 * 4 + iVar10;
+          if (0 < bar_count) {
+            iVar10 = bars_per_channel * iVar8 + iVar6;
+            iVar17 = bar_count * 4 + iVar10;
             do {
               fVar18 = (float10)__BITCAST_DOUBLE(CONCAT44(local_a40,uStack_a44)) * (float10)dVar17;
               dVar1 = (double)fVar18;
@@ -299,7 +299,7 @@ void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
             } while (iVar10 < iVar17);
           }
           iVar8 = iVar8 + 1;
-        } while (iVar8 < local_24);
+        } while (iVar8 < iVar3);
       }
     }
     pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Sound Options");

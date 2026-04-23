@@ -7,14 +7,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 79,
+    "complexity_score": 94,
     "cross_reference_count": 13,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 54,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "unrolled_strcpy",
       "unrolled_strlen"
     ],
     "total_lines": 134
@@ -349,6 +350,14 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 42,
+      "match": "do {",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
       "line": 23,

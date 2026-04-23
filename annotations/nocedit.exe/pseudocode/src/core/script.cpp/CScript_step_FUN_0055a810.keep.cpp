@@ -239,17 +239,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *t
     g_CurrentLineNumber = 0x46d;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CScript::step - Invalid instruction pointer!\n(This is an internal script processing error,\nand doesn't mean there's anything wrong with the\nscript file.)");
   }
-  pcVar19 = "(no error message provided)";
-  pcVar21 = g_ScriptErrorBuffer;
-  do {
-    cVar2 = *pcVar19;
-    *pcVar21 = cVar2;
-    if (cVar2 == '\0') break;
-    cVar3 = pcVar19[1];
-    pcVar19 = pcVar19 + 2;
-    pcVar21[1] = cVar3;
-    pcVar21 = pcVar21 + 2;
-  } while (cVar3 != '\0');
+  strcpy(g_ScriptErrorBuffer,"(no error message provided)");
   pcVar7 = this_ptr->parsed_lines[this_ptr->next_cmd].text;
   iVar4 = this_ptr->parsed_lines[this_ptr->next_cmd].line_number;
   dVar1 = __BITCAST_DOUBLE(CONCAT44(pcVar7,iVar4));
@@ -474,18 +464,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *t
                 pcVar7 = core_script_cpp_parseConditionExpr_FUN_005594a0(&local_11c,local_958);
                 if (pcVar7 != (char *)0x0) {
 LAB_0055bb9d:
-                  pcVar31 = g_ScriptErrorBuffer;
-                  do {
-                    cVar3 = *pcVar7;
-                    *pcVar31 = cVar3;
-                    if (cVar3 == '\0') {
-                      return -1;
-                    }
-                    cVar3 = pcVar7[1];
-                    pcVar7 = pcVar7 + 2;
-                    pcVar31[1] = cVar3;
-                    pcVar31 = pcVar31 + 2;
-                  } while (cVar3 != '\0');
+                  strcpy(g_ScriptErrorBuffer,pcVar7);
                   return -1;
                 }
                 if (g_ScriptEventsEnabled == 0) {
@@ -613,18 +592,7 @@ LAB_0055bb9d:
                                 pcVar7 = core_script_cpp_parseArgument_FUN_005593f0
                                                    (&local_11c,local_2334,200);
                                 if (pcVar7 != (char *)0x0) {
-                                  pcVar31 = g_ScriptErrorBuffer;
-                                  do {
-                                    cVar3 = *pcVar7;
-                                    *pcVar31 = cVar3;
-                                    if (cVar3 == '\0') {
-                                      return -1;
-                                    }
-                                    cVar3 = pcVar7[1];
-                                    pcVar7 = pcVar7 + 2;
-                                    pcVar31[1] = cVar3;
-                                    pcVar31 = pcVar31 + 2;
-                                  } while (cVar3 != '\0');
+                                  strcpy(g_ScriptErrorBuffer,pcVar7);
                                   return -1;
                                 }
                                 iVar8 = _stricmp
@@ -670,18 +638,7 @@ LAB_0055bb9d:
                                   pcVar7 = core_script_cpp_parseArgument_FUN_005593f0
                                                      (&local_11c,local_2e24,200);
                                   if (pcVar7 != (char *)0x0) {
-                                    pcVar31 = g_ScriptErrorBuffer;
-                                    do {
-                                      cVar3 = *pcVar7;
-                                      *pcVar31 = cVar3;
-                                      if (cVar3 == '\0') {
-                                        return -1;
-                                      }
-                                      cVar3 = pcVar7[1];
-                                      pcVar7 = pcVar7 + 2;
-                                      pcVar31[1] = cVar3;
-                                      pcVar31 = pcVar31 + 2;
-                                    } while (cVar3 != '\0');
+                                    strcpy(g_ScriptErrorBuffer,pcVar7);
                                     return -1;
                                   }
                                   core_script_cpp_trimString_FUN_00559360(local_2e24);
@@ -705,18 +662,7 @@ LAB_0055bb9d:
                                                        (&local_11c,local_3784,300);
                                     if (pcVar7 != (char *)0x0) {
 LAB_0055c37e:
-                                      pcVar31 = g_ScriptErrorBuffer;
-                                      do {
-                                        cVar3 = *pcVar7;
-                                        *pcVar31 = cVar3;
-                                        if (cVar3 == '\0') {
-                                          return -1;
-                                        }
-                                        cVar3 = pcVar7[1];
-                                        pcVar7 = pcVar7 + 2;
-                                        pcVar31[1] = cVar3;
-                                        pcVar31 = pcVar31 + 2;
-                                      } while (cVar3 != '\0');
+                                      strcpy(g_ScriptErrorBuffer,pcVar7);
                                       return -1;
                                     }
                                     iVar8 = core_script_cpp_validateActorVariableName_FUN_00559220
@@ -763,17 +709,7 @@ LAB_0055c37e:
                                         pSVar5 = this_ptr->dialog_entries;
                                         local_e4 = pSVar5[iVar8].data + 0x78;
                                         local_104 = pSVar5[iVar8].data + 0x96;
-                                        pcVar31 = local_c14;
-                                        pcVar7 = pSVar5[iVar8].data + 0x3c;
-                                        do {
-                                          cVar3 = *pcVar7;
-                                          *pcVar31 = cVar3;
-                                          if (cVar3 == '\0') break;
-                                          cVar3 = pcVar7[1];
-                                          pcVar7 = pcVar7 + 2;
-                                          pcVar31[1] = cVar3;
-                                          pcVar31 = pcVar31 + 2;
-                                        } while (cVar3 != '\0');
+                                        strcpy(local_c14,pSVar5[iVar8].data + 0x3c);
                                       }
                                       if (this_ptr->dialog_wav_time < 0.0) {
                                         local_14 = 
@@ -827,17 +763,7 @@ LAB_0055c37e:
                                           pSVar3 = this_ptr->dialog_entries;
                                           local_f8 = pSVar3[iVar8].data + 0x78;
                                           local_f4 = pSVar3[iVar8].data + 0x96;
-                                          pcVar31 = local_1ec;
-                                          pcVar7 = pSVar3[iVar8].data + 0x3c;
-                                          do {
-                                            cVar3 = *pcVar7;
-                                            *pcVar31 = cVar3;
-                                            if (cVar3 == '\0') break;
-                                            cVar3 = pcVar7[1];
-                                            pcVar7 = pcVar7 + 2;
-                                            pcVar31[1] = cVar3;
-                                            pcVar31 = pcVar31 + 2;
-                                          } while (cVar3 != '\0');
+                                          strcpy(local_1ec,pSVar3[iVar8].data + 0x3c);
                                         }
                                         local_14 = 
                                                   core_script_cpp_CScript_getDialogDuration_FUN_0055ff00
@@ -953,16 +879,12 @@ joined_r0x0055f6da:
                                                              &(local_f0->base).orient,pCVar10,
                                                              &local_f0->base,0,0,
                                                              local_f0->blood_type);
-                                              iVar30 = 0;
-                                              iVar8 = 0;
-                                              do {
-                                                if (*(int *)((int)local_c8c + iVar30) != 0) {
+                                              for (iVar8 = 0; iVar8 < 0x1e; iVar8 = iVar8 + 1) {
+                                                if (local_c8c[iVar8] != 0) {
                                                   core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
                                                             (local_f0,local_ec,iVar8,0);
                                                 }
-                                                iVar8 = iVar8 + 1;
-                                                iVar30 = iVar30 + 4;
-                                              } while (iVar8 < 0x1e);
+                                              }
                                               core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050
                                                         (local_ec);
                                             }
@@ -1055,18 +977,7 @@ joined_r0x0055f6da:
                                                   core_event_cpp_CEventList_validateCondition_FUN_004add00
                                                             (g_CEventListPtr,local_2d5c);
                                                   if (pcVar7 != (char *)0x0) {
-                                                    pcVar31 = g_ScriptErrorBuffer;
-                                                    do {
-                                                      cVar3 = *pcVar7;
-                                                      *pcVar31 = cVar3;
-                                                      if (cVar3 == '\0') {
-                                                        return -1;
-                                                      }
-                                                      cVar3 = pcVar7[1];
-                                                      pcVar7 = pcVar7 + 2;
-                                                      pcVar31[1] = cVar3;
-                                                      pcVar31 = pcVar31 + 2;
-                                                    } while (cVar3 != '\0');
+                                                    strcpy(g_ScriptErrorBuffer,pcVar7);
                                                     return -1;
                                                   }
                                                   }
@@ -1107,18 +1018,7 @@ joined_r0x0055f6da:
                                                             (g_CEventListPtr,local_1dbc);
                                                   if (pcVar7 != (char *)0x0) {
 LAB_0055cd52:
-                                                    pcVar31 = g_ScriptErrorBuffer;
-                                                    do {
-                                                      cVar3 = *pcVar7;
-                                                      *pcVar31 = cVar3;
-                                                      if (cVar3 == '\0') {
-                                                        return -1;
-                                                      }
-                                                      cVar3 = pcVar7[1];
-                                                      pcVar7 = pcVar7 + 2;
-                                                      pcVar31[1] = cVar3;
-                                                      pcVar31 = pcVar31 + 2;
-                                                    } while (cVar3 != '\0');
+                                                    strcpy(g_ScriptErrorBuffer,pcVar7);
                                                     return -1;
                                                   }
                                                   }
@@ -1411,10 +1311,7 @@ LAB_0055cd52:
                                                     dVar1 = __BITCAST_DOUBLE(CONCAT44(iVar4,local_11c));
                                                     pcVar7 = "Undefined label %s used in gosub statement on line %d";
 LAB_0055a97f:
-                                                    _sprintf
-                                                              (g_ScriptErrorBuffer,pcVar7,
-                                                               SUB84(__BITCAST_UINT64(dVar1),0),
-                                                               (int)((ulonglong)dVar1 >> 0x20));
+                                                    _sprintf(g_ScriptErrorBuffer,pcVar7,dVar1);
                                                     return -1;
                                                   }
                                                   if (g_ScriptEventsEnabled == 0) {
@@ -1516,15 +1413,7 @@ LAB_0055a97f:
                                                   local_c0 = 1;
                                                   if (*local_11c == ',') {
                                                     local_11c = local_11c + 1;
-                                                    uVar17 = 0xffffffff;
-                                                    pcVar7 = local_11c;
-                                                    do {
-                                                      if (uVar17 == 0) break;
-                                                      uVar17 = uVar17 - 1;
-                                                      cVar3 = *pcVar7;
-                                                      pcVar7 = pcVar7 + (uint)bVar22 * -2 + 1;
-                                                    } while (cVar3 != '\0');
-                                                    uVar29 = ~uVar17 - 2;
+                                                    uVar29 = strlen(local_11c) - 1;
                                                     local_c8 = uVar29;
                                                     if ((int)uVar29 < 1) {
                                                       _sprintf
@@ -1533,21 +1422,7 @@ LAB_0055a97f:
                                                                 );
                                                       return -1;
                                                     }
-                                                    pcVar7 = local_11c;
-                                                    pcVar31 = acStack_fad + 1;
-                                                    for (uVar18 = uVar29 >> 2; uVar18 != 0;
-                                                        uVar18 = uVar18 - 1) {
-                                                      *(uint *)pcVar31 = *(uint *)pcVar7
-                                                      ;
-                                                      pcVar7 = pcVar7 + (uint)bVar22 * -8 + 4;
-                                                      pcVar31 = pcVar31 + (uint)bVar22 * -8 + 4;
-                                                    }
-                                                    for (uVar29 = uVar29 & 3; uVar29 != 0;
-                                                        uVar29 = uVar29 - 1) {
-                                                      *pcVar31 = *pcVar7;
-                                                      pcVar7 = pcVar7 + (uint)bVar22 * -2 + 1;
-                                                      pcVar31 = pcVar31 + (uint)bVar22 * -2 + 1;
-                                                    }
+                                                    memcpy(acStack_fad + 1,local_11c,uVar29);
                                                     pcVar7 = local_11c + local_c8;
                                                     acStack_fad[local_c8 + 1] = '\0';
                                                     local_11c = pcVar7;
@@ -1667,18 +1542,7 @@ LAB_0055a97f:
                                                             (&local_11c,local_b4c,100);
                                                   if (pcVar7 != (char *)0x0) {
 LAB_0055d708:
-                                                    pcVar31 = g_ScriptErrorBuffer;
-                                                    do {
-                                                      cVar3 = *pcVar7;
-                                                      *pcVar31 = cVar3;
-                                                      if (cVar3 == '\0') {
-                                                        return -1;
-                                                      }
-                                                      cVar3 = pcVar7[1];
-                                                      pcVar7 = pcVar7 + 2;
-                                                      pcVar31[1] = cVar3;
-                                                      pcVar31 = pcVar31 + 2;
-                                                    } while (cVar3 != '\0');
+                                                    strcpy(g_ScriptErrorBuffer,pcVar7);
                                                     return -1;
                                                   }
                                                   iVar30 = -1;
@@ -2012,18 +1876,7 @@ joined_r0x0055c026:
                                                   core_event_cpp_CEventList_validateCommands_FUN_004add40
                                                             (g_CEventListPtr,local_a20);
                                                   if (pcVar7 != (char *)0x0) {
-                                                    pcVar31 = g_ScriptErrorBuffer;
-                                                    do {
-                                                      cVar3 = *pcVar7;
-                                                      *pcVar31 = cVar3;
-                                                      if (cVar3 == '\0') {
-                                                        return -1;
-                                                      }
-                                                      cVar3 = pcVar7[1];
-                                                      pcVar7 = pcVar7 + 2;
-                                                      pcVar31[1] = cVar3;
-                                                      pcVar31 = pcVar31 + 2;
-                                                    } while (cVar3 != '\0');
+                                                    strcpy(g_ScriptErrorBuffer,pcVar7);
                                                     return -1;
                                                   }
                                                   }
@@ -2256,18 +2109,7 @@ joined_r0x0055c026:
                                                             (&local_11c,local_3b6c,500);
                                                   if (pcVar7 != (char *)0x0) {
 LAB_0055e656:
-                                                    pcVar31 = g_ScriptErrorBuffer;
-                                                    do {
-                                                      cVar3 = *pcVar7;
-                                                      *pcVar31 = cVar3;
-                                                      if (cVar3 == '\0') {
-                                                        return -1;
-                                                      }
-                                                      cVar3 = pcVar7[1];
-                                                      pcVar7 = pcVar7 + 2;
-                                                      pcVar31[1] = cVar3;
-                                                      pcVar31 = pcVar31 + 2;
-                                                    } while (cVar3 != '\0');
+                                                    strcpy(g_ScriptErrorBuffer,pcVar7);
                                                     return -1;
                                                   }
                                                   local_88 = -1;
@@ -2525,18 +2367,7 @@ LAB_0055e656:
                                                   core_script_cpp_parseArgument_FUN_005593f0
                                                             (&local_11c,local_9bc,100);
                                                   if (pcVar7 != (char *)0x0) {
-                                                    pcVar31 = g_ScriptErrorBuffer;
-                                                    do {
-                                                      cVar3 = *pcVar7;
-                                                      *pcVar31 = cVar3;
-                                                      if (cVar3 == '\0') {
-                                                        return -1;
-                                                      }
-                                                      cVar3 = pcVar7[1];
-                                                      pcVar7 = pcVar7 + 2;
-                                                      pcVar31[1] = cVar3;
-                                                      pcVar31 = pcVar31 + 2;
-                                                    } while (cVar3 != '\0');
+                                                    strcpy(g_ScriptErrorBuffer,pcVar7);
                                                     return -1;
                                                   }
                                                   pCVar18_00 = core_script_cpp_getActor_FUN_005594e0
@@ -2715,18 +2546,7 @@ LAB_0055e656:
                                                             (&local_11c,local_764,100);
                                                   if (pcVar7 != (char *)0x0) {
 LAB_0055f0a8:
-                                                    pcVar31 = g_ScriptErrorBuffer;
-                                                    do {
-                                                      cVar3 = *pcVar7;
-                                                      *pcVar31 = cVar3;
-                                                      if (cVar3 == '\0') {
-                                                        return -1;
-                                                      }
-                                                      cVar3 = pcVar7[1];
-                                                      pcVar7 = pcVar7 + 2;
-                                                      pcVar31[1] = cVar3;
-                                                      pcVar31 = pcVar31 + 2;
-                                                    } while (cVar3 != '\0');
+                                                    strcpy(g_ScriptErrorBuffer,pcVar7);
                                                     return -1;
                                                   }
                                                   iVar8 = 
@@ -2796,18 +2616,7 @@ LAB_0055f0a8:
                                                   core_script_cpp_parseArgument_FUN_005593f0
                                                             (&local_11c,local_318,100);
                                                   if (pcVar7 != (char *)0x0) {
-                                                    pcVar31 = g_ScriptErrorBuffer;
-                                                    do {
-                                                      cVar3 = *pcVar7;
-                                                      *pcVar31 = cVar3;
-                                                      if (cVar3 == '\0') {
-                                                        return -1;
-                                                      }
-                                                      cVar3 = pcVar7[1];
-                                                      pcVar7 = pcVar7 + 2;
-                                                      pcVar31[1] = cVar3;
-                                                      pcVar31 = pcVar31 + 2;
-                                                    } while (cVar3 != '\0');
+                                                    strcpy(g_ScriptErrorBuffer,pcVar7);
                                                     return -1;
                                                   }
                                                   local_3f70 = -1.0;
@@ -2962,18 +2771,7 @@ LAB_0055f0a8:
                                                   core_script_cpp_parseArgument_FUN_005593f0
                                                             (&local_11c,local_3978,500);
                                                   if (pcVar7 != (char *)0x0) {
-                                                    pcVar31 = g_ScriptErrorBuffer;
-                                                    do {
-                                                      cVar3 = *pcVar7;
-                                                      *pcVar31 = cVar3;
-                                                      if (cVar3 == '\0') {
-                                                        return -1;
-                                                      }
-                                                      cVar3 = pcVar7[1];
-                                                      pcVar7 = pcVar7 + 2;
-                                                      pcVar31[1] = cVar3;
-                                                      pcVar31 = pcVar31 + 2;
-                                                    } while (cVar3 != '\0');
+                                                    strcpy(g_ScriptErrorBuffer,pcVar7);
                                                     return -1;
                                                   }
                                                   local_3c = -1;
@@ -3013,71 +2811,18 @@ LAB_0055f0a8:
                                                   core_script_cpp_parseArgument_FUN_005593f0
                                                             (&local_11c,local_d54,200);
                                                   if (pcVar7 != (char *)0x0) {
-                                                    pcVar31 = g_ScriptErrorBuffer;
-                                                    do {
-                                                      cVar3 = *pcVar7;
-                                                      *pcVar31 = cVar3;
-                                                      if (cVar3 == '\0') {
-                                                        return -1;
-                                                      }
-                                                      cVar3 = pcVar7[1];
-                                                      pcVar7 = pcVar7 + 2;
-                                                      pcVar31[1] = cVar3;
-                                                      pcVar31 = pcVar31 + 2;
-                                                    } while (cVar3 != '\0');
+                                                    strcpy(g_ScriptErrorBuffer,pcVar7);
                                                     return -1;
                                                   }
-                                                  pcVar7 = local_d54;
-                                                  do {
-                                                    pcVar31 = pcVar7;
-                                                    if (*pcVar7 == ',') goto LAB_0055f760;
-                                                    if (*pcVar7 == '\0') break;
-                                                    pcVar31 = pcVar7 + 1;
-                                                    if (*pcVar31 == ',') goto LAB_0055f760;
-                                                    pcVar7 = pcVar7 + 2;
-                                                  } while (*pcVar31 != '\0');
-                                                  pcVar31 = (char *)0x0;
-LAB_0055f760:
-                                                  pcVar20 = ",";
+                                                  pcVar31 = strchr(local_d54,',');
                                                   local_18 = (uint)(pcVar31 != (char *)0x0);
                                                   local_38 = -1;
-                                                  iVar8 = -1;
-                                                  pcVar7 = local_d54;
-                                                  do {
-                                                    pcVar31 = pcVar7;
-                                                    if (iVar8 == 0) break;
-                                                    iVar8 = iVar8 + -1;
-                                                    pcVar31 = pcVar7 + (uint)bVar22 * -2 + 1;
-                                                    cVar3 = *pcVar7;
-                                                    pcVar7 = pcVar31;
-                                                  } while (cVar3 != '\0');
-                                                  pcVar31 = pcVar31 + -1;
-                                                  do {
-                                                    cVar3 = *pcVar20;
-                                                    *pcVar31 = cVar3;
-                                                    if (cVar3 == '\0') break;
-                                                    cVar3 = pcVar20[1];
-                                                    pcVar20 = pcVar20 + 2;
-                                                    pcVar31[1] = cVar3;
-                                                    pcVar31 = pcVar31 + 2;
-                                                  } while (cVar3 != '\0');
+                                                  strcat(local_d54,",");
                                                   sscanf
                                                             (local_d54,"%[^,],%n",local_7c8,
                                                              &local_38);
                                                   if (local_38 < 1) {
-                                                    pcVar7 = "Error parsing out camera name";
-                                                    pcVar31 = g_ScriptErrorBuffer;
-                                                    do {
-                                                      cVar3 = *pcVar7;
-                                                      *pcVar31 = cVar3;
-                                                      if (cVar3 == '\0') {
-                                                        return -1;
-                                                      }
-                                                      cVar3 = pcVar7[1];
-                                                      pcVar7 = pcVar7 + 2;
-                                                      pcVar31[1] = cVar3;
-                                                      pcVar31 = pcVar31 + 2;
-                                                    } while (cVar3 != '\0');
+                                                    strcpy(g_ScriptErrorBuffer,"Error parsing out camera name");
                                                     return -1;
                                                   }
                                                   core_script_cpp_trimString_FUN_00559360(local_7c8)
@@ -3127,18 +2872,7 @@ LAB_0055f760:
                                                             (&local_11c,local_352c,300);
                                                   if (pcVar7 != (char *)0x0) {
 LAB_0055f91c:
-                                                    pcVar31 = g_ScriptErrorBuffer;
-                                                    do {
-                                                      cVar3 = *pcVar7;
-                                                      *pcVar31 = cVar3;
-                                                      if (cVar3 == '\0') {
-                                                        return -1;
-                                                      }
-                                                      cVar3 = pcVar7[1];
-                                                      pcVar7 = pcVar7 + 2;
-                                                      pcVar31[1] = cVar3;
-                                                      pcVar31 = pcVar31 + 2;
-                                                    } while (cVar3 != '\0');
+                                                    strcpy(g_ScriptErrorBuffer,pcVar7);
                                                     return -1;
                                                   }
                                                   local_34 = -1;
@@ -3152,19 +2886,8 @@ LAB_0055f91c:
                                                     return -1;
                                                   }
                                                   if (g_ScriptEventsEnabled == 0) {
-                                                    pcVar31 = 
-                                                  core_script_cpp_skipWhitespace_FUN_005593d0
-                                                            (local_352c + local_34);
-                                                  pcVar7 = this_ptr->current_message;
-                                                  do {
-                                                    cVar3 = *pcVar31;
-                                                    *pcVar7 = cVar3;
-                                                    if (cVar3 == '\0') break;
-                                                    cVar3 = pcVar31[1];
-                                                    pcVar31 = pcVar31 + 2;
-                                                    pcVar7[1] = cVar3;
-                                                    pcVar7 = pcVar7 + 2;
-                                                  } while (cVar3 != '\0');
+                                                    strcpy(this_ptr->current_message,
+                                                           core_script_cpp_skipWhitespace_FUN_005593d0(local_352c + local_34));
                                                   local_114 = 
                                                   core_script_cpp_CScript_processTimer_FUN_005600c0
                                                             (this_ptr,local_30,time_remaining);

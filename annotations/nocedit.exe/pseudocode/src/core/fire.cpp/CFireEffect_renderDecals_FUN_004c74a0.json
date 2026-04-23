@@ -11,7 +11,7 @@
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 17,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 76,
     "suspect_count": 12,
     "suspect_types": [
@@ -300,7 +300,7 @@
       "description": "Complex pointer cast",
       "line": 16,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "if (((*(int *)((int)&g_BulletHolePool[0].active + iVar1) != 0) &&",
       "type": "pointer_cast"
     },
@@ -308,7 +308,7 @@
       "description": "Complex pointer cast",
       "line": 17,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "(*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar1) == 0)) &&",
       "type": "pointer_cast"
     },
@@ -316,7 +316,7 @@
       "description": "Complex pointer cast",
       "line": 19,
       "match": "(CBulletHole *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar1)),",
       "type": "pointer_cast"
     },
@@ -324,7 +324,7 @@
       "description": "Complex pointer cast",
       "line": 21,
       "match": "(uint *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(uint *)((int)&g_BulletHolePool[0].active + iVar1) = 0;",
       "type": "pointer_cast"
     },
@@ -332,7 +332,7 @@
       "description": "Complex pointer cast",
       "line": 33,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "if (*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar1) == 0) {",
       "type": "pointer_cast"
     },
@@ -340,7 +340,7 @@
       "description": "Complex pointer cast",
       "line": 35,
       "match": "(CBulletHole *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar1));",
       "type": "pointer_cast"
     },
@@ -348,7 +348,7 @@
       "description": "Complex pointer cast",
       "line": 47,
       "match": "(uint *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(uint *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) = 1;",
       "type": "pointer_cast"
     },
@@ -356,7 +356,7 @@
       "description": "Complex pointer cast",
       "line": 50,
       "match": "(CStake *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "((CStake *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c));",
       "type": "pointer_cast"
     },
@@ -364,7 +364,7 @@
       "description": "Complex pointer cast",
       "line": 52,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "else if (*(int *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) != 0)",
       "type": "pointer_cast"
     },
@@ -372,7 +372,7 @@
       "description": "Complex pointer cast",
       "line": 62,
       "match": "(int *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "if ((*(int *)((int)(g_CraterPool[0].smoke_positions + -2) + iVar2) != 0) &&",
       "type": "pointer_cast"
     },
@@ -380,7 +380,7 @@
       "description": "Complex pointer cast",
       "line": 64,
       "match": "(CCrater *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "((CCrater *)((int)g_CraterPool[0].smoke_positions + iVar2 + -0x1c)),",
       "type": "pointer_cast"
     },
@@ -388,7 +388,7 @@
       "description": "Complex pointer cast",
       "line": 66,
       "match": "(uint *)((int)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "*(uint *)((int)(g_CraterPool[0].smoke_positions + -2) + iVar2) = 0;",
       "type": "pointer_cast"
     }
