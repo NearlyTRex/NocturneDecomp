@@ -122,7 +122,7 @@ LAB_0057523f:
          (pSVar4->base).surface_normal.A * aCStack_158[iVar12 + -1].y +
          (pSVar4->base).surface_normal.C * aCStack_158[iVar12].x;
     pSVar4 = pSVar5;
-  } while (pSVar5 != (SMRGLPrimitiveQuad *)&g_BoundingBoxQuadTemplateEnd);
+  } while (pSVar5 != g_BoundingBoxQuadTemplates + 6);
   if (force_evaluation_mode == 0) {
     iStack_5c = (int)ROUND(ROUND((float)(this_ptr->camera_count * 10) * g_CGamePtr->delta_time_float
                                 ));
@@ -168,11 +168,10 @@ LAB_0057523f:
   if (0 < iVar12) {
     iVar10 = 0;
     do {
-      iVar7 = iVar10 + 4;
-      *(uint *)((int)g_ZBufferScanlineArrayBackup + iVar10) =
-           *(uint *)((int)g_ZBufferScanlineArray + iVar10);
+      iVar7 = iVar10 + 1;
+      g_ZBufferScanlineArrayBackup[iVar10] = g_ZBufferScanlineArray[iVar10];
       iVar10 = iVar7;
-    } while (iVar7 < iVar12 * 4);
+    } while (iVar7 < iVar12);
   }
   fStack_2c = 100.0f * 100.0f;
   g_VDNearbyActorCount = 0;
@@ -277,11 +276,10 @@ LAB_0057523f:
   if (0 < iVar12) {
     iVar10 = 0;
     do {
-      iVar7 = iVar10 + 4;
-      *(uint *)((int)g_ZBufferScanlineArray + iVar10) =
-           *(uint *)((int)g_ZBufferScanlineArrayBackup + iVar10);
+      iVar7 = iVar10 + 1;
+      g_ZBufferScanlineArray[iVar10] = g_ZBufferScanlineArrayBackup[iVar10];
       iVar10 = iVar7;
-    } while (iVar7 < iVar12 * 4);
+    } while (iVar7 < iVar12);
   }
   g_ZBufferScanlineArrayBackup[0] = (uint *)0x0;
   engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr2,iStack_34);
@@ -291,14 +289,12 @@ LAB_0057523f:
     iVar10 = 0;
     fStack_15c = -1.0;
     if (0 < this_ptr->camera_count) {
-      iVar7 = 0;
       do {
-        if (fStack_15c < *(float *)((int)g_VDCameraScores + iVar7)) {
-          fStack_15c = *(float *)((int)g_VDCameraScores + iVar7);
+        if (fStack_15c < g_VDCameraScores[iVar10]) {
+          fStack_15c = g_VDCameraScores[iVar10];
           iVar12 = iVar10;
         }
         iVar10 = iVar10 + 1;
-        iVar7 = iVar7 + 4;
       } while (iVar10 < this_ptr->camera_count);
     }
     if (-1 < iVar12) {

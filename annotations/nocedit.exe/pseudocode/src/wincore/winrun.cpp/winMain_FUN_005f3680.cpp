@@ -2,11 +2,11 @@
 // Address: 005f3680
 // Address Range: [[005f3680, 005f3915]]
 // Convention: __stdcall
-// Signature: int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow1,int nCmdShow2)
+// Signature: int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow)
 
 #include "nocturne.h"
 
-int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow1,int nCmdShow2)
+int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow)
 
 {
   byte *pbVar1;
@@ -119,7 +119,7 @@ LAB_005f37d1:
   if (g_MainWindowHandle == 0) {
     return 0;
   }
-  (*g_ShowWindowFunc)(g_MainWindowHandle,nCmdShow1);
+  (*g_ShowWindowFunc)(g_MainWindowHandle,nCmdShow);
   (*g_UpdateWindowFunc)(g_MainWindowHandle);
   currentProcess = (*g_GetCurrentProcessFunc)();
   (*g_SetThreadPriorityFunc)(currentProcess,1);
@@ -128,7 +128,7 @@ LAB_005f37d1:
   (*g_GlobalMemoryStatusFunc)(&memStatus);
   g_TotalPhysicalMemory = memStatus.dwTotalPhys;
   g_AvailableSwapSpace = memStatus.dwAvailPageFile;
-  core_main_c_initializeGameSystems_FUN_00507a60();
+  core_main_c_initializeGameSystems_FUN_00507a60(g_ArgCount,g_ArgVector);
   core_main_c_enterMainGameMenu_FUN_00507a50();
   core_main_c_finalizeGameSystems_FUN_00508570();
   return 0;

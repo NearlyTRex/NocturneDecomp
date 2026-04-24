@@ -174,7 +174,7 @@ section .text
     MOV ESI,dword ptr [0x006843f8]      ; 0056a2cc | g_CTerrainPtr
     PUSH ESI                            ; 0056a2d2 | g_CTerrainInstance
     CALL core_terrain.cpp_CTerrain_render_FUN_005e1f50 ; 0056a2d3
-        ;   XREF to: 005e1f50 (UNCONDITIONAL_CALL)  ; void core_terrain.cpp_CTerrain_render_FUN_005e1f50(CTerrain * this_ptr)
+        ;   XREF to: 005e1f50 (UNCONDITIONAL_CALL)  ; void core_terrain.cpp_CTerrain_render_FUN_005e1f50(CTerrain * this_ptr, int render_pass)
     ADD ESP,0x8                         ; 0056a2d8
     MOV EBP,dword ptr [EBX + 0x15acb4]  ; 0056a2db
         ;   Label: LAB_0056a2db

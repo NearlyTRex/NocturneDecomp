@@ -31,9 +31,9 @@ void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_005a59c0(void)
   tail_bytes = (g_NumMixBuffers - 1) * bytes_per_buffer;
   for (iVar5 = 0; iVar5 < g_AudioChannelCount; iVar5 = iVar5 + 1) {
     memmove(g_ChannelPrimaryBuffers[iVar5],
-            (void *)((int)g_ChannelPrimaryBuffers[iVar5] + bytes_per_buffer),
+            (char *)g_ChannelPrimaryBuffers[iVar5] + bytes_per_buffer,
             tail_bytes);
-    memset((void *)((int)g_ChannelPrimaryBuffers[iVar5] + tail_bytes), 0, bytes_per_buffer);
+    memset((char *)g_ChannelPrimaryBuffers[iVar5] + tail_bytes, 0, bytes_per_buffer);
   }
   mix_buffer.num_output_samples = g_MixBufferSize;
   mix_buffer.num_channels = g_AudioChannelCount;
@@ -46,12 +46,12 @@ void __cdecl sound_sndmain_cpp_nextMixingBuffer_FUN_005a59c0(void)
   do {
     sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(pCVar3,delta_time);
     pCVar3 = pCVar3 + 1;
-  } while (pCVar3 != (CSfxSlot *)&g_SfxLastSlot);
+  } while (pCVar3 != g_SfxSlots + 64);
   pCVar3 = g_SfxSlots;
   do {
     sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(pCVar3,mix_buffer);
     pCVar3 = pCVar3 + 1;
-  } while (pCVar3 != (CSfxSlot *)&g_SfxLastSlot);
+  } while (pCVar3 != g_SfxSlots + 64);
   g_MixBufferReadIndex = g_MixBufferSize;
   g_MixBufferWriteIndex = 0;
   g_MixBufferCount = g_MixBufferCount + 1;

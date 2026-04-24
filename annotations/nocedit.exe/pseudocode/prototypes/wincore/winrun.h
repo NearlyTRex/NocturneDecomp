@@ -73,7 +73,7 @@ void __cdecl processWindowMessages(void);
 
 // Original: wincore_winrun.cpp_winMain_FUN_005f3680
 // Address: 005f3680
-int __stdcall winMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow1,int nCmdShow2);
+int __stdcall winMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow);
 
 // Original: wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_005f3920
 // Address: 005f3920

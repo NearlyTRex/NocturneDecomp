@@ -7,15 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 55,
+    "complexity_score": 40,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 25,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
       "warning_inlined_function"
     ],
     "total_lines": 122
@@ -45,7 +44,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_terrain.cpp_CTerrain_render_FUN_005e1f50",
-    "signature": "void __cdecl core_terrain_cpp_CTerrain_render_FUN_005e1f50(CTerrain *this_ptr)"
+    "signature": "void __cdecl core_terrain_cpp_CTerrain_render_FUN_005e1f50(CTerrain *this_ptr,int render_pass)"
   },
   "function_calls": [
     {
@@ -143,11 +142,11 @@
         "stack_params": 2
       }
     ],
-    "confidence": "medium",
-    "declared_params": 1,
-    "declared_stack_bytes": 4,
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.546511627906977,
@@ -179,10 +178,10 @@
     "pcode_op_count": 391
   },
   "stack_frame": {
-    "frame_size": 56,
+    "frame_size": 60,
     "local_size": 52,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -212,6 +211,13 @@
         "offset": 4,
         "size": 4,
         "type": "CTerrain *"
+      },
+      {
+        "is_param": true,
+        "name": "render_pass",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -240,17 +246,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:2",
-      "param_delta": 1,
-      "text": "Function declares 1 params but call sites push 2 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

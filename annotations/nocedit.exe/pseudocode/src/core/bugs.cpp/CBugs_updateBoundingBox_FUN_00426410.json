@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 7,
-    "complexity_score": 20,
+    "complexity_score": 5,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 5,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_few"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 12
   },
   "cross_references": [
@@ -38,7 +36,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_bugs.cpp_CBugs_updateBoundingBox_FUN_00426410",
-    "signature": "void __cdecl core_bugs_cpp_CBugs_updateBoundingBox_FUN_00426410(CBugs *this_ptr)"
+    "signature": "void __cdecl core_bugs_cpp_CBugs_updateBoundingBox_FUN_00426410(CBugs *this_ptr,float delta_time)"
   },
   "function_calls": [
     {
@@ -63,11 +61,11 @@
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 1,
-    "declared_stack_bytes": 4,
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.2,
@@ -90,10 +88,10 @@
     "pcode_op_count": 21
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -102,20 +100,15 @@
         "offset": 4,
         "size": 4,
         "type": "CBugs *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 1,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:2",
-      "param_delta": 1,
-      "text": "Function declares 1 params but call sites push 2 (1 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 174,
-    "complexity_score": 134,
+    "complexity_score": 119,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 104,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "mmx_assembly",
       "pointer_cast"
     ],
     "total_lines": 278
@@ -315,13 +314,6 @@
       "severity": "moderate",
       "text": "uVar6 = *(ulonglong *)((int)texture_buffer + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "MMX/SIMD assembly - may not decompile to clean C code",
-      "line": 12,
-      "match": "EMMS, MOVD, MOVQ, PACKUSWB, PADDW",
-      "text": "Function uses MMX instructions",
-      "type": "mmx_assembly"
     }
   ]
 }

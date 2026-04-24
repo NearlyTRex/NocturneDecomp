@@ -79,7 +79,7 @@ void __cdecl support_trisock_cpp_formatSocketAddress_FUN_005e1a30(char *output_b
 int __cdecl support_trisock_cpp_shouldNeverBeCalled1_FUN_005e1a80(int unknown1,int unknown2);
 int __cdecl support_trisock_cpp_shouldNeverBeCalled2_FUN_005e1ab0(int unknown1,int unknown2);
 _SOCKET * __cdecl support_trisock_cpp_invalidateSocket_FUN_005e1ae0(_SOCKET *socket_handle);
-_SOCKET * __cdecl support_trisock_cpp_bindSocketWrapper_FUN_005e1af0(_SOCKET *socket_handle);
+_SOCKET * __cdecl support_trisock_cpp_bindSocketWrapper_FUN_005e1af0(_SOCKET *socket_handle,int flags);
 int __cdecl support_trisock_cpp_createSocket_FUN_005e1b10(_SOCKET *socket_handle);
 int __cdecl support_trisock_cpp_createUDPSocket_FUN_005e1b40(_SOCKET *socket_handle);
 int __cdecl support_trisock_cpp_isSocketValid_FUN_005e1b70(_SOCKET *socket_handle);
@@ -97,7 +97,7 @@ int __cdecl support_trisock_cpp_startupWinsock_FUN_005e1ec0(void);
 int __cdecl support_trisock_cpp_cleanupWinsock_FUN_005e1ee0(void);
 void __cdecl core_terrain_cpp_CTerrain_init_FUN_005e1ef0(CTerrain *this_ptr);
 void __cdecl core_terrain_cpp_CTerrain_free_FUN_005e1f30(CTerrain *this_ptr);
-void __cdecl core_terrain_cpp_CTerrain_render_FUN_005e1f50(CTerrain *this_ptr);
+void __cdecl core_terrain_cpp_CTerrain_render_FUN_005e1f50(CTerrain *this_ptr,int render_pass);
 void __cdecl core_terrain_cpp_CTerrain_process_FUN_005e2050(CTerrain *this_ptr);
 void __cdecl core_turret_cpp_staticInit_FUN_005e2080(void);
 CTurret * __cdecl core_turret_cpp_factoryFunc_FUN_005e20b0(void);

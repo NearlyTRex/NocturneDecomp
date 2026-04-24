@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        89 ( 1.4%)
+  Functions with type issues:        88 ( 1.4%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          1
-    Undefined types in variables:      83
+    Undefined types in variables:      82
     Unresolved stack params:           5
 
-  Excluded (.keep / MMX / by-value):   137 functions
+  Excluded (.keep / MMX / by-value):   138 functions
     Wrong calling convention:          1
-    Undefined types in variables:      134
+    Undefined types in variables:      135
     Unresolved stack params:           3
 
 ====================================================================================================
@@ -113,7 +113,7 @@ Unresolved stack parameters (missing from signature) (5)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (83)
+Undefined types in variables (82)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -209,11 +209,6 @@ Undefined types in variables (83)
   mpegLayer3StereoProcess
     Address: 0x005325e0  File: sound/mp3.cpp
     Locals:  local_2080 (undefined4), local_207c (undefined4), uStack_57a (undefined4), local_18 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CDemonRaytrace_renderFrustumCubes
-    Address: 0x00497e50  File: core/dtrace.cpp
-    Locals:  local_168 (undefined4), local_164 (undefined4), local_160 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CDeformableModel_calcRootOffsetScale
@@ -596,7 +591,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (134)
+Undefined types - .keep overrides (135)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -872,6 +867,11 @@ Undefined types - .keep overrides (134)
   CDemonActor_doCheckForInvalidPointers
     Address: 0x0040ac80  File: core/actor.cpp
     Locals:  temp_z (undefined8), temp_y (undefined8), temp_x (undefined8)
+    Suggested: Resolve undefined types to concrete types
+
+  CDemonRaytrace_renderFrustumCubes
+    Address: 0x00497e50  File: core/dtrace.cpp
+    Locals:  local_168 (undefined4), local_164 (undefined4), local_160 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   configureSoundOptions

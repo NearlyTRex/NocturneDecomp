@@ -107,7 +107,7 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_
     return;
   }
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
-    core_gabriela_cpp_CGabriella_processAI_FUN_004d4190(this_ptr);
+    core_gabriela_cpp_CGabriella_processAI_FUN_004d4190(this_ptr,delta_time);
   }
   fVar10 = (this_ptr->base).invincibility_timer - delta_time;
   (this_ptr->base).invincibility_timer = fVar10;

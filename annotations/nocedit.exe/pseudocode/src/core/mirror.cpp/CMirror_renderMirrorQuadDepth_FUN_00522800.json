@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 116,
+    "complexity_score": 61,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 61,
-    "suspect_count": 5,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 193
   },
   "cross_references": [
@@ -137,6 +135,53 @@
     },
     "pcode_op_count": 780
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar2 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_y",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar2 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_z",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).inv_z + iVar2) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).inv_z + iVar2)",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 144,
     "local_size": 140,
@@ -188,46 +233,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar1 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar2 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_y",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 43,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar2 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_z",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).inv_z + iVar2) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).inv_z + iVar2)",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

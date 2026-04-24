@@ -7,15 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 89,
+    "complexity_score": 74,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 49,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "mmx_assembly",
       "pointer_cast"
     ],
     "total_lines": 117
@@ -192,13 +191,6 @@
       "severity": "moderate",
       "text": "*(uint *)((int)g_PerspectiveScanlineColorPtr + uVar1) =",
       "type": "pointer_cast"
-    },
-    {
-      "description": "MMX/SIMD assembly - may not decompile to clean C code",
-      "line": 38,
-      "match": "EMMS, MOVD, MOVQ, PADDD, PADDW",
-      "text": "Function uses MMX instructions",
-      "type": "mmx_assembly"
     }
   ]
 }

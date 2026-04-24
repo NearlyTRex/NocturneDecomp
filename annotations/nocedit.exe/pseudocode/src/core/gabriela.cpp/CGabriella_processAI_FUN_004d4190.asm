@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004d4190(CGabriella *this_ptr)
+; void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004d4190(CGabriella *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CGabriella *     Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; float            Stack[-0x120]:4  local_120
 ; float            Stack[-0x11c]:4  local_11c

@@ -20,7 +20,7 @@ section .text
     ADD EAX,0x170                       ; 0053f766
     PUSH EAX                            ; 0053f76b
     CALL support_trisock.cpp_bindSocketWrapper_FUN_005e1af0 ; 0053f76c
-        ;   XREF to: 005e1af0 (UNCONDITIONAL_CALL)  ; _SOCKET * support_trisock.cpp_bindSocketWrapper_FUN_005e1af0(_SOCKET * socket_handle)
+        ;   XREF to: 005e1af0 (UNCONDITIONAL_CALL)  ; _SOCKET * support_trisock.cpp_bindSocketWrapper_FUN_005e1af0(_SOCKET * socket_handle, int flags)
     ADD ESP,0x8                         ; 0053f771
     SUB EAX,0x170                       ; 0053f774
     RET                                 ; 0053f779

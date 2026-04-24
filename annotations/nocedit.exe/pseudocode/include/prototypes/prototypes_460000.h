@@ -28,7 +28,7 @@
 
 int __cdecl shape_design_c_checkVertexCountLimit_FUN_00460a10(void);
 void __cdecl shape_design_c_showFacetPartEditorHelp_FUN_00460ac0(void);
-void __cdecl shape_design_c_displayPalette_FUN_00461560(void);
+void __cdecl shape_design_c_displayPalette_FUN_00461560(int color);
 void __cdecl shape_design_c_renderPolygonsByPart_FUN_004616a0(int part_id);
 void __cdecl shape_design_c_traverseSpatialTree_FUN_004616f0(SSpatialTreeNode *tree_node);
 void __cdecl shape_design_c_configureSpatialSplittingPlane_FUN_004617c0(STreeNode *node);

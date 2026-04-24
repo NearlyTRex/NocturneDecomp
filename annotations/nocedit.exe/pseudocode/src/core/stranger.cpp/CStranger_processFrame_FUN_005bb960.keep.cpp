@@ -1091,7 +1091,7 @@ LAB_005bc1a6:
   core_stranger_cpp_CStranger_updateWeaponPosition_FUN_005c06b0(this_ptr,0);
   core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(this_ptr,0,delta_time);
   core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(this_ptr,1,delta_time);
-  core_stranger_cpp_CStranger_handleFireButton_FUN_005c5f10(this_ptr);
+  core_stranger_cpp_CStranger_handleFireButton_FUN_005c5f10(this_ptr,delta_time);
   core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(&(this_ptr->base).inventory);
   core_stranger_cpp_CStranger_processWeaponTick_FUN_005c6590(this_ptr,delta_time);
   if ((this_ptr->weapon != (CWeapon *)0x0) && ((this_ptr->weapon->base).is_transparent != 0)) {

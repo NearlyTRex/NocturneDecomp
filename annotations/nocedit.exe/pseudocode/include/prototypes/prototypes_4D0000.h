@@ -79,7 +79,7 @@ CDemonActorType * __cdecl core_gabriela_cpp_CGabriella_getActorType_FUN_004d2b10
 CGabriella * __cdecl core_gabriela_cpp_CGabriella_ctor_FUN_004d2b20(CGabriella *this_ptr);
 void __cdecl core_gabriela_cpp_CGabriella_setup_FUN_004d2c40(CGabriella *this_ptr);
 void __cdecl core_gabriela_cpp_CGabriella_process_FUN_004d2ea0(CGabriella *this_ptr,float delta_time);
-void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004d4190(CGabriella *this_ptr);
+void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004d4190(CGabriella *this_ptr,float delta_time);
 void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabriella *this_ptr,float delta_time);
 float __cdecl core_gabriela_cpp_CGabriella_getFlashlightMinAngle_FUN_004d4c90(CGabriella *this_ptr);
 float __cdecl core_gabriela_cpp_CGabriella_getFlashlightMaxAngle_FUN_004d4ce0(CGabriella *this_ptr);

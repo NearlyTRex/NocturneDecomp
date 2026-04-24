@@ -189,7 +189,7 @@ void __cdecl core_main_c_displayErrorAndQuit_FUN_00506f10(char *format,...) __at
 int __cdecl core_main_c_showLicenseAgreement_FUN_005070f0(void);
 void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void);
 int __cdecl core_main_c_enterMainGameMenu_FUN_00507a50(void);
-void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void);
+void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv);
 void __cdecl core_main_c_drawCenteredText_FUN_00508250(char *text,int x,int y,int color_mode);
 void __cdecl core_main_c_waitWithSkip_FUN_005082a0(int duration_ms);
 void __cdecl core_main_c_showPromoScreen_FUN_00508340(void);

@@ -113,6 +113,10 @@ OMIT_SUSPECT_TYPES = {
     'special_entry_point', 'special_math_intrinsic',
     'special_crt_function', 'special_cpu_detection',
     'cpuid_assembly',
+    # MMX and by-value struct passing are handled by dedicated .mmx.cpp /
+    # .byval.cpp variant generation; the suspect tag is descriptive, not
+    # actionable.
+    'mmx_assembly', 'byvalue_struct_passing',
 }
 
 

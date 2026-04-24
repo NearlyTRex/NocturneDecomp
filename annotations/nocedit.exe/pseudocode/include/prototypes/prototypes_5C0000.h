@@ -53,7 +53,7 @@ CVector3f * __cdecl core_stranger_cpp_CStranger_getThrowDirection_FUN_005c51c0(C
 void __cdecl core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_005c5270(CStranger *this_ptr,float delta_time);
 void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_005c5b90(CStranger *this_ptr);
 int __cdecl core_stranger_cpp_CStranger_tryThrowDynamite_FUN_005c5e80(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_handleFireButton_FUN_005c5f10(CStranger *this_ptr);
+void __cdecl core_stranger_cpp_CStranger_handleFireButton_FUN_005c5f10(CStranger *this_ptr,float delta_time);
 void __cdecl core_stranger_cpp_CStranger_updateClothSimulation_FUN_005c6220(CStranger *this_ptr);
 void __cdecl core_stranger_cpp_CStranger_processWeaponTick_FUN_005c6590(CStranger *this_ptr,float delta_time);
 int __cdecl core_stranger_cpp_CStranger_isWeaponDrawn_FUN_005c6650(CStranger *this_ptr);

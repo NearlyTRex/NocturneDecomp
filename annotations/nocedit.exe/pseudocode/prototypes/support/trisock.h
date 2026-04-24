@@ -69,7 +69,7 @@ _SOCKET * __cdecl invalidateSocket(_SOCKET *socket_handle);
 
 // Original: support_trisock.cpp_bindSocketWrapper_FUN_005e1af0
 // Address: 005e1af0
-_SOCKET * __cdecl bindSocketWrapper(_SOCKET *socket_handle);
+_SOCKET * __cdecl bindSocketWrapper(_SOCKET *socket_handle,int flags);
 
 // Original: support_trisock.cpp_createSocket_FUN_005e1b10
 // Address: 005e1b10

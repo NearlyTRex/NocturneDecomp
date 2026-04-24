@@ -2,13 +2,13 @@
 // Address: 005e1f50
 // Address Range: [[005e1f50, 005e2047]]
 // Convention: __cdecl
-// Signature: void __cdecl core_terrain_cpp_CTerrain_render_FUN_005e1f50(CTerrain *this_ptr)
+// Signature: void __cdecl core_terrain_cpp_CTerrain_render_FUN_005e1f50(CTerrain *this_ptr,int render_pass)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-void __cdecl core_terrain_cpp_CTerrain_render_FUN_005e1f50(CTerrain *this_ptr)
+void __cdecl core_terrain_cpp_CTerrain_render_FUN_005e1f50(CTerrain *this_ptr,int render_pass)
 
 {
   int iVar1;

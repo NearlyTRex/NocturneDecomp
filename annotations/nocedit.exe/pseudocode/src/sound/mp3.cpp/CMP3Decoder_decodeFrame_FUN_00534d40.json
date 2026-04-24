@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1165,
-    "complexity_score": 854,
+    "complexity_score": 839,
     "cross_reference_count": 3,
     "function_call_count": 29,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 509,
-    "suspect_count": 32,
+    "suspect_count": 31,
     "suspect_types": [
-      "byvalue_struct_passing",
       "pointer_cast",
       "unnamed_local",
       "warning_deadcode_restart",
@@ -1128,13 +1127,6 @@
       "severity": "moderate",
       "text": "*psVar13 = *(short *)((int)local_33c8 + iVar4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Calls calculateMainDataSize - decompiler cannot recognize by-value pattern",
-      "line": 1,
-      "match": "calculateMainDataSize",
-      "text": "Function calls by-value struct passing functions",
-      "type": "byvalue_struct_passing"
     },
     {
       "description": "Unnamed local variable",

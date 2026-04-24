@@ -18,7 +18,7 @@ void __watcallRegister crt_startup_cpp_WinMainBootstrap_FUN_00609e70(void)
   uint alignedStackSize;
   BYTE *pReturnAddr;
   uint *pRuntimeStack;
-  int *piVar1;
+  uint *puVar1;
   DWORD *pWinMainFrame;
   uint uStack_20;
   int aiStack_1c [2];
@@ -65,23 +65,23 @@ void __watcallRegister crt_startup_cpp_WinMainBootstrap_FUN_00609e70(void)
     pStackBuffer = (uint *)0x0;
   }
   g_CrtStackBuffer = (void *)((int)pStackBuffer + g_StackAllocSize);
-  piVar1 = pRuntimeStack + -1;
+  puVar1 = pRuntimeStack + -1;
   pRuntimeStack[-1] = 0x609ef8;
   func_0x0060ca80();
-  piVar1[-1] = 10;
-  piVar1[-2] = g_WinMainCmdShow;
-  piVar1[-3] = 0;
-  piVar1[-4] = 0;
-  pWinMainFrame = (DWORD *)(piVar1 + -5);
+  *(uint *)((int)puVar1 + -4) = 10;
+  *(DWORD *)((int)puVar1 + -8) = g_WinMainCmdShow;
+  *(uint *)((int)puVar1 + -0xc) = 0;
+  *(uint *)((int)puVar1 + -0x10) = 0;
+  pWinMainFrame = (DWORD *)((int)puVar1 + -0x14);
   *pWinMainFrame = 0x609f0c;
-  hInstance = (*g_GetModuleHandleAFunc)((LPCSTR)piVar1[-4]);
-  piVar1[-4] = (int)hInstance;
-  piVar1[-5] = 0x609f12;
+  hInstance = (*g_GetModuleHandleAFunc)(*(LPCSTR *)((int)puVar1 + -0x10));
+  *(HINSTANCE *)((int)puVar1 + -0x10) = hInstance;
+  *(uint *)((int)puVar1 + -0x14) = 0x609f12;
   exitCode = wincore_winrun_cpp_winMain_FUN_005f3680
-                       ((HINSTANCE)piVar1[-4],(HINSTANCE)piVar1[-3],(LPSTR)piVar1[-2],piVar1[-1],
-                        *piVar1);
-  piVar1[-1] = exitCode;
-  piVar1[-2] = 0x609f18;
-  ExitApplication(piVar1[-1]);
+                       (*(HINSTANCE *)((int)puVar1 + -0x10),*(HINSTANCE *)((int)puVar1 + -0xc),
+                        *(LPSTR *)((int)puVar1 + -8),*(int *)((int)puVar1 + -4));
+  *(int *)((int)puVar1 + -4) = exitCode;
+  *(uint *)((int)puVar1 + -8) = 0x609f18;
+  ExitApplication(*(int *)((int)puVar1 + -4));
   return;
 }

@@ -538,7 +538,7 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
       }
       if ((g_KeyboardState[0x19] != '\0') && (g_KeyboardState[0x2a] != '\0')) {
         g_KeyboardState[0x19] = '\0';
-        shape_design_c_displayPalette_FUN_00461560();
+        shape_design_c_displayPalette_FUN_00461560(g_EditorBackgroundColors[g_CurrentModelIndex]);
       }
       if (g_KeyboardState[0x19] != '\0') {
         g_KeyboardState[0x19] = '\0';

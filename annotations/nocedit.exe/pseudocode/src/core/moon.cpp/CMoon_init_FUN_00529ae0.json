@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 154,
-    "complexity_score": 133,
+    "complexity_score": 58,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 31,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 58,
-    "suspect_count": 7,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 212
   },
   "cross_references": [
@@ -353,6 +351,71 @@
     },
     "pcode_op_count": 676
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)g_MoonNocStrings + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_MoonBats[0].course_index + iVar3) = iVar2 % 3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(float *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_MoonBats[0].course_position + iVar3) = -fVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(float *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_MoonBats[0].animation_frame + iVar3) = fVar4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(float *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_MoonBats[0].random_offset.x + iVar3) = fVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(float *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_MoonBats[0].random_offset.y + iVar3) = fVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(float *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_MoonBats[0].random_offset.z + iVar3) = fVar1;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -369,62 +432,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 29,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)g_MoonNocStrings + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 43,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&g_MoonBats[0].course_index + iVar3) = iVar2 % 3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&g_MoonBats[0].course_position + iVar3) = -fVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 49,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&g_MoonBats[0].animation_frame + iVar3) = fVar4;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 51,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&g_MoonBats[0].random_offset.x + iVar3) = fVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&g_MoonBats[0].random_offset.y + iVar3) = fVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 56,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&g_MoonBats[0].random_offset.z + iVar3) = fVar1;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

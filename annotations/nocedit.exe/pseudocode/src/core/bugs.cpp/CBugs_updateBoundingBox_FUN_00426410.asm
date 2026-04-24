@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_bugs_cpp_CBugs_updateBoundingBox_FUN_00426410(CBugs *this_ptr)
+; void __cdecl core_bugs_cpp_CBugs_updateBoundingBox_FUN_00426410(CBugs *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CBugs *          Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ;
 ; XREF[1]:
 ;   core_bugs.cpp_CBugs_process_FUN_004250f0 at 0042519c

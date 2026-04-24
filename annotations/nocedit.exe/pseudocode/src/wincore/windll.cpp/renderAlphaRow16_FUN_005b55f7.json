@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 121,
+    "complexity_score": 106,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 13,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 106,
-    "suspect_count": 1,
-    "suspect_types": [
-      "mmx_assembly"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 190
   },
   "cross_references": [
@@ -368,13 +366,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "MMX/SIMD assembly - may not decompile to clean C code",
-      "line": 10,
-      "match": "EMMS, MOVD, MOVQ, PACKUSWB, PADDUSW",
-      "text": "Function uses MMX instructions",
-      "type": "mmx_assembly"
-    }
-  ]
+  "suspects": []
 }

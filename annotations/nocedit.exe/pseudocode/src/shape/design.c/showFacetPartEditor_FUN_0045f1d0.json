@@ -7,16 +7,15 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 1920,
-    "complexity_score": 787,
+    "complexity_score": 762,
     "cross_reference_count": 1,
     "function_call_count": 60,
     "global_count": 143,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 597,
-    "suspect_count": 17,
+    "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
-      "raw_address_constant",
       "unnamed_local",
       "warning_inlined_function"
     ],
@@ -1521,22 +1520,6 @@
       "severity": "moderate",
       "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Raw hex literal 0x1000000 matches address of g_LightBufferPool (+4087288 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 176,
-      "match": "0x1000000",
-      "severity": "moderate",
-      "text": "if (0x1000000 < g_ProjectionScale) {",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x1000000 matches address of g_LightBufferPool (+4087288 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 177,
-      "match": "0x1000000",
-      "severity": "moderate",
-      "text": "g_ProjectionScale = 0x1000000;",
-      "type": "raw_address_constant"
     },
     {
       "description": "Unnamed local variable",

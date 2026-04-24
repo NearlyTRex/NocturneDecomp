@@ -1,14 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow1,int nCmdShow2)
+; int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow)
 ;
 ; Parameters:
 ; HINSTANCE        Stack[0x4]:4   hInstance
 ; HINSTANCE        Stack[0x8]:4   hPrevInstance
 ; LPSTR            Stack[0xc]:4   lpCmdLine
-; int              Stack[0x10]:4   nCmdShow1
-; int              Stack[0x14]:4   nCmdShow2
+; int              Stack[0x10]:4   nCmdShow
 ; Local Variables:
 ; undefined1[40]   Stack[-0x58]:40  windowClass
 ; undefined1[32]   Stack[-0x30]:32  memStatus
@@ -289,7 +288,7 @@ section .text
     PUSH EBP                            ; 005f38f2
     MOV [0x03f98478],EAX                ; 005f38f3 | g_AvailableSwapSpace
     CALL core_main.c_initializeGameSystems_FUN_00507a60 ; 005f38f8
-        ;   XREF to: 00507a60 (UNCONDITIONAL_CALL)  ; void core_main.c_initializeGameSystems_FUN_00507a60()
+        ;   XREF to: 00507a60 (UNCONDITIONAL_CALL)  ; void core_main.c_initializeGameSystems_FUN_00507a60(int argc, char * * argv)
     ADD ESP,0x8                         ; 005f38fd
     CALL core_main.c_enterMainGameMenu_FUN_00507a50 ; 005f3900
         ;   XREF to: 00507a50 (UNCONDITIONAL_CALL)  ; int core_main.c_enterMainGameMenu_FUN_00507a50()

@@ -31,7 +31,7 @@ void __cdecl core_bugs_cpp_CBugs_process_FUN_004250f0(CBugs *this_ptr,float delt
       core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00425fe0(this_ptr,delta_time);
       return;
     case BUGS_STATE_DETACH:
-      core_bugs_cpp_CBugs_updateBoundingBox_FUN_00426410(this_ptr);
+      core_bugs_cpp_CBugs_updateBoundingBox_FUN_00426410(this_ptr,delta_time);
       return;
     }
   }

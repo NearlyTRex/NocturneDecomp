@@ -7,21 +7,9 @@
 ; SMRGLHeaderExtended * Stack[0x4]:4   mrgl_data
 ; Local Variables:
 ; char[80]         Stack[-0x160]:80  local_160
-; uint[13]         Stack[-0x110]:52  local_110
-; uint[13]         Stack[-0xdc]:52  local_dc
-; uint             Stack[-0xa8]:4  local_a8
-; uint             Stack[-0xa4]:4  local_a4
-; uint             Stack[-0xa0]:4  local_a0
-; uint             Stack[-0x9c]:4  local_9c
-; uint             Stack[-0x98]:4  local_98
-; uint             Stack[-0x94]:4  local_94
-; uint             Stack[-0x90]:4  local_90
-; uint             Stack[-0x8c]:4  local_8c
-; uint             Stack[-0x88]:4  local_88
-; int              Stack[-0x84]:4  local_84
-; int              Stack[-0x80]:4  local_80
-; int              Stack[-0x7c]:4  local_7c
-; int              Stack[-0x78]:4  local_78
+; SMRGLModelBounds Stack[-0x110]:52  local_110
+; SMRGLModelBounds Stack[-0xdc]:52  local_dc
+; SMRGLModelBounds Stack[-0xa8]:52  local_a8
 ; SMRGLModelBounds Stack[-0x74]:52  local_74
 ; int *            Stack[-0x34]:4  local_34
 ; SMRGLModelBounds * Stack[-0x30]:4  local_30
@@ -378,7 +366,7 @@ section .text
     LEA ESI,[ESP + 0x88]                ; 0052859f
     LEA EDI,[ESP + 0x54]                ; 005285a6
     CALL engine_boss.c_modelStructNotSupported4_FUN_0041dbe0 ; 005285aa
-        ;   XREF to: 0041dbe0 (UNCONDITIONAL_CALL)  ; void engine_boss.c_modelStructNotSupported4_FUN_0041dbe0(SMRGLHeaderExtended * mrgl_data)
+        ;   XREF to: 0041dbe0 (UNCONDITIONAL_CALL)  ; void engine_boss.c_modelStructNotSupported4_FUN_0041dbe0(SMRGLHeaderExtended * mrgl_data, SMRGLModelBounds * out_bounds)
     MOV ECX,0xd                         ; 005285af
     LEA ESI,[ESP + 0x88]                ; 005285b4
     ADD ESP,0x4                         ; 005285bb

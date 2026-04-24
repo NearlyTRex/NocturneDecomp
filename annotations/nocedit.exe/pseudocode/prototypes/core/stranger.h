@@ -181,7 +181,7 @@ int __cdecl CStranger::tryThrowDynamite(CStranger *this_ptr);
 
 // Original: core_stranger.cpp_CStranger_handleFireButton_FUN_005c5f10
 // Address: 005c5f10
-void __cdecl CStranger::handleFireButton(CStranger *this_ptr);
+void __cdecl CStranger::handleFireButton(CStranger *this_ptr,float delta_time);
 
 // Original: core_stranger.cpp_CStranger_updateClothSimulation_FUN_005c6220
 // Address: 005c6220

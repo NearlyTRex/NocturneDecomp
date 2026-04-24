@@ -91,7 +91,7 @@ section .text
     CALL dword ptr CS:[0x6115b4]        ; 00609f05 | g_GetModuleHandleAFunc
     PUSH EAX                            ; 00609f0c
     CALL wincore_winrun.cpp_winMain_FUN_005f3680 ; 00609f0d
-        ;   XREF to: 005f3680 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_winMain_FUN_005f3680(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow1, ...)
+        ;   XREF to: 005f3680 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_winMain_FUN_005f3680(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
     PUSH EAX                            ; 00609f12
     CALL crt_startup.c_ExitApplication_FUN_0060b534 ; 00609f13
         ;   XREF to: 0060b534 (UNCONDITIONAL_CALL)  ; void crt_startup.c_ExitApplication_FUN_0060b534(int exit_code)

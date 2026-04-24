@@ -406,7 +406,7 @@ section .text
     MOV EAX,[0x006843f8]                ; 0056c4fa | g_CTerrainInstance | g_CTerrainPtr
     PUSH EAX                            ; 0056c4ff | g_CTerrainInstance
     CALL core_terrain.cpp_CTerrain_render_FUN_005e1f50 ; 0056c500
-        ;   XREF to: 005e1f50 (UNCONDITIONAL_CALL)  ; void core_terrain.cpp_CTerrain_render_FUN_005e1f50(CTerrain * this_ptr)
+        ;   XREF to: 005e1f50 (UNCONDITIONAL_CALL)  ; void core_terrain.cpp_CTerrain_render_FUN_005e1f50(CTerrain * this_ptr, int render_pass)
     ADD ESP,0x8                         ; 0056c505
     MOV EDX,dword ptr [0x0067a3d0]      ; 0056c508 | g_CFireEffectInstance | g_CFireEffectPtr
         ;   Label: LAB_0056c508

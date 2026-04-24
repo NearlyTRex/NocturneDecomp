@@ -1732,7 +1732,7 @@ section .text
     SHL EAX,0x2                         ; 00460796
     PUSH dword ptr [EAX + 0x16263c0]    ; 00460799 | g_EditorBackgroundColors
     CALL shape_design.c_displayPalette_FUN_00461560 ; 0046079f
-        ;   XREF to: 00461560 (UNCONDITIONAL_CALL)  ; void shape_design.c_displayPalette_FUN_00461560()
+        ;   XREF to: 00461560 (UNCONDITIONAL_CALL)  ; void shape_design.c_displayPalette_FUN_00461560(int color)
     ADD ESP,0x4                         ; 004607a4
     CMP byte ptr [0x02d03eb1],0x0       ; 004607a7 | CHAR_ARRAY_02d03eb1
         ;   Label: LAB_004607a7

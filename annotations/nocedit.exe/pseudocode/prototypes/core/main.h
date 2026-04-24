@@ -25,7 +25,7 @@ int __cdecl enterMainGameMenu(void);
 
 // Original: core_main.c_initializeGameSystems_FUN_00507a60
 // Address: 00507a60
-void __cdecl initializeGameSystems(void);
+void __cdecl initializeGameSystems(int argc,char **argv);
 
 // Original: core_main.c_drawCenteredText_FUN_00508250
 // Address: 00508250

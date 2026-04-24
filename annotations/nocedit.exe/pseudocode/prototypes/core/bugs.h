@@ -81,7 +81,7 @@ void __cdecl CBugs::attackSwarmTarget(CBugs *this_ptr,float delta_time);
 
 // Original: core_bugs.cpp_CBugs_updateBoundingBox_FUN_00426410
 // Address: 00426410
-void __cdecl CBugs::updateBoundingBox(CBugs *this_ptr);
+void __cdecl CBugs::updateBoundingBox(CBugs *this_ptr,float delta_time);
 
 // Original: core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00426420
 // Address: 00426420

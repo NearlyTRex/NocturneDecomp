@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 745,
-    "complexity_score": 383,
+    "complexity_score": 318,
     "cross_reference_count": 8,
     "function_call_count": 11,
     "global_count": 53,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 303,
-    "suspect_count": 7,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
       "warning_inlined_function"
     ],
     "total_lines": 1048
@@ -635,6 +634,60 @@
       "severity": "moderate",
       "text": "piVar2 = (int *)&stack0xfffffe8c;",
       "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 163,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar10) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 164,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 272,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar10) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 273,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 287,
+      "match": "(float *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (fStack_15c < *(float *)((int)g_VDCameraScores + iVar7)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 288,
+      "match": "(float *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fStack_15c = *(float *)((int)g_VDCameraScores + iVar7);",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {
@@ -923,54 +976,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 163,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar10) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 164,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 272,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar10) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 273,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 287,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "if (fStack_15c < *(float *)((int)g_VDCameraScores + iVar7)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 288,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "fStack_15c = *(float *)((int)g_VDCameraScores + iVar7);",
-      "type": "pointer_cast"
     }
   ]
 }

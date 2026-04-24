@@ -18,7 +18,7 @@ void __watcallRegister entry(void)
   int iVar5;
   uint uVar6;
   byte *puVar7;
-  int *piVar8;
+  byte *puVar8;
   uint uStack_20;
   int aiStack_1c [2];
   uint uStack_14;
@@ -55,22 +55,22 @@ void __watcallRegister entry(void)
     puVar3 = (byte *)0x0;
   }
   g_CrtStackBuffer = puVar3 + g_StackAllocSize;
-  piVar8 = (int *)(puVar7 + -4);
+  puVar8 = puVar7 + -4;
   *(uint *)(puVar7 + -4) = 0x609ef8;
   func_0x0060ca80();
-  piVar8[-1] = 10;
-  piVar8[-2] = g_WinMainCmdShow;
-  piVar8[-3] = 0;
-  piVar8[-4] = 0;
-  piVar8[-5] = 0x609f0c;
-  pHVar4 = (*g_GetModuleHandleAFunc)((LPCSTR)piVar8[-4]);
-  piVar8[-4] = (int)pHVar4;
-  piVar8[-5] = 0x609f12;
+  *(uint *)(puVar8 + -4) = 10;
+  *(DWORD *)(puVar8 + -8) = g_WinMainCmdShow;
+  *(uint *)(puVar8 + -0xc) = 0;
+  *(uint *)(puVar8 + -0x10) = 0;
+  *(uint *)(puVar8 + -0x14) = 0x609f0c;
+  pHVar4 = (*g_GetModuleHandleAFunc)(*(LPCSTR *)(puVar8 + -0x10));
+  *(HMODULE *)(puVar8 + -0x10) = pHVar4;
+  *(uint *)(puVar8 + -0x14) = 0x609f12;
   iVar5 = wincore_winrun_cpp_winMain_FUN_005f3680
-                    ((HINSTANCE)piVar8[-4],(HINSTANCE)piVar8[-3],(LPSTR)piVar8[-2],piVar8[-1],
-                     *piVar8);
-  piVar8[-1] = iVar5;
-  piVar8[-2] = 0x609f18;
-  ExitApplication(piVar8[-1]);
+                    (*(HINSTANCE *)(puVar8 + -0x10),*(HINSTANCE *)(puVar8 + -0xc),
+                     *(LPSTR *)(puVar8 + -8),*(int *)(puVar8 + -4));
+  *(int *)(puVar8 + -4) = iVar5;
+  *(uint *)(puVar8 + -8) = 0x609f18;
+  ExitApplication(*(int *)(puVar8 + -4));
   return;
 }

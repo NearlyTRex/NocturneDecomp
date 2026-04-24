@@ -7,16 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 493,
-    "complexity_score": 250,
+    "complexity_score": 235,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 235,
-    "suspect_count": 1,
-    "suspect_types": [
-      "byvalue_struct_passing"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 728
   },
   "cross_references": [
@@ -295,13 +293,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Calls clipAndDrawLine2D - decompiler cannot recognize by-value pattern",
-      "line": 1,
-      "match": "clipAndDrawLine2D",
-      "text": "Function calls by-value struct passing functions",
-      "type": "byvalue_struct_passing"
-    }
-  ]
+  "suspects": []
 }

@@ -7,16 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 351,
-    "complexity_score": 180,
+    "complexity_score": 165,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 35,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 140,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "raw_address_constant"
+      "pointer_cast"
     ],
     "total_lines": 491
   },
@@ -568,15 +567,6 @@
       "severity": "moderate",
       "text": "*(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2) = 0xff00ff;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Raw hex literal 0xffffff matches address of g_LightBufferPool (+4087287 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "introduced_by": "keep",
-      "line": 97,
-      "match": "0xffffff",
-      "severity": "moderate",
-      "text": "local_2c * (local_24 / 0x30) + (int)buffer) * 3) & 0xFFFFFF;",
-      "type": "raw_address_constant"
     }
   ]
 }

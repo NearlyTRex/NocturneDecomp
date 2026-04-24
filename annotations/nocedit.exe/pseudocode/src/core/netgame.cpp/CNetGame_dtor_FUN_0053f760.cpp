@@ -11,6 +11,6 @@ CNetGame * __cdecl core_netgame_cpp_CNetGame_dtor_FUN_0053f760(CNetGame *this_pt
 {
   CNetGame_ptr_368 pSVar1;
   
-  pSVar1 = support_trisock_cpp_bindSocketWrapper_FUN_005e1af0(&this_ptr->socket);
+  pSVar1 = support_trisock_cpp_bindSocketWrapper_FUN_005e1af0(&this_ptr->socket,0);
   return ADJ(pSVar1);
 }

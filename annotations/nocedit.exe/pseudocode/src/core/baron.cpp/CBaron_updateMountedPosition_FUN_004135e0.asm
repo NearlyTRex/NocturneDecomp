@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_baron_cpp_CBaron_updateMountedPosition_FUN_004135e0(CBaron *this_ptr)
+; void __cdecl core_baron_cpp_CBaron_updateMountedPosition_FUN_004135e0(CBaron *this_ptr,float delta_time)
 ;
 ; Parameters:
 ; CBaron *         Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; CVector3f        Stack[-0x34]:12  local_34
 ; CVector3f        Stack[-0x28]:12  local_28

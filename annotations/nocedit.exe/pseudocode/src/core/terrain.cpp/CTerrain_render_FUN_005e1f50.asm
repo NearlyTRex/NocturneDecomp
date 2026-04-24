@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_terrain_cpp_CTerrain_render_FUN_005e1f50(CTerrain *this_ptr)
+; void __cdecl core_terrain_cpp_CTerrain_render_FUN_005e1f50(CTerrain *this_ptr,int render_pass)
 ;
 ; Parameters:
 ; CTerrain *       Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   render_pass
 ; Local Variables:
 ; CVector3i        Stack[-0x30]:12  local_30
 ; CVector3i        Stack[-0x24]:12  local_24

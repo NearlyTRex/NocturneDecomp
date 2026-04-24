@@ -812,6 +812,18 @@ def identify_raw_address_constant_suspects(decompiled_code, address_interval_map
             # binary's layout) and absurdly high ones (likely bitmasks).
             if addr < 0x400000 or addr >= 0x10000000:
                 continue
+            # Skip values that are almost certainly numeric constants rather
+            # than addresses: powers of 2 (single bit set — 0x1000000 etc.
+            # used as fixed-point UV scalars or shift positions) and full
+            # all-ones bitmasks (0xff, 0xffff, 0xffffff). These collide with
+            # globals in the binary's address range only by coincidence.
+            if (addr & (addr - 1)) == 0:
+                continue
+            n = addr
+            while n & 1:
+                n >>= 1
+            if n == 0:
+                continue
 
             hit = _find_global_at(addr, address_interval_map)
             if hit is None:

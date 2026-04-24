@@ -7,17 +7,17 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 407,
-    "complexity_score": 199,
+    "complexity_score": 196,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 184,
+    "pseudocode_lines": 181,
     "suspect_count": 1,
     "suspect_types": [
       "warning_inlined_function"
     ],
-    "total_lines": 591
+    "total_lines": 588
   },
   "cross_references": [
     {
@@ -203,13 +203,22 @@
   },
   "resolved_suspects": [
     {
-      "description": "Unknown/mangled field access",
-      "line": 174,
-      "match": "._76_4_",
+      "description": "Complex pointer cast",
+      "line": 166,
+      "match": "(SMRGLModelBounds *)((int)",
       "resolution_source": "keep",
-      "severity": "mild",
-      "text": "*local_34 = local_160._76_4_;",
-      "type": "unknown_field"
+      "severity": "moderate",
+      "text": "puVar11 = (SMRGLModelBounds *)((int)puVar11 + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 169,
+      "match": "(SMRGLModelBounds *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar6 = (SMRGLModelBounds *)((int)pSVar6 + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {
@@ -231,105 +240,21 @@
         "name": "local_110",
         "offset": -272,
         "size": 52,
-        "type": "uint[13]"
+        "type": "SMRGLModelBounds"
       },
       {
         "is_param": false,
         "name": "local_dc",
         "offset": -220,
         "size": 52,
-        "type": "uint[13]"
+        "type": "SMRGLModelBounds"
       },
       {
         "is_param": false,
         "name": "local_a8",
         "offset": -168,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": false,
-        "name": "local_a4",
-        "offset": -164,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": false,
-        "name": "local_a0",
-        "offset": -160,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": false,
-        "name": "local_9c",
-        "offset": -156,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": false,
-        "name": "local_98",
-        "offset": -152,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": false,
-        "name": "local_94",
-        "offset": -148,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": false,
-        "name": "local_90",
-        "offset": -144,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": false,
-        "name": "local_8c",
-        "offset": -140,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": false,
-        "name": "local_88",
-        "offset": -136,
-        "size": 4,
-        "type": "uint"
-      },
-      {
-        "is_param": false,
-        "name": "local_84",
-        "offset": -132,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "local_80",
-        "offset": -128,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "local_7c",
-        "offset": -124,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "local_78",
-        "offset": -120,
-        "size": 4,
-        "type": "int"
+        "size": 52,
+        "type": "SMRGLModelBounds"
       },
       {
         "is_param": false,
@@ -420,76 +345,13 @@
   "static_analysis": {
     "analyzed_file": "getMRGLBounds_FUN_00528140.keep.c",
     "cppcheck_quick": {
-      "diagnostic_count": 10,
+      "diagnostic_count": 1,
       "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 13,
-          "line": 179,
-          "message": "Redundant assignment of 'puVar11' to itself.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 42,
-          "line": 154,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 27,
-          "line": 155,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 42,
-          "line": 159,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 27,
-          "line": 160,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 42,
-          "line": 164,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
-        {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 27,
-          "line": 165,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
-        },
         {
           "check_id": "uninitvar",
           "column": 15,
-          "line": 178,
+          "line": 173,
           "message": "Uninitialized variable: *puVar11",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 10,
-          "line": 182,
-          "message": "Uninitialized variable: local_34",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 20,
-          "line": 182,
-          "message": "Uninitialized variable: local_110",
           "severity": "warning"
         }
       ],

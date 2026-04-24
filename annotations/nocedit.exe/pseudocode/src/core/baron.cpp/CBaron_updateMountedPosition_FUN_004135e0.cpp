@@ -2,11 +2,11 @@
 // Address: 004135e0
 // Address Range: [[004135e0, 004136a2]]
 // Convention: __cdecl
-// Signature: void __cdecl core_baron_cpp_CBaron_updateMountedPosition_FUN_004135e0(CBaron *this_ptr)
+// Signature: void __cdecl core_baron_cpp_CBaron_updateMountedPosition_FUN_004135e0(CBaron *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_baron_cpp_CBaron_updateMountedPosition_FUN_004135e0(CBaron *this_ptr)
+void __cdecl core_baron_cpp_CBaron_updateMountedPosition_FUN_004135e0(CBaron *this_ptr,float delta_time)
 
 {
   CVector3f *pCVar3;

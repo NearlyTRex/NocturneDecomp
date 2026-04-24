@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 81,
+    "complexity_score": 66,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 51,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "mmx_assembly",
       "pointer_cast"
     ],
     "total_lines": 104
@@ -263,13 +262,6 @@
       "severity": "moderate",
       "text": "puVar3 = (uint *)((int)g_ScreenBufferArray[screen_y] + screen_x * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "MMX/SIMD assembly - may not decompile to clean C code",
-      "line": 32,
-      "match": "EMMS, MOVD, PACKUSWB, PADDW, PMULLW",
-      "text": "Function uses MMX instructions",
-      "type": "mmx_assembly"
     }
   ]
 }

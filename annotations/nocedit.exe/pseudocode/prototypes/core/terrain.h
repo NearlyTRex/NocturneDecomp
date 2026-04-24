@@ -13,7 +13,7 @@ void __cdecl CTerrain::free(CTerrain *this_ptr);
 
 // Original: core_terrain.cpp_CTerrain_render_FUN_005e1f50
 // Address: 005e1f50
-void __cdecl CTerrain::render(CTerrain *this_ptr);
+void __cdecl CTerrain::render(CTerrain *this_ptr,int render_pass);
 
 // Original: core_terrain.cpp_CTerrain_process_FUN_005e2050
 // Address: 005e2050

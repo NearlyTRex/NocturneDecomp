@@ -12,7 +12,6 @@
 void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
 
 {
-  char cVar1;
   CHero *pCVar2;
   uint uVar3;
   double dVar4;
@@ -32,7 +31,6 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   uint *puVar19;
   int iVar8;
   int iVar14;
-  int *piVar20;
   byte bVar21;
   CSfxSample local_62c;
   char local_3dc [256];
@@ -70,7 +68,6 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   double dVar7;
   double dVar1;
   double dVar2;
-  char cVar3;
   CHero *pCVar4;
   CVector3i *input_ptr;
   
@@ -201,12 +198,11 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
                       local_1c = 0;
                       iVar14 = 0;
                       if (iVar5 < iVar6) {
-                        local_24 = iVar5 << 2;
-                        local_2c = iVar6 << 2;
+                        local_24 = iVar5;
+                        local_2c = iVar6;
                         do {
                           if (local_28 < local_20) {
-                            puVar19 = (uint *)(local_28 * 4 +
-                                              *(int *)((int)g_ScreenBufferArray + local_24));
+                            puVar19 = (uint *)g_ScreenBufferArray[local_24] + local_28;
                             iVar5 = local_28;
                             do {
                               uVar3 = *puVar19;
@@ -218,7 +214,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
                               local_18 = local_18 + 1;
                             } while (iVar5 < local_20);
                           }
-                          local_24 = local_24 + 4;
+                          local_24 = local_24 + 1;
                         } while (local_24 < local_2c);
                       }
                       iVar14 = iVar14 / local_18;
@@ -343,16 +339,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       if (EVar15 == DEATH_STATE_DEAD) {
         pcVar16 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                             ("You're dead.  Game over.");
-        piVar20 = &local_62c.taken;
-        do {
-          cVar3 = *pcVar16;
-          *(char *)piVar20 = cVar3;
-          if (cVar3 == '\0') break;
-          cVar1 = pcVar16[1];
-          pcVar16 = pcVar16 + 2;
-          *(char *)((int)piVar20 + 1) = cVar1;
-          piVar20 = (int *)((int)piVar20 + 2);
-        } while (cVar1 != '\0');
+        strcpy((char *)&local_62c.taken, pcVar16);
         engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0
                   (g_MediumFont,0,g_WindowWidth,g_WindowHeight + g_MediumFont->max_char_height * -2,
                    (uint)g_ColorCubeLookup[0x7c00],0,(char *)&local_62c.taken);

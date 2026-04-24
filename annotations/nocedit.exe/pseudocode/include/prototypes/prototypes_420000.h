@@ -147,7 +147,7 @@ void __cdecl core_bugs_cpp_CBugs_updateGroundHeightGrid_FUN_004257f0(CBugs *this
 float __cdecl core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00425b70(CBugs *this_ptr,float x,float z);
 void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_00425cc0(CBugs *this_ptr,float delta_time);
 void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00425fe0(CBugs *this_ptr,float delta_time);
-void __cdecl core_bugs_cpp_CBugs_updateBoundingBox_FUN_00426410(CBugs *this_ptr);
+void __cdecl core_bugs_cpp_CBugs_updateBoundingBox_FUN_00426410(CBugs *this_ptr,float delta_time);
 int __cdecl core_bugs_cpp_CBugs_updateBugPathfinding_FUN_00426420(CBugs *this_ptr,SBug *bug_data,float delta_time,CVector3f *dest_vertex);
 void __cdecl core_bugs_cpp_CBugs_updateBugRenderingData_FUN_004268e0(CBugs *this_ptr,SBug *bug_data,float delta_time);
 void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_004270f0(CBugs *this_ptr,SBug *bug_data);

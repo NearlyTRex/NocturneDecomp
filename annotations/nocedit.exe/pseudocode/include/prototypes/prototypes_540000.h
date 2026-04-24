@@ -267,7 +267,7 @@ void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform *this
 void __cdecl core_platfrm_cpp_CPlatform_onActorDeleted_FUN_0054e2e0(CPlatform *this_ptr,CDemonActor *deleted_actor);
 void __cdecl core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_0054e320(CPlatform *this_ptr);
 void __cdecl core_platfrm_cpp_CPlatform_propertyDisplaySlewCallback_FUN_0054e400(CPlatform *this_ptr,CActorProperty *property,char *output_buffer);
-int __cdecl core_platfrm_cpp_CPlatform_propertyActionSlewCallback_FUN_0054e480(CPlatform *this_ptr);
+int __cdecl core_platfrm_cpp_CPlatform_propertyActionSlewCallback_FUN_0054e480(CPlatform *this_ptr,int value);
 void __cdecl core_platfrm_cpp_CPlatform_propertyDisplayTypeCallback_FUN_0054e4e0(CPlatform *this_ptr,CActorProperty *property,char *output_buffer);
 int __cdecl core_platfrm_cpp_CPlatform_propertyActionTypeCallback_FUN_0054e530(CPlatform *this_ptr,CActorProperty *property);
 void __cdecl core_platfrm_cpp_CPlatform_propertyDisplayStateCallback_FUN_0054e700(CPlatform *this_ptr,CActorProperty *property,char *output_buffer);

@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; _SOCKET * __cdecl support_trisock_cpp_bindSocketWrapper_FUN_005e1af0(_SOCKET *socket_handle)
+; _SOCKET * __cdecl support_trisock_cpp_bindSocketWrapper_FUN_005e1af0(_SOCKET *socket_handle,int flags)
 ;
 ; Parameters:
 ; _SOCKET *        Stack[0x4]:4   socket_handle
+; int              Stack[0x8]:4   flags
 ;
 ; XREF[1]:
 ;   core_netgame.cpp_CNetGame_dtor_FUN_0053f760 at 0053f76c

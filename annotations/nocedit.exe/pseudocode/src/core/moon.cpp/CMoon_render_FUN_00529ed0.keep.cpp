@@ -63,13 +63,13 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
   if (iVar4 != 0) {
     iVar5 = 0;
     do {
-      if (0.0 <= *(float *)((int)&g_MoonBats[0].course_position + iVar5)) {
+      if (0.0 <= g_MoonBats[iVar5].course_position) {
         core_course_cpp_CCourse_evaluate_FUN_00442710
-                  (g_MoonBatCourses + *(int *)((int)&g_MoonBats[0].course_index + iVar5),
-                   *(float *)((int)&g_MoonBats[0].course_position + iVar5),&local_44,&local_50);
-        local_44.x = local_44.x + *(float *)((int)&g_MoonBats[0].random_offset.x + iVar5);
-        local_44.y = local_44.y + *(float *)((int)&g_MoonBats[0].random_offset.y + iVar5);
-        local_44.z = local_44.z + *(float *)((int)&g_MoonBats[0].random_offset.z + iVar5);
+                  (g_MoonBatCourses + g_MoonBats[iVar5].course_index,
+                   g_MoonBats[iVar5].course_position,&local_44,&local_50);
+        local_44.x = local_44.x + g_MoonBats[iVar5].random_offset.x;
+        local_44.y = local_44.y + g_MoonBats[iVar5].random_offset.y;
+        local_44.z = local_44.z + g_MoonBats[iVar5].random_offset.z;
         local_50.y = local_50.y + 1.570796f;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                   (g_CDemonRendererPtr2,&local_44);
@@ -77,11 +77,11 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
                   (g_CDemonRendererPtr2,(CVector3i *)&local_50,(CVector3i *)0x0);
         core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
                   (&g_MoonBatModel,
-                   (int)ROUND(ROUND(*(float *)((int)&g_MoonBats[0].animation_frame + iVar5))),
+                   (int)ROUND(ROUND(g_MoonBats[iVar5].animation_frame)),
                    (CKeyFramedModelInstance *)0x0,-1);
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
-        fVar1 = *(float *)((int)&g_MoonBats[0].course_position + iVar5) /
-                (float)g_MoonBatCourses[*(int *)((int)&g_MoonBats[0].course_index + iVar5)].len;
+        fVar1 = g_MoonBats[iVar5].course_position /
+                (float)g_MoonBatCourses[g_MoonBats[iVar5].course_index].len;
         if ((float)0.5 <= fVar1) {
           dVar1 = ((double)fVar1 + -0.5) * 8192;
         }
@@ -90,8 +90,8 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
         }
         g_CDemonSetPtr->ambient_base_quick = (int)ROUND(ROUND(dVar1));
       }
-      iVar5 = iVar5 + 0x18;
-    } while (iVar5 != 0x2d0);
+      iVar5 = iVar5 + 1;
+    } while (iVar5 != 30);
   }
   g_CDemonSetPtr->rendering_mode = 0;
   engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_00410cf0(&g_MoonCloudTexture);

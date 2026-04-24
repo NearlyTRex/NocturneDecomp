@@ -344,7 +344,7 @@ section .text
         ;   Label: LAB_004131ef
     PUSH EBP                            ; 004131f6
     CALL core_baron.cpp_CBaron_updateMountedPosition_FUN_004135e0 ; 004131f7
-        ;   XREF to: 004135e0 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaron_updateMountedPosition_FUN_004135e0(CBaron * this_ptr)
+        ;   XREF to: 004135e0 (UNCONDITIONAL_CALL)  ; void core_baron.cpp_CBaron_updateMountedPosition_FUN_004135e0(CBaron * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004131fc
     JMP 0x00412f41                      ; 004131ff
         ;   XREF to: 00412f41 (UNCONDITIONAL_JUMP)  ; LAB_00412f41

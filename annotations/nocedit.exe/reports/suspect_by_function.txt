@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5106 (79.1%)
-With suspects: 1348
-Total suspects: 5937
+Clean: 5165 (80.0%)
+With suspects: 1289
+Total suspects: 5786
 
 ====================================================================================================
 cockpit_ckptutil.c_applyActPalette_FUN_004319b0 (1 suspect)
@@ -226,12 +226,6 @@ cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30 (1 suspect)
   File: cockpit/ckptutil.c
 ====================================================================================================
   Line 17 [unnamed_local]: byte local_30c [768];
-
-====================================================================================================
-cockpit_ckptutil.c_mmxOptimizedMemcpy_FUN_00431622 (1 suspect)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 81 [mmx_assembly]: Function uses MMX instructions
 
 ====================================================================================================
 cockpit_ckptutil.c_optimizedMemcpy_FUN_00431528 (10 suspects)
@@ -695,10 +689,9 @@ core_actor.cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0 (6 suspects)
   Line 36 [pointer_cast]: *(uint *)((int)&this_ptr_00->vertex_buffer_ptr->v + iVar1) = 0x800000;
 
 ====================================================================================================
-core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940 (7 suspects)
+core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940 (6 suspects)
   File: core/actor.cpp
 ====================================================================================================
-  Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
   Line 49 [missing_cave_copy]: CVector3f CStack_120;
   Line 54 [missing_cave_copy]: CVector3f CStack_e4;
   Line 57 [missing_cave_copy]: CVector3f CStack_c0;
@@ -715,16 +708,9 @@ core_actor.cpp_archiveLocalizedString_FUN_0040b6e0 (3 suspects)
   Line 47 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_actor.cpp_draw3DLineSegment_FUN_0040d330 (1 suspect)
+core_actor.cpp_drawBoundingBox_FUN_0040d470 (6 suspects)
   File: core/actor.cpp
 ====================================================================================================
-  Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
-
-====================================================================================================
-core_actor.cpp_drawBoundingBox_FUN_0040d470 (7 suspects)
-  File: core/actor.cpp
-====================================================================================================
-  Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
   Line 49 [missing_cave_copy]: CVector3f local_130;
   Line 64 [missing_cave_copy]: CVector3f local_dc;
   Line 65 [missing_cave_copy]: CVector3f local_d0;
@@ -733,11 +719,10 @@ core_actor.cpp_drawBoundingBox_FUN_0040d470 (7 suspects)
   Line 69 [missing_cave_copy]: CVector3f local_a0;
 
 ====================================================================================================
-core_actor.cpp_generateRandomValue_FUN_0040cba0 (2 suspects)
+core_actor.cpp_generateRandomValue_FUN_0040cba0 (1 suspect)
   File: core/actor.cpp
 ====================================================================================================
   Line 0 [param_count_too_few]: Function declares 0 params but call sites push 2 (2 missing)
-  Line 5 [raw_address_constant]: g_RandomSeedValue = g_RandomSeedValue * 0x2ff0bd + 1 & 0xffffff;
 
 ====================================================================================================
 core_actor.cpp_getRandomInt_FUN_0040cc70 (1 suspect)
@@ -812,12 +797,6 @@ core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 (1 suspect)
   File: core/baron.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
-====================================================================================================
-core_baron.cpp_CBaron_updateMountedPosition_FUN_004135e0 (1 suspect)
-  File: core/baron.cpp
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 1 params but call sites push 2 (1 missing)
 
 ====================================================================================================
 core_bat.cpp_CBat_getBoundingBox_FUN_00414c60 (1 suspect)
@@ -1142,12 +1121,6 @@ core_bugs.cpp_CBugs_setup_FUN_00424e50 (3 suspects)
   Line 81 [negative_offset]: pCVar10->z = pCVar7[-1].z;
 
 ====================================================================================================
-core_bugs.cpp_CBugs_updateBoundingBox_FUN_00426410 (1 suspect)
-  File: core/bugs.cpp
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 1 params but call sites push 2 (1 missing)
-
-====================================================================================================
 core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00425cc0 (1 suspect)
   File: core/bugs.cpp
 ====================================================================================================
@@ -1452,10 +1425,9 @@ core_course.cpp_CCourse_load_FUN_00442580 (1 suspect)
   Line 47 [pointer_cast]: CCourseFrame *frame = (CCourseFrame *)((int)&(this_ptr->frames->pos).x + iVar3);
 
 ====================================================================================================
-core_course.cpp_CCourse_preview_FUN_00443bc0 (6 suspects)
+core_course.cpp_CCourse_preview_FUN_00443bc0 (5 suspects)
   File: core/course.cpp
 ====================================================================================================
-  Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
   Line 21 [unnamed_local]: CVector3f local_98;
   Line 23 [unnamed_local]: CVector3f local_80;
   Line 30 [unnamed_local]: float local_18;
@@ -1852,16 +1824,9 @@ core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0 (1 suspe
   Line 16 [stack_alignment_array]: int aiStackY_1018 [1017];
 
 ====================================================================================================
-core_dcamera.cpp_blendCoronaTextureSpan_FUN_004517f0 (1 suspect)
+core_dcamera.cpp_initializeCoronaBuffers_FUN_004502e0 (2 suspects)
   File: core/dcamera.cpp
 ====================================================================================================
-  Line 33 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
-core_dcamera.cpp_initializeCoronaBuffers_FUN_004502e0 (3 suspects)
-  File: core/dcamera.cpp
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 0 params but call sites push 23 (23 missing)
   Line 12 [pointer_cast]: *(uint *)((int)g_CoronaRightExtent + iVar2) = 0x13f;
   Line 13 [pointer_cast]: *(uint *)((int)g_CoronaLeftExtent + iVar2) = 0;
 
@@ -2688,108 +2653,16 @@ core_dskybox.cpp_initializeSkyboxTexture_FUN_00490070 (1 suspect)
   Line 15 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_dskybox.cpp_renderSkyDome_FUN_004901f0 (8 suspects)
+core_dskybox.cpp_renderSkyDome_FUN_004901f0 (1 suspect)
   File: core/dskybox.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 40 [unrolled_strcpy]: do {
-  Line 145 [raw_address_constant]: iVar5 = 0x1000000;
-  Line 147 [raw_address_constant]: 2 & 0xffffff;
-  Line 158 [raw_address_constant]: iVar6 = iVar6 + 0x1000000;
-  Line 160 [raw_address_constant]: (int)((iVar5 + (iVar5 >> 0x1f) * -4) - (uint)((iVar5 >> 0x1f) << 1 < 0)) >> 2 ^ 0xffffff;
-  Line 161 [raw_address_constant]: local_b4.vertices[0].texture_v = (int)(iVar9 - (uint)(iVar3 << 1 < 0)) >> 2 ^ 0xffffff;
-  Line 162 [raw_address_constant]: iVar5 = iVar5 + 0x1000000;
 
 ====================================================================================================
-core_dstrender.cpp_alphaBlendPixelsMMX_FUN_00492e8a (1 suspect)
+core_dstrender.cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4 (1 suspect)
   File: core/dstrender.cpp
 ====================================================================================================
-  Line 12 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
-core_dstrender.cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00492f03 (1 suspect)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 12 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
-core_dstrender.cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_004917bc (1 suspect)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 12 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
-core_dstrender.cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00493860 (1 suspect)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 12 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
-core_dstrender.cpp_blendLightmapPerPxU32toU32BB12Px2MMX_FUN_004926e1 (1 suspect)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 12 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
-core_dstrender.cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4 (2 suspects)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 12 [mmx_assembly]: Function uses MMX instructions
   Line 60 [pointer_cast]: uVar6 = *(ulonglong *)((int)texture_buffer + 4);
-
-====================================================================================================
-core_dstrender.cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00492bd5 (1 suspect)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 12 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
-core_dstrender.cpp_blendLightmapShared4U64toU64pAmbientPx4MMX_FUN_004925c5 (1 suspect)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 12 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
-core_dstrender.cpp_blendLightmapShared4U64toU64pBB12Px4MMX_FUN_004924a9 (1 suspect)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 12 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
-core_dstrender.cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_004937b6 (1 suspect)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 11 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
-core_dstrender.cpp_blendLightmapSharedU32toU32NoBiasPx1MMX_FUN_00491f90 (1 suspect)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 11 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
-core_dstrender.cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_00493450 (1 suspect)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 12 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
-core_dstrender.cpp_blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX_FUN_00491c9a (1 suspect)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 12 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
-core_dstrender.cpp_blur3x3MMXStride128_FUN_004922c8 (1 suspect)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 9 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
-core_dstrender.cpp_memcpyMMX_FUN_00492001 (1 suspect)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 23 [mmx_assembly]: Function uses MMX instructions
 
 ====================================================================================================
 core_dstrender.cpp_renderDepth16BitConditional_FUN_0049077d (1 suspect)
@@ -2804,19 +2677,16 @@ core_dstrender.cpp_renderDepthOnlyStandard_FUN_0049072f (1 suspect)
   Line 30 [pointer_cast]: puVar9 = (ushort *)((int)g_ScreenBufferArray[scanline_y] + uVar5 * 2);
 
 ====================================================================================================
-core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0 (3 suspects)
+core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0 (1 suspect)
   File: core/dstrender.cpp
 ====================================================================================================
   Line 35 [pointer_cast]: g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 4);
-  Line 71 [raw_address_constant]: g_PerspectiveLeftW * 0x1000000) / (longlong)(int)g_PerspectiveRightW);
-  Line 74 [raw_address_constant]: g_PerspectiveInterpolatedW >> 8,g_PerspectiveInterpolatedW * 0x1000000) /
 
 ====================================================================================================
-core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9 (3 suspects)
+core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9 (2 suspects)
   File: core/dstrender.cpp
 ====================================================================================================
   Line 24 [pointer_cast]: g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 4);
-  Line 38 [mmx_assembly]: Function uses MMX instructions
   Line 40 [pointer_cast]: *(uint *)((int)g_PerspectiveScanlineColorPtr + uVar1) =
 
 ====================================================================================================
@@ -2832,46 +2702,20 @@ core_dstrender.cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58 (1 suspect)
   Line 32 [pointer_cast]: piVar6 = (int *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 4);
 
 ====================================================================================================
-core_dstrender.cpp_renderTexturedAlphaMMXScanline_FUN_004907e7 (4 suspects)
+core_dstrender.cpp_renderTexturedAlphaMMXScanline_FUN_004907e7 (3 suspects)
   File: core/dstrender.cpp
 ====================================================================================================
   Line 27 [pointer_cast]: g_PerspectiveScanlineZPtr = (uint *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 2);
   Line 48 [pointer_cast]: if (uVar1 < *(ushort *)((int)g_PerspectiveScanlineZPtr + uVar7)) {
-  Line 52 [mmx_assembly]: Function uses MMX instructions
   Line 56 [pointer_cast]: *(ushort *)((int)g_PerspectiveScanlineZPtr + uVar7) = (ushort)uVar1;
 
 ====================================================================================================
-core_dstrender.cpp_renderTexturedDecalMMXScanline_FUN_0049169d (4 suspects)
+core_dstrender.cpp_renderTexturedDecalMMXScanline_FUN_0049169d (3 suspects)
   File: core/dstrender.cpp
 ====================================================================================================
   Line 25 [pointer_cast]: g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 4);
   Line 48 [pointer_cast]: if (*(int *)((int)g_PerspectiveScanlineZPtr + uVar6) <= (int)uVar1) {
   Line 49 [pointer_cast]: *(uint *)((int)g_PerspectiveScanlineColorPtr + uVar6) =
-  Line 54 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
-core_dstrender.cpp_saveMMXRegisters_FUN_004906b0 (1 suspect)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 1 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
-core_dstrender.cpp_spatialFilter9TapMMX_FUN_004923ff (1 suspect)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 9 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
-core_dstrender.cpp_verticalBlur3TapMMXStride256_FUN_00492185 (1 suspect)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 9 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
-core_dstrender.cpp_verticalBlur3TapMMXStride320_FUN_00492042 (1 suspect)
-  File: core/dstrender.cpp
-====================================================================================================
-  Line 9 [mmx_assembly]: Function uses MMX instructions
 
 ====================================================================================================
 core_dtrace.cpp_CDemonRaytrace_commitShadowBuffer_FUN_00499e70 (4 suspects)
@@ -2960,14 +2804,11 @@ core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500 (1 suspect)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 ====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50 (5 suspects)
+core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50 (2 suspects)
   File: core/dtrace.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
   Line 21 [stack_alignment_array]: int aiStackY_1138 [989];
-  Line 244 [pointer_cast]: (double)*(int *)((int)&local_198 + iVar3) /
-  Line 247 [pointer_cast]: (double)*(int *)((int)&local_194 + iVar3) /
-  Line 250 [pointer_cast]: (double)*(int *)((int)&local_190 + iVar3) /
 
 ====================================================================================================
 core_dtrace.cpp_CDemonRaytrace_saveBinary_FUN_00494f50 (1 suspect)
@@ -3489,21 +3330,19 @@ core_flies.cpp_CFlies_process_FUN_004cbf00 (1 suspect)
   Line 64 [pointer_cast]: pCVar7 = (CVector3f *)((int)(pCVar7 + 4) + 4);
 
 ====================================================================================================
-core_flies.cpp_CFlies_renderOpaque_FUN_004cc300 (5 suspects)
+core_flies.cpp_CFlies_renderOpaque_FUN_004cc300 (4 suspects)
   File: core/flies.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 64 [raw_address_constant]: g_FlyInvBlendColor = g_FlyBlendColor ^ 0xffffff;
   Line 165 [pointer_cast]: psVar1 = (short *)((int)&this_ptr_01->vertex_buffer_ptr[1].projected_vertex.screen_x + 2
   Line 168 [pointer_cast]: *(short *)((int)&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) =
   Line 169 [pointer_cast]: *(short *)((int)&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) +
 
 ====================================================================================================
-core_flies.cpp_drawFlyPixel_FUN_004cc230 (2 suspects)
+core_flies.cpp_drawFlyPixel_FUN_004cc230 (1 suspect)
   File: core/flies.cpp
 ====================================================================================================
   Line 22 [pointer_cast]: puVar3 = (uint *)((int)g_ScreenBufferArray[screen_y] + screen_x * 4);
-  Line 32 [mmx_assembly]: Function uses MMX instructions
 
 ====================================================================================================
 core_frankgen.cpp_CFrankenstienMachine_accumulateParticles_FUN_004d1ec0 (1 suspect)
@@ -3551,10 +3390,9 @@ core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 (6 suspects)
   Line 149 [pointer_cast]: out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar6 * -2 + 1) * 4);
 
 ====================================================================================================
-core_gabriela.cpp_CGabriella_processAI_FUN_004d4190 (2 suspects)
+core_gabriela.cpp_CGabriella_processAI_FUN_004d4190 (1 suspect)
   File: core/gabriela.cpp
 ====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 1 params but call sites push 2 (1 missing)
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
 
 ====================================================================================================
@@ -3659,20 +3497,17 @@ core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (2 suspects)
   Line 1444 [pointer_cast]: iVar6 = *(int *)((int)g_CDemonSetPtr->characters + iStack_40);
 
 ====================================================================================================
-core_game.cpp_CGame_processFrame_FUN_004da100 (11 suspects)
+core_game.cpp_CGame_processFrame_FUN_004da100 (8 suspects)
   File: core/game.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 47 [unnamed_local]: int local_5c;
-  Line 48 [unnamed_local]: int local_58;
-  Line 49 [unnamed_local]: int local_54;
-  Line 50 [unnamed_local]: int local_50;
-  Line 52 [unnamed_local]: int local_48;
-  Line 200 [pointer_cast]: *(int *)((int)g_ScreenBufferArray + local_24));
-  Line 290 [unnamed_local]: (&local_5c,&local_58,&local_54,&local_50,&local_4c,&local_48);
-  Line 290 [unnamed_local]: (&local_5c,&local_58,&local_54,&local_50,&local_4c,&local_48);
-  Line 339 [pointer_cast]: *(char *)((int)piVar20 + 1) = cVar1;
-  Line 340 [pointer_cast]: piVar20 = (int *)((int)piVar20 + 2);
+  Line 45 [unnamed_local]: int local_5c;
+  Line 46 [unnamed_local]: int local_58;
+  Line 47 [unnamed_local]: int local_54;
+  Line 48 [unnamed_local]: int local_50;
+  Line 50 [unnamed_local]: int local_48;
+  Line 286 [unnamed_local]: (&local_5c,&local_58,&local_54,&local_50,&local_4c,&local_48);
+  Line 286 [unnamed_local]: (&local_5c,&local_58,&local_54,&local_50,&local_4c,&local_48);
 
 ====================================================================================================
 core_game.cpp_CGame_renderIrisFade_FUN_004e0aa0 (1 suspect)
@@ -3873,14 +3708,6 @@ core_glass.cpp_CGlass_onLaserHit_FUN_004eb250 (1 suspect)
   File: core/glass.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
-====================================================================================================
-core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0 (3 suspects)
-  File: core/glass.cpp
-====================================================================================================
-  Line 46 [pointer_cast]: *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->r + iVar3) = 0xffff;
-  Line 47 [pointer_cast]: *(uint *)((int)&pCVar1->vertex_buffer_ptr->g + iVar3) = 0xffff;
-  Line 48 [pointer_cast]: *(uint *)((int)&pCVar1->vertex_buffer_ptr->b + iVar3) = 0xffff;
 
 ====================================================================================================
 core_glass.cpp_CGlass_setup_FUN_004e9180 (5 suspects)
@@ -4343,13 +4170,11 @@ core_inv.cpp_drawItemIconBackground_FUN_005001e0 (2 suspects)
   Line 29 [raw_address_constant]: this_ptr->vertex_buffer_ptr[2].u = 0xf00000;
 
 ====================================================================================================
-core_inv.cpp_drawWeaponIconBackground_FUN_00500050 (4 suspects)
+core_inv.cpp_drawWeaponIconBackground_FUN_00500050 (2 suspects)
   File: core/inv.cpp
 ====================================================================================================
   Line 20 [raw_address_constant]: this_ptr->vertex_buffer_ptr->v = 0xa00000;
   Line 25 [raw_address_constant]: this_ptr->vertex_buffer_ptr[1].v = 0xa00000;
-  Line 30 [raw_address_constant]: this_ptr->vertex_buffer_ptr[2].v = 0x1000000;
-  Line 35 [raw_address_constant]: this_ptr->vertex_buffer_ptr[3].v = 0x1000000;
 
 ====================================================================================================
 core_keyactor.cpp_CKeyActor_process_FUN_00501710 (1 suspect)
@@ -4358,10 +4183,9 @@ core_keyactor.cpp_CKeyActor_process_FUN_00501710 (1 suspect)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 ====================================================================================================
-core_ladder.cpp_CLadder_renderOpaque_FUN_00502620 (2 suspects)
+core_ladder.cpp_CLadder_renderOpaque_FUN_00502620 (1 suspect)
   File: core/ladder.cpp
 ====================================================================================================
-  Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
   Line 33 [decompiler_intrinsic]: CStack_30.y = (int)ROUND(fStack_y * 256.0f);
 
 ====================================================================================================
@@ -4373,18 +4197,6 @@ core_larva.cpp_CLarva_process_FUN_00503080 (5 suspects)
   Line 27 [unknown_type]: unkbyte10 Var18;
   Line 28 [stack_param]: float in_stack_fffffe18;
   Line 202 [stack_param]: fVar11,in_stack_fffffe18);
-
-====================================================================================================
-core_level.cpp_CLevelLoader_update_FUN_00504160 (7 suspects)
-  File: core/level.cpp
-====================================================================================================
-  Line 93 [raw_address_constant]: g_CDemonRendererPtr2->vertex_buffer_ptr->u = 0x1000000;
-  Line 98 [raw_address_constant]: pCVar1->vertex_buffer_ptr[2].v = 0x1000000;
-  Line 99 [raw_address_constant]: pCVar1->vertex_buffer_ptr[3].u = 0x1000000;
-  Line 100 [raw_address_constant]: pCVar1->vertex_buffer_ptr[3].v = 0x1000000;
-  Line 113 [pointer_cast]: *(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->r + iVar7) = (this_ptr->color).r << 8;
-  Line 114 [pointer_cast]: *(int *)((int)&pCVar3->vertex_buffer_ptr->g + iVar7) = (this_ptr->color).g << 8;
-  Line 116 [pointer_cast]: *(int *)((int)&pCVar3->vertex_buffer_ptr->b + iVar7) = (this_ptr->color).b << 8;
 
 ====================================================================================================
 core_lever.cpp_CLever_getHandlePosition_FUN_00504dd0 (1 suspect)
@@ -4433,16 +4245,9 @@ core_main.c_enterMainGameMenu_FUN_00507a50 (4 suspects)
   Line 83 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_main.c_finalizeGameSystems_FUN_00508570 (1 suspect)
+core_main.c_initializeGameSystems_FUN_00507a60 (1 suspect)
   File: core/main.c
 ====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 0 params but call sites push 18 (18 missing)
-
-====================================================================================================
-core_main.c_initializeGameSystems_FUN_00507a60 (2 suspects)
-  File: core/main.c
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 0 params but call sites push 2 (2 missing)
   Line 81 [raw_address_constant]: if (g_TotalPhysicalMemory < 0x3c00000) {
 
 ====================================================================================================
@@ -4472,14 +4277,10 @@ core_manpuz.cpp_CMansionPuzzleCircle_renderEmitter_FUN_00509c60 (2 suspects)
   Line 23 [unnamed_local]: (g_CDemonRendererPtr2,&g_ZeroVector.i,&local_28);
 
 ====================================================================================================
-core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50 (5 suspects)
+core_manpuz.cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50 (1 suspect)
   File: core/manpuz.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 81 [raw_address_constant]: SStack_a8.vertices[1].texture_u = 0x1000000;
-  Line 82 [raw_address_constant]: SStack_a8.vertices[2].texture_u = 0x1000000;
-  Line 83 [raw_address_constant]: SStack_a8.vertices[2].texture_v = 0x1000000;
-  Line 84 [raw_address_constant]: SStack_a8.vertices[3].texture_v = 0x1000000;
 
 ====================================================================================================
 core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70 (2 suspects)
@@ -4760,24 +4561,6 @@ core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310 (1 suspect)
   Line 57 [pointer_cast]: piVar2 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
 
 ====================================================================================================
-core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_00522800 (5 suspects)
-  File: core/mirror.cpp
-====================================================================================================
-  Line 37 [pointer_cast]: piVar1 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x
-  Line 40 [pointer_cast]: piVar2 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_y
-  Line 43 [pointer_cast]: piVar2 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_z
-  Line 47 [pointer_cast]: *(uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).inv_z + iVar2) =
-  Line 48 [pointer_cast]: *(uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).inv_z + iVar2)
-
-====================================================================================================
-core_mission.cpp_CDemonMission_createHeros_FUN_00524a80 (3 suspects)
-  File: core/mission.cpp
-====================================================================================================
-  Line 14 [pointer_cast]: *(uint *)((int)g_HeroActors + iVar4) = 0;
-  Line 45 [pointer_cast]: *(uint *)(*(int *)((int)g_HeroActors + iVar2) + 0xbe28) = 1;
-  Line 47 [pointer_cast]: *(uint *)(*(int *)((int)g_HeroActors + iVar2) + 0x1f734) =
-
-====================================================================================================
 core_mission.cpp_CDemonMission_process_FUN_00524250 (1 suspect)
   File: core/mission.cpp
 ====================================================================================================
@@ -4874,51 +4657,10 @@ core_moloch.cpp_CMoloch_processAI_FUN_005293b0 (1 suspect)
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
 
 ====================================================================================================
-core_moon.cpp_CMoon_init_FUN_00529ae0 (7 suspects)
-  File: core/moon.cpp
-====================================================================================================
-  Line 29 [pointer_cast]: puVar1 = (uint *)((int)g_MoonNocStrings + iVar5);
-  Line 43 [pointer_cast]: *(int *)((int)&g_MoonBats[0].course_index + iVar3) = iVar2 % 3;
-  Line 47 [pointer_cast]: *(float *)((int)&g_MoonBats[0].course_position + iVar3) = -fVar3;
-  Line 49 [pointer_cast]: *(float *)((int)&g_MoonBats[0].animation_frame + iVar3) = fVar4;
-  Line 51 [pointer_cast]: *(float *)((int)&g_MoonBats[0].random_offset.x + iVar3) = fVar1;
-  Line 53 [pointer_cast]: *(float *)((int)&g_MoonBats[0].random_offset.y + iVar3) = fVar1;
-  Line 56 [pointer_cast]: *(float *)((int)&g_MoonBats[0].random_offset.z + iVar3) = fVar1;
-
-====================================================================================================
 core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0 (1 suspect)
   File: core/moon.cpp
 ====================================================================================================
   Line 6 [stack_alignment_array]: int aiStackY_101c [1014];
-
-====================================================================================================
-core_moon.cpp_CMoon_render_FUN_00529ed0 (10 suspects)
-  File: core/moon.cpp
-====================================================================================================
-  Line 62 [pointer_cast]: if (0.0 <= *(float *)((int)&g_MoonBats[0].course_position + iVar5)) {
-  Line 64 [pointer_cast]: (g_MoonBatCourses + *(int *)((int)&g_MoonBats[0].course_index + iVar5),
-  Line 65 [pointer_cast]: *(float *)((int)&g_MoonBats[0].course_position + iVar5),&local_44,&local_50);
-  Line 66 [pointer_cast]: local_44.x = local_44.x + *(float *)((int)&g_MoonBats[0].random_offset.x + iVar5);
-  Line 67 [pointer_cast]: local_44.y = local_44.y + *(float *)((int)&g_MoonBats[0].random_offset.y + iVar5);
-  Line 68 [pointer_cast]: local_44.z = local_44.z + *(float *)((int)&g_MoonBats[0].random_offset.z + iVar5);
-  Line 76 [pointer_cast]: (int)ROUND(ROUND(*(float *)((int)&g_MoonBats[0].animation_frame + iVar5))),
-  Line 79 [pointer_cast]: fVar1 = *(float *)((int)&g_MoonBats[0].course_position + iVar5) /
-  Line 80 [pointer_cast]: (float)g_MoonBatCourses[*(int *)((int)&g_MoonBats[0].course_index + iVar5)].len;
-  Line 207 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
-core_moon.cpp_CMoon_update_FUN_00529d60 (9 suspects)
-  File: core/moon.cpp
-====================================================================================================
-  Line 27 [pointer_cast]: *(float *)((int)&g_MoonBats[0].course_position + iVar4) =
-  Line 29 [pointer_cast]: *(float *)((int)&g_MoonBats[0].course_position + iVar4);
-  Line 30 [pointer_cast]: if ((float)g_MoonBatCourses[*(int *)((int)&g_MoonBats[0].course_index + iVar4)].len <=
-  Line 31 [pointer_cast]: *(float *)((int)&g_MoonBats[0].course_position + iVar4)) {
-  Line 32 [pointer_cast]: pfVar1 = (float *)((int)&g_MoonBats[0].course_position + iVar4);
-  Line 34 [pointer_cast]: [*(int *)((int)&g_MoonBats[0].course_index + iVar4)].len;
-  Line 38 [pointer_cast]: *(float *)((int)&g_MoonBats[0].animation_frame + iVar4);
-  Line 39 [pointer_cast]: *(float *)((int)&g_MoonBats[0].animation_frame + iVar4) = fVar3;
-  Line 41 [pointer_cast]: pfVar2 = (float *)((int)&g_MoonBats[0].animation_frame + iVar4);
 
 ====================================================================================================
 core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_0052a580 (1 suspect)
@@ -5129,12 +4871,6 @@ core_msnedit.cpp_CDemonMission_validateNewActorName_FUN_0053d220 (8 suspects)
   Line 71 [unrolled_strchr]: do {
   Line 83 [unrolled_strchr]: do {
   Line 95 [unrolled_strchr]: do {
-
-====================================================================================================
-core_msnedit.cpp_drawMotionBar_FUN_00536e20 (1 suspect)
-  File: core/msnedit.cpp
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 0 params but call sites push 76 (76 missing)
 
 ====================================================================================================
 core_msnedit.cpp_screenToWorldPosition_FUN_00535c60 (1 suspect)
@@ -5448,12 +5184,6 @@ core_platfrm.cpp_CPlatform_process_FUN_0054cc30 (5 suspects)
   Line 28 [missing_cave_copy]: CMatrix3x4f CStack_164;
   Line 29 [missing_cave_copy]: CMatrix3x4f CStack_134;
   Line 228 [pointer_cast]: iVar3 = *(int *)((int)g_CDemonSetPtr->actors + iStack_24);
-
-====================================================================================================
-core_platfrm.cpp_CPlatform_propertyActionSlewCallback_FUN_0054e480 (1 suspect)
-  File: core/platfrm.cpp
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 1 params but call sites push 2 (1 missing)
 
 ====================================================================================================
 core_platfrm.cpp_CPlatform_propertyDisplaySlewCallback_FUN_0054e400 (1 suspect)
@@ -6089,16 +5819,10 @@ core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_00576710 (1 suspect)
   Line 37 [pointer_cast]: obb_a = (SVDBox *)((int)(this_ptr->vdir_boxes[0].rotation_matrix.m + -2) + local_28);
 
 ====================================================================================================
-core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 (7 suspects)
+core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 (1 suspect)
   File: core/setdir.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 163 [pointer_cast]: *(uint *)((int)g_ZBufferScanlineArrayBackup + iVar10) =
-  Line 164 [pointer_cast]: *(uint *)((int)g_ZBufferScanlineArray + iVar10);
-  Line 272 [pointer_cast]: *(uint *)((int)g_ZBufferScanlineArray + iVar10) =
-  Line 273 [pointer_cast]: *(uint *)((int)g_ZBufferScanlineArrayBackup + iVar10);
-  Line 287 [pointer_cast]: if (fStack_15c < *(float *)((int)g_VDCameraScores + iVar7)) {
-  Line 288 [pointer_cast]: fStack_15c = *(float *)((int)g_VDCameraScores + iVar7);
 
 ====================================================================================================
 core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70 (8 suspects)
@@ -6130,13 +5854,11 @@ core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0 (4 suspects)
   Line 104 [pointer_cast]: puVar2 = (uint *)((int)aiStack_4c + iVar8);
 
 ====================================================================================================
-core_setdir.cpp_CZThumb_render_FUN_00574f20 (5 suspects)
+core_setdir.cpp_CZThumb_render_FUN_00574f20 (3 suspects)
   File: core/setdir.cpp
 ====================================================================================================
-  Line 24 [raw_address_constant]: uVar2 = (uint)(0xffffff /
   Line 26 [pointer_cast]: (*(int *)((int)this_ptr->zbuffer_data +
   Line 31 [pointer_cast]: *(uint *)(*(int *)((int)g_ScreenBufferArray + iVar5 + 4) + iVar1) = uVar2 * 0x10101;
-  Line 40 [raw_address_constant]: uVar1 = (uint)(0xffffff /
   Line 42 [pointer_cast]: (*(int *)((int)this_ptr->zbuffer_data +
 
 ====================================================================================================
@@ -6284,10 +6006,9 @@ core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940 (1 suspect)
   Line 101 [pointer_cast]: piVar1 = (int *)((int)visible_cameras + iVar11);
 
 ====================================================================================================
-core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (19 suspects)
+core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (18 suspects)
   File: core/setedit.cpp
 ====================================================================================================
-  Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
   Line 54 [unnamed_local]: float local_11c;
   Line 55 [unnamed_local]: float local_118;
   Line 56 [unnamed_local]: float local_114;
@@ -6360,17 +6081,10 @@ core_setedit.cpp_blitThumbnailToScreen_FUN_00577430 (6 suspects)
   Line 80 [pointer_cast]: uVar2 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar1);
 
 ====================================================================================================
-core_setedit.cpp_drawCameraFrustum_FUN_00582930 (1 suspect)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
-
-====================================================================================================
-core_setedit.cpp_loadCameraThumbnail_FUN_005769a0 (3 suspects)
+core_setedit.cpp_loadCameraThumbnail_FUN_005769a0 (2 suspects)
   File: core/setedit.cpp
 ====================================================================================================
   Line 85 [pointer_cast]: *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar3) =
-  Line 97 [raw_address_constant]: local_2c * (local_24 / 0x30) + (int)buffer) * 3) & 0xFFFFFF;
   Line 137 [pointer_cast]: *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2) = 0xff00ff;
 
 ====================================================================================================
@@ -7024,7 +6738,7 @@ core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_00
   Line 47 [pointer_cast]: piVar11 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar9);
 
 ====================================================================================================
-core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800 (6 suspects)
+core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800 (5 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */
@@ -7032,7 +6746,6 @@ core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800 (6
   Line 54 [pointer_cast]: piVar7 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar3);
   Line 64 [pointer_cast]: *(int *)((int)&pSVar4->u + iVar5) = iVar2;
   Line 66 [pointer_cast]: *(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->v + iVar5) =
-  Line 70 [raw_address_constant]: (longlong)(piVar7[1] - iVar9) * 0x1000000 & 0xffffffffU) / (longlong)iVar8);
 
 ====================================================================================================
 core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820 (2 suspects)
@@ -7185,10 +6898,9 @@ core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0 (3 suspects)
   Line 241 [pointer_cast]: (SInputFace *)((int)&(pSVar2->vertex_indices).vertex_index_0 + local_48),1,
 
 ====================================================================================================
-core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640 (3 suspects)
+core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640 (2 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
-  Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
   Line 22 [unnamed_local]: int local_14;
   Line 43 [unnamed_local]: local_14 = 0;
 
@@ -7347,10 +7059,9 @@ core_spline.cpp_evaluateSplineTangentScalar_FUN_005b93f0 (4 suspects)
   Line 2 [unnamed_param]: float __cdecl core_spline_cpp_evaluateSplineTangentScalar_FUN_005b93f0(float *basis,float *p0,float *p1,float *p2,float *p3)
 
 ====================================================================================================
-core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 (7 suspects)
+core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 (6 suspects)
   File: core/stairs.cpp
 ====================================================================================================
-  Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
   Line 25 [unnamed_local]: SMRGLPrimitivePolyIndex local_e4;
   Line 29 [unnamed_local]: int local_14;
   Line 91 [unnamed_local]: local_e4.base.surface_normal.B = 4;
@@ -7425,12 +7136,6 @@ core_stranger.cpp_CStranger_extractTurnPose_FUN_005bf720 (3 suspects)
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
   Line 22 [unnamed_local]: CVector3f local_1c;
   Line 35 [unnamed_local]: (&local_1c,
-
-====================================================================================================
-core_stranger.cpp_CStranger_handleFireButton_FUN_005c5f10 (1 suspect)
-  File: core/stranger.cpp
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 1 params but call sites push 2 (1 missing)
 
 ====================================================================================================
 core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60 (2 suspects)
@@ -7599,10 +7304,9 @@ core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0 (9 suspects)
   Line 23 [missing_cave_copy]: CVector3f local_10;
 
 ====================================================================================================
-core_terrain.cpp_CTerrain_render_FUN_005e1f50 (2 suspects)
+core_terrain.cpp_CTerrain_render_FUN_005e1f50 (1 suspect)
   File: core/terrain.cpp
 ====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 1 params but call sites push 2 (1 missing)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 ====================================================================================================
@@ -8279,36 +7983,24 @@ engine_2d.c_unmapFrameBuffer_FUN_00403670 (1 suspect)
   Line 28 [pointer_cast]: pvVar3 = (void *)((int)pvVar3 + g_ScreenBufferStride);
 
 ====================================================================================================
+engine_3d.c_clipAndDrawLine2D_FUN_00407d70 (1 suspect)
+  File: engine/3d.c
+====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 2 params but call sites push 0 (2 extra)
+
+====================================================================================================
+engine_3d.c_clipAndDrawLine3D_FUN_00408070 (1 suspect)
+  File: engine/3d.c
+====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 2 params but call sites push 0 (2 extra)
+
+====================================================================================================
 engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0 (3 suspects)
   File: engine/3d.c
 ====================================================================================================
   Line 25 [pointer_cast]: puVar1 = (uint *)((int)g_RenderFaceArray + iVar3);
   Line 73 [pointer_cast]: puVar2 = (uint *)((int)g_RenderFaceArray + iVar6);
   Line 116 [pointer_cast]: mrgl = (SMRGLHeaderExtended *)((int)&(((SMRGLHeaderPrimitive *)mrgl)->base).type + iVar4);
-
-====================================================================================================
-engine_3d.c_drawLine2DFromIndices_FUN_00407cf0 (1 suspect)
-  File: engine/3d.c
-====================================================================================================
-  Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
-
-====================================================================================================
-engine_3d.c_drawLine3DFromIndices_FUN_00407ff0 (1 suspect)
-  File: engine/3d.c
-====================================================================================================
-  Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
-
-====================================================================================================
-engine_3d.c_drawLineStrip2D_FUN_00404570 (1 suspect)
-  File: engine/3d.c
-====================================================================================================
-  Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
-
-====================================================================================================
-engine_3d.c_drawLineStrip3D_FUN_00404600 (1 suspect)
-  File: engine/3d.c
-====================================================================================================
-  Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
 
 ====================================================================================================
 engine_3d.c_flushPremiumRenderBuffer_FUN_004070c0 (1 suspect)
@@ -8473,12 +8165,6 @@ engine_3d.c_renderPrimitivePlaneMaskedComplex_FUN_004046c0 (1 suspect)
   Line 52 [pointer_cast]: return (SMRGLHeaderExtended *)((int)&primitive[1].base + (primitive->base).count * 0xc);
 
 ====================================================================================================
-engine_3d.c_setRenderAlpha_FUN_00406d80 (1 suspect)
-  File: engine/3d.c
-====================================================================================================
-  Line 14 [raw_address_constant]: g_CurrentInvertedColor = g_CurrentRenderColor ^ 0xffffff;
-
-====================================================================================================
 engine_3d.c_updateAnimatedTexture_FUN_004050c0 (4 suspects)
   File: engine/3d.c
 ====================================================================================================
@@ -8509,12 +8195,6 @@ engine_alphabit.cpp_copyBytes_FUN_00410d20 (4 suspects)
   Line 10 [pointer_cast]: uVar1 = *(int *)((int)src + 0xc) * *(int *)((int)src + 0x10);
   Line 20 [pointer_cast]: puVar3 = (uint *)((int)puVar3 + 1);
   Line 21 [pointer_cast]: puVar4 = (uint *)((int)puVar4 + 1);
-
-====================================================================================================
-engine_boss.c_modelStructNotSupported4_FUN_0041dbe0 (1 suspect)
-  File: engine/boss.c
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 1 params but call sites push 2 (1 missing)
 
 ====================================================================================================
 engine_clipper.c_clipPolygonHorizontalPlanes_FUN_00437980 (8 suspects)
@@ -9273,12 +8953,6 @@ engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0 (2 suspects)
   Line 36 [unrolled_strcpy]: do {
 
 ====================================================================================================
-engine_font.cpp_drawAlphaBlendedPixels_FUN_004ce240 (1 suspect)
-  File: engine/font.cpp
-====================================================================================================
-  Line 11 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
 engine_font.cpp_setShadowColor_FUN_004ce0f0 (1 suspect)
   File: engine/font.cpp
 ====================================================================================================
@@ -9488,12 +9162,6 @@ engine_pod.cpp_findFilesByExtension_FUN_00550ce0 (3 suspects)
   Line 63 [pointer_cast]: for (local_18 = 0; iVar7 = *(int *)((int)pod_array + local_34 + 4),
   Line 68 [unrolled_strlen]: do {
   Line 76 [unrolled_strcpy]: do {
-
-====================================================================================================
-engine_prim.c_normalizeTextureCoords_FUN_00552020 (1 suspect)
-  File: engine/prim.c
-====================================================================================================
-  Line 34 [raw_address_constant]: (longlong)iVar4 * 0x1000000 & 0xffffffffU) / (longlong)iVar1);
 
 ====================================================================================================
 engine_prim.c_renderPolygonSoftware_FUN_00552510 (18 suspects)
@@ -9828,10 +9496,9 @@ shape_design.c_deleteSinglePolygon_FUN_0045dcc0 (3 suspects)
   Line 35 [pointer_cast]: pSVar3 = (SShapeEditorPolygon *)((int)pSVar3 + (uint)bVar6 * -8 + 4);
 
 ====================================================================================================
-shape_design.c_displayPalette_FUN_00461560 (2 suspects)
+shape_design.c_displayPalette_FUN_00461560 (1 suspect)
   File: shape/design.c
 ====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 0 params but call sites push 1 (1 missing)
   Line 32 [unrolled_strcpy]: do {
 
 ====================================================================================================
@@ -10045,12 +9712,6 @@ shape_design.c_renderPolygonWireframeAntialiased_FUN_0045d470 (1 suspect)
   Line 64 [pointer_cast]: iVar1 = *(int *)((int)pSVar1 + (polygon_data->base).count * 4 + -4);
 
 ====================================================================================================
-shape_design.c_renderPolygonWireframe_FUN_0045d300 (1 suspect)
-  File: shape/design.c
-====================================================================================================
-  Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
-
-====================================================================================================
 shape_design.c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0 (1 suspect)
   File: shape/design.c
 ====================================================================================================
@@ -10091,7 +9752,7 @@ shape_design.c_setupViewMatrix_FUN_0045ba60 (1 suspect)
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x0045bb46) */
 
 ====================================================================================================
-shape_design.c_showFacetPartEditor_FUN_0045f1d0 (17 suspects)
+shape_design.c_showFacetPartEditor_FUN_0045f1d0 (15 suspects)
   File: shape/design.c
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
@@ -10099,8 +9760,6 @@ shape_design.c_showFacetPartEditor_FUN_0045f1d0 (17 suspects)
   Line 46 [unnamed_local]: int local_44;
   Line 48 [unnamed_local]: int local_3c;
   Line 49 [unnamed_local]: int local_38;
-  Line 176 [raw_address_constant]: if (0x1000000 < g_ProjectionScale) {
-  Line 177 [raw_address_constant]: g_ProjectionScale = 0x1000000;
   Line 349 [unnamed_local]: for (local_44 = g_WindowWidth + -10; local_44 < g_WindowWidth; local_44 = local_44 + 1) {
   Line 349 [unnamed_local]: for (local_44 = g_WindowWidth + -10; local_44 < g_WindowWidth; local_44 = local_44 + 1) {
   Line 349 [unnamed_local]: for (local_44 = g_WindowWidth + -10; local_44 < g_WindowWidth; local_44 = local_44 + 1) {
@@ -10252,18 +9911,6 @@ shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590 (1 suspect
   Line 43 [unrolled_strcpy]: do {
 
 ====================================================================================================
-shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0 (1 suspect)
-  File: shape/edittool.cpp
-====================================================================================================
-  Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
-
-====================================================================================================
-shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050 (1 suspect)
-  File: shape/edittool.cpp
-====================================================================================================
-  Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
-
-====================================================================================================
 shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30 (1 suspect)
   File: shape/edittool.cpp
 ====================================================================================================
@@ -10373,12 +10020,6 @@ shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0 (3 suspec
   Line 26 [unnamed_local]: char local_310 [256];
   Line 28 [unrolled_strcpy]: do {
   Line 49 [unrolled_strlen]: do {
-
-====================================================================================================
-shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40 (1 suspect)
-  File: shape/edittool.cpp
-====================================================================================================
-  Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
 
 ====================================================================================================
 shape_edittool.cpp_paintWindowBackground_FUN_0049e590 (1 suspect)
@@ -10679,12 +10320,6 @@ shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0 (9 suspects)
   Line 72 [pointer_cast]: [*(int *)((int)(this_ptr->tri_data->uv_coords + -2) + iVar1 + iVar6 + 4)].
 
 ====================================================================================================
-shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830 (1 suspect)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
-
-====================================================================================================
 shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990 (8 suspects)
   File: shape/meshlod.cpp
 ====================================================================================================
@@ -10707,12 +10342,6 @@ shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0 (6 suspects)
   Line 61 [pointer_cast]: *(int *)((int)aiStack_60 + iVar4 + 4) = (int)ROUND(ROUND(local_30 * 65535.0f));
   Line 63 [pointer_cast]: *(int *)((int)aiStack_60 + iVar4 + 8) = local_28;
   Line 81 [unrolled_strcpy]: do {
-
-====================================================================================================
-shape_meshlod.cpp_CLodMesh_renderWireframe_FUN_0051e770 (1 suspect)
-  File: shape/meshlod.cpp
-====================================================================================================
-  Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
 
 ====================================================================================================
 shape_meshlod.cpp_CLodMesh_replayLodGeneration_FUN_005173f0 (4 suspects)
@@ -11669,10 +11298,9 @@ sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_0052f850 (2 suspects)
   Line 18 [pointer_cast]: piVar5 = (int *)((int)allocation_indices->granules + local_14);
 
 ====================================================================================================
-sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 (32 suspects)
+sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 (31 suspects)
   File: sound/mp3.cpp
 ====================================================================================================
-  Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
   Line 3 [warning_deadcode_restart]: /* WARNING: Restarted to delay deadcode elimination for space: stack */
   Line 45 [unnamed_local]: SMpegLayer3SideInfo local_4d8;  // was char; readLayer3SideInfo fills this as a full SMpegLayer3SideInfo. Ghidra split it from local_4c0 which was really &local_4d8.channels[0].granules[0]
@@ -12260,12 +11888,6 @@ sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0 (2 suspects)
   Line 19 [pointer_cast]: output_buffer = (CSfxSample *)((int)output_buffer + (uint)bVar4 * -8 + 4);
 
 ====================================================================================================
-sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00 (1 suspect)
-  File: sound/sndmain.cpp
-====================================================================================================
-  Line 12 [raw_address_constant]: if (((uVar3 != 0) && (uVar3 < 0xffffff)) && (uVar2 < 0x40)) {
-
-====================================================================================================
 sound_sndmain.cpp_getSoundDeviceInfo_FUN_005ab370 (2 suspects)
   File: sound/sndmain.cpp
 ====================================================================================================
@@ -12297,20 +11919,6 @@ sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0 (2 suspects)
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
   Line 3 [warning_deadcode_restart]: /* WARNING: Restarted to delay deadcode elimination for space: stack */
-
-====================================================================================================
-sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0 (3 suspects)
-  File: sound/sndmain.cpp
-====================================================================================================
-  Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
-  Line 34 [pointer_cast]: (void *)((int)g_ChannelPrimaryBuffers[iVar5] + bytes_per_buffer),
-  Line 36 [pointer_cast]: memset((void *)((int)g_ChannelPrimaryBuffers[iVar5] + tail_bytes), 0, bytes_per_buffer);
-
-====================================================================================================
-sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90 (1 suspect)
-  File: sound/sndmain.cpp
-====================================================================================================
-  Line 1 [byvalue_struct_passing]: Function calls by-value struct passing functions
 
 ====================================================================================================
 sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30 (2 suspects)
@@ -12481,12 +12089,6 @@ support_newmsg.cpp_readMessageFile_FUN_00543e40 (9 suspects)
   Line 122 [unrolled_strcpy]: do {
 
 ====================================================================================================
-support_trisock.cpp_bindSocketWrapper_FUN_005e1af0 (1 suspect)
-  File: support/trisock.cpp
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 1 params but call sites push 2 (1 missing)
-
-====================================================================================================
 support_trisock.cpp_formatSocketAddress_FUN_005e1a30 (2 suspects)
   File: support/trisock.cpp
 ====================================================================================================
@@ -12566,40 +12168,10 @@ wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0 (2 suspects)
   Line 113 [pointer_cast]: *(int *)((int)g_ZBufferScanlineArray + iVar4) = (int)g_SoftwareZBuffer + iVar7;
 
 ====================================================================================================
-wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 (1 suspect)
-  File: wincore/wddvmem.cpp
-====================================================================================================
-  Line 157 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
 wincore_windll.cpp_clearScreenRegion_FUN_005b3f37 (1 suspect)
   File: wincore/windll.cpp
 ====================================================================================================
   Line 16 [pointer_cast]: puVar4 = (byte *)((int)g_ScreenBufferArray[uVar3] + g_ClipLeft);
-
-====================================================================================================
-wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7 (1 suspect)
-  File: wincore/windll.cpp
-====================================================================================================
-  Line 10 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
-wincore_windll.cpp_renderAlphaRow32_FUN_005b555c (1 suspect)
-  File: wincore/windll.cpp
-====================================================================================================
-  Line 10 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
-wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823 (1 suspect)
-  File: wincore/windll.cpp
-====================================================================================================
-  Line 93 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
-wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031 (1 suspect)
-  File: wincore/windll.cpp
-====================================================================================================
-  Line 93 [mmx_assembly]: Function uses MMX instructions
 
 ====================================================================================================
 wincore_windll.cpp_renderPerspectiveCorrectScanline16_FUN_005b5322 (3 suspects)
@@ -12630,24 +12202,6 @@ wincore_windll.cpp_restoreVideoMode_FUN_005b75b0 (1 suspect)
   File: wincore/windll.cpp
 ====================================================================================================
   Line 0 [param_count_too_few]: Function declares 0 params but call sites push 1 (1 missing)
-
-====================================================================================================
-wincore_windll.cpp_shutdownExternalRenderer_FUN_005b5d20 (1 suspect)
-  File: wincore/windll.cpp
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 0 params but call sites push 3812 (3812 missing)
-
-====================================================================================================
-wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c (1 suspect)
-  File: wincore/windll.cpp
-====================================================================================================
-  Line 12 [mmx_assembly]: Function uses MMX instructions
-
-====================================================================================================
-wincore_windll.cpp_transformPoint_FUN_005b5a25 (1 suspect)
-  File: wincore/windll.cpp
-====================================================================================================
-  Line 12 [mmx_assembly]: Function uses MMX instructions
 
 ====================================================================================================
 wincore_winrun.cpp_enqueueInput_FUN_005f2f30 (1 suspect)
@@ -12684,4 +12238,4 @@ wincore_winrun.cpp_waitForMutexTimeout_FUN_005f4010 (1 suspect)
 wincore_winrun.cpp_winMain_FUN_005f3680 (1 suspect)
   File: wincore/winrun.cpp
 ====================================================================================================
-  Line 0 [param_count_too_many]: Function declares 5 params but call sites push 1 (4 extra)
+  Line 0 [param_count_too_many]: Function declares 4 params but call sites push 1 (3 extra)

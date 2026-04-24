@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 171,
+    "complexity_score": 321,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 5,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 76,
-    "suspect_count": 8,
+    "suspect_count": 23,
     "suspect_types": [
       "pointer_cast",
       "stack_ref",
@@ -245,6 +245,126 @@
       "match": "(void *)((int)",
       "severity": "moderate",
       "text": "g_CrtStackBuffer = (void *)((int)pStackBuffer + g_StackAllocSize);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(uint *)((int)",
+      "severity": "moderate",
+      "text": "*(uint *)((int)puVar1 + -4) = 10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 65,
+      "match": "(DWORD *)((int)",
+      "severity": "moderate",
+      "text": "*(DWORD *)((int)puVar1 + -8) = g_WinMainCmdShow;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(uint *)((int)",
+      "severity": "moderate",
+      "text": "*(uint *)((int)puVar1 + -0xc) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(uint *)((int)",
+      "severity": "moderate",
+      "text": "*(uint *)((int)puVar1 + -0x10) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 68,
+      "match": "(DWORD *)((int)",
+      "severity": "moderate",
+      "text": "pWinMainFrame = (DWORD *)((int)puVar1 + -0x14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(LPCSTR *)((int)",
+      "severity": "moderate",
+      "text": "hInstance = (*g_GetModuleHandleAFunc)(*(LPCSTR *)((int)puVar1 + -0x10));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(HINSTANCE *)((int)",
+      "severity": "moderate",
+      "text": "*(HINSTANCE *)((int)puVar1 + -0x10) = hInstance;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(uint *)((int)",
+      "severity": "moderate",
+      "text": "*(uint *)((int)puVar1 + -0x14) = 0x609f12;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 74,
+      "match": "(HINSTANCE *)((int)",
+      "severity": "moderate",
+      "text": "(*(HINSTANCE *)((int)puVar1 + -0x10),*(HINSTANCE *)((int)puVar1 + -0xc),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 74,
+      "match": "(HINSTANCE *)((int)",
+      "severity": "moderate",
+      "text": "(*(HINSTANCE *)((int)puVar1 + -0x10),*(HINSTANCE *)((int)puVar1 + -0xc),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 75,
+      "match": "(LPSTR *)((int)",
+      "severity": "moderate",
+      "text": "*(LPSTR *)((int)puVar1 + -8),*(int *)((int)puVar1 + -4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 75,
+      "match": "(int *)((int)",
+      "severity": "moderate",
+      "text": "*(LPSTR *)((int)puVar1 + -8),*(int *)((int)puVar1 + -4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(int *)((int)",
+      "severity": "moderate",
+      "text": "*(int *)((int)puVar1 + -4) = exitCode;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 77,
+      "match": "(uint *)((int)",
+      "severity": "moderate",
+      "text": "*(uint *)((int)puVar1 + -8) = 0x609f18;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 78,
+      "match": "(int *)((int)",
+      "severity": "moderate",
+      "text": "ExitApplication(*(int *)((int)puVar1 + -4));",
       "type": "pointer_cast"
     }
   ]

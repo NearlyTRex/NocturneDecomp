@@ -2,11 +2,11 @@
 // Address: 00461560
 // Address Range: [[00461560, 0046169d]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_design_c_displayPalette_FUN_00461560(void)
+// Signature: void __cdecl shape_design_c_displayPalette_FUN_00461560(int color)
 
 #include "nocturne.h"
 
-void __cdecl shape_design_c_displayPalette_FUN_00461560(void)
+void __cdecl shape_design_c_displayPalette_FUN_00461560(int color)
 
 {
   char cVar2;

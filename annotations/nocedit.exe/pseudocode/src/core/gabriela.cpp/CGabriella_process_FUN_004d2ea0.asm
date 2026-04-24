@@ -818,7 +818,7 @@ section .text
         ;   Label: LAB_004d3708
     PUSH EBX                            ; 004d370e
     CALL core_gabriela.cpp_CGabriella_processAI_FUN_004d4190 ; 004d370f
-        ;   XREF to: 004d4190 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_processAI_FUN_004d4190(CGabriella * this_ptr)
+        ;   XREF to: 004d4190 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_processAI_FUN_004d4190(CGabriella * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004d3714
     JMP 0x004d2ed9                      ; 004d3717
         ;   XREF to: 004d2ed9 (UNCONDITIONAL_JUMP)  ; LAB_004d2ed9

@@ -3914,6 +3914,22 @@
             ]
           },
           "type":"CBaron*"
+        },
+        {
+          "name":"delta_time",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
         }
       ]
     }
@@ -6004,7 +6020,7 @@
         "start":"03fc37bf"
       }
     ],
-    "conv":"__esi",
+    "conv":"__stack_esi",
     "importable":true,
     "name":"engine_boss.c_modelStructNotSupported4_FUN_0041dbe0",
     "ret":"void",
@@ -6078,6 +6094,22 @@
         {
           "name":"mrgl_data",
           "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"SMRGLHeaderExtended*"
+        },
+        {
+          "name":"out_bounds",
+          "storage":{
             "reg":"ESI",
             "size":4,
             "varnodes":[
@@ -6088,7 +6120,7 @@
               }
             ]
           },
-          "type":"SMRGLHeaderExtended*"
+          "type":"SMRGLModelBounds*"
         }
       ]
     }
@@ -24186,6 +24218,24 @@
           },
           "type":"char",
           "use":242
+        }
+      ],
+      "params":[
+        {
+          "name":"color",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ]
     }
@@ -46828,6 +46878,40 @@
             ]
           },
           "type":"char[512]"
+        }
+      ],
+      "params":[
+        {
+          "name":"argc",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"argv",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"char**"
         }
       ]
     }

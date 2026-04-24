@@ -41,7 +41,7 @@ void __cdecl CGabriella::process(CGabriella *this_ptr,float delta_time);
 
 // Original: core_gabriela.cpp_CGabriella_processAI_FUN_004d4190
 // Address: 004d4190
-void __cdecl CGabriella::processAI(CGabriella *this_ptr);
+void __cdecl CGabriella::processAI(CGabriella *this_ptr,float delta_time);
 
 // Original: core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004d4890
 // Address: 004d4890

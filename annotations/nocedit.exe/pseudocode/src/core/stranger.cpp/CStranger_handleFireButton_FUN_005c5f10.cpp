@@ -2,11 +2,11 @@
 // Address: 005c5f10
 // Address Range: [[005c5f10, 005c6215]]
 // Convention: __cdecl
-// Signature: void __cdecl core_stranger_cpp_CStranger_handleFireButton_FUN_005c5f10(CStranger *this_ptr)
+// Signature: void __cdecl core_stranger_cpp_CStranger_handleFireButton_FUN_005c5f10(CStranger *this_ptr,float delta_time)
 
 #include "nocturne.h"
 
-void __cdecl core_stranger_cpp_CStranger_handleFireButton_FUN_005c5f10(CStranger *this_ptr)
+void __cdecl core_stranger_cpp_CStranger_handleFireButton_FUN_005c5f10(CStranger *this_ptr,float delta_time)
 
 {
   CWeapon *this_ptr_00;

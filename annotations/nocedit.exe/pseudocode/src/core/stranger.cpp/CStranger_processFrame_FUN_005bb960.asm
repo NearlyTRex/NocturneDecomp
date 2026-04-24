@@ -1065,7 +1065,7 @@ section .text
     PUSH dword ptr [EBP + 0x18]         ; 005bc4fb
     PUSH EBX                            ; 005bc4fe
     CALL core_stranger.cpp_CStranger_handleFireButton_FUN_005c5f10 ; 005bc4ff
-        ;   XREF to: 005c5f10 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_handleFireButton_FUN_005c5f10(CStranger * this_ptr)
+        ;   XREF to: 005c5f10 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_handleFireButton_FUN_005c5f10(CStranger * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 005bc504
     LEA EAX,[EBX + 0x1f738]             ; 005bc507
     PUSH EAX                            ; 005bc50d

@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2745,
-    "complexity_score": 1685,
+    "complexity_score": 1670,
     "cross_reference_count": 1,
     "function_call_count": 41,
     "global_count": 52,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1475,
-    "suspect_count": 19,
+    "suspect_count": 18,
     "suspect_types": [
-      "byvalue_struct_passing",
       "missing_cave_copy",
       "pointer_cast",
       "unnamed_local"
@@ -2405,13 +2404,6 @@
       "severity": "moderate",
       "text": "local_1c = (CMatrix3x3f *)((int)(local_1c + 1) + 0x20);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Calls clipAndDrawLine2D - decompiler cannot recognize by-value pattern",
-      "line": 1,
-      "match": "clipAndDrawLine2D",
-      "text": "Function calls by-value struct passing functions",
-      "type": "byvalue_struct_passing"
     },
     {
       "description": "Struct-type local `local_1dc` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 24 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",

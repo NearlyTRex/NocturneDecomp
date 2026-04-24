@@ -168,7 +168,7 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet *this_ptr
   }
   core_set_cpp_CDemonSet_renderTransparentActors_FUN_0056cf00(this_ptr);
   if (this_ptr->player_on_train != 0) {
-    core_terrain_cpp_CTerrain_render_FUN_005e1f50(g_CTerrainPtr);
+    core_terrain_cpp_CTerrain_render_FUN_005e1f50(g_CTerrainPtr,0);
   }
   iVar3 = 0;
   core_fire_cpp_CFireEffect_render_FUN_004c7180(g_CFireEffectPtr);

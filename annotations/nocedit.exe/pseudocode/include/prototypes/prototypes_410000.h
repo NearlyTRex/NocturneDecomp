@@ -45,6 +45,7 @@
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SFire.h"
 #include "types/structs/SMRGLHeaderExtended.h"
+#include "types/structs/SMRGLModelBounds.h"
 #include "types/unions/UOrientationVector.h"
 
 // =============================================================================
@@ -168,7 +169,7 @@ void __cdecl core_baron_cpp_CBaron_setup_FUN_00412cb0(CBaron *this_ptr);
 void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float delta_time);
 void __cdecl core_baron_cpp_CBaron_attachToOwner_FUN_00413470(CBaron *this_ptr,CDemonActor *target);
 void __cdecl core_baron_cpp_CBaron_detachFromOwner_FUN_004135a0(CBaron *this_ptr,CDemonActor *target);
-void __cdecl core_baron_cpp_CBaron_updateMountedPosition_FUN_004135e0(CBaron *this_ptr);
+void __cdecl core_baron_cpp_CBaron_updateMountedPosition_FUN_004135e0(CBaron *this_ptr,float delta_time);
 void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_004136b0(CBaron *this_ptr);
 void __cdecl core_baron_cpp_CBaron_advanceMotion_FUN_00413a00(CBaron *this_ptr,float delta_time);
 void __cdecl core_baron_cpp_CBaron_archive_FUN_00413a70(CBaron *this_ptr);
@@ -375,7 +376,7 @@ SBoneGuyBox * __cdecl core_boneguy_cpp_SBoneGuyBox_arrdtor_FUN_0041db30(SBoneGuy
 SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported1_FUN_0041db50(SMRGLHeaderExtended *mrgl_data);
 SMRGLHeaderExtended * __cdecl engine_boss_c_modelStructNotSupported2_FUN_0041db80(char *filename);
 void __cdecl engine_boss_c_modelStructNotSupported3_FUN_0041dbb0(SMRGLHeaderExtended *mrgl_data);
-void __esi engine_boss_c_modelStructNotSupported4_FUN_0041dbe0(SMRGLHeaderExtended *mrgl_data);
+void __stack_esi engine_boss_c_modelStructNotSupported4_FUN_0041dbe0 (SMRGLHeaderExtended *mrgl_data,SMRGLModelBounds *out_bounds);
 void __cdecl engine_boss_c_modelStructNotSupported5_FUN_0041dc20(SMRGLHeaderExtended *mrgl_data);
 CBox * __cdecl core_box_cpp_CBox_ctor_FUN_0041dc50(CBox *this_ptr);
 CBox * __cdecl core_box_cpp_CBox_dtor_FUN_0041dd00(CBox *this_ptr,uint flags);

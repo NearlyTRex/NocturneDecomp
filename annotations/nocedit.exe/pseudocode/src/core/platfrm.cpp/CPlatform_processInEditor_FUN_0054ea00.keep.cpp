@@ -97,7 +97,7 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
       }
       iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_Y);
       if (iVar3 != 0) {
-        core_platfrm_cpp_CPlatform_propertyActionSlewCallback_FUN_0054e480(this_ptr);
+        core_platfrm_cpp_CPlatform_propertyActionSlewCallback_FUN_0054e480(this_ptr,0);
       }
       switch(this_ptr->platform_type) {
       case PLATFORM_TYPE_START:

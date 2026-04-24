@@ -100,7 +100,7 @@ section .text
         ;   Label: caseD_2
     PUSH EBX                            ; 0042519b
     CALL core_bugs.cpp_CBugs_updateBoundingBox_FUN_00426410 ; 0042519c
-        ;   XREF to: 00426410 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_updateBoundingBox_FUN_00426410(CBugs * this_ptr)
+        ;   XREF to: 00426410 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_updateBoundingBox_FUN_00426410(CBugs * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004251a1
     POP EDI                             ; 004251a4
     POP EBX                             ; 004251a5

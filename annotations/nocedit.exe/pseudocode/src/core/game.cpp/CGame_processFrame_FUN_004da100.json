@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1158,
-    "complexity_score": 499,
+    "complexity_score": 464,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 77,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 374,
-    "suspect_count": 11,
+    "suspect_count": 8,
     "suspect_types": [
-      "pointer_cast",
       "unnamed_local",
       "warning_type_propagation"
     ],
@@ -854,6 +853,15 @@
       "type": "sub84_truncation"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 200,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ScreenBufferArray + local_24));",
+      "type": "pointer_cast"
+    },
+    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 251,
       "match": "SUB84(",
@@ -942,6 +950,24 @@
       "severity": "moderate",
       "text": "(int)((ulonglong)(double)pCVar5->y >> 0x20),SUB84(__BITCAST_UINT64((double)pCVar5->z),0),",
       "type": "sub84_truncation"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 339,
+      "match": "(char *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(char *)((int)piVar20 + 1) = cVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 340,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar20 = (int *)((int)piVar20 + 2);",
+      "type": "pointer_cast"
     },
     {
       "description": "Raw hex literal 0x3275924 matches address of g_CDemonCameraInstance (+64 bytes into) (type CDemonCamera). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
@@ -1189,33 +1215,9 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 200,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_ScreenBufferArray + local_24));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 339,
-      "match": "(char *)((int)",
-      "severity": "moderate",
-      "text": "*(char *)((int)piVar20 + 1) = cVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 340,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar20 = (int *)((int)piVar20 + 2);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 47,
+      "line": 45,
       "match": "local_5c",
       "severity": "mild",
       "text": "int local_5c;",
@@ -1224,7 +1226,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 48,
+      "line": 46,
       "match": "local_58",
       "severity": "mild",
       "text": "int local_58;",
@@ -1233,7 +1235,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 49,
+      "line": 47,
       "match": "local_54",
       "severity": "mild",
       "text": "int local_54;",
@@ -1242,7 +1244,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 50,
+      "line": 48,
       "match": "local_50",
       "severity": "mild",
       "text": "int local_50;",
@@ -1251,7 +1253,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 52,
+      "line": 50,
       "match": "local_48",
       "severity": "mild",
       "text": "int local_48;",
@@ -1260,7 +1262,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 290,
+      "line": 286,
       "match": "local_58",
       "severity": "mild",
       "text": "(&local_5c,&local_58,&local_54,&local_50,&local_4c,&local_48);",
@@ -1269,7 +1271,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 290,
+      "line": 286,
       "match": "local_50",
       "severity": "mild",
       "text": "(&local_5c,&local_58,&local_54,&local_50,&local_4c,&local_48);",

@@ -21,28 +21,16 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHe
   uint uVar5;
   int iVar9;
   int iVar10;
-  uint *puVar11;
+  SMRGLModelBounds *puVar11;
   uint *puVar12;
   SMRGLModelBounds *pSVar13;
   int iVar14;
-  uint *puVar6;
+  SMRGLModelBounds *pSVar6;
   byte bVar15;
   char local_160 [80];
-  uint local_110 [13];
-  uint local_dc [13];
-  uint local_a8;
-  uint local_a4;
-  uint local_a0;
-  uint local_9c;
-  uint local_98;
-  uint local_94;
-  uint local_90;
-  uint local_8c;
-  uint local_88;
-  int local_84;
-  int local_80;
-  int local_7c;
-  int local_78;
+  SMRGLModelBounds local_110;
+  SMRGLModelBounds local_dc;
+  SMRGLModelBounds local_a8;
   SMRGLModelBounds local_74;
   int *local_34;
   SMRGLModelBounds *local_30;
@@ -67,17 +55,17 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHe
     engine_model_c_getMRGLBounds_FUN_00528140(mrgl_data_00,&local_74);
     engine_model_c_freeMRGLData_FUN_005280b0(mrgl_data_00);
     iVar4 = 0xd;
-    puVar6 = local_110;
+    pSVar6 = &local_110;
     puVar11 = &local_a8;
   }
   else if (iVar4 == 0x26) {
-    puVar6 = local_110;
-    engine_boss_c_modelStructNotSupported4_FUN_0041dbe0((SMRGLHeaderExtended *)local_dc);
+    pSVar6 = &local_110;
+    engine_boss_c_modelStructNotSupported4_FUN_0041dbe0(mrgl_data,&local_dc);
     iVar4 = 0xd;
-    puVar11 = local_110 + 0xc;
+    puVar11 = &local_dc;
   }
   else {
-    local_34 = &mrgl_data[1].child_count;
+    piVar3 = &mrgl_data[1].child_count;
     if ((mrgl_data->base).type != 0x14) {
       g_CurrentFilename = "..\\engine\\model.c";
       g_CurrentLineNumber = 0x172;
@@ -100,7 +88,6 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHe
     local_1c = 0.0;
     local_18 = 0.0;
     local_14 = 0.0;
-    piVar3 = local_34;
     if (0 < mrgl_data[1].base.count) {
       do {
         if (iVar10 < *piVar3) {
@@ -124,72 +111,82 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHe
         iVar3 = *piVar3;
         piVar1 = piVar3 + 1;
         piVar2 = piVar3 + 2;
+        piVar3 = piVar3 + 3;
         iVar7 = iVar7 + 1;
         local_14 = (float)iVar3 + local_14;
         local_18 = (float)*piVar1 + local_18;
         local_1c = (float)*piVar2 + local_1c;
-        piVar3 = piVar3 + 3;
       } while (iVar7 < mrgl_data[1].base.count);
     }
-    local_9c = (uint)((longlong)iVar4 * (longlong)iVar10) >> 0x10 |
-               (int)((ulonglong)((longlong)iVar4 * (longlong)iVar10) >> 0x20) << 0x10;
-    local_98 = (uint)((longlong)iVar4 * (longlong)iVar14) >> 0x10 |
-               (int)((ulonglong)((longlong)iVar4 * (longlong)iVar14) >> 0x20) << 0x10;
-    local_94 = (uint)((longlong)iVar4 * (longlong)local_24) >> 0x10 |
-               (int)((ulonglong)((longlong)iVar4 * (longlong)local_24) >> 0x20) << 0x10;
-    local_a8 = (uint)((longlong)iVar4 * (longlong)iVar9) >> 0x10 |
-               (int)((ulonglong)((longlong)iVar4 * (longlong)iVar9) >> 0x20) << 0x10;
-    local_a4 = (uint)((longlong)iVar4 * (longlong)iVar6) >> 0x10 |
-               (int)((ulonglong)((longlong)iVar4 * (longlong)iVar6) >> 0x20) << 0x10;
-    local_a0 = (uint)((longlong)iVar4 * (longlong)local_20) >> 0x10 |
-               (int)((ulonglong)((longlong)iVar4 * (longlong)local_20) >> 0x20) << 0x10;
+    local_a8.max_scaled.x =
+         (uint)((longlong)iVar4 * (longlong)iVar10) >> 0x10 |
+         (int)((ulonglong)((longlong)iVar4 * (longlong)iVar10) >> 0x20) << 0x10;
+    local_a8.max_scaled.y =
+         (uint)((longlong)iVar4 * (longlong)iVar14) >> 0x10 |
+         (int)((ulonglong)((longlong)iVar4 * (longlong)iVar14) >> 0x20) << 0x10;
+    local_a8.max_scaled.z =
+         (uint)((longlong)iVar4 * (longlong)local_24) >> 0x10 |
+         (int)((ulonglong)((longlong)iVar4 * (longlong)local_24) >> 0x20) << 0x10;
+    local_a8.min_scaled.x =
+         (uint)((longlong)iVar4 * (longlong)iVar9) >> 0x10 |
+         (int)((ulonglong)((longlong)iVar4 * (longlong)iVar9) >> 0x20) << 0x10;
+    local_a8.min_scaled.y =
+         (uint)((longlong)iVar4 * (longlong)iVar6) >> 0x10 |
+         (int)((ulonglong)((longlong)iVar4 * (longlong)iVar6) >> 0x20) << 0x10;
+    local_a8.min_scaled.z =
+         (uint)((longlong)iVar4 * (longlong)local_20) >> 0x10 |
+         (int)((ulonglong)((longlong)iVar4 * (longlong)local_20) >> 0x20) << 0x10;
     fVar5 = 1.0 / (float)mrgl_data[1].base.count;
     lVar4 = (longlong)iVar4 * (longlong)(int)ROUND(ROUND(local_14 * fVar5));
-    local_90 = (uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10;
+    local_a8.center_scaled.x = (uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10;
     lVar1 = (longlong)iVar4 * (longlong)(int)ROUND(ROUND(local_18 * fVar5));
-    local_8c = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+    local_a8.center_scaled.y = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     lVar1 = (longlong)iVar4 * (longlong)(int)ROUND(ROUND(local_1c * fVar5));
-    local_88 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    local_80 = (local_9c ^ (int)local_9c >> 0x1f) - ((int)local_9c >> 0x1f);
-    uVar8 = (int)local_a8 >> 0x1f;
-    if (local_80 < (int)((local_a8 ^ uVar8) - uVar8)) {
-      local_80 = (local_a8 ^ uVar8) - uVar8;
+    local_a8.center_scaled.z = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+    local_a8.extent.x =
+         (local_a8.max_scaled.x ^ local_a8.max_scaled.x >> 0x1f) - (local_a8.max_scaled.x >> 0x1f);
+    uVar8 = local_a8.min_scaled.x >> 0x1f;
+    if (local_a8.extent.x < (int)((local_a8.min_scaled.x ^ uVar8) - uVar8)) {
+      local_a8.extent.x = (local_a8.min_scaled.x ^ uVar8) - uVar8;
     }
-    local_7c = (local_98 ^ (int)local_98 >> 0x1f) - ((int)local_98 >> 0x1f);
-    uVar5 = (int)local_a4 >> 0x1f;
-    if (local_7c < (int)((local_a4 ^ uVar5) - uVar5)) {
-      local_7c = (local_a4 ^ uVar5) - uVar5;
+    local_a8.extent.y =
+         (local_a8.max_scaled.y ^ local_a8.max_scaled.y >> 0x1f) - (local_a8.max_scaled.y >> 0x1f);
+    uVar5 = local_a8.min_scaled.y >> 0x1f;
+    if (local_a8.extent.y < (int)((local_a8.min_scaled.y ^ uVar5) - uVar5)) {
+      local_a8.extent.y = (local_a8.min_scaled.y ^ uVar5) - uVar5;
     }
-    local_78 = (local_94 ^ (int)local_94 >> 0x1f) - ((int)local_94 >> 0x1f);
-    uVar5 = (int)local_a0 >> 0x1f;
-    if (local_78 < (int)((local_a0 ^ uVar5) - uVar5)) {
-      local_78 = (local_a0 ^ uVar5) - uVar5;
+    local_a8.extent.z =
+         (local_a8.max_scaled.z ^ local_a8.max_scaled.z >> 0x1f) - (local_a8.max_scaled.z >> 0x1f);
+    uVar5 = local_a8.min_scaled.z >> 0x1f;
+    if (local_a8.extent.z < (int)((local_a8.min_scaled.z ^ uVar5) - uVar5)) {
+      local_a8.extent.z = (local_a8.min_scaled.z ^ uVar5) - uVar5;
     }
     iVar4 = 0xd;
-    local_84 = (int)ROUND(ROUND(SQRT((float10)local_78 * (float10)local_78 +
-                                     (float10)local_7c * (float10)local_7c +
-                                     (float10)local_80 * (float10)local_80)));
+    local_a8.radius_scaled =
+         (int)ROUND(ROUND(SQRT((float10)local_a8.extent.z * (float10)local_a8.extent.z +
+                               (float10)local_a8.extent.y * (float10)local_a8.extent.y +
+                               (float10)local_a8.extent.x * (float10)local_a8.extent.x)));
     puVar11 = &local_a8;
-    puVar6 = local_110;
+    pSVar6 = &local_110;
   }
   for (; iVar4 != 0; iVar4 = iVar4 + -1) {
-    puVar11 = puVar11 + (uint)bVar15 * -2 + 1;
-    *puVar6 = *puVar11;
+    puVar11 = (SMRGLModelBounds *)((int)puVar11 + (uint)bVar15 * -8 + 4);
+    (pSVar6->min_scaled).x = (puVar11->min_scaled).x;
     puVar11 = puVar11;
-    puVar6 = puVar6 + (uint)bVar15 * -2 + 1;
+    pSVar6 = (SMRGLModelBounds *)((int)pSVar6 + (uint)bVar15 * -8 + 4);
   }
-  *local_34 = local_160._76_4_;
-  local_34[1] = local_110[0];
-  local_34[2] = local_110[1];
-  local_34[3] = local_110[2];
-  local_34[4] = local_110[3];
-  local_34[5] = local_110[4];
-  local_34[6] = local_110[5];
-  local_34[7] = local_110[6];
-  local_34[8] = local_110[7];
-  local_34[9] = local_110[8];
-  local_34[10] = local_110[9];
-  local_34[0xb] = local_110[10];
-  local_34[0xc] = local_110[0xb];
-  return (SMRGLModelBounds *)local_34;
+  (output_bounds->min_scaled).x = local_110.min_scaled.x;
+  (output_bounds->min_scaled).y = local_110.min_scaled.y;
+  (output_bounds->min_scaled).z = local_110.min_scaled.z;
+  (output_bounds->max_scaled).x = local_110.max_scaled.x;
+  (output_bounds->max_scaled).y = local_110.max_scaled.y;
+  (output_bounds->max_scaled).z = local_110.max_scaled.z;
+  (output_bounds->center_scaled).x = local_110.center_scaled.x;
+  (output_bounds->center_scaled).y = local_110.center_scaled.y;
+  (output_bounds->center_scaled).z = local_110.center_scaled.z;
+  output_bounds->radius_scaled = local_110.radius_scaled;
+  (output_bounds->extent).x = local_110.extent.x;
+  (output_bounds->extent).y = local_110.extent.y;
+  (output_bounds->extent).z = local_110.extent.z;
+  return output_bounds;
 }

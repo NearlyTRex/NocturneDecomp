@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 362,
-    "complexity_score": 267,
+    "complexity_score": 187,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 13,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 172,
-    "suspect_count": 8,
+    "suspect_count": 1,
     "suspect_types": [
-      "raw_address_constant",
-      "unrolled_strcpy",
       "warning_inlined_function"
     ],
     "total_lines": 534
@@ -256,6 +254,15 @@
       "severity": "mild",
       "text": "uStack_28 = (uint)(byte)(uStack_28._3_1_ + 1) << 0x18;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 40,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ],
   "stack_frame": {
@@ -401,14 +408,14 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 21,
-          "line": 163,
+          "line": 151,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 34,
-          "line": 168,
+          "line": 156,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -425,62 +432,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Raw hex literal 0x1000000 matches address of g_LightBufferPool (+4087288 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 145,
-      "match": "0x1000000",
-      "severity": "moderate",
-      "text": "iVar5 = 0x1000000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0xffffff matches address of g_LightBufferPool (+4087287 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 147,
-      "match": "0xffffff",
-      "severity": "moderate",
-      "text": "2 & 0xffffff;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x1000000 matches address of g_LightBufferPool (+4087288 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 158,
-      "match": "0x1000000",
-      "severity": "moderate",
-      "text": "iVar6 = iVar6 + 0x1000000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0xffffff matches address of g_LightBufferPool (+4087287 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 160,
-      "match": "0xffffff",
-      "severity": "moderate",
-      "text": "(int)((iVar5 + (iVar5 >> 0x1f) * -4) - (uint)((iVar5 >> 0x1f) << 1 < 0)) >> 2 ^ 0xffffff;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0xffffff matches address of g_LightBufferPool (+4087287 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 161,
-      "match": "0xffffff",
-      "severity": "moderate",
-      "text": "local_b4.vertices[0].texture_v = (int)(iVar9 - (uint)(iVar3 << 1 < 0)) >> 2 ^ 0xffffff;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x1000000 matches address of g_LightBufferPool (+4087288 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 162,
-      "match": "0x1000000",
-      "severity": "moderate",
-      "text": "iVar5 = iVar5 + 0x1000000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 40,
-      "match": "do {",
-      "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strcpy"
     }
   ]
 }

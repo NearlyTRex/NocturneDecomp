@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
+; void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv)
 ;
+; Parameters:
+; int              Stack[0x4]:4   argc
+; char * *         Stack[0x8]:4   argv
 ; Local Variables:
 ; char[512]        Stack[-0x528]:512  low_memory_message
 ; char[256]        Stack[-0x328]:256  temp_buffer

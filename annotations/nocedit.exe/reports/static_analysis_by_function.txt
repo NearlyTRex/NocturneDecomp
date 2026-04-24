@@ -10,7 +10,7 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions with findings: 116
-  Total diagnostics: 335
+  Total diagnostics: 326
   Functions flagged by multiple tools: 0
   .keep.cpp files: 116, raw .cpp files: 0
 
@@ -96,21 +96,6 @@ core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0  [.keep] [Cppc
   Line  954: [legacyUninitvar] Uninitialized variable: local_1b0
   Line  954: [legacyUninitvar] Uninitialized variable: local_1ac
   Line  954: [legacyUninitvar] Uninitialized variable: local_1a8
-
-----------------------------------------------------------------------------------------------------
-engine_model.c_getMRGLBounds_FUN_00528140  [.keep] [Cppcheck (quick)]
-  File: engine/model.c  (10 diagnostics)
-
-  Line  154: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  155: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  159: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  160: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  164: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  165: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  178: [uninitvar] Uninitialized variable: *puVar11
-  Line  179: [selfAssignment] Redundant assignment of 'puVar11' to itself.
-  Line  182: [uninitvar] Uninitialized variable: local_34
-  Line  182: [uninitvar] Uninitialized variable: local_110
 
 ----------------------------------------------------------------------------------------------------
 shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0  [.keep] [Cppcheck (quick)]
@@ -489,8 +474,8 @@ core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0  [.keep] [Cpp
 core_dskybox.cpp_renderSkyDome_FUN_004901f0  [.keep] [Cppcheck (quick)]
   File: core/dskybox.cpp  (2 diagnostics)
 
-  Line  163: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  168: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  151: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  156: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0  [.keep] [Cppcheck (quick)]
@@ -830,6 +815,12 @@ engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550  [.keep] [Cppcheck (
   File: engine/font.cpp  (1 diagnostics)
 
   Line   97: [uninitvar] Uninitialized variable: local_28
+
+----------------------------------------------------------------------------------------------------
+engine_model.c_getMRGLBounds_FUN_00528140  [.keep] [Cppcheck (quick)]
+  File: engine/model.c  (1 diagnostics)
+
+  Line  173: [uninitvar] Uninitialized variable: *puVar11
 
 ----------------------------------------------------------------------------------------------------
 engine_prim.c_renderScanlinePolygon_FUN_00553470  [.keep] [Cppcheck (quick)]

@@ -179,7 +179,7 @@ section .text
     PUSH 0x0                            ; 0054eb44
     PUSH EBX                            ; 0054eb46
     CALL core_platfrm.cpp_CPlatform_propertyActionSlewCallback_FUN_0054e480 ; 0054eb47
-        ;   XREF to: 0054e480 (UNCONDITIONAL_CALL)  ; int core_platfrm.cpp_CPlatform_propertyActionSlewCallback_FUN_0054e480(CPlatform * this_ptr)
+        ;   XREF to: 0054e480 (UNCONDITIONAL_CALL)  ; int core_platfrm.cpp_CPlatform_propertyActionSlewCallback_FUN_0054e480(CPlatform * this_ptr, int value)
     ADD ESP,0x8                         ; 0054eb4c
     MOV EAX,dword ptr [EBX + 0x724]     ; 0054eb4f
         ;   Label: LAB_0054eb4f

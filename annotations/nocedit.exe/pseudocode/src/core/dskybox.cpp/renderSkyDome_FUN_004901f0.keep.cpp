@@ -12,7 +12,6 @@
 void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_texture,char *texture_name,int brightness_factor)
 
 {
-  char cVar2;
   float fVar3;
   uint uVar4;
   int iVar3;
@@ -20,7 +19,6 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_
   int iVar6;
   int iVar9;
   int iVar5;
-  char *pcVar6;
   int iVar7;
   int iVar8;
   float10 fVar9;
@@ -42,18 +40,8 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_
   uint local_14;
   CDemonRenderer *this_ptr;
   float fVar2;
-  char cVar1;
   
-  pcVar6 = sky_texture->texture_name + 4;
-  do {
-    cVar1 = *texture_name;
-    *pcVar6 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar2 = texture_name[1];
-    texture_name = texture_name + 2;
-    pcVar6[1] = cVar2;
-    pcVar6 = pcVar6 + 2;
-  } while (cVar2 != '\0');
+  strcpy(sky_texture->texture_name + 4, texture_name);
   (sky_texture->base).type = brightness_factor;
   core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_00499b40(&g_CDemonRaytraceInstance,&local_60);
   core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_00499b70(&g_CDemonRaytraceInstance,&local_54);

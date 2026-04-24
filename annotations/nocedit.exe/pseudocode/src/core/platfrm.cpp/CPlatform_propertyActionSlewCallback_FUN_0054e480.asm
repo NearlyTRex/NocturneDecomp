@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_platfrm_cpp_CPlatform_propertyActionSlewCallback_FUN_0054e480(CPlatform *this_ptr)
+; int __cdecl core_platfrm_cpp_CPlatform_propertyActionSlewCallback_FUN_0054e480(CPlatform *this_ptr,int value)
 ;
 ; Parameters:
 ; CPlatform *      Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   value
 ;
 ; XREF[2]:
 ;   core_platfrm.cpp_CPlatform_getPropertyList_FUN_0054e7d0 at 0054e8e5

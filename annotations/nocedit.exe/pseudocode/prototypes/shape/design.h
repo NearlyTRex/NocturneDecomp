@@ -229,7 +229,7 @@ void __cdecl showFacetPartEditorHelp(void);
 
 // Original: shape_design.c_displayPalette_FUN_00461560
 // Address: 00461560
-void __cdecl displayPalette(void);
+void __cdecl displayPalette(int color);
 
 // Original: shape_design.c_renderPolygonsByPart_FUN_004616a0
 // Address: 004616a0

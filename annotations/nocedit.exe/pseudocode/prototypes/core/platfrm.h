@@ -89,7 +89,7 @@ void __cdecl CPlatform::propertyDisplaySlewCallback(CPlatform *this_ptr,CActorPr
 
 // Original: core_platfrm.cpp_CPlatform_propertyActionSlewCallback_FUN_0054e480
 // Address: 0054e480
-int __cdecl CPlatform::propertyActionSlewCallback(CPlatform *this_ptr);
+int __cdecl CPlatform::propertyActionSlewCallback(CPlatform *this_ptr,int value);
 
 // Original: core_platfrm.cpp_CPlatform_propertyDisplayTypeCallback_FUN_0054e4e0
 // Address: 0054e4e0

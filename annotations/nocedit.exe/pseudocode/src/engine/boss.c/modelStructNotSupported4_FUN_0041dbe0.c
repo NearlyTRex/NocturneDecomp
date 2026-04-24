@@ -1,12 +1,12 @@
 // Name: engine_boss.c_modelStructNotSupported4_FUN_0041dbe0
 // Address: 0041dbe0
 // Address Range: [[0041dbe0, 0041dc1e] [03fc37bf, 03fc381f]]
-// Convention: __esi
-// Signature: void __esi engine_boss_c_modelStructNotSupported4_FUN_0041dbe0(SMRGLHeaderExtended *mrgl_data)
+// Convention: __stack_esi
+// Signature: void __stack_esi engine_boss_c_modelStructNotSupported4_FUN_0041dbe0(SMRGLHeaderExtended *mrgl_data,SMRGLModelBounds *out_bounds)
 
 #include "nocturne.h"
 
-void __esi engine_boss_c_modelStructNotSupported4_FUN_0041dbe0(SMRGLHeaderExtended *mrgl_data)
+void __stack_esi engine_boss_c_modelStructNotSupported4_FUN_0041dbe0(SMRGLHeaderExtended *mrgl_data,SMRGLModelBounds *out_bounds)
 
 {
   int iVar1;
@@ -29,18 +29,18 @@ void __esi engine_boss_c_modelStructNotSupported4_FUN_0041dbe0(SMRGLHeaderExtend
   g_CurrentFilename = "..\\engine\\boss.c";
   g_CurrentLineNumber = 0x44;
   core_main_c_displayErrorAndQuit_FUN_00506f10("modelStruct not supported");
-  (mrgl_data->base).type = local_3c;
-  (mrgl_data->base).count = iStack_38;
-  mrgl_data->child_count = iStack_34;
-  mrgl_data[1].base.type = iStack_30;
-  mrgl_data[1].base.count = iStack_2c;
-  mrgl_data[1].child_count = iStack_28;
-  mrgl_data[2].base.type = iStack_24;
-  mrgl_data[2].base.count = iStack_20;
-  mrgl_data[2].child_count = iStack_1c;
-  mrgl_data[3].base.type = iStack_18;
-  mrgl_data[3].base.count = iStack_14;
-  mrgl_data[3].child_count = iStack_10;
-  mrgl_data[4].base.type = iStack_c;
+  (out_bounds->min_scaled).x = local_3c;
+  (out_bounds->min_scaled).y = iStack_38;
+  (out_bounds->min_scaled).z = iStack_34;
+  (out_bounds->max_scaled).x = iStack_30;
+  (out_bounds->max_scaled).y = iStack_2c;
+  (out_bounds->max_scaled).z = iStack_28;
+  (out_bounds->center_scaled).x = iStack_24;
+  (out_bounds->center_scaled).y = iStack_20;
+  (out_bounds->center_scaled).z = iStack_1c;
+  out_bounds->radius_scaled = iStack_18;
+  (out_bounds->extent).x = iStack_14;
+  (out_bounds->extent).y = iStack_10;
+  (out_bounds->extent).z = iStack_c;
   return;
 }

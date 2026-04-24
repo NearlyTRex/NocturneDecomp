@@ -78,7 +78,7 @@ void __cdecl wincore_winrun_cpp_setCursorPosition_FUN_005f30d0(int x,int y);
 void __cdecl wincore_winrun_cpp_addWindowsMessageHook_FUN_005f3100(SMessageHandler message_handler);
 LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_005f3150(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam);
 void __cdecl wincore_winrun_cpp_processWindowMessages_FUN_005f35e0(void);
-int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680 (HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow1,int nCmdShow2);
+int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680 (HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow);
 void __cdecl wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_005f3920(char *message);
 char * __cdecl wincore_winrun_cpp_getKeyName_FUN_005f3980(EInputCodeType keycode);
 HANDLE __cdecl wincore_winrun_cpp_createMutex_FUN_005f3fe0(void);

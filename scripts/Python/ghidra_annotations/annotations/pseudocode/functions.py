@@ -420,16 +420,25 @@ def _scan_forward_for_add_esp(listing, call_addr, caller_func):
             if dest == 'ESP':
                 src = current_instr.getDefaultOperandRepresentation(1)
                 try:
-                    if src.lower().startswith('0x'):
-                        return int(src, 16)
-                    else:
-                        return int(src)
+                    val = int(src, 16) if src.lower().startswith('0x') else int(src)
                 except (ValueError, TypeError):
                     return None
+                # Sanity cap: more than 16 args (64 bytes) is essentially never
+                # a real call cleanup. This filters out cases where the forward
+                # scan crossed a basic-block boundary and grabbed the function
+                # epilogue's ADD ESP,frame_size. Examples seen: 3812, 76, 18.
+                if val > 64:
+                    return None
+                return val
 
-        # Stop if we hit another CALL, RET, or PUSH (meaning cleanup didn't happen
-        # immediately - could be batched or callee-cleaned)
+        # Stop if we hit another CALL, RET, PUSH, or any branch (meaning
+        # cleanup didn't happen immediately — could be batched or
+        # callee-cleaned, or we'd be crossing into an unrelated basic block).
         if mnemonic in ('CALL', 'RET', 'RETN', 'PUSH', 'JMP'):
+            break
+        # Conditional jumps also end the basic block — stop here so we don't
+        # walk past the call's natural cleanup window into unrelated code.
+        if mnemonic.startswith('J'):
             break
 
         current_instr = current_instr.getNext()

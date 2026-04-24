@@ -1,0 +1,64 @@
+// Name: core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_00522800
+// Address: 00522800
+// MANUAL RECONSTRUCTION
+// Address Range: [[00522800, 005229a3]]
+// Convention: __cdecl
+// Signature: void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00522800(CMirror *this_ptr)
+
+#include "nocturne.h"
+
+void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00522800(CMirror *this_ptr)
+
+{
+  int iVar2;
+  SMRGLPrimitiveQuad SStack_88;
+  CVector3i local_40;
+  CVector3i local_34;
+  CVector3i local_28;
+  CVector3i local_1c;
+  
+  local_34.x = (int)ROUND((this_ptr->reflection).corner1.x * 256.0f);
+  local_34.y = (int)ROUND((this_ptr->reflection).corner1.y * 256.0f);
+  local_34.z = (int)ROUND((this_ptr->reflection).corner1.z * 256.0f);
+  wincore_windll_cpp_transformPoint_FUN_005b5a25
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_34);
+  local_40.x = (int)ROUND((this_ptr->reflection).corner2.x * 256.0f);
+  local_40.y = (int)ROUND((this_ptr->reflection).corner2.y * 256.0f);
+  local_40.z = (int)ROUND((this_ptr->reflection).corner2.z * 256.0f);
+  wincore_windll_cpp_transformPoint_FUN_005b5a25
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_40);
+  local_1c.x = (int)ROUND((this_ptr->reflection).corner3.x * 256.0f);
+  local_1c.y = (int)ROUND((this_ptr->reflection).corner3.y * 256.0f);
+  local_1c.z = (int)ROUND((this_ptr->reflection).corner3.z * 256.0f);
+  wincore_windll_cpp_transformPoint_FUN_005b5a25
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_1c);
+  local_28.x = (int)ROUND((this_ptr->reflection).corner4.x * 256.0f);
+  local_28.y = (int)ROUND((this_ptr->reflection).corner4.y * 256.0f);
+  local_28.z = (int)ROUND((this_ptr->reflection).corner4.z * 256.0f);
+  wincore_windll_cpp_transformPoint_FUN_005b5a25
+            (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_28);
+  iVar2 = 0;
+  do {
+    g_CDemonRendererPtr2->vertex_buffer_ptr[iVar2].projected_vertex.transformed_x =
+         g_CDemonRendererPtr2->vertex_buffer_ptr[iVar2].projected_vertex.transformed_x << 4;
+    g_CDemonRendererPtr2->vertex_buffer_ptr[iVar2].projected_vertex.transformed_y =
+         g_CDemonRendererPtr2->vertex_buffer_ptr[iVar2].projected_vertex.transformed_y << 4;
+    g_CDemonRendererPtr2->vertex_buffer_ptr[iVar2].projected_vertex.transformed_z =
+         g_CDemonRendererPtr2->vertex_buffer_ptr[iVar2].projected_vertex.transformed_z << 4;
+    g_CDemonRendererPtr2->vertex_buffer_ptr[iVar2].projected_vertex.inv_z =
+         (int)((uint)g_CDemonRendererPtr2->vertex_buffer_ptr[iVar2].projected_vertex.inv_z >> 4);
+    iVar2 = iVar2 + 1;
+  } while (iVar2 != 4);
+  SStack_88.base.base.count = 4;
+  SStack_88.base.surface_normal.D = 0;
+  SStack_88.base.surface_normal.C = 0;
+  SStack_88.base.surface_normal.B = 0;
+  SStack_88.vertices[2].vertex_index = 2;
+  SStack_88.base.surface_normal.A = 0;
+  SStack_88.vertices[0].vertex_index = 0;
+  SStack_88.vertices[3].vertex_index = 3;
+  SStack_88.vertices[1].vertex_index = 1;
+  engine_drender_cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950
+            (g_CDemonRendererPtr2,&SStack_88.base);
+  return;
+}

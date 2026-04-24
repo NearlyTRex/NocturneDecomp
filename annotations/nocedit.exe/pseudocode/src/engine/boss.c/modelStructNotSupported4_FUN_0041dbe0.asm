@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __esi engine_boss_c_modelStructNotSupported4_FUN_0041dbe0(SMRGLHeaderExtended *mrgl_data)
+; void __stack_esi engine_boss_c_modelStructNotSupported4_FUN_0041dbe0(SMRGLHeaderExtended *mrgl_data,SMRGLModelBounds *out_bounds)
 ;
+; Parameters:
+; SMRGLHeaderExtended * Stack[0x4]:4   mrgl_data
 ; Local Variables:
 ; undefined4[13]   Stack[-0x3c]:52  local_3c
 ;

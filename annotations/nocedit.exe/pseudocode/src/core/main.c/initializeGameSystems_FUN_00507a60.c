@@ -2,11 +2,11 @@
 // Address: 00507a60
 // Address Range: [[00507a60, 00508244]]
 // Convention: __cdecl
-// Signature: void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
+// Signature: void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv)
 
 #include "nocturne.h"
 
-void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
+void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv)
 
 {
   uint *puVar1;

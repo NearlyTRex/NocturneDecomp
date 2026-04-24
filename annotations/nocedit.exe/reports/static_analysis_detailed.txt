@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (335 diagnostics)
+Cppcheck (quick) (326 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (73)
+selfAssignment (72)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 170
@@ -240,10 +240,6 @@ selfAssignment (73)
     File: engine/fileio.cpp
     Redundant assignment of 'piVar7' to itself.
 
-  engine_model.c_getMRGLBounds_FUN_00528140          line 179
-    File: engine/model.c
-    Redundant assignment of 'puVar11' to itself.
-
   shape_design.c_configureSinglePassPolygonReduction line 103
     File: shape/design.c
     Redundant assignment of 'pbVar4' to itself.
@@ -305,7 +301,7 @@ selfAssignment (73)
     Redundant assignment of 'pdVar4' to itself.
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (70)
+uninitvar (68)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 71
@@ -496,17 +492,9 @@ uninitvar (70)
     File: engine/font.cpp
     Uninitialized variable: local_28
 
-  engine_model.c_getMRGLBounds_FUN_00528140          line 178
+  engine_model.c_getMRGLBounds_FUN_00528140          line 173
     File: engine/model.c
     Uninitialized variable: *puVar11
-
-  engine_model.c_getMRGLBounds_FUN_00528140          line 182
-    File: engine/model.c
-    Uninitialized variable: local_34
-
-  engine_model.c_getMRGLBounds_FUN_00528140          line 182
-    File: engine/model.c
-    Uninitialized variable: local_110
 
   shape_design.c_loadModelBinary_FUN_00458170        line 159
     File: shape/design.c
@@ -589,7 +577,7 @@ uninitvar (70)
     Uninitialized variable: local_60
 
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (47)
+shiftTooManyBitsSigned (41)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_ line 61
@@ -636,11 +624,11 @@ shiftTooManyBitsSigned (47)
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dskybox.cpp_renderSkyDome_FUN_004901f0        line 163
+  core_dskybox.cpp_renderSkyDome_FUN_004901f0        line 151
     File: core/dskybox.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dskybox.cpp_renderSkyDome_FUN_004901f0        line 168
+  core_dskybox.cpp_renderSkyDome_FUN_004901f0        line 156
     File: core/dskybox.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -694,30 +682,6 @@ shiftTooManyBitsSigned (47)
 
   engine_colquant.c_computeBoxStatistics_FUN_0044126 line 95
     File: engine/colquant.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_model.c_getMRGLBounds_FUN_00528140          line 154
-    File: engine/model.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_model.c_getMRGLBounds_FUN_00528140          line 155
-    File: engine/model.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_model.c_getMRGLBounds_FUN_00528140          line 159
-    File: engine/model.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_model.c_getMRGLBounds_FUN_00528140          line 160
-    File: engine/model.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_model.c_getMRGLBounds_FUN_00528140          line 164
-    File: engine/model.c
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  engine_model.c_getMRGLBounds_FUN_00528140          line 165
-    File: engine/model.c
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   shape_edittool.cpp_CEditorTools_createModalWindow_ line 111

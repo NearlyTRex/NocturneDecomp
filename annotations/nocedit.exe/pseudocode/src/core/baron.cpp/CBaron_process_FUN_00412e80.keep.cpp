@@ -72,7 +72,7 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
     return;
   }
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
-    core_baron_cpp_CBaron_updateMountedPosition_FUN_004135e0(this_ptr);
+    core_baron_cpp_CBaron_updateMountedPosition_FUN_004135e0(this_ptr,delta_time);
   }
   pCVar2 = g_CGamePtr;
   (this_ptr->base).base.turn_speed = delta_time * (float)12.566370614;

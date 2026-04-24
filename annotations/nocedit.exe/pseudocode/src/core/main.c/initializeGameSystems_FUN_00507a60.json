@@ -7,15 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 798,
-    "complexity_score": 542,
+    "complexity_score": 527,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 96,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 512,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
       "raw_address_constant"
     ],
     "total_lines": 1310
@@ -39,7 +38,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_main.c_initializeGameSystems_FUN_00507a60",
-    "signature": "void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)"
+    "signature": "void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv)"
   },
   "function_calls": [
     {
@@ -831,11 +830,11 @@
         "stack_params": 2
       }
     ],
-    "confidence": "low",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.925233644859813,
@@ -1359,10 +1358,10 @@
     }
   ],
   "stack_frame": {
-    "frame_size": 1324,
+    "frame_size": 1332,
     "local_size": 1324,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -1399,6 +1398,20 @@
         "offset": -40,
         "size": 20,
         "type": "CAlphaBitmap"
+      },
+      {
+        "is_param": true,
+        "name": "argc",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "argv",
+        "offset": 8,
+        "size": 4,
+        "type": "char * *"
       }
     ]
   },
@@ -1477,17 +1490,6 @@
       "severity": "moderate",
       "text": "if (g_TotalPhysicalMemory < 0x3c00000) {",
       "type": "raw_address_constant"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

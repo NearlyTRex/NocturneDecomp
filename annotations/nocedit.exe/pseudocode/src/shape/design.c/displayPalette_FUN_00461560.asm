@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_design_c_displayPalette_FUN_00461560(void)
+; void __cdecl shape_design_c_displayPalette_FUN_00461560(int color)
 ;
+; Parameters:
+; int              Stack[0x4]:4   color
 ; Local Variables:
 ; char[80]         Stack[-0x7c]:80  local_7c
 ; int              Stack[-0x2c]:4  local_2c
