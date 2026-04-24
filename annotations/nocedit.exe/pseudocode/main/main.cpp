@@ -41,5 +41,5 @@ int main(int argc, char** argv)
     const int nCmdShow      = 10;  // SW_SHOWDEFAULT, mirroring entry.c
 
     return wincore_winrun_cpp_winMain_FUN_005f3680(
-        hInstance, hPrevInstance, lpCmdLine, nCmdShow, nCmdShow);
+        hInstance, hPrevInstance, lpCmdLine, nCmdShow);
 }
