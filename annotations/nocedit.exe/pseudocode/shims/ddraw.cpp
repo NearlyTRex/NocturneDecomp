@@ -19,6 +19,7 @@
 #include "debug_log.h"
 
 extern SDL_Window* g_sdlWindow;
+extern bool g_sdlWindowReadyToShow;
 
 // =============================================================================
 // DirectDraw constants (from the original Windows SDK)
@@ -409,7 +410,7 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD width, DWORD he
         if (g_sdlWindow) {
             ddraw->window = g_sdlWindow;
         } else {
-            Uint32 flags = SDL_WINDOW_SHOWN;
+            Uint32 flags = SDL_WINDOW_HIDDEN;
             ddraw->window = SDL_CreateWindow("Nocturne",
                                               SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                                               width, height, flags);
@@ -429,6 +430,11 @@ static HRESULT ddraw_SetDisplayMode(IDirectDraw* this_ptr, DWORD width, DWORD he
             //SDL_SetWindowFullscreen(ddraw->window, SDL_WINDOW_FULLSCREEN);
         }
     }
+
+    // Window was created hidden by user32/ddraw to suppress a flash at the
+    // default size; reveal it now that we're at the real game resolution.
+    g_sdlWindowReadyToShow = true;
+    SDL_ShowWindow(ddraw->window);
 
     return DD_OK;
 }

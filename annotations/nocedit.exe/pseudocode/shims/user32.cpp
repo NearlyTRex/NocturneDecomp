@@ -9,6 +9,10 @@
 // State
 // ---------------------------------------------------------------------------
 SDL_Window* g_sdlWindow = nullptr;
+// Set true once ddraw_SetDisplayMode has resized the window to the real game
+// resolution. Until then, shim_ShowWindow ignores SW_SHOW so we don't flash a
+// default-size window between CreateWindowExA and the DDraw setup.
+bool g_sdlWindowReadyToShow = false;
 static WNDPROC     s_wndProc   = nullptr;
 static std::queue<MSG> s_msgQueue;
 
@@ -213,7 +217,10 @@ static HWND shim_CreateWindowExA(DWORD dwExStyle, LPCSTR lpClassName,
                                   int X, int Y, int nWidth, int nHeight,
                                   HWND hWndParent, HMENU hMenu,
                                   HINSTANCE hInstance, void* lpParam) {
-    Uint32 flags = SDL_WINDOW_SHOWN;
+    // Created hidden — DDraw's SetDisplayMode resizes us shortly, and we want
+    // to skip the flash of a default-size window between create and resize.
+    // The window is shown from ddraw_SetDisplayMode once the real size is set.
+    Uint32 flags = SDL_WINDOW_HIDDEN;
     if (nWidth <= 0) nWidth = 640;
     if (nHeight <= 0) nHeight = 480;
     g_sdlWindow = SDL_CreateWindow(
@@ -398,7 +405,7 @@ static BOOL shim_SetRectEmpty(RECT* lprc) {
 static BOOL shim_ShowWindow(HWND hWnd, int nCmdShow) {
     if (g_sdlWindow) {
         if (nCmdShow == 0) SDL_HideWindow(g_sdlWindow);
-        else SDL_ShowWindow(g_sdlWindow);
+        else if (g_sdlWindowReadyToShow) SDL_ShowWindow(g_sdlWindow);
     }
     return 1;
 }
