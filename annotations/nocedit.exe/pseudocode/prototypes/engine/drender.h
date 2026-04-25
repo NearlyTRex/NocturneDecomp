@@ -221,7 +221,7 @@ void __cdecl CDemonRenderer::pushViewport(CDemonRenderer *this_ptr,int x,int y,i
 
 // Original: engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0
 // Address: 0048c8c0
-void __cdecl CDemonRenderer::popViewport(void);
+void __cdecl CDemonRenderer::popViewport(CDemonRenderer *this_ptr);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
 // Address: 0048c8d0

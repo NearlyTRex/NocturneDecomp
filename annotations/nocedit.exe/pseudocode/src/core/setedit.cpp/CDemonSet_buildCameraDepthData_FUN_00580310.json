@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 188,
-    "complexity_score": 94,
+    "complexity_score": 229,
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 23,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 79,
-    "suspect_count": 1,
+    "suspect_count": 14,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "stack_param"
     ],
     "total_lines": 267
   },
@@ -364,12 +365,116 @@
   },
   "suspects": [
     {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "int *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 41,
+      "match": "(int *)((int)",
+      "severity": "moderate",
+      "text": "*(int *)((int)pvVar1 + 0xc) = g_TransformMatrix.m[0].x;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(int *)((int)",
+      "severity": "moderate",
+      "text": "*(int *)((int)pvVar1 + 0x10) = g_TransformMatrix.m[0].y;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(int *)((int)",
+      "severity": "moderate",
+      "text": "*(int *)((int)pvVar1 + 0x14) = g_TransformMatrix.m[0].z;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(int *)((int)",
+      "severity": "moderate",
+      "text": "*(int *)((int)pvVar1 + 0x18) = g_TransformMatrix.m[1].x;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(int *)((int)",
+      "severity": "moderate",
+      "text": "*(int *)((int)pvVar1 + 0x1c) = g_TransformMatrix.m[1].y;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(int *)((int)",
+      "severity": "moderate",
+      "text": "*(int *)((int)pvVar1 + 0x20) = g_TransformMatrix.m[1].z;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(int *)((int)",
+      "severity": "moderate",
+      "text": "*(int *)((int)pvVar1 + 0x24) = g_TransformMatrix.m[2].x;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(int *)((int)",
+      "severity": "moderate",
+      "text": "*(int *)((int)pvVar1 + 0x28) = g_TransformMatrix.m[2].y;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(int *)((int)",
+      "severity": "moderate",
+      "text": "*(int *)((int)pvVar1 + 0x2c) = g_TransformMatrix.m[2].z;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(int *)((int)",
+      "severity": "moderate",
+      "text": "*(int *)((int)pvVar1 + 4) = g_CameraOriginY;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(int *)((int)",
+      "severity": "moderate",
+      "text": "*(int *)((int)pvVar1 + 8) = g_CameraOriginZ;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
       "match": "(int *)((int)",
       "severity": "moderate",
       "text": "iVar1 = *(int *)(iVar4 + *(int *)((int)g_ZBufferScanlineArray + iVar5));",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 78,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "} while ((int)pvVar1 + 1 < *in_stack_00000008);",
+      "type": "stack_param"
     }
   ]
 }

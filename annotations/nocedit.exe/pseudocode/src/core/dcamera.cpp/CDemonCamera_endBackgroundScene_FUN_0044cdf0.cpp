@@ -18,11 +18,12 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(CDemo
   void **ppvVar6;
   int iVar7;
   byte bVar8;
+  int in_stack_0000000c;
   
   bVar8 = 0;
   g_BackgroundSceneDepth = g_BackgroundSceneDepth + -1;
   if (g_BackgroundSceneDepth == 0) {
-    engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0();
+    engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0(g_CDemonRendererPtr2);
     (this_ptr->saved_viewport_rect).left = g_ViewportCenterXFixed;
     (this_ptr->saved_viewport_rect).top = g_ViewportCenterYFixed;
     (this_ptr->saved_viewport_rect).right = g_ViewportRightFixed;
@@ -45,7 +46,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0(CDemo
     g_RedBitPosition.dword = g_BackgroundSavedRedBitPosition;
     g_GreenBitPosition.dword = g_BackgroundSavedGreenBitPosition;
     g_BlueBitPosition.dword = g_BackgroundSavedBlueBitPosition;
-    if (restore_zbuffer != 0) {
+    if (in_stack_0000000c != 0) {
       iVar3 = 0;
       if (0 < this_ptr->framebuffer_height) {
         iVar7 = 0;

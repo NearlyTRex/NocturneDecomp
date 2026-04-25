@@ -45,7 +45,7 @@ section .text
     ADD ESP,0x4                         ; 005a01f5
     PUSH EAX                            ; 005a01f8
     CALL core_skeleton.cpp_CDeformableModel_skinVertices_FUN_0059a880 ; 005a01f9
-        ;   XREF to: 0059a880 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_skinVertices_FUN_0059a880(CDeformableModel * this_ptr, int lod_index, CMatrix3x4f * bone_matrices, int * output_buffer)
+        ;   XREF to: 0059a880 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_skinVertices_FUN_0059a880(CDeformableModel * this_ptr, int lod_index, CMatrix3x4f * bone_matrices, int * output_buffer, ...)
     ADD ESP,0x14                        ; 005a01fe
     MOV EAX,dword ptr [ESP + 0xc]       ; 005a0201
     MOV dword ptr [EBX + 0x2230],EAX    ; 005a0205

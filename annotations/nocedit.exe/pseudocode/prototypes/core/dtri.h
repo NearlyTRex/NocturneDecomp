@@ -93,11 +93,11 @@ int __cdecl clipTriangleToBounds(CVector3f *triangle_vertices,CVector3f *bounds_
 
 // Original: core_dtri.cpp_getClippedTriangleCount_FUN_0049cb30
 // Address: 0049cb30
-int __cdecl getClippedTriangleCount(void);
+int __cdecl getClippedTriangleCount(int flags);
 
 // Original: core_dtri.cpp_buildClipTriangleFan_FUN_0049cb40
 // Address: 0049cb40
-CDemonTriangle * __cdecl buildClipTriangleFan(void);
+CDemonTriangle * __cdecl buildClipTriangleFan(int flags);
 
 // Original: core_dtri.cpp_getClippedVertexCount_FUN_0049cbb0
 // Address: 0049cbb0

@@ -7,14 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 35,
+    "complexity_score": 50,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 9,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 20,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "param_count_too_many",
       "warning_inlined_function"
     ],
     "total_lines": 72
@@ -109,19 +110,19 @@
         "call_addr": "00570fb5",
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_initCameraShake_FUN_00570fa0",
-        "estimated_params": 5,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 4,
+        "instructions_analyzed": 5,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 20,
-        "stack_params": 5
+        "stack_bytes": 16,
+        "stack_params": 4
       }
     ],
-    "confidence": "medium",
+    "confidence": "low",
     "declared_params": 5,
     "declared_stack_bytes": 20,
-    "estimated_params": 5,
-    "matches_declared": true
+    "estimated_params": 4,
+    "matches_declared": false
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.906976744186046,
@@ -200,6 +201,17 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 5,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 4,
+      "fix_type": "remove_params",
+      "match": "declared:5 vs estimated:4",
+      "param_delta": -1,
+      "text": "Function declares 5 params but call sites push 4 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

@@ -18,7 +18,7 @@ void __cdecl core_course_cpp_renderCourseGizmo_FUN_00443760(CVector3f *position)
   int iVar3;
   int iVar4;
   int iVar5;
-  SLineStrip SStack_a0;
+  SLineStrip2Index SStack_a0;
   float local_90;
   float local_8c;
   float local_88;
@@ -115,11 +115,15 @@ void __cdecl core_course_cpp_renderCourseGizmo_FUN_00443760(CVector3f *position)
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr1->vertex_buffer_ptr[3].projected_vertex,&local_6c);
   local_30.base.count = -7;
-  SStack_a0.vertex_count = 2;
+  SStack_a0.base.vertex_count = 2;
+  SStack_a0.vertices[0] = 0;
+  SStack_a0.vertices[1] = 1;
   engine_3d_c_processPolygonColor_FUN_00403e30(&local_30);
-  engine_3d_c_drawLineStrip2D_FUN_00404570(&SStack_a0);
-  engine_3d_c_drawLineStrip2D_FUN_00404570(&SStack_a0);
-  engine_3d_c_drawLineStrip2D_FUN_00404570(&SStack_a0);
+  engine_3d_c_drawLineStrip2D_FUN_00404570(&SStack_a0.base);
+  SStack_a0.vertices[1] = 2;
+  engine_3d_c_drawLineStrip2D_FUN_00404570(&SStack_a0.base);
+  SStack_a0.vertices[1] = 3;
+  engine_3d_c_drawLineStrip2D_FUN_00404570(&SStack_a0.base);
   iVar6 = 4;
   pSVar2 = g_CDemonRendererPtr1->vertex_buffer_ptr;
   do {

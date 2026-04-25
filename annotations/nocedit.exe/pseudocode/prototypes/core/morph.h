@@ -153,11 +153,11 @@ void __cdecl drawVertexMarker(SProjectedVertex *vertex,int radius);
 
 // Original: core_morph.cpp_CMorph_editMorph_FUN_0052bcb0
 // Address: 0052bcb0
-void __cdecl CMorph::editMorph(CMorph *morph);
+void __cdecl CMorph::editMorph(CMorph *this_ptr);
 
 // Original: core_morph.cpp_CMorph_previewMorph_FUN_0052ca90
 // Address: 0052ca90
-void __cdecl CMorph::previewMorph(CMorph *this_ptr);
+void __cdecl CMorph::previewMorph(CMorph *this_ptr,CDeformableModelInstance *model_ptr);
 
 // Original: core_morph.cpp_transformAndProjectVertex_FUN_0052cc10
 // Address: 0052cc10

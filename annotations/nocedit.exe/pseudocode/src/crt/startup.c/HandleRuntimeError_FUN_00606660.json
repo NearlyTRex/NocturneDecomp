@@ -2,14 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 35,
+    "complexity_score": 50,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 10,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "param_count_too_many",
       "register_param"
     ],
     "total_lines": 33
@@ -77,30 +78,30 @@
         "call_addr": "00601632",
         "call_type": "direct",
         "caller": "crt_startup.c_reportAbnormalTermination_FUN_00601628",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "0060ad37",
         "call_type": "direct",
         "caller": "crt_stdio.c_ReportFloatingPointNotLoaded_FUN_0060ad30",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
+        "stack_bytes": 4,
+        "stack_params": 1
       }
     ],
-    "confidence": "high",
+    "confidence": "low",
     "declared_params": 2,
     "declared_stack_bytes": 8,
-    "estimated_params": 2,
-    "matches_declared": true
+    "estimated_params": 1,
+    "matches_declared": false
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.222222222222222,
@@ -163,6 +164,17 @@
       "severity": "mild",
       "text": "iVar1 = TriggerDebuggerBreak(error_message,in_DS);",
       "type": "register_param"
+    },
+    {
+      "call_site_count": 3,
+      "declared_params": 2,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 1,
+      "fix_type": "remove_params",
+      "match": "declared:2 vs estimated:1",
+      "param_delta": -1,
+      "text": "Function declares 2 params but call sites push 1 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

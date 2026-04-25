@@ -299,15 +299,15 @@ LAB_0051919d:
               }
               g_SamplePointCount = local_54;
             }
-            max_search_radius = (double)((0.75f * 1e+10) / (float)g_SamplePointCount);
-            shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
-                      (this_ptr->next_lod,max_search_radius);
+            fVar1 = 0.75f * 1e+10;
+            fVar4 = (float)g_SamplePointCount;
+            shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50(this_ptr->next_lod);
             if (0 < g_SamplePointCount) {
               iVar16 = 0;
               do {
                 pdVar1 = (double *)((int)g_SampleDistances + iVar16);
                 iVar16 = iVar16 + 8;
-                local_110 = *pdVar1 * max_search_radius + local_110;
+                local_110 = *pdVar1 * (double)(fVar1 / fVar4) + local_110;
               } while (iVar16 < g_SamplePointCount * 8);
             }
             if (pCVar7->collapse_cost < local_110) goto LAB_00518f71;

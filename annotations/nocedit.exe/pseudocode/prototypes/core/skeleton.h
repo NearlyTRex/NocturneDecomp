@@ -97,7 +97,7 @@ CVector3f * __cdecl CDeformableModel::getVertexPoolPtr(CDeformableModel *this_pt
 
 // Original: core_skeleton.cpp_CDeformableModel_skinVertices_FUN_0059a880
 // Address: 0059a880
-void __cdecl CDeformableModel::skinVertices(CDeformableModel *this_ptr,int lod_index,CMatrix3x4f *bone_matrices,int *output_buffer);
+void __cdecl CDeformableModel::skinVertices(CDeformableModel *this_ptr,int lod_index,CMatrix3x4f *bone_matrices,int *output_buffer,SPartInstanceData *part_data);
 
 // Original: core_skeleton.cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00
 // Address: 0059aa00
@@ -113,7 +113,7 @@ void __cdecl CDeformableModel::lightVertices(CDeformableModel *this_ptr,int lod_
 
 // Original: core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90
 // Address: 0059ab90
-void __cdecl CDeformableModel::initVertexWRecip(CDeformableModel *this_ptr,int lod_index);
+void __cdecl CDeformableModel::initVertexWRecip(CDeformableModel *this_ptr,int lod_index,CVector3i *lod_vertices);
 
 // Original: core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0
 // Address: 0059abf0

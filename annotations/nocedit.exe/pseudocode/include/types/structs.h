@@ -80,6 +80,8 @@
 #include "types/structs/SLaserInfo.h"
 #include "types/structs/SLayerAction.h"
 #include "types/structs/SLineStrip.h"
+#include "types/structs/SLineStrip2Index.h"
+#include "types/structs/SLineStrip3Index.h"
 #include "types/structs/SLod.h"
 #include "types/structs/SLodSamplePoint.h"
 #include "types/structs/SMRGLAnimatedTexture.h"

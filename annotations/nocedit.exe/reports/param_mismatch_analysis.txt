@@ -13,29 +13,29 @@ Mismatches may indicate:
 
 SUMMARY
 --------------------------------------------------
-Functions with parameter estimates: 6743
-Functions with no callers: 3139
-Parameter mismatches detected: 66
-Signature accuracy rate: 98.2%
+Functions with parameter estimates: 6617
+Functions with no callers: 3138
+Parameter mismatches detected: 90
+Signature accuracy rate: 97.4%
 
 Mismatches by confidence:
   High confidence:   3 (multiple call sites agree)
-  Medium confidence: 20 (some agreement)
-  Low confidence:    43 (limited data)
+  Medium confidence: 21 (some agreement)
+  Low confidence:    66 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
 ====================================================================================================
 
-  engine_3d.c_clipAndDrawLine2D_FUN_00407d70
-    Declared: 2 params (96 bytes), Estimated: 0 stack slots (0 bytes) [-2]
+  core_actor.cpp_registerActorClass_FUN_0040c2e0
+    Declared: 6 params (24 bytes), Estimated: 5 stack slots (20 bytes) [-1]
     Call sites: 50, Confidence: high
-    File: engine/3d.c
-    Signature: void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1,SRenderVertex vertex2)
+    File: core/actor.cpp
+    Signature: CDemonActorType * __cdecl core_actor_cpp_registerActorClass_FUN_0040c2e0(CDemonActorType *this_ptr,char *class_name,CDemonActor_FactoryFunc *factor_func,int *max_version,int version,CDemonActorType *parent_class_info)
     Sample call sites:
-      shape_edittool.cpp_CEditorTool at 004a2240: 0 reg [], 0 stack (0 bytes, via push_count)
-      shape_edittool.cpp_CEditorTool at 004a2380: 0 reg [], 0 stack (0 bytes, via push_count)
-      core_stairs.cpp_CStairs_render at 005b9fe4: 0 reg [], 0 stack (0 bytes, via push_count)
+      core_charactr.cpp_staticInit_F at 00427da5: 0 reg [], 6 stack (24 bytes, via push_count)
+      core_werewolf.cpp_staticInit_F at 005efbc5: 0 reg [], 6 stack (24 bytes, via push_count)
+      core_enemy.cpp_staticInit_FUN_ at 004a94e8: 0 reg [], 5 stack (20 bytes, via push_count)
 
   crt_init.c_ProcessInitTermHandlers_FUN_0060ac30
     Declared: 1 params (0 bytes), Estimated: 0 stack slots (0 bytes) [-1]
@@ -47,27 +47,26 @@ HIGH CONFIDENCE MISMATCHES - Likely signature issues
       crt_startup.cpp_InitializeWinA at 006026f8: 0 reg [], 0 stack (0 bytes, via push_count)
       crt_startup.cpp_WinMainBootstr at 00609e7c: 0 reg [], 0 stack (0 bytes, via push_count)
 
-  engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0
-    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
-    Call sites: 10, Confidence: high
-    File: engine/drender.cpp
-    Signature: void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0(void)
+  crt_memory.c___arrfini_FUN_005feee9
+    Declared: 3 params (12 bytes), Estimated: 2 stack slots (8 bytes) [-1]
+    Call sites: 50, Confidence: high
+    File: crt/memory.c
+    Signature: void * __cdecl crt_memory_c___arrfini_FUN_005feee9(void *obj_array,int obj_count,WatcomTypeInfo *type_info)
     Sample call sites:
-      core_morph.cpp_CMorph_editMorp at 0052c344: 0 reg [], 1 stack (4 bytes, via add_esp)
-      core_dlight.cpp_CDemonLight_en at 00472db2: 0 reg [], 1 stack (4 bytes, via add_esp)
-      core_dcamera.cpp_CDemonCamera_ at 0044ce13: 0 reg [], 1 stack (4 bytes, via add_esp)
+      core_armour.cpp_CVector3f_arrd at 004126ec: 0 reg [], 2 stack (8 bytes, via push_count)
+      core_armour.cpp_SFire_arrdtor_ at 0041270c: 0 reg [], 2 stack (8 bytes, via push_count)
+      core_armour.cpp_CFlame_arrdtor at 0041272c: 0 reg [], 2 stack (8 bytes, via push_count)
 
 ====================================================================================================
 MEDIUM CONFIDENCE MISMATCHES
 ====================================================================================================
 
   crt_unknown.c_FUN_00607c88                         declared:0 est:4 (+4) [2 calls]
-  crt_unknown.c_FUN_0060d480                         declared:0 est:4 (+4) [2 calls]
   crt_unknown.c_FUN_00607858                         declared:0 est:3 (+3) [2 calls]
+  core_dmodel.cpp_CKeyFramedModel_addFilesToExtract_ declared:3 est:1 (-2) [10 calls]
   core_xform.cpp_buildRotationX_FUN_005f6c40         declared:2 est:4 (+2) [4 calls]
   crt_unknown.c_FUN_0060b133                         declared:0 est:2 (+2) [1 calls]
-  engine_2d.c_drawTextRightAlignedColorFormatted_FUN declared:3 est:5 (+2) [2 calls]
-  engine_3d.c_clipAndDrawLine3D_FUN_00408070         declared:2 est:0 (-2) [2 calls]
+  engine_keyframe.c_calculatePackedSurfaceNormal_FUN declared:2 est:0 (-2) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:4 est:5 (+1) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:2 est:3 (+1) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:5 est:6 (+1) [2 calls]
@@ -77,45 +76,50 @@ MEDIUM CONFIDENCE MISMATCHES
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:4 est:5 (+1) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:4 est:5 (+1) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:4 est:5 (+1) [2 calls]
-  core_sound.cpp_CSound_dtor_FUN_005b2d60            declared:0 est:1 (+1) [2 calls]
+  core_actor.cpp_crc32ProcessBuffer_FUN_0040cf10     declared:3 est:2 (-1) [2 calls]
+  core_particle.cpp_CParticle_dtor_FUN_00545670      declared:2 est:1 (-1) [8 calls]
   crt_fstream.cpp_fstreambase_ctor_FUN_00606456      declared:6 est:5 (-1) [2 calls]
   crt_heap.c_CoalesceAndAddFreeBlock_FUN_006094c0    declared:3 est:2 (-1) [1 calls]
   crt_iostream.cpp_streambuf_destructor_FUN_0060d64f declared:1 est:2 (+1) [2 calls]
+  engine_drender.cpp_CDemonRenderer_renderTriangleFa declared:5 est:4 (-1) [2 calls]
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  43 functions with low-confidence mismatches
+  66 functions with low-confidence mismatches
   Sample:
+    cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_ declared:3 est:0 (-3)
+    cockpit_drawsurf.cpp_CDrawSurface_drawHorizon declared:3 est:2 (-1)
     crt_process.c_spawnCommand_FUN_00609c90       declared:6 est:3 (-3)
     crt_process.c_set_shell_execute_flag_FUN_0060 declared:1 est:2 (+1)
-    crt_process.c_getpid_FUN_006099c0             declared:0 est:3 (+3)
     crt_startup.cpp_InitializeWinAppRuntime_FUN_0 declared:1 est:3 (+2)
     crt_cpp.c_reportPureVirtualError_FUN_00605b23 declared:2 est:1 (-1)
+    crt_startup.c_HandleRuntimeError_FUN_00606660 declared:2 est:1 (-1)
     crt_unknown.c_FUN_00600990                    declared:0 est:2 (+2)
     crt_unknown.c_FUN_00600a64                    declared:0 est:3 (+3)
-    crt_unknown.c_FUN_00610970                    declared:0 est:3 (+3)
-    crt_unknown.c_FUN_0060fe94                    declared:0 est:3 (+3)
-    crt_unknown.c_FUN_0060b670                    declared:0 est:3 (+3)
+    crt_unknown.c_FUN_0060d480                    declared:0 est:4 (+4)
 
 ====================================================================================================
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 12
+Functions where declaration has MORE params than estimated: 48
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 54
+Functions where declaration has FEWER params than estimated: 42
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
-  -3 params: 2 functions
-  -2 params: 3 functions
-  -1 params: 7 functions
-  +1 params: 29 functions
-  +2 params: 11 functions
-  +3 params: 8 functions
+  -6 params: 1 functions
+  -5 params: 1 functions
+  -4 params: 1 functions
+  -3 params: 5 functions
+  -2 params: 7 functions
+  -1 params: 33 functions
+  +1 params: 24 functions
+  +2 params: 6 functions
+  +3 params: 6 functions
   +4 params: 4 functions
   +6 params: 1 functions
   +9 params: 1 functions

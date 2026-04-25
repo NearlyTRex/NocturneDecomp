@@ -250,11 +250,27 @@
                     "original": "e9db1008008d",
                     "patched":  "e8db100800c3",
                     "description": "Convert JMP pop to CALL pop + RET so decompiler sees CDemonRenderer* this_ptr parameter"
+                },
+                {
+                    "name": "CSound_dtor: JMP->CALL+RET for this_ptr param",
+                    "address": "0x005b2d60",
+                    "original": "e94b81ffff8d",
+                    "patched":  "e84b81ffffc3",
+                    "description": "Convert JMP shutdownSoundSystem to CALL + RET so decompiler sees CSound* this_ptr parameter"
+                },
+                {
+                    "name": "CDemonRenderer_popViewport: JMP->CALL+RET for this_ptr param",
+                    "address": "0x0048c8c0",
+                    "original": "e9bb1b08008d",
+                    "patched":  "e8bb1b0800c3",
+                    "description": "Convert JMP popViewport to CALL + RET so decompiler sees CDemonRenderer* this_ptr parameter"
                 }
             ],
             "clear_thunks": [
                 "0x0048c630",
-                "0x0048c640"
+                "0x0048c640",
+                "0x005b2d60",
+                "0x0048c8c0"
             ]
         }
     ]

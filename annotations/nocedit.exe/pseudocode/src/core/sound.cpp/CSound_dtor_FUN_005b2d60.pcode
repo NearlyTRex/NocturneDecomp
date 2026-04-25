@@ -4,7 +4,7 @@
 #
 # Function:    core_sound.cpp_CSound_dtor_FUN_005b2d60
 # Entry:       005b2d60
-# Signature:   void __cdecl core_sound_cpp_CSound_dtor_FUN_005b2d60(void)
+# Signature:   void __cdecl core_sound_cpp_CSound_dtor_FUN_005b2d60(CSound *this_ptr)
 #
 # Format: @<address> [ESP:offset] # <assembly>
 #         [ESP:offset] = cumulative ESP delta from function entry
@@ -16,9 +16,11 @@
 #
 # ============================================================================
 
-@005b2d60 [ESP:+0]  # JMP 0x005aaeb0
-BRANCH (ram,0x5aaeb0,4)
+@005b2d60 [ESP:+0](-4)  # CALL 0x005aaeb0
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x5b2d65,4)
+CALL (ram,0x5aaeb0,4)
 
 # ============================================================================
-# Summary: 1 instructions, 1 P-code ops
+# Summary: 1 instructions, 3 P-code ops
 # ============================================================================

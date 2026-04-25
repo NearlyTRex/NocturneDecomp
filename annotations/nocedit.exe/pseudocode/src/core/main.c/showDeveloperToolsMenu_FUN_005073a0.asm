@@ -518,7 +518,7 @@ section .text
     PUSH EBX                            ; 005078a0
     MOV ESI,0x295                       ; 005078a1
     CALL core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 ; 005078a6
-        ;   XREF to: 0052bcb0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_editMorph_FUN_0052bcb0(CMorph * morph)
+        ;   XREF to: 0052bcb0 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_editMorph_FUN_0052bcb0(CMorph * this_ptr)
     MOV ECX,0x63521c                    ; 005078ab | = "..\\core\\main.c"
     ADD ESP,0x4                         ; 005078b0
     MOV dword ptr [0x02f0d944],ESI      ; 005078b3 | g_CurrentDebugLine

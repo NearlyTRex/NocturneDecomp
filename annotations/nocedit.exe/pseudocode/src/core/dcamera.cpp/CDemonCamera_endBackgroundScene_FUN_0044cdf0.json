@@ -7,17 +7,17 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 75,
+    "complexity_score": 76,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 24,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 60,
+    "pseudocode_lines": 61,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 160
+    "total_lines": 161
   },
   "cross_references": [
     {
@@ -288,8 +288,26 @@
   },
   "resolved_suspects": [
     {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_0000000c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 42,
+      "match": "in_stack_0000000c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (in_stack_0000000c != 0) {",
+      "type": "stack_param"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 28,
+      "line": 29,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "mild",
@@ -298,7 +316,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 33,
+      "line": 34,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "mild",
@@ -332,7 +350,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 48,
       "match": "(int *)((int)",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)g_ZBufferScanlineArray + iVar7);",

@@ -59,7 +59,7 @@ section .text
         ;   Label: LAB_0044ce0c
     PUSH EBX                            ; 0044ce12 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0 ; 0044ce13
-        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0()
+        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0(CDemonRenderer * this_ptr)
     MOV EAX,[0x02d02548]                ; 0044ce18 | g_ViewportCenterXFixed
     MOV dword ptr [EBP + 0x1c0],EAX     ; 0044ce1d
     MOV EAX,[0x02d0254c]                ; 0044ce23 | g_ViewportCenterYFixed

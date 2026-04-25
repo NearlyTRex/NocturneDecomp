@@ -1,11 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90(CDeformableModel *this_ptr,int lod_index)
+; void __cdecl core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90(CDeformableModel *this_ptr,int lod_index,CVector3i *lod_vertices)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   lod_index
+; CVector3i *      Stack[0xc]:4   lod_vertices
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005a02f0 at 005a031a

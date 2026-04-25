@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_dtri_cpp_getClippedTriangleCount_FUN_0049cb30(void)
+; int __cdecl core_dtri_cpp_getClippedTriangleCount_FUN_0049cb30(int flags)
 ;
+; Parameters:
+; int              Stack[0x4]:4   flags
 ;
 ; XREF[1]:
 ;   core_dtri.cpp_buildClipTriangleFan_FUN_0049cb40 at 0049cb49

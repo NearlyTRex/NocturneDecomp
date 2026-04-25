@@ -30327,6 +30327,24 @@
     "name":"core_dtri.cpp_getClippedTriangleCount_FUN_0049cb30",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"flags",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -58206,22 +58224,6 @@
           "type":"int"
         },
         {
-          "name":"local_6c",
-          "storage":{
-            "offset":-108,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x6c]",
-                "offset":-108,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
           "name":"local_70",
           "storage":{
             "offset":-112,
@@ -58830,11 +58832,7 @@
           "type":"CPickList"
         },
         {
-          "name":"local_4db8",
-          "type":"CDeformableModelInstance[2]"
-        },
-        {
-          "name":"this_ptr",
+          "name":"this_ptr_01",
           "storage":{
             "size":4,
             "unassigned":true,
@@ -58900,7 +58898,7 @@
       ],
       "params":[
         {
-          "name":"morph",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -58915,9 +58913,6 @@
           },
           "type":"CMorph*"
         }
-      ],
-      "storage_conflicts_resolved":[
-        "local_4db8"
       ]
     }
   },

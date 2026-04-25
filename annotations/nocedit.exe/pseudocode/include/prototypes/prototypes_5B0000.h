@@ -97,7 +97,7 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void);
 void __watcallRegister core_sound_cpp_stopTrainSounds_FUN_005b2ca0(void);
 CSound * __cdecl core_sound_cpp_CSound_ctor_FUN_005b2ce0(CSound *this_ptr);
 void __cdecl core_sound_cpp_CSound_findAllSoundFiles_FUN_005b2d00(CSound *this_ptr);
-void __cdecl core_sound_cpp_CSound_dtor_FUN_005b2d60(void);
+void __cdecl core_sound_cpp_CSound_dtor_FUN_005b2d60(CSound *this_ptr);
 void __cdecl core_sound_cpp_syncChannel3WithChannel0_FUN_005b2d70(void);
 void __cdecl core_sound_cpp_CSound_init_FUN_005b2dd0(CSound *this_ptr);
 void __cdecl core_sound_cpp_CSound_shutdown_FUN_005b2f70(CSound *this_ptr);

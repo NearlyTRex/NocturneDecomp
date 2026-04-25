@@ -59591,6 +59591,22 @@
             ]
           },
           "type":"CMorph*"
+        },
+        {
+          "name":"model_ptr",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModelInstance*"
         }
       ]
     }
@@ -89388,6 +89404,22 @@
             ]
           },
           "type":"int"
+        },
+        {
+          "name":"lod_vertices",
+          "storage":{
+            "offset":12,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0xc]",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"CVector3i*"
         }
       ]
     }
@@ -107366,6 +107398,40 @@
     "name":"wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ecc10",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"width",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"height",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,

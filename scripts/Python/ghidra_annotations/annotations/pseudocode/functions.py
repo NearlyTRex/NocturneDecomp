@@ -423,12 +423,25 @@ def _scan_forward_for_add_esp(listing, call_addr, caller_func):
                     val = int(src, 16) if src.lower().startswith('0x') else int(src)
                 except (ValueError, TypeError):
                     return None
-                # Sanity cap: more than 16 args (64 bytes) is essentially never
-                # a real call cleanup. This filters out cases where the forward
-                # scan crossed a basic-block boundary and grabbed the function
-                # epilogue's ADD ESP,frame_size. Examples seen: 3812, 76, 18.
-                if val > 64:
+                # Sanity cap: more than 64 args (256 bytes) is essentially never
+                # a real call cleanup. The cap was 64 historically but Watcom
+                # `REP MOVSD`-based struct pass-by-value can legitimately push
+                # large structs (e.g. 2x SRenderVertex = 96 bytes for
+                # `clipAndDrawLine2D`/`3D`), so allow up to 256.
+                if val > 256:
                     return None
+                # Peek at the next instruction. If it's RET/RETN/POP, we found
+                # the caller's own prologue-undo cleanup, not the post-call arg
+                # cleanup. Common in tiny callers like
+                # `SUB ESP,N ; ... ; CALL X ; ... ; ADD ESP,N ; RET` where the
+                # ADD ESP undoes the caller's prologue, with no args at all
+                # passed to X. Without this check we'd report N/4 bogus params
+                # for X. (See `generateRandomValue`, `invertTransformMatrix`.)
+                next_instr = current_instr.getNext()
+                if next_instr:
+                    next_mnem = next_instr.getMnemonicString().upper()
+                    if next_mnem in ('RET', 'RETN', 'POP'):
+                        return None
                 return val
 
         # Stop if we hit another CALL, RET, PUSH, or any branch (meaning
@@ -444,6 +457,74 @@ def _scan_forward_for_add_esp(listing, call_addr, caller_func):
         current_instr = current_instr.getNext()
 
     return None
+
+
+_CALLEE_SAVED_REGS = ('EBX', 'ESI', 'EDI', 'EBP')
+
+
+def _get_caller_prologue_save_regs(caller_func, listing):
+    """Return the set of callee-saved registers the caller spills as prologue.
+
+    Combines two sources:
+    - Entry-PUSH chain: PUSHes of EBX/ESI/EDI/EBP at the function's first
+      instruction, walked forward until any non-PUSH-of-callee-saved-reg.
+    - Pre-RET POP chain: POPs of those same regs immediately before each RET
+      in the function, walked backward.
+
+    The pre-RET source catches *deferred prologues* — functions whose entry
+    starts with a CMP/branch and only spills callee-saved regs at a later
+    basic-block landing (e.g. `reinitializeGraphicsSystem` does
+    `CMP ; JNZ LAB ; RET ; LAB: PUSH EDI ; PUSH ESI ; PUSH EBX ; ...`).
+    Without the epilogue check, the entry walk sees CMP and stops empty,
+    so the deferred PUSHes look like real arg pushes to backward scans.
+
+    Returns:
+        Set of register names (upper-case strings) that are spilled at
+        prologue and restored at epilogue. Used to filter out prologue-spill
+        PUSHes from the per-callsite arg estimate.
+    """
+    saves = set()
+    callee_saved = set(_CALLEE_SAVED_REGS)
+
+    # Source 1: entry-PUSH chain.
+    instr = listing.getInstructionAt(caller_func.getEntryPoint())
+    while instr:
+        mnemonic = instr.getMnemonicString().upper()
+        if mnemonic != 'PUSH':
+            break
+        operand = instr.getDefaultOperandRepresentation(0)
+        if not operand:
+            break
+        op_upper = operand.upper()
+        if op_upper not in callee_saved:
+            break
+        saves.add(op_upper)
+        instr = instr.getNext()
+
+    # Source 2: pre-RET POP chains. Walk every instruction in the function,
+    # find each RET, then walk backward through consecutive POPs.
+    body = caller_func.getBody()
+    addr_iter = body.getAddresses(True)
+    for addr in addr_iter:
+        ri = listing.getInstructionAt(addr)
+        if not ri:
+            continue
+        rm = ri.getMnemonicString().upper()
+        if rm not in ('RET', 'RETN'):
+            continue
+        prev = ri.getPrevious()
+        while prev and body.contains(prev.getAddress()):
+            pm = prev.getMnemonicString().upper()
+            if pm != 'POP':
+                break
+            pop_op = prev.getDefaultOperandRepresentation(0)
+            if pop_op:
+                pu = pop_op.upper()
+                if pu in callee_saved:
+                    saves.add(pu)
+            prev = prev.getPrevious()
+
+    return saves
 
 
 def _compute_declared_stack_bytes(params):
@@ -591,6 +672,17 @@ def analyze_call_site(listing, call_addr, caller_func, uses_register_params=True
 
     caller_body = caller_func.getBody()
     caller_entry = caller_func.getEntryPoint()
+    # Identify the caller's prologue-save registers — PUSHes of these regs
+    # immediately before the CALL with no intervening compute are prologue
+    # spills, not args. (Catches both standard prologues and deferred
+    # prologues at basic-block landings.)
+    prologue_save_regs = _get_caller_prologue_save_regs(caller_func, listing)
+    # Track a trailing run of distinct PUSHes that match the caller's
+    # prologue-save set. Reset whenever we see a non-PUSH instruction
+    # (any compute breaks the chain — args usually have a load before
+    # the push). Excluded from `stack_params` at scan termination.
+    trailing_prologue_pushes = 0
+    trailing_pushed_regs = set()
     current_instr = call_instr.getPrevious()
     while current_instr and instructions_checked < max_instructions:
 
@@ -619,6 +711,20 @@ def analyze_call_site(listing, call_addr, caller_func, uses_register_params=True
             dest = current_instr.getDefaultOperandRepresentation(0)
             if dest and dest.upper() == 'ESP':
                 break
+        # `AND ESP, alignment_mask` is part of Watcom's prologue (e.g.
+        # `AND ESP,0xfffffff8` for double alignment). Stop scanning —
+        # any PUSHes before this are callee-saved register spills.
+        if mnemonic == 'AND':
+            dest = current_instr.getDefaultOperandRepresentation(0)
+            if dest and dest.upper() == 'ESP':
+                break
+        # `MOV EBP, ESP` is the classic frame-pointer setup that closes
+        # the prologue register-save phase. Stop here.
+        if mnemonic == 'MOV':
+            dest = current_instr.getDefaultOperandRepresentation(0)
+            src = current_instr.getDefaultOperandRepresentation(1)
+            if dest and src and dest.upper() == 'EBP' and src.upper() == 'ESP':
+                break
         # Also stop when we reach the caller's entry instruction — catches
         # leaf callers with no SUB ESP (pure register-save prologues).
         if current_instr.getAddress() == caller_entry:
@@ -626,6 +732,30 @@ def analyze_call_site(listing, call_addr, caller_func, uses_register_params=True
 
         if mnemonic == 'PUSH':
             stack_params += 1
+            operand = current_instr.getDefaultOperandRepresentation(0)
+            op_upper = operand.upper() if operand else ''
+            # Build the trailing prologue-spill chain only if this PUSH is
+            # of a callee-saved register the caller is known to spill in
+            # its prologue/epilogue, AND the chain is unbroken so far, AND
+            # the register hasn't already appeared in the chain (real
+            # prologues spill each reg exactly once).
+            if (op_upper in prologue_save_regs
+                    and op_upper not in trailing_pushed_regs):
+                trailing_prologue_pushes += 1
+                trailing_pushed_regs.add(op_upper)
+            else:
+                # Non-prologue PUSH (or a duplicate in the chain) — break
+                # the trailing chain. Anything before this point cannot be
+                # tail-of-prologue.
+                trailing_prologue_pushes = 0
+                trailing_pushed_regs = set()
+        else:
+            # Any non-PUSH instruction breaks the trailing chain. PUSHes
+            # we've already counted closer to the CALL (above this point
+            # in backward order) are interleaved with compute, so they're
+            # arg-staging, not prologue spills.
+            trailing_prologue_pushes = 0
+            trailing_pushed_regs = set()
 
         if reg_set and mnemonic in ('MOV', 'LEA', 'XOR', 'MOVSX', 'MOVZX'):
             dest_operand = current_instr.getDefaultOperandRepresentation(0)
@@ -638,6 +768,12 @@ def analyze_call_site(listing, call_addr, caller_func, uses_register_params=True
                         break
 
         current_instr = current_instr.getPrevious()
+
+    # Subtract the trailing prologue-spill chain. These are PUSHes of the
+    # caller's callee-saved registers immediately preceding the CALL with no
+    # intervening compute — so they're the function's own prologue, not args.
+    if trailing_prologue_pushes > 0:
+        stack_params -= trailing_prologue_pushes
 
     if reg_set:
         num_reg_params = len(reg_params_found)

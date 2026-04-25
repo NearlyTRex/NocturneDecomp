@@ -7,14 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 55,
+    "complexity_score": 70,
     "cross_reference_count": 12,
     "function_call_count": 1,
     "global_count": 15,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 40,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "param_count_too_many",
       "warning_unreachable"
     ],
     "total_lines": 169
@@ -266,63 +267,63 @@
         "call_addr": "00487386",
         "call_type": "direct",
         "caller": "cockpit_drawsurf.cpp_CDrawSurface_setColorBlack_FUN_00487380",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
+        "stack_bytes": 8,
+        "stack_params": 2
       },
       {
         "call_addr": "0048739f",
         "call_type": "direct",
         "caller": "cockpit_drawsurf.cpp_CDrawSurface_setColorWhite_FUN_00487390",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
+        "stack_bytes": 8,
+        "stack_params": 2
       },
       {
         "call_addr": "004873b9",
         "call_type": "direct",
         "caller": "cockpit_drawsurf.cpp_CDrawSurface_setColorRed_FUN_004873b0",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
+        "stack_bytes": 8,
+        "stack_params": 2
       },
       {
         "call_addr": "004873d9",
         "call_type": "direct",
         "caller": "cockpit_drawsurf.cpp_CDrawSurface_setColorGreen_FUN_004873d0",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
+        "stack_bytes": 8,
+        "stack_params": 2
       },
       {
         "call_addr": "004873f9",
         "call_type": "direct",
         "caller": "cockpit_drawsurf.cpp_CDrawSurface_setColorBlue_FUN_004873f0",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
+        "stack_bytes": 8,
+        "stack_params": 2
       }
     ],
-    "confidence": "high",
+    "confidence": "low",
     "declared_params": 3,
     "declared_stack_bytes": 12,
-    "estimated_params": 3,
-    "matches_declared": true
+    "estimated_params": 2,
+    "matches_declared": false
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.9743589743589745,
@@ -396,6 +397,17 @@
       "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x00487331) */",
       "type": "warning_unreachable"
+    },
+    {
+      "call_site_count": 16,
+      "declared_params": 3,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 2,
+      "fix_type": "remove_params",
+      "match": "declared:3 vs estimated:2",
+      "param_delta": -1,
+      "text": "Function declares 3 params but call sites push 2 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

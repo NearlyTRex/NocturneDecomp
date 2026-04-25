@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        88 ( 1.4%)
+  Functions with type issues:        89 ( 1.4%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -23,7 +23,7 @@ SUMMARY STATISTICS
     Missing register params:           0
     Wrong calling convention:          1
     Undefined types in variables:      82
-    Unresolved stack params:           5
+    Unresolved stack params:           6
 
   Excluded (.keep / MMX / by-value):   138 functions
     Wrong calling convention:          1
@@ -79,7 +79,7 @@ Wrong calling convention (unaffected register usage) (1)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (5)
+Unresolved stack parameters (missing from signature) (6)
 --------------------------------------------------------------------------------
 
   CWinFont_setColorAndDrawText
@@ -92,6 +92,12 @@ Unresolved stack parameters (missing from signature) (5)
     Address: 0x004251b0  File: core/bugs.cpp
     Evidence: in_stack_00000008, in_stack_00000008
     Signature: int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_004251b0(CBugs *this_ptr)
+    Suggested: Signature is missing stack parameters entirely
+
+  CDemonSet_buildCameraDepthData
+    Address: 0x00580310  File: core/setedit.cpp
+    Evidence: in_stack_00000008, in_stack_00000008
+    Signature: void __cdecl core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(CDemonSet *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CStranger_tryPlaceObject

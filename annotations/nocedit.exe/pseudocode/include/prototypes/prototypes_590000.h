@@ -16,6 +16,7 @@
 #include "types/classes/CVector3i.h"
 #include "types/funcdefs/CDeformableModel_MotionBlendWeightFunc.h"
 #include "types/structs/SPart.h"
+#include "types/structs/SPartInstanceData.h"
 #include "types/structs/SPoseData.h"
 
 // =============================================================================
@@ -57,11 +58,11 @@ void __cdecl core_skeleton_cpp_CDeformableModel_setModelName_FUN_0059a740(CDefor
 void __cdecl core_skeleton_cpp_CDeformableModel_captureTextures_FUN_0059a780(CDeformableModel *this_ptr);
 CSkeleton * __cdecl core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(CDeformableModel *this_ptr);
 CVector3f * __cdecl core_skeleton_cpp_CDeformableModel_getVertexPoolPtr_FUN_0059a860(CDeformableModel *this_ptr,int index);
-void __cdecl core_skeleton_cpp_CDeformableModel_skinVertices_FUN_0059a880(CDeformableModel *this_ptr,int lod_index,CMatrix3x4f *bone_matrices, int *output_buffer);
+void __cdecl core_skeleton_cpp_CDeformableModel_skinVertices_FUN_0059a880(CDeformableModel *this_ptr,int lod_index,CMatrix3x4f *bone_matrices, int *output_buffer,SPartInstanceData *part_data);
 CVector3f * __cdecl core_skeleton_cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00(CDeformableModel *this_ptr,CVector3f *output_pos,int lod_index,int vertex_index, CMatrix3x4f *bone_matrices);
 void __cdecl core_skeleton_cpp_CDeformableModel_rotateVertices_FUN_0059ab20(CDeformableModel *this_ptr,int lod_index,int *input_vertices);
 void __cdecl core_skeleton_cpp_CDeformableModel_lightVertices_FUN_0059ab50(CDeformableModel *this_ptr,int lod_index,CVector3i *skinned_vertices);
-void __cdecl core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90(CDeformableModel *this_ptr,int lod_index);
+void __cdecl core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90(CDeformableModel *this_ptr,int lod_index,CVector3i *lod_vertices);
 void __cdecl core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0(CDeformableModel *this_ptr,int lod_index,int *part_visibility_flags, int *texture_set_indices,int render_flags,int skip_texture_capture);
 void __cdecl core_skeleton_cpp_CDeformableModel_renderWireframe_FUN_0059b5a0(CDeformableModel *this_ptr,int lod_level);
 void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640(CDeformableModel *this_ptr,int color,CMatrix3x4f *bone_matrices,int render_flags);

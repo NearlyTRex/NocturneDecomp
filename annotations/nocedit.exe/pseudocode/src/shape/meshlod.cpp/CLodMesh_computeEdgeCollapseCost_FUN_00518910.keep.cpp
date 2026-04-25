@@ -301,8 +301,7 @@ LAB_0051919d:
               g_SamplePointCount = local_54;
             }
             max_search_radius = (double)((0.75f * 1e+10) / (float)g_SamplePointCount);
-            shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
-                      (this_ptr->next_lod,max_search_radius);
+            shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50(this_ptr->next_lod);
             if (0 < g_SamplePointCount) {
               iVar16 = 0;
               do {

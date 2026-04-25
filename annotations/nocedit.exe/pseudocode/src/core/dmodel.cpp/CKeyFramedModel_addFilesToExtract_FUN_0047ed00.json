@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 54,
+    "complexity_score": 69,
     "cross_reference_count": 10,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 54,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_many"
+    ],
     "total_lines": 150
   },
   "cross_references": [
@@ -120,8 +122,8 @@
         "call_type": "direct",
         "caller": "core_cloth.cpp_CCloth_addFilesToExtract_FUN_0043e0a0",
         "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "instructions_analyzed": 7,
+        "method": "push_count",
         "reg_params": [],
         "stack_bytes": 12,
         "stack_params": 3
@@ -141,96 +143,96 @@
         "call_addr": "004120cf",
         "call_type": "direct",
         "caller": "core_anvil.cpp_CAnvil_addFilesToExtract_FUN_00412090",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "0041814f",
         "call_type": "direct",
         "caller": "core_battery.cpp_CBattery_addFilesToExtract_FUN_00418110",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "004be9ef",
         "call_type": "direct",
         "caller": "core_filmreel.cpp_CFilmReel_addFilesToExtract_FUN_004be9b0",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "004cb78f",
         "call_type": "direct",
         "caller": "core_flamecan.cpp_CFlameCan_addFilesToExtract_FUN_004cb750",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "004e5f2f",
         "call_type": "direct",
         "caller": "core_gasmask.cpp_CGasMask_addFilesToExtract_FUN_004e5ef0",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "00422938",
         "call_type": "direct",
         "caller": "core_boxactor.cpp_CBoxActor_addFilesToExtract_FUN_00422900",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "0047ee1c",
         "call_type": "direct",
         "caller": "core_dmodel.cpp_CKeyFramedModelInstance_addFilesToExtract_FUN_0047edd0",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "00448b9f",
         "call_type": "direct",
         "caller": "core_crate.cpp_CCrate_addFilesToExtract_FUN_00448b60",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
+        "stack_bytes": 4,
+        "stack_params": 1
       }
     ],
-    "confidence": "high",
+    "confidence": "medium",
     "declared_params": 3,
     "declared_stack_bytes": 12,
-    "estimated_params": 3,
-    "matches_declared": true
+    "estimated_params": 1,
+    "matches_declared": false
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.583333333333333,
@@ -346,5 +348,17 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "call_site_count": 10,
+      "declared_params": 3,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 1,
+      "fix_type": "remove_params",
+      "match": "declared:3 vs estimated:1",
+      "param_delta": -2,
+      "text": "Function declares 3 params but call sites push 1 (2 extra)",
+      "type": "param_count_too_many"
+    }
+  ]
 }

@@ -21,7 +21,7 @@ void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
   CKeyFramedModel *ptr;
   CMorph *this_ptr_00;
   CMorph *pCVar7;
-  CMorph *morph;
+  CMorph *this_ptr_01;
   _FILE *output_file;
   byte bVar8;
   int aiStackY_1008 [690];
@@ -121,16 +121,16 @@ LAB_0050740e:
           else if (uVar1 == 0x42) {
             this_ptr_00 = (CMorph *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
                                     (0xc2c,"..\\core\\main.c",0x292);
-            morph = (CMorph *)0x0;
+            this_ptr_01 = (CMorph *)0x0;
             if (this_ptr_00 != (CMorph *)0x0) {
-              morph = core_morph_cpp_CMorph_ctor_FUN_0052b310(this_ptr_00);
+              this_ptr_01 = core_morph_cpp_CMorph_ctor_FUN_0052b310(this_ptr_00);
             }
-            if (morph != (CMorph *)0x0) {
-              core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(morph);
+            if (this_ptr_01 != (CMorph *)0x0) {
+              core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(this_ptr_01);
               g_CurrentDebugLine = 0x295;
               g_CurrentDebugFilename = "..\\core\\main.c";
-              if (morph != (CMorph *)0x0) {
-                pCVar7 = core_morph_cpp_CMorph_dtor_FUN_0052b330(morph,0);
+              if (this_ptr_01 != (CMorph *)0x0) {
+                pCVar7 = core_morph_cpp_CMorph_dtor_FUN_0052b330(this_ptr_01,0);
                 shape_memdbg_cpp_debugFreeChecked_FUN_0050f210(pCVar7);
               }
             }

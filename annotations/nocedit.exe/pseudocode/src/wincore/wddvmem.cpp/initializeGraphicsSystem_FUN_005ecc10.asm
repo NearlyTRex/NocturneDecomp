@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl wincore_wddvmem_cpp_initializeGraphicsSystem_FUN_005ecc10(void)
+; int __cdecl wincore_wddvmem_cpp_initializeGraphicsSystem_FUN_005ecc10(int width,int height)
 ;
+; Parameters:
+; int              Stack[0x4]:4   width
+; int              Stack[0x8]:4   height
 ;
 ; XREF[1]:
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 00401020

@@ -38,7 +38,7 @@ section .text
     ADD ESP,0x4                         ; 005a0316
     PUSH EAX                            ; 005a0319
     CALL core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90 ; 005a031a
-        ;   XREF to: 0059ab90 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90(CDeformableModel * this_ptr, int lod_index)
+        ;   XREF to: 0059ab90 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90(CDeformableModel * this_ptr, int lod_index, CVector3i * lod_vertices)
     ADD ESP,0xc                         ; 005a031f
     POP ESI                             ; 005a0322
     POP EBX                             ; 005a0323

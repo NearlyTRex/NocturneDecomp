@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_morph_cpp_CMorph_previewMorph_FUN_0052ca90(CMorph *this_ptr)
+; void __cdecl core_morph_cpp_CMorph_previewMorph_FUN_0052ca90(CMorph *this_ptr,CDeformableModelInstance *model_ptr)
 ;
 ; Parameters:
 ; CMorph *         Stack[0x4]:4   this_ptr
+; CDeformableModelInstance * Stack[0x8]:4   model_ptr
 ; Local Variables:
 ; float            Stack[-0x18]:4  fStack_18
 ; float            Stack[-0x14]:4  local_14

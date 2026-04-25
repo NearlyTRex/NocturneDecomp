@@ -2,11 +2,11 @@
 // Address: 0049cb40
 // Address Range: [[0049cb40, 0049cba0]]
 // Convention: __cdecl
-// Signature: CDemonTriangle * __cdecl core_dtri_cpp_buildClipTriangleFan_FUN_0049cb40(void)
+// Signature: CDemonTriangle * __cdecl core_dtri_cpp_buildClipTriangleFan_FUN_0049cb40(int flags)
 
 #include "nocturne.h"
 
-CDemonTriangle * __cdecl core_dtri_cpp_buildClipTriangleFan_FUN_0049cb40(void)
+CDemonTriangle * __cdecl core_dtri_cpp_buildClipTriangleFan_FUN_0049cb40(int flags)
 
 {
   int iVar1;
@@ -15,7 +15,7 @@ CDemonTriangle * __cdecl core_dtri_cpp_buildClipTriangleFan_FUN_0049cb40(void)
   CVector3f *vertex2;
   CVector3f *vertex3;
   
-  iVar1 = core_dtri_cpp_getClippedTriangleCount_FUN_0049cb30();
+  iVar1 = core_dtri_cpp_getClippedTriangleCount_FUN_0049cb30(flags);
   iVar2 = 0;
   if (0 < iVar1) {
     this_ptr = g_ClippedTriangleBuffer;

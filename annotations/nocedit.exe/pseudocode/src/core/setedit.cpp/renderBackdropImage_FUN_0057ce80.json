@@ -7,17 +7,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 350,
-    "complexity_score": 241,
+    "complexity_score": 239,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 36,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 136,
+    "pseudocode_lines": 134,
     "suspect_count": 10,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 486
+    "total_lines": 484
   },
   "cross_references": [
     {
@@ -610,23 +610,23 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 46,
       "match": "(uint *)((int)",
       "severity": "moderate",
-      "text": "*(uint *)((int)local_2670 + iVar2) = *(uint *)((int)g_ScreenBufferArray + iVar2)",
+      "text": "*(uint *)((int)auStack_266c + iVar2 + -4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 47,
       "match": "(uint *)((int)",
       "severity": "moderate",
-      "text": "*(uint *)((int)local_2670 + iVar2) = *(uint *)((int)g_ScreenBufferArray + iVar2)",
+      "text": "*(uint *)((int)g_ScreenBufferArray + iVar2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 49,
       "match": "(void *)((int)",
       "severity": "moderate",
       "text": "pvVar3 = (void *)((int)pvVar3 + render_width * 4);",
@@ -634,7 +634,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 50,
       "match": "(uint *)((int)",
       "severity": "moderate",
       "text": "*(uint *)((int)auStack_13b0 + iVar2) =",
@@ -642,7 +642,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 51,
       "match": "(uint *)((int)",
       "severity": "moderate",
       "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar2);",
@@ -650,31 +650,31 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 53,
       "match": "(void *)((int)",
       "severity": "moderate",
-      "text": "pvVar5 = (void *)((int)pvVar5 + render_width * 4);",
+      "text": "pvVar4 = (void *)((int)pvVar4 + render_width * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 124,
+      "match": "(uint *)((int)",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ScreenBufferArray + iVar6) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 125,
+      "match": "(uint *)((int)",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_266c + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 126,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ScreenBufferArray + iVar6) = *(uint *)((int)local_2670 + iVar6)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 126,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ScreenBufferArray + iVar6) = *(uint *)((int)local_2670 + iVar6)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 128,
       "match": "(uint *)((int)",
       "severity": "moderate",
       "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar6) =",
@@ -682,10 +682,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 129,
+      "line": 127,
       "match": "(uint *)((int)",
       "severity": "moderate",
-      "text": "*(uint *)((int)auStack_13b0 + iVar6);",
+      "text": "*(uint *)((int)auStack_13b0 + iVar6 + 4);",
       "type": "pointer_cast"
     }
   ]

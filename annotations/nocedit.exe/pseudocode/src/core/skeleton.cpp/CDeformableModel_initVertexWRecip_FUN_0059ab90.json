@@ -15,7 +15,7 @@
     "pseudocode_lines": 15,
     "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few",
+      "param_count_too_many",
       "pointer_cast"
     ],
     "total_lines": 51
@@ -38,7 +38,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90",
-    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90(CDeformableModel *this_ptr,int lod_index)"
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90(CDeformableModel *this_ptr,int lod_index,CVector3i *lod_vertices)"
   },
   "function_calls": [],
   "globals": [
@@ -68,18 +68,18 @@
         "call_addr": "005a031a",
         "call_type": "direct",
         "caller": "core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005a02f0",
-        "estimated_params": 3,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 12,
-        "stack_params": 3
+        "stack_bytes": 4,
+        "stack_params": 1
       }
     ],
     "confidence": "low",
-    "declared_params": 2,
-    "declared_stack_bytes": 8,
-    "estimated_params": 3,
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 1,
     "matches_declared": false
   },
   "pcode_summary": {
@@ -112,10 +112,10 @@
     "pcode_op_count": 160
   },
   "stack_frame": {
-    "frame_size": 12,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -131,6 +131,13 @@
         "offset": 8,
         "size": 4,
         "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "lod_vertices",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3i *"
       }
     ]
   },
@@ -145,14 +152,14 @@
     },
     {
       "call_site_count": 1,
-      "declared_params": 2,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:2 vs estimated:3",
-      "param_delta": 1,
-      "text": "Function declares 2 params but call sites push 3 (1 missing)",
-      "type": "param_count_too_few"
+      "declared_params": 3,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 1,
+      "fix_type": "remove_params",
+      "match": "declared:3 vs estimated:1",
+      "param_delta": -2,
+      "text": "Function declares 3 params but call sites push 1 (2 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

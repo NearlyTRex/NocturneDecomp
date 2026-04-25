@@ -88,7 +88,7 @@ section .text
     MOV ECX,dword ptr [0x006703ec]      ; 00472dab | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 00472db1 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0 ; 00472db2
-        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0()
+        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00472db7
     MOV EBX,dword ptr [ESI + 0x1cc4]    ; 00472dba
     XOR EAX,EAX                         ; 00472dc0

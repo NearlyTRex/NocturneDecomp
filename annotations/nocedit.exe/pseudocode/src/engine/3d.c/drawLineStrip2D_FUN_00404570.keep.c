@@ -10,12 +10,14 @@
 SMRGLHeaderExtended * __cdecl engine_3d_c_drawLineStrip2D_FUN_00404570(SLineStrip *line_strip)
 
 {
+  int *vertex_indices;
   int i;
 
   engine_3d_c_setActiveRenderColor_FUN_00404540();
+  vertex_indices = (int *)(line_strip + 1);
   for (i = 0; i < line_strip->vertex_count - 1; i++) {
-    engine_3d_c_clipAndDrawLine2D_FUN_00407d70(g_RenderVertexBuffer[line_strip->vertex_indices[i]],
-                                               g_RenderVertexBuffer[line_strip->vertex_indices[i + 1]]);
+    engine_3d_c_clipAndDrawLine2D_FUN_00407d70(g_RenderVertexBuffer[vertex_indices[i]],
+                                               g_RenderVertexBuffer[vertex_indices[i + 1]]);
   }
-  return (SMRGLHeaderExtended *)&line_strip->vertex_indices[line_strip->vertex_count];
+  return (SMRGLHeaderExtended *)&vertex_indices[line_strip->vertex_count];
 }

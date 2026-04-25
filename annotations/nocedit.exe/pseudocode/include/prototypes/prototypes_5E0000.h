@@ -263,7 +263,7 @@ int __cdecl wincore_wddvmem_cpp_reinitializeDirectDraw_FUN_005ec980(void);
 int __cdecl wincore_wddvmem_cpp_shutdownDirectDraw_FUN_005eca30(void);
 void __cdecl wincore_wddvmem_cpp_allocateRenderBuffers_FUN_005ecac0(void);
 void __cdecl wincore_wddvmem_cpp_freeRenderBuffers_FUN_005ecba0(void);
-int __cdecl wincore_wddvmem_cpp_initializeGraphicsSystem_FUN_005ecc10(void);
+int __cdecl wincore_wddvmem_cpp_initializeGraphicsSystem_FUN_005ecc10(int width,int height);
 void __cdecl wincore_wddvmem_cpp_cleanupGraphicsSystem_FUN_005ecd90(void);
 void __cdecl wincore_wddvmem_cpp_initializeScanlinePointers_FUN_005ece60(void);
 int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(int width,int height,int bits_per_pixel);

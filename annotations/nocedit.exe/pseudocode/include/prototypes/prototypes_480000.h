@@ -289,7 +289,7 @@ CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraRotationToBuf
 float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800(CDemonRenderer *this_ptr,float *output);
 float __cdecl engine_drender_cpp_CDemonRenderer_calculateProjectionFactor_FUN_0048c870(CDemonRenderer *this_ptr);
 void __cdecl engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890(CDemonRenderer *this_ptr,int x,int y,int width,int height);
-void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0(void);
+void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0(CDemonRenderer *this_ptr);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim, RenderScanlineFunc *scanline_renderer);
 template<typename T_func0>
 inline void engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,T_func0 scanline_renderer) {

@@ -1,13 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_skeleton_cpp_CDeformableModel_skinVertices_FUN_0059a880(CDeformableModel *this_ptr,int lod_index,CMatrix3x4f *bone_matrices,int *output_buffer)
+; void __cdecl core_skeleton_cpp_CDeformableModel_skinVertices_FUN_0059a880(CDeformableModel *this_ptr,int lod_index,CMatrix3x4f *bone_matrices,int *output_buffer,SPartInstanceData *part_data)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   lod_index
 ; CMatrix3x4f *    Stack[0xc]:4   bone_matrices
 ; int *            Stack[0x10]:4   output_buffer
+; SPartInstanceData * Stack[0x14]:4   part_data
 ; Local Variables:
 ; CVector3f        Stack[-0x54]:12  local_54
 ; float            Stack[-0x48]:4  local_48

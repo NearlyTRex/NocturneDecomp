@@ -2,11 +2,11 @@
 // Address: 0052ca90
 // Address Range: [[0052ca90, 0052cc08]]
 // Convention: __cdecl
-// Signature: void __cdecl core_morph_cpp_CMorph_previewMorph_FUN_0052ca90(CMorph *this_ptr)
+// Signature: void __cdecl core_morph_cpp_CMorph_previewMorph_FUN_0052ca90(CMorph *this_ptr,CDeformableModelInstance *model_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_morph_cpp_CMorph_previewMorph_FUN_0052ca90(CMorph *this_ptr)
+void __cdecl core_morph_cpp_CMorph_previewMorph_FUN_0052ca90(CMorph *this_ptr,CDeformableModelInstance *model_ptr)
 
 {
   int iVar1;

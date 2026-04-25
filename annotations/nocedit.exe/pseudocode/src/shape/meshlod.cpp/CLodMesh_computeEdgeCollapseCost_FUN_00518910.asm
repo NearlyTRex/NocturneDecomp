@@ -535,7 +535,7 @@ section .text
     PUSH EDX                            ; 00518f1c
     FSTP double ptr [ESP + 0x4]         ; 00518f1d
     CALL shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50 ; 00518f21
-        ;   XREF to: 00519b50 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50(CLodMesh * this_ptr, double max_search_radius)
+        ;   XREF to: 00519b50 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50(CLodMesh * this_ptr)
     MOV ECX,dword ptr [0x02f313ec]      ; 00518f26 | g_SamplePointCount
     ADD ESP,0x4                         ; 00518f2c
     TEST ECX,ECX                        ; 00518f2f

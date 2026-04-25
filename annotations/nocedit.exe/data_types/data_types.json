@@ -4005,6 +4005,14 @@
       "type":"struct"
     },
     {
+      "name":"SLineStrip2Index",
+      "type":"struct"
+    },
+    {
+      "name":"SLineStrip3Index",
+      "type":"struct"
+    },
+    {
       "name":"SLod",
       "type":"struct"
     },
@@ -56575,17 +56583,59 @@
           "name":"vertex_count",
           "offset":4,
           "type":"int"
-        },
-        {
-          "len":0,
-          "name":"vertex_indices",
-          "offset":8,
-          "type":"int[0]"
         }
       ],
       "importable":true,
       "len":8,
       "name":"SLineStrip",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":8,
+          "name":"base",
+          "offset":0,
+          "type":"SLineStrip"
+        },
+        {
+          "len":8,
+          "name":"vertices",
+          "offset":8,
+          "type":"int[2]"
+        }
+      ],
+      "importable":true,
+      "len":16,
+      "name":"SLineStrip2Index",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":8,
+          "name":"base",
+          "offset":0,
+          "type":"SLineStrip"
+        },
+        {
+          "len":12,
+          "name":"vertices",
+          "offset":8,
+          "type":"int[3]"
+        }
+      ],
+      "importable":true,
+      "len":20,
+      "name":"SLineStrip3Index",
       "pack":false,
       "type":"struct"
     },

@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 88,
+    "complexity_score": 73,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 58,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
       "unnamed_local"
     ],
     "total_lines": 195
@@ -38,7 +37,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_CDeformableModel_skinVertices_FUN_0059a880",
-    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_skinVertices_FUN_0059a880(CDeformableModel *this_ptr,int lod_index,CMatrix3x4f *bone_matrices,int *output_buffer)"
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_skinVertices_FUN_0059a880(CDeformableModel *this_ptr,int lod_index,CMatrix3x4f *bone_matrices,int *output_buffer,SPartInstanceData *part_data)"
   },
   "function_calls": [
     {
@@ -70,11 +69,11 @@
         "stack_params": 5
       }
     ],
-    "confidence": "low",
-    "declared_params": 4,
-    "declared_stack_bytes": 16,
+    "confidence": "medium",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
     "estimated_params": 5,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.959016393442623,
@@ -143,10 +142,10 @@
     }
   ],
   "stack_frame": {
-    "frame_size": 104,
+    "frame_size": 108,
     "local_size": 88,
     "param_offset": 4,
-    "param_size": 16,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -253,21 +252,17 @@
         "offset": 16,
         "size": 4,
         "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "part_data",
+        "offset": 20,
+        "size": 4,
+        "type": "SPartInstanceData *"
       }
     ]
   },
   "suspects": [
-    {
-      "call_site_count": 1,
-      "declared_params": 4,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:4 vs estimated:5",
-      "param_delta": 1,
-      "text": "Function declares 4 params but call sites push 5 (1 missing)",
-      "type": "param_count_too_few"
-    },
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",

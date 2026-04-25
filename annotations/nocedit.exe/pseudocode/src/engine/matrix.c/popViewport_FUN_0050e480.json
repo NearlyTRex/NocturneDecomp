@@ -40,7 +40,7 @@
       "addr": "0048c8c0",
       "from_addr": "0048c8c0",
       "name": "engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0",
-      "type": "UNCONDITIONAL_JUMP"
+      "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a0f80",
@@ -317,7 +317,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 5,
+    "call_site_count": 6,
     "call_sites": [
       {
         "call_addr": "00564725",
@@ -367,12 +367,23 @@
         "call_addr": "005dca18",
         "call_type": "direct",
         "caller": "core_texlist.cpp_CTextureList_previewTexture_FUN_005dc760",
-        "estimated_params": 16,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 64,
-        "stack_params": 16
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "0048c8c0",
+        "call_type": "direct",
+        "caller": "engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0",
+        "estimated_params": 0,
+        "instructions_analyzed": 0,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
       }
     ],
     "confidence": "high",

@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5165 (80.0%)
-With suspects: 1289
-Total suspects: 5786
+Clean: 5150 (79.8%)
+With suspects: 1304
+Total suspects: 5881
 
 ====================================================================================================
 cockpit_ckptutil.c_applyActPalette_FUN_004319b0 (1 suspect)
@@ -312,9 +312,10 @@ cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0 (1 suspect)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 ====================================================================================================
-cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630 (2 suspects)
+cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630 (3 suspects)
   File: cockpit/drawsurf.cpp
 ====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 3 params but call sites push 2 (1 extra)
   Line 10 [pointer_cast]: puVar1 = (uint *)((int)g_ScreenBufferArray[y] + start_x * 2);
   Line 13 [pointer_cast]: puVar2 = (uint *)((int)puVar1 + 2);
 
@@ -392,9 +393,10 @@ cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 (2 suspects)
   Line 54 [pointer_cast]: *(uint *)((int)g_ScreenBufferArray[iVar4] + iVar1) >> ((byte)g_OriginalColorValue & 0x1f)
 
 ====================================================================================================
-cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487220 (1 suspect)
+cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487220 (2 suspects)
   File: cockpit/drawsurf.cpp
 ====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 3 params but call sites push 2 (1 extra)
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x00487331) */
 
 ====================================================================================================
@@ -463,6 +465,12 @@ cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0 (2 suspects)
 ====================================================================================================
   Line 16 [pointer_cast]: pcVar2 = (char *)((int)pcVar2 + 4);
   Line 22 [pointer_cast]: piVar3 = (int *)((int)piVar3 + 1);
+
+====================================================================================================
+cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0 (1 suspect)
+  File: cockpit/pkbmpset.cpp
+====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 3 params but call sites push 0 (3 extra)
 
 ====================================================================================================
 core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350 (2 suspects)
@@ -708,6 +716,12 @@ core_actor.cpp_archiveLocalizedString_FUN_0040b6e0 (3 suspects)
   Line 47 [unrolled_strcpy]: do {
 
 ====================================================================================================
+core_actor.cpp_crc32ProcessBuffer_FUN_0040cf10 (1 suspect)
+  File: core/actor.cpp
+====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 3 params but call sites push 2 (1 extra)
+
+====================================================================================================
 core_actor.cpp_drawBoundingBox_FUN_0040d470 (6 suspects)
   File: core/actor.cpp
 ====================================================================================================
@@ -719,16 +733,16 @@ core_actor.cpp_drawBoundingBox_FUN_0040d470 (6 suspects)
   Line 69 [missing_cave_copy]: CVector3f local_a0;
 
 ====================================================================================================
-core_actor.cpp_generateRandomValue_FUN_0040cba0 (1 suspect)
-  File: core/actor.cpp
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 0 params but call sites push 2 (2 missing)
-
-====================================================================================================
 core_actor.cpp_getRandomInt_FUN_0040cc70 (1 suspect)
   File: core/actor.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
+====================================================================================================
+core_actor.cpp_registerActorClass_FUN_0040c2e0 (1 suspect)
+  File: core/actor.cpp
+====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 6 params but call sites push 5 (1 extra)
 
 ====================================================================================================
 core_actor.cpp_resetActorTypeInfo_FUN_0040c7f0 (1 suspect)
@@ -998,14 +1012,21 @@ core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680 (8 suspects)
   Line 71 [pointer_cast]: *(uint *)((int)&local_94[0].z + iVar8) =
 
 ====================================================================================================
-core_box.cpp_CBox_processPhysics_FUN_0041e350 (5 suspects)
+core_box.cpp_CBox_processPhysics_FUN_0041e350 (6 suspects)
   File: core/box.cpp
 ====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 2 params but call sites push 1 (1 extra)
   Line 157 [pointer_cast]: pCVar14 = (CVector3f *)((int)(pCVar14 + 4) + 4);
   Line 158 [pointer_cast]: pCVar16 = (CVector3f *)((int)(pCVar16 + 4) + 4);
   Line 273 [pointer_cast]: pCVar15 = (CMatrix3x3f *)((int)pCVar15 + (uint)bVar17 * -8 + 4);
   Line 304 [pointer_cast]: pCVar14 = (CVector3f *)((int)(pCVar14 + 4) + 4);
   Line 686 [pointer_cast]: iVar11 = *(int *)((int)local_3d0 + iVar18);
+
+====================================================================================================
+core_box.cpp_CBox_setupVelocities_FUN_00420180 (1 suspect)
+  File: core/box.cpp
+====================================================================================================
+  Line 0 [param_count_too_few]: Function declares 3 params but call sites push 4 (1 missing)
 
 ====================================================================================================
 core_boxactor.cpp_CBoxActor_getBoundingBox_FUN_00421fe0 (1 suspect)
@@ -1245,9 +1266,10 @@ core_charactr.cpp_CCharacter_renderBurn_FUN_0042ad00 (3 suspects)
   Line 101 [pointer_cast]: *(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->a + local_18) =
 
 ====================================================================================================
-core_charactr.cpp_CCharacter_renderCollision_FUN_00429b40 (18 suspects)
+core_charactr.cpp_CCharacter_renderCollision_FUN_00429b40 (19 suspects)
   File: core/charactr.cpp
 ====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 1 params but call sites push 0 (1 extra)
   Line 59 [unrolled_strcpy]: do {
   Line 76 [pointer_cast]: *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->u + iVar10) = 0x800000;
   Line 78 [pointer_cast]: *(uint *)((int)&pCVar5->vertex_buffer_ptr->v + iVar10) = 0x800000;
@@ -1601,7 +1623,7 @@ core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020 (1 suspect)
 core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0 (1 suspect)
   File: core/dcamera.cpp
 ====================================================================================================
-  Line 47 [pointer_cast]: piVar1 = (int *)((int)g_ZBufferScanlineArray + iVar7);
+  Line 48 [pointer_cast]: piVar1 = (int *)((int)g_ZBufferScanlineArray + iVar7);
 
 ====================================================================================================
 core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0 (2 suspects)
@@ -1623,9 +1645,10 @@ core_dcamera.cpp_CDemonCamera_initCameraFog_FUN_00453640 (1 suspect)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 ====================================================================================================
-core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00453fc0 (1 suspect)
+core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00453fc0 (2 suspects)
   File: core/dcamera.cpp
 ====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 5 params but call sites push 4 (1 extra)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 ====================================================================================================
@@ -1822,6 +1845,12 @@ core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0 (1 suspe
   File: core/dcamera.cpp
 ====================================================================================================
   Line 16 [stack_alignment_array]: int aiStackY_1018 [1017];
+
+====================================================================================================
+core_dcamera.cpp_generateFogGrid_FUN_0044bba0 (1 suspect)
+  File: core/dcamera.cpp
+====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 1 params but call sites push 0 (1 extra)
 
 ====================================================================================================
 core_dcamera.cpp_initializeCoronaBuffers_FUN_004502e0 (2 suspects)
@@ -2061,6 +2090,12 @@ core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160 (3 suspects)
   Line 44 [sub84_truncation]: uStack_5c = SUB84(__BITCAST_UINT64(dVar3),0);
 
 ====================================================================================================
+core_dlight.cpp_CDemonLight_allocateFilter_FUN_00474720 (1 suspect)
+  File: core/dlight.cpp
+====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 1 params but call sites push 0 (1 extra)
+
+====================================================================================================
 core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770 (1 suspect)
   File: core/dlight.cpp
 ====================================================================================================
@@ -2191,6 +2226,12 @@ core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20 (1 susp
   File: core/dmodel.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
+====================================================================================================
+core_dmodel.cpp_CKeyFramedModel_addFilesToExtract_FUN_0047ed00 (1 suspect)
+  File: core/dmodel.cpp
+====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 3 params but call sites push 1 (2 extra)
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_applyBias_FUN_0047c370 (5 suspects)
@@ -2355,9 +2396,10 @@ core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950 (4 suspects)
   Line 97 [pointer_cast]: } while (iVar4 < *(int *)((int)pSVar4->vertices + local_24 + -0x14));
 
 ====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_00476f20 (5 suspects)
+core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_00476f20 (6 suspects)
   File: core/dmodel.cpp
 ====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 2 params but call sites push 0 (2 extra)
   Line 16 [unnamed_local]: int local_2c[6];
   Line 19 [unnamed_local]: SVar1 = _fread(local_2c,0x18,1,file);
   Line 22 [unnamed_local]: if ((local_2c[0] < 3) || (4 < local_2c[0])) {
@@ -2388,6 +2430,12 @@ core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0 (2 suspects
 ====================================================================================================
   Line 72 [pointer_cast]: ((void *)((int)&(((SMRGLPrimitiveQuad *)
   Line 75 [pointer_cast]: (void *)((int)&(((SMRGLPrimitiveQuad *)
+
+====================================================================================================
+core_dmodel.cpp_CKeyFramedModel_scaleUniform_FUN_0047c4a0 (1 suspect)
+  File: core/dmodel.cpp
+====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 2 params but call sites push 1 (1 extra)
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_scale_FUN_0047c4d0 (7 suspects)
@@ -2855,12 +2903,6 @@ core_dtri.cpp_CDemonTriangle_render_FUN_0049cbd0 (1 suspect)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 ====================================================================================================
-core_dtri.cpp_getClippedTriangleCount_FUN_0049cb30 (1 suspect)
-  File: core/dtri.cpp
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 0 params but call sites push 1 (1 missing)
-
-====================================================================================================
 core_emitter.cpp_CEmitter_ctor_FUN_004a7ca0 (2 suspects)
   File: core/emitter.cpp
 ====================================================================================================
@@ -2898,6 +2940,12 @@ core_enemy.cpp_CEnemy_updateVictim_FUN_004a9b00 (3 suspects)
   Line 78 [pointer_cast]: *(float *)((int)g_EnemyVictimCandidateDistances + local_20) = fVar2;
   Line 94 [pointer_cast]: if (*(float *)((int)g_EnemyVictimCandidateDistances + iVar8) < local_18) {
   Line 95 [pointer_cast]: local_18 = *(float *)((int)g_EnemyVictimCandidateDistances + iVar8);
+
+====================================================================================================
+core_event.cpp_CEventList_ctor_FUN_004aaa50 (1 suspect)
+  File: core/event.cpp
+====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 1 params but call sites push 0 (1 extra)
 
 ====================================================================================================
 core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (50 suspects)
@@ -3287,12 +3335,6 @@ core_fire.cpp_CTrail_render_FUN_004c5e90 (15 suspects)
   Line 56 [raw_address_constant]: g_RenderVertexBuffer[1].v = 0xf80000;
   Line 57 [raw_address_constant]: g_RenderVertexBuffer[2].u = 0xf80000;
   Line 92 [unnamed_local]: (g_CDemonRendererPtr2,&local_78.base);
-
-====================================================================================================
-core_fire.cpp_updateTextureAnimCounts_FUN_004c3870 (1 suspect)
-  File: core/fire.cpp
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 0 params but call sites push 3 (3 missing)
 
 ====================================================================================================
 core_flame.cpp_CFlame_process_FUN_004c9c00 (1 suspect)
@@ -3810,6 +3852,12 @@ core_gore.cpp_CFootstep_render_FUN_004ed3c0 (4 suspects)
   Line 21 [raw_address_constant]: g_RenderVertexBuffer[3].v = 0xf80000;
 
 ====================================================================================================
+core_gore.cpp_CGore_createWallBloodSplat_FUN_004edb70 (1 suspect)
+  File: core/gore.cpp
+====================================================================================================
+  Line 0 [param_count_too_few]: Function declares 4 params but call sites push 6 (2 missing)
+
+====================================================================================================
 core_gore.cpp_CGore_renderDecals_FUN_004ed830 (6 suspects)
   File: core/gore.cpp
 ====================================================================================================
@@ -4232,8 +4280,8 @@ core_lightgun.cpp_CLightGun_process_FUN_00506450 (1 suspect)
 core_main.c_displayErrorAndQuit_FUN_00506f10 (2 suspects)
   File: core/main.c
 ====================================================================================================
-  Line 62 [warning_noreturn]: /* WARNING: Subroutine does not return */
-  Line 65 [unrolled_strchr]: do {
+  Line 67 [warning_noreturn]: /* WARNING: Subroutine does not return */
+  Line 70 [unrolled_strchr]: do {
 
 ====================================================================================================
 core_main.c_enterMainGameMenu_FUN_00507a50 (4 suspects)
@@ -4243,6 +4291,12 @@ core_main.c_enterMainGameMenu_FUN_00507a50 (4 suspects)
   Line 60 [unrolled_strcpy]: do {
   Line 71 [unrolled_strcpy]: do {
   Line 83 [unrolled_strcpy]: do {
+
+====================================================================================================
+core_main.c_finalizeGameSystems_FUN_00508570 (1 suspect)
+  File: core/main.c
+====================================================================================================
+  Line 2 [warning_unmapped_variable]: /* WARNING: Variable defined which should be unmapped: local_110 */
 
 ====================================================================================================
 core_main.c_initializeGameSystems_FUN_00507a60 (1 suspect)
@@ -4733,21 +4787,69 @@ core_morph.cpp_CMorphModel_setFaceListFromTriangles_FUN_0052aca0 (10 suspects)
   Line 63 [pointer_cast]: *(int *)((int)&this_ptr->faces->vertices[2].vertex_index + local_14) +
 
 ====================================================================================================
-core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 (12 suspects)
+core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 (60 suspects)
   File: core/morph.cpp
 ====================================================================================================
-  Line 148 [pointer_cast]: (local_3c,*(int *)(*(int *)((int)local_8c + local_34) + 0x2c),
-  Line 152 [pointer_cast]: pfVar10 = (float *)((int)&local_4a8[0].position[0].x + local_48);
-  Line 157 [pointer_cast]: *(int *)((int)local_4a8[0].vertex_index + iVar6);
-  Line 192 [pointer_cast]: while (iVar11 = iVar16, iVar11 < *(int *)(*(int *)((int)local_8c + local_44) + 0x2c)) {
-  Line 193 [pointer_cast]: iVar16 = *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
-  Line 196 [pointer_cast]: (iVar16 = *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex)
-  Line 221 [pointer_cast]: if (iVar15 == *(int *)((int)local_4a8[0].vertex_index + iVar16)) {
-  Line 222 [pointer_cast]: local_50 = *(int *)((int)local_4a8 + iVar18 * 4 + iVar7);
-  Line 236 [pointer_cast]: piVar7 = (int *)((int)&(local_4db8[1 - local_8].skinned_vertices_buffer)->x + iVar7);
-  Line 286 [pointer_cast]: iVar7 = *(int *)((int)local_4a8[0].vertex_index + iVar18);
-  Line 325 [pointer_cast]: *(int *)((int)local_4a8[0].vertex_index + local_8 * 4 + local_74) = iVar15;
-  Line 328 [pointer_cast]: *(int *)((int)local_4a8 + iVar6) = local_50;
+  Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x0052c904) */
+  Line 3 [warning_deadcode_restart]: /* WARNING: Restarted to delay deadcode elimination for space: stack */
+  Line 10 [warning_unmapped_variable]: /* WARNING: Variable defined which should be unmapped: local_4db8 */
+  Line 12 [warning_unmapped_variable]: /* WARNING: Variable defined which should be unmapped: local_6c */
+  Line 47 [unnamed_local]: CDeformableModelInstance local_4db8 [2];
+  Line 54 [unnamed_local]: CBoundingBox3D local_128 [3];
+  Line 84 [unnamed_local]: int local_6c;
+  Line 85 [unnamed_local]: int local_68;
+  Line 88 [unnamed_local]: uint local_5c;
+  Line 96 [unnamed_local]: int local_38;
+  Line 97 [unnamed_local]: int local_30;
+  Line 98 [unnamed_local]: CDeformableModelInstance *local_2c;
+  Line 100 [unnamed_local]: int local_24;
+  Line 107 [unnamed_local]: int local_8;
+  Line 129 [unnamed_local]: __arrinit(local_4db8,2,&g_CDeformableModelInstanceTypeInfo);
+  Line 134 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(local_4db8,local_228);
+  Line 139 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(local_4db8 + 1,local_228);
+  Line 142 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(local_4db8);
+  Line 143 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(local_4db8 + 1);
+  Line 144 [unnamed_local]: local_8c[0] = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(local_4db8);
+  Line 146 [unnamed_local]: (local_4db8 + 1);
+  Line 153 [unnamed_local]: local_6c = -1;
+  Line 156 [pointer_cast]: (local_3c,*(int *)(*(int *)((int)local_8c + local_34) + 0x2c),
+  Line 158 [unnamed_local]: __arrinit(local_128,2,&g_CBoundingBox3DTypeInfo);
+  Line 159 [unnamed_local]: local_30 = 0;
+  Line 161 [unnamed_local]: local_28 = local_4db8;
+  Line 166 [pointer_cast]: *(int *)((int)local_4a8[0].vertex_index + iVar5) * 0xc);
+  Line 170 [unnamed_local]: (local_3c,local_8c[local_30]->vertex_count[0],
+  Line 171 [unnamed_local]: local_4db8[local_30].skinned_vertices_buffer);
+  Line 179 [unnamed_local]: pCVar4 = local_4db8[local_30].skinned_vertices_buffer +
+  Line 198 [unnamed_local]: picked_side = 0;                          // asm 0052bffa: json local_8 = 0 per outer iter
+  Line 200 [pointer_cast]: iVar12 = *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
+  Line 200 [unnamed_local]: local_40 = local_4db8;
+  Line 271 [unnamed_local]: piVar8 = (int *)((char *)local_4db8[picked_side].skinned_vertices_buffer + iVar15 * 0xc);
+  Line 276 [unnamed_local]: piVar7 = (int *)((char *)local_4db8[1 - picked_side].skinned_vertices_buffer + iVar12);
+  Line 307 [unnamed_local]: local_2c = local_4db8;
+  Line 307 [unnamed_local]: local_2c = local_4db8;
+  Line 312 [unnamed_local]: local_24 = -1;
+  Line 318 [unnamed_local]: local_8 = 0;
+  Line 330 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250(local_2c,0);
+  Line 334 [unnamed_local]: if (local_5c == 0) {
+  Line 352 [unnamed_local]: local_24 = iVar12;
+  Line 398 [unnamed_local]: if ((-1 < local_68) && (local_6c == picked_side) && (local_24 < 0)) {
+  Line 398 [unnamed_local]: if ((-1 < local_68) && (local_6c == picked_side) && (local_24 < 0)) {
+  Line 399 [unnamed_local]: local_4a8[local_68].vertex_index[local_6c] = iVar15;
+  Line 403 [unnamed_local]: if (-1 < local_24) {
+  Line 408 [unnamed_local]: local_6c = picked_side;
+  Line 421 [unnamed_local]: local_6c = picked_side;
+  Line 433 [unnamed_local]: local_6c = -1;
+  Line 452 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(local_4db8);
+  Line 453 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(local_4db8 + 1);
+  Line 454 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(local_4db8);
+  Line 455 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(local_4db8 + 1);
+  Line 456 [unnamed_local]: core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430(morph,0,local_4db8);
+  Line 457 [unnamed_local]: core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430(morph,1,local_4db8 + 1);
+  Line 459 [unnamed_local]: core_morph_cpp_CMorph_previewMorph_FUN_0052ca90(morph,local_4db8);
+  Line 477 [unnamed_local]: pCVar16 = &local_4db8[0].motion_controller;
+  Line 507 [unnamed_local]: local_5c = (uint)(local_5c == 0);
+  Line 513 [unnamed_local]: core_morph_cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0(local_4db8,0);
+  Line 517 [unnamed_local]: core_morph_cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0(local_4db8,0);
 
 ====================================================================================================
 core_morph.cpp_CMorph_getReady_FUN_0052b680 (6 suspects)
@@ -4759,12 +4861,6 @@ core_morph.cpp_CMorph_getReady_FUN_0052b680 (6 suspects)
   Line 128 [pointer_cast]: local_50.z = *(float *)((int)&(pSVar13->position).z + iVar14);
   Line 142 [pointer_cast]: *(int *)((int)&(local_30->models[0].points)->vertex_index + iVar14) = iVar6;
   Line 148 [negative_offset]: local_34 = (CMorph *)&local_34[-1].models[1].parts[1].start_vertex;
-
-====================================================================================================
-core_morph.cpp_CMorph_previewMorph_FUN_0052ca90 (1 suspect)
-  File: core/morph.cpp
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 1 params but call sites push 2 (1 missing)
 
 ====================================================================================================
 core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0 (1 suspect)
@@ -5017,6 +5113,12 @@ core_netgame.cpp_purgeOldSimFrames_FUN_0053f650 (2 suspects)
 ====================================================================================================
   Line 14 [pointer_cast]: while (*(int *)((int)g_SimFrameHistory[0].player_input + iVar2 + -0xc) < min_sequence) {
   Line 17 [pointer_cast]: ((void *)((int)g_SimFrameHistory[0].player_input + iVar2 + -0xc),src,
+
+====================================================================================================
+core_particle.cpp_CParticle_dtor_FUN_00545670 (1 suspect)
+  File: core/particle.cpp
+====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 2 params but call sites push 1 (1 extra)
 
 ====================================================================================================
 core_particle.cpp_CParticle_process_FUN_00545760 (4 suspects)
@@ -5838,6 +5940,12 @@ core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70 (8 suspects)
   Line 66 [pointer_cast]: iVar1 = *(int *)((int)g_VDCameraSortIndices + local_1c);
 
 ====================================================================================================
+core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575bc0 (1 suspect)
+  File: core/setdir.cpp
+====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 2 params but call sites push 1 (1 extra)
+
+====================================================================================================
 core_setdir.cpp_CZThumb_backupZBufferScanlines_FUN_005747d0 (2 suspects)
   File: core/setdir.cpp
 ====================================================================================================
@@ -5888,10 +5996,23 @@ core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00 (5 suspects)
   Line 52 [unnamed_local]: pCVar3->z = local_50.z;
 
 ====================================================================================================
-core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310 (1 suspect)
+core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310 (14 suspects)
   File: core/setedit.cpp
 ====================================================================================================
-  Line 61 [pointer_cast]: iVar1 = *(int *)(iVar4 + *(int *)((int)g_ZBufferScanlineArray + iVar5));
+  Line 10 [stack_param]: int *in_stack_00000008;
+  Line 41 [pointer_cast]: *(int *)((int)pvVar1 + 0xc) = g_TransformMatrix.m[0].x;
+  Line 42 [pointer_cast]: *(int *)((int)pvVar1 + 0x10) = g_TransformMatrix.m[0].y;
+  Line 43 [pointer_cast]: *(int *)((int)pvVar1 + 0x14) = g_TransformMatrix.m[0].z;
+  Line 44 [pointer_cast]: *(int *)((int)pvVar1 + 0x18) = g_TransformMatrix.m[1].x;
+  Line 45 [pointer_cast]: *(int *)((int)pvVar1 + 0x1c) = g_TransformMatrix.m[1].y;
+  Line 46 [pointer_cast]: *(int *)((int)pvVar1 + 0x20) = g_TransformMatrix.m[1].z;
+  Line 47 [pointer_cast]: *(int *)((int)pvVar1 + 0x24) = g_TransformMatrix.m[2].x;
+  Line 48 [pointer_cast]: *(int *)((int)pvVar1 + 0x28) = g_TransformMatrix.m[2].y;
+  Line 49 [pointer_cast]: *(int *)((int)pvVar1 + 0x2c) = g_TransformMatrix.m[2].z;
+  Line 52 [pointer_cast]: *(int *)((int)pvVar1 + 4) = g_CameraOriginY;
+  Line 53 [pointer_cast]: *(int *)((int)pvVar1 + 8) = g_CameraOriginZ;
+  Line 62 [pointer_cast]: iVar1 = *(int *)(iVar4 + *(int *)((int)g_ZBufferScanlineArray + iVar5));
+  Line 78 [stack_param]: } while ((int)pvVar1 + 1 < *in_stack_00000008);
 
 ====================================================================================================
 core_setedit.cpp_CDemonSet_drawCameraCoverageMap_FUN_0057ff70 (1 suspect)
@@ -6098,16 +6219,16 @@ core_setedit.cpp_loadGroundTypes_FUN_00578420 (2 suspects)
 core_setedit.cpp_renderBackdropImage_FUN_0057ce80 (10 suspects)
   File: core/setedit.cpp
 ====================================================================================================
-  Line 48 [pointer_cast]: *(uint *)((int)local_2670 + iVar2) = *(uint *)((int)g_ScreenBufferArray + iVar2)
-  Line 48 [pointer_cast]: *(uint *)((int)local_2670 + iVar2) = *(uint *)((int)g_ScreenBufferArray + iVar2)
-  Line 51 [pointer_cast]: pvVar3 = (void *)((int)pvVar3 + render_width * 4);
-  Line 52 [pointer_cast]: *(uint *)((int)auStack_13b0 + iVar2) =
-  Line 53 [pointer_cast]: *(uint *)((int)g_ZBufferScanlineArray + iVar2);
-  Line 55 [pointer_cast]: pvVar5 = (void *)((int)pvVar5 + render_width * 4);
-  Line 126 [pointer_cast]: *(uint *)((int)g_ScreenBufferArray + iVar6) = *(uint *)((int)local_2670 + iVar6)
-  Line 126 [pointer_cast]: *(uint *)((int)g_ScreenBufferArray + iVar6) = *(uint *)((int)local_2670 + iVar6)
-  Line 128 [pointer_cast]: *(uint *)((int)g_ZBufferScanlineArray + iVar6) =
-  Line 129 [pointer_cast]: *(uint *)((int)auStack_13b0 + iVar6);
+  Line 46 [pointer_cast]: *(uint *)((int)auStack_266c + iVar2 + -4) =
+  Line 47 [pointer_cast]: *(uint *)((int)g_ScreenBufferArray + iVar2);
+  Line 49 [pointer_cast]: pvVar3 = (void *)((int)pvVar3 + render_width * 4);
+  Line 50 [pointer_cast]: *(uint *)((int)auStack_13b0 + iVar2) =
+  Line 51 [pointer_cast]: *(uint *)((int)g_ZBufferScanlineArray + iVar2);
+  Line 53 [pointer_cast]: pvVar4 = (void *)((int)pvVar4 + render_width * 4);
+  Line 124 [pointer_cast]: *(uint *)((int)g_ScreenBufferArray + iVar6) =
+  Line 125 [pointer_cast]: *(uint *)((int)auStack_266c + iVar6);
+  Line 126 [pointer_cast]: *(uint *)((int)g_ZBufferScanlineArray + iVar6) =
+  Line 127 [pointer_cast]: *(uint *)((int)auStack_13b0 + iVar6 + 4);
 
 ====================================================================================================
 core_setedit.cpp_renderColoredBox_FUN_005817d0 (7 suspects)
@@ -6325,6 +6446,12 @@ core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (65 suspects)
   Line 1061 [unrolled_strcpy]: do {
 
 ====================================================================================================
+core_skeledit.cpp_CDeformableModel_addFilesToExtract_FUN_0058a2b0 (1 suspect)
+  File: core/skeledit.cpp
+====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 2 params but call sites push 1 (1 extra)
+
+====================================================================================================
 core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 (29 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
@@ -6463,9 +6590,10 @@ core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (86 suspec
   Line 1353 [pointer_cast]: local_4c = (void *)((int)local_4c + 0x3c);
 
 ====================================================================================================
-core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0 (6 suspects)
+core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0 (7 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 4 params but call sites push 1 (3 extra)
   Line 122 [pointer_cast]: *(uint *)((int)aiStack_140 + local_78) = 0;
   Line 131 [pointer_cast]: *(int *)((int)aiStack_140 + local_78) = *(int *)((int)aiStack_140 + local_78) + 1;
   Line 131 [pointer_cast]: *(int *)((int)aiStack_140 + local_78) = *(int *)((int)aiStack_140 + local_78) + 1;
@@ -6873,8 +7001,14 @@ core_skeleton.cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0 (2 suspects)
 core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90 (2 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 2 params but call sites push 3 (1 missing)
+  Line 0 [param_count_too_many]: Function declares 3 params but call sites push 1 (2 extra)
   Line 12 [pointer_cast]: *(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->a + iVar1) = g_PerspectiveReciprocal;
+
+====================================================================================================
+core_skeleton.cpp_CDeformableModel_lightVertices_FUN_0059ab50 (1 suspect)
+  File: core/skeleton.cpp
+====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 3 params but call sites push 1 (2 extra)
 
 ====================================================================================================
 core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970 (8 suspects)
@@ -6890,24 +7024,33 @@ core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970 (8 suspects)
   Line 190 [unnamed_local]: local_20->u_coord_2 = (ushort)((uint)u[2] >> 8);
 
 ====================================================================================================
-core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0 (3 suspects)
+core_skeleton.cpp_CDeformableModel_renderBones_FUN_0059b800 (1 suspect)
   File: core/skeleton.cpp
 ====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 2 params but call sites push 1 (1 extra)
+
+====================================================================================================
+core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0 (4 suspects)
+  File: core/skeleton.cpp
+====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 6 params but call sites push 1 (5 extra)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
   Line 231 [pointer_cast]: (iVar4 = *(int *)((int)this_ptr->index_data_ptr[lod_index] + local_4c),
   Line 241 [pointer_cast]: (SInputFace *)((int)&(pSVar2->vertex_indices).vertex_index_0 + local_48),1,
 
 ====================================================================================================
-core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640 (2 suspects)
+core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640 (3 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 4 params but call sites push 1 (3 extra)
   Line 22 [unnamed_local]: int local_14;
   Line 43 [unnamed_local]: local_14 = 0;
 
 ====================================================================================================
-core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_0059b5a0 (6 suspects)
+core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_0059b5a0 (7 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 2 params but call sites push 1 (1 extra)
   Line 16 [pointer_cast]: (uint)*(ushort *)((int)&(pSVar3->vertex_indices).vertex_index_0 + iVar5),
   Line 17 [pointer_cast]: (uint)*(ushort *)((int)&(pSVar3->vertex_indices).vertex_index_1 + iVar5));
   Line 20 [pointer_cast]: (uint)*(ushort *)((int)&(pSVar3->vertex_indices).vertex_index_1 + iVar5),
@@ -6916,15 +7059,22 @@ core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_0059b5a0 (6 suspects)
   Line 23 [pointer_cast]: puVar2 = (ushort *)((int)&(pSVar3->vertex_indices).vertex_index_2 + iVar5);
 
 ====================================================================================================
+core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_0059ab20 (1 suspect)
+  File: core/skeleton.cpp
+====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 3 params but call sites push 1 (2 extra)
+
+====================================================================================================
 core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40 (1 suspect)
   File: core/skeleton.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 ====================================================================================================
-core_skeleton.cpp_CDeformableModel_shatter_FUN_0059cec0 (5 suspects)
+core_skeleton.cpp_CDeformableModel_shatter_FUN_0059cec0 (6 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 7 params but call sites push 1 (6 extra)
   Line 109 [pointer_cast]: *(uint *)((int)&local_94.x + iVar7) = (uint)puVar5[3];
   Line 113 [pointer_cast]: *(uint *)((int)&local_88.x + iVar7) = (uint)*puVar1;
   Line 156 [pointer_cast]: *(uint *)((int)&local_94.x + iVar7) = (uint)puVar4[3] << 8;
@@ -6932,10 +7082,9 @@ core_skeleton.cpp_CDeformableModel_shatter_FUN_0059cec0 (5 suspects)
   Line 167 [pointer_cast]: [*(int *)((int)this_ptr->index_data_ptr[lod_index] + local_14)].textures,
 
 ====================================================================================================
-core_skeleton.cpp_CDeformableModel_skinVertices_FUN_0059a880 (2 suspects)
+core_skeleton.cpp_CDeformableModel_skinVertices_FUN_0059a880 (1 suspect)
   File: core/skeleton.cpp
 ====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 4 params but call sites push 5 (1 missing)
   Line 21 [unnamed_local]: int local_20;
 
 ====================================================================================================
@@ -6977,12 +7126,6 @@ core_smiley.cpp_CSmiley_process_FUN_005a2800 (1 suspect)
   File: core/smiley.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-
-====================================================================================================
-core_sound.cpp_CSound_dtor_FUN_005b2d60 (1 suspect)
-  File: core/sound.cpp
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 0 params but call sites push 1 (1 missing)
 
 ====================================================================================================
 core_sound.cpp_CSound_process_FUN_005b2fd0 (1 suspect)
@@ -7320,12 +7463,6 @@ core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0 (5 suspects)
   Line 122 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_texlist.cpp_CTextureList_captureTexture_FUN_005dc270 (1 suspect)
-  File: core/texlist.cpp
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 2 params but call sites push 4 (2 missing)
-
-====================================================================================================
 core_texlist.cpp_CTextureList_load_FUN_005dbe00 (5 suspects)
   File: core/texlist.cpp
 ====================================================================================================
@@ -7438,6 +7575,18 @@ core_vampboss.cpp_CVampireBoss_process_FUN_005e5970 (3 suspects)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */
   Line 3 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
   Line 188 [pointer_cast]: iVar18 = *(int *)((int)this_ptr + (4 - this_ptr->waypoint_index) * 4 + 0xce908);
+
+====================================================================================================
+core_vampboss.cpp_CVampireBoss_summonBats_FUN_005e7320 (1 suspect)
+  File: core/vampboss.cpp
+====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 1 params but call sites push 0 (1 extra)
+
+====================================================================================================
+core_vampboss.cpp_CVampireBoss_summonFireEmitters_FUN_005e7410 (1 suspect)
+  File: core/vampboss.cpp
+====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 1 params but call sites push 0 (1 extra)
 
 ====================================================================================================
 core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 (1 suspect)
@@ -7983,18 +8132,6 @@ engine_2d.c_unmapFrameBuffer_FUN_00403670 (1 suspect)
   Line 28 [pointer_cast]: pvVar3 = (void *)((int)pvVar3 + g_ScreenBufferStride);
 
 ====================================================================================================
-engine_3d.c_clipAndDrawLine2D_FUN_00407d70 (1 suspect)
-  File: engine/3d.c
-====================================================================================================
-  Line 0 [param_count_too_many]: Function declares 2 params but call sites push 0 (2 extra)
-
-====================================================================================================
-engine_3d.c_clipAndDrawLine3D_FUN_00408070 (1 suspect)
-  File: engine/3d.c
-====================================================================================================
-  Line 0 [param_count_too_many]: Function declares 2 params but call sites push 0 (2 extra)
-
-====================================================================================================
 engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0 (3 suspects)
   File: engine/3d.c
 ====================================================================================================
@@ -8407,6 +8544,12 @@ engine_console.cpp_CConsole_render_FUN_00441b00 (1 suspect)
   Line 35 [pointer_cast]: pCVar4 = (CConsole *)((int)&pCVar4->file_logging_enabled + 1);
 
 ====================================================================================================
+engine_dosio.c_changeFileExtension_FUN_00482050 (1 suspect)
+  File: engine/dosio.c
+====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 2 params but call sites push 1 (1 extra)
+
+====================================================================================================
 engine_dosio.c_ensureTrailingSlash_FUN_00481f80 (3 suspects)
   File: engine/dosio.c
 ====================================================================================================
@@ -8445,16 +8588,16 @@ engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80 (1 suspect)
   Line 22 [unrolled_strcpy]: do {
 
 ====================================================================================================
+engine_drender.cpp_CDemonRenderer_ctor_FUN_0048a6c0 (1 suspect)
+  File: engine/drender.cpp
+====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 1 params but call sites push 0 (1 extra)
+
+====================================================================================================
 engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50 (1 suspect)
   File: engine/drender.cpp
 ====================================================================================================
   Line 22 [pointer_cast]: *(int *)((int)g_ScreenBufferArray[iVar2] + iVar1 * 4)) {
-
-====================================================================================================
-engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0 (1 suspect)
-  File: engine/drender.cpp
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 0 params but call sites push 1 (1 missing)
 
 ====================================================================================================
 engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 (1 suspect)
@@ -8467,6 +8610,21 @@ engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80 (1 suspect)
   File: engine/drender.cpp
 ====================================================================================================
   Line 46 [pointer_cast]: piVar1 = (int *)((int)g_CapturedFacePointers + iVar5);
+
+====================================================================================================
+engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_0048d7a0 (10 suspects)
+  File: engine/drender.cpp
+====================================================================================================
+  Line 14 [unnamed_local]: SInputFace local_24;
+  Line 23 [unnamed_local]: local_24.vertex_indices.vertex_index_0 = (ushort)quad->vertices[0].vertex_index;
+  Line 24 [unnamed_local]: local_24.vertex_indices.vertex_index_1 = (ushort)quad->vertices[1].vertex_index;
+  Line 25 [unnamed_local]: local_24.vertex_indices.vertex_index_2 = (ushort)quad->vertices[2].vertex_index;
+  Line 26 [unnamed_local]: local_24.u_coord_0 = (ushort)(quad->vertices[0].texture_u >> 8);
+  Line 27 [unnamed_local]: local_24.u_coord_1 = (ushort)(quad->vertices[1].texture_u >> 8);
+  Line 28 [unnamed_local]: local_24.u_coord_2 = (ushort)(quad->vertices[2].texture_u >> 8);
+  Line 29 [unnamed_local]: local_24.v_coord_0 = (ushort)(quad->vertices[0].texture_v >> 8);
+  Line 30 [unnamed_local]: local_24.v_coord_1 = (ushort)(quad->vertices[1].texture_v >> 8);
+  Line 31 [unnamed_local]: local_24.v_coord_2 = (ushort)(quad->vertices[2].texture_v >> 8);
 
 ====================================================================================================
 engine_drender.cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950 (1 suspect)
@@ -8563,9 +8721,10 @@ engine_drender.cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40 (2 sus
   Line 38 [pointer_cast]: iVar2 = *(int *)((int)g_VertexIndexBuffer + iVar6);
 
 ====================================================================================================
-engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00 (3 suspects)
+engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00 (4 suspects)
   File: engine/drender.cpp
 ====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 5 params but call sites push 4 (1 extra)
   Line 48 [pointer_cast]: (SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + primitive_stride);
   Line 100 [pointer_cast]: (SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + primitive_stride);
   Line 113 [pointer_cast]: (SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + primitive_stride);
@@ -8783,6 +8942,12 @@ engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40 (2 suspe
   Line 137 [pointer_cast]: *(uint *)((int)&local_40->directory_entries->checksum + local_34)
 
 ====================================================================================================
+engine_fileio.cpp_CFileManager_dtor_FUN_004b53d0 (1 suspect)
+  File: engine/fileio.cpp
+====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 2 params but call sites push 1 (1 extra)
+
+====================================================================================================
 engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50 (3 suspects)
   File: engine/fileio.cpp
 ====================================================================================================
@@ -8933,6 +9098,12 @@ engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0 (20 suspects)
   Line 560 [pointer_cast]: ((uint *)(x * 4 + *(int *)((int)g_ScreenBufferArray + iVar11)),local_d4,
 
 ====================================================================================================
+engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0 (1 suspect)
+  File: engine/font.cpp
+====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 6 params but call sites push 2 (4 extra)
+
+====================================================================================================
 engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550 (1 suspect)
   File: engine/font.cpp
 ====================================================================================================
@@ -8988,9 +9159,10 @@ engine_ini.cpp_CIni_getProfileString_FUN_004fb250 (5 suspects)
   Line 101 [unrolled_strcpy]: do {
 
 ====================================================================================================
-engine_keyframe.c_calculatePackedSurfaceNormal_FUN_00501a00 (1 suspect)
+engine_keyframe.c_calculatePackedSurfaceNormal_FUN_00501a00 (2 suspects)
   File: engine/keyframe.c
 ====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 2 params but call sites push 0 (2 extra)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 ====================================================================================================
@@ -9020,10 +9192,9 @@ engine_matrix.c_initializeTrigTables_FUN_0050c530 (3 suspects)
   Line 27 [pointer_cast]: *(int *)((int)g_CosTable + iVar2) = (int)ROUND(ROUND(fVar1 * fVar3));
 
 ====================================================================================================
-engine_matrix.c_invertTransformMatrix_FUN_0050c640 (2 suspects)
+engine_matrix.c_invertTransformMatrix_FUN_0050c640 (1 suspect)
   File: engine/matrix.c
 ====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 0 params but call sites push 2 (2 missing)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 ====================================================================================================
@@ -9164,9 +9335,10 @@ engine_pod.cpp_findFilesByExtension_FUN_00550ce0 (3 suspects)
   Line 76 [unrolled_strcpy]: do {
 
 ====================================================================================================
-engine_prim.c_renderPolygonSoftware_FUN_00552510 (18 suspects)
+engine_prim.c_renderPolygonSoftware_FUN_00552510 (19 suspects)
   File: engine/prim.c
 ====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 2 params but call sites push 1 (1 extra)
   Line 33 [unnamed_local]: SSoftwareEdge *local_14;
   Line 199 [unnamed_local]: (local_14 = engine_prim_c_findEdgeInBuffer_FUN_00551f70(g_SoftwareMinScanline,edge_ptr),
   Line 200 [unnamed_local]: iVar10 = g_SoftwareMinScanline, local_14 != (SSoftwareEdge *)0x0)) {
@@ -10151,10 +10323,9 @@ shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 (14 suspects)
   Line 345 [sub84_truncation]: local_108 = SUB84(__BITCAST_UINT64(dVar20),0);
 
 ====================================================================================================
-shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50 (5 suspects)
+shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50 (4 suspects)
   File: shape/meshlod.cpp
 ====================================================================================================
-  Line 0 [param_count_too_many]: Function declares 2 params but call sites push 1 (1 extra)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
   Line 68 [pointer_cast]: *(uint *)((int)g_SampleDistances + iVar8) = 0;
   Line 70 [pointer_cast]: *(uint *)((int)g_SampleDistances + iVar8 + 4) = 0x3ff00000;
@@ -12075,6 +12246,12 @@ support_codec.cpp_CLZWDictionary_initTable_FUN_0043eef0 (4 suspects)
   Line 17 [pointer_cast]: *(uint *)((int)&this_ptr->node_table->next_sibling + iVar1) = 0xffffffff;
 
 ====================================================================================================
+support_newmsg.cpp_findLocalizedString_FUN_00544170 (1 suspect)
+  File: support/newmsg.cpp
+====================================================================================================
+  Line 0 [param_count_too_many]: Function declares 3 params but call sites push 2 (1 extra)
+
+====================================================================================================
 support_newmsg.cpp_readMessageFile_FUN_00543e40 (9 suspects)
   File: support/newmsg.cpp
 ====================================================================================================
@@ -12136,10 +12313,9 @@ wincore_wddvmem.cpp_initializeColorMasks_FUN_004f3ff0 (1 suspect)
   Line 23 [pointer_cast]: *(ushort *)((int)g_ColorTable16 + iVar7) =
 
 ====================================================================================================
-wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ecc10 (2 suspects)
+wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ecc10 (1 suspect)
   File: wincore/wddvmem.cpp
 ====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 0 params but call sites push 2 (2 missing)
   Line 24 [pointer_cast]: g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);
 
 ====================================================================================================
@@ -12196,12 +12372,6 @@ wincore_windll.cpp_renderScanline_FUN_005b5710 (2 suspects)
 ====================================================================================================
   Line 5 [warning_jumptable]: /* WARNING: Could not recover jumptable at 0x005b5710. Too many branches */
   Line 6 [warning_indirect_jump]: /* WARNING: Treating indirect jump as call */
-
-====================================================================================================
-wincore_windll.cpp_restoreVideoMode_FUN_005b75b0 (1 suspect)
-  File: wincore/windll.cpp
-====================================================================================================
-  Line 0 [param_count_too_few]: Function declares 0 params but call sites push 1 (1 missing)
 
 ====================================================================================================
 wincore_winrun.cpp_enqueueInput_FUN_005f2f30 (1 suspect)

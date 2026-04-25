@@ -7,15 +7,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 210,
-    "complexity_score": 79,
+    "complexity_score": 64,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 29,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 49,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
       "warning_inlined_function"
     ],
     "total_lines": 259
@@ -237,12 +236,12 @@
         "call_addr": "0050cc04",
         "call_type": "direct",
         "caller": "engine_matrix.c_buildRotationMatrix_FUN_0050c920",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 0,
+        "instructions_analyzed": 30,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
+        "stack_bytes": 0,
+        "stack_params": 0
       },
       {
         "call_addr": "0048c412",
@@ -256,11 +255,11 @@
         "stack_params": 0
       }
     ],
-    "confidence": "low",
+    "confidence": "high",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 2,
-    "matches_declared": false
+    "estimated_params": 0,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.355,
@@ -324,17 +323,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:2",
-      "param_delta": 2,
-      "text": "Function declares 0 params but call sites push 2 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

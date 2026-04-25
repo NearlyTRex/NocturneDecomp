@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 43,
+    "complexity_score": 58,
     "cross_reference_count": 106,
     "function_call_count": 2,
     "global_count": 7,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 43,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_many"
+    ],
     "total_lines": 132
   },
   "cross_references": [
@@ -731,8 +733,8 @@
         "call_type": "direct",
         "caller": "core_charactr.cpp_staticInit_FUN_00427d80",
         "estimated_params": 6,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "instructions_analyzed": 8,
+        "method": "push_count",
         "reg_params": [],
         "stack_bytes": 24,
         "stack_params": 6
@@ -742,8 +744,8 @@
         "call_type": "direct",
         "caller": "core_werewolf.cpp_staticInit_FUN_005efb70",
         "estimated_params": 6,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "instructions_analyzed": 18,
+        "method": "push_count",
         "reg_params": [],
         "stack_bytes": 24,
         "stack_params": 6
@@ -752,96 +754,96 @@
         "call_addr": "004a94e8",
         "call_type": "direct",
         "caller": "core_enemy.cpp_staticInit_FUN_004a94d0",
-        "estimated_params": 6,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 5,
+        "instructions_analyzed": 6,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 24,
-        "stack_params": 6
+        "stack_bytes": 20,
+        "stack_params": 5
       },
       {
         "call_addr": "00410d6b",
         "call_type": "direct",
         "caller": "core_ammo.cpp_staticInit_FUN_00410d50",
-        "estimated_params": 6,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 5,
+        "instructions_analyzed": 6,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 24,
-        "stack_params": 6
+        "stack_bytes": 20,
+        "stack_params": 5
       },
       {
         "call_addr": "0041154b",
         "call_type": "direct",
         "caller": "core_ammobox.cpp_staticInit_FUN_00411530",
-        "estimated_params": 6,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 5,
+        "instructions_analyzed": 6,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 24,
-        "stack_params": 6
+        "stack_bytes": 20,
+        "stack_params": 5
       },
       {
         "call_addr": "00411c8b",
         "call_type": "direct",
         "caller": "core_anvil.cpp_staticInit_FUN_00411c70",
-        "estimated_params": 6,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 5,
+        "instructions_analyzed": 6,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 24,
-        "stack_params": 6
+        "stack_bytes": 20,
+        "stack_params": 5
       },
       {
         "call_addr": "0041214b",
         "call_type": "direct",
         "caller": "core_armour.cpp_staticInit_FUN_00412130",
-        "estimated_params": 6,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 5,
+        "instructions_analyzed": 6,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 24,
-        "stack_params": 6
+        "stack_bytes": 20,
+        "stack_params": 5
       },
       {
         "call_addr": "0041416b",
         "call_type": "direct",
         "caller": "core_barrier.cpp_staticInit_FUN_00414150",
-        "estimated_params": 6,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 5,
+        "instructions_analyzed": 6,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 24,
-        "stack_params": 6
+        "stack_bytes": 20,
+        "stack_params": 5
       },
       {
         "call_addr": "004181cb",
         "call_type": "direct",
         "caller": "core_beast.cpp_staticInit_FUN_004181b0",
-        "estimated_params": 6,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 5,
+        "instructions_analyzed": 6,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 24,
-        "stack_params": 6
+        "stack_bytes": 20,
+        "stack_params": 5
       },
       {
         "call_addr": "0041856b",
         "call_type": "direct",
         "caller": "core_biggs.cpp_staticInit_FUN_00418550",
-        "estimated_params": 6,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 5,
+        "instructions_analyzed": 6,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 24,
-        "stack_params": 6
+        "stack_bytes": 20,
+        "stack_params": 5
       }
     ],
     "confidence": "high",
     "declared_params": 6,
     "declared_stack_bytes": 24,
-    "estimated_params": 6,
-    "matches_declared": true
+    "estimated_params": 5,
+    "matches_declared": false
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.328767123287672,
@@ -925,5 +927,17 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "call_site_count": 50,
+      "declared_params": 6,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 5,
+      "fix_type": "remove_params",
+      "match": "declared:6 vs estimated:5",
+      "param_delta": -1,
+      "text": "Function declares 6 params but call sites push 5 (1 extra)",
+      "type": "param_count_too_many"
+    }
+  ]
 }

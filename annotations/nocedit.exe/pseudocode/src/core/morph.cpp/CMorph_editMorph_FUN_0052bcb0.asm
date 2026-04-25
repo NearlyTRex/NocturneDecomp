@@ -1,12 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
+; void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *this_ptr)
 ;
 ; Parameters:
-; CMorph *         Stack[0x4]:4   morph
+; CMorph *         Stack[0x4]:4   this_ptr
 ; Local Variables:
-; CDeformableModelInstance[2] Stack[-0x4db8]:17768  local_4db8
 ; CPickList        Stack[-0x850]:936  CStack_850
 ; SMorphControlPoint[20] Stack[-0x4a8]:640  local_4a8
 ; char[256]        Stack[-0x228]:256  local_228
@@ -45,7 +44,6 @@
 ; _BIT_INTEGER32   Stack[-0x78]:4  local_78
 ; int              Stack[-0x74]:4  local_74
 ; int              Stack[-0x70]:4  local_70
-; int              Stack[-0x6c]:4  local_6c
 ; int              Stack[-0x68]:4  local_68
 ; int              Stack[-0x64]:4  local_64
 ; int              Stack[-0x60]:4  local_60
@@ -439,7 +437,7 @@ section .text
         ;   Label: LAB_0052c110
     PUSH EBX                            ; 0052c116 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0 ; 0052c117
-        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0()
+        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0052c11c
     INC ESI                             ; 0052c11f
     MOV EAX,dword ptr [ESP + 0x4d80]    ; 0052c120
@@ -608,7 +606,7 @@ section .text
         ;   Label: LAB_0052c33d
     PUSH EBX                            ; 0052c343 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0 ; 0052c344
-        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0()
+        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0052c349
     MOV ESI,dword ptr [ESP + 0x4d98]    ; 0052c34c
     MOV EAX,dword ptr [ESP + 0x4d8c]    ; 0052c353
@@ -724,7 +722,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x4dcc]    ; 0052c4b8
     PUSH EBX                            ; 0052c4bf
     CALL core_morph.cpp_CMorph_previewMorph_FUN_0052ca90 ; 0052c4c0
-        ;   XREF to: 0052ca90 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_previewMorph_FUN_0052ca90(CMorph * this_ptr)
+        ;   XREF to: 0052ca90 (UNCONDITIONAL_CALL)  ; void core_morph.cpp_CMorph_previewMorph_FUN_0052ca90(CMorph * this_ptr, CDeformableModelInstance * model_ptr)
     ADD ESP,0x8                         ; 0052c4c5
     PUSH EBX                            ; 0052c4c8
     CALL core_morph.cpp_CMorph_free_FUN_0052b350 ; 0052c4c9

@@ -45,7 +45,7 @@ void __cdecl freeRenderBuffers(void);
 
 // Original: wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ecc10
 // Address: 005ecc10
-int __cdecl initializeGraphicsSystem(void);
+int __cdecl initializeGraphicsSystem(int width,int height);
 
 // Original: wincore_wddvmem.cpp_cleanupGraphicsSystem_FUN_005ecd90
 // Address: 005ecd90

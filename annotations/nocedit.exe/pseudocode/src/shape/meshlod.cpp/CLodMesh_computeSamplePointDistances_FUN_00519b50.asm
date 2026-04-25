@@ -1,11 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50(CLodMesh *this_ptr,double max_search_radius)
+; void __cdecl shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50(CLodMesh *this_ptr)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr
-; double           Stack[0x8]:8   max_search_radius
 ; Local Variables:
 ; CBoundingBox3D   Stack[-0x90]:24  local_90
 ; float            Stack[-0x78]:4  local_78

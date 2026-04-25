@@ -48,7 +48,7 @@ section .text
     MOV ECX,dword ptr [0x00679394]      ; 00401019 | g_WindowWidth
     PUSH ECX                            ; 0040101f
     CALL wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ecc10 ; 00401020
-        ;   XREF to: 005ecc10 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ecc10()
+        ;   XREF to: 005ecc10 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ecc10(int width, int height)
     ADD ESP,0x8                         ; 00401025
     TEST EAX,EAX                        ; 00401028
     JZ 0x004010ce                       ; 0040102a

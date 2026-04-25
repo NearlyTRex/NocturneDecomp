@@ -181,7 +181,7 @@ section .text
         ;   Label: LAB_0050700e
     PUSH EBX                            ; 00507014 | g_CSoundInstance
     CALL core_sound.cpp_CSound_dtor_FUN_005b2d60 ; 00507015
-        ;   XREF to: 005b2d60 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_dtor_FUN_005b2d60()
+        ;   XREF to: 005b2d60 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_dtor_FUN_005b2d60(CSound * this_ptr)
     ADD ESP,0x4                         ; 0050701a
     CALL engine_2d.c_cleanupGraphicsSystem_FUN_00401130 ; 0050701d
         ;   XREF to: 00401130 (UNCONDITIONAL_CALL)  ; void engine_2d.c_cleanupGraphicsSystem_FUN_00401130()

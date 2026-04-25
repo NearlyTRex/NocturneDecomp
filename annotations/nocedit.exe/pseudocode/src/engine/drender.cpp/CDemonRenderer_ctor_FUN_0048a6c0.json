@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 12,
+    "complexity_score": 27,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 12,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_many"
+    ],
     "total_lines": 23
   },
   "cross_references": [
@@ -53,19 +55,19 @@
         "call_addr": "0048a6b5",
         "call_type": "direct",
         "caller": "engine_drender.cpp_staticInit_FUN_0048a6b0",
-        "estimated_params": 1,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 4,
-        "stack_params": 1
+        "stack_bytes": 0,
+        "stack_params": 0
       }
     ],
-    "confidence": "medium",
+    "confidence": "low",
     "declared_params": 1,
     "declared_stack_bytes": 4,
-    "estimated_params": 1,
-    "matches_declared": true
+    "estimated_params": 0,
+    "matches_declared": false
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 2.9,
@@ -95,5 +97,17 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "call_site_count": 1,
+      "declared_params": 1,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 0,
+      "fix_type": "remove_params",
+      "match": "declared:1 vs estimated:0",
+      "param_delta": -1,
+      "text": "Function declares 1 params but call sites push 0 (1 extra)",
+      "type": "param_count_too_many"
+    }
+  ]
 }

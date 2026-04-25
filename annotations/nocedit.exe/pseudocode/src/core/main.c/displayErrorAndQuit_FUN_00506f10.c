@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Variable defined which should be unmapped: local_14 */
+
 void __cdecl core_main_c_displayErrorAndQuit_FUN_00506f10(char *format,...)
 
 {
@@ -63,9 +65,12 @@ LAB_00506f71:
           _fprintf(p_Var1,"errno = %d (%s)\n",*puVar3,pcVar1);
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var1,"..\\core\\main.c",0xad);
         }
-        core_sound_cpp_CSound_dtor_FUN_005b2d60();
+        core_sound_cpp_CSound_dtor_FUN_005b2d60(g_CSoundPtr);
+        local_14.value[0] = (char * [1])(char *)0x507022;
         engine_2d_c_cleanupGraphicsSystem_FUN_00401130();
+        local_14.value[0] = (char * [1])(char *)0x507027;
         wincore_winrun_cpp_endPeriod_FUN_005f2db0();
+        local_14.value[0] = (char * [1])g_ErrorMessageBuffer_02dd3130;
                     /* WARNING: Subroutine does not return */
         wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_005f3920(g_ErrorMessageBuffer_02dd3130);
       }

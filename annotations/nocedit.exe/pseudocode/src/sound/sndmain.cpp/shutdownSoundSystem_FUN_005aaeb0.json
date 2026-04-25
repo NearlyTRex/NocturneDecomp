@@ -22,7 +22,7 @@
       "addr": "005b2d60",
       "from_addr": "005b2d60",
       "name": "core_sound.cpp_CSound_dtor_FUN_005b2d60",
-      "type": "UNCONDITIONAL_JUMP"
+      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -73,9 +73,21 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 0,
-    "call_sites": [],
-    "confidence": "unknown",
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005b2d60",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_CSound_dtor_FUN_005b2d60",
+        "estimated_params": 0,
+        "instructions_analyzed": 0,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
     "declared_params": 0,
     "declared_stack_bytes": 0,
     "estimated_params": 0,

@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Variable defined which should be unmapped: local_110 */
+
 void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
 
 {
@@ -78,18 +80,63 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
   core_netgame_cpp_CNetGame_shutdown_FUN_0053f830(g_CNetGamePtr);
   engine_ncursfx_cpp_CMouse_reset_FUN_00544500(g_CMousePtr);
   core_mission_cpp_CDemonMission_clearMission_FUN_00522d20(g_CDemonMissionPtr);
-  core_sound_cpp_CSound_dtor_FUN_005b2d60();
+  core_sound_cpp_CSound_dtor_FUN_005b2d60(g_CSoundPtr);
+  local_110[0] = -0x15;
+  local_110[1] = -0x79;
+  local_110[2] = 'P';
+  local_110[3] = '\0';
   core_dmodel_cpp_freeAllModels_FUN_00478cb0();
+  local_110[0] = -0x10;
+  local_110[1] = -0x79;
+  local_110[2] = 'P';
+  local_110[3] = '\0';
   core_skeleton_cpp_freeAllModels_FUN_005a1dc0();
+  local_110[0] = -0xb;
+  local_110[1] = -0x79;
+  local_110[2] = 'P';
+  local_110[3] = '\0';
   core_skeleton_cpp_freeAllSkeletons_FUN_005a1ea0();
+  local_110[0] = -6;
+  local_110[1] = -0x79;
+  local_110[2] = 'P';
+  local_110[3] = '\0';
   engine_matrix_c_doNothing_FUN_0050c5b0();
+  local_110[0] = -1;
+  local_110[1] = -0x79;
+  local_110[2] = 'P';
+  local_110[3] = '\0';
   wincore_winrun_cpp_endPeriod_FUN_005f2db0();
+  local_110[0] = '\x04';
+  local_110[1] = -0x78;
+  local_110[2] = 'P';
+  local_110[3] = '\0';
   engine_2d_c_cleanupGraphicsSystem_FUN_00401130();
+  local_110[0] = '\t';
+  local_110[1] = -0x78;
+  local_110[2] = 'P';
+  local_110[3] = '\0';
   wincore_wddvmem_cpp_freeTextureCache_FUN_004037a0();
+  local_110[0] = '\x0e';
+  local_110[1] = -0x78;
+  local_110[2] = 'P';
+  local_110[3] = '\0';
   core_dfont_cpp_freeFonts_FUN_004710a0();
+  local_110[0] = '\x13';
+  local_110[1] = -0x78;
+  local_110[2] = 'P';
+  local_110[3] = '\0';
   wincore_winrun_cpp_doNothing2_FUN_005f4380();
+  local_110._0_4_ = g_CDemonPodPtr;
   engine_pod_cpp_CPod_cleanup_FUN_00550c80((CPod *)g_CDemonPodPtr);
+  local_110[0] = '&';
+  local_110[1] = -0x78;
+  local_110[2] = 'P';
+  local_110[3] = '\0';
   core_inivar_cpp_writeIniData_FUN_004fc510();
+  local_110[0] = '0';
+  local_110[1] = '\x05';
+  local_110[2] = '\0';
+  local_110[3] = '\0';
   shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\main.c",0x530);
   return;
 }

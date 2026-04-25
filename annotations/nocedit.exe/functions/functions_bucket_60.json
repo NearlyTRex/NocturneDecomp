@@ -17959,17 +17959,17 @@
           "name":"SStack_a0",
           "storage":{
             "offset":-160,
-            "size":8,
+            "size":16,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0xa0]",
                 "offset":-160,
-                "size":8
+                "size":16
               }
             ]
           },
-          "type":"SLineStrip"
+          "type":"SLineStrip2Index"
         },
         {
           "name":"this_ptr",
@@ -75713,7 +75713,27 @@
     "name":"core_sound.cpp_CSound_dtor_FUN_005b2d60",
     "ret":"void",
     "thtarget":"005aaeb0",
-    "thunk":true
+    "thunk":true,
+    "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CSound*"
+        }
+      ]
+    }
   },
   {
     "addr":"005b3ae0",

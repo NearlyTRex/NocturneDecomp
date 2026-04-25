@@ -93,7 +93,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_computeAllEdgeCollapseCosts_FUN_00519710
 void __cdecl shape_meshlod_cpp_CLodMesh_validateAndRemoveInvalidFaces_FUN_005197c0(CLodMesh *this_ptr);
 int __cdecl shape_meshlod_cpp_CLodMesh_validateFace_FUN_00519830(CLodMesh *this_ptr,CLodFace *face);
 int __cdecl shape_meshlod_cpp_CLodFace_computeNormalAndPlane_FUN_00519870(CLodFace *this_ptr,CVector3f *vertex0_pos,CVector3f *vertex1_pos, CVector3f *vertex2_pos);
-void __cdecl shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50(CLodMesh *this_ptr,double max_search_radius);
+void __cdecl shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50(CLodMesh *this_ptr);
 void __cdecl shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030(CLodMesh *this_ptr,int grid_x,int grid_y,int grid_z);
 void __cdecl shape_meshlod_cpp_CLodMesh_weldVertices_FUN_0051a150(CLodMesh *this_ptr,float weld_threshold);
 CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300(CLodMesh *this_ptr,CVector3f *output_closest_point,CVector3f *target_point);

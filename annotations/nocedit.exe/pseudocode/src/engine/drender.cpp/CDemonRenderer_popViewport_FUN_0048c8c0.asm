@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0(void)
+; void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0(CDemonRenderer *this_ptr)
 ;
+; Parameters:
+; CDemonRenderer * Stack[0x4]:4   this_ptr
 ;
 ; XREF[9]:
 ;   core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0 at 0044ce13
@@ -15,11 +17,14 @@
 ;   core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310 at 005804fd
 ;   core_setedit.cpp_renderBackdropImage_FUN_0057ce80 at 0057d21e
 ;
+; Called Functions:
+;   engine_matrix.c_popViewport_FUN_0050e480
+;
 ; *****************************************************************************
 
 section .text
 
-    JMP 0x0050e480                      ; 0048c8c0
-        ;   XREF to: 0050e480 (UNCONDITIONAL_JUMP)
+    CALL engine_matrix.c_popViewport_FUN_0050e480 ; 0048c8c0
+        ;   XREF to: 0050e480 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_0050e480()
         ;   Label: engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0
 

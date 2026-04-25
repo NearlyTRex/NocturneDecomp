@@ -7,14 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1764,
-    "complexity_score": 834,
+    "complexity_score": 849,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 779,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
+      "param_count_too_many",
       "pointer_cast"
     ],
     "total_lines": 2543
@@ -172,12 +173,12 @@
         "call_addr": "004c0229",
         "call_type": "direct",
         "caller": "core_fire.cpp_CStake_process_FUN_004c0210",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 1,
+        "instructions_analyzed": 6,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "0041e33e",
@@ -191,11 +192,11 @@
         "stack_params": 2
       }
     ],
-    "confidence": "high",
+    "confidence": "low",
     "declared_params": 2,
     "declared_stack_bytes": 8,
-    "estimated_params": 2,
-    "matches_declared": true
+    "estimated_params": 1,
+    "matches_declared": false
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.116376724655069,
@@ -940,6 +941,17 @@
       "severity": "moderate",
       "text": "iVar11 = *(int *)((int)local_3d0 + iVar18);",
       "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 2,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 1,
+      "fix_type": "remove_params",
+      "match": "declared:2 vs estimated:1",
+      "param_delta": -1,
+      "text": "Function declares 2 params but call sites push 1 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

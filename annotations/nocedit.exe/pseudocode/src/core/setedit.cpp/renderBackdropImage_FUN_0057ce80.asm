@@ -336,7 +336,7 @@ section .text
     MOV ECX,dword ptr [0x006703ec]      ; 0057d217 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 0057d21d | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0 ; 0057d21e
-        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0()
+        ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0057d223
     CMP dword ptr [ESP + 0x2654],0x0    ; 0057d226
     JZ 0x0057d2bc                       ; 0057d22e

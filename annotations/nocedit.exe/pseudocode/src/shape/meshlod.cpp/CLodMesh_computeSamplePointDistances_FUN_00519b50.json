@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 446,
-    "complexity_score": 257,
+    "complexity_score": 242,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 18,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 192,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
-      "param_count_too_many",
       "pointer_cast",
       "warning_inlined_function"
     ],
@@ -40,7 +39,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50",
-    "signature": "void __cdecl shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50(CLodMesh *this_ptr,double max_search_radius)"
+    "signature": "void __cdecl shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50(CLodMesh *this_ptr)"
   },
   "function_calls": [
     {
@@ -189,11 +188,11 @@
         "stack_params": 1
       }
     ],
-    "confidence": "low",
-    "declared_params": 2,
-    "declared_stack_bytes": 12,
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1,
-    "matches_declared": false
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.300561797752809,
@@ -271,10 +270,10 @@
     }
   ],
   "stack_frame": {
-    "frame_size": 160,
+    "frame_size": 152,
     "local_size": 148,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -437,13 +436,6 @@
         "offset": 4,
         "size": 4,
         "type": "CLodMesh *"
-      },
-      {
-        "is_param": true,
-        "name": "max_search_radius",
-        "offset": 8,
-        "size": 8,
-        "type": "double"
       }
     ]
   },
@@ -548,17 +540,6 @@
       "severity": "moderate",
       "text": "fVar3 = SQRT((float)*(double *)((int)g_SampleDistances + iVar6));",
       "type": "pointer_cast"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 2,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 1,
-      "fix_type": "remove_params",
-      "match": "declared:2 vs estimated:1",
-      "param_delta": -1,
-      "text": "Function declares 2 params but call sites push 1 (1 extra)",
-      "type": "param_count_too_many"
     }
   ]
 }

@@ -7,18 +7,18 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 198,
-    "complexity_score": 106,
+    "complexity_score": 110,
     "cross_reference_count": 745,
     "function_call_count": 14,
     "global_count": 20,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 76,
+    "pseudocode_lines": 80,
     "suspect_count": 2,
     "suspect_types": [
       "unrolled_strchr",
       "warning_noreturn"
     ],
-    "total_lines": 274
+    "total_lines": 278
   },
   "cross_references": [
     {
@@ -4731,12 +4731,12 @@
         "call_addr": "0042d4c0",
         "call_type": "direct",
         "caller": "core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0",
-        "estimated_params": 2,
-        "instructions_analyzed": 0,
-        "method": "add_esp",
+        "estimated_params": 3,
+        "instructions_analyzed": 8,
+        "method": "push_count",
         "reg_params": [],
-        "stack_bytes": 8,
-        "stack_params": 2
+        "stack_bytes": 12,
+        "stack_params": 3
       },
       {
         "call_addr": "0043baa0",
@@ -4847,6 +4847,17 @@
     },
     "pcode_op_count": 601
   },
+  "resolved_suspects": [
+    {
+      "description": "Variable defined which should be unmapped",
+      "line": 2,
+      "match": "WARNING: Variable defined which should be unmapped",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "/* WARNING: Variable defined which should be unmapped: local_14 */",
+      "type": "warning_unmapped_variable"
+    }
+  ],
   "stack_frame": {
     "frame_size": 28,
     "local_size": 24,
@@ -4897,7 +4908,7 @@
   "suspects": [
     {
       "description": "Subroutine marked as non-returning",
-      "line": 62,
+      "line": 67,
       "match": "WARNING: Subroutine does not return",
       "severity": "mild",
       "text": "/* WARNING: Subroutine does not return */",
@@ -4905,7 +4916,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\\\' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\\\') in a .keep.",
-      "line": 65,
+      "line": 70,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "mild",
       "text": "do {",

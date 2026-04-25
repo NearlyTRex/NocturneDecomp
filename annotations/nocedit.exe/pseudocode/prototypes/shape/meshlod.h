@@ -221,7 +221,7 @@ int __cdecl CLodFace::computeNormalAndPlane(CLodFace *this_ptr,CVector3f *vertex
 
 // Original: shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
 // Address: 00519b50
-void __cdecl CLodMesh::computeSamplePointDistances(CLodMesh *this_ptr,double max_search_radius);
+void __cdecl CLodMesh::computeSamplePointDistances(CLodMesh *this_ptr);
 
 // Original: shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
 // Address: 0051a030

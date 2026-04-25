@@ -9,10 +9,12 @@
 void __cdecl core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(CDemonSet *this_ptr)
 
 {
+  void *pvVar1;
   int *piVar2;
   int iVar3;
   int iVar4;
   int iVar5;
+  int *in_stack_00000008;
   int local_24;
   CVector3i *local_20;
   CVector3f *local_1c;
@@ -33,9 +35,8 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(CDemon
     if (0 < this_ptr->camera_count) {
       local_1c = &this_ptr->cameras[0].orientation;
       local_20 = (CVector3i *)&this_ptr->cameras[0].position;
-      local_24 = 0;
       do {
-        piVar2 = (int *)(local_24 + (int)g_CameraDepthData);
+        pvVar1 = g_CameraDepthData;
         engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890
                   (g_CDemonRendererPtr2,0,0,0x140,0xf0);
         engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
@@ -44,26 +45,26 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(CDemon
                   (g_CDemonRendererPtr2,this_ptr->cameras[local_18].projection_scale);
         engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
                   (g_CDemonRendererPtr2,local_1c);
-        piVar2[3] = g_TransformMatrix.m[0].x;
-        piVar2[4] = g_TransformMatrix.m[0].y;
-        piVar2[5] = g_TransformMatrix.m[0].z;
-        piVar2[6] = g_TransformMatrix.m[1].x;
-        piVar2[7] = g_TransformMatrix.m[1].y;
-        piVar2[8] = g_TransformMatrix.m[1].z;
-        piVar2[9] = g_TransformMatrix.m[2].x;
-        piVar2[10] = g_TransformMatrix.m[2].y;
-        piVar2[0xb] = g_TransformMatrix.m[2].z;
+        *(int *)((int)pvVar1 + 0xc) = g_TransformMatrix.m[0].x;
+        *(int *)((int)pvVar1 + 0x10) = g_TransformMatrix.m[0].y;
+        *(int *)((int)pvVar1 + 0x14) = g_TransformMatrix.m[0].z;
+        *(int *)((int)pvVar1 + 0x18) = g_TransformMatrix.m[1].x;
+        *(int *)((int)pvVar1 + 0x1c) = g_TransformMatrix.m[1].y;
+        *(int *)((int)pvVar1 + 0x20) = g_TransformMatrix.m[1].z;
+        *(int *)((int)pvVar1 + 0x24) = g_TransformMatrix.m[2].x;
+        *(int *)((int)pvVar1 + 0x28) = g_TransformMatrix.m[2].y;
+        *(int *)((int)pvVar1 + 0x2c) = g_TransformMatrix.m[2].z;
         this_ptr_00 = g_CDemonRendererPtr2;
-        *piVar2 = g_CameraOriginX;
-        piVar2[1] = g_CameraOriginY;
-        piVar2[2] = g_CameraOriginZ;
+        *(int *)pvVar1 = g_CameraOriginX;
+        *(int *)((int)pvVar1 + 4) = g_CameraOriginY;
+        *(int *)((int)pvVar1 + 8) = g_CameraOriginZ;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                   (this_ptr_00,&g_ZeroVector.f);
         core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(this_ptr,9999.9,0);
         iVar5 = 0;
         do {
           iVar4 = 0;
-          iVar3 = (int)piVar2 + iVar5;
+          iVar3 = (int)pvVar1 + iVar5;
           do {
             iVar1 = *(int *)(iVar4 + *(int *)((int)g_ZBufferScanlineArray + iVar5));
             if (iVar1 < 1) {
@@ -77,12 +78,11 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(CDemon
           } while (iVar4 != 0x500);
           iVar5 = iVar5 + 4;
         } while (iVar5 != 0x3c0);
-        engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0();
+        engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0(g_CDemonRendererPtr2);
+        local_18 = local_18 + 0x1a4;
         local_1c = local_1c + 0x23;
-        local_20 = local_20 + 0x23;
-        local_24 = local_24 + 0x4b030;
-        local_18 = local_18 + 1;
-      } while (local_18 < this_ptr->camera_count);
+        local_20 = local_20 + 0x6404;
+      } while ((int)pvVar1 + 1 < *in_stack_00000008);
     }
   }
   return;

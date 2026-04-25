@@ -277,7 +277,7 @@ section .text
     MOV EBP,dword ptr [0x00681ef8]      ; 005087d7 | g_CSoundPtr
     PUSH EBP                            ; 005087dd | g_CSoundInstance
     CALL core_sound.cpp_CSound_dtor_FUN_005b2d60 ; 005087de
-        ;   XREF to: 005b2d60 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_dtor_FUN_005b2d60()
+        ;   XREF to: 005b2d60 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_dtor_FUN_005b2d60(CSound * this_ptr)
     ADD ESP,0x4                         ; 005087e3
     CALL core_dmodel.cpp_freeAllModels_FUN_00478cb0 ; 005087e6
         ;   XREF to: 00478cb0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_freeAllModels_FUN_00478cb0()

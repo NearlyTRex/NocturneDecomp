@@ -6,7 +6,7 @@
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   position
 ; Local Variables:
-; SLineStrip       Stack[-0xa0]:8  SStack_a0
+; SLineStrip2Index Stack[-0xa0]:16  SStack_a0
 ; float            Stack[-0x90]:4  local_90
 ; float            Stack[-0x8c]:4  local_8c
 ; float            Stack[-0x88]:4  local_88

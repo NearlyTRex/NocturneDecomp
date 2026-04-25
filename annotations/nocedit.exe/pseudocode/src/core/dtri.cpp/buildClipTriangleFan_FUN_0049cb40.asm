@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonTriangle * __cdecl core_dtri_cpp_buildClipTriangleFan_FUN_0049cb40(void)
+; CDemonTriangle * __cdecl core_dtri_cpp_buildClipTriangleFan_FUN_0049cb40(int flags)
 ;
+; Parameters:
+; int              Stack[0x4]:4   flags
 ;
 ; Referenced Globals:
 ;   CVector3f[16] g_ClipOutputVertices
@@ -26,7 +28,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0xc]       ; 0049cb44
     PUSH EDX                            ; 0049cb48
     CALL core_dtri.cpp_getClippedTriangleCount_FUN_0049cb30 ; 0049cb49
-        ;   XREF to: 0049cb30 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_getClippedTriangleCount_FUN_0049cb30()
+        ;   XREF to: 0049cb30 (UNCONDITIONAL_CALL)  ; int core_dtri.cpp_getClippedTriangleCount_FUN_0049cb30(int flags)
     ADD ESP,0x4                         ; 0049cb4e
     XOR EBP,EBP                         ; 0049cb51
     MOV dword ptr [ESP],EAX             ; 0049cb53
