@@ -19,6 +19,7 @@
 #include "types/structs/SBoneGuyBox.h"
 #include "types/structs/SBug.h"
 #include "types/structs/SCPUInfo.h"
+#include "types/structs/SCameraDepthEntry.h"
 #include "types/structs/SCameraEdge.h"
 #include "types/structs/SCameraViewportState.h"
 #include "types/structs/SCarryHand.h"

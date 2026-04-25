@@ -12,6 +12,9 @@ CDemonActorType g_CSimBoxClassInfo = {};
 // CPickList
 CPickList g_MissingBackdropFiles = {};
 
+// SCameraDepthEntry*
+SCameraDepthEntry* g_CameraDepthData = {};
+
 // char[100][30]
 char g_BoneNameBuffer[100][30] = {};
 
@@ -35,7 +38,4 @@ int g_GroundTextureCount = {};
 
 // int[250]
 int g_CameraFogEnabledFlags[250] = {};
-
-// void*
-void* g_CameraDepthData = {};
 

@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        89 ( 1.4%)
+  Functions with type issues:        87 ( 1.3%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          1
-    Undefined types in variables:      82
-    Unresolved stack params:           6
+    Undefined types in variables:      81
+    Unresolved stack params:           5
 
-  Excluded (.keep / MMX / by-value):   138 functions
+  Excluded (.keep / MMX / by-value):   139 functions
     Wrong calling convention:          1
-    Undefined types in variables:      135
+    Undefined types in variables:      136
     Unresolved stack params:           3
 
 ====================================================================================================
@@ -79,7 +79,7 @@ Wrong calling convention (unaffected register usage) (1)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (6)
+Unresolved stack parameters (missing from signature) (5)
 --------------------------------------------------------------------------------
 
   CWinFont_setColorAndDrawText
@@ -92,12 +92,6 @@ Unresolved stack parameters (missing from signature) (6)
     Address: 0x004251b0  File: core/bugs.cpp
     Evidence: in_stack_00000008, in_stack_00000008
     Signature: int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_004251b0(CBugs *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDemonSet_buildCameraDepthData
-    Address: 0x00580310  File: core/setedit.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: void __cdecl core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(CDemonSet *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CStranger_tryPlaceObject
@@ -119,7 +113,7 @@ Unresolved stack parameters (missing from signature) (6)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (82)
+Undefined types in variables (81)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -245,11 +239,6 @@ Undefined types in variables (82)
   CBugs_findNextSwarmVertex
     Address: 0x004270f0  File: core/bugs.cpp
     Locals:  local_68 (undefined4), local_18 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  renderBackdropImage
-    Address: 0x0057ce80  File: core/setedit.cpp
-    Locals:  local_2670 (undefined4[1200]), auStack_13b0 (undefined4[1200])
     Suggested: Resolve undefined types to concrete types
 
   CLodMesh_findClosestFaceToSamplePoint
@@ -597,7 +586,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (135)
+Undefined types - .keep overrides (136)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -948,6 +937,11 @@ Undefined types - .keep overrides (135)
   CLadder_processInEditor
     Address: 0x00502d00  File: core/ladder.cpp
     Params:  local_res8 (undefined4), local_res10 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  renderBackdropImage
+    Address: 0x0057ce80  File: core/setedit.cpp
+    Locals:  local_2670 (undefined4[1200]), auStack_13b0 (undefined4[1200])
     Suggested: Resolve undefined types to concrete types
 
   CDeformableModel_importVertexAssignmentsVPH

@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5150 (79.8%)
-With suspects: 1304
-Total suspects: 5881
+Clean: 5151 (79.8%)
+With suspects: 1303
+Total suspects: 5859
 
 ====================================================================================================
 cockpit_ckptutil.c_applyActPalette_FUN_004319b0 (1 suspect)
@@ -4787,69 +4787,64 @@ core_morph.cpp_CMorphModel_setFaceListFromTriangles_FUN_0052aca0 (10 suspects)
   Line 63 [pointer_cast]: *(int *)((int)&this_ptr->faces->vertices[2].vertex_index + local_14) +
 
 ====================================================================================================
-core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 (60 suspects)
+core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 (55 suspects)
   File: core/morph.cpp
 ====================================================================================================
-  Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x0052c904) */
-  Line 3 [warning_deadcode_restart]: /* WARNING: Restarted to delay deadcode elimination for space: stack */
-  Line 10 [warning_unmapped_variable]: /* WARNING: Variable defined which should be unmapped: local_4db8 */
-  Line 12 [warning_unmapped_variable]: /* WARNING: Variable defined which should be unmapped: local_6c */
-  Line 47 [unnamed_local]: CDeformableModelInstance local_4db8 [2];
-  Line 54 [unnamed_local]: CBoundingBox3D local_128 [3];
-  Line 84 [unnamed_local]: int local_6c;
-  Line 85 [unnamed_local]: int local_68;
-  Line 88 [unnamed_local]: uint local_5c;
-  Line 96 [unnamed_local]: int local_38;
-  Line 97 [unnamed_local]: int local_30;
-  Line 98 [unnamed_local]: CDeformableModelInstance *local_2c;
-  Line 100 [unnamed_local]: int local_24;
-  Line 107 [unnamed_local]: int local_8;
-  Line 129 [unnamed_local]: __arrinit(local_4db8,2,&g_CDeformableModelInstanceTypeInfo);
-  Line 134 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(local_4db8,local_228);
-  Line 139 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(local_4db8 + 1,local_228);
-  Line 142 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(local_4db8);
-  Line 143 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(local_4db8 + 1);
-  Line 144 [unnamed_local]: local_8c[0] = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(local_4db8);
-  Line 146 [unnamed_local]: (local_4db8 + 1);
-  Line 153 [unnamed_local]: local_6c = -1;
+  Line 38 [unnamed_local]: CDeformableModelInstance local_4db8 [2];
+  Line 42 [unnamed_local]: CBoundingBox3D local_128 [3];
+  Line 69 [unnamed_local]: int local_6c;
+  Line 70 [unnamed_local]: int local_68;
+  Line 73 [unnamed_local]: uint local_5c;
+  Line 81 [unnamed_local]: int local_38;
+  Line 82 [unnamed_local]: int local_30;
+  Line 83 [unnamed_local]: CDeformableModelInstance *local_2c;
+  Line 85 [unnamed_local]: int local_24;
+  Line 92 [unnamed_local]: int local_8;
+  Line 102 [unnamed_local]: __arrinit(local_4db8,2,&g_CDeformableModelInstanceTypeInfo);
+  Line 107 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(local_4db8,local_228);
+  Line 112 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(local_4db8 + 1,local_228);
+  Line 115 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(local_4db8);
+  Line 116 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(local_4db8 + 1);
+  Line 117 [unnamed_local]: local_8c[0] = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(local_4db8);
+  Line 119 [unnamed_local]: (local_4db8 + 1);
+  Line 126 [unnamed_local]: local_6c = -1;
+  Line 131 [unnamed_local]: __arrinit(local_128,2,&g_CBoundingBox3DTypeInfo);
+  Line 132 [unnamed_local]: local_30 = 0;
+  Line 134 [unnamed_local]: local_28 = local_4db8;
+  Line 140 [unnamed_local]: (local_3c,local_8c[local_30]->vertex_count[0],
+  Line 141 [unnamed_local]: local_4db8[local_30].skinned_vertices_buffer);
+  Line 146 [unnamed_local]: pCVar4 = local_4db8[local_30].skinned_vertices_buffer +
   Line 156 [pointer_cast]: (local_3c,*(int *)(*(int *)((int)local_8c + local_34) + 0x2c),
-  Line 158 [unnamed_local]: __arrinit(local_128,2,&g_CBoundingBox3DTypeInfo);
-  Line 159 [unnamed_local]: local_30 = 0;
-  Line 161 [unnamed_local]: local_28 = local_4db8;
   Line 166 [pointer_cast]: *(int *)((int)local_4a8[0].vertex_index + iVar5) * 0xc);
-  Line 170 [unnamed_local]: (local_3c,local_8c[local_30]->vertex_count[0],
-  Line 171 [unnamed_local]: local_4db8[local_30].skinned_vertices_buffer);
-  Line 179 [unnamed_local]: pCVar4 = local_4db8[local_30].skinned_vertices_buffer +
-  Line 198 [unnamed_local]: picked_side = 0;                          // asm 0052bffa: json local_8 = 0 per outer iter
+  Line 167 [unnamed_local]: local_40 = local_4db8;
   Line 200 [pointer_cast]: iVar12 = *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
-  Line 200 [unnamed_local]: local_40 = local_4db8;
-  Line 271 [unnamed_local]: piVar8 = (int *)((char *)local_4db8[picked_side].skinned_vertices_buffer + iVar15 * 0xc);
-  Line 276 [unnamed_local]: piVar7 = (int *)((char *)local_4db8[1 - picked_side].skinned_vertices_buffer + iVar12);
-  Line 307 [unnamed_local]: local_2c = local_4db8;
-  Line 307 [unnamed_local]: local_2c = local_4db8;
-  Line 312 [unnamed_local]: local_24 = -1;
-  Line 318 [unnamed_local]: local_8 = 0;
-  Line 330 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250(local_2c,0);
-  Line 334 [unnamed_local]: if (local_5c == 0) {
-  Line 352 [unnamed_local]: local_24 = iVar12;
-  Line 398 [unnamed_local]: if ((-1 < local_68) && (local_6c == picked_side) && (local_24 < 0)) {
-  Line 398 [unnamed_local]: if ((-1 < local_68) && (local_6c == picked_side) && (local_24 < 0)) {
-  Line 399 [unnamed_local]: local_4a8[local_68].vertex_index[local_6c] = iVar15;
-  Line 403 [unnamed_local]: if (-1 < local_24) {
-  Line 408 [unnamed_local]: local_6c = picked_side;
-  Line 421 [unnamed_local]: local_6c = picked_side;
-  Line 433 [unnamed_local]: local_6c = -1;
-  Line 452 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(local_4db8);
-  Line 453 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(local_4db8 + 1);
-  Line 454 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(local_4db8);
-  Line 455 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(local_4db8 + 1);
-  Line 456 [unnamed_local]: core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430(morph,0,local_4db8);
-  Line 457 [unnamed_local]: core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430(morph,1,local_4db8 + 1);
-  Line 459 [unnamed_local]: core_morph_cpp_CMorph_previewMorph_FUN_0052ca90(morph,local_4db8);
-  Line 477 [unnamed_local]: pCVar16 = &local_4db8[0].motion_controller;
-  Line 507 [unnamed_local]: local_5c = (uint)(local_5c == 0);
-  Line 513 [unnamed_local]: core_morph_cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0(local_4db8,0);
-  Line 517 [unnamed_local]: core_morph_cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0(local_4db8,0);
+  Line 213 [unnamed_local]: piVar8 = (int *)((char *)local_4db8[picked_side].skinned_vertices_buffer + iVar15 * 0xc);
+  Line 218 [unnamed_local]: piVar7 = (int *)((char *)local_4db8[1 - picked_side].skinned_vertices_buffer + iVar12);
+  Line 245 [unnamed_local]: local_2c = local_4db8;
+  Line 245 [unnamed_local]: local_2c = local_4db8;
+  Line 246 [unnamed_local]: local_24 = -1;
+  Line 248 [unnamed_local]: local_8 = 0;
+  Line 256 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250(local_2c,0);
+  Line 257 [unnamed_local]: if (local_5c == 0) {
+  Line 270 [unnamed_local]: local_24 = iVar12;
+  Line 298 [unnamed_local]: if ((-1 < local_68) && (local_6c == picked_side) && (local_24 < 0)) {
+  Line 298 [unnamed_local]: if ((-1 < local_68) && (local_6c == picked_side) && (local_24 < 0)) {
+  Line 299 [unnamed_local]: local_4a8[local_68].vertex_index[local_6c] = iVar15;
+  Line 303 [unnamed_local]: if (-1 < local_24) {
+  Line 305 [unnamed_local]: local_6c = picked_side;
+  Line 313 [unnamed_local]: local_6c = picked_side;
+  Line 325 [unnamed_local]: local_6c = -1;
+  Line 339 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(local_4db8);
+  Line 340 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(local_4db8 + 1);
+  Line 341 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(local_4db8);
+  Line 342 [unnamed_local]: core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(local_4db8 + 1);
+  Line 343 [unnamed_local]: core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430(morph,0,local_4db8);
+  Line 344 [unnamed_local]: core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430(morph,1,local_4db8 + 1);
+  Line 346 [unnamed_local]: core_morph_cpp_CMorph_previewMorph_FUN_0052ca90(morph,local_4db8);
+  Line 355 [unnamed_local]: pCVar16 = &local_4db8[0].motion_controller;
+  Line 378 [unnamed_local]: local_5c = (uint)(local_5c == 0);
+  Line 384 [unnamed_local]: core_morph_cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0(local_4db8,0);
+  Line 388 [unnamed_local]: core_morph_cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0(local_4db8,0);
 
 ====================================================================================================
 core_morph.cpp_CMorph_getReady_FUN_0052b680 (6 suspects)
@@ -5996,23 +5991,12 @@ core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00 (5 suspects)
   Line 52 [unnamed_local]: pCVar3->z = local_50.z;
 
 ====================================================================================================
-core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310 (14 suspects)
+core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310 (3 suspects)
   File: core/setedit.cpp
 ====================================================================================================
-  Line 10 [stack_param]: int *in_stack_00000008;
-  Line 41 [pointer_cast]: *(int *)((int)pvVar1 + 0xc) = g_TransformMatrix.m[0].x;
-  Line 42 [pointer_cast]: *(int *)((int)pvVar1 + 0x10) = g_TransformMatrix.m[0].y;
-  Line 43 [pointer_cast]: *(int *)((int)pvVar1 + 0x14) = g_TransformMatrix.m[0].z;
-  Line 44 [pointer_cast]: *(int *)((int)pvVar1 + 0x18) = g_TransformMatrix.m[1].x;
-  Line 45 [pointer_cast]: *(int *)((int)pvVar1 + 0x1c) = g_TransformMatrix.m[1].y;
-  Line 46 [pointer_cast]: *(int *)((int)pvVar1 + 0x20) = g_TransformMatrix.m[1].z;
-  Line 47 [pointer_cast]: *(int *)((int)pvVar1 + 0x24) = g_TransformMatrix.m[2].x;
-  Line 48 [pointer_cast]: *(int *)((int)pvVar1 + 0x28) = g_TransformMatrix.m[2].y;
-  Line 49 [pointer_cast]: *(int *)((int)pvVar1 + 0x2c) = g_TransformMatrix.m[2].z;
-  Line 52 [pointer_cast]: *(int *)((int)pvVar1 + 4) = g_CameraOriginY;
-  Line 53 [pointer_cast]: *(int *)((int)pvVar1 + 8) = g_CameraOriginZ;
-  Line 62 [pointer_cast]: iVar1 = *(int *)(iVar4 + *(int *)((int)g_ZBufferScanlineArray + iVar5));
-  Line 78 [stack_param]: } while ((int)pvVar1 + 1 < *in_stack_00000008);
+  Line 16 [unnamed_local]: int local_18;
+  Line 28 [unnamed_local]: for (local_18 = 0; local_18 < this_ptr->camera_count; local_18++) {
+  Line 28 [unnamed_local]: for (local_18 = 0; local_18 < this_ptr->camera_count; local_18++) {
 
 ====================================================================================================
 core_setedit.cpp_CDemonSet_drawCameraCoverageMap_FUN_0057ff70 (1 suspect)
@@ -6063,12 +6047,6 @@ core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (5 suspects)
   Line 213 [unrolled_strchr]: do {
   Line 245 [pointer_cast]: *(uint *)((int)g_S3DTextureGroundTypes + iVar6) = uVar4;
   Line 264 [pointer_cast]: *(uint *)((int)g_S3DTextureGroundTypes + iVar6) = 0;
-
-====================================================================================================
-core_setedit.cpp_CDemonSet_isPointVisibleFromCamera_FUN_005801b0 (1 suspect)
-  File: core/setedit.cpp
-====================================================================================================
-  Line 16 [pointer_cast]: piVar2 = (int *)((int)g_CameraDepthData + camera_index * 0x4b030);
 
 ====================================================================================================
 core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50 (3 suspects)
@@ -6216,19 +6194,14 @@ core_setedit.cpp_loadGroundTypes_FUN_00578420 (2 suspects)
   Line 41 [unrolled_strchr]: do {
 
 ====================================================================================================
-core_setedit.cpp_renderBackdropImage_FUN_0057ce80 (10 suspects)
+core_setedit.cpp_renderBackdropImage_FUN_0057ce80 (5 suspects)
   File: core/setedit.cpp
 ====================================================================================================
-  Line 46 [pointer_cast]: *(uint *)((int)auStack_266c + iVar2 + -4) =
-  Line 47 [pointer_cast]: *(uint *)((int)g_ScreenBufferArray + iVar2);
-  Line 49 [pointer_cast]: pvVar3 = (void *)((int)pvVar3 + render_width * 4);
-  Line 50 [pointer_cast]: *(uint *)((int)auStack_13b0 + iVar2) =
-  Line 51 [pointer_cast]: *(uint *)((int)g_ZBufferScanlineArray + iVar2);
-  Line 53 [pointer_cast]: pvVar4 = (void *)((int)pvVar4 + render_width * 4);
-  Line 124 [pointer_cast]: *(uint *)((int)g_ScreenBufferArray + iVar6) =
-  Line 125 [pointer_cast]: *(uint *)((int)auStack_266c + iVar6);
-  Line 126 [pointer_cast]: *(uint *)((int)g_ZBufferScanlineArray + iVar6) =
-  Line 127 [pointer_cast]: *(uint *)((int)auStack_13b0 + iVar6 + 4);
+  Line 26 [unnamed_local]: int local_28;
+  Line 27 [unnamed_local]: int local_24;
+  Line 29 [unnamed_local]: void *local_1c;
+  Line 33 [unnamed_local]: local_24 = g_WindowWidth;
+  Line 34 [unnamed_local]: local_28 = g_WindowHeight;
 
 ====================================================================================================
 core_setedit.cpp_renderColoredBox_FUN_005817d0 (7 suspects)

@@ -20,7 +20,7 @@ int __cdecl core_setedit_cpp_CDemonSet_isPointVisibleFromCamera_FUN_005801b0(CDe
   int iVar6;
   
   core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(this_ptr);
-  piVar2 = (int *)((int)g_CameraDepthData + camera_index * 0x4b030);
+  piVar2 = (int *)(g_CameraDepthData + camera_index);
   iVar1 = point->y - piVar2[1];
   iVar3 = point->x - *piVar2;
   iVar6 = point->z - piVar2[2];

@@ -4,19 +4,18 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 188,
-    "complexity_score": 229,
+    "complexity_score": 114,
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 23,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 79,
-    "suspect_count": 14,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param"
+      "unnamed_local"
     ],
     "total_lines": 267
   },
@@ -229,7 +228,7 @@
     {
       "addr": "03659384",
       "name": "g_CameraDepthData",
-      "type": "void*",
+      "type": "SCameraDepthEntry*",
       "value": null
     },
     {
@@ -319,6 +318,35 @@
     },
     "pcode_op_count": 681
   },
+  "resolved_suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)(iVar4 + *(int *)((int)g_ZBufferScanlineArray + iVar5));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 78,
+      "match": "in_stack_00000008",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while ((int)((int)&(pSVar1->origin).x + 1) < *in_stack_00000008);",
+      "type": "stack_param"
+    }
+  ],
   "stack_frame": {
     "frame_size": 44,
     "local_size": 40,
@@ -365,116 +393,31 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "int *in_stack_00000008;",
-      "type": "stack_param"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 16,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "int local_18;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)pvVar1 + 0xc) = g_TransformMatrix.m[0].x;",
-      "type": "pointer_cast"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 28,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "for (local_18 = 0; local_18 < this_ptr->camera_count; local_18++) {",
+      "type": "unnamed_local"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)pvVar1 + 0x10) = g_TransformMatrix.m[0].y;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 43,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)pvVar1 + 0x14) = g_TransformMatrix.m[0].z;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 44,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)pvVar1 + 0x18) = g_TransformMatrix.m[1].x;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)pvVar1 + 0x1c) = g_TransformMatrix.m[1].y;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)pvVar1 + 0x20) = g_TransformMatrix.m[1].z;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)pvVar1 + 0x24) = g_TransformMatrix.m[2].x;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)pvVar1 + 0x28) = g_TransformMatrix.m[2].y;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 49,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)pvVar1 + 0x2c) = g_TransformMatrix.m[2].z;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 52,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)pvVar1 + 4) = g_CameraOriginY;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)pvVar1 + 8) = g_CameraOriginZ;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 62,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "iVar1 = *(int *)(iVar4 + *(int *)((int)g_ZBufferScanlineArray + iVar5));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 78,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "} while ((int)pvVar1 + 1 < *in_stack_00000008);",
-      "type": "stack_param"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 28,
+      "match": "local_18",
+      "severity": "mild",
+      "text": "for (local_18 = 0; local_18 < this_ptr->camera_count; local_18++) {",
+      "type": "unnamed_local"
     }
   ]
 }

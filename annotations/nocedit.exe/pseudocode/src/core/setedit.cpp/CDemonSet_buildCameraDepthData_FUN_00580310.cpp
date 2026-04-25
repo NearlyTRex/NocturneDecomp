@@ -9,7 +9,7 @@
 void __cdecl core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(CDemonSet *this_ptr)
 
 {
-  void *pvVar1;
+  SCameraDepthEntry *pSVar1;
   int *piVar2;
   int iVar3;
   int iVar4;
@@ -22,11 +22,11 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(CDemon
   int iVar1;
   CDemonRenderer *this_ptr_00;
   
-  if ((g_CameraDepthData == (void *)0x0) && (0 < this_ptr->camera_count)) {
+  if ((g_CameraDepthData == (SCameraDepthEntry *)0x0) && (0 < this_ptr->camera_count)) {
     g_CameraDepthData =
          shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                    (this_ptr->camera_count * 0x4b030,"..\\core\\setedit.cpp",0x1007);
-    if (g_CameraDepthData == (void *)0x0) {
+    if (g_CameraDepthData == (SCameraDepthEntry *)0x0) {
       g_CurrentFilename = "..\\core\\setedit.cpp";
       g_CurrentLineNumber = 0x1008;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
@@ -36,7 +36,7 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(CDemon
       local_1c = &this_ptr->cameras[0].orientation;
       local_20 = (CVector3i *)&this_ptr->cameras[0].position;
       do {
-        pvVar1 = g_CameraDepthData;
+        pSVar1 = g_CameraDepthData;
         engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890
                   (g_CDemonRendererPtr2,0,0,0x140,0xf0);
         engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
@@ -45,26 +45,26 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(CDemon
                   (g_CDemonRendererPtr2,this_ptr->cameras[local_18].projection_scale);
         engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
                   (g_CDemonRendererPtr2,local_1c);
-        *(int *)((int)pvVar1 + 0xc) = g_TransformMatrix.m[0].x;
-        *(int *)((int)pvVar1 + 0x10) = g_TransformMatrix.m[0].y;
-        *(int *)((int)pvVar1 + 0x14) = g_TransformMatrix.m[0].z;
-        *(int *)((int)pvVar1 + 0x18) = g_TransformMatrix.m[1].x;
-        *(int *)((int)pvVar1 + 0x1c) = g_TransformMatrix.m[1].y;
-        *(int *)((int)pvVar1 + 0x20) = g_TransformMatrix.m[1].z;
-        *(int *)((int)pvVar1 + 0x24) = g_TransformMatrix.m[2].x;
-        *(int *)((int)pvVar1 + 0x28) = g_TransformMatrix.m[2].y;
-        *(int *)((int)pvVar1 + 0x2c) = g_TransformMatrix.m[2].z;
+        (pSVar1->transform).m[0].x = g_TransformMatrix.m[0].x;
+        (pSVar1->transform).m[0].y = g_TransformMatrix.m[0].y;
+        (pSVar1->transform).m[0].z = g_TransformMatrix.m[0].z;
+        (pSVar1->transform).m[1].x = g_TransformMatrix.m[1].x;
+        (pSVar1->transform).m[1].y = g_TransformMatrix.m[1].y;
+        (pSVar1->transform).m[1].z = g_TransformMatrix.m[1].z;
+        (pSVar1->transform).m[2].x = g_TransformMatrix.m[2].x;
+        (pSVar1->transform).m[2].y = g_TransformMatrix.m[2].y;
+        (pSVar1->transform).m[2].z = g_TransformMatrix.m[2].z;
         this_ptr_00 = g_CDemonRendererPtr2;
-        *(int *)pvVar1 = g_CameraOriginX;
-        *(int *)((int)pvVar1 + 4) = g_CameraOriginY;
-        *(int *)((int)pvVar1 + 8) = g_CameraOriginZ;
+        (pSVar1->origin).x = g_CameraOriginX;
+        (pSVar1->origin).y = g_CameraOriginY;
+        (pSVar1->origin).z = g_CameraOriginZ;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                   (this_ptr_00,&g_ZeroVector.f);
         core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(this_ptr,9999.9,0);
         iVar5 = 0;
         do {
           iVar4 = 0;
-          iVar3 = (int)pvVar1 + iVar5;
+          iVar3 = (int)((pSVar1->transform).m + -1) + iVar5;
           do {
             iVar1 = *(int *)(iVar4 + *(int *)((int)g_ZBufferScanlineArray + iVar5));
             if (iVar1 < 1) {
@@ -82,7 +82,7 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(CDemon
         local_18 = local_18 + 0x1a4;
         local_1c = local_1c + 0x23;
         local_20 = local_20 + 0x6404;
-      } while ((int)pvVar1 + 1 < *in_stack_00000008);
+      } while ((int)((int)&(pSVar1->origin).x + 1) < *in_stack_00000008);
     }
   }
   return;

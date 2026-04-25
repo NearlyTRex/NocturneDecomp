@@ -4,6 +4,7 @@
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CPickList.h"
+#include "types/structs/SCameraDepthEntry.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x3650000
@@ -16,6 +17,9 @@ extern CDemonActorType g_CSimBoxClassInfo;
 
 // CPickList
 extern CPickList g_MissingBackdropFiles;
+
+// SCameraDepthEntry*
+extern SCameraDepthEntry* g_CameraDepthData;
 
 // char[100][30]
 extern char g_BoneNameBuffer[100][30];
@@ -40,7 +44,4 @@ extern int g_GroundTextureCount;
 
 // int[250]
 extern int g_CameraFogEnabledFlags[250];
-
-// void*
-extern void* g_CameraDepthData;
 

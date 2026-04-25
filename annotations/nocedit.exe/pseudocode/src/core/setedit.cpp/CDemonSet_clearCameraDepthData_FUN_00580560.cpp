@@ -12,6 +12,6 @@ void __cdecl core_setedit_cpp_CDemonSet_clearCameraDepthData_FUN_00580560(CDemon
   g_CurrentDebugFilename = "..\\core\\setedit.cpp";
   g_CurrentDebugLine = 0x1036;
   shape_memdbg_cpp_free_FUN_005fe659(g_CameraDepthData);
-  g_CameraDepthData = (void *)0x0;
+  g_CameraDepthData = (SCameraDepthEntry *)0x0;
   return;
 }

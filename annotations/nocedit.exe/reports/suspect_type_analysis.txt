@@ -4,8 +4,8 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    3132 ( 53.3%)
-  unnamed_local                    749 ( 12.7%)
+  pointer_cast                    3109 ( 53.1%)
+  unnamed_local                    756 ( 12.9%)
   unrolled_strcpy                  495 (  8.4%)
   warning_inlined_function         259 (  4.4%)
   raw_address_constant             196 (  3.3%)
@@ -13,43 +13,43 @@ SUSPECT TYPE COUNTS
   unrolled_strlen                  152 (  2.6%)
   warning_type_propagation         133 (  2.3%)
   stack_alignment_array             92 (  1.6%)
-  warning_unreachable               77 (  1.3%)
+  warning_unreachable               76 (  1.3%)
   unnamed_param                     73 (  1.2%)
   unrolled_strchr                   65 (  1.1%)
   unrolled_strcat                   46 (  0.8%)
-  stack_param                       38 (  0.6%)
   param_count_too_many              37 (  0.6%)
+  stack_param                       36 (  0.6%)
   sub84_truncation                  30 (  0.5%)
   negative_offset                   24 (  0.4%)
   decompiler_intrinsic              19 (  0.3%)
   extra_output                      16 (  0.3%)
   suspect_float                     10 (  0.2%)
   unaffected_reg                     9 (  0.2%)
-  warning_deadcode_restart           6 (  0.1%)
   unrolled_memcpy                    6 (  0.1%)
   param_count_too_few                6 (  0.1%)
   displaced_global_access            6 (  0.1%)
+  warning_deadcode_restart           5 (  0.1%)
   unknown_type                       4 (  0.1%)
   warning_max_restarts               3 (  0.1%)
-  warning_unmapped_variable          3 (  0.1%)
   preinc_loop_idiom                  2 (  0.0%)
   cpuid_intrinsic                    2 (  0.0%)
   wrong_global                       2 (  0.0%)
   warning_unable_to_use_type         1 (  0.0%)
   warning_overlapping_globals        1 (  0.0%)
   warning_noreturn                   1 (  0.0%)
+  warning_unmapped_variable          1 (  0.0%)
   warning_jumptable                  1 (  0.0%)
   warning_indirect_jump              1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (3132 occurrences)
+TYPE: pointer_cast (3109 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1002x  (int *)((int)
-   843x  (uint *)((int)
+   989x  (int *)((int)
+   835x  (uint *)((int)
    253x  (float *)((int)
-   135x  (void *)((int)
+   133x  (void *)((int)
    123x  (double *)((int)
    116x  (byte *)((int)
    108x  (SRenderVertex *)((int)
@@ -351,13 +351,11 @@ Functions:
   core_setdir.cpp_CZThumb_render_FUN_00574f20
   core_setdir.cpp_CZThumb_restoreZBufferTable_FUN_00574830
   core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910
-  core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310
   core_setedit.cpp_CDemonSet_drawCameraCoverageMap_FUN_0057ff70
   core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0
   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660
   core_setedit.cpp_CDemonSet_editSpotLight_FUN_0057b500
   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80
-  core_setedit.cpp_CDemonSet_isPointVisibleFromCamera_FUN_005801b0
   core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0
   core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730
   core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0
@@ -369,7 +367,6 @@ Functions:
   core_setedit.cpp_blitThumbnailToScreen8_FUN_00577120
   core_setedit.cpp_blitThumbnailToScreen_FUN_00577430
   core_setedit.cpp_loadCameraThumbnail_FUN_005769a0
-  core_setedit.cpp_renderBackdropImage_FUN_0057ce80
   core_setedit.cpp_renderColoredBox_FUN_005817d0
   core_setutil.cpp_C3DSLight_load_FUN_00586310
   core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50
@@ -727,27 +724,27 @@ Functions:
   wincore_winrun.cpp_processWindowMessages_FUN_005f35e0
 
 ====================================================================================================
-TYPE: unnamed_local (749 occurrences)
+TYPE: unnamed_local (756 occurrences)
 ====================================================================================================
 
 Unique patterns:
     90x  local_14
-    43x  local_18
+    46x  local_18
     38x  local_20a4
-    33x  local_24
+    35x  local_24
     32x  local_38
     25x  local_4db8
     22x  local_30
+    21x  local_1c
     20x  local_2c
-    20x  local_1c
     19x  local_34
     18x  local_174
     17x  local_48
     16x  local_5c
     15x  local_20
     15x  local_190
+    14x  local_28
     14x  local_78
-    12x  local_28
     12x  local_110
     10x  local_e4
      9x  local_6c
@@ -784,7 +781,9 @@ Functions:
   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470
   core_set.cpp_CDemonSet_processActors_FUN_0056b810
   core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00
+  core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310
   core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
+  core_setedit.cpp_renderBackdropImage_FUN_0057ce80
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
@@ -1767,11 +1766,11 @@ Functions:
   shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30
 
 ====================================================================================================
-TYPE: warning_unreachable (77 occurrences)
+TYPE: warning_unreachable (76 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    77x  WARNING: Removing unreachable block
+    76x  WARNING: Removing unreachable block
 
 Functions:
   cockpit_ckptutil.c_buildHardwarePalettes_FUN_00431c00
@@ -1789,7 +1788,6 @@ Functions:
   core_inv.cpp_CInventory_clear_FUN_004fd0e0
   core_larva.cpp_CLarva_process_FUN_00503080
   core_mmx.c_detectIntelProcessor_FUN_00524f4c
-  core_morph.cpp_CMorph_editMorph_FUN_0052bcb0
   core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
   core_procedur.cpp_CProceduralTexture_showMenu_FUN_00554880
   core_script.cpp_clearSelections_FUN_005644e0
@@ -1914,31 +1912,6 @@ Functions:
   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
 
 ====================================================================================================
-TYPE: stack_param (38 occurrences)
-====================================================================================================
-
-Unique patterns:
-    10x  in_stack_00000004
-     8x  in_stack_fffff2fc
-     6x  in_stack_00000008
-     5x  in_stack_ffffff18
-     3x  in_stack_0000000c
-     2x  in_stack_0000002c
-     2x  in_stack_ffffffc8
-     2x  in_stack_fffffe18
-
-Functions:
-  core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0
-  core_game.cpp_dampControlAxis_FUN_004dc370
-  core_larva.cpp_CLarva_process_FUN_00503080
-  core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
-  core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310
-  core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850
-  core_vehicle.cpp_CVehicle_renderOpaque_FUN_005e88c0
-  core_weapon.cpp_CWeapon_updateLighting_FUN_005ee4a0
-  engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440
-
-====================================================================================================
 TYPE: param_count_too_many (37 occurrences)
 ====================================================================================================
 
@@ -1994,6 +1967,30 @@ Functions:
   engine_prim.c_renderPolygonSoftware_FUN_00552510
   support_newmsg.cpp_findLocalizedString_FUN_00544170
   wincore_winrun.cpp_winMain_FUN_005f3680
+
+====================================================================================================
+TYPE: stack_param (36 occurrences)
+====================================================================================================
+
+Unique patterns:
+    10x  in_stack_00000004
+     8x  in_stack_fffff2fc
+     5x  in_stack_ffffff18
+     4x  in_stack_00000008
+     3x  in_stack_0000000c
+     2x  in_stack_0000002c
+     2x  in_stack_ffffffc8
+     2x  in_stack_fffffe18
+
+Functions:
+  core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0
+  core_game.cpp_dampControlAxis_FUN_004dc370
+  core_larva.cpp_CLarva_process_FUN_00503080
+  core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
+  core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850
+  core_vehicle.cpp_CVehicle_renderOpaque_FUN_005e88c0
+  core_weapon.cpp_CWeapon_updateLighting_FUN_005ee4a0
+  engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440
 
 ====================================================================================================
 TYPE: sub84_truncation (30 occurrences)
@@ -2123,21 +2120,6 @@ Functions:
   shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
 
 ====================================================================================================
-TYPE: warning_deadcode_restart (6 occurrences)
-====================================================================================================
-
-Unique patterns:
-     6x  WARNING: Restarted to delay deadcode elimination
-
-Functions:
-  core_dcamera.cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30
-  core_morph.cpp_CMorph_editMorph_FUN_0052bcb0
-  engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0
-  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
-  sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70
-  sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0
-
-====================================================================================================
 TYPE: unrolled_memcpy (6 occurrences)
 ====================================================================================================
 
@@ -2190,6 +2172,20 @@ Functions:
   wincore_winrun.cpp_enqueueInput_FUN_005f2f30
 
 ====================================================================================================
+TYPE: warning_deadcode_restart (5 occurrences)
+====================================================================================================
+
+Unique patterns:
+     5x  WARNING: Restarted to delay deadcode elimination
+
+Functions:
+  core_dcamera.cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30
+  engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
+  sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70
+  sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0
+
+====================================================================================================
 TYPE: unknown_type (4 occurrences)
 ====================================================================================================
 
@@ -2213,17 +2209,6 @@ Functions:
   sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660
   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830
   sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120
-
-====================================================================================================
-TYPE: warning_unmapped_variable (3 occurrences)
-====================================================================================================
-
-Unique patterns:
-     3x  WARNING: Variable defined which should be unmapped
-
-Functions:
-  core_main.c_finalizeGameSystems_FUN_00508570
-  core_morph.cpp_CMorph_editMorph_FUN_0052bcb0
 
 ====================================================================================================
 TYPE: preinc_loop_idiom (2 occurrences)
@@ -2286,6 +2271,16 @@ Unique patterns:
 
 Functions:
   core_main.c_displayErrorAndQuit_FUN_00506f10
+
+====================================================================================================
+TYPE: warning_unmapped_variable (1 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  WARNING: Variable defined which should be unmapped
+
+Functions:
+  core_main.c_finalizeGameSystems_FUN_00508570
 
 ====================================================================================================
 TYPE: warning_jumptable (1 occurrences)

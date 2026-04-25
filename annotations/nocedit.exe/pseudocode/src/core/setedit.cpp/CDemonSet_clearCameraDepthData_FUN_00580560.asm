@@ -15,7 +15,7 @@
 ;   TerminatedCString s_core_setedit_cpp_0064859e
 ;   char* g_CurrentDebugFilename = 0067d200
 ;   int g_CurrentDebugLine
-;   void* g_CameraDepthData
+;   SCameraDepthEntry* g_CameraDepthData
 ;
 ; Called Functions:
 ;   shape_memdbg.cpp_free_FUN_005fe659

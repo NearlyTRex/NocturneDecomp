@@ -6,7 +6,7 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 5154 (79.9%)
+Clean functions: 5155 (79.9%)
 Files at 100%: 37
 Files at 90%+: 79
 Files at 50%+: 211
@@ -634,7 +634,7 @@ FILES AT 50-89%
            - core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_0052a580 (51 lines) [pointer_cast]
            - core_morph.cpp_CMorphModel_setFaceListFromTriangles_FUN_0052aca0 (67 lines) [pointer_cast]
            - core_morph.cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0 (94 lines) [pointer_cast]
-           - core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 (415 lines) [pointer_cast, unnamed_local, warning_deadcode_restart, warning_unmapped_variable, warning_unreachable]
+           - core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 (415 lines) [pointer_cast, unnamed_local]
            - core_morph.cpp_CMorphModel_findNearestPoint_FUN_0052b280 (32 lines) [pointer_cast]
            - core_morph.cpp_CMorph_getReady_FUN_0052b680 (151 lines) [negative_offset, pointer_cast, unnamed_local]
            - core_morph.cpp_CMorphModel_animateFromVertexBuffer_FUN_0052a920 (32 lines) [pointer_cast]
@@ -1581,6 +1581,34 @@ FILES AT 50-89%
            - core_dlight.cpp_CDemonLight_allocateFilter_FUN_00474720 (13 lines) [param_count_too_many]
            - core_dlight.cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670 (165 lines) [pointer_cast]
            - core_dlight.cpp_CDemonLight_blitZBuffer_FUN_00472c70 (25 lines) [pointer_cast]
+   55.2% | core/setedit.cpp
+         32/58 clean, 26 remaining
+           - core_setedit.cpp_CDemonSet_editSpotLight_FUN_0057b500 (44 lines) [pointer_cast]
+           - core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (673 lines) [pointer_cast, stack_alignment_array, unrolled_strchr]
+           - core_setedit.cpp_CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0 (42 lines) [stack_alignment_array]
+           - core_setedit.cpp_loadGroundTypes_FUN_00578420 (91 lines) [unrolled_strchr]
+           - core_setedit.cpp_blitThumbnailToScreen_FUN_00577430 (98 lines) [pointer_cast]
+           - core_setedit.cpp_blitThumbnailStripAndHitTest_FUN_00577730 (108 lines) [pointer_cast]
+           - core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 (183 lines) [unrolled_strcpy]
+           - core_setedit.cpp_loadCameraThumbnail_FUN_005769a0 (140 lines) [pointer_cast]
+           - core_setedit.cpp_blitThumbnailToScreen8_FUN_00577120 (28 lines) [pointer_cast]
+           - core_setedit.cpp_renderColoredBox_FUN_005817d0 (102 lines) [pointer_cast, warning_inlined_function]
+           - core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0 (259 lines) [warning_inlined_function]
+           - core_setedit.cpp_blitThumbnailToScreen32_FUN_00577330 (39 lines) [pointer_cast]
+           - core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 (699 lines) [pointer_cast, unrolled_strlen]
+           - core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50 (164 lines) [unrolled_strcpy, warning_inlined_function]
+           - core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (1475 lines) [missing_cave_copy, pointer_cast, unnamed_local]
+           - core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70 (112 lines) [unrolled_strchr, unrolled_strcpy]
+           - core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 (303 lines) [pointer_cast]
+           - core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310 (79 lines) [unnamed_local]
+           - core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730 (376 lines) [pointer_cast, unrolled_strlen]
+           - core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 (409 lines) [pointer_cast, unrolled_strchr, unrolled_strcpy]
+           - core_setedit.cpp_blitThumbnailToScreen16_FUN_00577200 (31 lines) [pointer_cast]
+           - core_setedit.cpp_CDemonSet_drawCameraCoverageMap_FUN_0057ff70 (60 lines) [pointer_cast]
+           - core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940 (130 lines) [pointer_cast]
+           - core_setedit.cpp_renderBackdropImage_FUN_0057ce80 (134 lines) [unnamed_local]
+           - core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00 (102 lines) [unnamed_local]
+           - core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0 (211 lines) [pointer_cast]
    53.5% | core/dcamera.cpp
          46/86 clean, 40 remaining
            - core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270 (157 lines) [pointer_cast]
@@ -1623,35 +1651,6 @@ FILES AT 50-89%
            - core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360 (165 lines) [pointer_cast, stack_alignment_array]
            - core_dcamera.cpp_CDemonCamera_restoreZBufferRect_FUN_0044c780 (31 lines) [pointer_cast]
            - core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0 (122 lines) [pointer_cast, stack_alignment_array, warning_inlined_function]
-   53.4% | core/setedit.cpp
-         31/58 clean, 27 remaining
-           - core_setedit.cpp_CDemonSet_editSpotLight_FUN_0057b500 (44 lines) [pointer_cast]
-           - core_setedit.cpp_CDemonSet_isPointVisibleFromCamera_FUN_005801b0 (48 lines) [pointer_cast]
-           - core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (673 lines) [pointer_cast, stack_alignment_array, unrolled_strchr]
-           - core_setedit.cpp_CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0 (42 lines) [stack_alignment_array]
-           - core_setedit.cpp_loadGroundTypes_FUN_00578420 (91 lines) [unrolled_strchr]
-           - core_setedit.cpp_blitThumbnailToScreen_FUN_00577430 (98 lines) [pointer_cast]
-           - core_setedit.cpp_blitThumbnailStripAndHitTest_FUN_00577730 (108 lines) [pointer_cast]
-           - core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 (183 lines) [unrolled_strcpy]
-           - core_setedit.cpp_loadCameraThumbnail_FUN_005769a0 (140 lines) [pointer_cast]
-           - core_setedit.cpp_blitThumbnailToScreen8_FUN_00577120 (28 lines) [pointer_cast]
-           - core_setedit.cpp_renderColoredBox_FUN_005817d0 (102 lines) [pointer_cast, warning_inlined_function]
-           - core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0 (259 lines) [warning_inlined_function]
-           - core_setedit.cpp_blitThumbnailToScreen32_FUN_00577330 (39 lines) [pointer_cast]
-           - core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 (699 lines) [pointer_cast, unrolled_strlen]
-           - core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50 (164 lines) [unrolled_strcpy, warning_inlined_function]
-           - core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (1475 lines) [missing_cave_copy, pointer_cast, unnamed_local]
-           - core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70 (112 lines) [unrolled_strchr, unrolled_strcpy]
-           - core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 (303 lines) [pointer_cast]
-           - core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310 (79 lines) [pointer_cast, stack_param]
-           - core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730 (376 lines) [pointer_cast, unrolled_strlen]
-           - core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 (409 lines) [pointer_cast, unrolled_strchr, unrolled_strcpy]
-           - core_setedit.cpp_blitThumbnailToScreen16_FUN_00577200 (31 lines) [pointer_cast]
-           - core_setedit.cpp_CDemonSet_drawCameraCoverageMap_FUN_0057ff70 (60 lines) [pointer_cast]
-           - core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940 (130 lines) [pointer_cast]
-           - core_setedit.cpp_renderBackdropImage_FUN_0057ce80 (134 lines) [pointer_cast]
-           - core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00 (102 lines) [unnamed_local]
-           - core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0 (211 lines) [pointer_cast]
    53.3% | core/course.cpp
          8/15 clean, 7 remaining
            - core_course.cpp_CCourse_showEditorMenu_FUN_00443040 (278 lines) [pointer_cast]

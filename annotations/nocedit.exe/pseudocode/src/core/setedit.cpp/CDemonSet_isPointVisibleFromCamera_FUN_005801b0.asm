@@ -13,7 +13,7 @@
 ;   core_setedit.cpp_CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0 at 00580180
 ;
 ; Referenced Globals:
-;   void* g_CameraDepthData
+;   SCameraDepthEntry* g_CameraDepthData
 ;
 ; Called Functions:
 ;   core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310

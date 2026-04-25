@@ -3685,6 +3685,10 @@
       "type":"struct"
     },
     {
+      "name":"SCameraDepthEntry",
+      "type":"struct"
+    },
+    {
       "name":"SCameraEdge",
       "type":"struct"
     },
@@ -53342,6 +53346,36 @@
       "importable":true,
       "len":64,
       "name":"SBug",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":12,
+          "name":"origin",
+          "offset":0,
+          "type":"CVector3i"
+        },
+        {
+          "len":36,
+          "name":"transform",
+          "offset":12,
+          "type":"CMatrix3x3i"
+        },
+        {
+          "len":307200,
+          "name":"depth_lookup",
+          "offset":48,
+          "type":"int[320][240]"
+        }
+      ],
+      "importable":true,
+      "len":307248,
+      "name":"SCameraDepthEntry",
       "pack":false,
       "type":"struct"
     },

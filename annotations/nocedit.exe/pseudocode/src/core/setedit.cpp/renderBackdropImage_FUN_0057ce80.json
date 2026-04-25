@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 350,
-    "complexity_score": 239,
+    "complexity_score": 189,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 36,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 134,
-    "suspect_count": 10,
+    "suspect_count": 5,
     "suspect_types": [
-      "pointer_cast"
+      "unnamed_local"
     ],
     "total_lines": 484
   },
@@ -465,6 +465,98 @@
     },
     "pcode_op_count": 1566
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_266c + iVar2 + -4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ScreenBufferArray + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(void *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pvVar3 = (void *)((int)pvVar3 + render_width * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_13b0 + iVar2) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(void *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pvVar4 = (void *)((int)pvVar4 + render_width * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 124,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ScreenBufferArray + iVar6) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 125,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_266c + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 126,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar6) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 127,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_13b0 + iVar6 + 4);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 9876,
     "local_size": 9844,
@@ -609,84 +701,49 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)auStack_266c + iVar2 + -4) =",
-      "type": "pointer_cast"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 26,
+      "match": "local_28",
+      "severity": "mild",
+      "text": "int local_28;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ScreenBufferArray + iVar2);",
-      "type": "pointer_cast"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 27,
+      "match": "local_24",
+      "severity": "mild",
+      "text": "int local_24;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 49,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "pvVar3 = (void *)((int)pvVar3 + render_width * 4);",
-      "type": "pointer_cast"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 29,
+      "match": "local_1c",
+      "severity": "mild",
+      "text": "void *local_1c;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 50,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)auStack_13b0 + iVar2) =",
-      "type": "pointer_cast"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 33,
+      "match": "local_24",
+      "severity": "mild",
+      "text": "local_24 = g_WindowWidth;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 51,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "pvVar4 = (void *)((int)pvVar4 + render_width * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 124,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ScreenBufferArray + iVar6) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 125,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)auStack_266c + iVar6);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 126,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar6) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 127,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)auStack_13b0 + iVar6 + 4);",
-      "type": "pointer_cast"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 34,
+      "match": "local_28",
+      "severity": "mild",
+      "text": "local_28 = g_WindowHeight;",
+      "type": "unnamed_local"
     }
   ]
 }
