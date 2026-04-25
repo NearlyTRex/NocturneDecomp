@@ -6,6 +6,9 @@
 // Include this file in all source files to get access to all declarations.
 // This provides all type definitions, constants, globals, and prototypes.
 
+// Build-time behavior toggles.
+#include "shim_config.h"
+
 // System type definitions (Windows API, C runtime, DirectX, DirectSound, etc.)
 #include "system.h"
 

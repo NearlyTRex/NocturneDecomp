@@ -13,9 +13,11 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void)
 {
     HRESULT hr;
 
+#if NOCTURNE_AUTHENTIC_WINDOWS
     if (g_WindowActive == 0) {
         goto done;
     }
+#endif
 
     if (g_UseExternalRenderer != 0) {
         wincore_windll_cpp_presentToExternalRenderer_FUN_005b7c30(0);

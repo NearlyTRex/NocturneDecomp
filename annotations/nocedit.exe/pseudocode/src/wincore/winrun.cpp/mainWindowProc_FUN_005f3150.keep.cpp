@@ -142,13 +142,17 @@ LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_005f3150(HWND hWnd, UINT
                         hThread = (*g_GetCurrentProcessFunc)();
                         iVar4 = g_WindowActive;
                         if (g_WindowActive == 0) {
+#if NOCTURNE_AUTHENTIC_WINDOWS
                             wincore_wddvmem_cpp_restoreVideoAndMinimizeWindow_FUN_005edc50();
                             (*g_SetThreadPriorityFunc)(hThread, -0xf);
+#endif
                             g_ApplicationActive = iVar4;
                         }
                         else {
+#if NOCTURNE_AUTHENTIC_WINDOWS
                             (*g_SetThreadPriorityFunc)(hThread, 1);
                             wincore_wddvmem_cpp_videoRestore_FUN_005edc80();
+#endif
                             if (g_PreviousActiveState != -1) {
                                 engine_2d_c_clearInputAndWait_FUN_00403260();
                                 g_ApplicationActive = 1;

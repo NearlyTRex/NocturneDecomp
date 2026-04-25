@@ -220,6 +220,14 @@ static HWND shim_CreateWindowExA(DWORD dwExStyle, LPCSTR lpClassName,
         lpWindowName ? lpWindowName : "NocturneDecomp",
         SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
         nWidth, nHeight, flags);
+    // SDL only fires SDL_WINDOWEVENT_FOCUS_GAINED on focus *changes*, never for
+    // the initial show. The game's main loop blocks until WM_ACTIVATEAPP wParam=1
+    // arrives, so synthesize one now.
+    MSG msg{};
+    msg.hwnd = (HWND)(intptr_t)g_sdlWindow;
+    msg.message = 0x001C; // WM_ACTIVATEAPP
+    msg.wParam = 1;
+    s_msgQueue.push(msg);
     return (HWND)(intptr_t)g_sdlWindow;
 }
 

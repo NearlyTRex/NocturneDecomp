@@ -4,10 +4,14 @@
 #
 # On crash, GDB breaks automatically. Type `bt` for backtrace, `bt full`
 # for locals, `info registers` for register state. `quit` to exit.
+# To diagnose a hang, hit Ctrl+C in GDB and run `bt`.
 #
 # Usage:
 #   ./debug.sh                        # run under GDB, break on crash
 #   ./debug.sh --some-game-arg        # args pass through to the exe
+#
+#   NOCTURNE_BREAKS=sym1:sym2 ./debug.sh
+#       Set breakpoints on the listed symbols before running.
 
 set -u
 
@@ -31,13 +35,22 @@ fi
 
 export ASAN_SYMBOLIZER_PATH UBSAN_SYMBOLIZER_PATH UBSAN_OPTIONS ASAN_OPTIONS
 
+BREAK_ARGS=()
+if [[ -n "${NOCTURNE_BREAKS:-}" ]]; then
+    IFS=':' read -ra _breaks <<< "${NOCTURNE_BREAKS}"
+    for sym in "${_breaks[@]}"; do
+        BREAK_ARGS+=(-ex "break ${sym}")
+    done
+fi
+
 exec gdb -q \
     -ex "set confirm off" \
     -ex "set pagination off" \
     -ex "handle SIGPIPE nostop noprint pass" \
+    "${BREAK_ARGS[@]}" \
     -ex "run $*" \
     -ex "bt" \
     -ex "echo \n--- registers ---\n" \
     -ex "info registers eip ebp esp eax ebx ecx edx esi edi" \
-    -ex "echo \n--- Type 'bt full' for locals, 'quit' to exit ---\n" \
+    -ex "echo \n--- Type 'bt full' for locals, 'continue' to resume, 'quit' to exit ---\n" \
     "${EXE}"
