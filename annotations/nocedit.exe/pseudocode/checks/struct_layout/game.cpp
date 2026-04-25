@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: game
-// Structs : 520
+// Structs : 523
 
 #include "nocturne.h"
 
@@ -7732,6 +7732,16 @@ static_assert(__builtin_offsetof(SCPUInfo, is_intel) == 12,
 static_assert(__builtin_offsetof(SCPUInfo, mmx_supported) == 16,
               "offsetof(SCPUInfo, mmx_supported) != 16");
 
+// ---- SCameraDepthEntry (307248 bytes) ----
+static_assert(sizeof(SCameraDepthEntry) == 307248,
+              "sizeof(SCameraDepthEntry) != 307248");
+static_assert(__builtin_offsetof(SCameraDepthEntry, origin) == 0,
+              "offsetof(SCameraDepthEntry, origin) != 0");
+static_assert(__builtin_offsetof(SCameraDepthEntry, transform) == 12,
+              "offsetof(SCameraDepthEntry, transform) != 12");
+static_assert(__builtin_offsetof(SCameraDepthEntry, depth_lookup) == 48,
+              "offsetof(SCameraDepthEntry, depth_lookup) != 48");
+
 // ---- SCameraEdge (12 bytes) ----
 static_assert(sizeof(SCameraEdge) == 12,
               "sizeof(SCameraEdge) != 12");
@@ -8729,8 +8739,22 @@ static_assert(__builtin_offsetof(SLineStrip, primitive_type) == 0,
               "offsetof(SLineStrip, primitive_type) != 0");
 static_assert(__builtin_offsetof(SLineStrip, vertex_count) == 4,
               "offsetof(SLineStrip, vertex_count) != 4");
-static_assert(__builtin_offsetof(SLineStrip, vertex_indices) == 8,
-              "offsetof(SLineStrip, vertex_indices) != 8");
+
+// ---- SLineStrip2Index (16 bytes) ----
+static_assert(sizeof(SLineStrip2Index) == 16,
+              "sizeof(SLineStrip2Index) != 16");
+static_assert(__builtin_offsetof(SLineStrip2Index, base) == 0,
+              "offsetof(SLineStrip2Index, base) != 0");
+static_assert(__builtin_offsetof(SLineStrip2Index, vertices) == 8,
+              "offsetof(SLineStrip2Index, vertices) != 8");
+
+// ---- SLineStrip3Index (20 bytes) ----
+static_assert(sizeof(SLineStrip3Index) == 20,
+              "sizeof(SLineStrip3Index) != 20");
+static_assert(__builtin_offsetof(SLineStrip3Index, base) == 0,
+              "offsetof(SLineStrip3Index, base) != 0");
+static_assert(__builtin_offsetof(SLineStrip3Index, vertices) == 8,
+              "offsetof(SLineStrip3Index, vertices) != 8");
 
 // ---- SLod (8 bytes) ----
 static_assert(sizeof(SLod) == 8,
