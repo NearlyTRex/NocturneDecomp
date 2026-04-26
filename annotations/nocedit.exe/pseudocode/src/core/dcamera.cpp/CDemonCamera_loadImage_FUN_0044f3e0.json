@@ -7,18 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1081,
-    "complexity_score": 616,
+    "complexity_score": 536,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 91,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 486,
-    "suspect_count": 11,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast",
       "raw_address_constant",
-      "unrolled_strchr",
-      "unrolled_strcpy"
+      "unnamed_local"
     ],
     "total_lines": 1567
   },
@@ -722,6 +720,33 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 274,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_CameraConvertedPalette + iVar2) = uVar7;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 285,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar27 = (int *)((int)this_ptr->framebuffer_aligned + local_20);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 417,
+      "match": "(char *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(char *)((int)g_CameraTextureWorkBuffer + iVar9) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 437,
       "match": "(uint *)((int)",
       "resolution_source": "keep",
@@ -775,6 +800,33 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 118,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 135,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 161,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
       "line": 431,
       "match": "for (...; != 0; ... + -1)",
@@ -782,6 +834,24 @@
       "severity": "mild",
       "text": "for (iVar2 = 0x4000; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
+      "line": 102,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
+      "line": 145,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strchr"
     }
   ],
   "stack_frame": {
@@ -1105,42 +1175,42 @@
         {
           "check_id": "selfAssignment",
           "column": 21,
-          "line": 302,
+          "line": 244,
           "message": "Redundant assignment of 'piVar27' to itself.",
           "severity": "warning"
         },
         {
           "check_id": "selfAssignment",
           "column": 24,
-          "line": 460,
+          "line": 402,
           "message": "Redundant assignment of 'iVar16' to itself.",
           "severity": "warning"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 57,
-          "line": 323,
+          "line": 265,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 27,
-          "line": 422,
+          "line": 364,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 40,
-          "line": 428,
+          "line": 370,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 46,
-          "line": 451,
+          "line": 393,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -1150,30 +1220,6 @@
     "file_variant": "keep"
   },
   "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 274,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_CameraConvertedPalette + iVar2) = uVar7;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 285,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar27 = (int *)((int)this_ptr->framebuffer_aligned + local_20);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 417,
-      "match": "(char *)((int)",
-      "severity": "moderate",
-      "text": "*(char *)((int)g_CameraTextureWorkBuffer + iVar9) =",
-      "type": "pointer_cast"
-    },
     {
       "description": "Raw hex literal 0xfcfcfc matches address of g_LightBufferPool (+3889908 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 290,
@@ -1199,44 +1245,13 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 118,
-      "match": "do {",
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 57,
+      "match": "local_a0",
       "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 135,
-      "match": "do {",
-      "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 161,
-      "match": "do {",
-      "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 102,
-      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strchr"
-    },
-    {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 145,
-      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strchr"
+      "text": "char local_a0 [4];",
+      "type": "unnamed_local"
     }
   ]
 }

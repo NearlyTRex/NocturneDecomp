@@ -4,9 +4,9 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    3071 ( 52.5%)
-  unnamed_local                    789 ( 13.5%)
-  unrolled_strcpy                  494 (  8.4%)
+  pointer_cast                    3068 ( 52.5%)
+  unnamed_local                    790 ( 13.5%)
+  unrolled_strcpy                  491 (  8.4%)
   warning_inlined_function         257 (  4.4%)
   raw_address_constant             196 (  3.4%)
   missing_cave_copy                184 (  3.1%)
@@ -15,7 +15,7 @@ SUSPECT TYPE COUNTS
   stack_alignment_array             92 (  1.6%)
   warning_unreachable               75 (  1.3%)
   unnamed_param                     73 (  1.2%)
-  unrolled_strchr                   64 (  1.1%)
+  unrolled_strchr                   62 (  1.1%)
   unrolled_strcat                   46 (  0.8%)
   param_count_too_many              37 (  0.6%)
   stack_param                       36 (  0.6%)
@@ -42,12 +42,12 @@ SUSPECT TYPE COUNTS
   warning_indirect_jump              1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (3071 occurrences)
+TYPE: pointer_cast (3068 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   948x  (int *)((int)
-   817x  (uint *)((int)
+   947x  (int *)((int)
+   816x  (uint *)((int)
    253x  (float *)((int)
    123x  (double *)((int)
    108x  (SRenderVertex *)((int)
@@ -55,7 +55,7 @@ Unique patterns:
     68x  (ushort *)((int)
     66x  (void *)((int)
     48x  (short *)((int)
-    41x  (char *)((int)
+    40x  (char *)((int)
     37x  (CMatrix3x4f *)((int)
     34x  (SShapeEditorPolygon *)((int)
     20x  (SMRGLHeaderExtended *)((int)
@@ -143,7 +143,6 @@ Functions:
   core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0
   core_dcamera.cpp_CDemonCamera_init_FUN_0044c190
   core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0
   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10
   core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360
   core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0
@@ -720,7 +719,7 @@ Functions:
   wincore_windll.cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec
 
 ====================================================================================================
-TYPE: unnamed_local (789 occurrences)
+TYPE: unnamed_local (790 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -758,6 +757,7 @@ Functions:
   core_course.cpp_CCourse_interpolate_FUN_004427a0
   core_course.cpp_CCourse_preview_FUN_00443bc0
   core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
+  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0
   core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_00476f20
   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
   core_event.cpp_CEventList_executeCommand_FUN_004aacc0
@@ -856,11 +856,11 @@ Functions:
   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0
 
 ====================================================================================================
-TYPE: unrolled_strcpy (494 occurrences)
+TYPE: unrolled_strcpy (491 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   494x  do {
+   491x  do {
 
 Functions:
   core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350
@@ -881,7 +881,6 @@ Functions:
   core_charactr.cpp_CCharacter_renderCollision_FUN_00429b40
   core_conveyor.cpp_CConveyor_ctor_FUN_00441ca0
   core_curtain.cpp_CCurtain_ctor_FUN_004496a0
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0
   core_dfilter.cpp_CDemonFilter_ctor_FUN_004701f0
   core_dfilter.cpp_CDemonFilter_load_FUN_004702f0
   core_dimage.cpp_CDemonImage_load_FUN_00471ad0
@@ -1854,14 +1853,13 @@ Functions:
   core_spline.cpp_evaluateSplineTangentScalar_FUN_005b93f0
 
 ====================================================================================================
-TYPE: unrolled_strchr (64 occurrences)
+TYPE: unrolled_strchr (62 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    64x  do { snap; if (*p=='X') goto; if (*p=='\0') break; ... }
+    62x  do { snap; if (*p=='X') goto; if (*p=='\0') break; ... }
 
 Functions:
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0
   core_dimage.cpp_CDemonImage_load_FUN_00471ad0
   core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10
   core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330

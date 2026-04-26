@@ -13,32 +13,61 @@ int __cdecl core_dlight_cpp_CDemonLight_testVisibility_FUN_00476a60(CDemonLight 
   int iVar2;
   int iVar3;
   int iVar4;
-  SMRGLHeaderPrimitive SStack_38;
+  SMRGLPrimitiveQuadIndex SStack_38;
   
-  SStack_38.base.count = 4;
-  SStack_38.surface_normal.D = 0;
-  SStack_38.surface_normal.C = 0;
-  SStack_38.surface_normal.B = 0;
-  SStack_38.surface_normal.A = 0;
+  SStack_38.base.base.count = 4;
+  SStack_38.base.surface_normal.D = 0;
+  SStack_38.base.surface_normal.C = 0;
+  SStack_38.base.surface_normal.B = 0;
+  SStack_38.base.surface_normal.A = 0;
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);
-  iVar1 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0(g_CDemonSetPtr,&SStack_38);
+  SStack_38.vertices[0] = 0;
+  SStack_38.vertices[1] = 4;
+  SStack_38.vertices[2] = 6;
+  SStack_38.vertices[3] = 2;
+  iVar1 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0(g_CDemonSetPtr,&SStack_38.base);
   if (iVar1 == 0) {
     iVar4 = 1;
-    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0(g_CDemonSetPtr,&SStack_38);
+    SStack_38.vertices[1] = 3;
+    SStack_38.vertices[0] = 1;
+    SStack_38.vertices[2] = 7;
+    SStack_38.vertices[3] = 5;
+    iVar2 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0
+                      (g_CDemonSetPtr,&SStack_38.base);
     if (iVar2 != 0) goto LAB_00476acf;
-    iVar4 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0(g_CDemonSetPtr,&SStack_38);
+    SStack_38.vertices[2] = 5;
+    SStack_38.vertices[0] = 0;
+    SStack_38.vertices[1] = 1;
+    SStack_38.vertices[3] = 4;
+    iVar4 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0
+                      (g_CDemonSetPtr,&SStack_38.base);
     if (iVar4 != 0) {
       iVar4 = 1;
       goto LAB_00476acf;
     }
-    iVar4 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0(g_CDemonSetPtr,&SStack_38);
+    SStack_38.vertices[3] = 3;
+    SStack_38.vertices[0] = 2;
+    SStack_38.vertices[1] = 6;
+    SStack_38.vertices[2] = 7;
+    iVar4 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0
+                      (g_CDemonSetPtr,&SStack_38.base);
     if (iVar4 == 0) {
-      iVar4 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0(g_CDemonSetPtr,&SStack_38);
+      SStack_38.vertices[0] = 0;
+      SStack_38.vertices[1] = 2;
+      SStack_38.vertices[2] = 3;
+      SStack_38.vertices[3] = 1;
+      iVar4 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0
+                        (g_CDemonSetPtr,&SStack_38.base);
       if (iVar4 != 0) {
         iVar4 = 1;
         goto LAB_00476acf;
       }
-      iVar3 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0(g_CDemonSetPtr,&SStack_38);
+      SStack_38.vertices[0] = 4;
+      SStack_38.vertices[1] = 5;
+      SStack_38.vertices[2] = 7;
+      SStack_38.vertices[3] = 6;
+      iVar3 = core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0
+                        (g_CDemonSetPtr,&SStack_38.base);
       iVar4 = 0;
       if (iVar3 == 0) goto LAB_00476acf;
     }

@@ -7,7 +7,7 @@
 ; CDemonLight *    Stack[0x4]:4   this_ptr
 ; CVector3i *      Stack[0x8]:4   corners
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0x38]:24  SStack_38
+; SMRGLPrimitiveQuadIndex Stack[-0x38]:40  SStack_38
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578

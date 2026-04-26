@@ -54,7 +54,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
   char local_144 [80];
   char local_f4 [80];
   int local_a4;
-  char local_a0 [3];
+  char local_a0 [4];
   uint local_9c;
   int local_98;
   int local_94;
@@ -93,88 +93,30 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
   uint uVar2;
   byte bVar1;
   
-  bVar31 = 0;
-  pcVar25 = local_144;
-  pcVar21 = filename;
-  do {
-    cVar1 = *pcVar21;
-    *pcVar25 = cVar1;
-    pcVar22 = local_144;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar21[1];
-    pcVar21 = pcVar21 + 2;
-    pcVar25[1] = cVar1;
-    pcVar25 = pcVar25 + 2;
-    pcVar22 = local_144;
-  } while (cVar1 != '\0');
-  do {
-    pcVar10 = pcVar22;
-    if (*pcVar22 == '.') goto LAB_0044f429;
-    if (*pcVar22 == '\0') break;
-    pcVar10 = pcVar22 + 1;
-    if (*pcVar10 == '.') goto LAB_0044f429;
-    pcVar22 = pcVar22 + 2;
-  } while (*pcVar10 != '\0');
-  pcVar10 = (char *)0x0;
-LAB_0044f429:
+  strcpy(local_144, filename);
+  pcVar22 = local_144;
+  pcVar10 = strchr(pcVar22, '.');
   if (pcVar10 == (char *)0x0) {
     g_CurrentFilename = "..\\core\\dcamera.cpp";
     g_CurrentLineNumber = 0x98e;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonCamera::loadImage - no extention");
   }
-  pcVar11 = ".ACT";
-  do {
-    cVar1 = *pcVar11;
-    *pcVar10 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar11[1];
-    pcVar11 = pcVar11 + 2;
-    pcVar10[1] = cVar1;
-    pcVar10 = pcVar10 + 2;
-  } while (cVar1 != '\0');
+  strcpy(pcVar10, ".ACT");
   p_Var5 = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_144,"rb");
   if ((p_Var5 != (_FILE *)0x0) ||
      (p_Var5 = engine_dosio_c_getFile_FUN_00481a50("art",local_144,"rb"),
      p_Var5 != (_FILE *)0x0)) {
     _fread(&g_CameraImagePaletteData,0x100,3,p_Var5);
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\dcamera.cpp",0x99b);
+    strcpy(local_f4, filename);
     pcVar10 = local_f4;
-    pcVar11 = filename;
-    do {
-      cVar1 = *pcVar11;
-      *pcVar10 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar11[1];
-      pcVar11 = pcVar11 + 2;
-      pcVar10[1] = cVar1;
-      pcVar10 = pcVar10 + 2;
-    } while (cVar1 != '\0');
-    pcVar10 = local_f4;
-    do {
-      pcVar11 = pcVar10;
-      if (*pcVar10 == '.') goto LAB_0044f4fd;
-      if (*pcVar10 == '\0') break;
-      pcVar11 = pcVar10 + 1;
-      if (*pcVar11 == '.') goto LAB_0044f4fd;
-      pcVar10 = pcVar10 + 2;
-    } while (*pcVar11 != '\0');
-    pcVar11 = (char *)0x0;
-LAB_0044f4fd:
+    pcVar11 = strchr(pcVar10, '.');
     if (pcVar11 == (char *)0x0) {
       g_CurrentFilename = "..\\core\\dcamera.cpp";
       g_CurrentLineNumber = 0x9a1;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonCamera::loadImage - no ext");
     }
-    pcVar10 = ".fog";
-    do {
-      cVar1 = *pcVar10;
-      *pcVar11 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar10[1];
-      pcVar10 = pcVar10 + 2;
-      pcVar11[1] = cVar1;
-      pcVar11 = pcVar11 + 2;
-    } while (cVar1 != '\0');
+    strcpy(pcVar11, ".fog");
     local_14 = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_f4,"rb");
     if (local_14 != (_FILE *)0x0) {
       _fread(&g_CameraFogGrid,0x1000,1,local_14);
@@ -189,6 +131,7 @@ LAB_0044f4fd:
           g_ImageBytesPerPixel = 1;
         }
         _fread(local_a0,3,1,local_14);
+        local_a0[3] = '\0';
         iVar6 = _strcmp(local_a0,"LZW");
         if ((iVar6 == 0) ||
            (iVar2 = _strcmp(local_a0,"EFD"), iVar2 == 0)) {
@@ -231,14 +174,13 @@ LAB_0044f4fd:
                 iVar18 = 0;
                 iVar2 = local_40;
                 do {
-                  iVar18 = (*(int *)(g_CameraPlaneWorkBuffer.pixels[0xef] +
-                                    iVar14 + local_48 + 0x13d) >> 0x18) + iVar18;
+                  iVar18 = (int)((signed char *)g_CameraImageDecompressBuffer)[iVar14 + local_48] + iVar18;
                   cVar4 = (char)iVar18 * '\x04';
                   if (0 < local_a4) {
-                    cVar4 = cVar4 + g_CameraImageDecompressBuffer[0].pixels[0][local_44 + iVar14];
+                    cVar4 = cVar4 + ((char *)g_CameraImageDecompressBuffer)[local_44 + iVar14];
                   }
                   iVar14 = iVar14 + 1;
-                  g_CameraImageDecompressBuffer[0].pixels[0][iVar2] = cVar4;
+                  ((char *)g_CameraImageDecompressBuffer)[iVar2] = cVar4;
                   iVar2 = iVar2 + 1;
                 } while (iVar14 < 0x140);
                 local_44 = local_44 + 0x140;
@@ -279,7 +221,7 @@ LAB_0044f4fd:
         }
         iVar9 = iVar2 + 4;
         iVar4 = iVar4 + 3;
-        *(uint *)((int)g_CameraConvertedPalette + iVar2) = uVar7;
+        g_CameraConvertedPalette[iVar2 >> 2] = uVar7;
         iVar2 = iVar9;
       } while (iVar9 != 0x400);
       _fread(g_CameraIndexedImageData,0x280,0x1e0,p_Var3);
@@ -290,7 +232,7 @@ LAB_0044f4fd:
         do {
           local_94 = 0;
           pbVar7 = (byte *)(g_CameraIndexedImageData + local_20);
-          piVar27 = (int *)((int)this_ptr->framebuffer_aligned + local_20);
+          piVar27 = (int *)((char *)this_ptr->framebuffer_aligned + local_20);
           do {
             piVar27 = piVar27 + 1;
             local_94 = local_94 + 1;
@@ -422,7 +364,7 @@ LAB_0044f4fd:
           iVar15 = iVar12 >> 0x1f;
           iVar8 = iVar12 + iVar15 * -0x100;
           iVar12 = iVar12 + 0x280;
-          *(char *)((int)g_CameraTextureWorkBuffer + iVar9) =
+          ((char *)g_CameraTextureWorkBuffer)[iVar9] =
                g_CameraIndexedImageData
                [((int)(iVar8 - (uint)(iVar15 << 7 < 0)) >> 8) +
                 ((int)((iVar4 + (iVar4 >> 0x1f) * -0x100) - (uint)((iVar4 >> 0x1f) << 7 < 0)) >> 8)
@@ -454,8 +396,8 @@ LAB_0044f4fd:
               do {
                 iVar16 = iVar16 + 0x12c00;
                 iVar9 = iVar9 + 1;
-                g_CameraImageDecompressBuffer[0].pixels[0][iVar16] =
-                     g_CameraImageDecompressBuffer[0].pixels[0][iVar8];
+                ((char *)g_CameraImageDecompressBuffer)[iVar16] =
+                     ((char *)g_CameraImageDecompressBuffer)[iVar8];
                 iVar8 = iVar8 + 0x12c00;
                 iVar16 = iVar16;
               } while (iVar9 < g_ImageBytesPerPixel);

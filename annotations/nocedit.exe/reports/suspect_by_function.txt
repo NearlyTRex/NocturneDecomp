@@ -7,7 +7,7 @@ SUMMARY
 Total functions analyzed: 6454
 Clean: 5153 (79.8%)
 With suspects: 1301
-Total suspects: 5849
+Total suspects: 5842
 
 ====================================================================================================
 cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50 (1 suspect)
@@ -1473,20 +1473,13 @@ core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180 (4 suspects)
   Line 131 [pointer_cast]: puVar1 = (uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +
 
 ====================================================================================================
-core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0 (11 suspects)
+core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0 (4 suspects)
   File: core/dcamera.cpp
 ====================================================================================================
-  Line 102 [unrolled_strchr]: do {
-  Line 118 [unrolled_strcpy]: do {
-  Line 135 [unrolled_strcpy]: do {
-  Line 145 [unrolled_strchr]: do {
-  Line 161 [unrolled_strcpy]: do {
-  Line 274 [pointer_cast]: *(uint *)((int)g_CameraConvertedPalette + iVar2) = uVar7;
-  Line 285 [pointer_cast]: piVar27 = (int *)((int)this_ptr->framebuffer_aligned + local_20);
+  Line 57 [unnamed_local]: char local_a0 [4];
   Line 290 [raw_address_constant]: ((g_CameraConvertedPalette[pbVar7[1]] & 0xfcfcfc) >> 2) +
   Line 291 [raw_address_constant]: ((g_CameraConvertedPalette[pbVar7[0x280]] & 0xfcfcfc) >> 2) +
   Line 292 [raw_address_constant]: ((g_CameraConvertedPalette[pbVar7[0x281]] & 0xfcfcfc) >> 2);
-  Line 417 [pointer_cast]: *(char *)((int)g_CameraTextureWorkBuffer + iVar9) =
 
 ====================================================================================================
 core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10 (9 suspects)

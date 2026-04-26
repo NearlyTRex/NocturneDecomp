@@ -10,7 +10,7 @@ Total functions: 6454
 Clean functions: 5157 (79.9%)
 Functions with suspects: 1297 (20.1%)
 
-Total suspect patterns: 5849
+Total suspect patterns: 5842
 Average suspects per function: 0.91
 
 Virtual files: 214 total, 37 at 100%, 79 at 90%+
@@ -28,9 +28,9 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              3071
-  unnamed_local             789
-  unrolled_strcpy           494
+  pointer_cast              3068
+  unnamed_local             790
+  unrolled_strcpy           491
   warning_inlined_function  257
   raw_address_constant      196
   missing_cave_copy         184
@@ -39,7 +39,7 @@ SUSPECT PATTERN BREAKDOWN
   stack_alignment_array     92
   warning_unreachable       75
   unnamed_param             73
-  unrolled_strchr           64
+  unrolled_strchr           62
   unrolled_strcat           46
   param_count_too_many      37
   stack_param               36
@@ -155,7 +155,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (650 functions):
+  pointer_cast (649 functions):
     00488230: cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230
     004874d0: cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0
     00487630: cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
@@ -166,9 +166,9 @@ FUNCTIONS BY SUSPECT TYPE
     0054ab30: cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30
     0054ae70: cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
     0054aa20: cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
-    ... and 640 more
+    ... and 639 more
 
-  unnamed_local (108 functions):
+  unnamed_local (109 functions):
     00432540: cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
     00433480: cockpit_ckptutil.c_saveEdgeListFile_FUN_00433480
     00434af0: cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
@@ -179,9 +179,9 @@ FUNCTIONS BY SUSPECT TYPE
     00552510: engine_prim.c_renderPolygonSoftware_FUN_00552510
     005fcfc0: engine_3d.c_rasterizeTriangle_FUN_005fcfc0
     00483370: engine_drender.cpp_renderTriangleTextured_FUN_00483370
-    ... and 98 more
+    ... and 99 more
 
-  unrolled_strcpy (187 functions):
+  unrolled_strcpy (186 functions):
     00543e40: support_newmsg.cpp_readMessageFile_FUN_00543e40
     004820c0: engine_dosio.c_getFullPath_FUN_004820c0
     00481f80: engine_dosio.c_ensureTrailingSlash_FUN_00481f80
@@ -192,7 +192,7 @@ FUNCTIONS BY SUSPECT TYPE
     005f2440: engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440
     004ce2d0: engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0
     004fb250: engine_ini.cpp_CIni_getProfileString_FUN_004fb250
-    ... and 177 more
+    ... and 176 more
 
   warning_inlined_function (254 functions):
     00488630: cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630
@@ -298,18 +298,18 @@ FUNCTIONS BY SUSPECT TYPE
     0040e3b0: core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
     ... and 10 more
 
-  unrolled_strchr (31 functions):
+  unrolled_strchr (30 functions):
     005dcc00: engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00
     00545180: engine_palette.cpp_CPaletteManager_createOutputPalette_FUN_00545180
     004fb250: engine_ini.cpp_CIni_getProfileString_FUN_004fb250
     004fb470: engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004fb470
     004b5640: engine_fileio.cpp_CFileManager_registerFiles_FUN_004b5640
     005acf20: sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20
-    0044f3e0: core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0
     00471ad0: core_dimage.cpp_CDemonImage_load_FUN_00471ad0
     00578d80: core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80
     00578420: core_setedit.cpp_loadGroundTypes_FUN_00578420
-    ... and 21 more
+    00584e70: core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70
+    ... and 20 more
 
   unrolled_strcat (8 functions):
     004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
