@@ -13,15 +13,15 @@ accesses and vtable calls will be wrong.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Total resolution calls found:  313
+  Total resolution calls found:  336
   Type mismatches found:         0
-  Unresolved (indirect variable): 17
+  Unresolved (indirect variable): 18
 
   Calls by function:
-    castToClassHash                249 calls
+    castToClassHash                263 calls
     createActorByName              7 calls
     getActor                       35 calls
-    resolveActorByName             22 calls
+    resolveActorByName             31 calls
 
 ====================================================================================================
 UNRESOLVED CALLS (class identity passed via variable)
@@ -30,6 +30,18 @@ UNRESOLVED CALLS (class identity passed via variable)
 These calls pass the class hash or name through an intermediate variable
 rather than directly from a ClassInfo global or string literal.
 Manual inspection is needed to determine the expected class.
+
+--------------------------------------------------------------------------------
+  core/event.cpp/CEventList_executeCommand_FUN_004aacc0.chunked.cpp
+--------------------------------------------------------------------------------
+
+  Line 277: castToClassHash()
+    275:           if ((pCVar8 != g_ActorNameSentinel) && (local_f0 != 0)) {
+    276:             pCVar8->lifecycle_state = ACTOR_DESTROYED;
+    277:             pCVar6 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c790(pCVar8,uVar14);
+    278:             if (pCVar6 != (CBoxActor *)0x0) {
+    279:               pCVar6->loop_wav_name[0] = '\0';
+    280:               sound_sndmain_cpp_killSfx_FUN_005a9c40(pCVar6->sfx_handle);
 
 --------------------------------------------------------------------------------
   core/event.cpp/CEventList_executeCommand_FUN_004aacc0.keep.cpp

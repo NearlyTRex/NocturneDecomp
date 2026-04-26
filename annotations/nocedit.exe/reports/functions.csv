@@ -229,7 +229,7 @@ crt_process.c_build_command_line_FUN_006103a4,006103a4,crt/process.c,22,0,,22
 crt_process.c_set_shell_execute_flag_FUN_00609c80,00609c80,crt/process.c,7,1,param_count_too_few,22
 crt_process.c_execvp_FUN_00610790,00610790,crt/process.c,6,0,,6
 crt_process.c_getpid_FUN_006099c0,006099c0,crt/process.c,5,0,,5
-crt_process.c_buildFileInfoEnv_FUN_0060ffd0,0060ffd0,crt/process.c,209,22,unknown_field|unrolled_strcat|unrolled_strcpy|unrolled_strlen,449
+crt_process.c_buildFileInfoEnv_FUN_0060ffd0,0060ffd0,crt/process.c,206,24,unknown_field|unrolled_strcat|unrolled_strcpy|unrolled_strlen,466
 crt_process.c_execv_FUN_006101f0,006101f0,crt/process.c,14,0,,14
 crt_process.c_spawn_FUN_006105a0,006105a0,crt/process.c,78,0,,78
 crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8,006026a8,crt/startup.cpp,18,3,param_count_too_few|stack_param,58
@@ -1084,7 +1084,7 @@ engine_clipper.c_clipPolygonTopPlane_FUN_004362e0,004362e0,engine/clipper.c,64,0
 engine_clipper.c_interpolateVertexNearClip_FUN_00435e00,00435e00,engine/clipper.c,52,0,,52
 engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490,00437490,engine/clipper.c,55,0,,55
 engine_clipper.c_clipPolygonToViewport_FUN_00438420,00438420,engine/clipper.c,464,36,pointer_cast,829
-engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0,004366e0,engine/clipper.c,583,6,pointer_cast|warning_type_propagation|warning_unreachable,658
+engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0,004366e0,engine/clipper.c,581,6,pointer_cast|warning_type_propagation|warning_unreachable,656
 engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_00437700,00437700,engine/clipper.c,78,8,pointer_cast,163
 engine_clipper.c_interpolateVertexRightClip_FUN_00435b00,00435b00,engine/clipper.c,49,0,,49
 engine_clipper.c_clipPolygonBottomPlane_FUN_004361a0,004361a0,engine/clipper.c,64,0,,64
@@ -1093,7 +1093,7 @@ engine_clipper.c_setNearPlaneDistance_FUN_004359d0,004359d0,engine/clipper.c,8,0
 engine_clipper.c_getNearPlaneDistance_FUN_004359f0,004359f0,engine/clipper.c,4,0,,4
 engine_clipper.c_copyMemory_FUN_00437200,00437200,engine/clipper.c,15,4,pointer_cast,60
 engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0,004375c0,engine/clipper.c,54,0,,54
-engine_clipper.c_clipPolygonNearPlane_FUN_00436420,00436420,engine/clipper.c,136,3,pointer_cast|warning_unreachable,176
+engine_clipper.c_clipPolygonNearPlane_FUN_00436420,00436420,engine/clipper.c,134,3,pointer_cast|warning_unreachable,174
 engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_00437840,00437840,engine/clipper.c,78,8,pointer_cast,163
 engine_clipper.c_allocateClipVertex_FUN_00435980,00435980,engine/clipper.c,12,0,,12
 engine_clipper.c_clipPolygonLeftPlane_FUN_00435f20,00435f20,engine/clipper.c,64,0,,64
@@ -2821,7 +2821,7 @@ core_xform.cpp_quaternionToEulerAnglesZYX_FUN_005f7af0,005f7af0,core/xform.cpp,7
 core_xform.cpp_determinant_FUN_005f61c0,005f61c0,core/xform.cpp,9,0,,9
 core_xform.cpp_clipInterpolateBottomPlane_FUN_005f7e00,005f7e00,core/xform.cpp,47,0,,47
 core_xform.cpp_orthonormalizeMatrix3x3_FUN_005f6690,005f6690,core/xform.cpp,122,0,,122
-core_xform.cpp_clipPolygonStage1_FUN_005f7ed0,005f7ed0,core/xform.cpp,94,2,warning_unreachable,119
+core_xform.cpp_clipPolygonStage1_FUN_005f7ed0,005f7ed0,core/xform.cpp,91,2,warning_unreachable,116
 core_xform.cpp_multiplyQuaternionInPlace_FUN_005f7700,005f7700,core/xform.cpp,15,1,stack_alignment_array,30
 core_xform.cpp_inverseInPlace_FUN_005f6190,005f6190,core/xform.cpp,17,2,pointer_cast,42
 core_xform.cpp_quaternionFromAngleY_FUN_005f79f0,005f79f0,core/xform.cpp,12,0,,12
@@ -2839,9 +2839,9 @@ core_xform.cpp_buildXFlipMatrix_FUN_005f6ee0,005f6ee0,core/xform.cpp,19,8,unname
 core_xform.cpp_quaternionFromAngleZ_FUN_005f7a30,005f7a30,core/xform.cpp,12,0,,12
 core_xform.cpp_clipInterpolateLeftPlane_FUN_005f7c80,005f7c80,core/xform.cpp,47,0,,47
 core_xform.cpp_normalizeMatrix_FUN_005f51e0,005f51e0,core/xform.cpp,47,0,,47
-core_xform.cpp_transformAndClipGeometry_FUN_005f8550,005f8550,core/xform.cpp,494,28,extra_output|pointer_cast|warning_unreachable,789
+core_xform.cpp_transformAndClipGeometry_FUN_005f8550,005f8550,core/xform.cpp,490,28,extra_output|pointer_cast|warning_unreachable,785
 core_xform.cpp_buildYFlipMatrix_FUN_005f6f40,005f6f40,core/xform.cpp,23,4,unnamed_local,68
-core_xform.cpp_clipPolygonStage3_FUN_005f81c0,005f81c0,core/xform.cpp,95,2,warning_unreachable,120
+core_xform.cpp_clipPolygonStage3_FUN_005f81c0,005f81c0,core/xform.cpp,92,2,warning_unreachable,117
 core_xform.cpp_atan2Approximation_FUN_005f55c0,005f55c0,core/xform.cpp,29,0,,29
 core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0,005f73e0,core/xform.cpp,23,1,param_count_too_few,38
 core_xform.cpp_inverse_FUN_005f6210,005f6210,core/xform.cpp,97,0,,97
@@ -2858,9 +2858,9 @@ core_xform.cpp_buildTranslationMatrix_FUN_005f6dc0,005f6dc0,core/xform.cpp,21,8,
 core_xform.cpp_multiplyMatrix3x4InPlace_FUN_005f50c0,005f50c0,core/xform.cpp,22,0,,22
 core_xform.cpp_somebodyWriteMe_FUN_005f5160,005f5160,core/xform.cpp,7,0,,7
 core_xform.cpp_multiplyQuaternion_FUN_005f7640,005f7640,core/xform.cpp,59,0,,59
-core_xform.cpp_clipPolygonStage4_FUN_005f8330,005f8330,core/xform.cpp,95,2,warning_unreachable,120
+core_xform.cpp_clipPolygonStage4_FUN_005f8330,005f8330,core/xform.cpp,92,2,warning_unreachable,117
 core_xform.cpp_clampClippedVertices_FUN_005f84a0,005f84a0,core/xform.cpp,46,0,,46
-core_xform.cpp_clipPolygonStage2_FUN_005f8040,005f8040,core/xform.cpp,94,2,warning_unreachable,119
+core_xform.cpp_clipPolygonStage2_FUN_005f8040,005f8040,core/xform.cpp,91,2,warning_unreachable,116
 core_xform.cpp_clipInterpolateRightPlane_FUN_005f7bc0,005f7bc0,core/xform.cpp,47,0,,47
 core_xform.cpp_hasNegativeDeterminant_FUN_005f6be0,005f6be0,core/xform.cpp,8,0,,8
 core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280,005f7280,core/xform.cpp,33,0,,33

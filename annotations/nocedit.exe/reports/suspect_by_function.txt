@@ -7836,16 +7836,16 @@ core_xform.cpp_transformAndClipGeometry_FUN_005f8550 (28 suspects)
   Line 27 [extra_output]: SRenderVertex *extraout_EAX_04;
   Line 28 [extra_output]: SRenderVertex *extraout_EAX_05;
   Line 29 [extra_output]: SRenderVertex *extraout_EAX_06;
-  Line 71 [pointer_cast]: local_24 = (SRenderVertex *)((int)&(local_24->projected_vertex).transformed_x + 1);
-  Line 101 [pointer_cast]: local_24 = (SRenderVertex *)((int)&(local_24->projected_vertex).transformed_x + 1);
-  Line 186 [extra_output]: local_24 = extraout_EAX;
-  Line 213 [extra_output]: local_24 = extraout_EAX_00;
-  Line 265 [extra_output]: local_24 = extraout_EAX_01;
-  Line 292 [extra_output]: local_24 = extraout_EAX_02;
-  Line 343 [extra_output]: local_24 = extraout_EAX_03;
-  Line 371 [extra_output]: local_24 = extraout_EAX_04;
-  Line 423 [extra_output]: local_24 = extraout_EAX_05;
-  Line 452 [extra_output]: local_24 = extraout_EAX_06;
+  Line 70 [pointer_cast]: local_24 = (SRenderVertex *)((int)&(local_24->projected_vertex).transformed_x + 1);
+  Line 100 [pointer_cast]: local_24 = (SRenderVertex *)((int)&(local_24->projected_vertex).transformed_x + 1);
+  Line 184 [extra_output]: local_24 = extraout_EAX;
+  Line 210 [extra_output]: local_24 = extraout_EAX_00;
+  Line 261 [extra_output]: local_24 = extraout_EAX_01;
+  Line 288 [extra_output]: local_24 = extraout_EAX_02;
+  Line 339 [extra_output]: local_24 = extraout_EAX_03;
+  Line 367 [extra_output]: local_24 = extraout_EAX_04;
+  Line 419 [extra_output]: local_24 = extraout_EAX_05;
+  Line 448 [extra_output]: local_24 = extraout_EAX_06;
 
 ====================================================================================================
 core_zombie.cpp_CZombie_canPickupWithHand_FUN_005fbda0 (1 suspect)
@@ -8247,7 +8247,7 @@ engine_clipper.c_clipPolygonNearPlane_FUN_00436420 (3 suspects)
 ====================================================================================================
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x004365c2) */
   Line 3 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x0043653c) */
-  Line 33 [pointer_cast]: iVar3 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z + iVar5);
+  Line 32 [pointer_cast]: iVar3 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z + iVar5);
 
 ====================================================================================================
 engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_00437840 (8 suspects)
@@ -8312,7 +8312,7 @@ engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0 (6 suspects)
   Line 4 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x00436c04) */
   Line 5 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x0043708f) */
   Line 6 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 430 [pointer_cast]: iVar12 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z +
+  Line 415 [pointer_cast]: (pSVar15->projected_vertex).transformed_y = *(int *)((int)plVar14 + 4);
 
 ====================================================================================================
 engine_clipper.c_clipPolygonToViewport_FUN_00438420 (36 suspects)
