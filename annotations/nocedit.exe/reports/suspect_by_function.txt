@@ -5,221 +5,37 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5151 (79.8%)
-With suspects: 1303
-Total suspects: 5859
+Clean: 5153 (79.8%)
+With suspects: 1301
+Total suspects: 5849
 
 ====================================================================================================
-cockpit_ckptutil.c_applyActPalette_FUN_004319b0 (1 suspect)
+cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50 (1 suspect)
   File: cockpit/ckptutil.c
 ====================================================================================================
-  Line 17 [pointer_cast]: bitmap_buffer = (byte *)((int)bitmap_buffer + 1);
+  Line 37 [pointer_cast]: puVar9 = (uint *)(x * 4 + (int)g_ScreenBufferArray[y]);
 
 ====================================================================================================
-cockpit_ckptutil.c_basicIndexedTo16Bit_FUN_00431730 (2 suspects)
+cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0 (2 suspects)
   File: cockpit/ckptutil.c
 ====================================================================================================
-  Line 12 [pointer_cast]: input_buffer = (void *)((int)input_buffer + 1);
-  Line 15 [pointer_cast]: output_buffer = (ushort *)((int)output_buffer + 2);
+  Line 32 [pointer_cast]: puVar7 = (uint *)(x * 4 + (int)g_ScreenBufferArray[y]);
+  Line 53 [pointer_cast]: *(uint *)(x * 4 + (int)g_ScreenBufferArray[y]) =
 
 ====================================================================================================
-cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50 (4 suspects)
+cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540 (3 suspects)
   File: cockpit/ckptutil.c
 ====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 28 [pointer_cast]: uVar2 = *(ushort *)((int)g_ScreenBufferArray[y] + x * 2);
-  Line 71 [pointer_cast]: *(uint *)((int)g_ScreenBufferArray[y] + x * 4) =
-  Line 80 [pointer_cast]: *(ushort *)((int)g_ScreenBufferArray[y] + x * 2) =
+  Line 15 [unnamed_local]: int local_1c;
+  Line 16 [unnamed_local]: int local_18;
+  Line 17 [unnamed_local]: int local_14;
 
 ====================================================================================================
-cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0 (3 suspects)
+cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_00432b60 (2 suspects)
   File: cockpit/ckptutil.c
 ====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 23 [pointer_cast]: uVar1 = *(ushort *)((int)g_ScreenBufferArray[y] + x * 2);
-  Line 59 [pointer_cast]: *(ushort *)((int)g_ScreenBufferArray[y] + x * 2) =
-
-====================================================================================================
-cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0 (8 suspects)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 37 [pointer_cast]: for (iVar7 = 0; piVar6 = (int *)((int)span_data + local_28), iVar7 < *piVar6;
-  Line 43 [pointer_cast]: (*pCVar5)((void *)((int)local_18 + *(int *)(iVar3 + (int)piVar6)),
-  Line 49 [pointer_cast]: local_18 = (void *)((int)local_18 + iVar4);
-  Line 50 [pointer_cast]: sprite_data = (void *)((int)sprite_data + width);
-  Line 55 [pointer_cast]: local_14 = (void *)((int)g_ScreenBufferArray[dest_y] + dest_x * 2);
-  Line 64 [pointer_cast]: for (iVar11 = 0; piVar10 = (int *)((int)span_data + local_24), iVar11 < *piVar10;
-  Line 76 [pointer_cast]: local_14 = (void *)((int)local_14 + (iVar4 / 2) * 2);
-  Line 77 [pointer_cast]: sprite_data = (void *)((int)sprite_data + width);
-
-====================================================================================================
-cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0 (6 suspects)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 17 [pointer_cast]: src_buffer = (void *)((int)sprite_data + start_x + g_WindowWidth / 2 + dest_y * src_stride);
-  Line 26 [pointer_cast]: src_buffer = (void *)((int)src_buffer + src_stride);
-  Line 32 [pointer_cast]: pvVar5 = (void *)((int)g_ScreenBufferArray[dest_y + src_y_offset] + start_x * 2);
-  Line 35 [pointer_cast]: (*pCVar2)((void *)((int)pvVar5 + unused_param * -2),src_buffer,count);
-  Line 37 [pointer_cast]: pvVar5 = (void *)((int)pvVar5 + (iVar1 / 2) * 2);
-  Line 38 [pointer_cast]: src_buffer = (void *)((int)src_buffer + src_stride);
-
-====================================================================================================
-cockpit_ckptutil.c_blitRectangleClipped_FUN_00432190 (6 suspects)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 28 [pointer_cast]: (*pCVar3)((void *)(iVar7 + iVar8),(void *)((int)sprite_data + iVar8),(iVar4 - iVar8) + 1);
-  Line 31 [pointer_cast]: sprite_data = (void *)((int)sprite_data + width);
-  Line 37 [pointer_cast]: pvVar8 = (void *)((int)g_ScreenBufferArray[dest_y] + dest_x * 2);
-  Line 44 [pointer_cast]: (*pCVar3)((void *)(iVar5 * 2 + (int)pvVar8),(void *)((int)sprite_data + iVar5),
-  Line 47 [pointer_cast]: pvVar8 = (void *)((int)pvVar8 + (iVar2 / 2) * 2);
-  Line 48 [pointer_cast]: sprite_data = (void *)((int)sprite_data + width);
-
-====================================================================================================
-cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540 (9 suspects)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 17 [pointer_cast]: pvVar3 = (void *)((int)g_ScreenBufferArray[dest_y] + dest_x);
-  Line 22 [pointer_cast]: sprite_data = (void *)((int)sprite_data + width);
-  Line 24 [pointer_cast]: pvVar3 = (void *)((int)pvVar3 + iVar2);
-  Line 30 [pointer_cast]: pvVar1 = (void *)((int)g_ScreenBufferArray[dest_y] + dest_x * 2);
-  Line 35 [pointer_cast]: sprite_data = (void *)((int)sprite_data + width);
-  Line 37 [pointer_cast]: pvVar1 = (void *)((int)pvVar1 + (iVar2 / 2) * 2);
-  Line 43 [pointer_cast]: pvVar1 = (void *)((int)g_ScreenBufferArray[dest_y] + dest_x * 4);
-  Line 48 [pointer_cast]: sprite_data = (void *)((int)sprite_data + width);
-  Line 50 [pointer_cast]: pvVar1 = (void *)((int)pvVar1 +
-
-====================================================================================================
-cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40 (14 suspects)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 27 [pointer_cast]: sprite_data = (void *)((int)sprite_data + width * screen_y + screen_x);
-  Line 36 [pointer_cast]: while (piVar3 = (int *)((int)span_data + local_30), iVar9 < *piVar3) {
-  Line 37 [pointer_cast]: iVar3 = *(int *)((int)piVar3 + iVar7 + 4);
-  Line 38 [pointer_cast]: iVar5 = *(int *)((int)piVar3 + iVar7 + 0x44) + iVar3 + -1;
-  Line 45 [pointer_cast]: (*pCVar2)((void *)((iVar3 + local_18) - src_x),(void *)((int)sprite_data + iVar3),
-  Line 53 [pointer_cast]: sprite_data = (void *)((int)sprite_data + width);
-  Line 58 [pointer_cast]: local_1c = (void *)((int)g_ScreenBufferArray[src_y + screen_y] + screen_x * 2);
-  Line 64 [pointer_cast]: while (piVar1 = (int *)((int)span_data + local_2c), iVar10 < *piVar1) {
-  Line 65 [pointer_cast]: iVar4 = *(int *)((int)piVar1 + iVar3 + 4);
-  Line 66 [pointer_cast]: iVar2 = *(int *)((int)piVar1 + iVar3 + 0x44) + iVar4 + -1;
-  Line 73 [pointer_cast]: (*pCVar2)((void *)((int)local_1c + src_x * -2 + iVar4 * 2),
-  Line 74 [pointer_cast]: (void *)((int)sprite_data + iVar4),(iVar2 - iVar4) + 1);
-  Line 80 [pointer_cast]: local_1c = (void *)((int)local_1c + (iVar1 / 2) * 2);
-  Line 81 [pointer_cast]: sprite_data = (void *)((int)sprite_data + width);
-
-====================================================================================================
-cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_00432b60 (4 suspects)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 34 [pointer_cast]: iVar2 = *(int *)((int)g_ScreenBufferArray + local_38);
-  Line 42 [pointer_cast]: (*pCVar4)((void *)(iVar2 + iVar3),(void *)((int)sprite_data + iVar3 + iVar5),
-  Line 57 [pointer_cast]: iVar6 = *(int *)((int)g_ScreenBufferArray + local_40);
-  Line 65 [pointer_cast]: (*pCVar4)((void *)(iVar9 * 2 + iVar6),(void *)((int)sprite_data + iVar9 + iVar10),
-
-====================================================================================================
-cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00431d00 (14 suspects)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 27 [pointer_cast]: sprite_data = (void *)((int)sprite_data + width * screen_y + screen_x);
-  Line 36 [pointer_cast]: while (piVar3 = (int *)((int)span_data + local_30), iVar9 < *piVar3) {
-  Line 37 [pointer_cast]: iVar3 = *(int *)((int)piVar3 + iVar7 + 4);
-  Line 38 [pointer_cast]: iVar5 = *(int *)((int)piVar3 + iVar7 + 0x44) + iVar3 + -1;
-  Line 45 [pointer_cast]: (*pCVar2)((void *)(iVar3 + local_1c),(void *)((int)sprite_data + iVar3),
-  Line 55 [pointer_cast]: sprite_data = (void *)((int)sprite_data + width);
-  Line 60 [pointer_cast]: local_18 = (void *)((int)g_ScreenBufferArray[src_y + screen_y] + screen_x * 2);
-  Line 66 [pointer_cast]: while (piVar1 = (int *)((int)span_data + local_2c), iVar10 < *piVar1) {
-  Line 67 [pointer_cast]: iVar4 = *(int *)((int)piVar1 + iVar3 + 4);
-  Line 68 [pointer_cast]: iVar2 = *(int *)((int)piVar1 + iVar3 + 0x44) + iVar4 + -1;
-  Line 75 [pointer_cast]: (*pCVar2)((void *)((int)local_18 + src_x * -2 + iVar4 * 2),
-  Line 76 [pointer_cast]: (void *)((int)sprite_data + iVar4),(iVar2 - iVar4) + 1);
-  Line 84 [pointer_cast]: local_18 = (void *)((int)local_18 + (iVar1 / 2) * 2);
-  Line 85 [pointer_cast]: sprite_data = (void *)((int)sprite_data + width);
-
-====================================================================================================
-cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300 (13 suspects)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 39 [pointer_cast]: while (piVar4 = (int *)((int)span_data + local_28), iVar9 < *piVar4) {
-  Line 40 [pointer_cast]: iVar4 = *(int *)((int)piVar4 + iVar7 + 4);
-  Line 41 [pointer_cast]: iVar5 = *(int *)((int)piVar4 + iVar7 + 0x44) + iVar4 + -1;
-  Line 48 [pointer_cast]: (*pCVar2)((void *)(iVar4 + (int)local_18),(void *)((int)sprite_data + iVar4),
-  Line 56 [pointer_cast]: local_18 = (void *)((int)local_18 + iVar1);
-  Line 57 [pointer_cast]: sprite_data = (void *)((int)sprite_data + width);
-  Line 62 [pointer_cast]: local_1c = (void *)((int)g_ScreenBufferArray[dest_y] + dest_x * 2);
-  Line 72 [pointer_cast]: while (piVar1 = (int *)((int)span_data + local_2c), iVar10 < *piVar1) {
-  Line 73 [pointer_cast]: iVar3 = *(int *)((int)piVar1 + iVar4 + 4);
-  Line 74 [pointer_cast]: iVar2 = *(int *)((int)piVar1 + iVar4 + 0x44) + iVar3 + -1;
-  Line 81 [pointer_cast]: (*pCVar2)((void *)(iVar3 * 2 + (int)local_1c),(void *)((int)sprite_data + iVar3),
-  Line 89 [pointer_cast]: local_1c = (void *)((int)local_1c + (iVar1 / 2) * 2);
-  Line 90 [pointer_cast]: sprite_data = (void *)((int)sprite_data + width);
-
-====================================================================================================
-cockpit_ckptutil.c_blitVerticalColumn_FUN_00432a10 (3 suspects)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 21 [pointer_cast]: piVar2 = (int *)((int)g_ScreenBufferArray + iVar4);
-  Line 24 [pointer_cast]: (*pCVar2)((void *)(*piVar2 + start_x),(void *)((int)sprite_data + iVar3 + start_x),count);
-  Line 32 [pointer_cast]: piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);
-
-====================================================================================================
-cockpit_ckptutil.c_blitWithTransparencyFallback_FUN_00432d00 (1 suspect)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 16 [pointer_cast]: pcVar2 = (char *)((int)src_data + local_18);
-
-====================================================================================================
-cockpit_ckptutil.c_buildHardwarePalettes_FUN_00431c00 (5 suspects)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x00431c6d) */
-  Line 26 [pointer_cast]: rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);
-  Line 27 [pointer_cast]: *(ushort *)((int)g_Hardware16BitPalette + iVar6) =
-  Line 43 [pointer_cast]: rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);
-  Line 44 [pointer_cast]: *(uint *)((int)g_Hardware32BitPalette + iVar4) =
-
-====================================================================================================
-cockpit_ckptutil.c_copyScreenRegion_FUN_00432d90 (3 suspects)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 26 [pointer_cast]: puVar4 = (uint *)((int)puVar4 + 1);
-  Line 27 [pointer_cast]: puVar5 = (uint *)((int)puVar5 + 1);
-  Line 29 [pointer_cast]: dest_buffer = (void *)((int)dest_buffer + bytes_per_row);
-
-====================================================================================================
-cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_00431410 (10 suspects)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 11 [pointer_cast]: output_buffer = (void *)((int)output_buffer + 2);
-  Line 12 [pointer_cast]: indexed_input_buffer = (void *)((int)indexed_input_buffer + 1);
-  Line 18 [pointer_cast]: CONCAT22(g_Hardware16BitPalette[*(byte *)((int)indexed_input_buffer + 1)],
-  Line 20 [pointer_cast]: indexed_input_buffer = (void *)((int)indexed_input_buffer + 2);
-  Line 21 [pointer_cast]: output_buffer = (void *)((int)output_buffer + 4);
-  Line 31 [pointer_cast]: output_buffer = (void *)((int)output_buffer + 2);
-  Line 32 [pointer_cast]: indexed_input_buffer = (void *)((int)indexed_input_buffer + 1);
-  Line 36 [pointer_cast]: pbVar1 = (byte *)((int)indexed_input_buffer + 1);
-  Line 38 [pointer_cast]: indexed_input_buffer = (void *)((int)indexed_input_buffer + 2);
-  Line 41 [pointer_cast]: output_buffer = (void *)((int)output_buffer + 4);
-
-====================================================================================================
-cockpit_ckptutil.c_expandIndexedToRGB_FUN_004314fa (2 suspects)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 11 [pointer_cast]: input_buffer = (void *)((int)input_buffer + 1);
-  Line 13 [pointer_cast]: output_buffer = (void *)((int)output_buffer + 4);
-
-====================================================================================================
-cockpit_ckptutil.c_generateScrollHeightMap_FUN_00432df0 (2 suspects)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 40 [pointer_cast]: for (pbVar3 = (byte *)((int)bitmap_data + iVar5 + (start_x + -1) * end_x);
-  Line 59 [pointer_cast]: for (pbVar1 = (byte *)((int)bitmap_data + local_14 + iVar3 + (start_x + -1) * end_x);
-
-====================================================================================================
-cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0 (2 suspects)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 35 [unrolled_strchr]: do {
-  Line 58 [unrolled_strcpy]: do {
+  Line 25 [unnamed_local]: int local_30;
+  Line 26 [unnamed_local]: int local_2c;
 
 ====================================================================================================
 cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30 (1 suspect)
@@ -228,76 +44,37 @@ cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30 (1 suspect)
   Line 17 [unnamed_local]: byte local_30c [768];
 
 ====================================================================================================
-cockpit_ckptutil.c_optimizedMemcpy_FUN_00431528 (10 suspects)
+cockpit_ckptutil.c_putPixel_FUN_004345c0 (3 suspects)
   File: cockpit/ckptutil.c
 ====================================================================================================
-  Line 25 [pointer_cast]: src_buffer = (uint *)((int)src_buffer + 1);
-  Line 26 [pointer_cast]: dest_buffer = (uint *)((int)dest_buffer + 1);
-  Line 33 [pointer_cast]: src_buffer = (uint *)((int)src_buffer + 4);
-  Line 34 [pointer_cast]: dest_buffer = (uint *)((int)dest_buffer + 4);
-  Line 65 [pointer_cast]: src_buffer = (void *)((int)src_buffer + uVar5 * 0x20);
-  Line 66 [pointer_cast]: dest_buffer = (void *)((int)dest_buffer + uVar5 * 8 * 4);
-  Line 74 [pointer_cast]: src_buffer = (uint *)((int)src_buffer + 4);
-  Line 75 [pointer_cast]: dest_buffer = (uint *)((int)dest_buffer + 4);
-  Line 81 [pointer_cast]: src_buffer = (uint *)((int)src_buffer + 1);
-  Line 82 [pointer_cast]: dest_buffer = (uint *)((int)dest_buffer + 1);
+  Line 8 [pointer_cast]: *(ushort *)(x * 2 + (int)g_ScreenBufferArray[y]) = g_Hardware16BitPalette[color];
+  Line 14 [pointer_cast]: *(uint *)(x * 4 + (int)g_ScreenBufferArray[y]) = g_Hardware32BitPalette[color];
+  Line 18 [pointer_cast]: *(char *)(x + (int)g_ScreenBufferArray[y]) = (char)color;
 
 ====================================================================================================
-cockpit_ckptutil.c_rotateCircularBitmap_FUN_00433030 (11 suspects)
+cockpit_ckptutil.c_rasterizeEdgeEndpoints_FUN_004336e0 (2 suspects)
   File: cockpit/ckptutil.c
 ====================================================================================================
-  Line 29 [pointer_cast]: puVar5 = (byte *)((int)bitmap_data + iVar7) + aiStack_28[2];
-  Line 31 [pointer_cast]: puVar3 = (byte *)((int)bitmap_data + iVar7);
-  Line 53 [pointer_cast]: puVar6 = (uint *)((int)puVar4 + (aiStack_28[2] - num_iterations));
-  Line 65 [pointer_cast]: piVar4 = (int *)((int)piVar4 + 1);
-  Line 66 [pointer_cast]: piVar5 = (int *)((int)piVar5 + 1);
-  Line 77 [pointer_cast]: puVar8 = (uint *)((int)puVar8 + 1);
-  Line 78 [pointer_cast]: puVar11 = (uint *)((int)puVar11 + 1);
-  Line 89 [pointer_cast]: piVar9 = (int *)((int)piVar9 + 1);
-  Line 90 [pointer_cast]: piVar4 = (int *)((int)piVar4 + 1);
-  Line 92 [pointer_cast]: puVar4 = (uint *)((int)puVar4 + num_iterations);
-  Line 94 [pointer_cast]: puVar6 = (uint *)((int)puVar6 - num_iterations);
+  Line 23 [pointer_cast]: *(byte *)(iVar1 + (int)bitmap_buffer) = 0xfb;
+  Line 33 [pointer_cast]: *(byte *)(iVar4 + (int)bitmap_buffer) = 0xfb;
 
 ====================================================================================================
-cockpit_ckptutil.c_saveEdgeListFile_FUN_00433480 (1 suspect)
+cockpit_ckptutil.c_saveEdgeListFile_FUN_00433480 (2 suspects)
   File: cockpit/ckptutil.c
 ====================================================================================================
-  Line 39 [pointer_cast]: for (iVar8 = 0; piVar7 = (int *)((int)&edge_lists->edge_data + local_14), iVar8 < piVar7[1];
+  Line 16 [unnamed_local]: SEdgeList *local_18;
+  Line 34 [unnamed_local]: local_18 = edge_lists;
 
 ====================================================================================================
-cockpit_ckptutil.c_setEdgeData_FUN_00434a50 (2 suspects)
+cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0 (6 suspects)
   File: cockpit/ckptutil.c
 ====================================================================================================
-  Line 17 [pointer_cast]: *(byte *)((int)&pSVar1->y1 + 1) = *(byte *)((int)&pSVar1->y1 + 1) & 0x7f;
-  Line 17 [pointer_cast]: *(byte *)((int)&pSVar1->y1 + 1) = *(byte *)((int)&pSVar1->y1 + 1) & 0x7f;
-
-====================================================================================================
-cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0 (23 suspects)
-  File: cockpit/ckptutil.c
-====================================================================================================
-  Line 100 [pointer_cast]: for (local_20 = 0; piVar2 = (int *)((int)scanline_data + iVar13 * 0x84), local_20 < *piVar2;
-  Line 102 [pointer_cast]: iVar2 = *(int *)((int)piVar2 + local_e0 + 4);
-  Line 103 [pointer_cast]: iVar14 = *(int *)((int)piVar2 + local_e0 + 0x44) + iVar2;
-  Line 116 [pointer_cast]: piVar7 = (int *)((int)scanline_data + iVar16 * 0x84);
-  Line 120 [pointer_cast]: iVar3 = *(int *)((int)piVar6 + local_c4 + 4);
-  Line 131 [pointer_cast]: (iVar2 <= *(int *)((int)piVar6 + local_c4 + 0x44) + iVar3 + -1)) {
-  Line 145 [pointer_cast]: *(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =
-  Line 146 [pointer_cast]: *(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;
-  Line 159 [pointer_cast]: *(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =
-  Line 160 [pointer_cast]: *(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;
-  Line 187 [pointer_cast]: *(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =
-  Line 188 [pointer_cast]: *(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;
-  Line 202 [pointer_cast]: *(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =
-  Line 203 [pointer_cast]: *(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;
-  Line 228 [pointer_cast]: iVar10 = *(int *)((int)piVar7 + local_50 + 4);
-  Line 230 [pointer_cast]: piVar6 = (int *)((int)scanline_data + iVar13 * 0x84);
-  Line 231 [pointer_cast]: iVar4 = iVar10 + *(int *)((int)piVar7 + local_50 + 0x44) + -1;
-  Line 232 [pointer_cast]: if ((local_20 < *piVar6 + -1) && (*(int *)((int)piVar6 + local_e0 + 8) < iVar4)) {
-  Line 238 [pointer_cast]: if ((local_b4 < *piVar7 + -1) && (*(int *)((int)piVar7 + local_50 + 8) < iVar15)) {
-  Line 254 [pointer_cast]: *(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =
-  Line 255 [pointer_cast]: *(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;
-  Line 270 [pointer_cast]: *(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =
-  Line 271 [pointer_cast]: *(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;
+  Line 55 [unnamed_local]: int local_b4;
+  Line 87 [unnamed_local]: int local_20;
+  Line 104 [unnamed_local]: for (local_20 = 0; piVar2 = (int *)((char *)scanline_data + iVar13 * 0x84), local_20 < *piVar2;
+  Line 104 [unnamed_local]: for (local_20 = 0; piVar2 = (int *)((char *)scanline_data + iVar13 * 0x84), local_20 < *piVar2;
+  Line 225 [unnamed_local]: for (local_b4 = 0; piVar7 = (int *)((char *)scanline_data + iVar16 * 0x84),
+  Line 226 [unnamed_local]: local_b4 < *piVar7; local_b4 = local_b4 + 1) {
 
 ====================================================================================================
 cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0 (1 suspect)
@@ -312,18 +89,21 @@ cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0 (1 suspect)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 ====================================================================================================
-cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630 (3 suspects)
+cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630 (4 suspects)
   File: cockpit/drawsurf.cpp
 ====================================================================================================
   Line 0 [param_count_too_many]: Function declares 3 params but call sites push 2 (1 extra)
   Line 10 [pointer_cast]: puVar1 = (uint *)((int)g_ScreenBufferArray[y] + start_x * 2);
   Line 13 [pointer_cast]: puVar2 = (uint *)((int)puVar1 + 2);
+  Line 29 [pointer_cast]: (puVar2 = (uint *)(start_x * 4 + (int)g_ScreenBufferArray[y]), start_x <= end_x)) {
 
 ====================================================================================================
-cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_00488110 (1 suspect)
+cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_00488110 (3 suspects)
   File: cockpit/drawsurf.cpp
 ====================================================================================================
   Line 30 [pointer_cast]: ((void *)((int)g_ScreenBufferArray[y_00] + start_x_00),g_CurrentDrawColor,
+  Line 37 [pointer_cast]: puVar1 = (ushort *)(start_x_00 * 2 + (int)g_ScreenBufferArray[y_00]);
+  Line 46 [pointer_cast]: piVar2 = (int *)(start_x_00 * 4 + (int)g_ScreenBufferArray[y_00]);
 
 ====================================================================================================
 cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630 (1 suspect)
@@ -386,9 +166,14 @@ cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_00488ad0 (3 suspects)
   Line 73 [pointer_cast]: piVar1 = (int *)(start_x * 4 + *(int *)((int)g_ScreenBufferArray + iVar8));
 
 ====================================================================================================
-cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 (2 suspects)
+cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0 (7 suspects)
   File: cockpit/drawsurf.cpp
 ====================================================================================================
+  Line 21 [pointer_cast]: *(byte *)(iVar3 + (int)g_ScreenBufferArray[iVar4]) = (byte)g_CurrentDrawColor;
+  Line 27 [pointer_cast]: *(ushort *)(iVar2 + (int)g_ScreenBufferArray[iVar4]) = (ushort)g_CurrentDrawColor;
+  Line 31 [pointer_cast]: *(int *)(iVar1 + (int)g_ScreenBufferArray[iVar4]) = g_CurrentDrawColor;
+  Line 47 [pointer_cast]: *(ushort *)(iVar2 + (int)g_ScreenBufferArray[iVar4]) =
+  Line 48 [pointer_cast]: *(ushort *)(iVar2 + (int)g_ScreenBufferArray[iVar4]) >>
   Line 53 [pointer_cast]: *(uint *)((int)g_ScreenBufferArray[iVar4] + iVar1) =
   Line 54 [pointer_cast]: *(uint *)((int)g_ScreenBufferArray[iVar4] + iVar1) >> ((byte)g_OriginalColorValue & 0x1f)
 
@@ -420,10 +205,11 @@ cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70 (2 suspects)
   Line 50 [pointer_cast]: iVar3 = *(int *)((int)this_ptr->row_pointers + local_1c + 4);
 
 ====================================================================================================
-cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0054b0e0 (3 suspects)
+cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0054b0e0 (4 suspects)
   File: cockpit/pkbitmap.cpp
 ====================================================================================================
   Line 25 [pointer_cast]: piVar5 = (int *)((int)this_ptr->row_pointers + local_14);
+  Line 28 [pointer_cast]: puVar7 = (ushort *)(*piVar5 + (int)puVar1);
   Line 29 [pointer_cast]: while (puVar7 < (ushort *)((int)puVar1 + iVar4)) {
   Line 43 [pointer_cast]: puVar9 = (ushort *)((int)puVar9 + 1);
 
@@ -443,21 +229,25 @@ cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190 (2 suspects)
   Line 87 [pointer_cast]: puVar6 = (ushort *)((int)this_ptr->packed_data + iVar3);
 
 ====================================================================================================
-cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30 (4 suspects)
+cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30 (7 suspects)
   File: cockpit/pkbitmap.cpp
 ====================================================================================================
   Line 28 [pointer_cast]: piVar6 = (int *)((int)this_ptr->row_pointers + local_20);
+  Line 29 [pointer_cast]: puVar9 = (ushort *)(*piVar6 + (int)this_ptr->packed_data);
+  Line 30 [pointer_cast]: puVar7 = (ushort *)(piVar6[1] + (int)this_ptr->packed_data);
   Line 31 [pointer_cast]: iVar1 = *(int *)((int)g_ScreenBufferArray + local_24);
   Line 39 [pointer_cast]: puVar9 = (ushort *)((int)src_buffer + (count + 3 & 0xfffffffc));
   Line 42 [pointer_cast]: src_buffer = (ushort *)((int)src_buffer + (clip_left - uVar3));
+  Line 47 [pointer_cast]: dest_buffer = (void *)(((int)((g_BitsPerPixel * uVar3 + iVar8 * -8) -
 
 ====================================================================================================
-cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20 (3 suspects)
+cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20 (4 suspects)
   File: cockpit/pkbitmap.cpp
 ====================================================================================================
   Line 25 [pointer_cast]: puVar9 = (ushort *)((int)this_ptr->packed_data + (int)*this_ptr->row_pointers);
   Line 28 [pointer_cast]: iVar3 = *(int *)((int)this_ptr->row_pointers + local_1c + 4);
   Line 29 [pointer_cast]: iVar4 = *(int *)((int)g_ScreenBufferArray + local_20);
+  Line 34 [pointer_cast]: (*pCVar5)((void *)(((int)(((uint)*puVar9 * g_BitsPerPixel + iVar8 * -8) -
 
 ====================================================================================================
 cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0 (2 suspects)
@@ -880,7 +670,7 @@ core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a630 (13 suspects)
   Line 96 [pointer_cast]: *(uint *)((int)&pCVar1->y + iVar7) =
 
 ====================================================================================================
-core_bodypart.cpp_CBodyPart_archive_FUN_00419880 (23 suspects)
+core_bodypart.cpp_CBodyPart_archive_FUN_00419880 (24 suspects)
   File: core/bodypart.cpp
 ====================================================================================================
   Line 53 [pointer_cast]: (int *)((int)this_ptr->face_texture_indices + iVar4),
@@ -897,6 +687,7 @@ core_bodypart.cpp_CBodyPart_archive_FUN_00419880 (23 suspects)
   Line 78 [pointer_cast]: puVar2 = (uint *)((int)&pCVar4->z + iVar9);
   Line 79 [pointer_cast]: puVar3 = (uint *)((int)&pCVar4->y + iVar9);
   Line 80 [pointer_cast]: puVar1 = (uint *)((int)&pCVar4->x + iVar9);
+  Line 93 [pointer_cast]: *(uint *)(iVar4 + (int)this_ptr->face_texture_indices),
   Line 94 [pointer_cast]: *(uint *)((int)&pSVar5->vertices[0].vertex_index + local_18),
   Line 95 [pointer_cast]: *(uint *)((int)&pSVar5->vertices[0].texture_u + local_18),
   Line 96 [pointer_cast]: *(uint *)((int)&pSVar5->vertices[0].texture_v + local_18),
@@ -1360,13 +1151,14 @@ core_cloth.cpp_CCloth_load_FUN_00438cf0 (1 suspect)
   Line 138 [pointer_cast]: piVar1 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar13);
 
 ====================================================================================================
-core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 (4 suspects)
+core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 (5 suspects)
   File: core/cloth.cpp
 ====================================================================================================
   Line 99 [pointer_cast]: + iVar8),(CVector3i *)((int)&((this_ptr->model).vertex_list)->x + iVar11));
   Line 160 [pointer_cast]: if ((*(byte *)((int)&(pSVar2->projected_vertex).screen_x + iVar12 + 3) & 0x80) == 0) {
   Line 161 [pointer_cast]: iVar5 = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar12) >> 0x10;
   Line 162 [pointer_cast]: iVar9 = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar12) >> 0x10;
+  Line 185 [pointer_cast]: iVar9 = *(int *)(iVar12 + (int)this_ptr->vertex_sort_buffer);
 
 ====================================================================================================
 core_cloth.cpp_CCloth_render_FUN_0043bae0 (4 suspects)
@@ -1378,11 +1170,14 @@ core_cloth.cpp_CCloth_render_FUN_0043bae0 (4 suspects)
   Line 126 [pointer_cast]: iVar7 = *(int *)((int)pSVar6 + iVar7 + 0x20);
 
 ====================================================================================================
-core_cloth.cpp_CCloth_setup_FUN_00439710 (9 suspects)
+core_cloth.cpp_CCloth_setup_FUN_00439710 (12 suspects)
   File: core/cloth.cpp
 ====================================================================================================
   Line 91 [unnamed_local]: int local_20;
   Line 103 [pointer_cast]: *(int *)((int)this_ptr->vertex_sort_buffer + iVar13) = iVar8;
+  Line 115 [pointer_cast]: iVar2 = *(int *)(iVar10 + (int)this_ptr->vertex_sort_buffer);
+  Line 119 [pointer_cast]: *(int *)(iVar10 + (int)this_ptr->vertex_sort_buffer) = iVar1;
+  Line 128 [pointer_cast]: *(int *)(iVar10 + (int)this_ptr->vertex_sort_buffer) = iVar1;
   Line 161 [pointer_cast]: pCVar7 = (CVector3f *)((int)(pCVar7 + 0x17) + 8);
   Line 169 [pointer_cast]: pCVar8 = (CVector3f *)((int)(pCVar8 + 0x17) + 8);
   Line 200 [pointer_cast]: piVar12 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar10);
@@ -1392,11 +1187,14 @@ core_cloth.cpp_CCloth_setup_FUN_00439710 (9 suspects)
   Line 316 [pointer_cast]: pfVar17 = (float *)((int)pfVar17 + 1);
 
 ====================================================================================================
-core_cloth.cpp_CCloth_step_FUN_0043abb0 (3 suspects)
+core_cloth.cpp_CCloth_step_FUN_0043abb0 (6 suspects)
   File: core/cloth.cpp
 ====================================================================================================
   Line 280 [pointer_cast]: pCVar12 = (CVector3f *)((int)(pCVar12 + 0x17) + 8);
   Line 297 [pointer_cast]: pSVar13 = this_ptr->vertices + *(int *)((int)this_ptr->vertex_sort_buffer + local_58);
+  Line 352 [pointer_cast]: if (this_ptr->vertices[*(int *)(iVar7 + (int)this_ptr->vertex_sort_buffer)].locked == 0) {
+  Line 355 [pointer_cast]: *(int *)(iVar7 + (int)this_ptr->vertex_sort_buffer));
+  Line 369 [pointer_cast]: iVar2 = *(int *)(iVar16 + (int)this_ptr->vertex_sort_buffer);
   Line 395 [pointer_cast]: piVar8 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar16);
 
 ====================================================================================================
@@ -1620,10 +1418,17 @@ core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020 (1 suspect)
   Line 45 [pointer_cast]: *(byte *)((int)&g_CameraPlaneWorkBuffer + iVar1);
 
 ====================================================================================================
-core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0 (1 suspect)
+core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0 (2 suspects)
   File: core/dcamera.cpp
 ====================================================================================================
   Line 48 [pointer_cast]: piVar1 = (int *)((int)g_ZBufferScanlineArray + iVar7);
+  Line 53 [pointer_cast]: ((void *)(iVar4 * 4 + (int)this_ptr->zbuffer_aligned),
+
+====================================================================================================
+core_dcamera.cpp_CDemonCamera_endScene_FUN_0044cb80 (1 suspect)
+  File: core/dcamera.cpp
+====================================================================================================
+  Line 31 [pointer_cast]: ((void *)(iVar1 * 4 + (int)this_ptr->zbuffer_aligned),
 
 ====================================================================================================
 core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0 (2 suspects)
@@ -1775,6 +1580,12 @@ core_dcamera.cpp_CDemonCamera_restoreZBufferRect_FUN_0044c780 (2 suspects)
   Line 28 [pointer_cast]: (void *)((int)this_ptr->zbuffer_aligned + (iVar2 + rect_ptr->left) * 4),
 
 ====================================================================================================
+core_dcamera.cpp_CDemonCamera_restoreZBufferScanlines_FUN_004544a0 (1 suspect)
+  File: core/dcamera.cpp
+====================================================================================================
+  Line 17 [pointer_cast]: (void *)(iVar1 * 4 + (int)this_ptr->zbuffer_aligned),
+
+====================================================================================================
 core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0 (1 suspect)
   File: core/dcamera.cpp
 ====================================================================================================
@@ -1803,6 +1614,12 @@ core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_0044ef30 (1 suspect)
   File: core/dcamera.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
+====================================================================================================
+core_dcamera.cpp_CDemonCamera_saveZBufferScanlines_FUN_00454450 (1 suspect)
+  File: core/dcamera.cpp
+====================================================================================================
+  Line 16 [pointer_cast]: ((void *)(iVar1 * 4 + (int)this_ptr->zbuffer_aligned),
 
 ====================================================================================================
 core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00452900 (1 suspect)
@@ -1873,7 +1690,7 @@ core_dcamera.cpp_renderVolumetricLightScanline_FUN_00450440 (2 suspects)
   Line 59 [pointer_cast]: piVar1 = (int *)((int)g_DitherPatternTable + g_DitherPatternOffset);
 
 ====================================================================================================
-core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0 (12 suspects)
+core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0 (13 suspects)
   File: core/dcube.cpp
 ====================================================================================================
   Line 35 [pointer_cast]: *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar6) + -2;
@@ -1887,6 +1704,7 @@ core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0 (12 suspects
   Line 72 [pointer_cast]: pCVar1 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_1c),
   Line 73 [pointer_cast]: pCVar1 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar7 + -4),
   Line 74 [pointer_cast]: pCVar1 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar7));
+  Line 76 [pointer_cast]: *(byte *)(iVar6 + (int)this_ptr->ground_type_memory) = local_18;
   Line 81 [pointer_cast]: } while (iVar4 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_1c + -0x14));
 
 ====================================================================================================
@@ -2000,18 +1818,34 @@ core_dfilter.cpp_CDemonFilter_ctor_FUN_004701f0 (1 suspect)
   Line 14 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_dfilter.cpp_CDemonFilter_init_FUN_004705a0 (2 suspects)
+core_dfilter.cpp_CDemonFilter_init_FUN_004705a0 (3 suspects)
   File: core/dfilter.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
   Line 37 [pointer_cast]: fVar3 = (float)*(byte *)((int)this_ptr->data_buffer + this_ptr->size * iVar5 + iVar4) *
+  Line 44 [pointer_cast]: *(byte *)(this_ptr->size * iVar5 + iVar4 + (int)this_ptr->data_buffer) = local_1c;
 
 ====================================================================================================
-core_dfilter.cpp_CDemonFilter_load_FUN_004702f0 (2 suspects)
+core_dfilter.cpp_CDemonFilter_load_FUN_004702f0 (4 suspects)
   File: core/dfilter.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+  Line 53 [pointer_cast]: *(char *)(iVar4 + (int)this_ptr->data_buffer) =
+  Line 54 [pointer_cast]: (char)((int)(uint)*(byte *)(iVar4 + (int)this_ptr->data_buffer) >> 2);
   Line 57 [unrolled_strcpy]: do {
+
+====================================================================================================
+core_dfilter.cpp_CDemonFilter_save_FUN_00470510 (1 suspect)
+  File: core/dfilter.cpp
+====================================================================================================
+  Line 15 [pointer_cast]: _fputc((uint)*(byte *)(iVar1 + (int)this_ptr->data_buffer) << 2,file);
+
+====================================================================================================
+core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730 (2 suspects)
+  File: core/dfilter.cpp
+====================================================================================================
+  Line 36 [pointer_cast]: *(char *)(iVar3 + (int)this_ptr->movie_data) =
+  Line 37 [pointer_cast]: (char)((uint)((int)(uint)*(byte *)(iVar3 + (int)this_ptr->movie_data) >> 2) / 2);
 
 ====================================================================================================
 core_dfilter.cpp_CFilterFX_process_FUN_004708e0 (1 suspect)
@@ -2363,10 +2197,13 @@ core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0 (4 suspects)
   Line 93 [pointer_cast]: } while (iVar3 < *(int *)((int)pSVar1->vertices + local_28 + -0x14));
 
 ====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0 (9 suspects)
+core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0 (13 suspects)
   File: core/dmodel.cpp
 ====================================================================================================
   Line 29 [stack_alignment_array]: int aiStackY_10d8 [1006];
+  Line 99 [pointer_cast]: puVar10 = (uint *)(local_7c->part_list[0].poly_count + (int)local_50);
+  Line 124 [pointer_cast]: (*(int *)(local_70 + (int)this_ptr->poly_texture_index_list) ==
+  Line 125 [pointer_cast]: *(int *)(local_5c + (int)this_ptr->poly_texture_index_list))) &&
   Line 127 [pointer_cast]: (*(uchar *)((int)local_50 + (int)puVar2) == puVar2[local_48])))) {
   Line 138 [pointer_cast]: (*(int *)(iVar11 + *(int *)((int)g_TriangleMatchTableA + local_44) * 0xc
   Line 140 [pointer_cast]: *(int *)(iVar17 + *(int *)((int)g_TriangleMatchTableB + iVar15) * 0xc +
@@ -2375,6 +2212,7 @@ core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0 (9 suspects)
   Line 252 [sub84_truncation]: uStack_104 = SUB84(__BITCAST_UINT64(dVar24),0);
   Line 284 [pointer_cast]: local_50 = (uint *)((int)local_50 + 1);
   Line 313 [pointer_cast]: *(uint *)((int)this_ptr->poly_texture_index_list + iVar18) =
+  Line 314 [pointer_cast]: *(uint *)(local_80 + (int)this_ptr->poly_texture_index_list);
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 (5 suspects)
@@ -2863,6 +2701,12 @@ core_dtrace.cpp_CDemonRaytrace_saveBinary_FUN_00494f50 (1 suspect)
   File: core/dtrace.cpp
 ====================================================================================================
   Line 20 [pointer_cast]: ((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + iVar1),file_handle);
+
+====================================================================================================
+core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_00498fb0 (1 suspect)
+  File: core/dtrace.cpp
+====================================================================================================
+  Line 54 [pointer_cast]: *(int *)(iVar7 + (int)*input_indices_array) = iVar4;
 
 ====================================================================================================
 core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00496c60 (1 suspect)
@@ -3746,10 +3590,11 @@ core_glass.cpp_CGlass_ctor_FUN_004e9040 (3 suspects)
   Line 51 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_glass.cpp_CGlass_onLaserHit_FUN_004eb250 (1 suspect)
+core_glass.cpp_CGlass_onLaserHit_FUN_004eb250 (2 suspects)
   File: core/glass.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+  Line 45 [pointer_cast]: if (*(char *)(local_18 + local_14 * g_CurrentTextureDimension + (int)g_CurrentTextureData) ==
 
 ====================================================================================================
 core_glass.cpp_CGlass_setup_FUN_004e9180 (5 suspects)
@@ -3875,10 +3720,11 @@ core_gore.cpp_CGore_spawnBloodBurst_FUN_004edbb0 (1 suspect)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */
 
 ====================================================================================================
-core_grave.cpp_CGrave_getBoundingBox_FUN_004ee8f0 (1 suspect)
+core_grave.cpp_CGrave_getBoundingBox_FUN_004ee8f0 (2 suspects)
   File: core/grave.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+  Line 15 [pointer_cast]: pCVar3 = (CBoundingBox3D *)(pCVar1->frame_bounds + (int)ROUND(ROUND(fVar1)) * 2);
 
 ====================================================================================================
 core_ground.cpp_CGround_getHeightAtPosition_FUN_004efd30 (5 suspects)
@@ -5630,11 +5476,17 @@ core_set.cpp_CDemonSet_addDynamicLight_FUN_0056d090 (1 suspect)
   Line 30 [displaced_global_access]: // 0056d0d3: MOV dword ptr [ESI*0x4 + 0x32776b4],EBX  ; g_DynamicLightCount
 
 ====================================================================================================
-core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0 (4 suspects)
+core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0 (10 suspects)
   File: core/set.cpp
 ====================================================================================================
   Line 21 [unnamed_local]: CBoundingBox3D local_88;
-  Line 113 [unnamed_local]: ((CDemonActor *)this_ptr_00,&local_88);
+  Line 22 [unnamed_local]: CVector3f local_70;
+  Line 49 [unnamed_local]: (g_CDemonRendererPtr2,&local_70);
+  Line 112 [unnamed_local]: ((CDemonActor *)this_ptr_00,&local_88);
+  Line 121 [unnamed_local]: ((local_70.x - CStack_38.x) * (local_70.x - CStack_38.x) +
+  Line 121 [unnamed_local]: ((local_70.x - CStack_38.x) * (local_70.x - CStack_38.x) +
+  Line 122 [unnamed_local]: (local_70.y - CStack_38.y) * (local_70.y - CStack_38.y) +
+  Line 122 [unnamed_local]: (local_70.y - CStack_38.y) * (local_70.y - CStack_38.y) +
   Line 214 [displaced_global_access]: // 0056fe49: MOV dword ptr [EAX*0x8 + 0x3342b48],EBX  ; g_SetDisplayListSortBuffer
   Line 217 [displaced_global_access]: // 0056fe57: FSTP float ptr [EAX*0x8 + 0x3342b4c]  ; g_SetDisplayListSortBuffer[0].distance_sq
 
@@ -5916,10 +5768,11 @@ core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_00576710 (1 suspect)
   Line 37 [pointer_cast]: obb_a = (SVDBox *)((int)(this_ptr->vdir_boxes[0].rotation_matrix.m + -2) + local_28);
 
 ====================================================================================================
-core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 (1 suspect)
+core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 (2 suspects)
   File: core/setdir.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+  Line 44 [unnamed_local]: int local_48;
 
 ====================================================================================================
 core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70 (8 suspects)
@@ -5979,6 +5832,12 @@ core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910 (4 suspects)
   Line 50 [pointer_cast]: *(uint *)((int)g_ZBufferScanlineArray + iVar4);
   Line 71 [pointer_cast]: *(uint *)((int)g_ZBufferScanlineArray + iVar4) =
   Line 72 [pointer_cast]: *(uint *)((int)g_ZBufferScanlineArrayBackup + iVar4);
+
+====================================================================================================
+core_setdir.cpp_CZThumb_setupZBufferScanlines_FUN_00574e30 (1 suspect)
+  File: core/setdir.cpp
+====================================================================================================
+  Line 13 [pointer_cast]: (void *)(this_ptr->width * iVar1 * 4 + (int)this_ptr->zbuffer_data);
 
 ====================================================================================================
 core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00 (5 suspects)
@@ -6180,10 +6039,11 @@ core_setedit.cpp_blitThumbnailToScreen_FUN_00577430 (6 suspects)
   Line 80 [pointer_cast]: uVar2 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar1);
 
 ====================================================================================================
-core_setedit.cpp_loadCameraThumbnail_FUN_005769a0 (2 suspects)
+core_setedit.cpp_loadCameraThumbnail_FUN_005769a0 (3 suspects)
   File: core/setedit.cpp
 ====================================================================================================
   Line 85 [pointer_cast]: *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar3) =
+  Line 87 [pointer_cast]: (uint)*(byte *)(((int)((iVar1 + (iVar1 >> 0x1f) * -0x40) -
   Line 137 [pointer_cast]: *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2) = 0xff00ff;
 
 ====================================================================================================
@@ -6223,6 +6083,12 @@ core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90 (4 suspects)
   Line 3 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */
   Line 39 [unrolled_strlen]: do {
   Line 50 [unrolled_strlen]: do {
+
+====================================================================================================
+core_setutil.cpp_C3DSCamera_savePVS_FUN_00587450 (1 suspect)
+  File: core/setutil.cpp
+====================================================================================================
+  Line 19 [pointer_cast]: puVar1 = (uint *)(iVar4 + (int)this_ptr->pvs_list);
 
 ====================================================================================================
 core_setutil.cpp_C3DSLight_apply_FUN_00586bf0 (2 suspects)
@@ -6472,7 +6338,7 @@ core_skeledit.cpp_CDeformableModel_cramModelTexture_FUN_0058de70 (1 suspect)
   Line 37 [pointer_cast]: if (local_20 == *(int *)((int)this_ptr->index_data_ptr[0] + local_14)) {
 
 ====================================================================================================
-core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (86 suspects)
+core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (87 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
@@ -6520,6 +6386,7 @@ core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (86 suspec
   Line 744 [pointer_cast]: pvVar35 = (void *)((int)pvVar35 + 0x3c);
   Line 746 [pointer_cast]: local_15c = (void *)((int)local_15c +
   Line 747 [pointer_cast]: *(int *)((int)this_ptr->parts[0].tri_counts + iVar20) * 0x3c);
+  Line 761 [pointer_cast]: pfVar21 = (float *)(local_124 * 4 + (int)local_174);
   Line 771 [pointer_cast]: if (*(int *)((int)local_7c + 4) == 3) {
   Line 782 [pointer_cast]: pCVar28 = &local_188->min + *(int *)((int)pvVar35 + 0x18);
   Line 797 [pointer_cast]: pvVar35 = (void *)((int)pvVar35 + 0xc);
@@ -6575,11 +6442,12 @@ core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0 (7 suspects)
   Line 218 [pointer_cast]: local_88 = local_88 + *(int *)((int)aiStack_140 + iVar1);
 
 ====================================================================================================
-core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790 (7 suspects)
+core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790 (8 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
   Line 92 [pointer_cast]: puVar21 = (uint *)((int)lod_mesh->tri_data->attribute_indices + local_50);
+  Line 96 [pointer_cast]: *(uint *)(local_48 + (int)this_ptr->index_data_ptr[lod_index]) = *puVar21;
   Line 166 [pointer_cast]: *(uint *)((int)this_ptr->cap_index_ptr[lod_index] + iVar5) =
   Line 167 [pointer_cast]: *(uint *)((int)lod_mesh->tri_data->attribute_indices + iVar3 + 0xc);
   Line 208 [pointer_cast]: if (local_538 < *(float *)((int)local_528 + iVar11)) {
@@ -6612,18 +6480,21 @@ core_skeledit.cpp_CDeformableModel_pruneWeakBoneInfluences_FUN_0058eaa0 (6 suspe
   Line 61 [pointer_cast]: local_28 = (float *)((int)local_28 + 1);
 
 ====================================================================================================
-core_skeledit.cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede0 (4 suspects)
+core_skeledit.cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede0 (6 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
+  Line 38 [pointer_cast]: *(int *)(local_1c + (int)local_54->index_data_ptr[0])) {
   Line 43 [pointer_cast]: psVar4 = (short *)((int)&(this_ptr->tri_data_ptr[local_50]->vertex_indices).
   Line 47 [pointer_cast]: *(short *)((int)&(local_54->tri_data_ptr[0]->vertex_indices).vertex_index_0 +
   Line 57 [pointer_cast]: ((void *)((int)&(local_54->tri_data_ptr[0]->vertex_indices).
   Line 59 [pointer_cast]: (void *)((int)&(local_54->tri_data_ptr[0]->vertex_indices).
+  Line 63 [pointer_cast]: (void *)(local_40 + (int)local_54->index_data_ptr[0]),
 
 ====================================================================================================
-core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60 (1 suspect)
+core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60 (2 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
+  Line 35 [pointer_cast]: if (iVar4 == *(int *)(iVar2 + (int)local_18->index_data_ptr[0])) {
   Line 57 [pointer_cast]: piVar1 = (int *)((int)pCVar6->index_data_ptr[0] + iVar1);
 
 ====================================================================================================
@@ -6938,7 +6809,7 @@ core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460 (2 susp
   Line 171 [pointer_cast]: if (local_230[iVar3] < *(float *)((int)local_230 + iVar2)) {
 
 ====================================================================================================
-core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0 (13 suspects)
+core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0 (15 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
   Line 66 [pointer_cast]: g_VertexRemapTable[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar3)] = 1;
@@ -6952,7 +6823,9 @@ core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0 (13 suspects)
   Line 104 [pointer_cast]: *(uint *)((int)g_VertexRemapTable + iVar10) = 0xffffffff;
   Line 107 [pointer_cast]: *(int *)((int)g_VertexRemapTable + iVar10) = iVar5;
   Line 108 [pointer_cast]: piVar12 = (int *)((int)&body_part_ptr->vertices->x + iVar13);
+  Line 150 [pointer_cast]: [*(int *)(iVar5 + (int)this_ptr->index_data_ptr[lod_index])].textures[0]
   Line 154 [pointer_cast]: *(int *)((int)body_part_ptr->face_texture_indices + local_28) = iVar10;
+  Line 180 [pointer_cast]: piVar3 = (int *)(iVar13 + (int)this_ptr->index_data_ptr[lod_index]);
   Line 186 [pointer_cast]: *(int *)((int)body_part_ptr->face_texture_indices + iVar5) = iVar10;
 
 ====================================================================================================
@@ -7044,12 +6917,13 @@ core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40 (1 suspect)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 ====================================================================================================
-core_skeleton.cpp_CDeformableModel_shatter_FUN_0059cec0 (6 suspects)
+core_skeleton.cpp_CDeformableModel_shatter_FUN_0059cec0 (7 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
   Line 0 [param_count_too_many]: Function declares 7 params but call sites push 1 (6 extra)
   Line 109 [pointer_cast]: *(uint *)((int)&local_94.x + iVar7) = (uint)puVar5[3];
   Line 113 [pointer_cast]: *(uint *)((int)&local_88.x + iVar7) = (uint)*puVar1;
+  Line 119 [pointer_cast]: [*(int *)(iVar11 + (int)this_ptr->index_data_ptr[lod_index])].textures,0xffff);
   Line 156 [pointer_cast]: *(uint *)((int)&local_94.x + iVar7) = (uint)puVar4[3] << 8;
   Line 161 [pointer_cast]: *(uint *)((int)&local_88.x + iVar7) = (uint)*puVar5 << 8;
   Line 167 [pointer_cast]: [*(int *)((int)this_ptr->index_data_ptr[lod_index] + local_14)].textures,
@@ -7962,16 +7836,16 @@ core_xform.cpp_transformAndClipGeometry_FUN_005f8550 (28 suspects)
   Line 27 [extra_output]: SRenderVertex *extraout_EAX_04;
   Line 28 [extra_output]: SRenderVertex *extraout_EAX_05;
   Line 29 [extra_output]: SRenderVertex *extraout_EAX_06;
-  Line 70 [pointer_cast]: local_24 = (SRenderVertex *)((int)&(local_24->projected_vertex).transformed_x + 1);
-  Line 100 [pointer_cast]: local_24 = (SRenderVertex *)((int)&(local_24->projected_vertex).transformed_x + 1);
-  Line 184 [extra_output]: local_24 = extraout_EAX;
-  Line 210 [extra_output]: local_24 = extraout_EAX_00;
-  Line 261 [extra_output]: local_24 = extraout_EAX_01;
-  Line 288 [extra_output]: local_24 = extraout_EAX_02;
-  Line 339 [extra_output]: local_24 = extraout_EAX_03;
-  Line 367 [extra_output]: local_24 = extraout_EAX_04;
-  Line 419 [extra_output]: local_24 = extraout_EAX_05;
-  Line 448 [extra_output]: local_24 = extraout_EAX_06;
+  Line 71 [pointer_cast]: local_24 = (SRenderVertex *)((int)&(local_24->projected_vertex).transformed_x + 1);
+  Line 101 [pointer_cast]: local_24 = (SRenderVertex *)((int)&(local_24->projected_vertex).transformed_x + 1);
+  Line 186 [extra_output]: local_24 = extraout_EAX;
+  Line 213 [extra_output]: local_24 = extraout_EAX_00;
+  Line 265 [extra_output]: local_24 = extraout_EAX_01;
+  Line 292 [extra_output]: local_24 = extraout_EAX_02;
+  Line 343 [extra_output]: local_24 = extraout_EAX_03;
+  Line 371 [extra_output]: local_24 = extraout_EAX_04;
+  Line 423 [extra_output]: local_24 = extraout_EAX_05;
+  Line 452 [extra_output]: local_24 = extraout_EAX_06;
 
 ====================================================================================================
 core_zombie.cpp_CZombie_canPickupWithHand_FUN_005fbda0 (1 suspect)
@@ -8066,6 +7940,14 @@ engine_2d.c_drawCharacter_FUN_00401610 (3 suspects)
   Line 73 [pointer_cast]: puVar9 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x_pos * 4);
 
 ====================================================================================================
+engine_2d.c_drawHLine_FUN_00402ee0 (3 suspects)
+  File: engine/2d.c
+====================================================================================================
+  Line 29 [pointer_cast]: ((void *)(x1 + (int)g_ScreenBufferArray[y]),g_ActiveRenderColor,count);
+  Line 33 [pointer_cast]: puVar3 = (ushort *)(x1 * 2 + (int)g_ScreenBufferArray[y]);
+  Line 46 [pointer_cast]: puVar4 = (uint *)(x1 * 4 + (int)g_ScreenBufferArray[y]);
+
+====================================================================================================
 engine_2d.c_drawVLine_FUN_00402ff0 (3 suspects)
   File: engine/2d.c
 ====================================================================================================
@@ -8093,10 +7975,20 @@ engine_2d.c_mapFrameBuffer_FUN_00403430 (2 suspects)
   Line 63 [pointer_cast]: *(int *)((int)g_ScreenBufferArray + iVar1) = width;
 
 ====================================================================================================
-engine_2d.c_plotPixelWithDepth_FUN_00401290 (1 suspect)
+engine_2d.c_plotPixelWithDepth_FUN_00401290 (3 suspects)
   File: engine/2d.c
 ====================================================================================================
   Line 11 [pointer_cast]: *(byte *)((int)g_ScreenBufferArray[y_coord] + x_coord) = (byte)g_ActiveRenderColor
+  Line 16 [pointer_cast]: *(uint *)(x_coord * 4 + (int)g_ScreenBufferArray[y_coord]) =
+  Line 20 [pointer_cast]: *(ushort *)(x_coord * 2 + (int)g_ScreenBufferArray[y_coord]) =
+
+====================================================================================================
+engine_2d.c_plotPixel_FUN_00401140 (3 suspects)
+  File: engine/2d.c
+====================================================================================================
+  Line 6 [pointer_cast]: *(byte *)(x + (int)g_ScreenBufferArray[y]) = (byte)g_ActiveRenderColor;
+  Line 10 [pointer_cast]: *(ushort *)(x * 2 + (int)g_ScreenBufferArray[y]) = g_ColorTable16[g_ActiveRenderColor & 0xffU];
+  Line 13 [pointer_cast]: *(uint *)(x * 4 + (int)g_ScreenBufferArray[y]) = g_ColorTable32[g_ActiveRenderColor & 0xffU];
 
 ====================================================================================================
 engine_2d.c_unmapFrameBuffer_FUN_00403670 (1 suspect)
@@ -8137,6 +8029,17 @@ engine_3d.c_rasterizePolygonCustom_FUN_005fd4e0 (3 suspects)
   Line 77 [pointer_cast]: puVar3 = (byte *)((int)&(local_18->base).y_min + 1);
   Line 147 [pointer_cast]: local_18 = (SSoftwareEdge *)((int)&(local_18->base).y_min + 1);
   Line 224 [pointer_cast]: scanline_y = (SSoftwareEdge *)((int)&(local_18->base).y_min + 1);
+
+====================================================================================================
+engine_3d.c_rasterizeTriangle_FUN_005fcfc0 (6 suspects)
+  File: engine/3d.c
+====================================================================================================
+  Line 32 [unnamed_local]: SSoftwareEdge *local_14;
+  Line 145 [unnamed_local]: local_14 = g_RasterizerEdgeArray;
+  Line 150 [unnamed_local]: if ((g_RasterizerMinY == (local_14->base).y_min) && (local_14 != (SSoftwareEdge *)0x0))
+  Line 150 [unnamed_local]: if ((g_RasterizerMinY == (local_14->base).y_min) && (local_14 != (SSoftwareEdge *)0x0))
+  Line 153 [unnamed_local]: local_14 = local_14 + 1;
+  Line 153 [unnamed_local]: local_14 = local_14 + 1;
 
 ====================================================================================================
 engine_3d.c_renderOverlayTextureEnable_FUN_00404020 (1 suspect)
@@ -8291,6 +8194,12 @@ engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0 (2 suspects)
   Line 19 [pointer_cast]: puVar3 = (uint *)((int)puVar3 + 1);
 
 ====================================================================================================
+engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0 (1 suspect)
+  File: engine/alphabit.cpp
+====================================================================================================
+  Line 76 [pointer_cast]: *(uint *)(iVar6 + (int)this_ptr->act) = uVar8 | uVar5;
+
+====================================================================================================
 engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00 (2 suspects)
   File: engine/alphabit.cpp
 ====================================================================================================
@@ -8338,7 +8247,7 @@ engine_clipper.c_clipPolygonNearPlane_FUN_00436420 (3 suspects)
 ====================================================================================================
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x004365c2) */
   Line 3 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x0043653c) */
-  Line 32 [pointer_cast]: iVar3 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z + iVar5);
+  Line 33 [pointer_cast]: iVar3 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z + iVar5);
 
 ====================================================================================================
 engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_00437840 (8 suspects)
@@ -8403,7 +8312,7 @@ engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0 (6 suspects)
   Line 4 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x00436c04) */
   Line 5 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x0043708f) */
   Line 6 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 415 [pointer_cast]: (pSVar15->projected_vertex).transformed_y = *(int *)((int)plVar14 + 4);
+  Line 430 [pointer_cast]: iVar12 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z +
 
 ====================================================================================================
 engine_clipper.c_clipPolygonToViewport_FUN_00438420 (36 suspects)
@@ -8571,6 +8480,12 @@ engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50 (1 suspect)
   File: engine/drender.cpp
 ====================================================================================================
   Line 22 [pointer_cast]: *(int *)((int)g_ScreenBufferArray[iVar2] + iVar1 * 4)) {
+
+====================================================================================================
+engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780 (1 suspect)
+  File: engine/drender.cpp
+====================================================================================================
+  Line 14 [unnamed_local]: CVector3i local_20;
 
 ====================================================================================================
 engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450 (1 suspect)
@@ -8768,10 +8683,15 @@ engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200 (1 suspe
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 ====================================================================================================
-engine_drender.cpp_renderTriangleSimple_FUN_004839f0 (1 suspect)
+engine_drender.cpp_renderTriangleSimple_FUN_004839f0 (6 suspects)
   File: engine/drender.cpp
 ====================================================================================================
-  Line 214 [pointer_cast]: scanline_y = (byte *)((int)&(local_20->projected_vertex).transformed_x + 1);
+  Line 37 [unnamed_local]: SSoftwareEdge *local_14;
+  Line 148 [unnamed_local]: local_14 = g_EdgeInterpolationArray;
+  Line 151 [unnamed_local]: if ((g_RenderTriangleMinScanlineY == (local_14->base).y_min) &&
+  Line 152 [unnamed_local]: (local_14 != (SSoftwareEdge *)0x0)) goto LAB_00483be4;
+  Line 154 [unnamed_local]: local_14 = local_14 + 1;
+  Line 154 [unnamed_local]: local_14 = local_14 + 1;
 
 ====================================================================================================
 engine_drender.cpp_renderTriangleTextured_FUN_00483370 (24 suspects)
@@ -9392,7 +9312,7 @@ engine_winfont.cpp_CWinFont_createTextBackground_FUN_005f2860 (2 suspects)
   Line 45 [raw_address_constant]: LStack_1c.lbColor = 0xff00ff;
 
 ====================================================================================================
-engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440 (5 suspects)
+engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440 (6 suspects)
   File: engine/winfont.cpp
 ====================================================================================================
   Line 19 [stack_param]: int in_stack_0000002c;
@@ -9400,6 +9320,7 @@ engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440 (5 suspects)
   Line 53 [unrolled_strlen]: do {
   Line 59 [stack_param]: if (in_stack_0000002c != -1) {
   Line 93 [pointer_cast]: puVar8 = (ushort *)((int)g_ScreenBufferArray[(int)pcVar8] + x_position * 2);
+  Line 126 [pointer_cast]: piVar9 = (int *)(x_position * 4 + (int)g_ScreenBufferArray[(int)pcVar8]);
 
 ====================================================================================================
 shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (15 suspects)
@@ -9496,14 +9417,18 @@ shape_design.c_centerVerticesAroundPoint_FUN_0045ea90 (2 suspects)
   Line 46 [unrolled_strlen]: do {
 
 ====================================================================================================
-shape_design.c_complexPolygonReduction_FUN_00463b30 (9 suspects)
+shape_design.c_complexPolygonReduction_FUN_00463b30 (13 suspects)
   File: shape/design.c
 ====================================================================================================
   Line 71 [suspect_float]: 3.58732e-43,8);
   Line 257 [pointer_cast]: *(int *)((int)local_20 + local_18 * 4) = local_14[local_1c * 3];
+  Line 265 [pointer_cast]: ((int *)(local_1c * 4 + (int)local_20),
+  Line 266 [pointer_cast]: (int *)(local_1c * 4 + 4 + (int)local_20));
+  Line 268 [pointer_cast]: uVar1 = *(uint *)(local_1c * 4 + (int)local_20);
   Line 269 [pointer_cast]: *(uint *)((int)local_20 + local_1c * 4) =
   Line 270 [pointer_cast]: *(uint *)((int)local_20 + local_1c * 4 + 4);
   Line 271 [pointer_cast]: *(uint *)((int)local_20 + local_1c * 4 + 4) = uVar1;
+  Line 276 [pointer_cast]: for (local_1c = *(int *)(local_4c * 4 + (int)local_20); local_1c < g_PolygonCount + -1;
   Line 281 [pointer_cast]: pSVar8 = (SShapeEditorPolygon *)((int)pSVar8 + (uint)bVar9 * -8 + 4);
   Line 282 [pointer_cast]: pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar9 * -8 + 4);
   Line 289 [pointer_cast]: if (*(int *)((int)local_20 + local_3c * 4 + -8) < selected_polygon_index) {
@@ -9760,10 +9685,14 @@ shape_design.c_loadS3DModelFile_FUN_004593a0 (1 suspect)
   Line 149 [raw_address_constant]: memset(g_ModelPolygonData,0,0x766880);
 
 ====================================================================================================
-shape_design.c_loadTextureData_FUN_0046b060 (2 suspects)
+shape_design.c_loadTextureData_FUN_0046b060 (6 suspects)
   File: shape/design.c
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+  Line 72 [pointer_cast]: (local_1c,(uchar *)(local_3c * iVar5 + (int)ptr),
+  Line 73 [pointer_cast]: (uchar *)(local_3c * entry->original_width + (int)dest),entry->original_width,
+  Line 80 [pointer_cast]: (local_1c,(uchar *)(local_3c * iVar5 + (int)ptr),
+  Line 81 [pointer_cast]: (uchar *)(local_3c * entry->original_width + (int)dest),entry->original_width,
   Line 95 [pointer_cast]: iVar1 - local_44 != 0 && local_44 <= iVar1 && (*(char *)((int)dest + local_44) == '\0'));
 
 ====================================================================================================
@@ -9838,9 +9767,12 @@ shape_design.c_qsortCompareByField4_FUN_004661d0 (2 suspects)
   Line 5 [pointer_cast]: return *(int *)((int)element_b + 4) - *(int *)((int)element_a + 4);
 
 ====================================================================================================
-shape_design.c_removeUnusedVertices_FUN_00463830 (2 suspects)
+shape_design.c_removeUnusedVertices_FUN_00463830 (5 suspects)
   File: shape/design.c
 ====================================================================================================
+  Line 32 [pointer_cast]: *(uint *)(g_ModelPolygonData[local_1c].vertex_indices[local_24] * 4 + (int)dest) = 1
+  Line 38 [pointer_cast]: if (*(int *)(local_1c * 4 + (int)dest) == 0) {
+  Line 39 [pointer_cast]: *(uint *)(local_1c * 4 + (int)dest) = 0xffffffff;
   Line 49 [pointer_cast]: *(int *)((int)dest + local_1c * 4) = g_VertexCount;
   Line 57 [pointer_cast]: *(uint *)((int)dest + g_ModelPolygonData[local_1c].vertex_indices[local_2c] * 4);
 
@@ -9996,7 +9928,7 @@ shape_design.c_validateModelTextures_FUN_00459a20 (4 suspects)
   Line 107 [unrolled_strcpy]: do {
 
 ====================================================================================================
-shape_design.c_vertexReducer_FUN_00467850 (12 suspects)
+shape_design.c_vertexReducer_FUN_00467850 (16 suspects)
   File: shape/design.c
 ====================================================================================================
   Line 36 [unnamed_local]: int local_1c;
@@ -10006,8 +9938,12 @@ shape_design.c_vertexReducer_FUN_00467850 (12 suspects)
   Line 125 [pointer_cast]: *(int *)((int)local_14 + g_ModelPolygonData[local_34].vertex_indices[local_30] * 4) =
   Line 131 [pointer_cast]: if (*(int *)((int)base + local_34 * 8 + 4) == *(int *)((int)base + local_34 * 8)) {
   Line 131 [pointer_cast]: if (*(int *)((int)base + local_34 * 8 + 4) == *(int *)((int)base + local_34 * 8)) {
+  Line 132 [pointer_cast]: iVar4 = *(int *)(local_34 * 8 + (int)base);
   Line 137 [pointer_cast]: if (*(int *)((int)base + local_30 * 8 + 4) == *(int *)((int)base + local_30 * 8)) {
   Line 137 [pointer_cast]: if (*(int *)((int)base + local_30 * 8 + 4) == *(int *)((int)base + local_30 * 8)) {
+  Line 138 [pointer_cast]: iVar5 = *(int *)(local_30 * 8 + (int)base);
+  Line 152 [pointer_cast]: *(int *)(*(int *)(local_34 * 8 + (int)base) * 4 + (int)local_14
+  Line 155 [pointer_cast]: *(int *)(*(int *)(local_30 * 8 + (int)base) * 4 + (int)local_14
   Line 159 [pointer_cast]: *(uint *)((int)base + local_30 * 8 + 4) =
   Line 160 [pointer_cast]: *(uint *)((int)base + local_34 * 8);
   Line 174 [pointer_cast]: *(uint *)((int)base + g_ModelPolygonData[local_34].vertex_indices[local_30] * 8 + 4);
@@ -10376,10 +10312,11 @@ shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0 (1 suspect)
   Line 37 [pointer_cast]: _fscanf(file_handle,"%d\n",(int *)((int)this_ptr->spatial_grid_ptr + iVar4));
 
 ====================================================================================================
-shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420 (1 suspect)
+shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420 (2 suspects)
   File: shape/meshlod.cpp
 ====================================================================================================
   Line 13 [pointer_cast]: puVar1 = (uint *)((int)this_ptr->spatial_grid_ptr->cell_start_indices[0][0] + iVar2);
+  Line 19 [pointer_cast]: puVar1 = (uint *)(iVar3 + (int)this_ptr->spatial_grid_data);
 
 ====================================================================================================
 shape_meshlod.cpp_CLodMesh_hasVertexBoundaryEdge_FUN_00518740 (1 suspect)
@@ -10428,9 +10365,10 @@ shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520 (1 suspect)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 ====================================================================================================
-shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030 (4 suspects)
+shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030 (5 suspects)
   File: shape/meshlod.cpp
 ====================================================================================================
+  Line 22 [pointer_cast]: iVar2 = *(int *)(iVar6 + (int)this_ptr->spatial_grid_data);
   Line 35 [pointer_cast]: if (dVar7 < *(double *)((int)g_SampleDistances + iVar5)) {
   Line 36 [sub84_truncation]: local_38 = SUB84(__BITCAST_UINT64(dVar7),0);
   Line 37 [pointer_cast]: *(uint *)((int)g_SampleDistances + iVar5) = local_38;
@@ -10584,10 +10522,15 @@ shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180 (2 suspects)
   Line 119 [pointer_cast]: puVar13 = (uint *)((int)puVar13 + (uint)bVar15 * -2 + 1);
 
 ====================================================================================================
-shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090 (1 suspect)
+shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090 (6 suspects)
   File: shape/quantize.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+  Line 49 [pointer_cast]: pbVar14 = (byte *)(iVar13 * 4 + (int)this_ptr->pixel_data);
+  Line 79 [pointer_cast]: (uint)*(byte *)(iVar15 + (int)this_ptr->pixel_data);
+  Line 84 [pointer_cast]: uVar13 = (iVar2 >> 0x10) - (uint)*(byte *)(iVar15 + 1 + (int)this_ptr->pixel_data);
+  Line 89 [pointer_cast]: uVar13 = (iVar3 >> 0x10) - (uint)*(byte *)(iVar15 + 2 + (int)this_ptr->pixel_data);
+  Line 94 [pointer_cast]: uVar13 = (iVar4 >> 0x10) - (uint)*(byte *)(iVar15 + 3 + (int)this_ptr->pixel_data);
 
 ====================================================================================================
 shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0 (1 suspect)
@@ -10596,10 +10539,13 @@ shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0 (1 suspect
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 ====================================================================================================
-shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50 (5 suspects)
+shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50 (8 suspects)
   File: shape/quantize.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+  Line 76 [pointer_cast]: bVar1 = *(byte *)(iVar3 + (int)pvVar1);
+  Line 77 [pointer_cast]: bVar2 = *(byte *)(iVar3 + 1 + (int)pvVar1);
+  Line 78 [pointer_cast]: bVar3 = *(byte *)(iVar3 + 2 + (int)pvVar1);
   Line 83 [pointer_cast]: *(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4) = bVar1;
   Line 84 [pointer_cast]: *(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 1) = bVar2;
   Line 85 [pointer_cast]: *(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 2) = bVar3;
@@ -10614,23 +10560,27 @@ shape_quantize.cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0 (3 suspects
   Line 98 [unaffected_reg]: dest_indices[local_30] = (uchar)unaff_EBX;
 
 ====================================================================================================
-shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40 (16 suspects)
+shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40 (20 suspects)
   File: shape/quantize.cpp
 ====================================================================================================
   Line 68 [pointer_cast]: if (iVar9 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_44)) {
   Line 71 [pointer_cast]: (iVar9 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + iVar1)));
+  Line 75 [pointer_cast]: puVar2 = (uint *)(local_44 + (int)this_ptr->pixel_data);
   Line 77 [pointer_cast]: *puVar2 = *(uint *)((int)this_ptr->pixel_data + iVar8 * 4);
   Line 78 [pointer_cast]: *(uint *)((int)this_ptr->pixel_data + iVar8 * 4) = uVar1;
   Line 102 [pointer_cast]: if (iVar9 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_38 + 1)) {
   Line 105 [pointer_cast]: (iVar9 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + iVar1 + 1)))) {
+  Line 109 [pointer_cast]: puVar2 = (uint *)(local_38 + (int)this_ptr->pixel_data);
   Line 111 [pointer_cast]: *puVar2 = *(uint *)((int)this_ptr->pixel_data + iVar8 * 4);
   Line 112 [pointer_cast]: *(uint *)((int)this_ptr->pixel_data + iVar8 * 4) = uVar1;
   Line 136 [pointer_cast]: if (iVar8 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_40 + 2)) {
   Line 139 [pointer_cast]: (iVar8 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + iVar1 + 2)))) {
+  Line 143 [pointer_cast]: puVar2 = (uint *)(local_40 + (int)this_ptr->pixel_data);
   Line 145 [pointer_cast]: *puVar2 = *(uint *)((int)this_ptr->pixel_data + iVar9 * 4);
   Line 146 [pointer_cast]: *(uint *)((int)this_ptr->pixel_data + iVar9 * 4) = uVar1;
   Line 170 [pointer_cast]: if (iVar1 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_3c + 3)) {
   Line 173 [pointer_cast]: (iVar1 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + iVar4 + 3)))) {
+  Line 177 [pointer_cast]: puVar5 = (uint *)(local_3c + (int)this_ptr->pixel_data);
   Line 179 [pointer_cast]: *puVar5 = *(uint *)((int)this_ptr->pixel_data + iVar7 * 4);
   Line 180 [pointer_cast]: *(uint *)((int)this_ptr->pixel_data + iVar7 * 4) = uVar1;
 
@@ -10675,6 +10625,12 @@ shape_superopt.cpp_CComplexPolygon_buildEdgeList_FUN_005c7b20 (1 suspect)
   File: shape/superopt.cpp
 ====================================================================================================
   Line 15 [unnamed_local]: uint local_14;
+
+====================================================================================================
+shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590 (1 suspect)
+  File: shape/superopt.cpp
+====================================================================================================
+  Line 170 [pointer_cast]: puVar10 = (uint *)(iVar14 + (int)puVar9);
 
 ====================================================================================================
 shape_superopt.cpp_CComplexPolygon_computeWindingNormal_FUN_005cbb40 (9 suspects)
@@ -10723,12 +10679,14 @@ shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0 (3 suspects)
   Line 38 [decompiler_intrinsic]: abs_nz = ABS((this_ptr->normal).z);
 
 ====================================================================================================
-shape_superopt.cpp_CComplexPolygon_mergeAdjacentEdges_FUN_005c7dc0 (9 suspects)
+shape_superopt.cpp_CComplexPolygon_mergeAdjacentEdges_FUN_005c7dc0 (11 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
   Line 23 [pointer_cast]: local_38 = (uint *)((int)pvVar1 + 0x10);
   Line 24 [pointer_cast]: local_34 = (uint *)((int)pvVar1 + 0x28);
+  Line 30 [pointer_cast]: puVar4 = (uint *)(iVar3 + 0x10 + (int)pvVar1);
   Line 31 [pointer_cast]: edge_b = (SExpandedEdge *)((int)pvVar1 + iVar3);
+  Line 32 [pointer_cast]: local_20 = (void *)(iVar3 + 0x60 + (int)pvVar1);
   Line 33 [pointer_cast]: edge_a = (SExpandedEdge *)((int)pvVar1 + local_2c * 0x60);
   Line 43 [pointer_cast]: local_34[1] = *(uint *)((int)&(edge_b->end_pos).x + 4);
   Line 45 [pointer_cast]: local_34[3] = *(uint *)((int)&(edge_b->end_pos).y + 4);
@@ -11378,18 +11336,20 @@ shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0 (2 suspects)
   Line 45 [pointer_cast]: pCVar7 = (CVector3d *)((int)pCVar7 + (uint)bVar8 * -8 + 4);
 
 ====================================================================================================
-sound_mp3.cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0 (1 suspect)
+sound_mp3.cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0 (2 suspects)
   File: sound/mp3.cpp
 ====================================================================================================
+  Line 22 [pointer_cast]: puVar4 = (uint *)(local_14 + (int)output_array);
   Line 39 [pointer_cast]: puVar3 = (uint *)((int)output_array + iVar5);
 
 ====================================================================================================
-sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_0052f670 (6 suspects)
+sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_0052f670 (7 suspects)
   File: sound/mp3.cpp
 ====================================================================================================
   Line 30 [pointer_cast]: puVar3 = (uint *)((int)output_allocation->granules + local_14);
   Line 33 [pointer_cast]: (this_ptr,*(int *)((int)local_18 + 4));
   Line 40 [pointer_cast]: local_18 = (void *)((int)local_18 + 0x100);
+  Line 44 [pointer_cast]: pvVar8 = (void *)(iVar6 * 0x100 + (int)pvVar1);
   Line 47 [pointer_cast]: uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,*(int *)((int)pvVar8 + 4))
   Line 49 [pointer_cast]: pvVar8 = (void *)((int)pvVar8 + 0x100);
   Line 61 [pointer_cast]: puVar5 = (uint *)((int)output_allocation->granules + iVar9);
@@ -11509,11 +11469,12 @@ sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480 (3 suspects)
   Line 91 [pointer_cast]: *(int *)((int)scalefactor_dest + iVar10) = *piVar1;
 
 ====================================================================================================
-sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20 (9 suspects)
+sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20 (10 suspects)
   File: sound/mp3.cpp
 ====================================================================================================
   Line 38 [pointer_cast]: local_1c = *(int *)((int)g_Layer3ShortBandGroupCounts + local_34);
   Line 40 [pointer_cast]: if (local_1c < *(int *)((int)g_Layer3ShortBandGroupCounts + local_34 + 4)) {
+  Line 43 [pointer_cast]: puVar7 = (uint *)(local_20 + (int)puVar6);
   Line 47 [pointer_cast]: (this_ptr,*(uint *)((int)g_Layer3ScalefacLengths1 +
   Line 56 [pointer_cast]: } while (local_1c < *(int *)((int)g_Layer3ShortBandGroupCounts + local_34 + 4));
   Line 91 [pointer_cast]: } while (piVar6 != (int *)((int)scalefactor_dest + local_54 + granule_index * 0xf8));
@@ -11609,9 +11570,10 @@ sound_mp3.cpp_applyScalefactorsToLayer2Samples_FUN_005303a0 (2 suspects)
   Line 18 [pointer_cast]: pfVar3 = (float *)((int)sample_array + iVar6);
 
 ====================================================================================================
-sound_mp3.cpp_applyScalefactorsToSubbands_FUN_005302f0 (1 suspect)
+sound_mp3.cpp_applyScalefactorsToSubbands_FUN_005302f0 (2 suspects)
   File: sound/mp3.cpp
 ====================================================================================================
+  Line 20 [pointer_cast]: piVar6 = (int *)(channel_or_granule_index * 0x80 + iVar7 + (int)scalefactor_band_indices);
   Line 21 [pointer_cast]: pfVar4 = (float *)((int)spectral_samples + iVar7);
 
 ====================================================================================================
@@ -11723,11 +11685,18 @@ sound_mp3.cpp_reorderShortBlockSamples_FUN_00532200 (4 suspects)
   Line 147 [pointer_cast]: local_34 = *(int *)((int)g_Layer3BandIndex[0].s + iVar2) - iVar18;
 
 ====================================================================================================
-sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_0052fee0 (2 suspects)
+sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_0052fee0 (9 suspects)
   File: sound/mp3.cpp
 ====================================================================================================
+  Line 34 [pointer_cast]: local_34 = (uint *)(local_54 + local_40 + (int)dequantized_output);
   Line 35 [pointer_cast]: local_24 = (uint *)((int)dequantized_output + local_40 + local_54);
+  Line 36 [pointer_cast]: local_2c = (uint *)(local_40 + local_54 + (int)scalefactor_indices);
+  Line 37 [pointer_cast]: local_30 = (uint *)(local_54 + local_40 + (int)scalefactor_indices);
+  Line 38 [pointer_cast]: local_18 = (float *)(local_54 + local_40 + (int)dequantized_output);
+  Line 39 [pointer_cast]: local_28 = (int *)(local_54 + (int)quantized_samples);
+  Line 40 [pointer_cast]: local_20 = (int *)(local_54 + (int)quantized_samples);
   Line 49 [pointer_cast]: [*(int *)((int)quantized_samples + local_54 + local_1c * 0x80) * 4];
+  Line 90 [pointer_cast]: puVar3 = (uint *)(iVar6 + iVar2 + (int)dequantized_output);
 
 ====================================================================================================
 sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50 (10 suspects)
@@ -11811,6 +11780,12 @@ sound_sndmain.cpp_CSfxOptions_reset_FUN_005a8830 (3 suspects)
   Line 9 [pointer_cast]: *(uint *)((int)&(this_ptr->position).z + 4) = 0;
   Line 13 [pointer_cast]: *(uint *)((int)&(this_ptr->velocity).z + 4) = 0;
   Line 26 [pointer_cast]: *(uint *)((int)&this_ptr->trigger_time + 4) = 0;
+
+====================================================================================================
+sound_sndmain.cpp_CSfxSample_lock_FUN_005a6430 (1 suspect)
+  File: sound/sndmain.cpp
+====================================================================================================
+  Line 25 [pointer_cast]: psVar2 = (short *)(iVar1 * lock_offset + (int)this_ptr->sample_data);
 
 ====================================================================================================
 sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0 (1 suspect)
@@ -12065,6 +12040,12 @@ sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0 (2 suspects)
   Line 3 [warning_deadcode_restart]: /* WARNING: Restarted to delay deadcode elimination for space: stack */
 
 ====================================================================================================
+sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90 (1 suspect)
+  File: sound/sndmain.cpp
+====================================================================================================
+  Line 83 [pointer_cast]: ((float *)(g_MixBufferWriteIndex * 4 + (int)g_ChannelPrimaryBuffers[iVar5]),
+
+====================================================================================================
 sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30 (2 suspects)
   File: sound/sndmain.cpp
 ====================================================================================================
@@ -12072,7 +12053,7 @@ sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30 (2 suspects)
   Line 22 [pointer_cast]: pCVar3 = (CSfxOptions *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
 
 ====================================================================================================
-sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0 (18 suspects)
+sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0 (20 suspects)
   File: sound/sndmain.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
@@ -12091,8 +12072,10 @@ sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0 (18 suspects)
   Line 155 [pointer_cast]: psVar9[1] = (short)*(char *)((int)src_buffer +
   Line 172 [pointer_cast]: psVar9 = (short *)((int)psVar9 + 1);
   Line 183 [pointer_cast]: *(byte *)((int)psVar9 + 1) = local_18;
+  Line 200 [pointer_cast]: (*(int *)(src_buffer + (int)ROUND(ROUND(fVar4 * fVar2)) * 2) >> 0x10) >> 9
   Line 202 [pointer_cast]: psVar9 = (short *)((int)psVar9 + 1);
   Line 219 [pointer_cast]: *(byte *)((int)psVar9 + 1) = local_18;
+  Line 260 [pointer_cast]: (*(int *)(src_buffer + (int)ROUND(ROUND(fVar4 * fVar2)) * 2) >> 0x10)
 
 ====================================================================================================
 sound_sndmain.cpp_startSfx_FUN_005a8e90 (2 suspects)
@@ -12292,9 +12275,10 @@ wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ecc10 (1 suspect)
   Line 24 [pointer_cast]: g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);
 
 ====================================================================================================
-wincore_wddvmem.cpp_initializeScanlinePointers_FUN_005ece60 (1 suspect)
+wincore_wddvmem.cpp_initializeScanlinePointers_FUN_005ece60 (2 suspects)
   File: wincore/wddvmem.cpp
 ====================================================================================================
+  Line 21 [pointer_cast]: (void *)(g_WindowWidth * iVar4 * ((int)(iVar1 - (uint)(iVar5 << 2 < 0)) >> 3) +
   Line 24 [pointer_cast]: *(int *)((int)g_ZBufferScanlineArray + iVar3) = (int)g_SoftwareZBuffer + iVar6;
 
 ====================================================================================================
@@ -12310,10 +12294,11 @@ wincore_wddvmem.cpp_populateColorTable_FUN_004f4140 (1 suspect)
   Line 25 [pointer_cast]: *(uint *)((int)g_ColorTable32 + iVar3) = uVar2;
 
 ====================================================================================================
-wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0 (2 suspects)
+wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0 (3 suspects)
   File: wincore/wddvmem.cpp
 ====================================================================================================
   Line 62 [pointer_cast]: g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);
+  Line 111 [pointer_cast]: (void *)(g_WindowWidth * iVar5 * ((int)(iVar1 - (uint)(iVar6 << 2 < 0)) >> 3) +
   Line 113 [pointer_cast]: *(int *)((int)g_ZBufferScanlineArray + iVar4) = (int)g_SoftwareZBuffer + iVar7;
 
 ====================================================================================================
@@ -12323,18 +12308,20 @@ wincore_windll.cpp_clearScreenRegion_FUN_005b3f37 (1 suspect)
   Line 16 [pointer_cast]: puVar4 = (byte *)((int)g_ScreenBufferArray[uVar3] + g_ClipLeft);
 
 ====================================================================================================
-wincore_windll.cpp_renderPerspectiveCorrectScanline16_FUN_005b5322 (3 suspects)
+wincore_windll.cpp_renderPerspectiveCorrectScanline16_FUN_005b5322 (4 suspects)
   File: wincore/windll.cpp
 ====================================================================================================
   Line 29 [pointer_cast]: g_CurrentScreenPtr = (int *)((int)g_ScreenBufferArray[scanline_y] + uVar3 * 2);
+  Line 98 [pointer_cast]: (*(int *)(uVar10 + (int)g_CurrentZBufferPtr) <= iVar8)) {
   Line 104 [pointer_cast]: [*(byte *)((int)g_CurrentTextureData +
   Line 112 [pointer_cast]: *(int *)((int)g_CurrentZBufferPtr + uVar10) = iVar8;
 
 ====================================================================================================
-wincore_windll.cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec (4 suspects)
+wincore_windll.cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec (5 suspects)
   File: wincore/windll.cpp
 ====================================================================================================
   Line 29 [pointer_cast]: g_CurrentScreenPtr = (int *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 4);
+  Line 98 [pointer_cast]: (*(int *)(uVar10 + (int)g_CurrentZBufferPtr) <= iVar8)) {
   Line 102 [pointer_cast]: [*(byte *)((int)g_CurrentTextureData +
   Line 108 [pointer_cast]: *(uint *)((int)g_CurrentScreenPtr + uVar10) = uVar3;
   Line 110 [pointer_cast]: *(int *)((int)g_CurrentZBufferPtr + uVar10) = iVar8;
@@ -12357,13 +12344,6 @@ wincore_winrun.cpp_getTime_FUN_005f2dc0 (1 suspect)
   File: wincore/winrun.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
-====================================================================================================
-wincore_winrun.cpp_processWindowMessages_FUN_005f35e0 (2 suspects)
-  File: wincore/winrun.cpp
-====================================================================================================
-  Line 13 [pointer_cast]: if (*(int *)((int)g_MessageFlags + iVar3) == 1) {
-  Line 17 [pointer_cast]: *(uint *)((int)g_MessageFlags + iVar3) = 0;
 
 ====================================================================================================
 wincore_winrun.cpp_sleep_FUN_005f40e0 (1 suspect)

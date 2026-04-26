@@ -4,19 +4,18 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 277,
-    "complexity_score": 135,
+    "complexity_score": 100,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 85,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "warning_inlined_function"
+      "pointer_cast"
     ],
     "total_lines": 362
   },
@@ -227,6 +226,44 @@
     },
     "pcode_op_count": 2251
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(ushort *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar2 = *(ushort *)((int)g_ScreenBufferArray[y] + x * 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ScreenBufferArray[y] + x * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 80,
+      "match": "(ushort *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(ushort *)((int)g_ScreenBufferArray[y] + x * 2) =",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 76,
     "local_size": 60,
@@ -311,35 +348,11 @@
   },
   "suspects": [
     {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(ushort *)((int)",
+      "line": 37,
+      "match": "(uint *)(x * 4 + (int)",
       "severity": "moderate",
-      "text": "uVar2 = *(ushort *)((int)g_ScreenBufferArray[y] + x * 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 71,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ScreenBufferArray[y] + x * 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 80,
-      "match": "(ushort *)((int)",
-      "severity": "moderate",
-      "text": "*(ushort *)((int)g_ScreenBufferArray[y] + x * 2) =",
+      "text": "puVar9 = (uint *)(x * 4 + (int)g_ScreenBufferArray[y]);",
       "type": "pointer_cast"
     }
   ]

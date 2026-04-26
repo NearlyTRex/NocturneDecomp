@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 176,
+    "complexity_score": 196,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 81,
-    "suspect_count": 9,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -181,10 +181,26 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(uint *)(iVar3 + 0x10 + (int)",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)(iVar3 + 0x10 + (int)pvVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 31,
       "match": "(SExpandedEdge *)((int)",
       "severity": "moderate",
       "text": "edge_b = (SExpandedEdge *)((int)pvVar1 + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(void *)(iVar3 + 0x60 + (int)",
+      "severity": "moderate",
+      "text": "local_20 = (void *)(iVar3 + 0x60 + (int)pvVar1);",
       "type": "pointer_cast"
     },
     {

@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 16,
+    "complexity_score": 31,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 7,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 16,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 77
   },
   "cross_references": [],
@@ -160,5 +162,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(byte *)(iVar1 + (int)",
+      "severity": "moderate",
+      "text": "_fputc((uint)*(byte *)(iVar1 + (int)this_ptr->data_buffer) << 2,file);",
+      "type": "pointer_cast"
+    }
+  ]
 }

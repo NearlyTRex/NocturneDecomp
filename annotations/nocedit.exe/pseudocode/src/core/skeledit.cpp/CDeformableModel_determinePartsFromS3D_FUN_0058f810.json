@@ -8,13 +8,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3400,
-    "complexity_score": 2316,
+    "complexity_score": 2326,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 125,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1436,
-    "suspect_count": 86,
+    "suspect_count": 87,
     "suspect_types": [
       "pointer_cast",
       "unnamed_local",
@@ -2720,6 +2720,14 @@
       "match": "(int *)((int)",
       "severity": "moderate",
       "text": "*(int *)((int)this_ptr->parts[0].tri_counts + iVar20) * 0x3c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 761,
+      "match": "(float *)(local_124 * 4 + (int)",
+      "severity": "moderate",
+      "text": "pfVar21 = (float *)(local_124 * 4 + (int)local_174);",
       "type": "pointer_cast"
     },
     {

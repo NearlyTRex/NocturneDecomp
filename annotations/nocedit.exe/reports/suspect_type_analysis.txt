@@ -4,18 +4,18 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    3109 ( 53.1%)
-  unnamed_local                    756 ( 12.9%)
-  unrolled_strcpy                  495 (  8.4%)
-  warning_inlined_function         259 (  4.4%)
-  raw_address_constant             196 (  3.3%)
+  pointer_cast                    3071 ( 52.5%)
+  unnamed_local                    789 ( 13.5%)
+  unrolled_strcpy                  494 (  8.4%)
+  warning_inlined_function         257 (  4.4%)
+  raw_address_constant             196 (  3.4%)
   missing_cave_copy                184 (  3.1%)
   unrolled_strlen                  152 (  2.6%)
   warning_type_propagation         133 (  2.3%)
   stack_alignment_array             92 (  1.6%)
-  warning_unreachable               76 (  1.3%)
+  warning_unreachable               75 (  1.3%)
   unnamed_param                     73 (  1.2%)
-  unrolled_strchr                   65 (  1.1%)
+  unrolled_strchr                   64 (  1.1%)
   unrolled_strcat                   46 (  0.8%)
   param_count_too_many              37 (  0.6%)
   stack_param                       36 (  0.6%)
@@ -42,20 +42,20 @@ SUSPECT TYPE COUNTS
   warning_indirect_jump              1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (3109 occurrences)
+TYPE: pointer_cast (3071 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   989x  (int *)((int)
-   835x  (uint *)((int)
+   948x  (int *)((int)
+   817x  (uint *)((int)
    253x  (float *)((int)
-   133x  (void *)((int)
    123x  (double *)((int)
-   116x  (byte *)((int)
    108x  (SRenderVertex *)((int)
-    74x  (ushort *)((int)
+    94x  (byte *)((int)
+    68x  (ushort *)((int)
+    66x  (void *)((int)
     48x  (short *)((int)
-    42x  (char *)((int)
+    41x  (char *)((int)
     37x  (CMatrix3x4f *)((int)
     34x  (SShapeEditorPolygon *)((int)
     20x  (SMRGLHeaderExtended *)((int)
@@ -68,30 +68,10 @@ Unique patterns:
     10x  (CPlatform *)((int)
 
 Functions:
-  cockpit_ckptutil.c_applyActPalette_FUN_004319b0
-  cockpit_ckptutil.c_basicIndexedTo16Bit_FUN_00431730
   cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50
   cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0
-  cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0
-  cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0
-  cockpit_ckptutil.c_blitRectangleClipped_FUN_00432190
-  cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
-  cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
-  cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_00432b60
-  cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00431d00
-  cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
-  cockpit_ckptutil.c_blitVerticalColumn_FUN_00432a10
-  cockpit_ckptutil.c_blitWithTransparencyFallback_FUN_00432d00
-  cockpit_ckptutil.c_buildHardwarePalettes_FUN_00431c00
-  cockpit_ckptutil.c_copyScreenRegion_FUN_00432d90
-  cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_00431410
-  cockpit_ckptutil.c_expandIndexedToRGB_FUN_004314fa
-  cockpit_ckptutil.c_generateScrollHeightMap_FUN_00432df0
-  cockpit_ckptutil.c_optimizedMemcpy_FUN_00431528
-  cockpit_ckptutil.c_rotateCircularBitmap_FUN_00433030
-  cockpit_ckptutil.c_saveEdgeListFile_FUN_00433480
-  cockpit_ckptutil.c_setEdgeData_FUN_00434a50
-  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
+  cockpit_ckptutil.c_putPixel_FUN_004345c0
+  cockpit_ckptutil.c_rasterizeEdgeEndpoints_FUN_004336e0
   cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
   cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_00488110
   cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230
@@ -159,6 +139,7 @@ Functions:
   core_dcamera.cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_0044f290
   core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020
   core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0
+  core_dcamera.cpp_CDemonCamera_endScene_FUN_0044cb80
   core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0
   core_dcamera.cpp_CDemonCamera_init_FUN_0044c190
   core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
@@ -169,9 +150,11 @@ Functions:
   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
   core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860
   core_dcamera.cpp_CDemonCamera_restoreZBufferRect_FUN_0044c780
+  core_dcamera.cpp_CDemonCamera_restoreZBufferScanlines_FUN_004544a0
   core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0
   core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790
   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0
+  core_dcamera.cpp_CDemonCamera_saveZBufferScanlines_FUN_00454450
   core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044f310
   core_dcamera.cpp_initializeCoronaBuffers_FUN_004502e0
   core_dcamera.cpp_renderVolumetricLightScanline_FUN_00450440
@@ -186,6 +169,9 @@ Functions:
   core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_00457b60
   core_dest.cpp_CActorDestination_process_FUN_0046f9b0
   core_dfilter.cpp_CDemonFilter_init_FUN_004705a0
+  core_dfilter.cpp_CDemonFilter_load_FUN_004702f0
+  core_dfilter.cpp_CDemonFilter_save_FUN_00470510
+  core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730
   core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0
   core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_00471400
   core_dlight.cpp_CDemonLight_beginBackgroundScene_FUN_00472e40
@@ -235,6 +221,7 @@ Functions:
   core_dtrace.cpp_CDemonRaytrace_freeCubeList_FUN_004942d0
   core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0
   core_dtrace.cpp_CDemonRaytrace_saveBinary_FUN_00494f50
+  core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_00498fb0
   core_enemy.cpp_CEnemy_updateVictim_FUN_004a9b00
   core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN_004c93d0
   core_fire.cpp_CFireEffect_renderDecals_FUN_004c74a0
@@ -254,9 +241,11 @@ Functions:
   core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0
   core_game.cpp_captureDebugMovieFrame_FUN_004d7810
   core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
+  core_glass.cpp_CGlass_onLaserHit_FUN_004eb250
   core_gore.cpp_CBloodParticle_render_FUN_004ebac0
   core_gore.cpp_CFootstep_init_FUN_004ed240
   core_gore.cpp_CGore_renderDecals_FUN_004ed830
+  core_grave.cpp_CGrave_getBoundingBox_FUN_004ee8f0
   core_ground.cpp_CGround_getHeightAtPosition_FUN_004efd30
   core_ground.cpp_CGround_getNormalAtPosition_FUN_004effb0
   core_ground.cpp_CGround_load_FUN_004ef030
@@ -351,6 +340,7 @@ Functions:
   core_setdir.cpp_CZThumb_render_FUN_00574f20
   core_setdir.cpp_CZThumb_restoreZBufferTable_FUN_00574830
   core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910
+  core_setdir.cpp_CZThumb_setupZBufferScanlines_FUN_00574e30
   core_setedit.cpp_CDemonSet_drawCameraCoverageMap_FUN_0057ff70
   core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0
   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660
@@ -368,6 +358,7 @@ Functions:
   core_setedit.cpp_blitThumbnailToScreen_FUN_00577430
   core_setedit.cpp_loadCameraThumbnail_FUN_005769a0
   core_setedit.cpp_renderColoredBox_FUN_005817d0
+  core_setutil.cpp_C3DSCamera_savePVS_FUN_00587450
   core_setutil.cpp_C3DSLight_load_FUN_00586310
   core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50
   core_setutil.cpp_C3DSLight_save_FUN_00587090
@@ -432,11 +423,13 @@ Functions:
   engine_2d.c_drawCharacterMaskedColor_FUN_00401a10
   engine_2d.c_drawCharacterMasked_FUN_00401900
   engine_2d.c_drawCharacter_FUN_00401610
+  engine_2d.c_drawHLine_FUN_00402ee0
   engine_2d.c_drawVLine_FUN_00402ff0
   engine_2d.c_findBestPaletteMatch_FUN_00401460
   engine_2d.c_initGraphicsSystem_FUN_00401010
   engine_2d.c_mapFrameBuffer_FUN_00403430
   engine_2d.c_plotPixelWithDepth_FUN_00401290
+  engine_2d.c_plotPixel_FUN_00401140
   engine_2d.c_unmapFrameBuffer_FUN_00403670
   engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0
   engine_3d.c_flushPremiumRenderBuffer_FUN_004070c0
@@ -458,6 +451,7 @@ Functions:
   engine_3d.c_renderPrimitivePlaneMaskedComplex_FUN_004046c0
   engine_3d.c_updateAnimatedTexture_FUN_004050c0
   engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0
+  engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0
   engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00
   engine_alphabit.cpp_copyBytes_FUN_00410d20
   engine_clipper.c_clipPolygonHorizontalPlanes_FUN_00437980
@@ -493,7 +487,6 @@ Functions:
   engine_drender.cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970
   engine_drender.cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030
   engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
-  engine_drender.cpp_renderTriangleSimple_FUN_004839f0
   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
   engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
@@ -598,10 +591,12 @@ Functions:
   shape_meshlod.cpp_crc32UpdateVector3f_FUN_0051c600
   shape_quantize.cpp_CBitmap_ctor_FUN_00556a00
   shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180
+  shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
   shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50
   shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40
   shape_quantize.cpp_CColorQuantizer_splitBox_FUN_00554e70
   shape_superopt.cpp_CComplexPolygon_addSharedTriangle_FUN_005c7a90
+  shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590
   shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
   shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
   shape_superopt.cpp_CComplexPolygon_free_FUN_005c79f0
@@ -669,6 +664,7 @@ Functions:
   sound_mp3.cpp_requantizeSamples_FUN_005301b0
   sound_snddx.cpp_fillStreamBuffer_FUN_005adff0
   sound_sndmain.cpp_CSfxOptions_reset_FUN_005a8830
+  sound_sndmain.cpp_CSfxSample_lock_FUN_005a6430
   sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070
   sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80
   sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0
@@ -690,6 +686,7 @@ Functions:
   sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0
   sound_sndmain.cpp_getSoundDeviceInfo_FUN_005ab370
   sound_sndmain.cpp_killSfxByName_FUN_005aa2f0
+  sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90
   sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30
   sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0
   sound_sndwav.cpp_CWavInDevice_close_FUN_005b0d70
@@ -721,27 +718,26 @@ Functions:
   wincore_windll.cpp_clearScreenRegion_FUN_005b3f37
   wincore_windll.cpp_renderPerspectiveCorrectScanline16_FUN_005b5322
   wincore_windll.cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec
-  wincore_winrun.cpp_processWindowMessages_FUN_005f35e0
 
 ====================================================================================================
-TYPE: unnamed_local (756 occurrences)
+TYPE: unnamed_local (789 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    90x  local_14
-    46x  local_18
+   103x  local_14
+    49x  local_18
     38x  local_20a4
     35x  local_24
     32x  local_38
     25x  local_4db8
-    22x  local_30
-    21x  local_1c
-    20x  local_2c
+    23x  local_30
+    22x  local_1c
+    21x  local_2c
+    19x  local_20
     19x  local_34
+    18x  local_48
     18x  local_174
-    17x  local_48
     16x  local_5c
-    15x  local_20
     15x  local_190
     14x  local_28
     14x  local_78
@@ -750,7 +746,11 @@ Unique patterns:
      9x  local_6c
 
 Functions:
+  cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
+  cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_00432b60
   cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30
+  cockpit_ckptutil.c_saveEdgeListFile_FUN_00433480
+  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470
   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90
   core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043a2b0
@@ -780,6 +780,7 @@ Functions:
   core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0
   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470
   core_set.cpp_CDemonSet_processActors_FUN_0056b810
+  core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
   core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00
   core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310
   core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
@@ -815,7 +816,10 @@ Functions:
   core_xform.cpp_buildXFlipMatrix_FUN_005f6ee0
   core_xform.cpp_buildYFlipMatrix_FUN_005f6f40
   core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10
+  engine_3d.c_rasterizeTriangle_FUN_005fcfc0
+  engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
   engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_0048d7a0
+  engine_drender.cpp_renderTriangleSimple_FUN_004839f0
   engine_drender.cpp_renderTriangleTextured_FUN_00483370
   engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
   engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
@@ -852,14 +856,13 @@ Functions:
   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0
 
 ====================================================================================================
-TYPE: unrolled_strcpy (495 occurrences)
+TYPE: unrolled_strcpy (494 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   495x  do {
+   494x  do {
 
 Functions:
-  cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
   core_actor.cpp_CActorPropertyList_addChoice_FUN_0040e350
   core_actor.cpp_CActorPropertyList_addFile_FUN_0040e3e0
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
@@ -1049,15 +1052,13 @@ Functions:
   support_newmsg.cpp_readMessageFile_FUN_00543e40
 
 ====================================================================================================
-TYPE: warning_inlined_function (259 occurrences)
+TYPE: warning_inlined_function (257 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   259x  WARNING: Inlined function:
+   257x  WARNING: Inlined function:
 
 Functions:
-  cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50
-  cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0
   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0
   cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0
   cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630
@@ -1766,14 +1767,13 @@ Functions:
   shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30
 
 ====================================================================================================
-TYPE: warning_unreachable (76 occurrences)
+TYPE: warning_unreachable (75 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    76x  WARNING: Removing unreachable block
+    75x  WARNING: Removing unreachable block
 
 Functions:
-  cockpit_ckptutil.c_buildHardwarePalettes_FUN_00431c00
   cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487220
   cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010
   core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
@@ -1854,14 +1854,13 @@ Functions:
   core_spline.cpp_evaluateSplineTangentScalar_FUN_005b93f0
 
 ====================================================================================================
-TYPE: unrolled_strchr (65 occurrences)
+TYPE: unrolled_strchr (64 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    65x  do { snap; if (*p=='X') goto; if (*p=='\0') break; ... }
+    64x  do { snap; if (*p=='X') goto; if (*p=='\0') break; ... }
 
 Functions:
-  cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0
   core_dimage.cpp_CDemonImage_load_FUN_00471ad0
   core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10

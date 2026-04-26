@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 381,
-    "complexity_score": 210,
+    "complexity_score": 220,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 140,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
@@ -324,6 +324,14 @@
       "match": "(ushort *)((int)",
       "severity": "moderate",
       "text": "puVar8 = (ushort *)((int)g_ScreenBufferArray[(int)pcVar8] + x_position * 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 126,
+      "match": "(int *)(x_position * 4 + (int)",
+      "severity": "moderate",
+      "text": "piVar9 = (int *)(x_position * 4 + (int)g_ScreenBufferArray[(int)pcVar8]);",
       "type": "pointer_cast"
     },
     {

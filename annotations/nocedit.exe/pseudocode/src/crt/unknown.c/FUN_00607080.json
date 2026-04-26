@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 142,
+    "complexity_score": 162,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 17,
-    "suspect_count": 11,
+    "suspect_count": 13,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -160,12 +160,28 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(byte *)(((int)",
+      "severity": "moderate",
+      "text": "*(byte *)(((int)(uint)bVar1 >> 3) + (int)param_1) =",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unnamed function parameter",
       "line": 14,
       "match": "param_1",
       "severity": "mild",
       "text": "*(byte *)(((int)(uint)bVar1 >> 3) + (int)param_1) =",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(byte *)(((int)",
+      "severity": "moderate",
+      "text": "*(byte *)(((int)(uint)bVar1 >> 3) + (int)param_1) |",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",

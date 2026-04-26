@@ -7,14 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 63,
+    "complexity_score": 78,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 48,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "pointer_cast",
       "warning_inlined_function"
     ],
     "total_lines": 169
@@ -179,6 +180,14 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(char *)(local_18 + local_14 * g_CurrentTextureDimension + (int)",
+      "severity": "moderate",
+      "text": "if (*(char *)(local_18 + local_14 * g_CurrentTextureDimension + (int)g_CurrentTextureData) ==",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

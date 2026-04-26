@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 134,
+    "complexity_score": 144,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 69,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -165,6 +165,14 @@
       "match": "(void *)((int)",
       "severity": "moderate",
       "text": "local_18 = (void *)((int)local_18 + 0x100);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(void *)(iVar6 * 0x100 + (int)",
+      "severity": "moderate",
+      "text": "pvVar8 = (void *)(iVar6 * 0x100 + (int)pvVar1);",
       "type": "pointer_cast"
     },
     {

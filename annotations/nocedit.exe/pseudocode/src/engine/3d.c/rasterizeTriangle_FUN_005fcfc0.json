@@ -4,17 +4,19 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 476,
-    "complexity_score": 213,
+    "complexity_score": 278,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 23,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 213,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 6,
+    "suspect_types": [
+      "unnamed_local"
+    ],
     "total_lines": 689
   },
   "cross_references": [
@@ -294,5 +296,60 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 32,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "SSoftwareEdge *local_14;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 145,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "local_14 = g_RasterizerEdgeArray;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 150,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "if ((g_RasterizerMinY == (local_14->base).y_min) && (local_14 != (SSoftwareEdge *)0x0))",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 150,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "if ((g_RasterizerMinY == (local_14->base).y_min) && (local_14 != (SSoftwareEdge *)0x0))",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 153,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "local_14 = local_14 + 1;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 153,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "local_14 = local_14 + 1;",
+      "type": "unnamed_local"
+    }
+  ]
 }

@@ -43,14 +43,12 @@ SEdge * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *e
   int local_ec;
   int *local_e8;
   int *local_e4;
-  int local_e0;
   int local_dc;
   int local_d8;
   int local_d4;
   int local_d0;
   int local_cc;
   int local_c8;
-  int local_c4;
   int local_c0;
   int local_bc;
   int local_b8;
@@ -76,7 +74,6 @@ SEdge * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *e
   int local_5c;
   int local_58;
   int local_54;
-  int local_50;
   int local_4c;
   int local_48;
   int local_44;
@@ -103,12 +100,11 @@ SEdge * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *e
   if (0 < gap_tolerance_x + -1) {
     do {
       iVar16 = iVar13 + 1;
-      local_e0 = 0;
       local_e4 = local_e8;
-      for (local_20 = 0; piVar2 = (int *)((int)scanline_data + iVar13 * 0x84), local_20 < *piVar2;
+      for (local_20 = 0; piVar2 = (int *)((char *)scanline_data + iVar13 * 0x84), local_20 < *piVar2;
           local_20 = local_20 + 1) {
-        iVar2 = *(int *)((int)piVar2 + local_e0 + 4);
-        iVar14 = *(int *)((int)piVar2 + local_e0 + 0x44) + iVar2;
+        iVar2 = piVar2[local_20 + 1];
+        iVar14 = piVar2[local_20 + 0x11] + iVar2;
         iVar15 = iVar14 + -1;
         if (0x1ff < iVar11) {
           _sprintf
@@ -121,12 +117,11 @@ SEdge * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *e
         uVar4 = (ushort)iVar16;
         if (0 < iVar2) {
           iVar10 = 0;
-          local_c4 = 0;
-          piVar7 = (int *)((int)scanline_data + iVar16 * 0x84);
+          piVar7 = (int *)((char *)scanline_data + iVar16 * 0x84);
           while( true ) {
-            piVar6 = (int *)(iVar16 * 0x84 + (int)scanline_data);
+            piVar6 = (int *)((char *)scanline_data + iVar16 * 0x84);
             if (*piVar6 <= iVar10) break;
-            iVar3 = *(int *)((int)piVar6 + local_c4 + 4);
+            iVar3 = piVar6[iVar10 + 1];
             bVar5 = false;
             if (0 < local_20) {
               local_58 = *local_e4 + local_e4[0x10] + -1;
@@ -137,7 +132,7 @@ SEdge * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *e
             sVar9 = (short)iVar2;
             uVar9 = (ushort)iVar3;
             if ((iVar3 < iVar2 + -1) &&
-               (iVar2 <= *(int *)((int)piVar6 + local_c4 + 0x44) + iVar3 + -1)) {
+               (iVar2 <= piVar6[iVar10 + 0x11] + iVar3 + -1)) {
               uVar11 = iVar11 + 1;
               pSVar3 = g_TracedEdgeBuffer + iVar11;
               if (bVar5) {
@@ -151,8 +146,7 @@ SEdge * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *e
                 g_TracedEdgeBuffer[iVar11].x1 = sVar9;
                 g_TracedEdgeBuffer[iVar11].y1 = uVar9;
                 g_TracedEdgeBuffer[iVar11].y1 = uVar9 | uVar6 & 0x7fff;
-                *(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =
-                     *(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;
+                g_TracedEdgeBuffer[iVar11].y1 = g_TracedEdgeBuffer[iVar11].y1 & 0x7fff;
                 uVar7 = g_TracedEdgeBuffer[iVar11].y1;
                 goto LAB_00434df2;
               }
@@ -165,8 +159,7 @@ SEdge * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *e
               g_TracedEdgeBuffer[iVar11].x1 = uVar9;
               g_TracedEdgeBuffer[iVar11].y1 = uVar10;
               g_TracedEdgeBuffer[iVar11].y1 = uVar10 | uVar4 & 0x7fff;
-              *(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =
-                   *(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;
+              g_TracedEdgeBuffer[iVar11].y1 = g_TracedEdgeBuffer[iVar11].y1 & 0x7fff;
               g_TracedEdgeBuffer[iVar11].y1 = g_TracedEdgeBuffer[iVar11].y1;
             }
             else {
@@ -193,8 +186,7 @@ LAB_00434f60:
                   uVar9 = g_TracedEdgeBuffer[iVar11].y1 & 0x8000;
                   g_TracedEdgeBuffer[iVar11].y1 = uVar9;
                   g_TracedEdgeBuffer[iVar11].y1 = uVar9 | uVar4 & 0x7fff;
-                  *(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =
-                       *(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;
+                  g_TracedEdgeBuffer[iVar11].y1 = g_TracedEdgeBuffer[iVar11].y1 & 0x7fff;
                   uVar7 = g_TracedEdgeBuffer[iVar11].y1 | 0x8000;
                 }
                 else {
@@ -208,8 +200,7 @@ LAB_00434f60:
                   uVar9 = g_TracedEdgeBuffer[iVar11].y1 & 0x8000;
                   g_TracedEdgeBuffer[iVar11].y1 = uVar9;
                   g_TracedEdgeBuffer[iVar11].y1 = uVar9 | uVar4 & 0x7fff;
-                  *(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =
-                       *(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;
+                  g_TracedEdgeBuffer[iVar11].y1 = g_TracedEdgeBuffer[iVar11].y1 & 0x7fff;
                   uVar7 = g_TracedEdgeBuffer[iVar11].y1 | 0x8000;
                 }
 LAB_00434df2:
@@ -218,7 +209,6 @@ LAB_00434df2:
               }
             }
 LAB_00434df6:
-            local_c4 = local_c4 + 4;
             iVar10 = iVar10 + 1;
             piVar7 = piVar7 + 1;
             iVar11 = uVar11;
@@ -232,20 +222,19 @@ LAB_00434df6:
           core_main_c_displayErrorAndQuit_FUN_00506f10(local_1f4);
         }
         if (iVar15 < max_y + -1) {
-          local_50 = 0;
-          for (local_b4 = 0; piVar7 = (int *)(iVar16 * 0x84 + (int)scanline_data),
+          for (local_b4 = 0; piVar7 = (int *)((char *)scanline_data + iVar16 * 0x84),
               local_b4 < *piVar7; local_b4 = local_b4 + 1) {
-            iVar10 = *(int *)((int)piVar7 + local_50 + 4);
+            iVar10 = piVar7[local_b4 + 1];
             bVar5 = false;
-            piVar6 = (int *)((int)scanline_data + iVar13 * 0x84);
-            iVar4 = iVar10 + *(int *)((int)piVar7 + local_50 + 0x44) + -1;
-            if ((local_20 < *piVar6 + -1) && (*(int *)((int)piVar6 + local_e0 + 8) < iVar4)) {
+            piVar6 = (int *)((char *)scanline_data + iVar13 * 0x84);
+            iVar4 = iVar10 + piVar7[local_b4 + 0x11] + -1;
+            if ((local_20 < *piVar6 + -1) && (piVar6[local_20 + 2] < iVar4)) {
               bVar5 = true;
             }
             if (((iVar4 <= iVar14) || (iVar15 < iVar10)) || (bVar5)) {
               bVar5 = false;
-              piVar7 = (int *)(iVar16 * 0x84 + (int)scanline_data);
-              if ((local_b4 < *piVar7 + -1) && (*(int *)((int)piVar7 + local_50 + 8) < iVar15)) {
+              piVar7 = (int *)((char *)scanline_data + iVar16 * 0x84);
+              if ((local_b4 < *piVar7 + -1) && (piVar7[local_b4 + 2] < iVar15)) {
                 bVar5 = true;
               }
               iVar12 = iVar11;
@@ -261,8 +250,7 @@ LAB_00434df6:
                 uVar9 = g_TracedEdgeBuffer[iVar11].y1 & 0x8000;
                 g_TracedEdgeBuffer[iVar11].y1 = uVar9;
                 g_TracedEdgeBuffer[iVar11].y1 = uVar9 | uVar4 & 0x7fff;
-                *(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =
-                     *(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;
+                g_TracedEdgeBuffer[iVar11].y1 = g_TracedEdgeBuffer[iVar11].y1 & 0x7fff;
                 iVar12 = iVar11 + 1;
                 g_TracedEdgeBuffer[iVar11].y1 = g_TracedEdgeBuffer[iVar11].y1 | 0x8000;
               }
@@ -277,16 +265,13 @@ LAB_00434df6:
               uVar9 = g_TracedEdgeBuffer[iVar11].y1 & 0x8000;
               g_TracedEdgeBuffer[iVar11].y1 = uVar9;
               g_TracedEdgeBuffer[iVar11].y1 = uVar9 | uVar4 & 0x7fff;
-              *(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =
-                   *(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;
+              g_TracedEdgeBuffer[iVar11].y1 = g_TracedEdgeBuffer[iVar11].y1 & 0x7fff;
               iVar12 = iVar11 + 1;
               g_TracedEdgeBuffer[iVar11].y1 = g_TracedEdgeBuffer[iVar11].y1;
             }
-            local_50 = local_50 + 4;
             iVar11 = iVar12;
           }
         }
-        local_e0 = local_e0 + 4;
         local_e4 = local_e4 + 1;
       }
       local_e8 = local_e8 + 0x21;

@@ -65,7 +65,7 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
       if ((g_RenderVertexBuffer[*piVar15].projected_vertex.screen_x & 0x80000000U) != 0) {
         iVar18 = iVar18 + 1;
       }
-      local_24 = (SRenderVertex *)((int)&(local_24->projected_vertex).transformed_x + 1);
+      local_24 = (SRenderVertex *)((int)local_24 + 1);
       piVar15 = piVar15 + 1;
     } while ((int)local_24 < vertex_count);
   }
@@ -77,7 +77,7 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
       do {
         memcpy(pSVar16, g_RenderVertexBuffer + *vertex_indices, 0x30);
         vertex_indices = vertex_indices + 1;
-        local_24 = (SRenderVertex *)((int)&(local_24->projected_vertex).transformed_x + 1);
+        local_24 = (SRenderVertex *)((int)local_24 + 1);
         pSVar16 = pSVar16 + 1;
       } while ((int)local_24 < vertex_count);
     }

@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 117,
+    "complexity_score": 97,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 72,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast"
+      "unnamed_local"
     ],
     "total_lines": 222
   },
@@ -121,6 +121,98 @@
     },
     "pcode_op_count": 793
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)((int)g_ScreenBufferArray + local_38);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(int *)(local_34 + (int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar7 = 0; piVar6 = (int *)(local_34 + (int)span_data), iVar7 < *piVar6;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(int *)(iVar8 + 4 + (int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar3 = *(int *)(iVar8 + 4 + (int)piVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(void *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*pCVar4)((void *)(iVar2 + iVar3),(void *)((int)sprite_data + iVar3 + iVar5),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(int *)(iVar1 + (int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)(iVar1 + (int)piVar6));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar6 = *(int *)((int)g_ScreenBufferArray + local_40);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(int *)(local_3c + (int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar13 = 0; piVar11 = (int *)(local_3c + (int)span_data), iVar13 < *piVar11;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(int *)(iVar12 + 4 + (int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar9 = *(int *)(iVar12 + 4 + (int)piVar11);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 65,
+      "match": "(void *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*pCVar4)((void *)(iVar9 * 2 + iVar6),(void *)((int)sprite_data + iVar9 + iVar10),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(int *)(iVar4 + (int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)(iVar4 + (int)piVar11));",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 76,
     "local_size": 68,
@@ -188,36 +280,22 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "iVar2 = *(int *)((int)g_ScreenBufferArray + local_38);",
-      "type": "pointer_cast"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 25,
+      "match": "local_30",
+      "severity": "mild",
+      "text": "int local_30;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "(*pCVar4)((void *)(iVar2 + iVar3),(void *)((int)sprite_data + iVar3 + iVar5),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "iVar6 = *(int *)((int)g_ScreenBufferArray + local_40);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 65,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "(*pCVar4)((void *)(iVar9 * 2 + iVar6),(void *)((int)sprite_data + iVar9 + iVar10),",
-      "type": "pointer_cast"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 26,
+      "match": "local_2c",
+      "severity": "mild",
+      "text": "int local_2c;",
+      "type": "unnamed_local"
     }
   ]
 }

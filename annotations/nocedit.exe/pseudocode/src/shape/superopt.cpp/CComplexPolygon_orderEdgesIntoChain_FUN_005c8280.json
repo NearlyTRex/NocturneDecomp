@@ -244,6 +244,15 @@
       "severity": "moderate",
       "text": "piVar2[0x17] = *(int *)((int)pSVar1->end_uv + 0xc);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 87,
+      "match": "(int *)(iVar3 + (int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar3 = (int *)(iVar3 + (int)ptr);",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {

@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 657,
-    "complexity_score": 344,
+    "complexity_score": 354,
     "cross_reference_count": 1,
     "function_call_count": 24,
     "global_count": 31,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 299,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -599,6 +599,14 @@
       "match": "(int *)((int)",
       "severity": "moderate",
       "text": "iVar9 = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar12) >> 0x10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 185,
+      "match": "(int *)(iVar12 + (int)",
+      "severity": "moderate",
+      "text": "iVar9 = *(int *)(iVar12 + (int)this_ptr->vertex_sort_buffer);",
       "type": "pointer_cast"
     }
   ]

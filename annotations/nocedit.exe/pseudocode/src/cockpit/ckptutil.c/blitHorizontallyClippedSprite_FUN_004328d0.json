@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 107,
+    "complexity_score": 42,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 42,
-    "suspect_count": 6,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 173
   },
   "cross_references": [],
@@ -108,6 +106,62 @@
     },
     "pcode_op_count": 661
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(void *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "src_buffer = (void *)((int)sprite_data + start_x + g_WindowWidth / 2 + dest_y * src_stride);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(void *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "src_buffer = (void *)((int)src_buffer + src_stride);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(void *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pvVar5 = (void *)((int)g_ScreenBufferArray[dest_y + src_y_offset] + start_x * 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(void *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*pCVar2)((void *)((int)pvVar5 + unused_param * -2),src_buffer,count);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(void *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pvVar5 = (void *)((int)pvVar5 + (iVar1 / 2) * 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(void *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "src_buffer = (void *)((int)src_buffer + src_stride);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 36,
     "local_size": 4,
@@ -173,54 +227,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "src_buffer = (void *)((int)sprite_data + start_x + g_WindowWidth / 2 + dest_y * src_stride);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "src_buffer = (void *)((int)src_buffer + src_stride);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 32,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "pvVar5 = (void *)((int)g_ScreenBufferArray[dest_y + src_y_offset] + start_x * 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "(*pCVar2)((void *)((int)pvVar5 + unused_param * -2),src_buffer,count);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "pvVar5 = (void *)((int)pvVar5 + (iVar1 / 2) * 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "src_buffer = (void *)((int)src_buffer + src_stride);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

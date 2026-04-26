@@ -46,7 +46,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_
                  this_ptr->viewport_width,this_ptr->viewport_height);
     }
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-              (g_CDemonRendererPtr2,&g_ZeroVector.i);
+              (g_CDemonRendererPtr2,&g_ZeroVector.f);
     local_18 = 56.0;
     if (this_ptr->use_custom_viewport != 0) {
       local_18 = 84.0;

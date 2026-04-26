@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 76,
+    "complexity_score": 86,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 36,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "param_count_too_many",
       "pointer_cast"
@@ -187,6 +187,14 @@
       "match": "(uint *)((int)",
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)puVar1 + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(uint *)(start_x * 4 + (int)",
+      "severity": "moderate",
+      "text": "(puVar2 = (uint *)(start_x * 4 + (int)g_ScreenBufferArray[y]), start_x <= end_x)) {",
       "type": "pointer_cast"
     },
     {

@@ -56,7 +56,7 @@ section .text
     MOV EDX,dword ptr [0x006703ec]      ; 0052a2d6 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 0052a2dc | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150 ; 0052a2dd
-        ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150(CDemonRenderer * this_ptr, CVector3i * point_ptr)
+        ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 0052a2e2
     MOV ECX,dword ptr [0x006703ec]      ; 0052a2e5 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH 0x42600000                     ; 0052a2eb

@@ -200,7 +200,7 @@ section .text
     MOV dword ptr [0x02d02550],EDX      ; 0044c609 | g_ViewportRightFixed
     MOV dword ptr [0x02d02554],ECX      ; 0044c60f | g_ViewportBottomFixed
     CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150 ; 0044c615
-        ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150(CDemonRenderer * this_ptr, CVector3i * point_ptr)
+        ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 0044c61a
     MOV EBP,dword ptr [0x006703ec]      ; 0044c61d | g_CDemonRendererPtr2
     PUSH dword ptr [ESI + 0x38]         ; 0044c623

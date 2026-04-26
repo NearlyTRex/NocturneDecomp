@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 835,
-    "complexity_score": 437,
+    "complexity_score": 467,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 402,
-    "suspect_count": 3,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -880,6 +880,30 @@
       "match": "(int *)((int)",
       "severity": "moderate",
       "text": "pSVar13 = this_ptr->vertices + *(int *)((int)this_ptr->vertex_sort_buffer + local_58);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 352,
+      "match": "(int *)(iVar7 + (int)",
+      "severity": "moderate",
+      "text": "if (this_ptr->vertices[*(int *)(iVar7 + (int)this_ptr->vertex_sort_buffer)].locked == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 355,
+      "match": "(int *)(iVar7 + (int)",
+      "severity": "moderate",
+      "text": "*(int *)(iVar7 + (int)this_ptr->vertex_sort_buffer));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 369,
+      "match": "(int *)(iVar16 + (int)",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)(iVar16 + (int)this_ptr->vertex_sort_buffer);",
       "type": "pointer_cast"
     },
     {

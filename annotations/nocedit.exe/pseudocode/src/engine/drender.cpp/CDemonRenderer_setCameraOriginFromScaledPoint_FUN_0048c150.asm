@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150(CDemonRenderer *this_ptr,CVector3i *point_ptr)
+; void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150(CDemonRenderer *this_ptr,CVector3f *point_ptr)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
-; CVector3i *      Stack[0x8]:4   point_ptr
+; CVector3f *      Stack[0x8]:4   point_ptr
 ;
 ; XREF[16]:
 ;   core_course.cpp_CCourse_preview_FUN_00443bc0 at 00443cf1

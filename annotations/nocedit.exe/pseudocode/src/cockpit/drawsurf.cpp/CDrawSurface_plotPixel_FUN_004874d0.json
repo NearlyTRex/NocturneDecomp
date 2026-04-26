@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 85,
+    "complexity_score": 135,
     "cross_reference_count": 5,
     "function_call_count": 1,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 60,
-    "suspect_count": 2,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -328,6 +328,46 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(byte *)(iVar3 + (int)",
+      "severity": "moderate",
+      "text": "*(byte *)(iVar3 + (int)g_ScreenBufferArray[iVar4]) = (byte)g_CurrentDrawColor;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(ushort *)(iVar2 + (int)",
+      "severity": "moderate",
+      "text": "*(ushort *)(iVar2 + (int)g_ScreenBufferArray[iVar4]) = (ushort)g_CurrentDrawColor;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(int *)(iVar1 + (int)",
+      "severity": "moderate",
+      "text": "*(int *)(iVar1 + (int)g_ScreenBufferArray[iVar4]) = g_CurrentDrawColor;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(ushort *)(iVar2 + (int)",
+      "severity": "moderate",
+      "text": "*(ushort *)(iVar2 + (int)g_ScreenBufferArray[iVar4]) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(ushort *)(iVar2 + (int)",
+      "severity": "moderate",
+      "text": "*(ushort *)(iVar2 + (int)g_ScreenBufferArray[iVar4]) >>",
+      "type": "pointer_cast"
+    },
     {
       "description": "Complex pointer cast",
       "line": 53,

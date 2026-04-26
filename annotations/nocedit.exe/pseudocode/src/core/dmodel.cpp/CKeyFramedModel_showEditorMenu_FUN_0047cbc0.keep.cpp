@@ -190,7 +190,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
         local_90.z = pCVar8->z;
       }
       engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-                (g_CDemonRendererPtr2,(CVector3i *)&local_90);
+                (g_CDemonRendererPtr2,(CVector3f *)&local_90);
       engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
                 (g_CDemonRendererPtr2,&local_d8);
       engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650

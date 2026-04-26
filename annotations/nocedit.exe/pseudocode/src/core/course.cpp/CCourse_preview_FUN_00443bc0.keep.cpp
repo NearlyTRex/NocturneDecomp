@@ -70,7 +70,7 @@ void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKey
     engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
               (g_CDemonRendererPtr2,(CVector3f *)&local_cc.pitch);
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-              (g_CDemonRendererPtr2,(CVector3i *)&local_cc);
+              (g_CDemonRendererPtr2,(CVector3f *)&local_cc);
     if (bVar3) {
       g_CDemonRaytraceInstance.rendering_mode = 1;
       core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(g_CDemonSetPtr,100.0,0);

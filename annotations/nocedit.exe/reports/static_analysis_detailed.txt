@@ -5,18 +5,18 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (326 diagnostics)
+Cppcheck (quick) (324 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
 selfAssignment (72)
 ----------------------------------------------------------------------------------------------------
 
-  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 170
+  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 163
     File: cockpit/ckptutil.c
     Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.
 
-  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 283
+  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 270
     File: cockpit/ckptutil.c
     Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.
 
@@ -108,7 +108,7 @@ selfAssignment (72)
     File: core/script.cpp
     Redundant assignment of 'pCVar9' to itself.
 
-  core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fb line 147
+  core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fb line 146
     File: core/set.cpp
     Redundant assignment of 'pCVar12' to itself.
 
@@ -913,7 +913,7 @@ invalidscanf (41)
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-legacyUninitvar (37)
+legacyUninitvar (36)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 59
@@ -967,10 +967,6 @@ legacyUninitvar (37)
   core_mission.cpp_CDemonMission_loadActor_FUN_00523 line 64
     File: core/mission.cpp
     Uninitialized variable: local_e1
-
-  core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fb line 122
-    File: core/set.cpp
-    Uninitialized variable: fStack_68
 
   core_set.cpp_CDemonSet_processActors_FUN_0056b810  line 112
     File: core/set.cpp
@@ -1225,34 +1221,6 @@ nullPointerRedundantCheck (11)
     Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
 
 ----------------------------------------------------------------------------------------------------
-nullPointer (6)
-----------------------------------------------------------------------------------------------------
-
-  cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0 line 68
-    File: cockpit/ckptutil.c
-    Possible null pointer dereference: pcVar6
-
-  core_script.cpp_trimLine_FUN_005592c0              line 39
-    File: core/script.cpp
-    Possible null pointer dereference: pcVar2
-
-  core_set.cpp_CDemonSet_load_FUN_00569410           line 410
-    File: core/set.cpp
-    Possible null pointer dereference: pcVar5
-
-  core_setedit.cpp_CDemonSet_editCameraPosition_FUN_ line 332
-    File: core/setedit.cpp
-    Possible null pointer dereference: p_Stack_20
-
-  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  line 231
-    File: core/setedit.cpp
-    Possible null pointer dereference: pcVar12
-
-  shape_quantize.cpp_CColorQuantizer_applyQuantizati line 42
-    File: shape/quantize.cpp
-    Possible null pointer dereference: local_20
-
-----------------------------------------------------------------------------------------------------
 identicalInnerCondition (6)
 ----------------------------------------------------------------------------------------------------
 
@@ -1279,6 +1247,30 @@ identicalInnerCondition (6)
   sound_snddx.cpp_directSoundEnumerationCallback_FUN line 59
     File: sound/snddx.cpp
     Identical inner 'if' condition is always true.
+
+----------------------------------------------------------------------------------------------------
+nullPointer (5)
+----------------------------------------------------------------------------------------------------
+
+  core_script.cpp_trimLine_FUN_005592c0              line 39
+    File: core/script.cpp
+    Possible null pointer dereference: pcVar2
+
+  core_set.cpp_CDemonSet_load_FUN_00569410           line 410
+    File: core/set.cpp
+    Possible null pointer dereference: pcVar5
+
+  core_setedit.cpp_CDemonSet_editCameraPosition_FUN_ line 332
+    File: core/setedit.cpp
+    Possible null pointer dereference: p_Stack_20
+
+  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  line 231
+    File: core/setedit.cpp
+    Possible null pointer dereference: pcVar12
+
+  shape_quantize.cpp_CColorQuantizer_applyQuantizati line 42
+    File: shape/quantize.cpp
+    Possible null pointer dereference: local_20
 
 ----------------------------------------------------------------------------------------------------
 shiftNegativeLHS (3)

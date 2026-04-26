@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 811,
-    "complexity_score": 441,
+    "complexity_score": 481,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 336,
-    "suspect_count": 9,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
@@ -683,6 +683,30 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 99,
+      "match": "(uint *)(local_7c->part_list[0].poly_count + (int)",
+      "severity": "moderate",
+      "text": "puVar10 = (uint *)(local_7c->part_list[0].poly_count + (int)local_50);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 124,
+      "match": "(int *)(local_70 + (int)",
+      "severity": "moderate",
+      "text": "(*(int *)(local_70 + (int)this_ptr->poly_texture_index_list) ==",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 125,
+      "match": "(int *)(local_5c + (int)",
+      "severity": "moderate",
+      "text": "*(int *)(local_5c + (int)this_ptr->poly_texture_index_list))) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 127,
       "match": "(uchar *)((int)",
       "severity": "moderate",
@@ -743,6 +767,14 @@
       "match": "(uint *)((int)",
       "severity": "moderate",
       "text": "*(uint *)((int)this_ptr->poly_texture_index_list + iVar18) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 314,
+      "match": "(uint *)(local_80 + (int)",
+      "severity": "moderate",
+      "text": "*(uint *)(local_80 + (int)this_ptr->poly_texture_index_list);",
       "type": "pointer_cast"
     }
   ]

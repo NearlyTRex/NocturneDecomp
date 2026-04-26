@@ -100,7 +100,7 @@ switchD_0044c448_caseD_3:
   this_ptr_00 = g_CDemonRendererPtr2;
   this_ptr->skip_clear_buffer_flag = skip_clear_buffers;
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-            (this_ptr_00,&(this_ptr->base).position.i);
+            (this_ptr_00,&(this_ptr->base).position.f);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
             (g_CDemonRendererPtr2,(this_ptr->base).focal_length);
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200

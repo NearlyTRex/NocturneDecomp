@@ -80,7 +80,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *th
     local_44.x = 0;
     local_44.y = 0;
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-              (g_CDemonRendererPtr2,&local_44);
+              (g_CDemonRendererPtr2,(CVector3f *)&local_44);
     engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(g_CDemonRendererPtr2,36.0);
     engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
               (g_CDemonRendererPtr2,&g_ZeroVector.f);

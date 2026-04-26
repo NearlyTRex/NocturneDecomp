@@ -133,7 +133,7 @@ void __cdecl CDemonRenderer::setCameraOrigin(CDemonRenderer *this_ptr,CVector3i 
 
 // Original: engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
 // Address: 0048c150
-void __cdecl CDemonRenderer::setCameraOriginFromScaledPoint(CDemonRenderer *this_ptr,CVector3i *point_ptr);
+void __cdecl CDemonRenderer::setCameraOriginFromScaledPoint(CDemonRenderer *this_ptr,CVector3f *point_ptr);
 
 // Original: engine_drender.cpp_CDemonRenderer_setCameraRotationFromPoint_FUN_0048c1b0
 // Address: 0048c1b0

@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 465,
-    "complexity_score": 245,
+    "complexity_score": 295,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 22,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 230,
-    "suspect_count": 1,
+    "suspect_count": 6,
     "suspect_types": [
-      "pointer_cast"
+      "unnamed_local"
     ],
     "total_lines": 695
   },
@@ -257,6 +257,17 @@
     },
     "pcode_op_count": 2098
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 214,
+      "match": "(byte *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "scanline_y = (byte *)((int)&(local_20->projected_vertex).transformed_x + 1);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 128,
     "local_size": 120,
@@ -352,12 +363,58 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 214,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "scanline_y = (byte *)((int)&(local_20->projected_vertex).transformed_x + 1);",
-      "type": "pointer_cast"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 37,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "SSoftwareEdge *local_14;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 148,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "local_14 = g_EdgeInterpolationArray;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 151,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "if ((g_RenderTriangleMinScanlineY == (local_14->base).y_min) &&",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 152,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "(local_14 != (SSoftwareEdge *)0x0)) goto LAB_00483be4;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 154,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "local_14 = local_14 + 1;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 154,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "local_14 = local_14 + 1;",
+      "type": "unnamed_local"
     }
   ]
 }

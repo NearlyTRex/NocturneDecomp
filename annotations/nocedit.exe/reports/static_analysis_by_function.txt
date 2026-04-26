@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 116
-  Total diagnostics: 326
+  Functions with findings: 115
+  Total diagnostics: 324
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 116, raw .cpp files: 0
+  .keep.cpp files: 115, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -439,8 +439,8 @@ support_codec.cpp_readBitsFromStream_FUN_0043e530  [.keep] [Cppcheck (quick)]
 cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0  [.keep] [Cppcheck (quick)]
   File: cockpit/ckptutil.c  (2 diagnostics)
 
-  Line  170: [selfAssignment] Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.
-  Line  283: [selfAssignment] Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.
+  Line  163: [selfAssignment] Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.
+  Line  270: [selfAssignment] Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.
 
 ----------------------------------------------------------------------------------------------------
 cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20  [.keep] [Cppcheck (quick)]
@@ -504,13 +504,6 @@ core_script.cpp_parseCommandWithTemplates_FUN_00561690  [.keep] [Cppcheck (quick
 
   Line   52: [selfAssignment] Redundant assignment of 'pCVar6' to itself.
   Line   53: [selfAssignment] Redundant assignment of 'pCVar9' to itself.
-
-----------------------------------------------------------------------------------------------------
-core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0  [.keep] [Cppcheck (quick)]
-  File: core/set.cpp  (2 diagnostics)
-
-  Line  122: [legacyUninitvar] Uninitialized variable: fStack_68
-  Line  147: [selfAssignment] Redundant assignment of 'pCVar12' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_set.cpp_CDemonSet_load_FUN_00569410  [.keep] [Cppcheck (quick)]
@@ -625,12 +618,6 @@ shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590  [.keep] [Cpp
   Line  241: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
-cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0  [.keep] [Cppcheck (quick)]
-  File: cockpit/ckptutil.c  (1 diagnostics)
-
-  Line   68: [nullPointer] Possible null pointer dereference: pcVar6
-
-----------------------------------------------------------------------------------------------------
 cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70  [.keep] [Cppcheck (quick)]
   File: cockpit/pkbitmap.cpp  (1 diagnostics)
 
@@ -719,6 +706,12 @@ core_script.cpp_trimLine_FUN_005592c0  [.keep] [Cppcheck (quick)]
   File: core/script.cpp  (1 diagnostics)
 
   Line   39: [nullPointer] Possible null pointer dereference: pcVar2
+
+----------------------------------------------------------------------------------------------------
+core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0  [.keep] [Cppcheck (quick)]
+  File: core/set.cpp  (1 diagnostics)
+
+  Line  146: [selfAssignment] Redundant assignment of 'pCVar12' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0  [.keep] [Cppcheck (quick)]

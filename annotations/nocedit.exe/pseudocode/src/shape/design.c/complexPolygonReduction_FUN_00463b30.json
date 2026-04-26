@@ -7,13 +7,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 1138,
-    "complexity_score": 425,
+    "complexity_score": 465,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 26,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 325,
-    "suspect_count": 9,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "suspect_float"
@@ -502,6 +502,30 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 265,
+      "match": "(int *)(local_1c * 4 + (int)",
+      "severity": "moderate",
+      "text": "((int *)(local_1c * 4 + (int)local_20),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 266,
+      "match": "(int *)(local_1c * 4 + 4 + (int)",
+      "severity": "moderate",
+      "text": "(int *)(local_1c * 4 + 4 + (int)local_20));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 268,
+      "match": "(uint *)(local_1c * 4 + (int)",
+      "severity": "moderate",
+      "text": "uVar1 = *(uint *)(local_1c * 4 + (int)local_20);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 269,
       "match": "(uint *)((int)",
       "severity": "moderate",
@@ -522,6 +546,14 @@
       "match": "(uint *)((int)",
       "severity": "moderate",
       "text": "*(uint *)((int)local_20 + local_1c * 4 + 4) = uVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 276,
+      "match": "(int *)(local_4c * 4 + (int)",
+      "severity": "moderate",
+      "text": "for (local_1c = *(int *)(local_4c * 4 + (int)local_20); local_1c < g_PolygonCount + -1;",
       "type": "pointer_cast"
     },
     {

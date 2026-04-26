@@ -50,22 +50,22 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0054b5d9: MOV EDI,ESP
 
   cockpit_ckptutil.c_rotateCircularBitmap_FUN_00433030
-    File: cockpit/ckptutil.c, Suspects: 11
+    File: cockpit/ckptutil.c, Suspects: 0
     - [alt_frame_pointer] at 004330e6: MOV EDI,ESP
     - [alt_frame_pointer] at 00433112: MOV ESI,ESP
 
   cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50
-    File: cockpit/ckptutil.c, Suspects: 4
+    File: cockpit/ckptutil.c, Suspects: 1
     - [stack_alignment] at 00433f59: AND ESP,0xfffffff8
 
   cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
-    File: cockpit/ckptutil.c, Suspects: 2
+    File: cockpit/ckptutil.c, Suspects: 0
     - [alt_frame_pointer] at 00431ad7: MOV EDI,ESP
     - [alt_frame_pointer] at 00431af5: MOV ESI,ESP
     - [alt_frame_pointer] at 00431b15: MOV ESI,ESP
 
   cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0
-    File: cockpit/ckptutil.c, Suspects: 3
+    File: cockpit/ckptutil.c, Suspects: 2
     - [stack_alignment] at 004342f9: AND ESP,0xfffffff8
 
   cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0
@@ -77,7 +77,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00433c99: AND ESP,0xfffffff8
 
   crt_process.c_buildFileInfoEnv_FUN_0060ffd0
-    File: crt/process.c, Suspects: 24
+    File: crt/process.c, Suspects: 22
     - [alt_frame_pointer] at 00610075: MOV EDI,ESP
     - [alt_frame_pointer] at 006100a6: MOV EDI,ESP
     - [alt_frame_pointer] at 006100e2: MOV EDI,ESP
@@ -256,7 +256,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 0048c209: AND ESP,0xfffffff8
 
   engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
-    File: engine/drender.cpp, Suspects: 0
+    File: engine/drender.cpp, Suspects: 1
     - [stack_alignment] at 0048c788: AND ESP,0xfffffff8
     - [alt_frame_pointer] at 0048c78e: MOV ESI,ESP
 

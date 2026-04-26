@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 83,
+    "complexity_score": 93,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 48,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -160,6 +160,14 @@
       "match": "(int *)((int)",
       "severity": "moderate",
       "text": "piVar5 = (int *)((int)this_ptr->row_pointers + local_14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(ushort *)(*piVar5 + (int)",
+      "severity": "moderate",
+      "text": "puVar7 = (ushort *)(*piVar5 + (int)puVar1);",
       "type": "pointer_cast"
     },
     {

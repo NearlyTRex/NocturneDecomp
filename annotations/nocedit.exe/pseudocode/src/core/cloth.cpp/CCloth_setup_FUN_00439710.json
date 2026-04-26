@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 716,
-    "complexity_score": 454,
+    "complexity_score": 484,
     "cross_reference_count": 9,
     "function_call_count": 8,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 354,
-    "suspect_count": 9,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "unnamed_local"
@@ -733,6 +733,30 @@
       "match": "(int *)((int)",
       "severity": "moderate",
       "text": "*(int *)((int)this_ptr->vertex_sort_buffer + iVar13) = iVar8;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 115,
+      "match": "(int *)(iVar10 + (int)",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)(iVar10 + (int)this_ptr->vertex_sort_buffer);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 119,
+      "match": "(int *)(iVar10 + (int)",
+      "severity": "moderate",
+      "text": "*(int *)(iVar10 + (int)this_ptr->vertex_sort_buffer) = iVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 128,
+      "match": "(int *)(iVar10 + (int)",
+      "severity": "moderate",
+      "text": "*(int *)(iVar10 + (int)this_ptr->vertex_sort_buffer) = iVar1;",
       "type": "pointer_cast"
     },
     {

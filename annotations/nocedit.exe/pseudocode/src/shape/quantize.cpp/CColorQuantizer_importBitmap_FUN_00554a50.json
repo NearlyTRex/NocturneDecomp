@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 161,
+    "complexity_score": 191,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 101,
-    "suspect_count": 5,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "warning_inlined_function"
@@ -260,6 +260,30 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(byte *)(iVar3 + (int)",
+      "severity": "moderate",
+      "text": "bVar1 = *(byte *)(iVar3 + (int)pvVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 77,
+      "match": "(byte *)(iVar3 + 1 + (int)",
+      "severity": "moderate",
+      "text": "bVar2 = *(byte *)(iVar3 + 1 + (int)pvVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 78,
+      "match": "(byte *)(iVar3 + 2 + (int)",
+      "severity": "moderate",
+      "text": "bVar3 = *(byte *)(iVar3 + 2 + (int)pvVar1);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",

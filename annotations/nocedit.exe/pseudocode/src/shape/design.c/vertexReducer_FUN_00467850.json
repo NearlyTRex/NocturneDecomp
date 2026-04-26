@@ -7,13 +7,13 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 625,
-    "complexity_score": 346,
+    "complexity_score": 386,
     "cross_reference_count": 4,
     "function_call_count": 14,
     "global_count": 25,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 216,
-    "suspect_count": 12,
+    "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
       "unnamed_local"
@@ -549,6 +549,14 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 132,
+      "match": "(int *)(local_34 * 8 + (int)",
+      "severity": "moderate",
+      "text": "iVar4 = *(int *)(local_34 * 8 + (int)base);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 137,
       "match": "(int *)((int)",
       "severity": "moderate",
@@ -561,6 +569,30 @@
       "match": "(int *)((int)",
       "severity": "moderate",
       "text": "if (*(int *)((int)base + local_30 * 8 + 4) == *(int *)((int)base + local_30 * 8)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 138,
+      "match": "(int *)(local_30 * 8 + (int)",
+      "severity": "moderate",
+      "text": "iVar5 = *(int *)(local_30 * 8 + (int)base);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 152,
+      "match": "(int *)(local_34 * 8 + (int)",
+      "severity": "moderate",
+      "text": "*(int *)(*(int *)(local_34 * 8 + (int)base) * 4 + (int)local_14",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 155,
+      "match": "(int *)(local_30 * 8 + (int)",
+      "severity": "moderate",
+      "text": "*(int *)(*(int *)(local_30 * 8 + (int)base) * 4 + (int)local_14",
       "type": "pointer_cast"
     },
     {

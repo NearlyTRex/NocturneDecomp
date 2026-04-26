@@ -71,7 +71,11 @@ def compile_header(header_path, include_dir, compiler=DEFAULT_COMPILER):
         f.write('int main(void) { return 0; }\n')
         temp_file = f.name
     try:
-        cmd = [compiler] + DEFAULT_COMPILE_FLAGS + ['-I', include_dir, temp_file]
+        cmd = [compiler] + DEFAULT_COMPILE_FLAGS + ['-I', include_dir]
+        shims_dir = _shims_include_for(include_dir)
+        if shims_dir:
+            cmd += ['-I', shims_dir]
+        cmd += [temp_file]
         result = subprocess.run(
             cmd,
             capture_output=True,
@@ -314,6 +318,17 @@ def find_cpp_files(src_dir, skip_dirs=None, skip_files=None):
                 cpp_files.append(os.path.join(root, f))
     return sorted(cpp_files)
 
+def _shims_include_for(include_dir):
+    """Return the sibling shims/ dir if it exists, else None.
+
+    nocturne.h pulls in shim_config.h, which lives under pseudocode/shims/.
+    Mirror what scripts/Bash/test_compilation.sh does: add the shims dir to
+    the include path when present.
+    """
+    shims_dir = os.path.join(os.path.dirname(include_dir), "shims")
+    return shims_dir if os.path.isdir(shims_dir) else None
+
+
 def compile_cpp_file(cpp_path, include_dir, compiler=DEFAULT_COMPILER):
     """Try to compile a single cpp file.
 
@@ -326,7 +341,11 @@ def compile_cpp_file(cpp_path, include_dir, compiler=DEFAULT_COMPILER):
         Tuple of (success, error_message)
     """
     try:
-        cmd = [compiler] + DEFAULT_COMPILE_FLAGS + ['-I', include_dir, cpp_path]
+        cmd = [compiler] + DEFAULT_COMPILE_FLAGS + ['-I', include_dir]
+        shims_dir = _shims_include_for(include_dir)
+        if shims_dir:
+            cmd += ['-I', shims_dir]
+        cmd += [cpp_path]
         result = subprocess.run(
             cmd,
             capture_output=True,

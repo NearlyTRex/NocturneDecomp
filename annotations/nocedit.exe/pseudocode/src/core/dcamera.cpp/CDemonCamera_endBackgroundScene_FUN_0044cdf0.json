@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 76,
+    "complexity_score": 86,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 24,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 61,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -354,6 +354,14 @@
       "match": "(int *)((int)",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)g_ZBufferScanlineArray + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(void *)(iVar4 * 4 + (int)",
+      "severity": "moderate",
+      "text": "((void *)(iVar4 * 4 + (int)this_ptr->zbuffer_aligned),",
       "type": "pointer_cast"
     }
   ]

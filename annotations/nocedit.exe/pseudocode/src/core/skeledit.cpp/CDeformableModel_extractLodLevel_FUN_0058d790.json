@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 512,
-    "complexity_score": 322,
+    "complexity_score": 332,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 242,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "warning_inlined_function"
@@ -497,6 +497,14 @@
       "match": "(uint *)((int)",
       "severity": "moderate",
       "text": "puVar21 = (uint *)((int)lod_mesh->tri_data->attribute_indices + local_50);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 96,
+      "match": "(uint *)(local_48 + (int)",
+      "severity": "moderate",
+      "text": "*(uint *)(local_48 + (int)this_ptr->index_data_ptr[lod_index]) = *puVar21;",
       "type": "pointer_cast"
     },
     {

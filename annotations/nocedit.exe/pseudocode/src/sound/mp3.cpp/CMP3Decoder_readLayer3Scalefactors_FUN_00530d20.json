@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 340,
-    "complexity_score": 237,
+    "complexity_score": 247,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 142,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -297,6 +297,14 @@
       "match": "(int *)((int)",
       "severity": "moderate",
       "text": "if (local_1c < *(int *)((int)g_Layer3ShortBandGroupCounts + local_34 + 4)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(uint *)(local_20 + (int)",
+      "severity": "moderate",
+      "text": "puVar7 = (uint *)(local_20 + (int)puVar6);",
       "type": "pointer_cast"
     },
     {

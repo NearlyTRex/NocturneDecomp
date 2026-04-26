@@ -18,6 +18,30 @@ from ghidra_annotations.annotations.pseudocode.headers import strip_type_prefix
 from ghidra_annotations.annotations.pseudocode.functions import _detect_format_attribute
 
 
+# Globals where Ghidra's inferred array length is smaller than the actual
+# runtime access pattern in the binary. Ghidra caps the inferred element
+# count at the next-defined-symbol boundary (e.g. RUNTIME_HEAP), but the
+# code may still index past that boundary into uninitialized memory the
+# original loader gave the program. ASan flags these writes; widening the
+# emitted C++ storage matches the effective binary semantics. Adjacency
+# detection in adjacency_sentinel_transform still sees Ghidra's original
+# size — this override only affects emission.
+GLOBAL_TYPE_OVERRIDES = {
+    # Indexed with a flat stride of 320 entries per row in core_dcamera.cpp_
+    # CDemonCamera_precomputeNormals; sister buffers g_PrecomputedSurfaceNormals
+    # and g_TempWorldPositions are dimensioned [241][320]. Kept 1-D here so
+    # existing flat references like &g_PrecomputedWorldPositions[12918].y in
+    # constants_560000.h still type-check (a 2-D shape would make the inner
+    # element a CVector3i[320] row with no .y member).
+    'g_PrecomputedWorldPositions': 'CVector3i[77120]',
+}
+
+
+def _apply_type_override(global_var):
+    """Return the emit-time type for a global, applying GLOBAL_TYPE_OVERRIDES."""
+    return GLOBAL_TYPE_OVERRIDES.get(global_var.get('name'), global_var['type'])
+
+
 def build_write_xref_addresses(annotations_path):
     """Build a set of addresses that have WRITE cross-references to them.
 
@@ -2119,7 +2143,7 @@ def generate_globals_header_file(globals_list, range_key="", type_to_path_map=No
 
     if type_to_path_map:
         for global_var in globals_list:
-            type_name = extract_base_type_name(global_var['type'])
+            type_name = extract_base_type_name(_apply_type_override(global_var))
             if type_name in type_to_path_map:
                 needed_includes.add(type_to_path_map[type_name])
 
@@ -2150,7 +2174,7 @@ def generate_globals_header_file(globals_list, range_key="", type_to_path_map=No
     # Group globals by type for better organization
     type_groups = {}
     for global_var in globals_list:
-        type_name = global_var['type']
+        type_name = _apply_type_override(global_var)
         if type_name not in type_groups:
             type_groups[type_name] = []
         type_groups[type_name].append(global_var)
@@ -2160,7 +2184,7 @@ def generate_globals_header_file(globals_list, range_key="", type_to_path_map=No
         content.append("// %s" % type_name)
         for global_var in type_groups[type_name]:
             # Format the declaration correctly (handles array types)
-            base_type, full_var_name = format_variable_declaration(global_var['type'], global_var['name'])
+            base_type, full_var_name = format_variable_declaration(_apply_type_override(global_var), global_var['name'])
             content.append("extern %s %s;" % (base_type, full_var_name))
         content.append("")  # Blank line after each type group
 
@@ -2217,7 +2241,7 @@ def generate_globals_cpp_file(globals_list, range_key=""):
     # Group globals by type for better organization
     type_groups = {}
     for global_var in globals_list:
-        type_name = global_var['type']
+        type_name = _apply_type_override(global_var)
         if type_name not in type_groups:
             type_groups[type_name] = []
         type_groups[type_name].append(global_var)
@@ -2227,7 +2251,7 @@ def generate_globals_cpp_file(globals_list, range_key=""):
         content.append("// %s" % type_name)
         for global_var in type_groups[type_name]:
             # Format the declaration correctly (handles array types)
-            base_type, full_var_name = format_variable_declaration(global_var['type'], global_var['name'])
+            base_type, full_var_name = format_variable_declaration(_apply_type_override(global_var), global_var['name'])
 
             # DLL import function pointers: initialize to nullptr instead of
             # raw import table addresses. These are wired up at runtime by

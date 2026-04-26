@@ -140,8 +140,12 @@ _SUSPECT_PATTERN_DEFS = [
     (r'\bunaff_[A-Z]+\b', 'unaffected_reg', 'Unaffected register variable'),
     # Very small floats that are likely misinterpreted integers (e.g., 9.18355e-41)
     (r'\b\d+\.\d+e-[3-9]\d\b', 'suspect_float', 'Likely misinterpreted integer as float'),
-    # Type casts to weird pointer arithmetic
-    (r'\(\w+\s*\*\s*\)\s*\(\s*\(int\)', 'pointer_cast', 'Complex pointer cast'),
+    # Type casts to weird pointer arithmetic. Matches `(TYPE *)(...(int)X...)`
+    # with the `(int)` cast appearing anywhere inside the outer parens —
+    # `[^)]*` keeps it within a single parenthesized group so the match is
+    # cheap and doesn't span across whole lines. The TYPE allows multi-word
+    # forms like `unsigned int *`, `unsigned char *`, `long long *`.
+    (r'\(\w+(?:\s+\w+)*\s*\*\s*\)\s*\([^)]*\(int\)', 'pointer_cast', 'Complex pointer cast'),
     # _._N_N_ field access patterns (mangled/unknown field names)
     (r'\._\d+_\d+_', 'unknown_field', 'Unknown/mangled field access'),
     # `code *` — Ghidra's placeholder type for unresolved function pointers

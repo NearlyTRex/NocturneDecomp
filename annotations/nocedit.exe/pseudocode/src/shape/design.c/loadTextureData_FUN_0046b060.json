@@ -7,13 +7,13 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 535,
-    "complexity_score": 184,
+    "complexity_score": 224,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 154,
-    "suspect_count": 2,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "warning_inlined_function"
@@ -535,6 +535,38 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(uchar *)(local_3c * iVar5 + (int)",
+      "severity": "moderate",
+      "text": "(local_1c,(uchar *)(local_3c * iVar5 + (int)ptr),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(uchar *)(local_3c * entry->original_width + (int)",
+      "severity": "moderate",
+      "text": "(uchar *)(local_3c * entry->original_width + (int)dest),entry->original_width,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 80,
+      "match": "(uchar *)(local_3c * iVar5 + (int)",
+      "severity": "moderate",
+      "text": "(local_1c,(uchar *)(local_3c * iVar5 + (int)ptr),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(uchar *)(local_3c * entry->original_width + (int)",
+      "severity": "moderate",
+      "text": "(uchar *)(local_3c * entry->original_width + (int)dest),entry->original_width,",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",

@@ -7,14 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 147,
+    "complexity_score": 202,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 5,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 132,
-    "suspect_count": 1,
+    "suspect_count": 6,
     "suspect_types": [
+      "pointer_cast",
       "warning_inlined_function"
     ],
     "total_lines": 454
@@ -445,6 +446,46 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(byte *)(iVar13 * 4 + (int)",
+      "severity": "moderate",
+      "text": "pbVar14 = (byte *)(iVar13 * 4 + (int)this_ptr->pixel_data);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 79,
+      "match": "(byte *)(iVar15 + (int)",
+      "severity": "moderate",
+      "text": "(uint)*(byte *)(iVar15 + (int)this_ptr->pixel_data);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(byte *)(iVar15 + 1 + (int)",
+      "severity": "moderate",
+      "text": "uVar13 = (iVar2 >> 0x10) - (uint)*(byte *)(iVar15 + 1 + (int)this_ptr->pixel_data);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 89,
+      "match": "(byte *)(iVar15 + 2 + (int)",
+      "severity": "moderate",
+      "text": "uVar13 = (iVar3 >> 0x10) - (uint)*(byte *)(iVar15 + 2 + (int)this_ptr->pixel_data);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 94,
+      "match": "(byte *)(iVar15 + 3 + (int)",
+      "severity": "moderate",
+      "text": "uVar13 = (iVar4 >> 0x10) - (uint)*(byte *)(iVar15 + 3 + (int)this_ptr->pixel_data);",
+      "type": "pointer_cast"
     }
   ]
 }

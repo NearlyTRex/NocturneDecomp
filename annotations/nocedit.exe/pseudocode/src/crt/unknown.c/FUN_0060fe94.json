@@ -2,15 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 128,
-    "complexity_score": 135,
+    "complexity_score": 160,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 65,
-    "suspect_count": 6,
+    "suspect_count": 8,
     "suspect_types": [
       "param_count_too_few",
+      "pointer_cast",
       "unnamed_param"
     ],
     "total_lines": 193
@@ -167,6 +168,22 @@
       "severity": "mild",
       "text": "if (param_2 == 0) {",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(char *)(iVar8 + (int)",
+      "severity": "moderate",
+      "text": "if (*(char *)(iVar8 + (int)g_EnvironStringArea) != '\\0') {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(byte *)(iVar8 + (int)",
+      "severity": "moderate",
+      "text": "puVar6 = (byte *)(iVar8 + (int)dest);",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 1,

@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 332,
-    "complexity_score": 155,
+    "complexity_score": 165,
     "cross_reference_count": 9,
     "function_call_count": 8,
     "global_count": 27,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 130,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -367,6 +367,14 @@
       "match": "(void *)((int)",
       "severity": "moderate",
       "text": "g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 111,
+      "match": "(void *)(g_WindowWidth * iVar5 * ((int)",
+      "severity": "moderate",
+      "text": "(void *)(g_WindowWidth * iVar5 * ((int)(iVar1 - (uint)(iVar6 << 2 < 0)) >> 3) +",
       "type": "pointer_cast"
     },
     {

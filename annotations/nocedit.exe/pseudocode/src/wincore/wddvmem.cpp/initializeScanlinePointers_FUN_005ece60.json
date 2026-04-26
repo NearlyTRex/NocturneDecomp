@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 42,
+    "complexity_score": 52,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 27,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -141,6 +141,14 @@
     "variables": []
   },
   "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(void *)(g_WindowWidth * iVar4 * ((int)",
+      "severity": "moderate",
+      "text": "(void *)(g_WindowWidth * iVar4 * ((int)(iVar1 - (uint)(iVar5 << 2 < 0)) >> 3) +",
+      "type": "pointer_cast"
+    },
     {
       "description": "Complex pointer cast",
       "line": 24,

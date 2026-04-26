@@ -817,6 +817,15 @@
       "type": "stack_ref"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 284,
+      "match": "(char *)(*piVar1 * 0x1a4 + (int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "engine_2d_c_drawTextXY_FUN_00402130(0,y,(char *)(*piVar1 * 0x1a4 + (int)p_Stack_20));",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 325,
       "match": "&stack0xffffee8c",

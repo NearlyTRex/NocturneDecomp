@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 107,
+    "complexity_score": 47,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 11,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 47,
-    "suspect_count": 5,
-    "suspect_types": [
-      "pointer_cast",
-      "warning_unreachable"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 143
   },
   "cross_references": [],
@@ -143,6 +140,53 @@
     },
     "pcode_op_count": 657
   },
+  "resolved_suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00431c6d) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(SRGBColorPalette *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(ushort *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(ushort *)((int)g_Hardware16BitPalette + iVar6) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(SRGBColorPalette *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_Hardware32BitPalette + iVar4) =",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -159,46 +203,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unreachable code block removed",
-      "line": 2,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x00431c6d) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(SRGBColorPalette *)((int)",
-      "severity": "moderate",
-      "text": "rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 27,
-      "match": "(ushort *)((int)",
-      "severity": "moderate",
-      "text": "*(ushort *)((int)g_Hardware16BitPalette + iVar6) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 43,
-      "match": "(SRGBColorPalette *)((int)",
-      "severity": "moderate",
-      "text": "rgb_palette_data = (SRGBColorPalette *)((int)rgb_palette_data + 3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 44,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_Hardware32BitPalette + iVar4) =",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

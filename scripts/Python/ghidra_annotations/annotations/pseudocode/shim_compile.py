@@ -106,8 +106,11 @@ def compile_shim_file(src_path, include_dir, compiler, extra_flags):
             c_compiler = compiler.replace('clang++', 'clang').replace('g++', 'gcc')
             cmd = [c_compiler, '-fsyntax-only', '-std=c11', '-Wno-everything', src_path]
         else:
+            # Add the shims dir itself to the include path: nocturne.h pulls
+            # in shim_config.h, which lives alongside the shim sources.
+            shims_dir = os.path.dirname(src_path)
             cmd = ([compiler] + SHIM_COMPILE_FLAGS + extra_flags +
-                   ['-I', include_dir, src_path])
+                   ['-I', include_dir, '-I', shims_dir, src_path])
         result = subprocess.run(
             cmd,
             capture_output=True,

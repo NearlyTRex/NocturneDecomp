@@ -7,14 +7,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 21,
+    "complexity_score": 56,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 8,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 21,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 3,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 78
   },
   "cross_references": [
@@ -241,5 +243,30 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 8,
+      "match": "(ushort *)(x * 2 + (int)",
+      "severity": "moderate",
+      "text": "*(ushort *)(x * 2 + (int)g_ScreenBufferArray[y]) = g_Hardware16BitPalette[color];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(uint *)(x * 4 + (int)",
+      "severity": "moderate",
+      "text": "*(uint *)(x * 4 + (int)g_ScreenBufferArray[y]) = g_Hardware32BitPalette[color];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(char *)(x + (int)",
+      "severity": "moderate",
+      "text": "*(char *)(x + (int)g_ScreenBufferArray[y]) = (char)color;",
+      "type": "pointer_cast"
+    }
+  ]
 }

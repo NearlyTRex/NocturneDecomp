@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1027,
-    "complexity_score": 506,
+    "complexity_score": 521,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 5,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 506,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 1533
   },
   "cross_references": [
@@ -1686,5 +1688,14 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 170,
+      "match": "(uint *)(iVar14 + (int)",
+      "severity": "moderate",
+      "text": "puVar10 = (uint *)(iVar14 + (int)puVar9);",
+      "type": "pointer_cast"
+    }
+  ]
 }

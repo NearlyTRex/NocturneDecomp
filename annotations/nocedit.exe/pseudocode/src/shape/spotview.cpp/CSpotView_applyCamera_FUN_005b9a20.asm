@@ -99,7 +99,7 @@ section .text
     PUSH EBX                            ; 005b9acd | g_CDemonRendererInstance
     FSTP float ptr [ESP + 0x38]         ; 005b9ace
     CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150 ; 005b9ad2
-        ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150(CDemonRenderer * this_ptr, CVector3i * point_ptr)
+        ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 005b9ad7
     LEA EAX,[ESP + 0x34]                ; 005b9ada
     PUSH EAX                            ; 005b9ade

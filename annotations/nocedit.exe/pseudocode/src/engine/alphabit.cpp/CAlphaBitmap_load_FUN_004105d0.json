@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 294,
-    "complexity_score": 100,
+    "complexity_score": 115,
     "cross_reference_count": 13,
     "function_call_count": 8,
     "global_count": 31,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 100,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 394
   },
   "cross_references": [
@@ -543,5 +545,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(uint *)(iVar6 + (int)",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar6 + (int)this_ptr->act) = uVar8 | uVar5;",
+      "type": "pointer_cast"
+    }
+  ]
 }

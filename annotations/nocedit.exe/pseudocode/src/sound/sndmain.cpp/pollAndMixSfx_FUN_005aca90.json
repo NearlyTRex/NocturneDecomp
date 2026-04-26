@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 293,
-    "complexity_score": 173,
+    "complexity_score": 188,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 22,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 173,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 466
   },
   "cross_references": [
@@ -501,5 +503,15 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 83,
+      "match": "(float *)(g_MixBufferWriteIndex * 4 + (int)",
+      "severity": "moderate",
+      "text": "((float *)(g_MixBufferWriteIndex * 4 + (int)g_ChannelPrimaryBuffers[iVar5]),",
+      "type": "pointer_cast"
+    }
+  ]
 }

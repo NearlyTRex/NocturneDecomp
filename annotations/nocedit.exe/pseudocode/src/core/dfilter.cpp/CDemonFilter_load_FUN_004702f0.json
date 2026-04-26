@@ -7,14 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 203,
-    "complexity_score": 95,
+    "complexity_score": 120,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 19,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 65,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
+      "pointer_cast",
       "unrolled_strcpy",
       "warning_inlined_function"
     ],
@@ -322,6 +323,22 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(char *)(iVar4 + (int)",
+      "severity": "moderate",
+      "text": "*(char *)(iVar4 + (int)this_ptr->data_buffer) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(byte *)(iVar4 + (int)",
+      "severity": "moderate",
+      "text": "(char)((int)(uint)*(byte *)(iVar4 + (int)this_ptr->data_buffer) >> 2);",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

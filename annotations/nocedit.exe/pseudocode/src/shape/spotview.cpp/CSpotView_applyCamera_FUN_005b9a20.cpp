@@ -32,7 +32,7 @@ void __cdecl shape_spotview_cpp_CSpotView_applyCamera_FUN_005b9a20(CSpotView *th
   local_44.y = (int)((this_ptr->loat_at).y + pCVar1->y);
   local_44.z = (int)((this_ptr->loat_at).z + pCVar1->z);
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-            (g_CDemonRendererPtr2,&local_44);
+            (g_CDemonRendererPtr2,(CVector3f *)&local_44);
   engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr2,&local_38)
   ;
   return;

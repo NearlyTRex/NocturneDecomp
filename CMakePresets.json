@@ -29,11 +29,12 @@
     {
       "name": "exe-linux-asan",
       "displayName": "Full exe (Linux 32-bit) with ASan + UBSan",
-      "description": "Compile and link nocturne with AddressSanitizer and UBSan.",
+      "description": "Compile and link nocturne with AddressSanitizer and UBSan. Debug build type adds -g for gdb usability (struct field names, locals, line numbers).",
       "inherits": "exe-linux",
       "binaryDir": "${sourceDir}/build/exe-linux-asan",
       "cacheVariables": {
-        "NOCTURNE_ASAN": "ON"
+        "NOCTURNE_ASAN": "ON",
+        "CMAKE_BUILD_TYPE": "Debug"
       }
     }
   ],

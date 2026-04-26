@@ -282,7 +282,7 @@ section .text
     MOV EAX,[0x006703ec]                ; 0047cd52 | g_CDemonRendererPtr2
     PUSH EAX                            ; 0047cd57 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150 ; 0047cd58
-        ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150(CDemonRenderer * this_ptr, CVector3i * point_ptr)
+        ;   XREF to: 0048c150 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 0047cd5d
     LEA EAX,[EBP + -0x4a]               ; 0047cd60
     PUSH EAX                            ; 0047cd63

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 43,
+    "complexity_score": 18,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 18,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 69
   },
   "cross_references": [],
@@ -67,6 +65,26 @@
     },
     "pcode_op_count": 294
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(byte *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&pSVar1->y1 + 1) = *(byte *)((int)&pSVar1->y1 + 1) & 0x7f;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(byte *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&pSVar1->y1 + 1) = *(byte *)((int)&pSVar1->y1 + 1) & 0x7f;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 32,
     "local_size": 4,
@@ -125,22 +143,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&pSVar1->y1 + 1) = *(byte *)((int)&pSVar1->y1 + 1) & 0x7f;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&pSVar1->y1 + 1) = *(byte *)((int)&pSVar1->y1 + 1) & 0x7f;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

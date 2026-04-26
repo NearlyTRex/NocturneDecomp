@@ -7,16 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 214,
+    "complexity_score": 99,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 99,
-    "suspect_count": 11,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 238
   },
   "cross_references": [],
@@ -77,6 +75,116 @@
     },
     "pcode_op_count": 752
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(byte *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar5 = (byte *)((int)bitmap_data + iVar7) + aiStack_28[2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(byte *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar3 = (byte *)((int)bitmap_data + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(uint *)(aiStack_28[3] * aiStack_28[2] + (int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)(aiStack_28[3] * aiStack_28[2] + (int)bitmap_data);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)((int)puVar4 + (aiStack_28[2] - num_iterations));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 65,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)((int)piVar4 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar5 = (int *)((int)piVar5 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 77,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar8 = (uint *)((int)puVar8 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 78,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar11 = (uint *)((int)puVar11 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 89,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar9 = (int *)((int)piVar9 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 90,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)((int)piVar4 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 92,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)((int)puVar4 + num_iterations);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 94,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)((int)puVar6 - num_iterations);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 60,
     "local_size": 44,
@@ -152,94 +260,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 29,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "puVar5 = (byte *)((int)bitmap_data + iVar7) + aiStack_28[2];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "puVar3 = (byte *)((int)bitmap_data + iVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "puVar6 = (uint *)((int)puVar4 + (aiStack_28[2] - num_iterations));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 65,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar4 = (int *)((int)piVar4 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar5 = (int *)((int)piVar5 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 77,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "puVar8 = (uint *)((int)puVar8 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 78,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "puVar11 = (uint *)((int)puVar11 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 89,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar9 = (int *)((int)piVar9 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 90,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar4 = (int *)((int)piVar4 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 92,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "puVar4 = (uint *)((int)puVar4 + num_iterations);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 94,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "puVar6 = (uint *)((int)puVar6 - num_iterations);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

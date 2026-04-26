@@ -31,6 +31,6 @@ void __cdecl core_terrain_cpp_CTerrain_render_FUN_005e1f50(CTerrain *this_ptr,in
   engine_drender_cpp_CDemonRenderer_setCameraOrigin_FUN_0048c130(g_CDemonRendererPtr2,&local_24);
   core_ground_cpp_CGround_render_FUN_004efc90(g_CGroundPtr);
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-            (g_CDemonRendererPtr2,&local_30);
+            (g_CDemonRendererPtr2,(CVector3f *)&local_30);
   return;
 }

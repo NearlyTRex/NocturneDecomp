@@ -560,6 +560,42 @@
   },
   "resolved_suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 123,
+      "match": "(char *)(local_40 * 0x50 + (int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(local_9e0,(char *)0x0,(char *)0x0,(char *)(local_40 * 0x50 + (int)local_38),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 127,
+      "match": "(char *)(local_40 * 0x50 + (int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pcVar5 = (char *)(local_40 * 0x50 + (int)local_38);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 165,
+      "match": "(char *)(local_9e4 * 0x50 + (int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pcVar6 = (char *)(local_9e4 * 0x50 + (int)local_38);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 176,
+      "match": "(char *)(local_9e4 * 0x50 + (int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pcVar6 = (char *)(local_9e4 * 0x50 + (int)local_38);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Raw hex literal 0x1626410 matches address of g_LoadedVertices (+4 bytes into) (type SVertexData[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 203,
       "match": "0x1626410",

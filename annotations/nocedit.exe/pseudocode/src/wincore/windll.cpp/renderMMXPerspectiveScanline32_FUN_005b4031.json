@@ -980,6 +980,15 @@
       "type": "nonstandard_int"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 224,
+      "match": "(int *)(uVar19 + (int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(int *)(uVar19 + (int)g_CurrentZBufferPtr) <= iVar17)) {",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 238,
       "match": "int5",
@@ -1052,6 +1061,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 325,
+      "match": "(int *)(uVar19 + (int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(int *)(uVar19 + (int)g_CurrentZBufferPtr) <= iVar17)) {",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 331,
       "match": "int3",
@@ -1068,6 +1086,24 @@
       "severity": "mild",
       "text": "CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar9",
       "type": "nonstandard_int"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 336,
+      "match": "(byte *)(((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar9 = (uint)*(byte *)(((int)pbVar15 - (int)g_CurrentTextureData) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 341,
+      "match": "(uint *)(uVar19 + (int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar22 = *(uint *)(uVar19 + (int)g_CurrentScreenPtr);",
+      "type": "pointer_cast"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
@@ -1113,6 +1149,42 @@
       "severity": "severe",
       "text": "CONCAT22((short)uVar7 * (short)(uVar38 >> 0x10)",
       "type": "fnstsw_flag_artifact"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 436,
+      "match": "(uint *)(uVar19 + (int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)(uVar19 + (int)g_CurrentScreenPtr) = uVar22;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 438,
+      "match": "(int *)(uVar19 + (int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)(uVar19 + (int)g_CurrentZBufferPtr) = iVar17;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 466,
+      "match": "(int *)(uVar19 + (int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(int *)(uVar19 + (int)g_CurrentZBufferPtr) <= iVar17)) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 473,
+      "match": "(uint *)(uVar19 + (int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar22 = *(uint *)(uVar19 + (int)g_CurrentScreenPtr);",
+      "type": "pointer_cast"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
@@ -1167,6 +1239,24 @@
       "severity": "severe",
       "text": "CONCAT22((short)(uVar43 >> 0x10) *",
       "type": "fnstsw_flag_artifact"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 546,
+      "match": "(uint *)(uVar19 + (int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)(uVar19 + (int)g_CurrentScreenPtr) = uVar22;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 548,
+      "match": "(int *)(uVar19 + (int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)(uVar19 + (int)g_CurrentZBufferPtr) = iVar17;",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {

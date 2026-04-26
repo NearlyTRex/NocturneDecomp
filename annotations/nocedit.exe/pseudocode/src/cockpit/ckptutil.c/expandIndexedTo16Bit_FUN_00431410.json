@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 150,
+    "complexity_score": 45,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 45,
-    "suspect_count": 10,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 145
   },
   "cross_references": [],
@@ -87,6 +85,98 @@
     },
     "pcode_op_count": 411
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 11,
+      "match": "(void *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "output_buffer = (void *)((int)output_buffer + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 12,
+      "match": "(void *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "indexed_input_buffer = (void *)((int)indexed_input_buffer + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(byte *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CONCAT22(g_Hardware16BitPalette[*(byte *)((int)indexed_input_buffer + 1)],",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(void *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "indexed_input_buffer = (void *)((int)indexed_input_buffer + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(void *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "output_buffer = (void *)((int)output_buffer + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(void *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "output_buffer = (void *)((int)output_buffer + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(void *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "indexed_input_buffer = (void *)((int)indexed_input_buffer + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(byte *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pbVar1 = (byte *)((int)indexed_input_buffer + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(void *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "indexed_input_buffer = (void *)((int)indexed_input_buffer + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(void *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "output_buffer = (void *)((int)output_buffer + 4);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -117,86 +207,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 11,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "output_buffer = (void *)((int)output_buffer + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 12,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "indexed_input_buffer = (void *)((int)indexed_input_buffer + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 18,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "CONCAT22(g_Hardware16BitPalette[*(byte *)((int)indexed_input_buffer + 1)],",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 20,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "indexed_input_buffer = (void *)((int)indexed_input_buffer + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "output_buffer = (void *)((int)output_buffer + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "output_buffer = (void *)((int)output_buffer + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 32,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "indexed_input_buffer = (void *)((int)indexed_input_buffer + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "pbVar1 = (byte *)((int)indexed_input_buffer + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "indexed_input_buffer = (void *)((int)indexed_input_buffer + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "output_buffer = (void *)((int)output_buffer + 4);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

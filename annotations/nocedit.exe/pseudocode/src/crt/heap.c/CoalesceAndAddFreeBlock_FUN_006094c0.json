@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 160,
-    "complexity_score": 131,
+    "complexity_score": 151,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 96,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -120,10 +120,26 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 55,
+      "match": "(uint *)(*puVar1 + (int)",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)(*puVar1 + (int)puVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 60,
       "match": "(uint *)((int)",
       "severity": "moderate",
       "text": "puVar4 = (uint *)((int)puVar4 + (uVar6 & 0xfffffffe));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(uint *)(*puVar8 + (int)",
+      "severity": "moderate",
+      "text": "if ((uint *)(*puVar8 + (int)puVar8) == puVar1) {",
       "type": "pointer_cast"
     }
   ]

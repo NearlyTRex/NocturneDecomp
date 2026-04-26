@@ -51,7 +51,7 @@ void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_0056d380(CDemonSet
       return;
     }
     pfVar2 = (float *)&g_LightingRotationMatrix;
-    for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
+    for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
       *pfVar2 = *(float *)rotation_matrix;
       rotation_matrix = (CMatrix3x3f *)((int)rotation_matrix + 4);
       pfVar2 = pfVar2 + 1;

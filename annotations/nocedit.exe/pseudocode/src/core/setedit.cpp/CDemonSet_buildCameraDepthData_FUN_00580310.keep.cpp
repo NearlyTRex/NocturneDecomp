@@ -30,7 +30,7 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(CDemon
       engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890
                 (g_CDemonRendererPtr2,0,0,0x140,0xf0);
       engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-                (g_CDemonRendererPtr2,(CVector3i *)&this_ptr->cameras[local_18].position);
+                (g_CDemonRendererPtr2,&this_ptr->cameras[local_18].position);
       engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
                 (g_CDemonRendererPtr2,this_ptr->cameras[local_18].projection_scale);
       engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0

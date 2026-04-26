@@ -70,7 +70,7 @@ void __cdecl core_setedit_cpp_renderBackdropImage_FUN_0057ce80(CVector3i *positi
   g_CDemonRaytraceInstance.rendering_mode = 1;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_50,orientation);
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
-            (g_CDemonRendererPtr2,position);
+            (g_CDemonRendererPtr2,(CVector3f *)position);
   engine_drender_cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0048c670
             (g_CDemonRendererPtr2,projection_scale);
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200

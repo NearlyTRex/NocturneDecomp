@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 63,
+    "complexity_score": 73,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 48,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -135,6 +135,14 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(uint *)(local_14 + (int)",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)(local_14 + (int)output_array);",
+      "type": "pointer_cast"
+    },
     {
       "description": "Complex pointer cast",
       "line": 39,
