@@ -21,8 +21,8 @@
 ;   ... and 121 more
 ;
 ; Referenced Globals:
-;   float g_RandToFloatMultiplier = 0.00003051851
-;   int g_RandToFloatFixedMultiplier = 0x33800001
+;   float FLOAT_006142f0 = 0.00003051851
+;   float FLOAT_006142f4 = 5.960465E-8
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.is_processing
@@ -49,7 +49,7 @@ section .text
         ;   XREF to: 0040cba0 (UNCONDITIONAL_CALL)  ; uint core_actor.cpp_generateRandomValue_FUN_0040cba0()
     MOV dword ptr [ESP + 0xc],EAX       ; 0040cc33
     FILD dword ptr [ESP + 0xc]          ; 0040cc37
-    FMUL float ptr [0x006142f4]         ; 0040cc3b | g_RandToFloatFixedMultiplier
+    FMUL float ptr [0x006142f4]         ; 0040cc3b | FLOAT_006142f4
     FSTP float ptr [ESP + 0x8]          ; 0040cc41
         ;   Label: LAB_0040cc41
     FLD float ptr [ESP + 0x8]           ; 0040cc45
@@ -64,7 +64,7 @@ section .text
         ;   Label: LAB_0040cc5b
     MOV dword ptr [ESP + 0xc],EAX       ; 0040cc60
     FILD dword ptr [ESP + 0xc]          ; 0040cc64
-    FMUL float ptr [0x006142f0]         ; 0040cc68 | g_RandToFloatMultiplier
+    FMUL float ptr [0x006142f0]         ; 0040cc68 | FLOAT_006142f0
     JMP 0x0040cc41                      ; 0040cc6e
         ;   XREF to: 0040cc41 (UNCONDITIONAL_JUMP)  ; LAB_0040cc41
 

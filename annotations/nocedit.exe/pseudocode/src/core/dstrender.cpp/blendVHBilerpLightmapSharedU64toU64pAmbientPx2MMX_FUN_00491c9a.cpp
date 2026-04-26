@@ -64,7 +64,7 @@ void __cdecl core_dstrender_cpp_blendVHBilerpLightmapSharedU64toU64pAmbientPx2MM
               (g_LightmapData +
               ((uint)*lightmap_indices +
               ((uint)texture_indices[1] + (uint)texture_indices[0x141] >> 2)) * 4) ^
-             (ulonglong)0.12694552529182901;
+             g_LightmapData._2040_8_;
     uVar9 = pmulhw(CONCAT26((uVar8 >> 8) * sVar21,
                             CONCAT24((short)CONCAT21(uVar8,(char)(uVar1 >> 0x10)) * sVar20,
                                      CONCAT22((byte)(uVar1 >> 8) * uVar12,

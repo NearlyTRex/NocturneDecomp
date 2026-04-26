@@ -59,14 +59,14 @@
     {
       "addr": "006779f0",
       "name": "g_LightmapData",
-      "type": "ushort[384]",
+      "type": "ushort[2048]",
       "value": null
     },
     {
       "addr": "006781e8",
-      "name": "g_LightmapXorMask",
-      "type": "double",
-      "value": "0.126945525291829"
+      "name": "g_LightmapData[1020]",
+      "type": "undefined4",
+      "value": null
     },
     {
       "addr": "00c19dfc",
@@ -243,6 +243,15 @@
       "severity": "mild",
       "text": "uVar10 = (ushort)(((uint7)(byte)(uVar1 >> 0x38) << 0x30) >> 0x28);",
       "type": "nonstandard_int"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 60,
+      "match": "._2040_8_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "g_LightmapData._2040_8_;",
+      "type": "unknown_field"
     }
   ],
   "stack_frame": {

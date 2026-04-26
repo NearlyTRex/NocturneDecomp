@@ -41,7 +41,7 @@ void __cdecl core_dstrender_cpp_blendLightmapShared4U64toU64pBB12Px4MMX_FUN_0049
   solid_ws[2] = (ushort)(((solid_raw >> 16) & 0xff) << 6);
   solid_ws[3] = (ushort)(((solid_raw >> 24) & 0xff) << 6);
 
-  xor_mask_bits = __BITCAST_UINT64(g_LightmapXorMask);
+  xor_mask_bits = 0x3FC03FC03FC03FC0ULL;
 
   do {
     palette = g_LightmapTexturePalette[texture_indices[0]];

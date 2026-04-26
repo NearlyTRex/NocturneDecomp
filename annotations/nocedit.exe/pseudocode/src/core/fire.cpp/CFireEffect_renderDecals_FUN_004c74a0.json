@@ -4,16 +4,16 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 201,
+    "complexity_score": 171,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 17,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 76,
-    "suspect_count": 12,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -265,6 +265,35 @@
     },
     "pcode_op_count": 572
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((*(int *)((int)(g_CraterPool[0].smoke_positions + -2) + iVar2) != 0) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(CCrater *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((CCrater *)((int)g_CraterPool[0].smoke_positions + iVar2 + -0x1c)),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)(g_CraterPool[0].smoke_positions + -2) + iVar2) = 0;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -366,30 +395,6 @@
       "match": "(int *)((int)",
       "severity": "moderate",
       "text": "else if (*(int *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) != 0)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 62,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "if ((*(int *)((int)(g_CraterPool[0].smoke_positions + -2) + iVar2) != 0) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 64,
-      "match": "(CCrater *)((int)",
-      "severity": "moderate",
-      "text": "((CCrater *)((int)g_CraterPool[0].smoke_positions + iVar2 + -0x1c)),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)(g_CraterPool[0].smoke_positions + -2) + iVar2) = 0;",
       "type": "pointer_cast"
     }
   ]

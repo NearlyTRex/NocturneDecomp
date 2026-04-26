@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 71,
+    "complexity_score": 46,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 10,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 46,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 146
   },
   "cross_references": [
@@ -199,6 +197,26 @@
     },
     "pcode_op_count": 413
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)g_SfxSamples[0].loop_endpoints + iVar2 + -8) != 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar4 = iVar4 + iVar3 * *(int *)((int)g_SfxSamples[0].loop_destinations + iVar2 + 0x24);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -215,22 +233,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 13,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)g_SfxSamples[0].loop_endpoints + iVar2 + -8) != 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 16,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "iVar4 = iVar4 + iVar3 * *(int *)((int)g_SfxSamples[0].loop_destinations + iVar2 + 0x24);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

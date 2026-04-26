@@ -604,9 +604,4 @@ extern dword DAT_00611094;
 
 // int
 extern int INT_00613000;
-extern int INT_006142ec;
-extern int g_RandToFloatFixedMultiplier;
-extern int INT_00614304;
-extern int INT_00614308;
-extern int INT_0061430c;
 

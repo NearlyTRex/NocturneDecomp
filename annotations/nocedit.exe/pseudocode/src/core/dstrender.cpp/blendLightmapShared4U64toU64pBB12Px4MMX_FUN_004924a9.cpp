@@ -53,7 +53,7 @@ void __cdecl core_dstrender_cpp_blendLightmapShared4U64toU64pBB12Px4MMX_FUN_0049
     sVar19 = (short)(uVar17 >> 0x18);
     uVar16 = *(ulonglong *)
               (g_LightmapData + ((uint)*lightmap_indices + (uint)(*texture_indices >> 1)) * 4) ^
-             (ulonglong)0.12694552529182901;
+             g_LightmapData._2040_8_;
     uVar7 = pmulhw(CONCAT26((uVar6 >> 8) * sVar19,
                             CONCAT24((short)CONCAT21(uVar6,(char)(uVar1 >> 0x10)) * sVar18,
                                      CONCAT22((byte)(uVar1 >> 8) * uVar9,
@@ -116,7 +116,7 @@ void __cdecl core_dstrender_cpp_blendLightmapShared4U64toU64pBB12Px4MMX_FUN_0049
     sVar19 = (short)(uVar17 >> 0x18);
     uVar16 = *(ulonglong *)
               (g_LightmapData + ((uint)*lightmap_indices + (uint)(*texture_indices >> 1)) * 4) ^
-             (ulonglong)0.12694552529182901;
+             g_LightmapData._2040_8_;
     uVar7 = pmulhw(CONCAT26((uVar6 >> 8) * sVar19,
                             CONCAT24((short)CONCAT21(uVar6,(char)(uVar1 >> 0x10)) * sVar18,
                                      CONCAT22((byte)(uVar1 >> 8) * uVar10,

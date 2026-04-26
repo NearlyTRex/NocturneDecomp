@@ -14,7 +14,7 @@ float __cdecl core_actor_cpp_getRandomFloat_FUN_0040cbc0(void)
   
   if (g_CGamePtr->is_processing != 0) {
     uVar1 = core_actor_cpp_generateRandomValue_FUN_0040cba0();
-    return (float)(int)uVar1 * (float)INT_006142ec;
+    return (float)(int)uVar1 * 5.960465e-08f;
   }
   iVar2 = rand();
   return (float)iVar2 * 3.051851e-05f;

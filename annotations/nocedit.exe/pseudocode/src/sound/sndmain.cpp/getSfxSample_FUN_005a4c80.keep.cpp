@@ -22,8 +22,7 @@ CSfxSample * __cdecl sound_sndmain_cpp_getSfxSample_FUN_005a4c80(char *filename)
   int iVar7;
   bool bVar9;
   SIZE_T count;
-  char local_114;
-  byte local_113 [255];
+  char local_114[256];
   _FILE *local_14;
   char *pcVar11;
   _FILE *file;
@@ -68,11 +67,11 @@ LAB_005a4cea:
   iVar3 = engine_dosio_c_getFileSize_FUN_00481880("sound",filename);
   if (iVar3 < 1) goto LAB_005a4ef8;
   strcpy((this_ptr->sample_info).name,filename);
-  engine_dosio_c_splitPath_FUN_00481f20(filename,(char *)0x0,(char *)0x0,(char *)0x0,&local_114);
-  if (local_114 == '.') {
-    memmove(&local_114,local_113,strlen(&local_114));
+  engine_dosio_c_splitPath_FUN_00481f20(filename,(char *)0x0,(char *)0x0,(char *)0x0,local_114);
+  if (local_114[0] == '.') {
+    memmove(local_114,local_114 + 1,strlen(local_114));
   }
-  iVar3 = _stricmp(&local_114,"wav");
+  iVar3 = _stricmp(local_114,"wav");
   if (iVar3 == 0) {
     local_14 = engine_dosio_c_getFile_FUN_00481a50("sound",filename,"rb");
     if (local_14 == (_FILE *)0x0) {
@@ -115,7 +114,7 @@ LAB_005a4cea:
     }
   }
   else {
-    iVar3 = _stricmp(&local_114,"mp3");
+    iVar3 = _stricmp(local_114,"mp3");
     if (iVar3 != 0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
       g_CurrentLineNumber = 0x37b;

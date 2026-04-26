@@ -54,7 +54,7 @@ void __cdecl core_dstrender_cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_004938
                                               ((ushort)uVar1 & 0xff) * (ushort)(byte)uVar2))),
                    *(ulonglong *)
                     (g_LightmapData + ((uint)*lightmap_indices + (uint)(*texture_indices >> 1)) * 4)
-                   ^ (ulonglong)0.12694552529182901);
+                   ^ g_LightmapData._2040_8_);
     uVar16 = pmulhw(uVar17,*(ulonglong *)
                             (g_LightmapData +
                             ((uint)*lightmap_indices + (uint)(*texture_indices >> 1)) * 4));
@@ -90,7 +90,7 @@ void __cdecl core_dstrender_cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_004938
                    *(ulonglong *)
                     (g_LightmapData +
                     ((uint)lightmap_indices[1] + (uint)(texture_indices[1] >> 1)) * 4) ^
-                   (ulonglong)0.12694552529182901);
+                   g_LightmapData._2040_8_);
     uVar16 = pmulhw(uVar17,*(ulonglong *)
                             (g_LightmapData +
                             ((uint)lightmap_indices[1] + (uint)(texture_indices[1] >> 1)) * 4));

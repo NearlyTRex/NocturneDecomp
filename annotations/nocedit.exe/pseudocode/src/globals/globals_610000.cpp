@@ -592,9 +592,4 @@ dword DAT_00611094 = 0;
 
 // int
 int INT_00613000 = 0x10101;
-int INT_006142ec = 0x33800001;
-int g_RandToFloatFixedMultiplier = 0x33800001;
-int INT_00614304 = 0x33800001;
-int INT_00614308 = 0x38000100;
-int INT_0061430c = 0x33800001;
 

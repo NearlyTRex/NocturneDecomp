@@ -10,8 +10,12 @@
 #   ./debug.sh                        # run under GDB, break on crash
 #   ./debug.sh --some-game-arg        # args pass through to the exe
 #
-#   NOCTURNE_BREAKS=sym1:sym2 ./debug.sh
-#       Set breakpoints on the listed symbols before running.
+#   NOCTURNE_BREAKS=loc1,loc2 ./debug.sh
+#       Set breakpoints before running. Each location can be any form
+#       gdb's `break` accepts: a function name (e.g. CCharacter::foo or
+#       core_charactr_cpp_FUN_0042c580), or file:line
+#       (e.g. core/charactr.cpp:32). Separate multiple locations with
+#       commas; whitespace around them is ignored.
 
 set -u
 
@@ -37,8 +41,12 @@ export ASAN_SYMBOLIZER_PATH UBSAN_SYMBOLIZER_PATH UBSAN_OPTIONS ASAN_OPTIONS
 
 BREAK_ARGS=()
 if [[ -n "${NOCTURNE_BREAKS:-}" ]]; then
-    IFS=':' read -ra _breaks <<< "${NOCTURNE_BREAKS}"
+    IFS=',' read -ra _breaks <<< "${NOCTURNE_BREAKS}"
     for sym in "${_breaks[@]}"; do
+        # Trim leading/trailing whitespace so "a, b" works the same as "a,b".
+        sym="${sym#"${sym%%[![:space:]]*}"}"
+        sym="${sym%"${sym##*[![:space:]]}"}"
+        [[ -z "${sym}" ]] && continue
         BREAK_ARGS+=(-ex "break ${sym}")
     done
 fi

@@ -45,7 +45,7 @@ void __cdecl core_dstrender_cpp_blendVHBilerpLightmapSharedU64toU64pAmbientPx2MM
   solid_ws[2] = (ushort)(((solid_raw >> 16) & 0xff) << 6);
   solid_ws[3] = (ushort)(((solid_raw >> 24) & 0xff) << 6);
 
-  xor_mask_bits = __BITCAST_UINT64(g_LightmapXorMask);
+  xor_mask_bits = 0x3FC03FC03FC03FC0ULL;
 
   do {
     tex64 = *texture_buffer;

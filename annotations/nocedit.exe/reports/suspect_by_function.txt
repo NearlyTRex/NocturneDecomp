@@ -7,7 +7,7 @@ SUMMARY
 Total functions analyzed: 6454
 Clean: 5153 (79.8%)
 With suspects: 1301
-Total suspects: 5842
+Total suspects: 5838
 
 ====================================================================================================
 cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50 (1 suspect)
@@ -2993,7 +2993,7 @@ core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN_004c93d0 (1 suspect)
   Line 15 [pointer_cast]: iVar1 = *(int *)((int)&g_MuzzleFlashPool[1].frames_remaining + iVar2);
 
 ====================================================================================================
-core_fire.cpp_CFireEffect_renderDecals_FUN_004c74a0 (12 suspects)
+core_fire.cpp_CFireEffect_renderDecals_FUN_004c74a0 (9 suspects)
   File: core/fire.cpp
 ====================================================================================================
   Line 16 [pointer_cast]: if (((*(int *)((int)&g_BulletHolePool[0].active + iVar1) != 0) &&
@@ -3005,9 +3005,6 @@ core_fire.cpp_CFireEffect_renderDecals_FUN_004c74a0 (12 suspects)
   Line 47 [pointer_cast]: *(uint *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) = 1;
   Line 50 [pointer_cast]: ((CStake *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c));
   Line 52 [pointer_cast]: else if (*(int *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) != 0)
-  Line 62 [pointer_cast]: if ((*(int *)((int)(g_CraterPool[0].smoke_positions + -2) + iVar2) != 0) &&
-  Line 64 [pointer_cast]: ((CCrater *)((int)g_CraterPool[0].smoke_positions + iVar2 + -0x1c)),
-  Line 66 [pointer_cast]: *(uint *)((int)(g_CraterPool[0].smoke_positions + -2) + iVar2) = 0;
 
 ====================================================================================================
 core_fire.cpp_CFireEffect_render_FUN_004c7180 (4 suspects)
@@ -4960,8 +4957,8 @@ core_particle.cpp_CParticle_process_FUN_00545760 (4 suspects)
 ====================================================================================================
   Line 21 [unnamed_local]: CVector3f local_2c;
   Line 49 [unnamed_local]: &local_2c,0);
-  Line 61 [unnamed_local]: iVar8 = (*this_ptr->vtable->onCollision)(this_ptr,&local_2c);
-  Line 64 [unnamed_local]: fVar7 = (local_2c.x * pCVar1->x + local_2c.y * (this_ptr->velocity).y +
+  Line 60 [unnamed_local]: iVar8 = (*this_ptr->vtable->onCollision)(this_ptr,&local_2c);
+  Line 63 [unnamed_local]: fVar7 = (local_2c.x * pCVar1->x + local_2c.y * (this_ptr->velocity).y +
 
 ====================================================================================================
 core_passngr.cpp_CPassenger_ctor_FUN_00545b30 (3 suspects)
@@ -11937,13 +11934,6 @@ sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0 (1 suspect)
   Line 31 [pointer_cast]: puVar1 = (uint *)((int)g_ChannelPrimaryBuffers + iVar4);
 
 ====================================================================================================
-sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_005a4450 (2 suspects)
-  File: sound/sndmain.cpp
-====================================================================================================
-  Line 13 [pointer_cast]: if (*(int *)((int)g_SfxSamples[0].loop_endpoints + iVar2 + -8) != 0) {
-  Line 16 [pointer_cast]: iVar4 = iVar4 + iVar3 * *(int *)((int)g_SfxSamples[0].loop_destinations + iVar2 + 0x24);
-
-====================================================================================================
 sound_sndmain.cpp_freeMixBuffers_FUN_005a5900 (4 suspects)
   File: sound/sndmain.cpp
 ====================================================================================================
@@ -11998,6 +11988,12 @@ sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0 (2 suspects)
 ====================================================================================================
   Line 18 [pointer_cast]: pCVar3 = (CSfxSample *)((int)pCVar3 + (uint)bVar4 * -8 + 4);
   Line 19 [pointer_cast]: output_buffer = (CSfxSample *)((int)output_buffer + (uint)bVar4 * -8 + 4);
+
+====================================================================================================
+sound_sndmain.cpp_getSfxSample_FUN_005a4c80 (1 suspect)
+  File: sound/sndmain.cpp
+====================================================================================================
+  Line 25 [unnamed_local]: char local_114[256];
 
 ====================================================================================================
 sound_sndmain.cpp_getSoundDeviceInfo_FUN_005ab370 (2 suspects)

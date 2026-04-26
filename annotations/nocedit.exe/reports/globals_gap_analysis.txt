@@ -2,25 +2,25 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      19573
-  Named globals:             19562
+Total globals analyzed:      19532
+  Named globals:             19521
   DAT_ globals:              11
-Gaps found:                  1804
-  With exact size bounds:    1713
+Gaps found:                  1764
+  With exact size bounds:    1673
   With estimated bounds:     91
-Total gap bytes:             13,379,391
-  Exact gap bytes:           13,370,353
-Overlaps (size <= 0):        13365
+Total gap bytes:             13,376,259
+  Exact gap bytes:           13,367,221
+Overlaps (size <= 0):        13364
 
 --------------------------------------------------------------------------------
 GAP SIZE DISTRIBUTION
 --------------------------------------------------------------------------------
   1-4 bytes (likely padding/alignment)          492
   5-16 bytes (small vars)                       527
-  17-64 bytes (structs/small arrays)            373
+  17-64 bytes (structs/small arrays)            334
   65-256 bytes (medium data)                    126
   257-1024 bytes (large structs/arrays)         91
-  1-4 KB                                        71
+  1-4 KB                                        70
   4-64 KB                                       107
   64+ KB                                        17
 
@@ -179,7 +179,7 @@ LARGEST GAPS (top 50)
     before: switchdataD_0043ddd4                     void*                at 0x0043ddd4
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (1713) - size bounds are known precisely
+ALL EXACT GAPS (1673) - size bounds are known precisely
 --------------------------------------------------------------------------------
    4,185,048 bytes  at 0x00002428  between DAT_00002424                   and IMAGE_DOS_HEADER_00400000
    3,350,789 bytes  at 0x00ff0103  between g_ColorMagenta                 and g_CoronaLightCache
@@ -344,7 +344,6 @@ ALL EXACT GAPS (1713) - size bounds are known precisely
        2,140 bytes  at 0x005b2760  between switchdataD_005b275c           and switchdataD_005b2fbc
        2,064 bytes  at 0x00683800  between g_AlphaTable                   and g_RendererDllName
        2,060 bytes  at 0x006827f4  between g_SpecialColor                 and g_AlphaTable
-       2,048 bytes  at 0x006781f0  between g_LightmapXorMask              and g_GeoFileFormatVersion
        2,044 bytes  at 0x02f2822c  between g_SoundMenuTextDialog          and g_SoundOptionsMenuPointers
        2,041 bytes  at 0x031091ef  between g_ScriptLineBuffer+3           and g_ScriptFormatBuffer
        2,041 bytes  at 0x0310eca7  between g_ScriptErrorBuffer+3          and g_ScriptTimeScale
@@ -806,44 +805,6 @@ ALL EXACT GAPS (1713) - size bounds are known precisely
           28 bytes  at 0x00662e28  between g_CSimBoxTypeInfo              and FLOAT_00662e44
           28 bytes  at 0x00665f54  between g_DaysInMonth_Leap             and g_StreambufVTable
           28 bytes  at 0x0066ef40  between g_CActorDestinationClassVersio and WatcomStaticDestructorNode_006
-          28 bytes  at 0x00677d14  between g_LightmapBlendConstants+0x20  and g_LightmapBlendConstants+0x40
-          28 bytes  at 0x00677d34  between g_LightmapBlendConstants+0x40  and g_LightmapBlendConstants+0x60
-          28 bytes  at 0x00677d54  between g_LightmapBlendConstants+0x60  and g_LightmapBlendConstants+0x80
-          28 bytes  at 0x00677d74  between g_LightmapBlendConstants+0x80  and g_LightmapBlendConstants+0xa0
-          28 bytes  at 0x00677d94  between g_LightmapBlendConstants+0xa0  and g_LightmapBlendConstants+0xc0
-          28 bytes  at 0x00677db4  between g_LightmapBlendConstants+0xc0  and g_LightmapBlendConstants+0xe0
-          28 bytes  at 0x00677dd4  between g_LightmapBlendConstants+0xe0  and g_LightmapBlendConstants+0x100
-          28 bytes  at 0x00677df4  between g_LightmapBlendConstants+0x100 and g_LightmapBlendConstants+0x120
-          28 bytes  at 0x00677e14  between g_LightmapBlendConstants+0x120 and g_LightmapBlendConstants+0x140
-          28 bytes  at 0x00677e34  between g_LightmapBlendConstants+0x140 and g_LightmapBlendConstants+0x160
-          28 bytes  at 0x00677e54  between g_LightmapBlendConstants+0x160 and g_LightmapBlendConstants+0x180
-          28 bytes  at 0x00677e74  between g_LightmapBlendConstants+0x180 and g_LightmapBlendConstants+0x1a0
-          28 bytes  at 0x00677e94  between g_LightmapBlendConstants+0x1a0 and g_LightmapBlendConstants+0x1c0
-          28 bytes  at 0x00677eb4  between g_LightmapBlendConstants+0x1c0 and g_LightmapBlendConstants+0x1e0
-          28 bytes  at 0x00677ed4  between g_LightmapBlendConstants+0x1e0 and g_LightmapBlendConstants+0x200
-          28 bytes  at 0x00677ef4  between g_LightmapBlendConstants+0x200 and g_LightmapBlendConstants+0x220
-          28 bytes  at 0x00677f14  between g_LightmapBlendConstants+0x220 and g_LightmapBlendConstants+0x240
-          28 bytes  at 0x00677f34  between g_LightmapBlendConstants+0x240 and g_LightmapBlendConstants+0x260
-          28 bytes  at 0x00677f54  between g_LightmapBlendConstants+0x260 and g_LightmapBlendConstants+0x280
-          28 bytes  at 0x00677f74  between g_LightmapBlendConstants+0x280 and g_LightmapBlendConstants+0x2a0
-          28 bytes  at 0x00677f94  between g_LightmapBlendConstants+0x2a0 and g_LightmapBlendConstants+0x2c0
-          28 bytes  at 0x00677fb4  between g_LightmapBlendConstants+0x2c0 and g_LightmapBlendConstants+0x2e0
-          28 bytes  at 0x00677fd4  between g_LightmapBlendConstants+0x2e0 and g_LightmapBlendConstants+0x300
-          28 bytes  at 0x00677ff4  between g_LightmapBlendConstants+0x300 and g_LightmapBlendConstants+0x320
-          28 bytes  at 0x00678014  between g_LightmapBlendConstants+0x320 and g_LightmapBlendConstants+0x340
-          28 bytes  at 0x00678034  between g_LightmapBlendConstants+0x340 and g_LightmapBlendConstants+0x360
-          28 bytes  at 0x00678054  between g_LightmapBlendConstants+0x360 and g_LightmapBlendConstants+0x380
-          28 bytes  at 0x00678074  between g_LightmapBlendConstants+0x380 and g_LightmapBlendConstants+0x3a0
-          28 bytes  at 0x00678094  between g_LightmapBlendConstants+0x3a0 and g_LightmapBlendConstants+0x3c0
-          28 bytes  at 0x006780b4  between g_LightmapBlendConstants+0x3c0 and g_LightmapBlendConstants+0x3e0
-          28 bytes  at 0x006780d4  between g_LightmapBlendConstants+0x3e0 and g_LightmapBlendConstants+0x400
-          28 bytes  at 0x006780f4  between g_LightmapBlendConstants+0x400 and g_LightmapBlendConstants+0x420
-          28 bytes  at 0x00678114  between g_LightmapBlendConstants+0x420 and g_LightmapBlendConstants+0x440
-          28 bytes  at 0x00678134  between g_LightmapBlendConstants+0x440 and g_LightmapBlendConstants+0x460
-          28 bytes  at 0x00678154  between g_LightmapBlendConstants+0x460 and g_LightmapBlendConstants+0x480
-          28 bytes  at 0x00678174  between g_LightmapBlendConstants+0x480 and g_LightmapBlendConstants+0x4a0
-          28 bytes  at 0x00678194  between g_LightmapBlendConstants+0x4a0 and g_LightmapBlendConstants+0x4c0
-          28 bytes  at 0x006781b4  between g_LightmapBlendConstants+0x4c0 and g_LightmapBlendConstants+0x4e0
           28 bytes  at 0x0067b588  between g_CFrankenstienMachineClassVer and g_CGabriellaClassVersion
           28 bytes  at 0x0067cc40  between g_CHiramClassVersion           and g_CHostageClassVersion
           28 bytes  at 0x0067cc8c  between g_CHighPriestOfGardathClassVer and g_CIcePickClassVersion
@@ -918,7 +879,6 @@ ALL EXACT GAPS (1713) - size bounds are known precisely
           20 bytes  at 0x0066ec64  between g_CZombieCowClassVersion       and g_CCrateClassVersion
           20 bytes  at 0x0066ec90  between g_CCrossbowClassVersion        and g_CCurtainClassVersion
           20 bytes  at 0x006702ec  between g_CZombieDogClassVersion       and g_DoorTypePairs
-          20 bytes  at 0x006781d4  between g_LightmapBlendConstants+0x4e0 and g_LightmapXorMask
           20 bytes  at 0x006792d8  between g_CElephantGunClassVersion     and g_EmitterTypePairs
           20 bytes  at 0x00679380  between g_CEnemyClassVersion           and g_WindowWidth
           20 bytes  at 0x0067b4c8  between g_CFlameCanClassVersion        and g_CFlameThrowerClassVersion
@@ -1896,7 +1856,7 @@ ALL EXACT GAPS (1713) - size bounds are known precisely
            1 bytes  at 0x0068572d  between g_ShiftJIS_TrailByteTable      and g_InitHandlerStatusStart
 
 --------------------------------------------------------------------------------
-OVERLAPS (13365) - next global starts inside previous
+OVERLAPS (13364) - next global starts inside previous
 --------------------------------------------------------------------------------
   241 bytes overlap ~
     s_engine_2d_c_00613004                   TerminatedCString    at 0x00613004  size=256
@@ -41117,9 +41077,6 @@ OVERLAPS (13365) - next global starts inside previous
   252 bytes overlap ~
     s_A_A_006703e4                           TerminatedCString    at 0x006703e4  size=256
     g_CDemonRendererPtr1                     CDemonRenderer*      at 0x006703e8
-  5056 bytes overlap ~
-    g_LightmapBlendConstants                 uchar[1272]          at 0x00677cf0  size=5,088
-    g_LightmapBlendConstants+0x20            undefined4           at 0x00677d10
   31 bytes overlap ~
     g_VoxelYBitMasks                         uchar[8]             at 0x006789f8  size=32
     g_VoxelYBitMasks+1                       undefined4           at 0x006789f9

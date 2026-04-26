@@ -13,8 +13,8 @@
 ;   core_dcamera.cpp_CDemonCamera_blendLightmapPixel16_FUN_00453db0 at 00453e3b
 ;
 ; Referenced Globals:
-;   ushort[384] g_LightmapData
-;   double g_LightmapXorMask = 0.126945525291829
+;   ushort[2048] g_LightmapData
+;   undefined4 g_LightmapData[1020]
 ;   _MMX_INTEGER g_RedMask32
 ;   _MMX_INTEGER g_GreenMask32
 ;   _MMX_INTEGER g_BlueMask32
@@ -54,7 +54,7 @@ section .text
     MOVQ MM3,qword ptr [EAX*0x8 + 0x6779f0] ; 004937f8 | g_LightmapData
     MOVQ MM2,MM3                        ; 00493800
     MOVQ MM4,MM5                        ; 00493803
-    PXOR MM2,qword ptr [0x006781e8]     ; 00493806 | g_LightmapXorMask
+    PXOR MM2,qword ptr [0x006781e8]     ; 00493806 | g_LightmapData[1020]
     PMULHW MM0,MM2                      ; 0049380d
     PMULHW MM4,MM3                      ; 00493810
     PADDW MM0,MM4                       ; 00493813

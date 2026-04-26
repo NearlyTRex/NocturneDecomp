@@ -15,11 +15,11 @@ int __cdecl core_actor_cpp_randomChance_FUN_0040cd10(float probability_threshold
   
   if (g_CGamePtr->is_processing == 0) {
     iVar3 = rand();
-    fVar1 = (float)iVar3 * (float)INT_00614308;
+    fVar1 = (float)iVar3 * 3.051851e-05f;
   }
   else {
     uVar2 = core_actor_cpp_generateRandomValue_FUN_0040cba0();
-    fVar1 = (float)(int)uVar2 * (float)INT_0061430c;
+    fVar1 = (float)(int)uVar2 * 5.960465e-08f;
   }
   return (uint)(fVar1 < probability_threshold);
 }

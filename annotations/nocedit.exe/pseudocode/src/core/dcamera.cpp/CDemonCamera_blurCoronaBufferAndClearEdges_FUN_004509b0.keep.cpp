@@ -1,0 +1,46 @@
+// Name: core_dcamera.cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_004509b0
+// Address: 004509b0
+// MANUAL RECONSTRUCTION
+// Address Range: [[004509b0, 00450a85]]
+// Convention: __cdecl
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_004509b0(CDemonCamera *this_ptr)
+
+#include "nocturne.h"
+
+void __cdecl core_dcamera_cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_004509b0(CDemonCamera *this_ptr)
+
+{
+  char (*output_buffer) [320];
+  int iVar3;
+  char (*input_buffer) [320];
+  int iVar2;
+  
+  output_buffer = g_CoronaBlurWorkBuffer;
+  input_buffer = g_CoronaBlurOutputBuffer;
+  iVar2 = 1;
+  while( true ) {
+    output_buffer = output_buffer + 1;
+    input_buffer = input_buffer + 1;
+    if (this_ptr->display_height + -1 <= iVar2) break;
+    core_dstrender_cpp_verticalBlur3TapMMXStride320_FUN_00492042
+              ((ulonglong *)output_buffer,(ulonglong *)input_buffer,this_ptr->display_width);
+    iVar2 = iVar2 + 1;
+  }
+  iVar3 = 0;
+  if (0 < this_ptr->display_height) {
+    do {
+      g_CoronaBlurWorkBuffer[iVar3][0] = '\0';
+      g_CoronaBlurWorkBuffer[iVar3][this_ptr->display_width + -1] = '\0';
+      iVar3 = iVar3 + 1;
+    } while (iVar3 < this_ptr->display_height);
+  }
+  iVar3 = 0;
+  if (0 < this_ptr->display_width) {
+    do {
+      g_CoronaBlurWorkBuffer[0][iVar3] = '\0';
+      g_CoronaBlurWorkBuffer[this_ptr->display_height + -1][iVar3] = '\0';
+      iVar3 = iVar3 + 1;
+    } while (iVar3 < this_ptr->display_width);
+  }
+  return;
+}

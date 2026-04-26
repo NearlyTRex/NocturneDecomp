@@ -16,8 +16,8 @@
 ; Referenced Globals:
 ;   _MMX_INTEGER g_LightmapBlendBias3
 ;   _MMX_INTEGER g_LightmapBlendBias4
-;   ushort[384] g_LightmapData
-;   double g_LightmapXorMask = 0.126945525291829
+;   ushort[2048] g_LightmapData
+;   undefined4 g_LightmapData[1020]
 ;   _MMX_INTEGER g_RedMask32
 ;   _MMX_INTEGER g_GreenMask32
 ;   _MMX_INTEGER g_BlueMask32
@@ -166,7 +166,7 @@ section .text
     PMULLW MM1,MM6                      ; 004936ed
     MOVQ MM2,MM3                        ; 004936f0
     MOVQ MM4,MM5                        ; 004936f3
-    PXOR MM2,qword ptr [0x006781e8]     ; 004936f6 | g_LightmapXorMask
+    PXOR MM2,qword ptr [0x006781e8]     ; 004936f6 | g_LightmapData[1020]
     PMULHW MM0,MM2                      ; 004936fd
     PMULHW MM1,MM2                      ; 00493700
     PMULHW MM4,MM3                      ; 00493703

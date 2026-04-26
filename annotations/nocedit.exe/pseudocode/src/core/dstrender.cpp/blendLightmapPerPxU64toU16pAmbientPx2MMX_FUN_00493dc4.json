@@ -57,14 +57,14 @@
     {
       "addr": "006779f0",
       "name": "g_LightmapData",
-      "type": "ushort[384]",
+      "type": "ushort[2048]",
       "value": null
     },
     {
       "addr": "006781e8",
-      "name": "g_LightmapXorMask",
-      "type": "double",
-      "value": "0.126945525291829"
+      "name": "g_LightmapData[1020]",
+      "type": "undefined4",
+      "value": null
     },
     {
       "addr": "00682760",
@@ -235,6 +235,15 @@
       "type": "nonstandard_int"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 43,
+      "match": "._2040_8_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "^ g_LightmapData._2040_8_);",
+      "type": "unknown_field"
+    },
+    {
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 62,
       "match": "uint7",
@@ -251,6 +260,15 @@
       "severity": "mild",
       "text": "uVar9 = (ushort)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28);",
       "type": "nonstandard_int"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 74,
+      "match": "._2040_8_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "g_LightmapData._2040_8_);",
+      "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",

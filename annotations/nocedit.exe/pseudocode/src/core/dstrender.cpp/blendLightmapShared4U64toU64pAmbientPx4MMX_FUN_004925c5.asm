@@ -13,8 +13,8 @@
 ; Referenced Globals:
 ;   _MMX_INTEGER g_AmbientLightMMX1
 ;   _MMX_INTEGER g_AmbientLightMMX2
-;   ushort[384] g_LightmapData
-;   double g_LightmapXorMask = 0.126945525291829
+;   ushort[2048] g_LightmapData
+;   undefined4 g_LightmapData[1020]
 ;   uint[256] g_LightmapTexturePalette
 ;   ulong g_SolidColorMode
 ;
@@ -54,7 +54,7 @@ section .text
     PMULLW MM1,MM2                      ; 0049261c
     MOVQ MM2,MM3                        ; 0049261f
     MOVQ MM4,MM5                        ; 00492622
-    PXOR MM2,qword ptr [0x006781e8]     ; 00492625 | g_LightmapXorMask
+    PXOR MM2,qword ptr [0x006781e8]     ; 00492625 | g_LightmapData[1020]
     PMULHW MM0,MM2                      ; 0049262c
     PMULHW MM1,MM2                      ; 0049262f
     PMULHW MM4,MM3                      ; 00492632
@@ -84,7 +84,7 @@ section .text
     PMULLW MM1,MM2                      ; 0049268e
     MOVQ MM2,MM3                        ; 00492691
     MOVQ MM4,MM5                        ; 00492694
-    PXOR MM2,qword ptr [0x006781e8]     ; 00492697 | g_LightmapXorMask
+    PXOR MM2,qword ptr [0x006781e8]     ; 00492697 | g_LightmapData[1020]
     PMULHW MM0,MM2                      ; 0049269e
     PMULHW MM1,MM2                      ; 004926a1
     PMULHW MM4,MM3                      ; 004926a4

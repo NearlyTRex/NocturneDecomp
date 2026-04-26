@@ -48,7 +48,7 @@ void __cdecl core_dstrender_cpp_blendLightmapSharedU32toU32NoBiasPx1MMX_FUN_0049
                                             ((ushort)uVar1 & 0xff) * (ushort)(byte)uVar2))),
                  *(ulonglong *)
                   (g_LightmapData + ((uint)*lightmap_index + (uint)(*texture_index >> 1)) * 4) ^
-                 (ulonglong)0.12694552529182901);
+                 g_LightmapData._2040_8_);
   uVar12 = pmulhw(uVar12,*(ulonglong *)
                           (g_LightmapData +
                           ((uint)*lightmap_index + (uint)(*texture_index >> 1)) * 4));

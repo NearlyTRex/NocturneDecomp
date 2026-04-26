@@ -404,8 +404,8 @@ extern uint g_MpegBitMaskTableSingleBit[8];
 // ulonglong[256]
 extern ulonglong g_ByteFillTable[256];
 
-// ushort[384]
-extern ushort g_LightmapData[384];
+// ushort[2048]
+extern ushort g_LightmapData[2048];
 
 // void*
 extern void* g_PerspectiveScanlineColorPtr;

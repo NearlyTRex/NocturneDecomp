@@ -24,7 +24,7 @@ int __cdecl core_actor_cpp_getRandomInt_FUN_0040cc70(int min_value,int max_value
   }
   else {
     uVar4 = core_actor_cpp_generateRandomValue_FUN_0040cba0();
-    fVar2 = (float)(int)uVar4 * (float)INT_00614304;
+    fVar2 = (float)(int)uVar4 * 5.960465e-08f;
   }
   iVar1 = (int)ROUND(ROUND((float)min_value + fVar2 * (float)dVar1));
   if ((min_value <= iVar1) && (min_value = max_value, iVar1 <= max_value)) {

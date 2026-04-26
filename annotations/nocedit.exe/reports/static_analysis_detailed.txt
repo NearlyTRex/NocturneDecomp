@@ -9,7 +9,7 @@ Cppcheck (quick) (324 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (72)
+selfAssignment (73)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 163
@@ -56,7 +56,7 @@ selfAssignment (72)
     File: core/dcamera.cpp
     Redundant assignment of 'piVar27' to itself.
 
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 402
+  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 417
     File: core/dcamera.cpp
     Redundant assignment of 'iVar16' to itself.
 
@@ -159,6 +159,10 @@ selfAssignment (72)
   core_skeledit.cpp_CDeformableModel_determinePartsF line 1170
     File: core/skeledit.cpp
     Redundant assignment of 'piVar35' to itself.
+
+  core_water.cpp_CWater_calculateVisibleTiles_FUN_00 line 54
+    File: core/water.cpp
+    Redundant assignment of 'iVar2' to itself.
 
   core_xform.cpp_clipPolygonStage1_FUN_005f7ed0      line 75
     File: core/xform.cpp
@@ -612,7 +616,7 @@ shiftTooManyBitsSigned (41)
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 393
+  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 408
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -1024,11 +1028,11 @@ legacyUninitvar (36)
     File: core/skeleton.cpp
     Uninitialized variable: afStack_f0
 
-  core_sound.cpp_updateListeners_FUN_005b1870        line 118
+  core_sound.cpp_updateListeners_FUN_005b1870        line 116
     File: core/sound.cpp
     Uninitialized variable: local_c8
 
-  core_sound.cpp_updateListeners_FUN_005b1870        line 118
+  core_sound.cpp_updateListeners_FUN_005b1870        line 116
     File: core/sound.cpp
     Uninitialized variable: local_c4
 
@@ -1339,14 +1343,6 @@ arrayIndexOutOfBoundsCond (1)
   engine_clipper.c_clipPolygonToViewFrustum_FUN_0043 line 165
     File: engine/clipper.c
     Either the condition '0<vertex_count' is redundant or the array 'auStack_150[32]' is accessed at index 32, which is out of bounds.
-
-----------------------------------------------------------------------------------------------------
-invalidFunctionArgStr (1)
-----------------------------------------------------------------------------------------------------
-
-  sound_sndmain.cpp_getSfxSample_FUN_005a4c80        line 73
-    File: sound/sndmain.cpp
-    Invalid strlen() argument nr 1. A nul-terminated string is required.
 
 ----------------------------------------------------------------------------------------------------
 compareBoolExpressionWithInt (1)

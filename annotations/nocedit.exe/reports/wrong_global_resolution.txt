@@ -12,17 +12,18 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6908
-  Functions with suspicious globals: 67
-  Total suspicious global references: 113
+  Functions with suspicious globals: 69
+  Total suspicious global references: 115
 
   Most commonly misresolved globals:
-    g_SfxOptions                                       12 functions
+    g_SfxOptions                                       13 functions
     g_KeyboardState                                    9 functions
     g_ColorCubeLookup                                  4 functions
     g_CDemonCameraInstance                             4 functions
     g_RenderVertexBuffer                               4 functions
     g_WindowHeight                                     3 functions
     g_GetLastErrorFunc                                 3 functions
+    g_TextureCacheInstance                             2 functions
     g_WindowWidth                                      2 functions
     g_ExternalRendererActive                           2 functions
     g_CMoonInstance                                    2 functions
@@ -35,9 +36,8 @@ SUMMARY
     g_CBaronWeaponClassVersion                         1 functions
     g_CWeaponClassInfo                                 1 functions
     g_SourcePaletteData                                1 functions
-    g_RenderStateFlags                                 1 functions
 
-  .keep files with issues: 17 (these need manual review)
+  .keep files with issues: 19 (these need manual review)
   Raw .cpp files with issues: 50
 
 ====================================================================================================
@@ -82,6 +82,14 @@ shape_design.c_showFacetPartEditor_FUN_0045f1d0  [.keep]  (2 suspicious globals)
 
   g_WireframeMode
     Used at lines: 139, 368, 368
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0  [.keep]  (1 suspicious globals)
+  File: core/dcamera.cpp
+
+  g_TextureCacheInstance
+    Used at lines: 381, 382, 386, 387, 390, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -194,6 +202,14 @@ sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0  [.keep]  (1 suspicious globals)
 
   g_CMP3DecoderInstance
     Used at lines: 45, 48, 50, 51, 54
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_setNextSfxUserData_FUN_005a8aa0  [.keep]  (1 suspicious globals)
+  File: sound/sndmain.cpp
+
+  g_SfxOptions
+    Used at lines: 18
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

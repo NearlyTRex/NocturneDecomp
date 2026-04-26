@@ -19,7 +19,7 @@ float __cdecl core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(float min_valu
   }
   else {
     uVar2 = core_actor_cpp_generateRandomValue_FUN_0040cba0();
-    fVar1 = (float)(int)uVar2 * (float)g_RandToFloatFixedMultiplier;
+    fVar1 = (float)(int)uVar2 * 5.960465e-08f;
   }
   return fVar1 * (max_value - min_value) + min_value;
 }

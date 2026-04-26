@@ -184,8 +184,8 @@ core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0  [.keep] [Cppcheck (quick)]
   Line  265: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line  364: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line  370: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  393: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  402: [selfAssignment] Redundant assignment of 'iVar16' to itself.
+  Line  408: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  417: [selfAssignment] Redundant assignment of 'iVar16' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0  [.keep] [Cppcheck (quick)]
@@ -247,8 +247,8 @@ core_sound.cpp_updateListeners_FUN_005b1870  [.keep] [Cppcheck (quick)]
   Line   69: [uninitvar] Uninitialized variable: local_c4
   Line   70: [uninitvar] Uninitialized variable: local_cc
   Line   71: [uninitvar] Uninitialized variable: local_c8
-  Line  118: [legacyUninitvar] Uninitialized variable: local_c8
-  Line  118: [legacyUninitvar] Uninitialized variable: local_c4
+  Line  116: [legacyUninitvar] Uninitialized variable: local_c8
+  Line  116: [legacyUninitvar] Uninitialized variable: local_c4
 
 ----------------------------------------------------------------------------------------------------
 core_xform.cpp_matrixToEulerAngles_FUN_005f5690  [.keep] [Cppcheck (quick)]
@@ -768,6 +768,12 @@ core_vehicle.cpp_CVehicle_renderOpaque_FUN_005e88c0  [.keep] [Cppcheck (quick)]
   Line   58: [uninitvar] Uninitialized variable: in_stack_0000000c
 
 ----------------------------------------------------------------------------------------------------
+core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70  [.keep] [Cppcheck (quick)]
+  File: core/water.cpp  (1 diagnostics)
+
+  Line   54: [selfAssignment] Redundant assignment of 'iVar2' to itself.
+
+----------------------------------------------------------------------------------------------------
 core_xform.cpp_clipPolygonStage1_FUN_005f7ed0  [.keep] [Cppcheck (quick)]
   File: core/xform.cpp  (1 diagnostics)
 
@@ -904,12 +910,6 @@ sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0  [.keep] [Cppcheck (quick)]
   File: sound/sndmain.cpp  (1 diagnostics)
 
   Line  105: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-sound_sndmain.cpp_getSfxSample_FUN_005a4c80  [.keep] [Cppcheck (quick)]
-  File: sound/sndmain.cpp  (1 diagnostics)
-
-  Line   73: [invalidFunctionArgStr] Invalid strlen() argument nr 1. A nul-terminated string is required.
 
 ----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_testSoundFile_FUN_005ad3b0  [.keep] [Cppcheck (quick)]

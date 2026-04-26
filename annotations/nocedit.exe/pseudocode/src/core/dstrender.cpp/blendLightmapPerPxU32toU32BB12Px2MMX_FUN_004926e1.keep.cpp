@@ -39,7 +39,7 @@ void __cdecl core_dstrender_cpp_blendLightmapPerPxU32toU32BB12Px2MMX_FUN_004926e
   solid_ws[2] = (ushort)(((solid_raw >> 16) & 0xff) << 6);
   solid_ws[3] = (ushort)(((solid_raw >> 24) & 0xff) << 6);
 
-  xor_mask_bits = __BITCAST_UINT64(g_LightmapXorMask);
+  xor_mask_bits = 0x3FC03FC03FC03FC0ULL;
 
   do {
     for (p = 0; p < 2; p = p + 1) {

@@ -4,17 +4,17 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    3068 ( 52.5%)
-  unnamed_local                    790 ( 13.5%)
+  pointer_cast                    3063 ( 52.5%)
+  unnamed_local                    791 ( 13.5%)
   unrolled_strcpy                  491 (  8.4%)
   warning_inlined_function         257 (  4.4%)
   raw_address_constant             196 (  3.4%)
-  missing_cave_copy                184 (  3.1%)
+  missing_cave_copy                184 (  3.2%)
   unrolled_strlen                  152 (  2.6%)
   warning_type_propagation         133 (  2.3%)
   stack_alignment_array             92 (  1.6%)
   warning_unreachable               75 (  1.3%)
-  unnamed_param                     73 (  1.2%)
+  unnamed_param                     73 (  1.3%)
   unrolled_strchr                   62 (  1.1%)
   unrolled_strcat                   46 (  0.8%)
   param_count_too_many              37 (  0.6%)
@@ -42,12 +42,12 @@ SUSPECT TYPE COUNTS
   warning_indirect_jump              1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (3068 occurrences)
+TYPE: pointer_cast (3063 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   947x  (int *)((int)
-   816x  (uint *)((int)
+   944x  (int *)((int)
+   815x  (uint *)((int)
    253x  (float *)((int)
    123x  (double *)((int)
    108x  (SRenderVertex *)((int)
@@ -674,7 +674,6 @@ Functions:
   sound_sndmain.cpp_convertMixBufToOutput_FUN_005a5b80
   sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20
   sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0
-  sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_005a4450
   sound_sndmain.cpp_freeMixBuffers_FUN_005a5900
   sound_sndmain.cpp_freeSampleByName_FUN_005aa360
   sound_sndmain.cpp_getActiveSfxCount_FUN_005a43a0
@@ -719,7 +718,7 @@ Functions:
   wincore_windll.cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec
 
 ====================================================================================================
-TYPE: unnamed_local (790 occurrences)
+TYPE: unnamed_local (791 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -854,6 +853,7 @@ Functions:
   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
   sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660
   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0
+  sound_sndmain.cpp_getSfxSample_FUN_005a4c80
 
 ====================================================================================================
 TYPE: unrolled_strcpy (491 occurrences)

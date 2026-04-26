@@ -29,7 +29,7 @@ __asm {
         movq MM3,qword ptr [g_LightmapData + EAX*0x8]
         movq MM2,MM3
         movq MM4,MM5
-        pxor MM2,qword ptr [g_LightmapXorMask]
+        pxor MM2,qword ptr [0x006781e8]
         pmulhw MM0,MM2
         pmulhw MM4,MM3
         paddw MM0,MM4

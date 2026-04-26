@@ -376,8 +376,23 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
       } while (iVar2 != 0x10000);
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                 (g_CDemonRendererPtr2,&g_CameraBackdropTexture);
-      memcpy(g_CurrentTextureData,g_CameraTextureWorkBuffer,0x10000);
-      memcpy(g_CurrentPalette,&g_CameraImagePaletteData,0x300);
+      {
+        int backdrop_slot = (g_CameraBackdropTexture.base).count;
+        if (backdrop_slot >= 0 && backdrop_slot < g_TextureCacheInstance->max_texture_count) {
+          int backdrop_dim = g_TextureCacheInstance->texture_dimensions[backdrop_slot];
+          int backdrop_size = backdrop_dim * backdrop_dim;
+          if (backdrop_size > 0x10000) backdrop_size = 0x10000;
+          if (backdrop_size > 0 &&
+              g_TextureCacheInstance->texture_data_ptrs[backdrop_slot] != (void *)0x0) {
+            memcpy(g_TextureCacheInstance->texture_data_ptrs[backdrop_slot],
+                   g_CameraTextureWorkBuffer,backdrop_size);
+          }
+          if (g_TextureCacheInstance->texture_palette_ptrs[backdrop_slot] != (byte *)0x0) {
+            memcpy(g_TextureCacheInstance->texture_palette_ptrs[backdrop_slot],
+                   &g_CameraImagePaletteData,0x300);
+          }
+        }
+      }
       engine_drender_cpp_CDemonRenderer_updateTexture_FUN_0048dc30
                 (g_CDemonRendererPtr2,&g_CameraBackdropTexture,&g_CameraImagePaletteData);
       _memset(g_CoronaBlurWorkBuffer,0,0x12d40);
