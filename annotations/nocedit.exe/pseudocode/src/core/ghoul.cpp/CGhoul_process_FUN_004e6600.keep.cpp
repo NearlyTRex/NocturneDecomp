@@ -680,7 +680,7 @@ LAB_004e7576:
               }
               local_7c = local_b8 * local_b8 +
                          local_c0 * local_c0 + local_bc * local_bc;
-              local_78 = (*(int *)&local_7c >> 1) + INT_02d7a7b8;
+              *(float *)&local_78 = core_chain_cpp_fastSqrt_FUN_00431350(local_7c);
               if (*(float *)&local_78 < (float)8) goto LAB_004e7243;
             }
           }

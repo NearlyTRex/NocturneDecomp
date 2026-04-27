@@ -4,7 +4,7 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 7,
     "complexity_score": 4,
@@ -27,14 +27,14 @@
       ]
     ],
     "convention": "__cdecl",
-    "name": "core_cloth.cpp_calcLightAttenuation_FUN_0043e2a0",
-    "signature": "int __cdecl core_cloth_cpp_calcLightAttenuation_FUN_0043e2a0(float dist_sq)"
+    "name": "core_cloth.cpp_fastInvSqrt_FUN_0043e2a0",
+    "signature": "float __cdecl core_cloth_cpp_fastInvSqrt_FUN_0043e2a0(float dist_sq)"
   },
   "function_calls": [],
   "globals": [
     {
       "addr": "02d7a7bc",
-      "name": "g_LightAttenuationMax",
+      "name": "g_FastInvSqrtMagic",
       "type": "int",
       "value": null
     }
@@ -68,6 +68,17 @@
     },
     "pcode_op_count": 27
   },
+  "resolved_suspects": [
+    {
+      "description": "Inlined fast inverse sqrt bit-trick. Replace with `fastInvSqrt(<expr>)` in a .keep \u2014 the helper function exists in the binary (FUN_0043e2a0).",
+      "line": 5,
+      "match": "return (float)(g_FastInvSqrtMagic - ((int)dist_sq >> 1));",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "return (float)(g_FastInvSqrtMagic - ((int)dist_sq >> 1));",
+      "type": "fast_inv_sqrt_inline"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -83,6 +94,30 @@
         "type": "float"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "fastInvSqrt_FUN_0043e2a0.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "invalidPointerCast",
+          "column": 37,
+          "line": 13,
+          "message": "Casting from float * to signed int * is not portable due to different binary data representations on different platforms.",
+          "severity": "portability"
+        },
+        {
+          "check_id": "invalidPointerCast",
+          "column": 11,
+          "line": 14,
+          "message": "Casting between signed int * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": []
 }

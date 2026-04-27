@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_cloth_cpp_vectorLengthFast_FUN_0043e350(CVector3f *v)
+; float __cdecl core_cloth_cpp_vectorLengthFast_FUN_0043e350(CVector3f *v)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   v
 ;
 ; Referenced Globals:
-;   int INT_02d7a7b8
+;   int g_FastSqrtMagic
 ;
 ; *****************************************************************************
 
@@ -26,7 +26,7 @@ section .text
     FADDP                               ; 0043e367
     FSTP float ptr [ESP]                ; 0043e369
     MOV EAX,dword ptr [ESP]             ; 0043e36c
-    MOV EDX,dword ptr [0x02d7a7b8]      ; 0043e36f | INT_02d7a7b8
+    MOV EDX,dword ptr [0x02d7a7b8]      ; 0043e36f | g_FastSqrtMagic
     SAR EAX,0x1                         ; 0043e375
     ADD EAX,EDX                         ; 0043e377
     ADD ESP,0x4                         ; 0043e379

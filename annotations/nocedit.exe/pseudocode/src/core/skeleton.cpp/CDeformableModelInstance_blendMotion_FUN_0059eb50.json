@@ -7,16 +7,17 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 558,
-    "complexity_score": 279,
+    "complexity_score": 344,
     "cross_reference_count": 14,
     "function_call_count": 8,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 199,
-    "suspect_count": 7,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
-      "stack_alignment_array"
+      "stack_alignment_array",
+      "unnamed_local"
     ],
     "total_lines": 757
   },
@@ -566,30 +567,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CDeformableModelInstance_blendMotion_FUN_0059eb50.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 2,
-      "diagnostics": [
-        {
-          "check_id": "legacyUninitvar",
-          "column": 70,
-          "line": 121,
-          "message": "Uninitialized variable: afStack_120[0]",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 30,
-          "line": 135,
-          "message": "Uninitialized variable: afStack_f0",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
@@ -640,13 +617,67 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 35,
+      "match": "local_124",
+      "severity": "mild",
+      "text": "CQuaternion4f local_124;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 38,
+      "match": "local_f4",
+      "severity": "mild",
+      "text": "CQuaternion4f local_f4;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 116,
+      "match": "local_124",
+      "severity": "mild",
+      "text": "&local_124);",
+      "type": "unnamed_local"
+    },
+    {
       "description": "Complex pointer cast",
       "introduced_by": "keep",
-      "line": 115,
-      "match": "(int *)((int)",
+      "line": 117,
+      "match": "(float *)((int)",
       "severity": "moderate",
-      "text": "*(int *)((int)aiStack_2f4 + local_28) = iVar14;",
+      "text": "*(float *)((int)&local_934[0].w + local_44) = local_124.w;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 117,
+      "match": "local_124",
+      "severity": "mild",
+      "text": "*(float *)((int)&local_934[0].w + local_44) = local_124.w;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 130,
+      "match": "local_f4",
+      "severity": "mild",
+      "text": "(this_ptr_00,iVar2,local_58[0],local_5c,local_938,&local_f4);",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 131,
+      "match": "local_f4",
+      "severity": "mild",
+      "text": "local_934[iVar2].w = local_f4.w;",
+      "type": "unnamed_local"
     }
   ]
 }

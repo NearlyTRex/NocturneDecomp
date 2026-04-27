@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 134,
-    "complexity_score": 35,
+    "complexity_score": 50,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 35,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "fast_inv_sqrt_inline"
+    ],
     "total_lines": 169
   },
   "cross_references": [
@@ -54,7 +56,7 @@
     },
     {
       "addr": "02d7a7bc",
-      "name": "g_LightAttenuationMax",
+      "name": "g_FastInvSqrtMagic",
       "type": "int",
       "value": null
     }
@@ -185,5 +187,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Inlined fast inverse sqrt bit-trick. Replace with `fastInvSqrt(<expr>)` in a .keep \u2014 the helper function exists in the binary (FUN_0043e2a0).",
+      "line": 28,
+      "match": "fVar1 = (float)(g_FastInvSqrtMagic - ((int)fVar2 >> 1));",
+      "severity": "moderate",
+      "text": "fVar1 = (float)(g_FastInvSqrtMagic - ((int)fVar2 >> 1));",
+      "type": "fast_inv_sqrt_inline"
+    }
+  ]
 }

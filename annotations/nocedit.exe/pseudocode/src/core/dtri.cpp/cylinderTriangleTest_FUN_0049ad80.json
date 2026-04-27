@@ -4,17 +4,19 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 405,
-    "complexity_score": 180,
+    "complexity_score": 265,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 180,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 8,
+    "suspect_types": [
+      "unnamed_local"
+    ],
     "total_lines": 585
   },
   "cross_references": [
@@ -336,5 +338,78 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 27,
+      "match": "local_7c",
+      "severity": "mild",
+      "text": "float local_7c [14];",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 101,
+      "match": "local_7c",
+      "severity": "mild",
+      "text": "local_7c[0] = ((triangle->vertex2).x - (triangle->vertex1).x) * fVar5 + (triangle->vertex1).x;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 102,
+      "match": "local_7c",
+      "severity": "mild",
+      "text": "local_7c[9] = ((triangle->vertex2).z - (triangle->vertex1).z) * fVar5 + (triangle->vertex1).z;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 109,
+      "match": "local_7c",
+      "severity": "mild",
+      "text": "local_7c[uVar7] =",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 112,
+      "match": "local_7c",
+      "severity": "mild",
+      "text": "local_7c[uVar7 + 9] =",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 119,
+      "match": "local_7c",
+      "severity": "mild",
+      "text": "local_7c[uVar8] =",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 122,
+      "match": "local_7c",
+      "severity": "mild",
+      "text": "local_7c[uVar8 + 9] =",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 126,
+      "match": "local_7c",
+      "severity": "mild",
+      "text": "cylinder->edge_x1 = local_7c[0];",
+      "type": "unnamed_local"
+    }
+  ]
 }

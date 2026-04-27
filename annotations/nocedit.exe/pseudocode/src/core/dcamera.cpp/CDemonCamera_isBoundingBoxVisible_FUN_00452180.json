@@ -7,14 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 362,
-    "complexity_score": 194,
+    "complexity_score": 269,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 16,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 139,
-    "suspect_count": 4,
+    "suspect_count": 11,
     "suspect_types": [
+      "decompiler_intrinsic",
       "pointer_cast",
       "unnamed_local",
       "warning_inlined_function"
@@ -713,13 +714,76 @@
       "type": "unnamed_local"
     },
     {
-      "description": "Unnamed local variable",
+      "description": "Decompiler intrinsic (not real C)",
       "introduced_by": "keep",
-      "line": 118,
-      "match": "local_130",
+      "line": 86,
+      "match": "ROUND",
       "severity": "mild",
-      "text": "&local_130);",
-      "type": "unnamed_local"
+      "text": "g_RelativeX = (int)ROUND(ROUND(((this_ptr->base).position.f.x - position->x) * fVar2));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "introduced_by": "keep",
+      "line": 86,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "g_RelativeX = (int)ROUND(ROUND(((this_ptr->base).position.f.x - position->x) * fVar2));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "introduced_by": "keep",
+      "line": 88,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "g_RelativeY = (int)ROUND(ROUND(((this_ptr->base).position.f.y - position->y) * fVar2));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "introduced_by": "keep",
+      "line": 88,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "g_RelativeY = (int)ROUND(ROUND(((this_ptr->base).position.f.y - position->y) * fVar2));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "introduced_by": "keep",
+      "line": 89,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "g_RelativeZ = (int)ROUND(ROUND(((this_ptr->base).position.f.z - position->z) * fVar2));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "introduced_by": "keep",
+      "line": 89,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "g_RelativeZ = (int)ROUND(ROUND(((this_ptr->base).position.f.z - position->z) * fVar2));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "introduced_by": "keep",
+      "line": 95,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "corner_input.x = (int)ROUND(bbox_max->x * 256.0f);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "introduced_by": "keep",
+      "line": 96,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "corner_input.y = (int)ROUND(bbox_min->y * 256.0f);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

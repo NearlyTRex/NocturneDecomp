@@ -167,9 +167,9 @@ void __cdecl CCloth::resetState(CCloth *this_ptr,int vertex_index);
 // Address: 0043e1a0
 void __cdecl CCloth::applyRotation(CCloth *this_ptr,CVector3f *euler);
 
-// Original: core_cloth.cpp_calcLightAttenuation_FUN_0043e2a0
+// Original: core_cloth.cpp_fastInvSqrt_FUN_0043e2a0
 // Address: 0043e2a0
-int __cdecl calcLightAttenuation(float dist_sq);
+float __cdecl fastInvSqrt(float dist_sq);
 
 // Original: core_cloth.cpp_dotProduct1_FUN_0043e2c0
 // Address: 0043e2c0
@@ -185,7 +185,7 @@ float __cdecl dotProduct2(CVector3f *a,CVector3f *b);
 
 // Original: core_cloth.cpp_vectorLengthFast_FUN_0043e350
 // Address: 0043e350
-int __cdecl vectorLengthFast(CVector3f *v);
+float __cdecl vectorLengthFast(CVector3f *v);
 
 // Original: core_cloth.cpp_applyLightAttenuation_FUN_0043e380
 // Address: 0043e380

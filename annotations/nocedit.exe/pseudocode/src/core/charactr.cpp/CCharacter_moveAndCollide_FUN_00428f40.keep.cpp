@@ -107,33 +107,18 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter
   if ((this_ptr->model).model_name[0] != '\0') {
     str1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                      (&(this_ptr->model).motion_controller);
-    uVar10 = 0x006e6f69;
-    uVar9 = 0xffffffff;
-    pSVar12 = str1;
-    do {
-      if (uVar9 == 0) break;
-      uVar9 = uVar9 - 1;
-      pSVar12 = (SMotion *)((int)pSVar12 + (uint)bVar14 * -2 + 1);
-      pcVar5 = pSVar12->motion_name;
-      pSVar12 = pSVar12;
-    } while (*pcVar5 != '\0');
-    local_84[0] = "noCollision"[0];
-    local_84[1] = "noCollision"[1];
-    local_84[2] = "noCollision"[2];
-    local_84[3] = "noCollision"[3];
+    iVar11 = (int)strlen(str1->motion_name) - 0xb;
     iVar13 = 0;
-    if (-1 < (int)0x006e6f69) {
-      do {
-        iVar14 = _strnicmp(str1->motion_name,local_84,0xb);
-        if (iVar14 == 0) {
-          (this_ptr->velocity).z = 0.0;
-          (this_ptr->velocity).y = (this_ptr->velocity).z;
-          (this_ptr->velocity).x = (this_ptr->velocity).y;
-          return;
-        }
-        iVar13 = iVar13 + 1;
-        str1 = (SMotion *)(str1->motion_name + 1);
-      } while (iVar13 <= (int)uVar10);
+    while (iVar13 <= iVar11) {
+      iVar14 = _strnicmp(str1->motion_name,(char *)"noCollision",0xb);
+      if (iVar14 == 0) {
+        (this_ptr->velocity).z = 0.0;
+        (this_ptr->velocity).y = (this_ptr->velocity).z;
+        (this_ptr->velocity).x = (this_ptr->velocity).y;
+        return;
+      }
+      iVar13 = iVar13 + 1;
+      str1 = (SMotion *)(str1->motion_name + 1);
     }
   }
   iVar11 = 0;

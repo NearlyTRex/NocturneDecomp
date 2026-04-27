@@ -1365,7 +1365,7 @@ section .text
     FADDP                               ; 004e73d6
     FSTP float ptr [EBP + 0xe]          ; 004e73d8
     MOV EAX,dword ptr [EBP + 0xe]       ; 004e73db
-    MOV EDX,dword ptr [0x02d7a7b8]      ; 004e73de | INT_02d7a7b8
+    MOV EDX,dword ptr [0x02d7a7b8]      ; 004e73de | g_FastSqrtMagic
     SAR EAX,0x1                         ; 004e73e4
     ADD EAX,EDX                         ; 004e73e6
     MOV dword ptr [EBP + 0x12],EAX      ; 004e73e8

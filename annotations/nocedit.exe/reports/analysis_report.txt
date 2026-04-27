@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 5157 (79.9%)
-Functions with suspects: 1297 (20.1%)
+Clean functions: 5153 (79.8%)
+Functions with suspects: 1301 (20.2%)
 
-Total suspect patterns: 5838
-Average suspects per function: 0.90
+Total suspect patterns: 5900
+Average suspects per function: 0.91
 
-Virtual files: 214 total, 37 at 100%, 79 at 90%+
+Virtual files: 214 total, 36 at 100%, 79 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
 
-Average complexity score: 58.2
+Average complexity score: 58.3
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,11 +28,11 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              3063
-  unnamed_local             791
+  pointer_cast              3048
+  unnamed_local             861
   unrolled_strcpy           491
   warning_inlined_function  257
-  raw_address_constant      196
+  raw_address_constant      194
   missing_cave_copy         184
   unrolled_strlen           152
   warning_type_propagation  133
@@ -44,8 +44,8 @@ SUSPECT PATTERN BREAKDOWN
   param_count_too_many      37
   stack_param               36
   sub84_truncation          30
+  decompiler_intrinsic      27
   negative_offset           24
-  decompiler_intrinsic      19
   extra_output              16
   suspect_float             10
   unaffected_reg            9
@@ -58,6 +58,7 @@ SUSPECT PATTERN BREAKDOWN
   preinc_loop_idiom         2
   cpuid_intrinsic           2
   wrong_global              2
+  fast_inv_sqrt_inline      1
   warning_unable_to_use_type 1
   warning_overlapping_globals 1
   warning_noreturn          1
@@ -117,7 +118,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 5107 more
+  ... and 5103 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -134,7 +135,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   0047cbc0: core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (score: 1377, suspects: 49, lines: 857)
   0040eed0: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (score: 1312, suspects: 54, lines: 752)
   005138e0: core_menu.cpp_configureCustomKeyBindings_FUN_005138e0 (score: 1282, suspects: 35, lines: 917)
-  0056eac0: core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 (score: 1247, suspects: 67, lines: 567)
+  0056eac0: core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 (score: 1262, suspects: 68, lines: 567)
   004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600 (score: 1227, suspects: 16, lines: 1052)
   005325e0: sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (score: 1166, suspects: 62, lines: 541)
   005bb960: core_stranger.cpp_CStranger_processFrame_FUN_005bb960 (score: 1140, suspects: 0, lines: 1140)
@@ -146,16 +147,16 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   00562920: core_script.cpp_editParameterValue_FUN_00562920 (score: 939, suspects: 17, lines: 754)
   005c07b0: core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0 (score: 922, suspects: 41, lines: 497)
   00582930: core_setedit.cpp_drawCameraFrustum_FUN_00582930 (score: 917, suspects: 0, lines: 917)
+  0041e350: core_box.cpp_CBox_processPhysics_FUN_0041e350 (score: 914, suspects: 12, lines: 779)
   004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (score: 904, suspects: 8, lines: 809)
   004b5a50: engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (score: 863, suspects: 21, lines: 643)
   0059e0a0: core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0 (score: 853, suspects: 48, lines: 358)
   00511e50: core_menu.cpp_configureSoundOptions_FUN_00511e50 (score: 853, suspects: 9, lines: 743)
-  0041e350: core_box.cpp_CBox_processPhysics_FUN_0041e350 (score: 849, suspects: 6, lines: 779)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (648 functions):
+  pointer_cast (646 functions):
     00488230: cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230
     004874d0: cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0
     00487630: cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
@@ -166,9 +167,9 @@ FUNCTIONS BY SUSPECT TYPE
     0054ab30: cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30
     0054ae70: cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
     0054aa20: cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
-    ... and 638 more
+    ... and 636 more
 
-  unnamed_local (110 functions):
+  unnamed_local (119 functions):
     00432540: cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
     00433480: cockpit_ckptutil.c_saveEdgeListFile_FUN_00433480
     00434af0: cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
@@ -179,7 +180,7 @@ FUNCTIONS BY SUSPECT TYPE
     00552510: engine_prim.c_renderPolygonSoftware_FUN_00552510
     005fcfc0: engine_3d.c_rasterizeTriangle_FUN_005fcfc0
     00483370: engine_drender.cpp_renderTriangleTextured_FUN_00483370
-    ... and 100 more
+    ... and 109 more
 
   unrolled_strcpy (186 functions):
     00543e40: support_newmsg.cpp_readMessageFile_FUN_00543e40
@@ -207,7 +208,7 @@ FUNCTIONS BY SUSPECT TYPE
     00441260: engine_colquant.c_computeBoxStatistics_FUN_00441260
     ... and 244 more
 
-  raw_address_constant (50 functions):
+  raw_address_constant (49 functions):
     005f2860: engine_winfont.cpp_CWinFont_createTextBackground_FUN_005f2860
     00406860: engine_3d.c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860
     00404220: engine_3d.c_renderPolygonLitDetailedClamped_FUN_00404220
@@ -218,7 +219,7 @@ FUNCTIONS BY SUSPECT TYPE
     0044f3e0: core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0
     004518f0: core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0
     00500050: core_inv.cpp_drawWeaponIconBackground_FUN_00500050
-    ... and 40 more
+    ... and 39 more
 
   missing_cave_copy (23 functions):
     0043a2b0: core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043a2b0
@@ -357,6 +358,18 @@ FUNCTIONS BY SUSPECT TYPE
     005c8e70: shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
     ... and 2 more
 
+  decompiler_intrinsic (10 functions):
+    00452180: core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
+    00500690: core_inv.cpp_CInventory_renderAllItems_FUN_00500690
+    005f5690: core_xform.cpp_matrixToEulerAngles_FUN_005f5690
+    00502620: core_ladder.cpp_CLadder_renderOpaque_FUN_00502620
+    00427e20: core_charactr.cpp_CCharacter_ctor_FUN_00427e20
+    0047cbc0: core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
+    0045a320: shape_design.c_writePolygonModel_FUN_0045a320
+    005d7460: shape_superopt.cpp_COptimize_findCoplanarPolygons_FUN_005d7460
+    005cb3a0: shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0
+    005cbf90: shape_superopt.cpp_CComplexPolygon_validateSubChainVisibility_FUN_005cbf90
+
   negative_offset (13 functions):
     004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
     004b4220: engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
@@ -369,17 +382,6 @@ FUNCTIONS BY SUSPECT TYPE
     0047cbc0: core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
     00477690: core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690
     ... and 3 more
-
-  decompiler_intrinsic (9 functions):
-    00500690: core_inv.cpp_CInventory_renderAllItems_FUN_00500690
-    005f5690: core_xform.cpp_matrixToEulerAngles_FUN_005f5690
-    00502620: core_ladder.cpp_CLadder_renderOpaque_FUN_00502620
-    00427e20: core_charactr.cpp_CCharacter_ctor_FUN_00427e20
-    0047cbc0: core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
-    0045a320: shape_design.c_writePolygonModel_FUN_0045a320
-    005d7460: shape_superopt.cpp_COptimize_findCoplanarPolygons_FUN_005d7460
-    005cb3a0: shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0
-    005cbf90: shape_superopt.cpp_CComplexPolygon_validateSubChainVisibility_FUN_005cbf90
 
   extra_output (1 functions):
     005f8550: core_xform.cpp_transformAndClipGeometry_FUN_005f8550
@@ -446,6 +448,9 @@ FUNCTIONS BY SUSPECT TYPE
 
   wrong_global (1 functions):
     005487a0: core_path.cpp_CPathMap_searchGrid_FUN_005487a0
+
+  fast_inv_sqrt_inline (1 functions):
+    00471850: core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00471850
 
   warning_unable_to_use_type (1 functions):
     0056ae50: core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50

@@ -1880,7 +1880,7 @@ core_dcamera.cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30,00450e30,core/dca
 core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0,0044cdf0,core/dcamera.cpp,61,2,pointer_cast,86
 core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430,0044c430,core/dcamera.cpp,111,0,,111
 core_dcamera.cpp_updateFogScrollOffset_FUN_0044bfb0,0044bfb0,core/dcamera.cpp,24,0,,24
-core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180,00452180,core/dcamera.cpp,139,4,pointer_cast|unnamed_local|warning_inlined_function,194
+core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180,00452180,core/dcamera.cpp,139,11,decompiler_intrinsic|pointer_cast|unnamed_local|warning_inlined_function,269
 core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FUN_004538c0,004538c0,core/dcamera.cpp,22,1,pointer_cast,37
 core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0,0044f3e0,core/dcamera.cpp,486,4,raw_address_constant|unnamed_local,536
 core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_004507a0,004507a0,core/dcamera.cpp,56,1,stack_alignment_array,71
@@ -1959,7 +1959,7 @@ core_health.cpp_CHealthItem_getActorType_FUN_004f1dc0,004f1dc0,core/health.cpp,4
 core_health.cpp_CHealthItem_addFilesToExtract_FUN_004f20b0,004f20b0,core/health.cpp,6,0,,6
 core_dglobe.cpp_CDemonGlobe_setPosition_FUN_00471310,00471310,core/dglobe.cpp,15,1,warning_inlined_function,30
 core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_00471770,00471770,core/dglobe.cpp,25,0,,25
-core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00471850,00471850,core/dglobe.cpp,35,0,,35
+core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00471850,00471850,core/dglobe.cpp,35,1,fast_inv_sqrt_inline,50
 core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_00471400,00471400,core/dglobe.cpp,76,13,pointer_cast|warning_inlined_function,216
 core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360,00471360,core/dglobe.cpp,22,1,warning_inlined_function,37
 core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0,004715e0,core/dglobe.cpp,64,19,pointer_cast|warning_inlined_function,264
@@ -2047,7 +2047,7 @@ core_cloth.cpp_CClothList_dtor_FUN_0043bf80,0043bf80,core/cloth.cpp,5,0,,5
 core_cloth.cpp_CCloth_setup_FUN_00439710,00439710,core/cloth.cpp,354,12,pointer_cast|unnamed_local,484
 core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043a2b0,0043a2b0,core/cloth.cpp,42,6,missing_cave_copy|unnamed_local,112
 core_cloth.cpp_CClothList_applyRotation_FUN_0043c3a0,0043c3a0,core/cloth.cpp,15,0,,15
-core_cloth.cpp_CCloth_render_FUN_0043bae0,0043bae0,core/cloth.cpp,148,4,pointer_cast|warning_inlined_function,198
+core_cloth.cpp_CCloth_render_FUN_0043bae0,0043bae0,core/cloth.cpp,148,4,unnamed_local|warning_inlined_function,198
 core_cloth.cpp_CCloth_resetState_FUN_0043e170,0043e170,core/cloth.cpp,6,0,,6
 core_cloth.cpp_CCloth_saveJoinedLight_FUN_0043b9f0,0043b9f0,core/cloth.cpp,38,0,,38
 core_cloth.cpp_SClothVertex_arrdtor_FUN_0043e480,0043e480,core/cloth.cpp,6,0,,6
@@ -2063,10 +2063,10 @@ core_cloth.cpp_SClothVertex_ctor_FUN_0043e420,0043e420,core/cloth.cpp,6,0,,6
 core_cloth.cpp_CCloth_renderCollisionBones_FUN_0043b790,0043b790,core/cloth.cpp,13,0,,13
 core_cloth.cpp_CClothList_ctor_FUN_0043bf40,0043bf40,core/cloth.cpp,7,0,,7
 core_cloth.cpp_CClothList_setup_FUN_0043c290,0043c290,core/cloth.cpp,15,0,,15
-core_cloth.cpp_calcLightAttenuation_FUN_0043e2a0,0043e2a0,core/cloth.cpp,4,0,,4
 core_cloth.cpp_SClothVertex_dtor_FUN_0043e440,0043e440,core/cloth.cpp,7,0,,7
 core_cloth.cpp_drawVertexMarker_FUN_0043c6e0,0043c6e0,core/cloth.cpp,39,0,,39
 core_cloth.cpp_CCloth_applyRotation_FUN_0043e1a0,0043e1a0,core/cloth.cpp,45,0,,45
+core_cloth.cpp_fastInvSqrt_FUN_0043e2a0,0043e2a0,core/cloth.cpp,4,0,,4
 core_cloth.cpp_CClothList_process_FUN_0043c2d0,0043c2d0,core/cloth.cpp,16,0,,16
 core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043a110,0043a110,core/cloth.cpp,76,0,,76
 core_cloth.cpp_CClothList_add_FUN_0043c0f0,0043c0f0,core/cloth.cpp,23,0,,23
@@ -2282,7 +2282,7 @@ core_gore.cpp_CFootstep_init_FUN_004ed240,004ed240,core/gore.cpp,58,4,pointer_ca
 core_gore.cpp_CBloodSplat_initGroundSplat_FUN_004ec2f0,004ec2f0,core/gore.cpp,25,0,,25
 core_gore.cpp_CGore_spawnFlies_FUN_004edf30,004edf30,core/gore.cpp,37,0,,37
 core_gore.cpp_CBloodSplat_ctor_FUN_004ee3d0,004ee3d0,core/gore.cpp,4,0,,4
-core_gore.cpp_CBloodParticle_render_FUN_004ebac0,004ebac0,core/gore.cpp,200,10,pointer_cast,305
+core_gore.cpp_CBloodParticle_render_FUN_004ebac0,004ebac0,core/gore.cpp,200,1,unnamed_local,215
 core_gore.cpp_CGore_createBloodPool_FUN_004ede30,004ede30,core/gore.cpp,10,0,,10
 core_gore.cpp_CBloodPool_ctor_FUN_004ee3b0,004ee3b0,core/gore.cpp,4,0,,4
 core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0,004edaa0,core/gore.cpp,15,0,,15
@@ -3030,7 +3030,7 @@ core_dtri.cpp_staticInit_FUN_0049a430,0049a430,core/dtri.cpp,12,0,,12
 core_dtri.cpp_clipPolygonToLeft_FUN_0049bc90,0049bc90,core/dtri.cpp,55,0,,55
 core_dtri.cpp_clipPolygonToNear_FUN_0049bdf0,0049bdf0,core/dtri.cpp,53,0,,53
 core_dtri.cpp_getClippedVertexCount_FUN_0049cbb0,0049cbb0,core/dtri.cpp,4,0,,4
-core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80,0049ad80,core/dtri.cpp,180,0,,180
+core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80,0049ad80,core/dtri.cpp,180,8,unnamed_local,265
 core_dtri.cpp_cylinderEdgeIntersection_FUN_0049aa00,0049aa00,core/dtri.cpp,90,0,,90
 core_dtri.cpp_rayEdgeHeightTest_FUN_0049b180,0049b180,core/dtri.cpp,37,0,,37
 core_dtri.cpp_cylinderEdgeTestWithHeight_FUN_0049ace0,0049ace0,core/dtri.cpp,29,0,,29
@@ -3715,7 +3715,7 @@ core_flame.cpp_CFlame_updateGlobe_FUN_004cad90,004cad90,core/flame.cpp,28,1,warn
 core_flame.cpp_CFlame_setup_FUN_004c9b90,004c9b90,core/flame.cpp,22,0,,22
 core_flame.cpp_CFlame_renderBackground_FUN_004caa80,004caa80,core/flame.cpp,55,0,,55
 core_flame.cpp_staticInit_FUN_004c9a30,004c9a30,core/flame.cpp,7,0,,7
-core_flame.cpp_CFlame_renderTransparent_FUN_004ca110,004ca110,core/flame.cpp,256,12,raw_address_constant|suspect_float|warning_inlined_function,391
+core_flame.cpp_CFlame_renderTransparent_FUN_004ca110,004ca110,core/flame.cpp,256,22,raw_address_constant|suspect_float|unnamed_local|warning_inlined_function,496
 core_flame.cpp_CFlame_hide_FUN_004caa70,004caa70,core/flame.cpp,5,0,,5
 core_flame.cpp_CFlame_getPropertyList_FUN_004cae70,004cae70,core/flame.cpp,26,0,,26
 core_flame.cpp_CFlame_getActorType_FUN_004c9a90,004c9a90,core/flame.cpp,4,0,,4
@@ -3811,7 +3811,7 @@ core_msnedit.cpp_CDemonMission_pickSet_FUN_00538f90,00538f90,core/msnedit.cpp,26
 core_set.cpp_C3DSLight_dtor_FUN_005714b0,005714b0,core/set.cpp,4,0,,4
 core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0,005709e0,core/set.cpp,37,0,,37
 core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990,0056c990,core/set.cpp,117,1,warning_type_propagation,132
-core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0,0056eac0,core/set.cpp,567,67,pointer_cast|stack_alignment_array,1247
+core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0,0056eac0,core/set.cpp,567,68,pointer_cast|stack_alignment_array|unnamed_local,1262
 core_set.cpp_CDemonSet_renderFaceBatchOrEnvMap_FUN_00570700,00570700,core/set.cpp,16,0,,16
 core_set.cpp_CVector3f_arrdtor_FUN_00571510,00571510,core/set.cpp,6,0,,6
 core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0,0056c1a0,core/set.cpp,297,3,pointer_cast,332
@@ -3850,7 +3850,7 @@ core_set.cpp_CDemonSet_setGamma_FUN_00570d60,00570d60,core/set.cpp,24,3,pointer_
 core_set.cpp_SVDBox_dtor_FUN_005714a0,005714a0,core/set.cpp,4,0,,4
 core_set.cpp_CDemonSet_setCameraEnabled_FUN_00570ea0,00570ea0,core/set.cpp,5,0,,5
 core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0,00570df0,core/set.cpp,12,0,,12
-core_set.cpp_computeTriangleNormalIndexed_FUN_0056e2b0,0056e2b0,core/set.cpp,34,0,,34
+core_set.cpp_computeTriangleNormalIndexed_FUN_0056e2b0,0056e2b0,core/set.cpp,33,0,,33
 core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0,0056fbd0,core/set.cpp,166,10,displaced_global_access|unnamed_local,276
 core_set.cpp_CDemonSet_process_FUN_0056f940,0056f940,core/set.cpp,60,0,,60
 core_set.cpp_C3DSCamera_arrdtor_FUN_00571530,00571530,core/set.cpp,6,0,,6
@@ -3872,7 +3872,7 @@ core_set.cpp_CDemonSet_setCameraEnabledByGroup_FUN_00570ec0,00570ec0,core/set.cp
 core_set.cpp_CDemonSet_renderEnvMapBatchQuad_FUN_00570010,00570010,core/set.cpp,5,0,,5
 core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190,0056a190,core/set.cpp,102,0,,102
 core_set.cpp_CDemonSet_markMirrorCameraDirty_FUN_00570c60,00570c60,core/set.cpp,5,0,,5
-core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0,0056e3e0,core/set.cpp,53,2,pointer_cast|warning_inlined_function,83
+core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0,0056e3e0,core/set.cpp,54,2,pointer_cast|warning_inlined_function,84
 core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0,0056d4a0,core/set.cpp,261,17,displaced_global_access|pointer_cast|unnamed_local,446
 core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470,0056a470,core/set.cpp,160,9,pointer_cast|unnamed_local,260
 core_set.cpp_CDemonSet_buildMirrorList_FUN_00570b70,00570b70,core/set.cpp,39,0,,39
@@ -3885,7 +3885,7 @@ core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0,00570ca0,core/set.cpp,7,0,,7
 core_set.cpp_transformToWorldSpace_FUN_0056e890,0056e890,core/set.cpp,38,0,,38
 core_set.cpp_qsortByDisplayListEntry_FUN_0056fba0,0056fba0,core/set.cpp,10,0,,10
 core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0056e5d0,0056e5d0,core/set.cpp,93,0,,93
-core_set.cpp_computeTriangleNormal_FUN_0056e180,0056e180,core/set.cpp,34,0,,34
+core_set.cpp_computeTriangleNormal_FUN_0056e180,0056e180,core/set.cpp,33,0,,33
 core_set.cpp_CVector3f_equals_FUN_00571410,00571410,core/set.cpp,7,0,,7
 core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50,0056ae50,core/set.cpp,297,4,pointer_cast|warning_unable_to_use_type,347
 core_set.cpp_CDemonSet_renderPrimitiveList_FUN_005708e0,005708e0,core/set.cpp,30,0,,30
@@ -4142,7 +4142,7 @@ core_box.cpp_CBoundingBox3D_reset_FUN_00420fb0,00420fb0,core/box.cpp,12,0,,12
 core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840,00420840,core/box.cpp,24,0,,24
 core_box.cpp_CBoundingBox3D_render_FUN_004210b0,004210b0,core/box.cpp,134,0,,134
 core_box.cpp_CBox_updateTransform_FUN_0041e0e0,0041e0e0,core/box.cpp,91,0,,91
-core_box.cpp_CBox_processPhysics_FUN_0041e350,0041e350,core/box.cpp,779,6,param_count_too_many|pointer_cast,849
+core_box.cpp_CBox_processPhysics_FUN_0041e350,0041e350,core/box.cpp,779,12,param_count_too_many|pointer_cast|unnamed_local,914
 core_box.cpp_CBoundingBox3D_computeFromVertices_FUN_00420e90,00420e90,core/box.cpp,54,0,,54
 core_box.cpp_CBoundingBox3D_isInverted_FUN_00420fe0,00420fe0,core/box.cpp,8,0,,8
 core_box.cpp_CBox_dtor_FUN_0041dd00,0041dd00,core/box.cpp,6,0,,6
@@ -4245,7 +4245,7 @@ core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370,005c4370,core/stranger.cp
 core_stranger.cpp_getScaleY_FUN_005c695e,005c695e,core/stranger.cpp,4,0,,4
 core_stranger.cpp_CStranger_tryThrowDynamite_FUN_005c5e80,005c5e80,core/stranger.cpp,17,0,,17
 core_stranger.cpp_CStranger_reset_FUN_005c6750,005c6750,core/stranger.cpp,16,0,,16
-core_stranger.cpp_CStranger_autoAimAtThreat_FUN_005c3960,005c3960,core/stranger.cpp,269,0,,269
+core_stranger.cpp_CStranger_autoAimAtThreat_FUN_005c3960,005c3960,core/stranger.cpp,270,0,,270
 core_stranger.cpp_CStranger_setup_FUN_005bb4b0,005bb4b0,core/stranger.cpp,110,0,,110
 core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520,005be520,core/stranger.cpp,516,1,warning_inlined_function,531
 core_stranger.cpp_CStranger_updateTurnBlending_FUN_005bf800,005bf800,core/stranger.cpp,91,0,,91
@@ -4268,7 +4268,7 @@ core_stranger.cpp_CStranger_processFrame_FUN_005bb960,005bb960,core/stranger.cpp
 core_stranger.cpp_getWeaponHoldType_FUN_005bafa0,005bafa0,core/stranger.cpp,19,0,,19
 core_stranger.cpp_CStranger_process_FUN_005bb830,005bb830,core/stranger.cpp,46,0,,46
 core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20,005bdd20,core/stranger.cpp,275,1,warning_inlined_function,290
-core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270,005c5270,core/stranger.cpp,379,1,warning_unreachable,394
+core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270,005c5270,core/stranger.cpp,379,2,pointer_cast|warning_unreachable,409
 core_stranger.cpp_getWeaponInteractionType_FUN_005baf20,005baf20,core/stranger.cpp,26,0,,26
 core_stranger.cpp_blendWeightCallback_FUN_005baee0,005baee0,core/stranger.cpp,9,0,,9
 core_stranger.cpp_CStranger_processPickupComplete_FUN_005c1f00,005c1f00,core/stranger.cpp,21,0,,21
@@ -4467,7 +4467,7 @@ core_setcolid.cpp_CDemonSet_getVoxelHeight_FUN_005724e0,005724e0,core/setcolid.c
 core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_00574270,00574270,core/setcolid.cpp,9,0,,9
 core_setcolid.cpp_SDamageInfo_copy_FUN_005746d0,005746d0,core/setcolid.cpp,19,0,,19
 core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0,005742b0,core/setcolid.cpp,37,0,,37
-core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140,00573140,core/setcolid.cpp,83,0,,83
+core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140,00573140,core/setcolid.cpp,83,32,unnamed_local,408
 core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_00572460,00572460,core/setcolid.cpp,15,0,,15
 core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_005744d0,005744d0,core/setcolid.cpp,22,0,,22
 core_setcolid.cpp_SIntersectXZCylinder_ctor_FUN_005746b0,005746b0,core/setcolid.cpp,4,0,,4
@@ -4629,7 +4629,7 @@ core_skeleton.cpp_CDeformableModelInstance_allocPointList_FUN_0059deb0,0059deb0,
 core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0,005a01d0,core/skeleton.cpp,17,0,,17
 core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840,005a0840,core/skeleton.cpp,20,0,,20
 core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0,0059d9e0,core/skeleton.cpp,96,1,unnamed_local,111
-core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50,0059eb50,core/skeleton.cpp,199,7,pointer_cast|stack_alignment_array,279
+core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50,0059eb50,core/skeleton.cpp,199,13,pointer_cast|stack_alignment_array|unnamed_local,344
 core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070,0059a070,core/skeleton.cpp,31,0,,31
 core_skeleton.cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_005a0c90,005a0c90,core/skeleton.cpp,18,0,,18
 core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40,0059fb40,core/skeleton.cpp,90,4,pointer_cast,135
@@ -5002,7 +5002,7 @@ core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0,0042d3d0,core/charactr.cp
 core_charactr.cpp_staticInit_FUN_00427d80,00427d80,core/charactr.cpp,8,0,,8
 core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0,0042b9e0,core/charactr.cpp,74,0,,74
 core_charactr.cpp_CCharacter_detachBodyPart_FUN_0042bcc0,0042bcc0,core/charactr.cpp,15,0,,15
-core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40,00428f40,core/charactr.cpp,292,4,pointer_cast|raw_address_constant|stack_alignment_array,347
+core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40,00428f40,core/charactr.cpp,292,1,stack_alignment_array,307
 core_charactr.cpp_CCharacter_initGesture_FUN_0042d390,0042d390,core/charactr.cpp,12,0,,12
 core_charactr.cpp_getGameDeltaTime_FUN_0042f9e0,0042f9e0,core/charactr.cpp,4,0,,4
 core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70,0042ca70,core/charactr.cpp,107,0,,107
@@ -5993,7 +5993,7 @@ core_bodypart.cpp_CBodyPart_processFires_FUN_00419e10,00419e10,core/bodypart.cpp
 core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280,0041b280,core/bodypart.cpp,89,3,pointer_cast,124
 core_bodypart.cpp_CBodyPart_getActorType_FUN_00419000,00419000,core/bodypart.cpp,4,0,,4
 core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00419740,00419740,core/bodypart.cpp,28,0,,28
-core_bodypart.cpp_CBodyPart_process_FUN_00419be0,00419be0,core/bodypart.cpp,88,0,,88
+core_bodypart.cpp_CBodyPart_process_FUN_00419be0,00419be0,core/bodypart.cpp,88,2,unnamed_local,113
 core_bodypart.cpp_factoryFunc_FUN_00418fd0,00418fd0,core/bodypart.cpp,11,0,,11
 core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_0041b070,0041b070,core/bodypart.cpp,43,0,,43
 core_bodypart.cpp_SBodyPartModel_dtor_FUN_0041b680,0041b680,core/bodypart.cpp,4,0,,4

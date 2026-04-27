@@ -190,8 +190,8 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                     fVar12 = fVar6 * fVar7 - fVar13 * fVar5;
                     fVar5 = (float)iVar19 * fVar5 - fVar14 * fVar7;
                     fVar7 = fVar14 * fVar13 - (float)iVar19 * fVar6;
-                    fVar6 = (float)(g_LightAttenuationMax -
-                                   ((int)(fVar7 * fVar7 + fVar5 * fVar5 + fVar12 * fVar12) >> 1)) *
+                    fVar6 = core_cloth_cpp_fastInvSqrt_FUN_0043e2a0(
+                              fVar7 * fVar7 + fVar5 * fVar5 + fVar12 * fVar12) *
                             (float)65535;
                     puVar17 = puVar17 + 9;
                     iVar24 = iVar24 + 1;
@@ -246,9 +246,9 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                     fVar8 = (float)iVar16 * fVar5 - fVar12 * fVar7;
                     fVar11 = (float)iVar15 * fVar7 - fVar6 * fVar5;
                     fVar10 = fVar6 * fVar12 - (float)iVar15 * (float)iVar16;
-                    fVar9 = ((float)g_LightAttenuationMax -
-                            (fVar10 * fVar10 + fVar11 * fVar11 + fVar8 * fVar8) * 0.5f)
-                            * (float)65535;
+                    fVar9 = core_cloth_cpp_fastInvSqrt_FUN_0043e2a0(
+                              fVar10 * fVar10 + fVar11 * fVar11 + fVar8 * fVar8) *
+                            (float)65535;
                     *(float *)((int)pvVar14 + 8) = fVar8 * fVar9;
                     *(float *)((int)pvVar14 + 0xc) = fVar11 * fVar9;
                     *(float *)((int)pvVar14 + 0x10) = fVar10 * fVar9;
@@ -309,9 +309,9 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                   iVar24 = 0;
                   local_64 = 0;
                   do {
-                    fVar5 = ((float)g_LightAttenuationMax -
-                            (pCVar23->z * pCVar23->z +
-                             pCVar23->x * pCVar23->x + pCVar23->y * pCVar23->y) * 0.5f) *
+                    fVar5 = core_cloth_cpp_fastInvSqrt_FUN_0043e2a0(
+                              pCVar23->z * pCVar23->z +
+                              pCVar23->x * pCVar23->x + pCVar23->y * pCVar23->y) *
                             (float)65535;
                     pCVar23->x = pCVar23->x * fVar5;
                     pCVar23->y = pCVar23->y * fVar5;
@@ -340,10 +340,10 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                   do {
                     if (((1.0 <= ABS(pCVar22->x)) || (1.0 <= ABS(pCVar22->y))) ||
                        (1.0 <= ABS(pCVar22->z))) {
-                      fVar5 = (float)(g_LightAttenuationMax -
-                                     ((int)(pCVar22->z * pCVar22->z +
-                                           pCVar22->x * pCVar22->x + pCVar22->y * pCVar22->y) >> 1))
-                              * (float)65535;
+                      fVar5 = core_cloth_cpp_fastInvSqrt_FUN_0043e2a0(
+                                pCVar22->z * pCVar22->z +
+                                pCVar22->x * pCVar22->x + pCVar22->y * pCVar22->y) *
+                              (float)65535;
                       pCVar22->x = pCVar22->x * fVar5;
                       pCVar22->y = pCVar22->y * fVar5;
                       pCVar22->z = pCVar22->z * fVar5;
@@ -386,7 +386,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                   *(int *)((int)&g_TransformedVertexArray[0].x + local_5c) = local_130.x;
                   *(int *)((int)&g_TransformedVertexArray[0].y + local_5c) = local_130.y;
                   *(int *)((int)&g_TransformedVertexArray[0].z + local_5c) = local_130.z;
-                  local_5c = local_130.z + 0xc;
+                  local_5c = local_5c + 0xc;
                 } while (iVar19 < iVar24);
               }
               iVar24 = 0;

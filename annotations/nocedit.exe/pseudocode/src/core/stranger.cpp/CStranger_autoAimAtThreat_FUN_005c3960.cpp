@@ -9,7 +9,7 @@
 void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger *this_ptr,int hand_index,float delta_time)
 
 {
-  CCharacter *this_ptr_02;
+  CWeapon *this_ptr_02;
   CDemonActor *this_ptr_03;
   uint uVar4;
   EAimMode *pEVar5;
@@ -135,13 +135,14 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_005c3960(CStranger 
     local_24->target_yaw = 0.0;
   }
   else {
-    this_ptr_02 = (CCharacter *)this_ptr->weapon;
+    this_ptr_02 = this_ptr->weapon;
     EStack_7c = EVar1;
     EStack_78 = EVar1;
     EStack_74 = EVar1;
-    if ((this_ptr_02 != (CCharacter *)0x0) &&
-       (pEVar5 = (EAimMode *)(*(((this_ptr_02->base).vtable._uc)->_uc).canWalk)(this_ptr_02),
-       &EStack_7c != pEVar5)) {
+    if ((this_ptr_02 != (CWeapon *)0x0) &&
+       (pEVar5 = (EAimMode *)
+                 (*(((this_ptr_02->base).vtable._uw)->_uw).getMuzzlePoint)
+                           (this_ptr_02,aCStack_f4 + 1), &EStack_7c != pEVar5)) {
       EStack_7c = *pEVar5;
       EStack_78 = pEVar5[1];
       EStack_74 = pEVar5[2];

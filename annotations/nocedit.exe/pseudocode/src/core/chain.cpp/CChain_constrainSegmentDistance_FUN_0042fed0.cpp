@@ -36,7 +36,7 @@ void __cdecl core_chain_cpp_CChain_constrainSegmentDistance_FUN_0042fed0(CChain 
     local_30 = (vertex_a->position).z - (vertex_b->position).z;
   }
   fVar6 = (float)(((int)(local_30 * local_30 + local_38 * local_38 + local_34 * local_34) >> 1) +
-                 INT_02d7a7b8);
+                 g_FastSqrtMagic);
   if (fVar6 <= this_ptr->segment_length) {
     return;
   }

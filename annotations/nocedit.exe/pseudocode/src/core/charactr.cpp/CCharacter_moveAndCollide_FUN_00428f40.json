@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 663,
-    "complexity_score": 347,
+    "complexity_score": 307,
     "cross_reference_count": 36,
     "function_call_count": 7,
     "global_count": 24,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 292,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "raw_address_constant",
       "stack_alignment_array"
     ],
     "total_lines": 955
@@ -496,6 +494,15 @@
       "type": "unknown_field"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 108,
+      "match": "(SMotion *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar12 = (SMotion *)((int)pSVar12 + (uint)bVar14 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 117,
       "match": "._8_4_",
@@ -776,23 +783,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CCharacter_moveAndCollide_FUN_00428f40.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 15,
-          "line": 118,
-          "message": "Redundant assignment of 'pSVar12' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
@@ -801,32 +791,6 @@
       "severity": "moderate",
       "text": "float afStackY_106c [991];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 108,
-      "match": "(SMotion *)((int)",
-      "severity": "moderate",
-      "text": "pSVar12 = (SMotion *)((int)pSVar12 + (uint)bVar14 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Raw hex literal 0x6e6f69 matches address of g_RenderVertexBuffer (+388949 bytes into) (type SRenderVertex[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "introduced_by": "keep",
-      "line": 110,
-      "match": "0x6e6f69",
-      "severity": "moderate",
-      "text": "uVar10 = 0x006e6f69;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x6e6f69 matches address of g_RenderVertexBuffer (+388949 bytes into) (type SRenderVertex[20000]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "introduced_by": "keep",
-      "line": 125,
-      "match": "0x6e6f69",
-      "severity": "moderate",
-      "text": "if (-1 < (int)0x006e6f69) {",
-      "type": "raw_address_constant"
     }
   ]
 }

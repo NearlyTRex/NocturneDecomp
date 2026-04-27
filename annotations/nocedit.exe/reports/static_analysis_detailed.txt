@@ -5,307 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (324 diagnostics)
+Cppcheck (quick) (343 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (73)
-----------------------------------------------------------------------------------------------------
-
-  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 163
-    File: cockpit/ckptutil.c
-    Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.
-
-  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 270
-    File: cockpit/ckptutil.c
-    Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 53
-    File: cockpit/pkbitmap.cpp
-    Redundant assignment of 'pbVar5' to itself.
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 54
-    File: cockpit/pkbitmap.cpp
-    Redundant assignment of 'pbVar6' to itself.
-
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 89
-    File: core/actor.cpp
-    Redundant assignment of 'pCVar6' to itself.
-
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 120
-    File: core/actor.cpp
-    Redundant assignment of 'pCVar7' to itself.
-
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 121
-    File: core/actor.cpp
-    Redundant assignment of 'pcVar8' to itself.
-
-  core_bodypart.cpp_CBodyPart_initializeInEditor_FUN line 46
-    File: core/bodypart.cpp
-    Redundant assignment of 'iVar3' to itself.
-
-  core_charactr.cpp_CCharacter_moveAndCollide_FUN_00 line 118
-    File: core/charactr.cpp
-    Redundant assignment of 'pSVar12' to itself.
-
-  core_charactr.cpp_CCharacter_setup_FUN_00428140    line 91
-    File: core/charactr.cpp
-    Redundant assignment of 'pCVar4' to itself.
-
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 244
-    File: core/dcamera.cpp
-    Redundant assignment of 'piVar27' to itself.
-
-  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 417
-    File: core/dcamera.cpp
-    Redundant assignment of 'iVar16' to itself.
-
-  core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_ line 115
-    File: core/dcamera.cpp
-    Redundant assignment of 'pCVar3' to itself.
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 513
-    File: core/dmodel.cpp
-    Redundant assignment of 'pCVar13' to itself.
-
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 518
-    File: core/dmodel.cpp
-    Redundant assignment of 'pCVar13' to itself.
-
-  core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 line 271
-    File: core/game.cpp
-    Redundant assignment of 'iVar19' to itself.
-
-  core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 line 1719
-    File: core/game.cpp
-    Redundant assignment of 'pbVar21' to itself.
-
-  core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc line 113
-    File: core/mimic.cpp
-    Redundant assignment of 'pCVar9' to itself.
-
-  core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc line 114
-    File: core/mimic.cpp
-    Redundant assignment of 'pCVar10' to itself.
-
-  core_mimic.cpp_CMimic_setupCloth_FUN_00520500      line 46
-    File: core/mimic.cpp
-    Redundant assignment of 'piVar4' to itself.
-
-  core_mimic.cpp_CMimic_setupCloth_FUN_00520500      line 47
-    File: core/mimic.cpp
-    Redundant assignment of 'pSVar5' to itself.
-
-  core_msnedit.cpp_CDemonMission_replicateActor_FUN_ line 143
-    File: core/msnedit.cpp
-    Redundant assignment of 'pCVar5' to itself.
-
-  core_script.cpp_parseCommandWithTemplates_FUN_0056 line 52
-    File: core/script.cpp
-    Redundant assignment of 'pCVar6' to itself.
-
-  core_script.cpp_parseCommandWithTemplates_FUN_0056 line 53
-    File: core/script.cpp
-    Redundant assignment of 'pCVar9' to itself.
-
-  core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fb line 146
-    File: core/set.cpp
-    Redundant assignment of 'pCVar12' to itself.
-
-  core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 line 567
-    File: core/set.cpp
-    Redundant assignment of 'iVar13' to itself.
-
-  core_setedit.cpp_CDemonSet_showCameraEditor_FUN_00 line 248
-    File: core/setedit.cpp
-    Redundant assignment of 'pbVar16' to itself.
-
-  core_setedit.cpp_CDemonSet_showCameraEditor_FUN_00 line 253
-    File: core/setedit.cpp
-    Redundant assignment of 'pbVar16' to itself.
-
-  core_setedit.cpp_CDemonSet_showCameraEditor_FUN_00 line 382
-    File: core/setedit.cpp
-    Redundant assignment of 'pCVar18' to itself.
-
-  core_setedit.cpp_loadCameraThumbnail_FUN_005769a0  line 146
-    File: core/setedit.cpp
-    Redundant assignment of 'iVar2' to itself.
-
-  core_skeledit.cpp_CBoneStructure_readBONheader_FUN line 194
-    File: core/skeledit.cpp
-    Redundant assignment of 'pSVar11' to itself.
-
-  core_skeledit.cpp_CBoneStructure_readBONheader_FUN line 195
-    File: core/skeledit.cpp
-    Redundant assignment of 'pSVar14' to itself.
-
-  core_skeledit.cpp_CBoneStructure_readBONheader_FUN line 202
-    File: core/skeledit.cpp
-    Redundant assignment of 'puVar12' to itself.
-
-  core_skeledit.cpp_CDeformableModel_buildFromPosFil line 524
-    File: core/skeledit.cpp
-    Redundant assignment of 'pSVar17' to itself.
-
-  core_skeledit.cpp_CDeformableModel_buildFromPosFil line 525
-    File: core/skeledit.cpp
-    Redundant assignment of 'pSVar21' to itself.
-
-  core_skeledit.cpp_CDeformableModel_buildFromPosFil line 606
-    File: core/skeledit.cpp
-    Redundant assignment of 'pCVar8' to itself.
-
-  core_skeledit.cpp_CDeformableModel_determinePartsF line 1170
-    File: core/skeledit.cpp
-    Redundant assignment of 'piVar35' to itself.
-
-  core_water.cpp_CWater_calculateVisibleTiles_FUN_00 line 54
-    File: core/water.cpp
-    Redundant assignment of 'iVar2' to itself.
-
-  core_xform.cpp_clipPolygonStage1_FUN_005f7ed0      line 75
-    File: core/xform.cpp
-    Redundant assignment of 'iVar5' to itself.
-
-  core_xform.cpp_clipPolygonStage2_FUN_005f8040      line 75
-    File: core/xform.cpp
-    Redundant assignment of 'iVar5' to itself.
-
-  core_xform.cpp_clipPolygonStage3_FUN_005f81c0      line 75
-    File: core/xform.cpp
-    Redundant assignment of 'iVar5' to itself.
-
-  core_xform.cpp_clipPolygonStage4_FUN_005f8330      line 75
-    File: core/xform.cpp
-    Redundant assignment of 'iVar5' to itself.
-
-  engine_colquant.c_quantizeColors_FUN_004406c0      line 136
-    File: engine/colquant.c
-    Redundant assignment of 'pSVar14' to itself.
-
-  engine_colquant.c_quantizeColors_FUN_004406c0      line 137
-    File: engine/colquant.c
-    Redundant assignment of 'pSVar16' to itself.
-
-  engine_colquant.c_quantizeColors_FUN_004406c0      line 144
-    File: engine/colquant.c
-    Redundant assignment of 'puVar15' to itself.
-
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_0 line 96
-    File: engine/fileio.cpp
-    Redundant assignment of 'pSVar8' to itself.
-
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_0 line 101
-    File: engine/fileio.cpp
-    Redundant assignment of 'pSVar8' to itself.
-
-  engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60 line 52
-    File: engine/fileio.cpp
-    Redundant assignment of 'pCVar5' to itself.
-
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_ line 175
-    File: engine/fileio.cpp
-    Redundant assignment of 'pSVar10' to itself.
-
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_ line 180
-    File: engine/fileio.cpp
-    Redundant assignment of 'pSVar10' to itself.
-
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 186
-    File: engine/fileio.cpp
-    Redundant assignment of 'puVar15' to itself.
-
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 543
-    File: engine/fileio.cpp
-    Redundant assignment of 'puVar13' to itself.
-
-  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 544
-    File: engine/fileio.cpp
-    Redundant assignment of 'pCVar18' to itself.
-
-  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 110
-    File: engine/fileio.cpp
-    Redundant assignment of 'puVar7' to itself.
-
-  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 129
-    File: engine/fileio.cpp
-    Redundant assignment of 'puVar5' to itself.
-
-  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 130
-    File: engine/fileio.cpp
-    Redundant assignment of 'pCVar8' to itself.
-
-  engine_fileio.cpp_CFileManager_viewPodAuditTrail_F line 94
-    File: engine/fileio.cpp
-    Redundant assignment of 'piVar5' to itself.
-
-  engine_fileio.cpp_CFileManager_viewPodAuditTrail_F line 95
-    File: engine/fileio.cpp
-    Redundant assignment of 'piVar7' to itself.
-
-  shape_design.c_configureSinglePassPolygonReduction line 103
-    File: shape/design.c
-    Redundant assignment of 'pbVar4' to itself.
-
-  shape_design.c_configureSinglePassPolygonReduction line 108
-    File: shape/design.c
-    Redundant assignment of 'pbVar4' to itself.
-
-  shape_design.c_generateOctant_FUN_00469420         line 83
-    File: shape/design.c
-    Redundant assignment of 'pcVar4' to itself.
-
-  shape_design.c_mergeTrianglesIntoQuad_FUN_00462190 line 205
-    File: shape/design.c
-    Redundant assignment of 'pSVar5' to itself.
-
-  shape_design.c_mergeTrianglesIntoQuad_FUN_00462190 line 206
-    File: shape/design.c
-    Redundant assignment of 'pSVar6' to itself.
-
-  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 142
-    File: shape/design.c
-    Redundant assignment of 'pSVar5' to itself.
-
-  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 143
-    File: shape/design.c
-    Redundant assignment of 'pSVar8' to itself.
-
-  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 156
-    File: shape/design.c
-    Redundant assignment of 'pSVar6' to itself.
-
-  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 157
-    File: shape/design.c
-    Redundant assignment of 'pSVar9' to itself.
-
-  shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 578
-    File: shape/design.c
-    Redundant assignment of 'pSVar5' to itself.
-
-  shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 579
-    File: shape/design.c
-    Redundant assignment of 'pSVar6' to itself.
-
-  shape_design.c_vertexReducer_FUN_00467850          line 202
-    File: shape/design.c
-    Redundant assignment of 'pbVar5' to itself.
-
-  shape_design.c_vertexReducer_FUN_00467850          line 207
-    File: shape/design.c
-    Redundant assignment of 'pbVar5' to itself.
-
-  shape_superopt.cpp_CComplexPolygon_findBestSplitEd line 72
-    File: shape/superopt.cpp
-    Redundant assignment of 'pdVar4' to itself.
-
-  shape_superopt.cpp_CComplexPolygon_findReflexVerte line 73
-    File: shape/superopt.cpp
-    Redundant assignment of 'pdVar4' to itself.
-
-----------------------------------------------------------------------------------------------------
-uninitvar (68)
+uninitvar (75)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 71
@@ -315,6 +19,30 @@ uninitvar (68)
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 90
     File: core/actor.cpp
     Uninitialized variable: local_34
+
+  core_cloth.cpp_CCloth_applyConstraints_FUN_0043a42 line 113
+    File: core/cloth.cpp
+    Uninitialized variable: local_74
+
+  core_cloth.cpp_CCloth_applyConstraints_FUN_0043a42 line 113
+    File: core/cloth.cpp
+    Uninitialized variable: local_7c
+
+  core_cloth.cpp_CCloth_applyConstraints_FUN_0043a42 line 113
+    File: core/cloth.cpp
+    Uninitialized variable: local_78
+
+  core_cloth.cpp_CCloth_applyConstraints_FUN_0043a42 line 171
+    File: core/cloth.cpp
+    Uninitialized variable: local_b0
+
+  core_cloth.cpp_CCloth_applyConstraints_FUN_0043a42 line 172
+    File: core/cloth.cpp
+    Uninitialized variable: local_b8
+
+  core_cloth.cpp_CCloth_applyConstraints_FUN_0043a42 line 173
+    File: core/cloth.cpp
+    Uninitialized variable: local_b4
 
   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880      line 242
     File: core/cloth.cpp
@@ -335,6 +63,10 @@ uninitvar (68)
   core_fire.cpp_CFireEffect_createBulletImpact_FUN_0 line 46
     File: core/fire.cpp
     Uninitialized variable: fStack_28
+
+  core_flame.cpp_CFlame_renderTransparent_FUN_004ca1 line 124
+    File: core/flame.cpp
+    Uninitialized variable: fStack_1c
 
   core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 156
     File: core/ghoul.cpp
@@ -579,6 +311,306 @@ uninitvar (68)
   sound_sndmain.cpp_testSoundFile_FUN_005ad3b0       line 32
     File: sound/sndmain.cpp
     Uninitialized variable: local_60
+
+----------------------------------------------------------------------------------------------------
+selfAssignment (74)
+----------------------------------------------------------------------------------------------------
+
+  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 163
+    File: cockpit/ckptutil.c
+    Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.
+
+  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 270
+    File: cockpit/ckptutil.c
+    Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 53
+    File: cockpit/pkbitmap.cpp
+    Redundant assignment of 'pbVar5' to itself.
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 54
+    File: cockpit/pkbitmap.cpp
+    Redundant assignment of 'pbVar6' to itself.
+
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 89
+    File: core/actor.cpp
+    Redundant assignment of 'pCVar6' to itself.
+
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 120
+    File: core/actor.cpp
+    Redundant assignment of 'pCVar7' to itself.
+
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 121
+    File: core/actor.cpp
+    Redundant assignment of 'pcVar8' to itself.
+
+  core_bodypart.cpp_CBodyPart_initializeInEditor_FUN line 46
+    File: core/bodypart.cpp
+    Redundant assignment of 'iVar3' to itself.
+
+  core_charactr.cpp_CCharacter_setup_FUN_00428140    line 91
+    File: core/charactr.cpp
+    Redundant assignment of 'pCVar4' to itself.
+
+  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 244
+    File: core/dcamera.cpp
+    Redundant assignment of 'piVar27' to itself.
+
+  core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 417
+    File: core/dcamera.cpp
+    Redundant assignment of 'iVar16' to itself.
+
+  core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_ line 115
+    File: core/dcamera.cpp
+    Redundant assignment of 'pCVar3' to itself.
+
+  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 513
+    File: core/dmodel.cpp
+    Redundant assignment of 'pCVar13' to itself.
+
+  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 518
+    File: core/dmodel.cpp
+    Redundant assignment of 'pCVar13' to itself.
+
+  core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 line 271
+    File: core/game.cpp
+    Redundant assignment of 'iVar19' to itself.
+
+  core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 line 1719
+    File: core/game.cpp
+    Redundant assignment of 'pbVar21' to itself.
+
+  core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc line 113
+    File: core/mimic.cpp
+    Redundant assignment of 'pCVar9' to itself.
+
+  core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc line 114
+    File: core/mimic.cpp
+    Redundant assignment of 'pCVar10' to itself.
+
+  core_mimic.cpp_CMimic_setupCloth_FUN_00520500      line 46
+    File: core/mimic.cpp
+    Redundant assignment of 'piVar4' to itself.
+
+  core_mimic.cpp_CMimic_setupCloth_FUN_00520500      line 47
+    File: core/mimic.cpp
+    Redundant assignment of 'pSVar5' to itself.
+
+  core_msnedit.cpp_CDemonMission_replicateActor_FUN_ line 143
+    File: core/msnedit.cpp
+    Redundant assignment of 'pCVar5' to itself.
+
+  core_script.cpp_parseCommandWithTemplates_FUN_0056 line 52
+    File: core/script.cpp
+    Redundant assignment of 'pCVar6' to itself.
+
+  core_script.cpp_parseCommandWithTemplates_FUN_0056 line 53
+    File: core/script.cpp
+    Redundant assignment of 'pCVar9' to itself.
+
+  core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fb line 146
+    File: core/set.cpp
+    Redundant assignment of 'pCVar12' to itself.
+
+  core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 line 567
+    File: core/set.cpp
+    Redundant assignment of 'iVar13' to itself.
+
+  core_setedit.cpp_CDemonSet_showCameraEditor_FUN_00 line 248
+    File: core/setedit.cpp
+    Redundant assignment of 'pbVar16' to itself.
+
+  core_setedit.cpp_CDemonSet_showCameraEditor_FUN_00 line 253
+    File: core/setedit.cpp
+    Redundant assignment of 'pbVar16' to itself.
+
+  core_setedit.cpp_CDemonSet_showCameraEditor_FUN_00 line 382
+    File: core/setedit.cpp
+    Redundant assignment of 'pCVar18' to itself.
+
+  core_setedit.cpp_loadCameraThumbnail_FUN_005769a0  line 146
+    File: core/setedit.cpp
+    Redundant assignment of 'iVar2' to itself.
+
+  core_skeledit.cpp_CBoneStructure_readBONheader_FUN line 194
+    File: core/skeledit.cpp
+    Redundant assignment of 'pSVar11' to itself.
+
+  core_skeledit.cpp_CBoneStructure_readBONheader_FUN line 195
+    File: core/skeledit.cpp
+    Redundant assignment of 'pSVar14' to itself.
+
+  core_skeledit.cpp_CBoneStructure_readBONheader_FUN line 202
+    File: core/skeledit.cpp
+    Redundant assignment of 'puVar12' to itself.
+
+  core_skeledit.cpp_CDeformableModel_buildFromPosFil line 524
+    File: core/skeledit.cpp
+    Redundant assignment of 'pSVar17' to itself.
+
+  core_skeledit.cpp_CDeformableModel_buildFromPosFil line 525
+    File: core/skeledit.cpp
+    Redundant assignment of 'pSVar21' to itself.
+
+  core_skeledit.cpp_CDeformableModel_buildFromPosFil line 606
+    File: core/skeledit.cpp
+    Redundant assignment of 'pCVar8' to itself.
+
+  core_skeledit.cpp_CDeformableModel_determinePartsF line 1170
+    File: core/skeledit.cpp
+    Redundant assignment of 'piVar35' to itself.
+
+  core_svetlana.cpp_CSvetlana_renderOpaque_FUN_005d9 line 34
+    File: core/svetlana.cpp
+    Redundant assignment of 'iVar3' to itself.
+
+  core_svetlana.cpp_CSvetlana_renderOpaque_FUN_005d9 line 43
+    File: core/svetlana.cpp
+    Redundant assignment of 'pCVar5' to itself.
+
+  core_water.cpp_CWater_calculateVisibleTiles_FUN_00 line 54
+    File: core/water.cpp
+    Redundant assignment of 'iVar2' to itself.
+
+  core_xform.cpp_clipPolygonStage1_FUN_005f7ed0      line 75
+    File: core/xform.cpp
+    Redundant assignment of 'iVar5' to itself.
+
+  core_xform.cpp_clipPolygonStage2_FUN_005f8040      line 75
+    File: core/xform.cpp
+    Redundant assignment of 'iVar5' to itself.
+
+  core_xform.cpp_clipPolygonStage3_FUN_005f81c0      line 75
+    File: core/xform.cpp
+    Redundant assignment of 'iVar5' to itself.
+
+  core_xform.cpp_clipPolygonStage4_FUN_005f8330      line 75
+    File: core/xform.cpp
+    Redundant assignment of 'iVar5' to itself.
+
+  engine_colquant.c_quantizeColors_FUN_004406c0      line 136
+    File: engine/colquant.c
+    Redundant assignment of 'pSVar14' to itself.
+
+  engine_colquant.c_quantizeColors_FUN_004406c0      line 137
+    File: engine/colquant.c
+    Redundant assignment of 'pSVar16' to itself.
+
+  engine_colquant.c_quantizeColors_FUN_004406c0      line 144
+    File: engine/colquant.c
+    Redundant assignment of 'puVar15' to itself.
+
+  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_0 line 96
+    File: engine/fileio.cpp
+    Redundant assignment of 'pSVar8' to itself.
+
+  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_0 line 101
+    File: engine/fileio.cpp
+    Redundant assignment of 'pSVar8' to itself.
+
+  engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60 line 52
+    File: engine/fileio.cpp
+    Redundant assignment of 'pCVar5' to itself.
+
+  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_ line 175
+    File: engine/fileio.cpp
+    Redundant assignment of 'pSVar10' to itself.
+
+  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_ line 180
+    File: engine/fileio.cpp
+    Redundant assignment of 'pSVar10' to itself.
+
+  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 186
+    File: engine/fileio.cpp
+    Redundant assignment of 'puVar15' to itself.
+
+  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 543
+    File: engine/fileio.cpp
+    Redundant assignment of 'puVar13' to itself.
+
+  engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_ line 544
+    File: engine/fileio.cpp
+    Redundant assignment of 'pCVar18' to itself.
+
+  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 110
+    File: engine/fileio.cpp
+    Redundant assignment of 'puVar7' to itself.
+
+  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 129
+    File: engine/fileio.cpp
+    Redundant assignment of 'puVar5' to itself.
+
+  engine_fileio.cpp_CFileManager_removeAuditRecords_ line 130
+    File: engine/fileio.cpp
+    Redundant assignment of 'pCVar8' to itself.
+
+  engine_fileio.cpp_CFileManager_viewPodAuditTrail_F line 94
+    File: engine/fileio.cpp
+    Redundant assignment of 'piVar5' to itself.
+
+  engine_fileio.cpp_CFileManager_viewPodAuditTrail_F line 95
+    File: engine/fileio.cpp
+    Redundant assignment of 'piVar7' to itself.
+
+  shape_design.c_configureSinglePassPolygonReduction line 103
+    File: shape/design.c
+    Redundant assignment of 'pbVar4' to itself.
+
+  shape_design.c_configureSinglePassPolygonReduction line 108
+    File: shape/design.c
+    Redundant assignment of 'pbVar4' to itself.
+
+  shape_design.c_generateOctant_FUN_00469420         line 83
+    File: shape/design.c
+    Redundant assignment of 'pcVar4' to itself.
+
+  shape_design.c_mergeTrianglesIntoQuad_FUN_00462190 line 205
+    File: shape/design.c
+    Redundant assignment of 'pSVar5' to itself.
+
+  shape_design.c_mergeTrianglesIntoQuad_FUN_00462190 line 206
+    File: shape/design.c
+    Redundant assignment of 'pSVar6' to itself.
+
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 142
+    File: shape/design.c
+    Redundant assignment of 'pSVar5' to itself.
+
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 143
+    File: shape/design.c
+    Redundant assignment of 'pSVar8' to itself.
+
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 156
+    File: shape/design.c
+    Redundant assignment of 'pSVar6' to itself.
+
+  shape_design.c_mouseWheelPolygonReducer_FUN_004648 line 157
+    File: shape/design.c
+    Redundant assignment of 'pSVar9' to itself.
+
+  shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 578
+    File: shape/design.c
+    Redundant assignment of 'pSVar5' to itself.
+
+  shape_design.c_showFacetPartEditor_FUN_0045f1d0    line 579
+    File: shape/design.c
+    Redundant assignment of 'pSVar6' to itself.
+
+  shape_design.c_vertexReducer_FUN_00467850          line 202
+    File: shape/design.c
+    Redundant assignment of 'pbVar5' to itself.
+
+  shape_design.c_vertexReducer_FUN_00467850          line 207
+    File: shape/design.c
+    Redundant assignment of 'pbVar5' to itself.
+
+  shape_superopt.cpp_CComplexPolygon_findBestSplitEd line 72
+    File: shape/superopt.cpp
+    Redundant assignment of 'pdVar4' to itself.
+
+  shape_superopt.cpp_CComplexPolygon_findReflexVerte line 73
+    File: shape/superopt.cpp
+    Redundant assignment of 'pdVar4' to itself.
 
 ----------------------------------------------------------------------------------------------------
 shiftTooManyBitsSigned (41)
@@ -917,7 +949,7 @@ invalidscanf (41)
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-legacyUninitvar (36)
+legacyUninitvar (38)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 59
@@ -943,6 +975,22 @@ legacyUninitvar (36)
   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 63
     File: cockpit/pkbitmap.cpp
     Uninitialized variable: local_14
+
+  core_box.cpp_CBox_processPhysics_FUN_0041e350      line 367
+    File: core/box.cpp
+    Uninitialized variable: local_3d0
+
+  core_box.cpp_CBox_processPhysics_FUN_0041e350      line 722
+    File: core/box.cpp
+    Uninitialized variable: local_380
+
+  core_box.cpp_CBox_processPhysics_FUN_0041e350      line 723
+    File: core/box.cpp
+    Uninitialized variable: local_37c
+
+  core_box.cpp_CBox_processPhysics_FUN_0041e350      line 725
+    File: core/box.cpp
+    Uninitialized variable: local_378
 
   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 698
     File: core/dmodel.cpp
@@ -1020,14 +1068,6 @@ legacyUninitvar (36)
     File: core/skeledit.cpp
     Uninitialized variable: local_38
 
-  core_skeleton.cpp_CDeformableModelInstance_blendMo line 121
-    File: core/skeleton.cpp
-    Uninitialized variable: afStack_120[0]
-
-  core_skeleton.cpp_CDeformableModelInstance_blendMo line 135
-    File: core/skeleton.cpp
-    Uninitialized variable: afStack_f0
-
   core_sound.cpp_updateListeners_FUN_005b1870        line 116
     File: core/sound.cpp
     Uninitialized variable: local_c8
@@ -1065,16 +1105,32 @@ legacyUninitvar (36)
     Uninitialized variable: local_64
 
 ----------------------------------------------------------------------------------------------------
-invalidPointerCast (14)
+invalidPointerCast (19)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 276
     File: core/actor.cpp
     Casting between signed int * and float * which have an incompatible binary data representation.
 
+  core_chain.cpp_fastSqrt_FUN_00431350               line 13
+    File: core/chain.cpp
+    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+
+  core_chain.cpp_fastSqrt_FUN_00431350               line 14
+    File: core/chain.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
+
+  core_cloth.cpp_fastInvSqrt_FUN_0043e2a0            line 13
+    File: core/cloth.cpp
+    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+
+  core_cloth.cpp_fastInvSqrt_FUN_0043e2a0            line 14
+    File: core/cloth.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
+
   core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 683
     File: core/ghoul.cpp
-    Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+    Casting between signed int * and float * which have an incompatible binary data representation.
 
   core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 684
     File: core/ghoul.cpp
@@ -1123,6 +1179,10 @@ invalidPointerCast (14)
   core_skeleton.cpp_CDeformableModelInstance_compute line 40
     File: core/skeleton.cpp
     Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+
+  core_stranger.cpp_CStranger_updateWeaponLayerActio line 233
+    File: core/stranger.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 objectIndex (12)
@@ -1225,6 +1285,38 @@ nullPointerRedundantCheck (11)
     Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
 
 ----------------------------------------------------------------------------------------------------
+ignoredReturnValue (7)
+----------------------------------------------------------------------------------------------------
+
+  core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004 line 85
+    File: core/dirmat.cpp
+    Return value of function acos() is not used.
+
+  core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004 line 99
+    File: core/dirmat.cpp
+    Return value of function asin() is not used.
+
+  core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004 line 121
+    File: core/dirmat.cpp
+    Return value of function acos() is not used.
+
+  core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004 line 135
+    File: core/dirmat.cpp
+    Return value of function asin() is not used.
+
+  core_xform.cpp_matrixToEulerAngles_FUN_005f5690    line 132
+    File: core/xform.cpp
+    Return value of function asin() is not used.
+
+  core_xform.cpp_matrixToEulerAngles_FUN_005f5690    line 159
+    File: core/xform.cpp
+    Return value of function acos() is not used.
+
+  core_xform.cpp_matrixToEulerAngles_FUN_005f5690    line 173
+    File: core/xform.cpp
+    Return value of function asin() is not used.
+
+----------------------------------------------------------------------------------------------------
 identicalInnerCondition (6)
 ----------------------------------------------------------------------------------------------------
 
@@ -1307,22 +1399,6 @@ invalidScanfArgType_int (3)
   sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30 line 49
     File: sound/mp3.cpp
     %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
-
-----------------------------------------------------------------------------------------------------
-ignoredReturnValue (3)
-----------------------------------------------------------------------------------------------------
-
-  core_xform.cpp_matrixToEulerAngles_FUN_005f5690    line 132
-    File: core/xform.cpp
-    Return value of function asin() is not used.
-
-  core_xform.cpp_matrixToEulerAngles_FUN_005f5690    line 159
-    File: core/xform.cpp
-    Return value of function acos() is not used.
-
-  core_xform.cpp_matrixToEulerAngles_FUN_005f5690    line 173
-    File: core/xform.cpp
-    Return value of function asin() is not used.
 
 ----------------------------------------------------------------------------------------------------
 arrayIndexOutOfBounds (2)

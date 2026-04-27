@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 115
-  Total diagnostics: 324
+  Functions with findings: 121
+  Total diagnostics: 343
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 115, raw .cpp files: 0
+  .keep.cpp files: 121, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -177,6 +177,17 @@ core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80  [.keep] [Cppc
   Line  121: [selfAssignment] Redundant assignment of 'pcVar8' to itself.
 
 ----------------------------------------------------------------------------------------------------
+core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420  [.keep] [Cppcheck (quick)]
+  File: core/cloth.cpp  (6 diagnostics)
+
+  Line  113: [uninitvar] Uninitialized variable: local_74
+  Line  113: [uninitvar] Uninitialized variable: local_7c
+  Line  113: [uninitvar] Uninitialized variable: local_78
+  Line  171: [uninitvar] Uninitialized variable: local_b0
+  Line  172: [uninitvar] Uninitialized variable: local_b8
+  Line  173: [uninitvar] Uninitialized variable: local_b4
+
+----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0  [.keep] [Cppcheck (quick)]
   File: core/dcamera.cpp  (6 diagnostics)
 
@@ -270,12 +281,30 @@ core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0  [.keep] [Cppcheck (q
   Line  443: [objectIndex] The address of local variable 'local_110' is accessed at non-zero index.
 
 ----------------------------------------------------------------------------------------------------
+core_box.cpp_CBox_processPhysics_FUN_0041e350  [.keep] [Cppcheck (quick)]
+  File: core/box.cpp  (4 diagnostics)
+
+  Line  367: [legacyUninitvar] Uninitialized variable: local_3d0
+  Line  722: [legacyUninitvar] Uninitialized variable: local_380
+  Line  723: [legacyUninitvar] Uninitialized variable: local_37c
+  Line  725: [legacyUninitvar] Uninitialized variable: local_378
+
+----------------------------------------------------------------------------------------------------
+core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160  [.keep] [Cppcheck (quick)]
+  File: core/dirmat.cpp  (4 diagnostics)
+
+  Line   85: [ignoredReturnValue] Return value of function acos() is not used.
+  Line   99: [ignoredReturnValue] Return value of function asin() is not used.
+  Line  121: [ignoredReturnValue] Return value of function acos() is not used.
+  Line  135: [ignoredReturnValue] Return value of function asin() is not used.
+
+----------------------------------------------------------------------------------------------------
 core_ghoul.cpp_CGhoul_process_FUN_004e6600  [.keep] [Cppcheck (quick)]
   File: core/ghoul.cpp  (4 diagnostics)
 
   Line  156: [uninitvar] Uninitialized variable: local_1c0
   Line  159: [uninitvar] Uninitialized variable: local_1c4
-  Line  683: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+  Line  683: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
   Line  684: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
@@ -450,11 +479,25 @@ cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20  [.keep] [C
   Line   40: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
+core_chain.cpp_fastSqrt_FUN_00431350  [.keep] [Cppcheck (quick)]
+  File: core/chain.cpp  (2 diagnostics)
+
+  Line   13: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+  Line   14: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
+
+----------------------------------------------------------------------------------------------------
 core_cloth.cpp_CCloth_setup_FUN_00439710  [.keep] [Cppcheck (quick)]
   File: core/cloth.cpp  (2 diagnostics)
 
   Line  128: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line  129: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+core_cloth.cpp_fastInvSqrt_FUN_0043e2a0  [.keep] [Cppcheck (quick)]
+  File: core/cloth.cpp  (2 diagnostics)
+
+  Line   13: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+  Line   14: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044f310  [.keep] [Cppcheck (quick)]
@@ -527,11 +570,11 @@ core_skeledit.cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0  [.keep] [Cppch
   Line   19: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50  [.keep] [Cppcheck (quick)]
-  File: core/skeleton.cpp  (2 diagnostics)
+core_svetlana.cpp_CSvetlana_renderOpaque_FUN_005d9bc0  [.keep] [Cppcheck (quick)]
+  File: core/svetlana.cpp  (2 diagnostics)
 
-  Line  121: [legacyUninitvar] Uninitialized variable: afStack_120[0]
-  Line  135: [legacyUninitvar] Uninitialized variable: afStack_f0
+  Line   34: [selfAssignment] Redundant assignment of 'iVar3' to itself.
+  Line   43: [selfAssignment] Redundant assignment of 'pCVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_vampboss.cpp_CVampireBoss_process_FUN_005e5970  [.keep] [Cppcheck (quick)]
@@ -636,12 +679,6 @@ core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940  [.keep] [Cppcheck (qu
   Line  171: [compareBoolExpressionWithInt] Comparison of a boolean expression with an integer other than 0 or 1.
 
 ----------------------------------------------------------------------------------------------------
-core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40  [.keep] [Cppcheck (quick)]
-  File: core/charactr.cpp  (1 diagnostics)
-
-  Line  118: [selfAssignment] Redundant assignment of 'pSVar12' to itself.
-
-----------------------------------------------------------------------------------------------------
 core_charactr.cpp_CCharacter_setup_FUN_00428140  [.keep] [Cppcheck (quick)]
   File: core/charactr.cpp  (1 diagnostics)
 
@@ -670,6 +707,12 @@ core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20  [.keep] 
   File: core/fileman.cpp  (1 diagnostics)
 
   Line   95: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+
+----------------------------------------------------------------------------------------------------
+core_flame.cpp_CFlame_renderTransparent_FUN_004ca110  [.keep] [Cppcheck (quick)]
+  File: core/flame.cpp  (1 diagnostics)
+
+  Line  124: [uninitvar] Uninitialized variable: fStack_1c
 
 ----------------------------------------------------------------------------------------------------
 core_main.c_displayErrorAndQuit_FUN_00506f10  [.keep] [Cppcheck (quick)]
@@ -760,6 +803,12 @@ core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0  [.kee
   File: core/skeleton.cpp  (1 diagnostics)
 
   Line   69: [identicalInnerCondition] Identical inner 'if' condition is always true.
+
+----------------------------------------------------------------------------------------------------
+core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270  [.keep] [Cppcheck (quick)]
+  File: core/stranger.cpp  (1 diagnostics)
+
+  Line  233: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 core_vehicle.cpp_CVehicle_renderOpaque_FUN_005e88c0  [.keep] [Cppcheck (quick)]

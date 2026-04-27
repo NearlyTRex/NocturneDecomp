@@ -4,7 +4,7 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 126,
     "complexity_score": 77,
@@ -184,6 +184,30 @@
         "type": "CSvetlana *"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CSvetlana_renderOpaque_FUN_005d9bc0.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 11,
+          "line": 34,
+          "message": "Redundant assignment of 'iVar3' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 14,
+          "line": 43,
+          "message": "Redundant assignment of 'pCVar5' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

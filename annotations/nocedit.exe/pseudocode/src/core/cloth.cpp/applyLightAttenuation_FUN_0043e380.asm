@@ -7,7 +7,7 @@
 ; CVector3f *      Stack[0x4]:4   v
 ;
 ; Referenced Globals:
-;   int g_LightAttenuationMax
+;   int g_FastInvSqrtMagic
 ;
 ; *****************************************************************************
 
@@ -26,7 +26,7 @@ section .text
     FADDP                               ; 0043e397
     FSTP float ptr [ESP]                ; 0043e399
     MOV EDX,dword ptr [ESP]             ; 0043e39c
-    MOV ECX,dword ptr [0x02d7a7bc]      ; 0043e39f | g_LightAttenuationMax
+    MOV ECX,dword ptr [0x02d7a7bc]      ; 0043e39f | g_FastInvSqrtMagic
     SAR EDX,0x1                         ; 0043e3a5
     SUB ECX,EDX                         ; 0043e3a7
     MOV dword ptr [ESP + 0x4],ECX       ; 0043e3a9

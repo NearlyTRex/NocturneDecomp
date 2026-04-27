@@ -4,7 +4,7 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 366,
     "complexity_score": 169,
@@ -423,6 +423,44 @@
       }
     ],
     "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "CMatrix3x3f_getEulerAngles_FUN_00472160.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "check_id": "ignoredReturnValue",
+          "column": 13,
+          "line": 85,
+          "message": "Return value of function acos() is not used.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "ignoredReturnValue",
+          "column": 9,
+          "line": 99,
+          "message": "Return value of function asin() is not used.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "ignoredReturnValue",
+          "column": 9,
+          "line": 121,
+          "message": "Return value of function acos() is not used.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "ignoredReturnValue",
+          "column": 5,
+          "line": 135,
+          "message": "Return value of function asin() is not used.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

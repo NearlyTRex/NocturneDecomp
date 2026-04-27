@@ -807,7 +807,7 @@ LAB_005fa279:
             local_12c = local_24c;
           }
           local_1c = local_12c * local_12c + local_134 * local_134 + local_130 * local_130;
-          local_5c = (float)(((int)local_1c >> 1) + INT_02d7a7b8);
+          local_5c = core_chain_cpp_fastSqrt_FUN_00431350(local_1c);
           if (local_5c <= (float)8) {
             local_30 = (this_ptr->base).base.collision_cylinder_top;
             if (local_30 < (this_ptr->base).base.collision_cylinder_bottom) {

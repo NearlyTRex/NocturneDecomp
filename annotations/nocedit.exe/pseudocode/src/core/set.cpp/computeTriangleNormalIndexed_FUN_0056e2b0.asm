@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00645e83 = 65535
-;   int g_LightAttenuationMax
+;   int g_FastInvSqrtMagic
 ;
 ; *****************************************************************************
 
@@ -103,7 +103,7 @@ section .text
     FXCH ST3                            ; 0056e39f
     FSTP float ptr [ESP + 0x20]         ; 0056e3a1
     MOV EAX,dword ptr [ESP + 0x20]      ; 0056e3a5
-    MOV EDX,dword ptr [0x02d7a7bc]      ; 0056e3a9 | g_LightAttenuationMax
+    MOV EDX,dword ptr [0x02d7a7bc]      ; 0056e3a9 | g_FastInvSqrtMagic
     SAR EAX,0x1                         ; 0056e3af
     SUB EDX,EAX                         ; 0056e3b1
     MOV dword ptr [ESP + 0x24],EDX      ; 0056e3b3

@@ -168,7 +168,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
                       (this_ptr->base).base.base.location.position.z;
         fVar11 = (float)(((int)(local_128.z * local_128.z +
                                local_128.x * local_128.x + local_128.y * local_128.y) >> 1) +
-                        INT_02d7a7b8);
+                        g_FastSqrtMagic);
         core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_80,&local_128);
         local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                              (local_80.y - (this_ptr->base).base.base.orient.vec.y);
@@ -222,8 +222,8 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
           local_f8.z = (pCVar4->base).location.position.z -
                        (this_ptr->base).base.base.location.position.z;
           if ((float)(((int)(local_f8.z * local_f8.z +
-                            local_f8.x * local_f8.x + local_f8.y * local_f8.y) >> 1) + INT_02d7a7b8)
-              < (this_ptr->base).guard_distance) {
+                            local_f8.x * local_f8.x + local_f8.y * local_f8.y) >> 1) +
+                     g_FastSqrtMagic) < (this_ptr->base).guard_distance) {
             pCVar10 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                 (&local_a4,&local_f8);
             if (&local_f8 != pCVar10) {

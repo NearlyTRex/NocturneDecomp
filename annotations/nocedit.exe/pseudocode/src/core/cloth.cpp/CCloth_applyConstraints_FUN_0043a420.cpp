@@ -110,7 +110,7 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_pt
         local_74 = local_128;
       }
       local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;
-      local_24 = (float)(((int)local_5c >> 1) + INT_02d7a7b8);
+      local_24 = (float)(((int)local_5c >> 1) + g_FastSqrtMagic);
       local_1c = pSVar8->rest_lengths[0];
       if (local_1c < local_24) {
         local_2c = local_24 - local_1c;
@@ -180,10 +180,10 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_pt
         fVar1 = local_ac * local_38[local_20].inv_radius1;
         fVar2 = local_a8 * local_38[local_20].inv_radius2;
         local_58 = fVar2 * fVar2 + fVar1 * fVar1;
-        local_54 = (float)(((int)local_58 >> 1) + INT_02d7a7b8);
+        local_54 = (float)(((int)local_58 >> 1) + g_FastSqrtMagic);
         if (local_54 < 1.0) {
           local_48 = local_ac * local_ac + local_a8 * local_a8;
-          local_44 = (float)(g_LightAttenuationMax - ((int)local_48 >> 1));
+          local_44 = (float)(g_FastInvSqrtMagic - ((int)local_48 >> 1));
           local_88.x = local_38[local_20].radius1 * (float)1.05 * local_ac * local_44;
           local_88.y = (float)1.05 * local_38[local_20].radius2 * local_a8 * local_44;
           local_88.z = local_a4;

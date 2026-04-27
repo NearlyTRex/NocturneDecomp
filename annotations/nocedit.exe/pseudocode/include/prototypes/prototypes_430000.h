@@ -174,11 +174,11 @@ void __cdecl core_cloth_cpp_CCloth_addFilesToExtract_FUN_0043e0a0(CCloth *this_p
 void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth *this_ptr,char *bone_name,int vertex_index);
 void __cdecl core_cloth_cpp_CCloth_resetState_FUN_0043e170(CCloth *this_ptr,int vertex_index);
 void __cdecl core_cloth_cpp_CCloth_applyRotation_FUN_0043e1a0(CCloth *this_ptr,CVector3f *euler);
-int __cdecl core_cloth_cpp_calcLightAttenuation_FUN_0043e2a0(float dist_sq);
+float __cdecl core_cloth_cpp_fastInvSqrt_FUN_0043e2a0(float dist_sq);
 float __cdecl core_cloth_cpp_dotProduct1_FUN_0043e2c0(CVector3f *a,CVector3f *b);
 void __cdecl core_cloth_cpp_addVector_FUN_0043e2f0(CVector3f *a,CVector3f *b);
 float __cdecl core_cloth_cpp_dotProduct2_FUN_0043e320(CVector3f *a,CVector3f *b);
-int __cdecl core_cloth_cpp_vectorLengthFast_FUN_0043e350(CVector3f *v);
+float __cdecl core_cloth_cpp_vectorLengthFast_FUN_0043e350(CVector3f *v);
 CVector3f * __cdecl core_cloth_cpp_applyLightAttenuation_FUN_0043e380(CVector3f *v);
 CVector3f * __cdecl core_cloth_cpp_scaleVector_FUN_0043e3d0(CVector3f *out,float *scale,CVector3f *v);
 SClothBone * __cdecl core_cloth_cpp_SClothBone_ctor_FUN_0043e400(SClothBone *this_ptr);

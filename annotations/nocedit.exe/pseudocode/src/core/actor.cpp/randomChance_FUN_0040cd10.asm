@@ -20,8 +20,8 @@
 ;   ... and 34 more
 ;
 ; Referenced Globals:
-;   float FLOAT_00614308 = 0.00003051851
-;   float FLOAT_0061430c = 5.960465E-8
+;   float g_RandChanceScale = 0.00003051851
+;   float g_GenRandChanceScale = 5.960465E-8
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.is_processing
@@ -44,7 +44,7 @@ section .text
         ;   XREF to: 0040cba0 (UNCONDITIONAL_CALL)  ; uint core_actor.cpp_generateRandomValue_FUN_0040cba0()
     MOV dword ptr [ESP + 0x4],EAX       ; 0040cd26
     FILD dword ptr [ESP + 0x4]          ; 0040cd2a
-    FMUL float ptr [0x0061430c]         ; 0040cd2e | FLOAT_0061430c
+    FMUL float ptr [0x0061430c]         ; 0040cd2e | g_GenRandChanceScale
     FSTP float ptr [ESP]                ; 0040cd34
         ;   Label: LAB_0040cd34
     FLD float ptr [ESP]                 ; 0040cd37
@@ -60,7 +60,7 @@ section .text
         ;   Label: LAB_0040cd4d
     MOV dword ptr [ESP + 0x4],EAX       ; 0040cd52
     FILD dword ptr [ESP + 0x4]          ; 0040cd56
-    FMUL float ptr [0x00614308]         ; 0040cd5a | FLOAT_00614308
+    FMUL float ptr [0x00614308]         ; 0040cd5a | g_RandChanceScale
     JMP 0x0040cd34                      ; 0040cd60
         ;   XREF to: 0040cd34 (UNCONDITIONAL_JUMP)  ; LAB_0040cd34
 

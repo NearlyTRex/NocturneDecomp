@@ -82,6 +82,8 @@ SUSPECT_SEVERITY = {
     'unrolled_strchr': 'moderate',
     'preinc_loop_idiom': 'moderate',
     'missing_cave_copy': 'moderate',
+    'fast_sqrt_inline': 'moderate',
+    'fast_inv_sqrt_inline': 'moderate',
 }
 
 
@@ -1444,6 +1446,100 @@ def identify_preinc_loop_idiom(decompiled_code):
     return suspects
 
 
+# Fast-(inverse-)sqrt bit-trick patterns. The Watcom binary has dedicated
+# helpers `fastSqrt_FUN_00431350` and `fastInvSqrt_FUN_0043e2a0`, but the
+# approximation is also frequently inlined at call sites. Ghidra's emit
+# uses a numeric `(int)X` cast where the asm performs a bit-pattern
+# reinterpretation (`MOV EAX, [&X]; SAR EAX, 1; ADD/SUB magic; MOV [&Y]`),
+# so on NaN/Inf inputs the cpp triggers UB while the asm is well-defined.
+# Detector also matches the bit-cast form some keeps end up with — both
+# should ultimately become `Y = fastSqrt(X);` / `Y = fastInvSqrt(X);`.
+
+# Numeric-cast emit (default Ghidra output):
+#   (float)(((int)EXPR >> 1) + g_FastSqrtMagic)
+#   (float)(g_FastInvSqrtMagic - ((int)EXPR >> 1))
+_FAST_SQRT_NUM_RE = re.compile(
+    r"\(\s*float\s*\)\s*\(\s*\(\s*\(\s*int\s*\)[^()]+>>\s*1\s*\)\s*"
+    r"\+\s*(g_FastSqrtMagic|INT_02d7a7b8)\s*\)")
+_FAST_INV_SQRT_NUM_RE = re.compile(
+    r"\(\s*float\s*\)\s*\(\s*(g_FastInvSqrtMagic|g_LightAttenuationMax)\s*-\s*"
+    r"\(\s*\(\s*int\s*\)[^()]+>>\s*1\s*\)\s*\)")
+# Bit-cast emit (after a manual keep fix that swaps numeric cast for
+# bit-cast — also wants to be replaced with the helper call):
+#   *(int *)&DST = (*(int *)&SRC >> 1) + g_FastSqrtMagic;
+#   *(int *)&DST = g_FastInvSqrtMagic - (*(int *)&SRC >> 1);
+_FAST_SQRT_BIT_RE = re.compile(
+    r"\*\s*\(\s*int\s*\*\s*\)\s*&\s*\w+\s*=\s*"
+    r"\(\s*\*\s*\(\s*int\s*\*\s*\)\s*&\s*\w+\s*>>\s*1\s*\)\s*"
+    r"\+\s*(g_FastSqrtMagic|INT_02d7a7b8)\s*;")
+_FAST_INV_SQRT_BIT_RE = re.compile(
+    r"\*\s*\(\s*int\s*\*\s*\)\s*&\s*\w+\s*=\s*"
+    r"(g_FastInvSqrtMagic|g_LightAttenuationMax)\s*-\s*"
+    r"\(\s*\*\s*\(\s*int\s*\*\s*\)\s*&\s*\w+\s*>>\s*1\s*\)\s*;")
+
+
+def identify_fast_sqrt_inline(decompiled_code):
+    """Detect inlined fast-sqrt or fast-inverse-sqrt bit-trick patterns.
+
+    The Watcom binary inlines two bit-trick approximations across many call
+    sites:
+
+        // fast sqrt:        (bits >> 1) + g_FastSqrtMagic
+        // fast inverse sqrt: g_FastInvSqrtMagic - (bits >> 1)
+
+    Ghidra emits these with a numeric `(int)X` cast which is wrong (the asm
+    performs a bit-pattern reinterpretation, not a numeric truncation). On
+    NaN/Inf inputs `(int)NaN` is UB, which UBSan catches.
+
+    The same operations are exposed as named helper functions:
+        fastSqrt_FUN_00431350(float x) -> float
+        fastInvSqrt_FUN_0043e2a0(float x) -> float
+
+    Replace inline occurrences with calls to these helpers in a .keep.
+
+    Detects both the numeric-cast Ghidra emit and the bit-cast form a keep
+    might rewrite the broken cast into.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts, one per matching line.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    lines = decompiled_code.split('\n')
+    for i, line in enumerate(lines):
+        for kind, regex, helper in (
+                ('fast_sqrt_inline', _FAST_SQRT_NUM_RE, 'fastSqrt'),
+                ('fast_inv_sqrt_inline', _FAST_INV_SQRT_NUM_RE, 'fastInvSqrt'),
+                ('fast_sqrt_inline', _FAST_SQRT_BIT_RE, 'fastSqrt'),
+                ('fast_inv_sqrt_inline', _FAST_INV_SQRT_BIT_RE, 'fastInvSqrt')):
+            if regex.search(line):
+                suspects.append({
+                    'line': i + 1,
+                    'type': kind,
+                    'match': line.strip()[:80],
+                    'text': line.strip()[:120],
+                    'description': (
+                        "Inlined {pretty} bit-trick. Replace with "
+                        "`{helper}(<expr>)` in a .keep — the helper "
+                        "function exists in the binary "
+                        "({addr}).".format(
+                            pretty=("fast inverse sqrt"
+                                    if kind == 'fast_inv_sqrt_inline'
+                                    else "fast sqrt"),
+                            helper=helper,
+                            addr=("FUN_0043e2a0"
+                                  if kind == 'fast_inv_sqrt_inline'
+                                  else "FUN_00431350"))),
+                    'severity': 'moderate',
+                })
+                break  # at most one suspect per line
+    return suspects
+
+
 # Struct-type locals that the missing-cave-copy bug pattern typically affects.
 _UNREF_STRUCT_TYPES = frozenset({
     'CMatrix3x4f', 'CMatrix3x3f', 'CQuaternion4f', 'CVector3f', 'CVector3i',
@@ -1598,6 +1694,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_unrolled_strcat_loops(code))
     found.extend(identify_unrolled_strchr_loops(code))
     found.extend(identify_preinc_loop_idiom(code))
+    found.extend(identify_fast_sqrt_inline(code))
     return found
 
 

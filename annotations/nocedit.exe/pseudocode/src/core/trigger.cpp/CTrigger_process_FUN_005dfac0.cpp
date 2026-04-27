@@ -138,7 +138,7 @@ LAB_005dfb52:
       local_34 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004c8c90
                            (g_CFireEffectPtr,&pCVar2->position,
                             (float)(((int)(fVar4 * fVar4 + fVar3 * fVar3 + fVar2 * fVar2) >> 1) +
-                                   INT_02d7a7b8),(CVector3f *)0x0,(float *)0x0);
+                                   g_FastSqrtMagic),(CVector3f *)0x0,(float *)0x0);
     }
     break;
   case 7:

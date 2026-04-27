@@ -189,7 +189,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                     fVar12 = fVar6 * fVar7 - fVar13 * fVar5;
                     fVar5 = (float)iVar19 * fVar5 - fVar14 * fVar7;
                     fVar7 = fVar14 * fVar13 - (float)iVar19 * fVar6;
-                    fVar6 = (float)(g_LightAttenuationMax -
+                    fVar6 = (float)(g_FastInvSqrtMagic -
                                    ((int)(fVar7 * fVar7 + fVar5 * fVar5 + fVar12 * fVar12) >> 1)) *
                             (float)65535;
                     puVar17 = puVar17 + 9;
@@ -245,7 +245,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                     fVar8 = (float)iVar16 * fVar5 - fVar12 * fVar7;
                     fVar11 = (float)iVar15 * fVar7 - fVar6 * fVar5;
                     fVar10 = fVar6 * fVar12 - (float)iVar15 * (float)iVar16;
-                    fVar9 = (float)(g_LightAttenuationMax -
+                    fVar9 = (float)(g_FastInvSqrtMagic -
                                    ((int)(fVar10 * fVar10 + fVar11 * fVar11 + fVar8 * fVar8) >> 1))
                             * (float)65535;
                     *(float *)((int)pvVar14 + 8) = fVar8 * fVar9;
@@ -308,7 +308,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                   iVar24 = 0;
                   local_64 = 0;
                   do {
-                    fVar5 = (float)(g_LightAttenuationMax -
+                    fVar5 = (float)(g_FastInvSqrtMagic -
                                    ((int)(pCVar23->z * pCVar23->z +
                                          pCVar23->x * pCVar23->x + pCVar23->y * pCVar23->y) >> 1)) *
                             (float)65535;
@@ -339,7 +339,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                   do {
                     if (((1.0 <= ABS(pCVar22->x)) || (1.0 <= ABS(pCVar22->y))) ||
                        (1.0 <= ABS(pCVar22->z))) {
-                      fVar5 = (float)(g_LightAttenuationMax -
+                      fVar5 = (float)(g_FastInvSqrtMagic -
                                      ((int)(pCVar22->z * pCVar22->z +
                                            pCVar22->x * pCVar22->x + pCVar22->y * pCVar22->y) >> 1))
                               * (float)65535;

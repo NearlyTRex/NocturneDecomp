@@ -10,7 +10,7 @@ void __cdecl core_flattn_cpp_staticInit_FUN_004cbcb0(void)
 
 {
   INT_02d7a7b4 = 0x3f800000;
-  INT_02d7a7b8 = 0x1fc00000;
-  g_LightAttenuationMax = 0x5f400000;
+  g_FastSqrtMagic = 0x1fc00000;
+  g_FastInvSqrtMagic = 0x5f400000;
   return;
 }

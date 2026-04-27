@@ -787,7 +787,7 @@ static int CGhoul_process_branch_0_check_0_3(CGhoul_process_Ctx *ctx) {
               local_7c = (CDemonActor *)
                          ((float)local_b8 * (float)local_b8 +
                          local_c0 * local_c0 + local_bc * local_bc);
-              local_78 = (CDemonActor *)(((int)local_7c >> 1) + INT_02d7a7b8);
+              local_78 = (CDemonActor *)(((int)local_7c >> 1) + g_FastSqrtMagic);
               if ((float)local_78 < (float)8) goto LAB_004e7243;
             }
           }

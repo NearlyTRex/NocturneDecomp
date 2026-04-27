@@ -4,19 +4,20 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1764,
-    "complexity_score": 849,
+    "complexity_score": 914,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 779,
-    "suspect_count": 6,
+    "suspect_count": 12,
     "suspect_types": [
       "param_count_too_many",
-      "pointer_cast"
+      "pointer_cast",
+      "unnamed_local"
     ],
     "total_lines": 2543
   },
@@ -245,6 +246,26 @@
     },
     "pcode_op_count": 11863
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 273,
+      "match": "(CMatrix3x3f *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar15 = (CMatrix3x3f *)((int)pCVar15 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 686,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar11 = *(int *)((int)local_3d0 + iVar18);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 1068,
     "local_size": 1060,
@@ -901,6 +922,44 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CBox_processPhysics_FUN_0041e350.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "check_id": "legacyUninitvar",
+          "column": 14,
+          "line": 367,
+          "message": "Uninitialized variable: local_3d0",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 57,
+          "line": 722,
+          "message": "Uninitialized variable: local_380",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 57,
+          "line": 723,
+          "message": "Uninitialized variable: local_37c",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 57,
+          "line": 725,
+          "message": "Uninitialized variable: local_378",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Complex pointer cast",
@@ -920,26 +979,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 273,
-      "match": "(CMatrix3x3f *)((int)",
-      "severity": "moderate",
-      "text": "pCVar15 = (CMatrix3x3f *)((int)pCVar15 + (uint)bVar17 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 304,
       "match": "(CVector3f *)((int)",
       "severity": "moderate",
       "text": "pCVar14 = (CVector3f *)((int)(pCVar14 + 4) + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 686,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "iVar11 = *(int *)((int)local_3d0 + iVar18);",
       "type": "pointer_cast"
     },
     {
@@ -952,6 +995,78 @@
       "param_delta": -1,
       "text": "Function declares 2 params but call sites push 1 (1 extra)",
       "type": "param_count_too_many"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 36,
+      "match": "local_3f4",
+      "severity": "mild",
+      "text": "float local_3f4;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 37,
+      "match": "local_3f0",
+      "severity": "mild",
+      "text": "float local_3f0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 38,
+      "match": "local_3ec",
+      "severity": "mild",
+      "text": "float local_3ec;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 39,
+      "match": "local_3e8",
+      "severity": "mild",
+      "text": "float local_3e8;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 40,
+      "match": "local_3e4",
+      "severity": "mild",
+      "text": "float local_3e4;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 41,
+      "match": "local_3e0",
+      "severity": "mild",
+      "text": "float local_3e0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 42,
+      "match": "local_3dc",
+      "severity": "mild",
+      "text": "float local_3dc;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 43,
+      "match": "local_3d8",
+      "severity": "mild",
+      "text": "float local_3d8;",
+      "type": "unnamed_local"
     }
   ]
 }

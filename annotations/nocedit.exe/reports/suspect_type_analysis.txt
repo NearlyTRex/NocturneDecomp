@@ -4,24 +4,24 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    3063 ( 52.5%)
-  unnamed_local                    791 ( 13.5%)
-  unrolled_strcpy                  491 (  8.4%)
+  pointer_cast                    3048 ( 51.7%)
+  unnamed_local                    861 ( 14.6%)
+  unrolled_strcpy                  491 (  8.3%)
   warning_inlined_function         257 (  4.4%)
-  raw_address_constant             196 (  3.4%)
-  missing_cave_copy                184 (  3.2%)
+  raw_address_constant             194 (  3.3%)
+  missing_cave_copy                184 (  3.1%)
   unrolled_strlen                  152 (  2.6%)
   warning_type_propagation         133 (  2.3%)
   stack_alignment_array             92 (  1.6%)
   warning_unreachable               75 (  1.3%)
-  unnamed_param                     73 (  1.3%)
+  unnamed_param                     73 (  1.2%)
   unrolled_strchr                   62 (  1.1%)
   unrolled_strcat                   46 (  0.8%)
   param_count_too_many              37 (  0.6%)
   stack_param                       36 (  0.6%)
   sub84_truncation                  30 (  0.5%)
+  decompiler_intrinsic              27 (  0.5%)
   negative_offset                   24 (  0.4%)
-  decompiler_intrinsic              19 (  0.3%)
   extra_output                      16 (  0.3%)
   suspect_float                     10 (  0.2%)
   unaffected_reg                     9 (  0.2%)
@@ -34,6 +34,7 @@ SUSPECT TYPE COUNTS
   preinc_loop_idiom                  2 (  0.0%)
   cpuid_intrinsic                    2 (  0.0%)
   wrong_global                       2 (  0.0%)
+  fast_inv_sqrt_inline               1 (  0.0%)
   warning_unable_to_use_type         1 (  0.0%)
   warning_overlapping_globals        1 (  0.0%)
   warning_noreturn                   1 (  0.0%)
@@ -42,13 +43,13 @@ SUSPECT TYPE COUNTS
   warning_indirect_jump              1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (3063 occurrences)
+TYPE: pointer_cast (3048 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   944x  (int *)((int)
-   815x  (uint *)((int)
-   253x  (float *)((int)
+   935x  (int *)((int)
+   809x  (uint *)((int)
+   254x  (float *)((int)
    123x  (double *)((int)
    108x  (SRenderVertex *)((int)
     94x  (byte *)((int)
@@ -110,7 +111,6 @@ Functions:
   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400
   core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0
   core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042b190
-  core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40
   core_charactr.cpp_CCharacter_processFire_FUN_0042a830
   core_charactr.cpp_CCharacter_renderBurn_FUN_0042ad00
   core_charactr.cpp_CCharacter_renderCollision_FUN_00429b40
@@ -120,7 +120,6 @@ Functions:
   core_cloth.cpp_CCloth_createFromKFM_FUN_0043dcc0
   core_cloth.cpp_CCloth_load_FUN_00438cf0
   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590
-  core_cloth.cpp_CCloth_render_FUN_0043bae0
   core_cloth.cpp_CCloth_setup_FUN_00439710
   core_cloth.cpp_CCloth_step_FUN_0043abb0
   core_course.cpp_CCourse_load_FUN_00442580
@@ -241,7 +240,6 @@ Functions:
   core_game.cpp_captureDebugMovieFrame_FUN_004d7810
   core_ghoul.cpp_CGhoul_processDamage_FUN_004e87e0
   core_glass.cpp_CGlass_onLaserHit_FUN_004eb250
-  core_gore.cpp_CBloodParticle_render_FUN_004ebac0
   core_gore.cpp_CFootstep_init_FUN_004ed240
   core_gore.cpp_CGore_renderDecals_FUN_004ed830
   core_grave.cpp_CGrave_getBoundingBox_FUN_004ee8f0
@@ -401,6 +399,7 @@ Functions:
   core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950
   core_sound.cpp_CSound_selectReverbPreset_FUN_005b3d20
   core_sound.cpp_CSound_shutdown_FUN_005b2f70
+  core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270
   core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_005bb010
   core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0
   core_trash.cpp_CTrash_process_FUN_005decf0
@@ -718,15 +717,16 @@ Functions:
   wincore_windll.cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec
 
 ====================================================================================================
-TYPE: unnamed_local (791 occurrences)
+TYPE: unnamed_local (861 occurrences)
 ====================================================================================================
 
 Unique patterns:
    103x  local_14
-    49x  local_18
+    54x  local_18
     38x  local_20a4
     35x  local_24
     32x  local_38
+    32x  local_1e8
     25x  local_4db8
     23x  local_30
     22x  local_1c
@@ -735,13 +735,12 @@ Unique patterns:
     19x  local_34
     18x  local_48
     18x  local_174
-    16x  local_5c
+    17x  local_5c
+    15x  local_28
     15x  local_190
-    14x  local_28
     14x  local_78
     12x  local_110
-    10x  local_e4
-     9x  local_6c
+    12x  local_11c
 
 Functions:
   cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
@@ -750,8 +749,11 @@ Functions:
   cockpit_ckptutil.c_saveEdgeListFile_FUN_00433480
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470
+  core_bodypart.cpp_CBodyPart_process_FUN_00419be0
   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90
+  core_box.cpp_CBox_processPhysics_FUN_0041e350
   core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043a2b0
+  core_cloth.cpp_CCloth_render_FUN_0043bae0
   core_cloth.cpp_CCloth_setup_FUN_00439710
   core_course.cpp_CCourse_interpolate_FUN_004427a0
   core_course.cpp_CCourse_preview_FUN_00443bc0
@@ -759,12 +761,15 @@ Functions:
   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0
   core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_00476f20
   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
+  core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80
   core_event.cpp_CEventList_executeCommand_FUN_004aacc0
   core_event.cpp_CEventList_saveState_FUN_004b1380
   core_fire.cpp_CMuzzleFlash_render_FUN_004c1a30
   core_fire.cpp_CTrail_render_FUN_004c5e90
+  core_flame.cpp_CFlame_renderTransparent_FUN_004ca110
   core_game.cpp_CGame_processFrame_FUN_004da100
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
+  core_gore.cpp_CBloodParticle_render_FUN_004ebac0
   core_manpuz.cpp_CMansionPuzzleCircle_renderEmitter_FUN_00509c60
   core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70
   core_mimic.cpp_CMimic_renderMirrored_FUN_005205f0
@@ -777,8 +782,10 @@ Functions:
   core_script.cpp_editParameterValue_FUN_00562920
   core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0
   core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0
+  core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470
   core_set.cpp_CDemonSet_processActors_FUN_0056b810
+  core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140
   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
   core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00
   core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310
@@ -790,6 +797,7 @@ Functions:
   core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0
+  core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
   core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0
   core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970
@@ -1314,7 +1322,7 @@ Functions:
   wincore_winrun.cpp_waitForMutexTimeout_FUN_005f4010
 
 ====================================================================================================
-TYPE: raw_address_constant (196 occurrences)
+TYPE: raw_address_constant (194 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1331,17 +1339,16 @@ Unique patterns:
      2x  0xa00000
      2x  0xf00000
      2x  0xdc0000
-     2x  0x6e6f69
      2x  0x16e9a08
      2x  0x16e9a48
      2x  0x766880
      1x  0x1010101
      1x  0x67e6cc
      1x  0x67e6d0
+     1x  0xfffffe
 
 Functions:
   core_chain.cpp_CChain_renderTransparent_FUN_004308f0
-  core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40
   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0
   core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0
   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20
@@ -2011,6 +2018,28 @@ Functions:
   sound_mp3.cpp_antiAliasingButterfly_FUN_005334b0
 
 ====================================================================================================
+TYPE: decompiler_intrinsic (27 occurrences)
+====================================================================================================
+
+Unique patterns:
+    17x  ROUND
+     7x  ABS
+     2x  SUB84
+     1x  ADJ
+
+Functions:
+  core_charactr.cpp_CCharacter_ctor_FUN_00427e20
+  core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
+  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
+  core_inv.cpp_CInventory_renderAllItems_FUN_00500690
+  core_ladder.cpp_CLadder_renderOpaque_FUN_00502620
+  core_xform.cpp_matrixToEulerAngles_FUN_005f5690
+  shape_design.c_writePolygonModel_FUN_0045a320
+  shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0
+  shape_superopt.cpp_CComplexPolygon_validateSubChainVisibility_FUN_005cbf90
+  shape_superopt.cpp_COptimize_findCoplanarPolygons_FUN_005d7460
+
+====================================================================================================
 TYPE: negative_offset (24 occurrences)
 ====================================================================================================
 
@@ -2044,27 +2073,6 @@ Functions:
   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
   sound_sndwav.cpp_enumerateWavInDevice_FUN_005b1560
   sound_sndwav.cpp_enumerateWavOutDevice_FUN_005b1470
-
-====================================================================================================
-TYPE: decompiler_intrinsic (19 occurrences)
-====================================================================================================
-
-Unique patterns:
-     9x  ROUND
-     7x  ABS
-     2x  SUB84
-     1x  ADJ
-
-Functions:
-  core_charactr.cpp_CCharacter_ctor_FUN_00427e20
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
-  core_inv.cpp_CInventory_renderAllItems_FUN_00500690
-  core_ladder.cpp_CLadder_renderOpaque_FUN_00502620
-  core_xform.cpp_matrixToEulerAngles_FUN_005f5690
-  shape_design.c_writePolygonModel_FUN_0045a320
-  shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0
-  shape_superopt.cpp_CComplexPolygon_validateSubChainVisibility_FUN_005cbf90
-  shape_superopt.cpp_COptimize_findCoplanarPolygons_FUN_005d7460
 
 ====================================================================================================
 TYPE: extra_output (16 occurrences)
@@ -2238,6 +2246,16 @@ Unique patterns:
 
 Functions:
   core_path.cpp_CPathMap_searchGrid_FUN_005487a0
+
+====================================================================================================
+TYPE: fast_inv_sqrt_inline (1 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  fVar1 = (float)(g_FastInvSqrtMagic - ((int)fVar2 >> 1));
+
+Functions:
+  core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00471850
 
 ====================================================================================================
 TYPE: warning_unable_to_use_type (1 occurrences)

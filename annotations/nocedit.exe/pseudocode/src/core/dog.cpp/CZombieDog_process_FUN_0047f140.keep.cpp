@@ -101,8 +101,8 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr,f
                   (this_ptr->base).base.base.location.position.y;
           fVar7 = (pCVar5->base).location.position.z -
                   (this_ptr->base).base.base.location.position.z;
-          local_18 = (float)(((int)(fVar7 * fVar7 + fVar12 * fVar12 + fVar6 * fVar6) >> 1) +
-                            INT_02d7a7b8);
+          local_18 = core_chain_cpp_fastSqrt_FUN_00431350(
+                       fVar7 * fVar7 + fVar12 * fVar12 + fVar6 * fVar6);
           if (local_18 < 8.0f) {
             iVar10 = 1;
           }

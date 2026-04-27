@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5153 (79.8%)
-With suspects: 1301
-Total suspects: 5838
+Clean: 5149 (79.8%)
+With suspects: 1305
+Total suspects: 5900
 
 ====================================================================================================
 cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50 (1 suspect)
@@ -725,6 +725,13 @@ core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041aa40 (3 suspects
   Line 65 [pointer_cast]: piVar10 = (int *)((int)&this_ptr->vertices->x + local_1c);
 
 ====================================================================================================
+core_bodypart.cpp_CBodyPart_process_FUN_00419be0 (2 suspects)
+  File: core/bodypart.cpp
+====================================================================================================
+  Line 17 [unnamed_local]: CVector3f local_18;
+  Line 56 [unnamed_local]: local_18.x = (pCVar1->position).x;
+
+====================================================================================================
 core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00419340 (1 suspect)
   File: core/bodypart.cpp
 ====================================================================================================
@@ -803,15 +810,21 @@ core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680 (8 suspects)
   Line 71 [pointer_cast]: *(uint *)((int)&local_94[0].z + iVar8) =
 
 ====================================================================================================
-core_box.cpp_CBox_processPhysics_FUN_0041e350 (6 suspects)
+core_box.cpp_CBox_processPhysics_FUN_0041e350 (12 suspects)
   File: core/box.cpp
 ====================================================================================================
   Line 0 [param_count_too_many]: Function declares 2 params but call sites push 1 (1 extra)
+  Line 36 [unnamed_local]: float local_3f4;
+  Line 37 [unnamed_local]: float local_3f0;
+  Line 38 [unnamed_local]: float local_3ec;
+  Line 39 [unnamed_local]: float local_3e8;
+  Line 40 [unnamed_local]: float local_3e4;
+  Line 41 [unnamed_local]: float local_3e0;
+  Line 42 [unnamed_local]: float local_3dc;
+  Line 43 [unnamed_local]: float local_3d8;
   Line 157 [pointer_cast]: pCVar14 = (CVector3f *)((int)(pCVar14 + 4) + 4);
   Line 158 [pointer_cast]: pCVar16 = (CVector3f *)((int)(pCVar16 + 4) + 4);
-  Line 273 [pointer_cast]: pCVar15 = (CMatrix3x3f *)((int)pCVar15 + (uint)bVar17 * -8 + 4);
   Line 304 [pointer_cast]: pCVar14 = (CVector3f *)((int)(pCVar14 + 4) + 4);
-  Line 686 [pointer_cast]: iVar11 = *(int *)((int)local_3d0 + iVar18);
 
 ====================================================================================================
 core_box.cpp_CBox_setupVelocities_FUN_00420180 (1 suspect)
@@ -1020,13 +1033,10 @@ core_charactr.cpp_CCharacter_ctor_FUN_00427e20 (1 suspect)
   Line 26 [decompiler_intrinsic]: pCVar3 = core_cloth_cpp_CClothList_ctor_FUN_0043bf40(&ADJ(pCVar2)->cloth_list);
 
 ====================================================================================================
-core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40 (4 suspects)
+core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40 (1 suspect)
   File: core/charactr.cpp
 ====================================================================================================
   Line 27 [stack_alignment_array]: float afStackY_106c [991];
-  Line 108 [pointer_cast]: pSVar12 = (SMotion *)((int)pSVar12 + (uint)bVar14 * -2 + 1);
-  Line 110 [raw_address_constant]: uVar10 = 0x006e6f69;
-  Line 125 [raw_address_constant]: if (-1 < (int)0x006e6f69) {
 
 ====================================================================================================
 core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0 (1 suspect)
@@ -1165,9 +1175,9 @@ core_cloth.cpp_CCloth_render_FUN_0043bae0 (4 suspects)
   File: core/cloth.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 124 [pointer_cast]: pSVar3->vertices[0].vertex_index = *(int *)((int)pSVar6 + iVar7 + 0x18);
-  Line 125 [pointer_cast]: pSVar3->vertices[0].texture_u = *(int *)((int)pSVar6 + iVar7 + 0x1c);
-  Line 126 [pointer_cast]: iVar7 = *(int *)((int)pSVar6 + iVar7 + 0x20);
+  Line 28 [unnamed_local]: int local_18;
+  Line 121 [unnamed_local]: local_18 = 0;
+  Line 125 [unnamed_local]: iVar7 = pSVar6[local_18].base.base.count;
 
 ====================================================================================================
 core_cloth.cpp_CCloth_setup_FUN_00439710 (12 suspects)
@@ -1464,12 +1474,19 @@ core_dcamera.cpp_CDemonCamera_init_FUN_0044c190 (2 suspects)
   Line 47 [pointer_cast]: this_ptr->zbuffer_aligned = (void *)((int)this_ptr->zbuffer_raw + 0x10U & 0xfffffff0);
 
 ====================================================================================================
-core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180 (4 suspects)
+core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180 (11 suspects)
   File: core/dcamera.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
   Line 19 [unnamed_local]: CVector3i local_130;
-  Line 118 [unnamed_local]: &local_130);
+  Line 86 [decompiler_intrinsic]: g_RelativeX = (int)ROUND(ROUND(((this_ptr->base).position.f.x - position->x) * fVar2));
+  Line 86 [decompiler_intrinsic]: g_RelativeX = (int)ROUND(ROUND(((this_ptr->base).position.f.x - position->x) * fVar2));
+  Line 88 [decompiler_intrinsic]: g_RelativeY = (int)ROUND(ROUND(((this_ptr->base).position.f.y - position->y) * fVar2));
+  Line 88 [decompiler_intrinsic]: g_RelativeY = (int)ROUND(ROUND(((this_ptr->base).position.f.y - position->y) * fVar2));
+  Line 89 [decompiler_intrinsic]: g_RelativeZ = (int)ROUND(ROUND(((this_ptr->base).position.f.z - position->z) * fVar2));
+  Line 89 [decompiler_intrinsic]: g_RelativeZ = (int)ROUND(ROUND(((this_ptr->base).position.f.z - position->z) * fVar2));
+  Line 95 [decompiler_intrinsic]: corner_input.x = (int)ROUND(bbox_max->x * 256.0f);
+  Line 96 [decompiler_intrinsic]: corner_input.y = (int)ROUND(bbox_min->y * 256.0f);
   Line 131 [pointer_cast]: puVar1 = (uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +
 
 ====================================================================================================
@@ -1845,6 +1862,12 @@ core_dfilter.cpp_CFilterFX_process_FUN_004708e0 (1 suspect)
   File: core/dfilter.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
+====================================================================================================
+core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00471850 (1 suspect)
+  File: core/dglobe.cpp
+====================================================================================================
+  Line 28 [fast_inv_sqrt_inline]: fVar1 = (float)(g_FastInvSqrtMagic - ((int)fVar2 >> 1));
 
 ====================================================================================================
 core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360 (1 suspect)
@@ -2740,6 +2763,19 @@ core_dtri.cpp_CDemonTriangle_render_FUN_0049cbd0 (1 suspect)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 ====================================================================================================
+core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80 (8 suspects)
+  File: core/dtri.cpp
+====================================================================================================
+  Line 27 [unnamed_local]: float local_7c [14];
+  Line 101 [unnamed_local]: local_7c[0] = ((triangle->vertex2).x - (triangle->vertex1).x) * fVar5 + (triangle->vertex1).x;
+  Line 102 [unnamed_local]: local_7c[9] = ((triangle->vertex2).z - (triangle->vertex1).z) * fVar5 + (triangle->vertex1).z;
+  Line 109 [unnamed_local]: local_7c[uVar7] =
+  Line 112 [unnamed_local]: local_7c[uVar7 + 9] =
+  Line 119 [unnamed_local]: local_7c[uVar8] =
+  Line 122 [unnamed_local]: local_7c[uVar8 + 9] =
+  Line 126 [unnamed_local]: cylinder->edge_x1 = local_7c[0];
+
+====================================================================================================
 core_emitter.cpp_CEmitter_ctor_FUN_004a7ca0 (2 suspects)
   File: core/emitter.cpp
 ====================================================================================================
@@ -3177,10 +3213,11 @@ core_flame.cpp_CFlame_process_FUN_004c9c00 (1 suspect)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 ====================================================================================================
-core_flame.cpp_CFlame_renderTransparent_FUN_004ca110 (12 suspects)
+core_flame.cpp_CFlame_renderTransparent_FUN_004ca110 (22 suspects)
   File: core/flame.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+  Line 24 [unnamed_local]: SMRGLPrimitiveQuadIndex local_11c;
   Line 116 [suspect_float]: if (fStack_1c == 4.2039e-45) {
   Line 140 [raw_address_constant]: g_RenderVertexBuffer[2].u = 0xf80000;
   Line 141 [raw_address_constant]: g_RenderVertexBuffer[3].u = 0xf80000;
@@ -3188,6 +3225,15 @@ core_flame.cpp_CFlame_renderTransparent_FUN_004ca110 (12 suspects)
   Line 145 [raw_address_constant]: g_RenderVertexBuffer[1].u = 0xf80000;
   Line 149 [raw_address_constant]: g_RenderVertexBuffer[3].v = 0xf80000;
   Line 152 [raw_address_constant]: g_RenderVertexBuffer[0].v = 0xf80000;
+  Line 169 [unnamed_local]: local_11c.base.base.count = 4;
+  Line 170 [unnamed_local]: local_11c.base.surface_normal.A = 0;
+  Line 171 [unnamed_local]: local_11c.base.surface_normal.B = 0;
+  Line 172 [unnamed_local]: local_11c.base.surface_normal.C = 0;
+  Line 173 [unnamed_local]: local_11c.base.surface_normal.D = 0;
+  Line 174 [unnamed_local]: local_11c.vertices[0] = 0;
+  Line 175 [unnamed_local]: local_11c.vertices[1] = 1;
+  Line 176 [unnamed_local]: local_11c.vertices[2] = 2;
+  Line 177 [unnamed_local]: local_11c.vertices[3] = 3;
   Line 234 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr->v = 0xf80000;
   Line 235 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr[1].u = 0xf80000;
   Line 236 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;
@@ -3611,19 +3657,10 @@ core_glass.cpp_CGlass_shatter_FUN_004eaef0 (9 suspects)
   Line 115 [raw_address_constant]: local_8c.w = 0xfe0000;
 
 ====================================================================================================
-core_gore.cpp_CBloodParticle_render_FUN_004ebac0 (10 suspects)
+core_gore.cpp_CBloodParticle_render_FUN_004ebac0 (1 suspect)
   File: core/gore.cpp
 ====================================================================================================
-  Line 112 [pointer_cast]: lVar2 = (longlong)local_28 * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].r + iVar7);
-  Line 113 [pointer_cast]: *(uint *)((int)&g_RenderVertexBuffer[0].r + iVar7) =
-  Line 115 [pointer_cast]: lVar3 = (longlong)local_20 * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].g + iVar7);
-  Line 116 [pointer_cast]: *(uint *)((int)&g_RenderVertexBuffer[0].g + iVar7) =
-  Line 119 [pointer_cast]: *(uint *)((int)&g_RenderVertexBuffer[0].b + iVar7) = 0;
-  Line 182 [pointer_cast]: *(uint *)((int)&g_RenderVertexBuffer[0].r + iVar6) = 0;
-  Line 183 [pointer_cast]: lVar3 = (longlong)(int)fStack_1c * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].g + iVar6)
-  Line 185 [pointer_cast]: *(uint *)((int)&g_RenderVertexBuffer[0].g + iVar6) =
-  Line 188 [pointer_cast]: lVar3 = (longlong)local_20 * (longlong)*(int *)((int)&g_RenderVertexBuffer[0].b + iVar6);
-  Line 189 [pointer_cast]: *(uint *)((int)&g_RenderVertexBuffer[0].b + iVar6) =
+  Line 43 [unnamed_local]: int local_28;
 
 ====================================================================================================
 core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0 (2 suspects)
@@ -5538,10 +5575,11 @@ core_set.cpp_CDemonSet_initScene_FUN_0056aa10 (1 suspect)
   Line 45 [pointer_cast]: if (*(int *)((int)g_MasterLightList + iVar4) != 0) {
 
 ====================================================================================================
-core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 (67 suspects)
+core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 (68 suspects)
   File: core/set.cpp
 ====================================================================================================
   Line 33 [stack_alignment_array]: int aiStackY_1160 [1013];
+  Line 81 [unnamed_local]: int local_5c;
   Line 119 [pointer_cast]: local_16c.x = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.
   Line 121 [pointer_cast]: local_16c.y = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.
   Line 123 [pointer_cast]: local_16c.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.
@@ -5750,6 +5788,43 @@ core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380 (1 suspect)
   File: core/set.cpp
 ====================================================================================================
   Line 48 [pointer_cast]: rotation_matrix = (CMatrix3x3f *)((int)rotation_matrix + 4);
+
+====================================================================================================
+core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140 (32 suspects)
+  File: core/setcolid.cpp
+====================================================================================================
+  Line 18 [unnamed_local]: CVector3f local_1e8[8];
+  Line 31 [unnamed_local]: __arrinit(local_1e8,8,&g_CVectorTypeInfo);
+  Line 40 [unnamed_local]: local_1e8[corner_index].x = local_20.x;
+  Line 41 [unnamed_local]: local_1e8[corner_index].y = local_20.y;
+  Line 42 [unnamed_local]: local_1e8[corner_index].z = local_20.z;
+  Line 47 [unnamed_local]: (&local_70,&local_1e8[0],&local_1e8[4],&local_1e8[6]);
+  Line 47 [unnamed_local]: (&local_70,&local_1e8[0],&local_1e8[4],&local_1e8[6]);
+  Line 47 [unnamed_local]: (&local_70,&local_1e8[0],&local_1e8[4],&local_1e8[6]);
+  Line 50 [unnamed_local]: (&local_70,&local_1e8[0],&local_1e8[6],&local_1e8[2]);
+  Line 50 [unnamed_local]: (&local_70,&local_1e8[0],&local_1e8[6],&local_1e8[2]);
+  Line 50 [unnamed_local]: (&local_70,&local_1e8[0],&local_1e8[6],&local_1e8[2]);
+  Line 53 [unnamed_local]: (&local_188,&local_1e8[1],&local_1e8[3],&local_1e8[7]);
+  Line 53 [unnamed_local]: (&local_188,&local_1e8[1],&local_1e8[3],&local_1e8[7]);
+  Line 53 [unnamed_local]: (&local_188,&local_1e8[1],&local_1e8[3],&local_1e8[7]);
+  Line 56 [unnamed_local]: (&local_188,&local_1e8[1],&local_1e8[7],&local_1e8[5]);
+  Line 56 [unnamed_local]: (&local_188,&local_1e8[1],&local_1e8[7],&local_1e8[5]);
+  Line 56 [unnamed_local]: (&local_188,&local_1e8[1],&local_1e8[7],&local_1e8[5]);
+  Line 59 [unnamed_local]: (&local_150,&local_1e8[0],&local_1e8[1],&local_1e8[5]);
+  Line 59 [unnamed_local]: (&local_150,&local_1e8[0],&local_1e8[1],&local_1e8[5]);
+  Line 59 [unnamed_local]: (&local_150,&local_1e8[0],&local_1e8[1],&local_1e8[5]);
+  Line 62 [unnamed_local]: (&local_150,&local_1e8[0],&local_1e8[5],&local_1e8[4]);
+  Line 62 [unnamed_local]: (&local_150,&local_1e8[0],&local_1e8[5],&local_1e8[4]);
+  Line 62 [unnamed_local]: (&local_150,&local_1e8[0],&local_1e8[5],&local_1e8[4]);
+  Line 65 [unnamed_local]: (&local_118,&local_1e8[2],&local_1e8[6],&local_1e8[7]);
+  Line 65 [unnamed_local]: (&local_118,&local_1e8[2],&local_1e8[6],&local_1e8[7]);
+  Line 65 [unnamed_local]: (&local_118,&local_1e8[2],&local_1e8[6],&local_1e8[7]);
+  Line 68 [unnamed_local]: (&local_118,&local_1e8[2],&local_1e8[7],&local_1e8[3]);
+  Line 68 [unnamed_local]: (&local_118,&local_1e8[2],&local_1e8[7],&local_1e8[3]);
+  Line 68 [unnamed_local]: (&local_118,&local_1e8[2],&local_1e8[7],&local_1e8[3]);
+  Line 71 [unnamed_local]: (&local_e0,&local_1e8[0],&local_1e8[2],&local_1e8[3]);
+  Line 71 [unnamed_local]: (&local_e0,&local_1e8[0],&local_1e8[2],&local_1e8[3]);
+  Line 71 [unnamed_local]: (&local_e0,&local_1e8[0],&local_1e8[2],&local_1e8[3]);
 
 ====================================================================================================
 core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_00576710 (1 suspect)
@@ -6660,15 +6735,21 @@ core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750 (1 su
   Line 14 [stack_alignment_array]: float afStackY_1808 [1522];
 
 ====================================================================================================
-core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 (7 suspects)
+core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 (13 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
   Line 19 [stack_alignment_array]: float afStackY_1940 [1020];
+  Line 35 [unnamed_local]: CQuaternion4f local_124;
+  Line 38 [unnamed_local]: CQuaternion4f local_f4;
   Line 107 [pointer_cast]: *(int *)((int)aiStack_2f4 + local_28) = iVar14;
   Line 113 [pointer_cast]: *(float *)((int)&local_934[0].x + local_44) = afStack_120[0];
   Line 114 [pointer_cast]: *(float *)((int)&local_934[0].y + local_44) = afStack_120[1];
   Line 115 [pointer_cast]: *(float *)((int)&local_934[0].z + local_44) = afStack_120[2];
-  Line 115 [pointer_cast]: *(int *)((int)aiStack_2f4 + local_28) = iVar14;
+  Line 116 [unnamed_local]: &local_124);
+  Line 117 [pointer_cast]: *(float *)((int)&local_934[0].w + local_44) = local_124.w;
+  Line 117 [unnamed_local]: *(float *)((int)&local_934[0].w + local_44) = local_124.w;
+  Line 130 [unnamed_local]: (this_ptr_00,iVar2,local_58[0],local_5c,local_938,&local_f4);
+  Line 131 [unnamed_local]: local_934[iVar2].w = local_f4.w;
   Line 139 [pointer_cast]: if (-1 < *(int *)((int)aiStack_2f4 + local_3c)) {
 
 ====================================================================================================
@@ -7173,10 +7254,11 @@ core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520 (1 suspect)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */
 
 ====================================================================================================
-core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270 (1 suspect)
+core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270 (2 suspects)
   File: core/stranger.cpp
 ====================================================================================================
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005c5793) */
+  Line 386 [pointer_cast]: local_34 = (CDynamite *)((int)local_34 + 1);
 
 ====================================================================================================
 core_stranger.cpp_CStranger_updateWeaponPosition_FUN_005c06b0 (5 suspects)

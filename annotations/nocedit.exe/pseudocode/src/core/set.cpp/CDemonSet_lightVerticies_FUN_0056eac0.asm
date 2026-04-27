@@ -741,7 +741,7 @@ section .text
     FXCH ST3                            ; 0056f261
     FSTP float ptr [ESP + 0xbc]         ; 0056f263
     MOV EDX,dword ptr [ESP + 0xbc]      ; 0056f26a
-    MOV ECX,dword ptr [0x02d7a7bc]      ; 0056f271 | g_LightAttenuationMax
+    MOV ECX,dword ptr [0x02d7a7bc]      ; 0056f271 | g_FastInvSqrtMagic
     SAR EDX,0x1                         ; 0056f277
     SUB ECX,EDX                         ; 0056f279
     MOV dword ptr [ESP + 0xc0],ECX      ; 0056f27b
@@ -1055,7 +1055,7 @@ section .text
     FADDP                               ; 0056f6a0
     FSTP float ptr [ESP + 0xe4]         ; 0056f6a2
     MOV EAX,dword ptr [ESP + 0xe4]      ; 0056f6a9
-    MOV EDX,dword ptr [0x02d7a7bc]      ; 0056f6b0 | g_LightAttenuationMax
+    MOV EDX,dword ptr [0x02d7a7bc]      ; 0056f6b0 | g_FastInvSqrtMagic
     SAR EAX,0x1                         ; 0056f6b6
     SUB EDX,EAX                         ; 0056f6b8
     MOV dword ptr [ESP + 0xe8],EDX      ; 0056f6ba
@@ -1158,7 +1158,7 @@ section .text
     FADDP                               ; 0056f7d2
     FSTP float ptr [ESP + 0xf0]         ; 0056f7d4
     MOV EAX,dword ptr [ESP + 0xf0]      ; 0056f7db
-    MOV EDX,dword ptr [0x02d7a7bc]      ; 0056f7e2 | g_LightAttenuationMax
+    MOV EDX,dword ptr [0x02d7a7bc]      ; 0056f7e2 | g_FastInvSqrtMagic
     SAR EAX,0x1                         ; 0056f7e8
     SUB EDX,EAX                         ; 0056f7ea
     MOV dword ptr [ESP + 0xf4],EDX      ; 0056f7ec
@@ -1212,7 +1212,7 @@ section .text
     FADDP                               ; 0056f886
     FSTP float ptr [ESP + 0xfc]         ; 0056f888
     MOV EAX,dword ptr [ESP + 0xfc]      ; 0056f88f
-    MOV EDX,dword ptr [0x02d7a7bc]      ; 0056f896 | g_LightAttenuationMax
+    MOV EDX,dword ptr [0x02d7a7bc]      ; 0056f896 | g_FastInvSqrtMagic
     SAR EAX,0x1                         ; 0056f89c
     SUB EDX,EAX                         ; 0056f89e
     MOV dword ptr [ESP + 0x100],EDX     ; 0056f8a0

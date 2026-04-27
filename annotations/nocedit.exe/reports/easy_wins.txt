@@ -70,10 +70,6 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_terrain.cpp_CTerrain_render_FUN_005e1f50
       Suspects: warning_inlined_function
 
-  core/dtri.cpp (1 remaining of 28)
-    - core_dtri.cpp_CDemonTriangle_render_FUN_0049cbd0
-      Suspects: warning_inlined_function
-
   core/tommygun.cpp (1 remaining of 9)
     - core_tommygun.cpp_CTommyGun_process_FUN_005de360
       Suspects: warning_inlined_function
@@ -113,6 +109,10 @@ PRIORITY 1: Files with 1-2 functions remaining
   core/larva.cpp (1 remaining of 13)
     - core_larva.cpp_CLarva_process_FUN_00503080
       Suspects: warning_inlined_function, warning_unreachable, unknown_type, stack_param, stack_param
+
+  core/setcolid.cpp (1 remaining of 40)
+    - core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140
+      Suspects: unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local
 
   core/dest.cpp (1 remaining of 13)
     - core_dest.cpp_CActorDestination_process_FUN_0046f9b0
@@ -231,6 +231,12 @@ PRIORITY 1: Files with 1-2 functions remaining
       Suspects: warning_type_propagation
     - core_succubus.cpp_CSuccubus_process_FUN_005c6e90
       Suspects: warning_unreachable, warning_type_propagation
+
+  core/dtri.cpp (2 remaining of 28)
+    - core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80
+      Suspects: unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local, unnamed_local
+    - core_dtri.cpp_CDemonTriangle_render_FUN_0049cbd0
+      Suspects: warning_inlined_function
 
   core/particle.cpp (2 remaining of 6)
     - core_particle.cpp_CParticle_process_FUN_00545760
@@ -598,6 +604,9 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
   [raw_address_constant] - 1 functions
     engine_3d.c_makeGrayscaleColor_FUN_004039c0                            (  7 lines)
 
+  [fast_inv_sqrt_inline] - 1 functions
+    core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00471850        ( 35 lines)
+
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
@@ -607,10 +616,10 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       support_codec.cpp_CLZWDictionary_initTable_FUN_0043eef0 (21 lines)
         Types: ['pointer_cast']
 
-  core/dtri.cpp (96.4% complete)
+  core/setcolid.cpp (97.5% complete)
     1 functions remaining:
-      core_dtri.cpp_CDemonTriangle_render_FUN_0049cbd0 (39 lines)
-        Types: ['warning_inlined_function']
+      core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140 (83 lines)
+        Types: ['unnamed_local']
 
   core/weapon.cpp (96.3% complete)
     1 functions remaining:
@@ -717,6 +726,13 @@ PRIORITY 3: Files at 90%+ (finish them off!)
         Types: ['unrolled_strcpy']
       core_filmreel.cpp_CFilmProjector_ctor_FUN_004bea40 (40 lines)
         Types: ['unrolled_strcpy']
+
+  core/dtri.cpp (92.9% complete)
+    2 functions remaining:
+      core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80 (180 lines)
+        Types: ['unnamed_local']
+      core_dtri.cpp_CDemonTriangle_render_FUN_0049cbd0 (39 lines)
+        Types: ['warning_inlined_function']
 
   core/moon.cpp (92.9% complete)
     1 functions remaining:
@@ -882,7 +898,6 @@ ALL REMAINING FILES
   core/tvbat.cpp                                                85.0%  (17/20 clean, 3 remaining)
   wincore/winrun.cpp                                            84.8%  (28/33 clean, 5 remaining)
   core/curtain.cpp                                              84.6%  (22/26 clean, 4 remaining)
-  core/bodypart.cpp                                             84.4%  (38/45 clean, 7 remaining)
   sound/snddx.cpp                                               84.4%  (27/32 clean, 5 remaining)
   core/svetlana.cpp                                             84.2%  (16/19 clean, 3 remaining)
   core/actor.cpp                                                84.2%  (154/183 clean, 29 remaining)
@@ -897,6 +912,7 @@ ALL REMAINING FILES
   core/msnedit.cpp                                              82.5%  (52/63 clean, 11 remaining)
   core/imp.cpp                                                  82.4%  (14/17 clean, 3 remaining)
   core/flame.cpp                                                82.4%  (14/17 clean, 3 remaining)
+  core/bodypart.cpp                                             82.2%  (37/45 clean, 8 remaining)
   core/lever.cpp                                                81.8%  (18/22 clean, 4 remaining)
   core/mirror.cpp                                               81.8%  (18/22 clean, 4 remaining)
   core/morph.cpp                                                81.6%  (40/49 clean, 9 remaining)
@@ -967,6 +983,6 @@ ALL REMAINING FILES
   engine/model.c                                                50.0%  (4/8 clean, 4 remaining)
   core/dcamera.cpp                                              50.0%  (43/86 clean, 43 remaining)
   core/main.c                                                   50.0%  (5/10 clean, 5 remaining)
-  core/dglobe.cpp                                               33.3%  (2/6 clean, 4 remaining)
   core/procedur.cpp                                             25.0%  (1/4 clean, 3 remaining)
   core/dskybox.cpp                                              25.0%  (1/4 clean, 3 remaining)
+  core/dglobe.cpp                                               16.7%  (1/6 clean, 5 remaining)

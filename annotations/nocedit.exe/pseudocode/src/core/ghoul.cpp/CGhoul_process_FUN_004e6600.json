@@ -553,7 +553,7 @@
     },
     {
       "addr": "02d7a7b8",
-      "name": "INT_02d7a7b8",
+      "name": "g_FastSqrtMagic",
       "type": "int",
       "value": null
     },
@@ -1210,7 +1210,7 @@
       "match": "(CDemonActor *)(((int)",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "local_78 = (CDemonActor *)(((int)local_7c >> 1) + INT_02d7a7b8);",
+      "text": "local_78 = (CDemonActor *)(((int)local_7c >> 1) + g_FastSqrtMagic);",
       "type": "pointer_cast"
     },
     {
@@ -2186,9 +2186,9 @@
       "diagnostics": [
         {
           "check_id": "invalidPointerCast",
-          "column": 28,
+          "column": 16,
           "line": 683,
-          "message": "Casting from float * to signed int * is not portable due to different binary data representations on different platforms.",
+          "message": "Casting between signed int * and float * which have an incompatible binary data representation.",
           "severity": "portability"
         },
         {

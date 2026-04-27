@@ -4,17 +4,18 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 840,
-    "complexity_score": 394,
+    "complexity_score": 409,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 16,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 379,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "pointer_cast",
       "warning_unreachable"
     ],
     "total_lines": 1219
@@ -423,6 +424,23 @@
     ],
     "severity": "medium"
   },
+  "static_analysis": {
+    "analyzed_file": "CStranger_updateWeaponLayerActions_FUN_005c5270.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "invalidPointerCast",
+          "column": 14,
+          "line": 233,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
       "description": "Unreachable code block removed",
@@ -431,6 +449,15 @@
       "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x005c5793) */",
       "type": "warning_unreachable"
+    },
+    {
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 386,
+      "match": "(CDynamite *)((int)",
+      "severity": "moderate",
+      "text": "local_34 = (CDynamite *)((int)local_34 + 1);",
+      "type": "pointer_cast"
     }
   ]
 }

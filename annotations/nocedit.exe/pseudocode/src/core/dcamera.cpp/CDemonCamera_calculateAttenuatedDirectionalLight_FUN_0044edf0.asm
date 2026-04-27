@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   float g_FixedPointScale_0065c640 = 65536
 ;   float g_WorldToFloat = 0.00390625
-;   int g_LightAttenuationMax
+;   int g_FastInvSqrtMagic
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790
@@ -80,7 +80,7 @@ section .text
     FADDP                               ; 0044ee81
     FSTP float ptr [ESP + 0x24]         ; 0044ee83
     MOV EAX,dword ptr [ESP + 0x24]      ; 0044ee87
-    MOV EDX,dword ptr [0x02d7a7bc]      ; 0044ee8b | g_LightAttenuationMax
+    MOV EDX,dword ptr [0x02d7a7bc]      ; 0044ee8b | g_FastInvSqrtMagic
     SAR EAX,0x1                         ; 0044ee91
     SUB EDX,EAX                         ; 0044ee93
     MOV dword ptr [ESP + 0x28],EDX      ; 0044ee95

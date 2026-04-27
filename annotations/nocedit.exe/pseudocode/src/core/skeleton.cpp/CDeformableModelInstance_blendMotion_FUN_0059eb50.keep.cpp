@@ -28,17 +28,14 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
   float local_938;
   CQuaternion4f local_934 [100];
   int aiStack_2f4 [100];
-  float fStack_164;
-  float afStack_160 [3];
+  CQuaternion4f fStack_164;
   CQuaternion4f CStack_154;
   CQuaternion4f CStack_144;
   CQuaternion4f local_134;
-  int local_124;
-  float afStack_120 [3];
+  CQuaternion4f local_124;
   CQuaternion4f local_114;
   CQuaternion4f local_104;
-  float local_f4;
-  float afStack_f0 [3];
+  CQuaternion4f local_f4;
   CQuaternion4f local_e4;
   CQuaternion4f local_d4;
   CQuaternion4f local_c4;
@@ -91,9 +88,9 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
             fVar13 = (*callback_func)(local_1c,bone_index,blend_weight,hierarchy_distance,this_ptr);
             core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
                       (this_ptr_00,local_1c,local_58[0],local_5c,local_938,
-                       (CQuaternion4f *)&fStack_164);
+                       &fStack_164);
             core_xform_cpp_slerpQuaternion_FUN_005f77e0
-                      ((CQuaternion4f *)&fStack_164,&CStack_144,fVar13,&CStack_154);
+                      (&fStack_164,&CStack_144,fVar13,&CStack_154);
             (local_34->bone_transform).pose_data.bone_rotations[0].w = CStack_154.w;
             (local_34->bone_transform).pose_data.bone_rotations[0].x = CStack_154.x;
             (local_34->bone_transform).pose_data.bone_rotations[0].y = CStack_154.y;
@@ -116,11 +113,11 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
           if (-1 < iVar14) {
             core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
                       (this_ptr_00,local_20,local_58[0],local_5c,local_938,
-                       (CQuaternion4f *)&local_124);
-            *(int *)((int)&local_934[0].w + local_44) = local_124;
-            *(float *)((int)&local_934[0].x + local_44) = afStack_120[0];
-            *(float *)((int)&local_934[0].y + local_44) = afStack_120[1];
-            *(float *)((int)&local_934[0].z + local_44) = afStack_120[2];
+                       &local_124);
+            *(float *)((int)&local_934[0].w + local_44) = local_124.w;
+            *(float *)((int)&local_934[0].x + local_44) = local_124.x;
+            *(float *)((int)&local_934[0].y + local_44) = local_124.y;
+            *(float *)((int)&local_934[0].z + local_44) = local_124.z;
           }
           local_28 = local_28 + 4;
           local_44 = local_44 + 0x10;
@@ -130,11 +127,11 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
       iVar2 = this_ptr_00->bone_list[bone_index].parent_index;
       if (-1 < iVar2) {
         core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
-                  (this_ptr_00,iVar2,local_58[0],local_5c,local_938,(CQuaternion4f *)&local_f4);
-        local_934[iVar2].w = local_f4;
-        local_934[iVar2].x = afStack_f0[0];
-        local_934[iVar2].y = afStack_f0[1];
-        local_934[iVar2].z = afStack_f0[2];
+                  (this_ptr_00,iVar2,local_58[0],local_5c,local_938,&local_f4);
+        local_934[iVar2].w = local_f4.w;
+        local_934[iVar2].x = local_f4.x;
+        local_934[iVar2].y = local_f4.y;
+        local_934[iVar2].z = local_f4.z;
       }
       local_24 = 0;
       if (0 < this_ptr_00->bone_count) {

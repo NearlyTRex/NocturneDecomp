@@ -34,9 +34,8 @@ void __cdecl core_set_cpp_computeTriangleNormalIndexed_FUN_0056e2b0(CVector3i *v
   fVar3 = fVar7 * fVar2 - fVar6 * fVar1;
   fVar5 = (float)iVar10 * fVar1 - (float)iVar9 * fVar2;
   fVar4 = (float)iVar9 * fVar6 - (float)iVar10 * fVar7;
-  fVar1 = (float)(g_LightAttenuationMax -
-                 ((int)(fVar4 * fVar4 + fVar5 * fVar5 + fVar3 * fVar3) >> 1)) *
-          (float)65535;
+  fVar1 = (float)(g_FastInvSqrtMagic - ((int)(fVar4 * fVar4 + fVar5 * fVar5 + fVar3 * fVar3) >> 1))
+          * (float)65535;
   out_normal->x = fVar3 * fVar1;
   out_normal->y = fVar5 * fVar1;
   out_normal->z = fVar4 * fVar1;
