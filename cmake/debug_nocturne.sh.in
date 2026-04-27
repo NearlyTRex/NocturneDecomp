@@ -16,6 +16,12 @@
 #       core_charactr_cpp_FUN_0042c580), or file:line
 #       (e.g. core/charactr.cpp:32). Separate multiple locations with
 #       commas; whitespace around them is ignored.
+#
+#   ./debug.sh --tmux                 # launch GDB in a detached tmux session
+#   NOCTURNE_TMUX=1 ./debug.sh        # same as --tmux
+#       Useful for letting an agent drive gdb via `tmux send-keys`.
+#       Default session name is 'nodebug'; override with NOCTURNE_TMUX_SESSION.
+#       Attach from another terminal: tmux attach -t nodebug
 
 set -u
 
@@ -27,6 +33,17 @@ if [[ ! -x "${EXE}" ]]; then
     echo "          build it first: cmake --build --preset @NOCTURNE_PRESET_NAME@" >&2
     exit 127
 fi
+
+# Optional tmux mode: spawn gdb in a detached tmux session so it can be
+# driven from another shell (or by an agent via `tmux send-keys`).
+USE_TMUX="${NOCTURNE_TMUX:-}"
+GAME_ARGS=()
+for arg in "$@"; do
+    case "$arg" in
+        --tmux) USE_TMUX=1 ;;
+        *) GAME_ARGS+=("$arg") ;;
+    esac
+done
 
 # Symbolizer
 : "${ASAN_SYMBOLIZER_PATH:=@LLVM_SYMBOLIZER_PATH@}"
@@ -51,14 +68,37 @@ if [[ -n "${NOCTURNE_BREAKS:-}" ]]; then
     done
 fi
 
-exec gdb -q \
-    -ex "set confirm off" \
-    -ex "set pagination off" \
-    -ex "handle SIGPIPE nostop noprint pass" \
-    "${BREAK_ARGS[@]}" \
-    -ex "run $*" \
-    -ex "bt" \
-    -ex "echo \n--- registers ---\n" \
-    -ex "info registers eip ebp esp eax ebx ecx edx esi edi" \
-    -ex "echo \n--- Type 'bt full' for locals, 'continue' to resume, 'quit' to exit ---\n" \
-    "${EXE}"
+GDB_CMD=(gdb -q
+    -ex "set confirm off"
+    -ex "set pagination off"
+    -ex "handle SIGPIPE nostop noprint pass"
+    "${BREAK_ARGS[@]}"
+    -ex "run ${GAME_ARGS[*]}"
+    -ex "bt"
+    -ex "echo \n--- registers ---\n"
+    -ex "info registers eip ebp esp eax ebx ecx edx esi edi"
+    -ex "echo \n--- Type 'bt full' for locals, 'continue' to resume, 'quit' to exit ---\n"
+    "${EXE}")
+
+if [[ -z "${USE_TMUX}" ]]; then
+    exec "${GDB_CMD[@]}"
+fi
+
+if ! command -v tmux >/dev/null 2>&1; then
+    echo "debug.sh: --tmux requested but tmux is not installed" >&2
+    exit 127
+fi
+
+SESSION="${NOCTURNE_TMUX_SESSION:-nodebug}"
+if tmux has-session -t "${SESSION}" 2>/dev/null; then
+    echo "debug.sh: tmux session '${SESSION}' already exists" >&2
+    echo "          kill it first: tmux kill-session -t ${SESSION}" >&2
+    exit 1
+fi
+
+TMUX_CMD=$(printf '%q ' "${GDB_CMD[@]}")
+tmux new-session -d -s "${SESSION}" "${TMUX_CMD}"
+echo "tmux session: ${SESSION}"
+echo "attach with:  tmux attach -t ${SESSION}"
+echo "drive with:   tmux send-keys -t ${SESSION} '<gdb cmd>' Enter"
+echo "capture out:  tmux capture-pane -t ${SESSION} -p -S -200"
