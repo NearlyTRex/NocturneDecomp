@@ -177,6 +177,12 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
       core_main_c_displayErrorAndQuit_FUN_00506f10("Write me!");
     }
     if (bone_index < 0) {
+      if (this_ptr_00->frame_count - 1 < local_5c) {
+        local_5c = this_ptr_00->frame_count - 1;
+      }
+      if (this_ptr_00->frame_count - 1 < local_58[0]) {
+        local_58[0] = this_ptr_00->frame_count - 1;
+      }
       pCVar9 = this_ptr_00->frame_positions_1;
       fVar1 = pCVar9[local_5c].y;
       fVar2 = pCVar9[local_5c].z;
