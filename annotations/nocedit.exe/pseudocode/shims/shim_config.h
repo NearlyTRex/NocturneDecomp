@@ -50,3 +50,35 @@
 #ifndef NOCTURNE_FPU_TRAP
 #define NOCTURNE_FPU_TRAP 1
 #endif
+
+// NOCTURNE_SCREENSHOT_DUMP
+//   1: compile in nocturne_screenshot_dump(path) helper that writes the
+//      current g_BackBuffer contents to a PPM file plus a sidecar metadata
+//      text file at "<path>.txt". Useful from gdb when you want to inspect
+//      what the rasterizer actually produced at a specific point — far
+//      cheaper than alt-tabbing for a screen capture and lets you snapshot
+//      mid-frame state that's already overwritten by the time present happens.
+//
+//      Usage from gdb at any breakpoint (or after ctrl-C):
+//        (gdb) call (int)nocturne_screenshot_dump("/tmp/frame.ppm")
+//        # produces /tmp/frame.ppm + /tmp/frame.ppm.txt
+//
+//      The sidecar text file captures camera transform, render flags, vertex
+//      lighting state, rasterizer cursors, and a per-pixel-brightness
+//      histogram (zero/dim/mid/bright counts + nonzero bounding box). Lets
+//      you correlate visual output to engine state without separate gdb
+//      print commands.
+//
+//      Returns 0 on success, -1 on failure (file open error or unsupported
+//      BPP). Output is PPM (P6) — open with any image viewer.
+//
+//      Snapshots g_BackBuffer at its current state regardless of presentation
+//      timing, so you can dump after each render sub-pass to see what each
+//      stage contributes.
+//
+//   0: helper is a no-op stub that returns -1.
+//
+//   Override with -DNOCTURNE_SCREENSHOT_DUMP=0 to omit at compile time.
+#ifndef NOCTURNE_SCREENSHOT_DUMP
+#define NOCTURNE_SCREENSHOT_DUMP 1
+#endif

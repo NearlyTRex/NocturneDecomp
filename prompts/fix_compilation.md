@@ -739,6 +739,12 @@ p/x *(unsigned int*)g_BackBuffer@8                       # first 8 dwords
 p/x *(unsigned int*)g_ScreenBufferArray[240]@160         # 160 pixels of row 240
 p/x *(unsigned int*)((char*)g_BackBuffer + y*640*4)@8    # arbitrary row
 
+# Dump the entire backbuffer to PPM + metadata sidecar (camera, render
+# flags, vertex lighting, rasterizer cursors, brightness histogram).
+# Far better than ad-hoc `print` commands when you need a wide picture
+# of frame state. See shims/screenshot.cpp for the field list.
+call (int)nocturne_screenshot_dump("/tmp/frame.ppm")    # writes .ppm + .ppm.txt
+
 # Walk a struct field through Ghidra-generated names
 p g_CDemonRendererInstance.face_count
 p g_CGamePtr->scripted_sequence_active
