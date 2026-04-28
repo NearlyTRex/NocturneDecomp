@@ -51,34 +51,34 @@
 #define NOCTURNE_FPU_TRAP 1
 #endif
 
-// NOCTURNE_SCREENSHOT_DUMP
-//   1: compile in nocturne_screenshot_dump(path) helper that writes the
-//      current g_BackBuffer contents to a PPM file plus a sidecar metadata
-//      text file at "<path>.txt". Useful from gdb when you want to inspect
-//      what the rasterizer actually produced at a specific point — far
-//      cheaper than alt-tabbing for a screen capture and lets you snapshot
-//      mid-frame state that's already overwritten by the time present happens.
+// NOCTURNE_DUMP_TOOLS
+//   1: compile in C-callable dump helpers that snapshot pieces of engine
+//      state to disk. Intended for use from gdb when you want to capture a
+//      wide picture of what the renderer / scene / camera are doing without
+//      paying the round-trip cost of many separate `print` commands.
+//
+//      Available helpers (see shims/dump.h for full docs):
+//        nocturne_dump_screenshot(path)    — frame buffer color, PPM + sidecar
+//        nocturne_dump_zbuffer(path)       — depth buffer, normalized PPM + sidecar
+//        nocturne_dump_display_list(path)  — sorted_render_actors as text table
+//
+//      Each PPM dumper produces a sidecar `<path>.txt` with engine state,
+//      derived statistics (histogram, bounding box, min/max depth), and any
+//      relevant cross-references — so a single `call` captures most of what
+//      you'd otherwise gather with a dozen `print` commands.
 //
 //      Usage from gdb at any breakpoint (or after ctrl-C):
-//        (gdb) call (int)nocturne_screenshot_dump("/tmp/frame.ppm")
-//        # produces /tmp/frame.ppm + /tmp/frame.ppm.txt
+//        (gdb) call (int)nocturne_dump_screenshot("/tmp/frame.ppm")
+//        (gdb) call (int)nocturne_dump_zbuffer("/tmp/zbuf.ppm")
+//        (gdb) call (int)nocturne_dump_display_list("/tmp/actors.txt")
 //
-//      The sidecar text file captures camera transform, render flags, vertex
-//      lighting state, rasterizer cursors, and a per-pixel-brightness
-//      histogram (zero/dim/mid/bright counts + nonzero bounding box). Lets
-//      you correlate visual output to engine state without separate gdb
-//      print commands.
+//      Each function returns 0 on success, -1 on failure (file open error
+//      or unsupported state).
 //
-//      Returns 0 on success, -1 on failure (file open error or unsupported
-//      BPP). Output is PPM (P6) — open with any image viewer.
+//   0: helpers are no-op stubs returning -1. Symbols stay so `call` from
+//      gdb still works.
 //
-//      Snapshots g_BackBuffer at its current state regardless of presentation
-//      timing, so you can dump after each render sub-pass to see what each
-//      stage contributes.
-//
-//   0: helper is a no-op stub that returns -1.
-//
-//   Override with -DNOCTURNE_SCREENSHOT_DUMP=0 to omit at compile time.
-#ifndef NOCTURNE_SCREENSHOT_DUMP
-#define NOCTURNE_SCREENSHOT_DUMP 1
+//   Override with -DNOCTURNE_DUMP_TOOLS=0 to omit at compile time.
+#ifndef NOCTURNE_DUMP_TOOLS
+#define NOCTURNE_DUMP_TOOLS 1
 #endif
