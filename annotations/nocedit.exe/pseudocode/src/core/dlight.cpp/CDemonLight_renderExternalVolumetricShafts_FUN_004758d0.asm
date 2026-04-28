@@ -637,7 +637,7 @@ section .text
     MOV dword ptr [EBP + 0x6a],ESI      ; 00475f47
     MOV dword ptr [EBP + 0xffffff46],EDI ; 00475f4a
     CALL engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0 ; 00475f50
-        ;   XREF to: 0048c8d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, RenderScanlineFunc * scanline_renderer)
+        ;   XREF to: 0048c8d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, CustomScanlineFunc * scanline_renderer)
     ADD ESP,0xc                         ; 00475f55
     CMP ESI,0x4                         ; 00475f58
     JL 0x00475c78                       ; 00475f5b

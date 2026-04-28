@@ -8,7 +8,7 @@
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
 ; Referenced Globals:
-;   RenderScanlineFunc* g_ScanlineRenderFunc
+;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_VertexPreprocessMode
 ;

@@ -14,7 +14,7 @@
 ;   int g_BitsPerPixel = 0x8
 ;   int[16] g_VertexIndexBuffer
 ;   undefined4 g_VertexIndexBuffer[1]
-;   RenderScanlineFunc* g_ScanlineRenderFunc
+;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_VertexPreprocessMode
 ;

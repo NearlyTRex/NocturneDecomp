@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,RenderScanlineFunc *scanline_renderer)
+; void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,CustomScanlineFunc *scanline_renderer)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
-; RenderScanlineFunc * Stack[0xc]:4   scanline_renderer
+; CustomScanlineFunc * Stack[0xc]:4   scanline_renderer
 ;
 ; XREF[4]:
 ;   core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_00471400 at 0047158d
@@ -88,7 +88,7 @@ section .text
     PUSH EAX                            ; 0048c945
     PUSH 0x824e28                       ; 0048c946 | g_ClippedVertexBuffer
     CALL engine_3d.c_rasterizePolygonCustom_FUN_005fd4e0 ; 0048c94b
-        ;   XREF to: 005fd4e0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_rasterizePolygonCustom_FUN_005fd4e0(SRenderVertex * vertex_buffer, int vertex_count, RenderScanlineFunc * scanline_renderer)
+        ;   XREF to: 005fd4e0 (UNCONDITIONAL_CALL)  ; void engine_3d.c_rasterizePolygonCustom_FUN_005fd4e0(SRenderVertex * vertex_buffer, int vertex_count, CustomScanlineFunc * scanline_renderer)
     ADD ESP,0xc                         ; 0048c950
     POP EBP                             ; 0048c953
     POP EDI                             ; 0048c954

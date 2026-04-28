@@ -22,7 +22,7 @@
 ;   SInputFace*[2000] g_VisibleFacePointers
 ;   int g_BitsPerPixel = 0x8
 ;   int g_CullingMode
-;   RenderScanlineFunc* g_ScanlineRenderFunc
+;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   int g_UseExternalRenderer
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_VertexPreprocessMode

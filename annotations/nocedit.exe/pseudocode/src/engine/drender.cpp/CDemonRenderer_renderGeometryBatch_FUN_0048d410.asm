@@ -21,7 +21,7 @@
 ;   int g_CullingMode
 ;   int g_ClippedVertexCount
 ;   SRenderVertex[16] g_ClippedVertexBuffer
-;   RenderScanlineFunc* g_ScanlineRenderFunc
+;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   undefined4 g_RenderStateFlags+1
 ;   int g_VertexPreprocessMode

@@ -13,7 +13,7 @@
 ;   core_set.cpp_CDemonSet_renderPrimitiveList_FUN_005708e0 at 00570946
 ;
 ; Referenced Globals:
-;   RenderScanlineFunc* g_ScanlineRenderFunc
+;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_VertexPreprocessMode
 ;

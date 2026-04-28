@@ -417,4 +417,4 @@ void __cdecl rasterizeTriangle(SRenderVertex *vertex_buffer,int vertex_count);
 
 // Original: engine_3d.c_rasterizePolygonCustom_FUN_005fd4e0
 // Address: 005fd4e0
-void __cdecl rasterizePolygonCustom(SRenderVertex *vertex_buffer,int vertex_count,RenderScanlineFunc *scanline_renderer);
+void __cdecl rasterizePolygonCustom(SRenderVertex *vertex_buffer,int vertex_count,CustomScanlineFunc *scanline_renderer);

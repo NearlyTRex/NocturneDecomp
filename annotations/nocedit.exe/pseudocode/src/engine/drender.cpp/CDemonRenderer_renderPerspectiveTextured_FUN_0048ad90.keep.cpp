@@ -17,12 +17,12 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspectiveTextured_FUN_004
     if (this_ptr->face_count == 0) {
       g_RenderStateFlags.dword = RENDER_TEX_ENABLE;
       g_VertexPreprocessMode = PREPROCESS_W_DEPTH_REPLACEMENT;
-      g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9;
     }
     else {
       g_RenderStateFlags.dword = 0;
       g_VertexPreprocessMode = 0;
-      g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
               (this_ptr,(prim->base).count,(int *)(prim + 1));

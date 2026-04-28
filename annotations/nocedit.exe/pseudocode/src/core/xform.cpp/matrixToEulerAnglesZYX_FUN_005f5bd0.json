@@ -4,7 +4,7 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 455,
     "complexity_score": 231,
@@ -335,6 +335,51 @@
       }
     ],
     "severity": "medium"
+  },
+  "static_analysis": {
+    "analyzed_file": "matrixToEulerAnglesZYX_FUN_005f5bd0.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 5,
+      "diagnostics": [
+        {
+          "check_id": "ignoredReturnValue",
+          "column": 11,
+          "line": 125,
+          "message": "Return value of function asin() is not used.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "ignoredReturnValue",
+          "column": 9,
+          "line": 153,
+          "message": "Return value of function acos() is not used.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "ignoredReturnValue",
+          "column": 5,
+          "line": 167,
+          "message": "Return value of function asin() is not used.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 13,
+          "line": 127,
+          "message": "Uninitialized variable: local_20",
+          "severity": "warning"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 7,
+          "line": 169,
+          "message": "Uninitialized variable: local_18",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

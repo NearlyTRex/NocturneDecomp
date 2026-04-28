@@ -17,7 +17,7 @@
 ;   uint g_ProcessedVertexOffset
 ;   int[24] g_ProcessedVertexIndices
 ;   undefined4 g_ProcessedVertexIndices[1]
-;   RenderScanlineFunc* g_ScanlineRenderFunc
+;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   int g_PerspectiveReciprocal
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags

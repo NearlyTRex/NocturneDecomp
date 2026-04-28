@@ -17,8 +17,8 @@ DWORD g_JoyRPos = {};
 DWORD g_JoyZPos = {};
 DWORD g_JoyButtons = {};
 
-// RenderScanlineFunc*
-RenderScanlineFunc* g_ScanlineRenderFunc = {};
+// MainScanlineFunc*
+MainScanlineFunc* g_ScanlineRenderFunc = {};
 
 // SRGBColorPalette*
 SRGBColorPalette* g_CurrentPalette = {};

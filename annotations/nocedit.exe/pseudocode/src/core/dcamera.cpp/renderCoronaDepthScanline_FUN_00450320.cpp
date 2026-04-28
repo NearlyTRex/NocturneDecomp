@@ -2,11 +2,11 @@
 // Address: 00450320
 // Address Range: [[00450320, 00450434]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
+// Signature: void __cdecl core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320(int scanline_y,SSoftwareEdge *right,SSoftwareEdge *left)
 
 #include "nocturne.h"
 
-void __cdecl core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
+void __cdecl core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320(int scanline_y,SSoftwareEdge *right,SSoftwareEdge *left)
 
 {
   int *piVar1;
@@ -19,31 +19,31 @@ void __cdecl core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320(SSoftwareEd
   int iVar8;
   uint uVar9;
   
-  uVar3 = (int)left_edge - g_ClipTop;
+  uVar3 = scanline_y - g_ClipTop;
   if (((g_CameraDownscaleIterations.dword != 1) || ((uVar3 & 1) == 0)) &&
      ((g_CameraDownscaleIterations.dword != 2 || ((uVar3 & 3) == 0)))) {
     iVar8 = (int)uVar3 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f);
-    uVar7 = ((right_edge->base).x_current >> 0x10) - g_ClipLeft >>
+    uVar7 = ((right->base).x_current >> 0x10) - g_ClipLeft >>
             (g_CameraDownscaleIterations.bytes[0] & 0x1f);
-    uVar9 = (*(int *)(scanline_y + 8) >> 0x10) - g_ClipLeft >>
+    uVar9 = ((left->base).x_current >> 0x10) - g_ClipLeft >>
             (g_CameraDownscaleIterations.bytes[0] & 0x1f);
-    pSVar5 = (SSoftwareEdge *)scanline_y;
+    pSVar5 = left;
     uVar3 = uVar7;
     if ((int)uVar9 < (int)uVar7) {
-      pSVar5 = right_edge;
+      pSVar5 = right;
       uVar3 = uVar9;
       uVar9 = uVar7;
-      right_edge = (SSoftwareEdge *)scanline_y;
+      right = left;
     }
     if (uVar3 < (uint)g_CoronaLeftExtent[iVar8]) {
       g_CoronaLeftExtent[iVar8] = uVar3;
-      g_CoronaLeftIntensity[iVar8] = (right_edge->base).red_current;
+      g_CoronaLeftIntensity[iVar8] = (right->base).red_current;
     }
     if ((uint)g_CoronaRightExtent[iVar8] < uVar9) {
       g_CoronaRightExtent[iVar8] = uVar9;
       g_CoronaRightIntensity[iVar8] = (pSVar5->base).red_current;
     }
-    iVar4 = (right_edge->base).depth_current;
+    iVar4 = (right->base).depth_current;
     iVar2 = uVar9 - uVar3;
     iVar6 = (pSVar5->base).depth_current - iVar4;
     piVar1 = g_CoronaDepthBuffer[iVar8] + uVar3;

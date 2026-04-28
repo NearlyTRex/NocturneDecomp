@@ -45,7 +45,7 @@ void __cdecl renderAlphaRow16(ushort *destPixels,uchar *srcIndices,uchar *srcAlp
 
 // Original: wincore_windll.cpp_renderScanline_FUN_005b5710
 // Address: 005b5710
-void __edi_esi_ebx renderScanline(SHardwareEdge *left,SHardwareEdge *right,int scanline_y);
+void __edi_esi_ebx renderScanline(SSoftwareEdge *left,SSoftwareEdge *right,int scanline_y);
 
 // Original: wincore_windll.cpp_renderScanlineSwapped_FUN_005b5716
 // Address: 005b5716

@@ -17,7 +17,7 @@
 ; Referenced Globals:
 ;   int g_RenderPixelBudget = 0x1
 ;   int g_RenderPixelCounter
-;   RenderScanlineFunc* g_ScanlineRenderFunc
+;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   int g_UseExternalRenderer
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_VertexPreprocessMode

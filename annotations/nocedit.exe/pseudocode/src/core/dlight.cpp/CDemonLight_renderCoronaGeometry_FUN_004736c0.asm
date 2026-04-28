@@ -274,7 +274,7 @@ section .text
     PUSH EDX                            ; 00473959 | g_CDemonRendererInstance
     INC EBX                             ; 0047395a
     CALL engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0 ; 0047395b
-        ;   XREF to: 0048c8d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, RenderScanlineFunc * scanline_renderer)
+        ;   XREF to: 0048c8d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, CustomScanlineFunc * scanline_renderer)
     ADD ESP,0xc                         ; 00473960
     CMP EBX,0x10                        ; 00473963
     JL 0x00473936                       ; 00473966
@@ -304,7 +304,7 @@ section .text
     MOV dword ptr [ESP + 0x28],EDI      ; 004739ac
     MOV dword ptr [ESP + 0x30],EBX      ; 004739b0
     CALL engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0 ; 004739b4
-        ;   XREF to: 0048c8d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, RenderScanlineFunc * scanline_renderer)
+        ;   XREF to: 0048c8d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, CustomScanlineFunc * scanline_renderer)
     ADD ESP,0xc                         ; 004739b9
     CMP EBX,0xe                         ; 004739bc
     JL 0x00473995                       ; 004739bf

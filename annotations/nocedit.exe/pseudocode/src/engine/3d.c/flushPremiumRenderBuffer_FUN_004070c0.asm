@@ -18,7 +18,7 @@
 ;   undefined4 g_RenderBufferPool[1].vertex_count
 ;   SRenderBufferEntry*[2500] g_RenderBufferSortArray
 ;   undefined4 g_RenderBufferSortArray[1]
-;   RenderScanlineFunc* g_ScanlineRenderFunc
+;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   int g_MMXSupported
 ;   int g_BlendMode
 ;   _BIT_INTEGER32 g_RenderStateFlags

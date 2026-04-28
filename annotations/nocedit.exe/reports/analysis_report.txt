@@ -7,10 +7,10 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 5153 (79.8%)
-Functions with suspects: 1301 (20.2%)
+Clean functions: 5155 (79.9%)
+Functions with suspects: 1299 (20.1%)
 
-Total suspect patterns: 5900
+Total suspect patterns: 5899
 Average suspects per function: 0.91
 
 Virtual files: 214 total, 36 at 100%, 79 at 90%+
@@ -28,8 +28,8 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              3048
-  unnamed_local             861
+  pointer_cast              3045
+  unnamed_local             865
   unrolled_strcpy           491
   warning_inlined_function  257
   raw_address_constant      194
@@ -57,7 +57,6 @@ SUSPECT PATTERN BREAKDOWN
   warning_max_restarts      3
   preinc_loop_idiom         2
   cpuid_intrinsic           2
-  wrong_global              2
   fast_inv_sqrt_inline      1
   warning_unable_to_use_type 1
   warning_overlapping_globals 1
@@ -118,7 +117,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 5103 more
+  ... and 5105 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -156,7 +155,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (646 functions):
+  pointer_cast (645 functions):
     00488230: cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230
     004874d0: cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0
     00487630: cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
@@ -167,7 +166,7 @@ FUNCTIONS BY SUSPECT TYPE
     0054ab30: cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30
     0054ae70: cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
     0054aa20: cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
-    ... and 636 more
+    ... and 635 more
 
   unnamed_local (119 functions):
     00432540: cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
@@ -445,9 +444,6 @@ FUNCTIONS BY SUSPECT TYPE
 
   cpuid_intrinsic (1 functions):
     00524f4c: core_mmx.c_detectIntelProcessor_FUN_00524f4c
-
-  wrong_global (1 functions):
-    005487a0: core_path.cpp_CPathMap_searchGrid_FUN_005487a0
 
   fast_inv_sqrt_inline (1 functions):
     00471850: core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00471850

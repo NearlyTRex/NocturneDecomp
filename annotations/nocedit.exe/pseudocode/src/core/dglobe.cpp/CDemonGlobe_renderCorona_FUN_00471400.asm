@@ -172,7 +172,7 @@ section .text
     PUSH ESI                            ; 00471588 | g_CDemonRendererInstance
     FISTP dword ptr [ESP + 0x28]        ; 00471589
     CALL engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0 ; 0047158d
-        ;   XREF to: 0048c8d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, RenderScanlineFunc * scanline_renderer)
+        ;   XREF to: 0048c8d0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * prim, CustomScanlineFunc * scanline_renderer)
     ADD ESP,0xc                         ; 00471592
     CMP EBX,0xbd0                       ; 00471595
     JNZ 0x00471517                      ; 0047159b

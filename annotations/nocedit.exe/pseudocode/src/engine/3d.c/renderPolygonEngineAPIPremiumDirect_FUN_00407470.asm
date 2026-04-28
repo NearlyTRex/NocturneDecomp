@@ -18,7 +18,7 @@
 ;   undefined4 g_RenderBufferPool[0].alpha_value
 ;   undefined4 g_RenderBufferPool[0].blend_mode
 ;   undefined4 g_RenderBufferPool[0].min_z_value
-;   RenderScanlineFunc* g_ScanlineRenderFunc
+;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   int g_MMXSupported
 ;   int g_BlendMode
 ;   _BIT_INTEGER32 g_RenderStateFlags

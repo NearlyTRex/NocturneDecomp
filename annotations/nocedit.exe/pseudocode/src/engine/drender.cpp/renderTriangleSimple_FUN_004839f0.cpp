@@ -208,8 +208,7 @@ LAB_00483cc8:
             }
           }
           local_74[0] = (SRenderVertex *)0x483ceb;
-          wincore_windll_cpp_renderScanline_FUN_005b5710
-                    (&local_18->base,&local_14->base,(int)scanline_y);
+          wincore_windll_cpp_renderScanline_FUN_005b5710(local_18,local_14,(int)scanline_y);
           if (g_RenderAbortFlag != 0) {
             return;
           }

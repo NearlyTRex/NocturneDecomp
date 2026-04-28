@@ -10,7 +10,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveDepthMode_FUN_004
 
 {
   int iVar1;
-  RenderScanlineFunc *pcVar2;
+  MainScanlineFunc *pcVar2;
   code *pcVar3;
   
   iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal);

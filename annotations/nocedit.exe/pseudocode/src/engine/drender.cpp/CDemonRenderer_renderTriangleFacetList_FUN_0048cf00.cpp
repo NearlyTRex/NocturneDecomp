@@ -22,10 +22,10 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048c
      (g_CullingMode != 0)) {
     if (this_ptr->face_count == 0) {
       if (g_BitsPerPixel == 0x20) {
-        g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
       }
       else {
-        g_ScanlineRenderFunc = (RenderScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
       }
       g_RenderStateFlags.dword = render_flags;
       g_VertexPreprocessMode = 6;
@@ -92,7 +92,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048c
       }
     }
     else {
-      g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
       g_RenderStateFlags.dword = 0;
       g_VertexPreprocessMode = g_RenderStateFlags.dword;
       for (; 0 < primitive_count; primitive_count = primitive_count + -1) {

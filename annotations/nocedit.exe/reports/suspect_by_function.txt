@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5149 (79.8%)
-With suspects: 1305
-Total suspects: 5900
+Clean: 5151 (79.8%)
+With suspects: 1303
+Total suspects: 5899
 
 ====================================================================================================
 cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50 (1 suspect)
@@ -1696,8 +1696,8 @@ core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_004507a0 (1 suspect)
 core_dcamera.cpp_renderVolumetricLightScanline_FUN_00450440 (2 suspects)
   File: core/dcamera.cpp
 ====================================================================================================
-  Line 58 [pointer_cast]: if (*(int *)((int)puVar3 + iVar5 + (iVar14 << bVar5) * 4) < iVar6) {
-  Line 59 [pointer_cast]: piVar1 = (int *)((int)g_DitherPatternTable + g_DitherPatternOffset);
+  Line 59 [pointer_cast]: if (*(int *)((int)puVar3 + iVar8 + (iVar14 << bVar5) * 4) < iVar6) {
+  Line 60 [pointer_cast]: piVar1 = (int *)((int)g_DitherPatternTable + g_DitherPatternOffset);
 
 ====================================================================================================
 core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0 (13 suspects)
@@ -5038,13 +5038,6 @@ core_path.cpp_CPathMap_renderPathMap_FUN_00547fc0 (2 suspects)
   Line 15 [stack_alignment_array]: int aiStackY_1040 [1010];
 
 ====================================================================================================
-core_path.cpp_CPathMap_searchGrid_FUN_005487a0 (2 suspects)
-  File: core/path.cpp
-====================================================================================================
-  Line 102 [wrong_global]: if (((0 < grid_x) && ((&g_PathfindingVisitedMinus1)[grid_z * 100 + grid_x] == '\0')) &&
-  Line 105 [wrong_global]: (&g_PathfindingVisitedMinus1)[grid_x + grid_z * 100] = '\x04';
-
-====================================================================================================
 core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60 (1 suspect)
   File: core/path.cpp
 ====================================================================================================
@@ -6735,12 +6728,16 @@ core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750 (1 su
   Line 14 [stack_alignment_array]: float afStackY_1808 [1522];
 
 ====================================================================================================
-core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 (13 suspects)
+core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 (17 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
   Line 19 [stack_alignment_array]: float afStackY_1940 [1020];
   Line 35 [unnamed_local]: CQuaternion4f local_124;
   Line 38 [unnamed_local]: CQuaternion4f local_f4;
+  Line 44 [unnamed_local]: int local_5c;
+  Line 45 [unnamed_local]: int local_58 [3];
+  Line 76 [unnamed_local]: (&this_ptr->motion_controller,target_motion_index,target_frame_number,local_58,
+  Line 77 [unnamed_local]: &local_5c,&local_938);
   Line 107 [pointer_cast]: *(int *)((int)aiStack_2f4 + local_28) = iVar14;
   Line 113 [pointer_cast]: *(float *)((int)&local_934[0].x + local_44) = afStack_120[0];
   Line 114 [pointer_cast]: *(float *)((int)&local_934[0].y + local_44) = afStack_120[1];
@@ -8095,14 +8092,6 @@ engine_3d.c_makeGrayscaleColor_FUN_004039c0 (1 suspect)
   Line 8 [raw_address_constant]: return color_value * -0x1010101;
 
 ====================================================================================================
-engine_3d.c_rasterizePolygonCustom_FUN_005fd4e0 (3 suspects)
-  File: engine/3d.c
-====================================================================================================
-  Line 77 [pointer_cast]: puVar3 = (byte *)((int)&(local_18->base).y_min + 1);
-  Line 147 [pointer_cast]: local_18 = (SSoftwareEdge *)((int)&(local_18->base).y_min + 1);
-  Line 224 [pointer_cast]: scanline_y = (SSoftwareEdge *)((int)&(local_18->base).y_min + 1);
-
-====================================================================================================
 engine_3d.c_rasterizeTriangle_FUN_005fcfc0 (6 suspects)
   File: engine/3d.c
 ====================================================================================================
@@ -8787,7 +8776,7 @@ engine_drender.cpp_renderTriangleTextured_FUN_00483370 (24 suspects)
   Line 225 [unnamed_local]: local_14 = local_14 + 1;
   Line 228 [unnamed_local]: local_14 = (SSoftwareEdge *)0x0;
   Line 230 [unnamed_local]: if (local_14 == (SSoftwareEdge *)0x0) {
-  Line 234 [unnamed_local]: wincore_windll_cpp_renderScanline_FUN_005b5710(&local_14->base,&local_18->base,iVar14);
+  Line 234 [unnamed_local]: wincore_windll_cpp_renderScanline_FUN_005b5710(local_14,local_18,iVar14);
   Line 245 [unnamed_local]: (local_14->base).x_current = (int)((longlong)(local_14->base).x_current + (longlong)(local_14->base).x_gradient);
   Line 245 [unnamed_local]: (local_14->base).x_current = (int)((longlong)(local_14->base).x_current + (longlong)(local_14->base).x_gradient);
   Line 245 [unnamed_local]: (local_14->base).x_current = (int)((longlong)(local_14->base).x_current + (longlong)(local_14->base).x_gradient);
@@ -9312,7 +9301,7 @@ engine_prim.c_renderPolygonSoftware_FUN_00552510 (19 suspects)
   Line 212 [unnamed_local]: (local_14->base).y_min = -1;
   Line 213 [unnamed_local]: local_14 = engine_prim_c_findEdgeInBuffer_FUN_00551f70(iVar10,edge_ptr);
   Line 214 [unnamed_local]: if (local_14 == (SSoftwareEdge *)0x0) {
-  Line 218 [unnamed_local]: wincore_windll_cpp_renderScanline_FUN_005b5710(&local_14->base,&edge_ptr->base,iVar10);
+  Line 218 [unnamed_local]: wincore_windll_cpp_renderScanline_FUN_005b5710(local_14,edge_ptr,iVar10);
   Line 226 [unnamed_local]: (local_14->base).x_current = (local_14->base).x_current + (local_14->base).x_gradient;
   Line 226 [unnamed_local]: (local_14->base).x_current = (local_14->base).x_current + (local_14->base).x_gradient;
   Line 226 [unnamed_local]: (local_14->base).x_current = (local_14->base).x_current + (local_14->base).x_gradient;
@@ -9344,7 +9333,7 @@ engine_prim.c_renderScanlinePolygon_FUN_00553470 (24 suspects)
   Line 261 [unnamed_local]: local_14 = local_14 + 1;
   Line 261 [unnamed_local]: local_14 = local_14 + 1;
   Line 266 [unnamed_local]: if (local_14 == (SSoftwareEdge *)0x0) {
-  Line 270 [unnamed_local]: wincore_windll_cpp_renderScanline_FUN_005b5710(&local_14->base,&right->base,iVar7);
+  Line 270 [unnamed_local]: wincore_windll_cpp_renderScanline_FUN_005b5710(local_14,right,iVar7);
   Line 284 [unnamed_local]: (local_14->base).x_current = (int)((longlong)(local_14->base).x_current + (longlong)(local_14->base).x_gradient);
   Line 284 [unnamed_local]: (local_14->base).x_current = (int)((longlong)(local_14->base).x_current + (longlong)(local_14->base).x_gradient);
   Line 284 [unnamed_local]: (local_14->base).x_current = (int)((longlong)(local_14->base).x_current + (longlong)(local_14->base).x_gradient);

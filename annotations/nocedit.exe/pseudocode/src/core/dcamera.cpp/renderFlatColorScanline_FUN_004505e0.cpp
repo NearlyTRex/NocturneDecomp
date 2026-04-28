@@ -2,11 +2,11 @@
 // Address: 004505e0
 // Address Range: [[004505e0, 0045079c]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_renderFlatColorScanline_FUN_004505e0(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
+// Signature: void __cdecl core_dcamera_cpp_renderFlatColorScanline_FUN_004505e0(int scanline_y,SSoftwareEdge *right,SSoftwareEdge *left)
 
 #include "nocturne.h"
 
-void __cdecl core_dcamera_cpp_renderFlatColorScanline_FUN_004505e0(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
+void __cdecl core_dcamera_cpp_renderFlatColorScanline_FUN_004505e0(int scanline_y,SSoftwareEdge *right,SSoftwareEdge *left)
 
 {
   char cVar2;
@@ -26,20 +26,20 @@ void __cdecl core_dcamera_cpp_renderFlatColorScanline_FUN_004505e0(SSoftwareEdge
   uint *local_14;
   byte bVar1;
   
-  uVar6 = (int)left_edge - g_ClipTop;
+  uVar6 = scanline_y - g_ClipTop;
   if (((g_CameraDownscaleIterations.dword != 1) || ((uVar6 & 1) == 0)) &&
      ((g_CameraDownscaleIterations.dword != 2 || ((uVar6 & 3) == 0)))) {
-    iVar10 = ((right_edge->base).x_current >> 0x10) - g_ClipLeft;
-    local_18 = (*(int *)(scanline_y + 8) >> 0x10) - g_ClipLeft;
-    pSVar7 = (SSoftwareEdge *)scanline_y;
+    iVar10 = ((right->base).x_current >> 0x10) - g_ClipLeft;
+    local_18 = ((left->base).x_current >> 0x10) - g_ClipLeft;
+    pSVar7 = left;
     iVar5 = iVar10;
     if (local_18 < iVar10) {
-      pSVar7 = right_edge;
-      right_edge = (SSoftwareEdge *)scanline_y;
+      pSVar7 = right;
+      right = left;
       iVar5 = local_18;
       local_18 = iVar10;
     }
-    iVar2 = (right_edge->base).depth_current;
+    iVar2 = (right->base).depth_current;
     local_14 = g_ZBufferScanlineArray[uVar6] + iVar5;
     iVar1 = local_18 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f);
     iVar11 = iVar5 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f);

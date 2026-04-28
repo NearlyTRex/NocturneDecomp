@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_3d_c_rasterizePolygonCustom_FUN_005fd4e0(SRenderVertex *vertex_buffer,int vertex_count,RenderScanlineFunc *scanline_renderer)
+; void __cdecl engine_3d_c_rasterizePolygonCustom_FUN_005fd4e0(SRenderVertex *vertex_buffer,int vertex_count,CustomScanlineFunc *scanline_renderer)
 ;
 ; Parameters:
 ; SRenderVertex *  Stack[0x4]:4   vertex_buffer
 ; int              Stack[0x8]:4   vertex_count
-; RenderScanlineFunc * Stack[0xc]:4   scanline_renderer
+; CustomScanlineFunc * Stack[0xc]:4   scanline_renderer
 ; Local Variables:
 ; SSoftwareEdge *  Stack[-0x18]:4  local_18
 ;

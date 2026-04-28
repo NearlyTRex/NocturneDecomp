@@ -225,7 +225,7 @@ void __cdecl CDemonRenderer::popViewport(CDemonRenderer *this_ptr);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
 // Address: 0048c8d0
-void __cdecl CDemonRenderer::renderCustomScanline(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,RenderScanlineFunc *scanline_renderer);
+void __cdecl CDemonRenderer::renderCustomScanline(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,CustomScanlineFunc *scanline_renderer);
 
 // Original: engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
 // Address: 0048c960

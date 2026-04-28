@@ -17,7 +17,7 @@
 ;   undefined4 g_ProcessedVertexIndices[1]
 ;   int g_ActiveRenderColor
 ;   int g_CurrentLightingValue
-;   RenderScanlineFunc* g_ScanlineRenderFunc
+;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_VertexPreprocessMode

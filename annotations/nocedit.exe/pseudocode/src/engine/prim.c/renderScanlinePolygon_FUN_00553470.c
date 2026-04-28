@@ -268,7 +268,7 @@ LAB_005536b2:
             return;
           }
         }
-        wincore_windll_cpp_renderScanline_FUN_005b5710(&local_14->base,&right->base,iVar7);
+        wincore_windll_cpp_renderScanline_FUN_005b5710(local_14,right,iVar7);
         (right->base).x_current = (right->base).x_current + (right->base).x_gradient;
         (right->base).u_current = (right->base).u_current + (right->base).u_gradient;
         (right->base).v_current = (right->base).v_current + (right->base).v_gradient;

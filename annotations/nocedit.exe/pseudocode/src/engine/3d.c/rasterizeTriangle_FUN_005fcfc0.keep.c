@@ -207,7 +207,7 @@ LAB_005fd24c:
             return;
           }
         }
-        wincore_windll_cpp_renderScanline_FUN_005b5710(&local_18->base,&local_14->base,scanline_y);
+        wincore_windll_cpp_renderScanline_FUN_005b5710(local_18,local_14,scanline_y);
         if (g_RenderAbortFlag != 0) {
           return;
         }

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 358,
-    "complexity_score": 142,
+    "complexity_score": 117,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 30,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 117,
-    "suspect_count": 2,
-    "suspect_types": [
-      "wrong_global"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 475
   },
   "cross_references": [
@@ -309,6 +307,26 @@
     },
     "pcode_op_count": 1420
   },
+  "resolved_suspects": [
+    {
+      "description": "Scalar global g_PathfindingVisitedMinus1 accessed via (&g_PathfindingVisitedMinus1)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_PathfindingVisited (at 0x030d2858, +1 bytes).",
+      "line": 102,
+      "match": "g_PathfindingVisitedMinus1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (((0 < grid_x) && ((&g_PathfindingVisitedMinus1)[grid_z * 100 + grid_x] == '\\0')) &&",
+      "type": "wrong_global"
+    },
+    {
+      "description": "Scalar global g_PathfindingVisitedMinus1 accessed via (&g_PathfindingVisitedMinus1)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_PathfindingVisited (at 0x030d2858, +1 bytes).",
+      "line": 105,
+      "match": "g_PathfindingVisitedMinus1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&g_PathfindingVisitedMinus1)[grid_x + grid_z * 100] = '\\x04';",
+      "type": "wrong_global"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -332,22 +350,43 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Scalar global g_PathfindingVisitedMinus1 accessed via (&g_PathfindingVisitedMinus1)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_PathfindingVisited (at 0x030d2858, +1 bytes).",
-      "line": 102,
-      "match": "g_PathfindingVisitedMinus1",
-      "severity": "moderate",
-      "text": "if (((0 < grid_x) && ((&g_PathfindingVisitedMinus1)[grid_z * 100 + grid_x] == '\\0')) &&",
-      "type": "wrong_global"
+  "static_analysis": {
+    "analyzed_file": "CPathMap_searchGrid_FUN_005487a0.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 42,
+          "line": 68,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 42,
+          "line": 83,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 42,
+          "line": 97,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 42,
+          "line": 111,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        }
+      ],
+      "error": null
     },
-    {
-      "description": "Scalar global g_PathfindingVisitedMinus1 accessed via (&g_PathfindingVisitedMinus1)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_PathfindingVisited (at 0x030d2858, +1 bytes).",
-      "line": 105,
-      "match": "g_PathfindingVisitedMinus1",
-      "severity": "moderate",
-      "text": "(&g_PathfindingVisitedMinus1)[grid_x + grid_z * 100] = '\\x04';",
-      "type": "wrong_global"
-    }
-  ]
+    "file_variant": "keep"
+  },
+  "suspects": []
 }

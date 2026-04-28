@@ -4,8 +4,8 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    3048 ( 51.7%)
-  unnamed_local                    861 ( 14.6%)
+  pointer_cast                    3045 ( 51.6%)
+  unnamed_local                    865 ( 14.7%)
   unrolled_strcpy                  491 (  8.3%)
   warning_inlined_function         257 (  4.4%)
   raw_address_constant             194 (  3.3%)
@@ -33,7 +33,6 @@ SUSPECT TYPE COUNTS
   warning_max_restarts               3 (  0.1%)
   preinc_loop_idiom                  2 (  0.0%)
   cpuid_intrinsic                    2 (  0.0%)
-  wrong_global                       2 (  0.0%)
   fast_inv_sqrt_inline               1 (  0.0%)
   warning_unable_to_use_type         1 (  0.0%)
   warning_overlapping_globals        1 (  0.0%)
@@ -43,7 +42,7 @@ SUSPECT TYPE COUNTS
   warning_indirect_jump              1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (3048 occurrences)
+TYPE: pointer_cast (3045 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -52,7 +51,7 @@ Unique patterns:
    254x  (float *)((int)
    123x  (double *)((int)
    108x  (SRenderVertex *)((int)
-    94x  (byte *)((int)
+    93x  (byte *)((int)
     68x  (ushort *)((int)
     66x  (void *)((int)
     48x  (short *)((int)
@@ -432,7 +431,6 @@ Functions:
   engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0
   engine_3d.c_flushPremiumRenderBuffer_FUN_004070c0
   engine_3d.c_flushRenderQueue_FUN_00407a30
-  engine_3d.c_rasterizePolygonCustom_FUN_005fd4e0
   engine_3d.c_renderOverlayTextureEnable_FUN_00404020
   engine_3d.c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_00407720
   engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470
@@ -717,7 +715,7 @@ Functions:
   wincore_windll.cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec
 
 ====================================================================================================
-TYPE: unnamed_local (861 occurrences)
+TYPE: unnamed_local (865 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -733,9 +731,9 @@ Unique patterns:
     21x  local_2c
     19x  local_20
     19x  local_34
+    19x  local_5c
     18x  local_48
     18x  local_174
-    17x  local_5c
     15x  local_28
     15x  local_190
     14x  local_78
@@ -2236,16 +2234,6 @@ Unique patterns:
 
 Functions:
   core_mmx.c_detectIntelProcessor_FUN_00524f4c
-
-====================================================================================================
-TYPE: wrong_global (2 occurrences)
-====================================================================================================
-
-Unique patterns:
-     2x  g_PathfindingVisitedMinus1
-
-Functions:
-  core_path.cpp_CPathMap_searchGrid_FUN_005487a0
 
 ====================================================================================================
 TYPE: fast_inv_sqrt_inline (1 occurrences)

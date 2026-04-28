@@ -2057,6 +2057,10 @@
       "type":"function_definition"
     },
     {
+      "name":"CustomScanlineFunc",
+      "type":"function_definition"
+    },
+    {
       "name":"D3DVALUE",
       "type":"typedef"
     },
@@ -3481,6 +3485,10 @@
       "type":"function_definition"
     },
     {
+      "name":"MainScanlineFunc",
+      "type":"function_definition"
+    },
+    {
       "name":"MathErrorContext",
       "type":"struct"
     },
@@ -3607,10 +3615,6 @@
     {
       "name":"ReentrantCriticalSection",
       "type":"struct"
-    },
-    {
-      "name":"RenderScanlineFunc",
-      "type":"function_definition"
     },
     {
       "name":"RuntimeHandlerEntry",
@@ -17120,6 +17124,28 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/Game",
       "importable":true,
+      "name":"CustomScanlineFunc",
+      "parameters":[
+        {
+          "name":"scanline_y",
+          "type":"int"
+        },
+        {
+          "name":"right",
+          "type":"SSoftwareEdge*"
+        },
+        {
+          "name":"left",
+          "type":"SSoftwareEdge*"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
       "name":"CWeapon_fire",
       "parameters":[
         {
@@ -21804,6 +21830,28 @@
       "type":"function_definition"
     },
     {
+      "calling_convention":"__edi_esi_ebx",
+      "cat":"/Nocturne/FunctionDefinition/Game",
+      "importable":true,
+      "name":"MainScanlineFunc",
+      "parameters":[
+        {
+          "name":"left",
+          "type":"SSoftwareEdge*"
+        },
+        {
+          "name":"right",
+          "type":"SSoftwareEdge*"
+        },
+        {
+          "name":"scanline_y",
+          "type":"int"
+        }
+      ],
+      "return_type":"void",
+      "type":"function_definition"
+    },
+    {
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/System/math.h",
       "importable":true,
@@ -22561,28 +22609,6 @@
         }
       ],
       "return_type":"BOOL",
-      "type":"function_definition"
-    },
-    {
-      "calling_convention":"__edi_esi_ebx",
-      "cat":"/Nocturne/FunctionDefinition/Game",
-      "importable":true,
-      "name":"RenderScanlineFunc",
-      "parameters":[
-        {
-          "name":"left",
-          "type":"SHardwareEdge*"
-        },
-        {
-          "name":"right",
-          "type":"SHardwareEdge*"
-        },
-        {
-          "name":"scanline_y",
-          "type":"int"
-        }
-      ],
-      "return_type":"void",
       "type":"function_definition"
     },
     {

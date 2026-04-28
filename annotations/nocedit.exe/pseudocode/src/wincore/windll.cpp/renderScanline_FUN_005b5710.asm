@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __edi_esi_ebx wincore_windll_cpp_renderScanline_FUN_005b5710(SHardwareEdge *left,SHardwareEdge *right,int scanline_y)
+; void __edi_esi_ebx wincore_windll_cpp_renderScanline_FUN_005b5710(SSoftwareEdge *left,SSoftwareEdge *right,int scanline_y)
 ;
 ;
 ; XREF[8]:
@@ -15,7 +15,7 @@
 ;   engine_prim.c_renderScanlinePolygon_FUN_00553470 at 00553a1f
 ;
 ; Referenced Globals:
-;   RenderScanlineFunc* g_ScanlineRenderFunc
+;   MainScanlineFunc* g_ScanlineRenderFunc
 ;
 ; *****************************************************************************
 

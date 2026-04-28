@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (343 diagnostics)
+Cppcheck (quick) (352 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (75)
+uninitvar (77)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 71
@@ -183,6 +183,14 @@ uninitvar (75)
   core_vehicle.cpp_CVehicle_renderOpaque_FUN_005e88c line 58
     File: core/vehicle.cpp
     Uninitialized variable: in_stack_0000000c
+
+  core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0 line 127
+    File: core/xform.cpp
+    Uninitialized variable: local_20
+
+  core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0 line 169
+    File: core/xform.cpp
+    Uninitialized variable: local_18
 
   core_xform.cpp_matrixToEulerAngles_FUN_005f5690    line 134
     File: core/xform.cpp
@@ -613,7 +621,7 @@ selfAssignment (74)
     Redundant assignment of 'pdVar4' to itself.
 
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (41)
+shiftTooManyBitsSigned (45)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_ line 61
@@ -690,6 +698,22 @@ shiftTooManyBitsSigned (41)
 
   core_dstrender.cpp_renderPerspectiveCorrectTexture line 175
     File: core/dstrender.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_path.cpp_CPathMap_searchGrid_FUN_005487a0     line 68
+    File: core/path.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_path.cpp_CPathMap_searchGrid_FUN_005487a0     line 83
+    File: core/path.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_path.cpp_CPathMap_searchGrid_FUN_005487a0     line 97
+    File: core/path.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_path.cpp_CPathMap_searchGrid_FUN_005487a0     line 111
+    File: core/path.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_ line 109
@@ -1285,7 +1309,7 @@ nullPointerRedundantCheck (11)
     Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
 
 ----------------------------------------------------------------------------------------------------
-ignoredReturnValue (7)
+ignoredReturnValue (10)
 ----------------------------------------------------------------------------------------------------
 
   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004 line 85
@@ -1302,6 +1326,18 @@ ignoredReturnValue (7)
 
   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004 line 135
     File: core/dirmat.cpp
+    Return value of function asin() is not used.
+
+  core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0 line 125
+    File: core/xform.cpp
+    Return value of function asin() is not used.
+
+  core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0 line 153
+    File: core/xform.cpp
+    Return value of function acos() is not used.
+
+  core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0 line 167
+    File: core/xform.cpp
     Return value of function asin() is not used.
 
   core_xform.cpp_matrixToEulerAngles_FUN_005f5690    line 132

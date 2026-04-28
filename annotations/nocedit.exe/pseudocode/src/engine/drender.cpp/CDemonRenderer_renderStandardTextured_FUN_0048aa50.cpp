@@ -39,7 +39,7 @@ int __cdecl engine_drender_cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa5
     if (this_ptr->face_count == 0) {
       g_RenderStateFlags.dword = (RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
       g_VertexPreprocessMode = PREPROCESS_W_DEPTH_REPLACEMENT;
-      g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_00490d35;
+      g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_00490d35;
     }
     else {
       g_CurrentFilename = "..\\engine\\drender.cpp";

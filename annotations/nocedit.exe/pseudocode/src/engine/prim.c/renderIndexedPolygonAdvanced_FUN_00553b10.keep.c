@@ -317,7 +317,7 @@ LAB_00553f00:
             }
           }
           local_68[0] = (SRenderVertex *)0x553f19;
-          wincore_windll_cpp_renderScanline_FUN_005b5710(&left->base,&local_14->base,iVar7);
+          wincore_windll_cpp_renderScanline_FUN_005b5710(left,local_14,iVar7);
           *(int *)(iVar7 + 8) = *(int *)(iVar7 + 8) + *(int *)(iVar7 + 0xc);
           *(int *)(iVar7 + 0x18) = *(int *)(iVar7 + 0x18) + *(int *)(iVar7 + 0x1c);
           *(int *)(iVar7 + 0x20) = *(int *)(iVar7 + 0x20) + *(int *)(iVar7 + 0x24);

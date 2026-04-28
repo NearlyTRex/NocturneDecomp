@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   RenderScanlineFunc* g_ScanlineRenderFunc
+;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_VertexPreprocessMode
 ;

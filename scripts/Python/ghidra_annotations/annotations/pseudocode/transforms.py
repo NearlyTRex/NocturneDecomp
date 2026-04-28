@@ -1130,7 +1130,7 @@ def transform_adjusted_pointer_types(code):
 # transform can insert the cast automatically.
 
 _FUNCPTR_GLOBAL_TYPES = {
-    'g_ScanlineRenderFunc': 'RenderScanlineFunc',
+    'g_ScanlineRenderFunc': 'MainScanlineFunc',
 }
 
 # Matches: g_GlobalName = optional_whitespace function_name_FUN_ADDR ;
@@ -1153,7 +1153,7 @@ def transform_funcptr_assignments(code):
     Example:
         g_ScanlineRenderFunc = renderDepthOnly_FUN_0049072f;
         ->
-        g_ScanlineRenderFunc = (RenderScanlineFunc *)renderDepthOnly_FUN_0049072f;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)renderDepthOnly_FUN_0049072f;
 
     Args:
         code: Decompiled code string

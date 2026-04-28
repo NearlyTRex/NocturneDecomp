@@ -6,7 +6,7 @@
 #include "system/winnt.h"
 #include "types/classes/CEventList.h"
 #include "types/classes/CMatrix3x3i.h"
-#include "types/funcdefs/RenderScanlineFunc.h"
+#include "types/funcdefs/MainScanlineFunc.h"
 #include "types/structs/SRGBColorPalette.h"
 
 // =============================================================================
@@ -26,8 +26,8 @@ extern DWORD g_JoyRPos;
 extern DWORD g_JoyZPos;
 extern DWORD g_JoyButtons;
 
-// RenderScanlineFunc*
-extern RenderScanlineFunc* g_ScanlineRenderFunc;
+// MainScanlineFunc*
+extern MainScanlineFunc* g_ScanlineRenderFunc;
 
 // SRGBColorPalette*
 extern SRGBColorPalette* g_CurrentPalette;

@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
 ;   int g_AdvancedClippingEnabled
-;   RenderScanlineFunc* g_ScanlineRenderFunc
+;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   int g_UseExternalRenderer
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags

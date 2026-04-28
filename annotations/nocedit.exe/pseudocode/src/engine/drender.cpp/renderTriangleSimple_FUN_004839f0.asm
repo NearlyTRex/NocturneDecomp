@@ -324,7 +324,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x60]      ; 00483cde
     MOV EBX,dword ptr [ESP + 0x58]      ; 00483ce2
     CALL wincore_windll.cpp_renderScanline_FUN_005b5710 ; 00483ce6
-        ;   XREF to: 005b5710 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_renderScanline_FUN_005b5710(SHardwareEdge * left, SHardwareEdge * right, int scanline_y)
+        ;   XREF to: 005b5710 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_renderScanline_FUN_005b5710(SSoftwareEdge * left, SSoftwareEdge * right, int scanline_y)
     CMP dword ptr [0x02c6d5a8],0x0      ; 00483ceb | g_RenderAbortFlag
     JNZ 0x00483a75                      ; 00483cf2
         ;   XREF to: 00483a75 (CONDITIONAL_JUMP)  ; LAB_00483a75

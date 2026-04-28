@@ -15,7 +15,7 @@
 ;   undefined4 g_ProcessedVertexIndices[1]
 ;   undefined4 g_LightBufferPool[12][138743]
 ;   undefined4 g_LightBufferPool[13][28151]
-;   RenderScanlineFunc* g_ScanlineRenderFunc
+;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_VertexPreprocessMode

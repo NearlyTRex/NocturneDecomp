@@ -9,7 +9,7 @@
 ; SHardwareEdge *  Stack[0xc]:4   left
 ;
 ; Referenced Globals:
-;   RenderScanlineFunc* g_ScanlineRenderFunc
+;   MainScanlineFunc* g_ScanlineRenderFunc
 ;
 ; *****************************************************************************
 

@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_00450440(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
+; void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_00450440(int scanline_y,SSoftwareEdge *right,SSoftwareEdge *left)
 ;
 ; Parameters:
-; SSoftwareEdge *  Stack[0x4]:4   left_edge
-; SSoftwareEdge *  Stack[0x8]:4   right_edge
-; int              Stack[0xc]:4   scanline_y
+; int              Stack[0x4]:4   scanline_y
+; SSoftwareEdge *  Stack[0x8]:4   right
+; SSoftwareEdge *  Stack[0xc]:4   left
 ;
 ; XREF[1]:
 ;   core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0 at 00475ee5

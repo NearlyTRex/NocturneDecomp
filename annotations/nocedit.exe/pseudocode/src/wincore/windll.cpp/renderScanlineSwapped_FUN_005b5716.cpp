@@ -9,6 +9,6 @@
 void __cdecl wincore_windll_cpp_renderScanlineSwapped_FUN_005b5716(int scanline_y,SHardwareEdge *right,SHardwareEdge *left)
 
 {
-  (*g_ScanlineRenderFunc)(left,right,scanline_y);
+  (*g_ScanlineRenderFunc)((SSoftwareEdge *)left,(SSoftwareEdge *)right,scanline_y);
   return;
 }

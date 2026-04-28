@@ -216,7 +216,7 @@ void __cdecl engine_prim_c_renderPolygonSoftware_FUN_00552510(SRenderVertex *ver
           return;
         }
       }
-      wincore_windll_cpp_renderScanline_FUN_005b5710(&local_14->base,&edge_ptr->base,iVar10);
+      wincore_windll_cpp_renderScanline_FUN_005b5710(local_14,edge_ptr,iVar10);
       piVar1 = &(edge_ptr->base).x_current;
       *piVar1 = *piVar1 + (edge_ptr->base).x_gradient;
       (edge_ptr->base).u_current = (edge_ptr->base).u_current + (edge_ptr->base).u_gradient;

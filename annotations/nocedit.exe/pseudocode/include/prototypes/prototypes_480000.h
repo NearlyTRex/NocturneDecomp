@@ -31,8 +31,8 @@
 #include "types/enums/EDeathState.h"
 #include "types/enums/EGroundType.h"
 #include "types/enums/ETextAlignment.h"
+#include "types/funcdefs/CustomScanlineFunc.h"
 #include "types/funcdefs/FileSearchHandlerFunc.h"
-#include "types/funcdefs/RenderScanlineFunc.h"
 #include "types/structs/SCameraViewportState.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
@@ -290,10 +290,10 @@ float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN
 float __cdecl engine_drender_cpp_CDemonRenderer_calculateProjectionFactor_FUN_0048c870(CDemonRenderer *this_ptr);
 void __cdecl engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890(CDemonRenderer *this_ptr,int x,int y,int width,int height);
 void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0(CDemonRenderer *this_ptr);
-void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim, RenderScanlineFunc *scanline_renderer);
+void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim, CustomScanlineFunc *scanline_renderer);
 template<typename T_func0>
 inline void engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,T_func0 scanline_renderer) {
-    engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(this_ptr, prim, (RenderScanlineFunc *)scanline_renderer);
+    engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(this_ptr, prim, (CustomScanlineFunc *)scanline_renderer);
 }
 void __cdecl engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(CDemonRenderer *this_ptr,int color);
 void __cdecl engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(CDemonRenderer *this_ptr,int red_component,int green_component,int blue_component);

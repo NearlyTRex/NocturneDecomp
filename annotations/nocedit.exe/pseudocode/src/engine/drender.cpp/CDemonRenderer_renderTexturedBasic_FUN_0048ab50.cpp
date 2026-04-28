@@ -23,12 +23,12 @@ int __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50(C
   if (this_ptr->face_count == 0) {
     g_RenderStateFlags.dword = (RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
     g_VertexPreprocessMode = PREPROCESS_W_DEPTH_REPLACEMENT;
-    g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepthInterlacedProfiled_FUN_00490c37;
+    g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthInterlacedProfiled_FUN_00490c37;
   }
   else {
     g_RenderStateFlags.dword = 0;
     g_VertexPreprocessMode = PREPROCESS_NONE;
-    g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5;
+    g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5;
   }
   iVar2 = this_ptr->face_count;
   if (g_UseExternalRenderer != 0) {

@@ -55,12 +55,12 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_00
         g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
         g_VertexPreprocessMode = PREPROCESS_NEAR_PLANE_CORRECT;
         g_ScanlineRenderFunc =
-             (RenderScanlineFunc *)core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0;
+             (MainScanlineFunc *)core_dstrender_cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0;
       }
       else {
         g_RenderStateFlags.dword = 0;
         g_VertexPreprocessMode = PREPROCESS_NONE;
-        g_ScanlineRenderFunc = (RenderScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
+        g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
                 (this_ptr,(prim->base).count,g_VertexIndexBuffer);

@@ -207,7 +207,7 @@ void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_00552a40(int *vertex
           }
         }
         local_64[0] = (SRenderVertex *)0x552cbb;
-        wincore_windll_cpp_renderScanline_FUN_005b5710(&local_14->base,&edge_ptr->base,iVar7);
+        wincore_windll_cpp_renderScanline_FUN_005b5710(local_14,edge_ptr,iVar7);
         piVar1 = &(edge_ptr->base).x_current;
         *piVar1 = *piVar1 + (edge_ptr->base).x_gradient;
         (edge_ptr->base).u_current = (edge_ptr->base).u_current + (edge_ptr->base).u_gradient;
