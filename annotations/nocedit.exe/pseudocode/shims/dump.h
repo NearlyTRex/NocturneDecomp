@@ -64,7 +64,7 @@ int nocturne_dump_ground_probes(const char *path, struct CVector3f *pos);
 // at that (x, z), and a triangle dump for the probe cube plus its 4 adjacent
 // xz neighbors and the densest cube in the column. Pass `pos = NULL` for
 // just the grid extent.
-int nocturne_dump_collision_grid(constf char *path, struct CVector3f *pos);
+int nocturne_dump_collision_grid(const char *path, struct CVector3f *pos);
 
 // Lighting / vertex-pipeline state — writes <path> as plain text. Captures
 // a sample of `g_VertexNormalArray` and `g_TransformedVertexArray` with
