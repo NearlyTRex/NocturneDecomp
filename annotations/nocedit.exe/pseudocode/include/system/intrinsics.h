@@ -344,10 +344,15 @@ static inline int* _cpuid_intrinsic(int leaf) {
 // =============================================================================
 
 #ifndef ROUND
-// Matches Watcom FIST semantics: NaN/inf/out-of-range -> INT_MIN (0x80000000).
+// Matches Watcom's `crt_math.c_round` (FUN_005fe6b0): the asm sets the FPU
+// rounding-control bits to 11 (round-toward-zero) before FRNDINT, so the
+// function actually TRUNCATES toward zero — despite the name. Every Ghidra
+// `ROUND(...)` in the decompile maps back to a call to that function (or to
+// FIST applied to its already-integer result), so truncate semantics is the
+// faithful match. NaN/inf/out-of-range -> INT_MIN per Watcom FIST behavior.
 static inline int ROUND(double x) {
     if (x != x || x >= 2147483647.5 || x < -2147483648.5) return (int)0x80000000;
-    return x >= 0 ? (int)(x + 0.5) : (int)(x - 0.5);
+    return (int)x;
 }
 #endif
 
