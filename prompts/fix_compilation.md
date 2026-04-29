@@ -746,7 +746,60 @@ p/x *(unsigned int*)((char*)g_BackBuffer + y*640*4)@8    # arbitrary row
 call (int)nocturne_dump_screenshot("/tmp/frame.ppm")     # color buffer + render state
 call (int)nocturne_dump_zbuffer("/tmp/zbuf.ppm")         # depth buffer + touched-pixel stats
 call (int)nocturne_dump_display_list("/tmp/actors.txt")  # sorted_render_actors as text table
+call (int)nocturne_dump_actor_state("/tmp/hero.txt", g_HeroActors[g_LocalHeroIndex])
+                                                         # one actor, full typed state walk
+                                                         # (CDemonActor → CCharacter → CHero
+                                                         #  → CStranger/CSvetlana)
+call (int)nocturne_dump_ground_probes("/tmp/probes.txt", &g_HeroActors[g_LocalHeroIndex]->base.location.position)
+                                                         # getGroundHeight (r=0) + cylinder
+                                                         # sweep at r=0.5/1/2/5 at the given
+                                                         # world position
+call (int)nocturne_dump_collision_grid("/tmp/grid.txt", &g_HeroActors[g_LocalHeroIndex]->base.location.position)
+                                                         # raytrace bbox/cell_size + (if pos
+                                                         # given) the position's grid index,
+                                                         # y-column triangle counts, and the
+                                                         # cube triangle dump for the cell &
+                                                         # 4 xz neighbors. Pass 0 for pos to
+                                                         # just dump the grid extent.
+call (int)nocturne_dump_lighting_state("/tmp/lighting.txt")
+                                                         # vertex normals/transformed verts
+                                                         # sample + magnitude histogram +
+                                                         # ambient/spot/dynamic light state
+                                                         # + per-frame vertex-color gradient
+```
 
+### Auto-capture sequence (gdb-driven, no in-game hook)
+
+When you need a sequence of frames over a window of gameplay (e.g. "what does
+the level look like during the first 60 frames after load"), drive
+`nocturne_auto_capture` from a per-frame breakpoint's `commands` block. The
+function maintains its own internal counters; you just pick a path template,
+how often to capture, and a max:
+
+```gdb
+break core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0
+commands
+silent
+call (void)nocturne_auto_capture("/tmp/seq_%03d.ppm", 4, 30, 0)
+cont
+end
+
+# … play through window of interest …
+
+# Disarm (subsequent breakpoint hits become no-ops):
+break core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0
+commands
+silent
+call (void)nocturne_auto_capture(0, 0, 0, 1)
+cont
+end
+```
+
+Each capture writes a screenshot PPM at the templated path plus a sidecar
+`.txt` with the display list. Pass `reset=1` to re-arm the counter mid-run
+(e.g. start a new sequence at a later state).
+
+```gdb
 # Walk a struct field through Ghidra-generated names
 p g_CDemonRendererInstance.face_count
 p g_CGamePtr->scripted_sequence_active

@@ -42,6 +42,53 @@ int nocturne_dump_zbuffer(const char *path);
 // is populated and where in the world the entities actually are.
 int nocturne_dump_display_list(const char *path);
 
+// Actor state — writes <path> as plain text. Detects the actor's class via
+// castToClassHash and dumps every level of the inheritance chain it walks
+// (CDemonActor → CCharacter → CHero → CStranger). Pass
+// `g_HeroActors[g_LocalHeroIndex]` for the player; pass any actor pointer
+// for AI / NPC inspection. Use `nocturne_dump_ground_probes` and
+// `nocturne_dump_collision_grid` separately for collision-system diagnostics.
+struct CDemonActor;
+int nocturne_dump_actor_state(const char *path, struct CDemonActor *actor);
+
+// Ground probes — getGroundHeight (radius=0) plus cylinderGroundCheck at a
+// sweep of radii (0.5/1/2/5) at the given world-space position. Useful when
+// an actor is falling and you want to know whether the cube under their
+// exact (x, z) lacks ground but a slightly wider check would find it. Pass
+// `&actor->location.position` from gdb to probe at an actor's spot.
+struct CVector3f;
+int nocturne_dump_ground_probes(const char *path, struct CVector3f *pos);
+
+// Collision grid — raytrace bbox/cell_size/grid_coord; if `pos` is non-NULL,
+// also writes the probe-position grid index, the y-column triangle counts
+// at that (x, z), and a triangle dump for the probe cube plus its 4 adjacent
+// xz neighbors and the densest cube in the column. Pass `pos = NULL` for
+// just the grid extent.
+int nocturne_dump_collision_grid(constf char *path, struct CVector3f *pos);
+
+// Lighting / vertex-pipeline state — writes <path> as plain text. Captures
+// a sample of `g_VertexNormalArray` and `g_TransformedVertexArray` with
+// magnitude statistics, plus the ambient/spot/dynamic light counts and the
+// per-frame vertex-color start/delta values. Useful when geometry rasterizes
+// but pixels come back near-zero (lighting modulation, normal scaling, or
+// gradient setup gone wrong).
+int nocturne_dump_lighting_state(const char *path);
+
+// Auto-capture sequence — gdb-callable, like the other dump shims. Hook this
+// into a `commands` block on a per-frame breakpoint and it'll write a
+// numbered screenshot + sidecar display-list-txt every `every_n` calls, up
+// to `max_count` captures total.
+//   path_template: printf-style path with one `%d`, e.g. "/tmp/auto_%03d.ppm".
+//                  The display-list sidecar gets ".txt" appended after replacing
+//                  the .ppm extension.
+//   every_n:       capture on every Nth call. <= 0 treated as 1.
+//   max_count:     stop after this many captures.
+//   reset:         non-zero -> reset internal call/written counters. Useful
+//                  when re-arming with new path or new window.
+// Pass `path_template == NULL` to disarm: subsequent calls become no-ops
+// until armed again with a non-NULL path.
+void nocturne_auto_capture(const char *path_template, int every_n, int max_count, int reset);
+
 #ifdef __cplusplus
 }
 #endif
