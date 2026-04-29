@@ -157,10 +157,10 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
                         (g_CDemonRendererPtr2,texture);
               this_ptr_00 = g_CDemonRendererPtr2;
               local_138.base.base.count = 4;
-              local_138.base.surface_normal.D = 0;
-              local_138.base.surface_normal.C = 0;
-              local_138.base.surface_normal.B = 0;
-              local_138.base.surface_normal.A = 0;
+              local_138.base.surface_normal.D.i = 0;
+              local_138.base.surface_normal.C.i = 0;
+              local_138.base.surface_normal.B.i = 0;
+              local_138.base.surface_normal.A.i = 0;
               local_138.vertices[0] = 0;
               g_CDemonRendererPtr2->vertex_buffer_ptr->u = *(int *)texture[1].texture_name << 0x10;
               this_ptr_00->vertex_buffer_ptr->v = *(int *)(texture[1].texture_name + 4) << 0x10;

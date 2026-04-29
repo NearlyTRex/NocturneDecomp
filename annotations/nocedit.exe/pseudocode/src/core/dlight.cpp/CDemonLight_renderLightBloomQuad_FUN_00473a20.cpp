@@ -134,10 +134,10 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(this_ptr_00,g_LightTextures + 1);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
     local_d4.base.base.count = 4;
-    local_d4.base.surface_normal.A = 0;
-    local_d4.base.surface_normal.B = 0;
-    local_d4.base.surface_normal.C = -0xffff;
-    local_d4.base.surface_normal.D = -0x7fff;
+    local_d4.base.surface_normal.A.i = 0;
+    local_d4.base.surface_normal.B.i = 0;
+    local_d4.base.surface_normal.C.i = -0xffff;
+    local_d4.base.surface_normal.D.i = -0x7fff;
     local_d4.vertices[0] = 0;
     local_d4.vertices[3] = 3;
     local_d4.vertices[1] = 1;

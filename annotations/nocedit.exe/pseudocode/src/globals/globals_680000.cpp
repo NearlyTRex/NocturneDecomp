@@ -2945,7 +2945,7 @@ SMRGLPrimitiveQuad g_BoundingBoxQuadTemplates[6] = {
         .base = {
             .base = {.type = 0x00000000, .count = 0x00000004},
             .surface_normal = {
-                .A = -1,
+                .A = 0xFFFFFFFF,
                 .B = 0x00000000,
                 .C = 0x00000000,
                 .D = 0x00000000
@@ -3002,7 +3002,7 @@ SMRGLPrimitiveQuad g_BoundingBoxQuadTemplates[6] = {
             .base = {.type = 0x00000000, .count = 0x00000004},
             .surface_normal = {
                 .A = 0x00000000,
-                .B = -1,
+                .B = 0xFFFFFFFF,
                 .C = 0x00000000,
                 .D = 0x00000000
             }
@@ -3059,7 +3059,7 @@ SMRGLPrimitiveQuad g_BoundingBoxQuadTemplates[6] = {
             .surface_normal = {
                 .A = 0x00000000,
                 .B = 0x00000000,
-                .C = -1,
+                .C = 0xFFFFFFFF,
                 .D = 0x00000000
             }
         },

@@ -12,6 +12,7 @@ void __cdecl core_course_cpp_renderCourseGizmo_FUN_00443760(CVector3f *position)
 
 {
   SRenderVertex *pSVar2;
+  UIntegerFloat UVar3;
   int iVar2;
   int iVar6;
   int iVar7;
@@ -47,29 +48,30 @@ void __cdecl core_course_cpp_renderCourseGizmo_FUN_00443760(CVector3f *position)
   position->y = (float)(((int)(((int)ROUND(ROUND(position->y)) + iVar6 * -0x10) -
                               (uint)(iVar6 << 3 < 0)) >> 4) << 4);
   this_ptr = g_CDemonRendererPtr1;
-  local_30.surface_normal.D =
+  local_30.surface_normal.D.i =
        ((int)(((int)ROUND(ROUND(position->z)) + iVar7 * -0x10) - (uint)(iVar7 << 3 < 0)) >> 4) << 4;
-  position->z = (float)local_30.surface_normal.D;
+  position->z = (float)local_30.surface_normal.D.i;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450(this_ptr,position);
-  local_30.surface_normal.A = -0x80;
+  local_30.surface_normal.A.i = -0x80;
   do {
-    local_30.surface_normal.B = -0x80;
+    local_30.surface_normal.B.i = -0x80;
     local_30.surface_normal.C = local_30.surface_normal.A;
     do {
-      iVar6 = local_30.surface_normal.B;
+      UVar3 = local_30.surface_normal.B;
       iVar5 = -0x80;
       do {
         local_30.surface_normal.D = local_30.surface_normal.C;
-        local_3c.x = (int)ROUND(((float)local_30.surface_normal.C + position->x) * 256.0f);
-        local_3c.y = (int)ROUND(((float)iVar6 + position->y) * 256.0f);
+        local_3c.x = (int)ROUND(((float)local_30.surface_normal.C.i + position->x) * 256.0f)
+        ;
+        local_3c.y = (int)ROUND(((float)UVar3.i + position->y) * 256.0f);
         local_3c.z = (int)ROUND(((float)iVar5 + position->z) * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr1->vertex_buffer_ptr->projected_vertex,&local_3c);
         pSVar1 = g_CDemonRendererPtr1->vertex_buffer_ptr;
         if ((int)((pSVar1->projected_vertex).screen_x & -0x80000000) == 0) {
-          iVar7 = (pSVar1->projected_vertex).transformed_z;
-          iVar3 = iVar7 >> 0x1f;
-          iVar4 = 0xff - ((int)((iVar7 + iVar3 * -0x80) - (uint)(iVar3 << 6 < 0)) >> 7);
+          iVar6 = (pSVar1->projected_vertex).transformed_z;
+          iVar3 = iVar6 >> 0x1f;
+          iVar4 = 0xff - ((int)((iVar6 + iVar3 * -0x80) - (uint)(iVar3 << 6 < 0)) >> 7);
           if (iVar4 < 0) {
             iVar4 = 0;
           }
@@ -88,10 +90,10 @@ void __cdecl core_course_cpp_renderCourseGizmo_FUN_00443760(CVector3f *position)
         }
         iVar5 = iVar5 + 0x10;
       } while (iVar5 != 0x90);
-      local_30.surface_normal.B = local_30.surface_normal.B + 0x10;
-    } while (local_30.surface_normal.B != 0x90);
-    local_30.surface_normal.A = local_30.surface_normal.A + 0x10;
-  } while (local_30.surface_normal.A != 0x90);
+      local_30.surface_normal.B.i = local_30.surface_normal.B.i + 0x10;
+    } while (local_30.surface_normal.B.i != 0x90);
+    local_30.surface_normal.A.i = local_30.surface_normal.A.i + 0x10;
+  } while (local_30.surface_normal.A.i != 0x90);
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr1,&local_48);
   local_84.x = (int)ROUND(256.0f * 0.0);

@@ -57,11 +57,11 @@ int __cdecl core_glass_cpp_CGlass_renderTransparent_FUN_004e9af0(CGlass *this_pt
     if (0 < this_ptr->broken_polygon_count) {
       do {
         this_ptr_00 = g_CDemonRendererPtr2;
-        pCVar5->broken_quads[0].base.surface_normal.A = 0;
-        pCVar5->broken_quads[0].base.surface_normal.B = 0;
+        pCVar5->broken_quads[0].base.surface_normal.A.i = 0;
+        pCVar5->broken_quads[0].base.surface_normal.B.i = 0;
         iVar2 = iVar2 + 1;
-        pCVar5->broken_quads[0].base.surface_normal.C = 0;
-        pCVar5->broken_quads[0].base.surface_normal.D = 0;
+        pCVar5->broken_quads[0].base.surface_normal.C.i = 0;
+        pCVar5->broken_quads[0].base.surface_normal.D.i = 0;
         engine_drender_cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0
                   (this_ptr_00,prim);
         prim = prim + 3;

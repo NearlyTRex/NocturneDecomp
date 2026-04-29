@@ -88,11 +88,11 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
       engine_3d_c_clipAndDrawLine2D_FUN_00407d70(pSVar15[last_base], pSVar15[last_base + 2]);
 
       // Render quads (top faces) over all projected vertices, blue tint.
-      local_e4.base.surface_normal.B = 4;
+      local_e4.base.surface_normal.B.i = 4;
       local_e4.vertices[1] = 0;
       local_e4.vertices[0] = 0;
-      local_e4.base.surface_normal.D = 0;
-      local_e4.base.surface_normal.C = 0;
+      local_e4.base.surface_normal.D.i = 0;
+      local_e4.base.surface_normal.C.i = 0;
       for (i = 0; i <= this_ptr->stair_count * 4; i++) {
         vert = &g_CDemonRendererPtr2->vertex_buffer_ptr[i];
         vert->r = 0;
@@ -122,12 +122,12 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
       }
 
       // Render triangles (side faces) for each collision triangle, green tint.
-      local_e4.base.surface_normal.B = 3;
+      local_e4.base.surface_normal.B.i = 3;
       local_e4.vertices[1] = 0;
       local_e4.vertices[0] = 0;
-      local_e4.base.surface_normal.D = 0;
+      local_e4.base.surface_normal.D.i = 0;
       local_e4.vertices[4] = 2;
-      local_e4.base.surface_normal.C = 0;
+      local_e4.base.surface_normal.C.i = 0;
       local_e4.vertices[2] = 0;
       local_e4.vertices[3] = 1;
       for (local_8 = 0; local_8 < this_ptr->stair_count * 2; local_8++) {

@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 5155 (79.9%)
-Functions with suspects: 1299 (20.1%)
+Clean functions: 5154 (79.9%)
+Functions with suspects: 1300 (20.1%)
 
-Total suspect patterns: 5899
-Average suspects per function: 0.91
+Total suspect patterns: 5836
+Average suspects per function: 0.90
 
 Virtual files: 214 total, 36 at 100%, 79 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
 
-Average complexity score: 58.3
+Average complexity score: 58.2
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,8 +28,8 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              3045
-  unnamed_local             865
+  pointer_cast              2952
+  unnamed_local             896
   unrolled_strcpy           491
   warning_inlined_function  257
   raw_address_constant      194
@@ -55,10 +55,10 @@ SUSPECT PATTERN BREAKDOWN
   warning_deadcode_restart  5
   unknown_type              4
   warning_max_restarts      3
-  preinc_loop_idiom         2
   cpuid_intrinsic           2
   fast_inv_sqrt_inline      1
   warning_unable_to_use_type 1
+  preinc_loop_idiom         1
   warning_overlapping_globals 1
   warning_noreturn          1
   warning_unmapped_variable 1
@@ -117,7 +117,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 5105 more
+  ... and 5104 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -134,7 +134,6 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   0047cbc0: core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (score: 1377, suspects: 49, lines: 857)
   0040eed0: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (score: 1312, suspects: 54, lines: 752)
   005138e0: core_menu.cpp_configureCustomKeyBindings_FUN_005138e0 (score: 1282, suspects: 35, lines: 917)
-  0056eac0: core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 (score: 1262, suspects: 68, lines: 567)
   004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600 (score: 1227, suspects: 16, lines: 1052)
   005325e0: sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (score: 1166, suspects: 62, lines: 541)
   005bb960: core_stranger.cpp_CStranger_processFrame_FUN_005bb960 (score: 1140, suspects: 0, lines: 1140)
@@ -151,11 +150,12 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   004b5a50: engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (score: 863, suspects: 21, lines: 643)
   0059e0a0: core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0 (score: 853, suspects: 48, lines: 358)
   00511e50: core_menu.cpp_configureSoundOptions_FUN_00511e50 (score: 853, suspects: 9, lines: 743)
+  00534d40: sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 (score: 839, suspects: 31, lines: 509)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (645 functions):
+  pointer_cast (641 functions):
     00488230: cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230
     004874d0: cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0
     00487630: cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
@@ -166,9 +166,9 @@ FUNCTIONS BY SUSPECT TYPE
     0054ab30: cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30
     0054ae70: cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
     0054aa20: cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
-    ... and 635 more
+    ... and 631 more
 
-  unnamed_local (119 functions):
+  unnamed_local (122 functions):
     00432540: cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
     00433480: cockpit_ckptutil.c_saveEdgeListFile_FUN_00433480
     00434af0: cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
@@ -179,7 +179,7 @@ FUNCTIONS BY SUSPECT TYPE
     00552510: engine_prim.c_renderPolygonSoftware_FUN_00552510
     005fcfc0: engine_3d.c_rasterizeTriangle_FUN_005fcfc0
     00483370: engine_drender.cpp_renderTriangleTextured_FUN_00483370
-    ... and 109 more
+    ... and 112 more
 
   unrolled_strcpy (186 functions):
     00543e40: support_newmsg.cpp_readMessageFile_FUN_00543e40
@@ -438,10 +438,6 @@ FUNCTIONS BY SUSPECT TYPE
     005ae830: sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830
     005b0120: sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120
 
-  preinc_loop_idiom (2 functions):
-    0044de10: core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10
-    0058c190: core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
-
   cpuid_intrinsic (1 functions):
     00524f4c: core_mmx.c_detectIntelProcessor_FUN_00524f4c
 
@@ -450,6 +446,9 @@ FUNCTIONS BY SUSPECT TYPE
 
   warning_unable_to_use_type (1 functions):
     0056ae50: core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
+
+  preinc_loop_idiom (1 functions):
+    0058c190: core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
 
   warning_overlapping_globals (1 functions):
     00524f4c: core_mmx.c_detectIntelProcessor_FUN_00524f4c

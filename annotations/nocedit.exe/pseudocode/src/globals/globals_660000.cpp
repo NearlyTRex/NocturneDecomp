@@ -5487,9 +5487,9 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .base = {.type = 0x00000003},
         .normal = {
             .A = 0x00004219,
-            .B = -63150,
+            .B = 0xFFFF0952,
             .C = 0x000011B5,
-            .D = -16166466
+            .D = 0xFF0951BE
         },
         .vertices = {0x00000002, 0x00000001, 0x00000000, 0x00000000}
     },
@@ -5497,9 +5497,9 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .base = {.type = 0x00000003},
         .normal = {
             .A = 0x00003063,
-            .B = -63150,
+            .B = 0xFFFF0952,
             .C = 0x00003063,
-            .D = -16166466
+            .D = 0xFF0951BE
         },
         .vertices = {0x00000001, 0x00000003, 0x00000000, 0x00000000}
     },
@@ -5507,69 +5507,69 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .base = {.type = 0x00000003},
         .normal = {
             .A = 0x000011B5,
-            .B = -63150,
+            .B = 0xFFFF0952,
             .C = 0x00004219,
-            .D = -16166466
+            .D = 0xFF0951BE
         },
         .vertices = {0x00000003, 0x00000004, 0x00000000, 0x00000000}
     },
     {
         .base = {.type = 0x00000003},
         .normal = {
-            .A = -4533,
-            .B = -63150,
+            .A = 0xFFFFEE4B,
+            .B = 0xFFFF0952,
             .C = 0x00004219,
-            .D = -16166466
+            .D = 0xFF0951BE
         },
         .vertices = {0x00000004, 0x00000005, 0x00000000, 0x00000000}
     },
     {
         .base = {.type = 0x00000003},
         .normal = {
-            .A = -12387,
-            .B = -63150,
+            .A = 0xFFFFCF9D,
+            .B = 0xFFFF0952,
             .C = 0x00003063,
-            .D = -16166466
+            .D = 0xFF0951BE
         },
         .vertices = {0x00000005, 0x00000006, 0x00000000, 0x00000000}
     },
     {
         .base = {.type = 0x00000003},
         .normal = {
-            .A = -16921,
-            .B = -63150,
+            .A = 0xFFFFBDE7,
+            .B = 0xFFFF0952,
             .C = 0x000011B5,
-            .D = -16166466
+            .D = 0xFF0951BE
         },
         .vertices = {0x00000006, 0x00000007, 0x00000000, 0x00000000}
     },
     {
         .base = {.type = 0x00000003},
         .normal = {
-            .A = -16921,
-            .B = -63150,
-            .C = -4533,
-            .D = -16166466
+            .A = 0xFFFFBDE7,
+            .B = 0xFFFF0952,
+            .C = 0xFFFFEE4B,
+            .D = 0xFF0951BE
         },
         .vertices = {0x00000007, 0x00000008, 0x00000000, 0x00000000}
     },
     {
         .base = {.type = 0x00000003},
         .normal = {
-            .A = -12387,
-            .B = -63150,
-            .C = -12387,
-            .D = -16166466
+            .A = 0xFFFFCF9D,
+            .B = 0xFFFF0952,
+            .C = 0xFFFFCF9D,
+            .D = 0xFF0951BE
         },
         .vertices = {0x00000008, 0x00000009, 0x00000000, 0x00000000}
     },
     {
         .base = {.type = 0x00000003},
         .normal = {
-            .A = -4533,
-            .B = -63150,
-            .C = -16921,
-            .D = -16166466
+            .A = 0xFFFFEE4B,
+            .B = 0xFFFF0952,
+            .C = 0xFFFFBDE7,
+            .D = 0xFF0951BE
         },
         .vertices = {0x00000009, 0x0000000A, 0x00000000, 0x00000000}
     },
@@ -5577,9 +5577,9 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .base = {.type = 0x00000003},
         .normal = {
             .A = 0x000011B5,
-            .B = -63150,
-            .C = -16921,
-            .D = -16166466
+            .B = 0xFFFF0952,
+            .C = 0xFFFFBDE7,
+            .D = 0xFF0951BE
         },
         .vertices = {0x0000000A, 0x0000000B, 0x00000000, 0x00000000}
     },
@@ -5587,9 +5587,9 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .base = {.type = 0x00000003},
         .normal = {
             .A = 0x00003063,
-            .B = -63150,
-            .C = -12387,
-            .D = -16166466
+            .B = 0xFFFF0952,
+            .C = 0xFFFFCF9D,
+            .D = 0xFF0951BE
         },
         .vertices = {0x0000000B, 0x0000000C, 0x00000000, 0x00000000}
     },
@@ -5597,9 +5597,9 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .base = {.type = 0x00000003},
         .normal = {
             .A = 0x00004219,
-            .B = -63150,
-            .C = -4533,
-            .D = -16166466
+            .B = 0xFFFF0952,
+            .C = 0xFFFFEE4B,
+            .D = 0xFF0951BE
         },
         .vertices = {0x0000000C, 0x00000002, 0x00000000, 0x00000000}
     },
@@ -5636,7 +5636,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000003},
         .normal = {
-            .A = -4533,
+            .A = 0xFFFFEE4B,
             .B = 0x0000F6AE,
             .C = 0x00004219,
             .D = 0x00F6AE42
@@ -5646,7 +5646,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000003},
         .normal = {
-            .A = -12387,
+            .A = 0xFFFFCF9D,
             .B = 0x0000F6AE,
             .C = 0x00003063,
             .D = 0x00F6AE42
@@ -5656,7 +5656,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000003},
         .normal = {
-            .A = -16921,
+            .A = 0xFFFFBDE7,
             .B = 0x0000F6AE,
             .C = 0x000011B5,
             .D = 0x00F6AE42
@@ -5666,9 +5666,9 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000003},
         .normal = {
-            .A = -16921,
+            .A = 0xFFFFBDE7,
             .B = 0x0000F6AE,
-            .C = -4533,
+            .C = 0xFFFFEE4B,
             .D = 0x00F6AE42
         },
         .vertices = {0x00000000, 0x00000001, 0x00000002, 0x00000000}
@@ -5676,9 +5676,9 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000003},
         .normal = {
-            .A = -12387,
+            .A = 0xFFFFCF9D,
             .B = 0x0000F6AE,
-            .C = -12387,
+            .C = 0xFFFFCF9D,
             .D = 0x00F6AE42
         },
         .vertices = {0x00000000, 0x00000003, 0x00000001, 0x00000000}
@@ -5686,9 +5686,9 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000003},
         .normal = {
-            .A = -4533,
+            .A = 0xFFFFEE4B,
             .B = 0x0000F6AE,
-            .C = -16921,
+            .C = 0xFFFFBDE7,
             .D = 0x00F6AE42
         },
         .vertices = {0x00000000, 0x00000004, 0x00000003, 0x00000000}
@@ -5698,7 +5698,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .normal = {
             .A = 0x000011B5,
             .B = 0x0000F6AE,
-            .C = -16921,
+            .C = 0xFFFFBDE7,
             .D = 0x00F6AE42
         },
         .vertices = {0x00000000, 0x00000005, 0x00000004, 0x00000000}
@@ -5708,7 +5708,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .normal = {
             .A = 0x00003063,
             .B = 0x0000F6AE,
-            .C = -12387,
+            .C = 0xFFFFCF9D,
             .D = 0x00F6AE42
         },
         .vertices = {0x00000000, 0x00000006, 0x00000005, 0x00000000}
@@ -5718,7 +5718,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .normal = {
             .A = 0x00004219,
             .B = 0x0000F6AE,
-            .C = -4533,
+            .C = 0xFFFFEE4B,
             .D = 0x00F6AE42
         },
         .vertices = {0x00000000, 0x00000007, 0x00000006, 0x00000000}
@@ -5756,7 +5756,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000004},
         .normal = {
-            .A = -12199,
+            .A = 0xFFFFD059,
             .B = 0x0000B1DA,
             .C = 0x0000B1DA,
             .D = 0x00F2F36D
@@ -5766,7 +5766,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000004},
         .normal = {
-            .A = -33330,
+            .A = 0xFFFF7DCE,
             .B = 0x0000B1DA,
             .C = 0x00008232,
             .D = 0x00F2F36F
@@ -5776,7 +5776,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000004},
         .normal = {
-            .A = -45530,
+            .A = 0xFFFF4E26,
             .B = 0x0000B1DA,
             .C = 0x00002FA7,
             .D = 0x00F2F36C
@@ -5786,9 +5786,9 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000004},
         .normal = {
-            .A = -45530,
+            .A = 0xFFFF4E26,
             .B = 0x0000B1DA,
-            .C = -12199,
+            .C = 0xFFFFD059,
             .D = 0x00F2F36D
         },
         .vertices = {0x00000002, 0x00000001, 0x00000014, 0x00000013}
@@ -5796,9 +5796,9 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000004},
         .normal = {
-            .A = -33330,
+            .A = 0xFFFF7DCE,
             .B = 0x0000B1DA,
-            .C = -33330,
+            .C = 0xFFFF7DCE,
             .D = 0x00F2F36F
         },
         .vertices = {0x00000001, 0x00000003, 0x00000015, 0x00000014}
@@ -5806,9 +5806,9 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000004},
         .normal = {
-            .A = -12199,
+            .A = 0xFFFFD059,
             .B = 0x0000B1DA,
-            .C = -45530,
+            .C = 0xFFFF4E26,
             .D = 0x00F2F36C
         },
         .vertices = {0x00000003, 0x00000004, 0x00000016, 0x00000015}
@@ -5818,7 +5818,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .normal = {
             .A = 0x00002FA7,
             .B = 0x0000B1DA,
-            .C = -45530,
+            .C = 0xFFFF4E26,
             .D = 0x00F2F36D
         },
         .vertices = {0x00000004, 0x00000005, 0x00000017, 0x00000016}
@@ -5828,7 +5828,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .normal = {
             .A = 0x00008232,
             .B = 0x0000B1DA,
-            .C = -33330,
+            .C = 0xFFFF7DCE,
             .D = 0x00F2F36F
         },
         .vertices = {0x00000005, 0x00000006, 0x00000018, 0x00000017}
@@ -5838,7 +5838,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .normal = {
             .A = 0x0000B1DA,
             .B = 0x0000B1DA,
-            .C = -12199,
+            .C = 0xFFFFD059,
             .D = 0x00F2F36C
         },
         .vertices = {0x00000006, 0x00000007, 0x0000000D, 0x00000018}
@@ -5876,7 +5876,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000004},
         .normal = {
-            .A = -16420,
+            .A = 0xFFFFBFDC,
             .B = 0x00004024,
             .C = 0x0000EF62,
             .D = 0x00EF629C
@@ -5886,7 +5886,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000004},
         .normal = {
-            .A = -44862,
+            .A = 0xFFFF50C2,
             .B = 0x00004024,
             .C = 0x0000AF3E,
             .D = 0x00EF62A2
@@ -5896,7 +5896,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000004},
         .normal = {
-            .A = -61282,
+            .A = 0xFFFF109E,
             .B = 0x00004024,
             .C = 0x00004024,
             .D = 0x00EF62A4
@@ -5906,9 +5906,9 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000004},
         .normal = {
-            .A = -61282,
+            .A = 0xFFFF109E,
             .B = 0x00004024,
-            .C = -16420,
+            .C = 0xFFFFBFDC,
             .D = 0x00EF629C
         },
         .vertices = {0x00000013, 0x00000014, 0x00000020, 0x0000001F}
@@ -5916,9 +5916,9 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000004},
         .normal = {
-            .A = -44862,
+            .A = 0xFFFF50C2,
             .B = 0x00004024,
-            .C = -44862,
+            .C = 0xFFFF50C2,
             .D = 0x00EF62A2
         },
         .vertices = {0x00000014, 0x00000015, 0x00000021, 0x00000020}
@@ -5926,9 +5926,9 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000004},
         .normal = {
-            .A = -16420,
+            .A = 0xFFFFBFDC,
             .B = 0x00004024,
-            .C = -61282,
+            .C = 0xFFFF109E,
             .D = 0x00EF62A4
         },
         .vertices = {0x00000015, 0x00000016, 0x00000022, 0x00000021}
@@ -5938,7 +5938,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .normal = {
             .A = 0x00004024,
             .B = 0x00004024,
-            .C = -61282,
+            .C = 0xFFFF109E,
             .D = 0x00EF629C
         },
         .vertices = {0x00000016, 0x00000017, 0x00000023, 0x00000022}
@@ -5948,7 +5948,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .normal = {
             .A = 0x0000AF3E,
             .B = 0x00004024,
-            .C = -44862,
+            .C = 0xFFFF50C2,
             .D = 0x00EF62A2
         },
         .vertices = {0x00000017, 0x00000018, 0x00000024, 0x00000023}
@@ -5958,7 +5958,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .normal = {
             .A = 0x0000EF62,
             .B = 0x00004024,
-            .C = -16420,
+            .C = 0xFFFFBFDC,
             .D = 0x00EF62A4
         },
         .vertices = {0x00000018, 0x0000000D, 0x00000019, 0x00000024}
@@ -5967,7 +5967,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .base = {.type = 0x00000004},
         .normal = {
             .A = 0x0000EF62,
-            .B = -16420,
+            .B = 0xFFFFBFDC,
             .C = 0x00004024,
             .D = 0x00EF62A3
         },
@@ -5977,7 +5977,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .base = {.type = 0x00000004},
         .normal = {
             .A = 0x0000AF3E,
-            .B = -16420,
+            .B = 0xFFFFBFDC,
             .C = 0x0000AF3E,
             .D = 0x00EF62A2
         },
@@ -5987,7 +5987,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .base = {.type = 0x00000004},
         .normal = {
             .A = 0x00004024,
-            .B = -16420,
+            .B = 0xFFFFBFDC,
             .C = 0x0000EF62,
             .D = 0x00EF629D
         },
@@ -5996,8 +5996,8 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000004},
         .normal = {
-            .A = -16420,
-            .B = -16420,
+            .A = 0xFFFFBFDC,
+            .B = 0xFFFFBFDC,
             .C = 0x0000EF62,
             .D = 0x00EF62A3
         },
@@ -6006,8 +6006,8 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000004},
         .normal = {
-            .A = -44862,
-            .B = -16420,
+            .A = 0xFFFF50C2,
+            .B = 0xFFFFBFDC,
             .C = 0x0000AF3E,
             .D = 0x00EF62A2
         },
@@ -6016,8 +6016,8 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000004},
         .normal = {
-            .A = -61282,
-            .B = -16420,
+            .A = 0xFFFF109E,
+            .B = 0xFFFFBFDC,
             .C = 0x00004024,
             .D = 0x00EF629D
         },
@@ -6026,9 +6026,9 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000004},
         .normal = {
-            .A = -61282,
-            .B = -16420,
-            .C = -16420,
+            .A = 0xFFFF109E,
+            .B = 0xFFFFBFDC,
+            .C = 0xFFFFBFDC,
             .D = 0x00EF62A3
         },
         .vertices = {0x0000001F, 0x00000020, 0x0000002C, 0x0000002B}
@@ -6036,9 +6036,9 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000004},
         .normal = {
-            .A = -44862,
-            .B = -16420,
-            .C = -44862,
+            .A = 0xFFFF50C2,
+            .B = 0xFFFFBFDC,
+            .C = 0xFFFF50C2,
             .D = 0x00EF62A2
         },
         .vertices = {0x00000020, 0x00000021, 0x0000002D, 0x0000002C}
@@ -6046,9 +6046,9 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000004},
         .normal = {
-            .A = -16420,
-            .B = -16420,
-            .C = -61282,
+            .A = 0xFFFFBFDC,
+            .B = 0xFFFFBFDC,
+            .C = 0xFFFF109E,
             .D = 0x00EF629D
         },
         .vertices = {0x00000021, 0x00000022, 0x0000002E, 0x0000002D}
@@ -6057,8 +6057,8 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .base = {.type = 0x00000004},
         .normal = {
             .A = 0x00004024,
-            .B = -16420,
-            .C = -61282,
+            .B = 0xFFFFBFDC,
+            .C = 0xFFFF109E,
             .D = 0x00EF62A3
         },
         .vertices = {0x00000022, 0x00000023, 0x0000002F, 0x0000002E}
@@ -6067,8 +6067,8 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .base = {.type = 0x00000004},
         .normal = {
             .A = 0x0000AF3E,
-            .B = -16420,
-            .C = -44862,
+            .B = 0xFFFFBFDC,
+            .C = 0xFFFF50C2,
             .D = 0x00EF62A2
         },
         .vertices = {0x00000023, 0x00000024, 0x00000030, 0x0000002F}
@@ -6077,8 +6077,8 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .base = {.type = 0x00000004},
         .normal = {
             .A = 0x0000EF62,
-            .B = -16420,
-            .C = -16420,
+            .B = 0xFFFFBFDC,
+            .C = 0xFFFFBFDC,
             .D = 0x00EF629D
         },
         .vertices = {0x00000024, 0x00000019, 0x00000025, 0x00000030}
@@ -6087,7 +6087,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .base = {.type = 0x00000004},
         .normal = {
             .A = 0x0000B1DA,
-            .B = -45530,
+            .B = 0xFFFF4E26,
             .C = 0x00002FA7,
             .D = 0x00F2F36C
         },
@@ -6097,7 +6097,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .base = {.type = 0x00000004},
         .normal = {
             .A = 0x00008232,
-            .B = -45530,
+            .B = 0xFFFF4E26,
             .C = 0x00008232,
             .D = 0x00F2F36F
         },
@@ -6107,7 +6107,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .base = {.type = 0x00000004},
         .normal = {
             .A = 0x00002FA7,
-            .B = -45530,
+            .B = 0xFFFF4E26,
             .C = 0x0000B1DA,
             .D = 0x00F2F36C
         },
@@ -6116,8 +6116,8 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000004},
         .normal = {
-            .A = -12199,
-            .B = -45530,
+            .A = 0xFFFFD059,
+            .B = 0xFFFF4E26,
             .C = 0x0000B1DA,
             .D = 0x00F2F36C
         },
@@ -6126,8 +6126,8 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000004},
         .normal = {
-            .A = -33330,
-            .B = -45530,
+            .A = 0xFFFF7DCE,
+            .B = 0xFFFF4E26,
             .C = 0x00008232,
             .D = 0x00F2F36F
         },
@@ -6136,8 +6136,8 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000004},
         .normal = {
-            .A = -45530,
-            .B = -45530,
+            .A = 0xFFFF4E26,
+            .B = 0xFFFF4E26,
             .C = 0x00002FA7,
             .D = 0x00F2F36C
         },
@@ -6146,9 +6146,9 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000004},
         .normal = {
-            .A = -45530,
-            .B = -45530,
-            .C = -12199,
+            .A = 0xFFFF4E26,
+            .B = 0xFFFF4E26,
+            .C = 0xFFFFD059,
             .D = 0x00F2F36C
         },
         .vertices = {0x0000002B, 0x0000002C, 0x00000038, 0x00000037}
@@ -6156,9 +6156,9 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000004},
         .normal = {
-            .A = -33330,
-            .B = -45530,
-            .C = -33330,
+            .A = 0xFFFF7DCE,
+            .B = 0xFFFF4E26,
+            .C = 0xFFFF7DCE,
             .D = 0x00F2F36F
         },
         .vertices = {0x0000002C, 0x0000002D, 0x00000039, 0x00000038}
@@ -6166,9 +6166,9 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000004},
         .normal = {
-            .A = -12199,
-            .B = -45530,
-            .C = -45530,
+            .A = 0xFFFFD059,
+            .B = 0xFFFF4E26,
+            .C = 0xFFFF4E26,
             .D = 0x00F2F36C
         },
         .vertices = {0x0000002D, 0x0000002E, 0x0000003A, 0x00000039}
@@ -6177,8 +6177,8 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .base = {.type = 0x00000004},
         .normal = {
             .A = 0x00002FA7,
-            .B = -45530,
-            .C = -45530,
+            .B = 0xFFFF4E26,
+            .C = 0xFFFF4E26,
             .D = 0x00F2F36C
         },
         .vertices = {0x0000002E, 0x0000002F, 0x0000003B, 0x0000003A}
@@ -6187,8 +6187,8 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .base = {.type = 0x00000004},
         .normal = {
             .A = 0x00008232,
-            .B = -45530,
-            .C = -33330,
+            .B = 0xFFFF4E26,
+            .C = 0xFFFF7DCE,
             .D = 0x00F2F36F
         },
         .vertices = {0x0000002F, 0x00000030, 0x0000003C, 0x0000003B}
@@ -6197,8 +6197,8 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .base = {.type = 0x00000004},
         .normal = {
             .A = 0x0000B1DA,
-            .B = -45530,
-            .C = -12199,
+            .B = 0xFFFF4E26,
+            .C = 0xFFFFD059,
             .D = 0x00F2F36C
         },
         .vertices = {0x00000030, 0x00000025, 0x00000031, 0x0000003C}
@@ -6207,7 +6207,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .base = {.type = 0x00000003},
         .normal = {
             .A = 0x00004219,
-            .B = -63150,
+            .B = 0xFFFF0952,
             .C = 0x000011B5,
             .D = 0x00F6AE42
         },
@@ -6217,7 +6217,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .base = {.type = 0x00000003},
         .normal = {
             .A = 0x00003063,
-            .B = -63150,
+            .B = 0xFFFF0952,
             .C = 0x00003063,
             .D = 0x00F6AE42
         },
@@ -6227,7 +6227,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .base = {.type = 0x00000003},
         .normal = {
             .A = 0x000011B5,
-            .B = -63150,
+            .B = 0xFFFF0952,
             .C = 0x00004219,
             .D = 0x00F6AE42
         },
@@ -6236,8 +6236,8 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000003},
         .normal = {
-            .A = -4533,
-            .B = -63150,
+            .A = 0xFFFFEE4B,
+            .B = 0xFFFF0952,
             .C = 0x00004219,
             .D = 0x00F6AE42
         },
@@ -6246,8 +6246,8 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000003},
         .normal = {
-            .A = -12387,
-            .B = -63150,
+            .A = 0xFFFFCF9D,
+            .B = 0xFFFF0952,
             .C = 0x00003063,
             .D = 0x00F6AE42
         },
@@ -6256,8 +6256,8 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000003},
         .normal = {
-            .A = -16921,
-            .B = -63150,
+            .A = 0xFFFFBDE7,
+            .B = 0xFFFF0952,
             .C = 0x000011B5,
             .D = 0x00F6AE42
         },
@@ -6266,9 +6266,9 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000003},
         .normal = {
-            .A = -16921,
-            .B = -63150,
-            .C = -4533,
+            .A = 0xFFFFBDE7,
+            .B = 0xFFFF0952,
+            .C = 0xFFFFEE4B,
             .D = 0x00F6AE42
         },
         .vertices = {0x00000037, 0x00000038, 0x0000003D, 0x00000000}
@@ -6276,9 +6276,9 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000003},
         .normal = {
-            .A = -12387,
-            .B = -63150,
-            .C = -12387,
+            .A = 0xFFFFCF9D,
+            .B = 0xFFFF0952,
+            .C = 0xFFFFCF9D,
             .D = 0x00F6AE42
         },
         .vertices = {0x00000038, 0x00000039, 0x0000003D, 0x00000000}
@@ -6286,9 +6286,9 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
         .base = {.type = 0x00000003},
         .normal = {
-            .A = -4533,
-            .B = -63150,
-            .C = -16921,
+            .A = 0xFFFFEE4B,
+            .B = 0xFFFF0952,
+            .C = 0xFFFFBDE7,
             .D = 0x00F6AE42
         },
         .vertices = {0x00000039, 0x0000003A, 0x0000003D, 0x00000000}
@@ -6297,8 +6297,8 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .base = {.type = 0x00000003},
         .normal = {
             .A = 0x000011B5,
-            .B = -63150,
-            .C = -16921,
+            .B = 0xFFFF0952,
+            .C = 0xFFFFBDE7,
             .D = 0x00F6AE42
         },
         .vertices = {0x0000003A, 0x0000003B, 0x0000003D, 0x00000000}
@@ -6307,8 +6307,8 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .base = {.type = 0x00000003},
         .normal = {
             .A = 0x00003063,
-            .B = -63150,
-            .C = -12387,
+            .B = 0xFFFF0952,
+            .C = 0xFFFFCF9D,
             .D = 0x00F6AE42
         },
         .vertices = {0x0000003B, 0x0000003C, 0x0000003D, 0x00000000}
@@ -6317,8 +6317,8 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .base = {.type = 0x00000003},
         .normal = {
             .A = 0x00004219,
-            .B = -63150,
-            .C = -4533,
+            .B = 0xFFFF0952,
+            .C = 0xFFFFEE4B,
             .D = 0x00F6AE42
         },
         .vertices = {0x0000003C, 0x00000031, 0x0000003D, 0x00000000}

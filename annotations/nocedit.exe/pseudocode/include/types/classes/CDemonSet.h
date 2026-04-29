@@ -9,6 +9,7 @@ struct CMirror;
 #include "types/classes/C3DSLight.h"
 #include "types/classes/CCharacter.h"
 #include "types/classes/CColor3f.h"
+#include "types/classes/CColor3i.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CEnemy.h"
 #include "types/classes/CGlass.h"
@@ -75,9 +76,7 @@ typedef struct CDemonSet {
     CVector3i light_direction; // 0x15ae74
     int ambient_base_quick; // 0x15ae80
     int skip_normal_normalization; // 0x15ae84
-    int light_scale_factor; // 0x15ae88
-    int color_scale_factor; // 0x15ae8c
-    int fog_scale_factor; // 0x15ae90
+    CColor3i flat_color; // 0x15ae88
     float set_scale_factor; // 0x15ae94
     int dead1; // 0x15ae98
     int dead2; // 0x15ae9c
@@ -113,9 +112,7 @@ typedef struct CDemonSet {
     struct CMirror* active_mirror; // 0x161650
     int mirror_camera_dirty; // 0x161654
     int mirror_lighting_cached; // 0x161658
-    int mirror_cached_light; // 0x16165c
-    int mirror_cached_color; // 0x161660
-    int mirror_cached_fog; // 0x161664
+    CColor3i mirror_cached_color; // 0x16165c
     EWeatherType weather_type; // 0x161668
 } CDemonSet;
 #pragma pack(pop)

@@ -28,12 +28,11 @@ void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_00521290(SClipPlane *cl
         uVar3 = uVar3 ^ input_count;
       }
       pCVar5 = input_vertices + uVar3;
-      bVar2 = 0.0 < (float)clip_plane->C * vertex_a->z +
-                    (float)clip_plane->A * vertex_a->x + (float)clip_plane->B * vertex_a->y +
-                    (float)clip_plane->D;
-      if (0.0 < (float)clip_plane->C * pCVar5->z +
-                (float)clip_plane->A * pCVar5->x + (float)clip_plane->B * pCVar5->y +
-                (float)clip_plane->D) {
+      bVar2 = 0.0 < (clip_plane->C).f * vertex_a->z +
+                    (clip_plane->A).f * vertex_a->x + (clip_plane->B).f * vertex_a->y +
+                    (clip_plane->D).f;
+      if (0.0 < (clip_plane->C).f * pCVar5->z +
+                (clip_plane->A).f * pCVar5->x + (clip_plane->B).f * pCVar5->y + (clip_plane->D).f) {
         bVar2 = bVar2 | 2;
       }
       switch(bVar2) {

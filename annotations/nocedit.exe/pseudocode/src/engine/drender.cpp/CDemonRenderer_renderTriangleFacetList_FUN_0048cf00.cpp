@@ -32,21 +32,21 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048c
       if (g_UseExternalRenderer == 0) {
         for (; 0 < primitive_count; primitive_count = primitive_count + -1) {
           local_28[0] = primitive_array[1].base.type;
-          local_28[1] = primitive_array[1].surface_normal.B;
+          local_28[1] = primitive_array[1].surface_normal.B.i;
           local_28[2] = primitive_array[2].base.type;
           if ((primitive_array->base).count == 4) {
-            local_28[3] = primitive_array[2].surface_normal.B;
+            local_28[3] = primitive_array[2].surface_normal.B.i;
           }
           if (this_ptr->skip_uv_extraction == 0) {
             this_ptr->vertex_buffer_ptr[local_28[0]].u = primitive_array[1].base.count;
-            this_ptr->vertex_buffer_ptr[local_28[0]].v = primitive_array[1].surface_normal.A;
-            this_ptr->vertex_buffer_ptr[local_28[1]].u = primitive_array[1].surface_normal.C;
-            this_ptr->vertex_buffer_ptr[local_28[1]].v = primitive_array[1].surface_normal.D;
+            this_ptr->vertex_buffer_ptr[local_28[0]].v = (int)primitive_array[1].surface_normal.A;
+            this_ptr->vertex_buffer_ptr[local_28[1]].u = (int)primitive_array[1].surface_normal.C;
+            this_ptr->vertex_buffer_ptr[local_28[1]].v = (int)primitive_array[1].surface_normal.D;
             this_ptr->vertex_buffer_ptr[local_28[2]].u = primitive_array[2].base.count;
-            this_ptr->vertex_buffer_ptr[local_28[2]].v = primitive_array[2].surface_normal.A;
+            this_ptr->vertex_buffer_ptr[local_28[2]].v = (int)primitive_array[2].surface_normal.A;
             if ((primitive_array->base).count == 4) {
-              this_ptr->vertex_buffer_ptr[local_28[3]].u = primitive_array[2].surface_normal.C;
-              this_ptr->vertex_buffer_ptr[local_28[3]].v = primitive_array[2].surface_normal.D;
+              this_ptr->vertex_buffer_ptr[local_28[3]].u = (int)primitive_array[2].surface_normal.C;
+              this_ptr->vertex_buffer_ptr[local_28[3]].v = (int)primitive_array[2].surface_normal.D;
             }
           }
           engine_drender_cpp_renderTriangleTextured_FUN_00483370
@@ -97,10 +97,10 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048c
       g_VertexPreprocessMode = g_RenderStateFlags.dword;
       for (; 0 < primitive_count; primitive_count = primitive_count + -1) {
         local_28[0] = primitive_array[1].base.type;
-        local_28[1] = primitive_array[1].surface_normal.B;
+        local_28[1] = primitive_array[1].surface_normal.B.i;
         local_28[2] = primitive_array[2].base.type;
         if ((primitive_array->base).count == 4) {
-          local_28[3] = primitive_array[2].surface_normal.B;
+          local_28[3] = primitive_array[2].surface_normal.B.i;
         }
         pSVar1 = &primitive_array->base;
         primitive_array =

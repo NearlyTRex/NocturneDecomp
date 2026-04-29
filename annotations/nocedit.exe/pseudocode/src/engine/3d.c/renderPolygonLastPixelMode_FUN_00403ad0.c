@@ -31,8 +31,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLastPixelMode_FUN_00403ad
     g_VertexPreprocessMode = PREPROCESS_NONE;
     g_CurrentLightingValue =
          engine_light_cpp_calculateLighting_FUN_00505780
-                   ((primitive->surface_normal).A,(primitive->surface_normal).B,
-                    (primitive->surface_normal).C);
+                   ((primitive->surface_normal).A.i,(primitive->surface_normal).B.i,
+                    (primitive->surface_normal).C.i);
     g_ActiveRenderColor =
          engine_3d_c_makeGrayscaleColor_FUN_004039c0(g_CurrentPolygonColor,g_CurrentLightingValue);
     engine_clipper_c_clipAndRasterize_FUN_004371b0((primitive->base).count,(int *)(primitive + 1));

@@ -9,7 +9,8 @@
 void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMorphModel *this_ptr,int part_index,SMRGLHeaderPrimitive *poly_data,int poly_stride ,SMRGLTextureLod *texture_list,int *texture_index_list,int start_face,int poly_count)
 
 {
-  int iVar1;
+  UIntegerFloat *pUVar1;
+  int iVar2;
   SMRGLPrimitiveTriangle *pSVar3;
   SMRGLHeaderPrimitive *pSVar4;
   int iVar4;
@@ -33,9 +34,9 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMor
     g_CurrentLineNumber = 0x152;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMorphModel::setFaceList - invalid part index");
   }
-  iVar1 = this_ptr->parts[part_index].start_face;
-  local_18 = start_face + iVar1;
-  if (iVar1 + this_ptr->parts[part_index].face_count < poly_count + local_18) {
+  iVar2 = this_ptr->parts[part_index].start_face;
+  local_18 = start_face + iVar2;
+  if (iVar2 + this_ptr->parts[part_index].face_count < poly_count + local_18) {
     g_CurrentFilename = "..\\core\\morph.cpp";
     g_CurrentLineNumber = 0x159;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMorphModel::setFaceList - invalid vertex range");
@@ -56,11 +57,11 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMor
             piVar5 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar5);
             *piVar5 = poly_data[1].base.type;
             piVar5[1] = poly_data[1].base.count;
-            piVar5[2] = poly_data[1].surface_normal.A;
-            piVar5 = (int *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar5);
-            *piVar5 = (pSVar7->surface_normal).B;
-            piVar5[1] = (pSVar7->surface_normal).C;
-            piVar5[2] = (pSVar7->surface_normal).D;
+            *(UIntegerFloat *)(piVar5 + 2) = poly_data[1].surface_normal.A;
+            pUVar1 = (UIntegerFloat *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar5);
+            *pUVar1 = (pSVar7->surface_normal).B;
+            pUVar1[1] = (pSVar7->surface_normal).C;
+            pUVar1[2] = (pSVar7->surface_normal).D;
             pSVar3 = this_ptr->faces;
             pSVar4 = pSVar7;
           }
@@ -68,11 +69,11 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMor
             piVar5 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar5);
             *piVar5 = pSVar7[1].base.type;
             piVar5[1] = pSVar7[1].base.count;
-            piVar5[2] = pSVar7[1].surface_normal.A;
-            piVar5 = (int *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar5);
-            *piVar5 = (pSVar7->surface_normal).B;
-            piVar5[1] = (pSVar7->surface_normal).C;
-            piVar5[2] = (pSVar7->surface_normal).D;
+            *(UIntegerFloat *)(piVar5 + 2) = pSVar7[1].surface_normal.A;
+            pUVar1 = (UIntegerFloat *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar5);
+            *pUVar1 = (pSVar7->surface_normal).B;
+            pUVar1[1] = (pSVar7->surface_normal).C;
+            pUVar1[2] = (pSVar7->surface_normal).D;
             pSVar3 = this_ptr->faces;
             pSVar4 = poly_data;
           }
@@ -80,8 +81,8 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMor
           piVar9 = (int *)(pSVar4 + 1);
           *piVar5 = *piVar9;
           piVar5[1] = pSVar4[1].base.count;
-          iVar1 = pSVar4[1].surface_normal.A;
-          piVar5[2] = iVar1;
+          iVar2 = pSVar4[1].surface_normal.A.i;
+          piVar5[2] = iVar2;
           *(int *)((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.
                          type + iVar5) = iVar4;
           piVar5 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar5);
@@ -93,7 +94,7 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0(CMor
           *piVar5 = *piVar5 + this_ptr->parts[part_index].start_vertex;
           iVar5 = iVar5 + 0x3c;
           local_18 = local_18 + 1;
-        } while (iVar1 + 1 < (poly_data->base).count);
+        } while (iVar2 + 1 < (poly_data->base).count);
       }
       local_24 = local_24 + 1;
       local_20 = local_20 + 1;

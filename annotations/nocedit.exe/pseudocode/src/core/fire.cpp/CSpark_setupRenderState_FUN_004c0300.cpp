@@ -25,10 +25,10 @@ int __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_004c0300(CSpark *this_ptr)
   CVector3i local_18;
   
   g_BillboardPrimitive.base.base.count = 4;
-  g_BillboardPrimitive.base.surface_normal.A = 0;
-  g_BillboardPrimitive.base.surface_normal.B = 0;
-  g_BillboardPrimitive.base.surface_normal.C = 0;
-  g_BillboardPrimitive.base.surface_normal.D = 0;
+  g_BillboardPrimitive.base.surface_normal.A.i = 0;
+  g_BillboardPrimitive.base.surface_normal.B.i = 0;
+  g_BillboardPrimitive.base.surface_normal.C.i = 0;
+  g_BillboardPrimitive.base.surface_normal.D.i = 0;
   g_BillboardPrimitive.vertices[0] = 0;
   g_BillboardPrimitive.vertices[1] = 1;
   g_RenderVertexBuffer[0].u = 0x80000;

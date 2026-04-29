@@ -18,8 +18,8 @@
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0
+;   core_set.cpp_CDemonSet_setFlatColor_FUN_00570ca0
 ;   core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380
-;   core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0
 ;   core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
 ;
@@ -117,8 +117,8 @@ section .text
     MOV EDX,dword ptr [EBX + 0x108]     ; 0056cfd1
     PUSH EDX                            ; 0056cfd7
     PUSH EDI                            ; 0056cfd8
-    CALL core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0 ; 0056cfd9
-        ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
+    CALL core_set.cpp_CDemonSet_setFlatColor_FUN_00570ca0 ; 0056cfd9
+        ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_00570ca0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 0056cfde
     MOV EAX,dword ptr [EBX + 0x154]     ; 0056cfe1
     PUSH EBX                            ; 0056cfe7
@@ -176,8 +176,8 @@ section .text
     PUSH 0x10000                        ; 0056d068
     PUSH 0x10000                        ; 0056d06d
     PUSH EDI                            ; 0056d072
-    CALL core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0 ; 0056d073
-        ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
+    CALL core_set.cpp_CDemonSet_setFlatColor_FUN_00570ca0 ; 0056d073
+        ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_00570ca0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 0056d078
     JMP 0x0056cf3d                      ; 0056d07b
         ;   XREF to: 0056cf3d (UNCONDITIONAL_JUMP)  ; LAB_0056cf3d

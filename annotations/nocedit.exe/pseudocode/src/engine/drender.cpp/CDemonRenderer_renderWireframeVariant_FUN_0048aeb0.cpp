@@ -32,7 +32,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048ae
             iVar1 = pSVar2[1].base.type;
             if (this_ptr->skip_uv_extraction == 0) {
               this_ptr->vertex_buffer_ptr[iVar1].u = pSVar2[1].base.count;
-              this_ptr->vertex_buffer_ptr[iVar1].v = pSVar2[1].surface_normal.A;
+              this_ptr->vertex_buffer_ptr[iVar1].v = (int)pSVar2[1].surface_normal.A;
             }
             *(int *)((int)g_VertexIndexBuffer + iVar5) = iVar1;
             pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;

@@ -144,10 +144,10 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005f1230(CWerewolf *t
   this_ptr_00->vertex_buffer_ptr[3].u = 0x80000;
   this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
   SStack_11c.base.base.count = 4;
-  SStack_11c.base.surface_normal.D = 0;
-  SStack_11c.base.surface_normal.C = 0;
-  SStack_11c.base.surface_normal.B = 0;
-  SStack_11c.base.surface_normal.A = 0;
+  SStack_11c.base.surface_normal.D.i = 0;
+  SStack_11c.base.surface_normal.C.i = 0;
+  SStack_11c.base.surface_normal.B.i = 0;
+  SStack_11c.base.surface_normal.A.i = 0;
   SStack_11c.vertices[0] = 0;
   SStack_11c.vertices[3] = 3;
   SStack_11c.vertices[1] = 1;

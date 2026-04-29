@@ -168,11 +168,11 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
         pSVar6 = this_ptr->broken_quads + local_18;
         do {
           (pSVar6->base).base.count = 4;
-          (pSVar6->base).surface_normal.D = 0;
-          iVar8 = (pSVar6->base).surface_normal.D;
-          (pSVar6->base).surface_normal.C = iVar8;
-          (pSVar6->base).surface_normal.B = iVar8;
-          (pSVar6->base).surface_normal.A = iVar8;
+          (pSVar6->base).surface_normal.D.i = 0;
+          iVar8 = (pSVar6->base).surface_normal.D.i;
+          (pSVar6->base).surface_normal.C.i = iVar8;
+          (pSVar6->base).surface_normal.B.i = iVar8;
+          (pSVar6->base).surface_normal.A.i = iVar8;
           iVar8 = (this_ptr->grid_cols + 1) * local_1c + iVar5;
           pSVar6->vertices[0].vertex_index = iVar8;
           pSVar6->vertices[0].texture_u = this_ptr->texture_u[iVar8];

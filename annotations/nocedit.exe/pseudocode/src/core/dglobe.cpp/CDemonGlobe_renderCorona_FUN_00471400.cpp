@@ -62,18 +62,18 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400(CDemonGlobe *
     do {
       local_64.base.base.count = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -0x14);
       local_64.base.surface_normal.A =
-           *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -0x10);
+           *(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -0x10);
       local_64.base.surface_normal.B =
-           *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -0xc);
+           *(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -0xc);
       local_64.base.surface_normal.C =
-           *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -8);
+           *(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -8);
       iVar3 = iVar4 + -4;
       local_64.vertices[0] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4);
       local_64.vertices[1] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + 4);
       local_64.vertices[2] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + 8);
       local_64.vertices[3] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + 0xc);
       iVar4 = iVar4 + 0x24;
-      local_64.base.surface_normal.D =
+      local_64.base.surface_normal.D.i =
            (int)ROUND(ROUND((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar3) *
                             this_ptr->radius));
       engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0

@@ -86,13 +86,13 @@ int __cdecl shape_design_c_findClosestPolygonToMouse_FUN_00466250(void)
       iVar2 = g_MouseX - g_PolygonScreenCache[local_4c].center_x;
       iVar3 = g_MouseY - g_PolygonScreenCache[local_4c].center_y;
       iVar2 = iVar2 * iVar2 + iVar3 * iVar3;
-      local_f0[0].A =
+      local_f0[0].A.i =
            (int)ROUND(ROUND(g_ModelPolygonData[local_4c].normal.x * 65535.0f));
-      local_f0[0].B =
+      local_f0[0].B.i =
            (int)ROUND(ROUND(g_ModelPolygonData[local_4c].normal.y * 65535.0f));
-      local_f0[0].C =
+      local_f0[0].C.i =
            (int)ROUND(ROUND(g_ModelPolygonData[local_4c].normal.z * 65535.0f));
-      local_f0[0].D =
+      local_f0[0].D.i =
            (int)ROUND(ROUND(g_ModelPolygonData[local_4c].plane_distance * 65535.0f
                             * 256.0f));
       if ((iVar2 < local_14) &&

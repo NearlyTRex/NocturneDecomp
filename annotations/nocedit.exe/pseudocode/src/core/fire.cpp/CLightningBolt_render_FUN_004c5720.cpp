@@ -52,10 +52,10 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *th
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,g_FireEffectLightningBoltTextures + iVar7 % 6);
   local_dc.base.base.count = 4;
-  local_dc.base.surface_normal.D = 0;
-  local_dc.base.surface_normal.C = 0;
-  local_dc.base.surface_normal.B = 0;
-  local_dc.base.surface_normal.A = 0;
+  local_dc.base.surface_normal.D.i = 0;
+  local_dc.base.surface_normal.C.i = 0;
+  local_dc.base.surface_normal.B.i = 0;
+  local_dc.base.surface_normal.A.i = 0;
   local_dc.vertices[0] = 0;
   local_dc.vertices[3] = 3;
   local_dc.vertices[1] = 1;

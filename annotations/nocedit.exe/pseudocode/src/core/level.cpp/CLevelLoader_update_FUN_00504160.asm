@@ -48,7 +48,7 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850
-;   core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0
+;   core_set.cpp_CDemonSet_setFlatColor_FUN_00570ca0
 ;   engine_2d.c_fillRectColor_FUN_00403170
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 ;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0
@@ -181,8 +181,8 @@ section .text
     SHL EDX,0x8                         ; 005042cf
     PUSH EDX                            ; 005042d2
     PUSH EAX                            ; 005042d3 | g_CDemonSetInstance
-    CALL core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0 ; 005042d4
-        ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
+    CALL core_set.cpp_CDemonSet_setFlatColor_FUN_00570ca0 ; 005042d4
+        ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_00570ca0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 005042d9
     MOV EBX,0x40e80000                  ; 005042dc
     LEA EAX,[ESP + 0x5c]                ; 005042e1

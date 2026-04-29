@@ -10,17 +10,17 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_processTextureCoordinates_FUN_00403a80
 
 {
   int iVar1;
-  int *piVar2;
+  UIntegerFloat *pUVar2;
   
-  piVar2 = &(prim->surface_normal).B;
+  pUVar2 = &(prim->surface_normal).B;
   iVar1 = 0;
-  if (0 < (prim->surface_normal).A) {
+  if (0 < (prim->surface_normal).A.i) {
     do {
-      g_RenderVertexBuffer[(prim->base).count + iVar1].u = *piVar2;
-      g_RenderVertexBuffer[(prim->base).count + iVar1].v = piVar2[1];
+      g_RenderVertexBuffer[(prim->base).count + iVar1].u = (int)*pUVar2;
+      g_RenderVertexBuffer[(prim->base).count + iVar1].v = (int)pUVar2[1];
       iVar1 = iVar1 + 1;
-      piVar2 = piVar2 + 2;
-    } while (iVar1 < (prim->surface_normal).A);
+      pUVar2 = pUVar2 + 2;
+    } while (iVar1 < (prim->surface_normal).A.i);
   }
-  return (SMRGLHeaderExtended *)(&(prim->surface_normal).B + (prim->surface_normal).A * 2);
+  return (SMRGLHeaderExtended *)(&(prim->surface_normal).B + (prim->surface_normal).A.i * 2);
 }

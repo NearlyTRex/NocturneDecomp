@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_set_cpp_CDemonSet_setScaleFactors_FUN_00570ca0(CDemonSet *this_ptr,int light_scale,int color_scale,int fog_scale)
+; void __cdecl core_set_cpp_CDemonSet_setFlatColor_FUN_00570ca0(CDemonSet *this_ptr,int light_scale,int color_scale,int fog_scale)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
@@ -22,7 +22,7 @@
 section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 00570ca0
-        ;   Label: core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0
+        ;   Label: core_set.cpp_CDemonSet_setFlatColor_FUN_00570ca0
     MOV EDX,dword ptr [ESP + 0x8]       ; 00570ca4
     MOV dword ptr [EAX + 0x15ae88],EDX  ; 00570ca8
     MOV EDX,dword ptr [ESP + 0xc]       ; 00570cae

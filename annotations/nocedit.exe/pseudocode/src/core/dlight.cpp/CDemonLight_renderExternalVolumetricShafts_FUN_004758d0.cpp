@@ -202,10 +202,10 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0047
               this_ptr_00->vertex_buffer_ptr[3].r = iVar2;
               local_160.base.base.count = 4;
               local_160.vertices[2] = 1;
-              local_160.base.surface_normal.D = 0;
-              local_160.base.surface_normal.C = 0;
-              local_160.base.surface_normal.B = 0;
-              local_160.base.surface_normal.A = 0;
+              local_160.base.surface_normal.D.i = 0;
+              local_160.base.surface_normal.C.i = 0;
+              local_160.base.surface_normal.B.i = 0;
+              local_160.base.surface_normal.A.i = 0;
               iVar4 = local_24 + 1;
               local_160.vertices[1] = 2;
               local_160.vertices[3] = 0;

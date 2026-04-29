@@ -20,8 +20,8 @@ void __cdecl core_mirror_cpp_computePlaneFromTriangle_FUN_00520fe0(SClipPlane *o
   float local_24 [5];
   float fVar1;
   
-  if (&local_48.D != (int *)local_30) {
-    local_48.D = (int)(vertex_b->x - vertex_a->x);
+  if (&local_48.D != (UIntegerFloat *)local_30) {
+    local_48.D.f = vertex_b->x - vertex_a->x;
     local_38 = vertex_b->y - vertex_a->y;
     local_34 = vertex_b->z - vertex_a->z;
   }
@@ -31,25 +31,25 @@ void __cdecl core_mirror_cpp_computePlaneFromTriangle_FUN_00520fe0(SClipPlane *o
     local_4c = vertex_c->z - vertex_b->z;
   }
   if (out_plane != &local_48) {
-    out_plane->A = (int)(local_38 * local_4c - local_34 * local_50);
-    out_plane->B = (int)(local_34 * local_54 - (float)local_48.D * local_4c);
-    out_plane->C = (int)((float)local_48.D * local_50 - local_38 * local_54);
+    (out_plane->A).f = local_38 * local_4c - local_34 * local_50;
+    (out_plane->B).f = local_34 * local_54 - local_48.D.f * local_4c;
+    (out_plane->C).f = local_48.D.f * local_50 - local_38 * local_54;
   }
-  fVar1 = SQRT((float)out_plane->C * (float)out_plane->C +
-               (float)out_plane->A * (float)out_plane->A + (float)out_plane->B * (float)out_plane->B
-              );
+  fVar1 = SQRT((out_plane->C).f * (out_plane->C).f +
+               (out_plane->A).f * (out_plane->A).f + (out_plane->B).f * (out_plane->B).f);
   if (fVar1 <= 0.0) {
-    out_plane->C = 0;
+    (out_plane->C).i = 0;
     out_plane->B = out_plane->C;
     out_plane->A = out_plane->B;
   }
   else {
     fVar2 = 1.0 / fVar1;
-    out_plane->A = (int)((float)out_plane->A * fVar2);
-    out_plane->B = (int)((float)out_plane->B * fVar2);
-    out_plane->C = (int)((float)out_plane->C * fVar2);
+    (out_plane->A).f = (out_plane->A).f * fVar2;
+    (out_plane->B).f = (out_plane->B).f * fVar2;
+    (out_plane->C).f = (out_plane->C).f * fVar2;
   }
-  out_plane->D = (int)-((float)out_plane->C * vertex_a->z +
-                       (float)out_plane->A * vertex_a->x + (float)out_plane->B * vertex_a->y);
+  (out_plane->D).f =
+       -((out_plane->C).f * vertex_a->z +
+        (out_plane->A).f * vertex_a->x + (out_plane->B).f * vertex_a->y);
   return;
 }

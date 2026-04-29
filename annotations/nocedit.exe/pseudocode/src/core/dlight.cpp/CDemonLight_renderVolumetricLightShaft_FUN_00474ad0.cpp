@@ -146,10 +146,10 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
                       (g_CDemonRendererPtr2,g_LightTextures + 1);
             this_ptr_00 = g_CDemonRendererPtr2;
             local_12c.base.base.count = 4;
-            local_12c.base.surface_normal.D = 0;
-            local_12c.base.surface_normal.C = 0;
-            local_12c.base.surface_normal.B = 0;
-            local_12c.base.surface_normal.A = 0;
+            local_12c.base.surface_normal.D.i = 0;
+            local_12c.base.surface_normal.C.i = 0;
+            local_12c.base.surface_normal.B.i = 0;
+            local_12c.base.surface_normal.A.i = 0;
             local_12c.vertices[0] = 0;
             iVar6 = (int)ROUND(ROUND(((((this_ptr->base).max_distance - fVar8) *
                                       (float)8192) / (this_ptr->base).max_distance) *

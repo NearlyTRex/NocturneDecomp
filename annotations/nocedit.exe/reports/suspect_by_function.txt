@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5151 (79.8%)
-With suspects: 1303
-Total suspects: 5899
+Clean: 5150 (79.8%)
+With suspects: 1304
+Total suspects: 5836
 
 ====================================================================================================
 cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50 (1 suspect)
@@ -1322,18 +1322,18 @@ core_curtain.cpp_CCurtain_setup_FUN_00449810 (13 suspects)
   File: core/curtain.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 205 [pointer_cast]: puVar18 = (uint *)((int)pSVar15 + (uint)bVar19 * -8 + 0x1c);
-  Line 206 [pointer_cast]: puVar17 = (uint *)((int)pSVar9 + (uint)bVar19 * -8 + 0x34);
-  Line 210 [pointer_cast]: puVar16 = (uint *)((int)pSVar15 + (uint)bVar19 * -8 + 0x28);
-  Line 211 [pointer_cast]: puVar14 = (uint *)((int)pSVar9 + (uint)bVar19 * -8 + 0x28);
-  Line 215 [pointer_cast]: puVar16 = (uint *)((int)pSVar15 + (uint)bVar19 * -8 + 0x34);
-  Line 216 [pointer_cast]: puVar14 = (uint *)((int)pSVar9 + (uint)bVar19 * -8 + 0x1c);
-  Line 249 [pointer_cast]: puVar16 = (uint *)((int)pSVar15 + (uint)bVar19 * -8 + 100);
-  Line 250 [pointer_cast]: puVar14 = (uint *)((int)pSVar9 + (uint)bVar19 * -8 + 0x7c);
-  Line 254 [pointer_cast]: puVar16 = (uint *)((int)pSVar15 + (uint)bVar19 * -8 + 0x70);
-  Line 255 [pointer_cast]: puVar14 = (uint *)((int)pSVar9 + (uint)bVar19 * -8 + 0x70);
-  Line 259 [pointer_cast]: puVar16 = (uint *)((int)pSVar15 + (uint)bVar19 * -8 + 0x7c);
-  Line 260 [pointer_cast]: puVar14 = (uint *)((int)pSVar9 + (uint)bVar19 * -8 + 100);
+  Line 206 [pointer_cast]: puVar18 = (uint *)((int)pSVar15 + (uint)bVar19 * -8 + 0x1c);
+  Line 207 [pointer_cast]: puVar17 = (uint *)((int)pSVar9 + (uint)bVar19 * -8 + 0x34);
+  Line 211 [pointer_cast]: puVar16 = (uint *)((int)pSVar15 + (uint)bVar19 * -8 + 0x28);
+  Line 212 [pointer_cast]: puVar14 = (uint *)((int)pSVar9 + (uint)bVar19 * -8 + 0x28);
+  Line 216 [pointer_cast]: puVar16 = (uint *)((int)pSVar15 + (uint)bVar19 * -8 + 0x34);
+  Line 217 [pointer_cast]: puVar14 = (uint *)((int)pSVar9 + (uint)bVar19 * -8 + 0x1c);
+  Line 250 [pointer_cast]: puVar16 = (uint *)((int)pSVar15 + (uint)bVar19 * -8 + 100);
+  Line 251 [pointer_cast]: puVar14 = (uint *)((int)pSVar9 + (uint)bVar19 * -8 + 0x7c);
+  Line 255 [pointer_cast]: puVar16 = (uint *)((int)pSVar15 + (uint)bVar19 * -8 + 0x70);
+  Line 256 [pointer_cast]: puVar14 = (uint *)((int)pSVar9 + (uint)bVar19 * -8 + 0x70);
+  Line 260 [pointer_cast]: puVar16 = (uint *)((int)pSVar15 + (uint)bVar19 * -8 + 0x7c);
+  Line 261 [pointer_cast]: puVar14 = (uint *)((int)pSVar9 + (uint)bVar19 * -8 + 100);
 
 ====================================================================================================
 core_curtain.cpp_CCurtain_solveConstraints_FUN_00449fc0 (12 suspects)
@@ -1503,14 +1503,14 @@ core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10 (9 suspects)
   File: core/dcamera.cpp
 ====================================================================================================
   Line 25 [stack_alignment_array]: void *apvStackY_185c [1523];
-  Line 102 [preinc_loop_idiom]: do {
-  Line 127 [pointer_cast]: local_48 = (void *)((int)(light_source->base).base.rotation_matrix.m + (int)local_78 * 4 + -0x10
-  Line 133 [pointer_cast]: piVar4 = (int *)((int)light_source->corona_visibility_buffers + iVar8 + local_44);
-  Line 134 [pointer_cast]: puVar5 = (uint *)((int)light_source->corona_depth_buffer + iVar8 + local_44);
-  Line 136 [pointer_cast]: piVar6 = (int *)((int)light_source->corona_lightmap_indices + iVar8 + local_44);
-  Line 189 [pointer_cast]: *(int *)((int)local_48 + 0x14c8) = local_34;
-  Line 190 [pointer_cast]: *(int *)((int)local_48 + 0x1888) = local_38;
-  Line 191 [pointer_cast]: local_78 = (void *)((int)local_48 + 4);
+  Line 34 [unnamed_local]: int local_80;
+  Line 49 [unnamed_local]: int local_2c;
+  Line 98 [unnamed_local]: local_80 = 0;
+  Line 114 [unnamed_local]: local_2c = (int)local_78;
+  Line 116 [unnamed_local]: for (; local_2c <= local_74; local_2c++) {
+  Line 116 [unnamed_local]: for (; local_2c <= local_74; local_2c++) {
+  Line 117 [unnamed_local]: local_50 = g_PrecomputedWorldPositions + local_2c * 0x140;
+  Line 118 [unnamed_local]: local_54 = g_PrecomputedSurfaceNormals[local_2c];
 
 ====================================================================================================
 core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360 (18 suspects)
@@ -1890,9 +1890,9 @@ core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0 (19 suspects)
   Line 40 [pointer_cast]: *(uint *)((int)&pCVar1->vertex_buffer_ptr->g + iVar1) = 0xffff;
   Line 42 [pointer_cast]: *(uint *)((int)&pCVar1->vertex_buffer_ptr->b + iVar1) = 0xffff;
   Line 48 [pointer_cast]: SStack_50.base.base.count = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0x14);
-  Line 50 [pointer_cast]: *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0x10);
-  Line 52 [pointer_cast]: *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0xc);
-  Line 53 [pointer_cast]: SStack_50.base.surface_normal.C = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -8)
+  Line 50 [pointer_cast]: *(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0x10);
+  Line 52 [pointer_cast]: *(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0xc);
+  Line 54 [pointer_cast]: *(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -8);
   Line 56 [pointer_cast]: SStack_50.vertices[0] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2);
   Line 57 [pointer_cast]: SStack_50.vertices[1] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + 4);
   Line 58 [pointer_cast]: SStack_50.vertices[2] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + 8);
@@ -1908,9 +1908,9 @@ core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_00471400 (13 suspects)
   Line 43 [pointer_cast]: local_30.y = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar1) * fVar1 *
   Line 45 [pointer_cast]: local_30.z = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar1) * fVar1 *
   Line 56 [pointer_cast]: local_64.base.base.count = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -0x14);
-  Line 58 [pointer_cast]: *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -0x10);
-  Line 60 [pointer_cast]: *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -0xc);
-  Line 62 [pointer_cast]: *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -8);
+  Line 58 [pointer_cast]: *(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -0x10);
+  Line 60 [pointer_cast]: *(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -0xc);
+  Line 62 [pointer_cast]: *(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -8);
   Line 64 [pointer_cast]: local_64.vertices[0] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4);
   Line 65 [pointer_cast]: local_64.vertices[1] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + 4);
   Line 66 [pointer_cast]: local_64.vertices[2] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + 8);
@@ -2198,10 +2198,10 @@ core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330 (5 suspects)
   File: core/dmodel.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 69 [unrolled_strchr]: do {
-  Line 81 [unrolled_strchr]: do {
-  Line 194 [unrolled_strchr]: do {
-  Line 215 [unrolled_strcpy]: do {
+  Line 70 [unrolled_strchr]: do {
+  Line 82 [unrolled_strchr]: do {
+  Line 195 [unrolled_strchr]: do {
+  Line 216 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0 (4 suspects)
@@ -2423,17 +2423,17 @@ core_door.cpp_CDoor_propertyDisplayCallback_FUN_00481250 (1 suspect)
 core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_004824f0 (11 suspects)
   File: core/dpart.cpp
 ====================================================================================================
-  Line 14 [pointer_cast]: local_48.base.surface_normal.A = *(int *)((int)&(this_ptr->face_data->plane).A + iVar1);
-  Line 15 [pointer_cast]: local_48.base.surface_normal.B = *(int *)((int)&(this_ptr->face_data->plane).B + iVar1);
-  Line 16 [pointer_cast]: local_48.base.surface_normal.C = *(int *)((int)&(this_ptr->face_data->plane).C + iVar1);
-  Line 17 [pointer_cast]: local_48.base.surface_normal.D = *(int *)((int)&(this_ptr->face_data->plane).D + iVar1);
-  Line 19 [pointer_cast]: *(int *)((int)&this_ptr->face_data->vertex_index_1 + iVar1);
-  Line 21 [pointer_cast]: *(int *)((int)&this_ptr->face_data->vertex_index_2 + iVar1);
-  Line 23 [pointer_cast]: *(int *)((int)&this_ptr->face_data->vertex_index_3 + iVar1);
-  Line 25 [pointer_cast]: *(int *)((int)&(this_ptr->face_data->plane).A + iVar1) = local_48.base.surface_normal.A;
-  Line 26 [pointer_cast]: *(int *)((int)&(this_ptr->face_data->plane).B + iVar1) = local_48.base.surface_normal.B;
-  Line 27 [pointer_cast]: *(int *)((int)&(this_ptr->face_data->plane).C + iVar1) = local_48.base.surface_normal.C;
-  Line 28 [pointer_cast]: *(int *)((int)&(this_ptr->face_data->plane).D + iVar1) = local_48.base.surface_normal.D;
+  Line 15 [pointer_cast]: *(UIntegerFloat *)((int)&(this_ptr->face_data->plane).A + iVar1);
+  Line 17 [pointer_cast]: *(UIntegerFloat *)((int)&(this_ptr->face_data->plane).B + iVar1);
+  Line 19 [pointer_cast]: *(UIntegerFloat *)((int)&(this_ptr->face_data->plane).C + iVar1);
+  Line 21 [pointer_cast]: *(UIntegerFloat *)((int)&(this_ptr->face_data->plane).D + iVar1);
+  Line 23 [pointer_cast]: *(int *)((int)&this_ptr->face_data->vertex_index_1 + iVar1);
+  Line 25 [pointer_cast]: *(int *)((int)&this_ptr->face_data->vertex_index_2 + iVar1);
+  Line 27 [pointer_cast]: *(int *)((int)&this_ptr->face_data->vertex_index_3 + iVar1);
+  Line 29 [pointer_cast]: *(UIntegerFloat *)((int)&(this_ptr->face_data->plane).A + iVar1) =
+  Line 31 [pointer_cast]: *(UIntegerFloat *)((int)&(this_ptr->face_data->plane).B + iVar1) =
+  Line 33 [pointer_cast]: *(UIntegerFloat *)((int)&(this_ptr->face_data->plane).C + iVar1) =
+  Line 35 [pointer_cast]: *(UIntegerFloat *)((int)&(this_ptr->face_data->plane).D + iVar1) =
 
 ====================================================================================================
 core_dpart.cpp_CDemonPart_importTriangleMesh_FUN_00482a10 (25 suspects)
@@ -3192,10 +3192,10 @@ core_fire.cpp_CTrail_render_FUN_004c5e90 (15 suspects)
 ====================================================================================================
   Line 14 [unnamed_local]: SMRGLPrimitiveQuad local_78;
   Line 29 [unnamed_local]: local_78.base.base.count = 4;
-  Line 30 [unnamed_local]: local_78.base.surface_normal.A = 0;
-  Line 31 [unnamed_local]: local_78.base.surface_normal.B = 0;
-  Line 32 [unnamed_local]: local_78.base.surface_normal.C = 0;
-  Line 33 [unnamed_local]: local_78.base.surface_normal.D = 0;
+  Line 30 [unnamed_local]: local_78.base.surface_normal.A.i = 0;
+  Line 31 [unnamed_local]: local_78.base.surface_normal.B.i = 0;
+  Line 32 [unnamed_local]: local_78.base.surface_normal.C.i = 0;
+  Line 33 [unnamed_local]: local_78.base.surface_normal.D.i = 0;
   Line 34 [unnamed_local]: local_78.vertices[0].vertex_index = 0;
   Line 35 [unnamed_local]: local_78.vertices[1].vertex_index = 1;
   Line 36 [unnamed_local]: local_78.vertices[2].vertex_index = 2;
@@ -3226,10 +3226,10 @@ core_flame.cpp_CFlame_renderTransparent_FUN_004ca110 (22 suspects)
   Line 149 [raw_address_constant]: g_RenderVertexBuffer[3].v = 0xf80000;
   Line 152 [raw_address_constant]: g_RenderVertexBuffer[0].v = 0xf80000;
   Line 169 [unnamed_local]: local_11c.base.base.count = 4;
-  Line 170 [unnamed_local]: local_11c.base.surface_normal.A = 0;
-  Line 171 [unnamed_local]: local_11c.base.surface_normal.B = 0;
-  Line 172 [unnamed_local]: local_11c.base.surface_normal.C = 0;
-  Line 173 [unnamed_local]: local_11c.base.surface_normal.D = 0;
+  Line 170 [unnamed_local]: local_11c.base.surface_normal.A.i = 0;
+  Line 171 [unnamed_local]: local_11c.base.surface_normal.B.i = 0;
+  Line 172 [unnamed_local]: local_11c.base.surface_normal.C.i = 0;
+  Line 173 [unnamed_local]: local_11c.base.surface_normal.D.i = 0;
   Line 174 [unnamed_local]: local_11c.vertices[0] = 0;
   Line 175 [unnamed_local]: local_11c.vertices[1] = 1;
   Line 176 [unnamed_local]: local_11c.vertices[2] = 2;
@@ -3637,10 +3637,10 @@ core_glass.cpp_CGlass_setup_FUN_004e9180 (5 suspects)
   File: core/glass.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 210 [unrolled_strcpy]: do {
-  Line 225 [unrolled_strcpy]: do {
-  Line 240 [unrolled_strcpy]: do {
-  Line 255 [unrolled_strcpy]: do {
+  Line 211 [unrolled_strcpy]: do {
+  Line 226 [unrolled_strcpy]: do {
+  Line 241 [unrolled_strcpy]: do {
+  Line 256 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_glass.cpp_CGlass_shatter_FUN_004eaef0 (9 suspects)
@@ -4335,8 +4335,8 @@ core_menu.cpp_renderAudioSpectrumBar_FUN_0050fe70 (8 suspects)
   Line 27 [raw_address_constant]: this_ptr->vertex_buffer_ptr[1].v = 0xf80000;
   Line 28 [raw_address_constant]: this_ptr->vertex_buffer_ptr[2].u = 0xf80000;
   Line 40 [unnamed_local]: local_2c.base.base.count = 4;
-  Line 41 [unnamed_local]: local_2c.base.surface_normal.D = 0;
-  Line 42 [unnamed_local]: local_2c.base.surface_normal.C = 0;
+  Line 41 [unnamed_local]: local_2c.base.surface_normal.D.i = 0;
+  Line 42 [unnamed_local]: local_2c.base.surface_normal.C.i = 0;
 
 ====================================================================================================
 core_menu.cpp_showCalibrationTestPattern_FUN_00510a50 (1 suspect)
@@ -4632,17 +4632,17 @@ core_morph.cpp_CMorphModel_rotatePoints_FUN_0052af70 (5 suspects)
 core_morph.cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0 (11 suspects)
   File: core/morph.cpp
 ====================================================================================================
-  Line 47 [pointer_cast]: *(uint *)((int)this_ptr->faces->vertices + iVar5 + -0x14) = 3;
-  Line 49 [pointer_cast]: piVar5 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar5);
-  Line 53 [pointer_cast]: piVar5 = (int *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar5);
-  Line 61 [pointer_cast]: piVar5 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar5);
-  Line 65 [pointer_cast]: piVar5 = (int *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar5);
-  Line 72 [pointer_cast]: piVar5 = (int *)((int)&pSVar3->vertices[2].vertex_index + iVar5);
-  Line 78 [pointer_cast]: *(int *)((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.
-  Line 80 [pointer_cast]: piVar5 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar5);
-  Line 82 [pointer_cast]: piVar5 = (int *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar5);
-  Line 85 [pointer_cast]: piVar5 = (int *)((int)&this_ptr->faces->vertices[2].vertex_index + iVar5);
-  Line 93 [pointer_cast]: poly_data = (SMRGLHeaderPrimitive *)((int)&(poly_data->base).type + poly_stride);
+  Line 48 [pointer_cast]: *(uint *)((int)this_ptr->faces->vertices + iVar5 + -0x14) = 3;
+  Line 50 [pointer_cast]: piVar5 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar5);
+  Line 54 [pointer_cast]: pUVar1 = (UIntegerFloat *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar5);
+  Line 62 [pointer_cast]: piVar5 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar5);
+  Line 66 [pointer_cast]: pUVar1 = (UIntegerFloat *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar5);
+  Line 73 [pointer_cast]: piVar5 = (int *)((int)&pSVar3->vertices[2].vertex_index + iVar5);
+  Line 79 [pointer_cast]: *(int *)((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.
+  Line 81 [pointer_cast]: piVar5 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar5);
+  Line 83 [pointer_cast]: piVar5 = (int *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar5);
+  Line 86 [pointer_cast]: piVar5 = (int *)((int)&this_ptr->faces->vertices[2].vertex_index + iVar5);
+  Line 94 [pointer_cast]: poly_data = (SMRGLHeaderPrimitive *)((int)&(poly_data->base).type + poly_stride);
 
 ====================================================================================================
 core_morph.cpp_CMorphModel_setFaceListFromTriangles_FUN_0052aca0 (10 suspects)
@@ -5568,77 +5568,19 @@ core_set.cpp_CDemonSet_initScene_FUN_0056aa10 (1 suspect)
   Line 45 [pointer_cast]: if (*(int *)((int)g_MasterLightList + iVar4) != 0) {
 
 ====================================================================================================
-core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 (68 suspects)
+core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 (10 suspects)
   File: core/set.cpp
 ====================================================================================================
   Line 33 [stack_alignment_array]: int aiStackY_1160 [1013];
-  Line 81 [unnamed_local]: int local_5c;
-  Line 119 [pointer_cast]: local_16c.x = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.
-  Line 121 [pointer_cast]: local_16c.y = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.
-  Line 123 [pointer_cast]: local_16c.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.
-  Line 128 [pointer_cast]: *(int *)((int)&g_RenderVertexBuffer[0].a + iVar24) = g_PerspectiveReciprocal;
-  Line 140 [pointer_cast]: local_13c.x = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.
-  Line 142 [pointer_cast]: local_13c.y = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.
-  Line 144 [pointer_cast]: local_13c.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.
-  Line 148 [pointer_cast]: *(int *)((int)&g_TransformedVertexArray[0].x + local_6c) = local_118.x;
-  Line 149 [pointer_cast]: *(int *)((int)&g_TransformedVertexArray[0].y + local_6c) = local_118.y;
-  Line 150 [pointer_cast]: *(int *)((int)&g_TransformedVertexArray[0].z + local_6c) = local_118.z;
-  Line 205 [pointer_cast]: uVar1 = *(ushort *)((int)face_data + 2);
-  Line 209 [pointer_cast]: uVar1 = *(ushort *)((int)face_data + 4);
-  Line 210 [pointer_cast]: face_data = (void *)((int)face_data + 0x12);
-  Line 224 [pointer_cast]: iVar19 = *(int *)((int)pvVar14 + 0x24);
-  Line 225 [pointer_cast]: iVar17 = *(int *)((int)pvVar14 + 0x18);
-  Line 228 [pointer_cast]: iVar4 = *(int *)((int)pvVar14 + 0x30);
-  Line 244 [pointer_cast]: *(float *)((int)pvVar14 + 8) = fVar8 * fVar9;
-  Line 245 [pointer_cast]: *(float *)((int)pvVar14 + 0xc) = fVar11 * fVar9;
-  Line 246 [pointer_cast]: *(float *)((int)pvVar14 + 0x10) = fVar10 * fVar9;
-  Line 248 [pointer_cast]: pvVar14 = (void *)((int)pvVar14 + 0x48);
-  Line 251 [pointer_cast]: pvVar14 = (void *)((int)pvVar14 + 0x3c);
-  Line 260 [pointer_cast]: iVar19 = *(int *)((int)face_data + 0x18);
-  Line 261 [pointer_cast]: pfVar1 = (float *)((int)face_data + 8);
-  Line 264 [pointer_cast]: *(float *)((int)face_data + 0xc) + g_VertexNormalArray[iVar19].y;
-  Line 266 [pointer_cast]: *(float *)((int)face_data + 0x10) + g_VertexNormalArray[iVar19].z;
-  Line 267 [pointer_cast]: iVar19 = *(int *)((int)face_data + 0x24);
-  Line 270 [pointer_cast]: *(float *)((int)face_data + 0xc) + g_VertexNormalArray[iVar19].y;
-  Line 272 [pointer_cast]: *(float *)((int)face_data + 0x10) + g_VertexNormalArray[iVar19].z;
-  Line 273 [pointer_cast]: iVar19 = *(int *)((int)face_data + 0x30);
-  Line 276 [pointer_cast]: *(float *)((int)face_data + 0xc) + g_VertexNormalArray[iVar19].y;
-  Line 278 [pointer_cast]: *(float *)((int)face_data + 0x10) + g_VertexNormalArray[iVar19].z;
-  Line 279 [pointer_cast]: if (*(int *)((int)face_data + 4) == 4) {
-  Line 280 [pointer_cast]: iVar19 = *(int *)((int)face_data + 0x3c);
-  Line 283 [pointer_cast]: *(float *)((int)face_data + 0xc) + g_VertexNormalArray[iVar19].y;
-  Line 285 [pointer_cast]: *(float *)((int)face_data + 0x10) + g_VertexNormalArray[iVar19].z;
-  Line 288 [pointer_cast]: face_data = (void *)((int)face_data + 0x48);
-  Line 291 [pointer_cast]: face_data = (void *)((int)face_data + 0x3c);
-  Line 319 [pointer_cast]: *(int *)((int)&g_RenderVertexBuffer[0].a + local_64) = g_PerspectiveReciprocal;
-  Line 356 [pointer_cast]: *(int *)((int)&g_RenderVertexBuffer[0].a + local_58) = g_PerspectiveReciprocal;
-  Line 370 [pointer_cast]: local_e8.x = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_x
-  Line 372 [pointer_cast]: local_e8.y = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_y
-  Line 374 [pointer_cast]: local_e8.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_z
-  Line 378 [pointer_cast]: *(int *)((int)&g_TransformedVertexArray[0].x + local_5c) = local_130.x;
-  Line 379 [pointer_cast]: *(int *)((int)&g_TransformedVertexArray[0].y + local_5c) = local_130.y;
-  Line 380 [pointer_cast]: *(int *)((int)&g_TransformedVertexArray[0].z + local_5c) = local_130.z;
-  Line 466 [pointer_cast]: *(int *)((int)&g_RenderVertexBuffer[0].a + iVar19) = g_PerspectiveReciprocal;
-  Line 480 [pointer_cast]: local_10c.x = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_x +
-  Line 482 [pointer_cast]: local_10c.y = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_y +
-  Line 484 [pointer_cast]: local_10c.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_z +
-  Line 490 [pointer_cast]: *(int *)((int)&g_RenderVertexBuffer[0].a + iVar24) = g_PerspectiveReciprocal;
-  Line 499 [pointer_cast]: *(int *)((int)&g_RenderVertexBuffer[0].r + iVar19) = this_ptr->mirror_cached_light;
-  Line 500 [pointer_cast]: *(int *)((int)&g_RenderVertexBuffer[0].g + iVar19) = this_ptr->mirror_cached_color;
-  Line 502 [pointer_cast]: *(int *)((int)&g_RenderVertexBuffer[0].b + iVar19) = this_ptr->mirror_cached_fog;
-  Line 515 [pointer_cast]: *(uint *)((int)&g_RenderVertexBuffer[0].a + iVar19) = 0;
-  Line 528 [pointer_cast]: *(int *)((int)&g_RenderVertexBuffer[0].r + iVar19) = this_ptr->light_scale_factor;
-  Line 529 [pointer_cast]: *(int *)((int)&g_RenderVertexBuffer[0].g + iVar19) = this_ptr->color_scale_factor;
-  Line 531 [pointer_cast]: *(int *)((int)&g_RenderVertexBuffer[0].b + iVar19) = this_ptr->fog_scale_factor;
-  Line 532 [pointer_cast]: *(uint *)((int)&g_RenderVertexBuffer[0].a + iVar19) = 0;
-  Line 543 [pointer_cast]: *(uint *)((int)&g_RenderVertexBuffer[0].r + iVar19) = 0xffff;
-  Line 544 [pointer_cast]: *(uint *)((int)&g_RenderVertexBuffer[0].g + iVar19) = 0xffff;
-  Line 545 [pointer_cast]: *(uint *)((int)&g_RenderVertexBuffer[0].b + iVar19) = 0xffff;
-  Line 546 [pointer_cast]: *(uint *)((int)&g_RenderVertexBuffer[0].a + iVar19) = 0;
-  Line 559 [pointer_cast]: *(uint *)((int)&g_RenderVertexBuffer[0].r + iVar13) = 0;
-  Line 560 [pointer_cast]: *(uint *)((int)&g_RenderVertexBuffer[0].g + iVar13) = 0;
-  Line 561 [pointer_cast]: *(uint *)((int)&g_RenderVertexBuffer[0].b + iVar13) = 0;
-  Line 562 [pointer_cast]: *(uint *)((int)&g_RenderVertexBuffer[0].a + iVar13) = 0;
+  Line 84 [unnamed_local]: int local_44;
+  Line 85 [unnamed_local]: int local_40;
+  Line 86 [unnamed_local]: int local_3c;
+  Line 120 [unnamed_local]: local_44 = 0;
+  Line 122 [unnamed_local]: local_16c.x = g_RenderVertexBuffer[local_44].projected_vertex.transformed_x;
+  Line 123 [unnamed_local]: local_16c.y = g_RenderVertexBuffer[local_44].projected_vertex.transformed_y;
+  Line 452 [unnamed_local]: local_40 = 0;
+  Line 454 [unnamed_local]: local_10c.x = g_RenderVertexBuffer[local_40].projected_vertex.transformed_x;
+  Line 455 [unnamed_local]: local_10c.y = g_RenderVertexBuffer[local_40].projected_vertex.transformed_y;
 
 ====================================================================================================
 core_set.cpp_CDemonSet_load_FUN_00569410 (7 suspects)
@@ -5653,18 +5595,28 @@ core_set.cpp_CDemonSet_load_FUN_00569410 (7 suspects)
   Line 400 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 (9 suspects)
+core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 (19 suspects)
   File: core/set.cpp
 ====================================================================================================
-  Line 27 [unnamed_local]: CRect local_5c;
-  Line 39 [unnamed_local]: int local_20;
-  Line 42 [unnamed_local]: int local_14;
-  Line 94 [pointer_cast]: ((char *)(*(int *)((int)g_MasterLightList + iVar6) + 0x40),
-  Line 123 [unnamed_local]: (&g_CDemonCameraInstance,light_source,&local_5c);
-  Line 124 [unnamed_local]: *(int *)(iVar5 + 0x19c54) = local_5c.left;
-  Line 125 [unnamed_local]: *(int *)(iVar5 + 0x19c58) = local_5c.top;
-  Line 131 [pointer_cast]: *(uint *)((int)&this_ptr->lights[local_14].camera_light_bounds[0].left + local_40)
-  Line 133 [pointer_cast]: *(uint *)((int)&this_ptr->lights[local_14].camera_light_bounds[0].top + local_40)
+  Line 24 [unnamed_local]: CRect local_5c;
+  Line 35 [unnamed_local]: int local_20;
+  Line 37 [unnamed_local]: int local_14;
+  Line 47 [unnamed_local]: local_20 = 0;
+  Line 53 [unnamed_local]: this_ptr_00 = this_ptr->cameras + local_20;
+  Line 80 [unnamed_local]: local_14 = 0;
+  Line 83 [unnamed_local]: local_14 = light_index;
+  Line 86 [unnamed_local]: if (local_14 < local_24) {
+  Line 88 [unnamed_local]: if (this_ptr->lights[local_14].light_type == 0) {
+  Line 105 [unnamed_local]: this_ptr->lights[local_14].visible_flags[local_20] = (char)iVar1;
+  Line 107 [unnamed_local]: (&g_CDemonCameraInstance,light_source,&local_5c);
+  Line 108 [unnamed_local]: this_ptr->lights[local_14].camera_light_bounds[local_20].left = local_5c.left;
+  Line 108 [unnamed_local]: this_ptr->lights[local_14].camera_light_bounds[local_20].left = local_5c.left;
+  Line 109 [unnamed_local]: this_ptr->lights[local_14].camera_light_bounds[local_20].top = local_5c.top;
+  Line 109 [unnamed_local]: this_ptr->lights[local_14].camera_light_bounds[local_20].top = local_5c.top;
+  Line 110 [unnamed_local]: this_ptr->lights[local_14].camera_light_bounds[local_20].right = local_5c.right;
+  Line 111 [unnamed_local]: this_ptr->lights[local_14].camera_light_bounds[local_20].bottom = local_5c.bottom;
+  Line 112 [unnamed_local]: if (this_ptr->lights[local_14].visible_flags[local_20] != '\0') {
+  Line 123 [unnamed_local]: this_ptr->lights[local_14].visible_flags[local_20] = (char)iVar1;
 
 ====================================================================================================
 core_set.cpp_CDemonSet_processActors_FUN_0056b810 (15 suspects)
@@ -5712,27 +5664,10 @@ core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040 (20 suspects)
   Line 114 [pointer_cast]: prims = (SMRGLHeaderPrimitive *)((int)&(prims->base).type + stride);
 
 ====================================================================================================
-core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0 (18 suspects)
+core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0 (1 suspect)
   File: core/set.cpp
 ====================================================================================================
   Line 12 [stack_alignment_array]: int aiStackY_1020 [960];
-  Line 64 [pointer_cast]: iVar6 = *(int *)((int)&SStack_118.vertices[0].vertex_index + local_28[3]);
-  Line 85 [pointer_cast]: *(int *)((int)&local_d0 + local_28[5]) = local_2c + 0x8000;
-  Line 86 [pointer_cast]: *(int *)((int)&local_90 + local_28[5]) = iVar3;
-  Line 95 [pointer_cast]: if ((0x8000 < local_d0) && (*(int *)((int)&local_d0 + iVar6) < -0x8000)) {
-  Line 96 [pointer_cast]: psVar1 = (short *)((int)&local_d0 + iVar6 + 2);
-  Line 99 [pointer_cast]: if ((local_d0 < -0x8000) && (0x8000 < *(int *)((int)&local_d0 + iVar6))) {
-  Line 100 [pointer_cast]: *(int *)((int)&local_d0 + iVar6) = *(int *)((int)&local_d0 + iVar6) + -0x10000;
-  Line 100 [pointer_cast]: *(int *)((int)&local_d0 + iVar6) = *(int *)((int)&local_d0 + iVar6) + -0x10000;
-  Line 102 [pointer_cast]: if ((0x8000 < local_90) && (*(int *)((int)&local_90 + iVar6) < -0x8000)) {
-  Line 103 [pointer_cast]: psVar2 = (short *)((int)&local_90 + iVar6 + 2);
-  Line 106 [pointer_cast]: if ((local_90 < -0x8000) && (0x8000 < *(int *)((int)&local_90 + iVar6))) {
-  Line 107 [pointer_cast]: *(int *)((int)&local_90 + iVar6) = *(int *)((int)&local_90 + iVar6) + -0x10000;
-  Line 107 [pointer_cast]: *(int *)((int)&local_90 + iVar6) = *(int *)((int)&local_90 + iVar6) + -0x10000;
-  Line 117 [pointer_cast]: *(int *)((int)&SStack_118.vertices[0].texture_u + iVar7) =
-  Line 118 [pointer_cast]: *(int *)((int)&local_d0 + iVar4) << 8;
-  Line 119 [pointer_cast]: *(int *)((int)&SStack_118.vertices[0].texture_v + iVar7) =
-  Line 120 [pointer_cast]: *(int *)((int)&local_90 + iVar4) << 8;
 
 ====================================================================================================
 core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990 (1 suspect)
@@ -6788,11 +6723,18 @@ core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800 (5
   Line 66 [pointer_cast]: *(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->v + iVar5) =
 
 ====================================================================================================
-core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820 (2 suspects)
+core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820 (3 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
   Line 12 [missing_cave_copy]: CMatrix3x4f local_ac;
   Line 14 [missing_cave_copy]: CMatrix3x4f local_4c;
+  Line 20 [unnamed_local]: CMatrix3x4f local_ac;
+
+====================================================================================================
+core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20 (1 suspect)
+  File: core/skeleton.cpp
+====================================================================================================
+  Line 19 [unnamed_local]: CMatrix3x4f local_40;
 
 ====================================================================================================
 core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10 (4 suspects)
@@ -7122,10 +7064,10 @@ core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 (6 suspects)
 ====================================================================================================
   Line 25 [unnamed_local]: SMRGLPrimitivePolyIndex local_e4;
   Line 29 [unnamed_local]: int local_14;
-  Line 91 [unnamed_local]: local_e4.base.surface_normal.B = 4;
+  Line 91 [unnamed_local]: local_e4.base.surface_normal.B.i = 4;
   Line 92 [unnamed_local]: local_e4.vertices[1] = 0;
   Line 93 [unnamed_local]: local_e4.vertices[0] = 0;
-  Line 94 [unnamed_local]: local_e4.base.surface_normal.D = 0;
+  Line 94 [unnamed_local]: local_e4.base.surface_normal.D.i = 0;
 
 ====================================================================================================
 core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370 (2 suspects)
@@ -8112,7 +8054,7 @@ engine_3d.c_renderOverlayTextureEnable_FUN_00404020 (1 suspect)
 engine_3d.c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_00407720 (1 suspect)
   File: engine/3d.c
 ====================================================================================================
-  Line 47 [pointer_cast]: *(int *)((int)g_ProcessedVertexIndices + iVar4) = iVar1;
+  Line 48 [pointer_cast]: *(int *)((int)g_ProcessedVertexIndices + iVar4) = iVar1;
 
 ====================================================================================================
 engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470 (2 suspects)
@@ -8176,7 +8118,7 @@ engine_3d.c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860 (10 suspects)
 engine_3d.c_renderPolygonTextureAdaptiveWrapped_FUN_00406430 (1 suspect)
   File: engine/3d.c
 ====================================================================================================
-  Line 110 [pointer_cast]: return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
+  Line 111 [pointer_cast]: return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
 
 ====================================================================================================
 engine_3d.c_renderPolygonTextureNormalizedLit_FUN_00403f20 (2 suspects)

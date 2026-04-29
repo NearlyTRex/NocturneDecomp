@@ -127,10 +127,10 @@ void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(CVector3f *pos
       this_ptr->vertex_buffer_ptr[3].u = 0xf80000;
       this_ptr->vertex_buffer_ptr[3].v = 0x80000;
       local_b8.base.base.count = 4;
-      local_b8.base.surface_normal.D = 0;
-      local_b8.base.surface_normal.C = 0;
-      local_b8.base.surface_normal.B = 0;
-      local_b8.base.surface_normal.A = 0;
+      local_b8.base.surface_normal.D.i = 0;
+      local_b8.base.surface_normal.C.i = 0;
+      local_b8.base.surface_normal.B.i = 0;
+      local_b8.base.surface_normal.A.i = 0;
       local_b8.vertices[3] = 3;
       local_b8.vertices[0] = 0;
       local_b8.vertices[1] = 1;

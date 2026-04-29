@@ -11,6 +11,6 @@ void __cdecl engine_3d_c_calculatePolygonLighting_FUN_00403a00(SMRGLHeaderPrimit
 {
   g_CurrentLightingValue =
        engine_light_cpp_calculateLighting_FUN_00505780
-                 ((prim->surface_normal).A,(prim->surface_normal).B,(prim->surface_normal).C);
+                 ((prim->surface_normal).A.i,(prim->surface_normal).B.i,(prim->surface_normal).C.i);
   return;
 }

@@ -16,10 +16,10 @@ int __cdecl core_dlight_cpp_CDemonLight_testVisibility_FUN_00476a60(CDemonLight 
   SMRGLPrimitiveQuadIndex SStack_38;
   
   SStack_38.base.base.count = 4;
-  SStack_38.base.surface_normal.D = 0;
-  SStack_38.base.surface_normal.C = 0;
-  SStack_38.base.surface_normal.B = 0;
-  SStack_38.base.surface_normal.A = 0;
+  SStack_38.base.surface_normal.D.i = 0;
+  SStack_38.base.surface_normal.C.i = 0;
+  SStack_38.base.surface_normal.B.i = 0;
+  SStack_38.base.surface_normal.A.i = 0;
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);
   SStack_38.vertices[0] = 0;
   SStack_38.vertices[1] = 4;

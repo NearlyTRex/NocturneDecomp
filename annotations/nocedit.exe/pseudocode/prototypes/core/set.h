@@ -227,9 +227,9 @@ void __cdecl CDemonSet::markMirrorCameraDirty(CDemonSet *this_ptr);
 // Address: 00570c70
 void __cdecl CDemonSet::restoreCameraView(CDemonSet *this_ptr);
 
-// Original: core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0
+// Original: core_set.cpp_CDemonSet_setFlatColor_FUN_00570ca0
 // Address: 00570ca0
-void __cdecl CDemonSet::setScaleFactors(CDemonSet *this_ptr,int light_scale,int color_scale,int fog_scale);
+void __cdecl CDemonSet::setFlatColor(CDemonSet *this_ptr,int light_scale,int color_scale,int fog_scale);
 
 // Original: core_set.cpp_CDemonSet_cacheMirrorLighting_FUN_00570cd0
 // Address: 00570cd0

@@ -41,10 +41,10 @@ void __cdecl core_inv_cpp_drawWeaponIconBackground_FUN_00500050(int x1,int y1,in
   this_ptr->vertex_buffer_ptr[3].u = 0;
   this_ptr->vertex_buffer_ptr[3].v = 0x1000000;
   local_48.base.base.count = 4;
-  local_48.base.surface_normal.D = 0;
-  local_48.base.surface_normal.C = 0;
-  local_48.base.surface_normal.B = 0;
-  local_48.base.surface_normal.A = 0;
+  local_48.base.surface_normal.D.i = 0;
+  local_48.base.surface_normal.C.i = 0;
+  local_48.base.surface_normal.B.i = 0;
+  local_48.base.surface_normal.A.i = 0;
   local_48.vertices[0] = 0;
   local_48.vertices[3] = 3;
   local_48.vertices[1] = 1;

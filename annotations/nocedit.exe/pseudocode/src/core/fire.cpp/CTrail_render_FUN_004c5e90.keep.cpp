@@ -27,10 +27,10 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_004c5e90(CTrail *this_ptr)
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,this_ptr->texture_ptr);
   local_78.base.base.count = 4;
-  local_78.base.surface_normal.A = 0;
-  local_78.base.surface_normal.B = 0;
-  local_78.base.surface_normal.C = 0;
-  local_78.base.surface_normal.D = 0;
+  local_78.base.surface_normal.A.i = 0;
+  local_78.base.surface_normal.B.i = 0;
+  local_78.base.surface_normal.C.i = 0;
+  local_78.base.surface_normal.D.i = 0;
   local_78.vertices[0].vertex_index = 0;
   local_78.vertices[1].vertex_index = 1;
   local_78.vertices[2].vertex_index = 2;

@@ -119,10 +119,10 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *th
                 g_RenderVertexBuffer[3].projected_vertex.screen_x;
         if (((uVar3 & 0x80000000) == 0) || ((char)uVar3 == '\0')) {
           SStack_b4.base.base.count = 4;
-          SStack_b4.base.surface_normal.D = 0;
-          SStack_b4.base.surface_normal.C = 0;
-          SStack_b4.base.surface_normal.B = 0;
-          SStack_b4.base.surface_normal.A = 0;
+          SStack_b4.base.surface_normal.D.i = 0;
+          SStack_b4.base.surface_normal.C.i = 0;
+          SStack_b4.base.surface_normal.B.i = 0;
+          SStack_b4.base.surface_normal.A.i = 0;
           SStack_b4.vertices[0] = 0;
           SStack_b4.vertices[3] = 3;
           g_RenderPixelBudget = 0x10;

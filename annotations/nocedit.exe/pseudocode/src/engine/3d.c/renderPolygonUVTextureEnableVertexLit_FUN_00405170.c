@@ -43,7 +43,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVTextureEnableVertexLit_
       g_RenderVertexBuffer[iVar1].u = (pSVar3->base).count;
       iVar2 = iVar2 + 4;
       vertex_count = vertex_count + 1;
-      g_RenderVertexBuffer[(pSVar3->base).type].v = (pSVar3->surface_normal).A;
+      g_RenderVertexBuffer[(pSVar3->base).type].v = (int)(pSVar3->surface_normal).A;
       pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
     }
     engine_clipper_c_clipAndRasterize_FUN_004371b0(vertex_count,g_ProcessedVertexIndices);

@@ -636,11 +636,11 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
       vertex2_05.b = (int)pCVar40;
       vertex2_05.a = (int)input;
       engine_3d_c_clipAndDrawLine2D_FUN_00407d70(vertex1_05,vertex2_05);
-      local_e4.base.surface_normal.B = 4;
+      local_e4.base.surface_normal.B.i = 4;
       local_e4.vertices[1] = 0;
       local_e4.vertices[0] = 0;
-      local_e4.base.surface_normal.D = 0;
-      local_e4.base.surface_normal.C = 0;
+      local_e4.base.surface_normal.D.i = 0;
+      local_e4.base.surface_normal.C.i = 0;
       iVar4 = 0;
       for (iVar39 = 0; pCVar40 = g_CDemonRendererPtr2,
           iVar39 <= *(int *)(in_stack_0000000c[1].actor_name + 0x14) * 4; iVar39 = iVar39 + 1) {
@@ -672,12 +672,12 @@ int __cdecl core_stairs_cpp_CStairs_renderOpaque_FUN_005b9c10(CStairs *this_ptr)
           iVar39 = iVar39 + 4;
         } while (iVar4 < *(int *)(in_stack_0000000c[1].actor_name + 0x14));
       }
-      local_e4.base.surface_normal.B = 3;
+      local_e4.base.surface_normal.B.i = 3;
       local_e4.vertices[1] = 0;
       local_e4.vertices[0] = 0;
-      local_e4.base.surface_normal.D = 0;
+      local_e4.base.surface_normal.D.i = 0;
       local_bc.min.x = 2.8026e-45;
-      local_e4.base.surface_normal.C = 0;
+      local_e4.base.surface_normal.C.i = 0;
       local_e4.vertices[2] = 0;
       local_e4.vertices[3] = 1;
       local_28 = &in_stack_0000000c[1].orient;

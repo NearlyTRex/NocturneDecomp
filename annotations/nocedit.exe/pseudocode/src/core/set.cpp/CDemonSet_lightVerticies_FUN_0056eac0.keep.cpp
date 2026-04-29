@@ -24,7 +24,8 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
   int iVar13;
   int iVar17;
   int iVar19;
-  void *pvVar14;
+  SMRGLPrimitiveTriangle *pvVar14;
+  SInputFace *psf;
   int iVar15;
   int iVar16;
   ushort *puVar17;
@@ -74,12 +75,8 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
   float local_78;
   int local_74;
   int local_70;
-  int local_6c;
   CVector3i *local_68;
-  int local_64;
   CVector3i *local_60;
-  int local_5c;
-  int local_58;
   CVector3i *local_54;
   float local_50;
   float local_4c;
@@ -114,7 +111,6 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
   }
   iVar12 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar12 == 0) {
-    iVar24 = vertex_count * 0x30;
     if (this_ptr->lighting_quality_mode == 0) {
       if (this_ptr->mirror_lighting_cached == 0) {
         if (this_ptr->disable_directional_lighting == 0) {
@@ -122,20 +118,15 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
             if (tri_count == 0) {
               if (0 < vertex_count) {
                 local_44 = 0;
-                iVar24 = 0;
                 do {
-                  local_16c.x = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.
-                                               transformed_x + iVar24);
-                  local_16c.y = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.
-                                               transformed_y + iVar24);
-                  local_16c.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.
-                                               transformed_z + iVar24);
+                  local_16c.x = g_RenderVertexBuffer[local_44].projected_vertex.transformed_x;
+                  local_16c.y = g_RenderVertexBuffer[local_44].projected_vertex.transformed_y;
+                  local_16c.z = g_RenderVertexBuffer[local_44].projected_vertex.transformed_z;
                   core_set_cpp_transformToWorldSpace_FUN_0056e890(&local_16c,&local_154);
                   core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
                             (this_ptr,&local_160,(CVector3i *)0x0,local_44,0);
-                  *(int *)((int)&g_RenderVertexBuffer[0].a + iVar24) = g_PerspectiveReciprocal;
+                  g_RenderVertexBuffer[local_44].a = g_PerspectiveReciprocal;
                   local_44 = local_44 + 1;
-                  iVar24 = iVar24 + 0x30;
                 } while (local_44 < vertex_count);
                 return;
               }
@@ -143,21 +134,16 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
             else {
               if (0 < vertex_count) {
                 iVar24 = 0;
-                local_6c = 0;
                 do {
-                  local_13c.x = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.
-                                               transformed_x + iVar24);
-                  local_13c.y = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.
-                                               transformed_y + iVar24);
-                  local_13c.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.
-                                               transformed_z + iVar24);
+                  local_13c.x = g_RenderVertexBuffer[iVar24].projected_vertex.transformed_x;
+                  local_13c.y = g_RenderVertexBuffer[iVar24].projected_vertex.transformed_y;
+                  local_13c.z = g_RenderVertexBuffer[iVar24].projected_vertex.transformed_z;
                   core_set_cpp_transformToWorldSpace_FUN_0056e890(&local_13c,&local_118);
-                  iVar24 = iVar24 + 0x30;
-                  *(int *)((int)&g_TransformedVertexArray[0].x + local_6c) = local_118.x;
-                  *(int *)((int)&g_TransformedVertexArray[0].y + local_6c) = local_118.y;
-                  *(int *)((int)&g_TransformedVertexArray[0].z + local_6c) = local_118.z;
-                  local_6c = local_6c + 0xc;
-                } while (iVar24 < local_118.z);
+                  g_TransformedVertexArray[iVar24].x = local_118.x;
+                  g_TransformedVertexArray[iVar24].y = local_118.y;
+                  g_TransformedVertexArray[iVar24].z = local_118.z;
+                  iVar24 = iVar24 + 1;
+                } while (iVar24 < vertex_count);
               }
               if (vertices_per_face < 1) {
                 if (4000 < tri_count) {
@@ -205,17 +191,18 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                 iVar24 = 0;
                 if (0 < tri_count) {
                   pCVar23 = g_FaceNormalArray;
+                  psf = (SInputFace *)face_data;
                   do {
-                    uVar1 = *(ushort *)face_data;
+                    uVar1 = psf->vertex_indices.vertex_index_0;
                     g_VertexNormalArray[uVar1].x = pCVar23->x + g_VertexNormalArray[uVar1].x;
                     g_VertexNormalArray[uVar1].y = pCVar23->y + g_VertexNormalArray[uVar1].y;
                     g_VertexNormalArray[uVar1].z = pCVar23->z + g_VertexNormalArray[uVar1].z;
-                    uVar1 = *(ushort *)((int)face_data + 2);
+                    uVar1 = psf->vertex_indices.vertex_index_1;
                     g_VertexNormalArray[uVar1].x = pCVar23->x + g_VertexNormalArray[uVar1].x;
                     g_VertexNormalArray[uVar1].y = pCVar23->y + g_VertexNormalArray[uVar1].y;
                     g_VertexNormalArray[uVar1].z = pCVar23->z + g_VertexNormalArray[uVar1].z;
-                    uVar1 = *(ushort *)((int)face_data + 4);
-                    face_data = (void *)((int)face_data + 0x12);
+                    uVar1 = psf->vertex_indices.vertex_index_2;
+                    psf = psf + 1;
                     g_VertexNormalArray[uVar1].x = pCVar23->x + g_VertexNormalArray[uVar1].x;
                     g_VertexNormalArray[uVar1].y = pCVar23->y + g_VertexNormalArray[uVar1].y;
                     iVar24 = iVar24 + 1;
@@ -226,14 +213,14 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
               }
               else {
                 iVar24 = 0;
-                pvVar14 = face_data;
+                pvVar14 = (SMRGLPrimitiveTriangle *)face_data;
                 if (0 < tri_count) {
                   do {
-                    iVar19 = *(int *)((int)pvVar14 + 0x24);
-                    iVar17 = *(int *)((int)pvVar14 + 0x18);
+                    iVar19 = pvVar14->vertices[1].vertex_index;
+                    iVar17 = pvVar14->vertices[0].vertex_index;
                     iVar16 = g_TransformedVertexArray[iVar19].y - g_TransformedVertexArray[iVar17].y
                     ;
-                    iVar4 = *(int *)((int)pvVar14 + 0x30);
+                    iVar4 = pvVar14->vertices[2].vertex_index;
                     iVar15 = g_TransformedVertexArray[iVar4].x - g_TransformedVertexArray[iVar19].x;
                     fVar7 = (float)(g_TransformedVertexArray[iVar19].z -
                                    g_TransformedVertexArray[iVar17].z);
@@ -249,55 +236,50 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                     fVar9 = core_cloth_cpp_fastInvSqrt_FUN_0043e2a0(
                               fVar10 * fVar10 + fVar11 * fVar11 + fVar8 * fVar8) *
                             (float)65535;
-                    *(float *)((int)pvVar14 + 8) = fVar8 * fVar9;
-                    *(float *)((int)pvVar14 + 0xc) = fVar11 * fVar9;
-                    *(float *)((int)pvVar14 + 0x10) = fVar10 * fVar9;
-                    if (vertices_per_face == 4) {
-                      pvVar14 = (void *)((int)pvVar14 + 0x48);
-                    }
-                    else {
-                      pvVar14 = (void *)((int)pvVar14 + 0x3c);
-                    }
+                    *(float *)&pvVar14->base.surface_normal.A = fVar8 * fVar9;
+                    *(float *)&pvVar14->base.surface_normal.B = fVar11 * fVar9;
+                    *(float *)&pvVar14->base.surface_normal.C = fVar10 * fVar9;
+                    pvVar14 = (SMRGLPrimitiveTriangle *)((char *)pvVar14 +
+                                  (vertices_per_face == 4 ? sizeof(SMRGLPrimitiveQuad)
+                                                          : sizeof(SMRGLPrimitiveTriangle)));
                     iVar24 = iVar24 + 1;
                   } while (iVar24 < tri_count);
                 }
                 memset(g_VertexNormalArray,0,vertex_count * 0xc);
                 iVar24 = 0;
                 if (0 < tri_count) {
+                  pvVar14 = (SMRGLPrimitiveTriangle *)face_data;
                   do {
-                    iVar19 = *(int *)((int)face_data + 0x18);
-                    pfVar1 = (float *)((int)face_data + 8);
+                    pfVar1 = (float *)&pvVar14->base.surface_normal.A;
+                    iVar19 = pvVar14->vertices[0].vertex_index;
                     g_VertexNormalArray[iVar19].x = *pfVar1 + g_VertexNormalArray[iVar19].x;
                     g_VertexNormalArray[iVar19].y =
-                         *(float *)((int)face_data + 0xc) + g_VertexNormalArray[iVar19].y;
+                         *(float *)&pvVar14->base.surface_normal.B + g_VertexNormalArray[iVar19].y;
                     g_VertexNormalArray[iVar19].z =
-                         *(float *)((int)face_data + 0x10) + g_VertexNormalArray[iVar19].z;
-                    iVar19 = *(int *)((int)face_data + 0x24);
+                         *(float *)&pvVar14->base.surface_normal.C + g_VertexNormalArray[iVar19].z;
+                    iVar19 = pvVar14->vertices[1].vertex_index;
                     g_VertexNormalArray[iVar19].x = *pfVar1 + g_VertexNormalArray[iVar19].x;
                     g_VertexNormalArray[iVar19].y =
-                         *(float *)((int)face_data + 0xc) + g_VertexNormalArray[iVar19].y;
+                         *(float *)&pvVar14->base.surface_normal.B + g_VertexNormalArray[iVar19].y;
                     g_VertexNormalArray[iVar19].z =
-                         *(float *)((int)face_data + 0x10) + g_VertexNormalArray[iVar19].z;
-                    iVar19 = *(int *)((int)face_data + 0x30);
+                         *(float *)&pvVar14->base.surface_normal.C + g_VertexNormalArray[iVar19].z;
+                    iVar19 = pvVar14->vertices[2].vertex_index;
                     g_VertexNormalArray[iVar19].x = *pfVar1 + g_VertexNormalArray[iVar19].x;
                     g_VertexNormalArray[iVar19].y =
-                         *(float *)((int)face_data + 0xc) + g_VertexNormalArray[iVar19].y;
+                         *(float *)&pvVar14->base.surface_normal.B + g_VertexNormalArray[iVar19].y;
                     g_VertexNormalArray[iVar19].z =
-                         *(float *)((int)face_data + 0x10) + g_VertexNormalArray[iVar19].z;
-                    if (*(int *)((int)face_data + 4) == 4) {
-                      iVar19 = *(int *)((int)face_data + 0x3c);
+                         *(float *)&pvVar14->base.surface_normal.C + g_VertexNormalArray[iVar19].z;
+                    if (pvVar14->base.base.count == 4) {
+                      iVar19 = ((SMRGLPrimitiveQuad *)pvVar14)->vertices[3].vertex_index;
                       g_VertexNormalArray[iVar19].x = *pfVar1 + g_VertexNormalArray[iVar19].x;
                       g_VertexNormalArray[iVar19].y =
-                           *(float *)((int)face_data + 0xc) + g_VertexNormalArray[iVar19].y;
+                           *(float *)&pvVar14->base.surface_normal.B + g_VertexNormalArray[iVar19].y;
                       g_VertexNormalArray[iVar19].z =
-                           *(float *)((int)face_data + 0x10) + g_VertexNormalArray[iVar19].z;
+                           *(float *)&pvVar14->base.surface_normal.C + g_VertexNormalArray[iVar19].z;
                     }
-                    if (vertices_per_face == 4) {
-                      face_data = (void *)((int)face_data + 0x48);
-                    }
-                    else {
-                      face_data = (void *)((int)face_data + 0x3c);
-                    }
+                    pvVar14 = (SMRGLPrimitiveTriangle *)((char *)pvVar14 +
+                                  (vertices_per_face == 4 ? sizeof(SMRGLPrimitiveQuad)
+                                                          : sizeof(SMRGLPrimitiveTriangle)));
                     iVar24 = iVar24 + 1;
                   } while (iVar24 < tri_count);
                 }
@@ -307,7 +289,6 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                   pCVar23 = g_VertexNormalArray;
                   local_68 = g_TransformedVertexArray;
                   iVar24 = 0;
-                  local_64 = 0;
                   do {
                     fVar5 = core_cloth_cpp_fastInvSqrt_FUN_0043e2a0(
                               pCVar23->z * pCVar23->z +
@@ -324,9 +305,8 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                     core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
                               (this_ptr,local_68,&local_100,iVar24,0);
                     local_68 = local_68 + 1;
-                    *(int *)((int)&g_RenderVertexBuffer[0].a + local_64) = g_PerspectiveReciprocal;
+                    g_RenderVertexBuffer[iVar24].a = g_PerspectiveReciprocal;
                     iVar24 = iVar19;
-                    local_64 = local_64 + 0x30;
                   } while (iVar19 < vertex_count);
                   return;
                 }
@@ -335,7 +315,6 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                 local_3c = 0;
                 if (0 < vertex_count) {
                   pCVar22 = g_VertexNormalArray;
-                  local_58 = 0;
                   local_60 = g_TransformedVertexArray;
                   do {
                     if (((1.0 <= ABS(pCVar22->x)) || (1.0 <= ABS(pCVar22->y))) ||
@@ -360,10 +339,9 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
                     core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
                               (this_ptr,world_position,surface_normal,local_3c,0);
                     pCVar22 = pCVar22 + 1;
+                    g_RenderVertexBuffer[local_3c].a = g_PerspectiveReciprocal;
                     local_3c = local_3c + 1;
-                    *(int *)((int)&g_RenderVertexBuffer[0].a + local_58) = g_PerspectiveReciprocal;
                     local_60 = local_60 + 1;
-                    local_58 = local_58 + 0x30;
                   } while (local_3c < vertex_count);
                 }
               }
@@ -372,22 +350,17 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
           else {
             if (this_ptr->rendering_mode == 0) {
               if (0 < vertex_count) {
-                local_5c = 0;
                 iVar19 = 0;
                 do {
-                  local_e8.x = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_x
-                                       + iVar19);
-                  local_e8.y = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_y
-                                       + iVar19);
-                  local_e8.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_z
-                                       + iVar19);
+                  local_e8.x = g_RenderVertexBuffer[iVar19].projected_vertex.transformed_x;
+                  local_e8.y = g_RenderVertexBuffer[iVar19].projected_vertex.transformed_y;
+                  local_e8.z = g_RenderVertexBuffer[iVar19].projected_vertex.transformed_z;
                   core_set_cpp_transformToWorldSpace_FUN_0056e890(&local_e8,&local_130);
-                  iVar19 = iVar19 + 0x30;
-                  *(int *)((int)&g_TransformedVertexArray[0].x + local_5c) = local_130.x;
-                  *(int *)((int)&g_TransformedVertexArray[0].y + local_5c) = local_130.y;
-                  *(int *)((int)&g_TransformedVertexArray[0].z + local_5c) = local_130.z;
-                  local_5c = local_5c + 0xc;
-                } while (iVar19 < iVar24);
+                  g_TransformedVertexArray[iVar19].x = local_130.x;
+                  g_TransformedVertexArray[iVar19].y = local_130.y;
+                  g_TransformedVertexArray[iVar19].z = local_130.z;
+                  iVar19 = iVar19 + 1;
+                } while (iVar19 < vertex_count);
               }
               iVar24 = 0;
               if (0 < vertex_count) {
@@ -461,16 +434,14 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
             if (0 < vertex_count) {
               local_54 = g_TransformedVertexArray;
               iVar24 = 0;
-              iVar19 = 0;
               pCVar23 = g_VertexNormalArray;
               do {
                 iVar17 = iVar24 + 1;
                 core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
                           (this_ptr,local_54,(CVector3i *)pCVar23,iVar24,0);
-                *(int *)((int)&g_RenderVertexBuffer[0].a + iVar19) = g_PerspectiveReciprocal;
+                g_RenderVertexBuffer[iVar24].a = g_PerspectiveReciprocal;
                 local_54 = local_54 + 1;
                 iVar24 = iVar17;
-                iVar19 = iVar19 + 0x30;
                 pCVar23 = pCVar23 + 1;
               } while (iVar17 < vertex_count);
               return;
@@ -479,20 +450,15 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
         }
         else if (0 < vertex_count) {
           local_40 = 0;
-          iVar24 = 0;
           do {
-            local_10c.x = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_x +
-                                  iVar24);
-            local_10c.y = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_y +
-                                  iVar24);
-            local_10c.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_z +
-                                  iVar24);
+            local_10c.x = g_RenderVertexBuffer[local_40].projected_vertex.transformed_x;
+            local_10c.y = g_RenderVertexBuffer[local_40].projected_vertex.transformed_y;
+            local_10c.z = g_RenderVertexBuffer[local_40].projected_vertex.transformed_z;
             core_set_cpp_transformToWorldSpace_FUN_0056e890(&local_10c,&local_148);
             core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
                       (this_ptr,&local_178,(CVector3i *)0x0,local_40,0);
+            g_RenderVertexBuffer[local_40].a = g_PerspectiveReciprocal;
             local_40 = local_40 + 1;
-            *(int *)((int)&g_RenderVertexBuffer[0].a + iVar24) = g_PerspectiveReciprocal;
-            iVar24 = iVar24 + 0x30;
           } while (local_40 < vertex_count);
           return;
         }
@@ -500,28 +466,26 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
       else if (0 < vertex_count) {
         iVar19 = 0;
         do {
-          *(int *)((int)&g_RenderVertexBuffer[0].r + iVar19) = this_ptr->mirror_cached_light;
-          *(int *)((int)&g_RenderVertexBuffer[0].g + iVar19) = this_ptr->mirror_cached_color;
-          iVar17 = iVar19 + 0x30;
-          *(int *)((int)&g_RenderVertexBuffer[0].b + iVar19) = this_ptr->mirror_cached_fog;
+          g_RenderVertexBuffer[iVar19].r = this_ptr->mirror_cached_color.r;
+          g_RenderVertexBuffer[iVar19].g = this_ptr->mirror_cached_color.g;
+          iVar17 = iVar19 + 1;
+          g_RenderVertexBuffer[iVar19].b = this_ptr->mirror_cached_color.b;
           iVar19 = iVar17;
-        } while (iVar17 < iVar24);
+        } while (iVar17 < vertex_count);
         return;
       }
     }
     else {
       if (g_InMirrorRenderPass == 0) {
         if (this_ptr->lighting_quality_mode == 2) {
-          iVar24 = 0;
           if (0 < vertex_count) {
-            iVar19 = 0;
+            iVar24 = 0;
             do {
-              *(uint *)((int)&g_RenderVertexBuffer[0].a + iVar19) = 0;
+              g_RenderVertexBuffer[iVar24].a = 0;
               core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
                         (this_ptr,vertex_positions,(CVector3i *)0x0,iVar24,1);
               iVar24 = iVar24 + 1;
               vertex_positions = vertex_positions + 1;
-              iVar19 = iVar19 + 0x30;
             } while (iVar24 < vertex_count);
           }
         }
@@ -529,13 +493,13 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
           if (0 < vertex_count) {
             iVar19 = 0;
             do {
-              *(int *)((int)&g_RenderVertexBuffer[0].r + iVar19) = this_ptr->light_scale_factor;
-              *(int *)((int)&g_RenderVertexBuffer[0].g + iVar19) = this_ptr->color_scale_factor;
-              iVar17 = iVar19 + 0x30;
-              *(int *)((int)&g_RenderVertexBuffer[0].b + iVar19) = this_ptr->fog_scale_factor;
-              *(uint *)((int)&g_RenderVertexBuffer[0].a + iVar19) = 0;
+              g_RenderVertexBuffer[iVar19].r = this_ptr->flat_color.r;
+              g_RenderVertexBuffer[iVar19].g = this_ptr->flat_color.g;
+              iVar17 = iVar19 + 1;
+              g_RenderVertexBuffer[iVar19].b = this_ptr->flat_color.b;
+              g_RenderVertexBuffer[iVar19].a = 0;
               iVar19 = iVar17;
-            } while (iVar17 < iVar24);
+            } while (iVar17 < vertex_count);
             g_PerspectiveReciprocal = 0;
             return;
           }
@@ -543,29 +507,24 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
         else if (0 < vertex_count) {
           iVar19 = 0;
           do {
-            iVar17 = iVar19 + 0x30;
-            *(uint *)((int)&g_RenderVertexBuffer[0].r + iVar19) = 0xffff;
-            *(uint *)((int)&g_RenderVertexBuffer[0].g + iVar19) = 0xffff;
-            *(uint *)((int)&g_RenderVertexBuffer[0].b + iVar19) = 0xffff;
-            *(uint *)((int)&g_RenderVertexBuffer[0].a + iVar19) = 0;
+            iVar17 = iVar19 + 1;
+            g_RenderVertexBuffer[iVar19].r = 0xffff;
+            g_RenderVertexBuffer[iVar19].g = 0xffff;
+            g_RenderVertexBuffer[iVar19].b = 0xffff;
+            g_RenderVertexBuffer[iVar19].a = 0;
             iVar19 = iVar17;
-          } while (iVar17 < iVar24);
+          } while (iVar17 < vertex_count);
           g_PerspectiveReciprocal = 0;
           return;
         }
         g_PerspectiveReciprocal = 0;
         return;
       }
-      if (0 < vertex_count) {
-        iVar13 = 0;
-        do {
-          iVar13 = iVar13 + 0x30;
-          *(uint *)((int)&g_RenderVertexBuffer[0].r + iVar13) = 0;
-          *(uint *)((int)&g_RenderVertexBuffer[0].g + iVar13) = 0;
-          *(uint *)((int)&g_RenderVertexBuffer[0].b + iVar13) = 0;
-          *(uint *)((int)&g_RenderVertexBuffer[0].a + iVar13) = 0;
-          iVar13 = iVar13;
-        } while (iVar13 < iVar24);
+      for (iVar13 = 0; iVar13 < vertex_count; iVar13++) {
+        g_RenderVertexBuffer[iVar13].r = 0;
+        g_RenderVertexBuffer[iVar13].g = 0;
+        g_RenderVertexBuffer[iVar13].b = 0;
+        g_RenderVertexBuffer[iVar13].a = 0;
       }
       g_PerspectiveReciprocal = 0;
     }

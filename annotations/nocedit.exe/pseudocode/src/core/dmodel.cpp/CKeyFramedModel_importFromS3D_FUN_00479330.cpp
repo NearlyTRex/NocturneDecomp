@@ -12,6 +12,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_importFromS3D_FUN_00479330(CKeyFram
 
 {
   char cVar2;
+  UIntegerFloat UVar3;
   bool bVar4;
   _FILE *p_Var5;
   int iVar6;
@@ -293,11 +294,11 @@ LAB_004797c3:
       pSVar2 = this_ptr->poly_vert_list;
       this_ptr->poly_texture_index_list[iVar8] = local_44;
       pSVar2[iVar8].base.base.count = 3;
-      pSVar2[iVar8].base.surface_normal.D = 0;
-      iVar9 = pSVar2[iVar8].base.surface_normal.D;
-      pSVar2[iVar8].base.surface_normal.C = iVar9;
-      pSVar2[iVar8].base.surface_normal.B = iVar9;
-      pSVar2[iVar8].base.surface_normal.A = iVar9;
+      pSVar2[iVar8].base.surface_normal.D.i = 0;
+      UVar3 = pSVar2[iVar8].base.surface_normal.D;
+      pSVar2[iVar8].base.surface_normal.C = UVar3;
+      pSVar2[iVar8].base.surface_normal.B = UVar3;
+      pSVar2[iVar8].base.surface_normal.A = UVar3;
       for (iVar9 = 0; iVar9 < pSVar2[iVar8].base.base.count; iVar9 = iVar9 + 1) {
         pSVar2[iVar8].vertices[iVar9].vertex_index = *(int *)(local_7c + iVar9 * 4 + -4);
         dVar5 = 65536;

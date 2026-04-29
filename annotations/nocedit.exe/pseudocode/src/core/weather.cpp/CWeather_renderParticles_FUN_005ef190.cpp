@@ -83,10 +83,10 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *th
     local_14 = 0.05;
   }
   local_f0.base.base.count = 4;
-  local_f0.base.surface_normal.D = 0;
-  local_f0.base.surface_normal.C = 0;
-  local_f0.base.surface_normal.B = 0;
-  local_f0.base.surface_normal.A = 0;
+  local_f0.base.surface_normal.D.i = 0;
+  local_f0.base.surface_normal.C.i = 0;
+  local_f0.base.surface_normal.B.i = 0;
+  local_f0.base.surface_normal.A.i = 0;
   local_f0.vertices[0] = 0;
   local_f0.vertices[1] = 1;
   local_f0.vertices[2] = 2;

@@ -2,11 +2,11 @@
 // Address: 0044de10
 // Address Range: [[0044de10, 0044e356] [006048c4, 006048e8] [0060c74e, 0060c76c]]
 // Convention: __cdecl
-// Signature: void * __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemonCamera *this_ptr,CDemonLight *light_source,CRect *rect)
+// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemonCamera *this_ptr,CDemonLight *light_source,CRect *rect)
 
 #include "nocturne.h"
 
-void * __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemonCamera *this_ptr,CDemonLight *light_source,CRect *rect)
+void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemonCamera *this_ptr,CDemonLight *light_source,CRect *rect)
 
 {
   int iVar1;
@@ -195,10 +195,9 @@ LAB_0044e087:
       local_50 = local_50 + 0x140;
       *(int *)((int)local_48 + 0x14c8) = local_34;
       *(int *)((int)local_48 + 0x1888) = local_38;
-      local_78 = (void *)((int)local_48 + 4);
+      local_48 = (void *)((int)local_48 + 4);
       local_2c = (void *)((int)local_2c + 1);
-      local_48 = local_78;
     } while ((int)local_2c <= local_74);
   }
-  return local_78;
+  return;
 }

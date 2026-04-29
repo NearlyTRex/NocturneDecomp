@@ -52,7 +52,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineAPIPremiumMultiStat
       *piVar7 = (pSVar4->base).type + g_ProcessedVertexOffset;
       g_RenderVertexBuffer[(pSVar4->base).type + uVar1].u = (pSVar4->base).count;
       piVar7 = piVar7 + 1;
-      g_RenderVertexBuffer[(pSVar4->base).type + uVar1].v = (pSVar4->surface_normal).A;
+      g_RenderVertexBuffer[(pSVar4->base).type + uVar1].v = (int)(pSVar4->surface_normal).A;
       pSVar4 = (SMRGLHeaderPrimitive *)&(pSVar4->surface_normal).B;
     }
     if (((g_RenderBufferEnabled == 0) || (0x9c3 < g_RenderBufferCount)) ||

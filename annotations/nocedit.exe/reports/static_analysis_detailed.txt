@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (352 diagnostics)
+Cppcheck (quick) (351 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -321,7 +321,7 @@ uninitvar (77)
     Uninitialized variable: local_60
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (74)
+selfAssignment (73)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 163
@@ -367,10 +367,6 @@ selfAssignment (74)
   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 417
     File: core/dcamera.cpp
     Redundant assignment of 'iVar16' to itself.
-
-  core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_ line 115
-    File: core/dcamera.cpp
-    Redundant assignment of 'pCVar3' to itself.
 
   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 513
     File: core/dmodel.cpp
@@ -419,10 +415,6 @@ selfAssignment (74)
   core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fb line 146
     File: core/set.cpp
     Redundant assignment of 'pCVar12' to itself.
-
-  core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 line 567
-    File: core/set.cpp
-    Redundant assignment of 'iVar13' to itself.
 
   core_setedit.cpp_CDemonSet_showCameraEditor_FUN_00 line 248
     File: core/setedit.cpp
@@ -495,6 +487,10 @@ selfAssignment (74)
   core_xform.cpp_clipPolygonStage4_FUN_005f8330      line 75
     File: core/xform.cpp
     Redundant assignment of 'iVar5' to itself.
+
+  engine_3d.c_renderPolygonEngineAPIPremiumMultiStat line 107
+    File: engine/3d.c
+    Redundant assignment of 'ppSVar12' to itself.
 
   engine_colquant.c_quantizeColors_FUN_004406c0      line 136
     File: engine/colquant.c

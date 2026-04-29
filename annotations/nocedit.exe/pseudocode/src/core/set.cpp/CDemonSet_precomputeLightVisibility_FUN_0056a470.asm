@@ -370,7 +370,7 @@ section .text
     PUSH EBX                            ; 0056a88d
     PUSH 0x32758e4                      ; 0056a88e | g_CDemonCameraInstance
     CALL core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10 ; 0056a893
-        ;   XREF to: 0044de10 (UNCONDITIONAL_CALL)  ; void * core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemonCamera * this_ptr, CDemonLight * light_source, CRect * rect)
+        ;   XREF to: 0044de10 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemonCamera * this_ptr, CDemonLight * light_source, CRect * rect)
     ADD ESP,0xc                         ; 0056a898
     PUSH EBX                            ; 0056a89b
     PUSH 0x32758e4                      ; 0056a89c | g_CDemonCameraInstance

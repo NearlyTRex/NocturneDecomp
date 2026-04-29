@@ -56,9 +56,9 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00429b40(CCharacte
   float fVar2;
   float fVar1;
   
-  local_e8.base.surface_normal.A =
+  local_e8.base.surface_normal.A.i =
        engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
-  if (local_e8.base.surface_normal.A != 0) {
+  if (local_e8.base.surface_normal.A.i != 0) {
     return;
   }
   pcVar8 = "headlite.raw";
@@ -72,9 +72,9 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00429b40(CCharacte
     pcVar10[1] = cVar1;
     pcVar10 = pcVar10 + 2;
   } while (cVar1 != '\0');
-  local_e8.base.surface_normal.B = local_e8.base.surface_normal.A;
-  local_e8.base.surface_normal.C = local_e8.base.surface_normal.A;
-  local_e8.base.surface_normal.D = local_e8.base.surface_normal.A;
+  local_e8.base.surface_normal.B.i = local_e8.base.surface_normal.A.i;
+  local_e8.base.surface_normal.C.i = local_e8.base.surface_normal.A.i;
+  local_e8.base.surface_normal.D.i = local_e8.base.surface_normal.A.i;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,&g_CollisionTexture);
   iVar10 = 0;

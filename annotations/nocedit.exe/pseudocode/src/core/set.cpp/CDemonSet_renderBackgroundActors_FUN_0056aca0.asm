@@ -21,8 +21,8 @@
 ;   undefined4 g_CDemonMissionInstance.is_in_editor
 ;
 ; Called Functions:
+;   core_set.cpp_CDemonSet_setFlatColor_FUN_00570ca0
 ;   core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380
-;   core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
 ;
@@ -96,8 +96,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0x108]     ; 0056ad3e
     PUSH ECX                            ; 0056ad44
     PUSH ESI                            ; 0056ad45
-    CALL core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0 ; 0056ad46
-        ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
+    CALL core_set.cpp_CDemonSet_setFlatColor_FUN_00570ca0 ; 0056ad46
+        ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_00570ca0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 0056ad4b
     PUSH 0xffff                         ; 0056ad4e
     MOV EAX,[0x006703ec]                ; 0056ad53 | g_CDemonRendererInstance | g_CDemonRendererPtr2
@@ -115,8 +115,8 @@ section .text
     PUSH 0x10000                        ; 0056ad78
     PUSH 0x10000                        ; 0056ad7d
     PUSH ESI                            ; 0056ad82
-    CALL core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0 ; 0056ad83
-        ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
+    CALL core_set.cpp_CDemonSet_setFlatColor_FUN_00570ca0 ; 0056ad83
+        ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_00570ca0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 0056ad88
     PUSH 0x1                            ; 0056ad8b
     MOV ECX,dword ptr [0x006703ec]      ; 0056ad8d | g_CDemonRendererInstance | g_CDemonRendererPtr2

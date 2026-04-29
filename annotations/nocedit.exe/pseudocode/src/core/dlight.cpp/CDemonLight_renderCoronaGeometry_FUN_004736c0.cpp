@@ -100,10 +100,10 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
      ((-local_34[0].z < local_34[0].y && (local_34[0].z < (this_ptr->base).max_distance)))) {
     bVar7 = true;
   }
-  local_a4.base.surface_normal.D = 0;
-  local_a4.base.surface_normal.C = 0;
-  local_a4.base.surface_normal.B = 0;
-  local_a4.base.surface_normal.A = 0;
+  local_a4.base.surface_normal.D.i = 0;
+  local_a4.base.surface_normal.C.i = 0;
+  local_a4.base.surface_normal.B.i = 0;
+  local_a4.base.surface_normal.A.i = 0;
   local_a4.base.base.count = 3;
   if (bVar7) {
     core_dcamera_cpp_initializeCoronaBuffers_FUN_004502e0();
@@ -125,10 +125,10 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
       local_a4.vertices[1] = iVar8;
     } while (iVar8 < 0x10);
   }
-  local_a4.base.surface_normal.A = 0;
-  local_a4.base.surface_normal.B = 0;
-  local_a4.base.surface_normal.C = 0xffff;
-  local_a4.base.surface_normal.D =
+  local_a4.base.surface_normal.A.i = 0;
+  local_a4.base.surface_normal.B.i = 0;
+  local_a4.base.surface_normal.C.i = 0xffff;
+  local_a4.base.surface_normal.D.i =
        (int)ROUND(ROUND((this_ptr->base).max_distance * (float)256));
   iVar5 = 0;
   do {

@@ -68,10 +68,10 @@ CDemonSet * __cdecl core_set_cpp_CDemonSet_ctor_FUN_005690c0(CDemonSet *this_ptr
   ADJ(pvVar5)->mirror_glass_actor_count = 0;
   ADJ(pvVar5)->mirror_camera_dirty = 0;
   ADJ(pvVar5)->vdir_box_count = 0;
-  ADJ(pvVar5)->light_scale_factor = 0x10000;
-  ADJ(pvVar5)->color_scale_factor = 0x10000;
+  (ADJ(pvVar5)->flat_color).r = 0x10000;
+  (ADJ(pvVar5)->flat_color).g = 0x10000;
   pcVar2 = "none";
-  ADJ(pvVar5)->fog_scale_factor = 0x10000;
+  (ADJ(pvVar5)->flat_color).b = 0x10000;
   ADJ(pvVar5)->mirror_lighting_cached = 0;
   pcVar3 = ADJ(pvVar5)->world_geometry_name;
   ADJ(pvVar5)->use_world_geometry_flag = 0;

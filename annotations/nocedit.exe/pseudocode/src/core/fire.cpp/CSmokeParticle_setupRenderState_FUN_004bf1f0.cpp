@@ -25,10 +25,10 @@ int __cdecl core_fire_cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0(CSmokePar
   CVector3i local_18;
   
   g_BillboardPrimitive.base.base.count = 4;
-  g_BillboardPrimitive.base.surface_normal.A = 0;
-  g_BillboardPrimitive.base.surface_normal.B = 0;
-  g_BillboardPrimitive.base.surface_normal.C = 0;
-  g_BillboardPrimitive.base.surface_normal.D = 0;
+  g_BillboardPrimitive.base.surface_normal.A.i = 0;
+  g_BillboardPrimitive.base.surface_normal.B.i = 0;
+  g_BillboardPrimitive.base.surface_normal.C.i = 0;
+  g_BillboardPrimitive.base.surface_normal.D.i = 0;
   g_BillboardPrimitive.vertices[0] = 0;
   g_BillboardPrimitive.vertices[1] = 1;
   g_BillboardPrimitive.vertices[2] = 2;

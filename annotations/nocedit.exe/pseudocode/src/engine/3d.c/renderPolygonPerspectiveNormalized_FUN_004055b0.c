@@ -15,9 +15,9 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPerspectiveNormalized_FUN
   CVector3i local_28;
   CVector3i local_1c;
   
-  local_28.x = (prim->surface_normal).A;
-  local_28.y = (prim->surface_normal).B;
-  local_28.z = (prim->surface_normal).C;
+  local_28.x = (prim->surface_normal).A.i;
+  local_28.y = (prim->surface_normal).B.i;
+  local_28.z = (prim->surface_normal).C.i;
   engine_matrix_c_normalizeVector3DFixed_FUN_0050d970(&local_28,&local_1c);
   iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal);
   if (iVar1 != 0) {

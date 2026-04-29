@@ -162,12 +162,12 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
           this_ptr_00->vertex_buffer_ptr[3].u = 0xf80000;
           iVar2 = iVar2 + 1;
           this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
-          local_e0.base.surface_normal.D = 0;
-          local_e0.base.surface_normal.C = 0;
+          local_e0.base.surface_normal.D.i = 0;
+          local_e0.base.surface_normal.C.i = 0;
           local_e0.base.base.count = 4;
-          local_e0.base.surface_normal.B = 0;
+          local_e0.base.surface_normal.B.i = 0;
           local_e0.vertices[1] = 1;
-          local_e0.base.surface_normal.A = 0;
+          local_e0.base.surface_normal.A.i = 0;
           local_e0.vertices[0] = 0;
           local_e0.vertices[3] = 3;
           local_e0.vertices[2] = 2;

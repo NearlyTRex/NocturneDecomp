@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 410,
-    "complexity_score": 260,
+    "complexity_score": 355,
     "cross_reference_count": 6,
     "function_call_count": 17,
     "global_count": 15,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 160,
-    "suspect_count": 9,
+    "suspect_count": 19,
     "suspect_types": [
-      "pointer_cast",
       "unnamed_local"
     ],
     "total_lines": 570
@@ -361,6 +360,35 @@
     },
     "pcode_op_count": 1549
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 94,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((char *)(*(int *)((int)g_MasterLightList + iVar6) + 0x40),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 131,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->lights[local_14].camera_light_bounds[0].left + local_40)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 133,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->lights[local_14].camera_light_bounds[0].top + local_40)",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 6212,
     "local_size": 6204,
@@ -519,33 +547,9 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 94,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "((char *)(*(int *)((int)g_MasterLightList + iVar6) + 0x40),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 131,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&this_ptr->lights[local_14].camera_light_bounds[0].left + local_40)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 133,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&this_ptr->lights[local_14].camera_light_bounds[0].top + local_40)",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 27,
+      "line": 24,
       "match": "local_5c",
       "severity": "mild",
       "text": "CRect local_5c;",
@@ -554,7 +558,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 39,
+      "line": 35,
       "match": "local_20",
       "severity": "mild",
       "text": "int local_20;",
@@ -563,7 +567,7 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 42,
+      "line": 37,
       "match": "local_14",
       "severity": "mild",
       "text": "int local_14;",
@@ -572,7 +576,70 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 123,
+      "line": 47,
+      "match": "local_20",
+      "severity": "mild",
+      "text": "local_20 = 0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 53,
+      "match": "local_20",
+      "severity": "mild",
+      "text": "this_ptr_00 = this_ptr->cameras + local_20;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 80,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "local_14 = 0;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 83,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "local_14 = light_index;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 86,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "if (local_14 < local_24) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 88,
+      "match": "local_14",
+      "severity": "mild",
+      "text": "if (this_ptr->lights[local_14].light_type == 0) {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 105,
+      "match": "local_20",
+      "severity": "mild",
+      "text": "this_ptr->lights[local_14].visible_flags[local_20] = (char)iVar1;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 107,
       "match": "local_5c",
       "severity": "mild",
       "text": "(&g_CDemonCameraInstance,light_source,&local_5c);",
@@ -581,19 +648,73 @@
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 124,
-      "match": "local_5c",
+      "line": 108,
+      "match": "local_20",
       "severity": "mild",
-      "text": "*(int *)(iVar5 + 0x19c54) = local_5c.left;",
+      "text": "this_ptr->lights[local_14].camera_light_bounds[local_20].left = local_5c.left;",
       "type": "unnamed_local"
     },
     {
       "description": "Unnamed local variable",
       "introduced_by": "keep",
-      "line": 125,
+      "line": 108,
       "match": "local_5c",
       "severity": "mild",
-      "text": "*(int *)(iVar5 + 0x19c58) = local_5c.top;",
+      "text": "this_ptr->lights[local_14].camera_light_bounds[local_20].left = local_5c.left;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 109,
+      "match": "local_20",
+      "severity": "mild",
+      "text": "this_ptr->lights[local_14].camera_light_bounds[local_20].top = local_5c.top;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 109,
+      "match": "local_5c",
+      "severity": "mild",
+      "text": "this_ptr->lights[local_14].camera_light_bounds[local_20].top = local_5c.top;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 110,
+      "match": "local_20",
+      "severity": "mild",
+      "text": "this_ptr->lights[local_14].camera_light_bounds[local_20].right = local_5c.right;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 111,
+      "match": "local_20",
+      "severity": "mild",
+      "text": "this_ptr->lights[local_14].camera_light_bounds[local_20].bottom = local_5c.bottom;",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 112,
+      "match": "local_20",
+      "severity": "mild",
+      "text": "if (this_ptr->lights[local_14].visible_flags[local_20] != '\\0') {",
+      "type": "unnamed_local"
+    },
+    {
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 123,
+      "match": "local_20",
+      "severity": "mild",
+      "text": "this_ptr->lights[local_14].visible_flags[local_20] = (char)iVar1;",
       "type": "unnamed_local"
     }
   ]

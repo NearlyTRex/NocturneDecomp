@@ -514,10 +514,10 @@ LAB_0059722b:
       local_3a4.vertices[2].texture_u = 0xfe0000;
       local_3a4.vertices[2].texture_v = 0xfe0000;
       local_3a4.vertices[3].texture_v = 0xfe0000;
-      local_3a4.base.surface_normal.D = 0;
-      local_3a4.base.surface_normal.C = 0;
-      local_3a4.base.surface_normal.B = 0;
-      local_3a4.base.surface_normal.A = 0;
+      local_3a4.base.surface_normal.D.i = 0;
+      local_3a4.base.surface_normal.C.i = 0;
+      local_3a4.base.surface_normal.B.i = 0;
+      local_3a4.base.surface_normal.A.i = 0;
       local_3a4.vertices[0].vertex_index = 0;
       local_3a4.vertices[3].vertex_index = 3;
       local_3a4.vertices[0].texture_u = 0x20000;

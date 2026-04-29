@@ -59,8 +59,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrimitiveAdaptivePlaneMasked_FUN
         g_RenderStateFlags.dword = (RENDER_LIGHTING_COLOR | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
         g_VertexPreprocessMode = PREPROCESS_Z_PASS_INVW;
         engine_light_cpp_calculateLighting_FUN_00505780
-                  ((primitive->surface_normal).A,(primitive->surface_normal).B,
-                   (primitive->surface_normal).C);
+                  ((primitive->surface_normal).A.i,(primitive->surface_normal).B.i,
+                   (primitive->surface_normal).C.i);
         g_ActiveRenderColor =
              engine_3d_c_makeGrayscaleColor_FUN_004039c0
                        (g_CurrentPolygonColor,g_CurrentLightingValue);
@@ -93,7 +93,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrimitiveAdaptivePlaneMasked_FUN
       g_RenderVertexBuffer[iVar1].u = (pSVar3->base).count;
       iVar2 = iVar2 + 4;
       vertex_count = vertex_count + 1;
-      g_RenderVertexBuffer[(pSVar3->base).type].v = (pSVar3->surface_normal).A;
+      g_RenderVertexBuffer[(pSVar3->base).type].v = (int)(pSVar3->surface_normal).A;
       pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
     }
     engine_clipper_c_clipAndRasterize_FUN_004371b0(vertex_count,g_ProcessedVertexIndices);

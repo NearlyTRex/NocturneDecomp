@@ -38,10 +38,10 @@ int __cdecl core_mirror_cpp_CMirror_renderMirrorQuad_FUN_00522670(CMirror *this_
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_18);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);
   local_64.base.base.count = 4;
-  local_64.base.surface_normal.D = 0;
-  local_64.base.surface_normal.C = 0;
-  local_64.base.surface_normal.B = 0;
-  local_64.base.surface_normal.A = 0;
+  local_64.base.surface_normal.D.i = 0;
+  local_64.base.surface_normal.C.i = 0;
+  local_64.base.surface_normal.B.i = 0;
+  local_64.base.surface_normal.A.i = 0;
   local_64.vertices[0] = 0;
   local_64.vertices[1] = 1;
   local_64.vertices[2] = 2;

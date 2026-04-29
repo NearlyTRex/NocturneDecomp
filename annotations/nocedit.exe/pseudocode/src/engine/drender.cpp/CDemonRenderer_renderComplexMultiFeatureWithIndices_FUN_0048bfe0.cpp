@@ -51,7 +51,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderComplexMultiFeatureWithIndi
           do {
             iVar2 = *(int *)((int)g_VertexIndexBuffer + iVar6);
             this_ptr->vertex_buffer_ptr[iVar2].u = pSVar2[1].base.count;
-            this_ptr->vertex_buffer_ptr[iVar2].v = pSVar2[1].surface_normal.A;
+            this_ptr->vertex_buffer_ptr[iVar2].v = (int)pSVar2[1].surface_normal.A;
             pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
             iVar5 = iVar5 + 1;
             iVar6 = iVar6 + 4;

@@ -57,12 +57,12 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_pt
       prim = &this_ptr->broken_quads[0].base;
       pCVar3 = this_ptr;
       do {
-        pCVar3->broken_quads[0].base.surface_normal.A = 0;
+        pCVar3->broken_quads[0].base.surface_normal.A.i = 0;
         this_ptr_00 = g_CDemonRendererPtr2;
-        pCVar3->broken_quads[0].base.surface_normal.B = 0;
+        pCVar3->broken_quads[0].base.surface_normal.B.i = 0;
         iVar4 = iVar4 + 1;
-        pCVar3->broken_quads[0].base.surface_normal.C = 0;
-        pCVar3->broken_quads[0].base.surface_normal.D = 0;
+        pCVar3->broken_quads[0].base.surface_normal.C.i = 0;
+        pCVar3->broken_quads[0].base.surface_normal.D.i = 0;
         pCVar3 = (CGlass *)((pCVar3->base).orient_matrix.m + 1);
         engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(this_ptr_00,prim,0xc1)
         ;

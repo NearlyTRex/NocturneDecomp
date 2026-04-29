@@ -41,7 +41,7 @@ void __cdecl core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0(CDemon
 void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_00570b70(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_markMirrorCameraDirty_FUN_00570c60(CDemonSet *this_ptr);
 void __cdecl core_set_cpp_CDemonSet_restoreCameraView_FUN_00570c70(CDemonSet *this_ptr);
-void __cdecl core_set_cpp_CDemonSet_setScaleFactors_FUN_00570ca0(CDemonSet *this_ptr,int light_scale,int color_scale,int fog_scale);
+void __cdecl core_set_cpp_CDemonSet_setFlatColor_FUN_00570ca0(CDemonSet *this_ptr,int light_scale,int color_scale,int fog_scale);
 void __cdecl core_set_cpp_CDemonSet_cacheMirrorLighting_FUN_00570cd0(CDemonSet *this_ptr,CVector3f *position);
 void __cdecl core_set_cpp_CDemonSet_setGamma_FUN_00570d60(CDemonSet *this_ptr,int gamma);
 int __cdecl core_set_cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0(CDemonSet *this_ptr,SMRGLHeaderPrimitive *prim);

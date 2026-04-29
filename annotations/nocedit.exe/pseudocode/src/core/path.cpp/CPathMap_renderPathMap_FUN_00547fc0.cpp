@@ -51,10 +51,10 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_00547fc0(CPathMap *this_pt
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,&SMRGLTextureBasic_00680bb0);
   SMRGLPrimitiveQuad_030d4fd0.base.base.count = 4;
-  SMRGLPrimitiveQuad_030d4fd0.base.surface_normal.A = 0;
-  SMRGLPrimitiveQuad_030d4fd0.base.surface_normal.B = 0;
-  SMRGLPrimitiveQuad_030d4fd0.base.surface_normal.C = 0;
-  SMRGLPrimitiveQuad_030d4fd0.base.surface_normal.D = 0;
+  SMRGLPrimitiveQuad_030d4fd0.base.surface_normal.A.i = 0;
+  SMRGLPrimitiveQuad_030d4fd0.base.surface_normal.B.i = 0;
+  SMRGLPrimitiveQuad_030d4fd0.base.surface_normal.C.i = 0;
+  SMRGLPrimitiveQuad_030d4fd0.base.surface_normal.D.i = 0;
   SMRGLPrimitiveQuad_030d4fd0.vertices[0].vertex_index = 0;
   SMRGLPrimitiveQuad_030d4fd0.vertices[1].vertex_index = 1;
   SMRGLPrimitiveQuad_030d4fd0.vertices[2].vertex_index = 2;

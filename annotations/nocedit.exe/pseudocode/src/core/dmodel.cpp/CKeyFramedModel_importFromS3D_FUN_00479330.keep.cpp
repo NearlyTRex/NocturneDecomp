@@ -290,11 +290,11 @@ LAB_004797c3:
       pSVar2 = this_ptr->poly_vert_list;
       this_ptr->poly_texture_index_list[iVar8] = local_44;
       pSVar2[iVar8].base.base.count = 3;
-      pSVar2[iVar8].base.surface_normal.D = 0;
-      iVar9 = pSVar2[iVar8].base.surface_normal.D;
-      pSVar2[iVar8].base.surface_normal.C = iVar9;
-      pSVar2[iVar8].base.surface_normal.B = iVar9;
-      pSVar2[iVar8].base.surface_normal.A = iVar9;
+      pSVar2[iVar8].base.surface_normal.D.i = 0;
+      iVar9 = pSVar2[iVar8].base.surface_normal.D.i;
+      pSVar2[iVar8].base.surface_normal.C.i = iVar9;
+      pSVar2[iVar8].base.surface_normal.B.i = iVar9;
+      pSVar2[iVar8].base.surface_normal.A.i = iVar9;
       for (iVar9 = 0; iVar9 < pSVar2[iVar8].base.base.count; iVar9 = iVar9 + 1) {
         pSVar2[iVar8].vertices[iVar9].vertex_index = vertex_indices[iVar9];
         dVar5 = 65536;

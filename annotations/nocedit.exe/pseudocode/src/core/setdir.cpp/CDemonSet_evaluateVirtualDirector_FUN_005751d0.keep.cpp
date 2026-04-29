@@ -104,10 +104,10 @@ LAB_0057523f:
   do {
     iVar12 = pSVar4->vertices[0].vertex_index;
     pSVar5 = pSVar4 + 1;
-    (pSVar4->base).surface_normal.D =
-         (pSVar4->base).surface_normal.A * aCStack_158[iVar12].x +
-         (pSVar4->base).surface_normal.B * aCStack_158[iVar12].y +
-         (pSVar4->base).surface_normal.C * aCStack_158[iVar12].z;
+    (pSVar4->base).surface_normal.D.i =
+         (pSVar4->base).surface_normal.A.i * aCStack_158[iVar12].x +
+         (pSVar4->base).surface_normal.B.i * aCStack_158[iVar12].y +
+         (pSVar4->base).surface_normal.C.i * aCStack_158[iVar12].z;
     pSVar4 = pSVar5;
   } while (pSVar5 != g_BoundingBoxQuadTemplates + 6);
   if (force_evaluation_mode == 0) {

@@ -17,9 +17,9 @@ void __cdecl core_mirror_cpp_CMirror_renderMirroredPrimitive_FUN_005225e0(CMirro
   g_MirrorTempPrimitive.base.surface_normal.C = (prim->surface_normal).C;
   g_MirrorTempPrimitive.base.surface_normal.D = (prim->surface_normal).D;
   g_MirrorTempPrimitive.vertices[0] = prim[1].base.type;
-  g_MirrorTempPrimitive.vertices[1] = prim[1].surface_normal.B;
+  g_MirrorTempPrimitive.vertices[1] = prim[1].surface_normal.B.i;
   g_MirrorTempPrimitive.vertices[2] = prim[2].base.type;
-  g_MirrorTempPrimitive.vertices[3] = prim[2].surface_normal.B;
+  g_MirrorTempPrimitive.vertices[3] = prim[2].surface_normal.B.i;
   uVar1 = core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_00522310
                     (this_ptr,&g_MirrorTempPrimitive.base);
   if (uVar1 == 0) {

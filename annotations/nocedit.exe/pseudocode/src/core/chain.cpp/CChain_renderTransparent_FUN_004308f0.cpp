@@ -42,10 +42,10 @@ int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_004308f0(CChain *this_pt
                 (g_CDemonRendererPtr2,(SMRGLTextureBasic *)&this_ptr->texture_size);
       engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
       SStack_b8.base.base.count = 4;
-      SStack_b8.base.surface_normal.D = 0;
-      SStack_b8.base.surface_normal.C = 0;
-      SStack_b8.base.surface_normal.B = 0;
-      SStack_b8.base.surface_normal.A = 0;
+      SStack_b8.base.surface_normal.D.i = 0;
+      SStack_b8.base.surface_normal.C.i = 0;
+      SStack_b8.base.surface_normal.B.i = 0;
+      SStack_b8.base.surface_normal.A.i = 0;
       SStack_b8.vertices[0] = 0;
       SStack_b8.vertices[1] = 1;
       SStack_b8.vertices[2] = 2;

@@ -7,19 +7,18 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 455,
-    "complexity_score": 299,
+    "complexity_score": 293,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 194,
+    "pseudocode_lines": 193,
     "suspect_count": 9,
     "suspect_types": [
-      "pointer_cast",
-      "preinc_loop_idiom",
-      "stack_alignment_array"
+      "stack_alignment_array",
+      "unnamed_local"
     ],
-    "total_lines": 649
+    "total_lines": 648
   },
   "cross_references": [
     {
@@ -54,7 +53,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10",
-    "signature": "void * __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemonCamera *this_ptr,CDemonLight *light_source,CRect *rect)"
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemonCamera *this_ptr,CDemonLight *light_source,CRect *rect)"
   },
   "function_calls": [
     {
@@ -223,12 +222,84 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 127,
+      "match": "(void *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_48 = (void *)((int)(light_source->base).base.rotation_matrix.m + (int)local_78 * 4 + -0x10",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 133,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)((int)light_source->corona_visibility_buffers + iVar8 + local_44);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 134,
+      "match": "(uint *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)light_source->corona_depth_buffer + iVar8 + local_44);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 136,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar6 = (int *)((int)light_source->corona_lightmap_indices + iVar8 + local_44);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 189,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)local_48 + 0x14c8) = local_34;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 190,
+      "match": "(int *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)local_48 + 0x1888) = local_38;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 191,
+      "match": "(void *)((int)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_48 = (void *)((int)local_48 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 192,
       "match": "(void *)((int)",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "local_2c = (void *)((int)local_2c + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar3` (struct-field advance + constant `[0]` index + self-assign no-op). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep.",
+      "line": 102,
+      "match": "do { var = (T *)&var->...; var->arr[0]...; var = var; ...}",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "preinc_loop_idiom"
     }
   ],
   "stack_frame": {
@@ -454,23 +525,6 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "CDemonCamera_precomputeLight_FUN_0044de10.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 16,
-          "line": 115,
-          "message": "Redundant assignment of 'pCVar3' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
@@ -481,68 +535,76 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 127,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "local_48 = (void *)((int)(light_source->base).base.rotation_matrix.m + (int)local_78 * 4 + -0x10",
-      "type": "pointer_cast"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 34,
+      "match": "local_80",
+      "severity": "mild",
+      "text": "int local_80;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 133,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar4 = (int *)((int)light_source->corona_visibility_buffers + iVar8 + local_44);",
-      "type": "pointer_cast"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 49,
+      "match": "local_2c",
+      "severity": "mild",
+      "text": "int local_2c;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 134,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "puVar5 = (uint *)((int)light_source->corona_depth_buffer + iVar8 + local_44);",
-      "type": "pointer_cast"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 98,
+      "match": "local_80",
+      "severity": "mild",
+      "text": "local_80 = 0;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 136,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar6 = (int *)((int)light_source->corona_lightmap_indices + iVar8 + local_44);",
-      "type": "pointer_cast"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 114,
+      "match": "local_2c",
+      "severity": "mild",
+      "text": "local_2c = (int)local_78;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 189,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)local_48 + 0x14c8) = local_34;",
-      "type": "pointer_cast"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 116,
+      "match": "local_2c",
+      "severity": "mild",
+      "text": "for (; local_2c <= local_74; local_2c++) {",
+      "type": "unnamed_local"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 190,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)local_48 + 0x1888) = local_38;",
-      "type": "pointer_cast"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 116,
+      "match": "local_2c",
+      "severity": "mild",
+      "text": "for (; local_2c <= local_74; local_2c++) {",
+      "type": "unnamed_local"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 191,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "local_78 = (void *)((int)local_48 + 4);",
-      "type": "pointer_cast"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 117,
+      "match": "local_2c",
+      "severity": "mild",
+      "text": "local_50 = g_PrecomputedWorldPositions + local_2c * 0x140;",
+      "type": "unnamed_local"
     },
     {
-      "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar3` (struct-field advance + constant `[0]` index + self-assign no-op). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep.",
-      "line": 102,
-      "match": "do { var = (T *)&var->...; var->arr[0]...; var = var; ...}",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "preinc_loop_idiom"
+      "description": "Unnamed local variable",
+      "introduced_by": "keep",
+      "line": 118,
+      "match": "local_2c",
+      "severity": "mild",
+      "text": "local_54 = g_PrecomputedSurfaceNormals[local_2c];",
+      "type": "unnamed_local"
     }
   ]
 }

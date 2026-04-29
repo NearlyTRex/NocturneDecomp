@@ -91,10 +91,8 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c
   
   core_mirror_cpp_computePlaneFromTriangle_FUN_00520fe0
             (&local_1a4,&this_ptr->corner1,&this_ptr->corner2,&this_ptr->corner3);
-  if ((ABS((float)local_1a4.A) <= ABS((float)local_1a4.B)) ||
-     (ABS((float)local_1a4.A) <= ABS((float)local_1a4.C))) {
-    if ((ABS((float)local_1a4.B) <= ABS((float)local_1a4.A)) ||
-       (ABS((float)local_1a4.B) <= ABS((float)local_1a4.C))) {
+  if ((ABS(local_1a4.A.f) <= ABS(local_1a4.B.f)) || (ABS(local_1a4.A.f) <= ABS(local_1a4.C.f))) {
+    if ((ABS(local_1a4.B.f) <= ABS(local_1a4.A.f)) || (ABS(local_1a4.B.f) <= ABS(local_1a4.C.f))) {
       local_160 = 1.0;
       local_15c = 0.0;
     }
@@ -108,12 +106,12 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c
     local_15c = 0.0;
   }
   local_164 = 0.0;
-  local_14c = (float)local_1a4.A;
-  local_148 = (float)local_1a4.B;
-  local_b0 = local_160 * (float)local_1a4.C - local_15c * (float)local_1a4.B;
-  local_ac = local_15c * (float)local_1a4.A - (float)local_1a4.C * 0.0;
-  local_a8 = (float)local_1a4.B * 0.0 - local_160 * (float)local_1a4.A;
-  local_144 = (float)local_1a4.C;
+  local_14c = local_1a4.A.f;
+  local_148 = local_1a4.B.f;
+  local_b0 = local_160 * local_1a4.C.f - local_15c * local_1a4.B.f;
+  local_ac = local_15c * local_1a4.A.f - local_1a4.C.f * 0.0;
+  local_a8 = local_1a4.B.f * 0.0 - local_160 * local_1a4.A.f;
+  local_144 = local_1a4.C.f;
   if (&local_194 != &local_b0) {
     local_194 = local_b0;
     local_190 = local_ac;
@@ -131,9 +129,9 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c
     local_190 = local_190 * fVar2;
     local_18c = local_18c * fVar2;
   }
-  local_158 = (float)local_1a4.B * local_18c - (float)local_1a4.C * local_190;
-  local_154 = (float)local_1a4.C * local_194 - (float)local_1a4.A * local_18c;
-  local_150 = (float)local_1a4.A * local_190 - (float)local_1a4.B * local_194;
+  local_158 = local_1a4.B.f * local_18c - local_1a4.C.f * local_190;
+  local_154 = local_1a4.C.f * local_194 - local_1a4.A.f * local_18c;
+  local_150 = local_1a4.A.f * local_190 - local_1a4.B.f * local_194;
   if (&local_164 != &local_158) {
     local_164 = local_158;
     local_160 = local_154;

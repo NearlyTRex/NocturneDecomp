@@ -37,10 +37,10 @@ void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004c1ef0(CGlassParticle *th
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,&this_ptr->texture);
   SStack_68.base.base.count = 3;
-  SStack_68.base.surface_normal.D = 0;
-  SStack_68.base.surface_normal.C = 0;
-  SStack_68.base.surface_normal.B = 0;
-  SStack_68.base.surface_normal.A = 0;
+  SStack_68.base.surface_normal.D.i = 0;
+  SStack_68.base.surface_normal.C.i = 0;
+  SStack_68.base.surface_normal.B.i = 0;
+  SStack_68.base.surface_normal.A.i = 0;
   SStack_68.vertices[0] = 0;
   SStack_68.vertices[1] = 1;
   SStack_68.vertices[2] = 2;

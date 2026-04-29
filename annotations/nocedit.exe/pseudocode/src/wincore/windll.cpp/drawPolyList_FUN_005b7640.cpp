@@ -43,7 +43,7 @@ int __cdecl wincore_windll_cpp_drawPolyList_FUN_005b7640(SRenderVertex *vertex_b
       local_18->v = pSVar1->vertices[2].texture_v;
       if ((pSVar1->base).base.count == 4) {
         local_14->u = pSVar1[1].base.base.count;
-        local_14->v = pSVar1[1].base.surface_normal.A;
+        local_14->v = (int)pSVar1[1].base.surface_normal.A;
       }
       polygons = polygons + 1;
       iVar2 = iVar2 + 1;

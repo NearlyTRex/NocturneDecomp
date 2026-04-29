@@ -57,10 +57,10 @@ void __cdecl engine_keyframe_c_calculatePackedSurfaceNormal_FUN_00501a00(CVector
   iVar5 = vertex_data[iVar4].x;
   fVar14 = fVar12 * fVar16 * fVar14;
   iVar6 = vertex_data[iVar4].z;
-  (texture->base).surface_normal.A = (int)ROUND(ROUND(fVar13));
-  (texture->base).surface_normal.B = (int)ROUND(ROUND(fVar15));
-  (texture->base).surface_normal.C = (int)ROUND(ROUND(fVar14));
-  (texture->base).surface_normal.D =
+  (texture->base).surface_normal.A.i = (int)ROUND(ROUND(fVar13));
+  (texture->base).surface_normal.B.i = (int)ROUND(ROUND(fVar15));
+  (texture->base).surface_normal.C.i = (int)ROUND(ROUND(fVar14));
+  (texture->base).surface_normal.D.i =
        (int)ROUND(ROUND((float)iVar6 * fVar14 + (float)iVar5 * fVar13 + (float)iVar1 * fVar15));
   return;
 }

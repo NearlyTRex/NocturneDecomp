@@ -94,10 +94,10 @@ void __cdecl core_marquee_cpp_CMarquee_renderLightBulb_FUN_0050bec0(CMarquee *th
   this_ptr_00->vertex_buffer_ptr[3].u = 0x80000;
   this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
   local_44.base.base.count = 4;
-  local_44.base.surface_normal.D = 0;
-  local_44.base.surface_normal.C = 0;
-  local_44.base.surface_normal.B = 0;
-  local_44.base.surface_normal.A = 0;
+  local_44.base.surface_normal.D.i = 0;
+  local_44.base.surface_normal.C.i = 0;
+  local_44.base.surface_normal.B.i = 0;
+  local_44.base.surface_normal.A.i = 0;
   local_44.vertices[0] = 0;
   local_44.vertices[3] = 3;
   local_44.vertices[1] = 1;

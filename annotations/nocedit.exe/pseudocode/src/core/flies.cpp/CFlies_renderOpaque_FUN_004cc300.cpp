@@ -72,10 +72,10 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
     }
     else {
       SStack_a0.base.base.count = 3;
-      SStack_a0.base.surface_normal.D = 0;
-      SStack_a0.base.surface_normal.C = 0;
-      SStack_a0.base.surface_normal.B = 0;
-      SStack_a0.base.surface_normal.A = 0;
+      SStack_a0.base.surface_normal.D.i = 0;
+      SStack_a0.base.surface_normal.C.i = 0;
+      SStack_a0.base.surface_normal.B.i = 0;
+      SStack_a0.base.surface_normal.A.i = 0;
       SStack_a0.vertices[0].vertex_index = 0;
       SStack_a0.vertices[0].texture_u = 0x800000;
       SStack_a0.vertices[0].texture_v = 0x800000;

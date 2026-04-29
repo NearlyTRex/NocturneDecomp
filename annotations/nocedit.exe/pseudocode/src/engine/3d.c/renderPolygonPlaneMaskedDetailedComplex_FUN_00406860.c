@@ -45,7 +45,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonPlaneMaskedDetailedComple
     for (iVar2 = 0; iVar2 < (prim->base).count * 3; iVar2 = iVar2 + 3) {
       *(int *)((int)g_ProcessedVertexIndices + iVar6) = (pSVar4->base).type;
       iVar3 = (pSVar4->base).count;
-      iVar5 = (pSVar4->surface_normal).A;
+      iVar5 = (pSVar4->surface_normal).A.i;
       if (g_CurrentTextureDimension < 0x41) {
         if (iVar3 < 0x40000) {
           iVar3 = 0x40000;

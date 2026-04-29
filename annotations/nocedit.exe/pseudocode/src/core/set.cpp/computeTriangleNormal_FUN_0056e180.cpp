@@ -36,8 +36,8 @@ void __cdecl core_set_cpp_computeTriangleNormal_FUN_0056e180(CVector3i *vertex_a
   fVar4 = (float)iVar10 * fVar6 - (float)iVar11 * fVar7;
   fVar1 = (float)(g_FastInvSqrtMagic - ((int)(fVar4 * fVar4 + fVar5 * fVar5 + fVar3 * fVar3) >> 1))
           * (float)65535;
-  (triangle->base).surface_normal.A = (int)(fVar3 * fVar1);
-  (triangle->base).surface_normal.B = (int)(fVar5 * fVar1);
-  (triangle->base).surface_normal.C = (int)(fVar4 * fVar1);
+  (triangle->base).surface_normal.A.f = fVar3 * fVar1;
+  (triangle->base).surface_normal.B.f = fVar5 * fVar1;
+  (triangle->base).surface_normal.C.f = fVar4 * fVar1;
   return;
 }

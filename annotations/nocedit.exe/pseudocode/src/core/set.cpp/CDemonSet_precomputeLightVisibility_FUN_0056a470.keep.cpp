@@ -10,13 +10,10 @@
 void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet *this_ptr,int light_index)
 
 {
-  int iVar2;
   CVector3f *pCVar3;
   int iVar1;
   int iVar4;
   C3DSCamera *this_ptr_00;
-  int iVar5;
-  int iVar6;
   uint *puVar7;
   uint *puVar8;
   uint *puVar9;
@@ -28,7 +25,6 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
   uint local_4c;
   int local_48;
   C3DSCamera *local_44;
-  int local_40;
   CDemonSet *local_3c;
   C3DSLight *local_38;
   C3DSLight *local_34;
@@ -38,7 +34,6 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
   int local_24;
   int local_20;
   int local_1c;
-  int local_18;
   int local_14;
   CDemonLight *light_source;
   C3DSLight *pCVar1;
@@ -52,7 +47,6 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
   local_20 = 0;
   g_SpotLightCount = 0;
   if (0 < this_ptr->camera_count) {
-    local_40 = 0;
     local_3c = this_ptr;
     do {
       if (local_3c->cameras[0].is_panning == 0) {
@@ -90,22 +84,12 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
         local_24 = light_index + 1;
       }
       if (local_14 < local_24) {
-        local_18 = (int)this_ptr->cameras + local_14 * 0x1898 + local_20 + -4;
-        iVar5 = (int)this_ptr->cameras + local_40 + local_14 * 0x1898 + -4;
         do {
           if (this_ptr->lights[local_14].light_type == 0) {
-            iVar4 = 0;
-            if (0 < g_MasterLightCount) {
-              pCVar1 = this_ptr->lights;
-              iVar6 = 0;
-              do {
-                iVar2 = _strcmp
-                                  ((char *)(*(int *)((int)g_MasterLightList + iVar6) + 0x40),
-                                   pCVar1[local_14].name);
-                if (iVar2 == 0) break;
-                iVar4 = iVar4 + 1;
-                iVar6 = iVar6 + 4;
-              } while (iVar4 < g_MasterLightCount);
+            pCVar1 = this_ptr->lights;
+            for (iVar4 = 0; iVar4 < g_MasterLightCount; iVar4++) {
+              if (_strcmp(g_MasterLightList[iVar4]->base.camera_name,
+                          pCVar1[local_14].name) == 0) break;
             }
             if (iVar4 == g_MasterLightCount) {
               g_CurrentFilename = "..\\core\\set.cpp";
@@ -118,14 +102,14 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
                         (&g_CDemonCameraInstance,light_source,(CRect *)0x0);
               iVar1 = core_dcamera_cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00450fc0
                                 (&g_CDemonCameraInstance,light_source);
-              *(char *)(local_18 + 0x19b58) = (char)iVar1;
+              this_ptr->lights[local_14].visible_flags[local_20] = (char)iVar1;
               core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090
                         (&g_CDemonCameraInstance,light_source,&local_5c);
-              *(int *)(iVar5 + 0x19c54) = local_5c.left;
-              *(int *)(iVar5 + 0x19c58) = local_5c.top;
-              *(int *)(iVar5 + 0x19c5c) = local_5c.right;
-              *(int *)(iVar5 + 0x19c60) = local_5c.bottom;
-              if (*(char *)(local_18 + 0x19b58) != '\0') {
+              this_ptr->lights[local_14].camera_light_bounds[local_20].left = local_5c.left;
+              this_ptr->lights[local_14].camera_light_bounds[local_20].top = local_5c.top;
+              this_ptr->lights[local_14].camera_light_bounds[local_20].right = local_5c.right;
+              this_ptr->lights[local_14].camera_light_bounds[local_20].bottom = local_5c.bottom;
+              if (this_ptr->lights[local_14].visible_flags[local_20] != '\0') {
                 _sprintf(local_174,"Light %d, Box : %d,%d,%d,%d",local_14,
                          local_5c.left,local_5c.top,local_5c.right,local_5c.bottom);
                 engine_2d_c_drawText_FUN_00401fd0(local_174,0,local_1c);
@@ -138,20 +122,14 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
             iVar1 = core_setutil_cpp_C3DSLight_isVisible_FUN_00587df0(this_ptr->lights + local_14);
             this_ptr->lights[local_14].visible_flags[local_20] = (char)iVar1;
             core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
-            *(uint *)((int)&this_ptr->lights[local_14].camera_light_bounds[0].left + local_40)
-                 = 0;
-            *(uint *)((int)&this_ptr->lights[local_14].camera_light_bounds[0].top + local_40)
-                 = 0;
-            *(uint *)
-             ((int)&this_ptr->lights[local_14].camera_light_bounds[0].right + local_40) = 0;
-            *(uint *)
-             ((int)&this_ptr->lights[local_14].camera_light_bounds[0].bottom + local_40) = 0;
+            this_ptr->lights[local_14].camera_light_bounds[local_20].left = 0;
+            this_ptr->lights[local_14].camera_light_bounds[local_20].top = 0;
+            this_ptr->lights[local_14].camera_light_bounds[local_20].right = 0;
+            this_ptr->lights[local_14].camera_light_bounds[local_20].bottom = 0;
           }
           else {
             this_ptr->lights[local_14].visible_flags[local_20] = '\0';
           }
-          iVar5 = iVar5 + 0x1898;
-          local_18 = local_18 + 0x1898;
           local_14 = local_14 + 1;
         } while (local_14 < local_24);
       }
@@ -160,7 +138,6 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
       local_20 = local_20 + 1;
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       local_3c = (CDemonSet *)&local_3c->cameras[0].enabled;
-      local_40 = local_40 + 0x10;
     } while (local_20 < this_ptr->camera_count);
   }
   if (bVar10) {

@@ -33,10 +33,10 @@ void __cdecl shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLo
   char cVar1;
   int *piVar2;
   
-  SStack_78.surface_normal.D = 0;
-  SStack_78.surface_normal.C = 0;
-  SStack_78.surface_normal.B = 0;
-  SStack_78.surface_normal.A = 0;
+  SStack_78.surface_normal.D.i = 0;
+  SStack_78.surface_normal.C.i = 0;
+  SStack_78.surface_normal.B.i = 0;
+  SStack_78.surface_normal.A.i = 0;
   SStack_78.base.count = 3;
   local_24 = -1;
   local_1c = 0;

@@ -80,10 +80,10 @@ void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50(C3DS
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0x4000);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   local_78.base.base.count = 4;
-  local_78.base.surface_normal.D = 0;
-  local_78.base.surface_normal.C = 0;
-  local_78.base.surface_normal.B = 0;
-  local_78.base.surface_normal.A = 0;
+  local_78.base.surface_normal.D.i = 0;
+  local_78.base.surface_normal.C.i = 0;
+  local_78.base.surface_normal.B.i = 0;
+  local_78.base.surface_normal.A.i = 0;
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);
   local_14 = 10;
   local_10 = 0;

@@ -245,11 +245,11 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
       this_ptr_00->vertex_buffer_ptr[2].v = 0x80000;
       this_ptr_00->vertex_buffer_ptr[3].u = 0x80000;
       this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
-      local_144.base.surface_normal.A = 4;
+      local_144.base.surface_normal.A.i = 4;
       local_144.vertices[0] = 0;
-      local_144.base.surface_normal.D = 0;
-      local_144.base.surface_normal.C = 0;
-      local_144.base.surface_normal.B = 0;
+      local_144.base.surface_normal.D.i = 0;
+      local_144.base.surface_normal.C.i = 0;
+      local_144.base.surface_normal.B.i = 0;
       local_144.vertices[1] = 0;
       local_144.vertices[3] = 2;
       local_144.vertices[2] = 1;

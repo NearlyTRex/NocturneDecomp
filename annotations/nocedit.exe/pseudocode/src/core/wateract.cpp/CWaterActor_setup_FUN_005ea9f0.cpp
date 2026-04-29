@@ -11,6 +11,7 @@
 void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_005ea9f0(CWaterActor *this_ptr)
 
 {
+  UIntegerFloat UVar1;
   float fVar3;
   double dVar7;
   double dVar8;
@@ -104,11 +105,11 @@ void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_005ea9f0(CWaterActor *this_
           iVar15 = (local_30 % 4 + 1) * 0x400000;
           do {
             (pSVar11->base).base.count = 3;
-            (pSVar11->base).surface_normal.D = 0;
-            iVar18 = (pSVar11->base).surface_normal.D;
-            (pSVar11->base).surface_normal.C = iVar18;
-            (pSVar11->base).surface_normal.B = iVar18;
-            (pSVar11->base).surface_normal.A = iVar18;
+            (pSVar11->base).surface_normal.D.i = 0;
+            UVar1 = (pSVar11->base).surface_normal.D;
+            (pSVar11->base).surface_normal.C = UVar1;
+            (pSVar11->base).surface_normal.B = UVar1;
+            (pSVar11->base).surface_normal.A = UVar1;
             iVar18 = (this_ptr->grid_cols + 1) * local_30 + iVar16;
             pSVar11->vertices[2].vertex_index = iVar18;
             iVar18 = iVar18 + 1;
@@ -123,11 +124,11 @@ void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_005ea9f0(CWaterActor *this_
             pSVar11->vertices[0].texture_u = iVar13;
             pSVar11->vertices[0].texture_v = iVar15;
             pSVar11[1].base.base.count = 3;
-            pSVar11[1].base.surface_normal.D = 0;
-            iVar18 = pSVar11[1].base.surface_normal.D;
-            pSVar11[1].base.surface_normal.C = iVar18;
-            pSVar11[1].base.surface_normal.B = iVar18;
-            pSVar11[1].base.surface_normal.A = iVar18;
+            pSVar11[1].base.surface_normal.D.i = 0;
+            UVar1 = pSVar11[1].base.surface_normal.D;
+            pSVar11[1].base.surface_normal.C = UVar1;
+            pSVar11[1].base.surface_normal.B = UVar1;
+            pSVar11[1].base.surface_normal.A = UVar1;
             iVar18 = this_ptr->grid_cols;
             pSVar11[1].vertices[2].texture_u = iVar11;
             iVar18 = iVar16 + (iVar18 + 1) * local_30;
@@ -189,11 +190,11 @@ void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_005ea9f0(CWaterActor *this_
       pCVar15 = this_ptr;
       do {
         (pSVar12->base).base.count = 3;
-        (pSVar12->base).surface_normal.D = 0;
-        iVar15 = (pSVar12->base).surface_normal.D;
-        (pSVar12->base).surface_normal.C = iVar15;
-        (pSVar12->base).surface_normal.B = iVar15;
-        (pSVar12->base).surface_normal.A = iVar15;
+        (pSVar12->base).surface_normal.D.i = 0;
+        UVar1 = (pSVar12->base).surface_normal.D;
+        (pSVar12->base).surface_normal.C = UVar1;
+        (pSVar12->base).surface_normal.B = UVar1;
+        (pSVar12->base).surface_normal.A = UVar1;
         iVar17 = local_1c + 1;
         iVar15 = this_ptr->primitive_count;
         pSVar12->vertices[0].texture_u = 0;

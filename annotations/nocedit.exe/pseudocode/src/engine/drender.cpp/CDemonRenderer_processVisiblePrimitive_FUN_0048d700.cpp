@@ -19,7 +19,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_processVisiblePrimitive_FUN_0048d
     }
   }
   local_18.vertex_index_0 = (ushort)primitive[1].base.type;
-  local_18.vertex_index_1 = (ushort)primitive[1].surface_normal.B;
+  local_18.vertex_index_1 = *(ushort *)&primitive[1].surface_normal.B;
   local_18.vertex_index_2 = (ushort)primitive[2].base.type;
   engine_drender_cpp_CDemonRenderer_captureFace_FUN_0048d8a0(this_ptr,&local_18,render_flags);
   return;

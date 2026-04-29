@@ -42,7 +42,7 @@ void __cdecl core_set_cpp_CDemonSet_renderTransparentActors_FUN_0056cf00(CDemonS
         core_set_cpp_CDemonSet_setLightingParameters_FUN_0056d380
                   (this_ptr,&(this_ptr_00->location).position,&this_ptr_00->orient,&CStack_2c.min,
                    &CStack_2c.max,&this_ptr_00->orient_matrix);
-        core_set_cpp_CDemonSet_setScaleFactors_FUN_00570ca0
+        core_set_cpp_CDemonSet_setFlatColor_FUN_00570ca0
                   (this_ptr,(this_ptr_00->scale).x,(this_ptr_00->scale).y,(this_ptr_00->scale).z);
         iVar3 = (*((this_ptr_00->vtable)._ub)->renderTransparent)(this_ptr_00);
         if (iVar3 == 0) {
@@ -69,7 +69,7 @@ void __cdecl core_set_cpp_CDemonSet_renderTransparentActors_FUN_0056cf00(CDemonS
             core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0(this_ptr);
           } while (iVar3 < this_ptr->mirror_glass_actor_count);
         }
-        core_set_cpp_CDemonSet_setScaleFactors_FUN_00570ca0(this_ptr,0x10000,0x10000,0x10000);
+        core_set_cpp_CDemonSet_setFlatColor_FUN_00570ca0(this_ptr,0x10000,0x10000,0x10000);
       }
       iVar5 = iVar5 + -1;
     } while (-1 < iVar5);

@@ -74,7 +74,7 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_
     (this_ptr_00->light_direction).z =
          (uint)((longlong)iVar7 * 37000) >> 0x10 |
          (int)((ulonglong)((longlong)iVar7 * 37000) >> 0x20) << 0x10;
-    core_set_cpp_CDemonSet_setScaleFactors_FUN_00570ca0
+    core_set_cpp_CDemonSet_setFlatColor_FUN_00570ca0
               (this_ptr_00,(this_ptr->color).r << 8,(this_ptr->color).g << 8,
                (this_ptr->color).b << 8);
     local_60.x = (int)ROUND(256.0f * 7.25);
@@ -124,10 +124,10 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_
       pCVar3->vertex_buffer_ptr[iVar7].b = (this_ptr->color).b << 8;
       iVar7 = iVar8;
     } while (iVar8 != 4);
-    local_88.base.surface_normal.D = 0;
-    local_88.base.surface_normal.C = 0;
-    local_88.base.surface_normal.B = 0;
-    local_88.base.surface_normal.A = 0;
+    local_88.base.surface_normal.D.i = 0;
+    local_88.base.surface_normal.C.i = 0;
+    local_88.base.surface_normal.B.i = 0;
+    local_88.base.surface_normal.A.i = 0;
     local_88.vertices[0] = 0;
     local_88.base.base.count = 4;
     local_88.vertices[2] = 2;

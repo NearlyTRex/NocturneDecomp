@@ -37,10 +37,10 @@ void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(int x_center,int 
     this_ptr->vertex_buffer_ptr[3].u = 0x80000;
     this_ptr->vertex_buffer_ptr[3].v = 0x80000;
     local_2c.base.count = 4;
-    local_2c.surface_normal.D = 0;
-    local_2c.surface_normal.C = 0;
-    local_2c.surface_normal.B = 0;
-    local_2c.surface_normal.A = 0;
+    local_2c.surface_normal.D.i = 0;
+    local_2c.surface_normal.C.i = 0;
+    local_2c.surface_normal.B.i = 0;
+    local_2c.surface_normal.A.i = 0;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(this_ptr,0x8000);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80

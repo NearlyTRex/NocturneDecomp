@@ -46,9 +46,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(CKeyFramed
         if (0 < (texture->base).base.count) {
           do {
             pCVar5 = this_ptr->vertex_normal_list + pSVar6->vertices[0].vertex_index;
-            pCVar5->x = pCVar5->x + (texture->base).surface_normal.A;
-            pCVar5->y = pCVar5->y + (texture->base).surface_normal.B;
-            pCVar5->z = pCVar5->z + (texture->base).surface_normal.C;
+            pCVar5->x = pCVar5->x + (texture->base).surface_normal.A.i;
+            pCVar5->y = pCVar5->y + (texture->base).surface_normal.B.i;
+            pCVar5->z = pCVar5->z + (texture->base).surface_normal.C.i;
             iVar8 = iVar8 + 1;
             pSVar6 = (SMRGLPrimitiveTriangle *)&(pSVar6->base).surface_normal.B;
           } while (iVar8 < (texture->base).base.count);

@@ -27,11 +27,11 @@ int __cdecl core_dcamera_cpp_CDemonCamera_testVisibility_FUN_004544f0(CDemonCame
     corners = corners + 1;
     output = output + 1;
   } while (corners != pCVar2);
-  local_38.base.surface_normal.D = (uint)corners ^ (uint)pCVar2;
+  local_38.base.surface_normal.D.i = (uint)corners ^ (uint)pCVar2;
   local_38.base.base.count = 4;
-  local_38.base.surface_normal.C = 0;
-  local_38.base.surface_normal.B = 0;
-  local_38.base.surface_normal.A = 0;
+  local_38.base.surface_normal.C.i = 0;
+  local_38.base.surface_normal.B.i = 0;
+  local_38.base.surface_normal.A.i = 0;
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);
   iVar3 = 0;
   local_38.vertices[0] = 0;

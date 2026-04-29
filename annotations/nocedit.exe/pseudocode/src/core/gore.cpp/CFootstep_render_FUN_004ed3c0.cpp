@@ -31,10 +31,10 @@ void __cdecl core_gore_cpp_CFootstep_render_FUN_004ed3c0(CFootstep *this_ptr,int
   output = g_RenderVertexBuffer;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
             (g_CDemonRendererPtr2,this_ptr->alpha);
-  g_FootstepPrimitive.base.surface_normal.A = 0;
-  g_FootstepPrimitive.base.surface_normal.B = 0;
-  g_FootstepPrimitive.base.surface_normal.C = 0;
-  g_FootstepPrimitive.base.surface_normal.D = 0;
+  g_FootstepPrimitive.base.surface_normal.A.i = 0;
+  g_FootstepPrimitive.base.surface_normal.B.i = 0;
+  g_FootstepPrimitive.base.surface_normal.C.i = 0;
+  g_FootstepPrimitive.base.surface_normal.D.i = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,&g_FootstepTexture);
   pCVar2 = this_ptr->corners;

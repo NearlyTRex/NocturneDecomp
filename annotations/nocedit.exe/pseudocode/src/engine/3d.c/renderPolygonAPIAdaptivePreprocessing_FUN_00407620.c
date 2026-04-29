@@ -31,8 +31,8 @@ void __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620(SMRG
     if ((render_flags & 0x10U) != 0) {
       g_CurrentLightingValue =
            engine_light_cpp_calculateLighting_FUN_00505780
-                     ((primitive->surface_normal).A,(primitive->surface_normal).B,
-                      (primitive->surface_normal).C);
+                     ((primitive->surface_normal).A.i,(primitive->surface_normal).B.i,
+                      (primitive->surface_normal).C.i);
     }
     g_VertexPreprocessMode = render_state_flags;
     if (render_state_flags == 0) {

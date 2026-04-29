@@ -13,9 +13,9 @@
 ;   undefined4 g_CDemonMissionInstance.is_in_editor
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.lighting_quality_mode
-;   undefined4 g_CDemonSetInstance.light_scale_factor
-;   undefined4 g_CDemonSetInstance.color_scale_factor
-;   undefined4 g_CDemonSetInstance.fog_scale_factor
+;   undefined4 g_CDemonSetInstance.flat_color.r
+;   undefined4 g_CDemonSetInstance.flat_color.g
+;   undefined4 g_CDemonSetInstance.flat_color.b
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0
@@ -36,14 +36,14 @@ section .text
     MOV dword ptr [EAX + 0x15ac80],0x3  ; 004e540b | g_CDemonSetInstance.lighting_quality_mode
     MOV ECX,dword ptr [EDX + 0xbeec]    ; 004e5415
     SHL ECX,0x8                         ; 004e541b
-    MOV dword ptr [EAX + 0x15ae88],ECX  ; 004e541e | g_CDemonSetInstance.light_scale_factor
+    MOV dword ptr [EAX + 0x15ae88],ECX  ; 004e541e | g_CDemonSetInstance.flat_color.r
     MOV ECX,dword ptr [EDX + 0xbef0]    ; 004e5424
     SHL ECX,0x8                         ; 004e542a
-    MOV dword ptr [EAX + 0x15ae8c],ECX  ; 004e542d | g_CDemonSetInstance.color_scale_factor
+    MOV dword ptr [EAX + 0x15ae8c],ECX  ; 004e542d | g_CDemonSetInstance.flat_color.g
     MOV ECX,dword ptr [EDX + 0xbef4]    ; 004e5433
     SHL ECX,0x8                         ; 004e5439
     PUSH EDX                            ; 004e543c
-    MOV dword ptr [EAX + 0x15ae90],ECX  ; 004e543d | g_CDemonSetInstance.fog_scale_factor
+    MOV dword ptr [EAX + 0x15ae90],ECX  ; 004e543d | g_CDemonSetInstance.flat_color.b
     CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0 ; 004e5443
         ;   XREF to: 0042a2c0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0(CCharacter * this_ptr)
     MOV EDX,dword ptr [0x006810c8]      ; 004e5448 | g_CDemonSetPtr

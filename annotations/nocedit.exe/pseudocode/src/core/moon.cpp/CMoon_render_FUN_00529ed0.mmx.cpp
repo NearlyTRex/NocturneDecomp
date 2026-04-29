@@ -61,7 +61,7 @@ __asm {
         mov dword ptr [EAX + 0x15ae7c],0x9088
         push EAX
         mov dword ptr [EAX + 0x15ae80],0x280
-        call core_set_cpp_CDemonSet_setScaleFactors_FUN_00570ca0
+        call core_set_cpp_CDemonSet_setFlatColor_FUN_00570ca0
         add ESP,0x10
         push 0x205
         push 0x0

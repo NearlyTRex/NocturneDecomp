@@ -60,10 +60,10 @@ void __cdecl core_texlist_cpp_CTextureList_previewTexture_FUN_005dc760(CTextureL
     g_RenderVertexBuffer[3].projected_vertex.transformed_y = -0xa00;
     g_RenderVertexBuffer[3].projected_vertex.transformed_x = 0xa00;
     g_RenderVertexBuffer[3].projected_vertex.transformed_z = 0xa00;
-    SStack_50.base.surface_normal.A = 0;
-    SStack_50.base.surface_normal.B = 0;
-    SStack_50.base.surface_normal.C = 0;
-    SStack_50.base.surface_normal.D = 0;
+    SStack_50.base.surface_normal.A.i = 0;
+    SStack_50.base.surface_normal.B.i = 0;
+    SStack_50.base.surface_normal.C.i = 0;
+    SStack_50.base.surface_normal.D.i = 0;
     SStack_50.vertices[0] = 0;
     SStack_50.vertices[3] = 3;
     SStack_50.base.base.count = 4;

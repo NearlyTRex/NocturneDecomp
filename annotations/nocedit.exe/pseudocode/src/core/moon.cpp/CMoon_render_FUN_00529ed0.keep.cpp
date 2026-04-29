@@ -51,7 +51,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
   (pCVar2->light_direction).y = -37000;
   (pCVar2->light_direction).z = 37000;
   pCVar2->ambient_base_quick = 0x280;
-  core_set_cpp_CDemonSet_setScaleFactors_FUN_00570ca0(pCVar2,0x10000,0x10000,0x10000);
+  core_set_cpp_CDemonSet_setFlatColor_FUN_00570ca0(pCVar2,0x10000,0x10000,0x10000);
   core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
             (&this_ptr->moon,0,(CKeyFramedModelInstance *)0x0,0x205);
   pCVar3 = g_CDemonSetPtr;

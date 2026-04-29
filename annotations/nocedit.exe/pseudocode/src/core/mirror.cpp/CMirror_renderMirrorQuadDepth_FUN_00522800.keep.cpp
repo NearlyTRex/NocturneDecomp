@@ -50,11 +50,11 @@ void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00522800(CMirror 
     iVar2 = iVar2 + 1;
   } while (iVar2 != 4);
   SStack_88.base.base.count = 4;
-  SStack_88.base.surface_normal.D = 0;
-  SStack_88.base.surface_normal.C = 0;
-  SStack_88.base.surface_normal.B = 0;
+  SStack_88.base.surface_normal.D.i = 0;
+  SStack_88.base.surface_normal.C.i = 0;
+  SStack_88.base.surface_normal.B.i = 0;
   SStack_88.vertices[2].vertex_index = 2;
-  SStack_88.base.surface_normal.A = 0;
+  SStack_88.base.surface_normal.A.i = 0;
   SStack_88.vertices[0].vertex_index = 0;
   SStack_88.vertices[3].vertex_index = 3;
   SStack_88.vertices[1].vertex_index = 1;

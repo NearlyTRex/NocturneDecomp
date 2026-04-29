@@ -46,13 +46,13 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet *thi
     if (0xffff < iVar11) {
       iVar11 = 0xffff;
     }
-    lVar4 = (longlong)this_ptr->light_scale_factor * (longlong)iVar11;
+    lVar4 = (longlong)(this_ptr->flat_color).r * (longlong)iVar11;
     g_RenderVertexBuffer[vertex_index].r =
          (uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10;
-    lVar4 = (longlong)this_ptr->color_scale_factor * (longlong)iVar11;
+    lVar4 = (longlong)(this_ptr->flat_color).g * (longlong)iVar11;
     g_RenderVertexBuffer[vertex_index].g =
          (uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10;
-    lVar4 = (longlong)this_ptr->fog_scale_factor * (longlong)iVar11;
+    lVar4 = (longlong)(this_ptr->flat_color).b * (longlong)iVar11;
     g_RenderVertexBuffer[vertex_index].b =
          (uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10;
     g_RenderVertexBuffer[vertex_index].a = g_PerspectiveReciprocal;
@@ -97,24 +97,24 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet *thi
   }
   if (g_ColorCorrectionCount < 1) {
     iVar11 = iVar11 + local_14;
-    lVar4 = (longlong)iVar11 * (longlong)this_ptr->light_scale_factor;
+    lVar4 = (longlong)iVar11 * (longlong)(this_ptr->flat_color).r;
     local_18 = (uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10;
-    lVar4 = (longlong)iVar11 * (longlong)this_ptr->color_scale_factor;
+    lVar4 = (longlong)iVar11 * (longlong)(this_ptr->flat_color).g;
     uVar4 = (uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10;
-    iVar12 = this_ptr->fog_scale_factor;
+    iVar12 = (this_ptr->flat_color).b;
   }
   else {
     lVar4 = (longlong)
             (int)(((uint)((longlong)iVar11 * (longlong)g_ColorCorrectionLightMultiplier) >> 0x10 |
                   (int)((ulonglong)((longlong)iVar11 * (longlong)g_ColorCorrectionLightMultiplier)
-                       >> 0x20) << 0x10) + local_14) * (longlong)this_ptr->light_scale_factor;
+                       >> 0x20) << 0x10) + local_14) * (longlong)(this_ptr->flat_color).r;
     local_18 = (uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10;
     lVar4 = (longlong)
             (int)(((uint)((longlong)iVar11 * (longlong)g_ColorCorrectionColorMultiplier) >> 0x10 |
                   (int)((ulonglong)((longlong)iVar11 * (longlong)g_ColorCorrectionColorMultiplier)
-                       >> 0x20) << 0x10) + local_14) * (longlong)this_ptr->color_scale_factor;
+                       >> 0x20) << 0x10) + local_14) * (longlong)(this_ptr->flat_color).g;
     uVar4 = (uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10;
-    iVar12 = this_ptr->fog_scale_factor;
+    iVar12 = (this_ptr->flat_color).b;
     iVar11 = ((uint)((longlong)iVar11 * (longlong)g_ColorCorrectionFogMultiplier) >> 0x10 |
              (int)((ulonglong)((longlong)iVar11 * (longlong)g_ColorCorrectionFogMultiplier) >> 0x20)
              << 0x10) + local_14;

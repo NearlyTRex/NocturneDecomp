@@ -54,10 +54,10 @@ void __cdecl engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0(CVector3i *ve
   iVar5 = vertex_data[iVar4].y;
   iVar2 = vertex_data[iVar4].x;
   iVar1 = vertex_data[iVar4].z;
-  (texture->base).surface_normal.A = (int)ROUND(fVar16);
-  (texture->base).surface_normal.B = (int)ROUND(fVar12);
-  (texture->base).surface_normal.C = (int)ROUND(fVar15);
-  (texture->base).surface_normal.D =
+  (texture->base).surface_normal.A.i = (int)ROUND(fVar16);
+  (texture->base).surface_normal.B.i = (int)ROUND(fVar12);
+  (texture->base).surface_normal.C.i = (int)ROUND(fVar15);
+  (texture->base).surface_normal.D.i =
        (int)ROUND((float)iVar1 * fVar15 + (float)iVar2 * fVar16 + (float)iVar5 * fVar12);
   return;
 }

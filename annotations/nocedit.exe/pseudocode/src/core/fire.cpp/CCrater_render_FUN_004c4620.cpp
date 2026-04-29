@@ -62,11 +62,11 @@ void __cdecl core_fire_cpp_CCrater_render_FUN_004c4620(CCrater *this_ptr)
   g_RenderVertexBuffer[2].v = 0x80000;
   g_RenderVertexBuffer[3].u = 0x80000;
   g_RenderVertexBuffer[3].v = 0x80000;
-  local_6c.surface_normal.B = 0xffff;
-  local_6c.surface_normal.A = 0;
-  local_6c.surface_normal.C = 0;
+  local_6c.surface_normal.B.i = 0xffff;
+  local_6c.surface_normal.A.i = 0;
+  local_6c.surface_normal.C.i = 0;
   local_6c.base.count = 3;
-  local_6c.surface_normal.D = 0;
+  local_6c.surface_normal.D.i = 0;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
   engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
             (g_CDemonRendererPtr2,&local_6c);

@@ -34,7 +34,8 @@ void __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_0040772
     if ((render_flags & 0x10U) != 0) {
       g_CurrentLightingValue =
            engine_light_cpp_calculateLighting_FUN_00505780
-                     ((prim->surface_normal).A,(prim->surface_normal).B,(prim->surface_normal).C);
+                     ((prim->surface_normal).A.i,(prim->surface_normal).B.i,
+                      (prim->surface_normal).C.i);
     }
     g_VertexPreprocessMode = render_state_flags;
     if (render_state_flags == 0) {
@@ -54,7 +55,7 @@ void __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_0040772
         *(int *)((int)g_ProcessedVertexIndices + iVar4) = iVar1;
         g_RenderVertexBuffer[iVar1].u = pSVar3[1].base.count;
         iVar4 = iVar4 + 4;
-        g_RenderVertexBuffer[iVar1].v = pSVar3[1].surface_normal.A;
+        g_RenderVertexBuffer[iVar1].v = (int)pSVar3[1].surface_normal.A;
         iVar2 = iVar2 + 1;
         pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
       } while (iVar2 < (prim->base).count);

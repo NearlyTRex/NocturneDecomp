@@ -7,19 +7,19 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1208,
-    "complexity_score": 490,
+    "complexity_score": 491,
     "cross_reference_count": 1,
     "function_call_count": 29,
     "global_count": 57,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 425,
+    "pseudocode_lines": 426,
     "suspect_count": 5,
     "suspect_types": [
       "unrolled_strchr",
       "unrolled_strcpy",
       "warning_inlined_function"
     ],
-    "total_lines": 1633
+    "total_lines": 1634
   },
   "cross_references": [
     {
@@ -898,7 +898,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 215,
+      "line": 216,
       "match": "do {",
       "severity": "mild",
       "text": "do {",
@@ -906,7 +906,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal ':' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, ':') in a .keep.",
-      "line": 69,
+      "line": 70,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "mild",
       "text": "do {",
@@ -914,7 +914,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\\\' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\\\') in a .keep.",
-      "line": 81,
+      "line": 82,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "mild",
       "text": "do {",
@@ -922,7 +922,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\n' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\n') in a .keep.",
-      "line": 194,
+      "line": 195,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "mild",
       "text": "do {",

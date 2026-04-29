@@ -177,13 +177,13 @@ LAB_004ce397:
     g_RenderVertexBuffer[0x4e1e].u = g_RenderVertexBuffer[0x4e1e].u + 0x8000;
   }
   SStack_54.vertices[2] = 0x4e1e;
-  SStack_54.base.surface_normal.D = 0;
+  SStack_54.base.surface_normal.D.i = 0;
   SStack_54.base.base.count = 4;
-  SStack_54.base.surface_normal.C = 0;
+  SStack_54.base.surface_normal.C.i = 0;
   SStack_54.vertices[0] = 0x4e1c;
-  SStack_54.base.surface_normal.B = 0;
+  SStack_54.base.surface_normal.B.i = 0;
   SStack_54.vertices[1] = 0x4e1d;
-  SStack_54.base.surface_normal.A = 0;
+  SStack_54.base.surface_normal.A.i = 0;
   g_RenderVertexBuffer[0x4e1d].u = g_RenderVertexBuffer[0x4e1e].u;
   g_RenderVertexBuffer[0x4e1d].v = g_RenderVertexBuffer[0x4e1c].v;
   g_RenderVertexBuffer[19999].u = g_RenderVertexBuffer[0x4e1c].u;

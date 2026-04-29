@@ -47,7 +47,7 @@
 ; Called Functions:
 ;   core_course.cpp_CCourse_evaluate_FUN_00442710
 ;   core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850
-;   core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0
+;   core_set.cpp_CDemonSet_setFlatColor_FUN_00570ca0
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_3d.c_setBlendMode_FUN_00406dd0
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950
@@ -128,8 +128,8 @@ section .text
     MOV dword ptr [EAX + 0x15ae7c],0x9088 ; 00529f95 | g_CDemonSetInstance.light_direction.z
     PUSH EAX                            ; 00529f9f | g_CDemonSetInstance
     MOV dword ptr [EAX + 0x15ae80],0x280 ; 00529fa0 | g_CDemonSetInstance.ambient_base_quick
-    CALL core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0 ; 00529faa
-        ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
+    CALL core_set.cpp_CDemonSet_setFlatColor_FUN_00570ca0 ; 00529faa
+        ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_00570ca0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 00529faf
     PUSH 0x205                          ; 00529fb2
     PUSH 0x0                            ; 00529fb7

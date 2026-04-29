@@ -83,10 +83,10 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_004c3b10(CExplosion *this_ptr)
   this_ptr_00->vertex_buffer_ptr[2].a = 0x8000;
   this_ptr_00->vertex_buffer_ptr[3].a = 0x8000;
   local_8c.base.base.count = 4;
-  local_8c.base.surface_normal.D = 0;
-  local_8c.base.surface_normal.C = 0;
-  local_8c.base.surface_normal.B = 0;
-  local_8c.base.surface_normal.A = 0;
+  local_8c.base.surface_normal.D.i = 0;
+  local_8c.base.surface_normal.C.i = 0;
+  local_8c.base.surface_normal.B.i = 0;
+  local_8c.base.surface_normal.A.i = 0;
   local_8c.vertices[0] = 0;
   local_8c.vertices[3] = 3;
   local_8c.vertices[1] = 1;

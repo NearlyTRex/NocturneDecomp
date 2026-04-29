@@ -134,9 +134,9 @@ void __cdecl core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(CBodyPart
         if (0 < (texture->base).base.count) {
           do {
             pCVar7 = this_ptr->normals + pSVar11->vertices[0].vertex_index;
-            pCVar7->x = pCVar7->x + (texture->base).surface_normal.A;
-            pCVar7->y = pCVar7->y + (texture->base).surface_normal.B;
-            pCVar7->z = pCVar7->z + (texture->base).surface_normal.C;
+            pCVar7->x = pCVar7->x + (texture->base).surface_normal.A.i;
+            pCVar7->y = pCVar7->y + (texture->base).surface_normal.B.i;
+            pCVar7->z = pCVar7->z + (texture->base).surface_normal.C.i;
             iVar9 = iVar9 + 1;
             pSVar11 = (SMRGLPrimitiveTriangle *)&(pSVar11->base).surface_normal.B;
           } while (iVar9 < (texture->base).base.count);

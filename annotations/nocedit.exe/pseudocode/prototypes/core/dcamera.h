@@ -129,7 +129,7 @@ char * __cdecl CDemonCamera::allocLight(CDemonCamera *this_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10
 // Address: 0044de10
-void * __cdecl CDemonCamera::precomputeLight(CDemonCamera *this_ptr,CDemonLight *light_source,CRect *rect);
+void __cdecl CDemonCamera::precomputeLight(CDemonCamera *this_ptr,CDemonLight *light_source,CRect *rect);
 
 // Original: core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360
 // Address: 0044e360

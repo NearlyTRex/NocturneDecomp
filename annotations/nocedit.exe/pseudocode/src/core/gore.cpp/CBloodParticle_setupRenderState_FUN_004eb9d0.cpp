@@ -25,10 +25,10 @@ void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004eb9d0(CBloodPa
   CVector3i local_18;
   
   g_GoreQuadPrimitive.base.base.count = 4;
-  g_GoreQuadPrimitive.base.surface_normal.A = 0;
-  g_GoreQuadPrimitive.base.surface_normal.B = 0;
-  g_GoreQuadPrimitive.base.surface_normal.C = 0;
-  g_GoreQuadPrimitive.base.surface_normal.D = 0;
+  g_GoreQuadPrimitive.base.surface_normal.A.i = 0;
+  g_GoreQuadPrimitive.base.surface_normal.B.i = 0;
+  g_GoreQuadPrimitive.base.surface_normal.C.i = 0;
+  g_GoreQuadPrimitive.base.surface_normal.D.i = 0;
   g_GoreQuadPrimitive.vertices[0] = 0;
   g_GoreQuadPrimitive.vertices[1] = 1;
   g_GoreQuadPrimitive.vertices[2] = 2;

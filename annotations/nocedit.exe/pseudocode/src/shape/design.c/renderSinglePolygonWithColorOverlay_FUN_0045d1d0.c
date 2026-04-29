@@ -18,13 +18,13 @@ void __cdecl shape_design_c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0(int
   if (((g_WireframeMode == 0) || (g_CurrentPartIndex == -1)) ||
      (g_ModelPolygonData[polygon_index].part_assignment == g_CurrentPartIndex)) {
     local_6c.base.count = g_ModelPolygonData[polygon_index].vertex_indices_count;
-    local_6c.surface_normal.A =
+    local_6c.surface_normal.A.i =
          (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.x * 65535.0f));
-    local_6c.surface_normal.B =
+    local_6c.surface_normal.B.i =
          (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.y * 65535.0f));
-    local_6c.surface_normal.C =
+    local_6c.surface_normal.C.i =
          (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.z * 65535.0f));
-    local_6c.surface_normal.D =
+    local_6c.surface_normal.D.i =
          (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].plane_distance * 65535.0f *
                           256.0f));
     for (local_14 = 0; local_14 < (int)g_ModelPolygonData[polygon_index].vertex_indices_count;

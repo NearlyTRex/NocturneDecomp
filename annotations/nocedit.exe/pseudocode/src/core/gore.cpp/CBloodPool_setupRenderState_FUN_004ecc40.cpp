@@ -24,10 +24,10 @@ int __cdecl core_gore_cpp_CBloodPool_setupRenderState_FUN_004ecc40(CBloodPool *t
   g_RenderVertexBuffer[2].v = 0x80000;
   g_RenderVertexBuffer[3].u = 0x80000;
   g_RenderVertexBuffer[3].v = 0x80000;
-  g_GoreQuadPrimitive.base.surface_normal.A = 0;
-  g_GoreQuadPrimitive.base.surface_normal.C = 0;
-  g_GoreQuadPrimitive.base.surface_normal.D = 0;
-  g_GoreQuadPrimitive.base.surface_normal.B = 0xffff;
+  g_GoreQuadPrimitive.base.surface_normal.A.i = 0;
+  g_GoreQuadPrimitive.base.surface_normal.C.i = 0;
+  g_GoreQuadPrimitive.base.surface_normal.D.i = 0;
+  g_GoreQuadPrimitive.base.surface_normal.B.i = 0xffff;
   iVar1 = engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff)
   ;
   return iVar1;

@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        83 ( 1.3%)
+  Functions with type issues:        82 ( 1.3%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          1
-    Undefined types in variables:      77
+    Undefined types in variables:      76
     Unresolved stack params:           5
 
-  Excluded (.keep / MMX / by-value):   143 functions
+  Excluded (.keep / MMX / by-value):   144 functions
     Wrong calling convention:          1
-    Undefined types in variables:      140
+    Undefined types in variables:      141
     Unresolved stack params:           3
 
 ====================================================================================================
@@ -113,7 +113,7 @@ Unresolved stack parameters (missing from signature) (5)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (77)
+Undefined types in variables (76)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -179,11 +179,6 @@ Undefined types in variables (77)
   CDemonSet_renderEnvMapPrimitives
     Address: 0x00570040  File: core/set.cpp
     Locals:  local_ac (undefined4), uStack_a8 (undefined4), local_6c (undefined4), uStack_68 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CDemonSet_renderEnvMapTriangles
-    Address: 0x005702b0  File: core/set.cpp
-    Locals:  local_d0 (undefined4), uStack_cc (undefined4), local_90 (undefined4), uStack_8c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CLodMesh_computeMeshCRC32
@@ -566,7 +561,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (140)
+Undefined types - .keep overrides (141)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -797,6 +792,11 @@ Undefined types - .keep overrides (140)
   CLodMesh_computeEdgeCollapseCost
     Address: 0x00518910  File: shape/meshlod.cpp
     Locals:  local_118 (undefined4), uStack_114 (undefined4), local_110 (undefined8), local_108 (undefined4), uStack_104 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CDemonSet_renderEnvMapTriangles
+    Address: 0x005702b0  File: core/set.cpp
+    Locals:  local_d0 (undefined4), uStack_cc (undefined4), local_90 (undefined4), uStack_8c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CDemonSet_positionLight

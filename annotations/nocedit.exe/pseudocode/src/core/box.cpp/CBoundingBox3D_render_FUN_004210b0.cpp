@@ -80,64 +80,64 @@ void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *thi
     pCVar1->vertex_buffer_ptr[7].g = 0;
     pCVar1->vertex_buffer_ptr[7].b = 0;
   }
-  local_50.base.surface_normal.A = -1;
-  local_50.base.surface_normal.B = 0;
-  local_50.base.surface_normal.C = 0;
+  local_50.base.surface_normal.A.i = -1;
+  local_50.base.surface_normal.B.i = 0;
+  local_50.base.surface_normal.C.i = 0;
   local_50.vertices[0] = 0;
   local_50.vertices[1] = 4;
   local_50.vertices[2] = 6;
-  local_50.base.surface_normal.D = -(int)ROUND(fVar1);
+  local_50.base.surface_normal.D.i = -(int)ROUND(fVar1);
   local_50.vertices[3] = 2;
   engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
             (g_CDemonRendererPtr2,&local_50.base,0x2c4);
-  local_50.base.surface_normal.A = 1;
-  local_50.base.surface_normal.B = 0;
+  local_50.base.surface_normal.A.i = 1;
+  local_50.base.surface_normal.B.i = 0;
   local_50.vertices[1] = 3;
   local_50.vertices[0] = 1;
-  local_50.base.surface_normal.C = 0;
+  local_50.base.surface_normal.C.i = 0;
   local_50.vertices[2] = 7;
   local_50.vertices[3] = 5;
-  local_50.base.surface_normal.D = (int)ROUND(fVar4);
+  local_50.base.surface_normal.D.i = (int)ROUND(fVar4);
   engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
             (g_CDemonRendererPtr2,&local_50.base,0x2c4);
-  local_50.base.surface_normal.A = 0;
-  local_50.base.surface_normal.B = -1;
-  local_50.base.surface_normal.C = 0;
+  local_50.base.surface_normal.A.i = 0;
+  local_50.base.surface_normal.B.i = -1;
+  local_50.base.surface_normal.C.i = 0;
   local_50.vertices[0] = 0;
   local_50.vertices[1] = 1;
-  local_50.base.surface_normal.D = -(int)ROUND(fVar2);
+  local_50.base.surface_normal.D.i = -(int)ROUND(fVar2);
   local_50.vertices[2] = 5;
   local_50.vertices[3] = 4;
   engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
             (g_CDemonRendererPtr2,&local_50.base,0x2c4);
-  local_50.base.surface_normal.A = 0;
-  local_50.base.surface_normal.B = 1;
-  local_50.base.surface_normal.C = 0;
+  local_50.base.surface_normal.A.i = 0;
+  local_50.base.surface_normal.B.i = 1;
+  local_50.base.surface_normal.C.i = 0;
   local_50.vertices[0] = 2;
   local_50.vertices[1] = 6;
   local_50.vertices[2] = 7;
   local_50.vertices[3] = 3;
-  local_50.base.surface_normal.D = (int)ROUND(fVar5);
+  local_50.base.surface_normal.D.i = (int)ROUND(fVar5);
   engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
             (g_CDemonRendererPtr2,&local_50.base,0x2c4);
-  local_50.base.surface_normal.A = 0;
-  local_50.base.surface_normal.B = 0;
-  local_50.base.surface_normal.C = -1;
+  local_50.base.surface_normal.A.i = 0;
+  local_50.base.surface_normal.B.i = 0;
+  local_50.base.surface_normal.C.i = -1;
   local_50.vertices[0] = 0;
   local_50.vertices[3] = 1;
   local_50.vertices[1] = 2;
   local_50.vertices[2] = 3;
-  local_50.base.surface_normal.D = -(int)ROUND(fVar3);
+  local_50.base.surface_normal.D.i = -(int)ROUND(fVar3);
   engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
             (g_CDemonRendererPtr2,&local_50.base,0x2c4);
-  local_50.base.surface_normal.A = 0;
-  local_50.base.surface_normal.B = 0;
+  local_50.base.surface_normal.A.i = 0;
+  local_50.base.surface_normal.B.i = 0;
   local_50.vertices[0] = 4;
   local_50.vertices[1] = 5;
-  local_50.base.surface_normal.C = 1;
+  local_50.base.surface_normal.C.i = 1;
   local_50.vertices[2] = 7;
   local_50.vertices[3] = 6;
-  local_50.base.surface_normal.D = (int)ROUND(fVar6);
+  local_50.base.surface_normal.D.i = (int)ROUND(fVar6);
   engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
             (g_CDemonRendererPtr2,&local_50.base,0x2c4);
   return;

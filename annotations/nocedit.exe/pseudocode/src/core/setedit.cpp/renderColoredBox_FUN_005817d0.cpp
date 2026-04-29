@@ -62,10 +62,10 @@ void __cdecl core_setedit_cpp_renderColoredBox_FUN_005817d0(CVector3f *corner_a,
       if (7 < (int)uVar3) {
         engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(this_ptr,&g_SolidWhiteTexture)
         ;
-        local_54.base.surface_normal.D = 0;
-        local_54.base.surface_normal.C = 0;
-        local_54.base.surface_normal.B = 0;
-        local_54.base.surface_normal.A = 0;
+        local_54.base.surface_normal.D.i = 0;
+        local_54.base.surface_normal.C.i = 0;
+        local_54.base.surface_normal.B.i = 0;
+        local_54.base.surface_normal.A.i = 0;
         local_54.vertices[0] = 0;
         local_54.vertices[2] = 6;
         local_54.base.base.count = 4;

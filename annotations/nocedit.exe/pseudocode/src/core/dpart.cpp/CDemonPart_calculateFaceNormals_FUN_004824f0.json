@@ -7,17 +7,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 146,
+    "complexity_score": 154,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 31,
+    "pseudocode_lines": 39,
     "suspect_count": 11,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 103
+    "total_lines": 111
   },
   "cross_references": [
     {
@@ -138,50 +138,34 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 14,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "local_48.base.surface_normal.A = *(int *)((int)&(this_ptr->face_data->plane).A + iVar1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 15,
-      "match": "(int *)((int)",
+      "match": "(UIntegerFloat *)((int)",
       "severity": "moderate",
-      "text": "local_48.base.surface_normal.B = *(int *)((int)&(this_ptr->face_data->plane).B + iVar1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 16,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "local_48.base.surface_normal.C = *(int *)((int)&(this_ptr->face_data->plane).C + iVar1);",
+      "text": "*(UIntegerFloat *)((int)&(this_ptr->face_data->plane).A + iVar1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 17,
-      "match": "(int *)((int)",
+      "match": "(UIntegerFloat *)((int)",
       "severity": "moderate",
-      "text": "local_48.base.surface_normal.D = *(int *)((int)&(this_ptr->face_data->plane).D + iVar1);",
+      "text": "*(UIntegerFloat *)((int)&(this_ptr->face_data->plane).B + iVar1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 19,
-      "match": "(int *)((int)",
+      "match": "(UIntegerFloat *)((int)",
       "severity": "moderate",
-      "text": "*(int *)((int)&this_ptr->face_data->vertex_index_1 + iVar1);",
+      "text": "*(UIntegerFloat *)((int)&(this_ptr->face_data->plane).C + iVar1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 21,
-      "match": "(int *)((int)",
+      "match": "(UIntegerFloat *)((int)",
       "severity": "moderate",
-      "text": "*(int *)((int)&this_ptr->face_data->vertex_index_2 + iVar1);",
+      "text": "*(UIntegerFloat *)((int)&(this_ptr->face_data->plane).D + iVar1);",
       "type": "pointer_cast"
     },
     {
@@ -189,7 +173,7 @@
       "line": 23,
       "match": "(int *)((int)",
       "severity": "moderate",
-      "text": "*(int *)((int)&this_ptr->face_data->vertex_index_3 + iVar1);",
+      "text": "*(int *)((int)&this_ptr->face_data->vertex_index_1 + iVar1);",
       "type": "pointer_cast"
     },
     {
@@ -197,15 +181,7 @@
       "line": 25,
       "match": "(int *)((int)",
       "severity": "moderate",
-      "text": "*(int *)((int)&(this_ptr->face_data->plane).A + iVar1) = local_48.base.surface_normal.A;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&(this_ptr->face_data->plane).B + iVar1) = local_48.base.surface_normal.B;",
+      "text": "*(int *)((int)&this_ptr->face_data->vertex_index_2 + iVar1);",
       "type": "pointer_cast"
     },
     {
@@ -213,15 +189,39 @@
       "line": 27,
       "match": "(int *)((int)",
       "severity": "moderate",
-      "text": "*(int *)((int)&(this_ptr->face_data->plane).C + iVar1) = local_48.base.surface_normal.C;",
+      "text": "*(int *)((int)&this_ptr->face_data->vertex_index_3 + iVar1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(int *)((int)",
+      "line": 29,
+      "match": "(UIntegerFloat *)((int)",
       "severity": "moderate",
-      "text": "*(int *)((int)&(this_ptr->face_data->plane).D + iVar1) = local_48.base.surface_normal.D;",
+      "text": "*(UIntegerFloat *)((int)&(this_ptr->face_data->plane).A + iVar1) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(UIntegerFloat *)((int)",
+      "severity": "moderate",
+      "text": "*(UIntegerFloat *)((int)&(this_ptr->face_data->plane).B + iVar1) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(UIntegerFloat *)((int)",
+      "severity": "moderate",
+      "text": "*(UIntegerFloat *)((int)&(this_ptr->face_data->plane).C + iVar1) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(UIntegerFloat *)((int)",
+      "severity": "moderate",
+      "text": "*(UIntegerFloat *)((int)&(this_ptr->face_data->plane).D + iVar1) =",
       "type": "pointer_cast"
     }
   ]

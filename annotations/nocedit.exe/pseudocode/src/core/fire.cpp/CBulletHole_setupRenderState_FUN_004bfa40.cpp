@@ -14,10 +14,10 @@ void __cdecl core_fire_cpp_CBulletHole_setupRenderState_FUN_004bfa40(CBulletHole
   g_BillboardPrimitive.vertices[1] = 1;
   g_BillboardPrimitive.vertices[2] = 2;
   g_BillboardPrimitive.vertices[3] = 3;
-  g_BillboardPrimitive.base.surface_normal.A = 0;
-  g_BillboardPrimitive.base.surface_normal.B = 0;
-  g_BillboardPrimitive.base.surface_normal.D = 0;
-  g_BillboardPrimitive.base.surface_normal.C = 0xffff;
+  g_BillboardPrimitive.base.surface_normal.A.i = 0;
+  g_BillboardPrimitive.base.surface_normal.B.i = 0;
+  g_BillboardPrimitive.base.surface_normal.D.i = 0;
+  g_BillboardPrimitive.base.surface_normal.C.i = 0xffff;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,&g_FireEffectBlackHoleTexture);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0x8000);

@@ -18,8 +18,8 @@
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0
+;   core_set.cpp_CDemonSet_setFlatColor_FUN_00570ca0
 ;   core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380
-;   core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0
 ;   core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
@@ -118,8 +118,8 @@ section .text
     MOV EDX,dword ptr [EBX + 0x108]     ; 0056ce31
     PUSH EDX                            ; 0056ce37
     PUSH EDI                            ; 0056ce38
-    CALL core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0 ; 0056ce39
-        ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
+    CALL core_set.cpp_CDemonSet_setFlatColor_FUN_00570ca0 ; 0056ce39
+        ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_00570ca0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 0056ce3e
     PUSH 0xffff                         ; 0056ce41
     MOV ECX,dword ptr [0x006703ec]      ; 0056ce46 | g_CDemonRendererInstance | g_CDemonRendererPtr2
@@ -183,8 +183,8 @@ section .text
     PUSH 0x10000                        ; 0056cedc
     PUSH 0x10000                        ; 0056cee1
     PUSH EDI                            ; 0056cee6
-    CALL core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0 ; 0056cee7
-        ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setScaleFactors_FUN_00570ca0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
+    CALL core_set.cpp_CDemonSet_setFlatColor_FUN_00570ca0 ; 0056cee7
+        ;   XREF to: 00570ca0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_00570ca0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 0056ceec
     JMP 0x0056cd9d                      ; 0056ceef
         ;   XREF to: 0056cd9d (UNCONDITIONAL_JUMP)  ; LAB_0056cd9d

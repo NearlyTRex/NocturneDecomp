@@ -34,10 +34,10 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004ec500(CBloodSplat *this_ptr
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,&this_ptr->position);
   if (this_ptr->is_wall_splat == 1) {
-    g_GoreQuadPrimitive.base.surface_normal.A = 0;
-    g_GoreQuadPrimitive.base.surface_normal.C = 0xffff;
-    g_GoreQuadPrimitive.base.surface_normal.B = 0;
-    g_GoreQuadPrimitive.base.surface_normal.D = 0;
+    g_GoreQuadPrimitive.base.surface_normal.A.i = 0;
+    g_GoreQuadPrimitive.base.surface_normal.C.i = 0xffff;
+    g_GoreQuadPrimitive.base.surface_normal.B.i = 0;
+    g_GoreQuadPrimitive.base.surface_normal.D.i = 0;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,
                g_BloodSplatAnimTextures + this_ptr->texture_variant * 0x10 + local_14);
@@ -67,10 +67,10 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004ec500(CBloodSplat *this_ptr
     if (expire_flag != 0) {
       this_ptr->expired = 1;
     }
-    g_GoreQuadPrimitive.base.surface_normal.B = 0xffff;
-    g_GoreQuadPrimitive.base.surface_normal.A = 0;
-    g_GoreQuadPrimitive.base.surface_normal.C = 0;
-    g_GoreQuadPrimitive.base.surface_normal.D = 0;
+    g_GoreQuadPrimitive.base.surface_normal.B.i = 0xffff;
+    g_GoreQuadPrimitive.base.surface_normal.A.i = 0;
+    g_GoreQuadPrimitive.base.surface_normal.C.i = 0;
+    g_GoreQuadPrimitive.base.surface_normal.D.i = 0;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,g_BloodSplatTextures + this_ptr->texture_variant);
     local_20.x = (int)ROUND(256.0f * -0.5);

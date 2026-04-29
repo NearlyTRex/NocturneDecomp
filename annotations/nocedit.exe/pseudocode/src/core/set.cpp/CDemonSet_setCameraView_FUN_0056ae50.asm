@@ -715,7 +715,7 @@ section .text
     PUSH ESI                            ; 0056b6ab
     PUSH 0x32758e4                      ; 0056b6ac | g_CDemonCameraInstance
     CALL core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10 ; 0056b6b1
-        ;   XREF to: 0044de10 (UNCONDITIONAL_CALL)  ; void * core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemonCamera * this_ptr, CDemonLight * light_source, CRect * rect)
+        ;   XREF to: 0044de10 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemonCamera * this_ptr, CDemonLight * light_source, CRect * rect)
     ADD ESP,0xc                         ; 0056b6b6
     JMP 0x0056b635                      ; 0056b6b9
         ;   XREF to: 0056b635 (UNCONDITIONAL_JUMP)  ; LAB_0056b635

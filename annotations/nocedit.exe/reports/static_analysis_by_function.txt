@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 123
-  Total diagnostics: 352
+  Functions with findings: 122
+  Total diagnostics: 351
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 123, raw .cpp files: 0
+  .keep.cpp files: 122, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -710,12 +710,6 @@ core_cloth.cpp_CCloth_boneEditor_FUN_0043c880  [.keep] [Cppcheck (quick)]
   Line  242: [uninitvar] Uninitialized variable: fStack_550
 
 ----------------------------------------------------------------------------------------------------
-core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10  [.keep] [Cppcheck (quick)]
-  File: core/dcamera.cpp  (1 diagnostics)
-
-  Line  115: [selfAssignment] Redundant assignment of 'pCVar3' to itself.
-
-----------------------------------------------------------------------------------------------------
 core_event.cpp_parseVectorLocation_FUN_004aa530  [.keep] [Cppcheck (quick)]
   File: core/event.cpp  (1 diagnostics)
 
@@ -774,12 +768,6 @@ core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0  [.keep] [Cppcheck (quick)]
   File: core/set.cpp  (1 diagnostics)
 
   Line  146: [selfAssignment] Redundant assignment of 'pCVar12' to itself.
-
-----------------------------------------------------------------------------------------------------
-core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0  [.keep] [Cppcheck (quick)]
-  File: core/set.cpp  (1 diagnostics)
-
-  Line  567: [selfAssignment] Redundant assignment of 'iVar13' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990  [.keep] [Cppcheck (quick)]
@@ -864,6 +852,12 @@ core_xform.cpp_clipPolygonStage4_FUN_005f8330  [.keep] [Cppcheck (quick)]
   File: core/xform.cpp  (1 diagnostics)
 
   Line   75: [selfAssignment] Redundant assignment of 'iVar5' to itself.
+
+----------------------------------------------------------------------------------------------------
+engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290  [.keep] [Cppcheck (quick)]
+  File: engine/3d.c  (1 diagnostics)
+
+  Line  107: [selfAssignment] Redundant assignment of 'ppSVar12' to itself.
 
 ----------------------------------------------------------------------------------------------------
 engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0  [.keep] [Cppcheck (quick)]

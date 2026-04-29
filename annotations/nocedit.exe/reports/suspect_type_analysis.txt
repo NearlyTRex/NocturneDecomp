@@ -4,17 +4,17 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    3045 ( 51.6%)
-  unnamed_local                    865 ( 14.7%)
-  unrolled_strcpy                  491 (  8.3%)
+  pointer_cast                    2952 ( 50.6%)
+  unnamed_local                    896 ( 15.4%)
+  unrolled_strcpy                  491 (  8.4%)
   warning_inlined_function         257 (  4.4%)
   raw_address_constant             194 (  3.3%)
-  missing_cave_copy                184 (  3.1%)
+  missing_cave_copy                184 (  3.2%)
   unrolled_strlen                  152 (  2.6%)
   warning_type_propagation         133 (  2.3%)
   stack_alignment_array             92 (  1.6%)
   warning_unreachable               75 (  1.3%)
-  unnamed_param                     73 (  1.2%)
+  unnamed_param                     73 (  1.3%)
   unrolled_strchr                   62 (  1.1%)
   unrolled_strcat                   46 (  0.8%)
   param_count_too_many              37 (  0.6%)
@@ -31,10 +31,10 @@ SUSPECT TYPE COUNTS
   warning_deadcode_restart           5 (  0.1%)
   unknown_type                       4 (  0.1%)
   warning_max_restarts               3 (  0.1%)
-  preinc_loop_idiom                  2 (  0.0%)
   cpuid_intrinsic                    2 (  0.0%)
   fast_inv_sqrt_inline               1 (  0.0%)
   warning_unable_to_use_type         1 (  0.0%)
+  preinc_loop_idiom                  1 (  0.0%)
   warning_overlapping_globals        1 (  0.0%)
   warning_noreturn                   1 (  0.0%)
   warning_unmapped_variable          1 (  0.0%)
@@ -42,30 +42,30 @@ SUSPECT TYPE COUNTS
   warning_indirect_jump              1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (3045 occurrences)
+TYPE: pointer_cast (2952 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   935x  (int *)((int)
-   809x  (uint *)((int)
-   254x  (float *)((int)
+   862x  (int *)((int)
+   796x  (uint *)((int)
+   242x  (float *)((int)
    123x  (double *)((int)
    108x  (SRenderVertex *)((int)
     93x  (byte *)((int)
-    68x  (ushort *)((int)
-    66x  (void *)((int)
-    48x  (short *)((int)
+    66x  (ushort *)((int)
+    59x  (void *)((int)
+    46x  (short *)((int)
     40x  (char *)((int)
     37x  (CMatrix3x4f *)((int)
     34x  (SShapeEditorPolygon *)((int)
     20x  (SMRGLHeaderExtended *)((int)
     18x  (CVector3f *)((int)
+    16x  (UIntegerFloat *)((int)
     16x  (SScriptXRef *)((int)
     14x  (SVoxelGrid *)((int)
     12x  (SMRGLHeaderPrimitive *)((int)
     11x  (CPodAuditRecord *)((int)
     11x  (HGLOBAL *)((int)
-    10x  (CPlatform *)((int)
 
 Functions:
   cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50
@@ -141,7 +141,6 @@ Functions:
   core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0
   core_dcamera.cpp_CDemonCamera_init_FUN_0044c190
   core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
-  core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10
   core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360
   core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0
   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
@@ -318,12 +317,9 @@ Functions:
   core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0
   core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0
   core_set.cpp_CDemonSet_initScene_FUN_0056aa10
-  core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0
   core_set.cpp_CDemonSet_load_FUN_00569410
-  core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470
   core_set.cpp_CDemonSet_processActors_FUN_0056b810
   core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040
-  core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0
   core_set.cpp_CDemonSet_renderLightDebugView_FUN_0056d190
   core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -715,25 +711,25 @@ Functions:
   wincore_windll.cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec
 
 ====================================================================================================
-TYPE: unnamed_local (865 occurrences)
+TYPE: unnamed_local (896 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   103x  local_14
+   107x  local_14
     54x  local_18
     38x  local_20a4
     35x  local_24
     32x  local_38
     32x  local_1e8
+    28x  local_20
+    27x  local_2c
     25x  local_4db8
     23x  local_30
     22x  local_1c
-    21x  local_2c
-    19x  local_20
     19x  local_34
-    19x  local_5c
     18x  local_48
     18x  local_174
+    18x  local_5c
     15x  local_28
     15x  local_190
     14x  local_78
@@ -757,6 +753,7 @@ Functions:
   core_course.cpp_CCourse_preview_FUN_00443bc0
   core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0
+  core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10
   core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_00476f20
   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
   core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80
@@ -796,6 +793,8 @@ Functions:
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
   core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0
   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
+  core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
+  core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
   core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0
   core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970
@@ -2214,17 +2213,6 @@ Functions:
   sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120
 
 ====================================================================================================
-TYPE: preinc_loop_idiom (2 occurrences)
-====================================================================================================
-
-Unique patterns:
-     2x  do { var = (T *)&var->...; var->arr[0]...; var = var; ...}
-
-Functions:
-  core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10
-  core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
-
-====================================================================================================
 TYPE: cpuid_intrinsic (2 occurrences)
 ====================================================================================================
 
@@ -2254,6 +2242,16 @@ Unique patterns:
 
 Functions:
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
+
+====================================================================================================
+TYPE: preinc_loop_idiom (1 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  do { var = (T *)&var->...; var->arr[0]...; var = var; ...}
+
+Functions:
+  core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
 
 ====================================================================================================
 TYPE: warning_overlapping_globals (1 occurrences)

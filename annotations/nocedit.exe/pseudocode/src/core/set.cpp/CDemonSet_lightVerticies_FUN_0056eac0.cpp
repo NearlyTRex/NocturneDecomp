@@ -503,10 +503,10 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
       else if (0 < vertex_count) {
         iVar19 = 0;
         do {
-          *(int *)((int)&g_RenderVertexBuffer[0].r + iVar19) = this_ptr->mirror_cached_light;
-          *(int *)((int)&g_RenderVertexBuffer[0].g + iVar19) = this_ptr->mirror_cached_color;
+          *(int *)((int)&g_RenderVertexBuffer[0].r + iVar19) = (this_ptr->mirror_cached_color).r;
+          *(int *)((int)&g_RenderVertexBuffer[0].g + iVar19) = (this_ptr->mirror_cached_color).g;
           iVar17 = iVar19 + 0x30;
-          *(int *)((int)&g_RenderVertexBuffer[0].b + iVar19) = this_ptr->mirror_cached_fog;
+          *(int *)((int)&g_RenderVertexBuffer[0].b + iVar19) = (this_ptr->mirror_cached_color).b;
           iVar19 = iVar17;
         } while (iVar17 < iVar24);
         return;
@@ -532,10 +532,10 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
           if (0 < vertex_count) {
             iVar19 = 0;
             do {
-              *(int *)((int)&g_RenderVertexBuffer[0].r + iVar19) = this_ptr->light_scale_factor;
-              *(int *)((int)&g_RenderVertexBuffer[0].g + iVar19) = this_ptr->color_scale_factor;
+              *(int *)((int)&g_RenderVertexBuffer[0].r + iVar19) = (this_ptr->flat_color).r;
+              *(int *)((int)&g_RenderVertexBuffer[0].g + iVar19) = (this_ptr->flat_color).g;
               iVar17 = iVar19 + 0x30;
-              *(int *)((int)&g_RenderVertexBuffer[0].b + iVar19) = this_ptr->fog_scale_factor;
+              *(int *)((int)&g_RenderVertexBuffer[0].b + iVar19) = (this_ptr->flat_color).b;
               *(uint *)((int)&g_RenderVertexBuffer[0].a + iVar19) = 0;
               iVar19 = iVar17;
             } while (iVar17 < iVar24);

@@ -76,10 +76,10 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,(CVector3f *)&CVector3i_02ca0388);
   local_b4.base.base.count = 4;
-  local_b4.base.surface_normal.D = 0;
-  local_b4.base.surface_normal.C = 0;
-  local_b4.base.surface_normal.B = 0;
-  local_b4.base.surface_normal.A = 0;
+  local_b4.base.surface_normal.D.i = 0;
+  local_b4.base.surface_normal.C.i = 0;
+  local_b4.base.surface_normal.B.i = 0;
+  local_b4.base.surface_normal.A.i = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,(SMRGLTextureBasic *)&(sky_texture->base).count);
   fVar9 = (float10)fsin((float10)0.58904862253125001);

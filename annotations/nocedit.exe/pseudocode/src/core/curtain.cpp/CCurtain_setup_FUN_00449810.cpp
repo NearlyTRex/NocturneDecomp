@@ -12,6 +12,7 @@ void __cdecl core_curtain_cpp_CCurtain_setup_FUN_00449810(CCurtain *this_ptr)
 
 {
   SCurtainVertex *pSVar1;
+  UIntegerFloat UVar2;
   float fVar6;
   float fVar7;
   float fVar8;
@@ -183,18 +184,18 @@ void __cdecl core_curtain_cpp_CCurtain_setup_FUN_00449810(CCurtain *this_ptr)
       local_20 = 0;
       if (0 < (this_ptr->mesh).grid_cols) {
         do {
-          (pSVar9->base).surface_normal.D = 0;
+          (pSVar9->base).surface_normal.D.i = 0;
           (pSVar9->base).base.count = 3;
-          iVar9 = (pSVar9->base).surface_normal.D;
-          (pSVar9->base).surface_normal.C = iVar9;
-          (pSVar9->base).surface_normal.B = iVar9;
-          (pSVar9->base).surface_normal.A = iVar9;
+          UVar2 = (pSVar9->base).surface_normal.D;
+          (pSVar9->base).surface_normal.C = UVar2;
+          (pSVar9->base).surface_normal.B = UVar2;
+          (pSVar9->base).surface_normal.A = UVar2;
           (pSVar15->base).base.count = 3;
-          (pSVar15->base).surface_normal.D = 0;
-          iVar9 = (pSVar15->base).surface_normal.D;
-          (pSVar15->base).surface_normal.C = iVar9;
-          (pSVar15->base).surface_normal.B = iVar9;
-          (pSVar15->base).surface_normal.A = iVar9;
+          (pSVar15->base).surface_normal.D.i = 0;
+          UVar2 = (pSVar15->base).surface_normal.D;
+          (pSVar15->base).surface_normal.C = UVar2;
+          (pSVar15->base).surface_normal.B = UVar2;
+          (pSVar15->base).surface_normal.A = UVar2;
           iVar11 = ((this_ptr->mesh).grid_cols + 1) * local_30;
           iVar13 = local_20 + iVar11;
           pSVar9->vertices[0].vertex_index = iVar13;
@@ -225,17 +226,17 @@ void __cdecl core_curtain_cpp_CCurtain_setup_FUN_00449810(CCurtain *this_ptr)
           *puVar16 = *puVar14;
           puVar16[(uint)bVar19 * -2 + 1] = puVar14[(uint)bVar19 * -2 + 1];
           pSVar9[1].base.base.count = 3;
-          pSVar9[1].base.surface_normal.D = 0;
-          iVar9 = pSVar9[1].base.surface_normal.D;
-          pSVar9[1].base.surface_normal.C = iVar9;
-          pSVar9[1].base.surface_normal.B = iVar9;
-          pSVar9[1].base.surface_normal.A = iVar9;
+          pSVar9[1].base.surface_normal.D.i = 0;
+          UVar2 = pSVar9[1].base.surface_normal.D;
+          pSVar9[1].base.surface_normal.C = UVar2;
+          pSVar9[1].base.surface_normal.B = UVar2;
+          pSVar9[1].base.surface_normal.A = UVar2;
           pSVar15[1].base.base.count = 3;
-          pSVar15[1].base.surface_normal.D = 0;
-          iVar9 = pSVar15[1].base.surface_normal.D;
-          pSVar15[1].base.surface_normal.C = iVar9;
-          pSVar15[1].base.surface_normal.B = iVar9;
-          pSVar15[1].base.surface_normal.A = iVar9;
+          pSVar15[1].base.surface_normal.D.i = 0;
+          UVar2 = pSVar15[1].base.surface_normal.D;
+          pSVar15[1].base.surface_normal.C = UVar2;
+          pSVar15[1].base.surface_normal.B = UVar2;
+          pSVar15[1].base.surface_normal.A = UVar2;
           iVar13 = ((this_ptr->mesh).grid_cols + 1) * local_30;
           iVar15 = iVar13 + local_20;
           pSVar9[1].vertices[0].vertex_index = iVar15;

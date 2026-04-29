@@ -19,10 +19,10 @@ void __cdecl shape_meshlod_cpp_CLodMesh_renderShadedTriangles_FUN_0051e990(CLodM
   CLodFace *pCVar1;
   
   SStack_60.base.base.count = 3;
-  SStack_60.base.surface_normal.D = 0;
-  SStack_60.base.surface_normal.C = 0;
-  SStack_60.base.surface_normal.B = 0;
-  SStack_60.base.surface_normal.A = 0;
+  SStack_60.base.surface_normal.D.i = 0;
+  SStack_60.base.surface_normal.C.i = 0;
+  SStack_60.base.surface_normal.B.i = 0;
+  SStack_60.base.surface_normal.A.i = 0;
   engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(g_CDemonRendererPtr2,0xff);
   uVar2 = 0;
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);

@@ -44,13 +44,13 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50(CMansio
     }
     shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(g_CEditorToolsPtr,1.0,0xfb);
   }
-  core_set_cpp_CDemonSet_setScaleFactors_FUN_00570ca0
+  core_set_cpp_CDemonSet_setFlatColor_FUN_00570ca0
             (g_CDemonSetPtr,(int)ROUND(ROUND((pSVar4->color).r * 256.0f)),
              (int)ROUND(ROUND((pSVar4->color).g * 256.0f)),
              (int)ROUND(ROUND((pSVar4->color).b * 256.0f)));
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
             (&this_ptr->gem_model,0.0,-1);
-  core_set_cpp_CDemonSet_setScaleFactors_FUN_00570ca0(g_CDemonSetPtr,0x10000,0x10000,0x10000);
+  core_set_cpp_CDemonSet_setFlatColor_FUN_00570ca0(g_CDemonSetPtr,0x10000,0x10000,0x10000);
   iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if ((iVar4 == 0) &&
      ((((float)0.01 < (pSVar4->hum_color).r ||

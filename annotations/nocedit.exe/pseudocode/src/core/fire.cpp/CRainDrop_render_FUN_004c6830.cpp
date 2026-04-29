@@ -88,10 +88,10 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
   core_set_cpp_CDemonSet_computeLighting_FUN_0056e110
             (g_CDemonSetPtr,&CStack_2c,&g_BillboardCameraUp,0,4);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
-  SStack_a8.base.surface_normal.D = 0;
-  SStack_a8.base.surface_normal.C = 0;
-  SStack_a8.base.surface_normal.B = 0;
-  SStack_a8.base.surface_normal.A = 0;
+  SStack_a8.base.surface_normal.D.i = 0;
+  SStack_a8.base.surface_normal.C.i = 0;
+  SStack_a8.base.surface_normal.B.i = 0;
+  SStack_a8.base.surface_normal.A.i = 0;
   SStack_a8.vertices[0] = 0;
   SStack_a8.vertices[3] = 3;
   SStack_a8.base.base.count = 4;

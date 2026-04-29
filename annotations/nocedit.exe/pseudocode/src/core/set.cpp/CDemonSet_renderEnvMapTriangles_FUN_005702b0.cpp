@@ -46,10 +46,10 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet
   local_28[2] = 0;
   if (0 < count) {
     do {
-      SStack_118.base.surface_normal.D = 0;
-      SStack_118.base.surface_normal.C = 0;
-      SStack_118.base.surface_normal.B = 0;
-      SStack_118.base.surface_normal.A = 0;
+      SStack_118.base.surface_normal.D.i = 0;
+      SStack_118.base.surface_normal.C.i = 0;
+      SStack_118.base.surface_normal.B.i = 0;
+      SStack_118.base.surface_normal.A.i = 0;
       SStack_118.base.base.count = 3;
       SStack_118.vertices[0].vertex_index = (uint)(face_data->vertex_indices).vertex_index_0;
       SStack_118.vertices[1].vertex_index = (uint)(face_data->vertex_indices).vertex_index_1;
@@ -131,10 +131,10 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet
         } while (iVar6 < SStack_118.base.base.count);
       }
       if (this_ptr->skip_normal_normalization != 0) {
-        SStack_118.base.surface_normal.C = 0;
-        SStack_118.base.surface_normal.B = 0;
-        SStack_118.base.surface_normal.A = 0;
-        SStack_118.base.surface_normal.D = 0;
+        SStack_118.base.surface_normal.C.i = 0;
+        SStack_118.base.surface_normal.B.i = 0;
+        SStack_118.base.surface_normal.A.i = 0;
+        SStack_118.base.surface_normal.D.i = 0;
       }
       if (alpha < 0xfde9) {
         engine_drender_cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970
