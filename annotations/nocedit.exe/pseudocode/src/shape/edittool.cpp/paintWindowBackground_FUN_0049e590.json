@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 95,
-    "complexity_score": 70,
+    "complexity_score": 95,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 55,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 150
   },
@@ -204,20 +205,20 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(uint *)((int)",
+      "line": 46,
+      "match": "(uint *)((int)puVar9",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar10 * -2 + 1);",
+      "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(uint *)((int)",
+      "line": 47,
+      "match": "(uint *)((int)puVar8",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "puVar7 = (uint *)((int)puVar7 + uVar1);",
+      "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
@@ -274,11 +275,27 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(uint *)((int)",
+      "line": 53,
+      "match": "(uint *)((int)puVar7",
       "severity": "moderate",
-      "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar10 * -2 + 1);",
+      "text": "puVar7 = (uint *)((int)puVar7 + uVar1);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 62,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0049e647: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 65,
+      "match": "MOVSB.REP",
+      "severity": "moderate",
+      "text": "// 0049e64e: MOVSB.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

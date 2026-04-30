@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 576,
-    "complexity_score": 428,
+    "complexity_score": 268,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 25,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 268,
-    "suspect_count": 15,
-    "suspect_types": [
-      "pointer_cast",
-      "unnamed_local"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 844
   },
   "cross_references": [
@@ -323,6 +320,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 99,
+      "match": "(int *)((int)g_ActorProfileTimes",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ActorProfileTimes + iVar7) = iVar3 - local_3c;",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 153,
       "match": "&stack0xffffff60",
@@ -339,6 +345,105 @@
       "severity": "moderate",
       "text": "damage_info = (CPathMap *)&stack0xffffff60;",
       "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 215,
+      "match": "(int *)((int)g_ActorProfileTimes",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar3 = *(int *)((int)g_ActorProfileTimes + local_2c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 216,
+      "match": "(int *)((int)g_ActorProfileTimes",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (iVar3 < *(int *)((int)g_ActorProfileTimes + iVar2)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 217,
+      "match": "(uint *)((int)g_ActorProfileTimes",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ActorProfileTimes + local_2c) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 218,
+      "match": "(uint *)((int)g_ActorProfileTimes",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ActorProfileTimes + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 219,
+      "match": "(int *)((int)g_ActorProfileTimes",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ActorProfileTimes + iVar2) = iVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 220,
+      "match": "(uint *)((int)g_ActorProfileActors",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar4 = *(uint *)((int)g_ActorProfileActors + local_2c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 221,
+      "match": "(uint *)((int)g_ActorProfileActors",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ActorProfileActors + local_2c) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 222,
+      "match": "(uint *)((int)g_ActorProfileActors",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ActorProfileActors + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 223,
+      "match": "(uint *)((int)g_ActorProfileActors",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ActorProfileActors + iVar2) = uVar4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 240,
+      "match": "(int *)((int)g_ActorProfileTimes",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)g_ActorProfileTimes + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 241,
+      "match": "(uint *)((int)g_ActorProfileActors",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)g_ActorProfileActors + iVar8);",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {
@@ -517,27 +622,20 @@
   "static_analysis": {
     "analyzed_file": "CDemonSet_processActors_FUN_0056b810.keep.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 3,
+      "diagnostic_count": 2,
       "diagnostics": [
         {
           "check_id": "uninitvar",
-          "column": 22,
-          "line": 128,
-          "message": "Uninitialized variable: fStack_5c",
-          "severity": "error"
-        },
-        {
-          "check_id": "legacyUninitvar",
-          "column": 72,
-          "line": 112,
+          "column": 59,
+          "line": 104,
           "message": "Uninitialized variable: local_3c",
           "severity": "error"
         },
         {
-          "check_id": "legacyUninitvar",
-          "column": 31,
-          "line": 116,
-          "message": "Uninitialized variable: iStack_18",
+          "check_id": "uninitvar",
+          "column": 22,
+          "line": 119,
+          "message": "Uninitialized variable: fStack_5c",
           "severity": "error"
         }
       ],
@@ -545,129 +643,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 99,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_ActorProfileTimes + iVar7) = iVar3 - local_3c;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 215,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "iVar3 = *(int *)((int)g_ActorProfileTimes + local_2c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 216,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "if (iVar3 < *(int *)((int)g_ActorProfileTimes + iVar2)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 217,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ActorProfileTimes + local_2c) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 218,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ActorProfileTimes + iVar2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 219,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_ActorProfileTimes + iVar2) = iVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 220,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "uVar4 = *(uint *)((int)g_ActorProfileActors + local_2c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 221,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ActorProfileActors + local_2c) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 222,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ActorProfileActors + iVar2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 223,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ActorProfileActors + iVar2) = uVar4;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 240,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar1 = (int *)((int)g_ActorProfileTimes + iVar8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 241,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)g_ActorProfileActors + iVar8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 29,
-      "match": "local_a0",
-      "severity": "mild",
-      "text": "SDamageInfo local_a0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 166,
-      "match": "local_a0",
-      "severity": "mild",
-      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&local_a0);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 172,
-      "match": "local_a0",
-      "severity": "mild",
-      "text": "damage_info = (CPathMap *)&local_a0;",
-      "type": "unnamed_local"
-    }
-  ]
+  "suspects": []
 }

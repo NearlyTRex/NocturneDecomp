@@ -183,15 +183,6 @@
   },
   "resolved_suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 71,
-      "match": "(CPlatform *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "pCVar6 = (CPlatform *)((int)&(pCVar6->base).orient + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar6` (struct-field advance + constant `[0]` index + self-assign no-op). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep.",
       "line": 70,
       "match": "do { var = (T *)&var->...; var->arr[0]...; var = var; ...}",

@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 540,
-    "complexity_score": 310,
+    "complexity_score": 280,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 17,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 255,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_local"
+      "unrolled_memcpy"
     ],
     "total_lines": 795
   },
@@ -339,7 +339,7 @@
     {
       "description": "Complex pointer cast",
       "line": 154,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar8",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar11 * -2 + 1) * 4);",
@@ -357,7 +357,7 @@
     {
       "description": "Complex pointer cast",
       "line": 173,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar9",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar11 * -2 + 1) * 4);",
@@ -578,49 +578,20 @@
   },
   "suspects": [
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 21,
-      "match": "local_98",
-      "severity": "mild",
-      "text": "CVector3f local_98;",
-      "type": "unnamed_local"
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 223,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00443e38: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 23,
-      "match": "local_80",
-      "severity": "mild",
-      "text": "CVector3f local_80;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 30,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "float local_18;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 59,
-      "match": "local_80",
-      "severity": "mild",
-      "text": "core_course_cpp_CCourse_evaluate_FUN_00442710(this_ptr,local_1c,&local_80,&local_98);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 59,
-      "match": "local_98",
-      "severity": "mild",
-      "text": "core_course_cpp_CCourse_evaluate_FUN_00442710(this_ptr,local_1c,&local_80,&local_98);",
-      "type": "unnamed_local"
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 227,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00443e49: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

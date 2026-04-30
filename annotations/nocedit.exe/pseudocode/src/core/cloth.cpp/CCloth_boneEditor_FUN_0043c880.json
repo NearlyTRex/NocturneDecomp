@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1402,
-    "complexity_score": 407,
+    "complexity_score": 382,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 56,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 382,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1784
   },
   "cross_references": [
@@ -856,22 +854,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 118,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar5 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 123,
-      "match": "(CVector3f *)((int)",
-      "severity": "moderate",
-      "text": "pCVar7 = (CVector3f *)((int)(pCVar7 + 0x17) + 8);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

@@ -2,29 +2,47 @@
 // CRT STUBS SHIM
 // =============================================================================
 //
-// Empty stand-ins for Watcom CRT symbols referenced by static initializers and
+// Stand-ins for Watcom CRT symbols referenced by static initializers and
 // vtable/typeinfo tables in globals_*.cpp. The crt/ module is deliberately
 // excluded from the build (we link against the host C/C++ runtime), but the
 // globals still contain baked-in pointers to these Watcom CRT functions.
 //
-// These stubs exist only to resolve the link. None of them are exercised at
-// runtime: the game code paths that would call them have all been replaced by
-// the shims or by modern STL, and the typeinfo table slots that hold their
-// addresses are never invoked because the objects they describe (Watcom's old
-// stream library) are never instantiated.
+// Two flavours live here:
 //
-// Return-value convention:
+//   1. Bridges  — entries whose callers ARE reached at runtime, where the
+//                 _ostream*/_istream* parameter actually came from a real
+//                 std::ostream/std::istream via the watcom_*_from helpers in
+//                 stream_compat.h. These reinterpret_cast back to the std type
+//                 and forward the call.
+//
+//   2. Stubs    — entries that resolve the link but are never expected to be
+//                 hit at runtime (vtable/typeinfo slots, dead Watcom-only
+//                 ctors/dtors, callers that have been replaced by modern STL).
+//
+// Bridges currently in place:
+//   - ostream_put: reached by codec write paths (flushBitBuffer,
+//                  writeBitsToStream, CLZWDictionary::writeCodeSequence) which
+//                  call put(c) without inspecting _ostream fields.
+//   - istream_get: reached by codec read paths. Callers used to dereference
+//                  Watcom-specific fields like (istream->_ios).padding +
+//                  layout_info->offset_to_base + -0x21 for EOF detection;
+//                  those callers (readByteWithCount, readBitsFromStream,
+//                  CCodec::process) have keeps that now query std::istream::
+//                  fail() via the same reinterpret_cast.
+//
+// Return-value convention for stubs:
 //   - ctors / dtors return this_ptr (the Watcom convention)
 //   - int / uint methods return 0
 //   - void returns nothing
 //   - variadic stdio returns 0
 //
-// If any of these ever starts getting called at runtime (ASan will notice),
-// investigate whether the typeinfo table that references it is still live, or
-// whether a new code path slipped through that genuinely needs Watcom stream
-// semantics — in which case the fix belongs elsewhere, not in this file.
+// If a STUB starts getting called at runtime (ASan will notice or output will
+// silently go missing), promote it to a bridge — but check first whether the
+// caller pokes at Watcom-specific layout fields (like the istream_get callers
+// above), which means the caller itself needs a keep instead.
 
 #include "nocturne.h"
+#include "stream_compat.h"
 
 // -- pure virtual dispatchers -------------------------------------------------
 
@@ -44,12 +62,18 @@ uint __cdecl crt_iostream_cpp_ios_clear_FUN_00600e64(ios *, uint) { return 0; }
 
 _ostream * __cdecl crt_iostream_cpp_ostream_ctor_FUN_006061a2(_ostream *this_ptr, uint) { return this_ptr; }
 _ostream * __cdecl crt_iostream_cpp_ostream_dtor_FUN_00606231(_ostream *this_ptr, uint) { return this_ptr; }
-_ostream * __cdecl crt_iostream_cpp_ostream_put_FUN_005ff2d7(_ostream *this_ptr, int) { return this_ptr; }
+_ostream * __cdecl crt_iostream_cpp_ostream_put_FUN_005ff2d7(_ostream *this_ptr, int c) {
+    if (this_ptr) std_ostream_from(this_ptr).put(static_cast<char>(c));
+    return this_ptr;
+}
 void __cdecl crt_iostream_cpp_ostream_destructor_thunk_FUN_006061e4(ios *, int) {}
 
 _istream * __cdecl crt_iostream_cpp_istream_ctor_FUN_00606376(_istream *this_ptr, uint) { return this_ptr; }
 _istream * __cdecl crt_iostream_cpp_istream_dtor_FUN_006063e1(_istream *this_ptr, uint) { return this_ptr; }
-_istream * __cdecl crt_iostream_cpp_istream_get_FUN_005ff245(_istream *this_ptr, char *) { return this_ptr; }
+_istream * __cdecl crt_iostream_cpp_istream_get_FUN_005ff245(_istream *this_ptr, char *c) {
+    if (this_ptr && c) std_istream_from(this_ptr).get(*c);
+    return this_ptr;
+}
 
 streambuf * __watcallStack crt_iostream_cpp_streambuf_destructor_FUN_0060d64f(streambuf *this_ptr) { return this_ptr; }
 streambuf * __watcallStack crt_iostream_cpp_streambuf_setbuf_FUN_0060d5ff(streambuf *this_ptr, void *, int) { return this_ptr; }

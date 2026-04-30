@@ -141,53 +141,6 @@
     },
     "pcode_op_count": 693
   },
-  "resolved_suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": ",*(uint *)((int)&(options->position).x + 4),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(options->position).y + 4),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": ",*(uint *)((int)&(options->velocity).x + 4),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(options->velocity).y + 4),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 67,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&options->delay_remaining + 4));",
-      "type": "pointer_cast"
-    }
-  ],
   "stack_frame": {
     "frame_size": 20,
     "local_size": 4,

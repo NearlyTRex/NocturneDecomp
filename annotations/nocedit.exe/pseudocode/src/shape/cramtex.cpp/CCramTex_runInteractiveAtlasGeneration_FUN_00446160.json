@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1969,
-    "complexity_score": 987,
+    "complexity_score": 832,
     "cross_reference_count": 3,
     "function_call_count": 14,
     "global_count": 101,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 832,
-    "suspect_count": 15,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 2801
   },
   "cross_references": [
@@ -1012,126 +1010,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 232,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "if (((iVar32 == *(int *)((int)&g_CramRectangles[0].map_id + iVar13)) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 233,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(iVar23 == *(int *)((int)&g_CramRectangles[0].start_x + iVar13))) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 234,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(iVar22 == *(int *)((int)&g_CramRectangles[0].start_y + iVar13)))",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 286,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "if (((iVar32 == *(int *)((int)&g_CramRectangles[0].map_id + iVar23)) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 287,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(local_80 == *(int *)((int)&g_CramRectangles[0].start_x + iVar23))) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 288,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(iVar22 == *(int *)((int)&g_CramRectangles[0].start_y + iVar23)))",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 364,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "if (((iVar32 == *(int *)((int)&g_CramRectangles[0].map_id + iVar25)) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 365,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(iVar22 == *(int *)((int)&g_CramRectangles[0].start_x + iVar25))) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 366,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(iVar23 == *(int *)((int)&g_CramRectangles[0].start_y + iVar25)))",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 418,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "if (((iVar32 == *(int *)((int)&g_CramRectangles[0].map_id + iVar23)) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 419,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(iVar22 == *(int *)((int)&g_CramRectangles[0].start_x + iVar23))) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 420,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(local_6c == *(int *)((int)&g_CramRectangles[0].start_y + iVar23)))",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 477,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&g_CramRectangles[0].occupant + iVar22) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 763,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&g_CramSortedTextureEntries[0].working_top + iVar32)) ||",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 765,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&g_CramSortedTextureEntries[0].working_width + iVar32))) {",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

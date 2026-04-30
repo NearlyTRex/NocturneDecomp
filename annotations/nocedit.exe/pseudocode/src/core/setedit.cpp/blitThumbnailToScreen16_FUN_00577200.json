@@ -199,7 +199,7 @@
     {
       "description": "Complex pointer cast",
       "line": 17,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "local_24 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_1c) + screen_x * 2);",
       "type": "pointer_cast"
@@ -207,7 +207,7 @@
     {
       "description": "Complex pointer cast",
       "line": 21,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)g_ThumbnailImageBuffer",
       "severity": "moderate",
       "text": "uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2);",
       "type": "pointer_cast"

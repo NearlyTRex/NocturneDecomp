@@ -856,7 +856,7 @@
     {
       "description": "Complex pointer cast",
       "line": 69,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_ScreenBufferArray",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "g_CurrentScreenPtr = (int *)((int)g_ScreenBufferArray[scanline_y] + uVar8 * 4);",
@@ -982,7 +982,7 @@
     {
       "description": "Complex pointer cast",
       "line": 224,
-      "match": "(int *)(uVar19 + (int)",
+      "match": "(int *)(uVar19 + (int)g_CurrentZBufferPtr",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "(*(int *)(uVar19 + (int)g_CurrentZBufferPtr) <= iVar17)) {",
@@ -1045,7 +1045,7 @@
     {
       "description": "Complex pointer cast",
       "line": 286,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)g_CurrentScreenPtr",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)g_CurrentScreenPtr + uVar19) = uVar22;",
@@ -1054,7 +1054,7 @@
     {
       "description": "Complex pointer cast",
       "line": 288,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_CurrentZBufferPtr",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)((int)g_CurrentZBufferPtr + uVar19) = iVar17;",
@@ -1063,7 +1063,7 @@
     {
       "description": "Complex pointer cast",
       "line": 325,
-      "match": "(int *)(uVar19 + (int)",
+      "match": "(int *)(uVar19 + (int)g_CurrentZBufferPtr",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "(*(int *)(uVar19 + (int)g_CurrentZBufferPtr) <= iVar17)) {",
@@ -1090,7 +1090,7 @@
     {
       "description": "Complex pointer cast",
       "line": 336,
-      "match": "(byte *)(((int)",
+      "match": "(byte *)(((int)pbVar15",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "uVar9 = (uint)*(byte *)(((int)pbVar15 - (int)g_CurrentTextureData) +",
@@ -1099,7 +1099,7 @@
     {
       "description": "Complex pointer cast",
       "line": 341,
-      "match": "(uint *)(uVar19 + (int)",
+      "match": "(uint *)(uVar19 + (int)g_CurrentScreenPtr",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "uVar22 = *(uint *)(uVar19 + (int)g_CurrentScreenPtr);",
@@ -1153,7 +1153,7 @@
     {
       "description": "Complex pointer cast",
       "line": 436,
-      "match": "(uint *)(uVar19 + (int)",
+      "match": "(uint *)(uVar19 + (int)g_CurrentScreenPtr",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)(uVar19 + (int)g_CurrentScreenPtr) = uVar22;",
@@ -1162,7 +1162,7 @@
     {
       "description": "Complex pointer cast",
       "line": 438,
-      "match": "(int *)(uVar19 + (int)",
+      "match": "(int *)(uVar19 + (int)g_CurrentZBufferPtr",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)(uVar19 + (int)g_CurrentZBufferPtr) = iVar17;",
@@ -1171,7 +1171,7 @@
     {
       "description": "Complex pointer cast",
       "line": 466,
-      "match": "(int *)(uVar19 + (int)",
+      "match": "(int *)(uVar19 + (int)g_CurrentZBufferPtr",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "(*(int *)(uVar19 + (int)g_CurrentZBufferPtr) <= iVar17)) &&",
@@ -1180,7 +1180,7 @@
     {
       "description": "Complex pointer cast",
       "line": 473,
-      "match": "(uint *)(uVar19 + (int)",
+      "match": "(uint *)(uVar19 + (int)g_CurrentScreenPtr",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "uVar22 = *(uint *)(uVar19 + (int)g_CurrentScreenPtr);",
@@ -1243,7 +1243,7 @@
     {
       "description": "Complex pointer cast",
       "line": 546,
-      "match": "(uint *)(uVar19 + (int)",
+      "match": "(uint *)(uVar19 + (int)g_CurrentScreenPtr",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)(uVar19 + (int)g_CurrentScreenPtr) = uVar22;",
@@ -1252,7 +1252,7 @@
     {
       "description": "Complex pointer cast",
       "line": 548,
-      "match": "(int *)(uVar19 + (int)",
+      "match": "(int *)(uVar19 + (int)g_CurrentZBufferPtr",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)(uVar19 + (int)g_CurrentZBufferPtr) = iVar17;",

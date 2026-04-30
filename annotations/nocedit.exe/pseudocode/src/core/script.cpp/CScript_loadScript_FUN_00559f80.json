@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 383,
-    "complexity_score": 162,
+    "complexity_score": 147,
     "cross_reference_count": 1,
     "function_call_count": 24,
     "global_count": 26,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 147,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 530
   },
   "cross_references": [
@@ -373,15 +371,6 @@
   },
   "resolved_suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 103,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)&this_ptr->parsed_lines->line_number + iVar2);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 53,
       "match": "do {",
@@ -488,14 +477,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 102,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)&this_ptr->parsed_lines->text + iVar2);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

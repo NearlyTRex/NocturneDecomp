@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 382,
-    "complexity_score": 192,
+    "complexity_score": 182,
     "cross_reference_count": 5,
     "function_call_count": 7,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 107,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
       "missing_cave_copy"
     ],
@@ -244,7 +244,7 @@
     {
       "description": "Complex pointer cast",
       "line": 64,
-      "match": "(CMatrix3x4f *)((int)",
+      "match": "(CMatrix3x4f *)((int)pCVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "((CMatrix3x4f *)((int)pCVar4->x * 0x30 + iStack_14),&CStack_244);",
@@ -253,7 +253,7 @@
     {
       "description": "Complex pointer cast",
       "line": 69,
-      "match": "(CMatrix3x4f *)((int)",
+      "match": "(CMatrix3x4f *)((int)pCVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "(&CStack_184,(CMatrix3x4f *)((int)pCVar4->x * 0x30 + iStack_14),&CStack_124);",
@@ -294,15 +294,6 @@
       "severity": "moderate",
       "text": "(*(CDemonActor **)(unaff_EBP + 8));",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 106,
-      "match": "(CVector3f *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "local_18 = (CVector3f *)((int)&local_18->x + 1);",
-      "type": "pointer_cast"
     }
   ],
   "stack_frame": {
@@ -533,14 +524,6 @@
       "match": "CMatrix3x4f CStack_64; ... f(&CStack_64, ...);",
       "severity": "moderate",
       "text": "CMatrix3x4f CStack_64;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Struct-type local `CStack_34` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 6 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 29,
-      "match": "CVector3f CStack_34; ... f(&CStack_34, ...);",
-      "severity": "moderate",
-      "text": "CVector3f CStack_34;",
       "type": "missing_cave_copy"
     }
   ]

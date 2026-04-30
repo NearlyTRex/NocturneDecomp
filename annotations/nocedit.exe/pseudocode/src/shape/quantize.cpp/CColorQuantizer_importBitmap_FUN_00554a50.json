@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 191,
+    "complexity_score": 216,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 101,
-    "suspect_count": 8,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
+      "unrolled_memcpy",
       "warning_inlined_function"
     ],
     "total_lines": 324
@@ -174,7 +175,7 @@
     {
       "description": "Complex pointer cast",
       "line": 68,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)puVar12",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "puVar12 = (uint *)((int)puVar12 + (uint)bVar13 * -2 + 1);",
@@ -183,7 +184,7 @@
     {
       "description": "Complex pointer cast",
       "line": 69,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)puVar9",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar13 * -2 + 1);",
@@ -264,7 +265,7 @@
     {
       "description": "Complex pointer cast",
       "line": 76,
-      "match": "(byte *)(iVar3 + (int)",
+      "match": "(byte *)(iVar3 + (int)pvVar1",
       "severity": "moderate",
       "text": "bVar1 = *(byte *)(iVar3 + (int)pvVar1);",
       "type": "pointer_cast"
@@ -272,7 +273,7 @@
     {
       "description": "Complex pointer cast",
       "line": 77,
-      "match": "(byte *)(iVar3 + 1 + (int)",
+      "match": "(byte *)(iVar3 + 1 + (int)pvVar1",
       "severity": "moderate",
       "text": "bVar2 = *(byte *)(iVar3 + 1 + (int)pvVar1);",
       "type": "pointer_cast"
@@ -280,7 +281,7 @@
     {
       "description": "Complex pointer cast",
       "line": 78,
-      "match": "(byte *)(iVar3 + 2 + (int)",
+      "match": "(byte *)(iVar3 + 2 + (int)pvVar1",
       "severity": "moderate",
       "text": "bVar3 = *(byte *)(iVar3 + 2 + (int)pvVar1);",
       "type": "pointer_cast"
@@ -288,7 +289,7 @@
     {
       "description": "Complex pointer cast",
       "line": 83,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)this_ptr",
       "severity": "moderate",
       "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4) = bVar1;",
       "type": "pointer_cast"
@@ -296,7 +297,7 @@
     {
       "description": "Complex pointer cast",
       "line": 84,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)this_ptr",
       "severity": "moderate",
       "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 1) = bVar2;",
       "type": "pointer_cast"
@@ -304,7 +305,7 @@
     {
       "description": "Complex pointer cast",
       "line": 85,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)this_ptr",
       "severity": "moderate",
       "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 2) = bVar3;",
       "type": "pointer_cast"
@@ -312,10 +313,26 @@
     {
       "description": "Complex pointer cast",
       "line": 86,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)this_ptr",
       "severity": "moderate",
       "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 3) =",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 140,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00554bbe: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 143,
+      "match": "MOVSB.REP",
+      "severity": "moderate",
+      "text": "// 00554bc5: MOVSB.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

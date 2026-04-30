@@ -7,16 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 45,
+    "complexity_score": 30,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 15,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_many",
-      "pointer_cast"
+      "param_count_too_many"
     ],
     "total_lines": 51
   },
@@ -142,14 +141,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 12,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->a + iVar1) = g_PerspectiveReciprocal;",
-      "type": "pointer_cast"
-    },
     {
       "call_site_count": 1,
       "declared_params": 3,

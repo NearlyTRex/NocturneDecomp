@@ -7,16 +7,15 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 803,
-    "complexity_score": 305,
+    "complexity_score": 290,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 38,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 240,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "raw_address_constant",
-      "unnamed_local",
       "unrolled_strcpy"
     ],
     "total_lines": 1043
@@ -765,15 +764,6 @@
       "severity": "mild",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 56,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "uint local_18;",
-      "type": "unnamed_local"
     }
   ]
 }

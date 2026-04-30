@@ -35,7 +35,7 @@ void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004342f0(int x,i
               (g_BlueBitCount.bytes[0] & 0x1f);
     }
     else {
-      puVar7 = (uint *)(x * 4 + (int)g_ScreenBufferArray[y]);
+      puVar7 = &((uint *)g_ScreenBufferArray[y])[x];
       uVar4 = (*puVar7 >> (g_RedBitPosition.bytes[0] & 0x1f)) << (g_RedBitCount.bytes[0] & 0x1f);
       uVar5 = (*puVar7 >> (g_GreenBitPosition.bytes[0] & 0x1f)) << (g_GreenBitCount.bytes[0] & 0x1f)
       ;
@@ -56,7 +56,7 @@ void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004342f0(int x,i
                                  (float)(uVar6 & 0xff) * blend_factor));
     uVar3 = local_2c >> (g_BlueBitCount.bytes[0] & 0x1f);
     if (g_BitsPerPixel != 0x10) {
-      *(uint *)(x * 4 + (int)g_ScreenBufferArray[y]) =
+      ((uint *)g_ScreenBufferArray[y])[x] =
            uVar7 << (g_RedBitPosition.bytes[0] & 0x1f) |
            uVar2 << (g_GreenBitPosition.bytes[0] & 0x1f) |
            uVar3 << (g_BlueBitPosition.bytes[0] & 0x1f);

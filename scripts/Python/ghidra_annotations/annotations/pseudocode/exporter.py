@@ -73,7 +73,8 @@ from ghidra_annotations.annotations.pseudocode.suspects import (
     identify_direct_call_esp_uncertainty, identify_lea_esp_stack_addr,
     identify_special_functions, identify_displaced_global_access,
     detect_content_suspects, build_global_interval_map,
-    identify_missing_cave_copy
+    identify_missing_cave_copy, identify_unrolled_memset_blocks,
+    identify_unrolled_memcpy_blocks
 )
 from ghidra_annotations.annotations.pseudocode.stack_patterns import (
     summarize_stack_patterns
@@ -487,6 +488,15 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map,
     # Cross-reference .cpp/.asm: detect missing Watcom cave-block struct memcpys
     # that leave decompile locals uninitialized.
     suspects.extend(identify_missing_cave_copy(decompiled_code, result.assembly_code))
+
+    # Detect inline `REP STOS{B,W,D}` (Watcom inline memset) — Ghidra unrolls
+    # these to countdown for-loops that the source-text detectors miss.
+    suspects.extend(identify_unrolled_memset_blocks(result.assembly_code))
+
+    # Same for `REP MOVS{B,W,D}` (Watcom inline memcpy). The source-side
+    # detector catches the typed-pointer-deref shape but misses arrow/index
+    # store forms; the asm fingerprint catches all of them.
+    suspects.extend(identify_unrolled_memcpy_blocks(result.assembly_code))
 
     # Identify P-code based suspects (fixable patterns like CALLIND+ESP)
     # Pass existing overrides to separate unfixed from resolved suspects

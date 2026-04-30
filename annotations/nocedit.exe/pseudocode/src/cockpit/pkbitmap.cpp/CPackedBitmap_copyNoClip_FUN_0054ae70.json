@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 86,
+    "complexity_score": 61,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 61,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 187
   },
   "cross_references": [
@@ -145,6 +143,26 @@
     },
     "pcode_op_count": 574
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(ushort *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar5 = (ushort *)((int)this_ptr->packed_data + (int)*this_ptr->row_pointers);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar3 = *(int *)((int)this_ptr->row_pointers + local_1c + 4);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 48,
     "local_size": 32,
@@ -211,7 +229,7 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 49,
-          "line": 61,
+          "line": 59,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -220,22 +238,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(ushort *)((int)",
-      "severity": "moderate",
-      "text": "puVar5 = (ushort *)((int)this_ptr->packed_data + (int)*this_ptr->row_pointers);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 50,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "iVar3 = *(int *)((int)this_ptr->row_pointers + local_1c + 4);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

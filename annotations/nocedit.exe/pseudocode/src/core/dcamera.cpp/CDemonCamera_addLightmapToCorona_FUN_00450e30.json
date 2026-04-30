@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 115,
+    "complexity_score": 75,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 75,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast",
-      "warning_deadcode_restart"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 217
   },
   "cross_references": [
@@ -127,6 +124,35 @@
     },
     "pcode_op_count": 633
   },
+  "resolved_suspects": [
+    {
+      "description": "Deadcode elimination delayed",
+      "line": 2,
+      "match": "WARNING: Restarted to delay deadcode elimination",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Restarted to delay deadcode elimination for space: stack */",
+      "type": "warning_deadcode_restart"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(uint *)((int)light_source",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)((int)light_source->corona_visibility_buffers +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(int *)((int)light_source",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)((int)light_source->corona_lightmap_indices +",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 44,
     "local_size": 36,
@@ -178,30 +204,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Deadcode elimination delayed",
-      "line": 2,
-      "match": "WARNING: Restarted to delay deadcode elimination",
-      "severity": "mild",
-      "text": "/* WARNING: Restarted to delay deadcode elimination for space: stack */",
-      "type": "warning_deadcode_restart"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 33,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "puVar3 = (uint *)((int)light_source->corona_visibility_buffers +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar4 = (int *)((int)light_source->corona_lightmap_indices +",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

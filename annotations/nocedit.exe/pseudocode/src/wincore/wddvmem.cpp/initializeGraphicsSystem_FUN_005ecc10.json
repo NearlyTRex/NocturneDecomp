@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 60,
+    "complexity_score": 45,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 19,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 45,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 182
   },
   "cross_references": [
@@ -235,6 +233,17 @@
     },
     "pcode_op_count": 548
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(void *)((int)g_SoftwareFrameBuffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -258,14 +267,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

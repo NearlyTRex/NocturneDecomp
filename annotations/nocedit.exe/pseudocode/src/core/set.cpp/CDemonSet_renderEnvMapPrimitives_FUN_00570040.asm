@@ -10,8 +10,7 @@
 ; int              Stack[0x10]:4   alpha
 ; int              Stack[0x14]:4   stride
 ; Local Variables:
-; SMRGLHeaderPrimitive Stack[-0xf4]:24  SStack_f4
-; int[12]          Stack[-0xdc]:48  aiStack_dc
+; SMRGLPrimitiveQuad Stack[-0xf4]:72  SStack_f4
 ; undefined4       Stack[-0xac]:4  local_ac
 ; undefined4       Stack[-0xa8]:4  uStack_a8
 ; undefined4       Stack[-0x6c]:4  local_6c

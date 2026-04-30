@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 230,
-    "complexity_score": 210,
+    "complexity_score": 110,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 95,
-    "suspect_count": 11,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -243,89 +243,9 @@
     {
       "description": "Complex pointer cast",
       "line": 48,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "*(uint *)((int)this_ptr->faces->vertices + iVar5 + -0x14) = 3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 50,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar5 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 54,
-      "match": "(UIntegerFloat *)((int)",
-      "severity": "moderate",
-      "text": "pUVar1 = (UIntegerFloat *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 62,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar5 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(UIntegerFloat *)((int)",
-      "severity": "moderate",
-      "text": "pUVar1 = (UIntegerFloat *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 73,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar5 = (int *)((int)&pSVar3->vertices[2].vertex_index + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 79,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 81,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar5 = (int *)((int)&this_ptr->faces->vertices[0].vertex_index + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 83,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar5 = (int *)((int)&this_ptr->faces->vertices[1].vertex_index + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 86,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar5 = (int *)((int)&this_ptr->faces->vertices[2].vertex_index + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 94,
-      "match": "(SMRGLHeaderPrimitive *)((int)",
-      "severity": "moderate",
-      "text": "poly_data = (SMRGLHeaderPrimitive *)((int)&(poly_data->base).type + poly_stride);",
       "type": "pointer_cast"
     }
   ]

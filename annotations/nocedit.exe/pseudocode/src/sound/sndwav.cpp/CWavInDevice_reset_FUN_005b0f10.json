@@ -143,7 +143,7 @@
     {
       "description": "Complex pointer cast",
       "line": 19,
-      "match": "(LPWAVEHDR *)((int)",
+      "match": "(LPWAVEHDR *)((int)g_WaveInHeaders",
       "severity": "moderate",
       "text": "if (*(LPWAVEHDR *)((int)g_WaveInHeaders + iVar2) != (LPWAVEHDR)0x0) {",
       "type": "pointer_cast"
@@ -151,7 +151,7 @@
     {
       "description": "Complex pointer cast",
       "line": 21,
-      "match": "(LPWAVEHDR *)((int)",
+      "match": "(LPWAVEHDR *)((int)g_WaveInHeaders",
       "severity": "moderate",
       "text": "(g_WaveInHandle,*(LPWAVEHDR *)((int)g_WaveInHeaders + iVar2),0x20);",
       "type": "pointer_cast"

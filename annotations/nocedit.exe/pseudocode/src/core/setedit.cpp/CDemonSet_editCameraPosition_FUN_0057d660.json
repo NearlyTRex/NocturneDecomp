@@ -819,7 +819,7 @@
     {
       "description": "Complex pointer cast",
       "line": 284,
-      "match": "(char *)(*piVar1 * 0x1a4 + (int)",
+      "match": "(char *)(*piVar1 * 0x1a4 + (int)p_Stack_20",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "engine_2d_c_drawTextXY_FUN_00402130(0,y,(char *)(*piVar1 * 0x1a4 + (int)p_Stack_20));",
@@ -1127,7 +1127,7 @@
     {
       "description": "Complex pointer cast",
       "line": 148,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)auStack_d80",
       "severity": "moderate",
       "text": "*(uint *)((int)auStack_d80 + iVar20) = uVar16 | uVar12;",
       "type": "pointer_cast"
@@ -1135,7 +1135,7 @@
     {
       "description": "Complex pointer cast",
       "line": 282,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)auStack_96c",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)auStack_96c + iVar13);",
       "type": "pointer_cast"
@@ -1143,7 +1143,7 @@
     {
       "description": "Complex pointer cast",
       "line": 294,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pvStack_1c",
       "severity": "moderate",
       "text": "if (*(int *)((int)pvStack_1c + 0x144) == 0) {",
       "type": "pointer_cast"
@@ -1168,7 +1168,7 @@
       "description": "Complex pointer cast",
       "introduced_by": "keep",
       "line": 159,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)auStack_1180",
       "severity": "moderate",
       "text": "*(int *)((int)auStack_1180 + iVar20) = (int)uVar11 / 3 + (int)fStack_50 + iStack_4c;",
       "type": "pointer_cast"

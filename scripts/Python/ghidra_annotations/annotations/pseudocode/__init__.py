@@ -28,7 +28,9 @@ from ghidra_annotations.annotations.pseudocode.suspects import (
     identify_format_string_mismatch,
     identify_raw_address_constant_suspects,
     identify_unrolled_strcpy_loops,
-    identify_unrolled_memcpy_loops
+    identify_unrolled_memcpy_loops,
+    identify_unrolled_memset_blocks,
+    identify_unrolled_memcpy_blocks
 )
 from ghidra_annotations.annotations.pseudocode.decompiler import (
     decompile_function_raw,

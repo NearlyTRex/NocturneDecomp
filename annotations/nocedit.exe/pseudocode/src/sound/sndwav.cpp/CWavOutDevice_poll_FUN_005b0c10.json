@@ -159,7 +159,7 @@
     {
       "description": "Complex pointer cast",
       "line": 13,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_WaveOutHeaders",
       "severity": "moderate",
       "text": "if ((*(int *)((int)g_WaveOutHeaders + iVar2) == 0) ||",
       "type": "pointer_cast"
@@ -167,7 +167,7 @@
     {
       "description": "Complex pointer cast",
       "line": 14,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_WaveOutBuffers",
       "severity": "moderate",
       "text": "(*(int *)((int)g_WaveOutBuffers + iVar2) == 0)) {",
       "type": "pointer_cast"
@@ -175,7 +175,7 @@
     {
       "description": "Complex pointer cast",
       "line": 18,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_WaveOutHeaders",
       "severity": "moderate",
       "text": "if (((*(byte *)(*(int *)((int)g_WaveOutHeaders + iVar2) + 0x10) & 1) != 0) &&",
       "type": "pointer_cast"

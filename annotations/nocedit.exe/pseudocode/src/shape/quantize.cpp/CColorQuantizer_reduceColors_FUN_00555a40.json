@@ -125,15 +125,6 @@
   },
   "resolved_suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 64,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "iVar9 = *(int *)((int)&this_ptr->boxes[local_4c + -1].pixel_count + 2) >> 0x10;",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 96,
       "match": "._0_2_",
@@ -309,7 +300,7 @@
     {
       "description": "Complex pointer cast",
       "line": 68,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)this_ptr",
       "severity": "moderate",
       "text": "if (iVar9 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_44)) {",
       "type": "pointer_cast"
@@ -317,7 +308,7 @@
     {
       "description": "Complex pointer cast",
       "line": 71,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)this_ptr",
       "severity": "moderate",
       "text": "(iVar9 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + iVar1)));",
       "type": "pointer_cast"
@@ -325,7 +316,7 @@
     {
       "description": "Complex pointer cast",
       "line": 75,
-      "match": "(uint *)(local_44 + (int)",
+      "match": "(uint *)(local_44 + (int)this_ptr",
       "severity": "moderate",
       "text": "puVar2 = (uint *)(local_44 + (int)this_ptr->pixel_data);",
       "type": "pointer_cast"
@@ -333,7 +324,7 @@
     {
       "description": "Complex pointer cast",
       "line": 77,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "*puVar2 = *(uint *)((int)this_ptr->pixel_data + iVar8 * 4);",
       "type": "pointer_cast"
@@ -341,7 +332,7 @@
     {
       "description": "Complex pointer cast",
       "line": 78,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "*(uint *)((int)this_ptr->pixel_data + iVar8 * 4) = uVar1;",
       "type": "pointer_cast"
@@ -349,7 +340,7 @@
     {
       "description": "Complex pointer cast",
       "line": 102,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)this_ptr",
       "severity": "moderate",
       "text": "if (iVar9 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_38 + 1)) {",
       "type": "pointer_cast"
@@ -357,7 +348,7 @@
     {
       "description": "Complex pointer cast",
       "line": 105,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)this_ptr",
       "severity": "moderate",
       "text": "(iVar9 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + iVar1 + 1)))) {",
       "type": "pointer_cast"
@@ -365,7 +356,7 @@
     {
       "description": "Complex pointer cast",
       "line": 109,
-      "match": "(uint *)(local_38 + (int)",
+      "match": "(uint *)(local_38 + (int)this_ptr",
       "severity": "moderate",
       "text": "puVar2 = (uint *)(local_38 + (int)this_ptr->pixel_data);",
       "type": "pointer_cast"
@@ -373,7 +364,7 @@
     {
       "description": "Complex pointer cast",
       "line": 111,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "*puVar2 = *(uint *)((int)this_ptr->pixel_data + iVar8 * 4);",
       "type": "pointer_cast"
@@ -381,7 +372,7 @@
     {
       "description": "Complex pointer cast",
       "line": 112,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "*(uint *)((int)this_ptr->pixel_data + iVar8 * 4) = uVar1;",
       "type": "pointer_cast"
@@ -389,7 +380,7 @@
     {
       "description": "Complex pointer cast",
       "line": 136,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)this_ptr",
       "severity": "moderate",
       "text": "if (iVar8 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_40 + 2)) {",
       "type": "pointer_cast"
@@ -397,7 +388,7 @@
     {
       "description": "Complex pointer cast",
       "line": 139,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)this_ptr",
       "severity": "moderate",
       "text": "(iVar8 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + iVar1 + 2)))) {",
       "type": "pointer_cast"
@@ -405,7 +396,7 @@
     {
       "description": "Complex pointer cast",
       "line": 143,
-      "match": "(uint *)(local_40 + (int)",
+      "match": "(uint *)(local_40 + (int)this_ptr",
       "severity": "moderate",
       "text": "puVar2 = (uint *)(local_40 + (int)this_ptr->pixel_data);",
       "type": "pointer_cast"
@@ -413,7 +404,7 @@
     {
       "description": "Complex pointer cast",
       "line": 145,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "*puVar2 = *(uint *)((int)this_ptr->pixel_data + iVar9 * 4);",
       "type": "pointer_cast"
@@ -421,7 +412,7 @@
     {
       "description": "Complex pointer cast",
       "line": 146,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "*(uint *)((int)this_ptr->pixel_data + iVar9 * 4) = uVar1;",
       "type": "pointer_cast"
@@ -429,7 +420,7 @@
     {
       "description": "Complex pointer cast",
       "line": 170,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)this_ptr",
       "severity": "moderate",
       "text": "if (iVar1 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_3c + 3)) {",
       "type": "pointer_cast"
@@ -437,7 +428,7 @@
     {
       "description": "Complex pointer cast",
       "line": 173,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)this_ptr",
       "severity": "moderate",
       "text": "(iVar1 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + iVar4 + 3)))) {",
       "type": "pointer_cast"
@@ -445,7 +436,7 @@
     {
       "description": "Complex pointer cast",
       "line": 177,
-      "match": "(uint *)(local_3c + (int)",
+      "match": "(uint *)(local_3c + (int)this_ptr",
       "severity": "moderate",
       "text": "puVar5 = (uint *)(local_3c + (int)this_ptr->pixel_data);",
       "type": "pointer_cast"
@@ -453,7 +444,7 @@
     {
       "description": "Complex pointer cast",
       "line": 179,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "*puVar5 = *(uint *)((int)this_ptr->pixel_data + iVar7 * 4);",
       "type": "pointer_cast"
@@ -461,7 +452,7 @@
     {
       "description": "Complex pointer cast",
       "line": 180,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "*(uint *)((int)this_ptr->pixel_data + iVar7 * 4) = uVar1;",
       "type": "pointer_cast"

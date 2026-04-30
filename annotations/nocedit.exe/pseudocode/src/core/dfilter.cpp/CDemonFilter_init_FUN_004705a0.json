@@ -236,7 +236,7 @@
     {
       "description": "Complex pointer cast",
       "line": 37,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)this_ptr",
       "severity": "moderate",
       "text": "fVar3 = (float)*(byte *)((int)this_ptr->data_buffer + this_ptr->size * iVar5 + iVar4) *",
       "type": "pointer_cast"
@@ -244,7 +244,7 @@
     {
       "description": "Complex pointer cast",
       "line": 44,
-      "match": "(byte *)(this_ptr->size * iVar5 + iVar4 + (int)",
+      "match": "(byte *)(this_ptr->size * iVar5 + iVar4 + (int)this_ptr",
       "severity": "moderate",
       "text": "*(byte *)(this_ptr->size * iVar5 + iVar4 + (int)this_ptr->data_buffer) = local_1c;",
       "type": "pointer_cast"

@@ -6,17 +6,11 @@
 // Signature: int __cdecl support_codec_cpp_CCodec_finalizeBuffer_FUN_0043ed50(CCodec *this_ptr,char *buffer_ptr,int *buffer_size_ptr)
 
 #include "nocturne.h"
-#include "system/stream_compat.h"
-#include <strstream>
+#include "stream_compat.h"
 
 int __cdecl support_codec_cpp_CCodec_finalizeBuffer_FUN_0043ed50(CCodec *this_ptr,char *buffer_ptr,int *buffer_size_ptr)
 
 {
-  int iVar1;
-
-  std::ostrstream oss(buffer_ptr, *buffer_size_ptr, std::ios::out | std::ios::binary);
-  iVar1 = (*this_ptr->vtable->finalize)(this_ptr,watcom_ostream_from(oss));
-  int written = oss.tellp();
-  *buffer_size_ptr = *buffer_size_ptr - written;
-  return iVar1;
+  watcom_buffer_ostream oss(buffer_ptr, buffer_size_ptr);
+  return (*this_ptr->vtable->finalize)(this_ptr, oss);
 }

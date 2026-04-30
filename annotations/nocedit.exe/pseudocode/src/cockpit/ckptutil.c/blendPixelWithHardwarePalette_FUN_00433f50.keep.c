@@ -40,7 +40,7 @@ void __cdecl cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00433f50(int x
               (g_BlueBitCount.bytes[0] & 0x1f);
     }
     else {
-      puVar9 = (uint *)(x * 4 + (int)g_ScreenBufferArray[y]);
+      puVar9 = &((uint *)g_ScreenBufferArray[y])[x];
       uVar5 = *puVar9 >> (g_RedBitPosition.bytes[0] & 0x1f);
       uVar6 = *puVar9 >> (g_GreenBitPosition.bytes[0] & 0x1f);
       uVar7 = *puVar9 >> (g_BlueBitPosition.bytes[0] & 0x1f);

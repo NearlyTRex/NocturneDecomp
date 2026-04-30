@@ -8,14 +8,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1929,
-    "complexity_score": 809,
+    "complexity_score": 914,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 809,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 10,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 2738
   },
   "cross_references": [],
@@ -154,15 +156,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 303,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "uStack_5e0._4_4_ = *(uint *)((int)&(pCVar26->position).x + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 303,
       "match": "._4_4_",
@@ -179,15 +172,6 @@
       "severity": "mild",
       "text": "uStack_5d8._0_4_ = *(uint *)&(pCVar26->position).y;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 305,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "uStack_5d8._4_4_ = *(uint *)((int)&(pCVar26->position).y + 4);",
-      "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
@@ -208,15 +192,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 307,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "uStack_5d0._4_4_ = *(uint *)((int)&(pCVar26->position).z + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 307,
       "match": "._4_4_",
@@ -226,60 +201,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 310,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "uStack_5c4 = *(uint *)((int)&(pCVar26->position).x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 312,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "uStack_5bc = *(uint *)((int)&(pCVar26->position).y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 314,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "uStack_5b4 = *(uint *)((int)&(pCVar26->position).z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 317,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "uStack_5ac = *(uint *)((int)&(pCVar26->position).x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 319,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "uStack_5a4 = *(uint *)((int)&(pCVar26->position).y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 321,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "uStack_59c = *(uint *)((int)&(pCVar26->position).z + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 323,
       "match": "._0_4_",
@@ -287,15 +208,6 @@
       "severity": "mild",
       "text": "uStack_568._0_4_ = *(uint *)&this_ptr->uv_coords[0].impl.x;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 324,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "uStack_568._4_4_ = *(uint *)((int)&this_ptr->uv_coords[0].impl.x + 4);",
-      "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
@@ -316,15 +228,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 326,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "uStack_560._4_4_ = *(uint *)((int)&this_ptr->uv_coords[0].impl.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 326,
       "match": "._4_4_",
@@ -334,42 +237,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 328,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "uStack_554 = *(uint *)((int)&this_ptr->uv_coords[1].impl.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 330,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "uStack_54c = *(uint *)((int)&this_ptr->uv_coords[1].impl.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 332,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "uStack_544 = *(uint *)((int)&this_ptr->uv_coords[2].impl.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 334,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "uStack_53c = *(uint *)((int)&this_ptr->uv_coords[2].impl.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 336,
       "match": "._0_4_",
@@ -377,15 +244,6 @@
       "severity": "mild",
       "text": "dStack_320._0_4_ = *(uint *)&(pCVar26->position).x;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 337,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "dStack_320._4_4_ = *(uint *)((int)&(pCVar26->position).x + 4);",
-      "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
@@ -406,15 +264,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 340,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "dStack_318._4_4_ = *(uint *)((int)&(pCVar26->position).y + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 340,
       "match": "._4_4_",
@@ -433,15 +282,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 343,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "dStack_310._4_4_ = *(uint *)((int)&(pCVar26->position).z + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 343,
       "match": "._4_4_",
@@ -449,33 +289,6 @@
       "severity": "mild",
       "text": "dStack_310._4_4_ = *(uint *)((int)&(pCVar26->position).z + 4);",
       "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 346,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "uStack_214 = *(uint *)((int)&(other_poly->normal).impl.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 349,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "uStack_20c = *(uint *)((int)&(other_poly->normal).impl.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 352,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "uStack_204 = *(uint *)((int)&(other_poly->normal).impl.z + 4);",
-      "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
@@ -507,7 +320,7 @@
     {
       "description": "Complex pointer cast",
       "line": 369,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar25",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
@@ -516,7 +329,7 @@
     {
       "description": "Complex pointer cast",
       "line": 370,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar28",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
@@ -552,7 +365,7 @@
     {
       "description": "Complex pointer cast",
       "line": 424,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar25",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
@@ -561,7 +374,7 @@
     {
       "description": "Complex pointer cast",
       "line": 425,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar28",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
@@ -570,7 +383,7 @@
     {
       "description": "Complex pointer cast",
       "line": 434,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar25",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
@@ -579,7 +392,7 @@
     {
       "description": "Complex pointer cast",
       "line": 435,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar28",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
@@ -588,7 +401,7 @@
     {
       "description": "Complex pointer cast",
       "line": 444,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar25",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
@@ -633,7 +446,7 @@
     {
       "description": "Complex pointer cast",
       "line": 474,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar25",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
@@ -642,7 +455,7 @@
     {
       "description": "Complex pointer cast",
       "line": 475,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar28",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
@@ -651,7 +464,7 @@
     {
       "description": "Complex pointer cast",
       "line": 483,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar14",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar14 = (double *)((int)pdVar14 + (uint)bVar16 * -8 + 4);",
@@ -660,7 +473,7 @@
     {
       "description": "Complex pointer cast",
       "line": 485,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar25",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
@@ -669,7 +482,7 @@
     {
       "description": "Complex pointer cast",
       "line": 495,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar12",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar12 = (double *)((int)pdVar12 + (uint)bVar16 * -8 + 4);",
@@ -812,17 +625,8 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 564,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[3].x + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 565,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)dStack_1e0",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)dStack_1e0._4_4_ + 4);",
@@ -848,17 +652,8 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 567,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[3].y + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 568,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)dStack_1e0",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)dStack_1e0._4_4_ + 0xc);",
@@ -884,17 +679,8 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 570,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[3].z + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 571,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)dStack_1e0",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)dStack_1e0._4_4_ + 0x14);",
@@ -973,69 +759,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 599,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[0].x + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 600,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&uStack_5e0 + iStack_50 * 0x18 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 603,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[0].y + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 604,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&uStack_5d8 + iStack_50 * 0x18 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 609,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].x + 4) = uStack_34c;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 611,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].y + 4) = uStack_344;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 613,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].z + 4) = uStack_33c;",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 616,
       "match": "._4_4_",
@@ -1046,17 +769,8 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 617,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[2].x + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 618,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)dStack_1e0",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)dStack_1e0._4_4_ + 4);",
@@ -1082,17 +796,8 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 620,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[2].y + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 621,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)dStack_1e0",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)dStack_1e0._4_4_ + 0xc);",
@@ -1118,17 +823,8 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 623,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[2].z + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 624,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)dStack_1e0",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)dStack_1e0._4_4_ + 0x14);",
@@ -1173,7 +869,7 @@
     {
       "description": "Complex pointer cast",
       "line": 654,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar25",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
@@ -1182,7 +878,7 @@
     {
       "description": "Complex pointer cast",
       "line": 655,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar28",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
@@ -1191,7 +887,7 @@
     {
       "description": "Complex pointer cast",
       "line": 664,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar25",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
@@ -1200,7 +896,7 @@
     {
       "description": "Complex pointer cast",
       "line": 665,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar28",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
@@ -1209,7 +905,7 @@
     {
       "description": "Complex pointer cast",
       "line": 674,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar25",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar25 = (double *)((int)pdVar25 + (uint)bVar16 * -8 + 4);",
@@ -1241,240 +937,6 @@
       "severity": "mild",
       "text": "uStack_530 = dStack_130._0_4_;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 730,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[0].x + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 731,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&uStack_5e0 + iVar19 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 734,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[0].y + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 735,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&uStack_5d8 + iVar19 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 738,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[0].z + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 739,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&uStack_5d0 + iVar19 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 741,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly2).uvs[0].x + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 742,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&uStack_568 + iVar7 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 744,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly2).uvs[0].y + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 745,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&uStack_560 + iVar7 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 747,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].x + 4) = uStack_3dc;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 749,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].y + 4) = uStack_3d4;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 751,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].z + 4) = uStack_3cc;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 779,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly1).vertices[0].x + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 780,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&uStack_5e0 + iVar19 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 783,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly1).vertices[0].y + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 784,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&uStack_5d8 + iVar19 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 787,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly1).vertices[0].z + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 788,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&uStack_5d0 + iVar19 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 790,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly1).uvs[0].x + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 791,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&uStack_568 + iVar7 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 793,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly1).uvs[0].y + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 794,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&uStack_560 + iVar7 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 796,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly1).vertices[1].x + 4) = uStack_3dc;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 798,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly1).vertices[1].y + 4) = uStack_3d4;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 800,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(out_result->poly1).vertices[1].z + 4) = uStack_3cc;",
-      "type": "pointer_cast"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
@@ -3133,7 +2595,88 @@
     ],
     "severity": "medium"
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 304,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005ce9a5: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 495,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005cecbb: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 511,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005ced13: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 532,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005ced77: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 961,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005cf3d3: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 976,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005cf424: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 998,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005cf48f: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 1101,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005cf66f: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 1116,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005cf6bc: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 1135,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005cf714: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

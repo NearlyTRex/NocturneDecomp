@@ -7,14 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 7459,
-    "complexity_score": 3352,
+    "complexity_score": 3377,
     "cross_reference_count": 4,
     "function_call_count": 81,
     "global_count": 341,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 3337,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
+      "unrolled_memcpy",
       "warning_type_propagation"
     ],
     "total_lines": 10796
@@ -2615,7 +2616,7 @@
     {
       "description": "Complex pointer cast",
       "line": 937,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)local_c8c",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "if (*(int *)((int)local_c8c + iVar30) != 0) {",
@@ -4059,6 +4060,22 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 4093,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0055d6b5: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 4096,
+      "match": "MOVSB.REP",
+      "severity": "moderate",
+      "text": "// 0055d6bc: MOVSB.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

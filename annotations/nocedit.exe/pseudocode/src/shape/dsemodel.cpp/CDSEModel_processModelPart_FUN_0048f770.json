@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 204,
-    "complexity_score": 68,
+    "complexity_score": 83,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 10,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 68,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 272
   },
   "cross_references": [
@@ -243,5 +245,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 59,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0048f816: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

@@ -7,17 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1764,
-    "complexity_score": 914,
+    "complexity_score": 809,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 779,
-    "suspect_count": 12,
+    "suspect_count": 2,
     "suspect_types": [
       "param_count_too_many",
-      "pointer_cast",
-      "unnamed_local"
+      "unrolled_memcpy"
     ],
     "total_lines": 2543
   },
@@ -250,7 +249,7 @@
     {
       "description": "Complex pointer cast",
       "line": 273,
-      "match": "(CMatrix3x3f *)((int)",
+      "match": "(CMatrix3x3f *)((int)pCVar15",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pCVar15 = (CMatrix3x3f *)((int)pCVar15 + (uint)bVar17 * -8 + 4);",
@@ -259,7 +258,7 @@
     {
       "description": "Complex pointer cast",
       "line": 686,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)local_3d0",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "iVar11 = *(int *)((int)local_3d0 + iVar18);",
@@ -962,28 +961,12 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 157,
-      "match": "(CVector3f *)((int)",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 413,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "pCVar14 = (CVector3f *)((int)(pCVar14 + 4) + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 158,
-      "match": "(CVector3f *)((int)",
-      "severity": "moderate",
-      "text": "pCVar16 = (CVector3f *)((int)(pCVar16 + 4) + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 304,
-      "match": "(CVector3f *)((int)",
-      "severity": "moderate",
-      "text": "pCVar14 = (CVector3f *)((int)(pCVar14 + 4) + 4);",
-      "type": "pointer_cast"
+      "text": "// 0041e8ad: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     },
     {
       "call_site_count": 2,
@@ -995,78 +978,6 @@
       "param_delta": -1,
       "text": "Function declares 2 params but call sites push 1 (1 extra)",
       "type": "param_count_too_many"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 36,
-      "match": "local_3f4",
-      "severity": "mild",
-      "text": "float local_3f4;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 37,
-      "match": "local_3f0",
-      "severity": "mild",
-      "text": "float local_3f0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 38,
-      "match": "local_3ec",
-      "severity": "mild",
-      "text": "float local_3ec;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 39,
-      "match": "local_3e8",
-      "severity": "mild",
-      "text": "float local_3e8;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 40,
-      "match": "local_3e4",
-      "severity": "mild",
-      "text": "float local_3e4;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 41,
-      "match": "local_3e0",
-      "severity": "mild",
-      "text": "float local_3e0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 42,
-      "match": "local_3dc",
-      "severity": "mild",
-      "text": "float local_3dc;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 43,
-      "match": "local_3d8",
-      "severity": "mild",
-      "text": "float local_3d8;",
-      "type": "unnamed_local"
     }
   ]
 }

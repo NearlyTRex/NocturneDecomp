@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 665,
-    "complexity_score": 407,
+    "complexity_score": 347,
     "cross_reference_count": 6,
     "function_call_count": 27,
     "global_count": 43,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 262,
-    "suspect_count": 12,
+    "suspect_count": 6,
     "suspect_types": [
-      "unnamed_local",
+      "unrolled_memcpy",
       "unrolled_strcat",
       "unrolled_strchr",
       "unrolled_strcpy",
@@ -921,67 +921,12 @@
       "type": "unrolled_strchr"
     },
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 27,
-      "match": "local_114",
-      "severity": "mild",
-      "text": "char local_114 [100];",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 33,
-      "match": "local_34",
-      "severity": "mild",
-      "text": "int local_34;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 34,
-      "match": "local_30",
-      "severity": "mild",
-      "text": "int local_30;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 35,
-      "match": "local_2c",
-      "severity": "mild",
-      "text": "int local_2c;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 37,
-      "match": "local_24",
-      "severity": "mild",
-      "text": "int local_24;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 38,
-      "match": "local_20",
-      "severity": "mild",
-      "text": "int local_20;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 51,
-      "match": "local_114",
-      "severity": "mild",
-      "text": "pcVar7 = local_114;",
-      "type": "unnamed_local"
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 90,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005b2092: MOVSD.REP ES:EDI,ESI  ; g_SoundResultBufferTemplate | g_SoundResultBufferTemplate+4",
+      "type": "unrolled_memcpy"
     }
   ]
 }

@@ -4,21 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 69,
+    "complexity_score": 24,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 24,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast",
-      "suspect_float",
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 75
   },
   "cross_references": [
@@ -171,6 +167,35 @@
     },
     "pcode_op_count": 218
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 21,
+      "match": "3.58732e-43",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_18 = 3.58732e-43;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(float *)((int)g_IntensityToValueLookupTable",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)g_IntensityToValueLookupTable + iVar1) = local_18;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 36,
     "local_size": 28,
@@ -218,30 +243,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 21,
-      "match": "3.58732e-43",
-      "severity": "mild",
-      "text": "local_18 = 3.58732e-43;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)g_IntensityToValueLookupTable + iVar1) = local_18;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

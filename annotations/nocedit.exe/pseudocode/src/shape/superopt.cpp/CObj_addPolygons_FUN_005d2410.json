@@ -11,11 +11,11 @@
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 46,
     "suspect_count": 2,
     "suspect_types": [
-      "unnamed_local"
+      "unrolled_memcpy"
     ],
     "total_lines": 145
   },
@@ -134,7 +134,7 @@
     {
       "description": "Complex pointer cast",
       "line": 30,
-      "match": "(CPoly *)((int)",
+      "match": "(CPoly *)((int)pCVar2",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pCVar2 = (CPoly *)((int)pCVar2 + (uint)bVar6 * -8 + 4);",
@@ -143,7 +143,7 @@
     {
       "description": "Complex pointer cast",
       "line": 34,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)puVar5",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);",
@@ -152,7 +152,7 @@
     {
       "description": "Complex pointer cast",
       "line": 36,
-      "match": "(CPoly *)((int)",
+      "match": "(CPoly *)((int)pCVar2",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pCVar2 = (CPoly *)((int)pCVar2 + (uint)bVar6 * -2 + 1);",
@@ -207,22 +207,20 @@
   },
   "suspects": [
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 15,
-      "match": "local_10",
-      "severity": "mild",
-      "text": "uint local_10;",
-      "type": "unnamed_local"
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 54,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005d249f: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 23,
-      "match": "local_10",
-      "severity": "mild",
-      "text": "local_10 = this_ptr->poly_count;",
-      "type": "unnamed_local"
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 57,
+      "match": "MOVSB.REP",
+      "severity": "moderate",
+      "text": "// 005d24a6: MOVSB.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {

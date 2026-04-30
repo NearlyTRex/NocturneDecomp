@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 67,
+    "complexity_score": 52,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 52,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 168
   },
   "cross_references": [
@@ -168,14 +166,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(SVDBox *)((int)",
-      "severity": "moderate",
-      "text": "obb_a = (SVDBox *)((int)(this_ptr->vdir_boxes[0].rotation_matrix.m + -2) + local_28);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

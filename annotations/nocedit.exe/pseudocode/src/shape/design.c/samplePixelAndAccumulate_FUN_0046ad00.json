@@ -190,7 +190,7 @@
     {
       "description": "Complex pointer cast",
       "line": 14,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)rgb_buffer",
       "severity": "moderate",
       "text": "*red_accumulator = (double)*(byte *)((int)rgb_buffer + iVar3 + 2) * weight + *red_accumulator;",
       "type": "pointer_cast"
@@ -198,7 +198,7 @@
     {
       "description": "Complex pointer cast",
       "line": 15,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)rgb_buffer",
       "severity": "moderate",
       "text": "*green_accumulator = (double)*(byte *)((int)rgb_buffer + iVar3 + 1) * weight + *green_accumulator;",
       "type": "pointer_cast"
@@ -206,7 +206,7 @@
     {
       "description": "Complex pointer cast",
       "line": 16,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)rgb_buffer",
       "severity": "moderate",
       "text": "*blue_accumulator = (double)*(byte *)((int)rgb_buffer + iVar3) * weight + *blue_accumulator;",
       "type": "pointer_cast"
@@ -214,7 +214,7 @@
     {
       "description": "Complex pointer cast",
       "line": 17,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)alpha_buffer",
       "severity": "moderate",
       "text": "*alpha_accumulator = (double)*(byte *)((int)alpha_buffer + iVar4) * weight + *alpha_accumulator;",
       "type": "pointer_cast"

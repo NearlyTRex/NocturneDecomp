@@ -7,13 +7,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 171,
-    "complexity_score": 91,
+    "complexity_score": 81,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 32,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 66,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -344,16 +344,8 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 14,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "frame_buffer = (void *)((int)((height * stride + iVar1 * -8) - (uint)(iVar1 << 2 < 0)) >> 3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 63,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "*(int *)((int)g_ScreenBufferArray + iVar1) = width;",
       "type": "pointer_cast"

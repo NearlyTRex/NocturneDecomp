@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 276,
-    "complexity_score": 139,
+    "complexity_score": 94,
     "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 94,
-    "suspect_count": 4,
-    "suspect_types": [
-      "unnamed_local"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 370
   },
   "cross_references": [
@@ -235,7 +233,7 @@
     {
       "description": "Complex pointer cast",
       "line": 43,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)afStack_34",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(byte *)((int)afStack_34[1] + -0xb) = *(byte *)((int)afStack_34[1] + -0xb) ^ (byte)&local_74;",
@@ -244,7 +242,7 @@
     {
       "description": "Complex pointer cast",
       "line": 43,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)afStack_34",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(byte *)((int)afStack_34[1] + -0xb) = *(byte *)((int)afStack_34[1] + -0xb) ^ (byte)&local_74;",
@@ -360,44 +358,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 21,
-      "match": "local_2c",
-      "severity": "mild",
-      "text": "CVector3f local_2c;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 49,
-      "match": "local_2c",
-      "severity": "mild",
-      "text": "&local_2c,0);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 60,
-      "match": "local_2c",
-      "severity": "mild",
-      "text": "iVar8 = (*this_ptr->vtable->onCollision)(this_ptr,&local_2c);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 63,
-      "match": "local_2c",
-      "severity": "mild",
-      "text": "fVar7 = (local_2c.x * pCVar1->x + local_2c.y * (this_ptr->velocity).y +",
-      "type": "unnamed_local"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

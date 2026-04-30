@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 208,
+    "complexity_score": 73,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 58,
-    "suspect_count": 14,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_local",
       "warning_max_restarts"
     ],
     "total_lines": 204
@@ -297,123 +296,6 @@
       "severity": "severe",
       "text": "/* WARNING: Exceeded maximum restarts with more pending */",
       "type": "warning_max_restarts"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 20,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "IDirectSoundBuffer *local_18;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 21,
-      "match": "local_14",
-      "severity": "mild",
-      "text": "IDirectSound3DBuffer *local_14;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 27,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "local_18 = (IDirectSoundBuffer *)0x0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 28,
-      "match": "local_14",
-      "severity": "mild",
-      "text": "local_14 = (IDirectSound3DBuffer *)0x0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 42,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "(g_DirectSound,&DStack_40,&local_18,(LPUNKNOWN)0x0);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 44,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "(*local_18->vtable->QueryInterface)((IUnknown *)local_18,&g_IID_IDirectSound3DBuffer,(void **)&local_14);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 44,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "(*local_18->vtable->QueryInterface)((IUnknown *)local_18,&g_IID_IDirectSound3DBuffer,(void **)&local_14);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 44,
-      "match": "local_14",
-      "severity": "mild",
-      "text": "(*local_18->vtable->QueryInterface)((IUnknown *)local_18,&g_IID_IDirectSound3DBuffer,(void **)&local_14);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 45,
-      "match": "local_14",
-      "severity": "mild",
-      "text": "if (local_14 == (IDirectSound3DBuffer *)0x0) {",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 46,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "if (local_18 != (IDirectSoundBuffer *)0x0) {",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 47,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "(*local_18->vtable->Release)((IUnknown *)local_18);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 51,
-      "match": "local_14",
-      "severity": "mild",
-      "text": "(*local_14->vtable->QueryInterface)((IUnknown *)local_14,&g_IID_IKsPropertySet,(void **)&g_DirectSoundPropertySet);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 51,
-      "match": "local_14",
-      "severity": "mild",
-      "text": "(*local_14->vtable->QueryInterface)((IUnknown *)local_14,&g_IID_IKsPropertySet,(void **)&g_DirectSoundPropertySet);",
-      "type": "unnamed_local"
     }
   ]
 }

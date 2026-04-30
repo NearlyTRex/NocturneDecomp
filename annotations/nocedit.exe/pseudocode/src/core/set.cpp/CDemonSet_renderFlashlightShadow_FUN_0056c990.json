@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 352,
-    "complexity_score": 132,
+    "complexity_score": 117,
     "cross_reference_count": 1,
     "function_call_count": 25,
     "global_count": 36,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 117,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_type_propagation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 469
   },
   "cross_references": [
@@ -452,6 +450,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 42,
       "match": "&stack0x00000000",
@@ -543,7 +550,7 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 39,
-          "line": 109,
+          "line": 107,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -552,14 +559,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    }
-  ]
+  "suspects": []
 }

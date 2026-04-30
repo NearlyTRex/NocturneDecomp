@@ -7,17 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 307,
-    "complexity_score": 226,
+    "complexity_score": 166,
     "cross_reference_count": 8,
     "function_call_count": 4,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 151,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "negative_offset",
-      "pointer_cast",
-      "unnamed_local"
+      "negative_offset"
     ],
     "total_lines": 458
   },
@@ -527,53 +525,12 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 126,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "local_50.x = *(float *)((int)&(pSVar13->position).x + iVar14);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 127,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "local_50.y = *(float *)((int)&(pSVar13->position).y + iVar14);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 128,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "local_50.z = *(float *)((int)&(pSVar13->position).z + iVar14);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 142,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&(local_30->models[0].points)->vertex_index + iVar14) = iVar6;",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
       "line": 148,
       "match": "local_34[-1].",
       "severity": "mild",
       "text": "local_34 = (CMorph *)&local_34[-1].models[1].parts[1].start_vertex;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 36,
-      "match": "local_c8",
-      "severity": "mild",
-      "text": "CBoundingBox3D local_c8[2];",
-      "type": "unnamed_local"
     }
   ]
 }

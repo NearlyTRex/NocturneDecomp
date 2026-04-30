@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 47,
+    "complexity_score": 62,
     "cross_reference_count": 34,
     "function_call_count": 1,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 22,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 62
   },
@@ -331,7 +332,7 @@
     {
       "description": "Complex pointer cast",
       "line": 21,
-      "match": "(CSfxOptions *)((int)",
+      "match": "(CSfxOptions *)((int)pCVar2",
       "severity": "moderate",
       "text": "pCVar2 = (CSfxOptions *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -339,10 +340,18 @@
     {
       "description": "Complex pointer cast",
       "line": 22,
-      "match": "(CSfxOptions *)((int)",
+      "match": "(CSfxOptions *)((int)pCVar3",
       "severity": "moderate",
       "text": "pCVar3 = (CSfxOptions *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 24,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005a8c76: MOVSD.REP ES:EDI,ESI  ; g_SfxOptions | g_SfxLastSlot.volume",
+      "type": "unrolled_memcpy"
     }
   ]
 }

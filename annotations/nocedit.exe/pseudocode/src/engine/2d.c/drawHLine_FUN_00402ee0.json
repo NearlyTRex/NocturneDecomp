@@ -376,7 +376,7 @@
     {
       "description": "Complex pointer cast",
       "line": 29,
-      "match": "(void *)(x1 + (int)",
+      "match": "(void *)(x1 + (int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "((void *)(x1 + (int)g_ScreenBufferArray[y]),g_ActiveRenderColor,count);",
       "type": "pointer_cast"
@@ -384,7 +384,7 @@
     {
       "description": "Complex pointer cast",
       "line": 33,
-      "match": "(ushort *)(x1 * 2 + (int)",
+      "match": "(ushort *)(x1 * 2 + (int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "puVar3 = (ushort *)(x1 * 2 + (int)g_ScreenBufferArray[y]);",
       "type": "pointer_cast"
@@ -392,7 +392,7 @@
     {
       "description": "Complex pointer cast",
       "line": 46,
-      "match": "(uint *)(x1 * 4 + (int)",
+      "match": "(uint *)(x1 * 4 + (int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "puVar4 = (uint *)(x1 * 4 + (int)g_ScreenBufferArray[y]);",
       "type": "pointer_cast"

@@ -141,7 +141,7 @@
     {
       "description": "Complex pointer cast",
       "line": 13,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "puVar1 = (uint *)((int)this_ptr->spatial_grid_ptr->cell_start_indices[0][0] + iVar2);",
       "type": "pointer_cast"
@@ -149,7 +149,7 @@
     {
       "description": "Complex pointer cast",
       "line": 19,
-      "match": "(uint *)(iVar3 + (int)",
+      "match": "(uint *)(iVar3 + (int)this_ptr",
       "severity": "moderate",
       "text": "puVar1 = (uint *)(iVar3 + (int)this_ptr->spatial_grid_data);",
       "type": "pointer_cast"

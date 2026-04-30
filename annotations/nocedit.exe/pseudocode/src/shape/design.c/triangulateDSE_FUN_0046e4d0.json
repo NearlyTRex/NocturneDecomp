@@ -7,15 +7,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 83,
+    "complexity_score": 98,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 58,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 211
   },
@@ -218,7 +219,7 @@
     {
       "description": "Complex pointer cast",
       "line": 35,
-      "match": "(SShapeEditorPolygon *)((int)",
+      "match": "(SShapeEditorPolygon *)((int)pSVar7",
       "severity": "moderate",
       "text": "pSVar7 = (SShapeEditorPolygon *)((int)pSVar7 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
@@ -226,10 +227,18 @@
     {
       "description": "Complex pointer cast",
       "line": 36,
-      "match": "(SShapeEditorPolygon *)((int)",
+      "match": "(SShapeEditorPolygon *)((int)pSVar6",
       "severity": "moderate",
       "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 61,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0046e58d: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]",
+      "type": "unrolled_memcpy"
     }
   ]
 }

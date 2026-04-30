@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 555,
-    "complexity_score": 519,
+    "complexity_score": 489,
     "cross_reference_count": 6,
     "function_call_count": 5,
     "global_count": 44,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 274,
-    "suspect_count": 23,
+    "suspect_count": 20,
     "suspect_types": [
       "pointer_cast",
       "unnamed_param",
@@ -539,14 +539,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 166,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar9 = (int *)((int)(this_ptr->data).v_string_ptr + ((this_ptr->param1).v_int * 10 + 1) * 4)",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 166,
       "match": "param1",
@@ -557,7 +549,7 @@
     {
       "description": "Complex pointer cast",
       "line": 174,
-      "match": "(char *)((int)",
+      "match": "(char *)((int)piVar9",
       "severity": "moderate",
       "text": "cVar1 = *(char *)((int)piVar9 + 1);",
       "type": "pointer_cast"
@@ -565,7 +557,7 @@
     {
       "description": "Complex pointer cast",
       "line": 175,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)piVar9",
       "severity": "moderate",
       "text": "piVar9 = (int *)((int)piVar9 + 2);",
       "type": "pointer_cast"
@@ -601,14 +593,6 @@
       "severity": "mild",
       "text": "iVar1 = (this_ptr->param1).v_int;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 259,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&g_PropertyFlagDefinitions[0].mask + iVar13)) != 0) {",
-      "type": "pointer_cast"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
@@ -705,15 +689,6 @@
       "severity": "mild",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 271,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&g_PropertyFlagDefinitions[0].mask + iVar13)) != 0) {",
-      "type": "pointer_cast"
     }
   ]
 }

@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 53,
+    "complexity_score": 8,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 8,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 20
   },
   "cross_references": [
@@ -85,38 +83,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 6,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(dst->impl).x + 4) = *(uint *)((int)&(src->impl).x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 6,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(dst->impl).x + 4) = *(uint *)((int)&(src->impl).x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 8,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(dst->impl).y + 4) = *(uint *)((int)&(src->impl).y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 8,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(dst->impl).y + 4) = *(uint *)((int)&(src->impl).y + 4);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

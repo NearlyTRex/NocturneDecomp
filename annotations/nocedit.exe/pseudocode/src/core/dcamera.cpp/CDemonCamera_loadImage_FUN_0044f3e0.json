@@ -7,16 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1081,
-    "complexity_score": 536,
+    "complexity_score": 566,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 91,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 486,
-    "suspect_count": 4,
+    "suspect_count": 7,
     "suspect_types": [
       "raw_address_constant",
-      "unnamed_local"
+      "unrolled_memcpy"
     ],
     "total_lines": 1567
   },
@@ -721,7 +721,7 @@
     {
       "description": "Complex pointer cast",
       "line": 274,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)g_CameraConvertedPalette",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)g_CameraConvertedPalette + iVar2) = uVar7;",
@@ -730,7 +730,7 @@
     {
       "description": "Complex pointer cast",
       "line": 285,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)this_ptr",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "piVar27 = (int *)((int)this_ptr->framebuffer_aligned + local_20);",
@@ -739,7 +739,7 @@
     {
       "description": "Complex pointer cast",
       "line": 417,
-      "match": "(char *)((int)",
+      "match": "(char *)((int)g_CameraTextureWorkBuffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(char *)((int)g_CameraTextureWorkBuffer + iVar9) =",
@@ -748,7 +748,7 @@
     {
       "description": "Complex pointer cast",
       "line": 437,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)puVar28",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "puVar28 = (uint *)((int)puVar28 + (uint)bVar31 * -2 + 1);",
@@ -757,7 +757,7 @@
     {
       "description": "Complex pointer cast",
       "line": 439,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)puVar12",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "puVar12 = (uint *)((int)puVar12 + (uint)bVar31 * -2 + 1);",
@@ -766,7 +766,7 @@
     {
       "description": "Complex pointer cast",
       "line": 446,
-      "match": "(SRGBColorPalette *)((int)",
+      "match": "(SRGBColorPalette *)((int)pSVar24",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar24 = (SRGBColorPalette *)((int)pSVar24 + (uint)bVar31 * -8 + 4);",
@@ -775,7 +775,7 @@
     {
       "description": "Complex pointer cast",
       "line": 447,
-      "match": "(SRGBColorPalette *)((int)",
+      "match": "(SRGBColorPalette *)((int)pSVar13",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar13 = (SRGBColorPalette *)((int)pSVar13 + (uint)bVar31 * -8 + 4);",
@@ -784,7 +784,7 @@
     {
       "description": "Complex pointer cast",
       "line": 450,
-      "match": "(SRGBColorPalette *)((int)",
+      "match": "(SRGBColorPalette *)((int)pSVar24",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar24 = (SRGBColorPalette *)((int)pSVar24 + (uint)bVar31 * -2 + 1);",
@@ -793,7 +793,7 @@
     {
       "description": "Complex pointer cast",
       "line": 453,
-      "match": "(SRGBColorPalette *)((int)",
+      "match": "(SRGBColorPalette *)((int)pSVar13",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar13 = (SRGBColorPalette *)((int)pSVar13 + (uint)bVar31 * -2 + 1);",
@@ -1245,13 +1245,36 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 57,
-      "match": "local_a0",
-      "severity": "mild",
-      "text": "char local_a0 [4];",
-      "type": "unnamed_local"
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 535,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0044fa93: MOVSD.REP ES:EDI,ESI  ; g_CameraTextureWorkBuffer | g_CameraTextureWorkBuffer[1]",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 538,
+      "match": "MOVSB.REP",
+      "severity": "moderate",
+      "text": "// 0044fa9a: MOVSB.REP ES:EDI,ESI  ; g_CameraTextureWorkBuffer | g_CameraTextureWorkBuffer[1] | g_CameraTextureWorkBuffe",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 546,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0044fab3: MOVSD.REP ES:EDI,ESI  ; g_CameraImagePaletteData | g_CameraImagePaletteData.colors[1].g",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 549,
+      "match": "MOVSB.REP",
+      "severity": "moderate",
+      "text": "// 0044faba: MOVSB.REP ES:EDI,ESI  ; g_CameraImagePaletteData | g_CameraImagePaletteData.colors[1].g | g_CameraImagePale",
+      "type": "unrolled_memcpy"
     }
   ]
 }

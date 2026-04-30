@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 86,
+    "complexity_score": 111,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 24,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 61,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 161
   },
@@ -351,7 +352,7 @@
     {
       "description": "Complex pointer cast",
       "line": 48,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_ZBufferScanlineArray",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)g_ZBufferScanlineArray + iVar7);",
       "type": "pointer_cast"
@@ -359,10 +360,26 @@
     {
       "description": "Complex pointer cast",
       "line": 53,
-      "match": "(void *)(iVar4 * 4 + (int)",
+      "match": "(void *)(iVar4 * 4 + (int)this_ptr",
       "severity": "moderate",
       "text": "((void *)(iVar4 * 4 + (int)this_ptr->zbuffer_aligned),",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 43,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0044ce74: MOVSD.REP ES:EDI,ESI  ; g_ScreenBufferArray | g_ScreenBufferArray[1] | g_BackgroundSavedScreenBufferArray",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 46,
+      "match": "MOVSB.REP",
+      "severity": "moderate",
+      "text": "// 0044ce7b: MOVSB.REP ES:EDI,ESI  ; g_ScreenBufferArray | g_ScreenBufferArray[1] | g_BackgroundSavedScreenBufferArray",
+      "type": "unrolled_memcpy"
     }
   ]
 }

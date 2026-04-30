@@ -244,6 +244,15 @@
       "type": "unknown_field"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(ulonglong *)((int)texture_buffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar6 = *(ulonglong *)((int)texture_buffer + 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Non-standard integer size (decompiler artifact)",
       "line": 62,
       "match": "uint7",
@@ -269,15 +278,6 @@
       "severity": "mild",
       "text": "g_LightmapData._2040_8_);",
       "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 101,
-      "match": "(ulonglong *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "output_buffer = (ulonglong *)((int)output_buffer + 4);",
-      "type": "pointer_cast"
     }
   ],
   "stack_frame": {
@@ -327,10 +327,10 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 60,
-      "match": "(ulonglong *)((int)",
+      "line": 101,
+      "match": "(ulonglong *)((int)output_buffer",
       "severity": "moderate",
-      "text": "uVar6 = *(ulonglong *)((int)texture_buffer + 4);",
+      "text": "output_buffer = (ulonglong *)((int)output_buffer + 4);",
       "type": "pointer_cast"
     }
   ]

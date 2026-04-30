@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 71,
+    "complexity_score": 56,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 15,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 56,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 174
   },
   "cross_references": [
@@ -227,14 +225,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 54,
-      "match": "(int *)(iVar7 + (int)",
-      "severity": "moderate",
-      "text": "*(int *)(iVar7 + (int)*input_indices_array) = iVar4;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

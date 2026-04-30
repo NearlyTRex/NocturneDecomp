@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 157,
-    "complexity_score": 139,
+    "complexity_score": 64,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 64,
-    "suspect_count": 7,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 221
   },
   "cross_references": [
@@ -104,6 +102,62 @@
     },
     "pcode_op_count": 939
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar6 = (int *)((int)this_ptr->row_pointers + local_20);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(ushort *)(*piVar6 + (int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar9 = (ushort *)(*piVar6 + (int)this_ptr->packed_data);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(ushort *)(piVar6[1] + (int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar7 = (ushort *)(piVar6[1] + (int)this_ptr->packed_data);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)g_ScreenBufferArray + local_24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(ushort *)((int)src_buffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar9 = (ushort *)((int)src_buffer + (count + 3 & 0xfffffffc));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(ushort *)((int)src_buffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "src_buffer = (ushort *)((int)src_buffer + (clip_left - uVar3));",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 68,
     "local_size": 40,
@@ -176,62 +230,29 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar6 = (int *)((int)this_ptr->row_pointers + local_20);",
-      "type": "pointer_cast"
+  "static_analysis": {
+    "analyzed_file": "CPackedBitmap_renderClippedRegion_FUN_0054ab30.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 19,
+          "line": 30,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 52,
+          "line": 54,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        }
+      ],
+      "error": null
     },
-    {
-      "description": "Complex pointer cast",
-      "line": 29,
-      "match": "(ushort *)(*piVar6 + (int)",
-      "severity": "moderate",
-      "text": "puVar9 = (ushort *)(*piVar6 + (int)this_ptr->packed_data);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(ushort *)(piVar6[1] + (int)",
-      "severity": "moderate",
-      "text": "puVar7 = (ushort *)(piVar6[1] + (int)this_ptr->packed_data);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "iVar1 = *(int *)((int)g_ScreenBufferArray + local_24);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(ushort *)((int)",
-      "severity": "moderate",
-      "text": "puVar9 = (ushort *)((int)src_buffer + (count + 3 & 0xfffffffc));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(ushort *)((int)",
-      "severity": "moderate",
-      "text": "src_buffer = (ushort *)((int)src_buffer + (clip_left - uVar3));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(void *)(((int)",
-      "severity": "moderate",
-      "text": "dest_buffer = (void *)(((int)((g_BitsPerPixel * uVar3 + iVar8 * -8) -",
-      "type": "pointer_cast"
-    }
-  ]
+    "file_variant": "keep"
+  },
+  "suspects": []
 }

@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 173,
-    "complexity_score": 203,
+    "complexity_score": 198,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 108,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 281
   },
@@ -171,7 +172,7 @@
     {
       "description": "Complex pointer cast",
       "line": 23,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "*(uint *)((int)this_ptr->vertex_data->adjacent_edge_indices + iVar2 + -8) = 0;",
       "type": "pointer_cast"
@@ -179,23 +180,15 @@
     {
       "description": "Complex pointer cast",
       "line": 32,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)this_ptr",
       "severity": "moderate",
       "text": "if (*(int *)((int)this_ptr->tri_data->edge_perpendiculars + iVar6 + -0x14) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "this_ptr->vertex_data[*(int *)((int)(this_ptr->tri_data->uv_coords + -2) + iVar5 + 4)].",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 51,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pCVar1",
       "severity": "moderate",
       "text": "if (*(int *)((int)pCVar1->adjacent_edge_indices + iVar4 + -8) == 0) {",
       "type": "pointer_cast"
@@ -203,7 +196,7 @@
     {
       "description": "Complex pointer cast",
       "line": 52,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)pCVar1",
       "severity": "moderate",
       "text": "*(uint *)((int)pCVar1->adjacent_edge_indices + iVar4 + -8) = 0xffffffff;",
       "type": "pointer_cast"
@@ -211,7 +204,7 @@
     {
       "description": "Complex pointer cast",
       "line": 55,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pCVar1",
       "severity": "moderate",
       "text": "*(int *)((int)pCVar1->adjacent_edge_indices + iVar4 + -8) = iVar6;",
       "type": "pointer_cast"
@@ -219,26 +212,26 @@
     {
       "description": "Complex pointer cast",
       "line": 66,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)this_ptr",
       "severity": "moderate",
       "text": "if (*(int *)((int)this_ptr->tri_data->edge_perpendiculars + iVar6 + -0x14) == 0) {",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 70,
-      "match": "(int *)((int)",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 167,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "*(int *)((int)(this_ptr->tri_data->uv_coords + -2) + iVar1 + iVar6 + 4) =",
-      "type": "pointer_cast"
+      "text": "// 0051b55d: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 72,
-      "match": "(int *)((int)",
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 170,
+      "match": "MOVSB.REP",
       "severity": "moderate",
-      "text": "[*(int *)((int)(this_ptr->tri_data->uv_coords + -2) + iVar1 + iVar6 + 4)].",
-      "type": "pointer_cast"
+      "text": "// 0051b564: MOVSB.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

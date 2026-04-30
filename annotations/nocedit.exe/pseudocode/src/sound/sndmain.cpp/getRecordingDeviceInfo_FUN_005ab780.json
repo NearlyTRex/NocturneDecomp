@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 45,
+    "complexity_score": 60,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 20,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 56
   },
@@ -196,7 +197,7 @@
     {
       "description": "Complex pointer cast",
       "line": 19,
-      "match": "(SRecordingDeviceInfo *)((int)",
+      "match": "(SRecordingDeviceInfo *)((int)pSVar2",
       "severity": "moderate",
       "text": "pSVar2 = (SRecordingDeviceInfo *)((int)pSVar2 + ((uint)bVar3 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -204,10 +205,18 @@
     {
       "description": "Complex pointer cast",
       "line": 20,
-      "match": "(SRecordingDeviceInfo *)((int)",
+      "match": "(SRecordingDeviceInfo *)((int)device_info",
       "severity": "moderate",
       "text": "device_info = (SRecordingDeviceInfo *)((int)device_info + (uint)bVar3 * -8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 21,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005ab7ab: MOVSD.REP ES:EDI,ESI  ; g_RecordingDevices | g_RecordingDevices[0].device_name[4]",
+      "type": "unrolled_memcpy"
     }
   ]
 }

@@ -7,16 +7,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 502,
-    "complexity_score": 447,
+    "complexity_score": 482,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 272,
-    "suspect_count": 16,
+    "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
+      "unrolled_memcpy",
       "unrolled_strcpy"
     ],
     "total_lines": 774
@@ -526,7 +527,7 @@
     {
       "description": "Complex pointer cast",
       "line": 84,
-      "match": "(UNetPacket *)((int)",
+      "match": "(UNetPacket *)((int)packet",
       "severity": "moderate",
       "text": "packet = (UNetPacket *)((int)packet + (uint)bVar17 * -8 + 4);",
       "type": "pointer_cast"
@@ -534,7 +535,7 @@
     {
       "description": "Complex pointer cast",
       "line": 147,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)local_44",
       "severity": "moderate",
       "text": "*(int *)((int)local_44 + local_44[2]) = iVar6;",
       "type": "pointer_cast"
@@ -542,7 +543,7 @@
     {
       "description": "Complex pointer cast",
       "line": 194,
-      "match": "(SNetworkAddr *)((int)",
+      "match": "(SNetworkAddr *)((int)aEStack_f3",
       "severity": "moderate",
       "text": "(this_ptr,(SNetworkAddr *)((int)aEStack_f3 + iVar3 + -8),local_10f + iVar3,",
       "type": "pointer_cast"
@@ -550,7 +551,7 @@
     {
       "description": "Complex pointer cast",
       "line": 195,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)aEStack_f3",
       "severity": "moderate",
       "text": "*(int *)((int)aEStack_f3 + iVar3),*(int *)((int)aEStack_f3 + iVar3 + 4));",
       "type": "pointer_cast"
@@ -558,7 +559,7 @@
     {
       "description": "Complex pointer cast",
       "line": 195,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)aEStack_f3",
       "severity": "moderate",
       "text": "*(int *)((int)aEStack_f3 + iVar3),*(int *)((int)aEStack_f3 + iVar3 + 4));",
       "type": "pointer_cast"
@@ -566,7 +567,7 @@
     {
       "description": "Complex pointer cast",
       "line": 196,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)aEStack_f3",
       "severity": "moderate",
       "text": "this_ptr->players[iVar4].ready_flag = *(int *)((int)aEStack_f3 + iVar3 + 8);",
       "type": "pointer_cast"
@@ -574,7 +575,7 @@
     {
       "description": "Complex pointer cast",
       "line": 214,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)local_44",
       "severity": "moderate",
       "text": "if (*(int *)((int)local_44 + local_44[4] + 4) < *(int *)((int)local_44 + local_44[4])) {",
       "type": "pointer_cast"
@@ -582,7 +583,7 @@
     {
       "description": "Complex pointer cast",
       "line": 214,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)local_44",
       "severity": "moderate",
       "text": "if (*(int *)((int)local_44 + local_44[4] + 4) < *(int *)((int)local_44 + local_44[4])) {",
       "type": "pointer_cast"
@@ -590,7 +591,7 @@
     {
       "description": "Complex pointer cast",
       "line": 215,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)local_44",
       "severity": "moderate",
       "text": "puVar7 = (uint *)((int)local_44 + local_44[4] + 4);",
       "type": "pointer_cast"
@@ -598,7 +599,7 @@
     {
       "description": "Complex pointer cast",
       "line": 216,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)local_44",
       "severity": "moderate",
       "text": "uVar2 = *(uint *)((int)local_44 + local_44[4]);",
       "type": "pointer_cast"
@@ -606,7 +607,7 @@
     {
       "description": "Complex pointer cast",
       "line": 217,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)local_44",
       "severity": "moderate",
       "text": "*(uint *)((int)local_44 + local_44[4]) = *puVar7;",
       "type": "pointer_cast"
@@ -614,7 +615,7 @@
     {
       "description": "Complex pointer cast",
       "line": 250,
-      "match": "(SNetPlayer *)((int)",
+      "match": "(SNetPlayer *)((int)pSVar16",
       "severity": "moderate",
       "text": "pSVar16 = (SNetPlayer *)((int)pSVar16 + (uint)bVar17 * -8 + 4);",
       "type": "pointer_cast"
@@ -622,7 +623,7 @@
     {
       "description": "Complex pointer cast",
       "line": 251,
-      "match": "(SNetPlayer *)((int)",
+      "match": "(SNetPlayer *)((int)pSVar10",
       "severity": "moderate",
       "text": "pSVar10 = (SNetPlayer *)((int)pSVar10 + (uint)bVar17 * -8 + 4);",
       "type": "pointer_cast"
@@ -630,7 +631,7 @@
     {
       "description": "Complex pointer cast",
       "line": 262,
-      "match": "(SNetPlayer *)((int)",
+      "match": "(SNetPlayer *)((int)pSVar9",
       "severity": "moderate",
       "text": "pSVar9 = (SNetPlayer *)((int)pSVar9 + (uint)bVar17 * -8 + 4);",
       "type": "pointer_cast"
@@ -642,6 +643,30 @@
       "severity": "mild",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 27,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005424bd: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 304,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005428b9: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 308,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005428c9: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

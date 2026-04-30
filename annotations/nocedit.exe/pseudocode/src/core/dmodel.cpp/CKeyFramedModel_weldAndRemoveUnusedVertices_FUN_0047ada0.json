@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 350,
-    "complexity_score": 168,
+    "complexity_score": 143,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 16,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 143,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 493
   },
   "cross_references": [
@@ -318,22 +316,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 76,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar6 = (int *)((int)&this_ptr->vertex_list->x + local_1c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 78,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar4 = (int *)((int)&this_ptr->vertex_list->x + local_34);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

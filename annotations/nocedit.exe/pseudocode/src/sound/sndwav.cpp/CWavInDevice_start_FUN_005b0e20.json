@@ -193,7 +193,7 @@
     {
       "description": "Complex pointer cast",
       "line": 16,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)g_WaveInBuffers",
       "severity": "moderate",
       "text": "*(uint *)((int)g_WaveInBuffers + iVar3);",
       "type": "pointer_cast"
@@ -201,7 +201,7 @@
     {
       "description": "Complex pointer cast",
       "line": 17,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_WaveInHeaders",
       "severity": "moderate",
       "text": "*(int *)(*(int *)((int)g_WaveInHeaders + iVar3) + 0xc) = buffer_index;",
       "type": "pointer_cast"
@@ -209,7 +209,7 @@
     {
       "description": "Complex pointer cast",
       "line": 18,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_WaveInHeaders",
       "severity": "moderate",
       "text": "*(int *)(*(int *)((int)g_WaveInHeaders + iVar3) + 4) =",
       "type": "pointer_cast"

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 801,
-    "complexity_score": 332,
+    "complexity_score": 297,
     "cross_reference_count": 6,
     "function_call_count": 35,
     "global_count": 47,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 297,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1098
   },
   "cross_references": [
@@ -643,6 +641,35 @@
     },
     "pcode_op_count": 2914
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 119,
+      "match": "(int *)((int)g_QueuedCoronaGlobeAlphaMasks",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)g_QueuedCoronaGlobeAlphaMasks + iVar3) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 127,
+      "match": "(int *)((int)g_QueuedCoronaGlobeAlphaMasks",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr,*(int *)((int)g_QueuedCoronaGlobeAlphaMasks + iVar3) + -1,0);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 259,
+      "match": "(uint *)((int)g_SpotLightList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)g_SpotLightList + iVar5);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 112,
     "local_size": 104,
@@ -771,30 +798,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 119,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)g_QueuedCoronaGlobeAlphaMasks + iVar3) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 127,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(this_ptr,*(int *)((int)g_QueuedCoronaGlobeAlphaMasks + iVar3) + -1,0);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 259,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)g_SpotLightList + iVar5);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

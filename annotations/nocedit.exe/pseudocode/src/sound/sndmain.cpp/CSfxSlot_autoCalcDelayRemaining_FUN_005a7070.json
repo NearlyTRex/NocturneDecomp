@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 38,
+    "complexity_score": 23,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 10,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 23,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 72
   },
   "cross_references": [
@@ -177,14 +175,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 16,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(this_ptr->options).delay_remaining + 4) = 0;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

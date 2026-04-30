@@ -8,18 +8,18 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2523,
-    "complexity_score": 1377,
+    "complexity_score": 987,
     "cross_reference_count": 2,
     "function_call_count": 72,
     "global_count": 128,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 857,
-    "suspect_count": 49,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "negative_offset",
       "pointer_cast",
-      "unnamed_local",
+      "unrolled_memcpy",
       "unrolled_strcpy",
       "warning_inlined_function"
     ],
@@ -2097,72 +2097,8 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 203,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "if ((*(byte *)((int)&(pSVar3->projected_vertex).screen_x + iVar11 + 3) & 0x80) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 204,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "iVar12 = *(int *)((int)&(pSVar3->projected_vertex).screen_y + iVar11);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 205,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "x = *(int *)((int)&(pSVar3->projected_vertex).screen_x + iVar11) >> 0x10;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 366,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar1 = (int *)((int)&pCVar4->x + iVar18);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 368,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&pCVar4->y + iVar18) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 369,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&pCVar4->y + iVar18) + (int)ROUND(fVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 370,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&pCVar4->z + iVar18) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 371,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&pCVar4->z + iVar18) + (int)ROUND(fVar6);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 505,
-      "match": "(CKeyFramedModel *)((int)",
+      "match": "(CKeyFramedModel *)((int)pCVar13",
       "severity": "moderate",
       "text": "pCVar13 = (CKeyFramedModel *)((int)pCVar13 + (uint)bVar15 * -2 + 1);",
       "type": "pointer_cast"
@@ -2174,62 +2110,6 @@
       "severity": "mild",
       "text": "pcVar20 = (char *)((int)&pCVar13[-1].dead + 3);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 509,
-      "match": "(char *)((int)",
-      "severity": "moderate",
-      "text": "pcVar20 = (char *)((int)&pCVar13[-1].dead + 3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 705,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "local_108.x = (float)*(int *)((int)&this_ptr->vertex_list->x + iVar18) * fVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 706,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "local_108.y = (float)*(int *)((int)&this_ptr->vertex_list->y + iVar18) * fVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 707,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "local_108.z = (float)*(int *)((int)&this_ptr->vertex_list->z + iVar18) * fVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 716,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&this_ptr->vertex_list->x + iVar18) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 718,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&this_ptr->vertex_list->y + iVar18) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 720,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&this_ptr->vertex_list->z + iVar18) =",
-      "type": "pointer_cast"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
@@ -2248,112 +2128,12 @@
       "type": "unrolled_strcpy"
     },
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 43,
-      "match": "local_c9c",
-      "severity": "mild",
-      "text": "char local_c9c [260];",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 44,
-      "match": "local_b98",
-      "severity": "mild",
-      "text": "char local_b98 [256];",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 76,
-      "match": "local_174",
-      "severity": "mild",
-      "text": "float local_174;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 77,
-      "match": "local_170",
-      "severity": "mild",
-      "text": "float local_170;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 78,
-      "match": "local_16c",
-      "severity": "mild",
-      "text": "float local_16c;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 79,
-      "match": "local_168",
-      "severity": "mild",
-      "text": "float local_168;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 80,
-      "match": "local_164",
-      "severity": "mild",
-      "text": "float local_164;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 81,
-      "match": "local_160",
-      "severity": "mild",
-      "text": "float local_160;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 82,
-      "match": "local_15c",
-      "severity": "mild",
-      "text": "CVector3f local_15c;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 90,
-      "match": "local_12c",
-      "severity": "mild",
-      "text": "CVector3f local_12c;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 119,
-      "match": "local_70",
-      "severity": "mild",
-      "text": "float local_70;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 154,
-      "match": "local_70",
-      "severity": "mild",
-      "text": "local_70 = 0.0;",
-      "type": "unnamed_local"
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 2382,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0047e665: MOVSD.REP ES:EDI,ESI  ; g_ModelLastScaleInput | g_ModelLastScaleInput+4",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
@@ -2390,123 +2170,6 @@
       "severity": "mild",
       "text": "(local_408,\"Frame: %d of %d\",(int)ROUND(ROUND(local_70)),this_ptr->frame_count);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 696,
-      "match": "local_160",
-      "severity": "mild",
-      "text": "(double)local_160,(double)local_16c,(double)local_15c.x,",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 696,
-      "match": "local_16c",
-      "severity": "mild",
-      "text": "(double)local_160,(double)local_16c,(double)local_15c.x,",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 696,
-      "match": "local_15c",
-      "severity": "mild",
-      "text": "(double)local_160,(double)local_16c,(double)local_15c.x,",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 697,
-      "match": "local_164",
-      "severity": "mild",
-      "text": "(double)local_164,(double)local_170,(double)local_15c.y,",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 697,
-      "match": "local_170",
-      "severity": "mild",
-      "text": "(double)local_164,(double)local_170,(double)local_15c.y,",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 697,
-      "match": "local_15c",
-      "severity": "mild",
-      "text": "(double)local_164,(double)local_170,(double)local_15c.y,",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 698,
-      "match": "local_168",
-      "severity": "mild",
-      "text": "(double)local_168,(double)local_174,(double)local_15c.z);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 698,
-      "match": "local_174",
-      "severity": "mild",
-      "text": "(double)local_168,(double)local_174,(double)local_15c.z);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 698,
-      "match": "local_15c",
-      "severity": "mild",
-      "text": "(double)local_168,(double)local_174,(double)local_15c.z);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 724,
-      "match": "local_15c",
-      "severity": "mild",
-      "text": "(&local_15c,&local_108,&local_214);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 807,
-      "match": "local_15c",
-      "severity": "mild",
-      "text": "(double)local_160,(double)local_16c,(double)local_15c.x,",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 814,
-      "match": "local_12c",
-      "severity": "mild",
-      "text": "iVar18 = sscanf(local_278,\"%f,%f,%f\",&local_12c.x,&local_12c.y,&local_12c.z);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 814,
-      "match": "local_12c",
-      "severity": "mild",
-      "text": "iVar18 = sscanf(local_278,\"%f,%f,%f\",&local_12c.x,&local_12c.y,&local_12c.z);",
-      "type": "unnamed_local"
     }
   ]
 }

@@ -7,17 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 562,
-    "complexity_score": 446,
+    "complexity_score": 276,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 34,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 261,
-    "suspect_count": 17,
+    "suspect_count": 1,
     "suspect_types": [
-      "displaced_global_access",
-      "pointer_cast",
-      "unnamed_local"
+      "displaced_global_access"
     ],
     "total_lines": 823
   },
@@ -337,8 +335,107 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(int *)((int)g_DynamicLights",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)(*(int *)((int)g_DynamicLights + iVar5) + 0x1cb4) != 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(int *)((int)g_PrimaryDirectionalLights",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_PrimaryDirectionalLights + iVar11) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(int *)((int)g_DynamicLights",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_DynamicLights + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 65,
+      "match": "(int *)((int)g_SpotLightList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)(*(int *)((int)g_SpotLightList + iVar6) + 0x1cb4) != 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 68,
+      "match": "(int *)((int)g_SecondaryDirectionalLights",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_SecondaryDirectionalLights + iVar7) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(int *)((int)g_SpotLightList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_SpotLightList + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(uint *)((int)g_GlobeLights",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_GlobeLights + iVar7) = *(uint *)((int)g_CoronaGlobes + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(uint *)((int)g_CoronaGlobes",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_GlobeLights + iVar7) = *(uint *)((int)g_CoronaGlobes + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 92,
+      "match": "(uint *)((int)g_VisibleOmniLights",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_VisibleOmniLights + iVar11) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 93,
+      "match": "(uint *)((int)g_OmniLights",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_OmniLights + iVar11);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 190,
+      "match": "(int *)((int)g_VisibleCoronaGlobes",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar7 = *(int *)((int)g_VisibleCoronaGlobes + iVar11);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 213,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_VisibleOmniLights",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "iVar10 = *(int *)((int)g_VisibleOmniLights + iVar11);",
@@ -566,94 +663,6 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "if (*(int *)(*(int *)((int)g_DynamicLights + iVar5) + 0x1cb4) != 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 51,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_PrimaryDirectionalLights + iVar11) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 52,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_DynamicLights + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 65,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "if (*(int *)(*(int *)((int)g_SpotLightList + iVar6) + 0x1cb4) != 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 68,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_SecondaryDirectionalLights + iVar7) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_SpotLightList + iVar6);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 81,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_GlobeLights + iVar7) = *(uint *)((int)g_CoronaGlobes + iVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 81,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_GlobeLights + iVar7) = *(uint *)((int)g_CoronaGlobes + iVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 92,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_VisibleOmniLights + iVar11) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 93,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_OmniLights + iVar11);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 190,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "iVar7 = *(int *)((int)g_VisibleCoronaGlobes + iVar11);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Compiler displaced index base: [reg*4 + 0x32c17ac] lands in g_GlobeLightCount but intended target is g_GlobeLights at 0x32c17b0 (displaced by 4 bytes)",
       "displaced_from": "g_GlobeLightCount",
       "displacement": "0x32c17ac",
@@ -665,51 +674,6 @@
       "severity": "moderate",
       "text": "// 0056d820: MOV dword ptr [EDX*0x4 + 0x32c17ac],EAX  ; g_GlobeLights[1]",
       "type": "displaced_global_access"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 38,
-      "match": "local_28",
-      "severity": "mild",
-      "text": "int local_28;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 42,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "int local_18;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 170,
-      "match": "local_28",
-      "severity": "mild",
-      "text": "local_28 = 0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 176,
-      "match": "local_28",
-      "severity": "mild",
-      "text": "(g_CoronaGlobes[local_28],position,rotation_matrix,",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 185,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "local_18 = 0;",
-      "type": "unnamed_local"
     }
   ]
 }

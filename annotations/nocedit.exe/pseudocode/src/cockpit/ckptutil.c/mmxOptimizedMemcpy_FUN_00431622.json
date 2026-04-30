@@ -7,14 +7,16 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 82,
+    "complexity_score": 127,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 82,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 4,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 206
   },
   "cross_references": [
@@ -85,7 +87,7 @@
     {
       "description": "Complex pointer cast",
       "line": 25,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)src_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "src_buffer = (uint *)((int)src_buffer + 1);",
@@ -94,7 +96,7 @@
     {
       "description": "Complex pointer cast",
       "line": 26,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)dest_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "dest_buffer = (uint *)((int)dest_buffer + 1);",
@@ -103,7 +105,7 @@
     {
       "description": "Complex pointer cast",
       "line": 33,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)src_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "src_buffer = (uint *)((int)src_buffer + 4);",
@@ -112,7 +114,7 @@
     {
       "description": "Complex pointer cast",
       "line": 34,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)dest_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "dest_buffer = (uint *)((int)dest_buffer + 4);",
@@ -121,7 +123,7 @@
     {
       "description": "Complex pointer cast",
       "line": 54,
-      "match": "(ulonglong *)(iVar7 + -0x18 + (int)",
+      "match": "(ulonglong *)(iVar7 + -0x18 + (int)src_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "uVar1 = *(ulonglong *)(iVar7 + -0x18 + (int)src_buffer);",
@@ -130,7 +132,7 @@
     {
       "description": "Complex pointer cast",
       "line": 55,
-      "match": "(ulonglong *)(iVar7 + -0x10 + (int)",
+      "match": "(ulonglong *)(iVar7 + -0x10 + (int)src_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "uVar2 = *(ulonglong *)(iVar7 + -0x10 + (int)src_buffer);",
@@ -139,7 +141,7 @@
     {
       "description": "Complex pointer cast",
       "line": 56,
-      "match": "(ulonglong *)(iVar7 + -8 + (int)",
+      "match": "(ulonglong *)(iVar7 + -8 + (int)src_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "uVar3 = *(ulonglong *)(iVar7 + -8 + (int)src_buffer);",
@@ -148,7 +150,7 @@
     {
       "description": "Complex pointer cast",
       "line": 57,
-      "match": "(ulonglong *)(iVar8 + (int)",
+      "match": "(ulonglong *)(iVar8 + (int)dest_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(ulonglong *)(iVar8 + (int)dest_buffer) = *(ulonglong *)(iVar8 + (int)src_buffer);",
@@ -157,7 +159,7 @@
     {
       "description": "Complex pointer cast",
       "line": 57,
-      "match": "(ulonglong *)(iVar8 + (int)",
+      "match": "(ulonglong *)(iVar8 + (int)src_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(ulonglong *)(iVar8 + (int)dest_buffer) = *(ulonglong *)(iVar8 + (int)src_buffer);",
@@ -166,7 +168,7 @@
     {
       "description": "Complex pointer cast",
       "line": 58,
-      "match": "(ulonglong *)(iVar7 + -0x18 + (int)",
+      "match": "(ulonglong *)(iVar7 + -0x18 + (int)dest_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(ulonglong *)(iVar7 + -0x18 + (int)dest_buffer) = uVar1;",
@@ -175,7 +177,7 @@
     {
       "description": "Complex pointer cast",
       "line": 59,
-      "match": "(ulonglong *)(iVar7 + -0x10 + (int)",
+      "match": "(ulonglong *)(iVar7 + -0x10 + (int)dest_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(ulonglong *)(iVar7 + -0x10 + (int)dest_buffer) = uVar2;",
@@ -184,7 +186,7 @@
     {
       "description": "Complex pointer cast",
       "line": 60,
-      "match": "(ulonglong *)(iVar7 + -8 + (int)",
+      "match": "(ulonglong *)(iVar7 + -8 + (int)dest_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(ulonglong *)(iVar7 + -8 + (int)dest_buffer) = uVar3;",
@@ -193,7 +195,7 @@
     {
       "description": "Complex pointer cast",
       "line": 64,
-      "match": "(void *)((int)",
+      "match": "(void *)((int)src_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "src_buffer = (void *)((int)src_buffer + uVar5 * 0x20);",
@@ -202,7 +204,7 @@
     {
       "description": "Complex pointer cast",
       "line": 65,
-      "match": "(void *)((int)",
+      "match": "(void *)((int)dest_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "dest_buffer = (void *)((int)dest_buffer + uVar5 * 8 * 4);",
@@ -211,7 +213,7 @@
     {
       "description": "Complex pointer cast",
       "line": 73,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)src_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "src_buffer = (uint *)((int)src_buffer + 4);",
@@ -220,7 +222,7 @@
     {
       "description": "Complex pointer cast",
       "line": 74,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)dest_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "dest_buffer = (uint *)((int)dest_buffer + 4);",
@@ -229,7 +231,7 @@
     {
       "description": "Complex pointer cast",
       "line": 80,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)src_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "src_buffer = (uint *)((int)src_buffer + 1);",
@@ -238,7 +240,7 @@
     {
       "description": "Complex pointer cast",
       "line": 81,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)dest_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "dest_buffer = (uint *)((int)dest_buffer + 1);",
@@ -275,5 +277,38 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 33,
+      "match": "MOVSB.REP",
+      "severity": "moderate",
+      "text": "// 00431656: MOVSB.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 39,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0043165f: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 108,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00431713: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 115,
+      "match": "MOVSB.REP",
+      "severity": "moderate",
+      "text": "// 0043171e: MOVSB.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

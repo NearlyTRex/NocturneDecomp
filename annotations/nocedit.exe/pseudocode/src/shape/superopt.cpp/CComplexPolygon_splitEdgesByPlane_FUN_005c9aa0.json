@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 847,
-    "complexity_score": 404,
+    "complexity_score": 454,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 389,
-    "suspect_count": 1,
+    "suspect_count": 6,
     "suspect_types": [
-      "unnamed_local"
+      "unrolled_memcpy"
     ],
     "total_lines": 1236
   },
@@ -189,7 +189,7 @@
     {
       "description": "Complex pointer cast",
       "line": 84,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)this_ptr",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "piVar5 = (int *)((int)this_ptr->expanded_edges->start_uv + local_1c + -0x40);",
@@ -198,7 +198,7 @@
     {
       "description": "Complex pointer cast",
       "line": 92,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar8",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
@@ -207,7 +207,7 @@
     {
       "description": "Complex pointer cast",
       "line": 93,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar9",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
@@ -216,7 +216,7 @@
     {
       "description": "Complex pointer cast",
       "line": 102,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar8",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
@@ -225,7 +225,7 @@
     {
       "description": "Complex pointer cast",
       "line": 103,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar9",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
@@ -234,7 +234,7 @@
     {
       "description": "Complex pointer cast",
       "line": 114,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar8",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
@@ -243,7 +243,7 @@
     {
       "description": "Complex pointer cast",
       "line": 115,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar9",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
@@ -288,7 +288,7 @@
     {
       "description": "Complex pointer cast",
       "line": 156,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar8",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
@@ -297,7 +297,7 @@
     {
       "description": "Complex pointer cast",
       "line": 157,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar9",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
@@ -306,7 +306,7 @@
     {
       "description": "Complex pointer cast",
       "line": 166,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar8",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
@@ -315,7 +315,7 @@
     {
       "description": "Complex pointer cast",
       "line": 167,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar7",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar7 = (double *)((int)pdVar7 + 4);",
@@ -324,7 +324,7 @@
     {
       "description": "Complex pointer cast",
       "line": 176,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar6",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
@@ -368,89 +368,8 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 218,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&buf_a[iVar5].end_pos.x + 4) = local_f8[1];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 220,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&buf_a[iVar5].end_pos.y + 4) = local_f8[3];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 222,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&buf_a[iVar5].end_pos.z + 4) = local_e4;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 236,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(int *)((int)&(pSVar4->start_pos).x + 4) = piVar5[5];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 238,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(int *)((int)&(pSVar4->start_pos).y + 4) = piVar5[7];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 240,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(int *)((int)&(pSVar4->start_pos).z + 4) = piVar5[9];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 242,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(int *)((int)&(pSVar4->end_pos).x + 4) = piVar5[0xb];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 244,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(int *)((int)&(pSVar4->end_pos).y + 4) = piVar5[0xd];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 246,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(int *)((int)&(pSVar4->end_pos).z + 4) = piVar5[0xf];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 248,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pSVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)((int)pSVar4->start_uv + 4) = piVar5[0x11];",
@@ -459,7 +378,7 @@
     {
       "description": "Complex pointer cast",
       "line": 250,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pSVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)((int)pSVar4->start_uv + 0xc) = piVar5[0x13];",
@@ -468,7 +387,7 @@
     {
       "description": "Complex pointer cast",
       "line": 252,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pSVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)((int)pSVar4->end_uv + 4) = piVar5[0x15];",
@@ -477,7 +396,7 @@
     {
       "description": "Complex pointer cast",
       "line": 254,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pSVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)((int)pSVar4->end_uv + 0xc) = piVar5[0x17];",
@@ -485,116 +404,8 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 257,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&buf_b[iVar5].start_pos.x + 4) = local_f8[1];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 259,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&buf_b[iVar5].start_pos.y + 4) = local_f8[3];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 261,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&buf_b[iVar5].start_pos.z + 4) = local_e4;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 287,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&buf_b[iVar5].end_pos.x + 4) = local_f8[1];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 289,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&buf_b[iVar5].end_pos.y + 4) = local_f8[3];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 291,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&buf_b[iVar5].end_pos.z + 4) = local_e4;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 305,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(int *)((int)&(pSVar4->start_pos).x + 4) = piVar5[5];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 307,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(int *)((int)&(pSVar4->start_pos).y + 4) = piVar5[7];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 309,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(int *)((int)&(pSVar4->start_pos).z + 4) = piVar5[9];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 311,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(int *)((int)&(pSVar4->end_pos).x + 4) = piVar5[0xb];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 313,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(int *)((int)&(pSVar4->end_pos).y + 4) = piVar5[0xd];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 315,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(int *)((int)&(pSVar4->end_pos).z + 4) = piVar5[0xf];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 317,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pSVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)((int)pSVar4->start_uv + 4) = piVar5[0x11];",
@@ -603,7 +414,7 @@
     {
       "description": "Complex pointer cast",
       "line": 319,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pSVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)((int)pSVar4->start_uv + 0xc) = piVar5[0x13];",
@@ -612,7 +423,7 @@
     {
       "description": "Complex pointer cast",
       "line": 321,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pSVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)((int)pSVar4->end_uv + 4) = piVar5[0x15];",
@@ -621,7 +432,7 @@
     {
       "description": "Complex pointer cast",
       "line": 323,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pSVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)((int)pSVar4->end_uv + 0xc) = piVar5[0x17];",
@@ -629,35 +440,8 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 326,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&buf_a[iVar5].start_pos.x + 4) = local_f8[1];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 328,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&buf_a[iVar5].start_pos.y + 4) = local_f8[3];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 330,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&buf_a[iVar5].start_pos.z + 4) = local_e4;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 354,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pSVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)((int)pSVar4->end_uv + 4) = piVar5[0x15];",
@@ -666,7 +450,7 @@
     {
       "description": "Complex pointer cast",
       "line": 356,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pSVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)((int)pSVar4->end_uv + 0xc) = piVar5[0x17];",
@@ -684,7 +468,7 @@
     {
       "description": "Complex pointer cast",
       "line": 375,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)pSVar3",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)pSVar3->start_uv + 4) = local_78._4_4_[1];",
@@ -711,7 +495,7 @@
     {
       "description": "Complex pointer cast",
       "line": 377,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)pSVar3",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)pSVar3->start_uv + 0xc) = local_78._4_4_[3];",
@@ -729,7 +513,7 @@
     {
       "description": "Complex pointer cast",
       "line": 379,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pSVar3",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)((int)pSVar3->end_uv + 4) = piVar5[0x15];",
@@ -738,7 +522,7 @@
     {
       "description": "Complex pointer cast",
       "line": 381,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pSVar3",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)((int)pSVar3->end_uv + 0xc) = piVar5[0x17];",
@@ -1249,13 +1033,52 @@
   },
   "suspects": [
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 23,
-      "match": "local_28",
-      "severity": "mild",
-      "text": "uint local_28;",
-      "type": "unnamed_local"
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 42,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005c9b1f: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 58,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005c9b61: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 83,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005c9bcb: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 218,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005c9d6b: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 233,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005c9db0: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 251,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005c9df8: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

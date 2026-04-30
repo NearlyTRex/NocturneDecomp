@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 117,
+    "complexity_score": 142,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 82,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 188
   },
@@ -364,7 +365,7 @@
     {
       "description": "Complex pointer cast",
       "line": 75,
-      "match": "(SNetPlayer *)((int)",
+      "match": "(SNetPlayer *)((int)pSVar2",
       "severity": "moderate",
       "text": "pSVar2 = (SNetPlayer *)((int)pSVar2 + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
@@ -372,7 +373,7 @@
     {
       "description": "Complex pointer cast",
       "line": 76,
-      "match": "(CNetGame *)((int)",
+      "match": "(CNetGame *)((int)this_ptr",
       "severity": "moderate",
       "text": "this_ptr = (CNetGame *)((int)this_ptr + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
@@ -380,10 +381,26 @@
     {
       "description": "Complex pointer cast",
       "line": 82,
-      "match": "(SNetPlayer *)((int)",
+      "match": "(SNetPlayer *)((int)other",
       "severity": "moderate",
       "text": "other = (SNetPlayer *)((int)other + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 73,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00543c94: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 77,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00543c9f: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

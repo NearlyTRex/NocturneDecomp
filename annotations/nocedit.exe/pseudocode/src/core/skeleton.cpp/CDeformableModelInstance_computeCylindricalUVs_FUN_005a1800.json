@@ -7,15 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 132,
+    "complexity_score": 97,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 72,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
       "warning_inlined_function"
     ],
     "total_lines": 203
@@ -220,30 +219,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 54,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar7 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 64,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&pSVar4->u + iVar5) = iVar2;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->v + iVar5) =",
-      "type": "pointer_cast"
     }
   ]
 }

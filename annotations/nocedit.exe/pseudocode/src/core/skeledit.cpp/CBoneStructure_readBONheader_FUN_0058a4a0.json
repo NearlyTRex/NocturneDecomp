@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 426,
-    "complexity_score": 318,
+    "complexity_score": 353,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 17,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 243,
-    "suspect_count": 7,
+    "suspect_count": 10,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 669
   },
@@ -586,7 +587,7 @@
     {
       "description": "Complex pointer cast",
       "line": 120,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)local_248",
       "severity": "moderate",
       "text": "*(uint *)((int)local_248 + iVar3) = 0;",
       "type": "pointer_cast"
@@ -594,7 +595,7 @@
     {
       "description": "Complex pointer cast",
       "line": 122,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)local_248",
       "severity": "moderate",
       "text": "*(int *)((int)local_248 + iVar3) = *(int *)((int)local_248 + iVar3) + 1;",
       "type": "pointer_cast"
@@ -602,7 +603,7 @@
     {
       "description": "Complex pointer cast",
       "line": 122,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)local_248",
       "severity": "moderate",
       "text": "*(int *)((int)local_248 + iVar3) = *(int *)((int)local_248 + iVar3) + 1;",
       "type": "pointer_cast"
@@ -610,7 +611,7 @@
     {
       "description": "Complex pointer cast",
       "line": 152,
-      "match": "(SBoneData *)((int)",
+      "match": "(SBoneData *)((int)pSVar6",
       "severity": "moderate",
       "text": "pSVar6 = (SBoneData *)((int)pSVar6 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
@@ -618,7 +619,7 @@
     {
       "description": "Complex pointer cast",
       "line": 183,
-      "match": "(SBoneData *)((int)",
+      "match": "(SBoneData *)((int)pSVar14",
       "severity": "moderate",
       "text": "pSVar14 = (SBoneData *)((int)pSVar14 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
@@ -626,7 +627,7 @@
     {
       "description": "Complex pointer cast",
       "line": 184,
-      "match": "(SBoneData *)((int)",
+      "match": "(SBoneData *)((int)pSVar11",
       "severity": "moderate",
       "text": "pSVar11 = (SBoneData *)((int)pSVar11 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
@@ -634,10 +635,34 @@
     {
       "description": "Complex pointer cast",
       "line": 195,
-      "match": "(SBoneData *)((int)",
+      "match": "(SBoneData *)((int)pSVar6",
       "severity": "moderate",
       "text": "pSVar6 = (SBoneData *)((int)pSVar6 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 239,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0058a746: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 293,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0058a84a: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 298,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0058a866: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

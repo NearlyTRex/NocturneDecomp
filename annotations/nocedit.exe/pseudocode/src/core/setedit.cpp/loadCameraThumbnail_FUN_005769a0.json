@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 351,
-    "complexity_score": 175,
+    "complexity_score": 165,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 35,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 140,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -555,23 +555,15 @@
     {
       "description": "Complex pointer cast",
       "line": 85,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)g_ThumbnailImageBuffer",
       "severity": "moderate",
       "text": "*(uint *)((int)g_ThumbnailImageBuffer[0] + iVar3) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
-      "match": "(byte *)(((int)",
-      "severity": "moderate",
-      "text": "(uint)*(byte *)(((int)((iVar1 + (iVar1 >> 0x1f) * -0x40) -",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 137,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)g_ThumbnailImageBuffer",
       "severity": "moderate",
       "text": "*(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2) = 0xff00ff;",
       "type": "pointer_cast"

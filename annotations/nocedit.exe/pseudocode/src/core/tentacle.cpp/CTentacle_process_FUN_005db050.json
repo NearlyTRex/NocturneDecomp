@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 770,
-    "complexity_score": 358,
+    "complexity_score": 328,
     "cross_reference_count": 0,
     "function_call_count": 22,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 258,
-    "suspect_count": 9,
+    "suspect_count": 6,
     "suspect_types": [
       "missing_cave_copy",
       "warning_type_propagation"
@@ -593,30 +593,6 @@
       "match": "CMatrix3x4f CStack_d0; ... f(&CStack_d0, ...);",
       "severity": "moderate",
       "text": "CMatrix3x4f CStack_d0;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Struct-type local `CStack_94` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 5 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 40,
-      "match": "CVector3f CStack_94; ... f(&CStack_94, ...);",
-      "severity": "moderate",
-      "text": "CVector3f CStack_94;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Struct-type local `CStack_70` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 5 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 43,
-      "match": "CVector3f CStack_70; ... f(&CStack_70, ...);",
-      "severity": "moderate",
-      "text": "CVector3f CStack_70;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Struct-type local `CStack_58` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 5 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 45,
-      "match": "CVector3f CStack_58; ... f(&CStack_58, ...);",
-      "severity": "moderate",
-      "text": "CVector3f CStack_58;",
       "type": "missing_cave_copy"
     }
   ],

@@ -7,14 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 504,
-    "complexity_score": 323,
+    "complexity_score": 348,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 47,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 243,
-    "suspect_count": 7,
+    "suspect_count": 9,
     "suspect_types": [
+      "unrolled_memcpy",
       "unrolled_strchr",
       "unrolled_strcpy"
     ],
@@ -568,6 +569,22 @@
       "severity": "mild",
       "text": "do {",
       "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 408,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00545538: MOVSD.REP ES:EDI,ESI  ; g_DefaultPalette | g_PaletteData | UCHAR_ARRAY_02d0224c",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 411,
+      "match": "MOVSB.REP",
+      "severity": "moderate",
+      "text": "// 0054553f: MOVSB.REP ES:EDI,ESI  ; UCHAR_ARRAY_02d0224c | g_PaletteData+4 | UCHAR_ARRAY_02d0224d",
+      "type": "unrolled_memcpy"
     }
   ]
 }

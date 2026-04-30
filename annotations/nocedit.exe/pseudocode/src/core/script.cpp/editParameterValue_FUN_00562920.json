@@ -8,16 +8,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2421,
-    "complexity_score": 939,
+    "complexity_score": 894,
     "cross_reference_count": 1,
     "function_call_count": 33,
     "global_count": 85,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 754,
-    "suspect_count": 17,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
-      "unnamed_local",
       "unrolled_strcpy"
     ],
     "total_lines": 3175
@@ -1110,7 +1109,7 @@
     {
       "description": "Complex pointer cast",
       "line": 683,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)local_a8",
       "severity": "moderate",
       "text": "if (*(int *)((int)local_a8 + local_14) != 0) {",
       "type": "pointer_cast"
@@ -1210,42 +1209,6 @@
       "severity": "mild",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 33,
-      "match": "local_3758",
-      "severity": "mild",
-      "text": "float local_3758;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 55,
-      "match": "local_30",
-      "severity": "mild",
-      "text": "int local_30;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 58,
-      "match": "local_24",
-      "severity": "mild",
-      "text": "char (*local_24) [30];",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 70,
-      "match": "local_30",
-      "severity": "mild",
-      "text": "iVar5 = sscanf(value_buffer,\"%d\",&local_30);",
-      "type": "unnamed_local"
     }
   ]
 }

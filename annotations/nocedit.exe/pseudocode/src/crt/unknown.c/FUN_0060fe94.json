@@ -172,7 +172,7 @@
     {
       "description": "Complex pointer cast",
       "line": 44,
-      "match": "(char *)(iVar8 + (int)",
+      "match": "(char *)(iVar8 + (int)g_EnvironStringArea",
       "severity": "moderate",
       "text": "if (*(char *)(iVar8 + (int)g_EnvironStringArea) != '\\0') {",
       "type": "pointer_cast"
@@ -180,7 +180,7 @@
     {
       "description": "Complex pointer cast",
       "line": 51,
-      "match": "(byte *)(iVar8 + (int)",
+      "match": "(byte *)(iVar8 + (int)dest",
       "severity": "moderate",
       "text": "puVar6 = (byte *)(iVar8 + (int)dest);",
       "type": "pointer_cast"

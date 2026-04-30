@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 380,
+    "complexity_score": 170,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 19,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 135,
-    "suspect_count": 24,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -261,203 +261,26 @@
     {
       "description": "Complex pointer cast",
       "line": 56,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)pSVar1",
       "severity": "moderate",
       "text": "*(uint *)((int)pSVar1->vertices + iVar2 + -0x14) = 3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)&pCVar4->z + iVar9);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 79,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "puVar3 = (uint *)((int)&pCVar4->y + iVar9);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 80,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)&pCVar4->x + iVar9);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 93,
-      "match": "(uint *)(iVar4 + (int)",
+      "match": "(uint *)(iVar4 + (int)this_ptr",
       "severity": "moderate",
       "text": "*(uint *)(iVar4 + (int)this_ptr->face_texture_indices),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 94,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pSVar5->vertices[0].vertex_index + local_18),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 95,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pSVar5->vertices[0].texture_u + local_18),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 96,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pSVar5->vertices[0].texture_v + local_18),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 97,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pSVar5->vertices[1].vertex_index + local_18),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 98,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pSVar5->vertices[1].texture_u + local_18),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 99,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pSVar5->vertices[1].texture_v + local_18),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 100,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pSVar5->vertices[2].vertex_index + local_18),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 101,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pSVar5->vertices[2].texture_u + local_18),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 102,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pSVar5->vertices[2].texture_v + local_18));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "introduced_by": "keep",
       "line": 53,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)this_ptr",
       "severity": "moderate",
       "text": "(int *)((int)this_ptr->face_texture_indices + iVar4),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 54,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(int *)((int)&pSVar1->vertices[0].vertex_index + iVar2),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 55,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(int *)((int)&pSVar1->vertices[0].texture_u + iVar2),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 56,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(int *)((int)&pSVar1->vertices[0].texture_v + iVar2),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 57,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(int *)((int)&pSVar1->vertices[1].vertex_index + iVar2),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 58,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(int *)((int)&pSVar1->vertices[1].texture_u + iVar2),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 59,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(int *)((int)&pSVar1->vertices[1].texture_v + iVar2),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 60,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(int *)((int)&pSVar1->vertices[2].vertex_index + iVar2),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 61,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(int *)((int)&pSVar1->vertices[2].texture_u + iVar2),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 62,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(int *)((int)&pSVar1->vertices[2].texture_v + iVar2));",
       "type": "pointer_cast"
     }
   ],

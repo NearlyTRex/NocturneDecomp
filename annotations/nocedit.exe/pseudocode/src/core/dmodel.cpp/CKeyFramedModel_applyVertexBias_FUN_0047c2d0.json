@@ -7,15 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 59,
+    "complexity_score": 34,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 19,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
       "warning_inlined_function"
     ],
     "total_lines": 76
@@ -158,22 +157,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&this_ptr->vertex_list->y + iVar2) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 18,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&this_ptr->vertex_list->y + iVar2) + (int)ROUND(ROUND(-dVar3));",
-      "type": "pointer_cast"
     }
   ]
 }

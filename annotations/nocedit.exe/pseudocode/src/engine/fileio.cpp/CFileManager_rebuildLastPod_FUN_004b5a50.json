@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1448,
-    "complexity_score": 863,
+    "complexity_score": 918,
     "cross_reference_count": 4,
     "function_call_count": 43,
     "global_count": 73,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 643,
-    "suspect_count": 21,
+    "suspect_count": 26,
     "suspect_types": [
       "pointer_cast",
+      "unrolled_memcpy",
       "unrolled_strcpy"
     ],
     "total_lines": 2091
@@ -1187,7 +1188,7 @@
     {
       "description": "Complex pointer cast",
       "line": 177,
-      "match": "(CPodAuditRecord *)((int)",
+      "match": "(CPodAuditRecord *)((int)pCVar15",
       "severity": "moderate",
       "text": "pCVar15 = (CPodAuditRecord *)((int)pCVar15 + ((uint)bVar19 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -1195,39 +1196,15 @@
     {
       "description": "Complex pointer cast",
       "line": 195,
-      "match": "(CPodAuditRecord *)((int)",
+      "match": "(CPodAuditRecord *)((int)pCVar15",
       "severity": "moderate",
       "text": "pCVar15 = (CPodAuditRecord *)((int)pCVar15 + (uint)bVar19 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 220,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(local_1838.directory_entries)->checksum + iVar7) = uVar4;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 261,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&(local_1838.directory_entries)->timestamp + local_2c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 263,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&(local_1838.directory_entries)->size + local_2c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 268,
-      "match": "(CPodAuditRecord *)((int)",
+      "match": "(CPodAuditRecord *)((int)pCVar15",
       "severity": "moderate",
       "text": "pCVar15 = (CPodAuditRecord *)((int)pCVar15 + ((uint)bVar19 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -1235,7 +1212,7 @@
     {
       "description": "Complex pointer cast",
       "line": 287,
-      "match": "(CPodAuditRecord *)((int)",
+      "match": "(CPodAuditRecord *)((int)pCVar15",
       "severity": "moderate",
       "text": "pCVar15 = (CPodAuditRecord *)((int)pCVar15 + (uint)bVar19 * -8 + 4);",
       "type": "pointer_cast"
@@ -1243,7 +1220,7 @@
     {
       "description": "Complex pointer cast",
       "line": 371,
-      "match": "(char *)((int)",
+      "match": "(char *)((int)ptr_00",
       "severity": "moderate",
       "text": "pcVar11 = (char *)((int)ptr_00 + local_30);",
       "type": "pointer_cast"
@@ -1251,7 +1228,7 @@
     {
       "description": "Complex pointer cast",
       "line": 471,
-      "match": "(CPodAuditRecord *)((int)",
+      "match": "(CPodAuditRecord *)((int)pCVar15",
       "severity": "moderate",
       "text": "pCVar15 = (CPodAuditRecord *)((int)pCVar15 + ((uint)bVar19 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -1259,7 +1236,7 @@
     {
       "description": "Complex pointer cast",
       "line": 490,
-      "match": "(CPodAuditRecord *)((int)",
+      "match": "(CPodAuditRecord *)((int)pCVar15",
       "severity": "moderate",
       "text": "pCVar15 = (CPodAuditRecord *)((int)pCVar15 + (uint)bVar19 * -8 + 4);",
       "type": "pointer_cast"
@@ -1267,7 +1244,7 @@
     {
       "description": "Complex pointer cast",
       "line": 515,
-      "match": "(CPodAuditRecord *)((int)",
+      "match": "(CPodAuditRecord *)((int)pCVar15",
       "severity": "moderate",
       "text": "pCVar15 = (CPodAuditRecord *)((int)pCVar15 + ((uint)bVar19 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -1275,7 +1252,7 @@
     {
       "description": "Complex pointer cast",
       "line": 532,
-      "match": "(CPodAuditRecord *)((int)",
+      "match": "(CPodAuditRecord *)((int)pCVar18",
       "severity": "moderate",
       "text": "pCVar18 = (CPodAuditRecord *)((int)pCVar18 + (uint)bVar19 * -8 + 4);",
       "type": "pointer_cast"
@@ -1351,6 +1328,70 @@
       "severity": "mild",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 204,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004b5c76: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 236,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004b5ce0: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 378,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004b5e91: MOVSD.REP ES:EDI,ESI  ; g_WorkingAuditRecord | g_WorkingAuditRecord.user_path[4]",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 416,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004b5f17: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 1038,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004b66ea: MOVSD.REP ES:EDI,ESI  ; g_WorkingAuditRecord | g_WorkingAuditRecord.user_path[4]",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 1067,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004b674d: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 1113,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004b67de: MOVSD.REP ES:EDI,ESI  ; g_WorkingAuditRecord | g_WorkingAuditRecord.user_path[4]",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 1142,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004b6841: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

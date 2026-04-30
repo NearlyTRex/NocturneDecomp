@@ -105,7 +105,7 @@
     {
       "description": "Complex pointer cast",
       "line": 19,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)ptr",
       "severity": "moderate",
       "text": "puVar1 = (uint *)((int)ptr - 4);",
       "type": "pointer_cast"
@@ -113,7 +113,7 @@
     {
       "description": "Complex pointer cast",
       "line": 24,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)puVar1",
       "severity": "moderate",
       "text": "pbVar2 = (byte *)((int)puVar1 + uVar6);",
       "type": "pointer_cast"
@@ -121,7 +121,7 @@
     {
       "description": "Complex pointer cast",
       "line": 55,
-      "match": "(uint *)(*puVar1 + (int)",
+      "match": "(uint *)(*puVar1 + (int)puVar1",
       "severity": "moderate",
       "text": "puVar4 = (uint *)(*puVar1 + (int)puVar1);",
       "type": "pointer_cast"
@@ -129,7 +129,7 @@
     {
       "description": "Complex pointer cast",
       "line": 60,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)puVar4",
       "severity": "moderate",
       "text": "puVar4 = (uint *)((int)puVar4 + (uVar6 & 0xfffffffe));",
       "type": "pointer_cast"
@@ -137,7 +137,7 @@
     {
       "description": "Complex pointer cast",
       "line": 76,
-      "match": "(uint *)(*puVar8 + (int)",
+      "match": "(uint *)(*puVar8 + (int)puVar8",
       "severity": "moderate",
       "text": "if ((uint *)(*puVar8 + (int)puVar8) == puVar1) {",
       "type": "pointer_cast"

@@ -373,7 +373,7 @@
     {
       "description": "Complex pointer cast",
       "line": 6,
-      "match": "(byte *)(x + (int)",
+      "match": "(byte *)(x + (int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "*(byte *)(x + (int)g_ScreenBufferArray[y]) = (byte)g_ActiveRenderColor;",
       "type": "pointer_cast"
@@ -381,7 +381,7 @@
     {
       "description": "Complex pointer cast",
       "line": 10,
-      "match": "(ushort *)(x * 2 + (int)",
+      "match": "(ushort *)(x * 2 + (int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "*(ushort *)(x * 2 + (int)g_ScreenBufferArray[y]) = g_ColorTable16[g_ActiveRenderColor & 0xffU];",
       "type": "pointer_cast"
@@ -389,7 +389,7 @@
     {
       "description": "Complex pointer cast",
       "line": 13,
-      "match": "(uint *)(x * 4 + (int)",
+      "match": "(uint *)(x * 4 + (int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "*(uint *)(x * 4 + (int)g_ScreenBufferArray[y]) = g_ColorTable32[g_ActiveRenderColor & 0xffU];",
       "type": "pointer_cast"

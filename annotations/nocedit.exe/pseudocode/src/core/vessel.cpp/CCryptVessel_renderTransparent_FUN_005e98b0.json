@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 116,
+    "complexity_score": 91,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 7,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 61,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_local",
       "unrolled_strcpy",
       "warning_inlined_function"
     ],
@@ -230,24 +229,6 @@
       "severity": "mild",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 21,
-      "match": "local_2c",
-      "severity": "mild",
-      "text": "CVector3i local_2c;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 39,
-      "match": "local_2c",
-      "severity": "mild",
-      "text": "(g_CDemonRendererPtr2,&local_20,&local_2c);",
-      "type": "unnamed_local"
     }
   ],
   "vtable_info": {

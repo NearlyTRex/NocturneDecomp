@@ -7,14 +7,16 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 83,
+    "complexity_score": 128,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 83,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 4,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 206
   },
   "cross_references": [
@@ -88,7 +90,7 @@
     {
       "description": "Complex pointer cast",
       "line": 25,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)src_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "src_buffer = (uint *)((int)src_buffer + 1);",
@@ -97,7 +99,7 @@
     {
       "description": "Complex pointer cast",
       "line": 26,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)dest_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "dest_buffer = (uint *)((int)dest_buffer + 1);",
@@ -106,7 +108,7 @@
     {
       "description": "Complex pointer cast",
       "line": 33,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)src_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "src_buffer = (uint *)((int)src_buffer + 4);",
@@ -115,7 +117,7 @@
     {
       "description": "Complex pointer cast",
       "line": 34,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)dest_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "dest_buffer = (uint *)((int)dest_buffer + 4);",
@@ -124,7 +126,7 @@
     {
       "description": "Complex pointer cast",
       "line": 54,
-      "match": "(longlong *)(iVar8 + (int)",
+      "match": "(longlong *)(iVar8 + (int)src_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "lVar1 = *(longlong *)(iVar8 + (int)src_buffer);",
@@ -133,7 +135,7 @@
     {
       "description": "Complex pointer cast",
       "line": 55,
-      "match": "(longlong *)(iVar7 + -0x10 + (int)",
+      "match": "(longlong *)(iVar7 + -0x10 + (int)src_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "lVar2 = *(longlong *)(iVar7 + -0x10 + (int)src_buffer);",
@@ -142,7 +144,7 @@
     {
       "description": "Complex pointer cast",
       "line": 56,
-      "match": "(longlong *)(iVar7 + -8 + (int)",
+      "match": "(longlong *)(iVar7 + -8 + (int)src_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "lVar3 = *(longlong *)(iVar7 + -8 + (int)src_buffer);",
@@ -151,7 +153,7 @@
     {
       "description": "Complex pointer cast",
       "line": 57,
-      "match": "(longlong *)(iVar7 + -0x18 + (int)",
+      "match": "(longlong *)(iVar7 + -0x18 + (int)dest_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(longlong *)(iVar7 + -0x18 + (int)dest_buffer) =",
@@ -160,7 +162,7 @@
     {
       "description": "Complex pointer cast",
       "line": 58,
-      "match": "(longlong *)(iVar7 + -0x18 + (int)",
+      "match": "(longlong *)(iVar7 + -0x18 + (int)src_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "(longlong)ROUND((float10)*(longlong *)(iVar7 + -0x18 + (int)src_buffer));",
@@ -169,7 +171,7 @@
     {
       "description": "Complex pointer cast",
       "line": 59,
-      "match": "(longlong *)(iVar8 + (int)",
+      "match": "(longlong *)(iVar8 + (int)dest_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(longlong *)(iVar8 + (int)dest_buffer) = (longlong)ROUND((float10)lVar1);",
@@ -178,7 +180,7 @@
     {
       "description": "Complex pointer cast",
       "line": 60,
-      "match": "(longlong *)(iVar7 + -8 + (int)",
+      "match": "(longlong *)(iVar7 + -8 + (int)dest_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(longlong *)(iVar7 + -8 + (int)dest_buffer) = (longlong)ROUND((float10)lVar3);",
@@ -187,7 +189,7 @@
     {
       "description": "Complex pointer cast",
       "line": 61,
-      "match": "(longlong *)(iVar7 + -0x10 + (int)",
+      "match": "(longlong *)(iVar7 + -0x10 + (int)dest_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(longlong *)(iVar7 + -0x10 + (int)dest_buffer) = (longlong)ROUND((float10)lVar2);",
@@ -196,7 +198,7 @@
     {
       "description": "Complex pointer cast",
       "line": 65,
-      "match": "(void *)((int)",
+      "match": "(void *)((int)src_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "src_buffer = (void *)((int)src_buffer + uVar5 * 0x20);",
@@ -205,7 +207,7 @@
     {
       "description": "Complex pointer cast",
       "line": 66,
-      "match": "(void *)((int)",
+      "match": "(void *)((int)dest_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "dest_buffer = (void *)((int)dest_buffer + uVar5 * 8 * 4);",
@@ -214,7 +216,7 @@
     {
       "description": "Complex pointer cast",
       "line": 74,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)src_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "src_buffer = (uint *)((int)src_buffer + 4);",
@@ -223,7 +225,7 @@
     {
       "description": "Complex pointer cast",
       "line": 75,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)dest_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "dest_buffer = (uint *)((int)dest_buffer + 4);",
@@ -232,7 +234,7 @@
     {
       "description": "Complex pointer cast",
       "line": 81,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)src_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "src_buffer = (uint *)((int)src_buffer + 1);",
@@ -241,7 +243,7 @@
     {
       "description": "Complex pointer cast",
       "line": 82,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)dest_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "dest_buffer = (uint *)((int)dest_buffer + 1);",
@@ -278,5 +280,38 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 33,
+      "match": "MOVSB.REP",
+      "severity": "moderate",
+      "text": "// 0043155c: MOVSB.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 39,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00431565: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 107,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0043160d: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 114,
+      "match": "MOVSB.REP",
+      "severity": "moderate",
+      "text": "// 00431618: MOVSB.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

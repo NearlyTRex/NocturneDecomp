@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 232,
-    "complexity_score": 144,
+    "complexity_score": 134,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 104,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "warning_inlined_function"
@@ -241,17 +241,9 @@
     {
       "description": "Complex pointer cast",
       "line": 46,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)g_BoneBurnIntensity",
       "severity": "moderate",
       "text": "*(uint *)((int)g_BoneBurnIntensity + iVar10) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 101,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->a + local_18) =",
       "type": "pointer_cast"
     }
   ]

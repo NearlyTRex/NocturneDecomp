@@ -7,16 +7,16 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 1920,
-    "complexity_score": 762,
+    "complexity_score": 712,
     "cross_reference_count": 1,
     "function_call_count": 60,
     "global_count": 143,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 597,
-    "suspect_count": 15,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
-      "unnamed_local",
+      "unrolled_memcpy",
       "warning_inlined_function"
     ],
     "total_lines": 2517
@@ -1468,7 +1468,7 @@
     {
       "description": "Complex pointer cast",
       "line": 479,
-      "match": "(SShapeEditorPolygon *)((int)",
+      "match": "(SShapeEditorPolygon *)((int)pSVar14",
       "severity": "moderate",
       "text": "pSVar14 = (SShapeEditorPolygon *)((int)pSVar14 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -1476,7 +1476,7 @@
     {
       "description": "Complex pointer cast",
       "line": 480,
-      "match": "(SShapeEditorPolygon *)((int)",
+      "match": "(SShapeEditorPolygon *)((int)pSVar15",
       "severity": "moderate",
       "text": "pSVar15 = (SShapeEditorPolygon *)((int)pSVar15 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -1484,7 +1484,7 @@
     {
       "description": "Complex pointer cast",
       "line": 485,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)g_ModelPolygonData",
       "severity": "moderate",
       "text": "*(uint *)((int)g_ModelPolygonData +",
       "type": "pointer_cast"
@@ -1492,7 +1492,7 @@
     {
       "description": "Complex pointer cast",
       "line": 488,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)g_ModelPolygonData",
       "severity": "moderate",
       "text": "*(float *)((int)g_ModelPolygonData +",
       "type": "pointer_cast"
@@ -1500,7 +1500,7 @@
     {
       "description": "Complex pointer cast",
       "line": 491,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)g_ModelPolygonData",
       "severity": "moderate",
       "text": "*(float *)((int)g_ModelPolygonData +",
       "type": "pointer_cast"
@@ -1508,7 +1508,7 @@
     {
       "description": "Complex pointer cast",
       "line": 549,
-      "match": "(SShapeEditorPolygon *)((int)",
+      "match": "(SShapeEditorPolygon *)((int)pSVar6",
       "severity": "moderate",
       "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
@@ -1516,73 +1516,26 @@
     {
       "description": "Complex pointer cast",
       "line": 550,
-      "match": "(SShapeEditorPolygon *)((int)",
+      "match": "(SShapeEditorPolygon *)((int)pSVar5",
       "severity": "moderate",
       "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 41,
-      "match": "local_58",
-      "severity": "mild",
-      "text": "int local_58;",
-      "type": "unnamed_local"
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 1549,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00460623: MOVSD.REP ES:EDI,ESI  ; g_VertexNormals[19980].v | g_ModelPolygonData | g_VertexNormals[19981].vertex.x",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 46,
-      "match": "local_44",
-      "severity": "mild",
-      "text": "int local_44;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 48,
-      "match": "local_3c",
-      "severity": "mild",
-      "text": "int local_3c;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 49,
-      "match": "local_38",
-      "severity": "mild",
-      "text": "int local_38;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 349,
-      "match": "local_44",
-      "severity": "mild",
-      "text": "for (local_44 = g_WindowWidth + -10; local_44 < g_WindowWidth; local_44 = local_44 + 1) {",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 349,
-      "match": "local_44",
-      "severity": "mild",
-      "text": "for (local_44 = g_WindowWidth + -10; local_44 < g_WindowWidth; local_44 = local_44 + 1) {",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 349,
-      "match": "local_44",
-      "severity": "mild",
-      "text": "for (local_44 = g_WindowWidth + -10; local_44 < g_WindowWidth; local_44 = local_44 + 1) {",
-      "type": "unnamed_local"
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 1780,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004608b8: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]",
+      "type": "unrolled_memcpy"
     }
   ]
 }

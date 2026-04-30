@@ -154,7 +154,7 @@
     {
       "description": "Complex pointer cast",
       "line": 25,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)allocation",
       "severity": "moderate",
       "text": "piVar5 = (int *)((int)allocation->granules + local_14);",
       "type": "pointer_cast"
@@ -162,7 +162,7 @@
     {
       "description": "Complex pointer cast",
       "line": 26,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)quantized_samples",
       "severity": "moderate",
       "text": "puVar3 = (uint *)((int)quantized_samples->codes[0] + local_14);",
       "type": "pointer_cast"
@@ -170,7 +170,7 @@
     {
       "description": "Complex pointer cast",
       "line": 51,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)quantized_samples",
       "severity": "moderate",
       "text": "puVar4 = (uint *)((int)quantized_samples->codes[0] + iVar5);",
       "type": "pointer_cast"

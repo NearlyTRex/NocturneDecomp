@@ -7,16 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 216,
-    "complexity_score": 189,
+    "complexity_score": 114,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 49,
-    "suspect_count": 13,
+    "suspect_count": 6,
     "suspect_types": [
-      "missing_cave_copy",
-      "unnamed_local"
+      "missing_cave_copy"
     ],
     "total_lines": 265
   },
@@ -250,68 +249,6 @@
       "severity": "moderate",
       "text": "CMatrix3x4f local_54;",
       "type": "missing_cave_copy"
-    },
-    {
-      "description": "Struct-type local `local_18` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 22,
-      "match": "CVector3f local_18; ... f(&local_18, ...);",
-      "severity": "moderate",
-      "text": "CVector3f local_18;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 21,
-      "match": "local_1a4",
-      "severity": "mild",
-      "text": "CMatrix3x4f local_1a4;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 22,
-      "match": "local_174",
-      "severity": "mild",
-      "text": "CMatrix3x4f local_174;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 24,
-      "match": "local_114",
-      "severity": "mild",
-      "text": "CMatrix3x4f local_114;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 25,
-      "match": "local_e4",
-      "severity": "mild",
-      "text": "CMatrix3x4f local_e4;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 26,
-      "match": "local_b4",
-      "severity": "mild",
-      "text": "CMatrix3x4f local_b4;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 28,
-      "match": "local_54",
-      "severity": "mild",
-      "text": "CMatrix3x4f local_54;",
-      "type": "unnamed_local"
     }
   ]
 }

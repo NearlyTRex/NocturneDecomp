@@ -7,16 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 110,
+    "complexity_score": 60,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 30,
-    "suspect_count": 7,
+    "suspect_count": 2,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_local"
+      "unrolled_memcpy"
     ],
     "total_lines": 70
   },
@@ -222,6 +222,14 @@
   },
   "suspects": [
     {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 35,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005f6cac: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
       "call_site_count": 4,
       "declared_params": 2,
       "description": "Signature has too few params - likely missing this ptr or other params",
@@ -231,60 +239,6 @@
       "param_delta": 2,
       "text": "Function declares 2 params but call sites push 4 (2 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 18,
-      "match": "local_48",
-      "severity": "mild",
-      "text": "float local_48 [12];",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 22,
-      "match": "local_48",
-      "severity": "mild",
-      "text": "local_48[0] = 1.0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 23,
-      "match": "local_48",
-      "severity": "mild",
-      "text": "local_48[1] = 0.0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 24,
-      "match": "local_48",
-      "severity": "mild",
-      "text": "local_48[2] = 0.0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 25,
-      "match": "local_48",
-      "severity": "mild",
-      "text": "local_48[3] = 0.0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 26,
-      "match": "local_48",
-      "severity": "mild",
-      "text": "local_48[4] = 0.0;",
-      "type": "unnamed_local"
     }
   ]
 }

@@ -2,15 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 127,
+    "complexity_score": 172,
     "cross_reference_count": 80,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 42,
-    "suspect_count": 8,
+    "suspect_count": 12,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 93
   },
@@ -575,7 +576,7 @@
     {
       "description": "Complex pointer cast",
       "line": 11,
-      "match": "(ushort *)((int)",
+      "match": "(ushort *)((int)src",
       "severity": "moderate",
       "text": "if ((src < dest) && (dest < (ushort *)((int)src + n))) {",
       "type": "pointer_cast"
@@ -583,7 +584,7 @@
     {
       "description": "Complex pointer cast",
       "line": 13,
-      "match": "(ushort *)((int)",
+      "match": "(ushort *)((int)src",
       "severity": "moderate",
       "text": "puVar2 = (ushort *)((int)src + n);",
       "type": "pointer_cast"
@@ -591,7 +592,7 @@
     {
       "description": "Complex pointer cast",
       "line": 14,
-      "match": "(ushort *)((int)",
+      "match": "(ushort *)((int)dest",
       "severity": "moderate",
       "text": "puVar3 = (ushort *)((int)dest + n);",
       "type": "pointer_cast"
@@ -599,7 +600,7 @@
     {
       "description": "Complex pointer cast",
       "line": 24,
-      "match": "(ushort *)((int)",
+      "match": "(ushort *)((int)puVar3",
       "severity": "moderate",
       "text": "puVar3 = (ushort *)((int)puVar3 + -1);",
       "type": "pointer_cast"
@@ -607,7 +608,7 @@
     {
       "description": "Complex pointer cast",
       "line": 25,
-      "match": "(ushort *)((int)",
+      "match": "(ushort *)((int)puVar2",
       "severity": "moderate",
       "text": "puVar2 = (ushort *)((int)puVar2 - 1);",
       "type": "pointer_cast"
@@ -615,7 +616,7 @@
     {
       "description": "Complex pointer cast",
       "line": 35,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)src",
       "severity": "moderate",
       "text": "src = (uint *)((int)src + 4);",
       "type": "pointer_cast"
@@ -623,7 +624,7 @@
     {
       "description": "Complex pointer cast",
       "line": 40,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)src",
       "severity": "moderate",
       "text": "src = (uint *)((int)src + 1);",
       "type": "pointer_cast"
@@ -631,10 +632,42 @@
     {
       "description": "Complex pointer cast",
       "line": 41,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)puVar4",
       "severity": "moderate",
       "text": "puVar4 = (uint *)((int)puVar4 + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSW at ????????, 2-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 2) or a struct assignment in a .keep.",
+      "line": 26,
+      "match": "MOVSW.REP",
+      "severity": "moderate",
+      "text": "// 005fe60c: MOVSW.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 30,
+      "match": "MOVSB.REP",
+      "severity": "moderate",
+      "text": "// 005fe613: MOVSB.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 43,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005fe626: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 46,
+      "match": "MOVSB.REP",
+      "severity": "moderate",
+      "text": "// 005fe62c: MOVSB.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

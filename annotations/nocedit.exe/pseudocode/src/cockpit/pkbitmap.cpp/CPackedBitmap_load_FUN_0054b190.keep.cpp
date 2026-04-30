@@ -25,7 +25,6 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
   uchar *puVar10;
   byte bVar11;
   char local_154 [300];
-  int local_28;
   int local_24;
   int local_20;
   int local_1c;
@@ -51,10 +50,9 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
   new_size = 0;
   local_24 = 0;
   local_14 = bitmap_data;
-  local_28 = 0;
   local_18 = 0;
   do {
-    *(int *)((int)this_ptr->row_pointers + local_28) = new_size;
+    this_ptr->row_pointers[local_24] = (void *)new_size;
     if (this_ptr->height <= local_24) {
       puVar1 = (ushort *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                          (this_ptr->packed_data,new_size,"..\\cockpit\\pkbitmap.cpp",0x3d6);
@@ -93,7 +91,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
               core_main_c_displayErrorAndQuit_FUN_00506f10(local_154);
             }
           }
-          puVar6 = (ushort *)((int)this_ptr->packed_data + iVar3);
+          puVar6 = (ushort *)((char *)this_ptr->packed_data + iVar3);
           *puVar6 = (ushort)iVar8;
           puVar6[1] = (ushort)(iVar9 - iVar8);
           uVar1 = puVar6[1];
@@ -104,7 +102,6 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
       } while (iVar9 < this_ptr->width);
     }
     local_24 = local_24 + 1;
-    local_28 = local_28 + 4;
     local_14 = local_14 + row_stride;
   } while( true );
 }

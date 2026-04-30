@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 293,
-    "complexity_score": 188,
+    "complexity_score": 203,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 173,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 466
   },
@@ -293,7 +294,7 @@
     {
       "description": "Complex pointer cast",
       "line": 47,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_ChannelPrimaryBuffers",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "if (*(int *)((int)g_ChannelPrimaryBuffers + iVar2) == 0) {",
@@ -302,7 +303,7 @@
     {
       "description": "Complex pointer cast",
       "line": 89,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_ChannelPrimaryBuffers",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)g_ChannelPrimaryBuffers + iVar3);",
@@ -311,7 +312,7 @@
     {
       "description": "Complex pointer cast",
       "line": 103,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)local_6c",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)local_6c + iVar2) =",
@@ -320,7 +321,7 @@
     {
       "description": "Complex pointer cast",
       "line": 104,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)g_ChannelPrimaryBuffers",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)g_ChannelPrimaryBuffers + iVar2);",
@@ -338,7 +339,7 @@
     {
       "description": "Complex pointer cast",
       "line": 163,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_ChannelPrimaryBuffers",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)((int)g_ChannelPrimaryBuffers + iVar5)),",
@@ -347,7 +348,7 @@
     {
       "description": "Complex pointer cast",
       "line": 166,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)local_44",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)((int)local_44 + iVar5 + 4) =",
@@ -356,7 +357,7 @@
     {
       "description": "Complex pointer cast",
       "line": 167,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)local_44",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)((int)local_44 + iVar5 + 4) + block_align * iVar3;",
@@ -505,10 +506,18 @@
   },
   "suspects": [
     {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 199,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005acc80: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "Complex pointer cast",
       "introduced_by": "keep",
       "line": 83,
-      "match": "(float *)(g_MixBufferWriteIndex * 4 + (int)",
+      "match": "(float *)(g_MixBufferWriteIndex * 4 + (int)g_ChannelPrimaryBuffers",
       "severity": "moderate",
       "text": "((float *)(g_MixBufferWriteIndex * 4 + (int)g_ChannelPrimaryBuffers[iVar5]),",
       "type": "pointer_cast"

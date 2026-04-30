@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 106,
+    "complexity_score": 51,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 26,
-    "suspect_count": 7,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
       "unaffected_reg"
     ],
     "total_lines": 95
@@ -113,52 +112,12 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 10,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "((*(uint *)((int)&stream->_flag + *(int *)(stream->_ptr + 4)) & 1) != 0)) {",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unaffected register variable",
       "line": 18,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "mbstrncpy_core((char *)stream,unaff_EBX,unaff_retaddr);",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 19,
-      "match": "(FileEmbeddedData *)((int)",
-      "severity": "moderate",
-      "text": "embedded_data = (FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "return (uint)(*(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) == 0);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 27,
-      "match": "(FileEmbeddedData *)((int)",
-      "severity": "moderate",
-      "text": "((FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4)),2);",
-      "type": "pointer_cast"
     }
   ]
 }

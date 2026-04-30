@@ -7,15 +7,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 333,
-    "complexity_score": 207,
+    "complexity_score": 242,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 24,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 142,
-    "suspect_count": 6,
+    "suspect_count": 9,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 475
   },
@@ -275,7 +276,7 @@
     {
       "description": "Complex pointer cast",
       "line": 71,
-      "match": "(SShapeEditorPolygon *)((int)",
+      "match": "(SShapeEditorPolygon *)((int)pSVar17",
       "severity": "moderate",
       "text": "pSVar17 = (SShapeEditorPolygon *)((int)pSVar17 + (uint)bVar18 * -8 + 4);",
       "type": "pointer_cast"
@@ -283,7 +284,7 @@
     {
       "description": "Complex pointer cast",
       "line": 72,
-      "match": "(SShapeEditorPolygon *)((int)",
+      "match": "(SShapeEditorPolygon *)((int)pSVar16",
       "severity": "moderate",
       "text": "pSVar16 = (SShapeEditorPolygon *)((int)pSVar16 + (uint)bVar18 * -8 + 4);",
       "type": "pointer_cast"
@@ -291,7 +292,7 @@
     {
       "description": "Complex pointer cast",
       "line": 102,
-      "match": "(SShapeEditorPolygon *)((int)",
+      "match": "(SShapeEditorPolygon *)((int)pSVar16",
       "severity": "moderate",
       "text": "pSVar16 = (SShapeEditorPolygon *)((int)pSVar16 + (uint)bVar18 * -8 + 4);",
       "type": "pointer_cast"
@@ -299,7 +300,7 @@
     {
       "description": "Complex pointer cast",
       "line": 103,
-      "match": "(SShapeEditorPolygon *)((int)",
+      "match": "(SShapeEditorPolygon *)((int)pSVar17",
       "severity": "moderate",
       "text": "pSVar17 = (SShapeEditorPolygon *)((int)pSVar17 + (uint)bVar18 * -8 + 4);",
       "type": "pointer_cast"
@@ -307,7 +308,7 @@
     {
       "description": "Complex pointer cast",
       "line": 131,
-      "match": "(SShapeEditorPolygon *)((int)",
+      "match": "(SShapeEditorPolygon *)((int)pSVar16",
       "severity": "moderate",
       "text": "pSVar16 = (SShapeEditorPolygon *)((int)pSVar16 + (uint)bVar18 * -8 + 4);",
       "type": "pointer_cast"
@@ -315,10 +316,34 @@
     {
       "description": "Complex pointer cast",
       "line": 132,
-      "match": "(SShapeEditorPolygon *)((int)",
+      "match": "(SShapeEditorPolygon *)((int)pSVar17",
       "severity": "moderate",
       "text": "pSVar17 = (SShapeEditorPolygon *)((int)pSVar17 + (uint)bVar18 * -8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 177,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0046efe7: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 243,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0046f10d: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 303,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0046f224: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]",
+      "type": "unrolled_memcpy"
     }
   ]
 }

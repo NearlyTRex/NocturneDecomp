@@ -6,7 +6,7 @@
 // Signature: void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *save_filename)
 
 #include "nocturne.h"
-#include "system/stream_compat.h"
+#include "stream_compat.h"
 
 void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *save_filename)
 

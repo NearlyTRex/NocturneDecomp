@@ -77,7 +77,7 @@
     {
       "description": "Complex pointer cast",
       "line": 5,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_ScreenBufferArray",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)((int)g_ScreenBufferArray[y] + x * 4) = grayscale_value * 0x10101;",

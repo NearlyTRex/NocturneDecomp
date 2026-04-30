@@ -85,7 +85,7 @@
     {
       "description": "Complex pointer cast",
       "line": 11,
-      "match": "(void *)((int)",
+      "match": "(void *)((int)input_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "input_buffer = (void *)((int)input_buffer + 1);",
@@ -94,7 +94,7 @@
     {
       "description": "Complex pointer cast",
       "line": 13,
-      "match": "(void *)((int)",
+      "match": "(void *)((int)output_buffer",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "output_buffer = (void *)((int)output_buffer + 4);",

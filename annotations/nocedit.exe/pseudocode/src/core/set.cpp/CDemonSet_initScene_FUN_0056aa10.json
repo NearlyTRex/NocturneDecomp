@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 226,
-    "complexity_score": 119,
+    "complexity_score": 104,
     "cross_reference_count": 16,
     "function_call_count": 17,
     "global_count": 22,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 104,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 330
   },
   "cross_references": [
@@ -501,6 +499,17 @@
     },
     "pcode_op_count": 792
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(int *)((int)g_MasterLightList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)g_MasterLightList + iVar4) != 0) {",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -517,14 +526,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)g_MasterLightList + iVar4) != 0) {",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

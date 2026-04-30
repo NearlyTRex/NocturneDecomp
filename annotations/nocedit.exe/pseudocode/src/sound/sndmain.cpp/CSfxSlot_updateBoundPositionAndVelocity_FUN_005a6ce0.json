@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 166,
+    "complexity_score": 146,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 41,
-    "suspect_count": 12,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -105,7 +105,7 @@
     {
       "description": "Complex pointer cast",
       "line": 14,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)pvVar2",
       "severity": "moderate",
       "text": "(this_ptr->options).position.y = (double)*(float *)((int)pvVar2 + 4);",
       "type": "pointer_cast"
@@ -113,7 +113,7 @@
     {
       "description": "Complex pointer cast",
       "line": 15,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)pvVar3",
       "severity": "moderate",
       "text": "(this_ptr->options).position.z = (double)*(float *)((int)pvVar3 + 8);",
       "type": "pointer_cast"
@@ -121,7 +121,7 @@
     {
       "description": "Complex pointer cast",
       "line": 21,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pvVar2",
       "severity": "moderate",
       "text": "(this_ptr->options).position.y = *(double *)((int)pvVar2 + 8);",
       "type": "pointer_cast"
@@ -129,7 +129,7 @@
     {
       "description": "Complex pointer cast",
       "line": 22,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)pvVar3",
       "severity": "moderate",
       "text": "*(uint *)&(this_ptr->options).position.z = *(uint *)((int)pvVar3 + 0x10);",
       "type": "pointer_cast"
@@ -137,15 +137,7 @@
     {
       "description": "Complex pointer cast",
       "line": 23,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(this_ptr->options).position.z + 4) = *(uint *)((int)pvVar3 + 0x14);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 23,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)pvVar3",
       "severity": "moderate",
       "text": "*(uint *)((int)&(this_ptr->options).position.z + 4) = *(uint *)((int)pvVar3 + 0x14);",
       "type": "pointer_cast"
@@ -153,7 +145,7 @@
     {
       "description": "Complex pointer cast",
       "line": 33,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pvVar2",
       "severity": "moderate",
       "text": "(this_ptr->options).velocity.y = *(double *)((int)pvVar2 + 8);",
       "type": "pointer_cast"
@@ -161,7 +153,7 @@
     {
       "description": "Complex pointer cast",
       "line": 34,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)pvVar3",
       "severity": "moderate",
       "text": "*(uint *)&(this_ptr->options).velocity.z = *(uint *)((int)pvVar3 + 0x10);",
       "type": "pointer_cast"
@@ -169,15 +161,7 @@
     {
       "description": "Complex pointer cast",
       "line": 35,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(this_ptr->options).velocity.z + 4) = *(uint *)((int)pvVar3 + 0x14);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)pvVar3",
       "severity": "moderate",
       "text": "*(uint *)((int)&(this_ptr->options).velocity.z + 4) = *(uint *)((int)pvVar3 + 0x14);",
       "type": "pointer_cast"
@@ -185,7 +169,7 @@
     {
       "description": "Complex pointer cast",
       "line": 41,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)pvVar2",
       "severity": "moderate",
       "text": "(this_ptr->options).velocity.y = (double)*(float *)((int)pvVar2 + 4);",
       "type": "pointer_cast"
@@ -193,7 +177,7 @@
     {
       "description": "Complex pointer cast",
       "line": 42,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)pvVar3",
       "severity": "moderate",
       "text": "(this_ptr->options).velocity.z = (double)*(float *)((int)pvVar3 + 8);",
       "type": "pointer_cast"

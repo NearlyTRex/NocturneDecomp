@@ -7,16 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 165,
+    "complexity_score": 130,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 11,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 115,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_many",
-      "pointer_cast"
+      "param_count_too_many"
     ],
     "total_lines": 360
   },
@@ -276,30 +275,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(SMRGLHeaderPrimitive *)((int)",
-      "severity": "moderate",
-      "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + primitive_stride);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 100,
-      "match": "(SMRGLHeaderPrimitive *)((int)",
-      "severity": "moderate",
-      "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + primitive_stride);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 113,
-      "match": "(SMRGLHeaderPrimitive *)((int)",
-      "severity": "moderate",
-      "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + primitive_stride);",
-      "type": "pointer_cast"
-    },
     {
       "call_site_count": 2,
       "declared_params": 5,

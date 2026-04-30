@@ -68,17 +68,6 @@
     },
     "pcode_op_count": 99
   },
-  "resolved_suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 11,
-      "match": "(SMRGLHeaderPrimitive *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "poly_headers = (SMRGLHeaderPrimitive *)((int)&(poly_headers->base).type + poly_stride);",
-      "type": "pointer_cast"
-    }
-  ],
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,

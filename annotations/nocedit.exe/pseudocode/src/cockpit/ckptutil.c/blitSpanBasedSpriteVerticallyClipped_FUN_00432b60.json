@@ -7,16 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 97,
+    "complexity_score": 72,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 6,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 72,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_local"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 222
   },
   "cross_references": [],
@@ -125,7 +123,7 @@
     {
       "description": "Complex pointer cast",
       "line": 34,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_ScreenBufferArray",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "iVar2 = *(int *)((int)g_ScreenBufferArray + local_38);",
@@ -134,7 +132,7 @@
     {
       "description": "Complex pointer cast",
       "line": 37,
-      "match": "(int *)(local_34 + (int)",
+      "match": "(int *)(local_34 + (int)span_data",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "for (iVar7 = 0; piVar6 = (int *)(local_34 + (int)span_data), iVar7 < *piVar6;",
@@ -143,7 +141,7 @@
     {
       "description": "Complex pointer cast",
       "line": 40,
-      "match": "(int *)(iVar8 + 4 + (int)",
+      "match": "(int *)(iVar8 + 4 + (int)piVar6",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "iVar3 = *(int *)(iVar8 + 4 + (int)piVar6);",
@@ -152,7 +150,7 @@
     {
       "description": "Complex pointer cast",
       "line": 42,
-      "match": "(void *)((int)",
+      "match": "(void *)((int)sprite_data",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "(*pCVar4)((void *)(iVar2 + iVar3),(void *)((int)sprite_data + iVar3 + iVar5),",
@@ -161,7 +159,7 @@
     {
       "description": "Complex pointer cast",
       "line": 43,
-      "match": "(int *)(iVar1 + (int)",
+      "match": "(int *)(iVar1 + (int)piVar6",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)(iVar1 + (int)piVar6));",
@@ -170,7 +168,7 @@
     {
       "description": "Complex pointer cast",
       "line": 57,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_ScreenBufferArray",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "iVar6 = *(int *)((int)g_ScreenBufferArray + local_40);",
@@ -179,7 +177,7 @@
     {
       "description": "Complex pointer cast",
       "line": 60,
-      "match": "(int *)(local_3c + (int)",
+      "match": "(int *)(local_3c + (int)span_data",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "for (iVar13 = 0; piVar11 = (int *)(local_3c + (int)span_data), iVar13 < *piVar11;",
@@ -188,7 +186,7 @@
     {
       "description": "Complex pointer cast",
       "line": 63,
-      "match": "(int *)(iVar12 + 4 + (int)",
+      "match": "(int *)(iVar12 + 4 + (int)piVar11",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "iVar9 = *(int *)(iVar12 + 4 + (int)piVar11);",
@@ -197,7 +195,7 @@
     {
       "description": "Complex pointer cast",
       "line": 65,
-      "match": "(void *)((int)",
+      "match": "(void *)((int)sprite_data",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "(*pCVar4)((void *)(iVar9 * 2 + iVar6),(void *)((int)sprite_data + iVar9 + iVar10),",
@@ -206,7 +204,7 @@
     {
       "description": "Complex pointer cast",
       "line": 66,
-      "match": "(int *)(iVar4 + (int)",
+      "match": "(int *)(iVar4 + (int)piVar11",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)(iVar4 + (int)piVar11));",
@@ -278,24 +276,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 25,
-      "match": "local_30",
-      "severity": "mild",
-      "text": "int local_30;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 26,
-      "match": "local_2c",
-      "severity": "mild",
-      "text": "int local_2c;",
-      "type": "unnamed_local"
-    }
-  ]
+  "suspects": []
 }

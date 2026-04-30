@@ -659,7 +659,7 @@
     {
       "description": "Complex pointer cast",
       "line": 120,
-      "match": "(SNetworkAddr *)((int)",
+      "match": "(SNetworkAddr *)((int)packet",
       "severity": "moderate",
       "text": "uVar4 = ((SNetworkAddr *)((int)packet + 5))->other;",
       "type": "pointer_cast"
@@ -667,7 +667,7 @@
     {
       "description": "Complex pointer cast",
       "line": 121,
-      "match": "(SNetworkAddr *)((int)",
+      "match": "(SNetworkAddr *)((int)packet",
       "severity": "moderate",
       "text": "this_ptr->players[iVar5].addr.port = ((SNetworkAddr *)((int)packet + 5))->port;",
       "type": "pointer_cast"
@@ -675,7 +675,7 @@
     {
       "description": "Complex pointer cast",
       "line": 145,
-      "match": "(SNetworkAddr *)((int)",
+      "match": "(SNetworkAddr *)((int)packet",
       "severity": "moderate",
       "text": "uVar4 = ((SNetworkAddr *)((int)packet + 0x69))->other;",
       "type": "pointer_cast"
@@ -683,7 +683,7 @@
     {
       "description": "Complex pointer cast",
       "line": 146,
-      "match": "(SNetworkAddr *)((int)",
+      "match": "(SNetworkAddr *)((int)packet",
       "severity": "moderate",
       "text": "this_ptr->players[iVar5].addr.port = ((SNetworkAddr *)((int)packet + 0x69))->port;",
       "type": "pointer_cast"
@@ -691,7 +691,7 @@
     {
       "description": "Complex pointer cast",
       "line": 227,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)g_ChatOutMessages",
       "severity": "moderate",
       "text": "while (*(uint *)((int)g_ChatOutMessages[0].player_timestamps + iVar5 + -8) ==",
       "type": "pointer_cast"
@@ -699,7 +699,7 @@
     {
       "description": "Complex pointer cast",
       "line": 229,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)g_ChatOutMessages",
       "severity": "moderate",
       "text": "*(byte *)((int)g_ChatOutMessages[0].player_timestamps + iVar5 + uVar2 + -4) = 1;",
       "type": "pointer_cast"
@@ -707,7 +707,7 @@
     {
       "description": "Complex pointer cast",
       "line": 357,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)g_SimFrameHistory",
       "severity": "moderate",
       "text": "if (uVar3 == *(uint *)((int)g_SimFrameHistory[0].player_input + iVar5 + -0xc)) {",
       "type": "pointer_cast"
@@ -715,7 +715,7 @@
     {
       "description": "Complex pointer cast",
       "line": 359,
-      "match": "(SSimFrame *)((int)",
+      "match": "(SSimFrame *)((int)g_SimFrameHistory",
       "severity": "moderate",
       "text": "dest = (SSimFrame *)((int)g_SimFrameHistory[0].player_input + iVar5 + -0xc);",
       "type": "pointer_cast"

@@ -272,7 +272,7 @@
     {
       "description": "Complex pointer cast",
       "line": 46,
-      "match": "(void *)((int)",
+      "match": "(void *)((int)this_ptr",
       "severity": "moderate",
       "text": "this_ptr->framebuffer_aligned = (void *)((int)this_ptr->framebuffer_raw + 0x10U & 0xfffffff0);",
       "type": "pointer_cast"
@@ -280,7 +280,7 @@
     {
       "description": "Complex pointer cast",
       "line": 47,
-      "match": "(void *)((int)",
+      "match": "(void *)((int)this_ptr",
       "severity": "moderate",
       "text": "this_ptr->zbuffer_aligned = (void *)((int)this_ptr->zbuffer_raw + 0x10U & 0xfffffff0);",
       "type": "pointer_cast"

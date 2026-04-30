@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 133,
+    "complexity_score": 108,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 43,
-    "suspect_count": 8,
+    "suspect_count": 6,
     "suspect_types": [
-      "pointer_cast",
       "unknown_param"
     ],
     "total_lines": 129
@@ -184,22 +183,6 @@
       "severity": "mild",
       "text": "str = *(char **)pTVar2->unknown_10;",
       "type": "unknown_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 23,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "((local_28[bVar1 >> 3] & *(byte *)((int)&DOUBLE_00665f28 + (bVar1 & 7))) != 0))) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "if ((local_28[bVar2 >> 3] & *(byte *)((int)&DOUBLE_00665f28 + (bVar2 & 7))) != 0) {",
-      "type": "pointer_cast"
     },
     {
       "description": "Parameter/variable named unknown (needs investigation)",

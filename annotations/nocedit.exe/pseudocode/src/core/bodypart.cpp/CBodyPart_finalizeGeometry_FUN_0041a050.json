@@ -7,15 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 478,
-    "complexity_score": 259,
+    "complexity_score": 214,
     "cross_reference_count": 17,
     "function_call_count": 10,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 199,
-    "suspect_count": 5,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
       "warning_inlined_function"
     ],
     "total_lines": 677
@@ -507,38 +506,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 55,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar2 = (int *)((int)&pCVar3->x + iVar12);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar2 = (int *)((int)&pCVar3->y + iVar12);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 59,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar2 = (int *)((int)&pCVar3->z + iVar12);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 145,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar13 = (int *)((int)&this_ptr->normals->x + iVar8);",
-      "type": "pointer_cast"
     }
   ]
 }

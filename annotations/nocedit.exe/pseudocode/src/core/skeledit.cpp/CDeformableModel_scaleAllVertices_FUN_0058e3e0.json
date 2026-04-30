@@ -132,7 +132,7 @@
     {
       "description": "Complex pointer cast",
       "line": 20,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)this_ptr",
       "severity": "moderate",
       "text": "for (iVar4 = 0; iVar4 < *(int *)((int)this_ptr->vertex_count + local_14); iVar4 = iVar4 + 1) {",
       "type": "pointer_cast"
@@ -140,7 +140,7 @@
     {
       "description": "Complex pointer cast",
       "line": 21,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)this_ptr",
       "severity": "moderate",
       "text": "pbVar3 = (byte *)(*(int *)((int)this_ptr->vertex_data_ptr + local_14) + iVar7);",
       "type": "pointer_cast"

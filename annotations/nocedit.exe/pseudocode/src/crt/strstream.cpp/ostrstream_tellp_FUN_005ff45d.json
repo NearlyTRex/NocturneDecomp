@@ -116,7 +116,7 @@
     {
       "description": "Complex pointer cast",
       "line": 7,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "if ((*(uint *)((int)this_ptr + *(int *)(*(int *)this_ptr + 4) + 0x10) & 3) != 0) {",
       "type": "pointer_cast"
@@ -124,7 +124,7 @@
     {
       "description": "Complex pointer cast",
       "line": 10,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)this_ptr",
       "severity": "moderate",
       "text": "iVar1 = *(int *)((int)this_ptr + *(int *)(*(int *)this_ptr + 4) + 4);",
       "type": "pointer_cast"

@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 128,
+    "complexity_score": 153,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 63,
-    "suspect_count": 6,
+    "suspect_count": 8,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 148
   },
@@ -263,7 +264,7 @@
     {
       "description": "Complex pointer cast",
       "line": 42,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar2",
       "severity": "moderate",
       "text": "pdVar2 = (double *)((int)pdVar2 + 4);",
       "type": "pointer_cast"
@@ -271,7 +272,7 @@
     {
       "description": "Complex pointer cast",
       "line": 43,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar3",
       "severity": "moderate",
       "text": "pdVar3 = (double *)((int)pdVar3 + 4);",
       "type": "pointer_cast"
@@ -279,7 +280,7 @@
     {
       "description": "Complex pointer cast",
       "line": 52,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar2",
       "severity": "moderate",
       "text": "pdVar2 = (double *)((int)pdVar2 + 4);",
       "type": "pointer_cast"
@@ -287,7 +288,7 @@
     {
       "description": "Complex pointer cast",
       "line": 53,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar5",
       "severity": "moderate",
       "text": "pdVar5 = (double *)((int)pdVar5 + 4);",
       "type": "pointer_cast"
@@ -295,18 +296,34 @@
     {
       "description": "Complex pointer cast",
       "line": 62,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar4",
       "severity": "moderate",
       "text": "pdVar4 = (double *)((int)pdVar4 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 63,
-      "match": "(CVector3d *)((int)",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 45,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "pCVar6 = (CVector3d *)((int)&pCVar6->x + 4);",
-      "type": "pointer_cast"
+      "text": "// 005d0da8: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 64,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005d0de2: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 79,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005d0e15: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {

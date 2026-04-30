@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 261,
-    "complexity_score": 142,
+    "complexity_score": 107,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 15,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 107,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unnamed_local"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 368
   },
   "cross_references": [
@@ -269,7 +267,7 @@
     {
       "description": "Complex pointer cast",
       "line": 42,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)local_34",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "local_18 = (int *)((int)local_34 + local_1c);",
@@ -296,7 +294,7 @@
     {
       "description": "Complex pointer cast",
       "line": 64,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)this_ptr",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "if (*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + local_1c + -0x28) != *local_18",
@@ -305,7 +303,7 @@
     {
       "description": "Complex pointer cast",
       "line": 69,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)this_ptr",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + local_1c + -0x24)) {",
@@ -314,7 +312,7 @@
     {
       "description": "Complex pointer cast",
       "line": 92,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)pvVar5",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)&pCVar1[iVar1].collapse_cost = *(uint *)((int)pvVar5 + 8);",
@@ -323,16 +321,7 @@
     {
       "description": "Complex pointer cast",
       "line": 93,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar1[iVar1].collapse_cost + 4) = *(uint *)((int)pvVar5 + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 93,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)pvVar5",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)&pCVar1[iVar1].collapse_cost + 4) = *(uint *)((int)pvVar5 + 0xc);",
@@ -341,7 +330,7 @@
     {
       "description": "Complex pointer cast",
       "line": 94,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)pvVar5",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "this_ptr->edges_ptr[iVar1].collapse_error = *(float *)((int)pvVar5 + 0x10);",
@@ -350,7 +339,7 @@
     {
       "description": "Complex pointer cast",
       "line": 97,
-      "match": "(void *)((int)",
+      "match": "(void *)((int)pvVar5",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pvVar5 = (void *)((int)pvVar5 + 0xf0);",
@@ -460,33 +449,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 19,
-      "match": "local_24",
-      "severity": "mild",
-      "text": "int local_24;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 37,
-      "match": "local_24",
-      "severity": "mild",
-      "text": "local_24 = 0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 41,
-      "match": "local_24",
-      "severity": "mild",
-      "text": "record = (CLodEdge *)local_34 + local_24;",
-      "type": "unnamed_local"
-    }
-  ]
+  "suspects": []
 }

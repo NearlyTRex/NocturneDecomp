@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 49,
+    "complexity_score": 24,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 14,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 24,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 94
   },
   "cross_references": [],
@@ -174,6 +172,26 @@
     },
     "pcode_op_count": 372
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(void *)((int)g_SoftwareFrameBuffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(void *)((int)g_SoftwareFrameBuffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -182,22 +200,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 18,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

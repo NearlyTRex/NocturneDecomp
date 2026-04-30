@@ -7,16 +7,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 45,
+    "complexity_score": 30,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 30,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 118
   },
   "cross_references": [],
@@ -153,14 +151,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 11,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)(file_stream->_fstreambase_core).layout_info + 4) + -0x38),0);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

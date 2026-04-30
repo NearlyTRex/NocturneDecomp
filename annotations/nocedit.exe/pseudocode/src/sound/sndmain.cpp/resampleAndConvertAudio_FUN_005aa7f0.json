@@ -4,19 +4,18 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 596,
-    "complexity_score": 496,
+    "complexity_score": 311,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 286,
-    "suspect_count": 20,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "warning_inlined_function"
+      "unrolled_memcpy"
     ],
     "total_lines": 882
   },
@@ -122,6 +121,143 @@
     },
     "pcode_op_count": 3307
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(short *)((int)src_buffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "src_buffer = (short *)((int)src_buffer + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(short *)((int)psVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "psVar9 = (short *)((int)psVar9 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(short *)((int)psVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "psVar9 = (short *)((int)psVar9 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(byte *)((int)psVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)psVar9 + 1) = uVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 82,
+      "match": "(char *)((int)src_buffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)*(char *)((int)src_buffer +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 86,
+      "match": "(short *)((int)psVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "psVar9 = (short *)((int)psVar9 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 98,
+      "match": "(byte *)((int)psVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)psVar9 + 1) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 99,
+      "match": "(byte *)((int)src_buffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)src_buffer + (int)ROUND(ROUND(fVar4 * fVar2)) * 2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 141,
+      "match": "(char *)((int)src_buffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(char *)((int)src_buffer + (int)ROUND(ROUND(fVar4 * fVar2)) * 2 + 1) * 0x80",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 155,
+      "match": "(char *)((int)src_buffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "psVar9[1] = (short)*(char *)((int)src_buffer +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 172,
+      "match": "(short *)((int)psVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "psVar9 = (short *)((int)psVar9 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 183,
+      "match": "(byte *)((int)psVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)psVar9 + 1) = local_18;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 202,
+      "match": "(short *)((int)psVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "psVar9 = (short *)((int)psVar9 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 219,
+      "match": "(byte *)((int)psVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)psVar9 + 1) = local_18;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 72,
     "local_size": 28,
@@ -215,166 +351,46 @@
       }
     ]
   },
+  "static_analysis": {
+    "analyzed_file": "resampleAndConvertAudio_FUN_005aa7f0.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 56,
+          "line": 32,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 45,
+          "line": 33,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
   "suspects": [
     {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 43,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005aa868: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(short *)((int)",
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 46,
+      "match": "MOVSB.REP",
       "severity": "moderate",
-      "text": "src_buffer = (short *)((int)src_buffer + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(short *)((int)",
-      "severity": "moderate",
-      "text": "psVar9 = (short *)((int)psVar9 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 55,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)ROUND(ROUND(fVar3 * fVar2)) + (int)src_buffer);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 56,
-      "match": "(short *)((int)",
-      "severity": "moderate",
-      "text": "psVar9 = (short *)((int)psVar9 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 67,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)psVar9 + 1) = uVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 82,
-      "match": "(char *)((int)",
-      "severity": "moderate",
-      "text": "(int)*(char *)((int)src_buffer +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 86,
-      "match": "(short *)((int)",
-      "severity": "moderate",
-      "text": "psVar9 = (short *)((int)psVar9 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 98,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)psVar9 + 1) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 99,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)src_buffer + (int)ROUND(ROUND(fVar4 * fVar2)) * 2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 113,
-      "match": "(char *)((int)",
-      "severity": "moderate",
-      "text": "*psVar9 = (short)*(char *)((int)ROUND(ROUND(fVar4 * fVar2)) + (int)src_buffer) << 8;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 123,
-      "match": "(char *)((int)",
-      "severity": "moderate",
-      "text": "sVar4 = (short)*(char *)((int)ROUND(ROUND((float)iVar10 * fVar2)) + (int)src_buffer)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 141,
-      "match": "(char *)((int)",
-      "severity": "moderate",
-      "text": "*(char *)((int)src_buffer + (int)ROUND(ROUND(fVar4 * fVar2)) * 2 + 1) * 0x80",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 155,
-      "match": "(char *)((int)",
-      "severity": "moderate",
-      "text": "psVar9[1] = (short)*(char *)((int)src_buffer +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 172,
-      "match": "(short *)((int)",
-      "severity": "moderate",
-      "text": "psVar9 = (short *)((int)psVar9 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 183,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)psVar9 + 1) = local_18;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 200,
-      "match": "(int *)(src_buffer + (int)",
-      "severity": "moderate",
-      "text": "(*(int *)(src_buffer + (int)ROUND(ROUND(fVar4 * fVar2)) * 2) >> 0x10) >> 9",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 202,
-      "match": "(short *)((int)",
-      "severity": "moderate",
-      "text": "psVar9 = (short *)((int)psVar9 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 219,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)psVar9 + 1) = local_18;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 260,
-      "match": "(int *)(src_buffer + (int)",
-      "severity": "moderate",
-      "text": "(*(int *)(src_buffer + (int)ROUND(ROUND(fVar4 * fVar2)) * 2) >> 0x10)",
-      "type": "pointer_cast"
+      "text": "// 005aa86f: MOVSB.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

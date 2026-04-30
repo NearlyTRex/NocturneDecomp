@@ -162,7 +162,7 @@
     {
       "description": "Complex pointer cast",
       "line": 11,
-      "match": "(ushort *)((int)",
+      "match": "(ushort *)((int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "((ushort *)((int)g_ScreenBufferArray[screen_y] + screen_x * 2),",
       "type": "pointer_cast"
@@ -170,7 +170,7 @@
     {
       "description": "Complex pointer cast",
       "line": 12,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "(uint *)((int)this_ptr->framebuffer_aligned +",
       "type": "pointer_cast"

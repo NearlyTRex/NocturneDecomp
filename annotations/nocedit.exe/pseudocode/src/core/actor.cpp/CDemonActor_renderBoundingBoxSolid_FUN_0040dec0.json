@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 146,
+    "complexity_score": 81,
     "cross_reference_count": 5,
     "function_call_count": 6,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 81,
-    "suspect_count": 6,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 271
   },
   "cross_references": [
@@ -254,54 +252,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->r + iVar1) = red << 8;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&this_ptr_00->vertex_buffer_ptr->g + iVar1) = green << 8;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 32,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&this_ptr_00->vertex_buffer_ptr->b + iVar1) = blue << 8;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 33,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&this_ptr_00->vertex_buffer_ptr->a + iVar1) = alpha << 8;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&this_ptr_00->vertex_buffer_ptr->u + iVar1) = 0x800000;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&this_ptr_00->vertex_buffer_ptr->v + iVar1) = 0x800000;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

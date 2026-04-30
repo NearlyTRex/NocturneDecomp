@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 31,
+    "complexity_score": 16,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 16,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 33
   },
   "cross_references": [
@@ -120,14 +118,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 15,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "iVar1 = *(int *)((int)&g_MuzzleFlashPool[1].frames_remaining + iVar2);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

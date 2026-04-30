@@ -258,15 +258,6 @@
   },
   "resolved_suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 78,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "uVar11 = (*(int *)((int)&this_ptr->boxes[box_index + -1].pixel_count + 2) >> 0x10) -",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 82,
       "match": "._0_2_",
@@ -450,7 +441,7 @@
     {
       "description": "Complex pointer cast",
       "line": 49,
-      "match": "(byte *)(iVar13 * 4 + (int)",
+      "match": "(byte *)(iVar13 * 4 + (int)this_ptr",
       "severity": "moderate",
       "text": "pbVar14 = (byte *)(iVar13 * 4 + (int)this_ptr->pixel_data);",
       "type": "pointer_cast"
@@ -458,7 +449,7 @@
     {
       "description": "Complex pointer cast",
       "line": 79,
-      "match": "(byte *)(iVar15 + (int)",
+      "match": "(byte *)(iVar15 + (int)this_ptr",
       "severity": "moderate",
       "text": "(uint)*(byte *)(iVar15 + (int)this_ptr->pixel_data);",
       "type": "pointer_cast"
@@ -466,7 +457,7 @@
     {
       "description": "Complex pointer cast",
       "line": 84,
-      "match": "(byte *)(iVar15 + 1 + (int)",
+      "match": "(byte *)(iVar15 + 1 + (int)this_ptr",
       "severity": "moderate",
       "text": "uVar13 = (iVar2 >> 0x10) - (uint)*(byte *)(iVar15 + 1 + (int)this_ptr->pixel_data);",
       "type": "pointer_cast"
@@ -474,7 +465,7 @@
     {
       "description": "Complex pointer cast",
       "line": 89,
-      "match": "(byte *)(iVar15 + 2 + (int)",
+      "match": "(byte *)(iVar15 + 2 + (int)this_ptr",
       "severity": "moderate",
       "text": "uVar13 = (iVar3 >> 0x10) - (uint)*(byte *)(iVar15 + 2 + (int)this_ptr->pixel_data);",
       "type": "pointer_cast"
@@ -482,7 +473,7 @@
     {
       "description": "Complex pointer cast",
       "line": 94,
-      "match": "(byte *)(iVar15 + 3 + (int)",
+      "match": "(byte *)(iVar15 + 3 + (int)this_ptr",
       "severity": "moderate",
       "text": "uVar13 = (iVar4 >> 0x10) - (uint)*(byte *)(iVar15 + 3 + (int)this_ptr->pixel_data);",
       "type": "pointer_cast"

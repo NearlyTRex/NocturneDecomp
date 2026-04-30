@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 52,
+    "complexity_score": 27,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 27,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 76
   },
   "cross_references": [],
@@ -132,6 +130,17 @@
     },
     "pcode_op_count": 338
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(int *)((int)g_ZBufferScanlineArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ZBufferScanlineArray + iVar3) = (int)g_SoftwareZBuffer + iVar6;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -140,22 +149,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(void *)(g_WindowWidth * iVar4 * ((int)",
-      "severity": "moderate",
-      "text": "(void *)(g_WindowWidth * iVar4 * ((int)(iVar1 - (uint)(iVar5 << 2 < 0)) >> 3) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_ZBufferScanlineArray + iVar3) = (int)g_SoftwareZBuffer + iVar6;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

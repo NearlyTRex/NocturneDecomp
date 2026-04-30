@@ -2701,56 +2701,6 @@ def generate_master_include(pseudocode_dir):
     log_info("Created master include: %s" % master_path)
 
 
-def write_stream_compat_header(pseudocode_dir):
-    """Write stream_compat.h to the system directory.
-
-    Provides adapter functions for bridging std::ifstream/std::ofstream
-    to Watcom _istream/_ostream at the codec function boundary.
-    The original binary uses Watcom C++ 11.0 iostream classes internally,
-    but reconstructed .keep files use std:: streams for readability.
-
-    Args:
-        pseudocode_dir: Base directory for headers (include folder)
-    """
-    system_dir = os.path.join(pseudocode_dir, "system")
-    make_dirs(system_dir)
-
-    content = [
-        "#pragma once",
-        "",
-        "// =============================================================================",
-        "// STREAM_COMPAT - Watcom/STL Stream Compatibility Layer",
-        "// =============================================================================",
-        "//",
-        "// The original binary uses Watcom C++ 11.0 iostream classes internally.",
-        "// The codec functions (CLZWCompress, CLZWDecompress) and ostream_write take",
-        "// Watcom _istream*/_ostream* parameters. In reconstructed code we use",
-        "// std::ifstream/std::ofstream for readability, and these adapters bridge",
-        "// the interface at the boundary.",
-        "//",
-        "// At the binary level, the Watcom ifstream contains an _istream subobject",
-        "// and the Watcom ofstream contains an _ostream subobject. The original code",
-        "// passed pointers to these subobjects directly. These helpers replicate that",
-        "// conversion for the reconstructed std:: streams.",
-        "",
-        "#include <fstream>",
-        '#include "system/iostream.h"',
-        "",
-        "inline _istream *watcom_istream_from(std::istream &is) {",
-        "    return reinterpret_cast<_istream *>(&is);",
-        "}",
-        "",
-        "inline _ostream *watcom_ostream_from(std::ostream &os) {",
-        "    return reinterpret_cast<_ostream *>(&os);",
-        "}",
-        "",
-    ]
-
-    header_path = os.path.join(system_dir, "stream_compat.h")
-    write_header_file(header_path, "\n".join(content))
-    log_info("Generated stream compatibility header: %s" % header_path)
-
-
 def export_header_files(currentProgram, pseudocode_dir):
     """Export all header files for data types.
 
@@ -2868,9 +2818,6 @@ def export_header_files(currentProgram, pseudocode_dir):
 
     # Generate intrinsics header (must be before system aggregate so it gets included)
     write_intrinsics_header(pseudocode_dir)
-
-    # Generate stream compatibility header for Watcom/STL bridging
-    write_stream_compat_header(pseudocode_dir)
 
     # Generate aggregate headers
     generate_system_aggregate(pseudocode_dir)

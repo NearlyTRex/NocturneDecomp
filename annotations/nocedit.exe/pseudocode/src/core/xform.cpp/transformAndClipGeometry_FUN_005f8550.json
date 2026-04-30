@@ -1129,22 +1129,6 @@
       "type": "extra_output"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 70,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "moderate",
-      "text": "local_24 = (SRenderVertex *)((int)&(local_24->projected_vertex).transformed_x + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 100,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "moderate",
-      "text": "local_24 = (SRenderVertex *)((int)&(local_24->projected_vertex).transformed_x + 1);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 184,
       "match": "extraout_EAX",
@@ -1207,6 +1191,24 @@
       "severity": "moderate",
       "text": "local_24 = extraout_EAX_06;",
       "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 68,
+      "match": "(SRenderVertex *)((int)local_24",
+      "severity": "moderate",
+      "text": "local_24 = (SRenderVertex *)((int)local_24 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "introduced_by": "keep",
+      "line": 80,
+      "match": "(SRenderVertex *)((int)local_24",
+      "severity": "moderate",
+      "text": "local_24 = (SRenderVertex *)((int)local_24 + 1);",
+      "type": "pointer_cast"
     }
   ]
 }

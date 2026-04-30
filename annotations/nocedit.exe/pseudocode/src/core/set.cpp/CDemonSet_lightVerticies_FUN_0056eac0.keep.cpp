@@ -39,7 +39,6 @@ void __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet *this_
   int *piVar21;
   CVector3f *pCVar22;
   byte bVar23;
-  int aiStackY_1160 [1013];
   CVector3i *surface_normal;
   CVector3i local_178;
   CVector3i local_16c;

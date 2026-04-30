@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 977,
-    "complexity_score": 781,
+    "complexity_score": 861,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 10,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 716,
-    "suspect_count": 6,
+    "suspect_count": 14,
     "suspect_types": [
-      "unnamed_local"
+      "unrolled_memcpy"
     ],
     "total_lines": 1693
   },
@@ -375,15 +375,6 @@
       "type": "stack_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 174,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "piVar13 = (int *)((int)&(pSVar15->projected_vertex).transformed_x + local_10);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 187,
       "match": "&stack0xfffffee8",
@@ -391,15 +382,6 @@
       "severity": "moderate",
       "text": "piVar17 = (int *)&stack0xfffffee8;",
       "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 194,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "piVar13 = (int *)((int)&(pSVar15->projected_vertex).transformed_x + local_c);",
-      "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
@@ -411,15 +393,6 @@
       "type": "stack_ref"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 240,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "piVar13 = (int *)((int)&(pSVar15->projected_vertex).transformed_x + iVar11);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 253,
       "match": "&stack0xfffffee8",
@@ -427,15 +400,6 @@
       "severity": "moderate",
       "text": "piVar17 = (int *)&stack0xfffffee8;",
       "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 260,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "piVar13 = (int *)((int)&(pSVar15->projected_vertex).transformed_x + iVar12);",
-      "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
@@ -447,15 +411,6 @@
       "type": "stack_ref"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 306,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "piVar13 = (int *)((int)&(pSVar15->projected_vertex).transformed_x + iVar12);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 319,
       "match": "&stack0xfffffee8",
@@ -463,15 +418,6 @@
       "severity": "moderate",
       "text": "piVar17 = (int *)&stack0xfffffee8;",
       "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 326,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "piVar13 = (int *)((int)&(pSVar15->projected_vertex).transformed_x + local_c);",
-      "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
@@ -483,15 +429,6 @@
       "type": "stack_ref"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 372,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "piVar13 = (int *)((int)&(pSVar15->projected_vertex).transformed_x + iVar11);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 385,
       "match": "&stack0xfffffee8",
@@ -499,15 +436,6 @@
       "severity": "moderate",
       "text": "piVar17 = (int *)&stack0xfffffee8;",
       "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 392,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "piVar13 = (int *)((int)&(pSVar15->projected_vertex).transformed_x + local_10);",
-      "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
@@ -519,15 +447,6 @@
       "type": "stack_ref"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 438,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "piVar13 = (int *)((int)&(pSVar15->projected_vertex).transformed_x + local_24);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 451,
       "match": "&stack0xfffffee8",
@@ -537,15 +456,6 @@
       "type": "stack_ref"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 458,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "piVar13 = (int *)((int)&(pSVar15->projected_vertex).transformed_x + iVar12);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 471,
       "match": "&stack0xfffffeb8",
@@ -553,15 +463,6 @@
       "severity": "moderate",
       "text": "piVar17 = (int *)&stack0xfffffeb8;",
       "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 504,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "piVar13 = (int *)((int)&(pSVar15->projected_vertex).transformed_x + local_18);",
-      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
@@ -647,19 +548,10 @@
     {
       "description": "Complex pointer cast",
       "line": 520,
-      "match": "(SMRGLTextureBasic *)((int)",
+      "match": "(SMRGLTextureBasic *)((int)pSVar9",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar9 = (SMRGLTextureBasic *)((int)pSVar9[-1].texture_name + 0xf)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 525,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "piVar13 = (int *)((int)&(pSVar15->projected_vertex).transformed_x + iVar11);",
       "type": "pointer_cast"
     },
     {
@@ -764,7 +656,7 @@
     {
       "description": "Complex pointer cast",
       "line": 584,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar14",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + ((uint)bVar18 * -2 + 1) * 4);",
@@ -791,7 +683,7 @@
     {
       "description": "Complex pointer cast",
       "line": 604,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar15",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar15 = (SRenderVertex *)((int)pSVar15 + ((uint)bVar18 * -2 + 1) * 4);",
@@ -870,60 +762,6 @@
       "type": "stack_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 640,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->r + iVar4) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 641,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar40->vertex_buffer_ptr->g + iVar4) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 642,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar40->vertex_buffer_ptr->b + iVar4) = 0xff00;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 643,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar40->vertex_buffer_ptr->a + iVar4) = 0x8000;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 644,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar40->vertex_buffer_ptr->u + iVar4) = 0x800000;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 645,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar40->vertex_buffer_ptr->v + iVar4) = 0x800000;",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 649,
       "match": "in_stack_0000000c",
@@ -997,62 +835,8 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 700,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->r + iVar4) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 701,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar40->vertex_buffer_ptr->g + iVar4) = 0xff00;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 702,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar40->vertex_buffer_ptr->b + iVar4) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 703,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar40->vertex_buffer_ptr->a + iVar4) = 0x8000;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 704,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar40->vertex_buffer_ptr->u + iVar4) = 0x800000;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 706,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar40->vertex_buffer_ptr->v + iVar4) = 0x800000;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 711,
-      "match": "(UOrientationVector *)((int)",
+      "match": "(UOrientationVector *)((int)local_28",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "local_28 = (UOrientationVector *)((int)local_28 + 0x38);",
@@ -1362,58 +1146,116 @@
   },
   "suspects": [
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 25,
-      "match": "local_e4",
-      "severity": "mild",
-      "text": "SMRGLPrimitivePolyIndex local_e4;",
-      "type": "unnamed_local"
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 211,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005b9f3a: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 29,
-      "match": "local_14",
-      "severity": "mild",
-      "text": "int local_14;",
-      "type": "unnamed_local"
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 215,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005b9f4f: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 91,
-      "match": "local_e4",
-      "severity": "mild",
-      "text": "local_e4.base.surface_normal.B.i = 4;",
-      "type": "unnamed_local"
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 223,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005b9f6d: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 92,
-      "match": "local_e4",
-      "severity": "mild",
-      "text": "local_e4.vertices[1] = 0;",
-      "type": "unnamed_local"
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 227,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005b9f7c: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 93,
-      "match": "local_e4",
-      "severity": "mild",
-      "text": "local_e4.vertices[0] = 0;",
-      "type": "unnamed_local"
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 235,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005b9f9a: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 94,
-      "match": "local_e4",
-      "severity": "mild",
-      "text": "local_e4.base.surface_normal.D.i = 0;",
-      "type": "unnamed_local"
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 239,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005b9faf: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 247,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005b9fcd: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 251,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005b9fe2: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 259,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005ba006: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 263,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005ba015: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 271,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005ba039: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 275,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005ba04e: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 319,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005ba11b: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 324,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005ba146: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {

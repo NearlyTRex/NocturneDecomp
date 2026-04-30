@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 68,
+    "complexity_score": 38,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 23,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_local"
+      "unrolled_memcpy"
     ],
     "total_lines": 53
   },
@@ -120,40 +120,12 @@
   },
   "suspects": [
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 16,
-      "match": "local_38",
-      "severity": "mild",
-      "text": "float local_38 [12];",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 18,
-      "match": "local_38",
-      "severity": "mild",
-      "text": "local_38[0] = 1.0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 19,
-      "match": "local_38",
-      "severity": "mild",
-      "text": "local_38[1] = 0.0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 20,
-      "match": "local_38",
-      "severity": "mild",
-      "text": "local_38[2] = 0.0;",
-      "type": "unnamed_local"
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 26,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005f6f95: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

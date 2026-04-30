@@ -7,14 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 618,
-    "complexity_score": 236,
+    "complexity_score": 271,
     "cross_reference_count": 11,
     "function_call_count": 24,
     "global_count": 19,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 211,
-    "suspect_count": 2,
+    "suspect_count": 5,
     "suspect_types": [
+      "unrolled_memcpy",
       "unrolled_strlen"
     ],
     "total_lines": 829
@@ -808,6 +809,30 @@
       "severity": "mild",
       "text": "do {",
       "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 21,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0049f466: MOVSD.REP ES:EDI,ESI  ; g_BrowserLastSelectedFile | g_BrowserLastSelectedFile+4",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 35,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0049f498: MOVSD.REP ES:EDI,ESI  ; = \"[ERROR: Can't get current directory.]\" | s_OR:_Can't_get_current_directory._0067",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 227,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0049f6ce: MOVSD.REP ES:EDI,ESI  ; g_BrowserLastEnteredPath | g_BrowserLastEnteredPath+4",
+      "type": "unrolled_memcpy"
     }
   ]
 }

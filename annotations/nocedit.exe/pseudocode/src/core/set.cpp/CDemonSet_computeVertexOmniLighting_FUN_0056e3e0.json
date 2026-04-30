@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 160,
-    "complexity_score": 84,
+    "complexity_score": 54,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 54,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast",
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 214
   },
   "cross_references": [
@@ -219,6 +216,26 @@
     },
     "pcode_op_count": 1047
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(int *)((int)g_OmniLights",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)g_OmniLights + iVar5);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 84,
     "local_size": 68,
@@ -294,22 +311,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 23,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "iVar1 = *(int *)((int)g_OmniLights + iVar5);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

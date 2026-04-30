@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 657,
-    "complexity_score": 354,
+    "complexity_score": 314,
     "cross_reference_count": 1,
     "function_call_count": 24,
     "global_count": 31,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 299,
-    "suspect_count": 5,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -571,40 +571,8 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 99,
-      "match": "(CVector3i *)((int)",
-      "severity": "moderate",
-      "text": "+ iVar8),(CVector3i *)((int)&((this_ptr->model).vertex_list)->x + iVar11));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 160,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "if ((*(byte *)((int)&(pSVar2->projected_vertex).screen_x + iVar12 + 3) & 0x80) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 161,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "iVar5 = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar12) >> 0x10;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 162,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "iVar9 = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar12) >> 0x10;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 185,
-      "match": "(int *)(iVar12 + (int)",
+      "match": "(int *)(iVar12 + (int)this_ptr",
       "severity": "moderate",
       "text": "iVar9 = *(int *)(iVar12 + (int)this_ptr->vertex_sort_buffer);",
       "type": "pointer_cast"

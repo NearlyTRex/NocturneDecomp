@@ -28,7 +28,6 @@
 #include "system/stdint.h"
 #include "system/stdio.h"
 #include "system/stdlib.h"
-#include "system/stream_compat.h"
 #include "system/strstream.h"
 #include "system/syncapi.h"
 #include "system/time.h"

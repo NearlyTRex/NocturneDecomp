@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 44,
+    "complexity_score": 29,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 29,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 103
   },
   "cross_references": [
@@ -146,14 +144,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)(pCVar4->uv_coords + 3) + iVar3 * 4) = -1;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

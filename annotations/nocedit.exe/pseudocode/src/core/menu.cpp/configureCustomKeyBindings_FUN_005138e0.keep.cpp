@@ -10,7 +10,6 @@
 void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_005138e0(void)
 
 {
-  char cVar2;
   char *pcVar2;
   char *pcVar3;
   int iVar4_00;
@@ -52,21 +51,16 @@ void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_005138e0(void)
   char *pcVar33;
   char *pcVar32;
   int iVar34;
-  char *pcVar34;
-  char *pcVar35;
   bool bVar36;
   bool bVar35;
-  byte bVar37;
   CPickList local_a7c;
   char local_6d4 [512];
   char acStack_4d4 [512];
   char local_2d4 [512];
   char local_d4 [200];
   int local_c;
-  char cVar1;
   uint window_flags;
-  
-  bVar37 = 0;
+
   if (((g_CGamePtr->game_control == CONTROL_MODE_GAMEPAD) && (g_CGamePtr->x_center == 0)) &&
      (iVar4_00 = core_menu_cpp_calibrateGamepad_FUN_005104d0(), iVar4_00 == 0)) {
     return;
@@ -84,15 +78,7 @@ LAB_0051390e:
     }
     pcVar33 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar1 = *pcVar2;
-      (*(char (*) [40])pcVar33)[0] = cVar1;
-      if (cVar1 == '\0') break;
-      cVar2 = pcVar2[1];
-      pcVar2 = pcVar2 + 2;
-      (*(char (*) [40])pcVar33)[1] = cVar2;
-      pcVar33 = *(char (*) [40])pcVar33 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar33, pcVar2);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Back");
     piVar28 = &g_CGamePtr->key_backup;
@@ -103,15 +89,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     if (g_CGamePtr->always_run == 0) {
       pcVar3 = "Run";
@@ -128,15 +106,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar27;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Strafe on");
     piVar28 = &g_CGamePtr->key_strafe;
@@ -147,15 +117,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Strafe left");
     piVar28 = &g_CGamePtr->key_strafe_left;
@@ -166,15 +128,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Strafe right");
     piVar28 = &g_CGamePtr->key_strafe_right;
@@ -185,15 +139,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Turn left");
     piVar28 = &g_CGamePtr->key_left;
@@ -204,15 +150,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Turn right");
     piVar28 = &g_CGamePtr->key_right;
@@ -223,15 +161,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Fire / Action");
     piVar28 = &g_CGamePtr->key_fire;
@@ -242,15 +172,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Use item");
     piVar28 = &g_CGamePtr->key_use_item;
@@ -261,15 +183,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Light");
     piVar28 = &g_CGamePtr->key_light;
@@ -280,15 +194,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Night Vision");
     piVar28 = &g_CGamePtr->key_infrared;
@@ -299,15 +205,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Draw");
     piVar28 = &g_CGamePtr->key_draw;
@@ -318,15 +216,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Point up");
     piVar28 = &g_CGamePtr->key_point_up;
@@ -337,15 +227,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Point down");
     piVar28 = &g_CGamePtr->key_point_down;
@@ -356,15 +238,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Jump");
     piVar28 = &g_CGamePtr->key_jump;
@@ -375,15 +249,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Select pistol weapons");
     piVar28 = &g_CGamePtr->key_weapon_1;
@@ -394,15 +260,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Select assault weapons");
     piVar28 = &g_CGamePtr->key_weapon_2;
@@ -413,15 +271,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Select flame weapons");
     piVar28 = &g_CGamePtr->key_weapon_3;
@@ -432,15 +282,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Select grenade weapons");
     piVar28 = &g_CGamePtr->key_weapon_4;
@@ -451,15 +293,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Select melee weapons");
     piVar28 = &g_CGamePtr->key_weapon_5;
@@ -470,15 +304,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Next weapon");
     piVar28 = &g_CGamePtr->key_next_weapon;
@@ -489,15 +315,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Previous weapon");
     piVar28 = &g_CGamePtr->key_prev_weapon;
@@ -508,15 +326,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Next item");
     piVar28 = &g_CGamePtr->key_next_item;
@@ -527,15 +337,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Previous item");
     piVar28 = &g_CGamePtr->key_prev_item;
@@ -546,15 +348,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Item description");
     piVar28 = &g_CGamePtr->key_item_desc;
@@ -565,15 +359,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Next ammo");
     piVar28 = &g_CGamePtr->key_next_ammo;
@@ -584,15 +370,7 @@ LAB_0051390e:
     }
     pcVar32 = g_CustomKeyNames[g_CustomKeyCount];
     g_CustomKeyPointers[g_CustomKeyCount] = piVar28;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar32 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar32[1] = cVar2;
-      pcVar32 = pcVar32 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pcVar32, pcVar3);
     g_CustomKeyCount = g_CustomKeyCount + 1;
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
@@ -731,77 +509,17 @@ LAB_0051390e:
       case 0x252:
       case 0x253:
       case 0x254:
-        pcVar3 = local_6d4;
-        pcVar32 = g_CustomKeyNames[iVar15_00];
-        do {
-          cVar2 = *pcVar32;
-          *pcVar3 = cVar2;
-          if (cVar2 == '\0') break;
-          cVar2 = pcVar32[1];
-          pcVar32 = pcVar32 + 2;
-          pcVar3[1] = cVar2;
-          pcVar3 = pcVar3 + 2;
-        } while (cVar2 != '\0');
-        pcVar32 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
-                            (" is assigned to the gamepad.  Can't assign a key.");
-        iVar4_00 = -1;
-        pcVar3 = local_6d4;
-        do {
-          pcVar34 = pcVar3;
-          if (iVar4_00 == 0) break;
-          iVar4_00 = iVar4_00 + -1;
-          pcVar34 = pcVar3 + (uint)bVar37 * -2 + 1;
-          cVar2 = *pcVar3;
-          pcVar3 = pcVar34;
-        } while (cVar2 != '\0');
-        pcVar34 = pcVar34 + -1;
-        do {
-          cVar2 = *pcVar32;
-          *pcVar34 = cVar2;
-          if (cVar2 == '\0') break;
-          cVar2 = pcVar32[1];
-          pcVar32 = pcVar32 + 2;
-          pcVar34[1] = cVar2;
-          pcVar34 = pcVar34 + 2;
-        } while (cVar2 != '\0');
+        strcpy(local_6d4, g_CustomKeyNames[iVar15_00]);
+        strcat(local_6d4, support_newmsg_cpp_getLocalizedString_FUN_005441f0
+                            (" is assigned to the gamepad.  Can't assign a key."));
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,local_6d4);
         break;
       case 0x255:
       case 0x256:
-        pcVar3 = local_2d4;
-        pcVar32 = g_CustomKeyNames[iVar15_00];
-        do {
-          cVar2 = *pcVar32;
-          *pcVar3 = cVar2;
-          if (cVar2 == '\0') break;
-          cVar2 = pcVar32[1];
-          pcVar32 = pcVar32 + 2;
-          pcVar3[1] = cVar2;
-          pcVar3 = pcVar3 + 2;
-        } while (cVar2 != '\0');
-        pcVar32 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
-                            (" is assigned to the mouse.  Can't assign a key.");
-        iVar4_00 = -1;
-        pcVar3 = local_2d4;
-        do {
-          pcVar34 = pcVar3;
-          if (iVar4_00 == 0) break;
-          iVar4_00 = iVar4_00 + -1;
-          pcVar34 = pcVar3 + (uint)bVar37 * -2 + 1;
-          cVar2 = *pcVar3;
-          pcVar3 = pcVar34;
-        } while (cVar2 != '\0');
-        pcVar34 = pcVar34 + -1;
-        do {
-          cVar2 = *pcVar32;
-          *pcVar34 = cVar2;
-          if (cVar2 == '\0') break;
-          cVar2 = pcVar32[1];
-          pcVar32 = pcVar32 + 2;
-          pcVar34[1] = cVar2;
-          pcVar34 = pcVar34 + 2;
-        } while (cVar2 != '\0');
+        strcpy(local_2d4, g_CustomKeyNames[iVar15_00]);
+        strcat(local_2d4, support_newmsg_cpp_getLocalizedString_FUN_005441f0
+                            (" is assigned to the mouse.  Can't assign a key."));
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,local_2d4);
         break;
       default:
@@ -833,19 +551,9 @@ LAB_00514913:
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_a7c,0);
           goto LAB_0051390e;
         }
-        pcVar32 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
-                            ("Press new key or button for ");
-        pcVar3 = acStack_4d4;
-        do {
-          cVar2 = *pcVar32;
-          *pcVar3 = cVar2;
-          if (cVar2 == '\0') break;
-          cVar2 = pcVar32[1];
-          pcVar32 = pcVar32 + 2;
-          pcVar3[1] = cVar2;
-          pcVar3 = pcVar3 + 2;
-        } while (cVar2 != '\0');
-        strcat(acStack_4d4,g_CustomKeyNames[iVar15_00]);
+        strcpy(acStack_4d4, support_newmsg_cpp_getLocalizedString_FUN_005441f0
+                            ("Press new key or button for "));
+        strcat(acStack_4d4, g_CustomKeyNames[iVar15_00]);
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,acStack_4d4);
         engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(g_CKeysPtr,1);

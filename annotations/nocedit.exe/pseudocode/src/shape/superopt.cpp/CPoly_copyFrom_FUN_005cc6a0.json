@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 169,
+    "complexity_score": 114,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 44,
-    "suspect_count": 12,
+    "suspect_count": 6,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 96
   },
@@ -121,7 +122,7 @@
     {
       "description": "Complex pointer cast",
       "line": 20,
-      "match": "(CPoly *)((int)",
+      "match": "(CPoly *)((int)pCVar2",
       "severity": "moderate",
       "text": "pCVar2 = (CPoly *)((int)pCVar2 + 1);",
       "type": "pointer_cast"
@@ -129,90 +130,42 @@
     {
       "description": "Complex pointer cast",
       "line": 21,
-      "match": "(CPoly *)((int)",
+      "match": "(CPoly *)((int)pCVar4",
       "severity": "moderate",
       "text": "pCVar4 = (CPoly *)((int)pCVar4 + 1);",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 27,
-      "match": "(CP2D *)((int)",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 15,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "pCVar3 = (CP2D *)((int)&(pCVar3->impl).x + 4);",
-      "type": "pointer_cast"
+      "text": "// 005cc6c2: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(CP2D *)((int)",
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 18,
+      "match": "MOVSB.REP",
       "severity": "moderate",
-      "text": "pCVar5 = (CP2D *)((int)&(pCVar5->impl).x + 4);",
-      "type": "pointer_cast"
+      "text": "// 005cc6c9: MOVSB.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 32,
-      "match": "(CP2D *)((int)",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 26,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "pCVar3 = (CP2D *)((int)&(pCVar3->impl).x + 1);",
-      "type": "pointer_cast"
+      "text": "// 005cc6dd: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 33,
-      "match": "(CP2D *)((int)",
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 29,
+      "match": "MOVSB.REP",
       "severity": "moderate",
-      "text": "pCVar5 = (CP2D *)((int)&(pCVar5->impl).x + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(this_ptr->normal).impl.x + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(source->normal).impl.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(this_ptr->normal).impl.y + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(source->normal).impl.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 44,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(this_ptr->normal).impl.z + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(source->normal).impl.z + 4);",
-      "type": "pointer_cast"
+      "text": "// 005cc6e4: MOVSB.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {

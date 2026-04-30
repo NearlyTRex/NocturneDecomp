@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 215,
-    "complexity_score": 150,
+    "complexity_score": 110,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 85,
-    "suspect_count": 6,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -218,47 +218,15 @@
     {
       "description": "Complex pointer cast",
       "line": 38,
-      "match": "(int *)(local_1c + (int)",
+      "match": "(int *)(local_1c + (int)local_54",
       "severity": "moderate",
       "text": "*(int *)(local_1c + (int)local_54->index_data_ptr[0])) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
-      "match": "(short *)((int)",
-      "severity": "moderate",
-      "text": "psVar4 = (short *)((int)&(this_ptr->tri_data_ptr[local_50]->vertex_indices).",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(short *)((int)",
-      "severity": "moderate",
-      "text": "*(short *)((int)&(local_54->tri_data_ptr[0]->vertex_indices).vertex_index_0 +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "((void *)((int)&(local_54->tri_data_ptr[0]->vertex_indices).",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 59,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "(void *)((int)&(local_54->tri_data_ptr[0]->vertex_indices).",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 63,
-      "match": "(void *)(local_40 + (int)",
+      "match": "(void *)(local_40 + (int)local_54",
       "severity": "moderate",
       "text": "(void *)(local_40 + (int)local_54->index_data_ptr[0]),",
       "type": "pointer_cast"

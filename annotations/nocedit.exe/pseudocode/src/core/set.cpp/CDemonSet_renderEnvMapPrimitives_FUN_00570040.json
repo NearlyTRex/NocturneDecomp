@@ -7,17 +7,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 320,
+    "complexity_score": 157,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 115,
-    "suspect_count": 20,
+    "pseudocode_lines": 117,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
-    "total_lines": 314
+    "total_lines": 316
   },
   "cross_references": [
     {
@@ -221,15 +222,8 @@
         "is_param": false,
         "name": "SStack_f4",
         "offset": -244,
-        "size": 24,
-        "type": "SMRGLHeaderPrimitive"
-      },
-      {
-        "is_param": false,
-        "name": "aiStack_dc",
-        "offset": -220,
-        "size": 48,
-        "type": "int[12]"
+        "size": 72,
+        "type": "SMRGLPrimitiveQuad"
       },
       {
         "is_param": false,
@@ -352,7 +346,7 @@
     {
       "description": "Complex pointer cast",
       "line": 50,
-      "match": "(SMRGLHeaderPrimitive *)((int)",
+      "match": "(SMRGLHeaderPrimitive *)((int)pSVar9",
       "severity": "moderate",
       "text": "pSVar9 = (SMRGLHeaderPrimitive *)((int)pSVar9 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
@@ -360,154 +354,18 @@
     {
       "description": "Complex pointer cast",
       "line": 51,
-      "match": "(SMRGLHeaderPrimitive *)((int)",
+      "match": "(SMRGLHeaderPrimitive *)((int)pSVar7",
       "severity": "moderate",
       "text": "pSVar7 = (SMRGLHeaderPrimitive *)((int)pSVar7 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(int *)((int)",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 39,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "iVar3 = *(int *)((int)aiStack_dc + iVar8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 68,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&local_6c + iVar4) = (int)ROUND(g_VertexNormalArray[iVar3].x) + 0x8000;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&local_ac + iVar4) = 0x8000 - (int)ROUND(fVar2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 76,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "if ((0x8000 < local_6c) && (*(int *)((int)&local_6c + iVar7) < -0x8000)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 77,
-      "match": "(short *)((int)",
-      "severity": "moderate",
-      "text": "psVar1 = (short *)((int)&local_6c + iVar7 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 80,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "if ((local_6c < -0x8000) && (0x8000 < *(int *)((int)&local_6c + iVar7))) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 81,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&local_6c + iVar7) = *(int *)((int)&local_6c + iVar7) + -0x10000;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 81,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&local_6c + iVar7) = *(int *)((int)&local_6c + iVar7) + -0x10000;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 83,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "if ((0x8000 < local_ac) && (*(int *)((int)&local_ac + iVar7) < -0x8000)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 84,
-      "match": "(short *)((int)",
-      "severity": "moderate",
-      "text": "psVar2 = (short *)((int)&local_ac + iVar7 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 87,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "if ((local_ac < -0x8000) && (0x8000 < *(int *)((int)&local_ac + iVar7))) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 88,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&local_ac + iVar7) = *(int *)((int)&local_ac + iVar7) + -0x10000;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 88,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)&local_ac + iVar7) = *(int *)((int)&local_ac + iVar7) + -0x10000;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 98,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)aiStack_dc + iVar6 + 4) = *(int *)((int)&local_6c + iVar4) << 8;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 98,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)aiStack_dc + iVar6 + 4) = *(int *)((int)&local_6c + iVar4) << 8;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 99,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)aiStack_dc + iVar6 + 8) = *(int *)((int)&local_ac + iVar4) << 8;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 99,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)aiStack_dc + iVar6 + 8) = *(int *)((int)&local_ac + iVar4) << 8;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 114,
-      "match": "(SMRGLHeaderPrimitive *)((int)",
-      "severity": "moderate",
-      "text": "prims = (SMRGLHeaderPrimitive *)((int)&(prims->base).type + stride);",
-      "type": "pointer_cast"
+      "text": "// 005700be: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

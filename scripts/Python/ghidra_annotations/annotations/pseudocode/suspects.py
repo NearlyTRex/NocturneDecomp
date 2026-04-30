@@ -60,7 +60,6 @@ SUSPECT_SEVERITY = {
     'warning_is_inlined': 'mild',
     # Mild: minor issues, code is readable
     'unnamed_param': 'mild',
-    'unnamed_local': 'mild',
     'unknown_field': 'mild',
     'undefined_ram': 'mild',
     'unnamed_field': 'mild',
@@ -77,6 +76,7 @@ SUSPECT_SEVERITY = {
     'raw_address_constant': 'moderate',
     'unrolled_strcpy': 'moderate',
     'unrolled_memcpy': 'moderate',
+    'unrolled_memset': 'moderate',
     'unrolled_strlen': 'moderate',
     'unrolled_strcat': 'moderate',
     'unrolled_strchr': 'moderate',
@@ -143,11 +143,15 @@ _SUSPECT_PATTERN_DEFS = [
     # Very small floats that are likely misinterpreted integers (e.g., 9.18355e-41)
     (r'\b\d+\.\d+e-[3-9]\d\b', 'suspect_float', 'Likely misinterpreted integer as float'),
     # Type casts to weird pointer arithmetic. Matches `(TYPE *)(...(int)X...)`
-    # with the `(int)` cast appearing anywhere inside the outer parens —
-    # `[^)]*` keeps it within a single parenthesized group so the match is
-    # cheap and doesn't span across whole lines. The TYPE allows multi-word
-    # forms like `unsigned int *`, `unsigned char *`, `long long *`.
-    (r'\(\w+(?:\s+\w+)*\s*\*\s*\)\s*\([^)]*\(int\)', 'pointer_cast', 'Complex pointer cast'),
+    # where `(int)X` is a pointer-to-int round-trip — X must be a bare
+    # identifier (not a function call), so we require `(int)` to be followed
+    # by an identifier that does NOT precede an open paren. This avoids
+    # false-positives on `(int)ROUND(...)` and similar numeric casts of
+    # function results that happen to appear inside a `(TYPE *)(...)` outer
+    # paren. `[^)]*` keeps the match within a single parenthesized group.
+    # The TYPE allows multi-word forms like `unsigned int *`, `long long *`.
+    (r'\(\w+(?:\s+\w+)*\s*\*\s*\)\s*\([^)]*\(int\)\s*\w+(?!\w|\s*\()',
+     'pointer_cast', 'Complex pointer cast'),
     # _._N_N_ field access patterns (mangled/unknown field names)
     (r'\._\d+_\d+_', 'unknown_field', 'Unknown/mangled field access'),
     # `code *` — Ghidra's placeholder type for unresolved function pointers
@@ -187,8 +191,9 @@ _SUSPECT_PATTERN_DEFS = [
     (r'(?:void|int|float|uint|char|double)\s*\*?\s*\bp\d+\b', 'unnamed_param', 'Unnamed function parameter (short form)'),
     # Parameters or variables with "unknown" in the name - flagged for later investigation
     (r'\bunknown_\w+\b', 'unknown_param', 'Parameter/variable named unknown (needs investigation)'),
-    # local_XX - Unnamed local variables (need meaningful names)
-    (r'\blocal_[0-9a-fA-F]+\b', 'unnamed_local', 'Unnamed local variable'),
+    # `local_XX` was previously flagged as `unnamed_local` but the project
+    # rule is to keep Ghidra-assigned names ("don't rename for style"), so
+    # the suspect was pure noise — every kept variable triggered it. Removed.
     # --- Stack alignment / FPU decompiler artifacts (severity indicators) ---
     # FNSTSW flag reconstruction: CONCAT22 with preserved upper bits + shifted flags
     (r'CONCAT22\(.*>>\s*0x10', 'fnstsw_flag_artifact',
@@ -1540,40 +1545,69 @@ def identify_fast_sqrt_inline(decompiled_code):
     return suspects
 
 
-# Struct-type locals that the missing-cave-copy bug pattern typically affects.
-_UNREF_STRUCT_TYPES = frozenset({
-    'CMatrix3x4f', 'CMatrix3x3f', 'CQuaternion4f', 'CVector3f', 'CVector3i',
-    'CVector2f', 'CLocation', 'UOrientationVector', 'CBoundingBox3D',
-    'SDamageInfo', 'CBox',
-})
+# Struct-type locals that the missing-cave-copy bug pattern typically affects,
+# mapped to their declared sizes in bytes. Only struct types whose size
+# matches a detected cave block are eligible candidates — a 48-byte cave
+# block can't be the missing copy of a 12-byte `CVector3f` local. Without
+# this filter the detector false-positives on output-param locals (e.g.
+# `getBoundingBox(&local_c4)` where `local_c4` is correctly populated).
+_UNREF_STRUCT_SIZES = {
+    'CMatrix3x4f': 48,
+    'CMatrix3x3f': 36,
+    'CQuaternion4f': 16,
+    'CVector3f': 12,
+    'CVector3i': 12,
+    'CVector2f': 8,
+    'CBoundingBox3D': 24,
+    'SDamageInfo': 60,
+    # Sizes for these are unknown / context-dependent; left out until a
+    # concrete case forces us to fill them in.
+    # 'CLocation', 'UOrientationVector', 'CBox',
+}
 _UNREF_DECL_RE = re.compile(
     r"^\s*([A-Z][A-Za-z0-9_]*)\s+([a-zA-Z_]\w*)\s*;\s*$")
 _CAVE_SRC_RE = re.compile(r"MOV\s+ECX,\s*dword ptr\s*\[ESI")
 _CAVE_DST_RE = re.compile(r"MOV\s+dword ptr\s*\[EDI(?:\s*\+\s*0x[0-9a-f]+)?\]\s*,\s*ECX")
 
 
-def _count_cave_copy_blocks(asm_code):
-    """Count consecutive MOV-ECX-from-ESI / MOV-to-EDI-from-ECX pair runs
-    that are ≥ 12 pairs long (48-byte struct copies — i.e. CMatrix3x4f).
+def _find_cave_copy_blocks(asm_code):
+    """Scan assembly for runs of `MOV ECX, [ESI+N] / MOV [EDI+N], ECX` pairs
+    that copy a struct out of an output buffer into another stack slot.
 
-    These blocks are the Ghidra-visible signature of Watcom's inline struct
-    memcpy, typically emitted after an output-param-in-register function
-    call to copy the result from the callee's output slot into another local.
+    Returns a list of byte-sizes of detected blocks. A run of N consecutive
+    matching MOV lines (where N is even — pairs) corresponds to N/2 dword
+    moves = N*2 bytes copied. We only return runs with 4+ pairs (≥ 16
+    bytes) since shorter runs are typically scalar moves, not struct copies.
+
+    Args:
+        asm_code: The function's assembly listing.
+
+    Returns:
+        List of integers (byte sizes of cave blocks found, ordered by
+        appearance in the asm).
     """
     if not asm_code:
-        return 0
+        return []
     consec = 0
-    blocks = 0
+    sizes = []
     for line in asm_code.split("\n"):
         if _CAVE_SRC_RE.search(line) or _CAVE_DST_RE.search(line):
             consec += 1
         else:
-            if consec >= 24:  # 12 MOV-pairs = 48 bytes = one CMatrix3x4f
-                blocks += 1
+            if consec >= 8:  # 4 MOV-pairs = 16 bytes minimum struct
+                sizes.append((consec // 2) * 4)
             consec = 0
-    if consec >= 24:
-        blocks += 1
-    return blocks
+    if consec >= 8:
+        sizes.append((consec // 2) * 4)
+    return sizes
+
+
+def _count_cave_copy_blocks(asm_code):
+    """Backwards-compatible wrapper: count of 48-byte (CMatrix3x4f) cave
+    blocks. Kept for any external callers; new code should use
+    `_find_cave_copy_blocks` and inspect the returned sizes directly.
+    """
+    return sum(1 for s in _find_cave_copy_blocks(asm_code) if s >= 48)
 
 
 def identify_missing_cave_copy(decompiled_code, assembly_code):
@@ -1601,9 +1635,16 @@ def identify_missing_cave_copy(decompiled_code, assembly_code):
     suspects = []
     if not decompiled_code or not assembly_code:
         return suspects
-    # Check asm side first — cheaper and rules out most functions.
-    cave_blocks = _count_cave_copy_blocks(assembly_code)
-    if cave_blocks < 2:
+    # Check asm side first — cheaper and rules out most functions. Only
+    # consider candidate locals whose struct size matches an observed
+    # cave-block size, since a 48-byte cave block can't be the missing copy
+    # of a 12-byte struct.
+    cave_sizes = set(_find_cave_copy_blocks(assembly_code))
+    if len(cave_sizes) == 0:
+        return suspects
+    eligible_types = {t for t, sz in _UNREF_STRUCT_SIZES.items()
+                      if sz in cave_sizes}
+    if not eligible_types:
         return suspects
     lines = decompiled_code.split('\n')
     decls = []
@@ -1612,7 +1653,7 @@ def identify_missing_cave_copy(decompiled_code, assembly_code):
         if not m:
             continue
         type_name, var_name = m.group(1), m.group(2)
-        if type_name not in _UNREF_STRUCT_TYPES:
+        if type_name not in eligible_types:
             continue
         decls.append((i, type_name, var_name))
     candidates = []
@@ -1635,6 +1676,7 @@ def identify_missing_cave_copy(decompiled_code, assembly_code):
         candidates.append((decl_line, type_name, var_name))
     if len(candidates) < 2:
         return suspects
+    cave_blocks = sum(1 for s in _find_cave_copy_blocks(assembly_code) if s >= 48)
     for decl_line, type_name, var_name in candidates:
         suspects.append({
             'line': decl_line + 1,
@@ -1652,6 +1694,125 @@ def identify_missing_cave_copy(decompiled_code, assembly_code):
                 "source local directly instead of the uninitialized "
                 "scratch.").format(
                     var=var_name, type=type_name, blocks=cave_blocks),
+            'severity': 'moderate',
+        })
+    return suspects
+
+
+# Watcom emits inline `memset` as a `REP STOS{B,W,D}` instruction. Ghidra
+# unrolls the REP prefix into a countdown for-loop in the decompile:
+#     for (; iVar != 0; iVar = iVar + -1) { *p = const; p = p + 1; }
+# The source-side pattern is too generic to safely match (any element-wise
+# clear loop looks the same), so we anchor on the asm: `STOS{B,W,D}.REP`
+# with the `.REP` suffix (Ghidra's notation for a REP-prefixed string op) is
+# unambiguous evidence of an inline memset. A bare `STOSD ES:EDI` without
+# `.REP` is a single store and not flagged.
+_REP_STOS_RE = re.compile(r'\bSTOS([BWD])\.REP\b', re.IGNORECASE)
+# Ghidra asm format: `    INSTRUCTION    ; ADDRESS [| optional comment]`
+_ASM_LINE_ADDR_RE = re.compile(r';\s*([0-9a-fA-F]{6,8})\b')
+
+
+def identify_unrolled_memset_blocks(assembly_code):
+    """Detect Watcom `REP STOS{B,W,D}` (inline memset) instructions.
+
+    Each `.REP`-suffixed STOS in the asm corresponds to a countdown
+    for-loop in the decompile that should collapse to a `memset()` call in
+    a `.keep`. The B/W/D variant tells you the element stride (1/2/4).
+
+    Args:
+        assembly_code: The function's assembly listing (from `.asm`).
+
+    Returns:
+        List of suspect dicts, one per `STOS.REP` site. The reported `line`
+        is the .asm line number (the .cpp doesn't have a unique anchor —
+        the user finds the matching countdown for-loop in the function
+        body and replaces it with `memset(dst, value, count * stride)`).
+    """
+    suspects = []
+    if not assembly_code:
+        return suspects
+    for line_num, line in enumerate(assembly_code.split('\n'), 1):
+        stripped = line.strip()
+        if not stripped or stripped.startswith(';'):
+            continue
+        m = _REP_STOS_RE.search(line)
+        if not m:
+            continue
+        size_letter = m.group(1).upper()
+        stride = {'B': 1, 'W': 2, 'D': 4}[size_letter]
+        addr_m = _ASM_LINE_ADDR_RE.search(line)
+        addr = addr_m.group(1) if addr_m else '????????'
+        suspects.append({
+            'line': line_num,
+            'type': 'unrolled_memset',
+            'match': 'STOS%s.REP' % size_letter,
+            'text': stripped[:120],
+            'description': (
+                'Watcom inline memset (REP STOS%s at %s, %d-byte stride). '
+                'Ghidra reconstructs this as a countdown for-loop with '
+                'element-by-element writes; replace the loop with '
+                'memset(dst, value, count * %d) in a .keep.' % (
+                    size_letter, addr, stride, stride)),
+            'severity': 'moderate',
+        })
+    return suspects
+
+
+# Same idea as `STOS.REP`, applied to `MOVS{B,W,D}.REP`. Each is an inline
+# `memcpy`/`memmove`. Ghidra reconstructs them as countdown for-loops with
+# either typed pointer dereferences (`*(uint *)dst = *(uint *)src;`) or
+# element-by-element field/index assignments (`dst->m[0].w = src->m[0].w;`).
+# The source-side `unrolled_memcpy` detector catches the first shape via
+# `_UNROLLED_MEMCPY_STORE_RE` but misses the second when the LHS/RHS has an
+# arrow or index — in that case the suspect lands as `pointer_cast` only.
+# The asm-based detector here catches *all* REP MOVS sites unambiguously.
+_REP_MOVS_RE = re.compile(r'\bMOVS([BWD])\.REP\b', re.IGNORECASE)
+
+
+def identify_unrolled_memcpy_blocks(assembly_code):
+    """Detect Watcom `REP MOVS{B,W,D}` (inline memcpy/memmove) instructions.
+
+    Complements the source-side `identify_unrolled_memcpy_loops` — that
+    detector requires `*ptr = *src` style stores, so it misses cases where
+    the unrolled loop walks via `dst->field` or `dst[i]` accesses. The asm
+    fingerprint `MOVS{B,W,D}.REP` is unambiguous regardless of how Ghidra
+    rendered the body.
+
+    Args:
+        assembly_code: The function's assembly listing (from `.asm`).
+
+    Returns:
+        List of suspect dicts, one per `MOVS.REP` site. The reported `line`
+        is the .asm line number; the user finds the matching countdown
+        for-loop (or unrolled field-by-field copy) in the function body and
+        replaces it with `memcpy(dst, src, count * stride)` or a struct
+        assignment.
+    """
+    suspects = []
+    if not assembly_code:
+        return suspects
+    for line_num, line in enumerate(assembly_code.split('\n'), 1):
+        stripped = line.strip()
+        if not stripped or stripped.startswith(';'):
+            continue
+        m = _REP_MOVS_RE.search(line)
+        if not m:
+            continue
+        size_letter = m.group(1).upper()
+        stride = {'B': 1, 'W': 2, 'D': 4}[size_letter]
+        addr_m = _ASM_LINE_ADDR_RE.search(line)
+        addr = addr_m.group(1) if addr_m else '????????'
+        suspects.append({
+            'line': line_num,
+            'type': 'unrolled_memcpy',
+            'match': 'MOVS%s.REP' % size_letter,
+            'text': stripped[:120],
+            'description': (
+                'Watcom inline memcpy (REP MOVS%s at %s, %d-byte stride). '
+                'Ghidra reconstructs this as a countdown for-loop with '
+                'element-by-element copies; replace the loop with '
+                'memcpy(dst, src, count * %d) or a struct assignment in a '
+                '.keep.' % (size_letter, addr, stride, stride)),
             'severity': 'moderate',
         })
     return suspects

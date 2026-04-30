@@ -15,7 +15,7 @@
     "pseudocode_lines": 51,
     "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast"
+      "unrolled_memcpy"
     ],
     "total_lines": 140
   },
@@ -379,6 +379,17 @@
     },
     "pcode_op_count": 342
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(CMatrix3x3f *)((int)rotation_matrix",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "rotation_matrix = (CMatrix3x3f *)((int)rotation_matrix + 4);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 28,
     "local_size": 4,
@@ -432,12 +443,12 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(CMatrix3x3f *)((int)",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 52,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "rotation_matrix = (CMatrix3x3f *)((int)rotation_matrix + 4);",
-      "type": "pointer_cast"
+      "text": "// 0056d41b: MOVSD.REP ES:EDI,ESI  ; g_LightingRotationMatrix | g_LightingRotationMatrix.m[0].y",
+      "type": "unrolled_memcpy"
     }
   ]
 }

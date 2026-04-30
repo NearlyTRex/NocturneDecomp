@@ -13,11 +13,11 @@ void __cdecl freeTextureCache(void);
 
 // Original: wincore_wddvmem.cpp_initializeColorMasks_FUN_004f3ff0
 // Address: 004f3ff0
-ulonglong __cdecl initializeColorMasks(void);
+void __cdecl initializeColorMasks(void);
 
 // Original: wincore_wddvmem.cpp_populateColorTable_FUN_004f4140
 // Address: 004f4140
-ulonglong __cdecl populateColorTable(void);
+void __cdecl populateColorTable(void);
 
 // Original: wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004f41c0
 // Address: 004f41c0

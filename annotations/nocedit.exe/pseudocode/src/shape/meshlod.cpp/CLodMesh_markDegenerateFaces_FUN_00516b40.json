@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 83,
+    "complexity_score": 53,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 28,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -137,39 +137,15 @@
     {
       "description": "Complex pointer cast",
       "line": 17,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pCVar1",
       "severity": "moderate",
       "text": "if (*(int *)((int)pCVar1->edge_perpendiculars + iVar6 + -0x14) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 18,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "iVar2 = *(int *)((int)(pCVar1->uv_coords + -1) + iVar6);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 19,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "iVar3 = *(int *)((int)(pCVar1->uv_coords + -2) + iVar6 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(iVar4 = *(int *)((int)(pCVar1->uv_coords + -1) + iVar6 + 4), iVar3 == iVar4)) ||",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 23,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)pCVar1",
       "severity": "moderate",
       "text": "*(uint *)((int)pCVar1->edge_perpendiculars + iVar6 + -0x14) = 1;",
       "type": "pointer_cast"

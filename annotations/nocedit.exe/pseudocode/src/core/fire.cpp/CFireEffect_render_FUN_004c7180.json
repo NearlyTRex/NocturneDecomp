@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 347,
-    "complexity_score": 203,
+    "complexity_score": 183,
     "cross_reference_count": 4,
     "function_call_count": 17,
     "global_count": 86,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 158,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -813,7 +813,7 @@
     {
       "description": "Complex pointer cast",
       "line": 28,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_StakePool",
       "severity": "moderate",
       "text": "if (*(int *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) == 0) {",
       "type": "pointer_cast"
@@ -821,25 +821,9 @@
     {
       "description": "Complex pointer cast",
       "line": 30,
-      "match": "(CStake *)((int)",
+      "match": "(CStake *)((int)g_StakePool",
       "severity": "moderate",
       "text": "((CStake *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar1) != 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 68,
-      "match": "(CBulletHole *)((int)",
-      "severity": "moderate",
-      "text": "((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar1));",
       "type": "pointer_cast"
     }
   ]

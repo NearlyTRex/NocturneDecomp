@@ -7,9 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-/* WARNING: Restarted to delay deadcode elimination for space: stack */
-
 int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this_ptr,short *pcm_output)
 
 {
@@ -170,22 +167,14 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
                       (pCVar2,local_cc8,local_290,(SBitAllocationTable *)&local_e0);
             sound_mp3_cpp_requantizeSamples_FUN_005301b0
                       (local_cc8,local_9c8,local_290,&local_e0.frame);
-            local_5c = 0;
-            do {
-              iVar5 = 0;
-              if (0 < local_e0.frame.channel_count) {
-                piVar11 = (int *)((int)local_fc8[0].codes[0] + local_5c);
-                pfVar7 = (float *)((int)local_9c8[0].codes[0] + local_5c);
-                do {
-                  iVar9 = *piVar11;
-                  piVar11 = piVar11 + 0x60;
-                  iVar5 = iVar5 + 1;
-                  *pfVar7 = *pfVar7 * (float)g_MpegScalefactorTable[iVar9];
-                  pfVar7 = pfVar7 + 0x60;
-                } while (iVar5 < local_e0.frame.channel_count);
+            for (local_5c = 0; local_5c < 0x20; local_5c = local_5c + 1) {
+              for (iVar5 = 0; iVar5 < local_e0.frame.channel_count; iVar5 = iVar5 + 1) {
+                iVar9 = local_fc8[iVar5].codes[0][local_5c];
+                *(float *)&local_9c8[iVar5].codes[0][local_5c] =
+                     *(float *)&local_9c8[iVar5].codes[0][local_5c] *
+                     (float)g_MpegScalefactorTable[iVar9];
               }
-              local_5c = local_5c + 4;
-            } while (local_5c != 0x80);
+            }
             iVar5 = 0;
             if (0 < local_e0.channel_count) {
               subband_samples = local_9c8;
@@ -219,45 +208,22 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
                     ((float *)local_9c8,(int *)local_fc8,&local_e0.frame,
                      local_e0.group_counter >> 2);
           if (pcm_output != (short *)0x0) {
-            local_28 = 0;
-            local_2c = 0;
-            do {
-              iVar5 = 0;
-              if (0 < local_e0.channel_count) {
-                pfVar7 = (float *)((int)local_9c8[0].codes[0] + local_2c);
-                local_30 = (short *)((int)local_33c8 + local_28);
-                do {
-                  sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_005304f0
-                            (this_ptr,pfVar7,iVar5,local_30);
-                  iVar5 = iVar5 + 1;
-                  pfVar7 = pfVar7 + 0x60;
-                  local_30 = local_30 + 0x240;
-                } while (iVar5 < local_e0.channel_count);
+            for (local_28 = 0; local_28 < 3; local_28 = local_28 + 1) {
+              for (iVar5 = 0; iVar5 < local_e0.channel_count; iVar5 = iVar5 + 1) {
+                sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_005304f0
+                          (this_ptr,(float *)&local_9c8[iVar5].codes[local_28][0],iVar5,
+                           &local_33c8[iVar5 * 0x240 + local_28 * 0x20]);
               }
-              local_28 = local_28 + 0x40;
-              local_2c = local_2c + 0x80;
-            } while (local_28 != 0xc0);
-            local_24 = 0;
+            }
             local_e0.group_counter = 0;
-            do {
-              iVar5 = 0;
-              do {
-                iVar9 = 0;
-                if (0 < local_e0.channel_count) {
-                  iVar4 = iVar5 + local_24;
-                  psVar13 = pcm_output;
-                  do {
-                    pcm_output = psVar13 + 1;
-                    iVar9 = iVar9 + 1;
-                    *psVar13 = *(short *)((int)local_33c8 + iVar4);
-                    iVar4 = iVar4 + 0x480;
-                    psVar13 = pcm_output;
-                  } while (iVar9 < local_e0.channel_count);
+            for (local_24 = 0; local_24 < 3; local_24 = local_24 + 1) {
+              for (iVar5 = 0; iVar5 < 0x20; iVar5 = iVar5 + 1) {
+                for (iVar9 = 0; iVar9 < local_e0.channel_count; iVar9 = iVar9 + 1) {
+                  *pcm_output = local_33c8[iVar9 * 0x240 + local_24 * 0x20 + iVar5];
+                  pcm_output = pcm_output + 1;
                 }
-                iVar5 = iVar5 + 2;
-              } while (iVar5 != 0x40);
-              local_24 = local_24 + 0x40;
-            } while (local_24 != 0xc0);
+              }
+            }
           }
           local_e0.group_counter = local_e0.group_counter + 1;
         } while (local_e0.group_counter < 0xc);
@@ -356,38 +322,22 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
                   local_54 = local_54 + 0x12;
                   pfVar7 = pfVar7 + 0x12;
                 } while (iVar5 < 0x20);
-                local_50 = 0;
-                local_18 = 0;
-                do {
-                  iVar9 = 0;
-                  iVar5 = local_50;
-                  do {
+                for (local_18 = 0; local_18 < 0x12; local_18 = local_18 + 1) {
+                  for (iVar9 = 0; iVar9 < 0x20; iVar9 = iVar9 + 1) {
                     if ((local_18 % 2 != 0) && (iVar9 % 2 != 0)) {
-                      *(float *)((int)local_18c8 + iVar5) = -*(float *)((int)local_18c8 + iVar5);
+                      local_18c8[local_18 + 18 * iVar9] = -local_18c8[local_18 + 18 * iVar9];
                     }
-                    iVar9 = iVar9 + 1;
-                    iVar5 = iVar5 + 0x48;
-                  } while (iVar9 < 0x20);
-                  local_18 = local_18 + 1;
-                  local_50 = local_50 + 4;
-                } while (local_18 < 0x12);
-                iVar5 = 0;
+                  }
+                }
                 psVar13 = local_40;
-                do {
-                  iVar9 = 0;
-                  iVar4 = iVar5;
-                  do {
-                    iVar8 = iVar9 + 4;
-                    puVar1 = (uint *)((int)local_18c8 + iVar4);
-                    iVar4 = iVar4 + 0x48;
-                    *(uint *)((int)local_190 + iVar9) = *puVar1;
-                    iVar9 = iVar8;
-                  } while (iVar8 != 0x80);
-                  iVar5 = iVar5 + 4;
+                for (iVar5 = 0; iVar5 < 18; iVar5 = iVar5 + 1) {
+                  for (iVar9 = 0; iVar9 < 32; iVar9 = iVar9 + 1) {
+                    local_190[iVar9] = local_18c8[iVar5 + 18 * iVar9];
+                  }
                   sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_005304f0
                             (this_ptr,local_190,local_1c,psVar13);
                   psVar13 = psVar13 + 0x20;
-                } while (iVar5 != 0x48);
+                }
                 local_4c = (SMpegLayer3GranuleInfo *)((char *)local_4c + sizeof(SMpegLayer3SideInfoChannel));
                 local_48 = local_48 + 1;
                 local_44 = (SMpegLayer3GranuleInfo *)((char *)local_44 + sizeof(SMpegLayer3SideInfoChannel));
@@ -395,26 +345,14 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
                 local_1c = local_1c + 1;
               } while (local_1c < local_e0.channel_count);
             }
-            local_3c = 0;
-            do {
-              iVar5 = 0;
-              do {
-                iVar9 = 0;
-                if (0 < local_e0.channel_count) {
-                  iVar4 = iVar5 + local_3c;
-                  psVar13 = pcm_output;
-                  do {
-                    pcm_output = psVar13 + 1;
-                    iVar9 = iVar9 + 1;
-                    *psVar13 = *(short *)((int)local_33c8 + iVar4);
-                    iVar4 = iVar4 + 0x480;
-                    psVar13 = pcm_output;
-                  } while (iVar9 < local_e0.channel_count);
+            for (local_3c = 0; local_3c < 0x12; local_3c = local_3c + 1) {
+              for (iVar5 = 0; iVar5 < 0x20; iVar5 = iVar5 + 1) {
+                for (iVar9 = 0; iVar9 < local_e0.channel_count; iVar9 = iVar9 + 1) {
+                  *pcm_output = local_33c8[iVar9 * 0x240 + local_3c * 0x20 + iVar5];
+                  pcm_output = pcm_output + 1;
                 }
-                iVar5 = iVar5 + 2;
-              } while (iVar5 != 0x40);
-              local_3c = local_3c + 0x40;
-            } while (local_3c != 0x480);
+              }
+            }
             local_38 = local_38 + 1;
             local_34 = local_34 + 0x48;
             local_74 = local_74 + 1;

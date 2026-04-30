@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 792,
-    "complexity_score": 347,
+    "complexity_score": 297,
     "cross_reference_count": 13,
     "function_call_count": 36,
     "global_count": 42,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 297,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast",
-      "warning_unable_to_use_type"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1089
   },
   "cross_references": [
@@ -714,6 +711,35 @@
     },
     "pcode_op_count": 2777
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(uint *)((int)g_DynamicLights",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)g_DynamicLights + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(uint *)((int)g_SpotLightList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)g_SpotLightList + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 79,
+      "match": "(uint *)((int)g_SpotLightList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)g_SpotLightList + iVar7);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 400,
     "local_size": 392,
@@ -849,39 +875,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 59,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)g_DynamicLights + iVar8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)g_SpotLightList + iVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 79,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)g_SpotLightList + iVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Ghidra could not apply type to a symbol",
-      "introduced_by": "keep",
-      "line": 10,
-      "match": "WARNING: Unable to use type for symbol",
-      "severity": "moderate",
-      "text": "/* WARNING: Unable to use type for symbol fVar3 */",
-      "type": "warning_unable_to_use_type"
-    }
-  ]
+  "suspects": []
 }

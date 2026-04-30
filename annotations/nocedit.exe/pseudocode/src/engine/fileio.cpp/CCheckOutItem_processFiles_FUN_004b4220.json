@@ -7,7 +7,7 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1287,
-    "complexity_score": 623,
+    "complexity_score": 628,
     "cross_reference_count": 0,
     "function_call_count": 43,
     "global_count": 63,
@@ -17,6 +17,7 @@
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
+      "unrolled_memcpy",
       "unrolled_strcat",
       "unrolled_strcpy",
       "unrolled_strlen",
@@ -986,7 +987,7 @@
     {
       "description": "Complex pointer cast",
       "line": 91,
-      "match": "(SFoundFileInfo *)((int)",
+      "match": "(SFoundFileInfo *)((int)pSVar8",
       "severity": "moderate",
       "text": "pSVar8 = (SFoundFileInfo *)((int)pSVar8 + (uint)bVar12 * -2 + 1);",
       "type": "pointer_cast"
@@ -998,14 +999,6 @@
       "severity": "mild",
       "text": "pcVar10 = (char *)((int)&pSVar8[-1].container_timestamp + 3);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 95,
-      "match": "(char *)((int)",
-      "severity": "moderate",
-      "text": "pcVar10 = (char *)((int)&pSVar8[-1].container_timestamp + 3);",
-      "type": "pointer_cast"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
@@ -1062,6 +1055,14 @@
       "severity": "mild",
       "text": "do {",
       "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 16,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004b4254: MOVSD.REP ES:EDI,ESI  ; g_DefaultCheckOutPath | g_DefaultCheckOutPath+4",
+      "type": "unrolled_memcpy"
     }
   ]
 }

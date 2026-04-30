@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 107,
-    "complexity_score": 111,
+    "complexity_score": 101,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 61,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "warning_type_propagation"
@@ -173,16 +173,8 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(CVector3f *)((int)",
-      "severity": "moderate",
-      "text": "pCVar8 = (CVector3f *)((int)(pCVar8 + 5) + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 59,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)pcVar9",
       "severity": "moderate",
       "text": "*(float *)((int)pcVar9 + 0x128b8) = *(float *)((int)pcVar9 + 0x128b8) - fVar5;",
       "type": "pointer_cast"
@@ -190,7 +182,7 @@
     {
       "description": "Complex pointer cast",
       "line": 59,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)pcVar9",
       "severity": "moderate",
       "text": "*(float *)((int)pcVar9 + 0x128b8) = *(float *)((int)pcVar9 + 0x128b8) - fVar5;",
       "type": "pointer_cast"

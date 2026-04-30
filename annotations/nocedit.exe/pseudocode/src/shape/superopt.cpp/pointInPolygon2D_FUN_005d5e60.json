@@ -7,15 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 216,
-    "complexity_score": 134,
+    "complexity_score": 109,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 84,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
       "sub84_truncation"
     ],
     "total_lines": 300
@@ -249,22 +248,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "uVar2 = *(uint *)((int)&pCVar8->x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "uStack_44 = *(uint *)((int)&pCVar4->x + 4);",
-      "type": "pointer_cast"
-    },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 68,

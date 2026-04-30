@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 294,
-    "complexity_score": 151,
+    "complexity_score": 96,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 25,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 96,
-    "suspect_count": 5,
-    "suspect_types": [
-      "unnamed_local"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 390
   },
   "cross_references": [
@@ -303,51 +301,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 21,
-      "match": "local_14",
-      "severity": "mild",
-      "text": "SMotion *local_14;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 46,
-      "match": "local_14",
-      "severity": "mild",
-      "text": "local_14 = this_ptr->motions;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 49,
-      "match": "local_14",
-      "severity": "mild",
-      "text": "_fprintf(file_handle,\"\\\"%s\\\",%g,%d,%d,%d\\n\",local_14->motion_name,(double)local_14->fps,",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 49,
-      "match": "local_14",
-      "severity": "mild",
-      "text": "_fprintf(file_handle,\"\\\"%s\\\",%g,%d,%d,%d\\n\",local_14->motion_name,(double)local_14->fps,",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 50,
-      "match": "local_14",
-      "severity": "mild",
-      "text": "local_14->state_index,local_14->frame_start,local_14->frame_count);",
-      "type": "unnamed_local"
-    }
-  ]
+  "suspects": []
 }

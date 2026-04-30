@@ -171,7 +171,7 @@
     {
       "description": "Complex pointer cast",
       "line": 31,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pCVar2",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "if (*(int *)((int)pCVar2->edge_perpendiculars + iVar7 + -0x14) == 0) {",
@@ -180,7 +180,7 @@
     {
       "description": "Complex pointer cast",
       "line": 32,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)pCVar2",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "dVar1 = (double)*(float *)((int)pCVar2->uv_coords[1] + iVar7 + 4);",
@@ -188,17 +188,8 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)(pCVar2->uv_coords + -2) + iVar7 + 4),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 35,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)pCVar2",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[0] + iVar7),",
@@ -207,7 +198,7 @@
     {
       "description": "Complex pointer cast",
       "line": 36,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)pCVar2",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[0] + iVar7 + 4),",
@@ -215,17 +206,8 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)(pCVar2->uv_coords + -1) + iVar7),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 38,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)pCVar2",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84(__BITCAST_UINT64(dVar1),0),",
@@ -242,17 +224,8 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)(pCVar2->uv_coords + -1) + iVar7 + 4),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 41,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)pCVar2",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[2] + iVar7),",
@@ -261,7 +234,7 @@
     {
       "description": "Complex pointer cast",
       "line": 42,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)pCVar2",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[2] + iVar7 + 4));",

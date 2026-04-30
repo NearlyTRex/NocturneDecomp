@@ -7,16 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 51,
+    "complexity_score": 36,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 10,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 36,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 123
   },
   "cross_references": [],
@@ -163,14 +161,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "return (void *)((int)&prim[1].base + (prim->base).count * 0xc);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

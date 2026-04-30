@@ -7,18 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1165,
-    "complexity_score": 839,
+    "complexity_score": 534,
     "cross_reference_count": 3,
     "function_call_count": 29,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 509,
-    "suspect_count": 31,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "unnamed_local",
-      "warning_deadcode_restart",
-      "warning_inlined_function"
+      "unrolled_memcpy"
     ],
     "total_lines": 1674
   },
@@ -401,6 +398,69 @@
   },
   "resolved_suspects": [
     {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Deadcode elimination delayed",
+      "line": 3,
+      "match": "WARNING: Restarted to delay deadcode elimination",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Restarted to delay deadcode elimination for space: stack */",
+      "type": "warning_deadcode_restart"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 183,
+      "match": "(int *)((int)local_fc8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar11 = (int *)((int)local_fc8[0].codes[0] + local_5c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 184,
+      "match": "(float *)((int)local_9c8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)local_9c8[0].codes[0] + local_5c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 233,
+      "match": "(float *)((int)local_9c8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)local_9c8[0].codes[0] + local_2c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 234,
+      "match": "(short *)((int)local_33c8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_30 = (short *)((int)local_33c8 + local_28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 258,
+      "match": "(short *)((int)local_33c8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*psVar13 = *(short *)((int)local_33c8 + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 288,
       "match": "&stack0xffff9f14",
@@ -412,7 +472,7 @@
     {
       "description": "Complex pointer cast",
       "line": 296,
-      "match": "(SMpegFrameHeader *)((int)",
+      "match": "(SMpegFrameHeader *)((int)pSVar14",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar14 = (SMpegFrameHeader *)((int)pSVar14 + (uint)bVar15 * -8 + 4);",
@@ -475,7 +535,7 @@
     {
       "description": "Complex pointer cast",
       "line": 341,
-      "match": "(SMpegFrameHeader *)((int)",
+      "match": "(SMpegFrameHeader *)((int)pSVar14",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar14 = (SMpegFrameHeader *)((int)pSVar14 + (uint)bVar15 * -8 + 4);",
@@ -525,6 +585,51 @@
       "severity": "mild",
       "text": "frame_info_00.js_bound._2_2_ = uVar21;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 429,
+      "match": "(float *)((int)local_18c8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)local_18c8 + iVar5) = -*(float *)((int)local_18c8 + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 429,
+      "match": "(float *)((int)local_18c8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)local_18c8 + iVar5) = -*(float *)((int)local_18c8 + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 444,
+      "match": "(uint *)((int)local_18c8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)local_18c8 + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 446,
+      "match": "(uint *)((int)local_190",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_190 + iVar9) = *puVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 472,
+      "match": "(short *)((int)local_33c8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*psVar13 = *(short *)((int)local_33c8 + iVar4);",
+      "type": "pointer_cast"
     },
     {
       "actual_args": 0,
@@ -1033,271 +1138,20 @@
   },
   "suspects": [
     {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Deadcode elimination delayed",
-      "line": 3,
-      "match": "WARNING: Restarted to delay deadcode elimination",
-      "severity": "mild",
-      "text": "/* WARNING: Restarted to delay deadcode elimination for space: stack */",
-      "type": "warning_deadcode_restart"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 183,
-      "match": "(int *)((int)",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 708,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "piVar11 = (int *)((int)local_fc8[0].codes[0] + local_5c);",
-      "type": "pointer_cast"
+      "text": "// 00535625: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 184,
-      "match": "(float *)((int)",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 786,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "pfVar7 = (float *)((int)local_9c8[0].codes[0] + local_5c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 233,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "pfVar7 = (float *)((int)local_9c8[0].codes[0] + local_2c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 234,
-      "match": "(short *)((int)",
-      "severity": "moderate",
-      "text": "local_30 = (short *)((int)local_33c8 + local_28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 258,
-      "match": "(short *)((int)",
-      "severity": "moderate",
-      "text": "*psVar13 = *(short *)((int)local_33c8 + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 429,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)local_18c8 + iVar5) = -*(float *)((int)local_18c8 + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 429,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)local_18c8 + iVar5) = -*(float *)((int)local_18c8 + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 444,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)local_18c8 + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 446,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)local_190 + iVar9) = *puVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 472,
-      "match": "(short *)((int)",
-      "severity": "moderate",
-      "text": "*psVar13 = *(short *)((int)local_33c8 + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 45,
-      "match": "local_4d8",
-      "severity": "mild",
-      "text": "SMpegLayer3SideInfo local_4d8;  // was char; readLayer3SideInfo fills this as a full SMpegLayer3SideInfo. Ghidra split it from local_4c0 which was really &local_4d8.channels[0].granules[0]",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 45,
-      "match": "local_4c0",
-      "severity": "mild",
-      "text": "SMpegLayer3SideInfo local_4d8;  // was char; readLayer3SideInfo fills this as a full SMpegLayer3SideInfo. Ghidra split it from local_4c0 which was really &local_4d8.channels[0].granules[0]",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 45,
-      "match": "local_4d8",
-      "severity": "mild",
-      "text": "SMpegLayer3SideInfo local_4d8;  // was char; readLayer3SideInfo fills this as a full SMpegLayer3SideInfo. Ghidra split it from local_4c0 which was really &local_4d8.channels[0].granules[0]",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 49,
-      "match": "local_110",
-      "severity": "mild",
-      "text": "SMpegFrameHeader local_110;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 54,
-      "match": "local_a4",
-      "severity": "mild",
-      "text": "uint local_a4 = 0;  // asm inits to 0, decompiler dropped the init; read once as (local_a4 - 1) for a \"frame %d\" error message that effectively always prints -1",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 54,
-      "match": "local_a4",
-      "severity": "mild",
-      "text": "uint local_a4 = 0;  // asm inits to 0, decompiler dropped the init; read once as (local_a4 - 1) for a \"frame %d\" error message that effectively always prints -1",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 91,
-      "match": "local_110",
-      "severity": "mild",
-      "text": "local_e0.frame.header = &local_110;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 110,
-      "match": "local_110",
-      "severity": "mild",
-      "text": "local_e0.frame.channel_mode = local_110.channel_mode;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 112,
-      "match": "local_110",
-      "severity": "mild",
-      "text": "if (local_110.layer == 2) {",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 113,
-      "match": "local_110",
-      "severity": "mild",
-      "text": "iVar9 = local_110.mpeg_version;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 114,
-      "match": "local_110",
-      "severity": "mild",
-      "text": "iVar4 = g_MpegBitrateTable[iVar9][1][local_110.bitrate_index] /",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 116,
-      "match": "local_110",
-      "severity": "mild",
-      "text": "iVar5 = (int)ROUND(ROUND(g_MpegSampleRateTable[iVar9][local_110.sampling_rate_index]));",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 146,
-      "match": "local_110",
-      "severity": "mild",
-      "text": "if (local_110.channel_mode == 1) {",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 147,
-      "match": "local_110",
-      "severity": "mild",
-      "text": "iVar5 = local_110.layer;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 148,
-      "match": "local_110",
-      "severity": "mild",
-      "text": "iVar6 = local_110.mode_extension;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 157,
-      "match": "local_110",
-      "severity": "mild",
-      "text": "iVar6 = (local_110.mpeg_version != 0) + 1;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 274,
-      "match": "local_4d8",
-      "severity": "mild",
-      "text": "(this_ptr,&this_ptr->file_bitstream,&local_4d8,",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 289,
-      "match": "local_4d8",
-      "severity": "mild",
-      "text": "local_70 = (this_ptr->main_data_offset - uVar10) - local_4d8.main_data_begin;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 305,
-      "match": "local_4d8",
-      "severity": "mild",
-      "text": "local_38 = local_4d8.channels[0].granules;",
-      "type": "unnamed_local"
+      "text": "// 005356ee: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

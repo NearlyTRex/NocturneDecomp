@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 269,
-    "complexity_score": 166,
+    "complexity_score": 101,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 19,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 101,
-    "suspect_count": 6,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 370
   },
   "cross_references": [
@@ -266,54 +264,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 63,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "_fprintf(file_handle,\"%g,%g,%g\\n\",(double)*(float *)((int)&pCVar8->x + iVar10),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 64,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "(double)*(float *)((int)&pCVar8->y + iVar10),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 65,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "(double)*(float *)((int)&pCVar8->z + iVar10));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 76,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "_fprintf(file_handle,\"%g,%g,%g\\n\",(double)*(float *)((int)&pCVar8->x + iVar10),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 77,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "(double)*(float *)((int)&pCVar8->y + iVar10),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 78,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "(double)*(float *)((int)&pCVar8->z + iVar10));",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

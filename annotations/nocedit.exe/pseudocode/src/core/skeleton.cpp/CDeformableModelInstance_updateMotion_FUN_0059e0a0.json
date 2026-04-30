@@ -7,17 +7,17 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1033,
-    "complexity_score": 853,
+    "complexity_score": 563,
     "cross_reference_count": 4,
     "function_call_count": 7,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 358,
-    "suspect_count": 48,
+    "suspect_count": 19,
     "suspect_types": [
+      "missing_cave_copy",
       "pointer_cast",
-      "stack_alignment_array",
-      "unnamed_local"
+      "stack_alignment_array"
     ],
     "total_lines": 1391
   },
@@ -853,404 +853,147 @@
     {
       "description": "Complex pointer cast",
       "line": 161,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)aiStack_5ac",
       "severity": "moderate",
       "text": "*(int *)((int)aiStack_5ac + local_38) = iVar10;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 167,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_bec[0].x + iVar10) = afStack_c8[0];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 168,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_bec[0].y + iVar10) = afStack_c8[1];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 169,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_bec[0].z + iVar10) = afStack_c8[2];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 192,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)aiStack_5ac",
       "severity": "moderate",
       "text": "if (-1 < *(int *)((int)aiStack_5ac + local_58)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 202,
-      "match": "(CQuaternion4f *)((int)",
-      "severity": "moderate",
-      "text": "((CQuaternion4f *)((int)&local_bec[0].w + local_68),&local_20c,&local_14c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 204,
-      "match": "(CQuaternion4f *)((int)",
-      "severity": "moderate",
-      "text": "(local_bc,(CQuaternion4f *)((int)&local_74->w + local_80),&local_23c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 229,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)aiStack_41c",
       "severity": "moderate",
       "text": "*(int *)((int)aiStack_41c + local_40) = iVar11;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 233,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_122c.w + local_44) = pCVar12->w;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 234,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_122c.x + local_44) = pCVar12->x;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 235,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_122c.y + local_44) = pCVar12->y;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 236,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_122c.z + local_44) = pCVar12->z;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 240,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_186c[0].x + local_44) = afStack_168[0];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 241,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_186c[0].y + local_44) = afStack_168[1];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 242,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_186c[0].z + local_44) = afStack_168[2];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 262,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_186c[0].x + local_80) = afStack_228[0];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 263,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_186c[0].y + local_80) = afStack_228[1];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 264,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_186c[0].z + local_80) = afStack_228[2];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 273,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)aiStack_41c",
       "severity": "moderate",
       "text": "if (-1 < *(int *)((int)aiStack_41c + local_64)) {",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 297,
-      "match": "(CQuaternion4f *)((int)",
+      "description": "Struct-type local `local_28c` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 33,
+      "match": "CQuaternion4f local_28c; ... f(&local_28c, ...);",
       "severity": "moderate",
-      "text": "((CQuaternion4f *)((int)&local_186c[0].w + local_80),&local_1fc);",
-      "type": "pointer_cast"
+      "text": "CQuaternion4f local_28c;",
+      "type": "missing_cave_copy"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 304,
-      "match": "(CQuaternion4f *)((int)",
+      "description": "Struct-type local `local_27c` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 34,
+      "match": "CQuaternion4f local_27c; ... f(&local_27c, ...);",
       "severity": "moderate",
-      "text": "((CQuaternion4f *)((int)&local_6c->w + local_80),&local_10c);",
-      "type": "pointer_cast"
+      "text": "CQuaternion4f local_27c;",
+      "type": "missing_cave_copy"
     },
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
+      "description": "Struct-type local `local_20c` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 44,
+      "match": "CQuaternion4f local_20c; ... f(&local_20c, ...);",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_20c;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_1fc` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 45,
-      "match": "local_24c",
-      "severity": "mild",
-      "text": "CQuaternion4f local_24c;",
-      "type": "unnamed_local"
+      "match": "CQuaternion4f local_1fc; ... f(&local_1fc, ...);",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_1fc;",
+      "type": "missing_cave_copy"
     },
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
+      "description": "Struct-type local `local_1ec` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 46,
+      "match": "CQuaternion4f local_1ec; ... f(&local_1ec, ...);",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_1ec;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_1dc` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 47,
-      "match": "local_22c",
-      "severity": "mild",
-      "text": "CQuaternion4f local_22c;",
-      "type": "unnamed_local"
+      "match": "CQuaternion4f local_1dc; ... f(&local_1dc, ...);",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_1dc;",
+      "type": "missing_cave_copy"
     },
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 48,
-      "match": "local_21c",
-      "severity": "mild",
-      "text": "CQuaternion4f local_21c;",
-      "type": "unnamed_local"
+      "description": "Struct-type local `local_1ac` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 51,
+      "match": "CQuaternion4f local_1ac; ... f(&local_1ac, ...);",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_1ac;",
+      "type": "missing_cave_copy"
     },
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 54,
-      "match": "local_1bc",
-      "severity": "mild",
-      "text": "CQuaternion4f local_1bc;",
-      "type": "unnamed_local"
+      "description": "Struct-type local `local_18c` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 53,
+      "match": "CQuaternion4f local_18c; ... f(&local_18c, ...);",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_18c;",
+      "type": "missing_cave_copy"
     },
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 59,
-      "match": "local_16c",
-      "severity": "mild",
-      "text": "CQuaternion4f local_16c;",
-      "type": "unnamed_local"
+      "description": "Struct-type local `local_15c` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 57,
+      "match": "CQuaternion4f local_15c; ... f(&local_15c, ...);",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_15c;",
+      "type": "missing_cave_copy"
     },
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 69,
-      "match": "local_cc",
-      "severity": "mild",
-      "text": "CQuaternion4f local_cc;",
-      "type": "unnamed_local"
+      "description": "Struct-type local `local_14c` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 58,
+      "match": "CQuaternion4f local_14c; ... f(&local_14c, ...);",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_14c;",
+      "type": "missing_cave_copy"
     },
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 82,
-      "match": "local_5c",
-      "severity": "mild",
-      "text": "CDeformableModelInstance *local_5c;",
-      "type": "unnamed_local"
+      "description": "Struct-type local `local_12c` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 60,
+      "match": "CQuaternion4f local_12c; ... f(&local_12c, ...);",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_12c;",
+      "type": "missing_cave_copy"
     },
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 120,
-      "match": "local_24c",
-      "severity": "mild",
-      "text": "(this_ptr_00,local_34,local_84,local_88,local_1870,&local_24c);",
-      "type": "unnamed_local"
+      "description": "Struct-type local `local_10c` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 62,
+      "match": "CQuaternion4f local_10c; ... f(&local_10c, ...);",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_10c;",
+      "type": "missing_cave_copy"
     },
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 121,
-      "match": "local_24c",
-      "severity": "mild",
-      "text": "(local_5c->bone_transform).pose_data.bone_rotations[0].w = local_24c.w;",
-      "type": "unnamed_local"
+      "description": "Struct-type local `local_fc` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 63,
+      "match": "CQuaternion4f local_fc; ... f(&local_fc, ...);",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_fc;",
+      "type": "missing_cave_copy"
     },
     {
       "description": "Complex pointer cast",
       "introduced_by": "keep",
       "line": 127,
-      "match": "(CDeformableModelInstance *)((int)",
+      "match": "(CDeformableModelInstance *)((int)local_5c",
       "severity": "moderate",
       "text": "local_5c = (CDeformableModelInstance *)((int)local_5c + 0x10);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 166,
-      "match": "local_cc",
-      "severity": "mild",
-      "text": "(this_ptr_00,local_1c,local_84,local_88,local_1870,&local_cc);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 168,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_bec[0].w + local_54) = local_cc.w;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 168,
-      "match": "local_cc",
-      "severity": "mild",
-      "text": "*(float *)((int)&local_bec[0].w + local_54) = local_cc.w;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 169,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_bec[0].x + iVar10) = local_cc.x;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 170,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&local_bec[0].y + iVar10) = local_cc.y;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 181,
-      "match": "local_1bc",
-      "severity": "mild",
-      "text": "(this_ptr_00,iVar10,local_84,local_88,local_1870,&local_1bc);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 182,
-      "match": "local_1bc",
-      "severity": "mild",
-      "text": "local_bec[iVar10].w = local_1bc.w;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 240,
-      "match": "local_16c",
-      "severity": "mild",
-      "text": "(this_ptr_00,local_18,local_84,local_88,local_1870,&local_16c);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 241,
-      "match": "local_16c",
-      "severity": "mild",
-      "text": "*(float *)((int)&local_186c[0].w + local_44) = local_16c.w;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 262,
-      "match": "local_22c",
-      "severity": "mild",
-      "text": "(this_ptr_00,local_78,local_84,local_88,local_1870,&local_22c);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 263,
-      "match": "local_22c",
-      "severity": "mild",
-      "text": "*(float *)((int)&local_186c[0].w + local_80) = local_22c.w;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 350,
-      "match": "local_21c",
-      "severity": "mild",
-      "text": "(this_ptr_00,iVar10,local_84,local_88,local_1870,&local_21c);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 351,
-      "match": "local_21c",
-      "severity": "mild",
-      "text": "(local_60->bone_transform).pose_data.bone_rotations[0].w = local_21c.w;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 352,
-      "match": "local_21c",
-      "severity": "mild",
-      "text": "(local_60->bone_transform).pose_data.bone_rotations[0].x = local_21c.x;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 353,
-      "match": "local_21c",
-      "severity": "mild",
-      "text": "(local_60->bone_transform).pose_data.bone_rotations[0].y = local_21c.y;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 354,
-      "match": "local_21c",
-      "severity": "mild",
-      "text": "(local_60->bone_transform).pose_data.bone_rotations[0].z = local_21c.z;",
-      "type": "unnamed_local"
     }
   ]
 }

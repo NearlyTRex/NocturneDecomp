@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1031,
-    "complexity_score": 1166,
+    "complexity_score": 936,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 20,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 541,
-    "suspect_count": 62,
+    "suspect_count": 39,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -745,16 +745,8 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 118,
-      "match": "(ushort *)((int)",
-      "severity": "moderate",
-      "text": "*(ushort *)((int)&uStack_57a + iVar5 + 2) = 7;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 142,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "iVar12 = *(int *)((int)g_Layer3BandIndex[0].l + iVar12)) {",
       "type": "pointer_cast"
@@ -762,7 +754,7 @@
     {
       "description": "Complex pointer cast",
       "line": 147,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "iVar11 = *(int *)((int)g_Layer3BandIndex[0].l + iVar6);",
       "type": "pointer_cast"
@@ -770,7 +762,7 @@
     {
       "description": "Complex pointer cast",
       "line": 153,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "iVar12 = *(int *)((int)g_Layer3BandIndex[0].l + local_8c + 4) -",
       "type": "pointer_cast"
@@ -778,47 +770,23 @@
     {
       "description": "Complex pointer cast",
       "line": 154,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "*(int *)((int)g_Layer3BandIndex[0].l + local_8c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 161,
-      "match": "(short *)((int)",
-      "severity": "moderate",
-      "text": "*(short *)((int)&uStack_57a + iVar6 + 2) = sVar2;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 164,
-      "match": "(short *)((int)",
-      "severity": "moderate",
-      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar6 + 2) *",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 166,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)afStack_e78",
       "severity": "moderate",
       "text": "*(float *)((int)afStack_e78 + local_90) = (float)fVar13;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 170,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(*(int *)((int)&uStack_57a + iVar6) >> 0x10,",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 185,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "iVar6 = 0x240 - *(int *)((int)g_Layer3BandIndex[0].l + local_94 + 0x54);",
       "type": "pointer_cast"
@@ -826,7 +794,7 @@
     {
       "description": "Complex pointer cast",
       "line": 186,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "iVar12 = *(int *)((int)g_Layer3BandIndex[0].l + local_94 + 0x50);",
       "type": "pointer_cast"
@@ -834,7 +802,7 @@
     {
       "description": "Complex pointer cast",
       "line": 196,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)local_2078",
       "severity": "moderate",
       "text": "*(float *)((int)local_2078 + iVar11) = local_2078[iVar12];",
       "type": "pointer_cast"
@@ -842,39 +810,23 @@
     {
       "description": "Complex pointer cast",
       "line": 197,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)afStack_e78",
       "severity": "moderate",
       "text": "*(float *)((int)afStack_e78 + iVar11) = fVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 198,
-      "match": "(ushort *)((int)",
-      "severity": "moderate",
-      "text": "uVar3 = *(ushort *)((int)&uStack_57a + iVar9 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 199,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)afStack_1778",
       "severity": "moderate",
       "text": "*(float *)((int)afStack_1778 + iVar11) = afStack_1778[iVar12];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 201,
-      "match": "(ushort *)((int)",
-      "severity": "moderate",
-      "text": "*(ushort *)((int)&uStack_57a + iVar4 + 2) = uVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 219,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "iVar12 = *(int *)((int)g_Layer3BandIndex[0].s + iVar6);",
       "type": "pointer_cast"
@@ -882,7 +834,7 @@
     {
       "description": "Complex pointer cast",
       "line": 220,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "iVar6 = *(int *)((int)g_Layer3BandIndex[0].s + iVar6 + 4) - iVar12;",
       "type": "pointer_cast"
@@ -890,7 +842,7 @@
     {
       "description": "Complex pointer cast",
       "line": 239,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "iVar11 = *(int *)((int)g_Layer3BandIndex[0].s + local_7c);",
       "type": "pointer_cast"
@@ -898,47 +850,23 @@
     {
       "description": "Complex pointer cast",
       "line": 240,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "iVar12 = *(int *)((int)g_Layer3BandIndex[0].s + local_7c + 4) - iVar11;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 248,
-      "match": "(short *)((int)",
-      "severity": "moderate",
-      "text": "*(short *)((int)&uStack_57a + iVar6 + 2) = sVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 251,
-      "match": "(short *)((int)",
-      "severity": "moderate",
-      "text": "fVar14 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar6 + 2) *",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 253,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)afStack_e78",
       "severity": "moderate",
       "text": "*(float *)((int)afStack_e78 + local_80) = (float)fVar14;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 257,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(*(int *)((int)&uStack_57a + iVar6) >> 0x10,",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 272,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "iVar11 = *(int *)((int)g_Layer3BandIndex[0].s + local_9c + 0x2c);",
       "type": "pointer_cast"
@@ -946,7 +874,7 @@
     {
       "description": "Complex pointer cast",
       "line": 273,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "iVar6 = *(int *)((int)g_Layer3BandIndex[0].s + local_9c + 0x34) -",
       "type": "pointer_cast"
@@ -954,7 +882,7 @@
     {
       "description": "Complex pointer cast",
       "line": 274,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "*(int *)((int)g_Layer3BandIndex[0].s + local_9c + 0x30);",
       "type": "pointer_cast"
@@ -962,23 +890,15 @@
     {
       "description": "Complex pointer cast",
       "line": 276,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "iVar11 = local_e4 * (*(int *)((int)g_Layer3BandIndex[0].s + local_9c + 0x30) - iVar11) +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 285,
-      "match": "(ushort *)((int)",
-      "severity": "moderate",
-      "text": "uVar3 = *(ushort *)((int)&uStack_57a + iVar11 * 2 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 286,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)local_2078",
       "severity": "moderate",
       "text": "*(float *)((int)local_2078 + iVar12) = local_2078[iVar11];",
       "type": "pointer_cast"
@@ -986,23 +906,15 @@
     {
       "description": "Complex pointer cast",
       "line": 287,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)afStack_e78",
       "severity": "moderate",
       "text": "*(float *)((int)afStack_e78 + iVar12) = fVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 288,
-      "match": "(ushort *)((int)",
-      "severity": "moderate",
-      "text": "*(ushort *)((int)&uStack_57a + iVar9 + 2) = uVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 289,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)afStack_1778",
       "severity": "moderate",
       "text": "*(float *)((int)afStack_1778 + iVar12) = afStack_1778[iVar11];",
       "type": "pointer_cast"
@@ -1010,7 +922,7 @@
     {
       "description": "Complex pointer cast",
       "line": 311,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "iVar12 = *(int *)((int)g_Layer3BandIndex[0].s + iVar6);",
       "type": "pointer_cast"
@@ -1018,7 +930,7 @@
     {
       "description": "Complex pointer cast",
       "line": 312,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "iVar6 = *(int *)((int)g_Layer3BandIndex[0].s + iVar6 + 4) - iVar12;",
       "type": "pointer_cast"
@@ -1026,7 +938,7 @@
     {
       "description": "Complex pointer cast",
       "line": 332,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "iVar11 = *(int *)((int)g_Layer3BandIndex[0].s + local_6c);",
       "type": "pointer_cast"
@@ -1034,47 +946,23 @@
     {
       "description": "Complex pointer cast",
       "line": 333,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "iVar12 = *(int *)((int)g_Layer3BandIndex[0].s + local_6c + 4) - iVar11;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 341,
-      "match": "(short *)((int)",
-      "severity": "moderate",
-      "text": "*(short *)((int)&uStack_57a + iVar6 + 2) = (short)iVar9;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 344,
-      "match": "(short *)((int)",
-      "severity": "moderate",
-      "text": "fVar14 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar6 + 2) *",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 346,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)afStack_e78",
       "severity": "moderate",
       "text": "*(float *)((int)afStack_e78 + local_70) = (float)fVar14;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 350,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(*(int *)((int)&uStack_57a + iVar6) >> 0x10,",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 362,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "iVar11 = *(int *)((int)g_Layer3BandIndex[0].s + local_98 + 0x2c);",
       "type": "pointer_cast"
@@ -1082,7 +970,7 @@
     {
       "description": "Complex pointer cast",
       "line": 363,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "iVar6 = *(int *)((int)g_Layer3BandIndex[0].s + local_98 + 0x34) -",
       "type": "pointer_cast"
@@ -1090,7 +978,7 @@
     {
       "description": "Complex pointer cast",
       "line": 364,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "*(int *)((int)g_Layer3BandIndex[0].s + local_98 + 0x30);",
       "type": "pointer_cast"
@@ -1098,23 +986,15 @@
     {
       "description": "Complex pointer cast",
       "line": 366,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "iVar11 = local_24 * (*(int *)((int)g_Layer3BandIndex[0].s + local_98 + 0x30) - iVar11) +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 375,
-      "match": "(ushort *)((int)",
-      "severity": "moderate",
-      "text": "uVar3 = *(ushort *)((int)&uStack_57a + iVar11 * 2 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 376,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)local_2078",
       "severity": "moderate",
       "text": "*(float *)((int)local_2078 + iVar12) = local_2078[iVar11];",
       "type": "pointer_cast"
@@ -1122,39 +1002,23 @@
     {
       "description": "Complex pointer cast",
       "line": 377,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)afStack_e78",
       "severity": "moderate",
       "text": "*(float *)((int)afStack_e78 + iVar12) = fVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 378,
-      "match": "(ushort *)((int)",
-      "severity": "moderate",
-      "text": "*(ushort *)((int)&uStack_57a + iVar7 + 2) = uVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 379,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)afStack_1778",
       "severity": "moderate",
       "text": "*(float *)((int)afStack_1778 + iVar12) = afStack_1778[iVar11];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 394,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "if ((*(uint *)((int)(pafVar13 + 0x20) + iVar12 * 4) & 0x7fffffff) != 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 408,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "iVar11 = *(int *)((int)g_Layer3BandIndex[0].l + iVar11)) {",
       "type": "pointer_cast"
@@ -1162,7 +1026,7 @@
     {
       "description": "Complex pointer cast",
       "line": 413,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "iVar11 = *(int *)((int)g_Layer3BandIndex[0].l + iVar12);",
       "type": "pointer_cast"
@@ -1170,7 +1034,7 @@
     {
       "description": "Complex pointer cast",
       "line": 417,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "iVar12 = *(int *)((int)g_Layer3BandIndex[0].l + local_60 + 4) -",
       "type": "pointer_cast"
@@ -1178,65 +1042,17 @@
     {
       "description": "Complex pointer cast",
       "line": 418,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_Layer3BandIndex",
       "severity": "moderate",
       "text": "*(int *)((int)g_Layer3BandIndex[0].l + local_60);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 425,
-      "match": "(short *)((int)",
-      "severity": "moderate",
-      "text": "*(short *)((int)&uStack_57a + iVar6 + 2) = (short)iVar9;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 428,
-      "match": "(short *)((int)",
-      "severity": "moderate",
-      "text": "fVar14 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar6 + 2) *",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 430,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)afStack_e78",
       "severity": "moderate",
       "text": "*(float *)((int)afStack_e78 + local_64) = (float)fVar14;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 434,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(*(int *)((int)&uStack_57a + iVar6) >> 0x10,",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 482,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "pfVar9 = (float *)((int)*local_4c + iVar12);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 483,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "pfVar10 = (float *)((int)*local_48 + iVar12);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 484,
-      "match": "(short *)((int)",
-      "severity": "moderate",
-      "text": "if (*(short *)((int)&uStack_57a + local_50 + 2) == 7) {",
       "type": "pointer_cast"
     }
   ]

@@ -105,7 +105,7 @@
     {
       "description": "Complex pointer cast",
       "line": 21,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_ScreenBufferArray",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "piVar2 = (int *)((int)g_ScreenBufferArray + iVar4);",
@@ -114,7 +114,7 @@
     {
       "description": "Complex pointer cast",
       "line": 24,
-      "match": "(void *)((int)",
+      "match": "(void *)((int)sprite_data",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "(*pCVar2)((void *)(*piVar2 + start_x),(void *)((int)sprite_data + iVar3 + start_x),count);",
@@ -123,7 +123,7 @@
     {
       "description": "Complex pointer cast",
       "line": 32,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_ScreenBufferArray",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);",
@@ -132,7 +132,7 @@
     {
       "description": "Complex pointer cast",
       "line": 35,
-      "match": "(void *)(iVar5 + start_x + (int)",
+      "match": "(void *)(iVar5 + start_x + (int)sprite_data",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "(*pCVar2)((void *)(*piVar1 + start_x * 2),(void *)(iVar5 + start_x + (int)sprite_data),count",

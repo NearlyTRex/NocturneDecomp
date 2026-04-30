@@ -10,12 +10,9 @@
 int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(int width,int height,int bits_per_pixel)
 
 {
-  int iVar1;
   void *pvVar2;
   HRESULT HVar3;
-  int iVar4;
   int iVar5;
-  int iVar6;
   int iVar7;
   int iVar8;
   DDSURFACEDESC DStack_84;
@@ -67,7 +64,7 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(int width,int h
     g_CurrentLineNumber = 0xef;
     core_main_c_displayErrorAndQuit_FUN_00506f10("WDDVMEM: Fatal - out of Z buffer memory");
   }
-  g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);
+  g_SoftwareZBuffer = (void *)(((uintptr_t)g_SoftwareFrameBuffer + 0x10) & ~(uintptr_t)0xf);
   HVar3 = (*g_DirectDrawObject->vtable->SetDisplayMode)
                     (g_DirectDrawObject,width,height,bits_per_pixel);
   if (HVar3 != 0) {
@@ -109,19 +106,14 @@ int __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(int width,int h
   if (HVar3 == 0) {
     iVar5 = 0;
     if (0 < g_WindowHeight) {
-      iVar6 = g_BitsPerPixel >> 0x1f;
-      iVar1 = g_BitsPerPixel + iVar6 * -8;
       iStack_14 = g_WindowWidth * 4;
       iVar7 = 0;
-      iVar4 = 0;
       do {
-        *(void **)((int)g_ScreenBufferArray + iVar4) =
-             (void *)(g_WindowWidth * iVar5 * ((int)(iVar1 - (uint)(iVar6 << 2 < 0)) >> 3) +
-                     (int)pvVar2);
-        *(int *)((int)g_ZBufferScanlineArray + iVar4) = (int)g_SoftwareZBuffer + iVar7;
+        g_ScreenBufferArray[iVar5] =
+             (char *)pvVar2 + g_WindowWidth * iVar5 * (g_BitsPerPixel / 8);
+        g_ZBufferScanlineArray[iVar5] = (uint *)((char *)g_SoftwareZBuffer + iVar7);
         iVar5 = iVar5 + 1;
         iVar7 = iVar7 + iStack_14;
-        iVar4 = iVar4 + 4;
       } while (iVar5 < iVar8);
     }
     engine_2d_c_setupViewportAndClipping_FUN_00401800(0,0,width + -1,height + -1);

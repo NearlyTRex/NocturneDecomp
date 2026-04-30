@@ -17,9 +17,7 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0(CDemonSet *t
   int iVar7;
   CVector3f *pCVar7;
   CVector3f *pCVar8;
-  int iVar8;
   int iVar10;
-  int iVar9;
   int iVar11;
   float local_b8;
   float local_b4;
@@ -46,155 +44,94 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0(CDemonSet *t
   float fVar3;
 
   if (position == (CVector3f *)0x0) {
-    g_PrimaryDirectionalLightCount = (int)position;
-    if (0 < g_DynamicLightCount) {
-      iVar7 = g_DynamicLightCount * 4;
-      iVar5 = 0;
-      iVar11 = 0;
-      do {
-        iVar8 = iVar11;
-        if (*(int *)(*(int *)((int)g_DynamicLights + iVar5) + 0x1cb4) != 0) {
-          iVar8 = iVar11 + 4;
-          g_PrimaryDirectionalLightCount = g_PrimaryDirectionalLightCount + 1;
-          *(int *)((int)g_PrimaryDirectionalLights + iVar11) =
-               *(int *)((int)g_DynamicLights + iVar5);
-        }
-        iVar5 = iVar5 + 4;
-        iVar11 = iVar8;
-      } while (iVar5 < iVar7);
+    g_PrimaryDirectionalLightCount = 0;
+    for (iVar5 = 0; iVar5 < g_DynamicLightCount; iVar5 = iVar5 + 1) {
+      if (g_DynamicLights[iVar5]->light_enabled_flag != 0) {
+        g_PrimaryDirectionalLights[g_PrimaryDirectionalLightCount] = g_DynamicLights[iVar5];
+        g_PrimaryDirectionalLightCount = g_PrimaryDirectionalLightCount + 1;
+      }
     }
     g_SecondaryDirectionalLightCount = 0;
-    if (0 < g_SpotLightCount) {
-      iVar11 = g_SpotLightCount * 4;
-      iVar6 = 0;
-      iVar7 = 0;
-      do {
-        iVar10 = iVar7;
-        if (*(int *)(*(int *)((int)g_SpotLightList + iVar6) + 0x1cb4) != 0) {
-          iVar10 = iVar7 + 4;
-          g_SecondaryDirectionalLightCount = g_SecondaryDirectionalLightCount + 1;
-          *(int *)((int)g_SecondaryDirectionalLights + iVar7) =
-               *(int *)((int)g_SpotLightList + iVar6);
-        }
-        iVar6 = iVar6 + 4;
-        iVar7 = iVar10;
-      } while (iVar6 < iVar11);
+    for (iVar6 = 0; iVar6 < g_SpotLightCount; iVar6 = iVar6 + 1) {
+      if (g_SpotLightList[iVar6]->light_enabled_flag != 0) {
+        g_SecondaryDirectionalLights[g_SecondaryDirectionalLightCount] = g_SpotLightList[iVar6];
+        g_SecondaryDirectionalLightCount = g_SecondaryDirectionalLightCount + 1;
+      }
     }
     g_GlobeLightCount = g_CoronaGlobeCount;
-    if (0 < g_CoronaGlobeCount) {
-      iVar11 = g_CoronaGlobeCount * 4;
-      iVar7 = 0;
-      do {
-        iVar10 = iVar7 + 4;
-        *(uint *)((int)g_GlobeLights + iVar7) = *(uint *)((int)g_CoronaGlobes + iVar7);
-        iVar7 = iVar10;
-      } while (iVar10 < iVar11);
+    for (iVar7 = 0; iVar7 < g_CoronaGlobeCount; iVar7 = iVar7 + 1) {
+      g_GlobeLights[iVar7] = g_CoronaGlobes[iVar7];
     }
     g_ColorCorrectionCount = g_OmniLightCount;
-    iVar7 = g_OmniLightCount;
-    if (0 < g_OmniLightCount) {
-      iVar10 = g_OmniLightCount * 4;
-      iVar11 = 0;
-      do {
-        iVar7 = iVar11 + 4;
-        *(uint *)((int)g_VisibleOmniLights + iVar11) =
-             *(uint *)((int)g_OmniLights + iVar11);
-        iVar11 = iVar7;
-      } while (iVar7 < iVar10);
+    for (iVar7 = 0; iVar7 < g_OmniLightCount; iVar7 = iVar7 + 1) {
+      g_VisibleOmniLights[iVar7] = g_OmniLights[iVar7];
     }
   }
   else {
     local_24 = 0;
     g_PrimaryDirectionalLightCount = 0;
-    if (0 < g_DynamicLightCount) {
-      iVar9 = 0;
-      do {
-        if (((*(CDemonCamera **)((int)g_DynamicLights + iVar9))[1].rect_array[0x61].right != 0) &&
-           (iVar7 = core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
-                              (*(CDemonCamera **)((int)g_DynamicLights + iVar9),position,orientation
-                               ,aabb_min,aabb_max), iVar7 != 0)) {
-          g_PrimaryDirectionalLights[g_PrimaryDirectionalLightCount] =
-               *(CDemonLight **)((int)g_DynamicLights + iVar9);
-          g_PrimaryDirectionalLightCount = g_PrimaryDirectionalLightCount + 1;
-        }
-        local_24 = local_24 + 1;
-        iVar9 = iVar9 + 4;
-      } while (local_24 < g_DynamicLightCount);
+    for (local_24 = 0; local_24 < g_DynamicLightCount; local_24 = local_24 + 1) {
+      if ((g_DynamicLights[local_24]->light_enabled_flag != 0) &&
+         (iVar7 = core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
+                            (&g_DynamicLights[local_24]->base,position,orientation,
+                             aabb_min,aabb_max), iVar7 != 0)) {
+        g_PrimaryDirectionalLights[g_PrimaryDirectionalLightCount] = g_DynamicLights[local_24];
+        g_PrimaryDirectionalLightCount = g_PrimaryDirectionalLightCount + 1;
+      }
     }
-    local_20 = 0;
     g_SecondaryDirectionalLightCount = 0;
-    if (0 < g_SpotLightCount) {
-      iVar7 = 0;
-      do {
-        if (((*(CDemonCamera **)((int)g_SpotLightList + iVar7))[1].rect_array[0x61].right != 0) &&
-           (iVar11 = core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
-                               (*(CDemonCamera **)((int)g_SpotLightList + iVar7),position,
-                                orientation,aabb_min,aabb_max), iVar11 != 0)) {
-          g_SecondaryDirectionalLights[g_SecondaryDirectionalLightCount] =
-               *(CDemonLight **)((int)g_SpotLightList + iVar7);
-          g_SecondaryDirectionalLightCount = g_SecondaryDirectionalLightCount + 1;
-        }
-        local_20 = local_20 + 1;
-        iVar7 = iVar7 + 4;
-      } while (local_20 < g_SpotLightCount);
+    for (local_20 = 0; local_20 < g_SpotLightCount; local_20 = local_20 + 1) {
+      if ((g_SpotLightList[local_20]->light_enabled_flag != 0) &&
+         (iVar11 = core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
+                             (&g_SpotLightList[local_20]->base,position,orientation,
+                              aabb_min,aabb_max), iVar11 != 0)) {
+        g_SecondaryDirectionalLights[g_SecondaryDirectionalLightCount] = g_SpotLightList[local_20];
+        g_SecondaryDirectionalLightCount = g_SecondaryDirectionalLightCount + 1;
+      }
     }
-    local_1c = 0;
     g_ColorCorrectionCount = 0;
-    if (0 < g_OmniLightCount) {
-      local_2c = 0;
-      do {
-        pCVar1 = *(C3DSLight **)((int)g_OmniLights + local_2c);
-        local_64.x = (pCVar1->pos).x - position->x;
-        local_64.y = (pCVar1->pos).y - position->y;
-        local_64.z = (pCVar1->pos).z - position->z;
-        pCVar7 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                           (rotation_matrix,local_a0,&local_64);
-        if (&local_64 != pCVar7) {
-          local_64.x = pCVar7->x;
-          local_64.y = pCVar7->y;
-          local_64.z = pCVar7->z;
-        }
-        if ((((aabb_min->x <= local_64.x + pCVar1->atten_end) &&
-             (aabb_min->y <= local_64.y + pCVar1->atten_end)) &&
-            (aabb_min->z <= local_64.z + pCVar1->atten_end)) &&
-           (((local_64.x - pCVar1->atten_end <= aabb_max->x &&
-             (local_64.y - pCVar1->atten_end <= aabb_max->y)) &&
-            (local_64.z - pCVar1->atten_end <= aabb_max->z)))) {
-          g_VisibleOmniLights[g_ColorCorrectionCount] = pCVar1;
-          g_ColorCorrectionCount = g_ColorCorrectionCount + 1;
-        }
-        local_2c = local_2c + 4;
-        local_1c = local_1c + 1;
-      } while (local_1c < g_OmniLightCount);
+    for (local_1c = 0; local_1c < g_OmniLightCount; local_1c = local_1c + 1) {
+      pCVar1 = g_OmniLights[local_1c];
+      local_64.x = (pCVar1->pos).x - position->x;
+      local_64.y = (pCVar1->pos).y - position->y;
+      local_64.z = (pCVar1->pos).z - position->z;
+      pCVar7 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
+                         (rotation_matrix,local_a0,&local_64);
+      if (&local_64 != pCVar7) {
+        local_64.x = pCVar7->x;
+        local_64.y = pCVar7->y;
+        local_64.z = pCVar7->z;
+      }
+      if ((((aabb_min->x <= local_64.x + pCVar1->atten_end) &&
+           (aabb_min->y <= local_64.y + pCVar1->atten_end)) &&
+          (aabb_min->z <= local_64.z + pCVar1->atten_end)) &&
+         (((local_64.x - pCVar1->atten_end <= aabb_max->x &&
+           (local_64.y - pCVar1->atten_end <= aabb_max->y)) &&
+          (local_64.z - pCVar1->atten_end <= aabb_max->z)))) {
+        g_VisibleOmniLights[g_ColorCorrectionCount] = pCVar1;
+        g_ColorCorrectionCount = g_ColorCorrectionCount + 1;
+      }
     }
-    local_28 = 0;
     g_GlobeLightCount = 0;
     iVar7 = g_CoronaGlobeCount;
-    if (0 < g_CoronaGlobeCount) {
-      do {
-        iVar7 = core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_00471770
-                          (g_CoronaGlobes[local_28],position,rotation_matrix,
-                           aabb_min,aabb_max);
-        if (iVar7 != 0) {
-          g_GlobeLights[g_GlobeLightCount] = g_CoronaGlobes[local_28];
-          g_GlobeLightCount = g_GlobeLightCount + 1;
-        }
-        local_28 = local_28 + 1;
-      } while (local_28 < g_CoronaGlobeCount);
+    for (local_28 = 0; local_28 < g_CoronaGlobeCount; local_28 = local_28 + 1) {
+      iVar7 = core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_00471770
+                        (g_CoronaGlobes[local_28],position,rotation_matrix,
+                         aabb_min,aabb_max);
+      if (iVar7 != 0) {
+        g_GlobeLights[g_GlobeLightCount] = g_CoronaGlobes[local_28];
+        g_GlobeLightCount = g_GlobeLightCount + 1;
+      }
     }
-    local_18 = 0;
-    if (0 < g_VisibleCoronaGlobeCount) {
-      do {
-        iVar10 = core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_00471770
-                           (g_VisibleCoronaGlobes[local_18],position,
-                            rotation_matrix,aabb_min,aabb_max);
-        iVar7 = 0;
-        if (iVar10 != 0) {
-          g_GlobeLightCount = g_GlobeLightCount + 1;
-          g_GlobeLights[g_GlobeLightCount - 1] = g_VisibleCoronaGlobes[local_18];
-        }
-        local_18 = local_18 + 1;
-      } while (local_18 < g_VisibleCoronaGlobeCount);
+    for (local_18 = 0; local_18 < g_VisibleCoronaGlobeCount; local_18 = local_18 + 1) {
+      iVar10 = core_dglobe_cpp_CDemonGlobe_intersectAABB_FUN_00471770
+                         (g_VisibleCoronaGlobes[local_18],position,
+                          rotation_matrix,aabb_min,aabb_max);
+      iVar7 = 0;
+      if (iVar10 != 0) {
+        g_GlobeLights[g_GlobeLightCount] = g_VisibleCoronaGlobes[local_18];
+        g_GlobeLightCount = g_GlobeLightCount + 1;
+      }
     }
     if (0 < g_ColorCorrectionCount) {
       local_ac.x = aabb_max->x - aabb_min->x;
@@ -209,32 +146,28 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0(CDemonSet *t
       local_b0 = 0.0;
       local_b4 = 0.0;
       local_b8 = 0.0;
-      if (0 < g_ColorCorrectionCount) {
-        iVar11 = 0;
-        do {
-          iVar10 = *(int *)((int)g_VisibleOmniLights + iVar11);
-          if ((*(uint *)(iVar10 + 0x11d4) & 0x7fffffff) == 0) {
-            local_b8 = *(float *)(iVar10 + 0x11c4) + local_b8;
-            local_b4 = *(float *)(iVar10 + 0x11c8) + local_b4;
-            local_b0 = *(float *)(iVar10 + 0x11cc) + local_b0;
-            iVar7 = iVar7 + 1;
+      for (iVar11 = 0; iVar11 < g_ColorCorrectionCount; iVar11 = iVar11 + 1) {
+        pCVar1 = g_VisibleOmniLights[iVar11];
+        if (pCVar1->atten_end == 0.0f) {
+          local_b8 = *(float *)&pCVar1->color.r + local_b8;
+          local_b4 = *(float *)&pCVar1->color.g + local_b4;
+          local_b0 = *(float *)&pCVar1->color.b + local_b0;
+          iVar7 = iVar7 + 1;
+        }
+        else {
+          fVar4 = pCVar1->pos.x - (position->x + pCVar8->x);
+          fVar2 = pCVar1->pos.y - (position->y + pCVar8->y);
+          fVar3 = pCVar1->pos.z - (position->z + pCVar8->z);
+          fVar1 = fVar3 * fVar3 + fVar2 * fVar2 + fVar4 * fVar4;
+          if (fVar1 <= pCVar1->atten_end_squared) {
+            fVar1 = (1.0 - core_chain_cpp_fastSqrt_FUN_00431350(fVar1) *
+                            pCVar1->atten_end_reciprocal) * 0.666f;
+            fVar5 = (float)2;
+            local_88 = fVar1 * *(float *)&pCVar1->color.r * fVar5 + local_88;
+            local_84 = fVar1 * *(float *)&pCVar1->color.g * fVar5 + local_84;
+            local_80 = fVar1 * *(float *)&pCVar1->color.b * fVar5 + local_80;
           }
-          else {
-            fVar4 = *(float *)(iVar10 + 0x104) - (position->x + pCVar8->x);
-            fVar2 = *(float *)(iVar10 + 0x108) - (position->y + pCVar8->y);
-            fVar3 = *(float *)(iVar10 + 0x10c) - (position->z + pCVar8->z);
-            fVar1 = fVar3 * fVar3 + fVar2 * fVar2 + fVar4 * fVar4;
-            if (fVar1 <= *(float *)(iVar10 + 0x11d8)) {
-              fVar1 = (1.0 - core_chain_cpp_fastSqrt_FUN_00431350(fVar1) *
-                              *(float *)(iVar10 + 0x11dc)) * 0.666f;
-              fVar5 = (float)2;
-              local_88 = fVar1 * *(float *)(iVar10 + 0x11c4) * fVar5 + local_88;
-              local_84 = fVar1 * *(float *)(iVar10 + 0x11c8) * fVar5 + local_84;
-              local_80 = fVar1 * *(float *)(iVar10 + 0x11cc) * fVar5 + local_80;
-            }
-          }
-          iVar11 = iVar11 + 4;
-        } while (iVar11 < g_ColorCorrectionCount * 4);
+        }
       }
       if (iVar7 == 0) {
         local_78 = 0xaaaa;

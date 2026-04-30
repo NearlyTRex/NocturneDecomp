@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 117,
+    "complexity_score": 47,
     "cross_reference_count": 48,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 32,
-    "suspect_count": 8,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_local"
+      "unrolled_memcpy"
     ],
     "total_lines": 198
   },
@@ -596,76 +596,12 @@
   },
   "suspects": [
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 16,
-      "match": "local_38",
-      "severity": "mild",
-      "text": "float local_38 [12];",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 18,
-      "match": "local_38",
-      "severity": "mild",
-      "text": "local_38[0] = matrix_b->m[0].y * matrix_a->m[2].w +",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 20,
-      "match": "local_38",
-      "severity": "mild",
-      "text": "local_38[1] = matrix_b->m[0].y * matrix_a->m[2].x +",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 22,
-      "match": "local_38",
-      "severity": "mild",
-      "text": "local_38[2] = matrix_b->m[0].y * matrix_a->m[2].y +",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 24,
-      "match": "local_38",
-      "severity": "mild",
-      "text": "local_38[3] = matrix_b->m[0].y * matrix_a->m[2].z +",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 27,
-      "match": "local_38",
-      "severity": "mild",
-      "text": "local_38[4] = matrix_b->m[1].y * matrix_a->m[2].w +",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 29,
-      "match": "local_38",
-      "severity": "mild",
-      "text": "local_38[5] = matrix_b->m[1].y * matrix_a->m[2].x +",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 31,
-      "match": "local_38",
-      "severity": "mild",
-      "text": "local_38[6] = matrix_b->m[1].y * matrix_a->m[2].y +",
-      "type": "unnamed_local"
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 161,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005f50af: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

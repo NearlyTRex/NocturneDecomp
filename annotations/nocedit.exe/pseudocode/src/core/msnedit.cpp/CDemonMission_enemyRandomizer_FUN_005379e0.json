@@ -7,16 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 360,
-    "complexity_score": 269,
+    "complexity_score": 224,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 21,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 139,
-    "suspect_count": 12,
+    "suspect_count": 8,
     "suspect_types": [
-      "stack_param",
-      "unnamed_local"
+      "stack_param"
     ],
     "total_lines": 499
   },
@@ -431,42 +430,6 @@
       "severity": "moderate",
       "text": "in_stack_fffff2fc = uVar5 & 0xffffffff00000000;",
       "type": "stack_param"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 26,
-      "match": "local_d00",
-      "severity": "mild",
-      "text": "CPickList local_d00;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 108,
-      "match": "local_d00",
-      "severity": "mild",
-      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_d00);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 139,
-      "match": "local_d00",
-      "severity": "mild",
-      "text": "(&local_d00,local_e0 + 4,-1,0);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 141,
-      "match": "local_d00",
-      "severity": "mild",
-      "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_d00,0);",
-      "type": "unnamed_local"
     }
   ]
 }

@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 176,
-    "complexity_score": 296,
+    "complexity_score": 71,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 10,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 71,
-    "suspect_count": 22,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 247
   },
   "cross_references": [
@@ -243,182 +241,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "bVar1 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].y + 3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].w + 3) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].w + 3) ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "bVar2 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].w + 3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].y + 3) = bVar1 ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 43,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "bVar1 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].x + 3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 44,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].w + 3) = bVar2 ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "bVar2 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].z + 3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].x + 3) = bVar1 ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "bVar1 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].y + 3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].z + 3) = bVar2 ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 49,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "bVar2 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].x + 3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 50,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].y + 3) = bVar1 ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 51,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "bVar1 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].z + 3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 52,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].x + 3) = bVar2 ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].z + 3) = bVar1 ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "bVar1 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].y + 3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 58,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].w + 3) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 59,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].w + 3) ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 60,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "bVar2 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].x + 3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].y + 3) = bVar1 ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 62,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].x + 3) = bVar2 ^ 0x80;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

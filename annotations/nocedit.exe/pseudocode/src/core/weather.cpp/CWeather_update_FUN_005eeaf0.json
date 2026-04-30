@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 343,
-    "complexity_score": 226,
+    "complexity_score": 166,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 27,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 141,
-    "suspect_count": 8,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -389,64 +389,16 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "fVar2 = *(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) -",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 63,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) = fVar2;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 64,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)g_WeatherParticleGroundHeights",
       "severity": "moderate",
       "text": "if ((fVar2 < *(float *)((int)g_WeatherParticleGroundHeights + iVar6)) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "(*(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&g_WeatherParticlePositions[0].y + iVar4) + 100.0f,",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 68,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "local_28.x = *(float *)((int)&g_WeatherParticlePositions[0].x + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "local_28.z = *(float *)((int)&g_WeatherParticlePositions[0].z + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 70,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)g_WeatherParticleGroundHeights",
       "severity": "moderate",
       "text": "local_28.y = *(float *)((int)g_WeatherParticleGroundHeights + iVar6);",
       "type": "pointer_cast"

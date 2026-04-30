@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 231,
-    "complexity_score": 110,
+    "complexity_score": 135,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 110,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 341
   },
   "cross_references": [
@@ -131,7 +133,7 @@
     {
       "description": "Complex pointer cast",
       "line": 39,
-      "match": "(SExpandedEdge *)((int)",
+      "match": "(SExpandedEdge *)((int)edges",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "edges = (SExpandedEdge *)((int)edges + (uint)bVar8 * -8 + 4);",
@@ -140,7 +142,7 @@
     {
       "description": "Complex pointer cast",
       "line": 43,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)piVar2",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "piVar2 = (int *)((int)piVar2 + (uint)bVar8 * -2 + 1);",
@@ -149,7 +151,7 @@
     {
       "description": "Complex pointer cast",
       "line": 44,
-      "match": "(SExpandedEdge *)((int)",
+      "match": "(SExpandedEdge *)((int)edges",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "edges = (SExpandedEdge *)((int)edges + (uint)bVar8 * -2 + 1);",
@@ -157,62 +159,8 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "piVar2[5] = *(int *)((int)&(pSVar1->start_pos).x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 58,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "piVar2[7] = *(int *)((int)&(pSVar1->start_pos).y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 60,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "piVar2[9] = *(int *)((int)&(pSVar1->start_pos).z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 62,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "piVar2[0xb] = *(int *)((int)&(pSVar1->end_pos).x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 64,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "piVar2[0xd] = *(int *)((int)&(pSVar1->end_pos).y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "piVar2[0xf] = *(int *)((int)&(pSVar1->end_pos).z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 68,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pSVar1",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "piVar2[0x11] = *(int *)((int)pSVar1->start_uv + 4);",
@@ -221,7 +169,7 @@
     {
       "description": "Complex pointer cast",
       "line": 70,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pSVar1",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "piVar2[0x13] = *(int *)((int)pSVar1->start_uv + 0xc);",
@@ -230,7 +178,7 @@
     {
       "description": "Complex pointer cast",
       "line": 73,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pSVar1",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "piVar2[0x15] = *(int *)((int)pSVar1->end_uv + 4);",
@@ -239,7 +187,7 @@
     {
       "description": "Complex pointer cast",
       "line": 75,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pSVar1",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "piVar2[0x17] = *(int *)((int)pSVar1->end_uv + 0xc);",
@@ -248,7 +196,7 @@
     {
       "description": "Complex pointer cast",
       "line": 87,
-      "match": "(int *)(iVar3 + (int)",
+      "match": "(int *)(iVar3 + (int)ptr",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "piVar3 = (int *)(iVar3 + (int)ptr);",
@@ -285,5 +233,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 215,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005c849a: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 218,
+      "match": "MOVSB.REP",
+      "severity": "moderate",
+      "text": "// 005c84a1: MOVSB.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

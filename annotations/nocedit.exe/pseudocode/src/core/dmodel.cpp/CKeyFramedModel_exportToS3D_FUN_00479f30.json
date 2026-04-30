@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 362,
-    "complexity_score": 174,
+    "complexity_score": 144,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 114,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array"
@@ -439,33 +439,9 @@
     {
       "description": "Complex pointer cast",
       "line": 85,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "*(uint *)((int)this_ptr->poly_texture_index_list + local_24),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 106,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "dVar2 = (double)*(int *)((int)&pCVar1->z + iVar7) * 0.00390625;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 107,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "dVar3 = (double)*(int *)((int)&pCVar1->y + iVar7) * 0.00390625;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 108,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "dVar4 = (double)*(int *)((int)&pCVar1->x + iVar7) * 0.00390625;",
       "type": "pointer_cast"
     }
   ]

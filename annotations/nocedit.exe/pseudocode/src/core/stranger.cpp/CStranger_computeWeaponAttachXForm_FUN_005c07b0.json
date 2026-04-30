@@ -7,16 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1698,
-    "complexity_score": 922,
+    "complexity_score": 827,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 497,
-    "suspect_count": 41,
+    "suspect_count": 32,
     "suspect_types": [
       "missing_cave_copy",
-      "unnamed_local",
       "warning_type_propagation"
     ],
     "total_lines": 2195
@@ -1389,82 +1388,6 @@
       "severity": "moderate",
       "text": "CMatrix3x4f local_36c;",
       "type": "missing_cave_copy"
-    },
-    {
-      "description": "Struct-type local `local_114` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 19 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 124,
-      "match": "CVector3f local_114; ... f(&local_114, ...);",
-      "severity": "moderate",
-      "text": "CVector3f local_114;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Struct-type local `local_d8` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 19 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 133,
-      "match": "CVector3f local_d8; ... f(&local_d8, ...);",
-      "severity": "moderate",
-      "text": "CVector3f local_d8;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Struct-type local `local_90` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 19 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 139,
-      "match": "CVector3f local_90; ... f(&local_90, ...);",
-      "severity": "moderate",
-      "text": "CVector3f local_90;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Struct-type local `local_78` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 19 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 141,
-      "match": "CVector3f local_78; ... f(&local_78, ...);",
-      "severity": "moderate",
-      "text": "CVector3f local_78;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Struct-type local `local_3c` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 19 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 146,
-      "match": "CVector3f local_3c; ... f(&local_3c, ...);",
-      "severity": "moderate",
-      "text": "CVector3f local_3c;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 122,
-      "match": "local_150",
-      "severity": "mild",
-      "text": "CVector3f local_150;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 358,
-      "match": "local_150",
-      "severity": "mild",
-      "text": "local_150.x = (local_21c.min.x + local_21c.max.x) * 0.5f;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 359,
-      "match": "local_150",
-      "severity": "mild",
-      "text": "local_150.y = (local_21c.min.y + local_21c.max.y) * 0.5f;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 360,
-      "match": "local_150",
-      "severity": "mild",
-      "text": "local_150.z = (local_21c.min.z + local_21c.max.z) * 0.5f;",
-      "type": "unnamed_local"
     }
   ]
 }

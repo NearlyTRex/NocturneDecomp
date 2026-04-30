@@ -109,7 +109,7 @@
     {
       "description": "Complex pointer cast",
       "line": 5,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)element_b",
       "severity": "moderate",
       "text": "return *(int *)((int)element_b + 4) - *(int *)((int)element_a + 4);",
       "type": "pointer_cast"
@@ -117,7 +117,7 @@
     {
       "description": "Complex pointer cast",
       "line": 5,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)element_a",
       "severity": "moderate",
       "text": "return *(int *)((int)element_b + 4) - *(int *)((int)element_a + 4);",
       "type": "pointer_cast"

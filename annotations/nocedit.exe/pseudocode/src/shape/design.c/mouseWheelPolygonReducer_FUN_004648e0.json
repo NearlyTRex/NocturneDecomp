@@ -7,15 +7,16 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 306,
-    "complexity_score": 348,
+    "complexity_score": 433,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 39,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 168,
-    "suspect_count": 17,
+    "suspect_count": 25,
     "suspect_types": [
       "pointer_cast",
+      "unrolled_memcpy",
       "unrolled_strcpy"
     ],
     "total_lines": 474
@@ -459,7 +460,7 @@
     {
       "description": "Complex pointer cast",
       "line": 92,
-      "match": "(SVertexData *)((int)",
+      "match": "(SVertexData *)((int)pSVar7",
       "severity": "moderate",
       "text": "pSVar7 = (SVertexData *)((int)pSVar7 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -467,7 +468,7 @@
     {
       "description": "Complex pointer cast",
       "line": 93,
-      "match": "(SVertexData *)((int)",
+      "match": "(SVertexData *)((int)pSVar11",
       "severity": "moderate",
       "text": "pSVar11 = (SVertexData *)((int)pSVar11 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
@@ -475,7 +476,7 @@
     {
       "description": "Complex pointer cast",
       "line": 97,
-      "match": "(SVertexData *)((int)",
+      "match": "(SVertexData *)((int)pSVar7",
       "severity": "moderate",
       "text": "pSVar7 = (SVertexData *)((int)pSVar7 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
@@ -483,7 +484,7 @@
     {
       "description": "Complex pointer cast",
       "line": 98,
-      "match": "(SVertexData *)((int)",
+      "match": "(SVertexData *)((int)pSVar11",
       "severity": "moderate",
       "text": "pSVar11 = (SVertexData *)((int)pSVar11 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
@@ -491,7 +492,7 @@
     {
       "description": "Complex pointer cast",
       "line": 104,
-      "match": "(SShapeEditorPolygon *)((int)",
+      "match": "(SShapeEditorPolygon *)((int)pSVar10",
       "severity": "moderate",
       "text": "pSVar10 = (SShapeEditorPolygon *)((int)pSVar10 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -499,7 +500,7 @@
     {
       "description": "Complex pointer cast",
       "line": 105,
-      "match": "(SShapeEditorPolygon *)((int)",
+      "match": "(SShapeEditorPolygon *)((int)pSVar12",
       "severity": "moderate",
       "text": "pSVar12 = (SShapeEditorPolygon *)((int)pSVar12 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
@@ -507,7 +508,7 @@
     {
       "description": "Complex pointer cast",
       "line": 109,
-      "match": "(SShapeEditorPolygon *)((int)",
+      "match": "(SShapeEditorPolygon *)((int)pSVar10",
       "severity": "moderate",
       "text": "pSVar10 = (SShapeEditorPolygon *)((int)pSVar10 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
@@ -515,7 +516,7 @@
     {
       "description": "Complex pointer cast",
       "line": 110,
-      "match": "(SShapeEditorPolygon *)((int)",
+      "match": "(SShapeEditorPolygon *)((int)pSVar12",
       "severity": "moderate",
       "text": "pSVar12 = (SShapeEditorPolygon *)((int)pSVar12 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
@@ -523,7 +524,7 @@
     {
       "description": "Complex pointer cast",
       "line": 127,
-      "match": "(SVertexData *)((int)",
+      "match": "(SVertexData *)((int)pSVar5",
       "severity": "moderate",
       "text": "pSVar5 = (SVertexData *)((int)pSVar5 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
@@ -531,7 +532,7 @@
     {
       "description": "Complex pointer cast",
       "line": 128,
-      "match": "(SVertexData *)((int)",
+      "match": "(SVertexData *)((int)pSVar8",
       "severity": "moderate",
       "text": "pSVar8 = (SVertexData *)((int)pSVar8 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
@@ -539,7 +540,7 @@
     {
       "description": "Complex pointer cast",
       "line": 131,
-      "match": "(SVertexData *)((int)",
+      "match": "(SVertexData *)((int)pSVar8",
       "severity": "moderate",
       "text": "pSVar8 = (SVertexData *)((int)pSVar8 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
@@ -547,7 +548,7 @@
     {
       "description": "Complex pointer cast",
       "line": 132,
-      "match": "(SVertexData *)((int)",
+      "match": "(SVertexData *)((int)pSVar5",
       "severity": "moderate",
       "text": "pSVar5 = (SVertexData *)((int)pSVar5 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
@@ -555,7 +556,7 @@
     {
       "description": "Complex pointer cast",
       "line": 141,
-      "match": "(SShapeEditorPolygon *)((int)",
+      "match": "(SShapeEditorPolygon *)((int)pSVar6",
       "severity": "moderate",
       "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
@@ -563,7 +564,7 @@
     {
       "description": "Complex pointer cast",
       "line": 142,
-      "match": "(SShapeEditorPolygon *)((int)",
+      "match": "(SShapeEditorPolygon *)((int)pSVar9",
       "severity": "moderate",
       "text": "pSVar9 = (SShapeEditorPolygon *)((int)pSVar9 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
@@ -571,7 +572,7 @@
     {
       "description": "Complex pointer cast",
       "line": 145,
-      "match": "(SShapeEditorPolygon *)((int)",
+      "match": "(SShapeEditorPolygon *)((int)pSVar9",
       "severity": "moderate",
       "text": "pSVar9 = (SShapeEditorPolygon *)((int)pSVar9 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
@@ -579,7 +580,7 @@
     {
       "description": "Complex pointer cast",
       "line": 146,
-      "match": "(SShapeEditorPolygon *)((int)",
+      "match": "(SShapeEditorPolygon *)((int)pSVar6",
       "severity": "moderate",
       "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
@@ -591,6 +592,70 @@
       "severity": "mild",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 229,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00464b9a: MOVSD.REP ES:EDI,ESI  ; g_LoadedVertices | g_LoadedVertices[0].vertex.y",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 232,
+      "match": "MOVSB.REP",
+      "severity": "moderate",
+      "text": "// 00464ba1: MOVSB.REP ES:EDI,ESI  ; g_LoadedVertices | g_LoadedVertices[0].vertex.y | g_LoadedVertices[0].vertex.y+1",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 240,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00464bbf: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 243,
+      "match": "MOVSB.REP",
+      "severity": "moderate",
+      "text": "// 00464bc6: MOVSB.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0] | g_ModelPolygonData[0].",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 276,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00464c2d: MOVSD.REP ES:EDI,ESI  ; g_LoadedVertices | g_LoadedVertices[0].vertex.y",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 279,
+      "match": "MOVSB.REP",
+      "severity": "moderate",
+      "text": "// 00464c34: MOVSB.REP ES:EDI,ESI  ; g_LoadedVertices | g_LoadedVertices[0].vertex.y | g_LoadedVertices[0].vertex.y+1",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 287,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00464c52: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 290,
+      "match": "MOVSB.REP",
+      "severity": "moderate",
+      "text": "// 00464c59: MOVSB.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0] | g_ModelPolygonData[0].",
+      "type": "unrolled_memcpy"
     }
   ]
 }

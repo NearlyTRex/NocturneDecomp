@@ -7,18 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1172,
-    "complexity_score": 509,
+    "complexity_score": 424,
     "cross_reference_count": 3,
     "function_call_count": 29,
     "global_count": 78,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 424,
-    "suspect_count": 7,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_strchr",
-      "unrolled_strcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1596
   },
   "cross_references": [
@@ -746,6 +742,62 @@
     },
     "pcode_op_count": 3797
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 106,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 124,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 337,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 366,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 400,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
+      "line": 376,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    }
+  ],
   "stack_frame": {
     "frame_size": 564,
     "local_size": 556,
@@ -905,19 +957,12 @@
   "static_analysis": {
     "analyzed_file": "CDemonSet_load_FUN_00569410.keep.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 2,
+      "diagnostic_count": 1,
       "diagnostics": [
-        {
-          "check_id": "nullPointer",
-          "column": 6,
-          "line": 410,
-          "message": "Possible null pointer dereference: pcVar5",
-          "severity": "warning"
-        },
         {
           "check_id": "invalidPointerCast",
           "column": 58,
-          "line": 80,
+          "line": 61,
           "message": "Casting between signed int * and float * which have an incompatible binary data representation.",
           "severity": "portability"
         }
@@ -926,62 +971,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 227,
-      "match": "(CMatrix3x3f *)((int)",
-      "severity": "moderate",
-      "text": "this_ptr_03 = (CMatrix3x3f *)((int)(this_ptr_03 + 1) + 0x20);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 106,
-      "match": "do {",
-      "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 124,
-      "match": "do {",
-      "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 337,
-      "match": "do {",
-      "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 366,
-      "match": "do {",
-      "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 400,
-      "match": "do {",
-      "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 376,
-      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strchr"
-    }
-  ]
+  "suspects": []
 }

@@ -7,15 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 386,
-    "complexity_score": 228,
+    "complexity_score": 193,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 18,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 178,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
       "warning_inlined_function"
     ],
     "total_lines": 564
@@ -366,30 +365,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 165,
-      "match": "(short *)((int)",
-      "severity": "moderate",
-      "text": "psVar1 = (short *)((int)&this_ptr_01->vertex_buffer_ptr[1].projected_vertex.screen_x + 2",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 168,
-      "match": "(short *)((int)",
-      "severity": "moderate",
-      "text": "*(short *)((int)&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 169,
-      "match": "(short *)((int)",
-      "severity": "moderate",
-      "text": "*(short *)((int)&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) +",
-      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

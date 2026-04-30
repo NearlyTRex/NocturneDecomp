@@ -7,15 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 343,
-    "complexity_score": 299,
+    "complexity_score": 209,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 159,
-    "suspect_count": 13,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast",
+      "missing_cave_copy",
       "warning_inlined_function"
     ],
     "total_lines": 502
@@ -370,100 +370,28 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 79,
-      "match": "(int *)((int)",
+      "description": "Struct-type local `local_1c4` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 34,
+      "match": "CMatrix3x4f local_1c4; ... f(&local_1c4, ...);",
       "severity": "moderate",
-      "text": "lVar2 = (longlong)(int)ROUND(ROUND(fVar10)) * (longlong)*(int *)((int)&pCVar1->x + iVar7);",
-      "type": "pointer_cast"
+      "text": "CMatrix3x4f local_1c4;",
+      "type": "missing_cave_copy"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 80,
-      "match": "(int *)((int)",
+      "description": "Struct-type local `local_104` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 38,
+      "match": "CMatrix3x4f local_104; ... f(&local_104, ...);",
       "severity": "moderate",
-      "text": "lVar3 = (longlong)(int)ROUND(ROUND(fVar13)) * (longlong)*(int *)((int)&pCVar1->y + iVar7);",
-      "type": "pointer_cast"
+      "text": "CMatrix3x4f local_104;",
+      "type": "missing_cave_copy"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 81,
-      "match": "(int *)((int)",
+      "description": "Struct-type local `local_d4` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 39,
+      "match": "CMatrix3x4f local_d4; ... f(&local_d4, ...);",
       "severity": "moderate",
-      "text": "lVar4 = (longlong)(int)ROUND(ROUND(fVar16)) * (longlong)*(int *)((int)&pCVar1->z + iVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 82,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "lVar1 = (longlong)(int)ROUND(ROUND(fVar11)) * (longlong)*(int *)((int)&pCVar1->x + iVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 83,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "lVar5 = (longlong)(int)ROUND(ROUND(fVar14)) * (longlong)*(int *)((int)&pCVar1->y + iVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 84,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "lVar6 = (longlong)(int)ROUND(ROUND(fVar17)) * (longlong)*(int *)((int)&pCVar1->z + iVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 85,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "lVar7 = (longlong)(int)ROUND(ROUND(fVar12)) * (longlong)*(int *)((int)&pCVar1->x + iVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 86,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "lVar8 = (longlong)(int)ROUND(ROUND(fVar15)) * (longlong)*(int *)((int)&pCVar1->y + iVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 87,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "lVar9 = (longlong)(int)ROUND(ROUND(fVar18)) * (longlong)*(int *)((int)&pCVar1->z + iVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 88,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar1->x + iVar7) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 92,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar1->z + iVar7) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 96,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&pCVar1->y + iVar7) =",
-      "type": "pointer_cast"
+      "text": "CMatrix3x4f local_d4;",
+      "type": "missing_cave_copy"
     }
   ]
 }

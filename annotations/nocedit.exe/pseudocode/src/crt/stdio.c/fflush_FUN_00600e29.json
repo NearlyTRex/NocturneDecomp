@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 40,
+    "complexity_score": 15,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 15,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 51
   },
   "cross_references": [
@@ -157,22 +155,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 8,
-      "match": "(FileEmbeddedData *)((int)",
-      "severity": "moderate",
-      "text": "embedded_data = (FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 14,
-      "match": "(FileEmbeddedData *)((int)",
-      "severity": "moderate",
-      "text": "embedded_data = (FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4));",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

@@ -7,17 +7,18 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 811,
-    "complexity_score": 481,
+    "complexity_score": 496,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 336,
-    "suspect_count": 13,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
-      "sub84_truncation"
+      "sub84_truncation",
+      "unrolled_memcpy"
     ],
     "total_lines": 1147
   },
@@ -684,7 +685,7 @@
     {
       "description": "Complex pointer cast",
       "line": 99,
-      "match": "(uint *)(local_7c->part_list[0].poly_count + (int)",
+      "match": "(uint *)(local_7c->part_list[0].poly_count + (int)local_50",
       "severity": "moderate",
       "text": "puVar10 = (uint *)(local_7c->part_list[0].poly_count + (int)local_50);",
       "type": "pointer_cast"
@@ -692,7 +693,7 @@
     {
       "description": "Complex pointer cast",
       "line": 124,
-      "match": "(int *)(local_70 + (int)",
+      "match": "(int *)(local_70 + (int)this_ptr",
       "severity": "moderate",
       "text": "(*(int *)(local_70 + (int)this_ptr->poly_texture_index_list) ==",
       "type": "pointer_cast"
@@ -700,7 +701,7 @@
     {
       "description": "Complex pointer cast",
       "line": 125,
-      "match": "(int *)(local_5c + (int)",
+      "match": "(int *)(local_5c + (int)this_ptr",
       "severity": "moderate",
       "text": "*(int *)(local_5c + (int)this_ptr->poly_texture_index_list))) &&",
       "type": "pointer_cast"
@@ -708,7 +709,7 @@
     {
       "description": "Complex pointer cast",
       "line": 127,
-      "match": "(uchar *)((int)",
+      "match": "(uchar *)((int)local_50",
       "severity": "moderate",
       "text": "(*(uchar *)((int)local_50 + (int)puVar2) == puVar2[local_48])))) {",
       "type": "pointer_cast"
@@ -716,7 +717,7 @@
     {
       "description": "Complex pointer cast",
       "line": 138,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_TriangleMatchTableA",
       "severity": "moderate",
       "text": "(*(int *)(iVar11 + *(int *)((int)g_TriangleMatchTableA + local_44) * 0xc",
       "type": "pointer_cast"
@@ -724,7 +725,7 @@
     {
       "description": "Complex pointer cast",
       "line": 140,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_TriangleMatchTableB",
       "severity": "moderate",
       "text": "*(int *)(iVar17 + *(int *)((int)g_TriangleMatchTableB + iVar15) * 0xc +",
       "type": "pointer_cast"
@@ -740,7 +741,7 @@
     {
       "description": "Complex pointer cast",
       "line": 214,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)local_f0",
       "severity": "moderate",
       "text": "pCVar14 = pCVar3 + iVar18 + *(int *)((int)local_f0 + local_20);",
       "type": "pointer_cast"
@@ -756,7 +757,7 @@
     {
       "description": "Complex pointer cast",
       "line": 284,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)local_50",
       "severity": "moderate",
       "text": "local_50 = (uint *)((int)local_50 + 1);",
       "type": "pointer_cast"
@@ -764,7 +765,7 @@
     {
       "description": "Complex pointer cast",
       "line": 313,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "*(uint *)((int)this_ptr->poly_texture_index_list + iVar18) =",
       "type": "pointer_cast"
@@ -772,10 +773,18 @@
     {
       "description": "Complex pointer cast",
       "line": 314,
-      "match": "(uint *)(local_80 + (int)",
+      "match": "(uint *)(local_80 + (int)this_ptr",
       "severity": "moderate",
       "text": "*(uint *)(local_80 + (int)this_ptr->poly_texture_index_list);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 158,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0047b3fd: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 41,
+    "complexity_score": 26,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 26,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 75
   },
   "cross_references": [],
@@ -30,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "wincore_wddvmem.cpp_populateColorTable_FUN_004f4140",
-    "signature": "ulonglong __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004f4140(void)"
+    "signature": "void __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004f4140(void)"
   },
   "function_calls": [],
   "globals": [
@@ -145,6 +143,17 @@
     },
     "pcode_op_count": 344
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(uint *)((int)g_ColorTable32",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ColorTable32 + iVar3) = uVar2;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -153,14 +162,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 25,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ColorTable32 + iVar3) = uVar2;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

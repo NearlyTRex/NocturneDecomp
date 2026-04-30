@@ -308,7 +308,7 @@
     {
       "description": "Complex pointer cast",
       "line": 17,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_SfxSlots",
       "severity": "moderate",
       "text": "if (channel_index == *(int *)((int)g_SfxSlots[0].options.userdata + iVar1 + -0x54)) {",
       "type": "pointer_cast"
@@ -316,7 +316,7 @@
     {
       "description": "Complex pointer cast",
       "line": 19,
-      "match": "(CSfxSlot *)((int)",
+      "match": "(CSfxSlot *)((int)g_SfxSlots",
       "severity": "moderate",
       "text": "((CSfxSlot *)((int)g_SfxSlots[0].options.userdata + iVar1 + -0x54));",
       "type": "pointer_cast"

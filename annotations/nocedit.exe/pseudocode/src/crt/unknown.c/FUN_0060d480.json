@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 4,
-    "complexity_score": 36,
+    "complexity_score": 21,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 6,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "pointer_cast"
+      "param_count_too_few"
     ],
     "total_lines": 10
   },
@@ -120,14 +119,6 @@
     "variables": []
   },
   "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 8,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "return (byte *)((int)&pTVar1->signal_handlers[0xd].flags + 2);",
-      "type": "pointer_cast"
-    },
     {
       "call_site_count": 2,
       "declared_params": 0,

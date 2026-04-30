@@ -327,7 +327,7 @@
     {
       "description": "Complex pointer cast",
       "line": 53,
-      "match": "(char *)(iVar4 + (int)",
+      "match": "(char *)(iVar4 + (int)this_ptr",
       "severity": "moderate",
       "text": "*(char *)(iVar4 + (int)this_ptr->data_buffer) =",
       "type": "pointer_cast"
@@ -335,7 +335,7 @@
     {
       "description": "Complex pointer cast",
       "line": 54,
-      "match": "(byte *)(iVar4 + (int)",
+      "match": "(byte *)(iVar4 + (int)this_ptr",
       "severity": "moderate",
       "text": "(char)((int)(uint)*(byte *)(iVar4 + (int)this_ptr->data_buffer) >> 2);",
       "type": "pointer_cast"

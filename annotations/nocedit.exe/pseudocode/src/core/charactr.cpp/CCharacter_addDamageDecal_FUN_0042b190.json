@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 261,
-    "complexity_score": 294,
+    "complexity_score": 369,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 149,
-    "suspect_count": 14,
+    "suspect_count": 21,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 410
   },
@@ -424,7 +425,7 @@
     {
       "description": "Complex pointer cast",
       "line": 89,
-      "match": "(CMatrix3x4f *)((int)",
+      "match": "(CMatrix3x4f *)((int)pCVar7",
       "severity": "moderate",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -432,7 +433,7 @@
     {
       "description": "Complex pointer cast",
       "line": 90,
-      "match": "(CMatrix3x4f *)((int)",
+      "match": "(CMatrix3x4f *)((int)pCVar10",
       "severity": "moderate",
       "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -440,7 +441,7 @@
     {
       "description": "Complex pointer cast",
       "line": 97,
-      "match": "(CMatrix3x4f *)((int)",
+      "match": "(CMatrix3x4f *)((int)pCVar6",
       "severity": "moderate",
       "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
@@ -448,7 +449,7 @@
     {
       "description": "Complex pointer cast",
       "line": 98,
-      "match": "(CMatrix3x4f *)((int)",
+      "match": "(CMatrix3x4f *)((int)pCVar3",
       "severity": "moderate",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
@@ -456,7 +457,7 @@
     {
       "description": "Complex pointer cast",
       "line": 108,
-      "match": "(CMatrix3x4f *)((int)",
+      "match": "(CMatrix3x4f *)((int)pCVar8",
       "severity": "moderate",
       "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -464,7 +465,7 @@
     {
       "description": "Complex pointer cast",
       "line": 109,
-      "match": "(CMatrix3x4f *)((int)",
+      "match": "(CMatrix3x4f *)((int)pCVar7",
       "severity": "moderate",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -472,7 +473,7 @@
     {
       "description": "Complex pointer cast",
       "line": 116,
-      "match": "(CMatrix3x4f *)((int)",
+      "match": "(CMatrix3x4f *)((int)pCVar8",
       "severity": "moderate",
       "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -480,7 +481,7 @@
     {
       "description": "Complex pointer cast",
       "line": 117,
-      "match": "(CMatrix3x4f *)((int)",
+      "match": "(CMatrix3x4f *)((int)pCVar9",
       "severity": "moderate",
       "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -488,7 +489,7 @@
     {
       "description": "Complex pointer cast",
       "line": 129,
-      "match": "(CMatrix3x4f *)((int)",
+      "match": "(CMatrix3x4f *)((int)pCVar9",
       "severity": "moderate",
       "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -496,7 +497,7 @@
     {
       "description": "Complex pointer cast",
       "line": 130,
-      "match": "(CMatrix3x4f *)((int)",
+      "match": "(CMatrix3x4f *)((int)pCVar7",
       "severity": "moderate",
       "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -504,7 +505,7 @@
     {
       "description": "Complex pointer cast",
       "line": 136,
-      "match": "(CMatrix3x4f *)((int)",
+      "match": "(CMatrix3x4f *)((int)pCVar4",
       "severity": "moderate",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
@@ -512,7 +513,7 @@
     {
       "description": "Complex pointer cast",
       "line": 139,
-      "match": "(CMatrix3x4f *)((int)",
+      "match": "(CMatrix3x4f *)((int)pCVar9",
       "severity": "moderate",
       "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -520,7 +521,7 @@
     {
       "description": "Complex pointer cast",
       "line": 145,
-      "match": "(CMatrix3x4f *)((int)",
+      "match": "(CMatrix3x4f *)((int)pCVar5",
       "severity": "moderate",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
@@ -528,10 +529,66 @@
     {
       "description": "Complex pointer cast",
       "line": 148,
-      "match": "(CMatrix3x4f *)((int)",
+      "match": "(CMatrix3x4f *)((int)pCVar8",
       "severity": "moderate",
       "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 151,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0042b412: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 167,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0042b459: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 177,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0042b485: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 192,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0042b4ba: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 216,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0042b516: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 226,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0042b542: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 236,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0042b564: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

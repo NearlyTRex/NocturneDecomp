@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 62,
+    "complexity_score": 87,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 47,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 131
   },
@@ -239,10 +240,26 @@
     {
       "description": "Complex pointer cast",
       "line": 42,
-      "match": "(void *)((int)",
+      "match": "(void *)((int)this_ptr",
       "severity": "moderate",
       "text": "(void *)((int)this_ptr->master_zbuffer + this_ptr->shadow_map_width * iVar2 * 2);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 24,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00472e84: MOVSD.REP ES:EDI,ESI  ; g_SavedScreenBufferArray | g_SavedScreenBufferArray[1] | g_ScreenBufferArray",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 27,
+      "match": "MOVSB.REP",
+      "severity": "moderate",
+      "text": "// 00472e8b: MOVSB.REP ES:EDI,ESI  ; g_SavedScreenBufferArray | g_SavedScreenBufferArray[1] | g_SavedScreenBufferArray[1",
+      "type": "unrolled_memcpy"
     }
   ]
 }

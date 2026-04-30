@@ -12,7 +12,6 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet
 {
   int iVar6;
   byte bVar6;
-  int aiStackY_1020 [960];
   SMRGLPrimitiveTriangle SStack_118;
   uint local_d0[3];
   uint local_90[3];

@@ -7,14 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 227,
-    "complexity_score": 77,
+    "complexity_score": 142,
     "cross_reference_count": 6,
     "function_call_count": 7,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 62,
-    "suspect_count": 1,
+    "suspect_count": 7,
     "suspect_types": [
+      "missing_cave_copy",
       "stack_alignment_array"
     ],
     "total_lines": 289
@@ -454,6 +455,54 @@
       "severity": "moderate",
       "text": "float afStackY_1860 [1497];",
       "type": "stack_alignment_array"
+    },
+    {
+      "description": "Struct-type local `local_e4` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 16,
+      "match": "CMatrix3x4f local_e4; ... f(&local_e4, ...);",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_e4;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_b4` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 17,
+      "match": "CMatrix3x4f local_b4; ... f(&local_b4, ...);",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_b4;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_74` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 19,
+      "match": "CQuaternion4f local_74; ... f(&local_74, ...);",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_74;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `CStack_64` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 20,
+      "match": "CQuaternion4f CStack_64; ... f(&CStack_64, ...);",
+      "severity": "moderate",
+      "text": "CQuaternion4f CStack_64;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_54` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 21,
+      "match": "CQuaternion4f local_54; ... f(&local_54, ...);",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_54;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `CStack_44` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 22,
+      "match": "CQuaternion4f CStack_44; ... f(&CStack_44, ...);",
+      "severity": "moderate",
+      "text": "CQuaternion4f CStack_44;",
+      "type": "missing_cave_copy"
     }
   ]
 }

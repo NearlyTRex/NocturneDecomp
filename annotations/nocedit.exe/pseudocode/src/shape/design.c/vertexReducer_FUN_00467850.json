@@ -7,16 +7,15 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 625,
-    "complexity_score": 386,
+    "complexity_score": 361,
     "cross_reference_count": 4,
     "function_call_count": 14,
     "global_count": 25,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 216,
-    "suspect_count": 16,
+    "suspect_count": 14,
     "suspect_types": [
-      "pointer_cast",
-      "unnamed_local"
+      "pointer_cast"
     ],
     "total_lines": 841
   },
@@ -510,7 +509,7 @@
     {
       "description": "Complex pointer cast",
       "line": 106,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)base",
       "severity": "moderate",
       "text": "*(int *)((int)base + local_34 * 8) = local_34;",
       "type": "pointer_cast"
@@ -518,7 +517,7 @@
     {
       "description": "Complex pointer cast",
       "line": 107,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)base",
       "severity": "moderate",
       "text": "*(int *)((int)base + local_34 * 8 + 4) = local_34;",
       "type": "pointer_cast"
@@ -526,7 +525,7 @@
     {
       "description": "Complex pointer cast",
       "line": 125,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)local_14",
       "severity": "moderate",
       "text": "*(int *)((int)local_14 + g_ModelPolygonData[local_34].vertex_indices[local_30] * 4) =",
       "type": "pointer_cast"
@@ -534,7 +533,7 @@
     {
       "description": "Complex pointer cast",
       "line": 131,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)base",
       "severity": "moderate",
       "text": "if (*(int *)((int)base + local_34 * 8 + 4) == *(int *)((int)base + local_34 * 8)) {",
       "type": "pointer_cast"
@@ -542,7 +541,7 @@
     {
       "description": "Complex pointer cast",
       "line": 131,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)base",
       "severity": "moderate",
       "text": "if (*(int *)((int)base + local_34 * 8 + 4) == *(int *)((int)base + local_34 * 8)) {",
       "type": "pointer_cast"
@@ -550,7 +549,7 @@
     {
       "description": "Complex pointer cast",
       "line": 132,
-      "match": "(int *)(local_34 * 8 + (int)",
+      "match": "(int *)(local_34 * 8 + (int)base",
       "severity": "moderate",
       "text": "iVar4 = *(int *)(local_34 * 8 + (int)base);",
       "type": "pointer_cast"
@@ -558,7 +557,7 @@
     {
       "description": "Complex pointer cast",
       "line": 137,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)base",
       "severity": "moderate",
       "text": "if (*(int *)((int)base + local_30 * 8 + 4) == *(int *)((int)base + local_30 * 8)) {",
       "type": "pointer_cast"
@@ -566,7 +565,7 @@
     {
       "description": "Complex pointer cast",
       "line": 137,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)base",
       "severity": "moderate",
       "text": "if (*(int *)((int)base + local_30 * 8 + 4) == *(int *)((int)base + local_30 * 8)) {",
       "type": "pointer_cast"
@@ -574,7 +573,7 @@
     {
       "description": "Complex pointer cast",
       "line": 138,
-      "match": "(int *)(local_30 * 8 + (int)",
+      "match": "(int *)(local_30 * 8 + (int)base",
       "severity": "moderate",
       "text": "iVar5 = *(int *)(local_30 * 8 + (int)base);",
       "type": "pointer_cast"
@@ -582,7 +581,7 @@
     {
       "description": "Complex pointer cast",
       "line": 152,
-      "match": "(int *)(local_34 * 8 + (int)",
+      "match": "(int *)(local_34 * 8 + (int)base",
       "severity": "moderate",
       "text": "*(int *)(*(int *)(local_34 * 8 + (int)base) * 4 + (int)local_14",
       "type": "pointer_cast"
@@ -590,7 +589,7 @@
     {
       "description": "Complex pointer cast",
       "line": 155,
-      "match": "(int *)(local_30 * 8 + (int)",
+      "match": "(int *)(local_30 * 8 + (int)base",
       "severity": "moderate",
       "text": "*(int *)(*(int *)(local_30 * 8 + (int)base) * 4 + (int)local_14",
       "type": "pointer_cast"
@@ -598,7 +597,7 @@
     {
       "description": "Complex pointer cast",
       "line": 159,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)base",
       "severity": "moderate",
       "text": "*(uint *)((int)base + local_30 * 8 + 4) =",
       "type": "pointer_cast"
@@ -606,7 +605,7 @@
     {
       "description": "Complex pointer cast",
       "line": 160,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)base",
       "severity": "moderate",
       "text": "*(uint *)((int)base + local_34 * 8);",
       "type": "pointer_cast"
@@ -614,28 +613,10 @@
     {
       "description": "Complex pointer cast",
       "line": 174,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)base",
       "severity": "moderate",
       "text": "*(uint *)((int)base + g_ModelPolygonData[local_34].vertex_indices[local_30] * 8 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 36,
-      "match": "local_1c",
-      "severity": "mild",
-      "text": "int local_1c;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 45,
-      "match": "local_1c",
-      "severity": "mild",
-      "text": "local_1c = g_PolygonCount;",
-      "type": "unnamed_local"
     }
   ]
 }

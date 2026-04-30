@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 148,
-    "complexity_score": 113,
+    "complexity_score": 138,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 7,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 113,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 261
   },
   "cross_references": [],
@@ -143,7 +145,7 @@
     {
       "description": "Complex pointer cast",
       "line": 68,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar2",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);",
@@ -161,7 +163,7 @@
     {
       "description": "Complex pointer cast",
       "line": 87,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar2",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);",
@@ -243,5 +245,22 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 73,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004a202d: MOVSD.REP ES:EDI,ESI  ; g_RenderVertexBuffer[1].projected_vertex.transformed_x | g_RenderVertexBuffer[1].pr",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 77,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004a203e: MOVSD.REP ES:EDI,ESI  ; g_RenderVertexBuffer | g_RenderVertexBuffer[0].projected_vertex.transformed_y",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

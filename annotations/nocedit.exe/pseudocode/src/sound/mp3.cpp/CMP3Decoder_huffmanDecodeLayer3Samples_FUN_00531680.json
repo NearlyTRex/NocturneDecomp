@@ -7,16 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 570,
-    "complexity_score": 342,
+    "complexity_score": 237,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 38,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 212,
-    "suspect_count": 12,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
-      "raw_address_constant"
+      "unrolled_memcpy"
     ],
     "total_lines": 782
   },
@@ -368,6 +367,69 @@
   },
   "resolved_suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 155,
+      "match": "(int *)((int)local_24",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar9 < (uint)(*(int *)((int)local_24 + local_30 + 0x1c) * 2); uVar9 = uVar9 + 2) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 157,
+      "match": "(int *)((int)local_24",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar4 = g_HuffmanTables + *(int *)((int)local_24 + local_30 + 0x34);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 160,
+      "match": "(int *)((int)local_24",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar4 = g_HuffmanTables + *(int *)((int)local_24 + local_30 + 0x38);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 163,
+      "match": "(int *)((int)local_24",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar4 = g_HuffmanTables + *(int *)((int)local_24 + local_30 + 0x3c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 174,
+      "match": "(int *)((int)piVar2",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_28 = g_HuffmanTables + *(int *)((int)piVar2 + iVar12 + 0x5c) + 0x20;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Raw hex literal 0x67e6cc matches address of g_Layer3BandIndex (+4 bytes into) (type SMpegLayer3BandIndex[6]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 142,
+      "match": "0x67e6cc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_20 = *(int *)(local_34 * 0x94 + 0x67e6cc + iVar12 * 4);",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x67e6d0 matches address of g_Layer3BandIndex (+8 bytes into) (type SMpegLayer3BandIndex[6]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 143,
+      "match": "0x67e6d0",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar8 = *(int *)(local_34 * 0x94 + 0x67e6d0 +",
+      "type": "raw_address_constant"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
       "line": 104,
       "match": "for (...; != 0; ... + -1)",
@@ -550,7 +612,7 @@
         {
           "check_id": "invalidScanfArgType_int",
           "column": 7,
-          "line": 68,
+          "line": 46,
           "message": "%u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.",
           "severity": "warning"
         }
@@ -561,100 +623,20 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 51,
-      "match": "(uint *)((int)",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 266,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_HuffmanTableSources[0].table_size + local_18);",
-      "type": "pointer_cast"
+      "text": "// 005319d7: MOVSD.REP ES:EDI,ESI  ; g_HuffmanTables[0].huffman_data[4] | g_HuffmanTables[0].huffman_data[0]",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(uint *)((int)",
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 269,
+      "match": "MOVSB.REP",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_HuffmanTableSources[0].xlen + local_18);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 55,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&g_HuffmanTableSources[0].ylen + local_18);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&g_HuffmanTableSources[0].bits + local_18);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 67,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "iVar10 = *(int *)((int)&g_HuffmanTableSources[0].reference_index + local_18);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 155,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "uVar9 < (uint)(*(int *)((int)local_24 + local_30 + 0x1c) * 2); uVar9 = uVar9 + 2) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 157,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "pSVar4 = g_HuffmanTables + *(int *)((int)local_24 + local_30 + 0x34);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 160,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "pSVar4 = g_HuffmanTables + *(int *)((int)local_24 + local_30 + 0x38);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 163,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "pSVar4 = g_HuffmanTables + *(int *)((int)local_24 + local_30 + 0x3c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 174,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "local_28 = g_HuffmanTables + *(int *)((int)piVar2 + iVar12 + 0x5c) + 0x20;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Raw hex literal 0x67e6cc matches address of g_Layer3BandIndex (+4 bytes into) (type SMpegLayer3BandIndex[6]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 142,
-      "match": "0x67e6cc",
-      "severity": "moderate",
-      "text": "local_20 = *(int *)(local_34 * 0x94 + 0x67e6cc + iVar12 * 4);",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x67e6d0 matches address of g_Layer3BandIndex (+8 bytes into) (type SMpegLayer3BandIndex[6]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 143,
-      "match": "0x67e6d0",
-      "severity": "moderate",
-      "text": "iVar8 = *(int *)(local_34 * 0x94 + 0x67e6d0 +",
-      "type": "raw_address_constant"
+      "text": "// 005319de: MOVSB.REP ES:EDI,ESI  ; g_HuffmanTables[0].huffman_data[5] | g_HuffmanTables[0].huffman_data[4]",
+      "type": "unrolled_memcpy"
     }
   ]
 }

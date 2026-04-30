@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 512,
-    "complexity_score": 332,
+    "complexity_score": 357,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 242,
-    "suspect_count": 8,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
+      "unrolled_memcpy",
       "warning_inlined_function"
     ],
     "total_lines": 754
@@ -494,7 +495,7 @@
     {
       "description": "Complex pointer cast",
       "line": 92,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)lod_mesh",
       "severity": "moderate",
       "text": "puVar21 = (uint *)((int)lod_mesh->tri_data->attribute_indices + local_50);",
       "type": "pointer_cast"
@@ -502,7 +503,7 @@
     {
       "description": "Complex pointer cast",
       "line": 96,
-      "match": "(uint *)(local_48 + (int)",
+      "match": "(uint *)(local_48 + (int)this_ptr",
       "severity": "moderate",
       "text": "*(uint *)(local_48 + (int)this_ptr->index_data_ptr[lod_index]) = *puVar21;",
       "type": "pointer_cast"
@@ -510,7 +511,7 @@
     {
       "description": "Complex pointer cast",
       "line": 166,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "*(uint *)((int)this_ptr->cap_index_ptr[lod_index] + iVar5) =",
       "type": "pointer_cast"
@@ -518,7 +519,7 @@
     {
       "description": "Complex pointer cast",
       "line": 167,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)lod_mesh",
       "severity": "moderate",
       "text": "*(uint *)((int)lod_mesh->tri_data->attribute_indices + iVar3 + 0xc);",
       "type": "pointer_cast"
@@ -526,7 +527,7 @@
     {
       "description": "Complex pointer cast",
       "line": 208,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)local_528",
       "severity": "moderate",
       "text": "if (local_538 < *(float *)((int)local_528 + iVar11)) {",
       "type": "pointer_cast"
@@ -534,7 +535,7 @@
     {
       "description": "Complex pointer cast",
       "line": 209,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)local_528",
       "severity": "moderate",
       "text": "local_538 = *(float *)((int)local_528 + iVar11);",
       "type": "pointer_cast"
@@ -542,10 +543,26 @@
     {
       "description": "Complex pointer cast",
       "line": 217,
-      "match": "(char *)((int)",
+      "match": "(char *)((int)pfVar18",
       "severity": "moderate",
       "text": "*(char *)((int)pfVar18 + *(byte *)pfVar18 + 1) = (char)iVar16;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 68,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0058d852: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 76,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0058d880: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

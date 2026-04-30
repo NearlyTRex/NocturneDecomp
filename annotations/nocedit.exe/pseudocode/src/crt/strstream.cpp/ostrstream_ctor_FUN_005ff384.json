@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 154,
+    "complexity_score": 134,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 49,
-    "suspect_count": 9,
+    "suspect_count": 7,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
@@ -200,7 +200,7 @@
     {
       "description": "Complex pointer cast",
       "line": 20,
-      "match": "(ios *)((int)",
+      "match": "(ios *)((int)this_ptr",
       "severity": "moderate",
       "text": "piVar7 = crt_iostream_cpp_ios_ctor_FUN_006061fc((ios *)((int)this_ptr + 0x54));",
       "type": "pointer_cast"
@@ -224,23 +224,7 @@
     {
       "description": "Complex pointer cast",
       "line": 46,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)ppvVar1 + *(int *)((int)*ppvVar1 + 4) + -4) = *(int *)((int)*ppvVar1 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "*(int *)((int)ppvVar1 + *(int *)((int)*ppvVar1 + 4) + -4) = *(int *)((int)*ppvVar1 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)ppvVar1",
       "severity": "moderate",
       "text": "*(int *)((int)ppvVar1 + *(int *)((int)*ppvVar1 + 4) + -4) = *(int *)((int)*ppvVar1 + 4);",
       "type": "pointer_cast"
@@ -256,7 +240,7 @@
     {
       "description": "Complex pointer cast",
       "line": 50,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pvVar3",
       "severity": "moderate",
       "text": "*(void ***)((int)(&p_Var6->_ios + -1) + *(int *)((int)pvVar3 + 4)) = &PTR_FUN_00665b8c;",
       "type": "pointer_cast"

@@ -8,17 +8,17 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 5207,
-    "complexity_score": 2762,
+    "complexity_score": 2042,
     "cross_reference_count": 0,
     "function_call_count": 57,
     "global_count": 186,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1852,
-    "suspect_count": 88,
+    "suspect_count": 16,
     "suspect_types": [
       "missing_cave_copy",
       "pointer_cast",
-      "unnamed_local",
+      "unrolled_memcpy",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_inlined_function"
@@ -3110,7 +3110,7 @@
     {
       "description": "Complex pointer cast",
       "line": 485,
-      "match": "(CMatrix3x4f *)((int)",
+      "match": "(CMatrix3x4f *)((int)pCVar19",
       "severity": "moderate",
       "text": "pCVar19 = (CMatrix3x4f *)((int)pCVar19 + ((uint)bVar26 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -3118,7 +3118,7 @@
     {
       "description": "Complex pointer cast",
       "line": 486,
-      "match": "(CMatrix3x4f *)((int)",
+      "match": "(CMatrix3x4f *)((int)pCVar24",
       "severity": "moderate",
       "text": "pCVar24 = (CMatrix3x4f *)((int)pCVar24 + ((uint)bVar26 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -3126,7 +3126,7 @@
     {
       "description": "Complex pointer cast",
       "line": 490,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)aiStack_2720",
       "severity": "moderate",
       "text": "if (0 < *(int *)((int)aiStack_2720 + iVar16)) {",
       "type": "pointer_cast"
@@ -3134,7 +3134,7 @@
     {
       "description": "Complex pointer cast",
       "line": 1286,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)aiStack_2720",
       "severity": "moderate",
       "text": "} while (local_f0 < *(int *)((int)aiStack_2720 + local_ac));",
       "type": "pointer_cast"
@@ -3142,7 +3142,7 @@
     {
       "description": "Complex pointer cast",
       "line": 1309,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)aiStack_2900",
       "severity": "moderate",
       "text": "if (0 < *(int *)((int)aiStack_2900 + iVar16)) {",
       "type": "pointer_cast"
@@ -3150,49 +3150,9 @@
     {
       "description": "Complex pointer cast",
       "line": 1314,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)aiStack_2900",
       "severity": "moderate",
       "text": "} while (iVar4 < *(int *)((int)aiStack_2900 + iVar16));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1417,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "moderate",
-      "text": "local_48 = (CMatrix3x4f *)((int)(local_48 + 2) + 0x24);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1454,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "moderate",
-      "text": "local_4c = (CMatrix3x4f *)((int)(local_4c + 2) + 0x24);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1625,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar1 = (int *)((int)&g_SkeleditBiasEntries[0].motion_index + iVar16);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1643,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "if ((-1 < *(int *)((int)&g_SkeleditBiasEntries[0].motion_index + iVar5)) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 1644,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(local_2540[*(int *)((int)&g_SkeleditBiasEntries[0].ref_motion_index + iVar5)] == 0",
       "type": "pointer_cast"
     },
     {
@@ -3252,623 +3212,20 @@
       "type": "missing_cave_copy"
     },
     {
-      "description": "Struct-type local `local_2e4` (CMatrix3x3f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 95,
-      "match": "CMatrix3x3f local_2e4; ... f(&local_2e4, ...);",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 211,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "CMatrix3x3f local_2e4;",
-      "type": "missing_cave_copy"
+      "text": "// 005928c4: MOVSD.REP ES:EDI,ESI  ; g_FileErrorBuffer | g_FileErrorBuffer+4",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Struct-type local `local_1b0` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 3 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 119,
-      "match": "CVector3f local_1b0; ... f(&local_1b0, ...);",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 580,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "CVector3f local_1b0;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 56,
-      "match": "local_21d0",
-      "severity": "mild",
-      "text": "char local_21d0 [6];",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 58,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "char local_20a4 [2];",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 62,
-      "match": "local_1e74",
-      "severity": "mild",
-      "text": "char local_1e74 [260];",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 86,
-      "match": "local_7ec",
-      "severity": "mild",
-      "text": "char local_7ec [100];",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 88,
-      "match": "local_724",
-      "severity": "mild",
-      "text": "char local_724 [100];",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 140,
-      "match": "local_15c",
-      "severity": "mild",
-      "text": "CVector3f local_15c;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 144,
-      "match": "local_13c",
-      "severity": "mild",
-      "text": "float local_13c;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 150,
-      "match": "local_114",
-      "severity": "mild",
-      "text": "int local_114;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 158,
-      "match": "local_f4",
-      "severity": "mild",
-      "text": "int local_f4;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 176,
-      "match": "local_a8",
-      "severity": "mild",
-      "text": "float *local_a8;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 178,
-      "match": "local_a0",
-      "severity": "mild",
-      "text": "int local_a0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 186,
-      "match": "local_80",
-      "severity": "mild",
-      "text": "int local_80;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 187,
-      "match": "local_7c",
-      "severity": "mild",
-      "text": "int local_7c;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 190,
-      "match": "local_70",
-      "severity": "mild",
-      "text": "int local_70;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 192,
-      "match": "local_68",
-      "severity": "mild",
-      "text": "int local_68;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 193,
-      "match": "local_64",
-      "severity": "mild",
-      "text": "int local_64;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 208,
-      "match": "local_24",
-      "severity": "mild",
-      "text": "char local_24 [4];",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 209,
-      "match": "local_20",
-      "severity": "mild",
-      "text": "char local_20 [4];",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 271,
-      "match": "local_1e74",
-      "severity": "mild",
-      "text": "memcpy(local_1e74,g_FileErrorBuffer,0x104);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 276,
-      "match": "local_1e74",
-      "severity": "mild",
-      "text": "iVar16 = _fscanf(local_11c,\"\\\"%[^\\\"]\\\"\\n\",local_1e74);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 313,
-      "match": "local_21d0",
-      "severity": "mild",
-      "text": "local_c8 = core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(local_21d0,local_11c,0);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 315,
-      "match": "local_21d0",
-      "severity": "mild",
-      "text": "(iVar4 = _strnicmp(local_21d0,\"animation\",9),",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 443,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "iVar16 = core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(local_20a4,p_Var3,1);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 449,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "iVar4 = _strnicmp(local_20a4,\"animation\",9);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 490,
-      "match": "local_13c",
-      "severity": "mild",
-      "text": "local_13c = 0.0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 494,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(local_20a4,local_11c,1);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 495,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "iVar16 = _strnicmp(local_20a4,\"fps\",3);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 505,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "filename,local_20a4);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 511,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "iVar16 = _strnicmp(local_20a4,\"if\",2);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 524,
-      "match": "local_a0",
-      "severity": "mild",
-      "text": "local_a0 = -1;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 525,
-      "match": "local_a0",
-      "severity": "mild",
-      "text": "sscanf(local_a4,\"%s %s%n\",local_468,local_28c,&local_a0);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 526,
-      "match": "local_a0",
-      "severity": "mild",
-      "text": "if (local_a0 < 3) {",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 529,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "filename,local_20a4);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 541,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "local_ec->motion_name,filename,local_20a4);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 565,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "local_ec->motion_name,filename,local_20a4);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 578,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "local_ec->motion_name,filename,local_20a4);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 590,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "local_ec->motion_name,filename,local_20a4);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 604,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "local_ec->motion_name,filename,local_20a4);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 615,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "local_ec->motion_name,filename,local_20a4);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 642,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": ",local_ec->motion_name,filename,local_20a4);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 650,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": ",local_ec->motion_name,filename,local_20a4);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 677,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "local_ec->motion_name,filename,local_20a4,pcVar18);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 684,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "iVar16 = _strnicmp(local_20a4,\"->\",2);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 710,
-      "match": "local_64",
-      "severity": "mild",
-      "text": "local_64 = -1;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 711,
-      "match": "local_64",
-      "severity": "mild",
-      "text": "sscanf(pcVar18,\" \\\"%[^\\\"]\\\" %n\",local_b70,&local_64);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 712,
-      "match": "local_64",
-      "severity": "mild",
-      "text": "if (local_64 < 0) {",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 715,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "local_ec->motion_name,filename,local_20a4);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 727,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "local_ec->motion_name,filename,local_20a4);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 741,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "local_ec->motion_name,filename,local_20a4);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 752,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "local_ec->motion_name,filename,local_20a4);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 785,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "local_ec->motion_name,filename,local_20a4);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 803,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": ",local_ec->motion_name,filename,local_20a4);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 811,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": ",local_ec->motion_name,filename,local_20a4);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 829,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": ",local_ec->motion_name,filename,local_20a4);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 858,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "filename,local_20a4,pcVar7);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 864,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "iVar16 = _strnicmp(local_20a4,\"signal\",6);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 882,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "filename,local_20a4);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 891,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "filename,local_20a4);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 898,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "filename,local_20a4);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 908,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "(local_20a4,\"reverse\",7);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 914,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "(local_20a4,\"filename\",5);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 917,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "(local_20a4,\"frames\",6), iVar16 != 0)) {",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 919,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "(local_20a4,\"cancel\",6);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 967,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "(local_20a4,\"bias\",4);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 982,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "local_ec->motion_name,filename,local_20a4);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 995,
-      "match": "local_20a4",
-      "severity": "mild",
-      "text": "local_ec->motion_name,filename,local_20a4);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 1682,
-      "match": "local_21d0",
-      "severity": "mild",
-      "text": "iVar16 = _strnicmp(local_21d0,\"animation\",9);",
-      "type": "unnamed_local"
+      "text": "// 00592d4f: MOVSD.REP ES:EDI,ESI  ; CMatrix3x4f_00665968 | CMatrix3x4f_00665968.m[0].x",
+      "type": "unrolled_memcpy"
     }
   ]
 }

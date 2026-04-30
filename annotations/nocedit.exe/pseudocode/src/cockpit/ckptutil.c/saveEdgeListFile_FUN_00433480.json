@@ -7,16 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 135,
-    "complexity_score": 79,
+    "complexity_score": 54,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 12,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 54,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_local"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 189
   },
   "cross_references": [],
@@ -176,17 +174,6 @@
     },
     "pcode_op_count": 537
   },
-  "resolved_suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "for (iVar8 = 0; piVar7 = (int *)((int)&edge_lists->edge_data + local_14), iVar8 < piVar7[1];",
-      "type": "pointer_cast"
-    }
-  ],
   "stack_frame": {
     "frame_size": 124,
     "local_size": 112,
@@ -245,24 +232,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 16,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "SEdgeList *local_18;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 34,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "local_18 = edge_lists;",
-      "type": "unnamed_local"
-    }
-  ]
+  "suspects": []
 }

@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 360,
-    "complexity_score": 238,
+    "complexity_score": 253,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 188,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
+      "unrolled_memcpy",
       "warning_type_propagation"
     ],
     "total_lines": 548
@@ -354,7 +355,7 @@
     {
       "description": "Complex pointer cast",
       "line": 60,
-      "match": "(CPodDependencyRecord *)((int)",
+      "match": "(CPodDependencyRecord *)((int)pCVar9",
       "severity": "moderate",
       "text": "pCVar9 = (CPodDependencyRecord *)((int)pCVar9 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
@@ -362,18 +363,26 @@
     {
       "description": "Complex pointer cast",
       "line": 107,
-      "match": "(CPodDependencyRecord *)((int)",
+      "match": "(CPodDependencyRecord *)((int)pCVar6",
       "severity": "moderate",
       "text": "pCVar6 = (CPodDependencyRecord *)((int)pCVar6 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 184,
-      "match": "(CPod *)((int)",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 115,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "pCVar7 = (CPod *)((int)(pCVar7 + 0xffffffff) + 0x194);",
-      "type": "pointer_cast"
+      "text": "// 00551537: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 138,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00551581: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

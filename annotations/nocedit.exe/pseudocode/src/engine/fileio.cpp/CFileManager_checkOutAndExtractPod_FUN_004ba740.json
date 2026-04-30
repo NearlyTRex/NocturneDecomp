@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 730,
-    "complexity_score": 356,
+    "complexity_score": 331,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 40,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 306,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
       "unrolled_strcpy"
     ],
     "total_lines": 1036
@@ -514,15 +513,6 @@
       "type": "stack_ref"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 290,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&optional_pod_file[0xc04f]._cnt + 2) = 0;",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 185,
       "match": "do {",
@@ -658,22 +648,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(char *)((int)",
-      "severity": "moderate",
-      "text": "cVar2 = *(char *)((int)&p_Var6->_ptr + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 62,
-      "match": "(_FILE *)((int)",
-      "severity": "moderate",
-      "text": "p_Var6 = (_FILE *)((int)&p_Var6->_ptr + 2);",
-      "type": "pointer_cast"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 57,

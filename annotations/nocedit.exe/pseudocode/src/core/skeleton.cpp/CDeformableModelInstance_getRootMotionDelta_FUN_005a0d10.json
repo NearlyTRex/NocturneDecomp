@@ -7,15 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 116,
+    "complexity_score": 81,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 66,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
       "warning_inlined_function"
     ],
     "total_lines": 244
@@ -227,30 +226,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "local_30 = local_30 + *(float *)((int)&pCVar9->x + iVar14);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "local_2c = local_2c + *(float *)((int)&pCVar9->y + iVar14);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 49,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "local_28 = local_28 + *(float *)((int)&pCVar9->z + iVar14);",
-      "type": "pointer_cast"
     }
   ]
 }

@@ -42,6 +42,12 @@ The `.mmx.*` and `.byval.*` variants are generated alongside the original but ar
 - Keep variable names from the original where possible.
 - Keep the overall structure (control flow, statement order) as close to the original as possible.
 - **Local variable declarations are NOT off-limits.** Retyping a local (e.g., `CVector3f` → `CQuaternion4f` when Ghidra mis-sized a stack slot), merging two adjacent locals into one struct, or splitting one local into two when Watcom reused a stack slot for different types (§13) are all within the scope of a minimal edit. Fix the declaration to match what the asm actually uses, and any required initializer copy from a sibling local — don't paper over with `(T *)&` casts that hide an underlying size/type mismatch.
+- **Prefer 64-bit-portable forms when semantically equivalent.** When two expressions produce identical code under our `-m32` build but differ in 64-bit portability, pick the form that would also compile cleanly on 64-bit. The runnable-binary goal currently targets 32-bit DirectDraw shims, but choosing the portable form costs nothing today and keeps the codebase ready for a future 64-bit port. Common substitutions:
+  - `(uintptr_t)ptr` instead of `(int)ptr` / `(unsigned int)ptr` for pointer-arithmetic bit-tricks (alignment masks, packing, hash mixing). On 32-bit they're bit-identical; on 64-bit only `uintptr_t` is wide enough.
+  - `size_t` instead of `int` for sizes/lengths returned from `strlen`/`sizeof`/etc.
+  - `intptr_t` for pointer-difference math.
+
+  Only switch when the substitution is *exactly* equivalent at the asm level — never widen a stored field's underlying type (e.g. don't promote an `int` struct member to `int64_t`) since that changes layout and breaks every byte-offset access. The rule is about *expression types* used in `.keep` bodies, not on-the-wire storage.
 - Only change what is necessary to make it compile, be semantically correct, or resolve a flagged suspect (see "Reducing Flagged Suspects" below).
 - Do NOT add comments explaining the fix unless the logic is genuinely non-obvious.
 - **Remove Ghidra-emitted `/* WARNING: ... */` comments.** These describe the decompiler's confusion about the original output (e.g. `WARNING: Inlined function: ...`, `WARNING: Unable to use type for symbol ...`, `WARNING: Globals starting with '_' overlap...`). They were diagnostics for the upstream decompile and become stale clutter once a manual reconstruction exists. Strip them when creating or editing a `.keep` file.
@@ -91,14 +97,14 @@ When you are editing a `.keep` for any reason — creating one for a compile err
 - **Don't create a `.keep` just for `mild` suspects.** If the function otherwise compiles and has no active bug, the per-re-export maintenance cost of a `.keep` outweighs removing a stylistic wart. Suspect cleanup is a free rider on `.keep` work that's already happening for another reason.
 
 **Eligible suspect types** and the error pattern section each maps to:
-- `unrolled_strcpy`, `unrolled_memcpy`, `unrolled_strlen`, `unrolled_strcat`, `unrolled_strchr` — §17 (Unrolled string/memory copies)
-- `pointer_cast` — usually §13 (stack slot reuse) **or** §17 when the cast appears inside a countdown `for`-loop body. The `unrolled_memcpy` detector misses loops whose store target has an arrow (`*(T *)pX->field = ...`) or index (`*(T *)pX[i] = ...`), so those land here as bare `pointer_cast`. Look at the loop header — if it's `for (i = N; i != 0; i = i + -1)` with a `(uint)bVar * -8 + 4` direction idiom, treat as §17.
+- `unrolled_strcpy`, `unrolled_memcpy`, `unrolled_memset`, `unrolled_strlen`, `unrolled_strcat`, `unrolled_strchr` — §17 (Unrolled string/memory copies). `unrolled_memcpy` and `unrolled_memset` have both source-side AND asm-side detectors (the asm-side anchors on `MOVS{B,W,D}.REP` / `STOS{B,W,D}.REP` and reports an asm line when the source-side fingerprint misses — typically when the loop body uses arrow/index store forms instead of `*ptr = *src`).
+- `pointer_cast` — usually §13 (stack slot reuse) **or** §17 when the cast appears inside a countdown `for`-loop body. Look at the loop header — if it's `for (i = N; i != 0; i = i + -1)` with a `(uint)bVar * -8 + 4` direction idiom, treat as §17. The detector ignores `(int)FUNC(...)` numeric casts (since 2026-04-29), so e.g. `(int)ROUND(x)` inside a `(TYPE *)(...)` outer paren no longer false-positives.
 - `wrong_global`, `displaced_global_access` — §15 (Wrong global due to Watcom 1-based indexing)
 - `raw_address_constant` — §11 (Hardcoded memory addresses for known globals)
 - `suspicious_cast` — §1 (Pointer-to-float cast) or §7 (Cannot cast from float to pointer type)
 - `sub84_truncation`, `double_reconstruction` — §2 (Double return splitting) or §3 (Format string errors). These are EAX:EDX Watcom double-return artifacts that Ghidra cannot fix upstream — they are a decompiler limitation. Eligible only when the pattern is **localized** (a few split doubles in printf-family calls or double-returning assignments). If `SUB84`/`CONCAT44`/`._0_4_`/`._4_4_` is pervasive throughout the function body, this falls under "Skip Heavily Mangled Functions" instead.
 - `preinc_loop_idiom` — §19 (Pre-increment-array-walk loop idiom). Always a Ghidra loop-decode artifact; must rewrite as a clean `for`-loop after cross-referencing the asm. The decompile is never correct as-decoded.
-- `missing_cave_copy` — §20 (Missing cave-block struct memcpy). Ghidra dropped a post-call struct copy that Watcom emitted, leaving a struct local uninitialized at runtime. Fix by passing the real source local directly or adding the missing assignment; detected via `.cpp`/`.asm` cross-check.
+- `missing_cave_copy` — §20 (Missing cave-block struct memcpy). Ghidra dropped a post-call struct copy that Watcom emitted, leaving a struct local uninitialized at runtime. Fix by passing the real source local directly or adding the missing assignment; detected via `.cpp`/`.asm` cross-check. **Candidate locals are filtered by struct size matching the asm cave-block size** — e.g. a 48-byte cave block can't be the missing copy of a 12-byte `CVector3f` local, so output buffers like `&local_vec` passed to `transformVector3x4(&out, &in, &mat)` no longer false-positive.
 - `fast_sqrt_inline`, `fast_inv_sqrt_inline` — §21 (Inline fast-(inverse-)sqrt bit-trick). Ghidra emits `(int)X` numeric cast where the asm performs a bit-cast; UB on NaN/Inf. Replace inline occurrences with calls to the existing helper functions `fastSqrt(X)` / `fastInvSqrt(X)` in a `.keep`.
 
 **Ineligible for `.keep` cleanup — fix upstream in Ghidra instead:** structural suspects like `decompilation_failed`, stack/ESP anchor mismatches, `warning_*` (bad spacebase, unmapped variables, type propagation). See "Prefer Ghidra Fixes Over Code Fixes."
@@ -372,6 +378,7 @@ for (int i = 0; i < 256; i++)
 - A `do/while` loop copying two bytes at a time with an early-exit check on null terminator (unrolled `strcpy`)
 - Field-by-field struct copies like `dst[0] = src.field_a; dst[1] = src.field_b; ...` across all fields
 - A countdown `for`-loop with `*(uint *)dst = *(uint *)src; src += ...; dst += ...;` and the `(uint)bVar * -8 + 4` direction idiom — Watcom's `REP MOVSD` lowering. **The `unrolled_memcpy` suspect detector misses this shape when the store LHS/RHS has an arrow or index** (e.g. `*(uint *)pSVar9->data = *(uint *)pcVar8;`), so it reaches you flagged only as `pointer_cast` on the `pX = (T *)((int)pX + (uint)bVar * -8 + 4);` line. If you see `pointer_cast` inside a countdown loop with that direction idiom, it's this pattern — collapse per §17 regardless of the suspect label.
+- A countdown `for`-loop writing a single constant (often `0`) to one element per iteration with a unit pointer increment — `for (; iVar != 0; iVar = iVar + -1) { *p = 0; p = p + 1; }`. Watcom's `REP STOS{B,W,D}` lowering. The `unrolled_memset` suspect (asm-anchored on `STOS{B,W,D}.REP`) flags these; the suspect's `line` is in the `.asm`, not the `.cpp`, since the source-side fingerprint is too generic to anchor reliably. Find the matching countdown loop in the function body and replace with `memset(dst, value, count * stride)`. The B/W/D variant tells you the stride (1/2/4 bytes per element).
 
 **Multi-local span / ASan trap:** When the copy size exceeds the declared size of the source local (e.g. `REP MOVSD` of 0x89 dwords out of a `char[60]`), the original binary had **multiple adjacent stack locals** laid out contiguously and the copy walked all of them as one blob. Under ASan each local gets redzones — the read trips `stack-buffer-overflow` one byte past the first local's end. Fix by issuing **one `memcpy` per source local**, each sized to that local, targeting the matching offset in the destination struct. Cross-reference the `.asm` `LEA` offsets to determine which locals the original `REP MOVSD` was spanning and in what order.
 
@@ -402,6 +409,15 @@ g_Scratch[11] = g_Buffer[i].field_l;
 g_Scratch = g_Buffer[i];
 // Or if raw memory:
 memcpy(g_Scratch, &g_Buffer[i], sizeof(g_Buffer[i]));
+
+// BROKEN (unrolled memset — REP STOSD in asm, countdown for-loop in .cpp):
+for (; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *puVar5 = 0;
+    puVar5 = puVar5 + 1;
+}
+
+// FIXED (stride matches the STOS variant: STOSB → 1, STOSW → 2, STOSD → 4):
+memset(puVar5, 0, count * 4);
 ```
 
 **When to suggest:** Only when the pattern is unambiguous — the copy is complete (all bytes/fields), contiguous, and the source/destination types are compatible. Don't collapse partial copies or copies with interleaved logic.

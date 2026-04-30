@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1158,
-    "complexity_score": 464,
+    "complexity_score": 389,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 77,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 374,
-    "suspect_count": 8,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_local",
       "warning_type_propagation"
     ],
     "total_lines": 1532
@@ -855,7 +854,7 @@
     {
       "description": "Complex pointer cast",
       "line": 200,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_ScreenBufferArray",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)((int)g_ScreenBufferArray + local_24));",
@@ -954,7 +953,7 @@
     {
       "description": "Complex pointer cast",
       "line": 339,
-      "match": "(char *)((int)",
+      "match": "(char *)((int)piVar20",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(char *)((int)piVar20 + 1) = cVar1;",
@@ -963,7 +962,7 @@
     {
       "description": "Complex pointer cast",
       "line": 340,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)piVar20",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "piVar20 = (int *)((int)piVar20 + 2);",
@@ -1213,69 +1212,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 45,
-      "match": "local_5c",
-      "severity": "mild",
-      "text": "int local_5c;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 46,
-      "match": "local_58",
-      "severity": "mild",
-      "text": "int local_58;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 47,
-      "match": "local_54",
-      "severity": "mild",
-      "text": "int local_54;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 48,
-      "match": "local_50",
-      "severity": "mild",
-      "text": "int local_50;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 50,
-      "match": "local_48",
-      "severity": "mild",
-      "text": "int local_48;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 286,
-      "match": "local_58",
-      "severity": "mild",
-      "text": "(&local_5c,&local_58,&local_54,&local_50,&local_4c,&local_48);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 286,
-      "match": "local_50",
-      "severity": "mild",
-      "text": "(&local_5c,&local_58,&local_54,&local_50,&local_4c,&local_48);",
-      "type": "unnamed_local"
     }
   ]
 }

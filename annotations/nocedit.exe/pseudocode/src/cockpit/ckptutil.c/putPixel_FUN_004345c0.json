@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 56,
+    "complexity_score": 21,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 21,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 78
   },
   "cross_references": [
@@ -213,6 +211,35 @@
     },
     "pcode_op_count": 262
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 8,
+      "match": "(ushort *)(x * 2 + (int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(ushort *)(x * 2 + (int)g_ScreenBufferArray[y]) = g_Hardware16BitPalette[color];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(uint *)(x * 4 + (int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)(x * 4 + (int)g_ScreenBufferArray[y]) = g_Hardware32BitPalette[color];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(char *)(x + (int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(char *)(x + (int)g_ScreenBufferArray[y]) = (char)color;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -243,30 +270,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 8,
-      "match": "(ushort *)(x * 2 + (int)",
-      "severity": "moderate",
-      "text": "*(ushort *)(x * 2 + (int)g_ScreenBufferArray[y]) = g_Hardware16BitPalette[color];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 14,
-      "match": "(uint *)(x * 4 + (int)",
-      "severity": "moderate",
-      "text": "*(uint *)(x * 4 + (int)g_ScreenBufferArray[y]) = g_Hardware32BitPalette[color];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 18,
-      "match": "(char *)(x + (int)",
-      "severity": "moderate",
-      "text": "*(char *)(x + (int)g_ScreenBufferArray[y]) = (char)color;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

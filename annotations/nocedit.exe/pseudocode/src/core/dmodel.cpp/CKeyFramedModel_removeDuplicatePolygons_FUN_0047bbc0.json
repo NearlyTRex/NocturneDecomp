@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 185,
-    "complexity_score": 115,
+    "complexity_score": 90,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 90,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 275
   },
   "cross_references": [
@@ -192,22 +190,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 72,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "((void *)((int)&(((SMRGLPrimitiveQuad *)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 75,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "(void *)((int)&(((SMRGLPrimitiveQuad *)",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

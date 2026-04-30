@@ -10,7 +10,6 @@
 void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *filename)
 
 {
-  char cVar1;
   char *pcVar3;
   _FILE *p_Var4;
   int iVar2;
@@ -20,10 +19,6 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
   C3DSLight *this_ptr_01;
   C3DSCamera *this_ptr_02;
   C3DSCamera *pCVar6;
-  char *pcVar7;
-  CMatrix3x3f *this_ptr_03;
-  CMatrix3x3f *pCVar8;
-  char *pcVar9;
   char *pcVar5;
   char local_228 [256];
   char local_128 [100];
@@ -31,20 +26,6 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
   CVector3f local_60;
   CVector3f local_54;
   int local_48;
-  float *local_44;
-  int *local_40;
-  float *local_3c;
-  SRoom *local_38;
-  SVDBox *local_34;
-  float *local_30;
-  float *local_2c;
-  float *local_28;
-  float *local_24;
-  float *local_20;
-  CVector3f *local_1c;
-  CVector3f *local_18;
-  float *local_14;
-  char cVar2;
   float fVar1;
   CTerrain *this_ptr_00;
   int iVar10;
@@ -110,16 +91,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
   }
   pcVar4 = this_ptr->sky_texture_name;
   if (this_ptr->set_file_version < 0xc) {
-    pcVar5 = "NITESKY.RAW";
-    do {
-      cVar1 = *pcVar5;
-      *pcVar4 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar5[1];
-      pcVar5 = pcVar5 + 2;
-      pcVar4[1] = cVar1;
-      pcVar4 = pcVar4 + 2;
-    } while (cVar1 != '\0');
+    strcpy(pcVar4, "NITESKY.RAW");
     this_ptr->sky_brightness = 0x4000;
   }
   else {
@@ -127,17 +99,8 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
   }
   pcVar4 = this_ptr->world_geometry_name;
   if (this_ptr->set_file_version < 0xd) {
-    pcVar5 = "none";
     this_ptr->use_world_geometry_flag = 0;
-    do {
-      cVar1 = *pcVar5;
-      *pcVar4 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar5[1];
-      pcVar5 = pcVar5 + 2;
-      pcVar4[1] = cVar1;
-      pcVar4 = pcVar4 + 2;
-    } while (cVar1 != '\0');
+    strcpy(pcVar4, "none");
   }
   else {
     _fgets(local_228,0xff,p_Var4);
@@ -216,30 +179,15 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
     _fscanf(p_Var4,"%d\n",&this_ptr->default_room_size);
     iVar2 = 0;
     _fscanf(p_Var4,"%d\n",&this_ptr->room_count);
-    if (0 < this_ptr->room_count) {
-      local_38 = this_ptr->rooms;
-      local_40 = &this_ptr->rooms[0].reverb_size;
-      this_ptr_03 = &this_ptr->rooms[0].rotation_matrix;
-      local_18 = &this_ptr->rooms[0].extents;
-      local_2c = &this_ptr->rooms[0].extents.y;
-      local_28 = &this_ptr->rooms[0].extents.z;
-      local_20 = &this_ptr->rooms[0].position.y;
-      local_44 = &this_ptr->rooms[0].position.z;
-      do {
-        _fscanf(p_Var4,"%f,%f,%f\n",&(local_38 + iVar2)->position.x,local_20,local_44);
-        _fscanf(p_Var4,"%f,%f,%f\n",&local_18->x,local_2c,local_28);
-        _fscanf(p_Var4,"%f,%f,%f\n",&local_54.x,&local_54.z,&local_54.y);
-        core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(this_ptr_03,&local_54);
-        iVar2 = iVar2 + 1;
-        _fscanf(p_Var4,"%d\n",local_40);
-        this_ptr_03 = (CMatrix3x3f *)((int)(this_ptr_03 + 1) + 0x20);
-        local_40 = local_40 + 0x11;
-        local_18 = (CVector3f *)&local_18[5].z;
-        local_2c = local_2c + 0x11;
-        local_28 = local_28 + 0x11;
-        local_20 = local_20 + 0x11;
-        local_44 = local_44 + 0x11;
-      } while (iVar2 < this_ptr->room_count);
+    for (iVar2 = 0; iVar2 < this_ptr->room_count; iVar2 = iVar2 + 1) {
+      _fscanf(p_Var4,"%f,%f,%f\n",&this_ptr->rooms[iVar2].position.x,
+              &this_ptr->rooms[iVar2].position.y,&this_ptr->rooms[iVar2].position.z);
+      _fscanf(p_Var4,"%f,%f,%f\n",&this_ptr->rooms[iVar2].extents.x,
+              &this_ptr->rooms[iVar2].extents.y,&this_ptr->rooms[iVar2].extents.z);
+      _fscanf(p_Var4,"%f,%f,%f\n",&local_54.x,&local_54.z,&local_54.y);
+      core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
+                (&this_ptr->rooms[iVar2].rotation_matrix,&local_54);
+      _fscanf(p_Var4,"%d\n",&this_ptr->rooms[iVar2].reverb_size);
     }
   }
   if (this_ptr->set_file_version < 3) {
@@ -290,27 +238,14 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
     _fgets(local_228,0xff,p_Var4);
     iVar2 = 0;
     _fscanf(p_Var4,"%d\n",&this_ptr->vdir_box_count);
-    if (0 < this_ptr->vdir_box_count) {
-      local_34 = this_ptr->vdir_boxes;
-      pCVar8 = &this_ptr->vdir_boxes[0].rotation_matrix;
-      local_1c = &this_ptr->vdir_boxes[0].extents;
-      local_3c = &this_ptr->vdir_boxes[0].extents.y;
-      local_30 = &this_ptr->vdir_boxes[0].extents.z;
-      local_24 = &this_ptr->vdir_boxes[0].position.y;
-      local_14 = &this_ptr->vdir_boxes[0].position.z;
-      do {
-        _fscanf(p_Var4,"%f,%f,%f\n",&(local_34 + iVar2)->position.x,local_24,local_14);
-        _fscanf(p_Var4,"%f,%f,%f\n",&local_1c->x,local_3c,local_30);
-        _fscanf(p_Var4,"%f,%f,%f\n",&local_60.x,&local_60.z,&local_60.y);
-        iVar2 = iVar2 + 1;
-        core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(pCVar8,&local_60);
-        pCVar8 = (CMatrix3x3f *)&pCVar8[1].m[2].z;
-        local_1c = (CVector3f *)&local_1c[5].z;
-        local_3c = local_3c + 0x11;
-        local_30 = local_30 + 0x11;
-        local_24 = local_24 + 0x11;
-        local_14 = local_14 + 0x11;
-      } while (iVar2 < this_ptr->vdir_box_count);
+    for (iVar2 = 0; iVar2 < this_ptr->vdir_box_count; iVar2 = iVar2 + 1) {
+      _fscanf(p_Var4,"%f,%f,%f\n",&this_ptr->vdir_boxes[iVar2].position.x,
+              &this_ptr->vdir_boxes[iVar2].position.y,&this_ptr->vdir_boxes[iVar2].position.z);
+      _fscanf(p_Var4,"%f,%f,%f\n",&this_ptr->vdir_boxes[iVar2].extents.x,
+              &this_ptr->vdir_boxes[iVar2].extents.y,&this_ptr->vdir_boxes[iVar2].extents.z);
+      _fscanf(p_Var4,"%f,%f,%f\n",&local_60.x,&local_60.z,&local_60.y);
+      core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
+                (&this_ptr->vdir_boxes[iVar2].rotation_matrix,&local_60);
     }
     core_setdir_cpp_CDemonSet_buildVdirBoxGroups_FUN_00576710(this_ptr);
   }
@@ -340,17 +275,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
     core_setcolid_cpp_CDemonSet_commitVoxelBuffer_FUN_00574560(this_ptr);
   }
   else {
-    pcVar7 = local_128;
-    pcVar9 = pcVar4;
-    do {
-      cVar2 = *pcVar7;
-      *pcVar9 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar1 = pcVar7[1];
-      pcVar7 = pcVar7 + 2;
-      pcVar9[1] = cVar1;
-      pcVar9 = pcVar9 + 2;
-    } while (cVar1 != '\0');
+    strcpy(pcVar4, local_128);
     file_ptr = engine_dosio_c_getFile_FUN_00481a50("data",pcVar4,"rb");
     if (file_ptr == (_FILE *)0x0) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -370,50 +295,12 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Loading thumbs");
   pcVar5 = local_c4;
   core_level_cpp_CLevelLoader_update_FUN_00504160(g_CLevelLoaderPtr,pcVar4,iVar2);
-  pcVar4 = this_ptr->geometry_filename;
-  do {
-    cVar1 = *pcVar4;
-    *pcVar5 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar4[1];
-    pcVar4 = pcVar4 + 2;
-    pcVar5[1] = cVar1;
-    pcVar5 = pcVar5 + 2;
-  } while (cVar1 != '\0');
-  pcVar4 = local_c4;
-  do {
-    pcVar5 = pcVar4;
-    if (*pcVar4 == '.') goto LAB_00569dac;
-    if (*pcVar4 == '\0') break;
-    pcVar5 = pcVar4 + 1;
-    if (*pcVar5 == '.') goto LAB_00569dac;
-    pcVar4 = pcVar4 + 2;
-  } while (*pcVar5 != '\0');
-  pcVar5 = (char *)0x0;
-LAB_00569dac:
+  strcpy(local_c4, this_ptr->geometry_filename);
+  pcVar5 = strchr(local_c4, '.');
   if (pcVar5 == (char *)0x0) {
-    pcVar4 = local_c4;
-    do {
-      pcVar5 = pcVar4;
-      if (*pcVar4 == '\0') goto LAB_00569dd5;
-      if (*pcVar4 == '\0') break;
-      pcVar5 = pcVar4 + 1;
-      if (*pcVar5 == '\0') goto LAB_00569dd5;
-      pcVar4 = pcVar4 + 2;
-    } while (*pcVar5 != '\0');
-    pcVar5 = (char *)0x0;
+    pcVar5 = local_c4 + strlen(local_c4);
   }
-LAB_00569dd5:
-  pcVar4 = ".zth";
-  do {
-    cVar1 = *pcVar4;
-    *pcVar5 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar4[1];
-    pcVar4 = pcVar4 + 2;
-    pcVar5[1] = cVar1;
-    pcVar5 = pcVar5 + 2;
-  } while (cVar1 != '\0');
+  strcpy(pcVar5, ".zth");
   core_setdir_cpp_CDemonSet_refreshThumbs_FUN_00575b40(this_ptr,local_c4);
   if (this_ptr->use_enviro_model != 0) {
     core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0

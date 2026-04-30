@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (351 diagnostics)
+Cppcheck (quick) (378 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (77)
+uninitvar (78)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 71
@@ -128,7 +128,11 @@ uninitvar (77)
     File: core/mmx.c
     Uninitialized variable: local_10
 
-  core_set.cpp_CDemonSet_processActors_FUN_0056b810  line 128
+  core_set.cpp_CDemonSet_processActors_FUN_0056b810  line 104
+    File: core/set.cpp
+    Uninitialized variable: local_3c
+
+  core_set.cpp_CDemonSet_processActors_FUN_0056b810  line 119
     File: core/set.cpp
     Uninitialized variable: fStack_5c
 
@@ -617,18 +621,34 @@ selfAssignment (73)
     Redundant assignment of 'pdVar4' to itself.
 
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (45)
+shiftTooManyBitsSigned (59)
 ----------------------------------------------------------------------------------------------------
 
-  cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_ line 61
+  cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_F line 66
+    File: cockpit/drawsurf.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_F line 86
+    File: cockpit/drawsurf.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_ line 59
     File: cockpit/pkbitmap.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenB line 28
+  cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRe line 30
     File: cockpit/pkbitmap.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenB line 40
+  cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRe line 54
+    File: cockpit/pkbitmap.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenB line 27
+    File: cockpit/pkbitmap.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenB line 38
     File: cockpit/pkbitmap.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -712,7 +732,7 @@ shiftTooManyBitsSigned (45)
     File: core/path.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_ line 109
+  core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_ line 107
     File: core/set.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -800,9 +820,113 @@ shiftTooManyBitsSigned (45)
     File: sound/sndmain.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 32
+    File: sound/sndmain.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 33
+    File: sound/sndmain.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  wincore_windll.cpp_renderPerspectiveCorrectScanlin line 62
+    File: wincore/windll.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  wincore_windll.cpp_renderPerspectiveCorrectScanlin line 68
+    File: wincore/windll.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  wincore_windll.cpp_renderPerspectiveCorrectScanlin line 73
+    File: wincore/windll.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  wincore_windll.cpp_renderPerspectiveCorrectScanlin line 79
+    File: wincore/windll.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  wincore_windll.cpp_renderPerspectiveCorrectScanlin line 62
+    File: wincore/windll.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  wincore_windll.cpp_renderPerspectiveCorrectScanlin line 68
+    File: wincore/windll.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  wincore_windll.cpp_renderPerspectiveCorrectScanlin line 73
+    File: wincore/windll.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  wincore_windll.cpp_renderPerspectiveCorrectScanlin line 79
+    File: wincore/windll.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
 ----------------------------------------------------------------------------------------------------
-invalidscanf (41)
+invalidscanf (57)
 ----------------------------------------------------------------------------------------------------
+
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 184
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 225
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 260
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 351
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 394
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 413
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 503
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 562
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 655
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 688
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 722
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 750
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 798
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 824
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 857
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 909
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
 
   core_event.cpp_CEventList_executeCommand_FUN_004aa line 241
     File: core/event.cpp
@@ -969,7 +1093,7 @@ invalidscanf (41)
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-legacyUninitvar (38)
+legacyUninitvar (36)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 59
@@ -1039,14 +1163,6 @@ legacyUninitvar (38)
   core_mission.cpp_CDemonMission_loadActor_FUN_00523 line 64
     File: core/mission.cpp
     Uninitialized variable: local_e1
-
-  core_set.cpp_CDemonSet_processActors_FUN_0056b810  line 112
-    File: core/set.cpp
-    Uninitialized variable: local_3c
-
-  core_set.cpp_CDemonSet_processActors_FUN_0056b810  line 116
-    File: core/set.cpp
-    Uninitialized variable: iStack_18
 
   core_skeledit.cpp_CDeformableModelInstance_viewMod line 761
     File: core/skeledit.cpp
@@ -1156,7 +1272,7 @@ invalidPointerCast (19)
     File: core/ghoul.cpp
     Casting between signed int * and float * which have an incompatible binary data representation.
 
-  core_set.cpp_CDemonSet_load_FUN_00569410           line 80
+  core_set.cpp_CDemonSet_load_FUN_00569410           line 61
     File: core/set.cpp
     Casting between signed int * and float * which have an incompatible binary data representation.
 
@@ -1377,16 +1493,12 @@ identicalInnerCondition (6)
     Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
-nullPointer (5)
+nullPointer (4)
 ----------------------------------------------------------------------------------------------------
 
   core_script.cpp_trimLine_FUN_005592c0              line 39
     File: core/script.cpp
     Possible null pointer dereference: pcVar2
-
-  core_set.cpp_CDemonSet_load_FUN_00569410           line 410
-    File: core/set.cpp
-    Possible null pointer dereference: pcVar5
 
   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_ line 332
     File: core/setedit.cpp
@@ -1404,11 +1516,11 @@ nullPointer (5)
 shiftNegativeLHS (3)
 ----------------------------------------------------------------------------------------------------
 
-  support_codec.cpp_readBitsFromStream_FUN_0043e530  line 25
+  support_codec.cpp_readBitsFromStream_FUN_0043e530  line 26
     File: support/codec.cpp
     Shifting a negative value is technically undefined behaviour
 
-  support_codec.cpp_readBitsFromStream_FUN_0043e530  line 40
+  support_codec.cpp_readBitsFromStream_FUN_0043e530  line 41
     File: support/codec.cpp
     Shifting a negative value is technically undefined behaviour
 
@@ -1420,7 +1532,7 @@ shiftNegativeLHS (3)
 invalidScanfArgType_int (3)
 ----------------------------------------------------------------------------------------------------
 
-  sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Sampl line 68
+  sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Sampl line 46
     File: sound/mp3.cpp
     %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
 
@@ -1459,14 +1571,6 @@ compareBoolExpressionWithInt (1)
   core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0 line 171
     File: core/box.cpp
     Comparison of a boolean expression with an integer other than 0 or 1.
-
-----------------------------------------------------------------------------------------------------
-AssignmentIntegerToAddress (1)
-----------------------------------------------------------------------------------------------------
-
-  core_menu.cpp_configureCustomKeyBindings_FUN_00513 line 94
-    File: core/menu.cpp
-    Assigning an integer to a pointer is not portable.
 
 ----------------------------------------------------------------------------------------------------
 nullPointerArithmetic (1)

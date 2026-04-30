@@ -7,16 +7,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 484,
-    "complexity_score": 454,
+    "complexity_score": 349,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 169,
-    "suspect_count": 27,
+    "suspect_count": 16,
     "suspect_types": [
       "missing_cave_copy",
       "pointer_cast",
+      "unrolled_memcpy",
       "warning_type_propagation"
     ],
     "total_lines": 653
@@ -322,104 +323,8 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)((local_14->base).base.model.bone_transform.bone_world_matrices[0].m + 1) + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 86,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)((pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m + 1) + 4)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 88,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)((local_14->base).base.model.bone_transform.bone_world_matrices[0].m + 1) + 8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 89,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)((pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m + 1) + 8)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 91,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)((local_14->base).base.model.bone_transform.bone_world_matrices[0].m + 1) + 0xc)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 92,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "= *(float *)((int)((pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m + 1) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 96,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)((local_14->base).base.model.bone_transform.bone_world_matrices[0].m + 2) + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 97,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)((pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m + 2) + 4)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 99,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)((local_14->base).base.model.bone_transform.bone_world_matrices[0].m + 2) + 8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 100,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)((pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m + 2) + 8)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 102,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)((local_14->base).base.model.bone_transform.bone_world_matrices[0].m + 2) + 0xc)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 103,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "= *(float *)((int)((pCVar5->base).model.bone_transform.bone_world_matrices[iVar7].m + 2) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 131,
-      "match": "(CVector3i *)((int)",
+      "match": "(CVector3i *)((int)pCVar16",
       "severity": "moderate",
       "text": "pCVar16 = (CVector3i *)((int)pCVar16 + (uint)bVar26 * -8 + 4);",
       "type": "pointer_cast"
@@ -427,7 +332,7 @@
     {
       "description": "Complex pointer cast",
       "line": 132,
-      "match": "(CVector3i *)((int)",
+      "match": "(CVector3i *)((int)pCVar22",
       "severity": "moderate",
       "text": "pCVar22 = (CVector3i *)((int)pCVar22 + (uint)bVar26 * -8 + 4);",
       "type": "pointer_cast"
@@ -435,7 +340,7 @@
     {
       "description": "Complex pointer cast",
       "line": 135,
-      "match": "(CVector3i *)((int)",
+      "match": "(CVector3i *)((int)pCVar22",
       "severity": "moderate",
       "text": "pCVar22 = (CVector3i *)((int)pCVar22 + (uint)bVar26 * -2 + 1);",
       "type": "pointer_cast"
@@ -443,7 +348,7 @@
     {
       "description": "Complex pointer cast",
       "line": 136,
-      "match": "(CVector3i *)((int)",
+      "match": "(CVector3i *)((int)pCVar16",
       "severity": "moderate",
       "text": "pCVar16 = (CVector3i *)((int)pCVar16 + (uint)bVar26 * -2 + 1);",
       "type": "pointer_cast"
@@ -521,12 +426,20 @@
       "type": "missing_cave_copy"
     },
     {
-      "description": "Struct-type local `local_24` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 7 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 51,
-      "match": "CVector3f local_24; ... f(&local_24, ...);",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 57,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "CVector3f local_24;",
-      "type": "missing_cave_copy"
+      "text": "// 0051fa0d: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 60,
+      "match": "MOVSB.REP",
+      "severity": "moderate",
+      "text": "// 0051fa14: MOVSB.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

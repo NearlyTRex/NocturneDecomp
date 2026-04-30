@@ -132,8 +132,8 @@ void __cdecl core_hero_cpp_CHeroPlaceholder_archive_FUN_004f3ef0(CHeroPlaceholde
 void __cdecl core_hero_cpp_CHero_getPropertyList_FUN_004f3f20(CHero *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_hero_cpp_CHeroPlaceholder_getPropertyList_FUN_004f3f60(CHeroPlaceholder *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_hero_cpp_CHero_addFilesToExtract_FUN_004f3fa0(CHero *this_ptr,_FILE *file_handle);
-ulonglong __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004f3ff0(void);
-ulonglong __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004f4140(void);
+void __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004f3ff0(void);
+void __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004f4140(void);
 void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004f41c0(void);
 void __cdecl core_hiram_cpp_staticInit_FUN_004f4380(void);
 CHiram * __cdecl core_hiram_cpp_getFactoryFunc_FUN_004f43b0(void);

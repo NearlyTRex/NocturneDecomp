@@ -207,7 +207,7 @@
     {
       "description": "Complex pointer cast",
       "line": 11,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "*(byte *)((int)g_ScreenBufferArray[y_coord] + x_coord) = (byte)g_ActiveRenderColor",
       "type": "pointer_cast"
@@ -215,7 +215,7 @@
     {
       "description": "Complex pointer cast",
       "line": 16,
-      "match": "(uint *)(x_coord * 4 + (int)",
+      "match": "(uint *)(x_coord * 4 + (int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "*(uint *)(x_coord * 4 + (int)g_ScreenBufferArray[y_coord]) =",
       "type": "pointer_cast"
@@ -223,7 +223,7 @@
     {
       "description": "Complex pointer cast",
       "line": 20,
-      "match": "(ushort *)(x_coord * 2 + (int)",
+      "match": "(ushort *)(x_coord * 2 + (int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "*(ushort *)(x_coord * 2 + (int)g_ScreenBufferArray[y_coord]) =",
       "type": "pointer_cast"

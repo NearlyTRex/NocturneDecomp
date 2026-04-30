@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 116,
+    "complexity_score": 51,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 15,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 51,
-    "suspect_count": 6,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 157
   },
   "cross_references": [
@@ -196,6 +194,62 @@
     },
     "pcode_op_count": 385
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(int *)((int)g_LightDebugScreenY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)g_LightDebugScreenY + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(int *)((int)g_LightDebugScreenX",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar2 = (int *)((int)g_LightDebugScreenX + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(uint *)((int)g_SpotLightList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)((int)g_SpotLightList + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(int *)((int)g_LightDebugScreenY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar3 = (int *)((int)g_LightDebugScreenY + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(int *)((int)g_LightDebugScreenX",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)((int)g_LightDebugScreenX + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(uint *)((int)g_DynamicLights",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar5 = (uint *)((int)g_DynamicLights + iVar6);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 280,
     "local_size": 276,
@@ -219,54 +273,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar1 = (int *)((int)g_LightDebugScreenY + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 23,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar2 = (int *)((int)g_LightDebugScreenX + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "puVar3 = (uint *)((int)g_SpotLightList + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar3 = (int *)((int)g_LightDebugScreenY + iVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar4 = (int *)((int)g_LightDebugScreenX + iVar7);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "puVar5 = (uint *)((int)g_DynamicLights + iVar6);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

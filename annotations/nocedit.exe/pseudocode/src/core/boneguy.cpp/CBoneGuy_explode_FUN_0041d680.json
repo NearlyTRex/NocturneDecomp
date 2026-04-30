@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 179,
-    "complexity_score": 151,
+    "complexity_score": 131,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 86,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
@@ -311,25 +311,9 @@
     {
       "description": "Complex pointer cast",
       "line": 77,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)local_1c",
       "severity": "moderate",
       "text": "puVar8 = (uint *)((int)local_1c + (uint)bVar10 * -8 + 49000);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 80,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "puVar7 = (uint *)((int)&local_48 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 81,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*puVar8 = *(uint *)((int)&local_48 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

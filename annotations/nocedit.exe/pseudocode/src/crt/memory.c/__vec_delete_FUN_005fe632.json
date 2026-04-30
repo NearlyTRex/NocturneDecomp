@@ -1058,7 +1058,7 @@
     {
       "description": "Complex pointer cast",
       "line": 8,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)object_ptr",
       "severity": "moderate",
       "text": "__arrfini(object_ptr,*(int *)((int)object_ptr + -4),type_info);",
       "type": "pointer_cast"
@@ -1066,7 +1066,7 @@
     {
       "description": "Complex pointer cast",
       "line": 9,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)object_ptr",
       "severity": "moderate",
       "text": "return (int *)((int)object_ptr + -4);",
       "type": "pointer_cast"

@@ -7,16 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 277,
-    "complexity_score": 100,
+    "complexity_score": 85,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 14,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 85,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 362
   },
   "cross_references": [
@@ -239,7 +237,7 @@
     {
       "description": "Complex pointer cast",
       "line": 28,
-      "match": "(ushort *)((int)",
+      "match": "(ushort *)((int)g_ScreenBufferArray",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "uVar2 = *(ushort *)((int)g_ScreenBufferArray[y] + x * 2);",
@@ -247,8 +245,17 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(uint *)(x * 4 + (int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar9 = (uint *)(x * 4 + (int)g_ScreenBufferArray[y]);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 71,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)g_ScreenBufferArray",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)g_ScreenBufferArray[y] + x * 4) =",
@@ -257,7 +264,7 @@
     {
       "description": "Complex pointer cast",
       "line": 80,
-      "match": "(ushort *)((int)",
+      "match": "(ushort *)((int)g_ScreenBufferArray",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(ushort *)((int)g_ScreenBufferArray[y] + x * 2) =",
@@ -346,14 +353,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(uint *)(x * 4 + (int)",
-      "severity": "moderate",
-      "text": "puVar9 = (uint *)(x * 4 + (int)g_ScreenBufferArray[y]);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

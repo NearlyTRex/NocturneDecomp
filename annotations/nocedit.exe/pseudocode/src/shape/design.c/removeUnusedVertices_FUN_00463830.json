@@ -352,7 +352,7 @@
     {
       "description": "Complex pointer cast",
       "line": 32,
-      "match": "(uint *)(g_ModelPolygonData[local_1c].vertex_indices[local_24] * 4 + (int)",
+      "match": "(uint *)(g_ModelPolygonData[local_1c].vertex_indices[local_24] * 4 + (int)dest",
       "severity": "moderate",
       "text": "*(uint *)(g_ModelPolygonData[local_1c].vertex_indices[local_24] * 4 + (int)dest) = 1",
       "type": "pointer_cast"
@@ -360,7 +360,7 @@
     {
       "description": "Complex pointer cast",
       "line": 38,
-      "match": "(int *)(local_1c * 4 + (int)",
+      "match": "(int *)(local_1c * 4 + (int)dest",
       "severity": "moderate",
       "text": "if (*(int *)(local_1c * 4 + (int)dest) == 0) {",
       "type": "pointer_cast"
@@ -368,7 +368,7 @@
     {
       "description": "Complex pointer cast",
       "line": 39,
-      "match": "(uint *)(local_1c * 4 + (int)",
+      "match": "(uint *)(local_1c * 4 + (int)dest",
       "severity": "moderate",
       "text": "*(uint *)(local_1c * 4 + (int)dest) = 0xffffffff;",
       "type": "pointer_cast"
@@ -376,7 +376,7 @@
     {
       "description": "Complex pointer cast",
       "line": 49,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)dest",
       "severity": "moderate",
       "text": "*(int *)((int)dest + local_1c * 4) = g_VertexCount;",
       "type": "pointer_cast"
@@ -384,7 +384,7 @@
     {
       "description": "Complex pointer cast",
       "line": 57,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)dest",
       "severity": "moderate",
       "text": "*(uint *)((int)dest + g_ModelPolygonData[local_1c].vertex_indices[local_2c] * 4);",
       "type": "pointer_cast"

@@ -2,11 +2,11 @@
 // Address: 004f3ff0
 // Address Range: [[004f3ff0, 004f4130]]
 // Convention: __cdecl
-// Signature: ulonglong __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004f3ff0(void)
+// Signature: void __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004f3ff0(void)
 
 #include "nocturne.h"
 
-ulonglong __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004f3ff0(void)
+void __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004f3ff0(void)
 
 {
   uint uVar4;
@@ -47,5 +47,5 @@ ulonglong __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004f3ff0(void)
   g_TotalColorBits.u32[0] = g_RedBitCount.dword + g_GreenBitCount.dword + g_BlueBitCount.dword;
   g_BlueBitShift.b32[0] = g_BlueBitCount;
   g_GreenBlueBits.u32[0] = g_GreenBitCount.dword + g_BlueBitCount.dword;
-  return CONCAT44(g_GreenBitCount.dword,g_GreenBitCount.dword + g_BlueBitCount.dword);
+  return;
 }

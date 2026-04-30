@@ -8,15 +8,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2368,
-    "complexity_score": 1227,
+    "complexity_score": 1082,
     "cross_reference_count": 0,
     "function_call_count": 40,
     "global_count": 71,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 1052,
-    "suspect_count": 16,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_local",
       "unrolled_strcpy",
       "warning_inlined_function"
     ],
@@ -1207,7 +1206,7 @@
     {
       "description": "Complex pointer cast",
       "line": 730,
-      "match": "(CDemonActor *)(((int)",
+      "match": "(CDemonActor *)(((int)local_7c",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "local_78 = (CDemonActor *)(((int)local_7c >> 1) + g_FastSqrtMagic);",
@@ -2233,132 +2232,6 @@
       "severity": "mild",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 44,
-      "match": "local_260",
-      "severity": "mild",
-      "text": "char local_260 [32];",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 66,
-      "match": "local_174",
-      "severity": "mild",
-      "text": "CVector3f local_174;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 149,
-      "match": "local_174",
-      "severity": "mild",
-      "text": "local_174.z = 2.5f;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 150,
-      "match": "local_174",
-      "severity": "mild",
-      "text": "local_174.x = 0.0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 151,
-      "match": "local_174",
-      "severity": "mild",
-      "text": "local_174.y = 0.0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 153,
-      "match": "local_174",
-      "severity": "mild",
-      "text": "((CDemonActor *)this_ptr,(CVector3f *)&local_1c8,&local_174);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 297,
-      "match": "local_260",
-      "severity": "mild",
-      "text": "pcVar18 = local_260;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 435,
-      "match": "local_174",
-      "severity": "mild",
-      "text": "local_174.x = 0.0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 436,
-      "match": "local_174",
-      "severity": "mild",
-      "text": "local_174.y = 0.0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 437,
-      "match": "local_174",
-      "severity": "mild",
-      "text": "local_174.z = 2.5f;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 443,
-      "match": "local_174",
-      "severity": "mild",
-      "text": "pCVar11,&local_174,1.0f,fVar23);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 551,
-      "match": "local_174",
-      "severity": "mild",
-      "text": "local_174.x = 0.0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 552,
-      "match": "local_174",
-      "severity": "mild",
-      "text": "local_174.y = 0.0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 553,
-      "match": "local_174",
-      "severity": "mild",
-      "text": "local_174.z = local_2c;",
-      "type": "unnamed_local"
     }
   ],
   "vtable_info": {

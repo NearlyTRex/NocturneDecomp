@@ -7,7 +7,7 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 118,
+    "complexity_score": 123,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 16,
@@ -15,7 +15,8 @@
     "pseudocode_lines": 93,
     "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 262
   },
@@ -215,18 +216,18 @@
     {
       "description": "Complex pointer cast",
       "line": 87,
-      "match": "(SMRGLTextureBasic *)((int)",
+      "match": "(SMRGLTextureBasic *)((int)pSVar4",
       "severity": "moderate",
       "text": "pSVar4 = (SMRGLTextureBasic *)((int)pSVar4 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 95,
-      "match": "(SMRGLHeaderExtended *)((int)",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 92,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "return (SMRGLHeaderExtended *)((int)&primitive[1].base + (primitive->base).count * 0xc);",
-      "type": "pointer_cast"
+      "text": "// 0040758f: MOVSD.REP ES:EDI,ESI  ; g_RenderBufferPool[0].texture_data[0] | g_RenderBufferPool[0].texture_data[1]",
+      "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {

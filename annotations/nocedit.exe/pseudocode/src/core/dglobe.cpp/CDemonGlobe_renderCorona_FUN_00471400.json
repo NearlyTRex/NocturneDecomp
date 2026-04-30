@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 216,
+    "complexity_score": 186,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 29,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 76,
-    "suspect_count": 13,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
       "warning_inlined_function"
@@ -418,32 +418,8 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "local_30.x = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar1) * fVar1 *",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 43,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "local_30.y = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar1) * fVar1 *",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "local_30.z = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar1) * fVar1 *",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 56,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_CoronaFacePrimitives",
       "severity": "moderate",
       "text": "local_64.base.base.count = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -0x14);",
       "type": "pointer_cast"
@@ -451,7 +427,7 @@
     {
       "description": "Complex pointer cast",
       "line": 58,
-      "match": "(UIntegerFloat *)((int)",
+      "match": "(UIntegerFloat *)((int)g_CoronaFacePrimitives",
       "severity": "moderate",
       "text": "*(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -0x10);",
       "type": "pointer_cast"
@@ -459,7 +435,7 @@
     {
       "description": "Complex pointer cast",
       "line": 60,
-      "match": "(UIntegerFloat *)((int)",
+      "match": "(UIntegerFloat *)((int)g_CoronaFacePrimitives",
       "severity": "moderate",
       "text": "*(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -0xc);",
       "type": "pointer_cast"
@@ -467,7 +443,7 @@
     {
       "description": "Complex pointer cast",
       "line": 62,
-      "match": "(UIntegerFloat *)((int)",
+      "match": "(UIntegerFloat *)((int)g_CoronaFacePrimitives",
       "severity": "moderate",
       "text": "*(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -8);",
       "type": "pointer_cast"
@@ -475,7 +451,7 @@
     {
       "description": "Complex pointer cast",
       "line": 64,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_CoronaFacePrimitives",
       "severity": "moderate",
       "text": "local_64.vertices[0] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4);",
       "type": "pointer_cast"
@@ -483,7 +459,7 @@
     {
       "description": "Complex pointer cast",
       "line": 65,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_CoronaFacePrimitives",
       "severity": "moderate",
       "text": "local_64.vertices[1] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + 4);",
       "type": "pointer_cast"
@@ -491,7 +467,7 @@
     {
       "description": "Complex pointer cast",
       "line": 66,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_CoronaFacePrimitives",
       "severity": "moderate",
       "text": "local_64.vertices[2] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + 8);",
       "type": "pointer_cast"
@@ -499,7 +475,7 @@
     {
       "description": "Complex pointer cast",
       "line": 67,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_CoronaFacePrimitives",
       "severity": "moderate",
       "text": "local_64.vertices[3] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + 0xc);",
       "type": "pointer_cast"
@@ -507,7 +483,7 @@
     {
       "description": "Complex pointer cast",
       "line": 70,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_CoronaFacePrimitives",
       "severity": "moderate",
       "text": "(int)ROUND(ROUND((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar3) *",
       "type": "pointer_cast"

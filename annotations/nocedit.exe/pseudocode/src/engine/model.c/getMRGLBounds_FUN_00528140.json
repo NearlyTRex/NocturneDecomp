@@ -7,14 +7,15 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 407,
-    "complexity_score": 196,
+    "complexity_score": 211,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 6,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 181,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "unrolled_memcpy",
       "warning_inlined_function"
     ],
     "total_lines": 588
@@ -205,7 +206,7 @@
     {
       "description": "Complex pointer cast",
       "line": 166,
-      "match": "(SMRGLModelBounds *)((int)",
+      "match": "(SMRGLModelBounds *)((int)puVar11",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "puVar11 = (SMRGLModelBounds *)((int)puVar11 + (uint)bVar15 * -8 + 4);",
@@ -214,7 +215,7 @@
     {
       "description": "Complex pointer cast",
       "line": 169,
-      "match": "(SMRGLModelBounds *)((int)",
+      "match": "(SMRGLModelBounds *)((int)pSVar6",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar6 = (SMRGLModelBounds *)((int)pSVar6 + (uint)bVar15 * -8 + 4);",
@@ -367,6 +368,14 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 281,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0052852b: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

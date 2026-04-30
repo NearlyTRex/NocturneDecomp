@@ -288,7 +288,7 @@
     {
       "description": "Complex pointer cast",
       "line": 10,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)this_ptr",
       "severity": "moderate",
       "text": "*(int *)((int)this_ptr + *(int *)(*(int *)this_ptr + 4) + -4) = *(int *)(*(int *)this_ptr + 4);",
       "type": "pointer_cast"
@@ -296,7 +296,7 @@
     {
       "description": "Complex pointer cast",
       "line": 14,
-      "match": "(_istream *)((int)",
+      "match": "(_istream *)((int)this_ptr",
       "severity": "moderate",
       "text": "p_Var1 = crt_iostream_cpp_istream_dtor_FUN_006063e1((_istream *)((int)this_ptr + 0x44),1);",
       "type": "pointer_cast"

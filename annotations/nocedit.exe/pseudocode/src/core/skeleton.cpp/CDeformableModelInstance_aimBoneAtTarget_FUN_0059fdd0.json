@@ -7,16 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 160,
-    "complexity_score": 70,
+    "complexity_score": 130,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 40,
-    "suspect_count": 2,
+    "suspect_count": 8,
     "suspect_types": [
-      "stack_alignment_array",
-      "unnamed_local"
+      "missing_cave_copy",
+      "stack_alignment_array"
     ],
     "total_lines": 200
   },
@@ -275,13 +275,60 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 19,
-      "match": "local_ac",
-      "severity": "mild",
+      "description": "Struct-type local `local_ac` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 11,
+      "match": "CQuaternion4f local_ac; ... f(&local_ac, ...);",
+      "severity": "moderate",
       "text": "CQuaternion4f local_ac;",
-      "type": "unnamed_local"
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_9c` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 12,
+      "match": "CQuaternion4f local_9c; ... f(&local_9c, ...);",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_9c;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_8c` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 13,
+      "match": "CQuaternion4f local_8c; ... f(&local_8c, ...);",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_8c;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_7c` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 14,
+      "match": "CQuaternion4f local_7c; ... f(&local_7c, ...);",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_7c;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_5c` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 16,
+      "match": "CQuaternion4f local_5c; ... f(&local_5c, ...);",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_5c;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_4c` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 17,
+      "match": "CQuaternion4f local_4c; ... f(&local_4c, ...);",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_4c;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_3c` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 18,
+      "match": "CQuaternion4f local_3c; ... f(&local_3c, ...);",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_3c;",
+      "type": "missing_cave_copy"
     }
   ]
 }

@@ -135,15 +135,6 @@
       "type": "sub84_truncation"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(int *)((int)&dest->playback_position + 4) = iStack_1c;",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 36,
       "match": "do {",

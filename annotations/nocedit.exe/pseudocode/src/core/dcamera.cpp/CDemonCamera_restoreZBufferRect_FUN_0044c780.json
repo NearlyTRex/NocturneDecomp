@@ -164,7 +164,7 @@
     {
       "description": "Complex pointer cast",
       "line": 22,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_ZBufferScanlineArray",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)g_ZBufferScanlineArray + iVar3);",
       "type": "pointer_cast"
@@ -172,7 +172,7 @@
     {
       "description": "Complex pointer cast",
       "line": 28,
-      "match": "(void *)((int)",
+      "match": "(void *)((int)this_ptr",
       "severity": "moderate",
       "text": "(void *)((int)this_ptr->zbuffer_aligned + (iVar2 + rect_ptr->left) * 4),",
       "type": "pointer_cast"

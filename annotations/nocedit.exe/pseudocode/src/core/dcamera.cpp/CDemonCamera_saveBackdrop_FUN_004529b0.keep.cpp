@@ -6,7 +6,7 @@
 // Signature: void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamera *this_ptr)
 
 #include "nocturne.h"
-#include "system/stream_compat.h"
+#include "stream_compat.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 

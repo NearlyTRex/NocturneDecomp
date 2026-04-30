@@ -7,16 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 232,
-    "complexity_score": 120,
+    "complexity_score": 105,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 90,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "unnamed_local"
+      "decompiler_intrinsic"
     ],
     "total_lines": 322
   },
@@ -106,15 +105,6 @@
     "vtable_offset": 48
   },
   "resolved_suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(byte *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "pbVar1 = (byte *)((int)&polygon->flags + 1);",
-      "type": "pointer_cast"
-    },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 36,
@@ -260,15 +250,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 18,
-      "match": "local_30",
-      "severity": "mild",
-      "text": "uint local_30;",
-      "type": "unnamed_local"
-    },
     {
       "description": "Decompiler intrinsic (not real C)",
       "introduced_by": "keep",

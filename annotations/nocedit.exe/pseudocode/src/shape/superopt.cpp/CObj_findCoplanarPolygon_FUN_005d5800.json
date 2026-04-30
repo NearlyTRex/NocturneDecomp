@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 429,
-    "complexity_score": 189,
+    "complexity_score": 164,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 149,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
       "warning_unreachable"
     ],
     "total_lines": 578
@@ -132,7 +131,7 @@
     {
       "description": "Complex pointer cast",
       "line": 62,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)local_18",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)((int)local_18->uv_coords + local_28 * 4 + -0xc);",
@@ -146,15 +145,6 @@
       "severity": "mild",
       "text": "*(uint *)&(point_00->position).x = local_40.x._0_4_;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(point_00->position).x + 4) = local_40.x._4_4_;",
-      "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
@@ -175,15 +165,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 71,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(point_00->position).y + 4) = local_40.y._4_4_;",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 71,
       "match": "._4_4_",
@@ -202,15 +183,6 @@
       "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 73,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(point_00->position).z + 4) = local_40.z._4_4_;",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 73,
       "match": "._4_4_",
@@ -218,42 +190,6 @@
       "severity": "mild",
       "text": "*(uint *)((int)&(point_00->position).z + 4) = local_40.z._4_4_;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 76,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(local_18->normal).impl.y + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 77,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(local_14->impl).y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 79,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(local_18->normal).impl.z + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 80,
-      "match": "(uint *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&(local_14->impl).z + 4);",
-      "type": "pointer_cast"
     }
   ],
   "stack_frame": {
@@ -402,22 +338,6 @@
       "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x005d5b52) */",
       "type": "warning_unreachable"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&search_polygon->flags + 1) = *(byte *)((int)&search_polygon->flags + 1) | 0x20;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&search_polygon->flags + 1) = *(byte *)((int)&search_polygon->flags + 1) | 0x20;",
-      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

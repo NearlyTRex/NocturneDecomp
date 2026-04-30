@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 72,
+    "complexity_score": 57,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 57,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 213
   },
   "cross_references": [
@@ -203,14 +201,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "pbVar1 = (byte *)((int)&this_ptr->file_ptr->_flag + 1);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 56,
+    "complexity_score": 41,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 25,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 41,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 134
   },
   "cross_references": [],
@@ -30,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "wincore_wddvmem.cpp_initializeColorMasks_FUN_004f3ff0",
-    "signature": "ulonglong __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004f3ff0(void)"
+    "signature": "void __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004f3ff0(void)"
   },
   "function_calls": [],
   "globals": [
@@ -227,6 +225,17 @@
     },
     "pcode_op_count": 789
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(ushort *)((int)g_ColorTable16",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(ushort *)((int)g_ColorTable16 + iVar7) =",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -235,14 +244,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 23,
-      "match": "(ushort *)((int)",
-      "severity": "moderate",
-      "text": "*(ushort *)((int)g_ColorTable16 + iVar7) =",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

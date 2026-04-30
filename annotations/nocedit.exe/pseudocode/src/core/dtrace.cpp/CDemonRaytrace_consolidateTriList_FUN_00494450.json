@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 118,
+    "complexity_score": 163,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 93,
-    "suspect_count": 2,
+    "suspect_count": 6,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 252
   },
@@ -176,7 +177,7 @@
     {
       "description": "Complex pointer cast",
       "line": 50,
-      "match": "(CDemonTriangle *)((int)",
+      "match": "(CDemonTriangle *)((int)pCVar9",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pCVar9 = (CDemonTriangle *)((int)pCVar9 + (uint)bVar11 * -8 + 4);",
@@ -185,7 +186,7 @@
     {
       "description": "Complex pointer cast",
       "line": 53,
-      "match": "(CDemonTriangle *)((int)",
+      "match": "(CDemonTriangle *)((int)pCVar9",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pCVar9 = (CDemonTriangle *)((int)pCVar9 + (uint)bVar11 * -2 + 1);",
@@ -194,7 +195,7 @@
     {
       "description": "Complex pointer cast",
       "line": 54,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)pfVar7",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pfVar7 = (float *)((int)pfVar7 + (uint)bVar11 * -2 + 1);",
@@ -260,7 +261,7 @@
     {
       "description": "Complex pointer cast",
       "line": 35,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)this_ptr",
       "severity": "moderate",
       "text": "this_ptr->triangle_count + *(int *)((int)this_ptr->cube_list->voxel_data + iVar1);",
       "type": "pointer_cast"
@@ -268,10 +269,42 @@
     {
       "description": "Complex pointer cast",
       "line": 43,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "puVar6 = (uint *)((int)this_ptr->cube_list->voxel_data + local_20 + -0x14);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 71,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00494502: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 74,
+      "match": "MOVSB.REP",
+      "severity": "moderate",
+      "text": "// 00494509: MOVSB.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 83,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0049451d: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 86,
+      "match": "MOVSB.REP",
+      "severity": "moderate",
+      "text": "// 00494524: MOVSB.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

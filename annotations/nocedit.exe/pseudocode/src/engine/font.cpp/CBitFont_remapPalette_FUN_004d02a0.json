@@ -7,15 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 86,
+    "complexity_score": 71,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 11,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 56,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
       "warning_unreachable"
     ],
     "total_lines": 208
@@ -253,14 +252,6 @@
       "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x004d0425) */",
       "type": "warning_unreachable"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 50,
-      "match": "(CBitFont *)((int)",
-      "severity": "moderate",
-      "text": "pCVar1 = (CBitFont *)((int)&pCVar1->bitmap_count + 3);",
-      "type": "pointer_cast"
     }
   ]
 }

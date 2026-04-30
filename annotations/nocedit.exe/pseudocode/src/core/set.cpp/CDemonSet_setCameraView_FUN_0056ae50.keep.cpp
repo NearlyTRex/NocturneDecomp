@@ -7,21 +7,16 @@
 
 #include "nocturne.h"
 
-/* WARNING: Unable to use type for symbol fVar3 */
-
 void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_ptr,int index)
 
 {
   int iVar1;
-  uint *puVar2;
   CRect *pCVar3;
   CVector3f *pCVar5;
   CVector3f *pCVar4;
   int iVar6;
   int iVar5;
   CDemonSet *pCVar7;
-  CRect *rect;
-  int iVar8;
   int iVar7;
   CMatrix3x3f *pCVar9;
   float *pfVar10;
@@ -55,42 +50,20 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
   C3DSLight **ppCVar2;
   int fVar3;
   int iVar4;
-  uint *puVar1;
   
   if ((index < 0) || (this_ptr->camera_count <= index)) {
     g_CurrentFilename = "..\\core\\set.cpp";
     g_CurrentLineNumber = 0x416;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonSet::setCameraView - invalid index: %d",index);
   }
-  iVar6 = 0;
-  if (0 < g_DynamicLightCount) {
-    iVar8 = 0;
-    do {
-      puVar1 = (uint *)((int)g_DynamicLights + iVar8);
-      iVar8 = iVar8 + 4;
-      iVar6 = iVar6 + 1;
-      core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80((CDemonLight *)*puVar1);
-    } while (iVar6 < g_DynamicLightCount);
+  for (iVar6 = 0; iVar6 < g_DynamicLightCount; iVar6 = iVar6 + 1) {
+    core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80(g_DynamicLights[iVar6]);
   }
-  iVar5 = 0;
-  if (0 < g_SpotLightCount) {
-    iVar7 = 0;
-    do {
-      puVar2 = (uint *)((int)g_SpotLightList + iVar7);
-      iVar7 = iVar7 + 4;
-      iVar5 = iVar5 + 1;
-      core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80((CDemonLight *)*puVar2);
-    } while (iVar5 < g_SpotLightCount);
+  for (iVar5 = 0; iVar5 < g_SpotLightCount; iVar5 = iVar5 + 1) {
+    core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80(g_SpotLightList[iVar5]);
   }
-  iVar5 = 0;
-  if (0 < g_SpotLightCount) {
-    iVar7 = 0;
-    do {
-      puVar2 = (uint *)((int)g_SpotLightList + iVar7);
-      iVar7 = iVar7 + 4;
-      iVar5 = iVar5 + 1;
-      core_dlight_cpp_CDemonLight_freeMasterZBuffer_FUN_00472a50((CDemonLight *)*puVar2);
-    } while (iVar5 < g_SpotLightCount);
+  for (iVar5 = 0; iVar5 < g_SpotLightCount; iVar5 = iVar5 + 1) {
+    core_dlight_cpp_CDemonLight_freeMasterZBuffer_FUN_00472a50(g_SpotLightList[iVar5]);
   }
   core_dlight_cpp_resetRestoreMemoryAllocator_FUN_004729c0();
   this_ptr->previous_best_camera_timer = 3.0;
@@ -196,28 +169,20 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
         iVar5 = iVar12;
       } while (iVar7 < this_ptr->light_count);
     }
-    iVar5 = 0;
     core_set_cpp_CDemonSet_process_FUN_0056f940(this_ptr);
-    if (0 < g_SpotLightCount) {
-      rect = g_SpotLightBounds;
-      iVar7 = 0;
-      do {
-        this_ptr_01 = *(CDemonLight **)((int)g_SpotLightList + iVar7);
-        core_dlight_cpp_CDemonLight_allocMasterZBuffer_FUN_004729d0(this_ptr_01);
-        core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(this_ptr_01,1);
-        core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_00472e40(this_ptr_01);
-        core_set_cpp_CDemonSet_renderBackgroundActors_FUN_0056aca0(this_ptr,1);
-        core_dlight_cpp_CDemonLight_endBackgroundScene_FUN_00472f30(this_ptr_01);
-        core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(this_ptr_01,0);
-        core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80(this_ptr_01);
-        if (this_ptr->cameras[index].is_panning == 0) {
-          core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10
-                    (&g_CDemonCameraInstance,this_ptr_01,rect);
-        }
-        iVar7 = iVar7 + 4;
-        iVar5 = iVar5 + 1;
-        rect = rect + 1;
-      } while (iVar5 < g_SpotLightCount);
+    for (iVar5 = 0; iVar5 < g_SpotLightCount; iVar5 = iVar5 + 1) {
+      this_ptr_01 = g_SpotLightList[iVar5];
+      core_dlight_cpp_CDemonLight_allocMasterZBuffer_FUN_004729d0(this_ptr_01);
+      core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(this_ptr_01,1);
+      core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_00472e40(this_ptr_01);
+      core_set_cpp_CDemonSet_renderBackgroundActors_FUN_0056aca0(this_ptr,1);
+      core_dlight_cpp_CDemonLight_endBackgroundScene_FUN_00472f30(this_ptr_01);
+      core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(this_ptr_01,0);
+      core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80(this_ptr_01);
+      if (this_ptr->cameras[index].is_panning == 0) {
+        core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10
+                  (&g_CDemonCameraInstance,this_ptr_01,&g_SpotLightBounds[iVar5]);
+      }
     }
   }
   this_ptr->lighting_quality_mode = 0;

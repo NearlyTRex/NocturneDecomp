@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; ulonglong __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004f4140(void)
+; void __cdecl wincore_wddvmem_cpp_populateColorTable_FUN_004f4140(void)
 ;
 ;
 ; Referenced Globals:

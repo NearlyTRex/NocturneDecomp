@@ -369,7 +369,7 @@
     {
       "description": "Complex pointer cast",
       "line": 89,
-      "match": "(short *)((int)",
+      "match": "(short *)((int)this_ptr",
       "severity": "moderate",
       "text": "*(short *)((int)this_ptr->terrain_data + (local_18 * this_ptr->width + iVar8) * 4) =",
       "type": "pointer_cast"
@@ -377,7 +377,7 @@
     {
       "description": "Complex pointer cast",
       "line": 150,
-      "match": "(void *)((int)",
+      "match": "(void *)((int)this_ptr",
       "severity": "moderate",
       "text": "_fread((void *)((int)this_ptr->terrain_data + iVar4 * 4 + 2),1,2,file_00);",
       "type": "pointer_cast"

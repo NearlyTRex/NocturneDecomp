@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 140,
-    "complexity_score": 135,
+    "complexity_score": 90,
     "cross_reference_count": 17,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 90,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 230
   },
   "cross_references": [
@@ -386,38 +384,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 65,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&this_ptr->transformed_vertices[0].x + local_18) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 68,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&this_ptr->transformed_vertices[0].y + local_18) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 71,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "*(float *)((int)&this_ptr->transformed_vertices[0].z + local_18) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 76,
-      "match": "(CVector3f *)((int)",
-      "severity": "moderate",
-      "text": "(&CStack_3c,(CVector3f *)((int)&this_ptr->transformed_vertices[0].x + local_18),",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

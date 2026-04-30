@@ -7,15 +7,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 69,
+    "complexity_score": 109,
     "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 44,
-    "suspect_count": 2,
+    "suspect_count": 5,
     "suspect_types": [
-      "pointer_cast"
+      "missing_cave_copy",
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 150
   },
@@ -224,7 +226,7 @@
     {
       "description": "Complex pointer cast",
       "line": 37,
-      "match": "(CMatrix3x4f *)((int)",
+      "match": "(CMatrix3x4f *)((int)pCVar4",
       "severity": "moderate",
       "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar2 * -8 + 4);",
       "type": "pointer_cast"
@@ -232,10 +234,34 @@
     {
       "description": "Complex pointer cast",
       "line": 40,
-      "match": "(CMatrix3x4f *)((int)",
+      "match": "(CMatrix3x4f *)((int)pCVar1",
       "severity": "moderate",
       "text": "pCVar1 = (CMatrix3x4f *)((int)pCVar1 + (uint)bVar2 * -8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Struct-type local `local_74` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 14,
+      "match": "CMatrix3x4f local_74; ... f(&local_74, ...);",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_74;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_44` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 15,
+      "match": "CMatrix3x4f local_44; ... f(&local_44, ...);",
+      "severity": "moderate",
+      "text": "CMatrix3x4f local_44;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 33,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0058acbf: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

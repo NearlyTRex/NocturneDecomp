@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 188,
-    "complexity_score": 114,
+    "complexity_score": 79,
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 23,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 79,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unnamed_local"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 267
   },
   "cross_references": [
@@ -331,7 +329,7 @@
     {
       "description": "Complex pointer cast",
       "line": 62,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)g_ZBufferScanlineArray",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "iVar1 = *(int *)(iVar4 + *(int *)((int)g_ZBufferScanlineArray + iVar5));",
@@ -391,33 +389,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 16,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "int local_18;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 28,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "for (local_18 = 0; local_18 < this_ptr->camera_count; local_18++) {",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 28,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "for (local_18 = 0; local_18 < this_ptr->camera_count; local_18++) {",
-      "type": "unnamed_local"
-    }
-  ]
+  "suspects": []
 }

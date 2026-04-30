@@ -7,16 +7,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 56,
+    "complexity_score": 41,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 41,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 150
   },
   "cross_references": [
@@ -150,14 +148,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 16,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "iVar5 = *(int *)((int)&workspace->boxes[box_index + -1].count + 2) >> 0x10;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

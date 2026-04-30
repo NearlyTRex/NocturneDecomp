@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 259,
-    "complexity_score": 154,
+    "complexity_score": 119,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 19,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 119,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 378
   },
   "cross_references": [
@@ -345,30 +343,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 68,
-      "match": "(CProceduralTexture *)((int)",
-      "severity": "moderate",
-      "text": "pCVar3 = (CProceduralTexture *)((int)&pCVar9->width + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(CProceduralTexture *)((int)",
-      "severity": "moderate",
-      "text": "pCVar7 = (CProceduralTexture *)((int)&pCVar7->width + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 110,
-      "match": "(CProceduralTexture *)((int)",
-      "severity": "moderate",
-      "text": "pCVar10 = (CProceduralTexture *)((int)&pCVar10->width + 1);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

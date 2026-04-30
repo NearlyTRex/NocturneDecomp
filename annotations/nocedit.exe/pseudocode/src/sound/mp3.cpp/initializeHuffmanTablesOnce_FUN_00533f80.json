@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 174,
+    "complexity_score": 144,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 36,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 119,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast"
+      "unrolled_memcpy"
     ],
     "total_lines": 318
   },
@@ -380,44 +380,20 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 33,
-      "match": "(uint *)((int)",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 69,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_HuffmanTableSources[0].table_size + local_8);",
-      "type": "pointer_cast"
+      "text": "// 00534067: MOVSD.REP ES:EDI,ESI  ; g_HuffmanTables[0].huffman_data[0] | g_HuffmanTables[0].huffman_data[4]",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(uint *)((int)",
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 72,
+      "match": "MOVSB.REP",
       "severity": "moderate",
-      "text": "*(uint *)((int)&g_HuffmanTableSources[0].xlen + local_8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&g_HuffmanTableSources[0].ylen + local_8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&g_HuffmanTableSources[0].bits + local_8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 49,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "iVar5 = *(int *)((int)&g_HuffmanTableSources[0].reference_index + local_8);",
-      "type": "pointer_cast"
+      "text": "// 0053406e: MOVSB.REP ES:EDI,ESI  ; g_HuffmanTables[0].huffman_data[4] | g_HuffmanTables[0].huffman_data[5]",
+      "type": "unrolled_memcpy"
     }
   ]
 }

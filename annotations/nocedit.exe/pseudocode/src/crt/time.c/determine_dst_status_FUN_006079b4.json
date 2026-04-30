@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 320,
-    "complexity_score": 185,
+    "complexity_score": 175,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 19,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 125,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "suspicious_cast"
@@ -270,16 +270,8 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "iVar1 = *(int *)((int)&g_PositiveInfinity + iVar9 * 2 + 6);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 42,
-      "match": "(dst_rule *)((int)",
+      "match": "(dst_rule *)((int)piVar7",
       "severity": "moderate",
       "text": "if (((dst_rule *)((int)piVar7 + 0x20))->seconds == 0) {",
       "type": "pointer_cast"
@@ -287,7 +279,7 @@
     {
       "description": "Complex pointer cast",
       "line": 66,
-      "match": "(dst_rule *)((int)",
+      "match": "(dst_rule *)((int)piVar7",
       "severity": "moderate",
       "text": "if (((dst_rule *)((int)piVar7 + 0x20))->seconds == 1) {",
       "type": "pointer_cast"

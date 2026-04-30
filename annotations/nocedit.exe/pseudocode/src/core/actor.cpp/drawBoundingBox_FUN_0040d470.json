@@ -15,7 +15,7 @@
     "pseudocode_lines": 351,
     "suspect_count": 6,
     "suspect_types": [
-      "missing_cave_copy"
+      "unrolled_memcpy"
     ],
     "total_lines": 883
   },
@@ -146,7 +146,7 @@
     {
       "description": "Complex pointer cast",
       "line": 138,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar11",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar11 = (SRenderVertex *)((int)pSVar11 + ((uint)bVar14 * -2 + 1) * 4);",
@@ -164,7 +164,7 @@
     {
       "description": "Complex pointer cast",
       "line": 157,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar12",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + ((uint)bVar14 * -2 + 1) * 4);",
@@ -182,7 +182,7 @@
     {
       "description": "Complex pointer cast",
       "line": 221,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar11",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar11 = (SRenderVertex *)((int)pSVar11 + ((uint)bVar14 * -2 + 1) * 4);",
@@ -200,7 +200,7 @@
     {
       "description": "Complex pointer cast",
       "line": 240,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar12",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + ((uint)bVar14 * -2 + 1) * 4);",
@@ -218,7 +218,7 @@
     {
       "description": "Complex pointer cast",
       "line": 304,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar11",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar11 = (SRenderVertex *)((int)pSVar11 + ((uint)bVar14 * -2 + 1) * 4);",
@@ -236,7 +236,7 @@
     {
       "description": "Complex pointer cast",
       "line": 324,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar12",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + ((uint)bVar14 * -2 + 1) * 4);",
@@ -656,52 +656,52 @@
   },
   "suspects": [
     {
-      "description": "Struct-type local `local_130` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 6 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 49,
-      "match": "CVector3f local_130; ... f(&local_130, ...);",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 110,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "CVector3f local_130;",
-      "type": "missing_cave_copy"
+      "text": "// 0040d5ee: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Struct-type local `local_dc` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 6 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 64,
-      "match": "CVector3f local_dc; ... f(&local_dc, ...);",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 114,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "CVector3f local_dc;",
-      "type": "missing_cave_copy"
+      "text": "// 0040d5fc: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Struct-type local `local_d0` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 6 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 65,
-      "match": "CVector3f local_d0; ... f(&local_d0, ...);",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 218,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "CVector3f local_d0;",
-      "type": "missing_cave_copy"
+      "text": "// 0040d77b: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Struct-type local `local_c4` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 6 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 66,
-      "match": "CVector3f local_c4; ... f(&local_c4, ...);",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 222,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "CVector3f local_c4;",
-      "type": "missing_cave_copy"
+      "text": "// 0040d789: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Struct-type local `local_ac` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 6 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 68,
-      "match": "CVector3f local_ac; ... f(&local_ac, ...);",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 325,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "CVector3f local_ac;",
-      "type": "missing_cave_copy"
+      "text": "// 0040d90a: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Struct-type local `local_a0` (CVector3f) is declared and passed once by address with no other reference; the `.asm` has 6 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 69,
-      "match": "CVector3f local_a0; ... f(&local_a0, ...);",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 329,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "CVector3f local_a0;",
-      "type": "missing_cave_copy"
+      "text": "// 0040d919: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

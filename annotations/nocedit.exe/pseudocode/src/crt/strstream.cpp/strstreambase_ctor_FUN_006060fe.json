@@ -210,7 +210,7 @@
     {
       "description": "Complex pointer cast",
       "line": 21,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)psVar3",
       "severity": "moderate",
       "text": "*(int *)((int)psVar3 + *(int *)(*(int *)psVar3 + 4) + -4) = *(int *)(*(int *)psVar3 + 4);",
       "type": "pointer_cast"
@@ -218,7 +218,7 @@
     {
       "description": "Complex pointer cast",
       "line": 27,
-      "match": "(streambuf *)((int)",
+      "match": "(streambuf *)((int)psVar3",
       "severity": "moderate",
       "text": "((streambuf *)((int)psVar3 + *(int *)(*(int *)psVar3 + 4)),(char *)this_ptr_00);",
       "type": "pointer_cast"

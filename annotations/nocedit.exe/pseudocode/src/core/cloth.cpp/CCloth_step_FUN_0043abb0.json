@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 835,
-    "complexity_score": 467,
+    "complexity_score": 447,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 402,
-    "suspect_count": 6,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -868,16 +868,8 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 280,
-      "match": "(CVector3f *)((int)",
-      "severity": "moderate",
-      "text": "pCVar12 = (CVector3f *)((int)(pCVar12 + 0x17) + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 297,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)this_ptr",
       "severity": "moderate",
       "text": "pSVar13 = this_ptr->vertices + *(int *)((int)this_ptr->vertex_sort_buffer + local_58);",
       "type": "pointer_cast"
@@ -885,7 +877,7 @@
     {
       "description": "Complex pointer cast",
       "line": 352,
-      "match": "(int *)(iVar7 + (int)",
+      "match": "(int *)(iVar7 + (int)this_ptr",
       "severity": "moderate",
       "text": "if (this_ptr->vertices[*(int *)(iVar7 + (int)this_ptr->vertex_sort_buffer)].locked == 0) {",
       "type": "pointer_cast"
@@ -893,7 +885,7 @@
     {
       "description": "Complex pointer cast",
       "line": 355,
-      "match": "(int *)(iVar7 + (int)",
+      "match": "(int *)(iVar7 + (int)this_ptr",
       "severity": "moderate",
       "text": "*(int *)(iVar7 + (int)this_ptr->vertex_sort_buffer));",
       "type": "pointer_cast"
@@ -901,17 +893,9 @@
     {
       "description": "Complex pointer cast",
       "line": 369,
-      "match": "(int *)(iVar16 + (int)",
+      "match": "(int *)(iVar16 + (int)this_ptr",
       "severity": "moderate",
       "text": "iVar2 = *(int *)(iVar16 + (int)this_ptr->vertex_sort_buffer);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 395,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar8 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar16);",
       "type": "pointer_cast"
     }
   ]

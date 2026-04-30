@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 634,
-    "complexity_score": 324,
+    "complexity_score": 294,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 23,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 249,
-    "suspect_count": 7,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -454,7 +454,7 @@
     {
       "description": "Complex pointer cast",
       "line": 72,
-      "match": "(SIZE_T *)((int)",
+      "match": "(SIZE_T *)((int)this_ptr",
       "severity": "moderate",
       "text": "buffer = (SIZE_T *)((int)this_ptr->cube_list->voxel_data + local_24 + -0x14);",
       "type": "pointer_cast"
@@ -462,23 +462,15 @@
     {
       "description": "Complex pointer cast",
       "line": 129,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)this_ptr",
       "severity": "moderate",
       "text": "piVar4 = (int *)((int)this_ptr->cube_list->voxel_data + iVar3 + -0x14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 165,
-      "match": "(CDemonTriangle *)((int)",
-      "severity": "moderate",
-      "text": "((CDemonTriangle *)((int)&(this_ptr->triangle_list->vertex1).x + iVar3),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 176,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)this_ptr",
       "severity": "moderate",
       "text": "piVar4 = (int *)((int)this_ptr->cube_list->voxel_data + iVar12 + -0x14);",
       "type": "pointer_cast"
@@ -486,25 +478,9 @@
     {
       "description": "Complex pointer cast",
       "line": 205,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pSVar2",
       "severity": "moderate",
       "text": "piVar10 = (int *)((int)pSVar2->voxel_data + iVar1 + -0x14);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 210,
-      "match": "(CDemonCube *)((int)",
-      "severity": "moderate",
-      "text": "((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + local_20),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 241,
-      "match": "(CDemonCube *)((int)",
-      "severity": "moderate",
-      "text": "((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + iVar9),file_handle);",
       "type": "pointer_cast"
     }
   ]

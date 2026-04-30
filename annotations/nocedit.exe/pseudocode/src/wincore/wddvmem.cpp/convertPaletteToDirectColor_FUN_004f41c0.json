@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 105,
+    "complexity_score": 65,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 28,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 65,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast",
-      "warning_unreachable"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 198
   },
   "cross_references": [
@@ -263,6 +260,35 @@
     },
     "pcode_op_count": 1110
   },
+  "resolved_suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004f4365) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(ushort *)((int)g_ColorTable16",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(ushort *)((int)g_ColorTable16 + iVar10) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(uint *)((int)g_ColorTable32",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ColorTable32 + iVar5) =",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -271,30 +297,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Unreachable code block removed",
-      "line": 2,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x004f4365) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(ushort *)((int)",
-      "severity": "moderate",
-      "text": "*(ushort *)((int)g_ColorTable16 + iVar10) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ColorTable32 + iVar5) =",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

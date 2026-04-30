@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 122
-  Total diagnostics: 351
+  Functions with findings: 127
+  Total diagnostics: 378
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 122, raw .cpp files: 0
+  .keep.cpp files: 127, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -44,6 +44,27 @@ core_event.cpp_CEventList_executeCommand_FUN_004aacc0  [.keep] [Cppcheck (quick)
   Line 1592: [invalidscanf] sscanf() without field width limits can crash with huge input data.
   Line 1705: [invalidscanf] sscanf() without field width limits can crash with huge input data.
   Line 1778: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+
+----------------------------------------------------------------------------------------------------
+core_event.cpp_CEventList_evaluateAtom_FUN_004ae140  [.keep] [Cppcheck (quick)]
+  File: core/event.cpp  (16 diagnostics)
+
+  Line  184: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  225: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  260: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  351: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  394: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  413: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  503: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  562: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  655: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  688: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  722: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  750: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  798: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  824: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  857: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  909: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
 core_mmx.c_detectIntelProcessor_FUN_00524f4c  [.keep] [Cppcheck (quick)]
@@ -372,6 +393,24 @@ shape_superopt.cpp_CObj_transform_FUN_005d2c40  [.keep] [Cppcheck (quick)]
   Line   62: [uninitvar] Uninitialized variable: dStack_98
 
 ----------------------------------------------------------------------------------------------------
+wincore_windll.cpp_renderPerspectiveCorrectScanline16_FUN_005b5322  [.keep] [Cppcheck (quick)]
+  File: wincore/windll.cpp  (4 diagnostics)
+
+  Line   62: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   68: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   73: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   79: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+wincore_windll.cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec  [.keep] [Cppcheck (quick)]
+  File: wincore/windll.cpp  (4 diagnostics)
+
+  Line   62: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   68: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   73: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   79: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
 core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210  [.keep] [Cppcheck (quick)]
   File: core/actor.cpp  (3 diagnostics)
 
@@ -386,14 +425,6 @@ core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0  [.keep] [Cppcheck (qu
   Line   46: [uninitvar] Uninitialized variable: fStack_24
   Line   46: [uninitvar] Uninitialized variable: local_2c
   Line   46: [uninitvar] Uninitialized variable: fStack_28
-
-----------------------------------------------------------------------------------------------------
-core_set.cpp_CDemonSet_processActors_FUN_0056b810  [.keep] [Cppcheck (quick)]
-  File: core/set.cpp  (3 diagnostics)
-
-  Line  112: [legacyUninitvar] Uninitialized variable: local_3c
-  Line  116: [legacyUninitvar] Uninitialized variable: iStack_18
-  Line  128: [uninitvar] Uninitialized variable: fStack_5c
 
 ----------------------------------------------------------------------------------------------------
 core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0  [.keep] [Cppcheck (quick)]
@@ -479,8 +510,8 @@ shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180  [.keep] [Cppc
 support_codec.cpp_readBitsFromStream_FUN_0043e530  [.keep] [Cppcheck (quick)]
   File: support/codec.cpp  (3 diagnostics)
 
-  Line   25: [shiftNegativeLHS] Shifting a negative value is technically undefined behaviour
-  Line   40: [shiftNegativeLHS] Shifting a negative value is technically undefined behaviour
+  Line   26: [shiftNegativeLHS] Shifting a negative value is technically undefined behaviour
+  Line   41: [shiftNegativeLHS] Shifting a negative value is technically undefined behaviour
   Line   61: [shiftNegativeLHS] Shifting a negative value is technically undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
@@ -491,11 +522,25 @@ cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0  [.keep] [Cppcheck (quick)]
   Line  270: [selfAssignment] Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.
 
 ----------------------------------------------------------------------------------------------------
+cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0  [.keep] [Cppcheck (quick)]
+  File: cockpit/drawsurf.cpp  (2 diagnostics)
+
+  Line   66: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   86: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30  [.keep] [Cppcheck (quick)]
+  File: cockpit/pkbitmap.cpp  (2 diagnostics)
+
+  Line   30: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   54: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
 cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20  [.keep] [Cppcheck (quick)]
   File: cockpit/pkbitmap.cpp  (2 diagnostics)
 
-  Line   28: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   40: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   27: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   38: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_chain.cpp_fastSqrt_FUN_00431350  [.keep] [Cppcheck (quick)]
@@ -568,11 +613,11 @@ core_script.cpp_parseCommandWithTemplates_FUN_00561690  [.keep] [Cppcheck (quick
   Line   53: [selfAssignment] Redundant assignment of 'pCVar9' to itself.
 
 ----------------------------------------------------------------------------------------------------
-core_set.cpp_CDemonSet_load_FUN_00569410  [.keep] [Cppcheck (quick)]
+core_set.cpp_CDemonSet_processActors_FUN_0056b810  [.keep] [Cppcheck (quick)]
   File: core/set.cpp  (2 diagnostics)
 
-  Line   80: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
-  Line  410: [nullPointer] Possible null pointer dereference: pcVar5
+  Line  104: [uninitvar] Uninitialized variable: local_3c
+  Line  119: [uninitvar] Uninitialized variable: fStack_5c
 
 ----------------------------------------------------------------------------------------------------
 core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  [.keep] [Cppcheck (quick)]
@@ -680,10 +725,17 @@ shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590  [.keep] [Cpp
   Line  241: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
+sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0  [.keep] [Cppcheck (quick)]
+  File: sound/sndmain.cpp  (2 diagnostics)
+
+  Line   32: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   33: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
 cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70  [.keep] [Cppcheck (quick)]
   File: cockpit/pkbitmap.cpp  (1 diagnostics)
 
-  Line   61: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   59: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280  [.keep] [Cppcheck (quick)]
@@ -734,12 +786,6 @@ core_main.c_displayErrorAndQuit_FUN_00506f10  [.keep] [Cppcheck (quick)]
   Line   88: [nullPointerArithmetic] Pointer addition with NULL pointer.
 
 ----------------------------------------------------------------------------------------------------
-core_menu.cpp_configureCustomKeyBindings_FUN_005138e0  [.keep] [Cppcheck (quick)]
-  File: core/menu.cpp  (1 diagnostics)
-
-  Line   94: [AssignmentIntegerToAddress] Assigning an integer to a pointer is not portable.
-
-----------------------------------------------------------------------------------------------------
 core_mission.cpp_CDemonMission_loadActor_FUN_00523990  [.keep] [Cppcheck (quick)]
   File: core/mission.cpp  (1 diagnostics)
 
@@ -770,10 +816,16 @@ core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0  [.keep] [Cppcheck (quick)]
   Line  146: [selfAssignment] Redundant assignment of 'pCVar12' to itself.
 
 ----------------------------------------------------------------------------------------------------
+core_set.cpp_CDemonSet_load_FUN_00569410  [.keep] [Cppcheck (quick)]
+  File: core/set.cpp  (1 diagnostics)
+
+  Line   61: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
+
+----------------------------------------------------------------------------------------------------
 core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990  [.keep] [Cppcheck (quick)]
   File: core/set.cpp  (1 diagnostics)
 
-  Line  109: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  107: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660  [.keep] [Cppcheck (quick)]
@@ -935,7 +987,7 @@ shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0  [.keep] [Cppcheck (qui
 sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680  [.keep] [Cppcheck (quick)]
   File: sound/mp3.cpp  (1 diagnostics)
 
-  Line   68: [invalidScanfArgType_int] %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
+  Line   46: [invalidScanfArgType_int] %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
 
 ----------------------------------------------------------------------------------------------------
 sound_mp3.cpp_initializeHuffmanTablesOnce_FUN_00533f80  [.keep] [Cppcheck (quick)]

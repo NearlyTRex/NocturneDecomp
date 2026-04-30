@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 132,
+    "complexity_score": 67,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 42,
-    "suspect_count": 8,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
       "register_param"
     ],
     "total_lines": 180
@@ -226,54 +225,6 @@
       "severity": "mild",
       "text": "ushort in_DS;",
       "type": "register_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 15,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr)))))) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr)))))))) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "(void *)((int)&g_SecondaryHeap->heap_size + g_SecondaryHeap->heap_size) <= ptr)) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 23,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr)))))) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 25,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr))))))))))",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "if ((pHVar2 <= ptr) && (ptr < (void *)((int)&pHVar2->heap_size + pHVar2->heap_size)))",
-      "type": "pointer_cast"
     },
     {
       "description": "Inferred register parameter",

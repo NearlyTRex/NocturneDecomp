@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; ulonglong __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004f3ff0(void)
+; void __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004f3ff0(void)
 ;
 ;
 ; Referenced Globals:

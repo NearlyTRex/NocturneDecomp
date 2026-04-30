@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 310,
-    "complexity_score": 131,
+    "complexity_score": 156,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 131,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 441
   },
   "cross_references": [
@@ -159,17 +161,8 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
-      "match": "(double *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "pdVar3 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_24);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 54,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)pdVar3",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "if ((*(byte *)((int)pdVar3 + 0x35) & 0x80) == 0) {",
@@ -178,7 +171,7 @@
     {
       "description": "Complex pointer cast",
       "line": 62,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar2",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar2 = (double *)((int)pdVar2 + (uint)bVar8 * -8 + 4);",
@@ -187,7 +180,7 @@
     {
       "description": "Complex pointer cast",
       "line": 63,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar4 = (double *)((int)pdVar4 + (uint)bVar8 * -8 + 4);",
@@ -196,7 +189,7 @@
     {
       "description": "Complex pointer cast",
       "line": 71,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar7",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar7 = (double *)((int)pdVar7 + (uint)bVar8 * -8 + 4);",
@@ -205,7 +198,7 @@
     {
       "description": "Complex pointer cast",
       "line": 72,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar6",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar6 = (double *)((int)pdVar6 + (uint)bVar8 * -8 + 4);",
@@ -214,7 +207,7 @@
     {
       "description": "Complex pointer cast",
       "line": 77,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)pdVar3",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(byte *)((int)pdVar3 + 0x35) = *(byte *)((int)pdVar3 + 0x35) | 0x80;",
@@ -223,7 +216,7 @@
     {
       "description": "Complex pointer cast",
       "line": 77,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)pdVar3",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(byte *)((int)pdVar3 + 0x35) = *(byte *)((int)pdVar3 + 0x35) | 0x80;",
@@ -231,17 +224,8 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
-      "match": "(double *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "pdVar2 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_2c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 83,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)pdVar2",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "if ((*(byte *)((int)pdVar2 + 0x35) & 0x80) == 0) {",
@@ -250,7 +234,7 @@
     {
       "description": "Complex pointer cast",
       "line": 93,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)pCVar1",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "if (uVar4 == *(uint *)((int)pCVar1->uv_coords + iVar1 + -0xc)) {",
@@ -259,7 +243,7 @@
     {
       "description": "Complex pointer cast",
       "line": 94,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)pCVar1",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)pCVar1->uv_coords + iVar1 + -0xc) = uStack_18;",
@@ -268,7 +252,7 @@
     {
       "description": "Complex pointer cast",
       "line": 96,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)pCVar1",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "if (uVar4 == *(uint *)((int)pCVar1->uv_coords + iVar1 + -8)) {",
@@ -277,7 +261,7 @@
     {
       "description": "Complex pointer cast",
       "line": 97,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)pCVar1",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)pCVar1->uv_coords + iVar1 + -8) = uStack_18;",
@@ -286,7 +270,7 @@
     {
       "description": "Complex pointer cast",
       "line": 99,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)pCVar1",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "if (uVar4 == *(uint *)((int)pCVar1->uv_coords + iVar1 + -4)) {",
@@ -295,7 +279,7 @@
     {
       "description": "Complex pointer cast",
       "line": 100,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)pCVar1",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)pCVar1->uv_coords + iVar1 + -4) = uStack_18;",
@@ -304,7 +288,7 @@
     {
       "description": "Complex pointer cast",
       "line": 107,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)pdVar2",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(byte *)((int)pdVar2 + 0x35) = *(byte *)((int)pdVar2 + 0x35) | 0x80;",
@@ -313,7 +297,7 @@
     {
       "description": "Complex pointer cast",
       "line": 107,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)pdVar2",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(byte *)((int)pdVar2 + 0x35) = *(byte *)((int)pdVar2 + 0x35) | 0x80;",
@@ -525,7 +509,24 @@
     ],
     "severity": "medium"
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 121,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005d42d3: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 137,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005d430b: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

@@ -7,16 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 455,
-    "complexity_score": 293,
+    "complexity_score": 208,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 193,
-    "suspect_count": 9,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_alignment_array",
-      "unnamed_local"
+      "stack_alignment_array"
     ],
     "total_lines": 648
   },
@@ -222,17 +221,8 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 127,
-      "match": "(void *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "local_48 = (void *)((int)(light_source->base).base.rotation_matrix.m + (int)local_78 * 4 + -0x10",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 133,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)light_source",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "piVar4 = (int *)((int)light_source->corona_visibility_buffers + iVar8 + local_44);",
@@ -241,7 +231,7 @@
     {
       "description": "Complex pointer cast",
       "line": 134,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)light_source",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "puVar5 = (uint *)((int)light_source->corona_depth_buffer + iVar8 + local_44);",
@@ -250,7 +240,7 @@
     {
       "description": "Complex pointer cast",
       "line": 136,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)light_source",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "piVar6 = (int *)((int)light_source->corona_lightmap_indices + iVar8 + local_44);",
@@ -259,7 +249,7 @@
     {
       "description": "Complex pointer cast",
       "line": 189,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)local_48",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)((int)local_48 + 0x14c8) = local_34;",
@@ -268,7 +258,7 @@
     {
       "description": "Complex pointer cast",
       "line": 190,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)local_48",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)((int)local_48 + 0x1888) = local_38;",
@@ -277,7 +267,7 @@
     {
       "description": "Complex pointer cast",
       "line": 191,
-      "match": "(void *)((int)",
+      "match": "(void *)((int)local_48",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "local_48 = (void *)((int)local_48 + 4);",
@@ -286,7 +276,7 @@
     {
       "description": "Complex pointer cast",
       "line": 192,
-      "match": "(void *)((int)",
+      "match": "(void *)((int)local_2c",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "local_2c = (void *)((int)local_2c + 1);",
@@ -533,78 +523,6 @@
       "severity": "moderate",
       "text": "void *apvStackY_185c [1523];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 34,
-      "match": "local_80",
-      "severity": "mild",
-      "text": "int local_80;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 49,
-      "match": "local_2c",
-      "severity": "mild",
-      "text": "int local_2c;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 98,
-      "match": "local_80",
-      "severity": "mild",
-      "text": "local_80 = 0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 114,
-      "match": "local_2c",
-      "severity": "mild",
-      "text": "local_2c = (int)local_78;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 116,
-      "match": "local_2c",
-      "severity": "mild",
-      "text": "for (; local_2c <= local_74; local_2c++) {",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 116,
-      "match": "local_2c",
-      "severity": "mild",
-      "text": "for (; local_2c <= local_74; local_2c++) {",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 117,
-      "match": "local_2c",
-      "severity": "mild",
-      "text": "local_50 = g_PrecomputedWorldPositions + local_2c * 0x140;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 118,
-      "match": "local_2c",
-      "severity": "mild",
-      "text": "local_54 = g_PrecomputedSurfaceNormals[local_2c];",
-      "type": "unnamed_local"
     }
   ]
 }

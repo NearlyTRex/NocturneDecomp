@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 150,
+    "complexity_score": 140,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 65,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "stack_ref",
@@ -76,23 +76,15 @@
     {
       "description": "Complex pointer cast",
       "line": 24,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)aiStack_1c",
       "severity": "moderate",
       "text": "*(uint *)((int)aiStack_1c + iVar5 + 4) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&uStack_20 + iVar5) = 0x609e9e;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 28,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)aiStack_1c",
       "severity": "moderate",
       "text": "(*(void **)((int)aiStack_1c + iVar5),*(int *)((int)aiStack_1c + iVar5 + 4),",
       "type": "pointer_cast"
@@ -108,7 +100,7 @@
     {
       "description": "Complex pointer cast",
       "line": 33,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)aiStack_1c",
       "severity": "moderate",
       "text": "*(uint *)((int)aiStack_1c + iVar5) = 0x609eb6;",
       "type": "pointer_cast"
@@ -116,7 +108,7 @@
     {
       "description": "Complex pointer cast",
       "line": 41,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)aiStack_1c",
       "severity": "moderate",
       "text": "*(uint *)((int)aiStack_1c + iVar5 + 4) = 0x609ed4;",
       "type": "pointer_cast"

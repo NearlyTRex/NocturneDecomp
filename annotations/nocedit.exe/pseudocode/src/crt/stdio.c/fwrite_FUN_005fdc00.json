@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 293,
+    "complexity_score": 228,
     "cross_reference_count": 23,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 113,
-    "suspect_count": 16,
+    "suspect_count": 10,
     "suspect_types": [
-      "pointer_cast",
       "raw_address_constant",
       "unaffected_reg",
       "unrolled_memcpy"
@@ -422,70 +421,6 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "bVar7 = *(byte *)((int)&file->_flag + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&file->_flag + 1) = bVar7;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&file->_flag + 1) = bVar7 | 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 59,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "bVar7 = *(byte *)((int)&file->_flag + 1) & 0xfa;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 60,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&file->_flag + 1) = bVar7;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&file->_flag + 1) = bVar7 | 4;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 98,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "bVar1 = *(byte *)((int)&file->_flag + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 101,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&file->_flag + 1) = bVar1 | 0x10;",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unaffected register variable",
       "line": 108,
       "match": "unaff_EBP",
@@ -539,6 +474,22 @@
       "match": "for (...; != 0; ... + -1)",
       "severity": "mild",
       "text": "for (uVar6 = uVar4 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 124,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005fdd17: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
+      "line": 127,
+      "match": "MOVSB.REP",
+      "severity": "moderate",
+      "text": "// 005fdd1e: MOVSB.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
     }
   ]

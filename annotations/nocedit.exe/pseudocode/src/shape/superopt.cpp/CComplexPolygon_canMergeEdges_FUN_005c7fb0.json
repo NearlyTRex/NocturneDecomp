@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 71,
+    "complexity_score": 96,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 71,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 234
   },
   "cross_references": [
@@ -111,7 +113,7 @@
     {
       "description": "Complex pointer cast",
       "line": 41,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar3",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar3 = (double *)((int)pdVar3 + 4);",
@@ -174,7 +176,7 @@
     {
       "description": "Complex pointer cast",
       "line": 57,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar2",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar2 = (double *)((int)pdVar2 + 4);",
@@ -380,5 +382,22 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 69,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005c803f: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 101,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005c80aa: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 201,
-    "complexity_score": 484,
+    "complexity_score": 434,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 99,
-    "suspect_count": 36,
+    "suspect_count": 31,
     "suspect_types": [
       "negative_offset",
       "param_count_too_few",
@@ -234,7 +234,7 @@
     {
       "description": "Complex pointer cast",
       "line": 34,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)ppHVar1",
       "severity": "moderate",
       "text": "for (puVar8 = (uint *)((int)ppHVar1 + uVar7); uVar1 = *puVar8, uVar1 != 0xffffffff;",
       "type": "pointer_cast"
@@ -242,7 +242,7 @@
     {
       "description": "Complex pointer cast",
       "line": 35,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)puVar8",
       "severity": "moderate",
       "text": "puVar8 = (uint *)((int)puVar8 + uVar1)) {",
       "type": "pointer_cast"
@@ -270,14 +270,6 @@
       "severity": "moderate",
       "text": "((in_stack_00000008 < new_size ||",
       "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(Heap *)((int)",
-      "severity": "moderate",
-      "text": "((Heap *)((int)&((Heap *)new_size)->heap_size + ((Heap *)new_size)->heap_size) <=",
-      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
@@ -314,7 +306,7 @@
     {
       "description": "Complex pointer cast",
       "line": 58,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)puVar8",
       "severity": "moderate",
       "text": "puVar5 = (uint *)((int)puVar8 + *in_stack_00000010);",
       "type": "pointer_cast"
@@ -326,30 +318,6 @@
       "severity": "moderate",
       "text": "*ppHVar1 = (Heap *)((int)&(*ppHVar1)->heap_size + *in_stack_00000010);",
       "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 64,
-      "match": "(Heap *)((int)",
-      "severity": "moderate",
-      "text": "*ppHVar1 = (Heap *)((int)&(*ppHVar1)->heap_size + *in_stack_00000010);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 71,
-      "match": "(Heap *)((int)",
-      "severity": "moderate",
-      "text": "*ppHVar1 = (Heap *)((int)&(*ppHVar1)->heap_size + uVar1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 73,
-      "match": "(void *)((int)",
-      "severity": "moderate",
-      "text": "(void *)((int)((Heap *)(new_size + 0x18))->heap_base + -1);",
-      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
@@ -378,7 +346,7 @@
     {
       "description": "Complex pointer cast",
       "line": 83,
-      "match": "(uint *)(uVar4 + (int)",
+      "match": "(uint *)(uVar4 + (int)ppHVar1",
       "severity": "moderate",
       "text": "*(uint *)(uVar4 + (int)ppHVar1) = uVar7 - uVar4 | 1;",
       "type": "pointer_cast"
@@ -408,14 +376,6 @@
       "type": "stack_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 89,
-      "match": "(Heap *)((int)",
-      "severity": "moderate",
-      "text": "((Heap *)((int)&((Heap *)new_size)->heap_size + ((Heap *)new_size)->heap_size) <=",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 90,
       "match": "in_stack_00000008",
@@ -426,7 +386,7 @@
     {
       "description": "Complex pointer cast",
       "line": 96,
-      "match": "(uint *)(uVar4 + (int)",
+      "match": "(uint *)(uVar4 + (int)ppHVar1",
       "severity": "moderate",
       "text": "ValidateHeapIntegrity((uint *)(uVar4 + (int)ppHVar1) + 1);",
       "type": "pointer_cast"

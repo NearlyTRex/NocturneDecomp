@@ -6,6 +6,7 @@
 // Signature: int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530(SBitBuffer *bit_buffer,int bit_count,_istream *istream,int *bytes_remaining)
 
 #include "nocturne.h"
+#include "stream_compat.h"
 
 int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530(SBitBuffer *bit_buffer,int bit_count,_istream *istream,int *bytes_remaining)
 
@@ -43,8 +44,7 @@ int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530(SBitBuffer *bit_bu
         if (0 < iVar3) {
           if ((*bytes_remaining < 1) ||
              (crt_iostream_cpp_istream_get_FUN_005ff245(istream,(char *)local_18),
-             *(int *)((istream->_ios).padding +
-                     ((istream->_istream_core).layout_info)->offset_to_base + -0x21) != 0)) {
+             std_istream_from(istream).fail())) {
             uVar2 = 0xffffffff;
           }
           else {
@@ -67,8 +67,7 @@ int __cdecl support_codec_cpp_readBitsFromStream_FUN_0043e530(SBitBuffer *bit_bu
       }
       if ((*bytes_remaining < 1) ||
          (crt_iostream_cpp_istream_get_FUN_005ff245(istream,(char *)local_14),
-         *(int *)((istream->_ios).padding +
-                 ((istream->_istream_core).layout_info)->offset_to_base + -0x21) != 0)) break;
+         std_istream_from(istream).fail())) break;
       *bytes_remaining = *bytes_remaining + -1;
       uVar5 = uVar5 | (uint)local_14[0] << ((byte)iVar4 & 0x1f);
       iVar3 = iVar3 + -8;

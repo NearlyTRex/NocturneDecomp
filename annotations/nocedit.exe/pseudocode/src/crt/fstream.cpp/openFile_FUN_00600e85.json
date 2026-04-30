@@ -199,7 +199,7 @@
     {
       "description": "Complex pointer cast",
       "line": 13,
-      "match": "(ios *)((int)",
+      "match": "(ios *)((int)stream_obj",
       "severity": "moderate",
       "text": "((ios *)((int)stream_obj + *(int *)(*(int *)stream_obj + 4)),0);",
       "type": "pointer_cast"
@@ -207,7 +207,7 @@
     {
       "description": "Complex pointer cast",
       "line": 16,
-      "match": "(FileEmbeddedData *)((int)",
+      "match": "(FileEmbeddedData *)((int)stream_obj",
       "severity": "moderate",
       "text": "embedded_data = (FileEmbeddedData *)((int)stream_obj + *(int *)(*(int *)stream_obj + 4));",
       "type": "pointer_cast"

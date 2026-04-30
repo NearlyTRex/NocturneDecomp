@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 407,
-    "complexity_score": 198,
+    "complexity_score": 163,
     "cross_reference_count": 7,
     "function_call_count": 9,
     "global_count": 11,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 148,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_local",
       "warning_inlined_function"
     ],
     "total_lines": 555
@@ -346,7 +345,7 @@
     {
       "description": "Complex pointer cast",
       "line": 124,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pSVar6",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar3->vertices[0].vertex_index = *(int *)((int)pSVar6 + iVar7 + 0x18);",
@@ -355,7 +354,7 @@
     {
       "description": "Complex pointer cast",
       "line": 125,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pSVar6",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar3->vertices[0].texture_u = *(int *)((int)pSVar6 + iVar7 + 0x1c);",
@@ -364,7 +363,7 @@
     {
       "description": "Complex pointer cast",
       "line": 126,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)pSVar6",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "iVar7 = *(int *)((int)pSVar6 + iVar7 + 0x20);",
@@ -423,33 +422,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 28,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "int local_18;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 121,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "local_18 = 0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 125,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "iVar7 = pSVar6[local_18].base.base.count;",
-      "type": "unnamed_local"
     }
   ]
 }

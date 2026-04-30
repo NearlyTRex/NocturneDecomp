@@ -122,17 +122,6 @@
     },
     "pcode_op_count": 160
   },
-  "resolved_suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 9,
-      "match": "(SMRGLHeaderExtended *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "model_ptr = (SMRGLHeaderExtended *)((int)&(model_ptr->base).type + iVar1);",
-      "type": "pointer_cast"
-    }
-  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,

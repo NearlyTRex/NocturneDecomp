@@ -2453,12 +2453,8 @@ static_assert(__builtin_offsetof(CDemonSet, ambient_base_quick) == 1420928,
               "offsetof(CDemonSet, ambient_base_quick) != 1420928");
 static_assert(__builtin_offsetof(CDemonSet, skip_normal_normalization) == 1420932,
               "offsetof(CDemonSet, skip_normal_normalization) != 1420932");
-static_assert(__builtin_offsetof(CDemonSet, light_scale_factor) == 1420936,
-              "offsetof(CDemonSet, light_scale_factor) != 1420936");
-static_assert(__builtin_offsetof(CDemonSet, color_scale_factor) == 1420940,
-              "offsetof(CDemonSet, color_scale_factor) != 1420940");
-static_assert(__builtin_offsetof(CDemonSet, fog_scale_factor) == 1420944,
-              "offsetof(CDemonSet, fog_scale_factor) != 1420944");
+static_assert(__builtin_offsetof(CDemonSet, flat_color) == 1420936,
+              "offsetof(CDemonSet, flat_color) != 1420936");
 static_assert(__builtin_offsetof(CDemonSet, set_scale_factor) == 1420948,
               "offsetof(CDemonSet, set_scale_factor) != 1420948");
 static_assert(__builtin_offsetof(CDemonSet, dead1) == 1420952,
@@ -2529,12 +2525,8 @@ static_assert(__builtin_offsetof(CDemonSet, mirror_camera_dirty) == 1447508,
               "offsetof(CDemonSet, mirror_camera_dirty) != 1447508");
 static_assert(__builtin_offsetof(CDemonSet, mirror_lighting_cached) == 1447512,
               "offsetof(CDemonSet, mirror_lighting_cached) != 1447512");
-static_assert(__builtin_offsetof(CDemonSet, mirror_cached_light) == 1447516,
-              "offsetof(CDemonSet, mirror_cached_light) != 1447516");
-static_assert(__builtin_offsetof(CDemonSet, mirror_cached_color) == 1447520,
-              "offsetof(CDemonSet, mirror_cached_color) != 1447520");
-static_assert(__builtin_offsetof(CDemonSet, mirror_cached_fog) == 1447524,
-              "offsetof(CDemonSet, mirror_cached_fog) != 1447524");
+static_assert(__builtin_offsetof(CDemonSet, mirror_cached_color) == 1447516,
+              "offsetof(CDemonSet, mirror_cached_color) != 1447516");
 static_assert(__builtin_offsetof(CDemonSet, weather_type) == 1447528,
               "offsetof(CDemonSet, weather_type) != 1447528");
 

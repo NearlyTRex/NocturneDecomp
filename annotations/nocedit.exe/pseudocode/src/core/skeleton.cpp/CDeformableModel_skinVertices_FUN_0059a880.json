@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 73,
+    "complexity_score": 58,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 58,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_local"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 195
   },
   "cross_references": [
@@ -116,7 +114,7 @@
     {
       "description": "Complex pointer cast",
       "line": 31,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)pfVar3",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "(&local_3c,input_vector,bone_matrices + *(byte *)((int)pfVar3 + 1));",
@@ -125,7 +123,7 @@
     {
       "description": "Complex pointer cast",
       "line": 46,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)pfVar1",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "(&local_54,input_vector,bone_matrices + *(byte *)((int)pfVar1 + 1));",
@@ -134,7 +132,7 @@
     {
       "description": "Complex pointer cast",
       "line": 47,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)pfVar1",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pfVar1 = (float *)((int)pfVar1 + 1);",
@@ -262,15 +260,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 21,
-      "match": "local_20",
-      "severity": "mild",
-      "text": "int local_20;",
-      "type": "unnamed_local"
-    }
-  ]
+  "suspects": []
 }

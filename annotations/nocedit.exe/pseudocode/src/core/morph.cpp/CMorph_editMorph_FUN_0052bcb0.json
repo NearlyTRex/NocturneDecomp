@@ -7,16 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1020,
-    "complexity_score": 975,
+    "complexity_score": 430,
     "cross_reference_count": 1,
     "function_call_count": 42,
     "global_count": 33,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 415,
-    "suspect_count": 55,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "unnamed_local"
+      "pointer_cast"
     ],
     "total_lines": 1435
   },
@@ -613,11 +612,11 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 160,
-      "match": "(float *)((int)",
+      "line": 156,
+      "match": "(int *)((int)local_8c",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "pfVar10 = (float *)((int)&local_4a8[0].position[0].x + local_48);",
+      "text": "(local_3c,*(int *)(*(int *)((int)local_8c + local_34) + 0x2c),",
       "type": "pointer_cast"
     },
     {
@@ -628,15 +627,6 @@
       "severity": "moderate",
       "text": "local_40 = (CDeformableModelInstance *)&stack0xffffb248;",
       "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 203,
-      "match": "(int *)((int)",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "(iVar12 = *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex)",
-      "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
@@ -659,7 +649,7 @@
     {
       "description": "Complex pointer cast",
       "line": 228,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)local_4a8",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "if (iVar15 == *(int *)((int)local_4a8[0].vertex_index + iVar12 + 4)) {",
@@ -668,7 +658,7 @@
     {
       "description": "Complex pointer cast",
       "line": 229,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)local_4a8",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "local_4c = *(float *)((int)local_4a8 + local_64 + iVar6 + 4);",
@@ -785,7 +775,7 @@
     {
       "description": "Complex pointer cast",
       "line": 294,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)local_4a8",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "[*(int *)((int)local_4a8[0].vertex_index + iVar16)].projected_vertex,5);",
@@ -812,7 +802,7 @@
     {
       "description": "Complex pointer cast",
       "line": 324,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)local_4a8",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(int *)((int)local_4a8[0].vertex_index + unaff_EBP * 4 + local_70 + 4) = iVar15;",
@@ -830,7 +820,7 @@
     {
       "description": "Complex pointer cast",
       "line": 327,
-      "match": "(float *)((int)",
+      "match": "(float *)((int)local_4a8",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(float *)((int)local_4a8 + iVar17 + 4) = local_4c;",
@@ -1378,495 +1368,11 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 156,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(local_3c,*(int *)(*(int *)((int)local_8c + local_34) + 0x2c),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 166,
-      "match": "(int *)((int)",
+      "match": "(int *)((int)local_4a8",
       "severity": "moderate",
       "text": "*(int *)((int)local_4a8[0].vertex_index + iVar5) * 0xc);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 200,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "iVar12 = *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 38,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "CDeformableModelInstance local_4db8 [2];",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 42,
-      "match": "local_128",
-      "severity": "mild",
-      "text": "CBoundingBox3D local_128 [3];",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 69,
-      "match": "local_6c",
-      "severity": "mild",
-      "text": "int local_6c;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 70,
-      "match": "local_68",
-      "severity": "mild",
-      "text": "int local_68;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 73,
-      "match": "local_5c",
-      "severity": "mild",
-      "text": "uint local_5c;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 81,
-      "match": "local_38",
-      "severity": "mild",
-      "text": "int local_38;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 82,
-      "match": "local_30",
-      "severity": "mild",
-      "text": "int local_30;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 83,
-      "match": "local_2c",
-      "severity": "mild",
-      "text": "CDeformableModelInstance *local_2c;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 85,
-      "match": "local_24",
-      "severity": "mild",
-      "text": "int local_24;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 92,
-      "match": "local_8",
-      "severity": "mild",
-      "text": "int local_8;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 102,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "__arrinit(local_4db8,2,&g_CDeformableModelInstanceTypeInfo);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 107,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(local_4db8,local_228);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 112,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(local_4db8 + 1,local_228);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 115,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(local_4db8);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 116,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(local_4db8 + 1);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 117,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "local_8c[0] = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(local_4db8);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 119,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "(local_4db8 + 1);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 126,
-      "match": "local_6c",
-      "severity": "mild",
-      "text": "local_6c = -1;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 131,
-      "match": "local_128",
-      "severity": "mild",
-      "text": "__arrinit(local_128,2,&g_CBoundingBox3DTypeInfo);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 132,
-      "match": "local_30",
-      "severity": "mild",
-      "text": "local_30 = 0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 134,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "local_28 = local_4db8;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 140,
-      "match": "local_30",
-      "severity": "mild",
-      "text": "(local_3c,local_8c[local_30]->vertex_count[0],",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 141,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "local_4db8[local_30].skinned_vertices_buffer);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 146,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "pCVar4 = local_4db8[local_30].skinned_vertices_buffer +",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 167,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "local_40 = local_4db8;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 213,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "piVar8 = (int *)((char *)local_4db8[picked_side].skinned_vertices_buffer + iVar15 * 0xc);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 218,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "piVar7 = (int *)((char *)local_4db8[1 - picked_side].skinned_vertices_buffer + iVar12);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 245,
-      "match": "local_2c",
-      "severity": "mild",
-      "text": "local_2c = local_4db8;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 245,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "local_2c = local_4db8;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 246,
-      "match": "local_24",
-      "severity": "mild",
-      "text": "local_24 = -1;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 248,
-      "match": "local_8",
-      "severity": "mild",
-      "text": "local_8 = 0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 256,
-      "match": "local_2c",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250(local_2c,0);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 257,
-      "match": "local_5c",
-      "severity": "mild",
-      "text": "if (local_5c == 0) {",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 270,
-      "match": "local_24",
-      "severity": "mild",
-      "text": "local_24 = iVar12;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 298,
-      "match": "local_6c",
-      "severity": "mild",
-      "text": "if ((-1 < local_68) && (local_6c == picked_side) && (local_24 < 0)) {",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 298,
-      "match": "local_24",
-      "severity": "mild",
-      "text": "if ((-1 < local_68) && (local_6c == picked_side) && (local_24 < 0)) {",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 299,
-      "match": "local_6c",
-      "severity": "mild",
-      "text": "local_4a8[local_68].vertex_index[local_6c] = iVar15;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 303,
-      "match": "local_24",
-      "severity": "mild",
-      "text": "if (-1 < local_24) {",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 305,
-      "match": "local_6c",
-      "severity": "mild",
-      "text": "local_6c = picked_side;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 313,
-      "match": "local_6c",
-      "severity": "mild",
-      "text": "local_6c = picked_side;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 325,
-      "match": "local_6c",
-      "severity": "mild",
-      "text": "local_6c = -1;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 339,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(local_4db8);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 340,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(local_4db8 + 1);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 341,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(local_4db8);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 342,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(local_4db8 + 1);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 343,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430(morph,0,local_4db8);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 344,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430(morph,1,local_4db8 + 1);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 346,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "core_morph_cpp_CMorph_previewMorph_FUN_0052ca90(morph,local_4db8);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 355,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "pCVar16 = &local_4db8[0].motion_controller;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 378,
-      "match": "local_5c",
-      "severity": "mild",
-      "text": "local_5c = (uint)(local_5c == 0);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 384,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "core_morph_cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0(local_4db8,0);",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 388,
-      "match": "local_4db8",
-      "severity": "mild",
-      "text": "core_morph_cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0(local_4db8,0);",
-      "type": "unnamed_local"
     }
   ]
 }

@@ -10,9 +10,7 @@
 void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_0056d380(CDemonSet *this_ptr,CVector3f *position,UOrientationVector *orientation,CVector3f *aabb_min,CVector3f *aabb_max,CMatrix3x3f *rotation_matrix)
 
 {
-  int iVar1;
-  float *pfVar2;
-  
+
   if (position == (CVector3f *)0x0) {
     g_LightingSystemDirty = 1;
   }
@@ -50,12 +48,7 @@ void __cdecl core_set_cpp_CDemonSet_setLightingParameters_FUN_0056d380(CDemonSet
       g_LightingSystemDirty = 2;
       return;
     }
-    pfVar2 = (float *)&g_LightingRotationMatrix;
-    for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *pfVar2 = *(float *)rotation_matrix;
-      rotation_matrix = (CMatrix3x3f *)((int)rotation_matrix + 4);
-      pfVar2 = pfVar2 + 1;
-    }
+    g_LightingRotationMatrix = *rotation_matrix;
     g_LightingSystemDirty = 2;
   }
   return;

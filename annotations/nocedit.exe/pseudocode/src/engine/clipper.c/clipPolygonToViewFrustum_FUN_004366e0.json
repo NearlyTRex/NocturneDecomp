@@ -7,15 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 1036,
-    "complexity_score": 656,
+    "complexity_score": 641,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 68,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 581,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
-      "pointer_cast",
       "warning_type_propagation",
       "warning_unreachable"
     ],
@@ -672,17 +671,17 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 428,
-      "match": "(int *)((int)",
+      "line": 415,
+      "match": "(int *)((int)plVar14",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "iVar12 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z +",
+      "text": "(pSVar15->projected_vertex).transformed_y = *(int *)((int)plVar14 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 456,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)plVar20",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)plVar20 + 4) = *(uint *)((int)plVar18 + 4);",
@@ -691,7 +690,7 @@
     {
       "description": "Complex pointer cast",
       "line": 456,
-      "match": "(uint *)((int)",
+      "match": "(uint *)((int)plVar18",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)plVar20 + 4) = *(uint *)((int)plVar18 + 4);",
@@ -947,14 +946,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 415,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "(pSVar15->projected_vertex).transformed_y = *(int *)((int)plVar14 + 4);",
-      "type": "pointer_cast"
     }
   ]
 }

@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 52,
+    "complexity_score": 37,
     "cross_reference_count": 10,
     "function_call_count": 2,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 37,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 127
   },
   "cross_references": [
@@ -306,14 +304,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(byte *)((int)",
-      "severity": "moderate",
-      "text": "pbVar1 = (byte *)((int)&stream_ptr->_flag + 1);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

@@ -1,0 +1,46 @@
+// Name: cockpit_ckptutil.c_rasterizeEdgeEndpoints_FUN_004336e0
+// Address: 004336e0
+// MANUAL RECONSTRUCTION
+// Address Range: [[004336e0, 00433817]]
+// Convention: __cdecl
+// Signature: void __cdecl cockpit_ckptutil_c_rasterizeEdgeEndpoints_FUN_004336e0(void *bitmap_buffer,SEdge *edge_list,int edge_count,int buffer_width,int buffer_height)
+
+#include "nocturne.h"
+
+void __cdecl cockpit_ckptutil_c_rasterizeEdgeEndpoints_FUN_004336e0(void *bitmap_buffer,SEdge *edge_list,int edge_count,int buffer_width,int buffer_height)
+
+{
+  int iVar1;
+  int iVar4;
+  int iVar2;
+  int iVar3;
+  char local_114 [256];
+  
+  if (bitmap_buffer != (void *)0x0) {
+    iVar3 = 0;
+    if (0 < edge_count) {
+      iVar2 = buffer_width * buffer_height + -1;
+      do {
+        iVar1 = (int)edge_list->x0 + edge_list->y0 * buffer_width;
+        if ((iVar1 < 0) || (iVar2 < iVar1)) {
+          _sprintf(local_114,"Edge out of range: edge %d",iVar3);
+          g_CurrentFilename = "..\\cockpit\\ckptutil.c";
+          g_CurrentLineNumber = 0x553;
+          core_main_c_displayErrorAndQuit_FUN_00506f10(local_114);
+        }
+        ((byte *)bitmap_buffer)[iVar1] = 0xfb;
+        iVar4 = (int)edge_list->x1 + buffer_width * ((short)(edge_list->y1 * 2) >> 1);
+        if ((iVar4 < 0) || (iVar2 < iVar4)) {
+          _sprintf(local_114,"Edge out of range: edge %d",iVar3);
+          g_CurrentFilename = "..\\cockpit\\ckptutil.c";
+          g_CurrentLineNumber = 0x55c;
+          core_main_c_displayErrorAndQuit_FUN_00506f10(local_114);
+        }
+        edge_list = edge_list + 1;
+        iVar3 = iVar3 + 1;
+        ((byte *)bitmap_buffer)[iVar4] = 0xfb;
+      } while (iVar3 < edge_count);
+    }
+  }
+  return;
+}

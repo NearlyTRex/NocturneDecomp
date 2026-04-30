@@ -321,7 +321,7 @@
     {
       "description": "Complex pointer cast",
       "line": 93,
-      "match": "(ushort *)((int)",
+      "match": "(ushort *)((int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "puVar8 = (ushort *)((int)g_ScreenBufferArray[(int)pcVar8] + x_position * 2);",
       "type": "pointer_cast"
@@ -329,7 +329,7 @@
     {
       "description": "Complex pointer cast",
       "line": 126,
-      "match": "(int *)(x_position * 4 + (int)",
+      "match": "(int *)(x_position * 4 + (int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "piVar9 = (int *)(x_position * 4 + (int)g_ScreenBufferArray[(int)pcVar8]);",
       "type": "pointer_cast"

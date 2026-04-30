@@ -7,16 +7,15 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 138,
+    "complexity_score": 113,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 32,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 58,
-    "suspect_count": 6,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
-      "unnamed_local",
       "unrolled_strcpy",
       "warning_inlined_function"
     ],
@@ -352,15 +351,6 @@
       "type": "unrolled_strcpy"
     },
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 19,
-      "match": "local_14",
-      "severity": "mild",
-      "text": "int local_14;",
-      "type": "unnamed_local"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "introduced_by": "keep",
       "line": 27,
@@ -377,15 +367,6 @@
       "severity": "mild",
       "text": "iVar1 = (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.x * 65535.0f));",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 38,
-      "match": "local_14",
-      "severity": "mild",
-      "text": "for (local_14 = 0; local_14 < (int)g_ModelPolygonData[polygon_index].vertex_indices_count;",
-      "type": "unnamed_local"
     }
   ]
 }

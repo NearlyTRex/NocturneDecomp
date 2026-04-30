@@ -12,7 +12,6 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyNoClip_FUN_0054ae70(CPackedB
 {
   int iVar4;
   ushort *puVar5;
-  int local_1c;
   int local_18;
   OptimizedMemcpyFunc *local_14;
   char *pcVar2;
@@ -51,11 +50,10 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyNoClip_FUN_0054ae70(CPackedB
   g_CurrentLineNumber = 0x29e;
   core_main_c_displayErrorAndQuit_FUN_00506f10("CPackedBitmap::copyNoClip - invalid destBitsPerPixel: %d",row_stride);
 LAB_0054aec0:
-  local_1c = 0;
-  puVar5 = (ushort *)((int)this_ptr->packed_data + (int)*this_ptr->row_pointers);
+  puVar5 = (ushort *)((char *)this_ptr->packed_data + (int)this_ptr->row_pointers[0]);
   do {
     pcVar2 = (char *)this_ptr->packed_data;
-    iVar3 = *(int *)((int)this_ptr->row_pointers + local_1c + 4);
+    iVar3 = (int)this_ptr->row_pointers[local_18 + 1];
     for (; (char *)puVar5 < pcVar2 + iVar3;
         puVar5 = (ushort *)((uVar1 + 3 & 0xfffffffc) + (int)(puVar5 + 2))) {
       iVar4 = (int)((uint)*puVar5 * row_stride) >> 0x1f;
@@ -64,7 +62,6 @@ LAB_0054aec0:
                   ((int)(((uint)*puVar5 * row_stride + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3),
                   puVar5 + 2,(uint)uVar1);
     }
-    local_1c = local_1c + 4;
     local_18 = local_18 + 1;
     dest_buffer = dest_buffer + bits_per_pixel;
   } while (local_18 < this_ptr->height);

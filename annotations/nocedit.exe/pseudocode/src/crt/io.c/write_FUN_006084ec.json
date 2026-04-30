@@ -341,7 +341,7 @@
     {
       "description": "Complex pointer cast",
       "line": 57,
-      "match": "(char *)((int)",
+      "match": "(char *)((int)buffer",
       "severity": "moderate",
       "text": "if (*(char *)((int)buffer + (int)puVar9) == '\\n') {",
       "type": "pointer_cast"
@@ -397,7 +397,7 @@
     {
       "description": "Complex pointer cast",
       "line": 87,
-      "match": "(byte *)((int)",
+      "match": "(byte *)((int)buffer",
       "severity": "moderate",
       "text": "puVar8[(int)&stack0xfffffff0] = *(byte *)((int)buffer + (int)puVar9);",
       "type": "pointer_cast"

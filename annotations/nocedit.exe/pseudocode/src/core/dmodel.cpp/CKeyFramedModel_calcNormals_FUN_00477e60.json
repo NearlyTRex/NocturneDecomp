@@ -7,15 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 105,
+    "complexity_score": 90,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 75,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
       "warning_inlined_function"
     ],
     "total_lines": 238
@@ -213,14 +212,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar9 = (int *)((int)&this_ptr->vertex_normal_list->x + iVar7);",
-      "type": "pointer_cast"
     }
   ]
 }

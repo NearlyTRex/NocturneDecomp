@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 226,
-    "complexity_score": 191,
+    "complexity_score": 121,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 96,
-    "suspect_count": 9,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_local"
+      "unrolled_memcpy"
     ],
     "total_lines": 322
   },
@@ -111,7 +111,7 @@
     {
       "description": "Complex pointer cast",
       "line": 56,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar9",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
@@ -120,7 +120,7 @@
     {
       "description": "Complex pointer cast",
       "line": 57,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar10",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar10 = (double *)((int)pdVar10 + 4);",
@@ -129,7 +129,7 @@
     {
       "description": "Complex pointer cast",
       "line": 71,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar7",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar7 = (double *)((int)pdVar7 + 4);",
@@ -138,7 +138,7 @@
     {
       "description": "Complex pointer cast",
       "line": 72,
-      "match": "(double *)((int)",
+      "match": "(double *)((int)pdVar8",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
@@ -350,85 +350,20 @@
   },
   "suspects": [
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 26,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "uint local_18;",
-      "type": "unnamed_local"
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 50,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005cbbc9: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 28,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "local_18 = 0;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 32,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "uVar4 = local_18 + 1;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 36,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "dir_a.x = edges[local_18].end_pos.x - edges[local_18].start_pos.x;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 36,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "dir_a.x = edges[local_18].end_pos.x - edges[local_18].start_pos.x;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 37,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "dir_a.y = edges[local_18].end_pos.y - edges[local_18].start_pos.y;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 37,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "dir_a.y = edges[local_18].end_pos.y - edges[local_18].start_pos.y;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 38,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "dir_a.z = edges[local_18].end_pos.z - edges[local_18].start_pos.z;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 38,
-      "match": "local_18",
-      "severity": "mild",
-      "text": "dir_a.z = edges[local_18].end_pos.z - edges[local_18].start_pos.z;",
-      "type": "unnamed_local"
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 92,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005cbc61: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

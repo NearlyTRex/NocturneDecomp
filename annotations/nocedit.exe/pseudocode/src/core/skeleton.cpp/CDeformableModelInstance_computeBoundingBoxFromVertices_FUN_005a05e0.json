@@ -7,15 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 173,
-    "complexity_score": 121,
+    "complexity_score": 106,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 91,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
       "stack_alignment_array"
     ],
     "total_lines": 264
@@ -226,14 +225,6 @@
       "severity": "moderate",
       "text": "int aiStackY_1028 [1012];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "piVar11 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar9);",
-      "type": "pointer_cast"
     }
   ]
 }

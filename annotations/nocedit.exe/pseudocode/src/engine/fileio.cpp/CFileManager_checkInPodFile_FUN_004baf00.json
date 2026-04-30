@@ -7,16 +7,17 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1775,
-    "complexity_score": 784,
+    "complexity_score": 779,
     "cross_reference_count": 0,
     "function_call_count": 56,
     "global_count": 80,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 634,
-    "suspect_count": 12,
+    "suspect_count": 11,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
+      "unrolled_memcpy",
       "unrolled_strcat",
       "unrolled_strcpy",
       "unrolled_strlen",
@@ -1252,16 +1253,8 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "puVar7 = (uint *)((int)&(local_2600.directory_entries)->name + local_2c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 176,
-      "match": "(SFoundFileInfo *)((int)",
+      "match": "(SFoundFileInfo *)((int)pSVar10",
       "severity": "moderate",
       "text": "pSVar10 = (SFoundFileInfo *)((int)pSVar10 + (uint)bVar13 * -2 + 1);",
       "type": "pointer_cast"
@@ -1273,14 +1266,6 @@
       "severity": "mild",
       "text": "pcVar9 = (char *)((int)&pSVar10[-1].container_timestamp + 3);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 180,
-      "match": "(char *)((int)",
-      "severity": "moderate",
-      "text": "pcVar9 = (char *)((int)&pSVar10[-1].container_timestamp + 3);",
-      "type": "pointer_cast"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
@@ -1337,6 +1322,14 @@
       "severity": "mild",
       "text": "do {",
       "type": "unrolled_strcat"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 137,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004bb082: MOVSD.REP ES:EDI,ESI  ; g_DefaultCheckOutPath | g_DefaultCheckOutPath+4",
+      "type": "unrolled_memcpy"
     }
   ]
 }

@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 128,
+    "complexity_score": 153,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 128,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 265
   },
   "cross_references": [
@@ -124,7 +126,7 @@
     {
       "description": "Complex pointer cast",
       "line": 74,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar6",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar10 * -2 + 1) * 4);",
@@ -142,7 +144,7 @@
     {
       "description": "Complex pointer cast",
       "line": 96,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar7",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar10 * -2 + 1) * 4);",
@@ -203,5 +205,22 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 41,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0051e7d6: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 46,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0051e7ec: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

@@ -7,15 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 296,
-    "complexity_score": 167,
+    "complexity_score": 152,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 11,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 137,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
       "warning_inlined_function"
     ],
     "total_lines": 433
@@ -361,14 +360,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 65,
-      "match": "(uint *)((int)",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->r + iVar5) = 0;",
-      "type": "pointer_cast"
     }
   ]
 }

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 60,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 35,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 140
   },
   "cross_references": [],
@@ -121,6 +119,26 @@
     },
     "pcode_op_count": 389
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(byte *)(iVar1 + (int)bitmap_buffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)(iVar1 + (int)bitmap_buffer) = 0xfb;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(byte *)(iVar4 + (int)bitmap_buffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)(iVar4 + (int)bitmap_buffer) = 0xfb;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 300,
     "local_size": 280,
@@ -172,22 +190,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 23,
-      "match": "(byte *)(iVar1 + (int)",
-      "severity": "moderate",
-      "text": "*(byte *)(iVar1 + (int)bitmap_buffer) = 0xfb;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 33,
-      "match": "(byte *)(iVar4 + (int)",
-      "severity": "moderate",
-      "text": "*(byte *)(iVar4 + (int)bitmap_buffer) = 0xfb;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

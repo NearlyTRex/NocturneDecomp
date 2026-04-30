@@ -4,18 +4,18 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 56,
+    "complexity_score": 76,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 41,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast"
+      "unrolled_memset"
     ],
     "total_lines": 104
   },
@@ -121,6 +121,17 @@
     },
     "pcode_op_count": 279
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(byte *)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar4 = (byte *)((int)g_ScreenBufferArray[uVar3] + g_ClipLeft);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -139,12 +150,28 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 16,
-      "match": "(byte *)((int)",
+      "description": "Watcom inline memset (REP STOSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 4) in a .keep.",
+      "line": 42,
+      "match": "STOSD.REP",
       "severity": "moderate",
-      "text": "puVar4 = (byte *)((int)g_ScreenBufferArray[uVar3] + g_ClipLeft);",
-      "type": "pointer_cast"
+      "text": "// 005b3fa1: STOSD.REP ES:EDI",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom inline memset (REP STOSW at ????????, 2-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 2) in a .keep.",
+      "line": 47,
+      "match": "STOSW.REP",
+      "severity": "moderate",
+      "text": "// 005b3fab: STOSW.REP ES:EDI",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom inline memset (REP STOSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element writes; replace the loop with memset(dst, value, count * 1) in a .keep.",
+      "line": 50,
+      "match": "STOSB.REP",
+      "severity": "moderate",
+      "text": "// 005b3fb0: STOSB.REP ES:EDI",
+      "type": "unrolled_memset"
     }
   ]
 }

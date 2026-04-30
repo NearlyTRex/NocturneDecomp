@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1204,
-    "complexity_score": 917,
+    "complexity_score": 1162,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 4,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 917,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 24,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 2121
   },
   "cross_references": [],
@@ -135,7 +137,7 @@
     {
       "description": "Complex pointer cast",
       "line": 147,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar3",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -153,7 +155,7 @@
     {
       "description": "Complex pointer cast",
       "line": 166,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -171,7 +173,7 @@
     {
       "description": "Complex pointer cast",
       "line": 212,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar3",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -189,7 +191,7 @@
     {
       "description": "Complex pointer cast",
       "line": 232,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -207,7 +209,7 @@
     {
       "description": "Complex pointer cast",
       "line": 278,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar3",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -225,7 +227,7 @@
     {
       "description": "Complex pointer cast",
       "line": 298,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -243,7 +245,7 @@
     {
       "description": "Complex pointer cast",
       "line": 344,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar3",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -261,7 +263,7 @@
     {
       "description": "Complex pointer cast",
       "line": 364,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -279,7 +281,7 @@
     {
       "description": "Complex pointer cast",
       "line": 410,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar3",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -297,7 +299,7 @@
     {
       "description": "Complex pointer cast",
       "line": 430,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -315,7 +317,7 @@
     {
       "description": "Complex pointer cast",
       "line": 476,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar3",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -333,7 +335,7 @@
     {
       "description": "Complex pointer cast",
       "line": 496,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -351,7 +353,7 @@
     {
       "description": "Complex pointer cast",
       "line": 542,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar3",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -369,7 +371,7 @@
     {
       "description": "Complex pointer cast",
       "line": 562,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -387,7 +389,7 @@
     {
       "description": "Complex pointer cast",
       "line": 608,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar3",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -405,7 +407,7 @@
     {
       "description": "Complex pointer cast",
       "line": 628,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -423,7 +425,7 @@
     {
       "description": "Complex pointer cast",
       "line": 674,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar3",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -441,7 +443,7 @@
     {
       "description": "Complex pointer cast",
       "line": 693,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -459,7 +461,7 @@
     {
       "description": "Complex pointer cast",
       "line": 739,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar3",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -477,7 +479,7 @@
     {
       "description": "Complex pointer cast",
       "line": 759,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -495,7 +497,7 @@
     {
       "description": "Complex pointer cast",
       "line": 805,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar3",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -513,7 +515,7 @@
     {
       "description": "Complex pointer cast",
       "line": 825,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -531,7 +533,7 @@
     {
       "description": "Complex pointer cast",
       "line": 871,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar3",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -549,7 +551,7 @@
     {
       "description": "Complex pointer cast",
       "line": 891,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar4",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);",
@@ -834,5 +836,198 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 300,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00582cea: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 304,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00582cf8: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 312,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00582d16: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 316,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00582d25: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 324,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00582d46: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 328,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00582d55: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 336,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00582d72: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 340,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00582d84: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 348,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00582da5: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 352,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00582db7: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 360,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00582dd8: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 364,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00582dea: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 372,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00582e0b: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 376,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00582e1d: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 384,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00582e3e: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 388,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00582e50: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 396,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00582e71: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 400,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00582e7f: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 408,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00582ea0: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 412,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00582eaf: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 420,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00582ed0: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 424,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00582edf: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 432,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00582f00: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 436,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00582f12: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

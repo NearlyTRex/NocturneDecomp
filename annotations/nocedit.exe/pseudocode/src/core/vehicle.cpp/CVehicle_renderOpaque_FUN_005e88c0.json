@@ -7,16 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 215,
-    "complexity_score": 131,
+    "complexity_score": 106,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 81,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "stack_param",
-      "unnamed_local"
+      "stack_param"
     ],
     "total_lines": 296
   },
@@ -258,24 +257,6 @@
       "severity": "moderate",
       "text": "} while (iVar3 < *(int *)(in_stack_0000000c + 0x938));",
       "type": "stack_param"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 14,
-      "match": "local_78",
-      "severity": "mild",
-      "text": "CBoundingBox3D local_78;",
-      "type": "unnamed_local"
-    },
-    {
-      "description": "Unnamed local variable",
-      "introduced_by": "keep",
-      "line": 63,
-      "match": "local_78",
-      "severity": "mild",
-      "text": "(&this_ptr->base,&local_78);",
-      "type": "unnamed_local"
     }
   ],
   "vtable_info": {

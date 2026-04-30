@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 638,
-    "complexity_score": 333,
+    "complexity_score": 313,
     "cross_reference_count": 1,
     "function_call_count": 25,
     "global_count": 50,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 278,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast"
+      "unrolled_memcpy"
     ],
     "total_lines": 916
   },
@@ -527,7 +527,7 @@
     {
       "description": "Complex pointer cast",
       "line": 95,
-      "match": "(char *)((int)",
+      "match": "(char *)((int)pcVar7",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "pcVar7 = (char *)((int)pcVar7 + ((uint)bVar10 * -2 + 1) * 4);",
@@ -760,44 +760,28 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 199,
-      "match": "(CQuaternion4f *)((int)",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 11,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "(&local_74,(CQuaternion4f *)((int)&(this_ptr->frames->orient).w + iVar6),",
-      "type": "pointer_cast"
+      "text": "// 00443062: MOVSD.REP ES:EDI,ESI  ; g_CourseLastPthPath | g_CourseLastPthPath+4",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 201,
-      "match": "(float *)((int)",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 190,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "pfVar1 = (float *)((int)&(this_ptr->frames->orient).w + iVar6);",
-      "type": "pointer_cast"
+      "text": "// 0044324a: MOVSD.REP ES:EDI,ESI  ; g_CourseLastCrsPath | g_CourseLastCrsPath+4",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 234,
-      "match": "(CVector3f *)((int)",
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 538,
+      "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "point = (CVector3f *)((int)&(this_ptr->frames->pos).x + iVar6);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 253,
-      "match": "(CQuaternion4f *)((int)",
-      "severity": "moderate",
-      "text": "(&local_38,(CQuaternion4f *)((int)&(this_ptr->frames->orient).w + iVar6));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 256,
-      "match": "(float *)((int)",
-      "severity": "moderate",
-      "text": "pfVar1 = (float *)((int)&(this_ptr->frames->orient).w + iVar6);",
-      "type": "pointer_cast"
+      "text": "// 00443637: MOVSD.REP ES:EDI,ESI  ; g_CourseLastBonPath | g_CourseLastBonPath+4",
+      "type": "unrolled_memcpy"
     }
   ]
 }

@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 68,
+    "complexity_score": 43,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 28,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
       "unresolved_funcptr"
     ],
     "total_lines": 83
@@ -116,28 +115,12 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 10,
-      "match": "(int *)((int)",
-      "severity": "moderate",
-      "text": "iVar1 = *(int *)((int)&stream->_cnt + *(int *)(stream->_ptr + 4));",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 12,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*(int *)(iVar1 + 0x28) + 0x10))(iVar1);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(FileEmbeddedData *)((int)",
-      "severity": "moderate",
-      "text": "((FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4)),6);",
-      "type": "pointer_cast"
     }
   ]
 }

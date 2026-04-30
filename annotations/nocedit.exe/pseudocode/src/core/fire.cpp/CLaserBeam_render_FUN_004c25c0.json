@@ -7,17 +7,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1296,
-    "complexity_score": 624,
+    "complexity_score": 639,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 474,
-    "suspect_count": 13,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
       "raw_address_constant",
       "suspect_float",
+      "unrolled_memcpy",
       "warning_inlined_function"
     ],
     "total_lines": 1770
@@ -984,7 +985,7 @@
     {
       "description": "Complex pointer cast",
       "line": 314,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar8",
       "severity": "moderate",
       "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
@@ -992,7 +993,7 @@
     {
       "description": "Complex pointer cast",
       "line": 317,
-      "match": "(SRenderVertex *)((int)",
+      "match": "(SRenderVertex *)((int)pSVar10",
       "severity": "moderate",
       "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -1060,6 +1061,14 @@
       "severity": "moderate",
       "text": "local_290.vertices[3].texture_v = 0xf80000;",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 629,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004c2f1d: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ]
 }

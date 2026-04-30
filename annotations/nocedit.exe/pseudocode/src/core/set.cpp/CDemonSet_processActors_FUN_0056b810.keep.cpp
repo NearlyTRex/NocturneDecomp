@@ -21,10 +21,7 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_p
   CFlameCan *this_ptr_04;
   CDemonSet *pCVar6;
   CDemonSet *pCVar4;
-  int iVar7;
-  int iVar8;
   int iVar9;
-  int iVar10;
   CDemonSet *pCVar11;
   SDamageInfo local_a0;
   CVector3f aCStack_94 [3];
@@ -41,18 +38,14 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_p
   int local_38;
   CCharacter *local_34;
   CCharacter *pCStack_30;
-  int local_2c;
   int local_28;
   int local_24;
   int local_20;
   int local_1c;
   int iStack_18;
-  int *piVar1;
   CPathMap *damage_info;
   float fDeltaTime;
-  uint *puVar2;
   CDemonActor *pCVar3;
-  uint uVar4;
   
   iVar9 = 0;
   pCVar4 = this_ptr;
@@ -94,7 +87,6 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_p
         local_1c = 999999;
         iVar2 = 0;
         if (0 < this_ptr->actor_count) {
-          iVar7 = local_20 << 2;
           pCVar4 = this_ptr;
           do {
             pCVar1 = pCVar4->actors[0];
@@ -109,12 +101,11 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_p
                           (g_CurrentProcessingActor,fDeltaTime);
                 if (g_CGamePtr->profile_mode == 2) {
                   iVar3 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
-                  *(int *)((int)g_ActorProfileTimes + iVar7) = iVar3 - local_3c;
-                  *(CDemonActor **)((int)g_ActorProfileActors + iVar7) = g_CurrentProcessingActor;
+                  g_ActorProfileTimes[local_20] = iVar3 - local_3c;
+                  g_ActorProfileActors[local_20] = g_CurrentProcessingActor;
                 }
                 if (g_CGamePtr->profile_mode != 0) {
-                  iStack_18 = iStack_18 + 1;
-                  iVar7 = iVar7 + 4;
+                  local_20 = local_20 + 1;
                 }
                 damage_info = (CPathMap *)0x56ba31;
                 this_ptr_00 = (*((g_CurrentProcessingActor->vtable)._ub)->getPathMap)
@@ -217,49 +208,28 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_p
     if (g_CGamePtr->profile_mode != 0) {
       if (g_CGamePtr->profile_mode == 2) {
         local_38 = local_20 + -1;
-        local_2c = 0;
-        local_28 = 0;
-        if (0 < local_38) {
-          local_3c = local_20 << 2;
-          do {
-            if (local_28 + 1 < local_20) {
-              iVar2 = (local_28 + 1) * 4;
-              do {
-                iVar3 = *(int *)((int)g_ActorProfileTimes + local_2c);
-                if (iVar3 < *(int *)((int)g_ActorProfileTimes + iVar2)) {
-                  *(uint *)((int)g_ActorProfileTimes + local_2c) =
-                       *(uint *)((int)g_ActorProfileTimes + iVar2);
-                  *(int *)((int)g_ActorProfileTimes + iVar2) = iVar3;
-                  uVar4 = *(uint *)((int)g_ActorProfileActors + local_2c);
-                  *(uint *)((int)g_ActorProfileActors + local_2c) =
-                       *(uint *)((int)g_ActorProfileActors + iVar2);
-                  *(uint *)((int)g_ActorProfileActors + iVar2) = uVar4;
-                }
-                iVar2 = iVar2 + 4;
-              } while (iVar2 < local_3c);
+        for (local_28 = 0; local_28 < local_38; local_28 = local_28 + 1) {
+          for (iVar2 = local_28 + 1; iVar2 < local_20; iVar2 = iVar2 + 1) {
+            iVar3 = g_ActorProfileTimes[local_28];
+            if (iVar3 < g_ActorProfileTimes[iVar2]) {
+              g_ActorProfileTimes[local_28] = g_ActorProfileTimes[iVar2];
+              g_ActorProfileTimes[iVar2] = iVar3;
+              pCVar3 = g_ActorProfileActors[local_28];
+              g_ActorProfileActors[local_28] = g_ActorProfileActors[iVar2];
+              g_ActorProfileActors[iVar2] = pCVar3;
             }
-            local_2c = local_2c + 4;
-            local_28 = local_28 + 1;
-          } while (local_28 < local_38);
+          }
         }
         iVar2 = 0x14;
         if (local_20 < 0x14) {
           iVar2 = local_20;
         }
-        if (0 < iVar2) {
-          iVar8 = 0;
-          iVar3 = 0;
-          do {
-            piVar1 = (int *)((int)g_ActorProfileTimes + iVar8);
-            puVar2 = (uint *)((int)g_ActorProfileActors + iVar8);
-            iVar8 = iVar8 + 4;
-            iVar10 = iVar3 + 1;
-            engine_console_cpp_CConsole_printf_FUN_00441890
-                      (g_CConsolePtr,"%d. %s : %3.2f ms\n",iVar3,(*(CDemonActor **)puVar2)->actor_name,
-                       ((double)*piVar1 * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
-                       (double)fDeltaTime);
-            iVar3 = iVar10;
-          } while (iVar10 < iVar2);
+        for (iVar3 = 0; iVar3 < iVar2; iVar3 = iVar3 + 1) {
+          engine_console_cpp_CConsole_printf_FUN_00441890
+                    (g_CConsolePtr,"%d. %s : %3.2f ms\n",iVar3,
+                     g_ActorProfileActors[iVar3]->actor_name,
+                     ((double)g_ActorProfileTimes[iVar3] * 0.055555555555555601 *
+                      1.52587890625e-05 * 1000) / (double)fDeltaTime);
         }
       }
       iVar2 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
