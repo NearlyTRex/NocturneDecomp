@@ -106,6 +106,7 @@ When you are editing a `.keep` for any reason — creating one for a compile err
 - `preinc_loop_idiom` — §19 (Pre-increment-array-walk loop idiom). Always a Ghidra loop-decode artifact; must rewrite as a clean `for`-loop after cross-referencing the asm. The decompile is never correct as-decoded.
 - `missing_cave_copy` — §20 (Missing cave-block struct memcpy). Ghidra dropped a post-call struct copy that Watcom emitted, leaving a struct local uninitialized at runtime. Fix by passing the real source local directly or adding the missing assignment; detected via `.cpp`/`.asm` cross-check. **Candidate locals are filtered by struct size matching the asm cave-block size** — e.g. a 48-byte cave block can't be the missing copy of a 12-byte `CVector3f` local, so output buffers like `&local_vec` passed to `transformVector3x4(&out, &in, &mat)` no longer false-positive.
 - `fast_sqrt_inline`, `fast_inv_sqrt_inline` — §21 (Inline fast-(inverse-)sqrt bit-trick). Ghidra emits `(int)X` numeric cast where the asm performs a bit-cast; UB on NaN/Inf. Replace inline occurrences with calls to the existing helper functions `fastSqrt(X)` / `fastInvSqrt(X)` in a `.keep`.
+- `bitcast_double_pair` — §22 (Adjacent uint locals reconstructed as a double). `__BITCAST_DOUBLE(CONCAT44(hi, lo))` over two stack-local uints almost always means Watcom split one `double` local into two 4-byte slots; merge them into a single `double` declaration in a `.keep` and pass it directly.
 
 **Ineligible for `.keep` cleanup — fix upstream in Ghidra instead:** structural suspects like `decompilation_failed`, stack/ESP anchor mismatches, `warning_*` (bad spacebase, unmapped variables, type propagation). See "Prefer Ghidra Fixes Over Code Fixes."
 
@@ -582,6 +583,62 @@ local_44 = core_cloth_cpp_fastInvSqrt_FUN_0043e2a0(local_48);
 **Why call the helper instead of `sqrt()` / `1/sqrt()`:** The bit-trick is **not** bit-exact with libc `sqrt()` — typical relative error a few percent. The original game's physics, cloth, and lighting are tuned around these specific approximations, so swapping in `sqrt()` would shift behavior. The helpers preserve original behavior exactly.
 
 **Eligibility:** `.keep`-layer fix. The `fast_sqrt_inline` / `fast_inv_sqrt_inline` suspect types (see "Reducing Flagged Suspects") flag every inline occurrence. Both magics — `g_FastSqrtMagic` (≈ `0x1FC00000`) and `g_FastInvSqrtMagic` (≈ `0x5F400000`) — are project globals; if you see them in a function, the pattern is unambiguous.
+
+### 22. Adjacent uint locals reconstructed as a double (`__BITCAST_DOUBLE(CONCAT44(hi, lo))`)
+
+**Cause:** Watcom often allocates a `double` local as two adjacent 4-byte stack slots (e.g. one slot holds the low 32 bits of the IEEE 754 representation, the next holds the high 32 bits). When the function later passes that double to a callee or uses it in arithmetic, Watcom emits two separate 32-bit pushes / loads. Ghidra models the two slots as independent `uint` locals (often named `local_NNNN` and `local_NNN8` four bytes apart) and reconstructs the original double at every use site via `__BITCAST_DOUBLE(CONCAT44(hi_uint, lo_uint))`. The two-uint declaration is a Ghidra typing artifact, not real source code.
+
+**Symptoms:**
+- A pair of adjacent `uint local_NNNN; uint local_NNNN-4;` declarations (offsets exactly 4 bytes apart in the stack frame)
+- Both locals are written together, e.g.
+  ```cpp
+  if (cond) {
+      local_2080 = 0x667f6ee7;
+      local_207c = 0x3fe6a09e;       // pair forms 0x3fe6a09e667f6ee7 = sqrt(0.5)
+  } else {
+      local_2080 = 0x995b2417;
+      local_207c = 0x3feae89f;       // pair forms 0x3feae89f995b2417 = 2^(-1/4)
+  }
+  ```
+- Both locals consumed only via `__BITCAST_DOUBLE(CONCAT44(local_207c, local_2080))` at one or more call sites
+- The bit-pattern decodes to a recognizable double constant (a math constant like `sqrt(0.5)`, `pi`, `1/log(2)`, or a magic encoder coefficient)
+
+**Diagnosis:** Decode the two 32-bit hex constants as a single 64-bit IEEE 754 double. Concatenate hi-uint as the upper 32 bits and lo-uint as the lower 32 bits. A Python one-liner: `import struct; struct.unpack('<d', struct.pack('<II', lo, hi))[0]`. If the result is a clean math/encoder constant, the merge is safe.
+
+**Fix:** Merge the two adjacent uint declarations into one `double` local and replace each `__BITCAST_DOUBLE(CONCAT44(...))` with the double directly:
+
+```cpp
+// BROKEN (two adjacent uint slots, reconstructed at every use):
+uint local_2080;
+uint local_207c;
+...
+if ((granule->scalefac_compress & 1U) == 1) {
+    local_2080 = 0x667f6ee7;
+    local_207c = 0x3fe6a09e;
+}
+else {
+    local_2080 = 0x995b2417;
+    local_207c = 0x3feae89f;
+}
+...
+calculateRatio(idx, __BITCAST_DOUBLE(CONCAT44(local_207c, local_2080)), n, buf);
+
+// FIXED (merged into one double; bitcast/concat dropped at every call site):
+double mpeg2_is_pos_step;
+...
+if ((granule->scalefac_compress & 1U) == 1) {
+    mpeg2_is_pos_step = 0.7071067811865475;   // sqrt(2)/2
+}
+else {
+    mpeg2_is_pos_step = 0.8408964152537145;   // 2^(-1/4)
+}
+...
+calculateRatio(idx, mpeg2_is_pos_step, n, buf);
+```
+
+**When NOT to merge:** Skip the merge if either half is read or written *individually* (not just as a bitcast pair) anywhere — e.g. the low half is used in pointer arithmetic, or the two halves come from different sources. That's not a split double, it's two genuinely separate 32-bit values that happen to be adjacent. Decoding both halves together as a double will produce a nonsense constant; that's a strong negative signal.
+
+**Eligibility:** `.keep`-layer fix. The `bitcast_double_pair` suspect type flags every `__BITCAST_DOUBLE(CONCAT44(...))` occurrence. The fix is per-function; the underlying issue is per-stack-frame typing, which Ghidra can't always retype safely without disturbing other local layouts.
 
 ## Workflow
 

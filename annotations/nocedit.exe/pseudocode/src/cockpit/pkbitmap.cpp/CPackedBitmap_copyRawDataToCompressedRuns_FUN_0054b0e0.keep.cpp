@@ -20,7 +20,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_
   ushort uVar2;
   ushort uVar1;
   int iVar4;
-  
+
   if (row_stride == 0) {
     row_stride = this_ptr->width;
   }
@@ -35,16 +35,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_
       uVar2 = *puVar7;
       puVar7 = (ushort *)((uVar1 + 3 & 0xfffffffc) + (int)puVar9);
       puVar8 = raw_bitmap_data + uVar2;
-      for (uVar6 = (uint)(uVar1 >> 2); uVar6 != 0; uVar6 = uVar6 - 1) {
-        *(uint *)puVar9 = *(uint *)puVar8;
-        puVar8 = puVar8 + 4;
-        puVar9 = puVar9 + 2;
-      }
-      for (uVar3 = (byte)uVar1 & 0xffffff03; uVar3 != 0; uVar3 = uVar3 - 1) {
-        *(uchar *)puVar9 = *puVar8;
-        puVar8 = puVar8 + 1;
-        puVar9 = (ushort *)((char *)puVar9 + 1);
-      }
+      memcpy(puVar9, puVar8, uVar1);
     }
     local_18 = local_18 + 1;
     raw_bitmap_data = raw_bitmap_data + row_stride;

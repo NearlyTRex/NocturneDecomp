@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 51,
+    "complexity_score": 26,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 26,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 75
   },
   "cross_references": [
@@ -157,24 +155,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 22,
-      "match": "(byte *)(pcVar1 + (int)this_ptr",
-      "severity": "moderate",
-      "text": "pbVar6 = (byte *)(pcVar1 + (int)this_ptr->row_pointers[0]);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 23,
-      "match": "(byte *)(pcVar1 + (int)pvVar2",
-      "severity": "moderate",
-      "text": "while (pbVar6 < (byte *)(pcVar1 + (int)pvVar2)) {",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

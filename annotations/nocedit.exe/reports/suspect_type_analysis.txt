@@ -4,21 +4,22 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1450 ( 39.6%)
-  unrolled_memcpy                  399 ( 10.9%)
-  unrolled_strcpy                  372 ( 10.2%)
+  pointer_cast                    1388 ( 37.8%)
+  unrolled_memcpy                  397 ( 10.8%)
+  unrolled_strcpy                  372 ( 10.1%)
   missing_cave_copy                276 (  7.5%)
   warning_inlined_function         242 (  6.6%)
   raw_address_constant             185 (  5.0%)
   warning_type_propagation         129 (  3.5%)
   unrolled_strlen                  101 (  2.8%)
   stack_alignment_array             83 (  2.3%)
+  bitcast_double_pair               74 (  2.0%)
   unnamed_param                     73 (  2.0%)
   warning_unreachable               68 (  1.9%)
   unrolled_strchr                   61 (  1.7%)
   param_count_too_many              37 (  1.0%)
-  stack_param                       36 (  1.0%)
-  sub84_truncation                  30 (  0.8%)
+  stack_param                       34 (  0.9%)
+  sub84_truncation                  29 (  0.8%)
   decompiler_intrinsic              27 (  0.7%)
   negative_offset                   24 (  0.7%)
   extra_output                      16 (  0.4%)
@@ -31,21 +32,19 @@ SUSPECT TYPE COUNTS
   warning_deadcode_restart           3 (  0.1%)
   warning_max_restarts               3 (  0.1%)
   cpuid_intrinsic                    2 (  0.1%)
-  fast_inv_sqrt_inline               1 (  0.0%)
   preinc_loop_idiom                  1 (  0.0%)
   warning_overlapping_globals        1 (  0.0%)
   warning_noreturn                   1 (  0.0%)
   warning_unmapped_variable          1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (1450 occurrences)
+TYPE: pointer_cast (1388 occurrences)
 ====================================================================================================
 
 Unique patterns:
     55x  (int *)((int)g_ScreenBufferArray
     55x  (int *)((int)this_ptr
     42x  (uint *)((int)this_ptr
-    30x  (int *)((int)g_Layer3BandIndex
     22x  (int *)((int)g_VertexIndexBuffer
     19x  (byte *)((int)this_ptr
     19x  (double *)((int)g_Mp3DctMatrix
@@ -62,10 +61,9 @@ Unique patterns:
     11x  (double *)((int)pdVar9
     10x  (int *)((int)g_ProcessedVertexIndices
     10x  (uint *)((int)g_Mp3WindowTables
+    10x  (uint *)((int)pCVar1
 
 Functions:
-  cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0
-  cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
   core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
@@ -429,11 +427,9 @@ Functions:
   sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480
   sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20
   sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_005307a0
-  sound_mp3.cpp_antiAliasingButterfly_FUN_005334b0
   sound_mp3.cpp_applyPolyphaseWindow_FUN_00533690
   sound_mp3.cpp_applyScalefactorsToLayer2Samples_FUN_005303a0
   sound_mp3.cpp_applyScalefactorsToSubbands_FUN_005302f0
-  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0
   sound_mp3.cpp_reorderShortBlockSamples_FUN_00532200
   sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_0052fee0
   sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50
@@ -475,16 +471,14 @@ Functions:
   support_newmsg.cpp_readMessageFile_FUN_00543e40
 
 ====================================================================================================
-TYPE: unrolled_memcpy (399 occurrences)
+TYPE: unrolled_memcpy (397 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   393x  MOVSD.REP
+   391x  MOVSD.REP
      6x  for (...; != 0; ... + -1)
 
 Functions:
-  cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0054b0e0
-  cockpit_pkbitmap.cpp_writePBGHeader_FUN_0054b930
   core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
   core_actor.cpp_archiveLocalizedString_FUN_0040b6e0
@@ -1539,6 +1533,31 @@ Functions:
   shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30
 
 ====================================================================================================
+TYPE: bitcast_double_pair (74 occurrences)
+====================================================================================================
+
+Unique patterns:
+    74x  __BITCAST_DOUBLE(CONCAT44(
+
+Functions:
+  core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
+  core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
+  core_dmodel.cpp_safeAcos_FUN_0047b170
+  core_menu.cpp_configureSoundOptions_FUN_00511e50
+  core_script.cpp_CScript_step_FUN_0055a810
+  core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+  core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0
+  core_xform.cpp_matrixToEulerAngles_FUN_005f5690
+  engine_colquant.c_quantizeColors_FUN_004406c0
+  shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+  shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
+  shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
+  shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0
+  shape_superopt.cpp_CPoly_scale_FUN_005cc7c0
+  shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
+
+====================================================================================================
 TYPE: unnamed_param (73 occurrences)
 ====================================================================================================
 
@@ -1718,7 +1737,7 @@ Functions:
   wincore_winrun.cpp_winMain_FUN_005f3680
 
 ====================================================================================================
-TYPE: stack_param (36 occurrences)
+TYPE: stack_param (34 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1728,7 +1747,6 @@ Unique patterns:
      4x  in_stack_00000008
      3x  in_stack_0000000c
      2x  in_stack_0000002c
-     2x  in_stack_ffffffc8
      2x  in_stack_fffffe18
 
 Functions:
@@ -1738,15 +1756,14 @@ Functions:
   core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
   core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850
   core_vehicle.cpp_CVehicle_renderOpaque_FUN_005e88c0
-  core_weapon.cpp_CWeapon_updateLighting_FUN_005ee4a0
   engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440
 
 ====================================================================================================
-TYPE: sub84_truncation (30 occurrences)
+TYPE: sub84_truncation (29 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    30x  SUB84(
+    29x  SUB84(
 
 Functions:
   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
@@ -1760,7 +1777,6 @@ Functions:
   shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
   shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
   shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
-  sound_mp3.cpp_antiAliasingButterfly_FUN_005334b0
 
 ====================================================================================================
 TYPE: decompiler_intrinsic (27 occurrences)
@@ -1968,16 +1984,6 @@ Unique patterns:
 
 Functions:
   core_mmx.c_detectIntelProcessor_FUN_00524f4c
-
-====================================================================================================
-TYPE: fast_inv_sqrt_inline (1 occurrences)
-====================================================================================================
-
-Unique patterns:
-     1x  fVar1 = (float)(g_FastInvSqrtMagic - ((int)fVar2 >> 1));
-
-Functions:
-  core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00471850
 
 ====================================================================================================
 TYPE: preinc_loop_idiom (1 occurrences)

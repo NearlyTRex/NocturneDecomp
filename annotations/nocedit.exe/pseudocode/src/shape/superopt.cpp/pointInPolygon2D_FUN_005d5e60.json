@@ -7,14 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 216,
-    "complexity_score": 109,
+    "complexity_score": 234,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 84,
-    "suspect_count": 2,
+    "suspect_count": 14,
     "suspect_types": [
+      "bitcast_double_pair",
       "sub84_truncation"
     ],
     "total_lines": 300
@@ -249,6 +250,86 @@
   },
   "suspects": [
     {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 60,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "if (((__BITCAST_DOUBLE(CONCAT44(uStack_4c,local_50)) <= test_point->y) &&",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 61,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "(test_point->y <= __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40)))) &&",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 62,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "((test_point->y != __BITCAST_DOUBLE(CONCAT44(uStack_4c,local_50)) ||",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 63,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "(test_point->y != __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40)))))) {",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 64,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "if ((test_point->x < __BITCAST_DOUBLE(CONCAT44(uStack_54,local_58))) ||",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 65,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "(test_point->x < __BITCAST_DOUBLE(CONCAT44(uStack_44,local_48)))) {",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 66,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "dVar6 = __BITCAST_DOUBLE(CONCAT44(uStack_44,local_48)) - __BITCAST_DOUBLE(CONCAT44(uStack_54,local_58));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 66,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "dVar6 = __BITCAST_DOUBLE(CONCAT44(uStack_44,local_48)) - __BITCAST_DOUBLE(CONCAT44(uStack_54,local_58));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 67,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "dVar7 = __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40)) - __BITCAST_DOUBLE(CONCAT44(uStack_4c,local_50));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 67,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "dVar7 = __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40)) - __BITCAST_DOUBLE(CONCAT44(uStack_4c,local_50));",
+      "type": "bitcast_double_pair"
+    },
+    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 68,
       "match": "SUB84(",
@@ -263,6 +344,22 @@
       "severity": "moderate",
       "text": "local_30 = SUB84(__BITCAST_UINT64(dVar7),0);",
       "type": "sub84_truncation"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 77,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "(test_point->y - __BITCAST_DOUBLE(CONCAT44(uStack_4c,local_50))) * local_60 +",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 78,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "__BITCAST_DOUBLE(CONCAT44(uStack_54,local_58))) goto LAB_005d5ef4;",
+      "type": "bitcast_double_pair"
     }
   ]
 }

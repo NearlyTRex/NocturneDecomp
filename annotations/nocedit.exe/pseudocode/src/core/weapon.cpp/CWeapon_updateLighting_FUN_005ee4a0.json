@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 74,
+    "complexity_score": 49,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 23,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 49,
-    "suspect_count": 2,
-    "suspect_types": [
-      "stack_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 179
   },
   "cross_references": [],
@@ -255,6 +253,26 @@
     },
     "pcode_op_count": 471
   },
+  "resolved_suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_ffffffc8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uint in_stack_ffffffc8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_ffffffc8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar1 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,in_stack_ffffffc8);",
+      "type": "stack_param"
+    }
+  ],
   "stack_frame": {
     "frame_size": 40,
     "local_size": 36,
@@ -285,24 +303,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_ffffffc8",
-      "severity": "moderate",
-      "text": "uint in_stack_ffffffc8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_ffffffc8",
-      "severity": "moderate",
-      "text": "pCVar1 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,in_stack_ffffffc8);",
-      "type": "stack_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

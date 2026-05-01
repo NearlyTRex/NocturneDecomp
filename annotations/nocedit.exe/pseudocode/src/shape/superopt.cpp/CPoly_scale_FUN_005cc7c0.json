@@ -7,14 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 283,
-    "complexity_score": 479,
+    "complexity_score": 514,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 229,
-    "suspect_count": 24,
+    "suspect_count": 27,
     "suspect_types": [
+      "bitcast_double_pair",
       "pointer_cast",
       "unrolled_memcpy"
     ],
@@ -661,6 +662,30 @@
       "severity": "moderate",
       "text": "pdVar11 = (double *)((int)pdVar11 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 113,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "local_60 = local_210 * __BITCAST_DOUBLE(CONCAT44(uStack_bc,local_c0));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 114,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "local_58 = local_208 * __BITCAST_DOUBLE(CONCAT44(uStack_b4,local_b8));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 115,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "local_50 = local_200 * __BITCAST_DOUBLE(CONCAT44(uStack_ac,local_b0));",
+      "type": "bitcast_double_pair"
     },
     {
       "description": "Complex pointer cast",

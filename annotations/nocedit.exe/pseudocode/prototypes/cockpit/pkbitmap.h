@@ -117,7 +117,7 @@ void __cdecl CPackedBitmap::loadPBMFile(CPackedBitmap *this_ptr,int apply_palett
 
 // Original: cockpit_pkbitmap.cpp_writePBGHeader_FUN_0054b930
 // Address: 0054b930
-void __cdecl writePBGHeader(CPackedBitmap *bitmap_ptr,_FILE *file_header);
+void __cdecl writePBGHeader(int total_entries,_FILE *file_header);
 
 // Original: cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0
 // Address: 0054b9b0

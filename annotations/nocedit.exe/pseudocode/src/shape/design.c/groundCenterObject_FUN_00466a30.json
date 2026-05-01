@@ -163,6 +163,15 @@
       "severity": "moderate",
       "text": "local_44 = SUB84(__BITCAST_UINT64(dVar3),0);",
       "type": "sub84_truncation"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 47,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (dVar3 < __BITCAST_DOUBLE(CONCAT44(uStack_28,local_2c))) {",
+      "type": "bitcast_double_pair"
     }
   ],
   "stack_frame": {

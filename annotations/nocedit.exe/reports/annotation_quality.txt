@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        79 ( 1.2%)
+  Functions with type issues:        76 ( 1.2%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          1
-    Undefined types in variables:      73
-    Unresolved stack params:           5
+    Undefined types in variables:      71
+    Unresolved stack params:           4
 
-  Excluded (.keep / MMX / by-value):   147 functions
+  Excluded (.keep / MMX / by-value):   149 functions
     Wrong calling convention:          1
-    Undefined types in variables:      144
+    Undefined types in variables:      146
     Unresolved stack params:           3
 
 ====================================================================================================
@@ -79,7 +79,7 @@ Wrong calling convention (unaffected register usage) (1)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (5)
+Unresolved stack parameters (missing from signature) (4)
 --------------------------------------------------------------------------------
 
   CWinFont_setColorAndDrawText
@@ -100,12 +100,6 @@ Unresolved stack parameters (missing from signature) (5)
     Signature: int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_005c2850(CStranger *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  CWeapon_updateLighting
-    Address: 0x005ee4a0  File: core/weapon.cpp
-    Evidence: in_stack_ffffffc8, in_stack_ffffffc8
-    Signature: void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005ee4a0(CWeapon *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   dampControlAxis
     Address: 0x004dc370  File: core/game.cpp
     Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
@@ -113,7 +107,7 @@ Unresolved stack parameters (missing from signature) (5)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (73)
+Undefined types in variables (71)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -181,11 +175,6 @@ Undefined types in variables (73)
     Locals:  local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  mpegLayer3StereoProcess
-    Address: 0x005325e0  File: sound/mp3.cpp
-    Locals:  local_2080 (undefined4), local_207c (undefined4), uStack_57a (undefined4), local_18 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CDeformableModel_calcRootOffsetScale
     Address: 0x0058e690  File: core/skeledit.cpp
     Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
@@ -239,11 +228,6 @@ Undefined types in variables (73)
   CMP3Decoder_decodeScalefacCompress
     Address: 0x005310f0  File: sound/mp3.cpp
     Locals:  local_1a (undefined4), local_16 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  antiAliasingButterfly
-    Address: 0x005334b0  File: sound/mp3.cpp
-    Locals:  local_48 (undefined4), uStack_44 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   requantizeLayer3SamplesSimple
@@ -546,7 +530,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (144)
+Undefined types - .keep overrides (146)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -844,6 +828,11 @@ Undefined types - .keep overrides (144)
     Locals:  auStackY_1824 (undefined4[1524]), local_48 (undefined4), local_38 (undefined4), uStack_34 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  mpegLayer3StereoProcess
+    Address: 0x005325e0  File: sound/mp3.cpp
+    Locals:  local_2080 (undefined4), local_207c (undefined4), uStack_57a (undefined4), local_18 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CDemonActor_doCheckForInvalidPointers
     Address: 0x0040ac80  File: core/actor.cpp
     Locals:  temp_z (undefined8), temp_y (undefined8), temp_x (undefined8)
@@ -972,6 +961,11 @@ Undefined types - .keep overrides (144)
   CComplexPolygon_validateSubChainVisibility
     Address: 0x005cbf90  File: shape/superopt.cpp
     Locals:  uStack_12c (undefined4), uStack_114 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  antiAliasingButterfly
+    Address: 0x005334b0  File: sound/mp3.cpp
+    Locals:  local_48 (undefined4), uStack_44 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CSfxSlot_compute

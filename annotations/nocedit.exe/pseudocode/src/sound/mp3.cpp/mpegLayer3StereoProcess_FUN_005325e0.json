@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1031,
-    "complexity_score": 936,
+    "complexity_score": 541,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 20,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 541,
-    "suspect_count": 39,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1572
   },
   "cross_references": [
@@ -240,6 +238,395 @@
     },
     "pcode_op_count": 5335
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 142,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar12 = *(int *)((int)g_Layer3BandIndex[0].l + iVar12)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 147,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar11 = *(int *)((int)g_Layer3BandIndex[0].l + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 153,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar12 = *(int *)((int)g_Layer3BandIndex[0].l + local_8c + 4) -",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 154,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_Layer3BandIndex[0].l + local_8c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 166,
+      "match": "(float *)((int)afStack_e78",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)afStack_e78 + local_90) = (float)fVar13;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 171,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "__BITCAST_DOUBLE(CONCAT44(local_207c,local_2080)),iVar11,local_2078);",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 185,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar6 = 0x240 - *(int *)((int)g_Layer3BandIndex[0].l + local_94 + 0x54);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 186,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar12 = *(int *)((int)g_Layer3BandIndex[0].l + local_94 + 0x50);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 196,
+      "match": "(float *)((int)local_2078",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)local_2078 + iVar11) = local_2078[iVar12];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 197,
+      "match": "(float *)((int)afStack_e78",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)afStack_e78 + iVar11) = fVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 199,
+      "match": "(float *)((int)afStack_1778",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)afStack_1778 + iVar11) = afStack_1778[iVar12];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 219,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar12 = *(int *)((int)g_Layer3BandIndex[0].s + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 220,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar6 = *(int *)((int)g_Layer3BandIndex[0].s + iVar6 + 4) - iVar12;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 239,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar11 = *(int *)((int)g_Layer3BandIndex[0].s + local_7c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 240,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar12 = *(int *)((int)g_Layer3BandIndex[0].s + local_7c + 4) - iVar11;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 253,
+      "match": "(float *)((int)afStack_e78",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)afStack_e78 + local_80) = (float)fVar14;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 258,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "__BITCAST_DOUBLE(CONCAT44(local_207c,local_2080)),iVar11,local_2078);",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 272,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar11 = *(int *)((int)g_Layer3BandIndex[0].s + local_9c + 0x2c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 273,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar6 = *(int *)((int)g_Layer3BandIndex[0].s + local_9c + 0x34) -",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 274,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_Layer3BandIndex[0].s + local_9c + 0x30);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 276,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar11 = local_e4 * (*(int *)((int)g_Layer3BandIndex[0].s + local_9c + 0x30) - iVar11) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 286,
+      "match": "(float *)((int)local_2078",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)local_2078 + iVar12) = local_2078[iVar11];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 287,
+      "match": "(float *)((int)afStack_e78",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)afStack_e78 + iVar12) = fVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 289,
+      "match": "(float *)((int)afStack_1778",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)afStack_1778 + iVar12) = afStack_1778[iVar11];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 311,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar12 = *(int *)((int)g_Layer3BandIndex[0].s + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 312,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar6 = *(int *)((int)g_Layer3BandIndex[0].s + iVar6 + 4) - iVar12;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 332,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar11 = *(int *)((int)g_Layer3BandIndex[0].s + local_6c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 333,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar12 = *(int *)((int)g_Layer3BandIndex[0].s + local_6c + 4) - iVar11;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 346,
+      "match": "(float *)((int)afStack_e78",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)afStack_e78 + local_70) = (float)fVar14;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 351,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "__BITCAST_DOUBLE(CONCAT44(local_207c,local_2080)),iVar11,local_2078);",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 362,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar11 = *(int *)((int)g_Layer3BandIndex[0].s + local_98 + 0x2c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 363,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar6 = *(int *)((int)g_Layer3BandIndex[0].s + local_98 + 0x34) -",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 364,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_Layer3BandIndex[0].s + local_98 + 0x30);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 366,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar11 = local_24 * (*(int *)((int)g_Layer3BandIndex[0].s + local_98 + 0x30) - iVar11) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 376,
+      "match": "(float *)((int)local_2078",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)local_2078 + iVar12) = local_2078[iVar11];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 377,
+      "match": "(float *)((int)afStack_e78",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)afStack_e78 + iVar12) = fVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 379,
+      "match": "(float *)((int)afStack_1778",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)afStack_1778 + iVar12) = afStack_1778[iVar11];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 408,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar11 = *(int *)((int)g_Layer3BandIndex[0].l + iVar11)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 413,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar11 = *(int *)((int)g_Layer3BandIndex[0].l + iVar12);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 417,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar12 = *(int *)((int)g_Layer3BandIndex[0].l + local_60 + 4) -",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 418,
+      "match": "(int *)((int)g_Layer3BandIndex",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_Layer3BandIndex[0].l + local_60);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 430,
+      "match": "(float *)((int)afStack_e78",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)afStack_e78 + local_64) = (float)fVar14;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 435,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "__BITCAST_DOUBLE(CONCAT44(local_207c,local_2080)),iVar11,local_2078);",
+      "type": "bitcast_double_pair"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8344,
     "local_size": 8324,
@@ -742,318 +1129,50 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 142,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "iVar12 = *(int *)((int)g_Layer3BandIndex[0].l + iVar12)) {",
-      "type": "pointer_cast"
+  "static_analysis": {
+    "analyzed_file": "mpegLayer3StereoProcess_FUN_005325e0.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 5,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 11,
+          "line": 189,
+          "message": "Redundant assignment of 'iVar5' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 17,
+          "line": 687,
+          "message": "Redundant assignment of 'pfVar11' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 46,
+          "line": 651,
+          "message": "Uninitialized variable: is_ratio_l[local_f8]",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 44,
+          "line": 652,
+          "message": "Uninitialized variable: is_ratio_r[local_f8]",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 36,
+          "line": 646,
+          "message": "Uninitialized variable: is_pos_tan[local_f8]",
+          "severity": "error"
+        }
+      ],
+      "error": null
     },
-    {
-      "description": "Complex pointer cast",
-      "line": 147,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "iVar11 = *(int *)((int)g_Layer3BandIndex[0].l + iVar6);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 153,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "iVar12 = *(int *)((int)g_Layer3BandIndex[0].l + local_8c + 4) -",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 154,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_Layer3BandIndex[0].l + local_8c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 166,
-      "match": "(float *)((int)afStack_e78",
-      "severity": "moderate",
-      "text": "*(float *)((int)afStack_e78 + local_90) = (float)fVar13;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 185,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "iVar6 = 0x240 - *(int *)((int)g_Layer3BandIndex[0].l + local_94 + 0x54);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 186,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "iVar12 = *(int *)((int)g_Layer3BandIndex[0].l + local_94 + 0x50);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 196,
-      "match": "(float *)((int)local_2078",
-      "severity": "moderate",
-      "text": "*(float *)((int)local_2078 + iVar11) = local_2078[iVar12];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 197,
-      "match": "(float *)((int)afStack_e78",
-      "severity": "moderate",
-      "text": "*(float *)((int)afStack_e78 + iVar11) = fVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 199,
-      "match": "(float *)((int)afStack_1778",
-      "severity": "moderate",
-      "text": "*(float *)((int)afStack_1778 + iVar11) = afStack_1778[iVar12];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 219,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "iVar12 = *(int *)((int)g_Layer3BandIndex[0].s + iVar6);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 220,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "iVar6 = *(int *)((int)g_Layer3BandIndex[0].s + iVar6 + 4) - iVar12;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 239,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "iVar11 = *(int *)((int)g_Layer3BandIndex[0].s + local_7c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 240,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "iVar12 = *(int *)((int)g_Layer3BandIndex[0].s + local_7c + 4) - iVar11;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 253,
-      "match": "(float *)((int)afStack_e78",
-      "severity": "moderate",
-      "text": "*(float *)((int)afStack_e78 + local_80) = (float)fVar14;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 272,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "iVar11 = *(int *)((int)g_Layer3BandIndex[0].s + local_9c + 0x2c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 273,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "iVar6 = *(int *)((int)g_Layer3BandIndex[0].s + local_9c + 0x34) -",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 274,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_Layer3BandIndex[0].s + local_9c + 0x30);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 276,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "iVar11 = local_e4 * (*(int *)((int)g_Layer3BandIndex[0].s + local_9c + 0x30) - iVar11) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 286,
-      "match": "(float *)((int)local_2078",
-      "severity": "moderate",
-      "text": "*(float *)((int)local_2078 + iVar12) = local_2078[iVar11];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 287,
-      "match": "(float *)((int)afStack_e78",
-      "severity": "moderate",
-      "text": "*(float *)((int)afStack_e78 + iVar12) = fVar2;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 289,
-      "match": "(float *)((int)afStack_1778",
-      "severity": "moderate",
-      "text": "*(float *)((int)afStack_1778 + iVar12) = afStack_1778[iVar11];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 311,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "iVar12 = *(int *)((int)g_Layer3BandIndex[0].s + iVar6);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 312,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "iVar6 = *(int *)((int)g_Layer3BandIndex[0].s + iVar6 + 4) - iVar12;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 332,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "iVar11 = *(int *)((int)g_Layer3BandIndex[0].s + local_6c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 333,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "iVar12 = *(int *)((int)g_Layer3BandIndex[0].s + local_6c + 4) - iVar11;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 346,
-      "match": "(float *)((int)afStack_e78",
-      "severity": "moderate",
-      "text": "*(float *)((int)afStack_e78 + local_70) = (float)fVar14;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 362,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "iVar11 = *(int *)((int)g_Layer3BandIndex[0].s + local_98 + 0x2c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 363,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "iVar6 = *(int *)((int)g_Layer3BandIndex[0].s + local_98 + 0x34) -",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 364,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_Layer3BandIndex[0].s + local_98 + 0x30);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 366,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "iVar11 = local_24 * (*(int *)((int)g_Layer3BandIndex[0].s + local_98 + 0x30) - iVar11) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 376,
-      "match": "(float *)((int)local_2078",
-      "severity": "moderate",
-      "text": "*(float *)((int)local_2078 + iVar12) = local_2078[iVar11];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 377,
-      "match": "(float *)((int)afStack_e78",
-      "severity": "moderate",
-      "text": "*(float *)((int)afStack_e78 + iVar12) = fVar2;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 379,
-      "match": "(float *)((int)afStack_1778",
-      "severity": "moderate",
-      "text": "*(float *)((int)afStack_1778 + iVar12) = afStack_1778[iVar11];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 408,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "iVar11 = *(int *)((int)g_Layer3BandIndex[0].l + iVar11)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 413,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "iVar11 = *(int *)((int)g_Layer3BandIndex[0].l + iVar12);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 417,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "iVar12 = *(int *)((int)g_Layer3BandIndex[0].l + local_60 + 4) -",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 418,
-      "match": "(int *)((int)g_Layer3BandIndex",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_Layer3BandIndex[0].l + local_60);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 430,
-      "match": "(float *)((int)afStack_e78",
-      "severity": "moderate",
-      "text": "*(float *)((int)afStack_e78 + local_64) = (float)fVar14;",
-      "type": "pointer_cast"
-    }
-  ]
+    "file_variant": "keep"
+  },
+  "suspects": []
 }

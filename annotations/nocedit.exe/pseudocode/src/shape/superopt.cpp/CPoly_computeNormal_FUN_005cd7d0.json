@@ -141,6 +141,15 @@
       "type": "unknown_field"
     },
     {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 160,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (local_2e8 < __BITCAST_DOUBLE(CONCAT44(uStack_2ec,local_2f0))) {",
+      "type": "bitcast_double_pair"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 162,
       "match": "._4_4_",
@@ -148,6 +157,15 @@
       "severity": "mild",
       "text": "uStack_2ec = local_2e8._4_4_;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 202,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (local_2a8 < __BITCAST_DOUBLE(CONCAT44(uStack_2ec,local_2f0))) {",
+      "type": "bitcast_double_pair"
     }
   ],
   "stack_frame": {

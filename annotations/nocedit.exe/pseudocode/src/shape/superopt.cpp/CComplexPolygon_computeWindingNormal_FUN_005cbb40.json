@@ -145,6 +145,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 82,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (local_110 < __BITCAST_DOUBLE(CONCAT44(uStack_fc,local_100))) {",
+      "type": "bitcast_double_pair"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 84,
       "match": "._4_4_",

@@ -65,9 +65,11 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680(C
           core_main_c_displayErrorAndQuit_FUN_00506f10
                     ("MP3 Huffman tree overflow!  File: %s",g_CurrentMp3Filename);
         }
-        memcpy(g_HuffmanTables[iVar11].huffman_data,
-               g_HuffmanTableSources[iVar11].huffman_data_ptr,
-               2 * g_HuffmanTables[iVar11].table_size);
+        if (g_HuffmanTables[iVar11].table_size > 0) {
+          memcpy(g_HuffmanTables[iVar11].huffman_data,
+                 g_HuffmanTableSources[iVar11].huffman_data_ptr,
+                 2 * g_HuffmanTables[iVar11].table_size);
+        }
       }
       else {
         g_HuffmanTables[iVar11].reference_index = iVar10;

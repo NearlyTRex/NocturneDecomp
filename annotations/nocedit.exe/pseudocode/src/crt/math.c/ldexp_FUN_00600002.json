@@ -2,14 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 115,
+    "complexity_score": 140,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 50,
-    "suspect_count": 6,
+    "suspect_count": 8,
     "suspect_types": [
+      "bitcast_double_pair",
       "unknown_field"
     ],
     "total_lines": 140
@@ -196,6 +197,14 @@
       "type": "unknown_field"
     },
     {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 34,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "dVar1 = -__BITCAST_DOUBLE(CONCAT44(INFINITY._4_4_,INFINITY._0_4_));",
+      "type": "bitcast_double_pair"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 40,
       "match": "._0_4_",
@@ -218,6 +227,14 @@
       "severity": "mild",
       "text": "uStack_18 = INFINITY._4_4_;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 52,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "return __BITCAST_DOUBLE(CONCAT44(uStack_18,CONCAT22(uStack_1a,local_1c)));",
+      "type": "bitcast_double_pair"
     }
   ]
 }

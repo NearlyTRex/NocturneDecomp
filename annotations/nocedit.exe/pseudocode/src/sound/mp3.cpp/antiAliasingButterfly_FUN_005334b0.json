@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 226,
+    "complexity_score": 106,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 106,
-    "suspect_count": 11,
-    "suspect_types": [
-      "pointer_cast",
-      "sub84_truncation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 275
   },
   "cross_references": [
@@ -156,6 +153,107 @@
     },
     "pcode_op_count": 848
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(double *)((int)g_Mp3AntiAliasCSSource",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "dVar5 = 1.0 / SQRT(*(double *)((int)g_Mp3AntiAliasCSSource + iVar2) *",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(double *)((int)g_Mp3AntiAliasCSSource",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(double *)((int)g_Mp3AntiAliasCSSource + iVar2) + 1.0);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 37,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_48 = SUB84(__BITCAST_UINT64(dVar5),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(uint *)((int)g_Mp3AntiAliasCA",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_Mp3AntiAliasCA + iVar2) = local_48;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(double *)((int)g_Mp3AntiAliasCS",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(double *)((int)g_Mp3AntiAliasCS + iVar2) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(double *)((int)g_Mp3AntiAliasCSSource",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(double *)((int)g_Mp3AntiAliasCSSource + iVar2) * dVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(uint *)((int)g_Mp3AntiAliasCA",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_Mp3AntiAliasCA + iVar2 + 4) = uStack_44;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 88,
+      "match": "(double *)((int)g_Mp3AntiAliasCA",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*pfVar12 = fVar1 * (float)*(double *)((int)g_Mp3AntiAliasCA + iVar2) -",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 89,
+      "match": "(double *)((int)g_Mp3AntiAliasCS",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fVar4 * (float)*(double *)((int)g_Mp3AntiAliasCS + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 90,
+      "match": "(double *)((int)g_Mp3AntiAliasCA",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar1 = (double *)((int)g_Mp3AntiAliasCA + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 91,
+      "match": "(double *)((int)g_Mp3AntiAliasCS",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pdVar2 = (double *)((int)g_Mp3AntiAliasCS + iVar2);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 92,
     "local_size": 76,
@@ -273,94 +371,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(double *)((int)g_Mp3AntiAliasCSSource",
-      "severity": "moderate",
-      "text": "dVar5 = 1.0 / SQRT(*(double *)((int)g_Mp3AntiAliasCSSource + iVar2) *",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(double *)((int)g_Mp3AntiAliasCSSource",
-      "severity": "moderate",
-      "text": "*(double *)((int)g_Mp3AntiAliasCSSource + iVar2) + 1.0);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 37,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "local_48 = SUB84(__BITCAST_UINT64(dVar5),0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(uint *)((int)g_Mp3AntiAliasCA",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_Mp3AntiAliasCA + iVar2) = local_48;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(double *)((int)g_Mp3AntiAliasCS",
-      "severity": "moderate",
-      "text": "*(double *)((int)g_Mp3AntiAliasCS + iVar2) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(double *)((int)g_Mp3AntiAliasCSSource",
-      "severity": "moderate",
-      "text": "*(double *)((int)g_Mp3AntiAliasCSSource + iVar2) * dVar5;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(uint *)((int)g_Mp3AntiAliasCA",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_Mp3AntiAliasCA + iVar2 + 4) = uStack_44;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 88,
-      "match": "(double *)((int)g_Mp3AntiAliasCA",
-      "severity": "moderate",
-      "text": "*pfVar12 = fVar1 * (float)*(double *)((int)g_Mp3AntiAliasCA + iVar2) -",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 89,
-      "match": "(double *)((int)g_Mp3AntiAliasCS",
-      "severity": "moderate",
-      "text": "fVar4 * (float)*(double *)((int)g_Mp3AntiAliasCS + iVar2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 90,
-      "match": "(double *)((int)g_Mp3AntiAliasCA",
-      "severity": "moderate",
-      "text": "pdVar1 = (double *)((int)g_Mp3AntiAliasCA + iVar2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 91,
-      "match": "(double *)((int)g_Mp3AntiAliasCS",
-      "severity": "moderate",
-      "text": "pdVar2 = (double *)((int)g_Mp3AntiAliasCS + iVar2);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

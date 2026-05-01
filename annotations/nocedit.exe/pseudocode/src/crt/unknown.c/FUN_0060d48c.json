@@ -2,14 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 267,
+    "complexity_score": 282,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 32,
-    "suspect_count": 22,
+    "suspect_count": 23,
     "suspect_types": [
+      "bitcast_double_pair",
       "param_count_too_few",
       "stack_param",
       "unnamed_param"
@@ -266,6 +267,14 @@
       "severity": "mild",
       "text": "fStack_24 = (float10)__BITCAST_DOUBLE(CONCAT44(param_2,param_1));",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 20,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "fStack_24 = (float10)__BITCAST_DOUBLE(CONCAT44(param_2,param_1));",
+      "type": "bitcast_double_pair"
     },
     {
       "description": "Unnamed function parameter",

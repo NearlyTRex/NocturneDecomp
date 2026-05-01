@@ -42,7 +42,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0054b6c9: MOV ESI,ESP
 
   cockpit_pkbitmap.cpp_writePBGHeader_FUN_0054b930
-    File: cockpit/pkbitmap.cpp, Suspects: 1
+    File: cockpit/pkbitmap.cpp, Suspects: 0
     - [alt_frame_pointer] at 0054b93f: MOV EDI,ESP
 
   cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0
@@ -179,7 +179,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00441269: AND ESP,0xfffffff8
 
   engine_colquant.c_quantizeColors_FUN_004406c0
-    File: engine/colquant.c, Suspects: 10
+    File: engine/colquant.c, Suspects: 15
     - [stack_alignment] at 004406cc: AND ESP,0xfffffff8
 
   engine_colquant.c_doubleMax_FUN_00441790
@@ -277,5 +277,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 2.0 suspects/function
+  With stack patterns:    avg 2.1 suspects/function
   Without stack patterns: avg 0.6 suspects/function

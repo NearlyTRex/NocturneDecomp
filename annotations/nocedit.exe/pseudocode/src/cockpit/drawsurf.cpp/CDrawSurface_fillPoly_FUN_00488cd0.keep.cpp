@@ -31,8 +31,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0(CDrawSurfac
   uint *puVar15;
   uint *puVar16;
   byte bVar17;
-  int local_dc;
-  int aiStack_d8 [39];
+  int aiStack_d8 [40];
   int aiStack_38 [4];
   SPoint2i *local_28;
   int local_24;
@@ -42,7 +41,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0(CDrawSurfac
   bool bVar3;
   int iVar2;
   uint uVar1;
-  
+
   if (2 < vertex_count) {
     local_24 = 0;
     local_20 = 0;
@@ -118,48 +117,42 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0(CDrawSurfac
         do {
           do {
             while (iVar12 < local_20 && g_GlobalEdgeTable[iVar12].x_start <= local_14) {
-              aiStack_d8[iVar10 + -1] = iVar12;
+              aiStack_d8[iVar10] = iVar12;
               iVar10 = iVar10 + 1;
               iVar12 = iVar12 + 1;
             }
             do {
-              iVar9 = 0;
-              iVar11 = (iVar10 + -1) * 4;
               bVar3 = false;
-              if (0 < iVar11) {
-                do {
-                  if (g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar9)].x_fixed_point <
-                      g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar9 + -4)].x_fixed_point) {
-                    uVar1 = *(uint *)((int)aiStack_d8 + iVar9 + -4);
-                    *(uint *)((int)aiStack_d8 + iVar9 + -4) =
-                         *(uint *)((int)aiStack_d8 + iVar9);
-                    bVar3 = true;
-                    *(uint *)((int)aiStack_d8 + iVar9) = uVar1;
-                  }
-                  iVar9 = iVar9 + 4;
-                } while (iVar9 < iVar11);
+              for (iVar9 = 1; iVar9 < iVar10; iVar9 = iVar9 + 1) {
+                if (g_GlobalEdgeTable[aiStack_d8[iVar9]].x_fixed_point <
+                    g_GlobalEdgeTable[aiStack_d8[iVar9 + -1]].x_fixed_point) {
+                  uVar1 = aiStack_d8[iVar9 + -1];
+                  aiStack_d8[iVar9 + -1] = aiStack_d8[iVar9];
+                  bVar3 = true;
+                  aiStack_d8[iVar9] = uVar1;
+                }
               }
             } while (bVar3);
             if (1 < iVar10) {
-              iVar9 = 4;
+              iVar9 = 1;
               do {
-                iVar11 = iVar9 + -4;
-                iVar13 = iVar9 + -8;
-                iVar9 = iVar9 + 8;
+                iVar11 = iVar9;
+                iVar13 = iVar9 + -1;
+                iVar9 = iVar9 + 2;
                 cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_00488110
-                          (this_ptr,(g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar13)].
+                          (this_ptr,(g_GlobalEdgeTable[aiStack_d8[iVar13]].
                                      x_fixed_point >> 0x10) - this_ptr->x,local_14 - this_ptr->y,
-                           (g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar11)].x_fixed_point >>
+                           (g_GlobalEdgeTable[aiStack_d8[iVar11]].x_fixed_point >>
                            0x10) - this_ptr->x);
-              } while (iVar9 < iVar10 * 4);
+              } while (iVar9 < iVar10);
             }
             local_14 = local_14 + 1;
             iVar9 = 0;
             if (0 < iVar10) {
               iVar11 = 0;
               do {
-                iVar2 = *(int *)((int)aiStack_d8 + iVar11 + -4);
-                iVar13 = iVar11 + 4;
+                iVar2 = aiStack_d8[iVar11];
+                iVar13 = iVar11 + 1;
                 if (local_14 < g_GlobalEdgeTable[iVar2].y_start) {
                   iVar9 = iVar9 + 1;
                   g_GlobalEdgeTable[iVar2].x_fixed_point =
@@ -169,8 +162,8 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0(CDrawSurfac
                 else {
                   iVar10 = iVar10 + -1;
                   memmove
-                            ((void *)((int)aiStack_d8 + iVar11 + -4),
-                             (void *)((int)aiStack_d8 + iVar11),(iVar10 - iVar9) * 4);
+                            (&aiStack_d8[iVar11],
+                             &aiStack_d8[iVar11 + 1],(iVar10 - iVar9) * 4);
                   iVar13 = iVar11;
                 }
                 iVar11 = iVar13;

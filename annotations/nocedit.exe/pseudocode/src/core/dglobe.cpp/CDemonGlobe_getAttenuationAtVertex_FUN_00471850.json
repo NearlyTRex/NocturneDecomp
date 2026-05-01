@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 134,
-    "complexity_score": 50,
+    "complexity_score": 35,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 35,
-    "suspect_count": 1,
-    "suspect_types": [
-      "fast_inv_sqrt_inline"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 169
   },
   "cross_references": [
@@ -122,6 +120,17 @@
     },
     "pcode_op_count": 863
   },
+  "resolved_suspects": [
+    {
+      "description": "Inlined fast inverse sqrt bit-trick. Replace with `fastInvSqrt(<expr>)` in a .keep \u2014 the helper function exists in the binary (FUN_0043e2a0).",
+      "line": 28,
+      "match": "fVar1 = (float)(g_FastInvSqrtMagic - ((int)fVar2 >> 1));",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fVar1 = (float)(g_FastInvSqrtMagic - ((int)fVar2 >> 1));",
+      "type": "fast_inv_sqrt_inline"
+    }
+  ],
   "stack_frame": {
     "frame_size": 88,
     "local_size": 76,
@@ -187,14 +196,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Inlined fast inverse sqrt bit-trick. Replace with `fastInvSqrt(<expr>)` in a .keep \u2014 the helper function exists in the binary (FUN_0043e2a0).",
-      "line": 28,
-      "match": "fVar1 = (float)(g_FastInvSqrtMagic - ((int)fVar2 >> 1));",
-      "severity": "moderate",
-      "text": "fVar1 = (float)(g_FastInvSqrtMagic - ((int)fVar2 >> 1));",
-      "type": "fast_inv_sqrt_inline"
-    }
-  ]
+  "suspects": []
 }

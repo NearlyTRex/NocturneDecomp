@@ -7,14 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 846,
-    "complexity_score": 454,
+    "complexity_score": 479,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 48,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 384,
-    "suspect_count": 6,
+    "suspect_count": 8,
     "suspect_types": [
+      "bitcast_double_pair",
       "pointer_cast",
       "sub84_truncation"
     ],
@@ -918,12 +919,28 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 344,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "if (dVar20 < __BITCAST_DOUBLE(CONCAT44(uStack_114,local_118))) {",
+      "type": "bitcast_double_pair"
+    },
+    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 345,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_108 = SUB84(__BITCAST_UINT64(dVar20),0);",
       "type": "sub84_truncation"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 355,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "fVar2 = sample_point->weight * (float)__BITCAST_DOUBLE(CONCAT44(uStack_114,local_118)) +",
+      "type": "bitcast_double_pair"
     }
   ]
 }

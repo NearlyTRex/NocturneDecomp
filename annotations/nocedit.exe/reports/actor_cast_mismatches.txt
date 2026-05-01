@@ -13,12 +13,12 @@ accesses and vtable calls will be wrong.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Total resolution calls found:  336
+  Total resolution calls found:  337
   Type mismatches found:         0
-  Unresolved (indirect variable): 18
+  Unresolved (indirect variable): 17
 
   Calls by function:
-    castToClassHash                263 calls
+    castToClassHash                264 calls
     createActorByName              7 calls
     getActor                       35 calls
     resolveActorByName             31 calls
@@ -218,15 +218,3 @@ Manual inspection is needed to determine the expected class.
     57:         this_ptr->enemies[this_ptr->enemy_count] = pCVar2;
     58:         if (this_ptr->enemies[this_ptr->enemy_count] != (CEnemy *)0x0) {
     59:           this_ptr->enemy_count = this_ptr->enemy_count + 1;
-
---------------------------------------------------------------------------------
-  core/weapon.cpp/CWeapon_updateLighting_FUN_005ee4a0.cpp
---------------------------------------------------------------------------------
-
-  Line 42: castToClassHash()
-    40:   g_CDemonLightInstance.antialiasing_enabled = 1;
-    41:   actor_ptr = (*((this_ptr->base).vtable._ub)->getCarrier)(&this_ptr->base);
-    42:   pCVar1 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,in_stack_ffffffc8);
-    43:   if ((pCVar1 != (CHero *)0x0) &&
-    44:      (fVar1 = (pCVar1->inventory).battery_charge, fVar1 < 15.0f)) {
-    45:     local_e2 = fVar1 * 0.06666667f;

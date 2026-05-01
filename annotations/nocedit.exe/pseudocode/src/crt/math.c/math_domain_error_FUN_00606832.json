@@ -2,14 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 97,
+    "complexity_score": 112,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 47,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
+      "bitcast_double_pair",
       "sub84_truncation",
       "unknown_field"
     ],
@@ -170,6 +171,14 @@
       "severity": "mild",
       "text": "local_14 = local_10._4_4_;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 48,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "local_10 = __BITCAST_DOUBLE(CONCAT44(local_14,local_18));",
+      "type": "bitcast_double_pair"
     }
   ]
 }

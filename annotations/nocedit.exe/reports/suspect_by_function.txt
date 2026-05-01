@@ -5,31 +5,15 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5342 (82.8%)
-With suspects: 1112
-Total suspects: 3664
+Clean: 5348 (82.9%)
+With suspects: 1106
+Total suspects: 3670
 
 ====================================================================================================
 cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630 (1 suspect)
   File: cockpit/drawsurf.cpp
 ====================================================================================================
   Line 0 [param_count_too_many]: Function declares 3 params but call sites push 2 (1 extra)
-
-====================================================================================================
-cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0 (11 suspects)
-  File: cockpit/drawsurf.cpp
-====================================================================================================
-  Line 147 [pointer_cast]: if (g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar9)].x_fixed_point <
-  Line 148 [pointer_cast]: g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar9 + -4)].x_fixed_point) {
-  Line 149 [pointer_cast]: uVar1 = *(uint *)((int)aiStack_d8 + iVar9 + -4);
-  Line 150 [pointer_cast]: *(uint *)((int)aiStack_d8 + iVar9 + -4) =
-  Line 151 [pointer_cast]: *(uint *)((int)aiStack_d8 + iVar9);
-  Line 153 [pointer_cast]: *(uint *)((int)aiStack_d8 + iVar9) = uVar1;
-  Line 166 [pointer_cast]: (this_ptr,(g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar13)].
-  Line 168 [pointer_cast]: (g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar11)].x_fixed_point >>
-  Line 177 [pointer_cast]: iVar2 = *(int *)((int)aiStack_d8 + iVar11 + -4);
-  Line 188 [pointer_cast]: ((void *)((int)aiStack_d8 + iVar11 + -4),
-  Line 189 [pointer_cast]: (void *)((int)aiStack_d8 + iVar11),(iVar10 - iVar9) * 4);
 
 ====================================================================================================
 cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487220 (2 suspects)
@@ -43,25 +27,6 @@ cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010 (1 suspect)
   File: cockpit/drawsurf.cpp
 ====================================================================================================
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x004871be) */
-
-====================================================================================================
-cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440 (2 suspects)
-  File: cockpit/pkbitmap.cpp
-====================================================================================================
-  Line 22 [pointer_cast]: pbVar6 = (byte *)(pcVar1 + (int)this_ptr->row_pointers[0]);
-  Line 23 [pointer_cast]: while (pbVar6 < (byte *)(pcVar1 + (int)pvVar2)) {
-
-====================================================================================================
-cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0054b0e0 (1 suspect)
-  File: cockpit/pkbitmap.cpp
-====================================================================================================
-  Line 42 [unrolled_memcpy]: // 0054b13e: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-cockpit_pkbitmap.cpp_writePBGHeader_FUN_0054b930 (1 suspect)
-  File: cockpit/pkbitmap.cpp
-====================================================================================================
-  Line 12 [unrolled_memcpy]: // 0054b94b: MOVSD.REP ES:EDI,ESI  ; s_PBG_00680ca0
 
 ====================================================================================================
 cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0 (1 suspect)
@@ -1170,12 +1135,6 @@ core_dfilter.cpp_CFilterFX_process_FUN_004708e0 (1 suspect)
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
 ====================================================================================================
-core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00471850 (1 suspect)
-  File: core/dglobe.cpp
-====================================================================================================
-  Line 28 [fast_inv_sqrt_inline]: fVar1 = (float)(g_FastInvSqrtMagic - ((int)fVar2 >> 1));
-
-====================================================================================================
 core_dglobe.cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360 (1 suspect)
   File: core/dglobe.cpp
 ====================================================================================================
@@ -1226,12 +1185,15 @@ core_dimage.cpp_CDemonImage_load_FUN_00471ad0 (3 suspects)
   Line 59 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160 (3 suspects)
+core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160 (6 suspects)
   File: core/dirmat.cpp
 ====================================================================================================
   Line 36 [sub84_truncation]: uStack_94 = SUB84(__BITCAST_UINT64(dVar2),0);
   Line 41 [sub84_truncation]: uStack_84 = SUB84(__BITCAST_UINT64(dVar2),0);
   Line 44 [sub84_truncation]: uStack_5c = SUB84(__BITCAST_UINT64(dVar3),0);
+  Line 51 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_84,local_68)) < 0.0) {
+  Line 59 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_5c,local_80)) < 0.0) {
+  Line 70 [bitcast_double_pair]: fVar7 = 1.0 / (float)__BITCAST_DOUBLE(CONCAT44(uStack_94,local_98));
 
 ====================================================================================================
 core_dirmat.cpp_CMatrix3x3f_multiply_FUN_00472540 (1 suspect)
@@ -1486,7 +1448,7 @@ core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0 (2 suspects)
   Line 93 [pointer_cast]: } while (iVar3 < *(int *)((int)pSVar1->vertices + local_28 + -0x14));
 
 ====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0 (13 suspects)
+core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0 (15 suspects)
   File: core/dmodel.cpp
 ====================================================================================================
   Line 29 [stack_alignment_array]: int aiStackY_10d8 [1006];
@@ -1499,6 +1461,8 @@ core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0 (13 suspects)
   Line 213 [sub84_truncation]: local_108 = SUB84(__BITCAST_UINT64(dVar24),0);
   Line 214 [pointer_cast]: pCVar14 = pCVar3 + iVar18 + *(int *)((int)local_f0 + local_20);
   Line 252 [sub84_truncation]: uStack_104 = SUB84(__BITCAST_UINT64(dVar24),0);
+  Line 266 [bitcast_double_pair]: dVar24 = __BITCAST_DOUBLE(CONCAT44(uStack_104,local_108)) +
+  Line 267 [bitcast_double_pair]: __BITCAST_DOUBLE(CONCAT44(uStack_fc,local_100));
   Line 284 [pointer_cast]: local_50 = (uint *)((int)local_50 + 1);
   Line 313 [pointer_cast]: *(uint *)((int)this_ptr->poly_texture_index_list + iVar18) =
   Line 314 [pointer_cast]: *(uint *)(local_80 + (int)this_ptr->poly_texture_index_list);
@@ -1586,6 +1550,12 @@ core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40 (1 suspect)
   File: core/dmodel.cpp
 ====================================================================================================
   Line 31 [pointer_cast]: while (iVar3 < *(int *)((int)this_ptr->poly_vert_list->vertices + local_18 + -0x14)) {
+
+====================================================================================================
+core_dmodel.cpp_safeAcos_FUN_0047b170 (1 suspect)
+  File: core/dmodel.cpp
+====================================================================================================
+  Line 22 [bitcast_double_pair]: return __BITCAST_DOUBLE(CONCAT44(local_10.u.high,local_10.u.low));
 
 ====================================================================================================
 core_dog.cpp_CZombieDog_process_FUN_0047f140 (1 suspect)
@@ -3094,7 +3064,7 @@ core_menu.cpp_configureGraphicsOptions_FUN_00510c80 (13 suspects)
   Line 520 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_menu.cpp_configureSoundOptions_FUN_00511e50 (9 suspects)
+core_menu.cpp_configureSoundOptions_FUN_00511e50 (11 suspects)
   File: core/menu.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
@@ -3105,6 +3075,8 @@ core_menu.cpp_configureSoundOptions_FUN_00511e50 (9 suspects)
   Line 183 [unrolled_strcpy]: do {
   Line 208 [unrolled_strcpy]: do {
   Line 228 [unrolled_strcpy]: do {
+  Line 507 [bitcast_double_pair]: fVar18 = (float10)__BITCAST_DOUBLE(CONCAT44(local_a40,uStack_a44)) * (float10)dVar17;
+  Line 510 [bitcast_double_pair]: (iVar8,(float)__BITCAST_DOUBLE(CONCAT44(local_a40,uStack_a44)),(float)fVar18);
   Line 516 [sub84_truncation]: uStack_4c = SUB84(__BITCAST_UINT64(dVar1),0);
 
 ====================================================================================================
@@ -3939,10 +3911,14 @@ core_script.cpp_CScript_showSyntaxHelp_FUN_00565e70 (1 suspect)
   Line 49 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_script.cpp_CScript_step_FUN_0055a810 (1 suspect)
+core_script.cpp_CScript_step_FUN_0055a810 (5 suspects)
   File: core/script.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
+  Line 247 [bitcast_double_pair]: dVar1 = __BITCAST_DOUBLE(CONCAT44(pcVar7,iVar4));
+  Line 257 [bitcast_double_pair]: dVar1 = __BITCAST_DOUBLE(CONCAT44(iVar4,local_11c));
+  Line 1378 [bitcast_double_pair]: dVar1 = __BITCAST_DOUBLE(CONCAT44(iVar4,local_11c));
+  Line 1417 [bitcast_double_pair]: dVar1 = __BITCAST_DOUBLE(CONCAT44(iVar4,local_11c));
 
 ====================================================================================================
 core_script.cpp_clearSelections_FUN_005644e0 (8 suspects)
@@ -5456,10 +5432,11 @@ core_vampboss.cpp_CVampireBoss_summonFireEmitters_FUN_005e7410 (1 suspect)
   Line 0 [param_count_too_many]: Function declares 1 params but call sites push 0 (1 extra)
 
 ====================================================================================================
-core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 (1 suspect)
+core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830 (2 suspects)
   File: core/vecdir.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */
+  Line 20 [bitcast_double_pair]: out_euler_angles->x = (float)__BITCAST_DOUBLE(CONCAT44(uStack_14,0x54411744));
 
 ====================================================================================================
 core_vehicle.cpp_CVehicle_process_FUN_005e7e80 (1 suspect)
@@ -5537,13 +5514,6 @@ core_waypoint.cpp_CWaypoint_setup_FUN_005ebeb0 (1 suspect)
   File: core/waypoint.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-
-====================================================================================================
-core_weapon.cpp_CWeapon_updateLighting_FUN_005ee4a0 (2 suspects)
-  File: core/weapon.cpp
-====================================================================================================
-  Line 12 [stack_param]: uint in_stack_ffffffc8;
-  Line 35 [stack_param]: pCVar1 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,in_stack_ffffffc8);
 
 ====================================================================================================
 core_weather.cpp_CWeather_renderParticles_FUN_005ef190 (10 suspects)
@@ -5731,18 +5701,28 @@ core_xform.cpp_lerpMatrix3x4_FUN_005f7140 (5 suspects)
   Line 28 [missing_cave_copy]: CQuaternion4f local_30;
 
 ====================================================================================================
-core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0 (6 suspects)
+core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0 (16 suspects)
   File: core/xform.cpp
 ====================================================================================================
   Line 42 [sub84_truncation]: local_88 = SUB84(__BITCAST_UINT64(dVar11),0);
   Line 50 [sub84_truncation]: local_80 = SUB84(__BITCAST_UINT64(dVar11),0);
   Line 63 [sub84_truncation]: uStack_3c = SUB84(__BITCAST_UINT64(dVar11),0);
+  Line 64 [bitcast_double_pair]: dVar9 = (double)matrix_ptr->m[2].w * __BITCAST_DOUBLE(CONCAT44(local_80,uStack_84)) * dVar11;
+  Line 65 [bitcast_double_pair]: dVar11 = (double)matrix_ptr->m[2].y * __BITCAST_DOUBLE(CONCAT44(local_80,uStack_84)) * dVar11;
   Line 66 [sub84_truncation]: uStack_34 = SUB84(__BITCAST_UINT64(dVar9),0);
   Line 68 [sub84_truncation]: uStack_64 = SUB84(__BITCAST_UINT64(dVar11),0);
+  Line 75 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_34,local_30)) < 0.0) {
+  Line 82 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_64,local_68)) < 0.0) {
+  Line 93 [bitcast_double_pair]: fVar4 = matrix_ptr->m[0].x * fVar4 * (float)__BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40));
   Line 95 [sub84_truncation]: local_b0 = SUB84(__BITCAST_UINT64(dVar11),0);
+  Line 96 [bitcast_double_pair]: dVar9 = (double)(matrix_ptr->m[1].x * (float)__BITCAST_DOUBLE(CONCAT44(uStack_9c,local_a0)) *
+  Line 97 [bitcast_double_pair]: (float)__BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40)));
+  Line 103 [bitcast_double_pair]: dVar11 = __BITCAST_DOUBLE(CONCAT44((float)dVar7,local_b0));
+  Line 138 [bitcast_double_pair]: fVar4 = -matrix_ptr->m[0].y * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c));
+  Line 140 [bitcast_double_pair]: dVar4 = (double)(matrix_ptr->m[0].w * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c)));
 
 ====================================================================================================
-core_xform.cpp_matrixToEulerAngles_FUN_005f5690 (10 suspects)
+core_xform.cpp_matrixToEulerAngles_FUN_005f5690 (19 suspects)
   File: core/xform.cpp
 ====================================================================================================
   Line 41 [sub84_truncation]: local_98 = SUB84(__BITCAST_UINT64(dVar10),0);
@@ -5752,9 +5732,18 @@ core_xform.cpp_matrixToEulerAngles_FUN_005f5690 (10 suspects)
   Line 64 [sub84_truncation]: local_88 = SUB84(__BITCAST_UINT64(dVar10),0);
   Line 64 [decompiler_intrinsic]: local_88 = SUB84(__BITCAST_UINT64(dVar10),0);
   Line 70 [sub84_truncation]: uStack_3c = SUB84(__BITCAST_UINT64(dVar11),0);
+  Line 71 [bitcast_double_pair]: fVar5 = matrix_in->m[0].y * (float)__BITCAST_DOUBLE(CONCAT44(local_98,uStack_9c)) * (float)dVar11;
   Line 73 [sub84_truncation]: uStack_34 = SUB84(__BITCAST_UINT64(dVar5),0);
+  Line 75 [bitcast_double_pair]: dVar11 = (double)(matrix_in->m[2].y * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c)) *
   Line 77 [sub84_truncation]: uStack_64 = SUB84(__BITCAST_UINT64(dVar11),0);
+  Line 84 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_34,local_30)) < 0.0) {
+  Line 91 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_64,local_68)) < 0.0) {
+  Line 102 [bitcast_double_pair]: dVar11 = (double)matrix_in->m[1].w * dVar10 * __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40));
+  Line 103 [bitcast_double_pair]: dVar10 = (double)matrix_in->m[1].x * dVar10 * __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40));
   Line 104 [sub84_truncation]: local_b0 = SUB84(__BITCAST_UINT64(dVar11),0);
+  Line 110 [bitcast_double_pair]: dVar11 = __BITCAST_DOUBLE(CONCAT44((float)dVar9,local_b0));
+  Line 144 [bitcast_double_pair]: fVar5 = -matrix_in->m[2].w * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c));
+  Line 146 [bitcast_double_pair]: dVar11 = (double)(matrix_in->m[0].w * (float)__BITCAST_DOUBLE(CONCAT44(local_98,uStack_9c)));
 
 ====================================================================================================
 core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10 (1 suspect)
@@ -6212,7 +6201,7 @@ engine_clipper.c_clipPolygonVerticalPlanes_FUN_00437ac0 (2 suspects)
   Line 101 [unrolled_memcpy]: // 00437bb2: MOVSD.REP ES:EDI,ESI  ; g_ClippedVertexBuffer | g_ClippedVertexBuffer[0].projected_vertex.transformed_y | g
 
 ====================================================================================================
-engine_colquant.c_quantizeColors_FUN_004406c0 (10 suspects)
+engine_colquant.c_quantizeColors_FUN_004406c0 (15 suspects)
   File: engine/colquant.c
 ====================================================================================================
   Line 86 [pointer_cast]: pSVar10 = (SColorQuantMapper *)((int)pSVar9->sort_keys[0] + 0x1c);
@@ -6224,7 +6213,12 @@ engine_colquant.c_quantizeColors_FUN_004406c0 (10 suspects)
   Line 144 [pointer_cast]: pSVar11 = (SColorQuantMapper *)((int)pSVar11->sort_keys[0] + 0x1c);
   Line 158 [pointer_cast]: pSVar11 = (SColorQuantMapper *)((int)pSVar11->sort_keys[0] + 0x1c);
   Line 161 [pointer_cast]: } while (pSVar11 != (SColorQuantMapper *)((int)workspace->sort_keys[0xff] + 0x1c));
+  Line 178 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_15c,local_160)) < pSVar11->boxes[1].total_weighted_error) {
   Line 186 [pointer_cast]: pSVar11 = (SColorQuantMapper *)((int)pSVar11->sort_keys[1] + 0x1c);
+  Line 190 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) != workspace->boxes[iVar13].spread_red) break;
+  Line 195 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) == workspace->boxes[iVar13].spread_green) {
+  Line 199 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) == workspace->boxes[iVar13].spread_blue) {
+  Line 203 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) != workspace->boxes[iVar13].spread_intensity)
 
 ====================================================================================================
 engine_console.cpp_CConsole_scrollUp_FUN_00441a80 (1 suspect)
@@ -6916,6 +6910,12 @@ engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440 (6 suspects)
   Line 59 [stack_param]: if (in_stack_0000002c != -1) {
   Line 93 [pointer_cast]: puVar8 = (ushort *)((int)g_ScreenBufferArray[(int)pcVar8] + x_position * 2);
   Line 126 [pointer_cast]: piVar9 = (int *)(x_position * 4 + (int)g_ScreenBufferArray[(int)pcVar8]);
+
+====================================================================================================
+shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80 (1 suspect)
+  File: shape/cramtex.cpp
+====================================================================================================
+  Line 20 [bitcast_double_pair]: return __BITCAST_DOUBLE(CONCAT44(g_CramTextureCount,
 
 ====================================================================================================
 shape_design.c_applyVertexCentering_FUN_004680f0 (1 suspect)
@@ -7718,7 +7718,7 @@ shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570 (6 suspects)
   Line 83 [pointer_cast]: *(uint *)((int)this_ptr->tri_data->edge_perpendiculars + local_18 + -0x14) = 0;
 
 ====================================================================================================
-shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 (6 suspects)
+shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 (8 suspects)
   File: shape/meshlod.cpp
 ====================================================================================================
   Line 119 [pointer_cast]: iVar16 = *(int *)((int)pCVar15[local_1c].adjacent_edge_indices + local_48);
@@ -7726,7 +7726,9 @@ shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 (6 suspects)
   Line 188 [pointer_cast]: *(int *)((int)g_TempNeighborFaces[0].edge_dot_products + iVar16 + 0xc) = iVar14;
   Line 236 [pointer_cast]: pCVar8 = this_ptr->vertex_data + *(int *)((int)g_MaxNeighborVerts + iVar10);
   Line 301 [pointer_cast]: pdVar1 = (double *)((int)g_SampleDistances + iVar16);
+  Line 344 [bitcast_double_pair]: if (dVar20 < __BITCAST_DOUBLE(CONCAT44(uStack_114,local_118))) {
   Line 345 [sub84_truncation]: local_108 = SUB84(__BITCAST_UINT64(dVar20),0);
+  Line 355 [bitcast_double_pair]: fVar2 = sample_point->weight * (float)__BITCAST_DOUBLE(CONCAT44(uStack_114,local_118)) +
 
 ====================================================================================================
 shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50 (4 suspects)
@@ -8095,24 +8097,40 @@ shape_superopt.cpp_CComplexPolygon_computeWindingNormal_FUN_005cbb40 (2 suspects
   Line 92 [unrolled_memcpy]: // 005cbc61: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70 (5 suspects)
+shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70 (13 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
   Line 48 [unrolled_memcpy]: // 005c8eee: MOVSD.REP ES:EDI,ESI
   Line 69 [unrolled_memcpy]: for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
   Line 70 [pointer_cast]: pdVar4 = (double *)((int)pdVar4 + (uint)bVar6 * -8 + 4);
+  Line 75 [bitcast_double_pair]: dVar8 = __BITCAST_DOUBLE(CONCAT44(uStack_78,local_7c)) * local_1c->z -
+  Line 76 [bitcast_double_pair]: __BITCAST_DOUBLE(CONCAT44(uStack_70,local_74)) * local_1c->y;
+  Line 77 [bitcast_double_pair]: dVar1 = __BITCAST_DOUBLE(CONCAT44(uStack_70,local_74)) * local_1c->x -
+  Line 78 [bitcast_double_pair]: __BITCAST_DOUBLE(CONCAT44(uStack_80,local_84)) * local_1c->z;
+  Line 79 [bitcast_double_pair]: dVar2 = __BITCAST_DOUBLE(CONCAT44(uStack_80,local_84)) * local_1c->y -
+  Line 80 [bitcast_double_pair]: __BITCAST_DOUBLE(CONCAT44(uStack_78,local_7c)) * local_1c->x;
   Line 100 [sub84_truncation]: local_34 = SUB84(__BITCAST_UINT64(dVar7),0);
+  Line 102 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_38,local_3c)) < dVar7) {
   Line 109 [sub84_truncation]: local_34 = SUB84(__BITCAST_UINT64(dVar8),0);
+  Line 111 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_38,local_3c)) < dVar8) {
 
 ====================================================================================================
-shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50 (5 suspects)
+shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50 (13 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
   Line 49 [unrolled_memcpy]: // 005c8bd2: MOVSD.REP ES:EDI,ESI
   Line 70 [unrolled_memcpy]: for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
   Line 71 [pointer_cast]: pdVar4 = (double *)((int)pdVar4 + (uint)bVar6 * -8 + 4);
+  Line 76 [bitcast_double_pair]: dVar8 = __BITCAST_DOUBLE(CONCAT44(uStack_c0,local_c4)) * local_14->z -
+  Line 77 [bitcast_double_pair]: __BITCAST_DOUBLE(CONCAT44(uStack_b8,local_bc)) * local_14->y;
+  Line 78 [bitcast_double_pair]: dVar1 = __BITCAST_DOUBLE(CONCAT44(uStack_b8,local_bc)) * local_14->x -
+  Line 79 [bitcast_double_pair]: __BITCAST_DOUBLE(CONCAT44(uStack_c8,local_cc)) * local_14->z;
+  Line 80 [bitcast_double_pair]: dVar2 = __BITCAST_DOUBLE(CONCAT44(uStack_c8,local_cc)) * local_14->y -
+  Line 81 [bitcast_double_pair]: __BITCAST_DOUBLE(CONCAT44(uStack_c0,local_c4)) * local_14->x;
   Line 117 [sub84_truncation]: local_3c = SUB84(__BITCAST_UINT64(dVar8),0);
+  Line 119 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_40,local_44)) < dVar8) {
   Line 128 [sub84_truncation]: local_3c = SUB84(__BITCAST_UINT64(dVar7),0);
+  Line 130 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_40,local_44)) < dVar7) {
 
 ====================================================================================================
 shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0 (3 suspects)
@@ -8204,11 +8222,14 @@ shape_superopt.cpp_CObj_removeVertex_FUN_005d3140 (6 suspects)
   Line 41 [pointer_cast]: *(uint *)((int)pCVar1->uv_coords + iVar4 + -4) = uVar2 - 1;
 
 ====================================================================================================
-shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0 (8 suspects)
+shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0 (11 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
   Line 58 [pointer_cast]: pdVar2 = (double *)((int)pdVar2 + 4);
   Line 59 [pointer_cast]: pdVar3 = (double *)((int)pdVar3 + 4);
+  Line 62 [bitcast_double_pair]: local_90 = local_a8 * __BITCAST_DOUBLE(CONCAT44(uStack_5c,local_60));
+  Line 63 [bitcast_double_pair]: local_88 = local_a0 * __BITCAST_DOUBLE(CONCAT44(uStack_54,local_58));
+  Line 64 [bitcast_double_pair]: local_80 = local_98 * __BITCAST_DOUBLE(CONCAT44(uVar1,local_50));
   Line 69 [pointer_cast]: pdVar2 = (double *)((int)pdVar2 + 4);
   Line 70 [pointer_cast]: pdVar5 = (double *)((int)pdVar5 + 4);
   Line 78 [unrolled_memcpy]: // 005d2b7f: MOVSD.REP ES:EDI,ESI
@@ -8370,7 +8391,7 @@ shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010 (8 suspects)
   Line 235 [unrolled_memcpy]: // 005d02f7: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-shape_superopt.cpp_CPoly_scale_FUN_005cc7c0 (24 suspects)
+shape_superopt.cpp_CPoly_scale_FUN_005cc7c0 (27 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
   Line 57 [unrolled_memcpy]: // 005cc884: MOVSD.REP ES:EDI,ESI
@@ -8378,6 +8399,9 @@ shape_superopt.cpp_CPoly_scale_FUN_005cc7c0 (24 suspects)
   Line 89 [unrolled_memcpy]: // 005cc921: MOVSD.REP ES:EDI,ESI
   Line 110 [pointer_cast]: pdVar9 = (double *)((int)pdVar9 + 4);
   Line 111 [pointer_cast]: pdVar11 = (double *)((int)pdVar11 + 4);
+  Line 113 [bitcast_double_pair]: local_60 = local_210 * __BITCAST_DOUBLE(CONCAT44(uStack_bc,local_c0));
+  Line 114 [bitcast_double_pair]: local_58 = local_208 * __BITCAST_DOUBLE(CONCAT44(uStack_b4,local_b8));
+  Line 115 [bitcast_double_pair]: local_50 = local_200 * __BITCAST_DOUBLE(CONCAT44(uStack_ac,local_b0));
   Line 120 [pointer_cast]: pdVar9 = (double *)((int)pdVar9 + 4);
   Line 121 [pointer_cast]: pdVar11 = (double *)((int)pdVar11 + 4);
   Line 130 [pointer_cast]: pdVar9 = (double *)((int)pdVar9 + 4);
@@ -8456,11 +8480,23 @@ shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10 (2 suspects)
   Line 284 [unrolled_memcpy]: // 005d6f0f: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60 (2 suspects)
+shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60 (14 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
+  Line 60 [bitcast_double_pair]: if (((__BITCAST_DOUBLE(CONCAT44(uStack_4c,local_50)) <= test_point->y) &&
+  Line 61 [bitcast_double_pair]: (test_point->y <= __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40)))) &&
+  Line 62 [bitcast_double_pair]: ((test_point->y != __BITCAST_DOUBLE(CONCAT44(uStack_4c,local_50)) ||
+  Line 63 [bitcast_double_pair]: (test_point->y != __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40)))))) {
+  Line 64 [bitcast_double_pair]: if ((test_point->x < __BITCAST_DOUBLE(CONCAT44(uStack_54,local_58))) ||
+  Line 65 [bitcast_double_pair]: (test_point->x < __BITCAST_DOUBLE(CONCAT44(uStack_44,local_48)))) {
+  Line 66 [bitcast_double_pair]: dVar6 = __BITCAST_DOUBLE(CONCAT44(uStack_44,local_48)) - __BITCAST_DOUBLE(CONCAT44(uStack_54,local_58));
+  Line 66 [bitcast_double_pair]: dVar6 = __BITCAST_DOUBLE(CONCAT44(uStack_44,local_48)) - __BITCAST_DOUBLE(CONCAT44(uStack_54,local_58));
+  Line 67 [bitcast_double_pair]: dVar7 = __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40)) - __BITCAST_DOUBLE(CONCAT44(uStack_4c,local_50));
+  Line 67 [bitcast_double_pair]: dVar7 = __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40)) - __BITCAST_DOUBLE(CONCAT44(uStack_4c,local_50));
   Line 68 [sub84_truncation]: local_38 = SUB84(__BITCAST_UINT64(dVar6),0);
   Line 69 [sub84_truncation]: local_30 = SUB84(__BITCAST_UINT64(dVar7),0);
+  Line 77 [bitcast_double_pair]: (test_point->y - __BITCAST_DOUBLE(CONCAT44(uStack_4c,local_50))) * local_60 +
+  Line 78 [bitcast_double_pair]: __BITCAST_DOUBLE(CONCAT44(uStack_54,local_58))) goto LAB_005d5ef4;
 
 ====================================================================================================
 shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0 (3 suspects)
@@ -8592,22 +8628,6 @@ sound_mp3.cpp_CMP3Decoder_read_FUN_00534a60 (1 suspect)
   Line 22 [unrolled_strcpy]: do {
 
 ====================================================================================================
-sound_mp3.cpp_antiAliasingButterfly_FUN_005334b0 (11 suspects)
-  File: sound/mp3.cpp
-====================================================================================================
-  Line 34 [pointer_cast]: dVar5 = 1.0 / SQRT(*(double *)((int)g_Mp3AntiAliasCSSource + iVar2) *
-  Line 35 [pointer_cast]: *(double *)((int)g_Mp3AntiAliasCSSource + iVar2) + 1.0);
-  Line 37 [sub84_truncation]: local_48 = SUB84(__BITCAST_UINT64(dVar5),0);
-  Line 38 [pointer_cast]: *(uint *)((int)g_Mp3AntiAliasCA + iVar2) = local_48;
-  Line 40 [pointer_cast]: *(double *)((int)g_Mp3AntiAliasCS + iVar2) =
-  Line 41 [pointer_cast]: *(double *)((int)g_Mp3AntiAliasCSSource + iVar2) * dVar5;
-  Line 42 [pointer_cast]: *(uint *)((int)g_Mp3AntiAliasCA + iVar2 + 4) = uStack_44;
-  Line 88 [pointer_cast]: *pfVar12 = fVar1 * (float)*(double *)((int)g_Mp3AntiAliasCA + iVar2) -
-  Line 89 [pointer_cast]: fVar4 * (float)*(double *)((int)g_Mp3AntiAliasCS + iVar2);
-  Line 90 [pointer_cast]: pdVar1 = (double *)((int)g_Mp3AntiAliasCA + iVar2);
-  Line 91 [pointer_cast]: pdVar2 = (double *)((int)g_Mp3AntiAliasCS + iVar2);
-
-====================================================================================================
 sound_mp3.cpp_applyPolyphaseWindow_FUN_00533690 (39 suspects)
   File: sound/mp3.cpp
 ====================================================================================================
@@ -8676,50 +8696,6 @@ sound_mp3.cpp_calculateMpegFrame_FUN_0052ea80 (1 suspect)
   File: sound/mp3.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
-====================================================================================================
-sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (39 suspects)
-  File: sound/mp3.cpp
-====================================================================================================
-  Line 142 [pointer_cast]: iVar12 = *(int *)((int)g_Layer3BandIndex[0].l + iVar12)) {
-  Line 147 [pointer_cast]: iVar11 = *(int *)((int)g_Layer3BandIndex[0].l + iVar6);
-  Line 153 [pointer_cast]: iVar12 = *(int *)((int)g_Layer3BandIndex[0].l + local_8c + 4) -
-  Line 154 [pointer_cast]: *(int *)((int)g_Layer3BandIndex[0].l + local_8c);
-  Line 166 [pointer_cast]: *(float *)((int)afStack_e78 + local_90) = (float)fVar13;
-  Line 185 [pointer_cast]: iVar6 = 0x240 - *(int *)((int)g_Layer3BandIndex[0].l + local_94 + 0x54);
-  Line 186 [pointer_cast]: iVar12 = *(int *)((int)g_Layer3BandIndex[0].l + local_94 + 0x50);
-  Line 196 [pointer_cast]: *(float *)((int)local_2078 + iVar11) = local_2078[iVar12];
-  Line 197 [pointer_cast]: *(float *)((int)afStack_e78 + iVar11) = fVar1;
-  Line 199 [pointer_cast]: *(float *)((int)afStack_1778 + iVar11) = afStack_1778[iVar12];
-  Line 219 [pointer_cast]: iVar12 = *(int *)((int)g_Layer3BandIndex[0].s + iVar6);
-  Line 220 [pointer_cast]: iVar6 = *(int *)((int)g_Layer3BandIndex[0].s + iVar6 + 4) - iVar12;
-  Line 239 [pointer_cast]: iVar11 = *(int *)((int)g_Layer3BandIndex[0].s + local_7c);
-  Line 240 [pointer_cast]: iVar12 = *(int *)((int)g_Layer3BandIndex[0].s + local_7c + 4) - iVar11;
-  Line 253 [pointer_cast]: *(float *)((int)afStack_e78 + local_80) = (float)fVar14;
-  Line 272 [pointer_cast]: iVar11 = *(int *)((int)g_Layer3BandIndex[0].s + local_9c + 0x2c);
-  Line 273 [pointer_cast]: iVar6 = *(int *)((int)g_Layer3BandIndex[0].s + local_9c + 0x34) -
-  Line 274 [pointer_cast]: *(int *)((int)g_Layer3BandIndex[0].s + local_9c + 0x30);
-  Line 276 [pointer_cast]: iVar11 = local_e4 * (*(int *)((int)g_Layer3BandIndex[0].s + local_9c + 0x30) - iVar11) +
-  Line 286 [pointer_cast]: *(float *)((int)local_2078 + iVar12) = local_2078[iVar11];
-  Line 287 [pointer_cast]: *(float *)((int)afStack_e78 + iVar12) = fVar2;
-  Line 289 [pointer_cast]: *(float *)((int)afStack_1778 + iVar12) = afStack_1778[iVar11];
-  Line 311 [pointer_cast]: iVar12 = *(int *)((int)g_Layer3BandIndex[0].s + iVar6);
-  Line 312 [pointer_cast]: iVar6 = *(int *)((int)g_Layer3BandIndex[0].s + iVar6 + 4) - iVar12;
-  Line 332 [pointer_cast]: iVar11 = *(int *)((int)g_Layer3BandIndex[0].s + local_6c);
-  Line 333 [pointer_cast]: iVar12 = *(int *)((int)g_Layer3BandIndex[0].s + local_6c + 4) - iVar11;
-  Line 346 [pointer_cast]: *(float *)((int)afStack_e78 + local_70) = (float)fVar14;
-  Line 362 [pointer_cast]: iVar11 = *(int *)((int)g_Layer3BandIndex[0].s + local_98 + 0x2c);
-  Line 363 [pointer_cast]: iVar6 = *(int *)((int)g_Layer3BandIndex[0].s + local_98 + 0x34) -
-  Line 364 [pointer_cast]: *(int *)((int)g_Layer3BandIndex[0].s + local_98 + 0x30);
-  Line 366 [pointer_cast]: iVar11 = local_24 * (*(int *)((int)g_Layer3BandIndex[0].s + local_98 + 0x30) - iVar11) +
-  Line 376 [pointer_cast]: *(float *)((int)local_2078 + iVar12) = local_2078[iVar11];
-  Line 377 [pointer_cast]: *(float *)((int)afStack_e78 + iVar12) = fVar2;
-  Line 379 [pointer_cast]: *(float *)((int)afStack_1778 + iVar12) = afStack_1778[iVar11];
-  Line 408 [pointer_cast]: iVar11 = *(int *)((int)g_Layer3BandIndex[0].l + iVar11)) {
-  Line 413 [pointer_cast]: iVar11 = *(int *)((int)g_Layer3BandIndex[0].l + iVar12);
-  Line 417 [pointer_cast]: iVar12 = *(int *)((int)g_Layer3BandIndex[0].l + local_60 + 4) -
-  Line 418 [pointer_cast]: *(int *)((int)g_Layer3BandIndex[0].l + local_60);
-  Line 430 [pointer_cast]: *(float *)((int)afStack_e78 + local_64) = (float)fVar14;
 
 ====================================================================================================
 sound_mp3.cpp_reorderShortBlockSamples_FUN_00532200 (4 suspects)

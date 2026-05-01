@@ -198,7 +198,7 @@ LAB_keydown:
     }
 
     // WM_KEYUP / WM_SYSKEYUP
-    g_MessageFlags[(lParam >> 0x10 & g_InputKeyMask) + 1] = 1;
+    g_MessageFlags[lParam >> 0x10 & g_InputKeyMask] = 1;
 
 LAB_default:
     LVar2 = (*g_DefWindowProcAFunc)(hWnd, message, wParam, lParam);

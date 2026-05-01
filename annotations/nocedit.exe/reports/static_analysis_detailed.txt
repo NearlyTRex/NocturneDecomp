@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (390 diagnostics)
+Cppcheck (quick) (392 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (84)
+uninitvar (81)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 71
@@ -171,18 +171,6 @@ uninitvar (84)
   core_skeledit.cpp_CDeformableModel_importVertexAss line 122
     File: core/skeledit.cpp
     Uninitialized variable: local_64
-
-  core_skeleton.cpp_CDeformableModelInstance_compute line 51
-    File: core/skeleton.cpp
-    Uninitialized variable: fStack_58
-
-  core_skeleton.cpp_CDeformableModelInstance_compute line 52
-    File: core/skeleton.cpp
-    Uninitialized variable: fStack_54
-
-  core_skeleton.cpp_CDeformableModelInstance_compute line 53
-    File: core/skeleton.cpp
-    Uninitialized variable: fStack_50
 
   core_sound.cpp_updateListeners_FUN_005b1870        line 69
     File: core/sound.cpp
@@ -349,7 +337,7 @@ uninitvar (84)
     Uninitialized variable: local_60
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (70)
+selfAssignment (72)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 163
@@ -631,6 +619,14 @@ selfAssignment (70)
   shape_superopt.cpp_CComplexPolygon_findReflexVerte line 73
     File: shape/superopt.cpp
     Redundant assignment of 'pdVar4' to itself.
+
+  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 line 189
+    File: sound/mp3.cpp
+    Redundant assignment of 'iVar5' to itself.
+
+  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 line 687
+    File: sound/mp3.cpp
+    Redundant assignment of 'pfVar11' to itself.
 
 ----------------------------------------------------------------------------------------------------
 shiftTooManyBitsSigned (68)
@@ -1141,7 +1137,7 @@ invalidscanf (57)
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-legacyUninitvar (36)
+legacyUninitvar (39)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 59
@@ -1288,6 +1284,18 @@ legacyUninitvar (36)
     File: shape/design.c
     Uninitialized variable: local_64
 
+  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 line 651
+    File: sound/mp3.cpp
+    Uninitialized variable: is_ratio_l[local_f8]
+
+  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 line 652
+    File: sound/mp3.cpp
+    Uninitialized variable: is_ratio_r[local_f8]
+
+  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 line 646
+    File: sound/mp3.cpp
+    Uninitialized variable: is_pos_tan[local_f8]
+
 ----------------------------------------------------------------------------------------------------
 invalidPointerCast (19)
 ----------------------------------------------------------------------------------------------------
@@ -1356,11 +1364,11 @@ invalidPointerCast (19)
     File: core/skeledit.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
-  core_skeleton.cpp_CDeformableModelInstance_compute line 39
+  core_skeleton.cpp_CDeformableModelInstance_compute line 36
     File: core/skeleton.cpp
     Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
 
-  core_skeleton.cpp_CDeformableModelInstance_compute line 40
+  core_skeleton.cpp_CDeformableModelInstance_compute line 37
     File: core/skeleton.cpp
     Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
 

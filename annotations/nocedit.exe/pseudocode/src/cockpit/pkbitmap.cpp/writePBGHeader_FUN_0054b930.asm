@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl cockpit_pkbitmap_cpp_writePBGHeader_FUN_0054b930(CPackedBitmap *bitmap_ptr,_FILE *file_header)
+; void __cdecl cockpit_pkbitmap_cpp_writePBGHeader_FUN_0054b930(int total_entries,_FILE *file_header)
 ;
 ; Parameters:
-; CPackedBitmap *  Stack[0x4]:4   bitmap_ptr
+; int              Stack[0x4]:4   total_entries
 ; _FILE *          Stack[0x8]:4   file_header
 ; Local Variables:
-; CPackedBitmap *[2] Stack[-0x10]:8  local_10
+; int[2]           Stack[-0x10]:8  local_10
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_pkbitmap_cpp_0063f250

@@ -84,6 +84,7 @@ SUSPECT_SEVERITY = {
     'missing_cave_copy': 'moderate',
     'fast_sqrt_inline': 'moderate',
     'fast_inv_sqrt_inline': 'moderate',
+    'bitcast_double_pair': 'moderate',
 }
 
 
@@ -204,6 +205,12 @@ _SUSPECT_PATTERN_DEFS = [
     # (double)CONCAT44(): double reconstruction from two 32-bit halves
     (r'\(double\)\s*CONCAT44\s*\(', 'double_reconstruction',
      'Double reconstructed from 32-bit halves (stack alignment artifact)'),
+    # __BITCAST_DOUBLE(CONCAT44(hi, lo)): two adjacent uint locals being passed
+    # as a single double argument. Almost always means Watcom split a `double`
+    # local into two 4-byte stack slots and Ghidra modeled them separately.
+    # Fixable in a .keep by merging the two uint declarations into one double.
+    (r'__BITCAST_DOUBLE\s*\(\s*CONCAT44\s*\(', 'bitcast_double_pair',
+     'Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) — fixable by merging into a single double local'),
     # SUB84(): extracting 32-bit value from 64-bit (truncation artifact)
     (r'\bSUB84\s*\(', 'sub84_truncation',
      'SUB84 truncation (extracting 32-bit from 64-bit value)'),

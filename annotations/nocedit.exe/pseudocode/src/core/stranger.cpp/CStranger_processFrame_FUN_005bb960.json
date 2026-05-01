@@ -1019,6 +1019,15 @@
       "type": "sub84_truncation"
     },
     {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 932,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(float)(((float10)__BITCAST_DOUBLE(CONCAT44(local_2dc,uVar25)) + (float10)-20) *",
+      "type": "bitcast_double_pair"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 950,
       "match": "in_stack_fffffd14",

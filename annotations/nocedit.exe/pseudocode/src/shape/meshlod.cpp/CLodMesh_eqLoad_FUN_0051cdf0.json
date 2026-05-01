@@ -265,6 +265,15 @@
       "type": "unknown_field"
     },
     {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 36,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "dVar2 = __BITCAST_DOUBLE(CONCAT44(9.9999999999999997e+34._4_4_,9.9999999999999997e+34._0_4_)) *",
+      "type": "bitcast_double_pair"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 42,
       "match": "(int *)((int)local_34",

@@ -7,14 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1482,
-    "complexity_score": 853,
+    "complexity_score": 878,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 63,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 743,
-    "suspect_count": 9,
+    "suspect_count": 11,
     "suspect_types": [
+      "bitcast_double_pair",
       "pointer_cast",
       "sub84_truncation",
       "unrolled_strcpy",
@@ -1204,6 +1205,22 @@
       "severity": "moderate",
       "text": "*(char *)((int)pacVar11 + 1) = cVar2;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 507,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "fVar18 = (float10)__BITCAST_DOUBLE(CONCAT44(local_a40,uStack_a44)) * (float10)dVar17;",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 510,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "(iVar8,(float)__BITCAST_DOUBLE(CONCAT44(local_a40,uStack_a44)),(float)fVar18);",
+      "type": "bitcast_double_pair"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",

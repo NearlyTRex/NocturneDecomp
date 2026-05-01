@@ -7,14 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 7459,
-    "complexity_score": 3352,
+    "complexity_score": 3397,
     "cross_reference_count": 4,
     "function_call_count": 81,
     "global_count": 341,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 3337,
-    "suspect_count": 1,
+    "suspect_count": 5,
     "suspect_types": [
+      "bitcast_double_pair",
       "warning_type_propagation"
     ],
     "total_lines": 10796
@@ -4068,6 +4069,38 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 247,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(pcVar7,iVar4));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 257,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(iVar4,local_11c));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 1378,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(iVar4,local_11c));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 1417,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "severity": "moderate",
+      "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(iVar4,local_11c));",
+      "type": "bitcast_double_pair"
     }
   ]
 }

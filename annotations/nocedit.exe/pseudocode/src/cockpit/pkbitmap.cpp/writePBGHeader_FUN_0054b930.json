@@ -4,20 +4,18 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 43,
+    "complexity_score": 29,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
-    "total_lines": 77
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 29,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 78
   },
   "cross_references": [],
   "function": {
@@ -30,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_pkbitmap.cpp_writePBGHeader_FUN_0054b930",
-    "signature": "void __cdecl cockpit_pkbitmap_cpp_writePBGHeader_FUN_0054b930(CPackedBitmap *bitmap_ptr,_FILE *file_header)"
+    "signature": "void __cdecl cockpit_pkbitmap_cpp_writePBGHeader_FUN_0054b930(int total_entries,_FILE *file_header)"
   },
   "function_calls": [
     {
@@ -121,6 +119,44 @@
     },
     "pcode_op_count": 224
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(char *)((int)pcVar2",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pcVar2 = (char *)((int)pcVar2 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(char *)((int)pcVar2",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pcVar2 = (char *)((int)pcVar2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(int *)((int)ppCVar3",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "ppCVar3 = (int *)((int)ppCVar3 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 12,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 0054b94b: MOVSD.REP ES:EDI,ESI  ; s_PBG_00680ca0",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 28,
     "local_size": 20,
@@ -133,14 +169,14 @@
         "name": "local_10",
         "offset": -16,
         "size": 8,
-        "type": "CPackedBitmap *[2]"
+        "type": "int[2]"
       },
       {
         "is_param": true,
-        "name": "bitmap_ptr",
+        "name": "total_entries",
         "offset": 4,
         "size": 4,
-        "type": "CPackedBitmap *"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -168,14 +204,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 12,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 0054b94b: MOVSD.REP ES:EDI,ESI  ; s_PBG_00680ca0",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

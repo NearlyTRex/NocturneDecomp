@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 129
-  Total diagnostics: 390
+  Functions with findings: 130
+  Total diagnostics: 392
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 129, raw .cpp files: 0
+  .keep.cpp files: 130, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -286,16 +286,6 @@ core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190  [.keep] [Cppch
   Line  606: [selfAssignment] Redundant assignment of 'pCVar8' to itself.
 
 ----------------------------------------------------------------------------------------------------
-core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0  [.keep] [Cppcheck (quick)]
-  File: core/skeleton.cpp  (5 diagnostics)
-
-  Line   39: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-  Line   40: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-  Line   51: [uninitvar] Uninitialized variable: fStack_58
-  Line   52: [uninitvar] Uninitialized variable: fStack_54
-  Line   53: [uninitvar] Uninitialized variable: fStack_50
-
-----------------------------------------------------------------------------------------------------
 core_sound.cpp_updateListeners_FUN_005b1870  [.keep] [Cppcheck (quick)]
   File: core/sound.cpp  (5 diagnostics)
 
@@ -324,6 +314,16 @@ core_xform.cpp_matrixToEulerAngles_FUN_005f5690  [.keep] [Cppcheck (quick)]
   Line  159: [ignoredReturnValue] Return value of function acos() is not used.
   Line  173: [ignoredReturnValue] Return value of function asin() is not used.
   Line  175: [uninitvar] Uninitialized variable: local_18
+
+----------------------------------------------------------------------------------------------------
+sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0  [.keep] [Cppcheck (quick)]
+  File: sound/mp3.cpp  (5 diagnostics)
+
+  Line  189: [selfAssignment] Redundant assignment of 'iVar5' to itself.
+  Line  646: [legacyUninitvar] Uninitialized variable: is_pos_tan[local_f8]
+  Line  651: [legacyUninitvar] Uninitialized variable: is_ratio_l[local_f8]
+  Line  652: [legacyUninitvar] Uninitialized variable: is_ratio_r[local_f8]
+  Line  687: [selfAssignment] Redundant assignment of 'pfVar11' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0  [.keep] [Cppcheck (quick)]
@@ -654,6 +654,13 @@ core_skeledit.cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0  [.keep] [Cppch
 
   Line   16: [invalidscanf] sscanf() without field width limits can crash with huge input data.
   Line   19: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+
+----------------------------------------------------------------------------------------------------
+core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0  [.keep] [Cppcheck (quick)]
+  File: core/skeleton.cpp  (2 diagnostics)
+
+  Line   36: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+  Line   37: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
 
 ----------------------------------------------------------------------------------------------------
 core_svetlana.cpp_CSvetlana_renderOpaque_FUN_005d9bc0  [.keep] [Cppcheck (quick)]

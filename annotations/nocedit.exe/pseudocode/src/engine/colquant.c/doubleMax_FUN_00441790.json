@@ -229,6 +229,15 @@
       "severity": "mild",
       "text": "return __BITCAST_DOUBLE(CONCAT44(a._4_4_,local_18._0_4_));",
       "type": "unknown_field"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 14,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "return __BITCAST_DOUBLE(CONCAT44(a._4_4_,local_18._0_4_));",
+      "type": "bitcast_double_pair"
     }
   ],
   "stack_frame": {

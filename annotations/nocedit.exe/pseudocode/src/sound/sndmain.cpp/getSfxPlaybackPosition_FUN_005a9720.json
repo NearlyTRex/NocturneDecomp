@@ -203,6 +203,15 @@
       "severity": "moderate",
       "text": "local_20.u.low = SUB84(__BITCAST_UINT64(dVar2),0);",
       "type": "sub84_truncation"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 33,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "return __BITCAST_DOUBLE(CONCAT44(local_28.u.high,local_28.u.low));",
+      "type": "bitcast_double_pair"
     }
   ],
   "stack_frame": {

@@ -44,7 +44,6 @@ int __cdecl core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0(CDemo
   int local_48;
   int local_44;
   uint local_40;
-  int iStack_34;
   int iStack_30;
   float fStack_2c;
   float fStack_28;
@@ -269,7 +268,7 @@ LAB_0057523f:
     } while (iVar7 < iVar12);
   }
   g_ZBufferScanlineArrayBackup[0] = (uint *)0x0;
-  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr2,iStack_34);
+  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr2,local_44);
   g_UseExternalRenderer = local_48;
   if (this_ptr->camera_count <= g_VDCameraIndex) {
     iVar12 = -1;
