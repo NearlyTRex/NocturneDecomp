@@ -39,7 +39,10 @@ def build_nocturne_pch(include_dir, compiler=DEFAULT_COMPILER, timeout=180):
         return None
     pch_path = nocturne_h + ".pch"
     shims_dir = os.path.join(os.path.dirname(include_dir), "shims")
-    cmd = [compiler] + DEFAULT_COMPILE_FLAGS + [
+    # Drop `-fsyntax-only` — it suppresses output emission, which would
+    # mean no PCH file ever gets written.
+    pch_flags = [f for f in DEFAULT_COMPILE_FLAGS if f != '-fsyntax-only']
+    cmd = [compiler] + pch_flags + [
         '-x', 'c++-header',
         '-fno-diagnostics-color',
         '-I', include_dir,
@@ -103,27 +106,78 @@ def _compile_cache_key(cpp_path, pch_sig, flags_sig):
     return h.hexdigest()[:16]
 
 
-def _read_cached_compile_result(json_path, cache_key):
+def _cache_path_for(src_dir):
+    """Sidecar path for the compile cache. Lives next to `src/` rather than
+    inside it, and is gitignored — its contents are machine-specific (PCH
+    bytes vary by clang version/sysroot/etc.) so they must not influence
+    git-tracked JSONs."""
+    return os.path.join(os.path.dirname(src_dir), '.compile_cache.json')
+
+
+def _load_compile_cache(cache_path, function_files, src_dir):
+    """Load the sidecar cache, or migrate from per-JSON `compile_hash`
+    fields written by older exports. Migration keeps the first run after
+    this change warm instead of forcing a full cold rebuild.
+
+    Returns a dict keyed by `os.path.relpath(json_path, src_dir)`.
+    """
+    if os.path.exists(cache_path):
+        try:
+            with open(cache_path, 'r') as f:
+                return json.load(f) or {}
+        except (OSError, ValueError):
+            return {}
+    cache = {}
+    for func_info in function_files:
+        try:
+            with open(func_info['json_path'], 'r') as f:
+                data = json.load(f)
+        except (OSError, ValueError):
+            continue
+        cs = data.get('compilation_status') or {}
+        h = cs.get('compile_hash')
+        if h and cs.get('success'):
+            key = os.path.relpath(func_info['json_path'], src_dir)
+            cache[key] = {
+                'compile_hash': h,
+                'errors': cs.get('errors', []),
+                'warnings': cs.get('warnings', []),
+            }
+    return cache
+
+
+def _save_compile_cache(cache_path, cache):
+    """Atomically write the sidecar cache."""
+    tmp = cache_path + '.tmp'
+    try:
+        with open(tmp, 'w') as f:
+            json.dump(cache, f, indent=2, sort_keys=True)
+        os.replace(tmp, cache_path)
+        return True
+    except OSError as e:
+        log_info("Failed to write compile cache: %s" % e)
+        try:
+            os.unlink(tmp)
+        except OSError:
+            pass
+        return False
+
+
+def _lookup_cached_compile_result(cache, key, cache_key):
     """Return the cached compilation_status if its stored hash matches
-    `cache_key` and the cached result was successful. Failed results are
-    not cached — a fix attempt should always re-run the compiler."""
+    `cache_key`. Only successful entries are stored, so a hit always means
+    success."""
     if not cache_key:
         return None
-    try:
-        with open(json_path, 'r') as f:
-            data = json.load(f)
-    except (OSError, ValueError):
+    entry = cache.get(key)
+    if not entry:
         return None
-    cached = data.get('compilation_status') or {}
-    if cached.get('compile_hash') != cache_key:
-        return None
-    if not cached.get('success'):
+    if entry.get('compile_hash') != cache_key:
         return None
     return {
         'success': True,
-        'errors': cached.get('errors', []),
-        'warnings': cached.get('warnings', []),
-        'compile_hash': cache_key,
+        'errors': entry.get('errors', []),
+        'warnings': entry.get('warnings', []),
     }
 
 
@@ -670,11 +724,19 @@ def compile_all_functions(src_dir, include_dir, compiler=DEFAULT_COMPILER, num_t
     # are unchanged since the last successful compile, reuse the cached
     # result and skip the clang invocation entirely. Failed results are not
     # cached, so any keep edit re-runs the compiler.
-    pending_compile = []  # (func_info, cache_key) tuples to actually compile
+    #
+    # Cache lives in a sidecar file (gitignored), keyed by JSON path relative
+    # to src_dir. Keeping it out of the JSONs preserves their determinism
+    # across machines — PCH bytes embed clang version/sysroot/build stamps,
+    # so the hash itself is per-machine.
+    cache_path = _cache_path_for(src_dir)
+    compile_cache = _load_compile_cache(cache_path, function_files, src_dir)
+    pending_compile = []  # (func_info, cache_key, cache_key_path) tuples to actually compile
     cache_hits = 0
     for func_info in function_files:
         cache_key = _compile_cache_key(func_info['cpp_path'], pch_sig, flags_sig)
-        cached = _read_cached_compile_result(func_info['json_path'], cache_key)
+        cache_key_path = os.path.relpath(func_info['json_path'], src_dir)
+        cached = _lookup_cached_compile_result(compile_cache, cache_key_path, cache_key)
         if cached is not None:
             results[func_info['name']] = {
                 'success': True,
@@ -686,7 +748,7 @@ def compile_all_functions(src_dir, include_dir, compiler=DEFAULT_COMPILER, num_t
             }
             cache_hits += 1
         else:
-            pending_compile.append((func_info, cache_key))
+            pending_compile.append((func_info, cache_key, cache_key_path))
 
     if cache_hits:
         log_info("  Cache hits: %d/%d (skipping clang invocation)" %
@@ -699,14 +761,14 @@ def compile_all_functions(src_dir, include_dir, compiler=DEFAULT_COMPILER, num_t
         with ThreadPoolExecutor(max_workers=num_threads) as executor:
             # Submit compilation tasks
             future_to_func = {}
-            for func_info, cache_key in pending_compile:
+            for func_info, cache_key, cache_key_path in pending_compile:
                 future = executor.submit(
                     compile_function_cpp, func_info['cpp_path'], include_dir,
                     compiler, 60, repo_dir, pch_path)
-                future_to_func[future] = (func_info, cache_key)
+                future_to_func[future] = (func_info, cache_key, cache_key_path)
 
             for future in as_completed(future_to_func):
-                func_info, cache_key = future_to_func[future]
+                func_info, cache_key, cache_key_path = future_to_func[future]
                 func_name = func_info['name']
 
                 try:
@@ -728,10 +790,17 @@ def compile_all_functions(src_dir, include_dir, compiler=DEFAULT_COMPILER, num_t
                         'warnings': [],
                     }
 
-                # Stash the cache key on success so the next export can skip
-                # this function if the source/flags/PCH are unchanged.
+                # Update sidecar cache on success so the next export can skip
+                # this function if the source/flags/PCH are unchanged. Drop
+                # any prior entry on failure to force a re-run after fixes.
                 if compilation_status['success'] and cache_key:
-                    compilation_status['compile_hash'] = cache_key
+                    compile_cache[cache_key_path] = {
+                        'compile_hash': cache_key,
+                        'errors': compilation_status['errors'],
+                        'warnings': compilation_status['warnings'],
+                    }
+                else:
+                    compile_cache.pop(cache_key_path, None)
 
                 results[func_name] = {
                     'success': compilation_status['success'],
@@ -767,6 +836,10 @@ def compile_all_functions(src_dir, include_dir, compiler=DEFAULT_COMPILER, num_t
                 except Exception:
                     pass  # Errors already logged in update function
 
+    # Persist the sidecar cache so the next export can short-circuit
+    # unchanged functions. Best-effort — failures don't block the export.
+    _save_compile_cache(cache_path, compile_cache)
+
     return results
 
 
@@ -789,18 +862,14 @@ def update_function_json_with_compilation(json_path, compilation_status):
         with open(json_path, 'r') as f:
             data = json.load(f)
 
-        # Add compilation_status. Stash compile_hash on success so the next
-        # export can short-circuit unchanged functions; omit it on failure
-        # to force re-running the compiler after fix attempts.
-        new_status = {
+        # The compile_hash lives in the sidecar cache (gitignored), not here —
+        # PCH bytes are machine-specific, so embedding the hash would create
+        # constant churn on these git-tracked JSONs across machines.
+        data['compilation_status'] = {
             'success': compilation_status.get('success', False),
             'errors': compilation_status.get('errors', []),
             'warnings': compilation_status.get('warnings', []),
         }
-        compile_hash = compilation_status.get('compile_hash')
-        if compile_hash and new_status['success']:
-            new_status['compile_hash'] = compile_hash
-        data['compilation_status'] = new_status
 
         # Write back
         with open(json_path, 'w') as f:
