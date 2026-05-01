@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (378 diagnostics)
+Cppcheck (quick) (390 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (78)
+uninitvar (84)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 71
@@ -47,6 +47,30 @@ uninitvar (78)
   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880      line 242
     File: core/cloth.cpp
     Uninitialized variable: fStack_550
+
+  core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_ line 47
+    File: core/dcube.cpp
+    Uninitialized variable: local_40
+
+  core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_ line 48
+    File: core/dcube.cpp
+    Uninitialized variable: local_3c
+
+  core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_ line 49
+    File: core/dcube.cpp
+    Uninitialized variable: local_38
+
+  core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_ line 59
+    File: core/dcube.cpp
+    Uninitialized variable: local_20
+
+  core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_ line 65
+    File: core/dcube.cpp
+    Uninitialized variable: local_24
+
+  core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_ line 70
+    File: core/dcube.cpp
+    Uninitialized variable: local_28
 
   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 542
     File: core/dmodel.cpp
@@ -325,7 +349,7 @@ uninitvar (78)
     Uninitialized variable: local_60
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (73)
+selfAssignment (70)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 163
@@ -496,18 +520,6 @@ selfAssignment (73)
     File: engine/3d.c
     Redundant assignment of 'ppSVar12' to itself.
 
-  engine_colquant.c_quantizeColors_FUN_004406c0      line 136
-    File: engine/colquant.c
-    Redundant assignment of 'pSVar14' to itself.
-
-  engine_colquant.c_quantizeColors_FUN_004406c0      line 137
-    File: engine/colquant.c
-    Redundant assignment of 'pSVar16' to itself.
-
-  engine_colquant.c_quantizeColors_FUN_004406c0      line 144
-    File: engine/colquant.c
-    Redundant assignment of 'puVar15' to itself.
-
   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_0 line 96
     File: engine/fileio.cpp
     Redundant assignment of 'pSVar8' to itself.
@@ -621,7 +633,7 @@ selfAssignment (73)
     Redundant assignment of 'pdVar4' to itself.
 
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (59)
+shiftTooManyBitsSigned (68)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_F line 66
@@ -676,11 +688,47 @@ shiftTooManyBitsSigned (59)
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
+  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_F line 148
+    File: core/dcamera.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_F line 151
+    File: core/dcamera.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_F line 154
+    File: core/dcamera.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_F line 166
+    File: core/dcamera.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_F line 243
+    File: core/dcamera.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_F line 246
+    File: core/dcamera.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_F line 249
+    File: core/dcamera.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
   core_dcamera.cpp_CDemonCamera_uploadBackdropTextur line 32
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   core_dcamera.cpp_CDemonCamera_uploadBackdropTextur line 38
+    File: core/dcamera.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dcamera.cpp_renderVolumetricLightScanline_FUN line 54
+    File: core/dcamera.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dcamera.cpp_renderVolumetricLightScanline_FUN line 58
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -744,19 +792,19 @@ shiftTooManyBitsSigned (59)
     File: core/setedit.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 86
+  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 84
     File: engine/colquant.c
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 89
+  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 87
     File: engine/colquant.c
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 92
+  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 90
     File: engine/colquant.c
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 95
+  engine_colquant.c_computeBoxStatistics_FUN_0044126 line 93
     File: engine/colquant.c
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -1560,7 +1608,7 @@ arrayIndexOutOfBounds (2)
 arrayIndexOutOfBoundsCond (1)
 ----------------------------------------------------------------------------------------------------
 
-  engine_clipper.c_clipPolygonToViewFrustum_FUN_0043 line 165
+  engine_clipper.c_clipPolygonToViewFrustum_FUN_0043 line 159
     File: engine/clipper.c
     Either the condition '0<vertex_count' is redundant or the array 'auStack_150[32]' is accessed at index 32, which is out of bounds.
 

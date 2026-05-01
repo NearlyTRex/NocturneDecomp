@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 44,
+    "complexity_score": 29,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 29,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 75
   },
   "cross_references": [],
@@ -145,6 +143,17 @@
     },
     "pcode_op_count": 341
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(uint *)((int)g_CameraConvertedPalette",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_CameraConvertedPalette + iVar3) = uVar2;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -161,14 +170,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(uint *)((int)g_CameraConvertedPalette",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_CameraConvertedPalette + iVar3) = uVar2;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

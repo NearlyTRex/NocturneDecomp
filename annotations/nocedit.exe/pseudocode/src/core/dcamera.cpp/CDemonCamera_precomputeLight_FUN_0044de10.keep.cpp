@@ -30,7 +30,6 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemonCa
   int iVar9;
   int iVar10;
   byte bVar10;
-  void *apvStackY_185c [1523];
   int local_80;
   int local_7c;
   void *local_78;

@@ -4,21 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 685,
-    "complexity_score": 376,
+    "complexity_score": 271,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 41,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 271,
-    "suspect_count": 9,
-    "suspect_types": [
-      "pointer_cast",
-      "raw_address_constant",
-      "stack_alignment_array"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 956
   },
   "cross_references": [
@@ -404,6 +400,89 @@
     },
     "pcode_op_count": 3601
   },
+  "resolved_suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 31,
+      "match": "aiStackY_107c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int aiStackY_107c [1014];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 86,
+      "match": "(int *)((int)g_CoronaLeftExtent",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CoronaLeftExtent + iVar4) = this_ptr->framebuffer_width;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 87,
+      "match": "(uint *)((int)g_CoronaRightExtent",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_CoronaRightExtent + iVar4) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 227,
+      "match": "(int *)((int)g_CoronaLeftExtent",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (this_ptr->framebuffer_width != *(int *)((int)g_CoronaLeftExtent + local_58)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 228,
+      "match": "(int *)((int)g_CoronaLeftExtent",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_28 = *(int *)((int)g_CoronaLeftExtent + local_58);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 229,
+      "match": "(int *)((int)g_CoronaRightExtent",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar13 = *(int *)((int)g_CoronaRightExtent + local_58);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Raw hex literal 0x132220c matches address of g_CoronaLightCache (+4 bytes into) (type SCoronaLightCache). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 101,
+      "match": "0x132220c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar13 = iVar1 + 0x132220c;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x132220c matches address of g_CoronaLightCache (+4 bytes into) (type SCoronaLightCache). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 109,
+      "match": "0x132220c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(iVar12,*(int *)(iVar13 + 4),*(int *)(iVar13 + 0x3c4),iVar1 + 0x132220c);",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0x1322990 matches address of g_CoronaLightCache (+1928 bytes into) (type SCoronaLightCache). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 190,
+      "match": "0x1322990",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (pcVar14 = (char *)(iVar1 + 0x1322990 + local_54 * 0x140 + iVar13);",
+      "type": "raw_address_constant"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4236,
     "local_size": 4224,
@@ -637,78 +716,64 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 31,
-      "match": "aiStackY_107c",
-      "severity": "moderate",
-      "text": "int aiStackY_107c [1014];",
-      "type": "stack_alignment_array"
+  "static_analysis": {
+    "analyzed_file": "CDemonCamera_renderGlobeCoronas_FUN_004518f0.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 7,
+      "diagnostics": [
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 41,
+          "line": 148,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 41,
+          "line": 151,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 42,
+          "line": 154,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 35,
+          "line": 166,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 44,
+          "line": 243,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 45,
+          "line": 246,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 44,
+          "line": 249,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        }
+      ],
+      "error": null
     },
-    {
-      "description": "Complex pointer cast",
-      "line": 86,
-      "match": "(int *)((int)g_CoronaLeftExtent",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_CoronaLeftExtent + iVar4) = this_ptr->framebuffer_width;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 87,
-      "match": "(uint *)((int)g_CoronaRightExtent",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_CoronaRightExtent + iVar4) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 227,
-      "match": "(int *)((int)g_CoronaLeftExtent",
-      "severity": "moderate",
-      "text": "if (this_ptr->framebuffer_width != *(int *)((int)g_CoronaLeftExtent + local_58)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 228,
-      "match": "(int *)((int)g_CoronaLeftExtent",
-      "severity": "moderate",
-      "text": "local_28 = *(int *)((int)g_CoronaLeftExtent + local_58);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 229,
-      "match": "(int *)((int)g_CoronaRightExtent",
-      "severity": "moderate",
-      "text": "iVar13 = *(int *)((int)g_CoronaRightExtent + local_58);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Raw hex literal 0x132220c matches address of g_CoronaLightCache (+4 bytes into) (type SCoronaLightCache). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 101,
-      "match": "0x132220c",
-      "severity": "moderate",
-      "text": "iVar13 = iVar1 + 0x132220c;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x132220c matches address of g_CoronaLightCache (+4 bytes into) (type SCoronaLightCache). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 109,
-      "match": "0x132220c",
-      "severity": "moderate",
-      "text": "(iVar12,*(int *)(iVar13 + 4),*(int *)(iVar13 + 0x3c4),iVar1 + 0x132220c);",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0x1322990 matches address of g_CoronaLightCache (+1928 bytes into) (type SCoronaLightCache). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 190,
-      "match": "0x1322990",
-      "severity": "moderate",
-      "text": "for (pcVar14 = (char *)(iVar1 + 0x1322990 + local_54 * 0x140 + iVar13);",
-      "type": "raw_address_constant"
-    }
-  ]
+    "file_variant": "keep"
+  },
+  "suspects": []
 }

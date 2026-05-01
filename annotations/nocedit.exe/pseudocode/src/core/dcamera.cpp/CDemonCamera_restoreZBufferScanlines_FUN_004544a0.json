@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 35,
+    "complexity_score": 20,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 20,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 54
   },
   "cross_references": [
@@ -113,6 +111,17 @@
     },
     "pcode_op_count": 201
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(void *)(iVar1 * 4 + (int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(void *)(iVar1 * 4 + (int)this_ptr->zbuffer_aligned),",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -129,14 +138,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(void *)(iVar1 * 4 + (int)this_ptr",
-      "severity": "moderate",
-      "text": "(void *)(iVar1 * 4 + (int)this_ptr->zbuffer_aligned),",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

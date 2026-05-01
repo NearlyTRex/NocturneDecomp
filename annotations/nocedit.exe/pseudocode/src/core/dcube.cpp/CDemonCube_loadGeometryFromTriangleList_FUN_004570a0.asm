@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dcube_cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0(CDemonCube *this_ptr,void *triangle_data,int triangle_count,CVector3f *min_bounds,CVector3f *max_bounds,uchar *ground_types,uint *voxel_data)
+; void __cdecl core_dcube_cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0(CDemonCube *this_ptr,CDemonTriangle *triangle_data,int triangle_count,CVector3f *min_bounds,CVector3f *max_bounds,uchar *ground_types,uint *voxel_data)
 ;
 ; Parameters:
 ; CDemonCube *     Stack[0x4]:4   this_ptr
-; void *           Stack[0x8]:4   triangle_data
+; CDemonTriangle * Stack[0x8]:4   triangle_data
 ; int              Stack[0xc]:4   triangle_count
 ; CVector3f *      Stack[0x10]:4   min_bounds
 ; CVector3f *      Stack[0x14]:4   max_bounds

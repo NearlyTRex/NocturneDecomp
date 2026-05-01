@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 39,
+    "complexity_score": 14,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 14,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 32
   },
   "cross_references": [
@@ -141,19 +139,12 @@
     },
     "pcode_op_count": 69
   },
-  "stack_frame": {
-    "frame_size": 4,
-    "local_size": 4,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": []
-  },
-  "suspects": [
+  "resolved_suspects": [
     {
       "description": "Complex pointer cast",
       "line": 12,
       "match": "(uint *)((int)g_CoronaRightExtent",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)g_CoronaRightExtent + iVar2) = 0x13f;",
       "type": "pointer_cast"
@@ -162,9 +153,19 @@
       "description": "Complex pointer cast",
       "line": 13,
       "match": "(uint *)((int)g_CoronaLeftExtent",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)g_CoronaLeftExtent + iVar2) = 0;",
       "type": "pointer_cast"
     }
-  ]
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

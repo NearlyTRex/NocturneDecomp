@@ -11,14 +11,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_0044cc70(CDe
 
 {
   CDemonRenderer *this_ptr_00;
-  uint uVar1;
   int iVar2;
-  int iVar3;
-  void **ppvVar4;
-  void **ppvVar5;
-  byte bVar6;
-  
-  bVar6 = 0;
+
   if (this_ptr->scene_open_flag == 0) {
     g_CurrentFilename = "..\\core\\dcamera.cpp";
     g_CurrentLineNumber = 0x42d;
@@ -39,12 +33,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_0044cc70(CDe
     g_RedBitPosition.dword = 0x10;
     iVar2 = 0;
     if (0 < this_ptr->framebuffer_height) {
-      iVar3 = 0;
       do {
-        *(void **)((int)g_ScreenBufferArray + iVar3) =
-             (void *)((int)this_ptr->framebuffer_aligned + this_ptr->framebuffer_width * iVar2 * 4);
+        g_ScreenBufferArray[iVar2] =
+             (char *)this_ptr->framebuffer_aligned + this_ptr->framebuffer_width * iVar2 * 4;
         iVar2 = iVar2 + 1;
-        iVar3 = iVar3 + 4;
       } while (iVar2 < this_ptr->framebuffer_height);
     }
     engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890

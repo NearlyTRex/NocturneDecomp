@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantMapper *workspace,char *color_data,int color_count,int num_palette_entries)
 
 {
@@ -25,12 +23,6 @@ char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantMapper *
   uint uVar12;
   SColorQuantMapper *pSVar12;
   int iVar13;
-  SColorQuantCentroid *pSVar13;
-  SColorQuantCentroid *pSVar14;
-  uint *puVar15;
-  uint *puVar14;
-  SColorQuantCentroid *pSVar16;
-  byte bVar17;
   uint local_160;
   uint uStack_15c;
   uint local_158;
@@ -48,8 +40,7 @@ char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantMapper *
   double dVar3;
   char *pcVar4;
   double dVar7;
-  
-  bVar17 = 0;
+
   memset(workspace->sort_keys,0,0x2000);
   memset(workspace->centroids,0,0x2000);
   memset(workspace->boxes,0,0x4000);
@@ -120,30 +111,9 @@ char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantMapper *
             while (iVar9 < workspace->num_palette_entries + -1) {
               if (pSVar11->centroids[1].weighted_intensity <
                   pSVar11->centroids[0].weighted_intensity) {
-                pSVar13 = pSVar11->centroids;
-                puVar14 = local_50;
-                for (iVar10 = 8; iVar10 != 0; iVar10 = iVar10 + -1) {
-                  *puVar14 = *(uint *)&pSVar13->red;
-                  pSVar13 = (SColorQuantCentroid *)((int)pSVar13 + (uint)bVar17 * -8 + 4);
-                  puVar14 = puVar14 + (uint)bVar17 * -2 + 1;
-                }
-                pSVar14 = pSVar11->centroids + 1;
-                pSVar16 = pSVar11->centroids;
-                for (iVar10 = 8; iVar10 != 0; iVar10 = iVar10 + -1) {
-                  pSVar16 = (SColorQuantCentroid *)((int)pSVar16 + (uint)bVar17 * -8 + 4);
-                  pSVar14 = (SColorQuantCentroid *)((int)pSVar14 + (uint)bVar17 * -8 + 4);
-                  *(uint *)&pSVar16->red = *(uint *)&pSVar14->red;
-                  pSVar14 = pSVar14;
-                  pSVar16 = pSVar16;
-                }
-                puVar15 = local_50;
-                pSVar13 = pSVar11->centroids + 1;
-                for (iVar10 = 8; iVar10 != 0; iVar10 = iVar10 + -1) {
-                  puVar15 = puVar15 + (uint)bVar17 * -2 + 1;
-                  *(uint *)&pSVar13->red = *puVar15;
-                  puVar15 = puVar15;
-                  pSVar13 = (SColorQuantCentroid *)((int)pSVar13 + (uint)bVar17 * -8 + 4);
-                }
+                memcpy(local_50, &pSVar11->centroids[0], sizeof(SColorQuantCentroid));
+                memcpy(&pSVar11->centroids[0], &pSVar11->centroids[1], sizeof(SColorQuantCentroid));
+                memcpy(&pSVar11->centroids[1], local_50, sizeof(SColorQuantCentroid));
                 iVar9 = iVar9 + 1;
                 pSVar11 = (SColorQuantMapper *)((int)pSVar11->sort_keys[0] + 0x1c);
               }

@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 392,
-    "complexity_score": 265,
+    "complexity_score": 165,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 22,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 165,
-    "suspect_count": 9,
-    "suspect_types": [
-      "pointer_cast",
-      "stack_alignment_array"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 557
   },
   "cross_references": [
@@ -283,6 +280,89 @@
     },
     "pcode_op_count": 1739
   },
+  "resolved_suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 19,
+      "match": "aiStackY_106c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int aiStackY_106c [1014];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(int *)((int)g_PrecomputedDepthBuffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_PrecomputedDepthBuffer + iVar1 + 4) = local_60.z;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 118,
+      "match": "(int *)((int)g_ZBufferScanlineArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)(*(int *)((int)g_ZBufferScanlineArray + local_48) + local_34);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 139,
+      "match": "(int *)((int)g_CameraEdgeOffsetY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CameraEdgeOffsetY + iVar6)) * 0x140 +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 141,
+      "match": "(int *)((int)g_CameraEdgeOffsetX",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CameraEdgeOffsetX + iVar6)] >> 0x1f;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 144,
+      "match": "(int *)((int)g_CameraEdgeOffsetY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CameraEdgeOffsetY + iVar6)) * 0x140 +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 146,
+      "match": "(int *)((int)g_CameraEdgeOffsetX",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CameraEdgeOffsetX + iVar6)] ^ uVar3) - uVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 149,
+      "match": "(int *)((int)g_CameraEdgeOffsetX",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CameraEdgeOffsetX + iVar6) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 150,
+      "match": "(int *)((int)g_CameraEdgeOffsetY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CameraEdgeOffsetY + iVar6) * 0x140;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4212,
     "local_size": 4208,
@@ -456,78 +536,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 19,
-      "match": "aiStackY_106c",
-      "severity": "moderate",
-      "text": "int aiStackY_106c [1014];",
-      "type": "stack_alignment_array"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 81,
-      "match": "(int *)((int)g_PrecomputedDepthBuffer",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_PrecomputedDepthBuffer + iVar1 + 4) = local_60.z;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 118,
-      "match": "(int *)((int)g_ZBufferScanlineArray",
-      "severity": "moderate",
-      "text": "iVar1 = *(int *)(*(int *)((int)g_ZBufferScanlineArray + local_48) + local_34);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 139,
-      "match": "(int *)((int)g_CameraEdgeOffsetY",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_CameraEdgeOffsetY + iVar6)) * 0x140 +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 141,
-      "match": "(int *)((int)g_CameraEdgeOffsetX",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_CameraEdgeOffsetX + iVar6)] >> 0x1f;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 144,
-      "match": "(int *)((int)g_CameraEdgeOffsetY",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_CameraEdgeOffsetY + iVar6)) * 0x140 +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 146,
-      "match": "(int *)((int)g_CameraEdgeOffsetX",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_CameraEdgeOffsetX + iVar6)] ^ uVar3) - uVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 149,
-      "match": "(int *)((int)g_CameraEdgeOffsetX",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_CameraEdgeOffsetX + iVar6) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 150,
-      "match": "(int *)((int)g_CameraEdgeOffsetY",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_CameraEdgeOffsetY + iVar6) * 0x140;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

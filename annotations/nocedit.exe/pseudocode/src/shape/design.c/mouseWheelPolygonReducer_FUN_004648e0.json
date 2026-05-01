@@ -7,13 +7,13 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 306,
-    "complexity_score": 433,
+    "complexity_score": 393,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 39,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 168,
-    "suspect_count": 25,
+    "suspect_count": 21,
     "suspect_types": [
       "pointer_cast",
       "unrolled_memcpy",
@@ -602,27 +602,11 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
-      "line": 232,
-      "match": "MOVSB.REP",
-      "severity": "moderate",
-      "text": "// 00464ba1: MOVSB.REP ES:EDI,ESI  ; g_LoadedVertices | g_LoadedVertices[0].vertex.y | g_LoadedVertices[0].vertex.y+1",
-      "type": "unrolled_memcpy"
-    },
-    {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 240,
       "match": "MOVSD.REP",
       "severity": "moderate",
       "text": "// 00464bbf: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
-      "line": 243,
-      "match": "MOVSB.REP",
-      "severity": "moderate",
-      "text": "// 00464bc6: MOVSB.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0] | g_ModelPolygonData[0].",
       "type": "unrolled_memcpy"
     },
     {
@@ -634,27 +618,11 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
-      "line": 279,
-      "match": "MOVSB.REP",
-      "severity": "moderate",
-      "text": "// 00464c34: MOVSB.REP ES:EDI,ESI  ; g_LoadedVertices | g_LoadedVertices[0].vertex.y | g_LoadedVertices[0].vertex.y+1",
-      "type": "unrolled_memcpy"
-    },
-    {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 287,
       "match": "MOVSD.REP",
       "severity": "moderate",
       "text": "// 00464c52: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
-      "line": 290,
-      "match": "MOVSB.REP",
-      "severity": "moderate",
-      "text": "// 00464c59: MOVSB.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0] | g_ModelPolygonData[0].",
       "type": "unrolled_memcpy"
     }
   ]

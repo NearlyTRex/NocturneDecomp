@@ -7,16 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 359,
-    "complexity_score": 200,
+    "complexity_score": 175,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 52,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 160,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy"
+      "pointer_cast"
     ],
     "total_lines": 519
   },
@@ -471,6 +470,15 @@
       "severity": "mild",
       "text": "for (uVar2 = uVar7 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 258,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 004a0c8f: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -577,22 +585,6 @@
       "severity": "moderate",
       "text": "local_14 = (uint *)((int)local_14 + uVar7);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 258,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 004a0c8f: MOVSD.REP ES:EDI,ESI",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
-      "line": 261,
-      "match": "MOVSB.REP",
-      "severity": "moderate",
-      "text": "// 004a0c96: MOVSB.REP ES:EDI,ESI",
-      "type": "unrolled_memcpy"
     }
   ]
 }

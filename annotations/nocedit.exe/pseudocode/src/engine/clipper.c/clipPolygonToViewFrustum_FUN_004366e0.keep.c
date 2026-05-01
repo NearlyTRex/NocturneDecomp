@@ -7,12 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Removing unreachable block (ram,0x0043711f) */
-/* WARNING: Removing unreachable block (ram,0x004368cf) */
-/* WARNING: Removing unreachable block (ram,0x00436c04) */
-/* WARNING: Removing unreachable block (ram,0x0043708f) */
-/* WARNING: Type propagation algorithm not settling */
-
 int __cdecl engine_clipper_c_clipPolygonToViewFrustum_FUN_004366e0(int vertex_count,int *vertex_indices)
 
 {

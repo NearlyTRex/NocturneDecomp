@@ -12,8 +12,8 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6908
-  Functions with suspicious globals: 69
-  Total suspicious global references: 115
+  Functions with suspicious globals: 70
+  Total suspicious global references: 116
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
@@ -37,7 +37,7 @@ SUMMARY
     g_CWeaponClassInfo                                 1 functions
     g_SourcePaletteData                                1 functions
 
-  .keep files with issues: 19 (these need manual review)
+  .keep files with issues: 20 (these need manual review)
   Raw .cpp files with issues: 50
 
 ====================================================================================================
@@ -90,6 +90,14 @@ core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0  [.keep]  (1 suspicious glo
 
   g_TextureCacheInstance
     Used at lines: 381, 382, 386, 387, 390, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0  [.keep]  (1 suspicious globals)
+  File: core/dcamera.cpp
+
+  g_CameraEdgeDetectionResults
+    Used at lines: 39
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

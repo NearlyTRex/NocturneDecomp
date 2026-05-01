@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 445,
-    "complexity_score": 226,
+    "complexity_score": 196,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 41,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 196,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast",
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 641
   },
   "cross_references": [
@@ -440,6 +437,26 @@
     },
     "pcode_op_count": 1601
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 93,
+      "match": "(int *)((int)g_PrecomputedDepthBuffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar5 = (int *)((int)g_PrecomputedDepthBuffer + local_30);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 636,
     "local_size": 632,
@@ -610,22 +627,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 93,
-      "match": "(int *)((int)g_PrecomputedDepthBuffer",
-      "severity": "moderate",
-      "text": "piVar5 = (int *)((int)g_PrecomputedDepthBuffer + local_30);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

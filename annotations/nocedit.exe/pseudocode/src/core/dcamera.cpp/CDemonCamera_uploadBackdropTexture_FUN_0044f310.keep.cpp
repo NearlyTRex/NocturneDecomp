@@ -32,7 +32,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_0044f310(CD
       iVar3 = iVar2 >> 0x1f;
       iVar1 = iVar2 + iVar3 * -0x100;
       iVar2 = iVar2 + 0x280;
-      *(char *)((int)g_CameraTextureWorkBuffer + iVar4) =
+      ((char *)g_CameraTextureWorkBuffer)[iVar4] =
            g_CameraIndexedImageData
            [((int)(iVar1 - (uint)(iVar3 << 7 < 0)) >> 8) +
             ((int)((iVar8 + (iVar8 >> 0x1f) * -0x100) - (uint)((iVar8 >> 0x1f) << 7 < 0)) >> 8) *

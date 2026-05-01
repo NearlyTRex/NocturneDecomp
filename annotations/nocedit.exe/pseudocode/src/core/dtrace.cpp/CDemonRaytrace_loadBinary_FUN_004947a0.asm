@@ -452,7 +452,7 @@ section .text
     ADD EAX,ESI                         ; 00494b6c
     PUSH EAX                            ; 00494b6e
     CALL core_dcube.cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0 ; 00494b6f
-        ;   XREF to: 004570a0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0(CDemonCube * this_ptr, void * triangle_data, int triangle_count, CVector3f * min_bounds, ...)
+        ;   XREF to: 004570a0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0(CDemonCube * this_ptr, CDemonTriangle * triangle_data, int triangle_count, CVector3f * min_bounds, ...)
     ADD ESP,0x1c                        ; 00494b74
     TEST BL,0xf                         ; 00494b77
     JZ 0x00494d1d                       ; 00494b7a

@@ -121,7 +121,7 @@ void __cdecl CDemonCube::buildGeometryFromPolygonData(CDemonCube *this_ptr);
 
 // Original: core_dcube.cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0
 // Address: 004570a0
-void __cdecl CDemonCube::loadGeometryFromTriangleList(CDemonCube *this_ptr,void *triangle_data,int triangle_count,CVector3f *min_bounds,CVector3f *max_bounds,uchar *ground_types,uint *voxel_data);
+void __cdecl CDemonCube::loadGeometryFromTriangleList(CDemonCube *this_ptr,CDemonTriangle *triangle_data,int triangle_count,CVector3f *min_bounds,CVector3f *max_bounds,uchar *ground_types,uint *voxel_data);
 
 // Original: core_dcube.cpp_CDemonCube_save_FUN_00457430
 // Address: 00457430

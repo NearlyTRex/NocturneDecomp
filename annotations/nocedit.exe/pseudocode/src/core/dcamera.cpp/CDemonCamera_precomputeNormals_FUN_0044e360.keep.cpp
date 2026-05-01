@@ -16,7 +16,6 @@ CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e
   int iVar3;
   uint uVar4;
   uint uVar3;
-  int iVar4;
   int iVar5;
   int iVar6;
   int iVar7;
@@ -24,7 +23,6 @@ CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e
   int *piVar9;
   uint uVar10;
   byte bVar11;
-  int aiStackY_106c [1014];
   int local_88;
   CVector3i local_84;
   CVector3i local_78;
@@ -32,13 +30,7 @@ CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e
   int aiStack_68 [2];
   CVector3i local_60;
   CVector3i local_54;
-  int local_48;
-  int local_44;
-  int local_40;
   int local_38;
-  int local_34;
-  int local_30;
-  int local_2c;
   int local_28;
   uint *local_24;
   uint local_1c;
@@ -48,18 +40,13 @@ CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e
   
   local_38 = 1;
   local_88 = 0;
+  fVar1 = (float)0.0078740157480314994;
   if (1 < this_ptr->display_height) {
-    local_40 = 0x500;
-    local_44 = 0xf00;
     do {
       local_28 = 1;
       local_24 = (uint *)g_ScreenBufferArray[local_38 * this_ptr->scale_factor];
       if (1 < this_ptr->display_width) {
-        local_30 = local_44 + 0xc;
-        iVar4 = local_30;
-        iVar1 = local_40;
         do {
-          local_2c = iVar1 + 4;
           local_24 = local_24 + this_ptr->scale_factor;
           core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
                     (this_ptr,local_28 * this_ptr->scale_factor,local_38 * this_ptr->scale_factor,
@@ -73,9 +60,9 @@ CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e
           local_6c = local_54.x;
           aiStack_68[0] = local_54.y;
           aiStack_68[1] = local_54.z;
-          *(int *)((int)&g_TempWorldPositions[0][0].x + local_30) = local_54.x;
-          *(int *)((int)&g_TempWorldPositions[0][0].y + local_30) = local_54.y;
-          *(int *)((int)&g_TempWorldPositions[0][0].z + local_30) = local_54.z;
+          g_TempWorldPositions[local_38][local_28].x = local_54.x;
+          g_TempWorldPositions[local_38][local_28].y = local_54.y;
+          g_TempWorldPositions[local_38][local_28].z = local_54.z;
           if (*local_24 >> 0x18 != 0) {
             core_dcamera_cpp_CDemonCamera_restoreAlphaTransform_FUN_00453a70
                       (this_ptr,&local_60,*local_24 >> 0x18,&local_78);
@@ -83,27 +70,21 @@ CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e
             aiStack_68[0] = local_78.y;
             aiStack_68[1] = local_78.z;
           }
-          *(int *)((int)&g_PrecomputedWorldPositions[0].x + iVar4) = local_6c;
-          *(int *)((int)&g_PrecomputedWorldPositions[0].y + iVar4) = aiStack_68[0];
-          *(int *)((int)&g_PrecomputedWorldPositions[0].z + iVar4) = aiStack_68[1];
-          *(int *)((int)g_PrecomputedDepthBuffer + iVar1 + 4) = local_60.z;
+          g_PrecomputedWorldPositions[local_38 * 320 + local_28].x = local_6c;
+          g_PrecomputedWorldPositions[local_38 * 320 + local_28].y = aiStack_68[0];
+          g_PrecomputedWorldPositions[local_38 * 320 + local_28].z = aiStack_68[1];
+          g_PrecomputedDepthBuffer[local_38 * 320 + local_28] = local_60.z;
           uVar3 = *local_24;
           uVar2 = *local_24;
-          fVar1 = (float)0.0078740157480314994;
-          local_30 = local_30 + 0xc;
-          local_28 = local_28 + 1;
-          *(float *)((int)&g_PrecomputedSurfaceNormals[0][0].x + iVar4) =
+          g_PrecomputedSurfaceNormals[local_38][local_28].x =
                (float)(short)(char)(*local_24 >> 0x10) * fVar1;
-          *(float *)((int)&g_PrecomputedSurfaceNormals[0][0].y + iVar4) =
+          g_PrecomputedSurfaceNormals[local_38][local_28].y =
                (float)(short)(char)(uVar3 >> 8) * fVar1;
-          *(float *)((int)&g_PrecomputedSurfaceNormals[0][0].z + iVar4) =
+          g_PrecomputedSurfaceNormals[local_38][local_28].z =
                (float)(short)(char)uVar2 * fVar1;
-          iVar4 = iVar4 + 0xc;
-          iVar1 = local_2c;
+          local_28 = local_28 + 1;
         } while (local_28 < this_ptr->display_width);
       }
-      local_44 = local_44 + 0xf00;
-      local_40 = local_40 + 0x500;
       local_38 = local_38 + 1;
     } while (local_38 < this_ptr->display_height);
   }
@@ -115,15 +96,13 @@ CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e
   pCVar2 = this_ptr;
   if (0x1df < this_ptr->framebuffer_height) {
     local_1c = this_ptr->scale_factor;
-    local_48 = local_1c << 2;
     for (; pCVar2 = (CDemonCamera *)(this_ptr->framebuffer_height - this_ptr->scale_factor),
         (int)local_1c < (int)pCVar2; local_1c = local_1c + 1) {
       uVar10 = this_ptr->scale_factor;
-      local_34 = uVar10 * 4;
       for (; (int)uVar10 < this_ptr->framebuffer_width + this_ptr->scale_factor * -2;
           uVar10 = uVar10 + 1) {
         if ((g_CameraEdgeCount < 10000) && (((uVar10 & 1) != 0 || ((local_1c & 1) != 0)))) {
-          iVar1 = *(int *)(*(int *)((int)g_ZBufferScanlineArray + local_48) + local_34);
+          iVar1 = ((int *)g_ZBufferScanlineArray[local_1c])[uVar10];
           iVar7 = 0x7fffffff;
           if (iVar1 == 0) {
             iVar5 = 0x7fffffff;
@@ -144,18 +123,18 @@ CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e
             do {
               uVar3 = iVar5 - g_PrecomputedDepthBuffer
                               [(((int)local_1c >> (g_CameraDownscaleIterations.bytes[0] & 0x1f)) +
-                               *(int *)((int)g_CameraEdgeOffsetY + iVar6)) * 0x140 +
+                               g_CameraEdgeOffsetY[iVar6 >> 2]) * 0x140 +
                                ((int)uVar10 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f)) +
-                               *(int *)((int)g_CameraEdgeOffsetX + iVar6)] >> 0x1f;
+                               g_CameraEdgeOffsetX[iVar6 >> 2]] >> 0x1f;
               iVar3 = (iVar5 - g_PrecomputedDepthBuffer
                                [(((int)local_1c >> (g_CameraDownscaleIterations.bytes[0] & 0x1f)) +
-                                *(int *)((int)g_CameraEdgeOffsetY + iVar6)) * 0x140 +
+                                g_CameraEdgeOffsetY[iVar6 >> 2]) * 0x140 +
                                 ((int)uVar10 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f)) +
-                                *(int *)((int)g_CameraEdgeOffsetX + iVar6)] ^ uVar3) - uVar3;
+                                g_CameraEdgeOffsetX[iVar6 >> 2]] ^ uVar3) - uVar3;
               if (iVar3 < iVar7) {
                 g_CameraEdgeDetectionResults[g_CameraEdgeCount].v =
-                     *(int *)((int)g_CameraEdgeOffsetX + iVar6) +
-                     *(int *)((int)g_CameraEdgeOffsetY + iVar6) * 0x140;
+                     g_CameraEdgeOffsetX[iVar6 >> 2] +
+                     g_CameraEdgeOffsetY[iVar6 >> 2] * 0x140;
                 iVar7 = iVar3;
               }
               iVar6 = iVar6 + 4;
@@ -167,9 +146,7 @@ CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e
             }
           }
         }
-        local_34 = local_34 + 4;
       }
-      local_48 = local_48 + 4;
     }
   }
   return pCVar2;

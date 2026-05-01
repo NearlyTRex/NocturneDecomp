@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 127
-  Total diagnostics: 378
+  Functions with findings: 129
+  Total diagnostics: 390
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 127, raw .cpp files: 0
+  .keep.cpp files: 129, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -187,6 +187,18 @@ core_xform.cpp_transformAndClipGeometry_FUN_005f8550  [.keep] [Cppcheck (quick)]
   Line  259: [uninitvar] Uninitialized variable: extraout_EAX_06
 
 ----------------------------------------------------------------------------------------------------
+core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0  [.keep] [Cppcheck (quick)]
+  File: core/dcamera.cpp  (7 diagnostics)
+
+  Line  148: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  151: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  154: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  166: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  243: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  246: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  249: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
 core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80  [.keep] [Cppcheck (quick)]
   File: core/actor.cpp  (6 diagnostics)
 
@@ -218,6 +230,17 @@ core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0  [.keep] [Cppcheck (quick)]
   Line  370: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line  408: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line  417: [selfAssignment] Redundant assignment of 'iVar16' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0  [.keep] [Cppcheck (quick)]
+  File: core/dcube.cpp  (6 diagnostics)
+
+  Line   47: [uninitvar] Uninitialized variable: local_40
+  Line   48: [uninitvar] Uninitialized variable: local_3c
+  Line   49: [uninitvar] Uninitialized variable: local_38
+  Line   59: [uninitvar] Uninitialized variable: local_20
+  Line   65: [uninitvar] Uninitialized variable: local_24
+  Line   70: [uninitvar] Uninitialized variable: local_28
 
 ----------------------------------------------------------------------------------------------------
 core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0  [.keep] [Cppcheck (quick)]
@@ -351,10 +374,10 @@ core_path.cpp_CPathMap_searchGrid_FUN_005487a0  [.keep] [Cppcheck (quick)]
 engine_colquant.c_computeBoxStatistics_FUN_00441260  [.keep] [Cppcheck (quick)]
   File: engine/colquant.c  (4 diagnostics)
 
-  Line   86: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   89: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   92: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   95: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   84: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   87: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   90: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   93: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 shape_design.c_mouseWheelPolygonReducer_FUN_004648e0  [.keep] [Cppcheck (quick)]
@@ -475,14 +498,6 @@ core_stranger.cpp_CStranger_processFrame_FUN_005bb960  [.keep] [Cppcheck (quick)
   Line  609: [uninitvar] Uninitialized variable: local_260
 
 ----------------------------------------------------------------------------------------------------
-engine_colquant.c_quantizeColors_FUN_004406c0  [.keep] [Cppcheck (quick)]
-  File: engine/colquant.c  (3 diagnostics)
-
-  Line  136: [selfAssignment] Redundant assignment of 'pSVar14' to itself.
-  Line  137: [selfAssignment] Redundant assignment of 'pSVar16' to itself.
-  Line  144: [selfAssignment] Redundant assignment of 'puVar15' to itself.
-
-----------------------------------------------------------------------------------------------------
 engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50  [.keep] [Cppcheck (quick)]
   File: engine/fileio.cpp  (3 diagnostics)
 
@@ -569,6 +584,13 @@ core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044f310  [.keep] [Cppch
 
   Line   32: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   38: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+core_dcamera.cpp_renderVolumetricLightScanline_FUN_00450440  [.keep] [Cppcheck (quick)]
+  File: core/dcamera.cpp  (2 diagnostics)
+
+  Line   54: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   58: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0  [.keep] [Cppcheck (quick)]
@@ -915,7 +937,7 @@ engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290  [.keep] [Cppch
 engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0  [.keep] [Cppcheck (quick)]
   File: engine/clipper.c  (1 diagnostics)
 
-  Line  165: [arrayIndexOutOfBoundsCond] Either the condition '0<vertex_count' is redundant or the array 'auStack_150[32]' is accessed at index 32, which is out of bounds.
+  Line  159: [arrayIndexOutOfBoundsCond] Either the condition '0<vertex_count' is redundant or the array 'auStack_150[32]' is accessed at index 32, which is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
 engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60  [.keep] [Cppcheck (quick)]

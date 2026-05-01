@@ -4,22 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 283,
-    "complexity_score": 232,
+    "complexity_score": 122,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 35,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 122,
-    "suspect_count": 9,
-    "suspect_types": [
-      "pointer_cast",
-      "stack_alignment_array",
-      "unrolled_memcpy",
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 405
   },
   "cross_references": [
@@ -357,6 +352,89 @@
     },
     "pcode_op_count": 1543
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 18,
+      "match": "aiStackY_1048",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int aiStackY_1048 [1016];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(uint *)((int)g_DitherPatternTable",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_DitherPatternTable + iVar1) = uVar2 & 0xff;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(int *)((int)g_CoronaLeftExtent",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CoronaLeftExtent + iVar3) = this_ptr->display_width;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 55,
+      "match": "(uint *)((int)g_CoronaRightExtent",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_CoronaRightExtent + iVar3) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(int *)((int)g_CoronaLeftExtent",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (this_ptr->display_width != *(int *)((int)g_CoronaLeftExtent + local_2c)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 74,
+      "match": "(int *)((int)g_CoronaLeftExtent",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_18 = *(int *)((int)g_CoronaLeftExtent + local_2c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 75,
+      "match": "(int *)((int)g_CoronaRightExtent",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)g_CoronaRightExtent + local_2c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 16,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 00450ae5: MOVSD.REP ES:EDI,ESI  ; g_CoronaCameraRotationMatrix | g_CoronaCameraRotationMatrix.m[0].y",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4180,
     "local_size": 4172,
@@ -509,78 +587,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 18,
-      "match": "aiStackY_1048",
-      "severity": "moderate",
-      "text": "int aiStackY_1048 [1016];",
-      "type": "stack_alignment_array"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(uint *)((int)g_DitherPatternTable",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_DitherPatternTable + iVar1) = uVar2 & 0xff;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 54,
-      "match": "(int *)((int)g_CoronaLeftExtent",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_CoronaLeftExtent + iVar3) = this_ptr->display_width;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 55,
-      "match": "(uint *)((int)g_CoronaRightExtent",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_CoronaRightExtent + iVar3) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 73,
-      "match": "(int *)((int)g_CoronaLeftExtent",
-      "severity": "moderate",
-      "text": "if (this_ptr->display_width != *(int *)((int)g_CoronaLeftExtent + local_2c)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 74,
-      "match": "(int *)((int)g_CoronaLeftExtent",
-      "severity": "moderate",
-      "text": "local_18 = *(int *)((int)g_CoronaLeftExtent + local_2c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 75,
-      "match": "(int *)((int)g_CoronaRightExtent",
-      "severity": "moderate",
-      "text": "iVar1 = *(int *)((int)g_CoronaRightExtent + local_2c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 16,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 00450ae5: MOVSD.REP ES:EDI,ESI  ; g_CoronaCameraRotationMatrix | g_CoronaCameraRotationMatrix.m[0].y",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

@@ -7,9 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Removing unreachable block (ram,0x004365c2) */
-/* WARNING: Removing unreachable block (ram,0x0043653c) */
-
 void __cdecl engine_clipper_c_clipPolygonNearPlane_FUN_00436420(void)
 
 {

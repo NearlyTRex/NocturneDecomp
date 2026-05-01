@@ -835,6 +835,19 @@ def identify_raw_address_constant_suspects(decompiled_code, address_interval_map
                 n >>= 1
             if n == 0:
                 continue
+            # Skip channel-replicated byte patterns like 0xfcfcfc (RGB box-
+            # filter mask for `(p & 0xfcfcfc) >> 2` averaging), 0xfefefe
+            # (sub-byte rounding masks), 0x010101 (channel broadcast), etc.
+            # The same byte across all 3 (or 4) bytes is a bit-trick fingerprint
+            # for per-channel arithmetic, never a pointer.
+            b0 = addr & 0xff
+            b1 = (addr >> 8) & 0xff
+            b2 = (addr >> 16) & 0xff
+            b3 = (addr >> 24) & 0xff
+            if b3 == 0 and b0 == b1 == b2 and b0 != 0:
+                continue
+            if b0 == b1 == b2 == b3 and b0 != 0:
+                continue
 
             hit = _find_global_at(addr, address_interval_map)
             if hit is None:
@@ -1712,6 +1725,57 @@ _REP_STOS_RE = re.compile(r'\bSTOS([BWD])\.REP\b', re.IGNORECASE)
 _ASM_LINE_ADDR_RE = re.compile(r';\s*([0-9a-fA-F]{6,8})\b')
 
 
+def _collect_rep_sites(assembly_code, rep_re):
+    """Return a list of (line_index, size_letter, raw_line) for each
+    `.REP`-suffixed string instruction matched by `rep_re`. Skips comments
+    and blanks. line_index is 0-based into the .split('\\n') list.
+    """
+    sites = []
+    if not assembly_code:
+        return sites
+    for i, line in enumerate(assembly_code.split('\n')):
+        stripped = line.strip()
+        if not stripped or stripped.startswith(';'):
+            continue
+        m = rep_re.search(line)
+        if not m:
+            continue
+        sites.append((i, m.group(1).upper(), line))
+    return sites
+
+
+def _suppress_byte_tails(sites, lines, max_intervening=5):
+    """Return the set of indices in `sites` whose suspect is suppressed
+    because the site is the byte-tail of a preceding dword/word REP.
+
+    Watcom emits a variable-count REP as a `{D,W}` chunk loop followed by
+    a `B` tail loop:
+        MOV ECX, n
+        SHR ECX, 2
+        MOVSD.REP
+        MOV CL, n_low
+        AND CL, 3
+        MOVSB.REP
+    The MOVSB.REP is not an independent memcpy — it's the tail of the
+    preceding MOVSD.REP. Same for STOSD/STOSW + STOSB. Pair them so the
+    detector reports one suspect per logical memcpy/memset site.
+    """
+    paired = set()
+    for i in range(len(sites) - 1):
+        cur_line_idx, cur_size, _ = sites[i]
+        nxt_line_idx, nxt_size, _ = sites[i + 1]
+        if cur_size not in ('D', 'W') or nxt_size != 'B':
+            continue
+        intervening = 0
+        for j in range(cur_line_idx + 1, nxt_line_idx):
+            s = lines[j].strip()
+            if s and not s.startswith(';'):
+                intervening += 1
+        if intervening <= max_intervening:
+            paired.add(i + 1)
+    return paired
+
+
 def identify_unrolled_memset_blocks(assembly_code):
     """Detect Watcom `REP STOS{B,W,D}` (inline memset) instructions.
 
@@ -1719,34 +1783,37 @@ def identify_unrolled_memset_blocks(assembly_code):
     for-loop in the decompile that should collapse to a `memset()` call in
     a `.keep`. The B/W/D variant tells you the element stride (1/2/4).
 
+    Pairing: a `STOSD/STOSW.REP` followed within a few instructions by
+    `STOSB.REP` is the canonical Watcom variable-count emit (chunk loop
+    plus byte tail) — counted as one site, not two.
+
     Args:
         assembly_code: The function's assembly listing (from `.asm`).
 
     Returns:
-        List of suspect dicts, one per `STOS.REP` site. The reported `line`
-        is the .asm line number (the .cpp doesn't have a unique anchor —
-        the user finds the matching countdown for-loop in the function
-        body and replaces it with `memset(dst, value, count * stride)`).
+        List of suspect dicts, one per `STOS.REP` site after pairing. The
+        reported `line` is the .asm line number (the .cpp doesn't have a
+        unique anchor — the user finds the matching countdown for-loop in
+        the function body and replaces it with
+        `memset(dst, value, count * stride)`).
     """
     suspects = []
     if not assembly_code:
         return suspects
-    for line_num, line in enumerate(assembly_code.split('\n'), 1):
-        stripped = line.strip()
-        if not stripped or stripped.startswith(';'):
+    lines = assembly_code.split('\n')
+    sites = _collect_rep_sites(assembly_code, _REP_STOS_RE)
+    paired = _suppress_byte_tails(sites, lines)
+    for idx, (line_idx, size_letter, line) in enumerate(sites):
+        if idx in paired:
             continue
-        m = _REP_STOS_RE.search(line)
-        if not m:
-            continue
-        size_letter = m.group(1).upper()
         stride = {'B': 1, 'W': 2, 'D': 4}[size_letter]
         addr_m = _ASM_LINE_ADDR_RE.search(line)
         addr = addr_m.group(1) if addr_m else '????????'
         suspects.append({
-            'line': line_num,
+            'line': line_idx + 1,
             'type': 'unrolled_memset',
             'match': 'STOS%s.REP' % size_letter,
-            'text': stripped[:120],
+            'text': line.strip()[:120],
             'description': (
                 'Watcom inline memset (REP STOS%s at %s, %d-byte stride). '
                 'Ghidra reconstructs this as a countdown for-loop with '
@@ -1778,35 +1845,37 @@ def identify_unrolled_memcpy_blocks(assembly_code):
     fingerprint `MOVS{B,W,D}.REP` is unambiguous regardless of how Ghidra
     rendered the body.
 
+    Pairing: a `MOVSD/MOVSW.REP` followed within a few instructions by
+    `MOVSB.REP` is the canonical Watcom variable-count emit (chunk loop
+    plus byte tail) — counted as one site, not two.
+
     Args:
         assembly_code: The function's assembly listing (from `.asm`).
 
     Returns:
-        List of suspect dicts, one per `MOVS.REP` site. The reported `line`
-        is the .asm line number; the user finds the matching countdown
-        for-loop (or unrolled field-by-field copy) in the function body and
-        replaces it with `memcpy(dst, src, count * stride)` or a struct
-        assignment.
+        List of suspect dicts, one per `MOVS.REP` site after pairing. The
+        reported `line` is the .asm line number; the user finds the
+        matching countdown for-loop (or unrolled field-by-field copy) in
+        the function body and replaces it with
+        `memcpy(dst, src, count * stride)` or a struct assignment.
     """
     suspects = []
     if not assembly_code:
         return suspects
-    for line_num, line in enumerate(assembly_code.split('\n'), 1):
-        stripped = line.strip()
-        if not stripped or stripped.startswith(';'):
+    lines = assembly_code.split('\n')
+    sites = _collect_rep_sites(assembly_code, _REP_MOVS_RE)
+    paired = _suppress_byte_tails(sites, lines)
+    for idx, (line_idx, size_letter, line) in enumerate(sites):
+        if idx in paired:
             continue
-        m = _REP_MOVS_RE.search(line)
-        if not m:
-            continue
-        size_letter = m.group(1).upper()
         stride = {'B': 1, 'W': 2, 'D': 4}[size_letter]
         addr_m = _ASM_LINE_ADDR_RE.search(line)
         addr = addr_m.group(1) if addr_m else '????????'
         suspects.append({
-            'line': line_num,
+            'line': line_idx + 1,
             'type': 'unrolled_memcpy',
             'match': 'MOVS%s.REP' % size_letter,
-            'text': stripped[:120],
+            'text': line.strip()[:120],
             'description': (
                 'Watcom inline memcpy (REP MOVS%s at %s, %d-byte stride). '
                 'Ghidra reconstructs this as a countdown for-loop with '

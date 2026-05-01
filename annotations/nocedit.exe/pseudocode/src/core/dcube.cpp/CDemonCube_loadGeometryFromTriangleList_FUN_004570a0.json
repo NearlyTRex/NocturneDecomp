@@ -4,21 +4,18 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 266,
-    "complexity_score": 375,
+    "complexity_score": 144,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 41,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 145,
-    "suspect_count": 22,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy"
-    ],
-    "total_lines": 411
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 144,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 410
   },
   "cross_references": [
     {
@@ -38,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dcube.cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0",
-    "signature": "void __cdecl core_dcube_cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0(CDemonCube *this_ptr,void *triangle_data,int triangle_count,CVector3f *min_bounds,CVector3f *max_bounds,uchar *ground_types,uint *voxel_data)"
+    "signature": "void __cdecl core_dcube_cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0(CDemonCube *this_ptr,CDemonTriangle *triangle_data,int triangle_count,CVector3f *min_bounds,CVector3f *max_bounds,uchar *ground_types,uint *voxel_data)"
   },
   "function_calls": [
     {
@@ -377,6 +374,179 @@
     },
     "pcode_op_count": 1203
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(uint *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar7 + -0x14) = 3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 68,
+      "match": "(int *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar7) = local_1c;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(int *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar7 + 4) = local_18;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(int *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar7 + 8) = local_14;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(uint *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_u + iVar7) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(uint *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + iVar7) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(uint *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_u + iVar7 + 4) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 75,
+      "match": "(uint *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + iVar7 + 4) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 77,
+      "match": "(uint *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_u + iVar7 + 8) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 79,
+      "match": "(uint *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + iVar7 + 8) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(uint *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + iVar7 + 0x40) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 124,
+      "match": "(int *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar3 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 125,
+      "match": "(int *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar3 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 126,
+      "match": "(int *)((int)g_ModelPolygonData",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar3 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 8));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 129,
+      "match": "(uchar *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uchar *)((int)this_ptr->ground_type_memory + iVar5) = *local_20;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 138,
+      "match": "(SVoxelGrid *)((int)pSVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar9 = (SVoxelGrid *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 142,
+      "match": "(uint *)((int)voxel_data",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "voxel_data = (uint *)((int)voxel_data + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 143,
+      "match": "(SVoxelGrid *)((int)pSVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar9 = (SVoxelGrid *)((int)pSVar9 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 231,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 004573d4: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 320,
     "local_size": 292,
@@ -431,7 +601,7 @@
         "name": "triangle_data",
         "offset": 8,
         "size": 4,
-        "type": "void *"
+        "type": "CDemonTriangle *"
       },
       {
         "is_param": true,
@@ -470,182 +640,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(uint *)((int)triangle_data",
-      "severity": "moderate",
-      "text": "puVar4 = (uint *)((int)triangle_data + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 49,
-      "match": "(uint *)((int)triangle_data",
-      "severity": "moderate",
-      "text": "puVar7 = (uint *)((int)triangle_data + iVar6 * 0x38);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 63,
-      "match": "(uint *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar8 + -0x14) = 3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(int *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar8) = local_1c;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 70,
-      "match": "(int *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar8 + 4) = local_18;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 71,
-      "match": "(int *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar8 + 8) = local_14;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 72,
-      "match": "(uint *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_u + iVar8) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 73,
-      "match": "(uint *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + iVar8) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 74,
-      "match": "(uint *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_u + iVar8 + 4) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 76,
-      "match": "(uint *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + iVar8 + 4) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 78,
-      "match": "(uint *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_u + iVar8 + 8) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 80,
-      "match": "(uint *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + iVar8 + 8) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 82,
-      "match": "(uint *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + iVar8 + 0x40) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 125,
-      "match": "(int *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "pCVar3 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 126,
-      "match": "(int *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "pCVar3 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + 4),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 127,
-      "match": "(int *)((int)g_ModelPolygonData",
-      "severity": "moderate",
-      "text": "pCVar3 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + 8));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 130,
-      "match": "(uchar *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(uchar *)((int)this_ptr->ground_type_memory + iVar6) = *local_20;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 139,
-      "match": "(SVoxelGrid *)((int)pSVar10",
-      "severity": "moderate",
-      "text": "pSVar10 = (SVoxelGrid *)((int)pSVar10 + ((uint)bVar11 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 143,
-      "match": "(uint *)((int)voxel_data",
-      "severity": "moderate",
-      "text": "voxel_data = (uint *)((int)voxel_data + (uint)bVar11 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 144,
-      "match": "(SVoxelGrid *)((int)pSVar10",
-      "severity": "moderate",
-      "text": "pSVar10 = (SVoxelGrid *)((int)pSVar10 + (uint)bVar11 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 231,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 004573d4: MOVSD.REP ES:EDI,ESI",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
-      "line": 234,
-      "match": "MOVSB.REP",
-      "severity": "moderate",
-      "text": "// 004573db: MOVSB.REP ES:EDI,ESI",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

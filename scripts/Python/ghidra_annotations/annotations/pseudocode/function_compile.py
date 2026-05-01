@@ -5,6 +5,7 @@
 import os
 import re
 import json
+import hashlib
 import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from ghidra_annotations.util.log import log_info
@@ -15,6 +16,116 @@ from ghidra_annotations.annotations.pseudocode.analysis import (
 from ghidra_annotations.annotations.pseudocode.compiler_config import (
     DEFAULT_COMPILER, DEFAULT_COMPILE_FLAGS
 )
+
+
+# =============================================================================
+# Precompiled Header
+# =============================================================================
+#
+# `nocturne.h` is ~6 MB / 142K lines once expanded; re-parsing it for each of
+# 4000+ per-function compiles dominates wall time. Build a PCH once, pass
+# `-include-pch` on every per-function clang invocation. Empirical speedup
+# on this codebase: ~35x sequential, errors still surface correctly.
+
+def build_nocturne_pch(include_dir, compiler=DEFAULT_COMPILER, timeout=180):
+    """Precompile `nocturne.h` into a PCH alongside the header.
+
+    Returns the PCH path on success, or None on failure (caller falls back
+    to per-file header parsing). Logs the failure but does not raise — a
+    bad PCH should never block the rest of the compile pipeline.
+    """
+    nocturne_h = os.path.join(include_dir, "nocturne.h")
+    if not os.path.exists(nocturne_h):
+        return None
+    pch_path = nocturne_h + ".pch"
+    shims_dir = os.path.join(os.path.dirname(include_dir), "shims")
+    cmd = [compiler] + DEFAULT_COMPILE_FLAGS + [
+        '-x', 'c++-header',
+        '-fno-diagnostics-color',
+        '-I', include_dir,
+        '-I', shims_dir,
+        '-o', pch_path,
+        nocturne_h,
+    ]
+    try:
+        proc = subprocess.run(
+            cmd, capture_output=True, text=True, timeout=timeout)
+        if proc.returncode == 0 and os.path.exists(pch_path):
+            return pch_path
+        log_info("PCH build failed (%s); falling back to per-file headers."
+                 % os.path.basename(nocturne_h))
+        if proc.stderr.strip():
+            for line in proc.stderr.strip().split('\n')[:5]:
+                log_info("  " + line)
+        return None
+    except (subprocess.TimeoutExpired, FileNotFoundError, OSError) as e:
+        log_info("PCH build error: %s" % str(e))
+        return None
+
+
+def _hash_file_bytes(path, chunk=65536):
+    """sha256 hash of a file's bytes (truncated to 16 hex chars). Empty
+    string if the file doesn't exist or can't be read."""
+    if not path or not os.path.exists(path):
+        return ''
+    h = hashlib.sha256()
+    try:
+        with open(path, 'rb') as f:
+            while True:
+                buf = f.read(chunk)
+                if not buf:
+                    break
+                h.update(buf)
+        return h.hexdigest()[:16]
+    except OSError:
+        return ''
+
+
+def _flags_signature():
+    """Stable hash of the active compile flags."""
+    return hashlib.sha256(
+        '\x00'.join(DEFAULT_COMPILE_FLAGS).encode('utf-8')
+    ).hexdigest()[:16]
+
+
+def _compile_cache_key(cpp_path, pch_sig, flags_sig):
+    """Hash that captures source bytes + flags + PCH content signature."""
+    h = hashlib.sha256()
+    try:
+        with open(cpp_path, 'rb') as f:
+            h.update(f.read())
+    except OSError:
+        return ''
+    h.update(b'|')
+    h.update(pch_sig.encode('ascii'))
+    h.update(b'|')
+    h.update(flags_sig.encode('ascii'))
+    return h.hexdigest()[:16]
+
+
+def _read_cached_compile_result(json_path, cache_key):
+    """Return the cached compilation_status if its stored hash matches
+    `cache_key` and the cached result was successful. Failed results are
+    not cached — a fix attempt should always re-run the compiler."""
+    if not cache_key:
+        return None
+    try:
+        with open(json_path, 'r') as f:
+            data = json.load(f)
+    except (OSError, ValueError):
+        return None
+    cached = data.get('compilation_status') or {}
+    if cached.get('compile_hash') != cache_key:
+        return None
+    if not cached.get('success'):
+        return None
+    return {
+        'success': True,
+        'errors': cached.get('errors', []),
+        'warnings': cached.get('warnings', []),
+        'compile_hash': cache_key,
+    }
+
 
 # =============================================================================
 # Path Normalization
@@ -343,7 +454,8 @@ def parse_error_output(stderr, cpp_path):
 # Single File Compilation
 # =============================================================================
 
-def compile_function_cpp(cpp_path, include_dir, compiler=DEFAULT_COMPILER, timeout=60, repo_dir=None):
+def compile_function_cpp(cpp_path, include_dir, compiler=DEFAULT_COMPILER,
+                         timeout=60, repo_dir=None, pch_path=None):
     """Compile a single function .cpp file for syntax verification.
 
     Uses the default compiler targeting 32-bit x86 to match the original binary.
@@ -357,6 +469,8 @@ def compile_function_cpp(cpp_path, include_dir, compiler=DEFAULT_COMPILER, timeo
         compiler: Compiler to use (from compiler_config.DEFAULT_COMPILER)
         timeout: Compilation timeout in seconds
         repo_dir: Optional repo root for normalizing paths in error messages
+        pch_path: Optional path to a precompiled `nocturne.h.pch`. When set,
+            clang skips re-parsing the 6MB header tree on each invocation.
 
     Returns:
         Dict with:
@@ -378,8 +492,10 @@ def compile_function_cpp(cpp_path, include_dir, compiler=DEFAULT_COMPILER, timeo
             '-fno-diagnostics-color',  # Prevent ANSI color codes in output
             '-I', include_dir,
             '-I', shims_dir,
-            cpp_path,
         ]
+        if pch_path:
+            cmd += ['-include-pch', pch_path]
+        cmd.append(cpp_path)
 
         proc_result = subprocess.run(
             cmd,
@@ -536,62 +652,105 @@ def compile_all_functions(src_dir, include_dir, compiler=DEFAULT_COMPILER, num_t
         log_info("Compiler '%s' not available, skipping function compilation" % compiler)
         return results
 
+    # Build the PCH once (~6MB nocturne.h tree) so per-function clang
+    # invocations don't re-parse it. Falls back to per-file headers if the
+    # build fails. Hash the PCH once so we can use it as a cache-invalidation
+    # signal in the per-file compile-result hash.
+    pch_path = build_nocturne_pch(include_dir, compiler=compiler)
+    if pch_path:
+        log_info("Using precompiled header: %s" %
+                 os.path.relpath(pch_path, include_dir))
+    pch_sig = _hash_file_bytes(pch_path)
+    flags_sig = _flags_signature()
+
     log_info("Compiling %d function files with %d threads..." % (total, num_threads))
     log_info("  (skipping directories: %s)" % ', '.join(skip_dirs))
 
-    completed = 0
-
-    with ThreadPoolExecutor(max_workers=num_threads) as executor:
-        # Submit compilation tasks
-        future_to_func = {}
-        for func_info in function_files:
-            future = executor.submit(compile_function_cpp, func_info['cpp_path'], include_dir,
-                                     compiler, 60, repo_dir)
-            future_to_func[future] = func_info
-
-        # Collect results first (don't update JSON yet - that's a bottleneck)
-        pending_json_updates = []
-        for future in as_completed(future_to_func):
-            func_info = future_to_func[future]
-            func_name = func_info['name']
-
-            try:
-                compile_result = future.result()
-                compilation_status = {
-                    'success': compile_result['success'],
-                    'errors': compile_result['errors'],
-                    'warnings': compile_result['warnings'],
-                }
-            except Exception as e:
-                compilation_status = {
-                    'success': False,
-                    'errors': [{
-                        'line': 0,
-                        'column': 0,
-                        'message': 'Exception: %s' % str(e),
-                        'category': 'other',
-                    }],
-                    'warnings': [],
-                }
-
-            results[func_name] = {
-                'success': compilation_status['success'],
-                'errors': compilation_status['errors'],
-                'warnings': compilation_status['warnings'],
+    # Hash-based incremental skip: if a function's source bytes + flags + PCH
+    # are unchanged since the last successful compile, reuse the cached
+    # result and skip the clang invocation entirely. Failed results are not
+    # cached, so any keep edit re-runs the compiler.
+    pending_compile = []  # (func_info, cache_key) tuples to actually compile
+    cache_hits = 0
+    for func_info in function_files:
+        cache_key = _compile_cache_key(func_info['cpp_path'], pch_sig, flags_sig)
+        cached = _read_cached_compile_result(func_info['json_path'], cache_key)
+        if cached is not None:
+            results[func_info['name']] = {
+                'success': True,
+                'errors': cached.get('errors', []),
+                'warnings': cached.get('warnings', []),
                 'cpp_path': func_info['cpp_path'],
                 'json_path': func_info['json_path'],
+                'cached': True,
             }
+            cache_hits += 1
+        else:
+            pending_compile.append((func_info, cache_key))
 
-            # Queue JSON update for later (avoid I/O bottleneck in completion loop)
-            pending_json_updates.append((func_info['json_path'], compilation_status))
+    if cache_hits:
+        log_info("  Cache hits: %d/%d (skipping clang invocation)" %
+                 (cache_hits, total))
 
-            completed += 1
-            if progress_callback:
-                progress_callback(completed, total)
+    completed = cache_hits
 
-            # Progress logging
-            if completed % 100 == 0:
-                log_info("  Compiled %d/%d functions..." % (completed, total))
+    pending_json_updates = []
+    if pending_compile:
+        with ThreadPoolExecutor(max_workers=num_threads) as executor:
+            # Submit compilation tasks
+            future_to_func = {}
+            for func_info, cache_key in pending_compile:
+                future = executor.submit(
+                    compile_function_cpp, func_info['cpp_path'], include_dir,
+                    compiler, 60, repo_dir, pch_path)
+                future_to_func[future] = (func_info, cache_key)
+
+            for future in as_completed(future_to_func):
+                func_info, cache_key = future_to_func[future]
+                func_name = func_info['name']
+
+                try:
+                    compile_result = future.result()
+                    compilation_status = {
+                        'success': compile_result['success'],
+                        'errors': compile_result['errors'],
+                        'warnings': compile_result['warnings'],
+                    }
+                except Exception as e:
+                    compilation_status = {
+                        'success': False,
+                        'errors': [{
+                            'line': 0,
+                            'column': 0,
+                            'message': 'Exception: %s' % str(e),
+                            'category': 'other',
+                        }],
+                        'warnings': [],
+                    }
+
+                # Stash the cache key on success so the next export can skip
+                # this function if the source/flags/PCH are unchanged.
+                if compilation_status['success'] and cache_key:
+                    compilation_status['compile_hash'] = cache_key
+
+                results[func_name] = {
+                    'success': compilation_status['success'],
+                    'errors': compilation_status['errors'],
+                    'warnings': compilation_status['warnings'],
+                    'cpp_path': func_info['cpp_path'],
+                    'json_path': func_info['json_path'],
+                }
+
+                # Queue JSON update for later (avoid I/O bottleneck in completion loop)
+                pending_json_updates.append((func_info['json_path'], compilation_status))
+
+                completed += 1
+                if progress_callback:
+                    progress_callback(completed, total)
+
+                # Progress logging
+                if completed % 100 == 0:
+                    log_info("  Compiled %d/%d functions..." % (completed, total))
 
     # Batch update JSON files in parallel after all compilations complete
     if pending_json_updates:
@@ -630,12 +789,18 @@ def update_function_json_with_compilation(json_path, compilation_status):
         with open(json_path, 'r') as f:
             data = json.load(f)
 
-        # Add compilation_status
-        data['compilation_status'] = {
+        # Add compilation_status. Stash compile_hash on success so the next
+        # export can short-circuit unchanged functions; omit it on failure
+        # to force re-running the compiler after fix attempts.
+        new_status = {
             'success': compilation_status.get('success', False),
             'errors': compilation_status.get('errors', []),
             'warnings': compilation_status.get('warnings', []),
         }
+        compile_hash = compilation_status.get('compile_hash')
+        if compile_hash and new_status['success']:
+            new_status['compile_hash'] = compile_hash
+        data['compilation_status'] = new_status
 
         # Write back
         with open(json_path, 'w') as f:

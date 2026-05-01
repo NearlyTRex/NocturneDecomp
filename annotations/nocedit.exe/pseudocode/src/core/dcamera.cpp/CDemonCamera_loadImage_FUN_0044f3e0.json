@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1081,
-    "complexity_score": 566,
+    "complexity_score": 486,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 91,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 486,
-    "suspect_count": 7,
-    "suspect_types": [
-      "raw_address_constant",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1567
   },
   "cross_references": [
@@ -852,6 +849,24 @@
       "severity": "mild",
       "text": "do {",
       "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 535,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 0044fa93: MOVSD.REP ES:EDI,ESI  ; g_CameraTextureWorkBuffer | g_CameraTextureWorkBuffer[1]",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 546,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 0044fab3: MOVSD.REP ES:EDI,ESI  ; g_CameraImagePaletteData | g_CameraImagePaletteData.colors[1].g",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -1219,62 +1234,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Raw hex literal 0xfcfcfc matches address of g_LightBufferPool (+3889908 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 290,
-      "match": "0xfcfcfc",
-      "severity": "moderate",
-      "text": "((g_CameraConvertedPalette[pbVar7[1]] & 0xfcfcfc) >> 2) +",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0xfcfcfc matches address of g_LightBufferPool (+3889908 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 291,
-      "match": "0xfcfcfc",
-      "severity": "moderate",
-      "text": "((g_CameraConvertedPalette[pbVar7[0x280]] & 0xfcfcfc) >> 2) +",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0xfcfcfc matches address of g_LightBufferPool (+3889908 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 292,
-      "match": "0xfcfcfc",
-      "severity": "moderate",
-      "text": "((g_CameraConvertedPalette[pbVar7[0x281]] & 0xfcfcfc) >> 2);",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 535,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 0044fa93: MOVSD.REP ES:EDI,ESI  ; g_CameraTextureWorkBuffer | g_CameraTextureWorkBuffer[1]",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
-      "line": 538,
-      "match": "MOVSB.REP",
-      "severity": "moderate",
-      "text": "// 0044fa9a: MOVSB.REP ES:EDI,ESI  ; g_CameraTextureWorkBuffer | g_CameraTextureWorkBuffer[1] | g_CameraTextureWorkBuffe",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 546,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 0044fab3: MOVSD.REP ES:EDI,ESI  ; g_CameraImagePaletteData | g_CameraImagePaletteData.colors[1].g",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
-      "line": 549,
-      "match": "MOVSB.REP",
-      "severity": "moderate",
-      "text": "// 0044faba: MOVSB.REP ES:EDI,ESI  ; g_CameraImagePaletteData | g_CameraImagePaletteData.colors[1].g | g_CameraImagePale",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

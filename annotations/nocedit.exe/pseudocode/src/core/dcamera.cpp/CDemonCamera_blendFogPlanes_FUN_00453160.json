@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 52,
+    "complexity_score": 37,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 37,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 133
   },
   "cross_references": [
@@ -124,6 +122,17 @@
     },
     "pcode_op_count": 573
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(SFogImagePlane *)((int)output_buffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "output_buffer = (SFogImagePlane *)((int)output_buffer + 0x140);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -154,14 +163,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(SFogImagePlane *)((int)output_buffer",
-      "severity": "moderate",
-      "text": "output_buffer = (SFogImagePlane *)((int)output_buffer + 0x140);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

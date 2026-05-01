@@ -646,6 +646,111 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map,
                         still.append(s2)
                         keep_introduced_keys[k] -= 1
 
+            # Asm-anchored `unrolled_memcpy` / `unrolled_memset` suspects fire
+            # on REP MOVS/STOS in the binary's asm and bypass the source-side
+            # cpp-vs-keep diff above. When the keep introduces explicit
+            # memcpy()/memset() calls beyond what the .cpp had, each added
+            # call addresses one asm-side site; move that many asm-anchored
+            # suspects into resolved_by_keep so they don't double-report.
+            #
+            # Special case: when the keep's body is essentially a single
+            # memcpy() (or memset()) call wrapping the entire function — e.g.
+            # `mmxOptimizedMemcpy` rewritten as just `memcpy(d,s,n)` — the
+            # binary's hand-rolled implementation may emit many REP MOVS
+            # (head bytes, dword bulk, tail bytes, MMX chunks). All of them
+            # serve the one logical copy. Suppress all asm-side memcpy/memset
+            # suspects in that case rather than matching 1:1 by count.
+            def _count_calls(text, fn_name):
+                if not text:
+                    return 0
+                pat = re.compile(
+                    r'(?<![A-Za-z0-9_])' + re.escape(fn_name) + r'\s*\(')
+                return len(pat.findall(text))
+
+            def _is_trivial_call_wrapper(text, fn_name):
+                """True if `text` (a keep source) is a single-statement
+                wrapper whose body is essentially one fn_name() call.
+                Rejects bodies with control flow or other function calls."""
+                if not text:
+                    return False
+                # Strip C and C++ comments.
+                stripped = re.sub(r'/\*.*?\*/', '', text, flags=re.DOTALL)
+                stripped = re.sub(r'//[^\n]*', '', stripped)
+                # Find outermost function body via balanced braces.
+                open_idx = stripped.find('{')
+                if open_idx < 0:
+                    return False
+                depth = 0
+                close_idx = -1
+                for i in range(open_idx, len(stripped)):
+                    ch = stripped[i]
+                    if ch == '{':
+                        depth += 1
+                    elif ch == '}':
+                        depth -= 1
+                        if depth == 0:
+                            close_idx = i
+                            break
+                if close_idx < 0:
+                    return False
+                body = stripped[open_idx + 1:close_idx]
+                # Neutralize string and char literals so they can't smuggle
+                # control-flow keywords.
+                body = re.sub(r'"[^"]*"', '""', body)
+                body = re.sub(r"'[^']*'", "''", body)
+                # Reject any control flow.
+                if re.search(r'\b(for|while|do|if|else|switch|case|goto)\b',
+                             body):
+                    return False
+                # The wrapper must call fn_name at least once.
+                fn_call_re = re.compile(
+                    r'(?<![A-Za-z0-9_])' + re.escape(fn_name) + r'\s*\(')
+                if not fn_call_re.search(body):
+                    return False
+                # Reject other function calls (sizeof, return, casts are fine).
+                call_re = re.compile(
+                    r'(?<![A-Za-z0-9_])([A-Za-z_][A-Za-z0-9_]*)\s*\(')
+                allowed = {fn_name, 'sizeof', 'return',
+                           '__cdecl', '__stdcall', '__watcallStack'}
+                for m in call_re.findall(body):
+                    if m not in allowed:
+                        return False
+                return True
+
+            added_memcpys = max(
+                0,
+                _count_calls(keep_source, 'memcpy')
+                - _count_calls(decompiled_code, 'memcpy'))
+            added_memsets = max(
+                0,
+                _count_calls(keep_source, 'memset')
+                - _count_calls(decompiled_code, 'memset'))
+            memcpy_wrapper = _is_trivial_call_wrapper(keep_source, 'memcpy')
+            memset_wrapper = _is_trivial_call_wrapper(keep_source, 'memset')
+
+            if added_memcpys or added_memsets:
+                new_still = []
+                for s in still:
+                    t = s.get('type')
+                    m = s.get('match', '') or ''
+                    if (t == 'unrolled_memcpy' and m.startswith('MOVS')
+                            and (memcpy_wrapper or added_memcpys > 0)):
+                        s2 = dict(s)
+                        s2['resolution_source'] = 'keep'
+                        resolved_by_keep.append(s2)
+                        if not memcpy_wrapper:
+                            added_memcpys -= 1
+                    elif (t == 'unrolled_memset' and m.startswith('STOS')
+                          and (memset_wrapper or added_memsets > 0)):
+                        s2 = dict(s)
+                        s2['resolution_source'] = 'keep'
+                        resolved_by_keep.append(s2)
+                        if not memset_wrapper:
+                            added_memsets -= 1
+                    else:
+                        new_still.append(s)
+                still = new_still
+
             suspects = still
             resolved_suspects.extend(resolved_by_keep)
         except Exception as e:
@@ -1135,7 +1240,9 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False):
     # Verify generated headers compile
     timer.start_phase("Verify headers compile")
     make_dirs(reports_dir)  # Ensure reports dir exists for compilation reports
-    headers_ok = verify_headers_after_export(pseudocode_dir, reports_dir=reports_dir, repo_dir=repo_dir)
+    headers_ok = verify_headers_after_export(
+        pseudocode_dir, max_workers=num_threads,
+        reports_dir=reports_dir, repo_dir=repo_dir)
     timer.end_phase()
     if not headers_ok:
         log_info("ERROR: Header compilation failed")
@@ -1144,7 +1251,9 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False):
 
     # Verify globals cpp files compile
     timer.start_phase("Verify globals compile")
-    globals_ok = verify_globals_after_export(pseudocode_dir, reports_dir=reports_dir, repo_dir=repo_dir)
+    globals_ok = verify_globals_after_export(
+        pseudocode_dir, max_workers=num_threads,
+        reports_dir=reports_dir, repo_dir=repo_dir)
     timer.end_phase()
     if not globals_ok:
         log_info("ERROR: Globals compilation failed")
@@ -1153,7 +1262,9 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False):
 
     # Verify shim source files compile
     timer.start_phase("Verify shims compile")
-    shims_ok = verify_shims_after_export(pseudocode_dir, reports_dir=reports_dir, repo_dir=repo_dir)
+    shims_ok = verify_shims_after_export(
+        pseudocode_dir, max_workers=num_threads,
+        reports_dir=reports_dir, repo_dir=repo_dir)
     timer.end_phase()
     if not shims_ok:
         log_info("WARNING: Shim compilation had failures (non-blocking)")

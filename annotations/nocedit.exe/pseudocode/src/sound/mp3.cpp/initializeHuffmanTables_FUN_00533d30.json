@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 184,
-    "complexity_score": 136,
+    "complexity_score": 111,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 33,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 111,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 295
   },
   "cross_references": [],
@@ -311,6 +309,15 @@
       "severity": "mild",
       "text": "for (iVar8 = 2; iVar8 != 0; iVar8 = iVar8 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 65,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 00533e06: MOVSD.REP ES:EDI,ESI  ; g_HuffmanTables[0].huffman_data[0] | g_HuffmanTables[0].huffman_data[4]",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -360,22 +367,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 65,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 00533e06: MOVSD.REP ES:EDI,ESI  ; g_HuffmanTables[0].huffman_data[0] | g_HuffmanTables[0].huffman_data[4]",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
-      "line": 68,
-      "match": "MOVSB.REP",
-      "severity": "moderate",
-      "text": "// 00533e0d: MOVSB.REP ES:EDI,ESI  ; g_HuffmanTables[0].huffman_data[4] | g_HuffmanTables[0].huffman_data[5]",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

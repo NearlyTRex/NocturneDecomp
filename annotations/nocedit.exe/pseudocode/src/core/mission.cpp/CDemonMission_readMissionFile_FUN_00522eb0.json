@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 579,
-    "complexity_score": 288,
+    "complexity_score": 253,
     "cross_reference_count": 2,
     "function_call_count": 15,
     "global_count": 39,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 253,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 832
   },
   "cross_references": [
@@ -448,6 +446,33 @@
       "severity": "mild",
       "text": "for (iVar3 = 0x19; iVar3 != 0; iVar3 = iVar3 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 178,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 0052309e: MOVSD.REP ES:EDI,ESI  ; g_MissionDataStatus | s_upt!_0067d55c",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 495,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 00523412: MOVSD.REP ES:EDI,ESI  ; g_DefaultMissionActorClass | g_DefaultMissionActorClass+4",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 503,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 00523430: MOVSD.REP ES:EDI,ESI  ; g_DefaultMissionActorName | g_DefaultMissionActorName+4",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -550,30 +575,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 178,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 0052309e: MOVSD.REP ES:EDI,ESI  ; g_MissionDataStatus | s_upt!_0067d55c",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 495,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 00523412: MOVSD.REP ES:EDI,ESI  ; g_DefaultMissionActorClass | g_DefaultMissionActorClass+4",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 503,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 00523430: MOVSD.REP ES:EDI,ESI  ; g_DefaultMissionActorName | g_DefaultMissionActorName+4",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

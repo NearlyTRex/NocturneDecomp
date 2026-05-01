@@ -215,7 +215,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytra
       local_50.z = local_44.z + local_28->z;
       core_dcube_cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0
                 ((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + local_20),
-                 (void *)piVar10[1],*piVar10,&local_44,&local_50,(uchar *)piVar10[0x15],
+                 (CDemonTriangle *)piVar10[1],*piVar10,&local_44,&local_50,(uchar *)piVar10[0x15],
                  (uint *)(piVar10 + 5));
       if ((cube_index & 0xf) == 0) {
         local_14 = cube_index + 1;

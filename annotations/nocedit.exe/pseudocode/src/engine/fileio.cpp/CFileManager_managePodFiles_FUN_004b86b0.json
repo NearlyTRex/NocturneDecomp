@@ -8,15 +8,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2078,
-    "complexity_score": 904,
+    "complexity_score": 889,
     "cross_reference_count": 0,
     "function_call_count": 51,
     "global_count": 109,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 809,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
-      "unrolled_memcpy",
       "unrolled_strcpy",
       "warning_unreachable"
     ],
@@ -1005,6 +1004,15 @@
       "severity": "mild",
       "text": "for (iVar2 = 0x41; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 25,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 004b870b: MOVSD.REP ES:EDI,ESI  ; g_DefaultPodDirectoryPath | g_DefaultPodDirectoryPath+4",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -1366,14 +1374,6 @@
       "severity": "mild",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 25,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 004b870b: MOVSD.REP ES:EDI,ESI  ; g_DefaultPodDirectoryPath | g_DefaultPodDirectoryPath+4",
-      "type": "unrolled_memcpy"
     }
   ]
 }

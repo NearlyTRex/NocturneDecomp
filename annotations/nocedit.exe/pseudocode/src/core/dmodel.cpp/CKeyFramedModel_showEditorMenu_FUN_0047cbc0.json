@@ -8,18 +8,17 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2523,
-    "complexity_score": 987,
+    "complexity_score": 972,
     "cross_reference_count": 2,
     "function_call_count": 72,
     "global_count": 128,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 857,
-    "suspect_count": 10,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "negative_offset",
       "pointer_cast",
-      "unrolled_memcpy",
       "unrolled_strcpy",
       "warning_inlined_function"
     ],
@@ -1309,6 +1308,15 @@
       "severity": "mild",
       "text": "for (iVar18 = 0x19; iVar18 != 0; iVar18 = iVar18 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 2382,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 0047e665: MOVSD.REP ES:EDI,ESI  ; g_ModelLastScaleInput | g_ModelLastScaleInput+4",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -2126,14 +2134,6 @@
       "severity": "mild",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 2382,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 0047e665: MOVSD.REP ES:EDI,ESI  ; g_ModelLastScaleInput | g_ModelLastScaleInput+4",
-      "type": "unrolled_memcpy"
     },
     {
       "description": "Decompiler intrinsic (not real C)",

@@ -8,8 +8,6 @@
 #include "nocturne.h"
 #include "stream_compat.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamera *this_ptr)
 
 {
@@ -93,7 +91,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
           local_30 = 0x500;
           do {
             end_pos = (CVector3i *)((int)&g_PrecomputedWorldPositions[0].x + local_34);
-            piVar5 = (int *)((int)g_PrecomputedDepthBuffer + local_30);
+            piVar5 = g_PrecomputedDepthBuffer + (local_30 >> 2);
             pcVar7 = g_CameraPlaneWorkBuffer.pixels[0] + local_3c;
             iVar6 = 1;
             if (1 < this_ptr->display_width) {

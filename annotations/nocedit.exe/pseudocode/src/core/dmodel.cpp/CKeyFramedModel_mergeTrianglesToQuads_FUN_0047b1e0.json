@@ -7,18 +7,17 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 811,
-    "complexity_score": 496,
+    "complexity_score": 481,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 336,
-    "suspect_count": 14,
+    "suspect_count": 13,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
-      "sub84_truncation",
-      "unrolled_memcpy"
+      "sub84_truncation"
     ],
     "total_lines": 1147
   },
@@ -270,6 +269,15 @@
       "resolution_source": "keep",
       "severity": "mild",
       "text": "for (iVar15 = 0x12; iVar15 != 0; iVar15 = iVar15 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 158,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 0047b3fd: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
     }
   ],
@@ -777,14 +785,6 @@
       "severity": "moderate",
       "text": "*(uint *)(local_80 + (int)this_ptr->poly_texture_index_list);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 158,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 0047b3fd: MOVSD.REP ES:EDI,ESI",
-      "type": "unrolled_memcpy"
     }
   ]
 }

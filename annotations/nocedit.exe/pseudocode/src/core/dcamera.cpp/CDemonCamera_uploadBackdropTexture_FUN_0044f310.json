@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 123,
+    "complexity_score": 63,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 13,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 63,
-    "suspect_count": 5,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 139
   },
   "cross_references": [],
@@ -174,6 +171,15 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(char *)((int)g_CameraTextureWorkBuffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(char *)((int)g_CameraTextureWorkBuffer + iVar4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 48,
       "match": "(uint *)((int)puVar6",
       "resolution_source": "keep",
@@ -234,6 +240,24 @@
       "severity": "mild",
       "text": "for (iVar5 = 0x4000; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 49,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 0044f397: MOVSD.REP ES:EDI,ESI  ; g_CameraTextureWorkBuffer | g_CameraTextureWorkBuffer[1]",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 60,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 0044f3b7: MOVSD.REP ES:EDI,ESI  ; g_CameraImagePaletteData | g_CameraImagePaletteData.colors[1].g",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -276,46 +300,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 27,
-      "match": "(char *)((int)g_CameraTextureWorkBuffer",
-      "severity": "moderate",
-      "text": "*(char *)((int)g_CameraTextureWorkBuffer + iVar4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 49,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 0044f397: MOVSD.REP ES:EDI,ESI  ; g_CameraTextureWorkBuffer | g_CameraTextureWorkBuffer[1]",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
-      "line": 52,
-      "match": "MOVSB.REP",
-      "severity": "moderate",
-      "text": "// 0044f39e: MOVSB.REP ES:EDI,ESI  ; g_CameraTextureWorkBuffer[1] | g_CameraTextureWorkBuffer[1]+1",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 60,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 0044f3b7: MOVSD.REP ES:EDI,ESI  ; g_CameraImagePaletteData | g_CameraImagePaletteData.colors[1].g",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSB at ????????, 1-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 1) or a struct assignment in a .keep.",
-      "line": 63,
-      "match": "MOVSB.REP",
-      "severity": "moderate",
-      "text": "// 0044f3be: MOVSB.REP ES:EDI,ESI  ; g_CameraImagePaletteData.colors[1].g | g_CameraImagePaletteData.colors[1].b",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }
