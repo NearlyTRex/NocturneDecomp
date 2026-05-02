@@ -108,7 +108,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_005bb960(CStranger *th
   int local_1c;
   int local_18;
   int local_14;
-  
+
   local_1c = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                        (g_CEventListPtr,"DebugActionPending");
   pCVar9 = (this_ptr->base).base.carry_hands[1].carry_actor;
@@ -908,7 +908,17 @@ LAB_005bd5e6:
                    (double)(this_ptr->base).base.velocity.y);
         fVar17 = -this_ptr->fall_velocity_snapshot;
         if (fVar17 < (float)20) {
-          if (((local_20 == 0xd) || (local_20 == 9)) || (local_20 == 0xf)) goto LAB_005bd763;
+          if (local_20 == 0xd) {
+            iDesiredState = 0xe;
+          }
+          else if (local_20 == 9) {
+            iDesiredState = 0xa;
+          }
+          else {
+            iDesiredState = 0x10;
+          }
+          iForceImmediate = 1;
+          goto LAB_005bd763;
         }
         else {
           local_74 = 0;

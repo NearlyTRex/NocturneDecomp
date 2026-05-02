@@ -7,16 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 555,
-    "complexity_score": 489,
+    "complexity_score": 424,
     "cross_reference_count": 6,
     "function_call_count": 5,
     "global_count": 44,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 274,
-    "suspect_count": 20,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
-      "unnamed_param",
       "unrolled_strcpy"
     ],
     "total_lines": 829
@@ -531,22 +530,6 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 165,
-      "match": "param1",
-      "severity": "mild",
-      "text": "if ((this_ptr->param1).v_int < *(int *)(this_ptr->data).v_string_ptr) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 166,
-      "match": "param1",
-      "severity": "mild",
-      "text": "piVar9 = (int *)((int)(this_ptr->data).v_string_ptr + ((this_ptr->param1).v_int * 10 + 1) * 4)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 174,
       "match": "(char *)((int)piVar9",
@@ -561,38 +544,6 @@
       "severity": "moderate",
       "text": "piVar9 = (int *)((int)piVar9 + 2);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 197,
-      "match": "param1",
-      "severity": "mild",
-      "text": "if (0 < (this_ptr->param1).v_int) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 198,
-      "match": "param2",
-      "severity": "mild",
-      "text": "puVar10 = (this_ptr->param2).v_ptr;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 206,
-      "match": "param1",
-      "severity": "mild",
-      "text": "} while (iVar1 < (this_ptr->param1).v_int);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 222,
-      "match": "param1",
-      "severity": "mild",
-      "text": "iVar1 = (this_ptr->param1).v_int;",
-      "type": "unnamed_param"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

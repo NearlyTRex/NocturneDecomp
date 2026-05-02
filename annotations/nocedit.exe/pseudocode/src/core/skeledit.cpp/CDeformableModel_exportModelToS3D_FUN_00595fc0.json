@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 791,
-    "complexity_score": 332,
+    "complexity_score": 317,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 37,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 252,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
-      "param_count_too_many",
       "pointer_cast"
     ],
     "total_lines": 1043
@@ -792,17 +791,6 @@
       "severity": "moderate",
       "text": "local_88 = local_88 + *(int *)((int)aiStack_140 + iVar1);",
       "type": "pointer_cast"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 4,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 1,
-      "fix_type": "remove_params",
-      "match": "declared:4 vs estimated:1",
-      "param_delta": -3,
-      "text": "Function declares 4 params but call sites push 1 (3 extra)",
-      "type": "param_count_too_many"
     }
   ]
 }

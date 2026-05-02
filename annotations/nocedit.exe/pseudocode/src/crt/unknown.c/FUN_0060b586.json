@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 231,
+    "complexity_score": 216,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 51,
-    "suspect_count": 16,
+    "suspect_count": 15,
     "suspect_types": [
       "extra_output",
-      "param_count_too_many",
       "register_param",
       "unnamed_param"
     ],
@@ -236,17 +235,6 @@
       "severity": "mild",
       "text": "*(short *)(in_EDX + 2) = (short)in_EAX;",
       "type": "register_param"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 2,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 0,
-      "fix_type": "remove_params",
-      "match": "declared:2 vs estimated:0",
-      "param_delta": -2,
-      "text": "Function declares 2 params but call sites push 0 (2 extra)",
-      "type": "param_count_too_many"
     }
   ]
 }

@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1764,
-    "complexity_score": 809,
+    "complexity_score": 794,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 779,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_many",
       "unrolled_memcpy"
     ],
     "total_lines": 2543
@@ -967,17 +966,6 @@
       "severity": "moderate",
       "text": "// 0041e8ad: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 2,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 1,
-      "fix_type": "remove_params",
-      "match": "declared:2 vs estimated:1",
-      "param_delta": -1,
-      "text": "Function declares 2 params but call sites push 1 (1 extra)",
-      "type": "param_count_too_many"
     }
   ]
 }

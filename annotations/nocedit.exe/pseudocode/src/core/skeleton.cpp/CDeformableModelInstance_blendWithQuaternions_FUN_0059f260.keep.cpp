@@ -17,20 +17,13 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
   int iVar8;
   CQuaternion4f *quat1_in;
   float *puVar9;
-  uint *puVar11;
-  uint *puVar12;
-  byte bVar13;
-  float afStackY_18c4 [1522];
   CQuaternion4f CStack_e8;
   CQuaternion4f local_d8;
   CQuaternion4f local_c8;
-  CQuaternion4f local_b8;
-  CQuaternion4f local_a8;
   CQuaternion4f local_98;
   CQuaternion4f local_88;
-  CQuaternion4f local_78 [3];
+  CQuaternion4f local_78;
   float afStack_44 [4];
-  CQuaternion4f *local_34;
   CQuaternion4f *local_30;
   CQuaternion4f *local_2c;
   CDeformableModelInstance *local_28;
@@ -38,7 +31,6 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
   CSkeleton *local_20;
   CQuaternion4f *local_1c;
   int local_18;
-  float local_14;
   float fVar2;
   float fVar1;
   float fVar3;
@@ -46,7 +38,6 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
   float fVar6;
   float fVar5;
   float fVar4;
-  CQuaternion4f *pCVar10;
   
   if ((float)0.001 < blend_weight) {
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
@@ -91,8 +82,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
             if (-1 < iVar1) {
               core_xform_cpp_negateFirstComponent_FUN_005f75e0(source_quaternions + iVar1,&local_c8)
               ;
-              core_xform_cpp_multiplyQuaternion_FUN_005f7640(quat1_in,&local_a8,local_78);
-              core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_b8,local_2c + iVar1,&local_98);
+              core_xform_cpp_multiplyQuaternion_FUN_005f7640(quat1_in,&local_c8,&local_78);
+              core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_78,local_2c + iVar1,&local_98);
               puVar9 = &local_98.w;
             }
             local_d8.w = (float)*puVar9;

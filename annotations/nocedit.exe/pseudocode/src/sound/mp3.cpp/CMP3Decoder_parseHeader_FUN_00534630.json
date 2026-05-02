@@ -4,7 +4,7 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 332,
     "complexity_score": 150,
@@ -401,6 +401,30 @@
         "type": "int"
       }
     ]
+  },
+  "static_analysis": {
+    "analyzed_file": "CMP3Decoder_parseHeader_FUN_00534630.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 16,
+          "line": 92,
+          "message": "Uninitialized variable: local_30",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 18,
+          "line": 118,
+          "message": "Uninitialized variable: local_3c",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
   },
   "suspects": [
     {

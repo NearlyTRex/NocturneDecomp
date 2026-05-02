@@ -7,15 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 71,
+    "complexity_score": 56,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 31,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_param",
       "unrolled_strcpy"
     ],
     "total_lines": 91
@@ -145,14 +144,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param1",
-      "severity": "mild",
-      "text": "(pCVar2->param1).v_int = allow_none;",
-      "type": "unnamed_param"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 12,

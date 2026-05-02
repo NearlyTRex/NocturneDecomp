@@ -74,6 +74,41 @@ int nocturne_dump_collision_grid(const char *path, struct CVector3f *pos);
 // gradient setup gone wrong).
 int nocturne_dump_lighting_state(const char *path);
 
+// Continuous per-frame actor-state auto-dump. Independent of gdb — meant to
+// be toggled at runtime from a keyboard hotkey (see user32 shim) so a session
+// can be recorded while the user drives the game. Two slots are exposed so
+// player and a chosen NPC can be dumped in parallel.
+//
+//   slot:          0 or 1. Out-of-range calls are ignored.
+//   path_template: printf-style path with one `%d` for the frame counter
+//                  (e.g. "/tmp/dump_p0_%04d.txt"). Pass NULL to disarm the
+//                  slot. Each slot keeps its own counter that resets on (re)arm.
+//   actor:         snapshot of the target. The pointer is held for the lifetime
+//                  of the slot — re-arm if the actor is destroyed/respawned.
+//
+// The arm/disarm operation also fprintfs to stderr so the toggling hotkey is
+// audible in the terminal.
+struct CDemonActor;
+void nocturne_auto_dump_set_slot(int slot, const char *path_template,
+                                  struct CDemonActor *actor);
+
+// Returns non-zero if the slot is currently armed. Hotkey handlers use this
+// to flip between arm/disarm without tracking external state.
+int  nocturne_auto_dump_is_armed(int slot);
+
+// Tick all armed slots — call once per frame. Each armed slot writes one
+// numbered actor-state file per tick.
+void nocturne_auto_dump_tick(void);
+
+// Convenience hotkey toggles. Each looks up the relevant actor pointer
+// (player = `g_HeroActors[g_LocalHeroIndex]`; svetlana = first CSvetlana in
+// the active scene) and flips the matching slot. Path templates are fixed:
+//   slot 0 (player):   /tmp/auto_dump_player_%05d.txt
+//   slot 1 (svetlana): /tmp/auto_dump_svetlana_%05d.txt
+// Returns 1 if newly armed, 0 if disarmed, -1 if the actor couldn't be found.
+int nocturne_auto_dump_toggle_player(void);
+int nocturne_auto_dump_toggle_svetlana(void);
+
 // Auto-capture sequence — gdb-callable, like the other dump shims. Hook this
 // into a `commands` block on a per-frame breakpoint and it'll write a
 // numbered screenshot + sidecar display-list-txt every `every_n` calls, up

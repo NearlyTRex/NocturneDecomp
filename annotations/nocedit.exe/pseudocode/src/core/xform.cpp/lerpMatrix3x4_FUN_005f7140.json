@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 218,
-    "complexity_score": 120,
+    "complexity_score": 130,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 65,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "missing_cave_copy"
     ],
@@ -416,6 +416,15 @@
       "match": "CQuaternion4f local_30; ... f(&local_30, ...);",
       "severity": "moderate",
       "text": "CQuaternion4f local_30;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `local_20` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "introduced_by": "keep",
+      "line": 37,
+      "match": "CQuaternion4f local_20; ... f(&local_20, ...);",
+      "severity": "moderate",
+      "text": "CQuaternion4f local_20;",
       "type": "missing_cave_copy"
     }
   ]

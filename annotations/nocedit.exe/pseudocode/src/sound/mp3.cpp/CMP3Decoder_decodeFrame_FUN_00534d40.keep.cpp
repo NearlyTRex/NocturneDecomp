@@ -84,7 +84,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
   int local_1c;
   int local_18;
   int local_14;
-  
+
   local_e0.frame.header = &local_110;
   local_e0.frame.table_index = -1;
   local_e0.frame.allocation_table = (SBitAllocationTable *)0x0;
@@ -365,8 +365,8 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
         local_60 = (int)ROUND(ROUND((((double)local_60cc /
                                      g_MpegSampleRateTable[local_110.mpeg_version]
                                      [local_110.sampling_rate_index]) *
-                                    (double)g_MpegBitrateTable[local_110.mpeg_version + -1]
-                                            [local_110.layer + 2][local_110.bitrate_index]) /
+                                    (double)g_MpegBitrateTable[local_110.mpeg_version]
+                                            [local_110.layer - 1][local_110.bitrate_index]) /
                                     (double)local_60d0));
         if (local_110.padding != 0) {
           local_60 = local_60 + 1;

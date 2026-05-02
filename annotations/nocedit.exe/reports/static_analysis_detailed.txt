@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (392 diagnostics)
+Cppcheck (quick) (395 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (81)
+uninitvar (83)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 71
@@ -332,12 +332,20 @@ uninitvar (81)
     File: shape/superopt.cpp
     Uninitialized variable: local_288
 
+  sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630 line 92
+    File: sound/mp3.cpp
+    Uninitialized variable: local_30
+
+  sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630 line 118
+    File: sound/mp3.cpp
+    Uninitialized variable: local_3c
+
   sound_sndmain.cpp_testSoundFile_FUN_005ad3b0       line 32
     File: sound/sndmain.cpp
     Uninitialized variable: local_60
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (72)
+selfAssignment (73)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 163
@@ -620,6 +628,10 @@ selfAssignment (72)
     File: shape/superopt.cpp
     Redundant assignment of 'pdVar4' to itself.
 
+  sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_00533b line 36
+    File: sound/mp3.cpp
+    Redundant assignment of 'pafVar3' to itself.
+
   sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 line 189
     File: sound/mp3.cpp
     Redundant assignment of 'iVar5' to itself.
@@ -700,15 +712,15 @@ shiftTooManyBitsSigned (68)
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_F line 243
+  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_F line 245
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_F line 246
+  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_F line 248
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_F line 249
+  core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_F line 251
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -1364,11 +1376,11 @@ invalidPointerCast (19)
     File: core/skeledit.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
-  core_skeleton.cpp_CDeformableModelInstance_compute line 36
+  core_skeleton.cpp_CDeformableModelInstance_compute line 31
     File: core/skeleton.cpp
     Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
 
-  core_skeleton.cpp_CDeformableModelInstance_compute line 37
+  core_skeleton.cpp_CDeformableModelInstance_compute line 32
     File: core/skeleton.cpp
     Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
 

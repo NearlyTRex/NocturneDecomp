@@ -58,7 +58,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_005d8ba0(CSvetlana *this_pt
   bool bVar2;
   UOrientationVector *euler;
   CDemonActor *pCVar1;
-  
+
   if (((this_ptr->base).base.hit_points < (float)100) &&
      (fVar7 = (this_ptr->base).base.hit_points + delta_time,
      (this_ptr->base).base.hit_points = fVar7, (float)100 < fVar7)) {
@@ -291,7 +291,7 @@ LAB_005d8e27:
     iVar3 = g_SvetlanaBoneIndices[0];
     core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&this_ptr->head_euler_angles,&CStack_84);
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
-              (this_ptr_01,&CStack_94,fVar7,iVar3,
+              (this_ptr_01,&CStack_84,fVar7,iVar3,
                (CDeformableModel_MotionBlendWeightFunc *)blend_callback);
   }
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);

@@ -185,8 +185,12 @@ _SUSPECT_PATTERN_DEFS = [
     (r'WARNING:\s*Struct .* ignoring multiple overlapping fields', 'warning_struct_overlap', 'Struct has overlapping fields'),
     # uRamXXXX - Undefined RAM references (Ghidra couldn't resolve memory location)
     (r'\b[pu]?uRam[0-9a-fA-F]+\b', 'undefined_ram', 'Undefined RAM reference'),
-    # param_N or paramN - Unnamed function parameters (need meaningful names)
-    (r'\bparam_?\d+\b', 'unnamed_param', 'Unnamed function parameter'),
+    # param_N - Ghidra's auto-generated unnamed parameter form. The underscore
+    # is mandatory: real struct fields like `this_ptr->param1` are not
+    # auto-generated and must not be flagged. (CActorProperty has fields
+    # `param1`/`param2`/`param3` that previously matched the optional-underscore
+    # form as false positives.)
+    (r'\bparam_\d+\b', 'unnamed_param', 'Unnamed function parameter'),
     # p1, p2, etc. - Short generic parameter names in function signatures (need meaningful names)
     # Only match when preceded by a type and * (pointer param) or type name, to avoid matching local vars
     (r'(?:void|int|float|uint|char|double)\s*\*?\s*\bp\d+\b', 'unnamed_param', 'Unnamed function parameter (short form)'),
@@ -2560,6 +2564,41 @@ def identify_param_count_mismatch(param_estimates, vtable_info, func_signature=N
         if declared_stack_bytes is not None and estimated * 4 == declared_stack_bytes:
             return None
         delta = estimated - declared
+
+        # For the "too many" case (delta < 0), one truncated `push_count` run
+        # at a single call site is enough to drag the most-common estimate
+        # below the declared count even when other call sites confirm the
+        # signature. Two truncation modes are common:
+        #   1. The site's analyzer hit a basic-block boundary, prior CALL, or
+        #      prologue marker before walking back over all the PUSHes — the
+        #      JSON shows method='push_count' with low `instructions_analyzed`.
+        #   2. A different site uses method='add_esp' and reports the full
+        #      count, but the aggregator's `most_common` picked the smaller
+        #      value because the two methods tied 1:1 in frequency.
+        # Suppress the "too many" suspect when any call site provides positive
+        # evidence that the declared count is correct: an `add_esp` measurement
+        # at-or-above declared, OR any single site whose own `estimated_params`
+        # already meets/exceeds declared.
+        if delta < 0:
+            call_sites = param_estimates.get('call_sites', [])
+            for cs in call_sites:
+                site_est = cs.get('estimated_params', 0)
+                if site_est >= declared:
+                    # At least one site corroborates the declared count.
+                    return None
+            # No corroborating site. If *every* call site used the
+            # push_count fallback and stopped short (`instructions_analyzed`
+            # below `2 * declared`), the analyzer didn't see enough of the
+            # caller body to count the PUSHes — every site short-circuited
+            # at a basic-block boundary, prior CALL, or prologue marker.
+            # That's not evidence the signature is wrong; it's evidence the
+            # call-site analysis ran out of context. Suppress.
+            if call_sites and all(
+                cs.get('method') == 'push_count'
+                and cs.get('instructions_analyzed', 0) < max(2 * declared, 8)
+                for cs in call_sites
+            ):
+                return None
 
         if delta > 0:
             # Call sites push MORE than declared - missing params in signature

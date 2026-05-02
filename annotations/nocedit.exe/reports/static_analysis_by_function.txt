@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 130
-  Total diagnostics: 392
+  Functions with findings: 132
+  Total diagnostics: 395
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 130, raw .cpp files: 0
+  .keep.cpp files: 132, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -194,9 +194,9 @@ core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0  [.keep] [Cppcheck
   Line  151: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line  154: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line  166: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  243: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  246: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  249: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  245: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  248: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  251: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80  [.keep] [Cppcheck (quick)]
@@ -659,8 +659,8 @@ core_skeledit.cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0  [.keep] [Cppch
 core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0  [.keep] [Cppcheck (quick)]
   File: core/skeleton.cpp  (2 diagnostics)
 
-  Line   36: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-  Line   37: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+  Line   31: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+  Line   32: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
 
 ----------------------------------------------------------------------------------------------------
 core_svetlana.cpp_CSvetlana_renderOpaque_FUN_005d9bc0  [.keep] [Cppcheck (quick)]
@@ -752,6 +752,13 @@ shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590  [.keep] [Cpp
 
   Line  158: [invalidTestForOverflow] Invalid test for overflow 'local_1c<local_1c+local_28'; pointer overflow is undefined behavior. Some mainstream compilers removes handling of overflows when optimising the code and change the code to 'local_28>0'.
   Line  241: [identicalInnerCondition] Identical inner 'if' condition is always true.
+
+----------------------------------------------------------------------------------------------------
+sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630  [.keep] [Cppcheck (quick)]
+  File: sound/mp3.cpp  (2 diagnostics)
+
+  Line   92: [uninitvar] Uninitialized variable: local_30
+  Line  118: [uninitvar] Uninitialized variable: local_3c
 
 ----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0  [.keep] [Cppcheck (quick)]
@@ -1017,6 +1024,12 @@ sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680  [.keep] [Cppc
   File: sound/mp3.cpp  (1 diagnostics)
 
   Line   46: [invalidScanfArgType_int] %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
+
+----------------------------------------------------------------------------------------------------
+sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0  [.keep] [Cppcheck (quick)]
+  File: sound/mp3.cpp  (1 diagnostics)
+
+  Line   36: [selfAssignment] Redundant assignment of 'pafVar3' to itself.
 
 ----------------------------------------------------------------------------------------------------
 sound_mp3.cpp_initializeHuffmanTablesOnce_FUN_00533f80  [.keep] [Cppcheck (quick)]

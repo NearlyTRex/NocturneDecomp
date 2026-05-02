@@ -11,25 +11,14 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059
 
 {
   CVector3f *pCVar1;
-  uint *puVar2;
-  uint *puVar3;
-  byte bVar4;
-  float afStackY_1888 [1521];
-  CQuaternion4f *quat2_in_01;
   CQuaternion4f local_ac;
   CQuaternion4f local_9c;
   CQuaternion4f local_8c;
   CQuaternion4f local_7c;
-  CQuaternion4f local_6c;
-  CQuaternion4f local_5c;
-  CQuaternion4f local_4c;
-  CQuaternion4f local_3c;
   CVector3f local_2c;
   CVector3f local_20;
   CVector3f local_14;
-  CQuaternion4f *quat2_in_00;
-  CQuaternion4f *quat2_in;
-  
+
   if (blend_weight <= (float)0.001) {
     return;
   }
@@ -40,11 +29,10 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059
   local_2c.y = target_position->y - pCVar1->y;
   local_2c.z = target_position->z - pCVar1->z;
   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_20,&local_2c);
-  core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(local_20.x,&local_3c);
-  quat2_in_01 = &local_ac;
-  core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(local_20.y,&local_6c);
-  core_xform_cpp_multiplyQuaternion_FUN_005f7640(base_orientation,&local_8c,&local_ac);
-  core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_7c,quat2_in_01,&local_4c);
+  core_xform_cpp_quaternionFromAngleX_FUN_005f79b0(local_20.x,&local_ac);
+  core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(local_20.y,&local_8c);
+  core_xform_cpp_multiplyQuaternion_FUN_005f7640(base_orientation,&local_8c,&local_7c);
+  core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_7c,&local_ac,&local_9c);
   core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
             (this_ptr,&local_9c,blend_weight,bone_index,blend_callback);
   return;

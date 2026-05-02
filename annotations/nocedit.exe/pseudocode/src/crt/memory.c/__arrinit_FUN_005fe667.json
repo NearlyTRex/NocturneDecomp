@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 86,
+    "complexity_score": 31,
     "cross_reference_count": 86,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 16,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "unnamed_param"
+      "pointer_cast"
     ],
     "total_lines": 52
   },
@@ -733,52 +732,12 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 7,
-      "match": "param0",
-      "severity": "mild",
-      "text": "void *param0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param0",
-      "severity": "mild",
-      "text": "param0 = array_start;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param0",
-      "severity": "mild",
-      "text": "(*pWVar1)(param0);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 16,
       "match": "(void *)((int)param0",
       "severity": "moderate",
       "text": "param0 = (void *)((int)param0 + iVar2);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param0",
-      "severity": "mild",
-      "text": "param0 = (void *)((int)param0 + iVar2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param0",
-      "severity": "mild",
-      "text": "param0 = (void *)((int)param0 + iVar2);",
-      "type": "unnamed_param"
     }
   ]
 }

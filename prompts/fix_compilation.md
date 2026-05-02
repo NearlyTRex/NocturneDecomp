@@ -543,6 +543,16 @@ inverse(&local_d8, &local_108);
 
 **Eligibility:** `.keep`-layer fix. Retyping locals or signatures upstream won't change this — it's purely a Ghidra decode artifact. The `missing_cave_copy` suspect type (see "Reducing Flagged Suspects") flags functions whose `.cpp` and `.asm` agree on the pattern.
 
+**Escape hatch — when the .asm itself looks wrong:** The cave blocks Ghidra shows in the `.asm` (`MOV ECX,[ESI]; MOV [EDI],ECX` pairs at far addresses like `0x60E45A`) are often **fabricated** by AND-ESP / cave-block fixup scripts that patch Ghidra's analysis. The actual binary has inline `MOVSD` instructions (1-byte `0xA5`) at the original site instead. The byte effect is the same memcpy, **but inline `MOVSD` does NOT clobber `ECX`** while the fake cave block's `MOV ECX,[ESI]` pattern does. This matters when the surrounding asm loads `ECX` (e.g. `MOV ECX,[ESP+0x910]`) right before the cave for use after — Ghidra's resolution will treat that load as dead and resolve the post-cave `PUSH ECX` to a junk value (often a float bit-pattern reinterpreted as a pointer), making the slerp/multiply/etc. call look like it has bogus args.
+
+If you find yourself concluding "the original binary is buggy" or "this call gets a junk pointer that should crash but somehow doesn't" — **stop and verify with capstone before committing to that conclusion**:
+
+```bash
+python3 scripts/Python/disassemble_function.py <FunctionName_FUN_AAAAAA>
+```
+
+Compare the capstone output against the `.asm` at the suspect addresses. If the `.asm` has a `JMP 0xNNNNNN` to a far cave block and capstone shows 4× `movsd` instead, the cave is fake — the real binary preserves any register the surrounding code loaded before the cave. Re-resolve the symbolic args using the correct (cave-doesn't-touch-ECX) interpretation. Don't reach for this on every function — only when an .asm-driven analysis produces a result that contradicts what a working game would do.
+
 ### 21. Inline fast-(inverse-)sqrt bit-trick
 
 **Cause:** The Watcom binary inlines two bit-pattern math approximations across many call sites — a fast `sqrt` and a fast inverse `sqrt`. The asm reinterprets the float's 4 bytes as `int`, manipulates them, and reinterprets them back as `float`:

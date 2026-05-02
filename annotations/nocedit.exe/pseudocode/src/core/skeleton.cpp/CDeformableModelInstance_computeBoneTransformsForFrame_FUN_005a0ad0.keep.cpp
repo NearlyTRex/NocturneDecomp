@@ -12,15 +12,10 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsFor
 {
   CSkeleton *pCVar8;
   int bone_index;
-  uint *puVar9;
-  uint *puVar10;
-  byte bVar11;
-  float afStackY_1838 [1520];
   float local_60;
   CQuaternion4f local_5c;
   float local_28;
   float local_24 [2];
-  CSkeleton *local_1c;
   SPose *local_18;
   SPose *local_14;
   float fVar3;

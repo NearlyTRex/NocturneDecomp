@@ -64,7 +64,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0(CDemo
   char local_14;
   int *piVar1;
   byte uVar2;
-  
+
   if ((g_CGamePtr->halo_mode != 0) || ((force_render == 0 && (globe->corona_mode != 0)))) {
     g_CurrentGlobe = globe;
     core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
@@ -191,11 +191,13 @@ LAB_00451d8b:
               }
               iVar13 = source_buffer_offset->left_extents[local_54];
               iVar18 = source_buffer_offset->right_extents[local_54];
-              for (pcVar14 = source_buffer_offset->lightmap[local_54] + iVar13;
+              for (pcVar14 = (char *)source_buffer_offset->lightmap
+                             + local_54 * 320 + iVar13;
                   (iVar13 < iVar18 && (*pcVar14 == '\0')); pcVar14 = pcVar14 + 1) {
                 iVar13 = iVar13 + 1;
               }
-              for (pcVar14 = source_buffer_offset->lightmap[local_54 + -1] + iVar18 + 0x13f;
+              for (pcVar14 = (char *)source_buffer_offset->lightmap
+                             + local_54 * 320 + iVar18 - 1;
                   (iVar13 < iVar18 && (*pcVar14 == '\0')); pcVar14 = pcVar14 + -1) {
                 iVar18 = iVar18 + -1;
               }

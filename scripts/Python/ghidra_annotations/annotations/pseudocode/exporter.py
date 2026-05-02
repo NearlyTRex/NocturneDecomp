@@ -486,8 +486,12 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map,
     suspects.extend(assembly_suspects)
 
     # Cross-reference .cpp/.asm: detect missing Watcom cave-block struct memcpys
-    # that leave decompile locals uninitialized.
-    suspects.extend(identify_missing_cave_copy(decompiled_code, result.assembly_code))
+    # that leave decompile locals uninitialized. Captured separately so the
+    # keep-aware diff below can re-run it against the keep source and clear
+    # entries the manual rewrite has resolved.
+    cave_copy_suspects_cpp = identify_missing_cave_copy(
+        decompiled_code, result.assembly_code)
+    suspects.extend(cave_copy_suspects_cpp)
 
     # Detect inline `REP STOS{B,W,D}` (Watcom inline memset) — Ghidra unrolls
     # these to countdown for-loops that the source-text detectors miss.
@@ -593,15 +597,24 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map,
                 address_interval_map=address_interval_map,
                 func_calls=result.func_calls,
             )
+            # Re-run cross-source detectors that take .cpp text against the keep.
+            cave_copy_suspects_keep = identify_missing_cave_copy(
+                keep_source, result.assembly_code)
 
             def _key(s):
                 return (s.get('type'), s.get('match'))
 
+            # Tracked-cpp suspects — the union of detector outputs that are
+            # potentially "fixable" by a keep edit. We compare these against
+            # the keep-side outputs by multiset of (type, match) keys.
+            tracked_cpp = list(content_suspects_cpp) + list(cave_copy_suspects_cpp)
+            tracked_keep = list(content_suspects_keep) + list(cave_copy_suspects_keep)
+
             cpp_counts = {}
-            for s in content_suspects_cpp:
+            for s in tracked_cpp:
                 cpp_counts[_key(s)] = cpp_counts.get(_key(s), 0) + 1
             keep_counts = {}
-            for s in content_suspects_keep:
+            for s in tracked_keep:
                 keep_counts[_key(s)] = keep_counts.get(_key(s), 0) + 1
 
             # Keys the keep still carries (unresolved) — capped at cpp count
@@ -610,17 +623,17 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map,
                 k: min(cpp_counts[k], keep_counts.get(k, 0))
                 for k in cpp_counts
             }
-            # Identity set: the content-suspect dicts live at the head of
-            # `suspects` since we seeded the list from content_suspects_cpp.
-            # Using id() avoids ambiguity if two content entries hash equal.
-            content_ids = {id(s) for s in content_suspects_cpp}
-            # Walk the current `suspects` list and split content entries into
+            # Identity set: the tracked-cpp suspect dicts were appended to
+            # `suspects` (content first, then cave-copy). Using id() avoids
+            # ambiguity if two tracked entries hash equal.
+            tracked_ids = {id(s) for s in tracked_cpp}
+            # Walk the current `suspects` list and split tracked entries into
             # resolved vs unresolved based on multiset membership in the keep.
             still = []
             resolved_by_keep = []
             carry = dict(unresolved_keep_keys)
             for s in suspects:
-                if id(s) not in content_ids:
+                if id(s) not in tracked_ids:
                     still.append(s)
                     continue
                 k = _key(s)
@@ -638,7 +651,7 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map,
                 for k in keep_counts if keep_counts[k] > cpp_counts.get(k, 0)
             }
             if keep_introduced_keys:
-                for s in content_suspects_keep:
+                for s in tracked_keep:
                     k = _key(s)
                     if keep_introduced_keys.get(k, 0) > 0:
                         s2 = dict(s)

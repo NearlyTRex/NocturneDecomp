@@ -2,17 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 162,
+    "complexity_score": 107,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 17,
-    "suspect_count": 13,
+    "suspect_count": 8,
     "suspect_types": [
       "fpu_register_input",
-      "unknown_field",
-      "unnamed_param"
+      "unknown_field"
     ],
     "total_lines": 49
   },
@@ -88,22 +87,6 @@
   },
   "suspects": [
     {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param0",
-      "severity": "mild",
-      "text": "float10 __fpustack pentiumFdivBugWorkaroundDouble(float10 param0,double param1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 2,
-      "match": "param1",
-      "severity": "mild",
-      "text": "float10 __fpustack pentiumFdivBugWorkaroundDouble(float10 param0,double param1)",
-      "type": "unnamed_param"
-    },
-    {
       "description": "FPU register input (calling convention issue)",
       "line": 7,
       "match": "in_ST1",
@@ -134,30 +117,6 @@
       "severity": "mild",
       "text": "if ((param1._4_4_ & 0x7ff00000) == 0x7ff00000) {",
       "type": "unknown_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param1",
-      "severity": "mild",
-      "text": "if ((param1._4_4_ & 0x7ff00000) == 0x7ff00000) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param0",
-      "severity": "mild",
-      "text": "return param0 / (float10)param1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param1",
-      "severity": "mild",
-      "text": "return param0 / (float10)param1;",
-      "type": "unnamed_param"
     },
     {
       "description": "FPU register input (calling convention issue)",

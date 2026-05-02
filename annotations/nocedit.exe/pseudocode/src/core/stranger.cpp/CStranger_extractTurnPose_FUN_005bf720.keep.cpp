@@ -24,7 +24,7 @@ void __cdecl core_stranger_cpp_CStranger_extractTurnPose_FUN_005bf720(CStranger 
   float blend_weight;
   CDeformableModel_MotionBlendWeightFunc *blend_callback;
   CDeformableModelInstance *this_ptr_00;
-  
+
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510(this_ptr_00,&SStack_1ad8)
   ;
@@ -42,7 +42,7 @@ void __cdecl core_stranger_cpp_CStranger_extractTurnPose_FUN_005bf720(CStranger 
   blend_weight = 1.0;
   core_xform_cpp_quaternionFromAngleY_FUN_005f79f0(local_1c.z,&local_2c);
   core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
-            (this_ptr_00,&local_3c,blend_weight,bone_index,
+            (this_ptr_00,&local_2c,blend_weight,bone_index,
              (CDeformableModel_MotionBlendWeightFunc *)blend_callback);
   core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510(this_ptr_00,out_pose);
   core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0(this_ptr_00,&SStack_1ad8)

@@ -10,6 +10,7 @@
 #if NOCTURNE_DUMP_TOOLS
 
 #include "nocturne.h"
+#include <cmath>
 #include <cstdio>
 #include <cstring>
 #include <ctime>
@@ -396,8 +397,25 @@ static void dump_actor_fields(FILE *f, CDemonActor *a)
     std::fprintf(f, "position:   (%.4f, %.4f, %.4f)\n",
                  a->location.position.x, a->location.position.y, a->location.position.z);
     std::fprintf(f, "area_id:    %d\n", a->location.area_id);
-    std::fprintf(f, "orient_vec: (%.3f, %.3f, %.3f)\n",
+    std::fprintf(f, "orient_vec: (%.4f, %.4f, %.4f)\n",
                  a->orient.vec.x, a->orient.vec.y, a->orient.vec.z);
+    // The 3x3 orientation matrix is what the renderer actually multiplies
+    // vertices by for body rotation. Print all 9 cells; mismatch with
+    // orient_vec implies they're being updated by different code paths.
+    std::fprintf(f, "orient_matrix:\n");
+    for (int r = 0; r < 3; ++r) {
+        std::fprintf(f, "  [%.4f %.4f %.4f]\n",
+                     a->orient_matrix.m[r].x,
+                     a->orient_matrix.m[r].y,
+                     a->orient_matrix.m[r].z);
+    }
+    // Derived yaw from the matrix: atan2(m02, m00). Cheaper to read across
+    // a long file than the matrix.
+    {
+        float yaw = std::atan2(a->orient_matrix.m[0].z, a->orient_matrix.m[0].x);
+        std::fprintf(f, "matrix_yaw: %.4f rad (%.2f deg)\n",
+                     yaw, yaw * 57.29577951f);
+    }
     std::fprintf(f, "lifecycle:  %d\n", (int)a->lifecycle_state);
     std::fprintf(f, "health:     %d\n", a->health);
     std::fprintf(f, "runtime_state:    %d\n", a->runtime_state);
@@ -431,6 +449,31 @@ static void dump_character_fields(FILE *f, CCharacter *c)
     std::memcpy(dn, c->descriptive_name, 100);
     dn[100] = '\0';
     std::fprintf(f, "descriptive_name: %s\n", dn);
+
+    // Skeleton root pose. The renderer multiplies world-space verts by
+    // bone_world_matrices[i] for each skinned vertex. If the actor's
+    // orient_matrix rotates per frame but the root bone matrix doesn't,
+    // the body will appear visually static. bone_world_matrices[0] is the
+    // root bone — usually the pelvis or hips.
+    CMatrix3x4f &root = c->model.bone_transform.bone_world_matrices[0];
+    std::fprintf(f, "root_pose_position: (%.4f, %.4f, %.4f)\n",
+                 c->model.bone_transform.pose_data.root_position.x,
+                 c->model.bone_transform.pose_data.root_position.y,
+                 c->model.bone_transform.pose_data.root_position.z);
+    std::fprintf(f, "root_bone_world_matrix:\n");
+    for (int r = 0; r < 3; ++r) {
+        std::fprintf(f, "  [%.4f %.4f %.4f %.4f]\n",
+                     root.m[r].x, root.m[r].y, root.m[r].z, root.m[r].w);
+    }
+    {
+        float yaw = std::atan2(root.m[0].z, root.m[0].x);
+        std::fprintf(f, "root_bone_yaw: %.4f rad (%.2f deg)\n",
+                     yaw, yaw * 57.29577951f);
+    }
+    // Root quaternion (driven by motion blender / applyRotationToHierarchy).
+    CQuaternion4f &q0 = c->model.bone_transform.pose_data.bone_rotations[0];
+    std::fprintf(f, "root_bone_quat: (w=%.4f x=%.4f y=%.4f z=%.4f)\n",
+                 q0.w, q0.x, q0.y, q0.z);
 }
 
 static void dump_hero_fields(FILE *f, CHero *h)
@@ -775,6 +818,132 @@ extern "C" void nocturne_auto_capture(const char *path_template,
     s_written++;
 }
 
+// =============================================================================
+// Auto-dump actor — keyboard-driven continuous capture
+// =============================================================================
+//
+// Used by the user32 hotkeys to record a stream of per-frame actor state
+// while the user drives the game. Two slots so player + one NPC can run in
+// parallel.
+
+namespace {
+
+struct AutoDumpSlot {
+    char           path_template[256];
+    CDemonActor   *actor;
+    int            counter;
+    bool           armed;
+};
+
+AutoDumpSlot g_auto_dump_slots[2] = {};
+
+}  // namespace
+
+extern "C" void nocturne_auto_dump_set_slot(int slot, const char *path_template,
+                                             CDemonActor *actor)
+{
+    if (slot < 0 || slot >= 2) return;
+    AutoDumpSlot &s = g_auto_dump_slots[slot];
+
+    if (path_template == nullptr) {
+        if (s.armed) {
+            std::fprintf(stderr, "[auto_dump] slot %d disarmed (%d files written)\n",
+                         slot, s.counter);
+        }
+        s.armed   = false;
+        s.actor   = nullptr;
+        s.counter = 0;
+        return;
+    }
+
+    std::snprintf(s.path_template, sizeof(s.path_template), "%s", path_template);
+    s.actor   = actor;
+    s.counter = 0;
+    s.armed   = true;
+    std::fprintf(stderr, "[auto_dump] slot %d armed: actor=%p template=\"%s\"\n",
+                 slot, (void *)actor, s.path_template);
+}
+
+extern "C" int nocturne_auto_dump_is_armed(int slot)
+{
+    if (slot < 0 || slot >= 2) return 0;
+    return g_auto_dump_slots[slot].armed ? 1 : 0;
+}
+
+extern "C" void nocturne_auto_dump_tick(void)
+{
+    // Telemetry: confirm this is actually getting hit at frame rate during
+    // gameplay. Append to /tmp/auto_dump_tick.log on every 60th call. If
+    // dumps stop appearing during active play but this counter still climbs,
+    // the bug is in the slot-armed/dump path. If the counter also stalls,
+    // the host loop isn't pumping PeekMessageA's empty branch.
+    static int s_tick = 0;
+    s_tick++;
+    if ((s_tick % 60) == 0) {
+        FILE *log = std::fopen("/tmp/auto_dump_tick.log", "a");
+        if (log) {
+            time_t now = std::time(nullptr);
+            std::fprintf(log, "tick=%d slot0_armed=%d slot1_armed=%d t=%lld\n",
+                         s_tick,
+                         g_auto_dump_slots[0].armed ? 1 : 0,
+                         g_auto_dump_slots[1].armed ? 1 : 0,
+                         (long long)now);
+            std::fclose(log);
+        }
+    }
+
+    for (int i = 0; i < 2; ++i) {
+        AutoDumpSlot &s = g_auto_dump_slots[i];
+        if (!s.armed) continue;
+        char path[300];
+        std::snprintf(path, sizeof(path), s.path_template, s.counter);
+        nocturne_dump_actor_state(path, s.actor);
+        s.counter++;
+    }
+}
+
+static CDemonActor *find_player_actor()
+{
+    if (g_LocalHeroIndex < 0 || g_LocalHeroIndex >= 4) return nullptr;
+    return (CDemonActor *)g_HeroActors[g_LocalHeroIndex];
+}
+
+static CDemonActor *find_svetlana_actor()
+{
+    int count = g_CDemonSetInstance.sorted_render_actor_count;
+    for (int i = 0; i < count; ++i) {
+        CDemonActor *a = g_CDemonSetInstance.sorted_render_actors[i];
+        if (a == nullptr) continue;
+        if (core_actor_cpp_castToClassHash_FUN_0040c790(a, g_CSvetlanaClassInfo.name_hash))
+            return a;
+    }
+    return nullptr;
+}
+
+static int toggle_slot(int slot, const char *path_template, CDemonActor *actor)
+{
+    if (nocturne_auto_dump_is_armed(slot)) {
+        nocturne_auto_dump_set_slot(slot, nullptr, nullptr);
+        return 0;
+    }
+    if (actor == nullptr) {
+        std::fprintf(stderr, "[auto_dump] slot %d: actor not found, ignoring toggle\n", slot);
+        return -1;
+    }
+    nocturne_auto_dump_set_slot(slot, path_template, actor);
+    return 1;
+}
+
+extern "C" int nocturne_auto_dump_toggle_player(void)
+{
+    return toggle_slot(0, "/tmp/auto_dump_player_%05d.txt", find_player_actor());
+}
+
+extern "C" int nocturne_auto_dump_toggle_svetlana(void)
+{
+    return toggle_slot(1, "/tmp/auto_dump_svetlana_%05d.txt", find_svetlana_actor());
+}
+
 #else  // NOCTURNE_DUMP_TOOLS == 0
 
 extern "C" int nocturne_dump_screenshot(const char *path)   { (void)path; return -1; }
@@ -794,5 +963,13 @@ extern "C" void nocturne_auto_capture(const char *path_template,
     (void)path_template; (void)every_n; (void)max_count; (void)reset;
 }
 extern "C" int nocturne_dump_lighting_state(const char *path) { (void)path; return -1; }
+extern "C" void nocturne_auto_dump_set_slot(int slot, const char *path_template,
+                                             CDemonActor *actor) {
+    (void)slot; (void)path_template; (void)actor;
+}
+extern "C" int  nocturne_auto_dump_is_armed(int slot) { (void)slot; return 0; }
+extern "C" void nocturne_auto_dump_tick(void) {}
+extern "C" int  nocturne_auto_dump_toggle_player(void)   { return -1; }
+extern "C" int  nocturne_auto_dump_toggle_svetlana(void) { return -1; }
 
 #endif

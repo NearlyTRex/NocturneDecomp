@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 52,
+    "complexity_score": 37,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 12,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_many",
       "register_param"
     ],
     "total_lines": 44
@@ -151,17 +150,6 @@
       "severity": "mild",
       "text": "iVar1 = TriggerDebuggerBreak(error_message,in_DS);",
       "type": "register_param"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 2,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 1,
-      "fix_type": "remove_params",
-      "match": "declared:2 vs estimated:1",
-      "param_delta": -1,
-      "text": "Function declares 2 params but call sites push 1 (1 extra)",
-      "type": "param_count_too_many"
     }
   ]
 }

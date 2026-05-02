@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 195,
-    "complexity_score": 99,
+    "complexity_score": 84,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 84,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_many"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 279
   },
   "cross_references": [
@@ -190,17 +188,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 1,
-      "declared_params": 1,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 0,
-      "fix_type": "remove_params",
-      "match": "declared:1 vs estimated:0",
-      "param_delta": -1,
-      "text": "Function declares 1 params but call sites push 0 (1 extra)",
-      "type": "param_count_too_many"
-    }
-  ]
+  "suspects": []
 }

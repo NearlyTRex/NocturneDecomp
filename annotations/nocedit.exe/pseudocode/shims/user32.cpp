@@ -1,5 +1,7 @@
 #include "system/user32.h"
+#include "dump.h"
 #include <SDL.h>
+#include <cstdio>
 #include <cstring>
 #include <csignal>
 #include <cstdlib>
@@ -100,7 +102,62 @@ static uint8_t sdlScancodeToWin32(SDL_Scancode sc) {
     }
 }
 
+// Win32 distinguishes "extended" keys via lParam bit 24. Without this flag,
+// `lParam >> 16 & 0x1ff` collapses extended keys onto their non-extended
+// twins (e.g. arrow UP becomes scancode 0x48 — same as numpad-8 — instead of
+// 0x148), and any keybinding that stored the extended form will never match
+// against g_KeyboardState.
+static uint32_t winExtendedKeyFlag(SDL_Scancode sc) {
+    switch (sc) {
+        case SDL_SCANCODE_INSERT: case SDL_SCANCODE_DELETE:
+        case SDL_SCANCODE_HOME:   case SDL_SCANCODE_END:
+        case SDL_SCANCODE_PAGEUP: case SDL_SCANCODE_PAGEDOWN:
+        case SDL_SCANCODE_UP:     case SDL_SCANCODE_DOWN:
+        case SDL_SCANCODE_LEFT:   case SDL_SCANCODE_RIGHT:
+        case SDL_SCANCODE_RCTRL:  case SDL_SCANCODE_RALT:
+        case SDL_SCANCODE_KP_DIVIDE:
+        case SDL_SCANCODE_KP_ENTER:
+            return 0x01000000;
+        default:
+            return 0;
+    }
+}
+
+// Returns true if the key was consumed by a debug hotkey and should NOT be
+// forwarded to the game. F7 and F8 toggle continuous actor-state dumps for
+// the player and Svetlana respectively. The engine doesn't bind these in its
+// hotkey/cheat tables (see CGame::processHotkeys / processCheatCodes), so
+// swallowing them here doesn't change gameplay.
+static bool handleDebugHotkey(const SDL_Event& ev) {
+    if (ev.type != SDL_KEYDOWN || ev.key.repeat) return false;
+    switch (ev.key.keysym.scancode) {
+        case SDL_SCANCODE_F7: {
+            int r = nocturne_auto_dump_toggle_player();
+            std::fprintf(stderr, "[hotkey] F7 player dump %s\n",
+                         r == 1 ? "ARMED" : r == 0 ? "disarmed" : "no actor");
+            return true;
+        }
+        case SDL_SCANCODE_F8: {
+            int r = nocturne_auto_dump_toggle_svetlana();
+            std::fprintf(stderr, "[hotkey] F8 svetlana dump %s\n",
+                         r == 1 ? "ARMED" : r == 0 ? "disarmed" : "no actor");
+            return true;
+        }
+        default:
+            return false;
+    }
+}
+
 static void translateSdlEvent(const SDL_Event& ev) {
+    if (handleDebugHotkey(ev)) return;
+    // Suppress the matching KEYUP too so the game never sees half a press
+    // for a hotkey we consumed.
+    if (ev.type == SDL_KEYUP &&
+        (ev.key.keysym.scancode == SDL_SCANCODE_F7 ||
+         ev.key.keysym.scancode == SDL_SCANCODE_F8)) {
+        return;
+    }
+
     MSG msg;
     memset(&msg, 0, sizeof(msg));
     msg.hwnd = (HWND)(intptr_t)g_sdlWindow;
@@ -145,7 +202,8 @@ static void translateSdlEvent(const SDL_Event& ev) {
         uint8_t sc = sdlScancodeToWin32(ev.key.keysym.scancode);
         msg.message = 0x0100; // WM_KEYDOWN
         msg.wParam = ev.key.keysym.sym & 0xFF;
-        msg.lParam = (LPARAM)sc << 16;
+        msg.lParam = (LPARAM)((uint32_t)sc << 16)
+                   | (LPARAM)winExtendedKeyFlag(ev.key.keysym.scancode);
         s_msgQueue.push(msg);
         // Generate WM_CHAR for printable characters
         if (ev.key.keysym.sym >= 0x20 && ev.key.keysym.sym < 0x7F) {
@@ -167,7 +225,8 @@ static void translateSdlEvent(const SDL_Event& ev) {
         uint8_t sc = sdlScancodeToWin32(ev.key.keysym.scancode);
         msg.message = 0x0101; // WM_KEYUP
         msg.wParam = ev.key.keysym.sym & 0xFF;
-        msg.lParam = (LPARAM)sc << 16;
+        msg.lParam = (LPARAM)((uint32_t)sc << 16)
+                   | (LPARAM)winExtendedKeyFlag(ev.key.keysym.scancode);
         s_msgQueue.push(msg);
         break;
     }
@@ -351,6 +410,10 @@ static BOOL shim_PeekMessageA(LPMSG lpMsg, HWND hWnd,
         }
         return 1;
     }
+    // Queue empty — game's message-pump loop will exit and proceed to the
+    // next frame's render. Treat this as the per-frame tick boundary for
+    // any debug auto-dumps the user has armed.
+    nocturne_auto_dump_tick();
     return 0;
 }
 
