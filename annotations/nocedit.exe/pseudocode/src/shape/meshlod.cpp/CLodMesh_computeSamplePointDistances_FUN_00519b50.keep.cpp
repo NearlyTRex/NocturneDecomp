@@ -29,27 +29,13 @@ void __cdecl shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
   int iVar7;
   int iVar9;
   CBoundingBox3D local_90;
-  float local_78;
-  float local_74;
-  float local_70;
-  float local_6c;
-  float local_68;
-  float local_64;
   CVector3f local_60;
-  float local_54;
-  float local_50;
-  float local_4c;
   CVector3f local_48;
-  int local_3c;
-  int local_38;
-  int local_34;
-  int local_30;
   int local_2c;
   int local_28;
   int local_24;
   int local_20;
   int local_1c;
-  int local_18;
   float fVar1;
   float fVar2;
   

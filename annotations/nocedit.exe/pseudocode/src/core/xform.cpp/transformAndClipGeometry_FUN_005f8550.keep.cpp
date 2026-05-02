@@ -35,7 +35,6 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
   SRenderVertex *extraout_EAX_04;
   SRenderVertex *extraout_EAX_05;
   SRenderVertex *extraout_EAX_06;
-  int iVar14;
   int *piVar15;
   SRenderVertex *pSVar16;
   SRenderVertex *pSVar5;
@@ -43,12 +42,6 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
   int iVar18;
   int iVar6;
   SRenderVertex *pSVar7;
-  SRenderVertex *pSVar8;
-  SRenderVertex *pSVar19;
-  SRenderVertex *pSVar20;
-  SRenderVertex *pSVar9;
-  SRenderVertex *pSVar21;
-  byte bVar22;
   int *local_28;
   SRenderVertex *local_24;
   int local_20;

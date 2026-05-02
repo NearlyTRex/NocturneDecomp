@@ -30,9 +30,6 @@ void __cdecl core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this
   uint uStack_240;
   char local_23c [255];
   char acStack_13c [256];
-  float fStack_3c;
-  float fStack_38;
-  float fStack_34;
   float fStack_30;
   float fStack_2c;
   float fStack_28;

@@ -32,12 +32,6 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0048ec70(CDrone *this_ptr,float d
   CVector3f local_a0;
   CVector3f local_94;
   CVector3f local_88;
-  float local_7c;
-  float local_78;
-  float local_74;
-  float local_70;
-  float local_6c;
-  float local_68;
   CVector3f local_64;
   CVector3f local_58;
   CVector3f local_4c;
@@ -45,16 +39,15 @@ void __cdecl core_drone_cpp_CDrone_process_FUN_0048ec70(CDrone *this_ptr,float d
   CVector3f local_34;
   float local_20;
   int local_1c;
-  float local_18;
   float local_14;
   CVector3f *pCVar1;
   CCharacter *pCVar2;
-  CDeformableModelInstance *this_ptr_00;
   float fVar3;
   SDamageInfo *pSVar12;
   float fVar13;
   float fVar10;
   float fVar11;
+  float local_18;
   
   iVar4 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar4 == 0) {

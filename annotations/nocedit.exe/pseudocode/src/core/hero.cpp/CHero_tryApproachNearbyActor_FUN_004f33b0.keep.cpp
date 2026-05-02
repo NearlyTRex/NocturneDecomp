@@ -24,9 +24,7 @@ int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004f33b0(CHero *this_
   CVector3f local_30;
   int local_20;
   int local_1c;
-  float local_14;
   CDemonActor *this_ptr_00;
-  CLocation *input_world_point;
   float fVar1;
   float fVar2;
   

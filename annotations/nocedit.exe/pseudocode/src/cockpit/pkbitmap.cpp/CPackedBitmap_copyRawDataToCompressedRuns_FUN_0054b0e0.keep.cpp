@@ -11,8 +11,6 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_
 
 {
   ushort *puVar1;
-  uint uVar6;
-  uint uVar3;
   ushort *puVar7;
   uchar *puVar8;
   ushort *puVar9;

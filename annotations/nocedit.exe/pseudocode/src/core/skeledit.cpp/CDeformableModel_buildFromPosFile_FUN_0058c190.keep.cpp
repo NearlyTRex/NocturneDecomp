@@ -33,16 +33,13 @@ int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDe
   uint *puVar17;
   uint *puVar13;
   char *pcVar19;
-  CMatrix3x4f *pCVar14;
   char *pcVar15;
   ushort *puVar16;
   STextureSet *pSVar17;
   char *pcVar18;
-  float *pfVar19;
   char *pcVar20;
   SMRGLTextureLod *pSVar21;
   char *pcVar21;
-  byte bVar22;
   byte bVar23;
   CBoneStructure local_a228;
   CBoneStructure local_6d04;
@@ -82,9 +79,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDe
   int local_90;
   float local_8c;
   int local_88;
-  CDeformableModel *local_84;
   int local_80;
-  CDeformableModel *local_7c;
   STextureSet *local_78;
   int local_74;
   float *local_70;
@@ -111,12 +106,12 @@ int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDe
   uint local_1c;
   char local_18 [4];
   char local_14 [4];
-  CBoneStructure *this_ptr_00;
   char cVar1;
-  int *piVar9;
   float fVar4;
   SVert *pSVar2;
   uint uVar3;
+  CDeformableModel *local_84;
+  CDeformableModel *local_7c;
   
   bVar23 = 0;
   g_SkeleditStatusMessage[0] = '\0';

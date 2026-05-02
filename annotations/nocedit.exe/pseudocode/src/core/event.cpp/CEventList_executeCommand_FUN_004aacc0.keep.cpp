@@ -28,7 +28,6 @@ int __cdecl core_event_cpp_CEventList_executeCommand_FUN_004aacc0(CEventList *th
   byte *pbVar12;
   CDemonActor *pCVar13;
   uint uVar14;
-  uint uVar15;
   SIZE_T SVar16;
   char *pcVar17;
   char *pcVar18;
@@ -71,8 +70,6 @@ int __cdecl core_event_cpp_CEventList_executeCommand_FUN_004aacc0(CEventList *th
   CVector3f local_128;
   CVector3f local_11c;
   CVector3f local_110;
-  uint uStack_f8;
-  char *local_f4;
   uint local_f0;
   byte *local_ec;
   C3DSLight *local_e8;

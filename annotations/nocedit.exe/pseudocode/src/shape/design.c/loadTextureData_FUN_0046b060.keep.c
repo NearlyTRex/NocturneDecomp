@@ -22,28 +22,15 @@ void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *ent
   uchar local_184 [4];
   uchar local_180 [4];
   uchar local_17c [4];
-  double local_178;
-  double local_170;
-  double local_168;
-  double local_160;
-  int local_158;
   uchar local_154 [4];
   int local_150;
-  int local_14c;
   char local_148 [260];
   int local_44;
   int local_40;
   uint local_3c;
-  int local_38;
-  int local_34;
   int local_30;
   int local_2c;
-  void *local_28;
-  void *local_24;
-  int local_20;
   _FILE *local_1c;
-  uint local_18;
-  int local_14;
   
   if (g_TextureManagerMode == 0) {
     local_1c = shape_memdbg_cpp_openFile_FUN_0050f7a0

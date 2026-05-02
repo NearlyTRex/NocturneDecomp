@@ -20,8 +20,6 @@ void __cdecl shape_design_c_simpleTexture_FUN_00467350(void)
   char local_70 [80];
   int local_20;
   int local_1c;
-  _FILE *local_18;
-  uint local_14;
   uint uVar2;
 
   wincore_windll_cpp_clearScreen_FUN_005b3e70();

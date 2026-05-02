@@ -19,10 +19,7 @@ CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e
   int iVar5;
   int iVar6;
   int iVar7;
-  uint *puVar8;
-  int *piVar9;
   uint uVar10;
-  byte bVar11;
   int local_88;
   CVector3i local_84;
   CVector3i local_78;
@@ -34,8 +31,6 @@ CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e
   int local_28;
   uint *local_24;
   uint local_1c;
-  int local_18;
-  uint local_14;
   float fVar1;
   
   local_38 = 1;

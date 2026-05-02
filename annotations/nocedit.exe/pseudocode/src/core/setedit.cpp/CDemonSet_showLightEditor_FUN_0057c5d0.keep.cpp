@@ -11,36 +11,27 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
 
 {
   int *piVar2;
-  char cVar3;
   int iVar4;
   int y1;
   int iVar3;
   int iVar6;
   CDemonSet *pCVar4;
   int iVar5;
-  char *pcVar6;
   int iVar7;
   int iVar8;
-  char *pcVar9;
-  char *pcVar7;
-  byte bVar11;
   float local_fd8;
   CPickList local_fd4;
   CPickList local_c2c;
   CPickList local_884;
   CPickList local_4dc;
   char local_134 [256];
-  int local_34;
-  int local_30;
-  char *local_2c;
   uint local_28;
   int local_24;
   int local_20;
   int local_1c;
   int local_18;
-  char *pcVar10;
-  char cVar2;
   int *piVar1;
+  byte bVar11;
   
   bVar11 = 0;
   core_setedit_cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0(this_ptr,0);

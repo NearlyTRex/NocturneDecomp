@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1406,
-    "complexity_score": 698,
+    "complexity_score": 683,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 22,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 668,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_alignment_array",
       "warning_inlined_function"
     ],
     "total_lines": 2074
@@ -298,6 +297,17 @@
     },
     "pcode_op_count": 6741
   },
+  "resolved_suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 21,
+      "match": "aiStackY_1138",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int aiStackY_1138 [989];",
+      "type": "stack_alignment_array"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4424,
     "local_size": 4412,
@@ -976,14 +986,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 21,
-      "match": "aiStackY_1138",
-      "severity": "moderate",
-      "text": "int aiStackY_1138 [989];",
-      "type": "stack_alignment_array"
     }
   ]
 }

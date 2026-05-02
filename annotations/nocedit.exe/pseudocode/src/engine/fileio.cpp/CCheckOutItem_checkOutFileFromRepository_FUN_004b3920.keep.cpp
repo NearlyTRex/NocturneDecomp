@@ -20,12 +20,9 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3
   int *piVar4;
   int iVar5;
   uint uVar6;
-  char *pcVar6;
   SVersionControlSession *pSVar7;
-  char *pcVar8;
   char *pcVar7;
   CCheckOutItem *pCVar9;
-  byte bVar10;
   char local_584 [500];
   CCheckOutItem local_390;
   char local_228 [260];
@@ -34,8 +31,8 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3
   _FILE *local_1c;
   int local_18;
   char local_14 [4];
-  char cVar1;
   char *pcVar11;
+  byte bVar10;
   
   bVar10 = 0;
   local_1c = (_FILE *)0x0;

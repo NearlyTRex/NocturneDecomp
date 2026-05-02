@@ -19,24 +19,17 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_p
   CGlass *this_ptr_02;
   CTrigger *this_ptr_03;
   CFlameCan *this_ptr_04;
-  CDemonSet *pCVar6;
   CDemonSet *pCVar4;
   int iVar9;
   CDemonSet *pCVar11;
   SDamageInfo local_a0;
   CVector3f aCStack_94 [3];
-  EDamageType EStack_70;
-  CDemonActor *local_68;
-  float local_64;
-  float local_60;
   float fStack_5c;
   CVector3f CStack_58;
   float fStack_48;
-  float local_44;
   float local_40;
   int local_3c;
   int local_38;
-  CCharacter *local_34;
   CCharacter *pCStack_30;
   int local_28;
   int local_24;
@@ -46,6 +39,8 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_p
   CPathMap *damage_info;
   float fDeltaTime;
   CDemonActor *pCVar3;
+  float local_44;
+  CCharacter *local_34;
   
   iVar9 = 0;
   pCVar4 = this_ptr;

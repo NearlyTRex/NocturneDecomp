@@ -22,7 +22,6 @@ void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_p
   float local_2c;
   CQuaternion4f local_28;
   CVector3f local_18;
-  float local_c;
   
   iVar4 = 0;
   core_course_cpp_CCourse_allocMemory_FUN_00442500(this_ptr,count);

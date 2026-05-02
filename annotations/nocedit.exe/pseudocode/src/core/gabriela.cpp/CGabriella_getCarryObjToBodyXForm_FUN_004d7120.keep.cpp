@@ -18,8 +18,6 @@ void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d71
   CVector3f *pCVar3;
   int iVar3;
   CMatrix3x4f *pCVar6;
-  CMatrix3x4f *pCVar4;
-  CMatrix3x4f *pCVar5;
   byte bVar6;
   CMatrix3x4f CStack_190;
   CMatrix3x4f local_160;
@@ -33,15 +31,8 @@ void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d71
   CVector3f local_64;
   CVector3f local_58;
   CVector3f CStack_4c;
-  float local_40;
-  float local_3c;
-  float local_38;
   CVector3f local_34;
-  float fStack_28;
-  float fStack_24;
-  float fStack_20;
   CVector3f local_1c;
-  int local_10;
   ELightActorType EVar1;
   CDemonActor *actor_ptr;
   

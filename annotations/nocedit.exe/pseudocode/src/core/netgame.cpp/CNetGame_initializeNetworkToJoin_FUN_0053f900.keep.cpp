@@ -22,13 +22,8 @@ int __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_0053f900(CNetG
   float local_60;
   SNetPacket_Simple local_5c;
   char local_4f [20];
-  EHeroType local_3b;
-  int local_37;
   SNetworkAddr local_30;
   SNetworkAddr local_28;
-  int local_20;
-  int local_1c;
-  char *local_18;
   
   core_netgame_cpp_CNetGame_disconnect_FUN_0053fd00(this_ptr,0);
   pCVar2 = g_CGamePtr;

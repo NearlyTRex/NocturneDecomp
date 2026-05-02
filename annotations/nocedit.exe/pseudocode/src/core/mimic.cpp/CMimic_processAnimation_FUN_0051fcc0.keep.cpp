@@ -40,11 +40,6 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_0051fcc0(CMimic *this_pt
   CVector3f local_100;
   CVector3f local_f4;
   CVector3f local_e8;
-  float local_dc;
-  float local_d4;
-  float local_d0;
-  float local_cc;
-  float local_c8;
   CVector3f local_c4;
   CVector3f local_b8;
   CVector3f local_ac;
@@ -56,14 +51,8 @@ void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_0051fcc0(CMimic *this_pt
   CVector3f local_64;
   CVector3f local_58;
   CVector3f local_4c;
-  double local_38;
   float local_2c [2];
-  float local_24;
-  float local_20;
   float local_1c;
-  CDeformableModelInstance *local_18;
-  float local_14;
-  CDeformableModelInstance *pCVar13;
   SDamageInfo *damage_info;
   float fVar15;
   int iVar14;

@@ -26,7 +26,6 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
   char *pcVar8;
   SFoundFileInfo *pSVar8;
   char *pcVar10;
-  char *pcVar11;
   char *pcVar9;
   char *pcVar12;
   byte bVar12;
@@ -51,7 +50,6 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
   int local_3c;
   char *local_38;
   _FILE *local_34;
-  int local_30;
   _FILE *local_2c;
   _FILE *local_28;
   _FILE *local_24;
@@ -61,7 +59,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
   char local_14 [4];
   char cVar1;
   char *pcVar13;
-  SFoundFileInfo *pSVar9;
+  int local_30;
   
   bVar12 = 0;
   pcVar8 = g_DefaultCheckOutPath;

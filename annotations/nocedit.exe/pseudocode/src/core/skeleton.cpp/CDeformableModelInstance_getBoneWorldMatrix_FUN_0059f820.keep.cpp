@@ -12,15 +12,9 @@ CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneWor
 {
   int bone_index_00;
   CSkeleton *pCVar1;
-  int iVar2;
-  CMatrix3x4f *pCVar3;
-  float *pfVar4;
-  CMatrix3x4f *pCVar5;
-  byte bVar6;
   CMatrix3x4f local_ac;
   CMatrix3x4f local_7c;
   CVector3f local_1c;
-  int local_10;
 
   if (bone_index < 0) {
     core_xform_cpp_setRotationScaleIdentity_FUN_005f5190(&local_7c);

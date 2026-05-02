@@ -14,14 +14,11 @@ int __cdecl shape_quantize_cpp_CColorQuantizer_importBitmap_FUN_00554a50(CColorQ
 {
   void *pvVar7;
   void *pvVar1;
-  uint uVar8;
-  uint uVar2;
   int iVar3;
   uint *puVar9;
   int iVar10;
   int iVar11;
   uint *puVar12;
-  byte bVar13;
   int local_30;
   int local_2c;
   byte local_28;
@@ -31,6 +28,7 @@ int __cdecl shape_quantize_cpp_CColorQuantizer_importBitmap_FUN_00554a50(CColorQ
   byte bVar2;
   byte bVar1;
   byte bVar3;
+  byte bVar13;
   
   bVar13 = 0;
   uVar4 = bitmap->width;

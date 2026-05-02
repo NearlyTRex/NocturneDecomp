@@ -20,7 +20,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_extractLodLevel_FUN_0058d790(CDe
   ushort *puVar7;
   ushort *puVar8;
   int *piVar9;
-  int iVar10;
   int iVar3;
   int iVar11;
   uint *puVar12;
@@ -30,24 +29,16 @@ void __cdecl core_skeledit_cpp_CDeformableModel_extractLodLevel_FUN_0058d790(CDe
   int iVar4;
   int iVar5;
   int iVar16;
-  char *pcVar17;
   float *pfVar6;
   float *pfVar18;
   ushort *puVar19;
   int iVar20;
-  float *pfVar7;
   uint *puVar21;
-  byte bVar22;
-  byte bVar8;
   float local_538;
   CVector3f local_534;
   float local_528 [250];
-  int local_140;
-  int local_13c;
   float local_138 [50];
   CVector3f local_70 [2];
-  int local_58;
-  int local_54;
   int local_50;
   int local_4c;
   int local_48;
@@ -57,14 +48,11 @@ void __cdecl core_skeledit_cpp_CDeformableModel_extractLodLevel_FUN_0058d790(CDe
   int local_38;
   int local_34;
   int local_30;
-  int local_2c;
-  float *local_24;
   int local_1c;
-  int local_18;
-  int local_14;
   float fVar2;
   float *pfVar1;
   double dVar3;
+  byte bVar8;
   
   bVar8 = 0;
   pCVar4 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(this_ptr);

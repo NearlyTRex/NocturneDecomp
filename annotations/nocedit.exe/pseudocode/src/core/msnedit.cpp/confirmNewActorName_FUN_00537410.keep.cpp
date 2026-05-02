@@ -10,14 +10,12 @@
 int __cdecl core_msnedit_cpp_confirmNewActorName_FUN_00537410(char *name)
 
 {
-  char cVar2;
   int iVar2;
   int iVar3;
   char *pcVar3;
   char *pcVar4;
   char *pcVar5;
   char local_2c [32];
-  char cVar1;
   
   pcVar5 = local_2c;
   pcVar4 = local_2c;

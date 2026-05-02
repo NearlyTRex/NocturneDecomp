@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 646,
-    "complexity_score": 326,
+    "complexity_score": 311,
     "cross_reference_count": 0,
     "function_call_count": 26,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 296,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_alignment_array",
       "warning_type_propagation"
     ],
     "total_lines": 942
@@ -310,6 +309,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 25,
+      "match": "afStackY_1870",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "float afStackY_1870 [1520];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Struct-type local `CStack_94` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 28,
       "match": "CQuaternion4f CStack_94; ... f(&CStack_94, ...);",
@@ -509,14 +517,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 25,
-      "match": "afStackY_1870",
-      "severity": "moderate",
-      "text": "float afStackY_1870 [1520];",
-      "type": "stack_alignment_array"
     }
   ],
   "vtable_info": {

@@ -18,8 +18,6 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(
   SRenderVertex *pSVar4;
   SRenderVertex *v1;
   CVector3i local_68 [6];
-  int local_18;
-  int local_14;
   
   if (render_mode == -1) {
     render_mode = 0x2cd;

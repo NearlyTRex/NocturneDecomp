@@ -14,7 +14,6 @@ char * __cdecl shape_edittool_cpp_CEditorTools_getClipboardText_FUN_004a1b30(CEd
   BOOL BVar2;
   char *pcVar3;
   uint uVar4;
-  uint uVar5;
   char *pcVar6;
   byte bVar7;
   

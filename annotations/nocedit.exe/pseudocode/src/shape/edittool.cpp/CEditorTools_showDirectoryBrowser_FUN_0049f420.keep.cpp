@@ -15,13 +15,11 @@ int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CE
   int iVar3;
   int iVar5;
   _tm *time_ptr;
-  int iVar4;
   int iVar6;
   uint uVar7;
   uint uVar5;
   int iVar8;
   char *pcVar9;
-  char *pcVar10;
   byte bVar6;
   CPickList local_1ec8;
   char local_1b20 [560];

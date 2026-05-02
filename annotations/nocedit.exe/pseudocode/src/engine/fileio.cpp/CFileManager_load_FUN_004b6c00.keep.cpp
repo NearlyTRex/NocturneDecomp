@@ -20,7 +20,6 @@ void __cdecl engine_fileio_cpp_CFileManager_load_FUN_004b6c00(CFileManager *this
   byte local_224 [512];
   int local_24;
   int local_20;
-  int local_1c;
   char (*local_18) [128];
   int local_14;
 

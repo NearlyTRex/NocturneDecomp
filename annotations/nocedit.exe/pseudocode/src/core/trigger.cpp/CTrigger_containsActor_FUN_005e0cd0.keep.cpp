@@ -19,9 +19,6 @@ int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(CTrigger *this_
   CBoundingBox3D CStack_64;
   CVector3f CStack_4c;
   CVector3f CStack_40;
-  float fStack_34;
-  float fStack_30;
-  float fStack_2c;
   CVector3f aCStack_28 [2];
   float fVar1;
   float fVar2;

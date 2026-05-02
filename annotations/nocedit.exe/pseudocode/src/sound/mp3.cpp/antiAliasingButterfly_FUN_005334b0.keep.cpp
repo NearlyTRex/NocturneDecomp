@@ -11,24 +11,19 @@ void __cdecl sound_mp3_cpp_antiAliasingButterfly_FUN_005334b0(float *input_sampl
 
 {
   float fVar1;
-  float *pfVar6;
   int iVar2;
   float *pfVar3;
   int iVar7;
-  float *pfVar8;
   float *pfVar9;
   float *pfVar10;
-  int iVar11;
   float *pfVar12;
   float *pfVar4;
   float *local_30;
   float *local_2c;
   float *local_28;
-  float *local_24;
   float *local_20;
   int local_1c;
   int local_14;
-  float fVar3;
   float fVar4;
   double dVar5;
 

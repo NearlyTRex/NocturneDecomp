@@ -42,13 +42,6 @@ int __cdecl core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660(CDemonSet
   uint auStack_96c [254];
   CPickList CStack_574;
   char acStack_f0 [92];
-  float fStack_94;
-  float fStack_90;
-  float fStack_8c;
-  float fStack_88;
-  float fStack_84;
-  float fStack_80;
-  float fStack_7c;
   float fStack_78;
   float fStack_74;
   float fStack_64;
@@ -60,18 +53,18 @@ int __cdecl core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660(CDemonSet
   int iStack_4c;
   int iStack_48;
   int iStack_44;
-  uint local_40;
-  uint local_3c;
   uint uStack_38;
   C3DSCamera *pCStack_34;
   int *piStack_30;
   uint uStack_2c;
-  uint local_28;
   void *pvStack_24;
   _FILE *p_Stack_20;
   void *pvStack_1c;
   byte *pbStack_18;
   void *local_r1;
+  uint local_40;
+  uint local_3c;
+  uint local_28;
   
   pcVar19 = CStack_574.cancel_button.button_text + 0xa8;
   local_60 = 0.0;

@@ -23,9 +23,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
   int iVar6;
   SFog *pSVar7;
   SFog *pSVar9;
-  char *pcVar8;
   int iVar9;
-  char *pcVar10;
   int iVar10;
   CDemonSet *pCVar11;
   byte bVar11;
@@ -33,19 +31,8 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
   CPickList local_5e8;
   char local_240 [256];
   char local_140 [256];
-  double local_40;
-  int *local_38;
-  char *local_34;
-  C3DSCamera *local_30;
-  uint local_2c;
-  C3DSCamera *local_28;
-  SFog *local_24;
-  SFog *local_20;
-  SFog *local_1c;
-  CVector3f *local_18;
   uint window_flags;
   char cVar1;
-  C3DSCamera *pCVar2;
   
   bVar11 = 0;
   core_setedit_cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0(this_ptr,0);

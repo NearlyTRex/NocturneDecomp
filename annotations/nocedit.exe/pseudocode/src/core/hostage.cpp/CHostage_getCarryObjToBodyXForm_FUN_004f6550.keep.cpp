@@ -29,11 +29,7 @@ CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_
   float fVar10;
   float fVar11;
   int iVar12;
-  int iVar1;
   CMatrix3x4f *pCVar2;
-  float *pfVar3;
-  byte bVar4;
-  float local_294 [12];
   CMatrix3x4f local_264 [2];
   CMatrix3x4f local_204;
   CMatrix3x4f local_1d4 [2];

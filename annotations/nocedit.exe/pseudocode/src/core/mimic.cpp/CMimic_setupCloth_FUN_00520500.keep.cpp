@@ -18,7 +18,6 @@ void __cdecl core_mimic_cpp_CMimic_setupCloth_FUN_00520500(CMimic *this_ptr)
   int *piVar4;
   SClothVertex *pSVar5;
   byte bVar6;
-  CDeformableModelInstance *this_ptr_00;
   float frame_number;
   
   bVar6 = 0;

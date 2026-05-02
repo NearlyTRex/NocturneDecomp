@@ -28,11 +28,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_changeActorType_FUN_0053d8b0(CDemonM
   char local_27c [500];
   char local_88 [100];
   int iStack_24;
-  CDemonActor *local_20;
   int iStack_1c;
   CActorProperty *pCStack_18;
-  char *pcStack_14;
-  CActorProperty *pCVar4;
   int *piVar3;
   int *piVar2;
   char cVar1;

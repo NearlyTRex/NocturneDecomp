@@ -40,16 +40,10 @@ int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0(CCharacte
   CVector3f CStack_50;
   CVector3f local_44;
   CVector3f CStack_38;
-  CEnemy *local_2c;
-  uint uStack_28;
-  float local_24;
   float fStack_20;
   uint uStack_1c;
   uint uStack_18;
-  float fStack_14;
   float fVar1;
-  CCharacter *pCVar2;
-  CLocation *location;
   
   if (0.0 <= this_ptr->hero_proximity_timer) {
     location_00 = &(this_ptr->base).location;

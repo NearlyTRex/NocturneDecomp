@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 369,
-    "complexity_score": 152,
+    "complexity_score": 137,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 19,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 137,
-    "suspect_count": 1,
-    "suspect_types": [
-      "stack_alignment_array"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 506
   },
   "cross_references": [
@@ -338,6 +336,17 @@
     },
     "pcode_op_count": 1197
   },
+  "resolved_suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 22,
+      "match": "atStackY_30f4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "time_t atStackY_30f4 [2034];",
+      "type": "stack_alignment_array"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12540,
     "local_size": 12536,
@@ -448,14 +457,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 22,
-      "match": "atStackY_30f4",
-      "severity": "moderate",
-      "text": "time_t atStackY_30f4 [2034];",
-      "type": "stack_alignment_array"
-    }
-  ]
+  "suspects": []
 }

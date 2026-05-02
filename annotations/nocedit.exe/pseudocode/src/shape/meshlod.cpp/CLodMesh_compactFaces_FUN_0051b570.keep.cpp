@@ -11,19 +11,16 @@ void __cdecl shape_meshlod_cpp_CLodMesh_compactFaces_FUN_0051b570(CLodMesh *this
 
 {
   uint *puVar2;
-  int iVar1;
   int iVar3;
   uint *puVar4;
   int iVar5;
-  uint *puVar6;
-  uint *puVar7;
-  byte bVar8;
   int local_24;
   int local_20;
   int local_1c;
   int local_18;
   int local_14;
   CLodFace *pCVar1;
+  byte bVar8;
   
   bVar8 = 0;
   iVar3 = 0;

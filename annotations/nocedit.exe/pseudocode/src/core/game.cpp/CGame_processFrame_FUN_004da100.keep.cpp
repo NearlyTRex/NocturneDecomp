@@ -31,7 +31,6 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   uint *puVar19;
   int iVar8;
   int iVar14;
-  byte bVar21;
   CSfxSample local_62c;
   char local_3dc [256];
   char local_2dc [256];
@@ -69,7 +68,6 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
   double dVar1;
   double dVar2;
   CHero *pCVar4;
-  CVector3i *input_ptr;
   
   local_40 = 0;
   if (this_ptr->profile_mode != 0) {

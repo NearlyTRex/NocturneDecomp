@@ -23,18 +23,12 @@ void __cdecl core_setedit_cpp_loadCameraThumbnail_FUN_005769a0(char *prefix,char
   char local_5c [16];
   char local_4c [16];
   _FILE *local_3c;
-  SIZE_T local_38;
-  int local_30;
   SIZE_T local_2c;
   int local_28;
   int local_24;
   int local_20;
-  SIZE_T local_1c;
-  void *local_18;
-  int local_14;
   char *directory;
   char *mode;
-  SIZE_T SVar1;
   
   if (0xf9 < thumbnail_index) {
     g_CurrentFilename = "..\\core\\setedit.cpp";

@@ -59,18 +59,9 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
   char local_290 [256];
   char local_190 [200];
   byte local_c8;
-  byte local_c7;
-  byte local_c6;
-  byte local_c5;
   char local_c0 [80];
-  int local_70;
-  int local_6c;
-  int local_68;
   char (*local_64) [128];
-  SIZE_T local_60;
   char (*local_5c) [128];
-  SIZE_T *local_58;
-  void *local_54;
   int local_50;
   int local_4c;
   int local_48;
@@ -86,9 +77,10 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
   _FILE *local_20;
   char (*local_1c) [128];
   _FILE *local_18;
-  int local_14;
   char cVar1;
-  _FILE *file_handle;
+  byte local_c7;
+  byte local_c6;
+  byte local_c5;
   
   bVar19 = 0;
   local_20 = (_FILE *)0x0;

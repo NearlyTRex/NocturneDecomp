@@ -14,7 +14,6 @@ void __cdecl shape_superopt_cpp_COptimize_findCoplanarPolygons_FUN_005d7460(COpt
   int iVar5;
   int iVar6;
   uint uVar9;
-  double dStack_40;
   uint local_30;
   uint uStack_24;
   double dVar2;

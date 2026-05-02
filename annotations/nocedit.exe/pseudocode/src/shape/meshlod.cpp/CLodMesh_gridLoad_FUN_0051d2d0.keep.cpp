@@ -12,9 +12,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_gridLoad_FUN_0051d2d0(CLodMesh *this_ptr
 {
   SSpatialGrid *pSVar1;
   int *piVar2;
-  int iVar3;
   int iVar4;
-  int iVar1;
   int iVar5;
   int local_14;
   

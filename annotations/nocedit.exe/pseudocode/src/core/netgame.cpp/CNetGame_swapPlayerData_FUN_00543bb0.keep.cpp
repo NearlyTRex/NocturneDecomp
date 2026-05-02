@@ -15,13 +15,13 @@ void __cdecl core_netgame_cpp_CNetGame_swapPlayerData_FUN_00543bb0(CNetGame *thi
   EConnectionType *pEVar3;
   byte bVar4;
   EConnectionType EStack_88;
+  int local_6c;
   ENetworkMode EStack_84;
   uint uStack_80;
   uint uStack_7c;
   uint uStack_78;
   uint local_74;
   uint local_70;
-  int local_6c;
   ushort local_68;
   uint local_64;
   uint local_60;

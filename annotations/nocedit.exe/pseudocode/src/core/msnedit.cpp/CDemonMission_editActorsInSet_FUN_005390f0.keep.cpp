@@ -30,19 +30,14 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
   int iVar7;
   CActorProperty *this_ptr_01;
   int iVar8;
-  CMatrix3x3f *pCVar9;
-  float *pfVar10;
   int iVar11;
-  char *pcVar12;
   int iVar15;
   bool bVar13;
-  byte bVar14;
   CPickList local_9b4;
   char local_60c [300];
   char local_4e0 [300];
   char local_3b4 [260];
   char local_2b0 [200];
-  float local_1e8 [10];
   CMatrix3x3f local_1c0;
   CMatrix3x3f local_198;
   CSlew local_170;
@@ -62,12 +57,6 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
   float local_e4;
   float local_e0;
   CVector3f local_dc;
-  float local_d0;
-  float local_cc;
-  float local_c8;
-  float local_c4;
-  float local_c0;
-  float local_bc;
   float local_b8;
   float local_b4;
   float local_b0;
@@ -76,13 +65,9 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
   float local_a4;
   CVector3f local_a0;
   CVector3f local_94;
-  float local_88;
-  float local_84;
-  float local_80;
   float local_7c;
   float local_78;
   float local_74;
-  float local_68;
   int local_64;
   int local_60;
   int local_5c;
@@ -108,6 +93,8 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
   char *pcVar15;
   CDemonSet *pCVar1;
   CGame *this_ptr_00;
+  byte bVar14;
+  float local_68;
   
   bVar14 = 0;
   remove("$$UNDO$$.TMP");

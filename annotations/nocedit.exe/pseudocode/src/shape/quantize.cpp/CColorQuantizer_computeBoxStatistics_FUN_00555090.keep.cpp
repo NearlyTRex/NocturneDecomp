@@ -39,10 +39,7 @@ void __cdecl shape_quantize_cpp_CColorQuantizer_computeBoxStatistics_FUN_0055509
   float b;
   float fVar5;
   float fVar6;
-  int iVar3;
-  int iVar4;
   float fVar1;
-  int iVar2;
   
   local_44 = 0.0;
   local_30 = 0.0;

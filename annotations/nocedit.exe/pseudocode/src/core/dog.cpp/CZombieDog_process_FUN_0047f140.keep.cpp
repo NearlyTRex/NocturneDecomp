@@ -32,31 +32,17 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr,f
   CVector3f local_98;
   CVector3f local_8c;
   CVector3f local_80;
-  float local_74;
-  float local_70;
-  float local_6c;
-  float local_68;
-  float local_64;
-  float local_60;
-  float local_5c;
-  float local_58;
-  float local_54;
   CVector3f local_50;
   CVector3f local_44;
-  float local_38;
-  float local_34;
-  float local_30;
-  float local_24;
   float local_20;
-  float local_1c;
   float local_18;
   float local_14;
   float fVar11;
   float fVar10;
   SDamageInfo *damage_info;
   CCharacter *pCVar3;
-  CDeformableModelInstance *pCVar1;
   CVector3f *pCVar2;
+  float local_1c;
   
   iVar4 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar4 == 0) {

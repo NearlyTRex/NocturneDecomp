@@ -32,7 +32,6 @@ void __cdecl core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(CDemonSet *this_ptr
   int local_20;
   int local_1c;
   int local_18;
-  int local_14;
   CDemonLight *pCVar3;
   UOrientationVector *pUVar2;
   double dVar4;

@@ -18,7 +18,6 @@ int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_005d9bc0(CSvetlana *thi
   CSvetlana *pCVar5;
   CSvetlana *pCVar3;
   int local_84 [30];
-  CSvetlana *pCVar6;
   CHero *pCVar2;
   CDemonRenderer *this_ptr_00;
   int *piVar1;

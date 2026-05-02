@@ -21,13 +21,10 @@ int __cdecl engine_fileio_cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740(CF
   int iVar6;
   uint uVar7;
   _FILE *p_Var6;
-  char *pcVar7;
   SVersionControlSession *pSVar8;
   char *pcVar9;
-  char *pcVar10;
   char *pcVar8;
   CCheckOutItem *pCVar11;
-  byte bVar12;
   char *filename;
   char acStack_69c [512];
   CCheckOutItem local_4a8;
@@ -43,6 +40,7 @@ int __cdecl engine_fileio_cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740(CF
   char local_14 [4];
   char *pcVar13;
   char cVar1;
+  byte bVar12;
   
   bVar12 = 0;
   iVar2 = engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0(this_ptr);

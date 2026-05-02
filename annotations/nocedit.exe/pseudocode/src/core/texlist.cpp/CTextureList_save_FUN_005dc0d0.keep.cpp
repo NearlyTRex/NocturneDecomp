@@ -16,7 +16,6 @@ void __cdecl core_texlist_cpp_CTextureList_save_FUN_005dc0d0(CTextureList *this_
   char *pcVar3;
   int iVar6;
   char local_114 [256];
-  _FILE *local_14;
   int *piVar1;
 
   strcpy(local_114,filename);

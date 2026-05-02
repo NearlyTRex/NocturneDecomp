@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 495,
-    "complexity_score": 229,
+    "complexity_score": 214,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 30,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 199,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_alignment_array",
       "unrolled_memcpy"
     ],
     "total_lines": 694
@@ -353,6 +352,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 14,
+      "match": "aiStackY_10cc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int aiStackY_10cc [965];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 195,
       "match": "&stack0x00000000",
@@ -641,35 +649,35 @@
         {
           "check_id": "uninitvar",
           "column": 15,
-          "line": 69,
+          "line": 58,
           "message": "Uninitialized variable: local_c4",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 15,
-          "line": 70,
+          "line": 59,
           "message": "Uninitialized variable: local_cc",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 15,
-          "line": 71,
+          "line": 60,
           "message": "Uninitialized variable: local_c8",
           "severity": "warning"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 39,
-          "line": 116,
+          "line": 105,
           "message": "Uninitialized variable: local_c8",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 56,
-          "line": 116,
+          "line": 105,
           "message": "Uninitialized variable: local_c4",
           "severity": "error"
         }
@@ -679,14 +687,6 @@
     "file_variant": "keep"
   },
   "suspects": [
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 14,
-      "match": "aiStackY_10cc",
-      "severity": "moderate",
-      "text": "int aiStackY_10cc [965];",
-      "type": "stack_alignment_array"
-    },
     {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 63,

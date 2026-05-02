@@ -58,6 +58,26 @@ for src in "${files[@]}"; do
 
     cp "$src" "$keep"
 
+    # Strip Ghidra decompiler `/* WARNING: ... */` comments. They document
+    # choices the decompiler made (inlined functions, unreachable blocks,
+    # indirect-call gaps, etc.) and are signal *only* during initial
+    # decompile review. Once a keep file exists, the keep is the source of
+    # truth and these comments are noise that fires false-positive
+    # `warning_*` suspects on every export. Remove single-line forms only;
+    # multi-line block comments are vanishingly rare in Ghidra output and
+    # would need a real parser to handle safely.
+    #
+    # Ghidra typically brackets each WARNING with a blank line on each
+    # side, so naively deleting the WARNING leaves two adjacent blanks.
+    # When that happens we also eat the trailing blank to keep the
+    # surrounding whitespace tight (a single blank, not two). Sed flow:
+    #   - match WARNING line
+    #   - N appends the following line into pattern space
+    #   - if the appended line was blank (pattern space now "WARNING\n"),
+    #     delete the whole pattern space — eats both lines
+    #   - otherwise strip just the WARNING and print the appended line
+    sed -i '\|^\s*/\*\s*WARNING:.*\*/\s*$|{N;/\n$/d;s/^[^\n]*\n//}' "$keep"
+
     # Insert // MANUAL RECONSTRUCTION after the // Address: line
     sed -i '/^\/\/ Address: [0-9a-fA-F]\+$/a // MANUAL RECONSTRUCTION' "$keep"
 

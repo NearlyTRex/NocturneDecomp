@@ -10,20 +10,9 @@
 void __cdecl core_cloth_cpp_CCloth_computeBoneTransform_FUN_0043a2b0(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr)
 
 {
-  int iVar1;
   CVector3f *pCVar2;
-  CMatrix3x4f *pCVar3;
-  CMatrix3x4f *pCVar4;
-  float *pfVar5;
-  byte bVar6;
-  CMatrix3x4f local_138;
   CMatrix3x4f local_108;
   CMatrix3x4f local_d8;
-  float local_a8 [3];
-  float local_9c;
-  float local_8c;
-  float local_7c;
-  CMatrix3x4f local_78;
   CMatrix3x4f local_48;
   CVector3f local_18;
   

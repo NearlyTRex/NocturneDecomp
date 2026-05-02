@@ -12,21 +12,14 @@
 int __cdecl engine_fileio_cpp_CCheckOutList_load_FUN_004b2890(CCheckOutList *this_ptr)
 
 {
-  char cVar2;
   int *piVar3;
   int *piVar2;
-  int iVar3;
-  char *pcVar4;
   int iVar4;
-  char *pcVar5;
-  char *pcVar7;
-  byte bVar7;
   char local_21c [260];
   char local_118 [256];
   _FILE *local_18;
   char local_14 [4];
-  char *pcVar6;
-  char cVar1;
+  byte bVar7;
   
   bVar7 = 0;
   engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(this_ptr);

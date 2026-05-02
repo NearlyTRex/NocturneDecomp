@@ -13,25 +13,18 @@ void __cdecl cockpit_ckptutil_c_rotateBitmap_FUN_00434870(uchar *source_data,int
   uint uVar2;
   uchar *ptr;
   uint uVar1;
-  uint uVar3;
   uchar *puVar2;
   uchar *puVar5;
   int iVar3;
   uchar *puVar4;
   uchar *puVar8;
   uint uVar5;
-  uchar *puVar6;
   int iVar9;
-  uchar *puVar7;
-  byte bVar8;
   char local_78 [80];
-  uint local_28;
-  uchar *local_24;
   uint local_20;
-  int local_1c;
-  uint local_18;
   uint local_14;
-  
+  byte bVar8;
+
   bVar8 = 0;
   uVar2 = width * bytes_per_pixel;
   iVar3 = width * height * bytes_per_pixel;

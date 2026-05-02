@@ -11,19 +11,16 @@ int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_004d0010(CBitFont *this_ptr,ch
 
 {
   int iVar3;
-  uint uVar4;
-  uint uVar1;
   uint uVar5;
   uint uVar6;
   char *pcVar7;
   char *pcVar2;
-  char *pcVar8;
-  byte bVar9;
   char *local_24;
   int local_20;
   uint local_14;
   bool bVar2;
   char cVar1;
+  byte bVar9;
   
   bVar9 = 0;
   memset(dest_buffer,0,max_lines * line_width);

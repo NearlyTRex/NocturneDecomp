@@ -22,7 +22,6 @@ int __cdecl shape_superopt_cpp_CPoly_containsPoint_FUN_005d0340(CPoly *this_ptr,
   CVector2d local_198;
   CVector2d local_188;
   CVector2d local_178;
-  double local_18;
   int iVar1;
   
   if (0.0 <= (this_ptr->normal).impl.x) {

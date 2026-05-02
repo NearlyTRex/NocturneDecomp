@@ -11,15 +11,11 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
 
 {
   float fVar3;
-  int iVar3;
   int iVar6;
   int iVar4;
   int iVar5;
-  CMatrix3x3f *pCVar6;
   float *pfVar7;
   float *pfVar8;
-  byte bVar9;
-  int aiStackY_10cc [965];
   float local_160;
   CMatrix3x3f local_15c;
   float local_134 [10];
@@ -32,30 +28,23 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
   CVector3f local_c0;
   CVector3f local_b4;
   float local_a8;
-  float local_a4;
-  float local_a0;
   float local_9c;
   float local_98;
   float local_94;
-  int local_90;
-  int local_8c [2];
   CVector3f local_84;
   CVector3f local_78;
-  float local_6c;
-  float local_68;
-  float local_64;
   CVector3f local_60;
   CVector3i local_54;
   float local_48;
-  float local_44;
-  float local_40;
   CVector3i local_3c;
   CVector3f local_30;
   int local_1c;
-  int local_18;
-  float local_14;
   float fVar2;
   float fVar1;
+  float local_a4;
+  float local_a0;
+  float local_44;
+  float local_40;
   
   if (g_CGamePtr->block_auto_save == 0) {
     local_48 = g_CDemonCameraInstance.base.position.f.x;

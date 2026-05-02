@@ -21,14 +21,8 @@ CMatrix3x4f * __stack3_esi core_xform_cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f
   float fVar10;
   float fVar11;
   float fVar12;
-  int iVar2;
   CMatrix3x4f *pCVar3;
-  float *pfVar4;
-  uint *puVar5;
-  uint *puVar6;
-  byte bVar7;
   CMatrix3x4f local_d0;
-  float local_a0 [12];
   CQuaternion4f local_70;
   CQuaternion4f local_60;
   CQuaternion4f local_50;

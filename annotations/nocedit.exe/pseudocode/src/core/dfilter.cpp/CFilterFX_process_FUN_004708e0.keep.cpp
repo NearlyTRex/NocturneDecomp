@@ -13,10 +13,6 @@ void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_004708e0(CFilterFx *this_ptr
 
 {
   CDemonFilter *pCVar1;
-  int iVar2;
-  int iVar1;
-  uint *puVar3;
-  uint *puVar4;
   byte bVar5;
   
   bVar5 = 0;

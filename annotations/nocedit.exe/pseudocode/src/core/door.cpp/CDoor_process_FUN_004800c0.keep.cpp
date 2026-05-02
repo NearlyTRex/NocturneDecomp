@@ -25,27 +25,8 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
   CBoundingBox3D local_a8;
   CVector3f CStack_90;
   CVector3f CStack_84;
-  float local_78;
-  float local_74;
-  float local_70;
   CVector3f aCStack_6c [2];
-  int iStack_54;
-  float local_50;
-  CMatrix3x3f *pCStack_4c;
-  float fStack_48;
-  float fStack_44;
-  float fStack_40;
-  float fStack_3c;
-  float fStack_38;
-  float fStack_34;
-  float fStack_30;
-  float fStack_2c;
-  float fStack_28;
-  float fStack_24;
-  float fStack_20;
-  float fStack_1c;
   int iStack_18;
-  float fStack_14;
   char *commands;
   int iVar1;
   

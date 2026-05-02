@@ -16,16 +16,10 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
   CDemonActorType *pCVar3;
   CHero *pCVar4;
   CDemonActor *actor;
-  int iVar5;
   char (*pacVar6) [256];
   CDemonActor *pCVar7;
-  char *pcVar4;
-  uint *puVar8;
   char *pcVar9;
-  char *pcVar10;
-  char *pcVar5;
   CDemonActor *pCVar6;
-  byte bVar11;
   char local_158 [100];
   char local_f4 [100];
   char local_90 [100];
@@ -38,6 +32,7 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
   int local_14;
   char cVar1;
   CGore *this_ptr_00;
+  byte bVar11;
   
   bVar11 = 0;
   core_mission_cpp_CDemonMission_clearMissionData_FUN_00522d30(this_ptr);

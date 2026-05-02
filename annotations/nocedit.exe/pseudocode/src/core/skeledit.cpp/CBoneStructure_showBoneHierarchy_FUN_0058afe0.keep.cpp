@@ -20,7 +20,6 @@ void __cdecl core_skeledit_cpp_CBoneStructure_showBoneHierarchy_FUN_0058afe0(CBo
   CBoneStructure *pCVar6;
   CPickList local_484;
   char local_dc [200];
-  SBoneData *local_14;
   
   iVar3 = 0;
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_484);

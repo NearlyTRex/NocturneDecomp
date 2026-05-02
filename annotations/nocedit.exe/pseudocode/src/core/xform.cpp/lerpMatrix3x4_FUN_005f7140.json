@@ -421,7 +421,7 @@
     {
       "description": "Struct-type local `local_20` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "introduced_by": "keep",
-      "line": 37,
+      "line": 31,
       "match": "CQuaternion4f local_20; ... f(&local_20, ...);",
       "severity": "moderate",
       "text": "CQuaternion4f local_20;",

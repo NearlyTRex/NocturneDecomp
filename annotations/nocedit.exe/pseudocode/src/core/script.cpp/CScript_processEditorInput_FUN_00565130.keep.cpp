@@ -10,16 +10,12 @@
 void __cdecl core_script_cpp_CScript_processEditorInput_FUN_00565130(CScript *this_ptr)
 
 {
-  char cVar1;
   bool bVar2;
-  void *this_ptr_00;
   int line_number;
   CScript *pCVar3;
   char cVar4;
   int iVar5;
   uint uVar6;
-  char *pcVar7;
-  byte bVar8;
   EEditorActionType EVar9;
   int iVar10;
   int iStack_3c;
@@ -33,6 +29,8 @@ void __cdecl core_script_cpp_CScript_processEditorInput_FUN_00565130(CScript *th
   int iStack_1c;
   int iStack_18;
   char acStack_14 [4];
+  byte bVar8;
+  void *this_ptr_00;
   
   bVar8 = 0;
   iStack_18 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);

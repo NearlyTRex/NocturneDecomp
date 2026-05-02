@@ -11,12 +11,7 @@ void __cdecl sound_sndmain_cpp_allocMixBuffers_FUN_005a5730(int requested_size,i
 
 {
   int iVar1;
-  int iVar2;
-  int iVar3;
   int iVar4;
-  int iVar5;
-  int iVar6;
-  float *pfVar1;
   
   g_MixBufferSize = 1;
   g_NumMixBuffers = num_buffers;

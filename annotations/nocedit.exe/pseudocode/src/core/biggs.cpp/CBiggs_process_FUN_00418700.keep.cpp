@@ -19,10 +19,6 @@ void __cdecl core_biggs_cpp_CBiggs_process_FUN_00418700(CBiggs *this_ptr,float d
   float local_38;
   float local_34;
   CVector3f local_30;
-  float local_24;
-  float local_20;
-  float local_1c;
-  CDeformableModelInstance *this_ptr_00;
   CVector3f *pCVar2;
   CVector3f *pCVar1;
   uint uVar4;

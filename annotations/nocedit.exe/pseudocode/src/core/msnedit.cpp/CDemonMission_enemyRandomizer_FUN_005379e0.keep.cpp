@@ -26,8 +26,6 @@ void __cdecl core_msnedit_cpp_CDemonMission_enemyRandomizer_FUN_005379e0(CDemonM
   CPickList local_d00;
   char local_208 [296];
   char local_e0 [200];
-  float local_18;
-  int local_14;
   
   initial_selected_index = 0;
 LAB_005379f3:

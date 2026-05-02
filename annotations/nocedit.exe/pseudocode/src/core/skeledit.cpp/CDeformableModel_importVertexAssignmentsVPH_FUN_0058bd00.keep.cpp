@@ -17,10 +17,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
   int iVar2;
   CVector3f *pCVar5;
   int iVar6;
-  CMatrix3x4f *pCVar7;
   int iVar8;
-  CMatrix3x4f *pCVar9;
-  byte bVar10;
   int aiStack_430 [200];
   byte local_110 [2];
   int local_10e;
@@ -34,7 +31,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
   byte local_40 [4];
   long local_3c;
   int local_38;
-  float local_34;
   int local_30;
   int local_2c;
   _FILE *local_28;
@@ -45,7 +41,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
   SIZE_T local_14;
   float fVar2;
   _FILE *file;
-  byte *pbVar1;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Importing vertex assignments from %s...",filename);

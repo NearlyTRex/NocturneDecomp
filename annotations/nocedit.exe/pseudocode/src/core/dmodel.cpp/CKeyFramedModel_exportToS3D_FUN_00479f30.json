@@ -7,16 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 362,
-    "complexity_score": 144,
+    "complexity_score": 129,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 114,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "stack_alignment_array"
+      "pointer_cast"
     ],
     "total_lines": 476
   },
@@ -261,6 +260,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 17,
+      "match": "aiStackY_1034",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int aiStackY_1034 [935];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
       "line": 91,
       "match": "SUB84(",
@@ -428,14 +436,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 17,
-      "match": "aiStackY_1034",
-      "severity": "moderate",
-      "text": "int aiStackY_1034 [935];",
-      "type": "stack_alignment_array"
-    },
     {
       "description": "Complex pointer cast",
       "line": 85,

@@ -24,17 +24,8 @@ void __cdecl shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(CLodMe
   uint uVar12;
   uint uVar13;
   uint uVar14;
-  int iVar1;
-  int iVar15;
   uint *puVar2;
   uint *puVar16;
-  uint *puVar17;
-  uint *puVar3;
-  uint *puVar4;
-  uint *puVar18;
-  uint *puVar5;
-  byte bVar6;
-  int aiStackY_189c [1522];
   uint local_a4;
   uint uStack_a0;
   uint uStack_9c;
@@ -50,16 +41,9 @@ void __cdecl shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(CLodMe
   float local_74;
   uint local_70;
   CVector3f local_6c [3];
-  int aiStack_44 [4];
-  int local_34;
-  int local_30;
-  int local_2c;
   int local_28;
   int local_24;
-  uint *local_20;
-  uint *local_1c;
-  float *local_18;
-  uint *local_14;
+  byte bVar6;
   
   bVar6 = 0;
   iVar2 = this_ptr->tri_count;

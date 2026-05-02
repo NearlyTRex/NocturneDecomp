@@ -21,9 +21,6 @@ void __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZ
   CBoundingBox3D local_dc;
   CBoundingBox3D local_c4;
   CVector3f local_ac;
-  float local_a0;
-  float local_9c;
-  float local_98;
   CVector3f local_94;
   CVector3f local_88;
   CVector3f local_7c;
@@ -32,12 +29,8 @@ void __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0(CZ
   CVector3f local_58;
   CVector3f local_4c;
   CVector3f local_40;
-  float local_34;
-  float local_30;
-  float local_2c;
   CVector3f local_28;
   CVector3f local_1c;
-  int local_10;
   CVector3f *output_vector;
   uint uVar1;
   CDemonActor *this_ptr_00;

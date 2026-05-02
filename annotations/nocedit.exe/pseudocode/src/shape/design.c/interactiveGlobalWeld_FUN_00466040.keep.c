@@ -16,7 +16,6 @@ void __cdecl shape_design_c_interactiveGlobalWeld_FUN_00466040(float tolerance)
   uint local_20;
   int local_1c;
   int local_18;
-  uint local_14;
 
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_70,0x32,0,0,"Enter weld point : ");

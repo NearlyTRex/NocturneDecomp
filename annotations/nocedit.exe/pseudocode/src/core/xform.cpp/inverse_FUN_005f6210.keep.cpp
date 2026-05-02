@@ -29,32 +29,7 @@ CMatrix3x4f * __stack_esi core_xform_cpp_inverse_FUN_005f6210(CMatrix3x4f *matri
   float fVar17;
   float fVar18;
   float fVar19;
-  int iVar1;
-  float *pfVar2;
-  CMatrix3x4f *pCVar3;
-  byte bVar4;
   double dVar5;
-  float local_90;
-  float local_8c;
-  float local_88;
-  float local_84;
-  float local_80;
-  float local_7c;
-  float local_78;
-  float local_74;
-  float local_70;
-  float local_6c;
-  float local_68;
-  float local_64;
-  double local_60;
-  double local_58;
-  double local_50;
-  double local_48;
-  double local_30;
-  double local_28;
-  double local_20;
-  double local_18;
-  CMatrix3x4f *local_10;
   
   dVar5 = core_xform_cpp_determinant_FUN_005f61c0(matrix_in);
   if (dVar5 == 0.0) {

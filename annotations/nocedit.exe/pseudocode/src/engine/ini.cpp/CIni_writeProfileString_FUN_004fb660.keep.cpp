@@ -20,7 +20,6 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004fb660(CIni *this_ptr,c
   char local_314 [254];
   char acStack_216 [258];
   char local_114 [256];
-  int local_14;
   char *pcVar6;
   int line_number;
 

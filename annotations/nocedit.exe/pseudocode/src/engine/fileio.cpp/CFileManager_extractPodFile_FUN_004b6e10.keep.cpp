@@ -18,16 +18,10 @@ void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileMan
   _tm *p_Var4;
   int iVar5;
   char *pcVar6;
-  uint *puVar5;
-  time_t *ptVar6;
-  time_t *ptVar7;
   char *pcVar8;
   uint *puVar7;
   char *pcVar9;
-  time_t *ptVar9;
   SFoundFileInfo *pSVar10;
-  byte bVar11;
-  time_t atStackY_2e68 [2034];
   CPodFile CStack_e84;
   char acStack_a58 [1024];
   SFoundFileInfo local_658;
@@ -35,7 +29,6 @@ void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileMan
   char local_344 [256];
   char local_244 [256];
   char local_144 [256];
-  char *local_44;
   time_t local_40 [4];
   CStrList local_30;
   _FILE *local_20;
@@ -43,11 +36,6 @@ void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileMan
   int local_18;
   int local_14;
   char cVar1;
-  CEditorTools *timestamp_source;
-  char *pcVar12;
-  uint file_size;
-  _FILE *source_file;
-  CFileManager *this_ptr_00;
   
   if (pod_filename == (char *)0x0) {
     iVar2 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420

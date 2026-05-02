@@ -12,10 +12,6 @@ CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosit
 {
   int bone_index_00;
   CSkeleton *pCVar1;
-  int iVar2;
-  CMatrix3x4f *pCVar3;
-  CMatrix3x4f *pCVar4;
-  byte bVar5;
   CMatrix3x4f local_40;
   CVector3f *input_vector;
 

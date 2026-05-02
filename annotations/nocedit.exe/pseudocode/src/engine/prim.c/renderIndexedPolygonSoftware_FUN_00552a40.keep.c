@@ -31,10 +31,8 @@ void __cdecl engine_prim_c_renderIndexedPolygonSoftware_FUN_00552a40(int *vertex
   SRenderVertex *pSVar12;
   bool bVar13;
   SRenderVertex *local_64 [16];
-  uint local_24;
   int *local_20;
   int local_1c;
-  int local_18;
   SSoftwareEdge *local_14;
   longlong lVar1;
   

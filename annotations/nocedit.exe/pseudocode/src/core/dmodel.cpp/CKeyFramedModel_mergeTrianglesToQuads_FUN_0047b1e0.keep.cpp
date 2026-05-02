@@ -31,10 +31,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0(
   int iVar19;
   uint *puVar20;
   CVector3i *pCVar21;
-  byte bVar22;
   float10 fVar23;
   double dVar24;
-  int aiStackY_10d8 [1006];
   uint local_108;
   uint uStack_104;
   uint local_100;
@@ -56,19 +54,13 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0(
   float local_a4;
   float local_a0;
   CVector3f local_9c;
-  CVector3i *local_90;
   int local_8c;
   int local_88;
   int local_84;
   int local_80;
   CKeyFramedModel *local_7c;
-  uint local_78;
-  CKeyFramedModel *local_74;
   int local_70;
   int local_6c;
-  int local_68;
-  uint *local_64;
-  int local_60;
   int local_5c;
   int local_58;
   int local_54;
@@ -79,14 +71,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0(
   int local_40;
   int local_3c;
   int local_38;
-  int local_34;
-  int local_30;
-  int local_2c;
-  int local_28;
-  CVector3i *local_24;
   int local_20;
-  float local_1c;
-  uint *local_18;
+  byte bVar22;
   
   bVar22 = 0;
   core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(this_ptr);

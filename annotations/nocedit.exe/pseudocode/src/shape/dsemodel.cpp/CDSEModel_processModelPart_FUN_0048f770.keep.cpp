@@ -12,10 +12,6 @@ void __cdecl shape_dsemodel_cpp_CDSEModel_processModelPart_FUN_0048f770(CDSEMode
 {
   int iVar4;
   uint uVar2;
-  uint *puVar6;
-  uint *puVar7;
-  uint *puVar10;
-  uint *puVar11;
   int local_18;
   int local_14;
 

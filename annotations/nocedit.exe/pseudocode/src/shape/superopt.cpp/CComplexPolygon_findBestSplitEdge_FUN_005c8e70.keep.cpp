@@ -14,23 +14,15 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70(CC
   double dVar2;
   double dVar3;
   int iVar4;
-  int iVar1;
   int iVar5;
   int iVar2;
-  uint *puVar3;
   double *pdVar4;
-  CVector3d *pCVar5;
   uint *puVar6;
   byte bVar6;
   double dVar7;
   double dVar8;
   CVector3d local_e4;
-  double local_cc;
-  double local_c4;
-  double local_bc;
   double local_9c;
-  double local_94;
-  double local_8c;
   uint local_84;
   uint uStack_80;
   uint local_7c;
@@ -49,6 +41,8 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70(CC
   CVector3d *local_1c;
   int local_18;
   int local_14;
+  double local_94;
+  double local_8c;
   
   bVar6 = 0;
   local_18 = 0;

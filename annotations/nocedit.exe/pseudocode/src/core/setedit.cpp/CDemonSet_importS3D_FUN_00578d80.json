@@ -7,16 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1607,
-    "complexity_score": 738,
+    "complexity_score": 723,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 77,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 673,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
-      "stack_alignment_array",
       "unrolled_strchr"
     ],
     "total_lines": 2280
@@ -772,6 +771,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 41,
+      "match": "aiStackY_3a30",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int aiStackY_3a30 [1378];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
       "line": 472,
       "match": "for (...; != 0; ... + -1)",
@@ -1224,14 +1232,14 @@
         {
           "check_id": "nullPointer",
           "column": 14,
-          "line": 231,
+          "line": 222,
           "message": "Possible null pointer dereference: pcVar12",
           "severity": "warning"
         },
         {
           "check_id": "invalidPointerCast",
           "column": 50,
-          "line": 388,
+          "line": 379,
           "message": "Casting between signed int * and float * which have an incompatible binary data representation.",
           "severity": "portability"
         }
@@ -1241,14 +1249,6 @@
     "file_variant": "keep"
   },
   "suspects": [
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 41,
-      "match": "aiStackY_3a30",
-      "severity": "moderate",
-      "text": "int aiStackY_3a30 [1378];",
-      "type": "stack_alignment_array"
-    },
     {
       "description": "Complex pointer cast",
       "line": 245,

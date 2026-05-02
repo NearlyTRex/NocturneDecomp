@@ -10,16 +10,11 @@
 int __cdecl shape_design_c_loadS3DModelFile_FUN_004593a0(char *filename)
 
 {
-  char cVar2;
   _FILE *file;
   int iVar2;
   int iVar3;
-  char *pcVar3;
   char *pcVar6;
-  char *pcVar4;
   char *pcVar7;
-  char *pcVar5;
-  byte bVar6;
   int local_9e4;
   char local_9e0 [260];
   int local_8dc;
@@ -27,14 +22,13 @@ int __cdecl shape_design_c_loadS3DModelFile_FUN_004593a0(char *filename)
   char local_108 [200];
   uint local_40;
   char (*local_38)[80];
-  _FILE *local_34;
   int local_30 [3];
   int local_24;
   int local_20;
   int local_1c;
   int local_18;
   SShapeEditorPolygon *local_14;
-  char cVar1;
+  byte bVar6;
   
   bVar6 = 0;
   local_38 = (char (*)[80])0x0;

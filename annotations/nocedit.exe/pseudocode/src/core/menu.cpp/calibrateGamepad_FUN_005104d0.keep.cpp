@@ -21,8 +21,6 @@ int __cdecl core_menu_cpp_calibrateGamepad_FUN_005104d0(void)
   DWORD DVar6;
   char local_224 [256];
   char acStack_124 [256];
-  int local_24;
-  int iStack_20;
   DWORD DStack_1c;
   DWORD DStack_18;
   DWORD local_14;

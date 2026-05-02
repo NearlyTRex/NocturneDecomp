@@ -22,8 +22,6 @@ void __cdecl core_fileman_cpp_CDemonFileManager_createPodFromDirectory_FUN_004bd
   char *pcVar6;
   char *pcVar8;
   char *pcVar9;
-  char *pcVar7;
-  char *pcVar10;
   byte bVar8;
   char local_798 [512];
   char local_598 [499];
@@ -33,9 +31,7 @@ void __cdecl core_fileman_cpp_CDemonFileManager_createPodFromDirectory_FUN_004bd
   char local_140 [100];
   char local_dc [100];
   char local_78 [100];
-  _FILE *local_14;
   char cVar1;
-  _FILE *file_ptr;
   
   bVar8 = 0;
   iVar2 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270

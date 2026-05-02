@@ -20,8 +20,8 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
   float fVar8;
   float fStack_184;
   char acStack_118 [232];
-  int iStack_30;
   float fStack_2c;
+  int iStack_30;
   
   if (g_CheatSystemEnabled == 0) {
     if (this_ptr->cutscene_skippable == 0) {

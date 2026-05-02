@@ -15,8 +15,6 @@ void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0(CEdit
   HGLOBAL hMem;
   char *pcVar3;
   uint uVar4;
-  uint uVar5;
-  char *pcVar6;
   byte bVar7;
   
   bVar7 = 0;

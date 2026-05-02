@@ -29,7 +29,6 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
   CStrList CStack_44;
   CStrList local_34;
   CStrList CStack_24;
-  int iStack_14;
   char *fname;
   char *dir;
   char *drive;

@@ -18,7 +18,6 @@ void __cdecl engine_2d_c_wrapTextToWidth_FUN_00401d80(char *input_text,int max_w
   char *pcVar5;
   char *pcVar8;
   char acStack_114 [256];
-  int local_14;
 
   bVar3 = true;
   if (*input_text == '\0') {

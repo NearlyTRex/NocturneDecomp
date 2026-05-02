@@ -24,8 +24,6 @@ void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
   CMorph *pCVar7;
   CMorph *morph;
   _FILE *output_file;
-  byte bVar8;
-  int aiStackY_1008 [690];
   CIniFile local_528;
   char local_328 [256];
   CEdButton local_228;
@@ -35,10 +33,7 @@ void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
   char local_20 [16];
   int local_license;
   int right_pos;
-  char *source_file;
   int bottom_pos;
-  char *directory;
-  char *mode;
   
   iVar1 = engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0
                     (&g_CDemonFileManagerInstance.base);

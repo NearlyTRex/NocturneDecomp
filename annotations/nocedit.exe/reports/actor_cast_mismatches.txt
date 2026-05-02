@@ -47,13 +47,13 @@ Manual inspection is needed to determine the expected class.
   core/event.cpp/CEventList_executeCommand_FUN_004aacc0.keep.cpp
 --------------------------------------------------------------------------------
 
-  Line 326: castToClassHash()
-    324:           if ((pCVar8 != g_ActorNameSentinel) && (local_f0 != 0)) {
-    325:             pCVar8->lifecycle_state = ACTOR_DESTROYED;
-    326:             pCVar6 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c790(pCVar8,uVar14);
-    327:             if (pCVar6 != (CBoxActor *)0x0) {
-    328:               pCVar6->loop_wav_name[0] = '\0';
-    329:               sound_sndmain_cpp_killSfx_FUN_005a9c40(pCVar6->sfx_handle);
+  Line 323: castToClassHash()
+    321:           if ((pCVar8 != g_ActorNameSentinel) && (local_f0 != 0)) {
+    322:             pCVar8->lifecycle_state = ACTOR_DESTROYED;
+    323:             pCVar6 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c790(pCVar8,uVar14);
+    324:             if (pCVar6 != (CBoxActor *)0x0) {
+    325:               pCVar6->loop_wav_name[0] = '\0';
+    326:               sound_sndmain_cpp_killSfx_FUN_005a9c40(pCVar6->sfx_handle);
 
 --------------------------------------------------------------------------------
   core/game.cpp/giveHeroWeapon_FUN_004dd870.cpp
@@ -127,13 +127,13 @@ Manual inspection is needed to determine the expected class.
   core/inv.cpp/CInventory_load_FUN_004ff400.keep.cpp
 --------------------------------------------------------------------------------
 
-  Line 57: createActorByName()
-    55:       _fscanf(file_handle," %s \"%[^\"]\"\n",local_dc,local_78);
-    56:       if (g_CDemonMissionPtr->has_inventory_actors == 0) {
-    57:         pCVar3 = core_actor_cpp_createActorByName_FUN_0040c430(local_dc);
-    58:         strcpy(pCVar3->actor_name,local_78);
-    59:         pCVar6->items[0] = pCVar3;
-    60:       }
+  Line 49: createActorByName()
+    47:       _fscanf(file_handle," %s \"%[^\"]\"\n",local_dc,local_78);
+    48:       if (g_CDemonMissionPtr->has_inventory_actors == 0) {
+    49:         pCVar3 = core_actor_cpp_createActorByName_FUN_0040c430(local_dc);
+    50:         strcpy(pCVar3->actor_name,local_78);
+    51:         pCVar6->items[0] = pCVar3;
+    52:       }
 
 --------------------------------------------------------------------------------
   core/inv.cpp/getItemModel_FUN_004fcda0.keep.cpp
@@ -151,37 +151,37 @@ Manual inspection is needed to determine the expected class.
   core/mimic.cpp/CMimic_setup_FUN_0051f3e0.keep.cpp
 --------------------------------------------------------------------------------
 
-  Line 86: createActorByName()
-    84:              &(this_ptr->base).base.base.orient.vec,pCVar1);
-    85:   class_name_hash = g_CEnemyClassInfo.name_hash;
-    86:   actor_ptr = core_actor_cpp_createActorByName_FUN_0040c430(this_ptr->morph_actor_type);
-    87:   pCVar10 = (CEnemy *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,class_name_hash);
-    88:   this_ptr->morph_target_actor = (CDemonActor *)pCVar10;
-    89:   if (pCVar10 == (CEnemy *)0x0) {
+  Line 80: createActorByName()
+    78:              &(this_ptr->base).base.base.orient.vec,pCVar1);
+    79:   class_name_hash = g_CEnemyClassInfo.name_hash;
+    80:   actor_ptr = core_actor_cpp_createActorByName_FUN_0040c430(this_ptr->morph_actor_type);
+    81:   pCVar10 = (CEnemy *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,class_name_hash);
+    82:   this_ptr->morph_target_actor = (CDemonActor *)pCVar10;
+    83:   if (pCVar10 == (CEnemy *)0x0) {
 
 --------------------------------------------------------------------------------
   core/mission.cpp/CDemonMission_readMissionFile_FUN_00522eb0.keep.cpp
 --------------------------------------------------------------------------------
 
-  Line 147: createActorByName()
-    145:     _fscanf(file_handle,"%s \"%[^\"]\"\n",local_90,local_f4);
-    146:     pcVar9 = local_f4;
-    147:     actor = core_actor_cpp_createActorByName_FUN_0040c430(local_90);
-    148:     local_18 = actor;
-    149:     pCVar6 = actor;
-    150:     do {
+  Line 142: createActorByName()
+    140:     _fscanf(file_handle,"%s \"%[^\"]\"\n",local_90,local_f4);
+    141:     pcVar9 = local_f4;
+    142:     actor = core_actor_cpp_createActorByName_FUN_0040c430(local_90);
+    143:     local_18 = actor;
+    144:     pCVar6 = actor;
+    145:     do {
 
 --------------------------------------------------------------------------------
   core/msnedit.cpp/CDemonMission_changeActorType_FUN_0053d8b0.keep.cpp
 --------------------------------------------------------------------------------
 
-  Line 72: createActorByName()
-    70:     pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_624.base,iVar4);
-    71:     _sprintf(local_88,"C%s",pcVar3);
-    72:     pCVar7 = core_actor_cpp_createActorByName_FUN_0040c430(local_88);
-    73:     (*((pCVar7->vtable)._ub)->setup)(pCVar7);
-    74:     iVar4 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
-    75:                       (g_CEditorToolsPtr,"Attempt to transfer properties?");
+  Line 69: createActorByName()
+    67:     pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_624.base,iVar4);
+    68:     _sprintf(local_88,"C%s",pcVar3);
+    69:     pCVar7 = core_actor_cpp_createActorByName_FUN_0040c430(local_88);
+    70:     (*((pCVar7->vtable)._ub)->setup)(pCVar7);
+    71:     iVar4 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
+    72:                       (g_CEditorToolsPtr,"Attempt to transfer properties?");
 
 --------------------------------------------------------------------------------
   core/msnedit.cpp/CDemonMission_importActorsFrom_FUN_0053b9f0.cpp
@@ -199,13 +199,13 @@ Manual inspection is needed to determine the expected class.
   core/msnedit.cpp/CDemonMission_replicateActor_FUN_0053bd80.keep.cpp
 --------------------------------------------------------------------------------
 
-  Line 51: createActorByName()
-    49:   shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\msnedit.cpp",0x96b);
-    50:   class_name = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(this_ptr->selected_actor);
-    51:   this_ptr_00 = core_actor_cpp_createActorByName_FUN_0040c430(class_name);
-    52:   file_handle = shape_memdbg_cpp_openFile_FUN_0050f7a0
-    53:                           (local_20,(char *)0x0,"rt","..\\core\\msnedit.cpp",0x973);
-    54:   if (file_handle == (_FILE *)0x0) {
+  Line 50: createActorByName()
+    48:   shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\msnedit.cpp",0x96b);
+    49:   class_name = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(this_ptr->selected_actor);
+    50:   this_ptr_00 = core_actor_cpp_createActorByName_FUN_0040c430(class_name);
+    51:   file_handle = shape_memdbg_cpp_openFile_FUN_0050f7a0
+    52:                           (local_20,(char *)0x0,"rt","..\\core\\msnedit.cpp",0x973);
+    53:   if (file_handle == (_FILE *)0x0) {
 
 --------------------------------------------------------------------------------
   core/set.cpp/CDemonSet_buildActorTypeLists_FUN_00570fc0.cpp

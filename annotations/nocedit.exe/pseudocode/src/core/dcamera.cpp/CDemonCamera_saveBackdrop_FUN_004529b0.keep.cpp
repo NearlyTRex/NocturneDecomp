@@ -28,9 +28,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
   char local_f8 [100];
   CLZWCompress local_94;
   CVector3i local_5c;
-  char local_50 [4];
   int local_4c;
-  int local_48;
   int local_44;
   int local_40;
   int local_3c;
@@ -40,9 +38,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
   int local_2c;
   int local_28;
   int local_24;
+  int local_18;
+  int local_48;
   int local_20;
   int local_1c;
-  int local_18;
   int local_14;
   
   g_BackdropSaveActive = 1;

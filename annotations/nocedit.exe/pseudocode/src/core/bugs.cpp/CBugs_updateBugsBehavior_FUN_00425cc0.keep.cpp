@@ -26,12 +26,9 @@ void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_00425cc0(CBugs *this_ptr
   float fStack_68;
   float fStack_64;
   float fStack_60;
-  float fStack_5c;
   float fStack_58;
-  float fStack_54;
   CVector3f CStack_50;
   float fStack_44;
-  float fStack_40;
   float fStack_3c;
   CVector3f CStack_38;
   CVector3f CStack_2c;
@@ -39,6 +36,9 @@ void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_00425cc0(CBugs *this_ptr
   float fStack_1c;
   float fStack_18;
   float *pfStack_14;
+  float fStack_5c;
+  float fStack_54;
+  float fStack_40;
   
   (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
   if ((this_ptr->allow_swarm != 0) &&

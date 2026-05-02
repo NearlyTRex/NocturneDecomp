@@ -24,13 +24,7 @@ void __cdecl core_stranger_cpp_CStranger_makeDrawDecision_FUN_005bfb60(CStranger
   CSkeleton *pCVar4;
   CSkeleton *this_ptr_00;
   CDeformableModelInstance *pCVar8;
-  uint *puVar5;
-  uint *puVar6;
-  uint *puVar7;
-  uint *puVar8;
-  byte bVar9;
   float10 fVar10;
-  float afStackY_18cc [1515];
   char *motion_name;
   int iVar9;
   float local_100;
@@ -46,23 +40,12 @@ void __cdecl core_stranger_cpp_CStranger_makeDrawDecision_FUN_005bfb60(CStranger
   CQuaternion4f local_70;
   CQuaternion4f local_60;
   CQuaternion4f local_50;
-  float local_38;
-  float local_34;
-  CDeformableModelInstance *local_30;
   float local_24;
   int local_20;
   float local_1c;
-  float local_18;
-  CDeformableModelInstance *pCVar11;
-  byte *pcVar19;
   char *pcVar14;
   int iVar15;
-  CQuaternion4f *pCVar1;
   CDeformableModel_MotionBlendWeightFunc *pcVar16;
-  CDeformableModelInstance *pCVar12;
-  CQuaternion4f *pCVar13;
-  CDeformableModel_MotionBlendWeightFunc *pcVar17;
-  CDeformableModel_MotionBlendWeightFunc *pcVar18;
   
   iVar9 = (this_ptr->base).base.layer_action_index;
   if ((iVar9 < 0) || (0x10 < iVar9)) {

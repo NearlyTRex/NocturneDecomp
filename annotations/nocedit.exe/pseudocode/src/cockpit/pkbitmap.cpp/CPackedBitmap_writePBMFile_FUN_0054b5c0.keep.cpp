@@ -11,7 +11,6 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0(CPacke
 
 {
   int local_2c [6];
-  int local_14;
   
   memcpy(local_2c,"PBM\032PBG\032",4);
   local_2c[1] = this_ptr->width;

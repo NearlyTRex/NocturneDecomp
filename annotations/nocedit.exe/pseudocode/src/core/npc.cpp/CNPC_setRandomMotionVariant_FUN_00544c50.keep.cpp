@@ -10,14 +10,12 @@
 int __cdecl core_npc_cpp_CNPC_setRandomMotionVariant_FUN_00544c50(CNPC *this_ptr,char *motion_name)
 
 {
-  char cVar2;
   CMotionList *this_ptr_00;
   int iVar2;
   int iVar4;
   int iVar3;
   char *pcVar4;
   char local_d8 [200];
-  char cVar1;
   
   iVar3 = 0;
   this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0

@@ -10,7 +10,6 @@
 void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *this_ptr,char *filename)
 
 {
-  char cVar1;
   char cVar4;
   _FILE *p_Var5;
   int iVar6;
@@ -36,21 +35,14 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
   int iVar18;
   uint uVar19;
   uint uVar20;
-  char *pcVar21;
   char *pcVar22;
   char *pcVar10;
   char *pcVar11;
   uint uVar23;
-  uint *puVar12;
-  SRGBColorPalette *pSVar24;
-  char *pcVar25;
   uint uVar26;
   int *piVar27;
-  uint *puVar28;
-  byte *pbVar13;
   uint uVar29;
   uint uVar30;
-  byte bVar31;
   char local_144 [80];
   char local_f4 [80];
   int local_a4;
@@ -69,7 +61,6 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
   uint local_70;
   uint local_6c;
   uint local_68;
-  int local_64;
   int local_60;
   int local_5c;
   int local_58;
@@ -78,7 +69,6 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
   int local_48;
   int local_44;
   int local_40;
-  int local_3c;
   int local_38;
   int local_34;
   int local_30;
@@ -92,6 +82,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
   ulonglong uVar3;
   uint uVar2;
   byte bVar1;
+  int local_64;
+  int local_3c;
   
   strcpy(local_144, filename);
   pcVar22 = local_144;

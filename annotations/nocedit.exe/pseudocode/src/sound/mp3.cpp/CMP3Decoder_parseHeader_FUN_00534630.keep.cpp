@@ -29,16 +29,16 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00534630(CMP3Decoder *this
   int local_44;
   int local_3c;
   int local_38;
-  int local_34;
   int local_30;
-  int local_2c;
   int local_28;
   int local_24;
-  SMpegFrameHeader **local_20;
   int local_1c;
   int local_18;
   int local_14;
   SMpegFrameHeader *pSVar1;
+  int local_34;
+  int local_2c;
+  SMpegFrameHeader **local_20;
 
   sound_mp3_cpp_CMP3Decoder_free_FUN_005349e0(this_ptr);
   local_1c = 0x1000;

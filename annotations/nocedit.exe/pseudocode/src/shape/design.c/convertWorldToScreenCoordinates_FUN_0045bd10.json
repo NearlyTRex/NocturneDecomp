@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 141,
-    "complexity_score": 55,
+    "complexity_score": 40,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 9,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 40,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_unreachable"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 181
   },
   "cross_references": [],
@@ -149,6 +147,17 @@
     },
     "pcode_op_count": 536
   },
+  "resolved_suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0045be1d) */",
+      "type": "warning_unreachable"
+    }
+  ],
   "stack_frame": {
     "frame_size": 64,
     "local_size": 60,
@@ -200,14 +209,50 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unreachable code block removed",
-      "line": 2,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0045be1d) */",
-      "type": "warning_unreachable"
-    }
-  ]
+  "static_analysis": {
+    "analyzed_file": "convertWorldToScreenCoordinates_FUN_0045bd10.keep.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 5,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 22,
+          "line": 47,
+          "message": "Uninitialized variable: fStack_2c",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 22,
+          "line": 48,
+          "message": "Uninitialized variable: fStack_28",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 31,
+          "line": 44,
+          "message": "Uninitialized variable: local_38",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 31,
+          "line": 45,
+          "message": "Uninitialized variable: local_34",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 31,
+          "line": 46,
+          "message": "Uninitialized variable: local_30",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
+  "suspects": []
 }

@@ -19,15 +19,10 @@ void __cdecl engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
   _tm *p_Var4;
   _tm *time_ptr;
   char *output_buffer;
-  time_t *ptVar5;
-  time_t *ptVar6;
   char *pcVar7;
   CPodDirectoryEntry *pCVar5;
   int iVar6;
-  time_t *ptVar8;
   SFoundFileInfo *pSVar9;
-  byte bVar10;
-  time_t atStackY_30f4 [2034];
   CPodFile local_1108;
   SFoundFileInfo local_cdc;
   CPickList local_8dc;
@@ -35,16 +30,8 @@ void __cdecl engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
   char local_320 [256];
   char local_220 [256];
   char local_120 [256];
-  char *local_20;
   time_t local_1c [4];
-  _FILE *local_c;
-  CFileManager *this_ptr_00;
   char cVar1;
-  SFoundFileInfo *info;
-  int file_offset;
-  CPodFile *this_ptr_02;
-  _FILE *source_file;
-  CPickList *this_ptr_01;
   
   iVar2 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
                     (g_CEditorToolsPtr,"Select POD file to extract","*.pod",local_120,

@@ -10,16 +10,12 @@
 void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(CNetGame *this_ptr)
 
 {
-  char cVar1;
   int iVar2;
   int iVar3;
   SNetPlayer *pSVar4;
   char *pcVar5;
   SNetPacket_Simple local_3c;
   char local_33 [20];
-  int local_1f;
-  EHeroType local_1b;
-  int local_17;
   
   if ((this_ptr->connection_type != CONNECTION_CLIENT) || (this_ptr->network_mode != NET_MODE_LOBBY)
      ) {

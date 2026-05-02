@@ -20,13 +20,10 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDe
   CGasMask *pCVar5;
   CBoxActor *pCVar6;
   char *pcVar6;
-  char *pcVar7;
   char *pcVar8;
-  char *pcVar9;
-  byte bVar8;
   char local_114 [256];
-  CHealthItem *local_14;
   char cVar1;
+  byte bVar8;
   
   bVar8 = 0;
   iVar2 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CAmmo");

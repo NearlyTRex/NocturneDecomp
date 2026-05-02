@@ -16,21 +16,16 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
   char *pcVar5;
   ushort *puVar6;
   ushort *puVar1;
-  uint uVar7;
-  uint uVar2;
   int iVar8;
   int iVar9;
   int new_size;
   int iVar3;
-  uchar *puVar10;
-  byte bVar11;
   char local_154 [300];
   int local_24;
-  int local_20;
-  int local_1c;
   int local_18;
   uchar *local_14;
   ushort uVar1;
+  byte bVar11;
   
   bVar11 = 0;
   cockpit_pkbitmap_cpp_CPackedBitmap_free_FUN_0054a8e0(this_ptr);

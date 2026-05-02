@@ -9,30 +9,30 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 132
+  Functions with static analysis data: 150
   Functions flagged by multiple tools: 0
 
   Cppcheck (quick):
-    Files analyzed:      132
-    Files with findings: 132
-    Total diagnostics:   395
+    Files analyzed:      150
+    Files with findings: 150
+    Total diagnostics:   448
 
 ====================================================================================================
 TOP FINDINGS - Cppcheck (quick)
 ====================================================================================================
 
-  uninitvar                                                  83  [likely decompiler artifact]
-  selfAssignment                                             73  [likely decompiler artifact]
-  shiftTooManyBitsSigned                                     68  [likely decompiler artifact]
+  uninitvar                                                 105  [likely decompiler artifact]
+  shiftTooManyBitsSigned                                     91  [likely decompiler artifact]
+  selfAssignment                                             73
   invalidscanf                                               57
-  legacyUninitvar                                            39
+  legacyUninitvar                                            44
   invalidPointerCast                                         19
+  nullPointerRedundantCheck                                  12
   objectIndex                                                12
-  nullPointerRedundantCheck                                  11
   ignoredReturnValue                                         10
   identicalInnerCondition                                     6
   nullPointer                                                 4
   shiftNegativeLHS                                            3
+  arrayIndexOutOfBoundsCond                                   3
   invalidScanfArgType_int                                     3
   arrayIndexOutOfBounds                                       2
-  arrayIndexOutOfBoundsCond                                   1

@@ -19,7 +19,6 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35
   CCheckOutList local_20;
   _FILE *local_18;
   char local_14 [4];
-  char *pcVar6;
 
   local_18 = (_FILE *)0x0;
   if (g_VersionControlSession.primary_username[0] == '\0') {

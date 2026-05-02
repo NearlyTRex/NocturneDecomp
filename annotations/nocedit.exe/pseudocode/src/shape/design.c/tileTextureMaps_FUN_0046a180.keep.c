@@ -21,8 +21,6 @@ void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(SCram *cram,int prompt_
   char *pcVar4;
   char *pcVar5;
   char *pcVar9;
-  char *pcVar6;
-  char *pcVar10;
   byte bVar7;
   float local_1c0;
   float local_1bc;

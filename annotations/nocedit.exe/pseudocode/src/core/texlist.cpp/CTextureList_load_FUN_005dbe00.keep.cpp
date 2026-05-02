@@ -23,13 +23,11 @@ void __cdecl core_texlist_cpp_CTextureList_load_FUN_005dbe00(CTextureList *this_
   char *pcVar7;
   byte bVar8;
   char local_12c [256];
-  _FILE *local_2c;
   int local_28;
   CTextureList *local_24;
   char *local_20;
   int local_1c;
   CTextureList *local_18;
-  SMRGLTextureBasic *local_14;
   char cVar1;
   
   bVar8 = 0;

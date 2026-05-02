@@ -28,7 +28,6 @@ void __cdecl core_msnedit_cpp_CDemonMission_replicateActor_FUN_0053bd80(CDemonMi
   char local_a4 [100];
   char local_40 [32];
   char local_20 [16];
-  float *pfVar6;
   char cVar1;
   
   bVar10 = 0;

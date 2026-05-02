@@ -19,15 +19,9 @@ float __cdecl core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0(CDef
   int iVar5;
   int iVar6;
   CDemonTriangle local_6c;
-  float local_34;
-  float local_30;
-  float local_2c;
   byte *local_28;
   int local_24;
-  int local_20;
-  int local_1c;
   float local_18;
-  float local_14;
   
   if ((g_FloatVertexArrayInitialized & 1) == 0) {
     g_FloatVertexArrayInitialized = g_FloatVertexArrayInitialized | 1;

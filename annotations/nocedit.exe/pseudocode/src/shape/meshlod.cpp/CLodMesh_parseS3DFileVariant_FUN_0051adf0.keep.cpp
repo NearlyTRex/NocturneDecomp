@@ -13,8 +13,6 @@ void __cdecl shape_meshlod_cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0(CLodMes
   int iVar1;
   int iVar3;
   char *path_buffer;
-  int iVar2;
-  char *pcVar3;
   int iVar4;
   int iVar5;
   char local_224 [260];

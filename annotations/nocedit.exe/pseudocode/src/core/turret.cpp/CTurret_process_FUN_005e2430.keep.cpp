@@ -18,11 +18,6 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
   int iVar5;
   CVector3f *pCVar5;
   uint uVar6;
-  uint *puVar7;
-  uint *puVar8;
-  byte bVar9;
-  float afStackY_186c [1497];
-  float local_f8;
   char local_f4 [100];
   CQuaternion4f local_90;
   CQuaternion4f local_80;
@@ -34,12 +29,11 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
   double local_30_playback_pos;
   CVector3f *local_1c;
   CVector3f *local_18;
-  float local_14;
-  CQuaternion4f *quat_in;
   CEventList *pCVar3;
   float fVar2;
   char *sound_name;
   UOrientationVector *pUVar1;
+  float local_14;
   
   EVar1 = this_ptr->state;
   (this_ptr->base).muzzle_flash_color.r = -1;

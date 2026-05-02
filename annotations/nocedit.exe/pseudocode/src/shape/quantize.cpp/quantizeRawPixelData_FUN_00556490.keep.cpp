@@ -19,16 +19,11 @@ int __cdecl shape_quantize_cpp_quantizeRawPixelData_FUN_00556490(uchar *src_pixe
   CColorQuantizer *ptr;
   CBitmap *ptr_00;
   uint uVar5;
-  uint uVar6;
-  uint uVar2;
-  int iVar7;
   int iVar4;
   int unaff_ESI;
-  uchar *puVar5;
-  uchar *puVar8;
-  byte bVar9;
   char local_dc [200];
   CBitmap *local_14;
+  byte bVar9;
   
   bVar9 = 0;
   g_QuantizeCurrentLineNumber = line_number;

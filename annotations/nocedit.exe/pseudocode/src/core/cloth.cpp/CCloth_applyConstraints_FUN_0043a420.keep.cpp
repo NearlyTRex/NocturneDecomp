@@ -32,24 +32,6 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_pt
   float local_114;
   float local_110;
   CVector3f local_10c;
-  float local_100;
-  float local_fc;
-  float local_f8;
-  float local_f4;
-  float local_f0;
-  float local_ec;
-  float local_e8;
-  float local_e4;
-  float local_e0;
-  float local_dc;
-  float local_d8;
-  float local_d4;
-  float local_d0;
-  float local_cc;
-  float local_c8;
-  float local_c4;
-  float local_c0;
-  float local_bc;
   float local_b8;
   float local_b4;
   float local_b0;
@@ -57,9 +39,6 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_pt
   float local_a8;
   float local_a4;
   CVector3f local_a0;
-  float local_94;
-  float local_90;
-  float local_8c;
   CVector3f local_88;
   float local_7c;
   float local_78;
@@ -72,7 +51,6 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_pt
   float local_54;
   float local_48;
   float local_44;
-  byte *local_40;
   SClothVertex *local_3c;
   SClothBone *local_38;
   float *local_34;
@@ -82,11 +60,12 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_pt
   float local_24;
   int local_20;
   float local_1c;
-  float local_18;
   CVector3f *local_14;
   float fVar2;
   float fVar1;
   SClothBone *pSVar3;
+  byte *local_40;
+  float local_18;
   
   if ((vertex->position).y < this_ptr->floor_y) {
     (vertex->secondary_velocity).y = 0.0;

@@ -10,11 +10,8 @@
 void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_00472e40(CDemonLight *this_ptr)
 
 {
-  uint uVar1;
   int iVar2;
   int iVar3;
-  void **ppvVar4;
-  void **ppvVar5;
   byte bVar6;
   
   bVar6 = 0;

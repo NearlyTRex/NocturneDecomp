@@ -11,25 +11,12 @@ int __cdecl shape_design_c_loadModelBinary_FUN_00458170(char *filename)
 
 {
   char cVar2;
-  int iVar2;
   char *pcVar4;
   char *pcVar3;
-  SMRGLModelBounds *pSVar4;
-  int *piVar5;
   char *pcVar5;
   char *pcVar6;
-  int *piVar7;
-  byte bVar8;
   SMRGLModelBounds local_198;
-  uint local_164;
   char local_160 [80];
-  int local_110;
-  int local_10c;
-  int local_108;
-  int local_104;
-  int local_100;
-  int local_fc;
-  int local_dc [13];
   byte local_a8 [4];
   uint local_a4;
   byte local_90 [8];

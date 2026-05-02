@@ -21,11 +21,8 @@ int __cdecl shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800(CObj *this_
   CP3D *pCVar4;
   uint uVar5;
   uint uVar3;
-  uint *puVar6;
   int *piVar7;
   CPoly *this_ptr_00;
-  uint *puVar8;
-  byte bVar9;
   CVector3d local_40;
   int local_28;
   CP3D *local_24;
@@ -33,7 +30,6 @@ int __cdecl shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800(CObj *this_
   uint local_1c;
   CPoly *local_18;
   CP3D *local_14;
-  CVert *point;
   
   if (search_polygon == (CPoly *)0x0) {
     if (this_ptr->poly_count == 0) {

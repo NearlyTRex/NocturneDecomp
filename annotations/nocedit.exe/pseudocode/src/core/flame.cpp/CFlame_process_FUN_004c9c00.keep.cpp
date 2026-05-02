@@ -24,17 +24,7 @@ void __cdecl core_flame_cpp_CFlame_process_FUN_004c9c00(CFlame *this_ptr,float d
   char local_f8[32];
   SCollisionInfo SStack_8c;
   SCollisionInfo SStack_64;
-  float fStack_34;
-  float fStack_30;
-  float fStack_2c;
-  float fStack_28;
-  float fStack_24;
-  float fStack_20;
-  float local_14;
-  CEnemy *this_ptr_01;
   float fVar2;
-  CLocation *pCVar1;
-  CHero *this_ptr_00;
 
   if (((this_ptr->on_event[0] != '\0') && (this_ptr->flame_state == 0)) &&
      (iVar3 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0

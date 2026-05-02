@@ -28,12 +28,7 @@ void __cdecl core_dtri_cpp_cylinderTriangleTest_FUN_0049ad80(CDemonTriangle *tri
   float local_44;
   CDemonTriangle *local_40;
   float local_3c;
-  uint local_38;
-  uint local_34;
-  uint local_30;
   float local_2c;
-  float local_28;
-  float local_24;
   float fVar1;
   float fVar2;
   byte bVar7;

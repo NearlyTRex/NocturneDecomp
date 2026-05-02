@@ -32,20 +32,14 @@ int __cdecl core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0(CDemo
   CBoundingBox3D CStack_c4;
   CVector3f CStack_a4;
   byte auStack_98 [16];
-  float fStack_88;
-  float fStack_84;
-  float fStack_80;
   float fStack_74;
   float fStack_70;
   float fStack_6c;
-  float fStack_68;
   int iStack_5c;
   int iStack_54;
   int local_48;
   int local_44;
-  uint local_40;
   int iStack_30;
-  float fStack_2c;
   float fStack_28;
   uint uStack_24;
   C3DSCamera *pCStack_20;
@@ -53,6 +47,12 @@ int __cdecl core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0(CDemo
   CVector3f *pCStack_18;
   float fStack_14;
   float fVar13;
+  float fStack_88;
+  float fStack_84;
+  float fStack_80;
+  float fStack_68;
+  uint local_40;
+  float fStack_2c;
   
   local_40 = 0;
   if (actor == (CDemonActor *)0x0) {

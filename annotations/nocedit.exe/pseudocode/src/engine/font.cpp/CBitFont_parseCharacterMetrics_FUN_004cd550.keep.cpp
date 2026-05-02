@@ -23,17 +23,13 @@ void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFon
   int iVar6;
   int iVar7;
   char local_16c [300];
-  int *local_40;
-  int local_3c;
   int local_38;
   int local_34;
   int *local_30;
   char (*local_2c) [80];
   int local_28;
-  int *local_24;
   uint local_20;
   byte *local_1c;
-  int local_18;
   byte *local_14;
 
   ptr = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0

@@ -12,21 +12,14 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_consolidateTriList_FUN_00494450(CDem
 {
   uchar *puVar1;
   int iVar2;
-  uint uVar3;
-  uint uVar4;
-  uint uVar2;
   int iVar5;
   int iVar3;
   uint *puVar6;
-  float *pfVar7;
-  uchar *puVar8;
-  CDemonTriangle *pCVar9;
-  uchar *puVar10;
-  byte bVar11;
   int local_20;
   int local_1c;
   int local_18;
   int iVar1;
+  byte bVar11;
   
   bVar11 = 0;
   shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430

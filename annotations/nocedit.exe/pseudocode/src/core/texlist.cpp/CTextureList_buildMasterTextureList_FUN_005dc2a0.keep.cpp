@@ -28,10 +28,8 @@ void __cdecl core_texlist_cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0(C
   _WIN32_FIND_DATAA _Stack_1e0;
   char local_78 [80];
   int local_28;
-  HANDLE local_24;
   int local_20;
   int local_1c;
-  int local_18;
   char (*local_14) [16];
   char cVar1;
   

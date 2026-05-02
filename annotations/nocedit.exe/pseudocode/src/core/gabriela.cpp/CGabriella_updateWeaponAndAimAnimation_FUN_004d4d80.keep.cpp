@@ -17,11 +17,6 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
   float fVar3;
   float fVar4;
   int iVar2;
-  uint *puVar3;
-  uint *puVar4;
-  uint *puVar5;
-  byte bVar6;
-  float afStackY_19d0 [1521];
   CQuaternion4f *pCVar5;
   int iVar6;
   CQuaternion4f local_1f4;
@@ -47,32 +42,16 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
   CQuaternion4f local_b4;
   CQuaternion4f local_a4;
   CQuaternion4f local_94;
-  float local_84;
-  float local_80;
-  float local_7c;
   CVector3f local_78;
   CVector3f local_6c;
-  double local_58;
-  CDeformableModelInstance *local_50;
-  float local_4c;
-  CDeformableModelInstance *local_44;
-  float local_40;
   float local_34;
   float local_2c;
   float local_28;
   float local_24;
   float local_20;
-  CDeformableModelInstance *local_1c;
-  CDeformableModelInstance *local_18;
-  CDeformableModelInstance *local_14;
-  CDeformableModel_MotionBlendWeightFunc *pcVar10;
   CDeformableModel_MotionBlendWeightFunc *blend_callback;
-  CDeformableModel_MotionBlendWeightFunc *pcVar11;
-  CQuaternion4f *pCVar8;
-  CDeformableModelInstance *pCVar7;
   float fVar1;
   CDeformableModel_MotionBlendWeightFunc *pcVar12;
-  float fVar9;
   
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(this_ptr->base).base.model);

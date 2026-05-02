@@ -20,13 +20,6 @@ void __cdecl core_msnedit_cpp_drawMotionBar_FUN_00536e20(void)
   double dVar5;
   float local_f8;
   char local_f4 [200];
-  double local_2c;
-  int local_24;
-  int local_20;
-  int local_1c;
-  int local_18;
-  int local_14;
-  CDeformableModelInstance *this_ptr;
   
   INT_02f7c538 = 0;
   if ((((g_CDemonMissionPtr->selected_actor != (CDemonActor *)0x0) &&

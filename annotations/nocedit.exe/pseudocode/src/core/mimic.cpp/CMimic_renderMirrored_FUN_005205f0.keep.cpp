@@ -26,9 +26,6 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_005205f0(CMimic *this_ptr)
   CVector3f local_40;
   CVector3f local_34;
   CVector3f local_28;
-  int local_1c;
-  int local_18;
-  CStranger *local_14;
   
   if ((this_ptr->base).base.render_active == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);

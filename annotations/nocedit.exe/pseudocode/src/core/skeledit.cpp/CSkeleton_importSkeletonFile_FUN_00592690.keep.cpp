@@ -125,9 +125,6 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
   float local_1c0;
   CVector3f local_1bc;
   CVector3f local_1b0;
-  float local_1a4;
-  float local_1a0;
-  float local_19c;
   CVector3f local_198;
   CVector3f local_18c;
   CVector3f local_180;
@@ -135,8 +132,6 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
   float local_170;
   float local_16c;
   float local_168;
-  float local_164;
-  float local_160;
   CVector3f local_15c;
   CVector3f local_150;
   float local_144;
@@ -210,6 +205,11 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
   char local_1c [4];
   char local_18 [4];
   char local_14 [4];
+  float local_1a4;
+  float local_1a0;
+  float local_19c;
+  float local_164;
+  float local_160;
   
   bVar26 = 0;
   core_skeleton_cpp_CSkeleton_free_FUN_00599a50(this_ptr);

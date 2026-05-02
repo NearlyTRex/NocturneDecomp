@@ -15,17 +15,13 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0(CDemo
   uint uVar3;
   int iVar5;
   CVector3f *pCVar5;
-  byte bVar8;
   bool bVar9;
   CVector3i local_60;
-  int local_54;
-  int local_50 [4];
   char (*local_40) [320];
   int (*local_3c) [320];
   CVector3f *local_38;
   CVector3i *local_34;
   int local_30;
-  int local_28;
   int *local_24;
   uint *local_20;
   CVector3i *local_1c;

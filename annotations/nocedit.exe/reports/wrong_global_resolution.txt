@@ -37,8 +37,8 @@ SUMMARY
     g_CWeaponClassInfo                                 1 functions
     g_SourcePaletteData                                1 functions
 
-  .keep files with issues: 20 (these need manual review)
-  Raw .cpp files with issues: 50
+  .keep files with issues: 25 (these need manual review)
+  Raw .cpp files with issues: 45
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -73,15 +73,35 @@ core_menu.cpp_checkAndCalibrateGamepad_FUN_00511840  [.keep]  (6 suspicious glob
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_script.cpp_clearSelections_FUN_005644e0  [.keep]  (4 suspicious globals)
+  File: core/script.cpp
+
+  g_SelectionEndColumn
+    Used at lines: 23
+    NOT found in function reference list
+
+  g_SelectionEndLine
+    Used at lines: 22
+    NOT found in function reference list
+
+  g_SelectionStartColumn
+    Used at lines: 21
+    NOT found in function reference list
+
+  g_SelectionStartLine
+    Used at lines: 18
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 shape_design.c_showFacetPartEditor_FUN_0045f1d0  [.keep]  (2 suspicious globals)
   File: shape/design.c
 
   g_KeyboardState
-    Used at lines: 174, 175, 181, 182, 188, ...
+    Used at lines: 167, 168, 174, 175, 181, ...
     NOT found in function reference list
 
   g_WireframeMode
-    Used at lines: 139, 368, 368
+    Used at lines: 132, 361, 361
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -89,7 +109,7 @@ core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0  [.keep]  (1 suspicious glo
   File: core/dcamera.cpp
 
   g_TextureCacheInstance
-    Used at lines: 381, 382, 386, 387, 390, ...
+    Used at lines: 373, 374, 378, 379, 382, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -97,7 +117,7 @@ core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0  [.keep]  (1 suspi
   File: core/dcamera.cpp
 
   g_CameraEdgeDetectionResults
-    Used at lines: 39
+    Used at lines: 35
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -113,7 +133,7 @@ core_game.cpp_CGame_finishAct_FUN_004e3b90  [.keep]  (1 suspicious globals)
   File: core/game.cpp
 
   g_CDemonCameraInstance
-    Used at lines: 54
+    Used at lines: 43
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -121,7 +141,15 @@ core_game.cpp_CGame_processFrame_FUN_004da100  [.keep]  (1 suspicious globals)
   File: core/game.cpp
 
   g_ColorCubeLookup
-    Used at lines: 345
+    Used at lines: 343
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_game.cpp_CGame_renderOverlay_FUN_004d8040  [.keep]  (1 suspicious globals)
+  File: core/game.cpp
+
+  g_CDemonCameraInstance
+    Used at lines: 47, 52
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -137,7 +165,7 @@ core_script.cpp_parseConditionExpression_FUN_00561a30  [.keep]  (1 suspicious gl
   File: core/script.cpp
 
   g_CommandTemplates
-    Used at lines: 95
+    Used at lines: 94
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -153,7 +181,7 @@ core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0  [.keep]  (1 s
   File: core/skeledit.cpp
 
   g_ColorCubeLookup
-    Used at lines: 543
+    Used at lines: 522
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -185,7 +213,23 @@ shape_design.c_polygonToolModeManager_FUN_00464c90  [.keep]  (1 suspicious globa
   File: shape/design.c
 
   g_KeyboardState
-    Used at lines: 36, 36, 37, 41, 66, ...
+    Used at lines: 35, 35, 36, 40, 65, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_processVerticesAndRenderPolygons_FUN_0045d5d0  [.keep]  (1 suspicious globals)
+  File: shape/design.c
+
+  g_KeyboardState
+    Used at lines: 26, 27, 31, 32, 35, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_renderPolygonVerticesWithLabels_FUN_0045c2f0  [.keep]  (1 suspicious globals)
+  File: shape/design.c
+
+  g_KeyboardState
+    Used at lines: 19, 19, 20
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -194,6 +238,14 @@ shape_design.c_renderPolygonWireframe_FUN_0045d300  [.keep]  (1 suspicious globa
 
   g_RenderVertexBuffer
     Used at lines: 22, 23, 25, 26
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_design.c_renderVertexPointsWithLabels_FUN_0045bff0  [.keep]  (1 suspicious globals)
+  File: shape/design.c
+
+  g_KeyboardState
+    Used at lines: 24, 24, 25
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -401,26 +453,6 @@ core_baron.cpp_staticInit_FUN_00412b20  [.cpp]  (4 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_script.cpp_clearSelections_FUN_005644e0  [.cpp]  (4 suspicious globals)
-  File: core/script.cpp
-
-  g_SelectionEndColumn
-    Used at lines: 26
-    NOT found in function reference list
-
-  g_SelectionEndLine
-    Used at lines: 25
-    NOT found in function reference list
-
-  g_SelectionStartColumn
-    Used at lines: 24
-    NOT found in function reference list
-
-  g_SelectionStartLine
-    Used at lines: 21
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 engine_keys.cpp_CKeys_clearKeypresses_FUN_00502450  [.cpp]  (3 suspicious globals)
   File: engine/keys.cpp
 
@@ -506,14 +538,6 @@ core_fire.cpp_CRainDrop_render_FUN_004c6830  [.cpp]  (1 suspicious globals)
 
   g_CameraLoadImageReadBuffer
     Used at lines: 77, 81
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_game.cpp_CGame_renderOverlay_FUN_004d8040  [.cpp]  (1 suspicious globals)
-  File: core/game.cpp
-
-  g_CDemonCameraInstance
-    Used at lines: 63, 68
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -626,30 +650,6 @@ shape_design.c_handleEditorHotkeys_FUN_0045b990  [.cpp]  (1 suspicious globals)
 
   g_KeyboardState
     Used at lines: 14, 14, 15, 22, 22, ...
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_processVerticesAndRenderPolygons_FUN_0045d5d0  [.cpp]  (1 suspicious globals)
-  File: shape/design.c
-
-  g_KeyboardState
-    Used at lines: 28, 29, 33, 34, 37, ...
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_renderPolygonVerticesWithLabels_FUN_0045c2f0  [.cpp]  (1 suspicious globals)
-  File: shape/design.c
-
-  g_KeyboardState
-    Used at lines: 23, 23, 24
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_renderVertexPointsWithLabels_FUN_0045bff0  [.cpp]  (1 suspicious globals)
-  File: shape/design.c
-
-  g_KeyboardState
-    Used at lines: 28, 28, 29
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

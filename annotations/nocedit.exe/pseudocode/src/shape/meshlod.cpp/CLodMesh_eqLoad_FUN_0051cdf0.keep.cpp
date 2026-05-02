@@ -13,13 +13,11 @@ void __cdecl shape_meshlod_cpp_CLodMesh_eqLoad_FUN_0051cdf0(CLodMesh *this_ptr,_
   int iVar3;
   int iVar4;
   int iVar1;
-  void *pvVar5;
   int local_38;
   void *local_34;
   int local_24;
   int local_20;
   double dVar2;
-  CLodEdge *pCVar1;
   CLodEdge *record;
   
   local_20 = 1;

@@ -41,13 +41,11 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
   float local_58;
   float local_54;
   float local_50;
-  float local_44;
   int *local_40;
   float local_3c;
   float local_38;
   float local_34;
   float local_30;
-  uint local_2c;
   float local_28;
   float local_24;
   SRoom *local_20;
@@ -55,6 +53,8 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
   SRoom *local_18;
   CMatrix3x3f *local_14;
   SRoom *pSVar2;
+  float local_44;
+  uint local_2c;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Preparing set.");

@@ -10,7 +10,6 @@
 void __cdecl core_sound_cpp_CSound_findRandomSoundFile_FUN_005b1ed0(CSound *this_ptr,char *out_result,char *wildcard_pattern)
 
 {
-  char cVar1;
   int iVar2;
   char *pcVar3;
   char *pcVar4;

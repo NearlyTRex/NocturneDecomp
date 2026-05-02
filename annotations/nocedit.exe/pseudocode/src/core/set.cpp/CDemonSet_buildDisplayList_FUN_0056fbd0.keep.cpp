@@ -22,14 +22,10 @@ void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_0056fbd0(CDemonSet *thi
   CVector3f local_70;
   CVector3i local_64;
   CVector3f CStack_50;
-  float fStack_44;
-  float fStack_40;
-  float fStack_3c;
   CVector3f CStack_38;
   int local_2c;
   uint local_28;
   int local_24;
-  int local_14;
   UOrientationVector *pUVar5;
   int *piVar6;
   CLocation *pCVar1;
@@ -37,7 +33,6 @@ void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_0056fbd0(CDemonSet *thi
   uint uVar4;
   UOrientationVector *pUVar2;
   CDemonActorTransformState *pCVar3;
-  int iVar7;
   
   if (g_CGamePtr->profile_mode != 0) {
     local_2c = wincore_winrun_cpp_getTime_FUN_005f2dc0();

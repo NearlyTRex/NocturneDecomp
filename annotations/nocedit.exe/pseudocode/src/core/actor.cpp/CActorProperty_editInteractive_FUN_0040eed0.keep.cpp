@@ -64,13 +64,9 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
   char acStack_1d9 [100];
   char local_175 [101];
   char local_110;
-  char local_10f [99];
   char local_ac;
-  char local_ab [99];
   CVector3f local_48;
   float local_3c;
-  float local_38;
-  float local_34;
   CActorProperty *local_30;
   CActorProperty *local_2c;
   CDemonActor *local_28;
@@ -85,6 +81,8 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
   CClothList *this_ptr_00;
   char cVar2;
   byte uVar1;
+  float local_38;
+  float local_34;
   
   bVar21 = 0;
   if (this_ptr->enabled_flag == 0) {

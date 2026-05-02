@@ -23,9 +23,6 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
   int iVar16;
   char acStack_238 [256];
   char local_138 [256];
-  float *local_38;
-  SClothBone *local_34;
-  _FILE *local_30;
   float *local_2c;
   float *local_28;
   CVector3f *local_24;
@@ -35,7 +32,6 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
   float *local_14;
   float fVar1;
   float fVar3;
-  _FILE *p_Var8;
   float fVar6;
   float fVar7;
   float fVar4;

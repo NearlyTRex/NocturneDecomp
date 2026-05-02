@@ -15,6 +15,7 @@ CFLAGS=(
     -Wno-format-security -Wno-format-extra-args
     -Wincompatible-pointer-types -Wint-conversion
     -Wreturn-type -Wtautological-compare
+    -Wunused-variable
     -I "$INCLUDE_DIR"
     -I "$SHIMS_DIR"
 )
@@ -25,15 +26,30 @@ errors=()
 
 test_file() {
     local f="$1"
-    if clang++ "${CFLAGS[@]}" "$f" 2>/dev/null; then
+    local out
+    out=$(clang++ "${CFLAGS[@]}" "$f" 2>&1)
+    local rc=$?
+    # Pull out only the "unused variable" / "unused but set variable" warnings;
+    # other diagnostics are reported via fail/errors below.
+    local unused
+    unused=$(echo "$out" | grep -E "warning: unused( but set)? variable")
+    if [ $rc -eq 0 ]; then
         echo "  PASS  $f"
         ((pass++))
     else
         echo "  FAIL  $f"
         ((fail++))
         errors+=("$f")
-        clang++ "${CFLAGS[@]}" "$f" 2>&1 | head -20
+        # Strip the unused-variable lines from the failure dump so the real
+        # error stays the focus, then cap to a sane number of lines.
+        echo "$out" | grep -vE "warning: unused( but set)? variable" | head -20
         echo ""
+    fi
+    if [ -n "$unused" ]; then
+        # Report each unused local on its own indented line. Format:
+        #   file.cpp:L:C: warning: unused variable 'name' [-Wunused-variable]
+        # → "    UNUSED L: name"
+        echo "$unused" | sed -E "s|^[^:]+:([0-9]+):[0-9]+:.*'([^']+)'.*|    UNUSED L\1: \2|"
     fi
 }
 

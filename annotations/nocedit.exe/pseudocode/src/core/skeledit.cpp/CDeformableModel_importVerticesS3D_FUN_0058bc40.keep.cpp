@@ -14,7 +14,6 @@ int __cdecl core_skeledit_cpp_CDeformableModel_importVerticesS3D_FUN_0058bc40(CD
   int iVar3;
   int iVar4;
   int iVar1;
-  int iVar5;
   float local_1c;
   float local_18;
   float local_14;

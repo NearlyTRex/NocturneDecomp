@@ -17,16 +17,11 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_0043bae0(CCloth *this_ptr,int use_
   CCloth *pCVar4;
   int iVar5;
   CCloth *pCVar2;
-  SMRGLPrimitiveQuad *pSVar3;
   int iVar4;
-  uint *puVar5;
-  uint *puVar6;
-  byte bVar7;
   SMRGLPrimitiveQuad *pSVar6;
   int iVar7;
   int local_1c;
   int local_18;
-  SMRGLPrimitiveQuad *local_14;
   int iVar9;
   SMRGLPrimitiveQuad *pSVar8;
   CDemonRenderer *pCVar1;

@@ -39,9 +39,7 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_005c3150(CStranger *thi
   CVector3f local_40;
   CVector3f local_34;
   CVector3f local_28;
-  CLightGun *local_1c;
   float local_18;
-  float local_14;
   
   iVar5 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0((CCharacter *)this_ptr);
   if (iVar5 == 0) {

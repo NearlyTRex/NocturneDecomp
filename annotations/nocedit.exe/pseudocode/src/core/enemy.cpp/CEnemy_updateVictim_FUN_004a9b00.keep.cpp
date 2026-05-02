@@ -23,17 +23,11 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
   int iVar11;
   int iVar5;
   CVector3f CStack_48;
-  CVector3f *local_3c;
   float local_38;
-  CCharacter *local_34;
-  float fStack_30;
   int local_2c;
-  CLocation *local_28;
   int local_24;
   int local_20;
-  CCharacter *local_1c;
   float local_18;
-  float local_14;
   CCharacter *iVar9;
   float fVar3;
   float fVar4;

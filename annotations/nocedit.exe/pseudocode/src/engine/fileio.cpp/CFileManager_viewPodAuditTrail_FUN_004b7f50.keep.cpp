@@ -31,7 +31,6 @@ void __cdecl engine_fileio_cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50(CFile
   CPodAuditRecord local_1d0;
   char local_98 [100];
   char local_34 [32];
-  int local_14;
   int local_10;
   char cVar1;
   

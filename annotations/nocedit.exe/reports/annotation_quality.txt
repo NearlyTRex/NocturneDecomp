@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        76 ( 1.2%)
+  Functions with type issues:        71 ( 1.1%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          1
-    Undefined types in variables:      71
+    Undefined types in variables:      66
     Unresolved stack params:           4
 
-  Excluded (.keep / MMX / by-value):   149 functions
+  Excluded (.keep / MMX / by-value):   154 functions
     Wrong calling convention:          1
-    Undefined types in variables:      146
+    Undefined types in variables:      151
     Unresolved stack params:           3
 
 ====================================================================================================
@@ -107,17 +107,12 @@ Unresolved stack parameters (missing from signature) (4)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (71)
+Undefined types in variables (66)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
     Address: 0x00517630  File: shape/meshlod.cpp
     Locals:  local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined4), local_f0 (undefined4), local_ec (undefined4), local_e8 (undefined4), local_e4 (undefined4), local_e0 (undefined4), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4), local_c4 (undefined4), local_c0 (undefined4), local_bc (undefined4), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined4), local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_54 (undefined4), local_50 (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined4), local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CPathMap_findPathToDestination
-    Address: 0x00547320  File: core/path.cpp
-    Locals:  local_118 (undefined4), local_10c (undefined1), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined1), local_e8 (undefined1), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined1), local_c4 (undefined1), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined1), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined1), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined1), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined1), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CPoly_scale
@@ -160,11 +155,6 @@ Undefined types in variables (71)
     Locals:  local_58 (undefined4), uStack_54 (undefined4), local_50 (undefined4), uStack_4c (undefined4), local_48 (undefined4), uStack_44 (undefined4), local_40 (undefined4), uStack_3c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CMobster_processWeaponPickup
-    Address: 0x00526d90  File: core/mobster.cpp
-    Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CDemonSet_renderEnvMapPrimitives
     Address: 0x00570040  File: core/set.cpp
     Locals:  local_ac (undefined4), uStack_a8 (undefined4), local_6c (undefined4), uStack_68 (undefined4)
@@ -183,11 +173,6 @@ Undefined types in variables (71)
   CTrash_process
     Address: 0x005decf0  File: core/trash.cpp
     Locals:  local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  setupViewMatrix
-    Address: 0x0045ba60  File: shape/design.c
-    Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CPoly_rayIntersect
@@ -233,11 +218,6 @@ Undefined types in variables (71)
   requantizeLayer3SamplesSimple
     Address: 0x0052fee0  File: sound/mp3.cpp
     Locals:  local_34 (undefined4 *), local_24 (undefined4 *)
-    Suggested: Resolve undefined types to concrete types
-
-  CBugs_sampleGroundHeight
-    Address: 0x00425b70  File: core/bugs.cpp
-    Locals:  local_24 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CCharacter_updateWanderToWaypoint
@@ -460,11 +440,6 @@ Undefined types in variables (71)
     Locals:  auStackY_1808 (undefined4[1521])
     Suggested: Resolve undefined types to concrete types
 
-  waitForMutexTimeout
-    Address: 0x005f4010  File: wincore/winrun.cpp
-    Locals:  local_8 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
 ====================================================================================================
 EXCLUDED: FUNCTIONS WITH .keep / MMX / BY-VALUE STRUCT OVERRIDES
 ====================================================================================================
@@ -530,7 +505,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (146)
+Undefined types - .keep overrides (151)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -566,6 +541,11 @@ Undefined types - .keep overrides (146)
   closestPointOnSegment3D
     Address: 0x005d6020  File: shape/superopt.cpp
     Locals:  local_168 (undefined4), uStack_164 (undefined4), local_150 (undefined4), local_14c (undefined4), local_148 (undefined8), local_128 (undefined4[4]), local_118 (undefined4), uStack_114 (undefined4), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), uStack_f4 (undefined4), local_f0 (undefined4), uStack_ec (undefined4), local_e8 (undefined4), uStack_e4 (undefined4), local_d0 (undefined4), local_cc (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a8 (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4[6]), local_80 (undefined4[4]), local_70 (undefined4), uStack_6c (undefined4), local_68 (undefined4), uStack_64 (undefined4), local_60 (undefined4), uStack_5c (undefined4), local_58 (undefined4), uStack_54 (undefined4), local_40 (undefined4), uStack_3c (undefined4), local_38 (undefined4), uStack_34 (undefined4), local_30 (undefined4), uStack_2c (undefined4), local_28 (undefined4), uStack_24 (undefined4), local_20 (undefined4), uStack_1c (undefined4), local_18 (undefined4), uStack_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CPathMap_findPathToDestination
+    Address: 0x00547320  File: core/path.cpp
+    Locals:  local_118 (undefined4), local_10c (undefined1), local_100 (undefined4), local_fc (undefined4), local_f8 (undefined4), local_f4 (undefined1), local_e8 (undefined1), local_dc (undefined4), local_d8 (undefined4), local_d4 (undefined4), local_d0 (undefined1), local_c4 (undefined1), local_b8 (undefined4), local_b4 (undefined4), local_b0 (undefined4), local_ac (undefined4), local_a4 (undefined4), local_a0 (undefined4), local_9c (undefined4), local_98 (undefined4), local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_88 (undefined1), local_7c (undefined4), local_78 (undefined4), local_74 (undefined4), local_70 (undefined1), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined1), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_3c (undefined4), local_38 (undefined4), local_34 (undefined4), local_30 (undefined4), local_2c (undefined4), local_28 (undefined1), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CObj_removeTJunctions
@@ -768,6 +748,11 @@ Undefined types - .keep overrides (146)
     Locals:  local_118 (undefined4), uStack_114 (undefined4), local_110 (undefined8), local_108 (undefined4), uStack_104 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
+  CMobster_processWeaponPickup
+    Address: 0x00526d90  File: core/mobster.cpp
+    Locals:  local_24 (undefined4), local_20 (undefined4), local_1c (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
   CDemonSet_renderEnvMapTriangles
     Address: 0x005702b0  File: core/set.cpp
     Locals:  local_d0 (undefined4), uStack_cc (undefined4), local_90 (undefined4), uStack_8c (undefined4)
@@ -876,6 +861,11 @@ Undefined types - .keep overrides (146)
   CDeformableModel_importVerticesS3D
     Address: 0x0058bc40  File: core/skeledit.cpp
     Locals:  local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  setupViewMatrix
+    Address: 0x0045ba60  File: shape/design.c
+    Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CLodMesh_parseS3DFile
@@ -1001,6 +991,11 @@ Undefined types - .keep overrides (146)
   CBox_loadFromFile
     Address: 0x0041fe90  File: core/box.cpp
     Locals:  local_10 (undefined1[4])
+    Suggested: Resolve undefined types to concrete types
+
+  CBugs_sampleGroundHeight
+    Address: 0x00425b70  File: core/bugs.cpp
+    Locals:  local_24 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CCharacter_ctor
@@ -1261,6 +1256,11 @@ Undefined types - .keep overrides (146)
   resampleAndConvertAudio
     Address: 0x005aa7f0  File: sound/sndmain.cpp
     Locals:  local_18 (undefined1)
+    Suggested: Resolve undefined types to concrete types
+
+  waitForMutexTimeout
+    Address: 0x005f4010  File: wincore/winrun.cpp
+    Locals:  local_8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
 --------------------------------------------------------------------------------

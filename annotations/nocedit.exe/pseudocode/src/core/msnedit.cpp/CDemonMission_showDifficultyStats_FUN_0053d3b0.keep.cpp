@@ -24,11 +24,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0(CDe
   CPickList local_5cc;
   char local_224 [500];
   double local_30;
-  int local_28;
   float local_24;
   float local_20;
-  int local_1c;
-  char *local_18;
   float local_14;
   int total_ammo;
   CDemonActor *actor_ptr;

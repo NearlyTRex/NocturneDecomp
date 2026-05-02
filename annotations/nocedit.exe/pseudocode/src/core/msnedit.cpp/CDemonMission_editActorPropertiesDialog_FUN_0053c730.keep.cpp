@@ -11,18 +11,15 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c7
 
 {
   char cVar2;
-  int iVar2;
-  char *pcVar4;
   int iVar5;
   char *pcVar3;
-  char *pcVar6;
   char *pcVar5;
-  byte bVar6;
   CPickList CStack_540;
   char acStack_198 [300];
   char local_6c [100];
   uint window_flags;
   char cVar1;
+  byte bVar6;
   
   bVar6 = 0;
   core_actor_cpp_CActorPropertyList_resetSelection_FUN_0040e150(&g_MsnEditPropertyList);

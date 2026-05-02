@@ -10,22 +10,18 @@
 int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this_ptr,short *pcm_output)
 
 {
-  uint *puVar1;
   CFileBitStream *pCVar2;
   uint uVar3;
   int iVar4;
   int iVar5;
   int iVar6;
   float *pfVar7;
-  int iVar8;
   int iVar9;
   uint uVar10;
-  int *piVar11;
   int iVar12;
   short *psVar13;
   SMpegSubbandScalefactors *subband_samples;
   SMpegLayer3GranuleInfo *side_info;  // granule cursor passed to requantizeLayer3Samples; Ghidra mistyped as SMpegLayer3SideInfo *
-  int iVar16;
   uint local_60d0;
   uint local_60cc;
   SMpegStereoSubbandSamples local_60c8;
@@ -45,30 +41,13 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
   float local_190 [32];
   SMpegFrameHeader local_110;
   SMpegFrameDecodeContext local_e0;
-  int local_b0;
-  int local_ac;
-  uint local_a8;
   uint local_a4 = 0;  // asm inits to 0, decompiler dropped the init; read once as (local_a4 - 1) for a "frame %d" error message that effectively always prints -1
-  SMpegFrameHeader *local_a0;
-  int local_9c;
-  int local_94;
-  int local_90;
-  int local_8c;
-  int local_88;
-  CFileBitStream *local_84;
-  SMpegSubbandScalefactors *local_80;
-  SMpegSubbandScalefactors *local_7c;
-  CFileBitStream *local_78;
   int local_74;
   int local_70;
-  CFileBitStream *local_6c;
-  uint local_68;
-  SMpegFrame *local_64;
   int local_60;
   int local_5c;
   SMpegSubbandSamples *local_58;
   float *local_54;
-  int local_50;
   SMpegLayer3GranuleInfo *local_4c;  // granule cursor; Ghidra mistyped as SMpegFrame *
   SMpegSubbandSamples *local_48;
   SMpegLayer3GranuleInfo *local_44;  // granule cursor; Ghidra mistyped as SMpegFrame *
@@ -76,14 +55,11 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
   int local_3c;
   SMpegLayer3GranuleInfo *local_38;  // granule cursor; Ghidra mistyped as SMpegLayer3SideInfo *
   int local_34;
-  short *local_30;
-  int local_2c;
   int local_28;
   int local_24;
   int local_20;
   int local_1c;
   int local_18;
-  int local_14;
 
   local_e0.frame.header = &local_110;
   local_e0.frame.table_index = -1;

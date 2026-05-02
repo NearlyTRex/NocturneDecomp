@@ -15,21 +15,16 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
   uint uVar3;
   int iVar3;
   EWeatherType EVar4;
-  int iVar5;
   EGroundType type;
   char *pcVar4;
-  char *pcVar6;
-  char *pcVar7;
   char *pcVar5;
-  byte bVar8;
   CPickList local_714;
   char local_36c [260];
   char local_268 [256];
   char local_168 [256];
   char local_68 [80];
-  char *local_18;
   char local_14 [4];
-  char cVar1;
+  byte bVar8;
   
   bVar8 = 0;
   this_ptr->actor_count = 0;

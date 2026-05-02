@@ -31,9 +31,9 @@ void __cdecl core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(CDem
   int local_18;
   int local_14;
   int local_10;
-  int local_c;
   int iVar2;
   uchar *puVar1;
+  int local_c;
 
   if (this_ptr->voxel_buffer1 != (SVoxelGrid *)0x0) {
     local_64 = (this_ptr->max_bounds).x - (this_ptr->min_bounds).x;

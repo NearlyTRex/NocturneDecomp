@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 501,
-    "complexity_score": 190,
+    "complexity_score": 175,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 27,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 175,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_unreachable"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 676
   },
   "cross_references": [],
@@ -294,6 +292,17 @@
     },
     "pcode_op_count": 2281
   },
+  "resolved_suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004c0a9d) */",
+      "type": "warning_unreachable"
+    }
+  ],
   "stack_frame": {
     "frame_size": 220,
     "local_size": 216,
@@ -481,16 +490,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unreachable code block removed",
-      "line": 2,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x004c0a9d) */",
-      "type": "warning_unreachable"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

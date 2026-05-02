@@ -16,9 +16,7 @@ char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690(char *filen
   uint uVar1;
   char *pcVar2;
   char local_6c [80];
-  int local_1c;
   uint local_18;
-  int local_14;
 
   size = width * height;
   if (buffer == (char *)0x0) {

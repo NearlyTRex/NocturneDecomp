@@ -22,25 +22,14 @@ void __cdecl core_skeledit_cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240(
   uint *puVar13;
   int *piVar6;
   int iVar7;
-  uint *puVar8;
-  uint *puVar9;
-  uint *puVar10;
-  uint *puVar11;
-  uint *puVar12;
-  byte bVar13;
   ushort uStack_44;
   CDeformableModel *local_38;
   int local_34;
   int local_30;
-  int local_2c;
   int local_28;
   int local_24;
   int local_20;
-  int local_1c;
-  int local_18;
-  CDeformableModel *local_14;
   int *piVar1;
-  int iVar4;
   int iVar3;
   
   local_34 = 0;

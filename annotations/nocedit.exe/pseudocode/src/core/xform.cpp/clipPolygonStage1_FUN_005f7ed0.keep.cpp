@@ -22,7 +22,6 @@ void __cdecl core_xform_cpp_clipPolygonStage1_FUN_005f7ed0(void)
   SRenderVertex *pSVar7;
   SRenderVertex *pSVar2;
   SRenderVertex *pSVar8;
-  byte bVar9;
   int local_14;
   
   local_14 = 0;

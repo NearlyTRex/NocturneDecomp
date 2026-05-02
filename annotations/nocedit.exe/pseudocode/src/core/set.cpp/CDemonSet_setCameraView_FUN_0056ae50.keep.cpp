@@ -18,20 +18,14 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
   int iVar5;
   CDemonSet *pCVar7;
   int iVar7;
-  CMatrix3x3f *pCVar9;
-  float *pfVar10;
   CDemonSet *pCVar8;
   uint corner_index;
   SFog *pSVar11;
   int iVar12;
-  int *piVar13;
   int *piVar14;
   C3DSCamera *this_ptr_02;
-  int *piVar15;
-  byte bVar16;
   int local_184 [24];
   char local_124 [80];
-  float local_d4 [10];
   CMatrix3x3f local_ac;
   CBoundingBox3D local_84;
   CVector3f CStack_6c;
@@ -40,16 +34,12 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
   CVector3f local_48;
   CVector3f local_3c;
   CVector3f local_30;
-  C3DSLight *local_24;
-  int local_20;
-  int *local_1c;
   CDemonSet *local_18;
   int local_14;
   CDemonActor *this_ptr_00;
   CDemonLight *this_ptr_01;
   C3DSLight **ppCVar2;
   int fVar3;
-  int iVar4;
   
   if ((index < 0) || (this_ptr->camera_count <= index)) {
     g_CurrentFilename = "..\\core\\set.cpp";

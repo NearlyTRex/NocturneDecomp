@@ -13,17 +13,9 @@ CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_0054c850(CPlatform *this
   CPlatform *pCVar3;
   CPlatform_ptr_344 pCVar4;
   CPlatform_ptr_784 pCVar5;
-  CPlatform *pCVar6;
-  uint *puVar8;
-  uint *puVar9;
-  uint *puVar10;
-  uint *puVar11;
-  byte bVar12;
-  float afStackY_17f0 [1523];
   CQuaternion4f local_14;
   CVector3f *pCVar2;
   CLocation *pCVar1;
-  CPlatform *pCVar7;
   
   pCVar3 = (CPlatform *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar3->model);

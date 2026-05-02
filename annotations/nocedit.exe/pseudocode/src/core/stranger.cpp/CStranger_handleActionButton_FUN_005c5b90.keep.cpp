@@ -17,7 +17,6 @@ void __cdecl core_stranger_cpp_CStranger_handleActionButton_FUN_005c5b90(CStrang
   float fVar5;
   int iVar5;
   float fVar6;
-  CDeformableModelInstance *pCVar1;
   CDoor *pCVar2;
   
   if (((((this_ptr->base).player_input.action_state.fire != 0) && (this_ptr->action_pending == 0))

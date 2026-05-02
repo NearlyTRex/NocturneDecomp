@@ -26,7 +26,6 @@ void __cdecl shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a3
   char local_310 [256];
   char local_210 [256];
   char local_110 [256];
-  CFileFinder *str2;
   char cVar1;
   
   bVar6 = 0;

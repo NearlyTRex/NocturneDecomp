@@ -36,16 +36,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
   CDeformableModelInstance *pCVar15;
   char (*pacVar16) [40];
   CVector3f local_68;
-  float local_5c;
-  float local_58;
-  float local_54;
-  float local_50;
-  float local_4c;
-  float local_48;
   CVector3f local_44;
-  float local_38;
-  float local_34;
-  float local_30;
   float local_24;
   SMotion *local_20;
   float local_1c;

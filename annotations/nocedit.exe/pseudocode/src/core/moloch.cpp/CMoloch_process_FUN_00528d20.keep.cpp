@@ -26,29 +26,17 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr,floa
   float local_1b18;
   float local_1b14;
   SPose SStack_1b10;
-  float local_74;
-  float local_70;
-  float local_6c;
   CVector3f local_68;
   CVector3f local_5c;
   CVector3f local_50;
   CVector3f local_44;
-  float local_38;
-  float local_34;
-  float local_30;
-  float fStack_24;
   char *pcStack_20;
-  float local_1c;
-  float local_18;
-  SMotion *local_14;
-  CDeformableModelInstance *this_ptr_00;
   CDemonActor *pCVar3;
   uint uVar9;
   CCharacter *this_ptr_01;
   float fVar4;
   CGame *pCVar5;
   CVector3f *pCVar1;
-  CDeformableModelInstance *pCVar2;
   
   if ((this_ptr->base).ai_task == HERO_TASK_SUSPEND) {
     return;

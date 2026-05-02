@@ -12,11 +12,6 @@
 void __cdecl core_charactr_cpp_CCharacter_applyLookAt_FUN_0042dcd0(CCharacter *this_ptr)
 
 {
-  uint *puVar1;
-  uint *puVar2;
-  uint *puVar3;
-  byte bVar4;
-  float afStackY_1850 [1522];
   CQuaternion4f *pCVar1;
   CQuaternion4f local_74;
   CQuaternion4f local_64;
@@ -25,7 +20,6 @@ void __cdecl core_charactr_cpp_CCharacter_applyLookAt_FUN_0042dcd0(CCharacter *t
   CQuaternion4f local_34;
   CQuaternion4f local_24;
   CQuaternion4f local_14;
-  CQuaternion4f *pCVar5;
   
   if (0.0 < this_ptr->look_at_weight) {
     if (this_ptr->look_at_head_bone < 0) {

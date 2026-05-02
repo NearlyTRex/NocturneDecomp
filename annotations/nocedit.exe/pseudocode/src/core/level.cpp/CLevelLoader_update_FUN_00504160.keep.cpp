@@ -26,13 +26,8 @@ void __cdecl core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_
   CVector3i local_54;
   CVector3i local_48;
   CVector3i local_3c;
-  float local_30;
-  float local_2c;
-  float local_28;
   CVector3f local_24;
   float local_18;
-  int local_14;
-  CBitFont *local_10;
   CDemonRenderer *pCVar1;
   CDemonSet *pCVar2;
   

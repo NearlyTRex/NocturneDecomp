@@ -21,9 +21,6 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
   float10 fVar5;
   double dVar6;
   CSfxSample local_1dc;
-  double local_28;
-  double local_20;
-  float local_18;
   float10 fVar1;
 
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,delta_time);

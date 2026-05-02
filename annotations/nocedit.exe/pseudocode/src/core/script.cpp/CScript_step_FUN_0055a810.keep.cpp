@@ -51,15 +51,9 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *t
   CDemonActor *pCVar18_00;
   CCharacter *pCVar14;
   CDemonActor *pCVar16;
-  uint uVar17;
   uint uVar29;
-  uint uVar18;
-  char *pcVar19;
   int iVar30;
-  char *pcVar20;
-  char *pcVar21;
   char *pcVar31;
-  byte bVar22;
   float local_3f80;
   float local_3f7c;
   float local_3f78;
@@ -156,7 +150,6 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *t
   CVector3f local_148;
   CVector3f local_13c;
   CVector3f local_130;
-  int local_124;
   int local_120;
   char *local_11c;
   C3DSLight *local_118;
@@ -227,11 +220,11 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *t
   float local_14;
   CDemonSet *pCVar5;
   CGame *pCVar4;
-  char cVar2;
   SDialogEntry *pSVar3;
   double dVar1;
   CInventory *inventory_ptr;
   float y;
+  byte bVar22;
   
   bVar22 = 0;
   if ((this_ptr->next_cmd < 0) || (this_ptr->parsed_line_count <= this_ptr->next_cmd)) {

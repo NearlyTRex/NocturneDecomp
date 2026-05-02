@@ -19,7 +19,6 @@ void __cdecl core_script_cpp_CScript_editParameterAtPosition_FUN_00565ae0(CScrip
   char *pcVar5;
   char *pcVar4;
   char *pcVar6;
-  char *pcVar7;
   char *pcVar8;
   char *pcVar9;
   byte bVar8;

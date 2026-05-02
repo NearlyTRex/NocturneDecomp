@@ -19,9 +19,6 @@ void __cdecl core_particle_cpp_CParticle_process_FUN_00545760(CParticle *this_pt
   int iVar8;
   CVector3i local_74;
   CVector3f local_2c;
-  float local_20;
-  float local_1c;
-  float local_14;
   
   if (0.0 < this_ptr->lifetime_remaining) {
     if ((CParticle *)&this_ptr->previous_position != this_ptr) {

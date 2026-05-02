@@ -10,7 +10,6 @@
 CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_ctor_FUN_00508920(CMansionPuzzleCircle *this_ptr)
 
 {
-  char cVar1;
   CMansionPuzzleCircle *pCVar2;
   CMansionPuzzleCircle_ptr_344 pCVar3;
   CMansionPuzzleCircle_ptr_724 pCVar4;
@@ -18,7 +17,6 @@ CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_ctor_FUN_005
   CMansionPuzzleCircle_ptr_1520 pvVar2;
   CMansionPuzzleCircle_ptr_2720 pvVar3;
   CMansionPuzzleCircle_ptr_4928 pvVar4;
-  char *pcVar2;
   char *pcVar3;
   
   pCVar2 = (CMansionPuzzleCircle *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);

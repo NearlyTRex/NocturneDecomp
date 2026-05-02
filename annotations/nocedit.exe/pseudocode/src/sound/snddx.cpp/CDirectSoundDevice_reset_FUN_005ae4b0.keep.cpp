@@ -16,7 +16,6 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_reset_FUN_005ae4b0(CDirectSoundDe
   char *pcVar4;
   char *pcVar3;
   int iVar4;
-  int iVar5;
   char acStack_4c4 [400];
   char acStack_334 [400];
   char acStack_1a4 [400];

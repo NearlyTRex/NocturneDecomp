@@ -19,10 +19,8 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590(C
   double min_edge_length;
   double max_edge_length;
   uint *puVar9;
-  uint uVar11;
   uint *puVar14;
   uint uVar12;
-  int iVar15;
   CVector3d *pCVar13;
   uint *puVar16;
   int iVar14;

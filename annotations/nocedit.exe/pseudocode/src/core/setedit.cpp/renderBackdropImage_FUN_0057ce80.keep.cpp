@@ -28,7 +28,6 @@ void __cdecl core_setedit_cpp_renderBackdropImage_FUN_0057ce80(CVector3i *positi
   void *local_20;
   void *local_1c;
   int local_18;
-  _FILE *local_14;
 
   local_24 = g_WindowWidth;
   local_28 = g_WindowHeight;

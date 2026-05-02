@@ -27,16 +27,8 @@ int __cdecl shape_design_c_generateOctant_FUN_00469420(void)
   double dVar6;
   int result;
   char local_8c [80];
-  uint local_3c;
-  int local_38;
-  int local_34;
   int local_30;
   int local_2c;
-  float local_28;
-  float local_24;
-  float local_20;
-  float local_1c;
-  float local_18;
   int local_14;
   char cVar1;
   

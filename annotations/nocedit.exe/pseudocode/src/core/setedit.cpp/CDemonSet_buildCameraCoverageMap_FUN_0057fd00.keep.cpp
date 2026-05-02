@@ -18,7 +18,6 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDem
   CVector3i local_50;
   CVector3i local_44;
   CVector3i local_38;
-  CVector3i *local_2c;
   CBoundingBox3D *local_28;
   CVector3i *local_24;
   CVector3f *local_20;

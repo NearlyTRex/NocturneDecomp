@@ -17,9 +17,7 @@ char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name)
   double dVar6;
   char local_170 [272];
   int local_60;
-  double local_20;
   float local_18;
-  float fStack_14;
 
   sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)local_170);
   strcpy(local_170,sample_name);

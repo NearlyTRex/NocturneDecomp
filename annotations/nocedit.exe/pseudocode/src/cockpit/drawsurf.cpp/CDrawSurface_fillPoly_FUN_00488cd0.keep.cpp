@@ -10,8 +10,6 @@
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0(CDrawSurface *this_ptr,int vertex_count,SPoint2i *vertices)
 
 {
-  uint uVar2;
-  uint uVar3;
   int iVar4;
   int iVar9;
   int iVar10;
@@ -21,22 +19,14 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0(CDrawSurfac
   int iVar7;
   int iVar12;
   int iVar8;
-  int *piVar9;
-  int *piVar10;
-  uint *puVar11;
-  uint *puVar12;
   int iVar13;
   SEdgeTableEntry *pSVar13;
   SEdgeTableEntry *pSVar14;
-  uint *puVar15;
-  uint *puVar16;
-  byte bVar17;
   int aiStack_d8 [40];
   int aiStack_38 [4];
   SPoint2i *local_28;
   int local_24;
   int local_20;
-  int local_1c;
   int local_14;
   bool bVar3;
   int iVar2;

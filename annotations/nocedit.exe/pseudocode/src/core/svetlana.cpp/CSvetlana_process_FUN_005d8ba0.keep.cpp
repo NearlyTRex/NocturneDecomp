@@ -27,36 +27,18 @@ void __cdecl core_svetlana_cpp_CSvetlana_process_FUN_005d8ba0(CSvetlana *this_pt
   int iVar9;
   int iVar5;
   SMotion *pSVar6;
-  uint *puVar10;
-  uint *puVar11;
-  byte bVar12;
-  float afStackY_1870 [1520];
   float fVar7;
   float local_98;
-  CQuaternion4f CStack_94;
   CQuaternion4f CStack_84;
-  float local_74;
-  float local_70;
-  float local_6c;
   CVector3f local_68;
   CVector3f local_5c;
   CVector3f local_50;
-  float local_44;
-  float local_40;
-  float local_3c;
   CVector3f local_38;
-  int local_24;
-  float local_20;
-  CDeformableModelInstance *pCStack_1c;
-  float local_18;
-  CCharacter_full_vtable *local_14;
-  float fVar13;
   CDeformableModel_MotionBlendWeightFunc *blend_callback;
   float fVar3;
   CCharacter *this_ptr_00;
   CDeformableModelInstance *model_ptr;
   bool bVar2;
-  UOrientationVector *euler;
   CDemonActor *pCVar1;
 
   if (((this_ptr->base).base.hit_points < (float)100) &&

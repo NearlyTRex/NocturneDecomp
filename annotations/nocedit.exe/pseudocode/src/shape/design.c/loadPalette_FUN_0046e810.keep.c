@@ -19,12 +19,9 @@ void __cdecl shape_design_c_loadPalette_FUN_0046e810(void)
   char *pcVar7;
   char *pcVar8;
   char *pcVar5;
-  char *pcVar6;
-  char *pcVar9;
   byte bVar7;
   char local_b8 [80];
   char local_68 [80];
-  char *local_18;
   int local_14;
   char cVar1;
   

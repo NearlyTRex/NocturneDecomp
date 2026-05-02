@@ -12,12 +12,11 @@ void __cdecl shape_edittool_cpp_CEditorTools_backupScreen_FUN_0049e410(CEditorTo
 {
   int iVar1;
   uint uVar2;
-  uint uVar3;
   int iVar4;
   uint *puVar5;
   uint *puVar6;
-  byte bVar7;
   uint auStack_12c4 [1200];
+  byte bVar7;
   
   bVar7 = 0;
   if (g_UseExternalRenderer != 0) {

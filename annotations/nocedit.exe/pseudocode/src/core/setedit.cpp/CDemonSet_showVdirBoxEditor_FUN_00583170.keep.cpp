@@ -17,9 +17,6 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
   CVector3f *pCVar5;
   uint text_color;
   int iVar6;
-  int iVar7;
-  int iVar9;
-  int iVar10;
   SVDBox *pSVar11;
   int iVar12;
   SRenderVertex *pSVar14;
@@ -62,7 +59,6 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
   CVector3f local_d4;
   float local_c8;
   float local_c4;
-  uint local_c0;
   CVector3f local_bc;
   CVector3i local_b0;
   CVector3i local_a4;
@@ -74,7 +70,6 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
   float local_60;
   float local_5c;
   float local_58;
-  uint local_54;
   float local_50;
   float local_4c;
   float local_48;
@@ -90,6 +85,8 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
   CVector3f *local_20;
   CMatrix3x3f *local_1c;
   int local_18;
+  uint local_c0;
+  uint local_54;
   float local_14;
 
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790

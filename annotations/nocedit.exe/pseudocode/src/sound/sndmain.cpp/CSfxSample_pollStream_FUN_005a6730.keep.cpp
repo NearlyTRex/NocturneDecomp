@@ -18,12 +18,9 @@ int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730(CSfxSample *thi
   SIZE_T SVar7;
   SIZE_T size;
   ulong count;
-  uint uVar8;
   uint uVar3;
   SIZE_T lock_length;
   char *pcVar9;
-  char *pcVar10;
-  byte bVar11;
   char *pcVar4;
   SIZE_T count_00;
   int local_34;
@@ -37,6 +34,7 @@ int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730(CSfxSample *thi
   bool bVar2;
   _FILE *file;
   int iVar1;
+  byte bVar11;
   
   bVar11 = 0;
   if (g_SoundLockCount < 1) {

@@ -10,16 +10,6 @@
 CLodMesh * __cdecl shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(CLodMesh *this_ptr,CLodMesh *source_mesh)
 
 {
-  uint uVar1;
-  int iVar2;
-  CLodVert *pCVar3;
-  CLodFace *pCVar4;
-  SMRGLTextureLod *pSVar5;
-  int *piVar6;
-  CLodVert *pCVar7;
-  CLodFace *pCVar8;
-  SMRGLTextureLod *pSVar9;
-  int *piVar10;
   byte bVar11;
   
   bVar11 = 0;

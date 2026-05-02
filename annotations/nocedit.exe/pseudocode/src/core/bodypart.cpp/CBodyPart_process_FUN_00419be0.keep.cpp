@@ -15,13 +15,13 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419be0(CBodyPart *this_pt
   int iVar7;
   SDamageInfo local_54;
   CVector3f local_18;
-  float local_c;
   CVector3f *pCVar3;
   UOrientationVector *pUVar2;
   float fVar5;
   float fVar4;
   float fVar6;
   CLocation *pCVar1;
+  float local_c;
   
   if ((this_ptr->vertex_count < 3) || (this_ptr->tri_count < 1)) {
     (this_ptr->base).lifecycle_state = ACTOR_DESTROYED;

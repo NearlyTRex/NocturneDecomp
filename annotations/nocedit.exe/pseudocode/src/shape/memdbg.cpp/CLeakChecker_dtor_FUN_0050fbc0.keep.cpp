@@ -12,7 +12,6 @@ CLeakChecker * __cdecl shape_memdbg_cpp_CLeakChecker_dtor_FUN_0050fbc0(CLeakChec
 {
   SMemHead *pSVar1;
   _FILE *p_Var2;
-  int iVar3;
   int iVar4;
   
   if ((g_RecursiveCallFlag == 0) && (g_IsDestroyingLeakChecker == 0)) {

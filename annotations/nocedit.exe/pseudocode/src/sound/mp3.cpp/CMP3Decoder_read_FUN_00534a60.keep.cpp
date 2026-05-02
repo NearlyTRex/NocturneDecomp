@@ -14,15 +14,11 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_read_FUN_00534a60(CMP3Decoder *this_ptr,sh
   int iVar3;
   int iVar2;
   uint uVar5;
-  uint uVar3;
-  uint uVar4;
   CMP3Decoder *pCVar5;
-  short *psVar6;
   char *pcVar7;
-  short *psVar8;
-  byte bVar9;
   int local_14;
   char cVar1;
+  byte bVar9;
   
   bVar9 = 0;
   pcVar7 = g_CurrentMp3Filename;

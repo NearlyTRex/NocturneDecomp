@@ -23,11 +23,9 @@ void __cdecl core_set_cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990(CDemonSe
   CVector3f local_38;
   CVector3f local_2c;
   CVector3f local_20;
-  CDemonLight *local_14;
   int iVar1;
   CHero *this_ptr_00;
   int iVar2;
-  CDemonLight *this_ptr_01;
   
   this_ptr_00 = g_HeroActors[g_LocalHeroIndex];
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820

@@ -21,24 +21,12 @@ void __cdecl core_course_cpp_CCourse_interpolate_FUN_004427a0(CCourse *this_ptr,
   int iVar7;
   CCourseFrame *pCVar8;
   double dVar9;
-  double local_90;
   float local_7c;
   float local_78;
-  CQuaternion4f local_74;
   CQuaternion4f local_64;
-  float local_54;
-  float local_50;
-  float local_4c;
-  float local_48;
-  float local_44;
-  float local_40;
   CVector3f local_3c;
   CVector3f local_30;
-  float local_24;
-  float local_20;
-  float local_1c;
   int local_18;
-  int local_14;
   
   if (this_ptr->loop == 0) {
     if (0.0 < time) {

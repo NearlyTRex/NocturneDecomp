@@ -10,7 +10,6 @@
 int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_005dcc00(CTextureCache *cache,char *texture_name)
 
 {
-  char cVar1;
   uint size;
   byte *pbVar2;
   _FILE *p_Var3;
@@ -21,12 +20,10 @@ int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_005dcc00(CTextureCa
   char *pcVar7;
   char *pcVar8;
   char *pcVar9;
-  char *pcVar10;
   char (*pacVar11) [64];
-  byte *pbVar12;
-  byte bVar13;
   char local_114 [256];
-  uint local_14;
+  byte bVar13;
+  char *pcVar10;
   
   bVar13 = 0;
   size = engine_dosio_c_getFileSize_FUN_00481880("art",texture_name);

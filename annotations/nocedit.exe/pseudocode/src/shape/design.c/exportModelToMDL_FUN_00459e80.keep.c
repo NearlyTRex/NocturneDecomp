@@ -16,7 +16,6 @@ void __cdecl shape_design_c_exportModelToMDL_FUN_00459e80(char *mdl_filename)
   char local_6c [80];
   int local_1c;
   int local_18;
-  _FILE *local_14;
   char cVar1;
   
   shape_design_c_sortPolygonsByTexture_FUN_0045b8b0();

@@ -24,7 +24,6 @@ int __cdecl core_bodypart_cpp_CBodyPart_initializeInEditor_FUN_0041b280(CBodyPar
   char local_1e4 [260];
   char local_e0 [200];
   int local_18;
-  CDeformableModel *local_14;
   bool bVar1;
   
   iVar2 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270

@@ -23,7 +23,6 @@ void __cdecl shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(CEdButton *this_ptr
   int iVar10;
   byte *pbVar12;
   byte local_dc [200];
-  int local_14;
 
   iVar9 = g_ClipTop;
   g_ClipTop = this_ptr->top;

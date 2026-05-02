@@ -15,12 +15,9 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineAPIPremiumMultiStat
   SRenderBufferEntry *pSVar5;
   SMRGLTextureBasic *pSVar6;
   int *piVar7;
-  int iVar8;
   int iVar1;
   int iVar4;
   int iVar9;
-  SRenderVertex *pSVar10;
-  SRenderVertex *pSVar11;
   SMRGLTextureBasic **ppSVar12;
   byte bVar13;
   int local_14;

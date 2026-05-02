@@ -21,10 +21,6 @@ void __cdecl core_charactr_cpp_CCharacter_followActor_FUN_0042c5f0(CCharacter *t
   CVector3f local_50;
   CVector3f local_44;
   CVector3f local_38;
-  float local_2c;
-  float local_20;
-  float local_1c;
-  float local_18;
   UVector3 *direction;
   float fVar3;
   float fVar4;

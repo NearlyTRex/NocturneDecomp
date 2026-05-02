@@ -48,23 +48,14 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
   SDamageInfo local_28c;
   SDamageInfo local_250;
   SDamageInfo local_214;
-  float local_1d8;
-  float local_1d4;
-  float local_1d0;
   CVector3f local_1cc;
   CVector3f local_1c0;
   CVector3f local_1b4;
   CVector3f local_1a8;
-  float local_19c;
-  float local_198;
-  float local_194;
   CVector3f local_190;
   CVector3f local_184;
   CVector3f local_178;
   CVector3f local_16c;
-  float local_160;
-  float local_15c;
-  float local_158;
   CVector3f local_154;
   CVector3f local_148;
   CVector3f local_13c;
@@ -89,7 +80,6 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
   CVector3f local_58;
   CVector3f local_4c;
   float local_38;
-  float local_34;
   int local_30;
   CDeformableModelInstance *local_2c;
   int local_28;
@@ -101,12 +91,12 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
   uint uVar5;
   CCharacter *pCVar6;
   UOrientationVector *pUVar1;
-  CDeformableModelInstance *pCVar2;
   CVector3f *pCVar3;
   CDemonActor_vtable *pCVar4;
   float fVar17;
   SDamageInfo *pSVar18;
   float fVar19;
+  float local_34;
   
   if (this_ptr->exploded != 0) {
     fVar20 = this_ptr->fade_timer - delta_time;

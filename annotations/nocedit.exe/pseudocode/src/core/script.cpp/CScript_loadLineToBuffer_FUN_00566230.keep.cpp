@@ -13,7 +13,6 @@ void __cdecl core_script_cpp_CScript_loadLineToBuffer_FUN_00566230(CScript *this
   char cVar1;
   int iVar2;
   uint uVar3;
-  uint uVar4;
   char *pcVar5;
   char *pcVar6;
   byte bVar7;

@@ -19,7 +19,6 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
   int iVar6;
   float fVar7;
   SProjectedVertex *point;
-  byte bVar6;
   SMRGLPrimitiveQuadIndex local_144;
   SMRGLPrimitiveQuadIndex local_11c;
   CBoundingBox3D local_f4;
@@ -32,12 +31,9 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
   CVector3i CStack_94;
   CVector3i CStack_88;
   float fStack_7c;
-  float fStack_78;
-  float fStack_74;
   CVector3i CStack_70;
   CVector3i CStack_64;
   CVector3i CStack_58;
-  float fStack_4c;
   float fStack_48;
   float fStack_44;
   CVector3i CStack_40;
@@ -45,7 +41,6 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
   CVector3i CStack_28;
   float fStack_1c;
   int iStack_18;
-  int iStack_14;
   int fStack_10;
   CDemonRenderer *this_ptr_00;
   float fVar4;

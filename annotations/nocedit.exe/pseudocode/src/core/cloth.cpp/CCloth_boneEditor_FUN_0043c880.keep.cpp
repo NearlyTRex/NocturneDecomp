@@ -30,7 +30,6 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
   float fStack_84;
   CVector3f local_80;
   CVector3i CStack_74;
-  float fStack_68;
   SMotion *local_60;
   SClothVertex *pSStack_5c;
   float local_58;
@@ -51,6 +50,7 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
   float fStack_1c;
   int local_18;
   float fStack_14;
+  float fStack_68;
   
   local_28 = 1;
   local_3c = 1;

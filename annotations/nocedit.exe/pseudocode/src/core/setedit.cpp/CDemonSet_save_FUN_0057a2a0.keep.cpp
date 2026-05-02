@@ -22,8 +22,6 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
   char local_a0 [100];
   CVector3f local_3c;
   CVector3f local_30;
-  SVDBox *local_24;
-  SRoom *local_20;
   CMatrix3x3f *local_1c;
   CMatrix3x3f *local_18;
   

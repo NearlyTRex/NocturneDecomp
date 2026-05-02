@@ -19,9 +19,6 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_0054c1e0(CPackedBi
   char local_148 [100];
   char local_e4 [100];
   char local_80 [100];
-  char *local_1c;
-  uchar *local_18;
-  _FILE *local_14;
   
   file = engine_dosio_c_getFile_FUN_00481a50("art",this_ptr->filename,"rb");
   if (file == (_FILE *)0x0) {

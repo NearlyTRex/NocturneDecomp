@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 663,
-    "complexity_score": 307,
+    "complexity_score": 292,
     "cross_reference_count": 36,
     "function_call_count": 7,
     "global_count": 24,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 292,
-    "suspect_count": 1,
-    "suspect_types": [
-      "stack_alignment_array"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 955
   },
   "cross_references": [
@@ -485,6 +483,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 27,
+      "match": "afStackY_106c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "float afStackY_106c [991];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 102,
       "match": "._8_4_",
@@ -783,14 +790,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 27,
-      "match": "afStackY_106c",
-      "severity": "moderate",
-      "text": "float afStackY_106c [991];",
-      "type": "stack_alignment_array"
-    }
-  ]
+  "suspects": []
 }

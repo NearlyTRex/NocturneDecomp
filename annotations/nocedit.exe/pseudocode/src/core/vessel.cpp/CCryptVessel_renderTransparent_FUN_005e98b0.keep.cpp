@@ -20,7 +20,6 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_005e98b0(CCryptVe
   char *pcVar4;
   CVector3i local_2c;
   CVector3i local_20;
-  uint local_14;
   
   if (this_ptr->is_visible == 0) {
     return 0;

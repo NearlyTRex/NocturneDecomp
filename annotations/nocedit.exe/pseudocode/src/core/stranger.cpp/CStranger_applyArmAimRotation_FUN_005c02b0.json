@@ -7,16 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 484,
-    "complexity_score": 342,
+    "complexity_score": 327,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 127,
-    "suspect_count": 20,
+    "suspect_count": 19,
     "suspect_types": [
       "missing_cave_copy",
-      "stack_alignment_array",
       "warning_type_propagation"
     ],
     "total_lines": 611
@@ -205,6 +204,17 @@
     },
     "pcode_op_count": 1630
   },
+  "resolved_suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 20,
+      "match": "afStackY_19b8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "float afStackY_19b8 [1520];",
+      "type": "stack_alignment_array"
+    }
+  ],
   "stack_frame": {
     "frame_size": 6596,
     "local_size": 6588,
@@ -505,14 +515,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 20,
-      "match": "afStackY_19b8",
-      "severity": "moderate",
-      "text": "float afStackY_19b8 [1520];",
-      "type": "stack_alignment_array"
     },
     {
       "description": "Struct-type local `local_1dc` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",

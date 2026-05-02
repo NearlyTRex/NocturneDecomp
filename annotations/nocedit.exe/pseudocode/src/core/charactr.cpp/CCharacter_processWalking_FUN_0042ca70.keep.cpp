@@ -24,8 +24,6 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70(CCharacter 
   CVector3f CStack_48;
   CVector3f local_3c;
   CVector3f CStack_30;
-  float fStack_1c;
-  float fStack_18;
   CDemonActor *pCVar2;
   CCharacter_full_vtable *pCVar3;
   UVector3 *direction;

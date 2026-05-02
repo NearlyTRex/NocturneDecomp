@@ -14,8 +14,6 @@ int __cdecl core_script_cpp_parseCommandWithTemplates_FUN_00561690(char *input_t
   int iVar4;
   int iVar2;
   int iVar5;
-  int iVar3;
-  int iVar6;
   uint uVar4;
   uint uVar5;
   CCmdParse *pCVar6;
@@ -25,14 +23,9 @@ int __cdecl core_script_cpp_parseCommandWithTemplates_FUN_00561690(char *input_t
   CCmdParm *pCVar10;
   CCmdParse *pCVar9;
   char *pcVar10;
-  char *pcVar11;
-  char *pcVar12;
-  char *pcVar13;
   byte bVar12;
   CCmdParse local_2148;
-  int local_20;
   ECmdParmType local_1c;
-  int local_18;
   char *local_14;
   char cVar1;
   

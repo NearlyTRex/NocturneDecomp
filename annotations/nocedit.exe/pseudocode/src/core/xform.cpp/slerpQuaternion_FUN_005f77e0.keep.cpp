@@ -13,7 +13,6 @@ CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_005f77e0(CQuater
 
 {
   float fVar4;
-  float fVar8;
   CQuaternion4f *pCVar4;
   float10 fVar5;
   float10 fVar6;
@@ -28,10 +27,6 @@ CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_005f77e0(CQuater
   float local_58;
   float local_54;
   CQuaternion4f local_40 [2];
-  double local_18;
-  float fVar2;
-  float fVar3;
-  float fVar1;
 
   pCVar4 = quat1_in;
   if ((0.0 < t) && (pCVar4 = quat2_in, t < 1.0)) {

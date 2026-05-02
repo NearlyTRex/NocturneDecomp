@@ -27,16 +27,6 @@ void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet 
   char acStack_13c [4];
   int visible_cameras[250];
   float saved_pos_x;
-  float fStack_38;
-  float fStack_34;
-  float fStack_30;
-  float fStack_2c;
-  float fStack_28;
-  float fStack_24;
-  void *pvStack_20;
-  char *local_1c;
-  int local_18;
-  C3DSCamera *pCStack_14;
   
   bVar8 = false;
   bVar9 = false;

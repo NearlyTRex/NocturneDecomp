@@ -7,16 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 673,
-    "complexity_score": 351,
+    "complexity_score": 336,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 311,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "missing_cave_copy",
-      "stack_alignment_array"
+      "missing_cave_copy"
     ],
     "total_lines": 984
   },
@@ -309,6 +308,17 @@
     },
     "pcode_op_count": 2846
   },
+  "resolved_suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 25,
+      "match": "afStackY_1860",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "float afStackY_1860 [1521];",
+      "type": "stack_alignment_array"
+    }
+  ],
   "stack_frame": {
     "frame_size": 6252,
     "local_size": 6244,
@@ -455,14 +465,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 25,
-      "match": "afStackY_1860",
-      "severity": "moderate",
-      "text": "float afStackY_1860 [1521];",
-      "type": "stack_alignment_array"
-    },
     {
       "description": "Struct-type local `CStack_84` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 27,

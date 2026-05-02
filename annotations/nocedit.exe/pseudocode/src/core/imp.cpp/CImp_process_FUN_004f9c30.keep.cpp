@@ -34,9 +34,6 @@ void __cdecl core_imp_cpp_CImp_process_FUN_004f9c30(CImp *this_ptr,float delta_t
   float fVar17;
   SDamageInfo local_1a0;
   SDamageInfo local_164;
-  float local_128;
-  float local_124;
-  float local_120;
   CVector3f local_11c;
   CVector3f local_110;
   CVector3f local_104;
@@ -45,12 +42,7 @@ void __cdecl core_imp_cpp_CImp_process_FUN_004f9c30(CImp *this_ptr,float delta_t
   CVector3f local_e0;
   CVector3f local_d4;
   CVector3f local_c8;
-  float local_bc;
-  float local_b8;
-  float local_b4;
   CVector3f local_b0;
-  float local_a4;
-  float local_9c;
   CVector3f local_98;
   CVector3f local_8c;
   CVector3f local_80;
@@ -58,15 +50,7 @@ void __cdecl core_imp_cpp_CImp_process_FUN_004f9c30(CImp *this_ptr,float delta_t
   CVector3f local_68;
   CVector3f local_5c;
   CVector3f local_50;
-  int local_3c;
   float local_34 [2];
-  float local_2c;
-  float local_28;
-  int local_24;
-  float local_20;
-  float local_1c;
-  float local_18;
-  float local_14;
   
   iVar6 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {

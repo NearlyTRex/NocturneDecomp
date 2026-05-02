@@ -32,13 +32,7 @@ int __cdecl core_charactr_cpp_CCharacter_propertyActionCallback_FUN_0042f3e0(CCh
   CVector3f CStack_50;
   CVector3f CStack_44;
   int aiStack_38 [2];
-  SCarryHand *local_30;
-  CDeformableModelInstance *local_2c;
   int local_28;
-  int local_24;
-  UOrientationVector *local_20;
-  CDeformableModelInstance *local_1c;
-  SCarryHand *local_18;
   int local_14;
   
   this_ptr_00 = (CCharacter *)

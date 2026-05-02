@@ -17,8 +17,6 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970(CEdi
   int iVar1;
   uint uVar7;
   void *pvVar8;
-  uint uVar9;
-  uint uVar2;
   int iVar7;
   int iVar8;
   SWindow *pSVar10;
@@ -26,13 +24,12 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970(CEdi
   int iVar11;
   uint *puVar12;
   char *pcVar13;
-  uint *puVar14;
-  byte bVar15;
   int local_24;
   uint *local_14;
   SWindow *pSVar1;
   CBitFont *this_ptr_00;
   int iVar2;
+  byte bVar15;
   
   bVar15 = 0;
   if (g_EditorFont == (CBitFont *)0x0) {

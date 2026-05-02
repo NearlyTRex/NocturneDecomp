@@ -32,17 +32,9 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004f6f20(CHotDemon *this_pt
   CVector3f local_b8;
   CVector3f local_ac;
   CVector3f local_a0;
-  float local_94;
-  float local_8c;
   CVector3f local_88;
-  float local_7c;
-  float local_78;
-  float local_74;
   CVector3f local_70;
   CVector3f local_64;
-  float local_58;
-  float local_54;
-  float local_50;
   CVector3f local_4c;
   CVector3f local_40;
   float local_2c;
@@ -50,15 +42,13 @@ void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004f6f20(CHotDemon *this_pt
   float local_24;
   float local_20;
   float local_1c;
-  float local_18;
   float local_14;
-  CDeformableModelInstance *pCVar1;
   CVector3f *pCVar2;
   float fVar10;
   SDamageInfo *damage_info;
   float max_distance;
   float fVar9;
-  CCharacter *pCVar3;
+  float local_18;
   
   iVar4 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar4 == 0) {

@@ -11,7 +11,6 @@ void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90(LPVOID *channel_buffer
 
 {
   SMixBuffer mix_buffer;
-  CSfxSlot *this_ptr;
   int iVar5;
   int iVar3;
   int bytes_per_buffer;

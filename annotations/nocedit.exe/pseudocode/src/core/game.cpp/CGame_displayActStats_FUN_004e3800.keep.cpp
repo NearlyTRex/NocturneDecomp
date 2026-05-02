@@ -17,7 +17,6 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
   float fVar5;
   char *pcVar4;
   int iVar6;
-  int iVar5;
   uint uVar6;
   int iVar8;
   int iVar7;
@@ -25,20 +24,11 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004e3800(CGame *this_ptr)
   uint uVar8;
   int y;
   char *pcVar9;
-  char *pcVar10;
   char *pcVar12;
-  char *pcVar13;
   byte bVar11;
   char local_548 [1024];
   char local_148 [256];
   CAlphaBitmap local_48;
-  int local_2c;
-  int local_28;
-  int local_24;
-  int local_20;
-  int local_1c;
-  int local_18;
-  int local_14;
   float fVar2;
   char cVar1;
   CBitFont *this_ptr_00;

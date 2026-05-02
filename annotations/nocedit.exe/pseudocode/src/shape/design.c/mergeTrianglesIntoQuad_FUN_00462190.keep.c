@@ -22,11 +22,8 @@ uint __cdecl shape_design_c_mergeTrianglesIntoQuad_FUN_00462190(int first_polygo
   double dVar3;
   SShapeEditorPolygon local_1e8;
   float local_64 [4];
-  float local_54;
   float local_50 [4];
-  float local_40;
   uint local_3c [4];
-  uint local_2c;
   uint local_28 [6];
   float fVar2;
   float fVar1;

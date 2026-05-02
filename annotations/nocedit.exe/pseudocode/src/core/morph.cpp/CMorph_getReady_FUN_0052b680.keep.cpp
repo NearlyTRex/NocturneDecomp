@@ -34,28 +34,7 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_0052b680(CMorph *this_ptr)
   CBoundingBox3D *pCVar9;
   int iVar16;
   CBoundingBox3D local_c8[2];
-  float local_98;
-  float local_94;
-  float local_90;
-  float local_8c;
-  float local_88;
-  float local_84;
-  float local_80;
-  float local_7c;
-  float local_78;
-  float local_74;
-  float local_70;
-  float local_6c;
-  float local_68;
-  float local_64;
-  float local_60;
-  float local_5c;
-  float local_58;
-  float local_54;
   CVector3f local_50;
-  float local_44;
-  float local_40;
-  float local_3c;
   CMorph *local_38;
   CMorph *local_34;
   CMorph *local_30;
@@ -64,10 +43,7 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_0052b680(CMorph *this_ptr)
   CBoundingBox3D *local_24;
   CVector3f *local_20;
   float *local_1c;
-  CMorph *local_18;
-  CMorph *local_14;
   SMorphPoint *pSVar1;
-  int iVar2;
   
   if ((this_ptr->models[0].num_points < 3) || (this_ptr->models[1].num_points < 3)) {
     g_CurrentFilename = "..\\core\\morph.cpp";

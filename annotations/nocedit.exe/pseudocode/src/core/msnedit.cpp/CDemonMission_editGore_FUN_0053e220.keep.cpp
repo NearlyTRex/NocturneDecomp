@@ -18,8 +18,6 @@ void __cdecl core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission 
   float fVar4;
   CBoxActor *actor_00;
   UOrientationVector *pUVar5;
-  byte bVar5;
-  float afStackY_1040 [984];
   float local_c8;
   float local_c0;
   CSlew local_bc;
@@ -27,24 +25,11 @@ void __cdecl core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission 
   CVector3f local_click_pos;
   CVector3f local_pool_pos;
   CVector3f CStack_7c;
-  float fStack_70;
-  float fStack_6c;
-  float fStack_68;
   CVector3f CStack_64;
   CVector3i CStack_58;
   CVector3i CStack_4c;
-  float fStack_40;
-  float fStack_3c;
-  float fStack_38;
   CVector3i CStack_34;
-  int iStack_28;
-  CLocation *pCStack_24;
-  UOrientationVector *pUStack_20;
-  CBoxActor *pCStack_1c;
-  float fStack_18;
-  CVector3i *input_ptr;
   CGame *this_ptr_00;
-  CBoxActor *actor;
   float fVar1;
   CDemonSet *pCVar2;
   

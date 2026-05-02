@@ -13,7 +13,6 @@ int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140(CD
   float fVar1;
   CVector3f *pCVar1;
   CVector3f *pCVar3;
-  CVector3f *pCVar2;
   uint corner_index;
   CVector3f local_1e8[8];
   CDemonTriangle local_188;
@@ -25,7 +24,6 @@ int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140(CD
   CVector3f local_38;
   CVector3f local_2c;
   CVector3f local_20;
-  float local_14;
   
   corner_index = 0;
   __arrinit(local_1e8,8,&g_CVectorTypeInfo);

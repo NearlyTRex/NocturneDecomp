@@ -10,10 +10,7 @@
 CHostage * __cdecl core_hostage_cpp_CHostage_ctor_FUN_004f4840(CHostage *this_ptr)
 
 {
-  char cVar1;
   CHostage *pCVar2;
-  char *pcVar3;
-  char *pcVar4;
   
   pCVar2 = (CHostage *)core_npc_cpp_CNPC_ctor_FUN_005447e0(&this_ptr->base);
   (pCVar2->base).base.base.vtable._ub = &g_CHostageVTable._ub;

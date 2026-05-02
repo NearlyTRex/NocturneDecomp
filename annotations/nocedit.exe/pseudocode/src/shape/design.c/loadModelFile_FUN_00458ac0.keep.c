@@ -33,8 +33,6 @@ int __cdecl shape_design_c_loadModelFile_FUN_00458ac0(char *filename)
   int local_24;
   uint local_20;
   int local_1c;
-  _FILE *local_18;
-  byte *local_14;
   byte bVar1;
   char cVar2;
   

@@ -26,18 +26,9 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_
   CVector3i local_6c;
   CVector3f local_60;
   CVector3f local_54;
-  int local_40;
-  int local_3c;
-  int local_38;
-  float local_34;
-  float local_30;
-  float local_2c;
   uint uStack_28;
   int local_24;
   int local_20;
-  int local_1c;
-  int local_18;
-  uint local_14;
   CDemonRenderer *this_ptr;
   float fVar2;
   

@@ -37,12 +37,12 @@ void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFil
   char local_204 [256];
   char local_104 [100];
   byte local_a0 [92];
-  int local_44;
   _tm local_40;
   int local_1c;
   int local_18;
   int local_14;
   char cVar1;
+  int local_44;
   
   bVar10 = 0;
   if (pod_file_path == (char *)0x0) {

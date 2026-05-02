@@ -1,0 +1,36 @@
+// Name: engine_font.cpp_setShadowColor_FUN_004ce0f0
+// Address: 004ce0f0
+// MANUAL RECONSTRUCTION
+// Address Range: [[004ce0f0, 004ce210]]
+// Convention: __cdecl
+// Signature: void __cdecl engine_font_cpp_setShadowColor_FUN_004ce0f0(uint red,uint green,uint blue)
+
+#include "nocturne.h"
+
+void __cdecl engine_font_cpp_setShadowColor_FUN_004ce0f0(uint red,uint green,uint blue)
+
+{
+  if (g_BitsPerPixel != 8) {
+    if (g_BitsPerPixel == 0x10) {
+      g_ShadowColor16 =
+           (ushort)(blue / (uint)g_BlueScaleFactor << (g_BlueBitPosition.bytes[0] & 0x1f)) |
+           (ushort)(red / (uint)g_RedScaleFactor << (g_RedBitPosition.bytes[0] & 0x1f)) |
+           (ushort)(green / (uint)g_GreenScaleFactor << (g_GreenBitPosition.bytes[0] & 0x1f));
+    }
+    else if (g_BitsPerPixel == 0x20) {
+      g_ShadowColor32 =
+           blue << (g_BlueBitPosition.bytes[0] & 0x1f) |
+           red << (g_RedBitPosition.bytes[0] & 0x1f) | green << (g_GreenBitPosition.bytes[0] & 0x1f)
+      ;
+    }
+    else {
+      g_CurrentFilename = "..\\engine\\font.cpp";
+      g_CurrentLineNumber = 0x398;
+      core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid bitsPerPixel in CBitFont::setTrueColor");
+    }
+  }
+  g_ShadowColorGreen = green;
+  g_ShadowColorBlue = blue;
+  g_ShadowColorRed = red;
+  return;
+}

@@ -24,22 +24,17 @@ int __cdecl engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(
   char *pcVar5;
   char *pcVar6;
   char *pcVar7;
-  uchar *puVar8;
   char *pcVar11;
-  uchar *puVar12;
-  byte bVar13;
   char local_6c [80];
   int local_1c;
-  SColorQuantMapper *local_18;
-  char *local_14;
   int local_10;
-  uint local_c;
   byte *pbVar4;
   int iVar5;
   uchar uVar3;
   byte bVar2;
   char cVar1;
   char *pcVar14;
+  byte bVar13;
   
   bVar13 = 0;
   workspace = (SColorQuantMapper *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0

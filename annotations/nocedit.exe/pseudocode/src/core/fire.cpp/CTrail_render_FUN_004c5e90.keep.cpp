@@ -15,7 +15,6 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_004c5e90(CTrail *this_ptr)
   CVector3i local_50;
   float local_44;
   float local_40;
-  float local_3c;
   CVector3i local_38;
   CVector3i local_2c;
   CVector3i local_20;

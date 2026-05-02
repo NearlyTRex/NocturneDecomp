@@ -26,7 +26,6 @@ void __cdecl core_setedit_cpp_CDemonSet_renderCameraBackdrop_FUN_0057d340(CDemon
   CVector3f local_38;
   CVector3i local_2c;
   CVector3f local_20;
-  CVector3f *local_14;
   float *pfVar1;
   float *pfVar2;
   

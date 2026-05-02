@@ -15,11 +15,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_0044f310(CD
   int iVar3;
   int iVar4;
   int iVar5;
-  uint *puVar6;
-  SRGBColorPalette *pSVar7;
   int iVar8;
-  uint *puVar9;
-  byte *pbVar10;
   byte bVar11;
   
   bVar11 = 0;

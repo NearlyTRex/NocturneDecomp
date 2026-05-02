@@ -16,7 +16,6 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
   CMP3Decoder *pCVar3;
   float fVar4;
   int iVar3;
-  CSfxSlot *pCVar4;
   int iVar6;
   uint uVar7;
   int iVar5;
@@ -28,20 +27,12 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
   int iVar7;
   uint uVar12;
   CSfxSlot *this_ptr_00;
-  CSfxOptions *pCVar9;
-  CSfxOptions *pCVar13;
-  CSfxOptions *pCVar17;
-  CSfxSlot *pCVar10;
   CSfxSample *pCVar12;
   char local_390 [256];
   char local_290 [256];
   char local_190 [256];
   CSfxOptions local_90;
-  uint local_20;
-  uint local_1c;
   CSfxSample *local_18;
-  CSfxSample *local_14;
-  CVector3d *pCVar5;
   float fVar1;
 
 

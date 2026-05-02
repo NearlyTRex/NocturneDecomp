@@ -12,7 +12,6 @@
 void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *this_ptr)
 
 {
-  char cVar1;
   int iVar2;
   CLightGun *pCVar3;
   int iVar3;
@@ -31,8 +30,6 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
   char (*pacVar12) [256];
   int iVar9;
   int y;
-  char *pcVar10;
-  byte bVar11;
   char *pcVar13;
   float local_680;
   float local_67c;
@@ -42,10 +39,6 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
   char local_378 [256];
   char local_278 [256];
   char local_178 [256];
-  int local_78;
-  int local_74;
-  int local_70;
-  int local_6c;
   int local_68;
   int local_64;
   int local_60;
@@ -56,22 +49,10 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
   int local_4c;
   int local_48;
   int local_44;
-  int local_40;
-  int local_3c;
-  int local_38;
-  int local_34;
-  int local_30;
-  int local_2c;
-  CBitFont *local_28;
-  CBitFont *local_24;
-  int local_20;
-  int local_1c;
   CBitFont *local_18;
-  int local_14;
-  char cVar2;
   double dVar1;
-  CBitFont *pCVar12;
   ulonglong uVar13;
+  byte bVar11;
   
   bVar11 = 0;
   if (g_CGamePtr->letterbox_mode != 0) {

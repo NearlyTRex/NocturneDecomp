@@ -37,10 +37,6 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
   char acStack_sprintf[64];
   CVector3f local_128;
   CVector3f local_11c;
-  float local_108;
-  float local_104;
-  float local_100;
-  float local_fc;
   CVector3f local_f8;
   float local_ec;
   float local_e8;
@@ -53,25 +49,9 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
   CVector3f local_bc;
   CVector3f local_b0;
   CVector3f local_a4;
-  float local_98;
-  float local_94;
-  float local_90;
   CVector3f local_8c;
   CVector3f local_80;
   CVector3f local_74;
-  double local_68;
-  double local_60;
-  float local_54;
-  float local_44;
-  float local_40;
-  float local_3c;
-  float local_38;
-  uint local_30;
-  float local_2c;
-  uint local_28;
-  float local_24;
-  float local_20;
-  float local_1c;
   float local_18;
   float local_14;
   

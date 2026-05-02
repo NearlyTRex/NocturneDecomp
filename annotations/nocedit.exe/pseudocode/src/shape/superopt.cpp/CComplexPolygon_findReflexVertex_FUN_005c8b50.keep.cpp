@@ -14,12 +14,9 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50(CCo
   double dVar2;
   double dVar3;
   int iVar4;
-  int iVar1;
   int iVar5;
   int iVar2;
-  uint *puVar3;
   double *pdVar4;
-  CVector3d *pCVar5;
   uint *puVar6;
   byte bVar6;
   double dVar7;
@@ -31,12 +28,7 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50(CCo
   uint local_bc;
   uint uStack_b8;
   CVector3d local_b4;
-  double local_9c;
-  double local_94;
-  double local_8c;
   double local_84;
-  double local_7c;
-  double local_74;
   CVector3d local_6c;
   uint local_44;
   uint uStack_40;
@@ -49,6 +41,8 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50(CCo
   int local_1c;
   int local_18;
   CVector3d *local_14;
+  double local_7c;
+  double local_74;
   
   bVar6 = 0;
   local_1c = 0;

@@ -24,9 +24,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   CPickList local_870;
   CPickList local_4c8;
   char local_120 [256];
-  byte *local_20;
   int local_1c;
-  int local_18;
   float local_14;
   uint uVar8;
   

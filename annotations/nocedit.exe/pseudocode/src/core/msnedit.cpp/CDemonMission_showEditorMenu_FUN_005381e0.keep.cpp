@@ -25,7 +25,6 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
   char local_11c [256];
   char (*local_1c) [256];
   char (*local_18) [256];
-  char *local_14;
   CEditorTools *this_ptr_00;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790

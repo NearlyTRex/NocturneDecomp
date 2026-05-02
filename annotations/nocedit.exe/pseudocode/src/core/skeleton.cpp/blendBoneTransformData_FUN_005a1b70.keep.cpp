@@ -14,20 +14,8 @@ void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(CVector3f *re
   CSkeleton *pCVar2;
   CVector3f *pCVar1;
   int iVar2;
-  uint *puVar3;
-  uint *puVar4;
-  uint *puVar5;
-  byte bVar6;
   CQuaternion4f local_54;
   CVector3f local_44;
-  float local_38;
-  float local_34;
-  float local_30;
-  float local_2c;
-  float local_28;
-  float local_24;
-  float local_20;
-  CSkeleton *local_1c;
   CQuaternion4f *local_18;
   CQuaternion4f *local_14;
   

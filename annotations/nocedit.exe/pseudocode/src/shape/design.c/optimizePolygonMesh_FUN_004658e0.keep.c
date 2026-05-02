@@ -18,8 +18,6 @@ void __cdecl shape_design_c_optimizePolygonMesh_FUN_004658e0(float angle_toleran
   char local_70 [80];
   int local_20;
   int local_1c;
-  int local_18;
-  int local_14;
 
   iVar4 = g_PolygonCount;
   if (-1 < display_progress) {

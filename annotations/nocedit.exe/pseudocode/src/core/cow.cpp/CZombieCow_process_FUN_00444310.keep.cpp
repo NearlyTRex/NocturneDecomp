@@ -30,25 +30,18 @@ void __cdecl core_cow_cpp_CZombieCow_process_FUN_00444310(CZombieCow *this_ptr,f
   CVector3f local_84;
   CVector3f local_78;
   CVector3f local_6c;
-  float local_60;
-  float local_5c;
-  float local_58;
   CVector3f local_54;
-  float local_48;
-  float local_44;
-  float local_40;
   CVector3f local_3c;
   CVector3f local_30;
   float local_1c;
-  float local_18;
-  float local_14;
   float fVar11;
   SDamageInfo *damage_info;
   CVector3f *pCVar1;
-  CDeformableModelInstance *this_ptr_00;
   float fVar3;
   CCharacter *pCVar2;
   float fVar10;
+  float local_18;
+  float local_14;
   
   iVar4 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar4 == 0) {

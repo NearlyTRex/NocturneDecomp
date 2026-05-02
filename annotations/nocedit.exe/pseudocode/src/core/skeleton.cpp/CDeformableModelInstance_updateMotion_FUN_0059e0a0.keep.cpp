@@ -17,28 +17,16 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a
   CSkeleton *this_ptr_00;
   int iVar9;
   int iVar10;
-  CQuaternion4f *quat1_in;
   CSkeleton *pCVar10;
   int iVar11;
   CQuaternion4f *pCVar12;
   CQuaternion4f *pCVar11;
-  uint *puVar13;
-  uint *puVar14;
-  float *pfVar15;
-  uint *puVar16;
-  uint *puVar17;
-  float *pfVar18;
-  byte bVar19;
-  float afStackY_1a68 [120];
   float local_1870;
   CQuaternion4f local_186c [95];
-  float afStack_1274 [18];
   CQuaternion4f local_122c;
-  float afStack_1214 [394];
   CQuaternion4f local_bec [100];
   int aiStack_5ac [100];
   int aiStack_41c [100];
-  CQuaternion4f local_28c;
   CQuaternion4f local_27c;
   CQuaternion4f local_26c;
   CQuaternion4f local_25c;
@@ -46,15 +34,10 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a
   CQuaternion4f local_23c;
   CQuaternion4f local_22c;
   CQuaternion4f local_21c;
-  CQuaternion4f local_20c;
   CQuaternion4f local_1fc;
-  CQuaternion4f local_1ec;
-  CQuaternion4f local_1dc;
   CQuaternion4f local_1cc;
   CQuaternion4f local_1bc;
-  CQuaternion4f local_1ac;
   CQuaternion4f local_19c;
-  CQuaternion4f local_18c;
   CQuaternion4f local_17c;
   CQuaternion4f local_16c;
   CQuaternion4f local_15c;
@@ -67,7 +50,6 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a
   CQuaternion4f local_ec;
   CQuaternion4f local_dc;
   CQuaternion4f local_cc;
-  CQuaternion4f local_bc [2];
   float local_94 [3];
   int local_88;
   int local_84;
@@ -92,7 +74,6 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a
   int local_34;
   int local_30;
   int local_2c;
-  int local_28;
   int local_24;
   CDeformableModelInstance *local_20;
   int local_1c;
@@ -104,8 +85,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a
   CVector3f *pCVar5;
   float fVar7;
   CVector3f *pCVar6;
-  CDeformableModelInstance *pCVar8;
-  
+  int local_28;
+
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0
             (&this_ptr->motion_controller,motion_index,frame_number,&local_84,&local_88,&local_1870)
@@ -124,7 +105,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a
         (local_5c->bone_transform).pose_data.bone_rotations[0].z = local_24c.z;
         (local_3c->bone_transform).bone_scales[0] = local_3c->rest_pose_data[0];
         local_34 = local_34 + 1;
-        local_5c = (CDeformableModelInstance *)((int)local_5c + 0x10);
+        local_5c = (CDeformableModelInstance *)((char *)local_5c + 0x10);
         local_3c = (CDeformableModelInstance *)&(local_3c->motion_controller).current_motion_index;
       } while (local_34 < this_ptr_00->bone_count);
     }
@@ -160,7 +141,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a
       do {
         iVar10 = core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_0059a100
                            (this_ptr_00,local_1c,bone_index);
-        *(int *)((int)aiStack_5ac + local_38) = iVar10;
+        aiStack_5ac[local_1c] = iVar10;
         if (-1 < iVar10) {
           core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
                     (this_ptr_00,local_1c,local_84,local_88,local_1870,&local_cc);
@@ -191,7 +172,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a
       local_4c = this_ptr_00;
       local_48 = this_ptr;
       do {
-        if (-1 < *(int *)((int)aiStack_5ac + local_58)) {
+        if (-1 < aiStack_5ac[local_2c]) {
           iVar10 = local_4c->bone_list[0].parent_index;
           local_68 = local_2c * 0x10;
           if (iVar10 < 0) {
@@ -199,11 +180,14 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a
           }
           else {
             local_80 = iVar10 * 0x10;
+            // §20: cave-copy chain. Asm has 16-byte memcpys between each call:
+            //   negate_out (local_15c) → mul1_in2  (Ghidra dropped → routed direct),
+            //   mul1_out   (local_14c) → mul2_in1  (Ghidra dropped → routed direct).
             core_xform_cpp_negateFirstComponent_FUN_005f75e0(local_bec + iVar10,&local_15c);
             core_xform_cpp_multiplyQuaternion_FUN_005f7640
-                      ((CQuaternion4f *)((int)&local_bec[0].w + local_68),&local_20c,&local_14c);
+                      ((CQuaternion4f *)((int)&local_bec[0].w + local_68),&local_15c,&local_14c);
             core_xform_cpp_multiplyQuaternion_FUN_005f7640
-                      (local_bc,(CQuaternion4f *)((int)&local_74->w + local_80),&local_23c);
+                      (&local_14c,(CQuaternion4f *)((int)&local_74->w + local_80),&local_23c);
             pCVar11 = &local_23c;
           }
           (local_48->bone_transform).pose_data.bone_rotations[0].w = pCVar11->w;
@@ -228,7 +212,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a
       do {
         iVar11 = core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_0059a100
                            (this_ptr_00,local_18,bone_index);
-        *(int *)((int)aiStack_41c + local_40) = iVar11;
+        aiStack_41c[local_18] = iVar11;
         if (-1 < iVar11) {
           pCVar12 = core_skeleton_cpp_CSkeleton_getBoneAngleAtFrame_FUN_0059a050
                               (this_ptr_00,local_18,local_70);
@@ -272,7 +256,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a
       local_50 = this_ptr_00;
       local_20 = this_ptr;
       do {
-        if (-1 < *(int *)((int)aiStack_41c + local_64)) {
+        if (-1 < aiStack_41c[local_30]) {
           local_28 = local_50->bone_list[0].parent_index;
           local_1cc.w = (&local_122c)[local_30].w;
           local_1cc.x = (&local_122c)[local_30].x;
@@ -288,31 +272,35 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a
           local_ec.z = (local_20->bone_transform).pose_data.bone_rotations[0].z;
           if (-1 < (int)local_ec.z) {
             local_80 = (int)local_ec.z * 0x10;
+            // §20: three negate/multiply pairs. Each cave-copies the negate
+            // output into the next multiply's q2_in (`local_fc → local_1ac`,
+            // `local_1fc → local_28c`, `local_10c → local_18c`); routed direct.
             core_xform_cpp_negateFirstComponent_FUN_005f75e0
                       (&local_122c + (int)local_ec.z,&local_fc);
-            core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_1cc,&local_1ac,&local_25c);
+            core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_1cc,&local_fc,&local_25c);
             local_1cc.w = local_25c.w;
             local_1cc.x = local_25c.x;
             local_1cc.y = local_25c.y;
             local_1cc.z = local_25c.z;
             core_xform_cpp_negateFirstComponent_FUN_005f75e0
                       ((CQuaternion4f *)((int)&local_186c[0].w + local_80),&local_1fc);
-            core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_dc,&local_28c,&local_19c);
+            core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_dc,&local_1fc,&local_19c);
             local_dc.w = local_19c.w;
             local_dc.x = local_19c.x;
             local_dc.y = local_19c.y;
             local_dc.z = local_19c.z;
             core_xform_cpp_negateFirstComponent_FUN_005f75e0
                       ((CQuaternion4f *)((int)&local_6c->w + local_80),&local_10c);
-            core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_ec,&local_18c,&local_13c);
+            core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_ec,&local_10c,&local_13c);
             local_ec.w = local_13c.w;
             local_ec.x = local_13c.x;
             local_ec.y = local_13c.y;
             local_ec.z = local_13c.z;
           }
+          // §20: post-if chain — `local_12c → mul1_in2`, `local_27c → mul2_in2`.
           core_xform_cpp_negateFirstComponent_FUN_005f75e0(&local_1cc,&local_12c);
-          core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_dc,&local_1dc,&local_27c);
-          core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_ec,&local_1ec,&local_26c);
+          core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_dc,&local_12c,&local_27c);
+          core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_ec,&local_27c,&local_26c);
           local_17c.w = local_26c.w;
           local_17c.x = local_26c.x;
           local_17c.y = local_26c.y;

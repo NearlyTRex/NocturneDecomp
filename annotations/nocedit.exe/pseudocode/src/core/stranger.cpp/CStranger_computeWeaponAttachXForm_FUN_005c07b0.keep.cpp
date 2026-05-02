@@ -29,16 +29,7 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
   CVector3f *pCVar13;
   CVector3f *pCVar4;
   float fVar14;
-  int iVar5;
-  CMatrix3x4f *pCVar6;
-  float *pfVar7;
-  CMatrix3x4f *pCVar8;
-  CMatrix3x4f *pCVar9;
-  CMatrix3x4f *pCVar10;
   CMatrix3x4f *pCVar15;
-  CMatrix3x4f *pCVar11;
-  CMatrix3x3f *pCVar12;
-  byte bVar13;
   CMatrix3x4f *pCVar16;
   CMatrix3x4f *pCVar17;
   CMatrix3x4f local_d5c;
@@ -58,7 +49,6 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
   CMatrix3x4f local_abc;
   CMatrix3x4f local_a8c;
   CMatrix3x4f local_a5c;
-  float local_a2c [12];
   CMatrix3x4f local_9fc;
   CMatrix3x4f local_9cc;
   CMatrix3x4f local_99c;
@@ -110,9 +100,6 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
   CVector3f local_1bc;
   CVector3f local_1b0;
   CVector3f local_1a4;
-  float local_198;
-  float local_194;
-  float local_190;
   CVector3f local_18c;
   CWeapon *local_180_weapon;
   CVector3f local_180;
@@ -121,18 +108,9 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
   CVector3f local_15c;
   CVector3f local_150;
   CVector3f local_144;
-  float local_138;
-  float local_134;
-  float local_130;
   CVector3f local_12c;
   CVector3f local_120;
   CVector3f local_114;
-  float local_108;
-  float local_104;
-  float local_100;
-  float local_fc;
-  float local_f8;
-  float local_f4;
   CVector3f local_f0;
   CVector3f local_e4;
   CVector3f local_d8;
@@ -151,9 +129,6 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
   CVector3f local_3c;
   CVector3f local_30;
   CVector3f local_24;
-  CMatrix3x4f *local_18;
-  int local_14;
-  float local_10;
   ELightActorType EVar1;
   
   iVar1 = (this_ptr->base).base.carry_hands[hand_index].bone_index;

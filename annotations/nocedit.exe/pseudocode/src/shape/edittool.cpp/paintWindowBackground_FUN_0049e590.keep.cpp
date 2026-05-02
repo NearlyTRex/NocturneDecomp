@@ -11,8 +11,6 @@ void __cdecl shape_edittool_cpp_paintWindowBackground_FUN_0049e590(void)
 
 {
   uint uVar1;
-  uint uVar2;
-  uint uVar3;
   int iVar3;
   int iVar4;
   int iVar5;
@@ -20,7 +18,6 @@ void __cdecl shape_edittool_cpp_paintWindowBackground_FUN_0049e590(void)
   int iVar6;
   uint *puVar7;
   int iVar8;
-  uint *puVar8;
   uint *puVar9;
   byte bVar10;
   

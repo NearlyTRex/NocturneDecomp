@@ -29,20 +29,11 @@ int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_005c1680(CStranger *
   CBoundingBox3D CStack_154;
   CVector3f CStack_13c;
   CVector3f CStack_130;
-  float fStack_124;
-  float fStack_120;
-  float fStack_11c;
   CVector3f CStack_118;
   CVector3f CStack_10c;
-  float fStack_100;
-  float fStack_fc;
-  float fStack_f8;
   CVector3f CStack_f4;
   CVector3f CStack_e8;
   CVector3f CStack_dc;
-  float fStack_d0;
-  float fStack_cc;
-  float fStack_c8;
   CVector3f CStack_c4;
   CVector3f CStack_b8;
   CVector3f CStack_ac;
@@ -50,27 +41,16 @@ int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_005c1680(CStranger *
   CVector3f CStack_94;
   CVector3f CStack_88;
   CVector3f CStack_7c;
-  float fStack_70;
-  float fStack_6c;
-  float fStack_68;
-  float fStack_64;
-  float fStack_60;
-  float fStack_5c;
   CVector3f CStack_58;
   CVector3f CStack_4c;
   CVector3f CStack_40;
   int iStack_30;
-  int iStack_2c;
   float local_28;
-  CVector3f *local_24;
-  float fStack_20;
   int local_1c;
   int local_18;
-  float local_14;
   char *format;
   CDemonActor *pCVar8;
   float fVar2;
-  CDeformableModelInstance *pCVar1;
   
   if ((((0.0 < this_ptr->action_timer) || ((this_ptr->base).object_to_pick_up != (CDemonActor *)0x0)
        ) || (fVar8 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840

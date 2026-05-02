@@ -34,9 +34,6 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
   int iVar17;
   SDamageInfo local_188;
   CVector3f local_14c;
-  float local_140;
-  float local_13c;
-  float local_138;
   CVector3f local_134;
   CVector3f local_128;
   CVector3f local_11c;
@@ -44,24 +41,16 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
   CVector3f local_104;
   CVector3f local_f8;
   CVector3f local_ec;
-  float local_e0;
-  float local_dc;
-  float local_d8;
   CVector3f local_d4;
   CVector3f local_c8;
   CVector3f local_bc;
   CVector3f local_b0;
   CVector3f local_a4;
   CVector3f local_98;
-  float local_8c;
-  float local_84;
   CVector3f local_80;
   CVector3f local_74;
   CVector3f local_68;
   CVector3f local_5c;
-  float local_50;
-  float local_4c;
-  float local_48;
   float local_3c;
   float local_38;
   float local_34;
@@ -74,7 +63,6 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
   int local_18;
   float local_14;
   CDemonActor_vtable *pCVar4;
-  CCharacter *pCVar5;
   CVector3f *pCVar3;
   CBatman *this_ptr_00;
   SDamageInfo *damage_info;
@@ -82,7 +70,6 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
   float fVar13;
   float fVar14;
   UOrientationVector *pUVar1;
-  CDeformableModelInstance *pCVar2;
   
   iVar6 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {

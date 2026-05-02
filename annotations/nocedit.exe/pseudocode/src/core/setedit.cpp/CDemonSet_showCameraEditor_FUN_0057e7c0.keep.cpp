@@ -59,18 +59,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet 
   char local_1bc [256];
   char local_bc [16];
   char local_ac [16];
-  float local_9c;
-  float local_98;
-  float local_94;
-  float local_90;
-  float local_8c;
-  float local_88;
   int local_84;
-  C3DSCamera *local_80;
-  C3DSCamera *local_7c;
-  C3DSCamera *local_78;
-  char *local_74;
-  C3DSCamera *local_70;
   int local_6c;
   int local_68;
   int local_64;

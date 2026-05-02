@@ -10,7 +10,6 @@
 void __cdecl core_script_cpp_CScript_setParameterValue_FUN_00565f70(CScript *this_ptr,char *value)
 
 {
-  char cVar1;
   int iVar2;
   char *pcVar3;
   uint buffer_index;

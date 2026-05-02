@@ -41,18 +41,9 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
   CVector3f local_c4;
   CVector3f local_b8;
   CVector3f local_ac;
-  float local_a0;
-  float local_9c;
-  float local_98;
   CVector3f local_94;
   CVector3f local_88;
-  float local_7c;
-  float local_78;
-  float local_74;
   CVector3f local_70;
-  float local_64;
-  float local_60;
-  float local_5c;
   CVector3f local_58;
   CVector3f local_4c;
   CVector3f local_40 [2];
@@ -60,14 +51,13 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
   int local_24;
   float local_20;
   float local_1c;
-  float local_18;
   float local_14;
   float fVar12;
   float fVar14;
   SDamageInfo *pSVar13;
   CLocation *pCVar1;
-  CDeformableModelInstance *pCVar2;
   CCharacter *pCVar3;
+  float local_18;
   
   fVar15 = this_ptr->dismember_cooldown - delta_time;
   this_ptr->dismember_cooldown = fVar15;

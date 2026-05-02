@@ -23,7 +23,6 @@ void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(C
   double dVar5;
   double dVar6;
   int char_index;
-  CDemonActor *current_ptr;
   double dVar10;
   double dVar11;
   double dVar12;
@@ -33,13 +32,6 @@ void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(C
   float fVar1;
 
   bVar9 = 0;
-  // Reject NULL and obvious sentinel values (e.g. -1, 0x1, small ints) before
-  // the magic-number dereference at offset 0x68 below. The original asm also
-  // rejected pointers above 0xfeffffff (Win32 kernel/DLL region) and used a
-  // signed < 0x1000 test, but neither is portable: modern 32-bit Linux hands
-  // out heap pointers with the high bit set, and any address space works as
-  // long as we don't walk into an obvious sentinel. `uintptr_t` keeps this
-  // correct on any target.
   if (this_ptr == nullptr || (uintptr_t)this_ptr < 0x1000) {
     DWARN("Invalid actor pointer %p from %s:%d",
           (void *)this_ptr,

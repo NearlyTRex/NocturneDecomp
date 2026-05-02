@@ -17,9 +17,7 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00427e20(CCharacter *
   CCharacter_ptr_11536 pvVar2;
   CCharacter_ptr_12060 pvVar3;
   CCharacter_ptr_13260 pvVar4;
-  CCharacter *pCVar4;
   uint local_c [3];
-  float *pfVar5;
   
   pCVar1 = (CCharacter *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(&pCVar1->model);

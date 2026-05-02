@@ -10,7 +10,6 @@
 int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this_ptr,char *expression,int *parse_position)
 
 {
-  char cVar2;
   int iVar7;
   int iVar3;
   char *pcVar4;
@@ -36,7 +35,6 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
   SIZE_T SVar18;
   char *pcVar19;
   char *pcVar17;
-  char *pcVar18;
   float local_a88;
   char local_a84 [255];
   char local_985 [100];

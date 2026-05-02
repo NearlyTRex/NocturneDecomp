@@ -13,11 +13,7 @@ void __cdecl core_stranger_cpp_CStranger_extractTurnPose_FUN_005bf720(CStranger 
 
 {
   CVector3f *pCVar1;
-  uint *puVar2;
-  uint *puVar3;
-  byte bVar4;
   SPose SStack_1ad8;
-  CQuaternion4f local_3c;
   CQuaternion4f local_2c;
   CVector3f local_1c;
   int bone_index;

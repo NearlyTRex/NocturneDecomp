@@ -10,7 +10,6 @@
 int __cdecl core_script_cpp_CScript_loadScript_FUN_00559f80(CScript *this_ptr,char *filename,int skip_validation)
 
 {
-  char cVar1;
   int iVar4;
   _FILE *p_Var5;
   long lVar6;
@@ -18,13 +17,8 @@ int __cdecl core_script_cpp_CScript_loadScript_FUN_00559f80(CScript *this_ptr,ch
   _FILE *file;
   char *piVar8;
   int iVar9;
-  int iVar10;
   int iVar2;
-  char *pcVar11;
-  char *pcVar12;
-  char *pcVar3;
   int iVar5;
-  byte bVar14;
   CPickList local_790;
   char local_3e8 [512];
   char local_1e8 [260];
@@ -32,10 +26,9 @@ int __cdecl core_script_cpp_CScript_loadScript_FUN_00559f80(CScript *this_ptr,ch
   int local_1c;
   CStrList *local_18;
   int local_14;
-  char cVar3;
   char **puVar2;
   uint *puVar1;
-  char *pcVar13;
+  byte bVar14;
   
   bVar14 = 0;
   local_18 = &this_ptr->script_text;

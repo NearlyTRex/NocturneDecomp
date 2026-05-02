@@ -19,9 +19,6 @@ void __cdecl core_motion_cpp_CMotionController_render_FUN_0052e700(CMotionContro
   char acStack_a8[100];
   CBoundingBox3D local_44;
   CVector3i local_2c;
-  float local_20;
-  float local_1c;
-  int local_14;
   SRenderVertex *pSVar2;
   
   if ((INT_02f43978 != 0) &&

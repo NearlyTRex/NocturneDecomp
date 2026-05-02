@@ -29,11 +29,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemo
   char local_110 [200];
   CStrList CStack_48;
   CStrList local_38;
-  uint local_28;
   char *pcStack_24;
-  uint uStack_20;
   int iStack_1c;
-  CDemonActor *local_18;
   int iStack_14;
   char cVar4;
   byte *pbVar2;

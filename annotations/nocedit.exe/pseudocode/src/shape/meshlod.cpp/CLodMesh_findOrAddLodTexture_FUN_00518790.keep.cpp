@@ -10,7 +10,6 @@
 int __cdecl shape_meshlod_cpp_CLodMesh_findOrAddLodTexture_FUN_00518790(CLodMesh *this_ptr,char *texture_filename)
 
 {
-  char cVar1;
   int iVar2;
   SMRGLTextureLod *pSVar3;
   int iVar4;

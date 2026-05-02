@@ -27,7 +27,6 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
   char *pcVar12;
   SFoundFileInfo *pSVar14;
   int iVar3;
-  byte bVar15;
   char local_2338 [2048];
   CPodFile local_1b38;
   CPickList local_170c;
@@ -45,20 +44,16 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
   CStrList local_94;
   CStrList local_84;
   CCheckOutList local_74;
-  uint local_6c;
   int local_68;
   int local_64;
   int local_60;
   int local_5c;
   int local_58;
-  int local_54;
   int local_50;
   int local_4c;
   int local_48;
   SPodManageRecord *local_44;
   int local_40;
-  char *local_3c;
-  uint local_38;
   char *local_34;
   char *local_30;
   int local_2c;
@@ -66,9 +61,9 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodFiles_FUN_004b86b0(CFileMan
   char *local_24;
   int local_20;
   int local_1c;
-  int local_18;
   char local_14 [4];
   char cVar1;
+  byte bVar15;
   
   bVar15 = 0;
   local_5c = 0;

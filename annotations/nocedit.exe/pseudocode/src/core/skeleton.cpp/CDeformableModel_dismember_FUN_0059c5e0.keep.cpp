@@ -25,11 +25,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0(CDeformab
   int iVar12;
   int iVar9;
   ushort *puVar10;
-  int *piVar11;
   int *piVar12;
-  int *piVar13;
   int iVar13;
-  byte bVar14;
   int local_30;
   int local_2c;
   int local_28;

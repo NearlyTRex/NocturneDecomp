@@ -30,14 +30,8 @@ int __cdecl core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40(CBoneGuy
   CBoundingBox3D CStack_94;
   CVector3f CStack_7c;
   CVector3f CStack_70;
-  float fStack_64;
-  float fStack_60;
-  float fStack_5c;
   CVector3f CStack_58;
   CVector3f CStack_4c;
-  float fStack_40;
-  float fStack_3c;
-  float fStack_38;
   float fStack_30;
   int local_2c;
   int local_24;

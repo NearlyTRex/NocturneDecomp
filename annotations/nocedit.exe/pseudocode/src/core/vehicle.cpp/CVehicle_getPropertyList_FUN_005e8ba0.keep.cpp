@@ -14,8 +14,6 @@ void __cdecl core_vehicle_cpp_CVehicle_getPropertyList_FUN_005e8ba0(CVehicle *th
   CKeyFramedModelInstance *data_ptr;
   int iVar2;
   char local_110 [256];
-  CVector3f *local_10;
-  CTire *local_c;
   
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base,property_list);
   core_actor_cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0

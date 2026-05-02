@@ -29,7 +29,6 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
   char *pcVar12;
   float local_d8;
   float local_d4;
-  uint local_d0;
   CVector3f local_cc;
   CVector3f local_c0;
   CVector3f local_b4;
@@ -43,17 +42,13 @@ void __cdecl core_glass_cpp_CGlass_setup_FUN_004e9180(CGlass *this_ptr)
   CVector3f local_54;
   CVector3f local_48;
   CVector3f local_3c;
-  float local_30;
-  SMRGLPrimitiveQuad *local_2c;
-  CVector3f *local_28;
-  float local_24;
   int local_20;
   int local_1c;
   int local_18;
-  int local_14;
   double dVar3;
   double dVar2;
   char cVar1;
+  uint local_d0;
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80

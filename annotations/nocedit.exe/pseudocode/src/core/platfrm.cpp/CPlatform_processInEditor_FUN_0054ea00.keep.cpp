@@ -15,14 +15,6 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
   int iVar3;
   CVector3f *pCVar3;
   CVector3f *pCVar4;
-  uint *puVar4;
-  CMatrix3x4f *pCVar5;
-  uint *puVar6;
-  uint *puVar7;
-  uint *puVar8;
-  CMatrix3x4f *pCVar9;
-  byte bVar10;
-  float afStackY_18a8 [1387];
   float local_2e8;
   CMatrix3x4f CStack_2e4;
   CMatrix3x4f CStack_2b4;
@@ -43,11 +35,7 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
   CQuaternion4f CStack_8c;
   CVector3f CStack_7c;
   byte auStack_70 [4];
-  float fStack_6c;
-  float fStack_68;
   CVector3f CStack_64;
-  float fStack_54;
-  float fStack_50;
   float local_4c;
   float local_48;
   float local_44;

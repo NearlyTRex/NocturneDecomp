@@ -29,13 +29,9 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_005af750(CDirectSou
   char acStack_4e4 [400];
   char acStack_354 [400];
   char acStack_1c4 [400];
-  double dStack_34;
   float local_2c;
   float local_28;
-  int local_24;
-  IDirectSoundBuffer *local_20;
   long lStack_1c;
-  float local_18;
   int iVar2;
   double dVar1;
   char *pcVar7;

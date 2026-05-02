@@ -13,7 +13,6 @@ void __cdecl core_msnedit_cpp_CDemonMission_showOptionsMenu_FUN_00537680(CDemonM
   char *pcVar3;
   int iVar3;
   char local_114 [256];
-  char *local_14;
   uint uVar2;
   
   core_inivar_cpp_readIniData_FUN_004fbd90();

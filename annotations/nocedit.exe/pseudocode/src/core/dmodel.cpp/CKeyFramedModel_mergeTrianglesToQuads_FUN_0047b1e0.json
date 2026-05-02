@@ -7,17 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 811,
-    "complexity_score": 506,
+    "complexity_score": 491,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 336,
-    "suspect_count": 15,
+    "suspect_count": 14,
     "suspect_types": [
       "bitcast_double_pair",
       "pointer_cast",
-      "stack_alignment_array",
       "sub84_truncation"
     ],
     "total_lines": 1147
@@ -263,6 +262,15 @@
     "pcode_op_count": 3667
   },
   "resolved_suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 29,
+      "match": "aiStackY_10d8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int aiStackY_10d8 [1006];",
+      "type": "stack_alignment_array"
+    },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
       "line": 308,
@@ -666,14 +674,14 @@
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 63,
-          "line": 223,
+          "line": 209,
           "message": "Array 'local_f0[4]' accessed at index 6, which is out of bounds.",
           "severity": "error"
         },
         {
           "check_id": "arrayIndexOutOfBounds",
           "column": 63,
-          "line": 224,
+          "line": 210,
           "message": "Array 'local_f0[4]' accessed at index 9, which is out of bounds.",
           "severity": "error"
         }
@@ -683,14 +691,6 @@
     "file_variant": "keep"
   },
   "suspects": [
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 29,
-      "match": "aiStackY_10d8",
-      "severity": "moderate",
-      "text": "int aiStackY_10d8 [1006];",
-      "type": "stack_alignment_array"
-    },
     {
       "description": "Complex pointer cast",
       "line": 99,

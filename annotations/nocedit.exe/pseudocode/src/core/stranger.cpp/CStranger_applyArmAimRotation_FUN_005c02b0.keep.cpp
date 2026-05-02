@@ -20,15 +20,8 @@ void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_005c02b0(CStran
   float fVar3;
   CQuaternion4f *quat1_in;
   CQuaternion4f *pCVar1;
-  uint *puVar2;
-  uint *puVar3;
-  uint *puVar4;
-  char *pcVar5;
-  byte bVar6;
-  float afStackY_19b8 [1520];
   char *motion_name;
   CQuaternion4f *pCVar4;
-  float local_1e0;
   CQuaternion4f local_1dc;
   CQuaternion4f local_1cc;
   CQuaternion4f local_1bc;
@@ -55,17 +48,9 @@ void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_005c02b0(CStran
   CQuaternion4f local_6c;
   CQuaternion4f local_5c;
   CQuaternion4f local_4c;
-  float local_34;
-  char *local_30;
-  CQuaternion4f *local_2c;
   int local_28;
   int local_24;
-  SArmAimData *local_20;
-  CDeformableModelInstance *local_1c;
-  float local_18;
   int iVar7;
-  float fVar8;
-  CDeformableModelInstance *this_ptr_00;
   
   if (arm_side == 0) {
     local_24 = g_StrangerIndices[3];

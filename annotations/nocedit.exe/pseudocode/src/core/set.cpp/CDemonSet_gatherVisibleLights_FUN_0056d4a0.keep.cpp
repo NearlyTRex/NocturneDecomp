@@ -32,7 +32,6 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0(CDemonSet *t
   int local_74;
   CVector3f local_64;
   CVector3f local_58 [3];
-  int local_2c;
   int local_28;
   int local_24;
   int local_20;

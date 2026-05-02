@@ -89,13 +89,11 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
   int local_dc;
   int local_d8;
   int local_d4;
-  int local_d0;
   int *local_cc;
   int *local_c8;
   int *local_c4;
   int local_c0;
   int local_bc;
-  int local_b8;
   int *local_b4;
   int local_b0;
   int intensity_stereo_enabled;
@@ -119,7 +117,6 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
   int local_64;
   int local_60;
   float (*local_5c) [18];
-  SMpegStereoSubbandSamples *local_58;
   float *local_54;
   int local_50;
   float (*local_4c) [18];
@@ -135,11 +132,14 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
   int local_24;
   int local_20;
   int local_1c;
-  uint local_18;
   int iVar4;
   float fVar1;
   short sVar2;
   ushort uVar3;
+  int local_d0;
+  int local_b8;
+  SMpegStereoSubbandSamples *local_58;
+  uint local_18;
 
   // Flat int views over the packed g_Layer3BandIndex[6] (each entry is 37 ints =
   // l[23] + s[14], total 0x94 bytes). Byte-stride lookups in the asm collapse to

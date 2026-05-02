@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 69,
+    "complexity_score": 54,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 39,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_alignment_array",
       "warning_type_propagation"
     ],
     "total_lines": 178
@@ -159,6 +158,17 @@
     },
     "pcode_op_count": 518
   },
+  "resolved_suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 11,
+      "match": "afStackY_1850",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "float afStackY_1850 [1522];",
+      "type": "stack_alignment_array"
+    }
+  ],
   "stack_frame": {
     "frame_size": 6232,
     "local_size": 6228,
@@ -239,14 +249,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 11,
-      "match": "afStackY_1850",
-      "severity": "moderate",
-      "text": "float afStackY_1850 [1522];",
-      "type": "stack_alignment_array"
     }
   ]
 }

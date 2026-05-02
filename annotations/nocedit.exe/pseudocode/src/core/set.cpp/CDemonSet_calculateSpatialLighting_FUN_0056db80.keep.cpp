@@ -15,7 +15,6 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonS
   int iVar3;
   int iVar4;
   int iVar8;
-  byte bVar6;
   CVector3i local_48;
   CVector3f local_3c;
   CVector3i local_30;

@@ -37,19 +37,10 @@ void __cdecl core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_005c5270(C
   CVector3f local_60;
   CVector3f local_54;
   int local_40;
-  char *local_3c;
-  CWeapon *local_38;
   CDynamite *local_34;
-  CMotionController *local_30;
-  CWeapon *local_2c;
-  CDynamite *local_28;
-  float local_24;
-  CInventory *local_20;
   CWeapon *local_1c;
-  float local_18;
   char *pcVar4;
   float fVar3;
-  CWeapon *pCVar1;
   CDemonActor *pCVar2;
   
   if (((this_ptr->base).base.layer_action_index == 0xe) &&

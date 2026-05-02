@@ -17,8 +17,6 @@ void __cdecl engine_pcx_c_saveScreenRaw16_FUN_00548d20(char *filename)
   char *pcVar6;
   ushort *puVar6;
   char local_70 [80];
-  uint local_20;
-  uint local_1c;
   int local_18;
   int local_14;
   ushort uVar2;

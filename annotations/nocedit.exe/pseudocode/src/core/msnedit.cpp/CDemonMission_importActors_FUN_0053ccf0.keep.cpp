@@ -21,15 +21,11 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActors_FUN_0053ccf0(CDemonMiss
   int iVar4;
   CDemonActor *pCVar7;
   int iVar5;
-  char *pcVar6;
-  char *pcVar8;
-  byte bVar9;
   CPickList local_448;
   char local_a0 [100];
   char local_3c [40];
   int local_14;
-  CDemonMission *local_10;
-  CDemonMission *pCVar1;
+  byte bVar9;
   
   bVar9 = 0;
   iVar2 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0

@@ -17,14 +17,8 @@ int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_005b0120(LPGUID d
   int iVar5;
   uint uVar3;
   uint error_code;
-  int iVar4;
   char *pcVar6;
-  uint *puVar5;
-  uint *puVar6;
-  uint *puVar7;
-  uint *puVar8;
   char *pcVar9;
-  byte bVar10;
   char acStack_390 [400];
   char acStack_200 [400];
   DSCAPS DStack_70;

@@ -10,19 +10,11 @@
 void __cdecl core_script_cpp_CScript_initRuntime_FUN_0055a540(CScript *this_ptr)
 
 {
-  char cVar2;
   int iVar4;
-  int iVar3;
-  char *pcVar4;
-  char *pcVar7;
-  char *pcVar5;
   char *pcVar8;
-  char *pcVar9;
-  char *pcVar6;
-  byte bVar7;
   char local_70 [100];
   CGame *pCVar2;
-  char cVar1;
+  byte bVar7;
   
   bVar7 = 0;
   this_ptr->next_cmd = 0;

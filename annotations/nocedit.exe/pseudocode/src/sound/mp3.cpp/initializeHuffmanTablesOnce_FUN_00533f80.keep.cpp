@@ -14,19 +14,15 @@ void __cdecl sound_mp3_cpp_initializeHuffmanTablesOnce_FUN_00533f80(void)
   uint uVar6;
   SHuffmanTable *str_00;
   char *pcVar7;
-  int iVar1;
-  int iVar8;
   int iVar2;
   int iVar3;
   int iVar4;
   uint uVar5;
-  char *pcVar6;
-  byte bVar7;
   int local_10;
   SHuffmanTable *local_c;
   int local_8;
   char *pcVar8;
-  SHuffmanTable *str;
+  byte bVar7;
   
   bVar7 = 0;
   if (g_HuffmanTablesInitialized == 0) {

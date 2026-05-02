@@ -20,26 +20,19 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
   uint uVar6;
   STrainNoise *pSVar7;
   char *pcVar8;
-  char *pcVar10;
   char *pcVar9;
-  char *pcVar11;
-  byte bVar10;
   float local_120;
   float local_11c;
   char local_118 [100];
   char local_b4 [100];
   CVector3f local_50;
   CVector3f local_44;
-  float local_2c;
-  float local_28;
-  float local_24;
   float local_20;
   STrainNoise *local_1c;
-  float local_18;
-  float local_14;
   float fVar2;
   char cVar1;
   STrainNoise *pSVar3;
+  byte bVar10;
   
   bVar10 = 0;
   fVar7 = g_CGamePtr->delta_time_float;

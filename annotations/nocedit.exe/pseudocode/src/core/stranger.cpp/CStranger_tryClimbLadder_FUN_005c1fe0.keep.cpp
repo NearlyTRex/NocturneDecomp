@@ -18,15 +18,6 @@ int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_005c1fe0(CStranger *t
   CVector3f *pCVar2;
   float10 fVar2;
   CBoundingBox3D local_e0;
-  float fStack_c8;
-  float fStack_c4;
-  float fStack_c0;
-  float fStack_bc;
-  float fStack_b8;
-  float fStack_b4;
-  float fStack_b0;
-  float fStack_ac;
-  float fStack_a8;
   CVector3f local_a4;
   CVector3f CStack_98;
   CVector3f CStack_8c;
@@ -37,19 +28,8 @@ int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_005c1fe0(CStranger *t
   float fStack_60;
   CVector3f CStack_5c;
   CVector3f CStack_50;
-  float fStack_44;
-  float fStack_40;
-  float fStack_3c;
-  float fStack_38;
-  float fStack_34;
-  float fStack_30;
-  float fStack_2c;
-  float fStack_28;
-  float fStack_24;
-  CVector3f *local_20;
   int local_1c;
   int local_18;
-  float local_14;
   CConsole *this_ptr_00;
   
   (this_ptr->base).ladder_to_climb = (CLadder *)0x0;

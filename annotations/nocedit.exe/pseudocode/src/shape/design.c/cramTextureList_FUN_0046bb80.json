@@ -7,15 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 3287,
-    "complexity_score": 1382,
+    "complexity_score": 1367,
     "cross_reference_count": 3,
     "function_call_count": 34,
     "global_count": 170,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 1047,
-    "suspect_count": 31,
+    "suspect_count": 30,
     "suspect_types": [
-      "stack_alignment_array",
       "unrolled_strchr",
       "unrolled_strcpy",
       "unrolled_strlen",
@@ -1345,6 +1344,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 26,
+      "match": "acStackY_146e",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "char acStackY_146e [1018];",
+      "type": "stack_alignment_array"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 986,
       "match": "do {",
@@ -1795,14 +1803,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 26,
-      "match": "acStackY_146e",
-      "severity": "moderate",
-      "text": "char acStackY_146e [1018];",
-      "type": "stack_alignment_array"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

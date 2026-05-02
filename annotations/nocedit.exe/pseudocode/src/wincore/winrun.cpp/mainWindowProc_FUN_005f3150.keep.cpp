@@ -10,9 +10,9 @@ LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_005f3150(HWND hWnd, UINT
 {
     int iVar1;
     LRESULT LVar2;
-    HANDLE hThread;
     uint uVar3;
     int iVar4;
+    HANDLE hThread;
 
     if (hWnd != g_MainWindowHandle) goto LAB_default;
 

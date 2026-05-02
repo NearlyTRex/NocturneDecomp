@@ -32,21 +32,13 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *t
   CVector3f local_e8;
   CVector3f local_dc;
   CVector3f local_d0;
-  float local_c4;
-  float local_c0;
-  float local_bc;
   CVector3f local_b8;
   CVector3f local_ac;
-  float local_a0;
-  float local_98;
   CVector3f local_94;
   CVector3f local_88;
   CVector3f local_7c;
   CVector3f local_70;
   CVector3f local_64;
-  float local_58;
-  float local_54;
-  float local_50;
   CVector3f local_4c;
   CVector3f local_40;
   float local_2c;
@@ -54,16 +46,14 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *t
   float local_24;
   float local_20;
   float local_1c;
-  float local_18;
   float local_14;
-  CDeformableModelInstance *this_ptr_00;
   CLocation *pCVar1;
   float fVar10;
   float fVar9;
   float max_distance;
   SDamageInfo *damage_info;
-  CCharacter *pCVar3;
   CVector3f *pCVar2;
+  float local_18;
   
   iVar4 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar4 == 0) {

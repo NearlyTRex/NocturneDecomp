@@ -84,7 +84,6 @@ void __cdecl core_zombie_cpp_CZombie_process_FUN_005f9470(CZombie *this_ptr,floa
   float local_1a8;
   float local_1a4;
   float local_1a0;
-  uint local_19c;
   float local_198;
   CVector3f local_194;
   CVector3f local_188;
@@ -118,7 +117,6 @@ void __cdecl core_zombie_cpp_CZombie_process_FUN_005f9470(CZombie *this_ptr,floa
   int local_80;
   float local_7c;
   float local_78;
-  float local_74;
   CVector3f *local_68;
   float local_5c;
   CDoor *local_58;
@@ -140,6 +138,8 @@ void __cdecl core_zombie_cpp_CZombie_process_FUN_005f9470(CZombie *this_ptr,floa
   float local_18;
   CVector3f *local_14;
   CCharacter *iVar9;
+  uint local_19c;
+  float local_74;
   
   iVar6 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar6 == 0) {

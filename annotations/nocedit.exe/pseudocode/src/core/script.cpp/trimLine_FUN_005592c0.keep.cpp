@@ -10,7 +10,6 @@
 void __cdecl core_script_cpp_trimLine_FUN_005592c0(char *input_line,char *output_buffer)
 
 {
-  char cVar1;
   char *pcVar2;
   char *pcVar3;
   

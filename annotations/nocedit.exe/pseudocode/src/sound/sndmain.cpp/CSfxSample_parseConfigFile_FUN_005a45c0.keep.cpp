@@ -20,12 +20,6 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSampl
   char *pcVar8;
   char *pcVar9;
   char *pcVar11;
-  uint local_480;
-  uint uStack_47c;
-  uint local_478;
-  uint uStack_474;
-  uint local_470;
-  uint uStack_46c;
   float local_468;
   char local_464 [300];
   char local_338 [256];
@@ -42,7 +36,6 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSampl
   int local_18;
   _FILE *stream;
   float fVar5;
-  double dVar2;
   float fVar1;
   float fVar4;
   

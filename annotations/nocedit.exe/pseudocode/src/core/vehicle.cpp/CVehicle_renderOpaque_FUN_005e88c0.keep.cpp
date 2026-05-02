@@ -24,8 +24,6 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005e88c0(CVehicle *this_p
   CVector3f CStack_3c;
   CVector3f CStack_30;
   CVector3f CStack_24;
-  int iStack_18;
-  CVector3i *pCStack_14;
   
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
   pCVar1 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_60);

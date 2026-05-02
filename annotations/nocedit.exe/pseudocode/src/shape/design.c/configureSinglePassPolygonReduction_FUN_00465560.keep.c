@@ -22,12 +22,9 @@ void __cdecl shape_design_c_configureSinglePassPolygonReduction_FUN_00465560(int
   float10 fVar7;
   double dVar8;
   byte local_74 [80];
-  int local_24;
-  int local_20;
   int local_1c;
   int local_18;
   float local_14;
-  byte *pbVar5;
   byte bVar1;
   
   iVar5 = g_PolygonCount;

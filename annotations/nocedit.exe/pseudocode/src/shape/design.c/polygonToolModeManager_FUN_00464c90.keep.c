@@ -18,14 +18,13 @@ int __cdecl shape_design_c_polygonToolModeManager_FUN_00464c90(int input_paramet
   char *pcVar7;
   char *pcVar5;
   char *pcVar8;
-  char *pcVar6;
-  byte bVar7;
   double dVar8;
   char local_b8 [80];
   char local_68 [80];
   int local_18;
   float local_14;
   char cVar1;
+  byte bVar7;
   
   bVar7 = 0;
   iVar2 = _strcmp(g_LoadedModelName,&s_EmptyChar_0061c3e2);

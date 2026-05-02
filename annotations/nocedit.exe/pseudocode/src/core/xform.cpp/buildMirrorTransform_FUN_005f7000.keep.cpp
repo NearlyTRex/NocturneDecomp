@@ -12,11 +12,6 @@ CMatrix3x4f * __stack2_esi core_xform_cpp_buildMirrorTransform_FUN_005f7000(CVec
 {
   float fVar1;
   CVector3f *euler_angles;
-  int iVar1;
-  CMatrix3x4f *pCVar2;
-  CMatrix3x4f *pCVar3;
-  CMatrix3x4f *pCVar4;
-  byte bVar5;
   CMatrix3x4f *matrix_b;
   CMatrix3x4f local_1a4;
   CMatrix3x4f local_174;
@@ -28,7 +23,6 @@ CMatrix3x4f * __stack2_esi core_xform_cpp_buildMirrorTransform_FUN_005f7000(CVec
   CMatrix3x4f local_54;
   CVector3f local_24;
   CVector3f local_18;
-  float local_c;
   
   fVar1 = distance /
           (axis_vector->z * axis_vector->z +

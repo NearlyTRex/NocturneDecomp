@@ -16,13 +16,10 @@ void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_00435730(void *bit
   int iVar5;
   int iVar6;
   char local_130 [256];
-  int local_30;
-  int local_2c;
   int local_28;
   byte *local_24;
   int local_20;
   int *local_1c;
-  int local_18;
   int local_14;
   bool bVar1;
 

@@ -11,7 +11,6 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
 
 {
   float *pfVar1;
-  char cVar2;
   CCourseFrame *pCVar3;
   char *pcVar4;
   uint uVar5;
@@ -20,8 +19,6 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
   int iVar6;
   char *pcVar7;
   int iVar8;
-  char *pcVar9;
-  byte bVar10;
   char local_4fc [260];
   char local_3f8 [260];
   char local_2f4 [260];
@@ -39,6 +36,7 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
   uint local_1c;
   int local_18;
   int local_14;
+  byte bVar10;
   
   bVar10 = 0;
   pcVar4 = g_CourseLastPthPath;

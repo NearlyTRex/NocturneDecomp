@@ -25,8 +25,6 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_pt
   float fVar2;
   CClothList *this_ptr_00;
   int iVar9;
-  UOrientationVector *euler;
-  CLocation *position;
 
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
   fVar2 = 9999.0f;

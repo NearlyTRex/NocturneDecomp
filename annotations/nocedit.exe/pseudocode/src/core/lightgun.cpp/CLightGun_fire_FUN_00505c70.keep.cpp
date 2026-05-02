@@ -24,9 +24,6 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
   SDamageInfo SStack_114;
   CBoundingBox3D CStack_d8;
   CBoundingBox3D CStack_c0;
-  float fStack_a8;
-  float fStack_a4;
-  float fStack_a0;
   CVector3f CStack_9c;
   CVector3f CStack_90;
   CVector3f CStack_84;
@@ -36,18 +33,12 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
   CVector3f CStack_54;
   CVector3f CStack_48;
   CVector3f CStack_3c;
-  float fStack_30;
-  CTrigger *pCStack_2c;
-  int iStack_28;
   int iStack_24;
   int iStack_20;
   CCharacter *pCStack_1c;
-  CVector3f *pCStack_18;
-  CVector3f *pCStack_14;
   CCharacter *actor_ptr;
   CDemonSet *this_ptr_01;
   float fVar1;
-  CCharacter *this_ptr_00;
   
   if (this_ptr->charge_level < 30.0f) {
     return 0;

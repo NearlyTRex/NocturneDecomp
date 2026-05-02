@@ -21,19 +21,12 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_t
   float local_58;
   CVector3f CStack_54;
   CVector3f CStack_48;
-  float fStack_3c;
-  float fStack_38;
-  float fStack_34;
   CVector3f CStack_30;
-  float fStack_24;
-  float fStack_20;
-  float fStack_1c;
   float fVar5;
   char *pcVar9;
   float fVar4;
   uint uVar3;
   CVector3f *pCVar2;
-  CDeformableModelInstance *pCVar1;
   
   iVar6 = core_charactr_cpp_CCharacter_process_FUN_00429870(&this_ptr->base,delta_time);
   if (iVar6 == 0) {

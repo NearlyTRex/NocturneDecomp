@@ -23,7 +23,6 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char 
   char local_2bc [30];
   char local_29e [402];
   char local_10c [256];
-  int local_c;
 
   this_ptr->dialog_entry_count = 0;
   iVar4 = engine_dosio_c_getFileSize_FUN_00481880("world",filename);

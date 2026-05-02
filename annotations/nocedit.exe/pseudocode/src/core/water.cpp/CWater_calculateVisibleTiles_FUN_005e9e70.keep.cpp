@@ -25,21 +25,12 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *th
   SMRGLPrimitiveQuadIndex SStack_b4;
   CVector3f local_8c;
   CVector3i local_80;
-  int local_74;
-  int local_70;
-  int local_6c;
   CVector3i local_68;
   CVector3i local_5c;
   CVector3f local_50;
   CVector3f local_44;
   CVector3i local_38;
-  float local_2c;
-  float local_28;
-  float local_24;
   float local_20;
-  int local_1c;
-  int local_18;
-  int local_14;
   float fVar1;
   
   iVar5 = 0;

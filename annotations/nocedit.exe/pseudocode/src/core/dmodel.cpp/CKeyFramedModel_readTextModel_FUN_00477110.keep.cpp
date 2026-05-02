@@ -13,7 +13,6 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00477110(CKeyFram
   SMRGLPrimitiveQuad *pSVar1;
   int iVar1;
   int iVar2;
-  int iVar4;
   uchar *puVar2;
   int iVar3;
   int iVar5;
@@ -32,8 +31,6 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00477110(CKeyFram
   int local_24;
   int local_20;
   int local_1c;
-  int local_18;
-  int local_14;
   
   iVar3 = 1;
   local_44 = -1;

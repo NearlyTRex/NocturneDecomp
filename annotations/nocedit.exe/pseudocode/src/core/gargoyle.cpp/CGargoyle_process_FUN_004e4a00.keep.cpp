@@ -33,35 +33,23 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
   CVector3f local_bc;
   CVector3f local_b0;
   CVector3f local_a4;
-  float local_98;
-  float local_94;
-  float local_90;
   CVector3f local_8c;
   CVector3f local_80;
-  float local_74;
-  float local_70;
-  float local_6c;
   CVector3f local_68;
-  float local_5c;
-  float local_58;
-  float local_54;
   CVector3f local_50;
   CVector3f local_44;
-  float local_30;
   float local_2c;
   int local_28;
   float local_24;
   float local_20;
   float local_1c;
-  float local_18;
   float local_14;
   float max_distance;
-  CCharacter *pCVar3;
   SDamageInfo *damage_info;
   float fVar11;
   CVector3f *pCVar2;
-  CDeformableModelInstance *pCVar1;
   float fVar10;
+  float local_18;
   
   iVar4 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar4 == 0) {

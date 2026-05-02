@@ -36,14 +36,6 @@ void __cdecl shape_meshlod_cpp_fitLeastSquaresPlane_FUN_005151e0(int point_count
   CVector3f local_58;
   CVector3f local_4c;
   CVector3f local_40;
-  double local_34;
-  float local_2c;
-  float local_28;
-  float local_24;
-  float local_20;
-  float local_1c;
-  float local_18;
-  int local_14;
   double dVar4;
   float fVar3;
   float fVar2;

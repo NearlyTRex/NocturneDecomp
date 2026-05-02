@@ -29,15 +29,9 @@ void __cdecl shape_design_c_vertexReducer_FUN_00467850(float tolerance,float ang
   byte local_134 [256];
   int local_34;
   int local_30;
-  SShapeEditorPolygon *local_2c;
-  int local_28;
-  int local_24;
-  int local_20;
   int local_1c;
-  void *local_18;
   void *local_14;
   byte bVar1;
-  byte *pbVar6;
   
   iVar7 = g_VertexCount;
   bVar7 = 0;

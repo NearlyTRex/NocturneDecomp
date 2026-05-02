@@ -12,10 +12,6 @@ void __cdecl shape_superopt_cpp_CObj_transformMasked_FUN_005d2dd0(CObj *this_ptr
 {
   int iVar1;
   CVert *pCVar2;
-  double *pdVar3;
-  double *pdVar4;
-  uint *puVar5;
-  byte bVar6;
   double dStack_a8;
   double dStack_a0;
   double dStack_98;
@@ -26,18 +22,19 @@ void __cdecl shape_superopt_cpp_CObj_transformMasked_FUN_005d2dd0(CObj *this_ptr
   uint uStack_80;
   uint uStack_7c;
   double dStack_78;
-  double dStack_70;
-  double dStack_68;
   double dStack_60;
   double dStack_58;
   double dStack_50;
   double dStack_48;
+  double dStack_30;
+  uint uStack_18;
+  byte bVar6;
+  double dStack_70;
+  double dStack_68;
   double dStack_40;
   double dStack_38;
-  double dStack_30;
   double dStack_28;
   double dStack_20;
-  uint uStack_18;
   
   bVar6 = 0;
   iVar1 = (*this_ptr->vtable->isValid)(this_ptr);

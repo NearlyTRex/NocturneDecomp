@@ -11,19 +11,13 @@ CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_00548390(CLocation *loca
 
 {
   int iVar1;
-  int iVar2;
   int iVar6;
-  int iVar3;
   int iVar7;
   int iVar8;
   int iVar4;
   int iVar5;
-  byte bVar6;
-  int aiStackY_101c [1015];
   CVector3i local_34;
   CVector3f local_28;
-  int local_1c;
-  int local_18 [2];
   
   if ((g_PathMapCacheInitFlag & 1) == 0) {
     g_PathMapCacheInitFlag = g_PathMapCacheInitFlag | 1;

@@ -32,7 +32,6 @@ void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float d
   char *pcVar17;
   char *pcVar18;
   char cVar19;
-  ushort in_FPUControlWord;
   float10 fVar20;
   float10 fVar21;
   int bone_index;
@@ -103,7 +102,6 @@ void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float d
   float local_50;
   float local_4c;
   float local_48;
-  float local_44;
   float local_40;
   float local_3c;
   float local_38;
@@ -116,6 +114,7 @@ void __cdecl core_ghoul_cpp_CGhoul_process_FUN_004e6600(CGhoul *this_ptr,float d
   float local_1c;
   CPathMap *local_18;
   float local_14;
+  float local_44;
   
   iVar7 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar7 == 0) {

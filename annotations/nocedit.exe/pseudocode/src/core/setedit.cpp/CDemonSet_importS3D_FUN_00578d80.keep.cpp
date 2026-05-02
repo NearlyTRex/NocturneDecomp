@@ -32,21 +32,11 @@ void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_p
   char *pcVar12;
   char *pcVar13;
   char (*pacVar12) [40];
-  uint *puVar13;
   char (*pacVar14) [40];
-  float *pfVar14;
   int *piVar15;
-  CDemonFilter **ppCVar15;
   int *piVar16;
   C3DSLight *dest;
-  uint *puVar16;
-  uint *puVar17;
   char (*pacVar18) [40];
-  float *pfVar19;
-  int *piVar20;
-  CDemonFilter **ppCVar21;
-  byte bVar22;
-  int aiStackY_3a30 [1378];
   C3DSLight local_2478;
   CPickList local_be0;
   char local_838 [400];
@@ -93,6 +83,7 @@ void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_p
   int local_18;
   char local_14 [4];
   CEditorTools *this_ptr_00;
+  byte bVar22;
   
   bVar22 = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();

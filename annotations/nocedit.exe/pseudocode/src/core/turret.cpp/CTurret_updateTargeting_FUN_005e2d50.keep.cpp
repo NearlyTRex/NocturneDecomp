@@ -33,11 +33,7 @@ void __cdecl core_turret_cpp_CTurret_updateTargeting_FUN_005e2d50(CTurret *this_
   CVector3f CStack_54;
   CVector3f CStack_48;
   CVector3f CStack_3c;
-  float fStack_30;
-  float fStack_2c;
-  float fStack_28;
   CVector3f CStack_24;
-  char *pcStack_14;
   CDemonActor *pCVar1;
   
   pCVar1 = this_ptr->guard_zone_box_trigger;

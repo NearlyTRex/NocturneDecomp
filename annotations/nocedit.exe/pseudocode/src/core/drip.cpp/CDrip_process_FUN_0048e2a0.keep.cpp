@@ -27,12 +27,7 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0048e2a0(CDrip *this_ptr,float delt
   CVector3f local_54;
   CVector3f local_48;
   CVector3f aCStack_3c [2];
-  CLocation *pCStack_20;
-  float fStack_1c;
-  float fStack_18;
-  float fStack_14;
   float fVar3;
-  CLocation *position;
   CDemonActor_vtable *pCVar1;
   CCharacter *pCVar2;
   

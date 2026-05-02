@@ -18,10 +18,8 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_pt
   char local_94 [100];
   SNetPacket_Simple local_30;
   uint local_24;
-  SNetPlayer *local_20;
   int local_1c;
   int local_18;
-  int local_14;
   
   engine_2d_c_clearInputAndWait_FUN_00403260();
   if (sync_stage < 1) {

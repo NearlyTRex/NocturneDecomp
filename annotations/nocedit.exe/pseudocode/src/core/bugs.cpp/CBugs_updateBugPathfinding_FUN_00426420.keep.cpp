@@ -22,23 +22,10 @@ int __cdecl core_bugs_cpp_CBugs_updateBugPathfinding_FUN_00426420(CBugs *this_pt
   CVector3f local_80;
   CVector3f local_74;
   CVector3f local_68;
-  float local_5c;
-  float local_58;
-  float local_54;
   CVector3f local_50;
-  float local_44;
-  float local_40;
-  float local_3c;
-  float local_38;
-  float local_34;
-  float local_30;
-  float local_2c;
   float local_28;
   float local_24;
-  float local_20;
   float local_1c;
-  float local_18;
-  float local_14;
   CVector3f *pCVar1;
   
   if (bug_data->state != 0) {

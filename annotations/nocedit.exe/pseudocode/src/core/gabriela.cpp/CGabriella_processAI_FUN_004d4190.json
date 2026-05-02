@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 488,
-    "complexity_score": 221,
+    "complexity_score": 206,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 13,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 206,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_type_propagation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 694
   },
   "cross_references": [
@@ -237,6 +235,17 @@
     },
     "pcode_op_count": 2626
   },
+  "resolved_suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    }
+  ],
   "stack_frame": {
     "frame_size": 300,
     "local_size": 292,
@@ -550,14 +559,36 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    }
-  ]
+  "static_analysis": {
+    "analyzed_file": "CGabriella_processAI_FUN_004d4190.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 18,
+          "line": 93,
+          "message": "Uninitialized variable: local_94",
+          "severity": "warning"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 40,
+          "line": 93,
+          "message": "Uninitialized variable: local_9c",
+          "severity": "warning"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 62,
+          "line": 93,
+          "message": "Uninitialized variable: local_98",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
+  "suspects": []
 }

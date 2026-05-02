@@ -26,7 +26,6 @@ int __cdecl core_script_cpp_CScript_browseEventXRefs_FUN_005677a0(CScript *this_
   char local_e4 [200];
   int local_1c;
   int local_18;
-  char *local_14;
   int iVar2;
   char cVar1;
   uint window_flags;

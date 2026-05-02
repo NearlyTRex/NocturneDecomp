@@ -10,7 +10,6 @@
 void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_ptr)
 
 {
-  char cVar2;
   int iVar2;
   int iVar3;
   _FILE *p_Var4;
@@ -20,26 +19,17 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
   int iVar5;
   byte *pbVar5;
   int iVar6;
-  char *pcVar6;
   int iVar8;
   int iVar7;
-  char *pcVar8;
   char *pcVar10;
-  byte bVar10;
   uint auStack_a30 [256];
   byte local_630 [768];
   ushort auStack_330 [256];
   char local_130 [256];
-  uint local_30;
-  uint local_2c;
-  ushort *local_28;
   int local_24;
   int local_20;
   int local_1c;
-  void *local_18;
-  int local_14;
-  char *pcVar9;
-  char cVar1;
+  byte bVar10;
   
   bVar10 = 0;
   if (this_ptr->bitmap_filename[0] == '\0') {

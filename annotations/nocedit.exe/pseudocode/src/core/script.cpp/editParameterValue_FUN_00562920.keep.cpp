@@ -25,10 +25,8 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
   int iVar6;
   int iVar7;
   char (*string_data) [30];
-  char *pcVar8;
   char *pcVar9;
   char *pcVar10;
-  byte bVar9;
   uint uVar11;
   float local_3758;
   CPickList local_3754;
@@ -60,8 +58,8 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
   char *local_1c;
   char *local_18;
   int local_14;
-  char cVar1;
   uint uVar10;
+  byte bVar9;
   
   bVar9 = 0;
   _sprintf(local_7cc,"Enter %s",param_info->default_value);

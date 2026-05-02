@@ -12,10 +12,7 @@ void __cdecl core_msnedit_cpp_buildActorClassHierarchy_FUN_00537330(CStrList *cl
 {
   int iVar3;
   char local_80 [100];
-  char *local_1c;
-  int local_18;
   int local_14;
-  char *pcVar6;
   CDemonActorType *parent_class_00;
 
   local_14 = 0;

@@ -18,8 +18,6 @@ void __cdecl core_msnedit_cpp_CDemonMission_saveWithNewName_FUN_00537f60(CDemonM
   char local_31c [260];
   char local_218 [256];
   char local_118 [256];
-  char *local_18;
-  char *local_14;
   _FILE *file;
 
   engine_dosio_c_splitPath_FUN_00481f20(this_ptr->mission_name,(char *)0x0,(char *)0x0,local_118,(char *)0x0);

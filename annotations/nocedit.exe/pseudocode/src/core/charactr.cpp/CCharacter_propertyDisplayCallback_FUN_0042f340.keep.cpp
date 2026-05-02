@@ -10,7 +10,6 @@
 void __cdecl core_charactr_cpp_CCharacter_propertyDisplayCallback_FUN_0042f340(CCharacter *this_ptr,CActorProperty *property,char *output_buffer)
 
 {
-  char cVar1;
   CCharacter *pCVar2;
   int iVar2;
   char *pcVar3;

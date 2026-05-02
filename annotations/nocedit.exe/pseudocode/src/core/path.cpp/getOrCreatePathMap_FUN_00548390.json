@@ -7,16 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 143,
-    "complexity_score": 138,
+    "complexity_score": 123,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 68,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
-      "pointer_cast",
-      "stack_alignment_array"
+      "pointer_cast"
     ],
     "total_lines": 211
   },
@@ -199,6 +198,17 @@
     },
     "pcode_op_count": 512
   },
+  "resolved_suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 14,
+      "match": "aiStackY_101c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int aiStackY_101c [1015];",
+      "type": "stack_alignment_array"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4132,
     "local_size": 4128,
@@ -251,14 +261,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 14,
-      "match": "aiStackY_101c",
-      "severity": "moderate",
-      "text": "int aiStackY_101c [1015];",
-      "type": "stack_alignment_array"
-    },
     {
       "description": "Complex pointer cast",
       "line": 29,

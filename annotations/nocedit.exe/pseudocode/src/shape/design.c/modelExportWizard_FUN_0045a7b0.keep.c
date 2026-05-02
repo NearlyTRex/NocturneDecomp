@@ -20,14 +20,8 @@ void __cdecl shape_design_c_modelExportWizard_FUN_0045a7b0(int export_format_typ
   char *pcVar4;
   char *pcVar5;
   char *pcVar7;
-  char *pcVar6;
-  char *pcVar8;
-  char *pcVar9;
   byte bVar7;
   char local_6c [80];
-  int local_1c;
-  int local_18;
-  int local_14;
   char cVar1;
   
   bVar7 = 0;

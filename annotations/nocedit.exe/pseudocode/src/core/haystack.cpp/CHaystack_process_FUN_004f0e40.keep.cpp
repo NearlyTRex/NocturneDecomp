@@ -23,35 +23,20 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004f0e40(CHaystack *this_pt
   int iVar10;
   int iVar8;
   SMotion *pSVar9;
-  uint *puVar11;
-  uint *puVar12;
-  byte bVar13;
-  float afStackY_1868 [1521];
   float fVar10;
   float local_90;
   CQuaternion4f CStack_8c;
   CQuaternion4f CStack_7c;
-  float local_6c;
-  float local_68;
-  float local_64;
   CVector3f local_60;
   CVector3f local_54;
   CVector3f local_48;
   CVector3f local_3c;
-  float local_28;
-  CDeformableModelInstance *pCStack_24;
-  float local_20;
-  int local_1c;
-  CCharacter_full_vtable *local_18;
   CVector3f *pCVar1;
   CGame *pCVar4;
   bool bVar3;
-  CDeformableModelInstance *pCVar14;
   CCharacter *this_ptr_00;
   CDemonActor *pCVar2;
   CDeformableModel_MotionBlendWeightFunc *blend_callback;
-  float fVar15;
-  CQuaternion4f *source_quaternions;
   
   iVar5 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar5 == 0) {

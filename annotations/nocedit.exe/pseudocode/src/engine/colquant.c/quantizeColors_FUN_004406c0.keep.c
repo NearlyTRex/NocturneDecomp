@@ -15,7 +15,6 @@ char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantMapper *
   double dVar8;
   int iVar9;
   SColorQuantMapper *pSVar8;
-  int iVar10;
   SColorQuantMapper *pSVar9;
   SColorQuantMapper *pSVar10;
   SColorQuantMapper *pSVar11;
@@ -31,8 +30,6 @@ char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantMapper *
   uint local_50 [11];
   int local_24;
   int local_20;
-  uint local_1c;
-  uint local_18;
   short sVar1;
   double dVar2;
   double dVar5;
@@ -40,6 +37,8 @@ char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantMapper *
   double dVar3;
   char *pcVar4;
   double dVar7;
+  uint local_1c;
+  uint local_18;
 
   memset(workspace->sort_keys,0,0x2000);
   memset(workspace->centroids,0,0x2000);

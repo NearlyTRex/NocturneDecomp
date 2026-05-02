@@ -18,8 +18,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_addTextureSet_FUN_0058e0b0(CDefo
   char local_31c [260];
   char local_218 [256];
   char local_118 [256];
-  int local_18;
-  STextureSet *local_14;
 
   if (4 < this_ptr->num_texture_sets) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";

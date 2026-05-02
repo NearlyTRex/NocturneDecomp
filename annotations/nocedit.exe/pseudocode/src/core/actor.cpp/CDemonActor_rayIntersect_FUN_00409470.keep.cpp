@@ -29,7 +29,6 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *
   CVector3f local_3c;
   CVector3f local_30;
   CVector3f CStack_24;
-  float local_14;
   CDeformableModelInstance *frame_index;
   CVector3f *output_normal;
   CVector3f *ray_origin_00;

@@ -22,7 +22,6 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b050(CDemonActor *this_ptr,
   CDemonActor *pCVar5;
   char local_dc [100];
   char local_78 [100];
-  _FILE *local_14;
   char cVar1;
   
   str1 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(this_ptr);

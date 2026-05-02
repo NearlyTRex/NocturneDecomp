@@ -34,7 +34,6 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor 
   CBoundingBox3D local_128;
   CBoundingBox3D local_110;
   CBoundingBox3D local_f8;
-  CVector3f local_e0;
   CVector3f local_d4;
   CVector3f local_c8;
   CVector3f local_bc;
@@ -42,13 +41,9 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor 
   CVector3f local_a4;
   CVector3f local_98;
   CVector3f local_8c;
-  CVector3f local_80;
   CVector3f local_74;
   CVector3f local_68;
   CVector3f local_5c;
-  CVector3f local_50;
-  float local_44;
-  CTrigger *local_40;
   CCrate *local_3c;
   int local_38;
   CTrigger *local_34;
@@ -57,7 +52,6 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor 
   CDemonActor *local_28;
   CDemonActor *local_24;
   CTrigger *local_20;
-  CGlass *local_1c;
   CDemonActor *pCStack_18;
   CDemonActor *pCStack_14;
   

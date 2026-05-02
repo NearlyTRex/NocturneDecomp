@@ -26,13 +26,10 @@ void __cdecl engine_drender_cpp_renderTriangleSimple_FUN_004839f0(CVector3i *ver
   int iVar10;
   SRenderVertex *pSVar11;
   SRenderVertex *local_74 [16];
-  uint local_34;
   CVector3i *local_30;
   int local_2c;
   SRenderVertex *local_28;
-  SRenderVertex *local_24;
   SRenderVertex *local_20;
-  int local_1c;
   SSoftwareEdge *local_18;
   SSoftwareEdge *local_14;
   int *piVar3;

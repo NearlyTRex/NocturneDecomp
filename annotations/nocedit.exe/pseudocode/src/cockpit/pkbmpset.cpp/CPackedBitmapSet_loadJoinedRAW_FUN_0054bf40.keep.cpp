@@ -22,8 +22,6 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40(CP
   char local_144 [100];
   char local_e0 [100];
   char local_7c [100];
-  _FILE *local_18;
-  SIZE_T local_14;
   
   cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_0054bd60(this_ptr);
   iVar1 = engine_dosio_c_getFileSize_FUN_00481880("art",filename);

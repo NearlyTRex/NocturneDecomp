@@ -16,7 +16,6 @@ int __cdecl core_script_cpp_parseConditionExpression_FUN_00561a30(char *input_te
   char *cmd_name_out_00;
   char *input_text_00;
   char *pcVar4;
-  uint uVar3;
   uint uVar5;
   uint uVar4;
   int iVar6;

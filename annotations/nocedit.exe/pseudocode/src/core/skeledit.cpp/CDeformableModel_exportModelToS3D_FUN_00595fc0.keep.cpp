@@ -26,10 +26,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
   CStrList local_c8;
   CStrList local_b8;
   CVector3f local_a8;
-  int local_9c;
-  int local_98;
-  int local_94;
-  SPart *local_90;
   int local_8c;
   int local_88;
   int local_84;
@@ -37,16 +33,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
   int local_7c;
   int local_78;
   int local_74;
-  _FILE *local_70;
-  int local_6c;
-  int local_68;
-  CDeformableModel *local_64;
-  CDeformableModel *local_60;
-  int local_5c;
-  int local_58;
-  int local_54;
-  int local_50;
-  int local_4c;
   int local_48;
   int local_44;
   int local_40;
@@ -59,9 +45,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
   int local_24;
   int local_20;
   int local_1c;
-  int local_18;
-  uint local_14;
-  _FILE *p_Var1;
   char *pcVar3;
 
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0

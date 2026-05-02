@@ -16,8 +16,6 @@ void __cdecl core_cloth_cpp_CCloth_showMenu_FUN_0043ddf0(CCloth *this_ptr)
   char local_278 [256];
   char local_178 [256];
   char local_78 [100];
-  float *local_14;
-  char *pcVar6;
 
   local_178[0] = '\0';
   local_278[0] = '\0';

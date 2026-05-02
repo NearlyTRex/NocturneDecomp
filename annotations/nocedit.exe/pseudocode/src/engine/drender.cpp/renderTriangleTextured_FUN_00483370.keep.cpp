@@ -11,9 +11,6 @@ void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00483370(int *vertex_
 
 {
   int iVar1;
-  int iVar8;
-  int iVar9;
-  int iVar10;
   longlong lVar11;
   int iVar12;
   int iVar2;
@@ -31,7 +28,6 @@ void __cdecl engine_drender_cpp_renderTriangleTextured_FUN_00483370(int *vertex_
   uint local_2c;
   int *local_28;
   int local_24;
-  int local_20;
   SRenderVertex *local_1c;
   SSoftwareEdge *local_18;
   SSoftwareEdge *local_14;

@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 579,
-    "complexity_score": 223,
+    "complexity_score": 208,
     "cross_reference_count": 0,
     "function_call_count": 28,
     "global_count": 30,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 193,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_alignment_array",
       "unrolled_strcpy"
     ],
     "total_lines": 772
@@ -419,6 +418,17 @@
     },
     "pcode_op_count": 2047
   },
+  "resolved_suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 22,
+      "match": "atStackY_2e68",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "time_t atStackY_2e68 [2034];",
+      "type": "stack_alignment_array"
+    }
+  ],
   "stack_frame": {
     "frame_size": 11896,
     "local_size": 11884,
@@ -565,14 +575,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 22,
-      "match": "atStackY_2e68",
-      "severity": "moderate",
-      "text": "time_t atStackY_2e68 [2034];",
-      "type": "stack_alignment_array"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 54,

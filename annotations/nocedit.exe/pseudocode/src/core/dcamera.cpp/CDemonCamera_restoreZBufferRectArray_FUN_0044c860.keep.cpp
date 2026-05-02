@@ -16,7 +16,6 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860(
   CRect *pCVar2;
   int iVar8;
   CRect local_34;
-  CRect *local_24;
   int local_1c;
   int local_18;
   int local_14;

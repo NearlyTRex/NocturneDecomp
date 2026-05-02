@@ -13,7 +13,6 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_005af410(CDirectS
   IDirectSoundBuffer *pIVar1;
   LPDIRECTSOUNDBUFFER pIVar2;
   IDirectSound3DBuffer *pIVar3;
-  int iVar4;
   uint uVar5;
   char *pcVar6;
   int iVar7;

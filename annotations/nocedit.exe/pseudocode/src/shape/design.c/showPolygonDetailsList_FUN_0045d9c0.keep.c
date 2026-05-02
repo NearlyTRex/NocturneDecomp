@@ -10,16 +10,6 @@
 void __cdecl shape_design_c_showPolygonDetailsList_FUN_0045d9c0(void)
 
 {
-  char cVar2;
-  int iVar2;
-  int iVar3;
-  char *pcVar3;
-  char *pcVar4;
-  char *pcVar6;
-  char *pcVar7;
-  char *pcVar5;
-  char *pcVar8;
-  byte bVar6;
   char local_11c [160];
   char local_7c [80];
   char local_2c [12];
@@ -27,7 +17,7 @@ void __cdecl shape_design_c_showPolygonDetailsList_FUN_0045d9c0(void)
   int local_1c;
   int local_18;
   int local_14;
-  char cVar1;
+  byte bVar6;
   
   bVar6 = 0;
   engine_2d_c_clearInputAndWait_FUN_00403260();

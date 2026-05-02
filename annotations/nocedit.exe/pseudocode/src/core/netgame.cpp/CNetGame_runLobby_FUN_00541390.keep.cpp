@@ -30,13 +30,9 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_00541390(CNetGame *this_ptr)
   float local_138;
   float local_134;
   char local_130 [256];
-  int local_30;
-  char *local_2c;
   char *local_28;
   int local_24;
   int local_20;
-  char *local_1c;
-  int local_18;
   bool bVar2;
   uchar uVar1;
   

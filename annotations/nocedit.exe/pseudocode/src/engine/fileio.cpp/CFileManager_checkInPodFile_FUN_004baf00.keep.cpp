@@ -28,7 +28,6 @@ int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileMana
   SFoundFileInfo *pSVar8;
   SFoundFileInfo *pSVar10;
   char *pcVar9;
-  char *pcVar12;
   char *pcVar10;
   char *pcVar11;
   byte bVar13;
@@ -67,14 +66,13 @@ int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileMana
   _FILE *local_34;
   int local_30;
   int local_2c;
-  int local_28;
   char local_24 [4];
   char local_20 [4];
   char local_1c [4];
   char local_18 [8];
   char cVar1;
-  SFoundFileInfo *pSVar11;
   char *pcVar14;
+  int local_28;
   
   bVar13 = 0;
   iVar2 = engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0(this_ptr);

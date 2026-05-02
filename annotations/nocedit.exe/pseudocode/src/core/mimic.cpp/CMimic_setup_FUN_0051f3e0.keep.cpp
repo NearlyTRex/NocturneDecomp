@@ -11,14 +11,8 @@ void __cdecl core_mimic_cpp_CMimic_setup_FUN_0051f3e0(CMimic *this_ptr)
 
 {
   CDeformableModelInstance *pCVar1;
-  uint *puVar2;
-  uint *puVar3;
   SMorphPoint *pSVar4;
   SMRGLPrimitiveTriangle *pSVar5;
-  uint uVar6;
-  int iVar7;
-  uint uVar8;
-  uint uVar9;
   CSkeleton *this_ptr_00;
   CDemonActor *actor_ptr;
   CEnemy *pCVar10;

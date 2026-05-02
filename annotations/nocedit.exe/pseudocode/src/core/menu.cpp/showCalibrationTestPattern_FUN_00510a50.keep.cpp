@@ -15,13 +15,11 @@ void __cdecl core_menu_cpp_showCalibrationTestPattern_FUN_00510a50(char *message
   int iVar5;
   int iVar3;
   int iVar6;
-  int iVar4;
   char *pcVar5;
-  char *pcVar6;
   char *pcVar7;
-  byte bVar7;
   char local_110 [256];
   char cVar1;
+  byte bVar7;
   
   bVar7 = 0;
   pcVar5 = local_110;

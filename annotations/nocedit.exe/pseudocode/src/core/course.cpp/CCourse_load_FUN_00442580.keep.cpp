@@ -13,7 +13,6 @@ void __cdecl core_course_cpp_CCourse_load_FUN_00442580(CCourse *this_ptr,char *f
   _FILE *file;
   int iVar1;
   int iVar4;
-  int iVar2;
   int iVar3;
   int auStack_18;
   int local_14;

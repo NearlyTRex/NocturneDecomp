@@ -15,8 +15,8 @@ float __cdecl core_script_cpp_CScript_getDialogDuration_FUN_0055ff00(CScript *th
   uint uVar4;
   float local_28;
   uint local_24;
-  uint uStack_20;
   int local_18;
+  uint uStack_20;
   float local_14;
 
   local_18 = 0;

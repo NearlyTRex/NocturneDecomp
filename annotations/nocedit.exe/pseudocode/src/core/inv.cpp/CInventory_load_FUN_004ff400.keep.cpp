@@ -10,26 +10,18 @@
 void __cdecl core_inv_cpp_CInventory_load_FUN_004ff400(CInventory *this_ptr,_FILE *file_handle)
 
 {
-  char cVar2;
   CDemonActor *pCVar2;
   CDemonActor *pCVar3;
   CWeapon *pCVar4;
-  int iVar5;
   int iVar3;
   CInventory *pCVar6;
   CInventory *pCVar5;
   int iVar7;
-  char *pcVar6;
-  uint *puVar8;
-  char *pcVar9;
-  char *pcVar7;
-  CDemonActor *pCVar8;
-  byte bVar10;
   char local_1dc [256];
   char local_dc [100];
   char local_78 [100];
   int local_14;
-  char cVar1;
+  byte bVar10;
   
   bVar10 = 0;
   core_inv_cpp_CInventory_clear_FUN_004fd0e0(this_ptr);

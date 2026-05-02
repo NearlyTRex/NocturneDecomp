@@ -15,8 +15,6 @@ void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_004c1a30(CMuzzleFlash *this_p
   CVector3f local_30;
   CVector3f local_28;
   CVector3f local_1c;
-  float local_10;
-  float local_c;
   
   if (this_ptr->frames_remaining != 2) {
     return;
