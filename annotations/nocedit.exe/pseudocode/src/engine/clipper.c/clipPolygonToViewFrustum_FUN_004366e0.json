@@ -7,14 +7,16 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 1036,
-    "complexity_score": 581,
+    "complexity_score": 606,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 68,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 581,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 1617
   },
   "cross_references": [
@@ -713,6 +715,15 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 400,
+      "match": "(longlong **)((int)auStack_150",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "plVar14 = *(longlong **)((int)auStack_150 + iVar10 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 415,
       "match": "(int *)((int)plVar14",
       "resolution_source": "keep",
@@ -948,5 +959,22 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 150,
+      "match": "(SRenderVertex **)((int)g_ClipperCullingPointers",
+      "severity": "moderate",
+      "text": "*(SRenderVertex **)((int)g_ClipperCullingPointers + iVar10 + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 151,
+      "match": "(SRenderVertex **)((int)g_ClipperCullingPointers",
+      "severity": "moderate",
+      "text": "*(SRenderVertex **)((int)g_ClipperCullingPointers + iVar10 + 8));",
+      "type": "pointer_cast"
+    }
+  ]
 }

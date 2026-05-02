@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 517,
-    "complexity_score": 240,
+    "complexity_score": 270,
     "cross_reference_count": 1,
     "function_call_count": 25,
     "global_count": 49,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 200,
-    "suspect_count": 3,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "unrolled_strcpy"
@@ -529,6 +529,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(char **)((int)g_MenuBitmapFilenames",
+      "severity": "moderate",
+      "text": "(this_ptr_00,*(char **)((int)g_MenuBitmapFilenames + iVar7),0x40,0x40);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 69,
       "match": "(char *)((int)pacVar8",
       "severity": "moderate",
@@ -537,9 +545,25 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 63,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 74,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 85,
       "match": "do {",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     },
@@ -547,7 +571,7 @@
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 97,
       "match": "do {",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     }

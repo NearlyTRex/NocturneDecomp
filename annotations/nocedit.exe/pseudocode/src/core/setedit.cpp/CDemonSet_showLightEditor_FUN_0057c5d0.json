@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 818,
-    "complexity_score": 358,
+    "complexity_score": 368,
     "cross_reference_count": 1,
     "function_call_count": 32,
     "global_count": 41,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 303,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -527,7 +527,7 @@
       "line": 275,
       "match": "do {",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     },
@@ -536,7 +536,7 @@
       "line": 266,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
     },
@@ -545,7 +545,7 @@
       "line": 266,
       "match": "strlen + <p> + -1 + strcpy",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcat"
     }
@@ -682,6 +682,14 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(CDemonLight **)((int)g_MasterLightList",
+      "severity": "moderate",
+      "text": "(*(CDemonLight **)((int)g_MasterLightList + local_18),iVar6,iVar5,iVar7);",
+      "type": "pointer_cast"
+    },
     {
       "description": "Complex pointer cast",
       "line": 71,

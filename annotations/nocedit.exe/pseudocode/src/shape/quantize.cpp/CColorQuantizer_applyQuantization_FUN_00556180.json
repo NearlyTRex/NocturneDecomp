@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 221,
+    "complexity_score": 231,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 161,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "unrolled_memcpy"
@@ -188,6 +188,15 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 110,
+      "match": "(uint **)((int)ppCVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint **)((int)ppCVar9 + -4) = puVar13;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 122,
       "match": "(int *)((int)ppCVar9",
       "resolution_source": "keep",
@@ -215,11 +224,65 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 126,
+      "match": "(uchar **)((int)ppCVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uchar **)((int)ppCVar9 + -0x10) = this_ptr->flags_buffer;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 127,
+      "match": "(void **)((int)ppCVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(void **)((int)ppCVar9 + -0x14) = this_ptr->scanline_buffer;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 128,
+      "match": "(CColorQuantizer **)((int)ppCVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(CColorQuantizer **)((int)ppCVar9 + -0x18) = this_ptr;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 129,
       "match": "(uint *)((int)ppCVar9",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)ppCVar9 + -0x1c) = 0x556301;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 131,
+      "match": "(CColorQuantizer **)((int)ppCVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(CColorQuantizer **)((int)ppCVar9 + -0x18),*(uchar **)((int)ppCVar9 + -0x14),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 131,
+      "match": "(uchar **)((int)ppCVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(CColorQuantizer **)((int)ppCVar9 + -0x18),*(uchar **)((int)ppCVar9 + -0x14),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 132,
+      "match": "(uchar **)((int)ppCVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uchar **)((int)ppCVar9 + -0x10),*(short *)((int)ppCVar9 + -0xc),",
       "type": "pointer_cast"
     },
     {
@@ -278,11 +341,65 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 139,
+      "match": "(uchar **)((int)ppCVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uchar **)((int)ppCVar9 + -0x10) = this_ptr->flags_buffer;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 140,
+      "match": "(void **)((int)ppCVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(void **)((int)ppCVar9 + -0x14) = this_ptr->scanline_buffer;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 141,
+      "match": "(CColorQuantizer **)((int)ppCVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(CColorQuantizer **)((int)ppCVar9 + -0x18) = this_ptr;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 142,
       "match": "(uint *)((int)ppCVar9",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(uint *)((int)ppCVar9 + -0x1c) = 0x5562d6;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 144,
+      "match": "(CColorQuantizer **)((int)ppCVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(CColorQuantizer **)((int)ppCVar9 + -0x18),*(uchar **)((int)ppCVar9 + -0x14),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 144,
+      "match": "(uchar **)((int)ppCVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(CColorQuantizer **)((int)ppCVar9 + -0x18),*(uchar **)((int)ppCVar9 + -0x14),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 145,
+      "match": "(uchar **)((int)ppCVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uchar **)((int)ppCVar9 + -0x10),*(short *)((int)ppCVar9 + -0xc),",
       "type": "pointer_cast"
     },
     {
@@ -314,6 +431,15 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 150,
+      "match": "(uchar **)((int)ppCVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uchar **)((int)ppCVar9 + -4) = local_1c;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 161,
       "match": "(int *)((int)ppCVar9",
       "resolution_source": "keep",
@@ -326,7 +452,7 @@
       "line": 57,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (iVar5 = 0xc0; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
     },
@@ -335,7 +461,7 @@
       "line": 62,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
     },
@@ -344,7 +470,7 @@
       "line": 111,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (uVar7 = uVar8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {",
       "type": "unrolled_memcpy"
     },
@@ -353,7 +479,7 @@
       "line": 116,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {",
       "type": "unrolled_memcpy"
     },
@@ -362,7 +488,7 @@
       "line": 151,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (uVar8 = (uint)(uVar2 >> 2); uVar8 != 0; uVar8 = uVar8 - 1) {",
       "type": "unrolled_memcpy"
     },
@@ -371,7 +497,7 @@
       "line": 156,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (uVar8 = (byte)uVar2 & 0xffffff03; uVar8 != 0; uVar8 = uVar8 - 1) {",
       "type": "unrolled_memcpy"
     }
@@ -497,6 +623,15 @@
       "match": "MOVSD.REP",
       "severity": "moderate",
       "text": "// 00556373: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (REP MOVSD + trailing-byte tail: dword countdown over N >> 2 followed by byte countdown over N & 3). Replace both loops with memcpy(dst, src, N) in a .keep.",
+      "introduced_by": "keep",
+      "line": 79,
+      "match": "for (X = N >> 2; ...) { } for (Y = N & 3; ...)",
+      "severity": "moderate",
+      "text": "for (uVar7 = uVar8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {",
       "type": "unrolled_memcpy"
     }
   ]

@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
 
 {

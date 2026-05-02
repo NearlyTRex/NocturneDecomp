@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Removing unreachable block (ram,0x004dbe2e) */
-
 void __cdecl core_game_cpp_CGame_playerControls_FUN_004dbd80(CGame *this_ptr)
 
 {

@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 629,
-    "complexity_score": 210,
+    "complexity_score": 225,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 30,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 210,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 839
   },
   "cross_references": [],
@@ -564,7 +566,16 @@
     ],
     "severity": "medium"
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 137,
+      "match": "(CCharacter **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "this_ptr_03 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_24);",
+      "type": "pointer_cast"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

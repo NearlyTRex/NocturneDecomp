@@ -188,6 +188,15 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(uint **)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar6 = *(uint **)((int)g_ScreenBufferArray + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 38,
       "match": "(uint *)((int)puVar6",
       "resolution_source": "keep",
@@ -218,7 +227,7 @@
       "line": 32,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (uVar2 = uVar1 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {",
       "type": "unrolled_memcpy"
     },
@@ -227,7 +236,7 @@
       "line": 37,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (uVar3 = uVar1 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {",
       "type": "unrolled_memcpy"
     },

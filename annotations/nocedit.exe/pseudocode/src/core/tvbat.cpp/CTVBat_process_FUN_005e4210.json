@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 802,
-    "complexity_score": 348,
+    "complexity_score": 358,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 29,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 333,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "warning_type_propagation"
+      "pointer_cast"
     ],
     "total_lines": 1135
   },
@@ -340,6 +340,15 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */",
       "type": "warning_inlined_function"
+    },
+    {
+      "description": "Type propagation did not converge",
+      "line": 3,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
     }
   ],
   "stack_frame": {
@@ -642,28 +651,28 @@
         {
           "check_id": "uninitvar",
           "column": 14,
-          "line": 146,
+          "line": 144,
           "message": "Uninitialized variable: local_80",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 36,
-          "line": 146,
+          "line": 144,
           "message": "Uninitialized variable: local_88",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 58,
-          "line": 146,
+          "line": 144,
           "message": "Uninitialized variable: local_84",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 55,
-          "line": 167,
+          "line": 165,
           "message": "Uninitialized variable: local_54",
           "severity": "warning"
         }
@@ -674,12 +683,20 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 3,
-      "match": "WARNING: Type propagation algorithm not settling",
+      "description": "Complex pointer cast",
+      "line": 82,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar16),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 85,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "this_ptr->boss_actor = *(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar16);",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

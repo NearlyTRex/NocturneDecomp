@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 509,
-    "complexity_score": 226,
+    "complexity_score": 271,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 21,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 226,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 4,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 735
   },
   "cross_references": [],
@@ -424,7 +426,40 @@
     ],
     "severity": "medium"
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 55,
+      "match": "(CDemonActor **)((int)g_HeroActors",
+      "severity": "moderate",
+      "text": "(this_ptr,*(CDemonActor **)((int)g_HeroActors + iVar11));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(CDemonActor **)((int)g_HeroActors",
+      "severity": "moderate",
+      "text": "pCVar9 = *(CDemonActor **)((int)g_HeroActors + iVar11);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 156,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "pCVar9 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 176,
+      "match": "(CTrigger **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "actor_ptr_00 = *(CTrigger **)((int)g_CDemonSetPtr->actors + local_24);",
+      "type": "pointer_cast"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

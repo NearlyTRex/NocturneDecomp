@@ -133,6 +133,15 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(void **)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(void **)((int)g_ScreenBufferArray + iVar3) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 24,
       "match": "(int *)((int)g_ZBufferScanlineArray",
       "resolution_source": "keep",

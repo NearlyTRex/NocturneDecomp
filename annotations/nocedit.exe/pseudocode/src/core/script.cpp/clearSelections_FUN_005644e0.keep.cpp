@@ -7,11 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Removing unreachable block (ram,0x00564518) */
-/* WARNING: Removing unreachable block (ram,0x00564522) */
-/* WARNING: Removing unreachable block (ram,0x00564524) */
-/* WARNING: Removing unreachable block (ram,0x00564531) */
-
 void __cdecl core_script_cpp_clearSelections_FUN_005644e0(void)
 
 {

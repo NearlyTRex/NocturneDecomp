@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 246,
-    "complexity_score": 125,
+    "complexity_score": 140,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 39,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 125,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 371
   },
   "cross_references": [
@@ -451,7 +453,7 @@
       "line": 47,
       "match": "do {",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     },
@@ -460,7 +462,7 @@
       "line": 83,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
     }
@@ -516,5 +518,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(char **)((int)g_ArgVector",
+      "severity": "moderate",
+      "text": "*(char **)((int)g_ArgVector + iVar7) = pcVar9;",
+      "type": "pointer_cast"
+    }
+  ]
 }

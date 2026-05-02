@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 801,
-    "complexity_score": 297,
+    "complexity_score": 382,
     "cross_reference_count": 6,
     "function_call_count": 35,
     "global_count": 47,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 297,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 8,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 1098
   },
   "cross_references": [
@@ -644,6 +646,15 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 118,
+      "match": "(CDemonGlobe **)((int)g_QueuedCoronaGlobes",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "p1 = *(CDemonGlobe **)((int)g_QueuedCoronaGlobes + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 119,
       "match": "(int *)((int)g_QueuedCoronaGlobeAlphaMasks",
       "resolution_source": "keep",
@@ -798,5 +809,70 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(CDemonLight **)((int)g_SpotLightList",
+      "severity": "moderate",
+      "text": "if ((*(CDemonLight **)((int)g_SpotLightList + iVar8))->light_enabled_flag != 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(CDemonLight **)((int)g_SpotLightList",
+      "severity": "moderate",
+      "text": "(&g_CDemonCameraInstance,*(CDemonLight **)((int)g_SpotLightList + iVar8));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(CDemonLight **)((int)g_DynamicLights",
+      "severity": "moderate",
+      "text": "pCVar3 = *(CDemonLight **)((int)g_DynamicLights + local_1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 82,
+      "match": "(CDemonLight **)((int)g_DynamicLights",
+      "severity": "moderate",
+      "text": "(&g_CDemonCameraInstance,*(CDemonLight **)((int)g_DynamicLights + local_1c))",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 99,
+      "match": "(CDemonGlobe **)((int)g_CoronaGlobes",
+      "severity": "moderate",
+      "text": "(&g_CDemonCameraInstance,*(CDemonGlobe **)((int)g_CoronaGlobes + local_18),0);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 104,
+      "match": "(CDemonGlobe **)((int)g_CoronaGlobes",
+      "severity": "moderate",
+      "text": "(&g_CDemonCameraInstance,*(CDemonGlobe **)((int)g_CoronaGlobes + local_18),1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 181,
+      "match": "(CDemonLight **)((int)g_DynamicLights",
+      "severity": "moderate",
+      "text": "pCVar1 = *(CDemonLight **)((int)g_DynamicLights + local_34);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 228,
+      "match": "(CDemonLight **)((int)g_DynamicLights",
+      "severity": "moderate",
+      "text": "pCVar1 = *(CDemonLight **)((int)g_DynamicLights + local_38);",
+      "type": "pointer_cast"
+    }
+  ]
 }

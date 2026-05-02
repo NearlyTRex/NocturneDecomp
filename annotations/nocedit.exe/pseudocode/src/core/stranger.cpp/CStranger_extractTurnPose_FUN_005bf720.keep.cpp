@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl core_stranger_cpp_CStranger_extractTurnPose_FUN_005bf720(CStranger *this_ptr,SPose *out_pose)
 
 {

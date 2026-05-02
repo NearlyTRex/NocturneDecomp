@@ -11,6 +11,10 @@ Usage:
         --report PATH        use a different suspect report
         --force              pass --force through to prepare_keep.sh
                              (overwrites any existing keep — be careful)
+        --strip-existing     when a keep already exists, strip WARNING
+                             comments in place instead of skipping. Catches
+                             legacy keeps created before prepare_keep.sh
+                             learned to strip them.
 
 The report path defaults to
 `annotations/nocedit.exe/reports/suspect_by_function.txt` relative to the
@@ -99,6 +103,48 @@ def find_source_file(fn: str):
     return candidates[0]
 
 
+def keep_path_for(src: Path) -> Path:
+    """Map a `.cpp`/`.c` source path to its `.keep.cpp`/`.keep.c` sibling."""
+    if src.suffix == ".cpp":
+        return src.with_suffix(".keep.cpp")
+    if src.suffix == ".c":
+        return src.with_suffix(".keep.c")
+    raise ValueError(f"unexpected extension: {src}")
+
+
+# Match a single-line `/* WARNING: ... */` (whitespace either side OK).
+_WARNING_LINE_RE = re.compile(r"^\s*/\*\s*WARNING:.*\*/\s*$")
+
+
+def strip_warnings_in_place(keep: Path) -> int:
+    """Strip `/* WARNING: ... */` lines from an existing keep.
+
+    Mirrors the sed pass in `prepare_keep.sh`: deletes the WARNING line
+    itself, and if the immediately following line is blank, eats that
+    blank too so the surrounding whitespace stays tight.
+
+    Returns the number of WARNING lines removed.
+    """
+    lines = keep.read_text().splitlines(keepends=True)
+    out: list[str] = []
+    i = 0
+    removed = 0
+    while i < len(lines):
+        if _WARNING_LINE_RE.match(lines[i].rstrip("\n")):
+            removed += 1
+            # Eat trailing blank if present.
+            if i + 1 < len(lines) and lines[i + 1].strip() == "":
+                i += 2
+            else:
+                i += 1
+            continue
+        out.append(lines[i])
+        i += 1
+    if removed:
+        keep.write_text("".join(out))
+    return removed
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -108,6 +154,9 @@ def main():
                     help="list candidates without running prepare_keep")
     ap.add_argument("--force", action="store_true",
                     help="pass --force to prepare_keep.sh (overwrites existing keeps)")
+    ap.add_argument("--strip-existing", action="store_true",
+                    help="when a keep already exists, strip WARNING comments "
+                         "in place instead of skipping")
     args = ap.parse_args()
 
     if not args.report.exists():
@@ -128,12 +177,27 @@ def main():
 
     ran = 0
     skipped = 0
+    stripped = 0           # in-place WARNING strips on existing keeps
+    stripped_no_op = 0     # existing keep had nothing to strip
     missing = []
     for fn, _ in candidates:
         src = find_source_file(fn)
         if src is None:
             missing.append(fn)
             continue
+
+        keep = keep_path_for(src)
+        if args.strip_existing and keep.exists() and not args.force:
+            # Existing keep + strip mode: skip prepare_keep, sed in place.
+            removed = strip_warnings_in_place(keep)
+            if removed:
+                print(f"  STRIP  {keep} ({removed} WARNING line"
+                      f"{'s' if removed != 1 else ''})")
+                stripped += 1
+            else:
+                stripped_no_op += 1
+            continue
+
         cmd = [str(PREPARE_KEEP)]
         if args.force:
             cmd.append("--force")
@@ -150,8 +214,16 @@ def main():
             skipped += 1
 
     print()
-    print(f"Ran prepare_keep on {ran}, skipped {skipped} existing, "
-          f"missing source for {len(missing)}")
+    parts = [f"Ran prepare_keep on {ran}"]
+    if args.strip_existing:
+        parts.append(f"stripped WARNINGs in {stripped} existing keep"
+                     f"{'s' if stripped != 1 else ''}")
+        if stripped_no_op:
+            parts.append(f"{stripped_no_op} existing keep"
+                         f"{'s' if stripped_no_op != 1 else ''} already clean")
+    parts.append(f"skipped {skipped} existing")
+    parts.append(f"missing source for {len(missing)}")
+    print(", ".join(parts))
     for fn in missing:
         print(f"  MISS  {fn}")
     return 0

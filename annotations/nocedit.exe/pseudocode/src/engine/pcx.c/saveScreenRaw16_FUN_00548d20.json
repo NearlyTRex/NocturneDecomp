@@ -7,14 +7,16 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 184,
-    "complexity_score": 89,
+    "complexity_score": 104,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 23,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 89,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 273
   },
   "cross_references": [
@@ -259,7 +261,7 @@
       "line": 51,
       "match": "do {",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     },
@@ -268,7 +270,7 @@
       "line": 35,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strchr"
     }
@@ -348,5 +350,14 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(ushort **)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "puVar6 = *(ushort **)((int)g_ScreenBufferArray + local_18);",
+      "type": "pointer_cast"
+    }
+  ]
 }

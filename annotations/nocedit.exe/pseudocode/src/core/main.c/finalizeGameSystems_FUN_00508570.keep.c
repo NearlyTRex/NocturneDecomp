@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Variable defined which should be unmapped: local_110 */
-
 void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
 
 {

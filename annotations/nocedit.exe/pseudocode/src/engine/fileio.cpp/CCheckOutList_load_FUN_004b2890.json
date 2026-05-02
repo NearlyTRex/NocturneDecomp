@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 179,
-    "complexity_score": 91,
+    "complexity_score": 76,
     "cross_reference_count": 5,
     "function_call_count": 10,
     "global_count": 16,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 76,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_unreachable"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 255
   },
   "cross_references": [
@@ -310,11 +308,20 @@
   },
   "resolved_suspects": [
     {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004b29c8) */",
+      "type": "warning_unreachable"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 42,
       "match": "do {",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     },
@@ -323,7 +330,7 @@
       "line": 33,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
     },
@@ -332,7 +339,7 @@
       "line": 33,
       "match": "strlen + <p> + -1 + strcpy",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcat"
     }
@@ -405,14 +412,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unreachable code block removed",
-      "line": 2,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x004b29c8) */",
-      "type": "warning_unreachable"
-    }
-  ]
+  "suspects": []
 }

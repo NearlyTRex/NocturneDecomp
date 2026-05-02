@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 259,
-    "complexity_score": 119,
+    "complexity_score": 134,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 19,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 119,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 378
   },
   "cross_references": [
@@ -343,5 +345,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 107,
+      "match": "(int **)((int)g_ScreenBufferArray",
+      "severity": "moderate",
+      "text": "piVar8 = *(int **)((int)g_ScreenBufferArray + iVar1);",
+      "type": "pointer_cast"
+    }
+  ]
 }

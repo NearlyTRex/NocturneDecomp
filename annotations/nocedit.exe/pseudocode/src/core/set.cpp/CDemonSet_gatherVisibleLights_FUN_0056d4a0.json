@@ -425,6 +425,96 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 104,
+      "match": "(CDemonCamera **)((int)g_DynamicLights",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (((*(CDemonCamera **)((int)g_DynamicLights + iVar9))[1].rect_array[0x61].right != 0) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 106,
+      "match": "(CDemonCamera **)((int)g_DynamicLights",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(CDemonCamera **)((int)g_DynamicLights + iVar9),position,orientation",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 109,
+      "match": "(CDemonLight **)((int)g_DynamicLights",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(CDemonLight **)((int)g_DynamicLights + iVar9);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 121,
+      "match": "(CDemonCamera **)((int)g_SpotLightList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (((*(CDemonCamera **)((int)g_SpotLightList + iVar7))[1].rect_array[0x61].right != 0) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 123,
+      "match": "(CDemonCamera **)((int)g_SpotLightList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(CDemonCamera **)((int)g_SpotLightList + iVar7),position,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 126,
+      "match": "(CDemonLight **)((int)g_SpotLightList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(CDemonLight **)((int)g_SpotLightList + iVar7);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 138,
+      "match": "(C3DSLight **)((int)g_OmniLights",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar1 = *(C3DSLight **)((int)g_OmniLights + local_2c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 169,
+      "match": "(CDemonGlobe **)((int)g_CoronaGlobes",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(CDemonGlobe **)((int)g_CoronaGlobes + iVar11),position,rotation_matrix,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 172,
+      "match": "(CDemonGlobe **)((int)g_CoronaGlobes",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_GlobeLights[g_GlobeLightCount] = *(CDemonGlobe **)((int)g_CoronaGlobes + iVar11);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 185,
+      "match": "(CDemonGlobe **)((int)g_VisibleCoronaGlobes",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(CDemonGlobe **)((int)g_VisibleCoronaGlobes + iVar11),position,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 190,
       "match": "(int *)((int)g_VisibleCoronaGlobes",
       "resolution_source": "keep",

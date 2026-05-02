@@ -149,7 +149,7 @@
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
       "line": 51,
       "match": "for (...; != 0; ... + -1)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {",
       "type": "unrolled_memcpy"
     },
@@ -157,7 +157,7 @@
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
       "line": 56,
       "match": "for (...; != 0; ... + -1)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {",
       "type": "unrolled_memcpy"
     },
@@ -165,7 +165,7 @@
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
       "line": 78,
       "match": "for (...; != 0; ... + -1)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (uVar5 = (uint)pcVar6 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {",
       "type": "unrolled_memcpy"
     },
@@ -173,7 +173,7 @@
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
       "line": 83,
       "match": "for (...; != 0; ... + -1)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (uVar5 = (uint)pcVar6 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {",
       "type": "unrolled_memcpy"
     },

@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Exceeded maximum restarts with more pending */
-
 void __cdecl sound_snddx_cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660(CDirectSoundDevice *this_ptr)
 
 {

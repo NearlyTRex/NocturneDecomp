@@ -6,7 +6,7 @@
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 45,
     "suspect_count": 2,
     "suspect_types": [
@@ -121,7 +121,7 @@
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
       "line": 36,
       "match": "for (...; != 0; ... + -1)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (uVar2 = DVar1 + 1 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {",
       "type": "unrolled_memcpy"
     },
@@ -129,7 +129,7 @@
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
       "line": 41,
       "match": "for (...; != 0; ... + -1)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (uVar2 = DVar1 + 1 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {",
       "type": "unrolled_memcpy"
     }

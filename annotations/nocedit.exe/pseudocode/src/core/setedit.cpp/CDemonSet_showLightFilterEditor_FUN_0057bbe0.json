@@ -11,11 +11,11 @@
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 40,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 259,
     "suspect_count": 1,
     "suspect_types": [
-      "warning_inlined_function"
+      "unrolled_strcpy"
     ],
     "total_lines": 991
   },
@@ -434,6 +434,17 @@
     },
     "pcode_op_count": 2856
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    }
+  ],
   "stack_frame": {
     "frame_size": 2228,
     "local_size": 2220,
@@ -615,7 +626,7 @@
         {
           "check_id": "invalidPointerCast",
           "column": 14,
-          "line": 177,
+          "line": 175,
           "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
           "severity": "portability"
         }
@@ -626,12 +637,12 @@
   },
   "suspects": [
     {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 163,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

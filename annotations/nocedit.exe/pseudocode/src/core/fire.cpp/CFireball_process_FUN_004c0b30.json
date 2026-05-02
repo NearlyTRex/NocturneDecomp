@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 208,
-    "complexity_score": 90,
+    "complexity_score": 105,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 7,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 90,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 298
   },
   "cross_references": [],
@@ -195,7 +197,16 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(CCharacter **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "iVar1 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iVar5);",
+      "type": "pointer_cast"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

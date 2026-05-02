@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 int __cdecl core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0(CDemonSet *this_ptr,CDemonActor *actor,int force_evaluation_mode)
 
 {

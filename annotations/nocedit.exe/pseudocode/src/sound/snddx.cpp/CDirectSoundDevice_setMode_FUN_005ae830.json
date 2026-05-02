@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 391,
-    "complexity_score": 178,
+    "complexity_score": 148,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 19,
-    "max_suspect_severity": "severe",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 148,
-    "suspect_count": 2,
-    "suspect_types": [
-      "warning_inlined_function",
-      "warning_max_restarts"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 539
   },
   "cross_references": [],
@@ -235,6 +232,24 @@
   },
   "resolved_suspects": [
     {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Decompiler iteration limit exceeded",
+      "line": 3,
+      "match": "WARNING: Exceeded maximum restarts with more pending",
+      "resolution_source": "keep",
+      "severity": "severe",
+      "text": "/* WARNING: Exceeded maximum restarts with more pending */",
+      "type": "warning_max_restarts"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 76,
       "match": "code *",
@@ -389,7 +404,7 @@
         {
           "check_id": "nullPointerRedundantCheck",
           "column": 13,
-          "line": 74,
+          "line": 71,
           "message": "Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.",
           "severity": "warning"
         }
@@ -398,24 +413,7 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Decompiler iteration limit exceeded",
-      "line": 3,
-      "match": "WARNING: Exceeded maximum restarts with more pending",
-      "severity": "severe",
-      "text": "/* WARNING: Exceeded maximum restarts with more pending */",
-      "type": "warning_max_restarts"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

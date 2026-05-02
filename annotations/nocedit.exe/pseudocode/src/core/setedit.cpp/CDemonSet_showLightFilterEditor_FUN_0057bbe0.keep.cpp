@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 void __cdecl core_setedit_cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0(CDemonSet *this_ptr,int light_index)
 
 {

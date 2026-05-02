@@ -11,7 +11,7 @@
     "cross_reference_count": 6,
     "function_call_count": 27,
     "global_count": 43,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 262,
     "suspect_count": 5,
     "suspect_types": [
@@ -651,7 +651,7 @@
       "line": 107,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     },
@@ -892,7 +892,7 @@
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 95,
       "match": "do {",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     },
@@ -900,7 +900,7 @@
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
       "line": 86,
       "match": "do { if (v==0) break; v=v-1; ... }",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
     },
@@ -908,7 +908,7 @@
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
       "line": 86,
       "match": "strlen + <p> + -1 + strcpy",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcat"
     },
@@ -916,7 +916,7 @@
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
       "line": 72,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strchr"
     },
@@ -924,7 +924,7 @@
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '!' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '!') in a .keep.",
       "line": 113,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strchr"
     }

@@ -242,6 +242,24 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(void **)((int)g_ChannelPrimaryBuffers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(void **)((int)g_ChannelPrimaryBuffers + iVar2),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(void **)((int)g_ChannelPrimaryBuffers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)*(void **)((int)g_ChannelPrimaryBuffers + iVar2)),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 46,
       "match": "(int *)((int)g_ChannelPrimaryBuffers",
       "resolution_source": "keep",
@@ -425,7 +443,7 @@
       "line": 79,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (iVar5 = 0xb; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
     }

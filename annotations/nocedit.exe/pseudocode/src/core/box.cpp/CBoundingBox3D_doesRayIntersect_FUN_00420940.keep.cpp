@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Removing unreachable block (ram,0x00420d35) */
-
 float __cdecl core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940(CBoundingBox3D *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal)
 
 {

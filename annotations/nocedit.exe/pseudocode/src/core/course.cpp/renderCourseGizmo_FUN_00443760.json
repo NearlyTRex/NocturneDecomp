@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 351,
-    "complexity_score": 131,
+    "complexity_score": 146,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 9,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 131,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 482
   },
   "cross_references": [
@@ -359,5 +361,14 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 127,
+      "match": "(char **)((int)g_CourseAxisLabels",
+      "severity": "moderate",
+      "text": "(*(char **)((int)g_CourseAxisLabels + iVar6),",
+      "type": "pointer_cast"
+    }
+  ]
 }

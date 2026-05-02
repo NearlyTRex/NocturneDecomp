@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 160,
-    "complexity_score": 151,
+    "complexity_score": 161,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 96,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -140,6 +140,14 @@
       "match": "(uint *)(*puVar8 + (int)puVar8",
       "severity": "moderate",
       "text": "if ((uint *)(*puVar8 + (int)puVar8) == puVar1) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 85,
+      "match": "(uint **)((int)ptr",
+      "severity": "moderate",
+      "text": "*(uint **)((int)ptr + 4) = puVar4;",
       "type": "pointer_cast"
     }
   ]

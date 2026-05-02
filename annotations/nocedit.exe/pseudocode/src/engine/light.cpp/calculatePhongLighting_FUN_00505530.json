@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 210,
-    "complexity_score": 115,
+    "complexity_score": 100,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 16,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 100,
-    "suspect_count": 1,
-    "suspect_types": [
-      "stack_alignment_array"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 310
   },
   "cross_references": [
@@ -242,6 +240,17 @@
     },
     "pcode_op_count": 1493
   },
+  "resolved_suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 17,
+      "match": "aiStackY_100c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int aiStackY_100c [1017];",
+      "type": "stack_alignment_array"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4124,
     "local_size": 4112,
@@ -300,14 +309,22 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 17,
-      "match": "aiStackY_100c",
-      "severity": "moderate",
-      "text": "int aiStackY_100c [1017];",
-      "type": "stack_alignment_array"
-    }
-  ]
+  "static_analysis": {
+    "analyzed_file": "calculatePhongLighting_FUN_00505530.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 38,
+          "line": 105,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
+  "suspects": []
 }

@@ -114,6 +114,15 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(void **)((int)g_ZBufferScanlineArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(void **)((int)g_ZBufferScanlineArray + iVar3),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 17,
       "match": "(void *)(iVar1 * 4 + (int)this_ptr",
       "resolution_source": "keep",

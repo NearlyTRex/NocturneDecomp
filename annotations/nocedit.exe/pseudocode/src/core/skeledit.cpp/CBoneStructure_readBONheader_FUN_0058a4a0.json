@@ -7,16 +7,17 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 426,
-    "complexity_score": 353,
+    "complexity_score": 368,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 17,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 243,
-    "suspect_count": 10,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
-      "unrolled_memcpy"
+      "unrolled_memcpy",
+      "unrolled_strcpy"
     ],
     "total_lines": 669
   },
@@ -639,6 +640,14 @@
       "severity": "moderate",
       "text": "pSVar6 = (SBoneData *)((int)pSVar6 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 91,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",

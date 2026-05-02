@@ -8,16 +8,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1655,
-    "complexity_score": 706,
+    "complexity_score": 691,
     "cross_reference_count": 0,
     "function_call_count": 47,
     "global_count": 42,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 691,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_type_propagation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 2346
   },
   "cross_references": [],
@@ -580,6 +578,17 @@
     },
     "pcode_op_count": 7673
   },
+  "resolved_suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    }
+  ],
   "stack_frame": {
     "frame_size": 488,
     "local_size": 480,
@@ -974,16 +983,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -236,6 +236,17 @@
     },
     "pcode_op_count": 941
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(IDirectSoundBuffer **)((int)g_DirectSoundHardwareSfxBuffers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pIVar1 = *(IDirectSoundBuffer **)((int)g_DirectSoundHardwareSfxBuffers + iVar4 + 4);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,

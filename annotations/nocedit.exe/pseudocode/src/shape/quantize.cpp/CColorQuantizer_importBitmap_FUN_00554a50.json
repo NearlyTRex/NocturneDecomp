@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 191,
+    "complexity_score": 201,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 101,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "warning_inlined_function"
@@ -194,7 +194,7 @@
       "line": 62,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (uVar8 = (uint)(uVar6 >> 2); uVar8 != 0; uVar8 = uVar8 - 1) {",
       "type": "unrolled_memcpy"
     },
@@ -203,7 +203,7 @@
       "line": 67,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (uVar2 = (byte)uVar6 & 0xffffff03; uVar2 != 0; uVar2 = uVar2 - 1) {",
       "type": "unrolled_memcpy"
     },
@@ -269,6 +269,14 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(uint **)((int)bitmap",
+      "severity": "moderate",
+      "text": "puVar9 = *(uint **)((int)bitmap->row_table + local_2c);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",

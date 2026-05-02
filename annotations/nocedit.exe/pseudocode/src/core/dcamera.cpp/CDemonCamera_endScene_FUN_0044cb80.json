@@ -353,6 +353,15 @@
       "severity": "moderate",
       "text": "((void *)(iVar1 * 4 + (int)this_ptr->zbuffer_aligned),",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(void **)((int)g_ZBufferScanlineArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(void **)((int)g_ZBufferScanlineArray + iVar3),this_ptr->framebuffer_width << 2)",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {

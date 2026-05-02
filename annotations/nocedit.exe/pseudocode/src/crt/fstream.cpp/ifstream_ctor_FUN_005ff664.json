@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 121,
+    "complexity_score": 131,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 26,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "extra_output",
       "negative_offset",
@@ -184,6 +184,14 @@
       "severity": "moderate",
       "text": "int extraout_EAX;",
       "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(WatcomVirtualBaseDescriptor **)((int)this_ptr",
+      "severity": "moderate",
+      "text": "*(WatcomVirtualBaseDescriptor **)((int)this_ptr + 0x44) = &g_IFStream_IStreamSubobjectLayout;",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",

@@ -41,16 +41,13 @@ void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_005138e0(void)
   int iVar26;
   int *piVar27;
   int *piVar28;
-  char (*pacVar28) [40];
   EInputCodeType EVar29;
   EInputCodeType EVar30;
-  int iVar30;
   int iVar31;
   EInputCodeType EVar32;
   EInputCodeType EVar31;
   char *pcVar33;
   char *pcVar32;
-  int iVar34;
   bool bVar36;
   bool bVar35;
   CPickList local_a7c;
@@ -379,15 +376,10 @@ LAB_0051390e:
     iVar31 = 0;
     shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_a7c.base,pcVar3);
     if (0 < g_CustomKeyCount) {
-      pacVar28 = g_CustomKeyNames;
-      iVar34 = 0;
       do {
-        pcVar3 = core_menu_cpp_getKeyDisplayName_FUN_005134e0
-                           (**(EInputCodeType **)((int)g_CustomKeyPointers + iVar34));
-        _sprintf(local_d4,"%s\t%s",*pacVar28,pcVar3);
-        iVar34 = iVar34 + 4;
+        pcVar3 = core_menu_cpp_getKeyDisplayName_FUN_005134e0(*g_CustomKeyPointers[iVar31]);
+        _sprintf(local_d4,"%s\t%s",g_CustomKeyNames[iVar31],pcVar3);
         iVar31 = iVar31 + 1;
-        pacVar28 = pacVar28 + 1;
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_a7c.base,local_d4);
       } while (iVar31 < g_CustomKeyCount);
     }
@@ -595,14 +587,12 @@ LAB_00514a9c:
         }
         iVar4_00 = 0;
         if (0 < g_CustomKeyCount) {
-          iVar30 = 0;
           do {
             if ((iVar4_00 != iVar15_00) &&
-               (**(int **)((int)g_CustomKeyPointers + iVar30) == *g_CustomKeyPointers[iVar15_00])) {
-              **(int **)((int)g_CustomKeyPointers + iVar30) = 599;
+               (*g_CustomKeyPointers[iVar4_00] == *g_CustomKeyPointers[iVar15_00])) {
+              *g_CustomKeyPointers[iVar4_00] = 599;
             }
             iVar4_00 = iVar4_00 + 1;
-            iVar30 = iVar30 + 4;
           } while (iVar4_00 < g_CustomKeyCount);
         }
         engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(g_CKeysPtr,0);

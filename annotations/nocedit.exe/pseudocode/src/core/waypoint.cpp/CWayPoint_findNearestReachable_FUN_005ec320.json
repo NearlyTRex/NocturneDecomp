@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 103,
+    "complexity_score": 133,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 88,
-    "suspect_count": 1,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -254,6 +254,30 @@
       "match": "(int *)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)g_CDemonSetPtr->waypoints + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 55,
+      "match": "(CWayPoint **)((int)g_WaypointSearchQueue",
+      "severity": "moderate",
+      "text": "if (pCVar2 == *(CWayPoint **)((int)g_WaypointSearchQueue + iVar5)) break;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(CWayPoint **)((int)g_WaypointSearchQueue",
+      "severity": "moderate",
+      "text": "*(CWayPoint **)((int)g_WaypointSearchQueue + n) = pCVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(CWayPoint **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "pCVar1 = *(CWayPoint **)((int)g_CDemonSetPtr->waypoints + iVar2);",
       "type": "pointer_cast"
     }
   ]

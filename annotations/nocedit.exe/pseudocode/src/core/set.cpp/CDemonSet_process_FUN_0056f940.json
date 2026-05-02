@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 60,
+    "complexity_score": 85,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 9,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 60,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 192
   },
   "cross_references": [
@@ -219,5 +221,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(CDemonLight **)((int)g_MasterLightList",
+      "severity": "moderate",
+      "text": "light = *(CDemonLight **)((int)g_MasterLightList + local_14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(CDemonLight **)((int)g_SpotLightList",
+      "severity": "moderate",
+      "text": "if (light == *(CDemonLight **)((int)g_SpotLightList + iVar3)) {",
+      "type": "pointer_cast"
+    }
+  ]
 }

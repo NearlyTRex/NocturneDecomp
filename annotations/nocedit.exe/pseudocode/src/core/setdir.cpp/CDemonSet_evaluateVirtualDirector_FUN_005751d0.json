@@ -11,11 +11,11 @@
     "cross_reference_count": 8,
     "function_call_count": 11,
     "global_count": 53,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 303,
     "suspect_count": 1,
     "suspect_types": [
-      "warning_inlined_function"
+      "pointer_cast"
     ],
     "total_lines": 1048
   },
@@ -627,6 +627,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 91,
       "match": "&stack0xfffffe8c",
@@ -970,12 +979,12 @@
   },
   "suspects": [
     {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
+      "description": "Complex pointer cast",
+      "line": 172,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "this_ptr_00 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iStack_1c);",
+      "type": "pointer_cast"
     }
   ]
 }

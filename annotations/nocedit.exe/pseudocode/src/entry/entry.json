@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 140,
+    "complexity_score": 170,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 65,
-    "suspect_count": 6,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "stack_ref",
@@ -83,6 +83,22 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(byte **)((int)aiStack_1c",
+      "severity": "moderate",
+      "text": "*(byte **)((int)aiStack_1c + iVar5) = auStack_10 + iVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(void **)((int)aiStack_1c",
+      "severity": "moderate",
+      "text": "(*(void **)((int)aiStack_1c + iVar5),*(int *)((int)aiStack_1c + iVar5 + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 28,
       "match": "(int *)((int)aiStack_1c",
       "severity": "moderate",
@@ -96,6 +112,14 @@
       "severity": "moderate",
       "text": "*(DWORD *)(&stack0x000000e0 + iVar5) = g_RuntimeBufferSize;",
       "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(byte **)((int)aiStack_1c",
+      "severity": "moderate",
+      "text": "*(byte **)((int)aiStack_1c + iVar5 + 4) = auStack_10;",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",

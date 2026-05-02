@@ -7,16 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1167,
-    "complexity_score": 522,
+    "complexity_score": 507,
     "cross_reference_count": 0,
     "function_call_count": 28,
     "global_count": 34,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 492,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "warning_inlined_function",
-      "warning_type_propagation"
+      "pointer_cast"
     ],
     "total_lines": 1659
   },
@@ -437,6 +436,26 @@
     },
     "pcode_op_count": 5213
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Type propagation did not converge",
+      "line": 3,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    }
+  ],
   "stack_frame": {
     "frame_size": 428,
     "local_size": 420,
@@ -707,20 +726,12 @@
   },
   "suspects": [
     {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Type propagation did not converge",
-      "line": 3,
-      "match": "WARNING: Type propagation algorithm not settling",
+      "description": "Complex pointer cast",
+      "line": 388,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar14),",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

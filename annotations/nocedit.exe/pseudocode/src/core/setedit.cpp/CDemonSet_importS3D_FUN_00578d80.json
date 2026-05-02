@@ -784,7 +784,7 @@
       "line": 472,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (iVar5 = 0x40; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
     },
@@ -793,7 +793,7 @@
       "line": 492,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (iVar5 = 0x3e; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
     },
@@ -802,7 +802,7 @@
       "line": 524,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (iVar5 = 0x20; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
     },
@@ -811,7 +811,7 @@
       "line": 533,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (iVar5 = 0x20; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
     },
@@ -820,7 +820,7 @@
       "line": 548,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (iVar5 = 0x20; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
     },
@@ -1269,7 +1269,7 @@
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\n' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\n') in a .keep.",
       "line": 201,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strchr"
     },
@@ -1277,7 +1277,7 @@
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\n' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\n') in a .keep.",
       "line": 213,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strchr"
     }

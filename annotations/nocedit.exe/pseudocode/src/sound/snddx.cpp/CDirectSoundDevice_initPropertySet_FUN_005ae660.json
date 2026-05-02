@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 73,
+    "complexity_score": 58,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
-    "max_suspect_severity": "severe",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 58,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_max_restarts"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 204
   },
   "cross_references": [],
@@ -129,6 +127,15 @@
     "pcode_op_count": 460
   },
   "resolved_suspects": [
+    {
+      "description": "Decompiler iteration limit exceeded",
+      "line": 2,
+      "match": "WARNING: Exceeded maximum restarts with more pending",
+      "resolution_source": "keep",
+      "severity": "severe",
+      "text": "/* WARNING: Exceeded maximum restarts with more pending */",
+      "type": "warning_max_restarts"
+    },
     {
       "description": "Unknown/mangled field access",
       "line": 37,
@@ -279,7 +286,7 @@
         {
           "check_id": "nullPointerRedundantCheck",
           "column": 7,
-          "line": 44,
+          "line": 42,
           "message": "Either the condition 'local_18!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: local_18.",
           "severity": "warning"
         }
@@ -288,14 +295,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Decompiler iteration limit exceeded",
-      "line": 2,
-      "match": "WARNING: Exceeded maximum restarts with more pending",
-      "severity": "severe",
-      "text": "/* WARNING: Exceeded maximum restarts with more pending */",
-      "type": "warning_max_restarts"
-    }
-  ]
+  "suspects": []
 }

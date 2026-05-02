@@ -7,9 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Removing unreachable block (ram,0x005f7fd8) */
-/* WARNING: Removing unreachable block (ram,0x005f7f4d) */
-
 void __cdecl core_xform_cpp_clipPolygonStage1_FUN_005f7ed0(void)
 
 {

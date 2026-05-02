@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Removing unreachable block (ram,0x005d5b52) */
-
 int __cdecl shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800(CObj *this_ptr,double coplanar_threshold,CPoly *search_polygon)
 
 {

@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 25,
+    "complexity_score": 40,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 5,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 82
   },
   "cross_references": [],
@@ -141,5 +143,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(char **)((int)g_ChapterMissionFiles",
+      "severity": "moderate",
+      "text": "(\"world\",*(char **)((int)g_ChapterMissionFiles[0] + iVar1),",
+      "type": "pointer_cast"
+    }
+  ]
 }

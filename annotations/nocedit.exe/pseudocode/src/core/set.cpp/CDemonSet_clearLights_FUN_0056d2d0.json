@@ -340,6 +340,15 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(CDemonLight **)((int)g_MasterLightList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar1 = *(CDemonLight **)((int)g_MasterLightList + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 23,
       "match": "(uint *)((int)g_MasterLightList",
       "resolution_source": "keep",

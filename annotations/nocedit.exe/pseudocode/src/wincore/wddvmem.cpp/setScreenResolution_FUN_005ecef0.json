@@ -340,6 +340,15 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 110,
+      "match": "(void **)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(void **)((int)g_ScreenBufferArray + iVar4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 113,
       "match": "(int *)((int)g_ZBufferScanlineArray",
       "resolution_source": "keep",

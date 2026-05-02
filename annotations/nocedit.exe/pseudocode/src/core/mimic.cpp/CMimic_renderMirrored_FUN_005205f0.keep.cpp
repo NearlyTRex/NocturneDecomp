@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_005205f0(CMimic *this_ptr)
 
 {

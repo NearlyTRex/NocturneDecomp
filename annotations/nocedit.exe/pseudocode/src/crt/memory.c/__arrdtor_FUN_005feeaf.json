@@ -2,14 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 15,
+    "complexity_score": 40,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 15,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 49
   },
   "cross_references": [
@@ -101,5 +103,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 11,
+      "match": "(void **)(destroy_info->obj_count * iVar1 + (int)destroy_info",
+      "severity": "moderate",
+      "text": "object_ptr = (void **)(destroy_info->obj_count * iVar1 + (int)destroy_info->obj_array);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(void **)((int)object_ptr",
+      "severity": "moderate",
+      "text": "object_ptr = (void **)((int)object_ptr - iVar1);",
+      "type": "pointer_cast"
+    }
+  ]
 }

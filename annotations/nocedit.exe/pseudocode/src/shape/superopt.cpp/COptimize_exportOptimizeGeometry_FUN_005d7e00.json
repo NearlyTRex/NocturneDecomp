@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 270,
-    "complexity_score": 240,
+    "complexity_score": 250,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 44,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 165,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "raw_address_constant",
@@ -485,6 +485,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(CComplexPolygon **)((int)this_ptr",
+      "severity": "moderate",
+      "text": "this_ptr_00 = *(CComplexPolygon **)((int)this_ptr->complex_polygons + local_38);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 135,
       "match": "(int *)((int)g_ModelPolygonData",
       "severity": "moderate",
@@ -519,7 +527,7 @@
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 98,
       "match": "do {",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     },
@@ -527,7 +535,7 @@
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 109,
       "match": "do {",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     }

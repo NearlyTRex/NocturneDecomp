@@ -240,6 +240,15 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(float **)((int)g_ChannelPrimaryBuffers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float **)((int)g_ChannelPrimaryBuffers + iVar2) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 50,
       "match": "(int *)((int)g_ChannelTertiaryBuffers",
       "resolution_source": "keep",

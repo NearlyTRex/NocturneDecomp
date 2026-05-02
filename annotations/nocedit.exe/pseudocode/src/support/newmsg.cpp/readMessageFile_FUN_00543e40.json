@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 276,
-    "complexity_score": 230,
+    "complexity_score": 130,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 36,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 130,
-    "suspect_count": 9,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_strcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 406
   },
   "cross_references": [
@@ -353,6 +350,116 @@
     },
     "pcode_op_count": 1013
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 77,
+      "match": "(char **)((int)g_MessageKeys",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(char **)((int)g_MessageKeys + iVar4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 78,
+      "match": "(char **)((int)g_MessageKeys",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(char **)((int)g_MessageKeys + iVar8));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 80,
+      "match": "(uint *)((int)g_MessageKeys",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar2 = *(uint *)((int)g_MessageKeys + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 81,
+      "match": "(uint *)((int)g_MessageKeys",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_MessageKeys + iVar4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 82,
+      "match": "(uint *)((int)g_MessageKeys",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_MessageKeys + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 83,
+      "match": "(uint *)((int)g_MessageKeys",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_MessageKeys + iVar8) = uVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(uint *)((int)g_MessageTexts",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar2 = *(uint *)((int)g_MessageTexts + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 85,
+      "match": "(uint *)((int)g_MessageTexts",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_MessageTexts + iVar4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 86,
+      "match": "(uint *)((int)g_MessageTexts",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_MessageTexts + iVar8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 87,
+      "match": "(uint *)((int)g_MessageTexts",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_MessageTexts + iVar8) = uVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 111,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 122,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 804,
     "local_size": 800,
@@ -411,78 +518,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 80,
-      "match": "(uint *)((int)g_MessageKeys",
-      "severity": "moderate",
-      "text": "uVar2 = *(uint *)((int)g_MessageKeys + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 81,
-      "match": "(uint *)((int)g_MessageKeys",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_MessageKeys + iVar4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 82,
-      "match": "(uint *)((int)g_MessageKeys",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_MessageKeys + iVar8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 83,
-      "match": "(uint *)((int)g_MessageKeys",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_MessageKeys + iVar8) = uVar2;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 84,
-      "match": "(uint *)((int)g_MessageTexts",
-      "severity": "moderate",
-      "text": "uVar2 = *(uint *)((int)g_MessageTexts + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 85,
-      "match": "(uint *)((int)g_MessageTexts",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_MessageTexts + iVar4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 86,
-      "match": "(uint *)((int)g_MessageTexts",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_MessageTexts + iVar8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 87,
-      "match": "(uint *)((int)g_MessageTexts",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_MessageTexts + iVar8) = uVar2;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 122,
-      "match": "do {",
-      "severity": "mild",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    }
-  ]
+  "suspects": []
 }

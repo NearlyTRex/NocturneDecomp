@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Removing unreachable block (ram,0x0045c93b) */
-
 void __cdecl shape_design_c_showPointEditor_FUN_0045c6c0(void)
 
 {

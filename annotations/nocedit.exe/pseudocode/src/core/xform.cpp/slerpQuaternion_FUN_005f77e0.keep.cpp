@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */
-
 CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_005f77e0(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,float t,CQuaternion4f *quat_out)
 
 {

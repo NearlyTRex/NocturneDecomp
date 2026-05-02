@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 360,
-    "complexity_score": 253,
+    "complexity_score": 303,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 188,
-    "suspect_count": 5,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
       "unrolled_memcpy",
@@ -366,6 +366,46 @@
       "match": "(CPodDependencyRecord *)((int)pCVar6",
       "severity": "moderate",
       "text": "pCVar6 = (CPodDependencyRecord *)((int)pCVar6 + (uint)bVar8 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 124,
+      "match": "(CPodFile **)((int)local_ab0",
+      "severity": "moderate",
+      "text": "*(CPodFile **)((int)local_ab0 + iVar8) = pCVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 128,
+      "match": "(CPodFile **)((int)local_ab0",
+      "severity": "moderate",
+      "text": "*(CPodFile **)((int)local_ab0 + iVar8) = this_ptr->pod_files[iVar6];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 131,
+      "match": "(CPodFile **)((int)local_ab0",
+      "severity": "moderate",
+      "text": "*(CPodFile **)((int)local_ab0 + iVar8 + 4) = pCVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 153,
+      "match": "(CPodFile **)((int)local_ab0",
+      "severity": "moderate",
+      "text": "pCVar3 = *(CPodFile **)((int)local_ab0 + iVar6 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 159,
+      "match": "(CPodFile **)((int)local_ab0",
+      "severity": "moderate",
+      "text": "if (pCVar7->pod_files[0] == *(CPodFile **)((int)local_ab0 + iVar6)) break;",
       "type": "pointer_cast"
     },
     {

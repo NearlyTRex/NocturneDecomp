@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3947,
-    "complexity_score": 1758,
+    "complexity_score": 1768,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 197,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1728,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "raw_address_constant"
@@ -2769,6 +2769,14 @@
     "file_variant": "keep"
   },
   "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 1077,
+      "match": "(CEnemy **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "iVar11 = *(CEnemy **)((int)g_CDemonSetPtr->enemies + iStack_74);",
+      "type": "pointer_cast"
+    },
     {
       "description": "Complex pointer cast",
       "line": 1444,

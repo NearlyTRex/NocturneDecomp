@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 197,
-    "complexity_score": 238,
+    "complexity_score": 258,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 93,
-    "suspect_count": 13,
+    "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
       "register_param",
@@ -222,6 +222,22 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(char **)((int)ppcVar6",
+      "severity": "moderate",
+      "text": "ppcVar6 = (char **)((int)ppcVar6 + (uint)bVar8 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(char **)((int)ppcVar5",
+      "severity": "moderate",
+      "text": "ppcVar5 = (char **)((int)ppcVar5 + (uint)bVar8 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 94,
       "match": "(byte *)((int)g_EnvironStringArea",
       "severity": "moderate",
@@ -232,7 +248,7 @@
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
       "line": 63,
       "match": "for (...; != 0; ... + -1)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (uVar3 = (uint)(iVar2 * -4) >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {",
       "type": "unrolled_memcpy"
     },
@@ -240,7 +256,7 @@
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
       "line": 68,
       "match": "for (...; != 0; ... + -1)",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (iVar4 = 0; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
     },

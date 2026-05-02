@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 68,
+    "complexity_score": 88,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 33,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -171,6 +171,22 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(void **)((int)g_WaveOutHeaders",
+      "severity": "moderate",
+      "text": "memset(*(void **)((int)g_WaveOutHeaders + iVar2),0,0x20);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(uint **)((int)g_WaveOutHeaders",
+      "severity": "moderate",
+      "text": "**(uint **)((int)g_WaveOutHeaders + iVar2) =",
+      "type": "pointer_cast"
+    },
     {
       "description": "Complex pointer cast",
       "line": 16,

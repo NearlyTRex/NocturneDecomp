@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 103,
-    "complexity_score": 51,
+    "complexity_score": 66,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 7,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 51,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 154
   },
   "cross_references": [
@@ -191,5 +193,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(CWayPoint **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "target = *(CWayPoint **)((int)g_CDemonSetPtr->waypoints + iVar5);",
+      "type": "pointer_cast"
+    }
+  ]
 }

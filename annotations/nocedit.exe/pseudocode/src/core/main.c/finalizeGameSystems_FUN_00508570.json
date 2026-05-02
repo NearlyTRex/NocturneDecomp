@@ -7,16 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 275,
-    "complexity_score": 146,
+    "complexity_score": 131,
     "cross_reference_count": 1,
     "function_call_count": 32,
     "global_count": 27,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 131,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_unmapped_variable"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 406
   },
   "cross_references": [
@@ -427,6 +425,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Variable defined which should be unmapped",
+      "line": 2,
+      "match": "WARNING: Variable defined which should be unmapped",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "/* WARNING: Variable defined which should be unmapped: local_110 */",
+      "type": "warning_unmapped_variable"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 122,
       "match": "._0_4_",
@@ -452,14 +459,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Variable defined which should be unmapped",
-      "line": 2,
-      "match": "WARNING: Variable defined which should be unmapped",
-      "severity": "moderate",
-      "text": "/* WARNING: Variable defined which should be unmapped: local_110 */",
-      "type": "warning_unmapped_variable"
-    }
-  ]
+  "suspects": []
 }

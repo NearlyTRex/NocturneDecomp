@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 332,
-    "complexity_score": 150,
+    "complexity_score": 135,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 16,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 135,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 467
   },
   "cross_references": [
@@ -274,6 +272,17 @@
     },
     "pcode_op_count": 1399
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    }
+  ],
   "stack_frame": {
     "frame_size": 136,
     "local_size": 124,
@@ -410,14 +419,14 @@
         {
           "check_id": "uninitvar",
           "column": 16,
-          "line": 92,
+          "line": 90,
           "message": "Uninitialized variable: local_30",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 18,
-          "line": 118,
+          "line": 116,
           "message": "Uninitialized variable: local_3c",
           "severity": "error"
         }
@@ -426,14 +435,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    }
-  ]
+  "suspects": []
 }

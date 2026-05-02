@@ -151,7 +151,10 @@ _SUSPECT_PATTERN_DEFS = [
     # function results that happen to appear inside a `(TYPE *)(...)` outer
     # paren. `[^)]*` keeps the match within a single parenthesized group.
     # The TYPE allows multi-word forms like `unsigned int *`, `long long *`.
-    (r'\(\w+(?:\s+\w+)*\s*\*\s*\)\s*\([^)]*\(int\)\s*\w+(?!\w|\s*\()',
+    # `\*+` covers single and double-pointer casts (`(int *)`, `(int **)`) —
+    # both shapes appear when Ghidra walks a global array of pointers via
+    # byte-offset arithmetic.
+    (r'\(\w+(?:\s+\w+)*\s*\*+\s*\)\s*\([^)]*\(int\)\s*\w+(?!\w|\s*\()',
      'pointer_cast', 'Complex pointer cast'),
     # _._N_N_ field access patterns (mangled/unknown field names)
     (r'\._\d+_\d+_', 'unknown_field', 'Unknown/mangled field access'),
@@ -898,6 +901,12 @@ def identify_raw_address_constant_suspects(decompiled_code, address_interval_map
 # terminal inside (Watcom sometimes emits the divergent branch both ways).
 _UNROLLED_BYTE_STORE_RE = re.compile(
     r"^\s*\*?(\w+)(?:\[\d+\])?\s*=\s*(\w+)\s*;\s*$")
+# Cast-wrapped destination form: `(*(char (*) [N])dst)[0] = cVar;`. Watcom
+# emits this when the destination local is typed as a fixed-size char array
+# (e.g. g_MessageKeyStorage[i] : char[128]). Group 2 still captures the byte
+# source var so the null-break cross-check remains the same.
+_UNROLLED_CASTED_BYTE_STORE_RE = re.compile(
+    r"^\s*\(\s*\*.*\)\s*\[\d+\]\s*=\s*(\w+)\s*;\s*$")
 _UNROLLED_NULL_BREAK_RE = re.compile(
     r"^\s*if\s*\(\s*(\w+)\s*==\s*'\\0'\s*\)\s*break\s*;\s*$")
 _UNROLLED_NULL_RETURN_RE = re.compile(
@@ -946,13 +955,21 @@ def identify_unrolled_strcpy_loops(decompiled_code):
     n = len(lines)
     for i in range(n - 1):
         # Require `*dst = cVar;` followed by a null-check that exits the loop.
+        # The destination may be a plain `*name` / `name[N]` or a cast-wrapped
+        # `(*(char (*) [N])name)[N]` — both forms route the byte var into the
+        # 2nd capture group so the null-break cross-check is identical.
         store_m = _UNROLLED_BYTE_STORE_RE.match(lines[i])
-        if not store_m:
-            continue
+        if store_m:
+            byte_var = store_m.group(2)
+        else:
+            store_m = _UNROLLED_CASTED_BYTE_STORE_RE.match(lines[i])
+            if not store_m:
+                continue
+            byte_var = store_m.group(1)
         null_m = (_UNROLLED_NULL_BREAK_RE.match(lines[i + 1]) or
                   _UNROLLED_NULL_RETURN_RE.match(lines[i + 1]) or
                   _UNROLLED_NULL_BLOCK_RE.match(lines[i + 1]))
-        if not null_m or store_m.group(2) != null_m.group(1):
+        if not null_m or byte_var != null_m.group(1):
             continue
         # For the block form, require a terminal statement inside the block.
         if _UNROLLED_NULL_BLOCK_RE.match(lines[i + 1]):
@@ -987,7 +1004,7 @@ def identify_unrolled_strcpy_loops(decompiled_code):
                 'Watcom loop-unrolled strcpy (2-byte-at-a-time do-while '
                 'with mid-body null check). Replace the whole loop with '
                 'strcpy() in a .keep.'),
-            'severity': 'mild',
+            'severity': 'moderate',
         })
     return suspects
 
@@ -1006,6 +1023,117 @@ _UNROLLED_MEMCPY_STORE_RE = re.compile(
 # REP MOVSD lowering. `* -8 + 4` is the dword-scaled variant.
 _UNROLLED_MEMCPY_DIR_RE = re.compile(
     r"\(\s*uint\s*\)\s*\w+\s*\*\s*-?\d+\s*\+\s*\d+")
+
+
+# Watcom's other inline-memcpy lowering: a dword countdown over `N >> 2`
+# followed by a byte countdown over `N & 3` for the trailing 0..3 bytes.
+# Together the pair copies exactly N bytes. Both halves over the same `N`
+# expression is an unambiguous fingerprint — generic countdown loops don't
+# come paired this way.
+_UNROLLED_MEMCPY_DWORD_FOR_RE = re.compile(
+    r"^\s*for\s*\(\s*(\w+)\s*=\s*(.+?)\s*>>\s*2\s*;\s*\1\s*!=\s*0\s*;\s*"
+    r"\1\s*=\s*\1\s*(?:\+\s*-?1|-\s*1)\s*\)\s*\{?\s*$")
+_UNROLLED_MEMCPY_BYTE_FOR_RE = re.compile(
+    r"^\s*for\s*\(\s*(\w+)\s*=\s*(.+?)\s*&\s*3\s*;\s*\1\s*!=\s*0\s*;\s*"
+    r"\1\s*=\s*\1\s*(?:\+\s*-?1|-\s*1)\s*\)\s*\{?\s*$")
+
+
+def identify_unrolled_memcpy_dword_byte_split(decompiled_code):
+    """Detect Watcom's REP MOVSD + trailing-byte-copy memcpy lowering.
+
+    Canonical shape (no direction idiom — plain +4 / +1 advances):
+        for (X = N >> 2; X != 0; X = X - 1) {
+            *(uint *)dst = *(uint *)src;
+            src = src + 4;
+            dst = dst + 4;
+        }
+        for (Y = N & 3; Y != 0; Y = Y - 1) {
+            *dst = *src;
+            src = src + 1;
+            dst = dst + 1;
+        }
+
+    Together the two loops copy exactly N bytes (N/4 dwords + N%4 bytes).
+    The shared `N` expression between the `>> 2` and `& 3` headers is the
+    smoking gun — generic countdown loops aren't paired this way.
+
+    The existing `identify_unrolled_memcpy_loops` detector requires the
+    `(uint)bVar * -8 + 4` direction idiom that Watcom emits for some
+    REP MOVSD lowerings; this detector covers the simpler shape that
+    omits the direction idiom (e.g. CConsole_scrollUp_FUN_00441a80).
+    When either loop body *does* have the direction idiom, the existing
+    detector handles it and this one stays quiet to avoid double-counting.
+
+    Replace both loops with `memcpy(dst, src, N)` in a .keep.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts, one per matched loop pair (located at
+        the dword loop's `for` header so the user can jump to it).
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    lines = decompiled_code.split('\n')
+    n = len(lines)
+    for i in range(n - 1):
+        m_dword = _UNROLLED_MEMCPY_DWORD_FOR_RE.match(lines[i])
+        if not m_dword:
+            continue
+        # Find the dword loop's close brace within ~7 lines.
+        close = None
+        for fwd in range(1, 8):
+            if i + fwd >= n:
+                break
+            if lines[i + fwd].strip().startswith('}'):
+                close = i + fwd
+                break
+        if close is None:
+            continue
+        # Skip blank lines, then the next statement should be the byte
+        # countdown header over the same expression with `& 3`.
+        next_idx = close + 1
+        while next_idx < n and lines[next_idx].strip() == '':
+            next_idx += 1
+        if next_idx >= n:
+            continue
+        m_byte = _UNROLLED_MEMCPY_BYTE_FOR_RE.match(lines[next_idx])
+        if not m_byte:
+            continue
+        # Confirm both for-loops use the same N expression.
+        if m_dword.group(2).strip() != m_byte.group(2).strip():
+            continue
+        # Find the byte loop's close brace; needed for the body scan below.
+        byte_close = None
+        for fwd in range(1, 8):
+            if next_idx + fwd >= n:
+                break
+            if lines[next_idx + fwd].strip().startswith('}'):
+                byte_close = next_idx + fwd
+                break
+        if byte_close is None:
+            continue
+        # If either body uses the `(uint)bVar * -8 + 4` direction idiom,
+        # the existing identify_unrolled_memcpy_loops detector already
+        # flags both halves — skip to avoid duplicate diagnostics.
+        bodies = lines[i + 1:close] + lines[next_idx + 1:byte_close]
+        if any(_UNROLLED_MEMCPY_DIR_RE.search(b) for b in bodies):
+            continue
+        suspects.append({
+            'line': i + 1,
+            'type': 'unrolled_memcpy',
+            'match': 'for (X = N >> 2; ...) { } for (Y = N & 3; ...)',
+            'text': lines[i].strip()[:120],
+            'description': (
+                'Watcom loop-unrolled memcpy (REP MOVSD + trailing-byte tail: '
+                'dword countdown over N >> 2 followed by byte countdown '
+                'over N & 3). Replace both loops with memcpy(dst, src, N) '
+                'in a .keep.'),
+            'severity': 'moderate',
+        })
+    return suspects
 
 
 def identify_unrolled_memcpy_loops(decompiled_code):
@@ -1066,7 +1194,7 @@ def identify_unrolled_memcpy_loops(decompiled_code):
                 'Watcom loop-unrolled memcpy (countdown for-loop with typed '
                 'word/dword store and direction-bool arithmetic). Replace '
                 'the whole loop with memcpy(dst, src, N) in a .keep.'),
-            'severity': 'mild',
+            'severity': 'moderate',
         })
     return suspects
 
@@ -1172,7 +1300,7 @@ def identify_unrolled_strlen_loops(decompiled_code):
                 'and direction-bool step). Replace the whole loop with '
                 'strlen(src) in a .keep; the length downstream appears as '
                 '`~uVar - 1` (strlen) or `~uVar` (strlen + 1).'),
-            'severity': 'mild',
+            'severity': 'moderate',
         })
     return suspects
 
@@ -1275,7 +1403,7 @@ def identify_unrolled_strcat_loops(decompiled_code):
                             '2-byte strcpy onto the null terminator). '
                             'Replace the whole strlen + strcpy pair '
                             'with strcat(dst, src) in a .keep.'),
-                        'severity': 'mild',
+                        'severity': 'moderate',
                     })
                     break
             else:
@@ -1386,7 +1514,7 @@ def identify_unrolled_strchr_loops(decompiled_code):
                 "literal '{lit}' with null-terminator break). Replace the "
                 "whole loop + fallback `= NULL` with strchr(ptr, '{lit}') "
                 "in a .keep.").format(lit=lit),
-            'severity': 'mild',
+            'severity': 'moderate',
         })
     return suspects
 
@@ -1931,6 +2059,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
         code, func_calls))
     found.extend(identify_unrolled_strcpy_loops(code))
     found.extend(identify_unrolled_memcpy_loops(code))
+    found.extend(identify_unrolled_memcpy_dword_byte_split(code))
     found.extend(identify_unrolled_strlen_loops(code))
     found.extend(identify_unrolled_strcat_loops(code))
     found.extend(identify_unrolled_strchr_loops(code))

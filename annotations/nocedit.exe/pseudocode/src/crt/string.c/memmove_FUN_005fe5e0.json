@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 152,
+    "complexity_score": 162,
     "cross_reference_count": 80,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 42,
-    "suspect_count": 10,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "unrolled_memcpy"
@@ -636,6 +636,14 @@
       "severity": "moderate",
       "text": "puVar4 = (uint *)((int)puVar4 + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (REP MOVSD + trailing-byte tail: dword countdown over N >> 2 followed by byte countdown over N & 3). Replace both loops with memcpy(dst, src, N) in a .keep.",
+      "line": 33,
+      "match": "for (X = N >> 2; ...) { } for (Y = N & 3; ...)",
+      "severity": "moderate",
+      "text": "for (uVar1 = n >> 2; uVar1 != 0; uVar1 = uVar1 - 1) {",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSW at ????????, 2-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 2) or a struct assignment in a .keep.",

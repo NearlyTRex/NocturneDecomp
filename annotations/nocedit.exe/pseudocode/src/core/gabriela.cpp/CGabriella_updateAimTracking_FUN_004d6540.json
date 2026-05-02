@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 420,
-    "complexity_score": 160,
+    "complexity_score": 175,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 13,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 160,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 580
   },
   "cross_references": [
@@ -397,5 +399,14 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "target_actor = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5);",
+      "type": "pointer_cast"
+    }
+  ]
 }

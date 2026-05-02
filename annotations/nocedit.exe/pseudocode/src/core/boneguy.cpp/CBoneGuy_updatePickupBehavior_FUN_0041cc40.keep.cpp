@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 int __cdecl core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40(CBoneGuy *this_ptr,float delta_time)
 
 {

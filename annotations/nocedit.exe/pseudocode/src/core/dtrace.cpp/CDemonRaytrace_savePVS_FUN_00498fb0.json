@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 56,
+    "complexity_score": 71,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 15,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 56,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 174
   },
   "cross_references": [
@@ -225,5 +227,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(CDemonCube **)((int)g_PVSCubePointers",
+      "severity": "moderate",
+      "text": "if (pCVar3 == *(CDemonCube **)((int)g_PVSCubePointers + iVar7)) break;",
+      "type": "pointer_cast"
+    }
+  ]
 }

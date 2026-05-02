@@ -7,9 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Removing unreachable block (ram,0x005c7515) */
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_ptr,float delta_time)
 
 {

@@ -10,7 +10,6 @@
 int __cdecl engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(CPaletteManager *this_ptr,char *output_filename,int num_palette_entries)
 
 {
-  char cVar2;
   SColorQuantMapper *workspace;
   char *color_data;
   _FILE *p_Var6;
@@ -20,11 +19,9 @@ int __cdecl engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(
   int iVar4;
   uchar *puVar9;
   uint color_count;
-  char *pcVar10;
   char *pcVar5;
   char *pcVar6;
   char *pcVar7;
-  char *pcVar11;
   char local_6c [80];
   int local_1c;
   int local_10;
@@ -32,7 +29,6 @@ int __cdecl engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(
   int iVar5;
   uchar uVar3;
   byte bVar2;
-  char cVar1;
   char *pcVar14;
   byte bVar13;
   
@@ -53,54 +49,15 @@ int __cdecl engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(
     if (0 < this_ptr->texture_count) {
       local_10 = 0;
       do {
-        pcVar11 = local_6c;
-        pcVar10 = this_ptr->texture_names + local_10;
-        do {
-          cVar1 = *pcVar10;
-          *pcVar11 = cVar1;
-          if (cVar1 == '\0') break;
-          cVar2 = pcVar10[1];
-          pcVar10 = pcVar10 + 2;
-          pcVar11[1] = cVar2;
-          pcVar11 = pcVar11 + 2;
-        } while (cVar2 != '\0');
-        pcVar6 = local_6c;
-        do {
-          pcVar5 = pcVar6;
-          if (*pcVar6 == '.') goto LAB_00545254;
-          if (*pcVar6 == '\0') break;
-          pcVar5 = pcVar6 + 1;
-          if (*pcVar5 == '.') goto LAB_00545254;
-          pcVar6 = pcVar6 + 2;
-        } while (*pcVar5 != '\0');
-        pcVar5 = (char *)0x0;
-LAB_00545254:
+        strcpy(local_6c, this_ptr->texture_names + local_10);
+        pcVar5 = strchr(local_6c, '.');
         if (pcVar5 == (char *)0x0) {
           g_CurrentFilename = "..\\engine\\palette.cpp";
           g_CurrentLineNumber = 0xcb;
           core_main_c_displayErrorAndQuit_FUN_00506f10("paletteManager::createOutputPalette - No extension found");
         }
-        pcVar6 = ".ACT";
-        do {
-          cVar2 = *pcVar6;
-          *pcVar5 = cVar2;
-          if (cVar2 == '\0') break;
-          cVar2 = pcVar6[1];
-          pcVar6 = pcVar6 + 2;
-          pcVar5[1] = cVar2;
-          pcVar5 = pcVar5 + 2;
-        } while (cVar2 != '\0');
-        pcVar6 = local_6c;
-        do {
-          pcVar5 = pcVar6;
-          if (*pcVar6 == '\\') goto LAB_005452ba;
-          if (*pcVar6 == '\0') break;
-          pcVar5 = pcVar6 + 1;
-          if (*pcVar5 == '\\') goto LAB_005452ba;
-          pcVar6 = pcVar6 + 2;
-        } while (*pcVar5 != '\0');
-        pcVar5 = (char *)0x0;
-LAB_005452ba:
+        strcpy(pcVar5, ".ACT");
+        pcVar5 = strchr(local_6c, '\\');
         if (pcVar5 == (char *)0x0) {
           pcVar5 = "rb";
           pcVar6 = "art";
@@ -117,17 +74,7 @@ LAB_005452ba:
           _fread(g_PaletteData,0x300,1,p_Var6);
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var6,"..\\engine\\palette.cpp",0xd9);
         }
-        pcVar6 = this_ptr->texture_names + local_10;
-        do {
-          pcVar5 = pcVar6;
-          if (*pcVar6 == '\\') goto LAB_00545332;
-          if (*pcVar6 == '\0') break;
-          pcVar5 = pcVar6 + 1;
-          if (*pcVar5 == '\\') goto LAB_00545332;
-          pcVar6 = pcVar6 + 2;
-        } while (*pcVar5 != '\0');
-        pcVar5 = (char *)0x0;
-LAB_00545332:
+        pcVar5 = strchr(this_ptr->texture_names + local_10, '\\');
         if (pcVar5 == (char *)0x0) {
           pcVar6 = this_ptr->texture_names;
           pcVar5 = "art";
@@ -137,17 +84,7 @@ LAB_00545332:
           pcVar5 = &s_EmptyChar_0063e5c1;
         }
         iVar7 = engine_dosio_c_getFileSize_FUN_00481880(pcVar5,pcVar6 + local_10);
-        pcVar6 = this_ptr->texture_names + local_10;
-        do {
-          pcVar5 = pcVar6;
-          if (*pcVar6 == '\\') goto LAB_0054537a;
-          if (*pcVar6 == '\0') break;
-          pcVar5 = pcVar6 + 1;
-          if (*pcVar5 == '\\') goto LAB_0054537a;
-          pcVar6 = pcVar6 + 2;
-        } while (*pcVar5 != '\0');
-        pcVar5 = (char *)0x0;
-LAB_0054537a:
+        pcVar5 = strchr(this_ptr->texture_names + local_10, '\\');
         if (pcVar5 == (char *)0x0) {
           pcVar6 = this_ptr->texture_names;
           pcVar14 = "rb";
@@ -200,17 +137,7 @@ LAB_0054537a:
     }
     pcVar5 = engine_colquant_c_quantizeColors_FUN_004406c0
                        (workspace,color_data,color_count,num_palette_entries);
-    pcVar6 = output_filename;
-    do {
-      pcVar7 = pcVar6;
-      if (*pcVar6 == '\\') goto LAB_00545459;
-      if (*pcVar6 == '\0') break;
-      pcVar7 = pcVar6 + 1;
-      if (*pcVar7 == '\\') goto LAB_00545459;
-      pcVar6 = pcVar6 + 2;
-    } while (*pcVar7 != '\0');
-    pcVar7 = (char *)0x0;
-LAB_00545459:
+    pcVar7 = strchr(output_filename, '\\');
     if (pcVar7 == (char *)0x0) {
       pcVar7 = "wb";
       pcVar6 = "art";

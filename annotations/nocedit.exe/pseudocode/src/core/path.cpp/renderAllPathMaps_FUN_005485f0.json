@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 39,
+    "complexity_score": 59,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 24,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -168,6 +168,22 @@
       "match": "(int *)((int)g_PathMapList",
       "severity": "moderate",
       "text": "if (*(int *)((int)g_PathMapList + iVar1) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(CPathMap **)((int)g_PathMapList",
+      "severity": "moderate",
+      "text": "if ((int)((*(CPathMap **)((int)g_PathMapList + iVar1))->cached_world_position).x < 0x461c3c01)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(CPathMap **)((int)g_PathMapList",
+      "severity": "moderate",
+      "text": "(*(CPathMap **)((int)g_PathMapList + iVar1),depth,red,green,fog);",
       "type": "pointer_cast"
     }
   ]

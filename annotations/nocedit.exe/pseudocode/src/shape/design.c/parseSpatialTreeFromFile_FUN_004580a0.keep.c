@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 STreeNode * __cdecl shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(_FILE *file)
 
 {

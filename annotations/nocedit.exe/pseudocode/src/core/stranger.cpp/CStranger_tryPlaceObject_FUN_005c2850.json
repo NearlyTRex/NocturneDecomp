@@ -7,14 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 626,
-    "complexity_score": 315,
+    "complexity_score": 350,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 17,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 260,
-    "suspect_count": 5,
+    "suspect_count": 8,
     "suspect_types": [
+      "pointer_cast",
       "stack_param"
     ],
     "total_lines": 886
@@ -512,6 +513,22 @@
       "type": "stack_param"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 86,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iStack_1c),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 135,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar16),",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 152,
       "match": "in_stack_ffffff18",
@@ -542,6 +559,14 @@
       "severity": "moderate",
       "text": "force_immediate = (int)((ulonglong)in_stack_ffffff18 >> 0x20);",
       "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 250,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar13),",
+      "type": "pointer_cast"
     }
   ]
 }

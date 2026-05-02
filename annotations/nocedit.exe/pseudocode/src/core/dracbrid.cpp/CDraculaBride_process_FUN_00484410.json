@@ -7,7 +7,7 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1793,
-    "complexity_score": 786,
+    "complexity_score": 781,
     "cross_reference_count": 0,
     "function_call_count": 38,
     "global_count": 54,
@@ -15,8 +15,7 @@
     "pseudocode_lines": 756,
     "suspect_count": 2,
     "suspect_types": [
-      "warning_inlined_function",
-      "warning_type_propagation"
+      "pointer_cast"
     ],
     "total_lines": 2549
   },
@@ -609,6 +608,26 @@
     },
     "pcode_op_count": 7422
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Type propagation did not converge",
+      "line": 3,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    }
+  ],
   "stack_frame": {
     "frame_size": 1184,
     "local_size": 1176,
@@ -1047,20 +1066,20 @@
   },
   "suspects": [
     {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
+      "description": "Complex pointer cast",
+      "line": 243,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar10),",
+      "type": "pointer_cast"
     },
     {
-      "description": "Type propagation did not converge",
-      "line": 3,
-      "match": "WARNING: Type propagation algorithm not settling",
+      "description": "Complex pointer cast",
+      "line": 630,
+      "match": "(CDraculaBride **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
+      "text": "pCVar17 = *(CDraculaBride **)((int)g_CDemonSetPtr->characters + local_1c);",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

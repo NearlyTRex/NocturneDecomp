@@ -228,6 +228,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(code **)((int)g_SearchHandlers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)((int)g_SearchHandlers + iVar2))(context);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 17,
       "match": "code *",

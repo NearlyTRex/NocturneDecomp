@@ -305,6 +305,33 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(void **)((int)ppvVar4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "ppvVar4 = (void **)((int)ppvVar4 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(void **)((int)ppvVar5",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "ppvVar5 = (void **)((int)ppvVar5 + (uint)bVar6 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(void **)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(void **)((int)g_ScreenBufferArray + iVar3) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 48,
       "match": "(void *)((int)this_ptr",
       "resolution_source": "keep",
@@ -317,7 +344,7 @@
       "line": 25,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (uVar1 = g_WindowHeight & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {",
       "type": "unrolled_memcpy"
     },
@@ -326,7 +353,7 @@
       "line": 30,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     },

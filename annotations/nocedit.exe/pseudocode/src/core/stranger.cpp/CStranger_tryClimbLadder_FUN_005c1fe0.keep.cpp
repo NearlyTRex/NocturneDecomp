@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_005c1fe0(CStranger *this_ptr)
 
 {

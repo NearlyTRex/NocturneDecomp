@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 115,
+    "complexity_score": 130,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 11,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 115,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 360
   },
   "cross_references": [
@@ -272,5 +274,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(SMRGLHeaderPrimitive **)((int)g_VisibleFacePointers",
+      "severity": "moderate",
+      "text": "*(SMRGLHeaderPrimitive **)((int)g_VisibleFacePointers + local_18) = primitive_array;",
+      "type": "pointer_cast"
+    }
+  ]
 }

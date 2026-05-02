@@ -295,6 +295,24 @@
       "type": "stack_param"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(void **)((int)ppvVar5",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "ppvVar5 = (void **)((int)ppvVar5 + (uint)bVar8 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(void **)((int)ppvVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "ppvVar6 = (void **)((int)ppvVar6 + (uint)bVar8 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 42,
       "match": "in_stack_0000000c",
@@ -326,7 +344,7 @@
       "line": 29,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (uVar2 = iVar3 & 0x3fffffff; uVar2 != 0; uVar2 = uVar2 - 1) {",
       "type": "unrolled_memcpy"
     },
@@ -335,7 +353,7 @@
       "line": 34,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {",
       "type": "unrolled_memcpy"
     },

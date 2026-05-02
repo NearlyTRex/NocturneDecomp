@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 294,
-    "complexity_score": 119,
+    "complexity_score": 144,
     "cross_reference_count": 4,
     "function_call_count": 13,
     "global_count": 25,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 119,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 413
   },
   "cross_references": [
@@ -420,5 +422,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(CDemonLight **)((int)g_DynamicLights",
+      "severity": "moderate",
+      "text": "pCVar2 = *(CDemonLight **)((int)g_DynamicLights + local_30);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 78,
+      "match": "(CDemonLight **)((int)g_SpotLightList",
+      "severity": "moderate",
+      "text": "this_ptr_01 = *(CDemonLight **)((int)g_SpotLightList + local_2c);",
+      "type": "pointer_cast"
+    }
+  ]
 }

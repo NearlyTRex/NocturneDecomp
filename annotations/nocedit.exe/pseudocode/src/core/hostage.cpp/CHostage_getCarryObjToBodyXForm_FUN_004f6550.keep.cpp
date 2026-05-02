@@ -7,13 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Removing unreachable block (ram,0x004f688c) */
-/* WARNING: Removing unreachable block (ram,0x004f6977) */
-/* WARNING: Removing unreachable block (ram,0x004f68c6) */
-/* WARNING: Removing unreachable block (ram,0x004f68f7) */
-/* WARNING: Removing unreachable block (ram,0x004f6911) */
-/* WARNING: Type propagation algorithm not settling */
-
 CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {

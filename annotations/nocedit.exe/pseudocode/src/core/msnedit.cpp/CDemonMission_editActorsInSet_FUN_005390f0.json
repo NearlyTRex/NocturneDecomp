@@ -8,14 +8,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2766,
-    "complexity_score": 996,
+    "complexity_score": 1011,
     "cross_reference_count": 1,
     "function_call_count": 96,
     "global_count": 106,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 996,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 3762
   },
   "cross_references": [
@@ -1282,7 +1284,7 @@
       "line": 183,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (iVar14 = 0x32; iVar14 != 0; iVar14 = iVar14 + -1) {",
       "type": "unrolled_memcpy"
     },
@@ -1788,5 +1790,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 147,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar8),",
+      "type": "pointer_cast"
+    }
+  ]
 }

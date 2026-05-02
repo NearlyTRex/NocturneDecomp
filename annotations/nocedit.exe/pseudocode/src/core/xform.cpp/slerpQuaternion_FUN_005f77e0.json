@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 204,
-    "complexity_score": 84,
+    "complexity_score": 69,
     "cross_reference_count": 15,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 69,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 273
   },
   "cross_references": [
@@ -325,6 +323,17 @@
     },
     "pcode_op_count": 1112
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */",
+      "type": "warning_inlined_function"
+    }
+  ],
   "stack_frame": {
     "frame_size": 144,
     "local_size": 132,
@@ -435,14 +444,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */",
-      "type": "warning_inlined_function"
-    }
-  ]
+  "suspects": []
 }

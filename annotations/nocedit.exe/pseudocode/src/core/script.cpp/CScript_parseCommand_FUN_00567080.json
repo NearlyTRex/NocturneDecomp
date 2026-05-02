@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 105,
+    "complexity_score": 115,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 65,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "unrolled_memcpy"
@@ -213,6 +213,14 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(char **)((int)g_CommandTemplates",
+      "severity": "moderate",
+      "text": "(&local_2374,text,*(char **)((int)g_CommandTemplates + iVar3));",
+      "type": "pointer_cast"
+    },
     {
       "description": "Complex pointer cast",
       "line": 51,

@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1467,
-    "complexity_score": 671,
+    "complexity_score": 681,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 37,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 626,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "warning_inlined_function",
@@ -915,6 +915,14 @@
       "match": "(int *)((int)this_ptr",
       "severity": "moderate",
       "text": "iVar18 = *(int *)((int)this_ptr + (4 - this_ptr->waypoint_index) * 4 + 0xce908);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 444,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar18),",
       "type": "pointer_cast"
     }
   ],

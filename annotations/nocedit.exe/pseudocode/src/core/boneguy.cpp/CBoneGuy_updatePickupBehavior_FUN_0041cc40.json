@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 437,
-    "complexity_score": 177,
+    "complexity_score": 187,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 16,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 162,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "warning_type_propagation"
+      "pointer_cast"
     ],
     "total_lines": 599
   },
@@ -249,6 +249,17 @@
     },
     "pcode_op_count": 2103
   },
+  "resolved_suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    }
+  ],
   "stack_frame": {
     "frame_size": 224,
     "local_size": 216,
@@ -417,12 +428,20 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
+      "description": "Complex pointer cast",
+      "line": 112,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
+      "text": "pCVar1 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_20);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 134,
+      "match": "(CDemonActor **)((int)auStack_d4",
+      "severity": "moderate",
+      "text": "*(CDemonActor **)((int)auStack_d4 + iVar6) = pCVar1;",
+      "type": "pointer_cast"
     }
   ]
 }

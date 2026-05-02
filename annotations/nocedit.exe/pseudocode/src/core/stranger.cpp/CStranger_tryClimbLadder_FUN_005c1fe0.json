@@ -15,7 +15,7 @@
     "pseudocode_lines": 130,
     "suspect_count": 1,
     "suspect_types": [
-      "warning_type_propagation"
+      "pointer_cast"
     ],
     "total_lines": 449
   },
@@ -220,6 +220,17 @@
     },
     "pcode_op_count": 1675
   },
+  "resolved_suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    }
+  ],
   "stack_frame": {
     "frame_size": 232,
     "local_size": 228,
@@ -486,12 +497,12 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_18),",
+      "type": "pointer_cast"
     }
   ]
 }

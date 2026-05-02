@@ -7,13 +7,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 175,
-    "complexity_score": 103,
+    "complexity_score": 123,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 88,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -214,6 +214,22 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(SRenderBufferEntry **)((int)g_RenderBufferSortArray",
+      "severity": "moderate",
+      "text": "*(SRenderBufferEntry **)((int)g_RenderBufferSortArray + iVar2) = pSVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(int **)((int)g_RenderBufferSortArray",
+      "severity": "moderate",
+      "text": "piVar1 = *(int **)((int)g_RenderBufferSortArray + local_10);",
+      "type": "pointer_cast"
+    },
     {
       "description": "Complex pointer cast",
       "line": 72,

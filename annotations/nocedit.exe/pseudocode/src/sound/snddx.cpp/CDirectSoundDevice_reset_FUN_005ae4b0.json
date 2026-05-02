@@ -154,6 +154,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(int **)((int)g_DirectSoundHardwareSfxBuffers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar1 = *(int **)((int)g_DirectSoundHardwareSfxBuffers + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 59,
       "match": "code *",

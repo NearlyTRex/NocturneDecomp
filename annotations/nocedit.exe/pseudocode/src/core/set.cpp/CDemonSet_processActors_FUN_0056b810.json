@@ -329,6 +329,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 100,
+      "match": "(CDemonActor **)((int)g_ActorProfileActors",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(CDemonActor **)((int)g_ActorProfileActors + iVar7) = g_CurrentProcessingActor;",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 153,
       "match": "&stack0xffffff60",

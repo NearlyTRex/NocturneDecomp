@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 150
-  Total diagnostics: 448
+  Functions with findings: 151
+  Total diagnostics: 449
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 150, raw .cpp files: 0
+  .keep.cpp files: 151, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -215,12 +215,12 @@ core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0  [.keep] [Cppcheck
 core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80  [.keep] [Cppcheck (quick)]
   File: core/actor.cpp  (6 diagnostics)
 
-  Line   88: [selfAssignment] Redundant assignment of 'pCVar6' to itself.
-  Line  101: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
-  Line  102: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
-  Line  103: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
-  Line  119: [selfAssignment] Redundant assignment of 'pCVar7' to itself.
-  Line  120: [selfAssignment] Redundant assignment of 'pcVar8' to itself.
+  Line   81: [selfAssignment] Redundant assignment of 'pCVar6' to itself.
+  Line   94: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+  Line   95: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+  Line   96: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+  Line  112: [selfAssignment] Redundant assignment of 'pCVar7' to itself.
+  Line  113: [selfAssignment] Redundant assignment of 'pcVar8' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420  [.keep] [Cppcheck (quick)]
@@ -417,10 +417,10 @@ core_path.cpp_CPathMap_searchGrid_FUN_005487a0  [.keep] [Cppcheck (quick)]
 core_tvbat.cpp_CTVBat_process_FUN_005e4210  [.keep] [Cppcheck (quick)]
   File: core/tvbat.cpp  (4 diagnostics)
 
-  Line  146: [uninitvar] Uninitialized variable: local_80
-  Line  146: [uninitvar] Uninitialized variable: local_88
-  Line  146: [uninitvar] Uninitialized variable: local_84
-  Line  167: [uninitvar] Uninitialized variable: local_54
+  Line  144: [uninitvar] Uninitialized variable: local_80
+  Line  144: [uninitvar] Uninitialized variable: local_88
+  Line  144: [uninitvar] Uninitialized variable: local_84
+  Line  165: [uninitvar] Uninitialized variable: local_54
 
 ----------------------------------------------------------------------------------------------------
 engine_colquant.c_computeBoxStatistics_FUN_00441260  [.keep] [Cppcheck (quick)]
@@ -489,9 +489,9 @@ wincore_windll.cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec  [.keep] [Cpp
 core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210  [.keep] [Cppcheck (quick)]
   File: core/actor.cpp  (3 diagnostics)
 
-  Line   65: [uninitvar] Uninitialized variable: local_38
-  Line   84: [uninitvar] Uninitialized variable: local_34
-  Line  270: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
+  Line   63: [uninitvar] Uninitialized variable: local_38
+  Line   82: [uninitvar] Uninitialized variable: local_34
+  Line  268: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 core_boneguy.cpp_hsvToRgb_FUN_0041ba10  [.keep] [Cppcheck (quick)]
@@ -687,8 +687,8 @@ core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0  [.keep] [Cpp
 core_dskybox.cpp_renderSkyDome_FUN_004901f0  [.keep] [Cppcheck (quick)]
   File: core/dskybox.cpp  (2 diagnostics)
 
-  Line  142: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  147: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  140: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  145: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00496220  [.keep] [Cppcheck (quick)]
@@ -785,8 +785,8 @@ core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005
 core_svetlana.cpp_CSvetlana_renderOpaque_FUN_005d9bc0  [.keep] [Cppcheck (quick)]
   File: core/svetlana.cpp  (2 diagnostics)
 
-  Line   33: [selfAssignment] Redundant assignment of 'iVar3' to itself.
-  Line   42: [selfAssignment] Redundant assignment of 'pCVar5' to itself.
+  Line   31: [selfAssignment] Redundant assignment of 'iVar3' to itself.
+  Line   40: [selfAssignment] Redundant assignment of 'pCVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_vampboss.cpp_CVampireBoss_process_FUN_005e5970  [.keep] [Cppcheck (quick)]
@@ -876,8 +876,8 @@ shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590  [.keep] [Cpp
 sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630  [.keep] [Cppcheck (quick)]
   File: sound/mp3.cpp  (2 diagnostics)
 
-  Line   92: [uninitvar] Uninitialized variable: local_30
-  Line  118: [uninitvar] Uninitialized variable: local_3c
+  Line   90: [uninitvar] Uninitialized variable: local_30
+  Line  116: [uninitvar] Uninitialized variable: local_3c
 
 ----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0  [.keep] [Cppcheck (quick)]
@@ -902,7 +902,7 @@ core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280  [.keep] [Cppcheck (
 core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940  [.keep] [Cppcheck (quick)]
   File: core/box.cpp  (1 diagnostics)
 
-  Line  171: [compareBoolExpressionWithInt] Comparison of a boolean expression with an integer other than 0 or 1.
+  Line  169: [compareBoolExpressionWithInt] Comparison of a boolean expression with an integer other than 0 or 1.
 
 ----------------------------------------------------------------------------------------------------
 core_charactr.cpp_CCharacter_setup_FUN_00428140  [.keep] [Cppcheck (quick)]
@@ -1010,7 +1010,7 @@ core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660  [.keep] [Cppcheck (q
 core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0  [.keep] [Cppcheck (quick)]
   File: core/setedit.cpp  (1 diagnostics)
 
-  Line  177: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
+  Line  175: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 core_setutil.cpp_C3DSCamera_load_FUN_00585420  [.keep] [Cppcheck (quick)]
@@ -1052,31 +1052,31 @@ core_vehicle.cpp_CVehicle_renderOpaque_FUN_005e88c0  [.keep] [Cppcheck (quick)]
 core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70  [.keep] [Cppcheck (quick)]
   File: core/water.cpp  (1 diagnostics)
 
-  Line   45: [selfAssignment] Redundant assignment of 'iVar2' to itself.
+  Line   43: [selfAssignment] Redundant assignment of 'iVar2' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_xform.cpp_clipPolygonStage1_FUN_005f7ed0  [.keep] [Cppcheck (quick)]
   File: core/xform.cpp  (1 diagnostics)
 
-  Line   74: [selfAssignment] Redundant assignment of 'iVar5' to itself.
+  Line   71: [selfAssignment] Redundant assignment of 'iVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_xform.cpp_clipPolygonStage2_FUN_005f8040  [.keep] [Cppcheck (quick)]
   File: core/xform.cpp  (1 diagnostics)
 
-  Line   74: [selfAssignment] Redundant assignment of 'iVar5' to itself.
+  Line   71: [selfAssignment] Redundant assignment of 'iVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_xform.cpp_clipPolygonStage3_FUN_005f81c0  [.keep] [Cppcheck (quick)]
   File: core/xform.cpp  (1 diagnostics)
 
-  Line   74: [selfAssignment] Redundant assignment of 'iVar5' to itself.
+  Line   71: [selfAssignment] Redundant assignment of 'iVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_xform.cpp_clipPolygonStage4_FUN_005f8330  [.keep] [Cppcheck (quick)]
   File: core/xform.cpp  (1 diagnostics)
 
-  Line   74: [selfAssignment] Redundant assignment of 'iVar5' to itself.
+  Line   71: [selfAssignment] Redundant assignment of 'iVar5' to itself.
 
 ----------------------------------------------------------------------------------------------------
 engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290  [.keep] [Cppcheck (quick)]
@@ -1107,6 +1107,12 @@ engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30  [.keep] [Cppcheck (qui
   File: engine/keyframe.c  (1 diagnostics)
 
   Line   49: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+engine_light.cpp_calculatePhongLighting_FUN_00505530  [.keep] [Cppcheck (quick)]
+  File: engine/light.cpp  (1 diagnostics)
+
+  Line  105: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 engine_model.c_getMRGLBounds_FUN_00528140  [.keep] [Cppcheck (quick)]
@@ -1190,13 +1196,13 @@ sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30  [.keep] [Cppcheck (quick)]
 sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660  [.keep] [Cppcheck (quick)]
   File: sound/snddx.cpp  (1 diagnostics)
 
-  Line   44: [nullPointerRedundantCheck] Either the condition 'local_18!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: local_18.
+  Line   42: [nullPointerRedundantCheck] Either the condition 'local_18!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: local_18.
 
 ----------------------------------------------------------------------------------------------------
 sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830  [.keep] [Cppcheck (quick)]
   File: sound/snddx.cpp  (1 diagnostics)
 
-  Line   74: [nullPointerRedundantCheck] Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
+  Line   71: [nullPointerRedundantCheck] Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
 
 ----------------------------------------------------------------------------------------------------
 sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120  [.keep] [Cppcheck (quick)]

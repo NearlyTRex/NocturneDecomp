@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 void __cdecl engine_matrix_c_matrixPushAndRotate_FUN_0050db00(int rotation_x,int rotation_y,int rotation_z)
 
 {

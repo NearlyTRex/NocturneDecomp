@@ -7,14 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 810,
-    "complexity_score": 357,
+    "complexity_score": 372,
     "cross_reference_count": 3,
     "function_call_count": 46,
     "global_count": 72,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 322,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "pointer_cast",
       "unrolled_strcpy"
     ],
     "total_lines": 1132
@@ -806,7 +807,7 @@
       "line": 254,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (iVar4 = 0x32; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
     },
@@ -1058,10 +1059,18 @@
   },
   "suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 264,
+      "match": "(CHero **)((int)g_HeroActors",
+      "severity": "moderate",
+      "text": "*(CHero **)((int)g_HeroActors + iVar2) = pCVar3;",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 54,
       "match": "do {",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     },
@@ -1069,7 +1078,7 @@
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 96,
       "match": "do {",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     },
@@ -1077,7 +1086,7 @@
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 115,
       "match": "do {",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     }

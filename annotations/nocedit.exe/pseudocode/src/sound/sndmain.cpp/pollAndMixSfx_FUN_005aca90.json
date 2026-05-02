@@ -302,6 +302,24 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 85,
+      "match": "(void **)((int)g_ChannelPrimaryBuffers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(void **)((int)g_ChannelPrimaryBuffers + iVar3),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 87,
+      "match": "(void **)((int)g_ChannelPrimaryBuffers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)*(void **)((int)g_ChannelPrimaryBuffers + iVar3)),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 89,
       "match": "(int *)((int)g_ChannelPrimaryBuffers",
       "resolution_source": "keep",
@@ -347,6 +365,15 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 164,
+      "match": "(ushort **)((int)local_44",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(ushort **)((int)local_44 + iVar5 + 4),bits_per_sample,iVar3,block_align);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 166,
       "match": "(int *)((int)local_44",
       "resolution_source": "keep",
@@ -368,7 +395,7 @@
       "line": 130,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "for (iVar2 = local_44[0]; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
     }

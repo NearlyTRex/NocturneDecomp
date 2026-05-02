@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 73,
+    "complexity_score": 83,
     "cross_reference_count": 9,
     "function_call_count": 8,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 33,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "negative_offset",
       "pointer_cast"
@@ -309,6 +309,14 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(CHero **)((int)g_HeroActors",
+      "severity": "moderate",
+      "text": "if (this_ptr == *(CHero **)((int)g_HeroActors + iVar1)) {",
+      "type": "pointer_cast"
+    },
     {
       "description": "Complex pointer cast",
       "line": 19,

@@ -5,18 +5,18 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (448 diagnostics)
+Cppcheck (quick) (449 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
 uninitvar (105)
 ----------------------------------------------------------------------------------------------------
 
-  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 65
+  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 63
     File: core/actor.cpp
     Uninitialized variable: local_38
 
-  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 84
+  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 82
     File: core/actor.cpp
     Uninitialized variable: local_34
 
@@ -260,19 +260,19 @@ uninitvar (105)
     File: core/stranger.cpp
     Uninitialized variable: local_260
 
-  core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 146
+  core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 144
     File: core/tvbat.cpp
     Uninitialized variable: local_80
 
-  core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 146
+  core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 144
     File: core/tvbat.cpp
     Uninitialized variable: local_88
 
-  core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 146
+  core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 144
     File: core/tvbat.cpp
     Uninitialized variable: local_84
 
-  core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 167
+  core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 165
     File: core/tvbat.cpp
     Uninitialized variable: local_54
 
@@ -420,11 +420,11 @@ uninitvar (105)
     File: shape/superopt.cpp
     Uninitialized variable: local_288
 
-  sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630 line 92
+  sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630 line 90
     File: sound/mp3.cpp
     Uninitialized variable: local_30
 
-  sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630 line 118
+  sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630 line 116
     File: sound/mp3.cpp
     Uninitialized variable: local_3c
 
@@ -433,7 +433,7 @@ uninitvar (105)
     Uninitialized variable: local_60
 
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (91)
+shiftTooManyBitsSigned (92)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_F line 66
@@ -552,11 +552,11 @@ shiftTooManyBitsSigned (91)
     File: core/dcamera.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dskybox.cpp_renderSkyDome_FUN_004901f0        line 142
+  core_dskybox.cpp_renderSkyDome_FUN_004901f0        line 140
     File: core/dskybox.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  core_dskybox.cpp_renderSkyDome_FUN_004901f0        line 147
+  core_dskybox.cpp_renderSkyDome_FUN_004901f0        line 145
     File: core/dskybox.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -686,6 +686,10 @@ shiftTooManyBitsSigned (91)
 
   engine_keyframe.c_interpolateCubicKeyframes_FUN_00 line 49
     File: engine/keyframe.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_light.cpp_calculatePhongLighting_FUN_005055 line 105
+    File: engine/light.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   shape_design.c_arePolygonsCoplanar_FUN_00461b70    line 21
@@ -820,15 +824,15 @@ selfAssignment (73)
     File: cockpit/pkbitmap.cpp
     Redundant assignment of 'pbVar6' to itself.
 
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 88
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 81
     File: core/actor.cpp
     Redundant assignment of 'pCVar6' to itself.
 
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 119
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 112
     File: core/actor.cpp
     Redundant assignment of 'pCVar7' to itself.
 
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 120
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 113
     File: core/actor.cpp
     Redundant assignment of 'pcVar8' to itself.
 
@@ -940,31 +944,31 @@ selfAssignment (73)
     File: core/skeledit.cpp
     Redundant assignment of 'piVar35' to itself.
 
-  core_svetlana.cpp_CSvetlana_renderOpaque_FUN_005d9 line 33
+  core_svetlana.cpp_CSvetlana_renderOpaque_FUN_005d9 line 31
     File: core/svetlana.cpp
     Redundant assignment of 'iVar3' to itself.
 
-  core_svetlana.cpp_CSvetlana_renderOpaque_FUN_005d9 line 42
+  core_svetlana.cpp_CSvetlana_renderOpaque_FUN_005d9 line 40
     File: core/svetlana.cpp
     Redundant assignment of 'pCVar5' to itself.
 
-  core_water.cpp_CWater_calculateVisibleTiles_FUN_00 line 45
+  core_water.cpp_CWater_calculateVisibleTiles_FUN_00 line 43
     File: core/water.cpp
     Redundant assignment of 'iVar2' to itself.
 
-  core_xform.cpp_clipPolygonStage1_FUN_005f7ed0      line 74
+  core_xform.cpp_clipPolygonStage1_FUN_005f7ed0      line 71
     File: core/xform.cpp
     Redundant assignment of 'iVar5' to itself.
 
-  core_xform.cpp_clipPolygonStage2_FUN_005f8040      line 74
+  core_xform.cpp_clipPolygonStage2_FUN_005f8040      line 71
     File: core/xform.cpp
     Redundant assignment of 'iVar5' to itself.
 
-  core_xform.cpp_clipPolygonStage3_FUN_005f81c0      line 74
+  core_xform.cpp_clipPolygonStage3_FUN_005f81c0      line 71
     File: core/xform.cpp
     Redundant assignment of 'iVar5' to itself.
 
-  core_xform.cpp_clipPolygonStage4_FUN_005f8330      line 74
+  core_xform.cpp_clipPolygonStage4_FUN_005f8330      line 71
     File: core/xform.cpp
     Redundant assignment of 'iVar5' to itself.
 
@@ -1512,7 +1516,7 @@ legacyUninitvar (44)
 invalidPointerCast (19)
 ----------------------------------------------------------------------------------------------------
 
-  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 270
+  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 268
     File: core/actor.cpp
     Casting between signed int * and float * which have an incompatible binary data representation.
 
@@ -1548,7 +1552,7 @@ invalidPointerCast (19)
     File: core/setedit.cpp
     Casting between signed int * and float * which have an incompatible binary data representation.
 
-  core_setedit.cpp_CDemonSet_showLightFilterEditor_F line 177
+  core_setedit.cpp_CDemonSet_showLightFilterEditor_F line 175
     File: core/setedit.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
@@ -1592,15 +1596,15 @@ invalidPointerCast (19)
 nullPointerRedundantCheck (12)
 ----------------------------------------------------------------------------------------------------
 
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 101
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 94
     File: core/actor.cpp
     Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
 
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 102
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 95
     File: core/actor.cpp
     Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
 
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 103
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 96
     File: core/actor.cpp
     Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
 
@@ -1632,11 +1636,11 @@ nullPointerRedundantCheck (12)
     File: shape/quantize.cpp
     Either the condition 'local_14!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: local_14.
 
-  sound_snddx.cpp_CDirectSoundDevice_initPropertySet line 44
+  sound_snddx.cpp_CDirectSoundDevice_initPropertySet line 42
     File: sound/snddx.cpp
     Either the condition 'local_18!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: local_18.
 
-  sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005 line 74
+  sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005 line 71
     File: sound/snddx.cpp
     Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
 
@@ -1848,7 +1852,7 @@ arrayIndexOutOfBounds (2)
 compareBoolExpressionWithInt (1)
 ----------------------------------------------------------------------------------------------------
 
-  core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0 line 171
+  core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0 line 169
     File: core/box.cpp
     Comparison of a boolean expression with an integer other than 0 or 1.
 

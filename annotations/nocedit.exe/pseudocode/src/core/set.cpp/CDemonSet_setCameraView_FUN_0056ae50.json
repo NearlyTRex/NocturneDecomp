@@ -738,6 +738,15 @@
       "severity": "moderate",
       "text": "puVar2 = (uint *)((int)g_SpotLightList + iVar7);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 195,
+      "match": "(CDemonLight **)((int)g_SpotLightList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr_01 = *(CDemonLight **)((int)g_SpotLightList + iVar7);",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {

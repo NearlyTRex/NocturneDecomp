@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 134,
+    "complexity_score": 144,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 49,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
@@ -199,6 +199,14 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(WatcomThunkedDestructor **)((int)this_ptr",
+      "severity": "moderate",
+      "text": "*(WatcomThunkedDestructor **)((int)this_ptr + 0x48) = &WatcomThunkedDestructor_00665b70;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 20,
       "match": "(ios *)((int)this_ptr",
       "severity": "moderate",
@@ -249,7 +257,7 @@
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
       "line": 33,
       "match": "do { if (v==0) break; v=v-1; ... }",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
     }

@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 35,
+    "complexity_score": 50,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 7,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 35,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 114
   },
   "cross_references": [
@@ -188,5 +190,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(CHero **)((int)g_HeroActors",
+      "severity": "moderate",
+      "text": "pCVar1 = *(CHero **)((int)g_HeroActors + iVar5);",
+      "type": "pointer_cast"
+    }
+  ]
 }

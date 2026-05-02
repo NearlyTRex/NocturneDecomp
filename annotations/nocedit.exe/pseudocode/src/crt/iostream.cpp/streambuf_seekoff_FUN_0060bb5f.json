@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 20,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 5,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "pointer_cast",
       "unresolved_funcptr"
     ],
     "total_lines": 19
@@ -96,6 +97,14 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 5,
+      "match": "(code **)((int)this_ptr",
+      "severity": "moderate",
+      "text": "(**(code **)((int)this_ptr[1].__b_lock + 0x18))(this_ptr,off,0,dir);",
+      "type": "pointer_cast"
+    },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 5,

@@ -508,6 +508,15 @@
       "severity": "moderate",
       "text": "if (*(int *)((int)g_MasterLightList + iVar4) != 0) {",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(CDemonLight **)((int)g_MasterLightList",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr_00 = *(CDemonLight **)((int)g_MasterLightList + iVar2);",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {

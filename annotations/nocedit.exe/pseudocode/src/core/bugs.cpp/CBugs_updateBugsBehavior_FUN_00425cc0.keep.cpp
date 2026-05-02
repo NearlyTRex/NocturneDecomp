@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl core_bugs_cpp_CBugs_updateBugsBehavior_FUN_00425cc0(CBugs *this_ptr,float delta_time)
 
 {

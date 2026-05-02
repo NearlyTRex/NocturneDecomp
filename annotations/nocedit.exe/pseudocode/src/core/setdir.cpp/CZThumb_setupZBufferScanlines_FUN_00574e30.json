@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 31,
+    "complexity_score": 41,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 16,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -140,6 +140,14 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 12,
+      "match": "(void **)((int)g_ZBufferScanlineArray",
+      "severity": "moderate",
+      "text": "*(void **)((int)g_ZBufferScanlineArray + iVar2) =",
+      "type": "pointer_cast"
+    },
     {
       "description": "Complex pointer cast",
       "line": 13,

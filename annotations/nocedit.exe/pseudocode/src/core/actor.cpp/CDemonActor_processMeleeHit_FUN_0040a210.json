@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 769,
-    "complexity_score": 315,
+    "complexity_score": 300,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 30,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 300,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1069
   },
   "cross_references": [],
@@ -376,6 +374,15 @@
     "pcode_op_count": 2961
   },
   "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
     {
       "description": "Unresolved stack parameter",
       "line": 17,
@@ -812,21 +819,21 @@
         {
           "check_id": "invalidPointerCast",
           "column": 10,
-          "line": 270,
+          "line": 268,
           "message": "Casting between signed int * and float * which have an incompatible binary data representation.",
           "severity": "portability"
         },
         {
           "check_id": "uninitvar",
           "column": 7,
-          "line": 65,
+          "line": 63,
           "message": "Uninitialized variable: local_38",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 7,
-          "line": 84,
+          "line": 82,
           "message": "Uninitialized variable: local_34",
           "severity": "error"
         }
@@ -835,16 +842,7 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

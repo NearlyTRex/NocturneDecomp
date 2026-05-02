@@ -7,17 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 388,
-    "complexity_score": 364,
+    "complexity_score": 204,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 204,
-    "suspect_count": 15,
-    "suspect_types": [
-      "bitcast_double_pair",
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 592
   },
   "cross_references": [
@@ -206,6 +203,51 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 86,
+      "match": "(SColorQuantMapper *)((int)pSVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar10 = (SColorQuantMapper *)((int)pSVar9->sort_keys[0] + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 90,
+      "match": "(uint *)((int)pSVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)pSVar9->sort_keys[0] + 4) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 92,
+      "match": "(uint *)((int)pSVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)pSVar9->sort_keys[0] + 0xc) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 95,
+      "match": "(uint *)((int)pSVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)pSVar9->sort_keys[0] + 0x14) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 103,
+      "match": "(SColorQuantMapper *)((int)pSVar8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar8 = (SColorQuantMapper *)((int)pSVar8->sort_keys[1] + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 119,
       "match": "(SColorQuantCentroid *)((int)pSVar13",
       "resolution_source": "keep",
@@ -241,6 +283,24 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 140,
+      "match": "(SColorQuantMapper *)((int)pSVar11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar11 = (SColorQuantMapper *)((int)pSVar11->sort_keys[0] + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 144,
+      "match": "(SColorQuantMapper *)((int)pSVar11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar11 = (SColorQuantMapper *)((int)pSVar11->sort_keys[0] + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 153,
       "match": "._0_1_",
@@ -266,6 +326,78 @@
       "severity": "mild",
       "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].blue));",
       "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 158,
+      "match": "(SColorQuantMapper *)((int)pSVar11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar11 = (SColorQuantMapper *)((int)pSVar11->sort_keys[0] + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 161,
+      "match": "(SColorQuantMapper *)((int)workspace",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while (pSVar11 != (SColorQuantMapper *)((int)workspace->sort_keys[0xff] + 0x1c));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 178,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_15c,local_160)) < pSVar11->boxes[1].total_weighted_error) {",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 186,
+      "match": "(SColorQuantMapper *)((int)pSVar11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar11 = (SColorQuantMapper *)((int)pSVar11->sort_keys[1] + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 190,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) != workspace->boxes[iVar13].spread_red) break;",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 195,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) == workspace->boxes[iVar13].spread_green) {",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 199,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) == workspace->boxes[iVar13].spread_blue) {",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 203,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) != workspace->boxes[iVar13].spread_intensity)",
+      "type": "bitcast_double_pair"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
@@ -419,126 +551,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 86,
-      "match": "(SColorQuantMapper *)((int)pSVar9",
-      "severity": "moderate",
-      "text": "pSVar10 = (SColorQuantMapper *)((int)pSVar9->sort_keys[0] + 0x1c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 90,
-      "match": "(uint *)((int)pSVar9",
-      "severity": "moderate",
-      "text": "*(uint *)((int)pSVar9->sort_keys[0] + 4) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 92,
-      "match": "(uint *)((int)pSVar9",
-      "severity": "moderate",
-      "text": "*(uint *)((int)pSVar9->sort_keys[0] + 0xc) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 95,
-      "match": "(uint *)((int)pSVar9",
-      "severity": "moderate",
-      "text": "*(uint *)((int)pSVar9->sort_keys[0] + 0x14) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 103,
-      "match": "(SColorQuantMapper *)((int)pSVar8",
-      "severity": "moderate",
-      "text": "pSVar8 = (SColorQuantMapper *)((int)pSVar8->sort_keys[1] + 0x1c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 140,
-      "match": "(SColorQuantMapper *)((int)pSVar11",
-      "severity": "moderate",
-      "text": "pSVar11 = (SColorQuantMapper *)((int)pSVar11->sort_keys[0] + 0x1c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 144,
-      "match": "(SColorQuantMapper *)((int)pSVar11",
-      "severity": "moderate",
-      "text": "pSVar11 = (SColorQuantMapper *)((int)pSVar11->sort_keys[0] + 0x1c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 158,
-      "match": "(SColorQuantMapper *)((int)pSVar11",
-      "severity": "moderate",
-      "text": "pSVar11 = (SColorQuantMapper *)((int)pSVar11->sort_keys[0] + 0x1c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 161,
-      "match": "(SColorQuantMapper *)((int)workspace",
-      "severity": "moderate",
-      "text": "} while (pSVar11 != (SColorQuantMapper *)((int)workspace->sort_keys[0xff] + 0x1c));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 178,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_15c,local_160)) < pSVar11->boxes[1].total_weighted_error) {",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 186,
-      "match": "(SColorQuantMapper *)((int)pSVar11",
-      "severity": "moderate",
-      "text": "pSVar11 = (SColorQuantMapper *)((int)pSVar11->sort_keys[1] + 0x1c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 190,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) != workspace->boxes[iVar13].spread_red) break;",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 195,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) == workspace->boxes[iVar13].spread_green) {",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 199,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) == workspace->boxes[iVar13].spread_blue) {",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 203,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) != workspace->boxes[iVar13].spread_intensity)",
-      "type": "bitcast_double_pair"
-    }
-  ]
+  "suspects": []
 }

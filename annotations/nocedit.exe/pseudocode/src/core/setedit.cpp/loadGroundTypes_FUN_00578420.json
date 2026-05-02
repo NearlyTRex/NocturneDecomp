@@ -11,7 +11,7 @@
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 14,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 91,
     "suspect_count": 2,
     "suspect_types": [
@@ -292,7 +292,7 @@
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\n' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\n') in a .keep.",
       "line": 28,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strchr"
     },
@@ -300,7 +300,7 @@
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\n' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\n') in a .keep.",
       "line": 41,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "mild",
+      "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strchr"
     }

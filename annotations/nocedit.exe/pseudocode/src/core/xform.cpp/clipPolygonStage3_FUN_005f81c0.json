@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 117,
+    "complexity_score": 92,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 16,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 92,
-    "suspect_count": 2,
-    "suspect_types": [
-      "warning_unreachable"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 248
   },
   "cross_references": [],
@@ -224,6 +222,24 @@
   },
   "resolved_suspects": [
     {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005f82c9) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 3,
+      "match": "WARNING: Removing unreachable block",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005f823e) */",
+      "type": "warning_unreachable"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 42,
       "match": "._0_4_",
@@ -284,7 +300,7 @@
         {
           "check_id": "selfAssignment",
           "column": 17,
-          "line": 74,
+          "line": 71,
           "message": "Redundant assignment of 'iVar5' to itself.",
           "severity": "warning"
         }
@@ -293,22 +309,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Unreachable code block removed",
-      "line": 2,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x005f82c9) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 3,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x005f823e) */",
-      "type": "warning_unreachable"
-    }
-  ]
+  "suspects": []
 }
