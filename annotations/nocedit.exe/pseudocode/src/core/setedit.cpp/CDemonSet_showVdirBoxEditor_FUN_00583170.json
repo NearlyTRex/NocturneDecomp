@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2745,
-    "complexity_score": 1720,
+    "complexity_score": 1730,
     "cross_reference_count": 1,
     "function_call_count": 41,
     "global_count": 52,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1475,
-    "suspect_count": 24,
+    "suspect_count": 25,
     "suspect_types": [
       "unrolled_memcpy"
     ],
@@ -2361,6 +2361,14 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (11 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 1368,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pSVar11->rotation_matrix).m[0].x = (pSVar15->rotation_matrix).m[0].x;",
+      "type": "unrolled_memcpy"
+    },
     {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 1328,

@@ -14,7 +14,6 @@ void __cdecl core_trap_cpp_CTrap_process_FUN_005de770(CTrap *this_ptr,float delt
   EDeathState EVar1;
   CWerewolf *pCVar2;
   int iVar3;
-  int iVar4;
   SDamageInfo SStack_98;
   SCollisionInfo SStack_5c;
   CBoundingBox3D local_34;
@@ -31,12 +30,11 @@ void __cdecl core_trap_cpp_CTrap_process_FUN_005de770(CTrap *this_ptr,float delt
       this_ptr->wolf_in_trap->chain_anchor = (CDemonActor *)0x0;
       this_ptr->wolf_in_trap = (CWerewolf *)0x0;
     }
-    iVar4 = 0;
     (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_34);
     for (iVar3 = 0; iVar3 < g_CDemonSetPtr->enemy_count; iVar3 = iVar3 + 1) {
       pCVar2 = (CWerewolf *)
                core_actor_cpp_castToClassHash_FUN_0040c790
-                         (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar4),
+                         ((CDemonActor *)g_CDemonSetPtr->enemies[iVar3],
                           g_CWerewolfClassInfo.name_hash);
       if ((pCVar2 != (CWerewolf *)0x0) && (pCVar2->chain_anchor == (CDemonActor *)0x0)) {
         core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_5c);
@@ -63,7 +61,6 @@ void __cdecl core_trap_cpp_CTrap_process_FUN_005de770(CTrap *this_ptr,float delt
           }
         }
       }
-      iVar4 = iVar4 + 4;
     }
   }
   return;

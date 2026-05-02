@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1607,
-    "complexity_score": 723,
+    "complexity_score": 738,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 77,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 673,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
+      "unrolled_memcpy",
       "unrolled_strchr"
     ],
     "total_lines": 2280
@@ -1264,6 +1265,14 @@
       "severity": "moderate",
       "text": "*(uint *)((int)g_S3DTextureGroundTypes + iVar6) = 0;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (16 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 498,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar10->camera_light_bounds[0].left = local_2478.camera_light_bounds[0].left;",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\n' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\n') in a .keep.",

@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (449 diagnostics)
+Cppcheck (quick) (451 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -260,19 +260,19 @@ uninitvar (105)
     File: core/stranger.cpp
     Uninitialized variable: local_260
 
-  core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 144
+  core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 141
     File: core/tvbat.cpp
     Uninitialized variable: local_80
 
-  core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 144
+  core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 141
     File: core/tvbat.cpp
     Uninitialized variable: local_88
 
-  core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 144
+  core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 141
     File: core/tvbat.cpp
     Uninitialized variable: local_84
 
-  core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 165
+  core_tvbat.cpp_CTVBat_process_FUN_005e4210         line 162
     File: core/tvbat.cpp
     Uninitialized variable: local_54
 
@@ -433,7 +433,7 @@ uninitvar (105)
     Uninitialized variable: local_60
 
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (92)
+shiftTooManyBitsSigned (94)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_F line 66
@@ -606,6 +606,14 @@ shiftTooManyBitsSigned (92)
 
   core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_ line 121
     File: core/dtrace.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_fire.cpp_CFireball_process_FUN_004c0b30       line 50
+    File: core/fire.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_fire.cpp_CFireball_process_FUN_004c0b30       line 51
+    File: core/fire.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   core_flame.cpp_CFlame_updateGlobe_FUN_004cad90     line 28
@@ -860,11 +868,11 @@ selfAssignment (73)
     File: core/dmodel.cpp
     Redundant assignment of 'pCVar13' to itself.
 
-  core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 line 145
+  core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 line 144
     File: core/game.cpp
     Redundant assignment of 'iVar19' to itself.
 
-  core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 line 1593
+  core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 line 1590
     File: core/game.cpp
     Redundant assignment of 'pbVar21' to itself.
 
@@ -1104,67 +1112,67 @@ selfAssignment (73)
 invalidscanf (57)
 ----------------------------------------------------------------------------------------------------
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 182
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 181
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 223
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 222
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 258
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 257
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 349
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 348
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 392
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 391
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 411
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 410
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 501
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 500
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 560
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 559
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 653
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 652
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 686
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 685
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 720
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 719
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 748
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 747
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 796
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 793
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 822
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 819
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 855
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 852
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 907
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 904
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
@@ -1260,7 +1268,7 @@ invalidscanf (57)
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_fileman.cpp_CDemonFileManager_createPodFromDi line 91
+  core_fileman.cpp_CDemonFileManager_createPodFromDi line 75
     File: core/fileman.cpp
     sscanf() without field width limits can crash with huge input data.
 

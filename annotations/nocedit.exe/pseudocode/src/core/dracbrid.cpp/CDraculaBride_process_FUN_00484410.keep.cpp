@@ -82,7 +82,6 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride 
   int local_28;
   CDeformableModelInstance *local_24;
   CSkeleton *local_20;
-  int local_1c;
   int local_18;
   float local_14;
   uint uVar5;
@@ -231,15 +230,13 @@ LAB_004848f9:
        (iVar10 = core_actor_cpp_isOfClass_FUN_0040c6d0
                            (&((this_ptr->base).victim)->base,"CHero"), iVar10 != 0)) {
       iVar18 = 0;
-      iVar10 = 0;
       while ((iVar18 < g_CDemonSetPtr->enemy_count &&
              ((pCVar14 = (CDraculaBride *)
                          core_actor_cpp_castToClassHash_FUN_0040c790
-                                   (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar10),
+                                   ((CDemonActor *)g_CDemonSetPtr->enemies[iVar18],
                                     g_CDraculaBrideClassInfo.name_hash),
               pCVar14 == (CDraculaBride *)0x0 || (pCVar14->mist_state == 0))))) {
         iVar18 = iVar18 + 1;
-        iVar10 = iVar10 + 4;
       }
       if (iVar18 == g_CDemonSetPtr->enemy_count) {
         _sprintf
@@ -623,10 +620,9 @@ LAB_004852f8:
       break;
     case 2:
       local_30 = 1;
-      local_1c = 0;
       for (local_18 = 0; fVar20 = 1.0f, local_18 < g_CDemonSetPtr->character_count;
           local_18 = local_18 + 1) {
-        pCVar17 = *(CDraculaBride **)((int)g_CDemonSetPtr->characters + local_1c);
+        pCVar17 = (CDraculaBride *)g_CDemonSetPtr->characters[local_18];
         if ((((pCVar17 != (CDraculaBride *)0x0) && (pCVar17 != this_ptr)) &&
             (EVar14 = (*(((pCVar17->base).base.base.vtable._uc)->_uc).getDeathState)
                                 ((CCharacter *)pCVar17), (int)EVar14 < 1)) &&
@@ -635,7 +631,6 @@ LAB_004852f8:
            fVar9 = (pCVar17->base).base.base.location.position.z - (this_ptr->new_pos).z,
            SQRT(fVar9 * fVar9 + fVar20 * fVar20 + fVar22 * fVar22) < (float)5))
         goto switchD_004858cd_caseD_1;
-        local_1c = local_1c + 4;
       }
       if (local_30 != 0) {
         this_ptr->mist_state = 3;

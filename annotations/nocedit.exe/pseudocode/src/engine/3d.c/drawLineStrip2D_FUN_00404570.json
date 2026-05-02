@@ -181,6 +181,15 @@
       "severity": "moderate",
       "text": "for (iVar1 = local_70.a; iVar1 != 0; iVar1 = iVar1 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (9 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 53,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_40.projected_vertex.inv_z = g_RenderVertexBuffer[iVar31].projected_vertex.inv_z;",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {

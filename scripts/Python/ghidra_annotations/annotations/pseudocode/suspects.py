@@ -1199,6 +1199,113 @@ def identify_unrolled_memcpy_loops(decompiled_code):
     return suspects
 
 
+# Field-by-field struct copy: a run of consecutive `dst.field = src.field;`
+# lines covering many struct fields. Watcom emits this when copying a struct
+# whose field count exceeds the threshold for a REP MOVSD lowering, or for
+# small structs the optimizer chose to inline. Either way the same struct
+# copy is hiding behind N typed assignments — replaceable with a single
+# `dst = src;` (or `memcpy`).
+#
+# The regex captures lines of the form `<lhs>.<field> = <rhs>.<field>;`
+# (or with `->` instead of `.`) where the trailing field name on both sides
+# matches via backreference. Lazy `.+?` lets the leading prefix span any
+# expression (parenthesized derefs, multi-level paths, indexed accesses).
+_FIELD_COPY_RE = re.compile(
+    r"^\s*(.+?)(?:\.|->)(\w+)\s*=\s*(.+?)(?:\.|->)\2\s*;\s*$")
+# Identifier at the very start of an expression, ignoring leading parens
+# and dereference operators. Used to confirm the LHS and RHS of a field-copy
+# run share a common root variable (e.g. both rooted at `pSVar5`), so we
+# don't flag copies between unrelated structs that happen to share field
+# names.
+_ROOT_IDENT_RE = re.compile(r"\s*[\(\*]*\s*(\w+)")
+
+
+def identify_unrolled_field_copy(decompiled_code):
+    """Detect Watcom-emitted field-by-field struct copies.
+
+    Canonical shape (4+ consecutive lines):
+        dst.field_a = src.field_a;
+        dst.field_b = src.field_b;
+        dst.field_c = src.field_c;
+        dst.field_d = src.field_d;
+
+    Each line copies one struct field by name; the same field name appears
+    on both sides via backreference. Replace the whole run with a single
+    `dst = src;` (or `memcpy(&dst, &src, sizeof(...));`) in a .keep.
+
+    The existing `unrolled_memcpy` detectors only catch for-loop / REP
+    MOVSD shapes; this one covers the orthogonal case where Ghidra emits
+    a flat list of typed field assignments instead of a loop.
+
+    Detection requires:
+    - At least MIN_RUN consecutive lines matching `_FIELD_COPY_RE`.
+    - All lines in the run share the same root identifier on the LHS and
+      the same root identifier on the RHS (so unrelated structs that
+      happen to share field names don't get merged into one false-positive
+      run).
+    - Each field name in the run is distinct (a 4-line repeat of the same
+      field is a different bug, not a struct copy).
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts, one per detected run, located at the first
+        line of the run.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    lines = decompiled_code.split('\n')
+    n = len(lines)
+    MIN_RUN = 4
+
+    def root_of(expr):
+        m = _ROOT_IDENT_RE.match(expr)
+        return m.group(1) if m else None
+
+    i = 0
+    while i < n:
+        m = _FIELD_COPY_RE.match(lines[i])
+        if not m:
+            i += 1
+            continue
+        lhs_root = root_of(m.group(1))
+        rhs_root = root_of(m.group(3))
+        if not lhs_root or not rhs_root:
+            i += 1
+            continue
+        seen_fields = {m.group(2)}
+        j = i + 1
+        while j < n:
+            mj = _FIELD_COPY_RE.match(lines[j])
+            if not mj:
+                break
+            if (root_of(mj.group(1)) != lhs_root or
+                    root_of(mj.group(3)) != rhs_root):
+                break
+            seen_fields.add(mj.group(2))
+            j += 1
+        run_len = j - i
+        if run_len >= MIN_RUN and len(seen_fields) >= MIN_RUN:
+            suspects.append({
+                'line': i + 1,
+                'type': 'unrolled_memcpy',
+                'match': 'field-by-field struct copy',
+                'text': lines[i].strip()[:120],
+                'description': (
+                    'Watcom field-by-field struct copy (%d consecutive '
+                    '`dst.field = src.field;` lines). Replace with '
+                    '`dst = src;` or `memcpy(&dst, &src, sizeof(...));` '
+                    'in a .keep.' % run_len),
+                'severity': 'moderate',
+            })
+            i = j
+        else:
+            i += 1
+    return suspects
+
+
 # Watcom's REP SCASB strlen idiom. ECX is initialized to -1 (0xFFFFFFFF),
 # then decremented inside a do-while that reads a byte per iteration. The
 # `(uint)<bool> * -2 + 1` direction trick picks the step (1 forward, -1
@@ -2060,6 +2167,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_unrolled_strcpy_loops(code))
     found.extend(identify_unrolled_memcpy_loops(code))
     found.extend(identify_unrolled_memcpy_dword_byte_split(code))
+    found.extend(identify_unrolled_field_copy(code))
     found.extend(identify_unrolled_strlen_loops(code))
     found.extend(identify_unrolled_strcat_loops(code))
     found.extend(identify_unrolled_strchr_loops(code))

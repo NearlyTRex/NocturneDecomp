@@ -51,7 +51,6 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
   float local_24;
   int iStack_20;
   int iStack_1c;
-  int iStack_18;
   int local_14;
   CDemonActor_vtable *pCVar6;
   CHero *pCVar8;
@@ -132,9 +131,8 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
   (this_ptr->base).location.position.y = fVar6 + 3.7f;
   (this_ptr->base).orient.vec.y = fVar7;
   (*pCVar6->getBoundingBox)(&this_ptr->base,&local_a0);
-  iStack_18 = 0;
   for (iVar17 = 0; iVar17 < g_CDemonSetPtr->character_count; iVar17 = iVar17 + 1) {
-    pCVar12 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_18);
+    pCVar12 = g_CDemonSetPtr->characters[iVar17];
     pCVar11 = (CMobster *)
               core_actor_cpp_castToClassHash_FUN_0040c790
                         (&pCVar12->base,g_CMobsterClassInfo.name_hash);
@@ -166,7 +164,6 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
         }
       }
     }
-    iStack_18 = iStack_18 + 4;
   }
   if (((this_ptr->is_visible != 0) ||
       (pCVar8 = g_HeroActors[g_LocalHeroIndex],
@@ -175,13 +172,12 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
       fVar14 = (this_ptr->base).location.position.z - (pCVar8->base).base.location.position.z,
       SQRT(fVar14 * fVar14 + fVar6 * fVar6 + fVar7 * fVar7) <= (float)200)) ||
      (0x671 < g_CDemonSetPtr->actor_count)) goto LAB_005e82f4;
-  iVar17 = 0;
   iStack_20 = 0;
   iStack_1c = 0;
   for (iVar18 = 0; iVar18 < g_CDemonSetPtr->enemy_count; iVar18 = iVar18 + 1) {
     pCVar16 = (CMobster *)
               core_actor_cpp_castToClassHash_FUN_0040c790
-                        (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar17),
+                        ((CDemonActor *)g_CDemonSetPtr->enemies[iVar18],
                          g_CMobsterClassInfo.name_hash);
     if ((pCVar16 != (CMobster *)0x0) &&
        (pCVar13 = (CVehicle *)pCVar16->vehicle, this_ptr == pCVar13)) {
@@ -194,7 +190,6 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr,f
         iStack_20 = 1;
       }
     }
-    iVar17 = iVar17 + 4;
   }
   if ((iStack_1c != 0) && (iStack_20 != 0)) goto LAB_005e82f4;
   if (iStack_1c == 0) {

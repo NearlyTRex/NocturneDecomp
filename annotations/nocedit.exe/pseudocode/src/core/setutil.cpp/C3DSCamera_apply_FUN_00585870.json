@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 51,
+    "complexity_score": 66,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 11,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 51,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 180
   },
   "cross_references": [
@@ -233,5 +235,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (10 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 21,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(camera->base).rotation_matrix.m[0].x = (this_ptr->rotation_matrix).m[0].x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

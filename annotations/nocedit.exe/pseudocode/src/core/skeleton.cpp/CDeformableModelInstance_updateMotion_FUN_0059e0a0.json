@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1033,
-    "complexity_score": 358,
+    "complexity_score": 473,
     "cross_reference_count": 4,
     "function_call_count": 7,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 358,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 11,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 1391
   },
   "cross_references": [
@@ -1001,5 +1003,97 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 207,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(local_48->bone_transform).pose_data.bone_rotations[0].w = pCVar11->w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 279,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_dc.w = local_186c[local_30].w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 283,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_ec.w = (local_20->bone_transform).pose_data.bone_rotations[0].w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 292,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_1cc.w = local_25c.w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 299,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_dc.w = local_19c.w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 306,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_ec.w = local_13c.w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 314,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_17c.w = local_26c.w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 326,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(local_20->bone_transform).pose_data.bone_rotations[0].w = pCVar11->w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "introduced_by": "keep",
+      "line": 102,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(local_5c->bone_transform).pose_data.bone_rotations[0].w = local_24c.w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "introduced_by": "keep",
+      "line": 163,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_bec[iVar10].w = local_1bc.w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "introduced_by": "keep",
+      "line": 193,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(local_48->bone_transform).pose_data.bone_rotations[0].w = pCVar11->w;",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

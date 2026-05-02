@@ -727,12 +727,11 @@ LAB_005fac96:
             if ((iVar6 != 0) &&
                (fVar25 = this_ptr->rise_delay - delta_time, this_ptr->rise_delay = fVar25,
                fVar25 < 0.0)) {
-              iVar6 = 0;
               local_28 = 0;
               this_ptr->rise_delay = this_ptr->rise_delay + 1.0;
               local_24 = pCVar1;
               for (; local_28 < g_CDemonSetPtr->character_count; local_28 = local_28 + 1) {
-                iVar9 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iVar6);
+                iVar9 = g_CDemonSetPtr->characters[local_28];
                 iVar10 = (*(((iVar9->base).vtable._uc)->_uc).isGrabbable)
                                    (iVar9,(CDemonActor *)this_ptr);
                 if (iVar10 != 0) {
@@ -756,7 +755,6 @@ LAB_005fac96:
                     break;
                   }
                 }
-                iVar6 = iVar6 + 4;
               }
             }
           }

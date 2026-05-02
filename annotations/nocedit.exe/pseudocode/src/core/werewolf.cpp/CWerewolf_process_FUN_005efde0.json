@@ -8,16 +8,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1745,
-    "complexity_score": 729,
+    "complexity_score": 714,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 39,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 714,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 2459
   },
   "cross_references": [],
@@ -575,6 +573,15 @@
       "type": "sub84_truncation"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 390,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar14),",
+      "type": "pointer_cast"
+    },
+    {
       "actual_args": 0,
       "description": "Format \"Phase: %d, Timer: %f\\n\" has 2 specifiers but 0 arguments after it",
       "expected_args": 2,
@@ -1065,16 +1072,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 390,
-      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar14),",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

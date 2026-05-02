@@ -24,7 +24,6 @@ void __cdecl core_imp_cpp_CImp_process_FUN_004f9c30(CImp *this_ptr,float delta_t
   int iVar12;
   CImp *pCVar13;
   CPathMap *path_map;
-  int iVar14;
   float fVar15;
   float fVar16;
   SDamageInfo *damage_info;
@@ -370,22 +369,19 @@ LAB_004f9c99:
       iVar12 = core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880
                          (&this_ptr->base,pCVar9,fVar15,damage_info);
       if (iVar12 != 0) {
-        iVar14 = 0;
         iVar12 = 0;
         while (iVar12 < g_CDemonSetPtr->enemy_count) {
           pCVar13 = (CImp *)core_actor_cpp_castToClassHash_FUN_0040c790
-                                      (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar14),
+                                      ((CDemonActor *)g_CDemonSetPtr->enemies[iVar12],
                                        g_CImpClassInfo.name_hash);
           if (((pCVar13 == (CImp *)0x0) || (pCVar13 == this_ptr)) ||
              ((this_ptr->base).victim != (pCVar13->base).victim)) {
             iVar12 = iVar12 + 1;
-            iVar14 = iVar14 + 4;
           }
           else {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&(pCVar13->base).base.model.motion_controller,3,1);
             iVar12 = iVar12 + 1;
-            iVar14 = iVar14 + 4;
           }
         }
       }

@@ -294,6 +294,15 @@
       "severity": "moderate",
       "text": "(*(CDemonActor **)(unaff_EBP + 8));",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (12 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 70,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CStack_214.m[0].w = CStack_124.m[0].w;",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {

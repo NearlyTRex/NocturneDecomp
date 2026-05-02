@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 239,
-    "complexity_score": 130,
+    "complexity_score": 160,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 115,
-    "suspect_count": 1,
+    "suspect_count": 4,
     "suspect_types": [
       "unrolled_memcpy"
     ],
@@ -166,6 +166,30 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (17 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 49,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(local_20->rotation_matrix).m[0].x = (local_c->rotation_matrix).m[0].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 74,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(local_20->fog).height_threshold = (local_c->fog).height_threshold;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 88,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_20->pvs_count = local_c->pvs_count;",
+      "type": "unrolled_memcpy"
+    },
     {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 45,

@@ -7,15 +7,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 258,
-    "complexity_score": 124,
+    "complexity_score": 169,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 109,
-    "suspect_count": 1,
+    "suspect_count": 5,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 367
   },
@@ -187,6 +188,38 @@
       "severity": "moderate",
       "text": "iVar1 = *(int *)((int)pSVar1 + (polygon_data->base).count * 4 + -4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 30,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_RenderVertexBuffer[0x7fe].u = g_RenderVertexBuffer[iVar1].u;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 49,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_RenderVertexBuffer[0x7ff].u = g_RenderVertexBuffer[iVar1].u;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 77,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_RenderVertexBuffer[0x7fe].u = g_RenderVertexBuffer[iVar1].u;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 96,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_RenderVertexBuffer[0x7ff].u = g_RenderVertexBuffer[iVar1].u;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

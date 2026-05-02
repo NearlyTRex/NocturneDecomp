@@ -90,7 +90,6 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
   int iStack_e8;
   int iStack_e0;
   int iStack_d8;
-  int iStack_74;
   int iStack_40;
   int iStack_1c;
   float fVar23;
@@ -952,9 +951,8 @@ LAB_004df408:
         g_InputHistory[1] = '\0';
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")
         ;
-        iStack_74 = 0;
         for (iVar6 = 0; iVar6 < g_CDemonSetPtr->enemy_count; iVar6 = iVar6 + 1) {
-          iVar11 = *(CEnemy **)((int)g_CDemonSetPtr->enemies + iStack_74);
+          iVar11 = g_CDemonSetPtr->enemies[iVar6];
           pCVar5 = g_HeroActors[g_LocalHeroIndex];
           fVar21 = (pCVar5->base).base.location.position.x - (iVar11->base).base.location.position.x
           ;
@@ -965,7 +963,6 @@ LAB_004df408:
             SStack_2fc.damage_amount = 100.0;
             (*(((iVar11->base).base.vtable._uc)->_uc).processDamage)(&iVar11->base,&SStack_2fc);
           }
-          iStack_74 = iStack_74 + 4;
         }
       }
       pbVar9 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_Dismemberment);

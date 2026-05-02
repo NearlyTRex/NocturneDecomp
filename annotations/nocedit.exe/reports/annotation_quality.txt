@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        71 ( 1.1%)
+  Functions with type issues:        70 ( 1.1%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          1
-    Undefined types in variables:      66
+    Undefined types in variables:      65
     Unresolved stack params:           4
 
-  Excluded (.keep / MMX / by-value):   154 functions
+  Excluded (.keep / MMX / by-value):   155 functions
     Wrong calling convention:          1
-    Undefined types in variables:      151
+    Undefined types in variables:      152
     Unresolved stack params:           3
 
 ====================================================================================================
@@ -107,7 +107,7 @@ Unresolved stack parameters (missing from signature) (4)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (66)
+Undefined types in variables (65)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -233,11 +233,6 @@ Undefined types in variables (66)
   CFireEffect_load
     Address: 0x004c9300  File: core/fire.cpp
     Locals:  local_10 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CFireball_process
-    Address: 0x004c0b30  File: core/fire.cpp
-    Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CFireball_setupRenderState
@@ -505,7 +500,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (151)
+Undefined types - .keep overrides (152)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -1051,6 +1046,11 @@ Undefined types - .keep overrides (151)
   CEventList_updateSfxEntries
     Address: 0x004b0db0  File: core/event.cpp
     Locals:  local_20 (undefined8)
+    Suggested: Resolve undefined types to concrete types
+
+  CFireball_process
+    Address: 0x004c0b30  File: core/fire.cpp
+    Locals:  local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CGabriella_updateWeaponAndAimAnimation

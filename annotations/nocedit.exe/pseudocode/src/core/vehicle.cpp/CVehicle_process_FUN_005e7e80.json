@@ -15,7 +15,7 @@
     "pseudocode_lines": 296,
     "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast"
+      "unrolled_memcpy"
     ],
     "total_lines": 982
   },
@@ -387,6 +387,24 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 139,
+      "match": "(CCharacter **)((int)g_CDemonSetPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar12 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 186,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar17),",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {
@@ -606,20 +624,20 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 139,
-      "match": "(CCharacter **)((int)g_CDemonSetPtr",
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 254,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "pCVar12 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_18);",
-      "type": "pointer_cast"
+      "text": "(this_ptr_01->base).base.base.location.position.x = (this_ptr->base).location.position.x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 186,
-      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 265,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar17),",
-      "type": "pointer_cast"
+      "text": "(actor->base).base.location.position.x = (this_ptr->base).location.position.x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {

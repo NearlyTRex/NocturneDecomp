@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3369,
-    "complexity_score": 1606,
+    "complexity_score": 1591,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 231,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 1591,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 4960
   },
   "cross_references": [
@@ -1642,6 +1640,15 @@
       "type": "warning_type_propagation"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 1190,
+      "match": "(CEnemy **)((int)g_CDemonSetPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar6 = *(CEnemy **)((int)g_CDemonSetPtr->enemies + local_c0);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 129,
       "match": "do {",
@@ -2649,112 +2656,112 @@
         {
           "check_id": "invalidscanf",
           "column": 7,
-          "line": 182,
+          "line": 181,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 9,
-          "line": 223,
+          "line": 222,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 11,
-          "line": 258,
+          "line": 257,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 13,
-          "line": 349,
+          "line": 348,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 13,
-          "line": 392,
+          "line": 391,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 15,
-          "line": 411,
+          "line": 410,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 17,
-          "line": 501,
+          "line": 500,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 17,
-          "line": 560,
+          "line": 559,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 19,
-          "line": 653,
+          "line": 652,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 23,
-          "line": 686,
+          "line": 685,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 25,
-          "line": 720,
+          "line": 719,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 27,
-          "line": 748,
+          "line": 747,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 27,
-          "line": 796,
+          "line": 793,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 29,
-          "line": 822,
+          "line": 819,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 31,
-          "line": 855,
+          "line": 852,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         },
         {
           "check_id": "invalidscanf",
           "column": 3,
-          "line": 907,
+          "line": 904,
           "message": "sscanf() without field width limits can crash with huge input data.",
           "severity": "warning"
         }
@@ -2763,14 +2770,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 1190,
-      "match": "(CEnemy **)((int)g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "iVar6 = *(CEnemy **)((int)g_CDemonSetPtr->enemies + local_c0);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

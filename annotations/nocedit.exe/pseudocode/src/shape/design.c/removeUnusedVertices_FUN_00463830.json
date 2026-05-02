@@ -7,15 +7,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 211,
-    "complexity_score": 116,
+    "complexity_score": 131,
     "cross_reference_count": 8,
     "function_call_count": 7,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 61,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 272
   },
@@ -388,6 +389,14 @@
       "severity": "moderate",
       "text": "*(uint *)((int)dest + g_ModelPolygonData[local_1c].vertex_indices[local_2c] * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (5 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 43,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_LoadedVertices[g_VertexCount].vertex.x = g_LoadedVertices[local_1c].vertex.x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

@@ -14,7 +14,6 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0048e2a0(CDrip *this_ptr,float delt
   float fVar1;
   float fVar2;
   CKeyFramedModel *model_ptr;
-  int iVar4;
   int iVar5;
   int iVar3;
   float10 fVar6;
@@ -96,15 +95,13 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0048e2a0(CDrip *this_ptr,float delt
       this_ptr->drip_timer = fVar1;
     }
     iVar5 = 0;
-    iVar4 = 0;
     while( true ) {
       if (g_CDemonSetPtr->character_count <= iVar5) break;
-      pCVar2 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iVar4);
+      pCVar2 = g_CDemonSetPtr->characters[iVar5];
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_b4);
       SStack_b4.damage_amount = this_ptr->damage;
       SStack_b4.attacker = &this_ptr->base;
       SStack_b4.wielder = &this_ptr->base;
-      iVar4 = iVar4 + 4;
       iVar5 = iVar5 + 1;
       (*(((pCVar2->base).vtable._uc)->_uc).checkCylinderCollisionWorld)
                 (pCVar2,&(this_ptr->base).location.position,1.0f,&SStack_b4);

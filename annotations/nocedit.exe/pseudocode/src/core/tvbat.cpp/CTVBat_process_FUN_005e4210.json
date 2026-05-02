@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 802,
-    "complexity_score": 358,
+    "complexity_score": 333,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 29,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 333,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1135
   },
   "cross_references": [],
@@ -349,6 +347,24 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 82,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar16),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 85,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr->boss_actor = *(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar16);",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {
@@ -651,28 +667,28 @@
         {
           "check_id": "uninitvar",
           "column": 14,
-          "line": 144,
+          "line": 141,
           "message": "Uninitialized variable: local_80",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 36,
-          "line": 144,
+          "line": 141,
           "message": "Uninitialized variable: local_88",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 58,
-          "line": 144,
+          "line": 141,
           "message": "Uninitialized variable: local_84",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 55,
-          "line": 165,
+          "line": 162,
           "message": "Uninitialized variable: local_54",
           "severity": "warning"
         }
@@ -681,24 +697,7 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 82,
-      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar16),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 85,
-      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "this_ptr->boss_actor = *(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar16);",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

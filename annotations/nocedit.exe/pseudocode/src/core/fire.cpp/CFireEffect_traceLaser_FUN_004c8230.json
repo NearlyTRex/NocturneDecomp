@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 817,
-    "complexity_score": 298,
+    "complexity_score": 333,
     "cross_reference_count": 3,
     "function_call_count": 11,
     "global_count": 11,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 298,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 3,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 1115
   },
   "cross_references": [
@@ -817,5 +819,30 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (8 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 234,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_23c.intensity = laser_info->intensity;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 249,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_23c.local_normal.y = (laser_info->local_normal).y;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (21 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 270,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_1e8.intensity = laser_info->intensity;",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

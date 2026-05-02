@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 67,
+    "complexity_score": 82,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 37,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
       "suspect_float",
+      "unrolled_memcpy",
       "warning_type_propagation"
     ],
     "total_lines": 118
@@ -194,6 +195,14 @@
       "severity": "mild",
       "text": "this_ptr->morph_target_actor[0x8d].previous_transform_state.orientation.vec.x = 1.4013e-45;",
       "type": "suspect_float"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 21,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pCVar2->location).position.x = (this_ptr->base).base.base.location.position.x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

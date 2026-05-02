@@ -8,13 +8,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 5207,
-    "complexity_score": 2032,
+    "complexity_score": 2052,
     "cross_reference_count": 0,
     "function_call_count": 57,
     "global_count": 186,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1852,
-    "suspect_count": 15,
+    "suspect_count": 17,
     "suspect_types": [
       "missing_cave_copy",
       "pointer_cast",
@@ -3171,6 +3171,22 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 1412,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar20->w = local_214.w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 1449,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar20->w = local_224.w;",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",

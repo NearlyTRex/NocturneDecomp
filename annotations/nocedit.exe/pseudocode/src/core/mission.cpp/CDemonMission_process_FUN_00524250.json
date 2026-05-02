@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 46,
+    "complexity_score": 61,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 9,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 46,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 161
   },
   "cross_references": [
@@ -217,5 +219,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 29,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pCVar1->base).base.location.position.x = (this_ptr->pending_teleport).position.x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

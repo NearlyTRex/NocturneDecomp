@@ -33,7 +33,6 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
   CVector3f CStack_54;
   CVector3f CStack_48;
   CVector3f CStack_3c;
-  int iStack_24;
   int iStack_20;
   CCharacter *pCStack_1c;
   CCharacter *actor_ptr;
@@ -122,7 +121,6 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
   core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00573fc0(g_CDemonSetPtr);
   core_lightgun_cpp_CLightGun_updateBeamLight_FUN_00505ac0(this_ptr);
   iStack_20 = 0;
-  iStack_24 = 0;
   do {
     if (g_CDemonSetPtr->character_count <= iStack_20) {
       core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
@@ -133,7 +131,7 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
       this_ptr->hit_enemy = 1;
       return 1;
     }
-    this_ptr_03 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_24);
+    this_ptr_03 = g_CDemonSetPtr->characters[iStack_20];
     iVar3 = (*(((this_ptr_03->base).vtable._uc)->_uc).canWalk)(this_ptr_03);
     if (((iVar3 == 0) &&
         ((((iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0(&this_ptr_03->base,"CGhoul"),
@@ -207,6 +205,5 @@ int __cdecl core_lightgun_cpp_CLightGun_fire_FUN_00505c70(CLightGun *this_ptr)
       }
     }
     iStack_20 = iStack_20 + 1;
-    iStack_24 = iStack_24 + 4;
   } while( true );
 }

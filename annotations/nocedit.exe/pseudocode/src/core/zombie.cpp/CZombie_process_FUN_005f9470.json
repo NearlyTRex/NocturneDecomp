@@ -8,15 +8,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2528,
-    "complexity_score": 1106,
+    "complexity_score": 1091,
     "cross_reference_count": 0,
     "function_call_count": 49,
     "global_count": 74,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1031,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast",
       "unrolled_strcpy",
       "warning_inlined_function",
       "warning_type_propagation",
@@ -792,6 +791,15 @@
     "pcode_op_count": 11049
   },
   "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 730,
+      "match": "(CCharacter **)((int)g_CDemonSetPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar9 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iVar6);",
+      "type": "pointer_cast"
+    },
     {
       "description": "Inlined fast sqrt bit-trick. Replace with `fastSqrt(<expr>)` in a .keep \u2014 the helper function exists in the binary (FUN_00431350).",
       "line": 805,
@@ -1822,14 +1830,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 730,
-      "match": "(CCharacter **)((int)g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "iVar9 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iVar6);",
-      "type": "pointer_cast"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

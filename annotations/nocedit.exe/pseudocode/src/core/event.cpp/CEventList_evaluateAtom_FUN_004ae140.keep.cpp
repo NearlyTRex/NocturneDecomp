@@ -71,7 +71,6 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
   int local_cc;
   char *local_c8;
   int local_c4;
-  int local_c0;
   char *local_bc;
   int local_b8;
   CCharacter *local_b4;
@@ -759,10 +758,9 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                               local_e0 = 0;
                               if (local_b4 != (CCharacter *)g_ActorNameSentinel) {
                                 local_30 = &(local_b4->base).location;
-                                local_c0 = 0;
                                 for (iVar3 = 0; iVar3 < g_CDemonSetPtr->enemy_count;
                                     iVar3 = iVar3 + 1) {
-                                  iVar6 = *(CEnemy **)((int)g_CDemonSetPtr->enemies + local_c0);
+                                  iVar6 = g_CDemonSetPtr->enemies[iVar3];
                                   if ((((local_b4 == iVar6->victim) &&
                                        (EVar16 = (*(((iVar6->base).base.vtable._uc)->_uc).
                                                    getDeathState)(&iVar6->base), (int)EVar16 < 1))
@@ -780,7 +778,6 @@ int __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_004ae140(CEventList *this
                                     local_e0 = 1;
                                     break;
                                   }
-                                  local_c0 = local_c0 + 4;
                                 }
                               }
                               *parse_position = *parse_position + local_34;

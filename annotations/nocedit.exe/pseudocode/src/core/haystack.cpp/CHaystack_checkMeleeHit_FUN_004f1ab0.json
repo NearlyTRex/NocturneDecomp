@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 47,
+    "complexity_score": 32,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 32,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 99
   },
   "cross_references": [
@@ -142,6 +140,17 @@
     },
     "pcode_op_count": 231
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(CHaystack **)((int)g_CDemonSetPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr_00 = *(CHaystack **)((int)g_CDemonSetPtr->characters + iVar1);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 112,
     "local_size": 104,
@@ -186,14 +195,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(CHaystack **)((int)g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "this_ptr_00 = *(CHaystack **)((int)g_CDemonSetPtr->characters + iVar1);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

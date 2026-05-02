@@ -360,11 +360,10 @@ LAB_005f0ae7:
                 if (iVar14 != 0) {
                   core_werewolf_cpp_CWerewolf_playHowl_FUN_005f11e0(this_ptr);
                 }
-                iVar14 = 0;
                 for (iVar15 = 0; iVar15 < g_CDemonSetPtr->enemy_count; iVar15 = iVar15 + 1) {
                   pCVar19 = (CWerewolf *)
                             core_actor_cpp_castToClassHash_FUN_0040c790
-                                      (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar14),
+                                      ((CDemonActor *)g_CDemonSetPtr->enemies[iVar15],
                                        g_CWerewolfClassInfo.name_hash);
                   if (((pCVar19 != (CWerewolf *)0x0) && (pCVar19 != this_ptr)) &&
                      (pSVar15 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
@@ -381,7 +380,6 @@ LAB_005f0ae7:
                     }
                     break;
                   }
-                  iVar14 = iVar14 + 4;
                 }
               }
             }

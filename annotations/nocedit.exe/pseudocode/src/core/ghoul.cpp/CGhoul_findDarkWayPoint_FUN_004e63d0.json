@@ -4,16 +4,16 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 91,
+    "complexity_score": 81,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 66,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -224,6 +224,17 @@
     },
     "pcode_op_count": 615
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar3),",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 60,
     "local_size": 52,
@@ -296,14 +307,6 @@
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_1c),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar3),",
       "type": "pointer_cast"
     }
   ]

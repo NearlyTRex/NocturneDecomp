@@ -11,20 +11,18 @@ int __cdecl core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_005db900(CTentacle 
 
 {
   int iVar4;
-  int iVar5;
   int local_14;
   CTentacle *actor_ptr;
   float fVar2;
   float fVar1;
   float fVar3;
   
-  iVar5 = 0;
   local_14 = 0;
   do {
     if (g_CDemonSetPtr->character_count <= local_14) {
       return 0;
     }
-    actor_ptr = *(CTentacle **)((int)g_CDemonSetPtr->characters + iVar5);
+    actor_ptr = (CTentacle *)g_CDemonSetPtr->characters[local_14];
     if (actor_ptr != this_ptr) {
       iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0((CDemonActor *)actor_ptr,class_name);
       if (iVar4 != 0) {
@@ -41,6 +39,5 @@ int __cdecl core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_005db900(CTentacle 
       }
     }
     local_14 = local_14 + 1;
-    iVar5 = iVar5 + 4;
   } while( true );
 }

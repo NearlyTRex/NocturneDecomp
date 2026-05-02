@@ -24,7 +24,6 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
   int iVar5;
   CVector3f CStack_48;
   float local_38;
-  int local_2c;
   int local_24;
   int local_20;
   float local_18;
@@ -59,10 +58,9 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
          (this_ptr->guard_distance < this_ptr->victim_search_radius)) {
         local_38 = this_ptr->guard_distance * this_ptr->guard_distance;
       }
-      local_2c = 0;
       local_20 = 0;
       for (local_24 = 0; local_24 < g_CDemonSetPtr->character_count; local_24 = local_24 + 1) {
-        iVar9 = *(CCharacter **)((int)g_CDemonSetPtr->characters + local_2c);
+        iVar9 = g_CDemonSetPtr->characters[local_24];
         iVar3 = (*(((iVar9->base).vtable._uc)->_uc).isGrabbable)(iVar9,(CDemonActor *)this_ptr);
         if (((iVar3 != 0) &&
             (EVar4 = (*(((iVar9->base).vtable._uc)->_uc).getDeathState)(iVar9),
@@ -82,7 +80,6 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
             iVar5 = iVar5 + 1;
           }
         }
-        local_2c = local_2c + 4;
       }
       pCVar1 = this_ptr->victim;
       this_ptr->victim = (CCharacter *)0x0;

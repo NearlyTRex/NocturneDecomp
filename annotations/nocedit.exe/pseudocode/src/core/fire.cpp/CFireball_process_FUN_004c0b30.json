@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 208,
-    "complexity_score": 105,
+    "complexity_score": 90,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 90,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 298
   },
   "cross_references": [],
@@ -160,6 +158,17 @@
     },
     "pcode_op_count": 1067
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(CCharacter **)((int)g_CDemonSetPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar1 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iVar5);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 92,
     "local_size": 88,
@@ -197,16 +206,31 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 84,
-      "match": "(CCharacter **)((int)g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "iVar1 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iVar5);",
-      "type": "pointer_cast"
-    }
-  ],
+  "static_analysis": {
+    "analyzed_file": "CFireball_process_FUN_004c0b30.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 29,
+          "line": 50,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 19,
+          "line": 51,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

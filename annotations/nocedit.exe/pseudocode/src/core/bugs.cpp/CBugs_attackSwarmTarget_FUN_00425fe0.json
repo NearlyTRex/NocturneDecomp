@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 371,
-    "complexity_score": 196,
+    "complexity_score": 211,
     "cross_reference_count": 2,
     "function_call_count": 15,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 166,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
+      "unrolled_memcpy",
       "warning_type_propagation"
     ],
     "total_lines": 537
@@ -457,6 +458,14 @@
       "severity": "moderate",
       "text": "pfVar6 = (float *)((int)pfVar6 + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (12 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 132,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->model_world_matrix).m[0].w = CStack_ec.m[0].w;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

@@ -2,14 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 136,
-    "complexity_score": 59,
+    "complexity_score": 74,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 6,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 59,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 195
   },
   "cross_references": [
@@ -176,5 +178,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 42,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "SStack_44.wYear = SStack_54.wYear;",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

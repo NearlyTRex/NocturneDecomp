@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 66,
+    "complexity_score": 51,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 51,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 151
   },
   "cross_references": [
@@ -160,6 +158,17 @@
     },
     "pcode_op_count": 388
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(CIcePick **)((int)g_CDemonSetPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr_00 = *(CIcePick **)((int)g_CDemonSetPtr->characters + iVar2);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 120,
     "local_size": 112,
@@ -218,14 +227,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(CIcePick **)((int)g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "this_ptr_00 = *(CIcePick **)((int)g_CDemonSetPtr->characters + iVar2);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

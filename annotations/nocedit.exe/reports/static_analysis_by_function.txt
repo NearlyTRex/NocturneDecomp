@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 151
-  Total diagnostics: 449
+  Functions with findings: 152
+  Total diagnostics: 451
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 151, raw .cpp files: 0
+  .keep.cpp files: 152, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -49,22 +49,22 @@ core_event.cpp_CEventList_executeCommand_FUN_004aacc0  [.keep] [Cppcheck (quick)
 core_event.cpp_CEventList_evaluateAtom_FUN_004ae140  [.keep] [Cppcheck (quick)]
   File: core/event.cpp  (16 diagnostics)
 
-  Line  182: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  223: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  258: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  349: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  392: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  411: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  501: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  560: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  653: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  686: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  720: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  748: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  796: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  822: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  855: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-  Line  907: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  181: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  222: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  257: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  348: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  391: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  410: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  500: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  559: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  652: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  685: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  719: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  747: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  793: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  819: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  852: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line  904: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
 core_mmx.c_detectIntelProcessor_FUN_00524f4c  [.keep] [Cppcheck (quick)]
@@ -417,10 +417,10 @@ core_path.cpp_CPathMap_searchGrid_FUN_005487a0  [.keep] [Cppcheck (quick)]
 core_tvbat.cpp_CTVBat_process_FUN_005e4210  [.keep] [Cppcheck (quick)]
   File: core/tvbat.cpp  (4 diagnostics)
 
-  Line  144: [uninitvar] Uninitialized variable: local_80
-  Line  144: [uninitvar] Uninitialized variable: local_88
-  Line  144: [uninitvar] Uninitialized variable: local_84
-  Line  165: [uninitvar] Uninitialized variable: local_54
+  Line  141: [uninitvar] Uninitialized variable: local_80
+  Line  141: [uninitvar] Uninitialized variable: local_88
+  Line  141: [uninitvar] Uninitialized variable: local_84
+  Line  162: [uninitvar] Uninitialized variable: local_54
 
 ----------------------------------------------------------------------------------------------------
 engine_colquant.c_computeBoxStatistics_FUN_00441260  [.keep] [Cppcheck (quick)]
@@ -705,6 +705,13 @@ core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70  [.keep] [Cppch
   Line  129: [legacyUninitvar] Uninitialized variable: local_28
 
 ----------------------------------------------------------------------------------------------------
+core_fire.cpp_CFireball_process_FUN_004c0b30  [.keep] [Cppcheck (quick)]
+  File: core/fire.cpp  (2 diagnostics)
+
+  Line   50: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   51: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
 core_flame.cpp_CFlame_updateGlobe_FUN_004cad90  [.keep] [Cppcheck (quick)]
   File: core/flame.cpp  (2 diagnostics)
 
@@ -722,8 +729,8 @@ core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870  [.keep] [Cp
 core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0  [.keep] [Cppcheck (quick)]
   File: core/game.cpp  (2 diagnostics)
 
-  Line  145: [selfAssignment] Redundant assignment of 'iVar19' to itself.
-  Line 1593: [selfAssignment] Redundant assignment of 'pbVar21' to itself.
+  Line  144: [selfAssignment] Redundant assignment of 'iVar19' to itself.
+  Line 1590: [selfAssignment] Redundant assignment of 'pbVar21' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_keyactor.cpp_CKeyActor_process_FUN_00501710  [.keep] [Cppcheck (quick)]
@@ -932,7 +939,7 @@ core_event.cpp_parseVectorLocation_FUN_004aa530  [.keep] [Cppcheck (quick)]
 core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20  [.keep] [Cppcheck (quick)]
   File: core/fileman.cpp  (1 diagnostics)
 
-  Line   91: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+  Line   75: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
 core_fire.cpp_CBulletTrail_render_FUN_004c21f0  [.keep] [Cppcheck (quick)]

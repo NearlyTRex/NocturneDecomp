@@ -28,7 +28,6 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
   CPathMap *path_map;
   uint uVar15;
   CLocation *pCVar12;
-  int iVar16;
   int iVar17;
   SDamageInfo local_188;
   CVector3f local_14c;
@@ -57,7 +56,6 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
   int local_28;
   CSkeleton *local_24;
   CSkeleton *local_20;
-  int local_1c;
   int local_18;
   float local_14;
   CDemonActor_vtable *pCVar4;
@@ -111,16 +109,14 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
         if ((iVar17 != 0) &&
            (iVar17 = core_actor_cpp_isOfClass_FUN_0040c6d0
                                (&((this_ptr->base).victim)->base,"CHero"), iVar17 != 0)) {
-          iVar16 = 0;
           iVar17 = 0;
           while ((iVar17 < g_CDemonSetPtr->enemy_count &&
                  ((pCVar13 = (CBatman *)
                              core_actor_cpp_castToClassHash_FUN_0040c790
-                                       (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar16),
+                                       ((CDemonActor *)g_CDemonSetPtr->enemies[iVar17],
                                         g_CBatmanClassInfo.name_hash), pCVar13 == (CBatman *)0x0 ||
                   (pCVar13->mist_state == 0))))) {
             iVar17 = iVar17 + 1;
-            iVar16 = iVar16 + 4;
           }
           if (iVar17 == g_CDemonSetPtr->enemy_count) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -322,10 +318,9 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
         break;
       case 2:
         local_30 = 1;
-        local_1c = 0;
         for (local_18 = 0; fVar7 = 1.0f, local_18 < g_CDemonSetPtr->character_count;
             local_18 = local_18 + 1) {
-          this_ptr_00 = *(CBatman **)((int)g_CDemonSetPtr->characters + local_1c);
+          this_ptr_00 = (CBatman *)g_CDemonSetPtr->characters[local_18];
           if ((((this_ptr_00 != (CBatman *)0x0) && (this_ptr_00 != this_ptr)) &&
               (EVar9 = (*(((this_ptr_00->base).base.base.vtable._uc)->_uc).getDeathState)
                                  ((CCharacter *)this_ptr_00), (int)EVar9 < 1)) &&
@@ -334,7 +329,6 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
              fVar10 = (this_ptr_00->base).base.base.location.position.z - (this_ptr->new_pos).z,
              SQRT(fVar10 * fVar10 + fVar7 * fVar7 + fVar9 * fVar9) < (float)5))
           goto switchD_004173a5_caseD_4;
-          local_1c = local_1c + 4;
         }
         if (local_30 != 0) {
           this_ptr->mist_state = 3;

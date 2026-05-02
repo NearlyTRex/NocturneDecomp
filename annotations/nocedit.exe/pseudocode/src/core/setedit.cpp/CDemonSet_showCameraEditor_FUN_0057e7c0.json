@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1759,
-    "complexity_score": 764,
+    "complexity_score": 794,
     "cross_reference_count": 1,
     "function_call_count": 49,
     "global_count": 101,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 699,
-    "suspect_count": 5,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "unrolled_memcpy",
@@ -1418,6 +1418,30 @@
       "severity": "moderate",
       "text": "pCVar15 = (C3DSCamera *)((int)pCVar15 + (uint)bVar19 * -8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (17 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 384,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pCVar11->rotation_matrix).m[0].x = (pCVar7->rotation_matrix).m[0].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 409,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pCVar11->fog).height_threshold = (pCVar7->fog).height_threshold;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 423,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar11->pvs_count = pCVar7->pvs_count;",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",

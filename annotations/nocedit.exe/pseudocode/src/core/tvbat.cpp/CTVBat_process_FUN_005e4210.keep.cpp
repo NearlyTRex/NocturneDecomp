@@ -22,7 +22,6 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr,float d
   int iVar17;
   uint uVar14;
   float fVar15;
-  int iVar16;
   CLocation *pCVar17;
   int iVar18;
   float10 fVar19;
@@ -74,16 +73,14 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr,float d
   float fVar5;
   
   if ((this_ptr->follow_orders != 0) && (this_ptr->boss_actor == (CDemonActor *)0x0)) {
-    iVar16 = 0;
     for (iVar18 = 0; iVar18 < g_CDemonSetPtr->enemy_count; iVar18 = iVar18 + 1) {
       iVar12 = core_actor_cpp_isOfClass_FUN_0040c6d0
-                         (*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar16),
+                         ((CDemonActor *)g_CDemonSetPtr->enemies[iVar18],
                           "CVampireBoss");
       if (iVar12 != 0) {
-        this_ptr->boss_actor = *(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar16);
+        this_ptr->boss_actor = (CDemonActor *)g_CDemonSetPtr->enemies[iVar18];
         break;
       }
-      iVar16 = iVar16 + 4;
     }
   }
   if ((this_ptr->follow_orders != 0) &&

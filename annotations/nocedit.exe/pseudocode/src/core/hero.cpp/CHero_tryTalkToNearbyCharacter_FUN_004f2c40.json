@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 62,
+    "complexity_score": 47,
     "cross_reference_count": 6,
     "function_call_count": 4,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 47,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 168
   },
   "cross_references": [
@@ -264,6 +262,17 @@
     },
     "pcode_op_count": 590
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(CCharacter **)((int)g_CDemonSetPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar1 = *(CCharacter **)((int)g_CDemonSetPtr->characters + local_14);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 88,
     "local_size": 84,
@@ -339,14 +348,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 27,
-      "match": "(CCharacter **)((int)g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "pCVar1 = *(CCharacter **)((int)g_CDemonSetPtr->characters + local_14);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

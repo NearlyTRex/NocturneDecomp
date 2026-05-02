@@ -143,6 +143,15 @@
       "severity": "moderate",
       "text": "piVar4 = (int *)&stack0xffffff38;",
       "type": "stack_ref"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (12 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 66,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "vertex1.projected_vertex.transformed_y = local_68.projected_vertex.transformed_y;",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {

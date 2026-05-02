@@ -225,7 +225,6 @@ LAB_0054cd70:
   core_platfrm_cpp_CPlatform_evaluatePosition_FUN_0054cab0(this_ptr);
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
             (&local_104,&position->position,&euler_angles->vec);
-  iVar3 = 0;
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_ac);
   iVar11 = 0;
   do {
@@ -263,14 +262,13 @@ LAB_0054cd70:
         core_platfrm_cpp_CPlatform_updateAttachedActors_FUN_0054e320(this_ptr);
         return;
       }
-      this_ptr_00 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iVar3);
+      this_ptr_00 = g_CDemonSetPtr->characters[iVar11];
       EVar5 = (*(((this_ptr_00->base).vtable._uc)->_uc).getDeathState)(this_ptr_00);
       if (((int)EVar5 < 1) &&
          (iVar6 = (*((this_ptr_00->base).vtable._ub)->shouldIgnoreForTargeting)(&this_ptr_00->base),
          iVar6 == 0)) break;
 LAB_0054d4f3:
       iVar11 = iVar11 + 1;
-      iVar3 = iVar3 + 4;
     }
     if (this_ptr->push_flag == 0) {
       if (((this_ptr->base).location.position.y < local_28) &&
@@ -313,6 +311,5 @@ LAB_0054d4f3:
     (*((this_ptr_00->base).vtable._ub)->setPositionAndOrientation)
               (&this_ptr_00->base,&CStack_64,(CVector3f *)&(this_ptr_00->base).orient);
     iVar11 = iVar11 + 1;
-    iVar3 = iVar3 + 4;
   } while( true );
 }

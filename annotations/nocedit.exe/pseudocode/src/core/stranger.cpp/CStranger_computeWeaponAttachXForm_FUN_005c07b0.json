@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1698,
-    "complexity_score": 827,
+    "complexity_score": 852,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 497,
-    "suspect_count": 32,
+    "suspect_count": 34,
     "suspect_types": [
       "missing_cave_copy",
+      "unrolled_memcpy",
       "warning_type_propagation"
     ],
     "total_lines": 2195
@@ -1140,6 +1141,22 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (12 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 331,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_2ac.m[0].w = local_90c.m[0].w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (12 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 367,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_45c.m[0].w = pCVar15->m[0].w;",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "Struct-type local `local_d5c` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 19 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
