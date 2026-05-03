@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 77,
+    "complexity_score": 87,
     "cross_reference_count": 8,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 62,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -319,6 +319,14 @@
     ]
   },
   "suspects": [
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 17,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "this_ptr_00 = (CBoundingBox3D *)((int)&model_ptr->frame_bounds->x + (int)local_28.max.x);",
+      "type": "pointer_cast"
+    },
     {
       "description": "Complex pointer cast",
       "introduced_by": "keep",

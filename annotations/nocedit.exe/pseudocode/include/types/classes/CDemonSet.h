@@ -37,7 +37,7 @@ typedef struct CDemonSet {
     CVector3f collision_impact_position; // 0x14d138
     struct CDemonActor* collision_actor; // 0x14d144
     int collision_part_index; // 0x14d148
-    int collision_triangle_index; // 0x14d14c
+    int collision_bone_index; // 0x14d14c
     float min_ambient_value; // 0x14d150
     int actor_count; // 0x14d154
     struct CDemonActor* actors[2000]; // 0x14d158

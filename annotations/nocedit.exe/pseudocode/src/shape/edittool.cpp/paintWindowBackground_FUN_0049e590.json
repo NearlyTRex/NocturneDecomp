@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 95,
-    "complexity_score": 70,
+    "complexity_score": 80,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 55,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -287,6 +287,14 @@
       "match": "(uint *)((int)puVar7",
       "severity": "moderate",
       "text": "puVar7 = (uint *)((int)puVar7 + uVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 37,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "severity": "moderate",
+      "text": "puVar9 = (uint *)",
       "type": "pointer_cast"
     }
   ]

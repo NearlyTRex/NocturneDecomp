@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 686,
-    "complexity_score": 321,
+    "complexity_score": 296,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 33,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 296,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 982
   },
   "cross_references": [],
@@ -622,24 +620,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 254,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr_01->base).base.base.location.position.x = (this_ptr->base).location.position.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 265,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(actor->base).base.location.position.x = (this_ptr->base).location.position.x;",
-      "type": "unrolled_memcpy"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

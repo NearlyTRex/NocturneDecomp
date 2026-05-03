@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_hit_normal,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox)
+; float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   ray_origin
 ; CVector3f *      Stack[0xc]:4   ray_direction
-; CVector3f *      Stack[0x10]:4   out_hit_normal
+; SActorRayHit *   Stack[0x10]:4   out_hit
 ; SCollisionInfo * Stack[0x14]:4   collision_info
 ; int              Stack[0x18]:4   bbox_type
 ; CBoundingBox3D * Stack[0x1c]:4   ray_bbox
@@ -54,7 +54,7 @@
 ;   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_skeleton.cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0
+;   core_skeleton.cpp_CDeformableModel_findMaxWeightBone_FUN_0059dca0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
 ;   core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0
 ;
@@ -503,8 +503,8 @@ section .text
         ;   XREF to: 005a07a0 (UNCONDITIONAL_CALL)  ; CDeformableModel * core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004097f1
     PUSH EAX                            ; 004097f4
-    CALL core_skeleton.cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0 ; 004097f5
-        ;   XREF to: 0059dca0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0(CDeformableModel * this_ptr, int lod_level, int triangle_index)
+    CALL core_skeleton.cpp_CDeformableModel_findMaxWeightBone_FUN_0059dca0 ; 004097f5
+        ;   XREF to: 0059dca0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findMaxWeightBone_FUN_0059dca0(CDeformableModel * this_ptr, int lod_level, int triangle_index)
     MOV dword ptr [EBX + 0x18],EAX      ; 004097fa
     LEA EAX,[EBP + -0x40]               ; 004097fd
     NOP                                 ; 00409800

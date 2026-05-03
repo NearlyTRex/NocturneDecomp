@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2062,
-    "complexity_score": 937,
+    "complexity_score": 957,
     "cross_reference_count": 3,
     "function_call_count": 31,
     "global_count": 44,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 752,
-    "suspect_count": 17,
+    "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
       "unrolled_strcpy",
@@ -1041,6 +1041,14 @@
       "type": "unrolled_strcpy"
     },
     {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 257,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pCVar14 = (CActorProperty *)((int)&pCVar14->type + 2);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
       "line": 607,
       "match": "do { if (v==0) break; v=v-1; ... }",
@@ -1055,6 +1063,15 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "introduced_by": "keep",
+      "line": 265,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pCVar14 = (CActorProperty *)((int)&pCVar14->type + 2);",
+      "type": "pointer_cast"
     }
   ]
 }

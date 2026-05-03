@@ -7,14 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 272,
-    "complexity_score": 132,
+    "complexity_score": 147,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 26,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 117,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "pointer_cast",
       "unrolled_strcpy"
     ],
     "total_lines": 389
@@ -437,6 +438,14 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 96,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "local_20 = (SChatOutMessage *)((int)&local_20->timestamp + 1);",
+      "type": "pointer_cast"
     }
   ]
 }

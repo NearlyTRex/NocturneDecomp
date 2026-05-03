@@ -169,11 +169,11 @@ CBoundingBox3D * __cdecl CDemonActor::getWorldBoundingBox(CDemonActor *this_ptr,
 
 // Original: core_actor.cpp_CDemonActor_testRayIntersection_FUN_004093f0
 // Address: 004093f0
-float __cdecl CDemonActor::testRayIntersection(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_hit_normal,int ray_type,CBoundingBox3D *clip_bounds);
+float __cdecl CDemonActor::testRayIntersection(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,int ray_type,CBoundingBox3D *clip_bounds);
 
 // Original: core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470
 // Address: 00409470
-float __cdecl CDemonActor::rayIntersect(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_hit_normal,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox);
+float __cdecl CDemonActor::rayIntersect(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox);
 
 // Original: core_actor.cpp_CDemonActor_onLaserHit_FUN_00409840
 // Address: 00409840

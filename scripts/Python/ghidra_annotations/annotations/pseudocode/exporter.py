@@ -339,13 +339,15 @@ def build_prototypes_from_decompile_results(decompile_results, functions_to_proc
     return functions_list
 
 
-def process_decompile_result(result, pseudocode_src_dir, constants_map,
-                             global_interval_map=None,
-                             address_interval_map=None):
-    """Process a decompilation result in the main thread.
+def process_python_only(result, pseudocode_src_dir, constants_map,
+                        global_interval_map=None,
+                        address_interval_map=None):
+    """Run all Python-only post-processing on a decompilation result.
 
-    This function does Python-only processing (transforms, suspect detection,
-    file generation). All Java-heavy operations were done in the worker.
+    Called from inside DecompileWorker so the work runs in the worker thread
+    pool (overlapping with other workers' Java-heavy time, where the GIL is
+    released). Does transforms, suspect detection, and output content build.
+    All Java-heavy operations were done earlier in the same worker.
 
     Args:
         result: DecompileResult from worker (contains all Java-computed data)
@@ -1043,11 +1045,28 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False):
     if decompiler_fixes_count > 0:
         log_info("Registered decompiler fixes for %d functions" % decompiler_fixes_count)
 
+    # Build the post-processing inputs up front so workers can run the
+    # Python-only post-processing step in-thread (Option A). Inputs depend
+    # only on globals_list and constants_list, both already built above.
+    timer.start_phase("Build constants map")
+    log_info("Building constants map for inline replacement")
+    constants_map = build_constants_map(constants_list)
+    log_info("Built constants map with %d inline-able constants" % len(constants_map))
+    timer.end_phase()
+
+    timer.start_phase("Build global interval maps")
+    global_interval_map = build_global_interval_map(globals_list)
+    log_info("Built global interval map with %d entries for displaced access detection" % len(global_interval_map))
+    address_interval_map = build_global_interval_map(list(globals_list) + list(constants_list))
+    log_info("Built address interval map with %d entries for raw-address constant detection" % len(address_interval_map))
+    timer.end_phase()
+
     # Create Python thread pool executor
     executor = ThreadPoolExecutor(max_workers=num_threads)
 
-    # Parallel decompilation (Java-heavy, GIL released)
-    timer.start_phase("Parallel decompilation (%d threads)" % num_threads)
+    # Parallel decompilation + post-processing (workers do both Java work
+    # and the Python-only post-processing; main thread just collects).
+    timer.start_phase("Parallel decompile+process (%d threads)" % num_threads)
     log_info("Submitting %d decompilation tasks" % len(functions_to_process))
     total_tasks = len(functions_to_process)
     futures = []
@@ -1056,7 +1075,11 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False):
             func, currentProgram, decompiler_tls,
             symbol_table, reference_manager, program_listing,
             string_map, global_symbols, vtable_data, switch_targets, noreturn_addrs,
-            func_conventions)
+            func_conventions,
+            pseudocode_src_dir=pseudocode_src_dir,
+            constants_map=constants_map,
+            global_interval_map=global_interval_map,
+            address_interval_map=address_interval_map)
         futures.append(executor.submit(worker))
 
     # Collect raw decompilation results
@@ -1282,18 +1305,14 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False):
     if not shims_ok:
         log_info("WARNING: Shim compilation had failures (non-blocking)")
 
-    # Build constants map for inline replacement of constant values
-    timer.start_phase("Build constants map")
-    log_info("Building constants map for inline replacement")
-    constants_map = build_constants_map(constants_list)
-    log_info("Built constants map with %d inline-able constants" % len(constants_map))
-    timer.end_phase()
-
     # =========================================================================
-    # PHASE 2: Sequential Python processing (main thread, no GIL contention)
+    # PHASE 2: Collect post-processing results from workers (no work here)
     # =========================================================================
-    timer.start_phase("Python processing (main thread)")
-    log_info("Processing %d decompiled functions..." % len(decompile_results))
+    # Workers already ran process_python_only() in-thread alongside their
+    # Java work, so this loop just collects already-computed `result.processed`
+    # dicts, accumulates timings/groups, and queues file writes.
+    timer.start_phase("Collect processed results (main thread)")
+    log_info("Collecting %d processed functions..." % len(decompile_results))
 
     files_created = 0
     function_groups = {}
@@ -1305,23 +1324,17 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False):
     total_transform_time = 0.0
     total_output_time = 0.0
 
-    # Build global interval map for displaced access detection
-    global_interval_map = build_global_interval_map(globals_list)
-    log_info("Built global interval map with %d entries for displaced access detection" % len(global_interval_map))
-
-    # Build combined map (globals + constants/strings) for raw-address
-    # constant detection. Dropped-symbol literals usually point at strings
-    # in the constants pool, which globals_list alone does not cover.
-    address_interval_map = build_global_interval_map(list(globals_list) + list(constants_list))
-    log_info("Built address interval map with %d entries for raw-address constant detection" % len(address_interval_map))
-
     process_start = time.time()
     for i, result in enumerate(decompile_results):
+        if result.process_error is not None:
+            process_errors.append("Process exception %s: %s" % (
+                result.func_name, result.process_error))
+            continue
+        processed = result.processed
+        if processed is None:
+            process_errors.append("Process missing for %s" % result.func_name)
+            continue
         try:
-            processed = process_decompile_result(
-                result, pseudocode_src_dir, constants_map, global_interval_map,
-                address_interval_map)
-
             # Collect timing data
             function_timings.append((
                 processed['func_name'],
@@ -1381,7 +1394,7 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False):
                 rate = (i + 1) / elapsed if elapsed > 0 else 0
                 remaining = len(decompile_results) - (i + 1)
                 eta = remaining / rate if rate > 0 else 0
-                log_info("Processed: %d/%d (%.1f/sec, ETA: %.0fs)" % (
+                log_info("Collected: %d/%d (%.1f/sec, ETA: %.0fs)" % (
                     i + 1, len(decompile_results), rate, eta))
 
         except Exception as e:

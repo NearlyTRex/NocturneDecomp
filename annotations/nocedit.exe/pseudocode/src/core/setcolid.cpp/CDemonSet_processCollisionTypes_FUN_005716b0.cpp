@@ -96,7 +96,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
   local_e8.y = local_e8.y + 2.0f;
   this_ptr->collision_actor = (CDemonActor *)0x0;
   this_ptr->collision_part_index = -1;
-  this_ptr->collision_triangle_index = -1;
+  this_ptr->collision_bone_index = -1;
   local_28 = local_14;
   if (-1 < this_ptr->ignore_list_count) {
     if (&local_100.max != &local_e8) {

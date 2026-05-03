@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 555,
-    "complexity_score": 424,
+    "complexity_score": 434,
     "cross_reference_count": 6,
     "function_call_count": 5,
     "global_count": 44,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 274,
-    "suspect_count": 14,
+    "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
       "unrolled_strcpy"
@@ -640,6 +640,15 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "introduced_by": "keep",
+      "line": 276,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "iVar1 = _sprintf(pcVar2,\"%s\",(char *)*(uint *)((int)&g_PropertyFlagDefinitions[0].name + iVar13));",
+      "type": "pointer_cast"
     }
   ]
 }

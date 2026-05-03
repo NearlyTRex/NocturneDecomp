@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1100,
-    "complexity_score": 470,
+    "complexity_score": 515,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 340,
-    "suspect_count": 12,
+    "suspect_count": 16,
     "suspect_types": [
       "missing_cave_copy",
+      "self_copy_guard",
       "unrolled_memcpy"
     ],
     "total_lines": 1440
@@ -719,12 +720,44 @@
   },
   "suspects": [
     {
-      "description": "Watcom field-by-field struct copy (12 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 172,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->mirror_transform_matrix).m[0].w = local_294.m[0].w;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 176,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->mirror_transform_matrix).m[1].w = local_294.m[1].w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 180,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->mirror_transform_matrix).m[2].w = local_294.m[2].w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_194 != &local_b0)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 108,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&local_194 != &local_b0) {",
+      "type": "self_copy_guard"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_164 != &local_158)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 128,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&local_164 != &local_158) {",
+      "type": "self_copy_guard"
     },
     {
       "description": "Struct-type local `local_4a4` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 7 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",

@@ -7,15 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 16,
+    "complexity_score": 15,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 16,
+    "pseudocode_lines": 15,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 68
+    "total_lines": 67
   },
   "cross_references": [],
   "function": {
@@ -28,7 +28,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_actor.cpp_CDemonActor_testRayIntersection_FUN_004093f0",
-    "signature": "float __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_hit_normal,int ray_type,CBoundingBox3D *clip_bounds)"
+    "signature": "float __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,int ray_type,CBoundingBox3D *clip_bounds)"
   },
   "function_calls": [
     {
@@ -115,10 +115,10 @@
       },
       {
         "is_param": true,
-        "name": "out_hit_normal",
+        "name": "out_hit",
         "offset": 16,
         "size": 4,
-        "type": "CVector3f *"
+        "type": "SActorRayHit *"
       },
       {
         "is_param": true,

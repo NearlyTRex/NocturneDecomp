@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 152
-  Total diagnostics: 451
+  Functions with findings: 151
+  Total diagnostics: 450
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 152, raw .cpp files: 0
+  .keep.cpp files: 151, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -203,13 +203,13 @@ core_xform.cpp_transformAndClipGeometry_FUN_005f8550  [.keep] [Cppcheck (quick)]
 core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0  [.keep] [Cppcheck (quick)]
   File: core/dcamera.cpp  (7 diagnostics)
 
-  Line  135: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  138: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  141: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  153: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  232: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  235: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line  238: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  124: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  127: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  130: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  142: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  219: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  222: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  225: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80  [.keep] [Cppcheck (quick)]
@@ -946,12 +946,6 @@ core_fire.cpp_CBulletTrail_render_FUN_004c21f0  [.keep] [Cppcheck (quick)]
   File: core/fire.cpp  (1 diagnostics)
 
   Line   71: [uninitvar] Uninitialized variable: iStack_1c
-
-----------------------------------------------------------------------------------------------------
-core_flame.cpp_CFlame_renderTransparent_FUN_004ca110  [.keep] [Cppcheck (quick)]
-  File: core/flame.cpp  (1 diagnostics)
-
-  Line  119: [uninitvar] Uninitialized variable: fStack_1c
 
 ----------------------------------------------------------------------------------------------------
 core_game.cpp_CGame_renderOverlay_FUN_004d8040  [.keep] [Cppcheck (quick)]

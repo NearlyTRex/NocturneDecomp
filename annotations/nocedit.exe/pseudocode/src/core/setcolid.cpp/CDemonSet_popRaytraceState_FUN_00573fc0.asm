@@ -152,7 +152,7 @@ section .text
     MOV dword ptr [EBX + 0x14d144],EAX  ; 0057410a
     MOV EAX,dword ptr [EDI + 0x98]      ; 00574110 | g_RaytraceStateStack[0].saved_collision_part_index
     MOV dword ptr [EBX + 0x14d148],EAX  ; 00574116
-    MOV EAX,dword ptr [EDI + 0x9c]      ; 0057411c | g_RaytraceStateStack[0].saved_collision_triangle_index
+    MOV EAX,dword ptr [EDI + 0x9c]      ; 0057411c | g_RaytraceStateStack[0].saved_collision_bone_index
     MOV dword ptr [EBX + 0x14d14c],EAX  ; 00574122
     MOV EAX,dword ptr [EDI + 0x74]      ; 00574128 | g_RaytraceStateStack[0].saved_skip_exact_collision
     MOV dword ptr [EBX + 0x15f6dc],EAX  ; 0057412b

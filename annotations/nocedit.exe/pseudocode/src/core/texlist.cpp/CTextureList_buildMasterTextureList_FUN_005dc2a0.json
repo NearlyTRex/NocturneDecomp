@@ -7,14 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 291,
-    "complexity_score": 182,
+    "complexity_score": 207,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 137,
-    "suspect_count": 4,
+    "suspect_count": 6,
     "suspect_types": [
+      "pointer_cast",
       "unrolled_strcpy"
     ],
     "total_lines": 428
@@ -290,6 +291,22 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 47,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "cVar1 = *(char *)((int)&pFVar4->dwLowDateTime + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 48,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pFVar4 = (FILETIME *)((int)&pFVar4->dwLowDateTime + 2);",
+      "type": "pointer_cast"
     }
   ]
 }

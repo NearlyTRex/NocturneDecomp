@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 390,
-    "complexity_score": 225,
+    "complexity_score": 260,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 200,
-    "suspect_count": 2,
+    "suspect_count": 5,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "self_copy_guard"
     ],
     "total_lines": 590
   },
@@ -503,6 +504,30 @@
       "severity": "moderate",
       "text": "if (local_230[iVar3] < *(float *)((int)local_230 + iVar2)) {",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_a0 != &local_58)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 127,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&local_a0 != &local_58) {",
+      "type": "self_copy_guard"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_88 != &local_7c)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 135,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&local_88 != &local_7c) {",
+      "type": "self_copy_guard"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_64 != &local_94)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 143,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&local_64 != &local_94) {",
+      "type": "self_copy_guard"
     }
   ]
 }

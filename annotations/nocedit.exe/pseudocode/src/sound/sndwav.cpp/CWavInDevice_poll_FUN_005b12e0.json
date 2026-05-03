@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 147,
-    "complexity_score": 71,
+    "complexity_score": 81,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 56,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -219,6 +219,14 @@
       "match": "(short *)((int)output_buffer",
       "severity": "moderate",
       "text": "output_buffer = (short *)((int)output_buffer + iVar3 * iVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 29,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "severity": "moderate",
+      "text": "(short *)(g_WaveInCurrentSampleOffset * iVar3 +",
       "type": "pointer_cast"
     }
   ],

@@ -7,14 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 61,
+    "complexity_score": 76,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 16,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
+      "pointer_cast",
       "raw_address_constant"
     ],
     "total_lines": 80
@@ -179,6 +180,14 @@
       "severity": "moderate",
       "text": "g_RenderVertexBuffer[this_ptr->vertex_indices[2]].u = 0xf80000;",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 7,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "severity": "moderate",
+      "text": "(uint)*(ushort *)",
+      "type": "pointer_cast"
     }
   ]
 }

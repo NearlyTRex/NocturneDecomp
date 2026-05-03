@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 7459,
-    "complexity_score": 3397,
+    "complexity_score": 3412,
     "cross_reference_count": 4,
     "function_call_count": 81,
     "global_count": 341,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 3337,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "bitcast_double_pair",
+      "pointer_cast",
       "warning_type_propagation"
     ],
     "total_lines": 10796
@@ -4101,6 +4102,14 @@
       "severity": "moderate",
       "text": "dVar1 = __BITCAST_DOUBLE(CONCAT44(iVar4,local_11c));",
       "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 624,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)",
+      "type": "pointer_cast"
     }
   ]
 }

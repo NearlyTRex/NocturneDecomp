@@ -5,6 +5,7 @@
 // =============================================================================
 // Auto-generated aggregate of all structs type definitions.
 
+#include "types/structs/SActorRayHit.h"
 #include "types/structs/SActorVarBlock.h"
 #include "types/structs/SAlphaEntry.h"
 #include "types/structs/SArmAimData.h"
@@ -87,7 +88,7 @@
 #include "types/structs/SLodSamplePoint.h"
 #include "types/structs/SMRGLAnimatedTexture.h"
 #include "types/structs/SMRGLHeaderBasic.h"
-#include "types/structs/SMRGLHeaderBasicTypeOnly.h"
+#include "types/structs/SMRGLHeaderBasicCountOnly.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SMRGLKeyframe.h"

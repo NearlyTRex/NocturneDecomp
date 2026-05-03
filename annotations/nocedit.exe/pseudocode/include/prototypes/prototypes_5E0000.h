@@ -150,7 +150,7 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_ctor_FUN_005e5590(CVampire
 void __cdecl core_vampboss_cpp_CVampireBoss_setup_FUN_005e56c0(CVampireBoss *this_ptr);
 float __cdecl core_vampboss_cpp_clampAngle_FUN_005e58d0(float angle,float max_angle);
 void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float delta_time);
-void __stack2_esi core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005e6b80 (CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+void __stack2_esi core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005e6b80(CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void __cdecl core_vampboss_cpp_CVampireBoss_advanceAnimation_FUN_005e6ca0(CVampireBoss *this_ptr,float delta_time);
 int __cdecl core_vampboss_cpp_CVampireBoss_renderOpaque_FUN_005e6da0(CVampireBoss *this_ptr);
 void __cdecl core_vampboss_cpp_CVampireBoss_archive_FUN_005e6f50(CVampireBoss *this_ptr);
@@ -229,7 +229,7 @@ CBoundingBox3D * __cdecl core_wateract_cpp_CWaterActor_getBoundingBox_FUN_005eb4
 void __cdecl core_wateract_cpp_CWaterActor_archive_FUN_005eb510(CWaterActor *this_ptr);
 ECollisionType __cdecl core_wateract_cpp_CWaterActor_getCollisionType_FUN_005eb710(CWaterActor *this_ptr,SCollisionInfo *collision_info);
 EGroundType __cdecl core_wateract_cpp_CWaterActor_getGroundType_FUN_005eb730(CWaterActor *this_ptr);
-float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005eb740(CWaterActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_normal);
+float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005eb740(CWaterActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 void __cdecl core_wateract_cpp_CWaterActor_onLaserHit_FUN_005eb910(CWaterActor *this_ptr,SLaserInfo *laser_info);
 void __cdecl core_wateract_cpp_CWaterActor_getPropertyList_FUN_005eb940(CWaterActor *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_wateract_cpp_CWaterActor_processInEditor_FUN_005ebab0(CWaterActor *this_ptr);

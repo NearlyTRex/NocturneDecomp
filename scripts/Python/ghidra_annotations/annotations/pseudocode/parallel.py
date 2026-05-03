@@ -124,7 +124,9 @@ class DecompileResult:
 
     Contains data from all Java-heavy operations (decompilation, assembly,
     xrefs, globals, calls, stack analysis, pcode). Python-only processing
-    (transforms, JSON, file generation) is done in the main thread.
+    (transforms, JSON, file generation) is also performed in the worker
+    (Option A) so it overlaps with other workers' Java-heavy time. The
+    main thread only consumes `processed` and writes files.
     """
     __slots__ = [
         'success', 'error',
@@ -134,7 +136,8 @@ class DecompileResult:
         'func_xrefs', 'func_globals', 'func_calls',
         'stack_frame', 'stack_patterns_raw', 'param_estimates', 'vtable_info',
         'is_ebp_frame',
-        'decompile_time', 'assembly_time', 'metadata_time', 'pcode_time'
+        'decompile_time', 'assembly_time', 'metadata_time', 'pcode_time',
+        'processed', 'process_error', 'process_time'
     ]
 
     def __init__(self):
@@ -161,20 +164,30 @@ class DecompileResult:
         self.assembly_time = 0.0
         self.metadata_time = 0.0
         self.pcode_time = 0.0
+        self.processed = None
+        self.process_error = None
+        self.process_time = 0.0
 
 
 class DecompileWorker:
-    """Worker that does ALL Java-heavy operations.
+    """Worker that does ALL Java-heavy operations AND Python post-processing.
 
-    This worker performs all operations that involve Java/Ghidra API calls,
-    allowing them to run truly in parallel (GIL released during JVM calls).
-    The main thread only does Python-only string processing.
+    This worker performs all operations that involve Java/Ghidra API calls
+    (GIL released during JVM calls) and then runs the Python-only
+    post-processing (transforms, suspect detection, output content build) in
+    the same task. Because the GIL is released during sibling workers' JVM
+    calls, the per-task Python work overlaps with other workers' Java work,
+    so wall-clock for the post-decompile phase shrinks substantially.
+
+    The main thread only consumes `result.processed` and writes files.
     """
 
     def __init__(self, func, currentProgram, decompiler_tls,
                  symbol_table, reference_manager, program_listing,
                  string_map, global_symbols, vtable_data=None, switch_targets=None,
-                 noreturn_addrs=None, func_conventions=None):
+                 noreturn_addrs=None, func_conventions=None,
+                 pseudocode_src_dir=None, constants_map=None,
+                 global_interval_map=None, address_interval_map=None):
         self.func = func
         self.currentProgram = currentProgram
         self.decompiler_tls = decompiler_tls
@@ -187,6 +200,11 @@ class DecompileWorker:
         self.switch_targets = switch_targets
         self.noreturn_addrs = noreturn_addrs
         self.func_conventions = func_conventions
+        # Inputs for in-worker post-processing (Option A).
+        self.pseudocode_src_dir = pseudocode_src_dir
+        self.constants_map = constants_map
+        self.global_interval_map = global_interval_map
+        self.address_interval_map = address_interval_map
 
     def __call__(self):
         """Execute all Java-heavy operations and return results."""
@@ -258,4 +276,21 @@ class DecompileWorker:
         except Exception as e:
             result.error = str(e)
             result.success = False
+            return result
+
+        # === PYTHON-ONLY: Post-processing (transforms, suspects, output build) ===
+        # Runs in the worker so it overlaps with other workers' Java time.
+        # Lazy-imported to avoid a parallel.py <-> exporter.py circular import.
+        if self.pseudocode_src_dir is not None and self.constants_map is not None:
+            try:
+                from ghidra_annotations.annotations.pseudocode.exporter import (
+                    process_python_only,
+                )
+                process_start = time.time()
+                result.processed = process_python_only(
+                    result, self.pseudocode_src_dir, self.constants_map,
+                    self.global_interval_map, self.address_interval_map)
+                result.process_time = time.time() - process_start
+            except Exception as e:
+                result.process_error = str(e)
         return result

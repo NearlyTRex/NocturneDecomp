@@ -2,15 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 98,
+    "complexity_score": 123,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 58,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
       "param_count_too_few",
+      "pointer_cast",
       "unnamed_param"
     ],
     "total_lines": 182
@@ -123,6 +124,22 @@
       "severity": "mild",
       "text": "*param_1 = uVar6;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 23,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((uint)((int)&pHVar4->heap_size + pHVar4->heap_size) < *(uint *)(INT_03f9b1f0 + 4))) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 36,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(byte *)((int)&pHVar4->heap_size + pHVar4->heap_size) < (uint)INT_03f9b1f0)) {",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 1,

@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 81,
+    "complexity_score": 96,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 56,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "self_copy_guard"
     ],
     "total_lines": 219
   },
@@ -288,6 +289,14 @@
       "severity": "moderate",
       "text": "(this_ptr,*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3)),",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_20 != &local_38)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 40,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&local_20 != &local_38) {",
+      "type": "self_copy_guard"
     }
   ],
   "vtable_info": {

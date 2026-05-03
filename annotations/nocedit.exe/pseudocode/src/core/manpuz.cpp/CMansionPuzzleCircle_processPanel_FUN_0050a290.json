@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 154,
-    "complexity_score": 83,
+    "complexity_score": 68,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 68,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 222
   },
   "cross_references": [
@@ -173,14 +171,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (13 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 40,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(pSVar4->rotation_matrix).m[0].x = (pSVar3->rotation_matrix).m[0].x;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

@@ -371,6 +371,15 @@
       "severity": "mild",
       "text": "*(uint *)((int)&workspace->boxes[box_index].max_spread + 4) = local_30._4_4_;",
       "type": "unknown_field"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 83,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "uVar9 = (*(int *)((int)&workspace->boxes[box_index + -1].count + 2) >> 0x10) -",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {

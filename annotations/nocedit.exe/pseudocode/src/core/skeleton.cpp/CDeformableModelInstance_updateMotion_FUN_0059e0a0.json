@@ -7,14 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1033,
-    "complexity_score": 473,
+    "complexity_score": 538,
     "cross_reference_count": 4,
     "function_call_count": 7,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 358,
-    "suspect_count": 11,
+    "suspect_count": 17,
     "suspect_types": [
+      "pointer_cast",
       "unrolled_memcpy"
     ],
     "total_lines": 1391
@@ -1014,6 +1015,22 @@
     },
     {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 254,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(&local_122c)[iVar10].w = pCVar11->w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 275,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_1cc.w = (&local_122c)[local_30].w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 279,
       "match": "field-by-field struct copy",
       "severity": "moderate",
@@ -1067,6 +1084,38 @@
       "severity": "moderate",
       "text": "(local_20->bone_transform).pose_data.bone_rotations[0].w = pCVar11->w;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 202,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((CQuaternion4f *)((int)&local_bec[0].w + local_68),&local_20c,&local_14c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 204,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(local_bc,(CQuaternion4f *)((int)&local_74->w + local_80),&local_23c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 297,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((CQuaternion4f *)((int)&local_186c[0].w + local_80),&local_1fc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 304,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((CQuaternion4f *)((int)&local_6c->w + local_80),&local_10c);",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",

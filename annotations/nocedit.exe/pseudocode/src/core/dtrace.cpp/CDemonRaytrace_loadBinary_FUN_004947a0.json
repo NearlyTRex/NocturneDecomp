@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 634,
-    "complexity_score": 294,
+    "complexity_score": 314,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 23,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 249,
-    "suspect_count": 4,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -481,6 +481,22 @@
       "match": "(int *)((int)pSVar2",
       "severity": "moderate",
       "text": "piVar10 = (int *)((int)pSVar2->voxel_data + iVar1 + -0x14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 210,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + local_20),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 241,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + iVar9),file_handle);",
       "type": "pointer_cast"
     }
   ]

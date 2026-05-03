@@ -127,6 +127,15 @@
       "severity": "moderate",
       "text": "return (uint)*(byte *)((int)puVar1 + (x_coordinate - uVar2) + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 10,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(puVar1 < (ushort *)",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {

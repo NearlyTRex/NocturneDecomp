@@ -108,6 +108,7 @@ When you are editing a `.keep` for any reason — creating one for a compile err
 - `missing_cave_copy` — §20 (Missing cave-block struct memcpy). Ghidra dropped a post-call struct copy that Watcom emitted, leaving a struct local uninitialized at runtime. Fix by passing the real source local directly or adding the missing assignment; detected via `.cpp`/`.asm` cross-check. **Candidate locals are filtered by struct size matching the asm cave-block size** — e.g. a 48-byte cave block can't be the missing copy of a 12-byte `CVector3f` local, so output buffers like `&local_vec` passed to `transformVector3x4(&out, &in, &mat)` no longer false-positive.
 - `fast_sqrt_inline`, `fast_inv_sqrt_inline` — §21 (Inline fast-(inverse-)sqrt bit-trick). Ghidra emits `(int)X` numeric cast where the asm performs a bit-cast; UB on NaN/Inf. Replace inline occurrences with calls to the existing helper functions `fastSqrt(X)` / `fastInvSqrt(X)` in a `.keep`.
 - `bitcast_double_pair` — §22 (Adjacent uint locals reconstructed as a double). `__BITCAST_DOUBLE(CONCAT44(hi, lo))` over two stack-local uints almost always means Watcom split one `double` local into two 4-byte slots; merge them into a single `double` declaration in a `.keep` and pass it directly.
+- `self_copy_guard` — §23 (Dead self-copy guard). `if (&LOCAL_A != &LOCAL_B) { LOCAL_A = LOCAL_B; ... }` where both sides are bare addresses of stack locals. The guard never skips (different stack slots) and just adds visual noise around an unconditional struct copy; drop the if-wrapper in a `.keep`.
 
 **Ineligible for `.keep` cleanup — fix upstream in Ghidra instead:** structural suspects like `decompilation_failed`, stack/ESP anchor mismatches, `warning_*` (bad spacebase, unmapped variables, type propagation). See "Prefer Ghidra Fixes Over Code Fixes."
 
@@ -651,6 +652,40 @@ calculateRatio(idx, mpeg2_is_pos_step, n, buf);
 
 **Eligibility:** `.keep`-layer fix. The `bitcast_double_pair` suspect type flags every `__BITCAST_DOUBLE(CONCAT44(...))` occurrence. The fix is per-function; the underlying issue is per-stack-frame typing, which Ghidra can't always retype safely without disturbing other local layouts.
 
+### 23. Dead self-copy guard (`if (&LOCAL_A != &LOCAL_B) { LOCAL_A = LOCAL_B; ... }`)
+
+**Cause:** The original source wrote `if (&dst != &src) dst = src;` to guard a small struct copy against self-assignment (a defense useful when `dst` and `src` are pointer parameters that callers might alias). Watcom unrolled the struct copy into N typed scalar assignments inside the guarded body. In the binary, the `dst` and `src` happen to be different stack locals at this call site, but the address-comparison guard survives in the decompile. With both sides as bare stack-local addresses, the guard is always-true at runtime — the body always executes — so the if-wrapper is pure visual noise around an unconditional struct copy.
+
+**Symptoms:**
+- An `if (&LOCAL_A != &LOCAL_B) {` line where both operands are bare `&` of simple identifiers (no casts, no pointer parameters).
+- The first body line is `LOCAL_A = LOCAL_B;` (the LHS and RHS match the captured names).
+- Subsequent body lines continue the field-by-field copy (`LOCAL_A_n = LOCAL_B_n;` for adjacent fields of the same logical struct).
+
+**Canonical example (`CWerewolf::renderEyeGlow`):**
+```cpp
+// BROKEN (decompile preserves the dead guard):
+local_d0 = (eye_position->x + 0.2f) * size_scale;
+local_cc = (eye_position->y + 0.2f) * size_scale;
+local_c8 = eye_position->z * size_scale;
+if (&local_58 != &local_d0) {       // !! always true — different stack slots
+    local_58 = local_d0;
+    local_54 = local_cc;
+    local_50 = local_c8;
+}
+
+// FIXED (drop the if-wrapper, keep the body):
+local_d0 = (eye_position->x + 0.2f) * size_scale;
+local_cc = (eye_position->y + 0.2f) * size_scale;
+local_c8 = eye_position->z * size_scale;
+local_58 = local_d0;
+local_54 = local_cc;
+local_50 = local_c8;
+```
+
+**When to apply vs. skip:** Apply only when **both sides** of the `!=` are bare `&NAME` and `NAME` resolves to a stack local. Cast-wrapped forms (`(CLocation *)&local`) and pointer-parameter forms (`if (&local != input_ptr)`) are real defenses against caller-aliased pointers — leave those alone, even though the test detector won't flag them.
+
+**Eligibility:** `.keep`-layer fix. The `self_copy_guard` suspect type flags the `if`-line; dropping it is a one-line edit (remove the `if` line and the matching `}`, leaving the body unindented). After cleanup, if the resulting flat body is 4+ field copies, the `unrolled_field_copy` detector may further collapse it into a single `dst = src;`.
+
 ## Workflow
 
 1. **Check for a `.chunked.cpp` file** (same base name, `.chunked.cpp` extension). If one exists, read it first — it splits the function into a context struct and small static helper functions, making it much easier to understand and fix large functions. Use it as a reference to understand which chunk each error falls in, but the `.keep` file is still based on the original `.cpp`.
@@ -670,7 +705,12 @@ calculateRatio(idx, mpeg2_is_pos_step, n, buf);
    ```
    scripts/Bash/test_compilation.sh path/to/file.keep.cpp
    ```
-8. **Suggest readability improvements** — after the `.keep` file compiles, review it for cases where the decompiler used wrong types that obscure the code's intent. Common examples: `CVector3i` fields holding float bit patterns (hex integers that are really IEEE 754 floats), `int` locals that are actually pointers, etc. If you spot these, **tell the user** what you found and what the correct types would be, but **do not apply the changes** unless the user approves. These are optional cleanups, not compilation fixes.
+8. **Re-run suspect detection** to see what flagged patterns remain in the file:
+   ```
+   scripts/Bash/test_suspects.sh path/to/file.keep.cpp
+   ```
+   This runs the source-text regex detectors from `suspects.py` against the file's current content (no Ghidra needed) and prints any suspects still present, with line numbers and types. Use it to confirm a targeted suspect-cleanup edit actually cleared the pattern, and to spot remaining suspects you might want to address in the same `.keep` pass. Skips P-code / asm / interval-map detectors — those are decompiler-state-dependent and won't change from a `.keep` edit. Pass `--show-omitted` to also list types the exporter normally filters (e.g. `decompiler_intrinsic`, `mmx_assembly`).
+9. **Suggest readability improvements** — after the `.keep` file compiles, review it for cases where the decompiler used wrong types that obscure the code's intent. Common examples: `CVector3i` fields holding float bit patterns (hex integers that are really IEEE 754 floats), `int` locals that are actually pointers, etc. If you spot these, **tell the user** what you found and what the correct types would be, but **do not apply the changes** unless the user approves. These are optional cleanups, not compilation fixes.
 
 ### Using `.chunked.cpp` for large functions
 

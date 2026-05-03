@@ -193,11 +193,11 @@
   },
   "suspects": [
     {
-      "description": "Watcom field-by-field struct copy (5 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 7,
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 8,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_MirrorTempPrimitive.base.base.count = (prim->base).count;",
+      "text": "g_MirrorTempPrimitive.base.surface_normal.A = (prim->surface_normal).A;",
       "type": "unrolled_memcpy"
     }
   ]

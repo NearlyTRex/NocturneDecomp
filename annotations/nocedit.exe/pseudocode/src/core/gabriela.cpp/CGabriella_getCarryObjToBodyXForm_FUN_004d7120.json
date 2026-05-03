@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 365,
-    "complexity_score": 213,
+    "complexity_score": 233,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 148,
-    "suspect_count": 5,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "unrolled_memcpy",
@@ -398,11 +398,27 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Watcom field-by-field struct copy (12 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 81,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "CStack_d0.m[0].w = pCVar6->m[0].w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 85,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "CStack_d0.m[1].w = pCVar6->m[1].w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 89,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "CStack_d0.m[2].w = pCVar6->m[2].w;",
       "type": "unrolled_memcpy"
     },
     {

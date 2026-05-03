@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 445,
-    "complexity_score": 196,
+    "complexity_score": 211,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 41,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 196,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
     "total_lines": 641
   },
   "cross_references": [
@@ -627,5 +629,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 92,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "end_pos = (CVector3i *)((int)&g_PrecomputedWorldPositions[0].x + local_34);",
+      "type": "pointer_cast"
+    }
+  ]
 }

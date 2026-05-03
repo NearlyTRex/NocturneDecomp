@@ -7,14 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 462,
-    "complexity_score": 203,
+    "complexity_score": 218,
     "cross_reference_count": 1,
     "function_call_count": 26,
     "global_count": 26,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 173,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "pointer_cast",
       "unrolled_memcpy",
       "unrolled_strcpy"
     ],
@@ -521,6 +522,14 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 125,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pcVar8 = *(char **)((int)&local_40->directory_entries->name + local_34);",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",

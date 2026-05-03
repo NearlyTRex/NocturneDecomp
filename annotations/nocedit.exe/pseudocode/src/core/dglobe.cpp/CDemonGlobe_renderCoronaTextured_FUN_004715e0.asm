@@ -118,7 +118,7 @@ section .text
         ;   XREF to: 005dd800 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_005dd800(SMRGLTextureBasic * texture)
     XOR EBX,EBX                         ; 004716de
     ADD ESP,0x4                         ; 004716e0
-    MOV EAX,dword ptr [EBX + 0x66f2fc]  ; 004716e3 | g_CoronaFacePrimitives | g_CoronaFacePrimitives[1].base.type
+    MOV EAX,dword ptr [EBX + 0x66f2fc]  ; 004716e3 | g_CoronaFacePrimitives | g_CoronaFacePrimitives[1].base.count
         ;   Label: LAB_004716e3
     MOV dword ptr [ESP + 0x4],EAX       ; 004716e9
     MOV EAX,dword ptr [EBX + 0x66f300]  ; 004716ed | g_CoronaFacePrimitives[0].normal.A | g_CoronaFacePrimitives[1].normal.A

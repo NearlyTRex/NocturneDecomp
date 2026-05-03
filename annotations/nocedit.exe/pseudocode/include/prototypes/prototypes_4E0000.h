@@ -124,7 +124,7 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_pt
 CBoundingBox3D * __cdecl core_glass_cpp_CGlass_getBoundingBox_FUN_004ea030(CGlass *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_glass_cpp_CGlass_archive_FUN_004ea090(CGlass *this_ptr);
 ECollisionType __cdecl core_glass_cpp_CGlass_getCollisionType_FUN_004ea190(CGlass *this_ptr,SCollisionInfo *collision_info);
-void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0(CGlass *this_ptr,SQuadVertices *quad_vertices,CVector4i *quad_uv_u, CVector4i *quad_uv_v,int subdivision_level);
+void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0(CGlass *this_ptr,SQuadVertices *quad_vertices,CVector4i *quad_uv_u,CVector4i *quad_uv_v,int subdivision_level);
 void __cdecl core_glass_cpp_CGlass_shatter_FUN_004eaef0(CGlass *this_ptr,CVector3f *location);
 void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004eb250(CGlass *this_ptr,SLaserInfo *laser_info);
 EGroundType __cdecl core_glass_cpp_CGlass_getGroundType_FUN_004eb390(CGlass *this_ptr);
@@ -154,7 +154,7 @@ void __cdecl core_gore_cpp_CBloodPool_processAge_FUN_004ed0a0(CBloodPool *this_p
 void __cdecl core_gore_cpp_CBloodPool_init_FUN_004ed0d0(CBloodPool *this_ptr,CVector3f *position,int blood_type);
 int __cdecl core_gore_cpp_CBloodPool_load_FUN_004ed160(CBloodPool *this_ptr,_FILE *file_handle);
 int __cdecl core_gore_cpp_CBloodPool_save_FUN_004ed1c0(CBloodPool *this_ptr,_FILE *file_handle);
-void __cdecl core_gore_cpp_CFootstep_init_FUN_004ed240(CFootstep *this_ptr,CVector3f *position,UOrientationVector *orientation, int is_bloody,int alpha,int blood_type);
+void __cdecl core_gore_cpp_CFootstep_init_FUN_004ed240(CFootstep *this_ptr,CVector3f *position,UOrientationVector *orientation,int is_bloody,int alpha,int blood_type);
 void __cdecl core_gore_cpp_CFootstep_render_FUN_004ed3c0(CFootstep *this_ptr,int expire_flag);
 CGore * __cdecl core_gore_cpp_CGore_ctor_FUN_004ed730(CGore *this_ptr);
 CGore * __cdecl core_gore_cpp_CGore_dtor_FUN_004ed750(CGore *this_ptr,uint flags);
@@ -170,8 +170,8 @@ void __cdecl core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0(CGore *this_ptr,CV
 CBloodPool * __cdecl core_gore_cpp_CGore_allocateBloodPool_FUN_004edde0(CGore *this_ptr);
 void __cdecl core_gore_cpp_CGore_createBloodPool_FUN_004ede30(CGore *this_ptr,CVector3f *position,int blood_type);
 void __cdecl core_gore_cpp_CGore_loadAssets_FUN_004ede60(CGore *this_ptr);
-CFlies * __cdecl core_gore_cpp_CGore_spawnFlies_FUN_004edf30(CGore *this_ptr,CVector3f *position,int gather_count,float spawn_rate, CVector3f *box_size);
-void __cdecl core_gore_cpp_CGore_spawnFliesOnActor_FUN_004ee030(CGore *this_ptr,CDemonActor *actor,int gather_count,float spawn_rate, CVector3f *box_size);
+CFlies * __cdecl core_gore_cpp_CGore_spawnFlies_FUN_004edf30(CGore *this_ptr,CVector3f *position,int gather_count,float spawn_rate,CVector3f *box_size);
+void __cdecl core_gore_cpp_CGore_spawnFliesOnActor_FUN_004ee030(CGore *this_ptr,CDemonActor *actor,int gather_count,float spawn_rate,CVector3f *box_size);
 void __cdecl core_gore_cpp_CGore_createFootstep_FUN_004ee070(CGore *this_ptr,CVector3f *position,UOrientationVector *orientation,int surface_type ,int alpha,int blood_type);
 int __cdecl core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004ee0f0(CGore *this_ptr,CVector3f *position,int *out_blood_type);
 int __cdecl core_gore_cpp_CGore_load_FUN_004ee1e0(CGore *this_ptr,_FILE *file_handle);
@@ -225,5 +225,5 @@ void __cdecl core_ground_cpp_CGround_renderTerrainQuad_FUN_004ef990(CGround *thi
 void __cdecl core_ground_cpp_CGround_renderVisibleTerrain_FUN_004efb70(CGround *this_ptr);
 void __cdecl core_ground_cpp_CGround_render_FUN_004efc90(CGround *this_ptr);
 int __cdecl core_ground_cpp_CGround_getHeightAtPosition_FUN_004efd30(CGround *this_ptr,int world_x,int world_z);
-CVector3i * __stack3_esi core_ground_cpp_CGround_getNormalAtPosition_FUN_004effb0 (CGround *this_ptr,int world_x,int world_z,CVector3i *out_normal);
+CVector3i * __stack3_esi core_ground_cpp_CGround_getNormalAtPosition_FUN_004effb0(CGround *this_ptr,int world_x,int world_z,CVector3i *out_normal);
 

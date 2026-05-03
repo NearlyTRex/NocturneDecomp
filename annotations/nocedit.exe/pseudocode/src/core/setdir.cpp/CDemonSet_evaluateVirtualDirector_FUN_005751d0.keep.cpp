@@ -34,7 +34,6 @@ int __cdecl core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0(CDemo
   float fStack_70;
   float fStack_6c;
   int iStack_5c;
-  int iStack_54;
   int local_48;
   int local_44;
   int iStack_30;
@@ -189,7 +188,7 @@ LAB_0057523f:
   pCStack_18 = &(actor->location).position;
   fVar6 = 200.0f * 200.0f;
   pCStack_20 = this_ptr->cameras;
-  while ((iVar10 = g_VDCameraIndex, iVar12 = g_WindowHeight, 0 < iStack_54 &&
+  while ((iVar10 = g_VDCameraIndex, iVar12 = g_WindowHeight, 0 < iStack_5c &&
          (g_VDCameraIndex < this_ptr->camera_count))) {
     uVar11 = this_ptr->cameras[g_VDCameraIndex].vdir_zone;
     if (uStack_24 == uVar11) {
@@ -249,7 +248,7 @@ LAB_0057523f:
       }
     }
     g_VDCameraScores[g_VDCameraIndex] = fVar13;
-    iStack_54 = iStack_54 + -1;
+    iStack_5c = iStack_5c + -1;
     g_VDCameraIndex = g_VDCameraIndex + 1;
   }
   if (g_ZBufferScanlineArrayBackup[0] == (uint *)0x0) {

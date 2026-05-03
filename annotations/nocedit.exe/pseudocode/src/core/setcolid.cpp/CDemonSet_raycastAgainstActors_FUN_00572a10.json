@@ -4,20 +4,18 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 331,
-    "complexity_score": 144,
+    "complexity_score": 127,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 129,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
-    "total_lines": 460
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 127,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 458
   },
   "cross_references": [
     {
@@ -193,22 +191,8 @@
         "is_param": false,
         "name": "CStack_a4",
         "offset": -164,
-        "size": 12,
-        "type": "CVector3f"
-      },
-      {
-        "is_param": false,
-        "name": "iStack_98",
-        "offset": -152,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "iStack_8c",
-        "offset": -140,
-        "size": 4,
-        "type": "int"
+        "size": 28,
+        "type": "SActorRayHit"
       },
       {
         "is_param": false,
@@ -376,14 +360,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (5 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 65,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_cc.ray_type = this_ptr->ray_type;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

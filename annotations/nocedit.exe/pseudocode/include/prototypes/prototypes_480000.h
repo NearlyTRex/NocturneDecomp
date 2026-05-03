@@ -112,7 +112,7 @@ void __cdecl core_dpart_cpp_CDemonPart_save_FUN_004824c0(CDemonPart *this_ptr);
 void __cdecl core_dpart_cpp_CDemonPart_calculateFaceNormals_FUN_004824f0(CDemonPart *this_ptr);
 void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0(CDemonPart *this_ptr,_FILE *file_handle,CVector3f *offset_position);
 void __cdecl core_dpart_cpp_CDemonPart_renderFaces_FUN_004828b0(CDemonPart *this_ptr);
-int __cdecl core_dpart_cpp_CDemonPart_importTriangleMesh_FUN_00482a10(CDemonPart *this_ptr,int triangle_count,int enable_alloc,int source_triangle_count, CDemonTriangle *triangle_data);
+int __cdecl core_dpart_cpp_CDemonPart_importTriangleMesh_FUN_00482a10(CDemonPart *this_ptr,int triangle_count,int enable_alloc,int source_triangle_count,CDemonTriangle *triangle_data);
 void __cdecl core_dpart_cpp_CDemonPart_processAndFinalize_FUN_00482e40(CDemonPart *this_ptr,int enable_vertex_reduction,int enable_polygon_optimize);
 void __cdecl core_dpart_cpp_setupTriangleEdgeInterpolation_FUN_00482fb0(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b);
 void __cdecl core_dpart_cpp_setupDepthOnlyEdgeInterpolation_FUN_00483210(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b);
@@ -125,8 +125,8 @@ CDemonActorType * __cdecl core_dracbrid_cpp_CDraculaBride_getActorType_FUN_00483
 CDraculaBride * __cdecl core_dracbrid_cpp_CDraculaBride_ctor_FUN_00483fc0(CDraculaBride *this_ptr);
 void __cdecl core_dracbrid_cpp_CDraculaBride_setup_FUN_004840b0(CDraculaBride *this_ptr);
 void __cdecl core_dracbrid_cpp_CDraculaBride_process_FUN_00484410(CDraculaBride *this_ptr,float delta_time);
-void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_004858f0(CDraculaBride *this_ptr,CVector3f *direction,float spread_angle, int render_in_background);
-void __cdecl core_dracbrid_cpp_CDraculaBride_dismemberPart_FUN_00485b20(CDraculaBride *this_ptr,int part_index,CVector3f *initial_velocity, int render_in_background);
+void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_004858f0(CDraculaBride *this_ptr,CVector3f *direction,float spread_angle,int render_in_background);
+void __cdecl core_dracbrid_cpp_CDraculaBride_dismemberPart_FUN_00485b20(CDraculaBride *this_ptr,int part_index,CVector3f *initial_velocity,int render_in_background);
 ECollisionType __cdecl core_dracbrid_cpp_CDraculaBride_getCollisionType_FUN_00485bc0(CDraculaBride *this_ptr,SCollisionInfo *collision_info);
 int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_00485be0(CDraculaBride *this_ptr);
 void __cdecl core_dracbrid_cpp_CDraculaBride_archive_FUN_00485dd0(CDraculaBride *this_ptr);
@@ -174,14 +174,14 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawClippedDashedLine_FUN_00487a3
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_00487ad0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_00487bc0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 char __cdecl cockpit_drawsurf_cpp_computeCohenSutherlandOutcode_FUN_00487de0(int point_x,int point_y,int clip_left,int clip_top,int clip_right,int clip_bottom);
-int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_00487e20(CDrawSurface *this_ptr,int *x1,int *y1,int *x2,int *y2,int clip_left,int clip_top, int clip_right,int clip_bottom);
+int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_00487e20(CDrawSurface *this_ptr,int *x1,int *y1,int *x2,int *y2,int clip_left,int clip_top,int clip_right,int clip_bottom);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_00488110(CDrawSurface *this_ptr,int start_x,int y,int end_x);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_00488230(CDrawSurface *this_ptr,int x,int start_y,int end_y);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_00488410(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleOutline_FUN_004884d0(CDrawSurface *this_ptr,int x,int y,int width,int height);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSurfaceBorder_FUN_00488530(CDrawSurface *this_ptr);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCenteredRectangleOutline_FUN_00488550(CDrawSurface *this_ptr,int center_x,int center_y,int width,int height);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleBetweenPoints_FUN_004885d0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2,int border_width, int border_height);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleBetweenPoints_FUN_004885d0(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2,int border_width,int border_height);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSolidRectangle_FUN_00488630(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawFullSurface_FUN_004886a0(CDrawSurface *this_ptr);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCenteredSolidRectangle_FUN_004886c0(CDrawSurface *this_ptr,int center_x,int center_y,int width,int height);
@@ -199,7 +199,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_00488c70(CDra
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_renderPackedBitmap_FUN_00488c90(CDrawSurface *this_ptr,int x_offset,int y_offset,CPackedBitmap *bitmap_ptr);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0(CDrawSurface *this_ptr,int vertex_count,SPoint2i *vertices);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawClosedPolyline_FUN_00489090(CDrawSurface *this_ptr,int point_count,CVector2i *points);
-void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120(CDrawSurface *this_ptr,char *text,int x,int width,int y,int height, ETextAlignment alignment_mode);
+void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120(CDrawSurface *this_ptr,char *text,int x,int width,int y,int height,ETextAlignment alignment_mode);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0(CDrawSurface *this_ptr,char *text,int x,int y);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedWrapper_FUN_00489420(CDrawSurface *this_ptr,int x,int y,char *text);
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450(CDrawSurface *this_ptr,int x,int y,char *format,...) __attribute__((format(printf, 4, 5)));
@@ -283,14 +283,14 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_0048c690(CD
 void __cdecl engine_drender_cpp_CDemonRenderer_setLightDirection_FUN_0048c6c0(CDemonRenderer *this_ptr,CVector3i *direction);
 void __cdecl engine_drender_cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_0048c6e0(CDemonRenderer *this_ptr,CVector3f *light_direction);
 void __cdecl engine_drender_cpp_CDemonRenderer_calculateVertexLight_FUN_0048c740(CDemonRenderer *this_ptr,int vertex_index,CVector3i *vertex_position);
-CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760 (CDemonRenderer *this_ptr,CVector3i *output);
+CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760(CDemonRenderer *this_ptr,CVector3i *output);
 CVector3f * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer *this_ptr,CVector3f *output);
-CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0 (CDemonRenderer *this_ptr,CVector3i *output);
+CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0(CDemonRenderer *this_ptr,CVector3i *output);
 float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800(CDemonRenderer *this_ptr,float *output);
 float __cdecl engine_drender_cpp_CDemonRenderer_calculateProjectionFactor_FUN_0048c870(CDemonRenderer *this_ptr);
 void __cdecl engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890(CDemonRenderer *this_ptr,int x,int y,int width,int height);
 void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_0048c8c0(CDemonRenderer *this_ptr);
-void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim, CustomScanlineFunc *scanline_renderer);
+void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,CustomScanlineFunc *scanline_renderer);
 template<typename T_func0>
 inline void engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,T_func0 scanline_renderer) {
     engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0(this_ptr, prim, (CustomScanlineFunc *)scanline_renderer);
@@ -309,11 +309,11 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0(CD
 void __cdecl engine_drender_cpp_CDemonRenderer_setAlphaMask_FUN_0048cdf0(CDemonRenderer *this_ptr,int alpha_mask);
 int __cdecl engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(CDemonRenderer *this_ptr);
 void __cdecl engine_drender_cpp_CDemonRenderer_enableAdvancedCulling_FUN_0048ce10(CDemonRenderer *this_ptr,int enabled);
-void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count, int render_flags);
-void __cdecl engine_drender_cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count, int render_flags);
-void __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count, int primitive_stride,int render_flags);
+void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count,int render_flags);
+void __cdecl engine_drender_cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count,int render_flags);
+void __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count,int primitive_stride,int render_flags);
 void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0048d170(CDemonRenderer *this_ptr,SInputFace *face_array,int face_count,int render_flags);
-void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(CDemonRenderer *this_ptr,int *vertex_indices,int face_count,int vertices_per_face, int render_mode);
+void __cdecl engine_drender_cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410(CDemonRenderer *this_ptr,int *vertex_indices,int face_count,int vertices_per_face,int render_mode);
 void __cdecl engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(CDemonRenderer *this_ptr,int enable_advanced_mode);
 void __cdecl engine_drender_cpp_CDemonRenderer_processVisiblePrimitive_FUN_0048d700(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive,int render_flags);
 void __cdecl engine_drender_cpp_CDemonRenderer_processQuadPrimitive_FUN_0048d7a0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *quad_primitive,int render_flags);
@@ -322,7 +322,7 @@ int __cdecl engine_drender_cpp_qsortByCapturedFaceDepthAscending_FUN_0048da20(SF
 int __cdecl engine_drender_cpp_qsortByCapturedFaceDepthDescending_FUN_0048da50(SFace **face_ptr_a,SFace **face_ptr_b);
 void __cdecl engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(CDemonRenderer *this_ptr);
 void __cdecl engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture);
-void __cdecl engine_drender_cpp_CDemonRenderer_updateTextureWithPalette_FUN_0048dc20(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture_to_load, SMRGLTextureBasic *texture_to_update);
+void __cdecl engine_drender_cpp_CDemonRenderer_updateTextureWithPalette_FUN_0048dc20(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture_to_load,SMRGLTextureBasic *texture_to_update);
 void __cdecl engine_drender_cpp_CDemonRenderer_updateTexture_FUN_0048dc30(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture,SRGBColorPalette *palette);
 int __cdecl engine_drender_cpp_CDemonRenderer_depthTest_FUN_0048dc50(CDemonRenderer *this_ptr,SRenderVertex *vertex_ptr);
 void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndViewport_FUN_0048dcc0(CDemonRenderer *this_ptr,SCameraViewportState *camera_state);

@@ -7,14 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 797,
-    "complexity_score": 402,
+    "complexity_score": 417,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 23,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 332,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
+      "self_copy_guard",
       "stack_param",
       "unknown_type",
       "warning_inlined_function",
@@ -721,6 +722,14 @@
       "severity": "moderate",
       "text": "fVar11,in_stack_fffffe18);",
       "type": "stack_param"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_ec != &local_d4)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 90,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&local_ec != &local_d4) {",
+      "type": "self_copy_guard"
     }
   ],
   "vtable_info": {

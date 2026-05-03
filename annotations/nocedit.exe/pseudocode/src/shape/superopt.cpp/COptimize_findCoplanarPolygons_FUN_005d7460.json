@@ -158,6 +158,15 @@
       "severity": "moderate",
       "text": "(iVar3 = (**(code **)(*(int *)(iVar8 + 100) + 0x80))(iVar8,iVar3),",
       "type": "unresolved_funcptr"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 24,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pbVar1 = (byte *)((int)&polygon->flags + 1);",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {

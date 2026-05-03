@@ -15,9 +15,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDem
   ECollisionType bbox_type;
   float fVar1;
   SCollisionInfo local_cc;
-  CVector3f CStack_a4;
-  int iStack_98;
-  int iStack_8c;
+  SActorRayHit CStack_a4;
   CBoundingBox3D local_88;
   float local_70;
   float local_6c;
@@ -38,7 +36,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDem
   CDemonActor *pCVar1;
   
   this_ptr->collision_part_index = -1;
-  this_ptr->collision_triangle_index = -1;
+  this_ptr->collision_bone_index = -1;
   this_ptr->collision_actor = (CDemonActor *)0x0;
   if (-1 < this_ptr->ignore_list_count) {
     if (max_t <= 0.0) {
@@ -90,14 +88,14 @@ float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDem
                               (pCVar1,ray_origin,&local_64,&CStack_a4,&local_cc,bbox_type,&local_88)
             ;
             if (((fVar1 <= 1.0) && (fVar1 = fVar1 * local_24, fVar1 < max_t)) && (min_t < fVar1)) {
-              if (&CStack_a4 != &this_ptr->collision_normal) {
-                (this_ptr->collision_normal).x = CStack_a4.x;
-                (this_ptr->collision_normal).y = CStack_a4.y;
-                (this_ptr->collision_normal).z = CStack_a4.z;
+              if (&CStack_a4 != (SActorRayHit *)&this_ptr->collision_normal) {
+                (this_ptr->collision_normal).x = CStack_a4.normal.x;
+                (this_ptr->collision_normal).y = CStack_a4.normal.y;
+                (this_ptr->collision_normal).z = CStack_a4.normal.z;
               }
               this_ptr->collision_actor = pCVar1;
-              this_ptr->collision_part_index = iStack_98;
-              this_ptr->collision_triangle_index = iStack_8c;
+              this_ptr->collision_part_index = CStack_a4.part_index;
+              this_ptr->collision_bone_index = CStack_a4.bone_index;
               CStack_58.x = (ray_target->x - ray_origin->x) * fVar1;
               CStack_58.y = (ray_target->y - ray_origin->y) * fVar1;
               CStack_58.z = (ray_target->z - ray_origin->z) * fVar1;

@@ -55,7 +55,7 @@ void __cdecl core_charactr_cpp_CCharacter_addDamageDecal_FUN_0042b190(CCharacter
     this_ptr->damage_decal_count = this_ptr->damage_decal_count + 1;
     pSVar4 = this_ptr->damage_decals + iVar3;
     pSVar4->part_index = pCVar1->collision_part_index;
-    iVar3 = pCVar1->collision_triangle_index;
+    iVar3 = pCVar1->collision_bone_index;
     pSVar4->bone_index = iVar3;
     if (iVar3 < 0) {
       iVar3 = (*(((this_ptr->base).vtable._uc)->_uc).getPartDominantBone)

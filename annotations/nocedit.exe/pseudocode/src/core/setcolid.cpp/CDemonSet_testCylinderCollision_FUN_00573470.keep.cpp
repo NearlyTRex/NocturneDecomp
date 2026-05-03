@@ -56,7 +56,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00573470(CDe
   }
   this_ptr->ground_type = 1;
   this_ptr->collision_part_index = -1;
-  this_ptr->collision_triangle_index = -1;
+  this_ptr->collision_bone_index = -1;
   this_ptr->collision_actor = (CDemonActor *)0x0;
   if (-1 < this_ptr->ignore_list_count) {
     local_98.min.x = local_14c.center_x - local_14c.radius;

@@ -33,7 +33,7 @@
 // FUNCTION PROTOTYPES - Range 0x580000
 // =============================================================================
 
-int __cdecl core_setedit_cpp_CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0(CDemonSet *this_ptr,int screen_x,int screen_y,int *result_cameras, int exclude_camera_index);
+int __cdecl core_setedit_cpp_CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0(CDemonSet *this_ptr,int screen_x,int screen_y,int *result_cameras,int exclude_camera_index);
 int __cdecl core_setedit_cpp_CDemonSet_isPointVisibleFromCamera_FUN_005801b0(CDemonSet *this_ptr,CVector3i *point,int camera_index);
 void __cdecl core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(CDemonSet *this_ptr);
 void __cdecl core_setedit_cpp_CDemonSet_clearCameraDepthData_FUN_00580560(CDemonSet *this_ptr);
@@ -168,9 +168,9 @@ int __cdecl core_skeledit_cpp_CDeformableModel_importFacesS3D_FUN_0058b9b0(CDefo
 int __cdecl core_skeledit_cpp_CDeformableModel_importVerticesS3D_FUN_0058bc40(CDeformableModel *this_ptr,_FILE *file_handle);
 void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00(CDeformableModel *this_ptr,char *filename,CBoneStructure *bone_structure);
 int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDeformableModel *this_ptr,CLodMeshPrecomputeEntry *entry);
-void __cdecl core_skeledit_cpp_CDeformableModel_extractLodLevel_FUN_0058d790(CDeformableModel *this_ptr,int lod_index,CLodMesh *lod_mesh, CMatrix3x4f *inverse_matrices);
+void __cdecl core_skeledit_cpp_CDeformableModel_extractLodLevel_FUN_0058d790(CDeformableModel *this_ptr,int lod_index,CLodMesh *lod_mesh,CMatrix3x4f *inverse_matrices);
 void __cdecl core_skeledit_cpp_CDeformableModel_extractBoneScales_FUN_0058dde0(CDeformableModel *this_ptr,CBoneStructure *bone_structure);
-void __cdecl core_skeledit_cpp_CDeformableModel_cramModelTexture_FUN_0058de70(CDeformableModel *this_ptr,char *base_name,int num_crams,int atlas_dimension, int texture_set_index,int max_iterations);
+void __cdecl core_skeledit_cpp_CDeformableModel_cramModelTexture_FUN_0058de70(CDeformableModel *this_ptr,char *base_name,int num_crams,int atlas_dimension,int texture_set_index,int max_iterations);
 void __cdecl core_skeledit_cpp_CDeformableModel_addTextureSet_FUN_0058e0b0(CDeformableModel *this_ptr,char *name_format);
 void __cdecl core_skeledit_cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240(CDeformableModel *this_ptr);
 void __cdecl core_skeledit_cpp_CDeformableModel_scaleAllVertices_FUN_0058e3e0(CDeformableModel *this_ptr,float scale);

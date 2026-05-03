@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 577,
-    "complexity_score": 200,
+    "complexity_score": 220,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 27,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 185,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -416,6 +416,22 @@
       "match": "(uint *)((int)this_ptr",
       "severity": "moderate",
       "text": "*(uint *)((int)this_ptr->filter_indices + local_1c) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 152,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "iVar2 = (int)&local_24->left + iVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 158,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pCVar4 = (C3DSLight *)((int)&pCVar4->light_type + 1);",
       "type": "pointer_cast"
     }
   ]

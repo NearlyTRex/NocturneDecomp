@@ -7,13 +7,13 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 194,
-    "complexity_score": 154,
+    "complexity_score": 164,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 104,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "unrolled_memcpy"
@@ -315,6 +315,14 @@
       "severity": "moderate",
       "text": "pSVar5->vertices[0].u = g_RenderVertexBuffer[iVar1].u;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 106,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",

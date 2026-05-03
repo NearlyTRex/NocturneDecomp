@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_skeleton_cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0(CDeformableModel *this_ptr,int lod_level,int triangle_index)
+; int __cdecl core_skeleton_cpp_CDeformableModel_findMaxWeightBone_FUN_0059dca0(CDeformableModel *this_ptr,int lod_level,int triangle_index)
 ;
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr
@@ -19,7 +19,7 @@
 section .text
 
     PUSH EBX                            ; 0059dca0
-        ;   Label: core_skeleton.cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0
+        ;   Label: core_skeleton.cpp_CDeformableModel_findMaxWeightBone_FUN_0059dca0
     PUSH ESI                            ; 0059dca1
     PUSH EDI                            ; 0059dca2
     PUSH EBP                            ; 0059dca3

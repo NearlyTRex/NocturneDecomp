@@ -2,11 +2,11 @@
 // Address: 004093f0
 // Address Range: [[004093f0, 0040946a]]
 // Convention: __cdecl
-// Signature: float __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_hit_normal,int ray_type,CBoundingBox3D *clip_bounds)
+// Signature: float __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,int ray_type,CBoundingBox3D *clip_bounds)
 
 #include "nocturne.h"
 
-float __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_hit_normal,int ray_type,CBoundingBox3D *clip_bounds)
+float __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,int ray_type,CBoundingBox3D *clip_bounds)
 
 {
   ECollisionType bbox_type;
@@ -20,7 +20,6 @@ float __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0(CDemon
     return 2.0;
   }
   fVar1 = core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470
-                    (this_ptr,ray_origin,ray_direction,out_hit_normal,&local_34,bbox_type,
-                     clip_bounds);
+                    (this_ptr,ray_origin,ray_direction,out_hit,&local_34,bbox_type,clip_bounds);
   return fVar1;
 }

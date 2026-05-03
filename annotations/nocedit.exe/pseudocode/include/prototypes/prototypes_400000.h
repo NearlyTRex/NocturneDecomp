@@ -29,6 +29,7 @@
 #include "types/funcdefs/CActorPropertyDisplayFunc.h"
 #include "types/funcdefs/CActorPropertyValidatorFunc.h"
 #include "types/funcdefs/CDemonActor_FactoryFunc.h"
+#include "types/structs/SActorRayHit.h"
 #include "types/structs/SClipPlane.h"
 #include "types/structs/SCollisionInfo.h"
 #include "types/structs/SCollisionReturnInfo.h"
@@ -226,7 +227,7 @@ void __cdecl engine_3d_c_clipAndDrawLine2D_FUN_00407d70(SRenderVertex vertex1,SR
 void __cdecl engine_3d_c_drawLine3DFromIndices_FUN_00407ff0(int vertex_index1,int vertex_index2);
 void __cdecl engine_3d_c_clipAndDrawLine3D_FUN_00408070(SRenderVertex vertex1,SRenderVertex vertex2);
 void __cdecl core_actor_cpp_staticInit_FUN_00408320(void);
-float __cdecl core_actor_cpp_rayCylinderIntersect_FUN_00408340(SCollisionInfo *collision_info,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_normal);
+float __cdecl core_actor_cpp_rayCylinderIntersect_FUN_00408340(SCollisionInfo *collision_info,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 void __cdecl core_actor_cpp_trimActorName_FUN_004087b0(CDemonActor *actor_ptr);
 void __cdecl core_actor_cpp_deleteActor_FUN_00408820(CDemonActor *actor_ptr);
 CDemonActorTransformState * __cdecl core_actor_cpp_initTransformCache_FUN_00408870(CDemonActorTransformState *transform_cache);
@@ -244,7 +245,7 @@ void __cdecl core_actor_cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor *this_ptr
 void __cdecl core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(CDemonActor *this_ptr);
 CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getBoundingBox_FUN_00408c70(CDemonActor *this_ptr,CBoundingBox3D *out_box);
 ECollisionType __cdecl core_actor_cpp_CDemonActor_getCollisionType_FUN_00408ca0(CDemonActor *this_ptr,SCollisionInfo *collision_info);
-float __cdecl core_actor_cpp_CDemonActor_customRayIntersect_FUN_00408cc0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_normal);
+float __cdecl core_actor_cpp_CDemonActor_customRayIntersect_FUN_00408cc0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 void __cdecl core_actor_cpp_CDemonActor_customIntersectCylinderXZ_FUN_00408d10(CDemonActor *this_ptr,SIntersectXZCylinder *cylinder);
 int __cdecl core_actor_cpp_CDemonActor_customGetFloorHeight_FUN_00408d50(CDemonActor *this_ptr,CVector3f *position,float search_radius,float *out_floor_height );
 EGroundType __cdecl core_actor_cpp_CDemonActor_getGroundType_FUN_00408d90(CDemonActor *this_ptr);
@@ -264,10 +265,10 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_getCarrier_FUN_00409060(CDemonA
 void __cdecl core_actor_cpp_CDemonActor_drop_FUN_00409080(CDemonActor *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
 CPathMap * __cdecl core_actor_cpp_CDemonActor_getPathMap_FUN_004090a0(CDemonActor *this_ptr);
 int __cdecl core_actor_cpp_CDemonActor_testPointInCylinder_FUN_004090c0(CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance);
-int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150(CDemonActor *this_ptr,CVector3f *line_start,CVector3f *line_end, CVector3f *out_intersection_point);
-CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00409270(CDemonActor *this_ptr,CBoundingBox3D *output_bbox,SCollisionInfo *collision_info, int bounding_box_type);
-float __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_hit_normal,int ray_type,CBoundingBox3D *clip_bounds);
-float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction, CVector3f *out_hit_normal,SCollisionInfo *collision_info,int bbox_type, CBoundingBox3D *ray_bbox);
+int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150(CDemonActor *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point);
+CBoundingBox3D * __cdecl core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00409270(CDemonActor *this_ptr,CBoundingBox3D *output_bbox,SCollisionInfo *collision_info,int bounding_box_type);
+float __cdecl core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,int ray_type,CBoundingBox3D *clip_bounds);
+float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox);
 void __cdecl core_actor_cpp_CDemonActor_onLaserHit_FUN_00409840(CDemonActor *this_ptr,SLaserInfo *laser_info);
 int __cdecl core_actor_cpp_CDemonActor_getBlockVirtualDirectorFlag_FUN_00409880(CDemonActor *this_ptr);
 int __cdecl core_actor_cpp_CDemonActor_allowBulletHoles_FUN_004098a0(CDemonActor *this_ptr);
@@ -285,11 +286,11 @@ void __cdecl core_actor_cpp_CDemonActor_setPositionAndOrientation_FUN_00409fb0(C
 void __cdecl core_actor_cpp_CDemonActor_onPickup_FUN_0040a010(CDemonActor *this_ptr,CDemonActor *owner);
 void __cdecl core_actor_cpp_CDemonActor_getInteractionInfo_FUN_0040a030(CDemonActor *this_ptr,SInteractionInfo *out_info);
 int __cdecl core_actor_cpp_CDemonActor_startInteraction_FUN_0040a090(CDemonActor *this_ptr,CDemonActor *user);
-int __cdecl core_actor_cpp_CDemonActor_updateInteraction_FUN_0040a0b0(CDemonActor *this_ptr,UOrientationVector *user_orientation, SPlayerInput *player_control);
+int __cdecl core_actor_cpp_CDemonActor_updateInteraction_FUN_0040a0b0(CDemonActor *this_ptr,UOrientationVector *user_orientation,SPlayerInput *player_control);
 void __cdecl core_actor_cpp_CDemonActor_stopUsing_FUN_0040a0d0(CDemonActor *this_ptr,CDemonActor *user);
 int __cdecl core_actor_cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040a0f0(CDemonActor *this_ptr);
 int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor *this_ptr,int hit_type);
-void __cdecl core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0(CDemonActor *this_ptr,int attack_flags,SDamageInfo *out_damage_info, CDemonActor *victim);
+void __cdecl core_actor_cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0(CDemonActor *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim);
 void __cdecl core_actor_cpp_CDemonActor_playAttackHitEffects_FUN_0040ac20(CDemonActor *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim);
 char * __cdecl core_actor_cpp_copyToActorDebugBuffer_FUN_0040ac30(char *source_string);
 void __cdecl core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80(CDemonActor *this_ptr,char *context_file,int context_line);
@@ -317,7 +318,7 @@ void __cdecl core_actor_cpp_archiveRules_FUN_0040c000(CRuleList *rules,char *pro
 void __cdecl core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(CDemonActor *this_ptr);
 uint __cdecl core_actor_cpp_updateClassNameHash_FUN_0040c260(uint current_hash,int character);
 uint __cdecl core_actor_cpp_hashClassName_FUN_0040c290(char *class_name);
-CDemonActorType * __cdecl core_actor_cpp_registerActorClass_FUN_0040c2e0(CDemonActorType *this_ptr,char *class_name,CDemonActor_FactoryFunc *factor_func, int *max_version,int version,CDemonActorType *parent_class_info);
+CDemonActorType * __cdecl core_actor_cpp_registerActorClass_FUN_0040c2e0(CDemonActorType *this_ptr,char *class_name,CDemonActor_FactoryFunc *factor_func,int *max_version,int version,CDemonActorType *parent_class_info);
 template<typename T_func0>
 inline CDemonActorType * core_actor_cpp_registerActorClass_FUN_0040c2e0(CDemonActorType *this_ptr,char *class_name,T_func0 factor_func,int *max_version,int version,CDemonActorType *parent_class_info) {
     return core_actor_cpp_registerActorClass_FUN_0040c2e0(this_ptr, class_name, (CDemonActor_FactoryFunc *)factor_func, max_version, version, parent_class_info);
@@ -366,32 +367,32 @@ void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonAct
 void __cdecl core_actor_cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0(CDemonActor *this_ptr,int red,int green,int blue,int alpha);
 void __cdecl core_actor_cpp_CActorPropertyList_init_FUN_0040e130(CActorPropertyList *this_ptr);
 void __cdecl core_actor_cpp_CActorPropertyList_resetSelection_FUN_0040e150(CActorPropertyList *this_ptr);
-CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList *this_ptr,char *property_name,float *data_ptr, CActorPropertyValidatorFunc *callback);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList *this_ptr,char *property_name,float *data_ptr,CActorPropertyValidatorFunc *callback);
 template<typename T_func0>
 inline CActorProperty * core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160(CActorPropertyList *this_ptr,char *property_name,float *data_ptr,T_func0 callback) {
     return core_actor_cpp_CActorPropertyList_addFloat_FUN_0040e160(this_ptr, property_name, data_ptr, (CActorPropertyValidatorFunc *)callback);
 }
-CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0(CActorPropertyList *this_ptr,char *property_name,float *data_ptr,float min_value, float max_value,CActorPropertyValidatorFunc *callback);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0(CActorPropertyList *this_ptr,char *property_name,float *data_ptr,float min_value,float max_value,CActorPropertyValidatorFunc *callback);
 template<typename T_func0>
 inline CActorProperty * core_actor_cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0(CActorPropertyList *this_ptr,char *property_name,float *data_ptr,float min_value,float max_value,T_func0 callback) {
     return core_actor_cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0(this_ptr, property_name, data_ptr, min_value, max_value, (CActorPropertyValidatorFunc *)callback);
 }
-CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList *this_ptr,char *property_name,int *data_ptr, CActorPropertyValidatorFunc *callback);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList *this_ptr,char *property_name,int *data_ptr,CActorPropertyValidatorFunc *callback);
 template<typename T_func0>
 inline CActorProperty * core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0(CActorPropertyList *this_ptr,char *property_name,int *data_ptr,T_func0 callback) {
     return core_actor_cpp_CActorPropertyList_addInt_FUN_0040e1e0(this_ptr, property_name, data_ptr, (CActorPropertyValidatorFunc *)callback);
 }
-CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addIntRange_FUN_0040e220(CActorPropertyList *this_ptr,char *property_name,int *data_ptr,int min_value, int max_value,CActorPropertyValidatorFunc *callback);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addIntRange_FUN_0040e220(CActorPropertyList *this_ptr,char *property_name,int *data_ptr,int min_value,int max_value,CActorPropertyValidatorFunc *callback);
 template<typename T_func0>
 inline CActorProperty * core_actor_cpp_CActorPropertyList_addIntRange_FUN_0040e220(CActorPropertyList *this_ptr,char *property_name,int *data_ptr,int min_value,int max_value,T_func0 callback) {
     return core_actor_cpp_CActorPropertyList_addIntRange_FUN_0040e220(this_ptr, property_name, data_ptr, min_value, max_value, (CActorPropertyValidatorFunc *)callback);
 }
-CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addVector_FUN_0040e260(CActorPropertyList *this_ptr,char *property_name,CVector3f *data_ptr, CActorPropertyValidatorFunc *callback);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addVector_FUN_0040e260(CActorPropertyList *this_ptr,char *property_name,CVector3f *data_ptr,CActorPropertyValidatorFunc *callback);
 template<typename T_func0>
 inline CActorProperty * core_actor_cpp_CActorPropertyList_addVector_FUN_0040e260(CActorPropertyList *this_ptr,char *property_name,CVector3f *data_ptr,T_func0 callback) {
     return core_actor_cpp_CActorPropertyList_addVector_FUN_0040e260(this_ptr, property_name, data_ptr, (CActorPropertyValidatorFunc *)callback);
 }
-CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addString_FUN_0040e290(CActorPropertyList *this_ptr,char *property_name,char *data_ptr,int max_length, CActorPropertyValidatorFunc *callback);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addString_FUN_0040e290(CActorPropertyList *this_ptr,char *property_name,char *data_ptr,int max_length,CActorPropertyValidatorFunc *callback);
 template<typename T_func0>
 inline CActorProperty * core_actor_cpp_CActorPropertyList_addString_FUN_0040e290(CActorPropertyList *this_ptr,char *property_name,char *data_ptr,int max_length,T_func0 callback) {
     return core_actor_cpp_CActorPropertyList_addString_FUN_0040e290(this_ptr, property_name, data_ptr, max_length, (CActorPropertyValidatorFunc *)callback);
@@ -404,22 +405,22 @@ template<typename T_func0>
 inline CActorProperty * core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350(CActorPropertyList *this_ptr,char *property_name,CDemonActor **data_ptr,int default_index,char *choices,T_func0 callback) {
     return core_actor_cpp_CActorPropertyList_addChoice_FUN_0040e350(this_ptr, property_name, data_ptr, default_index, choices, (CActorPropertyValidatorFunc *)callback);
 }
-CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0(CActorPropertyList *this_ptr,char *property_name,CKeyFramedModelInstance *data_ptr, int allow_none);
-CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addFile_FUN_0040e3e0(CActorPropertyList *this_ptr,char *property_name,void *data_ptr,char *search_path, char *extension,int allow_none);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0(CActorPropertyList *this_ptr,char *property_name,CKeyFramedModelInstance *data_ptr,int allow_none);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addFile_FUN_0040e3e0(CActorPropertyList *this_ptr,char *property_name,void *data_ptr,char *search_path,char *extension,int allow_none);
 CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460(CActorPropertyList *this_ptr,char *property_name,char *data_ptr);
 CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addButton_FUN_0040e480(CActorPropertyList *this_ptr,char *property_name,char *data_ptr);
-CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0(CActorPropertyList *this_ptr,char *property_name,CDeformableModelInstance *data_ptr, int allow_none);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addModelDFM_FUN_0040e4a0(CActorPropertyList *this_ptr,char *property_name,CDeformableModelInstance *data_ptr,int allow_none);
 CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addMotion_FUN_0040e4d0(CActorPropertyList *this_ptr,char *property_name,CDeformableModelInstance *data_ptr);
 void __cdecl core_actor_cpp_CActorPropertyList_addClothList_FUN_0040e500(CActorPropertyList *this_ptr,char *property_name,CClothList *data_ptr,int max_count);
 void __cdecl core_actor_cpp_CActorPropertyList_addRuleList_FUN_0040e5a0(CActorPropertyList *this_ptr,char *property_name,CRuleList *data_ptr,int max_count);
-CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList *this_ptr,char *property_name,int num_pairs,SEnumPair *pairs, int *data_ptr);
-CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addAction_FUN_0040e670(CActorPropertyList *this_ptr,char *property_name, CActorPropertyDisplayFunc *display_callback,CActorPropertyActionFunc *action_callback);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640(CActorPropertyList *this_ptr,char *property_name,int num_pairs,SEnumPair *pairs,int *data_ptr);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addAction_FUN_0040e670(CActorPropertyList *this_ptr,char *property_name,CActorPropertyDisplayFunc *display_callback,CActorPropertyActionFunc *action_callback);
 template<typename T_func0, typename T_func1>
 inline CActorProperty * core_actor_cpp_CActorPropertyList_addAction_FUN_0040e670(CActorPropertyList *this_ptr,char *property_name,T_func0 display_callback,T_func1 action_callback) {
     return core_actor_cpp_CActorPropertyList_addAction_FUN_0040e670(this_ptr, property_name, (CActorPropertyDisplayFunc *)display_callback, (CActorPropertyActionFunc *)action_callback);
 }
 CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_addFlags_FUN_0040e6a0(CActorPropertyList *this_ptr,char *property_name,int *data_ptr);
-CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0(CActorPropertyList *this_ptr,EActorPropertyType property_type,char *property_name, void *data_ptr,CActorPropertyValidatorFunc *callback);
+CActorProperty * __cdecl core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0(CActorPropertyList *this_ptr,EActorPropertyType property_type,char *property_name,void *data_ptr,CActorPropertyValidatorFunc *callback);
 template<typename T_func0>
 inline CActorProperty * core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0(CActorPropertyList *this_ptr,EActorPropertyType property_type,char *property_name,void *data_ptr,T_func0 callback) {
     return core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0(this_ptr, property_type, property_name, data_ptr, (CActorPropertyValidatorFunc *)callback);

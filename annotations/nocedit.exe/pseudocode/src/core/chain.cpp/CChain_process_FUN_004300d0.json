@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 659,
-    "complexity_score": 339,
+    "complexity_score": 354,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 6,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 274,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
-      "negative_offset"
+      "negative_offset",
+      "self_copy_guard"
     ],
     "total_lines": 933
   },
@@ -570,6 +571,14 @@
       "severity": "mild",
       "text": "local_bc = pSVar18[-1].position.z - (pSVar18->position).z;",
       "type": "negative_offset"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_d0 != &local_b8)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 129,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&local_d0 != &local_b8) {",
+      "type": "self_copy_guard"
     }
   ],
   "vtable_info": {

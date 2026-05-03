@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 58,
+    "complexity_score": 68,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 43,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -184,6 +184,14 @@
       "match": "(_FILE **)((int)dest",
       "severity": "moderate",
       "text": "dest = (_FILE **)((int)dest + 0x1a);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 29,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "dest = (_FILE **)((int)&psVar1->__put_end + 1);",
       "type": "pointer_cast"
     }
   ]

@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 49,
+    "complexity_score": 59,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 34,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
       "unrolled_memcpy"
     ],
@@ -104,11 +104,19 @@
   },
   "suspects": [
     {
-      "description": "Watcom field-by-field struct copy (25 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 10,
+      "description": "Watcom field-by-field struct copy (10 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 14,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "this_ptr->hero_number = other->hero_number;",
+      "text": "this_ptr->last_arrival_time = other->last_arrival_time;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (8 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 24,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->player_input).action_state.walk = (other->player_input).action_state.walk;",
       "type": "unrolled_memcpy"
     }
   ],

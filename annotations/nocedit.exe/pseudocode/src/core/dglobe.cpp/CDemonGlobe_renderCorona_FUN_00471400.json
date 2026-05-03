@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 186,
+    "complexity_score": 76,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 29,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 76,
-    "suspect_count": 10,
-    "suspect_types": [
-      "pointer_cast",
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 225
   },
   "cross_references": [
@@ -177,7 +174,7 @@
     },
     {
       "addr": "0066f320",
-      "name": "g_CoronaFacePrimitives[1].base.type",
+      "name": "g_CoronaFacePrimitives[1].base.count",
       "type": "undefined4",
       "value": null
     },
@@ -321,6 +318,125 @@
     },
     "pcode_op_count": 770
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(int *)((int)g_CoronaFacePrimitives",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_64.base.base.count = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -0x14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 58,
+      "match": "(UIntegerFloat *)((int)g_CoronaFacePrimitives",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(UIntegerFloat *)((int)g_CoronaFacePrimitives",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(UIntegerFloat *)((int)g_CoronaFacePrimitives",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(int *)((int)g_CoronaFacePrimitives",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_64.vertices[0] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 65,
+      "match": "(int *)((int)g_CoronaFacePrimitives",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_64.vertices[1] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(int *)((int)g_CoronaFacePrimitives",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_64.vertices[2] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(int *)((int)g_CoronaFacePrimitives",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_64.vertices[3] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(int *)((int)g_CoronaFacePrimitives",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)ROUND(ROUND((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar3) *",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 41,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_30.x = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar1) * fVar1 *",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 43,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_30.y = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar1) * fVar1 *",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 45,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_30.z = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar1) * fVar1 *",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 108,
     "local_size": 104,
@@ -407,86 +523,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 56,
-      "match": "(int *)((int)g_CoronaFacePrimitives",
-      "severity": "moderate",
-      "text": "local_64.base.base.count = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -0x14);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 58,
-      "match": "(UIntegerFloat *)((int)g_CoronaFacePrimitives",
-      "severity": "moderate",
-      "text": "*(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -0x10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 60,
-      "match": "(UIntegerFloat *)((int)g_CoronaFacePrimitives",
-      "severity": "moderate",
-      "text": "*(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 62,
-      "match": "(UIntegerFloat *)((int)g_CoronaFacePrimitives",
-      "severity": "moderate",
-      "text": "*(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 64,
-      "match": "(int *)((int)g_CoronaFacePrimitives",
-      "severity": "moderate",
-      "text": "local_64.vertices[0] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 65,
-      "match": "(int *)((int)g_CoronaFacePrimitives",
-      "severity": "moderate",
-      "text": "local_64.vertices[1] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(int *)((int)g_CoronaFacePrimitives",
-      "severity": "moderate",
-      "text": "local_64.vertices[2] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 67,
-      "match": "(int *)((int)g_CoronaFacePrimitives",
-      "severity": "moderate",
-      "text": "local_64.vertices[3] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 70,
-      "match": "(int *)((int)g_CoronaFacePrimitives",
-      "severity": "moderate",
-      "text": "(int)ROUND(ROUND((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar3) *",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

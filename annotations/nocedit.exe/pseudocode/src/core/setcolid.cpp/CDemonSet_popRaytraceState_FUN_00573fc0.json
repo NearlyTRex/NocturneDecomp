@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 143,
-    "complexity_score": 83,
+    "complexity_score": 68,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 37,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 68,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 211
   },
   "cross_references": [
@@ -283,7 +281,7 @@
     },
     {
       "addr": "03346a8c",
-      "name": "g_RaytraceStateStack[0].saved_collision_triangle_index",
+      "name": "g_RaytraceStateStack[0].saved_collision_bone_index",
       "type": "undefined4",
       "value": null
     }
@@ -412,14 +410,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 20,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "this_ptr->laser_type = g_RaytraceStateStack[iVar5].laser_type;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

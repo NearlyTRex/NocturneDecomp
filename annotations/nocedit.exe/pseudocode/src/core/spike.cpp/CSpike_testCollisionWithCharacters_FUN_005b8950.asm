@@ -9,7 +9,7 @@
 ; CVector3f[8]     Stack[-0x1cc]:96  aCStack_1cc
 ; SDamageInfo      Stack[-0x16c]:60  SStack_16c
 ; SCollisionInfo   Stack[-0x130]:40  SStack_130
-; CVector3f[2]     Stack[-0x108]:24  aCStack_108
+; SActorRayHit     Stack[-0x108]:28  aCStack_108
 ; CBoundingBox3D   Stack[-0xec]:24  local_ec
 ; CBoundingBox3D   Stack[-0xd4]:24  CStack_d4
 ; CVector3f        Stack[-0xbc]:12  CStack_bc
@@ -342,7 +342,7 @@ section .text
     PUSH EAX                            ; 005b8d27
     PUSH EBX                            ; 005b8d28
     CALL core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 ; 005b8d29
-        ;   XREF to: 00409470 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_hit_normal, ...)
+        ;   XREF to: 00409470 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, SActorRayHit * out_hit, ...)
     MOV dword ptr [ESP + 0x1dc],EAX     ; 005b8d2e
     FLD float ptr [ESP + 0x1dc]         ; 005b8d35
     ADD ESP,0x1c                        ; 005b8d3c

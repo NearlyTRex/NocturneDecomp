@@ -8,14 +8,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2368,
-    "complexity_score": 1082,
+    "complexity_score": 1097,
     "cross_reference_count": 0,
     "function_call_count": 40,
     "global_count": 71,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1052,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "self_copy_guard",
       "unrolled_strcpy",
       "warning_inlined_function"
     ],
@@ -2232,6 +2233,14 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_c0 != &local_120)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 722,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&local_c0 != &local_120) {",
+      "type": "self_copy_guard"
     }
   ],
   "vtable_info": {

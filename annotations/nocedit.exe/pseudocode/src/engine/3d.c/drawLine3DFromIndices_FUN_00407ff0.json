@@ -126,12 +126,21 @@
       "type": "stack_ref"
     },
     {
-      "description": "Watcom field-by-field struct copy (12 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 66,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "vertex1.projected_vertex.transformed_y = local_68.projected_vertex.transformed_y;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 72,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "vertex1.u = local_68.u;",
       "type": "unrolled_memcpy"
     }
   ],

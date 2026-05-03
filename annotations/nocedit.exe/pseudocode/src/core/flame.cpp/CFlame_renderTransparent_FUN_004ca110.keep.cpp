@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_ptr)
 
 {
@@ -39,7 +37,6 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
   CVector3i CStack_40;
   CVector3i CStack_34;
   CVector3i CStack_28;
-  float fStack_1c;
   int iStack_18;
   int fStack_10;
   CDemonRenderer *this_ptr_00;
@@ -116,7 +113,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
                     (g_CurrentSceneCamera,&(this_ptr->base).location.position,
                      (SProjectedVertex *)0x0);
           g_RenderVertexBuffer[0].a = 0xffff - g_PerspectiveReciprocal;
-          if (fStack_1c == 4.2039e-45) {
+          if (this_ptr->which_flame == 3) {
             g_RenderVertexBuffer[0].a = g_RenderVertexBuffer[0].a / 2;
           }
           if (this_ptr->which_flame == 4) {
@@ -137,22 +134,24 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
           g_RenderVertexBuffer[3].r = 0xffff;
           g_RenderVertexBuffer[3].g = 0xffff;
           g_RenderVertexBuffer[3].b = 0xffff;
+          // UV coordinates in 16.16 fixed-point texel space: 8 and 248
+          // (a 1-texel inset from each edge of a 256x256 texture).
           if (this_ptr->texture_flip == 0) {
-            g_RenderVertexBuffer[0].u = 0x80000;
-            g_RenderVertexBuffer[1].u = 0x80000;
-            g_RenderVertexBuffer[2].u = 0xf80000;
-            g_RenderVertexBuffer[3].u = 0xf80000;
+            g_RenderVertexBuffer[0].u = 8 << 16;
+            g_RenderVertexBuffer[1].u = 8 << 16;
+            g_RenderVertexBuffer[2].u = 248 << 16;
+            g_RenderVertexBuffer[3].u = 248 << 16;
           }
           else {
-            g_RenderVertexBuffer[0].u = 0xf80000;
-            g_RenderVertexBuffer[1].u = 0xf80000;
-            g_RenderVertexBuffer[2].u = 0x80000;
-            g_RenderVertexBuffer[3].u = 0x80000;
+            g_RenderVertexBuffer[0].u = 248 << 16;
+            g_RenderVertexBuffer[1].u = 248 << 16;
+            g_RenderVertexBuffer[2].u = 8 << 16;
+            g_RenderVertexBuffer[3].u = 8 << 16;
           }
-          g_RenderVertexBuffer[3].v = 0xf80000;
-          g_RenderVertexBuffer[2].v = 0x80000;
-          g_RenderVertexBuffer[1].v = 0x80000;
-          g_RenderVertexBuffer[0].v = 0xf80000;
+          g_RenderVertexBuffer[3].v = 248 << 16;
+          g_RenderVertexBuffer[2].v = 8 << 16;
+          g_RenderVertexBuffer[1].v = 8 << 16;
+          g_RenderVertexBuffer[0].v = 248 << 16;
           g_RenderVertexBuffer[1].a = g_RenderVertexBuffer[0].a;
           g_RenderVertexBuffer[2].a = g_RenderVertexBuffer[0].a;
           g_RenderVertexBuffer[3].a = g_RenderVertexBuffer[0].a;
@@ -238,14 +237,16 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
       this_ptr_00->vertex_buffer_ptr[1].a = 0x4000;
       this_ptr_00->vertex_buffer_ptr[2].a = 0x4000;
       this_ptr_00->vertex_buffer_ptr[3].a = 0x4000;
-      this_ptr_00->vertex_buffer_ptr->u = 0x80000;
-      this_ptr_00->vertex_buffer_ptr->v = 0xf80000;
-      this_ptr_00->vertex_buffer_ptr[1].u = 0xf80000;
-      this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;
-      this_ptr_00->vertex_buffer_ptr[2].u = 0xf80000;
-      this_ptr_00->vertex_buffer_ptr[2].v = 0x80000;
-      this_ptr_00->vertex_buffer_ptr[3].u = 0x80000;
-      this_ptr_00->vertex_buffer_ptr[3].v = 0x80000;
+      // UV coordinates in 16.16 fixed-point texel space: 8 and 248 (a
+      // 1-texel inset from each edge of a 256x256 texture).
+      this_ptr_00->vertex_buffer_ptr->u = 8 << 16;
+      this_ptr_00->vertex_buffer_ptr->v = 248 << 16;
+      this_ptr_00->vertex_buffer_ptr[1].u = 248 << 16;
+      this_ptr_00->vertex_buffer_ptr[1].v = 248 << 16;
+      this_ptr_00->vertex_buffer_ptr[2].u = 248 << 16;
+      this_ptr_00->vertex_buffer_ptr[2].v = 8 << 16;
+      this_ptr_00->vertex_buffer_ptr[3].u = 8 << 16;
+      this_ptr_00->vertex_buffer_ptr[3].v = 8 << 16;
       local_144.base.base.count = 4;
       local_144.base.surface_normal.A.i = 0;
       local_144.base.surface_normal.B.i = 0;

@@ -7,14 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 332,
-    "complexity_score": 171,
+    "complexity_score": 186,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 141,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "pointer_cast",
       "stack_alignment_array",
       "warning_inlined_function"
     ],
@@ -366,6 +367,14 @@
       "severity": "moderate",
       "text": "int aiStackY_106c [1001];",
       "type": "stack_alignment_array"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 65,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "piVar10 = (int *)((int)&this_ptr->vertices->x + local_1c);",
+      "type": "pointer_cast"
     }
   ]
 }

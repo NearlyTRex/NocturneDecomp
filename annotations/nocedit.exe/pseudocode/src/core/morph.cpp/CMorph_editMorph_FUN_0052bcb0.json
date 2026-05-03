@@ -906,6 +906,15 @@
       "severity": "moderate",
       "text": "((CDeformableModelInstance *)&stack0xffffb248,0);",
       "type": "stack_ref"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 160,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pfVar10 = (float *)((int)&local_4a8[0].position[0].x + local_48);",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {

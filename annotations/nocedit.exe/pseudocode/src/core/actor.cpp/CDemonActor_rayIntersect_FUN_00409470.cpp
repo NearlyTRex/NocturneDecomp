@@ -2,11 +2,11 @@
 // Address: 00409470
 // Address Range: [[00409470, 0040983a]]
 // Convention: __cdecl
-// Signature: float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_hit_normal,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox)
+// Signature: float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox)
 
 #include "nocturne.h"
 
-float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_hit_normal,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox)
+float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox)
 
 {
   int iVar2;
@@ -96,11 +96,11 @@ LAB_004095c9:
   if ((local_a0 < 0.0) || (1.0 < local_a0)) {
     return 2.0;
   }
-  out_hit_normal[1].y = -NAN;
-  out_hit_normal[1].z = -NAN;
-  out_hit_normal[2].x = -NAN;
+  out_hit->lod_index = -1;
+  out_hit->triangle_index = -1;
+  out_hit->bone_index = -1;
   pCVar1 = g_CDemonSetPtr;
-  out_hit_normal[1].x = -NAN;
+  out_hit->part_index = -1;
   if (pCVar1->skip_exact_collisions == 0) {
     frame_index = collision_info->deformable_model;
     if (frame_index == (CDeformableModelInstance *)0x0) {
@@ -131,17 +131,17 @@ LAB_004095c9:
       if (1.0 < local_a0) {
         return 2.0;
       }
-      out_hit_normal[1].x = (float)g_DeformableModelRayHitPartIndex;
-      out_hit_normal[1].y = (float)g_DeformableModelRayHitLodIndex;
+      out_hit->part_index = g_DeformableModelRayHitPartIndex;
+      out_hit->lod_index = g_DeformableModelRayHitLodIndex;
       triangle_index = g_DeformableModelRayHitTriangleIndex;
       lod_level = g_DeformableModelRayHitLodIndex;
-      out_hit_normal[1].z = (float)g_DeformableModelRayHitTriangleIndex;
+      out_hit->triangle_index = g_DeformableModelRayHitTriangleIndex;
       local_3c.z = local_a0;
       this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
                               (collision_info->deformable_model);
-      fVar4 = (float)core_skeleton_cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0
+      fVar4 = (float)core_skeleton_cpp_CDeformableModel_findMaxWeightBone_FUN_0059dca0
                                (this_ptr_02,lod_level,triangle_index);
-      out_hit_normal[2].x = fVar4;
+      out_hit->bone_index = (int)fVar4;
       if ((int *)&stack0x00000000 != g_DeformableModelPool[0].vertex_count + 3) {
         local_54.y = g_DeformableModelRayHitNormal.x;
         local_54.z = g_DeformableModelRayHitNormal.y;
@@ -150,10 +150,10 @@ LAB_004095c9:
     }
   }
   pCVar3 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(this_ptr,&CStack_24,&local_30);
-  if (out_hit_normal != pCVar3) {
-    out_hit_normal->x = pCVar3->x;
-    out_hit_normal->y = pCVar3->y;
-    out_hit_normal->z = pCVar3->z;
+  if (out_hit != (SActorRayHit *)pCVar3) {
+    (out_hit->normal).x = pCVar3->x;
+    (out_hit->normal).y = pCVar3->y;
+    (out_hit->normal).z = pCVar3->z;
   }
   return local_a0;
 }

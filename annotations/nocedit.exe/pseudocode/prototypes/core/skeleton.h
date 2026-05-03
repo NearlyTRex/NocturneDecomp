@@ -187,9 +187,9 @@ void __cdecl CDeformableModel::computeBoneBoundsAndFlags(CDeformableModel *this_
 // Address: 0059dbe0
 void __cdecl CDeformableModel::computeFarthestChildBones(CDeformableModel *this_ptr);
 
-// Original: core_skeleton.cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0
+// Original: core_skeleton.cpp_CDeformableModel_findMaxWeightBone_FUN_0059dca0
 // Address: 0059dca0
-int __cdecl CDeformableModel::findMinWeightBone(CDeformableModel *this_ptr,int lod_level,int triangle_index);
+int __cdecl CDeformableModel::findMaxWeightBone(CDeformableModel *this_ptr,int lod_level,int triangle_index);
 
 // Original: core_skeleton.cpp_CDeformableModel_calculateMemorySize_FUN_0059dd60
 // Address: 0059dd60

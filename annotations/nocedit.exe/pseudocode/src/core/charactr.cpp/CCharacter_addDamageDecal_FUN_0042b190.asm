@@ -46,7 +46,7 @@
 ;   undefined4 g_CDemonSetInstance.collision_impact_position.y
 ;   undefined4 g_CDemonSetInstance.collision_impact_position.z
 ;   undefined4 g_CDemonSetInstance.collision_part_index
-;   undefined4 g_CDemonSetInstance.collision_triangle_index
+;   undefined4 g_CDemonSetInstance.collision_bone_index
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc10
@@ -90,7 +90,7 @@ section .text
     ADD EDX,EAX                         ; 0042b1e5
     MOV EAX,dword ptr [ECX + 0x14d148]  ; 0042b1e7 | g_CDemonSetInstance.collision_part_index
     MOV dword ptr [EDX],EAX             ; 0042b1ed
-    MOV EAX,dword ptr [ECX + 0x14d14c]  ; 0042b1ef | g_CDemonSetInstance.collision_triangle_index
+    MOV EAX,dword ptr [ECX + 0x14d14c]  ; 0042b1ef | g_CDemonSetInstance.collision_bone_index
     MOV dword ptr [ESP + 0x2d8],EDX     ; 0042b1f5
     MOV dword ptr [EDX + 0x4],EAX       ; 0042b1fc
     TEST EAX,EAX                        ; 0042b1ff

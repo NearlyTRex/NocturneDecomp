@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 222,
-    "complexity_score": 139,
+    "complexity_score": 149,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 94,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -302,6 +302,14 @@
       "match": "(int *)((int)g_SimFrameHistory",
       "severity": "moderate",
       "text": "*(int *)((int)g_SimFrameHistory[0].player_input + iVar5 + -0xc)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 32,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "severity": "moderate",
+      "text": "(this_ptr,(SSimFrame *)",
       "type": "pointer_cast"
     }
   ]

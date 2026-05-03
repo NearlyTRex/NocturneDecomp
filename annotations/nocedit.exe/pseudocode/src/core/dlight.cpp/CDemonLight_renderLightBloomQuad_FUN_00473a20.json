@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 389,
-    "complexity_score": 216,
+    "complexity_score": 231,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 141,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "raw_address_constant",
+      "self_copy_guard",
       "stack_alignment_array",
       "warning_inlined_function"
     ],
@@ -490,6 +491,14 @@
       "severity": "moderate",
       "text": "this_ptr_00->vertex_buffer_ptr[3].u = 0xf80000;",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_58 != &local_a0)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 57,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&local_58 != &local_a0) {",
+      "type": "self_copy_guard"
     }
   ]
 }

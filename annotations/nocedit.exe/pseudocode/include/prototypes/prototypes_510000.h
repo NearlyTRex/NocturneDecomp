@@ -20,7 +20,7 @@
 // FUNCTION PROTOTYPES - Range 0x510000
 // =============================================================================
 
-int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position, int spacing_flag);
+int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,int spacing_flag);
 void __cdecl core_menu_cpp_showJoystickCalibrationScreen_FUN_00510410(char *instruction_text,char *message_text);
 int __cdecl core_menu_cpp_calibrateGamepad_FUN_005104d0(void);
 void __cdecl core_menu_cpp_adjustMouseSensitivity_FUN_005107c0(int *sensitivity_value_ptr,char *window_title);
@@ -40,12 +40,12 @@ int __cdecl core_menu_cpp_getSinglePressedKey_FUN_00513860(void);
 void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_005138e0(void);
 CAlphaBitmap * __cdecl core_menu_cpp_CAlphaBitmap_arrdtor_FUN_00514f50(CAlphaBitmap *objs,uint flags);
 void __cdecl shape_meshlod_cpp_staticInit_FUN_00514f70(void);
-CVector3f * __cdecl shape_meshlod_cpp_computeClosestPointOnEdge_FUN_00514f90(CVector3f *out_closest_point,CVector3f *query_point,CVector3f *edge_vertex_0, CVector3f *edge_vertex_1);
+CVector3f * __cdecl shape_meshlod_cpp_computeClosestPointOnEdge_FUN_00514f90(CVector3f *out_closest_point,CVector3f *query_point,CVector3f *edge_vertex_0,CVector3f *edge_vertex_1);
 double __cdecl shape_meshlod_cpp_computeDistanceSquaredToEdge_FUN_00515110(CVector3f *query_point,CVector3f *edge_vertex_0,CVector3f *edge_vertex_1);
 void __cdecl shape_meshlod_cpp_skipLines_FUN_00515160(_FILE *file_handle,int line_count);
 int __cdecl shape_meshlod_cpp_initializeLogDirectory_FUN_00515190(void);
 int __cdecl shape_meshlod_cpp_CLodFace_containsEdge_FUN_005151c0(CLodFace *this_ptr,int edge_index);
-void __cdecl shape_meshlod_cpp_fitLeastSquaresPlane_FUN_005151e0(int point_count,CVector3f *positions,float *values,CVector3f *normal, CVector3f *out_gradient,float *out_offset);
+void __cdecl shape_meshlod_cpp_fitLeastSquaresPlane_FUN_005151e0(int point_count,CVector3f *positions,float *values,CVector3f *normal,CVector3f *out_gradient,float *out_offset);
 CLodMesh * __cdecl shape_meshlod_cpp_CLodMesh_ctor_FUN_00515840(CLodMesh *this_ptr);
 CLodMesh * __cdecl shape_meshlod_cpp_CLodMesh_copy_FUN_00515860(CLodMesh *this_ptr,CLodMesh *other);
 void __cdecl shape_meshlod_cpp_CLodMesh_init_FUN_00515880(CLodMesh *this_ptr);
@@ -78,7 +78,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_createNextLOD_FUN_00516f50(CLodMesh *thi
 void __cdecl shape_meshlod_cpp_CLodMesh_createOrigSamplePoints_FUN_00517000(CLodMesh *this_ptr);
 CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_computeVertexNormal_FUN_005172c0(CLodMesh *this_ptr,CVector3f *out_normal,int vertex_index);
 void __cdecl shape_meshlod_cpp_CLodMesh_replayLodGeneration_FUN_005173f0(CLodMesh *this_ptr);
-void __cdecl shape_meshlod_cpp_CLodMesh_extractFaceTexCoordGradient_FUN_00517530(CLodMesh *this_ptr,int tri_index,int corner_idx,CVector3f *out_gradient, float *out_offset);
+void __cdecl shape_meshlod_cpp_CLodMesh_extractFaceTexCoordGradient_FUN_00517530(CLodMesh *this_ptr,int tri_index,int corner_idx,CVector3f *out_gradient,float *out_offset);
 void __cdecl shape_meshlod_cpp_CLodMesh_collapseEdge_FUN_00517630(CLodMesh *this_ptr,int vertex_idx_1,int vertex_idx_2,float collapse_weight);
 void __cdecl shape_meshlod_cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300(CLodMesh *this_ptr,int sample_point_index);
 int __cdecl shape_meshlod_cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0(CLodMesh *this_ptr,int tri_index,int edge_index);
@@ -92,7 +92,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_findMinimumCostEdge_FUN_00519680(CLodMesh
 void __cdecl shape_meshlod_cpp_CLodMesh_computeAllEdgeCollapseCosts_FUN_00519710(CLodMesh *this_ptr);
 void __cdecl shape_meshlod_cpp_CLodMesh_validateAndRemoveInvalidFaces_FUN_005197c0(CLodMesh *this_ptr);
 int __cdecl shape_meshlod_cpp_CLodMesh_validateFace_FUN_00519830(CLodMesh *this_ptr,CLodFace *face);
-int __cdecl shape_meshlod_cpp_CLodFace_computeNormalAndPlane_FUN_00519870(CLodFace *this_ptr,CVector3f *vertex0_pos,CVector3f *vertex1_pos, CVector3f *vertex2_pos);
+int __cdecl shape_meshlod_cpp_CLodFace_computeNormalAndPlane_FUN_00519870(CLodFace *this_ptr,CVector3f *vertex0_pos,CVector3f *vertex1_pos,CVector3f *vertex2_pos);
 void __cdecl shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50(CLodMesh *this_ptr);
 void __cdecl shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030(CLodMesh *this_ptr,int grid_x,int grid_y,int grid_z);
 void __cdecl shape_meshlod_cpp_CLodMesh_weldVertices_FUN_0051a150(CLodMesh *this_ptr,float weld_threshold);

@@ -48,7 +48,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470",
-    "signature": "float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_hit_normal,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox)"
+    "signature": "float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,SActorRayHit *out_hit,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox)"
   },
   "function_calls": [
     {
@@ -109,7 +109,7 @@
     {
       "addr": "0059dca0",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0"
+      "name": "core_skeleton.cpp_CDeformableModel_findMaxWeightBone_FUN_0059dca0"
     },
     {
       "addr": "005a07a0",
@@ -387,10 +387,10 @@
       },
       {
         "is_param": true,
-        "name": "out_hit_normal",
+        "name": "out_hit",
         "offset": 16,
         "size": 4,
-        "type": "CVector3f *"
+        "type": "SActorRayHit *"
       },
       {
         "is_param": true,

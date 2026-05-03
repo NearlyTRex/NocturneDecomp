@@ -85,6 +85,7 @@ SUSPECT_SEVERITY = {
     'fast_sqrt_inline': 'moderate',
     'fast_inv_sqrt_inline': 'moderate',
     'bitcast_double_pair': 'moderate',
+    'self_copy_guard': 'moderate',
 }
 
 
@@ -1239,10 +1240,15 @@ def identify_unrolled_field_copy(decompiled_code):
 
     Detection requires:
     - At least MIN_RUN consecutive lines matching `_FIELD_COPY_RE`.
-    - All lines in the run share the same root identifier on the LHS and
-      the same root identifier on the RHS (so unrelated structs that
-      happen to share field names don't get merged into one false-positive
-      run).
+    - All lines in the run share the same LHS *prefix path* (everything
+      before `.field`) and the same RHS prefix path. Whitespace inside
+      the prefixes is collapsed before comparison so cosmetic differences
+      don't split a run, but content-level differences do.
+      - Two consecutive top-level field copies (`dst.a = src.a; dst.b = src.b;`)
+        followed by three sub-struct copies (`dst.sub.r = src.sub.r; ...`)
+        form two separate runs — they target different parent paths, so
+        flagging them as one struct copy would be a partial-copy false
+        positive (§17 forbids collapsing partial copies).
     - Each field name in the run is distinct (a 4-line repeat of the same
       field is a different bug, not a struct copy).
 
@@ -1260,9 +1266,9 @@ def identify_unrolled_field_copy(decompiled_code):
     n = len(lines)
     MIN_RUN = 4
 
-    def root_of(expr):
-        m = _ROOT_IDENT_RE.match(expr)
-        return m.group(1) if m else None
+    def normalize(expr):
+        """Collapse whitespace so cosmetic differences don't split a run."""
+        return re.sub(r'\s+', '', expr)
 
     i = 0
     while i < n:
@@ -1270,9 +1276,9 @@ def identify_unrolled_field_copy(decompiled_code):
         if not m:
             i += 1
             continue
-        lhs_root = root_of(m.group(1))
-        rhs_root = root_of(m.group(3))
-        if not lhs_root or not rhs_root:
+        lhs_prefix = normalize(m.group(1))
+        rhs_prefix = normalize(m.group(3))
+        if not lhs_prefix or not rhs_prefix:
             i += 1
             continue
         seen_fields = {m.group(2)}
@@ -1281,8 +1287,8 @@ def identify_unrolled_field_copy(decompiled_code):
             mj = _FIELD_COPY_RE.match(lines[j])
             if not mj:
                 break
-            if (root_of(mj.group(1)) != lhs_root or
-                    root_of(mj.group(3)) != rhs_root):
+            if (normalize(mj.group(1)) != lhs_prefix or
+                    normalize(mj.group(3)) != rhs_prefix):
                 break
             seen_fields.add(mj.group(2))
             j += 1
@@ -1303,6 +1309,209 @@ def identify_unrolled_field_copy(decompiled_code):
             i = j
         else:
             i += 1
+    return suspects
+
+
+# Self-copy guard: an `if (&LOCAL_A != &LOCAL_B) { LOCAL_A = LOCAL_B; ... }`
+# block where both sides are bare addresses of stack locals. Watcom emitted
+# this when the source code wrote `if (&dst != &src) dst = src;` to guard a
+# small struct copy against self-assignment, and the compiler unrolled the
+# struct copy into N typed assignments. In our build, both addresses are
+# always-different stack slots, so the guard is dead and the body always
+# fires. Replace with the unguarded copy in a .keep.
+#
+# Tightly anchored to the bare-`&NAME` form on both sides — when one side
+# has a cast (`(CLocation *)&local`) or is a pointer parameter (no `&`),
+# the guard might be a real defense against caller-aliased pointers, so we
+# leave those alone.
+_SELF_COPY_GUARD_IF_RE = re.compile(
+    r"^\s*if\s*\(\s*&(\w+)\s*!=\s*&(\w+)\s*\)\s*\{?\s*$")
+_SELF_COPY_FIRST_ASSIGN_RE = re.compile(
+    r"^\s*(\w+)\s*=\s*(\w+)\s*;\s*$")
+
+
+def identify_self_copy_guard(decompiled_code):
+    """Detect Watcom-emitted dead self-copy guards.
+
+    Canonical shape:
+        if (&local_58 != &local_d0) {
+            local_58 = local_d0;
+            local_54 = local_cc;
+            local_50 = local_c8;
+        }
+
+    Both sides of the if-condition are bare addresses of stack locals, so
+    the comparison is always-true at runtime (different stack slots). The
+    body unrolls a small struct copy. The guard adds noise without any
+    semantic effect. Drop the if-wrapper in a .keep so the body becomes
+    an unconditional copy.
+
+    Detection requires:
+    - The if-line matches `if (&NAME_A != &NAME_B)` with NAME_A != NAME_B.
+    - The first body line matches `NAME_A = NAME_B;` (so we know the if
+      really guards a copy from B to A, not some unrelated branch).
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts, located at the `if` line.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    lines = decompiled_code.split('\n')
+    n = len(lines)
+    for i in range(n - 1):
+        m = _SELF_COPY_GUARD_IF_RE.match(lines[i])
+        if not m:
+            continue
+        a, b = m.group(1), m.group(2)
+        if a == b:
+            continue
+        # Find the next non-blank line and check it's `a = b;`.
+        j = i + 1
+        while j < n and lines[j].strip() == '':
+            j += 1
+        if j >= n:
+            continue
+        am = _SELF_COPY_FIRST_ASSIGN_RE.match(lines[j])
+        if not am or am.group(1) != a or am.group(2) != b:
+            continue
+        suspects.append({
+            'line': i + 1,
+            'type': 'self_copy_guard',
+            'match': 'if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }',
+            'text': lines[i].strip()[:120],
+            'description': (
+                'Watcom dead self-copy guard: `if (&%s != &%s)` wraps an '
+                'unconditional struct copy. Both addresses are stack '
+                'locals — always different — so the guard never skips. '
+                'Drop the if-wrapper in a .keep.' % (a, b)),
+            'severity': 'moderate',
+        })
+    return suspects
+
+
+# Multi-line variant of the `pointer_cast` regex. The single-line detector
+# in `identify_suspect_lines` iterates per-line, so it misses cases where
+# Ghidra split `(TYPE *)` onto one line and the `((int)NAME ...)` operand
+# onto the next — a common shape on long deep-struct paths. Same regex
+# body as the single-line version, applied to the full text.
+_POINTER_CAST_FULLTEXT_RE = re.compile(
+    r'\(\w+(?:\s+\w+)*\s*\*+\s*\)\s*\([^)]*\(int\)\s*\w+(?!\w|\s*\()')
+
+
+def identify_pointer_cast_multiline(decompiled_code):
+    """Catch `(TYPE *) ... (int)NAME ...` casts that wrap across lines.
+
+    The single-line `pointer_cast` regex in `identify_suspect_lines` iterates
+    `code.split('\\n')` and so misses casts that Ghidra split because the
+    original line was too long. We re-scan the full text and emit only
+    matches that span a newline (single-line ones are already handled).
+
+    Same semantic as `pointer_cast` (byte-offset arithmetic where struct
+    field access would be clearer), so we emit the same suspect type.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts, located at the first line of the match.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    # Build line-start offsets for offset → line-number mapping.
+    line_starts = [0]
+    for i, ch in enumerate(decompiled_code):
+        if ch == '\n':
+            line_starts.append(i + 1)
+
+    for m in _POINTER_CAST_FULLTEXT_RE.finditer(decompiled_code):
+        # Skip single-line matches — those are already handled by the
+        # per-line regex pass in identify_suspect_lines.
+        if '\n' not in decompiled_code[m.start():m.end()]:
+            continue
+        # Locate the line where the match starts.
+        line_no = 1
+        for i, start in enumerate(line_starts):
+            if start > m.start():
+                line_no = i
+                break
+        else:
+            line_no = len(line_starts)
+        line_start = line_starts[line_no - 1]
+        line_end = decompiled_code.find('\n', line_start)
+        if line_end == -1:
+            line_end = len(decompiled_code)
+        text = decompiled_code[line_start:line_end].strip()
+        suspects.append({
+            'line': line_no,
+            'type': 'pointer_cast',
+            'match': '(TYPE *) ((int)NAME ...) split across lines',
+            'text': text[:120],
+            'description': (
+                'Pointer cast wraps onto the next line — same byte-offset '
+                'trampolining as single-line `pointer_cast`, just split by '
+                'Ghidra. Replace with indexed/named field access in a .keep.'),
+            'severity': 'moderate',
+        })
+    return suspects
+
+
+# `(int)&NAME` used in arithmetic. Watcom emits this when struct/local
+# addresses are converted to int and used in byte-offset math — almost
+# always a sign that the original source did struct field access by name
+# and the decompiler re-expressed it as raw offset arithmetic. Restricted
+# to arithmetic context (followed/preceded by `+` or `-`) so legitimate
+# `(int)&local` conversions used as int arguments aren't flagged.
+_INT_ADDR_ARITH_RE = re.compile(
+    r'\(int\)\s*&[\w\.\[\]\->]+\s*[\+\-]'      # (int)&NAME +/- ...
+    r'|'
+    r'[\+\-]\s*\(int\)\s*&[\w\.\[\]\->]+'      # ... +/- (int)&NAME
+)
+
+
+def identify_int_address_arithmetic(decompiled_code):
+    """Detect `(int)&NAME +/- N` byte-offset arithmetic on addresses.
+
+    Watcom converts struct/local addresses to int and uses them in byte
+    arithmetic when the original source called struct field access by name.
+    The decompiler keeps the byte-offset form, which obscures intent. The
+    arithmetic context (`+` / `-`) distinguishes this from legitimate
+    `(int)&local` casts passed to int-taking APIs.
+
+    Same fix as other `pointer_cast` variants — replace with indexed or
+    named field access. Same suspect type emitted.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    for line_no, line in enumerate(decompiled_code.split('\n'), 1):
+        stripped = line.lstrip()
+        if (stripped.startswith('//') or stripped.startswith('/*') or
+                stripped.startswith('*')):
+            continue
+        for m in _INT_ADDR_ARITH_RE.finditer(line):
+            suspects.append({
+                'line': line_no,
+                'type': 'pointer_cast',
+                'match': '(int)&NAME used in byte-offset arithmetic',
+                'text': line.strip()[:120],
+                'description': (
+                    '(int)&NAME used in arithmetic — Watcom byte-offset '
+                    'trampolining that should be expressed as struct field '
+                    'or array index access. Replace in a .keep.'),
+                'severity': 'moderate',
+            })
+            break  # one flag per line is enough
     return suspects
 
 
@@ -2168,6 +2377,9 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_unrolled_memcpy_loops(code))
     found.extend(identify_unrolled_memcpy_dword_byte_split(code))
     found.extend(identify_unrolled_field_copy(code))
+    found.extend(identify_self_copy_guard(code))
+    found.extend(identify_pointer_cast_multiline(code))
+    found.extend(identify_int_address_arithmetic(code))
     found.extend(identify_unrolled_strlen_loops(code))
     found.extend(identify_unrolled_strcat_loops(code))
     found.extend(identify_unrolled_strchr_loops(code))

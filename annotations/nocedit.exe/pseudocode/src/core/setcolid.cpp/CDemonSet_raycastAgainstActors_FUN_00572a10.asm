@@ -11,9 +11,7 @@
 ; float            Stack[0x14]:4   max_t
 ; Local Variables:
 ; SCollisionInfo   Stack[-0xcc]:40  local_cc
-; CVector3f        Stack[-0xa4]:12  CStack_a4
-; int              Stack[-0x98]:4  iStack_98
-; int              Stack[-0x8c]:4  iStack_8c
+; SActorRayHit     Stack[-0xa4]:28  CStack_a4
 ; CBoundingBox3D   Stack[-0x88]:24  local_88
 ; float            Stack[-0x70]:4  local_70
 ; float            Stack[-0x6c]:4  local_6c
@@ -258,7 +256,7 @@ section .text
     PUSH EBX                            ; 00572c8c
     PUSH ESI                            ; 00572c8d
     CALL core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 ; 00572c8e
-        ;   XREF to: 00409470 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_hit_normal, ...)
+        ;   XREF to: 00409470 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, SActorRayHit * out_hit, ...)
     MOV dword ptr [ESP + 0xd8],EAX      ; 00572c93
     FLD float ptr [ESP + 0xd8]          ; 00572c9a
     ADD ESP,0x1c                        ; 00572ca1

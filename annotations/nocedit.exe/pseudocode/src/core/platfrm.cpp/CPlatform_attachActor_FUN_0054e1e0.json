@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 134,
-    "complexity_score": 77,
+    "complexity_score": 97,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 62,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
       "unrolled_memcpy"
     ],
@@ -201,11 +201,27 @@
   },
   "suspects": [
     {
-      "description": "Watcom field-by-field struct copy (12 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 36,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar6->attach_actors[0].matrix.m[0].w = local_70.m[0].w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 40,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar6->attach_actors[0].matrix.m[1].w = local_70.m[1].w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 44,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar6->attach_actors[0].matrix.m[2].w = local_70.m[2].w;",
       "type": "unrolled_memcpy"
     }
   ]

@@ -8792,11 +8792,11 @@ static_assert(__builtin_offsetof(SMRGLHeaderBasic, type) == 0,
 static_assert(__builtin_offsetof(SMRGLHeaderBasic, count) == 4,
               "offsetof(SMRGLHeaderBasic, count) != 4");
 
-// ---- SMRGLHeaderBasicTypeOnly (4 bytes) ----
-static_assert(sizeof(SMRGLHeaderBasicTypeOnly) == 4,
-              "sizeof(SMRGLHeaderBasicTypeOnly) != 4");
-static_assert(__builtin_offsetof(SMRGLHeaderBasicTypeOnly, type) == 0,
-              "offsetof(SMRGLHeaderBasicTypeOnly, type) != 0");
+// ---- SMRGLHeaderBasicCountOnly (4 bytes) ----
+static_assert(sizeof(SMRGLHeaderBasicCountOnly) == 4,
+              "sizeof(SMRGLHeaderBasicCountOnly) != 4");
+static_assert(__builtin_offsetof(SMRGLHeaderBasicCountOnly, count) == 0,
+              "offsetof(SMRGLHeaderBasicCountOnly, count) != 0");
 
 // ---- SMRGLHeaderExtended (12 bytes) ----
 static_assert(sizeof(SMRGLHeaderExtended) == 12,

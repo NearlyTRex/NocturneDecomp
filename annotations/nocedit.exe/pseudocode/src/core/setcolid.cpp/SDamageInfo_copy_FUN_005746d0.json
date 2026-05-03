@@ -88,11 +88,11 @@
   },
   "suspects": [
     {
-      "description": "Watcom field-by-field struct copy (15 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 5,
+      "description": "Watcom field-by-field struct copy (5 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 15,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "this_ptr->hit_part_index = other->hit_part_index;",
+      "text": "this_ptr->ammo_type = other->ammo_type;",
       "type": "unrolled_memcpy"
     }
   ],

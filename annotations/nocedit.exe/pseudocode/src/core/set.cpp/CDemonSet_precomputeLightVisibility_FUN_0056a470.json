@@ -369,6 +369,24 @@
       "severity": "moderate",
       "text": "((char *)(*(int *)((int)g_MasterLightList + iVar6) + 0x40),",
       "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 136,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((int)&this_ptr->lights[local_14].camera_light_bounds[0].right + local_40) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 138,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((int)&this_ptr->lights[local_14].camera_light_bounds[0].bottom + local_40) = 0;",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {

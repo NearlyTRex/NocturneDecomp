@@ -3621,6 +3621,10 @@
       "type":"struct"
     },
     {
+      "name":"SActorRayHit",
+      "type":"struct"
+    },
+    {
       "name":"SActorVarBlock",
       "type":"struct"
     },
@@ -4033,7 +4037,7 @@
       "type":"struct"
     },
     {
-      "name":"SMRGLHeaderBasicTypeOnly",
+      "name":"SMRGLHeaderBasicCountOnly",
       "type":"struct"
     },
     {
@@ -33002,7 +33006,7 @@
         },
         {
           "len":4,
-          "name":"collision_triangle_index",
+          "name":"collision_bone_index",
           "offset":1364300,
           "type":"int"
         },
@@ -52841,6 +52845,48 @@
       "desc":"",
       "fields":[
         {
+          "len":12,
+          "name":"normal",
+          "offset":0,
+          "type":"CVector3f"
+        },
+        {
+          "len":4,
+          "name":"part_index",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"lod_index",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"triangle_index",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"bone_index",
+          "offset":24,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":28,
+      "name":"SActorRayHit",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":4,
           "name":"count",
           "offset":0,
@@ -57732,14 +57778,14 @@
       "fields":[
         {
           "len":4,
-          "name":"type",
+          "name":"count",
           "offset":0,
           "type":"int"
         }
       ],
       "importable":true,
       "len":4,
-      "name":"SMRGLHeaderBasicTypeOnly",
+      "name":"SMRGLHeaderBasicCountOnly",
       "pack":false,
       "type":"struct"
     },
@@ -57872,7 +57918,7 @@
           "len":4,
           "name":"base",
           "offset":0,
-          "type":"SMRGLHeaderBasicTypeOnly"
+          "type":"SMRGLHeaderBasicCountOnly"
         },
         {
           "len":16,
@@ -59604,7 +59650,7 @@
         },
         {
           "len":4,
-          "name":"saved_collision_triangle_index",
+          "name":"saved_collision_bone_index",
           "offset":156,
           "type":"int"
         }

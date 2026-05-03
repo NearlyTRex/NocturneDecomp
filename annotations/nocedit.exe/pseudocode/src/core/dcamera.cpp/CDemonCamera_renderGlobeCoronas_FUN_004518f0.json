@@ -481,6 +481,15 @@
       "severity": "moderate",
       "text": "for (pcVar14 = (char *)(iVar1 + 0x1322990 + local_54 * 0x140 + iVar13);",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 98,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (globe == *(CDemonGlobe **)",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {
@@ -724,49 +733,49 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 41,
-          "line": 135,
+          "line": 124,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 41,
-          "line": 138,
+          "line": 127,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 42,
-          "line": 141,
+          "line": 130,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 35,
-          "line": 153,
+          "line": 142,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 44,
-          "line": 232,
+          "line": 219,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 45,
-          "line": 235,
+          "line": 222,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 44,
-          "line": 238,
+          "line": 225,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }

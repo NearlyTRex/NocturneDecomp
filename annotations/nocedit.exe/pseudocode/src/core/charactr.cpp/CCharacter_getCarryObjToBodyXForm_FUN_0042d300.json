@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 39,
+    "complexity_score": 59,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 24,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
       "unrolled_memcpy"
     ],
@@ -135,11 +135,27 @@
   },
   "suspects": [
     {
-      "description": "Watcom field-by-field struct copy (12 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 14,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "out_matrix->m[0].w = local_38.m[0].w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 18,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "out_matrix->m[1].w = local_38.m[1].w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 22,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "out_matrix->m[2].w = local_38.m[2].w;",
       "type": "unrolled_memcpy"
     }
   ],

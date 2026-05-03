@@ -31,7 +31,7 @@
 // FUNCTION PROTOTYPES - Range 0x4D0000
 // =============================================================================
 
-int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_004d0010(CBitFont *this_ptr,char *source_text,char *dest_buffer,int max_lines,int line_width, int max_pixel_width);
+int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_004d0010(CBitFont *this_ptr,char *source_text,char *dest_buffer,int max_lines,int line_width,int max_pixel_width);
 int __cdecl engine_font_cpp_CBitFont_getCharWidth_FUN_004d01a0(CBitFont *font,int char_code);
 int __cdecl engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(CBitFont *this_ptr,int char_code);
 int __cdecl engine_font_cpp_CBitFont_getCharYOffset_FUN_004d0200(CBitFont *this_ptr,int char_code);
@@ -71,9 +71,9 @@ int __cdecl core_frankgen_cpp_getFrameCount_FUN_004d2880(CKeyFramedModel *model_
 char * __cdecl core_frankgen_cpp_getActorName_FUN_004d2890(CDemonActor *actor);
 CFrankenstienMachine * __cdecl core_frankgen_cpp_CFrankenstienMachine_dtor_FUN_004d28a0(CFrankenstienMachine *this_ptr,uint flags);
 void __cdecl core_gabriela_cpp_staticInit_FUN_004d2910(void);
-float __cdecl core_gabriela_cpp_weaponDrawBlendWeightCallback_FUN_004d29f0(int current_bone_index,int target_bone_index,float blend_weight, int hierarchy_distance,CDeformableModelInstance *instance);
-float __cdecl core_gabriela_cpp_flashlightBlendWeightCallback_FUN_004d2a30(int current_bone_index,int target_bone_index,float blend_weight, int hierarchy_distance,CDeformableModelInstance *instance);
-float __cdecl core_gabriela_cpp_aimRotationBlendWeightCallback_FUN_004d2a80(int current_bone_index,int target_bone_index,float blend_weight, int hierarchy_distance,CDeformableModelInstance *model_ptr);
+float __cdecl core_gabriela_cpp_weaponDrawBlendWeightCallback_FUN_004d29f0(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *instance);
+float __cdecl core_gabriela_cpp_flashlightBlendWeightCallback_FUN_004d2a30(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *instance);
+float __cdecl core_gabriela_cpp_aimRotationBlendWeightCallback_FUN_004d2a80(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *model_ptr);
 CGabriella * __cdecl core_gabriela_cpp_factoryFunc_FUN_004d2ae0(void);
 CDemonActorType * __cdecl core_gabriela_cpp_CGabriella_getActorType_FUN_004d2b10(CGabriella *this_ptr);
 CGabriella * __cdecl core_gabriela_cpp_CGabriella_ctor_FUN_004d2b20(CGabriella *this_ptr);
@@ -99,8 +99,8 @@ float __cdecl core_gabriela_cpp_CGabriella_scoreTargetVisibility_FUN_004d6260(CG
 void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004d6540(CGabriella *this_ptr,float delta_time,int is_holstering);
 void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004d6b30(CGabriella *this_ptr,SDamageInfo *damage_info);
 void __cdecl core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004d6d40(CGabriella *this_ptr,float delta_time,int has_carried_objects);
-void __cdecl core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80(CGabriella *this_ptr,float delta_time,float *clavicle_blend,int probe_bone_index, int blend_bone_index,CVector3f *probe_offset);
-void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 (CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+void __cdecl core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80(CGabriella *this_ptr,float delta_time,float *clavicle_blend,int probe_bone_index,int blend_bone_index,CVector3f *probe_offset);
+void __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 int __cdecl core_gabriela_cpp_CGabriella_isWeaponDrawn_FUN_004d7590(CGabriella *this_ptr);
 void __cdecl core_gabriela_cpp_CGabriella_drawWeapon_FUN_004d75b0(CGabriella *this_ptr,int drawn);
 void __cdecl core_gabriela_cpp_CGabriella_onActorDeleted_FUN_004d75e0(CGabriella *this_ptr,CDemonActor *deleted_actor);
@@ -146,6 +146,6 @@ int __cdecl core_game_cpp_checkCheatCode_FUN_004dd7f0(char *cheat_string);
 void __cdecl core_game_cpp_giveHeroWeapon_FUN_004dd870(char *class_name);
 void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004dd930(char *p1,EAmmoType p3);
 void __cdecl core_game_cpp_checkCheatAndGiveWeapon_FUN_004dd9d0(char *cheat_code,char *class_name,char *message);
-void __cdecl core_game_cpp_scaleBoneRecursive_FUN_004dda80(CDeformableModelInstance *model_instance,CSkeleton *skeleton,float scale_factor, int bone_index);
+void __cdecl core_game_cpp_scaleBoneRecursive_FUN_004dda80(CDeformableModelInstance *model_instance,CSkeleton *skeleton,float scale_factor,int bone_index);
 void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr);
 

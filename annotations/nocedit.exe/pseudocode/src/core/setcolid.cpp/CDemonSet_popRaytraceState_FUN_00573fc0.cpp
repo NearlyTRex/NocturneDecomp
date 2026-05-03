@@ -72,7 +72,7 @@ void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00573fc0(CDemonSet
   }
   this_ptr->collision_actor = g_RaytraceStateStack[iVar5].saved_collision_actor;
   this_ptr->collision_part_index = g_RaytraceStateStack[iVar5].saved_collision_part_index;
-  this_ptr->collision_triangle_index = g_RaytraceStateStack[iVar5].saved_collision_triangle_index;
+  this_ptr->collision_bone_index = g_RaytraceStateStack[iVar5].saved_collision_bone_index;
   this_ptr->skip_exact_collisions = g_RaytraceStateStack[iVar5].saved_skip_exact_collision;
   return;
 }

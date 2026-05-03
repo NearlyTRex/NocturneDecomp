@@ -22,7 +22,7 @@ void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_005b8950(CSpi
   CVector3f aCStack_1cc [8];
   SDamageInfo SStack_16c;
   SCollisionInfo SStack_130;
-  CVector3f aCStack_108 [2];
+  SActorRayHit aCStack_108;
   CBoundingBox3D local_ec;
   CBoundingBox3D CStack_d4;
   CVector3f CStack_bc;
@@ -104,7 +104,7 @@ void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_005b8950(CSpi
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   (&this_ptr->base,&CStack_80,&CStack_68);
         fVar6 = core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470
-                          (&this_ptr_01->base,&CStack_80,&CStack_98,aCStack_108,&SStack_130,
+                          (&this_ptr_01->base,&CStack_80,&CStack_98,&aCStack_108,&SStack_130,
                            bbox_type,&CStack_d4);
         if ((0.0 <= fVar6) && (fVar6 <= 1.0)) {
           CStack_b0.x = CStack_80.x + CStack_98.x * fVar6;

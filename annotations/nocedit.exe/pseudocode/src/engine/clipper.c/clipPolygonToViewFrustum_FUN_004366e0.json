@@ -7,13 +7,13 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 1036,
-    "complexity_score": 606,
+    "complexity_score": 616,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 68,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 581,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -974,6 +974,14 @@
       "match": "(SRenderVertex **)((int)g_ClipperCullingPointers",
       "severity": "moderate",
       "text": "*(SRenderVertex **)((int)g_ClipperCullingPointers + iVar10 + 8));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 428,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "iVar12 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z +",
       "type": "pointer_cast"
     }
   ]

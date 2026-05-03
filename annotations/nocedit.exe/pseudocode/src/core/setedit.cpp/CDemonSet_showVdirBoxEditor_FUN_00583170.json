@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2745,
-    "complexity_score": 1730,
+    "complexity_score": 1720,
     "cross_reference_count": 1,
     "function_call_count": 41,
     "global_count": 52,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1475,
-    "suspect_count": 25,
+    "suspect_count": 24,
     "suspect_types": [
       "unrolled_memcpy"
     ],
@@ -1436,6 +1436,24 @@
       "severity": "moderate",
       "text": "((CBoundingBox3D *)&stack0xfffffdf4,&local_110,&local_98,",
       "type": "stack_ref"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 158,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_6c = (uint *)((int)&g_CDemonCameraInstance.base.position + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 160,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_70 = (float *)((int)&g_CDemonCameraInstance.base.position + 8);",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {
@@ -2361,14 +2379,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (11 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 1368,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(pSVar11->rotation_matrix).m[0].x = (pSVar15->rotation_matrix).m[0].x;",
-      "type": "unrolled_memcpy"
-    },
     {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 1328,

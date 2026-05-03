@@ -143,7 +143,7 @@ section .text
     JNZ 0x00471499                      ; 00471513
         ;   XREF to: 00471499 (CONDITIONAL_JUMP)  ; LAB_00471499
     XOR EBX,EBX                         ; 00471515
-    MOV EAX,dword ptr [EBX + 0x66f2fc]  ; 00471517 | g_CoronaFacePrimitives | g_CoronaFacePrimitives[1].base.type
+    MOV EAX,dword ptr [EBX + 0x66f2fc]  ; 00471517 | g_CoronaFacePrimitives | g_CoronaFacePrimitives[1].base.count
         ;   Label: LAB_00471517
     MOV dword ptr [ESP + 0xc],EAX       ; 0047151d
     MOV EAX,dword ptr [EBX + 0x66f300]  ; 00471521 | g_CoronaFacePrimitives[0].normal.A | g_CoronaFacePrimitives[1].normal.A

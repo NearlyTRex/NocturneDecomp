@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 202,
+    "complexity_score": 212,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 127,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
       "unrolled_memcpy"
     ],
@@ -142,11 +142,19 @@
   },
   "suspects": [
     {
-      "description": "Watcom field-by-field struct copy (16 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 66,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_c->camera_light_bounds[0].left = local_8->camera_light_bounds[0].left;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (9 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 73,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_c->atten_start = local_8->atten_start;",
       "type": "unrolled_memcpy"
     },
     {

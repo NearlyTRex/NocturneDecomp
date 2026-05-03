@@ -5484,7 +5484,7 @@ SFontGlyph g_FontTable[224] = {
 // SMRGLLightPrimitive[84]
 SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0x00004219,
             .B = 0xFFFF0952,
@@ -5494,7 +5494,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000002, 0x00000001, 0x00000000, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0x00003063,
             .B = 0xFFFF0952,
@@ -5504,7 +5504,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000001, 0x00000003, 0x00000000, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0x000011B5,
             .B = 0xFFFF0952,
@@ -5514,7 +5514,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000003, 0x00000004, 0x00000000, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0xFFFFEE4B,
             .B = 0xFFFF0952,
@@ -5524,7 +5524,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000004, 0x00000005, 0x00000000, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0xFFFFCF9D,
             .B = 0xFFFF0952,
@@ -5534,7 +5534,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000005, 0x00000006, 0x00000000, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0xFFFFBDE7,
             .B = 0xFFFF0952,
@@ -5544,7 +5544,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000006, 0x00000007, 0x00000000, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0xFFFFBDE7,
             .B = 0xFFFF0952,
@@ -5554,7 +5554,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000007, 0x00000008, 0x00000000, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0xFFFFCF9D,
             .B = 0xFFFF0952,
@@ -5564,7 +5564,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000008, 0x00000009, 0x00000000, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0xFFFFEE4B,
             .B = 0xFFFF0952,
@@ -5574,7 +5574,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000009, 0x0000000A, 0x00000000, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0x000011B5,
             .B = 0xFFFF0952,
@@ -5584,7 +5584,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x0000000A, 0x0000000B, 0x00000000, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0x00003063,
             .B = 0xFFFF0952,
@@ -5594,7 +5594,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x0000000B, 0x0000000C, 0x00000000, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0x00004219,
             .B = 0xFFFF0952,
@@ -5604,7 +5604,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x0000000C, 0x00000002, 0x00000000, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0x00004219,
             .B = 0x0000F6AE,
@@ -5614,7 +5614,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000000, 0x00000008, 0x00000007, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0x00003063,
             .B = 0x0000F6AE,
@@ -5624,7 +5624,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000000, 0x00000009, 0x00000008, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0x000011B5,
             .B = 0x0000F6AE,
@@ -5634,7 +5634,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000000, 0x0000000A, 0x00000009, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0xFFFFEE4B,
             .B = 0x0000F6AE,
@@ -5644,7 +5644,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000000, 0x0000000B, 0x0000000A, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0xFFFFCF9D,
             .B = 0x0000F6AE,
@@ -5654,7 +5654,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000000, 0x0000000C, 0x0000000B, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0xFFFFBDE7,
             .B = 0x0000F6AE,
@@ -5664,7 +5664,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000000, 0x00000002, 0x0000000C, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0xFFFFBDE7,
             .B = 0x0000F6AE,
@@ -5674,7 +5674,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000000, 0x00000001, 0x00000002, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0xFFFFCF9D,
             .B = 0x0000F6AE,
@@ -5684,7 +5684,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000000, 0x00000003, 0x00000001, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0xFFFFEE4B,
             .B = 0x0000F6AE,
@@ -5694,7 +5694,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000000, 0x00000004, 0x00000003, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0x000011B5,
             .B = 0x0000F6AE,
@@ -5704,7 +5704,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000000, 0x00000005, 0x00000004, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0x00003063,
             .B = 0x0000F6AE,
@@ -5714,7 +5714,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000000, 0x00000006, 0x00000005, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0x00004219,
             .B = 0x0000F6AE,
@@ -5724,7 +5724,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000000, 0x00000007, 0x00000006, 0x00000000}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0x0000B1DA,
             .B = 0x0000B1DA,
@@ -5734,7 +5734,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000007, 0x00000008, 0x0000000E, 0x0000000D}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0x00008232,
             .B = 0x0000B1DA,
@@ -5744,7 +5744,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000008, 0x00000009, 0x0000000F, 0x0000000E}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0x00002FA7,
             .B = 0x0000B1DA,
@@ -5754,7 +5754,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000009, 0x0000000A, 0x00000010, 0x0000000F}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0xFFFFD059,
             .B = 0x0000B1DA,
@@ -5764,7 +5764,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x0000000A, 0x0000000B, 0x00000011, 0x00000010}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0xFFFF7DCE,
             .B = 0x0000B1DA,
@@ -5774,7 +5774,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x0000000B, 0x0000000C, 0x00000012, 0x00000011}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0xFFFF4E26,
             .B = 0x0000B1DA,
@@ -5784,7 +5784,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x0000000C, 0x00000002, 0x00000013, 0x00000012}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0xFFFF4E26,
             .B = 0x0000B1DA,
@@ -5794,7 +5794,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000002, 0x00000001, 0x00000014, 0x00000013}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0xFFFF7DCE,
             .B = 0x0000B1DA,
@@ -5804,7 +5804,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000001, 0x00000003, 0x00000015, 0x00000014}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0xFFFFD059,
             .B = 0x0000B1DA,
@@ -5814,7 +5814,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000003, 0x00000004, 0x00000016, 0x00000015}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0x00002FA7,
             .B = 0x0000B1DA,
@@ -5824,7 +5824,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000004, 0x00000005, 0x00000017, 0x00000016}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0x00008232,
             .B = 0x0000B1DA,
@@ -5834,7 +5834,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000005, 0x00000006, 0x00000018, 0x00000017}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0x0000B1DA,
             .B = 0x0000B1DA,
@@ -5844,7 +5844,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000006, 0x00000007, 0x0000000D, 0x00000018}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0x0000EF62,
             .B = 0x00004024,
@@ -5854,7 +5854,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x0000000D, 0x0000000E, 0x0000001A, 0x00000019}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0x0000AF3E,
             .B = 0x00004024,
@@ -5864,7 +5864,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x0000000E, 0x0000000F, 0x0000001B, 0x0000001A}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0x00004024,
             .B = 0x00004024,
@@ -5874,7 +5874,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x0000000F, 0x00000010, 0x0000001C, 0x0000001B}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0xFFFFBFDC,
             .B = 0x00004024,
@@ -5884,7 +5884,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000010, 0x00000011, 0x0000001D, 0x0000001C}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0xFFFF50C2,
             .B = 0x00004024,
@@ -5894,7 +5894,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000011, 0x00000012, 0x0000001E, 0x0000001D}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0xFFFF109E,
             .B = 0x00004024,
@@ -5904,7 +5904,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000012, 0x00000013, 0x0000001F, 0x0000001E}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0xFFFF109E,
             .B = 0x00004024,
@@ -5914,7 +5914,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000013, 0x00000014, 0x00000020, 0x0000001F}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0xFFFF50C2,
             .B = 0x00004024,
@@ -5924,7 +5924,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000014, 0x00000015, 0x00000021, 0x00000020}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0xFFFFBFDC,
             .B = 0x00004024,
@@ -5934,7 +5934,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000015, 0x00000016, 0x00000022, 0x00000021}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0x00004024,
             .B = 0x00004024,
@@ -5944,7 +5944,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000016, 0x00000017, 0x00000023, 0x00000022}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0x0000AF3E,
             .B = 0x00004024,
@@ -5954,7 +5954,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000017, 0x00000018, 0x00000024, 0x00000023}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0x0000EF62,
             .B = 0x00004024,
@@ -5964,7 +5964,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000018, 0x0000000D, 0x00000019, 0x00000024}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0x0000EF62,
             .B = 0xFFFFBFDC,
@@ -5974,7 +5974,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000019, 0x0000001A, 0x00000026, 0x00000025}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0x0000AF3E,
             .B = 0xFFFFBFDC,
@@ -5984,7 +5984,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x0000001A, 0x0000001B, 0x00000027, 0x00000026}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0x00004024,
             .B = 0xFFFFBFDC,
@@ -5994,7 +5994,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x0000001B, 0x0000001C, 0x00000028, 0x00000027}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0xFFFFBFDC,
             .B = 0xFFFFBFDC,
@@ -6004,7 +6004,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x0000001C, 0x0000001D, 0x00000029, 0x00000028}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0xFFFF50C2,
             .B = 0xFFFFBFDC,
@@ -6014,7 +6014,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x0000001D, 0x0000001E, 0x0000002A, 0x00000029}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0xFFFF109E,
             .B = 0xFFFFBFDC,
@@ -6024,7 +6024,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x0000001E, 0x0000001F, 0x0000002B, 0x0000002A}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0xFFFF109E,
             .B = 0xFFFFBFDC,
@@ -6034,7 +6034,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x0000001F, 0x00000020, 0x0000002C, 0x0000002B}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0xFFFF50C2,
             .B = 0xFFFFBFDC,
@@ -6044,7 +6044,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000020, 0x00000021, 0x0000002D, 0x0000002C}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0xFFFFBFDC,
             .B = 0xFFFFBFDC,
@@ -6054,7 +6054,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000021, 0x00000022, 0x0000002E, 0x0000002D}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0x00004024,
             .B = 0xFFFFBFDC,
@@ -6064,7 +6064,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000022, 0x00000023, 0x0000002F, 0x0000002E}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0x0000AF3E,
             .B = 0xFFFFBFDC,
@@ -6074,7 +6074,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000023, 0x00000024, 0x00000030, 0x0000002F}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0x0000EF62,
             .B = 0xFFFFBFDC,
@@ -6084,7 +6084,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000024, 0x00000019, 0x00000025, 0x00000030}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0x0000B1DA,
             .B = 0xFFFF4E26,
@@ -6094,7 +6094,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000025, 0x00000026, 0x00000032, 0x00000031}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0x00008232,
             .B = 0xFFFF4E26,
@@ -6104,7 +6104,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000026, 0x00000027, 0x00000033, 0x00000032}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0x00002FA7,
             .B = 0xFFFF4E26,
@@ -6114,7 +6114,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000027, 0x00000028, 0x00000034, 0x00000033}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0xFFFFD059,
             .B = 0xFFFF4E26,
@@ -6124,7 +6124,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000028, 0x00000029, 0x00000035, 0x00000034}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0xFFFF7DCE,
             .B = 0xFFFF4E26,
@@ -6134,7 +6134,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000029, 0x0000002A, 0x00000036, 0x00000035}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0xFFFF4E26,
             .B = 0xFFFF4E26,
@@ -6144,7 +6144,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x0000002A, 0x0000002B, 0x00000037, 0x00000036}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0xFFFF4E26,
             .B = 0xFFFF4E26,
@@ -6154,7 +6154,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x0000002B, 0x0000002C, 0x00000038, 0x00000037}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0xFFFF7DCE,
             .B = 0xFFFF4E26,
@@ -6164,7 +6164,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x0000002C, 0x0000002D, 0x00000039, 0x00000038}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0xFFFFD059,
             .B = 0xFFFF4E26,
@@ -6174,7 +6174,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x0000002D, 0x0000002E, 0x0000003A, 0x00000039}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0x00002FA7,
             .B = 0xFFFF4E26,
@@ -6184,7 +6184,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x0000002E, 0x0000002F, 0x0000003B, 0x0000003A}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0x00008232,
             .B = 0xFFFF4E26,
@@ -6194,7 +6194,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x0000002F, 0x00000030, 0x0000003C, 0x0000003B}
     },
     {
-        .base = {.type = 0x00000004},
+        .base = {.count = 0x00000004},
         .normal = {
             .A = 0x0000B1DA,
             .B = 0xFFFF4E26,
@@ -6204,7 +6204,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000030, 0x00000025, 0x00000031, 0x0000003C}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0x00004219,
             .B = 0xFFFF0952,
@@ -6214,7 +6214,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000031, 0x00000032, 0x0000003D, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0x00003063,
             .B = 0xFFFF0952,
@@ -6224,7 +6224,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000032, 0x00000033, 0x0000003D, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0x000011B5,
             .B = 0xFFFF0952,
@@ -6234,7 +6234,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000033, 0x00000034, 0x0000003D, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0xFFFFEE4B,
             .B = 0xFFFF0952,
@@ -6244,7 +6244,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000034, 0x00000035, 0x0000003D, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0xFFFFCF9D,
             .B = 0xFFFF0952,
@@ -6254,7 +6254,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000035, 0x00000036, 0x0000003D, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0xFFFFBDE7,
             .B = 0xFFFF0952,
@@ -6264,7 +6264,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000036, 0x00000037, 0x0000003D, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0xFFFFBDE7,
             .B = 0xFFFF0952,
@@ -6274,7 +6274,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000037, 0x00000038, 0x0000003D, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0xFFFFCF9D,
             .B = 0xFFFF0952,
@@ -6284,7 +6284,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000038, 0x00000039, 0x0000003D, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0xFFFFEE4B,
             .B = 0xFFFF0952,
@@ -6294,7 +6294,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x00000039, 0x0000003A, 0x0000003D, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0x000011B5,
             .B = 0xFFFF0952,
@@ -6304,7 +6304,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x0000003A, 0x0000003B, 0x0000003D, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0x00003063,
             .B = 0xFFFF0952,
@@ -6314,7 +6314,7 @@ SMRGLLightPrimitive g_CoronaFacePrimitives[84] = {
         .vertices = {0x0000003B, 0x0000003C, 0x0000003D, 0x00000000}
     },
     {
-        .base = {.type = 0x00000003},
+        .base = {.count = 0x00000003},
         .normal = {
             .A = 0x00004219,
             .B = 0xFFFF0952,

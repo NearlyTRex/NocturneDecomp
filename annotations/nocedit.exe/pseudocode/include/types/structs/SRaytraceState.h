@@ -28,7 +28,7 @@ typedef struct SRaytraceState {
     CVector3f saved_collision_point; // 0x88
     struct CDemonActor* saved_collision_actor; // 0x94
     int saved_collision_part_index; // 0x98
-    int saved_collision_triangle_index; // 0x9c
+    int saved_collision_bone_index; // 0x9c
 } SRaytraceState;
 #pragma pack(pop)
 

@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 438,
-    "complexity_score": 357,
+    "complexity_score": 377,
     "cross_reference_count": 12,
     "function_call_count": 21,
     "global_count": 23,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 212,
-    "suspect_count": 12,
+    "suspect_count": 14,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
@@ -691,6 +691,22 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 142,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pcVar11 = (char *)((int)&pCVar12[-1].mask_mode + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 163,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pcVar11 = (char *)((int)&pCVar12[-1].mask_mode + 3);",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",

@@ -177,6 +177,15 @@
       "severity": "mild",
       "text": "iVar1._2_2_ = this_ptr->boxes[local_4c].avg_intensity;",
       "type": "unknown_field"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 64,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar9 = *(int *)((int)&this_ptr->boxes[local_4c + -1].pixel_count + 2) >> 0x10;",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {

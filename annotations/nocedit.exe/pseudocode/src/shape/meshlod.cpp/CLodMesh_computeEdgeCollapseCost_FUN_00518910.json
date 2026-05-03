@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 846,
-    "complexity_score": 479,
+    "complexity_score": 489,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 48,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 384,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "bitcast_double_pair",
       "pointer_cast",
@@ -941,6 +941,14 @@
       "severity": "moderate",
       "text": "fVar2 = sample_point->weight * (float)__BITCAST_DOUBLE(CONCAT44(uStack_114,local_118)) +",
       "type": "bitcast_double_pair"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 283,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pfVar12 = (float *)((int)&g_SamplePointArray[0].x + iVar14);",
+      "type": "pointer_cast"
     }
   ]
 }

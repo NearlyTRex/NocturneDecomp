@@ -183,12 +183,12 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom field-by-field struct copy (9 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 53,
+      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 56,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "local_40.projected_vertex.inv_z = g_RenderVertexBuffer[iVar31].projected_vertex.inv_z;",
+      "text": "local_40.u = g_RenderVertexBuffer[iVar31].u;",
       "type": "unrolled_memcpy"
     }
   ],

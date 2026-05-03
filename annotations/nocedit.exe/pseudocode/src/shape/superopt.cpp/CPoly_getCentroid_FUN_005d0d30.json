@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 153,
+    "complexity_score": 163,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 63,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "unrolled_memcpy"
@@ -299,6 +299,14 @@
       "match": "(double *)((int)pdVar4",
       "severity": "moderate",
       "text": "pdVar4 = (double *)((int)pdVar4 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 63,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pCVar6 = (CVector3d *)((int)&pCVar6->x + 4);",
       "type": "pointer_cast"
     },
     {

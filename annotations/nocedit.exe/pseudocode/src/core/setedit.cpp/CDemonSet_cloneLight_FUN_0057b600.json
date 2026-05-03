@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 225,
-    "complexity_score": 211,
+    "complexity_score": 221,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 136,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
       "unrolled_memcpy"
     ],
@@ -189,11 +189,19 @@
   },
   "suspects": [
     {
-      "description": "Watcom field-by-field struct copy (16 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 58,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar3->camera_light_bounds[0].left = pCVar2->camera_light_bounds[0].left;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (9 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 65,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar3->atten_start = pCVar2->atten_start;",
       "type": "unrolled_memcpy"
     },
     {
