@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: game
-// Structs : 523
+// Structs : 525
 
 #include "nocturne.h"
 
@@ -2375,8 +2375,8 @@ static_assert(__builtin_offsetof(CDemonSet, collision_actor) == 1364292,
               "offsetof(CDemonSet, collision_actor) != 1364292");
 static_assert(__builtin_offsetof(CDemonSet, collision_part_index) == 1364296,
               "offsetof(CDemonSet, collision_part_index) != 1364296");
-static_assert(__builtin_offsetof(CDemonSet, collision_triangle_index) == 1364300,
-              "offsetof(CDemonSet, collision_triangle_index) != 1364300");
+static_assert(__builtin_offsetof(CDemonSet, collision_bone_index) == 1364300,
+              "offsetof(CDemonSet, collision_bone_index) != 1364300");
 static_assert(__builtin_offsetof(CDemonSet, min_ambient_value) == 1364304,
               "offsetof(CDemonSet, min_ambient_value) != 1364304");
 static_assert(__builtin_offsetof(CDemonSet, actor_count) == 1364308,
@@ -3047,8 +3047,8 @@ static_assert(__builtin_offsetof(CExternalRendererBridge, frame_buffer_ptr) == 9
               "offsetof(CExternalRendererBridge, frame_buffer_ptr) != 92");
 static_assert(__builtin_offsetof(CExternalRendererBridge, system_initialized) == 96,
               "offsetof(CExternalRendererBridge, system_initialized) != 96");
-static_assert(__builtin_offsetof(CExternalRendererBridge, pod_system_version) == 100,
-              "offsetof(CExternalRendererBridge, pod_system_version) != 100");
+static_assert(__builtin_offsetof(CExternalRendererBridge, agp_texture_mode) == 100,
+              "offsetof(CExternalRendererBridge, agp_texture_mode) != 100");
 static_assert(__builtin_offsetof(CExternalRendererBridge, processor_type) == 104,
               "offsetof(CExternalRendererBridge, processor_type) != 104");
 static_assert(__builtin_offsetof(CExternalRendererBridge, rendering_quality) == 108,
@@ -3565,8 +3565,8 @@ static_assert(__builtin_offsetof(CGame, skip_frame_render) == 520,
               "offsetof(CGame, skip_frame_render) != 520");
 static_assert(__builtin_offsetof(CGame, profile_mode) == 524,
               "offsetof(CGame, profile_mode) != 524");
-static_assert(__builtin_offsetof(CGame, velocity_debug_enabled) == 528,
-              "offsetof(CGame, velocity_debug_enabled) != 528");
+static_assert(__builtin_offsetof(CGame, developer_mode_enabled) == 528,
+              "offsetof(CGame, developer_mode_enabled) != 528");
 static_assert(__builtin_offsetof(CGame, head_of_horror_cheat) == 532,
               "offsetof(CGame, head_of_horror_cheat) != 532");
 static_assert(__builtin_offsetof(CGame, geometry_debug_enabled) == 536,
@@ -7538,6 +7538,20 @@ static_assert(__builtin_offsetof(CZombieDog, bone_indices) == 48828,
 static_assert(__builtin_offsetof(CZombieDog, sfx_handle) == 48836,
               "offsetof(CZombieDog, sfx_handle) != 48836");
 
+// ---- SActorRayHit (28 bytes) ----
+static_assert(sizeof(SActorRayHit) == 28,
+              "sizeof(SActorRayHit) != 28");
+static_assert(__builtin_offsetof(SActorRayHit, normal) == 0,
+              "offsetof(SActorRayHit, normal) != 0");
+static_assert(__builtin_offsetof(SActorRayHit, part_index) == 12,
+              "offsetof(SActorRayHit, part_index) != 12");
+static_assert(__builtin_offsetof(SActorRayHit, lod_index) == 16,
+              "offsetof(SActorRayHit, lod_index) != 16");
+static_assert(__builtin_offsetof(SActorRayHit, triangle_index) == 20,
+              "offsetof(SActorRayHit, triangle_index) != 20");
+static_assert(__builtin_offsetof(SActorRayHit, bone_index) == 24,
+              "offsetof(SActorRayHit, bone_index) != 24");
+
 // ---- SActorVarBlock (1504 bytes) ----
 static_assert(sizeof(SActorVarBlock) == 1504,
               "sizeof(SActorVarBlock) != 1504");
@@ -8910,6 +8924,16 @@ static_assert(__builtin_offsetof(SMRGLPrimitiveTriangleIndex, base) == 0,
 static_assert(__builtin_offsetof(SMRGLPrimitiveTriangleIndex, vertices) == 24,
               "offsetof(SMRGLPrimitiveTriangleIndex, vertices) != 24");
 
+// ---- SMRGLSkyTexture (24 bytes) ----
+static_assert(sizeof(SMRGLSkyTexture) == 24,
+              "sizeof(SMRGLSkyTexture) != 24");
+static_assert(__builtin_offsetof(SMRGLSkyTexture, base) == 0,
+              "offsetof(SMRGLSkyTexture, base) != 0");
+static_assert(__builtin_offsetof(SMRGLSkyTexture, reserved) == 8,
+              "offsetof(SMRGLSkyTexture, reserved) != 8");
+static_assert(__builtin_offsetof(SMRGLSkyTexture, texture_name) == 12,
+              "offsetof(SMRGLSkyTexture, texture_name) != 12");
+
 // ---- SMRGLTextureBasic (24 bytes) ----
 static_assert(sizeof(SMRGLTextureBasic) == 24,
               "sizeof(SMRGLTextureBasic) != 24");
@@ -9717,8 +9741,8 @@ static_assert(__builtin_offsetof(SRaytraceState, saved_collision_actor) == 148,
               "offsetof(SRaytraceState, saved_collision_actor) != 148");
 static_assert(__builtin_offsetof(SRaytraceState, saved_collision_part_index) == 152,
               "offsetof(SRaytraceState, saved_collision_part_index) != 152");
-static_assert(__builtin_offsetof(SRaytraceState, saved_collision_triangle_index) == 156,
-              "offsetof(SRaytraceState, saved_collision_triangle_index) != 156");
+static_assert(__builtin_offsetof(SRaytraceState, saved_collision_bone_index) == 156,
+              "offsetof(SRaytraceState, saved_collision_bone_index) != 156");
 
 // ---- SRecordingDeviceInfo (264 bytes) ----
 static_assert(sizeof(SRecordingDeviceInfo) == 264,

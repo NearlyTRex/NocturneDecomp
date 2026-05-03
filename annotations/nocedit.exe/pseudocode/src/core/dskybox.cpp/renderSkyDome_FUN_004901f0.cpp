@@ -2,13 +2,13 @@
 // Address: 004901f0
 // Address Range: [[004901f0, 004906a3]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_texture,char *texture_name,int brightness_factor)
+// Signature: void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLSkyTexture *sky_texture,char *texture_name,int brightness_factor)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_texture,char *texture_name,int brightness_factor)
+void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLSkyTexture *sky_texture,char *texture_name,int brightness_factor)
 
 {
   char cVar2;
@@ -43,7 +43,7 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_
   float fVar2;
   char cVar1;
   
-  pcVar6 = sky_texture->texture_name + 4;
+  pcVar6 = sky_texture->texture_name;
   do {
     cVar1 = *texture_name;
     *pcVar6 = cVar1;

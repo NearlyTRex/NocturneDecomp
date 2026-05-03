@@ -663,7 +663,7 @@ LAB_004e7576:
               local_2d8.wielder = (CDemonActor *)this_ptr;
               fVar23 = 0.2;
               pCVar12 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                                  (&local_114,(CVector3f *)&INT_02d832b4,
+                                  (&local_114,&CVector3f_02d832b4,
                                    (CMatrix3x4f *)
                                    (this_ptr->base).base.model.bone_transform.bone_world_matrices
                                    [g_GhoulIndices[2]].m);
@@ -850,7 +850,7 @@ LAB_004e7d9a:
             local_314.wielder = (CDemonActor *)this_ptr;
             fVar23 = 0.4;
             pCVar12 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                                (local_210,(CVector3f *)&INT_02d832a8,
+                                (local_210,&CVector3f_02d832a8,
                                  (CMatrix3x4f *)
                                  (this_ptr->base).base.model.bone_transform.bone_world_matrices
                                  [g_GhoulIndices[1]].m);

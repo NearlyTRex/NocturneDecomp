@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 204,
+    "complexity_score": 64,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 30,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 64,
-    "suspect_count": 13,
-    "suspect_types": [
-      "pointer_cast",
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 177
   },
   "cross_references": [
@@ -301,6 +298,125 @@
     },
     "pcode_op_count": 532
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(int *)((int)g_CoronaFacePrimitives",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "SStack_50.base.base.count = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0x14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(UIntegerFloat *)((int)g_CoronaFacePrimitives",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(UIntegerFloat *)((int)g_CoronaFacePrimitives",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(UIntegerFloat *)((int)g_CoronaFacePrimitives",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(int *)((int)g_CoronaFacePrimitives",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "SStack_50.vertices[0] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(int *)((int)g_CoronaFacePrimitives",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "SStack_50.vertices[1] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 58,
+      "match": "(int *)((int)g_CoronaFacePrimitives",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "SStack_50.vertices[2] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(int *)((int)g_CoronaFacePrimitives",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "SStack_50.vertices[3] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(int *)((int)g_CoronaFacePrimitives",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)ROUND(ROUND((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar1) *",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 22,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_1c.x = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar3) *",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 25,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_1c.y = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar3) *",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 28,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_1c.z = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar3) *",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 88,
     "local_size": 84,
@@ -352,110 +468,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(int *)((int)g_CoronaFacePrimitives",
-      "severity": "moderate",
-      "text": "SStack_50.base.base.count = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0x14);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 50,
-      "match": "(UIntegerFloat *)((int)g_CoronaFacePrimitives",
-      "severity": "moderate",
-      "text": "*(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0x10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 52,
-      "match": "(UIntegerFloat *)((int)g_CoronaFacePrimitives",
-      "severity": "moderate",
-      "text": "*(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 54,
-      "match": "(UIntegerFloat *)((int)g_CoronaFacePrimitives",
-      "severity": "moderate",
-      "text": "*(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 56,
-      "match": "(int *)((int)g_CoronaFacePrimitives",
-      "severity": "moderate",
-      "text": "SStack_50.vertices[0] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(int *)((int)g_CoronaFacePrimitives",
-      "severity": "moderate",
-      "text": "SStack_50.vertices[1] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 58,
-      "match": "(int *)((int)g_CoronaFacePrimitives",
-      "severity": "moderate",
-      "text": "SStack_50.vertices[2] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 59,
-      "match": "(int *)((int)g_CoronaFacePrimitives",
-      "severity": "moderate",
-      "text": "SStack_50.vertices[3] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 62,
-      "match": "(int *)((int)g_CoronaFacePrimitives",
-      "severity": "moderate",
-      "text": "(int)ROUND(ROUND((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar1) *",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 22,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "local_1c.x = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar3) *",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 25,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "local_1c.y = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar3) *",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 28,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "local_1c.z = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar3) *",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

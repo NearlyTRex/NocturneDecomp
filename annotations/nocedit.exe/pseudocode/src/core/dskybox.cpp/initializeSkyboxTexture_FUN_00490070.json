@@ -4,20 +4,18 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 39,
+    "complexity_score": 21,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 24,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_strcpy"
-    ],
-    "total_lines": 51
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 21,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 48
   },
   "cross_references": [
     {
@@ -37,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_dskybox.cpp_initializeSkyboxTexture_FUN_00490070",
-    "signature": "SMRGLTextureBasic * __cdecl core_dskybox_cpp_initializeSkyboxTexture_FUN_00490070(SMRGLTextureBasic *texture)"
+    "signature": "SMRGLSkyTexture * __cdecl core_dskybox_cpp_initializeSkyboxTexture_FUN_00490070(SMRGLSkyTexture *texture)"
   },
   "function_calls": [],
   "globals": [
@@ -110,6 +108,17 @@
     },
     "pcode_op_count": 83
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 12,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -122,18 +131,9 @@
         "name": "texture",
         "offset": 4,
         "size": 4,
-        "type": "SMRGLTextureBasic *"
+        "type": "SMRGLSkyTexture *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 15,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    }
-  ]
+  "suspects": []
 }

@@ -125,6 +125,9 @@ SEnumPair g_MeleeDamageTypePairs[9] = {
 // SInputFace*[2000]
 SInputFace* g_VisibleFacePointers[2000] = {};
 
+// SMRGLSkyTexture*
+SMRGLSkyTexture* g_SkyDomeTexturePtr = (SMRGLSkyTexture*)&g_SkyDomeTextureData;
+
 // SMRGLTextureBasic
 SMRGLTextureBasic g_FireEffectBlackHoleTexture = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
@@ -213,7 +216,6 @@ SMRGLTextureBasic SMRGLTextureBasic_0067d150 = {
 
 // SMRGLTextureBasic*
 SMRGLTextureBasic* g_LightTexturesEnd = nullptr;
-SMRGLTextureBasic* g_SkyDomeTexturePtr = (SMRGLTextureBasic*)&g_SkyDomeTextureData;
 
 // SMRGLTextureBasic[116]
 SMRGLTextureBasic g_BloodPoolAnimTextures[116] = {

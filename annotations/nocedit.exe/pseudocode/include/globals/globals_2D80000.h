@@ -8,6 +8,7 @@
 #include "types/classes/CGame.h"
 #include "types/classes/CGore.h"
 #include "types/classes/CPickList.h"
+#include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/structs/SMRGLPrimitiveQuadIndex.h"
 
@@ -35,6 +36,10 @@ extern CGore g_CGoreInstance;
 
 // CPickList
 extern CPickList g_CPickList;
+
+// CVector3f
+extern CVector3f CVector3f_02d832a8;
+extern CVector3f CVector3f_02d832b4;
 
 // CVector3i
 extern CVector3i g_ParticleCameraRotation;
@@ -79,12 +84,6 @@ extern int g_IrisFadeType;
 extern int g_IrisFadeCenterX;
 extern int g_IrisFadeCenterY;
 extern int g_ProfileStartTime;
-extern int INT_02d832a8;
-extern int INT_02d832ac;
-extern int INT_02d832b0;
-extern int INT_02d832b4;
-extern int INT_02d832b8;
-extern int INT_02d832bc;
 extern int g_BloodParticleIndex;
 extern int g_BloodSplatIndex;
 extern int g_BloodSplatCount;

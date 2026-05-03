@@ -25,6 +25,10 @@ CGore g_CGoreInstance = {};
 // CPickList
 CPickList g_CPickList = {};
 
+// CVector3f
+CVector3f CVector3f_02d832a8 = {};
+CVector3f CVector3f_02d832b4 = {};
+
 // CVector3i
 CVector3i g_ParticleCameraRotation = {};
 CVector3i CVector3i_02d8339c = {};
@@ -68,12 +72,6 @@ int g_IrisFadeType = {};
 int g_IrisFadeCenterX = {};
 int g_IrisFadeCenterY = {};
 int g_ProfileStartTime = {};
-int INT_02d832a8 = {};
-int INT_02d832ac = {};
-int INT_02d832b0 = {};
-int INT_02d832b4 = {};
-int INT_02d832b8 = {};
-int INT_02d832bc = {};
 int g_BloodParticleIndex = {};
 int g_BloodSplatIndex = {};
 int g_BloodSplatCount = {};

@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5478 (84.9%)
-With suspects: 976
-Total suspects: 3877
+Clean: 5487 (85.0%)
+With suspects: 967
+Total suspects: 3848
 
 ====================================================================================================
 core_actor.cpp_CActorPropertyList_addFile_FUN_0040e3e0 (2 suspects)
@@ -142,12 +142,6 @@ core_ammo.cpp_CAmmo_propertyDisplayCallback_FUN_00411200 (1 suspect)
   File: core/ammo.cpp
 ====================================================================================================
   Line 42 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_ammobox.cpp_CAmmoBox_propertyDisplayCallback_FUN_00411a30 (1 suspect)
-  File: core/ammobox.cpp
-====================================================================================================
-  Line 31 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00413f20 (1 suspect)
@@ -900,24 +894,6 @@ core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730 (2 suspects)
   Line 37 [pointer_cast]: (char)((uint)((int)(uint)*(byte *)(iVar3 + (int)this_ptr->movie_data) >> 2) / 2);
 
 ====================================================================================================
-core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0 (13 suspects)
-  File: core/dglobe.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 22 [pointer_cast]: local_1c.x = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar3) *
-  Line 25 [pointer_cast]: local_1c.y = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar3) *
-  Line 28 [pointer_cast]: local_1c.z = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar3) *
-  Line 48 [pointer_cast]: SStack_50.base.base.count = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0x14);
-  Line 50 [pointer_cast]: *(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0x10);
-  Line 52 [pointer_cast]: *(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -0xc);
-  Line 54 [pointer_cast]: *(UIntegerFloat *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + -8);
-  Line 56 [pointer_cast]: SStack_50.vertices[0] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2);
-  Line 57 [pointer_cast]: SStack_50.vertices[1] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + 4);
-  Line 58 [pointer_cast]: SStack_50.vertices[2] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + 8);
-  Line 59 [pointer_cast]: SStack_50.vertices[3] = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2 + 0xc);
-  Line 62 [pointer_cast]: (int)ROUND(ROUND((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar1) *
-
-====================================================================================================
 core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160 (6 suspects)
   File: core/dirmat.cpp
 ====================================================================================================
@@ -1363,12 +1339,6 @@ core_dpart.cpp_CDemonPart_renderFaces_FUN_004828b0 (1 suspect)
   File: core/dpart.cpp
 ====================================================================================================
   Line 28 [unrolled_memcpy]: local_58.base.surface_normal.A = (plane->plane).A;
-
-====================================================================================================
-core_dskybox.cpp_initializeSkyboxTexture_FUN_00490070 (1 suspect)
-  File: core/dskybox.cpp
-====================================================================================================
-  Line 15 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_dstrender.cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4 (1 suspect)
@@ -2423,14 +2393,6 @@ core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f8810 (1 suspect)
   Line 12 [stack_alignment_array]: float afStackY_180c [1519];
 
 ====================================================================================================
-core_imp.cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920 (3 suspects)
-  File: core/imp.cpp
-====================================================================================================
-  Line 61 [unrolled_memcpy]: out_matrix->m[0].w = local_c0.m[0].w;
-  Line 65 [unrolled_memcpy]: out_matrix->m[1].w = local_c0.m[1].w;
-  Line 69 [unrolled_memcpy]: out_matrix->m[2].w = local_c0.m[2].w;
-
-====================================================================================================
 core_inv.cpp_CInventory_renderAllItems_FUN_00500690 (3 suspects)
   File: core/inv.cpp
 ====================================================================================================
@@ -2786,12 +2748,6 @@ core_moloch.cpp_CMoloch_ctor_FUN_00528b30 (2 suspects)
   Line 31 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0 (1 suspect)
-  File: core/moon.cpp
-====================================================================================================
-  Line 6 [stack_alignment_array]: int aiStackY_101c [1014];
-
-====================================================================================================
 core_morph.cpp_CMorphModel_rotatePoints_FUN_0052af70 (1 suspect)
   File: core/morph.cpp
 ====================================================================================================
@@ -3083,14 +3039,6 @@ core_netgame.cpp_purgeOldSimFrames_FUN_0053f650 (2 suspects)
   Line 17 [pointer_cast]: ((void *)((int)g_SimFrameHistory[0].player_input + iVar2 + -0xc),src,
 
 ====================================================================================================
-core_passngr.cpp_CPassenger_ctor_FUN_00545b30 (3 suspects)
-  File: core/passngr.cpp
-====================================================================================================
-  Line 16 [unrolled_strcpy]: do {
-  Line 27 [unrolled_strcpy]: do {
-  Line 42 [unrolled_strcpy]: do {
-
-====================================================================================================
 core_path.cpp_CPathMap_dtor_FUN_005464d0 (3 suspects)
   File: core/path.cpp
 ====================================================================================================
@@ -3143,13 +3091,6 @@ core_path.cpp_resetAllPathMaps_FUN_00548590 (2 suspects)
 ====================================================================================================
   Line 13 [pointer_cast]: if (*(int *)((int)g_PathMapList + iVar2) == 0) {
   Line 18 [pointer_cast]: puVar1 = (uint *)((int)g_PathMapList + iVar2);
-
-====================================================================================================
-core_pendulum.cpp_CPendulum_ctor_FUN_00549390 (2 suspects)
-  File: core/pendulum.cpp
-====================================================================================================
-  Line 18 [unrolled_strcpy]: do {
-  Line 29 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e0 (3 suspects)
@@ -4054,12 +3995,6 @@ core_setutil.cpp_readAndParseLine_FUN_00585290 (3 suspects)
   Line 39 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_shotgun.cpp_CShotgun_fireProjectile_FUN_005888f0 (1 suspect)
-  File: core/shotgun.cpp
-====================================================================================================
-  Line 40 [self_copy_guard]: if (&fStack_50 != &fStack_38) {
-
-====================================================================================================
 core_simbox.cpp_CSimBox_propertyDisplayCallback_FUN_00589270 (1 suspect)
   File: core/simbox.cpp
 ====================================================================================================
@@ -4642,15 +4577,6 @@ core_sound.cpp_updateListeners_FUN_005b1870 (1 suspect)
   File: core/sound.cpp
 ====================================================================================================
   Line 63 [unrolled_memcpy]: // 005b1982: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-core_spike.cpp_CSpike_ctor_FUN_005b8220 (4 suspects)
-  File: core/spike.cpp
-====================================================================================================
-  Line 21 [unrolled_strcpy]: do {
-  Line 32 [unrolled_strcpy]: do {
-  Line 43 [unrolled_strcpy]: do {
-  Line 54 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_spline.cpp_evaluateSplineScalar_FUN_005b9230 (4 suspects)

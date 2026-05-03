@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_texture,char *texture_name,int brightness_factor)
+; void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLSkyTexture *sky_texture,char *texture_name,int brightness_factor)
 ;
 ; Parameters:
-; SMRGLTextureBasic * Stack[0x4]:4   sky_texture
+; SMRGLSkyTexture * Stack[0x4]:4   sky_texture
 ; char *           Stack[0x8]:4   texture_name
 ; int              Stack[0xc]:4   brightness_factor
 ; Local Variables:
@@ -312,7 +312,7 @@ section .text
     INC ESI                             ; 0049051a
     INC EBX                             ; 0049051b
     CALL core_dskybox.cpp_generateSkyDomeVertex_FUN_004900b0 ; 0049051c
-        ;   XREF to: 004900b0 (UNCONDITIONAL_CALL)  ; void core_dskybox.cpp_generateSkyDomeVertex_FUN_004900b0(SMRGLTextureBasic * sky_texture, int u_coord, int v_coord, int vertex_index)
+        ;   XREF to: 004900b0 (UNCONDITIONAL_CALL)  ; void core_dskybox.cpp_generateSkyDomeVertex_FUN_004900b0(SMRGLSkyTexture * sky_texture, int u_coord, int v_coord, int vertex_index)
     ADD ESP,0x10                        ; 00490521
     CMP EBX,0x4                         ; 00490524
     JL 0x00490516                       ; 00490527

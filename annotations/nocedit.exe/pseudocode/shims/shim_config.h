@@ -62,6 +62,19 @@
 #define NOCTURNE_AUTHENTIC_RELEASE 0
 #endif
 
+// NOCTURNE_AUTHENTIC_CONSOLE
+//   1: the on-screen debug console is the binary's original 40 cols ×
+//      32 rows (280 × 352 px).
+//   0: dev-friendly mode — 80 cols × 40 rows (560 × 442 px), the
+//      largest size that fits inside a 640 × 480 window. (The buffer
+//      could hold up to 50 rows but the bounding-box draw at row 50
+//      writes past the framebuffer end.)
+//
+//   Override with -DNOCTURNE_AUTHENTIC_CONSOLE=1.
+#ifndef NOCTURNE_AUTHENTIC_CONSOLE
+#define NOCTURNE_AUTHENTIC_CONSOLE 0
+#endif
+
 // NOCTURNE_FPU_TRAP
 //   1: compile in nocturne_fpu_trap_on(mask) / nocturne_fpu_trap_off() helpers
 //      that arm SIGFPE on configurable x87/SSE exception bits. The first FP

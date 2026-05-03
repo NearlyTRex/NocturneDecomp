@@ -44,13 +44,13 @@
 ;   TerminatedCString s_core_set_cpp_00645c7f
 ;   TerminatedCString s_CDemonSet_setCameraView__00645c8f
 ;   float FLOAT_00662850 = 256
-;   SMRGLTextureBasic* g_SkyDomeTexturePtr = 02ca0148
+;   SMRGLSkyTexture* g_SkyDomeTexturePtr = 02ca0148
 ;   CFireEffect* g_CFireEffectPtr = 02d12db0
 ;   CGore* g_CGorePtr = 02d83364
 ;   CSound* g_CSoundPtr = 03f6af64
 ;   CWater* g_CWaterPtr = 03f875e0
 ;   CWeather* g_CWeatherPtr = 03f95dc0
-;   SMRGLTextureBasic[24] g_SkyDomeTextureData
+;   SMRGLSkyTexture[24] g_SkyDomeTextureData
 ;   int g_UseExternalRenderer
 ;   int g_PerspectiveReciprocal
 ;   ... and 27 more
@@ -741,7 +741,7 @@ section .text
     MOV ECX,dword ptr [0x0067235c]      ; 0056b6f8 | g_SkyDomeTextureData | g_SkyDomeTexturePtr
     PUSH ECX                            ; 0056b6fe | g_SkyDomeTextureData
     CALL core_dskybox.cpp_renderSkyDome_FUN_004901f0 ; 0056b6ff
-        ;   XREF to: 004901f0 (UNCONDITIONAL_CALL)  ; void core_dskybox.cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic * sky_texture, char * texture_name, int brightness_factor)
+        ;   XREF to: 004901f0 (UNCONDITIONAL_CALL)  ; void core_dskybox.cpp_renderSkyDome_FUN_004901f0(SMRGLSkyTexture * sky_texture, char * texture_name, int brightness_factor)
     ADD ESP,0xc                         ; 0056b704
     PUSH 0x1                            ; 0056b707
         ;   Label: LAB_0056b707

@@ -10,42 +10,6 @@ sorted by effort required (lowest effort first).
 PRIORITY 1: Files with 1-2 functions remaining
 ====================================================================================================
 
-  core/dglobe.cpp (1 remaining of 6)
-    - core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0
-      Suspects: warning_inlined_function, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast
-
-  core/pendulum.cpp (1 remaining of 20)
-    - core_pendulum.cpp_CPendulum_ctor_FUN_00549390
-      Suspects: unrolled_strcpy, unrolled_strcpy
-
-  core/shotgun.cpp (1 remaining of 10)
-    - core_shotgun.cpp_CShotgun_fireProjectile_FUN_005888f0
-      Suspects: self_copy_guard
-
-  core/spike.cpp (1 remaining of 15)
-    - core_spike.cpp_CSpike_ctor_FUN_005b8220
-      Suspects: unrolled_strcpy, unrolled_strcpy, unrolled_strcpy, unrolled_strcpy
-
-  core/imp.cpp (1 remaining of 17)
-    - core_imp.cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920
-      Suspects: unrolled_memcpy, unrolled_memcpy, unrolled_memcpy
-
-  core/moon.cpp (1 remaining of 14)
-    - core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0
-      Suspects: stack_alignment_array
-
-  core/ammobox.cpp (1 remaining of 18)
-    - core_ammobox.cpp_CAmmoBox_propertyDisplayCallback_FUN_00411a30
-      Suspects: unrolled_strcpy
-
-  core/passngr.cpp (1 remaining of 11)
-    - core_passngr.cpp_CPassenger_ctor_FUN_00545b30
-      Suspects: unrolled_strcpy, unrolled_strcpy, unrolled_strcpy
-
-  core/dskybox.cpp (1 remaining of 4)
-    - core_dskybox.cpp_initializeSkyboxTexture_FUN_00490070
-      Suspects: unrolled_strcpy
-
   core/elephant.cpp (1 remaining of 10)
     - core_elephant.cpp_CElephantGun_fireProjectile_FUN_004a79f0
       Suspects: self_copy_guard
@@ -326,7 +290,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_msnedit.cpp_CDemonMission_pickActorByName_FUN_0053c210            ( 49 lines)
     core_dstrender.cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5 ( 49 lines)
 
-  [unrolled_strcpy] - 42 functions
+  [unrolled_strcpy] - 40 functions
     engine_fileio.cpp_CFileManager_setVersionControlDirectory_FUN_004bc5a0 ( 18 lines)
     core_event.cpp_setEventError_FUN_004aa270                              ( 18 lines)
     core_mission.cpp_CDemonMission_setMissionName_FUN_00524630             ( 18 lines)
@@ -338,7 +302,6 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_cloth.cpp_CClothList_add_FUN_0043c0f0                             ( 23 lines)
     core_dfilter.cpp_CDemonFilter_ctor_FUN_004701f0                        ( 23 lines)
     core_mission.cpp_CDemonMission_createFromSingleSet_FUN_005243a0        ( 23 lines)
-    core_dskybox.cpp_initializeSkyboxTexture_FUN_00490070                  ( 24 lines)
     shape_memdbg.cpp_SMemHead_recordSourceFile_FUN_0050eea0                ( 24 lines)
     core_hiram.cpp_CHiram_ctor_FUN_004f43f0                                ( 25 lines)
     core_hpriest.cpp_CHighPriestOfGardath_ctor_FUN_004f7b70                ( 25 lines)
@@ -360,7 +323,6 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     shape_edittool.cpp_CPickList_setOkButtonText_FUN_004a3d20              ( 36 lines)
     core_boxactor.cpp_CLightActor_propertyDisplayTypeCallback_FUN_00423310 ( 37 lines)
     core_biggs.cpp_CBiggs_ctor_FUN_004185c0                                ( 39 lines)
-    core_ammobox.cpp_CAmmoBox_propertyDisplayCallback_FUN_00411a30         ( 41 lines)
     core_succubus.cpp_CSuccubus_ctor_FUN_005c6a80                          ( 42 lines)
     core_game.cpp_CGame_setStatusDisplay_FUN_004e0bf0                      ( 42 lines)
     shape_design.c_displayPalette_FUN_00461560                             ( 44 lines)
@@ -400,7 +362,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     shape_design.c_removeDegenerateTriangles_FUN_00463a20                  ( 45 lines)
     core_dpart.cpp_CDemonPart_renderFaces_FUN_004828b0                     ( 49 lines)
 
-  [stack_alignment_array] - 12 functions
+  [stack_alignment_array] - 11 functions
     core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00452900            ( 20 lines)
     engine_matrix.c_normalizeVector3DFixed_FUN_0050d970                    ( 21 lines)
     core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0     ( 28 lines)
@@ -409,7 +371,6 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_3d.c_renderPolygonPerspectiveNormalized_FUN_004055b0            ( 34 lines)
     engine_3d.c_renderPolygonUVTextureNormalizedLit_FUN_00405430           ( 34 lines)
     engine_3d.c_renderPolygonUVTextureEnableNormalized_FUN_00405350        ( 34 lines)
-    core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0             ( 35 lines)
     core_msnedit.cpp_screenToWorldPosition_FUN_00535c60                    ( 40 lines)
     core_setedit.cpp_CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0 ( 42 lines)
     shape_design.c_calculatePolygonAngularArea_FUN_00461ee0                ( 48 lines)
@@ -470,11 +431,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 (716 lines)
         Types: ['unrolled_memcpy']
 
-  core/pendulum.cpp (95.0% complete)
-    1 functions remaining:
-      core_pendulum.cpp_CPendulum_ctor_FUN_00549390 (49 lines)
-        Types: ['unrolled_strcpy']
-
   core/setcolid.cpp (95.0% complete)
     2 functions remaining:
       core_setcolid.cpp_SDamageInfo_copy_FUN_005746d0 (19 lines)
@@ -497,11 +453,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_svetlana.cpp_CSvetlana_performBladeAttack_FUN_005d9a10 (86 lines)
         Types: ['shadow_pointer_walk']
 
-  core/ammobox.cpp (94.4% complete)
-    1 functions remaining:
-      core_ammobox.cpp_CAmmoBox_propertyDisplayCallback_FUN_00411a30 (41 lines)
-        Types: ['unrolled_strcpy']
-
   core/haystack.cpp (94.4% complete)
     1 functions remaining:
       core_haystack.cpp_CHaystack_process_FUN_004f0e40 (270 lines)
@@ -521,11 +472,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
     1 functions remaining:
       core_hostage.cpp_CHostage_process_FUN_004f4bd0 (680 lines)
         Types: ['pointer_cast']
-
-  core/imp.cpp (94.1% complete)
-    1 functions remaining:
-      core_imp.cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920 (70 lines)
-        Types: ['unrolled_memcpy']
 
   core/melee.cpp (94.1% complete)
     1 functions remaining:
@@ -566,11 +512,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_actor.cpp_drawBoundingBox_FUN_0040d470 (351 lines)
         Types: ['unrolled_memcpy']
 
-  core/spike.cpp (93.3% complete)
-    1 functions remaining:
-      core_spike.cpp_CSpike_ctor_FUN_005b8220 (68 lines)
-        Types: ['unrolled_strcpy']
-
   core/simbox.cpp (93.3% complete)
     1 functions remaining:
       core_simbox.cpp_CSimBox_propertyDisplayCallback_FUN_00589270 (30 lines)
@@ -592,11 +533,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
         Types: ['unrolled_strcpy']
       core_filmreel.cpp_CFilmProjector_ctor_FUN_004bea40 (40 lines)
         Types: ['unrolled_strcpy']
-
-  core/moon.cpp (92.9% complete)
-    1 functions remaining:
-      core_moon.cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0 (35 lines)
-        Types: ['stack_alignment_array']
 
   core/bride.cpp (92.9% complete)
     1 functions remaining:
@@ -645,11 +581,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
         Types: ['unrolled_strcpy']
       core_baron.cpp_CBaron_process_FUN_00412e80 (217 lines)
         Types: ['missing_cave_copy', 'warning_type_propagation']
-
-  core/passngr.cpp (90.9% complete)
-    1 functions remaining:
-      core_passngr.cpp_CPassenger_ctor_FUN_00545b30 (50 lines)
-        Types: ['unrolled_strcpy']
 
   core/inv.cpp (90.7% complete)
     4 functions remaining:
@@ -715,11 +646,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
         Types: ['stack_param']
       core_vehicle.cpp_CVehicle_getPropertyList_FUN_005e8ba0 (39 lines)
         Types: ['pointer_cast']
-
-  core/shotgun.cpp (90.0% complete)
-    1 functions remaining:
-      core_shotgun.cpp_CShotgun_fireProjectile_FUN_005888f0 (63 lines)
-        Types: ['self_copy_guard']
 
   core/vessel.cpp (90.0% complete)
     2 functions remaining:

@@ -4,11 +4,11 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 5478 functions
-  1 suspects: 319 functions
-  2 suspects: 212 functions
-  3 suspects: 129 functions
-  4 suspects: 82 functions
+  0 suspects: 5487 functions
+  1 suspects: 315 functions
+  2 suspects: 211 functions
+  3 suspects: 127 functions
+  4 suspects: 81 functions
   5 suspects: 40 functions
   6 suspects: 46 functions
   7 suspects: 19 functions
@@ -17,7 +17,7 @@ SUSPECT COUNT DISTRIBUTION
   10 suspects: 16 functions
   11 suspects: 5 functions
   12 suspects: 7 functions
-  13 suspects: 8 functions
+  13 suspects: 7 functions
   14 suspects: 9 functions
   15 suspects: 7 functions
   16 suspects: 6 functions
@@ -334,7 +334,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_msnedit.cpp_CDemonMission_editActorsInSet_FUN (996 lines)
       (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar8),...
 
-  [unrolled_strcpy] (69 functions)
+  [unrolled_strcpy] (67 functions)
   ------------------------------------------------------------
     engine_fileio.cpp_CFileManager_setVersionControlDi ( 18 lines)
       do {...
@@ -357,8 +357,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_dfilter.cpp_CDemonFilter_ctor_FUN_004701f0    ( 23 lines)
       do {...
     core_mission.cpp_CDemonMission_createFromSingleSet ( 23 lines)
-      do {...
-    core_dskybox.cpp_initializeSkyboxTexture_FUN_00490 ( 24 lines)
       do {...
     shape_memdbg.cpp_SMemHead_recordSourceFile_FUN_005 ( 24 lines)
       do {...
@@ -401,8 +399,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_boxactor.cpp_CLightActor_propertyDisplayTypeC ( 37 lines)
       do {...
     core_biggs.cpp_CBiggs_ctor_FUN_004185c0            ( 39 lines)
-      do {...
-    core_ammobox.cpp_CAmmoBox_propertyDisplayCallback_ ( 41 lines)
       do {...
     core_succubus.cpp_CSuccubus_ctor_FUN_005c6a80      ( 42 lines)
       do {...
@@ -582,7 +578,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_box.cpp_CBox_processPhysics_FUN_0041e350      (779 lines)
       // 0041e8ad: MOVSD.REP ES:EDI,ESI...
 
-  [stack_alignment_array] (19 functions)
+  [stack_alignment_array] (18 functions)
   ------------------------------------------------------------
     core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN ( 20 lines)
       int aiStackY_1028 [1015];...
@@ -600,8 +596,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       int aiStackY_1010 [1016];...
     engine_3d.c_renderPolygonUVTextureEnableNormalized ( 34 lines)
       int aiStackY_1010 [1016];...
-    core_moon.cpp_CMoon_renderJoystickCalibration_FUN_ ( 35 lines)
-      int aiStackY_101c [1014];...
     core_msnedit.cpp_screenToWorldPosition_FUN_00535c6 ( 40 lines)
       int aiStackY_1044 [1015];...
     core_setedit.cpp_CDemonSet_findVisibleCamerasAtScr ( 42 lines)
@@ -642,12 +636,10 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_skeleton.cpp_CDeformableModelInstance_findClo ( 87 lines)
       local_3c = (CSkeleton *)((local_3c->motion_list).state_names...
 
-  [self_copy_guard] (7 functions)
+  [self_copy_guard] (6 functions)
   ------------------------------------------------------------
     core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0 ( 62 lines)
       if (&local_14 != &local_38) {...
-    core_shotgun.cpp_CShotgun_fireProjectile_FUN_00588 ( 63 lines)
-      if (&fStack_50 != &fStack_38) {...
     core_elephant.cpp_CElephantGun_fireProjectile_FUN_ ( 63 lines)
       if (&fStack_50 != &fStack_38) {...
     core_emitter.cpp_CEmitter_launchFireballAtHero_FUN ( 68 lines)
@@ -886,8 +878,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/glass.cpp, Lines: 48, Types: ['pointer_cast', 'warning_inlined_function']
   shape_quantize.cpp_CColorQuantizer_splitBox_FUN_00554e70
     File: shape/quantize.cpp, Lines: 48, Types: ['pointer_cast']
-  core_pendulum.cpp_CPendulum_ctor_FUN_00549390
-    File: core/pendulum.cpp, Lines: 49, Types: ['unrolled_strcpy']
   core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004
     File: core/dstrender.cpp, Lines: 49, Types: ['pointer_cast']
   core_skeleton.cpp_CDeformableModel_findMaxWeightBone_FUN_005
@@ -1224,8 +1214,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/vampboss.cpp, Lines: 48, Types: ['unrolled_memcpy']
   core_xform.cpp_buildMirrorTransform_FUN_005f7000
     File: core/xform.cpp, Lines: 49, Types: ['unrolled_memcpy']
-  core_passngr.cpp_CPassenger_ctor_FUN_00545b30
-    File: core/passngr.cpp, Lines: 50, Types: ['unrolled_strcpy']
   core_tbplayer.cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_005
     File: core/tbplayer.cpp, Lines: 50, Types: ['unrolled_memcpy']
   engine_model.c_loadMRGLTextures_FUN_00528870
@@ -1282,8 +1270,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/tbplayer.cpp, Lines: 66, Types: ['unrolled_memcpy']
   core_bugs.cpp_CBugs_ctor_FUN_00424cb0
     File: core/bugs.cpp, Lines: 70, Types: ['unrolled_strcpy']
-  core_imp.cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920
-    File: core/imp.cpp, Lines: 70, Types: ['unrolled_memcpy']
   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0
     File: core/platfrm.cpp, Lines: 70, Types: ['missing_cave_copy', 'stack_alignment_array']
   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatri

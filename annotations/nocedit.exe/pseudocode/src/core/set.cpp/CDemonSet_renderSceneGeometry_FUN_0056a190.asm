@@ -23,13 +23,13 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
-;   SMRGLTextureBasic* g_SkyDomeTexturePtr = 02ca0148
+;   SMRGLSkyTexture* g_SkyDomeTexturePtr = 02ca0148
 ;   CVector3i g_GlobalLightDirection
 ;   int g_RenderMirrorsFlag = 0x1
 ;   CTerrain* g_CTerrainPtr = 03f8749c
 ;   CWater* g_CWaterPtr = 03f875e0
 ;   CDemonRenderer g_CDemonRendererInstance
-;   SMRGLTextureBasic[24] g_SkyDomeTextureData
+;   SMRGLSkyTexture[24] g_SkyDomeTextureData
 ;   int g_UseExternalRenderer
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;   CKeyFramedModel g_CKeyFramedModelInstance
@@ -258,7 +258,7 @@ section .text
     MOV EDI,dword ptr [0x0067235c]      ; 0056a39c | g_SkyDomeTexturePtr
     PUSH EDI                            ; 0056a3a2 | g_SkyDomeTextureData
     CALL core_dskybox.cpp_renderSkyDome_FUN_004901f0 ; 0056a3a3
-        ;   XREF to: 004901f0 (UNCONDITIONAL_CALL)  ; void core_dskybox.cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic * sky_texture, char * texture_name, int brightness_factor)
+        ;   XREF to: 004901f0 (UNCONDITIONAL_CALL)  ; void core_dskybox.cpp_renderSkyDome_FUN_004901f0(SMRGLSkyTexture * sky_texture, char * texture_name, int brightness_factor)
     ADD ESP,0xc                         ; 0056a3a8
     JMP 0x0056a2b4                      ; 0056a3ab
         ;   XREF to: 0056a2b4 (UNCONDITIONAL_JUMP)  ; LAB_0056a2b4

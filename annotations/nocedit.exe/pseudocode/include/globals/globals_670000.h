@@ -16,6 +16,7 @@
 #include "types/classes/CLevelLoader.h"
 #include "types/structs/SEnumPair.h"
 #include "types/structs/SInputFace.h"
+#include "types/structs/SMRGLSkyTexture.h"
 #include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SMpegLayer3BandIndex.h"
 
@@ -81,6 +82,9 @@ extern SEnumPair g_MeleeDamageTypePairs[9];
 // SInputFace*[2000]
 extern SInputFace* g_VisibleFacePointers[2000];
 
+// SMRGLSkyTexture*
+extern SMRGLSkyTexture* g_SkyDomeTexturePtr;
+
 // SMRGLTextureBasic
 extern SMRGLTextureBasic g_FireEffectBlackHoleTexture;
 extern SMRGLTextureBasic g_FireEffectSparkTexture;
@@ -106,7 +110,6 @@ extern SMRGLTextureBasic SMRGLTextureBasic_0067d150;
 
 // SMRGLTextureBasic*
 extern SMRGLTextureBasic* g_LightTexturesEnd;
-extern SMRGLTextureBasic* g_SkyDomeTexturePtr;
 
 // SMRGLTextureBasic[116]
 extern SMRGLTextureBasic g_BloodPoolAnimTextures[116];

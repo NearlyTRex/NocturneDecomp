@@ -3,11 +3,11 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[004901f0, 004906a3]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_texture,char *texture_name,int brightness_factor)
+// Signature: void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLSkyTexture *sky_texture,char *texture_name,int brightness_factor)
 
 #include "nocturne.h"
 
-void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_texture,char *texture_name,int brightness_factor)
+void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLSkyTexture *sky_texture,char *texture_name,int brightness_factor)
 
 {
   float fVar3;
@@ -30,7 +30,7 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_
   CDemonRenderer *this_ptr;
   float fVar2;
   
-  strcpy(sky_texture->texture_name + 4, texture_name);
+  strcpy(sky_texture->texture_name, texture_name);
   (sky_texture->base).type = brightness_factor;
   core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_00499b40(&g_CDemonRaytraceInstance,&local_60);
   core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_00499b70(&g_CDemonRaytraceInstance,&local_54);

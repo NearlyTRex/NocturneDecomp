@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(SMRGLTextureBasic *sky_texture,int u_coord,int v_coord,int vertex_index)
+; void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(SMRGLSkyTexture *sky_texture,int u_coord,int v_coord,int vertex_index)
 ;
 ; Parameters:
-; SMRGLTextureBasic * Stack[0x4]:4   sky_texture
+; SMRGLSkyTexture * Stack[0x4]:4   sky_texture
 ; int              Stack[0x8]:4   u_coord
 ; int              Stack[0xc]:4   v_coord
 ; int              Stack[0x10]:4   vertex_index

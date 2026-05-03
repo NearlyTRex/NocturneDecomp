@@ -101,6 +101,7 @@
 #include "types/structs/SMRGLPrimitiveQuadIndex.h"
 #include "types/structs/SMRGLPrimitiveTriangle.h"
 #include "types/structs/SMRGLPrimitiveTriangleIndex.h"
+#include "types/structs/SMRGLSkyTexture.h"
 #include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SMRGLTextureLod.h"
 #include "types/structs/SMRGLVertex.h"

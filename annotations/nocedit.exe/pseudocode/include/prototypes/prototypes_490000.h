@@ -16,7 +16,7 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/structs/SIntersectXZCylinder.h"
-#include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/SMRGLSkyTexture.h"
 #include "types/structs/SSoftwareEdge.h"
 #include "types/structs/STriangleRef.h"
 
@@ -26,9 +26,9 @@
 
 void __cdecl shape_dsemodel_cpp_CDSEModel_doNothing_FUN_00490020(CDSEModel *this_ptr);
 void __cdecl core_dskybox_cpp_staticInit_FUN_00490040(void);
-SMRGLTextureBasic * __cdecl core_dskybox_cpp_initializeSkyboxTexture_FUN_00490070(SMRGLTextureBasic *texture);
-void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(SMRGLTextureBasic *sky_texture,int u_coord,int v_coord,int vertex_index);
-void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLTextureBasic *sky_texture,char *texture_name,int brightness_factor);
+SMRGLSkyTexture * __cdecl core_dskybox_cpp_initializeSkyboxTexture_FUN_00490070(SMRGLSkyTexture *texture);
+void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(SMRGLSkyTexture *sky_texture,int u_coord,int v_coord,int vertex_index);
+void __cdecl core_dskybox_cpp_renderSkyDome_FUN_004901f0(SMRGLSkyTexture *sky_texture,char *texture_name,int brightness_factor);
 void __mmx_save core_dstrender_cpp_saveMMXRegisters_FUN_004906b0(ulonglong mm0,ulonglong mm1,ulonglong mm2,ulonglong mm3,ulonglong mm4,ulonglong mm5,ulonglong mm6,ulonglong mm7);
 void __edi_esi_ebx core_dstrender_cpp_renderDepthOnlyReversed_FUN_004906e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 void __edi_esi_ebx core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);

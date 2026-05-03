@@ -2,13 +2,13 @@
 // Address: 004900b0
 // Address Range: [[004900b0, 004901ea]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(SMRGLTextureBasic *sky_texture,int u_coord,int v_coord,int vertex_index)
+// Signature: void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(SMRGLSkyTexture *sky_texture,int u_coord,int v_coord,int vertex_index)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(SMRGLTextureBasic *sky_texture,int u_coord,int v_coord,int vertex_index)
+void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(SMRGLSkyTexture *sky_texture,int u_coord,int v_coord,int vertex_index)
 
 {
   float10 fVar2;
