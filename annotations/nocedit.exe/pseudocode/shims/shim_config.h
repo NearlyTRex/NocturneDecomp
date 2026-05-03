@@ -19,6 +19,49 @@
 #define NOCTURNE_AUTHENTIC_WINDOWS 0
 #endif
 
+// NOCTURNE_AUTHENTIC_D3D_OPTIONS
+//   1: the Graphics Options menu lets the user pick a 3D renderer DLL
+//      (DirectX 5/6/7 / 3dfx) and `g_UseDirect3D` retains the choice.
+//   0: hardware acceleration is permanently off — the menu line shows
+//      "Acceleration disabled in editor" and 3D-API cycling has no effect.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_D3D_OPTIONS=1.
+#ifndef NOCTURNE_AUTHENTIC_D3D_OPTIONS
+#define NOCTURNE_AUTHENTIC_D3D_OPTIONS 0
+#endif
+
+// NOCTURNE_AUTHENTIC_VOICE
+//   1: cutscene dialogue plays through the streaming MP3 path alongside
+//      the subtitles.
+//   0: subtitles render but no voice audio plays.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_VOICE=1.
+#ifndef NOCTURNE_AUTHENTIC_VOICE
+#define NOCTURNE_AUTHENTIC_VOICE 0
+#endif
+
+// NOCTURNE_AUTHENTIC_NETPLAY
+//   1: Ctrl+H on the main menu hosts a network game; Ctrl+J joins one.
+//      Routes through the existing CNetGame / trisock infrastructure.
+//   0: netplay is unreachable from any menu.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_NETPLAY=1.
+#ifndef NOCTURNE_AUTHENTIC_NETPLAY
+#define NOCTURNE_AUTHENTIC_NETPLAY 0
+#endif
+
+// NOCTURNE_AUTHENTIC_RELEASE
+//   1: hide the "NON-RELEASE EDITOR BUILD" / "Press CTRL+D to access the
+//      editor menu" banner on every menu screen, and disable the Ctrl+D
+//      / Ctrl+L hotkeys that open the developer-tools menu.
+//   0: editor banner + dev-tools menu access remain visible (current
+//      behavior of this binary).
+//
+//   Override with -DNOCTURNE_AUTHENTIC_RELEASE=1.
+#ifndef NOCTURNE_AUTHENTIC_RELEASE
+#define NOCTURNE_AUTHENTIC_RELEASE 0
+#endif
+
 // NOCTURNE_FPU_TRAP
 //   1: compile in nocturne_fpu_trap_on(mask) / nocturne_fpu_trap_off() helpers
 //      that arm SIGFPE on configurable x87/SSE exception bits. The first FP

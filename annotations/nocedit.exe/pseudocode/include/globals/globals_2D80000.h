@@ -63,7 +63,7 @@ extern float g_IrisFadeRadius;
 extern int INT_02d82568;
 extern int g_InputResetFlag;
 extern int g_StoredCameraValue;
-extern int g_CheatSystemEnabled;
+extern int g_ModalDialogActive;
 extern int g_HasSavedLightState;
 extern int g_ChapterDisplayYear;
 extern int g_MovieRecordingArmed;

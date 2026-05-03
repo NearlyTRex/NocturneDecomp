@@ -38,7 +38,7 @@ int __cdecl core_menu_cpp_showMainGameMenu_FUN_00512f40(void)
   if (g_WindowHeight < GAME_WINDOW_RESOLUTION_480) {
     return 1;
   }
-  if ((g_ExternalRendererActive == 0) && (GAME_WINDOW_RESOLUTION_480 < g_CGamePtr->game_pixy)) {
+  if ((g_UseDirect3D == 0) && (GAME_WINDOW_RESOLUTION_480 < g_CGamePtr->game_pixy)) {
     g_CGamePtr->game_pixy = GAME_WINDOW_RESOLUTION_480;
     pCVar3->game_pixx = GAME_WINDOW_RESOLUTION_640;
   }
@@ -176,7 +176,7 @@ LAB_005131d5:
     if ((iVar8 != 0) &&
        ((iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D), iVar8 != 0 ||
         (iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_L), iVar8 != 0)))) {
-      if (g_ExternalRendererActive != 0) {
+      if (g_UseDirect3D != 0) {
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
         engine_2d_c_drawText_FUN_00401fd0("3D acceleration has been turned off!",0,0);
         engine_2d_c_drawText_FUN_00401fd0("Press any key to continue...",0,0xb);
@@ -184,7 +184,7 @@ LAB_005131d5:
         engine_2d_c_clearInputAndWait_FUN_00403260();
         wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
       }
-      g_ExternalRendererActive = 0;
+      g_UseDirect3D = 0;
       core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
       core_main_c_showDeveloperToolsMenu_FUN_005073a0();
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);

@@ -88,7 +88,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_setInteger_FUN_004fbc90 ; 004fc588
         ;   XREF to: 004fbc90 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004fbc90(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004fc58d
-    MOV ESI,dword ptr [0x03f6b884]      ; 004fc590 | g_PodSystemVersion
+    MOV ESI,dword ptr [0x03f6b884]      ; 004fc590 | g_AGPTextureMode
     PUSH ESI                            ; 004fc596
     PUSH 0x630083                       ; 004fc597 | = "useAGPFlag"
     LEA EAX,[ESP + 0x8]                 ; 004fc59c
@@ -96,7 +96,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_setInteger_FUN_004fbc90 ; 004fc5a1
         ;   XREF to: 004fbc90 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004fbc90(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004fc5a6
-    PUSH 0x684010                       ; 004fc5a9 | g_RendererDllName
+    PUSH 0x684010                       ; 004fc5a9 | g_RendererDllPath
     PUSH 0x63008e                       ; 004fc5ae | = "rendererDLLPath"
     LEA EAX,[ESP + 0x8]                 ; 004fc5b3
     PUSH EAX                            ; 004fc5b7
@@ -130,7 +130,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_setInteger_FUN_004fbc90 ; 004fc60f
         ;   XREF to: 004fbc90 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004fbc90(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004fc614
-    MOV ECX,dword ptr [0x02db8a64]      ; 004fc617 | g_SkipIntroVideo
+    MOV ECX,dword ptr [0x02db8a64]      ; 004fc617 | g_FirstTimeFlag
     PUSH ECX                            ; 004fc61d
     PUSH 0x6300b8                       ; 004fc61e | = "firstTimeFlag"
     LEA EAX,[ESP + 0x8]                 ; 004fc623
@@ -171,7 +171,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_setInteger_FUN_004fbc90 ; 004fc689
         ;   XREF to: 004fbc90 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_setInteger_FUN_004fbc90(CIniFile * this_ptr, char * key, int value)
     ADD ESP,0xc                         ; 004fc68e
-    MOV ESI,dword ptr [0x02f275f4]      ; 004fc691 | g_GraphicsCardHandle
+    MOV ESI,dword ptr [0x02f275f4]      ; 004fc691 | g_CurrentGraphicsBoard
     PUSH ESI                            ; 004fc697
     PUSH 0x63010f                       ; 004fc698 | = "currentBoard"
     LEA EAX,[ESP + 0x8]                 ; 004fc69d

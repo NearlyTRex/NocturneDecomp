@@ -12,7 +12,7 @@ void __cdecl engine_2d_c_reinitializeGraphicsSystem_FUN_00402a80(void)
   HRESULT HVar1;
   
   g_GraphicsResetFlag = 0;
-  if (g_ExternalRendererActive == 0) {
+  if (g_UseDirect3D == 0) {
     return;
   }
   wincore_windll_cpp_restoreVideoMode_FUN_005b75b0();

@@ -39,7 +39,7 @@ section .text
     PUSH EDI                            ; 005b5ec2
     PUSH EBP                            ; 005b5ec3
     SUB ESP,0x3b90                      ; 005b5ec4
-    PUSH 0x684010                       ; 005b5eca | g_RendererDllName
+    PUSH 0x684010                       ; 005b5eca | g_RendererDllPath
     CALL wincore_wddvmem.cpp_loadLibrary_FUN_005ede10 ; 005b5ecf
         ;   XREF to: 005ede10 (UNCONDITIONAL_CALL)  ; HMODULE wincore_wddvmem.cpp_loadLibrary_FUN_005ede10(LPCSTR lpLibFileName)
     ADD ESP,0x4                         ; 005b5ed4
@@ -47,7 +47,7 @@ section .text
     TEST EAX,EAX                        ; 005b5edc
     JNZ 0x005b5ef0                      ; 005b5ede
         ;   XREF to: 005b5ef0 (CONDITIONAL_JUMP)  ; LAB_005b5ef0
-    MOV [0x03f6b878],EAX                ; 005b5ee0 | g_ExternalRendererActive
+    MOV [0x03f6b878],EAX                ; 005b5ee0 | g_UseDirect3D
     ADD ESP,0x3b90                      ; 005b5ee5
     POP EBP                             ; 005b5eeb
     POP EDI                             ; 005b5eec
@@ -682,7 +682,7 @@ section .text
         ;   Label: LAB_005b66f3
     XOR ECX,ECX                         ; 005b66f8
     XOR EAX,EAX                         ; 005b66fa
-    MOV dword ptr [0x03f6b878],ECX      ; 005b66fc | g_ExternalRendererActive
+    MOV dword ptr [0x03f6b878],ECX      ; 005b66fc | g_UseDirect3D
     ADD ESP,0x3b90                      ; 005b6702
     POP EBP                             ; 005b6708
     POP EDI                             ; 005b6709
@@ -694,7 +694,7 @@ section .text
         ;   Label: LAB_005b670d
     XOR EBX,EBX                         ; 005b6712
     XOR EAX,EAX                         ; 005b6714
-    MOV dword ptr [0x03f6b878],EBX      ; 005b6716 | g_ExternalRendererActive
+    MOV dword ptr [0x03f6b878],EBX      ; 005b6716 | g_UseDirect3D
     ADD ESP,0x3b90                      ; 005b671c
     POP EBP                             ; 005b6722
     POP EDI                             ; 005b6723
@@ -706,7 +706,7 @@ section .text
         ;   Label: LAB_005b6727
     XOR EDX,EDX                         ; 005b672c
     XOR EAX,EAX                         ; 005b672e
-    MOV dword ptr [0x03f6b878],EDX      ; 005b6730 | g_ExternalRendererActive
+    MOV dword ptr [0x03f6b878],EDX      ; 005b6730 | g_UseDirect3D
     ADD ESP,0x3b90                      ; 005b6736
     POP EBP                             ; 005b673c
     POP EDI                             ; 005b673d

@@ -65,7 +65,7 @@ extern char g_ControlsMenuTextBuffers[9][256];
 extern int g_MenuLeftRightPressed;
 extern int g_AudioVisualizationCounter;
 extern int g_MenuInputHappened;
-extern int g_GraphicsCardHandle;
+extern int g_CurrentGraphicsBoard;
 extern int g_GraphicsCardCount;
 extern int g_CustomKeyCount;
 extern int g_StringBufferIndex;

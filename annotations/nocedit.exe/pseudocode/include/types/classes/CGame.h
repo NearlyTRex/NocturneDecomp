@@ -81,7 +81,7 @@ typedef struct CGame {
     int big_hat_cheat; // 0x204
     int skip_frame_render; // 0x208
     int profile_mode; // 0x20c
-    int velocity_debug_enabled; // 0x210
+    int developer_mode_enabled; // 0x210
     int head_of_horror_cheat; // 0x214
     int geometry_debug_enabled; // 0x218
     int collision_render_enabled; // 0x21c

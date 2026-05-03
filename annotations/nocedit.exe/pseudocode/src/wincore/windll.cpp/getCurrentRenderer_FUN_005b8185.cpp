@@ -10,5 +10,5 @@ char * __cdecl wincore_windll_cpp_getCurrentRenderer_FUN_005b8185(int *renderer_
 
 {
   *renderer_handle = g_RendererHandle;
-  return g_RendererDllName;
+  return g_RendererDllPath;
 }

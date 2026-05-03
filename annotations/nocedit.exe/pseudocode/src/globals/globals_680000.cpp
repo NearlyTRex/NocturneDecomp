@@ -3802,7 +3802,7 @@ char g_ActorRefDefaultBuffer[200] = "";
 // char[256]
 char g_DefaultSoundDeviceName[256] = "";
 char g_DefaultDeviceName[256] = "";
-char g_RendererDllName[256] = "trid3d.dll";
+char g_RendererDllPath[256] = "trid3d.dll";
 
 // char[260]
 char g_TempDirectoryBuffer[260] = "";

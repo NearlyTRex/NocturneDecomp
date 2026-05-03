@@ -19,7 +19,7 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004dbd80(CGame *this_ptr)
   byte bVar5;
   
   bVar5 = 0;
-  if (g_CheatSystemEnabled != 0) {
+  if (g_ModalDialogActive != 0) {
     core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(this_ptr);
     return;
   }

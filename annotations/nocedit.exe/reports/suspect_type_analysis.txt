@@ -4,10 +4,10 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1819 ( 47.0%)
-  unrolled_memcpy                  645 ( 16.7%)
-  unrolled_strcpy                  390 ( 10.1%)
-  missing_cave_copy                219 (  5.7%)
+  pointer_cast                    1812 ( 46.7%)
+  unrolled_memcpy                  645 ( 16.6%)
+  unrolled_strcpy                  382 (  9.9%)
+  missing_cave_copy                219 (  5.6%)
   raw_address_constant             167 (  4.3%)
   unrolled_strlen                   98 (  2.5%)
   warning_inlined_function          86 (  2.2%)
@@ -21,6 +21,7 @@ SUSPECT TYPE COUNTS
   warning_unreachable               28 (  0.7%)
   decompiler_intrinsic              27 (  0.7%)
   negative_offset                   22 (  0.6%)
+  shadow_pointer_walk               20 (  0.5%)
   extra_output                      16 (  0.4%)
   unnamed_param                      9 (  0.2%)
   unaffected_reg                     9 (  0.2%)
@@ -37,11 +38,11 @@ SUSPECT TYPE COUNTS
   warning_noreturn                   1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (1819 occurrences)
+TYPE: pointer_cast (1812 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   309x  (int)&NAME used in byte-offset arithmetic
+   307x  (int)&NAME used in byte-offset arithmetic
     55x  (int *)((int)g_ScreenBufferArray
     55x  (int *)((int)this_ptr
     43x  (CDemonActor **)((int)g_CDemonSetPtr
@@ -180,7 +181,6 @@ Functions:
   core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540
   core_game.cpp_CGame_beginFadeOut_FUN_004e0960
   core_game.cpp_CGame_loadGame_FUN_004e12b0
-  core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0
   core_game.cpp_CGame_renderIrisFade_FUN_004e0aa0
   core_game.cpp_CGame_rollCredits_FUN_004e4010
   core_game.cpp_CGame_saveGame_FUN_004e0cd0
@@ -213,11 +213,9 @@ Functions:
   core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004f8970
   core_lever.cpp_CLever_process_FUN_00504920
   core_lever.cpp_CLever_setState_FUN_00504b20
-  core_main.c_enterMainGameMenu_FUN_00507a50
   core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330
   core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70
   core_menu.cpp_configureSoundOptions_FUN_00511e50
-  core_menu.cpp_showMainGameMenu_FUN_00512f40
   core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0
   core_mimic.cpp_CMimic_setupCloth_FUN_00520500
   core_mimic.cpp_CMimic_updatePose_FUN_0051f930
@@ -405,8 +403,6 @@ Functions:
   engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0
   engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0
   engine_clipper.c_clipPolygonToViewport_FUN_00438420
-  engine_colquant.c_partitionByRed_FUN_00440b40
-  engine_console.cpp_CConsole_render_FUN_00441b00
   engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50
   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80
   engine_drender.cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950
@@ -855,11 +851,11 @@ Functions:
   sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0
 
 ====================================================================================================
-TYPE: unrolled_strcpy (390 occurrences)
+TYPE: unrolled_strcpy (382 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   390x  do {
+   382x  do {
 
 Functions:
   core_actor.cpp_CActorPropertyList_addFile_FUN_0040e3e0
@@ -926,14 +922,12 @@ Functions:
   core_lever.cpp_CLever_propertyDisplayStateFunc_FUN_005051a0
   core_lever.cpp_CLever_propertyDisplayTypeCallback_FUN_00505100
   core_lever.cpp_CLever_setup_FUN_005048a0
-  core_main.c_enterMainGameMenu_FUN_00507a50
   core_melee.cpp_CMelee_ctor_FUN_0050e7d0
   core_menu.cpp_configureCustomKeys_FUN_00511890
   core_menu.cpp_configureGraphicsOptions_FUN_00510c80
   core_menu.cpp_configureSoundOptions_FUN_00511e50
   core_menu.cpp_getKeyDisplayName_FUN_005134e0
   core_menu.cpp_showCalibrationTestPattern_FUN_00510a50
-  core_menu.cpp_showMainGameMenu_FUN_00512f40
   core_mimic.cpp_CMimic_ctor_FUN_0051f1d0
   core_mission.cpp_CDemonMission_createFromSingleSet_FUN_005243a0
   core_mission.cpp_CDemonMission_setMissionName_FUN_00524630
@@ -1663,6 +1657,47 @@ Functions:
   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
   sound_sndwav.cpp_enumerateWavInDevice_FUN_005b1560
   sound_sndwav.cpp_enumerateWavOutDevice_FUN_005b1470
+
+====================================================================================================
+TYPE: shadow_pointer_walk (20 occurrences)
+====================================================================================================
+
+Unique patterns:
+     3x  pCVar5 = (T *)((pCVar5->FIELD).ARRAY[N] + CONST)
+     3x  local_20 = (T *)((local_20->FIELD).ARRAY[N] + CONST)
+     2x  local_50 = (T *)((local_50->FIELD).ARRAY[N] + CONST)
+     1x  pCVar3 = (T *)((pCVar3->FIELD).ARRAY[N] + CONST)
+     1x  pCVar4 = (T *)((pCVar4->FIELD).ARRAY[N] + CONST)
+     1x  local_10 = (T *)((local_10->FIELD).ARRAY[N] + CONST)
+     1x  pCVar8 = (T *)((pCVar8->FIELD).ARRAY[N] + CONST)
+     1x  local_34 = (T *)((local_34->FIELD).ARRAY[N] + CONST)
+     1x  local_30 = (T *)((local_30->FIELD).ARRAY[N] + CONST)
+     1x  local_4c = (T *)((local_4c->FIELD).ARRAY[N] + CONST)
+     1x  motion_list = (T *)((motion_list->FIELD).ARRAY[N] + CONST)
+     1x  local_3c = (T *)((local_3c->FIELD).ARRAY[N] + CONST)
+     1x  pCVar12 = (T *)((pCVar12->FIELD).ARRAY[N] + CONST)
+     1x  pCVar7 = (T *)((pCVar7->FIELD).ARRAY[N] + CONST)
+     1x  pCVar1 = (T *)((pCVar1->FIELD).ARRAY[N] + CONST)
+
+Functions:
+  core_charactr.cpp_CCharacter_processFire_FUN_0042a830
+  core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042a520
+  core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430
+  core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043a110
+  core_game.cpp_scaleBoneRecursive_FUN_004dda80
+  core_skeledit.cpp_CBoneStructure_copyHierarchyFromSkeleton_FUN_0058b160
+  core_skeledit.cpp_CDeformableModel_offsetRootVertices_FUN_0058e600
+  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
+  core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
+  core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260
+  core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
+  core_skeleton.cpp_CDeformableModelInstance_findClosestBone_FUN_005a1160
+  core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480
+  core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
+  core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0
+  core_skeleton.cpp_CDeformableModel_computeFarthestChildBones_FUN_0059dbe0
+  core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950
+  core_svetlana.cpp_CSvetlana_performBladeAttack_FUN_005d9a10
 
 ====================================================================================================
 TYPE: extra_output (16 occurrences)

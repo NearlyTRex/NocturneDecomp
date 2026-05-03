@@ -723,7 +723,7 @@ section .text
     PUSH EAX                            ; 004da89a
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 004da89b
         ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
-    MOV EAX,[0x03f6b878]                ; 004da8a0 | g_ExternalRendererActive
+    MOV EAX,[0x03f6b878]                ; 004da8a0 | g_UseDirect3D
     ADD ESP,0xc                         ; 004da8a5
     TEST EAX,EAX                        ; 004da8a8
     JZ 0x004da921                       ; 004da8aa

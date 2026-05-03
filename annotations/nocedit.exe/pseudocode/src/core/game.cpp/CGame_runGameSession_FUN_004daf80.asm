@@ -163,7 +163,7 @@ section .text
     MOV dword ptr [EAX + 0x218],ECX     ; 004db168
     PUSH EAX                            ; 004db16e
     MOV dword ptr [EAX + 0x21c],ECX     ; 004db16f
-    MOV dword ptr [0x02d828d0],ECX      ; 004db175 | g_CheatSystemEnabled
+    MOV dword ptr [0x02d828d0],ECX      ; 004db175 | g_ModalDialogActive
     MOV dword ptr [EAX + 0x210],ECX     ; 004db17b
     CALL core_game.cpp_CGame_setGameRes_FUN_004dade0 ; 004db181
         ;   XREF to: 004dade0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setGameRes_FUN_004dade0(CGame * this_ptr)
@@ -362,7 +362,7 @@ section .text
     XOR EBX,EBX                         ; 004db3bb
     CALL core_game.cpp_CGame_processFrame_FUN_004da100 ; 004db3bd
         ;   XREF to: 004da100 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processFrame_FUN_004da100(CGame * this_ptr)
-    MOV ESI,dword ptr [0x02d828d0]      ; 004db3c2 | g_CheatSystemEnabled
+    MOV ESI,dword ptr [0x02d828d0]      ; 004db3c2 | g_ModalDialogActive
     ADD ESP,0x4                         ; 004db3c8
     TEST ESI,ESI                        ; 004db3cb
     JZ 0x004db6e3                       ; 004db3cd
@@ -390,7 +390,7 @@ section .text
     CALL shape_edittool.cpp_CPickList_clear_FUN_004a5770 ; 004db40d
         ;   XREF to: 004a5770 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_clear_FUN_004a5770(CPickList * this_ptr)
     ADD ESP,0x4                         ; 004db412
-    MOV dword ptr [0x02d828d0],EBX      ; 004db415 | g_CheatSystemEnabled
+    MOV dword ptr [0x02d828d0],EBX      ; 004db415 | g_ModalDialogActive
     TEST ESI,ESI                        ; 004db41b
         ;   Label: LAB_004db41b
     JNZ 0x004db669                      ; 004db41d
@@ -554,7 +554,7 @@ section .text
     ADD ESP,0x8                         ; 004db5e9
     JMP 0x004db29a                      ; 004db5ec
         ;   XREF to: 004db29a (UNCONDITIONAL_JUMP)  ; LAB_004db29a
-    CMP dword ptr [0x02d828d0],0x0      ; 004db5f1 | g_CheatSystemEnabled
+    CMP dword ptr [0x02d828d0],0x0      ; 004db5f1 | g_ModalDialogActive
         ;   Label: LAB_004db5f1
     JNZ 0x004db367                      ; 004db5f8
         ;   XREF to: 004db367 (CONDITIONAL_JUMP)  ; LAB_004db367
@@ -593,7 +593,7 @@ section .text
     MOV dword ptr [EAX + 0x10],0x0      ; 004db657 | g_CScriptInstance.focus_actor_changed
     JMP 0x004db3b7                      ; 004db65e
         ;   XREF to: 004db3b7 (UNCONDITIONAL_JUMP)  ; LAB_004db3b7
-    MOV dword ptr [0x02d828d0],EBX      ; 004db663 | g_CheatSystemEnabled
+    MOV dword ptr [0x02d828d0],EBX      ; 004db663 | g_ModalDialogActive
         ;   Label: LAB_004db663
     MOV EAX,dword ptr [EBP + 0x14]      ; 004db669
         ;   Label: LAB_004db669
@@ -921,7 +921,7 @@ section .text
     CALL shape_edittool.cpp_CPickList_initializeDialog_FUN_004a3ef0 ; 004dba04
         ;   XREF to: 004a3ef0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_initializeDialog_FUN_004a3ef0(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0x10                        ; 004dba09
-    MOV dword ptr [0x02d828d0],EDI      ; 004dba0c | g_CheatSystemEnabled
+    MOV dword ptr [0x02d828d0],EDI      ; 004dba0c | g_ModalDialogActive
     JMP 0x004db669                      ; 004dba12
         ;   XREF to: 004db669 (UNCONDITIONAL_JUMP)  ; LAB_004db669
     PUSH 0x62b746                       ; 004dba17 | = "Abort network game"
@@ -954,7 +954,7 @@ section .text
     CALL shape_edittool.cpp_CPickList_initializeDialog_FUN_004a3ef0 ; 004dba62
         ;   XREF to: 004a3ef0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_initializeDialog_FUN_004a3ef0(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0x10                        ; 004dba67
-    MOV dword ptr [0x02d828d0],EDI      ; 004dba6a | g_CheatSystemEnabled
+    MOV dword ptr [0x02d828d0],EDI      ; 004dba6a | g_ModalDialogActive
     JMP 0x004db669                      ; 004dba70
         ;   XREF to: 004db669 (UNCONDITIONAL_JUMP)  ; LAB_004db669
     MOV EAX,[0x020a5724]                ; 004dba75 | g_SmallEditorFont

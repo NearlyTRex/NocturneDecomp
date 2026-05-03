@@ -22,6 +22,13 @@
 #       Useful for letting an agent drive gdb via `tmux send-keys`.
 #       Default session name is 'nodebug'; override with NOCTURNE_TMUX_SESSION.
 #       Attach from another terminal: tmux attach -t nodebug
+#
+# Developer-mode flags (see research/08-developer_mode_and_cheats/):
+#   ./debug.sh --velocity             # full engine dev hotkeys (TAB console,
+#                                     # Ctrl+Z camera, Ctrl+W clear, Ctrl+V, ...)
+#   ./debug.sh --spookhouse           # narrow Nocturne-team gate (TAB + Ctrl+Z only)
+#   ./debug.sh --dev                  # both of the above
+#   VELOCITY=1 ./debug.sh             # equivalent — env vars also work directly
 
 set -u
 
@@ -36,12 +43,17 @@ fi
 
 # Optional tmux mode: spawn gdb in a detached tmux session so it can be
 # driven from another shell (or by an agent via `tmux send-keys`).
+# Developer-mode flags (--velocity / --spookhouse / --dev) export the
+# corresponding env vars; anything else passes through to the game.
 USE_TMUX="${NOCTURNE_TMUX:-}"
 GAME_ARGS=()
 for arg in "$@"; do
     case "$arg" in
-        --tmux) USE_TMUX=1 ;;
-        *) GAME_ARGS+=("$arg") ;;
+        --tmux)       USE_TMUX=1 ;;
+        --velocity)   export VELOCITY=1 ;;
+        --spookhouse) export SPOOKHOUSE=1 ;;
+        --dev)        export VELOCITY=1; export SPOOKHOUSE=1 ;;
+        *)            GAME_ARGS+=("$arg") ;;
     esac
 done
 

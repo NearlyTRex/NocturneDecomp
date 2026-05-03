@@ -14,7 +14,7 @@ int __cdecl wincore_windll_cpp_switchRenderer_FUN_005b8140(char *new_dll_name,in
 
   wincore_windll_cpp_kill_FUN_005b71e0();
   g_RendererHandle = renderer_handle;
-  strcpy(g_RendererDllName,new_dll_name);
+  strcpy(g_RendererDllPath,new_dll_name);
   iVar2 = wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(g_StoredWindowHandle);
   return iVar2;
 }

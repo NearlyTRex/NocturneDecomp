@@ -11,7 +11,7 @@
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   int g_BitsPerPixel = 0x8
-;   int g_ExternalRendererActive
+;   int g_UseDirect3D
 ;   IDirectDraw* g_DirectDrawObject
 ;   IDirectDrawSurface* g_DirectDrawSurface
 ;   IDirectDrawSurface* g_SoftwareRenderSurface
@@ -31,7 +31,7 @@ section .text
     PUSH EBP                            ; 005ed4b0
         ;   Label: wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_005ed4b0
     XOR EDX,EDX                         ; 005ed4b1
-    MOV ECX,dword ptr [0x03f6b878]      ; 005ed4b3 | g_ExternalRendererActive
+    MOV ECX,dword ptr [0x03f6b878]      ; 005ed4b3 | g_UseDirect3D
     MOV dword ptr [0x03f95938],EDX      ; 005ed4b9 | g_GraphicsResetFlag
     TEST ECX,ECX                        ; 005ed4bf
     JNZ 0x005ed4c5                      ; 005ed4c1

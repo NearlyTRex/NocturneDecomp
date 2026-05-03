@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3947,
-    "complexity_score": 1758,
+    "complexity_score": 1743,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 197,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1728,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
       "raw_address_constant"
     ],
     "total_lines": 5675
@@ -1273,7 +1272,7 @@
     },
     {
       "addr": "02d828d0",
-      "name": "g_CheatSystemEnabled",
+      "name": "g_ModalDialogActive",
       "type": "int",
       "value": null
     },
@@ -1507,6 +1506,42 @@
       "severity": "moderate",
       "text": "iVar11 = *(CEnemy **)((int)g_CDemonSetPtr->enemies + iStack_74);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 1444,
+      "match": "(int *)((int)g_CDemonSetPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar6 = *(int *)((int)g_CDemonSetPtr->characters + iStack_40);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar18` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar18->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1462,
+      "match": "pCVar18 = (T *)((pCVar18->FIELD).ARRAY[N] + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar18 = (CSkeleton *)((pCVar18->motion_list).state_names[1] + 2);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar18` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar18->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1479,
+      "match": "pCVar18 = (T *)((pCVar18->FIELD).ARRAY[N] + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar18 = (CSkeleton *)((pCVar18->motion_list).state_names[1] + 2);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar20` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar20->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1496,
+      "match": "pCVar20 = (T *)((pCVar20->FIELD).ARRAY[N] + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar20 = (CSkeleton *)((pCVar20->motion_list).state_names[1] + 2);",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {
@@ -2761,14 +2796,14 @@
         {
           "check_id": "selfAssignment",
           "column": 16,
-          "line": 144,
+          "line": 142,
           "message": "Redundant assignment of 'iVar19' to itself.",
           "severity": "warning"
         },
         {
           "check_id": "selfAssignment",
           "column": 19,
-          "line": 1590,
+          "line": 1580,
           "message": "Redundant assignment of 'pbVar21' to itself.",
           "severity": "warning"
         }
@@ -2778,14 +2813,6 @@
     "file_variant": "keep"
   },
   "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 1444,
-      "match": "(int *)((int)g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "iVar6 = *(int *)((int)g_CDemonSetPtr->characters + iStack_40);",
-      "type": "pointer_cast"
-    },
     {
       "description": "Raw hex literal 0xff00ff matches address of g_LightBufferPool (+4022007 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 1273,

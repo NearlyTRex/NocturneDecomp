@@ -60,7 +60,7 @@ section .text
     NOP                                 ; 004dceed
     NOP                                 ; 004dceee
     MOV EBX,dword ptr [EBP + 0x14]      ; 004dceef
-    CMP dword ptr [0x02d828d0],0x0      ; 004dcef2 | g_CheatSystemEnabled
+    CMP dword ptr [0x02d828d0],0x0      ; 004dcef2 | g_ModalDialogActive
     JNZ 0x004dd33f                      ; 004dcef9
         ;   XREF to: 004dd33f (CONDITIONAL_JUMP)  ; LAB_004dd33f
     CMP dword ptr [EBX + 0xcc],0x0      ; 004dceff

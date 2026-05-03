@@ -7,6 +7,13 @@
 #   UBSAN_OPTIONS=halt_on_error=0 ./run.sh            # keep running past hits
 #   ASAN_OPTIONS=detect_leaks=1   ./run.sh            # turn leak detection on
 #   ./run.sh --some-game-arg                          # args pass through to the exe
+#
+# Developer-mode flags (see research/08-developer_mode_and_cheats/):
+#   ./run.sh --velocity                               # full engine dev hotkeys (TAB console,
+#                                                     # Ctrl+Z camera, Ctrl+W clear, Ctrl+V, ...)
+#   ./run.sh --spookhouse                             # narrow Nocturne-team gate (TAB + Ctrl+Z only)
+#   ./run.sh --dev                                    # both of the above
+#   VELOCITY=1 ./run.sh                               # equivalent — env vars also work directly
 
 set -u
 
@@ -18,6 +25,18 @@ if [[ ! -x "${EXE}" ]]; then
     echo "        build it first: cmake --build --preset @NOCTURNE_PRESET_NAME@" >&2
     exit 127
 fi
+
+# Parse developer-mode flags out of the arg list. Anything else passes
+# through to the game as before.
+GAME_ARGS=()
+for arg in "$@"; do
+    case "$arg" in
+        --velocity)   export VELOCITY=1 ;;
+        --spookhouse) export SPOOKHOUSE=1 ;;
+        --dev)        export VELOCITY=1; export SPOOKHOUSE=1 ;;
+        *)            GAME_ARGS+=("$arg") ;;
+    esac
+done
 
 # Symbolizer — resolved at configure time. Empty if llvm-symbolizer wasn't
 # found; in that case sanitizer reports fall back to raw addresses.
@@ -38,4 +57,4 @@ fi
 
 export ASAN_SYMBOLIZER_PATH UBSAN_SYMBOLIZER_PATH UBSAN_OPTIONS ASAN_OPTIONS
 
-exec "${EXE}" "$@"
+exec "${EXE}" "${GAME_ARGS[@]}"

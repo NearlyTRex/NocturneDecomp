@@ -99,14 +99,14 @@ section .text
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30 ; 004fbe21
         ;   XREF to: 004fbc30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004fbe26
-    PUSH 0x3f6b878                      ; 004fbe29 | g_ExternalRendererActive
+    PUSH 0x3f6b878                      ; 004fbe29 | g_UseDirect3D
     PUSH 0x62fde6                       ; 004fbe2e | = "useDirect3D"
     LEA EAX,[ESP + 0x14]                ; 004fbe33
     PUSH EAX                            ; 004fbe37
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30 ; 004fbe38
         ;   XREF to: 004fbc30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004fbe3d
-    PUSH 0x3f6b884                      ; 004fbe40 | g_PodSystemVersion
+    PUSH 0x3f6b884                      ; 004fbe40 | g_AGPTextureMode
     PUSH 0x62fdf2                       ; 004fbe45 | = "useAGPFlag"
     LEA EAX,[ESP + 0x14]                ; 004fbe4a
     PUSH EAX                            ; 004fbe4e
@@ -114,7 +114,7 @@ section .text
         ;   XREF to: 004fbc30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004fbe54
     PUSH 0xfa                           ; 004fbe57
-    PUSH 0x684010                       ; 004fbe5c | g_RendererDllName
+    PUSH 0x684010                       ; 004fbe5c | g_RendererDllPath
     PUSH 0x62fdfd                       ; 004fbe61 | = "rendererDLLPath"
     LEA EAX,[ESP + 0x18]                ; 004fbe66
     PUSH EAX                            ; 004fbe6a
@@ -149,7 +149,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30 ; 004fbec1
         ;   XREF to: 004fbc30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004fbec6
-    PUSH 0x2db8a64                      ; 004fbec9 | g_SkipIntroVideo
+    PUSH 0x2db8a64                      ; 004fbec9 | g_FirstTimeFlag
     PUSH 0x62fe27                       ; 004fbece | = "firstTimeFlag"
     LEA EAX,[ESP + 0x10]                ; 004fbed3
     PUSH EAX                            ; 004fbed7
@@ -218,13 +218,13 @@ section .text
     MOV dword ptr [EAX + 0x18],0x0      ; 004fbf8e | g_CGameInstance.nudity_flag
     MOV dword ptr [EAX + 0x1c],0x0      ; 004fbf95 | g_CGameInstance.foul_language_flag
     MOV dword ptr [EAX + 0x14],0x0      ; 004fbf9c | g_CGameInstance.blood_flag
-    PUSH 0x2f275f4                      ; 004fbfa3 | g_GraphicsCardHandle
+    PUSH 0x2f275f4                      ; 004fbfa3 | g_CurrentGraphicsBoard
         ;   Label: LAB_004fbfa3
     PUSH 0x62fe7e                       ; 004fbfa8 | = "currentBoard"
     LEA EAX,[ESP + 0x10]                ; 004fbfad
     XOR EDI,EDI                         ; 004fbfb1
     PUSH EAX                            ; 004fbfb3
-    MOV dword ptr [0x02f275f4],EDI      ; 004fbfb4 | g_GraphicsCardHandle
+    MOV dword ptr [0x02f275f4],EDI      ; 004fbfb4 | g_CurrentGraphicsBoard
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30 ; 004fbfba
         ;   XREF to: 004fbc30 (UNCONDITIONAL_CALL)  ; void engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30(CIniFile * this_ptr, char * key_name, int * value_ptr)
     ADD ESP,0xc                         ; 004fbfbf

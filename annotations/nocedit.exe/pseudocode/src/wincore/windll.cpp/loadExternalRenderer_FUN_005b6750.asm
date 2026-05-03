@@ -54,7 +54,7 @@ section .text
     JNZ 0x005b6781                      ; 005b6763
         ;   XREF to: 005b6781 (CONDITIONAL_JUMP)  ; LAB_005b6781
     MOV EBX,dword ptr [0x03f6b98c]      ; 005b6765 | g_StoredWindowHandle
-    CMP dword ptr [0x03f6b878],0x0      ; 005b676b | g_ExternalRendererActive
+    CMP dword ptr [0x03f6b878],0x0      ; 005b676b | g_UseDirect3D
         ;   Label: LAB_005b676b
     JNZ 0x005b6789                      ; 005b6772
         ;   XREF to: 005b6789 (CONDITIONAL_JUMP)  ; LAB_005b6789
@@ -69,7 +69,7 @@ section .text
         ;   Label: LAB_005b6781
     JMP 0x005b676b                      ; 005b6787
         ;   XREF to: 005b676b (UNCONDITIONAL_JUMP)  ; LAB_005b676b
-    PUSH 0x684010                       ; 005b6789 | g_RendererDllName
+    PUSH 0x684010                       ; 005b6789 | g_RendererDllPath
         ;   Label: LAB_005b6789
     CALL wincore_wddvmem.cpp_loadLibrary_FUN_005ede10 ; 005b678e
         ;   XREF to: 005ede10 (UNCONDITIONAL_CALL)  ; HMODULE wincore_wddvmem.cpp_loadLibrary_FUN_005ede10(LPCSTR lpLibFileName)
@@ -78,7 +78,7 @@ section .text
     TEST EAX,EAX                        ; 005b679b
     JNZ 0x005b67b1                      ; 005b679d
         ;   XREF to: 005b67b1 (CONDITIONAL_JUMP)  ; LAB_005b67b1
-    MOV [0x03f6b878],EAX                ; 005b679f | g_ExternalRendererActive
+    MOV [0x03f6b878],EAX                ; 005b679f | g_UseDirect3D
     XOR EAX,EAX                         ; 005b67a4
     ADD ESP,0x3c1c                      ; 005b67a6
     POP EBP                             ; 005b67ac
@@ -705,7 +705,7 @@ section .text
         ;   Label: LAB_005b6f9f
     CALL wincore_windll.cpp_shutdownExternalRenderer_FUN_005b5d20 ; 005b6fa1
         ;   XREF to: 005b5d20 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_shutdownExternalRenderer_FUN_005b5d20()
-    MOV dword ptr [0x03f6b878],EBX      ; 005b6fa6 | g_ExternalRendererActive
+    MOV dword ptr [0x03f6b878],EBX      ; 005b6fa6 | g_UseDirect3D
     XOR EAX,EAX                         ; 005b6fac
     ADD ESP,0x3c1c                      ; 005b6fae
     POP EBP                             ; 005b6fb4
@@ -717,7 +717,7 @@ section .text
         ;   Label: LAB_005b6fb9
     CALL wincore_windll.cpp_shutdownExternalRenderer_FUN_005b5d20 ; 005b6fbb
         ;   XREF to: 005b5d20 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_shutdownExternalRenderer_FUN_005b5d20()
-    MOV dword ptr [0x03f6b878],ESI      ; 005b6fc0 | g_ExternalRendererActive
+    MOV dword ptr [0x03f6b878],ESI      ; 005b6fc0 | g_UseDirect3D
     XOR EAX,EAX                         ; 005b6fc6
     ADD ESP,0x3c1c                      ; 005b6fc8
     POP EBP                             ; 005b6fce
@@ -784,13 +784,13 @@ section .text
     MOV dword ptr [ESP + 0x3be8],EAX    ; 005b7106 | g_MaxTextureSize
     MOV dword ptr [ESP + 0x3bec],EDX    ; 005b710d | g_FrameBufferPtr
     MOV ECX,0x684110                    ; 005b7114 | g_SystemInitialized
-    MOV ESI,0x3f6b884                   ; 005b7119 | g_PodSystemVersion
+    MOV ESI,0x3f6b884                   ; 005b7119 | g_AGPTextureMode
     MOV EDI,0x2d0529c                   ; 005b711e | g_ProcessorType
     MOV EBP,0x6793b8                    ; 005b7123 | g_RenderingQuality
     MOV EAX,0x30                        ; 005b7128
     MOV EDX,0x2c                        ; 005b712d
     MOV dword ptr [ESP + 0x3bf0],ECX    ; 005b7132 | g_SystemInitialized
-    MOV dword ptr [ESP + 0x3bf4],ESI    ; 005b7139 | g_PodSystemVersion
+    MOV dword ptr [ESP + 0x3bf4],ESI    ; 005b7139 | g_AGPTextureMode
     MOV dword ptr [ESP + 0x3bf8],EDI    ; 005b7140 | g_ProcessorType
     MOV dword ptr [ESP + 0x3bfc],EBP    ; 005b7147 | g_RenderingQuality
     MOV dword ptr [ESP + 0x3c00],EAX    ; 005b714e
@@ -812,7 +812,7 @@ section .text
     TEST EAX,EAX                        ; 005b71a5
     JNZ 0x005b71b9                      ; 005b71a7
         ;   XREF to: 005b71b9 (CONDITIONAL_JUMP)  ; LAB_005b71b9
-    MOV [0x03f6b878],EAX                ; 005b71a9 | g_ExternalRendererActive
+    MOV [0x03f6b878],EAX                ; 005b71a9 | g_UseDirect3D
     ADD ESP,0x3c1c                      ; 005b71ae
     POP EBP                             ; 005b71b4
     POP EDI                             ; 005b71b5

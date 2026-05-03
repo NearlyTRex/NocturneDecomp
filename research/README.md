@@ -156,6 +156,30 @@ artifacts), so the pipeline replaces them with `__asm { }` blocks and tracks por
 
 ---
 
+### [08-developer_mode_and_cheats/](08-developer_mode_and_cheats/)
+
+Game debugging and options: the `VELOCITY` and `SPOOKHOUSE` env-var gates (Velocity
+Engine vs. Nocturne project codenames), runtime debug flags on `CGame` (console,
+camera, geometry, collision, profile, single-step), all 44 encrypted typed-cheat-codes
+(god mode, weapons, ammo, weather, dismemberment, etc.) plus the event-triggered
+`headOfHorror` cheat, and the full ini schema across `nocturne.ini`, `pod.ini`, and
+`skeledit.ini`.
+
+| File | Description |
+|------|-------------|
+| `README.md` | Folder overview + project codenames + "enable everything" recipe |
+| `environment_variables.md` | All seven `getenv()` callees, dev gates split from CRT/Windows infrastructure |
+| `runtime_debug_flags.md` | `CGame` debug flags + hotkey table + `g_ModalDialogActive` (input-suppression gate during pick-list pop-up dialogs) |
+| `cheats.md` | All 45 cheats by category (cleartext recovered via `decrypt_cheats.py`) |
+| `developer_tools_menu.md` | The `Ctrl+D` main-menu shortcut into the editor menu (mission play, shape/set/skeletal/mission editors, POD file manager, etc.) — gated by a one-shot license agreement |
+| `retail_vs_editor_mysteries.md` | Open mysteries about retail-vs-editor build differences (D3D disabled in options, missing cutscene voice, missing netplay UI) — investigation notes with definitive vs partial labels |
+| `ini_settings.md` | Full `nocturne.ini` (5 sections), plus `RENDER.INI`, `pod.ini`, and `skeledit.ini` formats |
+
+**Status:** Reference - All 45 cheat cleartext strings recovered via
+`scripts/Python/decrypt_cheats.py`; in-game effect of `debug_toggle_flag` not yet mapped.
+
+---
+
 ## Standalone Documents
 
 ### [ghidra_suspect_patterns.md](ghidra_suspect_patterns.md)

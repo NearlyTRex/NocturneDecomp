@@ -19,17 +19,17 @@ void __cdecl core_inivar_cpp_writeIniData_FUN_004fc510(void)
             (&local_210,"gamePIXY",g_CGamePtr->game_pixy);
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90
             (&local_210,"gameBPP",g_CGamePtr->game_bpp);
-  engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90
-            (&local_210,"useAGPFlag",g_PodSystemVersion);
+  engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90(&local_210,"useAGPFlag",g_AGPTextureMode)
+  ;
   engine_ini_cpp_CIniFile_setString_FUN_004fbbb0
-            (&local_210,"rendererDLLPath",g_RendererDllName);
+            (&local_210,"rendererDLLPath",g_RendererDllPath);
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90(&local_210,"gamma",g_CGamePtr->gamma);
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90
             (&local_210,"heroNumber",g_CGamePtr->hero_number);
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90
             (&local_210,"haloMode",g_CGamePtr->halo_mode);
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90
-            (&local_210,"firstTimeFlag",g_SkipIntroVideo);
+            (&local_210,"firstTimeFlag",g_FirstTimeFlag);
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90
             (&local_210,"subtitleMode",g_CGamePtr->subtitle_mode);
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90
@@ -45,7 +45,7 @@ void __cdecl core_inivar_cpp_writeIniData_FUN_004fc510(void)
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90
             (&local_210,"quimbyFlag",g_CGamePtr->quimby_flag);
   engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90
-            (&local_210,"currentBoard",g_GraphicsCardHandle);
+            (&local_210,"currentBoard",g_CurrentGraphicsBoard);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004fbae0(&local_210,"Sound");
   sound_sndmain_cpp_writeIni_FUN_005ac220(&local_210);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004fbae0(&local_210,"Control");

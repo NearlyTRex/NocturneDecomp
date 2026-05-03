@@ -11,8 +11,8 @@ void __cdecl core_game_cpp_CGame_setGameRes_FUN_004dade0(CGame *this_ptr)
 {
   int iVar1;
   
-  if (g_GraphicsCardHandle != 0) {
-    wincore_windll_cpp_selectCard_FUN_005b7d90(g_GraphicsCardHandle);
+  if (g_CurrentGraphicsBoard != 0) {
+    wincore_windll_cpp_selectCard_FUN_005b7d90(g_CurrentGraphicsBoard);
   }
   if (((g_WindowHeight != this_ptr->game_pixy) || (g_BitsPerPixel != this_ptr->game_bpp)) &&
      (iVar1 = wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0

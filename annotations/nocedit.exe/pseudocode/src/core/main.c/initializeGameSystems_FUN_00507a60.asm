@@ -128,7 +128,7 @@ section .text
     MOV EDI,dword ptr [0x00680cdc]      ; 00507b46 | g_CDemonPodPtr
     MOV ESI,0x2                         ; 00507b4c
     PUSH EDI                            ; 00507b51 | g_CDemonPodInstance
-    MOV dword ptr [0x03f6b884],ESI      ; 00507b52 | g_PodSystemVersion
+    MOV dword ptr [0x03f6b884],ESI      ; 00507b52 | g_AGPTextureMode
     CALL engine_pod.cpp_CPod_init_FUN_00550c30 ; 00507b58
         ;   XREF to: 00550c30 (UNCONDITIONAL_CALL)  ; void engine_pod.cpp_CPod_init_FUN_00550c30(CPod * this_ptr)
     ADD ESP,0x4                         ; 00507b5d
@@ -176,7 +176,7 @@ section .text
     PUSH 0x1e0                          ; 00507bdc
     XOR EBX,EBX                         ; 00507be1
     PUSH 0x280                          ; 00507be3
-    MOV dword ptr [0x03f6b878],EBX      ; 00507be8 | g_ExternalRendererActive
+    MOV dword ptr [0x03f6b878],EBX      ; 00507be8 | g_UseDirect3D
     CALL wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0 ; 00507bee
         ;   XREF to: 005ecef0 (UNCONDITIONAL_CALL)  ; int wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 00507bf3
@@ -679,7 +679,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 ; 00508022
         ;   XREF to: 0049e6f0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 00508027
-    CMP dword ptr [0x02db8a64],0x0      ; 0050802a | g_SkipIntroVideo
+    CMP dword ptr [0x02db8a64],0x0      ; 0050802a | g_FirstTimeFlag
         ;   Label: LAB_0050802a
     JNZ 0x00508214                      ; 00508031
         ;   XREF to: 00508214 (CONDITIONAL_JUMP)  ; LAB_00508214
@@ -846,9 +846,9 @@ section .text
         ;   Label: LAB_00508214
     XOR EDI,EDI                         ; 00508219
     MOV dword ptr [EAX],0x280           ; 0050821b | g_CGameInstance
-    MOV dword ptr [0x02db8a64],EDI      ; 00508221 | g_SkipIntroVideo
+    MOV dword ptr [0x02db8a64],EDI      ; 00508221 | g_FirstTimeFlag
     MOV dword ptr [EAX + 0x4],0x1e0     ; 00508227 | g_CGameInstance.game_pixy
-    MOV dword ptr [0x03f6b878],EDI      ; 0050822e | g_ExternalRendererActive
+    MOV dword ptr [0x03f6b878],EDI      ; 0050822e | g_UseDirect3D
     MOV dword ptr [EAX + 0x8],0x20      ; 00508234 | g_CGameInstance.game_bpp
     CALL core_menu.cpp_showCalibrationTest_FUN_00510ba0 ; 0050823b
         ;   XREF to: 00510ba0 (UNCONDITIONAL_CALL)  ; void core_menu.cpp_showCalibrationTest_FUN_00510ba0()

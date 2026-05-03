@@ -21,7 +21,7 @@
 ;   undefined4 CHAR_ARRAY_02d82674
 ;   int g_InputResetFlag
 ;   int g_StoredCameraValue
-;   int g_CheatSystemEnabled
+;   int g_ModalDialogActive
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   CNetGame g_CNetGameInstance
@@ -43,7 +43,7 @@ section .text
         ;   Label: core_game.cpp_CGame_playerControls_FUN_004dbd80
     PUSH EBP                            ; 004dbd81
     MOV ESI,dword ptr [ESP + 0xc]       ; 004dbd82
-    CMP dword ptr [0x02d828d0],0x0      ; 004dbd86 | g_CheatSystemEnabled
+    CMP dword ptr [0x02d828d0],0x0      ; 004dbd86 | g_ModalDialogActive
     JNZ 0x004dbda8                      ; 004dbd8d
         ;   XREF to: 004dbda8 (CONDITIONAL_JUMP)  ; LAB_004dbda8
     CMP dword ptr [ESI + 0x1fc],0x0     ; 004dbd8f

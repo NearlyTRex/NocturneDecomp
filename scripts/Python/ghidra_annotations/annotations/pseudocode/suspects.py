@@ -86,6 +86,7 @@ SUSPECT_SEVERITY = {
     'fast_inv_sqrt_inline': 'moderate',
     'bitcast_double_pair': 'moderate',
     'self_copy_guard': 'moderate',
+    'shadow_pointer_walk': 'moderate',
 }
 
 
@@ -1515,6 +1516,88 @@ def identify_int_address_arithmetic(decompiled_code):
     return suspects
 
 
+# Watcom shadow-pointer walk. The compiler used a struct-field-array's
+# address as a base and advanced it by element size each iteration so that
+# `shadow->bone_list[0]` resolved to `original->bone_list[i]`. Ghidra
+# decompiles the per-step advance as the suspicious self-update:
+#   pCVar = (Skel *)((pCVar->motion_list).state_names[1] + 2);
+# where the chosen field+index+constant happens to land at the right byte
+# offset (sizeof(SBone) in this case). The shape is:
+#   IDENT = (TYPE *)((IDENT->FIELD).ARRAY[N] + CONST);
+# The same `IDENT` appears on both sides (self-update), and the cast back
+# to the same pointer type is the giveaway. In real C this almost never
+# occurs — legitimate buffer-walks don't read through a sibling field's
+# string-array to get their next base address.
+#
+# Fix in a `.keep`: replace `shadow->bone_list[0]` reads with
+# `original->bone_list[index]`, drop the shadow-pointer init and the
+# self-update line. The shadow-pointer local typically becomes unused.
+_SHADOW_PTR_WALK_RE = re.compile(
+    r'^\s*(\w+)\s*=\s*'                              # LHS identifier
+    r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
+    r'\(\s*\(\s*\1\s*->\s*\w+\s*\)'                  # ( IDENT->FIELD )
+    r'\s*\.\s*\w+\s*\[\s*\d+\s*\]'                   # .ARRAY[N]
+    r'\s*\+\s*\d+\s*\)\s*;\s*$'                      # + CONST );
+)
+
+
+def identify_shadow_pointer_walk(decompiled_code):
+    """Detect Watcom shadow-pointer-walk byte-arithmetic.
+
+    Catches the recurring pattern where a CSkeleton (or other struct)
+    pointer is "advanced" by reading through a sibling field's array
+    element + constant offset, and cast back to the same pointer type:
+
+        pCVar = (T *)((pCVar->some_field).some_array[N] + CONST);
+
+    This is Watcom's lowering of a per-iteration shadow-pointer-walk
+    where the advance equals an inner element size. The chosen field,
+    index, and constant are all decompiler artifacts — they happen to
+    sum to the right byte offset for the real array stride.
+
+    Detection requires:
+    - LHS identifier matches the root identifier on the RHS (self-update).
+    - RHS cast is to a `T *` pointer type.
+    - RHS dereferences a struct field, indexes an inner array, then
+      adds a small integer constant.
+
+    All four together — almost never legitimate code.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    for line_no, line in enumerate(decompiled_code.split('\n'), 1):
+        stripped = line.lstrip()
+        if (stripped.startswith('//') or stripped.startswith('/*') or
+                stripped.startswith('*')):
+            continue
+        m = _SHADOW_PTR_WALK_RE.match(line)
+        if not m:
+            continue
+        suspects.append({
+            'line': line_no,
+            'type': 'shadow_pointer_walk',
+            'match': '%s = (T *)((%s->FIELD).ARRAY[N] + CONST)' % (
+                m.group(1), m.group(1)),
+            'text': line.strip()[:120],
+            'description': (
+                'Watcom shadow-pointer walk — `%s` self-updates via byte '
+                'arithmetic on a sibling field, where the chosen '
+                'field/index/constant sum to one element-size step. '
+                'Replace `%s->bone_list[0]` (or whatever) reads with '
+                'direct indexing on the original pointer; drop the shadow '
+                'init and self-update.' % (m.group(1), m.group(1))),
+            'severity': 'moderate',
+        })
+    return suspects
+
+
 # Watcom's REP SCASB strlen idiom. ECX is initialized to -1 (0xFFFFFFFF),
 # then decremented inside a do-while that reads a byte per iteration. The
 # `(uint)<bool> * -2 + 1` direction trick picks the step (1 forward, -1
@@ -2380,6 +2463,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_self_copy_guard(code))
     found.extend(identify_pointer_cast_multiline(code))
     found.extend(identify_int_address_arithmetic(code))
+    found.extend(identify_shadow_pointer_walk(code))
     found.extend(identify_unrolled_strlen_loops(code))
     found.extend(identify_unrolled_strcat_loops(code))
     found.extend(identify_unrolled_strchr_loops(code))

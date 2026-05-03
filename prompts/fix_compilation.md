@@ -109,6 +109,7 @@ When you are editing a `.keep` for any reason — creating one for a compile err
 - `fast_sqrt_inline`, `fast_inv_sqrt_inline` — §21 (Inline fast-(inverse-)sqrt bit-trick). Ghidra emits `(int)X` numeric cast where the asm performs a bit-cast; UB on NaN/Inf. Replace inline occurrences with calls to the existing helper functions `fastSqrt(X)` / `fastInvSqrt(X)` in a `.keep`.
 - `bitcast_double_pair` — §22 (Adjacent uint locals reconstructed as a double). `__BITCAST_DOUBLE(CONCAT44(hi, lo))` over two stack-local uints almost always means Watcom split one `double` local into two 4-byte slots; merge them into a single `double` declaration in a `.keep` and pass it directly.
 - `self_copy_guard` — §23 (Dead self-copy guard). `if (&LOCAL_A != &LOCAL_B) { LOCAL_A = LOCAL_B; ... }` where both sides are bare addresses of stack locals. The guard never skips (different stack slots) and just adds visual noise around an unconditional struct copy; drop the if-wrapper in a `.keep`.
+- `shadow_pointer_walk` — §24 (Shadow-pointer walk via struct-field byte arithmetic). `pCVar = (T *)((pCVar->some_field).some_array[N] + CONST);` where the chosen field/index/constant sum to one element-size step. Watcom's lowering of a shadow pointer that gets advanced by `sizeof(element)` per iteration so `shadow->arr[0]` resolves to `original->arr[i]`. Replace with direct array indexing on the original pointer; the shadow-pointer local typically becomes unused.
 
 **Ineligible for `.keep` cleanup — fix upstream in Ghidra instead:** structural suspects like `decompilation_failed`, stack/ESP anchor mismatches, `warning_*` (bad spacebase, unmapped variables, type propagation). See "Prefer Ghidra Fixes Over Code Fixes."
 
@@ -685,6 +686,45 @@ local_50 = local_c8;
 **When to apply vs. skip:** Apply only when **both sides** of the `!=` are bare `&NAME` and `NAME` resolves to a stack local. Cast-wrapped forms (`(CLocation *)&local`) and pointer-parameter forms (`if (&local != input_ptr)`) are real defenses against caller-aliased pointers — leave those alone, even though the test detector won't flag them.
 
 **Eligibility:** `.keep`-layer fix. The `self_copy_guard` suspect type flags the `if`-line; dropping it is a one-line edit (remove the `if` line and the matching `}`, leaving the body unindented). After cleanup, if the resulting flat body is 4+ field copies, the `unrolled_field_copy` detector may further collapse it into a single `dst = src;`.
+
+### 24. Shadow-pointer walk via struct-field byte arithmetic
+
+**Cause:** Watcom optimized loops that index `original->arr[i]` by maintaining a *shadow* pointer initialized to `original` and advanced by `sizeof(arr[0])` each iteration, so `shadow->arr[0]` resolves to `original->arr[i]`. The asm form is just `LEA shadow, [shadow + ELEMENT_SIZE]`. Ghidra cannot recognize this as a pointer-stride advance; it picks any sibling field whose address-after-itself happens to land at the right byte offset and emits a self-update through that field's address arithmetic.
+
+**Symptoms:**
+- A pointer self-update of the form `IDENT = (TYPE *)((IDENT->FIELD).ARRAY[N] + CONST);` inside a loop body.
+- The same `IDENT` appears on both sides — strong shadow-walk signal.
+- `IDENT` was initialized just above the loop to some other pointer (`IDENT = real_ptr;`).
+- Inside the loop, `IDENT->arr[0]` (or similar zero-index access) reads what should be `real_ptr->arr[i]`.
+- The chosen `FIELD.ARRAY[N] + CONST` is always nonsense — for example `(skel->motion_list).state_names[1] + 2`, where Watcom advanced by `sizeof(SBone) = 0x24` and Ghidra found offset `0x24` lands inside `state_names[1] + 2`.
+
+**Canonical example (`CGame::processCheatCodes` BIGHEAD cheat):**
+```cpp
+// BROKEN — shadow-walk through "state_names" because that field happens to
+// be at the right byte offset for sizeof(SBone) per step:
+iVar13 = 0;
+pCVar18 = pCVar17;
+do {
+    if (iVar6 == pCVar18->bone_list[0].parent_index) {
+        scaleBoneRecursive(this_ptr_04, pCVar17, fStack_144, iVar13);
+    }
+    iVar13 = iVar13 + 1;
+    pCVar18 = (CSkeleton *)((pCVar18->motion_list).state_names[1] + 2);
+} while (iVar13 < pCVar17->bone_count);
+
+// FIXED — direct array indexing on the original pointer, drop the shadow:
+iVar13 = 0;
+do {
+    if (iVar6 == pCVar17->bone_list[iVar13].parent_index) {
+        scaleBoneRecursive(this_ptr_04, pCVar17, fStack_144, iVar13);
+    }
+    iVar13 = iVar13 + 1;
+} while (iVar13 < pCVar17->bone_count);
+```
+
+**Decoding the byte offset (sanity check before rewriting):** compute the byte offset that `(IDENT->FIELD).ARRAY[N] + CONST` lands at relative to `IDENT`'s address, then confirm it equals `sizeof(element)` of whatever array the loop is supposed to walk. In the example: `state_names` is `char[80][30]` at offset `0x4` of `CMotionList` (which is at offset `0x0` of `CSkeleton`), so `state_names[1] + 2 = 0x4 + 30 + 2 = 0x24 = sizeof(SBone)`. ✓
+
+**Eligibility:** `.keep`-layer fix. The `shadow_pointer_walk` suspect type flags the self-update line. Replacing the shadow-walk with direct indexing typically renders the shadow-pointer local unused — drop its declaration in the same edit.
 
 ## Workflow
 

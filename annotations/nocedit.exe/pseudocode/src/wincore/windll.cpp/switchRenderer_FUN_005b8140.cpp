@@ -14,7 +14,7 @@ int __cdecl wincore_windll_cpp_switchRenderer_FUN_005b8140(char *new_dll_name,in
   char *pcVar3;
   
   wincore_windll_cpp_kill_FUN_005b71e0();
-  pcVar3 = g_RendererDllName;
+  pcVar3 = g_RendererDllPath;
   g_RendererHandle = renderer_handle;
   do {
     cVar1 = *new_dll_name;

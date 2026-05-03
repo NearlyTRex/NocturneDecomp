@@ -12,7 +12,7 @@ void __cdecl wincore_wddvmem_cpp_videoRestore_FUN_005edc80(void)
   int iVar1;
   HRESULT HVar2;
   
-  if ((g_ExternalRendererActive == 0) || (g_GraphicsResetFlag == 0)) {
+  if ((g_UseDirect3D == 0) || (g_GraphicsResetFlag == 0)) {
     if (g_DirectDrawSurface != (IDirectDrawSurface *)0x0) {
       (*g_DirectDrawSurface->vtable->Restore)(g_DirectDrawSurface);
       (*g_SoftwareRenderSurface->vtable->Restore)(g_SoftwareRenderSurface);
@@ -31,7 +31,7 @@ void __cdecl wincore_wddvmem_cpp_videoRestore_FUN_005edc80(void)
     iVar1 = wincore_windll_cpp_setResolutionAndColorTable_FUN_005b7460
                       (g_WindowWidth,g_WindowHeight,g_BitsPerPixel);
     if (iVar1 == 0) {
-      g_ExternalRendererActive = iVar1;
+      g_UseDirect3D = iVar1;
       if (g_DirectDrawUnknown != (IUnknown *)0x0) {
         (*g_DirectDrawUnknown->vtable->Release)(g_DirectDrawUnknown);
         g_DirectDrawUnknown = (IUnknown *)0x0;

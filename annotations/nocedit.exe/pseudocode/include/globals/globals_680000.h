@@ -325,7 +325,7 @@ extern char g_ActorRefDefaultBuffer[200];
 // char[256]
 extern char g_DefaultSoundDeviceName[256];
 extern char g_DefaultDeviceName[256];
-extern char g_RendererDllName[256];
+extern char g_RendererDllPath[256];
 
 // char[260]
 extern char g_TempDirectoryBuffer[260];

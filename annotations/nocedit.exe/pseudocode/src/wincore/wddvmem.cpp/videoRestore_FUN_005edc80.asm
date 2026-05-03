@@ -17,7 +17,7 @@
 ;   int g_BitsPerPixel = 0x8
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   int g_ExternalRendererActive
+;   int g_UseDirect3D
 ;   IDirectDraw* g_DirectDrawObject
 ;   IDirectDrawSurface* g_DirectDrawSurface
 ;   IDirectDrawSurface* g_SoftwareRenderSurface
@@ -40,7 +40,7 @@ section .text
         ;   Label: wincore_wddvmem.cpp_videoRestore_FUN_005edc80
     PUSH ESI                            ; 005edc81
     PUSH EBP                            ; 005edc82
-    CMP dword ptr [0x03f6b878],0x0      ; 005edc83 | g_ExternalRendererActive
+    CMP dword ptr [0x03f6b878],0x0      ; 005edc83 | g_UseDirect3D
     JZ 0x005edd97                       ; 005edc8a
         ;   XREF to: 005edd97 (CONDITIONAL_JUMP)  ; LAB_005edd97
     CMP dword ptr [0x03f95938],0x0      ; 005edc90 | g_GraphicsResetFlag
@@ -60,7 +60,7 @@ section .text
         ;   XREF to: 005edd61 (CONDITIONAL_JUMP)  ; LAB_005edd61
     PUSH EDI                            ; 005edcc2
     MOV EDI,dword ptr [0x03f9592c]      ; 005edcc3 | g_DirectDrawUnknown
-    MOV [0x03f6b878],EAX                ; 005edcc9 | g_ExternalRendererActive
+    MOV [0x03f6b878],EAX                ; 005edcc9 | g_UseDirect3D
     TEST EDI,EDI                        ; 005edcce
     JZ 0x005edce0                       ; 005edcd0
         ;   XREF to: 005edce0 (CONDITIONAL_JUMP)  ; LAB_005edce0

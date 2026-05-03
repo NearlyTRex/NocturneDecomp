@@ -58,7 +58,7 @@ extern char g_ErrorMessageBuffer_02db8b70[256];
 extern int g_HeroCount;
 extern int g_LocalHeroIndex;
 extern int INT_02db8888;
-extern int g_SkipIntroVideo;
+extern int g_FirstTimeFlag;
 extern int g_ItemDefinitionCount;
 
 // int[12]

@@ -7,14 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 558,
-    "complexity_score": 244,
+    "complexity_score": 259,
     "cross_reference_count": 14,
     "function_call_count": 8,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 199,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
+      "shadow_pointer_walk",
       "unrolled_memcpy"
     ],
     "total_lines": 757
@@ -654,6 +655,14 @@
       "severity": "moderate",
       "text": "(local_38->bone_transform).pose_data.bone_rotations[0].w = local_134.w;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_30` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `local_30->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 162,
+      "match": "local_30 = (T *)((local_30->FIELD).ARRAY[N] + CONST)",
+      "severity": "moderate",
+      "text": "local_30 = (CSkeleton *)((local_30->motion_list).state_names[1] + 2);",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",

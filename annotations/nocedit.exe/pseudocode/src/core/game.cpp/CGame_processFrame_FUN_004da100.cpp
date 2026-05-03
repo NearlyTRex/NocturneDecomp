@@ -149,7 +149,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       if (this_ptr->block_auto_save != 0) {
         core_set_cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990(g_CDemonSetPtr);
       }
-      if (((this_ptr->velocity_debug_enabled != 0) ||
+      if (((this_ptr->developer_mode_enabled != 0) ||
           (pcVar7 = getenv("SPOOKHOUSE"), pcVar7 != (char *)0x0)) &&
          (iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F4), iVar5 != 0)) {
         INT_02d82568 = INT_02d82568 + 1;
@@ -295,7 +295,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
         core_skeleton_cpp_getMemoryStats_FUN_005a1ed0(local_3dc);
         engine_2d_c_drawText_FUN_00401fd0(local_3dc,0,g_WindowHeight + -0x2c);
         engine_2d_c_drawText_FUN_00401fd0(this_ptr->debug_info_string,0,g_WindowHeight + -0x21);
-        if (g_ExternalRendererActive != 0) {
+        if (g_UseDirect3D != 0) {
           wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x400);
           iVar5 = wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x200);
           iVar10 = wincore_windll_cpp_getTextureInfo_FUN_005b7e70(0x100);

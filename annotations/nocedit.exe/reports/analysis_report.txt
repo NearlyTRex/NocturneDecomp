@@ -7,13 +7,13 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 5488 (85.0%)
-Functions with suspects: 966 (15.0%)
+Clean functions: 5483 (85.0%)
+Functions with suspects: 971 (15.0%)
 
-Total suspect patterns: 3872
+Total suspect patterns: 3877
 Average suspects per function: 0.60
 
-Virtual files: 214 total, 72 at 100%, 117 at 90%+
+Virtual files: 214 total, 73 at 100%, 119 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
@@ -28,9 +28,9 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              1819
+  pointer_cast              1812
   unrolled_memcpy           645
-  unrolled_strcpy           390
+  unrolled_strcpy           382
   missing_cave_copy         219
   raw_address_constant      167
   unrolled_strlen           98
@@ -45,6 +45,7 @@ SUSPECT PATTERN BREAKDOWN
   warning_unreachable       28
   decompiler_intrinsic      27
   negative_offset           22
+  shadow_pointer_walk       20
   extra_output              16
   unnamed_param             9
   unaffected_reg            9
@@ -112,15 +113,15 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 5438 more
+  ... and 5433 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
   0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 3412, suspects: 6, lines: 3337)
   0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 2201, suspects: 75, lines: 1436)
   004aacc0: core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (score: 2168, suspects: 2, lines: 2138)
-  00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (score: 2082, suspects: 20, lines: 1852)
-  004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (score: 1758, suspects: 2, lines: 1728)
+  00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (score: 2097, suspects: 21, lines: 1852)
+  004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (score: 1743, suspects: 1, lines: 1728)
   00583170: core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (score: 1720, suspects: 24, lines: 1475)
   004ae140: core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 (score: 1591, suspects: 0, lines: 1591)
   0046bb80: shape_design.c_cramTextureList_FUN_0046bb80 (score: 1367, suspects: 30, lines: 1047)
@@ -150,7 +151,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (546 functions):
+  pointer_cast (541 functions):
     005e1c20: support_trisock.cpp_receiveSocketData_FUN_005e1c20
     005e1a30: support_trisock.cpp_formatSocketAddress_FUN_005e1a30
     005e1df0: support_trisock.cpp_getSocketName_FUN_005e1df0
@@ -161,7 +162,7 @@ FUNCTIONS BY SUSPECT TYPE
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     00550230: engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230
-    ... and 536 more
+    ... and 531 more
 
   unrolled_memcpy (232 functions):
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
@@ -176,7 +177,7 @@ FUNCTIONS BY SUSPECT TYPE
     00437700: engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_00437700
     ... and 222 more
 
-  unrolled_strcpy (191 functions):
+  unrolled_strcpy (189 functions):
     004820c0: engine_dosio.c_getFullPath_FUN_004820c0
     00481f80: engine_dosio.c_ensureTrailingSlash_FUN_00481f80
     004816c0: engine_dosio.c_getRelativeFilePath_FUN_004816c0
@@ -187,7 +188,7 @@ FUNCTIONS BY SUSPECT TYPE
     004ccff0: engine_font.cpp_CBitFont_loadBitmap_FUN_004ccff0
     004fb250: engine_ini.cpp_CIni_getProfileString_FUN_004fb250
     004fbae0: engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0
-    ... and 181 more
+    ... and 179 more
 
   missing_cave_copy (35 functions):
     004f80b0: core_icepick.cpp_CIcePick_process_FUN_004f80b0
@@ -365,6 +366,19 @@ FUNCTIONS BY SUSPECT TYPE
     00477690: core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690
     00478830: core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830
     ... and 2 more
+
+  shadow_pointer_walk (18 functions):
+    0043a110: core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043a110
+    0043c430: core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430
+    00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
+    0058e600: core_skeledit.cpp_CDeformableModel_offsetRootVertices_FUN_0058e600
+    0058b160: core_skeledit.cpp_CBoneStructure_copyHierarchyFromSkeleton_FUN_0058b160
+    0059d9e0: core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0
+    0059eb50: core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
+    0059fb40: core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
+    0059e0a0: core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
+    005a0480: core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480
+    ... and 8 more
 
   extra_output (1 functions):
     005f8550: core_xform.cpp_transformAndClipGeometry_FUN_005f8550

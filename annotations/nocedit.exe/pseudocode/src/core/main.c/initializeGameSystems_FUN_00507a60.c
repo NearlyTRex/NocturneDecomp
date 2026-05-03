@@ -59,7 +59,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv
   g_RenderingMode = 4;
   core_flattn_cpp_doNothing_FUN_004cbce0();
   core_inivar_cpp_readIniData_FUN_004fbd90();
-  g_PodSystemVersion = 2;
+  g_AGPTextureMode = 2;
   engine_pod_cpp_CPod_init_FUN_00550c30((CPod *)g_CDemonPodPtr);
   engine_dosio_c_addGetFileInfoHook_FUN_00481710(engine_pod_cpp_findFileInPod_FUN_00551960);
   engine_dosio_c_addGetFileInfoHook_FUN_00481710(engine_dosio_c_findFileNormally_FUN_004817c0);
@@ -77,7 +77,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv
   engine_2d_c_initGraphicsSystem_FUN_00401010();
   wincore_winrun_cpp_calibrateCPUSpeed_FUN_005f2b80();
   wincore_winrun_cpp_initJoystick_FUN_005f4310();
-  g_ExternalRendererActive = 0;
+  g_UseDirect3D = 0;
   iVar9 = wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(0x280,0x1e0,0x20);
   if (iVar9 == 0) {
     g_CurrentFilename = "..\\core\\main.c";
@@ -460,11 +460,11 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv
     shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0(g_CEditorToolsPtr,acStack_728);
   }
   pCVar5 = g_CGamePtr;
-  if (g_SkipIntroVideo != 0) {
+  if (g_FirstTimeFlag != 0) {
     g_CGamePtr->game_pixx = GAME_WINDOW_RESOLUTION_640;
-    g_SkipIntroVideo = 0;
+    g_FirstTimeFlag = 0;
     pCVar5->game_pixy = GAME_WINDOW_RESOLUTION_480;
-    g_ExternalRendererActive = 0;
+    g_UseDirect3D = 0;
     pCVar5->game_bpp = 0x20;
     core_menu_cpp_showCalibrationTest_FUN_00510ba0();
   }

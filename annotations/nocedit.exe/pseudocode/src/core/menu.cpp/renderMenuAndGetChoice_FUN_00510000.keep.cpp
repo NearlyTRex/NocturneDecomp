@@ -91,10 +91,12 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(char **menu_text_a
   engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (g_SmallEditorFont,g_MenuVersionText,0x206,99,0xf8,0);
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
+#if !NOCTURNE_AUTHENTIC_RELEASE
   engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (g_SmallEditorFont,"NON-RELEASE EDITOR BUILD",0,0,0xf8,0);
   engine_font_cpp_CBitFont_drawText_FUN_004cda80
             (g_SmallEditorFont,"Press CTRL+D to access the editor menu",0,0x14,0xf8,0);
+#endif
   pcVar6 = strchr(menu_text_array[*selected_index_ptr],':');
   g_MenuInputHappened = 0;
   iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD8);

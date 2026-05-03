@@ -81,14 +81,14 @@ section .text
     PUSH 0x2f275f8                      ; 00510cd1 | g_GraphicsCardCount
     CALL wincore_windll.cpp_buildCardList_FUN_005b7db0 ; 00510cd6
         ;   XREF to: 005b7db0 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_buildCardList_FUN_005b7db0(int * out_card_count, void * enum_data_buffer, char * * out_card_names, int * out_vendor_ids, ...)
-    MOV EAX,[0x02f275f4]                ; 00510cdb | g_GraphicsCardHandle
+    MOV EAX,[0x02f275f4]                ; 00510cdb | g_CurrentGraphicsBoard
     MOV EBX,dword ptr [0x02f275f8]      ; 00510ce0 | g_GraphicsCardCount
     ADD ESP,0x14                        ; 00510ce6
     CMP EAX,EBX                         ; 00510ce9
     JL 0x00510cf5                       ; 00510ceb
         ;   XREF to: 00510cf5 (CONDITIONAL_JUMP)  ; LAB_00510cf5
     XOR ESI,ESI                         ; 00510ced
-    MOV dword ptr [0x02f275f4],ESI      ; 00510cef | g_GraphicsCardHandle
+    MOV dword ptr [0x02f275f4],ESI      ; 00510cef | g_CurrentGraphicsBoard
     LEA EAX,[ESP + 0x12c]               ; 00510cf5
         ;   Label: LAB_00510cf5
     PUSH EAX                            ; 00510cfc
@@ -103,7 +103,7 @@ section .text
     CALL wincore_windll.cpp_getVideoMemory_FUN_005b7d60 ; 00510d24
         ;   XREF to: 005b7d60 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_getVideoMemory_FUN_005b7d60(int * total_memory, int * available_memory, int * memory_type)
     ADD ESP,0xc                         ; 00510d29
-    MOV EBP,0x684010                    ; 00510d2c | g_RendererDllName
+    MOV EBP,0x684010                    ; 00510d2c | g_RendererDllPath
     XOR EBX,EBX                         ; 00510d31
     MOV EDX,dword ptr [0x0067b654]      ; 00510d33 | g_CGameInstance | g_CGamePtr
         ;   Label: LAB_00510d33
@@ -127,10 +127,10 @@ section .text
     CMP EBX,ECX                         ; 00510d73
     JGE 0x00510f05                      ; 00510d75
         ;   XREF to: 00510f05 (CONDITIONAL_JUMP)  ; LAB_00510f05
-    CMP EBX,dword ptr [0x03f6b878]      ; 00510d7b | g_ExternalRendererActive
+    CMP EBX,dword ptr [0x03f6b878]      ; 00510d7b | g_UseDirect3D
     JZ 0x00510f05                       ; 00510d81
         ;   XREF to: 00510f05 (CONDITIONAL_JUMP)  ; LAB_00510f05
-    MOV EAX,[0x02f275f4]                ; 00510d87 | g_GraphicsCardHandle
+    MOV EAX,[0x02f275f4]                ; 00510d87 | g_CurrentGraphicsBoard
     SHL EAX,0x2                         ; 00510d8c
     CMP dword ptr [EAX + 0x2f2767c],0x121a ; 00510d8f | g_GraphicsCardVendorIDs
     JNZ 0x00511201                      ; 00510d99
@@ -142,7 +142,7 @@ section .text
     MOV dword ptr [EAX + 0x8],0x10      ; 00510db1 | g_CGameInstance.game_bpp
     PUSH 0x63679f                       ; 00510db8 | = "tri3dfx.dll"
     MOV dword ptr [EAX],0x280           ; 00510dbd | g_CGameInstance
-    PUSH 0x684010                       ; 00510dc3 | g_RendererDllName
+    PUSH 0x684010                       ; 00510dc3 | g_RendererDllPath
     MOV dword ptr [EAX + 0x4],0x1e0     ; 00510dc8 | g_CGameInstance.game_pixy
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00510dcf
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
@@ -151,17 +151,17 @@ section .text
     JZ 0x00510e60                       ; 00510dd9
         ;   XREF to: 00510e60 (CONDITIONAL_JUMP)  ; LAB_00510e60
     MOV ESI,0x6367ab                    ; 00510ddf | = "tri3dfx.dll"
-    MOV EDI,0x684010                    ; 00510de4 | g_RendererDllName
-    PUSH EDI                            ; 00510de9 | g_RendererDllName
+    MOV EDI,0x684010                    ; 00510de4 | g_RendererDllPath
+    PUSH EDI                            ; 00510de9 | g_RendererDllPath
     MOV AL,byte ptr [ESI]               ; 00510dea | = "tri3dfx.dll" | s_i3dfx_dll_006367ad
         ;   Label: LAB_00510dea
-    MOV byte ptr [EDI],AL               ; 00510dec | g_RendererDllName | s_id3d_dll_00684012
+    MOV byte ptr [EDI],AL               ; 00510dec | g_RendererDllPath | s_id3d_dll_00684012
     CMP AL,0x0                          ; 00510dee
     JZ 0x00510e02                       ; 00510df0
         ;   XREF to: 00510e02 (CONDITIONAL_JUMP)  ; LAB_00510e02
     MOV AL,byte ptr [ESI + 0x1]         ; 00510df2 | s_tri3dfx_dll_006367ab+1 | s_3dfx.dll_006367ae
     ADD ESI,0x2                         ; 00510df5
-    MOV byte ptr [EDI + 0x1],AL         ; 00510df8 | g_RendererDllName+1 | s_d3d.dll_00684013
+    MOV byte ptr [EDI + 0x1],AL         ; 00510df8 | g_RendererDllPath+1 | s_d3d.dll_00684013
     ADD EDI,0x2                         ; 00510dfb
     CMP AL,0x0                          ; 00510dfe
     JNZ 0x00510dea                      ; 00510e00
@@ -173,7 +173,7 @@ section .text
     PUSH EBX                            ; 00510e08
     CALL wincore_windll.cpp_loadExternalRenderer_FUN_005b6750 ; 00510e09
         ;   XREF to: 005b6750 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_loadExternalRenderer_FUN_005b6750(HWND window_handle)
-    MOV ESI,dword ptr [0x03f6b878]      ; 00510e0e | g_ExternalRendererActive
+    MOV ESI,dword ptr [0x03f6b878]      ; 00510e0e | g_UseDirect3D
     ADD ESP,0x4                         ; 00510e14
     CMP EBX,ESI                         ; 00510e17
     JZ 0x005111f6                       ; 00510e19
@@ -196,7 +196,7 @@ section .text
     CALL wincore_windll.cpp_getVideoMemory_FUN_005b7d60 ; 00510e58
         ;   XREF to: 005b7d60 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_getVideoMemory_FUN_005b7d60(int * total_memory, int * available_memory, int * memory_type)
     ADD ESP,0xc                         ; 00510e5d
-    MOV EAX,[0x02f275f4]                ; 00510e60 | g_GraphicsCardHandle
+    MOV EAX,[0x02f275f4]                ; 00510e60 | g_CurrentGraphicsBoard
         ;   Label: LAB_00510e60
     SHL EAX,0x2                         ; 00510e65
     CMP dword ptr [EAX + 0x2f2767c],0x8086 ; 00510e68 | g_GraphicsCardVendorIDs
@@ -209,7 +209,7 @@ section .text
     MOV dword ptr [EAX + 0x8],0x10      ; 00510e85 | g_CGameInstance.game_bpp
     MOV dword ptr [EAX],0x280           ; 00510e8c | g_CGameInstance
     MOV dword ptr [EAX + 0x4],0x1e0     ; 00510e92 | g_CGameInstance.game_pixy
-    MOV EAX,[0x02f275f4]                ; 00510e99 | g_GraphicsCardHandle
+    MOV EAX,[0x02f275f4]                ; 00510e99 | g_CurrentGraphicsBoard
         ;   Label: LAB_00510e99
     SHL EAX,0x2                         ; 00510e9e
     CMP dword ptr [EAX + 0x2f2767c],0x12d2 ; 00510ea1 | g_GraphicsCardVendorIDs
@@ -222,7 +222,7 @@ section .text
     MOV dword ptr [EAX + 0x8],0x10      ; 00510ebb | g_CGameInstance.game_bpp
     MOV dword ptr [EAX],0x280           ; 00510ec2 | g_CGameInstance
     MOV dword ptr [EAX + 0x4],0x1e0     ; 00510ec8 | g_CGameInstance.game_pixy
-    MOV EAX,[0x02f275f4]                ; 00510ecf | g_GraphicsCardHandle
+    MOV EAX,[0x02f275f4]                ; 00510ecf | g_CurrentGraphicsBoard
         ;   Label: LAB_00510ecf
     SHL EAX,0x2                         ; 00510ed4
     CMP dword ptr [EAX + 0x2f2767c],0x12d2 ; 00510ed7 | g_GraphicsCardVendorIDs
@@ -235,7 +235,7 @@ section .text
     MOV dword ptr [EAX + 0x8],0x10      ; 00510ef1 | g_CGameInstance.game_bpp
     MOV dword ptr [EAX],0x280           ; 00510ef8 | g_CGameInstance
     MOV dword ptr [EAX + 0x4],0x1e0     ; 00510efe | g_CGameInstance.game_pixy
-    CMP EBX,dword ptr [0x03f6b878]      ; 00510f05 | g_ExternalRendererActive
+    CMP EBX,dword ptr [0x03f6b878]      ; 00510f05 | g_UseDirect3D
         ;   Label: LAB_00510f05
     JNZ 0x00510f28                      ; 00510f0b
         ;   XREF to: 00510f28 (CONDITIONAL_JUMP)  ; LAB_00510f28
@@ -281,7 +281,7 @@ section .text
     ADD ESP,0x8                         ; 00510f84
     PUSH 0x6368c2                       ; 00510f87 | = "Acceleration disabled in editor"
         ;   Label: LAB_00510f87
-    MOV dword ptr [0x03f6b878],EBX      ; 00510f8c | g_ExternalRendererActive
+    MOV dword ptr [0x03f6b878],EBX      ; 00510f8c | g_UseDirect3D
     CALL support_newmsg.cpp_getLocalizedString_FUN_005441f0 ; 00510f92
         ;   XREF to: 005441f0 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_005441f0(char * key)
     ADD ESP,0x4                         ; 00510f97
@@ -289,7 +289,7 @@ section .text
     PUSH 0x2f26ed0                      ; 00510f9b | g_GraphicsMenuTextBuffers[2][0]
     CALL crt_stdio.c_sprintf_FUN_005fdbd0 ; 00510fa0
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_005fdbd0(char * buffer, char * format)
-    MOV AH,byte ptr [0x00684010]        ; 00510fa5 | g_RendererDllName
+    MOV AH,byte ptr [0x00684010]        ; 00510fa5 | g_RendererDllPath
     ADD ESP,0x8                         ; 00510fab
     CMP BL,AH                           ; 00510fae
     JNZ 0x005112fc                      ; 00510fb0
@@ -438,7 +438,7 @@ section .text
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0051110f
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     PUSH 0x636a22                       ; 00511114 | = "trid3d.dll"
-    PUSH EBP                            ; 00511119 | g_RendererDllName
+    PUSH EBP                            ; 00511119 | g_RendererDllPath
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0051111a
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0051111f
@@ -518,7 +518,7 @@ section .text
         ;   XREF to: 00510e60 (UNCONDITIONAL_JUMP)  ; LAB_00510e60
     PUSH 0x6367b7                       ; 00511201 | = "tri3dfx.dll"
         ;   Label: LAB_00511201
-    PUSH 0x684010                       ; 00511206 | g_RendererDllName
+    PUSH 0x684010                       ; 00511206 | g_RendererDllPath
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0051120b
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00511210
@@ -526,17 +526,17 @@ section .text
     JNZ 0x00510e60                      ; 00511215
         ;   XREF to: 00510e60 (CONDITIONAL_JUMP)  ; LAB_00510e60
     MOV ESI,0x6367c3                    ; 0051121b | = "tridx6.dll"
-    MOV EDI,0x684010                    ; 00511220 | g_RendererDllName
-    PUSH EDI                            ; 00511225 | g_RendererDllName
+    MOV EDI,0x684010                    ; 00511220 | g_RendererDllPath
+    PUSH EDI                            ; 00511225 | g_RendererDllPath
     MOV AL,byte ptr [ESI]               ; 00511226 | = "tridx6.dll" | s_idx6.dll_006367c5
         ;   Label: LAB_00511226
-    MOV byte ptr [EDI],AL               ; 00511228 | g_RendererDllName | s_id3d_dll_00684012
+    MOV byte ptr [EDI],AL               ; 00511228 | g_RendererDllPath | s_id3d_dll_00684012
     CMP AL,0x0                          ; 0051122a
     JZ 0x0051123e                       ; 0051122c
         ;   XREF to: 0051123e (CONDITIONAL_JUMP)  ; LAB_0051123e
     MOV AL,byte ptr [ESI + 0x1]         ; 0051122e | s_ridx6.dll_006367c4 | s_dx6.dll_006367c6
     ADD ESI,0x2                         ; 00511231
-    MOV byte ptr [EDI + 0x1],AL         ; 00511234 | g_RendererDllName+1 | s_d3d.dll_00684013
+    MOV byte ptr [EDI + 0x1],AL         ; 00511234 | g_RendererDllPath+1 | s_d3d.dll_00684013
     ADD EDI,0x2                         ; 00511237
     CMP AL,0x0                          ; 0051123a
     JNZ 0x00511226                      ; 0051123c
@@ -548,7 +548,7 @@ section .text
     PUSH EBX                            ; 00511244
     CALL wincore_windll.cpp_loadExternalRenderer_FUN_005b6750 ; 00511245
         ;   XREF to: 005b6750 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_loadExternalRenderer_FUN_005b6750(HWND window_handle)
-    MOV ECX,dword ptr [0x03f6b878]      ; 0051124a | g_ExternalRendererActive
+    MOV ECX,dword ptr [0x03f6b878]      ; 0051124a | g_UseDirect3D
     ADD ESP,0x4                         ; 00511250
     CMP EBX,ECX                         ; 00511253
     JNZ 0x00510e1f                      ; 00511255
@@ -620,7 +620,7 @@ section .text
         ;   XREF to: 00510f87 (UNCONDITIONAL_JUMP)  ; LAB_00510f87
     PUSH 0x6368f0                       ; 005112fc | = "trid3d.dll"
         ;   Label: LAB_005112fc
-    PUSH EBP                            ; 00511301 | g_RendererDllName
+    PUSH EBP                            ; 00511301 | g_RendererDllPath
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00511302
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00511307
@@ -632,7 +632,7 @@ section .text
         ;   XREF to: 00510fbb (UNCONDITIONAL_JUMP)  ; LAB_00510fbb
     PUSH 0x63690e                       ; 00511318 | = "tridx6.dll"
         ;   Label: LAB_00511318
-    PUSH EBP                            ; 0051131d | g_RendererDllName
+    PUSH EBP                            ; 0051131d | g_RendererDllPath
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0051131e
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 00511323
@@ -644,7 +644,7 @@ section .text
         ;   XREF to: 00510fbb (UNCONDITIONAL_JUMP)  ; LAB_00510fbb
     PUSH 0x63692c                       ; 00511334 | = "tridx7.dll"
         ;   Label: LAB_00511334
-    PUSH EBP                            ; 00511339 | g_RendererDllName
+    PUSH EBP                            ; 00511339 | g_RendererDllPath
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0051133a
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0051133f
@@ -656,7 +656,7 @@ section .text
         ;   XREF to: 00510fbb (UNCONDITIONAL_JUMP)  ; LAB_00510fbb
     PUSH 0x63694a                       ; 00511350 | = "tri3dfx.dll"
         ;   Label: LAB_00511350
-    PUSH EBP                            ; 00511355 | g_RendererDllName
+    PUSH EBP                            ; 00511355 | g_RendererDllPath
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00511356
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0051135b
@@ -693,7 +693,7 @@ section .text
         ;   XREF to: 0051138b (CONDITIONAL_JUMP)  ; LAB_0051138b
     POP EDI                             ; 005113a3
         ;   Label: LAB_005113a3
-    MOV ESI,dword ptr [0x02f275f4]      ; 005113a4 | g_GraphicsCardHandle
+    MOV ESI,dword ptr [0x02f275f4]      ; 005113a4 | g_CurrentGraphicsBoard
     MOV ESI,dword ptr [ESI*0x4 + 0x2f2763c] ; 005113aa | g_GraphicsCardNames
     PUSH EDI                            ; 005113b1 | g_GraphicsMenuTextBuffers[4][0]
     SUB ECX,ECX                         ; 005113b2
@@ -716,7 +716,7 @@ section .text
         ;   XREF to: 005113ba (CONDITIONAL_JUMP)  ; LAB_005113ba
     POP EDI                             ; 005113d2
         ;   Label: LAB_005113d2
-    MOV EDI,dword ptr [0x02f275f4]      ; 005113d3 | g_GraphicsCardHandle
+    MOV EDI,dword ptr [0x02f275f4]      ; 005113d3 | g_CurrentGraphicsBoard
     PUSH EDI                            ; 005113d9
     PUSH 0x6369a8                       ; 005113da | = " (%d)"
     LEA EAX,[ESP + 0x108]               ; 005113df
@@ -970,16 +970,16 @@ section .text
         ;   XREF to: 005111d3 (UNCONDITIONAL_JUMP)  ; default
     MOV dword ptr [0x02f275f8],EBX      ; 00511685 | g_GraphicsCardCount
         ;   Label: caseD_2
-    MOV dword ptr [0x03f6b878],EBX      ; 0051168b | g_ExternalRendererActive
+    MOV dword ptr [0x03f6b878],EBX      ; 0051168b | g_UseDirect3D
     JMP 0x005111d3                      ; 00511691
         ;   XREF to: 005111d3 (UNCONDITIONAL_JUMP)  ; default
-    MOV EAX,[0x02f275f4]                ; 00511696 | g_GraphicsCardHandle
+    MOV EAX,[0x02f275f4]                ; 00511696 | g_CurrentGraphicsBoard
         ;   Label: caseD_3
     CMP dword ptr [EAX*0x4 + 0x2f2767c],0x121a ; 0051169b | g_GraphicsCardVendorIDs
     JZ 0x005111d3                       ; 005116a6
         ;   XREF to: 005111d3 (CONDITIONAL_JUMP)  ; default
     PUSH 0x636a2d                       ; 005116ac | = "trid3d.dll"
-    PUSH EBP                            ; 005116b1 | g_RendererDllName
+    PUSH EBP                            ; 005116b1 | g_RendererDllPath
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 005116b2
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 005116b7
@@ -989,16 +989,16 @@ section .text
     MOV ESI,0x636a38                    ; 005116be | = "tridx6.dll"
     MOV EDI,EBP                         ; 005116c3
         ;   Label: LAB_005116c3
-    PUSH EDI                            ; 005116c5 | g_RendererDllName
+    PUSH EDI                            ; 005116c5 | g_RendererDllPath
     MOV AL,byte ptr [ESI]               ; 005116c6 | = "tridx6.dll" | s_idx6.dll_00636a3a | s_tridx7_dll_00636a4e
         ;   Label: LAB_005116c6
-    MOV byte ptr [EDI],AL               ; 005116c8 | g_RendererDllName | s_id3d_dll_00684012
+    MOV byte ptr [EDI],AL               ; 005116c8 | g_RendererDllPath | s_id3d_dll_00684012
     CMP AL,0x0                          ; 005116ca
     JZ 0x005116de                       ; 005116cc
         ;   XREF to: 005116de (CONDITIONAL_JUMP)  ; LAB_005116de
     MOV AL,byte ptr [ESI + 0x1]         ; 005116ce | s_ridx6.dll_00636a39 | s_dx6.dll_00636a3b | s_ridx7.dll_00636a4f
     ADD ESI,0x2                         ; 005116d1
-    MOV byte ptr [EDI + 0x1],AL         ; 005116d4 | g_RendererDllName+1 | s_d3d.dll_00684013
+    MOV byte ptr [EDI + 0x1],AL         ; 005116d4 | g_RendererDllPath+1 | s_d3d.dll_00684013
     ADD EDI,0x2                         ; 005116d7
     CMP AL,0x0                          ; 005116da
     JNZ 0x005116c6                      ; 005116dc
@@ -1011,7 +1011,7 @@ section .text
     PUSH EBX                            ; 005116e4
     CALL wincore_windll.cpp_loadExternalRenderer_FUN_005b6750 ; 005116e5
         ;   XREF to: 005b6750 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_loadExternalRenderer_FUN_005b6750(HWND window_handle)
-    MOV ECX,dword ptr [0x03f6b878]      ; 005116ea | g_ExternalRendererActive
+    MOV ECX,dword ptr [0x03f6b878]      ; 005116ea | g_UseDirect3D
     ADD ESP,0x4                         ; 005116f0
     CMP EBX,ECX                         ; 005116f3
     JNZ 0x00511750                      ; 005116f5
@@ -1021,7 +1021,7 @@ section .text
         ;   XREF to: 005111d3 (UNCONDITIONAL_JUMP)  ; default
     PUSH 0x636a43                       ; 00511702 | = "tridx6.dll"
         ;   Label: LAB_00511702
-    PUSH EBP                            ; 00511707 | g_RendererDllName
+    PUSH EBP                            ; 00511707 | g_RendererDllPath
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 00511708
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0051170d
@@ -1029,7 +1029,7 @@ section .text
     JZ 0x0051172d                       ; 00511712
         ;   XREF to: 0051172d (CONDITIONAL_JUMP)  ; LAB_0051172d
     PUSH 0x636a59                       ; 00511714 | = "tridx7.dll"
-    PUSH EBP                            ; 00511719 | g_RendererDllName
+    PUSH EBP                            ; 00511719 | g_RendererDllPath
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0051171a
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0051171f
@@ -1045,7 +1045,7 @@ section .text
         ;   XREF to: 005116c3 (UNCONDITIONAL_JUMP)  ; LAB_005116c3
     PUSH 0x636a6f                       ; 00511734 | = "tri3dfx.dll"
         ;   Label: LAB_00511734
-    PUSH EBP                            ; 00511739 | g_RendererDllName
+    PUSH EBP                            ; 00511739 | g_RendererDllPath
     CALL crt_string.c__stricmp_FUN_005fe7f0 ; 0051173a
         ;   XREF to: 005fe7f0 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005fe7f0(char * str1, char * str2)
     ADD ESP,0x8                         ; 0051173f
@@ -1080,18 +1080,18 @@ section .text
     CMP EBX,ECX                         ; 0051179c
     JNZ 0x005117ab                      ; 0051179e
         ;   XREF to: 005117ab (CONDITIONAL_JUMP)  ; LAB_005117ab
-    MOV dword ptr [0x02f275f4],ECX      ; 005117a0 | g_GraphicsCardHandle
+    MOV dword ptr [0x02f275f4],ECX      ; 005117a0 | g_CurrentGraphicsBoard
     JMP 0x005111d3                      ; 005117a6
         ;   XREF to: 005111d3 (UNCONDITIONAL_JUMP)  ; default
-    MOV ESI,dword ptr [0x02f275f4]      ; 005117ab | g_GraphicsCardHandle
+    MOV ESI,dword ptr [0x02f275f4]      ; 005117ab | g_CurrentGraphicsBoard
         ;   Label: LAB_005117ab
     INC ESI                             ; 005117b1
-    MOV dword ptr [0x02f275f4],ESI      ; 005117b2 | g_GraphicsCardHandle
+    MOV dword ptr [0x02f275f4],ESI      ; 005117b2 | g_CurrentGraphicsBoard
     CMP ESI,ECX                         ; 005117b8
     JL 0x005117c2                       ; 005117ba
         ;   XREF to: 005117c2 (CONDITIONAL_JUMP)  ; LAB_005117c2
-    MOV dword ptr [0x02f275f4],EBX      ; 005117bc | g_GraphicsCardHandle
-    MOV EAX,[0x02f275f4]                ; 005117c2 | g_GraphicsCardHandle
+    MOV dword ptr [0x02f275f4],EBX      ; 005117bc | g_CurrentGraphicsBoard
+    MOV EAX,[0x02f275f4]                ; 005117c2 | g_CurrentGraphicsBoard
         ;   Label: LAB_005117c2
     PUSH EAX                            ; 005117c7
     CALL wincore_windll.cpp_selectCard_FUN_005b7d90 ; 005117c8

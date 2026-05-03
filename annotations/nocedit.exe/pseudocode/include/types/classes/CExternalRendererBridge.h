@@ -31,7 +31,7 @@ typedef struct CExternalRendererBridge {
     int* max_texture_size; // 0x58
     void** frame_buffer_ptr; // 0x5c
     int* system_initialized; // 0x60
-    int* pod_system_version; // 0x64
+    int* agp_texture_mode; // 0x64
     int* processor_type; // 0x68
     int* rendering_quality; // 0x6c
     uint sizeof1; // 0x70

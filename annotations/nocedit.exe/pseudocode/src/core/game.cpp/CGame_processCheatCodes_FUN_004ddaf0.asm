@@ -231,7 +231,7 @@ section .text
     MOV EBP,ESP                         ; 004ddaf4
     SUB ESP,0x44c                       ; 004ddaf6
     AND ESP,0xfffffff8                  ; 004ddafc
-    CMP dword ptr [0x02d828d0],0x0      ; 004ddaff | g_CheatSystemEnabled
+    CMP dword ptr [0x02d828d0],0x0      ; 004ddaff | g_ModalDialogActive
     JZ 0x004ddb0f                       ; 004ddb06
         ;   XREF to: 004ddb0f (CONDITIONAL_JUMP)  ; LAB_004ddb0f
     MOV ESP,EBP                         ; 004ddb08

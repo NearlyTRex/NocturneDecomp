@@ -49,7 +49,7 @@ char g_ErrorMessageBuffer_02db8b70[256] = {};
 int g_HeroCount = {};
 int g_LocalHeroIndex = {};
 int INT_02db8888 = {};
-int g_SkipIntroVideo = {};
+int g_FirstTimeFlag = {};
 int g_ItemDefinitionCount = {};
 
 // int[12]

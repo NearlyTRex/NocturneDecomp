@@ -27,19 +27,18 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004fbd90(void)
             (&local_204,"gamePIXY",&g_CGamePtr->game_pixy);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
             (&local_204,"gameBPP",&g_CGamePtr->game_bpp);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30(&local_204,"useDirect3D",&g_UseDirect3D);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
-            (&local_204,"useDirect3D",&g_ExternalRendererActive);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
-            (&local_204,"useAGPFlag",&g_PodSystemVersion);
+            (&local_204,"useAGPFlag",&g_AGPTextureMode);
   engine_ini_cpp_CIniFile_getString_FUN_004fbb20
-            (&local_204,"rendererDLLPath",g_RendererDllName,0xfa);
+            (&local_204,"rendererDLLPath",g_RendererDllPath,0xfa);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30(&local_204,"gamma",&g_CGamePtr->gamma);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
             (&local_204,"heroNumber",(int *)&g_CGamePtr->hero_number);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
             (&local_204,"haloMode",&g_CGamePtr->halo_mode);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
-            (&local_204,"firstTimeFlag",&g_SkipIntroVideo);
+            (&local_204,"firstTimeFlag",&g_FirstTimeFlag);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
             (&local_204,"subtitleMode",&g_CGamePtr->subtitle_mode);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
@@ -58,9 +57,9 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004fbd90(void)
     pCVar1->foul_language_flag = 0;
     pCVar1->blood_flag = 0;
   }
-  g_GraphicsCardHandle = 0;
+  g_CurrentGraphicsBoard = 0;
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
-            (&local_204,"currentBoard",&g_GraphicsCardHandle);
+            (&local_204,"currentBoard",&g_CurrentGraphicsBoard);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004fbae0(&local_204,"Sound");
   sound_sndmain_cpp_readIni_FUN_005abf20(&local_204);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004fbae0(&local_204,"Control");

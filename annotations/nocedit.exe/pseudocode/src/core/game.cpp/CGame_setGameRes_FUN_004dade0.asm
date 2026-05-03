@@ -23,7 +23,7 @@
 ;   CBitFont* g_EditorFont
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   int g_GraphicsCardHandle
+;   int g_CurrentGraphicsBoard
 ;   CDemonCamera g_CDemonCameraInstance
 ;
 ; Called Functions:
@@ -43,7 +43,7 @@ section .text
     PUSH EDI                            ; 004dade2
     PUSH EBP                            ; 004dade3
     MOV EBX,dword ptr [ESP + 0x14]      ; 004dade4
-    MOV EDX,dword ptr [0x02f275f4]      ; 004dade8 | g_GraphicsCardHandle
+    MOV EDX,dword ptr [0x02f275f4]      ; 004dade8 | g_CurrentGraphicsBoard
     TEST EDX,EDX                        ; 004dadee
     JNZ 0x004dae98                      ; 004dadf0
         ;   XREF to: 004dae98 (CONDITIONAL_JUMP)  ; LAB_004dae98

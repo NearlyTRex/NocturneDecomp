@@ -23,19 +23,19 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
   }
   g_StoredWindowHandle = HVar1;
   HVar1 = g_StoredWindowHandle;
-  if (g_ExternalRendererActive == 0) {
+  if (g_UseDirect3D == 0) {
     return 0;
   }
-  g_RendererDLLHandle = wincore_wddvmem_cpp_loadLibrary_FUN_005ede10(g_RendererDllName);
+  g_RendererDLLHandle = wincore_wddvmem_cpp_loadLibrary_FUN_005ede10(g_RendererDllPath);
   if (g_RendererDLLHandle == (HMODULE)0x0) {
-    g_ExternalRendererActive = (int)g_RendererDLLHandle;
+    g_UseDirect3D = (int)g_RendererDLLHandle;
     return 0;
   }
   pFVar2 = wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                      (g_RendererDLLHandle,"APIDLLInformation");
   if (pFVar2 == (FARPROC)0x0) {
     wincore_windll_cpp_shutdownExternalRenderer_FUN_005b5d20();
-    g_ExternalRendererActive = 0;
+    g_UseDirect3D = 0;
     return 0;
   }
   ((void (__cdecl *)(HMODULE, void *))pFVar2)(g_RendererDLLHandle,&pvStack_3c2c);
@@ -377,7 +377,7 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
          wincore_wddvmem_cpp_getProcAddress_FUN_005ede20
                    (g_RendererDLLHandle,"APIDLLsetFog");
     if (g_DLLFunctionsMissing == 0) {
-      g_ExternalRendererActive = 1;
+      g_UseDirect3D = 1;
       memset(&CStack_9c,0,0x8c);
       CStack_9c.red_bit_position = (int *)&g_RedBitPosition;
       CStack_9c.red_scale_factor = &g_RedScaleFactor;
@@ -404,7 +404,7 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
       CStack_9c.max_texture_size = &g_MaxTextureSize;
       CStack_9c.frame_buffer_ptr = &g_FrameBufferPtr;
       CStack_9c.system_initialized = &g_SystemInitialized;
-      CStack_9c.pod_system_version = &g_PodSystemVersion;
+      CStack_9c.agp_texture_mode = &g_AGPTextureMode;
       CStack_9c.processor_type = &g_ProcessorType;
       CStack_9c.rendering_quality = &g_RenderingQuality;
       CStack_9c.sizeof1 = 0x30;
@@ -420,11 +420,11 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
         wincore_windll_cpp_selectCard_FUN_005b7d90(g_RendererHandle);
         return 1;
       }
-      g_ExternalRendererActive = iVar3;
+      g_UseDirect3D = iVar3;
       return 0;
     }
   }
   wincore_windll_cpp_shutdownExternalRenderer_FUN_005b5d20();
-  g_ExternalRendererActive = 0;
+  g_UseDirect3D = 0;
   return 0;
 }

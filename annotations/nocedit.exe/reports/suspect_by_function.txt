@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5483 (85.0%)
-With suspects: 971
-Total suspects: 3872
+Clean: 5478 (84.9%)
+With suspects: 976
+Total suspects: 3877
 
 ====================================================================================================
 core_actor.cpp_CActorPropertyList_addFile_FUN_0040e3e0 (2 suspects)
@@ -496,12 +496,13 @@ core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_0042d300 (3 suspects)
   Line 22 [unrolled_memcpy]: out_matrix->m[2].w = local_38.m[2].w;
 
 ====================================================================================================
-core_charactr.cpp_CCharacter_processFire_FUN_0042a830 (3 suspects)
+core_charactr.cpp_CCharacter_processFire_FUN_0042a830 (4 suspects)
   File: core/charactr.cpp
 ====================================================================================================
   Line 54 [pointer_cast]: *(uint *)((int)g_BoneBurnIntensity + iVar5) = 0;
   Line 78 [pointer_cast]: if ((float)65535 <= *(float *)((int)g_BoneBurnIntensity + iVar11)) {
   Line 87 [pointer_cast]: [*(int *)((int)pCVar7->bone_to_part_map + iVar11)] == 0) {
+  Line 181 [shadow_pointer_walk]: pCVar12 = (CSkeleton *)((pCVar12->motion_list).state_names[1] + 2);
 
 ====================================================================================================
 core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0 (1 suspect)
@@ -523,10 +524,11 @@ core_charactr.cpp_CCharacter_renderCollision_FUN_00429b40 (1 suspect)
   Line 59 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042a520 (6 suspects)
+core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042a520 (7 suspects)
   File: core/charactr.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+  Line 56 [shadow_pointer_walk]: pCVar7 = (CSkeleton *)((pCVar7->motion_list).state_names[1] + 2);
   Line 109 [pointer_cast]: *(uint *)((int)this_ptr->fires + this_ptr->fire_count * 0x2a4 + 0x3b8) = 0;
   Line 112 [pointer_cast]: *(float *)((int)this_ptr->fires + this_ptr->fire_count * 0x2a4 + 0x364) =
   Line 114 [pointer_cast]: *(float *)((int)this_ptr->fires + this_ptr->fire_count * 0x2a4 + 0x368) = pSVar9->size;
@@ -565,6 +567,12 @@ core_cloth.cpp_CClothList_remove_FUN_0043c170 (1 suspect)
   Line 33 [unrolled_strcpy]: do {
 
 ====================================================================================================
+core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430 (1 suspect)
+  File: core/cloth.cpp
+====================================================================================================
+  Line 41 [shadow_pointer_walk]: pCVar3 = (CSkeleton *)((pCVar3->motion_list).state_names[1] + 2);
+
+====================================================================================================
 core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420 (2 suspects)
   File: core/cloth.cpp
 ====================================================================================================
@@ -578,9 +586,10 @@ core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 (1 suspect)
   Line 185 [pointer_cast]: iVar9 = *(int *)(iVar12 + (int)this_ptr->vertex_sort_buffer);
 
 ====================================================================================================
-core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043a110 (3 suspects)
+core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043a110 (4 suspects)
   File: core/cloth.cpp
 ====================================================================================================
+  Line 40 [shadow_pointer_walk]: pCVar5 = (CSkeleton *)((pCVar5->motion_list).state_names[1] + 2);
   Line 60 [unrolled_memcpy]: (bone_name->world_matrix).m[0].w = local_64.m[0].w;
   Line 64 [unrolled_memcpy]: (bone_name->world_matrix).m[1].w = local_64.m[1].w;
   Line 68 [unrolled_memcpy]: (bone_name->world_matrix).m[2].w = local_64.m[2].w;
@@ -1993,11 +2002,10 @@ core_game.cpp_CGame_loadGame_FUN_004e12b0 (4 suspects)
   Line 264 [pointer_cast]: *(CHero **)((int)g_HeroActors + iVar2) = pCVar3;
 
 ====================================================================================================
-core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (2 suspects)
+core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (1 suspect)
   File: core/game.cpp
 ====================================================================================================
   Line 1273 [raw_address_constant]: (&g_CDemonCameraInstance,0xff00ff);
-  Line 1444 [pointer_cast]: iVar6 = *(int *)((int)g_CDemonSetPtr->characters + iStack_40);
 
 ====================================================================================================
 core_game.cpp_CGame_renderIrisFade_FUN_004e0aa0 (1 suspect)
@@ -2106,6 +2114,12 @@ core_game.cpp_joinNetworkGame_FUN_004e2fc0 (1 suspect)
   File: core/game.cpp
 ====================================================================================================
   Line 16 [unrolled_memcpy]: // 004e2fe9: MOVSD.REP ES:EDI,ESI  ; g_IpAddress | g_IpAddress+4
+
+====================================================================================================
+core_game.cpp_scaleBoneRecursive_FUN_004dda80 (1 suspect)
+  File: core/game.cpp
+====================================================================================================
+  Line 19 [shadow_pointer_walk]: pCVar1 = (CSkeleton *)((pCVar1->motion_list).state_names[1] + 2);
 
 ====================================================================================================
 core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0 (1 suspect)
@@ -2512,17 +2526,6 @@ core_main.c_displayErrorAndQuit_FUN_00506f10 (2 suspects)
   Line 70 [unrolled_strchr]: do {
 
 ====================================================================================================
-core_main.c_enterMainGameMenu_FUN_00507a50 (6 suspects)
-  File: core/main.c
-====================================================================================================
-  Line 28 [pointer_cast]: (this_ptr,*(char **)((int)g_MenuBitmapFilenames + iVar5),0x40,0x40);
-  Line 49 [unrolled_strcpy]: do {
-  Line 55 [pointer_cast]: *(char *)((int)pacVar6 + 1) = cVar1;
-  Line 60 [unrolled_strcpy]: do {
-  Line 71 [unrolled_strcpy]: do {
-  Line 83 [unrolled_strcpy]: do {
-
-====================================================================================================
 core_main.c_initializeGameSystems_FUN_00507a60 (1 suspect)
   File: core/main.c
 ====================================================================================================
@@ -2620,17 +2623,6 @@ core_menu.cpp_showCalibrationTestPattern_FUN_00510a50 (1 suspect)
   File: core/menu.cpp
 ====================================================================================================
   Line 20 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_menu.cpp_showMainGameMenu_FUN_00512f40 (6 suspects)
-  File: core/menu.cpp
-====================================================================================================
-  Line 42 [pointer_cast]: (this_ptr_00,*(char **)((int)g_MenuBitmapFilenames + iVar7),0x40,0x40);
-  Line 63 [unrolled_strcpy]: do {
-  Line 69 [pointer_cast]: *(char *)((int)pacVar8 + 1) = cVar3;
-  Line 74 [unrolled_strcpy]: do {
-  Line 85 [unrolled_strcpy]: do {
-  Line 97 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_mimic.cpp_CMimic_beginMorph_FUN_00520a80 (2 suspects)
@@ -4100,6 +4092,12 @@ core_skeledit.cpp_CBoneStructure_computeWorldMatrices_FUN_0058ad30 (3 suspects)
   Line 35 [pointer_cast]: pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar1 * -8 + 4);
 
 ====================================================================================================
+core_skeledit.cpp_CBoneStructure_copyHierarchyFromSkeleton_FUN_0058b160 (1 suspect)
+  File: core/skeledit.cpp
+====================================================================================================
+  Line 41 [shadow_pointer_walk]: local_10 = (CSkeleton *)((local_10->motion_list).state_names[1] + 2);
+
+====================================================================================================
 core_skeledit.cpp_CBoneStructure_extractInverseBindPose_FUN_0058aeb0 (3 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
@@ -4302,6 +4300,12 @@ core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (3 su
   Line 68 [pointer_cast]: *(int *)((int)aiStack_430 + iVar8) = iVar3;
 
 ====================================================================================================
+core_skeledit.cpp_CDeformableModel_offsetRootVertices_FUN_0058e600 (1 suspect)
+  File: core/skeledit.cpp
+====================================================================================================
+  Line 21 [shadow_pointer_walk]: pCVar4 = (CSkeleton *)((pCVar4->motion_list).state_names[1] + 2);
+
+====================================================================================================
 core_skeledit.cpp_CDeformableModel_pruneWeakBoneInfluences_FUN_0058eaa0 (6 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
@@ -4365,7 +4369,7 @@ core_skeledit.cpp_CLodVert_copy_FUN_00599550 (2 suspects)
   Line 38 [unrolled_memcpy]: // 005995b6: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (20 suspects)
+core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (21 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
@@ -4374,6 +4378,7 @@ core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (20 suspects)
   Line 92 [missing_cave_copy]: CMatrix3x4f local_374;
   Line 93 [missing_cave_copy]: CMatrix3x4f local_344;
   Line 94 [missing_cave_copy]: CMatrix3x4f local_314;
+  Line 420 [shadow_pointer_walk]: local_50 = (CSkeleton *)((local_50->motion_list).state_names[1] + 2);
   Line 485 [pointer_cast]: pCVar19 = (CMatrix3x4f *)((int)pCVar19 + ((uint)bVar26 * -2 + 1) * 4);
   Line 486 [pointer_cast]: pCVar24 = (CMatrix3x4f *)((int)pCVar24 + ((uint)bVar26 * -2 + 1) * 4);
   Line 490 [pointer_cast]: if (0 < *(int *)((int)aiStack_2720 + iVar16)) {
@@ -4413,20 +4418,22 @@ core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750 (1 su
   Line 34 [unrolled_memcpy]: (local_18->bone_transform).pose_data.bone_rotations[0].w = CStack_2c.w;
 
 ====================================================================================================
-core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 (4 suspects)
+core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 (5 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
   Line 80 [unrolled_memcpy]: (local_34->bone_transform).pose_data.bone_rotations[0].w = CStack_154.w;
   Line 89 [unrolled_memcpy]: (local_34->bone_transform).pose_data.bone_rotations[0].w = CStack_154.w;
   Line 151 [unrolled_memcpy]: local_d4.w = pCVar16->w;
   Line 156 [unrolled_memcpy]: (local_38->bone_transform).pose_data.bone_rotations[0].w = local_134.w;
+  Line 162 [shadow_pointer_walk]: local_30 = (CSkeleton *)((local_30->motion_list).state_names[1] + 2);
 
 ====================================================================================================
-core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260 (2 suspects)
+core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260 (3 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
   Line 58 [unrolled_memcpy]: (local_24->bone_transform).pose_data.bone_rotations[0].w = CStack_e8.w;
   Line 95 [unrolled_memcpy]: (local_28->bone_transform).pose_data.bone_rotations[0].w = local_88.w;
+  Line 101 [shadow_pointer_walk]: local_20 = (CSkeleton *)((local_20->motion_list).state_names[1] + 2);
 
 ====================================================================================================
 core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0 (1 suspect)
@@ -4435,10 +4442,11 @@ core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005
   Line 42 [unrolled_memcpy]: (local_18->pose_data).bone_rotations[0].w = local_5c.w;
 
 ====================================================================================================
-core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40 (1 suspect)
+core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40 (2 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
   Line 76 [pointer_cast]: (&CStack_3c,(CVector3f *)((int)&this_ptr->transformed_vertices[0].x + local_18),
+  Line 88 [shadow_pointer_walk]: local_20 = (CSkeleton *)((local_20->motion_list).state_names[1] + 2);
 
 ====================================================================================================
 core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_005a05e0 (1 suspect)
@@ -4459,6 +4467,12 @@ core_skeleton.cpp_CDeformableModelInstance_copyBoneRotations_FUN_0059f6e0 (1 sus
   Line 21 [unrolled_memcpy]: (this_ptr->bone_transform).pose_data.bone_rotations[0].w = source_quaternions->w;
 
 ====================================================================================================
+core_skeleton.cpp_CDeformableModelInstance_findClosestBone_FUN_005a1160 (1 suspect)
+  File: core/skeleton.cpp
+====================================================================================================
+  Line 84 [shadow_pointer_walk]: local_3c = (CSkeleton *)((local_3c->motion_list).state_names[1] + 2);
+
+====================================================================================================
 core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820 (3 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
@@ -4475,13 +4489,19 @@ core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10 (3 su
   Line 49 [pointer_cast]: local_28 = local_28 + *(float *)((int)&pCVar9->z + iVar14);
 
 ====================================================================================================
+core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480 (1 suspect)
+  File: core/skeleton.cpp
+====================================================================================================
+  Line 50 [shadow_pointer_walk]: motion_list = (CSkeleton *)((motion_list->motion_list).state_names[1] + 2);
+
+====================================================================================================
 core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0 (1 suspect)
   File: core/skeleton.cpp
 ====================================================================================================
   Line 53 [unrolled_memcpy]: // 005a167b: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0 (17 suspects)
+core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0 (19 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
   Line 102 [unrolled_memcpy]: (local_5c->bone_transform).pose_data.bone_rotations[0].w = local_24c.w;
@@ -4490,6 +4510,7 @@ core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0 (17 suspect
   Line 202 [pointer_cast]: ((CQuaternion4f *)((int)&local_bec[0].w + local_68),&local_20c,&local_14c);
   Line 204 [pointer_cast]: (local_bc,(CQuaternion4f *)((int)&local_74->w + local_80),&local_23c);
   Line 207 [unrolled_memcpy]: (local_48->bone_transform).pose_data.bone_rotations[0].w = pCVar11->w;
+  Line 215 [shadow_pointer_walk]: local_4c = (CSkeleton *)((local_4c->motion_list).state_names[1] + 2);
   Line 254 [unrolled_memcpy]: (&local_122c)[iVar10].w = pCVar11->w;
   Line 275 [unrolled_memcpy]: local_1cc.w = (&local_122c)[local_30].w;
   Line 279 [unrolled_memcpy]: local_dc.w = local_186c[local_30].w;
@@ -4501,6 +4522,20 @@ core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0 (17 suspect
   Line 306 [unrolled_memcpy]: local_ec.w = local_13c.w;
   Line 314 [unrolled_memcpy]: local_17c.w = local_26c.w;
   Line 326 [unrolled_memcpy]: (local_20->bone_transform).pose_data.bone_rotations[0].w = pCVar11->w;
+  Line 333 [shadow_pointer_walk]: local_50 = (CSkeleton *)((local_50->motion_list).state_names[1] + 2);
+
+====================================================================================================
+core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0 (2 suspects)
+  File: core/skeleton.cpp
+====================================================================================================
+  Line 71 [shadow_pointer_walk]: pCVar8 = (CSkeleton *)((pCVar8->motion_list).state_names[1] + 2);
+  Line 93 [shadow_pointer_walk]: local_34 = (CSkeleton *)((local_34->motion_list).state_names[1] + 2);
+
+====================================================================================================
+core_skeleton.cpp_CDeformableModel_computeFarthestChildBones_FUN_0059dbe0 (1 suspect)
+  File: core/skeleton.cpp
+====================================================================================================
+  Line 32 [shadow_pointer_walk]: pCVar5 = (CSkeleton *)((pCVar5->motion_list).state_names[1] + 2);
 
 ====================================================================================================
 core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460 (5 suspects)
@@ -4562,10 +4597,11 @@ core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0 (2 suspects)
   Line 112 [pointer_cast]: iVar4 = (int)&this_ptr->frame_positions_2->x + iVar6;
 
 ====================================================================================================
-core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950 (1 suspect)
+core_skeleton.cpp_computeBoneWorldMatrices_FUN_005a1950 (2 suspects)
   File: core/skeleton.cpp
 ====================================================================================================
   Line 65 [pointer_cast]: (&local_3c,(CVector3f *)((int)&instance_ptr->transformed_vertices[0].x + iVar3),
+  Line 76 [shadow_pointer_walk]: local_20 = (CSkeleton *)((local_20->motion_list).state_names[1] + 2);
 
 ====================================================================================================
 core_sound.cpp_CSound_process_FUN_005b2fd0 (1 suspect)
@@ -4864,6 +4900,12 @@ core_succubus.cpp_CSuccubus_process_FUN_005c6e90 (1 suspect)
   File: core/succubus.cpp
 ====================================================================================================
   Line 263 [unrolled_strcpy]: do {
+
+====================================================================================================
+core_svetlana.cpp_CSvetlana_performBladeAttack_FUN_005d9a10 (1 suspect)
+  File: core/svetlana.cpp
+====================================================================================================
+  Line 36 [shadow_pointer_walk]: pCVar5 = (CSkeleton *)((pCVar5->motion_list).state_names[1] + 2);
 
 ====================================================================================================
 core_tbplayer.cpp_CBassPlayer_getCarryObjToBodyXForm_FUN_005da120 (3 suspects)
@@ -5842,18 +5884,6 @@ engine_clipper.c_clipPolygonVerticalPlanes_FUN_00437ac0 (2 suspects)
 ====================================================================================================
   Line 57 [unrolled_memcpy]: // 00437b42: MOVSD.REP ES:EDI,ESI  ; g_ClippedVertexBuffer | g_ClippedVertexBuffer[0].projected_vertex.transformed_y | g
   Line 101 [unrolled_memcpy]: // 00437bb2: MOVSD.REP ES:EDI,ESI  ; g_ClippedVertexBuffer | g_ClippedVertexBuffer[0].projected_vertex.transformed_y | g
-
-====================================================================================================
-engine_colquant.c_partitionByRed_FUN_00440b40 (1 suspect)
-  File: engine/colquant.c
-====================================================================================================
-  Line 16 [pointer_cast]: iVar5 = *(int *)((int)&workspace->boxes[box_index + -1].count + 2) >> 0x10;
-
-====================================================================================================
-engine_console.cpp_CConsole_render_FUN_00441b00 (1 suspect)
-  File: engine/console.cpp
-====================================================================================================
-  Line 35 [pointer_cast]: pCVar4 = (CConsole *)((int)&pCVar4->file_logging_enabled + 1);
 
 ====================================================================================================
 engine_dosio.c_ensureTrailingSlash_FUN_00481f80 (3 suspects)

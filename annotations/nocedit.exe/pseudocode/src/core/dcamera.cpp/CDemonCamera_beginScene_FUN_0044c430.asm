@@ -218,7 +218,7 @@ section .text
     TEST EDI,EDI                        ; 0044c641
     JNZ 0x0044c670                      ; 0044c643
         ;   XREF to: 0044c670 (CONDITIONAL_JUMP)  ; LAB_0044c670
-    CMP dword ptr [0x03f6b878],0x0      ; 0044c645 | g_ExternalRendererActive
+    CMP dword ptr [0x03f6b878],0x0      ; 0044c645 | g_UseDirect3D
     JZ 0x0044c653                       ; 0044c64c
         ;   XREF to: 0044c653 (CONDITIONAL_JUMP)  ; LAB_0044c653
     CALL wincore_windll.cpp_beginScene_FUN_005b7280 ; 0044c64e

@@ -36,7 +36,7 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004d7b40(CGame *this_ptr)
   this_ptr->big_hat_cheat = 0;
   this_ptr->skip_frame_render = 0;
   this_ptr->profile_mode = 0;
-  this_ptr->velocity_debug_enabled = 0;
+  this_ptr->developer_mode_enabled = 0;
   this_ptr->head_of_horror_cheat = 0;
   this_ptr->geometry_debug_enabled = 0;
   this_ptr->collision_render_enabled = 0;

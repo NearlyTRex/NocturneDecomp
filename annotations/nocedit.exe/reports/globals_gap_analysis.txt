@@ -342,7 +342,7 @@ ALL EXACT GAPS (1673) - size bounds are known precisely
        2,152 bytes  at 0x005baf74  between switchdataD_005baf70           and switchdataD_005bb7dc
        2,144 bytes  at 0x00567770  between switchdataD_0056776c           and switchdataD_00567fd0
        2,140 bytes  at 0x005b2760  between switchdataD_005b275c           and switchdataD_005b2fbc
-       2,064 bytes  at 0x00683800  between g_AlphaTable                   and g_RendererDllName
+       2,064 bytes  at 0x00683800  between g_AlphaTable                   and g_RendererDllPath
        2,060 bytes  at 0x006827f4  between g_SpecialColor                 and g_AlphaTable
        2,044 bytes  at 0x02f2822c  between g_SoundMenuTextDialog          and g_SoundOptionsMenuPointers
        2,041 bytes  at 0x031091ef  between g_ScriptLineBuffer+3           and g_ScriptFormatBuffer
@@ -1338,7 +1338,7 @@ ALL EXACT GAPS (1673) - size bounds are known precisely
            8 bytes  at 0x015c48bc  between g_PolygonToolMode              and g_PolygonScreenCache
            8 bytes  at 0x02d03ed4  between CHAR_ARRAY_02d03ed0            and CHAR_ARRAY_02d03edc
            8 bytes  at 0x02d7b008  between g_SplineBasisTable             and g_TempTextBuffer
-           8 bytes  at 0x02db8a68  between g_SkipIntroVideo               and g_ErrorMessageBuffer_02db8a70
+           8 bytes  at 0x02db8a68  between g_FirstTimeFlag                and g_ErrorMessageBuffer_02db8a70
            8 bytes  at 0x02f2a1a8  between g_StringBuffers                and g_MaxNeighborVerts
            8 bytes  at 0x02f797d8  between g_HuffmanTables                and INT_02f797e0
            8 bytes  at 0x02f7c638  between INT_02f7c634                   and g_ChatMessageBuffer
@@ -41291,10 +41291,10 @@ OVERLAPS (13364) - next global starts inside previous
     g_TrainSoundFilenameTemplate             char[108]            at 0x00682118  size=108
     g_TrainSoundFilenameTemplate+4           undefined4           at 0x0068211c
   255 bytes overlap
-    g_RendererDllName                        char[256]            at 0x00684010  size=256
-    g_RendererDllName+1                      undefined4           at 0x00684011
+    g_RendererDllPath                        char[256]            at 0x00684010  size=256
+    g_RendererDllPath+1                      undefined4           at 0x00684011
   3 bytes overlap
-    g_RendererDllName+1                      undefined4           at 0x00684011  size=4
+    g_RendererDllPath+1                      undefined4           at 0x00684011  size=4
     s_id3d_dll_00684012                      undefined4           at 0x00684012
   3 bytes overlap
     s_id3d_dll_00684012                      undefined4           at 0x00684012  size=4

@@ -77,12 +77,12 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   this_ptr->player_hit_flag = 0;
   this_ptr->geometry_debug_enabled = 0;
   this_ptr->collision_render_enabled = 0;
-  g_CheatSystemEnabled = 0;
-  this_ptr->velocity_debug_enabled = 0;
+  g_ModalDialogActive = 0;
+  this_ptr->developer_mode_enabled = 0;
   core_game_cpp_CGame_setGameRes_FUN_004dade0(this_ptr);
   pcVar2 = getenv("VELOCITY");
   if (pcVar2 != (char *)0x0) {
-    this_ptr->velocity_debug_enabled = 1;
+    this_ptr->developer_mode_enabled = 1;
   }
   core_dlight_cpp_CDemonLight_init_FUN_004727c0(&g_CDemonLightInstance);
   strcpy(g_CDemonLightInstance.base.camera_name,"Flashlight");
@@ -127,7 +127,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
     g_HeroActors[g_LocalHeroIndex]->aim_mode = this_ptr->aim_mode;
     this_ptr->act_completion_state = 0;
     while( true ) {
-      if ((this_ptr->is_paused != 0) || (iVar5 = 1, g_CheatSystemEnabled != 0)) {
+      if ((this_ptr->is_paused != 0) || (iVar5 = 1, g_ModalDialogActive != 0)) {
         iVar5 = 0;
       }
       engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(g_CKeysPtr,iVar5);
@@ -147,7 +147,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
       }
       iVar5 = 0;
       core_game_cpp_CGame_processFrame_FUN_004da100(this_ptr);
-      if (g_CheatSystemEnabled == 0) {
+      if (g_ModalDialogActive == 0) {
         iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
         if (iVar7 != 0) {
           shape_edittool_cpp_CPickList_clear_FUN_004a5770(&g_CPickList);
@@ -167,7 +167,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
                                 ("You are connect to a network game.\nDo you want to leave the game?");
             shape_edittool_cpp_CPickList_initializeDialog_FUN_004a3ef0
                       (&g_CPickList,pcVar10,iVar7,uVar9);
-            g_CheatSystemEnabled = 1;
+            g_ModalDialogActive = 1;
           }
           else if (g_CNetGamePtr->connection_type == CONNECTION_HOST) {
             pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
@@ -181,7 +181,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
                                 ("You are hosting a network game.\nDo you want to abort the game?");
             shape_edittool_cpp_CPickList_initializeDialog_FUN_004a3ef0
                       (&g_CPickList,pcVar10,iVar7,uVar9);
-            g_CheatSystemEnabled = 1;
+            g_ModalDialogActive = 1;
           }
           else {
             core_sound_cpp_CSound_shutdown_FUN_005b2f70(g_CSoundPtr);
@@ -253,7 +253,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
         }
       }
       else if (g_CPickList.base.item_count < 1) {
-        g_CheatSystemEnabled = 0;
+        g_ModalDialogActive = 0;
       }
       else {
         iVar4 = shape_edittool_cpp_CPickList_handleDialogInput_FUN_004a4340(&g_CPickList);
@@ -261,7 +261,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
           engine_2d_c_clearInputAndWait_FUN_00403260();
           shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
           shape_edittool_cpp_CPickList_clear_FUN_004a5770(&g_CPickList);
-          g_CheatSystemEnabled = 0;
+          g_ModalDialogActive = 0;
         }
         if (iVar4 == 0) {
           core_netgame_cpp_CNetGame_disconnect_FUN_0053fd00(g_CNetGamePtr,1);
