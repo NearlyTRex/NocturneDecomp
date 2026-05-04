@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (450 diagnostics)
+Cppcheck (quick) (445 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -1584,11 +1584,11 @@ invalidPointerCast (19)
     File: core/skeledit.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
-  core_skeleton.cpp_CDeformableModelInstance_compute line 31
+  core_skeleton.cpp_CDeformableModelInstance_compute line 29
     File: core/skeleton.cpp
     Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
 
-  core_skeleton.cpp_CDeformableModelInstance_compute line 32
+  core_skeleton.cpp_CDeformableModelInstance_compute line 30
     File: core/skeleton.cpp
     Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
 
@@ -1649,58 +1649,6 @@ nullPointerRedundantCheck (12)
     Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
 
 ----------------------------------------------------------------------------------------------------
-objectIndex (12)
-----------------------------------------------------------------------------------------------------
-
-  core_actor.cpp_CActorProperty_editInteractive_FUN_ line 385
-    File: core/actor.cpp
-    The address of local variable 'local_ac' is accessed at non-zero index.
-
-  core_actor.cpp_CActorProperty_editInteractive_FUN_ line 404
-    File: core/actor.cpp
-    The address of local variable 'local_ac' is accessed at non-zero index.
-
-  core_actor.cpp_CActorProperty_editInteractive_FUN_ line 422
-    File: core/actor.cpp
-    The address of local variable 'local_110' is accessed at non-zero index.
-
-  core_actor.cpp_CActorProperty_editInteractive_FUN_ line 441
-    File: core/actor.cpp
-    The address of local variable 'local_110' is accessed at non-zero index.
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 240
-    File: core/skeleton.cpp
-    The address of local variable 'local_122c' might be accessed at non-zero index.
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 241
-    File: core/skeleton.cpp
-    The address of local variable 'local_122c' might be accessed at non-zero index.
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 242
-    File: core/skeleton.cpp
-    The address of local variable 'local_122c' might be accessed at non-zero index.
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 243
-    File: core/skeleton.cpp
-    The address of local variable 'local_122c' might be accessed at non-zero index.
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 261
-    File: core/skeleton.cpp
-    The address of local variable 'local_122c' might be accessed at non-zero index.
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 262
-    File: core/skeleton.cpp
-    The address of local variable 'local_122c' might be accessed at non-zero index.
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 263
-    File: core/skeleton.cpp
-    The address of local variable 'local_122c' might be accessed at non-zero index.
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 264
-    File: core/skeleton.cpp
-    The address of local variable 'local_122c' might be accessed at non-zero index.
-
-----------------------------------------------------------------------------------------------------
 ignoredReturnValue (10)
 ----------------------------------------------------------------------------------------------------
 
@@ -1745,6 +1693,38 @@ ignoredReturnValue (10)
     Return value of function asin() is not used.
 
 ----------------------------------------------------------------------------------------------------
+objectIndex (7)
+----------------------------------------------------------------------------------------------------
+
+  core_actor.cpp_CActorProperty_editInteractive_FUN_ line 385
+    File: core/actor.cpp
+    The address of local variable 'local_ac' is accessed at non-zero index.
+
+  core_actor.cpp_CActorProperty_editInteractive_FUN_ line 404
+    File: core/actor.cpp
+    The address of local variable 'local_ac' is accessed at non-zero index.
+
+  core_actor.cpp_CActorProperty_editInteractive_FUN_ line 422
+    File: core/actor.cpp
+    The address of local variable 'local_110' is accessed at non-zero index.
+
+  core_actor.cpp_CActorProperty_editInteractive_FUN_ line 441
+    File: core/actor.cpp
+    The address of local variable 'local_110' is accessed at non-zero index.
+
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 170
+    File: core/skeleton.cpp
+    The address of local variable 'local_122c' might be accessed at non-zero index.
+
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 183
+    File: core/skeleton.cpp
+    The address of local variable 'local_122c' might be accessed at non-zero index.
+
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 194
+    File: core/skeleton.cpp
+    The address of local variable 'local_122c' might be accessed at non-zero index.
+
+----------------------------------------------------------------------------------------------------
 identicalInnerCondition (6)
 ----------------------------------------------------------------------------------------------------
 
@@ -1752,7 +1732,7 @@ identicalInnerCondition (6)
     File: core/skeledit.cpp
     Identical inner 'if' condition is always true.
 
-  core_skeleton.cpp_CDeformableModel_computeBoneBoun line 69
+  core_skeleton.cpp_CDeformableModel_computeBoneBoun line 58
     File: core/skeleton.cpp
     Identical inner 'if' condition is always true.
 

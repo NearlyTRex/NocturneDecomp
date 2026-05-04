@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 211,
-    "complexity_score": 139,
+    "complexity_score": 154,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 94,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "shadow_pointer_walk"
     ],
     "total_lines": 305
   },
@@ -305,6 +306,14 @@
       "severity": "moderate",
       "text": "uVar1 = *(ushort *)((int)puVar13 + 10);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_38` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_38->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 92,
+      "match": "local_38 = (T *)local_38->ARRAY",
+      "severity": "moderate",
+      "text": "local_38 = (CDeformableModel *)local_38->lod_info;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

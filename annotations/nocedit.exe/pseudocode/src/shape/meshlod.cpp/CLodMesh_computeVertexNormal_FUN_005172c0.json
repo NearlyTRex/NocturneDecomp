@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 54,
+    "complexity_score": 69,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 54,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
     "total_lines": 172
   },
   "cross_references": [],
@@ -144,5 +146,14 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_1c` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `local_1c->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 40,
+      "match": "local_1c = (T *)&(local_1c->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "local_1c = (CLodVert *)&(local_1c->position).y;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
 }

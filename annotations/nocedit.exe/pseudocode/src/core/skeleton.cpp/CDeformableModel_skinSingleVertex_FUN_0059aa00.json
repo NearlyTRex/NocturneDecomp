@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 47,
+    "complexity_score": 72,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 47,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
     "total_lines": 157
   },
   "cross_references": [
@@ -218,5 +220,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 34,
+      "match": "pSVar2 = (T *)pSVar2->ARRAY",
+      "severity": "moderate",
+      "text": "pSVar2 = (SVert *)pSVar2->bone_weights;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar3` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 38,
+      "match": "pSVar3 = (T *)pSVar3->ARRAY",
+      "severity": "moderate",
+      "text": "pSVar3 = (SVert *)pSVar3->bone_indices;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
 }

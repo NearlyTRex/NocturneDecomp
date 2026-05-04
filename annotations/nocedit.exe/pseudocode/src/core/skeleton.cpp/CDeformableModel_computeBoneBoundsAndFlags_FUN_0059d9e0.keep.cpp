@@ -12,17 +12,12 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00
 {
   CSkeleton *pCVar3;
   SVert *pSVar4;
-  CDeformableModel *pCVar5;
   int iVar7;
   CVector3f *point;
-  CSkeleton *pCVar8;
   int iVar9;
   CBoundingBox3D *this_ptr_00;
   int iVar1;
-  CDeformableModel *pCVar2;
-  CSkeleton *local_34;
   int local_2c;
-  CDeformableModel *local_28;
   int local_18;
   int iVar2;
   uchar bone_idx;
@@ -32,13 +27,11 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00
   iVar7 = 0;
   if (0 < iVar2) {
     this_ptr_00 = (CBoundingBox3D *)&this_ptr->bbox_pool[0].max;
-    pCVar5 = this_ptr;
     do {
       core_box_cpp_CBoundingBox3D_reset_FUN_00420fb0(this_ptr_00);
-      iVar7 = iVar7 + 1;
       this_ptr_00 = this_ptr_00 + 1;
-      pCVar5->bone_flags[0] = 0;
-      pCVar5 = (CDeformableModel *)pCVar5->lod_info;
+      this_ptr->bone_flags[iVar7] = 0;
+      iVar7 = iVar7 + 1;
     } while (iVar7 < iVar2);
   }
   local_2c = 0;
@@ -58,21 +51,15 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00
   }
   local_18 = 0;
   if (0 < iVar2) {
-    local_28 = this_ptr;
-    local_34 = pCVar3;
     do {
-      if (local_28->bone_flags[0] == 1) {
-        if (-1 < local_34->bone_list[0].parent_index) {
+      if (this_ptr->bone_flags[local_18] == 1) {
+        if (-1 < pCVar3->bone_list[local_18].parent_index) {
           iVar1 = 0;
-          pCVar8 = pCVar3;
-          pCVar2 = this_ptr;
           if (0 < iVar2) {
             do {
-              if ((local_18 == pCVar8->bone_list[0].parent_index) && (pCVar2->bone_flags[0] != 0))
-              break;
-              pCVar8 = (CSkeleton *)((pCVar8->motion_list).state_names[1] + 2);
+              if ((local_18 == pCVar3->bone_list[iVar1].parent_index) &&
+                  (this_ptr->bone_flags[iVar1] != 0)) break;
               iVar1 = iVar1 + 1;
-              pCVar2 = (CDeformableModel *)pCVar2->lod_info;
             } while (iVar1 < iVar2);
           }
           if (iVar1 < iVar2) {
@@ -89,11 +76,9 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00
             if (iVar9 < 2) goto LAB_0059dac0;
           }
         }
-        local_28->bone_flags[0] = 2;
+        this_ptr->bone_flags[local_18] = 2;
       }
 LAB_0059dac0:
-      local_34 = (CSkeleton *)((local_34->motion_list).state_names[1] + 2);
-      local_28 = (CDeformableModel *)local_28->lod_info;
       local_18 = local_18 + 1;
     } while (local_18 < iVar2);
   }

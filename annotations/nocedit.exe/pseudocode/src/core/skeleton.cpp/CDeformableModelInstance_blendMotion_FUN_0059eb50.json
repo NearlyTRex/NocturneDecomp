@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 558,
-    "complexity_score": 259,
+    "complexity_score": 199,
     "cross_reference_count": 14,
     "function_call_count": 8,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 199,
-    "suspect_count": 5,
-    "suspect_types": [
-      "shadow_pointer_walk",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 757
   },
   "cross_references": [
@@ -273,6 +270,60 @@
       "severity": "moderate",
       "text": "if (-1 < *(int *)((int)aiStack_2f4 + local_3c)) {",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 89,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(local_34->bone_transform).pose_data.bone_rotations[0].w = CStack_154.w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 151,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_d4.w = pCVar16->w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 156,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(local_38->bone_transform).pose_data.bone_rotations[0].w = local_134.w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_34` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `local_34->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 94,
+      "match": "local_34 = (T *)&(local_34->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_34 = (CDeformableModelInstance *)&(local_34->motion_controller).tween_speed;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_30` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `local_30->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 162,
+      "match": "local_30 = (T *)((local_30->FIELD).ARRAY[N] + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_30 = (CSkeleton *)((local_30->motion_list).state_names[1] + 2);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_38` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `local_38->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 163,
+      "match": "local_38 = (T *)&(local_38->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_38 = (CDeformableModelInstance *)&(local_38->motion_controller).tween_speed;",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Struct-type local `CStack_144` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
@@ -631,47 +682,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 89,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(local_34->bone_transform).pose_data.bone_rotations[0].w = CStack_154.w;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 151,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_d4.w = pCVar16->w;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 156,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(local_38->bone_transform).pose_data.bone_rotations[0].w = local_134.w;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_30` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `local_30->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 162,
-      "match": "local_30 = (T *)((local_30->FIELD).ARRAY[N] + CONST)",
-      "severity": "moderate",
-      "text": "local_30 = (CSkeleton *)((local_30->motion_list).state_names[1] + 2);",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "introduced_by": "keep",
-      "line": 80,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(local_34->bone_transform).pose_data.bone_rotations[0].w = CStack_154.w;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

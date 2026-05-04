@@ -33,10 +33,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0
           t = (*blend_callback)(start_bone_index,bone_index,blend_weight,hierarchy_distance,this_ptr
                                );
           core_xform_cpp_slerpQuaternion_FUN_005f77e0(quat1_in,source_quaternions,t,&CStack_2c);
-          (local_18->bone_transform).pose_data.bone_rotations[0].w = CStack_2c.w;
-          (local_18->bone_transform).pose_data.bone_rotations[0].x = CStack_2c.x;
-          (local_18->bone_transform).pose_data.bone_rotations[0].y = CStack_2c.y;
-          (local_18->bone_transform).pose_data.bone_rotations[0].z = CStack_2c.z;
+          (local_18->bone_transform).pose_data.bone_rotations[0] = CStack_2c;
         }
         quat1_in = quat1_in + 1;
         start_bone_index = start_bone_index + 1;

@@ -1015,12 +1015,21 @@ def identify_unrolled_strcpy_loops(decompiled_code):
 # iteration inside a countdown for loop. The tell-tale combination is a
 # countdown header plus the `((uint)<bool> * -2 + 1)` arithmetic, which is
 # Watcom's direction-select idiom for REP MOVSD emulation.
+# Countdown for-loop header with optional initializer. Watcom emits both
+# `for (var = N; var != 0; var = var + -1)` and `for (; var != 0; var = var
+# + -1)` — the latter when N was already in `var` from earlier code.
+# Tolerates float-mistyped counters (`var != 0.0`, `var = (float)((int)var
+# + -1)`) — Ghidra sometimes unifies an int REP MOVSD count with a nearby
+# float into one variable, but the decrement idiom still confirms it.
 _UNROLLED_MEMCPY_FOR_RE = re.compile(
-    r"^\s*for\s*\(\s*(\w+)\s*=\s*[^;]+?;\s*[^;]*?\1\s*!=\s*0\s*;\s*"
-    r"\1\s*=\s*\1\s*(?:\+\s*-?1|-\s*1)\s*\)\s*\{?\s*$")
+    r"^\s*for\s*\(\s*(?:(\w+)\s*=\s*[^;]+?)?\s*;\s*[^;]*?(\w+)\s*!=\s*0(?:\.0+)?f?\s*;\s*"
+    r"\2\s*=\s*[^;]*?\b\2\b\s*(?:\+\s*-?1|-\s*1)[^;]*?\)\s*\{?\s*$")
+# Pointer-deref store. RHS may be `*src` (Watcom typed-pair lowering) or a
+# field/expr like `(p->field).x` (Ghidra rendering when src walks a struct).
+# The strong signal is the direction idiom; the store check just rejects
+# loops that don't store through a pointer.
 _UNROLLED_MEMCPY_STORE_RE = re.compile(
-    r"^\s*\*\s*(?:\(\s*\w+\s*\*\s*\)\s*)?\w+\s*=\s*"
-    r"\*\s*(?:\(\s*\w+\s*\*\s*\)\s*)?\w+\s*;\s*$")
+    r"^\s*\*\s*(?:\(\s*\w+\s*\*\s*\)\s*)?\w+\s*=\s*.+;\s*$")
 # The `(uint)bVar * -2 + 1` direction trick — very specific to Watcom's
 # REP MOVSD lowering. `* -8 + 4` is the dword-scaled variant.
 _UNROLLED_MEMCPY_DIR_RE = re.compile(
@@ -1169,23 +1178,25 @@ def identify_unrolled_memcpy_loops(decompiled_code):
     for i in range(n - 2):
         if not _UNROLLED_MEMCPY_FOR_RE.match(lines[i]):
             continue
-        # Walk up to 6 lines forward looking for a matching close brace
-        # and checking the body for the store + direction-idiom signals.
-        has_store = False
+        # Walk up to 7 lines forward looking for the matching close brace
+        # and the direction-bool idiom. The direction idiom (`(uint)bool *
+        # -2 + 1`, `* -8 + 4`) is essentially a unique fingerprint for
+        # Watcom REP MOVSD lowering — generic countdown loops never use it.
+        # We don't require a specific store shape because Ghidra can render
+        # the underlying copy as `*ptr = *src`, `dst->field = src->field`,
+        # or `dst[N] = src[N]` depending on type info.
         has_direction = False
         close_line = None
         for fwd in range(1, 8):
             if i + fwd >= n:
                 break
             body = lines[i + fwd]
-            if _UNROLLED_MEMCPY_STORE_RE.match(body):
-                has_store = True
             if _UNROLLED_MEMCPY_DIR_RE.search(body):
                 has_direction = True
             if body.strip().startswith('}'):
                 close_line = i + fwd
                 break
-        if not (has_store and has_direction and close_line):
+        if not (has_direction and close_line):
             continue
         suspects.append({
             'line': i + 1,
@@ -1193,9 +1204,11 @@ def identify_unrolled_memcpy_loops(decompiled_code):
             'match': 'for (...; != 0; ... + -1)',
             'text': lines[i].strip()[:120],
             'description': (
-                'Watcom loop-unrolled memcpy (countdown for-loop with typed '
-                'word/dword store and direction-bool arithmetic). Replace '
-                'the whole loop with memcpy(dst, src, N) in a .keep.'),
+                'Watcom loop-unrolled memcpy (countdown for-loop with the '
+                '`(uint)bool * -N + M` direction idiom — Watcom\'s REP '
+                'MOVSD lowering fingerprint). Replace the whole loop with '
+                'memcpy(dst, src, count * stride) or a struct assignment '
+                'in a .keep.'),
             'severity': 'moderate',
         })
     return suspects
@@ -1539,6 +1552,26 @@ _SHADOW_PTR_WALK_RE = re.compile(
     r'\s*\.\s*\w+\s*\[\s*\d+\s*\]'                   # .ARRAY[N]
     r'\s*\+\s*\d+\s*\)\s*;\s*$'                      # + CONST );
 )
+# Address-of-field variant: `IDENT = (T *)&(IDENT->FIELD).SUBFIELD;` —
+# Watcom advances the pointer by the byte offset of a sibling field
+# whose offset happens to equal the array stride. Same antipattern as
+# above; just shaped as `&(p->A).B` rather than `(p->A).B[N] + CONST`.
+_SHADOW_PTR_WALK_ADDR_RE = re.compile(
+    r'^\s*(\w+)\s*=\s*'                              # LHS identifier
+    r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
+    r'&\s*\(\s*\1\s*->\s*\w+\s*\)'                   # &( IDENT->FIELD )
+    r'\s*\.\s*\w+\s*;\s*$'                           # .SUBFIELD;
+)
+# Array-decay variant: `IDENT = (T *)IDENT->ARRAY_FIELD;` — Watcom advances
+# the pointer by the byte offset of a sibling array field whose offset
+# happens to equal the element stride (e.g. `lod_info` at offset 0x4 ==
+# sizeof(int) for walking a sibling `int[]`). Same antipattern; the array
+# name decays to a pointer that lands at the wanted byte offset.
+_SHADOW_PTR_WALK_DECAY_RE = re.compile(
+    r'^\s*(\w+)\s*=\s*'                              # LHS identifier
+    r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
+    r'\1\s*->\s*\w+\s*;\s*$'                         # IDENT->FIELD;
+)
 
 
 def identify_shadow_pointer_walk(decompiled_code):
@@ -1578,23 +1611,58 @@ def identify_shadow_pointer_walk(decompiled_code):
                 stripped.startswith('*')):
             continue
         m = _SHADOW_PTR_WALK_RE.match(line)
-        if not m:
+        if m:
+            suspects.append({
+                'line': line_no,
+                'type': 'shadow_pointer_walk',
+                'match': '%s = (T *)((%s->FIELD).ARRAY[N] + CONST)' % (
+                    m.group(1), m.group(1)),
+                'text': line.strip()[:120],
+                'description': (
+                    'Watcom shadow-pointer walk — `%s` self-updates via byte '
+                    'arithmetic on a sibling field, where the chosen '
+                    'field/index/constant sum to one element-size step. '
+                    'Replace `%s->bone_list[0]` (or whatever) reads with '
+                    'direct indexing on the original pointer; drop the shadow '
+                    'init and self-update.' % (m.group(1), m.group(1))),
+                'severity': 'moderate',
+            })
             continue
-        suspects.append({
-            'line': line_no,
-            'type': 'shadow_pointer_walk',
-            'match': '%s = (T *)((%s->FIELD).ARRAY[N] + CONST)' % (
-                m.group(1), m.group(1)),
-            'text': line.strip()[:120],
-            'description': (
-                'Watcom shadow-pointer walk — `%s` self-updates via byte '
-                'arithmetic on a sibling field, where the chosen '
-                'field/index/constant sum to one element-size step. '
-                'Replace `%s->bone_list[0]` (or whatever) reads with '
-                'direct indexing on the original pointer; drop the shadow '
-                'init and self-update.' % (m.group(1), m.group(1))),
-            'severity': 'moderate',
-        })
+        m = _SHADOW_PTR_WALK_ADDR_RE.match(line)
+        if m:
+            suspects.append({
+                'line': line_no,
+                'type': 'shadow_pointer_walk',
+                'match': '%s = (T *)&(%s->FIELD).SUBFIELD' % (
+                    m.group(1), m.group(1)),
+                'text': line.strip()[:120],
+                'description': (
+                    'Watcom shadow-pointer walk — `%s` self-updates via the '
+                    'address of a sibling field whose byte offset equals '
+                    'the array stride. Replace `%s->some_field[0]` reads '
+                    'with direct indexing on the original pointer; drop '
+                    'the shadow init and self-update.' % (
+                        m.group(1), m.group(1))),
+                'severity': 'moderate',
+            })
+            continue
+        m = _SHADOW_PTR_WALK_DECAY_RE.match(line)
+        if m:
+            suspects.append({
+                'line': line_no,
+                'type': 'shadow_pointer_walk',
+                'match': '%s = (T *)%s->ARRAY' % (
+                    m.group(1), m.group(1)),
+                'text': line.strip()[:120],
+                'description': (
+                    'Watcom shadow-pointer walk — `%s` self-updates via '
+                    'array-decay of a sibling array field whose byte '
+                    'offset equals the element stride. Replace '
+                    '`%s->some_field[0]` reads with direct indexing on '
+                    'the original pointer; drop the shadow init and '
+                    'self-update.' % (m.group(1), m.group(1))),
+                'severity': 'moderate',
+            })
     return suspects
 
 

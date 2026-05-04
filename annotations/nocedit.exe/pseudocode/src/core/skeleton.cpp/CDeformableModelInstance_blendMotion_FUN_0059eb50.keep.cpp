@@ -36,9 +36,6 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
   int local_44;
   CQuaternion4f *local_40;
   int local_3c;
-  CDeformableModelInstance *local_38;
-  CDeformableModelInstance *local_34;
-  CSkeleton *local_30;
   int local_28;
   int local_24;
   int local_20;
@@ -63,7 +60,6 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
     if (this_ptr->bone_update_mode == 0) {
       if (0 < this_ptr_00->bone_count) {
-        local_34 = this_ptr;
         local_1c = 0;
         do {
           hierarchy_distance =
@@ -75,14 +71,10 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
                       (this_ptr_00,local_1c,local_58[0],local_5c,local_938,
                        &fStack_164);
             core_xform_cpp_slerpQuaternion_FUN_005f77e0
-                      (&(local_34->bone_transform).pose_data.bone_rotations[0],
+                      (&(this_ptr->bone_transform).pose_data.bone_rotations[local_1c],
                        &fStack_164,fVar13,&CStack_154);
-            (local_34->bone_transform).pose_data.bone_rotations[0].w = CStack_154.w;
-            (local_34->bone_transform).pose_data.bone_rotations[0].x = CStack_154.x;
-            (local_34->bone_transform).pose_data.bone_rotations[0].y = CStack_154.y;
-            (local_34->bone_transform).pose_data.bone_rotations[0].z = CStack_154.z;
+            (this_ptr->bone_transform).pose_data.bone_rotations[local_1c] = CStack_154;
           }
-          local_34 = (CDeformableModelInstance *)&(local_34->motion_controller).tween_speed;
           local_1c = local_1c + 1;
         } while (local_1c < this_ptr_00->bone_count);
       }
@@ -114,21 +106,16 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
       if (-1 < iVar2) {
         core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
                   (this_ptr_00,iVar2,local_58[0],local_5c,local_938,&local_f4);
-        local_934[iVar2].w = local_f4.w;
-        local_934[iVar2].x = local_f4.x;
-        local_934[iVar2].y = local_f4.y;
-        local_934[iVar2].z = local_f4.z;
+        local_934[iVar2] = local_f4;
       }
       local_24 = 0;
       if (0 < this_ptr_00->bone_count) {
         pCVar3 = (this_ptr->bone_transform).pose_data.bone_rotations;
         local_3c = 0;
-        local_38 = this_ptr;
         local_40 = pCVar3;
-        local_30 = this_ptr_00;
         do {
           if (-1 < aiStack_2f4[local_3c / 4]) {
-            iVar2 = local_30->bone_list[0].parent_index;
+            iVar2 = this_ptr_00->bone_list[local_24].parent_index;
             if (iVar2 < 0) {
               pCVar16 = local_934 + local_24;
             }
@@ -139,19 +126,11 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
               core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_c4,pCVar3 + iVar2,&local_104);
               pCVar16 = &local_104;
             }
-            local_d4.w = pCVar16->w;
-            local_d4.x = pCVar16->x;
-            local_d4.y = pCVar16->y;
-            local_d4.z = pCVar16->z;
+            local_d4 = *pCVar16;
             core_xform_cpp_slerpQuaternion_FUN_005f77e0(local_40,&local_d4,blend_weight,&local_134);
-            (local_38->bone_transform).pose_data.bone_rotations[0].w = local_134.w;
-            (local_38->bone_transform).pose_data.bone_rotations[0].x = local_134.x;
-            (local_38->bone_transform).pose_data.bone_rotations[0].y = local_134.y;
-            (local_38->bone_transform).pose_data.bone_rotations[0].z = local_134.z;
+            (this_ptr->bone_transform).pose_data.bone_rotations[local_24] = local_134;
           }
           local_3c = local_3c + 4;
-          local_30 = (CSkeleton *)((local_30->motion_list).state_names[1] + 2);
-          local_38 = (CDeformableModelInstance *)&(local_38->motion_controller).tween_speed;
           local_40 = local_40 + 1;
           local_24 = local_24 + 1;
         } while (local_24 < this_ptr_00->bone_count);

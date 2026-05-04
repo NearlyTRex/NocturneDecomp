@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 480,
-    "complexity_score": 237,
+    "complexity_score": 252,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 212,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
-      "self_copy_guard"
+      "self_copy_guard",
+      "shadow_pointer_walk"
     ],
     "total_lines": 692
   },
@@ -714,6 +715,14 @@
       "severity": "moderate",
       "text": "if (&local_b8 != &local_70) {",
       "type": "self_copy_guard"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 142,
+      "match": "pSVar8 = (T *)&(pSVar8->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar8 = (SClothVertex *)&(pSVar8->position).y;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

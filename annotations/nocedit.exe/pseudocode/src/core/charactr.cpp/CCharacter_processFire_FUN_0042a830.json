@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 422,
-    "complexity_score": 251,
+    "complexity_score": 261,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 201,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "shadow_pointer_walk"
@@ -407,6 +407,14 @@
       "severity": "moderate",
       "text": "[*(int *)((int)pCVar7->bone_to_part_map + iVar11)] == 0) {",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_34` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_34->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 91,
+      "match": "local_34 = (T *)local_34->ARRAY",
+      "severity": "moderate",
+      "text": "local_34 = (CDeformableModel *)local_34->lod_info;",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar12` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar12->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",

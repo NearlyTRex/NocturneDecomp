@@ -8,15 +8,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3400,
-    "complexity_score": 2201,
+    "complexity_score": 2216,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 125,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1436,
-    "suspect_count": 75,
+    "suspect_count": 76,
     "suspect_types": [
       "pointer_cast",
+      "shadow_pointer_walk",
       "unrolled_memcpy",
       "warning_inlined_function"
     ],
@@ -1048,12 +1049,30 @@
       "type": "negative_offset"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 1154,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (uVar19 = uVar25 & 3; uVar19 != 0; uVar19 = uVar19 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 1168,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "for (uVar25 = this_ptr->tri_count[0] & 0x3fffffff; uVar25 != 0; uVar25 = uVar25 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 1173,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar31 = 0; iVar31 != 0; iVar31 = iVar31 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
@@ -1072,6 +1091,15 @@
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "// 00591694: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 2253,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 005916e2: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
     }
   ],
@@ -3060,7 +3088,7 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 377,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
@@ -3068,12 +3096,20 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 2253,
-      "match": "MOVSD.REP",
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 1147,
+      "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "// 005916e2: MOVSD.REP ES:EDI,ESI",
+      "text": "for (uVar18 = uVar25 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar37` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar37->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 1299,
+      "match": "pSVar37 = (T *)&(pSVar37->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar37 = (SInputFace *)&(pSVar37->vertex_indices).vertex_index_1;",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Complex pointer cast",

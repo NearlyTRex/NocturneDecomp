@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 657,
-    "complexity_score": 314,
+    "complexity_score": 359,
     "cross_reference_count": 1,
     "function_call_count": 24,
     "global_count": 31,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 299,
-    "suspect_count": 1,
+    "suspect_count": 5,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "shadow_pointer_walk"
     ],
     "total_lines": 956
   },
@@ -576,6 +577,38 @@
       "severity": "moderate",
       "text": "iVar9 = *(int *)(iVar12 + (int)this_ptr->vertex_sort_buffer);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar10->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 178,
+      "match": "pCVar10 = (T *)&(pCVar10->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar10 = (CCloth *)&(pCVar10->model).env_map_opac_list;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar10->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 207,
+      "match": "pCVar10 = (T *)&(pCVar10->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar10 = (CCloth *)&(pCVar10->model).env_map_opac_list;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 222,
+      "match": "pCVar6 = (T *)&(pCVar6->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar6 = (CCloth *)&(pCVar6->model).env_map_opac_list;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar10->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 240,
+      "match": "pCVar10 = (T *)&(pCVar10->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar10 = (CCloth *)&(pCVar10->model).env_map_opac_list;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

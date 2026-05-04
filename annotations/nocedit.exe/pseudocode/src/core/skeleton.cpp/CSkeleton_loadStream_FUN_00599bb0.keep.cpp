@@ -12,13 +12,9 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_00599bb0(CSkeleton *this
 {
   int iVar1;
   int iVar3;
-  int iVar2;
-  int iVar4;
   CQuaternion4f *pCVar3;
   int *piVar4;
   float *pfVar5;
-  int iVar5;
-  int iVar6;
   float *pfVar6;
   float *pfVar8;
   float *pfVar7;
@@ -101,12 +97,12 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_00599bb0(CSkeleton *this
   } while (iVar3 != 10);
   iVar3 = 0;
   if (0 < this_ptr->frame_count) {
-    iVar5 = 0;
     do {
-      iVar2 = (int)&this_ptr->frame_positions_1->x + iVar5;
-      _fscanf(file_handle,"%f,%f,%f\n",(float *)iVar2,(float *)(iVar2 + 4),(float *)(iVar2 + 8));
+      _fscanf(file_handle,"%f,%f,%f\n",
+              &this_ptr->frame_positions_1[iVar3].x,
+              &this_ptr->frame_positions_1[iVar3].y,
+              &this_ptr->frame_positions_1[iVar3].z);
       iVar3 = iVar3 + 1;
-      iVar5 = iVar5 + 0xc;
     } while (iVar3 < this_ptr->frame_count);
   }
   do {
@@ -115,12 +111,12 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_00599bb0(CSkeleton *this
   } while (iVar3 != 10);
   iVar3 = 0;
   if (0 < this_ptr->frame_count) {
-    iVar6 = 0;
     do {
-      iVar4 = (int)&this_ptr->frame_positions_2->x + iVar6;
-      _fscanf(file_handle,"%f,%f,%f\n",(float *)iVar4,(float *)(iVar4 + 4),(float *)(iVar4 + 8));
+      _fscanf(file_handle,"%f,%f,%f\n",
+              &this_ptr->frame_positions_2[iVar3].x,
+              &this_ptr->frame_positions_2[iVar3].y,
+              &this_ptr->frame_positions_2[iVar3].z);
       iVar3 = iVar3 + 1;
-      iVar6 = iVar6 + 0xc;
     } while (iVar3 < this_ptr->frame_count);
   }
   if ((file_handle->_flag & 0x20) != 0) {

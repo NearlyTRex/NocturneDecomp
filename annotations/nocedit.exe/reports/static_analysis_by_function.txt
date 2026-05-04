@@ -10,7 +10,7 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions with findings: 151
-  Total diagnostics: 450
+  Total diagnostics: 445
   Functions flagged by multiple tools: 0
   .keep.cpp files: 151, raw .cpp files: 0
 
@@ -172,19 +172,6 @@ core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330  [.keep] [Cppcheck (q
   Line  119: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line  120: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line  121: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0  [.keep] [Cppcheck (quick)]
-  File: core/skeleton.cpp  (8 diagnostics)
-
-  Line  240: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
-  Line  241: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
-  Line  242: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
-  Line  243: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
-  Line  261: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
-  Line  262: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
-  Line  263: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
-  Line  264: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
 
 ----------------------------------------------------------------------------------------------------
 core_xform.cpp_transformAndClipGeometry_FUN_005f8550  [.keep] [Cppcheck (quick)]
@@ -566,6 +553,14 @@ core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00  [.ke
   Line  117: [uninitvar] Uninitialized variable: local_64
 
 ----------------------------------------------------------------------------------------------------
+core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0  [.keep] [Cppcheck (quick)]
+  File: core/skeleton.cpp  (3 diagnostics)
+
+  Line  170: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
+  Line  183: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
+  Line  194: [objectIndex] The address of local variable 'local_122c' might be accessed at non-zero index.
+
+----------------------------------------------------------------------------------------------------
 core_stranger.cpp_CStranger_processFrame_FUN_005bb960  [.keep] [Cppcheck (quick)]
   File: core/stranger.cpp  (3 diagnostics)
 
@@ -785,8 +780,8 @@ core_skeledit.cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0  [.keep] [Cppch
 core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0  [.keep] [Cppcheck (quick)]
   File: core/skeleton.cpp  (2 diagnostics)
 
-  Line   31: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
-  Line   32: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+  Line   29: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
+  Line   30: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
 
 ----------------------------------------------------------------------------------------------------
 core_svetlana.cpp_CSvetlana_renderOpaque_FUN_005d9bc0  [.keep] [Cppcheck (quick)]
@@ -1035,7 +1030,7 @@ core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240  [.keep] [Cpp
 core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0  [.keep] [Cppcheck (quick)]
   File: core/skeleton.cpp  (1 diagnostics)
 
-  Line   69: [identicalInnerCondition] Identical inner 'if' condition is always true.
+  Line   58: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
 core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270  [.keep] [Cppcheck (quick)]

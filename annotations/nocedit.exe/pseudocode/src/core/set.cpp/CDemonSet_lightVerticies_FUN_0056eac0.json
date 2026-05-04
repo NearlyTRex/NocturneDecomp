@@ -823,6 +823,15 @@
       "severity": "moderate",
       "text": "local_10c.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_z +",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `vertex_normals` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `vertex_normals->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 451,
+      "match": "vertex_normals = (T *)vertex_normals->ARRAY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "vertex_normals = (CVector3i *)vertex_normals->z;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {

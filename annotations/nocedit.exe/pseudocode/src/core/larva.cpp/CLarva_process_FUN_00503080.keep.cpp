@@ -7,9 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */
-/* WARNING: Removing unreachable block (ram,0x0050389e) */
-
 void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float delta_time)
 
 {
@@ -32,8 +29,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
   float10 fVar15;
   float10 fVar16;
   float10 fVar17;
-  unkbyte10 Var18;
-  float in_stack_fffffe18;
+  float10 Var18;
   char acStack_sprintf[64];
   CVector3f local_128;
   CVector3f local_11c;
@@ -50,6 +46,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
   CVector3f local_b0;
   CVector3f local_a4;
   CVector3f local_8c;
+  CVector3f local_86;
   CVector3f local_80;
   CVector3f local_74;
   float local_18;
@@ -76,11 +73,9 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
       ;
       local_cc = (pCVar4->base).location.position.z - (this_ptr->base).base.base.location.position.z
       ;
-      if (&local_ec != &local_d4) {
-        local_ec = local_d4;
-        local_e8 = local_d0;
-        local_e4 = local_cc;
-      }
+      local_ec = local_d4;
+      local_e8 = local_d0;
+      local_e4 = local_cc;
       local_e8 = local_e8 + 2.0f;
       local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-2.0,2.0);
       local_ec = local_14 + local_ec;
@@ -104,11 +99,9 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
         local_8c.x = local_b0.x * fVar11;
         local_8c.y = local_b0.y * fVar11;
         local_8c.z = local_b0.z * fVar11;
-        if (&local_b0 != &local_8c) {
-          local_b0.x = local_8c.x;
-          local_b0.y = local_8c.y;
-          local_b0.z = local_8c.z;
-        }
+        local_b0.x = local_8c.x;
+        local_b0.y = local_8c.y;
+        local_b0.z = local_8c.z;
         local_11c.z = 1.0;
         local_11c.x = 0.0;
         local_11c.y = 0.5;
@@ -181,14 +174,15 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
              (this_ptr->base).base.model.accumulated_root_motion.z;
         (this_ptr->base).base.model.accumulated_root_motion.x =
              (this_ptr->base).base.model.accumulated_root_motion.y;
-        fVar11 = 0.17453292;
-        pCVar10 = (CVector3f *)0x3f000000;
+        local_86.x = 0.0f;
+        local_86.y = 0.0f;
+        local_86.z = 20.0f;
         pCVar4 = (this_ptr->base).victim;
         path_map = (*((pCVar4->base).vtable._ub)->getPathMap)(&pCVar4->base);
         iVar7 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                           ((CCharacter *)this_ptr,
-                           &(((this_ptr->base).victim)->base).location.position,path_map,pCVar10,
-                           fVar11,in_stack_fffffe18);
+                           &(((this_ptr->base).victim)->base).location.position,path_map,&local_86,
+                           0.5f,0.17453292f);
         if (iVar7 < 0) {
           engine_console_cpp_CConsole_printf_FUN_00441890
                     (g_CConsolePtr,"%s gave up chase - I'm confused\n",(this_ptr->base).base.base.actor_name);
@@ -209,11 +203,9 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
               < (this_ptr->base).guard_distance) {
             pCVar10 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                 (&local_a4,&local_f8);
-            if (&local_f8 != pCVar10) {
-              local_f8.x = pCVar10->x;
-              local_f8.y = pCVar10->y;
-              local_f8.z = pCVar10->z;
-            }
+            local_f8.x = pCVar10->x;
+            local_f8.y = pCVar10->y;
+            local_f8.z = pCVar10->z;
             fVar11 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_f8.y);
             local_14 = fVar11;
             local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70

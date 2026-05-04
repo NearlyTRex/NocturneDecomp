@@ -47,14 +47,14 @@ CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelt
   local_2c = 0.0;
   local_28 = 0.0;
   if (iVar1 < iVar2) {
-    iVar14 = iVar1 * 0xc;
+    iVar14 = iVar1;
     do {
       pCVar9 = pCVar13->frame_positions_2;
-      local_30 = local_30 + *(float *)((int)&pCVar9->x + iVar14);
-      local_2c = local_2c + *(float *)((int)&pCVar9->y + iVar14);
-      local_28 = local_28 + *(float *)((int)&pCVar9->z + iVar14);
-      iVar14 = iVar14 + 0xc;
-    } while (iVar14 < iVar2 * 0xc);
+      local_30 = local_30 + pCVar9[iVar14].x;
+      local_2c = local_2c + pCVar9[iVar14].y;
+      local_28 = local_28 + pCVar9[iVar14].z;
+      iVar14 = iVar14 + 1;
+    } while (iVar14 < iVar2);
   }
   fVar11 = start_frame - (float)iVar1;
   pCVar4 = pCVar13->frame_positions_2;

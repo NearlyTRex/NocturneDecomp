@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 56,
+    "complexity_score": 81,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 56,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
     "total_lines": 187
   },
   "cross_references": [
@@ -137,5 +139,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `this_ptr->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 51,
+      "match": "this_ptr = (T *)this_ptr->ARRAY",
+      "severity": "moderate",
+      "text": "this_ptr = (CExternalRenderer *)this_ptr->dead1;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `capabilities` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `capabilities->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 52,
+      "match": "capabilities = (T *)capabilities->ARRAY",
+      "severity": "moderate",
+      "text": "capabilities = (CExternalRenderer *)capabilities->dead1;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
 }

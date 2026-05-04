@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 258,
-    "complexity_score": 85,
+    "complexity_score": 110,
     "cross_reference_count": 6,
     "function_call_count": 7,
     "global_count": 23,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 85,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
     "total_lines": 343
   },
   "cross_references": [
@@ -389,5 +391,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 23,
+      "match": "pCVar3 = (T *)&(pCVar3->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar3 = (CDeformableModelInstance *)&(pCVar3->motion_controller).current_motion_index;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `model_ptr` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `model_ptr->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 31,
+      "match": "model_ptr = (T *)&(model_ptr->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "model_ptr = (CDeformableModelInstance *)&(model_ptr->motion_controller).current_motion_index;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
 }

@@ -59,17 +59,6 @@ CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneWor
       local_7c.m[2].y = local_7c.m[2].y * (this_ptr->bone_transform).bone_scales[bone_index];
     }
   }
-  out_matrix->m[0].w = local_7c.m[0].w;
-  out_matrix->m[0].x = local_7c.m[0].x;
-  out_matrix->m[0].y = local_7c.m[0].y;
-  out_matrix->m[0].z = local_7c.m[0].z;
-  out_matrix->m[1].w = local_7c.m[1].w;
-  out_matrix->m[1].x = local_7c.m[1].x;
-  out_matrix->m[1].y = local_7c.m[1].y;
-  out_matrix->m[1].z = local_7c.m[1].z;
-  out_matrix->m[2].w = local_7c.m[2].w;
-  out_matrix->m[2].x = local_7c.m[2].x;
-  out_matrix->m[2].y = local_7c.m[2].y;
-  out_matrix->m[2].z = local_7c.m[2].z;
+  *out_matrix = local_7c;
   return out_matrix;
 }

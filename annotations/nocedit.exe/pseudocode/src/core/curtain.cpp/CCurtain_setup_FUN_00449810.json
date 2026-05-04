@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 518,
-    "complexity_score": 412,
+    "complexity_score": 427,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 272,
-    "suspect_count": 13,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
+      "shadow_pointer_walk",
       "warning_inlined_function"
     ],
     "total_lines": 790
@@ -347,6 +348,14 @@
       "severity": "moderate",
       "text": "puVar14 = (uint *)((int)pSVar9 + (uint)bVar19 * -8 + 100);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar13` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar13->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 148,
+      "match": "pSVar13 = (T *)&(pSVar13->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar13 = (SCurtainVertex *)&(pSVar13->local_position).y;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {

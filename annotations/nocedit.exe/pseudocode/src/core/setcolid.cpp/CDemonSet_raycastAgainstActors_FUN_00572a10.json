@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 331,
-    "complexity_score": 127,
+    "complexity_score": 142,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 127,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
     "total_lines": 458
   },
   "cross_references": [
@@ -360,5 +362,14 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_20` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_20->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 119,
+      "match": "local_20 = (T *)local_20->ARRAY",
+      "severity": "moderate",
+      "text": "local_20 = (CDemonSet *)local_20->cameras;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
 }

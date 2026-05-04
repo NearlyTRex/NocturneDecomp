@@ -16,8 +16,6 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsFor
   CQuaternion4f local_5c;
   float local_28;
   float local_24 [2];
-  SPose *local_18;
-  SPose *local_14;
   float fVar3;
   float fVar2;
   CVector3f *pCVar5;
@@ -32,20 +30,13 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsFor
              (int *)local_24,&local_60);
   bone_index = 0;
   if (0 < pCVar8->bone_count) {
-    local_14 = output_bone_data;
-    local_18 = output_bone_data;
     do {
       core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
                 (pCVar8,bone_index,(int)local_28,(int)local_24[0],local_60,
                  &local_5c);
+      (output_bone_data->pose_data).bone_rotations[bone_index] = local_5c;
+      output_bone_data->bone_scales[bone_index] = 1.0;
       bone_index = bone_index + 1;
-      (local_18->pose_data).bone_rotations[0].w = local_5c.w;
-      (local_18->pose_data).bone_rotations[0].x = local_5c.x;
-      (local_18->pose_data).bone_rotations[0].y = local_5c.y;
-      (local_18->pose_data).bone_rotations[0].z = local_5c.z;
-      local_14->bone_scales[0] = 1.0;
-      local_18 = (SPose *)&(local_18->pose_data).bone_rotations[0].x;
-      local_14 = (SPose *)&(local_14->pose_data).root_position.y;
     } while (bone_index < pCVar8->bone_count);
   }
   pCVar5 = pCVar8->frame_positions_1;

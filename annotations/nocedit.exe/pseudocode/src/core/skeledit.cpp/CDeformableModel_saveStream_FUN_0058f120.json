@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 617,
-    "complexity_score": 292,
+    "complexity_score": 317,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 34,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 187,
-    "suspect_count": 10,
+    "suspect_count": 12,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "shadow_pointer_walk"
     ],
     "total_lines": 804
   },
@@ -468,6 +469,22 @@
       "severity": "moderate",
       "text": "puVar12 = (ushort *)((int)&pSVar14->u_coord_0 + iVar21);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar18` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 71,
+      "match": "pCVar18 = (T *)pCVar18->ARRAY",
+      "severity": "moderate",
+      "text": "pCVar18 = (CDeformableModel *)pCVar18->lod_info;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_30` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_30->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 125,
+      "match": "local_30 = (T *)local_30->ARRAY",
+      "severity": "moderate",
+      "text": "local_30 = (CDeformableModel *)local_30->lod_info;",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 72,
+    "complexity_score": 57,
     "cross_reference_count": 5,
     "function_call_count": 6,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 57,
-    "suspect_count": 1,
-    "suspect_types": [
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 188
   },
   "cross_references": [
@@ -191,6 +189,26 @@
     },
     "pcode_op_count": 578
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `motion_list` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `motion_list->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 50,
+      "match": "motion_list = (T *)((motion_list->FIELD).ARRAY[N] + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "motion_list = (CSkeleton *)((motion_list->motion_list).state_names[1] + 2);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 52,
+      "match": "local_18 = (T *)&(local_18->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_18 = (CDeformableModelInstance *)&(local_18->motion_controller).current_motion_index;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 48,
     "local_size": 40,
@@ -249,14 +267,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `motion_list` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `motion_list->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 50,
-      "match": "motion_list = (T *)((motion_list->FIELD).ARRAY[N] + CONST)",
-      "severity": "moderate",
-      "text": "motion_list = (CSkeleton *)((motion_list->motion_list).state_names[1] + 2);",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

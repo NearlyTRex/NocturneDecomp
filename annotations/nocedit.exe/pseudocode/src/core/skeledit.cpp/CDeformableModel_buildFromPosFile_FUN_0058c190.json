@@ -8,13 +8,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1804,
-    "complexity_score": 875,
+    "complexity_score": 885,
     "cross_reference_count": 0,
     "function_call_count": 64,
     "global_count": 65,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 715,
-    "suspect_count": 14,
+    "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
       "preinc_loop_idiom",
@@ -1487,6 +1487,14 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 509,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar8 = 0x12; iVar8 != 0; iVar8 = iVar8 + -1) {",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar8` (struct-field advance + constant `[0]` index + self-assign no-op). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep.",

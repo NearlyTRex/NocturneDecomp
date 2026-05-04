@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 705,
-    "complexity_score": 449,
+    "complexity_score": 514,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 319,
-    "suspect_count": 12,
+    "suspect_count": 18,
     "suspect_types": [
       "pointer_cast",
+      "shadow_pointer_walk",
       "warning_inlined_function"
     ],
     "total_lines": 1024
@@ -562,6 +563,54 @@
       "severity": "moderate",
       "text": "*(uint *)((int)this_ptr->channel_target_buffer_offsets + local_4c);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 82,
+      "match": "pCVar8 = (T *)&(pCVar8->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar8 = (CSfxSlot *)&(pCVar8->options).position;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar13->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 108,
+      "match": "pCVar13 = (T *)&(pCVar13->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar13 = (CSfxSlot *)&(pCVar13->options).position;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar13->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 176,
+      "match": "pCVar13 = (T *)&(pCVar13->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar13 = (CSfxSlot *)&(pCVar13->options).position;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar13->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 197,
+      "match": "pCVar13 = (T *)&(pCVar13->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar13 = (CSfxSlot *)&(pCVar13->options).position;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar13->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 228,
+      "match": "pCVar13 = (T *)&(pCVar13->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar13 = (CSfxSlot *)&(pCVar13->options).position;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar13->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 255,
+      "match": "pCVar13 = (T *)&(pCVar13->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar13 = (CSfxSlot *)&(pCVar13->options).position;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

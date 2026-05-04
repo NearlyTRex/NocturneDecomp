@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 417,
-    "complexity_score": 210,
+    "complexity_score": 225,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 8,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 210,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
     "total_lines": 627
   },
   "cross_references": [],
@@ -233,7 +235,16 @@
     ],
     "severity": "medium"
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar15` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar15->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 203,
+      "match": "pCVar15 = (T *)&(pCVar15->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar15 = (CWaterActor *)&(pCVar15->base).location;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

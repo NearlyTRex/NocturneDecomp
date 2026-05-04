@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 618,
-    "complexity_score": 251,
+    "complexity_score": 236,
     "cross_reference_count": 11,
     "function_call_count": 24,
     "global_count": 19,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 211,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "unrolled_memcpy",
       "unrolled_strlen"
     ],
     "total_lines": 829
@@ -491,7 +490,7 @@
   },
   "resolved_suspects": [
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 63,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
@@ -500,7 +499,7 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 80,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
@@ -509,7 +508,7 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 178,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
@@ -533,6 +532,15 @@
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "// 0049f498: MOVSD.REP ES:EDI,ESI  ; = \"[ERROR: Can't get current directory.]\" | s_OR:_Can't_get_current_directory._0067",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 227,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 0049f6ce: MOVSD.REP ES:EDI,ESI  ; g_BrowserLastEnteredPath | g_BrowserLastEnteredPath+4",
       "type": "unrolled_memcpy"
     }
   ],
@@ -827,14 +835,6 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strlen"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 227,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 0049f6ce: MOVSD.REP ES:EDI,ESI  ; g_BrowserLastEnteredPath | g_BrowserLastEnteredPath+4",
-      "type": "unrolled_memcpy"
     }
   ]
 }

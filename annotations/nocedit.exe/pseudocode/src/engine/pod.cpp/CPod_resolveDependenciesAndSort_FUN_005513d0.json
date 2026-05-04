@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 360,
-    "complexity_score": 303,
+    "complexity_score": 378,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 188,
-    "suspect_count": 10,
+    "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
+      "shadow_pointer_walk",
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
@@ -407,6 +408,62 @@
       "severity": "moderate",
       "text": "if (pCVar7->pod_files[0] == *(CPodFile **)((int)local_ab0 + iVar6)) break;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 58,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar8 = 0x42; iVar8 != 0; iVar8 = iVar8 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 105,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar6 = 0x42; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_3c` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_3c->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 72,
+      "match": "local_3c = (T *)local_3c->ARRAY",
+      "severity": "moderate",
+      "text": "local_3c = (CPod *)local_3c->pod_files;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 89,
+      "match": "pCVar1 = (T *)pCVar1->ARRAY",
+      "severity": "moderate",
+      "text": "pCVar1 = (CPod *)pCVar1->pod_files;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_4c` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_4c->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 137,
+      "match": "local_4c = (T *)local_4c->ARRAY",
+      "severity": "moderate",
+      "text": "local_4c = (CPod *)local_4c->pod_files;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 161,
+      "match": "pCVar7 = (T *)pCVar7->ARRAY",
+      "severity": "moderate",
+      "text": "pCVar7 = (CPod *)pCVar7->pod_files;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_50` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_50->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 187,
+      "match": "local_50 = (T *)local_50->ARRAY",
+      "severity": "moderate",
+      "text": "local_50 = (CPod *)local_50->pod_files;",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",

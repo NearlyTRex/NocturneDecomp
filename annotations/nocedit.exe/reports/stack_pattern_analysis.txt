@@ -95,7 +95,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0060164d: MOV ESI,ESP
 
   crt_time.c__strftime_FUN_006002d4
-    File: crt/time.c, Suspects: 2
+    File: crt/time.c, Suspects: 3
     - [alt_frame_pointer] at 0060030d: MOV ESI,ESP
 
   crt_time.c_asctimeFormat_FUN_00601678
@@ -154,7 +154,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00548d49: MOV ESI,ESP
 
   engine_pod.cpp_CPod_dismount_FUN_00550b90
-    File: engine/pod.cpp, Suspects: 0
+    File: engine/pod.cpp, Suspects: 1
     - [alt_frame_pointer] at 00550ba8: MOV EDI,ESP
 
   engine_pod.cpp_CPod_remount_FUN_00550af0
@@ -209,7 +209,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00528913: MOV EDI,ESP
 
   engine_3d.c_drawLineStrip3D_FUN_00404600
-    File: engine/3d.c, Suspects: 2
+    File: engine/3d.c, Suspects: 0
     - [alt_frame_pointer] at 00404650: MOV EDI,ESP
     - [alt_frame_pointer] at 00599480: MOV EDI,ESP
     - [alt_frame_pointer] at 005994dc: MOV EDI,ESP
@@ -221,7 +221,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0060e8b5: MOV EDI,ESP
 
   engine_3d.c_drawLineStrip2D_FUN_00404570
-    File: engine/3d.c, Suspects: 2
+    File: engine/3d.c, Suspects: 0
     - [alt_frame_pointer] at 004045c0: MOV EDI,ESP
     - [alt_frame_pointer] at 0060e07e: MOV EDI,ESP
     - [alt_frame_pointer] at 0060e0da: MOV EDI,ESP
@@ -277,5 +277,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 2.2 suspects/function
+  With stack patterns:    avg 2.0 suspects/function
   Without stack patterns: avg 0.6 suspects/function

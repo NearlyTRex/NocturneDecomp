@@ -7,20 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 797,
-    "complexity_score": 417,
+    "complexity_score": 332,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 23,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 332,
-    "suspect_count": 6,
-    "suspect_types": [
-      "self_copy_guard",
-      "stack_param",
-      "unknown_type",
-      "warning_inlined_function",
-      "warning_unreachable"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1129
   },
   "cross_references": [],
@@ -361,6 +355,51 @@
   },
   "resolved_suspects": [
     {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 3,
+      "match": "WARNING: Removing unreachable block",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0050389e) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unknown/unresolved type",
+      "line": 27,
+      "match": "unkbyte10",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "unkbyte10 Var18;",
+      "type": "unknown_type"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_fffffe18",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "float in_stack_fffffe18;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 202,
+      "match": "in_stack_fffffe18",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fVar11,in_stack_fffffe18);",
+      "type": "stack_param"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 292,
       "match": "&stack0xfffffe10",
@@ -377,6 +416,15 @@
       "severity": "moderate",
       "text": "((CDemonActor *)this_ptr,&stack0xfffffe10);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_ec != &local_d4)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 90,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (&local_ec != &local_d4) {",
+      "type": "self_copy_guard"
     }
   ],
   "stack_frame": {
@@ -682,56 +730,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 3,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0050389e) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unknown/unresolved type",
-      "line": 27,
-      "match": "unkbyte10",
-      "severity": "mild",
-      "text": "unkbyte10 Var18;",
-      "type": "unknown_type"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_fffffe18",
-      "severity": "moderate",
-      "text": "float in_stack_fffffe18;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 202,
-      "match": "in_stack_fffffe18",
-      "severity": "moderate",
-      "text": "fVar11,in_stack_fffffe18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Watcom dead self-copy guard: `if (&local_ec != &local_d4)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 90,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
-      "severity": "moderate",
-      "text": "if (&local_ec != &local_d4) {",
-      "type": "self_copy_guard"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

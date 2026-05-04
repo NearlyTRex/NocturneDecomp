@@ -40,10 +40,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
           core_xform_cpp_quaternionFromAxisAngle_FUN_005f7a70
                     (fStack_18 * local_28,&local_34,&CStack_64);
           core_xform_cpp_multiplyQuaternion_FUN_005f7640(local_1c,&CStack_64,&CStack_84);
-          (local_20->bone_transform).pose_data.bone_rotations[0].w = CStack_84.w;
-          (local_20->bone_transform).pose_data.bone_rotations[0].x = CStack_84.x;
-          (local_20->bone_transform).pose_data.bone_rotations[0].y = CStack_84.y;
-          (local_20->bone_transform).pose_data.bone_rotations[0].z = CStack_84.z;
+          (local_20->bone_transform).pose_data.bone_rotations[0] = CStack_84;
         }
       }
       local_20 = (CDeformableModelInstance *)&(local_20->motion_controller).tween_speed;

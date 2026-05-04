@@ -1524,12 +1524,12 @@
       "type": "format_string_mismatch"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
-      "line": 265,
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 483,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "for (iVar16 = 0x41; iVar16 != 0; iVar16 = iVar16 + -1) {",
+      "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
@@ -1539,6 +1539,15 @@
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "// 005928c4: MOVSD.REP ES:EDI,ESI  ; g_FileErrorBuffer | g_FileErrorBuffer+4",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 580,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 00592d4f: MOVSD.REP ES:EDI,ESI  ; CMatrix3x4f_00665968 | CMatrix3x4f_00665968.m[0].x",
       "type": "unrolled_memcpy"
     }
   ],
@@ -3174,6 +3183,14 @@
       "type": "unrolled_strcpy"
     },
     {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 265,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar16 = 0x41; iVar16 != 0; iVar16 = iVar16 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 1412,
       "match": "field-by-field struct copy",
@@ -3268,14 +3285,6 @@
       "severity": "moderate",
       "text": "CMatrix3x4f local_314;",
       "type": "missing_cave_copy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 580,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 00592d4f: MOVSD.REP ES:EDI,ESI  ; CMatrix3x4f_00665968 | CMatrix3x4f_00665968.m[0].x",
-      "type": "unrolled_memcpy"
     }
   ]
 }

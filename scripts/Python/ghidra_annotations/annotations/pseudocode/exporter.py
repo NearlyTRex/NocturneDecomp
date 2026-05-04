@@ -743,6 +743,22 @@ def process_python_only(result, pseudocode_src_dir, constants_map,
             memcpy_wrapper = _is_trivial_call_wrapper(keep_source, 'memcpy')
             memset_wrapper = _is_trivial_call_wrapper(keep_source, 'memset')
 
+            # Credit source-side `unrolled_memcpy` resolutions toward asm-side
+            # `MOVS*.REP` suspects: each cpp-side countdown loop the keep
+            # eliminated corresponds to one asm REP MOVS site whether the
+            # keep collapsed it via memcpy(), struct assignment, or by-value
+            # struct passing (Watcom lowers all three to REP MOVSD).
+            cpp_loop_memcpy_count = sum(
+                v for k, v in cpp_counts.items()
+                if k[0] == 'unrolled_memcpy'
+                and (k[1] or '').startswith('for'))
+            keep_loop_memcpy_count = sum(
+                v for k, v in keep_counts.items()
+                if k[0] == 'unrolled_memcpy'
+                and (k[1] or '').startswith('for'))
+            added_memcpys += max(
+                0, cpp_loop_memcpy_count - keep_loop_memcpy_count)
+
             if added_memcpys or added_memsets:
                 new_still = []
                 for s in still:

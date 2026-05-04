@@ -7,14 +7,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 67,
+    "complexity_score": 92,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 52,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
+      "shadow_pointer_walk",
       "unrolled_memcpy"
     ],
     "total_lines": 183
@@ -217,6 +218,22 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 35,
+      "match": "pSVar2 = (T *)pSVar2->ARRAY",
+      "severity": "moderate",
+      "text": "pSVar2 = (SShapeEditorPolygon *)pSVar2->texture_name;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar3` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 36,
+      "match": "pSVar3 = (T *)pSVar3->ARRAY",
+      "severity": "moderate",
+      "text": "pSVar3 = (SShapeEditorPolygon *)pSVar3->texture_name;",
+      "type": "shadow_pointer_walk"
+    },
     {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 110,

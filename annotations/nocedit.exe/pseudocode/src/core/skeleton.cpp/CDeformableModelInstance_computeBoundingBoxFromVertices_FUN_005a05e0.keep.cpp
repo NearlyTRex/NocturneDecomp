@@ -19,7 +19,6 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromVe
   CDeformableModel *pCVar8;
   int iVar9;
   CVector3f *pCVar10;
-  int *piVar11;
   int local_4c;
   int local_48;
   int local_44;
@@ -46,10 +45,9 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromVe
   if (0 < vertex_count) {
     iVar9 = 0;
     do {
-      piVar11 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar9);
-      iVar5 = *piVar11;
-      iVar6 = piVar11[1];
-      iVar7 = piVar11[2];
+      iVar5 = this_ptr->skinned_vertices_buffer[iVar9].x;
+      iVar6 = this_ptr->skinned_vertices_buffer[iVar9].y;
+      iVar7 = this_ptr->skinned_vertices_buffer[iVar9].z;
       if (iVar5 < local_34) {
         local_34 = iVar5;
       }
@@ -68,8 +66,8 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromVe
       if (local_44 < iVar7) {
         local_44 = iVar7;
       }
-      iVar9 = iVar9 + 0xc;
-    } while (iVar9 < vertex_count * 0xc);
+      iVar9 = iVar9 + 1;
+    } while (iVar9 < vertex_count);
   }
   pCVar1 = &this_ptr->bounding_box;
   (pCVar1->min).x = (float)local_34 * 0.00390625f;

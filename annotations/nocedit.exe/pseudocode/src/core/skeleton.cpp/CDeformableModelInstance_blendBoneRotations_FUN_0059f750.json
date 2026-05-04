@@ -15,7 +15,7 @@
     "pseudocode_lines": 43,
     "suspect_count": 1,
     "suspect_types": [
-      "unrolled_memcpy"
+      "shadow_pointer_walk"
     ],
     "total_lines": 145
   },
@@ -293,6 +293,15 @@
       "severity": "moderate",
       "text": "float afStackY_1808 [1522];",
       "type": "stack_alignment_array"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 34,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(local_18->bone_transform).pose_data.bone_rotations[0].w = CStack_2c.w;",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -393,12 +402,12 @@
   },
   "suspects": [
     {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 34,
-      "match": "field-by-field struct copy",
+      "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 41,
+      "match": "local_18 = (T *)&(local_18->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "(local_18->bone_transform).pose_data.bone_rotations[0].w = CStack_2c.w;",
-      "type": "unrolled_memcpy"
+      "text": "local_18 = (CDeformableModelInstance *)&(local_18->motion_controller).tween_speed;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

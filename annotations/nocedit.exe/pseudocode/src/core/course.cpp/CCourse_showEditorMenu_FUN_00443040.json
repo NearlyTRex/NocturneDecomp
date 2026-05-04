@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 638,
-    "complexity_score": 293,
+    "complexity_score": 278,
     "cross_reference_count": 1,
     "function_call_count": 25,
     "global_count": 50,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 278,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 916
   },
   "cross_references": [
@@ -552,7 +550,7 @@
       "type": "unrolled_strcpy"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 92,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
@@ -561,7 +559,7 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 131,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
@@ -621,6 +619,15 @@
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "// 0044324a: MOVSD.REP ES:EDI,ESI  ; g_CourseLastCrsPath | g_CourseLastCrsPath+4",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 538,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 00443637: MOVSD.REP ES:EDI,ESI  ; g_CourseLastBonPath | g_CourseLastBonPath+4",
       "type": "unrolled_memcpy"
     }
   ],
@@ -776,14 +783,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 538,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 00443637: MOVSD.REP ES:EDI,ESI  ; g_CourseLastBonPath | g_CourseLastBonPath+4",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

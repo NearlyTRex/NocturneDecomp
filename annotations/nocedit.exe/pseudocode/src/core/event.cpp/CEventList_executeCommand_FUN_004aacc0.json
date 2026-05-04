@@ -8,15 +8,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 5057,
-    "complexity_score": 2168,
+    "complexity_score": 2153,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 177,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 2138,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unrolled_memcpy",
       "unrolled_strcpy"
     ],
     "total_lines": 7195
@@ -1514,7 +1513,7 @@
       "type": "format_string_mismatch"
     },
     {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with typed word/dword store and direction-bool arithmetic). Replace the whole loop with memcpy(dst, src, N) in a .keep.",
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 1011,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
@@ -1781,6 +1780,15 @@
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "// 004ac3f5: MOVSD.REP ES:EDI,ESI  ; g_DefaultSfxHandleName | g_DefaultSfxHandleName+4",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 4482,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 004ad66d: MOVSD.REP ES:EDI,ESI  ; g_DefaultCommandArg | g_DefaultCommandArg+4",
       "type": "unrolled_memcpy"
     }
   ],
@@ -2623,14 +2631,6 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 4482,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 004ad66d: MOVSD.REP ES:EDI,ESI  ; g_DefaultCommandArg | g_DefaultCommandArg+4",
-      "type": "unrolled_memcpy"
     }
   ]
 }

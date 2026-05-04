@@ -26,7 +26,6 @@ void __cdecl core_haystack_cpp_CHaystack_process_FUN_004f0e40(CHaystack *this_pt
   float fVar10;
   float local_90;
   CQuaternion4f CStack_8c;
-  CQuaternion4f CStack_7c;
   CVector3f local_60;
   CVector3f local_54;
   CVector3f local_48;
@@ -257,7 +256,7 @@ LAB_004f1054:
     iVar6 = g_HaystackIndices[0];
     core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&this_ptr->head_look_euler,&CStack_8c);
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
-              (pCVar3,&CStack_7c,fVar10,iVar6,
+              (pCVar3,&CStack_8c,fVar10,iVar6,
                (CDeformableModel_MotionBlendWeightFunc *)blend_callback);
   }
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);

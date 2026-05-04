@@ -3,11 +3,11 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[004900b0, 004901ea]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(SMRGLTextureBasic *sky_texture,int u_coord,int v_coord,int vertex_index)
+// Signature: void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(SMRGLSkyTexture *sky_texture,int u_coord,int v_coord,int vertex_index)
 
 #include "nocturne.h"
 
-void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(SMRGLTextureBasic *sky_texture,int u_coord,int v_coord,int vertex_index)
+void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(SMRGLSkyTexture *sky_texture,int u_coord,int v_coord,int vertex_index)
 
 {
   float10 fVar2;

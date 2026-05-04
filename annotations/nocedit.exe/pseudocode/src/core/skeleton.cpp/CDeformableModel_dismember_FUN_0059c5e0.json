@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 490,
-    "complexity_score": 293,
+    "complexity_score": 198,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 198,
-    "suspect_count": 9,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 688
   },
   "cross_references": [
@@ -193,6 +191,89 @@
     },
     "pcode_op_count": 3071
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 89,
+      "match": "(int *)((int)g_VertexRemapTable",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)g_VertexRemapTable + iVar9) != 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 103,
+      "match": "(int *)((int)g_VertexRemapTable",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)g_VertexRemapTable + iVar10) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 104,
+      "match": "(uint *)((int)g_VertexRemapTable",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_VertexRemapTable + iVar10) = 0xffffffff;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 107,
+      "match": "(int *)((int)g_VertexRemapTable",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_VertexRemapTable + iVar10) = iVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 150,
+      "match": "(int *)(iVar5 + (int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[*(int *)(iVar5 + (int)this_ptr->index_data_ptr[lod_index])].textures[0]",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 154,
+      "match": "(int *)((int)body_part_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)body_part_ptr->face_texture_indices + local_28) = iVar10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 180,
+      "match": "(int *)(iVar13 + (int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar3 = (int *)(iVar13 + (int)this_ptr->index_data_ptr[lod_index]);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 186,
+      "match": "(int *)((int)body_part_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)body_part_ptr->face_texture_indices + iVar5) = iVar10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 108,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar12 = (int *)((int)&body_part_ptr->vertices->x + iVar13);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 76,
     "local_size": 52,
@@ -300,78 +381,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 89,
-      "match": "(int *)((int)g_VertexRemapTable",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)g_VertexRemapTable + iVar9) != 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 103,
-      "match": "(int *)((int)g_VertexRemapTable",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)g_VertexRemapTable + iVar10) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 104,
-      "match": "(uint *)((int)g_VertexRemapTable",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_VertexRemapTable + iVar10) = 0xffffffff;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 107,
-      "match": "(int *)((int)g_VertexRemapTable",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_VertexRemapTable + iVar10) = iVar5;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 150,
-      "match": "(int *)(iVar5 + (int)this_ptr",
-      "severity": "moderate",
-      "text": "[*(int *)(iVar5 + (int)this_ptr->index_data_ptr[lod_index])].textures[0]",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 154,
-      "match": "(int *)((int)body_part_ptr",
-      "severity": "moderate",
-      "text": "*(int *)((int)body_part_ptr->face_texture_indices + local_28) = iVar10;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 180,
-      "match": "(int *)(iVar13 + (int)this_ptr",
-      "severity": "moderate",
-      "text": "piVar3 = (int *)(iVar13 + (int)this_ptr->index_data_ptr[lod_index]);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 186,
-      "match": "(int *)((int)body_part_ptr",
-      "severity": "moderate",
-      "text": "*(int *)((int)body_part_ptr->face_texture_indices + iVar5) = iVar10;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 108,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "piVar12 = (int *)((int)&body_part_ptr->vertices->x + iVar13);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }
