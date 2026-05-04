@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 216,
-    "complexity_score": 84,
+    "complexity_score": 49,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 49,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 265
   },
   "cross_references": [],
@@ -102,6 +100,33 @@
     "pcode_op_count": 752
   },
   "resolved_suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 39,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "matrix_out->m[0].w = local_144.m[0].w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 43,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "matrix_out->m[1].w = local_144.m[1].w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 47,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "matrix_out->m[2].w = local_144.m[2].w;",
+      "type": "unrolled_memcpy"
+    },
     {
       "description": "Struct-type local `local_1a4` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 4 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 13,
@@ -257,30 +282,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 39,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "matrix_out->m[0].w = local_144.m[0].w;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 43,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "matrix_out->m[1].w = local_144.m[1].w;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 47,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "matrix_out->m[2].w = local_144.m[2].w;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

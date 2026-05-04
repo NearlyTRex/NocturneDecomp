@@ -27,7 +27,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
   CVector3i CStack_ac;
   CVector3i CStack_a0;
   CVector3i CStack_94;
-  CVector3i CStack_88;
+  CVector3f CStack_88;
   float fStack_7c;
   CVector3i CStack_70;
   CVector3i CStack_64;
@@ -36,7 +36,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
   float fStack_44;
   CVector3i CStack_40;
   CVector3i CStack_34;
-  CVector3i CStack_28;
+  CVector3f CStack_28;
   int iStack_18;
   int fStack_10;
   CDemonRenderer *this_ptr_00;
@@ -185,9 +185,9 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
        ) {
       engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
                 (g_CDemonRendererPtr2,(float *)&CStack_88);
-      CStack_28.x = 0;
-      CStack_28.y = (int)((this_ptr->flame_size).y * (float)0.5);
-      CStack_28.z = 0;
+      CStack_28.x = 0.0f;
+      CStack_28.y = (this_ptr->flame_size).y * 0.5f;
+      CStack_28.z = 0.0f;
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr2,&CStack_88,&CStack_28);
       fVar7 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.98,1.02);

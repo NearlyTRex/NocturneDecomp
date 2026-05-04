@@ -2,13 +2,13 @@
 // Address: 004760d0
 // Address Range: [[004760d0, 004765d3]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(CVector3f *position,CVector3i *rotation,float fov,float falloff)
+// Signature: void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(CVector3f *position,CVector3f *rotation,float fov,float falloff)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(CVector3f *position,CVector3i *rotation,float fov,float falloff)
+void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(CVector3f *position,CVector3f *rotation,float fov,float falloff)
 
 {
   int iVar3;
@@ -55,7 +55,7 @@ void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(CVector3f *pos
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,position);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,rotation,(CVector3i *)0x0);
+            (g_CDemonRendererPtr2,rotation,(CVector3f *)0x0);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,g_LightTextures);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);

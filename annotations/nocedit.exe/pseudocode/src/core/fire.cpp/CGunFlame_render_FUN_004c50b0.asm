@@ -12,7 +12,7 @@
 ; float            Stack[-0x98]:4  local_98
 ; float            Stack[-0x94]:4  local_94
 ; float[3]         Stack[-0x90]:12  local_90
-; CVector3i        Stack[-0x84]:12  local_84
+; CVector3f        Stack[-0x84]:12  local_84
 ; float            Stack[-0x78]:4  local_78
 ; float            Stack[-0x74]:4  local_74
 ; float            Stack[-0x70]:4  local_70
@@ -121,7 +121,7 @@ section .text
     MOV EAX,[0x006703ec]                ; 004c5139 | g_CDemonRendererPtr2
     PUSH EAX                            ; 004c513e | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 004c513f
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     FLD float ptr [0x0065dcc4]          ; 004c5144 | FLOAT_0065dcc4
     FLD ST0                             ; 004c514a
     FSUB float ptr [ESI]                ; 004c514c

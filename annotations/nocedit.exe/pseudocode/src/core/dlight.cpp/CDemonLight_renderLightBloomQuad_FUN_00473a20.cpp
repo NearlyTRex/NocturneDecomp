@@ -35,7 +35,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
   float local_48;
   float local_44;
   CVector3i local_40;
-  CVector3i local_34;
+  CVector3f local_34;
   CVector3i local_28;
   float local_1c;
   int local_18;
@@ -52,9 +52,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,&world_position_00->f);
   engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
-            (g_CDemonRendererPtr2,(float *)&local_34);
+            (g_CDemonRendererPtr2,&local_34.x);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,&local_34,(CVector3i *)0x0);
+            (g_CDemonRendererPtr2,&local_34,(CVector3f *)0x0);
   engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
             (g_CDemonRendererPtr2,&local_7c);
   fVar1 = (float)0.00390625;

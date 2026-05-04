@@ -30,7 +30,7 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_004bfac0(CBulletHole *this_ptr
     rotation = (CVector3i *)&this_ptr->transformed_pos;
   }
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,(CVector3i *)&this_ptr->euler_angles,rotation);
+            (g_CDemonRendererPtr2,&this_ptr->euler_angles,(CVector3f *)rotation);
   iVar2 = (this_ptr->texture_index & 1U) * 0x800000;
   g_RenderVertexBuffer[0].u = iVar2 + 0x80000;
   iVar1 = (this_ptr->texture_index & 2U) * 0x400000;

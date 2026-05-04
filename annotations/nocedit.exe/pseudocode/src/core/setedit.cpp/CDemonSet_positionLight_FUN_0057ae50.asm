@@ -133,11 +133,11 @@ section .text
     JZ 0x0057af1d                       ; 0057af0b
         ;   XREF to: 0057af1d (CONDITIONAL_JUMP)  ; LAB_0057af1d
     MOV ECX,dword ptr [EAX]             ; 0057af0d
-    MOV dword ptr [EDX],ECX             ; 0057af0f | g_CSlewInstance.pitch
+    MOV dword ptr [EDX],ECX             ; 0057af0f | g_CSlewInstance.orientation
     MOV ECX,dword ptr [EAX + 0x4]       ; 0057af11
-    MOV dword ptr [EDX + 0x4],ECX       ; 0057af14 | g_CSlewInstance.yaw
+    MOV dword ptr [EDX + 0x4],ECX       ; 0057af14 | g_CSlewInstance.orientation+4
     MOV ECX,dword ptr [EAX + 0x8]       ; 0057af17
-    MOV dword ptr [EDX + 0x8],ECX       ; 0057af1a | g_CSlewInstance.roll
+    MOV dword ptr [EDX + 0x8],ECX       ; 0057af1a | g_CSlewInstance.orientation+8
     MOV EDX,dword ptr [EBP + 0x18]      ; 0057af1d
         ;   Label: LAB_0057af1d
     LEA EDI,[EBP + -0x74]               ; 0057af20
@@ -206,8 +206,8 @@ section .text
     FSTP float ptr [0x02d7eaf4]         ; 0057afc2 | g_CDemonLightInstance.base.base.position
     MOV EAX,[0x00681ab8]                ; 0057afc8 | g_CSlewPtr
         ;   Label: LAB_0057afc8
-    ADD EAX,0xc                         ; 0057afcd | g_CSlewInstance.pitch
-    PUSH EAX                            ; 0057afd0 | g_CSlewInstance.pitch
+    ADD EAX,0xc                         ; 0057afcd | g_CSlewInstance.orientation
+    PUSH EAX                            ; 0057afd0 | g_CSlewInstance.orientation
     PUSH 0x2d7eb00                      ; 0057afd1 | g_CDemonLightInstance.base.base.rotation_matrix.m[0].x
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 0057afd6
         ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
@@ -391,19 +391,19 @@ section .text
     FLD float ptr [EAX + 0x18]          ; 0057b172 | g_CSlewInstance.slew_rate
     FSTP double ptr [ESP]               ; 0057b175
     FLD double ptr [0x00647785]         ; 0057b178 | DOUBLE_00647785
-    FLD float ptr [EAX + 0x10]          ; 0057b17e | g_CSlewInstance.yaw
+    FLD float ptr [EAX + 0x10]          ; 0057b17e | g_CSlewInstance.orientation+4
     FMUL ST1                            ; 0057b181
     FLD double ptr [0x0064778d]         ; 0057b183 | DOUBLE_0064778d
     FXCH                                ; 0057b189
     FMUL ST1                            ; 0057b18b
     SUB ESP,0x8                         ; 0057b18d
     FSTP double ptr [ESP]               ; 0057b190
-    FLD float ptr [EAX + 0x14]          ; 0057b193 | g_CSlewInstance.roll
+    FLD float ptr [EAX + 0x14]          ; 0057b193 | g_CSlewInstance.orientation+8
     FMUL ST2                            ; 0057b196
     FMUL ST1                            ; 0057b198
     SUB ESP,0x8                         ; 0057b19a
     FSTP double ptr [ESP]               ; 0057b19d
-    FLD float ptr [EAX + 0xc]           ; 0057b1a0 | g_CSlewInstance.pitch
+    FLD float ptr [EAX + 0xc]           ; 0057b1a0 | g_CSlewInstance.orientation
     FMULP ST2                           ; 0057b1a3
     FMULP                               ; 0057b1a5
     SUB ESP,0x8                         ; 0057b1a7
@@ -584,11 +584,11 @@ section .text
     CMP EAX,EDX                         ; 0057b374
     JZ 0x0057b388                       ; 0057b376
         ;   XREF to: 0057b388 (CONDITIONAL_JUMP)  ; LAB_0057b388
-    MOV ECX,dword ptr [EDX]             ; 0057b378 | g_CSlewInstance.pitch
+    MOV ECX,dword ptr [EDX]             ; 0057b378 | g_CSlewInstance.orientation
     MOV dword ptr [EAX],ECX             ; 0057b37a
-    MOV ECX,dword ptr [EDX + 0x4]       ; 0057b37c | g_CSlewInstance.yaw
+    MOV ECX,dword ptr [EDX + 0x4]       ; 0057b37c | g_CSlewInstance.orientation+4
     MOV dword ptr [EAX + 0x4],ECX       ; 0057b37f
-    MOV ECX,dword ptr [EDX + 0x8]       ; 0057b382 | g_CSlewInstance.roll
+    MOV ECX,dword ptr [EDX + 0x8]       ; 0057b382 | g_CSlewInstance.orientation+8
     MOV dword ptr [EAX + 0x8],ECX       ; 0057b385
     MOV EAX,[0x00681ab8]                ; 0057b388 | g_CSlewPtr
         ;   Label: LAB_0057b388

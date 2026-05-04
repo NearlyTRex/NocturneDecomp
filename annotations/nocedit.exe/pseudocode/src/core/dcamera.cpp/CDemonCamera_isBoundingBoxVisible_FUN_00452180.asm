@@ -166,7 +166,7 @@ section .text
     FISTP dword ptr [0x02d052c0]        ; 0045226f | g_RelativeZ
     MOV [0x02d05308],EAX                ; 00452275 | g_TransformMatrix[2][2]
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 0045227a
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 0045227f
     MOV EAX,dword ptr [ESI]             ; 00452282
     MOV dword ptr [ESP + 0xc4],EAX      ; 00452284

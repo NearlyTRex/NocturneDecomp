@@ -13,9 +13,8 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005e88c0(CVehicle *this_p
   int iVar2;
   int iVar3;
   CVector3f *pCVar4;
-  CVector3i *rotation;
   CKeyFramedModelInstance *this_ptr_00;
-  CVector3i *position;
+  CVector3f *position;
   int in_stack_0000000c;
   CBoundingBox3D local_60;
   CVector3f CStack_48;
@@ -37,21 +36,20 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005e88c0(CVehicle *this_p
       iVar3 = 0;
       if (0 < this_ptr->tire_count) {
         this_ptr_00 = &this_ptr->tires[0].model;
-        position = (CVector3i *)&this_ptr->tires[0].runtime_rotation;
-        rotation = (CVector3i *)&this_ptr->tires[0].runtime_position;
+        position = &this_ptr->tires[0].runtime_rotation;
+        pCVar4 = &this_ptr->tires[0].runtime_position;
         do {
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                    (g_CDemonRendererPtr2,position,rotation);
+                    (g_CDemonRendererPtr2,position,pCVar4);
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                    (g_CDemonRendererPtr2,(CVector3i *)&this_ptr->tires[0].spin_angle,
-                     (CVector3i *)0x0);
+                    (g_CDemonRendererPtr2,&this_ptr->tires[0].spin_angle,(CVector3f *)0x0);
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
                     (this_ptr_00,0.0,-1);
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
           iVar3 = iVar3 + 1;
-          rotation = (CVector3i *)&rotation[0x24].y;
-          position = (CVector3i *)&position[0x24].y;
+          pCVar4 = (CVector3f *)&pCVar4[0x24].y;
+          position = (CVector3f *)&position[0x24].y;
           this_ptr_00 = (CKeyFramedModelInstance *)(this_ptr_00[1].part_visibility_flags + 0xe);
         } while (iVar3 < *(int *)(in_stack_0000000c + 0x938));
       }
@@ -75,7 +73,7 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005e88c0(CVehicle *this_p
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(&this_ptr->base,&CStack_48,&CStack_30)
     ;
     core_dlight_cpp_renderConeLightGeometry_FUN_004760d0
-              (&CStack_48,(CVector3i *)&(this_ptr->base).orient.vec,56.0,10.0);
+              (&CStack_48,&(this_ptr->base).orient.vec,56.0,10.0);
     pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                        (&this_ptr->base,&CStack_3c,&CStack_24);
     if (&CStack_48 != pCVar4) {
@@ -84,7 +82,7 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005e88c0(CVehicle *this_p
       CStack_48.z = pCVar4->z;
     }
     core_dlight_cpp_renderConeLightGeometry_FUN_004760d0
-              (&CStack_48,(CVector3i *)&(this_ptr->base).orient.vec,56.0,10.0);
+              (&CStack_48,&(this_ptr->base).orient.vec,56.0,10.0);
     return iVar2;
   }
   return iVar2;

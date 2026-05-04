@@ -125,7 +125,7 @@ int __cdecl CDemonLight::testShadowMapRegion(CDemonLight *this_ptr,CRect *rect);
 
 // Original: core_dlight.cpp_renderConeLightGeometry_FUN_004760d0
 // Address: 004760d0
-void __cdecl renderConeLightGeometry(CVector3f *position,CVector3i *rotation,float fov,float falloff);
+void __cdecl renderConeLightGeometry(CVector3f *position,CVector3f *rotation,float fov,float falloff);
 
 // Original: core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0
 // Address: 004765e0

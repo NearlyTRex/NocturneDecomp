@@ -143,7 +143,7 @@ section .text
     LEA EAX,[EBP + 0x6]                 ; 005fbf95
     PUSH EAX                            ; 005fbf98
     CALL core_dlight.cpp_renderConeLightGeometry_FUN_004760d0 ; 005fbf99
-        ;   XREF to: 004760d0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_renderConeLightGeometry_FUN_004760d0(CVector3f * position, CVector3i * rotation, float fov, float falloff)
+        ;   XREF to: 004760d0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_renderConeLightGeometry_FUN_004760d0(CVector3f * position, CVector3f * rotation, float fov, float falloff)
     ADD ESP,0x10                        ; 005fbf9e
     CMP dword ptr [EBX + 0x2620],0x0    ; 005fbfa1
         ;   Label: LAB_005fbfa1

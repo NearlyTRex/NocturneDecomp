@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 151
-  Total diagnostics: 445
+  Functions with findings: 144
+  Total diagnostics: 423
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 151, raw .cpp files: 0
+  .keep.cpp files: 144, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -174,19 +174,6 @@ core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330  [.keep] [Cppcheck (q
   Line  121: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-core_xform.cpp_transformAndClipGeometry_FUN_005f8550  [.keep] [Cppcheck (quick)]
-  File: core/xform.cpp  (8 diagnostics)
-
-  Line  121: [uninitvar] Uninitialized variable: extraout_EAX
-  Line  129: [uninitvar] Uninitialized variable: extraout_EAX_00
-  Line  162: [uninitvar] Uninitialized variable: extraout_EAX_01
-  Line  170: [uninitvar] Uninitialized variable: extraout_EAX_02
-  Line  202: [uninitvar] Uninitialized variable: extraout_EAX_03
-  Line  211: [uninitvar] Uninitialized variable: extraout_EAX_04
-  Line  243: [uninitvar] Uninitialized variable: extraout_EAX_05
-  Line  252: [uninitvar] Uninitialized variable: extraout_EAX_06
-
-----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0  [.keep] [Cppcheck (quick)]
   File: core/dcamera.cpp  (7 diagnostics)
 
@@ -314,26 +301,6 @@ core_sound.cpp_updateListeners_FUN_005b1870  [.keep] [Cppcheck (quick)]
   Line   60: [uninitvar] Uninitialized variable: local_c8
   Line  105: [legacyUninitvar] Uninitialized variable: local_c8
   Line  105: [legacyUninitvar] Uninitialized variable: local_c4
-
-----------------------------------------------------------------------------------------------------
-core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0  [.keep] [Cppcheck (quick)]
-  File: core/xform.cpp  (5 diagnostics)
-
-  Line  125: [ignoredReturnValue] Return value of function asin() is not used.
-  Line  127: [uninitvar] Uninitialized variable: local_20
-  Line  153: [ignoredReturnValue] Return value of function acos() is not used.
-  Line  167: [ignoredReturnValue] Return value of function asin() is not used.
-  Line  169: [uninitvar] Uninitialized variable: local_18
-
-----------------------------------------------------------------------------------------------------
-core_xform.cpp_matrixToEulerAngles_FUN_005f5690  [.keep] [Cppcheck (quick)]
-  File: core/xform.cpp  (5 diagnostics)
-
-  Line  132: [ignoredReturnValue] Return value of function asin() is not used.
-  Line  134: [uninitvar] Uninitialized variable: local_20
-  Line  159: [ignoredReturnValue] Return value of function acos() is not used.
-  Line  173: [ignoredReturnValue] Return value of function asin() is not used.
-  Line  175: [uninitvar] Uninitialized variable: local_18
 
 ----------------------------------------------------------------------------------------------------
 shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10  [.keep] [Cppcheck (quick)]
@@ -1039,40 +1006,16 @@ core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270  [.keep] [Cppc
   Line  224: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
-core_vehicle.cpp_CVehicle_renderOpaque_FUN_005e88c0  [.keep] [Cppcheck (quick)]
-  File: core/vehicle.cpp  (1 diagnostics)
-
-  Line   56: [uninitvar] Uninitialized variable: in_stack_0000000c
-
-----------------------------------------------------------------------------------------------------
 core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70  [.keep] [Cppcheck (quick)]
   File: core/water.cpp  (1 diagnostics)
 
   Line   43: [selfAssignment] Redundant assignment of 'iVar2' to itself.
 
 ----------------------------------------------------------------------------------------------------
-core_xform.cpp_clipPolygonStage1_FUN_005f7ed0  [.keep] [Cppcheck (quick)]
+core_xform.cpp_transformAndClipGeometry_FUN_005f8550  [.keep] [Cppcheck (quick)]
   File: core/xform.cpp  (1 diagnostics)
 
-  Line   71: [selfAssignment] Redundant assignment of 'iVar5' to itself.
-
-----------------------------------------------------------------------------------------------------
-core_xform.cpp_clipPolygonStage2_FUN_005f8040  [.keep] [Cppcheck (quick)]
-  File: core/xform.cpp  (1 diagnostics)
-
-  Line   71: [selfAssignment] Redundant assignment of 'iVar5' to itself.
-
-----------------------------------------------------------------------------------------------------
-core_xform.cpp_clipPolygonStage3_FUN_005f81c0  [.keep] [Cppcheck (quick)]
-  File: core/xform.cpp  (1 diagnostics)
-
-  Line   71: [selfAssignment] Redundant assignment of 'iVar5' to itself.
-
-----------------------------------------------------------------------------------------------------
-core_xform.cpp_clipPolygonStage4_FUN_005f8330  [.keep] [Cppcheck (quick)]
-  File: core/xform.cpp  (1 diagnostics)
-
-  Line   71: [selfAssignment] Redundant assignment of 'iVar5' to itself.
+  Line  281: [uninitvar] Uninitialized variable: local_24
 
 ----------------------------------------------------------------------------------------------------
 engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290  [.keep] [Cppcheck (quick)]

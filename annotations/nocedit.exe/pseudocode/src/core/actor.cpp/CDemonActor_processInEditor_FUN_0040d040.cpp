@@ -23,19 +23,19 @@ void __cdecl core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor
         CStack_20.position.y = (this_ptr->location).position.y;
         CStack_20.position.z = (this_ptr->location).position.z;
       }
-      if ((UOrientationVector *)&CStack_20.pitch != &this_ptr->orient) {
-        CStack_20.pitch = (this_ptr->orient).vec.x;
-        CStack_20.yaw = (this_ptr->orient).vec.y;
-        CStack_20.roll = (this_ptr->orient).vec.z;
+      if (&CStack_20.orientation != &this_ptr->orient) {
+        CStack_20.orientation.vec.x = (this_ptr->orient).vec.x;
+        CStack_20.orientation.vec.y = (this_ptr->orient).vec.y;
+        CStack_20.orientation.vec.z = (this_ptr->orient).vec.z;
       }
       core_slew_cpp_CSlew_processInput_FUN_005a20b0(&CStack_20);
       (this_ptr->location).position.x = CStack_20.position.x;
       (this_ptr->location).position.y = CStack_20.position.y;
       (this_ptr->location).position.z = CStack_20.position.z;
-      if (&this_ptr->orient != (UOrientationVector *)&CStack_20.pitch) {
-        (this_ptr->orient).vec.x = CStack_20.pitch;
-        (this_ptr->orient).vec.y = CStack_20.yaw;
-        (this_ptr->orient).vec.z = CStack_20.roll;
+      if (&this_ptr->orient != &CStack_20.orientation) {
+        (this_ptr->orient).vec.x = CStack_20.orientation.vec.x;
+        (this_ptr->orient).vec.y = CStack_20.orientation.vec.y;
+        (this_ptr->orient).vec.z = CStack_20.orientation.vec.z;
       }
     }
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_G);

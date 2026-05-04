@@ -7,18 +7,17 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 455,
-    "complexity_score": 336,
+    "complexity_score": 177,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 166,
-    "suspect_count": 16,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 162,
+    "suspect_count": 1,
     "suspect_types": [
-      "bitcast_double_pair",
-      "sub84_truncation"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 621
+    "total_lines": 617
   },
   "cross_references": [
     {
@@ -192,6 +191,386 @@
     },
     "pcode_op_count": 3070
   },
+  "resolved_suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 35,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_84._0_4_ = (uint)((ulonglong)dVar11 >> 0x20);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 36,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_8c._4_4_ = SUB84(__BITCAST_UINT64(dVar11),0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 36,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_8c._4_4_ = SUB84(__BITCAST_UINT64(dVar11),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 44,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_84._4_4_ = SUB84(__BITCAST_UINT64(dVar11),0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 44,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_84._4_4_ = SUB84(__BITCAST_UINT64(dVar11),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 57,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_40._4_4_ = SUB84(__BITCAST_UINT64(dVar11),0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 57,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_40._4_4_ = SUB84(__BITCAST_UINT64(dVar11),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 58,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dVar9 = (double)matrix_ptr->m[2].w * __BITCAST_DOUBLE(CONCAT44(local_84._4_4_,local_84._0_4_)) *",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 58,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dVar9 = (double)matrix_ptr->m[2].w * __BITCAST_DOUBLE(CONCAT44(local_84._4_4_,local_84._0_4_)) *",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 58,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "dVar9 = (double)matrix_ptr->m[2].w * __BITCAST_DOUBLE(CONCAT44(local_84._4_4_,local_84._0_4_)) *",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 60,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dVar11 = (double)matrix_ptr->m[2].y * __BITCAST_DOUBLE(CONCAT44(local_84._4_4_,local_84._0_4_)) *",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 60,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dVar11 = (double)matrix_ptr->m[2].y * __BITCAST_DOUBLE(CONCAT44(local_84._4_4_,local_84._0_4_)) *",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 60,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "dVar11 = (double)matrix_ptr->m[2].y * __BITCAST_DOUBLE(CONCAT44(local_84._4_4_,local_84._0_4_)) *",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 62,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_34._0_4_ = SUB84(__BITCAST_UINT64(dVar9),0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 62,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_34._0_4_ = SUB84(__BITCAST_UINT64(dVar9),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 63,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_34._4_4_ = (uint)((ulonglong)dVar9 >> 0x20);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 64,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_68._4_4_ = SUB84(__BITCAST_UINT64(dVar11),0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 64,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_68._4_4_ = SUB84(__BITCAST_UINT64(dVar11),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 71,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(local_34._0_4_,local_34._4_4_)) < 0.0) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 71,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(local_34._0_4_,local_34._4_4_)) < 0.0) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 71,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(local_34._0_4_,local_34._4_4_)) < 0.0) {",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 78,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(local_68._4_4_,local_68._0_4_)) < 0.0) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 78,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(local_68._4_4_,local_68._0_4_)) < 0.0) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 78,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(local_68._4_4_,local_68._0_4_)) < 0.0) {",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 89,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "fVar4 = matrix_ptr->m[0].x * fVar4 * (float)__BITCAST_DOUBLE(CONCAT44(local_40._4_4_,local_40._0_4_));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 89,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "fVar4 = matrix_ptr->m[0].x * fVar4 * (float)__BITCAST_DOUBLE(CONCAT44(local_40._4_4_,local_40._0_4_));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 89,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fVar4 = matrix_ptr->m[0].x * fVar4 * (float)__BITCAST_DOUBLE(CONCAT44(local_40._4_4_,local_40._0_4_));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 91,
+      "match": "SUB84(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_b0 = SUB84(__BITCAST_UINT64(dVar11),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 92,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dVar9 = (double)(matrix_ptr->m[1].x * (float)__BITCAST_DOUBLE(CONCAT44(local_a0._4_4_,local_a0._0_4_))",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 92,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dVar9 = (double)(matrix_ptr->m[1].x * (float)__BITCAST_DOUBLE(CONCAT44(local_a0._4_4_,local_a0._0_4_))",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 92,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "dVar9 = (double)(matrix_ptr->m[1].x * (float)__BITCAST_DOUBLE(CONCAT44(local_a0._4_4_,local_a0._0_4_))",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 93,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "* (float)__BITCAST_DOUBLE(CONCAT44(local_40._4_4_,local_40._0_4_)));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 93,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "* (float)__BITCAST_DOUBLE(CONCAT44(local_40._4_4_,local_40._0_4_)));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 93,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "* (float)__BITCAST_DOUBLE(CONCAT44(local_40._4_4_,local_40._0_4_)));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 99,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "dVar11 = __BITCAST_DOUBLE(CONCAT44((float)dVar7,local_b0));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 132,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_8c._0_4_ = (uint)((ulonglong)(double)fVar4 >> 0x20);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 134,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "fVar4 = -matrix_ptr->m[0].y * (float)__BITCAST_DOUBLE(CONCAT44(local_8c._4_4_,local_8c._0_4_));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 134,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "fVar4 = -matrix_ptr->m[0].y * (float)__BITCAST_DOUBLE(CONCAT44(local_8c._4_4_,local_8c._0_4_));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 134,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "fVar4 = -matrix_ptr->m[0].y * (float)__BITCAST_DOUBLE(CONCAT44(local_8c._4_4_,local_8c._0_4_));",
+      "type": "bitcast_double_pair"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 136,
+      "match": "._4_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dVar4 = (double)(matrix_ptr->m[0].w * (float)__BITCAST_DOUBLE(CONCAT44(local_8c._4_4_,local_8c._0_4_)));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 136,
+      "match": "._0_4_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "dVar4 = (double)(matrix_ptr->m[0].w * (float)__BITCAST_DOUBLE(CONCAT44(local_8c._4_4_,local_8c._0_4_)));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 136,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "dVar4 = (double)(matrix_ptr->m[0].w * (float)__BITCAST_DOUBLE(CONCAT44(local_8c._4_4_,local_8c._0_4_)));",
+      "type": "bitcast_double_pair"
+    }
+  ],
   "stack_frame": {
     "frame_size": 188,
     "local_size": 180,
@@ -210,85 +589,43 @@
         "is_param": false,
         "name": "local_a0",
         "offset": -160,
-        "size": 4,
-        "type": "undefined4"
+        "size": 8,
+        "type": "double"
       },
       {
         "is_param": false,
-        "name": "uStack_9c",
-        "offset": -156,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "uStack_8c",
+        "name": "local_8c",
         "offset": -140,
-        "size": 4,
-        "type": "undefined4"
+        "size": 8,
+        "type": "double"
       },
       {
         "is_param": false,
-        "name": "local_88",
-        "offset": -136,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "uStack_84",
+        "name": "local_84",
         "offset": -132,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_80",
-        "offset": -128,
-        "size": 4,
-        "type": "undefined4"
+        "size": 8,
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_68",
         "offset": -104,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "uStack_64",
-        "offset": -100,
-        "size": 4,
-        "type": "undefined4"
+        "size": 8,
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
-        "size": 4,
-        "type": "undefined4"
+        "size": 8,
+        "type": "double"
       },
       {
         "is_param": false,
-        "name": "uStack_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "uStack_34",
+        "name": "local_34",
         "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
+        "size": 8,
+        "type": "double"
       },
       {
         "is_param": false,
@@ -337,179 +674,15 @@
     ],
     "severity": "medium"
   },
-  "static_analysis": {
-    "analyzed_file": "matrixToEulerAnglesZYX_FUN_005f5bd0.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 5,
-      "diagnostics": [
-        {
-          "check_id": "ignoredReturnValue",
-          "column": 11,
-          "line": 125,
-          "message": "Return value of function asin() is not used.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "ignoredReturnValue",
-          "column": 9,
-          "line": 153,
-          "message": "Return value of function acos() is not used.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "ignoredReturnValue",
-          "column": 5,
-          "line": 167,
-          "message": "Return value of function asin() is not used.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 13,
-          "line": 127,
-          "message": "Uninitialized variable: local_20",
-          "severity": "warning"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 7,
-          "line": 169,
-          "message": "Uninitialized variable: local_18",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
   "suspects": [
     {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 42,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "local_88 = SUB84(__BITCAST_UINT64(dVar11),0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 50,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "local_80 = SUB84(__BITCAST_UINT64(dVar11),0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 63,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "uStack_3c = SUB84(__BITCAST_UINT64(dVar11),0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 64,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "dVar9 = (double)matrix_ptr->m[2].w * __BITCAST_DOUBLE(CONCAT44(local_80,uStack_84)) * dVar11;",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 65,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "dVar11 = (double)matrix_ptr->m[2].y * __BITCAST_DOUBLE(CONCAT44(local_80,uStack_84)) * dVar11;",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 66,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "uStack_34 = SUB84(__BITCAST_UINT64(dVar9),0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 68,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "uStack_64 = SUB84(__BITCAST_UINT64(dVar11),0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 75,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_34,local_30)) < 0.0) {",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 82,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_64,local_68)) < 0.0) {",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 93,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "fVar4 = matrix_ptr->m[0].x * fVar4 * (float)__BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40));",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 95,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "local_b0 = SUB84(__BITCAST_UINT64(dVar11),0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 96,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "dVar9 = (double)(matrix_ptr->m[1].x * (float)__BITCAST_DOUBLE(CONCAT44(uStack_9c,local_a0)) *",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 97,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "(float)__BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40)));",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 103,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "dVar11 = __BITCAST_DOUBLE(CONCAT44((float)dVar7,local_b0));",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 138,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "fVar4 = -matrix_ptr->m[0].y * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c));",
-      "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 140,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "dVar4 = (double)(matrix_ptr->m[0].w * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c)));",
-      "type": "bitcast_double_pair"
+      "description": "Decompiler intrinsic (not real C)",
+      "introduced_by": "keep",
+      "line": 39,
+      "match": "SQRT",
+      "severity": "mild",
+      "text": "inv_a = (double)SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1);",
+      "type": "decompiler_intrinsic"
     }
   ]
 }

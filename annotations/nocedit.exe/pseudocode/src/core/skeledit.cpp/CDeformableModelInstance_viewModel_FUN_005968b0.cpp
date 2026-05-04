@@ -100,8 +100,8 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
   float local_e8;
   float local_e4;
   float local_e0;
-  CVector3i local_dc;
-  CVector3i local_d0;
+  CVector3f local_dc;
+  CVector3f local_d0;
   float *local_c4;
   CDeformableModel *local_c0;
   CSkeleton *local_bc;
@@ -381,9 +381,9 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
     }
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,&local_100);
-    local_d0.x = 0;
-    local_d0.y = 0;
-    local_d0.z = 0;
+    local_d0.x = 0.0;
+    local_d0.y = 0.0;
+    local_d0.z = 0.0;
     if (local_a8 == 0) {
       core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(this_ptr)
       ;
@@ -457,13 +457,13 @@ LAB_0059722b:
         local_200.position.z = (pCVar10->position).z;
       }
       pCVar13 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_2f0,&local_148);
-      if ((CVector3f *)&local_200.pitch != pCVar13) {
-        local_200.pitch = pCVar13->x;
-        local_200.yaw = pCVar13->y;
-        local_200.roll = pCVar13->z;
+      if ((CVector3f *)&local_200.orientation != pCVar13) {
+        local_200.orientation.vec.x = pCVar13->x;
+        local_200.orientation.vec.y = pCVar13->y;
+        local_200.orientation.vec.z = pCVar13->z;
       }
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                (g_CDemonRendererPtr2,(CVector3i *)&local_200.pitch,(CVector3i *)&local_200);
+                (g_CDemonRendererPtr2,&local_200.orientation.vec,&local_200.position);
       core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
                 (&g_SkeleditViewModel,0,(CKeyFramedModelInstance *)0x0,-1);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
@@ -488,9 +488,9 @@ LAB_0059722b:
       engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(g_SkeletonViewModelScreenshotFilename);
     }
     if (local_4c != 0) {
-      local_dc.x = (int)-local_100.x;
-      local_dc.y = (int)-local_100.y;
-      local_dc.z = (int)-local_100.z;
+      local_dc.x = -local_100.x;
+      local_dc.y = -local_100.y;
+      local_dc.z = -local_100.z;
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr2,&local_d0,&local_dc);
       local_154.x = (int)CVector3f_006819fc.x;
@@ -666,7 +666,7 @@ LAB_005975b4:
     else {
       core_slew_cpp_CSlew_processInput_FUN_005a20b0(&local_200);
       core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
-                (&local_230,&local_200.position,(CVector3f *)&local_200.pitch);
+                (&local_230,&local_200.position,&local_200.orientation.vec);
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(local_54 + local_64,&local_230,&local_290);
       pCVar13 = core_xform_cpp_invertAndGetTranslation_FUN_005f6140(&local_260,&local_10c);
       if (&local_184 != pCVar13) {

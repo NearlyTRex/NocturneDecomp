@@ -18,7 +18,7 @@ void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004c1ef0(CGlassParticle *th
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,(CVector3f *)this_ptr);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,(CVector3i *)&this_ptr->euler_angles,(CVector3i *)0x0);
+            (g_CDemonRendererPtr2,&this_ptr->euler_angles,(CVector3f *)0x0);
   local_28.x = (int)ROUND((this_ptr->triangle_delta).vertices[0].x * 256.0f);
   local_28.y = (int)ROUND((this_ptr->triangle_delta).vertices[0].y * 256.0f);
   local_28.z = (int)ROUND((this_ptr->triangle_delta).vertices[0].z * 256.0f);

@@ -12,7 +12,7 @@
 ; Local Variables:
 ; float            Stack[-0x50]:4  local_50
 ; int[6]           Stack[-0x4c]:24  aiStack_4c
-; CVector3i        Stack[-0x34]:12  local_34
+; CVector3f        Stack[-0x34]:12  local_34
 ; uint             Stack[-0x24]:4  local_24
 ; int              Stack[-0x20]:4  local_20
 ; uint             Stack[-0x1c]:4  local_1c
@@ -84,7 +84,7 @@ section .text
     MOV EDI,dword ptr [0x006703ec]      ; 00574c01 | g_CDemonRendererPtr2
     PUSH EDI                            ; 00574c07 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 00574c08
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 00574c0d
     XOR ESI,ESI                         ; 00574c10
     MOV EDI,dword ptr [EBP + 0x1c]      ; 00574c12

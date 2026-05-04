@@ -1034,6 +1034,15 @@ _UNROLLED_MEMCPY_STORE_RE = re.compile(
 # REP MOVSD lowering. `* -8 + 4` is the dword-scaled variant.
 _UNROLLED_MEMCPY_DIR_RE = re.compile(
     r"\(\s*uint\s*\)\s*\w+\s*\*\s*-?\d+\s*\+\s*\d+")
+# Typed-pair memcpy: paired `*ptr = *src;` deref store and `ptr = ptr + 1;`
+# typed-pointer increment. This is Watcom's no-direction-idiom variant of
+# REP MOVSD lowering — emitted when type info lets Ghidra render typed
+# pointer math. A countdown loop with both signals is unambiguously a
+# memcpy.
+_UNROLLED_MEMCPY_TYPED_STORE_RE = re.compile(
+    r"^\s*\*\s*\w+\s*=\s*\*\s*\w+\s*;\s*$")
+_UNROLLED_MEMCPY_TYPED_INC_RE = re.compile(
+    r"^\s*(\w+)\s*=\s*\1\s*\+\s*1\s*;\s*$")
 
 
 # Watcom's other inline-memcpy lowering: a dword countdown over `N >> 2`
@@ -1179,13 +1188,17 @@ def identify_unrolled_memcpy_loops(decompiled_code):
         if not _UNROLLED_MEMCPY_FOR_RE.match(lines[i]):
             continue
         # Walk up to 7 lines forward looking for the matching close brace
-        # and the direction-bool idiom. The direction idiom (`(uint)bool *
-        # -2 + 1`, `* -8 + 4`) is essentially a unique fingerprint for
-        # Watcom REP MOVSD lowering — generic countdown loops never use it.
-        # We don't require a specific store shape because Ghidra can render
-        # the underlying copy as `*ptr = *src`, `dst->field = src->field`,
-        # or `dst[N] = src[N]` depending on type info.
+        # and one of two memcpy fingerprints:
+        #
+        # 1. The Watcom direction-bool idiom (`(uint)bool * -2 + 1`,
+        #    `* -8 + 4`) — emitted when Ghidra can't recover type info, so
+        #    the body uses byte-arithmetic walks. Unique fingerprint.
+        # 2. Typed-pair: `*ptr = *src;` + `ptr = ptr + 1;` — emitted when
+        #    Ghidra recovers types, so the body uses typed pointer math.
+        #    Both signals together rule out generic countdown loops.
         has_direction = False
+        has_typed_store = False
+        has_typed_inc = False
         close_line = None
         for fwd in range(1, 8):
             if i + fwd >= n:
@@ -1193,10 +1206,15 @@ def identify_unrolled_memcpy_loops(decompiled_code):
             body = lines[i + fwd]
             if _UNROLLED_MEMCPY_DIR_RE.search(body):
                 has_direction = True
+            if _UNROLLED_MEMCPY_TYPED_STORE_RE.match(body):
+                has_typed_store = True
+            if _UNROLLED_MEMCPY_TYPED_INC_RE.match(body):
+                has_typed_inc = True
             if body.strip().startswith('}'):
                 close_line = i + fwd
                 break
-        if not (has_direction and close_line):
+        confirmed = has_direction or (has_typed_store and has_typed_inc)
+        if not (confirmed and close_line):
             continue
         suspects.append({
             'line': i + 1,

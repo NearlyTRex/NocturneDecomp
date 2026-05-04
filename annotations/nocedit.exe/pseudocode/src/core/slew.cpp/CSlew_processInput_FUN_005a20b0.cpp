@@ -11,8 +11,8 @@ void __cdecl core_slew_cpp_CSlew_processInput_FUN_005a20b0(CSlew *this_ptr)
 {
   int iVar5;
   int iVar1;
-  float10 fVar6;
   float10 fVar4;
+  float10 fVar6;
   float10 fVar7;
   float10 fVar5;
   float local_2c;
@@ -37,37 +37,39 @@ void __cdecl core_slew_cpp_CSlew_processInput_FUN_005a20b0(CSlew *this_ptr)
   fVar3 = (float)30;
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD1);
   if (iVar1 != 0) {
-    this_ptr->yaw = this_ptr->yaw - fVar1;
+    (this_ptr->orientation).vec.y = (this_ptr->orientation).vec.y - fVar1;
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD3);
   if (iVar1 != 0) {
-    this_ptr->yaw = this_ptr->yaw + fVar1;
+    (this_ptr->orientation).vec.y = (this_ptr->orientation).vec.y + fVar1;
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD8);
   if (iVar1 != 0) {
-    fVar5 = (float10)fcos((float10)this_ptr->yaw);
-    fVar6 = (float10)fsin((float10)this_ptr->yaw);
+    fVar4 = (float10)(this_ptr->orientation).vec.y;
+    fVar5 = (float10)fcos(fVar4);
+    fVar6 = (float10)fsin(fVar4);
     (this_ptr->position).x = (float)(fVar6 * (float10)fVar2 + (float10)(this_ptr->position).x);
     (this_ptr->position).z = (float)(fVar5 * (float10)fVar2 + (float10)(this_ptr->position).z);
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD2);
   if (iVar1 != 0) {
-    fVar5 = (float10)fcos((float10)this_ptr->yaw);
-    fVar4 = (float10)fsin((float10)this_ptr->yaw);
+    fVar4 = (float10)(this_ptr->orientation).vec.y;
+    fVar5 = (float10)fcos(fVar4);
+    fVar4 = (float10)fsin(fVar4);
     (this_ptr->position).x = (float)((float10)(this_ptr->position).x - fVar4 * (float10)fVar2);
     (this_ptr->position).z = (float)((float10)(this_ptr->position).z - fVar5 * (float10)fVar2);
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD4);
   if (iVar1 != 0) {
-    fVar7 = (float10)fsin((float10)this_ptr->yaw + (float10)-1.57079632675);
-    fVar5 = (float10)fcos((float10)this_ptr->yaw + (float10)-1.57079632675);
+    fVar7 = (float10)fsin((float10)(this_ptr->orientation).vec.y + (float10)-1.57079632675);
+    fVar5 = (float10)fcos((float10)(this_ptr->orientation).vec.y + (float10)-1.57079632675);
     (this_ptr->position).x = (float)(fVar7 * (float10)fVar2 + (float10)(this_ptr->position).x);
     (this_ptr->position).z = (float)(fVar5 * (float10)fVar2 + (float10)(this_ptr->position).z);
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD6);
   if (iVar1 != 0) {
-    fVar5 = (float10)fsin((float10)this_ptr->yaw + (float10)1.57079632675);
-    fVar4 = (float10)fcos((float10)this_ptr->yaw + (float10)1.57079632675);
+    fVar5 = (float10)fsin((float10)(this_ptr->orientation).vec.y + (float10)1.57079632675);
+    fVar4 = (float10)fcos((float10)(this_ptr->orientation).vec.y + (float10)1.57079632675);
     (this_ptr->position).x = (float)(fVar5 * (float10)fVar2 + (float10)(this_ptr->position).x);
     (this_ptr->position).z = (float)(fVar4 * (float10)fVar2 + (float10)(this_ptr->position).z);
   }
@@ -81,19 +83,19 @@ void __cdecl core_slew_cpp_CSlew_processInput_FUN_005a20b0(CSlew *this_ptr)
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_F5);
   if (iVar1 != 0) {
-    this_ptr->pitch = this_ptr->pitch - fVar1;
+    (this_ptr->orientation).vec.x = (this_ptr->orientation).vec.x - fVar1;
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_F8);
   if (iVar1 != 0) {
-    this_ptr->pitch = this_ptr->pitch + fVar1;
+    (this_ptr->orientation).vec.x = (this_ptr->orientation).vec.x + fVar1;
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD7);
   if (iVar1 != 0) {
-    this_ptr->roll = this_ptr->roll - fVar1;
+    (this_ptr->orientation).vec.z = (this_ptr->orientation).vec.z - fVar1;
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD9);
   if (iVar1 != 0) {
-    this_ptr->roll = this_ptr->roll + fVar1;
+    (this_ptr->orientation).vec.z = (this_ptr->orientation).vec.z + fVar1;
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_MINUS);
   if (iVar1 != 0) {
@@ -105,9 +107,9 @@ void __cdecl core_slew_cpp_CSlew_processInput_FUN_005a20b0(CSlew *this_ptr)
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD5);
   if (iVar1 != 0) {
-    this_ptr->roll = 0.0;
-    this_ptr->yaw = this_ptr->roll;
-    this_ptr->pitch = this_ptr->yaw;
+    (this_ptr->orientation).vec.z = 0.0;
+    (this_ptr->orientation).vec.y = (this_ptr->orientation).vec.z;
+    (this_ptr->orientation).vec.x = (this_ptr->orientation).vec.y;
     return;
   }
   return;

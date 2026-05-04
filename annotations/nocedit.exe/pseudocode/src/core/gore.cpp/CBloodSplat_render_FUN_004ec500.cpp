@@ -42,7 +42,7 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004ec500(CBloodSplat *this_ptr
               (g_CDemonRendererPtr2,
                g_BloodSplatAnimTextures + this_ptr->texture_variant * 0x10 + local_14);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-              (g_CDemonRendererPtr2,(CVector3i *)&this_ptr->rotation,(CVector3i *)0x0);
+              (g_CDemonRendererPtr2,&this_ptr->rotation,(CVector3f *)0x0);
     local_68.x = (int)ROUND(256.0f * -0.5);
     local_68.y = (int)ROUND(256.0f * -0.5);
     local_68.z = (int)ROUND(256.0f * 0.0);

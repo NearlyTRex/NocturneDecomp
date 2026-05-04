@@ -18,8 +18,8 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_005e98b0(CCryptVe
   CKeyFramedModel *pCVar3;
   char *pcVar3;
   char *pcVar4;
-  CVector3i local_2c;
-  CVector3i local_20;
+  CVector3f local_2c;
+  CVector3f local_20;
   
   if (this_ptr->is_visible == 0) {
     return 0;
@@ -30,10 +30,10 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_005e98b0(CCryptVe
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,&(this_ptr->base).location.position);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,(CVector3i *)&(this_ptr->base).orient.vec,(CVector3i *)0x0);
-  local_20.x = 0;
-  local_20.z = 0;
-  local_20.y = (int)this_ptr->spin_angle;
+            (g_CDemonRendererPtr2,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
+  local_20.x = 0.0f;
+  local_20.z = 0.0f;
+  local_20.y = this_ptr->spin_angle;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,&local_20,&local_2c);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);

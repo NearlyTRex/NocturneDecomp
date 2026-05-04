@@ -152,27 +152,27 @@ section .text
     NOP                                 ; 0057aa08
     LEA EAX,[EBX + 0x8]                 ; 0057aa09 | g_CSlewInstance.position.z
     MOV EAX,dword ptr [EAX]             ; 0057aa0c | g_CSlewInstance.position.z
-    LEA ESI,[EBX + 0xc]                 ; 0057aa0e | g_CSlewInstance.pitch
+    LEA ESI,[EBX + 0xc]                 ; 0057aa0e | g_CSlewInstance.orientation
     MOV dword ptr [EBP + -0x24],EAX     ; 0057aa11
     NOP                                 ; 0057aa14
     NOP                                 ; 0057aa15
     NOP                                 ; 0057aa16
     NOP                                 ; 0057aa17
-    MOV EAX,dword ptr [ESI]             ; 0057aa18 | g_CSlewInstance.pitch
+    MOV EAX,dword ptr [ESI]             ; 0057aa18 | g_CSlewInstance.orientation
     MOV dword ptr [EBP + -0x20],EAX     ; 0057aa1a
     NOP                                 ; 0057aa1d
     NOP                                 ; 0057aa1e
     NOP                                 ; 0057aa1f
     NOP                                 ; 0057aa20
-    LEA EAX,[ESI + 0x4]                 ; 0057aa21 | g_CSlewInstance.yaw
-    MOV EAX,dword ptr [EAX]             ; 0057aa24 | g_CSlewInstance.yaw
+    LEA EAX,[ESI + 0x4]                 ; 0057aa21 | g_CSlewInstance.orientation+4
+    MOV EAX,dword ptr [EAX]             ; 0057aa24 | g_CSlewInstance.orientation+4
     MOV dword ptr [EBP + -0x1c],EAX     ; 0057aa26
     NOP                                 ; 0057aa29
     NOP                                 ; 0057aa2a
     NOP                                 ; 0057aa2b
     NOP                                 ; 0057aa2c
-    LEA EAX,[ESI + 0x8]                 ; 0057aa2d | g_CSlewInstance.roll
-    MOV EAX,dword ptr [EAX]             ; 0057aa30 | g_CSlewInstance.roll
+    LEA EAX,[ESI + 0x8]                 ; 0057aa2d | g_CSlewInstance.orientation+8
+    MOV EAX,dword ptr [EAX]             ; 0057aa30 | g_CSlewInstance.orientation+8
     MOV dword ptr [EBP + -0x18],EAX     ; 0057aa32
     NOP                                 ; 0057aa35
     NOP                                 ; 0057aa36
@@ -200,8 +200,8 @@ section .text
     FSTP float ptr [0x032758e8]         ; 0057aa6c | g_CDemonCameraInstance.base.position
     MOV EAX,[0x00681ab8]                ; 0057aa72 | g_CSlewPtr
         ;   Label: LAB_0057aa72
-    ADD EAX,0xc                         ; 0057aa77 | g_CSlewInstance.pitch
-    PUSH EAX                            ; 0057aa7a | g_CSlewInstance.pitch
+    ADD EAX,0xc                         ; 0057aa77 | g_CSlewInstance.orientation
+    PUSH EAX                            ; 0057aa7a | g_CSlewInstance.orientation
     PUSH 0x32758f4                      ; 0057aa7b | g_CDemonCameraInstance.base.rotation_matrix.m[0].x
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 0057aa80
         ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
@@ -352,13 +352,13 @@ section .text
     ADD ESP,0xc                         ; 0057abdd
     MOV EAX,[0x00681ab8]                ; 0057abe0 | g_CSlewPtr
     SUB ESP,0x8                         ; 0057abe5
-    FLD float ptr [EAX + 0x10]          ; 0057abe8 | g_CSlewInstance.yaw
+    FLD float ptr [EAX + 0x10]          ; 0057abe8 | g_CSlewInstance.orientation+4
     FSTP double ptr [ESP]               ; 0057abeb
     SUB ESP,0x8                         ; 0057abee
-    FLD float ptr [EAX + 0x14]          ; 0057abf1 | g_CSlewInstance.roll
+    FLD float ptr [EAX + 0x14]          ; 0057abf1 | g_CSlewInstance.orientation+8
     FSTP double ptr [ESP]               ; 0057abf4
     SUB ESP,0x8                         ; 0057abf7
-    FLD float ptr [EAX + 0xc]           ; 0057abfa | g_CSlewInstance.pitch
+    FLD float ptr [EAX + 0xc]           ; 0057abfa | g_CSlewInstance.orientation
     FSTP double ptr [ESP]               ; 0057abfd
     SUB ESP,0x8                         ; 0057ac00
     FLD float ptr [EAX + 0x8]           ; 0057ac03 | g_CSlewInstance.position.z
@@ -499,13 +499,13 @@ section .text
     SAHF                                ; 0057ad64
     JNZ 0x0057aafd                      ; 0057ad65
         ;   XREF to: 0057aafd (CONDITIONAL_JUMP)  ; LAB_0057aafd
-    LEA ESI,[EBX + 0xc]                 ; 0057ad6b | g_CSlewInstance.pitch
+    LEA ESI,[EBX + 0xc]                 ; 0057ad6b | g_CSlewInstance.orientation
     FLD float ptr [EBP + -0x20]         ; 0057ad6e
     NOP                                 ; 0057ad71
     NOP                                 ; 0057ad72
     NOP                                 ; 0057ad73
     NOP                                 ; 0057ad74
-    FCOMP float ptr [ESI]               ; 0057ad75 | g_CSlewInstance.pitch
+    FCOMP float ptr [ESI]               ; 0057ad75 | g_CSlewInstance.orientation
     FNSTSW AX                           ; 0057ad77
     SAHF                                ; 0057ad79
     JNZ 0x0057aafd                      ; 0057ad7a
@@ -515,7 +515,7 @@ section .text
     NOP                                 ; 0057ad84
     NOP                                 ; 0057ad85
     NOP                                 ; 0057ad86
-    FCOMP float ptr [ESI + 0x4]         ; 0057ad87 | g_CSlewInstance.yaw
+    FCOMP float ptr [ESI + 0x4]         ; 0057ad87 | g_CSlewInstance.orientation+4
     FNSTSW AX                           ; 0057ad8a
     SAHF                                ; 0057ad8c
     JNZ 0x0057aafd                      ; 0057ad8d
@@ -525,7 +525,7 @@ section .text
     NOP                                 ; 0057ad97
     NOP                                 ; 0057ad98
     NOP                                 ; 0057ad99
-    FCOMP float ptr [ESI + 0x8]         ; 0057ad9a | g_CSlewInstance.roll
+    FCOMP float ptr [ESI + 0x8]         ; 0057ad9a | g_CSlewInstance.orientation+8
     FNSTSW AX                           ; 0057ad9d
     SAHF                                ; 0057ad9f
     JNZ 0x0057aafd                      ; 0057ada0

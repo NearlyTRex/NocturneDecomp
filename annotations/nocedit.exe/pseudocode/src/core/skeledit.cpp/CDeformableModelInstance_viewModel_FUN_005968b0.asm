@@ -70,8 +70,8 @@
 ; float            Stack[-0xe8]:4  local_e8
 ; float            Stack[-0xe4]:4  local_e4
 ; float            Stack[-0xe0]:4  local_e0
-; CVector3i        Stack[-0xdc]:12  local_dc
-; CVector3i        Stack[-0xd0]:12  local_d0
+; CVector3f        Stack[-0xdc]:12  local_dc
+; CVector3f        Stack[-0xd0]:12  local_d0
 ; float *          Stack[-0xc4]:4  local_c4
 ; CDeformableModel * Stack[-0xc0]:4  local_c0
 ; CSkeleton *      Stack[-0xbc]:4  local_bc
@@ -1155,7 +1155,7 @@ section .text
     PUSH EDX                            ; 005973de | g_CDemonRendererInstance
     FSTP float ptr [EBP + -0x46]        ; 005973df
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 005973e2
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     LEA EAX,[EBP + 0xffffff3a]          ; 005973e7
     MOV EDX,dword ptr [0x006703ec]      ; 005973ed | g_CDemonRendererPtr2
     ADD ESP,0xc                         ; 005973f3
@@ -1602,7 +1602,7 @@ section .text
     MOV EAX,[0x006703ec]                ; 00597942 | g_CDemonRendererPtr2
     PUSH EAX                            ; 00597947 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 00597948
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 0059794d
     PUSH -0x1                           ; 00597950
     PUSH 0x0                            ; 00597952

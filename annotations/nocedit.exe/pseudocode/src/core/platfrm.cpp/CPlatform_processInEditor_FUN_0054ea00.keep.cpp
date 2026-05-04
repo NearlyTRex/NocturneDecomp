@@ -96,10 +96,10 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
         }
         pCVar4 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
                            (&CStack_34,&this_ptr->orig_orient);
-        if ((CVector3f *)&auStack_104.pitch != pCVar4) {
-          auStack_104.pitch = pCVar4->x;
-          auStack_104.yaw = pCVar4->y;
-          auStack_104.roll = pCVar4->z;
+        if (&auStack_104.orientation.vec != pCVar4) {
+          auStack_104.orientation.vec.x = pCVar4->x;
+          auStack_104.orientation.vec.y = pCVar4->y;
+          auStack_104.orientation.vec.z = pCVar4->z;
         }
         core_slew_cpp_CSlew_processInput_FUN_005a20b0(&auStack_104);
         if ((CSlew *)&this_ptr->start_pos != &auStack_104) {
@@ -107,7 +107,7 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
           (this_ptr->start_pos).y = auStack_104.position.y;
           (this_ptr->start_pos).z = auStack_104.position.z;
         }
-        core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)&auStack_104.pitch,&CStack_bc);
+        core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&auStack_104.orientation.vec,&CStack_bc);
         (this_ptr->orig_orient).w = CStack_bc.w;
         (this_ptr->orig_orient).x = CStack_bc.x;
         (this_ptr->orig_orient).y = CStack_bc.y;
@@ -121,10 +121,10 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
         }
         pCVar4 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
                            (&CStack_7c,&this_ptr->end_orient);
-        if ((CVector3f *)&auStack_e8.pitch != pCVar4) {
-          auStack_e8.pitch = pCVar4->x;
-          auStack_e8.yaw = pCVar4->y;
-          auStack_e8.roll = pCVar4->z;
+        if (&auStack_e8.orientation.vec != pCVar4) {
+          auStack_e8.orientation.vec.x = pCVar4->x;
+          auStack_e8.orientation.vec.y = pCVar4->y;
+          auStack_e8.orientation.vec.z = pCVar4->z;
         }
         core_slew_cpp_CSlew_processInput_FUN_005a20b0(&auStack_e8);
         if ((CSlew *)&this_ptr->end_pos != &auStack_e8) {
@@ -132,7 +132,7 @@ void __cdecl core_platfrm_cpp_CPlatform_processInEditor_FUN_0054ea00(CPlatform *
           (this_ptr->end_pos).y = auStack_e8.position.y;
           (this_ptr->end_pos).z = auStack_e8.position.z;
         }
-        core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CVector3f *)&auStack_e8.pitch,&CStack_ac);
+        core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&auStack_e8.orientation.vec,&CStack_ac);
         (this_ptr->end_orient).w = CStack_ac.w;
         (this_ptr->end_orient).x = CStack_ac.x;
         (this_ptr->end_orient).y = CStack_ac.y;

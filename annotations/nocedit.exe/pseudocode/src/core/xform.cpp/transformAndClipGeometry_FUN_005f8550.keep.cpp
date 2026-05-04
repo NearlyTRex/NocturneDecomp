@@ -27,14 +27,6 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
   byte bVar3;
   uint uVar13;
   uint uVar4;
-  SRenderVertex *extraout_EAX;
-  SRenderVertex *extraout_EAX_00;
-  SRenderVertex *extraout_EAX_01;
-  SRenderVertex *extraout_EAX_02;
-  SRenderVertex *extraout_EAX_03;
-  SRenderVertex *extraout_EAX_04;
-  SRenderVertex *extraout_EAX_05;
-  SRenderVertex *extraout_EAX_06;
   int *piVar15;
   SRenderVertex *pSVar16;
   SRenderVertex *pSVar5;
@@ -50,7 +42,7 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
   int local_14;
   int iVar11;
   
-  local_24 = (SRenderVertex *)0x0;
+  iVar11 = 0;
   iVar18 = 0;
   piVar15 = vertex_indices;
   if (0 < vertex_count) {
@@ -58,21 +50,21 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
       if ((g_RenderVertexBuffer[*piVar15].projected_vertex.screen_x & 0x80000000U) != 0) {
         iVar18 = iVar18 + 1;
       }
-      local_24 = (SRenderVertex *)((int)local_24 + 1);
+      iVar11 = iVar11 + 1;
       piVar15 = piVar15 + 1;
-    } while ((int)local_24 < vertex_count);
+    } while (iVar11 < vertex_count);
   }
   if (iVar18 == 0) {
     g_ClippedVertexCount = vertex_count;
     if (0 < vertex_count) {
       pSVar16 = g_ClippedVertexBuffer;
-      local_24 = (SRenderVertex *)0x0;
+      iVar11 = 0;
       do {
         memcpy(pSVar16, g_RenderVertexBuffer + *vertex_indices, 0x30);
         vertex_indices = vertex_indices + 1;
-        local_24 = (SRenderVertex *)((int)local_24 + 1);
+        iVar11 = iVar11 + 1;
         pSVar16 = pSVar16 + 1;
-      } while ((int)local_24 < vertex_count);
+      } while (iVar11 < vertex_count);
     }
   }
   else {
@@ -118,7 +110,6 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
           core_xform_cpp_clipInterpolateRightPlane_FUN_005f7bc0
                     (pSVar7,pSVar5,g_ClipVertexBufferStage2 + g_ClipVertexCountStage2);
           g_ClipVertexCountStage2 = g_ClipVertexCountStage2 + 1;
-          local_24 = extraout_EAX;
           break;
         case 0x2:
           memcpy(g_ClipVertexBufferStage2 + g_ClipVertexCountStage2, pSVar5, 0x30);
@@ -126,7 +117,6 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
           core_xform_cpp_clipInterpolateRightPlane_FUN_005f7bc0
                     (pSVar5,pSVar7,g_ClipVertexBufferStage2 + g_ClipVertexCountStage2);
           g_ClipVertexCountStage2 = g_ClipVertexCountStage2 + 1;
-          local_24 = extraout_EAX_00;
         }
         local_20 = local_20 + 1;
         pSVar5 = pSVar5 + 1;
@@ -159,7 +149,6 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
             core_xform_cpp_clipInterpolateLeftPlane_FUN_005f7c80
                       (pSVar7,pSVar5,g_ClipVertexBufferStage3 + g_ClipVertexCountStage3);
             g_ClipVertexCountStage3 = g_ClipVertexCountStage3 + 1;
-            local_24 = extraout_EAX_01;
             break;
           case 0x2:
             memcpy(g_ClipVertexBufferStage3 + g_ClipVertexCountStage3, pSVar5, 0x30);
@@ -167,7 +156,6 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
             core_xform_cpp_clipInterpolateLeftPlane_FUN_005f7c80
                       (pSVar5,pSVar7,g_ClipVertexBufferStage3 + g_ClipVertexCountStage3);
             g_ClipVertexCountStage3 = g_ClipVertexCountStage3 + 1;
-            local_24 = extraout_EAX_02;
           }
           local_18 = local_18 + 1;
           pSVar5 = pSVar5 + 1;
@@ -199,7 +187,6 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
                         (g_ClipVertexBufferStage3 + uVar4,pSVar5,
                          g_ClipVertexBufferStage4 + g_ClipVertexCountStage4);
               g_ClipVertexCountStage4 = g_ClipVertexCountStage4 + 1;
-              local_24 = extraout_EAX_03;
               break;
             case 0x2:
               memcpy(g_ClipVertexBufferStage4 + g_ClipVertexCountStage4, pSVar5, 0x30);
@@ -208,7 +195,6 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
                         (pSVar5,g_ClipVertexBufferStage3 + uVar4,
                          g_ClipVertexBufferStage4 + g_ClipVertexCountStage4);
               g_ClipVertexCountStage4 = g_ClipVertexCountStage4 + 1;
-              local_24 = extraout_EAX_04;
             }
             local_14 = local_14 + 1;
             pSVar5 = pSVar5 + 1;
@@ -240,7 +226,6 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
                           (g_ClipVertexBufferStage4 + uVar4,pSVar5,
                            g_ClippedVertexBuffer + g_ClippedVertexCount);
                 g_ClippedVertexCount = g_ClippedVertexCount + 1;
-                local_24 = extraout_EAX_05;
                 break;
               case 0x2:
                 memcpy(g_ClippedVertexBuffer + g_ClippedVertexCount, pSVar5, 0x30);
@@ -249,7 +234,6 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
                           (pSVar5,g_ClipVertexBufferStage4 + uVar4,
                            g_ClippedVertexBuffer + g_ClippedVertexCount);
                 g_ClippedVertexCount = g_ClippedVertexCount + 1;
-                local_24 = extraout_EAX_06;
               }
               local_1c = local_1c + 1;
               pSVar5 = pSVar5 + 1;

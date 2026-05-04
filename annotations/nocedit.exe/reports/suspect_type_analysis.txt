@@ -4,25 +4,24 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1769 ( 45.5%)
-  unrolled_memcpy                  533 ( 13.7%)
-  unrolled_strcpy                  366 (  9.4%)
-  missing_cave_copy                217 (  5.6%)
-  shadow_pointer_walk              214 (  5.5%)
-  raw_address_constant             167 (  4.3%)
-  unrolled_strlen                   98 (  2.5%)
-  warning_inlined_function          83 (  2.1%)
-  bitcast_double_pair               69 (  1.8%)
+  pointer_cast                    1765 ( 46.3%)
+  unrolled_memcpy                  540 ( 14.2%)
+  unrolled_strcpy                  366 (  9.6%)
+  missing_cave_copy                209 (  5.5%)
+  shadow_pointer_walk              198 (  5.2%)
+  raw_address_constant             167 (  4.4%)
+  unrolled_strlen                   98 (  2.6%)
+  warning_inlined_function          83 (  2.2%)
   unrolled_strchr                   55 (  1.4%)
-  stack_alignment_array             46 (  1.2%)
-  warning_type_propagation          33 (  0.8%)
-  stack_param                       32 (  0.8%)
-  sub84_truncation                  29 (  0.7%)
+  bitcast_double_pair               50 (  1.3%)
+  stack_alignment_array             45 (  1.2%)
+  warning_type_propagation          33 (  0.9%)
+  stack_param                       30 (  0.8%)
   warning_unreachable               27 (  0.7%)
-  decompiler_intrinsic              27 (  0.7%)
-  self_copy_guard                   25 (  0.6%)
+  decompiler_intrinsic              26 (  0.7%)
+  self_copy_guard                   25 (  0.7%)
   negative_offset                   22 (  0.6%)
-  extra_output                      16 (  0.4%)
+  sub84_truncation                  15 (  0.4%)
   unnamed_param                      9 (  0.2%)
   unaffected_reg                     9 (  0.2%)
   unrolled_strcat                    8 (  0.2%)
@@ -38,7 +37,7 @@ SUSPECT TYPE COUNTS
   warning_noreturn                   1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (1769 occurrences)
+TYPE: pointer_cast (1765 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -347,8 +346,6 @@ Functions:
   core_weather.cpp_CWeather_renderParticles_FUN_005ef190
   core_weather.cpp_CWeather_setOriginAndRotation_FUN_005ef940
   core_weather.cpp_CWeather_update_FUN_005eeaf0
-  core_xform.cpp_inverseInPlace_FUN_005f6190
-  core_xform.cpp_transformAndClipGeometry_FUN_005f8550
   core_zombie.cpp_CZombie_processPickup_FUN_005fb530
   engine_2d.c_buildColorLookupTable_FUN_00402870
   engine_2d.c_drawCharacterHighlighted_FUN_00401b70
@@ -593,13 +590,13 @@ Functions:
   wincore_winrun.cpp_winMain_FUN_005f3680
 
 ====================================================================================================
-TYPE: unrolled_memcpy (533 occurrences)
+TYPE: unrolled_memcpy (540 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   216x  field-by-field struct copy
-   210x  MOVSD.REP
-   104x  for (...; != 0; ... + -1)
+   206x  MOVSD.REP
+   202x  field-by-field struct copy
+   129x  for (...; != 0; ... + -1)
      3x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
 
 Functions:
@@ -669,7 +666,6 @@ Functions:
   core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910
   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80
   core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0
-  core_setutil.cpp_CSlew_copy_FUN_00585240
   core_skeledit.cpp_CBoneStructure_applyMatrixArray_FUN_0058af40
   core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80
   core_skeledit.cpp_CBoneStructure_computeWorldMatrices_FUN_0058ad30
@@ -694,7 +690,6 @@ Functions:
   core_trigger.cpp_CTrigger_renderTransparent_FUN_005e00d0
   core_turret.cpp_CTurret_process_FUN_005e2430
   core_vampboss.cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005e6b80
-  core_xform.cpp_buildMirrorTransform_FUN_005f7000
   core_xform.cpp_buildRotationX_FUN_005f6c40
   core_xform.cpp_buildRotationY_FUN_005f6cc0
   core_xform.cpp_buildRotationZ_FUN_005f6d40
@@ -704,14 +699,6 @@ Functions:
   core_xform.cpp_buildXFlipMatrix_FUN_005f6ee0
   core_xform.cpp_buildYFlipMatrix_FUN_005f6f40
   core_xform.cpp_buildZFlipMatrix_FUN_005f6fa0
-  core_xform.cpp_eulerToQuaternionIndirect_FUN_005f7b70
-  core_xform.cpp_eulerToQuaternion_FUN_005f7b20
-  core_xform.cpp_inverseInPlace_FUN_005f6190
-  core_xform.cpp_multiplyMatrix3x4InPlace_FUN_005f50c0
-  core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10
-  core_xform.cpp_multiplyQuaternionInPlace_FUN_005f7700
-  core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0
-  core_xform.cpp_slerpQuaternion_FUN_005f77e0
   core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0
   engine_3d.c_clipAndDrawLine2D_FUN_00407d70
   engine_3d.c_clipAndDrawLine3D_FUN_00408070
@@ -761,7 +748,6 @@ Functions:
   shape_superopt.cpp_CComplexPolygon_computeWindingNormal_FUN_005cbb40
   shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
   shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
-  shape_superopt.cpp_CComplexPolygon_splitByDimensions_FUN_005c9500
   shape_superopt.cpp_CComplexPolygon_splitEdgesByPlane_FUN_005c9aa0
   shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0
   shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0
@@ -980,7 +966,7 @@ Functions:
   sound_sndwav.cpp_enumerateWavOutDevice_FUN_005b1470
 
 ====================================================================================================
-TYPE: missing_cave_copy (217 occurrences)
+TYPE: missing_cave_copy (209 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -990,10 +976,6 @@ Unique patterns:
      2x  CQuaternion4f CStack_94; ... f(&CStack_94, ...);
      2x  CQuaternion4f local_a4; ... f(&local_a4, ...);
      2x  CQuaternion4f local_94; ... f(&local_94, ...);
-     2x  CMatrix3x4f local_6c; ... f(&local_6c, ...);
-     2x  CQuaternion4f local_70; ... f(&local_70, ...);
-     2x  CQuaternion4f local_60; ... f(&local_60, ...);
-     2x  CQuaternion4f local_50; ... f(&local_50, ...);
      2x  CQuaternion4f local_14c; ... f(&local_14c, ...);
      2x  CQuaternion4f local_11c; ... f(&local_11c, ...);
      2x  CQuaternion4f local_10c; ... f(&local_10c, ...);
@@ -1004,6 +986,10 @@ Unique patterns:
      2x  CQuaternion4f local_4c; ... f(&local_4c, ...);
      2x  CMatrix3x4f local_a8; ... f(&local_a8, ...);
      2x  CMatrix3x4f local_1cc; ... f(&local_1cc, ...);
+     2x  CMatrix3x4f local_19c; ... f(&local_19c, ...);
+     2x  CMatrix3x4f local_16c; ... f(&local_16c, ...);
+     2x  CMatrix3x4f local_ac; ... f(&local_ac, ...);
+     2x  CMatrix3x4f CStack_164; ... f(&CStack_164, ...);
 
 Functions:
   core_baron.cpp_CBaron_process_FUN_00412e80
@@ -1038,16 +1024,14 @@ Functions:
   core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
   core_tentacle.cpp_CTentacle_process_FUN_005db050
   core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
-  core_xform.cpp_invertAndGetTranslation_FUN_005f6140
-  core_xform.cpp_lerpMatrix3x4_FUN_005f7140
 
 ====================================================================================================
-TYPE: shadow_pointer_walk (214 occurrences)
+TYPE: shadow_pointer_walk (198 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    18x  pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD
-    18x  pSVar3 = (T *)&(pSVar3->FIELD).SUBFIELD
+    16x  pSVar3 = (T *)&(pSVar3->FIELD).SUBFIELD
+    14x  pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD
     13x  pCVar4 = (T *)pCVar4->ARRAY
     13x  pCVar2 = (T *)pCVar2->ARRAY
     11x  pCVar1 = (T *)pCVar1->ARRAY
@@ -1057,15 +1041,15 @@ Unique patterns:
      6x  pCVar13 = (T *)&(pCVar13->FIELD).SUBFIELD
      5x  pSVar4 = (T *)&(pSVar4->FIELD).SUBFIELD
      5x  this_ptr = (T *)&(this_ptr->FIELD).SUBFIELD
-     5x  pSVar7 = (T *)&(pSVar7->FIELD).SUBFIELD
      5x  pSVar4 = (T *)pSVar4->ARRAY
      4x  pCVar10 = (T *)&(pCVar10->FIELD).SUBFIELD
-     4x  pSVar6 = (T *)&(pSVar6->FIELD).SUBFIELD
-     3x  pSVar8 = (T *)&(pSVar8->FIELD).SUBFIELD
      3x  pCVar5 = (T *)pCVar5->ARRAY
      3x  pCVar6 = (T *)pCVar6->ARRAY
      3x  pCVar15 = (T *)&(pCVar15->FIELD).SUBFIELD
      3x  pSVar5 = (T *)pSVar5->ARRAY
+     3x  pCVar2 = (T *)&(pCVar2->FIELD).SUBFIELD
+     3x  pSVar3 = (T *)pSVar3->ARRAY
+     2x  local_14 = (T *)local_14->ARRAY
 
 Functions:
   core_actor.cpp_archivePartStatus_FUN_0040bae0
@@ -1145,10 +1129,6 @@ Functions:
   core_texlist.cpp_CTextureList_load_FUN_005dbe00
   core_texlist.cpp_CTextureList_save_FUN_005dc0d0
   core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
-  core_xform.cpp_clipPolygonStage1_FUN_005f7ed0
-  core_xform.cpp_clipPolygonStage2_FUN_005f8040
-  core_xform.cpp_clipPolygonStage3_FUN_005f81c0
-  core_xform.cpp_clipPolygonStage4_FUN_005f8330
   engine_3d.c_renderOverlayTextureEnable_FUN_00404020
   engine_3d.c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_00407720
   engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470
@@ -1426,30 +1406,6 @@ Functions:
   sound_sndwav.cpp_CWavOutDevice_setMode_FUN_005b0a30
 
 ====================================================================================================
-TYPE: bitcast_double_pair (69 occurrences)
-====================================================================================================
-
-Unique patterns:
-    69x  __BITCAST_DOUBLE(CONCAT44(
-
-Functions:
-  core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
-  core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
-  core_dmodel.cpp_safeAcos_FUN_0047b170
-  core_menu.cpp_configureSoundOptions_FUN_00511e50
-  core_script.cpp_CScript_step_FUN_0055a810
-  core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-  core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0
-  core_xform.cpp_matrixToEulerAngles_FUN_005f5690
-  shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80
-  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-  shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
-  shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
-  shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0
-  shape_superopt.cpp_CPoly_scale_FUN_005cc7c0
-  shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
-
-====================================================================================================
 TYPE: unrolled_strchr (55 occurrences)
 ====================================================================================================
 
@@ -1486,7 +1442,29 @@ Functions:
   sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20
 
 ====================================================================================================
-TYPE: stack_alignment_array (46 occurrences)
+TYPE: bitcast_double_pair (50 occurrences)
+====================================================================================================
+
+Unique patterns:
+    50x  __BITCAST_DOUBLE(CONCAT44(
+
+Functions:
+  core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
+  core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
+  core_dmodel.cpp_safeAcos_FUN_0047b170
+  core_menu.cpp_configureSoundOptions_FUN_00511e50
+  core_script.cpp_CScript_step_FUN_0055a810
+  core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+  shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+  shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
+  shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
+  shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0
+  shape_superopt.cpp_CPoly_scale_FUN_005cc7c0
+  shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
+
+====================================================================================================
+TYPE: stack_alignment_array (45 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1496,7 +1474,6 @@ Unique patterns:
      3x  aiStackY_1018
      3x  aiStackY_1028
      3x  afStackY_1000
-     2x  afStackY_17f8
      1x  aiStackY_1038
      1x  aEStackY_208c
      1x  auStackY_1000
@@ -1508,6 +1485,7 @@ Unique patterns:
      1x  aiStackY_1064
      1x  aiStackY_10d4
      1x  aiStackY_1044
+     1x  afStackY_17f8
      1x  afStackY_1938
      1x  afStackY_1824
 
@@ -1549,7 +1527,6 @@ Functions:
   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_0054cab0
   core_scat.cpp_CScat_blendAimBones_FUN_005584a0
   core_setedit.cpp_CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0
-  core_xform.cpp_multiplyQuaternionInPlace_FUN_005f7700
   engine_3d.c_renderPolygonPerspectiveNormalized_FUN_004055b0
   engine_3d.c_renderPolygonUVTextureEnableNormalized_FUN_00405350
   engine_3d.c_renderPolygonUVTextureNormalizedLit_FUN_00405430
@@ -1602,7 +1579,7 @@ Functions:
   engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
 
 ====================================================================================================
-TYPE: stack_param (32 occurrences)
+TYPE: stack_param (30 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1610,36 +1587,15 @@ Unique patterns:
      8x  in_stack_fffff2fc
      5x  in_stack_ffffff18
      4x  in_stack_00000008
-     3x  in_stack_0000000c
      2x  in_stack_0000002c
+     1x  in_stack_0000000c
 
 Functions:
   core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0
   core_game.cpp_dampControlAxis_FUN_004dc370
   core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
   core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850
-  core_vehicle.cpp_CVehicle_renderOpaque_FUN_005e88c0
   engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440
-
-====================================================================================================
-TYPE: sub84_truncation (29 occurrences)
-====================================================================================================
-
-Unique patterns:
-    29x  SUB84(
-
-Functions:
-  core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
-  core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
-  core_menu.cpp_configureSoundOptions_FUN_00511e50
-  core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0
-  core_xform.cpp_matrixToEulerAngles_FUN_005f5690
-  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-  shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300
-  shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
-  shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
-  shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
-  shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
 
 ====================================================================================================
 TYPE: warning_unreachable (27 occurrences)
@@ -1663,13 +1619,13 @@ Functions:
   engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (27 occurrences)
+TYPE: decompiler_intrinsic (26 occurrences)
 ====================================================================================================
 
 Unique patterns:
     17x  ROUND
      7x  ABS
-     2x  SUB84
+     1x  SQRT
      1x  ADJ
 
 Functions:
@@ -1678,7 +1634,7 @@ Functions:
   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
   core_inv.cpp_CInventory_renderAllItems_FUN_00500690
   core_ladder.cpp_CLadder_renderOpaque_FUN_00502620
-  core_xform.cpp_matrixToEulerAngles_FUN_005f5690
+  core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0
   shape_design.c_writePolygonModel_FUN_0045a320
   shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0
   shape_superopt.cpp_CComplexPolygon_validateSubChainVisibility_FUN_005cbf90
@@ -1744,21 +1700,22 @@ Functions:
   sound_sndwav.cpp_enumerateWavOutDevice_FUN_005b1470
 
 ====================================================================================================
-TYPE: extra_output (16 occurrences)
+TYPE: sub84_truncation (15 occurrences)
 ====================================================================================================
 
 Unique patterns:
-     2x  extraout_EAX
-     2x  extraout_EAX_00
-     2x  extraout_EAX_01
-     2x  extraout_EAX_02
-     2x  extraout_EAX_03
-     2x  extraout_EAX_04
-     2x  extraout_EAX_05
-     2x  extraout_EAX_06
+    15x  SUB84(
 
 Functions:
-  core_xform.cpp_transformAndClipGeometry_FUN_005f8550
+  core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
+  core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
+  core_menu.cpp_configureSoundOptions_FUN_00511e50
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+  shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300
+  shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
+  shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70
+  shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50
+  shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60
 
 ====================================================================================================
 TYPE: unnamed_param (9 occurrences)

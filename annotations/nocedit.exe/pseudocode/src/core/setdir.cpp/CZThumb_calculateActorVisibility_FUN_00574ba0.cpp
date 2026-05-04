@@ -17,7 +17,7 @@ float __cdecl core_setdir_cpp_CZThumb_calculateActorVisibility_FUN_00574ba0(CZTh
   int iVar8;
   float local_50;
   int aiStack_4c [6];
-  CVector3i local_34;
+  CVector3f local_34;
   uint local_24;
   int local_20;
   uint local_1c;
@@ -32,11 +32,11 @@ float __cdecl core_setdir_cpp_CZThumb_calculateActorVisibility_FUN_00574ba0(CZTh
   local_24 = 0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,&(actor->location).position);
-  local_34.x = (int)(actor->orient).vec.x;
-  local_34.z = (int)(actor->orient).vec.z;
-  local_34.y = (int)(this_ptr->look_at_position).y;
+  local_34.x = (actor->orient).vec.x;
+  local_34.z = (actor->orient).vec.z;
+  local_34.y = (this_ptr->look_at_position).y;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,&local_34,(CVector3i *)0x0);
+            (g_CDemonRendererPtr2,&local_34,(CVector3f *)0x0);
   iVar7 = 0;
   do {
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c

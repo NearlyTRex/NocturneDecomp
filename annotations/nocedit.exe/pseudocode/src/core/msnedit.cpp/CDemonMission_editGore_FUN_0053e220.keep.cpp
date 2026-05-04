@@ -91,10 +91,10 @@ void __cdecl core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission 
     (actor_00->base).location.position.x = local_bc.position.x;
     (actor_00->base).location.position.y = local_bc.position.y;
     (actor_00->base).location.position.z = local_bc.position.z;
-    if ((UOrientationVector *)&local_bc.pitch != pUVar5) {
-      (pUVar5->vec).x = local_bc.pitch;
-      (actor_00->base).orient.vec.y = local_bc.yaw;
-      (actor_00->base).orient.vec.z = local_bc.roll;
+    if (&local_bc.orientation != pUVar5) {
+      (pUVar5->vec).x = local_bc.orientation.vec.x;
+      (actor_00->base).orient.vec.y = local_bc.orientation.vec.y;
+      (actor_00->base).orient.vec.z = local_bc.orientation.vec.z;
     }
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&actor_00->base);
     core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0(g_CDemonSetPtr,&actor_00->base,0)

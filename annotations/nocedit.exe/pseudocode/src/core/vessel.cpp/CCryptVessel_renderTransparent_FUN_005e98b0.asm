@@ -6,7 +6,7 @@
 ; Parameters:
 ; CCryptVessel *   Stack[0x4]:4   this_ptr
 ; Local Variables:
-; CVector3i        Stack[-0x20]:12  local_20
+; CVector3f        Stack[-0x20]:12  local_20
 ; uint             Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
@@ -62,7 +62,7 @@ section .text
     MOV EDI,dword ptr [0x006703ec]      ; 005e98ef | g_CDemonRendererPtr2
     PUSH EDI                            ; 005e98f5 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 005e98f6
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     XOR EAX,EAX                         ; 005e98fb
     MOV dword ptr [EBP + -0x10],EAX     ; 005e98fd
     MOV dword ptr [EBP + -0x8],EAX      ; 005e9900
@@ -82,7 +82,7 @@ section .text
     MOV dword ptr [EBP + -0x18],ESI     ; 005e9929
     MOV dword ptr [EBP + -0x14],EDX     ; 005e992c
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 005e992f
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 005e9934
     PUSH 0xffff                         ; 005e9937
     MOV EDX,dword ptr [0x006703ec]      ; 005e993c | g_CDemonRendererPtr2

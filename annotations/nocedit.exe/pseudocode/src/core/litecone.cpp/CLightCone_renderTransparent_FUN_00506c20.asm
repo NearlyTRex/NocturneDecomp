@@ -76,7 +76,7 @@ section .text
     ADD EBX,0x20                        ; 00506c92
     PUSH EBX                            ; 00506c95
     CALL core_dlight.cpp_renderConeLightGeometry_FUN_004760d0 ; 00506c96
-        ;   XREF to: 004760d0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_renderConeLightGeometry_FUN_004760d0(CVector3f * position, CVector3i * rotation, float fov, float falloff)
+        ;   XREF to: 004760d0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_renderConeLightGeometry_FUN_004760d0(CVector3f * position, CVector3f * rotation, float fov, float falloff)
     ADD ESP,0x10                        ; 00506c9b
     MOV EAX,EDI                         ; 00506c9e
         ;   Label: LAB_00506c9e

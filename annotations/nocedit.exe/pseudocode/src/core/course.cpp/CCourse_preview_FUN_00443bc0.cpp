@@ -100,16 +100,16 @@ void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKey
         local_cc.position.y = local_80.y;
         local_cc.position.z = local_80.z;
       }
-      if ((CVector3f *)&local_cc.pitch != &local_98) {
-        local_cc.pitch = local_98.x;
-        local_cc.yaw = local_98.y;
-        local_cc.roll = local_98.z;
+      if ((CVector3f *)&local_cc.orientation != &local_98) {
+        local_cc.orientation.vec.x = local_98.x;
+        local_cc.orientation.vec.y = local_98.y;
+        local_cc.orientation.vec.z = local_98.z;
       }
     }
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
     engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0
-              (g_CDemonRendererPtr2,(CVector3f *)&local_cc.pitch);
+              (g_CDemonRendererPtr2,&local_cc.orientation.vec);
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
               (g_CDemonRendererPtr2,&local_cc.position);
     if (bVar3) {
@@ -219,7 +219,7 @@ void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKey
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                 (g_CDemonRendererPtr2,&local_80);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                (g_CDemonRendererPtr2,(CVector3i *)&local_98,(CVector3i *)0x0);
+                (g_CDemonRendererPtr2,&local_98,(CVector3f *)0x0);
       core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
                 (model_ptr,0,(CKeyFramedModelInstance *)0x0,-1);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);

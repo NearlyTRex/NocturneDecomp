@@ -17,7 +17,7 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_004c5e90(CTrail *this_ptr)
   float local_40;
   CVector3i local_38;
   CVector3i local_2c;
-  CVector3i local_20;
+  CVector3f local_20;
   CVector3i local_14;
   
   if (this_ptr->lifetime <= 0.0) {
@@ -42,7 +42,7 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_004c5e90(CTrail *this_ptr)
   engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
             (g_CDemonRendererPtr2,(float *)&local_20);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,&local_20,(CVector3i *)0x0);
+            (g_CDemonRendererPtr2,&local_20,(CVector3f *)0x0);
   fVar1 = this_ptr->size * this_ptr->current_alpha;
   local_2c.x = (int)ROUND(fVar1 * 256.0f);
   local_2c.y = (int)ROUND(fVar1 * 256.0f);

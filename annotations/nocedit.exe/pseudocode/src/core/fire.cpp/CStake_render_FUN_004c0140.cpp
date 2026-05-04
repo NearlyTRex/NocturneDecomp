@@ -18,7 +18,7 @@ void __cdecl core_fire_cpp_CStake_render_FUN_004c0140(CStake *this_ptr)
             (g_CDemonRendererPtr2,&(this_ptr->physics_box).position);
   orientation = &(this_ptr->physics_box).orientation;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,(CVector3i *)orientation,(CVector3i *)0x0);
+            (g_CDemonRendererPtr2,orientation,(CVector3f *)0x0);
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                      (&g_FireEffectFlamingStakeModel);
   local_24.min.x = (pCVar1->bounds_min).x;

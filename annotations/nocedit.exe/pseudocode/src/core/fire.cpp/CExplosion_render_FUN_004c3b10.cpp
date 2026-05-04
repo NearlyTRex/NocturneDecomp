@@ -14,7 +14,7 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_004c3b10(CExplosion *this_ptr)
   float fVar1;
   SMRGLPrimitiveQuadIndex local_8c;
   CVector3i local_64;
-  CVector3i local_58;
+  CVector3f local_58;
   CVector3i local_4c;
   CVector3i local_40;
   float local_34;
@@ -38,9 +38,9 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_004c3b10(CExplosion *this_ptr)
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,&this_ptr->position);
   engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
-            (g_CDemonRendererPtr2,(float *)&local_58);
+            (g_CDemonRendererPtr2,&local_58.x);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,&local_58,(CVector3i *)0x0);
+            (g_CDemonRendererPtr2,&local_58,(CVector3f *)0x0);
   local_10 = (int)ROUND(ROUND(this_ptr->scale * (float)148 * (float)0.00390625));
   local_14 = (int)ROUND(ROUND(-this_ptr->scale * 108.0f * (float)0.00390625));
   if (this_ptr->flip_flag != 0) {

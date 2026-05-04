@@ -29,7 +29,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
   CVector3i CStack_ac;
   CVector3i CStack_a0;
   CVector3i CStack_94;
-  CVector3i CStack_88;
+  CVector3f CStack_88;
   float fStack_7c;
   float fStack_78;
   float fStack_74;
@@ -41,7 +41,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
   float fStack_44;
   CVector3i CStack_40;
   CVector3i CStack_34;
-  CVector3i CStack_28;
+  CVector3f CStack_28;
   float fStack_1c;
   int iStack_18;
   int iStack_14;
@@ -180,11 +180,11 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
        (fVar1 = (this_ptr->flame_size).y, fVar5 = (float)2, this_ptr->is_visible != 0)
        ) {
       engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
-                (g_CDemonRendererPtr2,(float *)&CStack_88.y);
-      CStack_28.z = (int)((this_ptr->flame_size).y * (float)0.5);
-      CStack_28.y = 0;
+                (g_CDemonRendererPtr2,&CStack_88.y);
+      CStack_28.z = (this_ptr->flame_size).y * (float)0.5;
+      CStack_28.y = 0.0;
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                (g_CDemonRendererPtr2,(CVector3i *)&CStack_88.y,(CVector3i *)&CStack_28.y);
+                (g_CDemonRendererPtr2,(CVector3f *)&CStack_88.y,(CVector3f *)&CStack_28.y);
       fVar7 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.98,1.02);
       fVar7 = fVar7 * fVar1 * fVar5;
       CStack_40.x = 0;
@@ -204,7 +204,7 @@ int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004ca110(CFlame *this_pt
       fStack_44 = -fVar7;
       CStack_94.y = (int)ROUND(fStack_48 * 256.0f);
       CStack_94.z = (int)ROUND(fStack_44 * 256.0f);
-      CStack_88.x = (int)ROUND((float)CStack_40.x * 256.0f);
+      CStack_88.x = (float)(int)ROUND((float)CStack_40.x * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,
                  (CVector3i *)&CStack_94.y);

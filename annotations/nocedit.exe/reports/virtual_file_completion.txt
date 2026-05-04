@@ -6,7 +6,7 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 5488 (85.0%)
+Clean functions: 5507 (85.3%)
 Files at 100%: 91
 Files at 90%+: 121
 Files at 50%+: 213
@@ -79,7 +79,7 @@ FILES AT 100% (COMPLETE)
   core/shotgun.cpp: 10 functions, 414 lines
   core/shovel.cpp: 8 functions, 70 lines
   core/simbox.cpp: 15 functions, 319 lines
-  core/slew.cpp: 4 functions, 123 lines
+  core/slew.cpp: 4 functions, 125 lines
   core/smiley.cpp: 16 functions, 833 lines
   core/spike.cpp: 15 functions, 518 lines
   core/stone.cpp: 8 functions, 80 lines
@@ -127,6 +127,10 @@ FILES AT 90-99% (ALMOST COMPLETE)
    95.0% | core/tvbat.cpp
          19/20 clean, 1 remaining
            - core_tvbat.cpp_CTVBat_process_FUN_005e4210 (333 lines) [self_copy_guard]
+
+   95.0% | core/vehicle.cpp
+         19/20 clean, 1 remaining
+           - core_vehicle.cpp_CVehicle_getPropertyList_FUN_005e8ba0 (39 lines) [pointer_cast]
 
    94.7% | core/svetlana.cpp
          18/19 clean, 1 remaining
@@ -254,11 +258,6 @@ FILES AT 90-99% (ALMOST COMPLETE)
            - core_mission.cpp_CDemonMission_writeFile_FUN_00523600 (103 lines) [pointer_cast]
            - core_mission.cpp_CDemonMission_createFromSingleSet_FUN_005243a0 (23 lines) [unrolled_strcpy]
            - core_mission.cpp_CDemonMission_loadSet_FUN_00523fb0 (21 lines) [pointer_cast]
-
-   90.0% | core/vehicle.cpp
-         18/20 clean, 2 remaining
-           - core_vehicle.cpp_CVehicle_renderOpaque_FUN_005e88c0 (81 lines) [stack_param]
-           - core_vehicle.cpp_CVehicle_getPropertyList_FUN_005e8ba0 (39 lines) [pointer_cast]
 
    90.0% | core/vessel.cpp
          18/20 clean, 2 remaining
@@ -566,6 +565,19 @@ FILES AT 50-89%
            - core_dcube.cpp_CDemonCube_save_FUN_00457430 (44 lines) [pointer_cast]
            - core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0 (98 lines) [self_copy_guard]
            - core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650 (108 lines) [pointer_cast]
+   82.0% | core/xform.cpp
+         50/61 clean, 11 remaining
+           - core_xform.cpp_buildScaleMatrix_FUN_005f6e80 (22 lines) [unrolled_memcpy]
+           - core_xform.cpp_buildRotationY_FUN_005f6cc0 (31 lines) [unrolled_memcpy]
+           - core_xform.cpp_buildRotationX_FUN_005f6c40 (30 lines) [param_count_too_few, unrolled_memcpy]
+           - core_xform.cpp_buildRotationZ_FUN_005f6d40 (27 lines) [unrolled_memcpy]
+           - core_xform.cpp_buildXFlipMatrix_FUN_005f6ee0 (19 lines) [unrolled_memcpy]
+           - core_xform.cpp_transformAndClipGeometry_FUN_005f8550 (490 lines) [warning_unreachable]
+           - core_xform.cpp_buildYFlipMatrix_FUN_005f6f40 (23 lines) [unrolled_memcpy]
+           - core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0 (23 lines) [param_count_too_few]
+           - core_xform.cpp_buildUniformScaleMatrix_FUN_005f6e20 (22 lines) [unrolled_memcpy]
+           - core_xform.cpp_buildZFlipMatrix_FUN_005f6fa0 (27 lines) [unrolled_memcpy]
+           - core_xform.cpp_buildTranslationMatrix_FUN_005f6dc0 (21 lines) [unrolled_memcpy]
    81.6% | core/gabriela.cpp
          31/38 clean, 7 remaining
            - core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80 (252 lines) [missing_cave_copy, unrolled_memcpy, warning_type_propagation]
@@ -575,22 +587,8 @@ FILES AT 50-89%
            - core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 (148 lines) [pointer_cast, unrolled_memcpy, warning_type_propagation]
            - core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870 (142 lines) [pointer_cast]
            - core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80 (60 lines) [missing_cave_copy]
-   81.0% | core/msnedit.cpp
-         51/63 clean, 12 remaining
-           - core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0 (103 lines) [pointer_cast, unrolled_strcpy]
-           - core_msnedit.cpp_CDemonMission_pickActorByName_FUN_0053c210 (49 lines) [pointer_cast]
-           - core_msnedit.cpp_CDemonMission_validateNewActorName_FUN_0053d220 (123 lines) [unrolled_strchr]
-           - core_msnedit.cpp_CDemonMission_addSet_FUN_00538d60 (29 lines) [unrolled_strcpy]
-           - core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80 (142 lines) [unrolled_strcpy, unrolled_strlen]
-           - core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0 (139 lines) [stack_param]
-           - core_msnedit.cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053d7b0 (30 lines) [pointer_cast]
-           - core_msnedit.cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730 (73 lines) [unrolled_strcpy]
-           - core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 (171 lines) [pointer_cast, unrolled_strcpy]
-           - core_msnedit.cpp_buildActorClassHierarchy_FUN_00537330 (59 lines) [pointer_cast]
-           - core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 (996 lines) [pointer_cast]
-           - core_msnedit.cpp_screenToWorldPosition_FUN_00535c60 (40 lines) [stack_alignment_array]
-   80.6% | shape/superopt.cpp
-         150/186 clean, 36 remaining
+   81.2% | shape/superopt.cpp
+         151/186 clean, 35 remaining
            - shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0 (87 lines) [pointer_cast, unrolled_memcpy]
            - shape_superopt.cpp_CComplexPolygon_free_FUN_005c79f0 (30 lines) [pointer_cast]
            - shape_superopt.cpp_CP3D_add1_FUN_005d8520 (20 lines) [pointer_cast, unrolled_memcpy]
@@ -611,7 +609,6 @@ FILES AT 50-89%
            - shape_superopt.cpp_COptimize_optimizeComplex_FUN_005d7350 (58 lines) [pointer_cast]
            - shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50 (140 lines) [bitcast_double_pair, pointer_cast, sub84_truncation, unrolled_memcpy]
            - shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10 (131 lines) [unrolled_memcpy]
-           - shape_superopt.cpp_CComplexPolygon_splitByDimensions_FUN_005c9500 (272 lines) [unrolled_memcpy]
            - shape_superopt.cpp_SExpandedEdge_copy_FUN_005d8710 (30 lines) [pointer_cast, unrolled_memcpy]
            - shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010 (114 lines) [pointer_cast, unrolled_memcpy]
            - shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0 (91 lines) [bitcast_double_pair, pointer_cast, unrolled_memcpy]
@@ -627,6 +624,20 @@ FILES AT 50-89%
            - shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0 (115 lines) [unrolled_memcpy]
            - shape_superopt.cpp_COptimize_cleanup_FUN_005d7000 (34 lines) [pointer_cast]
            - shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0 (44 lines) [pointer_cast, unrolled_memcpy]
+   81.0% | core/msnedit.cpp
+         51/63 clean, 12 remaining
+           - core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0 (103 lines) [pointer_cast, unrolled_strcpy]
+           - core_msnedit.cpp_CDemonMission_pickActorByName_FUN_0053c210 (49 lines) [pointer_cast]
+           - core_msnedit.cpp_CDemonMission_validateNewActorName_FUN_0053d220 (123 lines) [unrolled_strchr]
+           - core_msnedit.cpp_CDemonMission_addSet_FUN_00538d60 (29 lines) [unrolled_strcpy]
+           - core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80 (142 lines) [unrolled_strcpy, unrolled_strlen]
+           - core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0 (139 lines) [stack_param]
+           - core_msnedit.cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053d7b0 (30 lines) [pointer_cast]
+           - core_msnedit.cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730 (73 lines) [unrolled_strcpy]
+           - core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0 (171 lines) [pointer_cast, unrolled_strcpy]
+           - core_msnedit.cpp_buildActorClassHierarchy_FUN_00537330 (59 lines) [pointer_cast]
+           - core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 (997 lines) [pointer_cast]
+           - core_msnedit.cpp_screenToWorldPosition_FUN_00535c60 (40 lines) [stack_alignment_array]
    80.0% | core/course.cpp
          12/15 clean, 3 remaining
            - core_course.cpp_CCourse_importMatrices_FUN_00442ea0 (61 lines) [unrolled_memcpy]
@@ -697,6 +708,17 @@ FILES AT 50-89%
            - core_vampboss.cpp_CVampireBoss_summonBats_FUN_005e7320 (20 lines) [pointer_cast]
            - core_vampboss.cpp_CVampireBoss_summonStalagmites_FUN_005e7390 (23 lines) [pointer_cast]
            - core_vampboss.cpp_CVampireBoss_process_FUN_005e5970 (626 lines) [pointer_cast, warning_inlined_function, warning_type_propagation]
+   78.0% | core/setutil.cpp
+         32/41 clean, 9 remaining
+           - core_setutil.cpp_readAndParseLine_FUN_00585290 (48 lines) [unrolled_strcpy, unrolled_strlen]
+           - core_setutil.cpp_C3DSLight_addFilter_FUN_00586fa0 (29 lines) [unrolled_strcpy]
+           - core_setutil.cpp_C3DSLight_import3DS_FUN_005874d0 (86 lines) [unrolled_strcpy, unrolled_strlen, warning_inlined_function]
+           - core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90 (153 lines) [unrolled_strlen, warning_inlined_function]
+           - core_setutil.cpp_C3DSCamera_savePVS_FUN_00587450 (23 lines) [pointer_cast]
+           - core_setutil.cpp_C3DSLight_save_FUN_00587090 (64 lines) [pointer_cast, shadow_pointer_walk]
+           - core_setutil.cpp_C3DSLight_create_FUN_00586a90 (69 lines) [shadow_pointer_walk, unrolled_strcpy]
+           - core_setutil.cpp_C3DSLight_apply_FUN_00586bf0 (38 lines) [unrolled_strcpy, warning_inlined_function]
+           - core_setutil.cpp_C3DSLight_load_FUN_00586310 (185 lines) [pointer_cast]
    77.8% | engine/ini.cpp
          14/18 clean, 4 remaining
            - engine_ini.cpp_CIni_getProfileString_FUN_004fb250 (113 lines) [unrolled_strchr, unrolled_strcpy, unrolled_strlen]
@@ -750,18 +772,6 @@ FILES AT 50-89%
            - shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80 (21 lines) [bitcast_double_pair]
            - shape_cramtex.cpp_placementCollisionCheck_FUN_00448260 (59 lines) [pointer_cast]
            - shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90 (406 lines) [pointer_cast]
-   75.6% | core/setutil.cpp
-         31/41 clean, 10 remaining
-           - core_setutil.cpp_readAndParseLine_FUN_00585290 (48 lines) [unrolled_strcpy, unrolled_strlen]
-           - core_setutil.cpp_C3DSLight_addFilter_FUN_00586fa0 (29 lines) [unrolled_strcpy]
-           - core_setutil.cpp_C3DSLight_import3DS_FUN_005874d0 (86 lines) [unrolled_strcpy, unrolled_strlen, warning_inlined_function]
-           - core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90 (153 lines) [unrolled_strlen, warning_inlined_function]
-           - core_setutil.cpp_CSlew_copy_FUN_00585240 (11 lines) [unrolled_memcpy]
-           - core_setutil.cpp_C3DSCamera_savePVS_FUN_00587450 (23 lines) [pointer_cast]
-           - core_setutil.cpp_C3DSLight_save_FUN_00587090 (64 lines) [pointer_cast, shadow_pointer_walk]
-           - core_setutil.cpp_C3DSLight_create_FUN_00586a90 (69 lines) [shadow_pointer_walk, unrolled_strcpy]
-           - core_setutil.cpp_C3DSLight_apply_FUN_00586bf0 (38 lines) [unrolled_strcpy, warning_inlined_function]
-           - core_setutil.cpp_C3DSLight_load_FUN_00586310 (185 lines) [pointer_cast]
    75.0% | core/mimic.cpp
          18/24 clean, 6 remaining
            - core_mimic.cpp_CMimic_ctor_FUN_0051f1d0 (43 lines) [unrolled_strcpy, warning_type_propagation]
@@ -1304,42 +1314,13 @@ FILES AT 50-89%
            - core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70 (112 lines) [unrolled_strchr, unrolled_strcpy]
            - core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 (303 lines) [pointer_cast]
            - core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730 (376 lines) [pointer_cast, unrolled_strlen]
-           - core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 (409 lines) [pointer_cast, unrolled_strchr, unrolled_strcpy]
+           - core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 (410 lines) [pointer_cast, unrolled_strchr, unrolled_strcpy]
            - core_setedit.cpp_blitThumbnailToScreen16_FUN_00577200 (31 lines) [pointer_cast]
            - core_setedit.cpp_CDemonSet_drawCameraCoverageMap_FUN_0057ff70 (60 lines) [pointer_cast]
-           - core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940 (130 lines) [pointer_cast]
+           - core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940 (131 lines) [pointer_cast]
            - core_setedit.cpp_renderBackdropImage_FUN_0057ce80 (134 lines) [pointer_cast]
            - core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0 (211 lines) [pointer_cast]
            - core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 (136 lines) [shadow_pointer_walk, unrolled_memcpy]
-   55.7% | core/xform.cpp
-         34/61 clean, 27 remaining
-           - core_xform.cpp_buildMirrorTransform_FUN_005f7000 (49 lines) [unrolled_memcpy]
-           - core_xform.cpp_buildScaleMatrix_FUN_005f6e80 (22 lines) [unrolled_memcpy]
-           - core_xform.cpp_invertAndGetTranslation_FUN_005f6140 (12 lines) [missing_cave_copy]
-           - core_xform.cpp_lerpMatrix3x4_FUN_005f7140 (65 lines) [missing_cave_copy]
-           - core_xform.cpp_clipPolygonStage1_FUN_005f7ed0 (91 lines) [shadow_pointer_walk]
-           - core_xform.cpp_multiplyQuaternionInPlace_FUN_005f7700 (15 lines) [stack_alignment_array, unrolled_memcpy]
-           - core_xform.cpp_inverseInPlace_FUN_005f6190 (17 lines) [pointer_cast, unrolled_memcpy]
-           - core_xform.cpp_buildRotationY_FUN_005f6cc0 (31 lines) [unrolled_memcpy]
-           - core_xform.cpp_matrixToEulerAngles_FUN_005f5690 (172 lines) [bitcast_double_pair, decompiler_intrinsic, sub84_truncation]
-           - core_xform.cpp_buildRotationX_FUN_005f6c40 (30 lines) [param_count_too_few, unrolled_memcpy]
-           - core_xform.cpp_buildRotationZ_FUN_005f6d40 (27 lines) [unrolled_memcpy]
-           - core_xform.cpp_buildXFlipMatrix_FUN_005f6ee0 (19 lines) [unrolled_memcpy]
-           - core_xform.cpp_transformAndClipGeometry_FUN_005f8550 (490 lines) [extra_output, pointer_cast, warning_unreachable]
-           - core_xform.cpp_buildYFlipMatrix_FUN_005f6f40 (23 lines) [unrolled_memcpy]
-           - core_xform.cpp_clipPolygonStage3_FUN_005f81c0 (92 lines) [shadow_pointer_walk]
-           - core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0 (23 lines) [param_count_too_few, unrolled_memcpy]
-           - core_xform.cpp_buildUniformScaleMatrix_FUN_005f6e20 (22 lines) [unrolled_memcpy]
-           - core_xform.cpp_buildZFlipMatrix_FUN_005f6fa0 (27 lines) [unrolled_memcpy]
-           - core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0 (166 lines) [bitcast_double_pair, sub84_truncation]
-           - core_xform.cpp_slerpQuaternion_FUN_005f77e0 (69 lines) [unrolled_memcpy]
-           - core_xform.cpp_eulerToQuaternionIndirect_FUN_005f7b70 (20 lines) [unrolled_memcpy]
-           - core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10 (32 lines) [unrolled_memcpy]
-           - core_xform.cpp_buildTranslationMatrix_FUN_005f6dc0 (21 lines) [unrolled_memcpy]
-           - core_xform.cpp_multiplyMatrix3x4InPlace_FUN_005f50c0 (22 lines) [unrolled_memcpy]
-           - core_xform.cpp_clipPolygonStage4_FUN_005f8330 (92 lines) [shadow_pointer_walk]
-           - core_xform.cpp_clipPolygonStage2_FUN_005f8040 (91 lines) [shadow_pointer_walk]
-           - core_xform.cpp_eulerToQuaternion_FUN_005f7b20 (21 lines) [unrolled_memcpy]
    55.6% | engine/alphabit.cpp
          5/9 clean, 4 remaining
            - engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0 (100 lines) [pointer_cast]

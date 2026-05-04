@@ -8,7 +8,7 @@
 ; Local Variables:
 ; SMRGLPrimitiveQuadIndex Stack[-0x8c]:40  local_8c
 ; CVector3i        Stack[-0x64]:12  local_64
-; CVector3i        Stack[-0x58]:12  local_58
+; CVector3f        Stack[-0x58]:12  local_58
 ; CVector3i        Stack[-0x4c]:12  local_4c
 ; CVector3i        Stack[-0x40]:12  local_40
 ; float            Stack[-0x34]:4  local_34
@@ -104,7 +104,7 @@ section .text
     MOV EBP,dword ptr [0x006703ec]      ; 004c3b99 | g_CDemonRendererPtr2
     PUSH EBP                            ; 004c3b9f | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 004c3ba0
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     FLD float ptr [ESI + 0x10]          ; 004c3ba5
     FMUL double ptr [0x00629dc3]        ; 004c3ba8 | DOUBLE_00629dc3
     FLD float ptr [ESI + 0x10]          ; 004c3bae

@@ -49,9 +49,9 @@ void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet 
     saved_pos_x = (g_CSlewPtr->position).x;
     fVar2 = (g_CSlewPtr->position).y;
     fVar3 = (g_CSlewPtr->position).z;
-    fVar4 = g_CSlewPtr->pitch;
-    fVar5 = g_CSlewPtr->yaw;
-    fVar6 = g_CSlewPtr->roll;
+    fVar4 = g_CSlewPtr->orientation.vec.x;
+    fVar5 = g_CSlewPtr->orientation.vec.y;
+    fVar6 = g_CSlewPtr->orientation.vec.z;
     fVar7 = g_CSlewPtr->slew_rate;
     core_slew_cpp_CSlew_processInput_FUN_005a20b0(g_CSlewPtr);
     if (g_CSlewPtr != (CSlew *)&g_CDemonCameraInstance.base.position) {
@@ -60,7 +60,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet 
       g_CDemonCameraInstance.base.position.f.y = (g_CSlewPtr->position).y;
     }
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-              (&g_CDemonCameraInstance.base.rotation_matrix,(CVector3f *)&g_CSlewPtr->pitch);
+              (&g_CDemonCameraInstance.base.rotation_matrix,&g_CSlewPtr->orientation.vec);
     g_CDemonCameraInstance.base.focal_length = g_CSlewPtr->slew_rate;
     wincore_wddvmem_cpp_openScreenDevice_FUN_005ed580();
     core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,0);
@@ -72,8 +72,8 @@ void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet 
     wincore_windll_cpp_lockFrame_FUN_005b7210();
     if ((((saved_pos_x != (g_CSlewPtr->position).x) ||
          (fVar2 != (g_CSlewPtr->position).y)) || (fVar3 != (g_CSlewPtr->position).z)) ||
-       (((fVar4 != g_CSlewPtr->pitch || (fVar5 != g_CSlewPtr->yaw)) ||
-        ((fVar6 != g_CSlewPtr->roll || (fVar7 != g_CSlewPtr->slew_rate)))))) {
+       (((fVar4 != g_CSlewPtr->orientation.vec.x || (fVar5 != g_CSlewPtr->orientation.vec.y)) ||
+        ((fVar6 != g_CSlewPtr->orientation.vec.z || (fVar7 != g_CSlewPtr->slew_rate)))))) {
       bVar9 = false;
     }
     if (bVar8) {
@@ -103,7 +103,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet 
     _sprintf
               (acStack_13c,"Viewer pos: %8.4f,%8.4f,%8.4f pbh: %6.3f,%6.3f,%6.3f",(double)(g_CSlewPtr->position).x,
                (double)(g_CSlewPtr->position).y,(double)(g_CSlewPtr->position).z,
-               (double)g_CSlewPtr->pitch,(double)g_CSlewPtr->roll,(double)g_CSlewPtr->yaw);
+               (double)g_CSlewPtr->orientation.vec.x,(double)g_CSlewPtr->orientation.vec.z,(double)g_CSlewPtr->orientation.vec.y);
     engine_2d_c_drawText_FUN_00401fd0(acStack_13c,0,g_WindowHeight + -0x2c);
     _sprintf
               (acStack_13c,"%f",(double)(1.0 / g_CGamePtr->delta_time_float));

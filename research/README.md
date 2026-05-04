@@ -172,7 +172,8 @@ camera, geometry, collision, profile, single-step), all 44 encrypted typed-cheat
 | `runtime_debug_flags.md` | `CGame` debug flags + hotkey table + `g_ModalDialogActive` (input-suppression gate during pick-list pop-up dialogs) |
 | `cheats.md` | All 45 cheats by category (cleartext recovered via `decrypt_cheats.py`) |
 | `developer_tools_menu.md` | The `Ctrl+D` main-menu shortcut into the editor menu (mission play, shape/set/skeletal/mission editors, POD file manager, etc.) — gated by a one-shot license agreement |
-| `retail_vs_editor_mysteries.md` | Open mysteries about retail-vs-editor build differences (D3D disabled in options, missing cutscene voice, missing netplay UI) — investigation notes with definitive vs partial labels |
+| `retail_vs_editor_mysteries.md` | Open mysteries about retail-vs-editor build differences (D3D disabled in options, missing cutscene voice) — investigation notes with definitive vs partial labels |
+| `cut_content.md` | Features whose code exists in the binary but were never UI-exposed in *any* shipped Nocturne build (cut, not editor-gated). |
 | `ini_settings.md` | Full `nocturne.ini` (5 sections), plus `RENDER.INI`, `pod.ini`, and `skeledit.ini` formats |
 
 **Status:** Reference - All 45 cheat cleartext strings recovered via

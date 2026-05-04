@@ -13,7 +13,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
   CVector3f *pCVar1;
   bool bVar2;
   CMatrix3x3f *pCVar3;
-  CVector3i *pCVar4;
+  CVector3f *pCVar4;
   CVector3f *pCVar5;
   uint text_color;
   int iVar6;
@@ -79,7 +79,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
   float local_38;
   CMatrix3x3f *local_34;
   int local_30;
-  CVector3i *local_2c;
+  CVector3f *local_2c;
   int local_28;
   float local_24;
   CVector3f *local_20;
@@ -121,12 +121,12 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
     pSVar11 = local_3c;
     wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
     if (pSVar11 != (SVDBox *)0x0) {
-      slew.yaw = local_c4;
+      slew.orientation.vec.y = local_c4;
       pCVar5 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
                          (&local_3c->rotation_matrix,&local_1dc);
-      slew.yaw = slew.yaw + pCVar5->y;
+      slew.orientation.vec.y = slew.orientation.vec.y + pCVar5->y;
       core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-                (&local_matrix,(CVector3f *)&slew.pitch);
+                (&local_matrix,&slew.orientation.vec);
       local_1d0.z = -local_4c;
       local_1d0.x = 0.0;
       local_1d0.y = 0.0;
@@ -144,7 +144,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
     g_CDemonCameraInstance.base.position.f.y = slew.position.y;
     g_CDemonCameraInstance.base.position.f.z = slew.position.z;
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-              (&g_CDemonCameraInstance.base.rotation_matrix,(CVector3f *)&slew.pitch);
+              (&g_CDemonCameraInstance.base.rotation_matrix,&slew.orientation.vec);
     g_CDemonCameraInstance.base.focal_length = 28.0;
     core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
     core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(this_ptr,150.0,0);
@@ -166,7 +166,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                   (g_CDemonRendererPtr2,pCVar5);
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                  (g_CDemonRendererPtr2,(CVector3i *)&local_194,(CVector3i *)0x0);
+                  (g_CDemonRendererPtr2,&local_194,(CVector3f *)0x0);
         iVar6 = iVar12;
         if (iVar12 == local_18) {
           pCVar1 = pCVar5 + 1;
@@ -215,7 +215,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
     }
     local_30 = 0;
     if (0 < this_ptr->camera_count) {
-      local_2c = (CVector3i *)&local_64->orientation;
+      local_2c = &local_64->orientation;
       local_20 = &local_64->position;
       do {
         pCVar5 = local_20;
@@ -224,7 +224,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
         iVar12 = 4;
         bVar2 = true;
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                  (g_CDemonRendererPtr2,local_2c,(CVector3i *)0x0);
+                  (g_CDemonRendererPtr2,local_2c,(CVector3f *)0x0);
         if (((-1 < local_18) && (local_18 < this_ptr->vdir_box_count)) &&
            (iVar6 = core_setdir_cpp_CDemonSet_isPointInVdirGroup_FUN_00576340
                               (this_ptr,local_18,pCVar5), iVar6 != 0)) {
@@ -416,7 +416,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
         pSVar11->position.y = temp_slew.position.y;
         pSVar11->position.z = temp_slew.position.z;
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-                  (&local_3c->rotation_matrix,(CVector3f *)&temp_slew.pitch);
+                  (&local_3c->rotation_matrix,&temp_slew.orientation.vec);
       }
       else {
         local_48 = g_CGamePtr->delta_time_float * (float)4;
@@ -486,7 +486,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
         (pSVar11->position).z = slew.position.z;
         local_bc.z = 0.0;
         local_bc.x = 0.0;
-        local_bc.y = slew.yaw;
+        local_bc.y = slew.orientation.vec.y;
         local_18 = iVar12;
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
                   (&pSVar11->rotation_matrix,&local_bc);

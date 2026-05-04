@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5482 (84.9%)
-With suspects: 972
-Total suspects: 3884
+Clean: 5500 (85.2%)
+With suspects: 954
+Total suspects: 3810
 
 ====================================================================================================
 core_actor.cpp_CActorPropertyList_addFile_FUN_0040e3e0 (2 suspects)
@@ -949,9 +949,10 @@ core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160 (6 suspects)
   Line 70 [bitcast_double_pair]: fVar7 = 1.0 / (float)__BITCAST_DOUBLE(CONCAT44(uStack_94,local_98));
 
 ====================================================================================================
-core_dirmat.cpp_CMatrix3x3f_multiply_FUN_00472540 (1 suspect)
+core_dirmat.cpp_CMatrix3x3f_multiply_FUN_00472540 (2 suspects)
   File: core/dirmat.cpp
 ====================================================================================================
+  Line 25 [unrolled_memcpy]: for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 116 [unrolled_memcpy]: // 0047266b: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
@@ -983,9 +984,10 @@ core_dlight.cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670 (4 suspects)
   Line 119 [pointer_cast]: puVar9 = (ushort *)((int)g_ScreenBufferArray[iVar3] + screen_x * 2);
 
 ====================================================================================================
-core_dlight.cpp_CDemonLight_endBackgroundScene_FUN_00472f30 (3 suspects)
+core_dlight.cpp_CDemonLight_endBackgroundScene_FUN_00472f30 (4 suspects)
   File: core/dlight.cpp
 ====================================================================================================
+  Line 17 [unrolled_memcpy]: for (uVar1 = this_ptr->shadow_map_height & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {
   Line 20 [unrolled_memcpy]: // 00472f60: MOVSD.REP ES:EDI,ESI  ; g_ScreenBufferArray | g_ScreenBufferArray[1] | g_SavedScreenBufferArray
   Line 24 [pointer_cast]: ppvVar3 = (void **)((int)ppvVar3 + 1);
   Line 25 [pointer_cast]: ppvVar4 = (void **)((int)ppvVar4 + 1);
@@ -3790,7 +3792,7 @@ core_setdir.cpp_CZThumb_setupZBufferScanlines_FUN_00574e30 (2 suspects)
   Line 13 [pointer_cast]: (void *)(this_ptr->width * iVar1 * 4 + (int)this_ptr->zbuffer_data);
 
 ====================================================================================================
-core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 (10 suspects)
+core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 (13 suspects)
   File: core/setedit.cpp
 ====================================================================================================
   Line 25 [unrolled_memcpy]: // 0057b652: MOVSD.REP ES:EDI,ESI
@@ -3800,8 +3802,11 @@ core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 (10 suspects)
   Line 58 [unrolled_memcpy]: pCVar3->camera_light_bounds[0].left = pCVar2->camera_light_bounds[0].left;
   Line 65 [unrolled_memcpy]: pCVar3->atten_start = pCVar2->atten_start;
   Line 81 [unrolled_memcpy]: // 0057b768: MOVSD.REP ES:EDI,ESI
+  Line 83 [unrolled_memcpy]: for (iVar3 = 0x20; iVar3 != 0; iVar3 = iVar3 + -1) {
   Line 85 [unrolled_memcpy]: // 0057b77b: MOVSD.REP ES:EDI,ESI
   Line 89 [unrolled_memcpy]: // 0057b78e: MOVSD.REP ES:EDI,ESI
+  Line 90 [unrolled_memcpy]: for (iVar3 = 0x20; iVar3 != 0; iVar3 = iVar3 + -1) {
+  Line 104 [unrolled_memcpy]: for (iVar3 = 0x20; iVar3 != 0; iVar3 = iVar3 + -1) {
   Line 107 [unrolled_memcpy]: // 0057b7f5: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
@@ -3813,7 +3818,7 @@ core_setedit.cpp_CDemonSet_deleteCamera_FUN_0057e430 (3 suspects)
   Line 88 [unrolled_memcpy]: local_20->pvs_count = local_c->pvs_count;
 
 ====================================================================================================
-core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910 (10 suspects)
+core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910 (13 suspects)
   File: core/setedit.cpp
 ====================================================================================================
   Line 39 [shadow_pointer_walk]: pCVar10 = (C3DSLight *)pCVar10->name;
@@ -3822,9 +3827,12 @@ core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910 (10 suspects)
   Line 66 [unrolled_memcpy]: local_c->camera_light_bounds[0].left = local_8->camera_light_bounds[0].left;
   Line 66 [unrolled_memcpy]: // 0057b9e6: MOVSD.REP ES:EDI,ESI
   Line 73 [unrolled_memcpy]: local_c->atten_start = local_8->atten_start;
+  Line 91 [unrolled_memcpy]: for (iVar2 = 0x20; iVar2 != 0; iVar2 = iVar2 + -1) {
+  Line 98 [unrolled_memcpy]: for (iVar2 = 0x20; iVar2 != 0; iVar2 = iVar2 + -1) {
   Line 99 [unrolled_memcpy]: // 0057ba9b: MOVSD.REP ES:EDI,ESI
   Line 103 [unrolled_memcpy]: // 0057baae: MOVSD.REP ES:EDI,ESI
   Line 107 [unrolled_memcpy]: // 0057bac1: MOVSD.REP ES:EDI,ESI
+  Line 113 [unrolled_memcpy]: for (iVar2 = 0x20; iVar2 != 0; iVar2 = iVar2 + -1) {
   Line 126 [unrolled_memcpy]: // 0057bb2e: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
@@ -3852,8 +3860,8 @@ core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 (6 suspects)
   Line 84 [unrolled_strchr]: do {
   Line 148 [pointer_cast]: *(uint *)((int)auStack_d80 + iVar20) = uVar16 | uVar12;
   Line 152 [pointer_cast]: *(int *)((int)auStack_1180 + iVar20) = (int)uVar11 / 3 + (int)fStack_50 + iStack_4c;
-  Line 282 [pointer_cast]: piVar1 = (int *)((int)auStack_96c + iVar13);
-  Line 294 [pointer_cast]: if (*(int *)((int)pvStack_1c + 0x144) == 0) {
+  Line 283 [pointer_cast]: piVar1 = (int *)((int)auStack_96c + iVar13);
+  Line 295 [pointer_cast]: if (*(int *)((int)pvStack_1c + 0x144) == 0) {
 
 ====================================================================================================
 core_setedit.cpp_CDemonSet_editSpotLight_FUN_0057b500 (1 suspect)
@@ -4071,12 +4079,6 @@ core_setutil.cpp_C3DSLight_save_FUN_00587090 (3 suspects)
   Line 43 [shadow_pointer_walk]: pCVar2 = (C3DSLight *)pCVar2->name;
   Line 55 [pointer_cast]: pCVar1 = (C3DSLight *)((int)&pCVar1->light_type + 1);
   Line 64 [pointer_cast]: this_ptr = (C3DSLight *)((int)&this_ptr->light_type + 1);
-
-====================================================================================================
-core_setutil.cpp_CSlew_copy_FUN_00585240 (1 suspect)
-  File: core/setutil.cpp
-====================================================================================================
-  Line 8 [unrolled_memcpy]: this_ptr->pitch = other->pitch;
 
 ====================================================================================================
 core_setutil.cpp_readAndParseLine_FUN_00585290 (3 suspects)
@@ -4405,9 +4407,11 @@ core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240 (5 suspects)
   Line 92 [shadow_pointer_walk]: local_38 = (CDeformableModel *)local_38->lod_info;
 
 ====================================================================================================
-core_skeledit.cpp_CLodVert_copy_FUN_00599550 (2 suspects)
+core_skeledit.cpp_CLodVert_copy_FUN_00599550 (4 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
+  Line 14 [unrolled_memcpy]: for (iVar1 = 0xfa; iVar1 != 0; iVar1 = iVar1 + -1) {
+  Line 23 [unrolled_memcpy]: for (iVar1 = 0x32; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 28 [unrolled_memcpy]: // 00599585: MOVSD.REP ES:EDI,ESI
   Line 38 [unrolled_memcpy]: // 005995b6: MOVSD.REP ES:EDI,ESI
 
@@ -4548,10 +4552,11 @@ core_sound.cpp_processTrainSounds_FUN_005b2770 (1 suspect)
   Line 149 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_sound.cpp_updateListeners_FUN_005b1870 (1 suspect)
+core_sound.cpp_updateListeners_FUN_005b1870 (2 suspects)
   File: core/sound.cpp
 ====================================================================================================
   Line 63 [unrolled_memcpy]: // 005b1982: MOVSD.REP ES:EDI,ESI
+  Line 104 [unrolled_memcpy]: for (; iVar6 != 0; iVar6 = iVar6 + -1) {
 
 ====================================================================================================
 core_spline.cpp_evaluateSplineScalar_FUN_005b9230 (4 suspects)
@@ -4993,13 +4998,6 @@ core_vehicle.cpp_CVehicle_getPropertyList_FUN_005e8ba0 (1 suspect)
   Line 28 [pointer_cast]: *(char **)((int)g_VehicleWheelLocationNames + iVar2));
 
 ====================================================================================================
-core_vehicle.cpp_CVehicle_renderOpaque_FUN_005e88c0 (2 suspects)
-  File: core/vehicle.cpp
-====================================================================================================
-  Line 12 [stack_param]: int in_stack_0000000c;
-  Line 49 [stack_param]: } while (iVar3 < *(int *)(in_stack_0000000c + 0x938));
-
-====================================================================================================
 core_vessel.cpp_CCryptVessel_ctor_FUN_005e8e60 (2 suspects)
   File: core/vessel.cpp
 ====================================================================================================
@@ -5082,226 +5080,83 @@ core_weather.cpp_CWeather_update_FUN_005eeaf0 (6 suspects)
   Line 70 [pointer_cast]: local_28.y = *(float *)((int)g_WeatherParticleGroundHeights + iVar6);
 
 ====================================================================================================
-core_xform.cpp_buildMirrorTransform_FUN_005f7000 (3 suspects)
-  File: core/xform.cpp
-====================================================================================================
-  Line 39 [unrolled_memcpy]: matrix_out->m[0].w = local_144.m[0].w;
-  Line 43 [unrolled_memcpy]: matrix_out->m[1].w = local_144.m[1].w;
-  Line 47 [unrolled_memcpy]: matrix_out->m[2].w = local_144.m[2].w;
-
-====================================================================================================
-core_xform.cpp_buildRotationX_FUN_005f6c40 (2 suspects)
+core_xform.cpp_buildRotationX_FUN_005f6c40 (3 suspects)
   File: core/xform.cpp
 ====================================================================================================
   Line 0 [param_count_too_few]: Function declares 2 params but call sites push 4 (2 missing)
+  Line 27 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 35 [unrolled_memcpy]: // 005f6cac: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_xform.cpp_buildRotationY_FUN_005f6cc0 (1 suspect)
+core_xform.cpp_buildRotationY_FUN_005f6cc0 (2 suspects)
   File: core/xform.cpp
 ====================================================================================================
+  Line 28 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 34 [unrolled_memcpy]: // 005f6d2b: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_xform.cpp_buildRotationZ_FUN_005f6d40 (1 suspect)
+core_xform.cpp_buildRotationZ_FUN_005f6d40 (2 suspects)
   File: core/xform.cpp
 ====================================================================================================
+  Line 24 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 36 [unrolled_memcpy]: // 005f6dae: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_xform.cpp_buildScaleMatrix_FUN_005f6e80 (1 suspect)
+core_xform.cpp_buildScaleMatrix_FUN_005f6e80 (2 suspects)
   File: core/xform.cpp
 ====================================================================================================
+  Line 19 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 26 [unrolled_memcpy]: // 005f6ecd: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_xform.cpp_buildTranslationMatrix_FUN_005f6dc0 (1 suspect)
+core_xform.cpp_buildTranslationMatrix_FUN_005f6dc0 (2 suspects)
   File: core/xform.cpp
 ====================================================================================================
+  Line 18 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 27 [unrolled_memcpy]: // 005f6e12: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_xform.cpp_buildUniformScaleMatrix_FUN_005f6e20 (1 suspect)
+core_xform.cpp_buildUniformScaleMatrix_FUN_005f6e20 (2 suspects)
   File: core/xform.cpp
 ====================================================================================================
+  Line 19 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 24 [unrolled_memcpy]: // 005f6e6a: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_xform.cpp_buildXFlipMatrix_FUN_005f6ee0 (1 suspect)
+core_xform.cpp_buildXFlipMatrix_FUN_005f6ee0 (2 suspects)
   File: core/xform.cpp
 ====================================================================================================
+  Line 16 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 25 [unrolled_memcpy]: // 005f6f34: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_xform.cpp_buildYFlipMatrix_FUN_005f6f40 (1 suspect)
+core_xform.cpp_buildYFlipMatrix_FUN_005f6f40 (2 suspects)
   File: core/xform.cpp
 ====================================================================================================
+  Line 20 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 26 [unrolled_memcpy]: // 005f6f95: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_xform.cpp_buildZFlipMatrix_FUN_005f6fa0 (1 suspect)
+core_xform.cpp_buildZFlipMatrix_FUN_005f6fa0 (2 suspects)
   File: core/xform.cpp
 ====================================================================================================
+  Line 24 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 25 [unrolled_memcpy]: // 005f6ff4: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_xform.cpp_clipPolygonStage1_FUN_005f7ed0 (4 suspects)
+core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0 (1 suspect)
   File: core/xform.cpp
 ====================================================================================================
-  Line 45 [shadow_pointer_walk]: pSVar6 = (SRenderVertex *)&(pSVar6->projected_vertex).transformed_z;
-  Line 49 [shadow_pointer_walk]: pSVar2 = (SRenderVertex *)&(pSVar2->projected_vertex).transformed_z;
-  Line 72 [shadow_pointer_walk]: pSVar7 = (SRenderVertex *)&(pSVar7->projected_vertex).transformed_z;
-  Line 76 [shadow_pointer_walk]: pSVar8 = (SRenderVertex *)&(pSVar8->projected_vertex).transformed_z;
+  Line 39 [decompiler_intrinsic]: inv_a = (double)SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1);
 
 ====================================================================================================
-core_xform.cpp_clipPolygonStage2_FUN_005f8040 (4 suspects)
-  File: core/xform.cpp
-====================================================================================================
-  Line 45 [shadow_pointer_walk]: pSVar6 = (SRenderVertex *)&(pSVar6->projected_vertex).transformed_z;
-  Line 49 [shadow_pointer_walk]: pSVar2 = (SRenderVertex *)&(pSVar2->projected_vertex).transformed_z;
-  Line 72 [shadow_pointer_walk]: pSVar7 = (SRenderVertex *)&(pSVar7->projected_vertex).transformed_z;
-  Line 76 [shadow_pointer_walk]: pSVar8 = (SRenderVertex *)&(pSVar8->projected_vertex).transformed_z;
-
-====================================================================================================
-core_xform.cpp_clipPolygonStage3_FUN_005f81c0 (4 suspects)
-  File: core/xform.cpp
-====================================================================================================
-  Line 44 [shadow_pointer_walk]: pSVar2 = (SRenderVertex *)&(pSVar2->projected_vertex).transformed_z;
-  Line 48 [shadow_pointer_walk]: pSVar3 = (SRenderVertex *)&(pSVar3->projected_vertex).transformed_z;
-  Line 72 [shadow_pointer_walk]: pSVar6 = (SRenderVertex *)&(pSVar6->projected_vertex).transformed_z;
-  Line 76 [shadow_pointer_walk]: pSVar7 = (SRenderVertex *)&(pSVar7->projected_vertex).transformed_z;
-
-====================================================================================================
-core_xform.cpp_clipPolygonStage4_FUN_005f8330 (4 suspects)
-  File: core/xform.cpp
-====================================================================================================
-  Line 44 [shadow_pointer_walk]: pSVar2 = (SRenderVertex *)&(pSVar2->projected_vertex).transformed_z;
-  Line 48 [shadow_pointer_walk]: pSVar3 = (SRenderVertex *)&(pSVar3->projected_vertex).transformed_z;
-  Line 72 [shadow_pointer_walk]: pSVar6 = (SRenderVertex *)&(pSVar6->projected_vertex).transformed_z;
-  Line 76 [shadow_pointer_walk]: pSVar7 = (SRenderVertex *)&(pSVar7->projected_vertex).transformed_z;
-
-====================================================================================================
-core_xform.cpp_eulerToQuaternionIndirect_FUN_005f7b70 (1 suspect)
-  File: core/xform.cpp
-====================================================================================================
-  Line 18 [unrolled_memcpy]: quat_out->w = local_28.w;
-
-====================================================================================================
-core_xform.cpp_eulerToQuaternion_FUN_005f7b20 (1 suspect)
-  File: core/xform.cpp
-====================================================================================================
-  Line 19 [unrolled_memcpy]: quat_out->w = local_28.w;
-
-====================================================================================================
-core_xform.cpp_inverseInPlace_FUN_005f6190 (4 suspects)
-  File: core/xform.cpp
-====================================================================================================
-  Line 13 [unrolled_memcpy]: for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 13 [unrolled_memcpy]: // 005f61af: MOVSD.REP ES:EDI,ESI
-  Line 14 [pointer_cast]: pCVar2 = (CMatrix3x4f *)((int)pCVar2 + (uint)bVar3 * -8 + 4);
-  Line 17 [pointer_cast]: matrix = (CMatrix3x4f *)((int)matrix + ((uint)bVar3 * -2 + 1) * 4);
-
-====================================================================================================
-core_xform.cpp_invertAndGetTranslation_FUN_005f6140 (2 suspects)
-  File: core/xform.cpp
-====================================================================================================
-  Line 9 [missing_cave_copy]: CMatrix3x4f local_6c;
-  Line 10 [missing_cave_copy]: CMatrix3x4f local_3c;
-
-====================================================================================================
-core_xform.cpp_lerpMatrix3x4_FUN_005f7140 (6 suspects)
-  File: core/xform.cpp
-====================================================================================================
-  Line 24 [missing_cave_copy]: CQuaternion4f local_70;
-  Line 25 [missing_cave_copy]: CQuaternion4f local_60;
-  Line 26 [missing_cave_copy]: CQuaternion4f local_50;
-  Line 27 [missing_cave_copy]: CQuaternion4f local_40;
-  Line 28 [missing_cave_copy]: CQuaternion4f local_30;
-  Line 31 [missing_cave_copy]: CQuaternion4f local_20;
-
-====================================================================================================
-core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0 (16 suspects)
-  File: core/xform.cpp
-====================================================================================================
-  Line 42 [sub84_truncation]: local_88 = SUB84(__BITCAST_UINT64(dVar11),0);
-  Line 50 [sub84_truncation]: local_80 = SUB84(__BITCAST_UINT64(dVar11),0);
-  Line 63 [sub84_truncation]: uStack_3c = SUB84(__BITCAST_UINT64(dVar11),0);
-  Line 64 [bitcast_double_pair]: dVar9 = (double)matrix_ptr->m[2].w * __BITCAST_DOUBLE(CONCAT44(local_80,uStack_84)) * dVar11;
-  Line 65 [bitcast_double_pair]: dVar11 = (double)matrix_ptr->m[2].y * __BITCAST_DOUBLE(CONCAT44(local_80,uStack_84)) * dVar11;
-  Line 66 [sub84_truncation]: uStack_34 = SUB84(__BITCAST_UINT64(dVar9),0);
-  Line 68 [sub84_truncation]: uStack_64 = SUB84(__BITCAST_UINT64(dVar11),0);
-  Line 75 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_34,local_30)) < 0.0) {
-  Line 82 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_64,local_68)) < 0.0) {
-  Line 93 [bitcast_double_pair]: fVar4 = matrix_ptr->m[0].x * fVar4 * (float)__BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40));
-  Line 95 [sub84_truncation]: local_b0 = SUB84(__BITCAST_UINT64(dVar11),0);
-  Line 96 [bitcast_double_pair]: dVar9 = (double)(matrix_ptr->m[1].x * (float)__BITCAST_DOUBLE(CONCAT44(uStack_9c,local_a0)) *
-  Line 97 [bitcast_double_pair]: (float)__BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40)));
-  Line 103 [bitcast_double_pair]: dVar11 = __BITCAST_DOUBLE(CONCAT44((float)dVar7,local_b0));
-  Line 138 [bitcast_double_pair]: fVar4 = -matrix_ptr->m[0].y * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c));
-  Line 140 [bitcast_double_pair]: dVar4 = (double)(matrix_ptr->m[0].w * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c)));
-
-====================================================================================================
-core_xform.cpp_matrixToEulerAngles_FUN_005f5690 (19 suspects)
-  File: core/xform.cpp
-====================================================================================================
-  Line 41 [sub84_truncation]: local_98 = SUB84(__BITCAST_UINT64(dVar10),0);
-  Line 49 [sub84_truncation]: local_98 = SUB84(__BITCAST_UINT64(dVar10),0);
-  Line 49 [decompiler_intrinsic]: local_98 = SUB84(__BITCAST_UINT64(dVar10),0);
-  Line 56 [sub84_truncation]: local_88 = SUB84(__BITCAST_UINT64(dVar10),0);
-  Line 64 [sub84_truncation]: local_88 = SUB84(__BITCAST_UINT64(dVar10),0);
-  Line 64 [decompiler_intrinsic]: local_88 = SUB84(__BITCAST_UINT64(dVar10),0);
-  Line 70 [sub84_truncation]: uStack_3c = SUB84(__BITCAST_UINT64(dVar11),0);
-  Line 71 [bitcast_double_pair]: fVar5 = matrix_in->m[0].y * (float)__BITCAST_DOUBLE(CONCAT44(local_98,uStack_9c)) * (float)dVar11;
-  Line 73 [sub84_truncation]: uStack_34 = SUB84(__BITCAST_UINT64(dVar5),0);
-  Line 75 [bitcast_double_pair]: dVar11 = (double)(matrix_in->m[2].y * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c)) *
-  Line 77 [sub84_truncation]: uStack_64 = SUB84(__BITCAST_UINT64(dVar11),0);
-  Line 84 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_34,local_30)) < 0.0) {
-  Line 91 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_64,local_68)) < 0.0) {
-  Line 102 [bitcast_double_pair]: dVar11 = (double)matrix_in->m[1].w * dVar10 * __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40));
-  Line 103 [bitcast_double_pair]: dVar10 = (double)matrix_in->m[1].x * dVar10 * __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40));
-  Line 104 [sub84_truncation]: local_b0 = SUB84(__BITCAST_UINT64(dVar11),0);
-  Line 110 [bitcast_double_pair]: dVar11 = __BITCAST_DOUBLE(CONCAT44((float)dVar9,local_b0));
-  Line 144 [bitcast_double_pair]: fVar5 = -matrix_in->m[2].w * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c));
-  Line 146 [bitcast_double_pair]: dVar11 = (double)(matrix_in->m[0].w * (float)__BITCAST_DOUBLE(CONCAT44(local_98,uStack_9c)));
-
-====================================================================================================
-core_xform.cpp_multiplyMatrix3x4InPlace_FUN_005f50c0 (3 suspects)
-  File: core/xform.cpp
-====================================================================================================
-  Line 12 [unrolled_memcpy]: matrix_a->m[0].w = local_3c.m[0].w;
-  Line 16 [unrolled_memcpy]: matrix_a->m[1].w = local_3c.m[1].w;
-  Line 20 [unrolled_memcpy]: matrix_a->m[2].w = local_3c.m[2].w;
-
-====================================================================================================
-core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10 (1 suspect)
-  File: core/xform.cpp
-====================================================================================================
-  Line 161 [unrolled_memcpy]: // 005f50af: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-core_xform.cpp_multiplyQuaternionInPlace_FUN_005f7700 (2 suspects)
-  File: core/xform.cpp
-====================================================================================================
-  Line 9 [stack_alignment_array]: float afStackY_17f8 [1525];
-  Line 13 [unrolled_memcpy]: quat1_inout->w = local_1c.w;
-
-====================================================================================================
-core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0 (4 suspects)
+core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0 (1 suspect)
   File: core/xform.cpp
 ====================================================================================================
   Line 0 [param_count_too_few]: Function declares 2 params but call sites push 3 (1 missing)
-  Line 13 [unrolled_memcpy]: matrix_out->m[0].w = local_38.m[0].w;
-  Line 17 [unrolled_memcpy]: matrix_out->m[1].w = local_38.m[1].w;
-  Line 21 [unrolled_memcpy]: matrix_out->m[2].w = local_38.m[2].w;
 
 ====================================================================================================
-core_xform.cpp_slerpQuaternion_FUN_005f77e0 (1 suspect)
-  File: core/xform.cpp
-====================================================================================================
-  Line 65 [unrolled_memcpy]: quat_out->w = pCVar4->w;
-
-====================================================================================================
-core_xform.cpp_transformAndClipGeometry_FUN_005f8550 (28 suspects)
+core_xform.cpp_transformAndClipGeometry_FUN_005f8550 (10 suspects)
   File: core/xform.cpp
 ====================================================================================================
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005f8bef) */
@@ -5314,24 +5169,6 @@ core_xform.cpp_transformAndClipGeometry_FUN_005f8550 (28 suspects)
   Line 9 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005f87c2) */
   Line 10 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005f8887) */
   Line 11 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005f8952) */
-  Line 22 [extra_output]: SRenderVertex *extraout_EAX;
-  Line 23 [extra_output]: SRenderVertex *extraout_EAX_00;
-  Line 24 [extra_output]: SRenderVertex *extraout_EAX_01;
-  Line 25 [extra_output]: SRenderVertex *extraout_EAX_02;
-  Line 26 [extra_output]: SRenderVertex *extraout_EAX_03;
-  Line 27 [extra_output]: SRenderVertex *extraout_EAX_04;
-  Line 28 [extra_output]: SRenderVertex *extraout_EAX_05;
-  Line 29 [extra_output]: SRenderVertex *extraout_EAX_06;
-  Line 61 [pointer_cast]: local_24 = (SRenderVertex *)((int)local_24 + 1);
-  Line 73 [pointer_cast]: local_24 = (SRenderVertex *)((int)local_24 + 1);
-  Line 184 [extra_output]: local_24 = extraout_EAX;
-  Line 210 [extra_output]: local_24 = extraout_EAX_00;
-  Line 261 [extra_output]: local_24 = extraout_EAX_01;
-  Line 288 [extra_output]: local_24 = extraout_EAX_02;
-  Line 339 [extra_output]: local_24 = extraout_EAX_03;
-  Line 367 [extra_output]: local_24 = extraout_EAX_04;
-  Line 419 [extra_output]: local_24 = extraout_EAX_05;
-  Line 448 [extra_output]: local_24 = extraout_EAX_06;
 
 ====================================================================================================
 core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0 (3 suspects)
@@ -5710,9 +5547,10 @@ engine_3d.c_updateAnimatedTexture_FUN_004050c0 (4 suspects)
   Line 37 [pointer_cast]: return (SMRGLHeaderExtended *)((int)texture + texture->frame_count * 0x20 + 0x1c);
 
 ====================================================================================================
-engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0 (3 suspects)
+engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0 (4 suspects)
   File: engine/alphabit.cpp
 ====================================================================================================
+  Line 11 [unrolled_memcpy]: for (iVar1 = 0x100; iVar1 != 0; iVar1 = iVar1 + -1) {
   Line 11 [unrolled_memcpy]: // 00410d09: MOVSD.REP ES:EDI,ESI  ; g_Hardware32BitPalette | g_GlobalPalette[1]
   Line 18 [pointer_cast]: puVar2 = (uint *)((int)puVar2 + 1);
   Line 19 [pointer_cast]: puVar3 = (uint *)((int)puVar3 + 1);
@@ -5731,13 +5569,14 @@ engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00 (2 suspects)
   Line 38 [pointer_cast]: ((ushort *)(*(int *)((int)g_ScreenBufferArray + local_14) + dest_x * 2),srcIndices,
 
 ====================================================================================================
-engine_alphabit.cpp_copyBytes_FUN_00410d20 (7 suspects)
+engine_alphabit.cpp_copyBytes_FUN_00410d20 (8 suspects)
   File: engine/alphabit.cpp
 ====================================================================================================
   Line 10 [pointer_cast]: uVar1 = *(int *)((int)src + 0xc) * *(int *)((int)src + 0x10);
   Line 10 [pointer_cast]: uVar1 = *(int *)((int)src + 0xc) * *(int *)((int)src + 0x10);
   Line 12 [pointer_cast]: puVar4 = *(uint **)((int)src + 4);
   Line 12 [unrolled_memcpy]: // 00410d38: MOVSD.REP ES:EDI,ESI
+  Line 13 [unrolled_memcpy]: for (uVar2 = uVar1 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
   Line 13 [unrolled_memcpy]: for (uVar2 = uVar1 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
   Line 20 [pointer_cast]: puVar3 = (uint *)((int)puVar3 + 1);
   Line 21 [pointer_cast]: puVar4 = (uint *)((int)puVar4 + 1);
@@ -6601,10 +6440,11 @@ shape_design.c_centerVerticesAroundPoint_FUN_0045ea90 (2 suspects)
   Line 46 [unrolled_strlen]: do {
 
 ====================================================================================================
-shape_design.c_complexPolygonReduction_FUN_00463b30 (16 suspects)
+shape_design.c_complexPolygonReduction_FUN_00463b30 (17 suspects)
   File: shape/design.c
 ====================================================================================================
   Line 13 [unrolled_memcpy]: // 00463b5a: MOVSD.REP ES:EDI,ESI  ; g_PolygonReductionParams | g_PolygonReductionParams[1]
+  Line 43 [unrolled_memcpy]: for (iVar4 = 0x14; iVar4 != 0; iVar4 = iVar4 + -1) {
   Line 71 [suspect_float]: 3.58732e-43,8);
   Line 257 [pointer_cast]: *(int *)((int)local_20 + local_18 * 4) = local_14[local_1c * 3];
   Line 265 [pointer_cast]: ((int *)(local_1c * 4 + (int)local_20),
@@ -7464,7 +7304,7 @@ shape_meshlod.cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0 (4 suspects)
   Line 37 [unrolled_memcpy]: // 0051d4f3: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0 (7 suspects)
+shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0 (8 suspects)
   File: shape/meshlod.cpp
 ====================================================================================================
   Line 23 [pointer_cast]: *(uint *)((int)this_ptr->vertex_data->adjacent_edge_indices + iVar2 + -8) = 0;
@@ -7473,6 +7313,7 @@ shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0 (7 suspects)
   Line 52 [pointer_cast]: *(uint *)((int)pCVar1->adjacent_edge_indices + iVar4 + -8) = 0xffffffff;
   Line 55 [pointer_cast]: *(int *)((int)pCVar1->adjacent_edge_indices + iVar4 + -8) = iVar6;
   Line 66 [pointer_cast]: if (*(int *)((int)this_ptr->tri_data->edge_perpendiculars + iVar6 + -0x14) == 0) {
+  Line 96 [unrolled_memcpy]: for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {
   Line 167 [unrolled_memcpy]: // 0051b55d: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
@@ -7578,9 +7419,11 @@ shape_quantize.cpp_CBitmap_ctor_FUN_00556a00 (2 suspects)
   Line 73 [pointer_cast]: (void *)((int)this_ptr->pixel_data + (uint)(ushort)this_ptr->bytes_per_row * iVar3);
 
 ====================================================================================================
-shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180 (3 suspects)
+shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180 (5 suspects)
   File: shape/quantize.cpp
 ====================================================================================================
+  Line 57 [unrolled_memcpy]: for (iVar5 = 0xc0; iVar5 != 0; iVar5 = iVar5 + -1) {
+  Line 62 [unrolled_memcpy]: for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {
   Line 79 [unrolled_memcpy]: for (uVar7 = uVar8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
   Line 118 [pointer_cast]: puVar10 = (uint *)((int)puVar10 + (uint)bVar15 * -2 + 1);
   Line 119 [pointer_cast]: puVar13 = (uint *)((int)puVar13 + (uint)bVar15 * -2 + 1);
@@ -7756,13 +7599,6 @@ shape_superopt.cpp_CComplexPolygon_mergeAdjacentEdges_FUN_005c7dc0 (9 suspects)
   Line 48 [pointer_cast]: local_34[0xb] = *(uint *)((int)edge_b->end_uv + 4);
   Line 50 [pointer_cast]: local_34[0xd] = *(uint *)((int)edge_b->end_uv + 0xc);
   Line 71 [pointer_cast]: local_20 = (void *)((int)local_20 + 0x60);
-
-====================================================================================================
-shape_superopt.cpp_CComplexPolygon_splitByDimensions_FUN_005c9500 (2 suspects)
-  File: shape/superopt.cpp
-====================================================================================================
-  Line 379 [unrolled_memcpy]: // 005c98d9: MOVSD.REP ES:EDI,ESI
-  Line 433 [unrolled_memcpy]: // 005c998d: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
 shape_superopt.cpp_CComplexPolygon_splitEdgesByPlane_FUN_005c9aa0 (6 suspects)

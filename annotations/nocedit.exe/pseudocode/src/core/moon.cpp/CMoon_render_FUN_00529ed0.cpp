@@ -77,7 +77,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                   (g_CDemonRendererPtr2,&local_44);
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                  (g_CDemonRendererPtr2,(CVector3i *)&local_50,(CVector3i *)0x0);
+                  (g_CDemonRendererPtr2,&local_50,(CVector3f *)0x0);
         core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
                   (&g_MoonBatModel,
                    (int)ROUND(ROUND(*(float *)((int)&g_MoonBats[0].animation_frame + iVar5))),

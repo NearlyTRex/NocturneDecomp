@@ -13,90 +13,86 @@ CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x4f 
   float fVar5;
   float fVar8;
   float fVar9;
-  double dVar10;
-  double dVar11;
   float10 fVar6;
   float10 fVar7;
   float10 fVar12;
-  double dVar8;
-  double dVar9;
-  uint local_b0;
-  uint uStack_9c;
-  uint local_98;
-  uint uStack_8c;
-  uint local_88;
-  uint local_68;
-  uint uStack_64;
-  uint local_40;
-  uint uStack_3c;
-  uint uStack_34;
-  uint local_30;
+  double dVar7;
+  double inv_a;
+  double inv_b;
+  double inv_c;
+  double cos_x;
+  double inv_cos_x;
+  double sin_y_term;
+  double cos_y_term;
+  double sin_z_term;
+  double cos_z_term;
   float local_20;
   float local_18;
-  double dVar5;
   float fVar3;
   float fVar4;
   float fVar1;
   float fVar2;
-  
+
+  // Row 0 inverse magnitude
   fVar1 = matrix_in->m[0].x;
   fVar2 = matrix_in->m[0].w;
   fVar3 = matrix_in->m[0].y;
-  dVar10 = (double)SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1);
-  if (0.0 < dVar10) {
-    dVar10 = 1.0 / dVar10;
+  inv_a = (double)SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1);
+  if (0.0 < inv_a) {
+    inv_a = 1.0 / inv_a;
   }
-  local_98 = SUB84(__BITCAST_UINT64(dVar10),0);
+  // Row 1 inverse magnitude
   fVar5 = matrix_in->m[1].w;
   fVar8 = matrix_in->m[1].x;
   fVar9 = matrix_in->m[1].y;
-  fVar5 = SQRT(fVar9 * fVar9 + fVar8 * fVar8 + fVar5 * fVar5);
-  if (0.0 < fVar5) {
-    fVar5 = 1.0 / fVar5;
+  inv_b = (double)SQRT(fVar9 * fVar9 + fVar8 * fVar8 + fVar5 * fVar5);
+  if (0.0 < inv_b) {
+    inv_b = 1.0 / inv_b;
   }
-  fVar8 = matrix_in->m[2].w;
-  fVar9 = matrix_in->m[2].x;
+  // Row 2 inverse magnitude
+  fVar5 = matrix_in->m[2].w;
+  fVar8 = matrix_in->m[2].x;
   fVar4 = matrix_in->m[2].y;
-  dVar10 = (double)SQRT(fVar4 * fVar4 + fVar9 * fVar9 + fVar8 * fVar8);
-  if (0.0 < dVar10) {
-    dVar10 = 1.0 / dVar10;
+  inv_c = (double)SQRT(fVar4 * fVar4 + fVar8 * fVar8 + fVar5 * fVar5);
+  if (0.0 < inv_c) {
+    inv_c = 1.0 / inv_c;
   }
-  local_88 = SUB84(__BITCAST_UINT64(dVar10),0);
-  fVar5 = -matrix_in->m[1].y * fVar5;
-  uStack_8c = SUB84(__BITCAST_UINT64((double)fVar5),4);
+  fVar5 = -matrix_in->m[1].y * (float)inv_b;
   if ((float)-1 < fVar5) {
     if ((double)fVar5 < 1.0) {
       fVar6 = (float10)fVar5;
       fVar7 = asin(fVar6);
       euler_out->x = (float)fVar7;
-      dVar11 = (double)SQRT((float10)1 - fVar6 * fVar6);
+      cos_x = (double)SQRT((float10)1 - fVar6 * fVar6);
       if (fVar7 < (float10)-3.1415926535900001) {
         euler_out->x = euler_out->x + 6.283185f;
       }
-      if (0.0 < dVar11) {
-        dVar11 = 1.0 / dVar11;
-        uStack_3c = SUB84(__BITCAST_UINT64(dVar11),0);
-        fVar5 = matrix_in->m[0].y * (float)__BITCAST_DOUBLE(CONCAT44(local_98,uStack_9c)) * (float)dVar11;
-        dVar5 = (double)fVar5;
-        uStack_34 = SUB84(__BITCAST_UINT64(dVar5),0);
-        local_30 = SUB84(__BITCAST_UINT64(dVar5),4);
-        dVar11 = (double)(matrix_in->m[2].y * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c)) *
-                         (float)dVar11);
-        uStack_64 = SUB84(__BITCAST_UINT64(dVar11),0);
-        if ((0.70699999999999996 <= dVar5) ||
-           (dVar5 <= -0.70699999999999996)) {
-          if ((-1 < dVar11) && (dVar11 < 1.0)) {
-            dVar8 = acos(dVar11);
-            local_18 = (float)dVar8;
+      if (0.0 < cos_x) {
+        inv_cos_x = 1.0 / cos_x;
+        sin_y_term = (double)matrix_in->m[0].y * inv_a * inv_cos_x;
+        cos_y_term = (double)matrix_in->m[2].y * inv_c * inv_cos_x;
+        if ((0.70699999999999996 <= sin_y_term) ||
+           (sin_y_term <= -0.70699999999999996)) {
+          if (-1 < cos_y_term) {
+            if (cos_y_term < 1.0) {
+              dVar7 = acos(cos_y_term);
+              local_18 = (float)dVar7;
+            }
+            else {
+              local_18 = 0.0;
+            }
           }
-          if (__BITCAST_DOUBLE(CONCAT44(uStack_34,local_30)) < 0.0) {
+          else {
+            local_18 = 3.1415927;
+          }
+          if (sin_y_term < 0.0) {
             local_18 = -local_18;
           }
         }
         else {
-          fVar12 = asin((float10)fVar5);
+          fVar12 = asin((float10)sin_y_term);
           local_18 = (float)fVar12;
-          if (__BITCAST_DOUBLE(CONCAT44(uStack_64,local_68)) < 0.0) {
+          if (cos_y_term < 0.0) {
             local_18 = (float)3.1415926535900001 - local_18;
           }
         }
@@ -107,15 +103,14 @@ CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x4f 
           local_18 = local_18 + -6.283185f;
         }
         euler_out->y = local_18;
-        dVar11 = (double)matrix_in->m[1].w * dVar10 * __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40));
-        dVar10 = (double)matrix_in->m[1].x * dVar10 * __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40));
-        local_b0 = SUB84(__BITCAST_UINT64(dVar11),0);
-        if ((0.70699999999999996 <= dVar11) ||
-           (dVar11 <= -0.70699999999999996)) {
-          if (-1 < dVar10) {
-            if (dVar10 < 1.0) {
-              dVar9 = acos(dVar10);
-              dVar11 = __BITCAST_DOUBLE(CONCAT44((float)dVar9,local_b0));
+        sin_z_term = (double)matrix_in->m[1].w * inv_b * inv_cos_x;
+        cos_z_term = (double)matrix_in->m[1].x * inv_b * inv_cos_x;
+        if ((0.70699999999999996 <= sin_z_term) ||
+           (sin_z_term <= -0.70699999999999996)) {
+          if (-1 < cos_z_term) {
+            if (cos_z_term < 1.0) {
+              dVar7 = acos(cos_z_term);
+              local_20 = (float)dVar7;
             }
             else {
               local_20 = 0.0;
@@ -124,12 +119,16 @@ CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x4f 
           else {
             local_20 = 3.1415927;
           }
-          if (dVar11 < 0.0) {
+          if (sin_z_term < 0.0) {
             local_20 = -local_20;
           }
         }
         else {
-          asin((float10)dVar11);
+          fVar12 = asin((float10)sin_z_term);
+          local_20 = (float)fVar12;
+          if (cos_z_term < 0.0) {
+            local_20 = (float)3.1415926535900001 - local_20;
+          }
         }
         if (local_20 < (float)-3.1415926535900001) {
           local_20 = local_20 + 6.283185f;
@@ -148,15 +147,16 @@ CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x4f 
   else {
     euler_out->x = -1.5707964;
   }
+  // Singular case: cos_x == 0, only y is recoverable
   euler_out->z = 0.0;
-  fVar5 = -matrix_in->m[2].w * (float)__BITCAST_DOUBLE(CONCAT44(local_88,uStack_8c));
-  dVar10 = (double)fVar5;
-  dVar11 = (double)(matrix_in->m[0].w * (float)__BITCAST_DOUBLE(CONCAT44(local_98,uStack_9c)));
-  if ((0.70699999999999996 <= dVar10) ||
-     (dVar10 <= -0.70699999999999996)) {
-    if (-1 < dVar11) {
-      if (dVar11 < 1.0) {
-        acos(dVar11);
+  sin_y_term = -(double)matrix_in->m[2].w * inv_c;
+  cos_y_term = (double)matrix_in->m[0].w * inv_a;
+  if ((0.70699999999999996 <= sin_y_term) ||
+     (sin_y_term <= -0.70699999999999996)) {
+    if (-1 < cos_y_term) {
+      if (cos_y_term < 1.0) {
+        dVar7 = acos(cos_y_term);
+        local_18 = (float)dVar7;
       }
       else {
         local_18 = 0.0;
@@ -165,12 +165,16 @@ CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x4f 
     else {
       local_18 = 3.1415927;
     }
-    if (dVar10 < 0.0) {
+    if (sin_y_term < 0.0) {
       local_18 = -local_18;
     }
   }
   else {
-    asin((float10)fVar5);
+    fVar12 = asin((float10)sin_y_term);
+    local_18 = (float)fVar12;
+    if (cos_y_term < 0.0) {
+      local_18 = (float)3.1415926535900001 - local_18;
+    }
   }
   if (local_18 < (float)-3.1415926535900001) {
     local_18 = local_18 + 6.283185f;

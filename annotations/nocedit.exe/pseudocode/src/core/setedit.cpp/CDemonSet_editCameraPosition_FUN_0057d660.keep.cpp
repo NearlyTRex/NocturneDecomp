@@ -110,10 +110,10 @@ LAB_0057d6df:
   }
   pCVar7 = g_CSlewPtr;
   pCVar8 = &this_ptr->cameras[camera_index].orientation;
-  if ((CVector3f *)&g_CSlewPtr->pitch != pCVar8) {
-    g_CSlewPtr->pitch = pCVar8->x;
-    pCVar7->yaw = this_ptr->cameras[camera_index].orientation.y;
-    pCVar7->roll = this_ptr->cameras[camera_index].orientation.z;
+  if (&g_CSlewPtr->orientation.vec != pCVar8) {
+    g_CSlewPtr->orientation.vec.x = pCVar8->x;
+    pCVar7->orientation.vec.y = this_ptr->cameras[camera_index].orientation.y;
+    pCVar7->orientation.vec.z = this_ptr->cameras[camera_index].orientation.z;
   }
   g_CSlewPtr->slew_rate = this_ptr->cameras[camera_index].projection_scale;
   pvStack_24 = (void *)0x0;
@@ -177,9 +177,9 @@ LAB_0057d6df:
        (((fStack_58 == 0.0 || (bVar21 == 0)) &&
         (iVar20 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_O), iVar20 == 0)))) {
       fVar10 = (g_CSlewPtr->position).z;
-      fVar3 = g_CSlewPtr->pitch;
-      fVar4 = g_CSlewPtr->yaw;
-      fVar5 = g_CSlewPtr->roll;
+      fVar3 = g_CSlewPtr->orientation.vec.x;
+      fVar4 = g_CSlewPtr->orientation.vec.y;
+      fVar5 = g_CSlewPtr->orientation.vec.z;
       fVar6 = g_CSlewPtr->slew_rate;
       core_slew_cpp_CSlew_processInput_FUN_005a20b0(g_CSlewPtr);
       if (g_CSlewPtr != (CSlew *)&g_CDemonCameraInstance.base.position) {
@@ -188,7 +188,7 @@ LAB_0057d6df:
         g_CDemonCameraInstance.base.position.f.y = (g_CSlewPtr->position).y;
       }
       core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-                (&g_CDemonCameraInstance.base.rotation_matrix,(CVector3f *)&g_CSlewPtr->pitch);
+                (&g_CDemonCameraInstance.base.rotation_matrix,&g_CSlewPtr->orientation.vec);
       g_CDemonCameraInstance.base.focal_length = g_CSlewPtr->slew_rate;
       core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,0);
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
@@ -212,12 +212,12 @@ LAB_0057d6df:
         }
         pCVar7 = g_CSlewPtr;
         pCVar8 = &this_ptr->cameras[camera_index].orientation;
-        if (pCVar8 != (CVector3f *)&g_CSlewPtr->pitch) {
-          pCVar8->x = g_CSlewPtr->pitch;
-          this_ptr->cameras[camera_index].orientation.y = pCVar7->yaw;
-          this_ptr->cameras[camera_index].orientation.z = pCVar7->roll;
+        if (pCVar8 != &g_CSlewPtr->orientation.vec) {
+          pCVar8->x = g_CSlewPtr->orientation.vec.x;
+          this_ptr->cameras[camera_index].orientation.y = pCVar7->orientation.vec.y;
+          this_ptr->cameras[camera_index].orientation.z = pCVar7->orientation.vec.z;
         }
-        euler_angles = &g_CSlewPtr->pitch;
+        euler_angles = &g_CSlewPtr->orientation.vec.x;
         this_ptr->cameras[camera_index].projection_scale = g_CSlewPtr->slew_rate;
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
                   (&this_ptr->cameras[camera_index].rotation_matrix,(CVector3f *)euler_angles);
@@ -264,8 +264,8 @@ LAB_0057db4e:
       }
       if (((((fVar10 != (g_CSlewPtr->position).x) || (fVar3 != (g_CSlewPtr->position).y)) ||
            ((fVar4 != (g_CSlewPtr->position).z ||
-            ((fVar5 != g_CSlewPtr->pitch || (fVar6 != g_CSlewPtr->yaw)))))) ||
-          (fStack_78 != g_CSlewPtr->roll)) || (fStack_74 != g_CSlewPtr->slew_rate)) {
+            ((fVar5 != g_CSlewPtr->orientation.vec.x || (fVar6 != g_CSlewPtr->orientation.vec.y)))))) ||
+          (fStack_78 != g_CSlewPtr->orientation.vec.z)) || (fStack_74 != g_CSlewPtr->slew_rate)) {
         local_b1 = 0;
       }
       if (iStack_44 != 0) {
@@ -299,8 +299,8 @@ LAB_0057db4e:
                   (CStack_574.cancel_button.button_text + 0xbc,"FIXED CAMERA: x: %f, y: %f, z: %f, p : %f, h : %f, fov : %f",
                    (double)(g_CSlewPtr->position).x,(double)(g_CSlewPtr->position).y,
                    (double)(g_CSlewPtr->position).z,
-                   (double)g_CSlewPtr->pitch * 180.0 * 0.31830988619288902,
-                   (double)g_CSlewPtr->yaw * 180.0 * 0.31830988619288902,
+                   (double)g_CSlewPtr->orientation.vec.x * 180.0 * 0.31830988619288902,
+                   (double)g_CSlewPtr->orientation.vec.y * 180.0 * 0.31830988619288902,
                    (double)g_CSlewPtr->slew_rate);
       }
       else {

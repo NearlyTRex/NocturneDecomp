@@ -54,7 +54,7 @@ int __cdecl core_zombie_cpp_CZombie_renderTransparent_FUN_005fbe70(CZombie *this
     local_64.y = local_1c.y - local_34.y;
     local_64.z = local_1c.z - local_34.z;
     core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_7c,&local_64);
-    core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(&local_88,(CVector3i *)&local_7c,56.0,6.0);
+    core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(&local_88,&local_7c,56.0,6.0);
   }
   if ((this_ptr->base).base.was_rendered_opaque == 0) {
     return (this_ptr->base).base.was_rendered_opaque;

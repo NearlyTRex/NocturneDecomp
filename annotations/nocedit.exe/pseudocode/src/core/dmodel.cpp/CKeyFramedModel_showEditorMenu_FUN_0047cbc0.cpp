@@ -199,7 +199,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                 (g_CDemonRendererPtr1,&local_114);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                (g_CDemonRendererPtr1,(CVector3i *)&local_114,(CVector3i *)0x0);
+                (g_CDemonRendererPtr1,&local_114,(CVector3f *)0x0);
       core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
                 (this_ptr,(int)ROUND(ROUND(local_70)),(CKeyFramedModelInstance *)0x0,-1);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr1);

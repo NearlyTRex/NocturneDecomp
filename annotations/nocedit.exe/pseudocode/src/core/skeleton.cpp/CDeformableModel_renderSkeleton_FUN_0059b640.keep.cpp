@@ -56,7 +56,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640(CDef
       core_xform_cpp_matrixToEulerAngles_FUN_005f5690(bone_matrices,&local_40);
       core_xform_cpp_getTranslation_FUN_005f6110(bone_matrices,&local_34);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                (g_CDemonRendererPtr2,(CVector3i *)&local_40,(CVector3i *)&local_34);
+                (g_CDemonRendererPtr2,&local_40,&local_34);
       shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(g_CEditorToolsPtr,0.5,0xff);
       iVar4 = iVar4 + 1;
       bone_matrices = bone_matrices + 1;

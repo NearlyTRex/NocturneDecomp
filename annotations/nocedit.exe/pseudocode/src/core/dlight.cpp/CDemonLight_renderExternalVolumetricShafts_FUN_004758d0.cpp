@@ -121,7 +121,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0047
                   (&(this_ptr->base).base.rotation_matrix,&local_b4);
         local_50 = 1;
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                  (g_CDemonRendererPtr2,(CVector3i *)&local_b4,(CVector3i *)0x0);
+                  (g_CDemonRendererPtr2,&local_b4,(CVector3f *)0x0);
         do {
           fVar6 = (float10)local_50 *
                   ((float10)18 / (float10)(this_ptr->base).base.focal_length) *

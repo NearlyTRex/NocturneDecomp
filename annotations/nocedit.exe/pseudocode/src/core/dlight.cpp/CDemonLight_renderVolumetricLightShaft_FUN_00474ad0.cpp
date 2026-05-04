@@ -35,7 +35,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
   float local_ac;
   float local_a8;
   CVector3f local_a4;
-  CVector3i local_98;
+  CVector3f local_98;
   CVector3f local_8c;
   float local_80;
   float local_7c;
@@ -116,9 +116,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
             engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                       (g_CDemonRendererPtr2,&local_e0);
             engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
-                      (g_CDemonRendererPtr2,(float *)&local_98);
+                      (g_CDemonRendererPtr2,&local_98.x);
             engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                      (g_CDemonRendererPtr2,&local_98,(CVector3i *)0x0);
+                      (g_CDemonRendererPtr2,&local_98,(CVector3f *)0x0);
             local_74.x = (int)ROUND(fVar3 * 256.0f);
             local_74.y = (int)ROUND(fVar3 * 256.0f);
             local_74.z = (int)ROUND(256.0f * 0.0);

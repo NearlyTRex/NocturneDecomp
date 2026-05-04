@@ -8,16 +8,11 @@
 ; CVector3f *      Stack[0x8]:4   euler_out
 ; Local Variables:
 ; undefined4       Stack[-0xb0]:4  local_b0
-; undefined4       Stack[-0x9c]:4  uStack_9c
-; undefined4       Stack[-0x98]:4  local_98
-; undefined4       Stack[-0x8c]:4  uStack_8c
-; undefined4       Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  uStack_64
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  uStack_3c
-; undefined4       Stack[-0x34]:4  uStack_34
-; undefined4       Stack[-0x30]:4  local_30
+; double           Stack[-0x9c]:8  local_9c
+; double           Stack[-0x8c]:8  local_8c
+; double           Stack[-0x68]:8  uStack_64
+; double           Stack[-0x40]:8  uStack_3c
+; double           Stack[-0x34]:8  local_34
 ; float            Stack[-0x20]:4  local_20
 ; float            Stack[-0x18]:4  local_18
 ;

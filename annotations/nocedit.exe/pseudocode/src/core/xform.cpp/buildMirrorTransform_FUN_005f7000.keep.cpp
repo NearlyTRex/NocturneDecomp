@@ -41,17 +41,6 @@ CMatrix3x4f * __stack2_esi core_xform_cpp_buildMirrorTransform_FUN_005f7000(CVec
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_84,&local_114,&local_174);
   local_e4 = local_174;
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_e4,matrix_b,&local_144);
-  matrix_out->m[0].w = local_144.m[0].w;
-  matrix_out->m[0].x = local_144.m[0].x;
-  matrix_out->m[0].y = local_144.m[0].y;
-  matrix_out->m[0].z = local_144.m[0].z;
-  matrix_out->m[1].w = local_144.m[1].w;
-  matrix_out->m[1].x = local_144.m[1].x;
-  matrix_out->m[1].y = local_144.m[1].y;
-  matrix_out->m[1].z = local_144.m[1].z;
-  matrix_out->m[2].w = local_144.m[2].w;
-  matrix_out->m[2].x = local_144.m[2].x;
-  matrix_out->m[2].y = local_144.m[2].y;
-  matrix_out->m[2].z = local_144.m[2].z;
+  *matrix_out = local_144;
   return matrix_out;
 }

@@ -83,16 +83,16 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
     if (local_18 != (SRoom *)0x0) {
-      if (&local_108.pitch != &local_a0) {
-        local_108.pitch = local_a0;
-        local_108.yaw = local_9c;
-        local_108.roll = local_98;
+      if (&local_108.orientation.vec.x != &local_a0) {
+        local_108.orientation.vec.x = local_a0;
+        local_108.orientation.vec.y = local_9c;
+        local_108.orientation.vec.z = local_98;
       }
       pCVar3 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
                          (&local_18->rotation_matrix,&local_94);
-      local_108.yaw = local_108.yaw + pCVar3->y;
+      local_108.orientation.vec.y = local_108.orientation.vec.y + pCVar3->y;
       core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-                (&local_130,(CVector3f *)&local_108.pitch);
+                (&local_130,&local_108.orientation.vec);
       local_88.z = -local_28;
       local_88.x = 0.0;
       local_88.y = 0.0;
@@ -113,7 +113,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
     g_CDemonCameraInstance.base.position.f.y = local_108.position.y;
     g_CDemonCameraInstance.base.position.f.z = local_108.position.z;
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-              (&g_CDemonCameraInstance.base.rotation_matrix,(CVector3f *)&local_108.pitch);
+              (&g_CDemonCameraInstance.base.rotation_matrix,&local_108.orientation.vec);
     g_CDemonCameraInstance.base.focal_length = local_108.slew_rate;
     core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
     core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(this_ptr,150.0,0);
@@ -128,7 +128,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                   (g_CDemonRendererPtr2,world_position);
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                  (g_CDemonRendererPtr2,(CVector3i *)&local_7c,(CVector3i *)0x0);
+                  (g_CDemonRendererPtr2,&local_7c,(CVector3f *)0x0);
         if (iVar6 == local_1c) {
           local_64.x = -pCVar4->x;
           local_64.y = -pCVar4->y;
@@ -244,10 +244,10 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
         pCVar4 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
                            (&local_18->rotation_matrix,&local_70);
         pSVar3 = local_18;
-        if ((CVector3f *)&local_ec.pitch != pCVar4) {
-          local_ec.pitch = pCVar4->x;
-          local_ec.yaw = pCVar4->y;
-          local_ec.roll = pCVar4->z;
+        if (&local_ec.orientation.vec != pCVar4) {
+          local_ec.orientation.vec.x = pCVar4->x;
+          local_ec.orientation.vec.y = pCVar4->y;
+          local_ec.orientation.vec.z = pCVar4->z;
         }
         core_slew_cpp_CSlew_processInput_FUN_005a20b0(&local_ec);
         if ((SRoom *)&local_ec != pSVar3) {
@@ -256,7 +256,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
           (pSVar3->position).z = local_ec.position.z;
         }
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-                  (&local_18->rotation_matrix,(CVector3f *)&local_ec.pitch);
+                  (&local_18->rotation_matrix,&local_ec.orientation.vec);
       }
       else {
         local_24 = g_CGamePtr->delta_time_float * (float)4;
@@ -357,7 +357,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
             (local_18->position).y = local_108.position.y;
             (local_18->position).z = local_108.position.z;
           }
-          local_b8.y = local_108.yaw;
+          local_b8.y = local_108.orientation.vec.y;
           local_b8.x = 0.0;
           local_b8.z = 0.0;
           core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30

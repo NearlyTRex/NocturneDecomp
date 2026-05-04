@@ -73,7 +73,7 @@ section .text
     MOV EBX,dword ptr [0x006703ec]      ; 004bfae7 | g_CDemonRendererPtr2
     PUSH EBX                            ; 004bfaed | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 004bfaee
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
         ;   Label: LAB_004bfaee
     ADD ESP,0xc                         ; 004bfaf3
     MOV EBX,dword ptr [ESI + 0x20]      ; 004bfaf6

@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 793,
-    "complexity_score": 785,
+    "complexity_score": 595,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 53,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 490,
-    "suspect_count": 28,
+    "suspect_count": 10,
     "suspect_types": [
-      "extra_output",
-      "pointer_cast",
       "warning_unreachable"
     ],
     "total_lines": 1283
@@ -672,6 +670,78 @@
   },
   "resolved_suspects": [
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 22,
+      "match": "extraout_EAX",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "SRenderVertex *extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 23,
+      "match": "extraout_EAX_00",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "SRenderVertex *extraout_EAX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 24,
+      "match": "extraout_EAX_01",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "SRenderVertex *extraout_EAX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 25,
+      "match": "extraout_EAX_02",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "SRenderVertex *extraout_EAX_02;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 26,
+      "match": "extraout_EAX_03",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "SRenderVertex *extraout_EAX_03;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 27,
+      "match": "extraout_EAX_04",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "SRenderVertex *extraout_EAX_04;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 28,
+      "match": "extraout_EAX_05",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "SRenderVertex *extraout_EAX_05;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 29,
+      "match": "extraout_EAX_06",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "SRenderVertex *extraout_EAX_06;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 84,
       "match": "._0_4_",
@@ -726,6 +796,15 @@
       "type": "unknown_field"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 184,
+      "match": "extraout_EAX",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_24 = extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 191,
       "match": "._0_4_",
@@ -742,6 +821,15 @@
       "severity": "mild",
       "text": "lVar7._4_4_ = (pSVar8->projected_vertex).transformed_y;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 210,
+      "match": "extraout_EAX_00",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_24 = extraout_EAX_00;",
+      "type": "extra_output"
     },
     {
       "description": "Unknown/mangled field access",
@@ -762,6 +850,15 @@
       "type": "unknown_field"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 261,
+      "match": "extraout_EAX_01",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_24 = extraout_EAX_01;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 268,
       "match": "._0_4_",
@@ -778,6 +875,15 @@
       "severity": "mild",
       "text": "lVar8._4_4_ = (pSVar19->projected_vertex).transformed_y;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 288,
+      "match": "extraout_EAX_02",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_24 = extraout_EAX_02;",
+      "type": "extra_output"
     },
     {
       "description": "Unknown/mangled field access",
@@ -798,6 +904,15 @@
       "type": "unknown_field"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 339,
+      "match": "extraout_EAX_03",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_24 = extraout_EAX_03;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 346,
       "match": "._0_4_",
@@ -814,6 +929,15 @@
       "severity": "mild",
       "text": "lVar9._4_4_ = (pSVar7->projected_vertex).transformed_y;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 367,
+      "match": "extraout_EAX_04",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_24 = extraout_EAX_04;",
+      "type": "extra_output"
     },
     {
       "description": "Unknown/mangled field access",
@@ -834,6 +958,15 @@
       "type": "unknown_field"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 419,
+      "match": "extraout_EAX_05",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_24 = extraout_EAX_05;",
+      "type": "extra_output"
+    },
+    {
       "description": "Unknown/mangled field access",
       "line": 426,
       "match": "._0_4_",
@@ -850,6 +983,15 @@
       "severity": "mild",
       "text": "lVar10._4_4_ = (pSVar20->projected_vertex).transformed_y;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 448,
+      "match": "extraout_EAX_06",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_24 = extraout_EAX_06;",
+      "type": "extra_output"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar7` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
@@ -1100,63 +1242,14 @@
   "static_analysis": {
     "analyzed_file": "transformAndClipGeometry_FUN_005f8550.keep.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 8,
+      "diagnostic_count": 1,
       "diagnostics": [
         {
           "check_id": "uninitvar",
-          "column": 22,
-          "line": 121,
-          "message": "Uninitialized variable: extraout_EAX",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 22,
-          "line": 129,
-          "message": "Uninitialized variable: extraout_EAX_00",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 24,
-          "line": 162,
-          "message": "Uninitialized variable: extraout_EAX_01",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 24,
-          "line": 170,
-          "message": "Uninitialized variable: extraout_EAX_02",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 26,
-          "line": 202,
-          "message": "Uninitialized variable: extraout_EAX_03",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 26,
-          "line": 211,
-          "message": "Uninitialized variable: extraout_EAX_04",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 28,
-          "line": 243,
-          "message": "Uninitialized variable: extraout_EAX_05",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 28,
-          "line": 252,
-          "message": "Uninitialized variable: extraout_EAX_06",
-          "severity": "error"
+          "column": 10,
+          "line": 281,
+          "message": "Uninitialized variable: local_24",
+          "severity": "warning"
         }
       ],
       "error": null
@@ -1243,152 +1336,6 @@
       "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x005f8952) */",
       "type": "warning_unreachable"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 22,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "SRenderVertex *extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 23,
-      "match": "extraout_EAX_00",
-      "severity": "moderate",
-      "text": "SRenderVertex *extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 24,
-      "match": "extraout_EAX_01",
-      "severity": "moderate",
-      "text": "SRenderVertex *extraout_EAX_01;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 25,
-      "match": "extraout_EAX_02",
-      "severity": "moderate",
-      "text": "SRenderVertex *extraout_EAX_02;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 26,
-      "match": "extraout_EAX_03",
-      "severity": "moderate",
-      "text": "SRenderVertex *extraout_EAX_03;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 27,
-      "match": "extraout_EAX_04",
-      "severity": "moderate",
-      "text": "SRenderVertex *extraout_EAX_04;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
-      "match": "extraout_EAX_05",
-      "severity": "moderate",
-      "text": "SRenderVertex *extraout_EAX_05;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 29,
-      "match": "extraout_EAX_06",
-      "severity": "moderate",
-      "text": "SRenderVertex *extraout_EAX_06;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 184,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "local_24 = extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 210,
-      "match": "extraout_EAX_00",
-      "severity": "moderate",
-      "text": "local_24 = extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 261,
-      "match": "extraout_EAX_01",
-      "severity": "moderate",
-      "text": "local_24 = extraout_EAX_01;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 288,
-      "match": "extraout_EAX_02",
-      "severity": "moderate",
-      "text": "local_24 = extraout_EAX_02;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 339,
-      "match": "extraout_EAX_03",
-      "severity": "moderate",
-      "text": "local_24 = extraout_EAX_03;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 367,
-      "match": "extraout_EAX_04",
-      "severity": "moderate",
-      "text": "local_24 = extraout_EAX_04;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 419,
-      "match": "extraout_EAX_05",
-      "severity": "moderate",
-      "text": "local_24 = extraout_EAX_05;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 448,
-      "match": "extraout_EAX_06",
-      "severity": "moderate",
-      "text": "local_24 = extraout_EAX_06;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 61,
-      "match": "(SRenderVertex *)((int)local_24",
-      "severity": "moderate",
-      "text": "local_24 = (SRenderVertex *)((int)local_24 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 73,
-      "match": "(SRenderVertex *)((int)local_24",
-      "severity": "moderate",
-      "text": "local_24 = (SRenderVertex *)((int)local_24 + 1);",
-      "type": "pointer_cast"
     }
   ]
 }

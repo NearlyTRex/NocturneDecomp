@@ -34,8 +34,7 @@ void __cdecl core_cloth_cpp_CCloth_renderBone_FUN_0043b7e0(CCloth *this_ptr,int 
             (&this_ptr->collide_bones[bone_index].local_matrix,&local_58);
   vertex_index1 = 0;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,(CVector3i *)&local_58,
-             (CVector3i *)&this_ptr->collide_bones[bone_index].position_offset);
+            (g_CDemonRendererPtr2,&local_58,&this_ptr->collide_bones[bone_index].position_offset);
   local_20 = 0x270;
   local_1c = 0;
   local_68 = 0;

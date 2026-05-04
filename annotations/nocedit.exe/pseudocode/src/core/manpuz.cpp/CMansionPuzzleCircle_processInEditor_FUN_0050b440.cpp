@@ -31,9 +31,9 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(C
       local_40.position.y = (this_ptr->emitter_pos).f.y;
       local_40.position.z = (this_ptr->emitter_pos).f.z;
     }
-    local_40.roll = 0.0;
-    local_40.yaw = 0.0;
-    local_40.pitch = 0.0;
+    local_40.orientation.vec.z = 0.0;
+    local_40.orientation.vec.y = 0.0;
+    local_40.orientation.vec.x = 0.0;
     core_slew_cpp_CSlew_processInput_FUN_005a20b0(&local_40);
     if ((CSlew *)&this_ptr->emitter_pos != &local_40) {
       (this_ptr->emitter_pos).f.x = local_40.position.x;
@@ -48,10 +48,10 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(C
       local_24.position.y = (this_ptr->gem_pos).y;
       local_24.position.z = (this_ptr->gem_pos).z;
     }
-    if ((UOrientationVector *)&local_24.pitch != &this_ptr->gem_orient) {
-      local_24.pitch = (this_ptr->gem_orient).vec.x;
-      local_24.yaw = (this_ptr->gem_orient).vec.y;
-      local_24.roll = (this_ptr->gem_orient).vec.z;
+    if (&local_24.orientation != &this_ptr->gem_orient) {
+      local_24.orientation.vec.x = (this_ptr->gem_orient).vec.x;
+      local_24.orientation.vec.y = (this_ptr->gem_orient).vec.y;
+      local_24.orientation.vec.z = (this_ptr->gem_orient).vec.z;
     }
     core_slew_cpp_CSlew_processInput_FUN_005a20b0(&local_24);
     if ((CSlew *)&this_ptr->gem_pos != &local_24) {
@@ -59,10 +59,10 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(C
       (this_ptr->gem_pos).y = local_24.position.y;
       (this_ptr->gem_pos).z = local_24.position.z;
     }
-    if (&this_ptr->gem_orient != (UOrientationVector *)&local_24.pitch) {
-      (this_ptr->gem_orient).vec.x = local_24.pitch;
-      (this_ptr->gem_orient).vec.y = local_24.yaw;
-      (this_ptr->gem_orient).vec.z = local_24.roll;
+    if (&this_ptr->gem_orient != &local_24.orientation) {
+      (this_ptr->gem_orient).vec.x = local_24.orientation.vec.x;
+      (this_ptr->gem_orient).vec.y = local_24.orientation.vec.y;
+      (this_ptr->gem_orient).vec.z = local_24.orientation.vec.z;
     }
   }
   else if (g_MansionPuzzleSlewType == 3) {
@@ -73,10 +73,10 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(C
       CStack_78.position.z = this_ptr->reflectors[0].start_position.z;
     }
     pCVar2 = &this_ptr->reflectors[0].rotation;
-    if ((CVector3f *)&CStack_78.pitch != pCVar2) {
-      CStack_78.pitch = pCVar2->x;
-      CStack_78.yaw = this_ptr->reflectors[0].rotation.y;
-      CStack_78.roll = this_ptr->reflectors[0].rotation.z;
+    if ((CVector3f *)&CStack_78.orientation != pCVar2) {
+      CStack_78.orientation.vec.x = pCVar2->x;
+      CStack_78.orientation.vec.y = this_ptr->reflectors[0].rotation.y;
+      CStack_78.orientation.vec.z = this_ptr->reflectors[0].rotation.z;
     }
     core_slew_cpp_CSlew_processInput_FUN_005a20b0(&CStack_78);
     if (this_ptr->reflectors != (SReflector *)&CStack_78) {
@@ -85,10 +85,10 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(C
       this_ptr->reflectors[0].start_position.z = CStack_78.position.z;
     }
     pCVar2 = &this_ptr->reflectors[0].rotation;
-    if (pCVar2 != (CVector3f *)&CStack_78.pitch) {
-      pCVar2->x = CStack_78.pitch;
-      this_ptr->reflectors[0].rotation.y = CStack_78.yaw;
-      this_ptr->reflectors[0].rotation.z = CStack_78.roll;
+    if (pCVar2 != (CVector3f *)&CStack_78.orientation) {
+      pCVar2->x = CStack_78.orientation.vec.x;
+      this_ptr->reflectors[0].rotation.y = CStack_78.orientation.vec.y;
+      this_ptr->reflectors[0].rotation.z = CStack_78.orientation.vec.z;
     }
     this_ptr->reflectors[0].interp_factor = 0.0;
     fVar9 = this_ptr->reflectors[0].start_position.z;
@@ -104,10 +104,10 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(C
       local_5c.position.z = this_ptr->reflectors[0].target_position.z;
     }
     pCVar2 = &this_ptr->reflectors[0].rotation;
-    if ((CVector3f *)&local_5c.pitch != pCVar2) {
-      local_5c.pitch = pCVar2->x;
-      local_5c.yaw = this_ptr->reflectors[0].rotation.y;
-      local_5c.roll = this_ptr->reflectors[0].rotation.z;
+    if ((CVector3f *)&local_5c.orientation != pCVar2) {
+      local_5c.orientation.vec.x = pCVar2->x;
+      local_5c.orientation.vec.y = this_ptr->reflectors[0].rotation.y;
+      local_5c.orientation.vec.z = this_ptr->reflectors[0].rotation.z;
     }
     core_slew_cpp_CSlew_processInput_FUN_005a20b0(&local_5c);
     pCVar2 = &this_ptr->reflectors[0].target_position;
@@ -117,10 +117,10 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(C
       this_ptr->reflectors[0].target_position.z = local_5c.position.z;
     }
     pCVar2 = &this_ptr->reflectors[0].rotation;
-    if (pCVar2 != (CVector3f *)&local_5c.pitch) {
-      pCVar2->x = local_5c.pitch;
-      this_ptr->reflectors[0].rotation.y = local_5c.yaw;
-      this_ptr->reflectors[0].rotation.z = local_5c.roll;
+    if (pCVar2 != (CVector3f *)&local_5c.orientation) {
+      pCVar2->x = local_5c.orientation.vec.x;
+      this_ptr->reflectors[0].rotation.y = local_5c.orientation.vec.y;
+      this_ptr->reflectors[0].rotation.z = local_5c.orientation.vec.z;
     }
     this_ptr->reflectors[0].interp_factor = 1.0;
     fVar2 = this_ptr->reflectors[0].target_position.z;

@@ -28,7 +28,7 @@ int __cdecl core_trash_cpp_CTrash_renderOpaque_FUN_005df550(CTrash *this_ptr)
   core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
             (&this_ptr->base,&CStack_18,&CStack_24);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,&g_ZeroVector.i,(CVector3i *)&CStack_18);
+            (g_CDemonRendererPtr2,&g_ZeroVector.f,&CStack_18);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20(&this_ptr->model,0.0,-1);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);

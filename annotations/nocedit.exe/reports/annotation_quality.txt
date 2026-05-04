@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        70 ( 1.1%)
+  Functions with type issues:        68 ( 1.1%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,13 +22,13 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          1
-    Undefined types in variables:      65
+    Undefined types in variables:      63
     Unresolved stack params:           4
 
-  Excluded (.keep / MMX / by-value):   155 functions
+  Excluded (.keep / MMX / by-value):   156 functions
     Wrong calling convention:          1
-    Undefined types in variables:      152
-    Unresolved stack params:           2
+    Undefined types in variables:      154
+    Unresolved stack params:           1
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
@@ -107,7 +107,7 @@ Unresolved stack parameters (missing from signature) (4)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (65)
+Undefined types in variables (63)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -370,16 +370,6 @@ Undefined types in variables (65)
     Locals:  uStack_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  eulerToQuaternionIndirect
-    Address: 0x005f7b70  File: core/xform.cpp
-    Locals:  auStackY_1804 (undefined4[1512])
-    Suggested: Resolve undefined types to concrete types
-
-  eulerToQuaternion
-    Address: 0x005f7b20  File: core/xform.cpp
-    Locals:  auStackY_1804 (undefined4[1512])
-    Suggested: Resolve undefined types to concrete types
-
   modelStructNotSupported4
     Address: 0x0041dbe0  File: engine/boss.c
     Locals:  local_3c (undefined4[13])
@@ -466,14 +456,8 @@ Wrong calling convention - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Unresolved stack params - .keep overrides (2)
+Unresolved stack params - .keep overrides (1)
 --------------------------------------------------------------------------------
-
-  CVehicle_renderOpaque
-    Address: 0x005e88c0  File: core/vehicle.cpp
-    Evidence: in_stack_0000000c, in_stack_0000000c
-    Signature: int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005e88c0(CVehicle *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
 
   CDemonMission_enemyRandomizer
     Address: 0x005379e0  File: core/msnedit.cpp
@@ -494,7 +478,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (152)
+Undefined types - .keep overrides (154)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -587,11 +571,6 @@ Undefined types - .keep overrides (152)
     Locals:  local_54 (undefined1[4]), local_50 (undefined1[4]), local_4c (undefined1[4]), local_48 (undefined1[4]), local_44 (undefined1[4]), local_40 (undefined1[4]), local_3c (undefined1[4]), local_38 (undefined1[4]), local_34 (undefined1[4]), local_30 (undefined1[4]), local_2c (undefined1[4]), local_28 (undefined1[4]), local_24 (undefined1[4]), local_20 (undefined1[4]), local_1c (undefined1[4])
     Suggested: Resolve undefined types to concrete types
 
-  matrixToEulerAnglesZYX
-    Address: 0x005f5bd0  File: core/xform.cpp
-    Locals:  local_b0 (undefined4), local_a0 (undefined4), uStack_9c (undefined4), uStack_8c (undefined4), local_88 (undefined4), uStack_84 (undefined4), local_80 (undefined4), local_68 (undefined4), uStack_64 (undefined4), local_40 (undefined4), uStack_3c (undefined4), uStack_34 (undefined4), local_30 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   CGabriella_processMotionEvents
     Address: 0x004d4890  File: core/gabriela.cpp
     Locals:  local_84 (undefined4), local_80 (undefined4), local_7c (undefined4), local_6c (undefined4), local_68 (undefined4), local_64 (undefined1), local_58 (undefined1), local_40 (undefined1), local_34 (undefined1), local_28 (undefined1), local_1c (undefined4), local_18 (undefined4)
@@ -615,11 +594,6 @@ Undefined types - .keep overrides (152)
   CNetGame_swapPlayerData
     Address: 0x00543bb0  File: core/netgame.cpp
     Locals:  uStack_80 (undefined4), uStack_7c (undefined4), uStack_78 (undefined4), local_74 (undefined4), local_70 (undefined4), local_68 (undefined2), local_64 (undefined4), local_60 (undefined4), local_5c (undefined4), local_58 (undefined4), local_48 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  matrixToEulerAngles
-    Address: 0x005f5690  File: core/xform.cpp
-    Locals:  local_b0 (undefined4), uStack_9c (undefined4), local_98 (undefined4), uStack_8c (undefined4), local_88 (undefined4), local_68 (undefined4), uStack_64 (undefined4), local_40 (undefined4), uStack_3c (undefined4), uStack_34 (undefined4), local_30 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CPlatform_process
@@ -1162,9 +1136,29 @@ Undefined types - .keep overrides (152)
     Locals:  local_320 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
+  eulerToQuaternionIndirect
+    Address: 0x005f7b70  File: core/xform.cpp
+    Locals:  auStackY_1804 (undefined4[1512])
+    Suggested: Resolve undefined types to concrete types
+
+  eulerToQuaternion
+    Address: 0x005f7b20  File: core/xform.cpp
+    Locals:  auStackY_1804 (undefined4[1512])
+    Suggested: Resolve undefined types to concrete types
+
   lerpMatrix3x4
     Address: 0x005f7140  File: core/xform.cpp
     Locals:  auStackY_184c (undefined4[1498])
+    Suggested: Resolve undefined types to concrete types
+
+  matrixToEulerAnglesZYX
+    Address: 0x005f5bd0  File: core/xform.cpp
+    Locals:  local_b0 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  matrixToEulerAngles
+    Address: 0x005f5690  File: core/xform.cpp
+    Locals:  local_b0 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   computeBoxStatistics

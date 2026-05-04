@@ -12,6 +12,6 @@ void __cdecl core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(CDemonActo
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,&(actor->location).position);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,(CVector3i *)&(actor->orient).vec,(CVector3i *)0x0);
+            (g_CDemonRendererPtr2,&(actor->orient).vec,(CVector3f *)0x0);
   return;
 }

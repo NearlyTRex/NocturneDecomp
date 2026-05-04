@@ -82,55 +82,6 @@ Setting `NOCTURNE_AUTHENTIC_VOICE = 1` in `shims/shim_config.h` is currently a p
 
 Default (`= 0`) is current editor-build behavior (silent cutscenes).
 
-## 3. Where did the netplay UI go?
-
-**Question:** Netplay clearly exists in the binary — there's `CNetGame`, host/join init functions, lobby code, packet handlers, even ini-game persistence ("Abort network game" / "Return to game" pick-list dialogs in the running session loop). But there's no menu entry to start a network session. Is it stubbed out?
-
-**Answer (definitive): all infrastructure is intact, the user-facing entry points are orphans.**
-
-### What we found
-
-**Full netplay infrastructure.** `core/netgame.cpp` has 50+ `CNetGame_*` functions: `init`, `initializeNetwork`, `initializeNetworkToHost`, `initializeNetworkToJoin`, `runLobby`, `disconnect`, `addPlayer`, `processPacket`, `processClientFrame`, `applySimFrameHistory`, `applyNewGameSettings`, `gameSettingsChanged`, `getMyControls`, `processChatOut`. The `support/trisock.cpp` socket layer is also present (UDP/TCP, IP parsing, Winsock startup, address conversion).
-
-**Player identity is established.** `CNetGame::init_FUN_0053f780` reads the `USERNAME` env var (falls back to `COMPUTERNAME`, then literal `"MyComputer"`) and copies it into `player_name`. So netplay *does* run its init path — just to set up the player identity, not to start a session.
-
-**Host/join entry points exist but are orphans.** `core/game.cpp:hostNetworkGame_FUN_004e2f10` and `core/game.cpp:joinNetworkGame_FUN_004e2fc0` are the user-facing wrappers. `hostNetworkGame` calls `CNetGame::initializeNetworkToHost` → opens a "Select mission to play" dialog → enters the lobby loop. `joinNetworkGame` does the join-side equivalent. **Both are completely orphaned** — no caller anywhere in the binary, in any function, in any keep file. They're dead code.
-
-**No menu strings.** No string literal in `core/menu.cpp` or `core/main.c` matches `"Host"`, `"Join"`, `"Multiplayer"`, or `"Net Game"`. Whatever menu would have called `hostNetworkGame` / `joinNetworkGame` is gone.
-
-**`runGameSession` still has netplay paths.** The pick-list dialog handler in `runGameSession_FUN_004daf80` (lines 165–197) still references `g_CNetGamePtr->connection_type` and shows pop-ups like:
-- "You are connected to a network game. Do you want to leave the game?"
-- "You are hosting a network game. Do you want to abort the game?"
-
-These paths are reachable *if* `connection_type` is `CONNECTION_HOST` or anything-non-zero, but since the editor binary never invokes `hostNetworkGame` / `joinNetworkGame`, `connection_type` stays `0` and these dialogs never fire.
-
-**Two explicit stubs in trisock.** `support/trisock.cpp:shouldNeverBeCalled1_FUN_005e1a80` and `shouldNeverBeCalled2_FUN_005e1ab0` immediately call `displayErrorAndQuit("Should never be called!")`. These are intentional dead-ends that the rest of the trisock code routes around. Their existence suggests Terminal Reality intentionally left some socket-related callbacks as fatal stubs in this build — possibly a later refactor that some unused vtable slots got pointed to.
-
-### Best-guess explanation
-
-The retail build had a "Multiplayer" entry on the main menu (or in the chapter-select / pause menu) that called `hostNetworkGame` and `joinNetworkGame`. The editor build dropped those menu items at compile time — the entry-point functions are still linked in (probably because the lobby and pick-list dialogs reference them indirectly through function pointers, or because the build system didn't dead-strip them) but no user-reachable code invokes them.
-
-The complete-but-unreachable netplay infrastructure is consistent with this being a developer-build where networking was kept link-able for testing but not menu-exposed for users.
-
-### What remains uncertain
-
-- **Could you reach netplay via the dev-tools menu?** None of the 11 dev-tools menu options invokes `hostNetworkGame` directly, but the Mission Editor's "Play mission" option might. Worth testing.
-- **Are there any dead-code menu strings in `g_LicenseAgreement` or elsewhere that reference netplay?** The encrypted blobs (license text, cheat strings) haven't been fully searched for "Host"/"Join" — could shift the picture.
-- **Did the retail build pre-compute waypoint connectivity for netplay?** The Mission Editor has a "Rebuild waypoint connectivity" option (entry W) that's specifically for net-sim accuracy. Its presence suggests netplay was tested up to ship, just not exposed in this binary.
-
-### Restoration plan — `NOCTURNE_AUTHENTIC_NETPLAY`
-
-Setting `NOCTURNE_AUTHENTIC_NETPLAY = 1` in `shims/shim_config.h` reroutes a pair of unused hotkeys into the orphan host/join wrappers. Required keep edits:
-
-- `core/main.c/enterMainGameMenu_FUN_00507a50.keep.c` and `core/menu.cpp/showMainGameMenu_FUN_00512f40.keep.cpp` — add two hotkey checks alongside the existing Ctrl+D / Ctrl+L / Ctrl+F / Ctrl+M handlers, both wrapped in `#if NOCTURNE_AUTHENTIC_NETPLAY`:
-  - **Ctrl+H** → `core_game_cpp_hostNetworkGame_FUN_004e2f10()`
-  - **Ctrl+J** → `core_game_cpp_joinNetworkGame_FUN_004e2fc0()`
-- `core/menu.cpp/renderMenuAndGetChoice_FUN_00510000.keep.cpp` (optional) — draw a hint line ("Press CTRL+H to host, CTRL+J to join") near the existing "Press CTRL+D" banner, also gated on the flag.
-
-Caveat: even with the menu entry restored, netplay needs Winsock / socket reachability via the `kernel32` / `wsock32` shim layer. Verify those shims implement `WSAStartup`, `socket()`, `bind()`, `recv()`, `send()`, etc. before testing connectivity.
-
-Default (`= 0`) is current editor-build behavior — netplay infrastructure remains as orphaned dead code, no menu hooks.
-
 ## How to add a new mystery
 
 When you find another retail-vs-editor difference worth investigating, follow the per-section template:

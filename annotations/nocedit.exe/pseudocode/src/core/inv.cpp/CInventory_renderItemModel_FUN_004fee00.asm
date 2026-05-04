@@ -12,12 +12,12 @@
 ; int              Stack[0x18]:4   rotation_y
 ; int              Stack[0x1c]:4   alpha
 ; Local Variables:
-; CVector3i        Stack[-0x50]:12  local_50
+; CVector3f        Stack[-0x50]:12  local_50
 ; CVector3i        Stack[-0x44]:12  local_44
 ; float            Stack[-0x38]:4  local_38
 ; float            Stack[-0x34]:4  local_34
 ; float            Stack[-0x30]:4  local_30
-; CVector3i        Stack[-0x2c]:12  local_2c
+; CVector3f        Stack[-0x2c]:12  local_2c
 ; float            Stack[-0x18]:4  local_18
 ; float            Stack[-0x14]:4  local_14
 ;
@@ -341,7 +341,7 @@ section .text
     MOV ECX,dword ptr [0x006703ec]      ; 004ff102 | g_CDemonRendererPtr2
     PUSH ECX                            ; 004ff108 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 004ff109
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 004ff10e
     LEA EAX,[EBP + -0x40]               ; 004ff111
     PUSH EAX                            ; 004ff114
@@ -350,7 +350,7 @@ section .text
     PUSH EBX                            ; 004ff120 | g_CDemonRendererInstance
     MOV EDI,dword ptr [EBP + 0x2c]      ; 004ff121
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 004ff124
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 004ff129
     CMP EDI,0xfde8                      ; 004ff12c
     JGE 0x004ff1f0                      ; 004ff132

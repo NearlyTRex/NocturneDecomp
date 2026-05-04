@@ -52,7 +52,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
   CVector3f local_68;
   CVector3i local_5c;
   CVector3i local_50;
-  CVector3i local_44;
+  CVector3f local_44;
   float local_30;
   float local_2c;
   float local_28;
@@ -127,9 +127,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
               engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                         (g_CDemonRendererPtr2,&local_e0);
               engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
-                        (g_CDemonRendererPtr2,(float *)&local_44);
+                        (g_CDemonRendererPtr2,&local_44.x);
               engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                        (g_CDemonRendererPtr2,&local_44,(CVector3i *)0x0);
+                        (g_CDemonRendererPtr2,&local_44,(CVector3f *)0x0);
               local_d4.x = (int)ROUND(fVar9 * 256.0f);
               local_d4.y = (int)ROUND(fVar9 * 256.0f);
               local_d4.z = (int)ROUND(256.0f * 0.0);

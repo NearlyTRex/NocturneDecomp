@@ -137,7 +137,7 @@ section .text
     MOV EDX,dword ptr [0x006703ec]      ; 005e89d5 | g_CDemonRendererPtr2
     PUSH EDX                            ; 005e89db | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 005e89dc
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 005e89e1
     PUSH 0x0                            ; 005e89e4
     MOV ECX,dword ptr [ESP + 0x68]      ; 005e89e6
@@ -145,7 +145,7 @@ section .text
     MOV EAX,[0x006703ec]                ; 005e89eb | g_CDemonRendererPtr2
     PUSH EAX                            ; 005e89f0 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 005e89f1
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 005e89f6
     PUSH -0x1                           ; 005e89f9
     PUSH 0x0                            ; 005e89fb
@@ -212,7 +212,7 @@ section .text
     LEA EAX,[ESP + 0x3c]                ; 005e8ac2
     PUSH EAX                            ; 005e8ac6
     CALL core_dlight.cpp_renderConeLightGeometry_FUN_004760d0 ; 005e8ac7
-        ;   XREF to: 004760d0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_renderConeLightGeometry_FUN_004760d0(CVector3f * position, CVector3i * rotation, float fov, float falloff)
+        ;   XREF to: 004760d0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_renderConeLightGeometry_FUN_004760d0(CVector3f * position, CVector3f * rotation, float fov, float falloff)
     ADD ESP,0x10                        ; 005e8acc
     LEA EAX,[ESP + 0x54]                ; 005e8acf
     PUSH EAX                            ; 005e8ad3
@@ -242,7 +242,7 @@ section .text
     LEA EAX,[ESP + 0x3c]                ; 005e8b12
     PUSH EAX                            ; 005e8b16
     CALL core_dlight.cpp_renderConeLightGeometry_FUN_004760d0 ; 005e8b17
-        ;   XREF to: 004760d0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_renderConeLightGeometry_FUN_004760d0(CVector3f * position, CVector3i * rotation, float fov, float falloff)
+        ;   XREF to: 004760d0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_renderConeLightGeometry_FUN_004760d0(CVector3f * position, CVector3f * rotation, float fov, float falloff)
     ADD ESP,0x10                        ; 005e8b1c
     MOV EAX,dword ptr [ESP + 0x60]      ; 005e8b1f
     ADD ESP,0x68                        ; 005e8b23

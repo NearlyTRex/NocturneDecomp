@@ -1929,10 +1929,6 @@
       "type":"struct"
     },
     {
-      "name":"CSlew",
-      "type":"struct"
-    },
-    {
       "name":"CSmokeParticle",
       "type":"struct"
     },
@@ -5746,6 +5742,10 @@
     },
     {
       "name":"CDemonActorTransformState",
+      "type":"struct"
+    },
+    {
+      "name":"CSlew",
       "type":"struct"
     },
     {
@@ -44740,22 +44740,10 @@
           "type":"CVector3f"
         },
         {
-          "len":4,
-          "name":"pitch",
+          "len":12,
+          "name":"orientation",
           "offset":12,
-          "type":"float"
-        },
-        {
-          "len":4,
-          "name":"yaw",
-          "offset":16,
-          "type":"float"
-        },
-        {
-          "len":4,
-          "name":"roll",
-          "offset":20,
-          "type":"float"
+          "type":"UOrientationVector"
         },
         {
           "len":4,

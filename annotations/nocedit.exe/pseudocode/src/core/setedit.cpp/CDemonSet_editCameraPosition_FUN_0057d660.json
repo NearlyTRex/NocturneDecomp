@@ -7,19 +7,19 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1112,
-    "complexity_score": 484,
+    "complexity_score": 485,
     "cross_reference_count": 1,
     "function_call_count": 42,
     "global_count": 75,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 409,
+    "pseudocode_lines": 410,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "unrolled_strchr",
       "unrolled_strcpy"
     ],
-    "total_lines": 1521
+    "total_lines": 1522
   },
   "cross_references": [
     {
@@ -677,19 +677,19 @@
     },
     {
       "addr": "03f48f90",
-      "name": "g_CSlewInstance.pitch",
+      "name": "g_CSlewInstance.orientation",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "03f48f94",
-      "name": "g_CSlewInstance.yaw",
+      "name": "g_CSlewInstance.orientation+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "03f48f98",
-      "name": "g_CSlewInstance.roll",
+      "name": "g_CSlewInstance.orientation+8",
       "type": "undefined4",
       "value": null
     },
@@ -818,7 +818,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 284,
+      "line": 285,
       "match": "(char *)(*piVar1 * 0x1a4 + (int)p_Stack_20",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -827,7 +827,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 325,
+      "line": 326,
       "match": "&stack0xffffee8c",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1134,7 +1134,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 282,
+      "line": 283,
       "match": "(int *)((int)auStack_96c",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)auStack_96c + iVar13);",
@@ -1142,7 +1142,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 294,
+      "line": 295,
       "match": "(int *)((int)pvStack_1c",
       "severity": "moderate",
       "text": "if (*(int *)((int)pvStack_1c + 0x144) == 0) {",

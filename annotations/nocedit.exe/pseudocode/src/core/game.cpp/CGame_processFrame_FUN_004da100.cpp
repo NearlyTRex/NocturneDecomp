@@ -106,15 +106,15 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       }
       pCVar2 = g_HeroActors[g_LocalHeroIndex];
       pUVar18 = &(pCVar2->base).base.orient;
-      if ((UOrientationVector *)&local_b0.pitch != pUVar18) {
-        local_b0.pitch = (pUVar18->vec).x;
-        local_b0.yaw = (pCVar2->base).base.orient.vec.y;
-        local_b0.roll = (pCVar2->base).base.orient.vec.z;
+      if (&local_b0.orientation != pUVar18) {
+        local_b0.orientation.vec.x = (pUVar18->vec).x;
+        local_b0.orientation.vec.y = (pCVar2->base).base.orient.vec.y;
+        local_b0.orientation.vec.z = (pCVar2->base).base.orient.vec.z;
       }
       core_slew_cpp_CSlew_processInput_FUN_005a20b0(&local_b0);
       (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->setPositionAndOrientation)
                 ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],&local_b0.position,
-                 (CVector3f *)&local_b0.pitch);
+                 (CVector3f *)&local_b0.orientation);
       if ((g_MouseButtonFlags.bytes[0] & 1) != 0) {
         core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
                   (&g_CDemonCameraInstance,g_MouseX,g_MouseY,&local_88);

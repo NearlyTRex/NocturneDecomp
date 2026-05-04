@@ -35,7 +35,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50(CMansio
   
   pSVar4 = this_ptr->gems + gem_index;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,(CVector3i *)&pSVar4->rotation,(CVector3i *)&pSVar4->position);
+            (g_CDemonRendererPtr2,&pSVar4->rotation,&pSVar4->position);
   if ((g_CDemonMissionPtr->is_in_editor != 0) &&
      (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar3 == 0)) {

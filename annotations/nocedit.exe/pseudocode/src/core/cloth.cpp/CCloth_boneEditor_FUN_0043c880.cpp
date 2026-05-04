@@ -27,7 +27,7 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
   float fStack_88;
   float fStack_84;
   CVector3f local_80;
-  CVector3i CStack_74;
+  UOrientationVector UStack_74;
   float fStack_68;
   SMotion *local_60;
   SClothVertex *pSStack_5c;
@@ -148,7 +148,7 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,&UNION_UVector3_00838e40.f);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-              (g_CDemonRendererPtr2,&UNION_UVector3_00838e4c.i,(CVector3i *)0x0);
+              (g_CDemonRendererPtr2,&UNION_UVector3_00838e4c.f,(CVector3f *)0x0);
     if (local_4c != 0) {
       core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
                 (&g_CDeformableModelInstanceInstance,-1,0xffffffff,1,0);
@@ -170,11 +170,12 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
       if (0 < this_ptr->locked_vertex_count) {
         do {
           pSVar3 = local_34 + pCVar6->locked_vertex_indices[0];
-          CStack_74.x = (int)ROUND((pSVar3->position).x * 256.0f);
-          CStack_74.y = (int)ROUND((pSVar3->position).y * 256.0f);
-          CStack_74.z = (int)ROUND((pSVar3->position).z * 256.0f);
+          UStack_74.vec.x = (float)(int)ROUND((pSVar3->position).x * 256.0f);
+          UStack_74.vec.y = (float)(int)ROUND((pSVar3->position).y * 256.0f);
+          UStack_74.vec.z = (float)(int)ROUND((pSVar3->position).z * 256.0f);
           wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                    (&g_CDemonRendererPtr2->vertex_buffer_ptr[19999].projected_vertex,&CStack_74);
+                    (&g_CDemonRendererPtr2->vertex_buffer_ptr[19999].projected_vertex,
+                     (CVector3i *)&UStack_74.vec);
           core_cloth_cpp_drawVertexMarker_FUN_0043c6e0(19999);
           local_18 = local_18 + 1;
           pCVar6 = (CCloth *)((pCVar6->model).model_filename + 4);
@@ -304,10 +305,10 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
           CStack_a8.position.y = local_80.y;
           CStack_a8.position.z = local_80.z;
         }
-        if ((CVector3f *)&CStack_a8.pitch != &pSVar4->euler2) {
-          CStack_a8.pitch = (pSVar4->euler2).x;
-          CStack_a8.yaw = (pSVar4->euler2).y;
-          CStack_a8.roll = (pSVar4->euler2).z;
+        if ((CVector3f *)&CStack_a8.orientation != &pSVar4->euler2) {
+          CStack_a8.orientation.vec.x = (pSVar4->euler2).x;
+          CStack_a8.orientation.vec.y = (pSVar4->euler2).y;
+          CStack_a8.orientation.vec.z = (pSVar4->euler2).z;
         }
         core_slew_cpp_CSlew_processInput_FUN_005a20b0(&CStack_a8);
         fStack_84 = 1.0 / local_58;
@@ -319,10 +320,10 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
           (pSVar4->euler1).y = fStack_88;
           (pSVar4->euler1).z = fStack_84;
         }
-        if (&pSVar4->euler2 != (CVector3f *)&CStack_a8.pitch) {
-          (pSVar4->euler2).x = CStack_a8.pitch;
-          (pSVar4->euler2).y = CStack_a8.yaw;
-          (pSVar4->euler2).z = CStack_a8.roll;
+        if (&pSVar4->euler2 != (CVector3f *)&CStack_a8.orientation) {
+          (pSVar4->euler2).x = CStack_a8.orientation.vec.x;
+          (pSVar4->euler2).y = CStack_a8.orientation.vec.y;
+          (pSVar4->euler2).z = CStack_a8.orientation.vec.z;
         }
       }
       iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D);

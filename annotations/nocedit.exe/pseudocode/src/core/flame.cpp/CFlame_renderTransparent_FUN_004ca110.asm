@@ -16,7 +16,7 @@
 ; CVector3i        Stack[-0xac]:12  CStack_ac
 ; CVector3i        Stack[-0xa0]:12  CStack_a0
 ; CVector3i        Stack[-0x94]:12  CStack_94
-; CVector3i        Stack[-0x88]:12  CStack_88
+; CVector3f        Stack[-0x88]:12  CStack_88
 ; float            Stack[-0x7c]:4  fStack_7c
 ; float            Stack[-0x78]:4  fStack_78
 ; float            Stack[-0x74]:4  fStack_74
@@ -28,7 +28,7 @@
 ; float            Stack[-0x44]:4  fStack_44
 ; CVector3i        Stack[-0x40]:12  CStack_40
 ; CVector3i        Stack[-0x34]:12  CStack_34
-; CVector3i        Stack[-0x28]:12  CStack_28
+; CVector3f        Stack[-0x28]:12  CStack_28
 ; float            Stack[-0x1c]:4  fStack_1c
 ; int              Stack[-0x18]:4  iStack_18
 ; int              Stack[-0x14]:4  iStack_14
@@ -506,7 +506,7 @@ section .text
     MOV dword ptr [ESP + 0x12c],EDI     ; 004ca6e7
     MOV dword ptr [ESP + 0x134],EDI     ; 004ca6ee
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 004ca6f5
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 004ca6fa
     PUSH 0x3f828f5c                     ; 004ca6fd
     PUSH 0x3f7ae148                     ; 004ca702

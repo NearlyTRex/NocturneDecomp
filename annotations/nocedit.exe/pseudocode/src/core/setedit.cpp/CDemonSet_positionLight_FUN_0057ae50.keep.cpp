@@ -43,10 +43,10 @@ int __cdecl core_setedit_cpp_CDemonSet_positionLight_FUN_0057ae50(CDemonSet *thi
     (pCVar3->position).z = (light->pos).z;
   }
   pCVar3 = g_CSlewPtr;
-  if ((CVector3f *)&g_CSlewPtr->pitch != &light->orient) {
-    g_CSlewPtr->pitch = (light->orient).x;
-    pCVar3->yaw = (light->orient).y;
-    pCVar3->roll = (light->orient).z;
+  if (&g_CSlewPtr->orientation.vec != &light->orient) {
+    g_CSlewPtr->orientation.vec.x = (light->orient).x;
+    pCVar3->orientation.vec.y = (light->orient).y;
+    pCVar3->orientation.vec.z = (light->orient).z;
   }
   pcVar6 = local_84;
   pcVar5 = light->name;
@@ -76,7 +76,7 @@ LAB_0057af67:
       g_CDemonLightInstance.base.base.position.f.y = (g_CSlewPtr->position).y;
     }
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-              (&g_CDemonLightInstance.base.base.rotation_matrix,(CVector3f *)&g_CSlewPtr->pitch);
+              (&g_CDemonLightInstance.base.base.rotation_matrix,&g_CSlewPtr->orientation.vec);
     g_CDemonLightInstance.base.base.focal_length = g_CSlewPtr->slew_rate;
     g_CDemonLightInstance.transform_scale_factor =
          (int)ROUND(ROUND(light->aspect * (float)65536));
@@ -114,9 +114,9 @@ LAB_0057af67:
   _sprintf
             (acStack_170,"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f",(double)(g_CSlewPtr->position).x,
              (double)(g_CSlewPtr->position).y,(double)(g_CSlewPtr->position).z,
-             180 * (double)g_CSlewPtr->pitch * 0.31830988619288902,
-             (double)g_CSlewPtr->roll * 0.31830988619288902 * 180,
-             (double)g_CSlewPtr->yaw * 0.31830988619288902 * 180,
+             180 * (double)g_CSlewPtr->orientation.vec.x * 0.31830988619288902,
+             (double)g_CSlewPtr->orientation.vec.z * 0.31830988619288902 * 180,
+             (double)g_CSlewPtr->orientation.vec.y * 0.31830988619288902 * 180,
              (double)g_CSlewPtr->slew_rate);
   engine_2d_c_drawText_FUN_00401fd0(acStack_170,0,0x16);
   wincore_winrun_cpp_drawCrosshair_FUN_005f2fd0();
@@ -152,10 +152,10 @@ LAB_0057b341:
     (light->pos).z = (pCVar3->position).z;
   }
   pCVar3 = g_CSlewPtr;
-  if (&light->orient != (CVector3f *)&g_CSlewPtr->pitch) {
-    (light->orient).x = g_CSlewPtr->pitch;
-    (light->orient).y = pCVar3->yaw;
-    (light->orient).z = pCVar3->roll;
+  if (&light->orient != &g_CSlewPtr->orientation.vec) {
+    (light->orient).x = g_CSlewPtr->orientation.vec.x;
+    (light->orient).y = pCVar3->orientation.vec.y;
+    (light->orient).z = pCVar3->orientation.vec.z;
   }
   pcVar6 = local_84;
   local_1c = 1;

@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 137,
+    "complexity_score": 92,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 16,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 92,
-    "suspect_count": 4,
-    "suspect_types": [
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 248
   },
   "cross_references": [],
@@ -276,6 +274,42 @@
       "severity": "mild",
       "text": "lVar2._4_4_ = (pSVar6->projected_vertex).transformed_y;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 44,
+      "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar2 = (SRenderVertex *)&(pSVar2->projected_vertex).transformed_z;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 48,
+      "match": "pSVar3 = (T *)&(pSVar3->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar3 = (SRenderVertex *)&(pSVar3->projected_vertex).transformed_z;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar6` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 72,
+      "match": "pSVar6 = (T *)&(pSVar6->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar6 = (SRenderVertex *)&(pSVar6->projected_vertex).transformed_z;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar7` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 76,
+      "match": "pSVar7 = (T *)&(pSVar7->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar7 = (SRenderVertex *)&(pSVar7->projected_vertex).transformed_z;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {
@@ -294,55 +328,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "clipPolygonStage3_FUN_005f81c0.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 17,
-          "line": 71,
-          "message": "Redundant assignment of 'iVar5' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 44,
-      "match": "pSVar2 = (T *)&(pSVar2->FIELD).SUBFIELD",
-      "severity": "moderate",
-      "text": "pSVar2 = (SRenderVertex *)&(pSVar2->projected_vertex).transformed_z;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 48,
-      "match": "pSVar3 = (T *)&(pSVar3->FIELD).SUBFIELD",
-      "severity": "moderate",
-      "text": "pSVar3 = (SRenderVertex *)&(pSVar3->projected_vertex).transformed_z;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar6` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 72,
-      "match": "pSVar6 = (T *)&(pSVar6->FIELD).SUBFIELD",
-      "severity": "moderate",
-      "text": "pSVar6 = (SRenderVertex *)&(pSVar6->projected_vertex).transformed_z;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar7` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 76,
-      "match": "pSVar7 = (T *)&(pSVar7->FIELD).SUBFIELD",
-      "severity": "moderate",
-      "text": "pSVar7 = (SRenderVertex *)&(pSVar7->projected_vertex).transformed_z;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

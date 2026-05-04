@@ -18,7 +18,7 @@ int __cdecl core_baron_cpp_CBaron_renderTransparent_FUN_00413ae0(CBaron *this_pt
   CBoundingBox3D *this_ptr_00;
   int iVar5;
   CBoundingBox3D local_40;
-  CVector3i local_28;
+  CVector3f local_28;
   float local_1c;
   int local_18;
   int iStack_14;
@@ -56,11 +56,11 @@ LAB_00413b59:
     engine_3d_c_setRenderAlpha_FUN_00406d80((local_18 * 2) / 3);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,&(this_ptr->base).base.base.location.position);
-    local_28.y = (int)FLOAT_008224dc;
-    local_28.x = 0;
-    local_28.z = 0;
+    local_28.y = FLOAT_008224dc;
+    local_28.x = 0.0;
+    local_28.z = 0.0;
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-              (g_CDemonRendererPtr2,&local_28,(CVector3i *)0x0);
+              (g_CDemonRendererPtr2,&local_28,(CVector3f *)0x0);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
               (&g_CKeyFramedModelInstanceInstance,0.0,0x23);
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);

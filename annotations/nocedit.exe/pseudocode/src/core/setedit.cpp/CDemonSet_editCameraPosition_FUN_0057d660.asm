@@ -183,11 +183,11 @@ section .text
     JZ 0x0057d76e                       ; 0057d75c
         ;   XREF to: 0057d76e (CONDITIONAL_JUMP)  ; LAB_0057d76e
     MOV ECX,dword ptr [EAX]             ; 0057d75e
-    MOV dword ptr [EDX],ECX             ; 0057d760 | g_CSlewInstance.pitch
+    MOV dword ptr [EDX],ECX             ; 0057d760 | g_CSlewInstance.orientation
     MOV ECX,dword ptr [EAX + 0x4]       ; 0057d762
-    MOV dword ptr [EDX + 0x4],ECX       ; 0057d765 | g_CSlewInstance.yaw
+    MOV dword ptr [EDX + 0x4],ECX       ; 0057d765 | g_CSlewInstance.orientation+4
     MOV ECX,dword ptr [EAX + 0x8]       ; 0057d768
-    MOV dword ptr [EDX + 0x8],ECX       ; 0057d76b | g_CSlewInstance.roll
+    MOV dword ptr [EDX + 0x8],ECX       ; 0057d76b | g_CSlewInstance.orientation+8
     IMUL EAX,dword ptr [EBP + 0x18],0x1a4 ; 0057d76e
         ;   Label: LAB_0057d76e
     MOV EDX,dword ptr [EBP + 0x14]      ; 0057d775
@@ -578,15 +578,15 @@ section .text
     MOV dword ptr [ESP + 0x10e4],EAX    ; 0057dc82
     LEA EAX,[EDX + 0x8]                 ; 0057dc89 | g_CSlewInstance.position.z
     MOV EAX,dword ptr [EAX]             ; 0057dc8c | g_CSlewInstance.position.z
-    LEA ECX,[EDX + 0xc]                 ; 0057dc8e | g_CSlewInstance.pitch
+    LEA ECX,[EDX + 0xc]                 ; 0057dc8e | g_CSlewInstance.orientation
     MOV dword ptr [ESP + 0x10e8],EAX    ; 0057dc91
-    MOV EAX,dword ptr [ECX]             ; 0057dc98 | g_CSlewInstance.pitch
+    MOV EAX,dword ptr [ECX]             ; 0057dc98 | g_CSlewInstance.orientation
     MOV dword ptr [ESP + 0x10ec],EAX    ; 0057dc9a
-    LEA EAX,[ECX + 0x4]                 ; 0057dca1 | g_CSlewInstance.yaw
-    MOV EAX,dword ptr [EAX]             ; 0057dca4 | g_CSlewInstance.yaw
+    LEA EAX,[ECX + 0x4]                 ; 0057dca1 | g_CSlewInstance.orientation+4
+    MOV EAX,dword ptr [EAX]             ; 0057dca4 | g_CSlewInstance.orientation+4
     MOV dword ptr [ESP + 0x10f0],EAX    ; 0057dca6
-    LEA EAX,[ECX + 0x8]                 ; 0057dcad | g_CSlewInstance.roll
-    MOV EAX,dword ptr [EAX]             ; 0057dcb0 | g_CSlewInstance.roll
+    LEA EAX,[ECX + 0x8]                 ; 0057dcad | g_CSlewInstance.orientation+8
+    MOV EAX,dword ptr [EAX]             ; 0057dcb0 | g_CSlewInstance.orientation+8
     MOV dword ptr [ESP + 0x10f4],EAX    ; 0057dcb2
     MOV EAX,dword ptr [EDX + 0x18]      ; 0057dcb9 | g_CSlewInstance.slew_rate
     PUSH EDX                            ; 0057dcbc | g_CSlewInstance
@@ -606,8 +606,8 @@ section .text
     FSTP float ptr [0x032758e8]         ; 0057dcec | g_CDemonCameraInstance.base.position
     MOV EAX,[0x00681ab8]                ; 0057dcf2 | g_CSlewPtr
         ;   Label: LAB_0057dcf2
-    ADD EAX,0xc                         ; 0057dcf7 | g_CSlewInstance.pitch
-    PUSH EAX                            ; 0057dcfa | g_CSlewInstance.pitch
+    ADD EAX,0xc                         ; 0057dcf7 | g_CSlewInstance.orientation
+    PUSH EAX                            ; 0057dcfa | g_CSlewInstance.orientation
     PUSH 0x32758f4                      ; 0057dcfb | g_CDemonCameraInstance.base.rotation_matrix.m[0].x
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30 ; 0057dd00
         ;   XREF to: 00471d30 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
@@ -677,11 +677,11 @@ section .text
     CMP EDX,EAX                         ; 0057ddd2
     JZ 0x0057dde6                       ; 0057ddd4
         ;   XREF to: 0057dde6 (CONDITIONAL_JUMP)  ; LAB_0057dde6
-    MOV ECX,dword ptr [EAX]             ; 0057ddd6 | g_CSlewInstance.pitch
+    MOV ECX,dword ptr [EAX]             ; 0057ddd6 | g_CSlewInstance.orientation
     MOV dword ptr [EDX],ECX             ; 0057ddd8
-    MOV ECX,dword ptr [EAX + 0x4]       ; 0057ddda | g_CSlewInstance.yaw
+    MOV ECX,dword ptr [EAX + 0x4]       ; 0057ddda | g_CSlewInstance.orientation+4
     MOV dword ptr [EDX + 0x4],ECX       ; 0057dddd
-    MOV ECX,dword ptr [EAX + 0x8]       ; 0057dde0 | g_CSlewInstance.roll
+    MOV ECX,dword ptr [EAX + 0x8]       ; 0057dde0 | g_CSlewInstance.orientation+8
     MOV dword ptr [EDX + 0x8],ECX       ; 0057dde3
     IMUL EBX,dword ptr [EBP + 0x18],0x1a4 ; 0057dde6
         ;   Label: LAB_0057dde6
@@ -689,7 +689,7 @@ section .text
     ADD EAX,0xc                         ; 0057ddf2
     MOV EDX,dword ptr [EBP + 0x14]      ; 0057ddf5
     FLD float ptr [EAX + 0xc]           ; 0057ddf8 | g_CSlewInstance.slew_rate
-    PUSH EAX                            ; 0057ddfb | g_CSlewInstance.pitch
+    PUSH EAX                            ; 0057ddfb | g_CSlewInstance.orientation
     LEA EAX,[EDX + 0x4]                 ; 0057ddfc
     FSTP float ptr [EDX + EBX*0x1 + 0x148] ; 0057ddff
     ADD EBX,EAX                         ; 0057de06
@@ -931,21 +931,21 @@ section .text
     SAHF                                ; 0057e119
     JNZ 0x0057df99                      ; 0057e11a
         ;   XREF to: 0057df99 (CONDITIONAL_JUMP)  ; LAB_0057df99
-    LEA ECX,[EDX + 0xc]                 ; 0057e120 | g_CSlewInstance.pitch
+    LEA ECX,[EDX + 0xc]                 ; 0057e120 | g_CSlewInstance.orientation
     FLD float ptr [ESP + 0x10ec]        ; 0057e123
-    FCOMP float ptr [ECX]               ; 0057e12a | g_CSlewInstance.pitch
+    FCOMP float ptr [ECX]               ; 0057e12a | g_CSlewInstance.orientation
     FNSTSW AX                           ; 0057e12c
     SAHF                                ; 0057e12e
     JNZ 0x0057df99                      ; 0057e12f
         ;   XREF to: 0057df99 (CONDITIONAL_JUMP)  ; LAB_0057df99
     FLD float ptr [ESP + 0x10f0]        ; 0057e135
-    FCOMP float ptr [ECX + 0x4]         ; 0057e13c | g_CSlewInstance.yaw
+    FCOMP float ptr [ECX + 0x4]         ; 0057e13c | g_CSlewInstance.orientation+4
     FNSTSW AX                           ; 0057e13f
     SAHF                                ; 0057e141
     JNZ 0x0057df99                      ; 0057e142
         ;   XREF to: 0057df99 (CONDITIONAL_JUMP)  ; LAB_0057df99
     FLD float ptr [ESP + 0x10f4]        ; 0057e148
-    FCOMP float ptr [ECX + 0x8]         ; 0057e14f | g_CSlewInstance.roll
+    FCOMP float ptr [ECX + 0x8]         ; 0057e14f | g_CSlewInstance.orientation+8
     FNSTSW AX                           ; 0057e152
     SAHF                                ; 0057e154
     JNZ 0x0057df99                      ; 0057e155
@@ -978,14 +978,14 @@ section .text
     FLD float ptr [EAX + 0x18]          ; 0057e1a4 | g_CSlewInstance.slew_rate
     FSTP double ptr [ESP]               ; 0057e1a7
     FLD double ptr [0x006480a5]         ; 0057e1aa | DOUBLE_006480a5
-    FLD float ptr [EAX + 0x10]          ; 0057e1b0 | g_CSlewInstance.yaw
+    FLD float ptr [EAX + 0x10]          ; 0057e1b0 | g_CSlewInstance.orientation+4
     FMUL ST1                            ; 0057e1b3
     FLD double ptr [0x006480ad]         ; 0057e1b5 | DOUBLE_006480ad
     FXCH                                ; 0057e1bb
     FMUL ST1                            ; 0057e1bd
     SUB ESP,0x8                         ; 0057e1bf
     FSTP double ptr [ESP]               ; 0057e1c2
-    FLD float ptr [EAX + 0xc]           ; 0057e1c5 | g_CSlewInstance.pitch
+    FLD float ptr [EAX + 0xc]           ; 0057e1c5 | g_CSlewInstance.orientation
     FMULP ST2                           ; 0057e1c8
     FMULP                               ; 0057e1ca
     SUB ESP,0x8                         ; 0057e1cc

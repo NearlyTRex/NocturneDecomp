@@ -120,7 +120,7 @@ section .text
     PUSH EAX                            ; 004ec5d1 | g_CDemonRendererInstance
     XOR EBX,EBX                         ; 004ec5d2
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 004ec5d4
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     MOV EDX,0xbf000000                  ; 004ec5d9
     ADD ESP,0xc                         ; 004ec5de
     LEA EAX,[ESP + 0x18]                ; 004ec5e1

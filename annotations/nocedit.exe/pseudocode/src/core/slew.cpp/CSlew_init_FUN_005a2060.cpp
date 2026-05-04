@@ -12,9 +12,9 @@ void __cdecl core_slew_cpp_CSlew_init_FUN_005a2060(CSlew *this_ptr)
   (this_ptr->position).z = 0.0;
   (this_ptr->position).y = (this_ptr->position).z;
   (this_ptr->position).x = (this_ptr->position).y;
-  this_ptr->roll = 0.0;
-  this_ptr->yaw = this_ptr->roll;
-  this_ptr->pitch = this_ptr->yaw;
+  (this_ptr->orientation).vec.z = 0.0;
+  (this_ptr->orientation).vec.y = (this_ptr->orientation).vec.z;
+  (this_ptr->orientation).vec.x = (this_ptr->orientation).vec.y;
   this_ptr->slew_rate = 28.0;
   return;
 }

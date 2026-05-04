@@ -200,7 +200,7 @@ section .text
     MOV EAX,[0x006703ec]                ; 0052a08e | g_CDemonRendererPtr2
     PUSH EAX                            ; 0052a093 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 0052a094
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 0052a099
     FLD float ptr [EBX + 0x2f38214]     ; 0052a09c | g_MoonBats[1].animation_frame | g_MoonBats[0].animation_frame
     PUSH -0x1                           ; 0052a0a2

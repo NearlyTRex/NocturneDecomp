@@ -7,7 +7,7 @@
 ; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   panel_index
 ; Local Variables:
-; CVector3i        Stack[-0x1c]:12  local_1c
+; CVector3f        Stack[-0x1c]:12  local_1c
 ; int              Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
@@ -56,7 +56,7 @@ section .text
     MOV dword ptr [ESP + 0xc],EDX       ; 00509ca1
     MOV dword ptr [ESP + 0x10],EDX      ; 00509ca5
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 00509ca9
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 00509cae
     MOV EAX,ESP                         ; 00509cb1
     PUSH EAX                            ; 00509cb3
@@ -64,7 +64,7 @@ section .text
     MOV EAX,[0x006703ec]                ; 00509cb9 | g_CDemonRendererPtr2
     PUSH EAX                            ; 00509cbe | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 00509cbf
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 00509cc4
     LEA EAX,[EBX + 0x5e4]               ; 00509cc7
     PUSH EAX                            ; 00509ccd
@@ -73,7 +73,7 @@ section .text
     PUSH EDX                            ; 00509cd9 | g_CDemonRendererInstance
     MOV EBX,0xfb                        ; 00509cda
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 00509cdf
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     MOV ECX,dword ptr [0x02f0cb1c]      ; 00509ce4 | g_MansionPuzzleSlewType
     ADD ESP,0xc                         ; 00509cea
     CMP ECX,0x1                         ; 00509ced

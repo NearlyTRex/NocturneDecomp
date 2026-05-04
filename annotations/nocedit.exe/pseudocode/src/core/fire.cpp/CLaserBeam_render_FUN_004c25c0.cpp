@@ -35,7 +35,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
   SMRGLPrimitiveQuad local_290;
   SMRGLPrimitiveQuadIndex local_248;
   CMatrix3x3f local_220;
-  CVector3i local_1f8;
+  CVector3f local_1f8;
   CVector3i local_1ec;
   float local_1e0;
   float local_1dc;
@@ -205,10 +205,10 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                 (g_CDemonRendererPtr2,&local_168);
       engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
-                (g_CDemonRendererPtr2,(float *)&local_1f8);
-      local_1f8.z = (int)((float)iVar6 + (float)local_1f8.z);
+                (g_CDemonRendererPtr2,&local_1f8.x);
+      local_1f8.z = (float)iVar6 + local_1f8.z;
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                (g_CDemonRendererPtr2,&local_1f8,(CVector3i *)0x0);
+                (g_CDemonRendererPtr2,&local_1f8,(CVector3f *)0x0);
       local_180.x = (int)ROUND(fVar5 * 256.0f);
       local_180.y = (int)ROUND(fVar5 * 256.0f);
       local_180.z = (int)ROUND(256.0f * 0.0);
@@ -281,7 +281,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,&this_ptr->origin);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-              (g_CDemonRendererPtr2,(CVector3i *)&local_9c,(CVector3i *)0x0);
+              (g_CDemonRendererPtr2,&local_9c,(CVector3f *)0x0);
     fVar8 = this_ptr->cone_angle;
     local_54 = this_ptr->halo_spread;
     local_24 = 1.12104e-44;
@@ -418,7 +418,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,&local_12c);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-              (g_CDemonRendererPtr2,(CVector3i *)&local_9c,(CVector3i *)0x0);
+              (g_CDemonRendererPtr2,&local_9c,(CVector3f *)0x0);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr2,&g_FireEffectReticle);
     local_198.x = (int)ROUND(256.0f * 0.2);

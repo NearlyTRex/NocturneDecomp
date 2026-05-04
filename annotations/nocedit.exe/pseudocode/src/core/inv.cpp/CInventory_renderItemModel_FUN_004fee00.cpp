@@ -17,12 +17,12 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *th
   CMelee *pCVar14;
   float fVar10;
   float fVar11;
-  CVector3i local_50;
+  CVector3f local_50;
   CVector3i local_44;
   float local_38;
   float local_34;
   float local_30;
-  CVector3i local_2c;
+  CVector3f local_2c;
   float local_18;
   float local_14;
   float fVar8;
@@ -86,16 +86,16 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *th
               (g_CDemonRendererPtr2,&g_ZeroVector.f);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,&g_ZeroVector.f);
-    local_50.x = (int)((fVar10 + fVar5) * -0.5f);
-    local_50.y = (int)((fVar11 + fVar6) * -0.5f);
-    local_50.z = (int)((fVar4 + fVar7) * -0.5f);
+    local_50.x = (fVar10 + fVar5) * -0.5f;
+    local_50.y = (fVar11 + fVar6) * -0.5f;
+    local_50.z = (fVar4 + fVar7) * -0.5f;
     g_PerspectiveReciprocal = 0;
-    local_2c.x = 0;
-    local_2c.z = 0;
-    local_2c.y = rotation_y;
+    local_2c.x = 0.0;
+    local_2c.z = 0.0;
+    local_2c.y = (float)rotation_y;
     iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(item,"CKeyActor");
     if (iVar1 != 0) {
-      local_2c.x = (int)((float)local_2c.x + 1.570796f);
+      local_2c.x = local_2c.x + 1.570796f;
     }
     pCVar14 = (CMelee *)
               core_actor_cpp_castToClassHash_FUN_0040c790(item,g_CMeleeClassInfo.name_hash);
@@ -103,20 +103,20 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *th
       iVar1 = _stricmp
                         ((pCVar14->base).model.model_name,"axe1.kfm");
       if (iVar1 == 0) {
-        local_2c.x = (int)((float)local_2c.x + -1.570796f);
-        local_2c.z = (int)((float)local_2c.z + -1.570796f);
+        local_2c.x = local_2c.x + -1.570796f;
+        local_2c.z = local_2c.z + -1.570796f;
       }
       iVar1 = _stricmp((pCVar14->base).model.model_name,"ax.kfm")
       ;
       if (iVar1 == 0) {
-        local_2c.x = (int)((float)local_2c.x + -1.570796f);
-        local_2c.z = (int)((float)local_2c.z + -1.570796f);
+        local_2c.x = local_2c.x + -1.570796f;
+        local_2c.z = local_2c.z + -1.570796f;
       }
     }
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-              (g_CDemonRendererPtr2,&local_2c,(CVector3i *)0x0);
+              (g_CDemonRendererPtr2,&local_2c,(CVector3f *)0x0);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-              (g_CDemonRendererPtr2,&g_ZeroVector.i,&local_50);
+              (g_CDemonRendererPtr2,&g_ZeroVector.f,&local_50);
     if (alpha < 65000) {
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,alpha);
       engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(g_CDemonRendererPtr2,1);

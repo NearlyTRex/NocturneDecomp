@@ -62,9 +62,6 @@ CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_005f77e0(CQuater
     local_40[0].w = local_5c * (float)local_78 + quat1_in->w * fVar4;
     local_40[0].x = local_58 * (float)local_78 + quat1_in->x * fVar4;
   }
-  quat_out->w = pCVar4->w;
-  quat_out->x = pCVar4->x;
-  quat_out->y = pCVar4->y;
-  quat_out->z = pCVar4->z;
+  *quat_out = *pCVar4;
   return quat_out;
 }

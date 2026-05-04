@@ -7,17 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 215,
-    "complexity_score": 106,
+    "complexity_score": 79,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 81,
-    "suspect_count": 2,
-    "suspect_types": [
-      "stack_param"
-    ],
-    "total_lines": 296
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 79,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 294
   },
   "cross_references": [],
   "function": {
@@ -150,8 +148,26 @@
   },
   "resolved_suspects": [
     {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_0000000c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_0000000c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while (iVar3 < *(int *)(in_stack_0000000c + 0x938));",
+      "type": "stack_param"
+    },
+    {
       "description": "Direct stack address reference",
-      "line": 54,
+      "line": 52,
       "match": "&stack0xffffff88",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -224,41 +240,7 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CVehicle_renderOpaque_FUN_005e88c0.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 35,
-          "line": 56,
-          "message": "Uninitialized variable: in_stack_0000000c",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "} while (iVar3 < *(int *)(in_stack_0000000c + 0x938));",
-      "type": "stack_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -32,7 +32,7 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
   float local_98;
   float local_94;
   float local_90 [3];
-  CVector3i local_84;
+  CVector3f local_84;
   float local_78;
   float local_74;
   float local_70;
@@ -61,9 +61,9 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,&this_ptr->position);
   engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
-            (g_CDemonRendererPtr2,(float *)&local_84);
+            (g_CDemonRendererPtr2,&local_84.x);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,&local_84,(CVector3i *)0x0);
+            (g_CDemonRendererPtr2,&local_84,(CVector3f *)0x0);
   fVar13 = ((float10)2.0f - (float10)this_ptr->lifetime) / (float10)2.0f;
   fVar1 = (float)fVar13;
   fVar2 = (float)(fVar13 * (float10)4 + (float10)0.40000000000000002);

@@ -26,7 +26,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *th
   float local_bc;
   float local_b8;
   float local_b4;
-  CVector3i local_b0;
+  CVector3f local_b0;
   CVector3i local_a4;
   CVector3i local_98;
   CVector3i local_8c;
@@ -52,9 +52,9 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *th
     return;
   }
   engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
-            (g_CDemonRendererPtr2,(float *)&local_b0);
+            (g_CDemonRendererPtr2,&local_b0.x);
   if (this_ptr->weather_type == WEATHER_TYPE_RAIN) {
-    local_b0.x = 0;
+    local_b0.x = 0.0;
   }
   if (this_ptr->weather_type == WEATHER_TYPE_RAIN) {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
@@ -107,7 +107,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *th
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                 (g_CDemonRendererPtr2,world_position);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                (g_CDemonRendererPtr2,&local_b0,(CVector3i *)0x0);
+                (g_CDemonRendererPtr2,&local_b0,(CVector3f *)0x0);
       local_80.x = (int)ROUND(world_position->x * 256.0f);
       local_80.y = (int)ROUND(world_position->y * 256.0f);
       local_80.z = (int)ROUND(world_position->z * 256.0f);
@@ -184,7 +184,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ef190(CWeather *th
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                   (g_CDemonRendererPtr2,&local_2c);
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                  (g_CDemonRendererPtr2,&local_b0,(CVector3i *)0x0);
+                  (g_CDemonRendererPtr2,&local_b0,(CVector3f *)0x0);
         local_74.x = (int)ROUND(256.0f * 0.2);
         local_74.y = (int)ROUND(256.0f * 0.0);
         local_74.z = (int)ROUND(256.0f * 0.0);

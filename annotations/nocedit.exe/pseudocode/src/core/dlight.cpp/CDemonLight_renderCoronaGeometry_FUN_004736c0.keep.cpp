@@ -41,7 +41,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
   core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
             (&(this_ptr->base).base.rotation_matrix,&local_4c);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,(CVector3i *)&local_4c,(CVector3i *)0x0);
+            (g_CDemonRendererPtr2,&local_4c,(CVector3f *)0x0);
   fVar1 = (this_ptr->base).base.focal_length;
   fVar3 = (float)18;
   fVar2 = (this_ptr->base).max_distance;

@@ -50,7 +50,7 @@ section .text
     MOV ESI,dword ptr [0x006703ec]      ; 00411ef3 | g_CDemonRendererPtr2
     PUSH ESI                            ; 00411ef9 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 00411efa
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 00411eff
     LEA EAX,[ESP + 0x8]                 ; 00411f02
     PUSH EAX                            ; 00411f06

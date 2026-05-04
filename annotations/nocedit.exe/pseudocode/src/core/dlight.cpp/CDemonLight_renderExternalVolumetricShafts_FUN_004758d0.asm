@@ -293,7 +293,7 @@ section .text
     PUSH EBX                            ; 00475b1c | g_CDemonRendererInstance
     MOV dword ptr [EBP + 0x3e],ESI      ; 00475b1d
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 00475b20
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 00475b25
     MOV EAX,dword ptr [EBP + 0x92]      ; 00475b28
         ;   Label: LAB_00475b28

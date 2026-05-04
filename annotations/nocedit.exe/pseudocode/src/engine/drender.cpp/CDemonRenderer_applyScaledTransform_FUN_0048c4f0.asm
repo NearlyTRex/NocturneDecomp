@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer *this_ptr,CVector3i *position,CVector3i *rotation)
+; void __cdecl engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer *this_ptr,CVector3f *position,CVector3f *rotation)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
-; CVector3i *      Stack[0x8]:4   position
-; CVector3i *      Stack[0xc]:4   rotation
+; CVector3f *      Stack[0x8]:4   position
+; CVector3f *      Stack[0xc]:4   rotation
 ;
 ; XREF[62]:
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00 at 00408b28

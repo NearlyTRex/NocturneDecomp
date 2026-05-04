@@ -12,7 +12,7 @@
 ; CVector3i        Stack[-0x38]:12  local_38
 ; CVector3i *      Stack[-0x2c]:4  local_2c
 ; CBoundingBox3D * Stack[-0x28]:4  local_28
-; CVector3i *      Stack[-0x24]:4  local_24
+; CVector3f *      Stack[-0x24]:4  local_24
 ; CVector3f *      Stack[-0x20]:4  local_20
 ; int              Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
@@ -244,7 +244,7 @@ section .text
     MOV EBX,dword ptr [0x006703ec]      ; 0057feda | g_CDemonRendererPtr2 | g_CDemonRendererInstance
     PUSH EBX                            ; 0057fee0 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 0057fee1
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 0057fee6
     MOV ESI,dword ptr [EBP + -0x18]     ; 0057fee9
     PUSH ESI                            ; 0057feec

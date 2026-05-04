@@ -161,7 +161,7 @@ void __cdecl CDemonRenderer::applyDirectTransform(CDemonRenderer *this_ptr,CVect
 
 // Original: engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
 // Address: 0048c4f0
-void __cdecl CDemonRenderer::applyScaledTransform(CDemonRenderer *this_ptr,CVector3i *position,CVector3i *rotation);
+void __cdecl CDemonRenderer::applyScaledTransform(CDemonRenderer *this_ptr,CVector3f *position,CVector3f *rotation);
 
 // Original: engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0048c630
 // Address: 0048c630

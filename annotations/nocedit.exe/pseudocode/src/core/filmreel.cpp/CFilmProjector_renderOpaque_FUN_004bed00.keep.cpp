@@ -13,8 +13,8 @@ int __cdecl core_filmreel_cpp_CFilmProjector_renderOpaque_FUN_004bed00(CFilmProj
   CBoundingBox3D *this_ptr_00;
   int iVar1;
   float fStack_3c;
-  CVector3i CStack_24;
-  CVector3i CStack_18;
+  CVector3f CStack_24;
+  CVector3f CStack_18;
   
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
   this_ptr_00 = (*((this_ptr->base).base.vtable._ub)->getBoundingBox)
@@ -24,16 +24,16 @@ int __cdecl core_filmreel_cpp_CFilmProjector_renderOpaque_FUN_004bed00(CFilmProj
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
     return 0;
   }
-  CStack_18.x = 0;
-  CStack_18.z = (int)this_ptr->reel_rotation;
-  CStack_18.y = 0;
-  CStack_24.x = 0;
-  CStack_24.z = 0;
+  CStack_18.x = 0.0f;
+  CStack_18.z = this_ptr->reel_rotation;
+  CStack_18.y = 0.0f;
+  CStack_24.x = 0.0f;
+  CStack_24.z = 0.0f;
   CStack_24.y = 0x40000000;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,&g_ZeroVector.i,&CStack_24);
+            (g_CDemonRendererPtr2,&g_ZeroVector.f,&CStack_24);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr2,&CStack_18,&g_ZeroVector.i);
+            (g_CDemonRendererPtr2,&CStack_18,&g_ZeroVector.f);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20(&this_ptr->model,0.0,-1);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);

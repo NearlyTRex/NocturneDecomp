@@ -6269,12 +6269,8 @@ static_assert(sizeof(CSlew) == 28,
               "sizeof(CSlew) != 28");
 static_assert(__builtin_offsetof(CSlew, position) == 0,
               "offsetof(CSlew, position) != 0");
-static_assert(__builtin_offsetof(CSlew, pitch) == 12,
-              "offsetof(CSlew, pitch) != 12");
-static_assert(__builtin_offsetof(CSlew, yaw) == 16,
-              "offsetof(CSlew, yaw) != 16");
-static_assert(__builtin_offsetof(CSlew, roll) == 20,
-              "offsetof(CSlew, roll) != 20");
+static_assert(__builtin_offsetof(CSlew, orientation) == 12,
+              "offsetof(CSlew, orientation) != 12");
 static_assert(__builtin_offsetof(CSlew, slew_rate) == 24,
               "offsetof(CSlew, slew_rate) != 24");
 

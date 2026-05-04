@@ -7,13 +7,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 1138,
-    "complexity_score": 500,
+    "complexity_score": 510,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 26,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 325,
-    "suspect_count": 16,
+    "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
       "suspect_float",
@@ -588,6 +588,14 @@
       "severity": "moderate",
       "text": "selected_polygon_index = *(int *)((int)local_20 + local_3c * 4 + -8);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 43,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar4 = 0x14; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",

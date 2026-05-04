@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(CVector3f *position,CVector3i *rotation,float fov,float falloff)
+; void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_004760d0(CVector3f *position,CVector3f *rotation,float fov,float falloff)
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   position
-; CVector3i *      Stack[0x8]:4   rotation
+; CVector3f *      Stack[0x8]:4   rotation
 ; float            Stack[0xc]:4   fov
 ; float            Stack[0x10]:4   falloff
 ; Local Variables:
@@ -99,7 +99,7 @@ section .text
     MOV EDI,dword ptr [0x006703ec]      ; 00476119 | g_CDemonRendererPtr2
     PUSH EDI                            ; 0047611f | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0 ; 00476120
-        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)
+        ;   XREF to: 0048c4f0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0(CDemonRenderer * this_ptr, CVector3f * position, CVector3f * rotation)
     ADD ESP,0xc                         ; 00476125
     PUSH 0x66fed8                       ; 00476128 | g_LightTextures
     MOV EAX,[0x006703ec]                ; 0047612d | g_CDemonRendererPtr2

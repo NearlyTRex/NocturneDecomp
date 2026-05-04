@@ -128,6 +128,7 @@ static int CDemonMission_editActorsInSet_check_INT_02f7c634_0_check_pCVar11_0(CD
     float &local_ac = ctx->local_ac;
     float &local_a8 = ctx->local_a8;
     float &local_a4 = ctx->local_a4;
+    UOrientationVector *&orientation = ctx->orientation;
 
           pCVar12 = (*((pCVar11->vtable)._ub)->getBoundingBox)(pCVar11,&local_13c);
           local_f4 = (pCVar12->min).x + (pCVar12->max).x;
@@ -146,16 +147,16 @@ static int CDemonMission_editActorsInSet_check_INT_02f7c634_0_check_pCVar11_0(CD
             local_170.position.z = local_a4;
           }
           pCVar11 = this_ptr->selected_actor;
-          if ((UOrientationVector *)&local_170.pitch != &pCVar11->orient) {
-            local_170.pitch = (pCVar11->orient).vec.x;
-            local_170.yaw = (pCVar11->orient).vec.y;
-            local_170.roll = (pCVar11->orient).vec.z;
+          if (&local_170.orientation != &pCVar11->orient) {
+            local_170.orientation.vec.x = (pCVar11->orient).vec.x;
+            local_170.orientation.vec.y = (pCVar11->orient).vec.y;
+            local_170.orientation.vec.z = (pCVar11->orient).vec.z;
           }
           local_170.slew_rate = 28.0;
     return 0;
 }
 
-// Chunk: check_INT_02f7c634_0_check_this_ptr_1 (lines 178-212 of original)
+// Chunk: check_INT_02f7c634_0_check_this_ptr_1 (lines 178-213 of original)
 static int CDemonMission_editActorsInSet_check_INT_02f7c634_0_check_this_ptr_1(CDemonMission_editActorsInSet_Ctx *ctx) {
     CDemonMission *&this_ptr = ctx->this_ptr;
     float &fVar1 = ctx->fVar1;
@@ -182,15 +183,17 @@ static int CDemonMission_editActorsInSet_check_INT_02f7c634_0_check_this_ptr_1(C
     float &local_28 = ctx->local_28;
     float &local_24 = ctx->local_24;
     float &local_18 = ctx->local_18;
+    UOrientationVector *&orientation = ctx->orientation;
 
-          if (&local_170.pitch != &local_7c) {
-            local_170.pitch = local_7c;
-            local_170.yaw = local_78;
-            local_170.roll = local_74;
+          if (&local_170.orientation != (UOrientationVector *)&local_7c) {
+            local_170.orientation.vec.x = local_7c;
+            local_170.orientation.vec.y = local_78;
+            local_170.orientation.vec.z = local_74;
           }
-          local_170.yaw = local_170.yaw + (this_ptr->selected_actor->orient).vec.y;
+          local_170.orientation.vec.y =
+               local_170.orientation.vec.y + (this_ptr->selected_actor->orient).vec.y;
           core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-                    (&local_198,(CVector3f *)&local_170.pitch);
+                    (&local_198,&local_170.orientation.vec);
           local_94.z = -local_18;
           local_94.x = local_28;
           local_94.y = local_24;
@@ -218,7 +221,7 @@ static int CDemonMission_editActorsInSet_check_INT_02f7c634_0_check_this_ptr_1(C
     return 0;
 }
 
-// Chunk: branch_0 (lines 397-534 of original)
+// Chunk: branch_0 (lines 398-535 of original)
 static int CDemonMission_editActorsInSet_branch_0(CDemonMission_editActorsInSet_Ctx *ctx) {
     CDemonMission *&this_ptr = ctx->this_ptr;
     CDemonActor *&pCVar11 = ctx->pCVar11;
@@ -373,7 +376,7 @@ LAB_00539d68:
     return 0;
 }
 
-// Chunk: else_2 (lines 534-567 of original)
+// Chunk: else_2 (lines 535-568 of original)
 static int CDemonMission_editActorsInSet_else_2(CDemonMission_editActorsInSet_Ctx *ctx) {
     int &iVar14 = ctx->iVar14;
 
@@ -411,7 +414,7 @@ static int CDemonMission_editActorsInSet_else_2(CDemonMission_editActorsInSet_Ct
     return 0;
 }
 
-// Chunk: branch_0 (lines 605-767 of original)
+// Chunk: branch_0 (lines 606-768 of original)
 static int CDemonMission_editActorsInSet_branch_0(CDemonMission_editActorsInSet_Ctx *ctx) {
     CDemonMission *&this_ptr = ctx->this_ptr;
     CDemonSet *&pCVar7 = ctx->pCVar7;
@@ -587,7 +590,7 @@ LAB_0053a88c:
     return 0;
 }
 
-// Chunk: chunk_4 (lines 782-808 of original)
+// Chunk: chunk_4 (lines 783-809 of original)
 static int CDemonMission_editActorsInSet_chunk_4(CDemonMission_editActorsInSet_Ctx *ctx) {
     CDemonMission *&this_ptr = ctx->this_ptr;
     int &local_64 = ctx->local_64;
@@ -622,7 +625,7 @@ static int CDemonMission_editActorsInSet_chunk_4(CDemonMission_editActorsInSet_C
     return 0;
 }
 
-// Chunk: branch_0 (lines 816-882 of original)
+// Chunk: branch_0 (lines 817-883 of original)
 static int CDemonMission_editActorsInSet_branch_0(CDemonMission_editActorsInSet_Ctx *ctx) {
     CDemonMission *&this_ptr = ctx->this_ptr;
     int &iVar14 = ctx->iVar14;
@@ -917,10 +920,10 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
         local_1c0.m[2].y = g_CDemonCameraInstance.base.rotation_matrix.m[2].y;
         local_1c0.m[2].z = g_CDemonCameraInstance.base.rotation_matrix.m[2].z;
         pCVar8 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(&local_1c0,&local_dc);
-        if ((CVector3f *)&local_170.pitch != pCVar8) {
-          local_170.pitch = pCVar8->x;
-          local_170.yaw = pCVar8->y;
-          local_170.roll = pCVar8->z;
+        if ((CVector3f *)&local_170.orientation != pCVar8) {
+          local_170.orientation.vec.x = pCVar8->x;
+          local_170.orientation.vec.y = pCVar8->y;
+          local_170.orientation.vec.z = pCVar8->z;
         }
         local_170.slew_rate = g_CDemonCameraInstance.base.focal_length;
         break;
@@ -932,7 +935,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
           g_CDemonCameraInstance.base.position.f.z = local_170.position.z;
         }
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-                  (&g_CDemonCameraInstance.base.rotation_matrix,(CVector3f *)&local_170.pitch);
+                  (&g_CDemonCameraInstance.base.rotation_matrix,&local_170.orientation.vec);
         g_CDemonCameraInstance.base.focal_length = local_170.slew_rate;
         break;
       case 2:
@@ -943,7 +946,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
           g_CDemonCameraInstance.base.position.f.z = local_170.position.z;
         }
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-                  (&g_CDemonCameraInstance.base.rotation_matrix,(CVector3f *)&local_170.pitch);
+                  (&g_CDemonCameraInstance.base.rotation_matrix,&local_170.orientation.vec);
         g_CDemonCameraInstance.base.focal_length = local_170.slew_rate;
         break;
       case 3:
@@ -958,7 +961,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
           g_CDemonCameraInstance.base.position.f.z = local_170.position.z;
         }
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-                  (&g_CDemonCameraInstance.base.rotation_matrix,(CVector3f *)&local_170.pitch);
+                  (&g_CDemonCameraInstance.base.rotation_matrix,&local_170.orientation.vec);
         g_CDemonCameraInstance.base.focal_length = local_170.slew_rate;
         break;
       case 4:
@@ -972,7 +975,7 @@ int __cdecl core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(CDemonMi
           g_CDemonCameraInstance.base.position.f.z = local_170.position.z;
         }
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-                  (&g_CDemonCameraInstance.base.rotation_matrix,(CVector3f *)&local_170.pitch);
+                  (&g_CDemonCameraInstance.base.rotation_matrix,&local_170.orientation.vec);
         g_CDemonCameraInstance.base.focal_length = local_170.slew_rate;
         break;
       default:
