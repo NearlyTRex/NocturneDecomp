@@ -7,16 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 697,
-    "complexity_score": 338,
+    "complexity_score": 323,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 21,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 238,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
-      "missing_cave_copy",
-      "warning_type_propagation"
+      "missing_cave_copy"
     ],
     "total_lines": 935
   },
@@ -324,6 +323,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 25,
       "match": "afStackY_18cc",
@@ -521,14 +529,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
     {
       "description": "Struct-type local `local_e0` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 31,

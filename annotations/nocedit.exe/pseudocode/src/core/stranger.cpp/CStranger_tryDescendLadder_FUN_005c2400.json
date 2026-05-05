@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 330,
-    "complexity_score": 150,
+    "complexity_score": 135,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 13,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 135,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 465
   },
   "cross_references": [
@@ -229,6 +227,15 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_20),",
+      "type": "pointer_cast"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
@@ -525,14 +532,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_20),",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

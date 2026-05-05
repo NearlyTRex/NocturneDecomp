@@ -16,7 +16,6 @@ void __cdecl core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_005d9a10(CSvetla
   CVector3f *input_local_point;
   int iVar3;
   int iVar4;
-  CSkeleton *pCVar5;
   int iVar2;
   SDamageInfo local_84;
   CVector3f local_48;
@@ -32,14 +31,12 @@ void __cdecl core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_005d9a10(CSvetla
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                      (&(this_ptr->base).base.model);
   local_18 = -1;
-  pCVar5 = pCVar1;
   iVar2 = local_18;
   if (0 < pCVar1->bone_count) {
     do {
       iVar2 = iVar4;
-      if (bone_index == pCVar5->bone_list[0].parent_index) break;
+      if (bone_index == pCVar1->bone_list[iVar4].parent_index) break;
       iVar4 = iVar4 + 1;
-      pCVar5 = (CSkeleton *)((pCVar5->motion_list).state_names[1] + 2);
       iVar2 = local_18;
     } while (iVar4 < pCVar1->bone_count);
   }

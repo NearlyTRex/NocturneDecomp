@@ -96,7 +96,7 @@ void __cdecl core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(CDemonSet *this_ptr
 void __cdecl core_setcolid_cpp_CDemonSet_disableIgnore_FUN_00574210(CDemonSet *this_ptr);
 void __cdecl core_setcolid_cpp_CDemonSet_enableCollision_FUN_00574220(CDemonSet *this_ptr);
 void __cdecl core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(CDemonSet *this_ptr,int ray_type);
-void __cdecl core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00574270(CDemonSet *this_ptr,float f1,float f2,float f3,float f4);
+void __cdecl core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00574270(CDemonSet *this_ptr,int laser_type,int color_r,int color_g,int color_b);
 void __cdecl core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0(CDemonSet *this_ptr,CVector3f *position,CVector3f *actor_position,SDamageInfo *damage_info);
 SCollisionInfo * __cdecl core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(SCollisionInfo *this_ptr);
 void __cdecl core_setcolid_cpp_CDemonSet_buildCollidableActorList_FUN_005743e0(CDemonSet *this_ptr);

@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 840,
-    "complexity_score": 409,
+    "complexity_score": 379,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 16,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 379,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast",
-      "warning_unreachable"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1219
   },
   "cross_references": [
@@ -293,6 +290,17 @@
     },
     "pcode_op_count": 2824
   },
+  "resolved_suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005c5793) */",
+      "type": "warning_unreachable"
+    }
+  ],
   "stack_frame": {
     "frame_size": 108,
     "local_size": 100,
@@ -432,7 +440,7 @@
         {
           "check_id": "invalidPointerCast",
           "column": 14,
-          "line": 224,
+          "line": 222,
           "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
           "severity": "portability"
         }
@@ -441,23 +449,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Unreachable code block removed",
-      "line": 2,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x005c5793) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 377,
-      "match": "(CDynamite *)((int)local_34",
-      "severity": "moderate",
-      "text": "local_34 = (CDynamite *)((int)local_34 + 1);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

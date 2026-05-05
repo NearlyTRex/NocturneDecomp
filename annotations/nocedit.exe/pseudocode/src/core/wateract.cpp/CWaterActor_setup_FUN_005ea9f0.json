@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 417,
-    "complexity_score": 225,
+    "complexity_score": 240,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 210,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "shadow_pointer_walk"
+      "shadow_pointer_walk",
+      "unrolled_memset"
     ],
     "total_lines": 627
   },
@@ -236,6 +237,14 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 176,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "this_ptr->vertices[iVar15].local_position.z = 0.0;",
+      "type": "unrolled_memset"
+    },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar15` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar15->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 203,

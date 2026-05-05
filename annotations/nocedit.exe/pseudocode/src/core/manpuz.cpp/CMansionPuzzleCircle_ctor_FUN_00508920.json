@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 49,
+    "complexity_score": 84,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 11,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 49,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 3,
+    "suspect_types": [
+      "unrolled_memset"
+    ],
     "total_lines": 159
   },
   "cross_references": [
@@ -204,7 +206,32 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 41,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(ADJ(pvVar4)->gem_pos).z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 44,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(ADJ(pvVar4)->gem_orient).vec.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 47,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(ADJ(pvVar4)->emitter_pos).f.z = 0.0;",
+      "type": "unrolled_memset"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

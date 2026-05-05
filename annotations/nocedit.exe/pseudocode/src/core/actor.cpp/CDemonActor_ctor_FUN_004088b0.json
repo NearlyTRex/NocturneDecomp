@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 67,
+    "complexity_score": 112,
     "cross_reference_count": 48,
     "function_call_count": 2,
     "global_count": 10,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 67,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 4,
+    "suspect_types": [
+      "unrolled_memset"
+    ],
     "total_lines": 166
   },
   "cross_references": [
@@ -573,7 +575,40 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 17,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(ADJ(pCVar2)->location).position.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 22,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(ADJ(pCVar2)->orient).vec.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 39,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(ADJ(pCVar2)->platform_position_delta).z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 42,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(ADJ(pCVar2)->platform_orientation_delta).z = 0.0;",
+      "type": "unrolled_memset"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

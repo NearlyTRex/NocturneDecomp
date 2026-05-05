@@ -20,46 +20,48 @@
 #endif
 
 // NOCTURNE_AUTHENTIC_D3D_OPTIONS
-//   1: the Graphics Options menu lets the user pick a 3D renderer DLL
-//      (DirectX 5/6/7 / 3dfx) and `g_UseDirect3D` retains the choice.
-//   0: hardware acceleration is permanently off — the menu line shows
-//      "Acceleration disabled in editor" and 3D-API cycling has no effect.
+//   1: matches nocedit.exe as-shipped — hardware acceleration is permanently
+//      off, the Graphics Options menu line shows "Acceleration disabled in
+//      editor", and 3D-API cycling has no effect. Two redundant hardcoded
+//      kills (in configureGraphicsOptions and on Ctrl+D entry) clobber
+//      `g_UseDirect3D = 0` every frame.
+//   0: dev-friendly mode. The Graphics Options menu lets the user pick a
+//      3D renderer DLL (DirectX 5/6/7 / 3dfx) and `g_UseDirect3D` retains
+//      the choice — i.e. the working behavior the retail build had.
 //
-//   Override with -DNOCTURNE_AUTHENTIC_D3D_OPTIONS=1.
+//   Override with -DNOCTURNE_AUTHENTIC_D3D_OPTIONS=1 to revert to the
+//   editor build's permanently-disabled state.
 #ifndef NOCTURNE_AUTHENTIC_D3D_OPTIONS
 #define NOCTURNE_AUTHENTIC_D3D_OPTIONS 0
 #endif
 
 // NOCTURNE_AUTHENTIC_VOICE
-//   1: cutscene dialogue plays through the streaming MP3 path alongside
-//      the subtitles.
-//   0: subtitles render but no voice audio plays.
+//   1: matches nocedit.exe as-shipped — subtitles render but no voice audio
+//      plays. The streaming MP3 entry point (`loadStreamingSoundFile`) is
+//      orphan in this build; the call site that would invoke it during
+//      cutscenes is missing.
+//   0: dev-friendly mode. Cutscene dialogue plays through the streaming MP3
+//      path alongside the subtitles — i.e. the working behavior the retail
+//      build (presumably) had.
 //
-//   Override with -DNOCTURNE_AUTHENTIC_VOICE=1.
+//   Override with -DNOCTURNE_AUTHENTIC_VOICE=1 to revert to silent
+//   cutscenes.
 #ifndef NOCTURNE_AUTHENTIC_VOICE
 #define NOCTURNE_AUTHENTIC_VOICE 0
 #endif
 
 // NOCTURNE_AUTHENTIC_NETPLAY
-//   1: Ctrl+H on the main menu hosts a network game; Ctrl+J joins one.
-//      Routes through the existing CNetGame / trisock infrastructure.
-//   0: netplay is unreachable from any menu.
+//   1: matches the shipped binary — netplay is unreachable from any menu.
+//      Neither retail Nocturne nor this editor build ever exposed multiplayer
+//      UI, so this is the "original behavior" mode.
+//   0: dev-friendly mode. Ctrl+H on the main menu hosts a network game;
+//      Ctrl+J joins one. Routes through the orphan CNetGame / trisock
+//      infrastructure. Useful for exercising the unfinished netplay code.
 //
-//   Override with -DNOCTURNE_AUTHENTIC_NETPLAY=1.
+//   Override with -DNOCTURNE_AUTHENTIC_NETPLAY=1 to revert to authentic
+//   shipped behavior.
 #ifndef NOCTURNE_AUTHENTIC_NETPLAY
 #define NOCTURNE_AUTHENTIC_NETPLAY 0
-#endif
-
-// NOCTURNE_AUTHENTIC_RELEASE
-//   1: hide the "NON-RELEASE EDITOR BUILD" / "Press CTRL+D to access the
-//      editor menu" banner on every menu screen, and disable the Ctrl+D
-//      / Ctrl+L hotkeys that open the developer-tools menu.
-//   0: editor banner + dev-tools menu access remain visible (current
-//      behavior of this binary).
-//
-//   Override with -DNOCTURNE_AUTHENTIC_RELEASE=1.
-#ifndef NOCTURNE_AUTHENTIC_RELEASE
-#define NOCTURNE_AUTHENTIC_RELEASE 0
 #endif
 
 // NOCTURNE_AUTHENTIC_CONSOLE
@@ -73,6 +75,21 @@
 //   Override with -DNOCTURNE_AUTHENTIC_CONSOLE=1.
 #ifndef NOCTURNE_AUTHENTIC_CONSOLE
 #define NOCTURNE_AUTHENTIC_CONSOLE 0
+#endif
+
+// NOCTURNE_AUTHENTIC_EDITOR
+//   1: try to act like the non-editor retail build — hide the "NON-RELEASE
+//      EDITOR BUILD" / "Press CTRL+D to access the editor menu" banner on
+//      every menu screen, and disable the Ctrl+D / Ctrl+L hotkeys that
+//      open the developer-tools menu. (We don't have the retail binary, so
+//      this is a best-effort approximation: only the visible editor-build
+//      surfaces are suppressed; deeper differences may remain.)
+//   0: dev-friendly mode. Editor banner + dev-tools menu access remain
+//      visible — the actual nocedit.exe behavior of this binary.
+//
+//   Override with -DNOCTURNE_AUTHENTIC_EDITOR=1.
+#ifndef NOCTURNE_AUTHENTIC_EDITOR
+#define NOCTURNE_AUTHENTIC_EDITOR 0
 #endif
 
 // NOCTURNE_FPU_TRAP

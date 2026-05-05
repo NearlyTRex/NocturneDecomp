@@ -27,7 +27,6 @@ int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_005c1fe0(CStranger *t
   CVector3f CStack_5c;
   CVector3f CStack_50;
   int local_1c;
-  int local_18;
   CConsole *this_ptr_00;
   
   (this_ptr->base).ladder_to_climb = (CLadder *)0x0;
@@ -37,12 +36,11 @@ int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_005c1fe0(CStranger *t
       ((this_ptr->base).base.carry_hands[0].carry_actor == (CDemonActor *)0x0)) &&
      ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0)) {
     local_1c = 0;
-    local_18 = 0;
     while( true ) {
       if (g_CDemonSetPtr->actor_count <= local_1c) break;
       this_ptr_01 = (CLadder *)
                     core_actor_cpp_castToClassHash_FUN_0040c790
-                              (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_18),
+                              (g_CDemonSetPtr->actors[local_1c],
                                g_CLadderClassInfo.name_hash);
       if ((this_ptr_01 != (CLadder *)0x0) &&
          (ABS((this_ptr->base).base.base.location.position.y -
@@ -113,7 +111,6 @@ int __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_005c1fe0(CStranger *t
       }
 LAB_005c2068:
       local_1c = local_1c + 1;
-      local_18 = local_18 + 4;
     }
   }
   return 0;

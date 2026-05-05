@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (423 diagnostics)
+Cppcheck (quick) (425 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -612,15 +612,15 @@ uninitvar (92)
     File: core/skeledit.cpp
     Uninitialized variable: local_64
 
-  core_sound.cpp_updateListeners_FUN_005b1870        line 58
+  core_sound.cpp_updateListeners_FUN_005b1870        line 57
     File: core/sound.cpp
     Uninitialized variable: local_c4
 
-  core_sound.cpp_updateListeners_FUN_005b1870        line 59
+  core_sound.cpp_updateListeners_FUN_005b1870        line 58
     File: core/sound.cpp
     Uninitialized variable: local_cc
 
-  core_sound.cpp_updateListeners_FUN_005b1870        line 60
+  core_sound.cpp_updateListeners_FUN_005b1870        line 59
     File: core/sound.cpp
     Uninitialized variable: local_c8
 
@@ -761,7 +761,7 @@ uninitvar (92)
     Uninitialized variable: local_60
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (69)
+selfAssignment (71)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 116
@@ -823,6 +823,14 @@ selfAssignment (69)
   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 line 1580
     File: core/game.cpp
     Redundant assignment of 'pbVar21' to itself.
+
+  core_menu.cpp_configureGraphicsOptions_FUN_00510c8 line 314
+    File: core/menu.cpp
+    Redundant assignment of 'pacVar11' to itself.
+
+  core_menu.cpp_configureGraphicsOptions_FUN_00510c8 line 319
+    File: core/menu.cpp
+    Redundant assignment of 'pacVar11' to itself.
 
   core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc line 102
     File: core/mimic.cpp
@@ -1392,11 +1400,11 @@ legacyUninitvar (44)
     File: core/skeledit.cpp
     Uninitialized variable: local_38
 
-  core_sound.cpp_updateListeners_FUN_005b1870        line 105
+  core_sound.cpp_updateListeners_FUN_005b1870        line 96
     File: core/sound.cpp
     Uninitialized variable: local_c8
 
-  core_sound.cpp_updateListeners_FUN_005b1870        line 105
+  core_sound.cpp_updateListeners_FUN_005b1870        line 96
     File: core/sound.cpp
     Uninitialized variable: local_c4
 
@@ -1528,7 +1536,7 @@ invalidPointerCast (19)
     File: core/skeleton.cpp
     Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
 
-  core_stranger.cpp_CStranger_updateWeaponLayerActio line 224
+  core_stranger.cpp_CStranger_updateWeaponLayerActio line 222
     File: core/stranger.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 

@@ -47,7 +47,6 @@ int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_005c1680(CStranger *
   int iStack_30;
   float local_28;
   int local_1c;
-  int local_18;
   char *format;
   CDemonActor *pCVar8;
   float fVar2;
@@ -63,9 +62,8 @@ int __cdecl core_stranger_cpp_CStranger_tryPickupObject_FUN_005c1680(CStranger *
   }
   input_world_point = &(this_ptr->base).base.base.location;
   local_28 = 4.0;
-  local_18 = 0;
   for (local_1c = 0; local_1c < g_CDemonSetPtr->actor_count; local_1c = local_1c + 1) {
-    pCVar5 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_18);
+    pCVar5 = g_CDemonSetPtr->actors[local_1c];
     pCVar3 = (*((pCVar5->vtable)._ub)->getCarrier)(pCVar5);
     if (pCVar3 == (CDemonActor *)0x0) {
       iVar11 = (*((pCVar5->vtable)._ub)->canPickup)(pCVar5,(CDemonActor *)this_ptr);
@@ -152,7 +150,6 @@ LAB_005c17d2:
         }
       }
     }
-    local_18 = local_18 + 4;
   }
   pCVar5 = (this_ptr->base).object_to_pick_up;
   if (pCVar5 == (CDemonActor *)0x0) {

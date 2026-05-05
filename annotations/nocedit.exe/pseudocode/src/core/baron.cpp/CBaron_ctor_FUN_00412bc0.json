@@ -7,14 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 70,
+    "complexity_score": 85,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 45,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "unrolled_memset",
       "unrolled_strcpy"
     ],
     "total_lines": 120
@@ -207,6 +208,14 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 15,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(pCVar2->head_rotation).z = 0.0;",
+      "type": "unrolled_memset"
     }
   ],
   "vtable_info": {

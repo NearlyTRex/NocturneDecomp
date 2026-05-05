@@ -55,8 +55,7 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(CStranger *t
   CStack_90.x = CStack_a8.x + CStack_84.x;
   CStack_90.y = CStack_a8.y + CStack_84.y;
   CStack_90.z = CStack_a8.z + CStack_84.z;
-  core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00574270
-            (g_CDemonSetPtr,1.4013e-45,3.57331e-43,0.0,0.0);
+  core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00574270(g_CDemonSetPtr,1,0xff,0,0);
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,&this_ptr->weapon->base);
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr);
   fStack_bc = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(g_CDemonSetPtr,&CStack_a8,&CStack_90)

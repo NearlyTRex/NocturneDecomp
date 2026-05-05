@@ -120,11 +120,12 @@ LAB_005131d5:
       sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0((uint)(iVar4 == 0));
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     }
-#if !NOCTURNE_AUTHENTIC_RELEASE
+#if !NOCTURNE_AUTHENTIC_EDITOR
     iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
     if ((iVar4 != 0) &&
        ((iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D), iVar4 != 0 ||
         (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_L), iVar4 != 0)))) {
+#if NOCTURNE_AUTHENTIC_D3D_OPTIONS
       if (g_UseDirect3D != 0) {
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
         engine_2d_c_drawText_FUN_00401fd0("3D acceleration has been turned off!",0,0);
@@ -134,6 +135,7 @@ LAB_005131d5:
         wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
       }
       g_UseDirect3D = 0;
+#endif
       core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
       core_main_c_showDeveloperToolsMenu_FUN_005073a0();
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
@@ -146,6 +148,22 @@ LAB_005131d5:
       core_fileman_cpp_CDemonFileManager_showEditorMenu_FUN_004be270(&g_CDemonFileManagerInstance);
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     }
+#if !NOCTURNE_AUTHENTIC_NETPLAY
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
+    if ((iVar4 != 0) &&
+       (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_H), iVar4 != 0)) {
+      core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
+      core_game_cpp_hostNetworkGame_FUN_004e2f10();
+      core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
+    }
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
+    if ((iVar4 != 0) &&
+       (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_J), iVar4 != 0)) {
+      core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
+      core_game_cpp_joinNetworkGame_FUN_004e2fc0();
+      core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
+    }
+#endif
     if (iStack_8 != 0) {
       iStack_8 = 0;
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);

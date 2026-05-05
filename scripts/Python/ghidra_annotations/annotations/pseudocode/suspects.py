@@ -1344,6 +1344,142 @@ def identify_unrolled_field_copy(decompiled_code):
     return suspects
 
 
+# Cascade constant fill: a Watcom optimization that sets multiple sibling
+# fields of one struct/array to the same constant by storing the constant
+# once and forwarding it through prior slots:
+#     X.field_C = 0.0;
+#     X.field_B = X.field_C;
+#     X.field_A = X.field_B;
+# Each store after the first reuses the previously-stored slot rather than
+# reloading the constant. Saves N-1 FLDZ/MOV-immediate operations on the
+# original target. The C-level rendering looks like a meaningless chain
+# but is semantically equivalent to N direct stores of the constant.
+#
+# Detection requires 3+ consecutive statements where:
+# - First line: `<PATH>.<F0> = <CONST>;` (numeric zero, NULL, or a typed null cast)
+# - Subsequent lines: `<PATH>.<Fi> = <PATH>.<F(i-1)>;` (chain through prior store)
+# - All Fi distinct, all sharing the same `<PATH>` prefix.
+#
+# Multi-line statements (where the assignment wraps across lines) are
+# handled via `_join_wrapped_statements`. The keep replacement is N direct
+# stores or a struct/array initializer.
+_CASCADE_CONST_RE = re.compile(
+    r'^\s*(.+?)(?:\.|->)(\w+)\s*=\s*'
+    r'(0\.0f?|0\.0+f?|0|0x0+|NULL|nullptr|'
+    r'\(\s*[A-Za-z_][\w\s\*]*\s*\)\s*0x0*|'
+    r'\(\s*[A-Za-z_][\w\s\*]*\s*\)\s*0)\s*;\s*$')
+_CASCADE_CHAIN_RE = re.compile(
+    r'^\s*(.+?)(?:\.|->)(\w+)\s*=\s*(.+?)(?:\.|->)(\w+)\s*;\s*$')
+
+
+def _join_wrapped_statements(lines):
+    """Yield (start_line_idx, joined_text) pairs, one per complete C statement.
+
+    Joins continuation lines that don't end in `;` (or aren't a solo brace)
+    with the next line so that wrapped assignments parse as one statement.
+    """
+    cur_start = None
+    cur = ''
+    for i, line in enumerate(lines):
+        stripped = line.rstrip('\n')
+        if cur_start is None:
+            cur_start = i
+            cur = stripped
+        else:
+            cur = cur.rstrip() + ' ' + stripped.lstrip()
+        rs = cur.strip()
+        if rs.endswith(';') or rs in ('{', '}', '},'):
+            yield (cur_start, cur)
+            cur_start = None
+            cur = ''
+    if cur_start is not None:
+        yield (cur_start, cur)
+
+
+def identify_cascade_constant_fill(decompiled_code):
+    """Detect Watcom cascade-constant-fill chains.
+
+    Canonical shape (3+ consecutive statements):
+        X.fC = 0.0;
+        X.fB = X.fC;
+        X.fA = X.fB;
+
+    Each subsequent line forwards the previously-stored constant through
+    sibling fields of the same struct. The cumulative effect is `X.fA =
+    X.fB = X.fC = const`, but Watcom emits the chain to avoid reloading
+    the constant N times. Most commonly fires on `CVector3f` / `CColor3i`
+    / `CColor3f` zero-fills.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts, one per detected cascade run, located at
+        the first line of the chain.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    raw_lines = decompiled_code.split('\n')
+    stmts = list(_join_wrapped_statements(raw_lines))
+    n = len(stmts)
+
+    def normalize(s):
+        return re.sub(r'\s+', '', s)
+
+    i = 0
+    while i < n:
+        start_line, anchor_text = stmts[i]
+        m_anchor = _CASCADE_CONST_RE.match(anchor_text)
+        if not m_anchor:
+            i += 1
+            continue
+        anchor_path = normalize(m_anchor.group(1))
+        anchor_field = m_anchor.group(2)
+        constant = m_anchor.group(3)
+        if not anchor_path:
+            i += 1
+            continue
+        seen_fields = {anchor_field}
+        prev_field = anchor_field
+        run_len = 1
+        j = i + 1
+        while j < n:
+            _, stmt_text = stmts[j]
+            m_chain = _CASCADE_CHAIN_RE.match(stmt_text)
+            if not m_chain:
+                break
+            lhs_path = normalize(m_chain.group(1))
+            lhs_field = m_chain.group(2)
+            rhs_path = normalize(m_chain.group(3))
+            rhs_field = m_chain.group(4)
+            if (lhs_path != anchor_path or rhs_path != anchor_path
+                    or rhs_field != prev_field
+                    or lhs_field in seen_fields):
+                break
+            seen_fields.add(lhs_field)
+            prev_field = lhs_field
+            run_len += 1
+            j += 1
+        if run_len >= 3:
+            suspects.append({
+                'line': start_line + 1,
+                'type': 'unrolled_memset',
+                'match': 'cascade_constant_fill',
+                'text': anchor_text.strip()[:120],
+                'description': (
+                    'Watcom cascade constant fill (%d sibling fields '
+                    'chained through prior store of `%s`). Replace with '
+                    '%d direct stores of the constant in a .keep.' % (
+                        run_len, constant, run_len)),
+                'severity': 'moderate',
+            })
+            i = j
+        else:
+            i += 1
+    return suspects
+
+
 # Self-copy guard: an `if (&LOCAL_A != &LOCAL_B) { LOCAL_A = LOCAL_B; ... }`
 # block where both sides are bare addresses of stack locals. Watcom emitted
 # this when the source code wrote `if (&dst != &src) dst = src;` to guard a
@@ -2459,6 +2595,96 @@ def identify_unrolled_memset_blocks(assembly_code):
 # The asm-based detector here catches *all* REP MOVS sites unambiguously.
 _REP_MOVS_RE = re.compile(r'\bMOVS([BWD])\.REP\b', re.IGNORECASE)
 
+# Watcom call-ABI struct-by-value pass fingerprint. The compiler lowers
+# pass-by-value of a struct argument to:
+#     SUB ESP, byte_size       ; allocate outgoing-args slot
+#     MOV EDI, ESP             ; EDI -> outgoing-args region
+#     MOV ECX, dword_count     ; size in dwords
+#     LEA/MOV ESI, src
+#     MOVS{B,W,D}.REP
+#     [optionally chain more args, sharing EDI advance through the chain]
+#     CALL target
+# The unique signature is `MOV EDI, ESP` (or `LEA EDI, [ESP+const]`) — a
+# real user-level memcpy never aims at the freshly-allocated outgoing-args
+# slot, so EDI=ESP is exclusive to the call-ABI lowering. Suppressing on
+# this signal eliminates pass-by-value false positives from the asm-side
+# `unrolled_memcpy` detector without risking real memcpys.
+_RE_MOV_EDI_FROM_ESP = re.compile(
+    r'\b(?:MOV\s+EDI\s*,\s*ESP\b|LEA\s+EDI\s*,\s*\[\s*ESP\b)',
+    re.IGNORECASE)
+# Any instruction that re-points EDI at something other than ESP — these
+# break the EDI=ESP-relative chain when scanning backward. MOVSD/MOVSW/MOVSB
+# (with or without REP) advance EDI but preserve the chain, so they're not
+# in this list.
+_RE_EDI_REPOINTED = re.compile(
+    r'\b(?:MOV\s+EDI\s*,(?!\s*ESP\b)|LEA\s+EDI\s*,(?!\s*\[\s*ESP\b)|'
+    r'POP\s+EDI\b|XOR\s+EDI\b|ADD\s+EDI\s*,|SUB\s+EDI\s*,|'
+    r'INC\s+EDI\b|DEC\s+EDI\b)',
+    re.IGNORECASE)
+
+
+def _walkback_finds_edi_esp(lines, start_idx, max_instrs):
+    """Walk backward from start_idx-1 through real asm instructions, looking
+    for `MOV EDI, ESP` (or `LEA EDI, [ESP+const]`) before any EDI-repointing
+    instruction. Returns True on hit, False on chain-break or window-exhausted.
+    """
+    count = 0
+    j = start_idx - 1
+    while j >= 0 and count < max_instrs:
+        s = lines[j].strip()
+        if s and not s.startswith(';'):
+            count += 1
+            if _RE_MOV_EDI_FROM_ESP.search(s):
+                return True
+            if _RE_EDI_REPOINTED.search(s):
+                return False
+        j -= 1
+    return False
+
+
+def _is_call_abi_pass_by_value(rep_line_idx, lines, max_instrs=24,
+                                cave_max_instrs=40):
+    """Check if a `MOVS.REP` at lines[rep_line_idx] is a Watcom call-ABI
+    struct-by-value push (suppress) rather than a user-level memcpy (flag).
+
+    Two probes, both looking for `MOV EDI, ESP` without an intervening
+    EDI-repoint:
+
+    1. Linear walkback through the preceding `max_instrs` real instructions.
+       Catches the simple case where the SUB ESP / MOV EDI ESP / MOVSD.REP
+       block is contiguous with the call site.
+
+    2. Cave-fixup walkback. Some MOVSD.REP sites are reached only via JMP
+       from a far cave block (post-`fix_movsd_caves.py`); the EDI=ESP setup
+       lives in the cave, not in linear order. If the MOVSD.REP's address
+       is the target of any `JMP 0xADDR` in the asm, walk back from each
+       such JMP source up to `cave_max_instrs` (caves typically run 25-30
+       instructions before the JMP-back).
+
+    Real user memcpys aim EDI at a stack local (`LEA EDI, [EBP-N]`) or a
+    heap pointer (`MOV EDI, [some_mem]`) — both hit `_RE_EDI_REPOINTED`
+    first and break the chain, so this rule is FP-safe.
+    """
+    if _walkback_finds_edi_esp(lines, rep_line_idx, max_instrs):
+        return True
+
+    # Cave-fixup probe: find JMPs targeting this MOVSD.REP's address and
+    # walk back from each source.
+    addr_m = _ASM_LINE_ADDR_RE.search(lines[rep_line_idx])
+    if not addr_m:
+        return False
+    addr = addr_m.group(1).lower()
+    addr_norm = addr.lstrip('0') or '0'
+    jmp_re = re.compile(
+        r'\bJMP\s+0x0*' + addr_norm + r'\b', re.IGNORECASE)
+    for i, line in enumerate(lines):
+        if i == rep_line_idx:
+            continue
+        if jmp_re.search(line):
+            if _walkback_finds_edi_esp(lines, i, cave_max_instrs):
+                return True
+    return False
+
 
 def identify_unrolled_memcpy_blocks(assembly_code):
     """Detect Watcom `REP MOVS{B,W,D}` (inline memcpy/memmove) instructions.
@@ -2473,15 +2699,21 @@ def identify_unrolled_memcpy_blocks(assembly_code):
     `MOVSB.REP` is the canonical Watcom variable-count emit (chunk loop
     plus byte tail) — counted as one site, not two.
 
+    Suppression: sites whose backward scan finds `MOV EDI, ESP` (without
+    an intervening EDI re-point) are Watcom call-ABI struct-by-value
+    pushes, not user-level memcpys. The keep already expresses these
+    correctly via direct by-value passes, so flagging them is a false
+    positive. See `_is_call_abi_pass_by_value`.
+
     Args:
         assembly_code: The function's assembly listing (from `.asm`).
 
     Returns:
-        List of suspect dicts, one per `MOVS.REP` site after pairing. The
-        reported `line` is the .asm line number; the user finds the
-        matching countdown for-loop (or unrolled field-by-field copy) in
-        the function body and replaces it with
-        `memcpy(dst, src, count * stride)` or a struct assignment.
+        List of suspect dicts, one per `MOVS.REP` site after pairing and
+        call-ABI suppression. The reported `line` is the .asm line
+        number; the user finds the matching countdown for-loop (or
+        unrolled field-by-field copy) in the function body and replaces
+        it with `memcpy(dst, src, count * stride)` or a struct assignment.
     """
     suspects = []
     if not assembly_code:
@@ -2491,6 +2723,8 @@ def identify_unrolled_memcpy_blocks(assembly_code):
     paired = _suppress_byte_tails(sites, lines)
     for idx, (line_idx, size_letter, line) in enumerate(sites):
         if idx in paired:
+            continue
+        if _is_call_abi_pass_by_value(line_idx, lines):
             continue
         stride = {'B': 1, 'W': 2, 'D': 4}[size_letter]
         addr_m = _ASM_LINE_ADDR_RE.search(line)
@@ -2546,6 +2780,7 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
     found.extend(identify_unrolled_memcpy_loops(code))
     found.extend(identify_unrolled_memcpy_dword_byte_split(code))
     found.extend(identify_unrolled_field_copy(code))
+    found.extend(identify_cascade_constant_fill(code))
     found.extend(identify_self_copy_guard(code))
     found.extend(identify_pointer_cast_multiline(code))
     found.extend(identify_int_address_arithmetic(code))

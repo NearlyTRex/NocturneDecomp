@@ -10,7 +10,6 @@
 void __cdecl core_sound_cpp_CSound_process_FUN_005b2fd0(CSound *this_ptr)
 
 {
-  char cVar2;
   float fVar3;
   float fVar4;
   int iVar4;
@@ -19,8 +18,6 @@ void __cdecl core_sound_cpp_CSound_process_FUN_005b2fd0(CSound *this_ptr)
   int iVar5;
   uint uVar6;
   STrainNoise *pSVar7;
-  char *pcVar8;
-  char *pcVar9;
   float local_140;
   float local_13c;
   float local_138;
@@ -33,11 +30,8 @@ void __cdecl core_sound_cpp_CSound_process_FUN_005b2fd0(CSound *this_ptr)
   float local_24;
   STrainNoise *local_1c;
   STrainNoise *pSVar3;
-  char cVar1;
   float fVar2;
-  byte bVar10;
   
-  bVar10 = 0;
   fVar7 = g_CGamePtr->delta_time_float;
   fVar3 = fVar7 * (float)0.5;
   core_sound_cpp_updateListeners_FUN_005b1870();
@@ -210,18 +204,8 @@ void __cdecl core_sound_cpp_CSound_process_FUN_005b2fd0(CSound *this_ptr)
       case 2:
       case 3:
         local_140 = local_13c * (float)0.80000000000000004;
-        pcVar8 = "bump?.wav";
         local_2c = 20.0;
-        pcVar9 = local_d0;
-        do {
-          cVar1 = *pcVar8;
-          *pcVar9 = cVar1;
-          if (cVar1 == '\0') break;
-          cVar2 = pcVar8[1];
-          pcVar8 = pcVar8 + 2;
-          pcVar9[1] = cVar2;
-          pcVar9 = pcVar9 + 2;
-        } while (cVar2 != '\0');
+        strcpy(local_d0,"bump?.wav");
         break;
       case 4:
         goto switchD_005b3824_caseD_4;

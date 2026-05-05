@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_005c02b0(CStranger *this_ptr,int arm_side)
 
 {
@@ -68,10 +66,7 @@ void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_005c02b0(CStran
     pSVar2 = &this_ptr->right_arm_aim;
     pCVar1 = &local_ec;
   }
-  local_1bc.w = pCVar1->w;
-  local_1bc.x = pCVar1->x;
-  local_1bc.y = pCVar1->y;
-  local_1bc.z = pCVar1->z;
+  local_1bc = *pCVar1;
   fVar1 = (this_ptr->base).base.layer_action_t;
   fVar1 = (1.0 - (1.0 - pSVar2->kickback_factor) * fVar1) * fVar1;
   if (0.0 < fVar1) {
@@ -98,10 +93,7 @@ void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_005c02b0(CStran
     core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_15c,&local_18c,&local_bc);
     quat1_in = (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations + local_24;
     core_xform_cpp_slerpQuaternion_FUN_005f77e0(quat1_in,&local_14c,fVar3,&local_6c);
-    (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[local_24].w = local_6c.w;
-    (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[local_24].x = local_6c.x;
-    (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[local_24].y = local_6c.y;
-    (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[local_24].z = local_6c.z;
+    (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[local_24] = local_6c;
     pCVar4 = &local_18c;
     core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_1cc,&local_1bc,&local_8c);
     core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_12c,pCVar4,&local_7c);
@@ -113,10 +105,7 @@ void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_005c02b0(CStran
       core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_15c,&local_fc,&local_dc);
       core_xform_cpp_slerpQuaternion_FUN_005f77e0
                 (quat1_in,&local_10c,this_ptr->arm_recoil_blend,&local_cc);
-      (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[local_24].w = local_cc.w;
-      (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[local_24].x = local_cc.x;
-      (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[local_24].y = local_cc.y;
-      (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[local_24].z = local_cc.z;
+      (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[local_24] = local_cc;
       return;
     }
   }

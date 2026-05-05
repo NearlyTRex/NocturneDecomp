@@ -30,12 +30,12 @@ The string `"Acceleration disabled in editor"` is a literal in the binary at thi
 
 ### Restoration plan — `NOCTURNE_AUTHENTIC_D3D_OPTIONS`
 
-Setting `NOCTURNE_AUTHENTIC_D3D_OPTIONS = 1` in `shims/shim_config.h` reverts to retail behavior. Required keep edits:
+The flag follows the `NOCTURNE_AUTHENTIC_*` polarity convention — `1` means "match `nocedit.exe` as-shipped" (kills active, 3D forced off) and `0` (default) means "dev-friendly mode" (the working retail-like behavior). Required keep edits:
 
-- `core/menu.cpp/configureGraphicsOptions_FUN_00510c80.keep.cpp` — wrap lines 192–195 in `#if !NOCTURNE_AUTHENTIC_D3D_OPTIONS`. Replace the slot-2 menu text with a real "3D API: <name>" line read from `g_RendererDllPath` (the existing strings `"3D API : DirectX 5/6/7"` etc. on lines 197–220 are already wired up — just route through them when the flag is set).
-- `core/main.c/enterMainGameMenu_FUN_00507a50.keep.c` and `core/menu.cpp/showMainGameMenu_FUN_00512f40.keep.cpp` — wrap the `g_UseDirect3D = 0` line that runs on Ctrl+D entry (and the "3D acceleration has been turned off!" splash) in `#if !NOCTURNE_AUTHENTIC_D3D_OPTIONS`.
+- `core/menu.cpp/configureGraphicsOptions_FUN_00510c80.keep.cpp` — wrap lines 192–195 (the per-frame `g_UseDirect3D = 0` clobber + "Acceleration disabled in editor" text) in `#if NOCTURNE_AUTHENTIC_D3D_OPTIONS`. When the flag is `0`, the existing "3D API : DirectX 5/6/7" / etc. strings on lines 197–220 take over and 3D-API cycling sticks.
+- `core/main.c/enterMainGameMenu_FUN_00507a50.keep.c` and `core/menu.cpp/showMainGameMenu_FUN_00512f40.keep.cpp` — wrap the `g_UseDirect3D = 0` line that runs on Ctrl+D entry (and the "3D acceleration has been turned off!" splash) in `#if NOCTURNE_AUTHENTIC_D3D_OPTIONS`.
 
-Default (`= 0`) is current editor-build behavior.
+Default (`= 0`) leaves the kill code compiled out, exposing 3D-API cycling. Override with `-DNOCTURNE_AUTHENTIC_D3D_OPTIONS=1` to compile the kill code in and match the shipped editor binary.
 
 ### What about the ini round-trip?
 
@@ -75,12 +75,12 @@ Alternative explanation we couldn't rule out: file-not-found at runtime. If the 
 
 ### Restoration plan — `NOCTURNE_AUTHENTIC_VOICE`
 
-Setting `NOCTURNE_AUTHENTIC_VOICE = 1` in `shims/shim_config.h` is currently a placeholder — no keep file is wired to read the flag yet because the missing call site hasn't been pinned down. Two paths forward:
+The flag follows the `NOCTURNE_AUTHENTIC_*` polarity convention — `1` means "match `nocedit.exe` as-shipped" (silent cutscenes, no voice playback) and `0` (default) means "dev-friendly mode" (voices play). It's currently a placeholder — no keep file is wired to read the flag yet because the missing call site hasn't been pinned down. Two paths forward:
 
-- **Path A (preferred): find the original caller.** Investigate `core/script.cpp/CScript_step_FUN_0055a810` end-to-end (or the dialog opcode dispatch within it). Find where `dialog_entries[i].data` (the resolved filename) gets passed to a sound-system function. Compare against the retail build's behavior: a `loadStreamingSoundFile` call (or equivalent through `startSfx` with the resolved `.mp3` filename) probably belongs there. Once located, write a keep that wraps the call in `#if NOCTURNE_AUTHENTIC_VOICE`.
-- **Path B (decoupled): add a shim helper.** Define `nocturne_play_dialog(name)` in `shims/dump.cpp` (or a new `shims/dialog.cpp`). Internally call `loadStreamingSoundFile` + `startSfx` when `NOCTURNE_AUTHENTIC_VOICE` is set; no-op when unset. Have the script-step keep call this shim from wherever subtitles are queued — even if it's not at the original retail call site, the audio will play in sync with the subtitle.
+- **Path A (preferred): find the original caller.** Investigate `core/script.cpp/CScript_step_FUN_0055a810` end-to-end (or the dialog opcode dispatch within it). Find where `dialog_entries[i].data` (the resolved filename) gets passed to a sound-system function. Compare against the retail build's behavior: a `loadStreamingSoundFile` call (or equivalent through `startSfx` with the resolved `.mp3` filename) probably belongs there. Once located, write a keep that wraps the call in `#if !NOCTURNE_AUTHENTIC_VOICE`.
+- **Path B (decoupled): add a shim helper.** Define `nocturne_play_dialog(name)` in `shims/dump.cpp` (or a new `shims/dialog.cpp`). Internally call `loadStreamingSoundFile` + `startSfx` when `!NOCTURNE_AUTHENTIC_VOICE` (dev-friendly); no-op otherwise. Have the script-step keep call this shim from wherever subtitles are queued — even if it's not at the original retail call site, the audio will play in sync with the subtitle.
 
-Default (`= 0`) is current editor-build behavior (silent cutscenes).
+Default (`= 0`) plays voices. Override with `-DNOCTURNE_AUTHENTIC_VOICE=1` to revert to the shipped editor binary's silent cutscenes.
 
 ## How to add a new mystery
 

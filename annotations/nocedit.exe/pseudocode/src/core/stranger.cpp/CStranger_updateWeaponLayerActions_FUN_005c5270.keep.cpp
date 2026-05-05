@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Removing unreachable block (ram,0x005c5793) */
-
 void __cdecl core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_005c5270(CStranger *this_ptr,float delta_time)
 
 {
@@ -37,7 +35,7 @@ void __cdecl core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_005c5270(C
   CVector3f local_60;
   CVector3f local_54;
   int local_40;
-  CDynamite *local_34;
+  int local_34;
   CWeapon *local_1c;
   char *pcVar4;
   float fVar3;
@@ -76,7 +74,7 @@ void __cdecl core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_005c5270(C
   }
   this_ptr_00 = &(this_ptr->base).inventory;
   this_ptr_01 = &(this_ptr->base).base.model;
-  local_34 = (CDynamite *)0x0;
+  local_34 = 0;
   do {
     if (delta_time <= 0.0) {
       return;
@@ -374,8 +372,8 @@ LAB_005c54e8:
       core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0((CCharacter *)this_ptr,iVar15)
       ;
     }
-    local_34 = (CDynamite *)((int)local_34 + 1);
-    if (1 < (int)local_34) {
+    local_34 = local_34 + 1;
+    if (1 < local_34) {
       return;
     }
   } while( true );

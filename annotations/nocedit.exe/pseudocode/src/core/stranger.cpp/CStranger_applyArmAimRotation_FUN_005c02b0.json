@@ -7,17 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 484,
-    "complexity_score": 362,
+    "complexity_score": 312,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 127,
-    "suspect_count": 22,
+    "suspect_count": 18,
     "suspect_types": [
-      "missing_cave_copy",
-      "unrolled_memcpy",
-      "warning_type_propagation"
+      "missing_cave_copy"
     ],
     "total_lines": 611
   },
@@ -207,6 +205,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 20,
       "match": "afStackY_19b8",
@@ -214,6 +221,15 @@
       "severity": "moderate",
       "text": "float afStackY_19b8 [1520];",
       "type": "stack_alignment_array"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 78,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_1bc.w = pCVar1->w;",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -510,22 +526,6 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 78,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_1bc.w = pCVar1->w;",
-      "type": "unrolled_memcpy"
-    },
-    {
       "description": "Struct-type local `local_1dc` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 24,
       "match": "CQuaternion4f local_1dc; ... f(&local_1dc, ...);",
@@ -668,24 +668,6 @@
       "severity": "moderate",
       "text": "CQuaternion4f local_4c;",
       "type": "missing_cave_copy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "introduced_by": "keep",
-      "line": 71,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_1bc.w = pCVar1->w;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "introduced_by": "keep",
-      "line": 101,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[local_24].w = local_6c.w;",
-      "type": "unrolled_memcpy"
     }
   ]
 }

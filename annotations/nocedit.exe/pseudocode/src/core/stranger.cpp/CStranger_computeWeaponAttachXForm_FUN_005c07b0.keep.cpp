@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0(CStranger *this_ptr,CDemonActor *carried_actor,int hand_index,CMatrix3x4f *output_matrix)
 
 {
@@ -309,18 +307,7 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
       pCVar15 = &local_2ac;
       core_xform_cpp_buildRotationY_FUN_005f6cc0(3.1415927,&local_93c);
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_96c,pCVar15,&local_90c);
-      local_2ac.m[0].w = local_90c.m[0].w;
-      local_2ac.m[0].x = local_90c.m[0].x;
-      local_2ac.m[0].y = local_90c.m[0].y;
-      local_2ac.m[0].z = local_90c.m[0].z;
-      local_2ac.m[1].w = local_90c.m[1].w;
-      local_2ac.m[1].x = local_90c.m[1].x;
-      local_2ac.m[1].y = local_90c.m[1].y;
-      local_2ac.m[1].z = local_90c.m[1].z;
-      local_2ac.m[2].w = local_90c.m[2].w;
-      local_2ac.m[2].x = local_90c.m[2].x;
-      local_2ac.m[2].y = local_90c.m[2].y;
-      local_2ac.m[2].z = local_90c.m[2].z;
+      local_2ac = local_90c;
     }
     pCVar15 = &local_2ac;
     goto LAB_005c0946;
@@ -345,18 +332,7 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
           core_xform_cpp_buildRotationY_FUN_005f6cc0(-1.5707964,&local_30c);
           pCVar15 = &local_30c;
 LAB_005c1504:
-          local_45c.m[0].w = pCVar15->m[0].w;
-          local_45c.m[0].x = pCVar15->m[0].x;
-          local_45c.m[0].y = pCVar15->m[0].y;
-          local_45c.m[0].z = pCVar15->m[0].z;
-          local_45c.m[1].w = pCVar15->m[1].w;
-          local_45c.m[1].x = pCVar15->m[1].x;
-          local_45c.m[1].y = pCVar15->m[1].y;
-          local_45c.m[1].z = pCVar15->m[1].z;
-          local_45c.m[2].w = pCVar15->m[2].w;
-          local_45c.m[2].x = pCVar15->m[2].x;
-          local_45c.m[2].y = pCVar15->m[2].y;
-          local_45c.m[2].z = pCVar15->m[2].z;
+          local_45c = *pCVar15;
         }
         else {
           if (hand_index == 1) {

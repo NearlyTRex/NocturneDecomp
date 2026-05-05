@@ -8,18 +8,19 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 5207,
-    "complexity_score": 2097,
+    "complexity_score": 2112,
     "cross_reference_count": 0,
     "function_call_count": 57,
     "global_count": 186,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1852,
-    "suspect_count": 21,
+    "suspect_count": 22,
     "suspect_types": [
       "missing_cave_copy",
       "pointer_cast",
       "shadow_pointer_walk",
       "unrolled_memcpy",
+      "unrolled_memset",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_inlined_function"
@@ -3205,6 +3206,14 @@
       "severity": "moderate",
       "text": "pCVar20->w = local_224.w;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 1487,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "pCVar10[iVar4].z = 0.0;",
+      "type": "unrolled_memset"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",

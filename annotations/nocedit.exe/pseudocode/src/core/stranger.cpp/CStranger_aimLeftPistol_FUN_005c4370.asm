@@ -110,7 +110,7 @@ section .text
     PUSH EDX                            ; 005c4454 | g_CDemonSetInstance
     FSTP float ptr [ESP + 0x74]         ; 005c4455
     CALL core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_00574270 ; 005c4459
-        ;   XREF to: 00574270 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_00574270(CDemonSet * this_ptr, float f1, float f2, float f3, ...)
+        ;   XREF to: 00574270 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_00574270(CDemonSet * this_ptr, int laser_type, int color_r, int color_g, ...)
     ADD ESP,0x14                        ; 005c445e
     MOV ECX,dword ptr [EBX + 0x1fc2c]   ; 005c4461
     PUSH ECX                            ; 005c4467

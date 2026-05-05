@@ -38,7 +38,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSampl
   float fVar5;
   float fVar1;
   float fVar4;
-  
+
   fVar4 = (float)g_Cached3DDistanceFactorInverse;
   fVar2 = 20.0f * fVar4;
   fVar5 = g_SoundReferenceVolumeDistance * fVar4;
@@ -176,6 +176,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSampl
                             ("Invalid length %d in %s line %d",local_38,local_138,local_18);
                 }
                 (this_ptr->sample_info).sample_count = local_38;
+                this_ptr->loop_endpoints[0] = local_38;
               }
               else {
                 iVar7 = _stricmp(local_464,"loop");

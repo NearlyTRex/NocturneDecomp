@@ -20,7 +20,6 @@ uint __cdecl core_sound_cpp_playSfxInternal_FUN_005b1fd0(void *user_data,char *s
   char *pcVar6;
   char *pcVar7;
   char *pcVar8;
-  byte bVar9;
   float local_180;
   float local_17c;
   char local_178 [100];
@@ -39,7 +38,6 @@ uint __cdecl core_sound_cpp_playSfxInternal_FUN_005b1fd0(void *user_data,char *s
   float local_1c;
   float local_18;
   
-  bVar9 = 0;
   iVar2 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
   if (iVar2 != 0) {
     return 0;
@@ -76,52 +74,12 @@ uint __cdecl core_sound_cpp_playSfxInternal_FUN_005b1fd0(void *user_data,char *s
       pcVar7 = pcVar6;
     }
     *pcVar7 = '\0';
-    pcVar7 = local_114;
-    do {
-      pcVar6 = pcVar7;
-      if (*pcVar7 == '.') goto LAB_005b2052;
-      if (*pcVar7 == '\0') break;
-      pcVar6 = pcVar7 + 1;
-      if (*pcVar6 == '.') goto LAB_005b2052;
-      pcVar7 = pcVar7 + 2;
-    } while (*pcVar6 != '\0');
-    pcVar6 = (char *)0x0;
-LAB_005b2052:
+    pcVar6 = strchr(local_114,'.');
     if (pcVar6 == (char *)0x0) {
-      pcVar6 = ".wav";
-      iVar2 = -1;
-      pcVar7 = local_114;
-      do {
-        pcVar8 = pcVar7;
-        if (iVar2 == 0) break;
-        iVar2 = iVar2 + -1;
-        pcVar8 = pcVar7 + (uint)bVar9 * -2 + 1;
-        cVar5 = *pcVar7;
-        pcVar7 = pcVar8;
-      } while (cVar5 != '\0');
-      pcVar8 = pcVar8 + -1;
-      do {
-        cVar5 = *pcVar6;
-        *pcVar8 = cVar5;
-        if (cVar5 == '\0') break;
-        cVar5 = pcVar6[1];
-        pcVar6 = pcVar6 + 2;
-        pcVar8[1] = cVar5;
-        pcVar8 = pcVar8 + 2;
-      } while (cVar5 != '\0');
+      strcat(local_114,".wav");
     }
     memcpy(local_b0,g_SoundResultBufferTemplate,100);
-    pcVar7 = local_114;
-    do {
-      pcVar6 = pcVar7;
-      if (*pcVar7 == '!') goto LAB_005b20b2;
-      if (*pcVar7 == '\0') break;
-      pcVar6 = pcVar7 + 1;
-      if (*pcVar6 == '!') goto LAB_005b20b2;
-      pcVar7 = pcVar7 + 2;
-    } while (*pcVar6 != '\0');
-    pcVar6 = (char *)0x0;
-LAB_005b20b2:
+    pcVar6 = strchr(local_114,'!');
     if (pcVar6 == (char *)0x0) {
       core_sound_cpp_CSound_findRandomSoundFile_FUN_005b1ed0(g_CSoundPtr,local_b0,local_114);
     }

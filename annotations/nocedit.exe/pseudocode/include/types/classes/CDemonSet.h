@@ -8,7 +8,6 @@ struct CMirror;
 #include "types/classes/C3DSCamera.h"
 #include "types/classes/C3DSLight.h"
 #include "types/classes/CCharacter.h"
-#include "types/classes/CColor3f.h"
 #include "types/classes/CColor3i.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CEnemy.h"
@@ -94,7 +93,7 @@ typedef struct CDemonSet {
     int default_ground_type; // 0x15f67c
     int ray_type; // 0x15f680
     int laser_type; // 0x15f684
-    CColor3f laser_color; // 0x15f688
+    CColor3i laser_color; // 0x15f688
     int ignore_list_count; // 0x15f694
     int collision_flag; // 0x15f698
     struct CDemonActor* ignore_list[10]; // 0x15f69c

@@ -10,7 +10,6 @@
 void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
 
 {
-  char cVar2;
   float fVar3;
   float fVar4;
   int iVar4;
@@ -19,8 +18,6 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
   float fVar7;
   uint uVar6;
   STrainNoise *pSVar7;
-  char *pcVar8;
-  char *pcVar9;
   float local_120;
   float local_11c;
   char local_118 [100];
@@ -30,11 +27,8 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
   float local_20;
   STrainNoise *local_1c;
   float fVar2;
-  char cVar1;
   STrainNoise *pSVar3;
-  byte bVar10;
-  
-  bVar10 = 0;
+
   fVar7 = g_CGamePtr->delta_time_float;
   if (g_CGamePtr->block_auto_save == 0) {
     if (g_TrainLastCameraIndex != g_CDemonSetPtr->selected_camera_index) {
@@ -138,18 +132,8 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
     case 2:
     case 3:
       local_11c = local_120 * (float)0.80000000000000004;
-      pcVar9 = local_118;
       local_20 = 20.0;
-      pcVar8 = "bump?.wav";
-      do {
-        cVar1 = *pcVar8;
-        *pcVar9 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar2 = pcVar8[1];
-        pcVar8 = pcVar8 + 2;
-        pcVar9[1] = cVar2;
-        pcVar9 = pcVar9 + 2;
-      } while (cVar2 != '\0');
+      strcpy(local_118,"bump?.wav");
       break;
     case 4:
       goto switchD_005b2c8d_caseD_4;

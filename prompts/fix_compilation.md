@@ -844,6 +844,110 @@ end
 
 Then `c`, sleep ~4 seconds, `^C`, and `printf "rs=%d bd=%d cf=%d scan=%d\n", $rs_cnt, $bd_cnt, $cf_cnt, $scan_cnt`. The first counter that's zero pinpoints where the gate fails. Far cheaper than `printf` instrumentation in the source.
 
+### Live state-tracing pattern (silent printf + cont, no pauses)
+
+When you need to watch *what state* a function sees on every call — not just whether it fires — extend the silent-counter idiom into a state-printing probe. The breakpoint's `commands` block prints the relevant fields with `printf` and continues, so the game keeps running while you accumulate a per-call trace. Drive iterations on the *running* game: `^C` to interrupt, `source` a new probe file, `c` to resume. Each pass narrows the question; you never have to restart the game or replay it from the start.
+
+**The base pattern:**
+
+```gdb
+break my_function_FUN_005a8e90
+commands
+silent
+set $cnt = $cnt + 1
+printf "[MY #%d] arg='%s' field=%d\n", $cnt, sound_name, this_ptr->message_duration
+cont
+end
+```
+
+Function-entry breakpoints can read parameters by name (`sound_name`, `this_ptr`) and walk struct fields (`this_ptr->some_field`) directly — debug info from `-O0 -g` makes them visible. Each call adds one line to the trace.
+
+**Conditional printing — `if`/`end` inside commands:**
+
+A breakpoint that fires every frame on every active object floods the log. Filter with gdb's `if`/`end` so the printf only runs when a specific condition holds:
+
+```gdb
+break sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0
+commands
+silent
+if this_ptr->sample != 0 && this_ptr->sample->mp3_data != 0
+  printf "[MIX] name='%s' prev=%g vol[0]=%g\n", \
+    this_ptr->sample->sample_info.name, \
+    this_ptr->prev_hardware_playback_pos, \
+    this_ptr->channel_volumes[0]
+end
+cont
+end
+```
+
+Conditional breakpoints (`break foo if expr`) work but are slower per-hit; the `if` inside `commands` only gates the printf.
+
+**Survey loops with `while`:** count or dump matching slots in an arena without setting 64 separate breakpoints:
+
+```gdb
+break pollAndMixSfx_FUN_005aca90.keep.cpp:66
+commands
+silent
+set $i = 0
+set $active = 0
+while $i < 64
+  if g_SfxSlots[$i].playback_state != 0 && g_SfxSlots[$i].sample != 0
+    set $active = $active + 1
+    printf "  slot[%d] name='%s'\n", $i, g_SfxSlots[$i].sample->sample_info.name
+  end
+  set $i = $i + 1
+end
+printf "[ACTIVE total=%d]\n", $active
+cont
+end
+```
+
+**Redirect output to a log file when volume is high.** Per-frame probes can spew thousands of lines and overflow the tmux scrollback, eating earlier (more important) entries. Send everything to a file you can grep through:
+
+```gdb
+set logging file /tmp/voice_trace.log
+set logging overwrite on
+set logging redirect on
+set logging enabled on
+```
+
+After this, all gdb output (including your `printf` lines and tool messages) goes to `/tmp/voice_trace.log` and the tmux pane stays clean. Read the file with `grep -E "\[MY|\[ANOTHER" /tmp/voice_trace.log` to filter for specific tags.
+
+**Iterative refinement workflow:**
+
+```bash
+# 1. First pass — broad counters on all suspects
+tmux send-keys -t nodebug C-c
+tmux send-keys -t nodebug 'source /tmp/voice_bps1.gdb' Enter
+tmux send-keys -t nodebug 'c' Enter
+# … user triggers the scenario …
+grep -E "\[..." /tmp/voice_trace.log     # see which counters fired
+
+# 2. Add narrower probes around the failing site (game still running)
+tmux send-keys -t nodebug C-c
+tmux send-keys -t nodebug 'source /tmp/voice_bps2.gdb' Enter
+tmux send-keys -t nodebug 'c' Enter
+# … user triggers again …
+grep -E "\[..." /tmp/voice_trace.log     # check narrower trace
+
+# 3. Disable noisy breakpoints once they've answered their question
+tmux send-keys -t nodebug C-c
+tmux send-keys -t nodebug 'disable 8' Enter   # mute the per-frame mixer probe
+tmux send-keys -t nodebug 'c' Enter
+```
+
+Each `source` adds breakpoints (numbered sequentially); each `delete` resets them. `disable N` keeps the breakpoint definition but stops it firing — useful when one probe's job is done but another stage still depends on the surrounding state.
+
+**Common gotchas:**
+
+- **Line-number breakpoints are fragile.** `break file.keep.cpp:138` works, but if you re-export and the line moves, the probe lands somewhere else. Prefer function-name breakpoints (`break funcName`) for stable spots; only use line-numbers when you need a specific point inside a function (e.g. just after a particular call returns, before a specific assignment).
+- **Parameters at function entry vs. mid-function.** At entry, named parameters are reliable. Deeper into the function, the compiler may have spilled them, and decompiler-style locals (`local_18`, `pCVar4`) won't exist by name in gdb — they're optimized into registers/stack slots. Read what *is* visible (`info locals`), or break at a call return site where the assignment-target local is freshly written.
+- **Floats need `%g` not `%f`** in gdb's printf, and you must cast through types when accessing memory directly: `((float*)g_ChannelPrimaryBuffers[0])[0]` works; `g_ChannelPrimaryBuffers[0][0]` won't if the array element is `void*`.
+- **`set logging redirect on` is sticky across sessions.** If gdb feels silent after a relaunch, check whether `/tmp/...log` is still configured. Use `set logging enabled off` or `delete` between scenarios to reset.
+- **Per-frame probes can drop frames.** Each breakpoint hit interrupts the program briefly; thousands per second slow rendering visibly. Disable counters once they've earned their answer.
+
+This pattern — silent + state-printing + conditional + log-redirected + iterative — is the workhorse for runtime investigations where the bug is "this function gets the wrong value sometimes" rather than "this crashes." It's how the streaming-MP3 / dialog-audio chain was traced end-to-end without ever pausing the game.
+
 ### Sanitizer interaction
 
 `debug.sh` defaults to `halt_on_error=1`/`abort_on_error=1` so gdb catches the first sanitizer trap. That's right for triaging a single bug, but it **prevents counter-pass investigations** because the program aborts on the first UBSan/ASan error before counters accumulate.

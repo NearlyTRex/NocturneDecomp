@@ -13,7 +13,6 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
   CDeformableModelInstance *pCVar1;
   CVector3f *pCVar3;
   float fVar4;
-  char cVar5;
   uint uVar6;
   CCharacter *pCVar7;
   CDemonActor_vtable *pCVar9;
@@ -29,9 +28,7 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
   CPathMap *path_map;
   uint uVar12;
   UOrientationVector *pUVar13;
-  char *pcVar14;
   CDeformableModelInstance *pCVar15;
-  char (*pacVar16) [40];
   CVector3f local_68;
   CVector3f local_44;
   float local_24;
@@ -46,7 +43,6 @@ void __cdecl core_succubus_cpp_CSuccubus_process_FUN_005c6e90(CSuccubus *this_pt
   CVector3f *pCVar2;
   CCharacter *pCVar5;
   CDemonActor_vtable *pCVar6;
-  char cVar3;
   CCloth *pCVar4;
   float fVar7;
   CDemonMission *pCVar8;
@@ -253,18 +249,8 @@ LAB_005c6fd0:
         (pCVar11->base).base.base.orient.vec.y = (this_ptr->base).base.base.orient.vec.y;
         (pCVar11->base).base.base.orient.vec.z = (this_ptr->base).base.base.orient.vec.z;
       }
-      pcVar14 = "hdwing.cth";
-      pacVar16 = (local_18->base).base.cloth_list.filenames;
       (local_18->base).base.cloth_list.count = 1;
-      do {
-        cVar3 = *pcVar14;
-        (*pacVar16)[0] = cVar3;
-        if (cVar3 == '\0') break;
-        cVar5 = pcVar14[1];
-        pcVar14 = pcVar14 + 2;
-        (*pacVar16)[1] = cVar5;
-        pacVar16 = (char (*) [40])(*pacVar16 + 2);
-      } while (cVar5 != '\0');
+      strcpy((local_18->base).base.cloth_list.filenames[0],"hdwing.cth");
       (*((local_18->base).base.base.vtable._ub)->setup)((CDemonActor *)local_18);
       pCVar15 = &(local_18->base).base.model;
       core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0

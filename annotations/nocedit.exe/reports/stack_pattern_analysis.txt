@@ -215,7 +215,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 005994dc: MOV EDI,ESP
 
   engine_3d.c_drawLine2DFromIndices_FUN_00407cf0
-    File: engine/3d.c, Suspects: 4
+    File: engine/3d.c, Suspects: 0
     - [alt_frame_pointer] at 00407d0a: MOV EDI,ESP
     - [alt_frame_pointer] at 0060e85c: MOV EDI,ESP
     - [alt_frame_pointer] at 0060e8b5: MOV EDI,ESP
@@ -227,7 +227,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0060e0da: MOV EDI,ESP
 
   engine_3d.c_drawLine3DFromIndices_FUN_00407ff0
-    File: engine/3d.c, Suspects: 4
+    File: engine/3d.c, Suspects: 0
     - [alt_frame_pointer] at 0040800a: MOV EDI,ESP
     - [alt_frame_pointer] at 004b1b20: MOV EDI,ESP
     - [alt_frame_pointer] at 004b1b79: MOV EDI,ESP
@@ -277,5 +277,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 2.0 suspects/function
-  Without stack patterns: avg 0.6 suspects/function
+  With stack patterns:    avg 1.9 suspects/function
+  Without stack patterns: avg 0.7 suspects/function

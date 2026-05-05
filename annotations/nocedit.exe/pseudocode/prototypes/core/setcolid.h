@@ -101,7 +101,7 @@ void __cdecl CDemonSet::setRayType(CDemonSet *this_ptr,int ray_type);
 
 // Original: core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_00574270
 // Address: 00574270
-void __cdecl CDemonSet::setRayTypeLaser(CDemonSet *this_ptr,float f1,float f2,float f3,float f4);
+void __cdecl CDemonSet::setRayTypeLaser(CDemonSet *this_ptr,int laser_type,int color_r,int color_g,int color_b);
 
 // Original: core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0
 // Address: 005742b0

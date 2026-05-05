@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 144
-  Total diagnostics: 423
+  Functions with findings: 145
+  Total diagnostics: 425
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 144, raw .cpp files: 0
+  .keep.cpp files: 145, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -296,11 +296,11 @@ core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190  [.keep] [Cppch
 core_sound.cpp_updateListeners_FUN_005b1870  [.keep] [Cppcheck (quick)]
   File: core/sound.cpp  (5 diagnostics)
 
-  Line   58: [uninitvar] Uninitialized variable: local_c4
-  Line   59: [uninitvar] Uninitialized variable: local_cc
-  Line   60: [uninitvar] Uninitialized variable: local_c8
-  Line  105: [legacyUninitvar] Uninitialized variable: local_c8
-  Line  105: [legacyUninitvar] Uninitialized variable: local_c4
+  Line   57: [uninitvar] Uninitialized variable: local_c4
+  Line   58: [uninitvar] Uninitialized variable: local_cc
+  Line   59: [uninitvar] Uninitialized variable: local_c8
+  Line   96: [legacyUninitvar] Uninitialized variable: local_c8
+  Line   96: [legacyUninitvar] Uninitialized variable: local_c4
 
 ----------------------------------------------------------------------------------------------------
 shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10  [.keep] [Cppcheck (quick)]
@@ -702,6 +702,13 @@ core_keyactor.cpp_CKeyActor_process_FUN_00501710  [.keep] [Cppcheck (quick)]
   Line   28: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
+core_menu.cpp_configureGraphicsOptions_FUN_00510c80  [.keep] [Cppcheck (quick)]
+  File: core/menu.cpp  (2 diagnostics)
+
+  Line  314: [selfAssignment] Redundant assignment of 'pacVar11' to itself.
+  Line  319: [selfAssignment] Redundant assignment of 'pacVar11' to itself.
+
+----------------------------------------------------------------------------------------------------
 core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0  [.keep] [Cppcheck (quick)]
   File: core/mimic.cpp  (2 diagnostics)
 
@@ -1003,7 +1010,7 @@ core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0059d9e0  [.kee
 core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270  [.keep] [Cppcheck (quick)]
   File: core/stranger.cpp  (1 diagnostics)
 
-  Line  224: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
+  Line  222: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70  [.keep] [Cppcheck (quick)]

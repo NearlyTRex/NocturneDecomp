@@ -7,17 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 400,
-    "complexity_score": 154,
+    "complexity_score": 128,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 10,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 129,
-    "suspect_count": 2,
-    "suspect_types": [
-      "suspect_float"
-    ],
-    "total_lines": 529
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 128,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 528
   },
   "cross_references": [
     {
@@ -268,22 +266,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 52,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "(g_CDemonSetPtr,1.4013e-45,3.57331e-43,0.0,0.0);",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 52,
-      "match": "3.57331e-43",
-      "severity": "mild",
-      "text": "(g_CDemonSetPtr,1.4013e-45,3.57331e-43,0.0,0.0);",
-      "type": "suspect_float"
-    }
-  ]
+  "suspects": []
 }

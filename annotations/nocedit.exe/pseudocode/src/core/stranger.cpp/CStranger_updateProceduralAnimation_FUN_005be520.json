@@ -4,20 +4,18 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1541,
-    "complexity_score": 751,
+    "complexity_score": 721,
     "cross_reference_count": 2,
     "function_call_count": 24,
     "global_count": 33,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 516,
-    "suspect_count": 22,
+    "suspect_count": 20,
     "suspect_types": [
-      "missing_cave_copy",
-      "unrolled_memcpy",
-      "warning_inlined_function"
+      "missing_cave_copy"
     ],
     "total_lines": 2057
   },
@@ -473,6 +471,26 @@
     },
     "pcode_op_count": 6567
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 196,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar13->w = pCVar12->w;",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 7956,
     "local_size": 7952,
@@ -1207,22 +1225,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 196,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pCVar13->w = pCVar12->w;",
-      "type": "unrolled_memcpy"
-    },
     {
       "description": "Struct-type local `local_3f0` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 50,

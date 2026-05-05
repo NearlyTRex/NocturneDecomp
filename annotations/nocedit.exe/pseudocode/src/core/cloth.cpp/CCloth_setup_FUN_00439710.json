@@ -7,16 +7,17 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 716,
-    "complexity_score": 484,
+    "complexity_score": 509,
     "cross_reference_count": 9,
     "function_call_count": 8,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 354,
-    "suspect_count": 12,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
-      "shadow_pointer_walk"
+      "shadow_pointer_walk",
+      "unrolled_memset"
     ],
     "total_lines": 1070
   },
@@ -790,6 +791,22 @@
       "severity": "moderate",
       "text": "pfVar17 = (float *)((int)pfVar17 + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 157,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "pCVar8->z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 353,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(this_ptr->wind_velocity).z = 0.0;",
+      "type": "unrolled_memset"
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar20` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar20->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",

@@ -33,7 +33,7 @@ int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730(CSfxSample *thi
   _FILE *file;
   int iVar1;
   byte bVar11;
-  
+
   bVar11 = 0;
   if (g_SoundLockCount < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -196,6 +196,7 @@ LAB_005a6b5d:
         }
         if (lock_length != local_14) {
           (this_ptr->sample_info).sample_count = this_ptr->stream_read_position + local_14;
+          this_ptr->loop_endpoints[0] = (this_ptr->sample_info).sample_count;
         }
         SVar6 = SVar6 - local_14;
         iVar2 = this_ptr->stream_write_position + local_14;

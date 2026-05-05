@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 393,
-    "complexity_score": 191,
+    "complexity_score": 176,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 47,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 176,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_strcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 569
   },
   "cross_references": [],
@@ -467,21 +465,21 @@
   },
   "resolved_suspects": [
     {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 149,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 130,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "for (iVar6 = 0x19; iVar6 != 0; iVar6 = iVar6 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 382,
-      "match": "MOVSD.REP",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "// 005b2c71: MOVSD.REP ES:EDI,ESI  ; g_TrainSoundFilenameTemplate | g_TrainSoundFilenameTemplate+4",
       "type": "unrolled_memcpy"
     }
   ],
@@ -602,14 +600,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 149,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    }
-  ]
+  "suspects": []
 }

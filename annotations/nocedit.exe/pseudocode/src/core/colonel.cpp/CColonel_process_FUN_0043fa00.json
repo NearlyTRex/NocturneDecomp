@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 496,
-    "complexity_score": 284,
+    "complexity_score": 299,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 244,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "missing_cave_copy",
+      "unrolled_memset",
       "warning_type_propagation"
     ],
     "total_lines": 740
@@ -487,6 +488,14 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 60,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
+      "type": "unrolled_memset"
     },
     {
       "description": "Struct-type local `CStack_94` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",

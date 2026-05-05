@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 495,
-    "complexity_score": 224,
+    "complexity_score": 199,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 30,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 199,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 694
   },
   "cross_references": [
@@ -368,6 +366,15 @@
       "severity": "moderate",
       "text": "if (&stack0x00000000 == (byte *)0x3f6b03c) {",
       "type": "stack_ref"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 104,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -649,35 +656,35 @@
         {
           "check_id": "uninitvar",
           "column": 15,
-          "line": 58,
+          "line": 57,
           "message": "Uninitialized variable: local_c4",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 15,
-          "line": 59,
+          "line": 58,
           "message": "Uninitialized variable: local_cc",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 15,
-          "line": 60,
+          "line": 59,
           "message": "Uninitialized variable: local_c8",
           "severity": "warning"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 39,
-          "line": 105,
+          "line": 96,
           "message": "Uninitialized variable: local_c8",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 56,
-          "line": 105,
+          "line": 96,
           "message": "Uninitialized variable: local_c4",
           "severity": "error"
         }
@@ -686,22 +693,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 104,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (; iVar6 != 0; iVar6 = iVar6 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 63,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 005b1982: MOVSD.REP ES:EDI,ESI",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

@@ -104,8 +104,8 @@ void __cdecl core_fire_cpp_CFireEffect_traceLaser_FUN_004c8230(CFireEffect *this
     pCVar4 = &laser_info->local_normal;
     while( true ) {
       core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00574270
-                (g_CDemonSetPtr,(float)laser_info->laser_type,(float)(laser_info->color).r,
-                 (float)(laser_info->color).g,(float)(laser_info->color).b);
+                (g_CDemonSetPtr,laser_info->laser_type,(laser_info->color).r,(laser_info->color).g,
+                 (laser_info->color).b);
       local_e0.x = origin->x;
       local_e0.y = origin->y;
       local_e0.z = origin->z;

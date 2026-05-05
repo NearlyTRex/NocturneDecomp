@@ -8,15 +8,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2528,
-    "complexity_score": 1106,
+    "complexity_score": 1131,
     "cross_reference_count": 0,
     "function_call_count": 49,
     "global_count": 74,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1031,
-    "suspect_count": 5,
+    "suspect_count": 7,
     "suspect_types": [
       "self_copy_guard",
+      "unrolled_memset",
       "unrolled_strcpy",
       "warning_inlined_function",
       "warning_type_propagation",
@@ -1839,6 +1840,22 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 534,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 893,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
+      "type": "unrolled_memset"
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_134 != &local_254)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",

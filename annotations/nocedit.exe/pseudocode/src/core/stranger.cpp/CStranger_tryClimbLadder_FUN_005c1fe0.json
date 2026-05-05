@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 319,
-    "complexity_score": 145,
+    "complexity_score": 130,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 13,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 130,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 449
   },
   "cross_references": [
@@ -229,6 +227,15 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_18),",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {
@@ -495,14 +502,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 59,
-      "match": "(CDemonActor **)((int)g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_18),",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

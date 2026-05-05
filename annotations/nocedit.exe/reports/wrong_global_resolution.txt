@@ -37,8 +37,8 @@ SUMMARY
     g_CWeaponClassInfo                                 1 functions
     g_SourcePaletteData                                1 functions
 
-  .keep files with issues: 26 (these need manual review)
-  Raw .cpp files with issues: 44
+  .keep files with issues: 27 (these need manual review)
+  Raw .cpp files with issues: 43
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -49,7 +49,7 @@ core_main.c_enterMainGameMenu_FUN_00507a50  [.keep]  (14 suspicious globals)
   File: core/main.c
 
   g_CDemonFileManagerInstance
-    Used at lines: 146
+    Used at lines: 148
     NOT found in function reference list
 
   g_CGamePtr
@@ -65,7 +65,7 @@ core_main.c_enterMainGameMenu_FUN_00507a50  [.keep]  (14 suspicious globals)
     NOT found in function reference list
 
   g_CSoundPtr
-    Used at lines: 76, 101, 107, 121, 137, ...
+    Used at lines: 76, 101, 107, 121, 139, ...
     NOT found in function reference list
 
   g_MainMenuTextBuffers
@@ -97,7 +97,7 @@ core_main.c_enterMainGameMenu_FUN_00507a50  [.keep]  (14 suspicious globals)
     NOT found in function reference list
 
   g_UseDirect3D
-    Used at lines: 25, 128, 136
+    Used at lines: 25, 129, 137
     NOT found in function reference list
 
   g_WindowHeight
@@ -242,6 +242,14 @@ core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0  [.keep]  (1 s
 
   g_ColorCubeLookup
     Used at lines: 522
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520  [.keep]  (1 suspicious globals)
+  File: core/stranger.cpp
+
+  g_TriListTextureNames
+    Used at lines: 415
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -562,14 +570,6 @@ core_setdir.cpp_CZThumb_render_FUN_00574f20  [.cpp]  (1 suspicious globals)
 
   g_ColorCubeLookup
     Used at lines: 54
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520  [.cpp]  (1 suspicious globals)
-  File: core/stranger.cpp
-
-  g_TriListTextureNames
-    Used at lines: 455
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

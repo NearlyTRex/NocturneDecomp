@@ -16,14 +16,12 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0
   int start_bone_index;
   CQuaternion4f *quat1_in;
   CQuaternion4f CStack_2c;
-  CDeformableModelInstance *local_18;
 
 
   if ((float)0.001 < blend_weight) {
     start_bone_index = 0;
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
     if (0 < this_ptr_00->bone_count) {
-      local_18 = this_ptr;
       quat1_in = (this_ptr->bone_transform).pose_data.bone_rotations;
       do {
         hierarchy_distance =
@@ -33,11 +31,10 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0
           t = (*blend_callback)(start_bone_index,bone_index,blend_weight,hierarchy_distance,this_ptr
                                );
           core_xform_cpp_slerpQuaternion_FUN_005f77e0(quat1_in,source_quaternions,t,&CStack_2c);
-          (local_18->bone_transform).pose_data.bone_rotations[0] = CStack_2c;
+          *quat1_in = CStack_2c;
         }
         quat1_in = quat1_in + 1;
         start_bone_index = start_bone_index + 1;
-        local_18 = (CDeformableModelInstance *)&(local_18->motion_controller).tween_speed;
       } while (start_bone_index < this_ptr_00->bone_count);
     }
   }

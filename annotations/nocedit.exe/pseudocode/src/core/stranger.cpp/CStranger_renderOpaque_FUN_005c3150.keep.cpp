@@ -189,18 +189,7 @@ LAB_005c33d7:
                  [g_StrangerIndices[0xe]].m,&local_19c);
       pCVar7 = &local_19c;
     }
-    local_dc.m[0].w = pCVar7->m[0].w;
-    local_dc.m[0].x = pCVar7->m[0].x;
-    local_dc.m[0].y = pCVar7->m[0].y;
-    local_dc.m[0].z = pCVar7->m[0].z;
-    local_dc.m[1].w = pCVar7->m[1].w;
-    local_dc.m[1].x = pCVar7->m[1].x;
-    local_dc.m[1].y = pCVar7->m[1].y;
-    local_dc.m[1].z = pCVar7->m[1].z;
-    local_dc.m[2].w = pCVar7->m[2].w;
-    local_dc.m[2].x = pCVar7->m[2].x;
-    local_dc.m[2].y = pCVar7->m[2].y;
-    local_dc.m[2].z = pCVar7->m[2].z;
+    local_dc = *pCVar7;
     core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_dc,&local_40);
     core_xform_cpp_getTranslation_FUN_005f6110(&local_dc,&local_4c);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0

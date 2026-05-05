@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        68 ( 1.1%)
+  Functions with type issues:        66 ( 1.0%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          1
-    Undefined types in variables:      63
-    Unresolved stack params:           4
+    Undefined types in variables:      62
+    Unresolved stack params:           3
 
-  Excluded (.keep / MMX / by-value):   156 functions
+  Excluded (.keep / MMX / by-value):   157 functions
     Wrong calling convention:          1
-    Undefined types in variables:      154
+    Undefined types in variables:      155
     Unresolved stack params:           1
 
 ====================================================================================================
@@ -79,7 +79,7 @@ Wrong calling convention (unaffected register usage) (1)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (4)
+Unresolved stack parameters (missing from signature) (3)
 --------------------------------------------------------------------------------
 
   CWinFont_setColorAndDrawText
@@ -94,12 +94,6 @@ Unresolved stack parameters (missing from signature) (4)
     Signature: int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_004251b0(CBugs *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  CStranger_tryPlaceObject
-    Address: 0x005c2850  File: core/stranger.cpp
-    Evidence: in_stack_ffffff18, in_stack_ffffff18, in_stack_ffffff18, in_stack_ffffff18, in_stack_ffffff18
-    Signature: int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_005c2850(CStranger *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   dampControlAxis
     Address: 0x004dc370  File: core/game.cpp
     Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
@@ -107,7 +101,7 @@ Unresolved stack parameters (missing from signature) (4)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (63)
+Undefined types in variables (62)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -305,11 +299,6 @@ Undefined types in variables (63)
     Locals:  local_20 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  configureGraphicsOptions
-    Address: 0x00510c80  File: core/menu.cpp
-    Locals:  local_144 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   computePlaneFromTriangle
     Address: 0x00520fe0  File: core/mirror.cpp
     Locals:  local_30 (undefined4[3])
@@ -478,7 +467,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (154)
+Undefined types - .keep overrides (155)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -1049,6 +1038,11 @@ Undefined types - .keep overrides (154)
   CLarva_process
     Address: 0x00503080  File: core/larva.cpp
     Locals:  local_1f0 (undefined1)
+    Suggested: Resolve undefined types to concrete types
+
+  configureGraphicsOptions
+    Address: 0x00510c80  File: core/menu.cpp
+    Locals:  local_144 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CMoon_render

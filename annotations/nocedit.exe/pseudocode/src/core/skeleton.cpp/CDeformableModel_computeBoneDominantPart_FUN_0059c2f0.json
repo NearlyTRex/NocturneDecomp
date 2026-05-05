@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 266,
-    "complexity_score": 169,
+    "complexity_score": 124,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 124,
-    "suspect_count": 4,
-    "suspect_types": [
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 390
   },
   "cross_references": [
@@ -202,6 +200,44 @@
     },
     "pcode_op_count": 1161
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 82,
+      "match": "pSVar4 = (T *)pSVar4->ARRAY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar4 = (SVert *)pSVar4->bone_weights;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar5` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 84,
+      "match": "pSVar5 = (T *)pSVar5->ARRAY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar5 = (SVert *)pSVar5->bone_indices;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 87,
+      "match": "pSVar4 = (T *)pSVar4->ARRAY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar4 = (SVert *)pSVar4->bone_weights;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar5` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 89,
+      "match": "pSVar5 = (T *)pSVar5->ARRAY",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar5 = (SVert *)pSVar5->bone_indices;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 120,
     "local_size": 112,
@@ -358,38 +394,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 82,
-      "match": "pSVar4 = (T *)pSVar4->ARRAY",
-      "severity": "moderate",
-      "text": "pSVar4 = (SVert *)pSVar4->bone_weights;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar5` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 84,
-      "match": "pSVar5 = (T *)pSVar5->ARRAY",
-      "severity": "moderate",
-      "text": "pSVar5 = (SVert *)pSVar5->bone_indices;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 87,
-      "match": "pSVar4 = (T *)pSVar4->ARRAY",
-      "severity": "moderate",
-      "text": "pSVar4 = (SVert *)pSVar4->bone_weights;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pSVar5` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 89,
-      "match": "pSVar5 = (T *)pSVar5->ARRAY",
-      "severity": "moderate",
-      "text": "pSVar5 = (SVert *)pSVar5->bone_indices;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

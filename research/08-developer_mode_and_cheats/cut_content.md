@@ -40,20 +40,20 @@ Netplay was developed far enough to compile and link — `CNetGame`, the lobby, 
 
 ### Reachability experiment — `NOCTURNE_AUTHENTIC_NETPLAY`
 
-Since retail never had this UI, there is no "authentic" behavior to restore. The flag below adds **new** UI hooks to exercise the orphan code in this decomp project — it is a research/experiment lever, not a faithful restoration. Naming kept as `NOCTURNE_AUTHENTIC_NETPLAY` for consistency with the other shim flags, but treat it as opt-in experimentation.
+Since retail never had this UI, there is no "authentic" behavior to restore. The flag below follows the `NOCTURNE_AUTHENTIC_*` polarity convention — `1` means "match the shipped binary" (no UI, the dead code stays dead) and `0` means "dev-friendly experimentation" (default; new hotkeys exposed to exercise the orphan code).
 
-Setting `NOCTURNE_AUTHENTIC_NETPLAY = 1` in `shims/shim_config.h` reroutes a pair of unused hotkeys into the orphan host/join wrappers. Required keep edits:
+In `shims/shim_config.h`, `NOCTURNE_AUTHENTIC_NETPLAY` defaults to `0`. The keep files below wire two unused main-menu hotkeys into the orphan host/join wrappers when the flag is `0`, and compile them out (matching shipped behavior) when the flag is `1`:
 
-- `core/main.c/enterMainGameMenu_FUN_00507a50.keep.c` and `core/menu.cpp/showMainGameMenu_FUN_00512f40.keep.cpp` — add two hotkey checks alongside the existing Ctrl+D / Ctrl+L / Ctrl+F / Ctrl+M handlers, both wrapped in `#if NOCTURNE_AUTHENTIC_NETPLAY`:
+- `core/main.c/enterMainGameMenu_FUN_00507a50.keep.c` and `core/menu.cpp/showMainGameMenu_FUN_00512f40.keep.cpp` — two hotkey checks alongside the existing Ctrl+D / Ctrl+L / Ctrl+F / Ctrl+M handlers, all under `#if !NOCTURNE_AUTHENTIC_NETPLAY`:
   - **Ctrl+H** → `core_game_cpp_hostNetworkGame_FUN_004e2f10()`
   - **Ctrl+J** → `core_game_cpp_joinNetworkGame_FUN_004e2fc0()`
-- `core/menu.cpp/renderMenuAndGetChoice_FUN_00510000.keep.cpp` (optional) — draw a hint line ("Press CTRL+H to host, CTRL+J to join") near the existing "Press CTRL+D" banner, also gated on the flag.
+- `core/menu.cpp/renderMenuAndGetChoice_FUN_00510000.keep.cpp` (optional, not yet wired) — draw a hint line ("Press CTRL+H to host, CTRL+J to join") near the existing "Press CTRL+D" banner, also gated `#if !NOCTURNE_AUTHENTIC_NETPLAY`.
 
 Caveats:
 - Even with hotkeys wired, netplay needs Winsock / socket reachability via the `kernel32` / `wsock32` shim layer. Verify those shims implement `WSAStartup`, `socket()`, `bind()`, `recv()`, `send()`, etc. before testing connectivity.
 - The lobby and packet handlers may not have been completed/tested end-to-end before being cut. Expect crashes, asserts in `shouldNeverBeCalled*`, or hangs in `runLobby` — those are findings about the unfinished state of the code, not regressions in this project.
 
-Default (`= 0`) leaves netplay as orphaned dead code, matching the shipped behavior.
+Override with `-DNOCTURNE_AUTHENTIC_NETPLAY=1` to revert to authentic shipped behavior (netplay unreachable, dead code remains dead).
 
 ## How to add a new cut-content entry
 

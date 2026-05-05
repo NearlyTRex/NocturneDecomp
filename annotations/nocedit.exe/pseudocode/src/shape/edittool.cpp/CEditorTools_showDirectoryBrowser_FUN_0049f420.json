@@ -515,33 +515,6 @@
       "severity": "moderate",
       "text": "for (iVar6 = 0x41; iVar6 != 0; iVar6 = iVar6 + -1) {",
       "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 21,
-      "match": "MOVSD.REP",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "// 0049f466: MOVSD.REP ES:EDI,ESI  ; g_BrowserLastSelectedFile | g_BrowserLastSelectedFile+4",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 35,
-      "match": "MOVSD.REP",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "// 0049f498: MOVSD.REP ES:EDI,ESI  ; = \"[ERROR: Can't get current directory.]\" | s_OR:_Can't_get_current_directory._0067",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 227,
-      "match": "MOVSD.REP",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "// 0049f6ce: MOVSD.REP ES:EDI,ESI  ; g_BrowserLastEnteredPath | g_BrowserLastEnteredPath+4",
-      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {

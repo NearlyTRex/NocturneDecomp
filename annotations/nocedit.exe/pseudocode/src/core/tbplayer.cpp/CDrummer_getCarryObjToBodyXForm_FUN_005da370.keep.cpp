@@ -57,17 +57,6 @@ LAB_005da42c:
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
             (&local_90,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar2,
              &local_c0);
-  out_matrix->m[0].w = local_c0.m[0].w;
-  out_matrix->m[0].x = local_c0.m[0].x;
-  out_matrix->m[0].y = local_c0.m[0].y;
-  out_matrix->m[0].z = local_c0.m[0].z;
-  out_matrix->m[1].w = local_c0.m[1].w;
-  out_matrix->m[1].x = local_c0.m[1].x;
-  out_matrix->m[1].y = local_c0.m[1].y;
-  out_matrix->m[1].z = local_c0.m[1].z;
-  out_matrix->m[2].w = local_c0.m[2].w;
-  out_matrix->m[2].x = local_c0.m[2].x;
-  out_matrix->m[2].y = local_c0.m[2].y;
-  out_matrix->m[2].z = local_c0.m[2].z;
+  *out_matrix = local_c0;
   return;
 }

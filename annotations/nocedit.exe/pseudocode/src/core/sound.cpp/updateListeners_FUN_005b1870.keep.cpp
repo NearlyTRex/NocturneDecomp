@@ -15,7 +15,6 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
   int iVar4;
   int iVar5;
   float *pfVar7;
-  float *pfVar8;
   float local_160;
   CMatrix3x3f local_15c;
   float local_134 [10];
@@ -70,9 +69,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
     local_10c[6] = g_CDemonCameraInstance.base.rotation_matrix.m[2].x;
     local_10c[7] = g_CDemonCameraInstance.base.rotation_matrix.m[2].y;
     local_10c[8] = g_CDemonCameraInstance.base.rotation_matrix.m[2].z;
-    iVar6 = 9;
     pfVar7 = local_10c;
-    pfVar8 = (float *)&local_15c;
   }
   else {
     local_a8 = g_CDemonLightInstance.base.base.position.f.x;
@@ -92,15 +89,9 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
     local_134[6] = g_CDemonLightInstance.base.base.rotation_matrix.m[2].x;
     local_134[7] = g_CDemonLightInstance.base.base.rotation_matrix.m[2].y;
     local_134[8] = g_CDemonLightInstance.base.base.rotation_matrix.m[2].z;
-    iVar6 = 9;
-    pfVar8 = (float *)&local_15c;
     pfVar7 = local_134;
   }
-  for (; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *pfVar8 = *pfVar7;
-    pfVar7 = pfVar7 + 1;
-    pfVar8 = pfVar8 + 1;
-  }
+  memcpy(&local_15c,pfVar7,sizeof(local_15c));
   sound_sndmain_cpp_set3DListenerPos_FUN_005aa020
             ((double)local_cc,(double)local_c8,(double)local_c4);
   local_d8.x = 1.0;

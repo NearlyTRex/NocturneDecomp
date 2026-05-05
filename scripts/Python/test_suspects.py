@@ -94,6 +94,7 @@ def run_detectors(susp, code):
     found.extend(susp.identify_unrolled_memcpy_loops(code))
     found.extend(susp.identify_unrolled_memcpy_dword_byte_split(code))
     found.extend(susp.identify_unrolled_field_copy(code))
+    found.extend(susp.identify_cascade_constant_fill(code))
     found.extend(susp.identify_self_copy_guard(code))
     found.extend(susp.identify_pointer_cast_multiline(code))
     found.extend(susp.identify_int_address_arithmetic(code))

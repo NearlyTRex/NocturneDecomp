@@ -26,7 +26,6 @@ int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_005c2400(CStranger 
   float fStack_5c;
   CVector3f CStack_58;
   CVector3f CStack_4c;
-  int local_20;
   int local_1c;
   float fVar2;
 
@@ -36,11 +35,10 @@ int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_005c2400(CStranger 
   if ((((float)0.98999999999999999 <= fVar1) &&
       ((this_ptr->base).base.carry_hands[0].carry_actor == (CDemonActor *)0x0)) &&
      ((this_ptr->base).base.carry_hands[1].carry_actor == (CDemonActor *)0x0)) {
-    local_20 = 0;
     for (local_1c = 0; local_1c < g_CDemonSetPtr->actor_count; local_1c = local_1c + 1) {
       this_ptr_00 = (CLadder *)
                     core_actor_cpp_castToClassHash_FUN_0040c790
-                              (*(CDemonActor **)((int)g_CDemonSetPtr->actors + local_20),
+                              (g_CDemonSetPtr->actors[local_1c],
                                g_CLadderClassInfo.name_hash);
       if ((this_ptr_00 != (CLadder *)0x0) &&
          (ABS((this_ptr->base).base.base.location.position.y -
@@ -112,7 +110,7 @@ int __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_005c2400(CStranger 
         }
       }
 LAB_005c2488:
-      local_20 = local_20 + 4;
+      ;
     }
   }
   return 0;

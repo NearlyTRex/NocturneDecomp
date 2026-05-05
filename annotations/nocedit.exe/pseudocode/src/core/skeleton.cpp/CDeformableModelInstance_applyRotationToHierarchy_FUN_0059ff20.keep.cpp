@@ -20,7 +20,6 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
   CVector3f local_34;
   float local_28;
   CSkeleton *local_24;
-  CDeformableModelInstance *local_20;
   CQuaternion4f *local_1c;
   float fStack_18;
 
@@ -30,7 +29,6 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
   core_xform_cpp_quaternionToAxisAngle_FUN_005f7730(rotation_quat,&local_28,&local_34);
   if (0 < pCVar1->bone_count) {
     local_1c = (this_ptr->bone_transform).pose_data.bone_rotations;
-    local_20 = this_ptr;
     do {
       hierarchy_distance =
            core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_0059a100(local_24,iVar2,bone_index);
@@ -40,10 +38,9 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
           core_xform_cpp_quaternionFromAxisAngle_FUN_005f7a70
                     (fStack_18 * local_28,&local_34,&CStack_64);
           core_xform_cpp_multiplyQuaternion_FUN_005f7640(local_1c,&CStack_64,&CStack_84);
-          (local_20->bone_transform).pose_data.bone_rotations[0] = CStack_84;
+          *local_1c = CStack_84;
         }
       }
-      local_20 = (CDeformableModelInstance *)&(local_20->motion_controller).tween_speed;
       iVar2 = iVar2 + 1;
       local_1c = local_1c + 1;
     } while (iVar2 < local_24->bone_count);

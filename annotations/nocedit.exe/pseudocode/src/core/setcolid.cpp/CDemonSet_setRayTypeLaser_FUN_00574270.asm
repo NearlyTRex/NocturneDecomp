@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00574270(CDemonSet *this_ptr,float f1,float f2,float f3,float f4)
+; void __cdecl core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00574270(CDemonSet *this_ptr,int laser_type,int color_r,int color_g,int color_b)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
-; float            Stack[0x8]:4   f1
-; float            Stack[0xc]:4   f2
-; float            Stack[0x10]:4   f3
-; float            Stack[0x14]:4   f4
+; int              Stack[0x8]:4   laser_type
+; int              Stack[0xc]:4   color_r
+; int              Stack[0x10]:4   color_g
+; int              Stack[0x14]:4   color_b
 ;
 ; XREF[2]:
 ;   core_fire.cpp_CFireEffect_traceLaser_FUN_004c8230 at 004c82b9

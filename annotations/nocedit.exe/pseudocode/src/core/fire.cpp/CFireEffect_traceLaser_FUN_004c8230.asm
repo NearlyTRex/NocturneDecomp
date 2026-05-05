@@ -167,7 +167,7 @@ section .text
     MOV ECX,dword ptr [0x006810c8]      ; 004c82b2 | g_CDemonSetInstance | g_CDemonSetPtr
     PUSH ECX                            ; 004c82b8 | g_CDemonSetInstance
     CALL core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_00574270 ; 004c82b9
-        ;   XREF to: 00574270 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_00574270(CDemonSet * this_ptr, float f1, float f2, float f3, ...)
+        ;   XREF to: 00574270 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_00574270(CDemonSet * this_ptr, int laser_type, int color_r, int color_g, ...)
     MOV EAX,dword ptr [EBP + 0x86]      ; 004c82be
     MOV EAX,dword ptr [EAX]             ; 004c82c4
     MOV dword ptr [EBP + -0x62],EAX     ; 004c82c6

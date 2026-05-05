@@ -7,16 +7,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 659,
-    "complexity_score": 354,
+    "complexity_score": 399,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 274,
-    "suspect_count": 7,
+    "suspect_count": 11,
     "suspect_types": [
       "negative_offset",
-      "self_copy_guard"
+      "self_copy_guard",
+      "unrolled_memset"
     ],
     "total_lines": 933
   },
@@ -571,6 +572,38 @@
       "severity": "mild",
       "text": "local_bc = pSVar18[-1].position.z - (pSVar18->position).z;",
       "type": "negative_offset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 105,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "this_ptr->vertices[iVar14 + -1].velocity.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 114,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "this_ptr->vertices[0].velocity.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 164,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "pSVar18[iVar14].velocity.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 193,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "pSVar18[iVar14].velocity.z = 0.0;",
+      "type": "unrolled_memset"
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_d0 != &local_b8)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
