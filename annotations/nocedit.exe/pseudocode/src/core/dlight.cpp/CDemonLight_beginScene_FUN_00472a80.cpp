@@ -24,11 +24,11 @@ void __cdecl core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(CDemonLight *th
   engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890
             (g_CDemonRendererPtr2,0,0,this_ptr->shadow_map_width + -1,
              this_ptr->shadow_map_height + -1);
-  (this_ptr->base).viewport_rect.right = this_ptr->shadow_map_width + -1;
+  (this_ptr->base).viewport_rect.y_min = this_ptr->shadow_map_width + -1;
   iVar2 = this_ptr->shadow_map_height;
-  (this_ptr->base).viewport_rect.left = 0;
-  (this_ptr->base).viewport_rect.bottom = iVar2 + -1;
-  (this_ptr->base).viewport_rect.top = 0;
+  (this_ptr->base).viewport_rect.x_min = 0;
+  (this_ptr->base).viewport_rect.y_max = iVar2 + -1;
+  (this_ptr->base).viewport_rect.x_max = 0;
   this_ptr_00 = g_CDemonRendererPtr2;
   (this_ptr->base).rect_array_count = 0;
   (this_ptr->base).skip_clear_buffer_flag = skip_clear_buffers;

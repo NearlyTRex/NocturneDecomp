@@ -6,8 +6,8 @@
 ;
 ; XREF[5]:
 ;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160 at 00472201
-;   core_dirmat.cpp_atan2Custom_FUN_00472090 at 004720b8
-;   core_xform.cpp_atan2Approximation_FUN_005f55c0 at 005f55e8
+;   core_dirmat.cpp_angleFromSinCos_FUN_00472090 at 004720b8
+;   core_xform.cpp_angleFromSinCos_FUN_005f55c0 at 005f55e8
 ;   core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0 at 005f5f60
 ;   core_xform.cpp_matrixToEulerAngles_FUN_005f5690 at 005f5a20
 ;

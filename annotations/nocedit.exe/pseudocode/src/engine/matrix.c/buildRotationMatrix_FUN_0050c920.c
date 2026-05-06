@@ -67,8 +67,8 @@ void __cdecl engine_matrix_c_buildRotationMatrix_FUN_0050c920(int pitch,int yaw,
   g_PixelAspectCorrection = 0x10000;
 LAB_0050ca9c:
   iVar13 = (g_WindowWidth *
-            -(int)(((longlong)g_ViewportCenterYFixed * 0x10000) / (longlong)g_ViewportCenterXFixed)
-           * 3) / (g_WindowHeight << 2);
+            -(int)(((longlong)g_Projection.neg_half_height_fixed * 0x10000) /
+                  (longlong)g_Projection.half_width_fixed) * 3) / (g_WindowHeight << 2);
   lVar6 = (longlong)iVar13 *
           (longlong)
           (int)(((uint)((longlong)iVar9 * (longlong)iVar11) >> 0x10 |

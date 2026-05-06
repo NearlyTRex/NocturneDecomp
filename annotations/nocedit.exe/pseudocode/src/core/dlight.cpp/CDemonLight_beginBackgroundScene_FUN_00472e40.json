@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 72,
+    "complexity_score": 47,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 15,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 47,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 131
   },
   "cross_references": [
@@ -219,6 +217,24 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(void **)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(void **)((int)g_ScreenBufferArray + iVar3) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(void *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(void *)((int)this_ptr->master_zbuffer + this_ptr->shadow_map_width * iVar2 * 2);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 22,
       "match": "for (...; != 0; ... + -1)",
@@ -262,22 +278,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(void **)((int)g_ScreenBufferArray",
-      "severity": "moderate",
-      "text": "*(void **)((int)g_ScreenBufferArray + iVar3) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(void *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "(void *)((int)this_ptr->master_zbuffer + this_ptr->shadow_map_width * iVar2 * 2);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

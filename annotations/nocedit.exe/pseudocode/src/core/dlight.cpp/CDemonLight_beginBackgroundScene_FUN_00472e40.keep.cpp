@@ -11,7 +11,6 @@ void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_00472e40(CDemo
 
 {
   int iVar2;
-  int iVar3;
   byte bVar6;
   
   bVar6 = 0;
@@ -28,14 +27,12 @@ void __cdecl core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_00472e40(CDemo
       g_CurrentLineNumber = 0x1bc;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonLight::beginBackgroundScene - No master Z buffer");
     }
-    iVar2 = 0;
     if (0 < this_ptr->shadow_map_height) {
-      iVar3 = 0;
+      iVar2 = 0;
       do {
-        *(void **)((int)g_ScreenBufferArray + iVar3) =
-             (void *)((int)this_ptr->master_zbuffer + this_ptr->shadow_map_width * iVar2 * 2);
+        g_ScreenBufferArray[iVar2] =
+             (char *)this_ptr->master_zbuffer + this_ptr->shadow_map_width * iVar2 * 2;
         iVar2 = iVar2 + 1;
-        iVar3 = iVar3 + 4;
       } while (iVar2 < this_ptr->shadow_map_height);
     }
     engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr2,1);

@@ -119,10 +119,10 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
               *(char *)(local_18 + 0x19b58) = (char)iVar1;
               core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090
                         (&g_CDemonCameraInstance,light_source,&local_5c);
-              *(int *)(iVar5 + 0x19c54) = local_5c.left;
-              *(int *)(iVar5 + 0x19c58) = local_5c.top;
-              *(int *)(iVar5 + 0x19c5c) = local_5c.right;
-              *(int *)(iVar5 + 0x19c60) = local_5c.bottom;
+              *(int *)(iVar5 + 0x19c54) = local_5c.x_min;
+              *(int *)(iVar5 + 0x19c58) = local_5c.x_max;
+              *(int *)(iVar5 + 0x19c5c) = local_5c.y_min;
+              *(int *)(iVar5 + 0x19c60) = local_5c.y_max;
               if (*(char *)(local_18 + 0x19b58) != '\0') {
                 _sprintf(local_174,"Light %d, Box : %d,%d,%d,%d");
                 engine_2d_c_drawText_FUN_00401fd0(local_174,0,local_1c);
@@ -135,14 +135,14 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
             iVar1 = core_setutil_cpp_C3DSLight_isVisible_FUN_00587df0(this_ptr->lights + local_14);
             this_ptr->lights[local_14].visible_flags[local_20] = (char)iVar1;
             core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
-            *(uint *)((int)&this_ptr->lights[local_14].camera_light_bounds[0].left + local_40)
-                 = 0;
-            *(uint *)((int)&this_ptr->lights[local_14].camera_light_bounds[0].top + local_40)
-                 = 0;
             *(uint *)
-             ((int)&this_ptr->lights[local_14].camera_light_bounds[0].right + local_40) = 0;
+             ((int)&this_ptr->lights[local_14].camera_light_bounds[0].x_min + local_40) = 0;
             *(uint *)
-             ((int)&this_ptr->lights[local_14].camera_light_bounds[0].bottom + local_40) = 0;
+             ((int)&this_ptr->lights[local_14].camera_light_bounds[0].x_max + local_40) = 0;
+            *(uint *)
+             ((int)&this_ptr->lights[local_14].camera_light_bounds[0].y_min + local_40) = 0;
+            *(uint *)
+             ((int)&this_ptr->lights[local_14].camera_light_bounds[0].y_max + local_40) = 0;
           }
           else {
             this_ptr->lights[local_14].visible_flags[local_20] = '\0';

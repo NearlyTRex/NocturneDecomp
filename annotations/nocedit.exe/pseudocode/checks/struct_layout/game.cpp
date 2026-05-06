@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: game
-// Structs : 525
+// Structs : 527
 
 #include "nocturne.h"
 
@@ -1997,8 +1997,8 @@ static_assert(__builtin_offsetof(CDemonCamera, source_matrix) == 376,
               "offsetof(CDemonCamera, source_matrix) != 376");
 static_assert(__builtin_offsetof(CDemonCamera, inverted_matrix) == 412,
               "offsetof(CDemonCamera, inverted_matrix) != 412");
-static_assert(__builtin_offsetof(CDemonCamera, saved_viewport_rect) == 448,
-              "offsetof(CDemonCamera, saved_viewport_rect) != 448");
+static_assert(__builtin_offsetof(CDemonCamera, cached_projection) == 448,
+              "offsetof(CDemonCamera, cached_projection) != 448");
 static_assert(__builtin_offsetof(CDemonCamera, rect_array_count) == 464,
               "offsetof(CDemonCamera, rect_array_count) != 464");
 static_assert(__builtin_offsetof(CDemonCamera, rect_array) == 468,
@@ -5937,14 +5937,14 @@ static_assert(__builtin_offsetof(CRainDrop, base) == 0,
 // ---- CRect (16 bytes) ----
 static_assert(sizeof(CRect) == 16,
               "sizeof(CRect) != 16");
-static_assert(__builtin_offsetof(CRect, left) == 0,
-              "offsetof(CRect, left) != 0");
-static_assert(__builtin_offsetof(CRect, top) == 4,
-              "offsetof(CRect, top) != 4");
-static_assert(__builtin_offsetof(CRect, right) == 8,
-              "offsetof(CRect, right) != 8");
-static_assert(__builtin_offsetof(CRect, bottom) == 12,
-              "offsetof(CRect, bottom) != 12");
+static_assert(__builtin_offsetof(CRect, x_min) == 0,
+              "offsetof(CRect, x_min) != 0");
+static_assert(__builtin_offsetof(CRect, x_max) == 4,
+              "offsetof(CRect, x_max) != 4");
+static_assert(__builtin_offsetof(CRect, y_min) == 8,
+              "offsetof(CRect, y_min) != 8");
+static_assert(__builtin_offsetof(CRect, y_max) == 12,
+              "offsetof(CRect, y_max) != 12");
 
 // ---- CRock (72 bytes) ----
 static_assert(sizeof(CRock) == 72,
@@ -9662,6 +9662,18 @@ static_assert(__builtin_offsetof(SProjectedVertex, screen_x) == 16,
 static_assert(__builtin_offsetof(SProjectedVertex, screen_y) == 20,
               "offsetof(SProjectedVertex, screen_y) != 20");
 
+// ---- SProjectionParams (16 bytes) ----
+static_assert(sizeof(SProjectionParams) == 16,
+              "sizeof(SProjectionParams) != 16");
+static_assert(__builtin_offsetof(SProjectionParams, half_width_fixed) == 0,
+              "offsetof(SProjectionParams, half_width_fixed) != 0");
+static_assert(__builtin_offsetof(SProjectionParams, neg_half_height_fixed) == 4,
+              "offsetof(SProjectionParams, neg_half_height_fixed) != 4");
+static_assert(__builtin_offsetof(SProjectionParams, center_x_fixed) == 8,
+              "offsetof(SProjectionParams, center_x_fixed) != 8");
+static_assert(__builtin_offsetof(SProjectionParams, center_y_fixed) == 12,
+              "offsetof(SProjectionParams, center_y_fixed) != 12");
+
 // ---- SPropertyFlag (8 bytes) ----
 static_assert(sizeof(SPropertyFlag) == 8,
               "sizeof(SPropertyFlag) != 8");
@@ -10327,30 +10339,12 @@ static_assert(__builtin_offsetof(SWayPointAdjacency, distance) == 4,
 // ---- SWindow (488 bytes) ----
 static_assert(sizeof(SWindow) == 488,
               "sizeof(SWindow) != 488");
-static_assert(__builtin_offsetof(SWindow, left) == 0,
-              "offsetof(SWindow, left) != 0");
-static_assert(__builtin_offsetof(SWindow, top) == 4,
-              "offsetof(SWindow, top) != 4");
-static_assert(__builtin_offsetof(SWindow, right) == 8,
-              "offsetof(SWindow, right) != 8");
-static_assert(__builtin_offsetof(SWindow, bottom) == 12,
-              "offsetof(SWindow, bottom) != 12");
-static_assert(__builtin_offsetof(SWindow, saved_clip_left) == 16,
-              "offsetof(SWindow, saved_clip_left) != 16");
-static_assert(__builtin_offsetof(SWindow, saved_clip_top) == 20,
-              "offsetof(SWindow, saved_clip_top) != 20");
-static_assert(__builtin_offsetof(SWindow, saved_clip_right) == 24,
-              "offsetof(SWindow, saved_clip_right) != 24");
-static_assert(__builtin_offsetof(SWindow, saved_clip_bottom) == 28,
-              "offsetof(SWindow, saved_clip_bottom) != 28");
-static_assert(__builtin_offsetof(SWindow, saved_viewport_center_x) == 32,
-              "offsetof(SWindow, saved_viewport_center_x) != 32");
-static_assert(__builtin_offsetof(SWindow, saved_viewport_center_y) == 36,
-              "offsetof(SWindow, saved_viewport_center_y) != 36");
-static_assert(__builtin_offsetof(SWindow, saved_viewport_right) == 40,
-              "offsetof(SWindow, saved_viewport_right) != 40");
-static_assert(__builtin_offsetof(SWindow, saved_viewport_bottom) == 44,
-              "offsetof(SWindow, saved_viewport_bottom) != 44");
+static_assert(__builtin_offsetof(SWindow, rect) == 0,
+              "offsetof(SWindow, rect) != 0");
+static_assert(__builtin_offsetof(SWindow, saved_clip) == 16,
+              "offsetof(SWindow, saved_clip) != 16");
+static_assert(__builtin_offsetof(SWindow, saved_projection) == 32,
+              "offsetof(SWindow, saved_projection) != 32");
 static_assert(__builtin_offsetof(SWindow, saved_viewport_width) == 48,
               "offsetof(SWindow, saved_viewport_width) != 48");
 static_assert(__builtin_offsetof(SWindow, saved_viewport_height) == 52,
@@ -10373,5 +10367,17 @@ static_assert(__builtin_offsetof(SWindow, progress_percentage) == 480,
               "offsetof(SWindow, progress_percentage) != 480");
 static_assert(__builtin_offsetof(SWindow, progress_timestamp) == 484,
               "offsetof(SWindow, progress_timestamp) != 484");
+
+// ---- SWindowRect (16 bytes) ----
+static_assert(sizeof(SWindowRect) == 16,
+              "sizeof(SWindowRect) != 16");
+static_assert(__builtin_offsetof(SWindowRect, left) == 0,
+              "offsetof(SWindowRect, left) != 0");
+static_assert(__builtin_offsetof(SWindowRect, top) == 4,
+              "offsetof(SWindowRect, top) != 4");
+static_assert(__builtin_offsetof(SWindowRect, right) == 8,
+              "offsetof(SWindowRect, right) != 8");
+static_assert(__builtin_offsetof(SWindowRect, bottom) == 12,
+              "offsetof(SWindowRect, bottom) != 12");
 
 } // namespace

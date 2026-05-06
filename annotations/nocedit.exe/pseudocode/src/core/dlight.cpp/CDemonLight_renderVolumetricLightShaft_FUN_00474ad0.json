@@ -4,21 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 488,
-    "complexity_score": 260,
+    "complexity_score": 185,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 15,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 185,
-    "suspect_count": 6,
-    "suspect_types": [
-      "raw_address_constant",
-      "stack_alignment_array",
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 673
   },
   "cross_references": [
@@ -269,6 +265,62 @@
     },
     "pcode_op_count": 2421
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 15,
+      "match": "aiStackY_10bc",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int aiStackY_10bc [990];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+3563000 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 169,
+      "match": "0xf80000",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr->u = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+3563000 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 170,
+      "match": "0xf80000",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr->v = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+3563000 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 172,
+      "match": "0xf80000",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+3563000 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 175,
+      "match": "0xf80000",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[3].u = 0xf80000;",
+      "type": "raw_address_constant"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4292,
     "local_size": 4288,
@@ -568,54 +620,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 15,
-      "match": "aiStackY_10bc",
-      "severity": "moderate",
-      "text": "int aiStackY_10bc [990];",
-      "type": "stack_alignment_array"
-    },
-    {
-      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+3563000 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 169,
-      "match": "0xf80000",
-      "severity": "moderate",
-      "text": "this_ptr_00->vertex_buffer_ptr->u = 0xf80000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+3563000 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 170,
-      "match": "0xf80000",
-      "severity": "moderate",
-      "text": "this_ptr_00->vertex_buffer_ptr->v = 0xf80000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+3563000 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 172,
-      "match": "0xf80000",
-      "severity": "moderate",
-      "text": "this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+3563000 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 175,
-      "match": "0xf80000",
-      "severity": "moderate",
-      "text": "this_ptr_00->vertex_buffer_ptr[3].u = 0xf80000;",
-      "type": "raw_address_constant"
-    }
-  ]
+  "suspects": []
 }

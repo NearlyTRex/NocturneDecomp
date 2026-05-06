@@ -144,6 +144,15 @@
       "severity": "moderate",
       "text": "if ((SPose *)&stack0xffffffc0 != output_bone_data) {",
       "type": "stack_ref"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_14` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `local_14->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 48,
+      "match": "local_14 = (T *)&(local_14->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_14 = (SPose *)&(local_14->pose_data).root_position.y;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {

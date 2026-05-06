@@ -4,7 +4,7 @@
 #include "system/basetypes.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CLocation.h"
-#include "types/classes/CRect.h"
+#include "types/structs/SWindowRect.h"
 
 // Structure: CDemonMission
 // Ghidra size: 0x27d0 (10192 bytes)
@@ -15,7 +15,7 @@ typedef struct CDemonMission {
     int mission_version_num; // 0x8
     int has_inventory_actors; // 0xc
     int current_camera_index; // 0x10
-    CRect viewport; // 0x14
+    SWindowRect viewport; // 0x14
     int show_3d_viewport; // 0x24
     struct CDemonActor* selected_actor; // 0x28
     struct CDemonActor* hovered_actor; // 0x2c

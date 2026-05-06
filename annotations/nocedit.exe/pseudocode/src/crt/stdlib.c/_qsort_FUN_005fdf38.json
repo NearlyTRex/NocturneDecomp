@@ -2,14 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 533,
-    "complexity_score": 637,
+    "complexity_score": 652,
     "cross_reference_count": 10,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 282,
-    "suspect_count": 34,
+    "suspect_count": 35,
     "suspect_types": [
+      "dropped_loop_counter",
       "extra_output",
       "pointer_cast",
       "warning_unreachable"
@@ -705,6 +706,14 @@
       "severity": "moderate",
       "text": "local_4c = (void *)((int)local_4c + local_40);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "`do { ... } while (true);` co-occurs with a `WARNING: Removing unreachable block` in this function \u2014 strong fingerprint for Ghidra dropping a loop counter (asm has `INC counter; CMP counter, BOUND; JL loop` at the loop bottom plus a counter-as-multiplier in the body that Ghidra folded as constant 0). Function infinite-loops or skips post-loop tail at runtime. Restore the counter and the unreachable-pruned post-loop block in a .keep.",
+      "line": 285,
+      "match": "} while( true );",
+      "severity": "moderate",
+      "text": "} while( true );",
+      "type": "dropped_loop_counter"
     }
   ]
 }

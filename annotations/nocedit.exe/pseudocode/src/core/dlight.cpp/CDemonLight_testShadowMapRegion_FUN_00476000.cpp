@@ -16,16 +16,16 @@ int __cdecl core_dlight_cpp_CDemonLight_testShadowMapRegion_FUN_00476000(CDemonL
   int iVar5;
   uchar *puVar6;
   
-  iVar4 = rect->left >> 0x1f;
-  iVar1 = (int)((rect->left + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3;
-  iVar4 = rect->top >> 0x1f;
-  iVar2 = (int)((rect->top + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3;
-  iVar4 = rect->right * this_ptr->shadow_map_width;
+  iVar4 = rect->x_min >> 0x1f;
+  iVar1 = (int)((rect->x_min + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3;
+  iVar4 = rect->x_max >> 0x1f;
+  iVar2 = (int)((rect->x_max + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3;
+  iVar4 = rect->y_min * this_ptr->shadow_map_width;
   iVar5 = iVar4 >> 0x1f;
   puVar6 = this_ptr->lightmap_visibility_bits +
            ((int)((iVar4 + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3);
-  iVar4 = rect->right;
-  if (iVar4 <= rect->bottom) {
+  iVar4 = rect->y_min;
+  if (iVar4 <= rect->y_max) {
     do {
       if (iVar1 <= iVar2) {
         puVar3 = puVar6 + iVar1;
@@ -42,7 +42,7 @@ int __cdecl core_dlight_cpp_CDemonLight_testShadowMapRegion_FUN_00476000(CDemonL
       puVar6 = puVar6 + ((int)((this_ptr->shadow_map_width + iVar5 * -8) - (uint)(iVar5 << 2 < 0))
                         >> 3);
       iVar4 = iVar4 + 1;
-    } while (iVar4 <= rect->bottom);
+    } while (iVar4 <= rect->y_max);
   }
   return 0;
 }

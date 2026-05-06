@@ -16,10 +16,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_pushRect_FUN_0044c740(CDemonCamera *t
     return;
   }
   pCVar1 = this_ptr->rect_array + this_ptr->rect_array_count;
-  pCVar1->left = left;
-  pCVar1->top = top;
-  pCVar1->right = right;
-  pCVar1->bottom = bottom;
+  pCVar1->x_min = left;
+  pCVar1->x_max = top;
+  pCVar1->y_min = right;
+  pCVar1->y_max = bottom;
   this_ptr->rect_array_count = this_ptr->rect_array_count + 1;
   return;
 }

@@ -1,12 +1,13 @@
-// Name: core_xform.cpp_atan2Approximation_FUN_005f55c0
+// Name: core_xform.cpp_angleFromSinCos_FUN_005f55c0
 // Address: 005f55c0
+// MANUAL RECONSTRUCTION
 // Address Range: [[005f55c0, 005f568d]]
 // Convention: __cdecl
-// Signature: float __cdecl core_xform_cpp_atan2Approximation_FUN_005f55c0(double sin_value,double cos_value)
+// Signature: float __cdecl core_xform_cpp_angleFromSinCos_FUN_005f55c0(double sin_value,double cos_value)
 
 #include "nocturne.h"
 
-float __cdecl core_xform_cpp_atan2Approximation_FUN_005f55c0(double sin_value,double cos_value)
+float __cdecl core_xform_cpp_angleFromSinCos_FUN_005f55c0(double sin_value,double cos_value)
 
 {
   float10 fVar1;
@@ -14,7 +15,13 @@ float __cdecl core_xform_cpp_atan2Approximation_FUN_005f55c0(double sin_value,do
   float local_c;
   
   if ((0.70699999999999996 <= sin_value) || (sin_value <= -0.70699999999999996)) {
-    if ((-1 < cos_value) && (cos_value < 1.0)) {
+    if (cos_value <= -1.0) {
+      local_c = 3.1415927f;
+    }
+    else if (1.0 <= cos_value) {
+      local_c = 0.0f;
+    }
+    else {
       dVar2 = acos(cos_value);
       local_c = (float)dVar2;
     }

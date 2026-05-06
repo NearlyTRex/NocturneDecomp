@@ -158,6 +158,7 @@
 #include "types/structs/SPose.h"
 #include "types/structs/SPoseData.h"
 #include "types/structs/SProjectedVertex.h"
+#include "types/structs/SProjectionParams.h"
 #include "types/structs/SPropertyFlag.h"
 #include "types/structs/SQuadVertices.h"
 #include "types/structs/SRA4HQPoint.h"
@@ -209,4 +210,5 @@
 #include "types/structs/SWavFmtChunk.h"
 #include "types/structs/SWayPointAdjacency.h"
 #include "types/structs/SWindow.h"
+#include "types/structs/SWindowRect.h"
 

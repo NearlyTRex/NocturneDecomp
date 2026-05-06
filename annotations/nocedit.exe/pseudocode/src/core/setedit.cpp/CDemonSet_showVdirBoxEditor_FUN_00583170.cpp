@@ -201,7 +201,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showVdirBoxEditor_FUN_00583170(CDemonSet
         in_stack_fffffdc4 = local_1bc;
       }
     }
-    if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.rect_array[7].top) {
+    if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.rect_array[7].x_max) {
       g_CDemonCameraInstance.base.position.f.x = (float)in_stack_fffffdbc;
       g_CDemonCameraInstance.base.position.f.y = in_stack_fffffdc0;
       g_CDemonCameraInstance.base.position.f.z = (float)in_stack_fffffdc4;

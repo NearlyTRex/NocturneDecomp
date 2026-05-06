@@ -16,14 +16,14 @@
 ;   TerminatedCString s_shape_edittool_cpp_00623477
 ;   int g_WindowStackCount
 ;   SWindow[5] g_WindowStack
-;   undefined4 g_WindowStack[0].saved_clip_left
-;   undefined4 g_WindowStack[0].saved_clip_top
-;   undefined4 g_WindowStack[0].saved_clip_right
-;   undefined4 g_WindowStack[0].saved_clip_bottom
-;   undefined4 g_WindowStack[0].saved_viewport_center_x
-;   undefined4 g_WindowStack[0].saved_viewport_center_y
-;   undefined4 g_WindowStack[0].saved_viewport_right
-;   undefined4 g_WindowStack[0].saved_viewport_bottom
+;   undefined4 g_WindowStack[0].saved_clip.left
+;   undefined4 g_WindowStack[0].saved_clip.top
+;   undefined4 g_WindowStack[0].saved_clip.right
+;   undefined4 g_WindowStack[0].saved_clip.bottom
+;   undefined4 g_WindowStack[0].saved_projection.half_width_fixed
+;   undefined4 g_WindowStack[0].saved_projection.neg_half_height_fixed
+;   undefined4 g_WindowStack[0].saved_projection.center_x_fixed
+;   undefined4 g_WindowStack[0].saved_projection.center_y_fixed
 ;   undefined4 g_WindowStack[0].saved_viewport_width
 ;   undefined4 g_WindowStack[0].saved_viewport_height
 ;   ... and 13 more
@@ -58,23 +58,23 @@ section .text
     TEST EDI,EDI                        ; 004a0ed8
     JNZ 0x004a0f58                      ; 004a0eda
         ;   XREF to: 004a0f58 (CONDITIONAL_JUMP)  ; LAB_004a0f58
-    MOV EAX,dword ptr [EBX + 0x10]      ; 004a0edc | g_WindowStack[0].saved_clip_left
+    MOV EAX,dword ptr [EBX + 0x10]      ; 004a0edc | g_WindowStack[0].saved_clip.left
         ;   Label: LAB_004a0edc
     MOV [0x02d02558],EAX                ; 004a0edf | g_ClipLeft
-    MOV EAX,dword ptr [EBX + 0x14]      ; 004a0ee4 | g_WindowStack[0].saved_clip_top
+    MOV EAX,dword ptr [EBX + 0x14]      ; 004a0ee4 | g_WindowStack[0].saved_clip.top
     MOV [0x02d0255c],EAX                ; 004a0ee7 | g_ClipTop
-    MOV EAX,dword ptr [EBX + 0x18]      ; 004a0eec | g_WindowStack[0].saved_clip_right
+    MOV EAX,dword ptr [EBX + 0x18]      ; 004a0eec | g_WindowStack[0].saved_clip.right
     MOV [0x02d02560],EAX                ; 004a0eef | g_ClipRight
-    MOV EAX,dword ptr [EBX + 0x1c]      ; 004a0ef4 | g_WindowStack[0].saved_clip_bottom
+    MOV EAX,dword ptr [EBX + 0x1c]      ; 004a0ef4 | g_WindowStack[0].saved_clip.bottom
     MOV [0x02d02564],EAX                ; 004a0ef7 | g_ClipBottom
-    MOV EAX,dword ptr [EBX + 0x20]      ; 004a0efc | g_WindowStack[0].saved_viewport_center_x
-    MOV [0x02d02548],EAX                ; 004a0eff | g_ViewportCenterXFixed
-    MOV EAX,dword ptr [EBX + 0x24]      ; 004a0f04 | g_WindowStack[0].saved_viewport_center_y
-    MOV [0x02d0254c],EAX                ; 004a0f07 | g_ViewportCenterYFixed
-    MOV EAX,dword ptr [EBX + 0x28]      ; 004a0f0c | g_WindowStack[0].saved_viewport_right
-    MOV [0x02d02550],EAX                ; 004a0f0f | g_ViewportRightFixed
-    MOV EAX,dword ptr [EBX + 0x2c]      ; 004a0f14 | g_WindowStack[0].saved_viewport_bottom
-    MOV [0x02d02554],EAX                ; 004a0f17 | g_ViewportBottomFixed
+    MOV EAX,dword ptr [EBX + 0x20]      ; 004a0efc | g_WindowStack[0].saved_projection.half_width_fixed
+    MOV [0x02d02548],EAX                ; 004a0eff | g_Projection
+    MOV EAX,dword ptr [EBX + 0x24]      ; 004a0f04 | g_WindowStack[0].saved_projection.neg_half_height_fixed
+    MOV [0x02d0254c],EAX                ; 004a0f07 | g_Projection.neg_half_height_fixed
+    MOV EAX,dword ptr [EBX + 0x28]      ; 004a0f0c | g_WindowStack[0].saved_projection.center_x_fixed
+    MOV [0x02d02550],EAX                ; 004a0f0f | g_Projection.center_x_fixed
+    MOV EAX,dword ptr [EBX + 0x2c]      ; 004a0f14 | g_WindowStack[0].saved_projection.center_y_fixed
+    MOV [0x02d02554],EAX                ; 004a0f17 | g_Projection.center_y_fixed
     MOV EAX,dword ptr [EBX + 0x30]      ; 004a0f1c | g_WindowStack[0].saved_viewport_width
     MOV [0x02d02568],EAX                ; 004a0f1f | g_ViewportWidth
     MOV EAX,dword ptr [EBX + 0x34]      ; 004a0f24 | g_WindowStack[0].saved_viewport_height

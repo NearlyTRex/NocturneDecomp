@@ -22,10 +22,10 @@ void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0056e5d0(CDemon
   
   if (g_SkipClearBuffersSceneCamera != (CDemonCamera *)0x0) {
     pSVar4 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-    local_c = g_ViewportRightFixed - g_ViewportCenterXFixed;
-    iVar5 = g_ViewportRightFixed + g_ViewportCenterXFixed;
-    iVar3 = g_ViewportBottomFixed - g_ViewportCenterYFixed;
-    local_8 = g_ViewportBottomFixed + g_ViewportCenterYFixed;
+    local_c = g_Projection.center_x_fixed - g_Projection.half_width_fixed;
+    iVar5 = g_Projection.center_x_fixed + g_Projection.half_width_fixed;
+    iVar3 = g_Projection.center_y_fixed - g_Projection.neg_half_height_fixed;
+    local_8 = g_Projection.center_y_fixed + g_Projection.neg_half_height_fixed;
     local_10 = 0;
     if (0 < vertex_count) {
       do {
@@ -52,8 +52,8 @@ void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0056e5d0(CDemon
           if ((-(pSVar4->projected_vertex).transformed_z < iVar6) &&
              (iVar1 = (pSVar4->projected_vertex).transformed_z, iVar6 < iVar1)) {
             iVar2 = (int)(((longlong)(pSVar4->projected_vertex).transformed_x *
-                          (longlong)g_ViewportCenterXFixed) / (longlong)iVar1) +
-                    g_ViewportRightFixed;
+                          (longlong)g_Projection.half_width_fixed) / (longlong)iVar1) +
+                    g_Projection.center_x_fixed;
             if (local_c < iVar2) {
               local_c = iVar2;
             }
@@ -65,8 +65,8 @@ void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0056e5d0(CDemon
           if ((-(pSVar4->projected_vertex).transformed_z < iVar6) &&
              (iVar4 = (pSVar4->projected_vertex).transformed_z, iVar6 < iVar4)) {
             iVar6 = (int)(((longlong)(pSVar4->projected_vertex).transformed_y *
-                          (longlong)g_ViewportCenterYFixed) / (longlong)iVar4) +
-                    g_ViewportBottomFixed;
+                          (longlong)g_Projection.neg_half_height_fixed) / (longlong)iVar4) +
+                    g_Projection.center_y_fixed;
             if (local_8 < iVar6) {
               local_8 = iVar6;
             }
@@ -76,19 +76,19 @@ void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0056e5d0(CDemon
           }
           if ((pSVar4->projected_vertex).transformed_z <= (pSVar4->projected_vertex).transformed_x)
           {
-            local_c = g_ViewportCenterXFixed + g_ViewportRightFixed;
+            local_c = g_Projection.half_width_fixed + g_Projection.center_x_fixed;
           }
           if ((pSVar4->projected_vertex).transformed_x <= -(pSVar4->projected_vertex).transformed_z)
           {
-            iVar5 = g_ViewportRightFixed - g_ViewportCenterXFixed;
+            iVar5 = g_Projection.center_x_fixed - g_Projection.half_width_fixed;
           }
           if ((pSVar4->projected_vertex).transformed_z <= (pSVar4->projected_vertex).transformed_y)
           {
-            iVar3 = g_ViewportCenterYFixed + g_ViewportBottomFixed;
+            iVar3 = g_Projection.neg_half_height_fixed + g_Projection.center_y_fixed;
           }
           if ((pSVar4->projected_vertex).transformed_y <= -(pSVar4->projected_vertex).transformed_z)
           {
-            local_8 = g_ViewportBottomFixed - g_ViewportCenterYFixed;
+            local_8 = g_Projection.center_y_fixed - g_Projection.neg_half_height_fixed;
           }
         }
         local_10 = local_10 + 1;

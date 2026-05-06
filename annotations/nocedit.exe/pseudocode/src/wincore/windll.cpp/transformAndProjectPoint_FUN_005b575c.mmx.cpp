@@ -99,14 +99,14 @@ __asm {
         idiv ECX
         mov dword ptr [EBX + 0xc],EAX
         movd EAX,MM4
-        imul dword ptr [g_ViewportCenterXFixed]
+        imul dword ptr [g_Projection]
         idiv ECX
-        add EAX,dword ptr [g_ViewportRightFixed]
+        add EAX,dword ptr [g_Projection.center_x_fixed]
         mov dword ptr [EBX + 0x10],EAX
         movd EAX,MM5
-        imul dword ptr [g_ViewportCenterYFixed]
+        imul dword ptr [g_Projection.neg_half_height_fixed]
         idiv ECX
-        add EAX,dword ptr [g_ViewportBottomFixed]
+        add EAX,dword ptr [g_Projection.center_y_fixed]
         mov dword ptr [EBX + 0x14],EAX
         emms
         ret
@@ -206,14 +206,14 @@ __asm {
         idiv ECX
         mov dword ptr [EDI + 0xc],EAX
         mov EAX,[g_TempTransformedX]
-        imul dword ptr [g_ViewportCenterXFixed]
+        imul dword ptr [g_Projection]
         idiv ECX
-        add EAX,dword ptr [g_ViewportRightFixed]
+        add EAX,dword ptr [g_Projection.center_x_fixed]
         mov dword ptr [EDI + 0x10],EAX
         mov EAX,[g_TempTransformedY]
-        imul dword ptr [g_ViewportCenterYFixed]
+        imul dword ptr [g_Projection.neg_half_height_fixed]
         idiv ECX
-        add EAX,dword ptr [g_ViewportBottomFixed]
+        add EAX,dword ptr [g_Projection.center_y_fixed]
         mov dword ptr [EDI + 0x14],EAX
         pop EDI
         pop ESI

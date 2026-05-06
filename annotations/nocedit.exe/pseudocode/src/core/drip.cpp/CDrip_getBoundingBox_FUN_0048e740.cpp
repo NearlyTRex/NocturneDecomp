@@ -30,7 +30,7 @@ CBoundingBox3D * __cdecl core_drip_cpp_CDrip_getBoundingBox_FUN_0048e740(CDrip *
     return out_box;
   }
   pCVar6 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
-  pCVar5 = pCVar6->frame_bounds;
+  pCVar5 = &pCVar6->frame_bounds->min;
   (out_box->min).x = pCVar5->x;
   *pfVar1 = pCVar5->y;
   *pfVar2 = pCVar5->z;

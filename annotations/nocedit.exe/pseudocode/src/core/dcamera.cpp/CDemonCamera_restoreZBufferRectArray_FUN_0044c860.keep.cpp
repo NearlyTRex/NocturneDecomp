@@ -26,10 +26,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860(
     return;
   }
   if (0x100 < this_ptr->rect_array_count) {
-    local_34.left = g_UseExternalRenderer;
-    local_34.right = g_UseExternalRenderer;
-    local_34.top = this_ptr->framebuffer_width + -1;
-    local_34.bottom = this_ptr->framebuffer_height + -1;
+    local_34.x_min = g_UseExternalRenderer;
+    local_34.y_min = g_UseExternalRenderer;
+    local_34.x_max = this_ptr->framebuffer_width + -1;
+    local_34.y_max = this_ptr->framebuffer_height + -1;
     core_dcamera_cpp_CDemonCamera_restoreZBufferRect_FUN_0044c780(this_ptr,&local_34);
     return;
   }
@@ -37,17 +37,17 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860(
   if (0 < this_ptr->rect_array_count) {
     pCVar2 = this_ptr->rect_array;
     do {
-      if (pCVar2->left < 0) {
-        pCVar2->left = 0;
+      if (pCVar2->x_min < 0) {
+        pCVar2->x_min = 0;
       }
-      if (this_ptr->framebuffer_width <= pCVar2->top) {
-        pCVar2->top = this_ptr->framebuffer_width + -1;
+      if (this_ptr->framebuffer_width <= pCVar2->x_max) {
+        pCVar2->x_max = this_ptr->framebuffer_width + -1;
       }
-      if (pCVar2->right < 0) {
-        pCVar2->right = 0;
+      if (pCVar2->y_min < 0) {
+        pCVar2->y_min = 0;
       }
-      if (this_ptr->framebuffer_height <= pCVar2->bottom) {
-        pCVar2->bottom = this_ptr->framebuffer_height + -1;
+      if (this_ptr->framebuffer_height <= pCVar2->y_max) {
+        pCVar2->y_max = this_ptr->framebuffer_height + -1;
       }
       iVar8 = iVar8 + 1;
       pCVar2 = pCVar2 + 1;
@@ -59,11 +59,11 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860(
   if (0 < this_ptr->rect_array_count) {
     pCVar6 = this_ptr->rect_array;
     do {
-      if (pCVar6->right < local_14) {
-        local_14 = pCVar6->right;
+      if (pCVar6->y_min < local_14) {
+        local_14 = pCVar6->y_min;
       }
-      if (local_1c < pCVar6->bottom) {
-        local_1c = pCVar6->bottom;
+      if (local_1c < pCVar6->y_max) {
+        local_1c = pCVar6->y_max;
       }
       iVar1 = iVar1 + 1;
       pCVar6 = pCVar6 + 1;
@@ -76,21 +76,21 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860(
       if (0 < this_ptr->rect_array_count) {
         pCVar2 = this_ptr->rect_array;
         do {
-          if ((pCVar2->right <= local_14) && (local_14 <= pCVar2->bottom)) {
+          if ((pCVar2->y_min <= local_14) && (local_14 <= pCVar2->y_max)) {
             bVar5 = false;
             if (0 < g_ScanlineSpanCount) {
               iVar7 = 0;
               do {
-                if ((g_ScanlineSpanLeft[iVar7] <= pCVar2->top) &&
-                   (pCVar2->left <= g_ScanlineSpanRight[iVar7])) {
-                  if ((g_ScanlineSpanLeft[iVar7] <= pCVar2->left) &&
-                     (pCVar2->top <= g_ScanlineSpanRight[iVar7])) goto LAB_0044c9e6;
-                  if (pCVar2->left < g_ScanlineSpanLeft[iVar7]) {
+                if ((g_ScanlineSpanLeft[iVar7] <= pCVar2->x_max) &&
+                   (pCVar2->x_min <= g_ScanlineSpanRight[iVar7])) {
+                  if ((g_ScanlineSpanLeft[iVar7] <= pCVar2->x_min) &&
+                     (pCVar2->x_max <= g_ScanlineSpanRight[iVar7])) goto LAB_0044c9e6;
+                  if (pCVar2->x_min < g_ScanlineSpanLeft[iVar7]) {
                     bVar5 = true;
-                    g_ScanlineSpanLeft[iVar7] = pCVar2->left;
+                    g_ScanlineSpanLeft[iVar7] = pCVar2->x_min;
                   }
-                  if (g_ScanlineSpanRight[iVar7] < pCVar2->top) {
-                    g_ScanlineSpanRight[iVar7] = pCVar2->top;
+                  if (g_ScanlineSpanRight[iVar7] < pCVar2->x_max) {
+                    g_ScanlineSpanRight[iVar7] = pCVar2->x_max;
                     goto LAB_0044c9e6;
                   }
                   if (bVar5) break;
@@ -99,8 +99,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860(
               } while (iVar7 < g_ScanlineSpanCount);
             }
             if (!bVar5) {
-              g_ScanlineSpanLeft[g_ScanlineSpanCount] = pCVar2->left;
-              g_ScanlineSpanRight[g_ScanlineSpanCount] = pCVar2->top;
+              g_ScanlineSpanLeft[g_ScanlineSpanCount] = pCVar2->x_min;
+              g_ScanlineSpanRight[g_ScanlineSpanCount] = pCVar2->x_max;
               g_ScanlineSpanCount = g_ScanlineSpanCount + 1;
             }
           }

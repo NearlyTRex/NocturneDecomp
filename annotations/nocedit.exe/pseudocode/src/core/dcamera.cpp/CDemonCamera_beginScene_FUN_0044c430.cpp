@@ -90,13 +90,13 @@ switchD_0044c448_caseD_3:
   engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890
             (g_CDemonRendererPtr2,0,0,g_CameraScreenWidth + -1,g_CameraScreenHeight + -1);
   iVar3 = g_CameraShakeOffsetX;
-  (this_ptr->viewport_rect).left = 0;
-  (this_ptr->viewport_rect).top = 0;
+  (this_ptr->viewport_rect).x_min = 0;
+  (this_ptr->viewport_rect).x_max = 0;
   this_ptr->rect_array_count = 0;
-  g_ViewportRightFixed = g_ViewportRightFixed + iVar3 * 0x10000;
-  (this_ptr->viewport_rect).right = this_ptr->framebuffer_width + -1;
-  g_ViewportBottomFixed = g_ViewportBottomFixed + g_CameraShakeOffsetY * -0x10000;
-  (this_ptr->viewport_rect).bottom = this_ptr->framebuffer_height + -1;
+  g_Projection.center_x_fixed = g_Projection.center_x_fixed + iVar3 * 0x10000;
+  (this_ptr->viewport_rect).y_min = this_ptr->framebuffer_width + -1;
+  g_Projection.center_y_fixed = g_Projection.center_y_fixed + g_CameraShakeOffsetY * -0x10000;
+  (this_ptr->viewport_rect).y_max = this_ptr->framebuffer_height + -1;
   this_ptr_00 = g_CDemonRendererPtr2;
   this_ptr->skip_clear_buffer_flag = skip_clear_buffers;
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150

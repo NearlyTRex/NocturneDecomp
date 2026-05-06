@@ -12,10 +12,10 @@
 ;
 ; Referenced Globals:
 ;   int g_ProjectionScale = 0x10000
-;   int g_ViewportCenterXFixed
-;   int g_ViewportCenterYFixed
-;   int g_ViewportRightFixed
-;   int g_ViewportBottomFixed
+;   SProjectionParams g_Projection
+;   undefined4 g_Projection.neg_half_height_fixed
+;   undefined4 g_Projection.center_x_fixed
+;   undefined4 g_Projection.center_y_fixed
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipRight
@@ -35,13 +35,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 0048dcc0
         ;   Label: engine_drender.cpp_CDemonRenderer_setupCameraAndViewport_FUN_0048dcc0
     MOV EDX,dword ptr [EAX]             ; 0048dcc4
-    MOV dword ptr [0x02d02548],EDX      ; 0048dcc6 | g_ViewportCenterXFixed
+    MOV dword ptr [0x02d02548],EDX      ; 0048dcc6 | g_Projection
     MOV EDX,dword ptr [EAX + 0x4]       ; 0048dccc
-    MOV dword ptr [0x02d0254c],EDX      ; 0048dccf | g_ViewportCenterYFixed
+    MOV dword ptr [0x02d0254c],EDX      ; 0048dccf | g_Projection.neg_half_height_fixed
     MOV EDX,dword ptr [EAX + 0x8]       ; 0048dcd5
-    MOV dword ptr [0x02d02550],EDX      ; 0048dcd8 | g_ViewportRightFixed
+    MOV dword ptr [0x02d02550],EDX      ; 0048dcd8 | g_Projection.center_x_fixed
     MOV EDX,dword ptr [EAX + 0xc]       ; 0048dcde
-    MOV dword ptr [0x02d02554],EDX      ; 0048dce1 | g_ViewportBottomFixed
+    MOV dword ptr [0x02d02554],EDX      ; 0048dce1 | g_Projection.center_y_fixed
     MOV EDX,dword ptr [EAX + 0x10]      ; 0048dce7
     MOV dword ptr [0x02d052c4],EDX      ; 0048dcea | g_CameraOriginX
     MOV EDX,dword ptr [EAX + 0x14]      ; 0048dcf0

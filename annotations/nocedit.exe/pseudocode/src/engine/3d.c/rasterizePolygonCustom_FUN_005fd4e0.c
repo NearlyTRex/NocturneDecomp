@@ -42,12 +42,12 @@ void __cdecl engine_3d_c_rasterizePolygonCustom_FUN_005fd4e0(SRenderVertex *vert
              (int)(0x7fffffff / (longlong)(pSVar7->projected_vertex).transformed_z);
         (pSVar7->projected_vertex).screen_x =
              (int)(((longlong)(pSVar7->projected_vertex).transformed_x *
-                   (longlong)g_ViewportCenterXFixed) /
-                  (longlong)(pSVar7->projected_vertex).transformed_z) + g_ViewportRightFixed;
+                   (longlong)g_Projection.half_width_fixed) /
+                  (longlong)(pSVar7->projected_vertex).transformed_z) + g_Projection.center_x_fixed;
         (pSVar7->projected_vertex).screen_y =
              (int)(((longlong)(pSVar7->projected_vertex).transformed_y *
-                   (longlong)g_ViewportCenterYFixed) /
-                  (longlong)(pSVar7->projected_vertex).transformed_z) + g_ViewportBottomFixed;
+                   (longlong)g_Projection.neg_half_height_fixed) /
+                  (longlong)(pSVar7->projected_vertex).transformed_z) + g_Projection.center_y_fixed;
       }
       iVar12 = iVar12 + 1;
       pSVar7 = pSVar7 + 1;

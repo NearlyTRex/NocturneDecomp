@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   int g_ProjectionScale = 0x10000
-;   int g_ViewportCenterYFixed
+;   undefined4 g_Projection.neg_half_height_fixed
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
@@ -50,7 +50,7 @@ section .text
     JLE 0x0050e628                      ; 0050e5eb
         ;   XREF to: 0050e628 (CONDITIONAL_JUMP)  ; LAB_0050e628
     MOV EAX,dword ptr [EBP + 0x14]      ; 0050e5ed
-    FILD dword ptr [0x02d0254c]         ; 0050e5f0 | g_ViewportCenterYFixed
+    FILD dword ptr [0x02d0254c]         ; 0050e5f0 | g_Projection.neg_half_height_fixed
     MOV dword ptr [ESP + 0x34],EAX      ; 0050e5f6
     MOV dword ptr [ESP + 0x38],EBX      ; 0050e5fa
     FILD dword ptr [ESP + 0x34]         ; 0050e5fe

@@ -111,7 +111,7 @@ void __cdecl core_xform_cpp_normalizeMatrix_FUN_005f51e0(CMatrix3x4f *matrix);
 void __cdecl core_xform_cpp_clearTranslation_FUN_005f5370(CMatrix3x4f *matrix);
 void __cdecl core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles);
 void __cdecl core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles);
-float __cdecl core_xform_cpp_atan2Approximation_FUN_005f55c0(double sin_value,double cos_value);
+float __cdecl core_xform_cpp_angleFromSinCos_FUN_005f55c0(double sin_value,double cos_value);
 CVector3f * __cdecl core_xform_cpp_matrixToEulerAngles_FUN_005f5690(CMatrix3x4f *matrix_in,CVector3f *euler_out);
 CVector3f * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x4f *matrix_ptr,CVector3f *euler_out);
 CVector3f * __cdecl core_xform_cpp_getTranslation_FUN_005f6110(CMatrix3x4f *matrix_in,CVector3f *vector_out);

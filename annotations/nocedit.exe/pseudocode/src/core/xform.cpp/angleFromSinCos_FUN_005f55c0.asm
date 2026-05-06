@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float __cdecl core_xform_cpp_atan2Approximation_FUN_005f55c0(double sin_value,double cos_value)
+; float __cdecl core_xform_cpp_angleFromSinCos_FUN_005f55c0(double sin_value,double cos_value)
 ;
 ; Parameters:
 ; double           Stack[0x4]:8   sin_value
@@ -27,7 +27,7 @@
 section .text
 
     PUSH EBP                            ; 005f55c0
-        ;   Label: core_xform.cpp_atan2Approximation_FUN_005f55c0
+        ;   Label: core_xform.cpp_angleFromSinCos_FUN_005f55c0
     MOV EBP,ESP                         ; 005f55c1
     SUB ESP,0x4                         ; 005f55c3
     AND ESP,0xfffffff8                  ; 005f55c6

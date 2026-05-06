@@ -21,7 +21,7 @@ int __cdecl engine_matrix_c_projectToScreen_FUN_0050e5b0(int input_value)
   local_50.z = 0;
   engine_matrix_c_transformWorldToView_FUN_0050cc40(&local_50,local_44);
   if (0 < local_44[0].z) {
-    return (int)ROUND(ROUND(((-(float10)input_value * (float10)g_ViewportCenterYFixed) /
+    return (int)ROUND(ROUND(((-(float10)input_value * (float10)g_Projection.neg_half_height_fixed) /
                             (float10)local_44[0].z) / (float10)g_ProjectionScale));
   }
   return -1;

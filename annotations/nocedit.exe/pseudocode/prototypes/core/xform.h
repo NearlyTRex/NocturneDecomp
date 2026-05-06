@@ -51,9 +51,9 @@ void __cdecl buildMatrixFromEulerAndPosition(CMatrix3x4f *output_matrix,CVector3
 // Address: 005f54c0
 void __cdecl buildMatrixFromEulerAndPositionDirect(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles);
 
-// Original: core_xform.cpp_atan2Approximation_FUN_005f55c0
+// Original: core_xform.cpp_angleFromSinCos_FUN_005f55c0
 // Address: 005f55c0
-float __cdecl atan2Approximation(double sin_value,double cos_value);
+float __cdecl angleFromSinCos(double sin_value,double cos_value);
 
 // Original: core_xform.cpp_matrixToEulerAngles_FUN_005f5690
 // Address: 005f5690

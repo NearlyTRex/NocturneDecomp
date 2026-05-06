@@ -502,10 +502,10 @@ LAB_00579173:
             pcVar12 = pcVar12 + (uint)bVar22 * -8 + 4;
           }
           *(ushort *)pcVar12 = *(ushort *)pcVar13;
-          pCVar10->camera_light_bounds[0].left = local_2478.camera_light_bounds[0].left;
-          pCVar10->camera_light_bounds[0].top = local_2478.camera_light_bounds[0].top;
-          pCVar10->camera_light_bounds[0].right = local_2478.camera_light_bounds[0].right;
-          pCVar10->camera_light_bounds[0].bottom = local_2478.camera_light_bounds[0].bottom;
+          pCVar10->camera_light_bounds[0].x_min = local_2478.camera_light_bounds[0].x_min;
+          pCVar10->camera_light_bounds[0].x_max = local_2478.camera_light_bounds[0].x_max;
+          pCVar10->camera_light_bounds[0].y_min = local_2478.camera_light_bounds[0].y_min;
+          pCVar10->camera_light_bounds[0].y_max = local_2478.camera_light_bounds[0].y_max;
           (pCVar10->color).r = local_2478.color.r;
           (pCVar10->color).g = local_2478.color.g;
           (pCVar10->color).b = local_2478.color.b;

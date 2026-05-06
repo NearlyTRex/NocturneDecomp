@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 62,
+    "complexity_score": 77,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 27,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 62,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 175
   },
   "cross_references": [
@@ -183,26 +185,26 @@
     },
     {
       "addr": "02d02548",
-      "name": "g_ViewportCenterXFixed",
-      "type": "int",
+      "name": "g_Projection",
+      "type": "SProjectionParams",
       "value": null
     },
     {
       "addr": "02d0254c",
-      "name": "g_ViewportCenterYFixed",
-      "type": "int",
+      "name": "g_Projection.neg_half_height_fixed",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d02550",
-      "name": "g_ViewportRightFixed",
-      "type": "int",
+      "name": "g_Projection.center_x_fixed",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d02554",
-      "name": "g_ViewportBottomFixed",
-      "type": "int",
+      "name": "g_Projection.center_y_fixed",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -383,5 +385,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 57,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->cached_projection).half_width_fixed = g_Projection.half_width_fixed;",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

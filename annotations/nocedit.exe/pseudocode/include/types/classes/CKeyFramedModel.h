@@ -1,6 +1,7 @@
 #pragma once
 
 // Forward declarations
+struct CBoundingBox3D;
 struct CDemonTriangle;
 struct CVector3i;
 struct SMRGLPrimitiveQuad;
@@ -31,7 +32,7 @@ typedef struct CKeyFramedModel {
     CKeyFramedModelPart part_list[30]; // 0x5588
     CVector3f bounds_min; // 0x5678
     CVector3f bounds_max; // 0x5684
-    struct CVector3f* frame_bounds; // 0x5690
+    struct CBoundingBox3D* frame_bounds; // 0x5690
     int collision_triangle_count; // 0x5694
     struct CDemonTriangle* collision_triangle_list; // 0x5698
     int transparent_pixel_flag; // 0x569c

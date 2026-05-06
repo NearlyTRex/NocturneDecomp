@@ -372,11 +372,29 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 132,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((int)&this_ptr->lights[local_14].camera_light_bounds[0].x_min + local_40) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 134,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "((int)&this_ptr->lights[local_14].camera_light_bounds[0].x_max + local_40) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 136,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "((int)&this_ptr->lights[local_14].camera_light_bounds[0].right + local_40) = 0;",
+      "text": "((int)&this_ptr->lights[local_14].camera_light_bounds[0].y_min + local_40) = 0;",
       "type": "pointer_cast"
     },
     {
@@ -385,7 +403,7 @@
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "((int)&this_ptr->lights[local_14].camera_light_bounds[0].bottom + local_40) = 0;",
+      "text": "((int)&this_ptr->lights[local_14].camera_light_bounds[0].y_max + local_40) = 0;",
       "type": "pointer_cast"
     }
   ],
@@ -552,7 +570,7 @@
       "line": 96,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "this_ptr->lights[local_14].camera_light_bounds[local_20].left = local_5c.left;",
+      "text": "this_ptr->lights[local_14].camera_light_bounds[local_20].x_min = local_5c.x_min;",
       "type": "unrolled_memcpy"
     }
   ]

@@ -4,22 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 389,
-    "complexity_score": 231,
+    "complexity_score": 141,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 141,
-    "suspect_count": 7,
-    "suspect_types": [
-      "raw_address_constant",
-      "self_copy_guard",
-      "stack_alignment_array",
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 530
   },
   "cross_references": [
@@ -235,6 +230,71 @@
     },
     "pcode_op_count": 1805
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 11,
+      "match": "aiStackY_1064",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int aiStackY_1064 [992];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+3563000 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 103,
+      "match": "0xf80000",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_CDemonRendererPtr2->vertex_buffer_ptr->u = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+3563000 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 104,
+      "match": "0xf80000",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr->v = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+3563000 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 107,
+      "match": "0xf80000",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+3563000 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 112,
+      "match": "0xf80000",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[3].u = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_58 != &local_a0)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 57,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (&local_58 != &local_a0) {",
+      "type": "self_copy_guard"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4204,
     "local_size": 4200,
@@ -443,62 +503,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 11,
-      "match": "aiStackY_1064",
-      "severity": "moderate",
-      "text": "int aiStackY_1064 [992];",
-      "type": "stack_alignment_array"
-    },
-    {
-      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+3563000 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 103,
-      "match": "0xf80000",
-      "severity": "moderate",
-      "text": "g_CDemonRendererPtr2->vertex_buffer_ptr->u = 0xf80000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+3563000 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 104,
-      "match": "0xf80000",
-      "severity": "moderate",
-      "text": "this_ptr_00->vertex_buffer_ptr->v = 0xf80000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+3563000 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 107,
-      "match": "0xf80000",
-      "severity": "moderate",
-      "text": "this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0xf80000 matches address of g_LightBufferPool (+3563000 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 112,
-      "match": "0xf80000",
-      "severity": "moderate",
-      "text": "this_ptr_00->vertex_buffer_ptr[3].u = 0xf80000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Watcom dead self-copy guard: `if (&local_58 != &local_a0)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 57,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
-      "severity": "moderate",
-      "text": "if (&local_58 != &local_a0) {",
-      "type": "self_copy_guard"
-    }
-  ]
+  "suspects": []
 }

@@ -19,10 +19,10 @@ CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FU
   int iVar1;
   
   iVar1 = input_ptr->z;
-  iVar6 = (int)(((longlong)(input_ptr->x - (this_ptr->saved_viewport_rect).right) * (longlong)iVar1)
-               / (longlong)(this_ptr->saved_viewport_rect).left);
-  iVar7 = (int)(((longlong)(input_ptr->y - (this_ptr->saved_viewport_rect).bottom) * (longlong)iVar1
-                ) / (longlong)(this_ptr->saved_viewport_rect).top);
+  iVar6 = (int)(((longlong)(input_ptr->x - (this_ptr->cached_projection).center_x_fixed) *
+                (longlong)iVar1) / (longlong)(this_ptr->cached_projection).half_width_fixed);
+  iVar7 = (int)(((longlong)(input_ptr->y - (this_ptr->cached_projection).center_y_fixed) *
+                (longlong)iVar1) / (longlong)(this_ptr->cached_projection).neg_half_height_fixed);
   lVar3 = (longlong)iVar7 * (longlong)(this_ptr->inverted_matrix).m[1].x +
           (longlong)iVar6 * (longlong)(this_ptr->inverted_matrix).m[0].x +
           (longlong)iVar1 * (longlong)(this_ptr->inverted_matrix).m[2].x;

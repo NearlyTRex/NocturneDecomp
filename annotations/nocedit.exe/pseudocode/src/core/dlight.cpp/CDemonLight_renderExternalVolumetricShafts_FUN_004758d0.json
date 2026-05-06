@@ -4,21 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 600,
-    "complexity_score": 262,
+    "complexity_score": 217,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 19,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 217,
-    "suspect_count": 3,
-    "suspect_types": [
-      "stack_alignment_array",
-      "unknown_type",
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 817
   },
   "cross_references": [
@@ -288,6 +284,35 @@
     },
     "pcode_op_count": 3437
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Unknown/unresolved type",
+      "line": 26,
+      "match": "unkbyte10",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "unkbyte10 Var10;",
+      "type": "unknown_type"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 28,
+      "match": "aiStackY_10d8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int aiStackY_10d8 [987];",
+      "type": "stack_alignment_array"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4320,
     "local_size": 4316,
@@ -640,30 +665,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Unknown/unresolved type",
-      "line": 26,
-      "match": "unkbyte10",
-      "severity": "mild",
-      "text": "unkbyte10 Var10;",
-      "type": "unknown_type"
-    },
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 28,
-      "match": "aiStackY_10d8",
-      "severity": "moderate",
-      "text": "int aiStackY_10d8 [987];",
-      "type": "stack_alignment_array"
-    }
-  ]
+  "suspects": []
 }

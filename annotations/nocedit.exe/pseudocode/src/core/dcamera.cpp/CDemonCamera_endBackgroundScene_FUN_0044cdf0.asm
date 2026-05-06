@@ -60,15 +60,15 @@ section .text
     PUSH EBX                            ; 0044ce12 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0 ; 0044ce13
         ;   XREF to: 0048c8c0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0(CDemonRenderer * this_ptr)
-    MOV EAX,[0x02d02548]                ; 0044ce18 | g_ViewportCenterXFixed
+    MOV EAX,[0x02d02548]                ; 0044ce18 | g_Projection
     MOV dword ptr [EBP + 0x1c0],EAX     ; 0044ce1d
-    MOV EAX,[0x02d0254c]                ; 0044ce23 | g_ViewportCenterYFixed
+    MOV EAX,[0x02d0254c]                ; 0044ce23 | g_Projection.neg_half_height_fixed
     MOV ESI,0x151abbc                   ; 0044ce28 | g_BackgroundSavedScreenBufferArray
     MOV dword ptr [EBP + 0x1c4],EAX     ; 0044ce2d
-    MOV EAX,[0x02d02550]                ; 0044ce33 | g_ViewportRightFixed
+    MOV EAX,[0x02d02550]                ; 0044ce33 | g_Projection.center_x_fixed
     MOV EDI,0x2cf6a9c                   ; 0044ce38 | g_ScreenBufferArray
     MOV dword ptr [EBP + 0x1c8],EAX     ; 0044ce3d
-    MOV EAX,[0x02d02554]                ; 0044ce43 | g_ViewportBottomFixed
+    MOV EAX,[0x02d02554]                ; 0044ce43 | g_Projection.center_y_fixed
     MOV ECX,dword ptr [0x00679398]      ; 0044ce48 | g_WindowHeight
     MOV dword ptr [EBP + 0x1cc],EAX     ; 0044ce4e
     MOV EAX,[0x0151abb4]                ; 0044ce54 | g_BackgroundSavedBitsPerPixel

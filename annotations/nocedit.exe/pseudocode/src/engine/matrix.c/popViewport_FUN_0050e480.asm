@@ -15,10 +15,10 @@
 ;   TerminatedCString s_engine_matrix_c_00635b4c
 ;   TerminatedCString s_s_3D_Window_unbalance_00635b5f
 ;   int g_ProjectionScale = 0x10000
-;   int g_ViewportCenterXFixed
-;   int g_ViewportCenterYFixed
-;   int g_ViewportRightFixed
-;   int g_ViewportBottomFixed
+;   SProjectionParams g_Projection
+;   undefined4 g_Projection.neg_half_height_fixed
+;   undefined4 g_Projection.center_x_fixed
+;   undefined4 g_Projection.center_y_fixed
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipRight
@@ -64,13 +64,13 @@ section .text
     MOV EDX,dword ptr [EAX*0x4 + 0x2f0d828] ; 0050e502 | g_ViewportStack_ExtraState3
     MOV dword ptr [0x02d052e4],EDX      ; 0050e509 | g_LightDirectionZ
     MOV EDX,dword ptr [EAX*0x4 + 0x2f0d620] ; 0050e50f | g_ViewportStack_CenterX
-    MOV dword ptr [0x02d02548],EDX      ; 0050e516 | g_ViewportCenterXFixed
+    MOV dword ptr [0x02d02548],EDX      ; 0050e516 | g_Projection
     MOV EDX,dword ptr [EAX*0x4 + 0x2f0d648] ; 0050e51c | g_ViewportStack_CenterY
-    MOV dword ptr [0x02d0254c],EDX      ; 0050e523 | g_ViewportCenterYFixed
+    MOV dword ptr [0x02d0254c],EDX      ; 0050e523 | g_Projection.neg_half_height_fixed
     MOV EDX,dword ptr [EAX*0x4 + 0x2f0d670] ; 0050e529 | g_ViewportStack_RightFixed
-    MOV dword ptr [0x02d02550],EDX      ; 0050e530 | g_ViewportRightFixed
+    MOV dword ptr [0x02d02550],EDX      ; 0050e530 | g_Projection.center_x_fixed
     MOV EDX,dword ptr [EAX*0x4 + 0x2f0d698] ; 0050e536 | g_ViewportStack_BottomFixed
-    MOV dword ptr [0x02d02554],EDX      ; 0050e53d | g_ViewportBottomFixed
+    MOV dword ptr [0x02d02554],EDX      ; 0050e53d | g_Projection.center_y_fixed
     MOV EDX,dword ptr [EAX*0x4 + 0x2f0d6c0] ; 0050e543 | g_ViewportStack_ProjectionScale
     MOV dword ptr [0x006793c0],EDX      ; 0050e54a | g_ProjectionScale
     MOV EDX,dword ptr [EAX*0x4 + 0x2f0d850] ; 0050e550 | g_ViewportStack_ClipLeft

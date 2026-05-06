@@ -136,20 +136,17 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970(CEdi
   else {
     g_WindowStack[iVar2].screen_backup_buffer = (void *)0x0;
   }
-  g_WindowStack[iVar2].saved_clip_left = g_ClipLeft;
-  g_WindowStack[iVar2].saved_clip_top = g_ClipTop;
-  g_WindowStack[iVar2].saved_clip_right = g_ClipRight;
-  g_WindowStack[iVar2].saved_clip_bottom = g_ClipBottom;
-  g_WindowStack[iVar2].saved_viewport_center_x = g_ViewportCenterXFixed;
-  g_WindowStack[iVar2].saved_viewport_center_y = g_ViewportCenterYFixed;
-  g_WindowStack[iVar2].saved_viewport_right = g_ViewportRightFixed;
-  g_WindowStack[iVar2].saved_viewport_bottom = g_ViewportBottomFixed;
+  g_WindowStack[iVar2].saved_clip.left = g_ClipLeft;
+  g_WindowStack[iVar2].saved_clip.top = g_ClipTop;
+  g_WindowStack[iVar2].saved_clip.right = g_ClipRight;
+  g_WindowStack[iVar2].saved_clip.bottom = g_ClipBottom;
+  g_WindowStack[iVar2].saved_projection = g_Projection;
   g_WindowStack[iVar2].saved_viewport_width = g_ViewportWidth;
   g_WindowStack[iVar2].saved_viewport_height = g_ViewportHeight;
-  pSVar10->left = left;
-  g_WindowStack[iVar2].top = top;
-  g_WindowStack[iVar2].right = right;
-  g_WindowStack[iVar2].bottom = bottom;
+  pSVar10->rect.left = left;
+  g_WindowStack[iVar2].rect.top = top;
+  g_WindowStack[iVar2].rect.right = right;
+  g_WindowStack[iVar2].rect.bottom = bottom;
   engine_2d_c_setupViewportAndClipping_FUN_00401800
             (left + iVar3,top + iVar4 + local_24,(right - iVar3) + -1,(bottom - iVar4) + -1);
   return;

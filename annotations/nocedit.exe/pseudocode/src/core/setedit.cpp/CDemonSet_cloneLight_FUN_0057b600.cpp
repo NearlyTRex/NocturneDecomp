@@ -62,10 +62,10 @@ void __cdecl core_setedit_cpp_CDemonSet_cloneLight_FUN_0057b600(CDemonSet *this_
       pcVar11 = pcVar11 + 4;
     }
     *(ushort *)pcVar11 = *(ushort *)pcVar5;
-    pCVar3->camera_light_bounds[0].left = pCVar2->camera_light_bounds[0].left;
-    pCVar3->camera_light_bounds[0].top = pCVar2->camera_light_bounds[0].top;
-    pCVar3->camera_light_bounds[0].right = pCVar2->camera_light_bounds[0].right;
-    pCVar3->camera_light_bounds[0].bottom = pCVar2->camera_light_bounds[0].bottom;
+    pCVar3->camera_light_bounds[0].x_min = pCVar2->camera_light_bounds[0].x_min;
+    pCVar3->camera_light_bounds[0].x_max = pCVar2->camera_light_bounds[0].x_max;
+    pCVar3->camera_light_bounds[0].y_min = pCVar2->camera_light_bounds[0].y_min;
+    pCVar3->camera_light_bounds[0].y_max = pCVar2->camera_light_bounds[0].y_max;
     (pCVar3->color).r = (pCVar2->color).r;
     (pCVar3->color).g = (pCVar2->color).g;
     (pCVar3->color).b = (pCVar2->color).b;

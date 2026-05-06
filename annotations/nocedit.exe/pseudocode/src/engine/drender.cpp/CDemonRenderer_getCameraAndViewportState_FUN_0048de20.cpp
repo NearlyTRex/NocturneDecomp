@@ -9,10 +9,10 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_getCameraAndViewportState_FUN_0048de20(CDemonRenderer *this_ptr,SCameraViewportState *output_state)
 
 {
-  output_state->viewport_center_x = g_ViewportCenterXFixed;
-  output_state->viewport_center_y = g_ViewportCenterYFixed;
-  output_state->viewport_right = g_ViewportRightFixed;
-  output_state->viewport_bottom = g_ViewportBottomFixed;
+  output_state->viewport_center_x = g_Projection.half_width_fixed;
+  output_state->viewport_center_y = g_Projection.neg_half_height_fixed;
+  output_state->viewport_right = g_Projection.center_x_fixed;
+  output_state->viewport_bottom = g_Projection.center_y_fixed;
   output_state->camera_origin_x = g_CameraOriginX;
   output_state->camera_origin_y = g_CameraOriginY;
   output_state->camera_origin_z = g_CameraOriginZ;

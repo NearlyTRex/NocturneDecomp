@@ -18,7 +18,7 @@ CKeyFramedModel * __cdecl core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(CKey
   this_ptr->env_map_opac_list = (uchar *)0x0;
   this_ptr->texture_count = 0;
   this_ptr->part_count = 0;
-  this_ptr->frame_bounds = (CVector3f *)0x0;
+  this_ptr->frame_bounds = (CBoundingBox3D *)0x0;
   this_ptr->frame_count = 0;
   this_ptr->collision_triangle_count = 0;
   this_ptr->collision_triangle_list = (CDemonTriangle *)0x0;

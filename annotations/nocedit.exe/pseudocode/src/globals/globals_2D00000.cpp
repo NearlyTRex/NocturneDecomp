@@ -20,6 +20,9 @@ DWORD g_JoyButtons = {};
 // MainScanlineFunc*
 MainScanlineFunc* g_ScanlineRenderFunc = {};
 
+// SProjectionParams
+SProjectionParams g_Projection = {};
+
 // SRGBColorPalette*
 SRGBColorPalette* g_CurrentPalette = {};
 
@@ -61,10 +64,6 @@ char g_SourcePaletteData[768] = {};
 int g_RedScaleFactor = {};
 int g_GreenScaleFactor = {};
 int g_BlueScaleFactor = {};
-int g_ViewportCenterXFixed = {};
-int g_ViewportCenterYFixed = {};
-int g_ViewportRightFixed = {};
-int g_ViewportBottomFixed = {};
 int g_ClipLeft = {};
 int g_ClipTop = {};
 int g_ClipRight = {};

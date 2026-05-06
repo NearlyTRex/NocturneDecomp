@@ -14,13 +14,13 @@ void __cdecl engine_matrix_c_projectCachedPointUnchecked_FUN_0050ce60(int cache_
             );
   g_RenderVertexBuffer[cache_index].projected_vertex.screen_x =
        (int)(((longlong)g_RenderVertexBuffer[cache_index].projected_vertex.transformed_x *
-             (longlong)g_ViewportCenterXFixed) /
+             (longlong)g_Projection.half_width_fixed) /
             (longlong)g_RenderVertexBuffer[cache_index].projected_vertex.transformed_z) +
-       g_ViewportRightFixed;
+       g_Projection.center_x_fixed;
   g_RenderVertexBuffer[cache_index].projected_vertex.screen_y =
        (int)(((longlong)g_RenderVertexBuffer[cache_index].projected_vertex.transformed_y *
-             (longlong)g_ViewportCenterYFixed) /
+             (longlong)g_Projection.neg_half_height_fixed) /
             (longlong)g_RenderVertexBuffer[cache_index].projected_vertex.transformed_z) +
-       g_ViewportBottomFixed;
+       g_Projection.center_y_fixed;
   return;
 }

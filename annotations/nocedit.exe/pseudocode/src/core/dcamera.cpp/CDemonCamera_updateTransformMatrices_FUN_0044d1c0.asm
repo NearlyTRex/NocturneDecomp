@@ -16,10 +16,10 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
-;   int g_ViewportCenterXFixed
-;   int g_ViewportCenterYFixed
-;   int g_ViewportRightFixed
-;   int g_ViewportBottomFixed
+;   SProjectionParams g_Projection
+;   undefined4 g_Projection.neg_half_height_fixed
+;   undefined4 g_Projection.center_x_fixed
+;   undefined4 g_Projection.center_y_fixed
 ;   CMatrix3x3i g_TransformMatrix
 ;   undefined4 g_TransformMatrix[0][1]
 ;   undefined4 g_TransformMatrix[0][2]
@@ -74,11 +74,11 @@ section .text
         ;   XREF to: 0060c7eb (UNCONDITIONAL_JUMP)  ; LAB_0060c7eb
     MOV dword ptr [EBX + 0x1c0],ESI     ; 0044d25c
         ;   Label: LAB_0044d25c
-    MOV ESI,dword ptr [0x02d0254c]      ; 0044d262 | g_ViewportCenterYFixed
+    MOV ESI,dword ptr [0x02d0254c]      ; 0044d262 | g_Projection.neg_half_height_fixed
     MOV dword ptr [EBX + 0x1c4],ESI     ; 0044d268
-    MOV ESI,dword ptr [0x02d02550]      ; 0044d26e | g_ViewportRightFixed
+    MOV ESI,dword ptr [0x02d02550]      ; 0044d26e | g_Projection.center_x_fixed
     MOV dword ptr [EBX + 0x1c8],ESI     ; 0044d274
-    MOV ESI,dword ptr [0x02d02554]      ; 0044d27a | g_ViewportBottomFixed
+    MOV ESI,dword ptr [0x02d02554]      ; 0044d27a | g_Projection.center_y_fixed
     PUSH EBX                            ; 0044d280
     MOV dword ptr [EBX + 0x1cc],ESI     ; 0044d281
     CALL core_dcamera.cpp_CDemonCamera_calculateInverseTransform_FUN_0044cf20 ; 0044d287
@@ -98,7 +98,7 @@ section .text
     MOV dword ptr [EDI + 0x8],ECX       ; 0060c7f8
     ADD ESI,0xc                         ; 0060c7fb
     ADD EDI,0xc                         ; 0060c7fe
-    MOV ESI,dword ptr [0x02d02548]      ; 0060c801 | g_ViewportCenterXFixed
+    MOV ESI,dword ptr [0x02d02548]      ; 0060c801 | g_Projection
     JMP 0x0044d25c                      ; 0060c807
         ;   XREF to: 0044d25c (UNCONDITIONAL_JUMP)  ; LAB_0044d25c
 

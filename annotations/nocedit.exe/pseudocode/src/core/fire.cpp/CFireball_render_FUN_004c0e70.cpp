@@ -9,7 +9,7 @@
 void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
 
 {
-  CVector3f *pCVar1;
+  CBoundingBox3D *pCVar1;
   float fVar2;
   longlong lVar3;
   float fVar4;
@@ -56,12 +56,12 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
   }
   pCVar6 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr_00);
   pCVar1 = pCVar6->frame_bounds;
-  local_e0.min.x = pCVar1->x;
-  local_e0.min.y = pCVar1->y;
-  local_e0.min.z = pCVar1->z;
-  local_e0.max.x = pCVar1[1].x;
-  local_e0.max.y = pCVar1[1].y;
-  local_e0.max.z = pCVar1[1].z;
+  local_e0.min.x = (pCVar1->min).x;
+  local_e0.min.y = (pCVar1->min).y;
+  local_e0.min.z = (pCVar1->min).z;
+  local_e0.max.x = (pCVar1->max).x;
+  local_e0.max.y = (pCVar1->max).y;
+  local_e0.max.z = (pCVar1->max).z;
   iVar7 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(&local_e0);
   if (iVar7 != 0) {
     core_set_cpp_CDemonSet_setLightingParameters_FUN_0056d380

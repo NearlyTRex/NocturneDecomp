@@ -24,10 +24,10 @@ void __cdecl engine_matrix_c_popViewport_FUN_0050e480(void)
   g_LightDirectionX = g_ViewportStack_ExtraState1[g_ViewportStackIndex];
   g_LightDirectionY = g_ViewportStack_ExtraState2[g_ViewportStackIndex];
   g_LightDirectionZ = g_ViewportStack_ExtraState3[g_ViewportStackIndex];
-  g_ViewportCenterXFixed = g_ViewportStack_CenterX[g_ViewportStackIndex];
-  g_ViewportCenterYFixed = g_ViewportStack_CenterY[g_ViewportStackIndex];
-  g_ViewportRightFixed = g_ViewportStack_RightFixed[g_ViewportStackIndex];
-  g_ViewportBottomFixed = g_ViewportStack_BottomFixed[g_ViewportStackIndex];
+  g_Projection.half_width_fixed = g_ViewportStack_CenterX[g_ViewportStackIndex];
+  g_Projection.neg_half_height_fixed = g_ViewportStack_CenterY[g_ViewportStackIndex];
+  g_Projection.center_x_fixed = g_ViewportStack_RightFixed[g_ViewportStackIndex];
+  g_Projection.center_y_fixed = g_ViewportStack_BottomFixed[g_ViewportStackIndex];
   g_ProjectionScale = g_ViewportStack_ProjectionScale[g_ViewportStackIndex];
   g_ClipLeft = g_ViewportStack_ClipLeft[g_ViewportStackIndex];
   g_ClipRight = g_ViewportStack_ClipRight[g_ViewportStackIndex];

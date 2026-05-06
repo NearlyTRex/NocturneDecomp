@@ -10,7 +10,6 @@
 void __cdecl core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770(CDemonLight *this_ptr,CDemonFilter *filter_ptr,int filter_index,int filter_pos_x,int filter_pos_y)
 
 {
-  char cVar2;
   uint uVar3;
   int iVar3;
   int iVar4;
@@ -21,14 +20,11 @@ void __cdecl core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770(CDemonLight *t
   uint uVar8;
   uint uVar9;
   uint uVar5;
-  char *pcVar10;
   uint uVar11;
-  char *pcVar12;
   uchar local_40;
   uint local_38;
   uchar *local_34;
   int local_30;
-  char cVar1;
   uchar *puVar2;
   
   this_ptr->precomputed_lighting_textures = (uchar *)filter_ptr->data_buffer;
@@ -92,18 +88,6 @@ void __cdecl core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770(CDemonLight *t
     }
     this_ptr->precomputed_lighting_textures = this_ptr->filter_buffer;
   }
-  pcVar10 = filter_ptr->name;
-  pcVar12 = this_ptr->filter_name;
-  do {
-    cVar1 = *pcVar10;
-    *pcVar12 = cVar1;
-    if (cVar1 == '\0') {
-      return;
-    }
-    cVar2 = pcVar10[1];
-    pcVar10 = pcVar10 + 2;
-    pcVar12[1] = cVar2;
-    pcVar12 = pcVar12 + 2;
-  } while (cVar2 != '\0');
+  strcpy(this_ptr->filter_name, filter_ptr->name);
   return;
 }

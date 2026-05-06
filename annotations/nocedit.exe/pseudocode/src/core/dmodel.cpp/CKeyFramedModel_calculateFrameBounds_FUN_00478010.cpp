@@ -21,7 +21,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(C
     local_28.max.z = (float)&model_ptr->bounds_min;
     local_28.max.x = 0.0;
     do {
-      this_ptr_00 = (CBoundingBox3D *)((int)&model_ptr->frame_bounds->x + (int)local_28.max.x);
+      this_ptr_00 = (CBoundingBox3D *)((int)&(model_ptr->frame_bounds->min).x + (int)local_28.max.x)
+      ;
       pCVar1 = model_ptr->vertex_list + (int)local_28.max.y * model_ptr->vertex_count;
       fVar1 = (float)0.00390625;
       local_28.min.x = (float)pCVar1->x * fVar1;

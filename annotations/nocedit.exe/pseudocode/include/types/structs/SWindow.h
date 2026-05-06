@@ -2,23 +2,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SProjectionParams.h"
+#include "types/structs/SWindowRect.h"
 
 // Structure: SWindow
 // Ghidra size: 0x1e8 (488 bytes)
 #pragma pack(push, 1)
 typedef struct SWindow {
-    int left; // 0x0
-    int top; // 0x4
-    int right; // 0x8
-    int bottom; // 0xc
-    int saved_clip_left; // 0x10
-    int saved_clip_top; // 0x14
-    int saved_clip_right; // 0x18
-    int saved_clip_bottom; // 0x1c
-    int saved_viewport_center_x; // 0x20
-    int saved_viewport_center_y; // 0x24
-    int saved_viewport_right; // 0x28
-    int saved_viewport_bottom; // 0x2c
+    SWindowRect rect; // 0x0
+    SWindowRect saved_clip; // 0x10
+    SProjectionParams saved_projection; // 0x20
     int saved_viewport_width; // 0x30
     int saved_viewport_height; // 0x34
     char text_buffer[400]; // 0x38

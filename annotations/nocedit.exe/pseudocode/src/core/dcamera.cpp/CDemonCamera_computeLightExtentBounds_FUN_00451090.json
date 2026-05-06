@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 78,
-    "complexity_score": 38,
+    "complexity_score": 53,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 38,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
     "total_lines": 116
   },
   "cross_references": [
@@ -161,5 +163,14 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `light` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `light->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 33,
+      "match": "light = (T *)&(light->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "light = (CDemonLight *)&(light->base).base.position;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
 }

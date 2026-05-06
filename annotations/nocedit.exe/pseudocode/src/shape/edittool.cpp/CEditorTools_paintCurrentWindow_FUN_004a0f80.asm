@@ -25,9 +25,9 @@
 ;   CBitFont* g_EditorFont
 ;   int g_WindowStackCount
 ;   SWindow[5] g_WindowStack
-;   undefined4 g_WindowStack[0].top
-;   undefined4 g_WindowStack[0].right
-;   undefined4 g_WindowStack[0].bottom
+;   undefined4 g_WindowStack[0].rect.top
+;   undefined4 g_WindowStack[0].rect.right
+;   undefined4 g_WindowStack[0].rect.bottom
 ;   undefined4 g_WindowStack[0].text_buffer[0]
 ;   int g_FontCharacterHeight
 ;   int g_FontCharacterWidth
@@ -98,13 +98,13 @@ section .text
     ADD EBX,0x2cf1ce0                   ; 004a1000 | g_WindowStack
     CALL shape_edittool.cpp_paintWindowBackground_FUN_0049e590 ; 004a1006
         ;   XREF to: 0049e590 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_paintWindowBackground_FUN_0049e590()
-    MOV EAX,dword ptr [EBX + 0xc]       ; 004a100b | g_WindowStack[0].bottom
-    MOV EDX,dword ptr [EBX + 0x4]       ; 004a100e | g_WindowStack[0].top
+    MOV EAX,dword ptr [EBX + 0xc]       ; 004a100b | g_WindowStack[0].rect.bottom
+    MOV EDX,dword ptr [EBX + 0x4]       ; 004a100e | g_WindowStack[0].rect.top
     SUB EAX,EDX                         ; 004a1011
     INC EAX                             ; 004a1013
     MOV ECX,dword ptr [EBX]             ; 004a1014 | g_WindowStack
     PUSH EAX                            ; 004a1016
-    MOV EAX,dword ptr [EBX + 0x8]       ; 004a1017 | g_WindowStack[0].right
+    MOV EAX,dword ptr [EBX + 0x8]       ; 004a1017 | g_WindowStack[0].rect.right
     SUB EAX,ECX                         ; 004a101a
     INC EAX                             ; 004a101c
     PUSH EAX                            ; 004a101d
@@ -117,13 +117,13 @@ section .text
     PUSH EBP                            ; 004a102e
     MOV EAX,[0x02cf2a78]                ; 004a102f | g_WindowContentColor
     PUSH EAX                            ; 004a1034
-    MOV EAX,dword ptr [EBX + 0xc]       ; 004a1035 | g_WindowStack[0].bottom
+    MOV EAX,dword ptr [EBX + 0xc]       ; 004a1035 | g_WindowStack[0].rect.bottom
     SUB EAX,0x2                         ; 004a1038
     PUSH EAX                            ; 004a103b
-    MOV EAX,dword ptr [EBX + 0x8]       ; 004a103c | g_WindowStack[0].right
+    MOV EAX,dword ptr [EBX + 0x8]       ; 004a103c | g_WindowStack[0].rect.right
     SUB EAX,0x2                         ; 004a103f
     PUSH EAX                            ; 004a1042
-    MOV EAX,dword ptr [EBX + 0x4]       ; 004a1043 | g_WindowStack[0].top
+    MOV EAX,dword ptr [EBX + 0x4]       ; 004a1043 | g_WindowStack[0].rect.top
     INC EAX                             ; 004a1046
     PUSH EAX                            ; 004a1047
     MOV EAX,dword ptr [EBX]             ; 004a1048 | g_WindowStack
@@ -133,23 +133,23 @@ section .text
         ;   XREF to: 00403200 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectWithBorder_FUN_00403200(int x1, int y1, int x2, int y2, ...)
     MOV EAX,[0x02cf2a80]                ; 004a1051 | g_WindowBorderShadowColor
     MOV [0x02d02570],EAX                ; 004a1056 | g_ActiveRenderColor
-    MOV EAX,dword ptr [EBX + 0x8]       ; 004a105b | g_WindowStack[0].right
+    MOV EAX,dword ptr [EBX + 0x8]       ; 004a105b | g_WindowStack[0].rect.right
     ADD ESP,0x18                        ; 004a105e
     DEC EAX                             ; 004a1061
     PUSH EAX                            ; 004a1062
-    MOV EAX,dword ptr [EBX + 0xc]       ; 004a1063 | g_WindowStack[0].bottom
+    MOV EAX,dword ptr [EBX + 0xc]       ; 004a1063 | g_WindowStack[0].rect.bottom
     DEC EAX                             ; 004a1066
     PUSH EAX                            ; 004a1067
     MOV EDX,dword ptr [EBX]             ; 004a1068 | g_WindowStack
     PUSH EDX                            ; 004a106a
     CALL engine_2d.c_drawHLine_FUN_00402ee0 ; 004a106b
         ;   XREF to: 00402ee0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawHLine_FUN_00402ee0(int x1, int y, int x2)
-    MOV EAX,dword ptr [EBX + 0xc]       ; 004a1070 | g_WindowStack[0].bottom
+    MOV EAX,dword ptr [EBX + 0xc]       ; 004a1070 | g_WindowStack[0].rect.bottom
     ADD ESP,0xc                         ; 004a1073
     DEC EAX                             ; 004a1076
     PUSH EAX                            ; 004a1077
-    MOV ECX,dword ptr [EBX + 0x4]       ; 004a1078 | g_WindowStack[0].top
-    MOV EAX,dword ptr [EBX + 0x8]       ; 004a107b | g_WindowStack[0].right
+    MOV ECX,dword ptr [EBX + 0x4]       ; 004a1078 | g_WindowStack[0].rect.top
+    MOV EAX,dword ptr [EBX + 0x8]       ; 004a107b | g_WindowStack[0].rect.right
     PUSH ECX                            ; 004a107e
     DEC EAX                             ; 004a107f
     PUSH EAX                            ; 004a1080
@@ -181,7 +181,7 @@ section .text
     ADD ESP,0x4                         ; 004a10c4
     JMP 0x004a0f94                      ; 004a10c7
         ;   XREF to: 004a0f94 (UNCONDITIONAL_JUMP)  ; LAB_004a0f94
-    MOV EAX,dword ptr [EBX + 0x4]       ; 004a10cc | g_WindowStack[0].top
+    MOV EAX,dword ptr [EBX + 0x4]       ; 004a10cc | g_WindowStack[0].rect.top
         ;   Label: LAB_004a10cc
     MOV EBP,dword ptr [0x02d0255c]      ; 004a10cf | g_ClipTop
     MOV [0x02d0255c],EAX                ; 004a10d5 | g_ClipTop
@@ -190,7 +190,7 @@ section .text
     SAR EDX,0x1f                        ; 004a10e1
     SUB EAX,EDX                         ; 004a10e4
     SAR EAX,0x1                         ; 004a10e6
-    ADD EAX,dword ptr [EBX + 0x4]       ; 004a10e8 | g_WindowStack[0].top
+    ADD EAX,dword ptr [EBX + 0x4]       ; 004a10e8 | g_WindowStack[0].rect.top
     MOV EDX,dword ptr [0x02cf266c]      ; 004a10eb | g_FontCharacterWidth
     LEA ESI,[EAX + -0x1]                ; 004a10f1
     LEA EAX,[EDX*0x4 + 0x0]             ; 004a10f4
@@ -205,7 +205,7 @@ section .text
     PUSH EDI                            ; 004a1112
     DEC EAX                             ; 004a1113
     PUSH EAX                            ; 004a1114
-    MOV EAX,dword ptr [EBX + 0x8]       ; 004a1115 | g_WindowStack[0].right
+    MOV EAX,dword ptr [EBX + 0x8]       ; 004a1115 | g_WindowStack[0].rect.right
     SUB EAX,0x2                         ; 004a1118
     PUSH EAX                            ; 004a111b
     MOV EAX,dword ptr [EBX]             ; 004a111c | g_WindowStack
@@ -227,13 +227,13 @@ section .text
     SAR EDX,0x1f                        ; 004a1145
     SUB EAX,EDX                         ; 004a1148
     SAR EAX,0x1                         ; 004a114a
-    ADD EAX,dword ptr [EBX + 0x4]       ; 004a114c | g_WindowStack[0].top
+    ADD EAX,dword ptr [EBX + 0x4]       ; 004a114c | g_WindowStack[0].rect.top
     PUSH EAX                            ; 004a114f
     LEA ESI,[EBX + 0x38]                ; 004a1150
     MOV EDI,dword ptr [EBX]             ; 004a1153 | g_WindowStack
     PUSH ESI                            ; 004a1155
     MOV EAX,[0x02cf1cd0]                ; 004a1156 | g_EditorFont
-    MOV ECX,dword ptr [EBX + 0x8]       ; 004a115b | g_WindowStack[0].right
+    MOV ECX,dword ptr [EBX + 0x8]       ; 004a115b | g_WindowStack[0].rect.right
     PUSH EAX                            ; 004a115e
     ADD EDI,ECX                         ; 004a115f
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80 ; 004a1161
@@ -274,9 +274,9 @@ section .text
     MOV EAX,[0x02cf2a7c]                ; 004a11bf | g_WindowBorderHighlightColor
         ;   Label: LAB_004a11bf
     MOV [0x02d02570],EAX                ; 004a11c4 | g_ActiveRenderColor
-    MOV EAX,dword ptr [EBX + 0x8]       ; 004a11c9 | g_WindowStack[0].right
+    MOV EAX,dword ptr [EBX + 0x8]       ; 004a11c9 | g_WindowStack[0].rect.right
     SUB EAX,0x2                         ; 004a11cc
-    MOV ECX,dword ptr [EBX + 0x4]       ; 004a11cf | g_WindowStack[0].top
+    MOV ECX,dword ptr [EBX + 0x4]       ; 004a11cf | g_WindowStack[0].rect.top
     PUSH EAX                            ; 004a11d2
     ADD ESI,ECX                         ; 004a11d3
     MOV EAX,dword ptr [EBX]             ; 004a11d5 | g_WindowStack
@@ -291,7 +291,7 @@ section .text
     CMP EAX,EDI                         ; 004a11ed
     JZ 0x004a120c                       ; 004a11ef
         ;   XREF to: 004a120c (CONDITIONAL_JUMP)  ; LAB_004a120c
-    MOV EAX,dword ptr [EBX + 0x8]       ; 004a11f1 | g_WindowStack[0].right
+    MOV EAX,dword ptr [EBX + 0x8]       ; 004a11f1 | g_WindowStack[0].rect.right
     SUB EAX,0x2                         ; 004a11f4
     PUSH EAX                            ; 004a11f7
     DEC ESI                             ; 004a11f8

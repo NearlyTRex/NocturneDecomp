@@ -58,7 +58,7 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *th
               (g_CDemonRendererPtr2,viewport_x,viewport_y,viewport_size,viewport_size);
     this_ptr_00 = core_inv_cpp_getItemModel_FUN_004fcda0(item);
     pCVar13 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr_00);
-    pCVar1 = pCVar13->frame_bounds;
+    pCVar1 = &pCVar13->frame_bounds->min;
     fVar10 = pCVar1->x;
     fVar11 = pCVar1->y;
     fVar4 = pCVar1->z;

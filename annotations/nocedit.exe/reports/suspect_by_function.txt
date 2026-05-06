@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5472 (84.8%)
-With suspects: 982
-Total suspects: 3807
+Clean: 5481 (84.9%)
+With suspects: 973
+Total suspects: 3751
 
 ====================================================================================================
 core_actor.cpp_CActorPropertyList_addFile_FUN_0040e3e0 (2 suspects)
@@ -241,12 +241,13 @@ core_bodypart.cpp_CBodyPart_ctor_FUN_00419010 (1 suspect)
   Line 24 [unrolled_memset]: (ADJ(pCVar2)->initial_velocity).z = 0.0;
 
 ====================================================================================================
-core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050 (4 suspects)
+core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050 (5 suspects)
   File: core/bodypart.cpp
 ====================================================================================================
   Line 55 [pointer_cast]: piVar2 = (int *)((int)&pCVar3->x + iVar12);
   Line 57 [pointer_cast]: piVar2 = (int *)((int)&pCVar3->y + iVar12);
   Line 59 [pointer_cast]: piVar2 = (int *)((int)&pCVar3->z + iVar12);
+  Line 134 [shadow_pointer_walk]: pSVar11 = (SMRGLPrimitiveTriangle *)&(pSVar11->base).surface_normal.B;
   Line 145 [pointer_cast]: piVar13 = (int *)((int)&this_ptr->normals->x + iVar8);
 
 ====================================================================================================
@@ -411,10 +412,11 @@ core_bride.cpp_CBride_process_FUN_00423a30 (1 suspect)
   Line 336 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
 
 ====================================================================================================
-core_bugs.cpp_CBugs_applySwarmTranslation_FUN_004276c0 (3 suspects)
+core_bugs.cpp_CBugs_applySwarmTranslation_FUN_004276c0 (4 suspects)
   File: core/bugs.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
+  Line 55 [shadow_pointer_walk]: pCVar11 = (CBugs *)&(pCVar11->base).base.base.orient;
   Line 59 [pointer_cast]: *(float *)((int)pcVar9 + 0x128b8) = *(float *)((int)pcVar9 + 0x128b8) - fVar5;
   Line 59 [pointer_cast]: *(float *)((int)pcVar9 + 0x128b8) = *(float *)((int)pcVar9 + 0x128b8) - fVar5;
 
@@ -448,6 +450,12 @@ core_bugs.cpp_CBugs_processInEditor_FUN_004278d0 (1 suspect)
   File: core/bugs.cpp
 ====================================================================================================
   Line 25 [unrolled_memset]: (this_ptr->base).base.base.orient.vec.z = 0.0;
+
+====================================================================================================
+core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_00425340 (1 suspect)
+  File: core/bugs.cpp
+====================================================================================================
+  Line 45 [shadow_pointer_walk]: local_2c = (CBugs *)&(local_2c->base).base.base.orient;
 
 ====================================================================================================
 core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0 (3 suspects)
@@ -486,7 +494,7 @@ core_bugs.cpp_CBugs_updateBugRenderingData_FUN_004268e0 (1 suspect)
   Line 166 [self_copy_guard]: if (&local_c0 != &local_cc) {
 
 ====================================================================================================
-core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0 (6 suspects)
+core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0 (7 suspects)
   File: core/bugs.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
@@ -494,6 +502,7 @@ core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0 (6 suspects)
   Line 64 [unrolled_memcpy]: for (iVar6 = 0x90; iVar6 != 0; iVar6 = iVar6 + -1) {
   Line 69 [unrolled_memcpy]: for (iVar8 = 0; iVar8 != 0; iVar8 = iVar8 + -1) {
   Line 101 [pointer_cast]: pCVar9->ground_heights[0][0] = *(float *)((int)g_BugsGroundHeightGridTemp[0] + iVar7);
+  Line 110 [shadow_pointer_walk]: local_28 = (CBugs *)&(local_28->base).base.base.orient;
   Line 132 [unrolled_memcpy]: // 004259c1: MOVSD.REP ES:EDI,ESI  ; g_BugsGroundHeightGridTemp | g_BugsGroundHeightGridTemp[0][1]
 
 ====================================================================================================
@@ -927,6 +936,12 @@ core_curtain.cpp_CCurtain_solveConstraints_FUN_00449fc0 (7 suspects)
   Line 203 [shadow_pointer_walk]: pSVar13 = (SCurtainVertex *)&(pSVar13->local_position).y;
 
 ====================================================================================================
+core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_0044cc70 (1 suspect)
+  File: core/dcamera.cpp
+====================================================================================================
+  Line 57 [unrolled_memcpy]: (this_ptr->cached_projection).half_width_fixed = g_Projection.half_width_fixed;
+
+====================================================================================================
 core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270 (10 suspects)
   File: core/dcamera.cpp
 ====================================================================================================
@@ -942,6 +957,18 @@ core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270 (10 su
   Line 145 [pointer_cast]: piVar2 = (int *)((int)&g_CameraEdgeDetectionResults[0].x + iVar5);
 
 ====================================================================================================
+core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090 (1 suspect)
+  File: core/dcamera.cpp
+====================================================================================================
+  Line 33 [shadow_pointer_walk]: light = (CDemonLight *)&(light->base).base.position;
+
+====================================================================================================
+core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0 (1 suspect)
+  File: core/dcamera.cpp
+====================================================================================================
+  Line 18 [unrolled_memcpy]: (this_ptr->cached_projection).half_width_fixed = g_Projection.half_width_fixed;
+
+====================================================================================================
 core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180 (8 suspects)
   File: core/dcamera.cpp
 ====================================================================================================
@@ -955,10 +982,16 @@ core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180 (8 suspects)
   Line 38 [decompiler_intrinsic]: corner_input.y = (int)ROUND(bbox_min->y * 256.0f);
 
 ====================================================================================================
+core_dcamera.cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00450fc0 (1 suspect)
+  File: core/dcamera.cpp
+====================================================================================================
+  Line 33 [shadow_pointer_walk]: light_source = (CDemonLight *)&(light_source->base).base.position;
+
+====================================================================================================
 core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790 (1 suspect)
   File: core/dcamera.cpp
 ====================================================================================================
-  Line 138 [pointer_cast]: psVar1 = (short *)((int)&pCVar8->x + 2);
+  Line 142 [pointer_cast]: psVar1 = (short *)((int)&pCVar8->x + 2);
 
 ====================================================================================================
 core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0 (1 suspect)
@@ -991,10 +1024,11 @@ core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0 (1 suspect)
   Line 17 [stack_alignment_array]: uint auStackY_1000 [1014];
 
 ====================================================================================================
-core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0 (1 suspect)
+core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0 (2 suspects)
   File: core/dcamera.cpp
 ====================================================================================================
   Line 7 [stack_alignment_array]: int aiStackY_1000 [1017];
+  Line 25 [unrolled_memcpy]: (this_ptr->cached_projection).half_width_fixed = g_Projection.half_width_fixed;
 
 ====================================================================================================
 core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0 (1 suspect)
@@ -1119,173 +1153,16 @@ core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730 (2 suspects)
   Line 37 [pointer_cast]: (char)((uint)((int)(uint)*(byte *)(iVar3 + (int)this_ptr->movie_data) >> 2) / 2);
 
 ====================================================================================================
-core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160 (6 suspects)
-  File: core/dirmat.cpp
-====================================================================================================
-  Line 36 [sub84_truncation]: uStack_94 = SUB84(__BITCAST_UINT64(dVar2),0);
-  Line 41 [sub84_truncation]: uStack_84 = SUB84(__BITCAST_UINT64(dVar2),0);
-  Line 44 [sub84_truncation]: uStack_5c = SUB84(__BITCAST_UINT64(dVar3),0);
-  Line 51 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_84,local_68)) < 0.0) {
-  Line 59 [bitcast_double_pair]: if (__BITCAST_DOUBLE(CONCAT44(uStack_5c,local_80)) < 0.0) {
-  Line 70 [bitcast_double_pair]: fVar7 = 1.0 / (float)__BITCAST_DOUBLE(CONCAT44(uStack_94,local_98));
-
-====================================================================================================
-core_dirmat.cpp_CMatrix3x3f_multiply_FUN_00472540 (2 suspects)
-  File: core/dirmat.cpp
-====================================================================================================
-  Line 25 [unrolled_memcpy]: for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-  Line 116 [unrolled_memcpy]: // 0047266b: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770 (1 suspect)
+core_dlight.cpp_CDemonLight_beginScene_FUN_00472a80 (1 suspect)
   File: core/dlight.cpp
 ====================================================================================================
-  Line 89 [unrolled_strcpy]: do {
+  Line 53 [shadow_pointer_walk]: pCVar3 = (CDemonLight *)&(pCVar3->base).base.position;
 
 ====================================================================================================
-core_dlight.cpp_CDemonLight_beginBackgroundScene_FUN_00472e40 (2 suspects)
+core_dlight.cpp_CDemonLight_endScene_FUN_00472d30 (1 suspect)
   File: core/dlight.cpp
 ====================================================================================================
-  Line 41 [pointer_cast]: *(void **)((int)g_ScreenBufferArray + iVar3) =
-  Line 42 [pointer_cast]: (void *)((int)this_ptr->master_zbuffer + this_ptr->shadow_map_width * iVar2 * 2);
-
-====================================================================================================
-core_dlight.cpp_CDemonLight_blitZBuffer_FUN_00472c70 (1 suspect)
-  File: core/dlight.cpp
-====================================================================================================
-  Line 23 [pointer_cast]: (void *)((int)this_ptr->master_zbuffer + iVar1 * 2),
-
-====================================================================================================
-core_dlight.cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670 (4 suspects)
-  File: core/dlight.cpp
-====================================================================================================
-  Line 31 [pointer_cast]: *(uint *)((int)g_NoiseTable + iVar3) = (uVar4 & 0x1f) - 0x10;
-  Line 39 [pointer_cast]: puVar1 = (uint *)((int)g_ScreenBufferArray + iVar3);
-  Line 58 [pointer_cast]: puVar8 = (uint *)((int)g_ScreenBufferArray[iVar3] + screen_x * 4);
-  Line 119 [pointer_cast]: puVar9 = (ushort *)((int)g_ScreenBufferArray[iVar3] + screen_x * 2);
-
-====================================================================================================
-core_dlight.cpp_CDemonLight_endBackgroundScene_FUN_00472f30 (4 suspects)
-  File: core/dlight.cpp
-====================================================================================================
-  Line 17 [unrolled_memcpy]: for (uVar1 = this_ptr->shadow_map_height & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {
-  Line 20 [unrolled_memcpy]: // 00472f60: MOVSD.REP ES:EDI,ESI  ; g_ScreenBufferArray | g_ScreenBufferArray[1] | g_SavedScreenBufferArray
-  Line 24 [pointer_cast]: ppvVar3 = (void **)((int)ppvVar3 + 1);
-  Line 25 [pointer_cast]: ppvVar4 = (void **)((int)ppvVar4 + 1);
-
-====================================================================================================
-core_dlight.cpp_CDemonLight_init_FUN_004727c0 (2 suspects)
-  File: core/dlight.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 23 [pointer_cast]: this_ptr->shadow_depth_buffer = (ushort *)((int)this_ptr->shadow_buffer_raw + 0x10U & 0xfffffff0);
-
-====================================================================================================
-core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0 (3 suspects)
-  File: core/dlight.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 26 [unknown_type]: unkbyte10 Var10;
-  Line 28 [stack_alignment_array]: int aiStackY_10d8 [987];
-
-====================================================================================================
-core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20 (7 suspects)
-  File: core/dlight.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 11 [stack_alignment_array]: int aiStackY_1064 [992];
-  Line 57 [self_copy_guard]: if (&local_58 != &local_a0) {
-  Line 103 [raw_address_constant]: g_CDemonRendererPtr2->vertex_buffer_ptr->u = 0xf80000;
-  Line 104 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr->v = 0xf80000;
-  Line 107 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;
-  Line 112 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr[3].u = 0xf80000;
-
-====================================================================================================
-core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90 (3 suspects)
-  File: core/dlight.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 3 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x00474702) */
-  Line 17 [stack_alignment_array]: int aiStackY_10d4 [992];
-
-====================================================================================================
-core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210 (6 suspects)
-  File: core/dlight.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 24 [unknown_type]: unkbyte10 Var8;
-  Line 137 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr->u = 0xf80000;
-  Line 138 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr->v = 0xf80000;
-  Line 144 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;
-  Line 155 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr[3].u = 0xf80000;
-
-====================================================================================================
-core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0 (6 suspects)
-  File: core/dlight.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 15 [stack_alignment_array]: int aiStackY_10bc [990];
-  Line 169 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr->u = 0xf80000;
-  Line 170 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr->v = 0xf80000;
-  Line 172 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;
-  Line 175 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr[3].u = 0xf80000;
-
-====================================================================================================
-core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80 (14 suspects)
-  File: core/dlight.cpp
-====================================================================================================
-  Line 89 [pointer_cast]: if ((*(int *)((int)g_DirtySpanStarts + iVar1) <= pCVar2->top) &&
-  Line 90 [pointer_cast]: (pCVar2->left <= *(int *)((int)g_DirtySpanEnds + iVar1))) {
-  Line 91 [pointer_cast]: if ((*(int *)((int)g_DirtySpanStarts + iVar1) <= pCVar2->left) &&
-  Line 92 [pointer_cast]: (pCVar2->top <= *(int *)((int)g_DirtySpanEnds + iVar1))) goto LAB_004730f9;
-  Line 93 [pointer_cast]: if (pCVar2->left < *(int *)((int)g_DirtySpanStarts + iVar1)) {
-  Line 95 [pointer_cast]: *(int *)((int)g_DirtySpanStarts + iVar1) = pCVar2->left;
-  Line 97 [pointer_cast]: if (*(int *)((int)g_DirtySpanEnds + iVar1) < pCVar2->top) {
-  Line 98 [pointer_cast]: *(int *)((int)g_DirtySpanEnds + iVar1) = pCVar2->top;
-  Line 107 [pointer_cast]: *(int *)((int)g_DirtySpanStarts + local_14) = pCVar2->left;
-  Line 108 [pointer_cast]: *(int *)((int)g_DirtySpanEnds + local_14) = pCVar2->top;
-  Line 122 [pointer_cast]: piVar1 = (int *)((int)g_DirtySpanStarts + iVar1);
-  Line 123 [pointer_cast]: iVar5 = local_18 * this_ptr->shadow_map_width + *(int *)((int)g_DirtySpanStarts + iVar1)
-  Line 125 [pointer_cast]: piVar2 = (int *)((int)g_DirtySpanEnds + iVar1);
-  Line 130 [pointer_cast]: (void *)((int)this_ptr->master_zbuffer + iVar5 * 2),
-
-====================================================================================================
-core_dlight.cpp_renderConeLightGeometry_FUN_004760d0 (6 suspects)
-  File: core/dlight.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 21 [unknown_type]: unkbyte10 Var8;
-  Line 102 [raw_address_constant]: this_ptr->vertex_buffer_ptr->u = 0xf80000;
-  Line 103 [raw_address_constant]: this_ptr->vertex_buffer_ptr->v = 0xf80000;
-  Line 109 [raw_address_constant]: this_ptr->vertex_buffer_ptr[1].v = 0xf80000;
-  Line 120 [raw_address_constant]: this_ptr->vertex_buffer_ptr[3].u = 0xf80000;
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_applyBias_FUN_0047c370 (2 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 23 [pointer_cast]: piVar1 = (int *)((int)&this_ptr->vertex_list->x + iVar3);
-  Line 25 [pointer_cast]: piVar2 = (int *)((int)&this_ptr->vertex_list->y + iVar3);
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830 (2 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 13 [negative_offset]: shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].dominant_axis);
-  Line 25 [pointer_cast]: *(int *)((int)this_ptr->poly_vert_list->vertices + iVar1 + -0x14) + -2;
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_00477e60 (1 suspect)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 57 [pointer_cast]: piVar9 = (int *)((int)&this_ptr->vertex_normal_list->x + iVar7);
-
-====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010 (2 suspects)
-  File: core/dmodel.cpp
-====================================================================================================
-  Line 17 [pointer_cast]: this_ptr_00 = (CBoundingBox3D *)((int)&model_ptr->frame_bounds->x + (int)local_28.max.x);
-  Line 60 [pointer_cast]: if ((CBoundingBox3D *)((int)bounds_min_ptr + 0xc) != this_ptr_00) {
+  Line 38 [shadow_pointer_walk]: pCVar4 = (CDemonLight *)&(pCVar4->base).base.position;
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_calculateTriangleNormal_FUN_0047c080 (1 suspect)
@@ -1338,7 +1215,7 @@ core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10 (6 suspects)
 core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690 (2 suspects)
   File: core/dmodel.cpp
 ====================================================================================================
-  Line 28 [negative_offset]: shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->frame_bounds[-1].z);
+  Line 28 [negative_offset]: shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->frame_bounds[-1].max.z);
   Line 34 [negative_offset]: shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].dominant_axis);
 
 ====================================================================================================
@@ -1428,6 +1305,12 @@ core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00477110 (8 suspects)
   Line 120 [pointer_cast]: (int *)((int)pSVar1->vertices + local_20 + -0x14));
   Line 121 [pointer_cast]: _fscanf(file,", %d,%d,%d",(int)&pSVar1->vertices[iVar5].vertex_index + local_20,
   Line 126 [pointer_cast]: } while (iVar5 < *(int *)((int)pSVar1->vertices + local_20 + -0x14));
+
+====================================================================================================
+core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30 (1 suspect)
+  File: core/dmodel.cpp
+====================================================================================================
+  Line 150 [shadow_pointer_walk]: pSVar12 = (SMRGLPrimitiveQuad *)&(pSVar12->base).surface_normal.B;
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_scale_FUN_0047c4d0 (3 suspects)
@@ -2955,7 +2838,7 @@ core_mimic.cpp_CMimic_setupCloth_FUN_00520500 (6 suspects)
   Line 75 [unrolled_memcpy]: // 005205d9: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_mimic.cpp_CMimic_updatePose_FUN_0051f930 (17 suspects)
+core_mimic.cpp_CMimic_updatePose_FUN_0051f930 (18 suspects)
   File: core/mimic.cpp
 ====================================================================================================
   Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
@@ -2969,6 +2852,7 @@ core_mimic.cpp_CMimic_updatePose_FUN_0051f930 (17 suspects)
   Line 41 [missing_cave_copy]: CMatrix3x4f local_180;
   Line 46 [missing_cave_copy]: CMatrix3x4f local_90;
   Line 57 [unrolled_memcpy]: // 0051fa0d: MOVSD.REP ES:EDI,ESI
+  Line 112 [shadow_pointer_walk]: local_14 = (CMimic *)&(local_14->base).base.base.orient;
   Line 129 [unrolled_memcpy]: for (uVar10 = (uint)((pCVar3->model).vertex_count * 0xc) >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
   Line 131 [pointer_cast]: pCVar16 = (CVector3i *)((int)pCVar16 + (uint)bVar26 * -8 + 4);
   Line 132 [pointer_cast]: pCVar22 = (CVector3i *)((int)pCVar22 + (uint)bVar26 * -8 + 4);
@@ -3016,10 +2900,11 @@ core_mirror.cpp_CMirrorReflection_transformMirrorVertex_FUN_005229b0 (1 suspect)
   Line 10 [stack_alignment_array]: float afStackY_100c [1009];
 
 ====================================================================================================
-core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310 (1 suspect)
+core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310 (2 suspects)
   File: core/mirror.cpp
 ====================================================================================================
   Line 24 [shadow_pointer_walk]: pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->base).count;
+  Line 70 [shadow_pointer_walk]: this_ptr = (CMirror *)&(this_ptr->reflection).corner1.y;
 
 ====================================================================================================
 core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_005225e0 (1 suspect)
@@ -3943,7 +3828,7 @@ core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0 (1 suspect)
 core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 (1 suspect)
   File: core/set.cpp
 ====================================================================================================
-  Line 96 [unrolled_memcpy]: this_ptr->lights[local_14].camera_light_bounds[local_20].left = local_5c.left;
+  Line 96 [unrolled_memcpy]: this_ptr->lights[local_14].camera_light_bounds[local_20].x_min = local_5c.x_min;
 
 ====================================================================================================
 core_set.cpp_CDemonSet_processActors_FUN_0056b810 (5 suspects)
@@ -4031,7 +3916,7 @@ core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 (4 suspects)
   File: core/set.cpp
 ====================================================================================================
   Line 101 [shadow_pointer_walk]: pCVar8 = (CDemonSet *)pCVar8->cameras;
-  Line 178 [unrolled_memcpy]: g_SpotLightBounds[iVar1].left = pCVar3->left;
+  Line 178 [unrolled_memcpy]: g_SpotLightBounds[iVar1].x_min = pCVar3->x_min;
   Line 271 [shadow_pointer_walk]: pCVar8 = (CDemonSet *)pCVar8->cameras;
   Line 294 [shadow_pointer_walk]: local_18 = (CDemonSet *)local_18->cameras;
 
@@ -4174,7 +4059,7 @@ core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 (13 suspects)
   Line 31 [shadow_pointer_walk]: pCVar10 = (C3DSLight *)pCVar10->name;
   Line 32 [shadow_pointer_walk]: pCVar4 = (C3DSLight *)pCVar4->name;
   Line 48 [unrolled_memcpy]: // 0057b6b3: MOVSD.REP ES:EDI,ESI
-  Line 58 [unrolled_memcpy]: pCVar3->camera_light_bounds[0].left = pCVar2->camera_light_bounds[0].left;
+  Line 58 [unrolled_memcpy]: pCVar3->camera_light_bounds[0].x_min = pCVar2->camera_light_bounds[0].x_min;
   Line 65 [unrolled_memcpy]: pCVar3->atten_start = pCVar2->atten_start;
   Line 81 [unrolled_memcpy]: // 0057b768: MOVSD.REP ES:EDI,ESI
   Line 83 [unrolled_memcpy]: for (iVar3 = 0x20; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -4199,7 +4084,7 @@ core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910 (13 suspects)
   Line 39 [shadow_pointer_walk]: pCVar10 = (C3DSLight *)pCVar10->name;
   Line 40 [shadow_pointer_walk]: pCVar4 = (C3DSLight *)pCVar4->name;
   Line 40 [unrolled_memcpy]: // 0057b987: MOVSD.REP ES:EDI,ESI
-  Line 66 [unrolled_memcpy]: local_c->camera_light_bounds[0].left = local_8->camera_light_bounds[0].left;
+  Line 66 [unrolled_memcpy]: local_c->camera_light_bounds[0].x_min = local_8->camera_light_bounds[0].x_min;
   Line 66 [unrolled_memcpy]: // 0057b9e6: MOVSD.REP ES:EDI,ESI
   Line 73 [unrolled_memcpy]: local_c->atten_start = local_8->atten_start;
   Line 91 [unrolled_memcpy]: for (iVar2 = 0x20; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -4258,7 +4143,7 @@ core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (6 suspects)
   Line 213 [unrolled_strchr]: do {
   Line 245 [pointer_cast]: *(uint *)((int)g_S3DTextureGroundTypes + iVar6) = uVar4;
   Line 264 [pointer_cast]: *(uint *)((int)g_S3DTextureGroundTypes + iVar6) = 0;
-  Line 498 [unrolled_memcpy]: pCVar10->camera_light_bounds[0].left = local_2478.camera_light_bounds[0].left;
+  Line 498 [unrolled_memcpy]: pCVar10->camera_light_bounds[0].x_min = local_2478.camera_light_bounds[0].x_min;
   Line 505 [unrolled_memcpy]: pCVar10->atten_start = local_2478.atten_start;
 
 ====================================================================================================
@@ -4444,7 +4329,7 @@ core_setutil.cpp_C3DSLight_load_FUN_00586310 (3 suspects)
   File: core/setutil.cpp
 ====================================================================================================
   Line 93 [pointer_cast]: *(uint *)((int)this_ptr->filter_indices + local_1c) = 0;
-  Line 152 [pointer_cast]: iVar2 = (int)&local_24->left + iVar5;
+  Line 152 [pointer_cast]: iVar2 = (int)&local_24->x_min + iVar5;
   Line 158 [pointer_cast]: pCVar4 = (C3DSLight *)((int)&pCVar4->light_type + 1);
 
 ====================================================================================================
@@ -5372,7 +5257,7 @@ core_xform.cpp_buildZFlipMatrix_FUN_005f6fa0 (2 suspects)
 core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0 (1 suspect)
   File: core/xform.cpp
 ====================================================================================================
-  Line 39 [decompiler_intrinsic]: inv_a = (double)SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1);
+  Line 23 [decompiler_intrinsic]: inv_a = (double)SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1);
 
 ====================================================================================================
 core_xform.cpp_quaternionToAxisAngle_FUN_005f7730 (1 suspect)
@@ -6363,6 +6248,14 @@ engine_ini.cpp_CIni_getProfileString_FUN_004fb250 (5 suspects)
   Line 101 [unrolled_strcpy]: do {
 
 ====================================================================================================
+engine_keyframe.c_loadAndInterpolateKeyframes_FUN_00501d40 (3 suspects)
+  File: engine/keyframe.c
+====================================================================================================
+  Line 43 [shadow_pointer_walk]: pSVar11 = (SMRGLKeyframeModel *)&(pSVar11->header).base.count;
+  Line 65 [shadow_pointer_walk]: pSVar8 = (SMRGLKeyframeModel *)&(pSVar8->header).base.count;
+  Line 103 [shadow_pointer_walk]: pSVar8 = (SMRGLKeyframeModel *)&(pSVar8->header).base.count;
+
+====================================================================================================
 engine_matrix.c_initializeTrigTables_FUN_0050c530 (3 suspects)
   File: engine/matrix.c
 ====================================================================================================
@@ -7141,6 +7034,12 @@ shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30 (1 suspect)
   File: shape/edittool.cpp
 ====================================================================================================
   Line 20 [unrolled_strlen]: do {
+
+====================================================================================================
+shape_edittool.cpp_CEditorTools_popWindowState_FUN_004a0ea0 (1 suspect)
+  File: shape/edittool.cpp
+====================================================================================================
+  Line 23 [unrolled_memcpy]: g_Projection.half_width_fixed = g_WindowStack[iVar1].saved_projection.half_width_fixed;
 
 ====================================================================================================
 shape_edittool.cpp_CEditorTools_restoreScreen_FUN_0049e4d0 (4 suspects)

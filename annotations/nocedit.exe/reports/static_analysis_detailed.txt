@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (425 diagnostics)
+Cppcheck (quick) (423 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (94)
+shiftTooManyBitsSigned (95)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_F line 66
@@ -126,6 +126,10 @@ shiftTooManyBitsSigned (94)
 
   core_dcamera.cpp_renderVolumetricLightScanline_FUN line 58
     File: core/dcamera.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  core_dlight.cpp_CDemonLight_init_FUN_004727c0      line 31
+    File: core/dlight.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   core_dskybox.cpp_renderSkyDome_FUN_004901f0        line 140
@@ -1496,7 +1500,7 @@ invalidPointerCast (19)
     File: core/set.cpp
     Casting between signed int * and float * which have an incompatible binary data representation.
 
-  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  line 379
+  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  line 377
     File: core/setedit.cpp
     Casting between signed int * and float * which have an incompatible binary data representation.
 
@@ -1593,6 +1597,38 @@ nullPointerRedundantCheck (12)
     Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
 
 ----------------------------------------------------------------------------------------------------
+identicalInnerCondition (7)
+----------------------------------------------------------------------------------------------------
+
+  core_dmodel.cpp_CKeyFramedModel_buildCollisionTriL line 26
+    File: core/dmodel.cpp
+    Identical inner 'if' condition is always true.
+
+  core_skeledit.cpp_CDeformableModel_sortFacesByText line 47
+    File: core/skeledit.cpp
+    Identical inner 'if' condition is always true.
+
+  core_skeleton.cpp_CDeformableModel_computeBoneBoun line 58
+    File: core/skeleton.cpp
+    Identical inner 'if' condition is always true.
+
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost line 318
+    File: shape/meshlod.cpp
+    Identical inner 'if' condition is always true.
+
+  shape_superopt.cpp_CComplexPolygon_closeSplitBound line 239
+    File: shape/superopt.cpp
+    Identical inner 'if' condition is always true.
+
+  shape_superopt.cpp_CComplexPolygon_isConvex_FUN_00 line 65
+    File: shape/superopt.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_snddx.cpp_directSoundEnumerationCallback_FUN line 53
+    File: sound/snddx.cpp
+    Identical inner 'if' condition is always true.
+
+----------------------------------------------------------------------------------------------------
 objectIndex (7)
 ----------------------------------------------------------------------------------------------------
 
@@ -1625,54 +1661,6 @@ objectIndex (7)
     The address of local variable 'local_122c' might be accessed at non-zero index.
 
 ----------------------------------------------------------------------------------------------------
-identicalInnerCondition (6)
-----------------------------------------------------------------------------------------------------
-
-  core_skeledit.cpp_CDeformableModel_sortFacesByText line 47
-    File: core/skeledit.cpp
-    Identical inner 'if' condition is always true.
-
-  core_skeleton.cpp_CDeformableModel_computeBoneBoun line 58
-    File: core/skeleton.cpp
-    Identical inner 'if' condition is always true.
-
-  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost line 318
-    File: shape/meshlod.cpp
-    Identical inner 'if' condition is always true.
-
-  shape_superopt.cpp_CComplexPolygon_closeSplitBound line 239
-    File: shape/superopt.cpp
-    Identical inner 'if' condition is always true.
-
-  shape_superopt.cpp_CComplexPolygon_isConvex_FUN_00 line 65
-    File: shape/superopt.cpp
-    Identical inner 'if' condition is always true.
-
-  sound_snddx.cpp_directSoundEnumerationCallback_FUN line 53
-    File: sound/snddx.cpp
-    Identical inner 'if' condition is always true.
-
-----------------------------------------------------------------------------------------------------
-ignoredReturnValue (4)
-----------------------------------------------------------------------------------------------------
-
-  core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004 line 85
-    File: core/dirmat.cpp
-    Return value of function acos() is not used.
-
-  core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004 line 99
-    File: core/dirmat.cpp
-    Return value of function asin() is not used.
-
-  core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004 line 121
-    File: core/dirmat.cpp
-    Return value of function acos() is not used.
-
-  core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004 line 135
-    File: core/dirmat.cpp
-    Return value of function asin() is not used.
-
-----------------------------------------------------------------------------------------------------
 nullPointer (4)
 ----------------------------------------------------------------------------------------------------
 
@@ -1684,7 +1672,7 @@ nullPointer (4)
     File: core/setedit.cpp
     Possible null pointer dereference: p_Stack_20
 
-  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  line 222
+  core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  line 220
     File: core/setedit.cpp
     Possible null pointer dereference: pcVar12
 

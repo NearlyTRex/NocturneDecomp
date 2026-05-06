@@ -16,7 +16,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_applyVertexBias_FUN_0047c2d0(CKeyFr
   
   core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(this_ptr);
   dVar3 = floor
-                    ((double)(this_ptr->frame_bounds[frame_index * 2].y * (float)256 +
+                    ((double)(this_ptr->frame_bounds[frame_index].min.y * (float)256 +
                              (float)0.5));
   iVar2 = 0;
   for (iVar1 = 0; iVar1 < this_ptr->frame_count * this_ptr->vertex_count; iVar1 = iVar1 + 1) {

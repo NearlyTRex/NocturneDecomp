@@ -4,21 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 526,
-    "complexity_score": 236,
+    "complexity_score": 191,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 19,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 191,
-    "suspect_count": 3,
-    "suspect_types": [
-      "stack_alignment_array",
-      "warning_inlined_function",
-      "warning_unreachable"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 717
   },
   "cross_references": [
@@ -304,6 +300,44 @@
     },
     "pcode_op_count": 2875
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 3,
+      "match": "WARNING: Removing unreachable block",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00474702) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 17,
+      "match": "aiStackY_10d4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int aiStackY_10d4 [992];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "`do { ... } while (true);` co-occurs with a `WARNING: Removing unreachable block` in this function \u2014 strong fingerprint for Ghidra dropping a loop counter (asm has `INC counter; CMP counter, BOUND; JL loop` at the loop bottom plus a counter-as-multiplier in the body that Ghidra folded as constant 0). Function infinite-loops or skips post-loop tail at runtime. Restore the counter and the unreachable-pruned post-loop block in a .keep.",
+      "line": 188,
+      "match": "} while( true );",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while( true );",
+      "type": "dropped_loop_counter"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4316,
     "local_size": 4312,
@@ -610,30 +644,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 3,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x00474702) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 17,
-      "match": "aiStackY_10d4",
-      "severity": "moderate",
-      "text": "int aiStackY_10d4 [992];",
-      "type": "stack_alignment_array"
-    }
-  ]
+  "suspects": []
 }

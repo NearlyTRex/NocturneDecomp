@@ -25,10 +25,10 @@ CVector3i * __stack3_esi core_dcamera_cpp_CDemonCamera_restoreAlphaTransform_FUN
   longlong lVar3;
   
   iVar1 = screen_pos->z;
-  iVar12 = (int)(((longlong)(screen_pos->x - (this_ptr->saved_viewport_rect).right) *
-                 (longlong)iVar1) / (longlong)(this_ptr->saved_viewport_rect).left);
-  iVar13 = (int)(((longlong)(screen_pos->y - (this_ptr->saved_viewport_rect).bottom) *
-                 (longlong)iVar1) / (longlong)(this_ptr->saved_viewport_rect).top);
+  iVar12 = (int)(((longlong)(screen_pos->x - (this_ptr->cached_projection).center_x_fixed) *
+                 (longlong)iVar1) / (longlong)(this_ptr->cached_projection).half_width_fixed);
+  iVar13 = (int)(((longlong)(screen_pos->y - (this_ptr->cached_projection).center_y_fixed) *
+                 (longlong)iVar1) / (longlong)(this_ptr->cached_projection).neg_half_height_fixed);
   lVar3 = (longlong)this_ptr->alpha_transform_matrices[9][alpha_index] * (longlong)iVar12;
   lVar4 = (longlong)this_ptr->alpha_transform_matrices[0xc][alpha_index] * (longlong)iVar13;
   lVar5 = (longlong)this_ptr->alpha_transform_matrices[0xf][alpha_index] * (longlong)iVar1;

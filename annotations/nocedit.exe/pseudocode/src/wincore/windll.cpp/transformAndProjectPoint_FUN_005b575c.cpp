@@ -56,11 +56,11 @@ void __cdecl wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(SProjected
     if (uVar6 == 0) {
       output->inv_z = (int)(0x7fffffff / (longlong)(int)uVar5);
       output->screen_x =
-           (int)(((longlong)(int)uVar3 * (longlong)g_ViewportCenterXFixed) / (longlong)(int)uVar5) +
-           g_ViewportRightFixed;
+           (int)(((longlong)(int)uVar3 * (longlong)g_Projection.half_width_fixed) /
+                (longlong)(int)uVar5) + g_Projection.center_x_fixed;
       output->screen_y =
-           (int)(((longlong)(int)uVar4 * (longlong)g_ViewportCenterYFixed) / (longlong)(int)uVar5) +
-           g_ViewportBottomFixed;
+           (int)(((longlong)(int)uVar4 * (longlong)g_Projection.neg_half_height_fixed) /
+                (longlong)(int)uVar5) + g_Projection.center_y_fixed;
       return;
     }
     output->screen_x = uVar6;
@@ -105,11 +105,11 @@ void __cdecl wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c(SProjected
     output->transformed_z = uVar4;
     output->inv_z = (int)(0x7fffffff / (longlong)(int)uVar4);
     output->screen_x =
-         (int)(((longlong)g_TempTransformedX * (longlong)g_ViewportCenterXFixed) /
-              (longlong)(int)uVar4) + g_ViewportRightFixed;
+         (int)(((longlong)g_TempTransformedX * (longlong)g_Projection.half_width_fixed) /
+              (longlong)(int)uVar4) + g_Projection.center_x_fixed;
     output->screen_y =
-         (int)(((longlong)g_TempTransformedY * (longlong)g_ViewportCenterYFixed) /
-              (longlong)(int)uVar4) + g_ViewportBottomFixed;
+         (int)(((longlong)g_TempTransformedY * (longlong)g_Projection.neg_half_height_fixed) /
+              (longlong)(int)uVar4) + g_Projection.center_y_fixed;
     return;
   }
   output->transformed_x = g_TempTransformedX;

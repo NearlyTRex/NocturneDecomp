@@ -186,67 +186,67 @@
     },
     {
       "addr": "02cf1ce4",
-      "name": "g_WindowStack[0].top",
+      "name": "g_WindowStack[0].rect.top",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf1ce8",
-      "name": "g_WindowStack[0].right",
+      "name": "g_WindowStack[0].rect.right",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf1cec",
-      "name": "g_WindowStack[0].bottom",
+      "name": "g_WindowStack[0].rect.bottom",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf1cf0",
-      "name": "g_WindowStack[0].saved_clip_left",
+      "name": "g_WindowStack[0].saved_clip.left",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf1cf4",
-      "name": "g_WindowStack[0].saved_clip_top",
+      "name": "g_WindowStack[0].saved_clip.top",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf1cf8",
-      "name": "g_WindowStack[0].saved_clip_right",
+      "name": "g_WindowStack[0].saved_clip.right",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf1cfc",
-      "name": "g_WindowStack[0].saved_clip_bottom",
+      "name": "g_WindowStack[0].saved_clip.bottom",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf1d00",
-      "name": "g_WindowStack[0].saved_viewport_center_x",
+      "name": "g_WindowStack[0].saved_projection.half_width_fixed",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf1d04",
-      "name": "g_WindowStack[0].saved_viewport_center_y",
+      "name": "g_WindowStack[0].saved_projection.neg_half_height_fixed",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf1d08",
-      "name": "g_WindowStack[0].saved_viewport_right",
+      "name": "g_WindowStack[0].saved_projection.center_x_fixed",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cf1d0c",
-      "name": "g_WindowStack[0].saved_viewport_bottom",
+      "name": "g_WindowStack[0].saved_projection.center_y_fixed",
       "type": "undefined4",
       "value": null
     },
@@ -324,26 +324,26 @@
     },
     {
       "addr": "02d02548",
-      "name": "g_ViewportCenterXFixed",
-      "type": "int",
+      "name": "g_Projection",
+      "type": "SProjectionParams",
       "value": null
     },
     {
       "addr": "02d0254c",
-      "name": "g_ViewportCenterYFixed",
-      "type": "int",
+      "name": "g_Projection.neg_half_height_fixed",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d02550",
-      "name": "g_ViewportRightFixed",
-      "type": "int",
+      "name": "g_Projection.center_x_fixed",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d02554",
-      "name": "g_ViewportBottomFixed",
-      "type": "int",
+      "name": "g_Projection.center_y_fixed",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -469,6 +469,15 @@
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "for (uVar2 = uVar7 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 150,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_WindowStack[iVar2].saved_projection.half_width_fixed = g_Projection.half_width_fixed;",
       "type": "unrolled_memcpy"
     },
     {

@@ -151,13 +151,13 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00586310(C3DSLight *this_ptr,_F
         if (g_CDemonSetPtr->set_file_version < 2) {
           _fscanf(file_handle,"%d\n",(int *)local_44);
           pCVar4->visible_flags[0] = local_44[0];
-          *(uint *)((int)&this_ptr->camera_light_bounds[0].left + iVar5) = 1;
-          *(uint *)((int)&this_ptr->camera_light_bounds[0].top + iVar5) = 0x13e;
-          *(uint *)((int)&this_ptr->camera_light_bounds[0].right + iVar5) = 1;
-          *(uint *)((int)&this_ptr->camera_light_bounds[0].bottom + iVar5) = 0xee;
+          *(uint *)((int)&this_ptr->camera_light_bounds[0].x_min + iVar5) = 1;
+          *(uint *)((int)&this_ptr->camera_light_bounds[0].x_max + iVar5) = 0x13e;
+          *(uint *)((int)&this_ptr->camera_light_bounds[0].y_min + iVar5) = 1;
+          *(uint *)((int)&this_ptr->camera_light_bounds[0].y_max + iVar5) = 0xee;
         }
         else {
-          iVar2 = (int)&local_24->left + iVar5;
+          iVar2 = (int)&local_24->x_min + iVar5;
           _fscanf(file_handle,"%d,%d,%d,%d,%d\n",(int *)local_40,(int *)iVar2,(int *)(iVar2 + 4),
                      (int *)(iVar2 + 8),(int *)(iVar2 + 0xc));
           pCVar4->visible_flags[0] = local_40[0];
@@ -182,10 +182,10 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00586310(C3DSLight *this_ptr,_F
           core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid camera number in visiblilty list!");
         }
         this_ptr->visible_flags[local_3c] = '\x01';
-        this_ptr->camera_light_bounds[local_3c].left = local_38;
-        this_ptr->camera_light_bounds[local_3c].top = local_30;
-        this_ptr->camera_light_bounds[local_3c].right = local_34;
-        this_ptr->camera_light_bounds[local_3c].bottom = local_2c;
+        this_ptr->camera_light_bounds[local_3c].x_min = local_38;
+        this_ptr->camera_light_bounds[local_3c].x_max = local_30;
+        this_ptr->camera_light_bounds[local_3c].y_min = local_34;
+        this_ptr->camera_light_bounds[local_3c].y_max = local_2c;
         iVar5 = iVar5 + 1;
       } while (iVar5 < local_48);
     }

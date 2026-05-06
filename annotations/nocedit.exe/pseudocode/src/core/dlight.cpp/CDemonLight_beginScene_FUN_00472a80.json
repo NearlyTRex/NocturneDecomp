@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 61,
+    "complexity_score": 76,
     "cross_reference_count": 4,
     "function_call_count": 9,
     "global_count": 12,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 61,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
     "total_lines": 214
   },
   "cross_references": [
@@ -298,5 +300,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 53,
+      "match": "pCVar3 = (T *)&(pCVar3->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar3 = (CDemonLight *)&(pCVar3->base).base.position;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
 }

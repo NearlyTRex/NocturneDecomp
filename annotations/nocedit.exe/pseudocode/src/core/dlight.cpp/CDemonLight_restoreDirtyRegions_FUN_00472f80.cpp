@@ -28,10 +28,10 @@ void __cdecl core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80(CDemon
   
   if ((this_ptr->base).skip_clear_buffer_flag != 0) {
     if (0x100 < (this_ptr->base).rect_array_count) {
-      local_34.left = 0;
-      local_34.right = 0;
-      local_34.top = this_ptr->shadow_map_width + -1;
-      local_34.bottom = this_ptr->shadow_map_height + -1;
+      local_34.x_min = 0;
+      local_34.y_min = 0;
+      local_34.x_max = this_ptr->shadow_map_width + -1;
+      local_34.y_max = this_ptr->shadow_map_height + -1;
       core_dlight_cpp_CDemonLight_blitZBuffer_FUN_00472c70(this_ptr,&local_34);
       (this_ptr->base).rect_array_count = 0;
       return;
@@ -45,19 +45,19 @@ void __cdecl core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80(CDemon
     if (0 < (this_ptr->base).rect_array_count) {
       pCVar2 = (this_ptr->base).rect_array;
       do {
-        if (pCVar2->left < 0) {
-          pCVar2->left = 0;
+        if (pCVar2->x_min < 0) {
+          pCVar2->x_min = 0;
         }
         iVar7 = this_ptr->shadow_map_width + -1;
-        if (iVar7 < pCVar2->top) {
-          pCVar2->top = iVar7;
+        if (iVar7 < pCVar2->x_max) {
+          pCVar2->x_max = iVar7;
         }
-        if (pCVar2->right < 0) {
-          pCVar2->right = 0;
+        if (pCVar2->y_min < 0) {
+          pCVar2->y_min = 0;
         }
         iVar3 = this_ptr->shadow_map_height + -1;
-        if (iVar3 < pCVar2->bottom) {
-          pCVar2->bottom = iVar3;
+        if (iVar3 < pCVar2->y_max) {
+          pCVar2->y_max = iVar3;
         }
         iVar6 = iVar6 + 1;
         pCVar2 = pCVar2 + 1;
@@ -69,11 +69,11 @@ void __cdecl core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80(CDemon
     if (0 < (this_ptr->base).rect_array_count) {
       pCVar4 = (this_ptr->base).rect_array;
       do {
-        if (pCVar4->right < local_18) {
-          local_18 = pCVar4->right;
+        if (pCVar4->y_min < local_18) {
+          local_18 = pCVar4->y_min;
         }
-        if (local_20 < pCVar4->bottom) {
-          local_20 = pCVar4->bottom;
+        if (local_20 < pCVar4->y_max) {
+          local_20 = pCVar4->y_max;
         }
         iVar3 = iVar3 + 1;
         pCVar4 = pCVar4 + 1;
@@ -87,22 +87,22 @@ void __cdecl core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80(CDemon
           local_14 = 0;
           pCVar2 = (this_ptr->base).rect_array;
           do {
-            if ((pCVar2->right <= local_18) && (local_18 <= pCVar2->bottom)) {
+            if ((pCVar2->y_min <= local_18) && (local_18 <= pCVar2->y_max)) {
               bVar3 = false;
               if (0 < g_DirtySpanCount) {
                 iVar3 = g_DirtySpanCount * 4;
                 iVar1 = 0;
                 do {
-                  if ((*(int *)((int)g_DirtySpanStarts + iVar1) <= pCVar2->top) &&
-                     (pCVar2->left <= *(int *)((int)g_DirtySpanEnds + iVar1))) {
-                    if ((*(int *)((int)g_DirtySpanStarts + iVar1) <= pCVar2->left) &&
-                       (pCVar2->top <= *(int *)((int)g_DirtySpanEnds + iVar1))) goto LAB_004730f9;
-                    if (pCVar2->left < *(int *)((int)g_DirtySpanStarts + iVar1)) {
+                  if ((*(int *)((int)g_DirtySpanStarts + iVar1) <= pCVar2->x_max) &&
+                     (pCVar2->x_min <= *(int *)((int)g_DirtySpanEnds + iVar1))) {
+                    if ((*(int *)((int)g_DirtySpanStarts + iVar1) <= pCVar2->x_min) &&
+                       (pCVar2->x_max <= *(int *)((int)g_DirtySpanEnds + iVar1))) goto LAB_004730f9;
+                    if (pCVar2->x_min < *(int *)((int)g_DirtySpanStarts + iVar1)) {
                       bVar3 = true;
-                      *(int *)((int)g_DirtySpanStarts + iVar1) = pCVar2->left;
+                      *(int *)((int)g_DirtySpanStarts + iVar1) = pCVar2->x_min;
                     }
-                    if (*(int *)((int)g_DirtySpanEnds + iVar1) < pCVar2->top) {
-                      *(int *)((int)g_DirtySpanEnds + iVar1) = pCVar2->top;
+                    if (*(int *)((int)g_DirtySpanEnds + iVar1) < pCVar2->x_max) {
+                      *(int *)((int)g_DirtySpanEnds + iVar1) = pCVar2->x_max;
                       goto LAB_004730f9;
                     }
                     if (bVar3) break;
@@ -111,8 +111,8 @@ void __cdecl core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80(CDemon
                 } while (iVar1 < iVar3);
               }
               if (!bVar3) {
-                *(int *)((int)g_DirtySpanStarts + local_14) = pCVar2->left;
-                *(int *)((int)g_DirtySpanEnds + local_14) = pCVar2->top;
+                *(int *)((int)g_DirtySpanStarts + local_14) = pCVar2->x_min;
+                *(int *)((int)g_DirtySpanEnds + local_14) = pCVar2->x_max;
                 g_DirtySpanCount = g_DirtySpanCount + 1;
                 local_14 = local_14 + 4;
               }

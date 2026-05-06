@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 73,
+    "complexity_score": 43,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 43,
-    "suspect_count": 2,
-    "suspect_types": [
-      "negative_offset",
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 135
   },
   "cross_references": [
@@ -206,6 +203,26 @@
     },
     "pcode_op_count": 365
   },
+  "resolved_suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 13,
+      "match": "collision_triangle_list[-1].",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].dominant_axis);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)this_ptr->poly_vert_list->vertices + iVar1 + -0x14) + -2;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -222,22 +239,22 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 13,
-      "match": "collision_triangle_list[-1].",
-      "severity": "mild",
-      "text": "shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].dominant_axis);",
-      "type": "negative_offset"
+  "static_analysis": {
+    "analyzed_file": "CKeyFramedModel_buildCollisionTriList_FUN_00478830.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "identicalInnerCondition",
+          "column": 11,
+          "line": 26,
+          "message": "Identical inner 'if' condition is always true.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
     },
-    {
-      "description": "Complex pointer cast",
-      "line": 25,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(int *)((int)this_ptr->poly_vert_list->vertices + iVar1 + -0x14) + -2;",
-      "type": "pointer_cast"
-    }
-  ]
+    "file_variant": "keep"
+  },
+  "suspects": []
 }

@@ -10,7 +10,7 @@ void __cdecl core_vehicle_cpp_CVehicle_setup_FUN_005e7b90(CVehicle *this_ptr)
 
 {
   float fVar9;
-  CVector3f *pCVar13;
+  CBoundingBox3D *pCVar13;
   CKeyFramedModel *pCVar9;
   CVector3f *pCVar10;
   CTire *pCVar11;
@@ -43,9 +43,9 @@ void __cdecl core_vehicle_cpp_CVehicle_setup_FUN_005e7b90(CVehicle *this_ptr)
   }
   pCVar9 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   pCVar13 = pCVar9->frame_bounds;
-  local_1c = pCVar13[1].x - pCVar13->x;
-  local_18 = pCVar13[1].y - pCVar13->y;
-  local_14 = pCVar13[1].z - pCVar13->z;
+  local_1c = (pCVar13->max).x - (pCVar13->min).x;
+  local_18 = (pCVar13->max).y - (pCVar13->min).y;
+  local_14 = (pCVar13->max).z - (pCVar13->min).z;
   if (&this_ptr->bound_size != (CVector3f *)&local_1c) {
     (this_ptr->bound_size).x = local_1c;
     (this_ptr->bound_size).y = local_18;

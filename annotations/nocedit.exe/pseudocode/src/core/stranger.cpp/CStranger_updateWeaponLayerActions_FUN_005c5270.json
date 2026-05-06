@@ -299,6 +299,15 @@
       "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x005c5793) */",
       "type": "warning_unreachable"
+    },
+    {
+      "description": "`do { ... } while (true);` co-occurs with a `WARNING: Removing unreachable block` in this function \u2014 strong fingerprint for Ghidra dropping a loop counter (asm has `INC counter; CMP counter, BOUND; JL loop` at the loop bottom plus a counter-as-multiplier in the body that Ghidra folded as constant 0). Function infinite-loops or skips post-loop tail at runtime. Restore the counter and the unreachable-pruned post-loop block in a .keep.",
+      "line": 382,
+      "match": "} while( true );",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while( true );",
+      "type": "dropped_loop_counter"
     }
   ],
   "stack_frame": {

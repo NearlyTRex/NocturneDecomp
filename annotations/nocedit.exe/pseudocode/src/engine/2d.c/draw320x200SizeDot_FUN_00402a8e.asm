@@ -12,10 +12,10 @@
 ;   TerminatedCString s_engine_2d_c_00613164
 ;   TerminatedCString s_draw320x200SizeDot_unkno_00613173
 ;   int g_WindowHeight = 0xc8
-;   int g_ViewportCenterXFixed
-;   int g_ViewportCenterYFixed
-;   int g_ViewportRightFixed
-;   int g_ViewportBottomFixed
+;   SProjectionParams g_Projection
+;   undefined4 g_Projection.neg_half_height_fixed
+;   undefined4 g_Projection.center_x_fixed
+;   undefined4 g_Projection.center_y_fixed
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -73,19 +73,19 @@ section .text
     POP ESI                             ; 00402ae3
     POP EBX                             ; 00402ae4
     RET                                 ; 00402ae5
-    MOV EDX,dword ptr [0x02d02548]      ; 00402ae6 | g_ViewportCenterXFixed
+    MOV EDX,dword ptr [0x02d02548]      ; 00402ae6 | g_Projection
         ;   Label: LAB_00402ae6
     MOV EBX,ECX                         ; 00402aec
     IMUL EDX                            ; 00402aee
     IDIV EBX                            ; 00402af0
-    MOV EBX,dword ptr [0x02d02550]      ; 00402af2 | g_ViewportRightFixed
-    MOV EDX,dword ptr [0x02d0254c]      ; 00402af8 | g_ViewportCenterYFixed
+    MOV EBX,dword ptr [0x02d02550]      ; 00402af2 | g_Projection.center_x_fixed
+    MOV EDX,dword ptr [0x02d0254c]      ; 00402af8 | g_Projection.neg_half_height_fixed
     LEA EDI,[EAX + EBX*0x1]             ; 00402afe
     MOV EBX,ECX                         ; 00402b01
     MOV EAX,ESI                         ; 00402b03
     IMUL EDX                            ; 00402b05
     IDIV EBX                            ; 00402b07
-    MOV ESI,dword ptr [0x02d02554]      ; 00402b09 | g_ViewportBottomFixed
+    MOV ESI,dword ptr [0x02d02554]      ; 00402b09 | g_Projection.center_y_fixed
     ADD ESI,EAX                         ; 00402b0f
     SAR EDI,0x10                        ; 00402b11
     SAR ESI,0x10                        ; 00402b14
@@ -117,19 +117,19 @@ section .text
     POP ESI                             ; 00402b46
     POP EBX                             ; 00402b47
     RET                                 ; 00402b48
-    MOV EDX,dword ptr [0x02d02548]      ; 00402b49 | g_ViewportCenterXFixed
+    MOV EDX,dword ptr [0x02d02548]      ; 00402b49 | g_Projection
         ;   Label: LAB_00402b49
     MOV EBX,ECX                         ; 00402b4f
     IMUL EDX                            ; 00402b51
     IDIV EBX                            ; 00402b53
-    MOV EDX,dword ptr [0x02d02550]      ; 00402b55 | g_ViewportRightFixed
+    MOV EDX,dword ptr [0x02d02550]      ; 00402b55 | g_Projection.center_x_fixed
     MOV EBX,ECX                         ; 00402b5b
     LEA EDI,[EAX + EDX*0x1]             ; 00402b5d
-    MOV EDX,dword ptr [0x02d0254c]      ; 00402b60 | g_ViewportCenterYFixed
+    MOV EDX,dword ptr [0x02d0254c]      ; 00402b60 | g_Projection.neg_half_height_fixed
     MOV EAX,ESI                         ; 00402b66
     IMUL EDX                            ; 00402b68
     IDIV EBX                            ; 00402b6a
-    MOV ECX,dword ptr [0x02d02554]      ; 00402b6c | g_ViewportBottomFixed
+    MOV ECX,dword ptr [0x02d02554]      ; 00402b6c | g_Projection.center_y_fixed
     LEA ESI,[EAX + ECX*0x1]             ; 00402b72
     SAR EDI,0x10                        ; 00402b75
     SAR ESI,0x10                        ; 00402b78

@@ -9,12 +9,11 @@
 void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00477bf0(CKeyFramedModel *this_ptr,int vertex_count,int poly_count,int texture_count,int part_count,int frame_count)
 
 {
-  float fVar1;
+  int iVar1;
   CVector3i *pCVar2;
   SMRGLPrimitiveQuad *pSVar3;
   int *piVar4;
-  CVector3f *pCVar5;
-  CVector3f *pCVar6;
+  CBoundingBox3D *pCVar5;
   
   core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(this_ptr);
   this_ptr->vertex_count = vertex_count;
@@ -41,20 +40,20 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00477bf0(CKeyFramedMod
   this_ptr->poly_vert_list = pSVar3;
   piVar4 = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                      (this_ptr->poly_count << 2,"..\\core\\dmodel.cpp",0x2c7);
-  fVar1 = (float)this_ptr->frame_count;
+  iVar1 = this_ptr->frame_count;
   this_ptr->poly_texture_index_list = piVar4;
-  pCVar5 = (CVector3f *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
-                     ((int)fVar1 * 0x18 + 4,"..\\core\\dmodel.cpp",0x2c8);
-  pCVar6 = pCVar5;
-  if (pCVar5 != (CVector3f *)0x0) {
-    pCVar6 = (CVector3f *)&pCVar5->y;
-    pCVar5->x = fVar1;
+  piVar4 = (int *)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
+                     (iVar1 * 0x18 + 4,"..\\core\\dmodel.cpp",0x2c8);
+  pCVar5 = (CBoundingBox3D *)0x0;
+  if (piVar4 != (int *)0x0) {
+    pCVar5 = (CBoundingBox3D *)(piVar4 + 1);
+    *piVar4 = iVar1;
   }
-  this_ptr->frame_bounds = pCVar6;
+  this_ptr->frame_bounds = pCVar5;
   if ((((this_ptr->vertex_list == (CVector3i *)0x0) ||
        ((0 < this_ptr->poly_count && (this_ptr->poly_vert_list == (SMRGLPrimitiveQuad *)0x0)))) ||
       ((0 < this_ptr->poly_count && (this_ptr->poly_texture_index_list == (int *)0x0)))) ||
-     (this_ptr->frame_bounds == (CVector3f *)0x0)) {
+     (this_ptr->frame_bounds == (CBoundingBox3D *)0x0)) {
     core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(this_ptr);
     g_CurrentLineNumber = 0x2d3;
     g_CurrentFilename = "..\\core\\dmodel.cpp";

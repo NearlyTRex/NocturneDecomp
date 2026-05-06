@@ -93,13 +93,13 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
               this_ptr->lights[local_14].visible_flags[local_20] = (char)iVar1;
               core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090
                         (&g_CDemonCameraInstance,light_source,&local_5c);
-              this_ptr->lights[local_14].camera_light_bounds[local_20].left = local_5c.left;
-              this_ptr->lights[local_14].camera_light_bounds[local_20].top = local_5c.top;
-              this_ptr->lights[local_14].camera_light_bounds[local_20].right = local_5c.right;
-              this_ptr->lights[local_14].camera_light_bounds[local_20].bottom = local_5c.bottom;
+              this_ptr->lights[local_14].camera_light_bounds[local_20].x_min = local_5c.x_min;
+              this_ptr->lights[local_14].camera_light_bounds[local_20].x_max = local_5c.x_max;
+              this_ptr->lights[local_14].camera_light_bounds[local_20].y_min = local_5c.y_min;
+              this_ptr->lights[local_14].camera_light_bounds[local_20].y_max = local_5c.y_max;
               if (this_ptr->lights[local_14].visible_flags[local_20] != '\0') {
                 _sprintf(local_174,"Light %d, Box : %d,%d,%d,%d",local_14,
-                         local_5c.left,local_5c.top,local_5c.right,local_5c.bottom);
+                         local_5c.x_min,local_5c.x_max,local_5c.y_min,local_5c.y_max);
                 engine_2d_c_drawText_FUN_00401fd0(local_174,0,local_1c);
                 local_1c = local_1c + 0xb;
               }
@@ -110,10 +110,10 @@ void __cdecl core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemo
             iVar1 = core_setutil_cpp_C3DSLight_isVisible_FUN_00587df0(this_ptr->lights + local_14);
             this_ptr->lights[local_14].visible_flags[local_20] = (char)iVar1;
             core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
-            this_ptr->lights[local_14].camera_light_bounds[local_20].left = 0;
-            this_ptr->lights[local_14].camera_light_bounds[local_20].top = 0;
-            this_ptr->lights[local_14].camera_light_bounds[local_20].right = 0;
-            this_ptr->lights[local_14].camera_light_bounds[local_20].bottom = 0;
+            this_ptr->lights[local_14].camera_light_bounds[local_20].x_min = 0;
+            this_ptr->lights[local_14].camera_light_bounds[local_20].x_max = 0;
+            this_ptr->lights[local_14].camera_light_bounds[local_20].y_min = 0;
+            this_ptr->lights[local_14].camera_light_bounds[local_20].y_max = 0;
           }
           else {
             this_ptr->lights[local_14].visible_flags[local_20] = '\0';

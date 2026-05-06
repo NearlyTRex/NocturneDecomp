@@ -99,10 +99,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemonCa
     local_80 = 0;
   }
   else {
-    local_80 = rect->left;
-    local_7c = rect->top;
-    local_78 = (void *)rect->right;
-    local_74 = rect->bottom;
+    local_80 = rect->x_min;
+    local_7c = rect->x_max;
+    local_78 = (void *)rect->y_min;
+    local_74 = rect->y_max;
     iVar8 = 0;
     pCVar3 = light_source;
     if (0 < (int)local_78) {

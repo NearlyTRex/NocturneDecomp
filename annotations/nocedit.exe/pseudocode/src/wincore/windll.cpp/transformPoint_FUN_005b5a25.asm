@@ -27,10 +27,10 @@
 ;   int g_TempTransformedX = 0x0
 ;   int g_TempTransformedY = 0x0
 ;   int g_TempTransformedZ = 0x0
-;   int g_ViewportCenterXFixed
-;   int g_ViewportCenterYFixed
-;   int g_ViewportRightFixed
-;   int g_ViewportBottomFixed
+;   SProjectionParams g_Projection
+;   undefined4 g_Projection.neg_half_height_fixed
+;   undefined4 g_Projection.center_x_fixed
+;   undefined4 g_Projection.center_y_fixed
 ;   int g_MMXSupported
 ;   int g_CameraOriginX
 ;   int g_CameraOriginY
@@ -140,14 +140,14 @@ section .text
     IDIV ECX                            ; 005b5b3d
     MOV dword ptr [EBX + 0xc],EAX       ; 005b5b3f
     MOVD EAX,MM4                        ; 005b5b42
-    IMUL dword ptr [0x02d02548]         ; 005b5b45 | g_ViewportCenterXFixed
+    IMUL dword ptr [0x02d02548]         ; 005b5b45 | g_Projection
     IDIV ECX                            ; 005b5b4b
-    ADD EAX,dword ptr [0x02d02550]      ; 005b5b4d | g_ViewportRightFixed
+    ADD EAX,dword ptr [0x02d02550]      ; 005b5b4d | g_Projection.center_x_fixed
     MOV dword ptr [EBX + 0x10],EAX      ; 005b5b53
     MOVD EAX,MM5                        ; 005b5b56
-    IMUL dword ptr [0x02d0254c]         ; 005b5b59 | g_ViewportCenterYFixed
+    IMUL dword ptr [0x02d0254c]         ; 005b5b59 | g_Projection.neg_half_height_fixed
     IDIV ECX                            ; 005b5b5f
-    ADD EAX,dword ptr [0x02d02554]      ; 005b5b61 | g_ViewportBottomFixed
+    ADD EAX,dword ptr [0x02d02554]      ; 005b5b61 | g_Projection.center_y_fixed
     MOV dword ptr [EBX + 0x14],EAX      ; 005b5b67
     EMMS                                ; 005b5b6a
     RET                                 ; 005b5b6c
@@ -253,14 +253,14 @@ section .text
     IDIV ECX                            ; 005b5ca6
     MOV dword ptr [EDI + 0xc],EAX       ; 005b5ca8
     MOV EAX,[0x00682678]                ; 005b5cab | g_TempTransformedX
-    IMUL dword ptr [0x02d02548]         ; 005b5cb0 | g_ViewportCenterXFixed
+    IMUL dword ptr [0x02d02548]         ; 005b5cb0 | g_Projection
     IDIV ECX                            ; 005b5cb6
-    ADD EAX,dword ptr [0x02d02550]      ; 005b5cb8 | g_ViewportRightFixed
+    ADD EAX,dword ptr [0x02d02550]      ; 005b5cb8 | g_Projection.center_x_fixed
     MOV dword ptr [EDI + 0x10],EAX      ; 005b5cbe
     MOV EAX,[0x0068267c]                ; 005b5cc1 | g_TempTransformedY
-    IMUL dword ptr [0x02d0254c]         ; 005b5cc6 | g_ViewportCenterYFixed
+    IMUL dword ptr [0x02d0254c]         ; 005b5cc6 | g_Projection.neg_half_height_fixed
     IDIV ECX                            ; 005b5ccc
-    ADD EAX,dword ptr [0x02d02554]      ; 005b5cce | g_ViewportBottomFixed
+    ADD EAX,dword ptr [0x02d02554]      ; 005b5cce | g_Projection.center_y_fixed
     MOV dword ptr [EDI + 0x14],EAX      ; 005b5cd4
     POP EDI                             ; 005b5cd7
     POP ESI                             ; 005b5cd8

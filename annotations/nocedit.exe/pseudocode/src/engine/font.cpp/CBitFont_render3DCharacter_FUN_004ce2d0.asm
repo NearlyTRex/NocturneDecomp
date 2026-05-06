@@ -169,8 +169,8 @@ section .text
         ;   XREF to: 004ce783 (CONDITIONAL_JUMP)  ; LAB_004ce783
     MOV EAX,dword ptr [ESP + 0x34]      ; 004ce475
         ;   Label: LAB_004ce475
-    MOV EDX,dword ptr [0x02d02550]      ; 004ce479 | g_ViewportRightFixed
-    MOV EBX,dword ptr [0x02d02548]      ; 004ce47f | g_ViewportCenterXFixed
+    MOV EDX,dword ptr [0x02d02550]      ; 004ce479 | g_Projection.center_x_fixed
+    MOV EBX,dword ptr [0x02d02548]      ; 004ce47f | g_Projection
     SUB EAX,EDX                         ; 004ce485
     MOV EDX,0x10000                     ; 004ce487
     IMUL EDX                            ; 004ce48c
@@ -179,19 +179,19 @@ section .text
     LEA ECX,[EDX*0x4 + 0x0]             ; 004ce494
     SUB ECX,EDX                         ; 004ce49b
     SHL ECX,0x4                         ; 004ce49d
-    MOV EDX,dword ptr [0x02d02554]      ; 004ce4a0 | g_ViewportBottomFixed
+    MOV EDX,dword ptr [0x02d02554]      ; 004ce4a0 | g_Projection.center_y_fixed
     MOV dword ptr [ECX + 0x688014],EAX  ; 004ce4a6 | g_RenderVertexBuffer[19996].projected_vertex.transformed_x
     MOV EAX,dword ptr [ESP + 0x30]      ; 004ce4ac
-    MOV EBX,dword ptr [0x02d0254c]      ; 004ce4b0 | g_ViewportCenterYFixed
+    MOV EBX,dword ptr [0x02d0254c]      ; 004ce4b0 | g_Projection.neg_half_height_fixed
     SUB EAX,EDX                         ; 004ce4b6
     MOV EDX,0x10000                     ; 004ce4b8
     IMUL EDX                            ; 004ce4bd
     IDIV EBX                            ; 004ce4bf
     MOV EDX,0x10000                     ; 004ce4c1
     MOV dword ptr [ECX + 0x688018],EAX  ; 004ce4c6 | g_RenderVertexBuffer[19996].projected_vertex.transformed_y
-    MOV ECX,dword ptr [0x02d02550]      ; 004ce4cc | g_ViewportRightFixed
+    MOV ECX,dword ptr [0x02d02550]      ; 004ce4cc | g_Projection.center_x_fixed
     MOV EAX,ESI                         ; 004ce4d2
-    MOV EBX,dword ptr [0x02d02548]      ; 004ce4d4 | g_ViewportCenterXFixed
+    MOV EBX,dword ptr [0x02d02548]      ; 004ce4d4 | g_Projection
     SUB EAX,ECX                         ; 004ce4da
     IMUL EDX                            ; 004ce4dc
     IDIV EBX                            ; 004ce4de
@@ -202,27 +202,27 @@ section .text
     SHL ECX,0x4                         ; 004ce4ef
     MOV EAX,dword ptr [ESP + 0x30]      ; 004ce4f2
     MOV dword ptr [ECX + 0x688014],EDX  ; 004ce4f6 | g_RenderVertexBuffer[19997].projected_vertex.transformed_x
-    MOV EDX,dword ptr [0x02d02554]      ; 004ce4fc | g_ViewportBottomFixed
-    MOV EBX,dword ptr [0x02d0254c]      ; 004ce502 | g_ViewportCenterYFixed
+    MOV EDX,dword ptr [0x02d02554]      ; 004ce4fc | g_Projection.center_y_fixed
+    MOV EBX,dword ptr [0x02d0254c]      ; 004ce502 | g_Projection.neg_half_height_fixed
     SUB EAX,EDX                         ; 004ce508
     MOV EDX,0x10000                     ; 004ce50a
     IMUL EDX                            ; 004ce50f
     IDIV EBX                            ; 004ce511
     MOV dword ptr [ECX + 0x688018],EAX  ; 004ce513 | g_RenderVertexBuffer[19997].projected_vertex.transformed_y
-    MOV ECX,dword ptr [0x02d02550]      ; 004ce519 | g_ViewportRightFixed
+    MOV ECX,dword ptr [0x02d02550]      ; 004ce519 | g_Projection.center_x_fixed
     MOV EAX,ESI                         ; 004ce51f
     MOV EDX,0x10000                     ; 004ce521
     SUB EAX,ECX                         ; 004ce526
     LEA ECX,[EBP*0x4 + 0x0]             ; 004ce528
-    MOV EBX,dword ptr [0x02d02548]      ; 004ce52f | g_ViewportCenterXFixed
+    MOV EBX,dword ptr [0x02d02548]      ; 004ce52f | g_Projection
     SUB ECX,EBP                         ; 004ce535
     IMUL EDX                            ; 004ce537
     IDIV EBX                            ; 004ce539
     SHL ECX,0x4                         ; 004ce53b
-    MOV EDX,dword ptr [0x02d02554]      ; 004ce53e | g_ViewportBottomFixed
+    MOV EDX,dword ptr [0x02d02554]      ; 004ce53e | g_Projection.center_y_fixed
     MOV dword ptr [ECX + 0x688014],EAX  ; 004ce544 | g_RenderVertexBuffer[19998].projected_vertex.transformed_x
     MOV EAX,EDI                         ; 004ce54a
-    MOV EBX,dword ptr [0x02d0254c]      ; 004ce54c | g_ViewportCenterYFixed
+    MOV EBX,dword ptr [0x02d0254c]      ; 004ce54c | g_Projection.neg_half_height_fixed
     SUB EAX,EDX                         ; 004ce552
     MOV EDX,0x10000                     ; 004ce554
     IMUL EDX                            ; 004ce559
@@ -230,8 +230,8 @@ section .text
     MOV EDX,0x10000                     ; 004ce55d
     MOV dword ptr [ECX + 0x688018],EAX  ; 004ce562 | g_RenderVertexBuffer[19998].projected_vertex.transformed_y
     MOV EAX,dword ptr [ESP + 0x34]      ; 004ce568
-    MOV ECX,dword ptr [0x02d02550]      ; 004ce56c | g_ViewportRightFixed
-    MOV EBX,dword ptr [0x02d02548]      ; 004ce572 | g_ViewportCenterXFixed
+    MOV ECX,dword ptr [0x02d02550]      ; 004ce56c | g_Projection.center_x_fixed
+    MOV EBX,dword ptr [0x02d02548]      ; 004ce572 | g_Projection
     SUB EAX,ECX                         ; 004ce578
     IMUL EDX                            ; 004ce57a
     IDIV EBX                            ; 004ce57c
@@ -240,9 +240,9 @@ section .text
     SUB ECX,EDX                         ; 004ce589
     SHL ECX,0x4                         ; 004ce58b
     MOV dword ptr [ECX + 0x688014],EAX  ; 004ce58e | g_RenderVertexBuffer[19999].projected_vertex.transformed_x
-    MOV EDX,dword ptr [0x02d02554]      ; 004ce594 | g_ViewportBottomFixed
+    MOV EDX,dword ptr [0x02d02554]      ; 004ce594 | g_Projection.center_y_fixed
     MOV EAX,EDI                         ; 004ce59a
-    MOV EBX,dword ptr [0x02d0254c]      ; 004ce59c | g_ViewportCenterYFixed
+    MOV EBX,dword ptr [0x02d0254c]      ; 004ce59c | g_Projection.neg_half_height_fixed
     SUB EAX,EDX                         ; 004ce5a2
     MOV EDX,0x10000                     ; 004ce5a4
     IMUL EDX                            ; 004ce5a9

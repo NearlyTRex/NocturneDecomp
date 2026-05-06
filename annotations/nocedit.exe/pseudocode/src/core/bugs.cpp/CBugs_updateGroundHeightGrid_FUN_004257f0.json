@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 257,
-    "complexity_score": 192,
+    "complexity_score": 207,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 112,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
+      "shadow_pointer_walk",
       "unrolled_memcpy",
       "warning_inlined_function",
       "warning_type_propagation"
@@ -376,6 +377,14 @@
       "severity": "moderate",
       "text": "for (iVar8 = 0; iVar8 != 0; iVar8 = iVar8 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_28` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `local_28->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 110,
+      "match": "local_28 = (T *)&(local_28->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "local_28 = (CBugs *)&(local_28->base).base.base.orient;",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",

@@ -23,13 +23,13 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_004a1230(CE
   iVar2 = g_ActiveRenderColor;
   iVar1 = g_ClipTop;
   iVar5 = g_WindowStackCount + -1;
-  g_ClipTop = g_WindowStack[iVar5].top;
+  g_ClipTop = g_WindowStack[iVar5].rect.top;
   iVar3 = g_WindowHeight / 0x60;
   iVar4 = shape_edittool_cpp_calculateButtonHeight_FUN_004a6970((char *)0x0);
-  iVar3 = g_WindowStack[iVar5].bottom - ((line_position + 1) * iVar3 + line_position * iVar4);
+  iVar3 = g_WindowStack[iVar5].rect.bottom - ((line_position + 1) * iVar3 + line_position * iVar4);
   g_ActiveRenderColor = g_WindowBorderHighlightColor;
   engine_2d_c_drawHLine_FUN_00402ee0
-            (g_WindowStack[iVar5].left + 1,iVar3,g_WindowStack[iVar5].right + -2);
+            (g_WindowStack[iVar5].rect.left + 1,iVar3,g_WindowStack[iVar5].rect.right + -2);
   if (g_WindowBorderHighlightColor == g_WindowBorderShadowColor) {
     g_ActiveRenderColor = iVar2;
     g_ClipTop = iVar1;
@@ -37,7 +37,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_004a1230(CE
   }
   g_ActiveRenderColor = g_WindowBorderShadowColor;
   engine_2d_c_drawHLine_FUN_00402ee0
-            (g_WindowStack[iVar5].left + 1,iVar3 + -1,g_WindowStack[iVar5].right + -2);
+            (g_WindowStack[iVar5].rect.left + 1,iVar3 + -1,g_WindowStack[iVar5].rect.right + -2);
   g_ActiveRenderColor = iVar2;
   g_ClipTop = iVar1;
   return;

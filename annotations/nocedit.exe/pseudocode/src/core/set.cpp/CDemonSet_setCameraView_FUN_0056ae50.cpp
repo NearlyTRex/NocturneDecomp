@@ -182,10 +182,10 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
            (iVar12 = iVar5 + 1, pCVar7->lights[0].visible_flags[index] != '\0')) {
           g_SpotLightList[g_SpotLightCount] = g_MasterLightList[iVar5];
           pCVar3 = pCVar7->lights[0].camera_light_bounds + index;
-          g_SpotLightBounds[iVar1].left = pCVar3->left;
-          g_SpotLightBounds[iVar1].top = pCVar3->top;
-          g_SpotLightBounds[iVar1].right = pCVar3->right;
-          g_SpotLightBounds[iVar1].bottom = pCVar3->bottom;
+          g_SpotLightBounds[iVar1].x_min = pCVar3->x_min;
+          g_SpotLightBounds[iVar1].x_max = pCVar3->x_max;
+          g_SpotLightBounds[iVar1].y_min = pCVar3->y_min;
+          g_SpotLightBounds[iVar1].y_max = pCVar3->y_max;
           g_SpotLightCount = g_SpotLightCount + 1;
         }
         iVar7 = iVar7 + 1;

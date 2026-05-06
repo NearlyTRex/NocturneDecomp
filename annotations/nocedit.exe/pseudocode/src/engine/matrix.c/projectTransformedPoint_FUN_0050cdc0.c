@@ -16,7 +16,7 @@ void __cdecl engine_matrix_c_projectTransformedPoint_FUN_0050cdc0(SProjectedVert
   int iVar5;
   byte bVar6;
   
-  iVar4 = g_ViewportCenterXFixed;
+  iVar4 = g_Projection.half_width_fixed;
   iVar1 = point->transformed_y;
   iVar2 = point->transformed_z;
   iVar3 = point->transformed_x;
@@ -39,10 +39,10 @@ void __cdecl engine_matrix_c_projectTransformedPoint_FUN_0050cdc0(SProjectedVert
     return;
   }
   point->inv_z = (int)(0x7fffffff / (longlong)iVar2);
-  iVar5 = g_ViewportCenterYFixed;
+  iVar5 = g_Projection.neg_half_height_fixed;
   point->screen_x =
-       (int)(((longlong)iVar3 * (longlong)iVar4) / (longlong)iVar2) + g_ViewportRightFixed;
+       (int)(((longlong)iVar3 * (longlong)iVar4) / (longlong)iVar2) + g_Projection.center_x_fixed;
   point->screen_y =
-       (int)(((longlong)iVar1 * (longlong)iVar5) / (longlong)iVar2) + g_ViewportBottomFixed;
+       (int)(((longlong)iVar1 * (longlong)iVar5) / (longlong)iVar2) + g_Projection.center_y_fixed;
   return;
 }

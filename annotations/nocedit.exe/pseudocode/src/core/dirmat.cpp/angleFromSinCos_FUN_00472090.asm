@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float __cdecl core_dirmat_cpp_atan2Custom_FUN_00472090(double y,double x)
+; float __cdecl core_dirmat_cpp_angleFromSinCos_FUN_00472090(double y,double x)
 ;
 ; Parameters:
 ; double           Stack[0x4]:8   y
@@ -27,7 +27,7 @@
 section .text
 
     PUSH EBP                            ; 00472090
-        ;   Label: core_dirmat.cpp_atan2Custom_FUN_00472090
+        ;   Label: core_dirmat.cpp_angleFromSinCos_FUN_00472090
     MOV EBP,ESP                         ; 00472091
     SUB ESP,0x4                         ; 00472093
     AND ESP,0xfffffff8                  ; 00472096

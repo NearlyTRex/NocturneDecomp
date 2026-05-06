@@ -31,10 +31,10 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(CKeyFramedModel *
   g_CurrentDebugFilename = "..\\core\\dmodel.cpp";
   g_CurrentDebugLine = 0x1b4;
   this_ptr->env_map_opac_list = (uchar *)0x0;
-  if (this_ptr->frame_bounds != (CVector3f *)0x0) {
-    shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->frame_bounds[-1].z);
+  if (this_ptr->frame_bounds != (CBoundingBox3D *)0x0) {
+    shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->frame_bounds[-1].max.z);
   }
-  this_ptr->frame_bounds = (CVector3f *)0x0;
+  this_ptr->frame_bounds = (CBoundingBox3D *)0x0;
   g_CurrentDebugFilename = "..\\core\\dmodel.cpp";
   g_CurrentDebugLine = 0x1b7;
   if (this_ptr->collision_triangle_list != (CDemonTriangle *)0x0) {

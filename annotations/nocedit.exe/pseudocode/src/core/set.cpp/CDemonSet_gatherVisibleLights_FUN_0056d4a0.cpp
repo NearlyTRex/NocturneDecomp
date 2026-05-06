@@ -108,7 +108,7 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0(CDemonSet *t
     if (0 < g_DynamicLightCount) {
       iVar9 = 0;
       do {
-        if (((*(CDemonCamera **)((int)g_DynamicLights + iVar9))[1].rect_array[0x61].right != 0) &&
+        if (((*(CDemonCamera **)((int)g_DynamicLights + iVar9))[1].rect_array[0x61].y_min != 0) &&
            (iVar7 = core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
                               (*(CDemonCamera **)((int)g_DynamicLights + iVar9),position,orientation
                                ,aabb_min,aabb_max), iVar7 != 0)) {
@@ -125,7 +125,7 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0(CDemonSet *t
     if (0 < g_SpotLightCount) {
       iVar7 = 0;
       do {
-        if (((*(CDemonCamera **)((int)g_SpotLightList + iVar7))[1].rect_array[0x61].right != 0) &&
+        if (((*(CDemonCamera **)((int)g_SpotLightList + iVar7))[1].rect_array[0x61].y_min != 0) &&
            (iVar11 = core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180
                                (*(CDemonCamera **)((int)g_SpotLightList + iVar7),position,
                                 orientation,aabb_min,aabb_max), iVar11 != 0)) {

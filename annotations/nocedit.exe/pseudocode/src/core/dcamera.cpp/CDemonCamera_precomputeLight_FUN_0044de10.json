@@ -290,6 +290,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 103,
+      "match": "pCVar3 = (T *)&(pCVar3->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar3 = (CDemonLight *)&(pCVar3->base).base.position;",
+      "type": "shadow_pointer_walk"
+    },
+    {
       "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar3` (struct-field advance + constant `[0]` index + self-assign no-op). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep.",
       "line": 102,
       "match": "do { var = (T *)&var->...; var->arr[0]...; var = var; ...}",

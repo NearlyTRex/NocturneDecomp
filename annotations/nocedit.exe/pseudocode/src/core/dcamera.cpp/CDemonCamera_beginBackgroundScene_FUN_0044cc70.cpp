@@ -61,10 +61,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_0044cc70(CDe
               (g_CDemonRendererPtr2,0,0,this_ptr->framebuffer_width + -1,
                this_ptr->framebuffer_height + -1);
     this_ptr_00 = g_CDemonRendererPtr2;
-    (this_ptr->saved_viewport_rect).left = g_ViewportCenterXFixed;
-    (this_ptr->saved_viewport_rect).top = g_ViewportCenterYFixed;
-    (this_ptr->saved_viewport_rect).right = g_ViewportRightFixed;
-    (this_ptr->saved_viewport_rect).bottom = g_ViewportBottomFixed;
+    (this_ptr->cached_projection).half_width_fixed = g_Projection.half_width_fixed;
+    (this_ptr->cached_projection).neg_half_height_fixed = g_Projection.neg_half_height_fixed;
+    (this_ptr->cached_projection).center_x_fixed = g_Projection.center_x_fixed;
+    (this_ptr->cached_projection).center_y_fixed = g_Projection.center_y_fixed;
     engine_drender_cpp_CDemonRenderer_getCameraAndViewportState_FUN_0048de20
               (this_ptr_00,&g_BackgroundSavedCameraState);
   }

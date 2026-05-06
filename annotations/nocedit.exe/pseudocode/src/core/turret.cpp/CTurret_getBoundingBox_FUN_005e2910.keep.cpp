@@ -29,13 +29,7 @@ CBoundingBox3D * __cdecl core_turret_cpp_CTurret_getBoundingBox_FUN_005e2910(CTu
   fVar1 = core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(this_ptr,0);
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&(this_ptr->base).model)
   ;
-  pCVar4 = pCVar2->frame_bounds + (int)ROUND(ROUND(fVar1)) * 2;
-  (out_box->min).x = pCVar4->x;
-  (out_box->min).y = pCVar4->y;
-  (out_box->min).z = pCVar4->z;
-  (out_box->max).x = pCVar4[1].x;
-  (out_box->max).y = pCVar4[1].y;
-  (out_box->max).z = pCVar4[1].z;
+  *out_box = pCVar2->frame_bounds[(int)ROUND(ROUND(fVar1))];
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   if (pCVar1->poly_count < 1) {
     return out_box;
@@ -47,13 +41,7 @@ CBoundingBox3D * __cdecl core_turret_cpp_CTurret_getBoundingBox_FUN_005e2910(CTu
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_70,&local_100,&local_a0);
   fVar2 = core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(this_ptr,1);
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
-  pCVar4 = pCVar1->frame_bounds + (int)ROUND(ROUND(fVar2)) * 2;
-  local_40.min.x = pCVar4->x;
-  local_40.min.y = pCVar4->y;
-  local_40.min.z = pCVar4->z;
-  local_40.max.x = pCVar4[1].x;
-  local_40.max.y = pCVar4[1].y;
-  local_40.max.z = pCVar4[1].z;
+  local_40 = pCVar1->frame_bounds[(int)ROUND(ROUND(fVar2))];
   corner_index = 0;
   do {
     matrix = &local_d0;

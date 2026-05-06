@@ -17,7 +17,7 @@ void __cdecl core_fire_cpp_CRock_render_FUN_004c1870(CRock *this_ptr)
             (g_CDemonRendererPtr2,(CVector3f *)this_ptr);
   engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
             (g_CDemonRendererPtr2,&this_ptr->rotation,(CVector3i *)0x0);
-  pCVar1 = this_ptr->model_ptr->frame_bounds;
+  pCVar1 = &this_ptr->model_ptr->frame_bounds->min;
   local_20.min.x = pCVar1->x;
   local_20.min.y = pCVar1->y;
   local_20.min.z = pCVar1->z;

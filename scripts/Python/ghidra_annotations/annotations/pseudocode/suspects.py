@@ -87,6 +87,8 @@ SUSPECT_SEVERITY = {
     'bitcast_double_pair': 'moderate',
     'self_copy_guard': 'moderate',
     'shadow_pointer_walk': 'moderate',
+    'memcpy_oversized_source': 'moderate',
+    'dropped_loop_counter': 'moderate',
 }
 
 
@@ -1232,6 +1234,211 @@ def identify_unrolled_memcpy_loops(decompiled_code):
     return suspects
 
 
+# Variant of `_UNROLLED_MEMCPY_FOR_RE` that also captures the literal
+# iteration count from the for-init. Only used by
+# `identify_memcpy_oversized_source` — the regular unrolled-memcpy detector
+# accepts non-literal init expressions, but here we need a concrete number to
+# compare against the source array's declared size.
+_COUNTDOWN_INIT_LITERAL_RE = re.compile(
+    r"^\s*for\s*\(\s*(\w+)\s*=\s*(\d+|0x[0-9a-fA-F]+)\s*;\s*\1\s*!=\s*0(?:\.0+)?f?\s*;\s*"
+    r"\1\s*=\s*[^;]*?\b\1\b\s*(?:\+\s*-?1|-\s*1)[^;]*?\)\s*\{?\s*$")
+# `*DST = *SRC;` body line — captures the source pointer. Allows optional
+# typed casts on either side (`*(uint *)dst = *(uint *)src;`).
+_DEREF_STORE_SRC_RE = re.compile(
+    r"^\s*\*\s*(?:\(\s*\w+(?:\s+\w+)*\s*\*+\s*\)\s*)?\w+\s*=\s*"
+    r"\*\s*(?:\(\s*\w+(?:\s+\w+)*\s*\*+\s*\)\s*)?(\w+)\s*;\s*$")
+# `ptr = NAME;` or `ptr = NAME + literal;` (with optional cast). Used to find
+# which array a memcpy source pointer was initialized from.
+_PTR_FROM_ARRAY_RE = re.compile(
+    r"^\s*(\w+)\s*=\s*(?:\(\s*\w+(?:\s+\w+)*\s*\*+\s*\)\s*)?(\w+)"
+    r"(?:\s*\+\s*\d+)?\s*;\s*$")
+# Local array declaration with a literal element count: `T NAME[N];` or
+# `T *NAME[N];` (allows multi-word types like `unsigned int`). The size must
+# be a decimal literal — non-literal sizes can't be compared against the
+# loop's iteration count.
+#
+# The separator between type and name is `(?:\s+\**\s*|\s*\*+\s*)` so that
+# either at least one space or at least one `*` distinguishes them. Without
+# this, the greedy `\w+` for the type can backtrack and split a name like
+# `local_30` into `local_3` (consumed as type) and `0` (captured as name).
+# The captured name is anchored to start with a letter or underscore so it
+# can never be a digit-prefix slice of the previous identifier.
+_LOCAL_ARRAY_DECL_RE = re.compile(
+    r"^\s*\w+(?:\s+\w+)*(?:\s+\**\s*|\s*\*+\s*)([A-Za-z_]\w*)"
+    r"\s*\[\s*(\d+)\s*\]\s*;\s*$")
+
+
+def identify_memcpy_oversized_source(decompiled_code):
+    """Detect Watcom unrolled-memcpy loops that read more elements than the
+    source local array's declared size.
+
+    Two real bugs are common in this shape:
+      1. Ghidra dropped some explicit `NAME[k] = expr;` stores before the
+         copy loop, leaving uninit indices that get read into the dest.
+      2. Watcom emitted a slightly off-by-one REP MOVSD count, copying one
+         extra dword past the end of the scratch buffer.
+
+    Either way, when the loop iteration count exceeds the source array's
+    declared `[N]`, the cpp reads uninitialized memory. Under ASan this trips
+    `stack-buffer-overflow` (or `use-of-uninitialized-value` for cases where
+    the buffer happens to live in zeroed memory).
+
+    Fingerprint:
+      - Countdown for-loop with a literal init count `M`.
+      - Body has a Watcom unrolled-memcpy signal (direction idiom OR
+        typed `*ptr = *src; ptr = ptr + 1;` pair).
+      - The source pointer was assigned from a local array `T NAME[N];`
+        somewhere earlier in the function.
+      - `M > N`.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts, one per matching loop.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    lines = decompiled_code.split('\n')
+    n = len(lines)
+    for i in range(n - 2):
+        m = _COUNTDOWN_INIT_LITERAL_RE.match(lines[i])
+        if not m:
+            continue
+        count_str = m.group(2)
+        iter_count = (int(count_str, 16) if count_str.startswith('0x')
+                      else int(count_str))
+        if iter_count <= 1:
+            continue
+
+        # Walk body for the unrolled-memcpy signature and capture the source
+        # pointer name from the first `*dst = *src;` deref-store.
+        src_ptr = None
+        has_signal = False
+        close_line = None
+        for fwd in range(1, 8):
+            if i + fwd >= n:
+                break
+            body = lines[i + fwd]
+            if _UNROLLED_MEMCPY_DIR_RE.search(body):
+                has_signal = True
+            if (_UNROLLED_MEMCPY_TYPED_STORE_RE.match(body) and
+                    i + fwd + 1 < n and
+                    _UNROLLED_MEMCPY_TYPED_INC_RE.match(lines[i + fwd + 1])):
+                has_signal = True
+            sm = _DEREF_STORE_SRC_RE.match(body)
+            if sm and src_ptr is None:
+                src_ptr = sm.group(1)
+            if body.strip().startswith('}'):
+                close_line = i + fwd
+                break
+        if not (has_signal and src_ptr and close_line):
+            continue
+
+        # Walk back from the loop header to find `src_ptr = ARRAY_NAME[+N];`.
+        src_array = None
+        for back in range(1, 30):
+            idx = i - back
+            if idx < 0:
+                break
+            pm = _PTR_FROM_ARRAY_RE.match(lines[idx])
+            if pm and pm.group(1) == src_ptr:
+                src_array = pm.group(2)
+                break
+        if not src_array:
+            continue
+
+        # Walk back further to find `T ARRAY_NAME[N];`. Declarations cluster
+        # at the function top; a 200-line lookback covers any realistic body.
+        decl_size = None
+        for back2 in range(1, 200):
+            idx = i - back2
+            if idx < 0:
+                break
+            dm = _LOCAL_ARRAY_DECL_RE.match(lines[idx])
+            if dm and dm.group(1) == src_array:
+                decl_size = int(dm.group(2))
+                break
+        if decl_size is None or iter_count <= decl_size:
+            continue
+
+        suspects.append({
+            'line': i + 1,
+            'type': 'memcpy_oversized_source',
+            'match': lines[i].strip()[:80],
+            'text': lines[i].strip()[:120],
+            'description': (
+                'Unrolled-memcpy loop reads {n} elements from local array '
+                '`{name}[{size}]` (declared size {size}) — overruns by {ov}. '
+                'Likely Ghidra dropped explicit `{name}[k] = ...` stores '
+                'before the copy, OR the asm has an off-by-one REP MOVSD '
+                'count. Fix in a .keep by restoring all stores and using a '
+                'properly-sized memcpy or struct assignment.'.format(
+                    n=iter_count, name=src_array, size=decl_size,
+                    ov=iter_count - decl_size)),
+            'severity': 'moderate',
+        })
+    return suspects
+
+
+# Co-occurrence of `WARNING: Removing unreachable block` + a
+# `do { ... } while (true);` in the same function. Each in isolation is mild,
+# but together they're a strong fingerprint for Ghidra dropping a loop
+# counter:
+#   - The asm has `INC counter; CMP counter, BOUND; JL loop` at the bottom of
+#     the loop, plus uses the counter as a multiplier inside the body.
+#   - Ghidra folds the counter as constant 0 (often because of an early
+#     `XOR counter_reg, counter_reg`), drops the bounds check, emits the body
+#     under `while (true)`, then prunes the post-loop tail as unreachable.
+#
+# Both symptoms appear in the .cpp output simultaneously. Functions hit by
+# this pattern are runtime-broken — they either infinite-loop on first call,
+# or skip post-loop cleanup that callers depend on. Always worth a .keep that
+# restores the counter (init / multiplier / bounds check) and the post-loop
+# tail (visible in the asm past the JL backedge).
+_INFINITE_DOWHILE_RE = re.compile(r"^\s*\}\s*while\s*\(\s*true\s*\)\s*;\s*$")
+_REMOVING_UNREACHABLE_RE = re.compile(r"WARNING:\s*Removing unreachable block")
+
+
+def identify_dropped_loop_counter(decompiled_code):
+    """Detect Ghidra-dropped loop counter via warning + while(true) co-occurrence.
+
+    Args:
+        decompiled_code: The decompiled C pseudocode string.
+
+    Returns:
+        List of suspect dicts. At most one per function, anchored to the
+        `while (true)` line so the fix site is obvious.
+    """
+    suspects = []
+    if not decompiled_code:
+        return suspects
+    if not _REMOVING_UNREACHABLE_RE.search(decompiled_code):
+        return suspects
+    lines = decompiled_code.split('\n')
+    for i, line in enumerate(lines):
+        if _INFINITE_DOWHILE_RE.match(line):
+            suspects.append({
+                'line': i + 1,
+                'type': 'dropped_loop_counter',
+                'match': line.strip()[:80],
+                'text': line.strip()[:120],
+                'description': (
+                    '`do { ... } while (true);` co-occurs with a `WARNING: '
+                    'Removing unreachable block` in this function — strong '
+                    'fingerprint for Ghidra dropping a loop counter (asm has '
+                    '`INC counter; CMP counter, BOUND; JL loop` at the loop '
+                    'bottom plus a counter-as-multiplier in the body that '
+                    'Ghidra folded as constant 0). Function infinite-loops or '
+                    'skips post-loop tail at runtime. Restore the counter and '
+                    'the unreachable-pruned post-loop block in a .keep.'),
+                'severity': 'moderate',
+            })
+            break  # at most one suspect per function
+    return suspects
+
+
 # Field-by-field struct copy: a run of consecutive `dst.field = src.field;`
 # lines covering many struct fields. Watcom emits this when copying a struct
 # whose field count exceeds the threshold for a REP MOVSD lowering, or for
@@ -1710,11 +1917,14 @@ _SHADOW_PTR_WALK_RE = re.compile(
 # Watcom advances the pointer by the byte offset of a sibling field
 # whose offset happens to equal the array stride. Same antipattern as
 # above; just shaped as `&(p->A).B` rather than `(p->A).B[N] + CONST`.
+# The trailing `(?:\.\w+)+` allows chained subfield accesses like
+# `&(p->base).surface_normal.B;` where the offset target is reached via
+# a multi-level field path inside a nested struct.
 _SHADOW_PTR_WALK_ADDR_RE = re.compile(
     r'^\s*(\w+)\s*=\s*'                              # LHS identifier
     r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
     r'&\s*\(\s*\1\s*->\s*\w+\s*\)'                   # &( IDENT->FIELD )
-    r'\s*\.\s*\w+\s*;\s*$'                           # .SUBFIELD;
+    r'(?:\s*\.\s*\w+)+\s*;\s*$'                      # .SUBFIELD(.SUBFIELD)*;
 )
 # Array-decay variant: `IDENT = (T *)IDENT->ARRAY_FIELD;` — Watcom advances
 # the pointer by the byte offset of a sibling array field whose offset
@@ -2778,6 +2988,8 @@ def detect_content_suspects(code, func_globals=None, global_interval_map=None,
         code, func_calls))
     found.extend(identify_unrolled_strcpy_loops(code))
     found.extend(identify_unrolled_memcpy_loops(code))
+    found.extend(identify_memcpy_oversized_source(code))
+    found.extend(identify_dropped_loop_counter(code))
     found.extend(identify_unrolled_memcpy_dword_byte_split(code))
     found.extend(identify_unrolled_field_copy(code))
     found.extend(identify_cascade_constant_fill(code))

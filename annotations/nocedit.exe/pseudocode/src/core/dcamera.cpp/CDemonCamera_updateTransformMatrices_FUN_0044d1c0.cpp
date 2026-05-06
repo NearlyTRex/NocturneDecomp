@@ -29,10 +29,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0(
   (this_ptr->camera_origin).x = local_18.x;
   (this_ptr->camera_origin).y = local_18.y;
   (this_ptr->camera_origin).z = local_18.z;
-  (this_ptr->saved_viewport_rect).left = g_ViewportCenterXFixed;
-  (this_ptr->saved_viewport_rect).top = g_ViewportCenterYFixed;
-  (this_ptr->saved_viewport_rect).right = g_ViewportRightFixed;
-  (this_ptr->saved_viewport_rect).bottom = g_ViewportBottomFixed;
+  (this_ptr->cached_projection).half_width_fixed = g_Projection.half_width_fixed;
+  (this_ptr->cached_projection).neg_half_height_fixed = g_Projection.neg_half_height_fixed;
+  (this_ptr->cached_projection).center_x_fixed = g_Projection.center_x_fixed;
+  (this_ptr->cached_projection).center_y_fixed = g_Projection.center_y_fixed;
   core_dcamera_cpp_CDemonCamera_calculateInverseTransform_FUN_0044cf20(this_ptr);
   return;
 }

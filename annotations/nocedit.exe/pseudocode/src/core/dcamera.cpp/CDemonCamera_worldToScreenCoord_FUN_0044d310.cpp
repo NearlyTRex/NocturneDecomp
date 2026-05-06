@@ -16,13 +16,13 @@ CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToScreenCoord_FUN_00
   int iVar4;
   
   iVar1 = input_ptr->z;
-  iVar2 = (this_ptr->saved_viewport_rect).top;
+  iVar2 = (this_ptr->cached_projection).neg_half_height_fixed;
   iVar3 = input_ptr->z;
   iVar4 = input_ptr->y;
-  iVar5 = (this_ptr->saved_viewport_rect).bottom;
+  iVar5 = (this_ptr->cached_projection).center_y_fixed;
   output_ptr->x =
-       (int)(((longlong)(input_ptr->x - (this_ptr->saved_viewport_rect).right) * (longlong)iVar1) /
-            (longlong)(this_ptr->saved_viewport_rect).left);
+       (int)(((longlong)(input_ptr->x - (this_ptr->cached_projection).center_x_fixed) *
+             (longlong)iVar1) / (longlong)(this_ptr->cached_projection).half_width_fixed);
   output_ptr->y = (int)(((longlong)(iVar4 - iVar5) * (longlong)iVar3) / (longlong)iVar2);
   output_ptr->z = iVar1;
   return output_ptr;

@@ -7,6 +7,7 @@
 #include "types/classes/CEventList.h"
 #include "types/classes/CMatrix3x3i.h"
 #include "types/funcdefs/MainScanlineFunc.h"
+#include "types/structs/SProjectionParams.h"
 #include "types/structs/SRGBColorPalette.h"
 
 // =============================================================================
@@ -28,6 +29,9 @@ extern DWORD g_JoyButtons;
 
 // MainScanlineFunc*
 extern MainScanlineFunc* g_ScanlineRenderFunc;
+
+// SProjectionParams
+extern SProjectionParams g_Projection;
 
 // SRGBColorPalette*
 extern SRGBColorPalette* g_CurrentPalette;
@@ -70,10 +74,6 @@ extern char g_SourcePaletteData[768];
 extern int g_RedScaleFactor;
 extern int g_GreenScaleFactor;
 extern int g_BlueScaleFactor;
-extern int g_ViewportCenterXFixed;
-extern int g_ViewportCenterYFixed;
-extern int g_ViewportRightFixed;
-extern int g_ViewportBottomFixed;
 extern int g_ClipLeft;
 extern int g_ClipTop;
 extern int g_ClipRight;

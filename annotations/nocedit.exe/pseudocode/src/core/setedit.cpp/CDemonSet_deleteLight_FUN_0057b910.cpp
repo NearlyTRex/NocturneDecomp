@@ -70,10 +70,10 @@ void __cdecl core_setedit_cpp_CDemonSet_deleteLight_FUN_0057b910(CDemonSet *this
             pcVar11 = pcVar11 + 4;
           }
           *(ushort *)pcVar11 = *(ushort *)pcVar5;
-          local_c->camera_light_bounds[0].left = local_8->camera_light_bounds[0].left;
-          local_c->camera_light_bounds[0].top = local_8->camera_light_bounds[0].top;
-          local_c->camera_light_bounds[0].right = local_8->camera_light_bounds[0].right;
-          local_c->camera_light_bounds[0].bottom = local_8->camera_light_bounds[0].bottom;
+          local_c->camera_light_bounds[0].x_min = local_8->camera_light_bounds[0].x_min;
+          local_c->camera_light_bounds[0].x_max = local_8->camera_light_bounds[0].x_max;
+          local_c->camera_light_bounds[0].y_min = local_8->camera_light_bounds[0].y_min;
+          local_c->camera_light_bounds[0].y_max = local_8->camera_light_bounds[0].y_max;
           (local_c->color).r = (local_8->color).r;
           (local_c->color).g = (local_8->color).g;
           (local_c->color).b = (local_8->color).b;

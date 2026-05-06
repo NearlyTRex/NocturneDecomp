@@ -18,10 +18,10 @@
 ;   wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0 at 005ed246
 ;
 ; Referenced Globals:
-;   int g_ViewportCenterXFixed
-;   int g_ViewportCenterYFixed
-;   int g_ViewportRightFixed
-;   int g_ViewportBottomFixed
+;   SProjectionParams g_Projection
+;   undefined4 g_Projection.neg_half_height_fixed
+;   undefined4 g_Projection.center_x_fixed
+;   undefined4 g_Projection.center_y_fixed
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipRight
@@ -70,8 +70,8 @@ section .text
     INC ESI                             ; 00401864
     SHL EDX,0x10                        ; 00401865
     SHL ESI,0x10                        ; 00401868
-    MOV dword ptr [0x02d02548],EDX      ; 0040186b | g_ViewportCenterXFixed
-    MOV dword ptr [0x02d02550],ESI      ; 00401871 | g_ViewportRightFixed
+    MOV dword ptr [0x02d02548],EDX      ; 0040186b | g_Projection
+    MOV dword ptr [0x02d02550],ESI      ; 00401871 | g_Projection.center_x_fixed
     MOV ESI,dword ptr [ESP + 0x14]      ; 00401877
     MOV EDX,EAX                         ; 0040187b
     ADD EAX,ESI                         ; 0040187d
@@ -79,8 +79,8 @@ section .text
     INC EAX                             ; 00401881
     SHL EDX,0x10                        ; 00401882
     SHL EAX,0x10                        ; 00401885
-    MOV dword ptr [0x02d0254c],EDX      ; 00401888 | g_ViewportCenterYFixed
-    MOV [0x02d02554],EAX                ; 0040188e | g_ViewportBottomFixed
+    MOV dword ptr [0x02d0254c],EDX      ; 00401888 | g_Projection.neg_half_height_fixed
+    MOV [0x02d02554],EAX                ; 0040188e | g_Projection.center_y_fixed
     POP EDI                             ; 00401893
     POP ESI                             ; 00401894
     POP EBX                             ; 00401895

@@ -10,27 +10,11 @@
 CVector3f * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x4f *matrix_ptr,CVector3f *euler_out)
 
 {
-  float fVar4;
-  float fVar7;
-  float fVar8;
-  float10 fVar5;
-  float10 fVar6;
-  float10 fVar10;
-  double dVar7;
-  double inv_a;
-  double inv_b;
-  double inv_c;
-  double cos_x;
-  double inv_cos_x;
-  double sin_y_term;
-  double cos_y_term;
-  double sin_z_term;
-  double cos_z_term;
-  float local_20;
-  float local_18;
-  float fVar1;
-  float fVar2;
-  float fVar3;
+  float fVar1, fVar2, fVar3, fVar4, fVar7, fVar8;
+  float10 fVar5, fVar6;
+  double inv_a, inv_b, inv_c;
+  double cos_x, inv_cos_x;
+  bool gimbal_lock;
 
   // Row 0 inverse magnitude
   fVar1 = matrix_ptr->m[0].x;
@@ -56,131 +40,44 @@ CVector3f * __cdecl core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CMatrix3x
   if (0.0 < inv_c) {
     inv_c = 1.0 / inv_c;
   }
+
   fVar4 = -matrix_ptr->m[2].x * (float)inv_c;
-  if ((float)-1 < fVar4) {
-    if ((double)fVar4 < 1.0) {
-      fVar5 = (float10)fVar4;
-      fVar6 = asin(fVar5);
-      euler_out->x = (float)fVar6;
-      cos_x = (double)SQRT((float10)1 - fVar5 * fVar5);
-      if (fVar6 < (float10)-3.1415926535900001) {
-        euler_out->x = euler_out->x + 6.283185f;
-      }
-      if (0.0 < cos_x) {
-        inv_cos_x = 1.0 / cos_x;
-        sin_y_term = (double)matrix_ptr->m[2].w * inv_c * inv_cos_x;
-        cos_y_term = (double)matrix_ptr->m[2].y * inv_c * inv_cos_x;
-        if ((0.70699999999999996 <= sin_y_term) ||
-           (sin_y_term <= -0.70699999999999996)) {
-          if (-1 < cos_y_term) {
-            if (cos_y_term < 1.0) {
-              dVar7 = acos(cos_y_term);
-              local_18 = (float)dVar7;
-            }
-            else {
-              local_18 = 0.0;
-            }
-          }
-          else {
-            local_18 = 3.1415927;
-          }
-          if (sin_y_term < 0.0) {
-            local_18 = -local_18;
-          }
-        }
-        else {
-          fVar10 = asin((float10)sin_y_term);
-          local_18 = (float)fVar10;
-          if (cos_y_term < 0.0) {
-            local_18 = (float)3.1415926535900001 - local_18;
-          }
-        }
-        if (local_18 < (float)-3.1415926535900001) {
-          local_18 = local_18 + 6.283185f;
-        }
-        if ((float)3.1415926535900001 < local_18) {
-          local_18 = local_18 + -6.283185f;
-        }
-        euler_out->y = local_18;
-        sin_z_term = (double)matrix_ptr->m[0].x * inv_a * inv_cos_x;
-        cos_z_term = (double)matrix_ptr->m[1].x * inv_b * inv_cos_x;
-        if ((0.70699999999999996 <= sin_z_term) ||
-           (sin_z_term <= -0.70699999999999996)) {
-          if (-1 < cos_z_term) {
-            if (cos_z_term < 1.0) {
-              dVar7 = acos(cos_z_term);
-              local_20 = (float)dVar7;
-            }
-            else {
-              local_20 = 0.0;
-            }
-          }
-          else {
-            local_20 = 3.1415927;
-          }
-          if (sin_z_term < 0.0) {
-            local_20 = -local_20;
-          }
-        }
-        else {
-          fVar10 = asin((float10)sin_z_term);
-          local_20 = (float)fVar10;
-          if (cos_z_term < 0.0) {
-            local_20 = (float)3.1415926535900001 - local_20;
-          }
-        }
-        if (local_20 < (float)-3.1415926535900001) {
-          local_20 = local_20 + 6.283185f;
-        }
-        if ((float)3.1415926535900001 < local_20) {
-          local_20 = local_20 + -6.283185f;
-        }
-        euler_out->z = local_20;
-        return euler_out;
-      }
-    }
-    else {
-      euler_out->x = 1.5707964;
-    }
+
+  if (fVar4 <= -1.0f) {
+    euler_out->x = -1.5707964f;
+    gimbal_lock = true;
+  }
+  else if (1.0f <= fVar4) {
+    euler_out->x = 1.5707964f;
+    gimbal_lock = true;
   }
   else {
-    euler_out->x = -1.5707964;
-  }
-  // Singular case: cos_x == 0, only y is recoverable
-  euler_out->z = 0.0;
-  sin_y_term = -(double)matrix_ptr->m[0].y * inv_a;
-  cos_y_term = (double)matrix_ptr->m[0].w * inv_a;
-  if ((0.70699999999999996 <= sin_y_term) || (sin_y_term <= -0.70699999999999996))
-  {
-    if (-1 < cos_y_term) {
-      if (cos_y_term < 1.0) {
-        dVar7 = acos(cos_y_term);
-        local_18 = (float)dVar7;
-      }
-      else {
-        local_18 = 0.0;
-      }
+    fVar5 = (float10)fVar4;
+    fVar6 = asin(fVar5);
+    euler_out->x = (float)fVar6;
+    cos_x = (double)SQRT((float10)1 - fVar5 * fVar5);
+    // Defensive pitch wrap; asin range is [-PI/2, PI/2] so this is a no-op
+    // in practice — preserved for asm fidelity.
+    if (fVar6 < (float10)-3.1415926535900001) {
+      euler_out->x = euler_out->x + 6.283185f;
     }
-    else {
-      local_18 = 3.1415927;
-    }
-    if (sin_y_term < 0.0) {
-      local_18 = -local_18;
-    }
+    gimbal_lock = (cos_x <= 0.0);
   }
-  else {
-    fVar10 = asin((float10)sin_y_term);
-    local_18 = (float)fVar10;
-    if (cos_y_term < 0.0) {
-      local_18 = (float)3.1415926535900001 - local_18;
-    }
+
+  if (gimbal_lock) {
+    euler_out->z = 0.0f;
+    euler_out->y = core_xform_cpp_angleFromSinCos_FUN_005f55c0(
+                     -(double)matrix_ptr->m[0].y * inv_a,
+                     (double)matrix_ptr->m[0].w * inv_a);
+    return euler_out;
   }
-  if (local_18 < (float)-3.1415926535900001) {
-    local_18 = local_18 + 6.283185f;
-  }
-  if ((float)3.1415926535900001 < local_18) {
-    local_18 = local_18 + -6.283185f;
-  }
-  euler_out->y = local_18;
+
+  inv_cos_x = 1.0 / cos_x;
+  euler_out->y = core_xform_cpp_angleFromSinCos_FUN_005f55c0(
+                   (double)matrix_ptr->m[2].w * inv_c * inv_cos_x,
+                   (double)matrix_ptr->m[2].y * inv_c * inv_cos_x);
+  euler_out->z = core_xform_cpp_angleFromSinCos_FUN_005f55c0(
+                   (double)matrix_ptr->m[0].x * inv_a * inv_cos_x,
+                   (double)matrix_ptr->m[1].x * inv_b * inv_cos_x);
   return euler_out;
 }

@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 43,
+    "complexity_score": 58,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 28,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "stack_alignment_array"
+      "stack_alignment_array",
+      "unrolled_memcpy"
     ],
     "total_lines": 91
   },
@@ -76,26 +77,26 @@
     },
     {
       "addr": "02d02548",
-      "name": "g_ViewportCenterXFixed",
-      "type": "int",
+      "name": "g_Projection",
+      "type": "SProjectionParams",
       "value": null
     },
     {
       "addr": "02d0254c",
-      "name": "g_ViewportCenterYFixed",
-      "type": "int",
+      "name": "g_Projection.neg_half_height_fixed",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d02550",
-      "name": "g_ViewportRightFixed",
-      "type": "int",
+      "name": "g_Projection.center_x_fixed",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d02554",
-      "name": "g_ViewportBottomFixed",
-      "type": "int",
+      "name": "g_Projection.center_y_fixed",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -246,6 +247,14 @@
       "severity": "moderate",
       "text": "int aiStackY_1000 [1017];",
       "type": "stack_alignment_array"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 25,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->cached_projection).half_width_fixed = g_Projection.half_width_fixed;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

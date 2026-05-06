@@ -18,10 +18,10 @@
 ;   uint g_VertexProcessingEnabled = 0x1
 ;   int g_TexturesDisabled
 ;   int g_CullingMode
-;   int g_ViewportCenterXFixed
-;   int g_ViewportCenterYFixed
-;   int g_ViewportRightFixed
-;   int g_ViewportBottomFixed
+;   SProjectionParams g_Projection
+;   undefined4 g_Projection.neg_half_height_fixed
+;   undefined4 g_Projection.center_x_fixed
+;   undefined4 g_Projection.center_y_fixed
 ;   int g_UseExternalRenderer
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_VertexPreprocessMode
@@ -70,20 +70,20 @@ section .text
     SAR EDX,0x1f                        ; 005534a2
     IDIV EBX                            ; 005534a5
     MOV dword ptr [ECX + 0xc],EAX       ; 005534a7
-    MOV EDX,dword ptr [0x02d02548]      ; 005534aa | g_ViewportCenterXFixed
+    MOV EDX,dword ptr [0x02d02548]      ; 005534aa | g_Projection
     MOV EBX,dword ptr [ECX + 0x8]       ; 005534b0
     MOV EAX,dword ptr [ECX]             ; 005534b3
     IMUL EDX                            ; 005534b5
     IDIV EBX                            ; 005534b7
-    MOV EDX,dword ptr [0x02d02550]      ; 005534b9 | g_ViewportRightFixed
+    MOV EDX,dword ptr [0x02d02550]      ; 005534b9 | g_Projection.center_x_fixed
     ADD EAX,EDX                         ; 005534bf
     MOV EBX,dword ptr [ECX + 0x8]       ; 005534c1
     MOV dword ptr [ECX + 0x10],EAX      ; 005534c4
-    MOV EDX,dword ptr [0x02d0254c]      ; 005534c7 | g_ViewportCenterYFixed
+    MOV EDX,dword ptr [0x02d0254c]      ; 005534c7 | g_Projection.neg_half_height_fixed
     MOV EAX,dword ptr [ECX + 0x4]       ; 005534cd
     IMUL EDX                            ; 005534d0
     IDIV EBX                            ; 005534d2
-    MOV EDX,dword ptr [0x02d02554]      ; 005534d4 | g_ViewportBottomFixed
+    MOV EDX,dword ptr [0x02d02554]      ; 005534d4 | g_Projection.center_y_fixed
     ADD EAX,EDX                         ; 005534da
     MOV dword ptr [ECX + 0x14],EAX      ; 005534dc
     INC ESI                             ; 005534df

@@ -70,10 +70,10 @@ void __cdecl core_setutil_cpp_C3DSLight_save_FUN_00587090(C3DSLight *this_ptr,_F
     if (this_ptr->visible_flags[0] != '\0') {
       _fprintf(file_ptr,"%d,%d,%d,%d,%d\n",
                (int)this_ptr->visible_flags[0],
-               this_ptr->camera_light_bounds[0].left,
-               this_ptr->camera_light_bounds[0].top,
-               this_ptr->camera_light_bounds[0].right,
-               this_ptr->camera_light_bounds[0].bottom);
+               this_ptr->camera_light_bounds[0].x_min,
+               this_ptr->camera_light_bounds[0].x_max,
+               this_ptr->camera_light_bounds[0].y_min,
+               this_ptr->camera_light_bounds[0].y_max);
     }
     iVar3 = iVar3 + 1;
     this_ptr = (C3DSLight *)((int)&this_ptr->light_type + 1);

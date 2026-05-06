@@ -17,12 +17,12 @@ CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldDirection_FUN_004
   longlong lVar1;
   float fVar2;
   
-  uVar1 = (ulonglong)(screen_x * 0x10000 - (this_ptr->saved_viewport_rect).right);
+  uVar1 = (ulonglong)(screen_x * 0x10000 - (this_ptr->cached_projection).center_x_fixed);
   iVar3 = (int)((longlong)
                 (((uVar1 & 0xffffffffffff) >> 0x10) << 0x20 | uVar1 * 0x10000 & 0xffffffff) /
-               (longlong)(this_ptr->saved_viewport_rect).left);
-  iVar4 = (int)(((longlong)(screen_y * 0x10000 - (this_ptr->saved_viewport_rect).bottom) * 0x10000)
-               / (longlong)(this_ptr->saved_viewport_rect).top);
+               (longlong)(this_ptr->cached_projection).half_width_fixed);
+  iVar4 = (int)(((longlong)(screen_y * 0x10000 - (this_ptr->cached_projection).center_y_fixed) *
+                0x10000) / (longlong)(this_ptr->cached_projection).neg_half_height_fixed);
   lVar1 = (longlong)iVar4 * (longlong)(this_ptr->inverted_matrix).m[1].x +
           (longlong)iVar3 * (longlong)(this_ptr->inverted_matrix).m[0].x +
           (longlong)(this_ptr->inverted_matrix).m[2].x * 0x10000;

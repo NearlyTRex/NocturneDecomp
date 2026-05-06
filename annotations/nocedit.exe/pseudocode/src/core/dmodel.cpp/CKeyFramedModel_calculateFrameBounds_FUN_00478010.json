@@ -7,17 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 87,
+    "complexity_score": 63,
     "cross_reference_count": 8,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 62,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 206
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 63,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 207
   },
   "cross_references": [
     {
@@ -242,7 +240,7 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 49,
       "match": "(float *)((int)local_28",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -251,7 +249,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 50,
       "match": "(float *)((int)local_28",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -260,7 +258,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 52,
       "match": "(CBoundingBox3D *)((int)local_28",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -269,7 +267,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 53,
       "match": "(CBoundingBox3D *)((int)local_28",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -278,7 +276,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 54,
       "match": "(float *)((int)local_28",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -287,7 +285,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 55,
       "match": "(float *)((int)local_28",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -318,23 +316,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 17,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "this_ptr_00 = (CBoundingBox3D *)((int)&model_ptr->frame_bounds->x + (int)local_28.max.x);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 60,
-      "match": "(CBoundingBox3D *)((int)bounds_min_ptr",
-      "severity": "moderate",
-      "text": "if ((CBoundingBox3D *)((int)bounds_min_ptr + 0xc) != this_ptr_00) {",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

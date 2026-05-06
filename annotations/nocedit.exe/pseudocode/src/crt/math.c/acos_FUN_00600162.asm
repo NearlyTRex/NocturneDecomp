@@ -6,7 +6,7 @@
 ;
 ; XREF[15]:
 ;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160 at 00472488
-;   core_dirmat.cpp_atan2Custom_FUN_00472090 at 00472141
+;   core_dirmat.cpp_angleFromSinCos_FUN_00472090 at 00472141
 ;   core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0 at 0047bada
 ;   core_dmodel.cpp_safeAcos_FUN_0047b170 at 0047b1c8
 ;   core_fire.cpp_CFireEffect_traceLaser_FUN_004c8230 at 004c8be8

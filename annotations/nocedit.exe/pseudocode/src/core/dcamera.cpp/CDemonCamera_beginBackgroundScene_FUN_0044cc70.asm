@@ -118,16 +118,16 @@ section .text
     PUSH ESI                            ; 0044cd7a | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890 ; 0044cd7b
         ;   XREF to: 0048c890 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890(CDemonRenderer * this_ptr, int x, int y, int width, ...)
-    MOV EAX,[0x02d02548]                ; 0044cd80 | g_ViewportCenterXFixed
+    MOV EAX,[0x02d02548]                ; 0044cd80 | g_Projection
     MOV EDI,dword ptr [0x006703ec]      ; 0044cd85 | g_CDemonRendererPtr2
     MOV dword ptr [EBX + 0x1c0],EAX     ; 0044cd8b
-    MOV EAX,[0x02d0254c]                ; 0044cd91 | g_ViewportCenterYFixed
+    MOV EAX,[0x02d0254c]                ; 0044cd91 | g_Projection.neg_half_height_fixed
     ADD ESP,0x14                        ; 0044cd96
     MOV dword ptr [EBX + 0x1c4],EAX     ; 0044cd99
-    MOV EAX,[0x02d02550]                ; 0044cd9f | g_ViewportRightFixed
+    MOV EAX,[0x02d02550]                ; 0044cd9f | g_Projection.center_x_fixed
     PUSH 0x151be98                      ; 0044cda4 | g_BackgroundSavedCameraState
     MOV dword ptr [EBX + 0x1c8],EAX     ; 0044cda9
-    MOV EAX,[0x02d02554]                ; 0044cdaf | g_ViewportBottomFixed
+    MOV EAX,[0x02d02554]                ; 0044cdaf | g_Projection.center_y_fixed
     PUSH EDI                            ; 0044cdb4 | g_CDemonRendererInstance
     MOV dword ptr [EBX + 0x1cc],EAX     ; 0044cdb5
     CALL engine_drender.cpp_CDemonRenderer_getCameraAndViewportState_FUN_0048de20 ; 0044cdbb

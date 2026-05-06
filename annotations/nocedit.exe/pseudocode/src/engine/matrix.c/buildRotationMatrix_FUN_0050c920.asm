@@ -16,8 +16,8 @@
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   int g_ProjectionScale = 0x10000
-;   int g_ViewportCenterXFixed
-;   int g_ViewportCenterYFixed
+;   SProjectionParams g_Projection
+;   undefined4 g_Projection.neg_half_height_fixed
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipRight
@@ -173,8 +173,8 @@ section .text
     MOV dword ptr [0x02f0d3bc],0x15555  ; 0050ca92 | g_PixelAspectCorrection
     MOV EAX,0x10000                     ; 0050ca9c
         ;   Label: LAB_0050ca9c
-    MOV EBX,dword ptr [0x02d02548]      ; 0050caa1 | g_ViewportCenterXFixed
-    MOV EDX,dword ptr [0x02d0254c]      ; 0050caa7 | g_ViewportCenterYFixed
+    MOV EBX,dword ptr [0x02d02548]      ; 0050caa1 | g_Projection
+    MOV EDX,dword ptr [0x02d0254c]      ; 0050caa7 | g_Projection.neg_half_height_fixed
     IMUL EDX                            ; 0050caad
     IDIV EBX                            ; 0050caaf
     MOV ECX,EAX                         ; 0050cab1

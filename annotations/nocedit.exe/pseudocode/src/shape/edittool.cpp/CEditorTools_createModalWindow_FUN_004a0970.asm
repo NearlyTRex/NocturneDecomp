@@ -323,21 +323,21 @@ section .text
     NOP                                 ; 004a0caf
     MOV EAX,[0x02d02558]                ; 004a0cb0 | g_ClipLeft
         ;   Label: LAB_004a0cb0
-    MOV dword ptr [EBX + 0x10],EAX      ; 004a0cb5 | g_WindowStack[0].saved_clip_left
+    MOV dword ptr [EBX + 0x10],EAX      ; 004a0cb5 | g_WindowStack[0].saved_clip.left
     MOV EAX,[0x02d0255c]                ; 004a0cb8 | g_ClipTop
-    MOV dword ptr [EBX + 0x14],EAX      ; 004a0cbd | g_WindowStack[0].saved_clip_top
+    MOV dword ptr [EBX + 0x14],EAX      ; 004a0cbd | g_WindowStack[0].saved_clip.top
     MOV EAX,[0x02d02560]                ; 004a0cc0 | g_ClipRight
-    MOV dword ptr [EBX + 0x18],EAX      ; 004a0cc5 | g_WindowStack[0].saved_clip_right
+    MOV dword ptr [EBX + 0x18],EAX      ; 004a0cc5 | g_WindowStack[0].saved_clip.right
     MOV EAX,[0x02d02564]                ; 004a0cc8 | g_ClipBottom
-    MOV dword ptr [EBX + 0x1c],EAX      ; 004a0ccd | g_WindowStack[0].saved_clip_bottom
-    MOV EAX,[0x02d02548]                ; 004a0cd0 | g_ViewportCenterXFixed
-    MOV dword ptr [EBX + 0x20],EAX      ; 004a0cd5 | g_WindowStack[0].saved_viewport_center_x
-    MOV EAX,[0x02d0254c]                ; 004a0cd8 | g_ViewportCenterYFixed
-    MOV dword ptr [EBX + 0x24],EAX      ; 004a0cdd | g_WindowStack[0].saved_viewport_center_y
-    MOV EAX,[0x02d02550]                ; 004a0ce0 | g_ViewportRightFixed
-    MOV dword ptr [EBX + 0x28],EAX      ; 004a0ce5 | g_WindowStack[0].saved_viewport_right
-    MOV EAX,[0x02d02554]                ; 004a0ce8 | g_ViewportBottomFixed
-    MOV dword ptr [EBX + 0x2c],EAX      ; 004a0ced | g_WindowStack[0].saved_viewport_bottom
+    MOV dword ptr [EBX + 0x1c],EAX      ; 004a0ccd | g_WindowStack[0].saved_clip.bottom
+    MOV EAX,[0x02d02548]                ; 004a0cd0 | g_Projection
+    MOV dword ptr [EBX + 0x20],EAX      ; 004a0cd5 | g_WindowStack[0].saved_projection.half_width_fixed
+    MOV EAX,[0x02d0254c]                ; 004a0cd8 | g_Projection.neg_half_height_fixed
+    MOV dword ptr [EBX + 0x24],EAX      ; 004a0cdd | g_WindowStack[0].saved_projection.neg_half_height_fixed
+    MOV EAX,[0x02d02550]                ; 004a0ce0 | g_Projection.center_x_fixed
+    MOV dword ptr [EBX + 0x28],EAX      ; 004a0ce5 | g_WindowStack[0].saved_projection.center_x_fixed
+    MOV EAX,[0x02d02554]                ; 004a0ce8 | g_Projection.center_y_fixed
+    MOV dword ptr [EBX + 0x2c],EAX      ; 004a0ced | g_WindowStack[0].saved_projection.center_y_fixed
     MOV EAX,[0x02d02568]                ; 004a0cf0 | g_ViewportWidth
     MOV dword ptr [EBX + 0x30],EAX      ; 004a0cf5 | g_WindowStack[0].saved_viewport_width
     MOV EAX,[0x02d0256c]                ; 004a0cf8 | g_ViewportHeight
@@ -345,12 +345,12 @@ section .text
     MOV EAX,dword ptr [ESP + 0x30]      ; 004a0d00
     MOV dword ptr [EBX],EAX             ; 004a0d04 | g_WindowStack
     MOV EAX,dword ptr [ESP + 0x34]      ; 004a0d06
-    MOV dword ptr [EBX + 0x4],EAX       ; 004a0d0a | g_WindowStack[0].top
+    MOV dword ptr [EBX + 0x4],EAX       ; 004a0d0a | g_WindowStack[0].rect.top
     MOV EAX,dword ptr [ESP + 0x38]      ; 004a0d0d
-    MOV dword ptr [EBX + 0x8],EAX       ; 004a0d11 | g_WindowStack[0].right
+    MOV dword ptr [EBX + 0x8],EAX       ; 004a0d11 | g_WindowStack[0].rect.right
     MOV EAX,dword ptr [ESP + 0x3c]      ; 004a0d14
     MOV EBP,dword ptr [ESP + 0x30]      ; 004a0d18
-    MOV dword ptr [EBX + 0xc],EAX       ; 004a0d1c | g_WindowStack[0].bottom
+    MOV dword ptr [EBX + 0xc],EAX       ; 004a0d1c | g_WindowStack[0].rect.bottom
     MOV EAX,dword ptr [ESP + 0x8]       ; 004a0d1f
     MOV EDX,dword ptr [ESP + 0x34]      ; 004a0d23
     ADD EBP,EAX                         ; 004a0d27

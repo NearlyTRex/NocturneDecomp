@@ -120,44 +120,44 @@ LAB_004ce397:
   }
   g_RenderVertexBuffer[0x4e1c].projected_vertex.transformed_x =
        (int)((longlong)
-             ((((longlong)(iVar3 - g_ViewportRightFixed) & 0xffffffffffffU) >> 0x10) << 0x20 |
-             (longlong)(iVar3 - g_ViewportRightFixed) * 0x10000 & 0xffffffffU) /
-            (longlong)g_ViewportCenterXFixed);
+             ((((longlong)(iVar3 - g_Projection.center_x_fixed) & 0xffffffffffffU) >> 0x10) << 0x20
+             | (longlong)(iVar3 - g_Projection.center_x_fixed) * 0x10000 & 0xffffffffU) /
+            (longlong)g_Projection.half_width_fixed);
   g_RenderVertexBuffer[0x4e1c].projected_vertex.transformed_y =
        (int)((longlong)
-             ((((longlong)(iVar4 - g_ViewportBottomFixed) & 0xffffffffffffU) >> 0x10) << 0x20 |
-             (longlong)(iVar4 - g_ViewportBottomFixed) * 0x10000 & 0xffffffffU) /
-            (longlong)g_ViewportCenterYFixed);
+             ((((longlong)(iVar4 - g_Projection.center_y_fixed) & 0xffffffffffffU) >> 0x10) << 0x20
+             | (longlong)(iVar4 - g_Projection.center_y_fixed) * 0x10000 & 0xffffffffU) /
+            (longlong)g_Projection.neg_half_height_fixed);
   g_RenderVertexBuffer[0x4e1d].projected_vertex.transformed_x =
        (int)((longlong)
-             ((((longlong)(iVar8 - g_ViewportRightFixed) & 0xffffffffffffU) >> 0x10) << 0x20 |
-             (longlong)(iVar8 - g_ViewportRightFixed) * 0x10000 & 0xffffffffU) /
-            (longlong)g_ViewportCenterXFixed);
+             ((((longlong)(iVar8 - g_Projection.center_x_fixed) & 0xffffffffffffU) >> 0x10) << 0x20
+             | (longlong)(iVar8 - g_Projection.center_x_fixed) * 0x10000 & 0xffffffffU) /
+            (longlong)g_Projection.half_width_fixed);
   g_RenderVertexBuffer[0x4e1d].projected_vertex.transformed_y =
        (int)((longlong)
-             ((((longlong)(iVar4 - g_ViewportBottomFixed) & 0xffffffffffffU) >> 0x10) << 0x20 |
-             (longlong)(iVar4 - g_ViewportBottomFixed) * 0x10000 & 0xffffffffU) /
-            (longlong)g_ViewportCenterYFixed);
+             ((((longlong)(iVar4 - g_Projection.center_y_fixed) & 0xffffffffffffU) >> 0x10) << 0x20
+             | (longlong)(iVar4 - g_Projection.center_y_fixed) * 0x10000 & 0xffffffffU) /
+            (longlong)g_Projection.neg_half_height_fixed);
   g_RenderVertexBuffer[0x4e1e].projected_vertex.transformed_x =
        (int)((longlong)
-             ((((longlong)(iVar8 - g_ViewportRightFixed) & 0xffffffffffffU) >> 0x10) << 0x20 |
-             (longlong)(iVar8 - g_ViewportRightFixed) * 0x10000 & 0xffffffffU) /
-            (longlong)g_ViewportCenterXFixed);
+             ((((longlong)(iVar8 - g_Projection.center_x_fixed) & 0xffffffffffffU) >> 0x10) << 0x20
+             | (longlong)(iVar8 - g_Projection.center_x_fixed) * 0x10000 & 0xffffffffU) /
+            (longlong)g_Projection.half_width_fixed);
   g_RenderVertexBuffer[0x4e1e].projected_vertex.transformed_y =
        (int)((longlong)
-             ((((longlong)(iVar12 - g_ViewportBottomFixed) & 0xffffffffffffU) >> 0x10) << 0x20 |
-             (longlong)(iVar12 - g_ViewportBottomFixed) * 0x10000 & 0xffffffffU) /
-            (longlong)g_ViewportCenterYFixed);
+             ((((longlong)(iVar12 - g_Projection.center_y_fixed) & 0xffffffffffffU) >> 0x10) << 0x20
+             | (longlong)(iVar12 - g_Projection.center_y_fixed) * 0x10000 & 0xffffffffU) /
+            (longlong)g_Projection.neg_half_height_fixed);
   g_RenderVertexBuffer[19999].projected_vertex.transformed_x =
        (int)((longlong)
-             ((((longlong)(iVar3 - g_ViewportRightFixed) & 0xffffffffffffU) >> 0x10) << 0x20 |
-             (longlong)(iVar3 - g_ViewportRightFixed) * 0x10000 & 0xffffffffU) /
-            (longlong)g_ViewportCenterXFixed);
+             ((((longlong)(iVar3 - g_Projection.center_x_fixed) & 0xffffffffffffU) >> 0x10) << 0x20
+             | (longlong)(iVar3 - g_Projection.center_x_fixed) * 0x10000 & 0xffffffffU) /
+            (longlong)g_Projection.half_width_fixed);
   g_RenderVertexBuffer[19999].projected_vertex.transformed_y =
        (int)((longlong)
-             ((((longlong)(iVar12 - g_ViewportBottomFixed) & 0xffffffffffffU) >> 0x10) << 0x20 |
-             (longlong)(iVar12 - g_ViewportBottomFixed) * 0x10000 & 0xffffffffU) /
-            (longlong)g_ViewportCenterYFixed);
+             ((((longlong)(iVar12 - g_Projection.center_y_fixed) & 0xffffffffffffU) >> 0x10) << 0x20
+             | (longlong)(iVar12 - g_Projection.center_y_fixed) * 0x10000 & 0xffffffffU) /
+            (longlong)g_Projection.neg_half_height_fixed);
   engine_matrix_c_projectCachedPoint_FUN_0050cda0(0x4e1c);
   engine_matrix_c_projectCachedPoint_FUN_0050cda0(0x4e1d);
   engine_matrix_c_projectCachedPoint_FUN_0050cda0(0x4e1e);

@@ -19,10 +19,10 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonCamera* g_SkipClearBuffersSceneCamera
 ;   CDemonRenderer g_CDemonRendererInstance
-;   int g_ViewportCenterXFixed
-;   int g_ViewportCenterYFixed
-;   int g_ViewportRightFixed
-;   int g_ViewportBottomFixed
+;   SProjectionParams g_Projection
+;   undefined4 g_Projection.neg_half_height_fixed
+;   undefined4 g_Projection.center_x_fixed
+;   undefined4 g_Projection.center_y_fixed
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_pushRect_FUN_0044c740
@@ -42,18 +42,18 @@ section .text
     PUSH EBX                            ; 0056e5e3
     MOV EBX,dword ptr [ESP + 0x34]      ; 0056e5e4
     MOV EAX,[0x006703ec]                ; 0056e5e8 | g_CDemonRendererPtr2
-    MOV EDI,dword ptr [0x02d02550]      ; 0056e5ed | g_ViewportRightFixed
-    MOV ECX,dword ptr [0x02d02548]      ; 0056e5f3 | g_ViewportCenterXFixed
+    MOV EDI,dword ptr [0x02d02550]      ; 0056e5ed | g_Projection.center_x_fixed
+    MOV ECX,dword ptr [0x02d02548]      ; 0056e5f3 | g_Projection
     MOV ESI,dword ptr [EAX]             ; 0056e5f9 | g_CDemonRendererInstance
-    MOV EAX,[0x02d02550]                ; 0056e5fb | g_ViewportRightFixed
-    MOV EBP,dword ptr [0x02d02554]      ; 0056e600 | g_ViewportBottomFixed
+    MOV EAX,[0x02d02550]                ; 0056e5fb | g_Projection.center_x_fixed
+    MOV EBP,dword ptr [0x02d02554]      ; 0056e600 | g_Projection.center_y_fixed
     SUB EAX,ECX                         ; 0056e606
-    MOV EDX,dword ptr [0x02d0254c]      ; 0056e608 | g_ViewportCenterYFixed
+    MOV EDX,dword ptr [0x02d0254c]      ; 0056e608 | g_Projection.neg_half_height_fixed
     MOV dword ptr [ESP + 0x20],EAX      ; 0056e60e
-    MOV EAX,[0x02d0254c]                ; 0056e612 | g_ViewportCenterYFixed
+    MOV EAX,[0x02d0254c]                ; 0056e612 | g_Projection.neg_half_height_fixed
     ADD EDI,ECX                         ; 0056e617
     SUB EBP,EAX                         ; 0056e619
-    MOV EAX,[0x02d02554]                ; 0056e61b | g_ViewportBottomFixed
+    MOV EAX,[0x02d02554]                ; 0056e61b | g_Projection.center_y_fixed
     XOR ECX,ECX                         ; 0056e620
     ADD EAX,EDX                         ; 0056e622
     MOV dword ptr [ESP + 0x1c],ECX      ; 0056e624
@@ -79,10 +79,10 @@ section .text
         ;   XREF to: 0056e67c (CONDITIONAL_JUMP)  ; LAB_0056e67c
     MOV EBX,EDX                         ; 0056e654
     MOV EAX,dword ptr [ESI]             ; 0056e656
-    MOV EDX,dword ptr [0x02d02548]      ; 0056e658 | g_ViewportCenterXFixed
+    MOV EDX,dword ptr [0x02d02548]      ; 0056e658 | g_Projection
     IMUL EDX                            ; 0056e65e
     IDIV EBX                            ; 0056e660
-    MOV EBX,dword ptr [0x02d02550]      ; 0056e662 | g_ViewportRightFixed
+    MOV EBX,dword ptr [0x02d02550]      ; 0056e662 | g_Projection.center_x_fixed
     MOV EDX,dword ptr [ESP + 0x20]      ; 0056e668
     ADD EAX,EBX                         ; 0056e66c
     CMP EAX,EDX                         ; 0056e66e
@@ -107,10 +107,10 @@ section .text
         ;   XREF to: 0056e6b8 (CONDITIONAL_JUMP)  ; LAB_0056e6b8
     MOV EBX,EDX                         ; 0056e68f
     MOV EAX,dword ptr [ECX + 0x4]       ; 0056e691
-    MOV EDX,dword ptr [0x02d0254c]      ; 0056e694 | g_ViewportCenterYFixed
+    MOV EDX,dword ptr [0x02d0254c]      ; 0056e694 | g_Projection.neg_half_height_fixed
     IMUL EDX                            ; 0056e69a
     IDIV EBX                            ; 0056e69c
-    MOV EBX,dword ptr [0x02d02554]      ; 0056e69e | g_ViewportBottomFixed
+    MOV EBX,dword ptr [0x02d02554]      ; 0056e69e | g_Projection.center_y_fixed
     MOV EDX,dword ptr [ESP + 0x24]      ; 0056e6a4
     ADD EAX,EBX                         ; 0056e6a8
     CMP EAX,EDX                         ; 0056e6aa
@@ -127,8 +127,8 @@ section .text
     CMP EBX,dword ptr [ECX]             ; 0056e6bb
     JG 0x0056e6d0                       ; 0056e6bd
         ;   XREF to: 0056e6d0 (CONDITIONAL_JUMP)  ; LAB_0056e6d0
-    MOV EDX,dword ptr [0x02d02550]      ; 0056e6bf | g_ViewportRightFixed
-    MOV EAX,[0x02d02548]                ; 0056e6c5 | g_ViewportCenterXFixed
+    MOV EDX,dword ptr [0x02d02550]      ; 0056e6bf | g_Projection.center_x_fixed
+    MOV EAX,[0x02d02548]                ; 0056e6c5 | g_Projection
     ADD EAX,EDX                         ; 0056e6ca
     MOV dword ptr [ESP + 0x20],EAX      ; 0056e6cc
     MOV EAX,dword ptr [ECX + 0x8]       ; 0056e6d0
@@ -138,16 +138,16 @@ section .text
     CMP EAX,EBX                         ; 0056e6d7
     JL 0x0056e6e8                       ; 0056e6d9
         ;   XREF to: 0056e6e8 (CONDITIONAL_JUMP)  ; LAB_0056e6e8
-    MOV EAX,[0x02d02548]                ; 0056e6db | g_ViewportCenterXFixed
-    MOV EDI,dword ptr [0x02d02550]      ; 0056e6e0 | g_ViewportRightFixed
+    MOV EAX,[0x02d02548]                ; 0056e6db | g_Projection
+    MOV EDI,dword ptr [0x02d02550]      ; 0056e6e0 | g_Projection.center_x_fixed
     SUB EDI,EAX                         ; 0056e6e6
     MOV EDX,dword ptr [ECX + 0x8]       ; 0056e6e8
         ;   Label: LAB_0056e6e8
     CMP EDX,dword ptr [ECX + 0x4]       ; 0056e6eb
     JG 0x0056e6fe                       ; 0056e6ee
         ;   XREF to: 0056e6fe (CONDITIONAL_JUMP)  ; LAB_0056e6fe
-    MOV EBX,dword ptr [0x02d02554]      ; 0056e6f0 | g_ViewportBottomFixed
-    MOV EBP,dword ptr [0x02d0254c]      ; 0056e6f6 | g_ViewportCenterYFixed
+    MOV EBX,dword ptr [0x02d02554]      ; 0056e6f0 | g_Projection.center_y_fixed
+    MOV EBP,dword ptr [0x02d0254c]      ; 0056e6f6 | g_Projection.neg_half_height_fixed
     ADD EBP,EBX                         ; 0056e6fc
     MOV EAX,dword ptr [ECX + 0x8]       ; 0056e6fe
         ;   Label: LAB_0056e6fe
@@ -156,8 +156,8 @@ section .text
     CMP EAX,EDX                         ; 0056e706
     JL 0x0056e71b                       ; 0056e708
         ;   XREF to: 0056e71b (CONDITIONAL_JUMP)  ; LAB_0056e71b
-    MOV ECX,dword ptr [0x02d0254c]      ; 0056e70a | g_ViewportCenterYFixed
-    MOV EAX,[0x02d02554]                ; 0056e710 | g_ViewportBottomFixed
+    MOV ECX,dword ptr [0x02d0254c]      ; 0056e70a | g_Projection.neg_half_height_fixed
+    MOV EAX,[0x02d02554]                ; 0056e710 | g_Projection.center_y_fixed
     SUB EAX,ECX                         ; 0056e715
     MOV dword ptr [ESP + 0x24],EAX      ; 0056e717
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0056e71b

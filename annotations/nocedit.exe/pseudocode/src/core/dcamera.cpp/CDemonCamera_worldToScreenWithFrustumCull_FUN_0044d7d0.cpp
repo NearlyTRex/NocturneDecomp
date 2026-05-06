@@ -61,11 +61,11 @@ CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumC
                    ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10),
         local_14 < local_10)) && (-local_10 < local_14)) {
 LAB_0044da32:
-      iVar1 = (this_ptr->saved_viewport_rect).top;
-      iVar2 = (this_ptr->saved_viewport_rect).bottom;
+      iVar1 = (this_ptr->cached_projection).neg_half_height_fixed;
+      iVar2 = (this_ptr->cached_projection).center_y_fixed;
       output_ptr->x =
-           (this_ptr->saved_viewport_rect).right +
-           (int)(((longlong)local_18 * (longlong)(this_ptr->saved_viewport_rect).left) /
+           (this_ptr->cached_projection).center_x_fixed +
+           (int)(((longlong)local_18 * (longlong)(this_ptr->cached_projection).half_width_fixed) /
                 (longlong)local_10);
       output_ptr->y = iVar2 + (int)(((longlong)local_14 * (longlong)iVar1) / (longlong)local_10);
       output_ptr->z = local_10;

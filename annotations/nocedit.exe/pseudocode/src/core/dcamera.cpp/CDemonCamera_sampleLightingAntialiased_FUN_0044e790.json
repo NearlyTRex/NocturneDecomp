@@ -7,17 +7,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 515,
-    "complexity_score": 226,
+    "complexity_score": 230,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 211,
+    "pseudocode_lines": 215,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 726
+    "total_lines": 730
   },
   "cross_references": [
     {
@@ -214,7 +214,7 @@
   "suspects": [
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 138,
+      "line": 142,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "psVar1 = (short *)((int)&pCVar8->x + 2);",

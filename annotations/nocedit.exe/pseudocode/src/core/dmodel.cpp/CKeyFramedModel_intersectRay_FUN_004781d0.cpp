@@ -45,8 +45,8 @@ float __cdecl core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004781d0(CKeyFram
     frame_index = 0;
   }
   fVar2 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
-                    ((CBoundingBox3D *)(this_ptr->frame_bounds + frame_index * 2),ray_origin,
-                     ray_direction,(CVector3f *)0x0);
+                    (this_ptr->frame_bounds + frame_index,ray_origin,ray_direction,(CVector3f *)0x0)
+  ;
   if ((fVar2 < 0.0) || (1.0 < fVar2)) {
     local_34 = 2.0;
   }

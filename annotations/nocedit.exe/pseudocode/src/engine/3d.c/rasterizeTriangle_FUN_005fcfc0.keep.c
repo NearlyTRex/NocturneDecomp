@@ -45,12 +45,12 @@ void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex *vertex_bu
         }
         (pSVar6->projected_vertex).screen_x =
              (int)(((longlong)(pSVar6->projected_vertex).transformed_x *
-                   (longlong)g_ViewportCenterXFixed) /
-                  (longlong)(pSVar6->projected_vertex).transformed_z) + g_ViewportRightFixed;
+                   (longlong)g_Projection.half_width_fixed) /
+                  (longlong)(pSVar6->projected_vertex).transformed_z) + g_Projection.center_x_fixed;
         (pSVar6->projected_vertex).screen_y =
              (int)(((longlong)(pSVar6->projected_vertex).transformed_y *
-                   (longlong)g_ViewportCenterYFixed) /
-                  (longlong)(pSVar6->projected_vertex).transformed_z) + g_ViewportBottomFixed;
+                   (longlong)g_Projection.neg_half_height_fixed) /
+                  (longlong)(pSVar6->projected_vertex).transformed_z) + g_Projection.center_y_fixed;
       }
       iVar8 = iVar8 + 1;
       pSVar6 = pSVar6 + 1;

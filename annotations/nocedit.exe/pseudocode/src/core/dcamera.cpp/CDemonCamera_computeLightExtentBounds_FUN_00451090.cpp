@@ -40,9 +40,9 @@ CRect * __stack2_esi core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_
       light = (CDemonLight *)&(light->base).base.position;
     } while (iVar1 < this_ptr->display_height);
   }
-  out_bounds->left = local_1c;
-  out_bounds->top = local_18;
-  out_bounds->right = local_14;
-  out_bounds->bottom = local_10;
+  out_bounds->x_min = local_1c;
+  out_bounds->x_max = local_18;
+  out_bounds->y_min = local_14;
+  out_bounds->y_max = local_10;
   return out_bounds;
 }

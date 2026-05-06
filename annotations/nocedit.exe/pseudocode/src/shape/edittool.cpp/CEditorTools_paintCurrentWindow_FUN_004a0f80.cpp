@@ -39,37 +39,41 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
   iVar3 = g_WindowStackCount + -1;
   pSVar7 = g_WindowStack + iVar3;
   shape_edittool_cpp_paintWindowBackground_FUN_0049e590();
+  iVar8 = g_WindowStack[iVar3].rect.top;
+  iVar7 = (pSVar7->rect).left;
   engine_matrix_c_pushViewport_FUN_0050e320
-            (pSVar7->left,g_WindowStack[iVar3].top,(g_WindowStack[iVar3].right - pSVar7->left) + 1,
-             (g_WindowStack[iVar3].bottom - g_WindowStack[iVar3].top) + 1);
+            (iVar7,iVar8,(g_WindowStack[iVar3].rect.right - iVar7) + 1,
+             (g_WindowStack[iVar3].rect.bottom - iVar8) + 1);
   engine_2d_c_fillRectWithBorder_FUN_00403200
-            (pSVar7->left + 1,g_WindowStack[iVar3].top + 1,g_WindowStack[iVar3].right + -2,
-             g_WindowStack[iVar3].bottom + -2,g_WindowContentColor,g_WindowBorderHighlightColor);
+            ((pSVar7->rect).left + 1,g_WindowStack[iVar3].rect.top + 1,
+             g_WindowStack[iVar3].rect.right + -2,g_WindowStack[iVar3].rect.bottom + -2,
+             g_WindowContentColor,g_WindowBorderHighlightColor);
   g_ActiveRenderColor = g_WindowBorderShadowColor;
   engine_2d_c_drawHLine_FUN_00402ee0
-            (pSVar7->left,g_WindowStack[iVar3].bottom + -1,g_WindowStack[iVar3].right + -1);
+            ((pSVar7->rect).left,g_WindowStack[iVar3].rect.bottom + -1,
+             g_WindowStack[iVar3].rect.right + -1);
   engine_2d_c_drawVLine_FUN_00402ff0
-            (g_WindowStack[iVar3].right + -1,g_WindowStack[iVar3].top,
-             g_WindowStack[iVar3].bottom + -1);
+            (g_WindowStack[iVar3].rect.right + -1,g_WindowStack[iVar3].rect.top,
+             g_WindowStack[iVar3].rect.bottom + -1);
   engine_matrix_c_popViewport_FUN_0050e480();
   iVar1 = g_ClipTop;
   if (g_WindowStack[iVar3].text_buffer[0] == '\0') {
     g_ActiveRenderColor = iVar2;
     return;
   }
-  g_ClipTop = g_WindowStack[iVar3].top;
-  iVar8 = g_FontCharacterWidth / 2 + g_WindowStack[iVar3].top + -1;
+  g_ClipTop = g_WindowStack[iVar3].rect.top;
+  iVar8 = g_FontCharacterWidth / 2 + g_WindowStack[iVar3].rect.top + -1;
   iVar6 = g_FontCharacterWidth * 5 >> 0x1f;
   engine_2d_c_fillRectColor_FUN_00403170
-            (pSVar7->left + 1,iVar8,g_WindowStack[iVar3].right + -2,
+            ((pSVar7->rect).left + 1,iVar8,g_WindowStack[iVar3].rect.right + -2,
              ((int)((g_FontCharacterWidth * 5 + iVar6 * -4) - (uint)(iVar6 << 1 < 0)) >> 2) + iVar8
              + -1,g_TitleBarFillColor);
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
   color_value = -1;
-  y = g_FontCharacterWidth / 2 + g_WindowStack[iVar3].top;
+  y = g_FontCharacterWidth / 2 + g_WindowStack[iVar3].rect.top;
   text = g_WindowStack[iVar3].text_buffer;
-  iVar8 = pSVar7->left;
-  iVar7 = g_WindowStack[iVar3].right;
+  iVar8 = (pSVar7->rect).left;
+  iVar7 = g_WindowStack[iVar3].rect.right;
   color_mode = g_TitleBarColor;
   iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,text);
   engine_font_cpp_CBitFont_drawText_FUN_004cda80
@@ -81,11 +85,13 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
     iVar8 = iVar7 + g_FontCharacterWidth;
   }
   g_ActiveRenderColor = g_WindowBorderHighlightColor;
-  iVar8 = iVar8 + g_WindowStack[iVar3].top;
-  engine_2d_c_drawHLine_FUN_00402ee0(pSVar7->left + 1,iVar8,g_WindowStack[iVar3].right + -2);
+  iVar8 = iVar8 + g_WindowStack[iVar3].rect.top;
+  engine_2d_c_drawHLine_FUN_00402ee0
+            ((pSVar7->rect).left + 1,iVar8,g_WindowStack[iVar3].rect.right + -2);
   if (g_WindowBorderHighlightColor != g_WindowBorderShadowColor) {
     g_ActiveRenderColor = g_WindowBorderShadowColor;
-    engine_2d_c_drawHLine_FUN_00402ee0(pSVar7->left + 1,iVar8 + -1,g_WindowStack[iVar3].right + -2);
+    engine_2d_c_drawHLine_FUN_00402ee0
+              ((pSVar7->rect).left + 1,iVar8 + -1,g_WindowStack[iVar3].rect.right + -2);
   }
   g_ClipTop = iVar1;
   g_ActiveRenderColor = iVar2;

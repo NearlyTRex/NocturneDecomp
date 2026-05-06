@@ -7,6 +7,7 @@
 #include "types/classes/CMatrix3x3i.h"
 #include "types/classes/CRect.h"
 #include "types/classes/CVector3i.h"
+#include "types/structs/SProjectionParams.h"
 
 // Structure: CDemonCamera
 // Ghidra size: 0x14c8 (5320 bytes)
@@ -28,7 +29,7 @@ typedef struct CDemonCamera {
     CVector3i camera_origin; // 0x16c
     CMatrix3x3i source_matrix; // 0x178
     CMatrix3x3i inverted_matrix; // 0x19c
-    CRect saved_viewport_rect; // 0x1c0
+    SProjectionParams cached_projection; // 0x1c0
     int rect_array_count; // 0x1d0
     CRect rect_array[256]; // 0x1d4
     CRect viewport_rect; // 0x11d4

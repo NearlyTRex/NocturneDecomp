@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 145
-  Total diagnostics: 425
+  Functions with findings: 146
+  Total diagnostics: 423
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 145, raw .cpp files: 0
+  .keep.cpp files: 146, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -339,15 +339,6 @@ core_box.cpp_CBox_processPhysics_FUN_0041e350  [.keep] [Cppcheck (quick)]
   Line  686: [legacyUninitvar] Uninitialized variable: local_380
   Line  687: [legacyUninitvar] Uninitialized variable: local_37c
   Line  689: [legacyUninitvar] Uninitialized variable: local_378
-
-----------------------------------------------------------------------------------------------------
-core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160  [.keep] [Cppcheck (quick)]
-  File: core/dirmat.cpp  (4 diagnostics)
-
-  Line   85: [ignoredReturnValue] Return value of function acos() is not used.
-  Line   99: [ignoredReturnValue] Return value of function asin() is not used.
-  Line  121: [ignoredReturnValue] Return value of function acos() is not used.
-  Line  135: [ignoredReturnValue] Return value of function asin() is not used.
 
 ----------------------------------------------------------------------------------------------------
 core_ghoul.cpp_CGhoul_process_FUN_004e6600  [.keep] [Cppcheck (quick)]
@@ -740,8 +731,8 @@ core_set.cpp_CDemonSet_processActors_FUN_0056b810  [.keep] [Cppcheck (quick)]
 core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  [.keep] [Cppcheck (quick)]
   File: core/setedit.cpp  (2 diagnostics)
 
-  Line  222: [nullPointer] Possible null pointer dereference: pcVar12
-  Line  379: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
+  Line  220: [nullPointer] Possible null pointer dereference: pcVar12
+  Line  377: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 core_skeledit.cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0  [.keep] [Cppcheck (quick)]
@@ -891,6 +882,18 @@ core_cloth.cpp_CCloth_boneEditor_FUN_0043c880  [.keep] [Cppcheck (quick)]
   File: core/cloth.cpp  (1 diagnostics)
 
   Line  242: [uninitvar] Uninitialized variable: fStack_550
+
+----------------------------------------------------------------------------------------------------
+core_dlight.cpp_CDemonLight_init_FUN_004727c0  [.keep] [Cppcheck (quick)]
+  File: core/dlight.cpp  (1 diagnostics)
+
+  Line   31: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830  [.keep] [Cppcheck (quick)]
+  File: core/dmodel.cpp  (1 diagnostics)
+
+  Line   26: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
 core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170  [.keep] [Cppcheck (quick)]

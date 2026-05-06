@@ -32,11 +32,9 @@ void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_p
   char *pcVar12;
   char *pcVar13;
   char (*pacVar12) [40];
-  char (*pacVar14) [40];
   int *piVar15;
   int *piVar16;
   C3DSLight *dest;
-  char (*pacVar18) [40];
   C3DSLight local_2478;
   CPickList local_be0;
   char local_838 [400];
@@ -481,10 +479,10 @@ LAB_00579173:
           pCVar10->aspect = local_2478.aspect;
           pCVar10->intensity = local_2478.intensity;
           memcpy(pCVar10->visible_flags,local_2478.visible_flags,0xfa);
-          pCVar10->camera_light_bounds[0].left = local_2478.camera_light_bounds[0].left;
-          pCVar10->camera_light_bounds[0].top = local_2478.camera_light_bounds[0].top;
-          pCVar10->camera_light_bounds[0].right = local_2478.camera_light_bounds[0].right;
-          pCVar10->camera_light_bounds[0].bottom = local_2478.camera_light_bounds[0].bottom;
+          pCVar10->camera_light_bounds[0].x_min = local_2478.camera_light_bounds[0].x_min;
+          pCVar10->camera_light_bounds[0].x_max = local_2478.camera_light_bounds[0].x_max;
+          pCVar10->camera_light_bounds[0].y_min = local_2478.camera_light_bounds[0].y_min;
+          pCVar10->camera_light_bounds[0].y_max = local_2478.camera_light_bounds[0].y_max;
           (pCVar10->color).r = local_2478.color.r;
           (pCVar10->color).g = local_2478.color.g;
           (pCVar10->color).b = local_2478.color.b;

@@ -63,12 +63,14 @@ int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790
     else {
       g_TempProjectedCoord.x =
            (int)(((longlong)g_TempProjectedCoord.x *
-                 (longlong)(light_source->base).saved_viewport_rect.left) /
-                (longlong)g_TempProjectedCoord.z) + (light_source->base).saved_viewport_rect.right;
+                 (longlong)(light_source->base).cached_projection.half_width_fixed) /
+                (longlong)g_TempProjectedCoord.z) +
+           (light_source->base).cached_projection.center_x_fixed;
       g_TempProjectedCoord.y =
            (int)(((longlong)g_TempProjectedCoord.y *
-                 (longlong)(light_source->base).saved_viewport_rect.top) /
-                (longlong)g_TempProjectedCoord.z) + (light_source->base).saved_viewport_rect.bottom;
+                 (longlong)(light_source->base).cached_projection.neg_half_height_fixed) /
+                (longlong)g_TempProjectedCoord.z) +
+           (light_source->base).cached_projection.center_y_fixed;
       pCVar7 = &g_TempProjectedCoord;
     }
     if (((0 < pCVar7->z) &&
@@ -116,12 +118,14 @@ int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790
   else {
     g_TempProjectedCoord.x =
          (int)(((longlong)g_TempProjectedCoord.x *
-               (longlong)(light_source->base).saved_viewport_rect.left) /
-              (longlong)g_TempProjectedCoord.z) + (light_source->base).saved_viewport_rect.right;
+               (longlong)(light_source->base).cached_projection.half_width_fixed) /
+              (longlong)g_TempProjectedCoord.z) +
+         (light_source->base).cached_projection.center_x_fixed;
     g_TempProjectedCoord.y =
          (int)(((longlong)g_TempProjectedCoord.y *
-               (longlong)(light_source->base).saved_viewport_rect.top) /
-              (longlong)g_TempProjectedCoord.z) + (light_source->base).saved_viewport_rect.bottom;
+               (longlong)(light_source->base).cached_projection.neg_half_height_fixed) /
+              (longlong)g_TempProjectedCoord.z) +
+         (light_source->base).cached_projection.center_y_fixed;
     pCVar8 = &g_TempProjectedCoord;
   }
   if (pCVar8->z < 1) {

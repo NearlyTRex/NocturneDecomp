@@ -17,19 +17,19 @@ void __cdecl core_dlight_cpp_CDemonLight_blitZBuffer_FUN_00472c70(CDemonLight *t
     g_CurrentLineNumber = 0x147;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonLight::blitZBuffer - No master Z buffer");
   }
-  if (((((this_ptr->base).viewport_rect.left < source_rect->top) &&
-       ((this_ptr->base).viewport_rect.top < source_rect->bottom)) &&
-      (source_rect->left < (this_ptr->base).viewport_rect.right)) &&
-     ((iVar2 = source_rect->right, iVar2 < (this_ptr->base).viewport_rect.bottom &&
-      (iVar2 <= source_rect->bottom)))) {
+  if (((((this_ptr->base).viewport_rect.x_min < source_rect->x_max) &&
+       ((this_ptr->base).viewport_rect.x_max < source_rect->y_max)) &&
+      (source_rect->x_min < (this_ptr->base).viewport_rect.y_min)) &&
+     ((iVar2 = source_rect->y_min, iVar2 < (this_ptr->base).viewport_rect.y_max &&
+      (iVar2 <= source_rect->y_max)))) {
     do {
-      iVar1 = this_ptr->shadow_map_width * iVar2 + source_rect->left;
+      iVar1 = this_ptr->shadow_map_width * iVar2 + source_rect->x_min;
       iVar2 = iVar2 + 1;
       core_dstrender_cpp_memcpyMMX_FUN_00492001
                 (this_ptr->shadow_depth_buffer + iVar1,
                  (void *)((int)this_ptr->master_zbuffer + iVar1 * 2),
-                 (source_rect->top - source_rect->left) * 2 + 2);
-    } while (iVar2 <= source_rect->bottom);
+                 (source_rect->x_max - source_rect->x_min) * 2 + 2);
+    } while (iVar2 <= source_rect->y_max);
   }
   return;
 }

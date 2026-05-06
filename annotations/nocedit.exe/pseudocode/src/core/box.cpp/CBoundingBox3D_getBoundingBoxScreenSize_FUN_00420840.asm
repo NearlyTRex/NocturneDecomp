@@ -24,7 +24,7 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   int g_ProjectionScale = 0x10000
 ;   CDemonRenderer g_CDemonRendererInstance
-;   int g_ViewportCenterYFixed
+;   undefined4 g_Projection.neg_half_height_fixed
 ;
 ; Called Functions:
 ;   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
@@ -97,7 +97,7 @@ section .text
     FILD dword ptr [ESP + 0x2c]         ; 004208f2
     FMUL double ptr [0x006165ef]        ; 004208f6 | g_BoundingBoxFixedPointScaleFactor1
     FDIVP                               ; 004208fc
-    FILD dword ptr [0x02d0254c]         ; 004208fe | g_ViewportCenterYFixed
+    FILD dword ptr [0x02d0254c]         ; 004208fe | g_Projection.neg_half_height_fixed
     FMULP                               ; 00420904
     FILD dword ptr [0x006793c0]         ; 00420906 | g_ProjectionScale
     FDIVP                               ; 0042090c
