@@ -10,7 +10,7 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions with findings: 146
-  Total diagnostics: 423
+  Total diagnostics: 411
   Functions flagged by multiple tools: 0
   .keep.cpp files: 146, raw .cpp files: 0
 
@@ -65,24 +65,6 @@ core_event.cpp_CEventList_evaluateAtom_FUN_004ae140  [.keep] [Cppcheck (quick)]
   Line  819: [invalidscanf] sscanf() without field width limits can crash with huge input data.
   Line  852: [invalidscanf] sscanf() without field width limits can crash with huge input data.
   Line  904: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-
-----------------------------------------------------------------------------------------------------
-core_mmx.c_detectIntelProcessor_FUN_00524f4c  [.keep] [Cppcheck (quick)]
-  File: core/mmx.c  (13 diagnostics)
-
-  Line   41: [uninitvar] Uninitialized variable: local_9
-  Line   41: [uninitvar] Uninitialized variable: local_8
-  Line   41: [uninitvar] Uninitialized variable: local_7
-  Line   42: [uninitvar] Uninitialized variable: local_6
-  Line   42: [uninitvar] Uninitialized variable: local_5
-  Line   42: [uninitvar] Uninitialized variable: local_4
-  Line   43: [uninitvar] Uninitialized variable: local_3
-  Line   43: [uninitvar] Uninitialized variable: local_2
-  Line   43: [uninitvar] Uninitialized variable: local_1
-  Line   44: [uninitvar] Uninitialized variable: local_13
-  Line   44: [uninitvar] Uninitialized variable: local_12
-  Line   45: [uninitvar] Uninitialized variable: local_11
-  Line   45: [uninitvar] Uninitialized variable: local_10
 
 ----------------------------------------------------------------------------------------------------
 core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690  [.keep] [Cppcheck (quick)]
@@ -929,7 +911,7 @@ core_game.cpp_CGame_renderOverlay_FUN_004d8040  [.keep] [Cppcheck (quick)]
 core_main.c_displayErrorAndQuit_FUN_00506f10  [.keep] [Cppcheck (quick)]
   File: core/main.c  (1 diagnostics)
 
-  Line   88: [nullPointerArithmetic] Pointer addition with NULL pointer.
+  Line   81: [nullPointerArithmetic] Pointer addition with NULL pointer.
 
 ----------------------------------------------------------------------------------------------------
 core_mission.cpp_CDemonMission_loadActor_FUN_00523990  [.keep] [Cppcheck (quick)]
@@ -1056,6 +1038,12 @@ engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30  [.keep] [Cppcheck (qui
   File: engine/keyframe.c  (1 diagnostics)
 
   Line   49: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+engine_keyframe.c_loadAndInterpolateKeyframes_FUN_00501d40  [.keep] [Cppcheck (quick)]
+  File: engine/keyframe.c  (1 diagnostics)
+
+  Line   74: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 engine_light.cpp_calculatePhongLighting_FUN_00505530  [.keep] [Cppcheck (quick)]

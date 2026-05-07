@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 663,
-    "complexity_score": 317,
+    "complexity_score": 337,
     "cross_reference_count": 36,
     "function_call_count": 7,
     "global_count": 24,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 292,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
       "unrolled_memset"
     ],
@@ -795,7 +795,23 @@
   "suspects": [
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 84,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(this_ptr->base).platform_orientation_delta.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
       "line": 94,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(this_ptr->velocity).z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 121,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->velocity).z = 0.0;",

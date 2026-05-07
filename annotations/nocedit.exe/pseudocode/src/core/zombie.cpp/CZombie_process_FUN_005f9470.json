@@ -8,13 +8,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2528,
-    "complexity_score": 1131,
+    "complexity_score": 1151,
     "cross_reference_count": 0,
     "function_call_count": 49,
     "global_count": 74,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1031,
-    "suspect_count": 7,
+    "suspect_count": 9,
     "suspect_types": [
       "self_copy_guard",
       "unrolled_memset",
@@ -1852,6 +1852,22 @@
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
       "line": 893,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 933,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "(this_ptr->base).base.position_delta.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 936,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",

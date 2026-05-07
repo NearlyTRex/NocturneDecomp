@@ -13,15 +13,12 @@ void __cdecl core_procedur_cpp_CProceduralTexture_applyRipple_FUN_00554670(CProc
   float fVar3;
   uint uVar3;
   int iVar4;
-  CProceduralTexture *pCVar5;
   int iVar6;
   int iVar5;
   int iVar7;
-  CProceduralTexture *pCVar8;
   int iVar9;
   float10 fVar10;
   float local_40;
-  CProceduralTexture *local_30;
   int local_28;
   int local_20;
   int local_1c;
@@ -59,12 +56,9 @@ void __cdecl core_procedur_cpp_CProceduralTexture_applyRipple_FUN_00554670(CProc
     iVar7 = iVar7 + 1;
     iVar9 = iVar9 + 0x100;
   } while (iVar7 < 0x100);
-  local_30 = this_ptr;
   local_28 = 0;
   do {
     iVar5 = 0;
-    pCVar5 = local_30;
-    pCVar8 = local_30;
     do {
       local_1c = (int)ROUND(ROUND((float)iVar5 - wave_x));
       local_20 = (int)ROUND(ROUND((float)local_28 - wave_y));
@@ -80,17 +74,15 @@ void __cdecl core_procedur_cpp_CProceduralTexture_applyRipple_FUN_00554670(CProc
       if (0xff < local_20) {
         local_20 = local_20 + -0x100;
       }
-      uVar3 = (uint)pCVar8->texture[0] + (uint)g_RippleBuffer[local_20 * 0x100 + local_1c];
+      uVar3 = (uint)this_ptr->texture[local_28 * 0x100 + iVar5] +
+              (uint)g_RippleBuffer[local_20 * 0x100 + local_1c];
       if (0xff < uVar3) {
         uVar3 = 0xff;
       }
-      pCVar8 = (CProceduralTexture *)((int)&pCVar8->width + 1);
+      this_ptr->texture[local_28 * 0x100 + iVar5] = (uchar)uVar3;
       iVar5 = iVar5 + 1;
-      pCVar5->texture[0] = (uchar)uVar3;
-      pCVar5 = (CProceduralTexture *)((int)&pCVar5->width + 1);
     } while (iVar5 < 0x100);
     local_28 = local_28 + 1;
-    local_30 = (CProceduralTexture *)(local_30->texture + 0xf8);
   } while (local_28 < 0x100);
   return;
 }

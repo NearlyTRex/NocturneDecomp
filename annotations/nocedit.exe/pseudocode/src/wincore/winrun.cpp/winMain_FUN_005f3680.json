@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 246,
-    "complexity_score": 140,
+    "complexity_score": 125,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 39,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 125,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 371
   },
   "cross_references": [
@@ -449,6 +447,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(char **)((int)g_ArgVector",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(char **)((int)g_ArgVector + iVar7) = pcVar9;",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 47,
       "match": "do {",
@@ -518,14 +525,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 67,
-      "match": "(char **)((int)g_ArgVector",
-      "severity": "moderate",
-      "text": "*(char **)((int)g_ArgVector + iVar7) = pcVar9;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

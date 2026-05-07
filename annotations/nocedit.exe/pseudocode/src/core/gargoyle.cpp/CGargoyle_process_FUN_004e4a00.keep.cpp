@@ -60,11 +60,9 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004e4a00(CGargoyle *this_pt
       return;
     }
   }
-  (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  (this_ptr->base).base.model.accumulated_root_motion.y =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
-  (this_ptr->base).base.model.accumulated_root_motion.x =
-       (this_ptr->base).base.model.accumulated_root_motion.y;
+  (this_ptr->base).base.model.accumulated_root_motion.x = 0.0f;
+  (this_ptr->base).base.model.accumulated_root_motion.y = 0.0f;
+  (this_ptr->base).base.model.accumulated_root_motion.z = 0.0f;
   local_2c = delta_time * (this_ptr->base).speed;
   pCVar4 = &(this_ptr->base).base.model;
   while (0.0 < local_2c) {
@@ -314,11 +312,9 @@ LAB_004e4d57:
     engine_console_cpp_CConsole_printf_FUN_00441890
               (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr->base.base.base.actor_name);
   }
-  (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  (this_ptr->base).base.model.accumulated_root_motion.y =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
-  (this_ptr->base).base.model.accumulated_root_motion.x =
-       (this_ptr->base).base.model.accumulated_root_motion.y;
+  (this_ptr->base).base.model.accumulated_root_motion.x = 0.0f;
+  (this_ptr->base).base.model.accumulated_root_motion.y = 0.0f;
+  (this_ptr->base).base.model.accumulated_root_motion.z = 0.0f;
 switchD_004e531f_caseD_4:
   if (0.0 < (this_ptr->base).attack_cooldown) {
     (this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - delta_time;
@@ -336,13 +332,12 @@ switchD_004e531f_caseD_4:
     local_b0.z = delta_time * (this_ptr->base).base.velocity.z +
                  (this_ptr->base).base.position_delta.z +
                  (this_ptr->base).base.model.accumulated_root_motion.z;
-    (this_ptr->base).base.position_delta.z = 0.0;
-    (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
-    pCVar10->x = (this_ptr->base).base.position_delta.y;
-    (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-    (this_ptr->base).base.model.accumulated_root_motion.y =
-         (this_ptr->base).base.model.accumulated_root_motion.z;
-    pCVar2->x = (this_ptr->base).base.model.accumulated_root_motion.y;
+    (this_ptr->base).base.position_delta.x = 0.0f;
+    (this_ptr->base).base.position_delta.y = 0.0f;
+    (this_ptr->base).base.position_delta.z = 0.0f;
+    (this_ptr->base).base.model.accumulated_root_motion.x = 0.0f;
+    (this_ptr->base).base.model.accumulated_root_motion.y = 0.0f;
+    (this_ptr->base).base.model.accumulated_root_motion.z = 0.0f;
     core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&local_b0);
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);

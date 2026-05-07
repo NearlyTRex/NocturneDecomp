@@ -18,14 +18,12 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
   int iVar3;
   CPathMap *this_ptr_01;
   EDeathState EVar4;
-  int iVar8;
   int iVar10;
   int iVar11;
   int iVar5;
   CVector3f CStack_48;
   float local_38;
   int local_24;
-  int local_20;
   float local_18;
   CCharacter *iVar9;
   float fVar3;
@@ -58,7 +56,6 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
          (this_ptr->guard_distance < this_ptr->victim_search_radius)) {
         local_38 = this_ptr->guard_distance * this_ptr->guard_distance;
       }
-      local_20 = 0;
       for (local_24 = 0; local_24 < g_CDemonSetPtr->character_count; local_24 = local_24 + 1) {
         iVar9 = g_CDemonSetPtr->characters[local_24];
         iVar3 = (*(((iVar9->base).vtable._uc)->_uc).isGrabbable)(iVar9,(CDemonActor *)this_ptr);
@@ -74,9 +71,8 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
              (fVar2 = fVar5 * fVar5 +
                       fVar2 * fVar2 + fVar4 * 3.0f * fVar4 * 3.0f,
              fVar2 <= local_38)) {
-            *(CCharacter **)((int)g_EnemyVictimCandidates + local_20) = iVar9;
-            *(float *)((int)g_EnemyVictimCandidateDistances + local_20) = fVar2;
-            local_20 = local_20 + 4;
+            g_EnemyVictimCandidates[iVar5] = (CDemonActor *)iVar9;
+            g_EnemyVictimCandidateDistances[iVar5] = fVar2;
             iVar5 = iVar5 + 1;
           }
         }
@@ -84,19 +80,13 @@ void __cdecl core_enemy_cpp_CEnemy_updateVictim_FUN_004a9b00(CEnemy *this_ptr,fl
       pCVar1 = this_ptr->victim;
       this_ptr->victim = (CCharacter *)0x0;
       while( true ) {
-        iVar10 = 0;
         local_18 = 1e+20;
         iVar11 = -1;
-        if (0 < iVar5) {
-          iVar8 = 0;
-          do {
-            if (*(float *)((int)g_EnemyVictimCandidateDistances + iVar8) < local_18) {
-              local_18 = *(float *)((int)g_EnemyVictimCandidateDistances + iVar8);
-              iVar11 = iVar10;
-            }
-            iVar10 = iVar10 + 1;
-            iVar8 = iVar8 + 4;
-          } while (iVar10 < iVar5);
+        for (iVar10 = 0; iVar10 < iVar5; iVar10 = iVar10 + 1) {
+          if (g_EnemyVictimCandidateDistances[iVar10] < local_18) {
+            local_18 = g_EnemyVictimCandidateDistances[iVar10];
+            iVar11 = iVar10;
+          }
         }
         if (iVar11 < 0) break;
         target = (CCharacter *)g_EnemyVictimCandidates[iVar11];

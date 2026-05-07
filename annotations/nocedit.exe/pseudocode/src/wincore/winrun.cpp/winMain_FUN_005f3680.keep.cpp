@@ -19,7 +19,6 @@ int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680(HINSTANCE hInstance,HINSTA
   LPSTR pCVar5;
   byte *pbVar6;
   HANDLE currentProcess;
-  int iVar7;
   uint uVar8;
   char *pcVar9;
   WNDCLASSA windowClass;
@@ -46,7 +45,6 @@ int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680(HINSTANCE hInstance,HINSTA
   pcVar9 = g_CommandLineBuffer;
   if (g_CommandLineBuffer[0] != '\0') {
     pbVar1 = (byte *)pcVar9;
-    iVar7 = g_ArgCount << 2;
     do {
       do {
         pbVar6 = pbVar1;
@@ -54,7 +52,7 @@ int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680(HINSTANCE hInstance,HINSTA
       } while (0x20 < *pbVar6);
       *pbVar6 = 0;
       g_ArgCount = g_ArgCount + 1;
-      *(char **)((int)g_ArgVector + iVar7) = pcVar9;
+      g_ArgVector[g_ArgCount - 1] = pcVar9;
       bVar3 = *pbVar1;
       pcVar9 = (char *)pbVar1;
       while (bVar3 == 0x20) {
@@ -63,7 +61,6 @@ int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680(HINSTANCE hInstance,HINSTA
         bVar3 = *pbVar1;
       }
       pbVar1 = (byte *)pcVar9;
-      iVar7 = iVar7 + 4;
     } while (*pcVar9 != 0);
   }
   (*g_GetCurrentDirectoryAFunc)(0x100,g_CurrentDirectory);

@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        66 ( 1.0%)
+  Functions with type issues:        63 ( 1.0%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          1
-    Undefined types in variables:      62
+    Undefined types in variables:      59
     Unresolved stack params:           3
 
-  Excluded (.keep / MMX / by-value):   157 functions
+  Excluded (.keep / MMX / by-value):   160 functions
     Wrong calling convention:          1
-    Undefined types in variables:      155
+    Undefined types in variables:      158
     Unresolved stack params:           1
 
 ====================================================================================================
@@ -101,7 +101,7 @@ Unresolved stack parameters (missing from signature) (3)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (62)
+Undefined types in variables (59)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -134,11 +134,6 @@ Undefined types in variables (62)
     Locals:  local_1a0 (undefined4[4]), local_190 (undefined4), local_18c (undefined4), local_128 (undefined4[4]), local_118 (undefined4), local_114 (undefined4), local_e0 (undefined4[4]), local_d0 (undefined4), local_cc (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  saveScreenshotGeneral
-    Address: 0x005490c0  File: engine/pcx.c
-    Locals:  local_88 (undefined1), local_87 (undefined1), local_86 (undefined1), local_85 (undefined1), local_84 (undefined2), local_82 (undefined2), local_47 (undefined1), local_44 (undefined2)
-    Suggested: Resolve undefined types to concrete types
-
   exportModelToBIN
     Address: 0x0045aa80  File: shape/design.c
     Locals:  local_98 (undefined4), local_94 (undefined4), local_5c (undefined4), local_58 (undefined4), local_44 (undefined4), local_40 (undefined4), local_38 (undefined4), local_30 (undefined4)
@@ -162,11 +157,6 @@ Undefined types in variables (62)
   CDeformableModel_calcRootOffsetScale
     Address: 0x0058e690  File: core/skeledit.cpp
     Locals:  local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CTrash_process
-    Address: 0x005decf0  File: core/trash.cpp
-    Locals:  local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CPoly_rayIntersect
@@ -354,11 +344,6 @@ Undefined types in variables (62)
     Locals:  local_9c (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  convertDirectionVectorToEulerAngles
-    Address: 0x005e7830  File: core/vecdir.cpp
-    Locals:  uStack_14 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
   modelStructNotSupported4
     Address: 0x0041dbe0  File: engine/boss.c
     Locals:  local_3c (undefined4[13])
@@ -467,7 +452,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (155)
+Undefined types - .keep overrides (158)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -613,6 +598,11 @@ Undefined types - .keep overrides (155)
   pollAndMixSfx
     Address: 0x005aca90  File: sound/sndmain.cpp
     Locals:  local_6c (undefined4), local_4c (undefined4), local_48 (undefined4), local_44 (undefined4), local_40 (undefined4), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  saveScreenshotGeneral
+    Address: 0x005490c0  File: engine/pcx.c
+    Locals:  local_88 (undefined1), local_87 (undefined1), local_86 (undefined1), local_85 (undefined1), local_84 (undefined2), local_82 (undefined2), local_47 (undefined1), local_44 (undefined2)
     Suggested: Resolve undefined types to concrete types
 
   CLodMesh_sortFacesByAttribute
@@ -813,6 +803,11 @@ Undefined types - .keep overrides (155)
   CDeformableModel_importVerticesS3D
     Address: 0x0058bc40  File: core/skeledit.cpp
     Locals:  local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CTrash_process
+    Address: 0x005decf0  File: core/trash.cpp
+    Locals:  local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   setupViewMatrix
@@ -1123,6 +1118,11 @@ Undefined types - .keep overrides (155)
   CStranger_makeDrawDecision
     Address: 0x005bfb60  File: core/stranger.cpp
     Locals:  local_10c (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  convertDirectionVectorToEulerAngles
+    Address: 0x005e7830  File: core/vecdir.cpp
+    Locals:  uStack_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CWerewolf_process

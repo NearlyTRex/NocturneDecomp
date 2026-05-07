@@ -116,15 +116,9 @@ LAB_005e24c7:
     local_18 = (CVector3f *)&(this_ptr->base).base.orient;
     if (0.0 < this_ptr->timer) {
       core_xform_cpp_eulerToQuaternion_FUN_005f7b20(local_18,&local_40);
-      local_90.w = local_40.w;
-      local_90.x = local_40.x;
-      local_90.y = local_40.y;
-      local_90.z = local_40.z;
+      local_90 = local_40;
       core_xform_cpp_eulerToQuaternion_FUN_005f7b20(local_1c,&local_70);
-      local_50.w = local_70.w;
-      local_50.x = local_70.x;
-      local_50.y = local_70.y;
-      local_50.z = local_70.z;
+      local_50 = local_70;
       core_xform_cpp_slerpQuaternion_FUN_005f77e0
                 (&local_90,&local_50,
                  (delta_time / (this_ptr->timer + delta_time)) * (float)2,&local_60);

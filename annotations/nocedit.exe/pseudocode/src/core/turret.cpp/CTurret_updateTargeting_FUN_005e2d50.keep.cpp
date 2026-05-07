@@ -17,7 +17,6 @@ void __cdecl core_turret_cpp_CTurret_updateTargeting_FUN_005e2d50(CTurret *this_
   int iVar4;
   CBoundingBox3D *pCVar4;
   uint corner_index;
-  int iVar5;
   int iVar6;
   CVector3f aCStack_15c [10];
   CBoundingBox3D CStack_e4;
@@ -62,7 +61,6 @@ void __cdecl core_turret_cpp_CTurret_updateTargeting_FUN_005e2d50(CTurret *this_
   CStack_cc.max.y = CStack_cc.max.y + 15.0f;
   CStack_cc.max.z = CStack_cc.max.z + 15.0f;
   iVar6 = 0;
-  iVar5 = 0;
   do {
     while( true ) {
       if (g_CDemonSetPtr->actor_count <= iVar6) {
@@ -77,7 +75,7 @@ void __cdecl core_turret_cpp_CTurret_updateTargeting_FUN_005e2d50(CTurret *this_
         core_turret_cpp_CTurret_updatePatrol_FUN_005e3560(this_ptr,delta_time);
         return;
       }
-      actor_ptr = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5);
+      actor_ptr = g_CDemonSetPtr->actors[iVar6];
       iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,this_ptr->allowed_victim_types);
       if ((((iVar3 != 0) && (CStack_cc.min.x <= (actor_ptr->location).position.x)) &&
           (CStack_cc.min.y <= (actor_ptr->location).position.y)) &&
@@ -87,7 +85,6 @@ void __cdecl core_turret_cpp_CTurret_updateTargeting_FUN_005e2d50(CTurret *this_
            ((actor_ptr->location).position.z <= CStack_cc.max.z)))))) break;
 LAB_005e2ed6:
       iVar6 = iVar6 + 1;
-      iVar5 = iVar5 + 4;
     }
     iVar4 = (*((actor_ptr->vtable)._ub)->canLookAt)(actor_ptr);
     if (iVar4 == 0) goto LAB_005e2ed6;
@@ -125,6 +122,5 @@ LAB_005e2ed6:
     }
     if (&CStack_3c == &CStack_54) goto LAB_005e2ed6;
     iVar6 = iVar6 + 1;
-    iVar5 = iVar5 + 4;
   } while( true );
 }

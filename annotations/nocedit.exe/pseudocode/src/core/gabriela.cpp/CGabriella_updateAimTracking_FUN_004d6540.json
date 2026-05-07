@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 420,
-    "complexity_score": 175,
+    "complexity_score": 190,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 160,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memset"
     ],
     "total_lines": 580
   },
@@ -407,6 +408,14 @@
       "severity": "moderate",
       "text": "target_actor = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom cascade constant fill (4 sibling fields chained through prior store of `0.0`). Replace with 4 direct stores of the constant in a .keep.",
+      "line": 63,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "this_ptr->aim_yaw = 0.0;",
+      "type": "unrolled_memset"
     }
   ]
 }

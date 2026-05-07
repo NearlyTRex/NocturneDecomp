@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 335,
-    "complexity_score": 193,
+    "complexity_score": 148,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 21,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 148,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 483
   },
   "cross_references": [],
@@ -248,6 +246,42 @@
       "severity": "moderate",
       "text": "iVar9 = *(CCharacter **)((int)g_CDemonSetPtr->characters + local_2c);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 77,
+      "match": "(CCharacter **)((int)g_EnemyVictimCandidates",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(CCharacter **)((int)g_EnemyVictimCandidates + local_20) = iVar9;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 78,
+      "match": "(float *)((int)g_EnemyVictimCandidateDistances",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)g_EnemyVictimCandidateDistances + local_20) = fVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 94,
+      "match": "(float *)((int)g_EnemyVictimCandidateDistances",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(float *)((int)g_EnemyVictimCandidateDistances + iVar8) < local_18) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 95,
+      "match": "(float *)((int)g_EnemyVictimCandidateDistances",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_18 = *(float *)((int)g_EnemyVictimCandidateDistances + iVar8);",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {
@@ -374,40 +408,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 77,
-      "match": "(CCharacter **)((int)g_EnemyVictimCandidates",
-      "severity": "moderate",
-      "text": "*(CCharacter **)((int)g_EnemyVictimCandidates + local_20) = iVar9;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 78,
-      "match": "(float *)((int)g_EnemyVictimCandidateDistances",
-      "severity": "moderate",
-      "text": "*(float *)((int)g_EnemyVictimCandidateDistances + local_20) = fVar2;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 94,
-      "match": "(float *)((int)g_EnemyVictimCandidateDistances",
-      "severity": "moderate",
-      "text": "if (*(float *)((int)g_EnemyVictimCandidateDistances + iVar8) < local_18) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 95,
-      "match": "(float *)((int)g_EnemyVictimCandidateDistances",
-      "severity": "moderate",
-      "text": "local_18 = *(float *)((int)g_EnemyVictimCandidateDistances + iVar8);",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

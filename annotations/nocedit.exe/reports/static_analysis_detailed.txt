@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (423 diagnostics)
+Cppcheck (quick) (411 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (95)
+shiftTooManyBitsSigned (96)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_F line 66
@@ -276,6 +276,10 @@ shiftTooManyBitsSigned (95)
     File: engine/keyframe.c
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
+  engine_keyframe.c_loadAndInterpolateKeyframes_FUN_ line 74
+    File: engine/keyframe.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
   engine_light.cpp_calculatePhongLighting_FUN_005055 line 105
     File: engine/light.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
@@ -393,7 +397,7 @@ shiftTooManyBitsSigned (95)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (92)
+uninitvar (79)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 63
@@ -535,58 +539,6 @@ uninitvar (92)
   core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 158
     File: core/ghoul.cpp
     Uninitialized variable: local_1c4
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 41
-    File: core/mmx.c
-    Uninitialized variable: local_9
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 41
-    File: core/mmx.c
-    Uninitialized variable: local_8
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 41
-    File: core/mmx.c
-    Uninitialized variable: local_7
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 42
-    File: core/mmx.c
-    Uninitialized variable: local_6
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 42
-    File: core/mmx.c
-    Uninitialized variable: local_5
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 42
-    File: core/mmx.c
-    Uninitialized variable: local_4
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 43
-    File: core/mmx.c
-    Uninitialized variable: local_3
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 43
-    File: core/mmx.c
-    Uninitialized variable: local_2
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 43
-    File: core/mmx.c
-    Uninitialized variable: local_1
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 44
-    File: core/mmx.c
-    Uninitialized variable: local_13
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 44
-    File: core/mmx.c
-    Uninitialized variable: local_12
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 45
-    File: core/mmx.c
-    Uninitialized variable: local_11
-
-  core_mmx.c_detectIntelProcessor_FUN_00524f4c       line 45
-    File: core/mmx.c
-    Uninitialized variable: local_10
 
   core_path.cpp_CPathMap_findPathToDestination_FUN_0 line 169
     File: core/path.cpp
@@ -1752,7 +1704,7 @@ compareBoolExpressionWithInt (1)
 nullPointerArithmetic (1)
 ----------------------------------------------------------------------------------------------------
 
-  core_main.c_displayErrorAndQuit_FUN_00506f10       line 88
+  core_main.c_displayErrorAndQuit_FUN_00506f10       line 81
     File: core/main.c
     Pointer addition with NULL pointer.
 

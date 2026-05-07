@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 259,
-    "complexity_score": 164,
+    "complexity_score": 119,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 19,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 119,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 378
   },
   "cross_references": [
@@ -266,6 +264,44 @@
     },
     "pcode_op_count": 1136
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 107,
+      "match": "(int **)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar8 = *(int **)((int)g_ScreenBufferArray + iVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 68,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar3 = (CProceduralTexture *)((int)&pCVar9->width + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 69,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar7 = (CProceduralTexture *)((int)&pCVar7->width + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 110,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar10 = (CProceduralTexture *)((int)&pCVar10->width + 1);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 312,
     "local_size": 308,
@@ -345,38 +381,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 107,
-      "match": "(int **)((int)g_ScreenBufferArray",
-      "severity": "moderate",
-      "text": "piVar8 = *(int **)((int)g_ScreenBufferArray + iVar1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 68,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "pCVar3 = (CProceduralTexture *)((int)&pCVar9->width + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 69,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "pCVar7 = (CProceduralTexture *)((int)&pCVar7->width + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 110,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "pCVar10 = (CProceduralTexture *)((int)&pCVar10->width + 1);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

@@ -35,7 +35,6 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004f4bd0(CHostage *this_ptr,f
   SMotion *pSVar21;
   CWeapon *pCVar22;
   int iVar25;
-  int iVar23;
   uint disable_search;
   float local_1a0;
   float local_19c;
@@ -95,11 +94,9 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004f4bd0(CHostage *this_ptr,f
     return;
   }
   local_1a0 = delta_time;
-  (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  (this_ptr->base).base.model.accumulated_root_motion.y =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
-  (this_ptr->base).base.model.accumulated_root_motion.x =
-       (this_ptr->base).base.model.accumulated_root_motion.y;
+  (this_ptr->base).base.model.accumulated_root_motion.x = 0.0f;
+  (this_ptr->base).base.model.accumulated_root_motion.y = 0.0f;
+  (this_ptr->base).base.model.accumulated_root_motion.z = 0.0f;
   pCVar4 = &(this_ptr->base).base.model;
   while (0.0 < local_1a0) {
     uVar14 = core_motion_cpp_CMotionController_advance_FUN_0052d610
@@ -129,17 +126,15 @@ void __cdecl core_hostage_cpp_CHostage_process_FUN_004f4bd0(CHostage *this_ptr,f
       local_68 = 1e+30;
       local_140.z = 1.5;
       iVar25 = 0;
-      iVar23 = 0;
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)this_ptr,&local_ec,&local_140);
       while (iVar25 < g_CDemonSetPtr->actor_count) {
         pCVar15 = (CDoor *)core_actor_cpp_castToClassHash_FUN_0040c790
-                                     (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar23),
+                                     (g_CDemonSetPtr->actors[iVar25],
                                       g_CDoorClassInfo.name_hash);
         if (pCVar15 == (CDoor *)0x0) {
 LAB_004f4dd2:
           iVar25 = iVar25 + 1;
-          iVar23 = iVar23 + 4;
         }
         else {
           fVar14 = (pCVar15->base).location.position.x - local_ec.x;
@@ -148,7 +143,6 @@ LAB_004f4dd2:
              (fVar14 = SQRT(fVar24 * fVar24 + fVar14 * fVar14), local_68 <= fVar14))
           goto LAB_004f4dd2;
           iVar25 = iVar25 + 1;
-          iVar23 = iVar23 + 4;
           local_68 = fVar14;
           local_24 = pCVar15;
         }
@@ -502,11 +496,9 @@ LAB_004f5384:
       else if ((this_ptr->base).base.grabbed_by == (CDemonActor *)0x0) goto LAB_004f5384;
       disable_search = 1;
       bVar12 = true;
-      (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-      (this_ptr->base).base.model.accumulated_root_motion.y =
-           (this_ptr->base).base.model.accumulated_root_motion.z;
-      (this_ptr->base).base.model.accumulated_root_motion.x =
-           (this_ptr->base).base.model.accumulated_root_motion.y;
+      (this_ptr->base).base.model.accumulated_root_motion.x = 0.0f;
+      (this_ptr->base).base.model.accumulated_root_motion.y = 0.0f;
+      (this_ptr->base).base.model.accumulated_root_motion.z = 0.0f;
     }
   }
   if (((0.0 < (this_ptr->base).base.hit_points) && (this_ptr->hostage_type == 1)) &&
@@ -561,14 +553,13 @@ LAB_004f5384:
     local_b0.z = (this_ptr->base).base.velocity.z * delta_time +
                  (this_ptr->base).base.position_delta.z +
                  (this_ptr->base).base.model.accumulated_root_motion.z;
-    (this_ptr->base).base.position_delta.z = 0.0;
-    (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
-    pCVar21->x = (this_ptr->base).base.position_delta.y;
-    (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+    (this_ptr->base).base.position_delta.x = 0.0f;
+    (this_ptr->base).base.position_delta.y = 0.0f;
+    (this_ptr->base).base.position_delta.z = 0.0f;
+    (this_ptr->base).base.model.accumulated_root_motion.x = 0.0f;
+    (this_ptr->base).base.model.accumulated_root_motion.y = 0.0f;
+    (this_ptr->base).base.model.accumulated_root_motion.z = 0.0f;
     pCVar3 = &(this_ptr->base).base.base.location;
-    (this_ptr->base).base.model.accumulated_root_motion.y =
-         (this_ptr->base).base.model.accumulated_root_motion.z;
-    pCVar7->x = (this_ptr->base).base.model.accumulated_root_motion.y;
     fVar14 = (pCVar3->position).x;
     fVar24 = (this_ptr->base).base.base.location.position.y;
     fVar11 = (this_ptr->base).base.base.location.position.z;

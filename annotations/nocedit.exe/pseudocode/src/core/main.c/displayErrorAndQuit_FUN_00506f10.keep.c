@@ -72,19 +72,12 @@ LAB_00506f71:
         core_sound_cpp_CSound_dtor_FUN_005b2d60(g_CSoundPtr);
         engine_2d_c_cleanupGraphicsSystem_FUN_00401130();
         wincore_winrun_cpp_endPeriod_FUN_005f2db0();
-                    /* WARNING: Subroutine does not return */
         wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_005f3920(g_ErrorMessageBuffer_02dd3130);
       }
-      do {
-        pcVar5 = g_CurrentFilename;
-        if (*g_CurrentFilename == '\\') goto LAB_00506f93;
-        if (*g_CurrentFilename == '\0') break;
-        pcVar5 = g_CurrentFilename + 1;
-        if (*pcVar5 == '\\') goto LAB_00506f93;
-        g_CurrentFilename = g_CurrentFilename + 2;
-      } while (*pcVar5 != '\0');
-      pcVar5 = (char *)0x0;
-LAB_00506f93:
+      pcVar5 = strchr(g_CurrentFilename,'\\');
+      if (pcVar5 == (char *)0x0) {
+        pcVar5 = (char *)0x0;
+      }
       pcVar1 = pcVar5 + 1;
       g_CurrentFilename = pcVar1;
     }

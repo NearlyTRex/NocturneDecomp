@@ -7,17 +7,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_005e98b0(CCryptVessel *this_ptr)
 
 {
   float fVar1;
-  char cVar2;
   CKeyFramedModel *pCVar2;
   CKeyFramedModel *pCVar3;
-  char *pcVar3;
-  char *pcVar4;
   CVector3f local_2c;
   CVector3f local_20;
   
@@ -47,17 +42,7 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_005e98b0(CCryptVe
   }
   else {
     pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->orb_model);
-    pcVar3 = "MENUCLD2.RAW";
-    pcVar4 = pCVar2->texture_list[0].textures[0].texture_name;
-    do {
-      cVar2 = *pcVar3;
-      *pcVar4 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar4[1] = cVar2;
-      pcVar4 = pcVar4 + 2;
-    } while (cVar2 != '\0');
+    strcpy(pCVar2->texture_list[0].textures[0].texture_name,"MENUCLD2.RAW");
     if (this_ptr->visual_type == 0) {
       engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
     }

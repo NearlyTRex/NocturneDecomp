@@ -87,9 +87,9 @@ void __cdecl core_drip_cpp_CDrip_process_FUN_0048e2a0(CDrip *this_ptr,float delt
       (this_ptr->base).location.position.x = fVar1 * this_ptr->drip_radius + (this_ptr->home_pos).x;
       fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,1.0);
       (this_ptr->base).location.position.z = fVar1 * this_ptr->drip_radius + (this_ptr->home_pos).z;
-      (this_ptr->vel).z = 0.0;
-      (this_ptr->vel).y = (this_ptr->vel).z;
-      (this_ptr->vel).x = (this_ptr->vel).y;
+      (this_ptr->vel).x = 0.0f;
+      (this_ptr->vel).y = 0.0f;
+      (this_ptr->vel).z = 0.0f;
       fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10
                         (this_ptr->min_auto_drip_time,this_ptr->max_auto_drip_time);
       this_ptr->drip_timer = fVar1;

@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 586,
-    "complexity_score": 312,
+    "complexity_score": 272,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 14,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 272,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 858
   },
   "cross_references": [],
@@ -219,6 +216,35 @@
     },
     "pcode_op_count": 3450
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 261,
+      "match": "(CMatrix3x3f *)((int)pCVar11",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar11 = (CMatrix3x3f *)((int)pCVar11 + (uint)bVar12 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 262,
+      "match": "(CMatrix3x4f *)((int)pCVar10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + (uint)bVar12 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 260,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar19 = 0xc; iVar19 != 0; iVar19 = iVar19 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 436,
     "local_size": 428,
@@ -623,32 +649,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 261,
-      "match": "(CMatrix3x3f *)((int)pCVar11",
-      "severity": "moderate",
-      "text": "pCVar11 = (CMatrix3x3f *)((int)pCVar11 + (uint)bVar12 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 262,
-      "match": "(CMatrix3x4f *)((int)pCVar10",
-      "severity": "moderate",
-      "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + (uint)bVar12 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 260,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar19 = 0xc; iVar19 != 0; iVar19 = iVar19 + -1) {",
-      "type": "unrolled_memcpy"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

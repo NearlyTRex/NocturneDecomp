@@ -33,11 +33,9 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_t
     return;
   }
   core_charactr_cpp_CCharacter_processSmoking_FUN_0042ea40(&this_ptr->base,delta_time);
-  (this_ptr->base).model.accumulated_root_motion.z = 0.0;
-  (this_ptr->base).model.accumulated_root_motion.y =
-       (this_ptr->base).model.accumulated_root_motion.z;
-  (this_ptr->base).model.accumulated_root_motion.x =
-       (this_ptr->base).model.accumulated_root_motion.y;
+  (this_ptr->base).model.accumulated_root_motion.x = 0.0f;
+  (this_ptr->base).model.accumulated_root_motion.y = 0.0f;
+  (this_ptr->base).model.accumulated_root_motion.z = 0.0f;
   pCVar3 = &(this_ptr->base).model;
   local_58 = delta_time;
   while (0.0 < local_58) {
@@ -94,11 +92,9 @@ LAB_00544b62:
                 (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr->base.base.actor_name);
     }
   }
-  (this_ptr->base).model.accumulated_root_motion.z = 0.0;
-  (this_ptr->base).model.accumulated_root_motion.y =
-       (this_ptr->base).model.accumulated_root_motion.z;
-  (this_ptr->base).model.accumulated_root_motion.x =
-       (this_ptr->base).model.accumulated_root_motion.y;
+  (this_ptr->base).model.accumulated_root_motion.x = 0.0f;
+  (this_ptr->base).model.accumulated_root_motion.y = 0.0f;
+  (this_ptr->base).model.accumulated_root_motion.z = 0.0f;
 LAB_00544a0c:
   (this_ptr->base).velocity.y = (this_ptr->base).velocity.y - delta_time * (float)32;
   pCVar4 = &(this_ptr->base).position_delta;
@@ -108,13 +104,12 @@ LAB_00544a0c:
                 (this_ptr->base).model.accumulated_root_motion.y;
   CStack_54.z = (this_ptr->base).velocity.z * delta_time + (this_ptr->base).position_delta.z +
                 (this_ptr->base).model.accumulated_root_motion.z;
-  (this_ptr->base).position_delta.z = 0.0;
-  (this_ptr->base).position_delta.y = (this_ptr->base).position_delta.z;
-  pCVar4->x = (this_ptr->base).position_delta.y;
-  (this_ptr->base).model.accumulated_root_motion.z = 0.0;
-  (this_ptr->base).model.accumulated_root_motion.y =
-       (this_ptr->base).model.accumulated_root_motion.z;
-  pCVar2->x = (this_ptr->base).model.accumulated_root_motion.y;
+  (this_ptr->base).position_delta.x = 0.0f;
+  (this_ptr->base).position_delta.y = 0.0f;
+  (this_ptr->base).position_delta.z = 0.0f;
+  (this_ptr->base).model.accumulated_root_motion.x = 0.0f;
+  (this_ptr->base).model.accumulated_root_motion.y = 0.0f;
+  (this_ptr->base).model.accumulated_root_motion.z = 0.0f;
   core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(&this_ptr->base,&CStack_54);
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820(&this_ptr->base);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(&(this_ptr->base).model);

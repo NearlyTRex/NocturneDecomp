@@ -47,11 +47,9 @@ void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,f
   if (fVar10 < 0.0) {
     (this_ptr->base).invincibility_timer = 0.0;
   }
-  (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  (this_ptr->base).base.model.accumulated_root_motion.y =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
-  (this_ptr->base).base.model.accumulated_root_motion.x =
-       (this_ptr->base).base.model.accumulated_root_motion.y;
+  (this_ptr->base).base.model.accumulated_root_motion.x = 0.0f;
+  (this_ptr->base).base.model.accumulated_root_motion.y = 0.0f;
+  (this_ptr->base).base.model.accumulated_root_motion.z = 0.0f;
   core_colonel_cpp_CColonel_processMotionEvents_FUN_00440430(this_ptr,delta_time);
   if ((this_ptr->base).control_type == HERO_CONTROL_AI) {
     core_colonel_cpp_CColonel_processAI_FUN_0043ff20(this_ptr,delta_time);
@@ -168,14 +166,12 @@ switchD_0043fe37_caseD_5:
     local_68.z = (this_ptr->base).base.model.accumulated_root_motion.z +
                  (this_ptr->base).base.position_delta.z +
                  delta_time * (this_ptr->base).base.velocity.z;
-    (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-    (this_ptr->base).base.model.accumulated_root_motion.y =
-         (this_ptr->base).base.model.accumulated_root_motion.z;
-    pCVar7->x = (this_ptr->base).base.model.accumulated_root_motion.y;
-    (this_ptr->base).base.position_delta.z = 0.0;
-    fVar10 = (this_ptr->base).base.position_delta.z;
-    (this_ptr->base).base.position_delta.y = fVar10;
-    pCVar1->x = fVar10;
+    (this_ptr->base).base.model.accumulated_root_motion.x = 0.0f;
+    (this_ptr->base).base.model.accumulated_root_motion.y = 0.0f;
+    (this_ptr->base).base.model.accumulated_root_motion.z = 0.0f;
+    (this_ptr->base).base.position_delta.x = 0.0f;
+    (this_ptr->base).base.position_delta.y = 0.0f;
+    (this_ptr->base).base.position_delta.z = 0.0f;
     core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&local_68);
   }
   else {

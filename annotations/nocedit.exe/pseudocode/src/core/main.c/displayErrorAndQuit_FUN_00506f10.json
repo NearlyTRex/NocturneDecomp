@@ -7,17 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 198,
-    "complexity_score": 110,
+    "complexity_score": 80,
     "cross_reference_count": 745,
     "function_call_count": 14,
     "global_count": 20,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 80,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unrolled_strchr",
-      "warning_noreturn"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 278
   },
   "cross_references": [
@@ -4856,6 +4853,24 @@
       "severity": "moderate",
       "text": "/* WARNING: Variable defined which should be unmapped: local_14 */",
       "type": "warning_unmapped_variable"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 67,
+      "match": "WARNING: Subroutine does not return",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\\\' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\\\') in a .keep.",
+      "line": 70,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
     }
   ],
   "stack_frame": {
@@ -4896,7 +4911,7 @@
         {
           "check_id": "nullPointerArithmetic",
           "column": 23,
-          "line": 88,
+          "line": 81,
           "message": "Pointer addition with NULL pointer.",
           "severity": "error"
         }
@@ -4905,22 +4920,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Subroutine marked as non-returning",
-      "line": 67,
-      "match": "WARNING: Subroutine does not return",
-      "severity": "mild",
-      "text": "/* WARNING: Subroutine does not return */",
-      "type": "warning_noreturn"
-    },
-    {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\\\' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\\\') in a .keep.",
-      "line": 70,
-      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strchr"
-    }
-  ]
+  "suspects": []
 }

@@ -7,18 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 142,
+    "complexity_score": 77,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 10,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 77,
-    "suspect_count": 5,
-    "suspect_types": [
-      "cpuid_intrinsic",
-      "warning_overlapping_globals",
-      "warning_unreachable"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 145
   },
   "cross_references": [
@@ -142,6 +138,42 @@
   },
   "resolved_suspects": [
     {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00524fc7) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 3,
+      "match": "WARNING: Removing unreachable block",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00524f8f) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 4,
+      "match": "WARNING: Globals starting with",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "CPUID intrinsic (CPU detection)",
+      "line": 55,
+      "match": "cpuid_basic_info",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "piVar3 = (int *)cpuid_basic_info(0);",
+      "type": "cpuid_intrinsic"
+    },
+    {
       "description": "Unresolved register reference",
       "line": 56,
       "match": "register0x0000000c",
@@ -149,6 +181,15 @@
       "severity": "mild",
       "text": "register0x0000000c = piVar3[1];",
       "type": "unresolved_register"
+    },
+    {
+      "description": "CPUID intrinsic (CPU detection)",
+      "line": 71,
+      "match": "cpuid_Version_info",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "puVar4 = (uint *)cpuid_Version_info(1);",
+      "type": "cpuid_intrinsic"
     }
   ],
   "stack_frame": {
@@ -190,147 +231,5 @@
     ],
     "severity": "low"
   },
-  "static_analysis": {
-    "analyzed_file": "detectIntelProcessor_FUN_00524f4c.keep.c",
-    "cppcheck_quick": {
-      "diagnostic_count": 13,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 19,
-          "line": 41,
-          "message": "Uninitialized variable: local_9",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 50,
-          "line": 41,
-          "message": "Uninitialized variable: local_8",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 80,
-          "line": 41,
-          "message": "Uninitialized variable: local_7",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 21,
-          "line": 42,
-          "message": "Uninitialized variable: local_6",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 51,
-          "line": 42,
-          "message": "Uninitialized variable: local_5",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 80,
-          "line": 42,
-          "message": "Uninitialized variable: local_4",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 19,
-          "line": 43,
-          "message": "Uninitialized variable: local_3",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 48,
-          "line": 43,
-          "message": "Uninitialized variable: local_2",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 74,
-          "line": 43,
-          "message": "Uninitialized variable: local_1",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 19,
-          "line": 44,
-          "message": "Uninitialized variable: local_13",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 53,
-          "line": 44,
-          "message": "Uninitialized variable: local_12",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 19,
-          "line": 45,
-          "message": "Uninitialized variable: local_11",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 52,
-          "line": 45,
-          "message": "Uninitialized variable: local_10",
-          "severity": "error"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Unreachable code block removed",
-      "line": 2,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x00524fc7) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 3,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x00524f8f) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Overlapping global symbols",
-      "line": 4,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "CPUID intrinsic (CPU detection)",
-      "line": 55,
-      "match": "cpuid_basic_info",
-      "severity": "mild",
-      "text": "piVar3 = (int *)cpuid_basic_info(0);",
-      "type": "cpuid_intrinsic"
-    },
-    {
-      "description": "CPUID intrinsic (CPU detection)",
-      "line": 71,
-      "match": "cpuid_Version_info",
-      "severity": "mild",
-      "text": "puVar4 = (uint *)cpuid_Version_info(1);",
-      "type": "cpuid_intrinsic"
-    }
-  ]
+  "suspects": []
 }

@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 659,
-    "complexity_score": 399,
+    "complexity_score": 409,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 274,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
       "negative_offset",
       "self_copy_guard",
@@ -603,6 +603,14 @@
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "pSVar18[iVar14].velocity.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 201,
+      "match": "cascade_constant_fill",
+      "severity": "moderate",
+      "text": "this_ptr->vertices[0].velocity.z = 0.0;",
       "type": "unrolled_memset"
     },
     {

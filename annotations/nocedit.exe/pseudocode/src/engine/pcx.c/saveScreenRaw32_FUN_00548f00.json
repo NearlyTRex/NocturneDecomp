@@ -7,16 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 101,
+    "complexity_score": 86,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 23,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 86,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 266
   },
   "cross_references": [
@@ -257,6 +255,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(uint **)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar2 = *(uint **)((int)g_ScreenBufferArray + local_18);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 49,
       "match": "do {",
@@ -343,14 +350,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 70,
-      "match": "(uint **)((int)g_ScreenBufferArray",
-      "severity": "moderate",
-      "text": "puVar2 = *(uint **)((int)g_ScreenBufferArray + local_18);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

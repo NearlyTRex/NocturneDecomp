@@ -77,11 +77,9 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
   if (iVar5 == 0) {
     return;
   }
-  (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  (this_ptr->base).base.model.accumulated_root_motion.y =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
-  (this_ptr->base).base.model.accumulated_root_motion.x =
-       (this_ptr->base).base.model.accumulated_root_motion.y;
+  (this_ptr->base).base.model.accumulated_root_motion.x = 0.0f;
+  (this_ptr->base).base.model.accumulated_root_motion.y = 0.0f;
+  (this_ptr->base).base.model.accumulated_root_motion.z = 0.0f;
   local_28 = delta_time * (this_ptr->base).speed;
   pCVar4 = &(this_ptr->base).base.model;
   while (0.0 < local_28) {
@@ -194,11 +192,9 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005a2800(CSmiley *this_ptr,floa
           fVar14 = 0.17453292;
           local_1c = 2.5f;
           fVar15 = 0.5;
-          (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-          (this_ptr->base).base.model.accumulated_root_motion.y =
-               (this_ptr->base).base.model.accumulated_root_motion.z;
-          (this_ptr->base).base.model.accumulated_root_motion.x =
-               (this_ptr->base).base.model.accumulated_root_motion.y;
+          (this_ptr->base).base.model.accumulated_root_motion.x = 0.0f;
+          (this_ptr->base).base.model.accumulated_root_motion.y = 0.0f;
+          (this_ptr->base).base.model.accumulated_root_motion.z = 0.0f;
           local_94.x = 0.0;
           pCVar12 = &local_94;
           local_94.y = 0.0;
@@ -330,11 +326,9 @@ LAB_005a2b8e:
     engine_console_cpp_CConsole_printf_FUN_00441890
               (g_CConsolePtr,"%s confused while walking to scriptDest!\n",(this_ptr->base).base.base.actor_name);
   }
-  (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  (this_ptr->base).base.model.accumulated_root_motion.y =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
-  (this_ptr->base).base.model.accumulated_root_motion.x =
-       (this_ptr->base).base.model.accumulated_root_motion.y;
+  (this_ptr->base).base.model.accumulated_root_motion.x = 0.0f;
+  (this_ptr->base).base.model.accumulated_root_motion.y = 0.0f;
+  (this_ptr->base).base.model.accumulated_root_motion.z = 0.0f;
 switchD_005a3055_caseD_7:
   if (0.0 < this_ptr->attack_cooldown) {
     this_ptr->attack_cooldown = this_ptr->attack_cooldown - delta_time;
@@ -349,10 +343,9 @@ switchD_005a3055_caseD_7:
          pCVar9->y + (this_ptr->base).base.base.location.position.y;
     (this_ptr->base).base.base.location.position.z =
          pCVar9->z + (this_ptr->base).base.base.location.position.z;
-    (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-    (this_ptr->base).base.model.accumulated_root_motion.y =
-         (this_ptr->base).base.model.accumulated_root_motion.z;
-    pCVar12->x = (this_ptr->base).base.model.accumulated_root_motion.y;
+    (this_ptr->base).base.model.accumulated_root_motion.x = 0.0f;
+    (this_ptr->base).base.model.accumulated_root_motion.y = 0.0f;
+    (this_ptr->base).base.model.accumulated_root_motion.z = 0.0f;
   }
   else {
     iVar10 = core_charactr_cpp_CCharacter_isOnGround_FUN_004297e0((CCharacter *)this_ptr);
@@ -375,13 +368,12 @@ switchD_005a3055_caseD_7:
       local_ac.z = delta_time * (this_ptr->base).base.velocity.z +
                    (this_ptr->base).base.position_delta.z +
                    (this_ptr->base).base.model.accumulated_root_motion.z;
-      (this_ptr->base).base.position_delta.z = 0.0;
-      (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
-      pCVar12->x = (this_ptr->base).base.position_delta.y;
-      (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-      fVar15 = (this_ptr->base).base.model.accumulated_root_motion.z;
-      (this_ptr->base).base.model.accumulated_root_motion.y = fVar15;
-      pCVar5->x = fVar15;
+      (this_ptr->base).base.position_delta.x = 0.0f;
+      (this_ptr->base).base.position_delta.y = 0.0f;
+      (this_ptr->base).base.position_delta.z = 0.0f;
+      (this_ptr->base).base.model.accumulated_root_motion.x = 0.0f;
+      (this_ptr->base).base.model.accumulated_root_motion.y = 0.0f;
+      (this_ptr->base).base.model.accumulated_root_motion.z = 0.0f;
       core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&local_ac);
     }
   }

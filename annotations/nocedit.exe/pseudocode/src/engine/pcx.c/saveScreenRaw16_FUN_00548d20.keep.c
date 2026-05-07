@@ -17,7 +17,6 @@ void __cdecl engine_pcx_c_saveScreenRaw16_FUN_00548d20(char *filename)
   char *pcVar6;
   ushort *puVar6;
   char local_70 [80];
-  int local_18;
   int local_14;
   ushort uVar2;
 
@@ -38,10 +37,9 @@ void __cdecl engine_pcx_c_saveScreenRaw16_FUN_00548d20(char *filename)
   }
   local_14 = 0;
   if (0 < g_WindowHeight) {
-    local_18 = 0;
     do {
       iVar3 = 0;
-      puVar6 = *(ushort **)((int)g_ScreenBufferArray + local_18);
+      puVar6 = (ushort *)g_ScreenBufferArray[local_14];
       if (0 < g_WindowWidth) {
         do {
           uVar2 = *puVar6;
@@ -55,7 +53,6 @@ void __cdecl engine_pcx_c_saveScreenRaw16_FUN_00548d20(char *filename)
           _fputc(uVar4 & 0xff,file);
         } while (iVar3 < g_WindowWidth);
       }
-      local_18 = local_18 + 4;
       local_14 = local_14 + 1;
     } while (local_14 < g_WindowHeight);
   }

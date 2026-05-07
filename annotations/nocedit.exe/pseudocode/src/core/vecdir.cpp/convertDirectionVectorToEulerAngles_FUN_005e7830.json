@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 56,
+    "complexity_score": 26,
     "cross_reference_count": 75,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 26,
-    "suspect_count": 2,
-    "suspect_types": [
-      "bitcast_double_pair",
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 93
   },
   "cross_references": [
@@ -651,6 +648,26 @@
     },
     "pcode_op_count": 305
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
+      "line": 20,
+      "match": "__BITCAST_DOUBLE(CONCAT44(",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "out_euler_angles->x = (float)__BITCAST_DOUBLE(CONCAT44(uStack_14,0x54411744));",
+      "type": "bitcast_double_pair"
+    }
+  ],
   "stack_frame": {
     "frame_size": 32,
     "local_size": 24,
@@ -698,22 +715,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 20,
-      "match": "__BITCAST_DOUBLE(CONCAT44(",
-      "severity": "moderate",
-      "text": "out_euler_angles->x = (float)__BITCAST_DOUBLE(CONCAT44(uStack_14,0x54411744));",
-      "type": "bitcast_double_pair"
-    }
-  ]
+  "suspects": []
 }

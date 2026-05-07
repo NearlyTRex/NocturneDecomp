@@ -1565,7 +1565,19 @@ def identify_unrolled_field_copy(decompiled_code):
 # Detection requires 3+ consecutive statements where:
 # - First line: `<PATH>.<F0> = <CONST>;` (numeric zero, NULL, or a typed null cast)
 # - Subsequent lines: `<PATH>.<Fi> = <PATH>.<F(i-1)>;` (chain through prior store)
-# - All Fi distinct, all sharing the same `<PATH>` prefix.
+#   OR `<ALIAS>-><Fi> = <PATH>.<F(i-1)>;` where `<ALIAS> = &<PATH>;` was
+#   established earlier in the function. The decompiler picks alias forms
+#   when Watcom emitted a register-resident pointer for the same struct.
+# - All Fi distinct, all sharing the same effective `<PATH>` prefix.
+#
+# Temp-float bounce variant: after the anchor, the decompiler may save the
+# just-stored field into a scalar temp before forwarding it:
+#     X.f0 = 0.0;
+#     tmp = X.f0;            ; save line — armed
+#     X.f1 = tmp;            ; chain step via temp
+#     ALIAS->f2 = tmp;       ; chain step via temp + alias
+# Once the temp is armed (must save the anchor field via the anchor path),
+# subsequent `<lhs>.<field> = <tmp>;` lines count as chain steps.
 #
 # Multi-line statements (where the assignment wraps across lines) are
 # handled via `_join_wrapped_statements`. The keep replacement is N direct
@@ -1577,6 +1589,18 @@ _CASCADE_CONST_RE = re.compile(
     r'\(\s*[A-Za-z_][\w\s\*]*\s*\)\s*0)\s*;\s*$')
 _CASCADE_CHAIN_RE = re.compile(
     r'^\s*(.+?)(?:\.|->)(\w+)\s*=\s*(.+?)(?:\.|->)(\w+)\s*;\s*$')
+# Bare `<var> = &<path>;` alias declaration. LHS must be a simple
+# identifier; RHS is anything-after-`&` up to the trailing `;`.
+_CASCADE_ALIAS_RE = re.compile(
+    r'^\s*(\w+)\s*=\s*&\s*(.+?)\s*;\s*$')
+# Temp-float save: `<tmp> = <path>.<field>;` — LHS is a bare identifier,
+# RHS is a struct/pointer access. Caller filters by path/field equality.
+_CASCADE_TEMP_SAVE_RE = re.compile(
+    r'^\s*(\w+)\s*=\s*(.+?)(?:\.|->)(\w+)\s*;\s*$')
+# Temp-float use: `<lhs>.<field> = <tmp>;` — RHS is a bare identifier.
+# Caller verifies `<tmp>` matches the armed bounce var.
+_CASCADE_TEMP_USE_RE = re.compile(
+    r'^\s*(.+?)(?:\.|->)(\w+)\s*=\s*(\w+)\s*;\s*$')
 
 
 def _join_wrapped_statements(lines):
@@ -1584,6 +1608,10 @@ def _join_wrapped_statements(lines):
 
     Joins continuation lines that don't end in `;` (or aren't a solo brace)
     with the next line so that wrapped assignments parse as one statement.
+    A trailing `{` (block opener like `if (...) {`) also terminates the
+    accumulated statement so a following declaration on the next line
+    parses standalone — without this, an `if`-line and the next `var = &x;`
+    glue together and the alias declaration is missed.
     """
     cur_start = None
     cur = ''
@@ -1595,7 +1623,8 @@ def _join_wrapped_statements(lines):
         else:
             cur = cur.rstrip() + ' ' + stripped.lstrip()
         rs = cur.strip()
-        if rs.endswith(';') or rs in ('{', '}', '},'):
+        if (rs.endswith(';') or rs.endswith('{')
+                or rs in ('{', '}', '},')):
             yield (cur_start, cur)
             cur_start = None
             cur = ''
@@ -1634,6 +1663,31 @@ def identify_cascade_constant_fill(decompiled_code):
     def normalize(s):
         return re.sub(r'\s+', '', s)
 
+    # Pre-pass: collect alias declarations of the form `<var> = &<path>;`.
+    # A later assignment to the same var invalidates the prior alias, so
+    # we keep all (stmt_idx, var, normalized_path) entries and resolve the
+    # most recent one before the use site.
+    alias_history = []
+    for idx, (_, txt) in enumerate(stmts):
+        m_alias = _CASCADE_ALIAS_RE.match(txt)
+        if m_alias:
+            alias_history.append(
+                (idx, m_alias.group(1), normalize(m_alias.group(2))))
+
+    def resolve_alias(var, before_idx):
+        for hidx, hvar, hpath in reversed(alias_history):
+            if hidx >= before_idx:
+                continue
+            if hvar == var:
+                return hpath
+        return None
+
+    def lhs_matches_anchor(lhs_path_raw, anchor_path, stmt_idx):
+        lhs_path = normalize(lhs_path_raw)
+        if lhs_path == anchor_path:
+            return True
+        return resolve_alias(lhs_path_raw.strip(), stmt_idx) == anchor_path
+
     i = 0
     while i < n:
         start_line, anchor_text = stmts[i]
@@ -1650,17 +1704,56 @@ def identify_cascade_constant_fill(decompiled_code):
         seen_fields = {anchor_field}
         prev_field = anchor_field
         run_len = 1
+        bounce_var = None
         j = i + 1
         while j < n:
             _, stmt_text = stmts[j]
+
+            # Optional temp-save: `<tmp> = <anchor_path>.<prev_field>;`.
+            # Eats one statement and arms bounce_var. Only the first save
+            # counts; subsequent re-saves through other temps stop the run.
+            if bounce_var is None:
+                m_save = _CASCADE_TEMP_SAVE_RE.match(stmt_text)
+                if m_save:
+                    save_var = m_save.group(1)
+                    save_path = normalize(m_save.group(2))
+                    save_field = m_save.group(3)
+                    if (save_path == anchor_path
+                            and save_field == prev_field
+                            and save_var != anchor_path):
+                        bounce_var = save_var
+                        j += 1
+                        continue
+
+            # Temp-bounce chain step: `<lhs>.<field> = <bounce_var>;`.
+            if bounce_var is not None:
+                m_use = _CASCADE_TEMP_USE_RE.match(stmt_text)
+                if m_use and m_use.group(3) == bounce_var:
+                    lhs_path_raw = m_use.group(1)
+                    lhs_field = m_use.group(2)
+                    if (lhs_matches_anchor(lhs_path_raw, anchor_path, j)
+                            and lhs_field not in seen_fields):
+                        seen_fields.add(lhs_field)
+                        run_len += 1
+                        j += 1
+                        continue
+                # Bounce armed but the line isn't a matching use — chain
+                # ends here.
+                break
+
+            # Standard chain shape:
+            # `<lhs>.<lhs_field> = <rhs>.<rhs_field>;` where both sides
+            # resolve to anchor_path (directly or via alias) and
+            # rhs_field == prev_field.
             m_chain = _CASCADE_CHAIN_RE.match(stmt_text)
             if not m_chain:
                 break
-            lhs_path = normalize(m_chain.group(1))
+            lhs_path_raw = m_chain.group(1)
             lhs_field = m_chain.group(2)
-            rhs_path = normalize(m_chain.group(3))
+            rhs_path_raw = m_chain.group(3)
             rhs_field = m_chain.group(4)
-            if (lhs_path != anchor_path or rhs_path != anchor_path
+            if (not lhs_matches_anchor(lhs_path_raw, anchor_path, j)
+                    or not lhs_matches_anchor(rhs_path_raw, anchor_path, j)
                     or rhs_field != prev_field
                     or lhs_field in seen_fields):
                 break

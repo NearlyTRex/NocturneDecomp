@@ -17,7 +17,6 @@ void __cdecl engine_pcx_c_saveScreenRaw32_FUN_00548f00(char *filename)
   char *pcVar7;
   int iVar5;
   char local_6c [80];
-  int local_18;
   int local_14;
 
   strcpy(local_6c,filename);
@@ -37,10 +36,9 @@ void __cdecl engine_pcx_c_saveScreenRaw32_FUN_00548f00(char *filename)
   }
   local_14 = 0;
   if (0 < g_WindowHeight) {
-    local_18 = 0;
     do {
       iVar5 = 0;
-      puVar2 = *(uint **)((int)g_ScreenBufferArray + local_18);
+      puVar2 = (uint *)g_ScreenBufferArray[local_14];
       if (0 < g_WindowWidth) {
         do {
           uVar3 = (*puVar2 >> (g_GreenBitPosition.bytes[0] & 0x1f)) * g_GreenScaleFactor;
@@ -53,7 +51,6 @@ void __cdecl engine_pcx_c_saveScreenRaw32_FUN_00548f00(char *filename)
           _fputc(uVar4 & 0xff,file);
         } while (iVar5 < g_WindowWidth);
       }
-      local_18 = local_18 + 4;
       local_14 = local_14 + 1;
     } while (local_14 < g_WindowHeight);
   }
