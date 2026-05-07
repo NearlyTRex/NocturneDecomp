@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 45,
+    "complexity_score": 30,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 30,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 90
   },
   "cross_references": [
@@ -112,6 +110,17 @@
     },
     "pcode_op_count": 225
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(CLodFace *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "face = (CLodFace *)((int)this_ptr->tri_data->attribute_indices + iVar2);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -128,14 +137,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 16,
-      "match": "(CLodFace *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "face = (CLodFace *)((int)this_ptr->tri_data->attribute_indices + iVar2);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

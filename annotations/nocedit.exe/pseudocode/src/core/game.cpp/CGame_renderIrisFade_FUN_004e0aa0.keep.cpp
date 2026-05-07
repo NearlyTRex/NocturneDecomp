@@ -13,7 +13,6 @@ void __cdecl core_game_cpp_CGame_renderIrisFade_FUN_004e0aa0(CGame *this_ptr)
   float fVar1;
   int iVar2;
   uint *puVar3;
-  int iVar4;
   int iVar5;
   
   if (g_IrisFadeType != 0) {
@@ -21,26 +20,15 @@ void __cdecl core_game_cpp_CGame_renderIrisFade_FUN_004e0aa0(CGame *this_ptr)
       core_game_cpp_calculateIrisFadeCenter_FUN_004e09a0();
       if (g_BitsPerPixel == 0x20) {
         fVar1 = g_IrisFadeRadius * g_IrisFadeRadius;
-        iVar5 = 0;
-        if (0 < g_WindowHeight) {
-          iVar4 = 0;
-          do {
-            puVar3 = *(uint **)((int)g_ScreenBufferArray + iVar4);
-            iVar2 = 0;
-            if (0 < g_WindowWidth) {
-              do {
-                if ((int)ROUND(ROUND(fVar1)) <
-                    (g_IrisFadeCenterY - iVar5) * (g_IrisFadeCenterY - iVar5) +
-                    (g_IrisFadeCenterX - iVar2) * (g_IrisFadeCenterX - iVar2)) {
-                  *puVar3 = 0;
-                }
-                iVar2 = iVar2 + 1;
-                puVar3 = puVar3 + 1;
-              } while (iVar2 < g_WindowWidth);
+        for (iVar5 = 0; iVar5 < g_WindowHeight; iVar5 = iVar5 + 1) {
+          puVar3 = (uint *)g_ScreenBufferArray[iVar5];
+          for (iVar2 = 0; iVar2 < g_WindowWidth; iVar2 = iVar2 + 1) {
+            if ((int)ROUND(ROUND(fVar1)) <
+                (g_IrisFadeCenterY - iVar5) * (g_IrisFadeCenterY - iVar5) +
+                (g_IrisFadeCenterX - iVar2) * (g_IrisFadeCenterX - iVar2)) {
+              puVar3[iVar2] = 0;
             }
-            iVar4 = iVar4 + 4;
-            iVar5 = iVar5 + 1;
-          } while (iVar5 < g_WindowHeight);
+          }
         }
       }
     }

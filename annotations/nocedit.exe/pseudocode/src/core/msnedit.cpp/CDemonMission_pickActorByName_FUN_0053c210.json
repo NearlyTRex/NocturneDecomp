@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 64,
+    "complexity_score": 49,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 49,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 187
   },
   "cross_references": [
@@ -186,6 +184,17 @@
     },
     "pcode_op_count": 485
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(uint *)((int)g_CDemonSetPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)g_CDemonSetPtr->actors + iVar6);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 964,
     "local_size": 952,
@@ -223,14 +232,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 25,
-      "match": "(uint *)((int)g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)g_CDemonSetPtr->actors + iVar6);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

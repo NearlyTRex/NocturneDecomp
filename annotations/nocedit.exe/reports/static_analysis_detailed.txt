@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (413 diagnostics)
+Cppcheck (quick) (419 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (96)
+shiftTooManyBitsSigned (99)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_F line 66
@@ -254,6 +254,18 @@ shiftTooManyBitsSigned (96)
 
   core_setedit.cpp_loadCameraThumbnail_FUN_005769a0  line 90
     File: core/setedit.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_2d.c_findBestPaletteMatch_FUN_00401460      line 28
+    File: engine/2d.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_2d.c_findBestPaletteMatch_FUN_00401460      line 30
+    File: engine/2d.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  engine_2d.c_findBestPaletteMatch_FUN_00401460      line 32
+    File: engine/2d.c
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   engine_colquant.c_computeBoxStatistics_FUN_0044126 line 84
@@ -1241,7 +1253,7 @@ invalidscanf (58)
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-legacyUninitvar (44)
+legacyUninitvar (45)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 59
@@ -1375,6 +1387,10 @@ legacyUninitvar (44)
   core_vampboss.cpp_CVampireBoss_process_FUN_005e597 line 182
     File: core/vampboss.cpp
     Uninitialized variable: local_b0
+
+  engine_2d.c_findBestPaletteMatch_FUN_00401460      line 50
+    File: engine/2d.c
+    Uninitialized variable: best_index
 
   shape_design.c_convertWorldToScreenCoordinates_FUN line 44
     File: shape/design.c
@@ -1553,8 +1569,12 @@ nullPointerRedundantCheck (12)
     Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
 
 ----------------------------------------------------------------------------------------------------
-identicalInnerCondition (7)
+identicalInnerCondition (8)
 ----------------------------------------------------------------------------------------------------
+
+  core_dcube.cpp_CDemonCube_save_FUN_00457430        line 27
+    File: core/dcube.cpp
+    Identical inner 'if' condition is always true.
 
   core_dmodel.cpp_CKeyFramedModel_buildCollisionTriL line 26
     File: core/dmodel.cpp
@@ -1617,7 +1637,7 @@ objectIndex (7)
     The address of local variable 'local_122c' might be accessed at non-zero index.
 
 ----------------------------------------------------------------------------------------------------
-nullPointer (4)
+nullPointer (5)
 ----------------------------------------------------------------------------------------------------
 
   core_script.cpp_trimLine_FUN_005592c0              line 38
@@ -1627,6 +1647,10 @@ nullPointer (4)
   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_ line 325
     File: core/setedit.cpp
     Possible null pointer dereference: p_Stack_20
+
+  core_setedit.cpp_CDemonSet_editSpotLight_FUN_0057b line 31
+    File: core/setedit.cpp
+    Possible null pointer dereference: master
 
   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80  line 220
     File: core/setedit.cpp

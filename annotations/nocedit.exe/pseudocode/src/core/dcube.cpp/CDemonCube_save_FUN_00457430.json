@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 59,
+    "complexity_score": 44,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 44,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 176
   },
   "cross_references": [
@@ -100,6 +98,17 @@
     },
     "pcode_op_count": 478
   },
+  "resolved_suspects": [
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 17,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "ptr = (void *)((int)&this_ptr->vertex_buffer->x + iVar2);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -123,14 +132,22 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 17,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "ptr = (void *)((int)&this_ptr->vertex_buffer->x + iVar2);",
-      "type": "pointer_cast"
-    }
-  ]
+  "static_analysis": {
+    "analyzed_file": "CDemonCube_save_FUN_00457430.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "identicalInnerCondition",
+          "column": 34,
+          "line": 27,
+          "message": "Identical inner 'if' condition is always true.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
+  "suspects": []
 }

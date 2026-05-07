@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 50,
+    "complexity_score": 35,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 35,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 127
   },
   "cross_references": [
@@ -147,6 +145,17 @@
     },
     "pcode_op_count": 536
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(short *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)*(short *)((int)this_ptr->terrain_data +",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 44,
     "local_size": 32,
@@ -184,14 +193,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 16,
-      "match": "(short *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "(int)*(short *)((int)this_ptr->terrain_data +",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

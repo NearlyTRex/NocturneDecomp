@@ -1,0 +1,29 @@
+// Name: shape_edittool.cpp_CInputString_init_FUN_0049d3d0
+// Address: 0049d3d0
+// MANUAL RECONSTRUCTION
+// Address Range: [[0049d3d0, 0049d459]]
+// Convention: __cdecl
+// Signature: void __cdecl shape_edittool_cpp_CInputString_init_FUN_0049d3d0(CInputString *this_ptr,char *source_string,int max_length,int mask_mode)
+
+#include "nocturne.h"
+
+void __cdecl shape_edittool_cpp_CInputString_init_FUN_0049d3d0(CInputString *this_ptr,char *source_string,int max_length,int mask_mode)
+
+{
+  this_ptr->max_length = max_length;
+  if (299 < (uint)max_length) {
+    this_ptr->max_length = 299;
+  }
+  memset(this_ptr,0,300);
+  if (source_string == (char *)0x0) {
+    this_ptr->current_length = 0;
+  }
+  else {
+    _strncpy(this_ptr->string_data,source_string,this_ptr->max_length);
+    this_ptr->current_length = strlen(this_ptr->string_data);
+  }
+  this_ptr->selection_start = 0;
+  this_ptr->cursor_position = this_ptr->current_length;
+  this_ptr->mask_mode = mask_mode;
+  return;
+}

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 58,
+    "complexity_score": 43,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 43,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 159
   },
   "cross_references": [
@@ -182,6 +180,17 @@
     },
     "pcode_op_count": 639
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(float *)((int)g_PaletteLuminanceCache",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)((int)g_PaletteLuminanceCache + iVar7));",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 56,
     "local_size": 36,
@@ -233,14 +242,43 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(float *)((int)g_PaletteLuminanceCache",
-      "severity": "moderate",
-      "text": "*(float *)((int)g_PaletteLuminanceCache + iVar7));",
-      "type": "pointer_cast"
-    }
-  ]
+  "static_analysis": {
+    "analyzed_file": "findBestPaletteMatch_FUN_00401460.keep.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 42,
+          "line": 28,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 46,
+          "line": 30,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "shiftTooManyBitsSigned",
+          "column": 45,
+          "line": 32,
+          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 10,
+          "line": 50,
+          "message": "Uninitialized variable: best_index",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
+  "suspects": []
 }

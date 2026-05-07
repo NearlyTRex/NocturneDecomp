@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 57,
+    "complexity_score": 42,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 42,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 138
   },
   "cross_references": [
@@ -178,6 +176,15 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(uint **)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar3 = *(uint **)((int)g_ScreenBufferArray + iVar4);",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {
@@ -196,14 +203,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(uint **)((int)g_ScreenBufferArray",
-      "severity": "moderate",
-      "text": "puVar3 = *(uint **)((int)g_ScreenBufferArray + iVar4);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

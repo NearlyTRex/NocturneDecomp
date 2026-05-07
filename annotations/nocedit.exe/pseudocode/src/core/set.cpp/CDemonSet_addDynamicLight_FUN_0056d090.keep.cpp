@@ -13,14 +13,10 @@ void __cdecl core_set_cpp_CDemonSet_addDynamicLight_FUN_0056d090(CDemonSet *this
   int iVar1;
 
   if (light->light_enabled_flag != 0) {
-    if (0 < g_DynamicLightCount) {
-      iVar1 = 0;
-      do {
-        if (light == *(CDemonLight **)((int)g_DynamicLights + iVar1)) {
-          return;
-        }
-        iVar1 = iVar1 + 4;
-      } while (iVar1 < g_DynamicLightCount * 4);
+    for (iVar1 = 0; iVar1 < g_DynamicLightCount; iVar1 = iVar1 + 1) {
+      if (light == g_DynamicLights[iVar1]) {
+        return;
+      }
     }
     if (3 < g_DynamicLightCount) {
       g_CurrentFilename = "..\\core\\set.cpp";

@@ -7,13 +7,13 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 5595 (86.7%)
-Functions with suspects: 859 (13.3%)
+Clean functions: 5618 (87.0%)
+Functions with suspects: 836 (13.0%)
 
-Total suspect patterns: 3579
+Total suspect patterns: 3556
 Average suspects per function: 0.55
 
-Virtual files: 214 total, 124 at 100%, 133 at 90%+
+Virtual files: 214 total, 124 at 100%, 136 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
@@ -28,7 +28,7 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              1657
+  pointer_cast              1634
   unrolled_memcpy           420
   unrolled_strcpy           347
   missing_cave_copy         202
@@ -108,7 +108,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 5545 more
+  ... and 5568 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -146,7 +146,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (456 functions):
+  pointer_cast (433 functions):
     005e1a30: support_trisock.cpp_formatSocketAddress_FUN_005e1a30
     0050c530: engine_matrix.c_initializeTrigTables_FUN_0050c530
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
@@ -154,10 +154,10 @@ FUNCTIONS BY SUSPECT TYPE
     00550230: engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230
     00550ce0: engine_pod.cpp_findFilesByExtension_FUN_00550ce0
     005dd200: engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200
-    00401460: engine_2d.c_findBestPaletteMatch_FUN_00401460
     00402ff0: engine_2d.c_drawVLine_FUN_00402ff0
     00401a10: engine_2d.c_drawCharacterMaskedColor_FUN_00401a10
-    ... and 446 more
+    00401b70: engine_2d.c_drawCharacterHighlighted_FUN_00401b70
+    ... and 423 more
 
   unrolled_memcpy (142 functions):
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0

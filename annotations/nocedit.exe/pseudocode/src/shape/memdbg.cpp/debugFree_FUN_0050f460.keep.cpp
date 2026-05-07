@@ -28,7 +28,7 @@ void __cdecl shape_memdbg_cpp_debugFree_FUN_0050f460(void *ptr,char *filename,in
     g_CurrentLineNumber = 0x99;
     core_main_c_displayErrorAndQuit_FUN_00506f10("headFromPtr - NULL ptr");
   }
-  header = (SMemHead *)((int)ptr + -0x28);
+  header = (SMemHead *)((char *)ptr - sizeof(SMemHead));
   shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(header,filename,line_number);
   shape_memdbg_cpp_SMemHead_remove_FUN_0050ef20(header);
   free(header);

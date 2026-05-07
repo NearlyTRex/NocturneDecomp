@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 51,
+    "complexity_score": 36,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 36,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 134
   },
   "cross_references": [
@@ -199,6 +197,17 @@
     },
     "pcode_op_count": 295
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(short *)(iVar1 * lock_offset + (int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "psVar2 = (short *)(iVar1 * lock_offset + (int)this_ptr->sample_data);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -229,14 +238,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 25,
-      "match": "(short *)(iVar1 * lock_offset + (int)this_ptr",
-      "severity": "moderate",
-      "text": "psVar2 = (short *)(iVar1 * lock_offset + (int)this_ptr->sample_data);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

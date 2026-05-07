@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 47,
+    "complexity_score": 32,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 32,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 83
   },
   "cross_references": [
@@ -119,6 +117,17 @@
     },
     "pcode_op_count": 186
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(CInputString *)((int)pCVar3",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar3 = (CInputString *)((int)pCVar3 + (uint)bVar4 * -2 + 1);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 20,
     "local_size": 4,
@@ -156,14 +165,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 27,
-      "match": "(CInputString *)((int)pCVar3",
-      "severity": "moderate",
-      "text": "pCVar3 = (CInputString *)((int)pCVar3 + (uint)bVar4 * -2 + 1);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

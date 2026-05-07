@@ -26,6 +26,30 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_flies.cpp_drawFlyPixel_FUN_004cc230
       Suspects: pointer_cast
 
+  core/baron.cpp (2 remaining of 34)
+    - core_baron.cpp_CBaron_ctor_FUN_00412bc0
+      Suspects: unrolled_strcpy, unrolled_strcpy, unrolled_memset
+    - core_baron.cpp_CBaron_process_FUN_00412e80
+      Suspects: warning_type_propagation, unrolled_memset, unrolled_memset, missing_cave_copy, missing_cave_copy
+
+  core/vehicle.cpp (2 remaining of 20)
+    - core_vehicle.cpp_CVehicle_ctor_FUN_005e7940
+      Suspects: unrolled_memset, unrolled_memset, unrolled_memset
+    - core_vehicle.cpp_CVehicle_setup_FUN_005e7b90
+      Suspects: unrolled_memset, unrolled_memset, unrolled_memset, unrolled_memset, unrolled_memset, unrolled_memset, unrolled_memset
+
+  core/vampboss.cpp (2 remaining of 23)
+    - core_vampboss.cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005e6b80
+      Suspects: unrolled_memcpy, unrolled_memcpy, unrolled_memcpy
+    - core_vampboss.cpp_CVampireBoss_process_FUN_005e5970
+      Suspects: warning_inlined_function, warning_type_propagation, pointer_cast, unrolled_memset, unrolled_memset
+
+  shape/memdbg.cpp (2 remaining of 26)
+    - shape_memdbg.cpp_debugRealloc_FUN_0050f540
+      Suspects: pointer_cast
+    - shape_memdbg.cpp_SMemHead_recordSourceFile_FUN_0050eea0
+      Suspects: unrolled_strcpy
+
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
@@ -98,32 +122,6 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0056aca0             ( 42 lines)
     core_skeledit.cpp_CBoneStructure_copyHierarchyFromSkeleton_FUN_0058b160 ( 45 lines)
 
-  [pointer_cast] - 24 functions
-    core_set.cpp_CDemonSet_addDynamicLight_FUN_0056d090                    ( 23 lines)
-    core_vampboss.cpp_CVampireBoss_summonStalagmites_FUN_005e7390          ( 23 lines)
-    shape_memdbg.cpp_debugFree_FUN_0050f460                                ( 26 lines)
-    core_msnedit.cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053d7b0 ( 30 lines)
-    shape_meshlod.cpp_CLodMesh_validateAndRemoveInvalidFaces_FUN_005197c0  ( 30 lines)
-    shape_superopt.cpp_CComplexPolygon_free_FUN_005c79f0                   ( 30 lines)
-    shape_edittool.cpp_CInputString_init_FUN_0049d3d0                      ( 32 lines)
-    engine_2d.c_initGraphicsSystem_FUN_00401010                            ( 34 lines)
-    core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00413f20             ( 35 lines)
-    core_hero.cpp_closestHeroToPoint_FUN_004f2170                          ( 35 lines)
-    core_ground.cpp_CGround_transformAndStoreVertex_FUN_004ef3a0           ( 35 lines)
-    sound_sndmain.cpp_CSfxSample_lock_FUN_005a6430                         ( 36 lines)
-    core_lever.cpp_CLever_setState_FUN_00504b20                            ( 36 lines)
-    core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_00543800            ( 38 lines)
-    core_vehicle.cpp_CVehicle_getPropertyList_FUN_005e8ba0                 ( 39 lines)
-    shape_meshlod.cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300         ( 39 lines)
-    core_game.cpp_CGame_renderIrisFade_FUN_004e0aa0                        ( 42 lines)
-    engine_2d.c_findBestPaletteMatch_FUN_00401460                          ( 43 lines)
-    core_dcube.cpp_CDemonCube_save_FUN_00457430                            ( 44 lines)
-    core_setedit.cpp_CDemonSet_editSpotLight_FUN_0057b500                  ( 44 lines)
-    core_dstrender.cpp_renderDepthOnlyStandard_FUN_0049072f                ( 45 lines)
-    shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0                       ( 46 lines)
-    core_msnedit.cpp_CDemonMission_pickActorByName_FUN_0053c210            ( 49 lines)
-    core_dstrender.cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5 ( 49 lines)
-
   [unrolled_memset] - 18 functions
     core_actor.cpp_CVector3f_zero_FUN_004103b0                             (  7 lines)
     core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_004285d0    ( 13 lines)
@@ -184,6 +182,9 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
   [unnamed_param] - 1 functions
     core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930                          ( 20 lines)
 
+  [pointer_cast] - 1 functions
+    shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0                       ( 46 lines)
+
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
@@ -199,6 +200,13 @@ PRIORITY 3: Files at 90%+ (finish them off!)
         Types: ['unrolled_strcpy']
       core_inv.cpp_CInventory_renderAllItems_FUN_00500690 (366 lines)
         Types: ['decompiler_intrinsic', 'warning_inlined_function']
+
+  core/baron.cpp (94.1% complete)
+    2 functions remaining:
+      core_baron.cpp_CBaron_ctor_FUN_00412bc0 (45 lines)
+        Types: ['unrolled_memset', 'unrolled_strcpy']
+      core_baron.cpp_CBaron_process_FUN_00412e80 (217 lines)
+        Types: ['missing_cave_copy', 'unrolled_memset', 'warning_type_propagation']
 
   core/actor.cpp (93.4% complete)
     12 functions remaining:
@@ -227,14 +235,19 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_actor.cpp_CVector3f_zero_FUN_004103b0 (7 lines)
         Types: ['unrolled_memset']
 
-  core/baron.cpp (91.2% complete)
-    3 functions remaining:
-      core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00413f20 (35 lines)
+  shape/memdbg.cpp (92.3% complete)
+    2 functions remaining:
+      shape_memdbg.cpp_debugRealloc_FUN_0050f540 (55 lines)
         Types: ['pointer_cast']
-      core_baron.cpp_CBaron_ctor_FUN_00412bc0 (45 lines)
-        Types: ['unrolled_memset', 'unrolled_strcpy']
-      core_baron.cpp_CBaron_process_FUN_00412e80 (217 lines)
-        Types: ['missing_cave_copy', 'unrolled_memset', 'warning_type_propagation']
+      shape_memdbg.cpp_SMemHead_recordSourceFile_FUN_0050eea0 (24 lines)
+        Types: ['unrolled_strcpy']
+
+  core/vampboss.cpp (91.3% complete)
+    2 functions remaining:
+      core_vampboss.cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005e6b80 (48 lines)
+        Types: ['unrolled_memcpy']
+      core_vampboss.cpp_CVampireBoss_process_FUN_005e5970 (626 lines)
+        Types: ['pointer_cast', 'unrolled_memset', 'warning_inlined_function', 'warning_type_propagation']
 
   core/flies.cpp (90.9% complete)
     2 functions remaining:
@@ -285,42 +298,48 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       engine_matrix.c_projectToScreen_FUN_0050e5b0 (17 lines)
         Types: ['stack_alignment_array', 'warning_inlined_function']
 
+  core/vehicle.cpp (90.0% complete)
+    2 functions remaining:
+      core_vehicle.cpp_CVehicle_ctor_FUN_005e7940 (76 lines)
+        Types: ['unrolled_memset']
+      core_vehicle.cpp_CVehicle_setup_FUN_005e7b90 (110 lines)
+        Types: ['unrolled_memset']
+
 ====================================================================================================
 ALL REMAINING FILES
 ====================================================================================================
   engine/font.cpp                                               89.8%  (44/49 clean, 5 remaining)
   core/morph.cpp                                                89.8%  (44/49 clean, 5 remaining)
+  shape/edittool.cpp                                            89.4%  (135/151 clean, 16 remaining)
   core/boxactor.cpp                                             89.1%  (41/46 clean, 5 remaining)
-  shape/edittool.cpp                                            88.7%  (134/151 clean, 17 remaining)
   core/fire.cpp                                                 88.6%  (164/185 clean, 21 remaining)
   engine/dosio.c                                                88.5%  (23/26 clean, 3 remaining)
-  shape/memdbg.cpp                                              88.5%  (23/26 clean, 3 remaining)
   core/frankgen.cpp                                             87.5%  (21/24 clean, 3 remaining)
   core/stranger.cpp                                             87.3%  (55/63 clean, 8 remaining)
+  sound/sndmain.cpp                                             87.0%  (168/193 clean, 25 remaining)
   core/gore.cpp                                                 87.0%  (47/54 clean, 7 remaining)
   core/trigger.cpp                                              87.0%  (20/23 clean, 3 remaining)
   core/wateract.cpp                                             87.0%  (20/23 clean, 3 remaining)
-  core/vampboss.cpp                                             87.0%  (20/23 clean, 3 remaining)
-  sound/sndmain.cpp                                             86.5%  (167/193 clean, 26 remaining)
   engine/texture.cpp                                            86.4%  (19/22 clean, 3 remaining)
   engine/clipper.c                                              85.7%  (24/28 clean, 4 remaining)
   core/door.cpp                                                 85.7%  (24/28 clean, 4 remaining)
+  engine/2d.c                                                   85.5%  (65/76 clean, 11 remaining)
+  core/hero.cpp                                                 85.4%  (41/48 clean, 7 remaining)
   core/mission.cpp                                              85.4%  (35/41 clean, 6 remaining)
-  core/vehicle.cpp                                              85.0%  (17/20 clean, 3 remaining)
+  shape/superopt.cpp                                            84.9%  (158/186 clean, 28 remaining)
+  core/dcube.cpp                                                84.6%  (33/39 clean, 6 remaining)
   core/mobster.cpp                                              84.6%  (22/26 clean, 4 remaining)
   core/curtain.cpp                                              84.6%  (22/26 clean, 4 remaining)
-  shape/superopt.cpp                                            84.4%  (157/186 clean, 29 remaining)
   core/charactr.cpp                                             84.4%  (92/109 clean, 17 remaining)
   core/dcamera.cpp                                              83.7%  (72/86 clean, 14 remaining)
-  core/hero.cpp                                                 83.3%  (40/48 clean, 8 remaining)
   core/ghoul.cpp                                                83.3%  (15/18 clean, 3 remaining)
-  engine/2d.c                                                   82.9%  (63/76 clean, 13 remaining)
+  core/set.cpp                                                  82.8%  (72/87 clean, 15 remaining)
+  core/msnedit.cpp                                              82.5%  (52/63 clean, 11 remaining)
   core/conveyor.cpp                                             82.4%  (14/17 clean, 3 remaining)
   core/dtrace.cpp                                               82.4%  (42/51 clean, 9 remaining)
   core/bodypart.cpp                                             82.2%  (37/45 clean, 8 remaining)
   core/event.cpp                                                82.1%  (46/56 clean, 10 remaining)
-  core/dcube.cpp                                                82.1%  (32/39 clean, 7 remaining)
-  core/set.cpp                                                  81.6%  (71/87 clean, 16 remaining)
+  core/lever.cpp                                                81.8%  (18/22 clean, 4 remaining)
   core/chain.cpp                                                81.0%  (17/21 clean, 4 remaining)
   core/setutil.cpp                                              80.5%  (33/41 clean, 8 remaining)
   core/xform.cpp                                                80.3%  (49/61 clean, 12 remaining)
@@ -329,21 +348,21 @@ ALL REMAINING FILES
   core/tentacle.cpp                                             80.0%  (12/15 clean, 3 remaining)
   core/course.cpp                                               80.0%  (12/15 clean, 3 remaining)
   core/emitter.cpp                                              80.0%  (16/20 clean, 4 remaining)
-  core/msnedit.cpp                                              79.4%  (50/63 clean, 13 remaining)
   core/glass.cpp                                                79.2%  (19/24 clean, 5 remaining)
   core/gabriela.cpp                                             78.9%  (30/38 clean, 8 remaining)
   core/boneguy.cpp                                              78.6%  (22/28 clean, 6 remaining)
   core/icepick.cpp                                              78.3%  (18/23 clean, 5 remaining)
   engine/3d.c                                                   77.9%  (81/104 clean, 23 remaining)
   engine/ini.cpp                                                77.8%  (14/18 clean, 4 remaining)
-  core/lever.cpp                                                77.3%  (17/22 clean, 5 remaining)
+  core/dstrender.cpp                                            77.4%  (24/31 clean, 7 remaining)
   core/mirror.cpp                                               77.3%  (17/22 clean, 5 remaining)
+  core/game.cpp                                                 77.3%  (51/66 clean, 15 remaining)
   core/script.cpp                                               77.1%  (74/96 clean, 22 remaining)
+  core/netgame.cpp                                              76.6%  (49/64 clean, 15 remaining)
   shape/cramtex.cpp                                             76.2%  (16/21 clean, 5 remaining)
-  core/game.cpp                                                 75.8%  (50/66 clean, 16 remaining)
-  core/netgame.cpp                                              75.0%  (48/64 clean, 16 remaining)
   core/setcolid.cpp                                             75.0%  (30/40 clean, 10 remaining)
   core/setdir.cpp                                               75.0%  (24/32 clean, 8 remaining)
+  core/ground.cpp                                               75.0%  (15/20 clean, 5 remaining)
   core/mimic.cpp                                                75.0%  (18/24 clean, 6 remaining)
   core/dpart.cpp                                                73.3%  (11/15 clean, 4 remaining)
   core/platfrm.cpp                                              73.3%  (22/30 clean, 8 remaining)
@@ -352,13 +371,11 @@ ALL REMAINING FILES
   core/menu.cpp                                                 72.7%  (16/22 clean, 6 remaining)
   shape/design.c                                                71.8%  (117/163 clean, 46 remaining)
   core/texlist.cpp                                              71.4%  (10/14 clean, 4 remaining)
-  core/dstrender.cpp                                            71.0%  (22/31 clean, 9 remaining)
   core/cloth.cpp                                                70.9%  (39/55 clean, 16 remaining)
+  shape/meshlod.cpp                                             70.2%  (87/124 clean, 37 remaining)
   core/weather.cpp                                              70.0%  (7/10 clean, 3 remaining)
-  core/ground.cpp                                               70.0%  (14/20 clean, 6 remaining)
   core/dmodel.cpp                                               69.7%  (46/66 clean, 20 remaining)
   shape/quantize.cpp                                            69.7%  (23/33 clean, 10 remaining)
-  shape/meshlod.cpp                                             68.5%  (85/124 clean, 39 remaining)
   engine/fileio.cpp                                             68.5%  (50/73 clean, 23 remaining)
   core/dfilter.cpp                                              68.4%  (13/19 clean, 6 remaining)
   core/path.cpp                                                 68.0%  (17/25 clean, 8 remaining)
@@ -367,5 +384,5 @@ ALL REMAINING FILES
   sound/sndwav.cpp                                              65.7%  (23/35 clean, 12 remaining)
   engine/model.c                                                62.5%  (5/8 clean, 3 remaining)
   core/skeledit.cpp                                             61.4%  (43/70 clean, 27 remaining)
-  core/setedit.cpp                                              56.9%  (33/58 clean, 25 remaining)
+  core/setedit.cpp                                              58.6%  (34/58 clean, 24 remaining)
   engine/alphabit.cpp                                           55.6%  (5/9 clean, 4 remaining)
