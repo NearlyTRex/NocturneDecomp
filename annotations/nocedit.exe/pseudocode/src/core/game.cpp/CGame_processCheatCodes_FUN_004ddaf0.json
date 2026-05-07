@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3947,
-    "complexity_score": 1743,
+    "complexity_score": 1728,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 197,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 1728,
-    "suspect_count": 1,
-    "suspect_types": [
-      "raw_address_constant"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 5675
   },
   "cross_references": [
@@ -2812,14 +2810,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Raw hex literal 0xff00ff matches address of g_LightBufferPool (+4022007 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 1273,
-      "match": "0xff00ff",
-      "severity": "moderate",
-      "text": "(&g_CDemonCameraInstance,0xff00ff);",
-      "type": "raw_address_constant"
-    }
-  ]
+  "suspects": []
 }

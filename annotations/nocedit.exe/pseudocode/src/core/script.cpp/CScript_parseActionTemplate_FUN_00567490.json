@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 42,
+    "complexity_score": 27,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 27,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 82
   },
   "cross_references": [
@@ -124,6 +122,17 @@
     },
     "pcode_op_count": 225
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(char **)((int)g_CommandTemplates",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(&local_2134,text,*(char **)((int)g_CommandTemplates + iVar2 + 0x1e0));",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8516,
     "local_size": 8504,
@@ -161,14 +170,22 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 14,
-      "match": "(char **)((int)g_CommandTemplates",
-      "severity": "moderate",
-      "text": "(&local_2134,text,*(char **)((int)g_CommandTemplates + iVar2 + 0x1e0));",
-      "type": "pointer_cast"
-    }
-  ]
+  "static_analysis": {
+    "analyzed_file": "CScript_parseActionTemplate_FUN_00567490.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "oppositeInnerCondition",
+          "column": 16,
+          "line": 21,
+          "message": "Opposite inner 'if' condition leads to a dead code block.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
+  "suspects": []
 }

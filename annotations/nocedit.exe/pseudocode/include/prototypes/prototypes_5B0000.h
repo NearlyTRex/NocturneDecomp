@@ -211,10 +211,10 @@ void __cdecl core_spike_cpp_CSpike_processInEditor_FUN_005b9020(CSpike *this_ptr
 void __cdecl core_spike_cpp_CSpike_addFilesToExtract_FUN_005b9030(CSpike *this_ptr,_FILE *file_handle);
 CSpike * __cdecl core_spike_cpp_CSpike_dtor_FUN_005b9050(CSpike *this_ptr,uint flags);
 void __cdecl core_spline_cpp_computeSplineBasis_FUN_005b90a0(float *out_basis,float t,float tension);
-float __cdecl core_spline_cpp_evaluateSplineScalar_FUN_005b9230(float *basis,float *p0,float *p1,float *p2,float *p3);
+float __cdecl core_spline_cpp_evaluateSplineScalar_FUN_005b9230(float *basis,float *cp0,float *cp1,float *cp2,float *cp3);
 int __cdecl core_spline_cpp_evaluateSplintInt_FUN_005b9270(float *basis,int v0,int v1,int v2,int v3);
 CVector3f * __cdecl core_spline_cpp_evaluateSplinePoint3D_FUN_005b92d0(float *basis,CVector3f *out,CVector3f *p0,CVector3f *p1,CVector3f *p2,CVector3f *p3);
-float __cdecl core_spline_cpp_evaluateSplineTangentScalar_FUN_005b93f0(float *basis,float *p0,float *p1,float *p2,float *p3);
+float __cdecl core_spline_cpp_evaluateSplineTangentScalar_FUN_005b93f0(float *basis,float *cp0,float *cp1,float *cp2,float *cp3);
 int __cdecl core_spline_cpp_evaluateSplineTangentInt_FUN_005b9430(float *basis,int v0,int v1,int v2,int v3);
 CVector3f * __cdecl core_spline_cpp_evaluateSplineTangent3D_FUN_005b9490(float *basis,CVector3f *out,CVector3f *p0,CVector3f *p1,CVector3f *p2,CVector3f *p3);
 void __cdecl shape_spotview_cpp_staticInit_FUN_005b95b0(void);

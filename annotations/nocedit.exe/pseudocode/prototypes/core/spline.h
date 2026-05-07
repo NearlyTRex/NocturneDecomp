@@ -9,7 +9,7 @@ void __cdecl computeSplineBasis(float *out_basis,float t,float tension);
 
 // Original: core_spline.cpp_evaluateSplineScalar_FUN_005b9230
 // Address: 005b9230
-float __cdecl evaluateSplineScalar(float *basis,float *p0,float *p1,float *p2,float *p3);
+float __cdecl evaluateSplineScalar(float *basis,float *cp0,float *cp1,float *cp2,float *cp3);
 
 // Original: core_spline.cpp_evaluateSplintInt_FUN_005b9270
 // Address: 005b9270
@@ -21,7 +21,7 @@ CVector3f * __cdecl evaluateSplinePoint3D(float *basis,CVector3f *out,CVector3f 
 
 // Original: core_spline.cpp_evaluateSplineTangentScalar_FUN_005b93f0
 // Address: 005b93f0
-float __cdecl evaluateSplineTangentScalar(float *basis,float *p0,float *p1,float *p2,float *p3);
+float __cdecl evaluateSplineTangentScalar(float *basis,float *cp0,float *cp1,float *cp2,float *cp3);
 
 // Original: core_spline.cpp_evaluateSplineTangentInt_FUN_005b9430
 // Address: 005b9430

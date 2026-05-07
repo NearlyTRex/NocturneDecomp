@@ -238,9 +238,9 @@ LAB_0059b9d7:
                        &(this_ptr->model_scale).y,&(this_ptr->model_scale).z);
   } while (iVar3 != 3);
   if (local_68 < 4) {
-    this_ptr->bbox_pool[0].min.z = 0.0;
-    this_ptr->bbox_pool[0].min.y = this_ptr->bbox_pool[0].min.z;
-    this_ptr->bbox_pool[0].min.x = this_ptr->bbox_pool[0].min.y;
+    this_ptr->bbox_pool[0].min.x = 0.0f;
+    this_ptr->bbox_pool[0].min.y = 0.0f;
+    this_ptr->bbox_pool[0].min.z = 0.0f;
   }
   else {
     do {

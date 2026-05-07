@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (411 diagnostics)
+Cppcheck (quick) (413 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -1005,7 +1005,7 @@ selfAssignment (71)
     Redundant assignment of 'pfVar11' to itself.
 
 ----------------------------------------------------------------------------------------------------
-invalidscanf (57)
+invalidscanf (58)
 ----------------------------------------------------------------------------------------------------
 
   core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 181
@@ -1166,6 +1166,10 @@ invalidscanf (57)
 
   core_fileman.cpp_CDemonFileManager_createPodFromDi line 75
     File: core/fileman.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_script.cpp_CScript_collectLabels_FUN_00566fa0 line 19
+    File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
   core_script.cpp_parseBodyPartMask_FUN_00559730     line 30
@@ -1691,6 +1695,14 @@ arrayIndexOutOfBounds (2)
   core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQu line 210
     File: core/dmodel.cpp
     Array 'local_f0[4]' accessed at index 9, which is out of bounds.
+
+----------------------------------------------------------------------------------------------------
+oppositeInnerCondition (1)
+----------------------------------------------------------------------------------------------------
+
+  core_script.cpp_CScript_parseActionTemplate_FUN_00 line 21
+    File: core/script.cpp
+    Opposite inner 'if' condition leads to a dead code block.
 
 ----------------------------------------------------------------------------------------------------
 compareBoolExpressionWithInt (1)

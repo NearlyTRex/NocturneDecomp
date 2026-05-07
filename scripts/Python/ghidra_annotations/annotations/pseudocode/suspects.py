@@ -866,6 +866,22 @@ def identify_raw_address_constant_suspects(decompiled_code, address_interval_map
                 continue
             if b0 == b1 == b2 == b3 and b0 != 0:
                 continue
+            # Skip MB-aligned values (low 20 bits zero) — these are memory-
+            # size thresholds (`< 60MB`, `< 16MB`) used in capability
+            # checks. Real symbol addresses in this binary are not 1MB-
+            # aligned (image base 0x400000 is, but no code/data symbol
+            # lands at that bit-pattern). A literal whose low 20 bits are
+            # all zero is virtually always a size constant that happens
+            # to fall inside a large pool's interval by coincidence.
+            if (addr & 0xfffff) == 0:
+                continue
+            # Skip saturated-channel color constants: every byte is
+            # either 0x00 or 0xff. These are RGB transparency / chroma-
+            # key colors (0xff00ff = magenta, 0xffff00 = yellow, etc.),
+            # not pointers — real symbol addresses don't have this
+            # extreme byte pattern.
+            if all(b in (0x00, 0xff) for b in (b0, b1, b2, b3)):
+                continue
 
             hit = _find_global_at(addr, address_interval_map)
             if hit is None:
@@ -1935,9 +1951,14 @@ def identify_pointer_cast_multiline(decompiled_code):
 # to arithmetic context (followed/preceded by `+` or `-`) so legitimate
 # `(int)&local` conversions used as int arguments aren't flagged.
 _INT_ADDR_ARITH_RE = re.compile(
-    r'\(int\)\s*&[\w\.\[\]\->]+\s*[\+\-]'      # (int)&NAME +/- ...
+    # (int)&NAME(.field|->field|[...])* +/- ...
+    # Balanced [...] is consumed as a unit so a `+`/`-` inside an array
+    # index (e.g. `[i + 1]`) doesn't trigger the arithmetic-context match.
+    # The address tail accepts struct fields, arrow chains, and bracketed
+    # indices; outer arithmetic must come after the closing `]`.
+    r'\(int\)\s*&\w+(?:\.\w+|->\w+|\[[^\]]*\])*\s*[\+\-]'
     r'|'
-    r'[\+\-]\s*\(int\)\s*&[\w\.\[\]\->]+'      # ... +/- (int)&NAME
+    r'[\+\-]\s*\(int\)\s*&\w+(?:\.\w+|->\w+|\[[^\]]*\])*'
 )
 
 

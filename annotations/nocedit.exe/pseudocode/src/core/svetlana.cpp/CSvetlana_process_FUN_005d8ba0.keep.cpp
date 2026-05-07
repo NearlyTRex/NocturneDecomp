@@ -57,11 +57,9 @@ switchD_005d8f77_caseD_9:
   if (fVar7 < 0.0) {
     (this_ptr->base).invincibility_timer = 0.0;
   }
-  pCVar4 = &(this_ptr->base).base.model.accumulated_root_motion;
-  (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  (this_ptr->base).base.model.accumulated_root_motion.y =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
-  pCVar4->x = (this_ptr->base).base.model.accumulated_root_motion.y;
+  (this_ptr->base).base.model.accumulated_root_motion.x = 0.0f;
+  (this_ptr->base).base.model.accumulated_root_motion.y = 0.0f;
+  (this_ptr->base).base.model.accumulated_root_motion.z = 0.0f;
   core_svetlana_cpp_CSvetlana_advanceMotion_FUN_005d9970(this_ptr,delta_time);
   (this_ptr->base).base.walk_step_speed = (this_ptr->base).base.model.accumulated_root_motion.z;
   iVar3 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70
@@ -154,10 +152,9 @@ LAB_005d9032:
     pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&(this_ptr->base).base.model.motion_controller);
     if ((pSVar5->state_index != 0x1a) && (pSVar5->state_index != 0x1b)) {
-      (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-      (this_ptr->base).base.model.accumulated_root_motion.y =
-           (this_ptr->base).base.model.accumulated_root_motion.z;
-      pCVar4->x = (this_ptr->base).base.model.accumulated_root_motion.y;
+      (this_ptr->base).base.model.accumulated_root_motion.x = 0.0f;
+      (this_ptr->base).base.model.accumulated_root_motion.y = 0.0f;
+      (this_ptr->base).base.model.accumulated_root_motion.z = 0.0f;
     }
     uVar1 = (this_ptr->base).base.is_walking;
     if (uVar1 < 2) {

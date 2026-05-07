@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl core_colonel_cpp_CColonel_process_FUN_0043fa00(CColonel *this_ptr,float delta_time)
 
 {
@@ -224,6 +222,7 @@ LAB_0043fc14:
     fVar10 = this_ptr->head_look_blend_weight;
     iVar6 = g_ColonelIndices[0];
     core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&this_ptr->head_look_euler,&CStack_94);
+    CStack_84 = CStack_94;
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
               (pCVar2,&CStack_84,fVar10,iVar6,
                (CDeformableModel_MotionBlendWeightFunc *)blend_callback);

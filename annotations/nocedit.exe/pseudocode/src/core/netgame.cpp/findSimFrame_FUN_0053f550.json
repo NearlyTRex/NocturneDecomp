@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 32,
+    "complexity_score": 17,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 17,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 53
   },
   "cross_references": [],
@@ -90,6 +88,17 @@
     },
     "pcode_op_count": 234
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 12,
+      "match": "(int *)((int)g_SimFrameHistory",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (sequence_number == *(int *)((int)g_SimFrameHistory[0].player_input + iVar1 + -0xc)) {",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -106,14 +115,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 12,
-      "match": "(int *)((int)g_SimFrameHistory",
-      "severity": "moderate",
-      "text": "if (sequence_number == *(int *)((int)g_SimFrameHistory[0].player_input + iVar1 + -0xc)) {",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

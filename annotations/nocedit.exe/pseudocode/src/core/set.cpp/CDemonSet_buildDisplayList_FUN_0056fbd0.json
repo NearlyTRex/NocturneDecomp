@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 365,
-    "complexity_score": 226,
+    "complexity_score": 201,
     "cross_reference_count": 6,
     "function_call_count": 7,
     "global_count": 24,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 166,
-    "suspect_count": 5,
+    "suspect_count": 3,
     "suspect_types": [
-      "displaced_global_access",
       "shadow_pointer_walk"
     ],
     "total_lines": 531
@@ -411,6 +410,34 @@
       "severity": "moderate",
       "text": "(&g_SetDisplayListCount)[iVar1 * 2] =",
       "type": "wrong_global"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*8 + 0x3342b48] lands in g_VertexNormalArray but intended target is g_SetDisplayListCount at 0x3342b4c (displaced by 4 bytes)",
+      "displaced_from": "g_VertexNormalArray",
+      "displacement": "0x3342b48",
+      "instruction_address": "",
+      "intended_global": "g_SetDisplayListCount",
+      "line": 214,
+      "match": "0x3342b48",
+      "resolution_source": "keep",
+      "scale": 8,
+      "severity": "moderate",
+      "text": "// 0056fe49: MOV dword ptr [EAX*0x8 + 0x3342b48],EBX  ; g_SetDisplayListSortBuffer",
+      "type": "displaced_global_access"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*8 + 0x3342b4c] lands in g_SetDisplayListCount but intended target is g_SetDisplayListSortBuffer at 0x3342b50 (displaced by 4 bytes)",
+      "displaced_from": "g_SetDisplayListCount",
+      "displacement": "0x3342b4c",
+      "instruction_address": "",
+      "intended_global": "g_SetDisplayListSortBuffer",
+      "line": 217,
+      "match": "0x3342b4c",
+      "resolution_source": "keep",
+      "scale": 8,
+      "severity": "moderate",
+      "text": "// 0056fe57: FSTP float ptr [EAX*0x8 + 0x3342b4c]  ; g_SetDisplayListSortBuffer[0].distance_sq",
+      "type": "displaced_global_access"
     }
   ],
   "stack_frame": {
@@ -561,32 +588,6 @@
       "severity": "moderate",
       "text": "pCVar2 = (CDemonSet *)pCVar2->cameras;",
       "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Compiler displaced index base: [reg*8 + 0x3342b48] lands in g_VertexNormalArray but intended target is g_SetDisplayListCount at 0x3342b4c (displaced by 4 bytes)",
-      "displaced_from": "g_VertexNormalArray",
-      "displacement": "0x3342b48",
-      "instruction_address": "",
-      "intended_global": "g_SetDisplayListCount",
-      "line": 214,
-      "match": "0x3342b48",
-      "scale": 8,
-      "severity": "moderate",
-      "text": "// 0056fe49: MOV dword ptr [EAX*0x8 + 0x3342b48],EBX  ; g_SetDisplayListSortBuffer",
-      "type": "displaced_global_access"
-    },
-    {
-      "description": "Compiler displaced index base: [reg*8 + 0x3342b4c] lands in g_SetDisplayListCount but intended target is g_SetDisplayListSortBuffer at 0x3342b50 (displaced by 4 bytes)",
-      "displaced_from": "g_SetDisplayListCount",
-      "displacement": "0x3342b4c",
-      "instruction_address": "",
-      "intended_global": "g_SetDisplayListSortBuffer",
-      "line": 217,
-      "match": "0x3342b4c",
-      "scale": 8,
-      "severity": "moderate",
-      "text": "// 0056fe57: FSTP float ptr [EAX*0x8 + 0x3342b4c]  ; g_SetDisplayListSortBuffer[0].distance_sq",
-      "type": "displaced_global_access"
     }
   ]
 }

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 36,
+    "complexity_score": 21,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 21,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 67
   },
   "cross_references": [],
@@ -107,6 +105,17 @@
     ],
     "vtable_offset": 52
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(CComplexPolygon **)(iVar3 + (int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(CComplexPolygon **)(iVar3 + (int)this_ptr->complex_polygons));",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -123,16 +132,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 14,
-      "match": "(CComplexPolygon **)(iVar3 + (int)this_ptr",
-      "severity": "moderate",
-      "text": "(*(CComplexPolygon **)(iVar3 + (int)this_ptr->complex_polygons));",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

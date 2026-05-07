@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 146
-  Total diagnostics: 411
+  Functions with findings: 148
+  Total diagnostics: 413
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 146, raw .cpp files: 0
+  .keep.cpp files: 148, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -924,6 +924,18 @@ core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80  [.keep] [Cppcheck (q
   File: core/msnedit.cpp  (1 diagnostics)
 
   Line  142: [selfAssignment] Redundant assignment of 'pCVar5' to itself.
+
+----------------------------------------------------------------------------------------------------
+core_script.cpp_CScript_collectLabels_FUN_00566fa0  [.keep] [Cppcheck (quick)]
+  File: core/script.cpp  (1 diagnostics)
+
+  Line   19: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+
+----------------------------------------------------------------------------------------------------
+core_script.cpp_CScript_parseActionTemplate_FUN_00567490  [.keep] [Cppcheck (quick)]
+  File: core/script.cpp  (1 diagnostics)
+
+  Line   21: [oppositeInnerCondition] Opposite inner 'if' condition leads to a dead code block.
 
 ----------------------------------------------------------------------------------------------------
 core_script.cpp_parseBodyPartMask_FUN_00559730  [.keep] [Cppcheck (quick)]

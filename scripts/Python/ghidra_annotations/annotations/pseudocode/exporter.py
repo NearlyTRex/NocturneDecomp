@@ -759,6 +759,29 @@ def process_python_only(result, pseudocode_src_dir, constants_map,
             added_memcpys += max(
                 0, cpp_loop_memcpy_count - keep_loop_memcpy_count)
 
+            # Also credit countdown for-loops the source-side detector
+            # didn't pattern-match (typically because the body uses
+            # arrow/index stores or struct-field-decay pointer advances
+            # rather than `*ptr = *src` and `ptr = ptr + 1`). The asm
+            # still has REP MOVSD; if the keep eliminated the cpp's
+            # `for (... = N; ... != 0; ... = ... + -1)` loop, count it
+            # as one resolution.
+            _COUNTDOWN_FOR_RE = re.compile(
+                r'for\s*\([^;]*;\s*\w+\s*!=\s*0\s*;'
+                r'\s*\w+\s*=\s*\w+\s*\+\s*-1\s*\)')
+            countdown_delta = max(
+                0,
+                len(_COUNTDOWN_FOR_RE.findall(decompiled_code))
+                - len(_COUNTDOWN_FOR_RE.findall(keep_source)))
+            # Don't double-credit: the source-side credit above already
+            # covers (cpp_loop_memcpy_count - keep_loop_memcpy_count)
+            # countdown loops the detector pattern-matched. Only add the
+            # difference for loops the source detector missed.
+            added_memcpys += max(
+                0,
+                countdown_delta
+                - max(0, cpp_loop_memcpy_count - keep_loop_memcpy_count))
+
             if added_memcpys or added_memsets:
                 new_still = []
                 for s in still:
@@ -781,6 +804,39 @@ def process_python_only(result, pseudocode_src_dir, constants_map,
                     else:
                         new_still.append(s)
                 still = new_still
+
+            # `displaced_global_access` suspects fire on an asm pattern
+            # ([reg*scale + disp] crossing global boundaries) regardless
+            # of how the source rendered the access. When the keep
+            # references the intended global by symbolic name (the
+            # `intended_global` field on the suspect), the source-level
+            # bug is fixed even though the asm pattern is still present.
+            # Resolve those suspects against the keep.
+            new_still = []
+            for s in still:
+                if s.get('type') != 'displaced_global_access':
+                    new_still.append(s)
+                    continue
+                intended = s.get('intended_global', '')
+                if not intended:
+                    new_still.append(s)
+                    continue
+                # Match the bare symbol name (strip array-suffix annotations
+                # like `g_Array[2]` that show up on sub-element entries).
+                bare = intended.split('[')[0].split('.')[0]
+                if not bare:
+                    new_still.append(s)
+                    continue
+                bare_re = re.compile(r'(?<![A-Za-z0-9_])'
+                                     + re.escape(bare)
+                                     + r'(?![A-Za-z0-9_])')
+                if bare_re.search(keep_source):
+                    s2 = dict(s)
+                    s2['resolution_source'] = 'keep'
+                    resolved_by_keep.append(s2)
+                else:
+                    new_still.append(s)
+            still = new_still
 
             suspects = still
             resolved_suspects.extend(resolved_by_keep)

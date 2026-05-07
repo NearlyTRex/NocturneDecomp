@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 38,
+    "complexity_score": 23,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 23,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 79
   },
   "cross_references": [
@@ -198,6 +196,17 @@
     },
     "pcode_op_count": 318
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(int *)((int)g_ScreenBufferArray",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_ScreenBufferArray[iVar2] + iVar1 * 4)) {",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -221,14 +230,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(int *)((int)g_ScreenBufferArray",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_ScreenBufferArray[iVar2] + iVar1 * 4)) {",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

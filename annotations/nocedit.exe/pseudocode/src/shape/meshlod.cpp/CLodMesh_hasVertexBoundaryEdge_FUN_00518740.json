@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 33,
+    "complexity_score": 18,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 18,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 53
   },
   "cross_references": [
@@ -101,6 +99,17 @@
     },
     "pcode_op_count": 155
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[*(int *)((int)this_ptr->vertex_data[vertex_idx].adjacent_edge_indices + iVar2)].",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -124,14 +133,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 15,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "[*(int *)((int)this_ptr->vertex_data[vertex_idx].adjacent_edge_indices + iVar2)].",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

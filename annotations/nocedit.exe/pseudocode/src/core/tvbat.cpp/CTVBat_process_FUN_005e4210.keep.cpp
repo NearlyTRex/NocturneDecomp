@@ -128,9 +128,9 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr,float d
            local_dc.x + ((pCVar1->position).x - local_dc.x) * fVar16 * 0.8f;
       (this_ptr->base).base.base.location.position.y = local_dc.y + fVar2;
       (this_ptr->base).base.base.location.position.z = local_dc.z + fVar9;
-      (this_ptr->velocity).z = 0.0;
-      (this_ptr->velocity).y = (this_ptr->velocity).z;
-      (this_ptr->velocity).x = (this_ptr->velocity).y;
+      (this_ptr->velocity).x = 0.0f;
+      (this_ptr->velocity).y = 0.0f;
+      (this_ptr->velocity).z = 0.0f;
     }
     if (&local_88 != local_d0) {
       local_88 = local_dc.x - (this_ptr->base).base.base.location.position.x;
@@ -175,11 +175,9 @@ LAB_005e4342:
   local_b8 = (this_ptr->home_pos).x - (this_ptr->base).base.base.location.position.x;
   local_b4 = (this_ptr->home_pos).y - (this_ptr->base).base.base.location.position.y;
   local_b0 = (this_ptr->home_pos).z - (this_ptr->base).base.base.location.position.z;
-  if (&local_88 != &local_b8) {
-    local_88 = local_b8;
-    local_84 = local_b4;
-    local_80 = local_b0;
-  }
+  local_88 = local_b8;
+  local_84 = local_b4;
+  local_80 = local_b0;
   if (((this_ptr->max_distance <=
         SQRT(local_80 * local_80 + local_88 * local_88 + local_84 * local_84)) ||
       (this_ptr->max_height <= ABS(local_84))) && ((CVector3f *)&local_58 != &this_ptr->home_pos)) {
@@ -211,11 +209,9 @@ LAB_005e4342:
   local_70 = local_58 - (this_ptr->base).base.base.location.position.x;
   local_6c = local_54 - (this_ptr->base).base.base.location.position.y;
   local_68 = local_50 - (this_ptr->base).base.base.location.position.z;
-  if (&local_88 != &local_70) {
-    local_88 = local_70;
-    local_84 = local_6c;
-    local_80 = local_68;
-  }
+  local_88 = local_70;
+  local_84 = local_6c;
+  local_80 = local_68;
   fVar18 = (float10)fpatan((float10)local_88,(float10)local_80);
   fVar19 = SQRT((float10)local_88 * (float10)local_88 + (float10)local_80 * (float10)local_80);
   fVar22 = (float10)fpatan((float10)local_84,fVar19);
@@ -232,11 +228,9 @@ LAB_005e4342:
     ;
     fStack_e0 = (this_ptr->base).base.base.location.position.z - (pCVar12->base).location.position.z
     ;
-    if (&local_88 != &fStack_e8) {
-      local_88 = fStack_e8;
-      local_84 = fStack_e4;
-      local_80 = fStack_e0;
-    }
+    local_88 = fStack_e8;
+    local_84 = fStack_e4;
+    local_80 = fStack_e0;
     if (((local_128.cylinder_bottom_y <= local_84) && (local_84 <= local_128.cylinder_top_y)) &&
        ((float)fVar19 < (float)2)) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_164);

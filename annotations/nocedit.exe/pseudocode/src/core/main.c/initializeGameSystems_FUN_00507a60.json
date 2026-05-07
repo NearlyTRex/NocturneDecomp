@@ -7,16 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 798,
-    "complexity_score": 527,
+    "complexity_score": 512,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 96,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 512,
-    "suspect_count": 1,
-    "suspect_types": [
-      "raw_address_constant"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1310
   },
   "cross_references": [
@@ -1491,14 +1489,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Raw hex literal 0x3c00000 matches address of g_SkeletonPool (+3356508 bytes into) (type CSkeleton[40]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 81,
-      "match": "0x3c00000",
-      "severity": "moderate",
-      "text": "if (g_TotalPhysicalMemory < 0x3c00000) {",
-      "type": "raw_address_constant"
-    }
-  ]
+  "suspects": []
 }

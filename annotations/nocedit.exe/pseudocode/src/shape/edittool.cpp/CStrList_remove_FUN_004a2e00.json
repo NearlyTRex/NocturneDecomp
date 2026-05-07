@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 41,
+    "complexity_score": 26,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 26,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 108
   },
   "cross_references": [
@@ -146,6 +144,17 @@
     ],
     "vtable_offset": 4
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(void **)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "ptr = *(void **)((int)this_ptr->data_array + iVar1);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -176,14 +185,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 16,
-      "match": "(void **)((int)this_ptr",
-      "severity": "moderate",
-      "text": "ptr = *(void **)((int)this_ptr->data_array + iVar1);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

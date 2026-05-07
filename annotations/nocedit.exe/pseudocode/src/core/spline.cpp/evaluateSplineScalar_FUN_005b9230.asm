@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float __cdecl core_spline_cpp_evaluateSplineScalar_FUN_005b9230(float *basis,float *p0,float *p1,float *p2,float *p3)
+; float __cdecl core_spline_cpp_evaluateSplineScalar_FUN_005b9230(float *basis,float *cp0,float *cp1,float *cp2,float *cp3)
 ;
 ; Parameters:
 ; float *          Stack[0x4]:4   basis
-; float *          Stack[0x8]:4   p0
-; float *          Stack[0xc]:4   p1
-; float *          Stack[0x10]:4   p2
-; float *          Stack[0x14]:4   p3
+; float *          Stack[0x8]:4   cp0
+; float *          Stack[0xc]:4   cp1
+; float *          Stack[0x10]:4   cp2
+; float *          Stack[0x14]:4   cp3
 ;
 ; *****************************************************************************
 

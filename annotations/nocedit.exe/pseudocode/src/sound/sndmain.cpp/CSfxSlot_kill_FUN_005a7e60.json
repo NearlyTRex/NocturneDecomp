@@ -373,17 +373,6 @@
     },
     "pcode_op_count": 413
   },
-  "resolved_suspects": [
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 44,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "if ((int)&slot[-0x36cd9].options.current_volume / 0x128 != pCVar2->streaming_slot_index) {",
-      "type": "pointer_cast"
-    }
-  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,

@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 562,
-    "complexity_score": 276,
+    "complexity_score": 261,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 34,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 261,
-    "suspect_count": 1,
-    "suspect_types": [
-      "displaced_global_access"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 823
   },
   "cross_references": [
@@ -548,6 +546,20 @@
       "severity": "moderate",
       "text": "fVar1 = (1.0 - (float)(((int)fVar1 >> 1) + g_FastSqrtMagic) *",
       "type": "fast_sqrt_inline"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*4 + 0x32c17ac] lands in g_GlobeLightCount but intended target is g_GlobeLights at 0x32c17b0 (displaced by 4 bytes)",
+      "displaced_from": "g_GlobeLightCount",
+      "displacement": "0x32c17ac",
+      "instruction_address": "",
+      "intended_global": "g_GlobeLights",
+      "line": 313,
+      "match": "0x32c17ac",
+      "resolution_source": "keep",
+      "scale": 4,
+      "severity": "moderate",
+      "text": "// 0056d820: MOV dword ptr [EDX*0x4 + 0x32c17ac],EAX  ; g_GlobeLights[1]",
+      "type": "displaced_global_access"
     }
   ],
   "stack_frame": {
@@ -751,19 +763,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Compiler displaced index base: [reg*4 + 0x32c17ac] lands in g_GlobeLightCount but intended target is g_GlobeLights at 0x32c17b0 (displaced by 4 bytes)",
-      "displaced_from": "g_GlobeLightCount",
-      "displacement": "0x32c17ac",
-      "instruction_address": "",
-      "intended_global": "g_GlobeLights",
-      "line": 313,
-      "match": "0x32c17ac",
-      "scale": 4,
-      "severity": "moderate",
-      "text": "// 0056d820: MOV dword ptr [EDX*0x4 + 0x32c17ac],EAX  ; g_GlobeLights[1]",
-      "type": "displaced_global_access"
-    }
-  ]
+  "suspects": []
 }

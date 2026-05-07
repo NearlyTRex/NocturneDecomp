@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 496,
-    "complexity_score": 284,
+    "complexity_score": 244,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 244,
-    "suspect_count": 3,
-    "suspect_types": [
-      "missing_cave_copy",
-      "warning_type_propagation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 740
   },
   "cross_references": [],
@@ -288,6 +285,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 21,
       "match": "afStackY_1870",
@@ -331,6 +337,24 @@
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
       "type": "unrolled_memset"
+    },
+    {
+      "description": "Struct-type local `CStack_94` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 24,
+      "match": "CQuaternion4f CStack_94; ... f(&CStack_94, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CQuaternion4f CStack_94;",
+      "type": "missing_cave_copy"
+    },
+    {
+      "description": "Struct-type local `CStack_84` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
+      "line": 25,
+      "match": "CQuaternion4f CStack_84; ... f(&CStack_84, ...);",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CQuaternion4f CStack_84;",
+      "type": "missing_cave_copy"
     }
   ],
   "stack_frame": {
@@ -506,32 +530,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
-      "description": "Struct-type local `CStack_94` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 24,
-      "match": "CQuaternion4f CStack_94; ... f(&CStack_94, ...);",
-      "severity": "moderate",
-      "text": "CQuaternion4f CStack_94;",
-      "type": "missing_cave_copy"
-    },
-    {
-      "description": "Struct-type local `CStack_84` (CQuaternion4f) is declared and passed once by address with no other reference; the `.asm` has 0 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
-      "line": 25,
-      "match": "CQuaternion4f CStack_84; ... f(&CStack_84, ...);",
-      "severity": "moderate",
-      "text": "CQuaternion4f CStack_84;",
-      "type": "missing_cave_copy"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

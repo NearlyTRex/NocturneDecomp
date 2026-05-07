@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 38,
+    "complexity_score": 23,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 23,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 79
   },
   "cross_references": [
@@ -115,6 +113,17 @@
     },
     "pcode_op_count": 206
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(uint *)(iVar4 + (int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)(iVar4 + (int)this_ptr->pvs_list);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -138,14 +147,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 19,
-      "match": "(uint *)(iVar4 + (int)this_ptr",
-      "severity": "moderate",
-      "text": "puVar1 = (uint *)(iVar4 + (int)this_ptr->pvs_list);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

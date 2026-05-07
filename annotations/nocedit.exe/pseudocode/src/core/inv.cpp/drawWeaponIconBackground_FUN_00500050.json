@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 70,
+    "complexity_score": 45,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 45,
-    "suspect_count": 2,
-    "suspect_types": [
-      "raw_address_constant"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 159
   },
   "cross_references": [
@@ -231,22 +229,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Raw hex literal 0xa00000 matches address of g_TempWorldPositions (+110988 bytes into) (type CVector3i[241][320]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 20,
-      "match": "0xa00000",
-      "severity": "moderate",
-      "text": "this_ptr->vertex_buffer_ptr->v = 0xa00000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0xa00000 matches address of g_TempWorldPositions (+110988 bytes into) (type CVector3i[241][320]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 25,
-      "match": "0xa00000",
-      "severity": "moderate",
-      "text": "this_ptr->vertex_buffer_ptr[1].v = 0xa00000;",
-      "type": "raw_address_constant"
-    }
-  ]
+  "suspects": []
 }
