@@ -99,9 +99,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
         local_8c.x = local_b0.x * fVar11;
         local_8c.y = local_b0.y * fVar11;
         local_8c.z = local_b0.z * fVar11;
-        local_b0.x = local_8c.x;
-        local_b0.y = local_8c.y;
-        local_b0.z = local_8c.z;
+        local_b0 = local_8c;
         local_11c.z = 1.0;
         local_11c.x = 0.0;
         local_11c.y = 0.5;
@@ -201,9 +199,7 @@ void __cdecl core_larva_cpp_CLarva_process_FUN_00503080(CLarva *this_ptr,float d
               < (this_ptr->base).guard_distance) {
             pCVar10 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                 (&local_a4,&local_f8);
-            local_f8.x = pCVar10->x;
-            local_f8.y = pCVar10->y;
-            local_f8.z = pCVar10->z;
+            local_f8 = *pCVar10;
             fVar11 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_f8.y);
             local_14 = fVar11;
             local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 78,
-    "complexity_score": 45,
+    "complexity_score": 30,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 30,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 108
   },
   "cross_references": [],
@@ -170,6 +168,17 @@
     },
     "pcode_op_count": 266
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 18,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_CDemonLightInstance.base.base.position.f.x = aCStack_20[0].x;",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 44,
     "local_size": 36,
@@ -207,16 +216,24 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 18,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "g_CDemonLightInstance.base.base.position.f.x = aCStack_20[0].x;",
-      "type": "unrolled_memcpy"
-    }
-  ],
+  "static_analysis": {
+    "analyzed_file": "CShotgun_process_FUN_00587f70.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "invalidPointerCast",
+          "column": 9,
+          "line": 25,
+          "message": "Casting between signed char * and float * which have an incompatible binary data representation.",
+          "severity": "portability"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

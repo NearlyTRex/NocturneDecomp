@@ -77,10 +77,7 @@ void __cdecl core_crate_cpp_CCrate_process_FUN_00448660(CCrate *this_ptr,float d
   pCVar6 = (CPlatform *)this_ptr->last_platform;
   if (pCVar6 != (CPlatform *)0x0) {
     (this_ptr->base).standing_platform = pCVar6;
-    (this_ptr->base).location.position.x = (pCVar6->base).location.position.x;
-    (this_ptr->base).location.position.y = (pCVar6->base).location.position.y;
-    (this_ptr->base).location.position.z = (pCVar6->base).location.position.z;
-    (this_ptr->base).location.area_id = (pCVar6->base).location.area_id;
+    (this_ptr->base).location = (pCVar6->base).location;
     pCVar6 = (this_ptr->base).standing_platform;
     pUVar3 = &(this_ptr->base).orient;
     pUVar5 = &(pCVar6->base).orient;

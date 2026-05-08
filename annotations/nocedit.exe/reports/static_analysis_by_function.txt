@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 151
-  Total diagnostics: 419
+  Functions with findings: 154
+  Total diagnostics: 422
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 151, raw .cpp files: 0
+  .keep.cpp files: 154, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -750,8 +750,8 @@ core_svetlana.cpp_CSvetlana_renderOpaque_FUN_005d9bc0  [.keep] [Cppcheck (quick)
 core_vampboss.cpp_CVampireBoss_process_FUN_005e5970  [.keep] [Cppcheck (quick)]
   File: core/vampboss.cpp  (2 diagnostics)
 
-  Line  182: [legacyUninitvar] Uninitialized variable: local_b0
-  Line  204: [legacyUninitvar] Uninitialized variable: local_b4
+  Line  179: [legacyUninitvar] Uninitialized variable: local_b0
+  Line  201: [legacyUninitvar] Uninitialized variable: local_b4
 
 ----------------------------------------------------------------------------------------------------
 engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220  [.keep] [Cppcheck (quick)]
@@ -899,6 +899,12 @@ core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170  [.keep] [C
   Line   44: [nullPointerRedundantCheck] Either the condition 'pCVar3!=(CDemonCube*)0x0' is redundant or there is possible null pointer dereference: pCVar3.
 
 ----------------------------------------------------------------------------------------------------
+core_elephant.cpp_CElephantGun_process_FUN_004a7070  [.keep] [Cppcheck (quick)]
+  File: core/elephant.cpp  (1 diagnostics)
+
+  Line   25: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
+
+----------------------------------------------------------------------------------------------------
 core_event.cpp_parseVectorLocation_FUN_004aa530  [.keep] [Cppcheck (quick)]
   File: core/event.cpp  (1 diagnostics)
 
@@ -921,6 +927,12 @@ core_game.cpp_CGame_renderOverlay_FUN_004d8040  [.keep] [Cppcheck (quick)]
   File: core/game.cpp  (1 diagnostics)
 
   Line  103: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00505ac0  [.keep] [Cppcheck (quick)]
+  File: core/lightgun.cpp  (1 diagnostics)
+
+  Line   24: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 core_main.c_displayErrorAndQuit_FUN_00506f10  [.keep] [Cppcheck (quick)]
@@ -1005,6 +1017,12 @@ core_setutil.cpp_C3DSCamera_load_FUN_00585420  [.keep] [Cppcheck (quick)]
   File: core/setutil.cpp  (1 diagnostics)
 
   Line   23: [invalidscanf] sscanf() without field width limits can crash with huge input data.
+
+----------------------------------------------------------------------------------------------------
+core_shotgun.cpp_CShotgun_process_FUN_00587f70  [.keep] [Cppcheck (quick)]
+  File: core/shotgun.cpp  (1 diagnostics)
+
+  Line   25: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810  [.keep] [Cppcheck (quick)]

@@ -37,8 +37,6 @@ void __cdecl core_box_cpp_CBox_loadFromFile_FUN_0041fe90(CBox *this_ptr,_FILE *f
   if (&this_ptr->linear_velocity == pCVar1) {
     return;
   }
-  (this_ptr->linear_velocity).x = pCVar1->x;
-  (this_ptr->linear_velocity).y = pCVar1->y;
-  (this_ptr->linear_velocity).z = pCVar1->z;
+  this_ptr->linear_velocity = *pCVar1;
   return;
 }

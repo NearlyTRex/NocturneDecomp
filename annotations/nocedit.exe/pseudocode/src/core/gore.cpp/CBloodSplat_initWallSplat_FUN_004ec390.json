@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 46,
+    "complexity_score": 31,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 31,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 106
   },
   "cross_references": [
@@ -126,6 +124,15 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */",
       "type": "warning_inlined_function"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 12,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->position).x = position->x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -165,14 +172,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 12,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->position).x = position->x;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

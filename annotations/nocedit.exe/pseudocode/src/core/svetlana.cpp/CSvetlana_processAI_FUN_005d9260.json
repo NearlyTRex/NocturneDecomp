@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 547,
-    "complexity_score": 278,
+    "complexity_score": 243,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 243,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 790
   },
   "cross_references": [
@@ -217,6 +215,33 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 89,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_6c.x = CStack_78.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 219,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_6c.x = CStack_60.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 225,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_6c.x = pCVar4->x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -385,30 +410,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 89,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_6c.x = CStack_78.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 219,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_6c.x = CStack_60.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 225,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_6c.x = pCVar4->x;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

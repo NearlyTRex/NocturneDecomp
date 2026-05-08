@@ -34,9 +34,7 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
     if (g_TrainLastCameraIndex != g_CDemonSetPtr->selected_camera_index) {
       core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
       core_setcolid_cpp_CDemonSet_disableIgnore_FUN_00574210(g_CDemonSetPtr);
-      local_50.x = g_SoundListenerPrev.x;
-      local_50.y = g_SoundListenerPrev.y;
-      local_50.z = g_SoundListenerPrev.z;
+      local_50 = g_SoundListenerPrev;
       local_44.x = g_SoundListenerPrev.x;
       local_44.z = g_SoundListenerPrev.z;
       local_44.y = g_SoundListenerPrev.y + 20.0f;

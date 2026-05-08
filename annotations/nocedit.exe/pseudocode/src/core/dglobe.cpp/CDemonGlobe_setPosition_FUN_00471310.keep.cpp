@@ -13,9 +13,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00471310(CDemonGlobe *t
   double dVar1;
   
   if (&this_ptr->position != position) {
-    (this_ptr->position).x = position->x;
-    (this_ptr->position).y = position->y;
-    (this_ptr->position).z = position->z;
+    this_ptr->position = *position;
   }
   dVar1 = 256;
   (this_ptr->position_scaled).x = (int)ROUND(ROUND((double)position->x * 256));

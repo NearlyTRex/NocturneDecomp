@@ -41,11 +41,7 @@ void __cdecl shape_dsemodel_cpp_CDSEModel_processModelPart_FUN_0048f770(CDSEMode
   }
   for (local_18 = 0; local_18 < this_ptr->vertex_count; local_18 = local_18 + 1) {
     iVar4 = g_VertexIdRegistry[local_18];
-    this_ptr->vertices[local_18].vertex.x = g_LoadedVertices[iVar4].vertex.x;
-    this_ptr->vertices[local_18].vertex.y = g_LoadedVertices[iVar4].vertex.y;
-    this_ptr->vertices[local_18].vertex.z = g_LoadedVertices[iVar4].vertex.z;
-    this_ptr->vertices[local_18].u = g_LoadedVertices[iVar4].u;
-    this_ptr->vertices[local_18].v = g_LoadedVertices[iVar4].v;
+    this_ptr->vertices[local_18] = g_LoadedVertices[iVar4];
   }
   return;
 }

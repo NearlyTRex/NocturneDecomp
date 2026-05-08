@@ -7,19 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1467,
-    "complexity_score": 696,
+    "complexity_score": 626,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 37,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 626,
-    "suspect_count": 5,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memset",
-      "warning_inlined_function",
-      "warning_type_propagation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 2093
   },
   "cross_references": [],
@@ -495,6 +490,33 @@
   },
   "resolved_suspects": [
     {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Type propagation did not converge",
+      "line": 3,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 188,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar18 = *(int *)((int)this_ptr + (4 - this_ptr->waypoint_index) * 4 + 0xce908);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 444,
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
@@ -502,6 +524,24 @@
       "severity": "moderate",
       "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar18),",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 600,
+      "match": "cascade_constant_fill",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->base).base.position_delta.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 603,
+      "match": "cascade_constant_fill",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
+      "type": "unrolled_memset"
     }
   ],
   "stack_frame": {
@@ -888,14 +928,14 @@
         {
           "check_id": "legacyUninitvar",
           "column": 16,
-          "line": 204,
+          "line": 201,
           "message": "Uninitialized variable: local_b4",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 19,
-          "line": 182,
+          "line": 179,
           "message": "Uninitialized variable: local_b0",
           "severity": "error"
         }
@@ -904,48 +944,7 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Type propagation did not converge",
-      "line": 3,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 188,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "iVar18 = *(int *)((int)this_ptr + (4 - this_ptr->waypoint_index) * 4 + 0xce908);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 600,
-      "match": "cascade_constant_fill",
-      "severity": "moderate",
-      "text": "(this_ptr->base).base.position_delta.z = 0.0;",
-      "type": "unrolled_memset"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 603,
-      "match": "cascade_constant_fill",
-      "severity": "moderate",
-      "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
-      "type": "unrolled_memset"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

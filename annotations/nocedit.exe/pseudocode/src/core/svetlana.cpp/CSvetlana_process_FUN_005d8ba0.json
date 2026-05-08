@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 646,
-    "complexity_score": 311,
+    "complexity_score": 296,
     "cross_reference_count": 0,
     "function_call_count": 26,
     "global_count": 14,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 296,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 942
   },
   "cross_references": [],
@@ -327,6 +325,15 @@
       "type": "stack_alignment_array"
     },
     {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 204,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_5c.x = (this_ptr->base).base.model.accumulated_root_motion.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
       "line": 73,
       "match": "cascade_constant_fill",
@@ -536,16 +543,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 204,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_5c.x = (this_ptr->base).base.model.accumulated_root_motion.x;",
-      "type": "unrolled_memcpy"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -30,7 +30,7 @@ void * __cdecl shape_memdbg_cpp_debugRealloc_FUN_0050f540(void *ptr,int new_size
         g_CurrentLineNumber = 0x99;
         core_main_c_displayErrorAndQuit_FUN_00506f10("headFromPtr - NULL ptr");
       }
-      SMemHead *old_header = (SMemHead *)((int)ptr + -0x28);
+      SMemHead *old_header = (SMemHead *)((char *)ptr - sizeof(SMemHead));
       shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(old_header,filename,line_number);
       shape_memdbg_cpp_SMemHead_remove_FUN_0050ef20(old_header);
       header = (SMemHead *)realloc(old_header,new_size + GAME_SMEMHEAD_AND_BACKGUARD_SIZE);

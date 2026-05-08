@@ -35,9 +35,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300(CE
               (editor_tools,"Please enter a valid vector.");
   }
   if (result_ptr != &local_18) {
-    result_ptr->x = local_18.x;
-    result_ptr->y = local_18.y;
-    result_ptr->z = local_18.z;
+    *result_ptr = local_18;
   }
   return 1;
 }

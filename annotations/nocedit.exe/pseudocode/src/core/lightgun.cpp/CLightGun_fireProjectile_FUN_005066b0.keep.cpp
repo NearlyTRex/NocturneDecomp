@@ -87,9 +87,7 @@ void __cdecl core_lightgun_cpp_CLightGun_fireProjectile_FUN_005066b0(CLightGun *
       fVar5 = CStack_40.y - CStack_4c.y;
       fVar2 = CStack_40.x - CStack_4c.x;
       fVar6 = CStack_40.z - CStack_4c.z;
-      CStack_88.x = CStack_4c.x;
-      CStack_88.y = CStack_4c.y;
-      CStack_88.z = CStack_4c.z;
+      CStack_88 = CStack_4c;
       fVar3 = SQRT(fVar6 * fVar6 + fVar2 * fVar2 + fVar5 * fVar5);
       if (0.0 < fVar3) {
         fVar3 = 1.0 / fVar3;

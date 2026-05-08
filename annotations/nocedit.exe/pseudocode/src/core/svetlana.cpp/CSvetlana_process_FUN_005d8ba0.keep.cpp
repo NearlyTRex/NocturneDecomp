@@ -186,9 +186,7 @@ LAB_005d8cdd:
 switchD_005d8f77_caseD_8:
   pCVar1 = (this_ptr->base).base.grabbed_by;
   if (pCVar1 == (CDemonActor *)0x0) {
-    local_5c.x = (this_ptr->base).base.model.accumulated_root_motion.x;
-    local_5c.y = (this_ptr->base).base.model.accumulated_root_motion.y;
-    local_5c.z = (this_ptr->base).base.model.accumulated_root_motion.z;
+    local_5c = (this_ptr->base).base.model.accumulated_root_motion;
     pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&(this_ptr->base).base.model.motion_controller);
     if (pSVar6->state_index != 0x1a) {

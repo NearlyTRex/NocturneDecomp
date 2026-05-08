@@ -329,11 +329,7 @@ LAB_005f0ae7:
                           (this_ptr->base).base.base.location.position.y;
             local_194.z = (pCVar14->base).location.position.z -
                           (this_ptr->base).base.base.location.position.z;
-            if (&local_bc != &local_194) {
-              local_bc.x = local_194.x;
-              local_bc.y = local_194.y;
-              local_bc.z = local_194.z;
-            }
+            local_bc = local_194;
             fVar13 = SQRT(local_bc.z * local_bc.z +
                           local_bc.x * local_bc.x + local_bc.y * local_bc.y);
             local_1c = 20.0;

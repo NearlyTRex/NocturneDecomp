@@ -36,9 +36,7 @@ int __cdecl core_event_cpp_parseVectorLocation_FUN_004aa530(char *buffer,int *of
   *offset = *offset + local_14;
   if (pCVar1 != g_ActorNameSentinel) {
     if ((CLocation *)out_position != &pCVar1->location) {
-      out_position->x = (pCVar1->location).position.x;
-      out_position->y = (pCVar1->location).position.y;
-      out_position->z = (pCVar1->location).position.z;
+      *out_position = (pCVar1->location).position;
     }
     return 1;
   }

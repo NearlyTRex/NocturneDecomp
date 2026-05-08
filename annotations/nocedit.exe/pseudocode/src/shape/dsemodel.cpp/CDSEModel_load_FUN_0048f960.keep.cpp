@@ -16,11 +16,7 @@ void __cdecl shape_dsemodel_cpp_CDSEModel_load_FUN_0048f960(CDSEModel *this_ptr)
   strcpy(g_ModelPartNames[0].name,this_ptr->model_name);
   g_VertexCount = this_ptr->vertex_count;
   for (local_14 = 0; local_14 < this_ptr->vertex_count; local_14 = local_14 + 1) {
-    g_LoadedVertices[local_14].vertex.x = this_ptr->vertices[local_14].vertex.x;
-    g_LoadedVertices[local_14].vertex.y = this_ptr->vertices[local_14].vertex.y;
-    g_LoadedVertices[local_14].vertex.z = this_ptr->vertices[local_14].vertex.z;
-    g_LoadedVertices[local_14].u = this_ptr->vertices[local_14].u;
-    g_LoadedVertices[local_14].v = this_ptr->vertices[local_14].v;
+    g_LoadedVertices[local_14] = this_ptr->vertices[local_14];
   }
   g_PolygonCount = this_ptr->polygon_count;
   for (local_14 = 0; local_14 < this_ptr->polygon_count; local_14 = local_14 + 1) {

@@ -15,9 +15,7 @@ void __cdecl core_gore_cpp_CBloodSplat_initWallSplat_FUN_004ec390(CBloodSplat *t
   
   this_ptr->is_wall_splat = 1;
   if (&this_ptr->position != position) {
-    (this_ptr->position).x = position->x;
-    (this_ptr->position).y = position->y;
-    (this_ptr->position).z = position->z;
+    this_ptr->position = *position;
   }
   fVar2 = (float10)fpatan((float10)normal->y,
                           SQRT((float10)normal->x * (float10)normal->x +

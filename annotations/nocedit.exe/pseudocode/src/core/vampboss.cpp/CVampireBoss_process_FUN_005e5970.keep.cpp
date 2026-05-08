@@ -7,9 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *this_ptr,float delta_time)
 
 {
@@ -171,7 +168,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
     }
     if (this_ptr->bat_ai_state == 2) {
       this_ptr->flee_timer = this_ptr->flee_timer - delta_time;
-      iVar18 = *(int *)((int)this_ptr + (4 - this_ptr->waypoint_index) * 4 + 0xce908);
+      iVar18 = (int)(&this_ptr->way_point_0)[3 - this_ptr->waypoint_index];
       if (&local_b8 != (float *)(iVar18 + 0x20)) {
         local_b8 = *(float *)(iVar18 + 0x20);
         local_b4 = *(float *)(iVar18 + 0x24);
@@ -577,14 +574,12 @@ LAB_005e6560:
                   delta_time * (float)3;
     core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&local_100);
   }
-  (this_ptr->base).base.position_delta.z = 0.0;
-  (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
-  (this_ptr->base).base.position_delta.x = (this_ptr->base).base.position_delta.y;
-  (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  (this_ptr->base).base.model.accumulated_root_motion.y =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
-  (this_ptr->base).base.model.accumulated_root_motion.x =
-       (this_ptr->base).base.model.accumulated_root_motion.y;
+  (this_ptr->base).base.position_delta.x = 0.0f;
+  (this_ptr->base).base.position_delta.y = 0.0f;
+  (this_ptr->base).base.position_delta.z = 0.0f;
+  (this_ptr->base).base.model.accumulated_root_motion.x = 0.0f;
+  (this_ptr->base).base.model.accumulated_root_motion.y = 0.0f;
+  (this_ptr->base).base.model.accumulated_root_motion.z = 0.0f;
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
   pCVar6 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(pCVar6);

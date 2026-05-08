@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (419 diagnostics)
+Cppcheck (quick) (422 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -1380,11 +1380,11 @@ legacyUninitvar (45)
     File: core/sound.cpp
     Uninitialized variable: local_c4
 
-  core_vampboss.cpp_CVampireBoss_process_FUN_005e597 line 204
+  core_vampboss.cpp_CVampireBoss_process_FUN_005e597 line 201
     File: core/vampboss.cpp
     Uninitialized variable: local_b4
 
-  core_vampboss.cpp_CVampireBoss_process_FUN_005e597 line 182
+  core_vampboss.cpp_CVampireBoss_process_FUN_005e597 line 179
     File: core/vampboss.cpp
     Uninitialized variable: local_b0
 
@@ -1437,7 +1437,7 @@ legacyUninitvar (45)
     Uninitialized variable: is_pos_tan[local_f8]
 
 ----------------------------------------------------------------------------------------------------
-invalidPointerCast (19)
+invalidPointerCast (22)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 268
@@ -1460,6 +1460,10 @@ invalidPointerCast (19)
     File: core/cloth.cpp
     Casting between signed int * and float * which have an incompatible binary data representation.
 
+  core_elephant.cpp_CElephantGun_process_FUN_004a707 line 25
+    File: core/elephant.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
   core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 682
     File: core/ghoul.cpp
     Casting between signed int * and float * which have an incompatible binary data representation.
@@ -1467,6 +1471,10 @@ invalidPointerCast (19)
   core_ghoul.cpp_CGhoul_process_FUN_004e6600         line 683
     File: core/ghoul.cpp
     Casting between signed int * and float * which have an incompatible binary data representation.
+
+  core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00 line 24
+    File: core/lightgun.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
 
   core_set.cpp_CDemonSet_load_FUN_00569410           line 61
     File: core/set.cpp
@@ -1478,6 +1486,10 @@ invalidPointerCast (19)
 
   core_setedit.cpp_CDemonSet_showLightFilterEditor_F line 175
     File: core/setedit.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  core_shotgun.cpp_CShotgun_process_FUN_00587f70     line 25
+    File: core/shotgun.cpp
     Casting between signed char * and float * which have an incompatible binary data representation.
 
   core_skeledit.cpp_CDeformableModelInstance_viewMod line 790
