@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (422 diagnostics)
+Cppcheck (quick) (423 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -1017,7 +1017,7 @@ selfAssignment (71)
     Redundant assignment of 'pfVar11' to itself.
 
 ----------------------------------------------------------------------------------------------------
-invalidscanf (58)
+invalidscanf (59)
 ----------------------------------------------------------------------------------------------------
 
   core_event.cpp_CEventList_evaluateAtom_FUN_004ae14 line 181
@@ -1250,6 +1250,10 @@ invalidscanf (58)
 
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN line 1798
     File: core/skeledit.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  engine_fileio.cpp_parseTimestampRecord_FUN_004b227 line 24
+    File: engine/fileio.cpp
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------

@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 154
-  Total diagnostics: 422
+  Functions with findings: 155
+  Total diagnostics: 423
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 154, raw .cpp files: 0
+  .keep.cpp files: 155, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -1077,6 +1077,12 @@ engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60  [.keep] [Cppcheck (quick)]
   File: engine/fileio.cpp  (1 diagnostics)
 
   Line   52: [selfAssignment] Redundant assignment of 'pCVar5' to itself.
+
+----------------------------------------------------------------------------------------------------
+engine_fileio.cpp_parseTimestampRecord_FUN_004b2270  [.keep] [Cppcheck (quick)]
+  File: engine/fileio.cpp  (1 diagnostics)
+
+  Line   24: [invalidscanf] sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
 engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550  [.keep] [Cppcheck (quick)]

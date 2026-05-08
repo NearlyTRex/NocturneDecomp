@@ -10,10 +10,7 @@
 void __cdecl engine_fileio_cpp_CFileManager_addPodAuditRecord_FUN_004b5950(CFileManager *this_ptr,CPodAuditRecord *audit_data,char *filename_path)
 
 {
-  char cVar1;
   CPodAuditRecord *pCVar2;
-  char *pcVar5;
-  char *pcVar7;
 
   g_AuditRecordCount = g_AuditRecordCount + 1;
   g_AuditRecordsArray =
@@ -28,18 +25,6 @@ void __cdecl engine_fileio_cpp_CFileManager_addPodAuditRecord_FUN_004b5950(CFile
   pCVar2 = g_AuditRecordsArray + g_AuditRecordCount + -1;
   memcpy(pCVar2, audit_data, 0x138);
   memset(pCVar2->filename,0,0x100);
-  pcVar5 = filename_path;
-  pcVar7 = g_AuditRecordsArray[g_AuditRecordCount + -1].filename;
-  do {
-    cVar1 = *pcVar5;
-    *pcVar7 = cVar1;
-    if (cVar1 == '\0') {
-      return;
-    }
-    cVar1 = pcVar5[1];
-    pcVar5 = pcVar5 + 2;
-    pcVar7[1] = cVar1;
-    pcVar7 = pcVar7 + 2;
-  } while (cVar1 != '\0');
+  strcpy(pCVar2->filename, filename_path);
   return;
 }

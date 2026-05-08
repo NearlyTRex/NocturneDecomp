@@ -4,17 +4,17 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1869 ( 42.2%)
-  unrolled_memcpy                 1090 ( 24.6%)
-  unrolled_strcpy                  344 (  7.8%)
-  missing_cave_copy                195 (  4.4%)
+  pointer_cast                    1869 ( 42.7%)
+  unrolled_memcpy                 1076 ( 24.6%)
+  unrolled_strcpy                  312 (  7.1%)
+  missing_cave_copy                195 (  4.5%)
   shadow_pointer_walk              181 (  4.1%)
   raw_address_constant             142 (  3.2%)
-  unrolled_memset                  121 (  2.7%)
+  unrolled_memset                  121 (  2.8%)
   unrolled_strlen                   96 (  2.2%)
   warning_inlined_function          70 (  1.6%)
   unrolled_strchr                   52 (  1.2%)
-  bitcast_double_pair               46 (  1.0%)
+  bitcast_double_pair               46 (  1.1%)
   stack_alignment_array             40 (  0.9%)
   warning_type_propagation          28 (  0.6%)
   decompiler_intrinsic              25 (  0.6%)
@@ -507,11 +507,11 @@ Functions:
   sound_sndwav.cpp_writeWavOutBuffer_FUN_005b06c0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (1090 occurrences)
+TYPE: unrolled_memcpy (1076 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   860x  field-by-field struct copy
+   846x  field-by-field struct copy
    118x  for (...; != 0; ... + -1)
    109x  MOVSD.REP
      3x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
@@ -635,7 +635,6 @@ Functions:
   core_dtri.cpp_clipPolygonToTop_FUN_0049b860
   core_dtri.cpp_clipTriangleToBounds_FUN_0049c120
   core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0
-  core_elephant.cpp_CElephantGun_fire_FUN_004a7160
   core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004a7e80
   core_emitter.cpp_CEmitter_processInEditor_FUN_004a8fe0
   core_emitter.cpp_CEmitter_process_FUN_004a8070
@@ -778,10 +777,6 @@ Functions:
   core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
   core_setutil.cpp_C3DSCamera_apply_FUN_00585870
   core_setutil.cpp_C3DSCamera_load_FUN_00585420
-  core_shotgun.cpp_CShotgun_fire_FUN_00588060
-  core_shotgun.cpp_CShotgun_onFired_FUN_005887a0
-  core_simbox.cpp_CSimBox_process_FUN_00588f20
-  core_simbox.cpp_CSimBox_setup_FUN_00588e00
   core_skeledit.cpp_CBoneStructure_applyMatrixArray_FUN_0058af40
   core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80
   core_skeledit.cpp_CBoneStructure_computeWorldMatrices_FUN_0058ad30
@@ -823,8 +818,6 @@ Functions:
   core_turret.cpp_CTurret_updateTargeting_FUN_005e2d50
   core_vehicle.cpp_CVehicle_process_FUN_005e7e80
   core_vehicle.cpp_CVehicle_setup_FUN_005e7b90
-  core_vessel.cpp_CCryptVessel_process_FUN_005e91a0
-  core_vessel.cpp_CCryptVessel_setup_FUN_005e8fc0
   core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005eb740
   core_weapon.cpp_CWeapon_fireProjectile_FUN_005ee830
   core_weapon.cpp_CWeapon_process_FUN_005ee110
@@ -925,11 +918,11 @@ Functions:
   sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0
 
 ====================================================================================================
-TYPE: unrolled_strcpy (344 occurrences)
+TYPE: unrolled_strcpy (312 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   344x  do {
+   312x  do {
 
 Functions:
   core_actor.cpp_CActorPropertyList_addFile_FUN_0040e3e0
@@ -939,14 +932,11 @@ Functions:
   core_baron.cpp_CBaron_ctor_FUN_00412bc0
   core_bodypart.cpp_CBodyPart_addFire_FUN_0041ae50
   core_boneguy.cpp_CBoneGuy_ctor_FUN_0041bbc0
-  core_boxactor.cpp_CLightActor_propertyDisplayTypeCallback_FUN_00423310
   core_bugs.cpp_CBugs_ctor_FUN_00424cb0
   core_chain.cpp_CChain_ctor_FUN_0042fb80
-  core_cloth.cpp_CClothList_add_FUN_0043c0f0
   core_cloth.cpp_CClothList_remove_FUN_0043c170
   core_conveyor.cpp_CConveyor_ctor_FUN_00441ca0
   core_curtain.cpp_CCurtain_ctor_FUN_004496a0
-  core_dfilter.cpp_CDemonFilter_ctor_FUN_004701f0
   core_dfilter.cpp_CDemonFilter_load_FUN_004702f0
   core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060
   core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810
@@ -956,24 +946,18 @@ Functions:
   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
   core_door.cpp_CDoor_archive_FUN_00480aa0
   core_door.cpp_CDoor_ctor_FUN_0047fad0
-  core_door.cpp_CDoor_propertyDisplayCallback_FUN_00481250
   core_emitter.cpp_CEmitter_ctor_FUN_004a7ca0
-  core_event.cpp_CEventList_evaluateExpression_FUN_004add80
   core_event.cpp_CEventList_executeCommand_FUN_004aacc0
   core_event.cpp_CEventList_setActorVariable_FUN_004b09a0
-  core_event.cpp_CEventList_setCounter_FUN_004b0720
   core_event.cpp_CEventList_setTimerEvent_FUN_004b05a0
   core_event.cpp_CRuleList_insert_FUN_004b1680
   core_event.cpp_resolveActorByName_FUN_004aa400
-  core_event.cpp_setEventError_FUN_004aa270
   core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004d17b0
   core_game.cpp_CGame_displayActStats_FUN_004e3800
-  core_game.cpp_CGame_displayMessage_FUN_004d7f20
   core_game.cpp_CGame_finishAct_FUN_004e3b90
   core_game.cpp_CGame_loadGame_FUN_004e12b0
   core_game.cpp_CGame_rollCredits_FUN_004e4010
   core_game.cpp_CGame_saveGame_FUN_004e0cd0
-  core_game.cpp_CGame_setStatusDisplay_FUN_004e0bf0
   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
   core_glass.cpp_CGlass_addFilesToExtract_FUN_004eb690
@@ -981,18 +965,12 @@ Functions:
   core_glass.cpp_CGlass_setup_FUN_004e9180
   core_glass.cpp_CGlass_shatter_FUN_004eaef0
   core_ground.cpp_CGround_load_FUN_004ef030
-  core_lever.cpp_CLever_propertyDisplayStateFunc_FUN_005051a0
-  core_lever.cpp_CLever_propertyDisplayTypeCallback_FUN_00505100
-  core_lever.cpp_CLever_setup_FUN_005048a0
   core_menu.cpp_configureCustomKeys_FUN_00511890
   core_menu.cpp_configureGraphicsOptions_FUN_00510c80
   core_menu.cpp_configureSoundOptions_FUN_00511e50
   core_menu.cpp_getKeyDisplayName_FUN_005134e0
   core_menu.cpp_showCalibrationTestPattern_FUN_00510a50
   core_mimic.cpp_CMimic_ctor_FUN_0051f1d0
-  core_mission.cpp_CDemonMission_createFromSingleSet_FUN_005243a0
-  core_mission.cpp_CDemonMission_setMissionName_FUN_00524630
-  core_msnedit.cpp_CDemonMission_addSet_FUN_00538d60
   core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0
   core_msnedit.cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730
   core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0
@@ -1003,9 +981,6 @@ Functions:
   core_netgame.cpp_CNetGame_removeChatOut_FUN_00541ff0
   core_netgame.cpp_CNetGame_runLobby_FUN_00541390
   core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0
-  core_platfrm.cpp_CPlatform_propertyDisplaySlewCallback_FUN_0054e400
-  core_platfrm.cpp_CPlatform_propertyDisplayStateCallback_FUN_0054e700
-  core_platfrm.cpp_CPlatform_propertyDisplayTypeCallback_FUN_0054e4e0
   core_script.cpp_CCmdParse_parse_FUN_00561fd0
   core_script.cpp_CCmdParse_toString_FUN_005624f0
   core_script.cpp_CScript_browseEventXRefs_FUN_005677a0
@@ -1013,7 +988,6 @@ Functions:
   core_script.cpp_CScript_editParameterAtPosition_FUN_00565ae0
   core_script.cpp_CScript_showSyntaxHelp_FUN_00565e70
   core_script.cpp_editParameterValue_FUN_00562920
-  core_script.cpp_expandTemplateText_FUN_005643d0
   core_script.cpp_getActor_FUN_005594e0
   core_script.cpp_parseCommandWithTemplates_FUN_00561690
   core_script.cpp_parseConditionExpression_FUN_00561a30
@@ -1022,7 +996,6 @@ Functions:
   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940
   core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0
   core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70
-  core_setutil.cpp_C3DSLight_addFilter_FUN_00586fa0
   core_setutil.cpp_C3DSLight_apply_FUN_00586bf0
   core_setutil.cpp_C3DSLight_create_FUN_00586a90
   core_setutil.cpp_C3DSLight_import3DS_FUN_005874d0
@@ -1039,13 +1012,9 @@ Functions:
   core_zombie.cpp_CZombie_process_FUN_005f9470
   engine_3d.c_updateAnimatedTexture_FUN_004050c0
   engine_dosio.c_ensureTrailingSlash_FUN_00481f80
-  engine_dosio.c_getFullPath_FUN_004820c0
-  engine_dosio.c_getRelativeFilePath_FUN_004816c0
-  engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
   engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920
   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
   engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50
-  engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
   engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460
   engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
   engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
@@ -1057,19 +1026,13 @@ Functions:
   engine_fileio.cpp_CFileManager_registerFiles_FUN_004b5640
   engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190
   engine_fileio.cpp_CFileManager_setVersionControlCredentials_FUN_004bc5d0
-  engine_fileio.cpp_CFileManager_setVersionControlDirectory_FUN_004bc5a0
   engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
-  engine_fileio.cpp_parseTimestampRecord_FUN_004b2270
   engine_font.cpp_CBitFont_loadBitmap_FUN_004ccff0
   engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0
-  engine_ini.cpp_CIniFile_init_FUN_004fbaa0
-  engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0
   engine_ini.cpp_CIni_getProfileString_FUN_004fb250
   engine_pod.cpp_findFilesByExtension_FUN_00550ce0
-  engine_texture.cpp_getCurrentTexture_FUN_005dd9c0
   shape_design.c_cramTextureList_FUN_0046bb80
   shape_design.c_cramTextures_FUN_0046a970
-  shape_design.c_displayPalette_FUN_00461560
   shape_design.c_exportModelToBIN_FUN_0045aa80
   shape_design.c_exportModelToMDL_FUN_00459e80
   shape_design.c_loadModelBinary_FUN_00458170
@@ -1084,8 +1047,6 @@ Functions:
   shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590
   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
-  shape_edittool.cpp_CPickList_setCancelButtonText_FUN_004a3d90
-  shape_edittool.cpp_CPickList_setOkButtonText_FUN_004a3d20
   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0
   shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0
   shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0

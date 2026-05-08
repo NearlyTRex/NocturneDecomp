@@ -1,0 +1,55 @@
+// Name: core_vessel.cpp_CCryptVessel_setup_FUN_005e8fc0
+// Address: 005e8fc0
+// MANUAL RECONSTRUCTION
+// Address Range: [[005e8fc0, 005e90fa]]
+// Convention: __cdecl
+// Signature: void __cdecl core_vessel_cpp_CCryptVessel_setup_FUN_005e8fc0(CCryptVessel *this_ptr)
+
+#include "nocturne.h"
+
+void __cdecl core_vessel_cpp_CCryptVessel_setup_FUN_005e8fc0(CCryptVessel *this_ptr)
+
+{
+  CLocation *pCVar1;
+  UOrientationVector *pUVar2;
+  CActorDestination *pCVar3;
+  UOrientationVector *pUVar4;
+  CBoundingBox3D CStack_28;
+  float fStack_10;
+  float fStack_c;
+  float fStack_8;
+  
+  core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->orb_model);
+  (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_28);
+  pCVar3 = this_ptr->start_loc;
+  this_ptr->carrier = (CDemonActor *)0x0;
+  if (pCVar3 != (CActorDestination *)0x0) {
+    pCVar1 = &(this_ptr->base).location;
+    fStack_10 = (pCVar3->base).location.position.x - (pCVar1->position).x;
+    fStack_c = (pCVar3->base).location.position.y - (this_ptr->base).location.position.y;
+    fStack_8 = (pCVar3->base).location.position.z - (this_ptr->base).location.position.z;
+    if (SQRT(fStack_8 * fStack_8 + fStack_10 * fStack_10 + fStack_c * fStack_c) <
+        (float)0.5) {
+      pCVar3 = this_ptr->start_loc;
+      *pCVar1 = (pCVar3->base).location;
+      pCVar3 = this_ptr->start_loc;
+      pUVar2 = &(this_ptr->base).orient;
+      pUVar4 = &(pCVar3->base).orient;
+      if (pUVar2 != pUVar4) {
+        pUVar2->vec = pUVar4->vec;
+      }
+    }
+  }
+  this_ptr->init_frame = 1;
+  (this_ptr->flame).which_flame = 0;
+  (this_ptr->flame).flame_state = 1;
+  (this_ptr->flame).globe_scalar = 0.0;
+  (this_ptr->flame).flame_size.x = 0.5;
+  (this_ptr->flame).flame_size.y = 1.0;
+  (this_ptr->flame).flame_size.z = 0.5;
+  core_flame_cpp_CFlame_setup_FUN_004c9b90(&this_ptr->flame);
+  (this_ptr->base).is_transparent = 1;
+  return;
+}
