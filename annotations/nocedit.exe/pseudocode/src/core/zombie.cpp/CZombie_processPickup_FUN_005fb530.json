@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 612,
-    "complexity_score": 312,
+    "complexity_score": 357,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 262,
-    "suspect_count": 4,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
+      "unrolled_memcpy",
       "warning_type_propagation"
     ],
     "total_lines": 874
@@ -418,6 +419,38 @@
       "severity": "moderate",
       "text": "*(CDemonActor **)((int)auStack_160 + iVar10) = pCVar6;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 170,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "CStack_a4.x = CStack_44.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 179,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "CStack_a4.x = (pCVar6->location).position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 200,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "CStack_a4.x = CStack_50.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 205,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "CStack_c8.x = g_ZeroVector.f.x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

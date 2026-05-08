@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 640,
-    "complexity_score": 254,
+    "complexity_score": 269,
     "cross_reference_count": 1,
     "function_call_count": 26,
     "global_count": 68,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 254,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 894
   },
   "cross_references": [
@@ -851,5 +853,14 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 119,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_54.x = g_SoundListenerPrev.x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

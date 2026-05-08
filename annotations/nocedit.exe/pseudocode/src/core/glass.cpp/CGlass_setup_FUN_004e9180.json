@@ -7,14 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 578,
-    "complexity_score": 328,
+    "complexity_score": 373,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 32,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 268,
-    "suspect_count": 5,
+    "suspect_count": 9,
     "suspect_types": [
+      "unrolled_memcpy",
       "unrolled_strcpy",
       "warning_inlined_function"
     ],
@@ -560,6 +561,38 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 64,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_48.x = local_78.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 75,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_60.x = local_3c.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 86,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_c0.x = local_cc.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 97,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_b4.x = local_90.x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {

@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 182,
-    "complexity_score": 175,
+    "complexity_score": 205,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 24,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 90,
-    "suspect_count": 8,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -360,6 +360,30 @@
       "match": "(int *)((int)g_ModelPolygonData",
       "severity": "moderate",
       "text": "piVar2[0xc] = *(int *)((int)g_ModelPolygonData[0].uv_v + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 39,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.x + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 41,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.y + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 43,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.z + iVar2);",
       "type": "pointer_cast"
     }
   ]

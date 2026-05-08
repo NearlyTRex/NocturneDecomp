@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 576,
-    "complexity_score": 323,
+    "complexity_score": 338,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 25,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 268,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
-      "shadow_pointer_walk"
+      "shadow_pointer_walk",
+      "unrolled_memcpy"
     ],
     "total_lines": 844
   },
@@ -655,6 +656,14 @@
     "file_variant": "keep"
   },
   "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 155,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "aCStack_94[0].x = CStack_58.x;",
+      "type": "unrolled_memcpy"
+    },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 54,

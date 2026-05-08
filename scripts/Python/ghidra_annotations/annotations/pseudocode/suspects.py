@@ -1476,18 +1476,51 @@ _FIELD_COPY_RE = re.compile(
 _ROOT_IDENT_RE = re.compile(r"\s*[\(\*]*\s*(\w+)")
 
 
+def _is_pure_path_expr(expr):
+    """Return True if expr is a pure access path (no arithmetic).
+
+    A pure access path is built from identifiers, member access (`.`/`->`),
+    and balanced parens/brackets. Arithmetic operators like `+`, `-`, `*`,
+    `/` outside brackets/parens disqualify it. (Inside brackets is fine —
+    `arr[i + 1]` is still a pure path access.)
+
+    Used to filter out false-positive `field_copy` matches where the RHS
+    is actually a vector arithmetic expression (e.g. `dst.x = a.x - b.x`)
+    that the regex would otherwise match because it ends in `.x;`.
+    """
+    s = expr
+    # Iteratively collapse balanced parens and brackets to single tokens.
+    while True:
+        new_s = re.sub(r'\([^()]*\)', '_', s)
+        new_s = re.sub(r'\[[^\[\]]*\]', '_', new_s)
+        if new_s == s:
+            break
+        s = new_s
+    # Treat `->` as part of the path; what remains must be just identifiers,
+    # dots, and whitespace.
+    s = s.replace('->', '.')
+    return re.fullmatch(r'\s*[\w\.\s]*\s*', s) is not None
+
+
 def identify_unrolled_field_copy(decompiled_code):
     """Detect Watcom-emitted field-by-field struct copies.
 
-    Canonical shape (4+ consecutive lines):
-        dst.field_a = src.field_a;
-        dst.field_b = src.field_b;
-        dst.field_c = src.field_c;
-        dst.field_d = src.field_d;
+    Canonical shapes:
+        Flat copy (3+ consecutive lines, same prefix):
+            dst.field_a = src.field_a;
+            dst.field_b = src.field_b;
+            dst.field_c = src.field_c;
 
-    Each line copies one struct field by name; the same field name appears
-    on both sides via backreference. Replace the whole run with a single
-    `dst = src;` (or `memcpy(&dst, &src, sizeof(...));`) in a .keep.
+        Nested copy (3+ consecutive lines, prefix varies under same root):
+            dst.m[0].x = src.m[0].x;
+            dst.m[0].y = src.m[0].y;
+            dst.m[1].x = src.m[1].x;
+            ...
+
+    Each line copies one struct field by name; the same trailing field
+    name appears on both sides via backreference. Replace the whole run
+    with a single `dst = src;` (or `memcpy(&dst, &src, sizeof(...));`)
+    in a .keep.
 
     The existing `unrolled_memcpy` detectors only catch for-loop / REP
     MOVSD shapes; this one covers the orthogonal case where Ghidra emits
@@ -1495,17 +1528,13 @@ def identify_unrolled_field_copy(decompiled_code):
 
     Detection requires:
     - At least MIN_RUN consecutive lines matching `_FIELD_COPY_RE`.
-    - All lines in the run share the same LHS *prefix path* (everything
-      before `.field`) and the same RHS prefix path. Whitespace inside
-      the prefixes is collapsed before comparison so cosmetic differences
-      don't split a run, but content-level differences do.
-      - Two consecutive top-level field copies (`dst.a = src.a; dst.b = src.b;`)
-        followed by three sub-struct copies (`dst.sub.r = src.sub.r; ...`)
-        form two separate runs — they target different parent paths, so
-        flagging them as one struct copy would be a partial-copy false
-        positive (§17 forbids collapsing partial copies).
-    - Each field name in the run is distinct (a 4-line repeat of the same
-      field is a different bug, not a struct copy).
+    - All lines in the run share the same LHS root identifier and the
+      same RHS root identifier (extracted via `_ROOT_IDENT_RE`). The
+      prefix path beyond the root may vary (e.g. `m[0]` -> `m[1]`) so
+      multi-row matrix copies form a single run instead of three runs of
+      three lines each.
+    - Each (prefix, field) pair in the run is distinct (a repeat of the
+      same assignment is a different bug, not a struct copy).
 
     Args:
         decompiled_code: The decompiled C pseudocode string.
@@ -1519,36 +1548,56 @@ def identify_unrolled_field_copy(decompiled_code):
         return suspects
     lines = decompiled_code.split('\n')
     n = len(lines)
-    MIN_RUN = 4
+    # 3 catches `x/y/z` vector copies; the same-root grouping below keeps
+    # false positives from unrelated 3-line runs in check.
+    MIN_RUN = 3
 
     def normalize(expr):
         """Collapse whitespace so cosmetic differences don't split a run."""
         return re.sub(r'\s+', '', expr)
 
+    def get_root(expr):
+        """Return the leading identifier of an expression, or '' if none."""
+        rm = _ROOT_IDENT_RE.match(expr)
+        return rm.group(1) if rm else ''
+
+    def line_matches_pure(idx):
+        """Match line and require both sides to be pure access paths.
+        Returns the regex match if it qualifies, else None."""
+        rm = _FIELD_COPY_RE.match(lines[idx])
+        if not rm:
+            return None
+        if not _is_pure_path_expr(rm.group(1)) or not _is_pure_path_expr(rm.group(3)):
+            return None
+        return rm
+
     i = 0
     while i < n:
-        m = _FIELD_COPY_RE.match(lines[i])
+        m = line_matches_pure(i)
         if not m:
             i += 1
             continue
-        lhs_prefix = normalize(m.group(1))
-        rhs_prefix = normalize(m.group(3))
-        if not lhs_prefix or not rhs_prefix:
+        lhs_root = get_root(m.group(1))
+        rhs_root = get_root(m.group(3))
+        if not lhs_root or not rhs_root:
             i += 1
             continue
-        seen_fields = {m.group(2)}
+        seen_pairs = {(normalize(m.group(1)), m.group(2))}
         j = i + 1
         while j < n:
-            mj = _FIELD_COPY_RE.match(lines[j])
+            mj = line_matches_pure(j)
             if not mj:
                 break
-            if (normalize(mj.group(1)) != lhs_prefix or
-                    normalize(mj.group(3)) != rhs_prefix):
+            if (get_root(mj.group(1)) != lhs_root or
+                    get_root(mj.group(3)) != rhs_root):
                 break
-            seen_fields.add(mj.group(2))
+            pair = (normalize(mj.group(1)), mj.group(2))
+            if pair in seen_pairs:
+                break  # repeat assignment — not a struct copy
+            seen_pairs.add(pair)
             j += 1
         run_len = j - i
-        if run_len >= MIN_RUN and len(seen_fields) >= MIN_RUN:
+        if run_len >= MIN_RUN:
             suspects.append({
                 'line': i + 1,
                 'type': 'unrolled_memcpy',
@@ -1985,8 +2034,11 @@ def identify_int_address_arithmetic(decompiled_code):
         return suspects
     for line_no, line in enumerate(decompiled_code.split('\n'), 1):
         stripped = line.lstrip()
+        # Skip comments. `* ` (with trailing space) catches doc-comment
+        # continuation lines without swallowing C dereference statements
+        # like `*(short *)(...) = ...;` whose first non-space char is also `*`.
         if (stripped.startswith('//') or stripped.startswith('/*') or
-                stripped.startswith('*')):
+                stripped.startswith('* ')):
             continue
         for m in _INT_ADDR_ARITH_RE.finditer(line):
             suspects.append({

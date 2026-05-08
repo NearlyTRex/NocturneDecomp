@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 449,
-    "complexity_score": 254,
+    "complexity_score": 264,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 38,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 189,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "unrolled_memcpy",
       "unrolled_strcpy",
@@ -514,6 +514,14 @@
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "g_RenderVertexBuffer[19999].u = g_RenderVertexBuffer[0x4e1c].u;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 180,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_RenderVertexBuffer[0x4e1d].u = g_RenderVertexBuffer[0x4e1e].u;",
       "type": "unrolled_memcpy"
     }
   ]

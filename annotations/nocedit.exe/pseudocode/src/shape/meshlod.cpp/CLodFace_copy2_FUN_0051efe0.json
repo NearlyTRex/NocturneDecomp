@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 74,
+    "complexity_score": 84,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 39,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "unrolled_memcpy"
     ],
@@ -122,6 +122,14 @@
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "destination->edge_idx_0 = source->edge_idx_0;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 28,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(destination->normal).x = (source->normal).x;",
       "type": "unrolled_memcpy"
     },
     {

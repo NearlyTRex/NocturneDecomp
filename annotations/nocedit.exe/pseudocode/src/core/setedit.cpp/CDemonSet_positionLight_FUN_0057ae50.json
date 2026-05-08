@@ -7,14 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 593,
-    "complexity_score": 204,
+    "complexity_score": 219,
     "cross_reference_count": 3,
     "function_call_count": 23,
     "global_count": 35,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 164,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "unrolled_memcpy",
       "unrolled_strcpy",
       "warning_inlined_function"
     ],
@@ -580,6 +581,14 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 65,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CDemonLightInstance.base.base.position.f.x = (g_CSlewPtr->position).x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

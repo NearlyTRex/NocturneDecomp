@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 204,
-    "complexity_score": 68,
+    "complexity_score": 83,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 10,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 68,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 272
   },
   "cross_references": [
@@ -270,5 +272,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (5 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 64,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "this_ptr->vertices[local_18].vertex.x = g_LoadedVertices[iVar4].vertex.x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

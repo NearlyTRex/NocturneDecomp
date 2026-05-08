@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 270,
+    "complexity_score": 300,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 30,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 100,
-    "suspect_count": 16,
+    "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
       "unrolled_strcpy"
@@ -405,10 +405,26 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 37,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar6) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 38,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "(float)*(int *)((int)&this_ptr->vertex_list->x + iVar5) * fVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 39,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar6) =",
       "type": "pointer_cast"
     },
     {
@@ -425,6 +441,14 @@
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)&this_ptr->vertex_list->z + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 43,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar6) = (float)*piVar1 * fVar3;",
       "type": "pointer_cast"
     },
     {

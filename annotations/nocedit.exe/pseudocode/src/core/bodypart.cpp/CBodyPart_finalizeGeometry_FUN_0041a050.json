@@ -7,16 +7,17 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 478,
-    "complexity_score": 259,
+    "complexity_score": 274,
     "cross_reference_count": 17,
     "function_call_count": 10,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 199,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
-      "shadow_pointer_walk"
+      "shadow_pointer_walk",
+      "unrolled_memcpy"
     ],
     "total_lines": 677
   },
@@ -511,6 +512,14 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 109,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pCVar15->position).x = pCVar6->x;",
+      "type": "unrolled_memcpy"
+    },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 55,

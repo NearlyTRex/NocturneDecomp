@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 106,
+    "complexity_score": 121,
     "cross_reference_count": 4,
     "function_call_count": 8,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 76,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_alignment_array",
+      "unrolled_memcpy",
       "warning_inlined_function"
     ],
     "total_lines": 242
@@ -259,6 +260,14 @@
       "severity": "moderate",
       "text": "int aiStackY_1014 [1012];",
       "type": "stack_alignment_array"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 74,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->anchor_world_position).x = pCVar3->x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

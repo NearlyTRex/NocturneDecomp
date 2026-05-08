@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 573,
-    "complexity_score": 209,
+    "complexity_score": 224,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 194,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 767
   },
@@ -383,6 +384,14 @@
       "severity": "moderate",
       "text": "iVar1 = *(int *)((int)g_CDemonSetPtr->characters + iVar4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 145,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "aCStack_6c[0].x = pCVar3->x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {

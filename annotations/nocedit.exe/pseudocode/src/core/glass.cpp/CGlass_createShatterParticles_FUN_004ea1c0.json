@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1011,
-    "complexity_score": 387,
+    "complexity_score": 502,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 387,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 11,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 1398
   },
   "cross_references": [
@@ -902,5 +904,94 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 115,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_1e4.vertices[0].x = quad_vertices->vertices[0].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 184,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_1e4.vertices[1].x = quad_vertices->vertices[1].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 259,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_1e4.vertices[2].x = quad_vertices->vertices[2].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 328,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_1e4.vertices[3].x = quad_vertices->vertices[3].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 349,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_1e4.vertices[0].x = quad_vertices->vertices[0].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 354,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_1e4.vertices[1].x = quad_vertices->vertices[1].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 359,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_1e4.vertices[2].x = quad_vertices->vertices[2].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 363,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_1b4.x = quad_uv_u->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 366,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_1a4.x = quad_uv_v->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 373,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_1e4.vertices[1].x = quad_vertices->vertices[2].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 378,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_1e4.vertices[2].x = quad_vertices->vertices[3].x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

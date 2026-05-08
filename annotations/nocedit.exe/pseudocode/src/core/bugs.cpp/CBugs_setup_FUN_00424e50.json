@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 152,
+    "complexity_score": 167,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 92,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "negative_offset",
+      "unrolled_memcpy",
       "unrolled_memset"
     ],
     "total_lines": 292
@@ -221,6 +222,14 @@
       "severity": "mild",
       "text": "pCVar10->z = pCVar7[-1].z;",
       "type": "negative_offset"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 79,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar10->x = pCVar7[-1].x;",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",

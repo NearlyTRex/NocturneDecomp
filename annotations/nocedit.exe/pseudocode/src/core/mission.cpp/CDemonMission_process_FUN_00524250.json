@@ -7,14 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 61,
+    "complexity_score": 76,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 46,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "unrolled_memcpy",
       "unrolled_memset"
     ],
     "total_lines": 161
@@ -220,6 +221,14 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 29,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pCVar1->base).base.location.position.x = (this_ptr->pending_teleport).position.x;",
+      "type": "unrolled_memcpy"
+    },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
       "line": 45,

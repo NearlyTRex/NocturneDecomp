@@ -30,9 +30,9 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00427e20(CCharacter *
   pvVar4 = __arrinit(ADJ(pvVar3)->flames,0x32,&g_CFlameTypeInfo);
   ADJ(pvVar4)->base.vtable._ub = &g_CCharacterVTable._ub;
   ADJ(pvVar4)->render_active = 0;
+  (ADJ(pvVar4)->velocity).x = 0.0;
+  (ADJ(pvVar4)->velocity).y = 0.0;
   (ADJ(pvVar4)->velocity).z = 0.0;
-  (ADJ(pvVar4)->velocity).y = (ADJ(pvVar4)->velocity).z;
-  (ADJ(pvVar4)->velocity).x = (ADJ(pvVar4)->velocity).y;
   ADJ(pvVar4)->max_hit_points = 100.0;
   ADJ(pvVar4)->collision_cylinder_height = 1.0;
   ADJ(pvVar4)->collision_cylinder_radius = 2.0;

@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 161,
+    "complexity_score": 171,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 17,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 76,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -353,6 +353,14 @@
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar1)),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 21,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_BulletHolePool[0].active + iVar1) = 0;",
       "type": "pointer_cast"
     },
     {

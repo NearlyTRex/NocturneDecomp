@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 341,
+    "complexity_score": 351,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 5,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 76,
-    "suspect_count": 25,
+    "suspect_count": 26,
     "suspect_types": [
       "pointer_cast",
       "stack_ref",
@@ -381,6 +381,14 @@
       "match": "(int *)((int)puVar1",
       "severity": "moderate",
       "text": "ExitApplication(*(int *)((int)puVar1 + -4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 29,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&uStack_20 + runtimeBufferOffset) = 0x609e9e;",
       "type": "pointer_cast"
     }
   ]

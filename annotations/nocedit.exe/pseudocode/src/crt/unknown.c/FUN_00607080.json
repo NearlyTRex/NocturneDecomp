@@ -2,15 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 127,
+    "complexity_score": 142,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 17,
-    "suspect_count": 10,
+    "suspect_count": 11,
     "suspect_types": [
       "param_count_too_few",
+      "pointer_cast",
       "unnamed_param"
     ],
     "total_lines": 53
@@ -181,6 +182,14 @@
       "severity": "mild",
       "text": "bVar1 = *param_2;",
       "type": "unnamed_param"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 16,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&DOUBLE_00665f28 + (uint)(bVar1 & 7));",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 1,

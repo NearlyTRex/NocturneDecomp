@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 817,
-    "complexity_score": 323,
+    "complexity_score": 393,
     "cross_reference_count": 3,
     "function_call_count": 11,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 298,
-    "suspect_count": 2,
+    "suspect_count": 9,
     "suspect_types": [
       "unrolled_memcpy"
     ],
@@ -821,19 +821,75 @@
   },
   "suspects": [
     {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 251,
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 102,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "local_23c.incidence_angle = laser_info->incidence_angle;",
+      "text": "local_e0.x = origin->x;",
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 287,
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 114,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "local_1e8.incidence_angle = laser_info->incidence_angle;",
+      "text": "local_a4.x = local_110.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 136,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_134.x = local_140.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 141,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_a4.x = (g_CDemonSetPtr->collision_normal).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 228,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_bc.x = local_f8.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (8 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 234,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_23c.intensity = laser_info->intensity;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 249,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_23c.local_normal.y = (laser_info->local_normal).y;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 265,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_104.x = direction->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (21 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 270,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_1e8.intensity = laser_info->intensity;",
       "type": "unrolled_memcpy"
     }
   ]

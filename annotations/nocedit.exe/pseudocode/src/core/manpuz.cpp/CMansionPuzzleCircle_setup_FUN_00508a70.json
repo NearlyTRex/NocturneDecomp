@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 517,
-    "complexity_score": 297,
+    "complexity_score": 327,
     "cross_reference_count": 0,
     "function_call_count": 16,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 247,
-    "suspect_count": 4,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "unrolled_memcpy"
@@ -532,6 +532,30 @@
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar11 = 0xc; iVar11 != 0; iVar11 = iVar11 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 156,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_28->x = pCVar16->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 162,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pSVar12->rotation).x = pCVar10->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 181,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar16->x = pCVar17->x;",
       "type": "unrolled_memcpy"
     },
     {

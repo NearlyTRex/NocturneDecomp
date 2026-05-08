@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 512,
-    "complexity_score": 332,
+    "complexity_score": 347,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 242,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
+      "unrolled_memcpy",
       "warning_inlined_function"
     ],
     "total_lines": 754
@@ -546,6 +547,14 @@
       "severity": "moderate",
       "text": "*(char *)((int)pfVar18 + *(byte *)pfVar18 + 1) = (char)iVar16;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 223,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar14->x = pCVar6->x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

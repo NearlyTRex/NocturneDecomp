@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 709,
-    "complexity_score": 320,
+    "complexity_score": 380,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 210,
-    "suspect_count": 10,
+    "suspect_count": 16,
     "suspect_types": [
       "missing_cave_copy",
       "unrolled_memcpy"
@@ -497,11 +497,59 @@
       "type": "unrolled_memcpy"
     },
     {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 97,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "auStack_104.position.x = (this_ptr->start_pos).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 104,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "auStack_104.orientation.vec.x = pCVar4->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 110,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->start_pos).x = auStack_104.position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 115,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->orig_orient).w = CStack_bc.w;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 122,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "auStack_e8.position.x = (this_ptr->end_pos).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 129,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "auStack_e8.orientation.vec.x = pCVar4->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 135,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->end_pos).x = auStack_e8.position.x;",
       "type": "unrolled_memcpy"
     },
     {

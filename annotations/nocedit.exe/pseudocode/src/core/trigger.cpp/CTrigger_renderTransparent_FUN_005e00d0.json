@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 535,
-    "complexity_score": 266,
+    "complexity_score": 256,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 16,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 241,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
       "unrolled_memcpy"
     ],
@@ -402,19 +402,11 @@
   },
   "suspects": [
     {
-      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "description": "Watcom field-by-field struct copy (12 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 140,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pSVar1[1].projected_vertex.transformed_x = (pSVar1->projected_vertex).transformed_x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 146,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pSVar1[1].u = pSVar1->u;",
       "type": "unrolled_memcpy"
     }
   ],

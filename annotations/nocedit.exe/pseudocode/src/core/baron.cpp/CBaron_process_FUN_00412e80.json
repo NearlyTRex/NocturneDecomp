@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 506,
-    "complexity_score": 282,
+    "complexity_score": 327,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 19,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 217,
-    "suspect_count": 5,
+    "suspect_count": 9,
     "suspect_types": [
       "missing_cave_copy",
+      "unrolled_memcpy",
       "unrolled_memset",
       "warning_type_propagation"
     ],
@@ -457,6 +458,38 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 130,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_30.x = pCVar5->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 141,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_54.x = pCVar5->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 154,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->left_hand_pos).x = local_30.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 159,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->right_hand_pos).x = local_54.x;",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",

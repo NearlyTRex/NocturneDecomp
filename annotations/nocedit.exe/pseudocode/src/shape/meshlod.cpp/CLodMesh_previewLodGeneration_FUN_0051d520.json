@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 427,
-    "complexity_score": 143,
+    "complexity_score": 168,
     "cross_reference_count": 3,
     "function_call_count": 30,
     "global_count": 25,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 143,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 570
   },
   "cross_references": [
@@ -525,5 +527,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 83,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_58.min.x = (pCVar2->min).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 90,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_58.max.x = pCVar3->x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

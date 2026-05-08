@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1009,
-    "complexity_score": 674,
+    "complexity_score": 684,
     "cross_reference_count": 3,
     "function_call_count": 12,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 449,
-    "suspect_count": 22,
+    "suspect_count": 23,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -906,6 +906,14 @@
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "[*(int *)((int)&this_ptr->sample_points_ptr->closest_triangle_idx + iVar5)].",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 440,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&this_ptr->sample_points_ptr->closest_triangle_idx +",
       "type": "pointer_cast"
     }
   ]

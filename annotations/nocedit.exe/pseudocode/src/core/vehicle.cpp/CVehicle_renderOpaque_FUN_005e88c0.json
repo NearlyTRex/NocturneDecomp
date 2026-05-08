@@ -173,6 +173,15 @@
       "severity": "moderate",
       "text": "(&this_ptr->base,(CBoundingBox3D *)&stack0xffffff88);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 73,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CStack_48.x = pCVar4->x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {

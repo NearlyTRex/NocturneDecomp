@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 462,
-    "complexity_score": 203,
+    "complexity_score": 213,
     "cross_reference_count": 1,
     "function_call_count": 26,
     "global_count": 26,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 173,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "unrolled_strcpy"
@@ -528,6 +528,14 @@
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "pcVar8 = *(char **)((int)&local_40->directory_entries->name + local_34);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 137,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_40->directory_entries->checksum + local_34)",
       "type": "pointer_cast"
     }
   ]

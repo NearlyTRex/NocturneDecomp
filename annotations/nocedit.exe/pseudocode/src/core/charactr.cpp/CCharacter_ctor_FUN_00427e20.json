@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 122,
+    "complexity_score": 92,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 92,
-    "suspect_count": 2,
-    "suspect_types": [
-      "decompiler_intrinsic",
-      "unrolled_memset"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 231
   },
   "cross_references": [
@@ -171,6 +168,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 27,
+      "match": "cascade_constant_fill",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(ADJ(pvVar4)->velocity).z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
       "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar4` (struct-field advance + constant `[0]` index + self-assign no-op). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep.",
       "line": 61,
       "match": "do { var = (T *)&var->...; var->arr[0]...; var = var; ...}",
@@ -203,25 +209,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 27,
-      "match": "cascade_constant_fill",
-      "severity": "moderate",
-      "text": "(ADJ(pvVar4)->velocity).z = 0.0;",
-      "type": "unrolled_memset"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "introduced_by": "keep",
-      "line": 24,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "pCVar3 = core_cloth_cpp_CClothList_ctor_FUN_0043bf40(&ADJ(pCVar2)->cloth_list);",
-      "type": "decompiler_intrinsic"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -288,11 +288,11 @@
   },
   "suspects": [
     {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 22,
+      "description": "Watcom field-by-field struct copy (5 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 21,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "local_38.base.surface_normal.A = (pSVar1->base).surface_normal.A;",
+      "text": "local_38.base.base.count = (pSVar1->base).base.count;",
       "type": "unrolled_memcpy"
     }
   ]

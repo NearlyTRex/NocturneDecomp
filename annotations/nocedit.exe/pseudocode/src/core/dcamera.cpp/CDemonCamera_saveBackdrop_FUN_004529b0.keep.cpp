@@ -31,10 +31,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
   int local_4c;
   int local_44;
   int local_40;
-  int local_3c;
   int local_38;
-  int local_34;
-  int local_30;
   int local_2c;
   int local_28;
   int local_24;
@@ -83,41 +80,27 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
       local_40 = -0x12c00;
       do {
         core_dcamera_cpp_updateFogScrollOffset_FUN_0044bfb0(&g_CameraFogGrid,local_18,0);
-        local_28 = 1;
-        if (1 < this_ptr->display_height) {
-          local_3c = 0x140;
-          local_34 = 0xf00;
-          local_30 = 0x500;
-          do {
-            end_pos = (CVector3i *)((int)&g_PrecomputedWorldPositions[0].x + local_34);
-            piVar5 = g_PrecomputedDepthBuffer + (local_30 >> 2);
-            pcVar7 = g_CameraPlaneWorkBuffer.pixels[0] + local_3c;
-            iVar6 = 1;
-            if (1 < this_ptr->display_width) {
-              do {
-                if (*piVar5 == 0x7fffffff) {
-                  *pcVar7 = -1;
-                }
-                else {
-                  uVar1 = core_dcamera_cpp_sampleFogAlongRay_FUN_0044bdd0
-                                    (&g_CameraFogGrid,&local_5c,end_pos,*piVar5);
-                  uVar2 = uVar1 * 0xff >> 0xe;
-                  if (0xff < uVar2) {
-                    uVar2 = 0xff;
-                  }
-                  *pcVar7 = (char)uVar2;
-                }
-                end_pos = end_pos + 1;
-                pcVar7 = pcVar7 + 1;
-                iVar6 = iVar6 + 1;
-                piVar5 = piVar5 + 1;
-              } while (iVar6 < this_ptr->display_width);
+        for (local_28 = 1; local_28 < this_ptr->display_height; local_28 = local_28 + 1) {
+          end_pos = &g_PrecomputedWorldPositions[local_28 * 320];
+          piVar5 = &g_PrecomputedDepthBuffer[local_28 * 320];
+          pcVar7 = g_CameraPlaneWorkBuffer.pixels[local_28];
+          for (iVar6 = 1; iVar6 < this_ptr->display_width; iVar6 = iVar6 + 1) {
+            if (*piVar5 == 0x7fffffff) {
+              *pcVar7 = -1;
             }
-            local_30 = local_30 + 0x500;
-            local_3c = local_3c + 0x140;
-            local_34 = local_34 + 0xf00;
-            local_28 = local_28 + 1;
-          } while (local_28 < this_ptr->display_height);
+            else {
+              uVar1 = core_dcamera_cpp_sampleFogAlongRay_FUN_0044bdd0
+                                (&g_CameraFogGrid,&local_5c,end_pos,*piVar5);
+              uVar2 = uVar1 * 0xff >> 0xe;
+              if (0xff < uVar2) {
+                uVar2 = 0xff;
+              }
+              *pcVar7 = (char)uVar2;
+            }
+            end_pos = end_pos + 1;
+            pcVar7 = pcVar7 + 1;
+            piVar5 = piVar5 + 1;
+          }
         }
         core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020(this_ptr,local_18);
         local_2c = 0;

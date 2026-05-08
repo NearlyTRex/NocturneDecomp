@@ -8,14 +8,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2746,
-    "complexity_score": 1195,
+    "complexity_score": 1230,
     "cross_reference_count": 1,
     "function_call_count": 50,
     "global_count": 68,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1140,
-    "suspect_count": 5,
+    "suspect_count": 8,
     "suspect_types": [
+      "unrolled_memcpy",
       "unrolled_memset"
     ],
     "total_lines": 3886
@@ -1710,6 +1711,22 @@
   },
   "suspects": [
     {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 113,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->carry_object_bbox).min.x = (pCVar15->min).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 133,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->carry_object_world_center).x = pCVar16->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
       "line": 150,
       "match": "cascade_constant_fill",
@@ -1748,6 +1765,15 @@
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
       "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "introduced_by": "keep",
+      "line": 105,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->carry_object_bbox).min.x = (pCVar15->min).x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

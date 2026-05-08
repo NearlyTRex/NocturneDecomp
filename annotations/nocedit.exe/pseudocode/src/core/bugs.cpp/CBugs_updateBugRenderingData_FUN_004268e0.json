@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 590,
-    "complexity_score": 237,
+    "complexity_score": 262,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 222,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
-      "self_copy_guard"
+      "self_copy_guard",
+      "unrolled_memcpy"
     ],
     "total_lines": 812
   },
@@ -496,6 +497,22 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 133,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(bug_data->position).x = pCVar6->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 218,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(bug_data->orientation).x = pCVar17->x;",
+      "type": "unrolled_memcpy"
+    },
     {
       "description": "Watcom dead self-copy guard: `if (&local_c0 != &local_cc)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
       "line": 166,

@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 339,
-    "complexity_score": 143,
+    "complexity_score": 178,
     "cross_reference_count": 2,
     "function_call_count": 15,
     "global_count": 28,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 143,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 3,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 482
   },
   "cross_references": [
@@ -631,5 +633,30 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 59,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pSVar5->control_points[1].x = pCVar4->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 118,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pSVar5->position).x = pCVar4->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 126,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pSVar5->tangent).x = pCVar4->x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

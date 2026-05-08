@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1402,
-    "complexity_score": 383,
+    "complexity_score": 418,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 56,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 383,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 3,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 1785
   },
   "cross_references": [
@@ -854,5 +856,30 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 297,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "CStack_a8.position.x = local_80.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 302,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "CStack_a8.orientation.vec.x = (pSVar4->euler2).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 317,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pSVar4->euler2).x = CStack_a8.orientation.vec.x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

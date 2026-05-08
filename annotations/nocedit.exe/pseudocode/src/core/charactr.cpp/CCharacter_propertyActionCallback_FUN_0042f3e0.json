@@ -15,7 +15,7 @@
     "pseudocode_lines": 127,
     "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast"
+      "unrolled_memcpy"
     ],
     "total_lines": 420
   },
@@ -256,6 +256,17 @@
     },
     "pcode_op_count": 1057
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 83,
+      "match": "(CCharacter **)((int)g_CDemonSetPtr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "this_ptr_01 = *(CCharacter **)((int)g_CDemonSetPtr->actors + iVar8);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 2364,
     "local_size": 2356,
@@ -379,12 +390,12 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 83,
-      "match": "(CCharacter **)((int)g_CDemonSetPtr",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 115,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "this_ptr_01 = *(CCharacter **)((int)g_CDemonSetPtr->actors + iVar8);",
-      "type": "pointer_cast"
+      "text": "(pCVar4->location).position.x = pCVar7->x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

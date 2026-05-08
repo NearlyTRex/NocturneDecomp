@@ -8,13 +8,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3400,
-    "complexity_score": 2216,
+    "complexity_score": 2236,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 125,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1436,
-    "suspect_count": 76,
+    "suspect_count": 78,
     "suspect_types": [
       "pointer_cast",
       "shadow_pointer_walk",
@@ -3092,6 +3092,22 @@
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (uVar18 = uVar25 >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 549,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_30c.min.x = (local_188->min).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 554,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_30c.max.x = (local_188->min).x;",
       "type": "unrolled_memcpy"
     },
     {

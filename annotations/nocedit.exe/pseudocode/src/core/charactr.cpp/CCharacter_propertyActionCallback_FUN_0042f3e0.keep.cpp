@@ -25,7 +25,6 @@ int __cdecl core_charactr_cpp_CCharacter_propertyActionCallback_FUN_0042f3e0(CCh
   CCharacter *pCVar6;
   int iVar7;
   int iVar9;
-  int iVar8;
   CPickList local_930;
   CPickList local_588;
   char local_1e0 [400];
@@ -79,15 +78,13 @@ int __cdecl core_charactr_cpp_CCharacter_propertyActionCallback_FUN_0042f3e0(CCh
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_930);
     iVar9 = 0;
     shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_930.base,"(nothing)");
-    iVar8 = 0;
     local_14 = 0;
     while( true ) {
       if (g_CDemonSetPtr->actor_count <= iVar9) break;
-      this_ptr_01 = *(CCharacter **)((int)g_CDemonSetPtr->actors + iVar8);
+      this_ptr_01 = (CCharacter *)g_CDemonSetPtr->actors[iVar9];
       if (this_ptr_01 == this_ptr_00) {
 LAB_0042f571:
         iVar9 = iVar9 + 1;
-        iVar8 = iVar8 + 4;
       }
       else {
         iVar3 = (*((this_ptr_01->base).vtable._ub)->canPickup)
@@ -98,7 +95,6 @@ LAB_0042f571:
         }
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_930.base,(char *)this_ptr_01);
         iVar9 = iVar9 + 1;
-        iVar8 = iVar8 + 4;
       }
     }
     iVar9 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20

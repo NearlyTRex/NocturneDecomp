@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 49,
+    "complexity_score": 64,
     "cross_reference_count": 9,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 24,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
-      "missing_cave_copy"
+      "missing_cave_copy",
+      "unrolled_memcpy"
     ],
     "total_lines": 109
   },
@@ -321,6 +322,14 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 23,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "out_euler->x = pCVar1->x;",
+      "type": "unrolled_memcpy"
+    },
     {
       "description": "Struct-type local `local_88` (CMatrix3x4f) is declared and passed once by address with no other reference; the `.asm` has 1 cave-block struct copies that the decompile doesn't reflect. Ghidra dropped a post-call memcpy (`local_dst = local_src;`) leaving one local uninitialized at runtime. See \u00a720 \u2014 typical fix is to pass the real source local directly instead of the uninitialized scratch.",
       "line": 11,

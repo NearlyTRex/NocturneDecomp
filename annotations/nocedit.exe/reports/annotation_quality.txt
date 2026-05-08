@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        62 ( 1.0%)
+  Functions with type issues:        61 ( 0.9%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          1
-    Undefined types in variables:      59
+    Undefined types in variables:      58
     Unresolved stack params:           2
 
-  Excluded (.keep / MMX / by-value):   160 functions
+  Excluded (.keep / MMX / by-value):   161 functions
     Wrong calling convention:          1
-    Undefined types in variables:      158
+    Undefined types in variables:      159
     Unresolved stack params:           1
 
 ====================================================================================================
@@ -95,7 +95,7 @@ Unresolved stack parameters (missing from signature) (2)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (59)
+Undefined types in variables (58)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -196,11 +196,6 @@ Undefined types in variables (59)
   requantizeLayer3SamplesSimple
     Address: 0x0052fee0  File: sound/mp3.cpp
     Locals:  local_34 (undefined4 *), local_24 (undefined4 *)
-    Suggested: Resolve undefined types to concrete types
-
-  CCharacter_updateWanderToWaypoint
-    Address: 0x0042e050  File: core/charactr.cpp
-    Locals:  local_1f80 (undefined4[2005])
     Suggested: Resolve undefined types to concrete types
 
   CCrater_activate
@@ -446,7 +441,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (158)
+Undefined types - .keep overrides (159)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -942,6 +937,11 @@ Undefined types - .keep overrides (158)
   CCharacter_ctor
     Address: 0x00427e20  File: core/charactr.cpp
     Locals:  local_c (undefined4[3])
+    Suggested: Resolve undefined types to concrete types
+
+  CCharacter_updateWanderToWaypoint
+    Address: 0x0042e050  File: core/charactr.cpp
+    Locals:  local_1f80 (undefined4[2005])
     Suggested: Resolve undefined types to concrete types
 
   CCloth_applyConstraints

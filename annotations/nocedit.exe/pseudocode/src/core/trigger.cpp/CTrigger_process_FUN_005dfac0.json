@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 509,
-    "complexity_score": 271,
+    "complexity_score": 286,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 21,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 226,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 735
   },
@@ -458,6 +459,14 @@
       "severity": "moderate",
       "text": "actor_ptr_00 = *(CTrigger **)((int)g_CDemonSetPtr->actors + local_24);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 102,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "aCStack_58[0].x = pCVar8->x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {

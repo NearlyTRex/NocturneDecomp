@@ -215,6 +215,15 @@
       "severity": "mild",
       "text": "local_28._4_4_,this_ptr->sample->streaming_buffer_size);",
       "type": "unknown_field"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 33,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4),(uint)local_28,",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {

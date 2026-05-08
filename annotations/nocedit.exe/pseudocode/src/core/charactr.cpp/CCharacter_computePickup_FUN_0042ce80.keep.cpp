@@ -33,18 +33,7 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80(CCharacter 
             ((this_ptr->model).bone_transform.bone_world_matrices + pSVar2->bone_index,&local_130,
              &local_40);
   core_xform_cpp_inverse_FUN_005f6210(&local_40,&local_160);
-  (pSVar2->initial_carry_transform).m[0].w = local_160.m[0].w;
-  (pSVar2->initial_carry_transform).m[0].x = local_160.m[0].x;
-  (pSVar2->initial_carry_transform).m[0].y = local_160.m[0].y;
-  (pSVar2->initial_carry_transform).m[0].z = local_160.m[0].z;
-  (pSVar2->initial_carry_transform).m[1].w = local_160.m[1].w;
-  (pSVar2->initial_carry_transform).m[1].x = local_160.m[1].x;
-  (pSVar2->initial_carry_transform).m[1].y = local_160.m[1].y;
-  (pSVar2->initial_carry_transform).m[1].z = local_160.m[1].z;
-  (pSVar2->initial_carry_transform).m[2].w = local_160.m[2].w;
-  (pSVar2->initial_carry_transform).m[2].x = local_160.m[2].x;
-  (pSVar2->initial_carry_transform).m[2].y = local_160.m[2].y;
-  (pSVar2->initial_carry_transform).m[2].z = local_160.m[2].z;
+  pSVar2->initial_carry_transform = local_160;
   if (0.0 < blend_time) {
     pSVar2->blend_factor = 0.0;
     pSVar2->blend_speed = 1.0 / blend_time;

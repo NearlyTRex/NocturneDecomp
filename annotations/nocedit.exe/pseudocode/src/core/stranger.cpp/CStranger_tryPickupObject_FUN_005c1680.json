@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 692,
-    "complexity_score": 283,
+    "complexity_score": 318,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 26,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 283,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 3,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 975
   },
   "cross_references": [
@@ -670,5 +672,30 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 175,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->carry_object_bbox).min.x = (pCVar6->min).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 196,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->carry_object_world_center).x = pCVar12->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 260,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->carry_object_world_center).x = pCVar12->x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

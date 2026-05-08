@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 541,
-    "complexity_score": 146,
+    "complexity_score": 161,
     "cross_reference_count": 1,
     "function_call_count": 29,
     "global_count": 41,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 131,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_memcpy"
     ],
     "total_lines": 672
   },
@@ -629,6 +630,14 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 59,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CDemonCameraInstance.base.position.f.x = (g_CSlewPtr->position).x;",
+      "type": "unrolled_memcpy"
+    },
     {
       "description": "Complex pointer cast",
       "introduced_by": "keep",

@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 362,
-    "complexity_score": 224,
+    "complexity_score": 239,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 16,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 139,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "unrolled_memcpy"
     ],
     "total_lines": 501
   },
@@ -694,6 +695,14 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (8 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 69,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_TransformMatrix.m[0].x = (this_ptr->source_matrix).m[0].x;",
+      "type": "unrolled_memcpy"
+    },
     {
       "description": "Decompiler intrinsic (not real C)",
       "introduced_by": "keep",

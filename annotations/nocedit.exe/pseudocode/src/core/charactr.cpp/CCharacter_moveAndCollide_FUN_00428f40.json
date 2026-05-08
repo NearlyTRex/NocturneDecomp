@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 663,
-    "complexity_score": 337,
+    "complexity_score": 357,
     "cross_reference_count": 36,
     "function_call_count": 7,
     "global_count": 24,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 292,
-    "suspect_count": 4,
+    "suspect_count": 6,
     "suspect_types": [
-      "unrolled_memset"
+      "unrolled_memcpy"
     ],
     "total_lines": 955
   },
@@ -519,6 +519,42 @@
       "severity": "mild",
       "text": "if (-1 < (int)\"noCollision\"._8_4_) {",
       "type": "unknown_field"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 84,
+      "match": "cascade_constant_fill",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->base).platform_orientation_delta.z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 94,
+      "match": "cascade_constant_fill",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->velocity).z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 121,
+      "match": "cascade_constant_fill",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->velocity).z = 0.0;",
+      "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 287,
+      "match": "cascade_constant_fill",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->velocity).z = 0.0;",
+      "type": "unrolled_memset"
     }
   ],
   "stack_frame": {
@@ -794,36 +830,52 @@
   },
   "suspects": [
     {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 84,
-      "match": "cascade_constant_fill",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 182,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(this_ptr->base).platform_orientation_delta.z = 0.0;",
-      "type": "unrolled_memset"
+      "text": "pCVar8->x = g_TempNormal0.x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 94,
-      "match": "cascade_constant_fill",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 187,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(this_ptr->velocity).z = 0.0;",
-      "type": "unrolled_memset"
+      "text": "local_24->x = g_TempNormal1.x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 121,
-      "match": "cascade_constant_fill",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 192,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(this_ptr->velocity).z = 0.0;",
-      "type": "unrolled_memset"
+      "text": "pCVar17->x = g_TempNormal2.x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 287,
-      "match": "cascade_constant_fill",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 214,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "(this_ptr->velocity).z = 0.0;",
-      "type": "unrolled_memset"
+      "text": "pCVar15->x = g_TempNormal0.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 219,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_2c->x = g_TempNormal1.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 224,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar16->x = g_TempNormal2.x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1969,
-    "complexity_score": 967,
+    "complexity_score": 997,
     "cross_reference_count": 3,
     "function_call_count": 14,
     "global_count": 101,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 832,
-    "suspect_count": 13,
+    "suspect_count": 16,
     "suspect_types": [
       "pointer_cast"
     ],
@@ -1115,6 +1115,30 @@
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "if (this_ptr == *(CCramTex **)((int)&g_CramRectangles[0].occupant + iVar22)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 477,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&g_CramRectangles[0].occupant + iVar22) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 763,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_CramSortedTextureEntries[0].working_top + iVar32)) ||",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 765,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_CramSortedTextureEntries[0].working_width + iVar32))) {",
       "type": "pointer_cast"
     }
   ]

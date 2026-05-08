@@ -62,9 +62,9 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter
          (this_ptr->base).platform_orientation_delta.y + (this_ptr->base).orient.vec.y;
     (this_ptr->base).orient.vec.z =
          (this_ptr->base).platform_orientation_delta.z + (this_ptr->base).orient.vec.z;
+    pCVar16->x = 0.0;
+    (this_ptr->base).platform_orientation_delta.y = 0.0;
     (this_ptr->base).platform_orientation_delta.z = 0.0;
-    (this_ptr->base).platform_orientation_delta.y = (this_ptr->base).platform_orientation_delta.z;
-    pCVar16->x = (this_ptr->base).platform_orientation_delta.y;
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
   }
   g_LastCollisionActor = (CDemonActor *)0x0;
@@ -72,9 +72,9 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter
      (((this_ptr->base).standing_platform == (CPlatform *)0x0 &&
       ((this_ptr->base).location.position.y == this_ptr->closest_distance_threshold)))) {
     core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
+    (this_ptr->velocity).x = 0.0;
+    (this_ptr->velocity).y = 0.0;
     (this_ptr->velocity).z = 0.0;
-    (this_ptr->velocity).y = (this_ptr->velocity).z;
-    (this_ptr->velocity).x = (this_ptr->velocity).y;
     return;
   }
   if ((this_ptr->model).model_name[0] != '\0') {
@@ -85,9 +85,9 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter
     while (iVar13 <= iVar11) {
       iVar14 = _strnicmp(str1->motion_name,(char *)"noCollision",0xb);
       if (iVar14 == 0) {
+        (this_ptr->velocity).x = 0.0;
+        (this_ptr->velocity).y = 0.0;
         (this_ptr->velocity).z = 0.0;
-        (this_ptr->velocity).y = (this_ptr->velocity).z;
-        (this_ptr->velocity).x = (this_ptr->velocity).y;
         return;
       }
       iVar13 = iVar13 + 1;
@@ -250,9 +250,9 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter
   else {
     (this_ptr->base).location.position.y = this_ptr->closest_distance_threshold;
   }
+  (this_ptr->velocity).x = 0.0;
+  (this_ptr->velocity).y = 0.0;
   (this_ptr->velocity).z = 0.0;
-  (this_ptr->velocity).y = (this_ptr->velocity).z;
-  (this_ptr->velocity).x = (this_ptr->velocity).y;
   pCVar6 = g_CDemonSetPtr;
   (this_ptr->velocity).y =
        ((this_ptr->base).location.position.y - local_b0) / g_CGamePtr->delta_time_float;

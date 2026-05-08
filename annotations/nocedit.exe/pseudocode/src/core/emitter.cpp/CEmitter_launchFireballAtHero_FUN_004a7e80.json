@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 83,
+    "complexity_score": 98,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 68,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "self_copy_guard"
+      "self_copy_guard",
+      "unrolled_memcpy"
     ],
     "total_lines": 224
   },
@@ -328,6 +329,14 @@
     "file_variant": "keep"
   },
   "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 64,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_48.x = local_54.x;",
+      "type": "unrolled_memcpy"
+    },
     {
       "description": "Watcom dead self-copy guard: `if (&local_6c != &local_60)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
       "line": 36,

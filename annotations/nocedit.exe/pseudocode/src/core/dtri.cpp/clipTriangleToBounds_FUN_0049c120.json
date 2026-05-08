@@ -7,14 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 973,
-    "complexity_score": 376,
+    "complexity_score": 561,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 96,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 376,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 18,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 1349
   },
   "cross_references": [],
@@ -712,5 +714,150 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 24,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_ClipInputVertices[0].x = triangle_vertices->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 29,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_ClipInputVertices[1].x = triangle_vertices[1].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 34,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_ClipInputVertices[2].x = triangle_vertices[2].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 67,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_ClipOutputVertices[0].x = triangle_vertices->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 72,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_ClipOutputVertices[1].x = triangle_vertices[1].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 77,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_ClipOutputVertices[2].x = triangle_vertices[2].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 106,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_ClipBuffer1Vertices[g_ClipBuffer1VertexCount].x = pCVar7->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 120,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_ClipBuffer1Vertices[g_ClipBuffer1VertexCount].x = pCVar7->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 151,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_ClipBuffer2Vertices[g_ClipBuffer2VertexCount].x = pCVar7->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 165,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_ClipBuffer2Vertices[g_ClipBuffer2VertexCount].x = pCVar7->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 198,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_ClipBuffer3Vertices[g_ClipBuffer3VertexCount].x = pCVar7->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 212,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_ClipBuffer3Vertices[g_ClipBuffer3VertexCount].x = pCVar7->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 245,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_ClipBuffer4Vertices[g_ClipBuffer4VertexCount].x = pCVar7->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 259,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_ClipBuffer4Vertices[g_ClipBuffer4VertexCount].x = pCVar7->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 291,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_ClipBuffer5Vertices[g_ClipBuffer5VertexCount].x = pCVar7->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 306,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_ClipBuffer5Vertices[g_ClipBuffer5VertexCount].x = pCVar7->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 339,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_ClipOutputVertices[g_ClipOutputVertexCount].x = pCVar7->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 354,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_ClipOutputVertices[g_ClipOutputVertexCount].x = pCVar7->x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

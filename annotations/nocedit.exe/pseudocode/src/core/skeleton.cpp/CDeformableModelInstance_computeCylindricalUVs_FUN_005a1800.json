@@ -198,6 +198,24 @@
       "severity": "moderate",
       "text": "piVar7 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar3);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 64,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&pSVar4->u + iVar5) = iVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 66,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->v + iVar5) =",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {

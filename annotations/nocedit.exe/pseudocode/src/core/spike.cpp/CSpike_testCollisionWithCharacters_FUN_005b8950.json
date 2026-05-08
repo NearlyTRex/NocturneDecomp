@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 369,
-    "complexity_score": 134,
+    "complexity_score": 159,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 10,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 134,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 503
   },
   "cross_references": [
@@ -440,5 +442,22 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 60,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "point->x = pCVar5->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 124,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "SStack_16c.impact_direction.x = CStack_a4.x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

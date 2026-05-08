@@ -7,15 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1019,
-    "complexity_score": 446,
+    "complexity_score": 461,
     "cross_reference_count": 1,
     "function_call_count": 36,
     "global_count": 55,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 376,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
+      "unrolled_memcpy",
       "unrolled_strlen"
     ],
     "total_lines": 1395
@@ -771,6 +772,14 @@
       "severity": "moderate",
       "text": "*(int *)((int)g_CameraFogEnabledFlags + iVar6) = pCVar3->cameras[0].fog_enabled;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 242,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pSVar7->height_threshold = (this_ptr->scene_fog).height_threshold;",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
