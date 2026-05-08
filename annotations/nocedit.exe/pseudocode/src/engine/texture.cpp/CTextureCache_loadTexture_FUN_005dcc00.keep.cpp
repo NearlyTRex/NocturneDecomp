@@ -18,14 +18,8 @@ int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_005dcc00(CTextureCa
   int iVar6;
   SIZE_T width;
   char *pcVar7;
-  char *pcVar8;
-  char *pcVar9;
-  char (*pacVar11) [64];
   char local_114 [256];
-  byte bVar13;
-  char *pcVar10;
-  
-  bVar13 = 0;
+
   size = engine_dosio_c_getFileSize_FUN_00481880("art",texture_name);
   if (size < 0x4000) {
     if (0x3ff < size) {
@@ -77,17 +71,7 @@ LAB_005dcc85:
     }
   }
   strcpy(local_114,texture_name);
-  pcVar8 = local_114;
-  do {
-    pcVar7 = pcVar8;
-    if (*pcVar8 == '.') goto LAB_005dcd2c;
-    if (*pcVar8 == '\0') break;
-    pcVar7 = pcVar8 + 1;
-    if (*pcVar7 == '.') goto LAB_005dcd2c;
-    pcVar8 = pcVar8 + 2;
-  } while (*pcVar7 != '\0');
-  pcVar7 = (char *)0x0;
-LAB_005dcd2c:
+  pcVar7 = strchr(local_114,'.');
   if (pcVar7 == (char *)0x0) {
     g_CurrentFilename = "..\\engine\\texture.cpp";
     g_CurrentLineNumber = 0x111;
@@ -103,7 +87,6 @@ LAB_005dcd2c:
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\engine\\texture.cpp",0x117);
   }
   strcpy(cache->texture_names[cache->current_texture_count],texture_name);
-  pcVar10 = local_114;
   if (width != cache->texture_dimensions[cache->current_texture_count]) {
     if (cache->texture_data_ptrs[cache->current_texture_count] != (void *)0x0) {
       shape_memdbg_cpp_debugFree_FUN_0050f460
@@ -118,50 +101,27 @@ LAB_005dcd2c:
     }
     pvVar4 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(size,"..\\engine\\texture.cpp",0x12a);
     cache->texture_data_ptrs[cache->current_texture_count] = pvVar4;
-    pcVar10 = local_114;
     if (cache->texture_data_ptrs[cache->current_texture_count] == (void *)0x0) {
       g_CurrentFilename = "..\\engine\\texture.cpp";
       g_CurrentLineNumber = 300;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CTextureCache::load - Out of memory.  Heap is probably trashed or you're out of VM");
-      pcVar10 = local_114;
     }
   }
   strcpy(local_114,texture_name);
-  pcVar8 = local_114;
-  do {
-    pcVar7 = pcVar8;
-    if (*pcVar8 == '.') goto LAB_005dceea;
-    if (*pcVar8 == '\0') break;
-    pcVar7 = pcVar8 + 1;
-    if (*pcVar7 == '.') goto LAB_005dceea;
-    pcVar8 = pcVar8 + 2;
-  } while (*pcVar7 != '\0');
-  pcVar7 = (char *)0x0;
-LAB_005dceea:
+  pcVar7 = strchr(local_114,'.');
   _sprintf(pcVar7,".raw");
   p_Var3 = engine_dosio_c_getFile_FUN_00481a50("art",local_114,"rb");
   if (p_Var3 == (_FILE *)0x0) {
     memset
               (cache->texture_data_ptrs[cache->current_texture_count],0,width * width);
-    pcVar9 = local_114;
   }
   else {
     _fread(cache->texture_data_ptrs[cache->current_texture_count],width,width,p_Var3);
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\engine\\texture.cpp",0x13a);
   }
   strcpy(local_114,texture_name);
-  pcVar7 = local_114;
-  do {
-    pcVar9 = pcVar7;
-    if (*pcVar7 == '.') goto LAB_005dcf75;
-    if (*pcVar7 == '\0') break;
-    pcVar9 = pcVar7 + 1;
-    if (*pcVar9 == '.') goto LAB_005dcf75;
-    pcVar7 = pcVar7 + 2;
-  } while (*pcVar9 != '\0');
-  pcVar9 = (char *)0x0;
-LAB_005dcf75:
-  _sprintf(pcVar9,".opa");
+  pcVar7 = strchr(local_114,'.');
+  _sprintf(pcVar7,".opa");
   p_Var3 = engine_dosio_c_getFile_FUN_00481a50("art",local_114,"rb");
   if (p_Var3 == (_FILE *)0x0) {
     if (cache->texture_opacity_ptrs[cache->current_texture_count] != (void *)0x0) {

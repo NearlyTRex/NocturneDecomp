@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *this_ptr)
 
 {

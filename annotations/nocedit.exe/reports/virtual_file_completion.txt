@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 5480 (84.9%)
-Files at 100%: 119
-Files at 90%+: 128
+Clean functions: 5489 (85.0%)
+Files at 100%: 125
+Files at 90%+: 130
 Files at 50%+: 214
 
 ====================================================================================================
@@ -38,6 +38,7 @@ FILES AT 100% (COMPLETE)
   core/crossbow.cpp: 12 functions, 312 lines
   core/dest.cpp: 13 functions, 258 lines
   core/dfont.cpp: 3 functions, 279 lines
+  core/dglobe.cpp: 6 functions, 237 lines
   core/dimage.cpp: 6 functions, 131 lines
   core/dirmat.cpp: 7 functions, 336 lines
   core/dog.cpp: 13 functions, 455 lines
@@ -66,10 +67,12 @@ FILES AT 100% (COMPLETE)
   core/hpriest.cpp: 9 functions, 118 lines
   core/imp.cpp: 17 functions, 991 lines
   core/inivar.cpp: 2 functions, 276 lines
+  core/inv.cpp: 43 functions, 3098 lines
   core/keyactor.cpp: 15 functions, 161 lines
   core/ladder.cpp: 19 functions, 576 lines
   core/larva.cpp: 13 functions, 552 lines
   core/level.cpp: 6 functions, 281 lines
+  core/lever.cpp: 22 functions, 476 lines
   core/lightgun.cpp: 14 functions, 579 lines
   core/litecone.cpp: 12 functions, 170 lines
   core/main.c: 10 functions, 1308 lines
@@ -114,6 +117,8 @@ FILES AT 100% (COMPLETE)
   engine/boss.c: 5 functions, 64 lines
   engine/colquant.c: 9 functions, 592 lines
   engine/console.cpp: 8 functions, 201 lines
+  engine/dosio.c: 26 functions, 477 lines
+  engine/ini.cpp: 18 functions, 453 lines
   engine/keyframe.c: 5 functions, 417 lines
   engine/keys.cpp: 9 functions, 56 lines
   engine/light.cpp: 10 functions, 185 lines
@@ -121,6 +126,7 @@ FILES AT 100% (COMPLETE)
   engine/palette.cpp: 10 functions, 392 lines
   engine/pcx.c: 4 functions, 331 lines
   engine/prim.c: 21 functions, 1870 lines
+  engine/texture.cpp: 22 functions, 654 lines
   engine/winfont.cpp: 9 functions, 330 lines
   shape/dsemodel.cpp: 10 functions, 329 lines
   shape/memdbg.cpp: 26 functions, 605 lines
@@ -134,23 +140,11 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 119 files
+Total: 125 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
-   97.7% | core/inv.cpp
-         42/43 clean, 1 remaining
-           - core_inv.cpp_CInventory_renderAllItems_FUN_00500690 (366 lines) [decompiler_intrinsic, warning_inlined_function]
-
-   96.2% | engine/dosio.c
-         25/26 clean, 1 remaining
-           - engine_dosio.c_ensureTrailingSlash_FUN_00481f80 (54 lines) [unrolled_strcpy, unrolled_strlen]
-
-   95.5% | core/lever.cpp
-         21/22 clean, 1 remaining
-           - core_lever.cpp_CLever_process_FUN_00504920 (66 lines) [pointer_cast]
-
    93.2% | core/skeleton.cpp
          109/117 clean, 8 remaining
            - core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 (199 lines) [pointer_cast]
@@ -184,11 +178,6 @@ FILES AT 90-99% (ALMOST COMPLETE)
            - core_baron.cpp_CBaron_process_FUN_00412e80 (217 lines) [missing_cave_copy, unrolled_memcpy, unrolled_memset, warning_type_propagation]
            - core_baron.cpp_CBaron_performLightningAttack_FUN_004136b0 (99 lines) [unrolled_memcpy]
 
-   90.9% | engine/texture.cpp
-         20/22 clean, 2 remaining
-           - engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00 (240 lines) [unrolled_strchr]
-           - engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200 (122 lines) [pointer_cast, warning_unreachable]
-
    90.7% | core/actor.cpp
          166/183 clean, 17 remaining
            - core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 (300 lines) [pointer_cast, unrolled_memcpy]
@@ -215,7 +204,7 @@ FILES AT 90-99% (ALMOST COMPLETE)
            - sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120 (85 lines) [unrolled_strcpy, warning_max_restarts]
            - sound_snddx.cpp_fillStreamBuffer_FUN_005adff0 (60 lines) [pointer_cast]
 
-Total: 9 files
+Total: 5 files
 
 ====================================================================================================
 FILES AT 50-89%
@@ -239,10 +228,6 @@ FILES AT 50-89%
            - core_weapon.cpp_CWeapon_process_FUN_005ee110 (40 lines) [unrolled_memcpy]
            - core_weapon.cpp_CWeapon_updateLighting_FUN_005ee4a0 (49 lines) [unrolled_memcpy]
            - core_weapon.cpp_CWeapon_fireProjectile_FUN_005ee830 (63 lines) [unrolled_memcpy]
-   88.9% | engine/ini.cpp
-         16/18 clean, 2 remaining
-           - engine_ini.cpp_CIni_getProfileString_FUN_004fb250 (113 lines) [unrolled_strchr, unrolled_strcpy, unrolled_strlen]
-           - engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004fb470 (87 lines) [unrolled_strchr]
    88.2% | core/dlight.cpp
          30/34 clean, 4 remaining
            - core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0 (185 lines) [unrolled_memcpy]
@@ -1064,10 +1049,6 @@ FILES AT 50-89%
            - engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 (367 lines) [unrolled_memcpy]
            - engine_pod.cpp_CPod_getPodIndexByFilename_FUN_00551820 (25 lines) [shadow_pointer_walk]
            - engine_pod.cpp_findFilesByExtension_FUN_00550ce0 (111 lines) [pointer_cast, unrolled_strcpy, unrolled_strlen]
-   66.7% | core/dglobe.cpp
-         4/6 clean, 2 remaining
-           - core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_00471400 (76 lines) [unrolled_memcpy]
-           - core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0 (64 lines) [unrolled_memcpy]
    66.7% | core/dmodel.cpp
          44/66 clean, 22 remaining
            - core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10 (152 lines) [pointer_cast, unrolled_strchr]
@@ -1318,7 +1299,7 @@ FILES AT 50-89%
            - core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0 (211 lines) [pointer_cast]
            - core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 (136 lines) [shadow_pointer_walk, unrolled_memcpy]
 
-Total: 86 files
+Total: 84 files
 
 ====================================================================================================
 FILES BELOW 50%

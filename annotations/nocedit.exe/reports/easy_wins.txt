@@ -10,36 +10,6 @@ sorted by effort required (lowest effort first).
 PRIORITY 1: Files with 1-2 functions remaining
 ====================================================================================================
 
-  engine/dosio.c (1 remaining of 26)
-    - engine_dosio.c_ensureTrailingSlash_FUN_00481f80
-      Suspects: unrolled_strcpy, unrolled_strlen, unrolled_strlen
-
-  core/inv.cpp (1 remaining of 43)
-    - core_inv.cpp_CInventory_renderAllItems_FUN_00500690
-      Suspects: warning_inlined_function, decompiler_intrinsic, decompiler_intrinsic
-
-  core/lever.cpp (1 remaining of 22)
-    - core_lever.cpp_CLever_process_FUN_00504920
-      Suspects: pointer_cast
-
-  engine/texture.cpp (2 remaining of 22)
-    - engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00
-      Suspects: unrolled_strchr, unrolled_strchr, unrolled_strchr
-    - engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200
-      Suspects: warning_unreachable, pointer_cast, pointer_cast, pointer_cast, pointer_cast
-
-  engine/ini.cpp (2 remaining of 18)
-    - engine_ini.cpp_CIni_getProfileString_FUN_004fb250
-      Suspects: unrolled_strcpy, unrolled_strcpy, unrolled_strlen, unrolled_strlen, unrolled_strchr
-    - engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004fb470
-      Suspects: unrolled_strchr, unrolled_strchr
-
-  core/dglobe.cpp (2 remaining of 6)
-    - core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_00471400
-      Suspects: unrolled_memcpy
-    - core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0
-      Suspects: unrolled_memcpy
-
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
@@ -148,21 +118,6 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
 
-  core/inv.cpp (97.7% complete)
-    1 functions remaining:
-      core_inv.cpp_CInventory_renderAllItems_FUN_00500690 (366 lines)
-        Types: ['decompiler_intrinsic', 'warning_inlined_function']
-
-  engine/dosio.c (96.2% complete)
-    1 functions remaining:
-      engine_dosio.c_ensureTrailingSlash_FUN_00481f80 (54 lines)
-        Types: ['unrolled_strcpy', 'unrolled_strlen']
-
-  core/lever.cpp (95.5% complete)
-    1 functions remaining:
-      core_lever.cpp_CLever_process_FUN_00504920 (66 lines)
-        Types: ['pointer_cast']
-
   core/skeleton.cpp (93.2% complete)
     8 functions remaining:
       core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 (199 lines)
@@ -219,13 +174,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
         Types: ['missing_cave_copy', 'unrolled_memcpy', 'unrolled_memset', 'warning_type_propagation']
       core_baron.cpp_CBaron_performLightningAttack_FUN_004136b0 (99 lines)
         Types: ['unrolled_memcpy']
-
-  engine/texture.cpp (90.9% complete)
-    2 functions remaining:
-      engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00 (240 lines)
-        Types: ['unrolled_strchr']
-      engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200 (122 lines)
-        Types: ['pointer_cast', 'warning_unreachable']
 
   core/actor.cpp (90.7% complete)
     17 functions remaining:

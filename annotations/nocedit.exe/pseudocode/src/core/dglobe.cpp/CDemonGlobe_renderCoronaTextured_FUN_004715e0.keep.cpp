@@ -43,14 +43,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0(CDemo
   engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(&g_CoronaHeadliteTexture);
   iVar2 = 0;
   do {
-    SStack_50.base.base.count = g_CoronaFacePrimitives[iVar2].base.count;
-    SStack_50.base.surface_normal.A = g_CoronaFacePrimitives[iVar2].normal.A;
-    SStack_50.base.surface_normal.B = g_CoronaFacePrimitives[iVar2].normal.B;
-    SStack_50.base.surface_normal.C = g_CoronaFacePrimitives[iVar2].normal.C;
-    SStack_50.vertices[0] = g_CoronaFacePrimitives[iVar2].vertices[0];
-    SStack_50.vertices[1] = g_CoronaFacePrimitives[iVar2].vertices[1];
-    SStack_50.vertices[2] = g_CoronaFacePrimitives[iVar2].vertices[2];
-    SStack_50.vertices[3] = g_CoronaFacePrimitives[iVar2].vertices[3];
+    memcpy(&SStack_50.base.base.count,&g_CoronaFacePrimitives[iVar2],sizeof(SMRGLLightPrimitive));
     SStack_50.base.surface_normal.D.i =
          (int)ROUND(ROUND((float)g_CoronaFacePrimitives[iVar2].normal.D.i *
                           this_ptr->radius));

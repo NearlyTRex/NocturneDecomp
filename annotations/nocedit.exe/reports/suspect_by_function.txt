@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5475 (84.8%)
-With suspects: 979
-Total suspects: 4380
+Clean: 5483 (85.0%)
+With suspects: 971
+Total suspects: 4358
 
 ====================================================================================================
 core_actor.cpp_CActorPropertyList_addFile_FUN_0040e3e0 (2 suspects)
@@ -1340,18 +1340,6 @@ core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730 (2 suspects)
 ====================================================================================================
   Line 36 [pointer_cast]: *(char *)(iVar3 + (int)this_ptr->movie_data) =
   Line 37 [pointer_cast]: (char)((uint)((int)(uint)*(byte *)(iVar3 + (int)this_ptr->movie_data) >> 2) / 2);
-
-====================================================================================================
-core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0 (1 suspect)
-  File: core/dglobe.cpp
-====================================================================================================
-  Line 46 [unrolled_memcpy]: SStack_50.base.base.count = g_CoronaFacePrimitives[iVar2].base.count;
-
-====================================================================================================
-core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_00471400 (1 suspect)
-  File: core/dglobe.cpp
-====================================================================================================
-  Line 37 [unrolled_memcpy]: local_64.base.base.count = g_CoronaFacePrimitives[iVar1].base.count;
 
 ====================================================================================================
 core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0 (2 suspects)
@@ -3070,24 +3058,17 @@ core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f8810 (1 suspect)
   Line 12 [stack_alignment_array]: float afStackY_180c [1519];
 
 ====================================================================================================
-core_inv.cpp_CInventory_renderAllItems_FUN_00500690 (3 suspects)
+core_inv.cpp_CInventory_renderAllItems_FUN_00500690 (2 suspects)
   File: core/inv.cpp
 ====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 89 [decompiler_intrinsic]: local_68 = (int)ROUND(ROUND(this_ptr->weapon_highlight_timer * 65535.0f));
-  Line 89 [decompiler_intrinsic]: local_68 = (int)ROUND(ROUND(this_ptr->weapon_highlight_timer * 65535.0f));
+  Line 87 [decompiler_intrinsic]: local_68 = (int)ROUND(ROUND(this_ptr->weapon_highlight_timer * 65535.0f));
+  Line 87 [decompiler_intrinsic]: local_68 = (int)ROUND(ROUND(this_ptr->weapon_highlight_timer * 65535.0f));
 
 ====================================================================================================
 core_ladder.cpp_CLadder_renderOpaque_FUN_00502620 (1 suspect)
   File: core/ladder.cpp
 ====================================================================================================
   Line 33 [decompiler_intrinsic]: CStack_30.y = (int)ROUND(fStack_y * 256.0f);
-
-====================================================================================================
-core_lever.cpp_CLever_process_FUN_00504920 (1 suspect)
-  File: core/lever.cpp
-====================================================================================================
-  Line 45 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar2),
 
 ====================================================================================================
 core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920 (3 suspects)
@@ -6414,14 +6395,6 @@ engine_clipper.c_clipPolygonToViewport_FUN_00438420 (2 suspects)
   Line 93 [pointer_cast]: ,*(SRenderVertex **)
 
 ====================================================================================================
-engine_dosio.c_ensureTrailingSlash_FUN_00481f80 (3 suspects)
-  File: engine/dosio.c
-====================================================================================================
-  Line 23 [unrolled_strlen]: do {
-  Line 33 [unrolled_strlen]: do {
-  Line 42 [unrolled_strcpy]: do {
-
-====================================================================================================
 engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0 (12 suspects)
   File: engine/drender.cpp
 ====================================================================================================
@@ -6894,23 +6867,6 @@ engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0 (6 suspects)
   Line 180 [unrolled_memcpy]: g_RenderVertexBuffer[0x4e1d].u = g_RenderVertexBuffer[0x4e1e].u;
 
 ====================================================================================================
-engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004fb470 (2 suspects)
-  File: engine/ini.cpp
-====================================================================================================
-  Line 50 [unrolled_strchr]: do {
-  Line 65 [unrolled_strchr]: do {
-
-====================================================================================================
-engine_ini.cpp_CIni_getProfileString_FUN_004fb250 (5 suspects)
-  File: engine/ini.cpp
-====================================================================================================
-  Line 45 [unrolled_strchr]: do {
-  Line 69 [unrolled_strlen]: do {
-  Line 77 [unrolled_strcpy]: do {
-  Line 94 [unrolled_strlen]: do {
-  Line 101 [unrolled_strcpy]: do {
-
-====================================================================================================
 engine_matrix.c_initializeTrigTables_FUN_0050c530 (3 suspects)
   File: engine/matrix.c
 ====================================================================================================
@@ -7044,24 +7000,6 @@ engine_pod.cpp_findFilesByExtension_FUN_00550ce0 (3 suspects)
   Line 63 [pointer_cast]: for (local_18 = 0; iVar7 = *(int *)((int)pod_array + local_34 + 4),
   Line 68 [unrolled_strlen]: do {
   Line 76 [unrolled_strcpy]: do {
-
-====================================================================================================
-engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00 (3 suspects)
-  File: engine/texture.cpp
-====================================================================================================
-  Line 87 [unrolled_strchr]: do {
-  Line 168 [unrolled_strchr]: do {
-  Line 200 [unrolled_strchr]: do {
-
-====================================================================================================
-engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200 (5 suspects)
-  File: engine/texture.cpp
-====================================================================================================
-  Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005dd2de) */
-  Line 34 [pointer_cast]: *(uint *)((int)g_Hardware32BitPalette + iVar1) =
-  Line 45 [pointer_cast]: *(ushort *)((int)g_Hardware16BitPalette + iVar7) =
-  Line 62 [pointer_cast]: pbVar6 = (byte *)((int)pbVar6 + 3);
-  Line 63 [pointer_cast]: *(uint *)((int)g_Hardware32BitPalette + local_14) = uVar5;
 
 ====================================================================================================
 shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (16 suspects)

@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 281,
-    "complexity_score": 182,
+    "complexity_score": 122,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 22,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 122,
-    "suspect_count": 5,
-    "suspect_types": [
-      "pointer_cast",
-      "warning_unreachable"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 403
   },
   "cross_references": [
@@ -246,6 +243,53 @@
     },
     "pcode_op_count": 1332
   },
+  "resolved_suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005dd2de) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(uint *)((int)g_Hardware32BitPalette",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_Hardware32BitPalette + iVar1) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(ushort *)((int)g_Hardware16BitPalette",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(ushort *)((int)g_Hardware16BitPalette + iVar7) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(byte *)((int)pbVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pbVar6 = (byte *)((int)pbVar6 + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(uint *)((int)g_Hardware32BitPalette",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_Hardware32BitPalette + local_14) = uVar5;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 32,
     "local_size": 24,
@@ -276,46 +320,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unreachable code block removed",
-      "line": 2,
-      "match": "WARNING: Removing unreachable block",
-      "severity": "mild",
-      "text": "/* WARNING: Removing unreachable block (ram,0x005dd2de) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(uint *)((int)g_Hardware32BitPalette",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_Hardware32BitPalette + iVar1) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(ushort *)((int)g_Hardware16BitPalette",
-      "severity": "moderate",
-      "text": "*(ushort *)((int)g_Hardware16BitPalette + iVar7) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 62,
-      "match": "(byte *)((int)pbVar6",
-      "severity": "moderate",
-      "text": "pbVar6 = (byte *)((int)pbVar6 + 3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 63,
-      "match": "(uint *)((int)g_Hardware32BitPalette",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_Hardware32BitPalette + local_14) = uVar5;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

@@ -4,22 +4,22 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1869 ( 42.7%)
-  unrolled_memcpy                 1076 ( 24.6%)
-  unrolled_strcpy                  312 (  7.1%)
+  pointer_cast                    1864 ( 42.8%)
+  unrolled_memcpy                 1074 ( 24.6%)
+  unrolled_strcpy                  309 (  7.1%)
   missing_cave_copy                195 (  4.5%)
-  shadow_pointer_walk              181 (  4.1%)
-  raw_address_constant             142 (  3.2%)
+  shadow_pointer_walk              181 (  4.2%)
+  raw_address_constant             142 (  3.3%)
   unrolled_memset                  121 (  2.8%)
-  unrolled_strlen                   96 (  2.2%)
-  warning_inlined_function          70 (  1.6%)
-  unrolled_strchr                   52 (  1.2%)
+  unrolled_strlen                   92 (  2.1%)
+  warning_inlined_function          69 (  1.6%)
+  unrolled_strchr                   46 (  1.1%)
   bitcast_double_pair               46 (  1.1%)
   stack_alignment_array             40 (  0.9%)
   warning_type_propagation          28 (  0.6%)
   decompiler_intrinsic              25 (  0.6%)
-  warning_unreachable               23 (  0.5%)
   stack_param                       23 (  0.5%)
+  warning_unreachable               22 (  0.5%)
   negative_offset                   21 (  0.5%)
   self_copy_guard                   18 (  0.4%)
   sub84_truncation                  12 (  0.3%)
@@ -33,7 +33,7 @@ SUSPECT TYPE COUNTS
   unnamed_param                      1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (1869 occurrences)
+TYPE: pointer_cast (1864 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -41,7 +41,7 @@ Unique patterns:
     54x  (int *)((int)g_ScreenBufferArray
     47x  (int *)((int)this_ptr
     40x  (uint *)((int)this_ptr
-    24x  (CDemonActor **)((int)g_CDemonSetPtr
+    23x  (CDemonActor **)((int)g_CDemonSetPtr
     22x  (int *)((int)g_VertexIndexBuffer
     19x  (byte *)((int)this_ptr
     19x  (double *)((int)g_Mp3DctMatrix
@@ -174,7 +174,6 @@ Functions:
   core_hero.cpp_CHero_tryPullLever_FUN_004f2f50
   core_hero.cpp_CHero_tryPushNearbyBox_FUN_004f3120
   core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004f8970
-  core_lever.cpp_CLever_process_FUN_00504920
   core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330
   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0
   core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00508a70
@@ -359,7 +358,6 @@ Functions:
   engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230
   engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
   engine_pod.cpp_findFilesByExtension_FUN_00550ce0
-  engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200
   shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160
   shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90
   shape_cramtex.cpp_generateTextureAtlas_FUN_00445820
@@ -507,11 +505,11 @@ Functions:
   sound_sndwav.cpp_writeWavOutBuffer_FUN_005b06c0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (1076 occurrences)
+TYPE: unrolled_memcpy (1074 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   846x  field-by-field struct copy
+   844x  field-by-field struct copy
    118x  for (...; != 0; ... + -1)
    109x  MOVSD.REP
      3x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
@@ -599,8 +597,6 @@ Functions:
   core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00454f00
   core_dcube.cpp_clipTriangleToAABB_FUN_00456400
   core_dcube.cpp_triangleCylinderCollision_FUN_00456040
-  core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0
-  core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_00471400
   core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0
   core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0
   core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90
@@ -918,11 +914,11 @@ Functions:
   sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0
 
 ====================================================================================================
-TYPE: unrolled_strcpy (312 occurrences)
+TYPE: unrolled_strcpy (309 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   312x  do {
+   309x  do {
 
 Functions:
   core_actor.cpp_CActorPropertyList_addFile_FUN_0040e3e0
@@ -1011,7 +1007,6 @@ Functions:
   core_wateract.cpp_CWaterActor_ctor_FUN_005ea8a0
   core_zombie.cpp_CZombie_process_FUN_005f9470
   engine_3d.c_updateAnimatedTexture_FUN_004050c0
-  engine_dosio.c_ensureTrailingSlash_FUN_00481f80
   engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920
   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
   engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50
@@ -1029,7 +1024,6 @@ Functions:
   engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50
   engine_font.cpp_CBitFont_loadBitmap_FUN_004ccff0
   engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0
-  engine_ini.cpp_CIni_getProfileString_FUN_004fb250
   engine_pod.cpp_findFilesByExtension_FUN_00550ce0
   shape_design.c_cramTextureList_FUN_0046bb80
   shape_design.c_cramTextures_FUN_0046a970
@@ -1388,11 +1382,11 @@ Functions:
   shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
 
 ====================================================================================================
-TYPE: unrolled_strlen (96 occurrences)
+TYPE: unrolled_strlen (92 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    96x  do { if (v==0) break; v=v-1; ... }
+    92x  do { if (v==0) break; v=v-1; ... }
 
 Functions:
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
@@ -1413,13 +1407,11 @@ Functions:
   core_setutil.cpp_readAndParseLine_FUN_00585290
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
   core_texlist.cpp_CTextureList_load_FUN_005dbe00
-  engine_dosio.c_ensureTrailingSlash_FUN_00481f80
   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
   engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
   engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460
   engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
   engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50
-  engine_ini.cpp_CIni_getProfileString_FUN_004fb250
   engine_pod.cpp_findFilesByExtension_FUN_00550ce0
   shape_design.c_centerVerticesAroundPoint_FUN_0045ea90
   shape_design.c_cramTextureList_FUN_0046bb80
@@ -1443,11 +1435,11 @@ Functions:
   sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20
 
 ====================================================================================================
-TYPE: warning_inlined_function (70 occurrences)
+TYPE: warning_inlined_function (69 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    70x  WARNING: Inlined function:
+    69x  WARNING: Inlined function:
 
 Functions:
   core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a630
@@ -1485,7 +1477,6 @@ Functions:
   core_glass.cpp_CGlass_onLaserHit_FUN_004eb250
   core_glass.cpp_CGlass_setup_FUN_004e9180
   core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0
-  core_inv.cpp_CInventory_renderAllItems_FUN_00500690
   core_menu.cpp_configureSoundOptions_FUN_00511e50
   core_netgame.cpp_CNetGame_runLobby_FUN_00541390
   core_path.cpp_CPathMap_renderPathMap_FUN_00547fc0
@@ -1521,11 +1512,11 @@ Functions:
   sound_sndwav.cpp_CWavOutDevice_setMode_FUN_005b0a30
 
 ====================================================================================================
-TYPE: unrolled_strchr (52 occurrences)
+TYPE: unrolled_strchr (46 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    52x  do { snap; if (*p=='X') goto; if (*p=='\0') break; ... }
+    46x  do { snap; if (*p=='X') goto; if (*p=='\0') break; ... }
 
 Functions:
   core_dmodel.cpp_CKeyFramedModel_export_FUN_00478e10
@@ -1541,9 +1532,6 @@ Functions:
   core_setedit.cpp_loadGroundTypes_FUN_00578420
   core_texlist.cpp_CTextureList_load_FUN_005dbe00
   engine_fileio.cpp_CFileManager_registerFiles_FUN_004b5640
-  engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004fb470
-  engine_ini.cpp_CIni_getProfileString_FUN_004fb250
-  engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00
   shape_design.c_cramTextureList_FUN_0046bb80
   shape_design.c_cramTextures_FUN_0046a970
   shape_design.c_loadPalette_FUN_0046e810
@@ -1700,24 +1688,6 @@ Functions:
   shape_superopt.cpp_COptimize_findCoplanarPolygons_FUN_005d7460
 
 ====================================================================================================
-TYPE: warning_unreachable (23 occurrences)
-====================================================================================================
-
-Unique patterns:
-    23x  WARNING: Removing unreachable block
-
-Functions:
-  core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820
-  core_icepick.cpp_CIcePick_process_FUN_004f80b0
-  core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
-  core_xform.cpp_transformAndClipGeometry_FUN_005f8550
-  core_zombie.cpp_CZombie_process_FUN_005f9470
-  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
-  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
-  engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
-  engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200
-
-====================================================================================================
 TYPE: stack_param (23 occurrences)
 ====================================================================================================
 
@@ -1731,6 +1701,23 @@ Functions:
   core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0
   core_game.cpp_dampControlAxis_FUN_004dc370
   core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
+
+====================================================================================================
+TYPE: warning_unreachable (22 occurrences)
+====================================================================================================
+
+Unique patterns:
+    22x  WARNING: Removing unreachable block
+
+Functions:
+  core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820
+  core_icepick.cpp_CIcePick_process_FUN_004f80b0
+  core_netgame.cpp_CNetGame_processPacket_FUN_005406a0
+  core_xform.cpp_transformAndClipGeometry_FUN_005f8550
+  core_zombie.cpp_CZombie_process_FUN_005f9470
+  engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
+  engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
+  engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
 
 ====================================================================================================
 TYPE: negative_offset (21 occurrences)

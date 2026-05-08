@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 519,
-    "complexity_score": 275,
+    "complexity_score": 240,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 33,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 240,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unrolled_strchr"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 759
   },
   "cross_references": [
@@ -371,6 +369,33 @@
       "type": "unrolled_memcpy"
     },
     {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
+      "line": 87,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
+      "line": 168,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
+      "line": 200,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 469,
       "match": "MOVSD.REP",
@@ -469,30 +494,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 87,
-      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strchr"
-    },
-    {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 168,
-      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strchr"
-    },
-    {
-      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 200,
-      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strchr"
-    }
-  ]
+  "suspects": []
 }
