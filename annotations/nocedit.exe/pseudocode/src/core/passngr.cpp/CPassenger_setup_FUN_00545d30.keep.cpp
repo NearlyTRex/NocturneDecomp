@@ -36,17 +36,12 @@ void __cdecl core_passngr_cpp_CPassenger_setup_FUN_00545d30(CPassenger *this_ptr
       pCVar3 = (CWerewolf *)((pCVar3->base).base.base.actor_name + 2);
     } while (cVar2 != '\0');
     pCVar4 = this_ptr->werewolf_actor;
-    (pCVar4->base).base.base.location.position.x = (this_ptr->base).base.base.location.position.x;
-    (pCVar4->base).base.base.location.position.y = (this_ptr->base).base.base.location.position.y;
-    (pCVar4->base).base.base.location.position.z = (this_ptr->base).base.base.location.position.z;
-    (pCVar4->base).base.base.location.area_id = (this_ptr->base).base.base.location.area_id;
+    (pCVar4->base).base.base.location = (this_ptr->base).base.base.location;
     pCVar4 = this_ptr->werewolf_actor;
     pUVar1 = &(this_ptr->base).base.base.orient;
     pUVar5 = &(pCVar4->base).base.base.orient;
     if (pUVar5 != pUVar1) {
-      (pUVar5->vec).x = (pUVar1->vec).x;
-      (pCVar4->base).base.base.orient.vec.y = (this_ptr->base).base.base.orient.vec.y;
-      (pCVar4->base).base.base.orient.vec.z = (this_ptr->base).base.base.orient.vec.z;
+      pUVar5->vec = pUVar1->vec;
     }
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
               (&(this_ptr->werewolf_actor->base).base.model,this_ptr->wolf_model_name);

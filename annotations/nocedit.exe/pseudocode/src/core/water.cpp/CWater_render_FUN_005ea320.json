@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 394,
-    "complexity_score": 160,
+    "complexity_score": 145,
     "cross_reference_count": 3,
     "function_call_count": 10,
     "global_count": 30,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 145,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 539
   },
   "cross_references": [
@@ -412,6 +410,15 @@
       "severity": "moderate",
       "text": "iVar4 = *(int *)((int)g_VisibleWaterTilesY + local_18);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 56,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_30.x = local_6c.x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -517,14 +524,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 56,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_30.x = local_6c.x;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

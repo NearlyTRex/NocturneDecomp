@@ -26,9 +26,7 @@ int __cdecl core_imp_cpp_CImp_getTargetPoints_FUN_004faf40(CImp *this_ptr,CVecto
     pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                        (&(this_ptr->base).base.model,&local_30,g_ImpIndices[0]);
     if (out_points_array != pCVar3) {
-      out_points_array->x = pCVar3->x;
-      out_points_array->y = pCVar3->y;
-      out_points_array->z = pCVar3->z;
+      *out_points_array = *pCVar3;
     }
     iVar3 = 1;
   }
@@ -37,9 +35,7 @@ int __cdecl core_imp_cpp_CImp_getTargetPoints_FUN_004faf40(CImp *this_ptr,CVecto
                        (&(this_ptr->base).base.model,&local_3c,g_ImpIndices[5]);
     pCVar2 = out_points_array + iVar3;
     if (pCVar2 != pCVar1) {
-      pCVar2->x = pCVar1->x;
-      pCVar2->y = pCVar1->y;
-      pCVar2->z = pCVar1->z;
+      *pCVar2 = *pCVar1;
     }
     iVar3 = iVar3 + 1;
   }
@@ -48,9 +44,7 @@ int __cdecl core_imp_cpp_CImp_getTargetPoints_FUN_004faf40(CImp *this_ptr,CVecto
                        (&(this_ptr->base).base.model,&local_18,g_ImpIndices[6]);
     pCVar4 = out_points_array + iVar3;
     if (pCVar4 != pCVar3) {
-      pCVar4->x = pCVar3->x;
-      pCVar4->y = pCVar3->y;
-      pCVar4->z = pCVar3->z;
+      *pCVar4 = *pCVar3;
     }
     iVar3 = iVar3 + 1;
   }
@@ -59,9 +53,7 @@ int __cdecl core_imp_cpp_CImp_getTargetPoints_FUN_004faf40(CImp *this_ptr,CVecto
                        (&(this_ptr->base).base.model,&local_48,g_ImpIndices[9]);
     pCVar4 = out_points_array + iVar3;
     if (pCVar4 != pCVar3) {
-      pCVar4->x = pCVar3->x;
-      pCVar4->y = pCVar3->y;
-      pCVar4->z = pCVar3->z;
+      *pCVar4 = *pCVar3;
     }
     iVar3 = iVar3 + 1;
   }
@@ -72,9 +64,7 @@ int __cdecl core_imp_cpp_CImp_getTargetPoints_FUN_004faf40(CImp *this_ptr,CVecto
                      (&(this_ptr->base).base.model,&local_24,g_ImpIndices[0xb]);
   pCVar4 = out_points_array + iVar3;
   if (pCVar4 != pCVar3) {
-    pCVar4->x = pCVar3->x;
-    pCVar4->y = pCVar3->y;
-    pCVar4->z = pCVar3->z;
+    *pCVar4 = *pCVar3;
   }
   return iVar3 + 1;
 }

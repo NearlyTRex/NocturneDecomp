@@ -53,9 +53,7 @@ void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_005b8950(CSpi
     pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                        (&this_ptr->base,&CStack_74,pCVar4);
     if (point != pCVar5) {
-      point->x = pCVar5->x;
-      point->y = pCVar5->y;
-      point->z = pCVar5->z;
+      *point = *pCVar5;
     }
     corner_index = corner_index + 1;
     core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&CStack_d4,point);
@@ -115,11 +113,7 @@ void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_005b8950(CSpi
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_16c);
           SStack_16c.damage_amount = this_ptr->damage_strength;
           SStack_16c.damage_type = DAMAGE_TYPE_MELEE;
-          if (&SStack_16c.impact_direction != &CStack_a4) {
-            SStack_16c.impact_direction.x = CStack_a4.x;
-            SStack_16c.impact_direction.y = CStack_a4.y;
-            SStack_16c.impact_direction.z = CStack_a4.z;
-          }
+          SStack_16c.impact_direction = CStack_a4;
           SStack_16c.attacker = &this_ptr->base;
           SStack_16c.wielder = &this_ptr->base;
           (*(((this_ptr_01->base).vtable._uc)->_uc).processDamage)(this_ptr_01,&SStack_16c);

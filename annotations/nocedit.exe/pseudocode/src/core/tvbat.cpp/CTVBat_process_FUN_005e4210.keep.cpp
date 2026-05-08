@@ -86,9 +86,7 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr,float d
   if ((this_ptr->follow_orders != 0) &&
      (pCVar9 = this_ptr->boss_actor, pCVar9 != (CDemonActor *)0x0)) {
     if ((CLocation *)&this_ptr->home_pos != &pCVar9->location) {
-      (this_ptr->home_pos).x = (pCVar9->location).position.x;
-      (this_ptr->home_pos).y = (pCVar9->location).position.y;
-      (this_ptr->home_pos).z = (pCVar9->location).position.z;
+      this_ptr->home_pos = (pCVar9->location).position;
     }
     (this_ptr->home_pos).y = (this_ptr->home_pos).y + 4.0f;
   }

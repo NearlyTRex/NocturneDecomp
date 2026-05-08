@@ -7,16 +7,14 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 75,
+    "complexity_score": 50,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 50,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 164
   },
   "cross_references": [
@@ -121,6 +119,26 @@
     },
     "pcode_op_count": 375
   },
+  "resolved_suspects": [
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 19,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&pcx_file->_flag + 1) = *(byte *)((int)&pcx_file->_flag + 1) | 0x10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 39,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(byte *)((int)&pcx_file->_flag + 1) = *(byte *)((int)&pcx_file->_flag + 1) | 0x10;",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -144,22 +162,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 19,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&pcx_file->_flag + 1) = *(byte *)((int)&pcx_file->_flag + 1) | 0x10;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 39,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&pcx_file->_flag + 1) = *(byte *)((int)&pcx_file->_flag + 1) | 0x10;",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

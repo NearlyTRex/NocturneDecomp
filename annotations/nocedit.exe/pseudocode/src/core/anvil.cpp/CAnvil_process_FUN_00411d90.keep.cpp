@@ -23,10 +23,7 @@ void __cdecl core_anvil_cpp_CAnvil_process_FUN_00411d90(CAnvil *this_ptr,float d
   if (iVar4 != 0) {
     this_ptr->triggered = 1;
     pCVar1 = g_HeroActors[iVar3];
-    (this_ptr->base).location.position.x = (pCVar1->base).base.location.position.x;
-    (this_ptr->base).location.position.y = (pCVar1->base).base.location.position.y;
-    (this_ptr->base).location.position.z = (pCVar1->base).base.location.position.z;
-    (this_ptr->base).location.area_id = (pCVar1->base).base.location.area_id;
+    (this_ptr->base).location = (pCVar1->base).base.location;
     (this_ptr->base).location.position.y =
          this_ptr->drop_height + (this_ptr->base).location.position.y;
   }

@@ -62,11 +62,7 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043ff20(CColonel *this_ptr
                  (this_ptr->base).base.base.location.position.y;
     local_60.z = (pCVar9->base).base.location.position.z -
                  (this_ptr->base).base.base.location.position.z;
-    if (&local_54 != &local_60) {
-      local_54.x = local_60.x;
-      local_54.y = local_60.y;
-      local_54.z = local_60.z;
-    }
+    local_54 = local_60;
     fVar2 = SQRT(local_54.z * local_54.z + local_54.x * local_54.x + local_54.y * local_54.y);
     if ((float)6 <= fVar2) {
       this_ptr_01 = (CPathMap *)0x0;
@@ -144,16 +140,10 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043ff20(CColonel *this_ptr
                  (this_ptr->base).base.base.location.position.y;
     local_78.z = (pCVar9->base).base.location.position.z -
                  (this_ptr->base).base.base.location.position.z;
-    if (&local_54 != &local_78) {
-      local_54.x = local_78.x;
-      local_54.y = local_78.y;
-      local_54.z = local_78.z;
-    }
+    local_54 = local_78;
     pCVar3 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_6c,&local_54);
     if (&local_54 != pCVar3) {
-      local_54.x = pCVar3->x;
-      local_54.y = pCVar3->y;
-      local_54.z = pCVar3->z;
+      local_54 = *pCVar3;
     }
     local_44 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                          (local_54.y - (this_ptr->base).base.base.orient.vec.y);

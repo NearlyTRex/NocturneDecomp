@@ -56,9 +56,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
         local_6c.z = (float)iVar4 * this_ptr->tile_size + FLOAT_03f875f8;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                   (g_CDemonRendererPtr2,&local_6c);
-        local_30.x = local_6c.x;
-        local_30.y = local_6c.y;
-        local_30.z = local_6c.z;
+        local_30 = local_6c;
         local_6c.x = 0.0;
         local_6c.y = 0.0;
         local_6c.z = 0.0;

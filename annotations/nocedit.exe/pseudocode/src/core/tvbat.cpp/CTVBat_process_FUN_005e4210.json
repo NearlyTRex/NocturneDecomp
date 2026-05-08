@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 802,
-    "complexity_score": 348,
+    "complexity_score": 333,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 29,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 333,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1135
   },
   "cross_references": [],
@@ -369,6 +367,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 94,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->home_pos).x = (pCVar9->location).position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
       "line": 136,
       "match": "cascade_constant_fill",
@@ -705,28 +712,28 @@
         {
           "check_id": "uninitvar",
           "column": 14,
-          "line": 141,
+          "line": 139,
           "message": "Uninitialized variable: local_80",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 36,
-          "line": 141,
+          "line": 139,
           "message": "Uninitialized variable: local_88",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 58,
-          "line": 141,
+          "line": 139,
           "message": "Uninitialized variable: local_84",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 55,
-          "line": 162,
+          "line": 160,
           "message": "Uninitialized variable: local_54",
           "severity": "warning"
         }
@@ -735,16 +742,7 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 94,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->home_pos).x = (pCVar9->location).position.x;",
-      "type": "unrolled_memcpy"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

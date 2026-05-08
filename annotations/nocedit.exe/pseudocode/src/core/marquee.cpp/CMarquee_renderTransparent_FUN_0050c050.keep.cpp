@@ -45,9 +45,7 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_0050c050(CMarquee *t
             pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                                (&this_ptr->base,&local_70,&local_64);
             if (&local_64 != pCVar2) {
-              local_64.x = pCVar2->x;
-              local_64.y = pCVar2->y;
-              local_64.z = pCVar2->z;
+              local_64 = *pCVar2;
             }
             iVar4 = iVar4 + 1;
             core_marquee_cpp_CMarquee_renderLightBulb_FUN_0050bec0(this_ptr,&local_64);
@@ -66,9 +64,7 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_0050c050(CMarquee *t
               pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                                  (&this_ptr->base,&local_40,&local_88);
               if (&local_88 != pCVar2) {
-                local_88.x = pCVar2->x;
-                local_88.y = pCVar2->y;
-                local_88.z = pCVar2->z;
+                local_88 = *pCVar2;
               }
               core_marquee_cpp_CMarquee_renderLightBulb_FUN_0050bec0(this_ptr,&local_88);
             }
@@ -88,9 +84,7 @@ int __cdecl core_marquee_cpp_CMarquee_renderTransparent_FUN_0050c050(CMarquee *t
           pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                              (&this_ptr->base,&local_34,&local_4c);
           if (&local_4c != pCVar1) {
-            local_4c.x = pCVar1->x;
-            local_4c.y = pCVar1->y;
-            local_4c.z = pCVar1->z;
+            local_4c = *pCVar1;
           }
           iVar3 = iVar3 + 1;
           core_marquee_cpp_CMarquee_renderLightBulb_FUN_0050bec0(this_ptr,&local_4c);

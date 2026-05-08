@@ -76,10 +76,7 @@ void __cdecl core_passngr_cpp_CPassenger_process_FUN_00545ef0(CPassenger *this_p
          pCVar7->z + (this_ptr->base).base.base.location.position.z;
     pCVar3 = (CDemonActor *)this_ptr->werewolf_actor;
     if (pCVar3 != (CDemonActor *)0x0) {
-      (pCVar3->location).position.x = (pCVar1->position).x;
-      (pCVar3->location).position.y = (this_ptr->base).base.base.location.position.y;
-      (pCVar3->location).position.z = (this_ptr->base).base.base.location.position.z;
-      (pCVar3->location).area_id = (this_ptr->base).base.base.location.area_id;
+      pCVar3->location = *pCVar1;
     }
   }
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020

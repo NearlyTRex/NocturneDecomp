@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 210,
-    "complexity_score": 115,
+    "complexity_score": 100,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 16,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 100,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 310
   },
   "cross_references": [
@@ -251,6 +249,15 @@
       "severity": "moderate",
       "text": "int aiStackY_100c [1017];",
       "type": "stack_alignment_array"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 65,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_NormalizedViewVector.x = local_24.x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -319,7 +326,7 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 38,
-          "line": 105,
+          "line": 103,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -328,14 +335,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 65,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "g_NormalizedViewVector.x = local_24.x;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

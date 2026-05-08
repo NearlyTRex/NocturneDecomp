@@ -66,9 +66,7 @@ int __cdecl engine_light_cpp_calculatePhongLighting_FUN_00505530(int world_x,int
     g_CachedViewPosition.y = g_RelativeY;
     g_CachedViewPosition.z = g_RelativeZ;
     engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0(&g_CachedViewPosition,&local_24);
-    g_NormalizedViewVector.x = local_24.x;
-    g_NormalizedViewVector.y = local_24.y;
-    g_NormalizedViewVector.z = local_24.z;
+    g_NormalizedViewVector = local_24;
   }
   lVar2 = (longlong)iVar8 * (longlong)g_NormalizedViewVector.x;
   lVar3 = (longlong)iVar5 * (longlong)g_NormalizedViewVector.y;

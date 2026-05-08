@@ -35,9 +35,7 @@ int __cdecl core_gargoyle_cpp_CGargoyle_shouldMove_FUN_004e48a0(CGargoyle *this_
       pCVar6 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_18,&local_24)
       ;
       if (&local_24 != pCVar6) {
-        local_24.x = pCVar6->x;
-        local_24.y = pCVar6->y;
-        local_24.z = pCVar6->z;
+        local_24 = *pCVar6;
       }
       fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                         ((((this_ptr->base).victim)->base).orient.vec.y - local_24.y);

@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 5294 (82.0%)
-Functions with suspects: 1160 (18.0%)
+Clean functions: 5347 (82.8%)
+Functions with suspects: 1107 (17.2%)
 
-Total suspect patterns: 4620
-Average suspects per function: 0.72
+Total suspect patterns: 4527
+Average suspects per function: 0.70
 
-Virtual files: 214 total, 58 at 100%, 101 at 90%+
+Virtual files: 214 total, 103 at 100%, 112 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
 
-Average complexity score: 56.3
+Average complexity score: 56.1
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,9 +28,9 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              1880
-  unrolled_memcpy           1267
-  unrolled_strcpy           346
+  pointer_cast              1871
+  unrolled_memcpy           1184
+  unrolled_strcpy           345
   missing_cave_copy         195
   shadow_pointer_walk       181
   raw_address_constant      142
@@ -108,7 +108,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 5244 more
+  ... and 5297 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -139,40 +139,40 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   00511e50: core_menu.cpp_configureSoundOptions_FUN_00511e50 (score: 888, suspects: 12, lines: 743)
   005c07b0: core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0 (score: 847, suspects: 34, lines: 497)
   0057e7c0: core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 (score: 844, suspects: 13, lines: 699)
+  004c25c0: core_fire.cpp_CLaserBeam_render_FUN_004c25c0 (score: 824, suspects: 32, lines: 474)
   005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 809, suspects: 0, lines: 809)
-  004c25c0: core_fire.cpp_CLaserBeam_render_FUN_004c25c0 (score: 784, suspects: 28, lines: 474)
   00578d80: core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (score: 778, suspects: 9, lines: 673)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (451 functions):
-    005e1a30: support_trisock.cpp_formatSocketAddress_FUN_005e1a30
+  pointer_cast (448 functions):
     0050c530: engine_matrix.c_initializeTrigTables_FUN_0050c530
-    00548c50: engine_pcx.c_writePCXScanline_FUN_00548c50
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     00550230: engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230
     00550ce0: engine_pod.cpp_findFilesByExtension_FUN_00550ce0
     005dd200: engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200
-    00441260: engine_colquant.c_computeBoxStatistics_FUN_00441260
     00402ff0: engine_2d.c_drawVLine_FUN_00402ff0
-    ... and 441 more
+    00401a10: engine_2d.c_drawCharacterMaskedColor_FUN_00401a10
+    00401b70: engine_2d.c_drawCharacterHighlighted_FUN_00401b70
+    00403430: engine_2d.c_mapFrameBuffer_FUN_00403430
+    ... and 438 more
 
-  unrolled_memcpy (548 functions):
+  unrolled_memcpy (497 functions):
     0050c640: engine_matrix.c_invertTransformMatrix_FUN_0050c640
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     0054f650: engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
     004ce2d0: engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0
-    00505530: engine_light.cpp_calculatePhongLighting_FUN_00505530
     00410cf0: engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0
     00410d20: engine_alphabit.cpp_copyBytes_FUN_00410d20
     00407290: engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290
     00407d70: engine_3d.c_clipAndDrawLine2D_FUN_00407d70
-    ... and 538 more
+    00407470: engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470
+    ... and 487 more
 
-  unrolled_strcpy (164 functions):
+  unrolled_strcpy (163 functions):
     004820c0: engine_dosio.c_getFullPath_FUN_004820c0
     00481f80: engine_dosio.c_ensureTrailingSlash_FUN_00481f80
     004816c0: engine_dosio.c_getRelativeFilePath_FUN_004816c0
@@ -183,7 +183,7 @@ FUNCTIONS BY SUSPECT TYPE
     004fb250: engine_ini.cpp_CIni_getProfileString_FUN_004fb250
     004fbae0: engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0
     004fbaa0: engine_ini.cpp_CIniFile_init_FUN_004fbaa0
-    ... and 154 more
+    ... and 153 more
 
   missing_cave_copy (28 functions):
     004f80b0: core_icepick.cpp_CIcePick_process_FUN_004f80b0

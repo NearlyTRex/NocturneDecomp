@@ -1582,7 +1582,8 @@ def identify_unrolled_field_copy(decompiled_code):
         if not lhs_root or not rhs_root:
             i += 1
             continue
-        seen_pairs = {(normalize(m.group(1)), m.group(2))}
+        seen_lhs_pairs = {(normalize(m.group(1)), m.group(2))}
+        seen_rhs_pairs = {(normalize(m.group(3)), m.group(2))}
         j = i + 1
         while j < n:
             mj = line_matches_pure(j)
@@ -1591,10 +1592,16 @@ def identify_unrolled_field_copy(decompiled_code):
             if (get_root(mj.group(1)) != lhs_root or
                     get_root(mj.group(3)) != rhs_root):
                 break
-            pair = (normalize(mj.group(1)), mj.group(2))
-            if pair in seen_pairs:
-                break  # repeat assignment — not a struct copy
-            seen_pairs.add(pair)
+            lhs_pair = (normalize(mj.group(1)), mj.group(2))
+            rhs_pair = (normalize(mj.group(3)), mj.group(2))
+            if lhs_pair in seen_lhs_pairs or rhs_pair in seen_rhs_pairs:
+                # Repeat on either side breaks the run. A repeat LHS pair
+                # means the same slot is written twice; a repeat RHS pair
+                # is a fanout (same source written into multiple slots),
+                # which isn't a struct copy and shouldn't collapse.
+                break
+            seen_lhs_pairs.add(lhs_pair)
+            seen_rhs_pairs.add(rhs_pair)
             j += 1
         run_len = j - i
         if run_len >= MIN_RUN:

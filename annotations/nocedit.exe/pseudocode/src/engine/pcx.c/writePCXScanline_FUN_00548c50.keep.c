@@ -24,7 +24,7 @@ void __cdecl engine_pcx_c_writePCXScanline_FUN_00548c50(int row_index,_FILE *pcx
           *pcx_file->_ptr = -0x3f;
           if (*pcx_file->_ptr != '\n') {
             iVar3 = pcx_file->_cnt;
-            *(byte *)((int)&pcx_file->_flag + 1) = *(byte *)((int)&pcx_file->_flag + 1) | 0x10;
+            pcx_file->_flag = pcx_file->_flag | 0x1000;
             pcx_file->_cnt = iVar3 + 1;
             pcx_file->_ptr = pcx_file->_ptr + 1;
             goto LAB_00548c8e;
@@ -44,7 +44,7 @@ LAB_00548c8e:
           goto LAB_00548c9a;
         }
         iVar3 = pcx_file->_cnt;
-        *(byte *)((int)&pcx_file->_flag + 1) = *(byte *)((int)&pcx_file->_flag + 1) | 0x10;
+        pcx_file->_flag = pcx_file->_flag | 0x1000;
         pcx_file->_cnt = iVar3 + 1;
         pcx_file->_ptr = pcx_file->_ptr + 1;
       }

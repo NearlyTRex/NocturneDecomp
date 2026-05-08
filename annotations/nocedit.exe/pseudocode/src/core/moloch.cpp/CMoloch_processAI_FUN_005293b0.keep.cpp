@@ -46,11 +46,7 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_005293b0(CMoloch *this_ptr,fl
                  (pCVar5->base).base.location.position.y;
     local_74.z = (this_ptr->base).base.base.location.position.z -
                  (pCVar5->base).base.location.position.z;
-    if (&local_74 != &local_44) {
-      local_74.x = local_44.x;
-      local_74.y = local_44.y;
-      local_74.z = local_44.z;
-    }
+    local_74 = local_44;
     (this_ptr->base).base.turn_angle_accumulator = 0.0;
     if (SQRT(local_74.z * local_74.z + local_74.x * local_74.x + local_74.y * local_74.y) <=
         (float)6) {
@@ -106,16 +102,10 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_005293b0(CMoloch *this_ptr,fl
                   (this_ptr->base).base.base.location.position.y;
     CStack_38.z = (pCVar3->base).base.location.position.z -
                   (this_ptr->base).base.base.location.position.z;
-    if (&local_74 != &CStack_38) {
-      local_74.x = CStack_38.x;
-      local_74.y = CStack_38.y;
-      local_74.z = CStack_38.z;
-    }
+    local_74 = CStack_38;
     pCVar7 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_50,&local_74);
     if (&local_74 != pCVar7) {
-      local_74.x = pCVar7->x;
-      local_74.y = pCVar7->y;
-      local_74.z = pCVar7->z;
+      local_74 = *pCVar7;
     }
     fStack_58 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                           (local_74.y - (this_ptr->base).base.base.orient.vec.y);

@@ -70,11 +70,7 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004f13f0(CHaystack *this_p
                  (this_ptr->base).base.base.location.position.y;
     local_78.z = (pCVar9->base).base.location.position.z -
                  (this_ptr->base).base.base.location.position.z;
-    if (&local_48 != &local_78) {
-      local_48.x = local_78.x;
-      local_48.y = local_78.y;
-      local_48.z = local_78.z;
-    }
+    local_48 = local_78;
     fVar2 = SQRT(local_48.z * local_48.z + local_48.x * local_48.x + local_48.y * local_48.y);
     if ((float)6 <= fVar2) {
       this_ptr_01 = (CPathMap *)0x0;
@@ -155,16 +151,10 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004f13f0(CHaystack *this_p
                  (this_ptr->base).base.base.location.position.y;
     local_6c.z = (pCVar9->base).base.location.position.z -
                  (this_ptr->base).base.base.location.position.z;
-    if (&local_48 != &local_6c) {
-      local_48.x = local_6c.x;
-      local_48.y = local_6c.y;
-      local_48.z = local_6c.z;
-    }
+    local_48 = local_6c;
     pCVar3 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_3c,&local_48);
     if (&local_48 != pCVar3) {
-      local_48.x = pCVar3->x;
-      local_48.y = pCVar3->y;
-      local_48.z = pCVar3->z;
+      local_48 = *pCVar3;
     }
     local_50 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                          (local_48.y - (this_ptr->base).base.base.orient.vec.y);

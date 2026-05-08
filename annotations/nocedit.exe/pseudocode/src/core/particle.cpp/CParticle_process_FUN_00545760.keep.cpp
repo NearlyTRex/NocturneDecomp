@@ -22,9 +22,7 @@ void __cdecl core_particle_cpp_CParticle_process_FUN_00545760(CParticle *this_pt
   
   if (0.0 < this_ptr->lifetime_remaining) {
     if ((CParticle *)&this_ptr->previous_position != this_ptr) {
-      (this_ptr->previous_position).x = (this_ptr->position).x;
-      (this_ptr->previous_position).y = (this_ptr->position).y;
-      (this_ptr->previous_position).z = (this_ptr->position).z;
+      this_ptr->previous_position = this_ptr->position;
     }
     this_ptr->was_in_solid = this_ptr->is_in_solid;
     fVar4 = g_CGamePtr->delta_time_float;

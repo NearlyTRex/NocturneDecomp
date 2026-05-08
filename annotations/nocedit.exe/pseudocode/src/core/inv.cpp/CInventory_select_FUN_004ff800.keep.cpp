@@ -10,7 +10,6 @@
 int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDemonActor *actor_ptr)
 
 {
-  char cVar2;
   int iVar2;
   CAmmo *pCVar3;
   int iVar3;
@@ -19,13 +18,10 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDe
   char *pcVar5;
   CGasMask *pCVar5;
   CBoxActor *pCVar6;
-  char *pcVar6;
   char *pcVar8;
   char local_114 [256];
-  char cVar1;
-  byte bVar8;
-  
-  bVar8 = 0;
+
+
   iVar2 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CAmmo");
   if (iVar2 == 0) {
     iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CWeapon");
@@ -66,16 +62,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDe
         return 1;
       }
       pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("You have used : ");
-      pcVar6 = local_114;
-      do {
-        cVar1 = *pcVar4;
-        *pcVar6 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar2 = pcVar4[1];
-        pcVar4 = pcVar4 + 2;
-        pcVar6[1] = cVar2;
-        pcVar6 = pcVar6 + 2;
-      } while (cVar2 != '\0');
+      strcpy(local_114,pcVar4);
       pcVar5 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(actor_ptr);
       strcat(local_114,pcVar5);
       pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(".");

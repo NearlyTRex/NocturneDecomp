@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1296,
-    "complexity_score": 784,
+    "complexity_score": 824,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 474,
-    "suspect_count": 28,
+    "suspect_count": 32,
     "suspect_types": [
       "pointer_cast",
       "raw_address_constant",
@@ -1128,11 +1128,27 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom field-by-field struct copy (11 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 357,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar4->vertex_buffer_ptr->g = (this_ptr->color).g;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 360,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar4->vertex_buffer_ptr[1].g = (this_ptr->color).g;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 363,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar4->vertex_buffer_ptr[2].g = (this_ptr->color).g;",
       "type": "unrolled_memcpy"
     },
     {
@@ -1152,11 +1168,27 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom field-by-field struct copy (11 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 456,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar4->vertex_buffer_ptr->g = (this_ptr->color).g;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 459,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar4->vertex_buffer_ptr[1].g = (this_ptr->color).g;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 462,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar4->vertex_buffer_ptr[2].g = (this_ptr->color).g;",
       "type": "unrolled_memcpy"
     },
     {

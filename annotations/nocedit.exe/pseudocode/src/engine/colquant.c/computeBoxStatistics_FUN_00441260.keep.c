@@ -62,22 +62,17 @@ void __cdecl engine_colquant_c_computeBoxStatistics_FUN_00441260(SColorQuantMapp
   workspace->boxes[box_index].avg_green = (short)(int)ROUND(ROUND(local_70 / (double)(uint)workspace->boxes[box_index].count));
   workspace->boxes[box_index].avg_blue = (short)(int)ROUND(ROUND(local_50 / (double)(uint)workspace->boxes[box_index].count));
 
-  *(uint *)&workspace->boxes[box_index].spread_red = 0;
-  *(uint *)((int)&workspace->boxes[box_index].spread_red + 4) = 0;
+  workspace->boxes[box_index].spread_red = 0.0;
   local_68 = 0.0;
-  *(uint *)&workspace->boxes[box_index].spread_green = 0;
-  *(uint *)((int)&workspace->boxes[box_index].spread_green + 4) = 0;
+  workspace->boxes[box_index].spread_green = 0.0;
   local_58 = 0.0;
-  *(uint *)&workspace->boxes[box_index].spread_blue = 0;
-  *(uint *)((int)&workspace->boxes[box_index].spread_blue + 4) = 0;
+  workspace->boxes[box_index].spread_blue = 0.0;
   local_90 = 0.0;
-  *(uint *)&workspace->boxes[box_index].spread_intensity = 0;
-  *(uint *)((int)&workspace->boxes[box_index].spread_intensity + 4) = 0;
+  workspace->boxes[box_index].spread_intensity = 0.0;
   local_60 = 0.0;
-  *(uint *)&workspace->boxes[box_index].total_weighted_error = 0;
+  workspace->boxes[box_index].total_weighted_error = 0.0;
   workspace->boxes[box_index].avg_intensity = (short)(int)ROUND(ROUND(local_48 / (double)(uint)workspace->boxes[box_index].count));
   iVar6 = workspace->boxes[box_index].start_index;
-  *(uint *)((int)&workspace->boxes[box_index].total_weighted_error + 4) = 0;
   for (iVar6 = iVar6 * 4; iVar6 < iVar8 * 4; iVar6 = iVar6 + 4) {
     uVar9 = (uint)workspace->boxes[box_index].avg_red -
             (uint)(byte)workspace->color_data[iVar6];
