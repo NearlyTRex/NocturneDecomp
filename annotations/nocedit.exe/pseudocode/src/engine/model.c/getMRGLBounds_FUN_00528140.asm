@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *mrgl_data,SMRGLModelBounds *output_bounds)
+; SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderBasic *mrgl_data,SMRGLModelBounds *output_bounds)
 ;
 ; Parameters:
-; SMRGLHeaderExtended * Stack[0x4]:4   mrgl_data
+; SMRGLHeaderBasic * Stack[0x4]:4   mrgl_data
 ; Local Variables:
 ; char[80]         Stack[-0x160]:80  local_160
 ; SMRGLModelBounds Stack[-0x110]:52  local_110
@@ -348,7 +348,7 @@ section .text
     LEA EDI,[ESP + 0xbc]                ; 00528564
     MOV EBX,EAX                         ; 0052856b
     CALL engine_model.c_getMRGLBounds_FUN_00528140 ; 0052856d
-        ;   XREF to: 00528140 (UNCONDITIONAL_CALL)  ; SMRGLModelBounds * engine_model.c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended * mrgl_data, SMRGLModelBounds * output_bounds)
+        ;   XREF to: 00528140 (UNCONDITIONAL_CALL)  ; SMRGLModelBounds * engine_model.c_getMRGLBounds_FUN_00528140(SMRGLHeaderBasic * mrgl_data, SMRGLModelBounds * output_bounds)
     ADD ESP,0x4                         ; 00528572
     JMP 0x03fc36dc                      ; 00528575
         ;   XREF to: 03fc36dc (UNCONDITIONAL_JUMP)  ; LAB_03fc36dc

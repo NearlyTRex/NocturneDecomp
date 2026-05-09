@@ -4,21 +4,21 @@ STRUCT QUALITY REPORT
 
 SUMMARY
 ----------------------------------------------------------------------
-Total structs:              527
-Fully clean structs:        520
-Structs with issues:        7
-Unreferenced structs:       13
+Total structs:              532
+Fully clean structs:        524
+Structs with issues:        8
+Unreferenced structs:       16
 
-Total fields:               4132
-Clean fields:               4122
+Total fields:               4143
+Clean fields:               4132
 Unknown (unk*) fields:      5
 Padding (pad*) fields:      4
-Reserved (reserved*) fields:1
+Reserved (reserved*) fields:2
 Default (field_*) fields:   0
-Overall field quality:      99.8%
+Overall field quality:      99.7%
 
 ======================================================================
-UNREFERENCED STRUCTS (13)
+UNREFERENCED STRUCTS (16)
 ----------------------------------------------------------------------
 These structs are not referenced in any source or header file.
 
@@ -29,7 +29,10 @@ These structs are not referenced in any source or header file.
   CVector4f                                 /Nocturne/Class/Game
   SConditionVariable                        /Nocturne/Struct/Game
   SLineStrip3Index                          /Nocturne/Struct/Game
+  SMRGLIndexBlock                           /Nocturne/Struct/Game
+  SMRGLPointerArray                         /Nocturne/Struct/Game
   SMRGLPrimitivePoly                        /Nocturne/Struct/Game
+  SMRGLVertexBlock                          /Nocturne/Struct/Game
   SNetPacket_ChatMessage                    /Nocturne/Struct/Game
   SNetPacket_GameSettings                   /Nocturne/Struct/Game
   SNetPacket_PlayerAnnounce                 /Nocturne/Struct/Game
@@ -37,10 +40,14 @@ These structs are not referenced in any source or header file.
   SNetPacket_ServerAccept                   /Nocturne/Struct/Game
 
 ======================================================================
-STRUCTS WITH PROBLEMATIC FIELDS (7)
+STRUCTS WITH PROBLEMATIC FIELDS (8)
 ----------------------------------------------------------------------
 
 SMRGLSkyTexture                            66.7% complete  (2/3 fields clean)
+  Issues: 1 reserved
+  Fields: reserved
+
+SMRGLTextureList                           66.7% complete  (2/3 fields clean)
   Issues: 1 reserved
   Fields: reserved
 
@@ -69,7 +76,7 @@ SMpegFrameHeader                           91.7% complete  (11/12 fields clean)
   Fields: padding
 
 ======================================================================
-FULLY CLEAN STRUCTS (520)
+FULLY CLEAN STRUCTS (524)
 ----------------------------------------------------------------------
   C3DSCamera
   C3DSLight
@@ -474,10 +481,12 @@ FULLY CLEAN STRUCTS (520)
   SMRGLHeaderBasicCountOnly
   SMRGLHeaderExtended
   SMRGLHeaderPrimitive
+  SMRGLIndexBlock
   SMRGLKeyframe
   SMRGLKeyframeModel
   SMRGLLightPrimitive
   SMRGLModelBounds
+  SMRGLPointerArray
   SMRGLPrimitivePoly
   SMRGLPrimitivePolyIndex
   SMRGLPrimitiveQuad
@@ -485,8 +494,10 @@ FULLY CLEAN STRUCTS (520)
   SMRGLPrimitiveTriangle
   SMRGLPrimitiveTriangleIndex
   SMRGLTextureBasic
+  SMRGLTextureListEntry
   SMRGLTextureLod
   SMRGLVertex
+  SMRGLVertexBlock
   SMemHead
   SMixBuffer
   SModelPartName

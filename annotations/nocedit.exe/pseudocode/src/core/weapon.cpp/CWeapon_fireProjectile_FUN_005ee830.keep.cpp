@@ -38,9 +38,7 @@ void __cdecl core_weapon_cpp_CWeapon_fireProjectile_FUN_005ee830(CWeapon *this_p
   }
   core_fire_cpp_SLaserInfo_ctor_FUN_004c81f0(&local_94);
   local_94.laser_type = 1;
-  local_94.color.r = (this_ptr->muzzle_flash_color).r;
-  local_94.color.g = (this_ptr->muzzle_flash_color).g;
-  local_94.color.b = (this_ptr->muzzle_flash_color).b;
+  local_94.color = this_ptr->muzzle_flash_color;
   local_94.intensity = 1.0;
   pCVar2 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790
                               (this_ptr->carried_by_actor,g_CHeroClassInfo.name_hash);

@@ -10,14 +10,10 @@
 void __cdecl core_script_cpp_CScript_loadLineToBuffer_FUN_00566230(CScript *this_ptr,int line_number)
 
 {
-  char cVar1;
   int iVar2;
   uint uVar3;
   char *pcVar5;
-  char *pcVar6;
-  byte bVar7;
-  
-  bVar7 = 0;
+
   pcVar5 = &s_EmptyChar_00643f94;
   if (-1 < line_number) {
     iVar2 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&this_ptr->script_text);
@@ -26,15 +22,7 @@ void __cdecl core_script_cpp_CScript_loadLineToBuffer_FUN_00566230(CScript *this
                          (&this_ptr->script_text,line_number);
     }
   }
-  uVar3 = 0xffffffff;
-  pcVar6 = pcVar5;
-  do {
-    if (uVar3 == 0) break;
-    uVar3 = uVar3 - 1;
-    cVar1 = *pcVar6;
-    pcVar6 = pcVar6 + (uint)bVar7 * -2 + 1;
-  } while (cVar1 != '\0');
-  uVar3 = ~uVar3 - 1;
+  uVar3 = strlen(pcVar5);
   if (0x3fff < uVar3) {
     uVar3 = 0x3fff;
   }

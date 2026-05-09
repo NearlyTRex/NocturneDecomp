@@ -218,7 +218,7 @@ LAB_00458835:
       g_CurrentLineNumber = 699;
       core_main_c_displayErrorAndQuit_FUN_00506f10("loadBinary - Out of mem!");
     }
-    engine_model_c_getMRGLBounds_FUN_00528140(local_1c,&local_198);
+    engine_model_c_getMRGLBounds_FUN_00528140(&local_1c->base,&local_198);
     engine_model_c_freeMRGLData_FUN_005280b0(local_1c);
     _sprintf
               (local_160,"X size : %f",

@@ -7,17 +7,15 @@
   "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 407,
-    "complexity_score": 196,
+    "complexity_score": 180,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 181,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_inlined_function"
-    ],
-    "total_lines": 588
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 180,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 587
   },
   "cross_references": [
     {
@@ -47,7 +45,7 @@
     ],
     "convention": "__stack_esi",
     "name": "engine_model.c_getMRGLBounds_FUN_00528140",
-    "signature": "SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *mrgl_data,SMRGLModelBounds *output_bounds)"
+    "signature": "SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderBasic *mrgl_data,SMRGLModelBounds *output_bounds)"
   },
   "function_calls": [
     {
@@ -203,8 +201,17 @@
   },
   "resolved_suspects": [
     {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 166,
+      "line": 165,
       "match": "(SMRGLModelBounds *)((int)puVar11",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -213,7 +220,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 169,
+      "line": 168,
       "match": "(SMRGLModelBounds *)((int)pSVar6",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -222,7 +229,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 165,
+      "line": 164,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -231,7 +238,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (13 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 171,
+      "line": 170,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -356,7 +363,7 @@
         "name": "mrgl_data",
         "offset": 4,
         "size": 4,
-        "type": "SMRGLHeaderExtended *"
+        "type": "SMRGLHeaderBasic *"
       }
     ]
   },
@@ -367,8 +374,8 @@
       "diagnostics": [
         {
           "check_id": "uninitvar",
-          "column": 15,
-          "line": 166,
+          "column": 20,
+          "line": 134,
           "message": "Uninitialized variable: *puVar11",
           "severity": "warning"
         }
@@ -377,14 +384,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    }
-  ]
+  "suspects": []
 }

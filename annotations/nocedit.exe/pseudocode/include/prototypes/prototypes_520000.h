@@ -41,6 +41,7 @@
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SHuffmanTable.h"
 #include "types/structs/SInputFace.h"
+#include "types/structs/SMRGLHeaderBasic.h"
 #include "types/structs/SMRGLHeaderExtended.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SMRGLModelBounds.h"
@@ -178,7 +179,7 @@ CMobster * __cdecl core_mobster_cpp_CMobster_dtor_FUN_00527c70(CMobster *this_pt
 void __cdecl engine_model_c_byteswapMRGLData_FUN_00527e40(SMRGLHeaderExtended *mrgl_data,int data_size);
 SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_00527ec0(char *filename);
 void __cdecl engine_model_c_freeMRGLData_FUN_005280b0(SMRGLHeaderExtended *mrgl_data);
-SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *mrgl_data,SMRGLModelBounds *output_bounds);
+SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderBasic *mrgl_data,SMRGLModelBounds *output_bounds);
 int __cdecl engine_model_c_getMRGLSize_FUN_00528700(SMRGLHeaderExtended *header);
 void __cdecl engine_model_c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended *mrgl);
 void __cdecl engine_model_c_initializeMRGLModel_FUN_00528940(SMRGLHeaderExtended *mrgl);

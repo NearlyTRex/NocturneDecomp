@@ -7,13 +7,13 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 5569 (86.3%)
-Functions with suspects: 885 (13.7%)
+Clean functions: 5574 (86.4%)
+Functions with suspects: 880 (13.6%)
 
-Total suspect patterns: 4275
+Total suspect patterns: 4268
 Average suspects per function: 0.66
 
-Virtual files: 214 total, 125 at 100%, 133 at 90%+
+Virtual files: 214 total, 127 at 100%, 134 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
@@ -28,15 +28,15 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              1859
-  unrolled_memcpy           1057
+  pointer_cast              1856
+  unrolled_memcpy           1056
   unrolled_strcpy           309
   missing_cave_copy         195
   shadow_pointer_walk       153
   raw_address_constant      142
   unrolled_memset           106
-  unrolled_strlen           92
-  warning_inlined_function  69
+  unrolled_strlen           90
+  warning_inlined_function  68
   unrolled_strchr           46
   bitcast_double_pair       44
   stack_alignment_array     31
@@ -106,7 +106,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 5519 more
+  ... and 5524 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -144,7 +144,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (439 functions):
+  pointer_cast (438 functions):
     0050c530: engine_matrix.c_initializeTrigTables_FUN_0050c530
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
@@ -155,9 +155,9 @@ FUNCTIONS BY SUSPECT TYPE
     00401b70: engine_2d.c_drawCharacterHighlighted_FUN_00401b70
     00403430: engine_2d.c_mapFrameBuffer_FUN_00403430
     00401900: engine_2d.c_drawCharacterMasked_FUN_00401900
-    ... and 429 more
+    ... and 428 more
 
-  unrolled_memcpy (380 functions):
+  unrolled_memcpy (379 functions):
     0050c640: engine_matrix.c_invertTransformMatrix_FUN_0050c640
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
@@ -168,7 +168,7 @@ FUNCTIONS BY SUSPECT TYPE
     00407290: engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290
     00407d70: engine_3d.c_clipAndDrawLine2D_FUN_00407d70
     00407470: engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470
-    ... and 370 more
+    ... and 369 more
 
   unrolled_strcpy (128 functions):
     00550ce0: engine_pod.cpp_findFilesByExtension_FUN_00550ce0
@@ -235,7 +235,7 @@ FUNCTIONS BY SUSPECT TYPE
     00508920: core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920
     ... and 30 more
 
-  unrolled_strlen (44 functions):
+  unrolled_strlen (42 functions):
     00550ce0: engine_pod.cpp_findFilesByExtension_FUN_00550ce0
     004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
     004b2a60: engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
@@ -245,13 +245,12 @@ FUNCTIONS BY SUSPECT TYPE
     005acf20: sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20
     0057e7c0: core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0
     00580730: core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730
-    00566230: core_script.cpp_CScript_loadLineToBuffer_FUN_00566230
-    ... and 34 more
+    00561a30: core_script.cpp_parseConditionExpression_FUN_00561a30
+    ... and 32 more
 
-  warning_inlined_function (68 functions):
+  warning_inlined_function (67 functions):
     0050c530: engine_matrix.c_initializeTrigTables_FUN_0050c530
     0050e5b0: engine_matrix.c_projectToScreen_FUN_0050e5b0
-    00528140: engine_model.c_getMRGLBounds_FUN_00528140
     005b0a30: sound_sndwav.cpp_CWavOutDevice_setMode_FUN_005b0a30
     005a8e90: sound_sndmain.cpp_startSfx_FUN_005a8e90
     005a75e0: sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0
@@ -259,7 +258,8 @@ FUNCTIONS BY SUSPECT TYPE
     005f9470: core_zombie.cpp_CZombie_process_FUN_005f9470
     004257f0: core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0
     004825c0: core_dpart.cpp_CDemonPart_loadFromFile_FUN_004825c0
-    ... and 58 more
+    00482e40: core_dpart.cpp_CDemonPart_processAndFinalize_FUN_00482e40
+    ... and 57 more
 
   unrolled_strchr (22 functions):
     004b5640: engine_fileio.cpp_CFileManager_registerFiles_FUN_004b5640

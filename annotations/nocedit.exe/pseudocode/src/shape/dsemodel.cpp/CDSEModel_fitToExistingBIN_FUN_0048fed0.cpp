@@ -38,7 +38,7 @@ int __cdecl shape_dsemodel_cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0(CDSEModel
   if (file_ptr != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\shape\\dsemodel.cpp",0x180);
     mrgl_data = engine_model_c_loadModelFile_FUN_00527ec0(filename);
-    engine_model_c_getMRGLBounds_FUN_00528140(mrgl_data,&local_c4);
+    engine_model_c_getMRGLBounds_FUN_00528140(&mrgl_data->base,&local_c4);
     fVar1 = (float)0.00390625;
     fVar2 = (float)0.00390625;
     fVar3 = (float)0.00390625;

@@ -17,7 +17,7 @@ void __cdecl freeMRGLData(SMRGLHeaderExtended *mrgl_data);
 
 // Original: engine_model.c_getMRGLBounds_FUN_00528140
 // Address: 00528140
-SMRGLModelBounds * __stack_esi getMRGLBounds(SMRGLHeaderExtended *mrgl_data,SMRGLModelBounds *output_bounds);
+SMRGLModelBounds * __stack_esi getMRGLBounds(SMRGLHeaderBasic *mrgl_data,SMRGLModelBounds *output_bounds);
 
 // Original: engine_model.c_getMRGLSize_FUN_00528700
 // Address: 00528700

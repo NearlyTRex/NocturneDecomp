@@ -722,7 +722,7 @@ section .text
     PUSH EAX                            ; 004588bc
     LEA ESI,[EBP + 0xfffffe78]          ; 004588bd
     CALL engine_model.c_getMRGLBounds_FUN_00528140 ; 004588c3
-        ;   XREF to: 00528140 (UNCONDITIONAL_CALL)  ; SMRGLModelBounds * engine_model.c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended * mrgl_data, SMRGLModelBounds * output_bounds)
+        ;   XREF to: 00528140 (UNCONDITIONAL_CALL)  ; SMRGLModelBounds * engine_model.c_getMRGLBounds_FUN_00528140(SMRGLHeaderBasic * mrgl_data, SMRGLModelBounds * output_bounds)
     ADD ESP,0x4                         ; 004588c8
     JMP 0x03fc4abd                      ; 004588cb
         ;   XREF to: 03fc4abd (UNCONDITIONAL_JUMP)  ; LAB_03fc4abd

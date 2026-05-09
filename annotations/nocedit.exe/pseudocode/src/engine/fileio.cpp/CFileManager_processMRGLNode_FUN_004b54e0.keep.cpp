@@ -12,7 +12,6 @@ void __cdecl engine_fileio_cpp_CFileManager_processMRGLNode_FUN_004b54e0(CFileMa
 {
   uint uVar1;
   SMRGLHeaderExtended *mrgl_node_00;
-  int *texture_filename;
   char *filename;
   SMRGLHeaderExtended *pSVar2;
   int iVar1;
@@ -51,15 +50,10 @@ void __cdecl engine_fileio_cpp_CFileManager_processMRGLNode_FUN_004b54e0(CFileMa
                   (this_ptr,(char *)&local_14->child_count);
       }
       if ((local_14->base).type == 0x1d) {
-        iVar3 = 0;
-        texture_filename = &local_14[2].base.count;
-        if (0 < local_14->child_count) {
-          do {
-            iVar3 = iVar3 + 1;
-            engine_fileio_cpp_CFileManager_extractTexture_FUN_004b53e0
-                      (this_ptr,(char *)texture_filename);
-            texture_filename = texture_filename + 8;
-          } while (iVar3 < local_14->child_count);
+        SMRGLTextureList *list = (SMRGLTextureList *)local_14;
+        for (iVar3 = 0; iVar3 < list->base.child_count; iVar3 = iVar3 + 1) {
+          engine_fileio_cpp_CFileManager_extractTexture_FUN_004b53e0
+                    (this_ptr,list->entries[iVar3].texture_name);
         }
       }
       uVar1 = engine_model_c_getMRGLSize_FUN_00528700(local_14);

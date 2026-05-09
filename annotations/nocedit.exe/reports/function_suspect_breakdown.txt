@@ -4,10 +4,10 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 5563 functions
-  1 suspects: 163 functions
+  0 suspects: 5568 functions
+  1 suspects: 159 functions
   2 suspects: 218 functions
-  3 suspects: 128 functions
+  3 suspects: 127 functions
   4 suspects: 102 functions
   5 suspects: 46 functions
   6 suspects: 55 functions
@@ -42,7 +42,7 @@ SUSPECT COUNT DISTRIBUTION
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [unrolled_memcpy] (70 functions)
+  [unrolled_memcpy] (69 functions)
   ------------------------------------------------------------
     core_fire.cpp_CExplosion_activate_FUN_004c3970     ( 50 lines)
       (this_ptr->position).x = position->x;...
@@ -74,8 +74,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       result_root_pos->x = local_44.x;...
     core_platfrm.cpp_CPlatform_attachActor_FUN_0054e1e ( 62 lines)
       pCVar6->attach_actors[0].matrix.m[0].w = local_70.m[0].w;...
-    core_weapon.cpp_CWeapon_fireProjectile_FUN_005ee83 ( 63 lines)
-      local_94.color.r = (this_ptr->muzzle_flash_color).r;...
     core_skeleton.cpp_CDeformableModelInstance_getRoot ( 66 lines)
       output_buffer->x = g_ZeroVector.f.x;...
     core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f ( 68 lines)
@@ -382,22 +380,10 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_ladder.cpp_CLadder_renderOpaque_FUN_00502620  (290 lines)
       CStack_30.y = (int)ROUND(fStack_y * 256.0f);...
 
-  [unrolled_strlen] (2 functions)
-  ------------------------------------------------------------
-    core_script.cpp_CScript_loadLineToBuffer_FUN_00566 ( 44 lines)
-      do {...
-    shape_edittool.cpp_CEditorTools_getClipboardText_F ( 47 lines)
-      do {...
-
   [negative_offset] (1 functions)
   ------------------------------------------------------------
     core_morph.cpp_CMorph_getReady_FUN_0052b680        (151 lines)
       local_34 = (CMorph *)&local_34[-1].models[1].parts[1].start_...
-
-  [warning_inlined_function] (1 functions)
-  ------------------------------------------------------------
-    engine_model.c_getMRGLBounds_FUN_00528140          (181 lines)
-      /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 ...
 
   [raw_address_constant] (1 functions)
   ------------------------------------------------------------
@@ -919,8 +905,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/charactr.cpp, Lines: 48, Types: ['pointer_cast']
   core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920
     File: core/manpuz.cpp, Lines: 49, Types: ['unrolled_memset']
-  engine_model.c_loadMRGLTextures_FUN_00528870
-    File: engine/model.c, Lines: 51, Types: ['pointer_cast']
   core_setdir.cpp_CZThumb_render_FUN_00574f20
     File: core/setdir.cpp, Lines: 52, Types: ['pointer_cast']
   shape_design.c_removeDuplicatePolygons_FUN_004651b0

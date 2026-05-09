@@ -3,29 +3,26 @@
 // MANUAL RECONSTRUCTION
 // Address Range: [[00528140, 005285ea] [03fc3673, 03fc3741]]
 // Convention: __stack_esi
-// Signature: SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *mrgl_data,SMRGLModelBounds *output_bounds)
+// Signature: SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderBasic *mrgl_data,SMRGLModelBounds *output_bounds)
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
-SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *mrgl_data,SMRGLModelBounds *output_bounds)
+SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderBasic *mrgl_data,SMRGLModelBounds *output_bounds)
 
 {
   longlong lVar1;
-  int *piVar3;
   SMRGLHeaderExtended *mrgl_data_00;
   int iVar6;
   int iVar4;
-  int iVar7;
   uint uVar8;
   uint uVar5;
   int iVar9;
   int iVar10;
   SMRGLModelBounds *puVar11;
   int iVar14;
+  int i;
+  SMRGLVertexBlock *vert_block;
   char local_160 [80];
-  SMRGLModelBounds local_110;
   SMRGLModelBounds local_dc;
   SMRGLModelBounds local_a8;
   SMRGLModelBounds local_74;
@@ -35,44 +32,33 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHe
   float local_18;
   float local_14;
   longlong lVar4;
-  int *piVar2;
   float fVar5;
-  int *piVar1;
-  int iVar3;
-  byte bVar15;
-  SMRGLModelBounds *pSVar6;
-  
-  bVar15 = 0;
-  iVar4 = (mrgl_data->base).type;
+
+  iVar4 = mrgl_data->type;
   if (iVar4 == 0x20) {
-    mrgl_data_00 = engine_model_c_loadModelFile_FUN_00527ec0((char *)(mrgl_data + 2));
-    engine_model_c_getMRGLBounds_FUN_00528140(mrgl_data_00,&local_74);
+    mrgl_data_00 = engine_model_c_loadModelFile_FUN_00527ec0(((SMRGLKeyframeModel *)mrgl_data)->filenames[0]);
+    engine_model_c_getMRGLBounds_FUN_00528140(&mrgl_data_00->base,&local_74);
     engine_model_c_freeMRGLData_FUN_005280b0(mrgl_data_00);
-    iVar4 = 0xd;
-    pSVar6 = &local_110;
     puVar11 = &local_a8;
   }
   else if (iVar4 == 0x26) {
-    pSVar6 = &local_110;
-    engine_boss_c_modelStructNotSupported4_FUN_0041dbe0(mrgl_data,&local_dc);
-    iVar4 = 0xd;
+    engine_boss_c_modelStructNotSupported4_FUN_0041dbe0((SMRGLHeaderExtended *)mrgl_data,&local_dc);
     puVar11 = &local_dc;
   }
   else {
-    piVar3 = &mrgl_data[1].child_count;
-    if ((mrgl_data->base).type != 0x14) {
+    if (mrgl_data->type != 0x14) {
       g_CurrentFilename = "..\\engine\\model.c";
       g_CurrentLineNumber = 0x172;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to read magnify!");
     }
-    iVar4 = (int)(0x7fffffff / (longlong)(mrgl_data->base).count) * 2;
-    if (mrgl_data->child_count != 2) {
+    iVar4 = (int)(0x7fffffff / (longlong)mrgl_data->count) * 2;
+    vert_block = (SMRGLVertexBlock *)&mrgl_data[1];
+    if (vert_block->base.base.type != 2) {
       _sprintf(local_160,"Unable to read verticies in model!");
       g_CurrentFilename = "..\\engine\\model.c";
       g_CurrentLineNumber = 0x176;
       core_main_c_displayErrorAndQuit_FUN_00506f10(local_160);
     }
-    iVar7 = 0;
     iVar14 = -0x80000000;
     iVar10 = -0x80000000;
     local_20 = 0x7fffffff;
@@ -82,35 +68,19 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHe
     local_1c = 0.0;
     local_18 = 0.0;
     local_14 = 0.0;
-    if (0 < mrgl_data[1].base.count) {
-      do {
-        if (iVar10 < *piVar3) {
-          iVar10 = *piVar3;
-        }
-        if (iVar14 < piVar3[1]) {
-          iVar14 = piVar3[1];
-        }
-        if (local_24 < piVar3[2]) {
-          local_24 = piVar3[2];
-        }
-        if (*piVar3 < iVar9) {
-          iVar9 = *piVar3;
-        }
-        if (piVar3[1] < iVar6) {
-          iVar6 = piVar3[1];
-        }
-        if (piVar3[2] < local_20) {
-          local_20 = piVar3[2];
-        }
-        iVar3 = *piVar3;
-        piVar1 = piVar3 + 1;
-        piVar2 = piVar3 + 2;
-        piVar3 = piVar3 + 3;
-        iVar7 = iVar7 + 1;
-        local_14 = (float)iVar3 + local_14;
-        local_18 = (float)*piVar1 + local_18;
-        local_1c = (float)*piVar2 + local_1c;
-      } while (iVar7 < mrgl_data[1].base.count);
+    for (i = 0; i < vert_block->base.child_count; i = i + 1) {
+      int x = vert_block->vertices[i].x;
+      int y = vert_block->vertices[i].y;
+      int z = vert_block->vertices[i].z;
+      if (iVar10 < x) iVar10 = x;
+      if (iVar14 < y) iVar14 = y;
+      if (local_24 < z) local_24 = z;
+      if (x < iVar9) iVar9 = x;
+      if (y < iVar6) iVar6 = y;
+      if (z < local_20) local_20 = z;
+      local_14 = (float)x + local_14;
+      local_18 = (float)y + local_18;
+      local_1c = (float)z + local_1c;
     }
     local_a8.max_scaled.x =
          (uint)((longlong)iVar4 * (longlong)iVar10) >> 0x10 |
@@ -130,7 +100,7 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHe
     local_a8.min_scaled.z =
          (uint)((longlong)iVar4 * (longlong)local_20) >> 0x10 |
          (int)((ulonglong)((longlong)iVar4 * (longlong)local_20) >> 0x20) << 0x10;
-    fVar5 = 1.0 / (float)mrgl_data[1].base.count;
+    fVar5 = 1.0 / (float)vert_block->base.child_count;
     lVar4 = (longlong)iVar4 * (longlong)(int)ROUND(ROUND(local_14 * fVar5));
     local_a8.center_scaled.x = (uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10;
     lVar1 = (longlong)iVar4 * (longlong)(int)ROUND(ROUND(local_18 * fVar5));
@@ -155,15 +125,12 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHe
     if (local_a8.extent.z < (int)((local_a8.min_scaled.z ^ uVar5) - uVar5)) {
       local_a8.extent.z = (local_a8.min_scaled.z ^ uVar5) - uVar5;
     }
-    iVar4 = 0xd;
     local_a8.radius_scaled =
          (int)ROUND(ROUND(SQRT((float10)local_a8.extent.z * (float10)local_a8.extent.z +
                                (float10)local_a8.extent.y * (float10)local_a8.extent.y +
                                (float10)local_a8.extent.x * (float10)local_a8.extent.x)));
     puVar11 = &local_a8;
-    pSVar6 = &local_110;
   }
-  local_110 = *puVar11;
-  *output_bounds = local_110;
+  *output_bounds = *puVar11;
   return output_bounds;
 }

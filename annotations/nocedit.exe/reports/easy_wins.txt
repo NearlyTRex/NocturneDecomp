@@ -10,32 +10,13 @@ sorted by effort required (lowest effort first).
 PRIORITY 1: Files with 1-2 functions remaining
 ====================================================================================================
 
-  core/weapon.cpp (1 remaining of 27)
-    - core_weapon.cpp_CWeapon_fireProjectile_FUN_005ee830
-      Suspects: unrolled_memcpy
-
-  engine/model.c (2 remaining of 8)
-    - engine_model.c_getMRGLBounds_FUN_00528140
-      Suspects: warning_inlined_function
-    - engine_model.c_loadMRGLTextures_FUN_00528870
-      Suspects: pointer_cast, pointer_cast, pointer_cast
-
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
-  [unrolled_strlen] - 2 functions
-    core_script.cpp_CScript_loadLineToBuffer_FUN_00566230                  ( 44 lines)
-    shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30          ( 47 lines)
-
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
-
-  core/weapon.cpp (96.3% complete)
-    1 functions remaining:
-      core_weapon.cpp_CWeapon_fireProjectile_FUN_005ee830 (63 lines)
-        Types: ['unrolled_memcpy']
 
   core/skeleton.cpp (94.0% complete)
     7 functions remaining:
@@ -63,12 +44,10 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_mission.cpp_CDemonMission_process_FUN_00524250 (46 lines)
         Types: ['unrolled_memcpy', 'unrolled_memset']
 
-  shape/edittool.cpp (91.4% complete)
-    13 functions remaining:
+  shape/edittool.cpp (92.1% complete)
+    12 functions remaining:
       shape_edittool.cpp_CPickList_ctor_FUN_004a3b90 (46 lines)
         Types: ['unrolled_strcpy']
-      shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30 (47 lines)
-        Types: ['unrolled_strlen']
       shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 (211 lines)
         Types: ['unrolled_strlen']
       shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0 (85 lines)
@@ -196,11 +175,11 @@ ALL REMAINING FILES
   core/tentacle.cpp                                             80.0%  (12/15 clean, 3 remaining)
   core/platfrm.cpp                                              80.0%  (24/30 clean, 6 remaining)
   core/netgame.cpp                                              79.7%  (51/64 clean, 13 remaining)
+  core/script.cpp                                               79.2%  (76/96 clean, 20 remaining)
   core/mimic.cpp                                                79.2%  (19/24 clean, 5 remaining)
   core/dfilter.cpp                                              78.9%  (15/19 clean, 4 remaining)
   core/icepick.cpp                                              78.3%  (18/23 clean, 5 remaining)
   core/cloth.cpp                                                78.2%  (43/55 clean, 12 remaining)
-  core/script.cpp                                               78.1%  (75/96 clean, 21 remaining)
   core/dstrender.cpp                                            77.4%  (24/31 clean, 7 remaining)
   engine/drender.cpp                                            77.3%  (68/88 clean, 20 remaining)
   core/mirror.cpp                                               77.3%  (17/22 clean, 5 remaining)

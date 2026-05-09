@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5563 (86.2%)
-With suspects: 891
-Total suspects: 4275
+Clean: 5568 (86.3%)
+With suspects: 886
+Total suspects: 4268
 
 ====================================================================================================
 core_actor.cpp_CActorPropertyList_addFile_FUN_0040e3e0 (2 suspects)
@@ -3873,12 +3873,6 @@ core_script.cpp_CScript_findText_FUN_00566cc0 (2 suspects)
   Line 113 [unrolled_strlen]: do {
 
 ====================================================================================================
-core_script.cpp_CScript_loadLineToBuffer_FUN_00566230 (1 suspect)
-  File: core/script.cpp
-====================================================================================================
-  Line 24 [unrolled_strlen]: do {
-
-====================================================================================================
 core_script.cpp_CScript_loadScript_FUN_00559f80 (2 suspects)
   File: core/script.cpp
 ====================================================================================================
@@ -5544,12 +5538,6 @@ core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0 (2 suspects)
   Line 203 [shadow_pointer_walk]: pCVar15 = (CWaterActor *)&(pCVar15->base).location;
 
 ====================================================================================================
-core_weapon.cpp_CWeapon_fireProjectile_FUN_005ee830 (1 suspect)
-  File: core/weapon.cpp
-====================================================================================================
-  Line 33 [unrolled_memcpy]: local_94.color.r = (this_ptr->muzzle_flash_color).r;
-
-====================================================================================================
 core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0 (1 suspect)
   File: core/weather.cpp
 ====================================================================================================
@@ -6520,20 +6508,6 @@ engine_matrix.c_projectToScreen_FUN_0050e5b0 (2 suspects)
   Line 8 [stack_alignment_array]: int aiStackY_1038 [1017];
 
 ====================================================================================================
-engine_model.c_getMRGLBounds_FUN_00528140 (1 suspect)
-  File: engine/model.c
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
-====================================================================================================
-engine_model.c_loadMRGLTextures_FUN_00528870 (3 suspects)
-  File: engine/model.c
-====================================================================================================
-  Line 29 [pointer_cast]: piVar5 = &(((SMRGLTextureBasic *)((int)mrgl + 0x18))->base).count;
-  Line 38 [pointer_cast]: cVar1 = *(char *)((int)piVar6 + 1);
-  Line 39 [pointer_cast]: piVar6 = (int *)((int)piVar6 + 2);
-
-====================================================================================================
 engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0 (3 suspects)
   File: engine/pod.cpp
 ====================================================================================================
@@ -7166,12 +7140,6 @@ shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590 (1 suspect
   File: shape/edittool.cpp
 ====================================================================================================
   Line 43 [unrolled_strcpy]: do {
-
-====================================================================================================
-shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30 (1 suspect)
-  File: shape/edittool.cpp
-====================================================================================================
-  Line 20 [unrolled_strlen]: do {
 
 ====================================================================================================
 shape_edittool.cpp_CEditorTools_restoreScreen_FUN_0049e4d0 (4 suspects)

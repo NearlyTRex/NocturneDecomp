@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 59,
+    "complexity_score": 44,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 44,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_strlen"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 98
   },
   "cross_references": [
@@ -268,6 +266,15 @@
       "type": "unrolled_memcpy"
     },
     {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 24,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 44,
       "match": "MOVSD.REP",
@@ -300,14 +307,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 24,
-      "match": "do { if (v==0) break; v=v-1; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strlen"
-    }
-  ]
+  "suspects": []
 }

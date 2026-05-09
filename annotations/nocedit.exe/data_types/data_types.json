@@ -4041,6 +4041,10 @@
       "type":"struct"
     },
     {
+      "name":"SMRGLIndexBlock",
+      "type":"struct"
+    },
+    {
       "name":"SMRGLKeyframe",
       "type":"struct"
     },
@@ -4050,6 +4054,10 @@
     },
     {
       "name":"SMRGLModelBounds",
+      "type":"struct"
+    },
+    {
+      "name":"SMRGLPointerArray",
       "type":"struct"
     },
     {
@@ -4073,11 +4081,23 @@
       "type":"struct"
     },
     {
+      "name":"SMRGLTextureListEntry",
+      "type":"struct"
+    },
+    {
+      "name":"SMRGLTextureList",
+      "type":"struct"
+    },
+    {
       "name":"SMRGLTextureLod",
       "type":"struct"
     },
     {
       "name":"SMRGLVertex",
+      "type":"struct"
+    },
+    {
+      "name":"SMRGLVertexBlock",
       "type":"struct"
     },
     {
@@ -57844,6 +57864,30 @@
       "fields":[
         {
           "len":12,
+          "name":"base",
+          "offset":0,
+          "type":"SMRGLHeaderExtended"
+        },
+        {
+          "len":8,
+          "name":"indices",
+          "offset":12,
+          "type":"int[1][2]"
+        }
+      ],
+      "importable":true,
+      "len":20,
+      "name":"SMRGLIndexBlock",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":12,
           "name":"header",
           "offset":0,
           "type":"SMRGLHeaderExtended"
@@ -57978,6 +58022,30 @@
       "importable":true,
       "len":52,
       "name":"SMRGLModelBounds",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":12,
+          "name":"base",
+          "offset":0,
+          "type":"SMRGLHeaderExtended"
+        },
+        {
+          "len":4,
+          "name":"entries",
+          "offset":12,
+          "type":"int[1]"
+        }
+      ],
+      "importable":true,
+      "len":16,
+      "name":"SMRGLPointerArray",
       "pack":false,
       "type":"struct"
     },
@@ -58185,6 +58253,60 @@
       "desc":"",
       "fields":[
         {
+          "len":12,
+          "name":"base",
+          "offset":0,
+          "type":"SMRGLHeaderExtended"
+        },
+        {
+          "len":16,
+          "name":"reserved",
+          "offset":12,
+          "type":"int[4]"
+        },
+        {
+          "len":32,
+          "name":"entries",
+          "offset":28,
+          "type":"SMRGLTextureListEntry[1]"
+        }
+      ],
+      "importable":true,
+      "len":60,
+      "name":"SMRGLTextureList",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":16,
+          "name":"texture_name",
+          "offset":0,
+          "type":"char[16]"
+        },
+        {
+          "len":16,
+          "name":"metadata",
+          "offset":16,
+          "type":"char[16]"
+        }
+      ],
+      "importable":true,
+      "len":32,
+      "name":"SMRGLTextureListEntry",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":72,
           "name":"textures",
           "offset":0,
@@ -58224,6 +58346,30 @@
       "importable":true,
       "len":12,
       "name":"SMRGLVertex",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":12,
+          "name":"base",
+          "offset":0,
+          "type":"SMRGLHeaderExtended"
+        },
+        {
+          "len":12,
+          "name":"vertices",
+          "offset":12,
+          "type":"CVector3i[1]"
+        }
+      ],
+      "importable":true,
+      "len":24,
+      "name":"SMRGLVertexBlock",
       "pack":false,
       "type":"struct"
     },
