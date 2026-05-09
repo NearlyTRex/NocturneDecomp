@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 63,
+    "complexity_score": 48,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 48,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 179
   },
   "cross_references": [
@@ -191,6 +189,17 @@
     },
     "pcode_op_count": 502
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 41,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_48.player_input.action_state.draw = this_ptr->players[iVar1].player_input.action_state.draw;",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 80,
     "local_size": 76,
@@ -214,14 +223,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 41,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_48.player_input.action_state.draw = this_ptr->players[iVar1].player_input.action_state.draw;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

@@ -2,11 +2,11 @@
 // Address: 00447e80
 // Address Range: [[00447e80, 00447f15]]
 // Convention: __cdecl
-// Signature: double __cdecl shape_cramtex_cpp_calculateAtlasEfficiency_FUN_00447e80(void)
+// Signature: float __cdecl shape_cramtex_cpp_calculateAtlasEfficiency_FUN_00447e80(void)
 
 #include "nocturne.h"
 
-double __cdecl shape_cramtex_cpp_calculateAtlasEfficiency_FUN_00447e80(void)
+float __cdecl shape_cramtex_cpp_calculateAtlasEfficiency_FUN_00447e80(void)
 
 {
   CCramTex *pCVar1;
@@ -24,8 +24,6 @@ double __cdecl shape_cramtex_cpp_calculateAtlasEfficiency_FUN_00447e80(void)
       pCVar1 = pCVar1 + 1;
     } while (iVar2 < g_CramTextureCount);
   }
-  return __BITCAST_DOUBLE(CONCAT44(g_CramTextureCount,
-                          ((float)iVar3 * (float)100) /
-                          (float)(g_CramCurrentAcceptableSize * g_CramCurrentAcceptableSize *
-                                 g_CramTotalMaps)));
+  return ((float)iVar3 * (float)100) /
+         (float)(g_CramCurrentAcceptableSize * g_CramCurrentAcceptableSize * g_CramTotalMaps);
 }

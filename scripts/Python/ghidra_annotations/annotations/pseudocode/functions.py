@@ -501,28 +501,26 @@ def _get_caller_prologue_save_regs(caller_func, listing):
         saves.add(op_upper)
         instr = instr.getNext()
 
-    # Source 2: pre-RET POP chains. Walk every instruction in the function,
-    # find each RET, then walk backward through consecutive POPs.
+    # Source 2: any POP of a callee-saved register anywhere in the function.
+    # Watcom emits epilogue POPs interleaved with the return-value setup
+    # (e.g. `POP EBX ; POP ESI ; MOV EAX,1 ; POP EBP ; POP EDI ; RET`),
+    # so a strict pre-RET-POP-chain walk breaks at the MOV and misses the
+    # earlier POPs. Since callee-saved POPs in compiled code are virtually
+    # always epilogue restores of values the function spilled, scanning the
+    # whole body catches deferred prologues without false positives.
     body = caller_func.getBody()
     addr_iter = body.getAddresses(True)
     for addr in addr_iter:
         ri = listing.getInstructionAt(addr)
         if not ri:
             continue
-        rm = ri.getMnemonicString().upper()
-        if rm not in ('RET', 'RETN'):
+        if ri.getMnemonicString().upper() != 'POP':
             continue
-        prev = ri.getPrevious()
-        while prev and body.contains(prev.getAddress()):
-            pm = prev.getMnemonicString().upper()
-            if pm != 'POP':
-                break
-            pop_op = prev.getDefaultOperandRepresentation(0)
-            if pop_op:
-                pu = pop_op.upper()
-                if pu in callee_saved:
-                    saves.add(pu)
-            prev = prev.getPrevious()
+        pop_op = ri.getDefaultOperandRepresentation(0)
+        if pop_op:
+            pu = pop_op.upper()
+            if pu in callee_saved:
+                saves.add(pu)
 
     return saves
 

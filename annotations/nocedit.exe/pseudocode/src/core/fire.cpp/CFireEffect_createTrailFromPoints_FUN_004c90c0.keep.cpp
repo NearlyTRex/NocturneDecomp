@@ -21,9 +21,7 @@ void __cdecl core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0(CFireE
   fVar3 = end_point->x - start_point->x;
   fVar5 = end_point->y - start_point->y;
   fVar4 = end_point->z - start_point->z;
-  local_34.x = start_point->x;
-  local_34.y = start_point->y;
-  local_34.z = start_point->z;
+  local_34 = *start_point;
   iVar2 = (int)ROUND(ROUND((SQRT(fVar4 * fVar4 + fVar3 * fVar3 + fVar5 * fVar5) *
                            (float)8) / size + 1.0));
   fVar2 = 1.0 / (float)iVar2;

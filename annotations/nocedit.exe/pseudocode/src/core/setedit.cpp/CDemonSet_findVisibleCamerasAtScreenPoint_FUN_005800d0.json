@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 57,
+    "complexity_score": 42,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 42,
-    "suspect_count": 1,
-    "suspect_types": [
-      "stack_alignment_array"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 174
   },
   "cross_references": [
@@ -147,6 +145,17 @@
     },
     "pcode_op_count": 479
   },
+  "resolved_suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 10,
+      "match": "aiStackY_1028",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int aiStackY_1028 [1015];",
+      "type": "stack_alignment_array"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4160,
     "local_size": 4140,
@@ -226,14 +235,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 10,
-      "match": "aiStackY_1028",
-      "severity": "moderate",
-      "text": "int aiStackY_1028 [1015];",
-      "type": "stack_alignment_array"
-    }
-  ]
+  "suspects": []
 }

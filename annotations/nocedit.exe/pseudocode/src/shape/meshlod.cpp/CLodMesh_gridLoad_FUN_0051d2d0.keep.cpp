@@ -30,11 +30,9 @@ void __cdecl shape_meshlod_cpp_CLodMesh_gridLoad_FUN_0051d2d0(CLodMesh *this_ptr
     g_CurrentLineNumber = 0x1474;
     core_main_c_displayErrorAndQuit_FUN_00506f10("LodMesh::gridLoad - file is old!");
   }
-  iVar4 = 0;
-  do {
-    _fscanf(file_handle,"%d\n",(int *)((int)this_ptr->spatial_grid_ptr + iVar4));
-    iVar4 = iVar4 + 4;
-  } while (iVar4 != 0x4004);
+  for (iVar4 = 0; iVar4 < 0x1001; iVar4 = iVar4 + 1) {
+    _fscanf(file_handle,"%d\n",&((int *)this_ptr->spatial_grid_ptr)[iVar4]);
+  }
   piVar2 = (int *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (this_ptr->spatial_grid_data,this_ptr->spatial_grid_ptr->triangle_count << 2,
                       "..\\shape\\meshlod.cpp",0x147a);

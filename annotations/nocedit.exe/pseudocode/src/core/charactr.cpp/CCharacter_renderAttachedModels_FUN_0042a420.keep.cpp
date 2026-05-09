@@ -1,0 +1,45 @@
+// Name: core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042a420
+// Address: 0042a420
+// MANUAL RECONSTRUCTION
+// Address Range: [[0042a420, 0042a513] [03fc4665, 03fc46c6]]
+// Convention: __cdecl
+// Signature: void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042a420(CCharacter *this_ptr)
+
+#include "nocturne.h"
+
+void __cdecl core_charactr_cpp_CCharacter_renderAttachedModels_FUN_0042a420(CCharacter *this_ptr)
+
+{
+  SDamageDecal *pSVar2;
+  int iVar3;
+  CMatrix3x4f local_8c;
+  CMatrix3x4f local_5c;
+  CVector3f local_2c;
+  CVector3f local_20;
+  
+  iVar3 = 0;
+  if (0 < this_ptr->damage_decal_count) {
+    pSVar2 = this_ptr->damage_decals;
+    do {
+      if ((this_ptr->model).part_data.visibility_flags[pSVar2->part_index] != 0) {
+        core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
+                  (&pSVar2->transform,
+                   (this_ptr->model).bone_transform.bone_world_matrices + pSVar2->bone_index,
+                   &local_8c);
+        local_5c = local_8c;
+        core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_5c,&local_2c);
+        local_20.x = local_5c.m[0].z;
+        local_20.y = local_5c.m[1].z;
+        local_20.z = local_5c.m[2].z;
+        engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
+                  (g_CDemonRendererPtr2,&local_2c,&local_20);
+        core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
+                  (&CKeyFramedModelInstance_00823a98,0.0,-1);
+        engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
+      }
+      iVar3 = iVar3 + 1;
+      pSVar2 = pSVar2 + 1;
+    } while (iVar3 < this_ptr->damage_decal_count);
+  }
+  return;
+}

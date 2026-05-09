@@ -61,7 +61,7 @@ void __cdecl CCramTex::renderTextureEntry(CCramTex *this_ptr,int show_final_plac
 
 // Original: shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80
 // Address: 00447e80
-double __cdecl calculateAtlasEfficiency(void);
+float __cdecl calculateAtlasEfficiency(void);
 
 // Original: shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20
 // Address: 00447f20

@@ -15,9 +15,9 @@ int __cdecl core_set_cpp_CDemonSet_computeLighting_FUN_0056e110(CDemonSet *this_
   core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
             (this_ptr,world_position,surface_normal,start_vertex_index,0);
   for (i = 1; i < vertex_count; i = i + 1) {
-    g_RenderVertexBuffer[start_vertex_index + i].r = g_RenderVertexBuffer[start_vertex_index].r;
-    g_RenderVertexBuffer[start_vertex_index + i].g = g_RenderVertexBuffer[start_vertex_index].g;
-    g_RenderVertexBuffer[start_vertex_index + i].b = g_RenderVertexBuffer[start_vertex_index].b;
+    memcpy(&g_RenderVertexBuffer[start_vertex_index + i].r,
+           &g_RenderVertexBuffer[start_vertex_index].r,
+           12);
   }
   return (int)&g_RenderVertexBuffer[start_vertex_index + vertex_count];
 }

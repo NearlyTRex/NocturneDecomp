@@ -3839,6 +3839,35 @@ def identify_param_count_mismatch(param_estimates, vtable_info, func_signature=N
             ):
                 return None
 
+        # For the "too few" case (delta > 0), push_count overcounts are common
+        # when Watcom pre-pushes args for a SUBSEQUENT call before the current
+        # CALL, or when caller saved-register PUSHes at a deferred prologue
+        # landing get counted as args. Mirror the delta<0 suppressions:
+        # corroborating add_esp evidence + push_count-only short-context.
+        if delta > 0:
+            call_sites = param_estimates.get('call_sites', [])
+            # Any call site whose `add_esp` measurement matches or undershoots
+            # declared is positive evidence the signature is correct.
+            # `add_esp` reads the actual ADD ESP after the CALL, which is
+            # the ground-truth caller-cleanup byte count and isn't fooled by
+            # pre-pushed args for adjacent calls.
+            for cs in call_sites:
+                if (cs.get('method') == 'add_esp'
+                        and cs.get('estimated_params', 0) <= declared):
+                    return None
+            # No corroborating site. If every site is push_count fallback with
+            # short instructions_analyzed, the count is unreliable — typically
+            # the analyzer crossed a basic-block boundary into pre-pushed args
+            # for an adjacent call, or hit Watcom's interleaved sprintf-style
+            # arg setup. Threshold based on `estimated` so a high count gets
+            # proportionally more scrutiny.
+            if call_sites and all(
+                cs.get('method') == 'push_count'
+                and cs.get('instructions_analyzed', 0) < max(2 * estimated, 8)
+                for cs in call_sites
+            ):
+                return None
+
         if delta > 0:
             # Call sites push MORE than declared - missing params in signature
             return {

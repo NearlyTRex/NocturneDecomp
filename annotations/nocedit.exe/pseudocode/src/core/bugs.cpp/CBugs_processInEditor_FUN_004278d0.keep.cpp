@@ -27,9 +27,7 @@ void __cdecl core_bugs_cpp_CBugs_processInEditor_FUN_004278d0(CBugs *this_ptr)
   pfVar2 = &(this_ptr->base).base.base.location.position.z;
   fVar5 = *pfVar2;
   core_charactr_cpp_CCharacter_processInEditor_FUN_0042f800((CCharacter *)this_ptr);
-  (this_ptr->base).base.base.orient.vec.z = 0.0;
-  (this_ptr->base).base.base.orient.vec.y = (this_ptr->base).base.base.orient.vec.z;
-  (this_ptr->base).base.base.orient.vec.x = (this_ptr->base).base.base.orient.vec.y;
+  memset(&(this_ptr->base).base.base.orient.vec, 0, sizeof((this_ptr->base).base.base.orient.vec));
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10((CDemonActor *)this_ptr);
   local_20.x = (pCVar1->position).x;
   local_20.y = *pfVar1;

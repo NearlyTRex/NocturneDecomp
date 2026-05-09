@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; double __cdecl shape_cramtex_cpp_calculateAtlasEfficiency_FUN_00447e80(void)
+; float __cdecl shape_cramtex_cpp_calculateAtlasEfficiency_FUN_00447e80(void)
 ;
 ;
 ; Referenced Globals:

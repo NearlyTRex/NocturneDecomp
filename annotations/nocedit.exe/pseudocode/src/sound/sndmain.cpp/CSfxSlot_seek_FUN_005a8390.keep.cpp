@@ -30,10 +30,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_seek_FUN_005a8390(CSfxSlot *this_ptr)
   this_ptr_00 = this_ptr->sample;
   (this_ptr->options).trigger_time = dVar2;
   if (this_ptr_00->streaming_slot_index < 0) {
-    *(uint *)&this_ptr->prev_hardware_playback_pos =
-         *(uint *)&(this_ptr->options).trigger_time;
-    *(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4) =
-         *(uint *)((int)&(this_ptr->options).trigger_time + 4);
+    this_ptr->prev_hardware_playback_pos = (this_ptr->options).trigger_time;
     return;
   }
   sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 42,
+    "complexity_score": 27,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 27,
-    "suspect_count": 1,
-    "suspect_types": [
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 97
   },
   "cross_references": [
@@ -125,6 +123,17 @@
     },
     "pcode_op_count": 307
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar4->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 21,
+      "match": "pCVar4 = (T *)((pCVar4->FIELD).ARRAY[N] + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar4 = (CSkeleton *)((pCVar4->motion_list).state_names[1] + 2);",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -148,14 +157,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via byte arithmetic on a sibling field, where the chosen field/index/constant sum to one element-size step. Replace `pCVar4->bone_list[0]` (or whatever) reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 21,
-      "match": "pCVar4 = (T *)((pCVar4->FIELD).ARRAY[N] + CONST)",
-      "severity": "moderate",
-      "text": "pCVar4 = (CSkeleton *)((pCVar4->motion_list).state_names[1] + 2);",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004dd930(char *p1,EAmmoType p3)
+; void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004dd930(char *class_name,EAmmoType ammo_type)
 ;
 ; Parameters:
-; char *           Stack[0x4]:4   p1
-; EAmmoType        Stack[0x8]:4   p3
+; char *           Stack[0x4]:4   class_name
+; EAmmoType        Stack[0x8]:4   ammo_type
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 at 004defa6

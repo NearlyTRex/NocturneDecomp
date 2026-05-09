@@ -32,9 +32,7 @@ CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a3
       if (fVar5 < fVar4) {
         fVar4 = fVar5;
         if (output_closest_point != local_30) {
-          output_closest_point->x = local_30[0].x;
-          output_closest_point->y = local_30[0].y;
-          output_closest_point->z = local_30[0].z;
+          *output_closest_point = local_30[0];
         }
       }
     }

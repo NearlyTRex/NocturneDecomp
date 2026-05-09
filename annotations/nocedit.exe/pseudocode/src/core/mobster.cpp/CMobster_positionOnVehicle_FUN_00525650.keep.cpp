@@ -42,8 +42,6 @@ void __cdecl core_mobster_cpp_CMobster_positionOnVehicle_FUN_00525650(CMobster *
   (this_ptr->base).base.base.orient.vec.y = fVar1;
   pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      (this_ptr->vehicle,&local_30,&local_24);
-  (this_ptr->base).base.base.location.position.x = pCVar2->x;
-  (this_ptr->base).base.base.location.position.y = pCVar2->y;
-  (this_ptr->base).base.base.location.position.z = pCVar2->z;
+  (this_ptr->base).base.base.location.position = *pCVar2;
   return;
 }

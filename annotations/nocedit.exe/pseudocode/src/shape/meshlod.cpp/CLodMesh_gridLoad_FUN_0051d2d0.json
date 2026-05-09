@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 61,
+    "complexity_score": 46,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 13,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 46,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 167
   },
   "cross_references": [
@@ -216,15 +214,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "introduced_by": "keep",
-      "line": 35,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "_fscanf(file_handle,\"%d\\n\",(int *)((int)this_ptr->spatial_grid_ptr + iVar4));",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

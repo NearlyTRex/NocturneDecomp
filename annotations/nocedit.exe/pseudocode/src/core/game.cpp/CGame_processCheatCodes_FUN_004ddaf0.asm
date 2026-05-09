@@ -2051,17 +2051,17 @@ section .text
     PUSH 0x62c177                       ; 004def7e | = "CGun"
     MOV [0x02d831d8],AL                 ; 004def83 | g_InputHistory+1
     CALL core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930 ; 004def88
-        ;   XREF to: 004dd930 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930(char * p1, EAmmoType p3)
+        ;   XREF to: 004dd930 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930(char * class_name, EAmmoType ammo_type)
     ADD ESP,0x8                         ; 004def8d
     PUSH 0x7                            ; 004def90
     PUSH 0x62c17c                       ; 004def92 | = "CGun"
     CALL core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930 ; 004def97
-        ;   XREF to: 004dd930 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930(char * p1, EAmmoType p3)
+        ;   XREF to: 004dd930 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930(char * class_name, EAmmoType ammo_type)
     ADD ESP,0x8                         ; 004def9c
     PUSH 0x8                            ; 004def9f
     PUSH 0x62c181                       ; 004defa1 | = "CGun"
     CALL core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930 ; 004defa6
-        ;   XREF to: 004dd930 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930(char * p1, EAmmoType p3)
+        ;   XREF to: 004dd930 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930(char * class_name, EAmmoType ammo_type)
     ADD ESP,0x8                         ; 004defab
     PUSH 0x62c186                       ; 004defae | = "CShotgun"
     CALL core_game.cpp_giveHeroWeapon_FUN_004dd870 ; 004defb3
@@ -2074,7 +2074,7 @@ section .text
     PUSH 0x1                            ; 004defc8
     PUSH 0x62c199                       ; 004defca | = "CCrossbow"
     CALL core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930 ; 004defcf
-        ;   XREF to: 004dd930 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930(char * p1, EAmmoType p3)
+        ;   XREF to: 004dd930 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930(char * class_name, EAmmoType ammo_type)
     ADD ESP,0x8                         ; 004defd4
     PUSH 0x62c1a3                       ; 004defd7 | = "CDynamite"
     CALL core_game.cpp_giveHeroWeapon_FUN_004dd870 ; 004defdc
@@ -3988,7 +3988,7 @@ section .text
     PUSH 0x62c864                       ; 004e059e | = "CGun"
     MOV byte ptr [0x02d831d8],CH        ; 004e05a3 | g_InputHistory+1
     CALL core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930 ; 004e05a9
-        ;   XREF to: 004dd930 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930(char * p1, EAmmoType p3)
+        ;   XREF to: 004dd930 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930(char * class_name, EAmmoType ammo_type)
     ADD ESP,0x8                         ; 004e05ae
     PUSH 0x62c869                       ; 004e05b1 | g_CheatStr_LithiumAmmo
         ;   Label: LAB_004e05b1
@@ -4044,7 +4044,7 @@ section .text
     PUSH 0x62c89b                       ; 004e0631 | = "CGun"
     MOV [0x02d831d8],AL                 ; 004e0636 | g_InputHistory+1
     CALL core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930 ; 004e063b
-        ;   XREF to: 004dd930 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930(char * p1, EAmmoType p3)
+        ;   XREF to: 004dd930 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930(char * class_name, EAmmoType ammo_type)
     ADD ESP,0x8                         ; 004e0640
     PUSH 0x62c8a0                       ; 004e0643 | g_CheatStr_MercuryAmmo
         ;   Label: LAB_004e0643
@@ -4100,7 +4100,7 @@ section .text
     PUSH 0x62c8d5                       ; 004e06c3 | = "CGun"
     MOV byte ptr [0x02d831d8],AH        ; 004e06c8 | g_InputHistory+1
     CALL core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930 ; 004e06ce
-        ;   XREF to: 004dd930 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930(char * p1, EAmmoType p3)
+        ;   XREF to: 004dd930 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930(char * class_name, EAmmoType ammo_type)
     ADD ESP,0x8                         ; 004e06d3
     MOV EAX,dword ptr [EBP + 0x14]      ; 004e06d6
         ;   Label: LAB_004e06d6

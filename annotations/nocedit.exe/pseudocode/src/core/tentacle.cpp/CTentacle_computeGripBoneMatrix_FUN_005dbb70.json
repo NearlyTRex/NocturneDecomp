@@ -7,16 +7,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 165,
-    "complexity_score": 125,
+    "complexity_score": 110,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 35,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
       "missing_cave_copy",
-      "param_count_too_few",
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
@@ -249,17 +248,6 @@
       "severity": "moderate",
       "text": "CMatrix3x4f local_6c;",
       "type": "missing_cave_copy"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 2,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:2 vs estimated:3",
-      "param_delta": 1,
-      "text": "Function declares 2 params but call sites push 3 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

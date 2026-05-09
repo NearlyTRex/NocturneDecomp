@@ -25,9 +25,7 @@ void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005ee4a0(CWeapon *this_p
   g_CDemonLightInstance.light_enabled_flag = 1;
   g_CDemonLightInstance.volumetric_enabled = 1;
   if (&local_20 != (CVector3f *)&g_CDemonLightInstance.base.base.position) {
-    g_CDemonLightInstance.base.base.position.f.x = local_20.x;
-    g_CDemonLightInstance.base.base.position.f.y = local_20.y;
-    g_CDemonLightInstance.base.base.position.f.z = local_20.z;
+    g_CDemonLightInstance.base.base.position.f = local_20;
   }
   CStack_2c.y = (this_ptr->base).orient.vec.y;
   CStack_2c.z = (this_ptr->base).orient.vec.z;

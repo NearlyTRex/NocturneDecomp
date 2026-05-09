@@ -7,16 +7,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 35,
+    "complexity_score": 20,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 5,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 20,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_param"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 79
   },
   "cross_references": [
@@ -37,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930",
-    "signature": "void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004dd930(char *p1,EAmmoType p3)"
+    "signature": "void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004dd930(char *class_name,EAmmoType ammo_type)"
   },
   "function_calls": [
     {
@@ -218,28 +216,19 @@
     "variables": [
       {
         "is_param": true,
-        "name": "p1",
+        "name": "class_name",
         "offset": 4,
         "size": 4,
         "type": "char *"
       },
       {
         "is_param": true,
-        "name": "p3",
+        "name": "ammo_type",
         "offset": 8,
         "size": 4,
         "type": "EAmmoType"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unnamed function parameter (short form)",
-      "line": 2,
-      "match": "char *p1",
-      "severity": "mild",
-      "text": "void __cdecl core_game_cpp_giveHeroWeaponAmmo_FUN_004dd930(char *p1,EAmmoType p3)",
-      "type": "unnamed_param"
-    }
-  ]
+  "suspects": []
 }
