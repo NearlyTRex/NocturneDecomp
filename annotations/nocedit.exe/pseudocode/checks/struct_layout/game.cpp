@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: game
-// Structs : 527
+// Structs : 532
 
 #include "nocturne.h"
 
@@ -8824,6 +8824,14 @@ static_assert(__builtin_offsetof(SMRGLHeaderPrimitive, base) == 0,
 static_assert(__builtin_offsetof(SMRGLHeaderPrimitive, surface_normal) == 8,
               "offsetof(SMRGLHeaderPrimitive, surface_normal) != 8");
 
+// ---- SMRGLIndexBlock (20 bytes) ----
+static_assert(sizeof(SMRGLIndexBlock) == 20,
+              "sizeof(SMRGLIndexBlock) != 20");
+static_assert(__builtin_offsetof(SMRGLIndexBlock, base) == 0,
+              "offsetof(SMRGLIndexBlock, base) != 0");
+static_assert(__builtin_offsetof(SMRGLIndexBlock, indices) == 12,
+              "offsetof(SMRGLIndexBlock, indices) != 12");
+
 // ---- SMRGLKeyframe (12 bytes) ----
 static_assert(sizeof(SMRGLKeyframe) == 12,
               "sizeof(SMRGLKeyframe) != 12");
@@ -8871,6 +8879,14 @@ static_assert(__builtin_offsetof(SMRGLModelBounds, radius_scaled) == 36,
               "offsetof(SMRGLModelBounds, radius_scaled) != 36");
 static_assert(__builtin_offsetof(SMRGLModelBounds, extent) == 40,
               "offsetof(SMRGLModelBounds, extent) != 40");
+
+// ---- SMRGLPointerArray (16 bytes) ----
+static_assert(sizeof(SMRGLPointerArray) == 16,
+              "sizeof(SMRGLPointerArray) != 16");
+static_assert(__builtin_offsetof(SMRGLPointerArray, base) == 0,
+              "offsetof(SMRGLPointerArray, base) != 0");
+static_assert(__builtin_offsetof(SMRGLPointerArray, entries) == 12,
+              "offsetof(SMRGLPointerArray, entries) != 12");
 
 // ---- SMRGLPrimitivePoly (120 bytes) ----
 static_assert(sizeof(SMRGLPrimitivePoly) == 120,
@@ -8938,6 +8954,24 @@ static_assert(__builtin_offsetof(SMRGLTextureBasic, base) == 0,
 static_assert(__builtin_offsetof(SMRGLTextureBasic, texture_name) == 8,
               "offsetof(SMRGLTextureBasic, texture_name) != 8");
 
+// ---- SMRGLTextureList (60 bytes) ----
+static_assert(sizeof(SMRGLTextureList) == 60,
+              "sizeof(SMRGLTextureList) != 60");
+static_assert(__builtin_offsetof(SMRGLTextureList, base) == 0,
+              "offsetof(SMRGLTextureList, base) != 0");
+static_assert(__builtin_offsetof(SMRGLTextureList, reserved) == 12,
+              "offsetof(SMRGLTextureList, reserved) != 12");
+static_assert(__builtin_offsetof(SMRGLTextureList, entries) == 28,
+              "offsetof(SMRGLTextureList, entries) != 28");
+
+// ---- SMRGLTextureListEntry (32 bytes) ----
+static_assert(sizeof(SMRGLTextureListEntry) == 32,
+              "sizeof(SMRGLTextureListEntry) != 32");
+static_assert(__builtin_offsetof(SMRGLTextureListEntry, texture_name) == 0,
+              "offsetof(SMRGLTextureListEntry, texture_name) != 0");
+static_assert(__builtin_offsetof(SMRGLTextureListEntry, metadata) == 16,
+              "offsetof(SMRGLTextureListEntry, metadata) != 16");
+
 // ---- SMRGLTextureLod (72 bytes) ----
 static_assert(sizeof(SMRGLTextureLod) == 72,
               "sizeof(SMRGLTextureLod) != 72");
@@ -8953,6 +8987,14 @@ static_assert(__builtin_offsetof(SMRGLVertex, texture_u) == 4,
               "offsetof(SMRGLVertex, texture_u) != 4");
 static_assert(__builtin_offsetof(SMRGLVertex, texture_v) == 8,
               "offsetof(SMRGLVertex, texture_v) != 8");
+
+// ---- SMRGLVertexBlock (24 bytes) ----
+static_assert(sizeof(SMRGLVertexBlock) == 24,
+              "sizeof(SMRGLVertexBlock) != 24");
+static_assert(__builtin_offsetof(SMRGLVertexBlock, base) == 0,
+              "offsetof(SMRGLVertexBlock, base) != 0");
+static_assert(__builtin_offsetof(SMRGLVertexBlock, vertices) == 12,
+              "offsetof(SMRGLVertexBlock, vertices) != 12");
 
 // ---- SMemHead (40 bytes) ----
 static_assert(sizeof(SMemHead) == 40,

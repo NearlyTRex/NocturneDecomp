@@ -66,7 +66,7 @@ LAB_004fb2d7:
   else {
     len = strlen(default_value);
     if ((int)len < buffer_size) {
-      strcpy(output_buffer,default_value);
+      memmove(output_buffer,default_value,len + 1);
       return 1;
     }
   }
