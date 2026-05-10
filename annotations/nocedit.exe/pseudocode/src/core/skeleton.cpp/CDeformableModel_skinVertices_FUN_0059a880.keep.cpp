@@ -29,9 +29,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_skinVertices_FUN_0059a880(CDefor
       pCVar2 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                          (&local_3c,input_vector,bone_matrices + vert->bone_indices[0]);
       if (&local_30 != pCVar2) {
-        local_30.x = pCVar2->x;
-        local_30.y = pCVar2->y;
-        local_30.z = pCVar2->z;
+        local_30 = *pCVar2;
       }
     }
     else {

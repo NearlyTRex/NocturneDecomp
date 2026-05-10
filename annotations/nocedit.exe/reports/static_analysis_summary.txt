@@ -9,30 +9,30 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 155
+  Functions with static analysis data: 157
   Functions flagged by multiple tools: 0
 
   Cppcheck (quick):
-    Files analyzed:      155
-    Files with findings: 155
-    Total diagnostics:   423
+    Files analyzed:      157
+    Files with findings: 157
+    Total diagnostics:   421
 
 ====================================================================================================
 TOP FINDINGS - Cppcheck (quick)
 ====================================================================================================
 
   shiftTooManyBitsSigned                                     99  [likely decompiler artifact]
-  uninitvar                                                  79  [likely decompiler artifact]
-  selfAssignment                                             71
+  uninitvar                                                  78
+  selfAssignment                                             68
   invalidscanf                                               59
   legacyUninitvar                                            45
-  invalidPointerCast                                         22
+  invalidPointerCast                                         21
   nullPointerRedundantCheck                                  12
   identicalInnerCondition                                     8
-  objectIndex                                                 7
-  nullPointer                                                 5
+  nullPointer                                                 8
+  invalidFunctionArgStr                                       4
   shiftNegativeLHS                                            3
   arrayIndexOutOfBoundsCond                                   3
   invalidScanfArgType_int                                     3
+  objectIndex                                                 3
   arrayIndexOutOfBounds                                       2
-  oppositeInnerCondition                                      1

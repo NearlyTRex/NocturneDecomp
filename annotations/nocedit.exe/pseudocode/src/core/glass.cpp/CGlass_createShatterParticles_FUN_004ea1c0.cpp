@@ -374,8 +374,8 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0(CGlass *t
   local_1a4.y = quad_uv_v->y;
   local_1a4.z = quad_uv_v->z;
   core_fire_cpp_CFireEffect_createGlassParticle_FUN_004c7d00
-            (g_CFireEffectPtr,(STriangleVertices *)&local_1e4,(CVector3f *)&local_1b4,
-             (CVector3f *)&local_1a4,&this_ptr->glass_texture,this_ptr->opacity);
+            (g_CFireEffectPtr,(STriangleVertices *)&local_1e4,(CVector3i *)&local_1b4,
+             (CVector3i *)&local_1a4,&this_ptr->glass_texture,this_ptr->opacity);
   if (local_1e4.vertices + 1 != quad_vertices->vertices + 2) {
     local_1e4.vertices[1].x = quad_vertices->vertices[2].x;
     local_1e4.vertices[1].y = quad_vertices->vertices[2].y;
@@ -391,7 +391,7 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0(CGlass *t
   local_1a4.y = quad_uv_v->z;
   local_1a4.z = quad_uv_v->w;
   core_fire_cpp_CFireEffect_createGlassParticle_FUN_004c7d00
-            (g_CFireEffectPtr,(STriangleVertices *)&local_1e4,(CVector3f *)&local_1b4,
-             (CVector3f *)&local_1a4,&this_ptr->glass_texture,this_ptr->opacity);
+            (g_CFireEffectPtr,(STriangleVertices *)&local_1e4,(CVector3i *)&local_1b4,
+             (CVector3i *)&local_1a4,&this_ptr->glass_texture,this_ptr->opacity);
   return;
 }

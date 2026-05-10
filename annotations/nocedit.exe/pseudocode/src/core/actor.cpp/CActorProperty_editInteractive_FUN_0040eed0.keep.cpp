@@ -10,32 +10,21 @@
 int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorProperty *this_ptr,CDemonActor *actor)
 
 {
-  byte bVar1;
   CVector3f *pCVar2;
   CRuleList *this_ptr_01;
   SMotion *pSVar6;
   char *pcVar7;
   int iVar3;
-  uint uVar8;
   SIZE_T SVar9;
-  uint uVar4;
   SIZE_T n;
   void *pvVar10;
   EGroundType type;
-  char *pCVar11;
-  char *pcVar12;
   int iVar5;
   int iVar13;
-  CActorProperty *pCVar14;
   SMotion *pSVar15;
-  char (*pacVar16) [40];
-  char *pcVar17;
   char *pcVar6;
-  char (*pacVar18) [100];
-  char *pcVar8;
   int iVar19;
   int iVar20;
-  byte bVar21;
   CPickList local_37ec;
   CPickList local_3444;
   CPickList local_309c;
@@ -76,15 +65,10 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
   CMotionList *local_18;
   char *local_14;
   CRuleList *pCVar5;
-  char cVar3;
-  CVector3f *pCVar4;
   CClothList *this_ptr_00;
-  char cVar2;
-  byte uVar1;
   float local_38;
   float local_34;
-  
-  bVar21 = 0;
+
   if (this_ptr->enabled_flag == 0) {
     return 0;
   }
@@ -123,10 +107,7 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
     }
     break;
   case PROP_VECTOR:
-    pCVar4 = (this_ptr->data).v_vector_ptr;
-    local_48.x = pCVar4->x;
-    local_48.y = pCVar4->y;
-    local_48.z = pCVar4->z;
+    local_48 = *(this_ptr->data).v_vector_ptr;
     do {
       iVar3 = shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300
                         (g_CEditorToolsPtr,local_2a0,&local_48,1);
@@ -141,26 +122,14 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
     } while (iVar3 == 0);
     pCVar2 = (this_ptr->data).v_vector_ptr;
     if (pCVar2 != &local_48) {
-      pCVar2->x = local_48.x;
-      pCVar2->y = local_48.y;
-      pCVar2->z = local_48.z;
+      *pCVar2 = local_48;
     }
     if (this_ptr->auto_update_flag != 0) {
       (*((actor->vtable)._ub)->setup)(actor);
     }
     return 1;
   case PROP_STRING:
-    pcVar6 = local_aac;
-    pcVar8 = (this_ptr->data).v_string_ptr;
-    do {
-      cVar2 = *pcVar8;
-      *pcVar6 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar8[1];
-      pcVar8 = pcVar8 + 2;
-      pcVar6[1] = cVar2;
-      pcVar6 = pcVar6 + 2;
-    } while (cVar2 != '\0');
+    strcpy(local_aac,(this_ptr->data).v_string_ptr);
     do {
       iVar3 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                         (g_CEditorToolsPtr,local_2a0,local_aac,(this_ptr->param3).v_int,1);
@@ -170,17 +139,7 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
     } while (((this_ptr->callback).v_action_func != (CActorPropertyActionFunc *)0x0) &&
             (iVar3 = (*(this_ptr->callback).v_action_func)(actor,(CActorProperty *)local_aac),
             iVar3 == 0));
-    pcVar6 = local_aac;
-    pcVar8 = (this_ptr->data).v_string_ptr;
-    do {
-      cVar2 = *pcVar6;
-      *pcVar8 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar6[1];
-      pcVar6 = pcVar6 + 2;
-      pcVar8[1] = cVar2;
-      pcVar8 = pcVar8 + 2;
-    } while (cVar2 != '\0');
+    strcpy((this_ptr->data).v_string_ptr,local_aac);
     if (this_ptr->auto_update_flag != 0) {
       (*((actor->vtable)._ub)->setup)(actor);
     }
@@ -206,17 +165,7 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
     _sprintf
               (local_2a0,"Select model for actor %s.  Current model is %s.",actor->actor_name,
                ((this_ptr->data).v_kfm_ptr)->model_name);
-    pcVar6 = local_854;
-    pcVar8 = ((this_ptr->data).v_clothlist_ptr)->filenames[2] + 0x24;
-    do {
-      cVar2 = *pcVar8;
-      *pcVar6 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar8[1];
-      pcVar8 = pcVar8 + 2;
-      pcVar6[1] = cVar2;
-      pcVar6 = pcVar6 + 2;
-    } while (cVar2 != '\0');
+    strcpy(local_854,((this_ptr->data).v_clothlist_ptr)->filenames[2] + 0x24);
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_37ec);
     shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0
               (&local_37ec.base,"models","*.kfm");
@@ -253,17 +202,7 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
     _sprintf
               (local_2a0,"Select model for actor %s.  Current model is %s.",actor->actor_name,
                ((this_ptr->data).v_dfm_ptr)->model_name);
-    pCVar14 = (CActorProperty *)local_548;
-    pcVar6 = ((this_ptr->data).v_dfm_ptr)->model_name;
-    do {
-      uVar1 = *pcVar6;
-      *(byte *)&pCVar14->type = uVar1;
-      if (uVar1 == PROP_INT) break;
-      bVar1 = pcVar6[1];
-      pcVar6 = pcVar6 + 2;
-      *(byte *)((int)&pCVar14->type + 1) = bVar1;
-      pCVar14 = (CActorProperty *)((int)&pCVar14->type + 2);
-    } while (bVar1 != 0);
+    strcpy(local_548,((this_ptr->data).v_dfm_ptr)->model_name);
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_2cf4);
     shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0
               (&local_2cf4.base,"models","*.dfm");
@@ -320,17 +259,7 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3444,0);
     return 0;
   case PROP_FILE:
-    pcVar6 = local_750;
-    pcVar8 = (this_ptr->data).v_string_ptr;
-    do {
-      cVar2 = *pcVar8;
-      *pcVar6 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar8[1];
-      pcVar8 = pcVar8 + 2;
-      pcVar6[1] = cVar2;
-      pcVar6 = pcVar6 + 2;
-    } while (cVar2 != '\0');
+    strcpy(local_750,(this_ptr->data).v_string_ptr);
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_309c);
     shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0
               (&local_309c.base,this_ptr->string1,this_ptr->string2);
@@ -351,40 +280,19 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
         makepath(local_750,(char *)0x0,(char *)0x0,local_cac,local_10ac);
       }
       else {
-        local_750[0] = (byte)((uint)iVar3 >> 8) ^
-                       (byte)((uint)(local_309c.base.item_count + -1) >> 8);
+        local_750[0] = '\0';
       }
     } while (((this_ptr->callback).v_action_func != (CActorPropertyActionFunc *)0x0) &&
             (iVar3 = (*(this_ptr->callback).v_action_func)(actor,(CActorProperty *)local_750),
             iVar3 == 0));
-    pcVar6 = local_750;
-    pcVar8 = (this_ptr->data).v_string_ptr;
-    do {
-      cVar2 = *pcVar6;
-      *pcVar8 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar6[1];
-      pcVar6 = pcVar6 + 2;
-      pcVar8[1] = cVar2;
-      pcVar8 = pcVar8 + 2;
-    } while (cVar2 != '\0');
+    strcpy((this_ptr->data).v_string_ptr,local_750);
     if (this_ptr->auto_update_flag != 0) {
       (*((actor->vtable)._ub)->setup)(actor);
     }
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_309c,0);
     return 1;
   case PROP_EVENT:
-    pcVar6 = &local_ac;
-    pcVar8 = (this_ptr->data).v_string_ptr;
-    do {
-      cVar2 = *pcVar8;
-      *pcVar6 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar8[1];
-      pcVar8 = pcVar8 + 2;
-      pcVar6[1] = cVar2;
-      pcVar6 = pcVar6 + 2;
-    } while (cVar2 != '\0');
+    strcpy(&local_ac,(this_ptr->data).v_string_ptr);
     while( true ) {
       iVar3 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                         (g_CEditorToolsPtr,local_2a0,&local_ac,100,1);
@@ -395,33 +303,13 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
       if (pcVar6 == (char *)0x0) break;
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar6);
     }
-    pcVar6 = &local_ac;
-    pcVar8 = (this_ptr->data).v_string_ptr;
-    do {
-      cVar2 = *pcVar6;
-      *pcVar8 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar6[1];
-      pcVar6 = pcVar6 + 2;
-      pcVar8[1] = cVar2;
-      pcVar8 = pcVar8 + 2;
-    } while (cVar2 != '\0');
+    strcpy((this_ptr->data).v_string_ptr,&local_ac);
     if (this_ptr->auto_update_flag != 0) {
       (*((actor->vtable)._ub)->setup)(actor);
     }
     return 1;
   case PROP_BUTTON:
-    pcVar6 = &local_110;
-    pCVar11 = (this_ptr->data).v_string_ptr;
-    do {
-      cVar2 = *pCVar11;
-      *pcVar6 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pCVar11[1];
-      pCVar11 = pCVar11 + 2;
-      pcVar6[1] = cVar2;
-      pcVar6 = pcVar6 + 2;
-    } while (cVar2 != '\0');
+    strcpy(&local_110,(this_ptr->data).v_string_ptr);
     while( true ) {
       iVar3 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                         (g_CEditorToolsPtr,local_2a0,&local_110,100,1);
@@ -432,17 +320,7 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
       if (pcVar6 == (char *)0x0) break;
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar6);
     }
-    pcVar6 = &local_110;
-    pcVar8 = (this_ptr->data).v_string_ptr;
-    do {
-      cVar2 = *pcVar6;
-      *pcVar8 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar6[1];
-      pcVar6 = pcVar6 + 2;
-      pcVar8[1] = cVar2;
-      pcVar8 = pcVar8 + 2;
-    } while (cVar2 != '\0');
+    strcpy((this_ptr->data).v_string_ptr,&local_110);
     if (this_ptr->auto_update_flag != 0) {
       (*((actor->vtable)._ub)->setup)(actor);
     }
@@ -513,17 +391,7 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
         core_cloth_cpp_CClothList_remove_FUN_0043c170(this_ptr_00,(this_ptr->param1).v_int);
       }
       else {
-        pcVar6 = local_64c;
-        pacVar16 = this_ptr_00->filenames + (this_ptr->param1).v_int;
-        do {
-          cVar2 = *pcVar6;
-          (*pacVar16)[0] = cVar2;
-          if (cVar2 == '\0') break;
-          cVar2 = pcVar6[1];
-          pcVar6 = pcVar6 + 2;
-          (*pacVar16)[1] = cVar2;
-          pacVar16 = (char (*) [40])(*pacVar16 + 2);
-        } while (cVar2 != '\0');
+        strcpy(this_ptr_00->filenames[(this_ptr->param1).v_int],local_64c);
       }
     }
     else {
@@ -550,16 +418,15 @@ int __cdecl core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0(CActorPro
     }
     if (((this_ptr->param1).v_int == 2) && (-1 < iVar3)) {
       pvVar10 = (this_ptr->param2).v_ptr;
-      iVar3 = (1 - iVar3) * 8;
+      iVar3 = 1 - iVar3;
     }
     else {
       iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                         (&local_1e54,local_2a0,iVar3,0);
       if (iVar3 < 0) goto LAB_00410163;
-      iVar3 = iVar3 << 3;
       pvVar10 = (this_ptr->param2).v_ptr;
     }
-    *(this_ptr->data).v_int_ptr = *(int *)((int)pvVar10 + iVar3 + 4);
+    *(this_ptr->data).v_int_ptr = ((uint *)pvVar10)[iVar3 * 2 + 1];
 LAB_00410163:
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1e54,0);
     return 0;
@@ -571,17 +438,7 @@ LAB_00410163:
                 (local_444,"%s => %s",(char *)(pCVar5->conditions + iVar3),(char *)(pCVar5->events + iVar3));
     }
     else {
-      pcVar8 = "Condition => Event";
-      pcVar6 = local_444;
-      do {
-        cVar2 = *pcVar8;
-        *pcVar6 = cVar2;
-        if (cVar2 == '\0') break;
-        cVar2 = pcVar8[1];
-        pcVar8 = pcVar8 + 2;
-        pcVar6[1] = cVar2;
-        pcVar6 = pcVar6 + 2;
-      } while (cVar2 != '\0');
+      strcpy(local_444,"Condition => Event");
     }
 LAB_0040fdd3:
     iVar3 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
@@ -600,29 +457,11 @@ LAB_0040fdd3:
                   (g_CEditorToolsPtr,"Please input rule as \"<condition> => <event>\"");
       }
       else {
-        pcVar12 = local_444;
-        pcVar17 = acStack_1d9 + 1;
         *pcVar7 = '\0';
-        do {
-          cVar3 = *pcVar12;
-          *pcVar17 = cVar3;
-          if (cVar3 == '\0') break;
-          cVar2 = pcVar12[1];
-          pcVar12 = pcVar12 + 2;
-          pcVar17[1] = cVar2;
-          pcVar17 = pcVar17 + 2;
-        } while (cVar2 != '\0');
-        uVar8 = 0xffffffff;
-        pcVar6 = acStack_1d9 + 1;
-        do {
-          if (uVar8 == 0) break;
-          uVar8 = uVar8 - 1;
-          cVar2 = *pcVar6;
-          pcVar6 = pcVar6 + (uint)bVar21 * -2 + 1;
-        } while (cVar2 != '\0');
-        SVar9 = ~uVar8 - 1;
+        strcpy(acStack_1d9 + 1,local_444);
+        SVar9 = strlen(acStack_1d9 + 1);
         if (0 < (int)SVar9) {
-          pcVar6 = acStack_1d9 + ~uVar8;
+          pcVar6 = acStack_1d9 + 1 + SVar9;
           do {
             if ((g_CharacterClassificationTable[(byte)(pcVar6[-1] + 1)] & 2) == 0) break;
             SVar9 = SVar9 - 1;
@@ -635,28 +474,11 @@ LAB_0040fdd3:
           memmove(acStack_1d9 + 1,local_14,SVar9);
           SVar9 = SVar9 - 1;
         }
-        pcVar6 = local_175 + 1;
         *pcVar7 = '=';
-        do {
-          cVar2 = pcVar7[2];
-          *pcVar6 = cVar2;
-          if (cVar2 == '\0') break;
-          cVar2 = pcVar7[3];
-          pcVar6[1] = cVar2;
-          pcVar6 = pcVar6 + 2;
-          pcVar7 = pcVar7 + 2;
-        } while (cVar2 != '\0');
-        uVar4 = 0xffffffff;
-        pcVar6 = local_175 + 1;
-        do {
-          if (uVar4 == 0) break;
-          uVar4 = uVar4 - 1;
-          cVar2 = *pcVar6;
-          pcVar6 = pcVar6 + (uint)bVar21 * -2 + 1;
-        } while (cVar2 != '\0');
-        n = ~uVar4 - 1;
+        strcpy(local_175 + 1,pcVar7 + 2);
+        n = strlen(local_175 + 1);
         if (0 < (int)n) {
-          pcVar6 = local_175 + ~uVar4;
+          pcVar6 = local_175 + 1 + n;
           do {
             if ((g_CharacterClassificationTable[(byte)(pcVar6[-1] + 1)] & 2) == 0) break;
             n = n - 1;
@@ -680,9 +502,9 @@ LAB_0040fdd3:
                         (this_ptr_01,(this_ptr->param1).v_int,acStack_1d9 + 1,local_175 + 1);
               return 1;
             }
-            pacVar18 = this_ptr_01->conditions + (this_ptr->param1).v_int;
-            pcVar6 = acStack_1d9 + 1;
-            goto LAB_00410083;
+            strcpy(this_ptr_01->conditions[(this_ptr->param1).v_int],acStack_1d9 + 1);
+            strcpy(this_ptr_01->events[(this_ptr->param1).v_int],local_175 + 1);
+            return 1;
           }
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar6);
         }
@@ -710,16 +532,13 @@ LAB_0040fdd3:
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_25a4);
       do {
         pcVar6 = "disabled";
-        if ((*(this_ptr->data).v_uint_ptr &
-            *(uint *)((int)&g_PropertyFlagDefinitions[0].mask + iVar20)) != 0) {
+        if ((*(this_ptr->data).v_uint_ptr & g_PropertyFlagDefinitions[iVar20].mask) != 0) {
           pcVar6 = "enable";
         }
-        _sprintf
-                  (local_368,"%s\t%s",
-                   (char *)*(uint *)((int)&g_PropertyFlagDefinitions[0].name + iVar20),pcVar6);
-        iVar20 = iVar20 + 8;
+        _sprintf(local_368,"%s\t%s",g_PropertyFlagDefinitions[iVar20].name,pcVar6);
+        iVar20 = iVar20 + 1;
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_25a4.base,local_368);
-      } while (iVar20 != 0x10);
+      } while (iVar20 != 2);
       iVar13 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                          (&local_25a4,local_2a0,iVar13,0);
       if (iVar13 < 0) break;
@@ -737,30 +556,4 @@ LAB_0040fdd3:
     return 0;
   }
   return 0;
-  while( true ) {
-    cVar2 = pcVar6[1];
-    pcVar6 = pcVar6 + 2;
-    (*pacVar18)[1] = cVar2;
-    pacVar18 = (char (*) [100])(*pacVar18 + 2);
-    if (cVar2 == '\0') break;
-LAB_00410083:
-    cVar2 = *pcVar6;
-    (*pacVar18)[0] = cVar2;
-    if (cVar2 == '\0') break;
-  }
-  pcVar6 = local_175 + 1;
-  pcVar8 = (char *)((int)((this_ptr->data).v_dfm_ptr)->transformed_vertices +
-                   (this_ptr->param1).v_int * 100 + 0x1a0);
-  do {
-    cVar2 = *pcVar6;
-    *pcVar8 = cVar2;
-    if (cVar2 == '\0') {
-      return 1;
-    }
-    cVar2 = pcVar6[1];
-    pcVar6 = pcVar6 + 2;
-    pcVar8[1] = cVar2;
-    pcVar8 = pcVar8 + 2;
-  } while (cVar2 != '\0');
-  return 1;
 }

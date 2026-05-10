@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (423 diagnostics)
+Cppcheck (quick) (421 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -409,16 +409,12 @@ shiftTooManyBitsSigned (99)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (79)
+uninitvar (78)
 ----------------------------------------------------------------------------------------------------
 
-  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 63
+  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 65
     File: core/actor.cpp
-    Uninitialized variable: local_38
-
-  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 82
-    File: core/actor.cpp
-    Uninitialized variable: local_34
+    Uninitialized variable: is_raycast
 
   core_boneguy.cpp_hsvToRgb_FUN_0041ba10             line 39
     File: core/boneguy.cpp
@@ -729,7 +725,7 @@ uninitvar (79)
     Uninitialized variable: local_60
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (71)
+selfAssignment (68)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 116
@@ -747,18 +743,6 @@ selfAssignment (71)
   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 54
     File: cockpit/pkbitmap.cpp
     Redundant assignment of 'pbVar6' to itself.
-
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 81
-    File: core/actor.cpp
-    Redundant assignment of 'pCVar6' to itself.
-
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 112
-    File: core/actor.cpp
-    Redundant assignment of 'pCVar7' to itself.
-
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 113
-    File: core/actor.cpp
-    Redundant assignment of 'pcVar8' to itself.
 
   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN line 45
     File: core/bodypart.cpp
@@ -1441,12 +1425,8 @@ legacyUninitvar (45)
     Uninitialized variable: is_pos_tan[local_f8]
 
 ----------------------------------------------------------------------------------------------------
-invalidPointerCast (22)
+invalidPointerCast (21)
 ----------------------------------------------------------------------------------------------------
-
-  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 268
-    File: core/actor.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
 
   core_chain.cpp_fastSqrt_FUN_00431350               line 13
     File: core/chain.cpp
@@ -1536,15 +1516,15 @@ invalidPointerCast (22)
 nullPointerRedundantCheck (12)
 ----------------------------------------------------------------------------------------------------
 
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 94
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 64
     File: core/actor.cpp
     Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
 
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 95
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 65
     File: core/actor.cpp
     Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
 
-  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 96
+  core_actor.cpp_CDemonActor_doCheckForInvalidPointe line 66
     File: core/actor.cpp
     Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
 
@@ -1621,40 +1601,20 @@ identicalInnerCondition (8)
     Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
-objectIndex (7)
+nullPointer (8)
 ----------------------------------------------------------------------------------------------------
 
-  core_actor.cpp_CActorProperty_editInteractive_FUN_ line 385
-    File: core/actor.cpp
-    The address of local variable 'local_ac' is accessed at non-zero index.
+  core_mission.cpp_CDemonMission_ensureHeroPlacehold line 49
+    File: core/mission.cpp
+    Possible null pointer dereference: actor
 
-  core_actor.cpp_CActorProperty_editInteractive_FUN_ line 404
-    File: core/actor.cpp
-    The address of local variable 'local_ac' is accessed at non-zero index.
+  core_mission.cpp_CDemonMission_ensureHeroPlacehold line 50
+    File: core/mission.cpp
+    Possible null pointer dereference: actor
 
-  core_actor.cpp_CActorProperty_editInteractive_FUN_ line 422
-    File: core/actor.cpp
-    The address of local variable 'local_110' is accessed at non-zero index.
-
-  core_actor.cpp_CActorProperty_editInteractive_FUN_ line 441
-    File: core/actor.cpp
-    The address of local variable 'local_110' is accessed at non-zero index.
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 170
-    File: core/skeleton.cpp
-    The address of local variable 'local_122c' might be accessed at non-zero index.
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 183
-    File: core/skeleton.cpp
-    The address of local variable 'local_122c' might be accessed at non-zero index.
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 194
-    File: core/skeleton.cpp
-    The address of local variable 'local_122c' might be accessed at non-zero index.
-
-----------------------------------------------------------------------------------------------------
-nullPointer (5)
-----------------------------------------------------------------------------------------------------
+  core_mission.cpp_CDemonMission_ensureHeroPlacehold line 52
+    File: core/mission.cpp
+    Possible null pointer dereference: actor
 
   core_script.cpp_trimLine_FUN_005592c0              line 38
     File: core/script.cpp
@@ -1675,6 +1635,26 @@ nullPointer (5)
   shape_quantize.cpp_CColorQuantizer_applyQuantizati line 42
     File: shape/quantize.cpp
     Possible null pointer dereference: local_20
+
+----------------------------------------------------------------------------------------------------
+invalidFunctionArgStr (4)
+----------------------------------------------------------------------------------------------------
+
+  core_actor.cpp_CActorProperty_editInteractive_FUN_ line 306
+    File: core/actor.cpp
+    Invalid strcpy() argument nr 2. A nul-terminated string is required.
+
+  core_actor.cpp_CActorProperty_editInteractive_FUN_ line 323
+    File: core/actor.cpp
+    Invalid strcpy() argument nr 2. A nul-terminated string is required.
+
+  shape_edittool.cpp_CEditorTools_showDirectoryBrows line 85
+    File: shape/edittool.cpp
+    Invalid strlen() argument nr 1. A nul-terminated string is required.
+
+  shape_edittool.cpp_CEditorTools_showDirectoryBrows line 129
+    File: shape/edittool.cpp
+    Invalid strlen() argument nr 1. A nul-terminated string is required.
 
 ----------------------------------------------------------------------------------------------------
 shiftNegativeLHS (3)
@@ -1723,6 +1703,22 @@ invalidScanfArgType_int (3)
   sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30 line 45
     File: sound/mp3.cpp
     %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
+
+----------------------------------------------------------------------------------------------------
+objectIndex (3)
+----------------------------------------------------------------------------------------------------
+
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 170
+    File: core/skeleton.cpp
+    The address of local variable 'local_122c' might be accessed at non-zero index.
+
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 183
+    File: core/skeleton.cpp
+    The address of local variable 'local_122c' might be accessed at non-zero index.
+
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 194
+    File: core/skeleton.cpp
+    The address of local variable 'local_122c' might be accessed at non-zero index.
 
 ----------------------------------------------------------------------------------------------------
 arrayIndexOutOfBounds (2)

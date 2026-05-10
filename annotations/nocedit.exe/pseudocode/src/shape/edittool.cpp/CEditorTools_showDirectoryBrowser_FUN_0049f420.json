@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 618,
-    "complexity_score": 236,
+    "complexity_score": 211,
     "cross_reference_count": 11,
     "function_call_count": 24,
     "global_count": 19,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 211,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unrolled_strlen"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 829
   },
   "cross_references": [
@@ -515,6 +513,24 @@
       "severity": "moderate",
       "text": "for (iVar6 = 0x41; iVar6 != 0; iVar6 = iVar6 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 100,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 152,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
     }
   ],
   "stack_frame": {
@@ -792,22 +808,29 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 100,
-      "match": "do { if (v==0) break; v=v-1; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strlen"
+  "static_analysis": {
+    "analyzed_file": "CEditorTools_showDirectoryBrowser_FUN_0049f420.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "invalidFunctionArgStr",
+          "column": 47,
+          "line": 85,
+          "message": "Invalid strlen() argument nr 1. A nul-terminated string is required.",
+          "severity": "error"
+        },
+        {
+          "check_id": "invalidFunctionArgStr",
+          "column": 49,
+          "line": 129,
+          "message": "Invalid strlen() argument nr 1. A nul-terminated string is required.",
+          "severity": "error"
+        }
+      ],
+      "error": null
     },
-    {
-      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 152,
-      "match": "do { if (v==0) break; v=v-1; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strlen"
-    }
-  ]
+    "file_variant": "keep"
+  },
+  "suspects": []
 }

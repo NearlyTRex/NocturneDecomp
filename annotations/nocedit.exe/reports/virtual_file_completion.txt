@@ -6,8 +6,8 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 5574 (86.4%)
-Files at 100%: 127
+Clean functions: 5612 (87.0%)
+Files at 100%: 131
 Files at 90%+: 134
 Files at 50%+: 214
 
@@ -18,6 +18,7 @@ FILES AT 100% (COMPLETE)
   cockpit/drawsurf.cpp: 93 functions, 1966 lines
   cockpit/pkbitmap.cpp: 33 functions, 960 lines
   cockpit/pkbmpset.cpp: 21 functions, 423 lines
+  core/actor.cpp: 183 functions, 5513 lines
   core/ammo.cpp: 18 functions, 363 lines
   core/ammobox.cpp: 18 functions, 306 lines
   core/anvil.cpp: 13 functions, 192 lines
@@ -79,6 +80,7 @@ FILES AT 100% (COMPLETE)
   core/marquee.cpp: 16 functions, 425 lines
   core/melee.cpp: 17 functions, 268 lines
   core/minecar.cpp: 7 functions, 71 lines
+  core/mission.cpp: 41 functions, 1366 lines
   core/mmx.c: 4 functions, 106 lines
   core/moloch.cpp: 15 functions, 588 lines
   core/moon.cpp: 14 functions, 346 lines
@@ -92,6 +94,7 @@ FILES AT 100% (COMPLETE)
   core/shotgun.cpp: 10 functions, 414 lines
   core/shovel.cpp: 8 functions, 70 lines
   core/simbox.cpp: 15 functions, 319 lines
+  core/skeleton.cpp: 117 functions, 5235 lines
   core/slew.cpp: 4 functions, 125 lines
   core/smiley.cpp: 16 functions, 833 lines
   core/sound.cpp: 37 functions, 1364 lines
@@ -131,6 +134,7 @@ FILES AT 100% (COMPLETE)
   engine/texture.cpp: 22 functions, 654 lines
   engine/winfont.cpp: 9 functions, 330 lines
   shape/dsemodel.cpp: 10 functions, 329 lines
+  shape/edittool.cpp: 151 functions, 6422 lines
   shape/memdbg.cpp: 26 functions, 605 lines
   shape/multicrm.cpp: 6 functions, 115 lines
   shape/spotview.cpp: 6 functions, 215 lines
@@ -142,61 +146,11 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 127 files
+Total: 131 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
 ====================================================================================================
-   94.0% | core/skeleton.cpp
-         110/117 clean, 7 remaining
-           - core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 (199 lines) [pointer_cast]
-           - core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10 (66 lines) [unrolled_memcpy]
-           - core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480 (57 lines) [unrolled_memcpy]
-           - core_skeleton.cpp_blendBoneTransformData_FUN_005a1b70 (62 lines) [unrolled_memcpy]
-           - core_skeleton.cpp_CDeformableModel_shatter_FUN_0059cec0 (179 lines) [pointer_cast, unrolled_memcpy]
-           - core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0 (198 lines) [unrolled_memcpy]
-           - core_skeleton.cpp_CDeformableModel_skinVertices_FUN_0059a880 (58 lines) [unrolled_memcpy]
-
-   92.7% | core/mission.cpp
-         38/41 clean, 3 remaining
-           - core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20 (73 lines) [unrolled_memcpy]
-           - core_mission.cpp_CDemonMission_writeFile_FUN_00523600 (103 lines) [pointer_cast]
-           - core_mission.cpp_CDemonMission_process_FUN_00524250 (46 lines) [unrolled_memcpy, unrolled_memset]
-
-   92.1% | shape/edittool.cpp
-         139/151 clean, 12 remaining
-           - shape_edittool.cpp_CPickList_ctor_FUN_004a3b90 (46 lines) [unrolled_strcpy]
-           - shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 (211 lines) [unrolled_strlen]
-           - shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0 (85 lines) [unrolled_strcpy, unrolled_strlen]
-           - shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590 (52 lines) [unrolled_strcpy]
-           - shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0 (253 lines) [unrolled_strchr, unrolled_strcpy]
-           - shape_edittool.cpp_paintWindowBackground_FUN_0049e590 (55 lines) [pointer_cast]
-           - shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 (212 lines) [negative_offset, pointer_cast, unrolled_strcat, unrolled_strcpy, unrolled_strlen]
-           - shape_edittool.cpp_CEditorTools_restoreScreen_FUN_0049e4d0 (48 lines) [pointer_cast]
-           - shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 (50 lines) [pointer_cast]
-           - shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0 (225 lines) [shadow_pointer_walk]
-           - shape_edittool.cpp_CEditorTools_backupScreen_FUN_0049e410 (48 lines) [pointer_cast]
-           - shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970 (160 lines) [pointer_cast]
-
-   91.3% | core/actor.cpp
-         167/183 clean, 16 remaining
-           - core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 (300 lines) [pointer_cast, unrolled_memcpy]
-           - core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (752 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy, unrolled_strlen]
-           - core_actor.cpp_initTransformCache_FUN_00408870 (11 lines) [unrolled_memset]
-           - core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270 (66 lines) [unrolled_memcpy]
-           - core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_00409fb0 (15 lines) [unrolled_memcpy]
-           - core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80 (116 lines) [pointer_cast, unrolled_memcpy]
-           - core_actor.cpp_rayCylinderIntersect_FUN_00408340 (119 lines) [unrolled_memset]
-           - core_actor.cpp_archivePartStatus_FUN_0040bae0 (85 lines) [shadow_pointer_walk]
-           - core_actor.cpp_CActorPropertyList_addFile_FUN_0040e3e0 (31 lines) [unrolled_strcpy]
-           - core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50 (274 lines) [pointer_cast, unrolled_strcpy]
-           - core_actor.cpp_archiveLocalizedString_FUN_0040b6e0 (55 lines) [pointer_cast, unrolled_strcpy]
-           - core_actor.cpp_getActorClassByName_FUN_0040c3c0 (26 lines) [pointer_cast]
-           - core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 (149 lines) [unrolled_memcpy]
-           - core_actor.cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0 (81 lines) [pointer_cast]
-           - core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040 (41 lines) [unrolled_memcpy]
-           - core_actor.cpp_CDemonActor_ctor_FUN_004088b0 (67 lines) [unrolled_memset]
-
    91.2% | core/baron.cpp
          31/34 clean, 3 remaining
            - core_baron.cpp_CBaron_ctor_FUN_00412bc0 (45 lines) [unrolled_memset, unrolled_strcpy]
@@ -215,7 +169,7 @@ FILES AT 90-99% (ALMOST COMPLETE)
            - engine_matrix.c_projectToScreen_FUN_0050e5b0 (17 lines) [stack_alignment_array, warning_inlined_function]
            - engine_matrix.c_invertTransformMatrix_FUN_0050c640 (49 lines) [unrolled_memcpy]
 
-Total: 7 files
+Total: 3 files
 
 ====================================================================================================
 FILES AT 50-89%

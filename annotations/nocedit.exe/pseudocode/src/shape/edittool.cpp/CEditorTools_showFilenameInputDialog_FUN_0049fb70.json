@@ -4,23 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 438,
-    "complexity_score": 377,
+    "complexity_score": 212,
     "cross_reference_count": 12,
     "function_call_count": 21,
     "global_count": 23,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 212,
-    "suspect_count": 14,
-    "suspect_types": [
-      "negative_offset",
-      "pointer_cast",
-      "unrolled_strcat",
-      "unrolled_strcpy",
-      "unrolled_strlen"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 650
   },
   "cross_references": [
@@ -508,6 +502,134 @@
     },
     "pcode_op_count": 1549
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 138,
+      "match": "(CInputString *)((int)pCVar10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar12 = (CInputString *)((int)pCVar10 + (uint)bVar9 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 142,
+      "match": "pCVar12[-1].",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pcVar11 = (char *)((int)&pCVar12[-1].mask_mode + 3);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 159,
+      "match": "(CInputString *)((int)pCVar10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar12 = (CInputString *)((int)pCVar10 + (uint)bVar9 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 163,
+      "match": "pCVar12[-1].",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pcVar11 = (char *)((int)&pCVar12[-1].mask_mode + 3);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 180,
+      "match": "(CInputString *)((int)pCVar10",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar10 = (CInputString *)((int)pCVar10 + (uint)bVar9 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 57,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 78,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 143,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 165,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 203,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 142,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pcVar11 = (char *)((int)&pCVar12[-1].mask_mode + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 163,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pcVar11 = (char *)((int)&pCVar12[-1].mask_mode + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 68,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
+      "line": 68,
+      "match": "strlen + <p> + -1 + strcpy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcat"
+    }
+  ],
   "stack_frame": {
     "frame_size": 892,
     "local_size": 868,
@@ -611,118 +733,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 138,
-      "match": "(CInputString *)((int)pCVar10",
-      "severity": "moderate",
-      "text": "pCVar12 = (CInputString *)((int)pCVar10 + (uint)bVar9 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 142,
-      "match": "pCVar12[-1].",
-      "severity": "mild",
-      "text": "pcVar11 = (char *)((int)&pCVar12[-1].mask_mode + 3);",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 159,
-      "match": "(CInputString *)((int)pCVar10",
-      "severity": "moderate",
-      "text": "pCVar12 = (CInputString *)((int)pCVar10 + (uint)bVar9 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 163,
-      "match": "pCVar12[-1].",
-      "severity": "mild",
-      "text": "pcVar11 = (char *)((int)&pCVar12[-1].mask_mode + 3);",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 180,
-      "match": "(CInputString *)((int)pCVar10",
-      "severity": "moderate",
-      "text": "pCVar10 = (CInputString *)((int)pCVar10 + (uint)bVar9 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 57,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 78,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 143,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 165,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 203,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 142,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "pcVar11 = (char *)((int)&pCVar12[-1].mask_mode + 3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 163,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "pcVar11 = (char *)((int)&pCVar12[-1].mask_mode + 3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 68,
-      "match": "do { if (v==0) break; v=v-1; ... }",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strlen"
-    },
-    {
-      "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 68,
-      "match": "strlen + <p> + -1 + strcpy",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcat"
-    }
-  ]
+  "suspects": []
 }

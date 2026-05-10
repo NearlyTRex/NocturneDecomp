@@ -10,17 +10,12 @@
 int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools *this_ptr,char *title_text,char *search_pattern,char *initial_path,uint flags)
 
 {
-  char cVar2;
   char *pcVar2;
   int iVar3;
   int iVar5;
   _tm *time_ptr;
   int iVar6;
-  uint uVar7;
-  uint uVar5;
   int iVar8;
-  char *pcVar9;
-  byte bVar6;
   CPickList local_1ec8;
   char local_1b20 [560];
   CFileFinder local_18f0;
@@ -54,10 +49,8 @@ int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CE
   int local_14;
   char local_10 [4];
   char local_c [4];
-  char cVar1;
   char *pcVar7;
-  
-  bVar6 = 0;
+
   pcVar2 = _getcwd(local_14d0,0x104);
   if (pcVar2 == (char *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -89,15 +82,7 @@ LAB_0049f47a:
         engine_dosio_c_splitPath_FUN_00481f20
                   (local_18f0.filename,(char *)0x0,(char *)0x0,local_dc4,&local_4c4);
         if (local_4c4 == '.') {
-          uVar7 = 0xffffffff;
-          pcVar9 = &local_4c4;
-          do {
-            if (uVar7 == 0) break;
-            uVar7 = uVar7 - 1;
-            cVar2 = *pcVar9;
-            pcVar9 = pcVar9 + (uint)bVar6 * -2 + 1;
-          } while (cVar2 != '\0');
-          memmove(&local_4c4,local_4c3,~uVar7 - 1);
+          memmove(&local_4c4,local_4c3,strlen(&local_4c4));
         }
         time_ptr = _localtime((time_t *)&local_18f0.attributes);
         _strftime(local_34,0x1e,"\t%m/%d/%y %I:%M:%S %p",time_ptr);
@@ -141,15 +126,7 @@ LAB_0049f47a:
           engine_dosio_c_splitPath_FUN_00481f20
                     (local_18f0.filename,(char *)0x0,(char *)0x0,local_ac4,&local_6c4);
           if (local_6c4 == '.') {
-            uVar5 = 0xffffffff;
-            pcVar9 = &local_6c4;
-            do {
-              if (uVar5 == 0) break;
-              uVar5 = uVar5 - 1;
-              cVar1 = *pcVar9;
-              pcVar9 = pcVar9 + (uint)bVar6 * -2 + 1;
-            } while (cVar1 != '\0');
-            memmove(&local_6c4,local_6c3,~uVar5 - 1);
+            memmove(&local_6c4,local_6c3,strlen(&local_6c4));
           }
           _sprintf(local_1c4,"%s\t%s\t(DIR)",local_ac4,&local_6c4);
           strupr(local_1c4);

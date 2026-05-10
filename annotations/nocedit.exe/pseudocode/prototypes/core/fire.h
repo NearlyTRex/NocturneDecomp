@@ -137,7 +137,7 @@ void __cdecl loadGunFlashAssets(void);
 
 // Original: core_fire.cpp_CGlassParticle_init_FUN_004c1c00
 // Address: 004c1c00
-void __cdecl CGlassParticle::init(CGlassParticle *this_ptr,STriangleVertices *triangle_vertices,CVector3f *uv_u_per_vertex,CVector3f *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime);
+void __cdecl CGlassParticle::init(CGlassParticle *this_ptr,STriangleVertices *triangle_vertices,CVector3i *uv_u_per_vertex,CVector3i *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime);
 
 // Original: core_fire.cpp_CGlassParticle_render_FUN_004c1ef0
 // Address: 004c1ef0
@@ -401,7 +401,7 @@ void __cdecl CFireEffect::createStake(CFireEffect *this_ptr,CVector3f *impact_po
 
 // Original: core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00
 // Address: 004c7d00
-void __cdecl CFireEffect::createGlassParticle(CFireEffect *this_ptr,STriangleVertices *triangle_vertices,CVector3f *uv_u_per_vertex,CVector3f *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime);
+void __cdecl CFireEffect::createGlassParticle(CFireEffect *this_ptr,STriangleVertices *triangle_vertices,CVector3i *uv_u_per_vertex,CVector3i *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime);
 
 // Original: core_fire.cpp_CFireEffect_createBulletTrail_FUN_004c7d60
 // Address: 004c7d60

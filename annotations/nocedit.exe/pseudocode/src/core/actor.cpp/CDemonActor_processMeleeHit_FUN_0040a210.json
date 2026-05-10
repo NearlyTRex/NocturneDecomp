@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 769,
-    "complexity_score": 340,
+    "complexity_score": 300,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 30,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 300,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1069
   },
   "cross_references": [],
@@ -565,6 +562,33 @@
       "severity": "moderate",
       "text": "SUB84(__BITCAST_UINT64((double)local_164.impact_direction.z),0),",
       "type": "sub84_truncation"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 71,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_b0.x = local_8c.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 286,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_1dc.hit_part_index = pSVar9->hit_part_index;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 87,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(int)&g_CDemonSetPtr->cameras[0].rotation_matrix.m[2].y);",
+      "type": "pointer_cast"
     }
   ],
   "stack_frame": {
@@ -817,27 +841,13 @@
   "static_analysis": {
     "analyzed_file": "CDemonActor_processMeleeHit_FUN_0040a210.keep.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 3,
+      "diagnostic_count": 1,
       "diagnostics": [
         {
-          "check_id": "invalidPointerCast",
-          "column": 10,
-          "line": 268,
-          "message": "Casting between signed int * and float * which have an incompatible binary data representation.",
-          "severity": "portability"
-        },
-        {
           "check_id": "uninitvar",
           "column": 7,
-          "line": 63,
-          "message": "Uninitialized variable: local_38",
-          "severity": "error"
-        },
-        {
-          "check_id": "uninitvar",
-          "column": 7,
-          "line": 82,
-          "message": "Uninitialized variable: local_34",
+          "line": 65,
+          "message": "Uninitialized variable: is_raycast",
           "severity": "error"
         }
       ],
@@ -845,32 +855,7 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 71,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_b0.x = local_8c.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 286,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "local_1dc.hit_part_index = pSVar9->hit_part_index;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 87,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "(int)&g_CDemonSetPtr->cameras[0].rotation_matrix.m[2].y);",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

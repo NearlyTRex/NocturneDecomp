@@ -41,14 +41,10 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *
             (this_ptr,&local_9c,collision_info,bbox_type);
   if (ray_bbox == (CBoundingBox3D *)0x0) {
     if (&local_6c != (CBoundingBox3D *)ray_origin) {
-      local_6c.min.x = ray_origin->x;
-      local_6c.min.y = ray_origin->y;
-      local_6c.min.z = ray_origin->z;
+      local_6c.min = *ray_origin;
     }
     if (&local_6c.max != ray_origin) {
-      local_6c.max.x = ray_origin->x;
-      local_6c.max.y = ray_origin->y;
-      local_6c.max.z = ray_origin->z;
+      local_6c.max = *ray_origin;
     }
     local_48.x = ray_origin->x + ray_direction->x;
     local_48.y = ray_origin->y + ray_direction->y;
@@ -149,9 +145,7 @@ LAB_004095c9:
   }
   pCVar3 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(this_ptr,&CStack_24,&local_30);
   if (out_hit != (SActorRayHit *)pCVar3) {
-    (out_hit->normal).x = pCVar3->x;
-    (out_hit->normal).y = pCVar3->y;
-    (out_hit->normal).z = pCVar3->z;
+    out_hit->normal = *pCVar3;
   }
   return local_a0;
 }

@@ -33,9 +33,7 @@ CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelt
   float fVar7;
   
   if (end_frame <= start_frame) {
-    output_buffer->x = g_ZeroVector.f.x;
-    output_buffer->y = g_ZeroVector.f.y;
-    output_buffer->z = g_ZeroVector.f.z;
+    *output_buffer = g_ZeroVector.f;
     return output_buffer;
   }
   pCVar13 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);

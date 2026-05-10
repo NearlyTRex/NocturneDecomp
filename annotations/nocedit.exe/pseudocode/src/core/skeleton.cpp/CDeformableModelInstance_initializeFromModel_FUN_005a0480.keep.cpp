@@ -43,9 +43,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_
       pCVar2 = core_skeleton_cpp_CDeformableModel_getVertexPoolPtr_FUN_0059a860
                          (this_ptr->model_ptr,index);
       if (pCVar3 != pCVar2) {
-        pCVar3->x = pCVar2->x;
-        pCVar3->y = pCVar2->y;
-        pCVar3->z = pCVar2->z;
+        *pCVar3 = *pCVar2;
       }
       this_ptr->rest_pose_data[index] = this_ptr->scale_factor;
       if (skeleton_ptr->bone_list[index].parent_index < 0) {

@@ -33,9 +33,7 @@ void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(CVector3f *re
   local_44.z = (bone_data_out->pose_data).root_position.z * fVar1 +
                (bone_data_in->pose_data).root_position.z * blend_weight;
   if (&local_44 != result_root_pos) {
-    result_root_pos->x = local_44.x;
-    result_root_pos->y = local_44.y;
-    result_root_pos->z = local_44.z;
+    *result_root_pos = local_44;
   }
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(instance_ptr);
   iVar2 = 0;

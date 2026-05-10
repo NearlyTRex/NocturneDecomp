@@ -10,36 +10,28 @@
 void __cdecl core_actor_cpp_archivePartStatus_FUN_0040bae0(CDeformableModelInstance *model_ptr,char *property_name)
 
 {
-  SPartInstanceData *pSVar1;
   int iVar1;
   int iVar2;
   int iVar3;
   int iVar4;
-  CDeformableModelInstance *pCVar3;
   SPartInstanceData *pSVar4;
   int *piVar5;
   int local_14;
-  
+
+
   if (g_ActorReadingMode != 1) {
     _fprintf(g_ActorDataFile,"%s{ // %s\n",g_PropertyNamePrefix,property_name);
     core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(1);
     _fprintf(g_ActorDataFile,"%s%d\n",g_PropertyNamePrefix,0x1e);
     _fprintf(g_ActorDataFile,"%s",g_PropertyNamePrefix);
-    pCVar3 = model_ptr;
-    do {
-      pSVar1 = &pCVar3->part_data;
-      pCVar3 = (CDeformableModelInstance *)&(pCVar3->motion_controller).current_motion_index;
-      _fprintf(g_ActorDataFile,"%d ",pSVar1->visibility_flags[0]);
-    } while (pCVar3 != (CDeformableModelInstance *)&model_ptr->transformed_vertices[2].z);
+    for (iVar4 = 0; iVar4 < 0x1e; iVar4 = iVar4 + 1) {
+      _fprintf(g_ActorDataFile,"%d ",model_ptr->part_data.visibility_flags[iVar4]);
+    }
     _fprintf(g_ActorDataFile,"\n");
-    iVar4 = 0;
     _fprintf(g_ActorDataFile,"%s",g_PropertyNamePrefix);
-    do {
-      pSVar1 = &model_ptr->part_data;
-      model_ptr = (CDeformableModelInstance *)&(model_ptr->motion_controller).current_motion_index;
-      iVar4 = iVar4 + 1;
-      _fprintf(g_ActorDataFile,"%d ",pSVar1->texture_set_indices[0]);
-    } while (iVar4 < 0x1e);
+    for (iVar4 = 0; iVar4 < 0x1e; iVar4 = iVar4 + 1) {
+      _fprintf(g_ActorDataFile,"%d ",model_ptr->part_data.texture_set_indices[iVar4]);
+    }
     _fprintf(g_ActorDataFile,"\n");
     core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(-1);
     _fprintf(g_ActorDataFile,"%s}\n",g_PropertyNamePrefix);

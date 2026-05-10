@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 155
-  Total diagnostics: 423
+  Functions with findings: 157
+  Total diagnostics: 421
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 155, raw .cpp files: 0
+  .keep.cpp files: 157, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -168,17 +168,6 @@ core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_004518f0  [.keep] [Cppcheck
   Line  225: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80  [.keep] [Cppcheck (quick)]
-  File: core/actor.cpp  (6 diagnostics)
-
-  Line   81: [selfAssignment] Redundant assignment of 'pCVar6' to itself.
-  Line   94: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
-  Line   95: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
-  Line   96: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
-  Line  112: [selfAssignment] Redundant assignment of 'pCVar7' to itself.
-  Line  113: [selfAssignment] Redundant assignment of 'pcVar8' to itself.
-
-----------------------------------------------------------------------------------------------------
 core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420  [.keep] [Cppcheck (quick)]
   File: core/cloth.cpp  (6 diagnostics)
 
@@ -305,15 +294,6 @@ sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0  [.keep] [Cppcheck (quick)]
   Line  687: [selfAssignment] Redundant assignment of 'pfVar11' to itself.
 
 ----------------------------------------------------------------------------------------------------
-core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0  [.keep] [Cppcheck (quick)]
-  File: core/actor.cpp  (4 diagnostics)
-
-  Line  385: [objectIndex] The address of local variable 'local_ac' is accessed at non-zero index.
-  Line  404: [objectIndex] The address of local variable 'local_ac' is accessed at non-zero index.
-  Line  422: [objectIndex] The address of local variable 'local_110' is accessed at non-zero index.
-  Line  441: [objectIndex] The address of local variable 'local_110' is accessed at non-zero index.
-
-----------------------------------------------------------------------------------------------------
 core_box.cpp_CBox_processPhysics_FUN_0041e350  [.keep] [Cppcheck (quick)]
   File: core/box.cpp  (4 diagnostics)
 
@@ -422,12 +402,12 @@ wincore_windll.cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec  [.keep] [Cpp
   Line   79: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210  [.keep] [Cppcheck (quick)]
+core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80  [.keep] [Cppcheck (quick)]
   File: core/actor.cpp  (3 diagnostics)
 
-  Line   63: [uninitvar] Uninitialized variable: local_38
-  Line   82: [uninitvar] Uninitialized variable: local_34
-  Line  268: [invalidPointerCast] Casting between signed int * and float * which have an incompatible binary data representation.
+  Line   64: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+  Line   65: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
+  Line   66: [nullPointerRedundantCheck] Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.
 
 ----------------------------------------------------------------------------------------------------
 core_boneguy.cpp_hsvToRgb_FUN_0041ba10  [.keep] [Cppcheck (quick)]
@@ -460,6 +440,14 @@ core_gabriela.cpp_CGabriella_processAI_FUN_004d4190  [.keep] [Cppcheck (quick)]
   Line   93: [uninitvar] Uninitialized variable: local_94
   Line   93: [uninitvar] Uninitialized variable: local_9c
   Line   93: [uninitvar] Uninitialized variable: local_98
+
+----------------------------------------------------------------------------------------------------
+core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20  [.keep] [Cppcheck (quick)]
+  File: core/mission.cpp  (3 diagnostics)
+
+  Line   49: [nullPointer] Possible null pointer dereference: actor
+  Line   50: [nullPointer] Possible null pointer dereference: actor
+  Line   52: [nullPointer] Possible null pointer dereference: actor
 
 ----------------------------------------------------------------------------------------------------
 core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0  [.keep] [Cppcheck (quick)]
@@ -584,6 +572,13 @@ cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20  [.keep] [C
 
   Line   27: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   38: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0  [.keep] [Cppcheck (quick)]
+  File: core/actor.cpp  (2 diagnostics)
+
+  Line  306: [invalidFunctionArgStr] Invalid strcpy() argument nr 2. A nul-terminated string is required.
+  Line  323: [invalidFunctionArgStr] Invalid strcpy() argument nr 2. A nul-terminated string is required.
 
 ----------------------------------------------------------------------------------------------------
 core_chain.cpp_fastSqrt_FUN_00431350  [.keep] [Cppcheck (quick)]
@@ -810,6 +805,13 @@ shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970  [.keep] [Cppchec
   Line  126: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
+shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420  [.keep] [Cppcheck (quick)]
+  File: shape/edittool.cpp  (2 diagnostics)
+
+  Line   85: [invalidFunctionArgStr] Invalid strlen() argument nr 1. A nul-terminated string is required.
+  Line  129: [invalidFunctionArgStr] Invalid strlen() argument nr 1. A nul-terminated string is required.
+
+----------------------------------------------------------------------------------------------------
 shape_edittool.cpp_paintWindowBackground_FUN_0049e590  [.keep] [Cppcheck (quick)]
   File: shape/edittool.cpp  (2 diagnostics)
 
@@ -849,6 +851,12 @@ cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70  [.keep] [Cppcheck (q
   File: cockpit/pkbitmap.cpp  (1 diagnostics)
 
   Line   59: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210  [.keep] [Cppcheck (quick)]
+  File: core/actor.cpp  (1 diagnostics)
+
+  Line   65: [uninitvar] Uninitialized variable: is_raycast
 
 ----------------------------------------------------------------------------------------------------
 core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280  [.keep] [Cppcheck (quick)]

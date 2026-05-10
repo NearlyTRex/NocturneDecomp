@@ -19,7 +19,6 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor 
   float fVar7;
   EDeathState EVar8;
   CFlameCan *this_ptr_00;
-  SDamageInfo *pSVar9;
   CVector3f *pSphereCenter;
   float sphereRadius;
   double dDamageAmount;
@@ -34,7 +33,6 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor 
   CBoundingBox3D local_f8;
   CVector3f local_d4;
   CVector3f local_c8;
-  CVector3f local_bc;
   CVector3f local_b0;
   CVector3f local_a4;
   CVector3f local_98;
@@ -42,90 +40,91 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor 
   CVector3f local_74;
   CVector3f local_68;
   CVector3f local_5c;
-  CCrate *local_3c;
-  int local_38;
-  CTrigger *local_34;
+  int is_raycast;
   CCrate *local_30;
   CCrate *local_2c;
-  CDemonActor *local_28;
-  CDemonActor *local_24;
-  CTrigger *local_20;
-  CDemonActor *pCStack_18;
-  CDemonActor *pCStack_14;
-  
+  int actor_idx;
+  int hit_count;
+  CDemonActor *carrier;
+  CDemonActor *current_actor;
+
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
             (this_ptr,"..\\core\\actor.cpp",0x5ea);
+
+  // Compute the world-space hit position at the top of this actor's bounding box.
+  // local_d4 = (0, 0, bbox.max.z) in local coords; localToWorldPoint outputs the
+  // corresponding world-coord point into local_c8.
+  local_d4.x = 0.0;
   local_d4.y = 0.0;
-  local_d4.z = 0.0;
   pCVar1 = (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,(CBoundingBox3D *)&local_110.min.y);
-  local_c8.z = (pCVar1->max).z;
-  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(this_ptr,&local_bc,&local_c8);
-  if (local_38 == 1) {
+  local_d4.z = (pCVar1->max).z;
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(this_ptr,&local_c8,&local_d4);
+
+  // Raycast prep: compute attack origin = world hit pos + transform((0,0,-3))
+  // (3 units behind the actor in its facing direction).
+  if (is_raycast == 1) {
     local_d4.z = -3.0;
     local_d4.x = 0.0;
     local_d4.y = 0.0;
     pCVar2 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(this_ptr,&local_98,&local_d4);
-    local_8c.x = local_bc.x + pCVar2->x;
-    local_8c.y = local_bc.y + pCVar2->y;
-    local_8c.z = local_bc.z + pCVar2->z;
-    if (&local_b0 != &local_8c) {
-      local_b0.x = local_8c.x;
-      local_b0.y = local_8c.y;
-      local_b0.z = local_8c.z;
-    }
+    local_8c.x = local_c8.x + pCVar2->x;
+    local_8c.y = local_c8.y + pCVar2->y;
+    local_8c.z = local_c8.z + pCVar2->z;
+    local_b0 = local_8c;
   }
+
+  // Compute world-space forward direction (transform of (0,0,1)) — used as the
+  // shatter-impact direction for glass hit during actor-scan.
   local_a4.x = 0.0;
   local_a4.y = 0.0;
   local_a4.z = 1.0;
   core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(this_ptr,&local_5c,&local_a4);
-  pCStack_18 = (*((this_ptr->vtable)._ub)->getCarrier)(this_ptr);
-  if (local_34 == (CTrigger *)0x0) {
-    local_20 = local_34;
-    for (local_28 = &local_34->base; (int)local_28 < g_CDemonSetPtr->actor_count;
-        local_28 = (CDemonActor *)(local_28->actor_name + 1)) {
-      pCStack_14 = *(CDemonActor **)
-                    (local_20[0x60e].base.actor_name +
-                    (int)&g_CDemonSetPtr->cameras[0].rotation_matrix.m[2].y);
-      if ((this_ptr != pCStack_14) && (pCStack_14 != pCStack_18)) {
+  carrier = (*((this_ptr->vtable)._ub)->getCarrier)(this_ptr);
+
+  // Mode A — actor scan: cylinder collision against every actor in the set.
+  if (is_raycast == 0) {
+    for (actor_idx = 0; actor_idx < g_CDemonSetPtr->actor_count;
+        actor_idx = actor_idx + 1) {
+      current_actor = g_CDemonSetPtr->actors[actor_idx];
+      if ((this_ptr != current_actor) && (current_actor != carrier)) {
         pCVar3 = (CCharacter *)
                  core_actor_cpp_castToClassHash_FUN_0040c790
-                           (pCStack_14,g_CCharacterClassInfo.name_hash);
+                           (current_actor,g_CCharacterClassInfo.name_hash);
         if (pCVar3 == (CCharacter *)0x0) {
           pCVar5 = (CTrigger *)
                    core_actor_cpp_castToClassHash_FUN_0040c790
-                             (pCStack_14,g_CTriggerClassInfo.name_hash);
+                             (current_actor,g_CTriggerClassInfo.name_hash);
           if (pCVar5 == (CTrigger *)0x0) {
             pCVar6 = (CGlass *)
                      core_actor_cpp_castToClassHash_FUN_0040c790
-                               (pCStack_14,g_CGlassClassInfo.name_hash);
+                               (current_actor,g_CGlassClassInfo.name_hash);
+            // Glass actor-scan: sphere-intersect the world hit pos against the glass bbox.
             if (pCVar6 != (CGlass *)0x0) {
               pSphereCenter = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                        ((CDemonActor *)pCVar6,(CVector3f *)&local_74.y,(CVector3f *)&local_bc.y);
+                        ((CDemonActor *)pCVar6,&local_74,&local_c8);
               pCVar1 = (*((pCVar6->base).vtable._ub)->getBoundingBox)
                                  ((CDemonActor *)pCVar6,(CBoundingBox3D *)&local_f8.max.y);
               iVar4 = core_box_cpp_CBoundingBox3D_doesSphereIntersect_FUN_004215f0
                                 (pCVar1,pSphereCenter,sphereRadius);
               if (iVar4 != 0) {
-                core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0
-                          ((SDamageInfo *)&local_254.impact_force);
+                core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_254);
                 (*((this_ptr->vtable)._ub)->fillAttackDamageInfo)
-                          (this_ptr,hit_type,(SDamageInfo *)&local_254.impact_force,(CDemonActor *)pCVar6)
-                ;
+                          (this_ptr,hit_type,&local_254,(CDemonActor *)pCVar6);
                 (*((this_ptr->vtable)._ub)->playAttackHitEffects)
-                          (this_ptr,hit_type,(SDamageInfo *)&local_254.ammo_type,
-                           (CDemonActor *)pCVar6);
+                          (this_ptr,hit_type,&local_254,(CDemonActor *)pCVar6);
                 iVar4 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(pCVar6);
                 if (iVar4 != 0) {
-                  core_glass_cpp_CGlass_shatter_FUN_004eaef0(pCVar6,(CVector3f *)&local_98.z);
+                  core_glass_cpp_CGlass_shatter_FUN_004eaef0(pCVar6,&local_c8);
                 }
               }
             }
           }
+          // Trigger actor-scan: same sphere-intersect, then apply damage if the trigger accepts it.
           else {
             iVar4 = core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0(pCVar5,this_ptr);
             if (iVar4 != 0) {
               pSphereCenter = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                        ((CDemonActor *)pCVar5,(CVector3f *)&local_68.y,(CVector3f *)&local_bc.y);
+                        ((CDemonActor *)pCVar5,&local_68,&local_c8);
               pCVar1 = (*((pCVar5->base).vtable._ub)->getBoundingBox)
                                  ((CDemonActor *)pCVar5,(CBoundingBox3D *)&local_128.max.y);
               iVar4 = core_box_cpp_CBoundingBox3D_doesSphereIntersect_FUN_004215f0
@@ -145,44 +144,46 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor 
             }
           }
         }
+        // Character actor-scan: cylinder collision; skip CHero if we have a carrier.
         else {
-          if ((pCStack_18 != (CDemonActor *)0x0) &&
+          if ((carrier != (CDemonActor *)0x0) &&
              (iVar4 = (*(((pCVar3->base).vtable._uc)->_uc).canWalk)(pCVar3), iVar4 != 0)) {
-            iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCStack_14,"CHero");
+            iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0(current_actor,"CHero");
             if (iVar4 != 0) goto LAB_0040a3e0;
           }
-          core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&local_1a0.impact_point.y);
+          core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1a0);
           (*((this_ptr->vtable)._ub)->fillAttackDamageInfo)
-                    (this_ptr,hit_type,(SDamageInfo *)&local_1a0.impact_point.y,
-                     (CDemonActor *)pCVar3);
+                    (this_ptr,hit_type,&local_1a0,(CDemonActor *)pCVar3);
           (*(((pCVar3->base).vtable._uc)->_uc).checkCylinderCollisionWorld)
-                    (pCVar3,&local_b0,2.0,
-                     (SDamageInfo *)&local_1a0.impact_direction.y);
+                    (pCVar3,&local_c8,2.0,&local_1a0);
           dDamageAmount = (double)local_1a0.damage_amount;
           if (0.0 < dDamageAmount) {
             core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
-                      (g_CGorePtr,&local_98,(CVector3f *)&local_38,
+                      (g_CGorePtr,&local_c8,&local_68,
                        (int)ROUND(ROUND(dDamageAmount * 0.5 + 1.0)),pCVar3->blood_type);
             (*((this_ptr->vtable)._ub)->playAttackHitEffects)
-                      (this_ptr,hit_type,(SDamageInfo *)&local_1a0.damage_type,(CDemonActor *)pCVar3
-                      );
+                      (this_ptr,hit_type,&local_1a0,(CDemonActor *)pCVar3);
           }
         }
       }
 LAB_0040a3e0:
-      local_20 = (CTrigger *)((local_20->base).actor_name + 4);
+      ;
     }
   }
-  if (local_34 == (CTrigger *)0x1) {
+
+  // Mode B — raycast: shoot from attack origin (local_b0) toward hit pos (local_bc),
+  // process whatever entity types the ray strikes (character/glass/trigger/crate/flamecan),
+  // up to 4 hits.
+  if (is_raycast == 1) {
     core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,1);
     core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,this_ptr);
     core_setcolid_cpp_CDemonSet_skipExactCollisions_FUN_00574170(g_CDemonSetPtr);
-    if (pCStack_18 != (CDemonActor *)0x0) {
-      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,pCStack_18);
+    if (carrier != (CDemonActor *)0x0) {
+      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,carrier);
     }
-    local_24 = (CDemonActor *)0x0;
+    hit_count = 0;
     while ((fVar7 = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
-                              (g_CDemonSetPtr,(CVector3f *)&local_b0.y,(CVector3f *)&local_bc.y),
+                              (g_CDemonSetPtr,&local_b0,&local_c8),
            0.0 <= fVar7 && (fVar7 <= 1.0))) {
       pCVar3 = (CCharacter *)
                core_actor_cpp_castToClassHash_FUN_0040c790
@@ -219,30 +220,25 @@ LAB_0040a3e0:
           else {
             iVar4 = core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0(pCVar5,this_ptr);
             if (iVar4 != 0) {
-              core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0
-                        ((SDamageInfo *)&local_164.impact_point.y);
+              core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_164);
               (*((this_ptr->vtable)._ub)->fillAttackDamageInfo)
-                        (this_ptr,hit_type,(SDamageInfo *)&local_164.impact_point.y,
-                         (CDemonActor *)pCVar5);
+                        (this_ptr,hit_type,&local_164,(CDemonActor *)pCVar5);
               engine_console_cpp_CConsole_printf_FUN_00441890
                         (g_CConsolePtr,"%s causing %5.2f damage to %s\n",this_ptr->actor_name,
-                         (double)local_164.impact_direction.z,pCVar5->base.actor_name);
-              core_trigger_cpp_CTrigger_applyDamage_FUN_005e0b00
-                        (pCVar5,local_164.impact_direction.z);
+                         (double)local_164.damage_amount,pCVar5->base.actor_name);
+              core_trigger_cpp_CTrigger_applyDamage_FUN_005e0b00(pCVar5,local_164.damage_amount);
               (*((this_ptr->vtable)._ub)->playAttackHitEffects)
-                        (this_ptr,hit_type,(SDamageInfo *)&local_164.impact_direction.y,this_ptr);
+                        (this_ptr,hit_type,&local_164,(CDemonActor *)pCVar5);
             }
             core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,&local_30->base);
           }
         }
         else {
-          core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&local_1dc.impact_point.y);
+          core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1dc);
           (*((this_ptr->vtable)._ub)->fillAttackDamageInfo)
-                    (this_ptr,hit_type,(SDamageInfo *)&local_1dc.impact_point.y,
-                     (CDemonActor *)pCVar6);
+                    (this_ptr,hit_type,&local_1dc,(CDemonActor *)pCVar6);
           (*((this_ptr->vtable)._ub)->playAttackHitEffects)
-                    (this_ptr,hit_type,(SDamageInfo *)&local_1dc.impact_direction.y,
-                     (CDemonActor *)pCVar6);
+                    (this_ptr,hit_type,&local_1dc,(CDemonActor *)pCVar6);
           iVar4 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(pCVar6);
           if (iVar4 == 0) {
             return 0;
@@ -251,45 +247,34 @@ LAB_0040a3e0:
                     (pCVar6,&g_CDemonSetPtr->collision_impact_position);
         }
       }
-      else if (((pCStack_18 == (CDemonActor *)0x0) ||
+      // Character raycast: process damage with impact direction = ray velocity (mag 10).
+      else if (((carrier == (CDemonActor *)0x0) ||
                (iVar4 = (*(((pCVar3->base).vtable._uc)->_uc).canWalk)(pCVar3), iVar4 == 0)) ||
-              (iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCStack_14,"CHero"),
+              (iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0(current_actor,"CHero"),
               iVar4 == 0)) {
-        core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&local_218.impact_point.y);
-        local_218.impact_point.y = (float)g_CDemonSetPtr->collision_part_index;
+        core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_218);
+        local_218.hit_part_index = g_CDemonSetPtr->collision_part_index;
         (*((this_ptr->vtable)._ub)->fillAttackDamageInfo)
-                  (this_ptr,hit_type,(SDamageInfo *)&local_218.impact_point.y,&pCVar3->base);
-        local_74.z = (g_CDemonSetPtr->ray_target).x - (g_CDemonSetPtr->ray_origin).x;
-        local_68.x = (g_CDemonSetPtr->ray_target).y - (g_CDemonSetPtr->ray_origin).y;
-        local_68.y = (g_CDemonSetPtr->ray_target).z - (g_CDemonSetPtr->ray_origin).z;
+                  (this_ptr,hit_type,&local_218,&pCVar3->base);
+        local_8c.x = (g_CDemonSetPtr->ray_target).x - (g_CDemonSetPtr->ray_origin).x;
+        local_8c.y = (g_CDemonSetPtr->ray_target).y - (g_CDemonSetPtr->ray_origin).y;
+        local_8c.z = (g_CDemonSetPtr->ray_target).z - (g_CDemonSetPtr->ray_origin).z;
         fVar7 = (float)10 /
-                SQRT(local_68.y * local_68.y + local_74.z * local_74.z + local_68.x * local_68.x);
-        *(float *)&local_3c = local_74.z * fVar7;
-        *(float *)&local_38 = local_68.x * fVar7;
-        *(float *)&local_34 = local_68.y * fVar7;
-        if ((float *)&local_218.dismember_prob != (float *)&local_3c) {
-          local_218.dismember_prob = *(float *)&local_3c;
-          local_218.damage_type = local_38;
-          local_218.attacker = (CDemonActor *)local_34;
-        }
-        pSVar9 = (SDamageInfo *)
-                 core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                           (&pCVar3->base,(CVector3f *)&local_30,
-                            &g_CDemonSetPtr->collision_impact_position);
-        if (&local_1dc != pSVar9) {
-          local_1dc.hit_part_index = pSVar9->hit_part_index;
-          local_1dc.damage_amount = pSVar9->damage_amount;
-          local_1dc.gore_multiplier = pSVar9->gore_multiplier;
-        }
-        (*(((pCVar3->base).vtable._uc)->_uc).processDamage)
-                  (pCVar3,(SDamageInfo *)&local_218.impact_direction.y);
+                SQRT(local_8c.x * local_8c.x + local_8c.y * local_8c.y + local_8c.z * local_8c.z);
+        local_218.impact_point.x = local_8c.x * fVar7;
+        local_218.impact_point.y = local_8c.y * fVar7;
+        local_218.impact_point.z = local_8c.z * fVar7;
+        core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                  (&pCVar3->base,&local_218.impact_direction,
+                   &g_CDemonSetPtr->collision_impact_position);
+        (*(((pCVar3->base).vtable._uc)->_uc).processDamage)(pCVar3,&local_218);
         (*((this_ptr->vtable)._ub)->playAttackHitEffects)
-                  (this_ptr,hit_type,(SDamageInfo *)&local_218.ammo_type,&pCVar3->base);
+                  (this_ptr,hit_type,&local_218,&pCVar3->base);
         core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
                   (g_CDemonSetPtr,g_CDemonSetPtr->collision_actor);
       }
-      local_24 = (CDemonActor *)(local_24->actor_name + 1);
-      if (3 < (int)local_24) {
+      hit_count = hit_count + 1;
+      if (3 < hit_count) {
         return 0;
       }
     }

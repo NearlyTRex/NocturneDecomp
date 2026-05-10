@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 81,
+    "complexity_score": 66,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 66,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 244
   },
   "cross_references": [
@@ -171,6 +169,15 @@
       "type": "warning_inlined_function"
     },
     {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 30,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "output_buffer->x = g_ZeroVector.f.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 47,
       "match": "(int)&NAME used in byte-offset arithmetic",
@@ -256,14 +263,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 30,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "output_buffer->x = g_ZeroVector.f.x;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

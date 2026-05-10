@@ -18,9 +18,7 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission
   int iVar2;
   CInventory *pCVar6;
   char (*pacVar7) [256];
-  int iVar8;
   CDemonActor *pCVar5;
-  int *piVar1;
   CDemonActor *pCVar2;
   
   shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\mission.cpp",0x1ae);
@@ -50,12 +48,9 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission
   core_actor_cpp_syncActorTypeIDs_FUN_0040c7c0();
   iVar2 = 0;
   if (0 < g_NumActorClassTypes) {
-    iVar8 = 0;
     do {
-      piVar1 = (int *)((int)g_ActorClassRegistrations + iVar8);
-      iVar8 = iVar8 + 4;
+      _fprintf(file_handle,"%s %d\n",g_ActorClassRegistrations[iVar2]->class_name,g_ActorClassRegistrations[iVar2]->type_id);
       iVar2 = iVar2 + 1;
-      _fprintf(file_handle,"%s %d\n",((CDemonActorType *)*piVar1)->class_name,((CDemonActorType *)*piVar1)->type_id);
     } while (iVar2 < g_NumActorClassTypes);
   }
   _fprintf(file_handle,"// actor count\n");

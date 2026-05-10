@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 228,
-    "complexity_score": 276,
+    "complexity_score": 116,
     "cross_reference_count": 51,
     "function_call_count": 2,
     "global_count": 17,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 116,
-    "suspect_count": 15,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 344
   },
   "cross_references": [
@@ -619,6 +616,60 @@
   },
   "resolved_suspects": [
     {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(CDemonActor *)((int)pCVar2",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar2 = (CDemonActor *)((int)pCVar2 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(CDemonActor *)((int)pCVar2",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar2 = (CDemonActor *)((int)pCVar2 + (uint)bVar9 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(CDemonActor *)((int)pCVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(CDemonActor *)((int)pCVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 99,
+      "match": "(CDemonActor *)((int)pCVar7",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 104,
+      "match": "(CDemonActor *)((int)pCVar7",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
       "actual_args": 1,
       "description": "Format \"NULL actor pointer detected, %s line %d\" has 2 specifiers but 1 arguments after it",
       "expected_args": 2,
@@ -653,6 +704,87 @@
       "resolution_source": "keep",
       "text": "Format string expects 5 args but got 0",
       "type": "format_string_mismatch"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 43,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 48,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar1 = 1; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 67,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 72,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar1 = 1; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 97,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 102,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar1 = 1; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 52,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 0040ad0f: MOVSD.REP ES:EDI,ESI  ; g_ActorDebugBuffer | CHAR_ARRAY_00821fc4",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 108,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 0040ada5: MOVSD.REP ES:EDI,ESI  ; g_ActorDebugBuffer | CHAR_ARRAY_00821fc4",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 164,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 0040ae3a: MOVSD.REP ES:EDI,ESI  ; g_ActorDebugBuffer | CHAR_ARRAY_00821fc4",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -723,48 +855,27 @@
   "static_analysis": {
     "analyzed_file": "CDemonActor_doCheckForInvalidPointers_FUN_0040ac80.keep.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 6,
+      "diagnostic_count": 3,
       "diagnostics": [
         {
           "check_id": "nullPointerRedundantCheck",
           "column": 24,
-          "line": 94,
+          "line": 64,
           "message": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
           "severity": "warning"
         },
         {
           "check_id": "nullPointerRedundantCheck",
           "column": 24,
-          "line": 95,
+          "line": 65,
           "message": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
           "severity": "warning"
         },
         {
           "check_id": "nullPointerRedundantCheck",
           "column": 24,
-          "line": 96,
+          "line": 66,
           "message": "Either the condition 'this_ptr!=(CDemonActor*)0x0' is redundant or there is possible null pointer dereference: this_ptr.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "selfAssignment",
-          "column": 14,
-          "line": 81,
-          "message": "Redundant assignment of 'pCVar6' to itself.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "selfAssignment",
-          "column": 18,
-          "line": 112,
-          "message": "Redundant assignment of 'pCVar7' to itself.",
-          "severity": "warning"
-        },
-        {
-          "check_id": "selfAssignment",
-          "column": 18,
-          "line": 113,
-          "message": "Redundant assignment of 'pcVar8' to itself.",
           "severity": "warning"
         }
       ],
@@ -772,126 +883,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(CDemonActor *)((int)pCVar2",
-      "severity": "moderate",
-      "text": "pCVar2 = (CDemonActor *)((int)pCVar2 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 50,
-      "match": "(CDemonActor *)((int)pCVar2",
-      "severity": "moderate",
-      "text": "pCVar2 = (CDemonActor *)((int)pCVar2 + (uint)bVar9 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(CDemonActor *)((int)pCVar6",
-      "severity": "moderate",
-      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 73,
-      "match": "(CDemonActor *)((int)pCVar6",
-      "severity": "moderate",
-      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 99,
-      "match": "(CDemonActor *)((int)pCVar7",
-      "severity": "moderate",
-      "text": "pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 104,
-      "match": "(CDemonActor *)((int)pCVar7",
-      "severity": "moderate",
-      "text": "pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 43,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 48,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar1 = 1; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 67,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 72,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar1 = 1; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 97,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 102,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar1 = 1; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 52,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 0040ad0f: MOVSD.REP ES:EDI,ESI  ; g_ActorDebugBuffer | CHAR_ARRAY_00821fc4",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 108,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 0040ada5: MOVSD.REP ES:EDI,ESI  ; g_ActorDebugBuffer | CHAR_ARRAY_00821fc4",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 164,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 0040ae3a: MOVSD.REP ES:EDI,ESI  ; g_ActorDebugBuffer | CHAR_ARRAY_00821fc4",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 192,
-    "complexity_score": 88,
+    "complexity_score": 73,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 73,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 265
   },
   "cross_references": [
@@ -236,6 +234,17 @@
     },
     "pcode_op_count": 623
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 42,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(actor->base).location.position.x = (pCVar3->location).position.x;",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 956,
     "local_size": 952,
@@ -259,14 +268,36 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 42,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(actor->base).location.position.x = (pCVar3->location).position.x;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "static_analysis": {
+    "analyzed_file": "CDemonMission_ensureHeroPlaceholder_FUN_00524c20.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_id": "nullPointer",
+          "column": 11,
+          "line": 49,
+          "message": "Possible null pointer dereference: actor",
+          "severity": "warning"
+        },
+        {
+          "check_id": "nullPointer",
+          "column": 12,
+          "line": 50,
+          "message": "Possible null pointer dereference: actor",
+          "severity": "warning"
+        },
+        {
+          "check_id": "nullPointer",
+          "column": 12,
+          "line": 52,
+          "message": "Possible null pointer dereference: actor",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "keep"
+  },
+  "suspects": []
 }

@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 334,
-    "complexity_score": 118,
+    "complexity_score": 103,
     "cross_reference_count": 2,
     "function_call_count": 12,
     "global_count": 33,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 103,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 437
   },
   "cross_references": [
@@ -368,6 +366,17 @@
     },
     "pcode_op_count": 1098
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(int *)((int)g_ActorClassRegistrations",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)g_ActorClassRegistrations + iVar8);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -391,14 +400,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(int *)((int)g_ActorClassRegistrations",
-      "severity": "moderate",
-      "text": "piVar1 = (int *)((int)g_ActorClassRegistrations + iVar8);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

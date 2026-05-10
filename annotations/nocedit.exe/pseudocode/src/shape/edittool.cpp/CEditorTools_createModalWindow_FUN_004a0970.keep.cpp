@@ -125,10 +125,10 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970(CEdi
         iVar7 = g_WindowStack[iVar2].backup_x_offset * g_BitsPerPixel;
         iVar8 = iVar7 >> 0x1f;
         puVar12 = (uint *)
-                  ((int)g_ScreenBufferArray[g_WindowStack[iVar2].backup_y_offset + iVar1] +
+                  ((char *)g_ScreenBufferArray[g_WindowStack[iVar2].backup_y_offset + iVar1] +
                   ((int)((iVar7 + iVar8 * -8) - (uint)(iVar8 << 2 < 0)) >> 3));
         memcpy(local_14,puVar12,uVar7);
-        local_14 = (uint *)((int)local_14 + uVar7);
+        local_14 = (uint *)((char *)local_14 + uVar7);
         iVar1 = iVar1 + 1;
       } while (iVar1 < g_WindowStack[iVar2].backup_height);
     }

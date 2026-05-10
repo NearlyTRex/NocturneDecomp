@@ -25,9 +25,9 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0059cec0(CDeformable
   int iVar8;
   int iVar9;
   CMatrix3x3f local_e0;
-  char local_b8;
-  CVector3f local_94;
-  CVector3f local_88;
+  STriangleVertices local_b8;
+  CVector3i local_94;
+  CVector3i local_88;
   CVector3f local_7c;
   CVector3f local_70;
   STextureSet *local_64;
@@ -103,7 +103,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0059cec0(CDeformable
           puVar5 = (ushort *)
                    ((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 + iVar8
                    );
-          pCVar4 = (CVector3f *)&local_b8;
+          pCVar4 = local_b8.vertices;
           iVar7 = 0;
           do {
             uVar2 = *puVar5;
@@ -121,7 +121,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0059cec0(CDeformable
             iVar7 = iVar5;
           } while (iVar5 != 0xc);
           core_fire_cpp_CFireEffect_createGlassParticle_FUN_004c7d00
-                    (g_CFireEffectPtr,(STriangleVertices *)&local_b8,&local_94,&local_88,
+                    (g_CFireEffectPtr,&local_b8,&local_94,&local_88,
                      this_ptr->texture_sets[iVar2].textures
                      [*(int *)(iVar11 + (int)this_ptr->index_data_ptr[lod_index])].textures,0xffff);
           iVar11 = iVar11 + 4;
@@ -151,7 +151,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0059cec0(CDeformable
           if ((*(byte *)(part_visibility_flags +
                         this_ptr->cap_index_ptr[lod_index][iVar3 - this_ptr->tri_count[lod_index]])
               & 1) == 0) {
-            pCVar4 = (CVector3f *)&local_b8;
+            pCVar4 = local_b8.vertices;
             iVar7 = 0;
             do {
               uVar1 = *puVar4;
@@ -169,7 +169,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0059cec0(CDeformable
               iVar7 = iVar10;
             } while (iVar10 != 0xc);
             core_fire_cpp_CFireEffect_createGlassParticle_FUN_004c7d00
-                      (g_CFireEffectPtr,(STriangleVertices *)&local_b8,&local_94,&local_88,
+                      (g_CFireEffectPtr,&local_b8,&local_94,&local_88,
                        this_ptr->texture_sets[iVar2].textures
                        [*(int *)((int)this_ptr->index_data_ptr[lod_index] + local_14)].textures,
                        0xffff);

@@ -39,11 +39,11 @@ void __cdecl shape_edittool_cpp_paintWindowBackground_FUN_0049e590(void)
         iVar7 = g_WindowStack[iVar3].backup_x_offset * g_BitsPerPixel;
         iVar6 = iVar7 >> 0x1f;
         puVar9 = (uint *)
-                 ((int)g_ScreenBufferArray[g_WindowStack[iVar3].backup_y_offset + iVar8] +
+                 ((char *)g_ScreenBufferArray[g_WindowStack[iVar3].backup_y_offset + iVar8] +
                  ((int)((iVar7 + iVar6 * -8) - (uint)(iVar6 << 2 < 0)) >> 3));
         memcpy(puVar9,puVar7,uVar1);
         iVar8 = iVar8 + 1;
-        puVar7 = (uint *)((int)puVar7 + uVar1);
+        puVar7 = (uint *)((char *)puVar7 + uVar1);
       } while (iVar8 < g_WindowStack[iVar3].backup_height);
     }
   }

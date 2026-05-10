@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createGlassParticle_FUN_004c7d00(CFireEffect *this_ptr,STriangleVertices *triangle_vertices,CVector3f *uv_u_per_vertex,CVector3f *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime)
+; void __cdecl core_fire_cpp_CFireEffect_createGlassParticle_FUN_004c7d00(CFireEffect *this_ptr,STriangleVertices *triangle_vertices,CVector3i *uv_u_per_vertex,CVector3i *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime)
 ;
 ; Parameters:
 ; CFireEffect *    Stack[0x4]:4   this_ptr
 ; STriangleVertices * Stack[0x8]:4   triangle_vertices
-; CVector3f *      Stack[0xc]:4   uv_u_per_vertex
-; CVector3f *      Stack[0x10]:4   uv_v_per_vertex
+; CVector3i *      Stack[0xc]:4   uv_u_per_vertex
+; CVector3i *      Stack[0x10]:4   uv_v_per_vertex
 ; SMRGLTextureBasic * Stack[0x14]:4   texture
 ; int              Stack[0x18]:4   lifetime
 ;
@@ -59,7 +59,7 @@ section .text
     PUSH ECX                            ; 004c7d50
     PUSH EAX                            ; 004c7d51
     CALL core_fire.cpp_CGlassParticle_init_FUN_004c1c00 ; 004c7d52
-        ;   XREF to: 004c1c00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CGlassParticle_init_FUN_004c1c00(CGlassParticle * this_ptr, STriangleVertices * triangle_vertices, CVector3f * uv_u_per_vertex, CVector3f * uv_v_per_vertex, ...)
+        ;   XREF to: 004c1c00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CGlassParticle_init_FUN_004c1c00(CGlassParticle * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)
     ADD ESP,0x18                        ; 004c7d57
     POP EBP                             ; 004c7d5a
     POP EDI                             ; 004c7d5b

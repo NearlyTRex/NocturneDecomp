@@ -32,9 +32,7 @@ void __cdecl core_mission_cpp_CDemonMission_process_FUN_00524250(CDemonMission *
   core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_00524120(this_ptr);
   if (-1 < (this_ptr->pending_teleport).area_id) {
     pCVar1 = g_HeroActors[g_LocalHeroIndex];
-    (pCVar1->base).base.location.position.x = (this_ptr->pending_teleport).position.x;
-    (pCVar1->base).base.location.position.y = (this_ptr->pending_teleport).position.y;
-    (pCVar1->base).base.location.position.z = (this_ptr->pending_teleport).position.z;
+    (pCVar1->base).base.location.position = (this_ptr->pending_teleport).position;
     (pCVar1->base).base.location.area_id = (this_ptr->pending_teleport).area_id;
     if ((this_ptr->pending_teleport).area_id != this_ptr->current_set_index) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -48,9 +46,9 @@ void __cdecl core_mission_cpp_CDemonMission_process_FUN_00524250(CDemonMission *
       g_CScriptPtr->focus_actor_changed = 2;
     }
     (this_ptr->pending_teleport).area_id = -1;
+    (this_ptr->pending_teleport).position.x = 0.0;
+    (this_ptr->pending_teleport).position.y = 0.0;
     (this_ptr->pending_teleport).position.z = 0.0;
-    (this_ptr->pending_teleport).position.y = (this_ptr->pending_teleport).position.z;
-    (this_ptr->pending_teleport).position.x = (this_ptr->pending_teleport).position.y;
   }
   return;
 }

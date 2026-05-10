@@ -102,9 +102,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0(CDeformab
         }
         else {
           g_VertexRemapTable[local_18] = iVar5;
-          body_part_ptr->vertices[iVar5].x = skinned_vertices->x;
-          body_part_ptr->vertices[iVar5].y = skinned_vertices->y;
-          body_part_ptr->vertices[iVar5].z = skinned_vertices->z;
+          body_part_ptr->vertices[iVar5] = *skinned_vertices;
           iVar5 = iVar5 + 1;
         }
         local_18 = local_18 + 1;

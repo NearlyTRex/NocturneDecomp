@@ -13,9 +13,9 @@
 ; int *            Stack[0x1c]:4   texture_set_indices
 ; Local Variables:
 ; CMatrix3x3f      Stack[-0xe0]:36  local_e0
-; char             Stack[-0xb8]:1  local_b8
-; CVector3f        Stack[-0x94]:12  local_94
-; CVector3f        Stack[-0x88]:12  local_88
+; STriangleVertices Stack[-0xb8]:36  local_b8
+; CVector3i        Stack[-0x94]:12  local_94
+; CVector3i        Stack[-0x88]:12  local_88
 ; CVector3f        Stack[-0x7c]:12  local_7c
 ; CVector3f        Stack[-0x70]:12  local_70
 ; STextureSet *    Stack[-0x64]:4  local_64
@@ -272,7 +272,7 @@ section .text
     MOV EBX,dword ptr [0x0067a3d0]      ; 0059d185 | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH EBX                            ; 0059d18b | g_CFireEffectInstance
     CALL core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00 ; 0059d18c
-        ;   XREF to: 004c7d00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3f * uv_u_per_vertex, CVector3f * uv_v_per_vertex, ...)
+        ;   XREF to: 004c7d00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)
     ADD ESP,0x18                        ; 0059d191
     ADD ESI,0x4                         ; 0059d194
     MOV EBP,dword ptr [ESP + 0xc0]      ; 0059d197
@@ -448,7 +448,7 @@ section .text
     MOV EBP,dword ptr [0x0067a3d0]      ; 0059d41d | g_CFireEffectPtr
     PUSH EBP                            ; 0059d423 | g_CFireEffectInstance
     CALL core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00 ; 0059d424
-        ;   XREF to: 004c7d00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3f * uv_u_per_vertex, CVector3f * uv_v_per_vertex, ...)
+        ;   XREF to: 004c7d00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)
     ADD ESP,0x18                        ; 0059d429
     MOV EBP,dword ptr [ESP + 0xcc]      ; 0059d42c
         ;   Label: LAB_0059d42c

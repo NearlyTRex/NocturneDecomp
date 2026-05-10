@@ -71,7 +71,7 @@ void __cdecl core_fire_cpp_CMuzzleFlash_init_FUN_004c1940(CMuzzleFlash *this_ptr
 void __cdecl core_fire_cpp_CMuzzleFlash_process_FUN_004c1a00(CMuzzleFlash *this_ptr);
 void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_004c1a30(CMuzzleFlash *this_ptr);
 void __cdecl core_fire_cpp_loadGunFlashAssets_FUN_004c1be0(void);
-void __cdecl core_fire_cpp_CGlassParticle_init_FUN_004c1c00(CGlassParticle *this_ptr,STriangleVertices *triangle_vertices,CVector3f *uv_u_per_vertex,CVector3f *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime);
+void __cdecl core_fire_cpp_CGlassParticle_init_FUN_004c1c00(CGlassParticle *this_ptr,STriangleVertices *triangle_vertices,CVector3i *uv_u_per_vertex,CVector3i *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime);
 void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004c1ef0(CGlassParticle *this_ptr);
 void __cdecl core_fire_cpp_CGlassParticle_process_FUN_004c20f0(CGlassParticle *this_ptr);
 int __cdecl core_fire_cpp_CGlassParticle_onCollision_FUN_004c2160(CGlassParticle *this_ptr,CVector3f *collision_normal);
@@ -137,7 +137,7 @@ void __cdecl core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004c7a60(CFireEffec
 void __cdecl core_fire_cpp_CFireEffect_loadAssets_FUN_004c7ab0(CFireEffect *this_ptr);
 void __cdecl core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20(CFireEffect *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,int alpha_value);
 void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_004c7bb0(CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles,CVector3f *surface_normal,int ground_type);
-void __cdecl core_fire_cpp_CFireEffect_createGlassParticle_FUN_004c7d00(CFireEffect *this_ptr,STriangleVertices *triangle_vertices,CVector3f *uv_u_per_vertex,CVector3f *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime);
+void __cdecl core_fire_cpp_CFireEffect_createGlassParticle_FUN_004c7d00(CFireEffect *this_ptr,STriangleVertices *triangle_vertices,CVector3i *uv_u_per_vertex,CVector3i *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime);
 void __cdecl core_fire_cpp_CFireEffect_createBulletTrail_FUN_004c7d60(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *end_position,CKeyFramedModel *model_ptr,float segment_length);
 void __cdecl core_fire_cpp_CFireEffect_createFireball_FUN_004c7db0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int lighting_active,uint sfx_handle);
 void __cdecl core_fire_cpp_CFireEffect_createRock_FUN_004c7e60(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr);

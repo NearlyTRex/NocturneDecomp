@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 95,
-    "complexity_score": 80,
+    "complexity_score": 55,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 13,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 55,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 150
   },
   "cross_references": [
@@ -221,6 +219,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(uint *)((int)puVar7",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar7 = (uint *)((int)puVar7 + uVar1);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 40,
       "match": "for (...; != 0; ... + -1)",
@@ -237,6 +244,15 @@
       "severity": "moderate",
       "text": "for (uVar3 = uVar1 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 37,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar9 = (uint *)",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
@@ -280,22 +296,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(uint *)((int)puVar7",
-      "severity": "moderate",
-      "text": "puVar7 = (uint *)((int)puVar7 + uVar1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 37,
-      "match": "(TYPE *) ((int)NAME ...) split across lines",
-      "severity": "moderate",
-      "text": "puVar9 = (uint *)",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

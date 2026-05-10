@@ -15,17 +15,16 @@ void __cdecl shape_edittool_cpp_CEditorTools_restoreScreen_FUN_0049e4d0(CEditorT
   int iVar4;
   uint *puVar5;
   uint *puVar6;
-  uint auStack_12c4 [1200];
+  void *auStack_12c4 [1200];
   byte bVar7;
-  
+
   bVar7 = 0;
   if (g_UseExternalRenderer != 0) {
     if (0 < g_WindowHeight) {
       iVar4 = 0;
       do {
         iVar1 = iVar4 + 4;
-        *(uint *)((int)auStack_12c4 + iVar4) =
-             *(uint *)((int)g_ScreenBufferArray + iVar4);
+        auStack_12c4[iVar4 / 4] = g_ScreenBufferArray[iVar4 / 4];
         iVar4 = iVar1;
       } while (iVar1 < g_WindowHeight * 4);
     }
@@ -36,8 +35,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_restoreScreen_FUN_0049e4d0(CEditorT
     if (0 < g_WindowHeight) {
       iVar1 = 0;
       do {
-        puVar5 = *(uint **)((int)auStack_12c4 + iVar1);
-        puVar6 = *(uint **)((int)g_ScreenBufferArray + iVar1);
+        puVar5 = (uint *)auStack_12c4[iVar1 / 4];
+        puVar6 = (uint *)g_ScreenBufferArray[iVar1 / 4];
         memcpy(puVar6,puVar5,uVar2);
         iVar4 = iVar4 + 1;
         iVar1 = iVar1 + 4;

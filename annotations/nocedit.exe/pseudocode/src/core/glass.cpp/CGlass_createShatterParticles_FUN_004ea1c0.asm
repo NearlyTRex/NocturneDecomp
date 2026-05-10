@@ -227,7 +227,7 @@ section .text
     MOV EDX,dword ptr [0x0067a3d0]      ; 004ea2d5 | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH EDX                            ; 004ea2db | g_CFireEffectInstance
     CALL core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00 ; 004ea2dc
-        ;   XREF to: 004c7d00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3f * uv_u_per_vertex, CVector3f * uv_v_per_vertex, ...)
+        ;   XREF to: 004c7d00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)
     LEA EAX,[ESP + 0x24]                ; 004ea2e1
     LEA EDX,[EBX + 0x18]                ; 004ea2e5
     ADD ESP,0x18                        ; 004ea2e8
@@ -274,7 +274,7 @@ section .text
     MOV EBX,dword ptr [0x0067a3d0]      ; 004ea35b | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH EBX                            ; 004ea361 | g_CFireEffectInstance
     CALL core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00 ; 004ea362
-        ;   XREF to: 004c7d00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3f * uv_u_per_vertex, CVector3f * uv_v_per_vertex, ...)
+        ;   XREF to: 004c7d00 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00(CFireEffect * this_ptr, STriangleVertices * triangle_vertices, CVector3i * uv_u_per_vertex, CVector3i * uv_v_per_vertex, ...)
     ADD ESP,0x18                        ; 004ea367
     ADD ESP,0x1d4                       ; 004ea36a
     POP EBP                             ; 004ea370
