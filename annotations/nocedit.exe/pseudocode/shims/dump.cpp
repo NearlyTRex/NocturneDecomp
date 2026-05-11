@@ -474,6 +474,31 @@ static void dump_character_fields(FILE *f, CCharacter *c)
     CQuaternion4f &q0 = c->model.bone_transform.pose_data.bone_rotations[0];
     std::fprintf(f, "root_bone_quat: (w=%.4f x=%.4f y=%.4f z=%.4f)\n",
                  q0.w, q0.x, q0.y, q0.z);
+
+    // Scan all 100 bones for NaN or non-unit quaternions. Unit quat:
+    // w^2 + x^2 + y^2 + z^2 == 1. A bone with a wildly-off-unit rotation
+    // indicates the motion blender applied garbage (e.g. uninit quaternion
+    // locals multiplied together) — the renderer will explode the verts
+    // skinned to that bone.
+    std::fprintf(f, "anomalous_bones (|len2 - 1| > 0.01 or NaN):\n");
+    int anomalous = 0;
+    for (int b = 0; b < 100; ++b) {
+        CQuaternion4f &q = c->model.bone_transform.pose_data.bone_rotations[b];
+        bool nan = std::isnan(q.w) || std::isnan(q.x) ||
+                   std::isnan(q.y) || std::isnan(q.z);
+        float len2 = q.w*q.w + q.x*q.x + q.y*q.y + q.z*q.z;
+        if (nan || std::fabs(len2 - 1.0f) > 0.01f) {
+            std::fprintf(f, "  bone[%3d]: w=%.4f x=%.4f y=%.4f z=%.4f  |len2=%.4f%s\n",
+                         b, q.w, q.x, q.y, q.z, len2, nan ? " NaN" : "");
+            anomalous++;
+        }
+    }
+    if (anomalous == 0) {
+        std::fprintf(f, "  (none — all bone quaternions are unit-length)\n");
+    }
+    else {
+        std::fprintf(f, "  total anomalous: %d / 100\n", anomalous);
+    }
 }
 
 static void dump_hero_fields(FILE *f, CHero *h)

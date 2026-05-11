@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 101,
+    "complexity_score": 56,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 13,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 56,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 205
   },
   "cross_references": [
@@ -220,6 +218,44 @@
     },
     "pcode_op_count": 825
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(int *)((int)apvStack_34",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)apvStack_34 + iVar6) = iVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(int *)((int)g_WaveOutHeaders",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)(*(int *)((int)g_WaveOutHeaders + iStack_14) + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(LPWAVEHDR *)((int)g_WaveOutHeaders",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(g_WaveOutHandle,*(LPWAVEHDR *)((int)g_WaveOutHeaders + iStack_14),0x20);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(LPWAVEHDR *)((int)g_WaveOutHeaders",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(g_WaveOutHandle,*(LPWAVEHDR *)((int)g_WaveOutHeaders + iStack_14),0x20);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -236,38 +272,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(int *)((int)apvStack_34",
-      "severity": "moderate",
-      "text": "*(int *)((int)apvStack_34 + iVar6) = iVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(int *)((int)g_WaveOutHeaders",
-      "severity": "moderate",
-      "text": "*(int *)(*(int *)((int)g_WaveOutHeaders + iStack_14) + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(LPWAVEHDR *)((int)g_WaveOutHeaders",
-      "severity": "moderate",
-      "text": "(g_WaveOutHandle,*(LPWAVEHDR *)((int)g_WaveOutHeaders + iStack_14),0x20);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(LPWAVEHDR *)((int)g_WaveOutHeaders",
-      "severity": "moderate",
-      "text": "(g_WaveOutHandle,*(LPWAVEHDR *)((int)g_WaveOutHeaders + iStack_14),0x20);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

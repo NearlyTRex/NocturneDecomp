@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 88,
+    "complexity_score": 63,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 63,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 216
   },
   "cross_references": [
@@ -158,6 +156,26 @@
     },
     "pcode_op_count": 688
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(ushort *)((int)local_30",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_30 = (ushort *)((int)local_30 + output_stride);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(ushort *)((int)local_30",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_30 = (ushort *)((int)local_30 + output_stride);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 72,
     "local_size": 52,
@@ -237,22 +255,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(ushort *)((int)local_30",
-      "severity": "moderate",
-      "text": "local_30 = (ushort *)((int)local_30 + output_stride);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 59,
-      "match": "(ushort *)((int)local_30",
-      "severity": "moderate",
-      "text": "local_30 = (ushort *)((int)local_30 + output_stride);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

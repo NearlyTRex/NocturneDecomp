@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 596,
-    "complexity_score": 311,
+    "complexity_score": 286,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 286,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 882
   },
   "cross_references": [
@@ -256,6 +254,24 @@
       "severity": "moderate",
       "text": "*(byte *)((int)psVar9 + 1) = local_18;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (REP MOVSD + trailing-byte tail: dword countdown over N >> 2 followed by byte countdown over N & 3). Replace both loops with memcpy(dst, src, N) in a .keep.",
+      "line": 30,
+      "match": "for (X = N >> 2; ...) { } for (Y = N & 3; ...)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 43,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 005aa868: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {
@@ -354,43 +370,124 @@
   "static_analysis": {
     "analyzed_file": "resampleAndConvertAudio_FUN_005aa7f0.keep.cpp",
     "cppcheck_quick": {
-      "diagnostic_count": 2,
+      "diagnostic_count": 16,
       "diagnostics": [
         {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 56,
-          "line": 32,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
+          "check_id": "identicalInnerCondition",
+          "column": 21,
+          "line": 40,
+          "message": "Identical inner 'if' condition is always true.",
+          "severity": "warning"
         },
         {
-          "check_id": "shiftTooManyBitsSigned",
-          "column": 45,
-          "line": 33,
-          "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-          "severity": "error"
+          "check_id": "identicalInnerCondition",
+          "column": 21,
+          "line": 53,
+          "message": "Identical inner 'if' condition is always true.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "identicalInnerCondition",
+          "column": 19,
+          "line": 68,
+          "message": "Identical inner 'if' condition is always true.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "identicalInnerCondition",
+          "column": 19,
+          "line": 83,
+          "message": "Identical inner 'if' condition is always true.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "identicalInnerCondition",
+          "column": 19,
+          "line": 99,
+          "message": "Identical inner 'if' condition is always true.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "identicalInnerCondition",
+          "column": 19,
+          "line": 111,
+          "message": "Identical inner 'if' condition is always true.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "identicalInnerCondition",
+          "column": 17,
+          "line": 126,
+          "message": "Identical inner 'if' condition is always true.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "identicalInnerCondition",
+          "column": 17,
+          "line": 140,
+          "message": "Identical inner 'if' condition is always true.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "identicalInnerCondition",
+          "column": 19,
+          "line": 157,
+          "message": "Identical inner 'if' condition is always true.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "identicalInnerCondition",
+          "column": 19,
+          "line": 169,
+          "message": "Identical inner 'if' condition is always true.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "identicalInnerCondition",
+          "column": 17,
+          "line": 184,
+          "message": "Identical inner 'if' condition is always true.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "identicalInnerCondition",
+          "column": 17,
+          "line": 199,
+          "message": "Identical inner 'if' condition is always true.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "identicalInnerCondition",
+          "column": 17,
+          "line": 219,
+          "message": "Identical inner 'if' condition is always true.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "identicalInnerCondition",
+          "column": 17,
+          "line": 231,
+          "message": "Identical inner 'if' condition is always true.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "identicalInnerCondition",
+          "column": 15,
+          "line": 245,
+          "message": "Identical inner 'if' condition is always true.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "identicalInnerCondition",
+          "column": 15,
+          "line": 259,
+          "message": "Identical inner 'if' condition is always true.",
+          "severity": "warning"
         }
       ],
       "error": null
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Watcom loop-unrolled memcpy (REP MOVSD + trailing-byte tail: dword countdown over N >> 2 followed by byte countdown over N & 3). Replace both loops with memcpy(dst, src, N) in a .keep.",
-      "line": 30,
-      "match": "for (X = N >> 2; ...) { } for (Y = N & 3; ...)",
-      "severity": "moderate",
-      "text": "for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 43,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 005aa868: MOVSD.REP ES:EDI,ESI",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

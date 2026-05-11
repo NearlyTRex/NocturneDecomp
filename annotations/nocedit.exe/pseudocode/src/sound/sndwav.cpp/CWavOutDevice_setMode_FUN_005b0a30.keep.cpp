@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_buffer_size)
 
 {
@@ -17,7 +15,6 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice *t
   HGLOBAL pvVar3;
   LPVOID pvVar4;
   MMRESULT MVar5;
-  int iVar6;
   WAVEFORMATEX format;
 
 
@@ -35,25 +32,21 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice *t
   iVar1 = 0;
   g_WaveOutBufferSize = g_WaveOutBufferSize + 0xfU & 0xfffffff0;
   if (0 < g_WaveOutNumBuffers) {
-    iVar6 = 0;
     do {
       pvVar3 = (*g_GlobalAllocFunc)
-                         (0x2002,((int)((g_WaveOutBitsPerSample +
-                                        (g_WaveOutBitsPerSample >> 0x1f) * -8) -
-                                       (uint)((g_WaveOutBitsPerSample >> 0x1f) << 2 < 0)) >> 3) *
-                                 g_WaveOutBufferSize * g_WaveOutChannels);
-      *(HGLOBAL *)((int)g_WaveOutBufferHandles + iVar6) = pvVar3;
+                         (0x2002,
+                          (g_WaveOutBitsPerSample / 8) * g_WaveOutBufferSize * g_WaveOutChannels);
+      g_WaveOutBufferHandles[iVar1] = pvVar3;
       if (pvVar3 == (HGLOBAL)0x0) goto LAB_005b0bdc;
       pvVar4 = (*g_GlobalLockFunc)(pvVar3);
-      *(LPVOID *)((int)g_WaveOutBuffers + iVar6) = pvVar4;
+      g_WaveOutBuffers[iVar1] = pvVar4;
       if (pvVar4 == (LPVOID)0x0) goto LAB_005b0bdc;
       pvVar3 = (*g_GlobalAllocFunc)(0x2002,0x20);
-      *(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6) = pvVar3;
+      g_WaveOutHeaderHandles[iVar1] = pvVar3;
       if (pvVar3 == (HGLOBAL)0x0) goto LAB_005b0bdc;
+      pvVar4 = (*g_GlobalLockFunc)(g_WaveOutHeaderHandles[iVar1]);
+      g_WaveOutHeaders[iVar1] = (LPWAVEHDR)pvVar4;
       iVar1 = iVar1 + 1;
-      pvVar4 = (*g_GlobalLockFunc)(*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6));
-      *(LPVOID *)((int)g_WaveOutHeaders + iVar6) = pvVar4;
-      iVar6 = iVar6 + 4;
     } while (iVar1 < g_WaveOutNumBuffers);
   }
   format.wFormatTag = 1;

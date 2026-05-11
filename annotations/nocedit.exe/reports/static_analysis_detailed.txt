@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (429 diagnostics)
+Cppcheck (quick) (443 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (102)
+shiftTooManyBitsSigned (100)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_F line 66
@@ -376,15 +376,7 @@ shiftTooManyBitsSigned (102)
     File: sound/snddx.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0        line 86
-    File: sound/sndmain.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 32
-    File: sound/sndmain.cpp
-    Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 33
+  sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0        line 78
     File: sound/sndmain.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -1457,6 +1449,106 @@ legacyUninitvar (45)
     Uninitialized variable: is_pos_tan[local_f8]
 
 ----------------------------------------------------------------------------------------------------
+identicalInnerCondition (24)
+----------------------------------------------------------------------------------------------------
+
+  core_dcube.cpp_CDemonCube_save_FUN_00457430        line 27
+    File: core/dcube.cpp
+    Identical inner 'if' condition is always true.
+
+  core_dmodel.cpp_CKeyFramedModel_buildCollisionTriL line 26
+    File: core/dmodel.cpp
+    Identical inner 'if' condition is always true.
+
+  core_skeledit.cpp_CDeformableModel_sortFacesByText line 47
+    File: core/skeledit.cpp
+    Identical inner 'if' condition is always true.
+
+  core_skeleton.cpp_CDeformableModel_computeBoneBoun line 58
+    File: core/skeleton.cpp
+    Identical inner 'if' condition is always true.
+
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost line 318
+    File: shape/meshlod.cpp
+    Identical inner 'if' condition is always true.
+
+  shape_superopt.cpp_CComplexPolygon_closeSplitBound line 239
+    File: shape/superopt.cpp
+    Identical inner 'if' condition is always true.
+
+  shape_superopt.cpp_CComplexPolygon_isConvex_FUN_00 line 65
+    File: shape/superopt.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_snddx.cpp_directSoundEnumerationCallback_FUN line 48
+    File: sound/snddx.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 40
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 53
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 68
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 83
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 99
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 111
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 126
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 140
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 157
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 169
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 184
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 199
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 219
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 231
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 245
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+  sound_sndmain.cpp_resampleAndConvertAudio_FUN_005a line 259
+    File: sound/sndmain.cpp
+    Identical inner 'if' condition is always true.
+
+----------------------------------------------------------------------------------------------------
 invalidPointerCast (21)
 ----------------------------------------------------------------------------------------------------
 
@@ -1595,42 +1687,6 @@ nullPointerRedundantCheck (12)
   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005 line 71
     File: sound/snddx.cpp
     Either the condition 'pIStack_20!=(IDirectSoundBuffer*)0x0' is redundant or there is possible null pointer dereference: pIStack_20.
-
-----------------------------------------------------------------------------------------------------
-identicalInnerCondition (8)
-----------------------------------------------------------------------------------------------------
-
-  core_dcube.cpp_CDemonCube_save_FUN_00457430        line 27
-    File: core/dcube.cpp
-    Identical inner 'if' condition is always true.
-
-  core_dmodel.cpp_CKeyFramedModel_buildCollisionTriL line 26
-    File: core/dmodel.cpp
-    Identical inner 'if' condition is always true.
-
-  core_skeledit.cpp_CDeformableModel_sortFacesByText line 47
-    File: core/skeledit.cpp
-    Identical inner 'if' condition is always true.
-
-  core_skeleton.cpp_CDeformableModel_computeBoneBoun line 58
-    File: core/skeleton.cpp
-    Identical inner 'if' condition is always true.
-
-  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost line 318
-    File: shape/meshlod.cpp
-    Identical inner 'if' condition is always true.
-
-  shape_superopt.cpp_CComplexPolygon_closeSplitBound line 239
-    File: shape/superopt.cpp
-    Identical inner 'if' condition is always true.
-
-  shape_superopt.cpp_CComplexPolygon_isConvex_FUN_00 line 65
-    File: shape/superopt.cpp
-    Identical inner 'if' condition is always true.
-
-  sound_snddx.cpp_directSoundEnumerationCallback_FUN line 48
-    File: sound/snddx.cpp
-    Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
 nullPointer (8)

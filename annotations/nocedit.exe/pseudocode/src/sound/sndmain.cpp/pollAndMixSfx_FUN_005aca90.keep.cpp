@@ -79,7 +79,7 @@ void __cdecl sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90(LPVOID *channel_buffer
     }
     for (iVar5 = 0; iVar5 < num_channels; iVar5 = iVar5 + 1) {
       sound_sndmain_cpp_convertMixBufToOutput_FUN_005a5b80
-                ((float *)(g_MixBufferWriteIndex * 4 + (int)g_ChannelPrimaryBuffers[iVar5]),
+                (&g_ChannelPrimaryBuffers[iVar5][g_MixBufferWriteIndex],
                  output_ptrs[iVar5],bits_per_sample,iVar3,block_align);
       output_ptrs[iVar5] = (ushort *)((char *)output_ptrs[iVar5] + block_align * iVar3);
     }

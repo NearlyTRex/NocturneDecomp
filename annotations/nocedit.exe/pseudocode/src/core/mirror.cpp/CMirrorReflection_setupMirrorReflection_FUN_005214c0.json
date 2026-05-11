@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1100,
-    "complexity_score": 645,
+    "complexity_score": 635,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 340,
-    "suspect_count": 29,
+    "suspect_count": 28,
     "suspect_types": [
       "missing_cave_copy",
       "self_copy_guard",
@@ -725,14 +725,6 @@
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->mirror_transform_matrix).m[0].w = local_294.m[0].w;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 187,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->camera_origin).x = (int)pCVar2->x;",
       "type": "unrolled_memcpy"
     },
     {

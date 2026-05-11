@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 52,
+    "complexity_score": 27,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 27,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 83
   },
   "cross_references": [],
@@ -128,6 +126,26 @@
     },
     "pcode_op_count": 175
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(LPWAVEHDR *)((int)g_WaveOutHeaders",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(LPWAVEHDR *)((int)g_WaveOutHeaders + iVar2) != (LPWAVEHDR)0x0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(LPWAVEHDR *)((int)g_WaveOutHeaders",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(g_WaveOutHandle,*(LPWAVEHDR *)((int)g_WaveOutHeaders + iVar2),0x20);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -144,24 +162,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 19,
-      "match": "(LPWAVEHDR *)((int)g_WaveOutHeaders",
-      "severity": "moderate",
-      "text": "if (*(LPWAVEHDR *)((int)g_WaveOutHeaders + iVar2) != (LPWAVEHDR)0x0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(LPWAVEHDR *)((int)g_WaveOutHeaders",
-      "severity": "moderate",
-      "text": "(g_WaveOutHandle,*(LPWAVEHDR *)((int)g_WaveOutHeaders + iVar2),0x20);",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

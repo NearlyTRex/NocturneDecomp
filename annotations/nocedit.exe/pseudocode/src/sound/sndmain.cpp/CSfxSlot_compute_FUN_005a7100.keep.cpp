@@ -10,11 +10,9 @@
 int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr,float delta_time)
 
 {
-  float *pfVar1;
   double dVar2;
   int iVar11;
   int iVar12;
-  CSfxSlot *pCVar13;
   double local_60;
   int local_18;
   float fVar3;
@@ -120,15 +118,13 @@ int __cdecl sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(CSfxSlot *this_ptr,f
                 (g_CConsolePtr,"  vol = %5.2f\n",(double)(this_ptr->options).current_volume);
     }
     sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00(this_ptr);
-    if ((this_ptr->is_active == 1) && (iVar11 = 0, pCVar13 = this_ptr, 0 < g_AudioChannelCount)) {
+    if ((this_ptr->is_active == 1) && (iVar11 = 0, 0 < g_AudioChannelCount)) {
       do {
-        pfVar1 = pCVar13->channel_volumes;
-        pCVar13 = (CSfxSlot *)&(pCVar13->options).position;
         iVar12 = iVar11 + 1;
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"  channelVol[%d] = %5.2f\n",iVar11,
                    (double)((float)(1 << ((char)(this_ptr->sample->sample_info).bit_depth - 1U &
-                                         0x1f)) * *pfVar1));
+                                         0x1f)) * this_ptr->channel_volumes[iVar11]));
         iVar11 = iVar12;
       } while (iVar12 < g_AudioChannelCount);
     }

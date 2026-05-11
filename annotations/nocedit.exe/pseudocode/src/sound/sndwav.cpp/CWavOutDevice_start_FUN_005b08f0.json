@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 88,
+    "complexity_score": 33,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 33,
-    "suspect_count": 5,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 110
   },
   "cross_references": [],
@@ -154,6 +152,53 @@
     },
     "pcode_op_count": 419
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(void **)((int)g_WaveOutHeaders",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memset(*(void **)((int)g_WaveOutHeaders + iVar2),0,0x20);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(uint **)((int)g_WaveOutHeaders",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "**(uint **)((int)g_WaveOutHeaders + iVar2) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(uint *)((int)g_WaveOutBuffers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_WaveOutBuffers + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(int *)((int)g_WaveOutHeaders",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)(*(int *)((int)g_WaveOutHeaders + iVar2) + 0xc) = iVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(int *)((int)g_WaveOutHeaders",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)(*(int *)((int)g_WaveOutHeaders + iVar2) + 4) =",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -170,48 +215,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 14,
-      "match": "(void **)((int)g_WaveOutHeaders",
-      "severity": "moderate",
-      "text": "memset(*(void **)((int)g_WaveOutHeaders + iVar2),0,0x20);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 15,
-      "match": "(uint **)((int)g_WaveOutHeaders",
-      "severity": "moderate",
-      "text": "**(uint **)((int)g_WaveOutHeaders + iVar2) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 16,
-      "match": "(uint *)((int)g_WaveOutBuffers",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_WaveOutBuffers + iVar2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(int *)((int)g_WaveOutHeaders",
-      "severity": "moderate",
-      "text": "*(int *)(*(int *)((int)g_WaveOutHeaders + iVar2) + 0xc) = iVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 18,
-      "match": "(int *)((int)g_WaveOutHeaders",
-      "severity": "moderate",
-      "text": "*(int *)(*(int *)((int)g_WaveOutHeaders + iVar2) + 4) =",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

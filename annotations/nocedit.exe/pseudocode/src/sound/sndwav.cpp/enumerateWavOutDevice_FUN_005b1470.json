@@ -4,21 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 123,
+    "complexity_score": 58,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 58,
-    "suspect_count": 5,
-    "suspect_types": [
-      "negative_offset",
-      "pointer_cast",
-      "unrolled_strcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 133
   },
   "cross_references": [
@@ -111,6 +107,53 @@
     },
     "pcode_op_count": 294
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(SSoundDeviceInfo *)((int)pSVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar6 = (SSoundDeviceInfo *)((int)pSVar6 + (uint)bVar7 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 48,
+      "match": "pSVar6[-1].",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "pcVar4 = (char *)((int)&pSVar6[-1].is_emulated + 3);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 28,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 49,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 48,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pcVar4 = (char *)((int)&pSVar6[-1].is_emulated + 3);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 72,
     "local_size": 64,
@@ -141,46 +184,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 44,
-      "match": "(SSoundDeviceInfo *)((int)pSVar6",
-      "severity": "moderate",
-      "text": "pSVar6 = (SSoundDeviceInfo *)((int)pSVar6 + (uint)bVar7 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 48,
-      "match": "pSVar6[-1].",
-      "severity": "mild",
-      "text": "pcVar4 = (char *)((int)&pSVar6[-1].is_emulated + 3);",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 28,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 49,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 48,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "pcVar4 = (char *)((int)&pSVar6[-1].is_emulated + 3);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

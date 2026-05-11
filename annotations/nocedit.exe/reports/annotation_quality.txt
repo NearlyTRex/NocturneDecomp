@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        59 ( 0.9%)
+  Functions with type issues:        58 ( 0.9%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          1
-    Undefined types in variables:      56
+    Undefined types in variables:      55
     Unresolved stack params:           2
 
-  Excluded (.keep / MMX / by-value):   163 functions
+  Excluded (.keep / MMX / by-value):   164 functions
     Wrong calling convention:          1
-    Undefined types in variables:      161
+    Undefined types in variables:      162
     Unresolved stack params:           1
 
 ====================================================================================================
@@ -95,7 +95,7 @@ Unresolved stack parameters (missing from signature) (2)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (56)
+Undefined types in variables (55)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -363,11 +363,6 @@ Undefined types in variables (56)
     Locals:  local_10 (undefined4[4])
     Suggested: Resolve undefined types to concrete types
 
-  convertMixBufToOutput
-    Address: 0x005a5b80  File: sound/sndmain.cpp
-    Locals:  local_28 (undefined1)
-    Suggested: Resolve undefined types to concrete types
-
   connectSocket
     Address: 0x005e1bd0  File: support/trisock.cpp
     Locals:  auStackY_1804 (undefined4[1524])
@@ -431,7 +426,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (161)
+Undefined types - .keep overrides (162)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -1217,6 +1212,11 @@ Undefined types - .keep overrides (161)
   convertDoubleToFixed
     Address: 0x005a5e10  File: sound/sndmain.cpp
     Locals:  local_c (undefined8)
+    Suggested: Resolve undefined types to concrete types
+
+  convertMixBufToOutput
+    Address: 0x005a5b80  File: sound/sndmain.cpp
+    Locals:  local_28 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
   getSampleInfo

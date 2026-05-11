@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 5627 (87.2%)
-Files at 100%: 130
-Files at 90%+: 135
+Clean functions: 5653 (87.6%)
+Files at 100%: 132
+Files at 90%+: 137
 Files at 50%+: 214
 
 ====================================================================================================
@@ -136,7 +136,9 @@ FILES AT 100% (COMPLETE)
   shape/memdbg.cpp: 26 functions, 605 lines
   shape/multicrm.cpp: 6 functions, 115 lines
   shape/spotview.cpp: 6 functions, 215 lines
+  sound/mp3.cpp: 57 functions, 4680 lines
   sound/snddx.cpp: 32 functions, 1433 lines
+  sound/sndwav.cpp: 35 functions, 765 lines
   support/codec.cpp: 40 functions, 822 lines
   support/newmsg.cpp: 4 functions, 210 lines
   support/trisock.cpp: 32 functions, 355 lines
@@ -145,7 +147,7 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 130 files
+Total: 132 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
@@ -153,10 +155,6 @@ FILES AT 90-99% (ALMOST COMPLETE)
    99.5% | core/actor.cpp
          182/183 clean, 1 remaining
            - core_actor.cpp_CDemonActor_load_FUN_0040b050 (66 lines) [unrolled_strcpy]
-
-   98.2% | sound/mp3.cpp
-         56/57 clean, 1 remaining
-           - sound_mp3.cpp_applyScalefactorsToSubbands_FUN_005302f0 (33 lines) [pointer_cast]
 
    97.1% | core/baron.cpp
          33/34 clean, 1 remaining
@@ -166,6 +164,22 @@ FILES AT 90-99% (ALMOST COMPLETE)
          39/41 clean, 2 remaining
            - core_mission.cpp_CDemonMission_generateActorName_FUN_00524700 (27 lines) [unrolled_strcpy]
            - core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0 (253 lines) [unrolled_strcpy]
+
+   93.3% | sound/sndmain.cpp
+         180/193 clean, 13 remaining
+           - sound_sndmain.cpp_startSfx_FUN_005a8e90 (278 lines) [raw_address_constant]
+           - sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0 (61 lines) [pointer_cast]
+           - sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30 (22 lines) [pointer_cast, unrolled_memcpy]
+           - sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20 (23 lines) [pointer_cast]
+           - sound_sndmain.cpp_getFirstActiveSfx_FUN_005a9ef0 (17 lines) [pointer_cast]
+           - sound_sndmain.cpp_getRecordingDeviceInfo_FUN_005ab780 (20 lines) [pointer_cast, unrolled_memcpy]
+           - sound_sndmain.cpp_getSoundDeviceInfo_FUN_005ab370 (20 lines) [pointer_cast, unrolled_memcpy]
+           - sound_sndmain.cpp_getSfxOptions_FUN_005a97e0 (19 lines) [pointer_cast, unrolled_memcpy]
+           - sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_005a5530 (38 lines) [pointer_cast]
+           - sound_sndmain.cpp_killSfxByName_FUN_005aa2f0 (21 lines) [pointer_cast]
+           - sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0 (20 lines) [pointer_cast, unrolled_memcpy]
+           - sound_sndmain.cpp_freeMixBuffers_FUN_005a5900 (32 lines) [pointer_cast]
+           - sound_sndmain.cpp_getNextActiveSfx_FUN_005a9f30 (19 lines) [pointer_cast]
 
    91.7% | core/fileman.cpp
          11/12 clean, 1 remaining
@@ -228,32 +242,6 @@ FILES AT 50-89%
            - core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0 (217 lines) [unrolled_memcpy]
            - core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90 (191 lines) [unrolled_memcpy]
            - core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0 (137 lines) [pointer_cast, unrolled_memcpy]
-   87.6% | sound/sndmain.cpp
-         169/193 clean, 24 remaining
-           - sound_sndmain.cpp_startSfx_FUN_005a8e90 (278 lines) [raw_address_constant, warning_inlined_function]
-           - sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90 (173 lines) [pointer_cast]
-           - sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0 (286 lines) [unrolled_memcpy]
-           - sound_sndmain.cpp_convertMixBufToOutput_FUN_005a5b80 (63 lines) [pointer_cast]
-           - sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005a6d80 (27 lines) [pointer_cast, shadow_pointer_walk]
-           - sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0 (61 lines) [pointer_cast]
-           - sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30 (22 lines) [pointer_cast, unrolled_memcpy]
-           - sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20 (23 lines) [pointer_cast]
-           - sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20 (167 lines) [unrolled_strchr, unrolled_strlen]
-           - sound_sndmain.cpp_getFirstActiveSfx_FUN_005a9ef0 (17 lines) [pointer_cast]
-           - sound_sndmain.cpp_CSfxSlot_updateBoundPositionAndVelocity_FUN_005a6ce0 (41 lines) [pointer_cast]
-           - sound_sndmain.cpp_getRecordingDeviceInfo_FUN_005ab780 (20 lines) [pointer_cast, unrolled_memcpy]
-           - sound_sndmain.cpp_convert16BitAudioSignedness_FUN_005aa7d0 (8 lines) [pointer_cast]
-           - sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0 (319 lines) [pointer_cast, shadow_pointer_walk, warning_inlined_function]
-           - sound_sndmain.cpp_getSoundDeviceInfo_FUN_005ab370 (20 lines) [pointer_cast, unrolled_memcpy]
-           - sound_sndmain.cpp_getSfxOptions_FUN_005a97e0 (19 lines) [pointer_cast, unrolled_memcpy]
-           - sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_005a5530 (38 lines) [pointer_cast]
-           - sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100 (146 lines) [shadow_pointer_walk]
-           - sound_sndmain.cpp_killSfxByName_FUN_005aa2f0 (21 lines) [pointer_cast]
-           - sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_005a6df0 (59 lines) [shadow_pointer_walk]
-           - sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0 (20 lines) [pointer_cast, unrolled_memcpy]
-           - sound_sndmain.cpp_freeMixBuffers_FUN_005a5900 (32 lines) [pointer_cast]
-           - sound_sndmain.cpp_getNextActiveSfx_FUN_005a9f30 (19 lines) [pointer_cast]
-           - sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00 (53 lines) [shadow_pointer_walk]
    87.5% | core/event.cpp
          49/56 clean, 7 remaining
            - core_event.cpp_resolveActorByName_FUN_004aa400 (58 lines) [unrolled_strcpy]
@@ -451,6 +439,41 @@ FILES AT 50-89%
            - engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230 (120 lines) [pointer_cast]
            - engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 (367 lines) [unrolled_memcpy]
            - engine_pod.cpp_findFilesByExtension_FUN_00550ce0 (111 lines) [pointer_cast, unrolled_strcpy, unrolled_strlen]
+   82.3% | shape/superopt.cpp
+         153/186 clean, 33 remaining
+           - shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0 (87 lines) [pointer_cast]
+           - shape_superopt.cpp_CP3D_add1_FUN_005d8520 (20 lines) [pointer_cast, unrolled_memcpy]
+           - shape_superopt.cpp_CP3D_multiply_FUN_005d85f0 (20 lines) [pointer_cast, unrolled_memcpy]
+           - shape_superopt.cpp_CPoly_scale_FUN_005cc7c0 (229 lines) [bitcast_double_pair, pointer_cast]
+           - shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0 (214 lines) [pointer_cast]
+           - shape_superopt.cpp_CObj_removeVertex_FUN_005d3140 (51 lines) [pointer_cast]
+           - shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70 (119 lines) [bitcast_double_pair, pointer_cast, sub84_truncation, unrolled_memcpy]
+           - shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590 (506 lines) [pointer_cast]
+           - shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0 (45 lines) [pointer_cast, unrolled_memcpy]
+           - shape_superopt.cpp_CP3D_subtract_FUN_005d84d0 (20 lines) [pointer_cast, unrolled_memcpy]
+           - shape_superopt.cpp_CP3D_add2_FUN_005d85a0 (20 lines) [pointer_cast, unrolled_memcpy]
+           - shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60 (84 lines) [bitcast_double_pair, pointer_cast, sub84_truncation]
+           - shape_superopt.cpp_CPoly_getBounds_FUN_005ce3e0 (72 lines) [pointer_cast]
+           - shape_superopt.cpp_CObj_computeBoundingBox_FUN_005d3f60 (52 lines) [pointer_cast]
+           - shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0 (447 lines) [unrolled_memcpy]
+           - shape_superopt.cpp_CComplexPolygon_mergeAdjacentEdges_FUN_005c7dc0 (81 lines) [pointer_cast]
+           - shape_superopt.cpp_COptimize_optimizeComplex_FUN_005d7350 (58 lines) [pointer_cast]
+           - shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50 (140 lines) [bitcast_double_pair, pointer_cast, sub84_truncation, unrolled_memcpy]
+           - shape_superopt.cpp_CComplexPolygon_splitByDimensions_FUN_005c9500 (272 lines) [unrolled_memcpy]
+           - shape_superopt.cpp_SExpandedEdge_copy_FUN_005d8710 (30 lines) [pointer_cast, unrolled_memcpy]
+           - shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010 (114 lines) [pointer_cast]
+           - shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0 (91 lines) [bitcast_double_pair, pointer_cast]
+           - shape_superopt.cpp_CP3D_scale_FUN_005d8630 (20 lines) [pointer_cast, unrolled_memcpy]
+           - shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30 (63 lines) [pointer_cast, unrolled_memcpy]
+           - shape_superopt.cpp_CPoly_transform_FUN_005ccc30 (181 lines) [pointer_cast]
+           - shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800 (149 lines) [pointer_cast]
+           - shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00 (165 lines) [pointer_cast, raw_address_constant, unrolled_strcpy]
+           - shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960 (157 lines) [pointer_cast]
+           - shape_superopt.cpp_CPoly_flipNormal_FUN_005cdfe0 (33 lines) [pointer_cast]
+           - shape_superopt.cpp_CObj_scale_FUN_005d2940 (93 lines) [pointer_cast]
+           - shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0 (115 lines) [unrolled_memcpy]
+           - shape_superopt.cpp_COptimize_cleanup_FUN_005d7000 (34 lines) [pointer_cast]
+           - shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0 (44 lines) [pointer_cast, unrolled_memcpy]
    82.2% | core/bodypart.cpp
          37/45 clean, 8 remaining
            - core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050 (199 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy]
@@ -495,42 +518,6 @@ FILES AT 50-89%
            - engine_3d.c_renderPrimitiveAdaptivePlaneMasked_FUN_00404840 (92 lines) [pointer_cast, shadow_pointer_walk]
            - engine_3d.c_renderPolygonTexturePerspectiveCorrectClamped_FUN_00406290 (74 lines) [pointer_cast, raw_address_constant, shadow_pointer_walk]
            - engine_3d.c_clipAndDrawLine3D_FUN_00408070 (197 lines) [unrolled_memcpy]
-   81.7% | shape/superopt.cpp
-         152/186 clean, 34 remaining
-           - shape_superopt.cpp_CPoly_isValid_FUN_005d1ff0 (87 lines) [pointer_cast]
-           - shape_superopt.cpp_CP3D_add1_FUN_005d8520 (20 lines) [pointer_cast, unrolled_memcpy]
-           - shape_superopt.cpp_CP3D_multiply_FUN_005d85f0 (20 lines) [pointer_cast, unrolled_memcpy]
-           - shape_superopt.cpp_CPoly_scale_FUN_005cc7c0 (229 lines) [bitcast_double_pair, pointer_cast]
-           - shape_superopt.cpp_optimizeCubeTriList_FUN_005d77a0 (204 lines) [unrolled_memcpy]
-           - shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0 (214 lines) [pointer_cast]
-           - shape_superopt.cpp_CObj_removeVertex_FUN_005d3140 (51 lines) [pointer_cast]
-           - shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70 (119 lines) [bitcast_double_pair, pointer_cast, sub84_truncation, unrolled_memcpy]
-           - shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590 (506 lines) [pointer_cast]
-           - shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0 (45 lines) [pointer_cast, unrolled_memcpy]
-           - shape_superopt.cpp_CP3D_subtract_FUN_005d84d0 (20 lines) [pointer_cast, unrolled_memcpy]
-           - shape_superopt.cpp_CP3D_add2_FUN_005d85a0 (20 lines) [pointer_cast, unrolled_memcpy]
-           - shape_superopt.cpp_pointInPolygon2D_FUN_005d5e60 (84 lines) [bitcast_double_pair, pointer_cast, sub84_truncation]
-           - shape_superopt.cpp_CPoly_getBounds_FUN_005ce3e0 (72 lines) [pointer_cast]
-           - shape_superopt.cpp_CObj_computeBoundingBox_FUN_005d3f60 (52 lines) [pointer_cast]
-           - shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0 (447 lines) [unrolled_memcpy]
-           - shape_superopt.cpp_CComplexPolygon_mergeAdjacentEdges_FUN_005c7dc0 (81 lines) [pointer_cast]
-           - shape_superopt.cpp_COptimize_optimizeComplex_FUN_005d7350 (58 lines) [pointer_cast]
-           - shape_superopt.cpp_CComplexPolygon_findReflexVertex_FUN_005c8b50 (140 lines) [bitcast_double_pair, pointer_cast, sub84_truncation, unrolled_memcpy]
-           - shape_superopt.cpp_CComplexPolygon_splitByDimensions_FUN_005c9500 (272 lines) [unrolled_memcpy]
-           - shape_superopt.cpp_SExpandedEdge_copy_FUN_005d8710 (30 lines) [pointer_cast, unrolled_memcpy]
-           - shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010 (114 lines) [pointer_cast]
-           - shape_superopt.cpp_CObj_scaleMasked_FUN_005d2ac0 (91 lines) [bitcast_double_pair, pointer_cast]
-           - shape_superopt.cpp_CP3D_scale_FUN_005d8630 (20 lines) [pointer_cast, unrolled_memcpy]
-           - shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30 (63 lines) [pointer_cast, unrolled_memcpy]
-           - shape_superopt.cpp_CPoly_transform_FUN_005ccc30 (181 lines) [pointer_cast]
-           - shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800 (149 lines) [pointer_cast]
-           - shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00 (165 lines) [pointer_cast, raw_address_constant, unrolled_strcpy]
-           - shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960 (157 lines) [pointer_cast]
-           - shape_superopt.cpp_CPoly_flipNormal_FUN_005cdfe0 (33 lines) [pointer_cast]
-           - shape_superopt.cpp_CObj_scale_FUN_005d2940 (93 lines) [pointer_cast]
-           - shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0 (115 lines) [unrolled_memcpy]
-           - shape_superopt.cpp_COptimize_cleanup_FUN_005d7000 (34 lines) [pointer_cast]
-           - shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0 (44 lines) [pointer_cast, unrolled_memcpy]
    81.0% | shape/cramtex.cpp
          17/21 clean, 4 remaining
            - shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (832 lines) [pointer_cast]
@@ -674,6 +661,23 @@ FILES AT 50-89%
            - engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0 (225 lines) [unrolled_memcpy]
            - engine_drender.cpp_CDemonRenderer_renderPremium_FUN_0048b1e0 (62 lines) [pointer_cast, shadow_pointer_walk]
            - engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0 (33 lines) [pointer_cast, shadow_pointer_walk]
+   76.2% | core/stranger.cpp
+         48/63 clean, 15 remaining
+           - core_stranger.cpp_CStranger_ctor_FUN_005bb120 (100 lines) [unrolled_memset]
+           - core_stranger.cpp_CStranger_tryDescendLadder_FUN_005c2400 (135 lines) [unrolled_memcpy]
+           - core_stranger.cpp_CStranger_updateArmRecoilBlend_FUN_005c4c20 (147 lines) [unrolled_memcpy]
+           - core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370 (128 lines) [unrolled_memcpy]
+           - core_stranger.cpp_CStranger_autoAimAtThreat_FUN_005c3960 (270 lines) [unrolled_memcpy]
+           - core_stranger.cpp_CStranger_setup_FUN_005bb4b0 (110 lines) [unrolled_memcpy]
+           - core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520 (516 lines) [missing_cave_copy]
+           - core_stranger.cpp_CStranger_updateTurnBlending_FUN_005bf800 (91 lines) [unrolled_memset]
+           - core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0 (497 lines) [missing_cave_copy, unrolled_memcpy]
+           - core_stranger.cpp_CStranger_tryClimbLadder_FUN_005c1fe0 (130 lines) [unrolled_memcpy]
+           - core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60 (238 lines) [missing_cave_copy]
+           - core_stranger.cpp_CStranger_processFrame_FUN_005bb960 (1140 lines) [unrolled_memcpy, unrolled_memset]
+           - core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20 (275 lines) [unrolled_memcpy]
+           - core_stranger.cpp_CStranger_tryPickupObject_FUN_005c1680 (283 lines) [unrolled_memcpy]
+           - core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850 (260 lines) [unrolled_memcpy]
    75.9% | core/set.cpp
          66/87 clean, 21 remaining
            - core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0 (37 lines) [unrolled_memcpy]
@@ -740,24 +744,6 @@ FILES AT 50-89%
            - core_ground.cpp_CGround_transformAndStoreVertices_FUN_004ef490 (127 lines) [pointer_cast]
            - core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004ef880 (16 lines) [pointer_cast, raw_address_constant]
            - core_ground.cpp_CGround_getHeightAtPosition_FUN_004efd30 (100 lines) [pointer_cast]
-   74.6% | core/stranger.cpp
-         47/63 clean, 16 remaining
-           - core_stranger.cpp_CStranger_ctor_FUN_005bb120 (100 lines) [unrolled_memset]
-           - core_stranger.cpp_CStranger_tryDescendLadder_FUN_005c2400 (135 lines) [unrolled_memcpy]
-           - core_stranger.cpp_CStranger_updateArmRecoilBlend_FUN_005c4c20 (147 lines) [unrolled_memcpy]
-           - core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370 (128 lines) [unrolled_memcpy]
-           - core_stranger.cpp_CStranger_autoAimAtThreat_FUN_005c3960 (270 lines) [unrolled_memcpy]
-           - core_stranger.cpp_CStranger_setup_FUN_005bb4b0 (110 lines) [unrolled_memcpy]
-           - core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520 (516 lines) [missing_cave_copy]
-           - core_stranger.cpp_CStranger_updateTurnBlending_FUN_005bf800 (91 lines) [unrolled_memset]
-           - core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0 (497 lines) [missing_cave_copy, unrolled_memcpy]
-           - core_stranger.cpp_CStranger_tryClimbLadder_FUN_005c1fe0 (130 lines) [unrolled_memcpy]
-           - core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60 (238 lines) [missing_cave_copy]
-           - core_stranger.cpp_CStranger_processFrame_FUN_005bb960 (1140 lines) [unrolled_memcpy, unrolled_memset]
-           - core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20 (275 lines) [unrolled_memcpy]
-           - core_stranger.cpp_CStranger_tryPickupObject_FUN_005c1680 (283 lines) [unrolled_memcpy]
-           - core_stranger.cpp_CStranger_applyArmAimRotation_FUN_005c02b0 (127 lines) [missing_cave_copy]
-           - core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850 (260 lines) [unrolled_memcpy]
    73.7% | core/gabriela.cpp
          28/38 clean, 10 remaining
            - core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004d4890 (162 lines) [unrolled_memcpy]
@@ -1059,20 +1045,6 @@ FILES AT 50-89%
            - core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120 (187 lines) [pointer_cast, shadow_pointer_walk]
            - core_skeledit.cpp_CDeformableModel_cramModelTexture_FUN_0058de70 (85 lines) [pointer_cast, unrolled_strcpy]
            - core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10 (71 lines) [pointer_cast]
-   65.7% | sound/sndwav.cpp
-         23/35 clean, 12 remaining
-           - sound_sndwav.cpp_CWavInDevice_reset_FUN_005b0f10 (23 lines) [pointer_cast]
-           - sound_sndwav.cpp_CWavOutDevice_reset_FUN_005b09c0 (27 lines) [pointer_cast]
-           - sound_sndwav.cpp_enumerateWavInDevice_FUN_005b1560 (56 lines) [negative_offset, pointer_cast, unrolled_strcpy]
-           - sound_sndwav.cpp_enumerateWavOutDevice_FUN_005b1470 (58 lines) [negative_offset, pointer_cast, unrolled_strcpy]
-           - sound_sndwav.cpp_CWavInDevice_start_FUN_005b0e20 (37 lines) [pointer_cast]
-           - sound_sndwav.cpp_CWavInDevice_poll_FUN_005b12e0 (56 lines) [pointer_cast]
-           - sound_sndwav.cpp_CWavOutDevice_setMode_FUN_005b0a30 (68 lines) [pointer_cast, warning_inlined_function]
-           - sound_sndwav.cpp_CWavInDevice_close_FUN_005b0d70 (34 lines) [pointer_cast]
-           - sound_sndwav.cpp_CWavOutDevice_poll_FUN_005b0c10 (25 lines) [pointer_cast]
-           - sound_sndwav.cpp_CWavOutDevice_close_FUN_005b0840 (34 lines) [pointer_cast]
-           - sound_sndwav.cpp_writeWavOutBuffer_FUN_005b06c0 (56 lines) [pointer_cast]
-           - sound_sndwav.cpp_CWavOutDevice_start_FUN_005b08f0 (33 lines) [pointer_cast]
    60.0% | core/course.cpp
          9/15 clean, 6 remaining
            - core_course.cpp_CCourse_showEditorMenu_FUN_00443040 (278 lines) [unrolled_memcpy]
@@ -1156,7 +1128,7 @@ FILES AT 50-89%
            - core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0 (211 lines) [pointer_cast]
            - core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 (136 lines) [shadow_pointer_walk, unrolled_memcpy]
 
-Total: 79 files
+Total: 77 files
 
 ====================================================================================================
 FILES BELOW 50%

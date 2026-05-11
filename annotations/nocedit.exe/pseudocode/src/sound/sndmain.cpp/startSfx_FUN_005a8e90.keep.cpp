@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-
 uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
 
 {

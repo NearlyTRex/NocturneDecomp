@@ -1502,10 +1502,30 @@ def _is_pure_path_expr(expr):
     `/` outside brackets/parens disqualify it. (Inside brackets is fine —
     `arr[i + 1]` is still a pure path access.)
 
+    Also disqualifies a leading C-style typecast like `(double)src.x`. Even
+    though the access path inside is pure, the cast is a type conversion —
+    so a run of `(double)src.x = ...; (double)src.y = ...; (double)src.z = ...;`
+    is NOT a collapsible struct copy. Two structs with different element
+    types can't be `dst = src`'d; they need element-by-element conversion.
+
     Used to filter out false-positive `field_copy` matches where the RHS
     is actually a vector arithmetic expression (e.g. `dst.x = a.x - b.x`)
     that the regex would otherwise match because it ends in `.x;`.
     """
+    # Leading C-style typecast: `(TYPE)expr` or `(TYPE *)expr` — disqualify.
+    # Conservatively matches `(<simple-type>)` and `(<simple-type> *)`. We
+    # don't try to parse arbitrary struct/union/const-qualifier casts; the
+    # common cases (primitive type, pointer-to-type) are enough to suppress
+    # the field-copy false-positive run.
+    if re.match(
+        r"^\s*\("
+        r"\s*(?:const\s+|unsigned\s+|signed\s+)*"
+        r"\w+"
+        r"(?:\s*\*+)?"
+        r"\s*\)\s*\S",
+        expr,
+    ):
+        return False
     s = expr
     # Iteratively collapse balanced parens and brackets to single tokens.
     while True:

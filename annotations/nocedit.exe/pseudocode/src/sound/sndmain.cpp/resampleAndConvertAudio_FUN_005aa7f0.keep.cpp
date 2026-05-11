@@ -13,9 +13,6 @@ void __cdecl sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0(int src_bit_
   short sVar1;
   float fVar4;
   short sVar4;
-  uint uVar5;
-  uint uVar6;
-  uint uVar7;
   int iVar7;
   short *psVar9;
   short *psVar8;
@@ -29,20 +26,7 @@ void __cdecl sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0(int src_bit_
     if (((src_sample_rate == dst_sample_rate) && (src_bit_depth == dst_bit_depth)) &&
        (src_channels == dst_channels)) {
       if (src_buffer != dst_buffer) {
-        uVar5 = ((int)((src_bit_depth + (src_bit_depth >> 0x1f) * -8) -
-                      (uint)((src_bit_depth >> 0x1f) << 2 < 0)) >> 3) * num_output_samples *
-                dst_channels;
-        psVar9 = dst_buffer;
-        for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-          *(uint *)psVar9 = *(uint *)src_buffer;
-          src_buffer = src_buffer + 2;
-          psVar9 = psVar9 + 2;
-        }
-        for (uVar7 = uVar5 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-          *(char *)psVar9 = (char)*src_buffer;
-          src_buffer = (short *)((char *)src_buffer + 1);
-          psVar9 = (short *)((char *)psVar9 + 1);
-        }
+        memcpy(dst_buffer,src_buffer,(src_bit_depth / 8) * num_output_samples * dst_channels);
       }
     }
     else {

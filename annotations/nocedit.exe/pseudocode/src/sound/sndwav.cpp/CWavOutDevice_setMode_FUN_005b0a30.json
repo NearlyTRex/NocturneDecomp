@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 154,
-    "complexity_score": 138,
+    "complexity_score": 68,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 15,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 68,
-    "suspect_count": 6,
-    "suspect_types": [
-      "pointer_cast",
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 222
   },
   "cross_references": [],
@@ -210,6 +207,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000018",
@@ -217,6 +223,51 @@
       "severity": "moderate",
       "text": "int *in_stack_00000018;",
       "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(HGLOBAL *)((int)g_WaveOutBufferHandles",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(HGLOBAL *)((int)g_WaveOutBufferHandles + iVar6) = pvVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(LPVOID *)((int)g_WaveOutBuffers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(LPVOID *)((int)g_WaveOutBuffers + iVar6) = pvVar4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(HGLOBAL *)((int)g_WaveOutHeaderHandles",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6) = pvVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(HGLOBAL *)((int)g_WaveOutHeaderHandles",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pvVar4 = (*g_GlobalLockFunc)(*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(LPVOID *)((int)g_WaveOutHeaders",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(LPVOID *)((int)g_WaveOutHeaders + iVar6) = pvVar4;",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
@@ -272,56 +323,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(HGLOBAL *)((int)g_WaveOutBufferHandles",
-      "severity": "moderate",
-      "text": "*(HGLOBAL *)((int)g_WaveOutBufferHandles + iVar6) = pvVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(LPVOID *)((int)g_WaveOutBuffers",
-      "severity": "moderate",
-      "text": "*(LPVOID *)((int)g_WaveOutBuffers + iVar6) = pvVar4;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(HGLOBAL *)((int)g_WaveOutHeaderHandles",
-      "severity": "moderate",
-      "text": "*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6) = pvVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 51,
-      "match": "(HGLOBAL *)((int)g_WaveOutHeaderHandles",
-      "severity": "moderate",
-      "text": "pvVar4 = (*g_GlobalLockFunc)(*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 52,
-      "match": "(LPVOID *)((int)g_WaveOutHeaders",
-      "severity": "moderate",
-      "text": "*(LPVOID *)((int)g_WaveOutHeaders + iVar6) = pvVar4;",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

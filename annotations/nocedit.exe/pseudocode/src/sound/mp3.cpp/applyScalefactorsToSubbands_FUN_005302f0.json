@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 58,
+    "complexity_score": 33,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 33,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 102
   },
   "cross_references": [
@@ -100,6 +98,26 @@
     },
     "pcode_op_count": 438
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(int *)(channel_or_granule_index * 0x80 + iVar7 + (int)scalefactor_band_indices",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar6 = (int *)(channel_or_granule_index * 0x80 + iVar7 + (int)scalefactor_band_indices);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(float *)((int)spectral_samples",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pfVar4 = (float *)((int)spectral_samples + iVar7);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 20,
     "local_size": 4,
@@ -137,22 +155,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 20,
-      "match": "(int *)(channel_or_granule_index * 0x80 + iVar7 + (int)scalefactor_band_indices",
-      "severity": "moderate",
-      "text": "piVar6 = (int *)(channel_or_granule_index * 0x80 + iVar7 + (int)scalefactor_band_indices);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(float *)((int)spectral_samples",
-      "severity": "moderate",
-      "text": "pfVar4 = (float *)((int)spectral_samples + iVar7);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

@@ -7,18 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 705,
-    "complexity_score": 514,
+    "complexity_score": 319,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 319,
-    "suspect_count": 18,
-    "suspect_types": [
-      "pointer_cast",
-      "shadow_pointer_walk",
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1024
   },
   "cross_references": [
@@ -214,6 +210,170 @@
     },
     "pcode_op_count": 3581
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 164,
+      "match": "(byte *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_7c[3] = (float)(int)(*(byte *)((int)this_ptr->sample->sample_data +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 187,
+      "match": "(byte *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "bVar3 = *(byte *)((int)this_ptr->sample->sample_data + (int)ROUND(ROUND(local_c0)));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 285,
+      "match": "(int *)((int)mix_buffer",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar2 = (int *)((int)mix_buffer.channel_buffers + iVar12);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 298,
+      "match": "(int *)((int)aiStack_a4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)aiStack_a4 + local_4c) != 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 300,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar14 = (iVar10 + *(int *)((int)this_ptr->channel_target_buffer_offsets + local_4c)) -",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 301,
+      "match": "(int *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)this_ptr->channel_current_buffer_offsets + local_4c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 306,
+      "match": "(int *)((int)aiStack_a4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pfVar1 = (float *)(*(int *)((int)aiStack_a4 + local_4c) + iVar11);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 308,
+      "match": "(int *)((int)aiStack_a4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)(*(int *)((int)aiStack_a4 + local_4c) + -4 + iVar11) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 309,
+      "match": "(int *)((int)g_ChannelTertiaryBuffers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(float *)(*(int *)((int)g_ChannelTertiaryBuffers + local_4c) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 314,
+      "match": "(uint *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)this_ptr->channel_current_buffer_offsets + local_4c) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 315,
+      "match": "(uint *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)this_ptr->channel_target_buffer_offsets + local_4c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 82,
+      "match": "pCVar8 = (T *)&(pCVar8->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar8 = (CSfxSlot *)&(pCVar8->options).position;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar13->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 108,
+      "match": "pCVar13 = (T *)&(pCVar13->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar13 = (CSfxSlot *)&(pCVar13->options).position;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar13->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 176,
+      "match": "pCVar13 = (T *)&(pCVar13->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar13 = (CSfxSlot *)&(pCVar13->options).position;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar13->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 197,
+      "match": "pCVar13 = (T *)&(pCVar13->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar13 = (CSfxSlot *)&(pCVar13->options).position;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar13->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 228,
+      "match": "pCVar13 = (T *)&(pCVar13->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar13 = (CSfxSlot *)&(pCVar13->options).position;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar13->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 255,
+      "match": "pCVar13 = (T *)&(pCVar13->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar13 = (CSfxSlot *)&(pCVar13->options).position;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 244,
     "local_size": 196,
@@ -458,7 +618,7 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 29,
-          "line": 86,
+          "line": 78,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -467,150 +627,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 164,
-      "match": "(byte *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "local_7c[3] = (float)(int)(*(byte *)((int)this_ptr->sample->sample_data +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 187,
-      "match": "(byte *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "bVar3 = *(byte *)((int)this_ptr->sample->sample_data + (int)ROUND(ROUND(local_c0)));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 285,
-      "match": "(int *)((int)mix_buffer",
-      "severity": "moderate",
-      "text": "piVar2 = (int *)((int)mix_buffer.channel_buffers + iVar12);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 298,
-      "match": "(int *)((int)aiStack_a4",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)aiStack_a4 + local_4c) != 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 300,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "iVar14 = (iVar10 + *(int *)((int)this_ptr->channel_target_buffer_offsets + local_4c)) -",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 301,
-      "match": "(int *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(int *)((int)this_ptr->channel_current_buffer_offsets + local_4c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 306,
-      "match": "(int *)((int)aiStack_a4",
-      "severity": "moderate",
-      "text": "pfVar1 = (float *)(*(int *)((int)aiStack_a4 + local_4c) + iVar11);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 308,
-      "match": "(int *)((int)aiStack_a4",
-      "severity": "moderate",
-      "text": "*(float *)(*(int *)((int)aiStack_a4 + local_4c) + -4 + iVar11) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 309,
-      "match": "(int *)((int)g_ChannelTertiaryBuffers",
-      "severity": "moderate",
-      "text": "*(float *)(*(int *)((int)g_ChannelTertiaryBuffers + local_4c) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 314,
-      "match": "(uint *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(uint *)((int)this_ptr->channel_current_buffer_offsets + local_4c) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 315,
-      "match": "(uint *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "*(uint *)((int)this_ptr->channel_target_buffer_offsets + local_4c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 82,
-      "match": "pCVar8 = (T *)&(pCVar8->FIELD).SUBFIELD",
-      "severity": "moderate",
-      "text": "pCVar8 = (CSfxSlot *)&(pCVar8->options).position;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar13->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 108,
-      "match": "pCVar13 = (T *)&(pCVar13->FIELD).SUBFIELD",
-      "severity": "moderate",
-      "text": "pCVar13 = (CSfxSlot *)&(pCVar13->options).position;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar13->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 176,
-      "match": "pCVar13 = (T *)&(pCVar13->FIELD).SUBFIELD",
-      "severity": "moderate",
-      "text": "pCVar13 = (CSfxSlot *)&(pCVar13->options).position;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar13->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 197,
-      "match": "pCVar13 = (T *)&(pCVar13->FIELD).SUBFIELD",
-      "severity": "moderate",
-      "text": "pCVar13 = (CSfxSlot *)&(pCVar13->options).position;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar13->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 228,
-      "match": "pCVar13 = (T *)&(pCVar13->FIELD).SUBFIELD",
-      "severity": "moderate",
-      "text": "pCVar13 = (CSfxSlot *)&(pCVar13->options).position;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar13` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar13->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 255,
-      "match": "pCVar13 = (T *)&(pCVar13->FIELD).SUBFIELD",
-      "severity": "moderate",
-      "text": "pCVar13 = (CSfxSlot *)&(pCVar13->options).position;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

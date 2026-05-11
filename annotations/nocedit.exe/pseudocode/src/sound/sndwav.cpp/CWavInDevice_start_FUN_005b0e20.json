@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 92,
+    "complexity_score": 37,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 37,
-    "suspect_count": 5,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 129
   },
   "cross_references": [],
@@ -173,6 +171,53 @@
     },
     "pcode_op_count": 445
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(void **)((int)g_WaveInHeaders",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "memset(*(void **)((int)g_WaveInHeaders + iVar3),0,0x20);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(uint **)((int)g_WaveInHeaders",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "**(uint **)((int)g_WaveInHeaders + iVar3) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(uint *)((int)g_WaveInBuffers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_WaveInBuffers + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(int *)((int)g_WaveInHeaders",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)(*(int *)((int)g_WaveInHeaders + iVar3) + 0xc) = buffer_index;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(int *)((int)g_WaveInHeaders",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)(*(int *)((int)g_WaveInHeaders + iVar3) + 4) =",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -189,48 +234,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 14,
-      "match": "(void **)((int)g_WaveInHeaders",
-      "severity": "moderate",
-      "text": "memset(*(void **)((int)g_WaveInHeaders + iVar3),0,0x20);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 15,
-      "match": "(uint **)((int)g_WaveInHeaders",
-      "severity": "moderate",
-      "text": "**(uint **)((int)g_WaveInHeaders + iVar3) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 16,
-      "match": "(uint *)((int)g_WaveInBuffers",
-      "severity": "moderate",
-      "text": "*(uint *)((int)g_WaveInBuffers + iVar3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(int *)((int)g_WaveInHeaders",
-      "severity": "moderate",
-      "text": "*(int *)(*(int *)((int)g_WaveInHeaders + iVar3) + 0xc) = buffer_index;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 18,
-      "match": "(int *)((int)g_WaveInHeaders",
-      "severity": "moderate",
-      "text": "*(int *)(*(int *)((int)g_WaveInHeaders + iVar3) + 4) =",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
