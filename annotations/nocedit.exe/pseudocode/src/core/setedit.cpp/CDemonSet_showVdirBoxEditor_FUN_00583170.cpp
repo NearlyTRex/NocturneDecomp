@@ -1406,7 +1406,7 @@ LAB_00583c6f:
     iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D);
     if (((iVar11 != 0) && (-1 < local_18)) &&
        ((local_18 < this_ptr->vdir_box_count &&
-        (iVar5 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
+        (iVar5 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
                            (g_CEditorToolsPtr,"Delete the selected box?"), iVar11 = local_18
         , iVar5 != 0)))) {
       iVar5 = this_ptr->vdir_box_count + -1;

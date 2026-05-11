@@ -78,7 +78,7 @@
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
-;   shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
+;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
 ;   shape_edittool.cpp_CStrList_add_FUN_004a2b80
 ;   shape_edittool.cpp_CStrList_ctor_FUN_004a2a20
 ;   shape_edittool.cpp_CStrList_dtor_FUN_004a2a40
@@ -151,8 +151,8 @@ section .text
         ;   Label: LAB_00596057
     MOV EDI,dword ptr [0x00678a60]      ; 0059605c | g_CEditorToolsPtr
     PUSH EDI                            ; 00596062 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 ; 00596063
-        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 00596063
+        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 00596068
     MOV dword ptr [EBP + -0x12],EAX     ; 0059606b
     LEA EAX,[EBP + -0x36]               ; 0059606e

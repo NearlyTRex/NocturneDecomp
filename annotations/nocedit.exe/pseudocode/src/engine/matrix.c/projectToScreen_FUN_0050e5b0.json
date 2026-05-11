@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 47,
+    "complexity_score": 17,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 17,
-    "suspect_count": 2,
-    "suspect_types": [
-      "stack_alignment_array",
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 86
   },
   "cross_references": [],
@@ -106,6 +103,26 @@
     },
     "pcode_op_count": 274
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 8,
+      "match": "aiStackY_1038",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int aiStackY_1038 [1017];",
+      "type": "stack_alignment_array"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4160,
     "local_size": 4156,
@@ -168,22 +185,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "StackY array variable (stack alignment artifact)",
-      "line": 8,
-      "match": "aiStackY_1038",
-      "severity": "moderate",
-      "text": "int aiStackY_1038 [1017];",
-      "type": "stack_alignment_array"
-    }
-  ]
+  "suspects": []
 }

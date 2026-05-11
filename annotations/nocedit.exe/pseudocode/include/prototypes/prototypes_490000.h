@@ -182,8 +182,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_00
 void __cdecl shape_edittool_cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
 void __cdecl shape_edittool_cpp_CEditorTools_createCenteredDialog_FUN_0049e940(CEditorTools *this_ptr,char *dialog_text);
 int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0049e9d0(CStrList *str_list,char *dialog_title,int dialog_mode);
-int __cdecl shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
-int __cdecl shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
+int __cdecl shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
+int __cdecl shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
 int __cdecl shape_edittool_cpp_CEditorTools_showYesAllNoCancelDialog_FUN_0049f180(CEditorTools *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
 int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools *this_ptr,char *dialog_title,char *search_directory,char *file_pattern,char *output_filename,uint flags);
 int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools *this_ptr,char *title_text,char *search_pattern,char *initial_path,uint flags);

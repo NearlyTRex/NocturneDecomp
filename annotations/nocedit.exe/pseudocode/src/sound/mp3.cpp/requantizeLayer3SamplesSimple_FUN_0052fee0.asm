@@ -9,7 +9,7 @@
 ; float *          Stack[0xc]:4   dequantized_output
 ; SMpegFrame *     Stack[0x10]:4   frame_info
 ; Local Variables:
-; SBitAllocationTable * Stack[-0x58]:4  local_58
+; SMpegAllocationTable * Stack[-0x58]:4  local_58
 ; int              Stack[-0x54]:4  local_54
 ; int              Stack[-0x40]:4  local_40
 ; undefined4 *     Stack[-0x34]:4  local_34

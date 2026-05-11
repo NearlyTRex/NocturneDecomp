@@ -415,33 +415,6 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 183,
-      "match": "(int *)((int)local_fc8",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "piVar11 = (int *)((int)local_fc8[0].codes[0] + local_5c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 184,
-      "match": "(float *)((int)local_9c8",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "pfVar7 = (float *)((int)local_9c8[0].codes[0] + local_5c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 233,
-      "match": "(float *)((int)local_9c8",
-      "resolution_source": "keep",
-      "severity": "moderate",
-      "text": "pfVar7 = (float *)((int)local_9c8[0].codes[0] + local_2c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 234,
       "match": "(short *)((int)local_33c8",
       "resolution_source": "keep",
@@ -682,6 +655,33 @@
       "severity": "moderate",
       "text": "for (iVar5 = local_e0.private_bit; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 183,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar11 = (int *)((int)&local_fc8[0].codes + local_5c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 184,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_9c8[0].codes + local_5c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 233,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pfVar7 = (float *)((int)&local_9c8[0].codes + local_2c);",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",

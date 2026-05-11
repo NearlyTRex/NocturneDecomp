@@ -40,11 +40,7 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_004136b0(CBaron *t
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
             ((CDemonActor *)this_ptr,&local_40,&(this_ptr_00->base).base.location.position);
   pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_7c,&local_40);
-  if (&local_40 != pCVar1) {
-    local_40.x = pCVar1->x;
-    local_40.y = pCVar1->y;
-    local_40.z = pCVar1->z;
-  }
+  local_40 = *pCVar1;
   local_40.y = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_40.y);
   local_14 = local_40.y;
   if ((local_40.y < (float)-0.78539816337500001) || (0.78539816337500001 < (double)local_40.y)) {
@@ -62,19 +58,11 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_004136b0(CBaron *t
     iVar3 = rand();
     pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                        ((CDemonActor *)this_ptr_00,&CStack_94,local_148 + iVar3 % iVar2);
-    if (&CStack_28 != pCVar2) {
-      CStack_28.x = pCVar2->x;
-      CStack_28.y = pCVar2->y;
-      CStack_28.z = pCVar2->z;
-    }
+    CStack_28 = *pCVar2;
     iVar4 = rand();
     pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                        ((CDemonActor *)this_ptr_00,&CStack_58,local_148 + iVar4 % iStack_18);
-    if (&CStack_4c != pCVar2) {
-      CStack_4c.x = pCVar2->x;
-      CStack_4c.y = pCVar2->y;
-      CStack_4c.z = pCVar2->z;
-    }
+    CStack_4c = *pCVar2;
     pCVar2 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                        (&CStack_64,&g_ZeroVector.f,
                         (this_ptr->base).base.model.bone_transform.bone_world_matrices +

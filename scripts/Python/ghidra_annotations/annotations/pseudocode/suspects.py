@@ -927,6 +927,13 @@ _UNROLLED_BYTE_STORE_RE = re.compile(
 # source var so the null-break cross-check remains the same.
 _UNROLLED_CASTED_BYTE_STORE_RE = re.compile(
     r"^\s*\(\s*\*.*\)\s*\[\d+\]\s*=\s*(\w+)\s*;\s*$")
+# Struct-field destination form: `obj->field[N] = cVar;` / `obj->field = cVar;` /
+# `obj.field = cVar;`. The destination has at least one `->`, `.`, or `[...]`
+# accessor, optionally with a leading `*`. Used by Watcom when the destination
+# is a struct field rather than a bare local pointer/array (e.g.
+# `this_ptr->filename[0] = cVar1;`). Group 1 captures the byte source var.
+_UNROLLED_STRUCT_BYTE_STORE_RE = re.compile(
+    r"^\s*(?:\*\s*)?\w+(?:->\w+|\.\w+|\[[^\]]+\])+\s*=\s*(\w+)\s*;\s*$")
 _UNROLLED_NULL_BREAK_RE = re.compile(
     r"^\s*if\s*\(\s*(\w+)\s*==\s*'\\0'\s*\)\s*break\s*;\s*$")
 _UNROLLED_NULL_RETURN_RE = re.compile(
@@ -983,9 +990,13 @@ def identify_unrolled_strcpy_loops(decompiled_code):
             byte_var = store_m.group(2)
         else:
             store_m = _UNROLLED_CASTED_BYTE_STORE_RE.match(lines[i])
-            if not store_m:
-                continue
-            byte_var = store_m.group(1)
+            if store_m:
+                byte_var = store_m.group(1)
+            else:
+                store_m = _UNROLLED_STRUCT_BYTE_STORE_RE.match(lines[i])
+                if not store_m:
+                    continue
+                byte_var = store_m.group(1)
         null_m = (_UNROLLED_NULL_BREAK_RE.match(lines[i + 1]) or
                   _UNROLLED_NULL_RETURN_RE.match(lines[i + 1]) or
                   _UNROLLED_NULL_BLOCK_RE.match(lines[i + 1]))
@@ -1468,6 +1479,13 @@ def identify_dropped_loop_counter(decompiled_code):
 # expression (parenthesized derefs, multi-level paths, indexed accesses).
 _FIELD_COPY_RE = re.compile(
     r"^\s*(.+?)(?:\.|->)(\w+)\s*=\s*(.+?)(?:\.|->)\2\s*;\s*$")
+# Same shape as _FIELD_COPY_RE but with separate field-name captures on each
+# side (no backreference). Used by the suppression check below to detect a
+# `lhs.X = rhs.Y;` cross-type rename line adjacent to a same-name run, which
+# proves the two roots are different types and therefore can't be collapsed
+# to `dst = src;` / `memcpy`.
+_FIELD_RENAME_COPY_RE = re.compile(
+    r"^\s*(.+?)(?:\.|->)(\w+)\s*=\s*(.+?)(?:\.|->)(\w+)\s*;\s*$")
 # Identifier at the very start of an expression, ignoring leading parens
 # and dereference operators. Used to confirm the LHS and RHS of a field-copy
 # run share a common root variable (e.g. both rooted at `pSVar5`), so we
@@ -1571,6 +1589,28 @@ def identify_unrolled_field_copy(decompiled_code):
             return None
         return rm
 
+    def is_rename_copy_at_same_prefix(idx, expected_lhs_prefix, expected_rhs_prefix):
+        """True if line idx is `<lhs>.X = <rhs>.Y;` with X != Y AND both path
+        prefixes (before the trailing field name) exactly match the given
+        prefixes. The prefix match guards against false suppression when the
+        rename line is at a different nesting level than the run (e.g. a
+        sibling struct copy unrelated to a matrix copy a few lines above).
+        Common true case: a runtime struct initialized from a smaller source
+        struct, with a renamed field at the same nesting level — proves the
+        two roots are different types, so the run isn't a collapsible
+        memcpy / `dst = src;` candidate."""
+        if idx < 0 or idx >= n:
+            return False
+        rm = _FIELD_RENAME_COPY_RE.match(lines[idx])
+        if not rm:
+            return False
+        if rm.group(2) == rm.group(4):
+            return False
+        if not _is_pure_path_expr(rm.group(1)) or not _is_pure_path_expr(rm.group(3)):
+            return False
+        return (normalize(rm.group(1)) == expected_lhs_prefix and
+                normalize(rm.group(3)) == expected_rhs_prefix)
+
     i = 0
     while i < n:
         m = line_matches_pure(i)
@@ -1605,6 +1645,22 @@ def identify_unrolled_field_copy(decompiled_code):
             j += 1
         run_len = j - i
         if run_len >= MIN_RUN:
+            # Suppress if an immediately adjacent line is a rename copy AT
+            # THE SAME PATH PREFIX as the first line of the run (e.g.
+            # `g_HuffmanTables[i].linbits = g_HuffmanTableSources[i].bits;`
+            # right after `g_HuffmanTables[i].xlen = g_HuffmanTableSources[i].xlen;`).
+            # Same prefix + different field name proves the two roots are
+            # different struct types at this nesting level, so the run
+            # isn't a collapsible memcpy / `dst = src;` candidate. The
+            # prefix check (not just same roots) avoids suppressing a
+            # legitimate inner-struct copy followed by an unrelated rename
+            # at a different nesting level.
+            first_lhs_prefix = normalize(m.group(1))
+            first_rhs_prefix = normalize(m.group(3))
+            if (is_rename_copy_at_same_prefix(j, first_lhs_prefix, first_rhs_prefix) or
+                    is_rename_copy_at_same_prefix(i - 1, first_lhs_prefix, first_rhs_prefix)):
+                i = j
+                continue
             suspects.append({
                 'line': i + 1,
                 'type': 'unrolled_memcpy',

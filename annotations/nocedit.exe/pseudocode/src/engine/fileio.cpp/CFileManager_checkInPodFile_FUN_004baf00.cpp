@@ -235,7 +235,7 @@ int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileMana
     }
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1a84,0);
   }
-  local_44 = (_FILE *)shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
+  local_44 = (_FILE *)shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                                 (g_CEditorToolsPtr,"Keep %s checked out after updating to network?",&local_12b4);
   pcVar9 = local_3c;
   if (g_VersionControlDirectory[0] == '\0') {
@@ -581,7 +581,7 @@ LAB_004bb492:
                     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_21d4,0);
                   }
                   else {
-                    iVar3 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
+                    iVar3 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                                       (g_CEditorToolsPtr,"Delete local files?");
                     if ((iVar3 != 0) &&
                        (iVar3 = engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50

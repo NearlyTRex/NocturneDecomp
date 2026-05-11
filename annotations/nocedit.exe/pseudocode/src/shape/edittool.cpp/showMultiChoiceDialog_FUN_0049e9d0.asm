@@ -28,9 +28,9 @@
 ; int              Stack[-0x10]:4  iStack_10
 ;
 ; XREF[3]:
+;   shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060 at 0049f0c4
 ;   shape_edittool.cpp_CEditorTools_showYesAllNoCancelDialog_FUN_0049f180 at 0049f208
-;   shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060 at 0049f0c4
-;   shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 at 0049f154
+;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 at 0049f154
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_00622eae

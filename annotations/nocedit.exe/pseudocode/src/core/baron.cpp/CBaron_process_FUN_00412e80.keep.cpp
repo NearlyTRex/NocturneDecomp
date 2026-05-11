@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float delta_time)
 
 {
@@ -70,11 +68,9 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
   if (fVar3 < 0.0) {
     (this_ptr->base).invincibility_timer = 0.0;
   }
+  (this_ptr->base).base.model.accumulated_root_motion.x = 0.0;
+  (this_ptr->base).base.model.accumulated_root_motion.y = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  (this_ptr->base).base.model.accumulated_root_motion.y =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
-  (this_ptr->base).base.model.accumulated_root_motion.x =
-       (this_ptr->base).base.model.accumulated_root_motion.y;
   core_baron_cpp_CBaron_advanceMotion_FUN_00413a00(this_ptr,delta_time);
   if (this_ptr->summoned == 0) {
     return;
@@ -120,22 +116,14 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
                           g_BaronIndices[0xd]);
       pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                          ((CDemonActor *)this_ptr,&local_48,pCVar4);
-      if (&local_30 != pCVar5) {
-        local_30.x = pCVar5->x;
-        local_30.y = pCVar5->y;
-        local_30.z = pCVar5->z;
-      }
+      local_30 = *pCVar5;
       pCVar5 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                          (&local_24,&g_ZeroVector.f,
                           (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                           g_BaronIndices[0xe]);
       pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                          ((CDemonActor *)this_ptr,&local_78,pCVar5);
-      if (&local_54 != pCVar5) {
-        local_54.x = pCVar5->x;
-        local_54.y = pCVar5->y;
-        local_54.z = pCVar5->z;
-      }
+      local_54 = *pCVar5;
       if (this_ptr->new_attack == 0) {
         core_fire_cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0
                   (g_CFireEffectPtr,&local_30,&this_ptr->left_hand_pos,2.0,0.5,0.5,
@@ -145,14 +133,10 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
                    &SMRGLTextureBasic_0066e460);
       }
       if (&this_ptr->left_hand_pos != &local_30) {
-        (this_ptr->left_hand_pos).x = local_30.x;
-        (this_ptr->left_hand_pos).y = local_30.y;
-        (this_ptr->left_hand_pos).z = local_30.z;
+        this_ptr->left_hand_pos = local_30;
       }
       if (&this_ptr->right_hand_pos != &local_54) {
-        (this_ptr->right_hand_pos).x = local_54.x;
-        (this_ptr->right_hand_pos).y = local_54.y;
-        (this_ptr->right_hand_pos).z = local_54.z;
+        this_ptr->right_hand_pos = local_54;
       }
       this_ptr->new_attack = 0;
     }
@@ -182,11 +166,9 @@ LAB_0041300c:
             (&(this_ptr->base).base.model.motion_controller,iVar2,1);
 switchD_0041345d_default:
   fVar3 = (float)32;
+  (this_ptr->base).base.model.accumulated_root_motion.x = 0.0;
+  (this_ptr->base).base.model.accumulated_root_motion.y = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  (this_ptr->base).base.model.accumulated_root_motion.y =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
-  (this_ptr->base).base.model.accumulated_root_motion.x =
-       (this_ptr->base).base.model.accumulated_root_motion.y;
   (this_ptr->base).base.velocity.y = (this_ptr->base).base.velocity.y - delta_time * fVar3;
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);
   pCVar1 = &(this_ptr->base).base.model;

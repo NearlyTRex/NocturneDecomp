@@ -12,6 +12,7 @@
 #include "types/unions/UCodeCommandData.h"
 #include "types/unions/UFloatInteger.h"
 #include "types/unions/UIntegerFloat.h"
+#include "types/unions/UMpegSubbandScalefactorCodes.h"
 #include "types/unions/UNetPacket.h"
 #include "types/unions/UOrientationVector.h"
 #include "types/unions/UTreeNodeData.h"

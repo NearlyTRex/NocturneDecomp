@@ -819,7 +819,7 @@ __asm {
         push 0x648ddf
         mov ESI,dword ptr [g_CEditorToolsPtr]
         push ESI
-        call shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
+        call shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
         add ESP,0x8
         test EAX,EAX
         jz LAB_00583d09

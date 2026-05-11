@@ -35,16 +35,8 @@ void __cdecl engine_matrix_c_invertTransformMatrix_FUN_0050c640(void)
   fVar6 = (float)g_TransformMatrix.m[2].z * (float)1.52587890625e-05;
   fVar1 = fVar4 * fVar6 - fVar5 * fVar7;
   fVar10 = fVar11 * fVar6 - fVar5 * fVar12;
-  g_TransformMatrixCopy.m[0].x = g_TransformMatrix.m[0].x;
-  g_TransformMatrixCopy.m[0].y = g_TransformMatrix.m[0].y;
-  g_TransformMatrixCopy.m[0].z = g_TransformMatrix.m[0].z;
   fVar2 = fVar11 * fVar7 - fVar4 * fVar12;
-  g_TransformMatrixCopy.m[1].x = g_TransformMatrix.m[1].x;
-  g_TransformMatrixCopy.m[1].y = g_TransformMatrix.m[1].y;
-  g_TransformMatrixCopy.m[1].z = g_TransformMatrix.m[1].z;
-  g_TransformMatrixCopy.m[2].x = g_TransformMatrix.m[2].x;
-  g_TransformMatrixCopy.m[2].y = g_TransformMatrix.m[2].y;
-  g_TransformMatrixCopy.m[2].z = g_TransformMatrix.m[2].z;
+  g_TransformMatrixCopy = g_TransformMatrix;
   fVar13 = (float)65536 / ((fVar3 * fVar1 - fVar8 * fVar10) + fVar9 * fVar2);
   g_InverseMatrix.m[0].x = (int)ROUND(ROUND(fVar1 * fVar13));
   g_InverseMatrix.m[0].y = (int)ROUND(ROUND(-(fVar8 * fVar6 - fVar9 * fVar7) * fVar13));

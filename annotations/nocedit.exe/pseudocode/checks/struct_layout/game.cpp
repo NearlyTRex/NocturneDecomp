@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: game
-// Structs : 532
+// Structs : 533
 
 #include "nocturne.h"
 
@@ -7614,24 +7614,6 @@ static_assert(__builtin_offsetof(SBat, animation_frame) == 8,
 static_assert(__builtin_offsetof(SBat, random_offset) == 12,
               "offsetof(SBat, random_offset) != 12");
 
-// ---- SBitAllocationTable (28 bytes) ----
-static_assert(sizeof(SBitAllocationTable) == 28,
-              "sizeof(SBitAllocationTable) != 28");
-static_assert(__builtin_offsetof(SBitAllocationTable, table_version) == 0,
-              "offsetof(SBitAllocationTable, table_version) != 0");
-static_assert(__builtin_offsetof(SBitAllocationTable, num_lines) == 4,
-              "offsetof(SBitAllocationTable, num_lines) != 4");
-static_assert(__builtin_offsetof(SBitAllocationTable, allocation_data_ptr) == 8,
-              "offsetof(SBitAllocationTable, allocation_data_ptr) != 8");
-static_assert(__builtin_offsetof(SBitAllocationTable, table_index) == 12,
-              "offsetof(SBitAllocationTable, table_index) != 12");
-static_assert(__builtin_offsetof(SBitAllocationTable, num_subbands) == 16,
-              "offsetof(SBitAllocationTable, num_subbands) != 16");
-static_assert(__builtin_offsetof(SBitAllocationTable, num_allocation_groups) == 20,
-              "offsetof(SBitAllocationTable, num_allocation_groups) != 20");
-static_assert(__builtin_offsetof(SBitAllocationTable, num_granules) == 24,
-              "offsetof(SBitAllocationTable, num_granules) != 24");
-
 // ---- SBitBuffer (8 bytes) ----
 static_assert(sizeof(SBitBuffer) == 8,
               "sizeof(SBitBuffer) != 8");
@@ -9130,6 +9112,36 @@ static_assert(__builtin_offsetof(SMotionTransition, tween_time) == 16,
 static_assert(__builtin_offsetof(SMotionTransition, set_new_state_as_desired) == 20,
               "offsetof(SMotionTransition, set_new_state_as_desired) != 20");
 
+// ---- SMpegAllocationEntry (16 bytes) ----
+static_assert(sizeof(SMpegAllocationEntry) == 16,
+              "sizeof(SMpegAllocationEntry) != 16");
+static_assert(__builtin_offsetof(SMpegAllocationEntry, value_range) == 0,
+              "offsetof(SMpegAllocationEntry, value_range) != 0");
+static_assert(__builtin_offsetof(SMpegAllocationEntry, bit_count) == 4,
+              "offsetof(SMpegAllocationEntry, bit_count) != 4");
+static_assert(__builtin_offsetof(SMpegAllocationEntry, mode_flag) == 8,
+              "offsetof(SMpegAllocationEntry, mode_flag) != 8");
+static_assert(__builtin_offsetof(SMpegAllocationEntry, requantization_index) == 12,
+              "offsetof(SMpegAllocationEntry, requantization_index) != 12");
+
+// ---- SMpegAllocationTable (28 bytes) ----
+static_assert(sizeof(SMpegAllocationTable) == 28,
+              "sizeof(SMpegAllocationTable) != 28");
+static_assert(__builtin_offsetof(SMpegAllocationTable, table_version) == 0,
+              "offsetof(SMpegAllocationTable, table_version) != 0");
+static_assert(__builtin_offsetof(SMpegAllocationTable, num_lines) == 4,
+              "offsetof(SMpegAllocationTable, num_lines) != 4");
+static_assert(__builtin_offsetof(SMpegAllocationTable, allocation_data_ptr) == 8,
+              "offsetof(SMpegAllocationTable, allocation_data_ptr) != 8");
+static_assert(__builtin_offsetof(SMpegAllocationTable, table_index) == 12,
+              "offsetof(SMpegAllocationTable, table_index) != 12");
+static_assert(__builtin_offsetof(SMpegAllocationTable, num_subbands) == 16,
+              "offsetof(SMpegAllocationTable, num_subbands) != 16");
+static_assert(__builtin_offsetof(SMpegAllocationTable, num_allocation_groups) == 20,
+              "offsetof(SMpegAllocationTable, num_allocation_groups) != 20");
+static_assert(__builtin_offsetof(SMpegAllocationTable, num_granules) == 24,
+              "offsetof(SMpegAllocationTable, num_granules) != 24");
+
 // ---- SMpegFrame (28 bytes) ----
 static_assert(sizeof(SMpegFrame) == 28,
               "sizeof(SMpegFrame) != 28");
@@ -9137,8 +9149,8 @@ static_assert(__builtin_offsetof(SMpegFrame, header) == 0,
               "offsetof(SMpegFrame, header) != 0");
 static_assert(__builtin_offsetof(SMpegFrame, channel_mode) == 4,
               "offsetof(SMpegFrame, channel_mode) != 4");
-static_assert(__builtin_offsetof(SMpegFrame, allocation_table) == 8,
-              "offsetof(SMpegFrame, allocation_table) != 8");
+static_assert(__builtin_offsetof(SMpegFrame, allocation_entries) == 8,
+              "offsetof(SMpegFrame, allocation_entries) != 8");
 static_assert(__builtin_offsetof(SMpegFrame, table_index) == 12,
               "offsetof(SMpegFrame, table_index) != 12");
 static_assert(__builtin_offsetof(SMpegFrame, channel_count) == 16,

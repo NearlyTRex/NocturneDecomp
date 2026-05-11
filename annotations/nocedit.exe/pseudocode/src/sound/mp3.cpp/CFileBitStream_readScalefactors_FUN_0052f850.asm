@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_0052f850(CFileBitStream *this_ptr,SMpegSubbandAllocation *allocation_indices,SMpegSubbandScalefactors *scalefactors,SBitAllocationTable *alloc_info)
+; void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_0052f850(CFileBitStream *this_ptr,SMpegSubbandAllocation *allocation_indices,SMpegSubbandScalefactors *scalefactors,SMpegAllocationTable *alloc_info)
 ;
 ; Parameters:
 ; CFileBitStream * Stack[0x4]:4   this_ptr
 ; SMpegSubbandAllocation * Stack[0x8]:4   allocation_indices
 ; SMpegSubbandScalefactors * Stack[0xc]:4   scalefactors
-; SBitAllocationTable * Stack[0x10]:4   alloc_info
+; SMpegAllocationTable * Stack[0x10]:4   alloc_info
 ; Local Variables:
 ; int              Stack[-0x14]:4  local_14
 ;

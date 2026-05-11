@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 88,
+    "complexity_score": 73,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 73,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_strcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 200
   },
   "cross_references": [
@@ -198,6 +196,15 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 22,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 41,
       "match": "for (...; != 0; ... + -1)",
@@ -262,14 +269,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 22,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    }
-  ]
+  "suspects": []
 }

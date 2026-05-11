@@ -5,11 +5,11 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (421 diagnostics)
+Cppcheck (quick) (429 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (99)
+shiftTooManyBitsSigned (102)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_F line 66
@@ -364,6 +364,18 @@ shiftTooManyBitsSigned (99)
     File: shape/quantize.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
+  sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50 line 138
+    File: sound/mp3.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  sound_snddx.cpp_CDirectSoundDevice_allocateSample_ line 36
+    File: sound/snddx.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  sound_snddx.cpp_CDirectSoundDevice_allocateSample_ line 37
+    File: sound/snddx.cpp
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
   sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0        line 86
     File: sound/sndmain.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
@@ -409,7 +421,7 @@ shiftTooManyBitsSigned (99)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (78)
+uninitvar (76)
 ----------------------------------------------------------------------------------------------------
 
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 65
@@ -712,20 +724,12 @@ uninitvar (78)
     File: shape/superopt.cpp
     Uninitialized variable: local_288
 
-  sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630 line 90
-    File: sound/mp3.cpp
-    Uninitialized variable: local_30
-
-  sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630 line 116
-    File: sound/mp3.cpp
-    Uninitialized variable: local_3c
-
   sound_sndmain.cpp_testSoundFile_FUN_005ad3b0       line 30
     File: sound/sndmain.cpp
     Uninitialized variable: local_60
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (68)
+selfAssignment (75)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 116
@@ -987,6 +991,34 @@ selfAssignment (68)
   shape_superopt.cpp_CComplexPolygon_findReflexVerte line 67
     File: shape/superopt.cpp
     Redundant assignment of 'pdVar4' to itself.
+
+  sound_mp3.cpp_CFileBitStream_readQuantizedSamplesG line 90
+    File: sound/mp3.cpp
+    Redundant assignment of 'puVar8' to itself.
+
+  sound_mp3.cpp_CFileBitStream_readQuantizedSamplesG line 112
+    File: sound/mp3.cpp
+    Redundant assignment of 'puVar7' to itself.
+
+  sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI line 127
+    File: sound/mp3.cpp
+    Redundant assignment of 'puVar7' to itself.
+
+  sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLS line 46
+    File: sound/mp3.cpp
+    Redundant assignment of 'piVar3' to itself.
+
+  sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLS line 55
+    File: sound/mp3.cpp
+    Redundant assignment of 'piVar4' to itself.
+
+  sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLS line 67
+    File: sound/mp3.cpp
+    Redundant assignment of 'piVar5' to itself.
+
+  sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_F line 120
+    File: sound/mp3.cpp
+    Redundant assignment of 'piVar3' to itself.
 
   sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_00533b line 36
     File: sound/mp3.cpp
@@ -1596,7 +1628,7 @@ identicalInnerCondition (8)
     File: shape/superopt.cpp
     Identical inner 'if' condition is always true.
 
-  sound_snddx.cpp_directSoundEnumerationCallback_FUN line 53
+  sound_snddx.cpp_directSoundEnumerationCallback_FUN line 48
     File: sound/snddx.cpp
     Identical inner 'if' condition is always true.
 
@@ -1696,11 +1728,11 @@ invalidScanfArgType_int (3)
     File: sound/mp3.cpp
     %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
 
-  sound_mp3.cpp_initializeHuffmanTablesOnce_FUN_0053 line 46
+  sound_mp3.cpp_initializeHuffmanTablesOnce_FUN_0053 line 30
     File: sound/mp3.cpp
     %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
 
-  sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30 line 45
+  sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30 line 29
     File: sound/mp3.cpp
     %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
 

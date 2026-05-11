@@ -195,7 +195,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
       }
       else if (local_28 < 0x35) {
         core_set_cpp_CDemonSet_clearLights_FUN_0056d2d0(this_ptr);
-        iVar6 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
+        iVar6 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                           (g_CEditorToolsPtr,"Precompute light visibility?");
         if (iVar6 != 0) {
           core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(this_ptr,-1);

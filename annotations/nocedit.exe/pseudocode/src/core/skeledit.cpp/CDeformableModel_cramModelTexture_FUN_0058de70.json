@@ -7,15 +7,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 206,
-    "complexity_score": 100,
+    "complexity_score": 115,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 85,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unrolled_strcpy"
     ],
     "total_lines": 291
   },
@@ -237,6 +238,14 @@
       "severity": "moderate",
       "text": "if (local_20 == *(int *)((int)this_ptr->index_data_ptr[0] + local_14)) {",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 67,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ]
 }

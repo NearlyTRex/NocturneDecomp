@@ -607,8 +607,8 @@ section .text
     PUSH 0x63d003                       ; 0053e8b6 | = "Reset gore?"
     MOV EDX,dword ptr [0x00678a60]      ; 0053e8bb | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EDX                            ; 0053e8c1 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 ; 0053e8c2
-        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 0053e8c2
+        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0053e8c7
     TEST EAX,EAX                        ; 0053e8ca
     JZ 0x0053e419                       ; 0053e8cc

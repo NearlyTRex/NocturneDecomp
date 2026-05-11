@@ -2759,8 +2759,8 @@ section .text
     PUSH 0x64dc40                       ; 005985df | = "Import these values:\nX: %g\nY: %g\nZ..."
     MOV ESI,dword ptr [0x00678a60]      ; 005985e4 | g_CEditorToolsPtr
     PUSH ESI                            ; 005985ea | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060 ; 005985eb
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060 ; 005985eb
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x38                        ; 005985f0
     TEST EAX,EAX                        ; 005985f3
     JZ 0x0059863f                       ; 005985f5
@@ -3454,8 +3454,8 @@ section .text
         ;   Label: LAB_00598e4d
     MOV EAX,[0x00678a60]                ; 00598e52 | g_CEditorToolsPtr
     PUSH EAX                            ; 00598e57 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 ; 00598e58
-        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 00598e58
+        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 00598e5d
     TEST EAX,EAX                        ; 00598e60
     JZ 0x00597847                       ; 00598e62

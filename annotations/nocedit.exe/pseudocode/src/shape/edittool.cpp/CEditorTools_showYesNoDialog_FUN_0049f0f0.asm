@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools *this_ptr,char *format_string,...)
+; int __cdecl shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools *this_ptr,char *format_string,...)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr
@@ -40,7 +40,7 @@
 section .text
 
     PUSH EBX                            ; 0049f0f0
-        ;   Label: shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
+        ;   Label: shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
     SUB ESP,0x14                        ; 0049f0f1
     LEA EAX,[ESP + 0x24]                ; 0049f0f4
     MOV dword ptr [ESP + 0x10],EAX      ; 0049f0f8

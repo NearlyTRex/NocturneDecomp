@@ -10,28 +10,12 @@
 int __cdecl sound_mp3_cpp_CMP3Decoder_read_FUN_00534a60(CMP3Decoder *this_ptr,short *output_buffer,int samples_requested)
 
 {
-  char cVar2;
   int iVar3;
   int iVar2;
   uint uVar5;
-  CMP3Decoder *pCVar5;
-  char *pcVar7;
   int local_14;
-  char cVar1;
-  byte bVar9;
-  
-  bVar9 = 0;
-  pcVar7 = g_CurrentMp3Filename;
-  pCVar5 = this_ptr;
-  do {
-    cVar1 = pCVar5->filename[0];
-    *pcVar7 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar2 = pCVar5->filename[1];
-    pCVar5 = (CMP3Decoder *)(pCVar5->filename + 2);
-    pcVar7[1] = cVar2;
-    pcVar7 = pcVar7 + 2;
-  } while (cVar2 != '\0');
+
+  strcpy(g_CurrentMp3Filename,this_ptr->filename);
   local_14 = 0;
   while( true ) {
     iVar3 = this_ptr->available_samples;

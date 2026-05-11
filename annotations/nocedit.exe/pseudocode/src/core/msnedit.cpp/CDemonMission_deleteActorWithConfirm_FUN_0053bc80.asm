@@ -22,7 +22,7 @@
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_00523f20
 ;   core_msnedit.cpp_CDemonMission_deleteActor_FUN_00538ea0
 ;   core_msnedit.cpp_CDemonMission_selectNearestActor_FUN_0053bcf0
-;   shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
+;   shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
 ;
 ; *****************************************************************************
 
@@ -72,8 +72,8 @@ section .text
     PUSH 0x63c71b                       ; 0053bcc6 | = "Really delete actor %s"
     MOV ECX,dword ptr [0x00678a60]      ; 0053bccb | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH ECX                            ; 0053bcd1 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060 ; 0053bcd2
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060 ; 0053bcd2
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0xc                         ; 0053bcd7
     TEST EAX,EAX                        ; 0053bcda
     JNZ 0x0053bc95                      ; 0053bcdc

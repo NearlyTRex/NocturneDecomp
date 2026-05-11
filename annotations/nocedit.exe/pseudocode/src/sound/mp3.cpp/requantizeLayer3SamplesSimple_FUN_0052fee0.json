@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 195,
+    "complexity_score": 100,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 100,
-    "suspect_count": 9,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 345
   },
   "cross_references": [
@@ -111,6 +109,89 @@
     },
     "pcode_op_count": 1220
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(uint *)(local_54 + local_40 + (int)dequantized_output",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_34 = (uint *)(local_54 + local_40 + (int)dequantized_output);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(uint *)((int)dequantized_output",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_24 = (uint *)((int)dequantized_output + local_40 + local_54);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(uint *)(local_40 + local_54 + (int)scalefactor_indices",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_2c = (uint *)(local_40 + local_54 + (int)scalefactor_indices);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(uint *)(local_54 + local_40 + (int)scalefactor_indices",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_30 = (uint *)(local_54 + local_40 + (int)scalefactor_indices);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(float *)(local_54 + local_40 + (int)dequantized_output",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_18 = (float *)(local_54 + local_40 + (int)dequantized_output);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(int *)(local_54 + (int)quantized_samples",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_28 = (int *)(local_54 + (int)quantized_samples);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(int *)(local_54 + (int)quantized_samples",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_20 = (int *)(local_54 + (int)quantized_samples);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 49,
+      "match": "(int *)((int)quantized_samples",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "[*(int *)((int)quantized_samples + local_54 + local_1c * 0x80) * 4];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 90,
+      "match": "(uint *)(iVar6 + iVar2 + (int)dequantized_output",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)(iVar6 + iVar2 + (int)dequantized_output);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 108,
     "local_size": 92,
@@ -123,7 +204,7 @@
         "name": "local_58",
         "offset": -88,
         "size": 4,
-        "type": "SBitAllocationTable *"
+        "type": "SMpegAllocationTable *"
       },
       {
         "is_param": false,
@@ -225,78 +306,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(uint *)(local_54 + local_40 + (int)dequantized_output",
-      "severity": "moderate",
-      "text": "local_34 = (uint *)(local_54 + local_40 + (int)dequantized_output);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(uint *)((int)dequantized_output",
-      "severity": "moderate",
-      "text": "local_24 = (uint *)((int)dequantized_output + local_40 + local_54);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(uint *)(local_40 + local_54 + (int)scalefactor_indices",
-      "severity": "moderate",
-      "text": "local_2c = (uint *)(local_40 + local_54 + (int)scalefactor_indices);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(uint *)(local_54 + local_40 + (int)scalefactor_indices",
-      "severity": "moderate",
-      "text": "local_30 = (uint *)(local_54 + local_40 + (int)scalefactor_indices);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(float *)(local_54 + local_40 + (int)dequantized_output",
-      "severity": "moderate",
-      "text": "local_18 = (float *)(local_54 + local_40 + (int)dequantized_output);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(int *)(local_54 + (int)quantized_samples",
-      "severity": "moderate",
-      "text": "local_28 = (int *)(local_54 + (int)quantized_samples);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(int *)(local_54 + (int)quantized_samples",
-      "severity": "moderate",
-      "text": "local_20 = (int *)(local_54 + (int)quantized_samples);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 49,
-      "match": "(int *)((int)quantized_samples",
-      "severity": "moderate",
-      "text": "[*(int *)((int)quantized_samples + local_54 + local_1c * 0x80) * 4];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 90,
-      "match": "(uint *)(iVar6 + iVar2 + (int)dequantized_output",
-      "severity": "moderate",
-      "text": "puVar3 = (uint *)(iVar6 + iVar2 + (int)dequantized_output);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

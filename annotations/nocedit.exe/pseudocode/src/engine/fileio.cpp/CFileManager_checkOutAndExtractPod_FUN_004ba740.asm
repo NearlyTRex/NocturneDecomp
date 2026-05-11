@@ -382,8 +382,8 @@ section .text
         ;   Label: LAB_004baa7f
     MOV EDX,dword ptr [0x00678a60]      ; 004baa84 | g_CEditorToolsPtr
     PUSH EDX                            ; 004baa8a | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 ; 004baa8b
-        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 004baa8b
+        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 004baa90
     TEST EAX,EAX                        ; 004baa93
     JNZ 0x004badf0                      ; 004baa95

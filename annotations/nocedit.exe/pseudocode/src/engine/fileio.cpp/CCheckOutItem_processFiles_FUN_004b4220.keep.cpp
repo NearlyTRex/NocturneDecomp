@@ -147,7 +147,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
     }
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_13c8,0);
   }
-  local_34 = (_FILE *)shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
+  local_34 = (_FILE *)shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                                 (g_CEditorToolsPtr,"Keep %s checked out after updating to network?",local_e0c.found_path);
   local_38 = "history";
   if (g_VersionControlDirectory[0] == '\0') {

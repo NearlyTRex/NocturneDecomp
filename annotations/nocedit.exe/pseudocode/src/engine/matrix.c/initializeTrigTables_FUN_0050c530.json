@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "c",
+  "compile_source": "keep.c",
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 67,
+    "complexity_score": 27,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 27,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast",
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 73
   },
   "cross_references": [
@@ -131,6 +128,35 @@
     },
     "pcode_op_count": 231
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(int *)((int)g_SinTable",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_SinTable + iVar2) = (int)ROUND(ROUND(fVar7 * fVar3));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(int *)((int)g_CosTable",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_CosTable + iVar2) = (int)ROUND(ROUND(fVar1 * fVar3));",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -156,30 +182,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 25,
-      "match": "(int *)((int)g_SinTable",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_SinTable + iVar2) = (int)ROUND(ROUND(fVar7 * fVar3));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 27,
-      "match": "(int *)((int)g_CosTable",
-      "severity": "moderate",
-      "text": "*(int *)((int)g_CosTable + iVar2) = (int)ROUND(ROUND(fVar1 * fVar3));",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

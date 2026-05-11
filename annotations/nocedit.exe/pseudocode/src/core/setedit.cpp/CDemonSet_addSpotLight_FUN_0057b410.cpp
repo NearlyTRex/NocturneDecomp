@@ -33,7 +33,7 @@ void __cdecl core_setedit_cpp_CDemonSet_addSpotLight_FUN_0057b410(CDemonSet *thi
       } while (this_ptr_00->name[0] == '\0');
     }
     core_set_cpp_CDemonSet_clearLights_FUN_0056d2d0(this_ptr);
-    iVar1 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
+    iVar1 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                       (g_CEditorToolsPtr,"Precompute light visibility?");
     if (iVar1 != 0) {
       core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(this_ptr,-1);

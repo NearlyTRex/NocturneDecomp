@@ -1065,8 +1065,8 @@ section .text
     PUSH 0x648ddf                       ; 00583ca0 | = "Delete the selected box?"
     MOV ESI,dword ptr [0x00678a60]      ; 00583ca5 | g_CEditorToolsPtr
     PUSH ESI                            ; 00583cab | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060 ; 00583cac
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060 ; 00583cac
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 00583cb1
     TEST EAX,EAX                        ; 00583cb4
     JZ 0x00583d09                       ; 00583cb6

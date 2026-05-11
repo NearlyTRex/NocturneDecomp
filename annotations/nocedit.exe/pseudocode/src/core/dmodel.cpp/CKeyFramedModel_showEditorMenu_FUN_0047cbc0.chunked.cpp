@@ -443,7 +443,7 @@ static int CKeyFramedModel_showEditorMenu_check_bVar10_4_check_local_84_0_check_
                           (g_CEditorToolsPtr,"Nothing to save!");
               }
               else if (((bVar2) ||
-                       (iVar18 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
+                       (iVar18 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
                                            (g_CEditorToolsPtr,"You haven't crammed this model.  Save anyway?"),
                        iVar18 != 0)) &&
                       (iVar18 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70

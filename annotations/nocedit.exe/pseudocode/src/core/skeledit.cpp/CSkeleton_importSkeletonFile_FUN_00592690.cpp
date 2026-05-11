@@ -1714,7 +1714,7 @@ LAB_00595eb8:
           pcVar18 = getenv("USERNAME");
           if (((pcVar18 == (char *)0x0) ||
               (iVar16 = _stricmp(pcVar18,acStack_851 + 1), iVar16 != 0))
-             && (iVar16 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
+             && (iVar16 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
                                     (g_CEditorToolsPtr,"User \"%s\" is currently working on this file.  Continue anyway?"),
                 iVar16 == 0)) {
             shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_2ca8,0);

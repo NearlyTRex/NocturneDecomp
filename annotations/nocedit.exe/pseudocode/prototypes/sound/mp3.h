@@ -85,27 +85,27 @@ void __cdecl CFileBitStream::readFrameHeader(CFileBitStream *this_ptr,SMpegFrame
 
 // Original: sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_0052f670
 // Address: 0052f670
-void __cdecl CFileBitStream::readAllocationValues(CFileBitStream *this_ptr,SMpegSubbandAllocation *output_allocation,SBitAllocationTable *alloc_table_info);
+void __cdecl CFileBitStream::readAllocationValues(CFileBitStream *this_ptr,SMpegSubbandAllocation *output_allocation,SMpegAllocationTable *alloc_table_info);
 
 // Original: sound_mp3.cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0
 // Address: 0052f7a0
-void __cdecl CFileBitStream::readAllocationTable(CFileBitStream *this_ptr,uint *output_array,SBitAllocationTable *alloc_table);
+void __cdecl CFileBitStream::readAllocationTable(CFileBitStream *this_ptr,uint *output_array,SMpegAllocationTable *alloc_table);
 
 // Original: sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_0052f850
 // Address: 0052f850
-void __cdecl CFileBitStream::readScalefactors(CFileBitStream *this_ptr,SMpegSubbandAllocation *allocation_indices,SMpegSubbandScalefactors *scalefactors,SBitAllocationTable *alloc_info);
+void __cdecl CFileBitStream::readScalefactors(CFileBitStream *this_ptr,SMpegSubbandAllocation *allocation_indices,SMpegSubbandScalefactors *scalefactors,SMpegAllocationTable *alloc_info);
 
 // Original: sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0
 // Address: 0052f8e0
-void __cdecl CFileBitStream::readScaleFactorsSCFSI(CFileBitStream *this_ptr,SMpegSubbandSCFSI *scfsi_array,SMpegSubbandAllocation *allocation_array,SMpegSubbandScalefactors *scalefactor_array,SBitAllocationTable *allocation_table);
+void __cdecl CFileBitStream::readScaleFactorsSCFSI(CFileBitStream *this_ptr,SMpegSubbandSCFSI *scfsi_array,SMpegSubbandAllocation *allocation_array,SMpegSubbandScalefactors *scalefactor_array,SMpegAllocationTable *allocation_table);
 
 // Original: sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50
 // Address: 0052fb50
-void __cdecl CFileBitStream::readQuantizedSamples(CFileBitStream *this_ptr,SMpegSubbandScalefactors *quantized_samples,SMpegSubbandAllocation *allocation,SBitAllocationTable *alloc_table);
+void __cdecl CFileBitStream::readQuantizedSamples(CFileBitStream *this_ptr,SMpegSubbandScalefactors *quantized_samples,SMpegSubbandAllocation *allocation,SMpegAllocationTable *alloc_table);
 
 // Original: sound_mp3.cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50
 // Address: 0052fc50
-void __cdecl CFileBitStream::readQuantizedSamplesGrouped(CFileBitStream *this_ptr,SMpegSubbandScalefactors *sample_array,SMpegSubbandAllocation *allocation_array,SBitAllocationTable *allocation_table);
+void __cdecl CFileBitStream::readQuantizedSamplesGrouped(CFileBitStream *this_ptr,SMpegSubbandScalefactors *sample_array,SMpegSubbandAllocation *allocation_array,SMpegAllocationTable *allocation_table);
 
 // Original: sound_mp3.cpp_requantizeLayer3SamplesSimple_FUN_0052fee0
 // Address: 0052fee0

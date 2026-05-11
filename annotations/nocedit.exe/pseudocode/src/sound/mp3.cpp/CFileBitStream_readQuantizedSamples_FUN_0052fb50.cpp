@@ -2,11 +2,11 @@
 // Address: 0052fb50
 // Address Range: [[0052fb50, 0052fc41]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50(CFileBitStream *this_ptr,SMpegSubbandScalefactors *quantized_samples,SMpegSubbandAllocation *allocation,SBitAllocationTable *alloc_table)
+// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50(CFileBitStream *this_ptr,SMpegSubbandScalefactors *quantized_samples,SMpegSubbandAllocation *allocation,SMpegAllocationTable *alloc_table)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50(CFileBitStream *this_ptr,SMpegSubbandScalefactors *quantized_samples,SMpegSubbandAllocation *allocation,SBitAllocationTable *alloc_table)
+void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50(CFileBitStream *this_ptr,SMpegSubbandScalefactors *quantized_samples,SMpegSubbandAllocation *allocation,SMpegAllocationTable *alloc_table)
 
 {
   int iVar2;
@@ -30,7 +30,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50(CFil
       iVar6 = 0;
       if (0 < iVar1) {
         piVar5 = (int *)((int)allocation->granules + local_14);
-        puVar3 = (uint *)((int)quantized_samples->codes[0] + local_14);
+        puVar3 = (uint *)((int)&quantized_samples->codes + local_14);
         do {
           uVar3 = 0;
           if (*piVar5 != 0) {
@@ -55,7 +55,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50(CFil
       }
       iVar4 = 0;
       if (0 < iVar1) {
-        puVar4 = (uint *)((int)quantized_samples->codes[0] + iVar5);
+        puVar4 = (uint *)((int)&quantized_samples->codes + iVar5);
         do {
           iVar4 = iVar4 + 1;
           *puVar4 = uVar2;

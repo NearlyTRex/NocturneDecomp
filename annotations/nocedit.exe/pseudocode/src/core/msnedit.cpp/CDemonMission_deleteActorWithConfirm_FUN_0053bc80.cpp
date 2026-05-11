@@ -13,7 +13,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_deleteActorWithConfirm_FUN_0053bc80(
   
   if (actor != (CDemonActor *)0x0) {
     if (skip_confirmation == 0) {
-      iVar1 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
+      iVar1 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
                         (g_CEditorToolsPtr,"Really delete actor %s",actor);
       if (iVar1 == 0) {
         return;

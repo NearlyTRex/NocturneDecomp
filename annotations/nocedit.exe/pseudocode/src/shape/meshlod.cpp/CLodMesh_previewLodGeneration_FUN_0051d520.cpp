@@ -116,7 +116,7 @@ LAB_0051d5ec:
       } while (iVar2 != 0);
       shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
       engine_2d_c_clearInputAndWait_FUN_00403260();
-      iVar2 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
+      iVar2 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
                         (g_CEditorToolsPtr,"Good enough?");
       if (iVar2 != 0) {
         local_18 = 0;

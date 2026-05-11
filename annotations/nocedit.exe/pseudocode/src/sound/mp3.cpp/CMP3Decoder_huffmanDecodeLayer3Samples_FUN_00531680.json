@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 570,
-    "complexity_score": 227,
+    "complexity_score": 212,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 38,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 212,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 782
   },
   "cross_references": [
@@ -684,15 +682,5 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "introduced_by": "keep",
-      "line": 40,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "g_HuffmanTables[iVar11].table_size = g_HuffmanTableSources[iVar11].table_size;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

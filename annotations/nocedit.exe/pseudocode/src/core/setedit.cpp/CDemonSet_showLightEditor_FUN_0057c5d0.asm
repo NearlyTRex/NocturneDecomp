@@ -536,8 +536,8 @@ section .text
     PUSH 0x647c25                       ; 0057caf7 | = "Precompute light visibility?"
     MOV ESI,dword ptr [0x00678a60]      ; 0057cafc | g_CEditorToolsPtr
     PUSH ESI                            ; 0057cb02 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 ; 0057cb03
-        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 0057cb03
+        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0057cb08
     TEST EAX,EAX                        ; 0057cb0b
     JZ 0x0057cb1a                       ; 0057cb0d

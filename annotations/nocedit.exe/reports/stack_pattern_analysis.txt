@@ -127,11 +127,11 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0050e311: MOV ESI,ESP
 
   engine_matrix.c_initializeTrigTables_FUN_0050c530
-    File: engine/matrix.c, Suspects: 3
+    File: engine/matrix.c, Suspects: 0
     - [stack_alignment] at 0050c536: AND ESP,0xfffffff8
 
   engine_matrix.c_projectToScreen_FUN_0050e5b0
-    File: engine/matrix.c, Suspects: 2
+    File: engine/matrix.c, Suspects: 0
     - [stack_alignment] at 0050e5b9: AND ESP,0xfffffff8
     - [alt_frame_pointer] at 0050e5c3: MOV EDI,ESP
 
@@ -140,7 +140,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0050ccff: MOV ESI,ESP
 
   engine_matrix.c_invertTransformMatrix_FUN_0050c640
-    File: engine/matrix.c, Suspects: 2
+    File: engine/matrix.c, Suspects: 0
     - [stack_alignment] at 0050c646: AND ESP,0xfffffff8
 
   engine_pcx.c_saveScreenRaw32_FUN_00548f00
@@ -154,7 +154,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00548d49: MOV ESI,ESP
 
   engine_pod.cpp_CPod_dismount_FUN_00550b90
-    File: engine/pod.cpp, Suspects: 0
+    File: engine/pod.cpp, Suspects: 1
     - [alt_frame_pointer] at 00550ba8: MOV EDI,ESP
 
   engine_pod.cpp_CPod_remount_FUN_00550af0
@@ -266,7 +266,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 03fc0b48: MOV ESI,ESP
 
   engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
-    File: engine/fileio.cpp, Suspects: 1
+    File: engine/fileio.cpp, Suspects: 2
     - [alt_frame_pointer] at 004b82e1: MOV EDI,ESP
 
   ... and 649 more functions

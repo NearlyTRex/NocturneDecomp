@@ -647,8 +647,8 @@ section .text
     PUSH 0x648bdc                       ; 005820fd | = "Delete the selected room?"
     MOV EBX,dword ptr [0x00678a60]      ; 00582102 | g_CEditorToolsPtr
     PUSH EBX                            ; 00582108 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060 ; 00582109
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060 ; 00582109
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0058210e
     TEST EAX,EAX                        ; 00582111
     JZ 0x00582164                       ; 00582113

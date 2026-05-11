@@ -43,7 +43,7 @@
 ;   engine_fileio.cpp_getLatestFileFromRepository_FUN_004b3220
 ;   engine_pod.cpp_CPod_cleanup_FUN_00550c80
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-;   shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
+;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004a3c80
@@ -143,8 +143,8 @@ section .text
     PUSH 0x629059                       ; 004bc39e | = "Delete local files?"
     MOV ECX,dword ptr [0x00678a60]      ; 004bc3a3 | g_CEditorToolsPtr
     PUSH ECX                            ; 004bc3a9 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 ; 004bc3aa
-        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 004bc3aa
+        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 004bc3af
     TEST EAX,EAX                        ; 004bc3b2
     JZ 0x004bc3cf                       ; 004bc3b4

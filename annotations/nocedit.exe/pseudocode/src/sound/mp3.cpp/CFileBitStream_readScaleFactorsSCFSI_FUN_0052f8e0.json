@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 248,
-    "complexity_score": 198,
+    "complexity_score": 123,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 123,
-    "suspect_count": 7,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 371
   },
   "cross_references": [
@@ -37,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0",
-    "signature": "void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0(CFileBitStream *this_ptr,SMpegSubbandSCFSI *scfsi_array,SMpegSubbandAllocation *allocation_array,SMpegSubbandScalefactors *scalefactor_array,SBitAllocationTable *allocation_table)"
+    "signature": "void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0(CFileBitStream *this_ptr,SMpegSubbandSCFSI *scfsi_array,SMpegSubbandAllocation *allocation_array,SMpegSubbandScalefactors *scalefactor_array,SMpegAllocationTable *allocation_table)"
   },
   "function_calls": [
     {
@@ -107,6 +105,71 @@
     },
     "pcode_op_count": 1018
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(int *)((int)allocation_array",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar8 = (int *)((int)allocation_array->granules + local_28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(uint *)((int)scfsi_array",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)scfsi_array[iVar4].scfsi + local_28) = uVar2 & 0xff;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(uint *)((int)scfsi_array",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar4 = (uint *)((int)scfsi_array->scfsi + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(int *)((int)allocation_array",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_14 = (int *)((int)allocation_array->granules + local_24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(uint *)((int)scfsi_array",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "switch(*(uint *)((int)scfsi_array[iVar2].scfsi + local_24)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 62,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)((int)&scalefactor_array->codes + local_24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 112,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar7 = (uint *)((int)&scalefactor_array->codes + iVar3);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 64,
     "local_size": 44,
@@ -168,66 +231,26 @@
         "name": "allocation_table",
         "offset": 20,
         "size": 4,
-        "type": "SBitAllocationTable *"
+        "type": "SMpegAllocationTable *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(int *)((int)allocation_array",
-      "severity": "moderate",
-      "text": "piVar8 = (int *)((int)allocation_array->granules + local_28);",
-      "type": "pointer_cast"
+  "static_analysis": {
+    "analyzed_file": "CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 18,
+          "line": 127,
+          "message": "Redundant assignment of 'puVar7' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
     },
-    {
-      "description": "Complex pointer cast",
-      "line": 32,
-      "match": "(uint *)((int)scfsi_array",
-      "severity": "moderate",
-      "text": "*(uint *)((int)scfsi_array[iVar4].scfsi + local_28) = uVar2 & 0xff;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(uint *)((int)scfsi_array",
-      "severity": "moderate",
-      "text": "puVar4 = (uint *)((int)scfsi_array->scfsi + iVar2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(int *)((int)allocation_array",
-      "severity": "moderate",
-      "text": "local_14 = (int *)((int)allocation_array->granules + local_24);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 62,
-      "match": "(uint *)((int)scalefactor_array",
-      "severity": "moderate",
-      "text": "puVar6 = (uint *)((int)scalefactor_array->codes[0] + local_24);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 70,
-      "match": "(uint *)((int)scfsi_array",
-      "severity": "moderate",
-      "text": "switch(*(uint *)((int)scfsi_array[iVar2].scfsi + local_24)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 112,
-      "match": "(uint *)((int)scalefactor_array",
-      "severity": "moderate",
-      "text": "puVar7 = (uint *)((int)scalefactor_array->codes[0] + iVar3);",
-      "type": "pointer_cast"
-    }
-  ]
+    "file_variant": "keep"
+  },
+  "suspects": []
 }

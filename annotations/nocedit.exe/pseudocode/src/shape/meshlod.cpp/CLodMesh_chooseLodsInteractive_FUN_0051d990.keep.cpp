@@ -275,7 +275,7 @@ LAB_0051e453:
     iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D);
     if ((iVar5 != 0) && (0 < iVar7)) {
       _sprintf(local_248,"Delete LOD %d?",iVar7);
-      iVar5 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
+      iVar5 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
                         (g_CEditorToolsPtr,local_248);
       if (iVar5 != 0) {
         local_30 = local_30 + -1;

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 520,
-    "complexity_score": 352,
+    "complexity_score": 247,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 247,
-    "suspect_count": 10,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 767
   },
   "cross_references": [
@@ -152,6 +150,98 @@
     },
     "pcode_op_count": 1888
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(uint *)((int)piVar9",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)piVar9 + iVar3 + 0x34) = uVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 95,
+      "match": "(uint *)((int)side_info_array",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)side_info_array->channels[local_30].granules[0].subblock_gain + uVar1) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 178,
+      "match": "(uint *)((int)side_info_array",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)side_info_array->channels[local_34].granules[0].table_select +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 183,
+      "match": "(uint *)((int)side_info_array",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)side_info_array->channels[local_34].granules[0].subblock_gain +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 189,
+      "match": "(uint *)((int)side_info_array",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)side_info_array->channels[local_34].granules[0].subblock_gain +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 209,
+      "match": "(uint *)((int)side_info_array",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)side_info_array->channels[local_34].granules[0].subblock_gain +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 213,
+      "match": "(int *)((int)side_info_array",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar3 = *(int *)((int)side_info_array->channels[local_34].granules[0].table_select +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 222,
+      "match": "(int *)((int)side_info_array",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(int *)((int)side_info_array->channels[local_34].granules[0].table_select +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 186,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 224,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 112,
     "local_size": 96,
@@ -273,86 +363,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 70,
-      "match": "(uint *)((int)piVar9",
-      "severity": "moderate",
-      "text": "*(uint *)((int)piVar9 + iVar3 + 0x34) = uVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 95,
-      "match": "(uint *)((int)side_info_array",
-      "severity": "moderate",
-      "text": "*(uint *)((int)side_info_array->channels[local_30].granules[0].subblock_gain + uVar1) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 178,
-      "match": "(uint *)((int)side_info_array",
-      "severity": "moderate",
-      "text": "*(uint *)((int)side_info_array->channels[local_34].granules[0].table_select +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 183,
-      "match": "(uint *)((int)side_info_array",
-      "severity": "moderate",
-      "text": "*(uint *)((int)side_info_array->channels[local_34].granules[0].subblock_gain +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 189,
-      "match": "(uint *)((int)side_info_array",
-      "severity": "moderate",
-      "text": "*(uint *)((int)side_info_array->channels[local_34].granules[0].subblock_gain +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 209,
-      "match": "(uint *)((int)side_info_array",
-      "severity": "moderate",
-      "text": "*(uint *)((int)side_info_array->channels[local_34].granules[0].subblock_gain +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 213,
-      "match": "(int *)((int)side_info_array",
-      "severity": "moderate",
-      "text": "iVar3 = *(int *)((int)side_info_array->channels[local_34].granules[0].table_select +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 222,
-      "match": "(int *)((int)side_info_array",
-      "severity": "moderate",
-      "text": "(*(int *)((int)side_info_array->channels[local_34].granules[0].table_select +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 186,
-      "match": "(TYPE *) ((int)NAME ...) split across lines",
-      "severity": "moderate",
-      "text": "*(uint *)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 224,
-      "match": "(TYPE *) ((int)NAME ...) split across lines",
-      "severity": "moderate",
-      "text": "*(uint *)",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

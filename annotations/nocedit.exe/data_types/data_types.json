@@ -3637,10 +3637,6 @@
       "type":"struct"
     },
     {
-      "name":"SBitAllocationTable",
-      "type":"struct"
-    },
-    {
       "name":"SBitBuffer",
       "type":"struct"
     },
@@ -4161,6 +4157,14 @@
       "type":"typedef"
     },
     {
+      "name":"SMpegAllocationEntry",
+      "type":"struct"
+    },
+    {
+      "name":"SMpegAllocationTable",
+      "type":"struct"
+    },
+    {
       "name":"SMpegFrameHeader",
       "type":"struct"
     },
@@ -4214,10 +4218,6 @@
     },
     {
       "name":"SMpegStereoSubbandSamples",
-      "type":"struct"
-    },
-    {
-      "name":"SMpegSubbandScalefactors",
       "type":"struct"
     },
     {
@@ -5751,6 +5751,14 @@
     {
       "name":"GLOBAL_ALLOC_FUNC",
       "type":"function_definition"
+    },
+    {
+      "name":"UMpegSubbandScalefactorCodes",
+      "type":"union"
+    },
+    {
+      "name":"SMpegSubbandScalefactors",
+      "type":"struct"
     },
     {
       "name":"UNetPacket",
@@ -53106,60 +53114,6 @@
       "fields":[
         {
           "len":4,
-          "name":"table_version",
-          "offset":0,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"num_lines",
-          "offset":4,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"allocation_data_ptr",
-          "offset":8,
-          "type":"void*"
-        },
-        {
-          "len":4,
-          "name":"table_index",
-          "offset":12,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"num_subbands",
-          "offset":16,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"num_allocation_groups",
-          "offset":20,
-          "type":"int"
-        },
-        {
-          "len":4,
-          "name":"num_granules",
-          "offset":24,
-          "type":"int"
-        }
-      ],
-      "importable":true,
-      "len":28,
-      "name":"SBitAllocationTable",
-      "pack":false,
-      "type":"struct"
-    },
-    {
-      "alig":1,
-      "cat":"/Nocturne/Struct/Game",
-      "desc":"",
-      "fields":[
-        {
-          "len":4,
           "name":"bits_available",
           "offset":0,
           "type":"int"
@@ -57210,6 +57164,96 @@
       "fields":[
         {
           "len":4,
+          "name":"value_range",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"bit_count",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"mode_flag",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"requantization_index",
+          "offset":12,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":16,
+      "name":"SMpegAllocationEntry",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"table_version",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"num_lines",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"allocation_data_ptr",
+          "offset":8,
+          "type":"SMpegAllocationEntry*"
+        },
+        {
+          "len":4,
+          "name":"table_index",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"num_subbands",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"num_allocation_groups",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"num_granules",
+          "offset":24,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":28,
+      "name":"SMpegAllocationTable",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
           "name":"header",
           "offset":0,
           "type":"SMpegFrameHeader*"
@@ -57222,9 +57266,9 @@
         },
         {
           "len":4,
-          "name":"allocation_table",
+          "name":"allocation_entries",
           "offset":8,
-          "type":"SBitAllocationTable*"
+          "type":"SMpegAllocationEntry*"
         },
         {
           "len":4,
@@ -57692,7 +57736,7 @@
           "len":384,
           "name":"codes",
           "offset":0,
-          "type":"int[3][32]"
+          "type":"UMpegSubbandScalefactorCodes"
         }
       ],
       "importable":true,
@@ -68676,6 +68720,30 @@
       "importable":true,
       "len":4,
       "name":"UIntegerFloat",
+      "pack":false,
+      "type":"union"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Union/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":384,
+          "name":"q",
+          "offset":0,
+          "type":"int[3][32]"
+        },
+        {
+          "len":384,
+          "name":"f",
+          "offset":0,
+          "type":"float[3][32]"
+        }
+      ],
+      "importable":true,
+      "len":384,
+      "name":"UMpegSubbandScalefactorCodes",
       "pack":false,
       "type":"union"
     },

@@ -2,11 +2,11 @@
 // Address: 0052f8e0
 // Address Range: [[0052f8e0, 0052fb46]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0(CFileBitStream *this_ptr,SMpegSubbandSCFSI *scfsi_array,SMpegSubbandAllocation *allocation_array,SMpegSubbandScalefactors *scalefactor_array,SBitAllocationTable *allocation_table)
+// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0(CFileBitStream *this_ptr,SMpegSubbandSCFSI *scfsi_array,SMpegSubbandAllocation *allocation_array,SMpegSubbandScalefactors *scalefactor_array,SMpegAllocationTable *allocation_table)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0(CFileBitStream *this_ptr,SMpegSubbandSCFSI *scfsi_array,SMpegSubbandAllocation *allocation_array,SMpegSubbandScalefactors *scalefactor_array,SBitAllocationTable *allocation_table)
+void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0(CFileBitStream *this_ptr,SMpegSubbandSCFSI *scfsi_array,SMpegSubbandAllocation *allocation_array,SMpegSubbandScalefactors *scalefactor_array,SMpegAllocationTable *allocation_table)
 
 {
   int iVar2;
@@ -66,7 +66,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0(CFi
       iVar2 = 0;
       if (0 < iVar1) {
         local_14 = (int *)((int)allocation_array->granules + local_24);
-        puVar6 = (uint *)((int)scalefactor_array->codes[0] + local_24);
+        puVar6 = (uint *)((int)&scalefactor_array->codes + local_24);
         do {
           if (*local_14 == 0) {
             puVar6[0x40] = 0x3f;
@@ -116,7 +116,7 @@ switchD_0052f9f0_default:
     do {
       iVar6 = 0;
       if (0 < iVar1) {
-        puVar7 = (uint *)((int)scalefactor_array->codes[0] + iVar3);
+        puVar7 = (uint *)((int)&scalefactor_array->codes + iVar3);
         do {
           puVar7 = puVar7 + 0x60;
           puVar7[0x40] = 0x3f;

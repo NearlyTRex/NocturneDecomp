@@ -95,7 +95,7 @@ int __cdecl core_skeledit_cpp_CLodMesh_selectAndGenerateLods_FUN_00589c20(CLodMe
     if (entry->for_shadows != 0) {
       format_string = "No precompute file exists.  Generate an LOD for shadows now?";
     }
-    iVar2 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
+    iVar2 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                       (g_CEditorToolsPtr,format_string);
     if (iVar2 != 0) {
       shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(this_ptr,0,render_mode);

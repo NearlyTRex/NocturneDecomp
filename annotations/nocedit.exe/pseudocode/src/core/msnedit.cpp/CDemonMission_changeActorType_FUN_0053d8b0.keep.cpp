@@ -68,7 +68,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_changeActorType_FUN_0053d8b0(CDemonM
     _sprintf(local_88,"C%s",pcVar3);
     pCVar7 = core_actor_cpp_createActorByName_FUN_0040c430(local_88);
     (*((pCVar7->vtable)._ub)->setup)(pCVar7);
-    iVar4 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
+    iVar4 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                       (g_CEditorToolsPtr,"Attempt to transfer properties?");
     if (iVar4 != 0) {
       core_actor_cpp_CActorPropertyList_init_FUN_0040e130(&CStack_2b28);

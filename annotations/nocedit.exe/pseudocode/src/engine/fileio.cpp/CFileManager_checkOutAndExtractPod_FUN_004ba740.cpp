@@ -287,7 +287,7 @@ LAB_004baa34:
     return 0;
   }
 LAB_004baa7f:
-  iVar4 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
+  iVar4 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                     (g_CEditorToolsPtr,"Extract and dismount now?");
   if (iVar4 == 0) {
     return 1;

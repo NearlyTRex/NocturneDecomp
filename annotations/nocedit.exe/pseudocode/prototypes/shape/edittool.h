@@ -127,13 +127,13 @@ void __cdecl CEditorTools::createCenteredDialog(CEditorTools *this_ptr,char *dia
 // Address: 0049e9d0
 int __cdecl showMultiChoiceDialog(CStrList *str_list,char *dialog_title,int dialog_mode);
 
-// Original: shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
+// Original: shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
 // Address: 0049f060
-int __cdecl CEditorTools::showYesNoDialog1(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
+int __cdecl CEditorTools::showDestructiveActionConfirmDialog(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
 
-// Original: shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
+// Original: shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
 // Address: 0049f0f0
-int __cdecl CEditorTools::showYesNoDialog2(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
+int __cdecl CEditorTools::showYesNoDialog(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
 
 // Original: shape_edittool.cpp_CEditorTools_showYesAllNoCancelDialog_FUN_0049f180
 // Address: 0049f180

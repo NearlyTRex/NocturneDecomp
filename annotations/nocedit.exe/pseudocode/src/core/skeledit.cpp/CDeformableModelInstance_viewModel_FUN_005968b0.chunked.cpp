@@ -623,7 +623,7 @@ static int CDeformableModelInstance_viewModel_check_iVar7_6(CDeformableModelInst
             cVar2 = *pcVar18;
           }
           if (iVar7 == 6) {
-            iVar7 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
+            iVar7 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
                               (g_CEditorToolsPtr,"Import these values:\nX: %g\nY: %g\nZ: %g\nP: %g\nB: %g\nH: %g\n");
             if (iVar7 != 0) {
               local_184.x = local_1cc;
@@ -1346,7 +1346,7 @@ LAB_005975b4:
     (*g_CKeysPtr->vtable->clearKeyPresses)(g_CKeysPtr);
   } while( true );
   if (((local_40 != 0) || (local_94 != 0)) &&
-     (iVar7 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
+     (iVar7 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                         (g_CEditorToolsPtr,"You biased/scaled the model.  Save model before exiting viewer?"), iVar7 != 0)) {
     pcVar18 = local_860;
     pcVar17 = this_ptr_01->model_filename;

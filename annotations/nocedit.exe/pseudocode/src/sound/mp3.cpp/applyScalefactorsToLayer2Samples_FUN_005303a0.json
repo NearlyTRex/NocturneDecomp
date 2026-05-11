@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 52,
+    "complexity_score": 27,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 27,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 67
   },
   "cross_references": [],
@@ -79,6 +77,26 @@
     },
     "pcode_op_count": 210
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(int *)((int)scalefactor_indices",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)((int)scalefactor_indices + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(float *)((int)sample_array",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pfVar3 = (float *)((int)sample_array + iVar6);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,
@@ -109,22 +127,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(int *)((int)scalefactor_indices",
-      "severity": "moderate",
-      "text": "piVar4 = (int *)((int)scalefactor_indices + iVar6);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 18,
-      "match": "(float *)((int)sample_array",
-      "severity": "moderate",
-      "text": "pfVar3 = (float *)((int)sample_array + iVar6);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

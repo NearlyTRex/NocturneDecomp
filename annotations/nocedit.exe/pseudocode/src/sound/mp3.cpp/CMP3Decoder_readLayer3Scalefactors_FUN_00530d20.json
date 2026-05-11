@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 340,
-    "complexity_score": 247,
+    "complexity_score": 142,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 142,
-    "suspect_count": 10,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 482
   },
   "cross_references": [
@@ -147,6 +145,98 @@
     },
     "pcode_op_count": 2117
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(int *)((int)g_Layer3ShortBandGroupCounts",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_1c = *(int *)((int)g_Layer3ShortBandGroupCounts + local_34);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(int *)((int)g_Layer3ShortBandGroupCounts",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (local_1c < *(int *)((int)g_Layer3ShortBandGroupCounts + local_34 + 4)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(uint *)(local_20 + (int)puVar6",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar7 = (uint *)(local_20 + (int)puVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(uint *)((int)g_Layer3ScalefacLengths1",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr,*(uint *)((int)g_Layer3ScalefacLengths1 +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(int *)((int)g_Layer3ShortBandGroupCounts",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while (local_1c < *(int *)((int)g_Layer3ShortBandGroupCounts + local_34 + 4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 91,
+      "match": "(int *)((int)scalefactor_dest",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while (piVar6 != (int *)((int)scalefactor_dest + local_54 + granule_index * 0xf8));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 107,
+      "match": "(int *)((int)scalefactor_dest",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while (piVar5 != (int *)((int)scalefactor_dest + local_4c + granule_index * 0xf8));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 124,
+      "match": "(int *)((int)g_Layer3LongBandGroupCounts",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "iVar4 = *(int *)((int)g_Layer3LongBandGroupCounts + local_38);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 126,
+      "match": "(int *)((int)g_Layer3LongBandGroupCounts",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (iVar4 < *(int *)((int)g_Layer3LongBandGroupCounts + local_38 + 4)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 136,
+      "match": "(int *)((int)g_Layer3LongBandGroupCounts",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while (iVar4 < *(int *)((int)g_Layer3LongBandGroupCounts + local_38 + 4));",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 112,
     "local_size": 88,
@@ -282,86 +372,22 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(int *)((int)g_Layer3ShortBandGroupCounts",
-      "severity": "moderate",
-      "text": "local_1c = *(int *)((int)g_Layer3ShortBandGroupCounts + local_34);",
-      "type": "pointer_cast"
+  "static_analysis": {
+    "analyzed_file": "CMP3Decoder_readLayer3Scalefactors_FUN_00530d20.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 14,
+          "line": 120,
+          "message": "Redundant assignment of 'piVar3' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
     },
-    {
-      "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(int *)((int)g_Layer3ShortBandGroupCounts",
-      "severity": "moderate",
-      "text": "if (local_1c < *(int *)((int)g_Layer3ShortBandGroupCounts + local_34 + 4)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 43,
-      "match": "(uint *)(local_20 + (int)puVar6",
-      "severity": "moderate",
-      "text": "puVar7 = (uint *)(local_20 + (int)puVar6);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(uint *)((int)g_Layer3ScalefacLengths1",
-      "severity": "moderate",
-      "text": "(this_ptr,*(uint *)((int)g_Layer3ScalefacLengths1 +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 56,
-      "match": "(int *)((int)g_Layer3ShortBandGroupCounts",
-      "severity": "moderate",
-      "text": "} while (local_1c < *(int *)((int)g_Layer3ShortBandGroupCounts + local_34 + 4));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 91,
-      "match": "(int *)((int)scalefactor_dest",
-      "severity": "moderate",
-      "text": "} while (piVar6 != (int *)((int)scalefactor_dest + local_54 + granule_index * 0xf8));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 107,
-      "match": "(int *)((int)scalefactor_dest",
-      "severity": "moderate",
-      "text": "} while (piVar5 != (int *)((int)scalefactor_dest + local_4c + granule_index * 0xf8));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 124,
-      "match": "(int *)((int)g_Layer3LongBandGroupCounts",
-      "severity": "moderate",
-      "text": "iVar4 = *(int *)((int)g_Layer3LongBandGroupCounts + local_38);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 126,
-      "match": "(int *)((int)g_Layer3LongBandGroupCounts",
-      "severity": "moderate",
-      "text": "if (iVar4 < *(int *)((int)g_Layer3LongBandGroupCounts + local_38 + 4)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 136,
-      "match": "(int *)((int)g_Layer3LongBandGroupCounts",
-      "severity": "moderate",
-      "text": "} while (iVar4 < *(int *)((int)g_Layer3LongBandGroupCounts + local_38 + 4));",
-      "type": "pointer_cast"
-    }
-  ]
+    "file_variant": "keep"
+  },
+  "suspects": []
 }

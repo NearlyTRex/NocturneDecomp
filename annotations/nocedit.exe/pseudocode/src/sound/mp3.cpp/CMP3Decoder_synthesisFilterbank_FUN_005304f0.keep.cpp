@@ -29,7 +29,6 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_005304f0(CMP3Deco
   int local_4c;
   int local_48;
   float *local_44;
-  float (*local_40) [32];
   int local_30;
   float *local_24;
   int local_20;

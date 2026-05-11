@@ -28,7 +28,7 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0(C
       core_dtrace_cpp_CDemonRaytrace_save_FUN_00495040(this_ptr,filename);
       return 1;
     }
-    iVar1 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
+    iVar1 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                       (g_CEditorToolsPtr,"Old .GEO file %s exists in file:\n%s\nShall I patch it?\nIf you're not sure what this means, type N.",filename,
                        local_224.target_path);
     if (iVar1 != 0) {

@@ -1,12 +1,12 @@
-// Name: shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
+// Name: shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
 // Address: 0049f0f0
 // Address Range: [[0049f0f0, 0049f17a]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools *this_ptr,char *format_string,...)
+// Signature: int __cdecl shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools *this_ptr,char *format_string,...)
 
 #include "nocturne.h"
 
-int __cdecl shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools *this_ptr,char *format_string,...)
+int __cdecl shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools *this_ptr,char *format_string,...)
 
 {
   int iVar1;

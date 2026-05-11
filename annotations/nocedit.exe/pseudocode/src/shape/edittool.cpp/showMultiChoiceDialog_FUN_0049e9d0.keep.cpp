@@ -70,7 +70,7 @@ int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0049e9d0(CStrList *str_
       if (pcVar14 != (char *)0x0) {
         pcVar15 = pcVar14 + 1;
         *(char *)&local_3c->shortcut_key = pcVar14[1];
-        strcpy(pcVar14,pcVar15);
+        memmove(pcVar14,pcVar15,strlen(pcVar15) + 1);
         shape_edittool_cpp_CStrList_setStringAt_FUN_004a3120
                   ((CStrList *)dialog_title,iVar9,local_150);
       }
@@ -178,7 +178,12 @@ int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0049e9d0(CStrList *str_
         if (iVar17 == iVar12) {
           iVar3 = iVar10;
         }
-        cVar2 = (char)pCVar16[1].shortcut_key;
+        if (iVar10 + 1 < iVar2) {
+          cVar2 = (char)pCVar16[1].shortcut_key;
+        }
+        else {
+          cVar2 = '\0';
+        }
         pCVar16 = pCVar16 + 1;
       }
       if (iVar12 == 0x1b) {

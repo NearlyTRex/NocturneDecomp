@@ -2,14 +2,14 @@
 // Address: 0052f670
 // Address Range: [[0052f670, 0052f79f]]
 // Convention: __cdecl
-// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFileBitStream *this_ptr,SMpegSubbandAllocation *output_allocation,SBitAllocationTable *alloc_table_info)
+// Signature: void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFileBitStream *this_ptr,SMpegSubbandAllocation *output_allocation,SMpegAllocationTable *alloc_table_info)
 
 #include "nocturne.h"
 
-void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFileBitStream *this_ptr,SMpegSubbandAllocation *output_allocation,SBitAllocationTable *alloc_table_info)
+void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFileBitStream *this_ptr,SMpegSubbandAllocation *output_allocation,SMpegAllocationTable *alloc_table_info)
 
 {
-  void *pvVar1;
+  SMpegAllocationEntry *pSVar1;
   uint uVar2;
   uint uVar3;
   int iVar4;
@@ -27,10 +27,10 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFil
   iVar4 = alloc_table_info->num_granules;
   iVar1 = alloc_table_info->num_subbands;
   iVar6 = alloc_table_info->num_allocation_groups;
-  pvVar1 = alloc_table_info->allocation_data_ptr;
+  pSVar1 = alloc_table_info->allocation_data_ptr;
   if (0 < iVar6) {
     local_14 = 0;
-    local_18 = pvVar1;
+    local_18 = pSVar1;
     do {
       iVar7 = 0;
       if (0 < iVar1) {
@@ -48,7 +48,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFil
     } while (local_14 < iVar6 * 4);
   }
   if (iVar6 < iVar4) {
-    pvVar8 = (void *)(iVar6 * 0x100 + (int)pvVar1);
+    pvVar8 = pSVar1 + iVar6 * 0x10;
     piVar4 = output_allocation->granules + iVar6;
     do {
       uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,*(int *)((int)pvVar8 + 4))

@@ -147,7 +147,7 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\game.cpp",0x975);
         pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                            ("Restore quick saved game?");
-        iVar4 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
+        iVar4 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
                           (g_CEditorToolsPtr,pcVar6);
         if (iVar4 != 0) {
           this_ptr->need_chapter_reload = 1;

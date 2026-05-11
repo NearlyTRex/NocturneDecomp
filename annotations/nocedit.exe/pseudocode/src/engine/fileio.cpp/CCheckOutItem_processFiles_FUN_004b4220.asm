@@ -196,8 +196,8 @@ section .text
     MOV EAX,[0x00678a60]                ; 004b436b | g_CEditorToolsPtr
     PUSH EAX                            ; 004b4370 | g_CEditorToolsInstance
     LEA EDI,[ESP + 0xa70]               ; 004b4371
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 ; 004b4378
-        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 004b4378
+        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0xc                         ; 004b437d
     MOV EDX,0x626bc4                    ; 004b4380 | = "history"
     MOV ESI,dword ptr [EBP + 0x18]      ; 004b4385

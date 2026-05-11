@@ -15,7 +15,7 @@ void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scale
   int iVar2;
   int iVar5;
   int iVar6;
-  SBitAllocationTable *local_58;
+  SMpegAllocationTable *local_58;
   int local_54;
   int local_40;
   uint *local_34;
@@ -30,7 +30,7 @@ void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scale
   
   iVar1 = frame_info->channel_count;
   iVar2 = frame_info->sblimit;
-  local_58 = frame_info->allocation_table;
+  local_58 = (SMpegAllocationTable *)frame_info->allocation_entries;
   if (0 < iVar2) {
     local_54 = 0;
     do {
@@ -84,7 +84,7 @@ void __cdecl sound_mp3_cpp_requantizeLayer3SamplesSimple_FUN_0052fee0(int *scale
         local_40 = local_40 + 0x80;
       } while (local_40 != 0x180);
       local_54 = local_54 + 4;
-      local_58 = (SBitAllocationTable *)&local_58[9].num_lines;
+      local_58 = (SMpegAllocationTable *)&local_58[9].num_lines;
     } while (local_54 < iVar2 * 4);
   }
   if (iVar2 < 0x20) {

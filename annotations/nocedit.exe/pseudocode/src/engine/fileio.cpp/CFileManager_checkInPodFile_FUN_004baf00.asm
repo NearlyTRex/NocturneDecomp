@@ -626,8 +626,8 @@ section .text
     PUSH 0x628fa5                       ; 004bb4d7 | = "Delete local files?"
     MOV EDX,dword ptr [0x00678a60]      ; 004bb4dc | g_CEditorToolsPtr
     PUSH EDX                            ; 004bb4e2 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 ; 004bb4e3
-        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 004bb4e3
+        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 004bb4e8
     TEST EAX,EAX                        ; 004bb4eb
     JZ 0x004bb508                       ; 004bb4ed
@@ -700,8 +700,8 @@ section .text
     MOV EBX,dword ptr [0x00678a60]      ; 004bb59b | g_CEditorToolsPtr
     PUSH EBX                            ; 004bb5a1 | g_CEditorToolsInstance
     MOV ESI,0x626bc4                    ; 004bb5a2 | = "history"
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 ; 004bb5a7
-        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 004bb5a7
+        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0xc                         ; 004bb5ac
     LEA EDI,[ESP + 0x1c7c]              ; 004bb5af
     MOV dword ptr [ESP + 0x25bc],EAX    ; 004bb5b6

@@ -7,23 +7,18 @@
 
 #include "nocturne.h"
 
-/* WARNING: Exceeded maximum restarts with more pending */
-
 int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_005b0120(LPGUID device_guid,LPCSTR description,LPCSTR module,LPVOID context)
 
 {
-  char cVar2;
   ushort uVar4;
   int iVar5;
   uint uVar3;
   uint error_code;
   char *pcVar6;
-  char *pcVar9;
   char acStack_390 [400];
   char acStack_200 [400];
   DSCAPS DStack_70;
   LPDIRECTSOUND local_10;
-  char cVar1;
   SDirectSoundDeviceInfo *pSVar2;
   
   if (0xb < g_DirectSoundDeviceCount) {
@@ -75,16 +70,7 @@ int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_005b0120(LPGUID d
            (uint)(((byte)DStack_70.dwFlags & 0x20) != 0);
       g_DirectSoundDevices[iVar5].has_hardware_mixing =
            (uint)(DStack_70.dwMaxHwMixingStaticBuffers != 0);
-      pcVar9 = g_DirectSoundDevices[iVar5].device_description;
-      do {
-        cVar1 = *description;
-        *pcVar9 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar2 = description[1];
-        description = description + 2;
-        pcVar9[1] = cVar2;
-        pcVar9 = pcVar9 + 2;
-      } while (cVar2 != '\0');
+      strcpy(g_DirectSoundDevices[iVar5].device_description,description);
       g_DirectSoundDeviceCount = g_DirectSoundDeviceCount + 1;
       return 1;
     }

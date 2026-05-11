@@ -730,8 +730,8 @@ section .text
     PUSH 0x61feb0                       ; 0047995d | = "I can't copy %s to %s.  Continue impo..."
     MOV EAX,[0x00678a60]                ; 00479962 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EAX                            ; 00479967 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060 ; 00479968
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060 ; 00479968
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x10                        ; 0047996d
     TEST EAX,EAX                        ; 00479970
     JNZ 0x004797c3                      ; 00479972

@@ -210,7 +210,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(CDemonMission 
     }
     iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_R);
     if (iVar3 != 0) {
-      iVar3 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
+      iVar3 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                         (g_CEditorToolsPtr,"Reset gore?");
       if (iVar3 != 0) {
         core_gore_cpp_CGore_reset_FUN_004ed760(g_CGorePtr);

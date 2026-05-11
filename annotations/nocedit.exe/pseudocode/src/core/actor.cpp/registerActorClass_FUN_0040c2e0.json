@@ -874,6 +874,17 @@
     },
     "pcode_op_count": 389
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 12,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 28,
     "local_size": 4,

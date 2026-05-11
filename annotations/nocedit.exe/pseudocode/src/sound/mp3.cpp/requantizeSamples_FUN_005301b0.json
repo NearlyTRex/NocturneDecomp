@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 97,
+    "complexity_score": 52,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 52,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 175
   },
   "cross_references": [
@@ -101,6 +99,44 @@
     },
     "pcode_op_count": 657
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(int *)((int)allocation",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "piVar5 = (int *)((int)allocation->granules + local_28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 22,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar9 = (uint *)((int)&quantized_samples->codes + local_28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 23,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pfVar4 = (float *)((int)&dequantized_samples->codes + local_28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 32,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((*(uint *)((int)&quantized_samples[local_18].codes + local_28) >>",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 60,
     "local_size": 44,
@@ -169,38 +205,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(uint *)((int)quantized_samples",
-      "severity": "moderate",
-      "text": "puVar9 = (uint *)((int)quantized_samples->codes[0] + local_28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 23,
-      "match": "(float *)((int)dequantized_samples",
-      "severity": "moderate",
-      "text": "pfVar4 = (float *)((int)dequantized_samples->codes[0] + local_28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 24,
-      "match": "(int *)((int)allocation",
-      "severity": "moderate",
-      "text": "piVar5 = (int *)((int)allocation->granules + local_28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 32,
-      "match": "(uint *)((int)quantized_samples",
-      "severity": "moderate",
-      "text": "if ((*(uint *)((int)quantized_samples[local_18].codes[0] + local_28) >>",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

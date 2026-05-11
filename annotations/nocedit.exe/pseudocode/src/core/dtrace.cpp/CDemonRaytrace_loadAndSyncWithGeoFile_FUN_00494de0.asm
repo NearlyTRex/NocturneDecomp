@@ -39,7 +39,7 @@
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_dosio.c_findFile_FUN_00481760
 ;   engine_dosio.c_getFile_FUN_00481a50
-;   shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
+;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
 ;
@@ -111,8 +111,8 @@ section .text
     PUSH 0x622939                       ; 00494e85 | = "Old .GEO file %s exists in file:\n%s\..."
     MOV EBX,dword ptr [0x00678a60]      ; 00494e8a | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EBX                            ; 00494e90 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 ; 00494e91
-        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 00494e91
+        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x10                        ; 00494e96
     TEST EAX,EAX                        ; 00494e99
     JZ 0x00494f1b                       ; 00494e9b

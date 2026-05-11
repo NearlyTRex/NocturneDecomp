@@ -1195,8 +1195,8 @@ section .text
     PUSH 0x6482b8                       ; 0057f41b | = "Import this camera?"
     MOV EDI,dword ptr [0x00678a60]      ; 0057f420 | g_CEditorToolsPtr
     PUSH EDI                            ; 0057f426 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 ; 0057f427
-        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 0057f427
+        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0057f42c
     TEST EAX,EAX                        ; 0057f42f
     JZ 0x0057f435                       ; 0057f431

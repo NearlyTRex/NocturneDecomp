@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 113,
+    "complexity_score": 123,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 58,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
@@ -157,6 +157,14 @@
       "severity": "mild",
       "text": "pcVar4 = (char *)((int)&pSVar6[-1].is_emulated + 3);",
       "type": "negative_offset"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 28,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

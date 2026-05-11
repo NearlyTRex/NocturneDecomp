@@ -52,7 +52,7 @@
 ;   engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
 ;   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
-;   shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
+;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
 ;   ... and 6 more
@@ -283,8 +283,8 @@ section .text
     PUSH EAX                            ; 004b7963
     MOV EDI,dword ptr [0x00678a60]      ; 004b7964 | g_CEditorToolsPtr
     PUSH EDI                            ; 004b796a | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0 ; 004b796b
-        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 ; 004b796b
+        ;   XREF to: 0049f0f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 004b7970
     MOV ESI,EAX                         ; 004b7973
     TEST ESI,ESI                        ; 004b7975

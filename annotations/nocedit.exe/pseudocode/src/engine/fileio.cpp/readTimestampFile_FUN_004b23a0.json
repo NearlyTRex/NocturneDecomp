@@ -7,16 +7,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 218,
-    "complexity_score": 135,
+    "complexity_score": 150,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 95,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
-      "unrolled_memcpy"
+      "unrolled_memcpy",
+      "unrolled_strcpy"
     ],
     "total_lines": 313
   },
@@ -260,6 +261,14 @@
       "severity": "moderate",
       "text": "pSVar5 = (STimestampRecord *)((int)pSVar5 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 64,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",

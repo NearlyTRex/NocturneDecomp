@@ -392,7 +392,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
     iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D);
     iVar5 = local_1c;
     if ((((iVar4 != 0) && (-1 < local_1c)) && (local_1c < this_ptr->room_count)) &&
-       (iVar7 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
+       (iVar7 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
                           (g_CEditorToolsPtr,"Delete the selected room?"), iVar7 != 0)) {
       iVar7 = this_ptr->room_count + -1;
       this_ptr->room_count = iVar7;

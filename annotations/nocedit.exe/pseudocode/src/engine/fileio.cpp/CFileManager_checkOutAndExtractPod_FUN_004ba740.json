@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 730,
-    "complexity_score": 356,
+    "complexity_score": 366,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 40,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 306,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "unrolled_strcpy"
@@ -182,7 +182,7 @@
     {
       "addr": "0049f0f0",
       "is_variadic": true,
-      "name": "shape_edittool.cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0"
+      "name": "shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0"
     },
     {
       "addr": "004a2a20",
@@ -669,6 +669,14 @@
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 132,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 174,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

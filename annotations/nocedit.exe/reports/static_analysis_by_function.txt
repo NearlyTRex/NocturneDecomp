@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 157
-  Total diagnostics: 421
+  Functions with findings: 162
+  Total diagnostics: 429
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 157, raw .cpp files: 0
+  .keep.cpp files: 162, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -538,6 +538,14 @@ shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180  [.keep] [Cppc
   Line   47: [nullPointerRedundantCheck] Either the condition 'pCVar6!=(CBitmap*)0x0' is redundant or there is possible null pointer dereference: pCVar6.
 
 ----------------------------------------------------------------------------------------------------
+sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480  [.keep] [Cppcheck (quick)]
+  File: sound/mp3.cpp  (3 diagnostics)
+
+  Line   46: [selfAssignment] Redundant assignment of 'piVar3' to itself.
+  Line   55: [selfAssignment] Redundant assignment of 'piVar4' to itself.
+  Line   67: [selfAssignment] Redundant assignment of 'piVar5' to itself.
+
+----------------------------------------------------------------------------------------------------
 support_codec.cpp_readBitsFromStream_FUN_0043e530  [.keep] [Cppcheck (quick)]
   File: support/codec.cpp  (3 diagnostics)
 
@@ -833,11 +841,18 @@ shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590  [.keep] [Cpp
   Line  239: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
-sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630  [.keep] [Cppcheck (quick)]
+sound_mp3.cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50  [.keep] [Cppcheck (quick)]
   File: sound/mp3.cpp  (2 diagnostics)
 
-  Line   90: [uninitvar] Uninitialized variable: local_30
-  Line  116: [uninitvar] Uninitialized variable: local_3c
+  Line   90: [selfAssignment] Redundant assignment of 'puVar8' to itself.
+  Line  112: [selfAssignment] Redundant assignment of 'puVar7' to itself.
+
+----------------------------------------------------------------------------------------------------
+sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_005aef40  [.keep] [Cppcheck (quick)]
+  File: sound/snddx.cpp  (2 diagnostics)
+
+  Line   36: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line   37: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0  [.keep] [Cppcheck (quick)]
@@ -1171,10 +1186,22 @@ shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0  [.keep] [Cppcheck (qui
   Line   65: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
+sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0  [.keep] [Cppcheck (quick)]
+  File: sound/mp3.cpp  (1 diagnostics)
+
+  Line  127: [selfAssignment] Redundant assignment of 'puVar7' to itself.
+
+----------------------------------------------------------------------------------------------------
 sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680  [.keep] [Cppcheck (quick)]
   File: sound/mp3.cpp  (1 diagnostics)
 
   Line   46: [invalidScanfArgType_int] %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
+
+----------------------------------------------------------------------------------------------------
+sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20  [.keep] [Cppcheck (quick)]
+  File: sound/mp3.cpp  (1 diagnostics)
+
+  Line  120: [selfAssignment] Redundant assignment of 'piVar3' to itself.
 
 ----------------------------------------------------------------------------------------------------
 sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0  [.keep] [Cppcheck (quick)]
@@ -1186,13 +1213,19 @@ sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0  [.keep] [Cppcheck (quick)]
 sound_mp3.cpp_initializeHuffmanTablesOnce_FUN_00533f80  [.keep] [Cppcheck (quick)]
   File: sound/mp3.cpp  (1 diagnostics)
 
-  Line   46: [invalidScanfArgType_int] %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
+  Line   30: [invalidScanfArgType_int] %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
 
 ----------------------------------------------------------------------------------------------------
 sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30  [.keep] [Cppcheck (quick)]
   File: sound/mp3.cpp  (1 diagnostics)
 
-  Line   45: [invalidScanfArgType_int] %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
+  Line   29: [invalidScanfArgType_int] %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
+
+----------------------------------------------------------------------------------------------------
+sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50  [.keep] [Cppcheck (quick)]
+  File: sound/mp3.cpp  (1 diagnostics)
+
+  Line  138: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660  [.keep] [Cppcheck (quick)]
@@ -1210,7 +1243,7 @@ sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830  [.keep] [Cppcheck (quic
 sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120  [.keep] [Cppcheck (quick)]
   File: sound/snddx.cpp  (1 diagnostics)
 
-  Line   53: [identicalInnerCondition] Identical inner 'if' condition is always true.
+  Line   48: [identicalInnerCondition] Identical inner 'if' condition is always true.
 
 ----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0  [.keep] [Cppcheck (quick)]

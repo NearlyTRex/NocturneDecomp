@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 85,
+    "complexity_score": 45,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 45,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unrolled_memset",
-      "unrolled_strcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 120
   },
   "cross_references": [
@@ -176,6 +173,35 @@
     },
     "pcode_op_count": 244
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 24,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 35,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 15,
+      "match": "cascade_constant_fill",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pCVar2->head_rotation).z = 0.0;",
+      "type": "unrolled_memset"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -192,32 +218,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 24,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 35,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 15,
-      "match": "cascade_constant_fill",
-      "severity": "moderate",
-      "text": "(pCVar2->head_rotation).z = 0.0;",
-      "type": "unrolled_memset"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -251,7 +251,7 @@ void __cdecl core_course_cpp_CCourse_showEditorMenu_FUN_00443040(CCourse *this_p
                   (g_CEditorToolsPtr,"No course in memory!");
       }
       else {
-        iVar6 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
+        iVar6 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
                           (g_CEditorToolsPtr,"Remove bank from course?");
         if ((iVar6 != 0) && (local_18 = 0, 0 < this_ptr->len)) {
           iVar6 = 0;

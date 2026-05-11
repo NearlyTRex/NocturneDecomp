@@ -496,7 +496,7 @@ LAB_0057eb3b:
           ;
           core_setedit_cpp_CDemonSet_renderCameraBackdrop_FUN_0057d340
                     (this_ptr,pCVar15 + this_ptr->camera_count);
-          iVar11 = shape_edittool_cpp_CEditorTools_showYesNoDialog2_FUN_0049f0f0
+          iVar11 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                              (g_CEditorToolsPtr,"Import this camera?");
           if (iVar11 != 0) {
             this_ptr->camera_count = this_ptr->camera_count + 1;

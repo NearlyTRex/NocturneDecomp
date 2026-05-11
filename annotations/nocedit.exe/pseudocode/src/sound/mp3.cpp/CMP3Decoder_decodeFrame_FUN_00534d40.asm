@@ -390,7 +390,7 @@ section .text
     MOV dword ptr [ESP + 0xc],EBX       ; 0053506a
     MOV dword ptr [ESP + 0x10],EDI      ; 0053506e
     CALL sound_mp3.cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0 ; 00535072
-        ;   XREF to: 0052f7a0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0(CFileBitStream * this_ptr, uint * output_array, SBitAllocationTable * alloc_table)
+        ;   XREF to: 0052f7a0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0(CFileBitStream * this_ptr, uint * output_array, SMpegAllocationTable * alloc_table)
     ADD ESP,0xc                         ; 00535077
     LEA EAX,[ESP + 0x5ff0]              ; 0053507a
     PUSH EAX                            ; 00535081
@@ -400,7 +400,7 @@ section .text
     PUSH EAX                            ; 00535091
     PUSH ESI                            ; 00535092
     CALL sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_0052f850 ; 00535093
-        ;   XREF to: 0052f850 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_0052f850(CFileBitStream * this_ptr, SMpegSubbandAllocation * allocation_indices, SMpegSubbandScalefactors * scalefactors, SBitAllocationTable * alloc_info)
+        ;   XREF to: 0052f850 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_0052f850(CFileBitStream * this_ptr, SMpegSubbandAllocation * allocation_indices, SMpegSubbandScalefactors * scalefactors, SMpegAllocationTable * alloc_info)
     ADD ESP,0x10                        ; 00535098
     XOR EAX,EAX                         ; 0053509b
     MOV dword ptr [ESP + 0x60b0],EAX    ; 0053509d
@@ -415,7 +415,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x6058]    ; 005350c3
     PUSH EBX                            ; 005350ca
     CALL sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50 ; 005350cb
-        ;   XREF to: 0052fb50 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50(CFileBitStream * this_ptr, SMpegSubbandScalefactors * quantized_samples, SMpegSubbandAllocation * allocation, SBitAllocationTable * alloc_table)
+        ;   XREF to: 0052fb50 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50(CFileBitStream * this_ptr, SMpegSubbandScalefactors * quantized_samples, SMpegSubbandAllocation * allocation, SMpegAllocationTable * alloc_table)
     ADD ESP,0x10                        ; 005350d0
     LEA EAX,[ESP + 0x5ff0]              ; 005350d3
     PUSH EAX                            ; 005350da
@@ -645,7 +645,7 @@ section .text
     PUSH ESI                            ; 005353c4
     MOV dword ptr [ESP + 0xc],EDI       ; 005353c5
     CALL sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_0052f670 ; 005353c9
-        ;   XREF to: 0052f670 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFileBitStream * this_ptr, SMpegSubbandAllocation * output_allocation, SBitAllocationTable * alloc_table_info)
+        ;   XREF to: 0052f670 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFileBitStream * this_ptr, SMpegSubbandAllocation * output_allocation, SMpegAllocationTable * alloc_table_info)
     ADD ESP,0xc                         ; 005353ce
     LEA EAX,[ESP + 0x5ff0]              ; 005353d1
     PUSH EAX                            ; 005353d8
@@ -672,7 +672,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x6064]    ; 00535422
     PUSH EDI                            ; 00535429
     CALL sound_mp3.cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50 ; 0053542a
-        ;   XREF to: 0052fc50 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50(CFileBitStream * this_ptr, SMpegSubbandScalefactors * sample_array, SMpegSubbandAllocation * allocation_array, SBitAllocationTable * allocation_table)
+        ;   XREF to: 0052fc50 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50(CFileBitStream * this_ptr, SMpegSubbandScalefactors * sample_array, SMpegSubbandAllocation * allocation_array, SMpegAllocationTable * allocation_table)
     ADD ESP,0x10                        ; 0053542f
     LEA EAX,[ESP + 0x5ff0]              ; 00535432
     PUSH EAX                            ; 00535439

@@ -103,7 +103,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
           }
           else {
             _sprintf(local_320,"%s.msn",input_buffer);
-            iVar3 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
+            iVar3 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
                               (g_CEditorToolsPtr,"Save mission to %s",local_320);
             if (iVar3 != 0) {
               core_msnedit_cpp_CDemonMission_saveMissionAndScript_FUN_0053d190(this_ptr,local_320);
@@ -133,7 +133,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
         iVar3 = core_msnedit_cpp_CDemonMission_pickSet_FUN_00538f90
                           (this_ptr,"Select set to delete.",this_ptr->current_set_index);
         if ((-1 < iVar3) &&
-           (iVar5 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
+           (iVar5 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
                               (g_CEditorToolsPtr,"This is going to remove set %s from the mission and delete all the actors in the set.",
                                *(this_ptr->set_names + iVar3)), iVar5 != 0)) {
           core_msnedit_cpp_CDemonMission_removeSet_FUN_00538df0(this_ptr,iVar3);
@@ -160,7 +160,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
         }
       }
       else if (uVar2 < 0x38) {
-        iVar3 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
+        iVar3 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
                           (g_CEditorToolsPtr,"Precompute lights?");
         if (iVar3 != 0) {
           core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(g_CDemonSetPtr,-1);
@@ -221,7 +221,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
       }
     }
     else if (uVar2 < 0x56) {
-      iVar3 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
+      iVar3 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
                         (g_CEditorToolsPtr,"Update ALL mission files to latest version?");
       if (iVar3 != 0) {
         engine_dosio_c_CFileFinder_ctor_FUN_00481c30(&local_434);

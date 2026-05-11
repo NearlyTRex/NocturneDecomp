@@ -1,7 +1,7 @@
 #pragma once
 
 // Forward declarations
-struct SBitAllocationTable;
+struct SMpegAllocationEntry;
 struct SMpegFrameHeader;
 
 // Dependencies
@@ -13,7 +13,7 @@ struct SMpegFrameHeader;
 typedef struct SMpegFrame {
     struct SMpegFrameHeader* header; // 0x0
     int channel_mode; // 0x4
-    struct SBitAllocationTable* allocation_table; // 0x8
+    struct SMpegAllocationEntry* allocation_entries; // 0x8
     int table_index; // 0xc
     int channel_count; // 0x10
     int js_bound; // 0x14

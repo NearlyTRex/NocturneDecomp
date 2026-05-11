@@ -333,7 +333,7 @@ void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
       }
       iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D);
       if ((iVar2 != 0) &&
-         (iVar2 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
+         (iVar2 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
                             (g_CEditorToolsPtr,"Delete this bone?"), iVar2 != 0)) {
         iVar2 = this_ptr->collide_bone_count + -1;
         this_ptr->collide_bone_count = iVar2;

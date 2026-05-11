@@ -262,7 +262,7 @@ LAB_0047983f:
             if (bVar4) goto LAB_004797c3;
           }
         }
-        iVar9 = shape_edittool_cpp_CEditorTools_showYesNoDialog1_FUN_0049f060
+        iVar9 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
                           (g_CEditorToolsPtr,"I can't copy %s to %s.  Continue import anyway?",local_7b0,local_4a4
                           );
         if (iVar9 == 0) goto LAB_00479719;

@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 240,
-    "complexity_score": 266,
+    "complexity_score": 111,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 111,
-    "suspect_count": 15,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 351
   },
   "cross_references": [
@@ -37,7 +35,7 @@
     ],
     "convention": "__cdecl",
     "name": "sound_mp3.cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50",
-    "signature": "void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50(CFileBitStream *this_ptr,SMpegSubbandScalefactors *sample_array,SMpegSubbandAllocation *allocation_array,SBitAllocationTable *allocation_table)"
+    "signature": "void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50(CFileBitStream *this_ptr,SMpegSubbandScalefactors *sample_array,SMpegSubbandAllocation *allocation_array,SMpegAllocationTable *allocation_table)"
   },
   "function_calls": [
     {
@@ -104,6 +102,134 @@
     },
     "pcode_op_count": 1065
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(int *)((int)allocation_array",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_1c = (int *)((int)allocation_array->granules + local_48);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(int *)((int)local_4c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr,*(int *)((int)local_4c +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(int *)((int)allocation_array",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)allocation_array[local_20].granules",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 91,
+      "match": "(void *)((int)local_4c",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_4c = (void *)((int)local_4c + 0x100);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 47,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar9 = (uint *)((int)&local_18->codes + local_48);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 51,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while (puVar9 != (uint *)((int)&local_18[1].codes + local_48));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 56,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar11 = (uint *)((int)&local_18->codes + local_48);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 65,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while (puVar10 != (uint *)((int)&local_18[1].codes + local_48));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 70,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar11 = (uint *)((int)&local_18->codes + local_48);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 75,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while (puVar11 != (uint *)((int)&local_18[1].codes + local_48));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 79,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar8 = (uint *)((int)&sample_array->codes + local_48);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 84,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while (puVar8 != (uint *)((int)&sample_array[1].codes + local_48));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 101,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar7 = (uint *)((int)&sample_array[iVar9].codes + iVar11);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 106,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while (puVar7 != (uint *)((int)&sample_array[iVar9 + 1].codes + iVar11));",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 96,
     "local_size": 80,
@@ -179,130 +305,33 @@
         "name": "allocation_table",
         "offset": 16,
         "size": 4,
-        "type": "SBitAllocationTable *"
+        "type": "SMpegAllocationTable *"
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(int *)((int)allocation_array",
-      "severity": "moderate",
-      "text": "local_1c = (int *)((int)allocation_array->granules + local_48);",
-      "type": "pointer_cast"
+  "static_analysis": {
+    "analyzed_file": "CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50.keep.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "selfAssignment",
+          "column": 20,
+          "line": 90,
+          "message": "Redundant assignment of 'puVar8' to itself.",
+          "severity": "warning"
+        },
+        {
+          "check_id": "selfAssignment",
+          "column": 20,
+          "line": 112,
+          "message": "Redundant assignment of 'puVar7' to itself.",
+          "severity": "warning"
+        }
+      ],
+      "error": null
     },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(uint *)((int)local_18",
-      "severity": "moderate",
-      "text": "puVar9 = (uint *)((int)local_18->codes[0] + local_48);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 51,
-      "match": "(uint *)((int)local_18",
-      "severity": "moderate",
-      "text": "} while (puVar9 != (uint *)((int)local_18[1].codes[0] + local_48));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 54,
-      "match": "(uint *)((int)pvVar2",
-      "severity": "moderate",
-      "text": "puVar4 = (uint *)((int)pvVar2 + *local_1c * 0x10 + local_2c * 0x100);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 56,
-      "match": "(uint *)((int)local_18",
-      "severity": "moderate",
-      "text": "puVar11 = (uint *)((int)local_18->codes[0] + local_48);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 60,
-      "match": "(int *)((int)local_4c",
-      "severity": "moderate",
-      "text": "(this_ptr,*(int *)((int)local_4c +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(int *)((int)allocation_array",
-      "severity": "moderate",
-      "text": "*(int *)((int)allocation_array[local_20].granules",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 65,
-      "match": "(uint *)((int)local_18",
-      "severity": "moderate",
-      "text": "} while (puVar10 != (uint *)((int)local_18[1].codes[0] + local_48));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 70,
-      "match": "(uint *)((int)local_18",
-      "severity": "moderate",
-      "text": "puVar11 = (uint *)((int)local_18->codes[0] + local_48);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 75,
-      "match": "(uint *)((int)local_18",
-      "severity": "moderate",
-      "text": "} while (puVar11 != (uint *)((int)local_18[1].codes[0] + local_48));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 79,
-      "match": "(uint *)((int)sample_array",
-      "severity": "moderate",
-      "text": "puVar8 = (uint *)((int)sample_array->codes[0] + local_48);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 84,
-      "match": "(uint *)((int)sample_array",
-      "severity": "moderate",
-      "text": "} while (puVar8 != (uint *)((int)sample_array[1].codes[0] + local_48));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 91,
-      "match": "(void *)((int)local_4c",
-      "severity": "moderate",
-      "text": "local_4c = (void *)((int)local_4c + 0x100);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 101,
-      "match": "(uint *)((int)sample_array",
-      "severity": "moderate",
-      "text": "puVar7 = (uint *)((int)sample_array[iVar9].codes[0] + iVar11);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 106,
-      "match": "(uint *)((int)sample_array",
-      "severity": "moderate",
-      "text": "} while (puVar7 != (uint *)((int)sample_array[iVar9 + 1].codes[0] + iVar11));",
-      "type": "pointer_cast"
-    }
-  ]
+    "file_variant": "keep"
+  },
+  "suspects": []
 }

@@ -1343,8 +1343,8 @@ section .text
     PUSH EAX                            ; 0047d889 | = "You haven't crammed this model.  Save..."
     MOV ESI,dword ptr [0x00678a60]      ; 0047d88a | g_CEditorToolsPtr
     PUSH ESI                            ; 0047d890 | g_CEditorToolsInstance
-    CALL shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060 ; 0047d891
-        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showYesNoDialog1_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
+    CALL shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060 ; 0047d891
+        ;   XREF to: 0049f060 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string)
     ADD ESP,0x8                         ; 0047d896
     TEST EAX,EAX                        ; 0047d899
     JNZ 0x0047d83f                      ; 0047d89b
