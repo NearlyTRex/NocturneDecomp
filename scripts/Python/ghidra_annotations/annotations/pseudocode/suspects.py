@@ -853,6 +853,13 @@ def identify_raw_address_constant_suspects(decompiled_code, address_interval_map
                 n >>= 1
             if n == 0:
                 continue
+            # Skip near-power-of-two thresholds (2^N - K for small K). These
+            # are bit-width counter limits like 0xfffffe = (1<<24) - 2 or
+            # 0x7ffffe = (1<<23) - 2, used as "near rollover" comparison
+            # constants. They collide with the global-address range only
+            # because they're the same magnitude as some pool's base.
+            if any(((addr + k) & (addr + k - 1)) == 0 for k in (1, 2, 3, 4)):
+                continue
             # Skip channel-replicated byte patterns like 0xfcfcfc (RGB box-
             # filter mask for `(p & 0xfcfcfc) >> 2` averaging), 0xfefefe
             # (sub-byte rounding masks), 0x010101 (channel broadcast), etc.
@@ -1644,6 +1651,14 @@ def identify_unrolled_field_copy(decompiled_code):
             continue
         seen_lhs_pairs = {(normalize(m.group(1)), m.group(2))}
         seen_rhs_pairs = {(normalize(m.group(3)), m.group(2))}
+        # For a real struct copy, each LHS prefix corresponds to exactly one
+        # RHS prefix (and vice-versa) — `dst.m[0]` always pairs with `src.m[0]`,
+        # `dst.m[1]` with `src.m[1]`, etc. If two lines share an LHS prefix
+        # but have different RHS prefixes, the destination at that prefix is
+        # being filled from two unrelated sources — that's coordinate routing
+        # (e.g. UV corner rotation), not a struct copy.
+        prefix_map_lhs_to_rhs = {normalize(m.group(1)): normalize(m.group(3))}
+        prefix_map_rhs_to_lhs = {normalize(m.group(3)): normalize(m.group(1))}
         j = i + 1
         while j < n:
             mj = line_matches_pure(j)
@@ -1652,8 +1667,15 @@ def identify_unrolled_field_copy(decompiled_code):
             if (get_root(mj.group(1)) != lhs_root or
                     get_root(mj.group(3)) != rhs_root):
                 break
-            lhs_pair = (normalize(mj.group(1)), mj.group(2))
-            rhs_pair = (normalize(mj.group(3)), mj.group(2))
+            lhs_prefix = normalize(mj.group(1))
+            rhs_prefix = normalize(mj.group(3))
+            existing_rhs = prefix_map_lhs_to_rhs.get(lhs_prefix)
+            existing_lhs = prefix_map_rhs_to_lhs.get(rhs_prefix)
+            if (existing_rhs is not None and existing_rhs != rhs_prefix) or \
+               (existing_lhs is not None and existing_lhs != lhs_prefix):
+                break
+            lhs_pair = (lhs_prefix, mj.group(2))
+            rhs_pair = (rhs_prefix, mj.group(2))
             if lhs_pair in seen_lhs_pairs or rhs_pair in seen_rhs_pairs:
                 # Repeat on either side breaks the run. A repeat LHS pair
                 # means the same slot is written twice; a repeat RHS pair
@@ -1662,6 +1684,8 @@ def identify_unrolled_field_copy(decompiled_code):
                 break
             seen_lhs_pairs.add(lhs_pair)
             seen_rhs_pairs.add(rhs_pair)
+            prefix_map_lhs_to_rhs.setdefault(lhs_prefix, rhs_prefix)
+            prefix_map_rhs_to_lhs.setdefault(rhs_prefix, lhs_prefix)
             j += 1
         run_len = j - i
         if run_len >= MIN_RUN:

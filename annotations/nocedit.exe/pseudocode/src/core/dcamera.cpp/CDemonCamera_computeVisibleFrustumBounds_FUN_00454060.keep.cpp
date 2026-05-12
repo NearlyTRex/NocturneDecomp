@@ -47,9 +47,7 @@ CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FU
     for (local_14 = 1; local_14 < this_ptr->framebuffer_width + -1; local_14 = local_14 + 1) {
       core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
                 (this_ptr,local_14,local_18,&local_d4);
-      local_80.x = local_d4.x;
-      local_80.y = local_d4.y;
-      local_80.z = local_d4.z;
+      local_80 = local_d4;
       if (local_d4.z < 0x1f401) {
 LAB_00454218:
         core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370

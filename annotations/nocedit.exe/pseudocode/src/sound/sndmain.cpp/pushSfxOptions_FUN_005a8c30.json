@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 72,
+    "complexity_score": 22,
     "cross_reference_count": 34,
     "function_call_count": 1,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 22,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 62
   },
   "cross_references": [
@@ -320,19 +317,12 @@
     },
     "pcode_op_count": 225
   },
-  "stack_frame": {
-    "frame_size": 4,
-    "local_size": 4,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": []
-  },
-  "suspects": [
+  "resolved_suspects": [
     {
       "description": "Complex pointer cast",
       "line": 21,
       "match": "(CSfxOptions *)((int)pCVar2",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "pCVar2 = (CSfxOptions *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -341,6 +331,7 @@
       "description": "Complex pointer cast",
       "line": 22,
       "match": "(CSfxOptions *)((int)pCVar3",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "pCVar3 = (CSfxOptions *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
@@ -349,6 +340,7 @@
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 19,
       "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "for (iVar1 = 0x1c; iVar1 != 0; iVar1 = iVar1 + -1) {",
       "type": "unrolled_memcpy"
@@ -357,9 +349,19 @@
       "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 24,
       "match": "MOVSD.REP",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "// 005a8c76: MOVSD.REP ES:EDI,ESI  ; g_SfxOptions | g_SfxLastSlot.volume",
       "type": "unrolled_memcpy"
     }
-  ]
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

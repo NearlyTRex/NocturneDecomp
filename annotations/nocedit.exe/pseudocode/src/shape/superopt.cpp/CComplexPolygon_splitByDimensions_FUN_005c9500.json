@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 555,
-    "complexity_score": 297,
+    "complexity_score": 272,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 272,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 827
   },
   "cross_references": [],
@@ -885,24 +883,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "introduced_by": "keep",
-      "line": 43,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "if (pos->x < bbox_min.x) bbox_min.x = pos->x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "introduced_by": "keep",
-      "line": 46,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "if (bbox_max.x < pos->x) bbox_max.x = pos->x;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

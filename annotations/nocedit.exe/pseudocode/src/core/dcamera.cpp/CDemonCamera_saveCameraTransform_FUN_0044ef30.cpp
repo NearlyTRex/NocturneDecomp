@@ -22,15 +22,15 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveCameraTransform_FUN_0044ef30(CDem
   int iVar3;
   int iVar4;
   
-  pCVar2 = &(this_ptr->transform_state).saved_camera_position;
+  pCVar2 = (CVector3i *)&(this_ptr->transform_state).saved_camera_position;
   pUVar1 = &(this_ptr->base).position;
   (this_ptr->transform_state).saved_camera_origin.x = (this_ptr->camera_origin).x;
   (this_ptr->transform_state).saved_camera_origin.y = (this_ptr->camera_origin).y;
   (this_ptr->transform_state).saved_camera_origin.z = (this_ptr->camera_origin).z;
   if (pCVar2 != (CVector3i *)pUVar1) {
     pCVar2->x = (int)(pUVar1->f).x;
-    (this_ptr->transform_state).saved_camera_position.y = (int)(this_ptr->base).position.f.y;
-    (this_ptr->transform_state).saved_camera_position.z = (int)(this_ptr->base).position.f.z;
+    (this_ptr->transform_state).saved_camera_position.f.y = (this_ptr->base).position.f.y;
+    (this_ptr->transform_state).saved_camera_position.f.z = (this_ptr->base).position.f.z;
   }
   (this_ptr->transform_state).saved_source_matrix.m[0].x = (this_ptr->source_matrix).m[0].x;
   (this_ptr->transform_state).saved_source_matrix.m[0].y = (this_ptr->source_matrix).m[0].y;

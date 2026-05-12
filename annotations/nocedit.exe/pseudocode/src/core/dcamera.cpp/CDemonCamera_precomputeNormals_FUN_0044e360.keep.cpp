@@ -55,9 +55,7 @@ CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e
           local_6c = local_54.x;
           aiStack_68[0] = local_54.y;
           aiStack_68[1] = local_54.z;
-          g_TempWorldPositions[local_38][local_28].x = local_54.x;
-          g_TempWorldPositions[local_38][local_28].y = local_54.y;
-          g_TempWorldPositions[local_38][local_28].z = local_54.z;
+          g_TempWorldPositions[local_38][local_28] = local_54;
           if (*local_24 >> 0x18 != 0) {
             core_dcamera_cpp_CDemonCamera_restoreAlphaTransform_FUN_00453a70
                       (this_ptr,&local_60,*local_24 >> 0x18,&local_78);

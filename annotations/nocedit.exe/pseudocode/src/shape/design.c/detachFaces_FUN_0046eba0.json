@@ -223,11 +223,11 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom field-by-field struct copy (5 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 36,
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 37,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_LoadedVertices[g_VertexCount].vertex.x = g_LoadedVertices[uVar2].vertex.x;",
+      "text": "g_LoadedVertices[iVar5].vertex.y = g_LoadedVertices[uVar2].vertex.y;",
       "type": "unrolled_memcpy"
     }
   ]

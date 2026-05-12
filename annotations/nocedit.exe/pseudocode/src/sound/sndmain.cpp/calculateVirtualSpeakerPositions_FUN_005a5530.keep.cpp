@@ -1,0 +1,43 @@
+// Name: sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_005a5530
+// Address: 005a5530
+// MANUAL RECONSTRUCTION
+// Address Range: [[005a5530, 005a561b]]
+// Convention: __cdecl
+// Signature: void __cdecl sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_005a5530(void)
+
+#include "nocturne.h"
+
+void __cdecl sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_005a5530(void)
+
+{
+  double dVar1;
+  double dVar2;
+  double dVar3;
+  int iVar4;
+  
+  dVar3 = g_Cached3DListenerPos.z;
+  dVar2 = g_Cached3DListenerPos.y;
+  dVar1 = g_Cached3DListenerPos.x;
+  if (g_AudioChannelCount == 2) {
+    dVar1 = g_Cached3DDistanceFactorInverse * 0.5;
+    g_VirtualSpeakerXPositions[0] =
+         g_Cached3DListenerPos.x - g_Cached3DListenerOrientFront.x * dVar1;
+    g_VirtualSpeakerYPositions[0] =
+         g_Cached3DListenerPos.y - g_Cached3DListenerOrientFront.y * dVar1;
+    g_VirtualSpeakerZPositions[0] =
+         g_Cached3DListenerPos.z - g_Cached3DListenerOrientFront.z * dVar1;
+    g_VirtualSpeakerXPositions[1] =
+         g_Cached3DListenerPos.x + g_Cached3DListenerOrientFront.x * dVar1;
+    g_VirtualSpeakerYPositions[1] =
+         g_Cached3DListenerPos.y + g_Cached3DListenerOrientFront.y * dVar1;
+    g_VirtualSpeakerZPositions[1] =
+         g_Cached3DListenerPos.z + g_Cached3DListenerOrientFront.z * dVar1;
+    return;
+  }
+  for (iVar4 = 0; iVar4 < g_AudioChannelCount; iVar4 = iVar4 + 1) {
+    g_VirtualSpeakerXPositions[iVar4] = dVar1;
+    g_VirtualSpeakerYPositions[iVar4] = dVar2;
+    g_VirtualSpeakerZPositions[iVar4] = dVar3;
+  }
+  return;
+}

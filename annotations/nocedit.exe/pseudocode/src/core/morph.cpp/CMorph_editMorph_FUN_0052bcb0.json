@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1020,
-    "complexity_score": 430,
+    "complexity_score": 415,
     "cross_reference_count": 1,
     "function_call_count": 42,
     "global_count": 33,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 415,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 1435
   },
   "cross_references": [
@@ -617,6 +615,15 @@
       "resolution_source": "keep",
       "severity": "moderate",
       "text": "(local_3c,*(int *)(*(int *)((int)local_8c + local_34) + 0x2c),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 166,
+      "match": "(int *)((int)local_4a8",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(int *)((int)local_4a8[0].vertex_index + iVar5) * 0xc);",
       "type": "pointer_cast"
     },
     {
@@ -1374,14 +1381,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 166,
-      "match": "(int *)((int)local_4a8",
-      "severity": "moderate",
-      "text": "*(int *)((int)local_4a8[0].vertex_index + iVar5) * 0xc);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

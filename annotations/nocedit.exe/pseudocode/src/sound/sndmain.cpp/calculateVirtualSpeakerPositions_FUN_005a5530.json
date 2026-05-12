@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 73,
+    "complexity_score": 38,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 15,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 38,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 107
   },
   "cross_references": [
@@ -168,19 +166,12 @@
     },
     "pcode_op_count": 453
   },
-  "stack_frame": {
-    "frame_size": 4,
-    "local_size": 4,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": []
-  },
-  "suspects": [
+  "resolved_suspects": [
     {
       "description": "Complex pointer cast",
       "line": 34,
       "match": "(double *)((int)g_VirtualSpeakerXPositions",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(double *)((int)g_VirtualSpeakerXPositions + iVar4) = dVar1;",
       "type": "pointer_cast"
@@ -189,6 +180,7 @@
       "description": "Complex pointer cast",
       "line": 35,
       "match": "(double *)((int)g_VirtualSpeakerYPositions",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(double *)((int)g_VirtualSpeakerYPositions + iVar4) = dVar2;",
       "type": "pointer_cast"
@@ -197,9 +189,19 @@
       "description": "Complex pointer cast",
       "line": 36,
       "match": "(double *)((int)g_VirtualSpeakerZPositions",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "*(double *)((int)g_VirtualSpeakerZPositions + iVar4) = dVar3;",
       "type": "pointer_cast"
     }
-  ]
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

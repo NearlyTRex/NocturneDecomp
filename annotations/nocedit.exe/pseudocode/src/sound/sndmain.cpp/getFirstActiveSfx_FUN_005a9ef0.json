@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 42,
+    "complexity_score": 17,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 17,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 45
   },
   "cross_references": [
@@ -93,19 +91,12 @@
     },
     "pcode_op_count": 156
   },
-  "stack_frame": {
-    "frame_size": 4,
-    "local_size": 4,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": []
-  },
-  "suspects": [
+  "resolved_suspects": [
     {
       "description": "Complex pointer cast",
       "line": 11,
       "match": "(int *)((int)g_SfxSlots",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "while ((*(int *)((int)g_SfxSlots[0].distance_to_speakers + iVar2 + -8) == 0 ||",
       "type": "pointer_cast"
@@ -114,9 +105,19 @@
       "description": "Complex pointer cast",
       "line": 12,
       "match": "(int *)((int)g_SfxSlots",
+      "resolution_source": "keep",
       "severity": "moderate",
       "text": "(iVar1 = *(int *)((int)g_SfxSlots[0].distance_to_speakers + iVar2 + -0xc), iVar1 == 0))) {",
       "type": "pointer_cast"
     }
-  ]
+  ],
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": []
 }

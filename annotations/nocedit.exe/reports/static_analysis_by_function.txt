@@ -10,7 +10,7 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions with findings: 161
-  Total diagnostics: 442
+  Total diagnostics: 445
   Functions flagged by multiple tools: 0
   .keep.cpp files: 161, raw .cpp files: 0
 
@@ -367,6 +367,15 @@ engine_colquant.c_computeBoxStatistics_FUN_00441260  [.keep] [Cppcheck (quick)]
   Line   82: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   85: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
   Line   88: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+----------------------------------------------------------------------------------------------------
+engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0  [.keep] [Cppcheck (quick)]
+  File: engine/font.cpp  (4 diagnostics)
+
+  Line  212: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  281: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  349: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
+  Line  413: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 shape_design.c_mouseWheelPolygonReducer_FUN_004648e0  [.keep] [Cppcheck (quick)]
@@ -1114,12 +1123,6 @@ engine_fileio.cpp_parseTimestampRecord_FUN_004b2270  [.keep] [Cppcheck (quick)]
   File: engine/fileio.cpp  (1 diagnostics)
 
   Line   24: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-
-----------------------------------------------------------------------------------------------------
-engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550  [.keep] [Cppcheck (quick)]
-  File: engine/font.cpp  (1 diagnostics)
-
-  Line   93: [uninitvar] Uninitialized variable: local_28
 
 ----------------------------------------------------------------------------------------------------
 engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30  [.keep] [Cppcheck (quick)]

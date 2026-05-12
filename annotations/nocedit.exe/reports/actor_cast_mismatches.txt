@@ -163,13 +163,13 @@ Manual inspection is needed to determine the expected class.
   core/mission.cpp/CDemonMission_readMissionFile_FUN_00522eb0.keep.cpp
 --------------------------------------------------------------------------------
 
-  Line 142: createActorByName()
-    140:     _fscanf(file_handle,"%s \"%[^\"]\"\n",local_90,local_f4);
-    141:     pcVar9 = local_f4;
-    142:     actor = core_actor_cpp_createActorByName_FUN_0040c430(local_90);
-    143:     local_18 = actor;
-    144:     pCVar6 = actor;
-    145:     do {
+  Line 138: createActorByName()
+    136:                     /* this pulls in the actor className and name fields */
+    137:     _fscanf(file_handle,"%s \"%[^\"]\"\n",local_90,local_f4);
+    138:     actor = core_actor_cpp_createActorByName_FUN_0040c430(local_90);
+    139:     local_18 = actor;
+    140:     strcpy(actor->actor_name,local_f4);
+    141:     core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(this_ptr,actor);
 
 --------------------------------------------------------------------------------
   core/msnedit.cpp/CDemonMission_changeActorType_FUN_0053d8b0.keep.cpp

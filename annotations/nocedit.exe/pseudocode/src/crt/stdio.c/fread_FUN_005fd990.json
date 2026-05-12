@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 240,
-    "complexity_score": 198,
+    "complexity_score": 183,
     "cross_reference_count": 51,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 113,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
-      "raw_address_constant",
       "unrolled_memcpy"
     ],
     "total_lines": 353
@@ -598,14 +597,6 @@
       "severity": "moderate",
       "text": "buffer = (void *)((int)buffer + iVar4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Raw hex literal 0xfffffe matches address of g_LightBufferPool (+4087286 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 93,
-      "match": "0xfffffe",
-      "severity": "moderate",
-      "text": "uVar3 = (uVar8 >> 8 & 0xfffffe) << 8;",
-      "type": "raw_address_constant"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",

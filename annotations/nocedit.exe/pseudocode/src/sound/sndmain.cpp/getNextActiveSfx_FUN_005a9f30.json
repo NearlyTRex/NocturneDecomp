@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 44,
+    "complexity_score": 19,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 19,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 56
   },
   "cross_references": [
@@ -115,6 +113,26 @@
     },
     "pcode_op_count": 255
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(int *)((int)g_SfxSlots",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if ((*(int *)((int)g_SfxSlots[0].distance_to_speakers + iVar2 + -8) != 0) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(int *)((int)g_SfxSlots",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(iVar1 = *(int *)((int)g_SfxSlots[0].distance_to_speakers + iVar2 + -0xc), iVar1 != 0)) {",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -131,22 +149,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 13,
-      "match": "(int *)((int)g_SfxSlots",
-      "severity": "moderate",
-      "text": "if ((*(int *)((int)g_SfxSlots[0].distance_to_speakers + iVar2 + -8) != 0) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 14,
-      "match": "(int *)((int)g_SfxSlots",
-      "severity": "moderate",
-      "text": "(iVar1 = *(int *)((int)g_SfxSlots[0].distance_to_speakers + iVar2 + -0xc), iVar1 != 0)) {",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

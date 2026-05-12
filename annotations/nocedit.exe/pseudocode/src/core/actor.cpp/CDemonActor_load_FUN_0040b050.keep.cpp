@@ -10,7 +10,6 @@
 void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b050(CDemonActor *this_ptr,_FILE *file_handle)
 
 {
-  char cVar2;
   _FILE *p_Var3;
   int iVar4;
   CDemonActor *pCVar6;
@@ -18,12 +17,10 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b050(CDemonActor *this_ptr,
   int iVar2;
   int iVar3;
   int iVar7;
-  char *pcVar4;
-  CDemonActor *pCVar5;
   char local_dc [100];
   char local_78 [100];
-  char cVar1;
-  
+
+
   str1 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(this_ptr);
   local_dc[0] = '\0';
   local_78[0] = '\0';
@@ -34,17 +31,7 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b050(CDemonActor *this_ptr,
     g_CurrentLineNumber = 0x7b7;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Start of actor file tag mismatch for class %s",str1);
   }
-  pcVar4 = local_78;
-  pCVar5 = this_ptr;
-  do {
-    cVar1 = *pcVar4;
-    pCVar5->actor_name[0] = cVar1;
-    if (cVar1 == '\0') break;
-    cVar2 = pcVar4[1];
-    pcVar4 = pcVar4 + 2;
-    pCVar5->actor_name[1] = cVar2;
-    pCVar5 = (CDemonActor *)(pCVar5->actor_name + 2);
-  } while (cVar2 != '\0');
+  strcpy(this_ptr->actor_name,local_78);
   pCVar6 = g_CurrentActorBeingProcessed;
   iVar4 = g_ActorReadingMode;
   p_Var3 = g_ActorDataFile;

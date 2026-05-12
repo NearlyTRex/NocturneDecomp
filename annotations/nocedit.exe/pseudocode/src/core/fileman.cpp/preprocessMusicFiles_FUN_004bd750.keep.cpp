@@ -10,20 +10,18 @@
 void __cdecl core_fileman_cpp_preprocessMusicFiles_FUN_004bd750(char *source_directory)
 
 {
-  char cVar2;
   char *pcVar2;
   int iVar3;
   int iVar4;
   int index;
-  SFoundFileInfo *pSVar4;
   SFoundFileInfo local_64c;
   SFoundFileInfo local_438;
   char local_224 [256];
   char local_124 [256];
   CStrList local_24;
   char local_14 [4];
-  char cVar1;
-  
+
+
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&local_24);
   shape_edittool_cpp_CStrList_populateWithFullPaths_FUN_004a39e0
             (&local_24,source_directory,"*.mp3");
@@ -31,16 +29,7 @@ void __cdecl core_fileman_cpp_preprocessMusicFiles_FUN_004bd750(char *source_dir
   if (0 < local_24.item_count) {
     do {
       pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_24,index);
-      pSVar4 = &local_64c;
-      do {
-        cVar1 = *pcVar2;
-        pSVar4->found_path[0] = cVar1;
-        if (cVar1 == '\0') break;
-        cVar2 = pcVar2[1];
-        pcVar2 = pcVar2 + 2;
-        pSVar4->found_path[1] = cVar2;
-        pSVar4 = (SFoundFileInfo *)(pSVar4->found_path + 2);
-      } while (cVar2 != '\0');
+      strcpy(local_64c.found_path,pcVar2);
       iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_64c);
       if (iVar3 == 0) {
         g_CurrentLineNumber = 0x3c;

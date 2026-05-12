@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 225,
-    "complexity_score": 76,
+    "complexity_score": 61,
     "cross_reference_count": 9,
     "function_call_count": 9,
     "global_count": 31,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 61,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 286
   },
   "cross_references": [
@@ -356,6 +354,17 @@
     },
     "pcode_op_count": 993
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(uint *)((int)g_ChannelPrimaryBuffers",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "puVar1 = (uint *)((int)g_ChannelPrimaryBuffers + iVar4);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -372,14 +381,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(uint *)((int)g_ChannelPrimaryBuffers",
-      "severity": "moderate",
-      "text": "puVar1 = (uint *)((int)g_ChannelPrimaryBuffers + iVar4);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

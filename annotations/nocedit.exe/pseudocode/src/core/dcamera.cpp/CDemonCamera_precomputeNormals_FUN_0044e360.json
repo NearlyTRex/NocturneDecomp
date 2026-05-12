@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 392,
-    "complexity_score": 180,
+    "complexity_score": 165,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 22,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 165,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 557
   },
   "cross_references": [
@@ -619,15 +617,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "introduced_by": "keep",
-      "line": 58,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "g_TempWorldPositions[local_38][local_28].x = local_54.x;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

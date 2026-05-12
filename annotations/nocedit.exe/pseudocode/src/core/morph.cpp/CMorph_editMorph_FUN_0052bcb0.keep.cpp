@@ -222,20 +222,14 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
           else {
             core_skeleton_cpp_CDeformableModelInstance_outlinePolygons_FUN_005a03b0(local_2c);
           }
-          iVar12 = 0;
           g_ActiveRenderColor = 0xff;
-          iVar16 = local_38;
-          if (0 < iVar4) {
-            do {
-              iVar6 = *(int *)((int)local_4a8[0].vertex_index + iVar16);
-              if ((local_8 == picked_side) && (iVar15 == iVar6)) {
-                local_24 = iVar12;
-              }
-              iVar12 = iVar12 + 1;
-              core_morph_cpp_drawVertexMarker_FUN_0052bb80
-                        (&g_CDemonRendererPtr2->vertex_buffer_ptr[iVar6].projected_vertex,5);
-              iVar16 = iVar16 + 0x20;
-            } while (iVar12 < iVar4);
+          for (iVar12 = 0; iVar12 < iVar4; iVar12 = iVar12 + 1) {
+            iVar6 = local_4a8[iVar12].vertex_index[local_38 >> 2];
+            if ((local_8 == picked_side) && (iVar15 == iVar6)) {
+              local_24 = iVar12;
+            }
+            core_morph_cpp_drawVertexMarker_FUN_0052bb80
+                      (&g_CDemonRendererPtr2->vertex_buffer_ptr[iVar6].projected_vertex,5);
           }
           if (-1 < iVar15) {
             g_ActiveRenderColor =

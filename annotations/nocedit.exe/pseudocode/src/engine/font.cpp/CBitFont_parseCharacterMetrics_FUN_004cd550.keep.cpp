@@ -26,7 +26,6 @@ void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFon
   int local_38;
   int local_34;
   int *local_30;
-  char (*local_2c) [80];
   int local_28;
   uint local_20;
   byte *local_1c;
@@ -87,8 +86,9 @@ void __cdecl engine_font_cpp_CBitFont_parseCharacterMetrics_FUN_004cd550(CBitFon
   if (0 < local_34 + -1) {
     local_30 = ptr;
     do {
-      local_14 = (byte *)((int)this_ptr->bitmap_data[bitmap_count] + *local_30 * bitmap_width);
+      local_14 = (byte *)this_ptr->bitmap_data[bitmap_count] + *local_30 * bitmap_width;
       bVar1 = false;
+      local_28 = 0;
       local_1c = local_14 + bitmap_width;
       for (iVar7 = 0; iVar2 = iVar7 - local_28, iVar7 < bitmap_width; iVar7 = iVar7 + 1) {
         if (bVar1) {

@@ -19,7 +19,6 @@ void __cdecl core_baron_cpp_CBaron_process_FUN_00412e80(CBaron *this_ptr,float d
   SMotion *pSVar6;
   SMotion *pSVar5;
   CQuaternion4f local_a4;
-  CQuaternion4f local_94;
   CVector3f local_84;
   CVector3f local_78;
   CVector3f local_60;
@@ -178,7 +177,7 @@ switchD_0041345d_default:
   iVar2 = g_BaronIndices[0];
   core_xform_cpp_eulerToQuaternion_FUN_005f7b20(&this_ptr->head_rotation,&local_a4);
   core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
-            (pCVar1,&local_94,fVar3,iVar2,blend_callback);
+            (pCVar1,&local_a4,fVar3,iVar2,blend_callback);
   iVar2 = 0;
   core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0((CCharacter *)this_ptr,delta_time);
   do {

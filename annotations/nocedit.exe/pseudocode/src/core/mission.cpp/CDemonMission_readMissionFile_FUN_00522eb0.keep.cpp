@@ -10,7 +10,6 @@
 void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonMission *this_ptr,_FILE *file_handle,int load_flags)
 
 {
-  char cVar2;
   int iVar2;
   int iVar3;
   CDemonActorType *pCVar3;
@@ -18,8 +17,6 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
   CDemonActor *actor;
   char (*pacVar6) [256];
   CDemonActor *pCVar7;
-  char *pcVar9;
-  CDemonActor *pCVar6;
   char local_158 [100];
   char local_f4 [100];
   char local_90 [100];
@@ -30,10 +27,10 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
   int local_1c;
   CDemonActor *local_18;
   int local_14;
-  char cVar1;
   CGore *this_ptr_00;
   byte bVar11;
-  
+
+
   bVar11 = 0;
   core_mission_cpp_CDemonMission_clearMissionData_FUN_00522d30(this_ptr);
   if (load_flags == 0) {
@@ -138,19 +135,9 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
     memcpy(local_f4,g_DefaultMissionActorName,100);
                     /* this pulls in the actor className and name fields */
     _fscanf(file_handle,"%s \"%[^\"]\"\n",local_90,local_f4);
-    pcVar9 = local_f4;
     actor = core_actor_cpp_createActorByName_FUN_0040c430(local_90);
     local_18 = actor;
-    pCVar6 = actor;
-    do {
-      cVar1 = *pcVar9;
-      pCVar6->actor_name[0] = cVar1;
-      if (cVar1 == '\0') break;
-      cVar2 = pcVar9[1];
-      pcVar9 = pcVar9 + 2;
-      pCVar6->actor_name[1] = cVar2;
-      pCVar6 = (CDemonActor *)(pCVar6->actor_name + 2);
-    } while (cVar2 != '\0');
+    strcpy(actor->actor_name,local_f4);
     core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(this_ptr,actor);
     if (local_14 == local_28) {
       this_ptr->next_inventory_actor = actor;

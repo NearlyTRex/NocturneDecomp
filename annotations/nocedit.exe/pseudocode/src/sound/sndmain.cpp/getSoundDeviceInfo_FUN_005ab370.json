@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 70,
+    "complexity_score": 20,
     "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 20,
-    "suspect_count": 4,
-    "suspect_types": [
-      "pointer_cast",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 57
   },
   "cross_references": [
@@ -254,6 +251,44 @@
     },
     "pcode_op_count": 155
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(SSoundDeviceInfo *)((int)pSVar2",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pSVar2 = (SSoundDeviceInfo *)((int)pSVar2 + ((uint)bVar3 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(SSoundDeviceInfo *)((int)device_info",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "device_info = (SSoundDeviceInfo *)((int)device_info + (uint)bVar3 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 17,
+      "match": "for (...; != 0; ... + -1)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0x46; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 22,
+      "match": "MOVSD.REP",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "// 005ab3a2: MOVSD.REP ES:EDI,ESI  ; g_SoundDevices | g_SoundDevices[0].device_name[4]",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -277,38 +312,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 19,
-      "match": "(SSoundDeviceInfo *)((int)pSVar2",
-      "severity": "moderate",
-      "text": "pSVar2 = (SSoundDeviceInfo *)((int)pSVar2 + ((uint)bVar3 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 20,
-      "match": "(SSoundDeviceInfo *)((int)device_info",
-      "severity": "moderate",
-      "text": "device_info = (SSoundDeviceInfo *)((int)device_info + (uint)bVar3 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 17,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar1 = 0x46; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom inline memcpy (REP MOVSD at ????????, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
-      "line": 22,
-      "match": "MOVSD.REP",
-      "severity": "moderate",
-      "text": "// 005ab3a2: MOVSD.REP ES:EDI,ESI  ; g_SoundDevices | g_SoundDevices[0].device_name[4]",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

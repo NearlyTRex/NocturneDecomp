@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 357,
-    "complexity_score": 167,
+    "complexity_score": 152,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 12,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 152,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 509
   },
   "cross_references": [
@@ -194,6 +192,17 @@
     },
     "pcode_op_count": 1393
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 86,
+      "match": "(byte *)((int)this_ptr",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_14 = (byte *)((int)this_ptr->bitmap_data[bitmap_count] + *local_30 * bitmap_width);",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 388,
     "local_size": 368,
@@ -329,39 +338,5 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CBitFont_parseCharacterMetrics_FUN_004cd550.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "uninitvar",
-          "column": 39,
-          "line": 93,
-          "message": "Uninitialized variable: local_28",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 86,
-      "match": "(byte *)((int)this_ptr",
-      "severity": "moderate",
-      "text": "local_14 = (byte *)((int)this_ptr->bitmap_data[bitmap_count] + *local_30 * bitmap_width);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Uninitialized variable: local_28",
-      "line": 93,
-      "match": "Cppcheck: uninitialized variable",
-      "severity": "major",
-      "text": "for (iVar7 = 0; iVar2 = iVar7 - local_28, iVar7 < bitmap_width; iVar7 = iVar7 + 1) {",
-      "type": "static_uninitvar"
-    }
-  ]
+  "suspects": []
 }

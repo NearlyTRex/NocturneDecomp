@@ -4,21 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 449,
-    "complexity_score": 264,
+    "complexity_score": 189,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 38,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 189,
-    "suspect_count": 6,
-    "suspect_types": [
-      "unrolled_memcpy",
-      "unrolled_strcpy",
-      "warning_deadcode_restart"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 638
   },
   "cross_references": [
@@ -354,6 +350,53 @@
     },
     "pcode_op_count": 2628
   },
+  "resolved_suspects": [
+    {
+      "description": "Deadcode elimination delayed",
+      "line": 2,
+      "match": "WARNING: Restarted to delay deadcode elimination",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Restarted to delay deadcode elimination for space: ram */",
+      "type": "warning_deadcode_restart"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 36,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 74,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_RenderVertexBuffer[0x4e1d].u = g_RenderVertexBuffer[0x4e1c].u;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 86,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_RenderVertexBuffer[0x4e1e].u = g_RenderVertexBuffer[0x4e1c].u;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 98,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_RenderVertexBuffer[19999].u = g_RenderVertexBuffer[0x4e1c].u;",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 116,
     "local_size": 88,
@@ -475,54 +518,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Deadcode elimination delayed",
-      "line": 2,
-      "match": "WARNING: Restarted to delay deadcode elimination",
-      "severity": "mild",
-      "text": "/* WARNING: Restarted to delay deadcode elimination for space: ram */",
-      "type": "warning_deadcode_restart"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 36,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 74,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "g_RenderVertexBuffer[0x4e1d].u = g_RenderVertexBuffer[0x4e1c].u;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 86,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "g_RenderVertexBuffer[0x4e1e].u = g_RenderVertexBuffer[0x4e1c].u;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 98,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "g_RenderVertexBuffer[19999].u = g_RenderVertexBuffer[0x4e1c].u;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 180,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "g_RenderVertexBuffer[0x4e1d].u = g_RenderVertexBuffer[0x4e1e].u;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

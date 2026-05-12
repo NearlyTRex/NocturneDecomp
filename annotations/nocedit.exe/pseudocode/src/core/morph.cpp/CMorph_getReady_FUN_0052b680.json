@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 307,
-    "complexity_score": 166,
+    "complexity_score": 151,
     "cross_reference_count": 8,
     "function_call_count": 4,
     "global_count": 5,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 151,
-    "suspect_count": 1,
-    "suspect_types": [
-      "negative_offset"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 458
   },
   "cross_references": [
@@ -269,6 +267,17 @@
     },
     "pcode_op_count": 1621
   },
+  "resolved_suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 148,
+      "match": "local_34[-1].",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_34 = (CMorph *)&local_34[-1].models[1].parts[1].start_vertex;",
+      "type": "negative_offset"
+    }
+  ],
   "stack_frame": {
     "frame_size": 208,
     "local_size": 204,
@@ -523,14 +532,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 148,
-      "match": "local_34[-1].",
-      "severity": "mild",
-      "text": "local_34 = (CMorph *)&local_34[-1].models[1].parts[1].start_vertex;",
-      "type": "negative_offset"
-    }
-  ]
+  "suspects": []
 }

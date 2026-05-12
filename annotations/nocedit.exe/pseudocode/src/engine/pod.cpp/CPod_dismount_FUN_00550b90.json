@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 78,
-    "complexity_score": 51,
+    "complexity_score": 36,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 36,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_strcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 114
   },
   "cross_references": [],
@@ -88,6 +86,15 @@
   },
   "resolved_suspects": [
     {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 15,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 35,
       "match": "pCVar4 = (T *)pCVar4->ARRAY",
@@ -144,16 +151,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 15,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
