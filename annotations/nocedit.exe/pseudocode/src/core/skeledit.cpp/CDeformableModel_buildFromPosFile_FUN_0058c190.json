@@ -1607,6 +1607,22 @@
       "severity": "moderate",
       "text": "// 0058d03f: MOVSD.REP ES:EDI,ESI",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 408,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "*(float *)(pcVar21 + (local_90 + 3) * 4) =",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 409,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "*(float *)(pcVar21 + (local_90 + 3) * 4) + local_8c;",
+      "type": "static_invalid_pointer_cast"
     }
   ]
 }

@@ -18,7 +18,7 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonRenderer g_CDemonRendererInstance
-;   undefined4 g_CGameInstance.block_auto_save
+;   undefined4 g_CGameInstance.goggles_active
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -74,7 +74,7 @@ section .text
     JZ 0x005e898a                       ; 005e8920
         ;   XREF to: 005e898a (CONDITIONAL_JUMP)  ; LAB_005e898a
     MOV EAX,[0x0067b654]                ; 005e8922 | g_CGamePtr
-    CMP dword ptr [EAX + 0x240],0x0     ; 005e8927 | g_CGameInstance.block_auto_save
+    CMP dword ptr [EAX + 0x240],0x0     ; 005e8927 | g_CGameInstance.goggles_active
     JNZ 0x005e898a                      ; 005e892e
         ;   XREF to: 005e898a (CONDITIONAL_JUMP)  ; LAB_005e898a
     MOV EAX,ESP                         ; 005e8930

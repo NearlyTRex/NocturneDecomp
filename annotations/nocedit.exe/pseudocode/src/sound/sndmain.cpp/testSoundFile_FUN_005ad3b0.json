@@ -322,5 +322,14 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Uninitialized variable: local_60",
+      "line": 30,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "else if (local_60 < 1) {",
+      "type": "static_uninitvar"
+    }
+  ]
 }

@@ -1336,6 +1336,14 @@
       "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x005f8952) */",
       "type": "warning_unreachable"
+    },
+    {
+      "description": "Uninitialized variable: local_24",
+      "line": 281,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "return local_24;",
+      "type": "static_uninitvar"
     }
   ]
 }

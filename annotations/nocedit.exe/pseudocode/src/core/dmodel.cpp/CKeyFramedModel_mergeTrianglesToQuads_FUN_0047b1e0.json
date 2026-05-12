@@ -802,6 +802,22 @@
       "severity": "moderate",
       "text": "*(uint *)(local_80 + (int)this_ptr->poly_texture_index_list);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Array 'local_f0[4]' accessed at index 6, which is out of bounds.",
+      "line": 209,
+      "match": "Cppcheck: array index out of bounds",
+      "severity": "major",
+      "text": "pCVar16 = pCVar3 + iVar18 + local_f0[((iVar19 + 1) % 4) * 3];",
+      "type": "static_array_oob"
+    },
+    {
+      "description": "Array 'local_f0[4]' accessed at index 9, which is out of bounds.",
+      "line": 210,
+      "match": "Cppcheck: array index out of bounds",
+      "severity": "major",
+      "text": "pCVar21 = pCVar3 + iVar18 + local_f0[(iVar15 % 4) * 3];",
+      "type": "static_array_oob"
     }
   ]
 }

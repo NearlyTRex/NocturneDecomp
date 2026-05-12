@@ -1016,8 +1016,8 @@ LAB_005bc1a6:
       }
       else {
         this_ptr->guns_drawn = 0;
-        if (pCVar14->auto_save_blocked != 0) {
-          pCVar14->auto_save_blocked = 0;
+        if (pCVar14->flashlight_active != 0) {
+          pCVar14->flashlight_active = 0;
           (*((this_ptr->base).base.base.vtable._ub)->playSound)
                     ((CDemonActor *)this_ptr,"flashlit.wav");
         }
@@ -1026,8 +1026,8 @@ LAB_005bc1a6:
     if ((((this_ptr->base).player_input.action_state.light != 0) &&
         (pCVar10 = (this_ptr->base).inventory.selected_weapon, pCVar10 != (CWeapon *)0x0)) &&
        (pCVar10->can_attach_light != 0)) {
-      uVar23 = (uint)(g_CGamePtr->auto_save_blocked == 0);
-      g_CGamePtr->auto_save_blocked = uVar23;
+      uVar23 = (uint)(g_CGamePtr->flashlight_active == 0);
+      g_CGamePtr->flashlight_active = uVar23;
       if (uVar23 != 0) {
         this_ptr->guns_drawn = 1;
       }
@@ -1037,10 +1037,10 @@ LAB_005bc1a6:
   }
   pCVar10 = (this_ptr->base).inventory.selected_weapon;
   if (pCVar10 == (CWeapon *)0x0) {
-    g_CGamePtr->auto_save_blocked = 0;
+    g_CGamePtr->flashlight_active = 0;
   }
   else if (pCVar10->can_attach_light == 0) {
-    g_CGamePtr->auto_save_blocked = 0;
+    g_CGamePtr->flashlight_active = 0;
   }
   if (local_24 != (UOrientationVector *)0x0) {
     core_stranger_cpp_CStranger_updateWeaponLayerActions_FUN_005c5270(this_ptr,delta_time);
@@ -1123,7 +1123,7 @@ LAB_005bc1a6:
   }
   iVar24 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->goggle_sfx_handles[0]);
   if (iVar24 == 0) {
-    if (g_CGamePtr->block_auto_save != 0) {
+    if (g_CGamePtr->goggles_active != 0) {
       sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->goggle_sfx_handles[1]);
       sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
       sound_sndmain_cpp_setNextSfxFlagBits_FUN_005a8b90(1);
@@ -1137,7 +1137,7 @@ LAB_005bc1a6:
       return;
     }
   }
-  else if (g_CGamePtr->block_auto_save == 0) {
+  else if (g_CGamePtr->goggles_active == 0) {
     sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->goggle_sfx_handles[1]);
     sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->goggle_sfx_handles[0]);
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();

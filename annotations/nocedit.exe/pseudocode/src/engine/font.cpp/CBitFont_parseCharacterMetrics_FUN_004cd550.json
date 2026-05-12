@@ -354,6 +354,14 @@
       "severity": "moderate",
       "text": "local_14 = (byte *)((int)this_ptr->bitmap_data[bitmap_count] + *local_30 * bitmap_width);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Uninitialized variable: local_28",
+      "line": 93,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "for (iVar7 = 0; iVar2 = iVar7 - local_28, iVar7 < bitmap_width; iVar7 = iVar7 + 1) {",
+      "type": "static_uninitvar"
     }
   ]
 }

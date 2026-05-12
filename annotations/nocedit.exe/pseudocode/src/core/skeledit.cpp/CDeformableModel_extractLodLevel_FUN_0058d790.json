@@ -555,6 +555,30 @@
       "severity": "moderate",
       "text": "pCVar14->x = pCVar6->x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 176,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "local_534.x = *(float *)pcVar13;",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 177,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "local_534.y = *(float *)(pcVar13 + 4);",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 178,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "local_534.z = *(float *)(pcVar13 + 8);",
+      "type": "static_invalid_pointer_cast"
     }
   ]
 }

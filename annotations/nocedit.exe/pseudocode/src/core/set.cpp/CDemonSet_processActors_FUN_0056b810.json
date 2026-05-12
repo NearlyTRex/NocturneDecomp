@@ -703,6 +703,22 @@
       "severity": "moderate",
       "text": "pCVar11 = (CDemonSet *)pCVar11->cameras;",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Uninitialized variable: local_3c",
+      "line": 99,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "g_ActorProfileTimes[local_20] = iVar3 - local_3c;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fStack_5c",
+      "line": 114,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "(fStack_5c == (g_CurrentProcessingActor->orient).vec.x)) &&",
+      "type": "static_uninitvar"
     }
   ]
 }

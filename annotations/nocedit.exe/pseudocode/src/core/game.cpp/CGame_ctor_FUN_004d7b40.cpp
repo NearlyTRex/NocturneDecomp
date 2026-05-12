@@ -57,8 +57,8 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004d7b40(CGame *this_ptr)
   this_ptr->is_processing = 0;
   this_ptr->need_chapter_reload = 0;
   this_ptr->show_customizable_keys = 0;
-  this_ptr->block_auto_save = 0;
-  this_ptr->auto_save_blocked = 0;
+  this_ptr->goggles_active = 0;
+  this_ptr->flashlight_active = 0;
   this_ptr->player_hit_flag = 0;
   this_ptr->total_game_time = 0.0;
   this_ptr->total_play_time = 0.0;

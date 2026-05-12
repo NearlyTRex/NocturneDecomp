@@ -43,7 +43,7 @@ void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005ee4a0(CWeapon *this_p
     local_e2 = fVar1 * 0.06666667f;
   }
   core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(&g_CDemonLightInstance,local_e2);
-  if (g_CGamePtr->auto_save_blocked == 0) {
+  if (g_CGamePtr->flashlight_active == 0) {
     return;
   }
   core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00471310

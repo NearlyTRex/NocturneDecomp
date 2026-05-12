@@ -243,17 +243,17 @@ LAB_004dc4e9:
   }
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,this_ptr->key_infrared);
   if (iVar5 != 0) {
-    uVar5 = (uint)(this_ptr->block_auto_save == 0);
-    this_ptr->block_auto_save = uVar5;
+    uVar5 = (uint)(this_ptr->goggles_active == 0);
+    this_ptr->goggles_active = uVar5;
     if (((uVar5 == 0) || (this_ptr_01 = g_HeroActors[g_LocalHeroIndex], this_ptr_01 == (CHero *)0x0)
         ) || (EVar6 = (*(((this_ptr_01->base).base.vtable._uc)->_uc).getDeathState)
                                 (&this_ptr_01->base), EVar6 == DEATH_STATE_ALIVE)) {
-      if (this_ptr->block_auto_save != 0) {
+      if (this_ptr->goggles_active != 0) {
         return;
       }
     }
     else {
-      this_ptr->block_auto_save = 0;
+      this_ptr->goggles_active = 0;
     }
     iVar5 = g_CDemonSetPtr->selected_camera_index;
     core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0

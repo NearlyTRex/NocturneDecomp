@@ -971,5 +971,14 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Casting between signed int * and float * which have an incompatible binary data representation.",
+      "line": 61,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "&(this_ptr->scene_fog).density_multiplier,(float *)&local_48,(float *)&local_48);",
+      "type": "static_invalid_pointer_cast"
+    }
+  ]
 }

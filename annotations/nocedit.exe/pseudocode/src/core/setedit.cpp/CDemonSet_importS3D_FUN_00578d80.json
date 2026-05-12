@@ -1330,6 +1330,22 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strchr"
+    },
+    {
+      "description": "Possible null pointer dereference: pcVar12",
+      "line": 220,
+      "match": "Cppcheck: null pointer dereference",
+      "severity": "major",
+      "text": "*pcVar12 = '\\0';",
+      "type": "static_null_pointer"
+    },
+    {
+      "description": "Casting between signed int * and float * which have an incompatible binary data representation.",
+      "line": 377,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "iVar6 = _fscanf(file_handle,\"%f,%f,%f\\n\",(float *)(local_38 + iVar5 * 3),(float *)piVar16,(float *)piVar15);",
+      "type": "static_invalid_pointer_cast"
     }
   ]
 }

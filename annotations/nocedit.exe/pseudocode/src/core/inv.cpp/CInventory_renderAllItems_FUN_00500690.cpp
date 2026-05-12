@@ -305,7 +305,7 @@ LAB_005009c0:
     }
   }
   iVar3 = g_WindowHeight;
-  if ((g_CGamePtr->auto_save_blocked != 0) || (g_CGamePtr->block_auto_save != 0)) {
+  if ((g_CGamePtr->flashlight_active != 0) || (g_CGamePtr->goggles_active != 0)) {
     iVar10 = g_WindowHeight + -6;
     engine_2d_c_fillRectColor_FUN_00403170
               (6,(int)ROUND(ROUND((float)iVar10 +

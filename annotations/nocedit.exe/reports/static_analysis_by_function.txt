@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 162
-  Total diagnostics: 443
+  Functions with findings: 161
+  Total diagnostics: 442
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 162, raw .cpp files: 0
+  .keep.cpp files: 161, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -1054,12 +1054,6 @@ core_setutil.cpp_C3DSCamera_load_FUN_00585420  [.keep] [Cppcheck (quick)]
   File: core/setutil.cpp  (1 diagnostics)
 
   Line   23: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-
-----------------------------------------------------------------------------------------------------
-core_shotgun.cpp_CShotgun_process_FUN_00587f70  [.keep] [Cppcheck (quick)]
-  File: core/shotgun.cpp  (1 diagnostics)
-
-  Line   25: [invalidPointerCast] Casting between signed char * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810  [.keep] [Cppcheck (quick)]

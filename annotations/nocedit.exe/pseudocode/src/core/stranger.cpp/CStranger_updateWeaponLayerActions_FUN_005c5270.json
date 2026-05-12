@@ -458,5 +458,14 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 222,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "*(float *)pcVar4 = pCVar14->x;",
+      "type": "static_invalid_pointer_cast"
+    }
+  ]
 }

@@ -24,7 +24,7 @@
 ;   CDemonLight g_CDemonLightInstance
 ;   undefined4 g_CDemonLightInstance.volumetric_intensity
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.auto_save_blocked
+;   undefined4 g_CGameInstance.flashlight_active
 ;   CHero*[4] g_HeroActors
 ;   int g_LocalHeroIndex
 ;   CDemonSet g_CDemonSetInstance
@@ -111,7 +111,7 @@ section .text
     JNZ 0x005ee1e7                      ; 005ee1ce
         ;   XREF to: 005ee1e7 (CONDITIONAL_JUMP)  ; LAB_005ee1e7
     MOV EAX,[0x0067b654]                ; 005ee1d0 | g_CGameInstance | g_CGamePtr
-    CMP dword ptr [EAX + 0x244],0x0     ; 005ee1d5 | g_CGameInstance.auto_save_blocked
+    CMP dword ptr [EAX + 0x244],0x0     ; 005ee1d5 | g_CGameInstance.flashlight_active
     JZ 0x005ee1e7                       ; 005ee1dc
         ;   XREF to: 005ee1e7 (CONDITIONAL_JUMP)  ; LAB_005ee1e7
     CMP dword ptr [EBX + 0x2f0],0x0     ; 005ee1de

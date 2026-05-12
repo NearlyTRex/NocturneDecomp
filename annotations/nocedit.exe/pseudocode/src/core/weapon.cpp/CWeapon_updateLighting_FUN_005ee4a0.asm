@@ -129,7 +129,7 @@ section .text
     CALL core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0 ; 005ee5b7
         ;   XREF to: 004765e0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(CDemonLight * this_ptr, float intensity)
     MOV EAX,[0x0067b654]                ; 005ee5bc | g_CGameInstance | g_CGamePtr
-    MOV ECX,dword ptr [EAX + 0x244]     ; 005ee5c1 | g_CGameInstance.auto_save_blocked
+    MOV ECX,dword ptr [EAX + 0x244]     ; 005ee5c1 | g_CGameInstance.flashlight_active
     ADD ESP,0x8                         ; 005ee5c7
     TEST ECX,ECX                        ; 005ee5ca
     JNZ 0x005ee5d5                      ; 005ee5cc

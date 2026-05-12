@@ -1046,6 +1046,14 @@
       "severity": "moderate",
       "text": "iVar12 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z +",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Either the condition '0<vertex_count' is redundant or the array 'auStack_150[32]' is accessed at index 32, which is out of bounds.",
+      "line": 159,
+      "match": "Cppcheck: array index OOB depending on condition",
+      "severity": "moderate",
+      "text": "pSVar11 = (SRenderVertex *)auStack_150[vertex_count];",
+      "type": "static_array_oob_cond"
     }
   ]
 }

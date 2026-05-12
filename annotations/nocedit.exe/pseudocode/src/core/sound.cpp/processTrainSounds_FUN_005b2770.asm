@@ -68,7 +68,7 @@ section .text
     AND ESP,0xfffffff8                  ; 005b277c
     MOV EAX,[0x0067b654]                ; 005b277f | g_CGamePtr
     FLD float ptr [EAX + 0x264]         ; 005b2784 | g_CGameInstance.delta_time_float
-    MOV EDX,dword ptr [EAX + 0x240]     ; 005b278a | g_CGameInstance.block_auto_save
+    MOV EDX,dword ptr [EAX + 0x240]     ; 005b278a | g_CGameInstance.goggles_active
     FSTP float ptr [ESP + 0x108]        ; 005b2790
     TEST EDX,EDX                        ; 005b2797
     JNZ 0x005b2a1c                      ; 005b2799

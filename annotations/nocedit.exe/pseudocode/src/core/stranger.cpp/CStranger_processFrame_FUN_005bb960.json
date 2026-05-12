@@ -687,13 +687,13 @@
     },
     {
       "addr": "02d81cdc",
-      "name": "g_CGameInstance.block_auto_save",
+      "name": "g_CGameInstance.goggles_active",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02d81ce0",
-      "name": "g_CGameInstance.auto_save_blocked",
+      "name": "g_CGameInstance.flashlight_active",
       "type": "undefined4",
       "value": null
     },
@@ -1774,6 +1774,30 @@
       "severity": "moderate",
       "text": "(this_ptr->carry_object_bbox).min.x = (pCVar15->min).x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Uninitialized variable: local_14",
+      "line": 162,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (local_14 != 0) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_25c",
+      "line": 592,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (fLookAmount < local_25c) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_260",
+      "line": 595,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (local_260 < fLookAmount) {",
+      "type": "static_uninitvar"
     }
   ]
 }

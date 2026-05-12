@@ -158,5 +158,14 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Possible null pointer dereference: pcVar2",
+      "line": 38,
+      "match": "Cppcheck: null pointer dereference",
+      "severity": "major",
+      "text": "((g_CharacterClassificationTable[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {",
+      "type": "static_null_pointer"
+    }
+  ]
 }

@@ -455,7 +455,7 @@ LAB_005be799:
             (&(this_ptr->base).base.model,rotation_quat,local_1f0c,iVar16,
              core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
 LAB_005be7a1:
-  if (g_CGamePtr->block_auto_save != 0) {
+  if (g_CGamePtr->goggles_active != 0) {
     local_88.y = 0.0;
     local_88.z = 0.0;
     local_88.x = 0.0;

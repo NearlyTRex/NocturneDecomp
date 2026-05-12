@@ -352,5 +352,22 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Casting from float * to signed int * is not portable due to different binary data representations on different platforms.",
+      "line": 29,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "(&this_ptr->motion_controller,motion_index,animation_time,(int *)&local_28,",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Casting from float * to signed int * is not portable due to different binary data representations on different platforms.",
+      "line": 30,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "(int *)local_24,&local_60);",
+      "type": "static_invalid_pointer_cast"
+    }
+  ]
 }

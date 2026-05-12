@@ -240,7 +240,16 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 25,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "if ((float *)&local_res0 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].z) {",
+      "type": "static_invalid_pointer_cast"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

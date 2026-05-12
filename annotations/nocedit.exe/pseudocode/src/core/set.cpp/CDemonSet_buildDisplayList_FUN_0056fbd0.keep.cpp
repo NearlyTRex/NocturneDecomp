@@ -43,7 +43,7 @@ void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_0056fbd0(CDemonSet *thi
   engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
             (g_CDemonRendererPtr2,&local_70);
   local_28 = 0xc;
-  if ((g_DynamicLightCount != 0) || (g_CGamePtr->block_auto_save != 0)) {
+  if ((g_DynamicLightCount != 0) || (g_CGamePtr->goggles_active != 0)) {
     local_28 = 0xd;
   }
   if (g_SpotLightCount != 0) {

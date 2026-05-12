@@ -544,7 +544,7 @@ section .text
     MOV EAX,EAX                         ; 00500c9e
     MOV EAX,[0x0067b654]                ; 00500ca0 | g_CGamePtr
         ;   Label: LAB_00500ca0
-    CMP dword ptr [EAX + 0x244],0x0     ; 00500ca5 | g_CGameInstance.auto_save_blocked
+    CMP dword ptr [EAX + 0x244],0x0     ; 00500ca5 | g_CGameInstance.flashlight_active
     JZ 0x0050139d                       ; 00500cac
         ;   XREF to: 0050139d (CONDITIONAL_JUMP)  ; LAB_0050139d
     MOV EAX,[0x00679398]                ; 00500cb2 | g_WindowHeight
@@ -1145,7 +1145,7 @@ section .text
     MOV ESI,EAX                         ; 00501396
     JMP 0x00500a25                      ; 00501398
         ;   XREF to: 00500a25 (UNCONDITIONAL_JUMP)  ; LAB_00500a25
-    CMP dword ptr [EAX + 0x240],0x0     ; 0050139d | g_CGameInstance.block_auto_save
+    CMP dword ptr [EAX + 0x240],0x0     ; 0050139d | g_CGameInstance.goggles_active
         ;   Label: LAB_0050139d
     JNZ 0x00500cb2                      ; 005013a4
         ;   XREF to: 00500cb2 (CONDITIONAL_JUMP)  ; LAB_00500cb2

@@ -2291,6 +2291,38 @@
       "severity": "moderate",
       "text": "if (&local_c0 != &local_120) {",
       "type": "self_copy_guard"
+    },
+    {
+      "description": "Casting between signed int * and float * which have an incompatible binary data representation.",
+      "line": 682,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "*(float *)&local_78 = core_chain_cpp_fastSqrt_FUN_00431350(local_7c);",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Casting between signed int * and float * which have an incompatible binary data representation.",
+      "line": 683,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "if (*(float *)&local_78 < (float)8) goto LAB_004e7243;",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Uninitialized variable: local_1c0",
+      "line": 155,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fVar1 = local_1c0 - (pCVar3->base).location.position.z;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_1c4",
+      "line": 158,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if (ABS(local_1c4 - (pCVar3->base).location.position.y) <= (float)4) {",
+      "type": "static_uninitvar"
     }
   ],
   "vtable_info": {

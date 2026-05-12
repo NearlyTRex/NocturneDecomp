@@ -652,6 +652,14 @@
       "severity": "moderate",
       "text": "pCVar4 = (C3DSLight *)pCVar4->name;",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Casting between signed char * and float * which have an incompatible binary data representation.",
+      "line": 175,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "*(float *)(pcVar8 + 0x16f4) = *(float *)(pcVar8 + 0x16f8);",
+      "type": "static_invalid_pointer_cast"
     }
   ]
 }

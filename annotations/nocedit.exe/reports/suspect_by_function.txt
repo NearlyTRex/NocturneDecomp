@@ -5,15 +5,32 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5647 (87.5%)
-With suspects: 807
-Total suspects: 3874
+Clean: 5618 (87.0%)
+With suspects: 836
+Total suspects: 4032
+
+====================================================================================================
+cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690 (6 suspects)
+  File: cockpit/pkbitmap.cpp
+====================================================================================================
+  Line 59 [static_legacy_uninitvar]: if (((iVar2 == 0) && (local_28 != 0)) && (local_24 != 0)) {
+  Line 59 [static_legacy_uninitvar]: if (((iVar2 == 0) && (local_28 != 0)) && (local_24 != 0)) {
+  Line 62 [static_legacy_uninitvar]: if (((local_20 != 0) || (local_1c != 0)) ||
+  Line 62 [static_legacy_uninitvar]: if (((local_20 != 0) || (local_1c != 0)) ||
+  Line 63 [static_legacy_uninitvar]: ((this_ptr->width + -1 != local_18 || (this_ptr->height + -1 != local_14))))
+  Line 63 [static_legacy_uninitvar]: ((this_ptr->width + -1 != local_18 || (this_ptr->height + -1 != local_14))))
 
 ====================================================================================================
 core_actor.cpp_CDemonActor_load_FUN_0040b050 (1 suspect)
   File: core/actor.cpp
 ====================================================================================================
   Line 32 [unrolled_strcpy]: do {
+
+====================================================================================================
+core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 (1 suspect)
+  File: core/actor.cpp
+====================================================================================================
+  Line 65 [static_uninitvar]: if (is_raycast == 1) {
 
 ====================================================================================================
 core_baron.cpp_CBaron_process_FUN_00412e80 (2 suspects)
@@ -193,6 +210,14 @@ core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40 (2 suspects)
   Line 134 [pointer_cast]: *(CDemonActor **)((int)auStack_d4 + iVar6) = pCVar1;
 
 ====================================================================================================
+core_boneguy.cpp_hsvToRgb_FUN_0041ba10 (3 suspects)
+  File: core/boneguy.cpp
+====================================================================================================
+  Line 39 [static_uninitvar]: fVar9 = local_1c;
+  Line 40 [static_uninitvar]: fVar6 = local_18;
+  Line 41 [static_uninitvar]: fVar7 = local_10;
+
+====================================================================================================
 core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940 (1 suspect)
   File: core/box.cpp
 ====================================================================================================
@@ -224,7 +249,7 @@ core_box.cpp_CBox_ctor_FUN_0041dc50 (6 suspects)
   Line 26 [unrolled_memset]: (ADJ(pvVar1)->angular_velocity).z = 0.0;
 
 ====================================================================================================
-core_box.cpp_CBox_processPhysics_FUN_0041e350 (13 suspects)
+core_box.cpp_CBox_processPhysics_FUN_0041e350 (17 suspects)
   File: core/box.cpp
 ====================================================================================================
   Line 130 [unrolled_memcpy]: local_344.position.x = (this_ptr->position).x;
@@ -233,12 +258,16 @@ core_box.cpp_CBox_processPhysics_FUN_0041e350 (13 suspects)
   Line 190 [unrolled_memset]: (this_ptr->angular_momentum).z = 0.0;
   Line 208 [unrolled_memcpy]: (this_ptr->linear_velocity_local).x = pCVar14->x;
   Line 283 [unrolled_memcpy]: (this_ptr->orientation).x = pCVar14->x;
+  Line 331 [static_legacy_uninitvar]: fVar12 = local_3d0[0];
   Line 335 [unrolled_memcpy]: local_6c->x = pCVar14->x;
   Line 443 [unrolled_memset]: (this_ptr->angular_velocity).z = 0.0;
   Line 472 [unrolled_memcpy]: local_8c.x = pCVar14->x;
   Line 542 [unrolled_memcpy]: local_344.orientation.x = pCVar14->x;
   Line 594 [unrolled_memset]: (this_ptr->angular_velocity).z = 0.0;
   Line 626 [unrolled_memcpy]: local_344.scrape_points[0].local_position.x = (pSVar2->local_position).x;
+  Line 686 [static_legacy_uninitvar]: (this_ptr->position).x = (this_ptr->position).x + local_380;
+  Line 687 [static_legacy_uninitvar]: (this_ptr->position).y = (this_ptr->position).y + local_37c;
+  Line 689 [static_legacy_uninitvar]: (this_ptr->position).z = (this_ptr->position).z + local_378;
   Line 754 [unrolled_memset]: (this_ptr->angular_velocity).z = 0.0;
 
 ====================================================================================================
@@ -470,6 +499,13 @@ core_chain.cpp_CChain_setup_FUN_0042fd20 (1 suspect)
   Line 57 [unrolled_memcpy]: pCVar11[1].x = (pSVar1->position).x;
 
 ====================================================================================================
+core_chain.cpp_fastSqrt_FUN_00431350 (2 suspects)
+  File: core/chain.cpp
+====================================================================================================
+  Line 13 [static_invalid_pointer_cast]: int bits = (*(int *)&value >> 1) + g_FastSqrtMagic;
+  Line 14 [static_invalid_pointer_cast]: return *(float *)&bits;
+
+====================================================================================================
 core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30 (1 suspect)
   File: core/charactr.cpp
 ====================================================================================================
@@ -601,11 +637,17 @@ core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430 (4 suspects)
   Line 73 [unrolled_memset]: this_ptr->collide_bones[iVar3].euler2.z = 0.0;
 
 ====================================================================================================
-core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420 (5 suspects)
+core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420 (11 suspects)
   File: core/cloth.cpp
 ====================================================================================================
+  Line 92 [static_uninitvar]: local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;
+  Line 92 [static_uninitvar]: local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;
+  Line 92 [static_uninitvar]: local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;
   Line 100 [self_copy_guard]: if (&local_7c != &local_130) {
   Line 142 [shadow_pointer_walk]: pSVar8 = (SClothVertex *)&(pSVar8->position).y;
+  Line 150 [static_uninitvar]: local_a4 = local_b0 * local_38[local_20].local_matrix.m[2].z +
+  Line 151 [static_uninitvar]: local_b8 * local_38[local_20].local_matrix.m[0].z +
+  Line 152 [static_uninitvar]: local_b4 * local_38[local_20].local_matrix.m[1].z;
   Line 158 [self_copy_guard]: if (&local_b8 != &local_70) {
   Line 189 [unrolled_memcpy]: local_88.x = local_a0.x;
   Line 197 [unrolled_memcpy]: (vertex->position).x = local_88.x;
@@ -619,9 +661,10 @@ core_cloth.cpp_CCloth_applyRotation_FUN_0043e1a0 (3 suspects)
   Line 39 [unrolled_memcpy]: pCVar2->x = pCVar3->x;
 
 ====================================================================================================
-core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 (3 suspects)
+core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 (4 suspects)
   File: core/cloth.cpp
 ====================================================================================================
+  Line 242 [static_uninitvar]: (double)(1.0 / fStack_550));
   Line 297 [unrolled_memcpy]: CStack_a8.position.x = local_80.x;
   Line 302 [unrolled_memcpy]: CStack_a8.orientation.vec.x = (pSVar4->euler2).x;
   Line 317 [unrolled_memcpy]: (pSVar4->euler2).x = CStack_a8.orientation.vec.x;
@@ -684,6 +727,13 @@ core_cloth.cpp_CCloth_step_FUN_0043abb0 (7 suspects)
   Line 352 [pointer_cast]: if (this_ptr->vertices[*(int *)(iVar7 + (int)this_ptr->vertex_sort_buffer)].locked == 0) {
   Line 355 [pointer_cast]: *(int *)(iVar7 + (int)this_ptr->vertex_sort_buffer));
   Line 369 [pointer_cast]: iVar2 = *(int *)(iVar16 + (int)this_ptr->vertex_sort_buffer);
+
+====================================================================================================
+core_cloth.cpp_fastInvSqrt_FUN_0043e2a0 (2 suspects)
+  File: core/cloth.cpp
+====================================================================================================
+  Line 13 [static_invalid_pointer_cast]: int bits = g_FastInvSqrtMagic - (*(int *)&dist_sq >> 1);
+  Line 14 [static_invalid_pointer_cast]: return *(float *)&bits;
 
 ====================================================================================================
 core_conveyor.cpp_CConveyor_ctor_FUN_00441ca0 (2 suspects)
@@ -882,11 +932,17 @@ core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0 (6 suspects)
   Line 51 [pointer_cast]: *(uint *)((int)&g_LoadedVertices[0].vertex.z + iVar5);
 
 ====================================================================================================
-core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0 (2 suspects)
+core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0 (8 suspects)
   File: core/dcube.cpp
 ====================================================================================================
   Line 39 [self_copy_guard]: if (&local_40 != &local_64) {
   Line 47 [self_copy_guard]: if (&local_28 != &local_34) {
+  Line 47 [static_uninitvar]: local_34 = local_40 / 8.0f;
+  Line 48 [static_uninitvar]: local_30 = local_3c * 0.125f;
+  Line 49 [static_uninitvar]: local_2c = local_38 * 0.125f;
+  Line 59 [static_uninitvar]: local_4c.z = (float)local_18 * local_20 + (this_ptr->min_bounds).z;
+  Line 65 [static_uninitvar]: local_4c.y = (float)iVar5 * local_24 + (this_ptr->min_bounds).y;
+  Line 70 [static_uninitvar]: local_4c.x = (float)iVar4 * local_28 + (this_ptr->min_bounds).x;
 
 ====================================================================================================
 core_dcube.cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0 (12 suspects)
@@ -1201,7 +1257,7 @@ core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0 (1 suspect)
   Line 20 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0 (14 suspects)
+core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0 (16 suspects)
   File: core/dmodel.cpp
 ====================================================================================================
   Line 99 [pointer_cast]: puVar10 = (uint *)(local_7c->part_list[0].poly_count + (int)local_50);
@@ -1210,6 +1266,8 @@ core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0 (14 suspects)
   Line 127 [pointer_cast]: (*(uchar *)((int)local_50 + (int)puVar2) == puVar2[local_48])))) {
   Line 138 [pointer_cast]: (*(int *)(iVar11 + *(int *)((int)g_TriangleMatchTableA + local_44) * 0xc
   Line 140 [pointer_cast]: *(int *)(iVar17 + *(int *)((int)g_TriangleMatchTableB + iVar15) * 0xc +
+  Line 209 [static_array_oob]: pCVar16 = pCVar3 + iVar18 + local_f0[((iVar19 + 1) % 4) * 3];
+  Line 210 [static_array_oob]: pCVar21 = pCVar3 + iVar18 + local_f0[(iVar15 % 4) * 3];
   Line 213 [sub84_truncation]: local_108 = SUB84(__BITCAST_UINT64(dVar24),0);
   Line 214 [pointer_cast]: pCVar14 = pCVar3 + iVar18 + *(int *)((int)local_f0 + local_20);
   Line 252 [sub84_truncation]: uStack_104 = SUB84(__BITCAST_UINT64(dVar24),0);
@@ -1276,7 +1334,7 @@ core_dmodel.cpp_CKeyFramedModel_scale_FUN_0047c4d0 (6 suspects)
   Line 25 [pointer_cast]: *(int *)((int)&this_ptr->vertex_list->z + iVar1) = (int)ROUND(ROUND(dVar1));
 
 ====================================================================================================
-core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (23 suspects)
+core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (30 suspects)
   File: core/dmodel.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
@@ -1291,10 +1349,17 @@ core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 (23 suspects)
   Line 370 [pointer_cast]: *(int *)((int)&pCVar4->z + iVar18) =
   Line 371 [pointer_cast]: *(int *)((int)&pCVar4->z + iVar18) + (int)ROUND(fVar6);
   Line 481 [unrolled_strcpy]: do {
+  Line 491 [static_uninitvar]: if ((iVar18 == 0) || (local_ca8 == 0)) {
   Line 505 [pointer_cast]: pCVar13 = (CKeyFramedModel *)((int)pCVar13 + (uint)bVar15 * -2 + 1);
   Line 509 [negative_offset]: pcVar20 = (char *)((int)&pCVar13[-1].dead + 3);
   Line 509 [pointer_cast]: pcVar20 = (char *)((int)&pCVar13[-1].dead + 3);
   Line 510 [unrolled_strcpy]: do {
+  Line 645 [static_legacy_uninitvar]: (double)local_160,(double)local_16c,(double)local_15c.x,
+  Line 645 [static_legacy_uninitvar]: (double)local_160,(double)local_16c,(double)local_15c.x,
+  Line 646 [static_legacy_uninitvar]: (double)local_164,(double)local_170,(double)local_15c.y,
+  Line 646 [static_legacy_uninitvar]: (double)local_164,(double)local_170,(double)local_15c.y,
+  Line 647 [static_legacy_uninitvar]: (double)local_168,(double)local_174,(double)local_15c.z);
+  Line 647 [static_legacy_uninitvar]: (double)local_168,(double)local_174,(double)local_15c.z);
   Line 705 [pointer_cast]: local_108.x = (float)*(int *)((int)&this_ptr->vertex_list->x + iVar18) * fVar3;
   Line 706 [pointer_cast]: local_108.y = (float)*(int *)((int)&this_ptr->vertex_list->y + iVar18) * fVar3;
   Line 707 [pointer_cast]: local_108.z = (float)*(int *)((int)&this_ptr->vertex_list->z + iVar18) * fVar3;
@@ -1601,9 +1666,18 @@ core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_00499c20 (1 suspect)
   Line 65 [unrolled_memcpy]: local_4c.x = local_64.x;
 
 ====================================================================================================
-core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70 (1 suspect)
+core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00496220 (2 suspects)
   File: core/dtrace.cpp
 ====================================================================================================
+  Line 70 [static_uninitvar]: (iVar7 = local_20, iVar6 = local_1c, local_28 != local_60)) {
+  Line 70 [static_uninitvar]: (iVar7 = local_20, iVar6 = local_1c, local_28 != local_60)) {
+
+====================================================================================================
+core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70 (3 suspects)
+  File: core/dtrace.cpp
+====================================================================================================
+  Line 128 [static_legacy_uninitvar]: iVar2 = local_2c;
+  Line 129 [static_legacy_uninitvar]: iVar3 = local_28;
   Line 146 [unrolled_memcpy]: out_intersection_point->x = local_84.x;
 
 ====================================================================================================
@@ -1635,6 +1709,13 @@ core_dtrace.cpp_CDemonRaytrace_transferShadowVoxels_FUN_00499f10 (1 suspect)
   File: core/dtrace.cpp
 ====================================================================================================
   Line 65 [unrolled_memcpy]: local_4c.x = local_64.x;
+
+====================================================================================================
+core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330 (2 suspects)
+  File: core/dtrace.cpp
+====================================================================================================
+  Line 67 [static_uninitvar]: (iVar11 = local_20, iVar12 = local_1c, iVar1 != iVar4)) {
+  Line 67 [static_uninitvar]: (iVar11 = local_20, iVar12 = local_1c, iVar1 != iVar4)) {
 
 ====================================================================================================
 core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0 (2 suspects)
@@ -1734,6 +1815,12 @@ core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0 (5 suspects)
   Line 81 [unrolled_memcpy]: local_4c.x = local_58.x;
 
 ====================================================================================================
+core_elephant.cpp_CElephantGun_process_FUN_004a7070 (1 suspect)
+  File: core/elephant.cpp
+====================================================================================================
+  Line 25 [static_invalid_pointer_cast]: if ((float *)&local_res0 != &g_CDemonLightInstance.base.base.rotation_matrix.m[1].z) {
+
+====================================================================================================
 core_emitter.cpp_CEmitter_ctor_FUN_004a7ca0 (2 suspects)
   File: core/emitter.cpp
 ====================================================================================================
@@ -1741,10 +1828,13 @@ core_emitter.cpp_CEmitter_ctor_FUN_004a7ca0 (2 suspects)
   Line 31 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004a7e80 (2 suspects)
+core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004a7e80 (5 suspects)
   File: core/emitter.cpp
 ====================================================================================================
   Line 36 [self_copy_guard]: if (&local_6c != &local_60) {
+  Line 42 [static_uninitvar]: local_68 = local_68 + 5.0f;
+  Line 48 [static_uninitvar]: fVar8 = (float10)local_64;
+  Line 49 [static_uninitvar]: local_64 = (float)((float10)fVar2 + fVar8);
   Line 64 [unrolled_memcpy]: local_48.x = local_54.x;
 
 ====================================================================================================
@@ -1850,6 +1940,12 @@ core_fire.cpp_CBulletTrail_init_FUN_004c2170 (2 suspects)
   Line 11 [unrolled_memcpy]: (this_ptr->end_position).x = end_position->x;
 
 ====================================================================================================
+core_fire.cpp_CBulletTrail_render_FUN_004c21f0 (1 suspect)
+  File: core/fire.cpp
+====================================================================================================
+  Line 71 [static_uninitvar]: if (iStack_1c <= iVar4) {
+
+====================================================================================================
 core_fire.cpp_CCrater_activate_FUN_004c4200 (1 suspect)
   File: core/fire.cpp
 ====================================================================================================
@@ -1881,10 +1977,13 @@ core_fire.cpp_CExplosion_render_FUN_004c3b10 (5 suspects)
   Line 73 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr[3].v = 0xfe0000;
 
 ====================================================================================================
-core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0 (1 suspect)
+core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0 (4 suspects)
   File: core/fire.cpp
 ====================================================================================================
   Line 36 [self_copy_guard]: if (&local_2c != &local_20) {
+  Line 46 [static_uninitvar]: if (fStack_24 * fStack_24 + local_2c * local_2c + fStack_28 * fStack_28 <
+  Line 46 [static_uninitvar]: if (fStack_24 * fStack_24 + local_2c * local_2c + fStack_28 * fStack_28 <
+  Line 46 [static_uninitvar]: if (fStack_24 * fStack_24 + local_2c * local_2c + fStack_28 * fStack_28 <
 
 ====================================================================================================
 core_fire.cpp_CFireEffect_createLaserPath_FUN_004c7f80 (2 suspects)
@@ -2195,13 +2294,15 @@ core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80 (2 suspects)
   Line 17 [missing_cave_copy]: CMatrix3x4f local_78;
 
 ====================================================================================================
-core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870 (4 suspects)
+core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870 (6 suspects)
   File: core/gabriela.cpp
 ====================================================================================================
   Line 48 [unrolled_memcpy]: local_b0.x = pCVar3->x;
   Line 58 [unrolled_memcpy]: local_a4.x = pCVar8->x;
   Line 68 [unrolled_memcpy]: local_98.x = pCVar8->x;
   Line 75 [pointer_cast]: pCVar1 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5);
+  Line 121 [static_array_oob_cond]: ((pCVar2->location).position.x - local_bc[local_28 * 3]) +
+  Line 124 [static_array_oob_cond]: ((pCVar5->location).position.z - local_bc[local_28 * 3 + 2]) +
 
 ====================================================================================================
 core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 (8 suspects)
@@ -2217,9 +2318,12 @@ core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120 (8 suspects)
   Line 149 [pointer_cast]: out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar6 * -2 + 1) * 4);
 
 ====================================================================================================
-core_gabriela.cpp_CGabriella_processAI_FUN_004d4190 (1 suspect)
+core_gabriela.cpp_CGabriella_processAI_FUN_004d4190 (4 suspects)
   File: core/gabriela.cpp
 ====================================================================================================
+  Line 93 [static_uninitvar]: SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98)) {
+  Line 93 [static_uninitvar]: SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98)) {
+  Line 93 [static_uninitvar]: SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98)) {
   Line 191 [unrolled_memcpy]: CStack_48.x = CStack_a8.x;
 
 ====================================================================================================
@@ -2439,14 +2543,18 @@ core_ghoul.cpp_CGhoul_getTargetPoints_FUN_004e8bc0 (5 suspects)
   Line 83 [unrolled_memcpy]: pCVar3->x = pCVar1->x;
 
 ====================================================================================================
-core_ghoul.cpp_CGhoul_process_FUN_004e6600 (9 suspects)
+core_ghoul.cpp_CGhoul_process_FUN_004e6600 (13 suspects)
   File: core/ghoul.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
   Line 128 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 155 [static_uninitvar]: fVar1 = local_1c0 - (pCVar3->base).location.position.z;
+  Line 158 [static_uninitvar]: if (ABS(local_1c4 - (pCVar3->base).location.position.y) <= (float)4) {
   Line 217 [unrolled_memcpy]: local_29c.impact_direction.x = pCVar12->x;
   Line 320 [unrolled_strcpy]: do {
   Line 421 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 682 [static_invalid_pointer_cast]: *(float *)&local_78 = core_chain_cpp_fastSqrt_FUN_00431350(local_7c);
+  Line 683 [static_invalid_pointer_cast]: if (*(float *)&local_78 < (float)8) goto LAB_004e7243;
   Line 722 [self_copy_guard]: if (&local_c0 != &local_120) {
   Line 929 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   Line 961 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
@@ -2745,6 +2853,18 @@ core_ladder.cpp_CLadder_renderOpaque_FUN_00502620 (1 suspect)
   Line 33 [decompiler_intrinsic]: CStack_30.y = (int)ROUND(fStack_y * 256.0f);
 
 ====================================================================================================
+core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00505ac0 (1 suspect)
+  File: core/lightgun.cpp
+====================================================================================================
+  Line 24 [static_invalid_pointer_cast]: if ((float *)&local_res0 != &g_CDemonLightInstance.base.base.rotation_matrix.m[0].z) {
+
+====================================================================================================
+core_main.c_displayErrorAndQuit_FUN_00506f10 (1 suspect)
+  File: core/main.c
+====================================================================================================
+  Line 81 [static_null_pointer_arithmetic]: pcVar1 = pcVar5 + 1;
+
+====================================================================================================
 core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920 (3 suspects)
   File: core/manpuz.cpp
 ====================================================================================================
@@ -3035,10 +3155,24 @@ core_mirror.cpp_clipPolygonAgainstPlane_FUN_00521290 (2 suspects)
   Line 49 [unrolled_memcpy]: pCVar4->x = vertex_a->x;
 
 ====================================================================================================
+core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20 (3 suspects)
+  File: core/mission.cpp
+====================================================================================================
+  Line 49 [static_null_pointer]: actor->index = 0;
+  Line 50 [static_null_pointer]: (actor->base).location.position = (pCVar3->location).position;
+  Line 52 [static_null_pointer]: (actor->base).location.area_id = (pCVar3->location).area_id;
+
+====================================================================================================
 core_mission.cpp_CDemonMission_generateActorName_FUN_00524700 (1 suspect)
   File: core/mission.cpp
 ====================================================================================================
   Line 18 [unrolled_strcpy]: do {
+
+====================================================================================================
+core_mission.cpp_CDemonMission_loadActor_FUN_00523990 (1 suspect)
+  File: core/mission.cpp
+====================================================================================================
+  Line 64 [static_legacy_uninitvar]: pCVar1 = local_e1;
 
 ====================================================================================================
 core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0 (1 suspect)
@@ -3389,7 +3523,7 @@ core_path.cpp_CPathMap_dtor_FUN_005464d0 (3 suspects)
   Line 17 [pointer_cast]: ((void *)((int)g_PathMapList + iVar2),(void *)((int)g_PathMapList + iVar2 + 4),
 
 ====================================================================================================
-core_path.cpp_CPathMap_findPathToDestination_FUN_00547320 (8 suspects)
+core_path.cpp_CPathMap_findPathToDestination_FUN_00547320 (10 suspects)
   File: core/path.cpp
 ====================================================================================================
   Line 48 [unrolled_memcpy]: (this_ptr->dest_voxel_coords).x = local_58.x;
@@ -3397,7 +3531,9 @@ core_path.cpp_CPathMap_findPathToDestination_FUN_00547320 (8 suspects)
   Line 109 [unrolled_memcpy]: out_euler_angles->x = pCVar1->x;
   Line 127 [unrolled_memcpy]: out_euler_angles->x = pCVar1->x;
   Line 138 [unrolled_memcpy]: out_euler_angles->x = pCVar1->x;
+  Line 169 [static_uninitvar]: local_7c = (float)local_a0 * g_CDemonRaytraceInstance.adjusted_size.x + local_7c;
   Line 170 [unrolled_memcpy]: out_euler_angles->x = pCVar1->x;
+  Line 170 [static_uninitvar]: local_74 = (float)local_98 * g_CDemonRaytraceInstance.adjusted_size.z + local_74;
   Line 195 [unrolled_memcpy]: out_euler_angles->x = pCVar1->x;
   Line 217 [unrolled_memcpy]: out_euler_angles->x = pCVar1->x;
 
@@ -3824,6 +3960,12 @@ core_script.cpp_parseConditionExpression_FUN_00561a30 (9 suspects)
   Line 154 [unrolled_strcpy]: do {
 
 ====================================================================================================
+core_script.cpp_trimLine_FUN_005592c0 (1 suspect)
+  File: core/script.cpp
+====================================================================================================
+  Line 38 [static_null_pointer]: ((g_CharacterClassificationTable[(byte)(pcVar2[-1] + 1)] & 2) != 0))) {
+
+====================================================================================================
 core_set.cpp_CDemonSet_buildActorTypeLists_FUN_00570fc0 (1 suspect)
   File: core/set.cpp
 ====================================================================================================
@@ -3865,6 +4007,12 @@ core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 (2 suspects)
   Line 322 [unrolled_memcpy]: g_TransformedVertexArray[iVar19].x = local_130.x;
 
 ====================================================================================================
+core_set.cpp_CDemonSet_load_FUN_00569410 (1 suspect)
+  File: core/set.cpp
+====================================================================================================
+  Line 61 [static_invalid_pointer_cast]: &(this_ptr->scene_fog).density_multiplier,(float *)&local_48,(float *)&local_48);
+
+====================================================================================================
 core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 (3 suspects)
   File: core/set.cpp
 ====================================================================================================
@@ -3873,11 +4021,13 @@ core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 (3 suspects)
   Line 66 [unrolled_memcpy]: (this_ptr_00->box_max).x = pCVar3[1].x;
 
 ====================================================================================================
-core_set.cpp_CDemonSet_processActors_FUN_0056b810 (6 suspects)
+core_set.cpp_CDemonSet_processActors_FUN_0056b810 (8 suspects)
   File: core/set.cpp
 ====================================================================================================
   Line 54 [shadow_pointer_walk]: pCVar4 = (CDemonSet *)pCVar4->cameras;
   Line 73 [shadow_pointer_walk]: pCVar4 = (CDemonSet *)pCVar4->cameras;
+  Line 99 [static_uninitvar]: g_ActorProfileTimes[local_20] = iVar3 - local_3c;
+  Line 114 [static_uninitvar]: (fStack_5c == (g_CurrentProcessingActor->orient).vec.x)) &&
   Line 130 [shadow_pointer_walk]: pCVar4 = (CDemonSet *)pCVar4->cameras;
   Line 155 [unrolled_memcpy]: aCStack_94[0].x = CStack_58.x;
   Line 201 [shadow_pointer_walk]: pCVar4 = (CDemonSet *)pCVar4->cameras;
@@ -4282,7 +4432,7 @@ core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0 (6 suspects)
   Line 162 [pointer_cast]: uVar5 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar8);
 
 ====================================================================================================
-core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 (7 suspects)
+core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 (8 suspects)
   File: core/setedit.cpp
 ====================================================================================================
   Line 74 [unrolled_strcpy]: do {
@@ -4292,15 +4442,24 @@ core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 (7 suspects)
   Line 184 [unrolled_memcpy]: g_CDemonCameraInstance.base.position.f.x = (g_CSlewPtr->position).x;
   Line 283 [pointer_cast]: piVar1 = (int *)((int)auStack_96c + iVar13);
   Line 295 [pointer_cast]: if (*(int *)((int)pvStack_1c + 0x144) == 0) {
+  Line 325 [static_null_pointer]: puVar14 = (uint *)p_Stack_20[0x19b185]._handle;
 
 ====================================================================================================
-core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (9 suspects)
+core_setedit.cpp_CDemonSet_editSpotLight_FUN_0057b500 (1 suspect)
+  File: core/setedit.cpp
+====================================================================================================
+  Line 31 [static_null_pointer]: master->light_enabled_flag = 1;
+
+====================================================================================================
+core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (11 suspects)
   File: core/setedit.cpp
 ====================================================================================================
   Line 201 [unrolled_strchr]: do {
   Line 213 [unrolled_strchr]: do {
+  Line 220 [static_null_pointer]: *pcVar12 = '\0';
   Line 245 [pointer_cast]: *(uint *)((int)g_S3DTextureGroundTypes + iVar6) = uVar4;
   Line 264 [pointer_cast]: *(uint *)((int)g_S3DTextureGroundTypes + iVar6) = 0;
+  Line 377 [static_invalid_pointer_cast]: iVar6 = _fscanf(file_handle,"%f,%f,%f\n",(float *)(local_38 + iVar5 * 3),(float *)piVar16,(float *)piVar15);
   Line 478 [unrolled_memcpy]: (pCVar10->pos).x = local_2478.pos.x;
   Line 483 [unrolled_memcpy]: (pCVar10->orient).x = local_2478.orient.x;
   Line 487 [unrolled_memcpy]: pCVar10->fov = local_2478.fov;
@@ -4370,11 +4529,12 @@ core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 (6 suspects)
   Line 222 [pointer_cast]: piVar1 = (int *)((int)g_MasterLightList + iVar4);
 
 ====================================================================================================
-core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0 (2 suspects)
+core_setedit.cpp_CDemonSet_showLightFilterEditor_FUN_0057bbe0 (3 suspects)
   File: core/setedit.cpp
 ====================================================================================================
   Line 98 [shadow_pointer_walk]: pCVar4 = (C3DSLight *)pCVar4->name;
   Line 163 [unrolled_strcpy]: do {
+  Line 175 [static_invalid_pointer_cast]: *(float *)(pcVar8 + 0x16f4) = *(float *)(pcVar8 + 0x16f8);
 
 ====================================================================================================
 core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0 (5 suspects)
@@ -4638,7 +4798,7 @@ core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0 (14 suspects)
   Line 298 [unrolled_memcpy]: // 0058a866: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (18 suspects)
+core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (29 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
@@ -4655,13 +4815,24 @@ core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (18 suspects)
   Line 505 [raw_address_constant]: local_3a4.vertices[2].texture_u = 0xfe0000;
   Line 506 [raw_address_constant]: local_3a4.vertices[2].texture_v = 0xfe0000;
   Line 507 [raw_address_constant]: local_3a4.vertices[3].texture_v = 0xfe0000;
+  Line 550 [static_legacy_uninitvar]: _sprintf(local_46c," [C] Use canceled: %s ",local_38 != 0.0f ? "ON" : "OFF");
   Line 598 [unrolled_memcpy]: pCVar14->x = pCVar13->x;
   Line 666 [unrolled_memcpy]: local_184.x = pCVar13->x;
   Line 672 [unrolled_memcpy]: local_19c.x = pCVar13->x;
+  Line 738 [static_legacy_uninitvar]: (double)local_1e4.max.y,(double)local_1c8,(double)(local_1c8 - local_1e4.max.y),
+  Line 739 [static_legacy_uninitvar]: (double)local_1e4.max.z,(double)local_1c4,(double)(local_1c4 - local_1e4.max.z),
+  Line 740 [static_legacy_uninitvar]: (double)local_1cc,(double)local_1c0,(double)(local_1c0 - local_1cc));
+  Line 740 [static_legacy_uninitvar]: (double)local_1cc,(double)local_1c0,(double)(local_1c0 - local_1cc));
+  Line 790 [static_invalid_pointer_cast]: (g_CEditorToolsPtr,"Enter exit forward to frame number",(int *)&local_38,1,0,
+  Line 932 [static_legacy_uninitvar]: (double)local_1bc,(double)local_1b8,(double)local_1b4,
+  Line 932 [static_legacy_uninitvar]: (double)local_1bc,(double)local_1b8,(double)local_1b4,
+  Line 933 [static_legacy_uninitvar]: (double)local_1b0,(double)local_1ac,(double)local_1a8);
+  Line 933 [static_legacy_uninitvar]: (double)local_1b0,(double)local_1ac,(double)local_1a8);
+  Line 933 [static_legacy_uninitvar]: (double)local_1b0,(double)local_1ac,(double)local_1a8);
   Line 1061 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 (27 suspects)
+core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 (29 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
   Line 210 [pointer_cast]: *(float *)((int)&local_2520[0].m[0].w + iVar5) = local_11c.m[0].w;
@@ -4680,6 +4851,8 @@ core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 (27 suspects)
   Line 377 [pointer_cast]: *(uint *)pcVar21 = *(uint *)((int)pSVar2->bone_weights + local_68 + 0xc);
   Line 378 [pointer_cast]: *(uint *)(pcVar21 + 4) = *(uint *)((int)pSVar2->bone_weights + local_68 + 0x10);
   Line 379 [pointer_cast]: *(uint *)(pcVar21 + 8) = *(uint *)((int)pSVar2->bone_weights + local_68 + 0x14);
+  Line 408 [static_invalid_pointer_cast]: *(float *)(pcVar21 + (local_90 + 3) * 4) =
+  Line 409 [static_invalid_pointer_cast]: *(float *)(pcVar21 + (local_90 + 3) * 4) + local_8c;
   Line 427 [pointer_cast]: uVar3 = *(uint *)((int)this_ptr->index_data_ptr[0] + local_60);
   Line 469 [pointer_cast]: uVar3 = *(uint *)((int)this_ptr->index_data_ptr[0] + local_50);
   Line 509 [unrolled_memcpy]: for (iVar8 = 0x12; iVar8 != 0; iVar8 = iVar8 + -1) {
@@ -4808,7 +4981,7 @@ core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0 (6 suspects)
   Line 218 [pointer_cast]: local_88 = local_88 + *(int *)((int)aiStack_140 + iVar1);
 
 ====================================================================================================
-core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790 (9 suspects)
+core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790 (12 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
   Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
@@ -4816,6 +4989,9 @@ core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790 (9 suspects)
   Line 96 [pointer_cast]: *(uint *)(local_48 + (int)this_ptr->index_data_ptr[lod_index]) = *puVar21;
   Line 166 [pointer_cast]: *(uint *)((int)this_ptr->cap_index_ptr[lod_index] + iVar5) =
   Line 167 [pointer_cast]: *(uint *)((int)lod_mesh->tri_data->attribute_indices + iVar3 + 0xc);
+  Line 176 [static_invalid_pointer_cast]: local_534.x = *(float *)pcVar13;
+  Line 177 [static_invalid_pointer_cast]: local_534.y = *(float *)(pcVar13 + 4);
+  Line 178 [static_invalid_pointer_cast]: local_534.z = *(float *)(pcVar13 + 8);
   Line 208 [pointer_cast]: if (local_538 < *(float *)((int)local_528 + iVar11)) {
   Line 209 [pointer_cast]: local_538 = *(float *)((int)local_528 + iVar11);
   Line 217 [pointer_cast]: *(char *)((int)pfVar18 + *(byte *)pfVar18 + 1) = (char)iVar16;
@@ -4829,12 +5005,15 @@ core_skeledit.cpp_CDeformableModel_importFacesS3D_FUN_0058b9b0 (2 suspects)
   Line 73 [pointer_cast]: *(int *)((int)this_ptr->index_data_ptr[0] + iVar4) = local_28;
 
 ====================================================================================================
-core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (4 suspects)
+core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (7 suspects)
   File: core/skeledit.cpp
 ====================================================================================================
   Line 19 [missing_cave_copy]: CMatrix3x4f local_d8;
   Line 20 [missing_cave_copy]: CMatrix3x4f local_a8;
+  Line 55 [static_uninitvar]: if (200 < local_10e) {
   Line 68 [pointer_cast]: *(int *)((int)aiStack_430 + iVar8) = iVar3;
+  Line 91 [static_uninitvar]: if (local_68 == 0) {
+  Line 117 [static_uninitvar]: fVar2 = local_64 * local_64 * local_64;
   Line 129 [unrolled_memcpy]: pCVar5->x = pCVar4->x;
 
 ====================================================================================================
@@ -4967,6 +5146,31 @@ core_skeledit.cpp_CSkeleton_scaleFramePositions_FUN_0058b260 (3 suspects)
   Line 17 [pointer_cast]: *(float *)((int)&pCVar1->z + iVar2) = *(float *)((int)&pCVar1->z + iVar2) * scale;
 
 ====================================================================================================
+core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0 (2 suspects)
+  File: core/skeleton.cpp
+====================================================================================================
+  Line 29 [static_invalid_pointer_cast]: (&this_ptr->motion_controller,motion_index,animation_time,(int *)&local_28,
+  Line 30 [static_invalid_pointer_cast]: (int *)local_24,&local_60);
+
+====================================================================================================
+core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0 (3 suspects)
+  File: core/skeleton.cpp
+====================================================================================================
+  Line 170 [static_object_index]: (&local_122c)[local_18] = *pCVar12;
+  Line 183 [static_object_index]: (&local_122c)[iVar10] = *pCVar11;
+  Line 194 [static_object_index]: local_1cc = (&local_122c)[local_30];
+
+====================================================================================================
+core_sound.cpp_updateListeners_FUN_005b1870 (5 suspects)
+  File: core/sound.cpp
+====================================================================================================
+  Line 57 [static_uninitvar]: if (SQRT((local_c4 - g_SoundListenerPrev.z) * (local_c4 - g_SoundListenerPrev.z) +
+  Line 58 [static_uninitvar]: (local_cc - g_SoundListenerPrev.x) * (local_cc - g_SoundListenerPrev.x) +
+  Line 59 [static_uninitvar]: (local_c8 - g_SoundListenerPrev.y) * (local_c8 - g_SoundListenerPrev.y)) <
+  Line 96 [static_legacy_uninitvar]: ((double)local_cc,(double)local_c8,(double)local_c4);
+  Line 96 [static_legacy_uninitvar]: ((double)local_cc,(double)local_c8,(double)local_c4);
+
+====================================================================================================
 core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370 (1 suspect)
   File: core/stranger.cpp
 ====================================================================================================
@@ -5038,14 +5242,17 @@ core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60 (8 suspects)
   Line 40 [missing_cave_copy]: CQuaternion4f local_50;
 
 ====================================================================================================
-core_stranger.cpp_CStranger_processFrame_FUN_005bb960 (8 suspects)
+core_stranger.cpp_CStranger_processFrame_FUN_005bb960 (11 suspects)
   File: core/stranger.cpp
 ====================================================================================================
   Line 105 [unrolled_memcpy]: (this_ptr->carry_object_bbox).min.x = (pCVar15->min).x;
   Line 113 [unrolled_memcpy]: (this_ptr->carry_object_bbox).min.x = (pCVar15->min).x;
   Line 133 [unrolled_memcpy]: (this_ptr->carry_object_world_center).x = pCVar16->x;
   Line 150 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 162 [static_uninitvar]: if (local_14 != 0) {
   Line 462 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
+  Line 592 [static_uninitvar]: if (fLookAmount < local_25c) {
+  Line 595 [static_uninitvar]: if (local_260 < fLookAmount) {
   Line 785 [unrolled_memset]: (this_ptr->pending_velocity).z = 0.0;
   Line 803 [unrolled_memset]: (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
   Line 807 [unrolled_memset]: (this_ptr->base).base.position_delta.z = 0.0;
@@ -5129,6 +5336,12 @@ core_stranger.cpp_CStranger_updateTurnBlending_FUN_005bf800 (1 suspect)
   File: core/stranger.cpp
 ====================================================================================================
   Line 12 [unrolled_memset]: (this_ptr->pending_velocity).z = 0.0;
+
+====================================================================================================
+core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270 (1 suspect)
+  File: core/stranger.cpp
+====================================================================================================
+  Line 222 [static_invalid_pointer_cast]: *(float *)pcVar4 = pCVar14->x;
 
 ====================================================================================================
 core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70 (6 suspects)
@@ -5258,6 +5471,22 @@ core_turret.cpp_CTurret_updateTargeting_FUN_005e2d50 (1 suspect)
   File: core/turret.cpp
 ====================================================================================================
   Line 118 [unrolled_memcpy]: CStack_90.x = CStack_48.x;
+
+====================================================================================================
+core_tvbat.cpp_CTVBat_process_FUN_005e4210 (4 suspects)
+  File: core/tvbat.cpp
+====================================================================================================
+  Line 139 [static_uninitvar]: SQRT(local_80 * local_80 + local_88 * local_88 + local_84 * local_84)) {
+  Line 139 [static_uninitvar]: SQRT(local_80 * local_80 + local_88 * local_88 + local_84 * local_84)) {
+  Line 139 [static_uninitvar]: SQRT(local_80 * local_80 + local_88 * local_88 + local_84 * local_84)) {
+  Line 160 [static_uninitvar]: this_ptr->height_offset + (float)4 + local_54;
+
+====================================================================================================
+core_vampboss.cpp_CVampireBoss_process_FUN_005e5970 (2 suspects)
+  File: core/vampboss.cpp
+====================================================================================================
+  Line 179 [static_legacy_uninitvar]: fVar11 = local_b0 - (this_ptr->base).base.base.location.position.z,
+  Line 201 [static_legacy_uninitvar]: local_b4 = local_b4 + 4.0f;
 
 ====================================================================================================
 core_vehicle.cpp_CVehicle_ctor_FUN_005e7940 (3 suspects)
@@ -5435,7 +5664,7 @@ core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0 (1 suspect)
   Line 23 [decompiler_intrinsic]: inv_a = (double)SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1);
 
 ====================================================================================================
-core_xform.cpp_transformAndClipGeometry_FUN_005f8550 (10 suspects)
+core_xform.cpp_transformAndClipGeometry_FUN_005f8550 (11 suspects)
   File: core/xform.cpp
 ====================================================================================================
   Line 2 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005f8bef) */
@@ -5448,6 +5677,7 @@ core_xform.cpp_transformAndClipGeometry_FUN_005f8550 (10 suspects)
   Line 9 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005f87c2) */
   Line 10 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005f8887) */
   Line 11 [warning_unreachable]: /* WARNING: Removing unreachable block (ram,0x005f8952) */
+  Line 281 [static_uninitvar]: return local_24;
 
 ====================================================================================================
 core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005fb1f0 (4 suspects)
@@ -5547,6 +5777,12 @@ engine_2d.c_drawVLine_FUN_00402ff0 (3 suspects)
   Line 30 [pointer_cast]: *(byte *)(*(int *)((int)g_ScreenBufferArray + iVar5) + x) =
   Line 38 [pointer_cast]: piVar1 = (int *)((int)g_ScreenBufferArray + iVar5);
   Line 49 [pointer_cast]: piVar1 = (int *)((int)g_ScreenBufferArray + iVar5);
+
+====================================================================================================
+engine_2d.c_findBestPaletteMatch_FUN_00401460 (1 suspect)
+  File: engine/2d.c
+====================================================================================================
+  Line 50 [static_legacy_uninitvar]: return best_index;
 
 ====================================================================================================
 engine_2d.c_mapFrameBuffer_FUN_00403430 (1 suspect)
@@ -5818,11 +6054,12 @@ engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0 (2 suspects)
   Line 408 [pointer_cast]: *(SRenderVertex **)((int)g_ClipperCullingPointers + iVar7 + 8));
 
 ====================================================================================================
-engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0 (3 suspects)
+engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0 (4 suspects)
   File: engine/clipper.c
 ====================================================================================================
   Line 150 [pointer_cast]: *(SRenderVertex **)((int)g_ClipperCullingPointers + iVar10 + 4),
   Line 151 [pointer_cast]: *(SRenderVertex **)((int)g_ClipperCullingPointers + iVar10 + 8));
+  Line 159 [static_array_oob_cond]: pSVar11 = (SRenderVertex *)auStack_150[vertex_count];
   Line 428 [pointer_cast]: iVar12 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z +
 
 ====================================================================================================
@@ -6274,10 +6511,11 @@ engine_font.cpp_CBitFont_loadBitmap_FUN_004ccff0 (1 suspect)
   Line 28 [unrolled_strcpy]: do {
 
 ====================================================================================================
-engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550 (1 suspect)
+engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550 (2 suspects)
   File: engine/font.cpp
 ====================================================================================================
   Line 86 [pointer_cast]: local_14 = (byte *)((int)this_ptr->bitmap_data[bitmap_count] + *local_30 * bitmap_width);
+  Line 93 [static_uninitvar]: for (iVar7 = 0; iVar2 = iVar7 - local_28, iVar7 < bitmap_width; iVar7 = iVar7 + 1) {
 
 ====================================================================================================
 engine_font.cpp_CBitFont_remapPalette_FUN_004d02a0 (3 suspects)
@@ -6297,6 +6535,12 @@ engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0 (6 suspects)
   Line 86 [unrolled_memcpy]: g_RenderVertexBuffer[0x4e1e].u = g_RenderVertexBuffer[0x4e1c].u;
   Line 98 [unrolled_memcpy]: g_RenderVertexBuffer[19999].u = g_RenderVertexBuffer[0x4e1c].u;
   Line 180 [unrolled_memcpy]: g_RenderVertexBuffer[0x4e1d].u = g_RenderVertexBuffer[0x4e1e].u;
+
+====================================================================================================
+engine_model.c_getMRGLBounds_FUN_00528140 (1 suspect)
+  File: engine/model.c
+====================================================================================================
+  Line 134 [static_uninitvar]: *output_bounds = *puVar11;
 
 ====================================================================================================
 engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0 (3 suspects)
@@ -6462,6 +6706,16 @@ shape_design.c_complexPolygonReduction_FUN_00463b30 (17 suspects)
   Line 1083 [unrolled_memcpy]: // 004647f2: MOVSD.REP ES:EDI,ESI  ; g_ModelPolygonData | g_ModelPolygonData[0].texture_name[0]
 
 ====================================================================================================
+shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10 (5 suspects)
+  File: shape/design.c
+====================================================================================================
+  Line 44 [static_legacy_uninitvar]: (output_vertex->vertex).x = local_38;
+  Line 45 [static_legacy_uninitvar]: (output_vertex->vertex).y = local_34;
+  Line 46 [static_legacy_uninitvar]: (output_vertex->vertex).z = local_30;
+  Line 47 [static_uninitvar]: output_vertex->u = fStack_2c;
+  Line 48 [static_uninitvar]: output_vertex->v = fStack_28;
+
+====================================================================================================
 shape_design.c_cramTextureList_FUN_0046bb80 (30 suspects)
   File: shape/design.c
 ====================================================================================================
@@ -6600,11 +6854,17 @@ shape_design.c_generateShell_FUN_00468f20 (3 suspects)
   Line 63 [unrolled_strlen]: do {
 
 ====================================================================================================
-shape_design.c_loadModelBinary_FUN_00458170 (4 suspects)
+shape_design.c_loadModelBinary_FUN_00458170 (10 suspects)
   File: shape/design.c
 ====================================================================================================
+  Line 69 [static_legacy_uninitvar]: g_VertexCount = local_64;
+  Line 75 [static_legacy_uninitvar]: ((float)local_74 * (float)0.00390625) / local_20;
+  Line 77 [static_legacy_uninitvar]: ((float)local_70 * (float)0.00390625) / local_20;
+  Line 97 [static_legacy_uninitvar]: g_ModelPolygonData[g_PolygonCount].vertex_indices_count = local_a4;
   Line 106 [unrolled_strcpy]: do {
+  Line 115 [static_legacy_uninitvar]: g_ModelPolygonData[g_PolygonCount].vertex_indices[0] - local_68;
   Line 138 [unrolled_strcpy]: do {
+  Line 146 [static_uninitvar]: local_20 = (float)local_44 * (float)1.52587890625e-05;
   Line 190 [unrolled_strcpy]: do {
   Line 201 [raw_address_constant]: _fread((void *)(local_28 * 4 + g_PolygonCount * 0x184 + 0x16e99c8),1,4,local_38);
 
@@ -7300,9 +7560,10 @@ shape_quantize.cpp_CBitmap_ctor_FUN_00556a00 (2 suspects)
   Line 73 [pointer_cast]: (void *)((int)this_ptr->pixel_data + (uint)(ushort)this_ptr->bytes_per_row * iVar3);
 
 ====================================================================================================
-shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180 (5 suspects)
+shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180 (6 suspects)
   File: shape/quantize.cpp
 ====================================================================================================
+  Line 42 [static_null_pointer]: local_1c = (uchar *)*local_20->row_table;
   Line 57 [unrolled_memcpy]: for (iVar5 = 0xc0; iVar5 != 0; iVar5 = iVar5 + -1) {
   Line 62 [unrolled_memcpy]: for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {
   Line 79 [unrolled_memcpy]: for (uVar7 = uVar8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
@@ -7557,6 +7818,24 @@ shape_superopt.cpp_CObj_scale_FUN_005d2940 (8 suspects)
   Line 82 [pointer_cast]: pdVar6 = (double *)((int)pdVar6 + 4);
 
 ====================================================================================================
+shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0 (4 suspects)
+  File: shape/superopt.cpp
+====================================================================================================
+  Line 51 [static_uninitvar]: dStack_78 = matrix->m[0].z * dStack_98 +
+  Line 52 [static_uninitvar]: matrix->m[0].x * dStack_a8 + matrix->m[0].y * dStack_a0;
+  Line 59 [static_uninitvar]: dStack_28 = dStack_58 + pivot->y;
+  Line 60 [static_uninitvar]: dStack_20 = dStack_50 + pivot->z;
+
+====================================================================================================
+shape_superopt.cpp_CObj_transform_FUN_005d2c40 (4 suspects)
+  File: shape/superopt.cpp
+====================================================================================================
+  Line 50 [static_uninitvar]: dStack_30 = matrix->m[0].z * dStack_38 +
+  Line 51 [static_uninitvar]: matrix->m[0].x * dStack_48 + matrix->m[0].y * dStack_40;
+  Line 58 [static_uninitvar]: dStack_58 = dStack_a0 + pivot->y;
+  Line 59 [static_uninitvar]: dStack_50 = dStack_98 + pivot->z;
+
+====================================================================================================
 shape_superopt.cpp_COptimize_cleanup_FUN_005d7000 (2 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
@@ -7628,19 +7907,29 @@ shape_superopt.cpp_CP3D_subtract_FUN_005d84d0 (2 suspects)
   Line 25 [unrolled_memcpy]: // 005d850c: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
-shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0 (10 suspects)
+shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0 (20 suspects)
   File: shape/superopt.cpp
 ====================================================================================================
   Line 107 [pointer_cast]: pdVar10 = (double *)((int)pdVar10 + 4);
   Line 108 [pointer_cast]: pdVar11 = (double *)((int)pdVar11 + 4);
+  Line 115 [static_uninitvar]: dVar1 = 1.0 / SQRT(local_178 * local_178 + local_188 * local_188 + local_180 * local_180);
+  Line 115 [static_uninitvar]: dVar1 = 1.0 / SQRT(local_178 * local_178 + local_188 * local_188 + local_180 * local_180);
   Line 135 [pointer_cast]: pdVar10 = (double *)((int)pdVar10 + 4);
   Line 136 [pointer_cast]: pdVar11 = (double *)((int)pdVar11 + 4);
+  Line 142 [static_uninitvar]: dVar1 = 1.0 / SQRT(local_160 * local_160 + local_170 * local_170 + local_168 * local_168);
+  Line 142 [static_uninitvar]: dVar1 = 1.0 / SQRT(local_160 * local_160 + local_170 * local_170 + local_168 * local_168);
   Line 149 [pointer_cast]: pdVar10 = (double *)((int)pdVar10 + 4);
   Line 150 [pointer_cast]: pdVar11 = (double *)((int)pdVar11 + 4);
+  Line 156 [static_uninitvar]: dVar1 = 1.0 / SQRT(local_1f0 * local_1f0 + local_200 * local_200 + local_1f8 * local_1f8);
+  Line 156 [static_uninitvar]: dVar1 = 1.0 / SQRT(local_1f0 * local_1f0 + local_200 * local_200 + local_1f8 * local_1f8);
   Line 177 [pointer_cast]: pdVar10 = (double *)((int)pdVar10 + 4);
   Line 178 [pointer_cast]: pdVar11 = (double *)((int)pdVar11 + 4);
+  Line 183 [static_uninitvar]: dVar1 = 1.0 / SQRT(local_220 * local_220 + local_230 * local_230 + local_228 * local_228);
+  Line 183 [static_uninitvar]: dVar1 = 1.0 / SQRT(local_220 * local_220 + local_230 * local_230 + local_228 * local_228);
   Line 191 [pointer_cast]: pdVar8 = (double *)((int)pdVar8 + 4);
   Line 192 [pointer_cast]: pdVar9 = (double *)((int)pdVar9 + 4);
+  Line 197 [static_uninitvar]: dVar6 = 1.0 / SQRT(local_280 * local_280 + local_290 * local_290 + local_288 * local_288);
+  Line 197 [static_uninitvar]: dVar6 = 1.0 / SQRT(local_280 * local_280 + local_290 * local_290 + local_288 * local_288);
 
 ====================================================================================================
 shape_superopt.cpp_CPoly_copyFrom_FUN_005cc6a0 (4 suspects)
@@ -7817,6 +8106,14 @@ shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0 (4 suspects)
   Line 76 [unrolled_memcpy]: // 005d6488: MOVSD.REP ES:EDI,ESI
 
 ====================================================================================================
+sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 (3 suspects)
+  File: sound/mp3.cpp
+====================================================================================================
+  Line 646 [static_legacy_uninitvar]: *pfVar9 = (is_pos_tan[local_f8] / (is_pos_tan[local_f8] + 1.0)) * *pfVar10;
+  Line 651 [static_legacy_uninitvar]: *pfVar9 = *pfVar10 * is_ratio_l[local_f8];
+  Line 652 [static_legacy_uninitvar]: fVar2 = *pfVar10 * is_ratio_r[local_f8];
+
+====================================================================================================
 sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_005a5530 (3 suspects)
   File: sound/sndmain.cpp
 ====================================================================================================
@@ -7917,3 +8214,9 @@ sound_sndmain.cpp_startSfx_FUN_005a8e90 (1 suspect)
   File: sound/sndmain.cpp
 ====================================================================================================
   Line 256 [raw_address_constant]: if (0xfffffe < iVar7) {
+
+====================================================================================================
+sound_sndmain.cpp_testSoundFile_FUN_005ad3b0 (1 suspect)
+  File: sound/sndmain.cpp
+====================================================================================================
+  Line 30 [static_uninitvar]: else if (local_60 < 1) {

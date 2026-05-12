@@ -118,5 +118,22 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Casting from float * to signed int * is not portable due to different binary data representations on different platforms.",
+      "line": 13,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "int bits = (*(int *)&value >> 1) + g_FastSqrtMagic;",
+      "type": "static_invalid_pointer_cast"
+    },
+    {
+      "description": "Casting between signed int * and float * which have an incompatible binary data representation.",
+      "line": 14,
+      "match": "Cppcheck: invalid pointer cast",
+      "severity": "moderate",
+      "text": "return *(float *)&bits;",
+      "type": "static_invalid_pointer_cast"
+    }
+  ]
 }

@@ -763,6 +763,22 @@
       "severity": "moderate",
       "text": "out_euler_angles->x = pCVar1->x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Uninitialized variable: local_7c",
+      "line": 169,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_7c = (float)local_a0 * g_CDemonRaytraceInstance.adjusted_size.x + local_7c;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_74",
+      "line": 170,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_74 = (float)local_98 * g_CDemonRaytraceInstance.adjusted_size.z + local_74;",
+      "type": "static_uninitvar"
     }
   ]
 }

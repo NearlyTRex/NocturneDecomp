@@ -42,7 +42,7 @@
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.profile_mode
-;   undefined4 g_CGameInstance.block_auto_save
+;   undefined4 g_CGameInstance.goggles_active
 ;   undefined4 g_CGameInstance.delta_time_float
 ;   ... and 9 more
 ;
@@ -182,7 +182,7 @@ section .text
         ;   XREF to: 0056fbe9 (UNCONDITIONAL_JUMP)  ; LAB_0056fbe9
     MOV EAX,[0x0067b654]                ; 0056fd3b | g_CGamePtr
         ;   Label: LAB_0056fd3b
-    CMP dword ptr [EAX + 0x240],0x0     ; 0056fd40 | g_CGameInstance.block_auto_save
+    CMP dword ptr [EAX + 0x240],0x0     ; 0056fd40 | g_CGameInstance.goggles_active
     JNZ 0x0056fc2f                      ; 0056fd47
         ;   XREF to: 0056fc2f (CONDITIONAL_JUMP)  ; LAB_0056fc2f
     JMP 0x0056fc34                      ; 0056fd4d

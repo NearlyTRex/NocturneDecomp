@@ -806,11 +806,11 @@ section .text
         ;   XREF to: 005bdbe1 (CONDITIONAL_JUMP)  ; LAB_005bdbe1
     MOV EAX,[0x0067b654]                ; 005bc1e2 | g_CGameInstance | g_CGamePtr
     MOV dword ptr [EBX + 0x1fbd4],0x0   ; 005bc1e7
-    CMP dword ptr [EAX + 0x244],0x0     ; 005bc1f1 | g_CGameInstance.auto_save_blocked
+    CMP dword ptr [EAX + 0x244],0x0     ; 005bc1f1 | g_CGameInstance.flashlight_active
     JZ 0x005bc216                       ; 005bc1f8
         ;   XREF to: 005bc216 (CONDITIONAL_JUMP)  ; LAB_005bc216
     PUSH 0x653593                       ; 005bc1fa | = "flashlit.wav"
-    MOV dword ptr [EAX + 0x244],0x0     ; 005bc1ff | g_CGameInstance.auto_save_blocked
+    MOV dword ptr [EAX + 0x244],0x0     ; 005bc1ff | g_CGameInstance.flashlight_active
     PUSH EBX                            ; 005bc209
     MOV EAX,dword ptr [EBX + 0x154]     ; 005bc20a
     CALL dword ptr [EAX + 0x24]         ; 005bc210
@@ -828,12 +828,12 @@ section .text
     JZ 0x005bc278                       ; 005bc236
         ;   XREF to: 005bc278 (CONDITIONAL_JUMP)  ; LAB_005bc278
     MOV EAX,[0x0067b654]                ; 005bc238 | g_CGamePtr
-    CMP dword ptr [EAX + 0x244],0x0     ; 005bc23d | g_CGameInstance.auto_save_blocked
+    CMP dword ptr [EAX + 0x244],0x0     ; 005bc23d | g_CGameInstance.flashlight_active
     SETZ AL                             ; 005bc244
     MOV EDX,EAX                         ; 005bc247
     MOV EAX,[0x0067b654]                ; 005bc249 | g_CGamePtr
     AND EDX,0xff                        ; 005bc24e
-    MOV dword ptr [EAX + 0x244],EDX     ; 005bc254 | g_CGameInstance.auto_save_blocked
+    MOV dword ptr [EAX + 0x244],EDX     ; 005bc254 | g_CGameInstance.flashlight_active
     JZ 0x005bc266                       ; 005bc25a
         ;   XREF to: 005bc266 (CONDITIONAL_JUMP)  ; LAB_005bc266
     MOV dword ptr [EBX + 0x1fbd4],0x1   ; 005bc25c
@@ -850,7 +850,7 @@ section .text
     JNZ 0x005bdbf0                      ; 005bc286
         ;   XREF to: 005bdbf0 (CONDITIONAL_JUMP)  ; LAB_005bdbf0
     MOV EAX,[0x0067b654]                ; 005bc28c | g_CGameInstance | g_CGamePtr
-    MOV dword ptr [EAX + 0x244],0x0     ; 005bc291 | g_CGameInstance.auto_save_blocked
+    MOV dword ptr [EAX + 0x244],0x0     ; 005bc291 | g_CGameInstance.flashlight_active
     CMP dword ptr [ESP + 0x2cc],0x0     ; 005bc29b
         ;   Label: LAB_005bc29b
     JZ 0x005bc2b1                       ; 005bc2a3
@@ -1095,7 +1095,7 @@ section .text
     JZ 0x005bdc8f                       ; 005bc550
         ;   XREF to: 005bdc8f (CONDITIONAL_JUMP)  ; LAB_005bdc8f
     MOV EAX,[0x0067b654]                ; 005bc556 | g_CGameInstance | g_CGamePtr
-    CMP dword ptr [EAX + 0x240],0x0     ; 005bc55b | g_CGameInstance.block_auto_save
+    CMP dword ptr [EAX + 0x240],0x0     ; 005bc55b | g_CGameInstance.goggles_active
     JZ 0x005bdc49                       ; 005bc562
         ;   XREF to: 005bdc49 (CONDITIONAL_JUMP)  ; LAB_005bdc49
     MOV ESP,EBP                         ; 005bc568
@@ -2771,7 +2771,7 @@ section .text
     JNZ 0x005bc29b                      ; 005bdbf8
         ;   XREF to: 005bc29b (CONDITIONAL_JUMP)  ; LAB_005bc29b
     MOV EAX,[0x0067b654]                ; 005bdbfe | g_CGameInstance | g_CGamePtr
-    MOV dword ptr [EAX + 0x244],ECX     ; 005bdc03 | g_CGameInstance.auto_save_blocked
+    MOV dword ptr [EAX + 0x244],ECX     ; 005bdc03 | g_CGameInstance.flashlight_active
     JMP 0x005bc29b                      ; 005bdc09
         ;   XREF to: 005bc29b (UNCONDITIONAL_JUMP)  ; LAB_005bc29b
     FLD float ptr [EBP + 0x18]          ; 005bdc0e
@@ -2826,7 +2826,7 @@ section .text
     RET                                 ; 005bdc8e
     MOV EAX,[0x0067b654]                ; 005bdc8f | g_CGameInstance | g_CGamePtr
         ;   Label: LAB_005bdc8f
-    CMP dword ptr [EAX + 0x240],0x0     ; 005bdc94 | g_CGameInstance.block_auto_save
+    CMP dword ptr [EAX + 0x240],0x0     ; 005bdc94 | g_CGameInstance.goggles_active
     JZ 0x005bc568                       ; 005bdc9b
         ;   XREF to: 005bc568 (CONDITIONAL_JUMP)  ; LAB_005bc568
     MOV EDI,dword ptr [EBX + 0x1fc4c]   ; 005bdca1

@@ -1181,6 +1181,14 @@
       "severity": "moderate",
       "text": "*(int *)((int)auStack_1180 + iVar20) = (int)uVar11 / 3 + (int)fStack_50 + iStack_4c;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Possible null pointer dereference: p_Stack_20",
+      "line": 325,
+      "match": "Cppcheck: null pointer dereference",
+      "severity": "major",
+      "text": "puVar14 = (uint *)p_Stack_20[0x19b185]._handle;",
+      "type": "static_null_pointer"
     }
   ]
 }

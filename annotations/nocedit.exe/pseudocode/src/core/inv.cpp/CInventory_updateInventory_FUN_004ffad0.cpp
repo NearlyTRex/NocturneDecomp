@@ -36,7 +36,7 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(CInventory *th
     }
     this_ptr->cached_ammo_count = this_ptr->selected_weapon->ammo_count;
   }
-  if ((g_CGamePtr->auto_save_blocked == 0) && (g_CGamePtr->block_auto_save == 0)) {
+  if ((g_CGamePtr->flashlight_active == 0) && (g_CGamePtr->goggles_active == 0)) {
     local_20 = 1.0 / 120.0f;
     iVar5 = 0;
     pCVar5 = this_ptr;

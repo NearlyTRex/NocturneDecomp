@@ -241,7 +241,40 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Uninitialized variable: dStack_38",
+      "line": 50,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "dStack_30 = matrix->m[0].z * dStack_38 +",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: dStack_40",
+      "line": 51,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "matrix->m[0].x * dStack_48 + matrix->m[0].y * dStack_40;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: dStack_a0",
+      "line": 58,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "dStack_58 = dStack_a0 + pivot->y;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: dStack_98",
+      "line": 59,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "dStack_50 = dStack_98 + pivot->z;",
+      "type": "static_uninitvar"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

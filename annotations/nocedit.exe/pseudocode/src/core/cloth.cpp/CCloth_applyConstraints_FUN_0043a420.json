@@ -740,6 +740,54 @@
       "severity": "moderate",
       "text": "pSVar8 = (SClothVertex *)&(pSVar8->position).y;",
       "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Uninitialized variable: local_74",
+      "line": 92,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_7c",
+      "line": 92,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_78",
+      "line": 92,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_b0",
+      "line": 150,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_a4 = local_b0 * local_38[local_20].local_matrix.m[2].z +",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_b8",
+      "line": 151,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_b8 * local_38[local_20].local_matrix.m[0].z +",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_b4",
+      "line": 152,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_b4 * local_38[local_20].local_matrix.m[1].z;",
+      "type": "static_uninitvar"
     }
   ]
 }

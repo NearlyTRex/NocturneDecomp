@@ -30,7 +30,7 @@ void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
   STrainNoise *pSVar3;
 
   fVar7 = g_CGamePtr->delta_time_float;
-  if (g_CGamePtr->block_auto_save == 0) {
+  if (g_CGamePtr->goggles_active == 0) {
     if (g_TrainLastCameraIndex != g_CDemonSetPtr->selected_camera_index) {
       core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
       core_setcolid_cpp_CDemonSet_disableIgnore_FUN_00574210(g_CDemonSetPtr);

@@ -3589,10 +3589,10 @@ static_assert(__builtin_offsetof(CGame, allow_hero_controls_flag) == 568,
               "offsetof(CGame, allow_hero_controls_flag) != 568");
 static_assert(__builtin_offsetof(CGame, is_processing) == 572,
               "offsetof(CGame, is_processing) != 572");
-static_assert(__builtin_offsetof(CGame, block_auto_save) == 576,
-              "offsetof(CGame, block_auto_save) != 576");
-static_assert(__builtin_offsetof(CGame, auto_save_blocked) == 580,
-              "offsetof(CGame, auto_save_blocked) != 580");
+static_assert(__builtin_offsetof(CGame, goggles_active) == 576,
+              "offsetof(CGame, goggles_active) != 576");
+static_assert(__builtin_offsetof(CGame, flashlight_active) == 580,
+              "offsetof(CGame, flashlight_active) != 580");
 static_assert(__builtin_offsetof(CGame, total_game_time) == 584,
               "offsetof(CGame, total_game_time) != 584");
 static_assert(__builtin_offsetof(CGame, damageable_enemy_count) == 588,

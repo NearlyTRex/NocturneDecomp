@@ -344,6 +344,30 @@
       "severity": "moderate",
       "text": "if (&local_6c != &local_60) {",
       "type": "self_copy_guard"
+    },
+    {
+      "description": "Uninitialized variable: local_68",
+      "line": 42,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_68 = local_68 + 5.0f;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_64",
+      "line": 48,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fVar8 = (float10)local_64;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: fVar8",
+      "line": 49,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "local_64 = (float)((float10)fVar2 + fVar8);",
+      "type": "static_uninitvar"
     }
   ]
 }

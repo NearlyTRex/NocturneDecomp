@@ -4576,7 +4576,7 @@ section .text
     MOV dword ptr [EAX + 0x238],EDX     ; 0055d9d4 | g_CGameInstance.allow_hero_controls_flag
     MOV dword ptr [EBX + 0x458],0xffffffff ; 0055d9da
     MOV EDI,0x1                         ; 0055d9e4
-    MOV EDX,dword ptr [EAX + 0x240]     ; 0055d9e9 | g_CGameInstance.block_auto_save
+    MOV EDX,dword ptr [EAX + 0x240]     ; 0055d9e9 | g_CGameInstance.goggles_active
     MOV dword ptr [0x0310f4a4],EDI      ; 0055d9ef | g_ScriptInputFlag
     TEST EDX,EDX                        ; 0055d9f5
     JZ 0x0055a8bb                       ; 0055d9f7
@@ -4586,7 +4586,7 @@ section .text
         ;   XREF to: 0055a8bb (CONDITIONAL_JUMP)  ; LAB_0055a8bb
     MOV ESI,dword ptr [0x006810c8]      ; 0055da0a | g_CDemonSetPtr
     PUSH ESI                            ; 0055da10 | g_CDemonSetInstance
-    MOV dword ptr [EAX + 0x240],0x0     ; 0055da11 | g_CGameInstance.block_auto_save
+    MOV dword ptr [EAX + 0x240],0x0     ; 0055da11 | g_CGameInstance.goggles_active
     CALL core_event.cpp_getSelectedCameraIndex_FUN_004b1970 ; 0055da1b
         ;   XREF to: 004b1970 (UNCONDITIONAL_CALL)  ; int core_event.cpp_getSelectedCameraIndex_FUN_004b1970(CDemonSet * set_ptr)
     ADD ESP,0x4                         ; 0055da20

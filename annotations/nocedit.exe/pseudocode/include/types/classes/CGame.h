@@ -93,8 +93,8 @@ typedef struct CGame {
     int is_loading; // 0x234
     int allow_hero_controls_flag; // 0x238
     int is_processing; // 0x23c
-    int block_auto_save; // 0x240
-    int auto_save_blocked; // 0x244
+    int goggles_active; // 0x240
+    int flashlight_active; // 0x244
     float total_game_time; // 0x248
     int damageable_enemy_count; // 0x24c
     float total_play_time; // 0x250

@@ -1681,9 +1681,9 @@ LAB_0055d708:
                                                     this_ptr->saved_cmd_index = -1;
                                                     pCVar5 = g_CDemonSetPtr;
                                                     g_ScriptInputFlag = 1;
-                                                    if ((pCVar6->block_auto_save != 0) &&
+                                                    if ((pCVar6->goggles_active != 0) &&
                                                        (pCVar6->letterbox_mode != 0)) {
-                                                      pCVar6->block_auto_save = 0;
+                                                      pCVar6->goggles_active = 0;
                                                       iVar8 = 
                                                   core_event_cpp_getSelectedCameraIndex_FUN_004b1970
                                                             (pCVar5);

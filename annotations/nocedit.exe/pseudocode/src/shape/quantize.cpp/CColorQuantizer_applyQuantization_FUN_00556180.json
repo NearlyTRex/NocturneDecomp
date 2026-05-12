@@ -652,6 +652,14 @@
       "severity": "moderate",
       "text": "for (uVar7 = uVar8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Possible null pointer dereference: local_20",
+      "line": 42,
+      "match": "Cppcheck: null pointer dereference",
+      "severity": "major",
+      "text": "local_1c = (uchar *)*local_20->row_table;",
+      "type": "static_null_pointer"
     }
   ]
 }

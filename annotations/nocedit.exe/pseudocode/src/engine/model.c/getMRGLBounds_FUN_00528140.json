@@ -384,5 +384,14 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Uninitialized variable: *puVar11",
+      "line": 134,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "*output_bounds = *puVar11;",
+      "type": "static_uninitvar"
+    }
+  ]
 }

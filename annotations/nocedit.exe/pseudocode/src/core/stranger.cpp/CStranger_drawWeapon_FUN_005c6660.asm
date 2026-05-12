@@ -11,7 +11,7 @@
 ;   TerminatedCString s_flashlit_wav_00653f94
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.auto_save_blocked
+;   undefined4 g_CGameInstance.flashlight_active
 ;
 ; *****************************************************************************
 
@@ -25,14 +25,14 @@ section .text
     JNZ 0x005c6680                      ; 005c6670
         ;   XREF to: 005c6680 (CONDITIONAL_JUMP)  ; LAB_005c6680
     MOV EAX,[0x0067b654]                ; 005c6672 | g_CGameInstance | g_CGamePtr
-    CMP dword ptr [EAX + 0x244],0x0     ; 005c6677 | g_CGameInstance.auto_save_blocked
+    CMP dword ptr [EAX + 0x244],0x0     ; 005c6677 | g_CGameInstance.flashlight_active
     JNZ 0x005c6681                      ; 005c667e
         ;   XREF to: 005c6681 (CONDITIONAL_JUMP)  ; LAB_005c6681
     RET                                 ; 005c6680
         ;   Label: LAB_005c6680
     PUSH 0x653f94                       ; 005c6681 | = "flashlit.wav"
         ;   Label: LAB_005c6681
-    MOV dword ptr [EAX + 0x244],0x0     ; 005c6686 | g_CGameInstance.auto_save_blocked
+    MOV dword ptr [EAX + 0x244],0x0     ; 005c6686 | g_CGameInstance.flashlight_active
     PUSH EDX                            ; 005c6690
     MOV EAX,dword ptr [EDX + 0x154]     ; 005c6691
     CALL dword ptr [EAX + 0x24]         ; 005c6697

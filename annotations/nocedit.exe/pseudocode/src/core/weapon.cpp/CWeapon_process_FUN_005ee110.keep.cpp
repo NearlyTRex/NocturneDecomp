@@ -36,7 +36,7 @@ void __cdecl core_weapon_cpp_CWeapon_process_FUN_005ee110(CWeapon *this_ptr,floa
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
   if ((((CHero *)this_ptr->carried_by_actor == g_HeroActors[g_LocalHeroIndex]) &&
-      (g_CGamePtr->auto_save_blocked != 0)) && (this_ptr->can_attach_light != 0)) {
+      (g_CGamePtr->flashlight_active != 0)) && (this_ptr->can_attach_light != 0)) {
     (*(((this_ptr->base).vtable._uw)->_uw).updateLighting)(this_ptr);
     if (0.0 < g_CDemonLightInstance.volumetric_intensity) {
       core_set_cpp_CDemonSet_addDynamicLight_FUN_0056d090(g_CDemonSetPtr,&g_CDemonLightInstance);

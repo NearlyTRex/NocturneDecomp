@@ -84,7 +84,7 @@ section .text
     SUB ESP,0x160                       ; 005b1876
     AND ESP,0xfffffff8                  ; 005b187c
     MOV EAX,[0x0067b654]                ; 005b187f | g_CGamePtr
-    CMP dword ptr [EAX + 0x240],0x0     ; 005b1884 | g_CGameInstance.block_auto_save
+    CMP dword ptr [EAX + 0x240],0x0     ; 005b1884 | g_CGameInstance.goggles_active
     JNZ 0x005b1b09                      ; 005b188b
         ;   XREF to: 005b1b09 (CONDITIONAL_JUMP)  ; LAB_005b1b09
     MOV EAX,[0x032758e8]                ; 005b1891 | g_CDemonCameraInstance.base.position
@@ -222,7 +222,7 @@ section .text
         ;   XREF to: 005aa0a0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0(double front_x, double front_y, double front_z, double up_x, ...)
     MOV EAX,[0x0067b654]                ; 005b1ad4 | g_CGamePtr
     ADD ESP,0x48                        ; 005b1ad9
-    MOV EDX,dword ptr [EAX + 0x240]     ; 005b1adc | g_CGameInstance.block_auto_save
+    MOV EDX,dword ptr [EAX + 0x240]     ; 005b1adc | g_CGameInstance.goggles_active
     MOV dword ptr [0x03f6af7c],EBX      ; 005b1ae2 | CVector3f_03f6af7c
     TEST EDX,EDX                        ; 005b1ae8
     JZ 0x005b1b91                       ; 005b1aea

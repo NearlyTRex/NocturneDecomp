@@ -27,7 +27,7 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005e88c0(CVehicle *this_p
   this_ptr->is_visible = iVar2;
   if (iVar2 != 0) {
     iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
-    if ((iVar3 == 0) || (g_CGamePtr->block_auto_save != 0)) {
+    if ((iVar3 == 0) || (g_CGamePtr->goggles_active != 0)) {
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
                 (&this_ptr->model,0.0,-1);
       for (iVar3 = 0; iVar3 < this_ptr->tire_count; iVar3 = iVar3 + 1) {

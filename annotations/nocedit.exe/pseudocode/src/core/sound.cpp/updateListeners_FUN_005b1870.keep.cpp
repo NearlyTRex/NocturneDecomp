@@ -45,7 +45,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
   float local_44;
   float local_40;
   
-  if (g_CGamePtr->block_auto_save == 0) {
+  if (g_CGamePtr->goggles_active == 0) {
     local_48 = g_CDemonCameraInstance.base.position.f.x;
     local_44 = g_CDemonCameraInstance.base.position.f.y;
     local_40 = g_CDemonCameraInstance.base.position.f.z;
@@ -111,7 +111,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
              (double)local_c0.y,(double)local_c0.z,(double)local_78.x,(double)local_78.y,
              (double)local_78.z);
   CVector3f_03f6af7c.x = 0.0;
-  if (g_CGamePtr->block_auto_save == 0) {
+  if (g_CGamePtr->goggles_active == 0) {
     iVar6 = _strnicmp
                       (g_CDemonSetPtr->geometry_filename,"castle",6);
     if (iVar6 == 0) {

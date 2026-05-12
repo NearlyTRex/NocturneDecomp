@@ -4920,5 +4920,14 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Pointer addition with NULL pointer.",
+      "line": 81,
+      "match": "Cppcheck: null pointer arithmetic",
+      "severity": "major",
+      "text": "pcVar1 = pcVar5 + 1;",
+      "type": "static_null_pointer_arithmetic"
+    }
+  ]
 }

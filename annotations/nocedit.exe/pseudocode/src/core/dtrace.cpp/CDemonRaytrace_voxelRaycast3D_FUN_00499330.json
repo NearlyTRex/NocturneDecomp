@@ -350,5 +350,22 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Uninitialized variable: local_20",
+      "line": 67,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "(iVar11 = local_20, iVar12 = local_1c, iVar1 != iVar4)) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: local_1c",
+      "line": 67,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "(iVar11 = local_20, iVar12 = local_1c, iVar1 != iVar4)) {",
+      "type": "static_uninitvar"
+    }
+  ]
 }

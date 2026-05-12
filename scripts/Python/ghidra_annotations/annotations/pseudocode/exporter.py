@@ -50,6 +50,9 @@ from ghidra_annotations.annotations.pseudocode.header_compile import (
 from ghidra_annotations.annotations.pseudocode.function_compile import (
     compile_functions_after_export
 )
+from ghidra_annotations.annotations.pseudocode.static_analysis_suspects import (
+    run_after_static_analysis as run_static_analysis_suspects_pass,
+)
 from ghidra_annotations.annotations.pseudocode.static_analysis import (
     run_static_analysis_after_export
 )
@@ -1601,6 +1604,11 @@ def export_pseudocode(currentProgram, path, strict=False, deep_analysis=False):
             sa_result['total_files'],
             sa_result['total_diagnostics']
         ))
+    timer.end_phase()
+
+    # Promote whitelisted static-analysis findings into per-function suspects.
+    timer.start_phase("Static-analysis suspects")
+    run_static_analysis_suspects_pass(pseudocode_dir)
     timer.end_phase()
 
     # Generate analysis report (after compilation so it includes compilation status)

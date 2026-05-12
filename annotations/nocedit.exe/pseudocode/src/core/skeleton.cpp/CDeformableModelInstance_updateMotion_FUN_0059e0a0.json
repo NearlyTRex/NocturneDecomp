@@ -1272,5 +1272,30 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "The address of local variable 'local_122c' might be accessed at non-zero index.",
+      "line": 170,
+      "match": "Cppcheck: pointer-to-object indexed past bounds",
+      "severity": "moderate",
+      "text": "(&local_122c)[local_18] = *pCVar12;",
+      "type": "static_object_index"
+    },
+    {
+      "description": "The address of local variable 'local_122c' might be accessed at non-zero index.",
+      "line": 183,
+      "match": "Cppcheck: pointer-to-object indexed past bounds",
+      "severity": "moderate",
+      "text": "(&local_122c)[iVar10] = *pCVar11;",
+      "type": "static_object_index"
+    },
+    {
+      "description": "The address of local variable 'local_122c' might be accessed at non-zero index.",
+      "line": 194,
+      "match": "Cppcheck: pointer-to-object indexed past bounds",
+      "severity": "moderate",
+      "text": "local_1cc = (&local_122c)[local_30];",
+      "type": "static_object_index"
+    }
+  ]
 }

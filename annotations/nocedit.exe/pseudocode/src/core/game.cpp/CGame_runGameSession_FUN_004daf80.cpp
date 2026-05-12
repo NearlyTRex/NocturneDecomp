@@ -75,8 +75,8 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   this_ptr->allow_hero_controls_flag = 0;
   this_ptr->profile_mode = 0;
   this_ptr->show_customizable_keys = 0;
-  this_ptr->block_auto_save = 0;
-  this_ptr->auto_save_blocked = 0;
+  this_ptr->goggles_active = 0;
+  this_ptr->flashlight_active = 0;
   this_ptr->player_hit_flag = 0;
   this_ptr->geometry_debug_enabled = 0;
   this_ptr->collision_render_enabled = 0;
@@ -149,7 +149,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
       core_game_cpp_CGame_processFudge_FUN_004d8750(this_ptr);
       core_game_cpp_CGame_playerControls_FUN_004dbd80(this_ptr);
       if ((((this_ptr->is_game_active != 0) && (this_ptr->cutscene_skippable == 0)) &&
-          (g_CNetGamePtr->has_pending_sim_frame == 0)) && (this_ptr->block_auto_save == 0)) {
+          (g_CNetGamePtr->has_pending_sim_frame == 0)) && (this_ptr->goggles_active == 0)) {
         iVar5 = core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
                           (g_CDemonSetPtr,g_CScriptPtr->focus_actor,
                            g_CScriptPtr->focus_actor_changed);
