@@ -8,13 +8,20 @@
 # directly via importlib and stub the parent package modules so the
 # `from ghidra_annotations...` import inside suspects.py resolves.
 #
-# Usage: test_suspects.py <file.cpp> [file2.cpp ...]
+# Also (by default, when cppcheck is on $PATH) runs cppcheck in quick mode
+# and prints any diagnostics — these come from the same detector set the
+# full export uses, so they surface cppcheck-sourced suspects that the
+# regex pass can't see (e.g. uninitialized-variable reads).
+#
+# Usage: test_suspects.py [--no-cppcheck] <file.cpp> [file2.cpp ...]
 
 from __future__ import annotations
 
 import argparse
 import importlib.util
 import os
+import re
+import subprocess
 import sys
 import types
 
@@ -109,6 +116,66 @@ def run_detectors(susp, code):
     return found
 
 
+# Quick-mode cppcheck args mirror static_analysis.run_cppcheck() with deep=False:
+# no -I (header parse with -I dominates wall time at ~40s/file; quick mode is ~5s).
+_CPPCHECK_ARGS = [
+    '--enable=warning,performance,portability',
+    '--std=c++11',
+    '--quiet',
+    '--template={file}:{line}:{column}: {severity}: {message} [{id}]',
+    '--suppress=missingIncludeSystem',
+    '--suppress=missingInclude',
+    '--suppress=unknownMacro',
+    '--suppress=syntaxError',
+    '--suppress=preprocessorErrorDirective',
+    '--suppress=unmatchedSuppression',
+]
+
+# Matches the template above. Same shape as parse_cppcheck_output() in
+# static_analysis.py — duplicated here so we don't import that module
+# (it pulls in Ghidra-side dependencies).
+_CPPCHECK_LINE_RE = re.compile(
+    r'^([^:]+):(\d+):(\d+):\s*(\w+):\s*(.*?)\s*\[(\w+)\]\s*$',
+    re.MULTILINE,
+)
+
+
+def run_cppcheck_quick(cpp_path, timeout=60):
+    """Run cppcheck quick mode on one file. Returns (diagnostics, error_str).
+
+    Each diagnostic is {line, column, severity, message, check_id}. On
+    failure (timeout, missing binary, no output), returns ([], error_msg).
+    Caller silently skips when cppcheck isn't installed.
+    """
+    try:
+        proc = subprocess.run(
+            ['cppcheck'] + _CPPCHECK_ARGS + [cpp_path],
+            capture_output=True, text=True, timeout=timeout,
+        )
+    except FileNotFoundError:
+        return ([], 'cppcheck-missing')
+    except subprocess.TimeoutExpired:
+        return ([], 'cppcheck timed out after %ds' % timeout)
+
+    diagnostics = []
+    for m in _CPPCHECK_LINE_RE.finditer(proc.stderr or ''):
+        diagnostics.append({
+            'line': int(m.group(2)),
+            'column': int(m.group(3)),
+            'severity': m.group(4),
+            'message': m.group(5).strip(),
+            'check_id': m.group(6),
+        })
+    return (diagnostics, None)
+
+
+def format_cppcheck_diag(d):
+    return "    L%-4s [%s/cppcheck:%s] %s" % (
+        d.get('line', '?'), d.get('severity', '?'),
+        d.get('check_id', '?'), d.get('message', ''),
+    )
+
+
 def format_suspect(s):
     line = s.get('line', '?')
     stype = s.get('type', '?')
@@ -120,12 +187,18 @@ def format_suspect(s):
     return "    L%-4s [%s/%s] %s" % (line, sev, stype, desc or match)
 
 
-def report_file(path, suspects, show_omitted):
+def report_file(path, suspects, cppcheck_diags, show_omitted):
     visible = [s for s in suspects if s.get('type') not in OMIT_SUSPECT_TYPES]
     omitted = [s for s in suspects if s.get('type') in OMIT_SUSPECT_TYPES]
 
-    if visible:
-        print("  %d suspect(s)  %s" % (len(visible), path))
+    total_visible = len(visible) + len(cppcheck_diags)
+    if total_visible:
+        parts = []
+        if visible:
+            parts.append("%d suspect(s)" % len(visible))
+        if cppcheck_diags:
+            parts.append("%d cppcheck" % len(cppcheck_diags))
+        print("  %s  %s" % (', '.join(parts), path))
     else:
         print("  clean         %s" % path)
 
@@ -133,10 +206,13 @@ def report_file(path, suspects, show_omitted):
     for s in visible:
         print(format_suspect(s))
 
+    for d in sorted(cppcheck_diags, key=lambda d: (d.get('line', 0), d.get('check_id', ''))):
+        print(format_cppcheck_diag(d))
+
     if show_omitted and omitted:
         print("  (omitted: %d filtered by OMIT_SUSPECT_TYPES)" % len(omitted))
 
-    return len(visible)
+    return total_visible
 
 
 def main(argv=None):
@@ -146,10 +222,15 @@ def main(argv=None):
     p.add_argument('--show-omitted', action='store_true',
                    help='Also report suspect types normally filtered by the '
                         'exporter (decompiler_intrinsic, mmx_assembly, etc.).')
+    p.add_argument('--no-cppcheck', action='store_true',
+                   help='Skip the cppcheck quick-mode pass. By default '
+                        'cppcheck runs when the binary is on $PATH '
+                        '(adds ~5s per file).')
     args = p.parse_args(argv)
 
     susp = _load_suspects_module()
 
+    cppcheck_warned_missing = False
     total_visible = 0
     for path in args.files:
         if not os.path.isfile(path):
@@ -158,10 +239,23 @@ def main(argv=None):
         with open(path, 'r') as f:
             code = f.read()
         suspects = run_detectors(susp, code)
-        total_visible += report_file(path, suspects, args.show_omitted)
+
+        cppcheck_diags = []
+        if not args.no_cppcheck:
+            cppcheck_diags, err = run_cppcheck_quick(path)
+            if err == 'cppcheck-missing':
+                if not cppcheck_warned_missing:
+                    print("  (cppcheck not on $PATH — skipping; pass "
+                          "--no-cppcheck to silence)")
+                    cppcheck_warned_missing = True
+            elif err:
+                print("  (cppcheck error: %s)" % err)
+
+        total_visible += report_file(path, suspects, cppcheck_diags,
+                                     args.show_omitted)
 
     if len(args.files) > 1:
-        print("\nTotal: %d suspect(s) across %d file(s)" % (
+        print("\nTotal: %d finding(s) across %d file(s)" % (
             total_visible, len(args.files)))
 
 

@@ -10,7 +10,7 @@ Total functions: 6454
 Clean functions: 5705 (88.4%)
 Functions with suspects: 749 (11.6%)
 
-Total suspect patterns: 3885
+Total suspect patterns: 3880
 Average suspects per function: 0.60
 
 Virtual files: 214 total, 142 at 100%, 142 at 90%+
@@ -36,11 +36,11 @@ SUSPECT PATTERN BREAKDOWN
   shadow_pointer_walk       131
   unrolled_memset           90
   unrolled_strlen           83
-  static_uninitvar          75
+  static_uninitvar          73
   warning_inlined_function  63
-  static_legacy_uninitvar   45
   bitcast_double_pair       44
   unrolled_strchr           43
+  static_legacy_uninitvar   42
   warning_type_propagation  27
   stack_alignment_array     26
   decompiler_intrinsic      25
@@ -269,8 +269,6 @@ FUNCTIONS BY SUSPECT TYPE
     00585c90: core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90
     ... and 52 more
 
-  static_legacy_uninitvar (0 functions):
-
   bitcast_double_pair (9 functions):
     0055a810: core_script.cpp_CScript_step_FUN_0055a810
     0047b1e0: core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
@@ -294,6 +292,8 @@ FUNCTIONS BY SUSPECT TYPE
     0053d220: core_msnedit.cpp_CDemonMission_validateNewActorName_FUN_0053d220
     005dbe00: core_texlist.cpp_CTextureList_load_FUN_005dbe00
     ... and 10 more
+
+  static_legacy_uninitvar (0 functions):
 
   warning_type_propagation (27 functions):
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0

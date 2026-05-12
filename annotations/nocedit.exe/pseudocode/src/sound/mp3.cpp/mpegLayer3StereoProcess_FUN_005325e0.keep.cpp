@@ -69,9 +69,15 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
   // 4-byte stack slots by Watcom (the double passed by 2× push); merged here so
   // the call site no longer needs __BITCAST_DOUBLE(CONCAT44(...)).
   double mpeg2_is_pos_step;
-  float is_ratio_l [576];   // MPEG-2 LSF: per-coefficient L-channel intensity scale
-  float is_ratio_r [576];   // MPEG-2 LSF: per-coefficient R-channel intensity scale
-  float is_pos_tan [575];   // MPEG-1     : tan(is_pos * pi/12) per coefficient
+  // Zero-init so legacy flow-insensitive static analysis can prove every read
+  // in pass 2 has a corresponding pass-1 write. The runtime invariant
+  // (pass-2 reads gated on is_pos_per_sample[N] != 7, which pass 1 writes
+  // iff it also wrote the matching ratio/tan slot) is honored regardless,
+  // so untouched slots stay 0.0f and produce 0-valued output for those
+  // coefficients — which never run anyway.
+  float is_ratio_l [576] = {};   // MPEG-2 LSF: per-coefficient L-channel intensity scale
+  float is_ratio_r [576] = {};   // MPEG-2 LSF: per-coefficient R-channel intensity scale
+  float is_pos_tan [575] = {};   // MPEG-1     : tan(is_pos * pi/12) per coefficient
   // Per-coefficient intensity-stereo position (0..15; 7 = "not I-stereo'd").
   // Indexed [0..575] = one slot per granule coefficient. Signed `short` so
   // the asm's `MOV EAX, [buf]; SAR EAX, 16` re-read pattern sign-extends
@@ -186,7 +192,6 @@ void __cdecl sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0(SMpegStereoSubba
   do {
     iVar5 = iVar5 + 2;
     is_pos_per_sample[iVar5 / 2 - 1] = 7;
-    iVar5 = iVar5;
   } while (iVar5 != 0x480);
 
   // === Pass 1: fill is_pos / is_ratio / is_pos_tan for I-stereo coefficients. ===
@@ -684,7 +689,6 @@ LAB_005327f7:
         pfVar4 = *pafVar6;
         pafVar6 = (float (*) [18])(*pafVar6 + 1);
         *pfVar11 = *pfVar4;
-        pfVar11 = pfVar11;
       } while (pafVar6 != (float (*) [18])pfVar10);
       iVar11 = iVar11 + 1;
       local_54 = local_54 + 0x12;

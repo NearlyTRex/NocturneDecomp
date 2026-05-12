@@ -22,25 +22,19 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690(CPacked
   bool bVar7;
   bool bVar8;
   byte bVar9;
-  byte local_2c [4];
-  int local_28;
-  int local_24;
-  int local_20;
-  int local_1c;
-  int local_18;
-  int local_14;
+  SPBMFileHeader local_2c;
   void *size;
   
   bVar9 = 0;
   cockpit_pkbitmap_cpp_CPackedBitmap_free_FUN_0054a8e0(this_ptr);
   do {
-    SVar1 = _fread(local_2c,0x1c,1,file_handle);
+    SVar1 = _fread(&local_2c,0x1c,1,file_handle);
     if (SVar1 != 1) goto LAB_0054b71f;
     iVar4 = 4;
     bVar7 = false;
     iVar2 = 0;
     bVar8 = true;
-    pbVar5 = local_2c;
+    pbVar5 = (byte *)&local_2c;
     pbVar6 = (byte *)"PBM\032PBG\032";
     do {
       if (iVar4 == 0) break;
@@ -55,12 +49,12 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690(CPacked
     if (!bVar8) {
       iVar2 = (1 - (uint)bVar7) - (uint)(bVar7 != 0);
     }
-    if (((iVar2 == 0) && (local_28 != 0)) && (local_24 != 0)) {
-      this_ptr->width = local_28;
-      this_ptr->height = local_24;
-      if (((local_20 != 0) || (local_1c != 0)) ||
-         ((this_ptr->width + -1 != local_18 || (this_ptr->height + -1 != local_14))))
-      goto LAB_0054b6da;
+    if (((iVar2 == 0) && (local_2c.width != 0)) && (local_2c.height != 0)) {
+      this_ptr->width = local_2c.width;
+      this_ptr->height = local_2c.height;
+      if (((local_2c.reserved1 != 0) || (local_2c.reserved2 != 0)) ||
+         ((this_ptr->width + -1 != local_2c.right_max ||
+          (this_ptr->height + -1 != local_2c.bottom_max)))) goto LAB_0054b6da;
       ppvVar3 = (void **)shape_memdbg_cpp_debugAllocTracked2_FUN_0050f1f0
                           ((this_ptr->height + 1) * 4,"..\\cockpit\\pkbitmap.cpp",0x4c6);
       this_ptr->row_pointers = ppvVar3;

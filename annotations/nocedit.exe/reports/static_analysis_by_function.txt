@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 161
-  Total diagnostics: 445
+  Functions with findings: 158
+  Total diagnostics: 438
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 161, raw .cpp files: 0
+  .keep.cpp files: 158, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -303,16 +303,6 @@ shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10  [.keep] [Cppcheck (
   Line   46: [legacyUninitvar] Uninitialized variable: local_30
   Line   47: [uninitvar] Uninitialized variable: fStack_2c
   Line   48: [uninitvar] Uninitialized variable: fStack_28
-
-----------------------------------------------------------------------------------------------------
-sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0  [.keep] [Cppcheck (quick)]
-  File: sound/mp3.cpp  (5 diagnostics)
-
-  Line  189: [selfAssignment] Redundant assignment of 'iVar5' to itself.
-  Line  646: [legacyUninitvar] Uninitialized variable: is_pos_tan[local_f8]
-  Line  651: [legacyUninitvar] Uninitialized variable: is_ratio_l[local_f8]
-  Line  652: [legacyUninitvar] Uninitialized variable: is_ratio_r[local_f8]
-  Line  687: [selfAssignment] Redundant assignment of 'pfVar11' to itself.
 
 ----------------------------------------------------------------------------------------------------
 core_box.cpp_CBox_processPhysics_FUN_0041e350  [.keep] [Cppcheck (quick)]
@@ -891,12 +881,6 @@ cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70  [.keep] [Cppcheck (q
   Line   59: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210  [.keep] [Cppcheck (quick)]
-  File: core/actor.cpp  (1 diagnostics)
-
-  Line   65: [uninitvar] Uninitialized variable: is_raycast
-
-----------------------------------------------------------------------------------------------------
 core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280  [.keep] [Cppcheck (quick)]
   File: core/bodypart.cpp  (1 diagnostics)
 
@@ -1261,9 +1245,3 @@ sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0  [.keep] [Cppcheck (quick)]
   File: sound/sndmain.cpp  (1 diagnostics)
 
   Line   78: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-
-----------------------------------------------------------------------------------------------------
-sound_sndmain.cpp_testSoundFile_FUN_005ad3b0  [.keep] [Cppcheck (quick)]
-  File: sound/sndmain.cpp  (1 diagnostics)
-
-  Line   30: [uninitvar] Uninitialized variable: local_60

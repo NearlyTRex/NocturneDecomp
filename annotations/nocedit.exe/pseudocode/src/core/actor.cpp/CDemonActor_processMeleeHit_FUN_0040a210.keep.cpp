@@ -50,6 +50,7 @@ int __cdecl core_actor_cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor 
 
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
             (this_ptr,"..\\core\\actor.cpp",0x5ea);
+  is_raycast = (hit_type == 1);
 
   // Compute the world-space hit position at the top of this actor's bounding box.
   // local_d4 = (0, 0, bbox.max.z) in local coords; localToWorldPoint outputs the

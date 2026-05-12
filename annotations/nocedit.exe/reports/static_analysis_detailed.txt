@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (445 diagnostics)
+Cppcheck (quick) (438 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -429,7 +429,7 @@ shiftTooManyBitsSigned (104)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (75)
+selfAssignment (73)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 116
@@ -724,21 +724,9 @@ selfAssignment (75)
     File: sound/mp3.cpp
     Redundant assignment of 'pafVar3' to itself.
 
-  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 line 189
-    File: sound/mp3.cpp
-    Redundant assignment of 'iVar5' to itself.
-
-  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 line 687
-    File: sound/mp3.cpp
-    Redundant assignment of 'pfVar11' to itself.
-
 ----------------------------------------------------------------------------------------------------
-uninitvar (75)
+uninitvar (73)
 ----------------------------------------------------------------------------------------------------
-
-  core_actor.cpp_CDemonActor_processMeleeHit_FUN_004 line 65
-    File: core/actor.cpp
-    Uninitialized variable: is_raycast
 
   core_boneguy.cpp_hsvToRgb_FUN_0041ba10             line 39
     File: core/boneguy.cpp
@@ -1032,10 +1020,6 @@ uninitvar (75)
     File: shape/superopt.cpp
     Uninitialized variable: local_288
 
-  sound_sndmain.cpp_testSoundFile_FUN_005ad3b0       line 30
-    File: sound/sndmain.cpp
-    Uninitialized variable: local_60
-
 ----------------------------------------------------------------------------------------------------
 invalidscanf (59)
 ----------------------------------------------------------------------------------------------------
@@ -1277,7 +1261,7 @@ invalidscanf (59)
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-legacyUninitvar (45)
+legacyUninitvar (42)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 59
@@ -1447,18 +1431,6 @@ legacyUninitvar (45)
   shape_design.c_loadModelBinary_FUN_00458170        line 69
     File: shape/design.c
     Uninitialized variable: local_64
-
-  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 line 651
-    File: sound/mp3.cpp
-    Uninitialized variable: is_ratio_l[local_f8]
-
-  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 line 652
-    File: sound/mp3.cpp
-    Uninitialized variable: is_ratio_r[local_f8]
-
-  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 line 646
-    File: sound/mp3.cpp
-    Uninitialized variable: is_pos_tan[local_f8]
 
 ----------------------------------------------------------------------------------------------------
 identicalInnerCondition (24)

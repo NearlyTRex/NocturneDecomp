@@ -12,11 +12,11 @@ SUSPECT TYPE COUNTS
   shadow_pointer_walk              131 (  3.4%)
   unrolled_memset                   90 (  2.3%)
   unrolled_strlen                   83 (  2.1%)
-  static_uninitvar                  75 (  1.9%)
+  static_uninitvar                  73 (  1.9%)
   warning_inlined_function          63 (  1.6%)
-  static_legacy_uninitvar           45 (  1.2%)
   bitcast_double_pair               44 (  1.1%)
   unrolled_strchr                   43 (  1.1%)
+  static_legacy_uninitvar           42 (  1.1%)
   warning_type_propagation          27 (  0.7%)
   stack_alignment_array             26 (  0.7%)
   decompiler_intrinsic              25 (  0.6%)
@@ -1221,14 +1221,13 @@ Functions:
   shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90
 
 ====================================================================================================
-TYPE: static_uninitvar (75 occurrences)
+TYPE: static_uninitvar (73 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    75x  Cppcheck: uninitialized variable
+    73x  Cppcheck: uninitialized variable
 
 Functions:
-  core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210
   core_boneguy.cpp_hsvToRgb_FUN_0041ba10
   core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420
   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
@@ -1254,7 +1253,6 @@ Functions:
   shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0
   shape_superopt.cpp_CObj_transform_FUN_005d2c40
   shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0
-  sound_sndmain.cpp_testSoundFile_FUN_005ad3b0
 
 ====================================================================================================
 TYPE: warning_inlined_function (63 occurrences)
@@ -1328,27 +1326,6 @@ Functions:
   shape_quantize.cpp_displayProgressBar_FUN_005568f0
 
 ====================================================================================================
-TYPE: static_legacy_uninitvar (45 occurrences)
-====================================================================================================
-
-Unique patterns:
-    45x  Cppcheck: uninitialized variable (legacy detector)
-
-Functions:
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690
-  core_box.cpp_CBox_processPhysics_FUN_0041e350
-  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
-  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
-  core_mission.cpp_CDemonMission_loadActor_FUN_00523990
-  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-  core_sound.cpp_updateListeners_FUN_005b1870
-  core_vampboss.cpp_CVampireBoss_process_FUN_005e5970
-  engine_2d.c_findBestPaletteMatch_FUN_00401460
-  shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10
-  shape_design.c_loadModelBinary_FUN_00458170
-  sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0
-
-====================================================================================================
 TYPE: bitcast_double_pair (44 occurrences)
 ====================================================================================================
 
@@ -1394,6 +1371,26 @@ Functions:
   shape_design.c_tileTextureMaps_FUN_0046a180
   shape_design.c_validateModelTextures_FUN_00459a20
   shape_quantize.cpp_displayProgressBar_FUN_005568f0
+
+====================================================================================================
+TYPE: static_legacy_uninitvar (42 occurrences)
+====================================================================================================
+
+Unique patterns:
+    42x  Cppcheck: uninitialized variable (legacy detector)
+
+Functions:
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690
+  core_box.cpp_CBox_processPhysics_FUN_0041e350
+  core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
+  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
+  core_mission.cpp_CDemonMission_loadActor_FUN_00523990
+  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
+  core_sound.cpp_updateListeners_FUN_005b1870
+  core_vampboss.cpp_CVampireBoss_process_FUN_005e5970
+  engine_2d.c_findBestPaletteMatch_FUN_00401460
+  shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10
+  shape_design.c_loadModelBinary_FUN_00458170
 
 ====================================================================================================
 TYPE: warning_type_propagation (27 occurrences)

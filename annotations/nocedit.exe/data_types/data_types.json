@@ -4269,6 +4269,10 @@
       "type":"struct"
     },
     {
+      "name":"SPBMFileHeader",
+      "type":"struct"
+    },
+    {
       "name":"SPECIAL_CONSOLE_INPUT_HANDLER_FUNC",
       "type":"function_definition"
     },
@@ -59098,6 +59102,60 @@
       "importable":true,
       "len":240,
       "name":"SPartInstanceData",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"magic",
+          "offset":0,
+          "type":"char[4]"
+        },
+        {
+          "len":4,
+          "name":"width",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"height",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"reserved1",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"reserved2",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"right_max",
+          "offset":20,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"bottom_max",
+          "offset":24,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":28,
+      "name":"SPBMFileHeader",
       "pack":false,
       "type":"struct"
     },

@@ -15,19 +15,18 @@ char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name)
   int iVar3;
   char *pcVar5;
   double dVar6;
-  char local_170 [272];
-  int local_60;
+  CSfxSample local_170;
   float local_18;
 
-  sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)local_170);
-  strcpy(local_170,sample_name);
-  iVar2 = sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0((CSfxSample *)local_170);
+  sound_sndmain_cpp_CSfxSample_init_FUN_005a8480(&local_170);
+  strcpy(local_170.sample_info.name, sample_name);
+  iVar2 = sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(&local_170);
   if (iVar2 == 0) {
     _sprintf
               (g_SoundTestErrorBuffer,"Can't get sample info for %s",sample_name);
     pcVar5 = g_SoundTestErrorBuffer;
   }
-  else if (local_60 < 1) {
+  else if (local_170.sample_info.sample_count < 1) {
     _sprintf
               (g_SoundTestErrorBuffer,"Sample %s has unknown or invalid length",sample_name);
     pcVar5 = g_SoundTestErrorBuffer;

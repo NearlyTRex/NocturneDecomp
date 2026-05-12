@@ -146,6 +146,7 @@
 #include "types/structs/SNetPacket_Simple.h"
 #include "types/structs/SNetPlayer.h"
 #include "types/structs/SNetworkAddr.h"
+#include "types/structs/SPBMFileHeader.h"
 #include "types/structs/SPaletteEntry.h"
 #include "types/structs/SPanel.h"
 #include "types/structs/SPart.h"
