@@ -46,10 +46,8 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
   fVar3 = (float)18;
   fVar2 = (this_ptr->base).max_distance;
   fVar8 = (fVar3 / fVar1) * fVar2;
-  iVar9 = 0;
   fVar4 = (this_ptr->base).max_distance;
-  iVar5 = 0;
-  do {
+  for (iVar9 = 0; iVar9 < 0x10; iVar9 = iVar9 + 1) {
     fVar10 = (float10)iVar9 * (float10)6.2831853070000001 * (float10)0.0625;
     fVar11 = (float10)fcos(fVar10);
     fVar7 = (float10)fsin(fVar10);
@@ -58,14 +56,10 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
     local_64.y = (int)ROUND((float)(fVar7 * fVar12) * 256.0f);
     local_64.z = (int)ROUND(fVar4 * 256.0f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              ((SProjectedVertex *)
-               ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
-               iVar5),&local_64);
+              (&g_CDemonRendererPtr2->vertex_buffer_ptr[iVar9].projected_vertex,&local_64);
     pCVar4 = g_CDemonRendererPtr2;
-    iVar9 = iVar9 + 1;
-    *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->r + iVar5) = 0;
-    iVar5 = iVar5 + 0x30;
-  } while (iVar9 < 0x10);
+    g_CDemonRendererPtr2->vertex_buffer_ptr[iVar9].r = 0;
+  }
   local_7c.x = (int)ROUND(CVector3f_026a72d8.x * 256.0f);
   local_7c.y = (int)ROUND(CVector3f_026a72d8.y * 256.0f);
   local_7c.z = (int)ROUND(CVector3f_026a72d8.z * 256.0f);
@@ -82,11 +76,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
   local_34[0].z = pfVar5[2] - (this_ptr->base).base.position.f.z;
   pCVar6 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                      (&(this_ptr->base).base.rotation_matrix,&local_70,local_34);
-  if (local_34 != pCVar6) {
-    local_34[0].x = pCVar6->x;
-    local_34[0].y = pCVar6->y;
-    local_34[0].z = pCVar6->z;
-  }
+  local_34[0] = *pCVar6;
   local_34[0].x = (this_ptr->base).base.focal_length * (float)0.055555555555555601 * local_34[0].x;
   local_34[0].y = (float)0.055555555555555601 * (this_ptr->base).base.focal_length * local_34[0].y;
   if ((((local_34[0].x < local_34[0].z) && (-local_34[0].z < local_34[0].x)) &&

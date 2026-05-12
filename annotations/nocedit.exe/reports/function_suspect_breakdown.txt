@@ -4,9 +4,9 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 5689 functions
-  1 suspects: 130 functions
-  2 suspects: 191 functions
+  0 suspects: 5698 functions
+  1 suspects: 129 functions
+  2 suspects: 183 functions
   3 suspects: 106 functions
   4 suspects: 82 functions
   5 suspects: 48 functions
@@ -41,7 +41,7 @@ SUSPECT COUNT DISTRIBUTION
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [unrolled_memcpy] (58 functions)
+  [unrolled_memcpy] (57 functions)
   ------------------------------------------------------------
     core_fire.cpp_CExplosion_activate_FUN_004c3970     ( 50 lines)
       (this_ptr->position).x = position->x;...
@@ -141,8 +141,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       (pCVar11->position).x = pCVar8->x;...
     core_gabriela.cpp_CGabriella_processAI_FUN_004d419 (206 lines)
       CStack_48.x = CStack_a8.x;...
-    core_dlight.cpp_CDemonLight_renderExternalVolumetr (217 lines)
-      local_138.x = pCVar3->x;...
     core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FU (240 lines)
       g_PVSCubePositions[iVar7].x = local_4c.x;...
     core_trigger.cpp_CTrigger_renderTransparent_FUN_00 (241 lines)
@@ -343,8 +341,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/ghoul.cpp, Lines: 17, Types: ['missing_cave_copy']
   core_fire.cpp_CLightningBolt_activateDirectional_FUN_004c568
     File: core/fire.cpp, Lines: 18, Types: ['unrolled_memcpy']
-  core_boxactor.cpp_CLightActor_ctor_FUN_00422990
-    File: core/boxactor.cpp, Lines: 18, Types: ['unrolled_memset']
   core_dcube.cpp_CDemonCube_setBounds_FUN_00456a90
     File: core/dcube.cpp, Lines: 19, Types: ['unrolled_memcpy']
   core_xform.cpp_buildXFlipMatrix_FUN_005f6ee0
@@ -403,8 +399,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/dtrace.cpp, Lines: 27, Types: ['stack_alignment_array', 'warning_inlined_function']
   core_setedit.cpp_blitThumbnailToScreen8_FUN_00577120
     File: core/setedit.cpp, Lines: 28, Types: ['pointer_cast']
-  core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_00
-    File: core/boxactor.cpp, Lines: 28, Types: ['unrolled_memcpy']
   core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
     File: core/path.cpp, Lines: 28, Types: ['unrolled_memcpy']
   shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40
@@ -427,8 +421,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/mirror.cpp, Lines: 31, Types: ['stack_alignment_array', 'unrolled_memcpy']
   core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_00572340
     File: core/setcolid.cpp, Lines: 32, Types: ['unrolled_memcpy']
-  core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_00422590
-    File: core/boxactor.cpp, Lines: 32, Types: ['unrolled_memcpy']
   engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant
     File: engine/drender.cpp, Lines: 33, Types: ['pointer_cast', 'shadow_pointer_walk']
   shape_quantize.cpp_displayProgressBar_FUN_005568f0
@@ -567,8 +559,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/set.cpp, Lines: 71, Types: ['unrolled_memcpy']
   core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0056cd60
     File: core/set.cpp, Lines: 72, Types: ['unrolled_memcpy']
-  core_boxactor.cpp_CLightActor_process_FUN_00422a50
-    File: core/boxactor.cpp, Lines: 72, Types: ['missing_cave_copy']
   shape_meshlod.cpp_crc32UpdateVector3f_FUN_0051c600
     File: shape/meshlod.cpp, Lines: 72, Types: ['pointer_cast']
   shape_design.c_createCenterVertex_FUN_00469690
@@ -583,8 +573,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/platfrm.cpp, Lines: 76, Types: ['unrolled_memcpy']
   shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90
     File: shape/design.c, Lines: 77, Types: ['unrolled_strlen']
-  core_boxactor.cpp_CLightActor_setupLightModel_FUN_00422d60
-    File: core/boxactor.cpp, Lines: 82, Types: ['unrolled_memset']
   core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_004270f0
     File: core/bugs.cpp, Lines: 83, Types: ['pointer_cast', 'stack_alignment_array']
   core_skeledit.cpp_CDeformableModel_cramModelTexture_FUN_0058
@@ -653,8 +641,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/course.cpp, Lines: 131, Types: ['pointer_cast', 'unrolled_memcpy']
   engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a
     File: engine/fileio.cpp, Lines: 135, Types: ['unrolled_strcpy']
-  core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c
-    File: core/dlight.cpp, Lines: 137, Types: ['pointer_cast', 'unrolled_memcpy']
   core_script.cpp_CScript_findText_FUN_00566cc0
     File: core/script.cpp, Lines: 139, Types: ['unrolled_strlen']
   core_setedit.cpp_loadCameraThumbnail_FUN_005769a0
@@ -683,10 +669,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/meshlod.cpp, Lines: 163, Types: ['pointer_cast']
   core_script.cpp_CScript_browseEventXRefs_FUN_005677a0
     File: core/script.cpp, Lines: 172, Types: ['unrolled_strcpy']
-  core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0
-    File: core/dlight.cpp, Lines: 185, Types: ['unrolled_memcpy']
-  core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473
-    File: core/dlight.cpp, Lines: 191, Types: ['unrolled_memcpy']
   engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
     File: engine/fileio.cpp, Lines: 193, Types: ['unrolled_strcpy']
   core_door.cpp_CDoor_process_FUN_004800c0

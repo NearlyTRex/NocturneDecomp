@@ -47,11 +47,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
     local_74.z = local_74.z - (this_ptr->base).base.position.f.z;
     pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                        (&(this_ptr->base).base.rotation_matrix,&local_b0,&local_74);
-    if (&local_74 != pCVar3) {
-      local_74.x = pCVar3->x;
-      local_74.y = pCVar3->y;
-      local_74.z = pCVar3->z;
-    }
+    local_74 = *pCVar3;
     if (local_74.z <= (this_ptr->base).max_distance) {
       fVar3 = ((local_74.z * (float)18) / (this_ptr->base).base.focal_length) *
               (float)2;
@@ -94,11 +90,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
                            (this_ptr->base).base.rotation_matrix.m[1].z * fVar3;
               local_68.z = (this_ptr->base).base.position.f.z +
                            (this_ptr->base).base.rotation_matrix.m[2].z * fVar3;
-              if (&local_e0 != &local_68) {
-                local_e0.x = local_68.x;
-                local_e0.y = local_68.y;
-                local_e0.z = local_68.z;
-              }
+              local_e0 = local_68;
               engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                         (g_CDemonRendererPtr2,&local_e0);
               engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800

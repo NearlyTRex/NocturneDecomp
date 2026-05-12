@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 5696 (88.3%)
-Files at 100%: 140
-Files at 90%+: 140
+Clean functions: 5705 (88.4%)
+Files at 100%: 142
+Files at 90%+: 142
 Files at 50%+: 214
 
 ====================================================================================================
@@ -32,6 +32,7 @@ FILES AT 100% (COMPLETE)
   core/battery.cpp: 17 functions, 155 lines
   core/beast.cpp: 14 functions, 164 lines
   core/biggs.cpp: 14 functions, 366 lines
+  core/boxactor.cpp: 46 functions, 1100 lines
   core/bride.cpp: 14 functions, 771 lines
   core/camview.cpp: 6 functions, 38 lines
   core/colonel.cpp: 18 functions, 614 lines
@@ -44,6 +45,7 @@ FILES AT 100% (COMPLETE)
   core/dglobe.cpp: 6 functions, 237 lines
   core/dimage.cpp: 6 functions, 131 lines
   core/dirmat.cpp: 7 functions, 336 lines
+  core/dlight.cpp: 34 functions, 2233 lines
   core/dog.cpp: 13 functions, 455 lines
   core/drip.cpp: 17 functions, 414 lines
   core/drone.cpp: 13 functions, 472 lines
@@ -155,7 +157,7 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 140 files
+Total: 142 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
@@ -165,13 +167,6 @@ Total: 0 files
 ====================================================================================================
 FILES AT 50-89%
 ====================================================================================================
-   89.1% | core/boxactor.cpp
-         41/46 clean, 5 remaining
-           - core_boxactor.cpp_CLightActor_setupLightModel_FUN_00422d60 (82 lines) [unrolled_memset]
-           - core_boxactor.cpp_CLightActor_process_FUN_00422a50 (72 lines) [missing_cave_copy]
-           - core_boxactor.cpp_CLightActor_ctor_FUN_00422990 (18 lines) [unrolled_memset]
-           - core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_00422590 (32 lines) [unrolled_memcpy]
-           - core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_00422640 (28 lines) [unrolled_memcpy]
    89.0% | core/charactr.cpp
          97/109 clean, 12 remaining
            - core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 (216 lines) [unrolled_memcpy]
@@ -186,12 +181,6 @@ FILES AT 50-89%
            - core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70 (107 lines) [unrolled_memcpy]
            - core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042a520 (124 lines) [unrolled_memcpy]
            - core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090 (107 lines) [unrolled_memcpy]
-   88.2% | core/dlight.cpp
-         30/34 clean, 4 remaining
-           - core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0 (185 lines) [unrolled_memcpy]
-           - core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0 (217 lines) [unrolled_memcpy]
-           - core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90 (191 lines) [unrolled_memcpy]
-           - core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0 (137 lines) [pointer_cast, unrolled_memcpy]
    87.5% | core/event.cpp
          49/56 clean, 7 remaining
            - core_event.cpp_resolveActorByName_FUN_004aa400 (58 lines) [unrolled_strcpy]
@@ -1072,7 +1061,7 @@ FILES AT 50-89%
            - core_setedit.cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0 (211 lines) [pointer_cast]
            - core_setedit.cpp_CDemonSet_cloneLight_FUN_0057b600 (136 lines) [shadow_pointer_walk, unrolled_memcpy]
 
-Total: 74 files
+Total: 72 files
 
 ====================================================================================================
 FILES BELOW 50%

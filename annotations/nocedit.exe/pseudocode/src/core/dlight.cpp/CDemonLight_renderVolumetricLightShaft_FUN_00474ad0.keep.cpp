@@ -45,11 +45,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
     local_8c.z = local_8c.z - (this_ptr->base).base.position.f.z;
     pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                        (&(this_ptr->base).base.rotation_matrix,&local_68,&local_8c);
-    if (&local_8c != pCVar3) {
-      local_8c.x = pCVar3->x;
-      local_8c.y = pCVar3->y;
-      local_8c.z = pCVar3->z;
-    }
+    local_8c = *pCVar3;
     fVar3 = ((local_8c.z * (float)18) / (this_ptr->base).base.focal_length) *
             (float)2;
     fVar8 = local_8c.x * local_8c.x + local_8c.y * local_8c.y;
@@ -83,9 +79,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
                          (this_ptr->base).base.rotation_matrix.m[1].z * fVar8;
             local_a4.z = (this_ptr->base).base.position.f.z +
                          (this_ptr->base).base.rotation_matrix.m[2].z * fVar8;
-            local_e0.x = local_a4.x;
-            local_e0.y = local_a4.y;
-            local_e0.z = local_a4.z;
+            local_e0 = local_a4;
             engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                       (g_CDemonRendererPtr2,&local_e0);
             engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800

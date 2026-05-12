@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 5696 (88.3%)
-Functions with suspects: 758 (11.7%)
+Clean functions: 5705 (88.4%)
+Functions with suspects: 749 (11.6%)
 
-Total suspect patterns: 3902
+Total suspect patterns: 3885
 Average suspects per function: 0.60
 
-Virtual files: 214 total, 140 at 100%, 140 at 90%+
+Virtual files: 214 total, 142 at 100%, 142 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
 
-Average complexity score: 54.6
+Average complexity score: 54.5
 
 COMPILATION STATUS
 ----------------------------------------
@@ -28,13 +28,13 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              1511
-  unrolled_memcpy           968
+  pointer_cast              1510
+  unrolled_memcpy           958
   unrolled_strcpy           303
-  missing_cave_copy         175
+  missing_cave_copy         173
   raw_address_constant      141
   shadow_pointer_walk       131
-  unrolled_memset           94
+  unrolled_memset           90
   unrolled_strlen           83
   static_uninitvar          75
   warning_inlined_function  63
@@ -112,7 +112,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 5646 more
+  ... and 5655 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -150,7 +150,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (364 functions):
+  pointer_cast (363 functions):
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     00550230: engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230
@@ -161,9 +161,9 @@ FUNCTIONS BY SUSPECT TYPE
     00403430: engine_2d.c_mapFrameBuffer_FUN_00403430
     00401900: engine_2d.c_drawCharacterMasked_FUN_00401900
     00401140: engine_2d.c_plotPixel_FUN_00401140
-    ... and 354 more
+    ... and 353 more
 
-  unrolled_memcpy (344 functions):
+  unrolled_memcpy (338 functions):
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     0054f650: engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
@@ -174,7 +174,7 @@ FUNCTIONS BY SUSPECT TYPE
     00407470: engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470
     00408070: engine_3d.c_clipAndDrawLine3D_FUN_00408070
     0048dcc0: engine_drender.cpp_CDemonRenderer_setupCameraAndViewport_FUN_0048dcc0
-    ... and 334 more
+    ... and 328 more
 
   unrolled_strcpy (123 functions):
     00550ce0: engine_pod.cpp_findFilesByExtension_FUN_00550ce0
@@ -189,7 +189,7 @@ FUNCTIONS BY SUSPECT TYPE
     004ba740: engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
     ... and 113 more
 
-  missing_cave_copy (26 functions):
+  missing_cave_copy (25 functions):
     004f80b0: core_icepick.cpp_CIcePick_process_FUN_004f80b0
     00558fd0: core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0
     005571f0: core_scat.cpp_CScat_process_FUN_005571f0
@@ -200,7 +200,7 @@ FUNCTIONS BY SUSPECT TYPE
     0058ac80: core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80
     00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
     005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-    ... and 16 more
+    ... and 15 more
 
   raw_address_constant (32 functions):
     00406860: engine_3d.c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860
@@ -228,7 +228,7 @@ FUNCTIONS BY SUSPECT TYPE
     00404020: engine_3d.c_renderOverlayTextureEnable_FUN_00404020
     ... and 76 more
 
-  unrolled_memset (34 functions):
+  unrolled_memset (32 functions):
     00439710: core_cloth.cpp_CCloth_setup_FUN_00439710
     0043c430: core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430
     005f9470: core_zombie.cpp_CZombie_process_FUN_005f9470
@@ -239,7 +239,7 @@ FUNCTIONS BY SUSPECT TYPE
     00508920: core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920
     0050a610: core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_0050a610
     00525840: core_mobster.cpp_CMobster_process_FUN_00525840
-    ... and 24 more
+    ... and 22 more
 
   unrolled_strlen (37 functions):
     00550ce0: engine_pod.cpp_findFilesByExtension_FUN_00550ce0

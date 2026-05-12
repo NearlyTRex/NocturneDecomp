@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5660 (87.7%)
-With suspects: 794
-Total suspects: 3902
+Clean: 5669 (87.8%)
+With suspects: 785
+Total suspects: 3885
 
 ====================================================================================================
 cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690 (6 suspects)
@@ -284,41 +284,6 @@ core_box.cpp_CBox_updateTransform_FUN_0041e0e0 (9 suspects)
   Line 64 [unrolled_memset]: (this_ptr->linear_velocity_temp).z = 0.0;
   Line 67 [unrolled_memset]: (this_ptr->angular_velocity_temp).z = 0.0;
   Line 70 [unrolled_memset]: (this_ptr->linear_velocity).z = 0.0;
-
-====================================================================================================
-core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_00422590 (2 suspects)
-  File: core/boxactor.cpp
-====================================================================================================
-  Line 25 [unrolled_memcpy]: local_1c.x = pCVar1->x;
-  Line 31 [unrolled_memcpy]: (this_ptr->base).location.position.x = pCVar2->x;
-
-====================================================================================================
-core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_00422640 (2 suspects)
-  File: core/boxactor.cpp
-====================================================================================================
-  Line 8 [unrolled_memcpy]: (this_ptr->base).location.position.x = new_position->x;
-  Line 19 [unrolled_memcpy]: (this_ptr->physics_box).position.x = new_position->x;
-
-====================================================================================================
-core_boxactor.cpp_CLightActor_ctor_FUN_00422990 (2 suspects)
-  File: core/boxactor.cpp
-====================================================================================================
-  Line 12 [unrolled_memset]: (ADJ(pCVar2)->blight_pos).z = 0.0;
-  Line 15 [unrolled_memset]: (ADJ(pCVar2)->light_orient).vec.z = 0.0;
-
-====================================================================================================
-core_boxactor.cpp_CLightActor_process_FUN_00422a50 (2 suspects)
-  File: core/boxactor.cpp
-====================================================================================================
-  Line 13 [missing_cave_copy]: CMatrix3x4f local_e4;
-  Line 15 [missing_cave_copy]: CMatrix3x4f local_84;
-
-====================================================================================================
-core_boxactor.cpp_CLightActor_setupLightModel_FUN_00422d60 (2 suspects)
-  File: core/boxactor.cpp
-====================================================================================================
-  Line 41 [unrolled_memset]: (this_ptr->light_orient).vec.z = 0.0;
-  Line 59 [unrolled_memset]: (this_ptr->light_orient).vec.z = 0.0;
 
 ====================================================================================================
 core_bugs.cpp_CBugs_applySwarmTranslation_FUN_004276c0 (4 suspects)
@@ -1047,33 +1012,6 @@ core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730 (2 suspects)
 ====================================================================================================
   Line 36 [pointer_cast]: *(char *)(iVar3 + (int)this_ptr->movie_data) =
   Line 37 [pointer_cast]: (char)((uint)((int)(uint)*(byte *)(iVar3 + (int)this_ptr->movie_data) >> 2) / 2);
-
-====================================================================================================
-core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0 (2 suspects)
-  File: core/dlight.cpp
-====================================================================================================
-  Line 65 [pointer_cast]: *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->r + iVar5) = 0;
-  Line 85 [unrolled_memcpy]: local_34[0].x = pCVar6->x;
-
-====================================================================================================
-core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0 (1 suspect)
-  File: core/dlight.cpp
-====================================================================================================
-  Line 102 [unrolled_memcpy]: local_138.x = pCVar3->x;
-
-====================================================================================================
-core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90 (2 suspects)
-  File: core/dlight.cpp
-====================================================================================================
-  Line 70 [unrolled_memcpy]: local_74.x = pCVar3->x;
-  Line 116 [unrolled_memcpy]: local_e0.x = local_68.x;
-
-====================================================================================================
-core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0 (2 suspects)
-  File: core/dlight.cpp
-====================================================================================================
-  Line 67 [unrolled_memcpy]: local_8c.x = pCVar3->x;
-  Line 105 [unrolled_memcpy]: local_e0.x = local_a4.x;
 
 ====================================================================================================
 core_dmodel.cpp_CKeyFramedModel_applyVertexBias_FUN_0047c2d0 (2 suspects)

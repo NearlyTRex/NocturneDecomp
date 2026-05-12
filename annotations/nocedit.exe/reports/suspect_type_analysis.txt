@@ -4,13 +4,13 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1511 ( 38.7%)
-  unrolled_memcpy                  968 ( 24.8%)
+  pointer_cast                    1510 ( 38.9%)
+  unrolled_memcpy                  958 ( 24.7%)
   unrolled_strcpy                  303 (  7.8%)
-  missing_cave_copy                175 (  4.5%)
+  missing_cave_copy                173 (  4.5%)
   raw_address_constant             141 (  3.6%)
   shadow_pointer_walk              131 (  3.4%)
-  unrolled_memset                   94 (  2.4%)
+  unrolled_memset                   90 (  2.3%)
   unrolled_strlen                   83 (  2.1%)
   static_uninitvar                  75 (  1.9%)
   warning_inlined_function          63 (  1.6%)
@@ -37,11 +37,11 @@ SUSPECT TYPE COUNTS
   static_null_pointer_arithmetic     1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (1511 occurrences)
+TYPE: pointer_cast (1510 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   473x  (int)&NAME used in byte-offset arithmetic
+   472x  (int)&NAME used in byte-offset arithmetic
     44x  (int *)((int)this_ptr
     36x  (uint *)((int)this_ptr
     34x  (int *)((int)g_ScreenBufferArray
@@ -99,7 +99,6 @@ Functions:
   core_dfilter.cpp_CDemonFilter_init_FUN_004705a0
   core_dfilter.cpp_CDemonFilter_load_FUN_004702f0
   core_dfilter.cpp_CFilterFX_openMovie_FUN_00470730
-  core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0
   core_dmodel.cpp_CKeyFramedModel_applyVertexBias_FUN_0047c2d0
   core_dmodel.cpp_CKeyFramedModel_exportToDSE_FUN_0047e810
   core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30
@@ -429,11 +428,11 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (968 occurrences)
+TYPE: unrolled_memcpy (958 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   759x  field-by-field struct copy
+   749x  field-by-field struct copy
    107x  for (...; != 0; ... + -1)
    100x  MOVSD.REP
      2x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
@@ -452,8 +451,6 @@ Functions:
   core_box.cpp_CBox_setupCorners_FUN_0041dd20
   core_box.cpp_CBox_setupVelocities_FUN_00420180
   core_box.cpp_CBox_updateTransform_FUN_0041e0e0
-  core_boxactor.cpp_CBoxActor_constrainToExtents_FUN_00422590
-  core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_00422640
   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00425fe0
   core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0
   core_bugs.cpp_CBugs_setup_FUN_00424e50
@@ -504,10 +501,6 @@ Functions:
   core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00454f00
   core_dcube.cpp_clipTriangleToAABB_FUN_00456400
   core_dcube.cpp_triangleCylinderCollision_FUN_00456040
-  core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0
-  core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0
-  core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90
-  core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0
   core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010
   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0
   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950
@@ -917,7 +910,7 @@ Functions:
   shape_superopt.cpp_COptimize_exportOptimizeGeometry_FUN_005d7e00
 
 ====================================================================================================
-TYPE: missing_cave_copy (175 occurrences)
+TYPE: missing_cave_copy (173 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -944,7 +937,6 @@ Unique patterns:
 
 Functions:
   core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a630
-  core_boxactor.cpp_CLightActor_process_FUN_00422a50
   core_course.cpp_CCourse_evaluate_FUN_00442710
   core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80
   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
@@ -1142,11 +1134,11 @@ Functions:
   shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70
 
 ====================================================================================================
-TYPE: unrolled_memset (94 occurrences)
+TYPE: unrolled_memset (90 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    94x  cascade_constant_fill
+    90x  cascade_constant_fill
 
 Functions:
   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90
@@ -1154,8 +1146,6 @@ Functions:
   core_box.cpp_CBox_ctor_FUN_0041dc50
   core_box.cpp_CBox_processPhysics_FUN_0041e350
   core_box.cpp_CBox_updateTransform_FUN_0041e0e0
-  core_boxactor.cpp_CLightActor_ctor_FUN_00422990
-  core_boxactor.cpp_CLightActor_setupLightModel_FUN_00422d60
   core_bugs.cpp_CBugs_setup_FUN_00424e50
   core_chain.cpp_CChain_constrainSegmentDistance_FUN_0042fed0
   core_chain.cpp_CChain_process_FUN_004300d0

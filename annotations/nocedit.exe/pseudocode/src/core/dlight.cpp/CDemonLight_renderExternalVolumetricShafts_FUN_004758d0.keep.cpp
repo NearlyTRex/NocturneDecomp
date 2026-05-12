@@ -68,11 +68,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0047
       local_138.z = local_138.z - (this_ptr->base).base.position.f.z;
       pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                          (this_ptr_01,&local_cc,&local_138);
-      if (&local_138 != pCVar3) {
-        local_138.x = pCVar3->x;
-        local_138.y = pCVar3->y;
-        local_138.z = pCVar3->z;
-      }
+      local_138 = *pCVar3;
       fVar3 = ((local_138.z * (float)18) / (this_ptr->base).base.focal_length) *
               (float)2;
       fVar2 = local_138.x * local_138.x + local_138.y * local_138.y;
