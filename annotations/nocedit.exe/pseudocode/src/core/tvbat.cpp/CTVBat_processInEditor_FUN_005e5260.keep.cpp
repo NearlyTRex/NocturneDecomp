@@ -18,9 +18,7 @@ void __cdecl core_tvbat_cpp_CTVBat_processInEditor_FUN_005e5260(CTVBat *this_ptr
   if (this_ptr->follow_orders == 0) {
     pCVar1 = &(this_ptr->base).base.base.location;
     if ((CLocation *)&this_ptr->home_pos != pCVar1) {
-      (this_ptr->home_pos).x = (pCVar1->position).x;
-      (this_ptr->home_pos).y = (this_ptr->base).base.base.location.position.y;
-      (this_ptr->home_pos).z = (this_ptr->base).base.base.location.position.z;
+      this_ptr->home_pos = pCVar1->position;
     }
   }
   this_ptr_00 = g_CKeysPtr;

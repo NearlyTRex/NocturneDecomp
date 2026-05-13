@@ -5,53 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5641 (87.4%)
-With suspects: 813
-Total suspects: 3912
-
-====================================================================================================
-core_ammobox.cpp_CAmmoBox_addToInventory_FUN_00411700 (1 suspect)
-  File: core/ammobox.cpp
-====================================================================================================
-  Line 43 [shadow_pointer_walk]: pCVar2 = (CAmmo *)((pCVar2->base).actor_name + 2);
-
-====================================================================================================
-core_baron.cpp_CBaron_attachToOwner_FUN_00413470 (1 suspect)
-  File: core/baron.cpp
-====================================================================================================
-  Line 48 [unrolled_memcpy]: (pUVar1->vec).x = (pCVar5->orient).vec.x;
-
-====================================================================================================
-core_batman.cpp_CBatman_process_FUN_00416870 (3 suspects)
-  File: core/batman.cpp
-====================================================================================================
-  Line 139 [unrolled_memcpy]: (this_ptr->new_pos).x = (pCVar12->position).x;
-  Line 350 [unrolled_memcpy]: (pCVar1->position).x = (this_ptr->new_pos).x;
-  Line 365 [unrolled_memcpy]: (pUVar1->vec).x = (pUVar11->vec).x;
-
-====================================================================================================
-core_bodypart.cpp_CBodyPart_process_FUN_00419be0 (5 suspects)
-  File: core/bodypart.cpp
-====================================================================================================
-  Line 25 [unrolled_memcpy]: pCVar3->x = g_ZeroVector.f.x;
-  Line 30 [unrolled_memcpy]: (this_ptr->bounding_box).min.x = pCVar3->x;
-  Line 31 [unrolled_memcpy]: pCVar3->x = g_ZeroVector.f.x;
-  Line 54 [unrolled_memcpy]: (pCVar1->position).x = (this_ptr->physics_box).position.x;
-  Line 60 [unrolled_memcpy]: (pUVar2->vec).x = pCVar2->x;
-
-====================================================================================================
-core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_0041b070 (2 suspects)
-  File: core/bodypart.cpp
-====================================================================================================
-  Line 35 [unrolled_memcpy]: pCVar1->x = g_ZeroVector.f.x;
-  Line 42 [unrolled_memcpy]: (this_ptr->bounding_box).min.x = pCVar1->x;
-
-====================================================================================================
-core_box.cpp_CBoundingBox3D_computeFromPoints_FUN_00420dc0 (2 suspects)
-  File: core/box.cpp
-====================================================================================================
-  Line 10 [unrolled_memcpy]: pCVar1->x = points->x;
-  Line 15 [unrolled_memcpy]: (this_ptr->min).x = pCVar1->x;
+Clean: 5679 (88.0%)
+With suspects: 775
+Total suspects: 3834
 
 ====================================================================================================
 core_boxactor.cpp_CBoxActor_process_FUN_004219e0 (1 suspect)
@@ -100,15 +56,6 @@ core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_00425340 (2 suspects)
 ====================================================================================================
   Line 40 [shadow_pointer_walk]: pCVar5 = (CBugs *)((pCVar5->base).base.base.actor_name + 4);
   Line 45 [shadow_pointer_walk]: local_2c = (CBugs *)&(local_2c->base).base.base.orient;
-
-====================================================================================================
-core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0 (4 suspects)
-  File: core/bugs.cpp
-====================================================================================================
-  Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 13 [stack_param]: int in_stack_00000008;
-  Line 41 [unrolled_memcpy]: CStack_2c.x = CStack_20.x;
-  Line 54 [stack_param]: } while (iVar3 < *(int *)(in_stack_00000008 + 0xbec0));
 
 ====================================================================================================
 core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400 (8 suspects)
@@ -265,18 +212,6 @@ core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 (6 suspects)
   Line 185 [unrolled_memcpy]: CStack_d4.x = pCVar5->x;
 
 ====================================================================================================
-core_charactr.cpp_CCharacter_getPropertyList_FUN_0042f730 (1 suspect)
-  File: core/charactr.cpp
-====================================================================================================
-  Line 19 [shadow_pointer_walk]: pCVar2 = (CCharacter *)&(pCVar2->base).orient_matrix.m[0].z;
-
-====================================================================================================
-core_charactr.cpp_CCharacter_isCarryingAnything_FUN_0042d360 (1 suspect)
-  File: core/charactr.cpp
-====================================================================================================
-  Line 17 [shadow_pointer_walk]: this_ptr = (CCharacter *)&(this_ptr->base).orient_matrix.m[0].z;
-
-====================================================================================================
 core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40 (6 suspects)
   File: core/charactr.cpp
 ====================================================================================================
@@ -306,12 +241,6 @@ core_charactr.cpp_CCharacter_processFire_FUN_0042a830 (1 suspect)
   File: core/charactr.cpp
 ====================================================================================================
   Line 136 [unrolled_memcpy]: (pCVar11->position).x = pCVar8->x;
-
-====================================================================================================
-core_charactr.cpp_CCharacter_processInEditor_FUN_0042f800 (1 suspect)
-  File: core/charactr.cpp
-====================================================================================================
-  Line 18 [shadow_pointer_walk]: pCVar2 = (CCharacter *)&(pCVar2->base).orient_matrix.m[0].z;
 
 ====================================================================================================
 core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70 (2 suspects)
@@ -617,20 +546,6 @@ core_course.cpp_renderCourseGizmo_FUN_00443760 (2 suspects)
   Line 127 [pointer_cast]: (*(char **)((int)g_CourseAxisLabels + iVar6),
 
 ====================================================================================================
-core_crate.cpp_CCrate_explode_FUN_00448a70 (1 suspect)
-  File: core/crate.cpp
-====================================================================================================
-  Line 16 [unrolled_memcpy]: CStack_10.x = (pCVar1->position).x;
-
-====================================================================================================
-core_crate.cpp_CCrate_process_FUN_00448660 (3 suspects)
-  File: core/crate.cpp
-====================================================================================================
-  Line 55 [unrolled_memcpy]: (this_ptr->cached_position).x = (pCVar2->position).x;
-  Line 61 [unrolled_memcpy]: (this_ptr->cached_orientation).vec.x = (pUVar3->vec).x;
-  Line 74 [unrolled_memcpy]: (this_ptr->base).location.position.x = (pCVar6->base).location.position.x;
-
-====================================================================================================
 core_curtain.cpp_CCurtain_ctor_FUN_004496a0 (2 suspects)
   File: core/curtain.cpp
 ====================================================================================================
@@ -697,12 +612,6 @@ core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180 (8 suspects)
   Line 23 [decompiler_intrinsic]: g_RelativeZ = (int)ROUND(ROUND(((this_ptr->base).position.f.z - position->z) * fVar2));
   Line 29 [decompiler_intrinsic]: corner_input.x = (int)ROUND(bbox_max->x * 256.0f);
   Line 30 [decompiler_intrinsic]: corner_input.y = (int)ROUND(bbox_min->y * 256.0f);
-
-====================================================================================================
-core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_0044ef30 (1 suspect)
-  File: core/dcamera.cpp
-====================================================================================================
-  Line 20 [unrolled_memcpy]: (this_ptr->transform_state).saved_camera_origin.x = (this_ptr->camera_origin).x;
 
 ====================================================================================================
 core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0 (6 suspects)
@@ -1290,12 +1199,6 @@ core_dpart.cpp_CDemonPart_processAndFinalize_FUN_00482e40 (17 suspects)
   Line 64 [pointer_cast]: *(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar1) = 0xffffffff;
 
 ====================================================================================================
-core_dracbrid.cpp_CDraculaBride_ctor_FUN_00483fc0 (1 suspect)
-  File: core/dracbrid.cpp
-====================================================================================================
-  Line 32 [shadow_pointer_walk]: pCVar5 = (CDraculaBride *)((pCVar4->base).base.base.actor_name + 4);
-
-====================================================================================================
 core_dracbrid.cpp_CDraculaBride_getTargetPoints_FUN_00486360 (3 suspects)
   File: core/dracbrid.cpp
 ====================================================================================================
@@ -1328,12 +1231,6 @@ core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_004869a0 (2 suspects)
 ====================================================================================================
   Line 93 [unrolled_memcpy]: (local_20->position).x = pCVar5->x;
   Line 104 [unrolled_memcpy]: (local_20->tangent).x = pCVar5->x;
-
-====================================================================================================
-core_drip.cpp_CDrip_processInEditor_FUN_0048ea30 (1 suspect)
-  File: core/drip.cpp
-====================================================================================================
-  Line 9 [unrolled_memcpy]: (this_ptr->home_pos).x = (pCVar1->position).x;
 
 ====================================================================================================
 core_dstrender.cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00493dc4 (1 suspect)
@@ -1577,12 +1474,6 @@ core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0 (5 suspects)
   Line 65 [unrolled_memcpy]: local_58.x = local_70.x;
   Line 77 [unrolled_memcpy]: local_7c.x = local_4c.x;
   Line 81 [unrolled_memcpy]: local_4c.x = local_58.x;
-
-====================================================================================================
-core_elephant.cpp_CElephantGun_fire_FUN_004a7160 (1 suspect)
-  File: core/elephant.cpp
-====================================================================================================
-  Line 205 [shadow_pointer_walk]: pCStack_40 = (CCrate *)((pCStack_40->base).actor_name + 1);
 
 ====================================================================================================
 core_elephant.cpp_CElephantGun_process_FUN_004a7070 (1 suspect)
@@ -2209,9 +2100,10 @@ core_game.cpp_CGame_loadGame_FUN_004e12b0 (4 suspects)
   Line 264 [pointer_cast]: *(CHero **)((int)g_HeroActors + iVar2) = pCVar3;
 
 ====================================================================================================
-core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (1 suspect)
+core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (2 suspects)
   File: core/game.cpp
 ====================================================================================================
+  Line 629 [unrolled_strcpy]: do {
   Line 636 [shadow_pointer_walk]: pCVar19 = (CKeyActor *)((pCVar19->base).actor_name + 2);
 
 ====================================================================================================
@@ -2281,24 +2173,6 @@ core_game.cpp_captureDebugMovieFrame_FUN_004d7810 (1 suspect)
   File: core/game.cpp
 ====================================================================================================
   Line 72 [pointer_cast]: *(int *)((int)g_ScreenBufferArray + iStack_1c));
-
-====================================================================================================
-core_game.cpp_dampControlAxis_FUN_004dc370 (13 suspects)
-  File: core/game.cpp
-====================================================================================================
-  Line 5 [stack_param]: float *in_stack_00000004;
-  Line 6 [stack_param]: float in_stack_00000008;
-  Line 7 [stack_param]: float in_stack_0000000c;
-  Line 10 [stack_param]: fVar1 = (g_CGamePtr->delta_time_float * damp_rate) / in_stack_00000008;
-  Line 11 [stack_param]: if (0.0 <= *in_stack_00000004) {
-  Line 12 [stack_param]: *in_stack_00000004 = *in_stack_00000004 - fVar1;
-  Line 12 [stack_param]: *in_stack_00000004 = *in_stack_00000004 - fVar1;
-  Line 13 [stack_param]: if (*in_stack_00000004 < 0.0) {
-  Line 14 [stack_param]: *in_stack_00000004 = 0.0;
-  Line 19 [stack_param]: *in_stack_00000004 = *in_stack_00000004 + fVar1;
-  Line 19 [stack_param]: *in_stack_00000004 = *in_stack_00000004 + fVar1;
-  Line 20 [stack_param]: if (0.0 < *in_stack_00000004) {
-  Line 21 [stack_param]: *in_stack_00000004 = 0.0;
 
 ====================================================================================================
 core_ghoul.cpp_CGhoul_canBeAttracted_FUN_004e82d0 (1 suspect)
@@ -2571,12 +2445,6 @@ core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80 (2 suspects)
   Line 65 [unrolled_memcpy]: (pUVar1->vec).x = (pUVar2->vec).x;
 
 ====================================================================================================
-core_hero.cpp_CHero_createDefaultWeapon_FUN_004f2a30 (1 suspect)
-  File: core/hero.cpp
-====================================================================================================
-  Line 31 [shadow_pointer_walk]: pCVar3 = (CWeapon *)((pCVar3->base).actor_name + 2);
-
-====================================================================================================
 core_hero.cpp_CHero_dtor_FUN_004f2470 (4 suspects)
   File: core/hero.cpp
 ====================================================================================================
@@ -2625,12 +2493,6 @@ core_hero.cpp_CHero_tryPushNearbyBox_FUN_004f3120 (1 suspect)
   Line 36 [pointer_cast]: (*(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar3),
 
 ====================================================================================================
-core_hostage.cpp_CHostage_process_FUN_004f4bd0 (1 suspect)
-  File: core/hostage.cpp
-====================================================================================================
-  Line 413 [unrolled_memcpy]: pCVar21->x = pCVar20->x;
-
-====================================================================================================
 core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004f8970 (1 suspect)
   File: core/icepick.cpp
 ====================================================================================================
@@ -2667,12 +2529,6 @@ core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f8810 (1 suspect)
   Line 12 [stack_alignment_array]: float afStackY_180c [1519];
 
 ====================================================================================================
-core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004fe900 (1 suspect)
-  File: core/inv.cpp
-====================================================================================================
-  Line 37 [shadow_pointer_walk]: pCVar2 = (CAmmo *)((pCVar2->base).actor_name + 2);
-
-====================================================================================================
 core_inv.cpp_CInventory_renderAllItems_FUN_00500690 (2 suspects)
   File: core/inv.cpp
 ====================================================================================================
@@ -2684,12 +2540,6 @@ core_ladder.cpp_CLadder_renderOpaque_FUN_00502620 (1 suspect)
   File: core/ladder.cpp
 ====================================================================================================
   Line 33 [decompiler_intrinsic]: CStack_30.y = (int)ROUND(fStack_y * 256.0f);
-
-====================================================================================================
-core_ladder.cpp_CLadder_updatePositionFromMaster_FUN_00502a70 (1 suspect)
-  File: core/ladder.cpp
-====================================================================================================
-  Line 35 [unrolled_memcpy]: (pUVar1->vec).x = pCVar2->x;
 
 ====================================================================================================
 core_lightgun.cpp_CLightGun_updateBeamLight_FUN_00505ac0 (1 suspect)
@@ -2808,12 +2658,6 @@ core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_00509b20 (2 suspec
 ====================================================================================================
   Line 29 [unrolled_memcpy]: pCVar1->x = pCVar2->x;
   Line 39 [unrolled_memcpy]: pCVar1->x = pCVar3->x;
-
-====================================================================================================
-core_manpuz.cpp_CMirrorHack_updateInteraction_FUN_0050b360 (1 suspect)
-  File: core/manpuz.cpp
-====================================================================================================
-  Line 14 [unrolled_memcpy]: (pUVar1->vec).x = (user_orientation->vec).x;
 
 ====================================================================================================
 core_manpuz.cpp_copyPanel_FUN_0050b9a0 (5 suspects)
@@ -3314,12 +3158,6 @@ core_netgame.cpp_purgeOldSimFrames_FUN_0053f650 (2 suspects)
   Line 17 [pointer_cast]: ((void *)((int)g_SimFrameHistory[0].player_input + iVar2 + -0xc),src,
 
 ====================================================================================================
-core_passngr.cpp_CPassenger_setup_FUN_00545d30 (1 suspect)
-  File: core/passngr.cpp
-====================================================================================================
-  Line 30 [shadow_pointer_walk]: pCVar3 = (CWerewolf *)((pCVar3->base).base.base.actor_name + 2);
-
-====================================================================================================
 core_path.cpp_CPathMap_dtor_FUN_005464d0 (3 suspects)
   File: core/path.cpp
 ====================================================================================================
@@ -3512,12 +3350,6 @@ core_scat.cpp_CScat_blendAimBones_FUN_005584a0 (15 suspects)
   Line 34 [missing_cave_copy]: CQuaternion4f local_4c;
   Line 35 [missing_cave_copy]: CQuaternion4f local_3c;
   Line 54 [unrolled_memcpy]: local_13c.w = pCVar2->w;
-
-====================================================================================================
-core_scat.cpp_CScat_createDefaultWeapon_FUN_00557150 (1 suspect)
-  File: core/scat.cpp
-====================================================================================================
-  Line 24 [shadow_pointer_walk]: pCVar3 = (CBaronWeapon *)((pCVar3->base).base.actor_name + 2);
 
 ====================================================================================================
 core_scat.cpp_CScat_process_FUN_005571f0 (6 suspects)
@@ -5181,20 +5013,6 @@ core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270 (1 suspect)
   Line 222 [static_invalid_pointer_cast]: *(float *)pcVar4 = pCVar14->x;
 
 ====================================================================================================
-core_succubus.cpp_CSuccubus_process_FUN_005c6e90 (1 suspect)
-  File: core/succubus.cpp
-====================================================================================================
-  Line 256 [unrolled_memcpy]: (pUVar13->vec).x = (pUVar1->vec).x;
-
-====================================================================================================
-core_svetlana.cpp_CSvetlana_renderOpaque_FUN_005d9bc0 (3 suspects)
-  File: core/svetlana.cpp
-====================================================================================================
-  Line 24 [shadow_pointer_walk]: pCVar3 = (CSvetlana *)((pCVar3->base).base.base.actor_name + 4);
-  Line 33 [shadow_pointer_walk]: pCVar5 = (CSvetlana *)((pCVar5->base).base.base.actor_name + 4);
-  Line 54 [shadow_pointer_walk]: pCVar3 = (CSvetlana *)((pCVar3->base).base.base.actor_name + 4);
-
-====================================================================================================
 core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70 (6 suspects)
   File: core/tentacle.cpp
 ====================================================================================================
@@ -5270,19 +5088,6 @@ core_texlist.cpp_CTextureList_save_FUN_005dc0d0 (1 suspect)
   Line 68 [shadow_pointer_walk]: pCVar3 = (CTextureList *)pCVar3->texture_entries;
 
 ====================================================================================================
-core_trash.cpp_CTrash_processInEditor_FUN_005df750 (1 suspect)
-  File: core/trash.cpp
-====================================================================================================
-  Line 12 [unrolled_memcpy]: (this_ptr->home_pos).x = (pCVar1->position).x;
-
-====================================================================================================
-core_trash.cpp_CTrash_process_FUN_005decf0 (2 suspects)
-  File: core/trash.cpp
-====================================================================================================
-  Line 97 [unrolled_memcpy]: (pCVar2->position).x = (this_ptr->home_pos).x;
-  Line 269 [unrolled_memcpy]: (euler_angles->vec).x = pCVar9->x;
-
-====================================================================================================
 core_trigger.cpp_CTrigger_containsActor_FUN_005e0cd0 (1 suspect)
   File: core/trigger.cpp
 ====================================================================================================
@@ -5325,23 +5130,11 @@ core_turret.cpp_CTurret_fire_FUN_005e3750 (2 suspects)
   Line 136 [unrolled_memcpy]: SStack_e0.impact_direction.x = pCVar5->x;
 
 ====================================================================================================
-core_turret.cpp_CTurret_processInEditor_FUN_005e3dd0 (1 suspect)
-  File: core/turret.cpp
-====================================================================================================
-  Line 12 [unrolled_memcpy]: (this_ptr->home_orient).vec.x = (pUVar1->vec).x;
-
-====================================================================================================
 core_turret.cpp_CTurret_process_FUN_005e2430 (2 suspects)
   File: core/turret.cpp
 ====================================================================================================
   Line 42 [unrolled_memcpy]: (pUVar1->vec).x = (this_ptr->home_orient).vec.x;
   Line 117 [unrolled_memcpy]: local_90.w = local_40.w;
-
-====================================================================================================
-core_turret.cpp_CTurret_updateInteraction_FUN_005e34d0 (1 suspect)
-  File: core/turret.cpp
-====================================================================================================
-  Line 10 [unrolled_memcpy]: (pUVar1->vec).x = (user_orientation->vec).x;
 
 ====================================================================================================
 core_turret.cpp_CTurret_updatePatrol_FUN_005e3560 (1 suspect)
@@ -5356,12 +5149,6 @@ core_turret.cpp_CTurret_updateTargeting_FUN_005e2d50 (1 suspect)
   Line 118 [unrolled_memcpy]: CStack_90.x = CStack_48.x;
 
 ====================================================================================================
-core_tvbat.cpp_CTVBat_processInEditor_FUN_005e5260 (1 suspect)
-  File: core/tvbat.cpp
-====================================================================================================
-  Line 15 [unrolled_memcpy]: (this_ptr->home_pos).x = (pCVar1->position).x;
-
-====================================================================================================
 core_tvbat.cpp_CTVBat_process_FUN_005e4210 (4 suspects)
   File: core/tvbat.cpp
 ====================================================================================================
@@ -5371,26 +5158,11 @@ core_tvbat.cpp_CTVBat_process_FUN_005e4210 (4 suspects)
   Line 160 [static_uninitvar]: this_ptr->height_offset + (float)4 + local_54;
 
 ====================================================================================================
-core_vampboss.cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510 (1 suspect)
+core_vampboss.cpp_CVampireBoss_process_FUN_005e5970 (2 suspects)
   File: core/vampboss.cpp
 ====================================================================================================
-  Line 45 [shadow_pointer_walk]: pCVar10 = (CVampireBoss *)((pCVar10->base).base.base.actor_name + 4);
-
-====================================================================================================
-core_vampboss.cpp_CVampireBoss_process_FUN_005e5970 (11 suspects)
-  File: core/vampboss.cpp
-====================================================================================================
-  Line 107 [shadow_pointer_walk]: pCVar16 = (CVampireBoss *)((pCVar16->base).base.base.actor_name + 4);
-  Line 179 [static_legacy_uninitvar]: fVar11 = local_b0 - (this_ptr->base).base.base.location.position.z,
-  Line 201 [static_legacy_uninitvar]: local_b4 = local_b4 + 4.0f;
-  Line 284 [unrolled_memcpy]: (pCVar1->min).x = (pCVar11->min).x;
-  Line 290 [unrolled_memcpy]: pCVar22->x = (pCVar11->max).x;
-  Line 329 [unrolled_memcpy]: (pCVar9->min).x = (pCVar20->min).x;
-  Line 335 [unrolled_memcpy]: pCVar22->x = (pCVar20->max).x;
-  Line 392 [unrolled_memcpy]: (pCVar9->min).x = (pCVar20->min).x;
-  Line 398 [unrolled_memcpy]: pCVar22->x = (pCVar20->max).x;
-  Line 461 [unrolled_memcpy]: (pCVar9->min).x = (pCVar20->min).x;
-  Line 467 [unrolled_memcpy]: pCVar22->x = (pCVar20->max).x;
+  Line 176 [static_legacy_uninitvar]: fVar11 = local_b0 - (this_ptr->base).base.base.location.position.z,
+  Line 198 [static_legacy_uninitvar]: local_b4 = local_b4 + 4.0f;
 
 ====================================================================================================
 core_vehicle.cpp_CVehicle_ctor_FUN_005e7940 (3 suspects)
@@ -5457,35 +5229,10 @@ core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0 (2 suspects)
   Line 203 [shadow_pointer_walk]: pCVar15 = (CWaterActor *)&(pCVar15->base).location;
 
 ====================================================================================================
-core_waypoint.cpp_CWayPoint_cleanupAdjacency_FUN_005ec830 (1 suspect)
-  File: core/waypoint.cpp
-====================================================================================================
-  Line 34 [shadow_pointer_walk]: pCVar2 = (CWayPoint *)((pCVar2->base).base.actor_name + 8);
-
-====================================================================================================
-core_waypoint.cpp_CWayPoint_removeAllAdjTo_FUN_005ec640 (1 suspect)
-  File: core/waypoint.cpp
-====================================================================================================
-  Line 19 [shadow_pointer_walk]: pCVar1 = (CWayPoint *)((pCVar1->base).base.actor_name + 8);
-
-====================================================================================================
 core_waypoint.cpp_CWaypoint_renderOpaque_FUN_005ebf70 (1 suspect)
   File: core/waypoint.cpp
 ====================================================================================================
   Line 84 [shadow_pointer_walk]: pCVar4 = (CWayPoint *)((pCVar4->base).base.actor_name + 8);
-
-====================================================================================================
-core_waypoint.cpp_CWaypoint_setup_FUN_005ebeb0 (1 suspect)
-  File: core/waypoint.cpp
-====================================================================================================
-  Line 26 [shadow_pointer_walk]: pCVar5 = (CWayPoint *)((pCVar5->base).base.actor_name + 8);
-
-====================================================================================================
-core_weapon.cpp_CWeapon_onDropped_FUN_005ee3f0 (2 suspects)
-  File: core/weapon.cpp
-====================================================================================================
-  Line 17 [unrolled_memcpy]: pCVar1->x = pCVar2->x;
-  Line 23 [unrolled_memcpy]: pCVar3->x = drop_position->x;
 
 ====================================================================================================
 core_weather.cpp_CWeather_createLightningStrike_FUN_005eeeb0 (1 suspect)
@@ -7483,14 +7230,6 @@ shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50 (9 suspects)
   Line 86 [pointer_cast]: *(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 3) =
 
 ====================================================================================================
-shape_quantize.cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0 (3 suspects)
-  File: shape/quantize.cpp
-====================================================================================================
-  Line 11 [unaffected_reg]: int unaff_EBX;
-  Line 90 [unaffected_reg]: unaff_EBX = iVar7;
-  Line 98 [unaffected_reg]: dest_indices[local_30] = (uchar)unaff_EBX;
-
-====================================================================================================
 shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40 (20 suspects)
   File: shape/quantize.cpp
 ====================================================================================================
@@ -7978,10 +7717,3 @@ shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0 (4 suspects)
   Line 44 [pointer_cast]: pdVar6 = (double *)((int)pdVar6 + (uint)bVar8 * -8 + 4);
   Line 45 [pointer_cast]: pCVar7 = (CVector3d *)((int)pCVar7 + (uint)bVar8 * -8 + 4);
   Line 76 [unrolled_memcpy]: // 005d6488: MOVSD.REP ES:EDI,ESI
-
-====================================================================================================
-sound_sndmain.cpp_loadStreamingSoundFile_FUN_005a5200 (2 suspects)
-  File: sound/sndmain.cpp
-====================================================================================================
-  Line 69 [shadow_pointer_walk]: pCVar7 = (CSfxSample *)((pCVar7->sample_info).name + 2);
-  Line 102 [shadow_pointer_walk]: pCVar8 = (CSfxSample *)((pCVar8->sample_info).name + 2);

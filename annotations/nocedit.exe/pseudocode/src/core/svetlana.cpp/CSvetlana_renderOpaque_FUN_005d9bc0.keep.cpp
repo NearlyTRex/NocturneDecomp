@@ -13,32 +13,19 @@ int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_005d9bc0(CSvetlana *thi
   int iVar3;
   int iVar4;
   int iVar1;
-  CSvetlana *pCVar5;
-  CSvetlana *pCVar3;
   int local_84 [30];
-  CHero *pCVar2;
   CDemonRenderer *this_ptr_00;
-  int *piVar1;
   
   g_CDemonSetPtr->skip_normal_normalization = 1;
-  iVar3 = 0;
-  pCVar3 = this_ptr;
-  do {
-    iVar3 = iVar3 + 1;
-    pCVar2 = &pCVar3->base;
-    pCVar3 = (CSvetlana *)((pCVar3->base).base.base.actor_name + 4);
-    local_84[iVar3 + -1] = (pCVar2->base).model.part_data.visibility_flags[0];
-    iVar3 = iVar3;
-  } while (iVar3 < 0x1e);
+  for (iVar3 = 0; iVar3 < 0x1e; iVar3 = iVar3 + 1) {
+    local_84[iVar3] = (this_ptr->base).base.model.part_data.visibility_flags[iVar3];
+  }
   iVar4 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0((CCharacter *)this_ptr);
   iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if ((iVar1 == 0) && (g_PerspectiveReciprocal < 0x4000)) {
-    pCVar5 = this_ptr;
-    do {
-      pCVar5 = (CSvetlana *)((pCVar5->base).base.base.actor_name + 4);
-      (pCVar5->base).base.model.part_data.visibility_flags[0] = 0;
-      pCVar5 = pCVar5;
-    } while (pCVar5 != (CSvetlana *)(this_ptr->base).base.base.create_event);
+    for (iVar1 = 0; iVar1 < 0x1e; iVar1 = iVar1 + 1) {
+      (this_ptr->base).base.model.part_data.visibility_flags[iVar1] = 0;
+    }
     (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] = 1;
     this_ptr_00 = g_CDemonRendererPtr2;
     (this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[1]] = 1;
@@ -50,14 +37,9 @@ int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_005d9bc0(CSvetlana *thi
       core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0((CCharacter *)this_ptr);
     }
     g_CGamePtr->render_mode = iVar1;
-    iVar1 = 0;
-    pCVar3 = this_ptr;
-    do {
-      piVar1 = local_84 + iVar1;
-      iVar1 = iVar1 + 1;
-      (pCVar3->base).base.model.part_data.visibility_flags[0] = *piVar1;
-      pCVar3 = (CSvetlana *)((pCVar3->base).base.base.actor_name + 4);
-    } while (iVar1 < 0x1e);
+    for (iVar1 = 0; iVar1 < 0x1e; iVar1 = iVar1 + 1) {
+      (this_ptr->base).base.model.part_data.visibility_flags[iVar1] = local_84[iVar1];
+    }
   }
   g_CDemonSetPtr->skip_normal_normalization = 0;
   if (iVar4 != 0) {

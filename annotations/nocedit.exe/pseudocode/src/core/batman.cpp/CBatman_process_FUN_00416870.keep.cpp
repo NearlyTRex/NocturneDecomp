@@ -123,9 +123,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
             pCVar12 = &(pCVar8->base).location;
             this_ptr->mist_state = 1;
             if ((CLocation *)&this_ptr->new_pos != pCVar12) {
-              (this_ptr->new_pos).x = (pCVar12->position).x;
-              (this_ptr->new_pos).y = (pCVar8->base).location.position.y;
-              (this_ptr->new_pos).z = (pCVar8->base).location.position.z;
+              this_ptr->new_pos = pCVar12->position;
             }
             pCVar4 = (this_ptr->base).base.base.vtable._ub;
             this_ptr->vanish_timer = 0.0;
@@ -330,9 +328,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
           this_ptr->mist_state = 3;
           pCVar1 = &(this_ptr->base).base.base.location;
           this_ptr->vanish_timer = fVar7;
-          (pCVar1->position).x = (this_ptr->new_pos).x;
-          (this_ptr->base).base.base.location.position.y = (this_ptr->new_pos).y;
-          (this_ptr->base).base.base.location.position.z = (this_ptr->new_pos).z;
+          pCVar1->position = this_ptr->new_pos;
           pCVar8 = (this_ptr->base).victim;
           if (pCVar8 != (CCharacter *)0x0) {
             local_a4.x = (pCVar8->base).location.position.x - (pCVar1->position).x;
@@ -345,9 +341,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr,floa
                       core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                 (&local_b0,&local_a4);
             if (pUVar1 != pUVar11) {
-              (pUVar1->vec).x = (pUVar11->vec).x;
-              (this_ptr->base).base.base.orient.vec.y = (pUVar11->vec).y;
-              (this_ptr->base).base.base.orient.vec.z = (pUVar11->vec).z;
+              *pUVar1 = *pUVar11;
             }
             (this_ptr->base).base.base.orient.vec.z = 0.0;
             (this_ptr->base).base.base.orient.vec.x = 0.0;

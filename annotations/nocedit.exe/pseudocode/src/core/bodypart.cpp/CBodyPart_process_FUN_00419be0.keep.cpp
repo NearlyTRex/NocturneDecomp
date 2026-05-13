@@ -28,14 +28,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419be0(CBodyPart *this_pt
     core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(this_ptr,0,0);
     pCVar3 = &(this_ptr->bounding_box).max;
     if ((UVector3 *)pCVar3 != &g_ZeroVector) {
-      pCVar3->x = g_ZeroVector.f.x;
-      (this_ptr->bounding_box).max.y = g_ZeroVector.f.y;
-      (this_ptr->bounding_box).max.z = g_ZeroVector.f.z;
+      *pCVar3 = g_ZeroVector.f;
     }
     if (&this_ptr->bounding_box != (CBoundingBox3D *)pCVar3) {
-      (this_ptr->bounding_box).min.x = pCVar3->x;
-      (this_ptr->bounding_box).min.y = (this_ptr->bounding_box).max.y;
-      (this_ptr->bounding_box).min.z = (this_ptr->bounding_box).max.z;
+      (this_ptr->bounding_box).min = *pCVar3;
       return;
     }
   }
@@ -53,19 +49,13 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419be0(CBodyPart *this_pt
       this_ptr->physics_timer = fVar3;
       if (0.0 <= fVar3) {
         pCVar1 = &(this_ptr->base).location;
-        local_18.x = (pCVar1->position).x;
-        local_18.y = (this_ptr->base).location.position.y;
-        local_18.z = (this_ptr->base).location.position.z;
+        local_18 = pCVar1->position;
         core_box_cpp_CBox_process_FUN_0041e2f0(&this_ptr->physics_box,delta_time);
-        (pCVar1->position).x = (this_ptr->physics_box).position.x;
-        (this_ptr->base).location.position.y = (this_ptr->physics_box).position.y;
-        (this_ptr->base).location.position.z = (this_ptr->physics_box).position.z;
+        pCVar1->position = (this_ptr->physics_box).position;
         pUVar2 = &(this_ptr->base).orient;
         pCVar2 = &(this_ptr->physics_box).orientation;
         if ((CVector3f *)pUVar2 != pCVar2) {
-          (pUVar2->vec).x = pCVar2->x;
-          (this_ptr->base).orient.vec.y = (this_ptr->physics_box).orientation.y;
-          (this_ptr->base).orient.vec.z = (this_ptr->physics_box).orientation.z;
+          pUVar2->vec = *pCVar2;
         }
         core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
         fVar4 = (this_ptr->physics_box).linear_velocity.y;

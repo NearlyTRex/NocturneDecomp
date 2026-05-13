@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 59,
+    "complexity_score": 44,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 44,
-    "suspect_count": 1,
-    "suspect_types": [
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 125
   },
   "cross_references": [
@@ -163,6 +161,15 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar10->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 45,
+      "match": "pCVar10 = (T *)((pCVar10->FIELD).SUBFIELD...ARRAY + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar10 = (CVampireBoss *)((pCVar10->base).base.base.actor_name + 4);",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {
@@ -188,14 +195,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar10->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 45,
-      "match": "pCVar10 = (T *)((pCVar10->FIELD).SUBFIELD...ARRAY + CONST)",
-      "severity": "moderate",
-      "text": "pCVar10 = (CVampireBoss *)((pCVar10->base).base.base.actor_name + 4);",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

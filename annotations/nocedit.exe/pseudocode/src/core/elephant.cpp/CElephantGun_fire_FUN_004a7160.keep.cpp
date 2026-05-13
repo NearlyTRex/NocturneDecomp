@@ -44,7 +44,7 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
   CVector3f CStack_8c;
   CVector3f CStack_80;
   CVector3f local_68 [2];
-  CCrate *pCStack_40;
+  int iStack_40;
   int iStack_24;
   CDemonActor *actor;
   
@@ -61,7 +61,7 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
                          (float10)0.0055555555555555497);
   fVar1 = (this_ptr->base).bolt_velocity;
   iVar3 = core_actor_cpp_getRandomInt_FUN_0040cc70(10,0xf);
-  pCStack_40 = (CCrate *)0x0;
+  iStack_40 = 0;
   if (0 < iVar3) {
     do {
       fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(0.0,6.2831855);
@@ -192,8 +192,8 @@ int __cdecl core_elephant_cpp_CElephantGun_fire_FUN_004a7160(CElephantGun *this_
         }
         iStack_24 = iStack_24 + 1;
       } while (iStack_24 < 4);
-      pCStack_40 = (CCrate *)((pCStack_40->base).actor_name + 1);
-    } while ((int)pCStack_40 < iVar3);
+      iStack_40 = iStack_40 + 1;
+    } while (iStack_40 < iVar3);
   }
   CStack_c8.x = CStack_80.x;
   CStack_c8.z = CStack_80.z;

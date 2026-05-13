@@ -21,9 +21,7 @@ void __cdecl core_crate_cpp_CCrate_explode_FUN_00448a70(CCrate *this_ptr)
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_28);
   pCVar1 = &(this_ptr->base).location;
   if ((CLocation *)&CStack_10 != pCVar1) {
-    CStack_10.x = (pCVar1->position).x;
-    CStack_10.y = (this_ptr->base).location.position.y;
-    CStack_10.z = (this_ptr->base).location.position.z;
+    CStack_10 = pCVar1->position;
   }
   CStack_10.y = (CStack_28.max.y - CStack_28.min.y) + CStack_10.y;
   core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10

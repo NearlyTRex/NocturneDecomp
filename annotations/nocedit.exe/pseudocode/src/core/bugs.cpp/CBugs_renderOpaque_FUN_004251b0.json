@@ -4,21 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 114,
+    "complexity_score": 59,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 59,
-    "suspect_count": 4,
-    "suspect_types": [
-      "stack_param",
-      "unrolled_memcpy",
-      "warning_type_propagation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 204
   },
   "cross_references": [],
@@ -151,6 +147,44 @@
     },
     "pcode_op_count": 615
   },
+  "resolved_suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 54,
+      "match": "in_stack_00000008",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "} while (iVar3 < *(int *)(in_stack_00000008 + 0xbec0));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 41,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CStack_2c.x = CStack_20.x;",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 76,
     "local_size": 72,
@@ -216,40 +250,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 54,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "} while (iVar3 < *(int *)(in_stack_00000008 + 0xbec0));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 41,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "CStack_2c.x = CStack_20.x;",
-      "type": "unrolled_memcpy"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 158,
-    "complexity_score": 87,
+    "complexity_score": 72,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 72,
-    "suspect_count": 1,
-    "suspect_types": [
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 230
   },
   "cross_references": [],
@@ -155,6 +153,15 @@
       "type": "warning_type_propagation"
     },
     {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 23,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 33,
       "match": "field-by-field struct copy",
@@ -171,6 +178,15 @@
       "severity": "moderate",
       "text": "(pUVar5->vec).x = (pUVar1->vec).x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 30,
+      "match": "pCVar3 = (T *)((pCVar3->FIELD).SUBFIELD...ARRAY + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar3 = (CWerewolf *)((pCVar3->base).base.base.actor_name + 2);",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {
@@ -189,16 +205,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 30,
-      "match": "pCVar3 = (T *)((pCVar3->FIELD).SUBFIELD...ARRAY + CONST)",
-      "severity": "moderate",
-      "text": "pCVar3 = (CWerewolf *)((pCVar3->base).base.base.actor_name + 2);",
-      "type": "shadow_pointer_walk"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

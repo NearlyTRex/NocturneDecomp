@@ -29,9 +29,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveCameraTransform_FUN_0044ef30(CDem
   pCVar5 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                      (rotation_matrix,&local_10,&local_1c);
   if ((CVector3f *)pUVar2 != pCVar5) {
-    (pUVar2->f).x = pCVar5->x;
-    (this_ptr->base).position.f.y = pCVar5->y;
-    (this_ptr->base).position.f.z = pCVar5->z;
+    pUVar2->f = *pCVar5;
   }
   (this_ptr->camera_origin).x =
        (int)ROUND((this_ptr->base).position.f.x * 256.0f);

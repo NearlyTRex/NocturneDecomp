@@ -14,16 +14,16 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        58 ( 0.9%)
+  Functions with type issues:        55 ( 0.9%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
     Wrong return type (void):          0
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
-    Wrong calling convention:          1
+    Wrong calling convention:          0
     Undefined types in variables:      55
-    Unresolved stack params:           2
+    Unresolved stack params:           0
 
   Excluded (.keep / MMX / by-value):   164 functions
     Wrong calling convention:          1
@@ -69,30 +69,16 @@ Missing register parameters (likely wrong calling convention) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (1)
+Wrong calling convention (unaffected register usage) (0)
 --------------------------------------------------------------------------------
 
-  CColorQuantizer_mapScanlineToPalette
-    Address: 0x005556f0  File: shape/quantize.cpp
-    Evidence: unaff_EBX, unaff_EBX, unaff_EBX
-    Signature: void __cdecl shape_quantize_cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0(CColorQuantizer *this_ptr,uchar *src_pixels,uchar *dest_indices,short start_x,short end_x,short num_palette_entries)
-    Suggested: Calling convention may be wrong (preserved registers being used)
+  (none)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (2)
+Unresolved stack parameters (missing from signature) (0)
 --------------------------------------------------------------------------------
 
-  CBugs_renderOpaque
-    Address: 0x004251b0  File: core/bugs.cpp
-    Evidence: in_stack_00000008, in_stack_00000008
-    Signature: int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_004251b0(CBugs *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  dampControlAxis
-    Address: 0x004dc370  File: core/game.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl core_game_cpp_dampControlAxis_FUN_004dc370(float *axis_value,float damp_time,float damp_rate)
-    Suggested: Signature is missing stack parameters entirely
+  (none)
 
 --------------------------------------------------------------------------------
 Undefined types in variables (55)

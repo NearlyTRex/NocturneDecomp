@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 294,
-    "complexity_score": 152,
+    "complexity_score": 117,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 117,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unaffected_reg"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 411
   },
   "cross_references": [
@@ -153,6 +151,35 @@
     },
     "pcode_op_count": 1652
   },
+  "resolved_suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EBX",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 90,
+      "match": "unaff_EBX",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "unaff_EBX = iVar7;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 98,
+      "match": "unaff_EBX",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "dest_indices[local_30] = (uchar)unaff_EBX;",
+      "type": "unaffected_reg"
+    }
+  ],
   "stack_frame": {
     "frame_size": 114,
     "local_size": 92,
@@ -263,30 +290,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 90,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "unaff_EBX = iVar7;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 98,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "dest_indices[local_30] = (uchar)unaff_EBX;",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

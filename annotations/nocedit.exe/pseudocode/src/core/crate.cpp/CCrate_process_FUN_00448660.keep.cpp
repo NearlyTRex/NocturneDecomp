@@ -58,15 +58,11 @@ void __cdecl core_crate_cpp_CCrate_process_FUN_00448660(CCrate *this_ptr,float d
                         (&this_ptr->base,this_ptr->ground_check_radius,(CVector3f *)0x0);
     pCVar2 = &(this_ptr->base).location;
     if ((CLocation *)&this_ptr->cached_position != pCVar2) {
-      (this_ptr->cached_position).x = (pCVar2->position).x;
-      (this_ptr->cached_position).y = (this_ptr->base).location.position.y;
-      (this_ptr->cached_position).z = (this_ptr->base).location.position.z;
+      this_ptr->cached_position = pCVar2->position;
     }
     pUVar3 = &(this_ptr->base).orient;
     if (&this_ptr->cached_orientation != pUVar3) {
-      (this_ptr->cached_orientation).vec.x = (pUVar3->vec).x;
-      (this_ptr->cached_orientation).vec.y = (this_ptr->base).orient.vec.y;
-      (this_ptr->cached_orientation).vec.z = (this_ptr->base).orient.vec.z;
+      this_ptr->cached_orientation = *pUVar3;
     }
     this_ptr->cached_ground_height = local_c;
   }
@@ -82,9 +78,7 @@ void __cdecl core_crate_cpp_CCrate_process_FUN_00448660(CCrate *this_ptr,float d
     pUVar3 = &(this_ptr->base).orient;
     pUVar5 = &(pCVar6->base).orient;
     if (pUVar3 != pUVar5) {
-      (pUVar3->vec).x = (pUVar5->vec).x;
-      (this_ptr->base).orient.vec.y = (pCVar6->base).orient.vec.y;
-      (this_ptr->base).orient.vec.z = (pCVar6->base).orient.vec.z;
+      *pUVar3 = *pUVar5;
     }
     pCVar6 = (this_ptr->base).standing_platform;
     (*((pCVar6->base).vtable._ub)->getBoundingBox)(&pCVar6->base,&CStack_24);

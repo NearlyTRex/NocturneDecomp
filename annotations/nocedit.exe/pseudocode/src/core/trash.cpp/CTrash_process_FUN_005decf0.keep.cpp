@@ -38,12 +38,6 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr,float d
   CMatrix3x4f local_178;
   CMatrix3x4f local_148;
   CMatrix3x4f local_118;
-  float local_e8;
-  float local_e4;
-  float local_e0;
-  float local_dc;
-  float local_d8;
-  float local_d4;
   uint local_d0;
   uint local_cc;
   uint local_c8;
@@ -63,32 +57,13 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr,float d
   float local_90;
   float local_8c;
   CVector3f local_88;
-  float local_7c;
-  float local_78;
-  float local_74;
   CVector3f local_70;
-  float local_64;
-  float local_60;
-  float local_5c;
   float local_58;
   float local_54;
   float local_50;
-  float local_4c;
-  float local_48;
-  float local_44;
-  float local_40;
-  float local_3c;
-  float local_38;
   CVector3f local_34;
-  float local_28;
-  float local_24;
-  float local_20;
-  float local_1c;
-  CVector3f *local_18;
-  float local_14;
   bool bVar4;
   CDemonSet *pCVar5;
-  CLocation *pCVar1;
   float *pfVar2;
   float fVar3;
   
@@ -100,9 +75,7 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr,float d
     if (iVar19 != 0) {
       return;
     }
-    (pCVar2->position).x = (this_ptr->home_pos).x;
-    (this_ptr->base).location.position.y = (this_ptr->home_pos).y;
-    (this_ptr->base).location.position.z = (this_ptr->home_pos).z;
+    pCVar2->position = this_ptr->home_pos;
     return;
   }
   fVar18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(-0.05,0.05);
@@ -264,9 +237,7 @@ LAB_005df3d0:
   local_148 = local_178;
   pCVar9 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_148,&local_88);
   if (pCVar9 != (CVector3f *)euler_angles) {
-    (euler_angles->vec).x = pCVar9->x;
-    (this_ptr->base).orient.vec.y = pCVar9->y;
-    (this_ptr->base).orient.vec.z = pCVar9->z;
+    euler_angles->vec = *pCVar9;
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
   return;

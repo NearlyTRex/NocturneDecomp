@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 153
-  Total diagnostics: 421
+  Functions with findings: 152
+  Total diagnostics: 419
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 153, raw .cpp files: 0
+  .keep.cpp files: 152, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -733,18 +733,11 @@ core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005
   Line   30: [invalidPointerCast] Casting from float * to signed int * is not portable due to different binary data representations on different platforms.
 
 ----------------------------------------------------------------------------------------------------
-core_svetlana.cpp_CSvetlana_renderOpaque_FUN_005d9bc0  [.keep] [Cppcheck (quick)]
-  File: core/svetlana.cpp  (2 diagnostics)
-
-  Line   31: [selfAssignment] Redundant assignment of 'iVar3' to itself.
-  Line   40: [selfAssignment] Redundant assignment of 'pCVar5' to itself.
-
-----------------------------------------------------------------------------------------------------
 core_vampboss.cpp_CVampireBoss_process_FUN_005e5970  [.keep] [Cppcheck (quick)]
   File: core/vampboss.cpp  (2 diagnostics)
 
-  Line  179: [legacyUninitvar] Uninitialized variable: local_b0
-  Line  201: [legacyUninitvar] Uninitialized variable: local_b4
+  Line  176: [legacyUninitvar] Uninitialized variable: local_b0
+  Line  198: [legacyUninitvar] Uninitialized variable: local_b4
 
 ----------------------------------------------------------------------------------------------------
 engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220  [.keep] [Cppcheck (quick)]

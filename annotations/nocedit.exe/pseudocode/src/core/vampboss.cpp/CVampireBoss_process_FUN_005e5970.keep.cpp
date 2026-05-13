@@ -35,7 +35,6 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
   float clamped_angle;
   int iVar14;
   CLocation *pCVar15;
-  CVampireBoss *pCVar16;
   float10 fVar17;
   float10 fVar24;
   float10 fVar18;
@@ -80,15 +79,13 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
   CDemonActor *pCVar5;
   float fVar3;
   
-  pCVar16 = this_ptr;
-  do {
-    if (pCVar16->way_point_0 == (CDemonActor *)0x0) {
+  for (iVar9 = 0; iVar9 < 4; iVar9 = iVar9 + 1) {
+    if ((&this_ptr->way_point_0)[iVar9] == (CDemonActor *)0x0) {
       g_CurrentFilename = "..\\core\\vampboss.cpp";
       g_CurrentLineNumber = 0xcf;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CVampireBoss::process - Need 4 waypoints");
     }
-    pCVar16 = (CVampireBoss *)((pCVar16->base).base.base.actor_name + 4);
-  } while (pCVar16 != (CVampireBoss *)((this_ptr->base).base.base.actor_name + 0x10));
+  }
   iVar9 = core_charactr_cpp_CCharacter_process_FUN_00429870((CCharacter *)this_ptr,delta_time);
   if (iVar9 == 0) {
     return;
@@ -262,15 +259,11 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
                         (&this_ptr->model,&local_19c);
     pCVar1 = &(this_ptr->base).base.cached_bounding_box;
     if (pCVar1 != pCVar11) {
-      (pCVar1->min).x = (pCVar11->min).x;
-      (this_ptr->base).base.cached_bounding_box.min.y = (pCVar11->min).y;
-      (this_ptr->base).base.cached_bounding_box.min.z = (pCVar11->min).z;
+      pCVar1->min = pCVar11->min;
     }
     pCVar22 = &(this_ptr->base).base.cached_bounding_box.max;
     if (pCVar22 != &pCVar11->max) {
-      pCVar22->x = (pCVar11->max).x;
-      (this_ptr->base).base.cached_bounding_box.max.y = (pCVar11->max).y;
-      (this_ptr->base).base.cached_bounding_box.max.z = (pCVar11->max).z;
+      *pCVar22 = pCVar11->max;
     }
     goto LAB_005e5f5f;
   }
@@ -308,15 +301,11 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
                         (pCVar6,&local_154);
     pCVar9 = &(this_ptr->base).base.cached_bounding_box;
     if (pCVar9 != pCVar20) {
-      (pCVar9->min).x = (pCVar20->min).x;
-      (this_ptr->base).base.cached_bounding_box.min.y = (pCVar20->min).y;
-      (this_ptr->base).base.cached_bounding_box.min.z = (pCVar20->min).z;
+      pCVar9->min = pCVar20->min;
     }
     pCVar22 = &(this_ptr->base).base.cached_bounding_box.max;
     if (pCVar22 != &pCVar20->max) {
-      pCVar22->x = (pCVar20->max).x;
-      (this_ptr->base).base.cached_bounding_box.max.y = (pCVar20->max).y;
-      (this_ptr->base).base.cached_bounding_box.max.z = (pCVar20->max).z;
+      *pCVar22 = pCVar20->max;
     }
     core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_005a16c0
               (&this_ptr->model,&local_184);
@@ -372,15 +361,11 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
                         (pCVar6,&local_1b4);
     pCVar9 = &(this_ptr->base).base.cached_bounding_box;
     if (pCVar9 != pCVar20) {
-      (pCVar9->min).x = (pCVar20->min).x;
-      (this_ptr->base).base.cached_bounding_box.min.y = (pCVar20->min).y;
-      (this_ptr->base).base.cached_bounding_box.min.z = (pCVar20->min).z;
+      pCVar9->min = pCVar20->min;
     }
     pCVar22 = &(this_ptr->base).base.cached_bounding_box.max;
     if (pCVar22 != &pCVar20->max) {
-      pCVar22->x = (pCVar20->max).x;
-      (this_ptr->base).base.cached_bounding_box.max.y = (pCVar20->max).y;
-      (this_ptr->base).base.cached_bounding_box.max.z = (pCVar20->max).z;
+      *pCVar22 = pCVar20->max;
     }
     core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_005a16c0
               (&this_ptr->model,&local_1cc);
@@ -439,15 +424,11 @@ LAB_005e648e:
                       (pCVar6,&local_16c);
   pCVar9 = &(this_ptr->base).base.cached_bounding_box;
   if (pCVar9 != pCVar20) {
-    (pCVar9->min).x = (pCVar20->min).x;
-    (this_ptr->base).base.cached_bounding_box.min.y = (pCVar20->min).y;
-    (this_ptr->base).base.cached_bounding_box.min.z = (pCVar20->min).z;
+    pCVar9->min = pCVar20->min;
   }
   pCVar22 = &(this_ptr->base).base.cached_bounding_box.max;
   if (pCVar22 != &pCVar20->max) {
-    pCVar22->x = (pCVar20->max).x;
-    (this_ptr->base).base.cached_bounding_box.max.y = (pCVar20->max).y;
-    (this_ptr->base).base.cached_bounding_box.max.z = (pCVar20->max).z;
+    *pCVar22 = pCVar20->max;
   }
   pCVar6 = &(this_ptr->base).base.model;
   pSVar19 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0

@@ -7,17 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1467,
-    "complexity_score": 726,
+    "complexity_score": 626,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 37,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 626,
-    "suspect_count": 9,
-    "suspect_types": [
-      "shadow_pointer_walk",
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 2093
   },
   "cross_references": [],
@@ -529,6 +526,78 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 284,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pCVar1->min).x = (pCVar11->min).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 290,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar22->x = (pCVar11->max).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 329,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pCVar9->min).x = (pCVar20->min).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 335,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar22->x = (pCVar20->max).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 392,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pCVar9->min).x = (pCVar20->min).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 398,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar22->x = (pCVar20->max).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 461,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pCVar9->min).x = (pCVar20->min).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 467,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar22->x = (pCVar20->max).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
       "line": 600,
       "match": "cascade_constant_fill",
@@ -545,6 +614,15 @@
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
       "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar16` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar16->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 107,
+      "match": "pCVar16 = (T *)((pCVar16->FIELD).SUBFIELD...ARRAY + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar16 = (CVampireBoss *)((pCVar16->base).base.base.actor_name + 4);",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {
@@ -931,14 +1009,14 @@
         {
           "check_id": "legacyUninitvar",
           "column": 16,
-          "line": 201,
+          "line": 198,
           "message": "Uninitialized variable: local_b4",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 19,
-          "line": 179,
+          "line": 176,
           "message": "Uninitialized variable: local_b0",
           "severity": "error"
         }
@@ -949,80 +1027,8 @@
   },
   "suspects": [
     {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 284,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(pCVar1->min).x = (pCVar11->min).x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 290,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pCVar22->x = (pCVar11->max).x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 329,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(pCVar9->min).x = (pCVar20->min).x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 335,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pCVar22->x = (pCVar20->max).x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 392,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(pCVar9->min).x = (pCVar20->min).x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 398,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pCVar22->x = (pCVar20->max).x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 461,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(pCVar9->min).x = (pCVar20->min).x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 467,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "pCVar22->x = (pCVar20->max).x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar16` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar16->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 107,
-      "match": "pCVar16 = (T *)((pCVar16->FIELD).SUBFIELD...ARRAY + CONST)",
-      "severity": "moderate",
-      "text": "pCVar16 = (CVampireBoss *)((pCVar16->base).base.base.actor_name + 4);",
-      "type": "shadow_pointer_walk"
-    },
-    {
       "description": "Uninitialized variable: local_b4",
-      "line": 201,
+      "line": 198,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "local_b4 = local_b4 + 4.0f;",
@@ -1030,7 +1036,7 @@
     },
     {
       "description": "Uninitialized variable: local_b0",
-      "line": 179,
+      "line": 176,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "fVar11 = local_b0 - (this_ptr->base).base.base.location.position.z,",

@@ -13,7 +13,6 @@ void __cdecl core_passngr_cpp_CPassenger_setup_FUN_00545d30(CPassenger *this_ptr
   UOrientationVector *pUVar1;
   CDeformableModelInstance *this_ptr_00;
   CMorph *this_ptr_01;
-  char cVar2;
   CWerewolf *pCVar4;
   CWerewolf *pCVar3;
   UOrientationVector *pUVar5;
@@ -24,17 +23,8 @@ void __cdecl core_passngr_cpp_CPassenger_setup_FUN_00545d30(CPassenger *this_ptr
   core_npc_cpp_CNPC_setup_FUN_00544870(&this_ptr->base);
   if (this_ptr->werewolf_actor == (CWerewolf *)0x0) {
     pCVar3 = (CWerewolf *)core_actor_cpp_createActorByName_FUN_0040c430("CWerewolf");
-    pcVar6 = this_ptr->name_of_wolf;
     this_ptr->werewolf_actor = pCVar3;
-    do {
-      cVar2 = *pcVar6;
-      (pCVar3->base).base.base.actor_name[0] = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar6[1];
-      pcVar6 = pcVar6 + 2;
-      (pCVar3->base).base.base.actor_name[1] = cVar2;
-      pCVar3 = (CWerewolf *)((pCVar3->base).base.base.actor_name + 2);
-    } while (cVar2 != '\0');
+    strcpy((pCVar3->base).base.base.actor_name, this_ptr->name_of_wolf);
     pCVar4 = this_ptr->werewolf_actor;
     (pCVar4->base).base.base.location = (this_ptr->base).base.base.location;
     pCVar4 = this_ptr->werewolf_actor;

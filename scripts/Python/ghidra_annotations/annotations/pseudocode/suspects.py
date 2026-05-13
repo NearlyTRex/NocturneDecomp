@@ -935,12 +935,18 @@ _UNROLLED_BYTE_STORE_RE = re.compile(
 _UNROLLED_CASTED_BYTE_STORE_RE = re.compile(
     r"^\s*\(\s*\*.*\)\s*\[\d+\]\s*=\s*(\w+)\s*;\s*$")
 # Struct-field destination form: `obj->field[N] = cVar;` / `obj->field = cVar;` /
-# `obj.field = cVar;`. The destination has at least one `->`, `.`, or `[...]`
-# accessor, optionally with a leading `*`. Used by Watcom when the destination
-# is a struct field rather than a bare local pointer/array (e.g.
-# `this_ptr->filename[0] = cVar1;`). Group 1 captures the byte source var.
+# `obj.field = cVar;` / `(obj->field).array[N] = cVar;`. The destination starts
+# with either a bare identifier or a parenthesized `ident(->field|.field)*`
+# chain (optionally `*`/`&`-prefixed), then has at least one trailing `->`,
+# `.`, or `[...]` accessor. Used by Watcom when the destination is a struct
+# field rather than a bare local pointer/array (e.g. `this_ptr->filename[0] =
+# cVar1;` or `(pCVar2->base).actor_name[0] = cVar1;`). Group 1 captures the
+# byte source var.
 _UNROLLED_STRUCT_BYTE_STORE_RE = re.compile(
-    r"^\s*(?:\*\s*)?\w+(?:->\w+|\.\w+|\[[^\]]+\])+\s*=\s*(\w+)\s*;\s*$")
+    r"^\s*(?:\*\s*)?"
+    r"(?:\(\s*[*&]?\s*\w+(?:->\w+|\.\w+)*\s*\)|\w+)"
+    r"(?:->\w+|\.\w+|\[[^\]]+\])+"
+    r"\s*=\s*(\w+)\s*;\s*$")
 _UNROLLED_NULL_BREAK_RE = re.compile(
     r"^\s*if\s*\(\s*(\w+)\s*==\s*'\\0'\s*\)\s*break\s*;\s*$")
 _UNROLLED_NULL_RETURN_RE = re.compile(

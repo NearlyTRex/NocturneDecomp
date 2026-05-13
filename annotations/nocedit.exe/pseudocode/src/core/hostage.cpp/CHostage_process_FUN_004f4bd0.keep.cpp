@@ -378,9 +378,7 @@ LAB_004f4fc0:
                                  &(this_ptr->sit_down_way_point->location).position);
             pCVar21 = &(this_ptr->base).base.position_delta;
             if (pCVar21 != pCVar20) {
-              pCVar21->x = pCVar20->x;
-              (this_ptr->base).base.position_delta.y = pCVar20->y;
-              (this_ptr->base).base.position_delta.z = pCVar20->z;
+              *pCVar21 = *pCVar20;
             }
             pCVar21 = &(this_ptr->base).base.position_delta;
             fVar14 = (this_ptr->base).base.position_delta.z;

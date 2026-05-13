@@ -48,9 +48,7 @@ void __cdecl core_baron_cpp_CBaron_attachToOwner_FUN_00413470(CBaron *this_ptr,C
     pCVar5 = this_ptr->target_actor;
     pUVar1 = &(this_ptr->base).base.base.orient;
     if (pUVar1 != &pCVar5->orient) {
-      (pUVar1->vec).x = (pCVar5->orient).vec.x;
-      (this_ptr->base).base.base.orient.vec.y = (pCVar5->orient).vec.y;
-      (this_ptr->base).base.base.orient.vec.z = (pCVar5->orient).vec.z;
+      *pUVar1 = pCVar5->orient;
     }
     memset(&(this_ptr->base).player_input,0,0x2c);
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00

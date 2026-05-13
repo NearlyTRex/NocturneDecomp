@@ -236,9 +236,7 @@ LAB_005c6fd0:
       (pCVar11->base).base.base.location.area_id = (this_ptr->base).base.base.location.area_id;
       pUVar1 = &(this_ptr->base).base.base.orient;
       if (pUVar13 != pUVar1) {
-        (pUVar13->vec).x = (pUVar1->vec).x;
-        (pCVar11->base).base.base.orient.vec.y = (this_ptr->base).base.base.orient.vec.y;
-        (pCVar11->base).base.base.orient.vec.z = (this_ptr->base).base.base.orient.vec.z;
+        *pUVar13 = *pUVar1;
       }
       (local_18->base).base.cloth_list.count = 1;
       strcpy((local_18->base).base.cloth_list.filenames[0],"hdwing.cth");
