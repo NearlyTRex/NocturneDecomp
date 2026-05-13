@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 716,
-    "complexity_score": 554,
+    "complexity_score": 584,
     "cross_reference_count": 9,
     "function_call_count": 8,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 354,
-    "suspect_count": 18,
+    "suspect_count": 21,
     "suspect_types": [
       "pointer_cast",
       "shadow_pointer_walk",
@@ -842,6 +842,14 @@
       "type": "unrolled_memset"
     },
     {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar16` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar16->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 180,
+      "match": "pCVar16 = (T *)((pCVar16->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar16 = (CCloth *)((pCVar16->model).model_filename + 4);",
+      "type": "shadow_pointer_walk"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar20` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar20->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 271,
       "match": "pSVar20 = (T *)pSVar20->ARRAY",
@@ -863,6 +871,22 @@
       "match": "pSVar19 = (T *)&(pSVar19->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "pSVar19 = (SClothVertex *)&(pSVar19->position).y;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_48` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `local_48->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 278,
+      "match": "local_48 = (T *)((local_48->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "local_48 = (CCloth *)((local_48->model).model_filename + 4);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_34` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `local_34->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 338,
+      "match": "local_34 = (T *)((local_34->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "local_34 = (CCloth *)((local_34->model).model_filename + 4);",
       "type": "shadow_pointer_walk"
     },
     {

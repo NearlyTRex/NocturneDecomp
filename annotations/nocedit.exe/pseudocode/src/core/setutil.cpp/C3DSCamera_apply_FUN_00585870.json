@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 66,
+    "complexity_score": 76,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 51,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
       "unrolled_memcpy"
     ],
@@ -236,6 +236,14 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 17,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pUVar1->f).x = (this_ptr->position).x;",
+      "type": "unrolled_memcpy"
+    },
     {
       "description": "Watcom field-by-field struct copy (10 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 21,

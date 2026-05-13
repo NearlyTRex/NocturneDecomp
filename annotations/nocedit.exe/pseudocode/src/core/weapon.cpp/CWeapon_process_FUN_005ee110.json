@@ -314,6 +314,15 @@
       "severity": "moderate",
       "text": "(this_ptr->base).location.position.x = (this_ptr->physics_box).position.x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 28,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pUVar1->vec).x = pCVar2->x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {

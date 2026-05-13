@@ -7,16 +7,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 835,
-    "complexity_score": 482,
+    "complexity_score": 517,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 402,
-    "suspect_count": 7,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
-      "shadow_pointer_walk"
+      "shadow_pointer_walk",
+      "unrolled_memcpy"
     ],
     "total_lines": 1237
   },
@@ -900,11 +901,35 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 239,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar12->x = position->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 257,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar12->x = euler->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "Watcom shadow-pointer walk \u2014 `local_30` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `local_30->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 150,
       "match": "local_30 = (T *)&(local_30->FIELD).SUBFIELD",
       "severity": "moderate",
       "text": "local_30 = (SClothVertex *)&(local_30->position).y;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_48` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `local_48->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 158,
+      "match": "local_48 = (T *)((local_48->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "local_48 = (CCloth *)((local_48->model).model_filename + 4);",
       "type": "shadow_pointer_walk"
     },
     {

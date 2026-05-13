@@ -7,14 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1793,
-    "complexity_score": 771,
+    "complexity_score": 826,
     "cross_reference_count": 0,
     "function_call_count": 38,
     "global_count": 54,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 756,
-    "suspect_count": 1,
+    "suspect_count": 6,
     "suspect_types": [
+      "shadow_pointer_walk",
       "unrolled_memcpy"
     ],
     "total_lines": 2549
@@ -1130,11 +1131,51 @@
   "suspects": [
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 260,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->new_pos).x = (pCVar16->position).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 392,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_7c.x = local_124.x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 645,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pCVar1->position).x = (this_ptr->new_pos).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 660,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pUVar1->vec).x = (pUVar12->vec).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar17` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar17->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 122,
+      "match": "pCVar17 = (T *)((pCVar17->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar17 = (CDraculaBride *)((pCVar17->base).base.base.actor_name + 4);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar17` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar17->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 136,
+      "match": "pCVar17 = (T *)((pCVar17->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar17 = (CDraculaBride *)((pCVar17->base).base.base.actor_name + 4);",
+      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {

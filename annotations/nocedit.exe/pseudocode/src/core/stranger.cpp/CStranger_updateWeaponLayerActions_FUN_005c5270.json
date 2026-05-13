@@ -308,6 +308,15 @@
       "severity": "moderate",
       "text": "} while( true );",
       "type": "dropped_loop_counter"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_34` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `local_34->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 378,
+      "match": "local_34 = (T *)((local_34->FIELD).SUBFIELD...ARRAY + CONST)",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "local_34 = (CDynamite *)((local_34->base).base.actor_name + 1);",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {

@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 626,
-    "complexity_score": 275,
+    "complexity_score": 315,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 17,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 260,
-    "suspect_count": 1,
+    "suspect_count": 5,
     "suspect_types": [
       "unrolled_memcpy"
     ],
@@ -579,10 +579,42 @@
   "suspects": [
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 111,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar13->x = (pCVar11->position).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 118,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pUVar1->vec).x = (pUVar15->vec).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 159,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->carry_object_world_center).x = pCVar13->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 178,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar13->x = (pCVar11->position).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 185,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pUVar11->vec).x = (pUVar5->vec).x;",
       "type": "unrolled_memcpy"
     }
   ]

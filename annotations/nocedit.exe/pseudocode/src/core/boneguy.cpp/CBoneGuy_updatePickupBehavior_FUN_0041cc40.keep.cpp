@@ -21,9 +21,8 @@ int __cdecl core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40(CBoneGuy
   int iVar4;
   CBoundingBox3D *pCVar5;
   int iVar7;
-  int iVar6;
   CDeformableModelInstance *this_ptr_00;
-  uint auStack_d4 [10];
+  CDemonActor *auStack_d4 [10];
   CBoundingBox3D CStack_ac;
   CBoundingBox3D CStack_94;
   CVector3f CStack_7c;
@@ -33,7 +32,6 @@ int __cdecl core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40(CBoneGuy
   float fStack_30;
   int local_2c;
   int local_24;
-  int local_20;
   float local_18;
   CVector3f *dst;
   float *scalar;
@@ -105,11 +103,9 @@ int __cdecl core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40(CBoneGuy
                   (&this_ptr_00->motion_controller,1,1);
         return 0;
       }
-      iVar6 = 0;
       local_2c = 0;
-      local_20 = 0;
       for (local_24 = 0; local_24 < g_CDemonSetPtr->actor_count; local_24 = local_24 + 1) {
-        pCVar1 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_20);
+        pCVar1 = g_CDemonSetPtr->actors[local_24];
         pCVar2 = (*((pCVar1->vtable)._ub)->getCarrier)(pCVar1);
         if (pCVar2 == (CDemonActor *)0x0) {
           iVar4 = (*((pCVar1->vtable)._ub)->canPickup)(pCVar1,(CDemonActor *)this_ptr);
@@ -131,20 +127,18 @@ int __cdecl core_boneguy_cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40(CBoneGuy
                 fVar3 = fVar3 * fVar3;
                 fVar2 = SQRT(fVar4 * fVar4 + fVar2 * fVar2 + fVar3 * fVar3);
                 if (((float)5 <= fVar2) && ((int)fVar2 < 0x41700001)) {
-                  *(CDemonActor **)((int)auStack_d4 + iVar6) = pCVar1;
+                  auStack_d4[local_2c] = pCVar1;
                   local_2c = local_2c + 1;
-                  iVar6 = iVar6 + 4;
-                  if (0x27 < iVar6) break;
+                  if (10 <= local_2c) break;
                 }
               }
             }
           }
         }
-        local_20 = local_20 + 4;
       }
       if (0 < local_2c) {
         iVar7 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,local_2c + -1);
-        pCVar1 = (CDemonActor *)auStack_d4[iVar7];
+        pCVar1 = auStack_d4[iVar7];
         this_ptr->pickup_cooldown = -40.0;
         this_ptr->pickup_target = pCVar1;
         this_ptr->pickup_attempt_count = this_ptr->pickup_attempt_count + 1;

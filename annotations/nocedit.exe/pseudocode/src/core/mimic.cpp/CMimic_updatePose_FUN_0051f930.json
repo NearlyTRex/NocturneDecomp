@@ -7,13 +7,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 484,
-    "complexity_score": 384,
+    "complexity_score": 394,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 169,
-    "suspect_count": 19,
+    "suspect_count": 20,
     "suspect_types": [
       "missing_cave_copy",
       "pointer_cast",
@@ -376,6 +376,14 @@
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar7->x = pCVar12->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 166,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pUVar14->vec).x = pCVar9->x;",
       "type": "unrolled_memcpy"
     },
     {

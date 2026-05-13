@@ -96,6 +96,15 @@
       "severity": "moderate",
       "text": "(this_ptr->cached_bounding_box).min.x = (pCVar2->min).x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 19,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar1->x = (pCVar2->max).x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "stack_frame": {

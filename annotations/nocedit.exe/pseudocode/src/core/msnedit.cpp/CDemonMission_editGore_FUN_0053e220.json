@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 647,
-    "complexity_score": 293,
+    "complexity_score": 303,
     "cross_reference_count": 1,
     "function_call_count": 43,
     "global_count": 43,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 223,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "unrolled_memcpy",
       "unrolled_memset"
@@ -865,6 +865,14 @@
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(actor_00->base).location.position.x = local_bc.position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 103,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pUVar5->vec).x = local_bc.orientation.vec.x;",
       "type": "unrolled_memcpy"
     },
     {

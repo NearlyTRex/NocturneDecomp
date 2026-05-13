@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 236,
-    "complexity_score": 124,
+    "complexity_score": 89,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 10,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 89,
-    "suspect_count": 3,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 325
   },
   "cross_references": [],
@@ -206,6 +204,35 @@
     },
     "pcode_op_count": 885
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(uint *)((int)local_2840",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_2840.part_data.visibility_flags + iVar3) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(int *)((int)local_2840",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)local_2840.part_data.visibility_flags + iVar5) != 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(int *)((int)local_2840",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)local_2840.part_data.visibility_flags + iVar4) != 0) {",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 10312,
     "local_size": 10308,
@@ -264,49 +291,7 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CBodyPart_initializeInEditor_FUN_0041b280.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 13,
-          "line": 45,
-          "message": "Redundant assignment of 'iVar3' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(uint *)((int)local_2840",
-      "severity": "moderate",
-      "text": "*(uint *)((int)local_2840.part_data.visibility_flags + iVar3) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 50,
-      "match": "(int *)((int)local_2840",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)local_2840.part_data.visibility_flags + iVar5) != 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 73,
-      "match": "(int *)((int)local_2840",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)local_2840.part_data.visibility_flags + iVar4) != 0) {",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

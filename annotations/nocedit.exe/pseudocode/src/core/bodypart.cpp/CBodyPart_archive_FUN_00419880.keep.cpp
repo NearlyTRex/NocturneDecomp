@@ -14,16 +14,9 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_00419880(CBodyPart *this_pt
   int iVar6;
   int iVar2;
   char *pcVar3;
-  int iVar7;
   char *pcVar8;
-  int iVar9;
-  int iVar4;
-  int local_18;
   int local_14;
-  uint *puVar2;
-  uint *puVar1;
   CVector3i *pCVar4;
-  uint *puVar3;
   SMRGLPrimitiveTriangle *pSVar5;
   
   core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(&this_ptr->base);
@@ -35,35 +28,31 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_00419880(CBodyPart *this_pt
               (this_ptr,this_ptr->vertex_count,this_ptr->tri_count);
     iVar2 = 0;
     if (0 < this_ptr->vertex_count) {
-      iVar4 = 0;
       do {
-        iVar7 = (int)&this_ptr->vertices->x + iVar4;
+        _fscanf(g_ActorDataFile,"%d,%d,%d\n",
+                   &this_ptr->vertices[iVar2].x,
+                   &this_ptr->vertices[iVar2].y,
+                   &this_ptr->vertices[iVar2].z);
         iVar2 = iVar2 + 1;
-        iVar4 = iVar4 + 0xc;
-        _fscanf(g_ActorDataFile,"%d,%d,%d\n",(int *)iVar7,(int *)(iVar7 + 4),(int *)(iVar7 + 8));
       } while (iVar2 < this_ptr->vertex_count);
     }
     local_14 = 0;
     if (0 < this_ptr->tri_count) {
-      iVar4 = 0;
-      iVar2 = 0;
       do {
         pSVar1 = this_ptr->faces;
         _fscanf(g_ActorDataFile,"\t\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n",
-                   (int *)((int)this_ptr->face_texture_indices + iVar4),
-                   (int *)((int)&pSVar1->vertices[0].vertex_index + iVar2),
-                   (int *)((int)&pSVar1->vertices[0].texture_u + iVar2),
-                   (int *)((int)&pSVar1->vertices[0].texture_v + iVar2),
-                   (int *)((int)&pSVar1->vertices[1].vertex_index + iVar2),
-                   (int *)((int)&pSVar1->vertices[1].texture_u + iVar2),
-                   (int *)((int)&pSVar1->vertices[1].texture_v + iVar2),
-                   (int *)((int)&pSVar1->vertices[2].vertex_index + iVar2),
-                   (int *)((int)&pSVar1->vertices[2].texture_u + iVar2),
-                   (int *)((int)&pSVar1->vertices[2].texture_v + iVar2));
-        iVar4 = iVar4 + 4;
-        *(uint *)((int)pSVar1->vertices + iVar2 + -0x14) = 3;
+                   &this_ptr->face_texture_indices[local_14],
+                   &pSVar1[local_14].vertices[0].vertex_index,
+                   &pSVar1[local_14].vertices[0].texture_u,
+                   &pSVar1[local_14].vertices[0].texture_v,
+                   &pSVar1[local_14].vertices[1].vertex_index,
+                   &pSVar1[local_14].vertices[1].texture_u,
+                   &pSVar1[local_14].vertices[1].texture_v,
+                   &pSVar1[local_14].vertices[2].vertex_index,
+                   &pSVar1[local_14].vertices[2].texture_u,
+                   &pSVar1[local_14].vertices[2].texture_v);
+        pSVar1[local_14].base.base.count = 3;
         local_14 = local_14 + 1;
-        iVar2 = iVar2 + 0x3c;
       } while (local_14 < this_ptr->tri_count);
     }
     iVar2 = 0;
@@ -80,37 +69,29 @@ void __cdecl core_bodypart_cpp_CBodyPart_archive_FUN_00419880(CBodyPart *this_pt
   else {
     iVar6 = 0;
     if (0 < this_ptr->vertex_count) {
-      iVar9 = 0;
       do {
         pCVar4 = this_ptr->vertices;
-        puVar2 = (uint *)((int)&pCVar4->z + iVar9);
-        puVar3 = (uint *)((int)&pCVar4->y + iVar9);
-        puVar1 = (uint *)((int)&pCVar4->x + iVar9);
-        iVar9 = iVar9 + 0xc;
+        _fprintf(g_ActorDataFile,"\t%d,%d,%d\n",
+                   pCVar4[iVar6].x,pCVar4[iVar6].y,pCVar4[iVar6].z);
         iVar6 = iVar6 + 1;
-        _fprintf(g_ActorDataFile,"\t%d,%d,%d\n",*puVar1,*puVar3,*puVar2);
       } while (iVar6 < this_ptr->vertex_count);
     }
     iVar2 = 0;
     if (0 < this_ptr->tri_count) {
-      local_18 = 0;
-      iVar4 = 0;
       do {
         pSVar5 = this_ptr->faces;
         _fprintf(g_ActorDataFile,"\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n",
-                   *(uint *)(iVar4 + (int)this_ptr->face_texture_indices),
-                   *(uint *)((int)&pSVar5->vertices[0].vertex_index + local_18),
-                   *(uint *)((int)&pSVar5->vertices[0].texture_u + local_18),
-                   *(uint *)((int)&pSVar5->vertices[0].texture_v + local_18),
-                   *(uint *)((int)&pSVar5->vertices[1].vertex_index + local_18),
-                   *(uint *)((int)&pSVar5->vertices[1].texture_u + local_18),
-                   *(uint *)((int)&pSVar5->vertices[1].texture_v + local_18),
-                   *(uint *)((int)&pSVar5->vertices[2].vertex_index + local_18),
-                   *(uint *)((int)&pSVar5->vertices[2].texture_u + local_18),
-                   *(uint *)((int)&pSVar5->vertices[2].texture_v + local_18));
-        iVar4 = iVar4 + 4;
+                   this_ptr->face_texture_indices[iVar2],
+                   pSVar5[iVar2].vertices[0].vertex_index,
+                   pSVar5[iVar2].vertices[0].texture_u,
+                   pSVar5[iVar2].vertices[0].texture_v,
+                   pSVar5[iVar2].vertices[1].vertex_index,
+                   pSVar5[iVar2].vertices[1].texture_u,
+                   pSVar5[iVar2].vertices[1].texture_v,
+                   pSVar5[iVar2].vertices[2].vertex_index,
+                   pSVar5[iVar2].vertices[2].texture_u,
+                   pSVar5[iVar2].vertices[2].texture_v);
         iVar2 = iVar2 + 1;
-        local_18 = local_18 + 0x3c;
       } while (iVar2 < this_ptr->tri_count);
     }
     iVar2 = 0;

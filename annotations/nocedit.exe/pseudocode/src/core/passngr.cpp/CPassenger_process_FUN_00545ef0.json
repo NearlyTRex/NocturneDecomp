@@ -173,12 +173,12 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 77,
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 76,
       "match": "field-by-field struct copy",
       "resolution_source": "keep",
       "severity": "moderate",
-      "text": "(pCVar3->location).position.y = (this_ptr->base).base.base.location.position.y;",
+      "text": "(pCVar3->location).position.x = (pCVar1->position).x;",
       "type": "unrolled_memcpy"
     },
     {

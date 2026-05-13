@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (438 diagnostics)
+Cppcheck (quick) (421 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -429,7 +429,7 @@ shiftTooManyBitsSigned (104)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (73)
+selfAssignment (70)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 116
@@ -439,18 +439,6 @@ selfAssignment (73)
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 223
     File: cockpit/ckptutil.c
     Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 53
-    File: cockpit/pkbitmap.cpp
-    Redundant assignment of 'pbVar5' to itself.
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 54
-    File: cockpit/pkbitmap.cpp
-    Redundant assignment of 'pbVar6' to itself.
-
-  core_bodypart.cpp_CBodyPart_initializeInEditor_FUN line 45
-    File: core/bodypart.cpp
-    Redundant assignment of 'iVar3' to itself.
 
   core_charactr.cpp_CCharacter_setup_FUN_00428140    line 89
     File: core/charactr.cpp
@@ -725,20 +713,8 @@ selfAssignment (73)
     Redundant assignment of 'pafVar3' to itself.
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (73)
+uninitvar (70)
 ----------------------------------------------------------------------------------------------------
-
-  core_boneguy.cpp_hsvToRgb_FUN_0041ba10             line 39
-    File: core/boneguy.cpp
-    Uninitialized variable: local_1c
-
-  core_boneguy.cpp_hsvToRgb_FUN_0041ba10             line 40
-    File: core/boneguy.cpp
-    Uninitialized variable: local_18
-
-  core_boneguy.cpp_hsvToRgb_FUN_0041ba10             line 41
-    File: core/boneguy.cpp
-    Uninitialized variable: local_10
 
   core_cloth.cpp_CCloth_applyConstraints_FUN_0043a42 line 92
     File: core/cloth.cpp
@@ -1261,48 +1237,8 @@ invalidscanf (59)
     sscanf() without field width limits can crash with huge input data.
 
 ----------------------------------------------------------------------------------------------------
-legacyUninitvar (42)
+legacyUninitvar (32)
 ----------------------------------------------------------------------------------------------------
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 59
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: local_28
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 59
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: local_24
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 62
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: local_20
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 62
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: local_1c
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 63
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: local_18
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 63
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: local_14
-
-  core_box.cpp_CBox_processPhysics_FUN_0041e350      line 331
-    File: core/box.cpp
-    Uninitialized variable: local_3d0
-
-  core_box.cpp_CBox_processPhysics_FUN_0041e350      line 686
-    File: core/box.cpp
-    Uninitialized variable: local_380
-
-  core_box.cpp_CBox_processPhysics_FUN_0041e350      line 687
-    File: core/box.cpp
-    Uninitialized variable: local_37c
-
-  core_box.cpp_CBox_processPhysics_FUN_0041e350      line 689
-    File: core/box.cpp
-    Uninitialized variable: local_378
 
   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN line 647
     File: core/dmodel.cpp
@@ -1807,14 +1743,6 @@ oppositeInnerCondition (1)
   core_script.cpp_CScript_parseActionTemplate_FUN_00 line 21
     File: core/script.cpp
     Opposite inner 'if' condition leads to a dead code block.
-
-----------------------------------------------------------------------------------------------------
-compareBoolExpressionWithInt (1)
-----------------------------------------------------------------------------------------------------
-
-  core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0 line 169
-    File: core/box.cpp
-    Comparison of a boolean expression with an integer other than 0 or 1.
 
 ----------------------------------------------------------------------------------------------------
 nullPointerArithmetic (1)

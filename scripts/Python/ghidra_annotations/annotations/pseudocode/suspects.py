@@ -1484,6 +1484,25 @@ def identify_dropped_loop_counter(decompiled_code):
 # (or with `->` instead of `.`) where the trailing field name on both sides
 # matches via backreference. Lazy `.+?` lets the leading prefix span any
 # expression (parenthesized derefs, multi-level paths, indexed accesses).
+# Trivial pointer-alias declarations recognized by `_resolve_pointer_aliases`.
+# Two shapes:
+#   `IDENT = BASE + N;`       (integer-offset arithmetic — `IDENT->f`
+#                              becomes `BASE[N].f` for field-copy matching)
+#   `IDENT = &EXPR;`          (address-of an access path — `IDENT->f`
+#                              becomes `EXPR.f`)
+# Both forms produce the same substitution rule: `IDENT->field` is rewritten
+# to `<replacement>.field`, with no other use of `IDENT` touched. Negative
+# offsets and hex offsets in the `+ N` form are deliberately out of scope —
+# the Ghidra-emitted shape is integer `+ N`.
+_POINTER_ALIAS_ADD_RE = re.compile(
+    r"^\s*(\w+)\s*=\s*(\w+)\s*\+\s*(\d+)\s*;\s*$")
+_POINTER_ALIAS_ADDR_RE = re.compile(
+    r"^\s*(\w+)\s*=\s*&\s*(\S.*?)\s*;\s*$")
+# Any assignment to a bare identifier — used to invalidate a tracked alias
+# when the alias name is reassigned to anything not matching the patterns
+# above.
+_ANY_ASSIGN_LHS_RE = re.compile(r"^\s*(\w+)\s*=")
+
 _FIELD_COPY_RE = re.compile(
     r"^\s*(.+?)(?:\.|->)(\w+)\s*=\s*(.+?)(?:\.|->)\2\s*;\s*$")
 # Same shape as _FIELD_COPY_RE but with separate field-name captures on each
@@ -1547,6 +1566,79 @@ def _is_pure_path_expr(expr):
     return re.fullmatch(r'\s*[\w\.\s]*\s*', s) is not None
 
 
+def _resolve_pointer_aliases(decompiled_code):
+    """Replace `IDENT->field` with the alias's access path for two trivial
+    Ghidra-emitted alias forms.
+
+    Form A (integer offset):
+
+        euler_angles_01 = pCVar20 + 1;
+        ...
+        euler_angles_01->x = pCVar19->x;     // becomes pCVar20[1].x = pCVar19->x;
+        pCVar20[1].y = pCVar19->y;
+        pCVar20[1].z = pCVar19->z;
+
+    Form B (address-of access path):
+
+        pCVar6 = &(this_ptr->physics_box).linear_velocity;
+        ...
+        pCVar6->x = (this_ptr->initial_velocity).x;
+            // becomes (this_ptr->physics_box).linear_velocity.x = (this_ptr->initial_velocity).x;
+        (this_ptr->physics_box).linear_velocity.y = (this_ptr->initial_velocity).y;
+        (this_ptr->physics_box).linear_velocity.z = (this_ptr->initial_velocity).z;
+
+    Without this rewrite, the first line in each example uses an alias
+    name and subsequent lines use the bare access form, so the LHS root
+    differs and `identify_unrolled_field_copy` splits the run apart.
+
+    Tracking is line-precise: once `IDENT` is reassigned to anything not
+    matching one of the alias patterns above, the alias is dropped. Only
+    `IDENT->field` is substituted — bare uses like `if (IDENT != ...)`
+    are left intact, so reassignment and pointer compares still work as
+    written.
+
+    The output has the same line count as the input — only token text
+    inside each line may change — so suspect line numbers remain
+    meaningful.
+    """
+    if not decompiled_code:
+        return decompiled_code
+    lines = decompiled_code.split('\n')
+    # name -> replacement string (no trailing `.`). For form A this is
+    # `BASE[N]`; for form B it's the captured EXPR text.
+    aliases = {}
+    out = []
+    for raw in lines:
+        # Apply current aliases to the line *before* updating tracking.
+        # `IDENT->` → `<replacement>.` for each tracked alias.
+        rewritten = raw
+        if aliases:
+            def sub_arrow(m):
+                name = m.group(1)
+                replacement = aliases.get(name)
+                if replacement is None:
+                    return m.group(0)
+                return replacement + '.'
+            rewritten = re.sub(r'\b(\w+)->', sub_arrow, rewritten)
+        out.append(rewritten)
+
+        # Update tracking from the original line, not the rewritten one —
+        # tracking decisions are about source identity, not the rendered
+        # access form.
+        m_add = _POINTER_ALIAS_ADD_RE.match(raw)
+        if m_add:
+            aliases[m_add.group(1)] = '%s[%s]' % (m_add.group(2), m_add.group(3))
+            continue
+        m_addr = _POINTER_ALIAS_ADDR_RE.match(raw)
+        if m_addr:
+            aliases[m_addr.group(1)] = m_addr.group(2)
+            continue
+        any_m = _ANY_ASSIGN_LHS_RE.match(raw)
+        if any_m and any_m.group(1) in aliases:
+            del aliases[any_m.group(1)]
+    return '\n'.join(out)
+
+
 def identify_unrolled_field_copy(decompiled_code):
     """Detect Watcom-emitted field-by-field struct copies.
 
@@ -1591,15 +1683,52 @@ def identify_unrolled_field_copy(decompiled_code):
     suspects = []
     if not decompiled_code:
         return suspects
-    lines = decompiled_code.split('\n')
+    # Match against alias-resolved lines so a mixed-form run (alias on
+    # one line, array-index on the next) groups as one run. Reporting
+    # still uses the original line text so the user sees the source as
+    # written.
+    original_lines = decompiled_code.split('\n')
+    lines = _resolve_pointer_aliases(decompiled_code).split('\n')
     n = len(lines)
     # 3 catches `x/y/z` vector copies; the same-root grouping below keeps
     # false positives from unrelated 3-line runs in check.
     MIN_RUN = 3
 
     def normalize(expr):
-        """Collapse whitespace so cosmetic differences don't split a run."""
-        return re.sub(r'\s+', '', expr)
+        """Collapse whitespace and strip redundant outer parens around a
+        pure access path, so cosmetic wrappings don't split a run.
+
+        The Form-B alias resolver substitutes `IDENT->field` with
+        `<expr>.field` while preserving the original line's parens,
+        producing forms like `((expr).orient.vec).x` that fail to match
+        bare-form peers `(expr).orient.vec.y` on subsequent lines. The
+        outer-paren strip canonicalizes both to `(expr).orient.vec`.
+        """
+        s = re.sub(r'\s+', '', expr)
+        while len(s) >= 2 and s[0] == '(' and s[-1] == ')':
+            # Only strip if the leading `(` is balanced by the trailing
+            # `)` — guard against expressions like `(a)+(b)` where the
+            # depth hits 0 mid-string and the outermost parens don't
+            # wrap the whole thing.
+            depth = 0
+            wraps_whole = True
+            for i, ch in enumerate(s):
+                if ch == '(':
+                    depth += 1
+                elif ch == ')':
+                    depth -= 1
+                    if depth == 0 and i != len(s) - 1:
+                        wraps_whole = False
+                        break
+            if not wraps_whole:
+                break
+            inner = s[1:-1]
+            # Don't strip if the inner has top-level arithmetic — that
+            # would change semantics.
+            if not _is_pure_path_expr(inner):
+                break
+            s = inner
+        return s
 
     def get_root(expr):
         """Return the leading identifier of an expression, or '' if none."""
@@ -1709,7 +1838,7 @@ def identify_unrolled_field_copy(decompiled_code):
                 'line': i + 1,
                 'type': 'unrolled_memcpy',
                 'match': 'field-by-field struct copy',
-                'text': lines[i].strip()[:120],
+                'text': original_lines[i].strip()[:120],
                 'description': (
                     'Watcom field-by-field struct copy (%d consecutive '
                     '`dst.field = src.field;` lines). Replace with '
@@ -2197,7 +2326,8 @@ _SHADOW_PTR_WALK_ADDR_RE = re.compile(
     r'^\s*(\w+)\s*=\s*'                              # LHS identifier
     r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
     r'&\s*\(\s*\1\s*->\s*\w+\s*\)'                   # &( IDENT->FIELD )
-    r'(?:\s*\.\s*\w+)+\s*;\s*$'                      # .SUBFIELD(.SUBFIELD)*;
+    r'(?:\s*\.\s*\w+(?:\s*\[\s*\d+\s*\])?)+'         # .SUBFIELD[N]?(.SUBFIELD[N]?)*
+    r'\s*;\s*$'                                      # ;
 )
 # Array-decay variant: `IDENT = (T *)IDENT->ARRAY_FIELD;` — Watcom advances
 # the pointer by the byte offset of a sibling array field whose offset
@@ -2209,6 +2339,58 @@ _SHADOW_PTR_WALK_DECAY_RE = re.compile(
     r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
     r'\1\s*->\s*\w+\s*;\s*$'                         # IDENT->FIELD;
 )
+# Array-decay-plus-const variant:
+#   `IDENT = (T *)((IDENT->FIELD).SUBFIELD...ARRAY + CONST);`
+# Watcom advances the shadow pointer by pointer arithmetic on an inner
+# array name (which decays to a pointer), stepping by `CONST *
+# sizeof(element)` bytes. Same antipattern as the `.ARRAY[N] + CONST`
+# form, just shaped as decay-plus-arith. Differs from
+# `_SHADOW_PTR_WALK_RE` by having no `[N]` between the array name and
+# the `+ CONST`.
+_SHADOW_PTR_WALK_ARRAY_DECAY_PLUS_RE = re.compile(
+    r'^\s*(\w+)\s*=\s*'                              # LHS identifier
+    r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
+    r'\(\s*\(\s*\1\s*->\s*\w+\s*\)'                  # ( IDENT->FIELD )
+    r'(?:\s*\.\s*\w+)+'                              # .SUBFIELD(.SUBFIELD)+
+    r'\s*\+\s*\d+\s*\)\s*;\s*$'                      # + CONST );
+)
+# Two-step variants: same four shapes as above, but the LHS is a scratch
+# `TMP` instead of the rebound `IDENT`. The rebind happens on a later line
+# (`IDENT = TMP;`) — functionally identical to the self-update form. The
+# `(\w+)...(\w+)` capture replaces the backref with two distinct captures
+# so we can match the form and then verify the rebind via forward scan.
+# Caught: e.g. `pCVar4 = (CBoneGuy *)((local_1c->base).base.base.orient_matrix.m + 1);`
+# followed by `local_1c = pCVar4;` later in the same loop body.
+_SHADOW_PTR_WALK_TWOSTEP_RE = re.compile(
+    r'^\s*(\w+)\s*=\s*'                              # TMP identifier
+    r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
+    r'\(\s*\(\s*(\w+)\s*->\s*\w+\s*\)'               # ( IDENT->FIELD )
+    r'\s*\.\s*\w+\s*\[\s*\d+\s*\]'                   # .ARRAY[N]
+    r'\s*\+\s*\d+\s*\)\s*;\s*$'                      # + CONST );
+)
+_SHADOW_PTR_WALK_TWOSTEP_ADDR_RE = re.compile(
+    r'^\s*(\w+)\s*=\s*'                              # TMP identifier
+    r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
+    r'&\s*\(\s*(\w+)\s*->\s*\w+\s*\)'                # &( IDENT->FIELD )
+    r'(?:\s*\.\s*\w+(?:\s*\[\s*\d+\s*\])?)+'         # .SUBFIELD[N]?(.SUBFIELD[N]?)*
+    r'\s*;\s*$'                                      # ;
+)
+_SHADOW_PTR_WALK_TWOSTEP_DECAY_RE = re.compile(
+    r'^\s*(\w+)\s*=\s*'                              # TMP identifier
+    r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
+    r'(\w+)\s*->\s*\w+\s*;\s*$'                      # IDENT->FIELD;
+)
+_SHADOW_PTR_WALK_TWOSTEP_ARRAY_DECAY_PLUS_RE = re.compile(
+    r'^\s*(\w+)\s*=\s*'                              # TMP identifier
+    r'\(\s*[A-Za-z_]\w*\s*\*\s*\)\s*'                # cast to (T *)
+    r'\(\s*\(\s*(\w+)\s*->\s*\w+\s*\)'               # ( IDENT->FIELD )
+    r'(?:\s*\.\s*\w+)+'                              # .SUBFIELD(.SUBFIELD)+
+    r'\s*\+\s*\d+\s*\)\s*;\s*$'                      # + CONST );
+)
+# Scan window for the rebind line when matching the two-step form. Loop
+# bodies that emit this pattern are typically ≤20 lines; longer ones are
+# rare and a missed hit is better than scanning the rest of the function.
+_SHADOW_PTR_WALK_TWOSTEP_WINDOW = 20
 
 
 def identify_shadow_pointer_walk(decompiled_code):
@@ -2242,7 +2424,20 @@ def identify_shadow_pointer_walk(decompiled_code):
     suspects = []
     if not decompiled_code:
         return suspects
-    for line_no, line in enumerate(decompiled_code.split('\n'), 1):
+    lines = decompiled_code.split('\n')
+
+    def has_rebind(start_idx, base_ident, tmp_ident):
+        """Scan up to WINDOW lines forward for `base_ident = tmp_ident;`."""
+        rebind_re = re.compile(
+            r'^\s*' + re.escape(base_ident) +
+            r'\s*=\s*' + re.escape(tmp_ident) + r'\s*;\s*$')
+        end = min(len(lines), start_idx + _SHADOW_PTR_WALK_TWOSTEP_WINDOW + 1)
+        for i in range(start_idx + 1, end):
+            if rebind_re.match(lines[i]):
+                return True
+        return False
+
+    for line_no, line in enumerate(lines, 1):
         stripped = line.lstrip()
         if (stripped.startswith('//') or stripped.startswith('/*') or
                 stripped.startswith('*')):
@@ -2300,6 +2495,70 @@ def identify_shadow_pointer_walk(decompiled_code):
                     'self-update.' % (m.group(1), m.group(1))),
                 'severity': 'moderate',
             })
+            continue
+        m = _SHADOW_PTR_WALK_ARRAY_DECAY_PLUS_RE.match(line)
+        if m:
+            suspects.append({
+                'line': line_no,
+                'type': 'shadow_pointer_walk',
+                'match': '%s = (T *)((%s->FIELD).SUBFIELD...ARRAY + CONST)' % (
+                    m.group(1), m.group(1)),
+                'text': line.strip()[:120],
+                'description': (
+                    'Watcom shadow-pointer walk — `%s` self-updates via '
+                    'pointer arithmetic on an inner array field reached '
+                    'through a chained field path; the array decays to a '
+                    'pointer and `+ CONST` adds `CONST * sizeof(element)` '
+                    'bytes, matching the outer array stride. Replace '
+                    '`%s->some_field[0]` reads with direct indexing on '
+                    'the original pointer; drop the shadow init and '
+                    'self-update.' % (m.group(1), m.group(1))),
+                'severity': 'moderate',
+            })
+            continue
+        # Two-step variants. The first line advances a scratch `TMP`; a
+        # later line rebinds `IDENT = TMP;`. Same antipattern as the
+        # self-update forms above, just split across two statements.
+        for re_obj, kind in (
+            (_SHADOW_PTR_WALK_TWOSTEP_RE,
+             '(T *)((IDENT->FIELD).ARRAY[N] + CONST)'),
+            (_SHADOW_PTR_WALK_TWOSTEP_ADDR_RE,
+             '(T *)&(IDENT->FIELD).SUBFIELD'),
+            (_SHADOW_PTR_WALK_TWOSTEP_DECAY_RE,
+             '(T *)IDENT->ARRAY'),
+            (_SHADOW_PTR_WALK_TWOSTEP_ARRAY_DECAY_PLUS_RE,
+             '(T *)((IDENT->FIELD).SUBFIELD...ARRAY + CONST)'),
+        ):
+            m = re_obj.match(line)
+            if not m:
+                continue
+            tmp_ident, base_ident = m.group(1), m.group(2)
+            if tmp_ident == base_ident:
+                # Already a single-line self-update — handled by the
+                # backref-matching passes above. Don't double-flag.
+                continue
+            if not has_rebind(line_no - 1, base_ident, tmp_ident):
+                continue
+            suspects.append({
+                'line': line_no,
+                'type': 'shadow_pointer_walk',
+                'match': '%s = %s; ...; %s = %s' % (
+                    tmp_ident, kind.replace('IDENT', base_ident),
+                    base_ident, tmp_ident),
+                'text': line.strip()[:120],
+                'description': (
+                    'Watcom shadow-pointer walk (two-step form) — `%s` is '
+                    'advanced into scratch `%s`, then rebound via a later '
+                    '`%s = %s;`. Functionally identical to the single-line '
+                    'self-update; replace `%s->some_field[0]` reads with '
+                    'direct indexing on the original pointer and drop both '
+                    'the advance line and the rebind.' % (
+                        base_ident, tmp_ident,
+                        base_ident, tmp_ident,
+                        base_ident)),
+                'severity': 'moderate',
+            })
+            break
     return suspects
 
 

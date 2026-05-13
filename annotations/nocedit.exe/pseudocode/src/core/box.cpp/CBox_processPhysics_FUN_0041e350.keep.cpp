@@ -23,8 +23,6 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
   CVector3f *pCVar16;
   SScrape *pSVar11;
   SScrape *pSVar12;
-  CBox *pCVar13;
-  CBox *pCVar17;
   int iVar18;
   int iVar16;
   CMatrix3x3f local_420;
@@ -37,10 +35,10 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
   float local_3e0;
   float local_3dc;
   float local_3d8;
-  float local_3d0 [8];
-  float local_380;
-  float local_37c;
-  float local_378;
+  int local_3d0 [8] = {};
+  float local_380 = 0.0f;
+  float local_37c = 0.0f;
+  float local_378 = 0.0f;
   float local_35c;
   float local_358;
   float local_354;
@@ -74,7 +72,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
   int local_3c;
   float local_30;
   SScrape *local_28;
-  float local_20;
+  int local_20;
   int local_1c;
   float fVar1;
   float fVar3;
@@ -90,7 +88,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
   float local_368;
   float local_364;
   float local_360;
-  
+
   bVar17 = 0;
   if (this_ptr->is_valid != 0) {
     if ((CBox *)&local_344.scrape_points[7].transformed_position.z != this_ptr) {
@@ -99,9 +97,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
       local_344.scrape_points[7].previous_position.y = (this_ptr->position).z;
     }
     if (&local_344 != this_ptr) {
-      local_344.position.x = (this_ptr->position).x;
-      local_344.position.y = (this_ptr->position).y;
-      local_344.position.z = (this_ptr->position).z;
+      local_344.position = this_ptr->position;
     }
     local_344.scrape_points[7].previous_position.x =
          local_344.scrape_points[7].previous_position.x + 1.0;
@@ -122,9 +118,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
     pCVar16 = &this_ptr->scrape_points[0].previous_position;
     do {
       if (pCVar16 != pCVar14) {
-        pCVar16->x = pCVar14->x;
-        pCVar16->y = pCVar14->y;
-        pCVar16->z = pCVar14->z;
+        *pCVar16 = *pCVar14;
       }
       pCVar14 = (CVector3f *)((int)(pCVar14 + 4) + 4);
       pCVar16 = (CVector3f *)((int)(pCVar16 + 4) + 4);
@@ -156,12 +150,12 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
          (this_ptr->angular_momentum).x / (this_ptr->moment_of_inertia).x;
     (this_ptr->angular_velocity_temp).y = fVar1 / fVar2;
     (this_ptr->angular_velocity_temp).z = fVar3 / fVar4;
+    (this_ptr->linear_momentum).x = 0.0;
+    (this_ptr->linear_momentum).y = 0.0;
     (this_ptr->linear_momentum).z = 0.0;
-    (this_ptr->linear_momentum).y = (this_ptr->linear_momentum).z;
-    (this_ptr->linear_momentum).x = (this_ptr->linear_momentum).y;
+    (this_ptr->angular_momentum).x = 0.0;
+    (this_ptr->angular_momentum).y = 0.0;
     (this_ptr->angular_momentum).z = 0.0;
-    (this_ptr->angular_momentum).y = (this_ptr->angular_momentum).z;
-    (this_ptr->angular_momentum).x = (this_ptr->angular_momentum).y;
     pCVar9 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                        (&this_ptr->rotation_matrix,(CVector3f *)&local_344.angular_velocity_temp.z,
                         &this_ptr->linear_velocity_temp);
@@ -177,9 +171,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
                         (&this_ptr->rotation_matrix,&local_344.scrape_points[0].transformed_position
                          ,pCVar14);
     if (&this_ptr->linear_velocity_local != pCVar14) {
-      (this_ptr->linear_velocity_local).x = pCVar14->x;
-      (this_ptr->linear_velocity_local).y = pCVar14->y;
-      (this_ptr->linear_velocity_local).z = pCVar14->z;
+      this_ptr->linear_velocity_local = *pCVar14;
     }
     local_344.rotation_matrix.m[0].x = (this_ptr->angular_velocity_temp).x * delta_time;
     local_344.rotation_matrix.m[0].y = (this_ptr->angular_velocity_temp).y * delta_time;
@@ -252,9 +244,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
                         (&this_ptr->rotation_matrix,
                          (CVector3f *)&local_344.scrape_points[5].previous_position.y);
     if (&this_ptr->orientation != pCVar14) {
-      (this_ptr->orientation).x = pCVar14->x;
-      (this_ptr->orientation).y = pCVar14->y;
-      (this_ptr->orientation).z = pCVar14->z;
+      this_ptr->orientation = *pCVar14;
     }
     iVar18 = 0;
     if (0 < this_ptr->scrape_point_count) {
@@ -277,15 +267,14 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
       } while (iVar18 < this_ptr->scrape_point_count);
     }
     pSVar2 = this_ptr->scrape_points;
-    local_20 = 0.0;
+    local_20 = 0;
     local_6c = &this_ptr->scrape_points[0].previous_position;
     local_1c = 0;
     pCVar14 = &this_ptr->scrape_points[0].transformed_position;
-    pCVar17 = this_ptr;
     local_28 = pSVar2;
     if (0 < this_ptr->scrape_point_count) {
       do {
-        if (this_ptr[1].position.x <= pCVar17->scrape_points[0].transformed_position.y) {
+        if (this_ptr[1].position.x <= this_ptr->scrape_points[local_20].transformed_position.y) {
           fVar12 = pCVar14->x - local_6c->x;
           fVar8 = pCVar14->y - local_6c->y;
           fVar9 = pCVar14->z - local_6c->z;
@@ -294,8 +283,8 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
             fVar12 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
                                (&g_CDemonRaytraceInstance,local_6c,pCVar14,
                                 &local_28->raytrace_normal,(int *)0x0);
-            pCVar17->scrape_points[0].raytrace_intersection = fVar12;
-            fVar12 = pCVar17->scrape_points[0].raytrace_intersection;
+            this_ptr->scrape_points[local_20].raytrace_intersection = fVar12;
+            fVar12 = this_ptr->scrape_points[local_20].raytrace_intersection;
             if ((0.0 < fVar12) && (fVar12 < 1.0)) {
               local_3d0[local_1c] = local_20;
               local_1c = local_1c + 1;
@@ -304,42 +293,39 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
         }
         else {
           if (pCVar14 != local_6c) {
-            local_6c->x = pCVar14->x;
-            local_6c->y = pCVar14->y;
-            local_6c->z = pCVar14->z;
+            *local_6c = *pCVar14;
           }
-          fVar12 = pCVar17->scrape_points[0].transformed_position.y;
-          pCVar17->scrape_points[0].previous_position.y =
+          fVar12 = this_ptr->scrape_points[local_20].transformed_position.y;
+          this_ptr->scrape_points[local_20].previous_position.y =
                this_ptr[1].position.x + (float)0.5;
-          fVar8 = pCVar17->scrape_points[0].previous_position.y;
+          fVar8 = this_ptr->scrape_points[local_20].previous_position.y;
           fVar9 = this_ptr[1].position.x;
-          fVar10 = pCVar17->scrape_points[0].previous_position.y;
-          pCVar17->scrape_points[0].raytrace_normal.x = 0.0;
-          pCVar17->scrape_points[0].raytrace_normal.y = 1.0;
-          pCVar17->scrape_points[0].raytrace_normal.z = 0.0;
-          pCVar17->scrape_points[0].raytrace_intersection = (fVar9 - fVar10) / (fVar12 - fVar8);
+          fVar10 = this_ptr->scrape_points[local_20].previous_position.y;
+          this_ptr->scrape_points[local_20].raytrace_normal.x = 0.0;
+          this_ptr->scrape_points[local_20].raytrace_normal.y = 1.0;
+          this_ptr->scrape_points[local_20].raytrace_normal.z = 0.0;
+          this_ptr->scrape_points[local_20].raytrace_intersection = (fVar9 - fVar10) / (fVar12 - fVar8);
           local_3d0[local_1c] = local_20;
           local_1c = local_1c + 1;
         }
         pCVar14 = (CVector3f *)&pCVar14[4].y;
         local_6c = (CVector3f *)&local_6c[4].y;
-        local_20 = (float)((int)local_20 + 1);
-        pCVar17 = (CBox *)&(pCVar17->rotation_matrix).m[2].y;
+        local_20 = local_20 + 1;
         local_28 = local_28 + 1;
-      } while ((int)local_20 < this_ptr->scrape_point_count);
+      } while (local_20 < this_ptr->scrape_point_count);
     }
     fVar12 = local_3d0[0];
     if (local_1c == 1) {
       local_344.scrape_points[3].previous_position.x =
-           pSVar2[(int)local_3d0[0]].transformed_position.x -
-           pSVar2[(int)local_3d0[0]].previous_position.x;
+           pSVar2[local_3d0[0]].transformed_position.x -
+           pSVar2[local_3d0[0]].previous_position.x;
       local_344.scrape_points[3].previous_position.y =
-           pSVar2[(int)local_3d0[0]].transformed_position.y -
-           pSVar2[(int)local_3d0[0]].previous_position.y;
+           pSVar2[local_3d0[0]].transformed_position.y -
+           pSVar2[local_3d0[0]].previous_position.y;
       local_344.scrape_points[3].previous_position.z =
-           pSVar2[(int)local_3d0[0]].transformed_position.z -
-           pSVar2[(int)local_3d0[0]].previous_position.z;
-      fVar8 = (1.0 - this_ptr->scrape_points[(int)local_3d0[0]].raytrace_intersection) *
+           pSVar2[local_3d0[0]].transformed_position.z -
+           pSVar2[local_3d0[0]].previous_position.z;
+      fVar8 = (1.0 - this_ptr->scrape_points[local_3d0[0]].raytrace_intersection) *
               (float)1.01;
       local_344.scrape_points[4].previous_position.z =
            local_344.scrape_points[3].previous_position.x * fVar8;
@@ -356,7 +342,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
       core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                 (&this_ptr->rotation_matrix,
                  (CVector3f *)&local_344.scrape_points[4].raytrace_normal.y,
-                 &pSVar2[(int)local_3d0[0]].raytrace_normal);
+                 &pSVar2[local_3d0[0]].raytrace_normal);
       pCVar14 = &this_ptr->linear_velocity_local;
       local_374 = pCVar14->x;
       local_370 = (this_ptr->linear_velocity_local).y;
@@ -412,9 +398,9 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
       (this_ptr->linear_momentum).x = (this_ptr->linear_momentum).x + (float)local_344.dead;
       (this_ptr->linear_momentum).y = (this_ptr->linear_momentum).y + local_344.linear_velocity.x;
       (this_ptr->linear_momentum).z = (this_ptr->linear_momentum).z + local_344.linear_velocity.y;
+      (this_ptr->angular_velocity).x = 0.0;
+      (this_ptr->angular_velocity).y = 0.0;
       (this_ptr->angular_velocity).z = 0.0;
-      (this_ptr->angular_velocity).y = (this_ptr->angular_velocity).z;
-      (this_ptr->angular_velocity).x = (this_ptr->angular_velocity).y;
       pSVar11 = this_ptr->scrape_points + (int)fVar12;
       local_344.scrape_points[7].local_position.z =
            (pSVar11->local_position).y * local_344.linear_velocity.y -
@@ -441,9 +427,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
                           (&this_ptr->rotation_matrix,
                            (CVector3f *)&local_344.scrape_points[5].local_position.y,&local_8c);
       if (&local_8c != pCVar14) {
-        local_8c.x = pCVar14->x;
-        local_8c.y = pCVar14->y;
-        local_8c.z = pCVar14->z;
+        local_8c = *pCVar14;
       }
       local_350 = fVar8 * local_8c.z - fVar9 * local_8c.y;
       local_34c = fVar9 * local_8c.x - fVar12 * local_8c.z;
@@ -454,15 +438,15 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
     }
     if (local_1c == 2) {
       local_344.scrape_points[1].previous_position.z =
-           this_ptr->scrape_points[(int)local_3d0[0]].transformed_position.x -
-           this_ptr->scrape_points[(int)local_3d0[0]].previous_position.x;
+           this_ptr->scrape_points[local_3d0[0]].transformed_position.x -
+           this_ptr->scrape_points[local_3d0[0]].previous_position.x;
       local_344.scrape_points[1].raytrace_intersection =
-           this_ptr->scrape_points[(int)local_3d0[0]].transformed_position.y -
-           this_ptr->scrape_points[(int)local_3d0[0]].previous_position.y;
+           this_ptr->scrape_points[local_3d0[0]].transformed_position.y -
+           this_ptr->scrape_points[local_3d0[0]].previous_position.y;
       local_344.scrape_points[1].raytrace_normal.x =
-           this_ptr->scrape_points[(int)local_3d0[0]].transformed_position.z -
-           this_ptr->scrape_points[(int)local_3d0[0]].previous_position.z;
-      fVar12 = (1.0 - this_ptr->scrape_points[(int)local_3d0[0]].raytrace_intersection) *
+           this_ptr->scrape_points[local_3d0[0]].transformed_position.z -
+           this_ptr->scrape_points[local_3d0[0]].previous_position.z;
+      fVar12 = (1.0 - this_ptr->scrape_points[local_3d0[0]].raytrace_intersection) *
                (float)-1.01;
       local_344.scrape_points[4].transformed_position.z =
            local_344.scrape_points[1].previous_position.z * fVar12;
@@ -471,15 +455,15 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
       local_344.scrape_points[4].previous_position.y =
            local_344.scrape_points[1].raytrace_normal.x * fVar12;
       local_344.scrape_points[0].raytrace_intersection =
-           this_ptr->scrape_points[(int)local_3d0[1]].transformed_position.x -
-           this_ptr->scrape_points[(int)local_3d0[1]].previous_position.x;
+           this_ptr->scrape_points[local_3d0[1]].transformed_position.x -
+           this_ptr->scrape_points[local_3d0[1]].previous_position.x;
       local_344.scrape_points[0].raytrace_normal.x =
-           this_ptr->scrape_points[(int)local_3d0[1]].transformed_position.y -
-           this_ptr->scrape_points[(int)local_3d0[1]].previous_position.y;
+           this_ptr->scrape_points[local_3d0[1]].transformed_position.y -
+           this_ptr->scrape_points[local_3d0[1]].previous_position.y;
       local_344.scrape_points[0].raytrace_normal.y =
-           this_ptr->scrape_points[(int)local_3d0[1]].transformed_position.z -
-           this_ptr->scrape_points[(int)local_3d0[1]].previous_position.z;
-      fVar12 = (1.0 - this_ptr->scrape_points[(int)local_3d0[1]].raytrace_intersection) *
+           this_ptr->scrape_points[local_3d0[1]].transformed_position.z -
+           this_ptr->scrape_points[local_3d0[1]].previous_position.z;
+      fVar12 = (1.0 - this_ptr->scrape_points[local_3d0[1]].raytrace_intersection) *
                (float)-1.01;
       local_a0 = local_344.scrape_points[0].raytrace_normal.x * fVar12;
       local_a4 = local_344.scrape_points[0].raytrace_intersection * fVar12;
@@ -511,9 +495,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
                           (&this_ptr->rotation_matrix,pCVar14,
                            &this_ptr->scrape_points[(int)fVar8].raytrace_normal);
       if (&local_344.orientation != pCVar14) {
-        local_344.orientation.x = pCVar14->x;
-        local_344.orientation.y = pCVar14->y;
-        local_344.orientation.z = pCVar14->z;
+        local_344.orientation = *pCVar14;
       }
       pCVar14 = &this_ptr->linear_velocity_local;
       local_368 = pCVar14->x;
@@ -563,10 +545,10 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
            (this_ptr->linear_momentum).y + local_344.scrape_points[6].raytrace_normal.x;
       (this_ptr->linear_momentum).z =
            (this_ptr->linear_momentum).z + local_344.scrape_points[6].raytrace_normal.y;
+      (this_ptr->angular_velocity).x = 0.0;
+      (this_ptr->angular_velocity).y = 0.0;
       (this_ptr->angular_velocity).z = 0.0;
-      (this_ptr->angular_velocity).y = (this_ptr->angular_velocity).z;
-      (this_ptr->angular_velocity).x = (this_ptr->angular_velocity).y;
-      pSVar2 = this_ptr->scrape_points + (int)local_3d0[0];
+      pSVar2 = this_ptr->scrape_points + local_3d0[0];
       local_344.scrape_points[2].raytrace_normal.x =
            (pSVar2->local_position).y * local_344.scrape_points[6].raytrace_normal.y -
            (pSVar2->local_position).z * local_344.scrape_points[6].raytrace_normal.x;
@@ -582,7 +564,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
       pCVar14->x = pCVar14->x +
                    local_344.scrape_points[2].raytrace_normal.x * 0.1f;
       (this_ptr->angular_momentum).y = (this_ptr->angular_momentum).y + fVar12;
-      pSVar12 = this_ptr->scrape_points + (int)local_3d0[1];
+      pSVar12 = this_ptr->scrape_points + local_3d0[1];
       (this_ptr->angular_momentum).z = (this_ptr->angular_momentum).z + fVar8;
       local_35c = (pSVar12->local_position).y * local_344.scrape_points[6].raytrace_normal.y -
                   (pSVar12->local_position).z * local_344.scrape_points[6].raytrace_normal.x;
@@ -595,9 +577,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
       pCVar14->x = pCVar14->x + local_35c * 0.1f;
       (this_ptr->angular_momentum).y = (this_ptr->angular_momentum).y + fVar12;
       (this_ptr->angular_momentum).z = (this_ptr->angular_momentum).z + fVar8;
-      local_344.scrape_points[0].local_position.x = (pSVar2->local_position).x;
-      local_344.scrape_points[0].local_position.y = (pSVar2->local_position).y;
-      local_344.scrape_points[0].local_position.z = (pSVar2->local_position).z;
+      local_344.scrape_points[0].local_position = pSVar2->local_position;
       fVar12 = (pSVar12->local_position).x;
       fVar8 = (pSVar12->local_position).y;
       fVar9 = (pSVar12->local_position).z;
@@ -655,7 +635,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
       local_30 = 0.0;
       if (0 < local_1c * 4) {
         do {
-          iVar11 = (int)local_3d0[iVar18 / 4];
+          iVar11 = local_3d0[iVar18 / 4];
           fVar12 = (1.0 - this_ptr->scrape_points[iVar11].raytrace_intersection) *
                    (float)-1.01;
           local_344.scrape_points[6].local_position.y =
@@ -723,9 +703,9 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
            (this_ptr->linear_momentum).y + (fVar7 - fVar12) * fVar9 * fVar5;
       (this_ptr->linear_momentum).z =
            (this_ptr->linear_momentum).z + (fVar6 - fVar8) * fVar10 * fVar5;
+      (this_ptr->angular_velocity).x = 0.0;
+      (this_ptr->angular_velocity).y = 0.0;
       (this_ptr->angular_velocity).z = 0.0;
-      (this_ptr->angular_velocity).y = (this_ptr->angular_velocity).z;
-      (this_ptr->angular_velocity).x = (this_ptr->angular_velocity).y;
     }
     if ((0 < local_1c) &&
        (fVar12 = (this_ptr->linear_velocity_local).y, fVar8 = (this_ptr->linear_velocity_local).x,
@@ -733,15 +713,13 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
        SQRT(fVar9 * fVar9 + fVar8 * fVar8 + fVar12 * fVar12) < 1.0)) {
       iVar18 = 0;
       iVar16 = 0;
-      pCVar13 = this_ptr;
       if (0 < this_ptr->scrape_point_count) {
         do {
-          if (ABS(pCVar13->scrape_points[0].transformed_position.y - this_ptr[1].position.x) <
+          if (ABS(this_ptr->scrape_points[iVar18].transformed_position.y - this_ptr[1].position.x) <
               (float)0.10000000000000001) {
             iVar16 = iVar16 + 1;
           }
           iVar18 = iVar18 + 1;
-          pCVar13 = (CBox *)&(pCVar13->rotation_matrix).m[2].y;
         } while (iVar18 < this_ptr->scrape_point_count);
       }
       if (this_ptr->scrape_point_count / 2 <= iVar16) {

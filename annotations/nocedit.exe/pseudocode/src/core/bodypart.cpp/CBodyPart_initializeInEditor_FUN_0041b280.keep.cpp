@@ -17,7 +17,6 @@ int __cdecl core_bodypart_cpp_CBodyPart_initializeInEditor_FUN_0041b280(CBodyPar
   char *pcVar4;
   SPart *pSVar5;
   int iVar6;
-  int iVar4;
   int iVar5;
   CDeformableModelInstance local_2840;
   CPickList local_58c;
@@ -41,8 +40,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_initializeInEditor_FUN_0041b280(CBodyPar
     iVar3 = 0;
     do {
       iVar3 = iVar3 + 4;
-      *(uint *)((int)local_2840.part_data.visibility_flags + iVar3) = 0;
-      iVar3 = iVar3;
+      local_2840.part_data.visibility_flags[iVar3 / 4] = 0;
     } while (iVar3 < iVar1 * 4);
   }
   local_18 = 0;
@@ -51,16 +49,14 @@ int __cdecl core_bodypart_cpp_CBodyPart_initializeInEditor_FUN_0041b280(CBodyPar
     iVar6 = 0;
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_58c);
     if (0 < iVar1) {
-      iVar5 = 0;
       do {
         pcVar4 = "No";
-        if (*(int *)((int)local_2840.part_data.visibility_flags + iVar5) != 0) {
+        if (local_2840.part_data.visibility_flags[iVar6] != 0) {
           pcVar4 = "Yes";
           bVar1 = true;
         }
         pSVar5 = core_skeleton_cpp_CDeformableModel_getPartPtr_FUN_0059c220(this_ptr_00,iVar6);
         _sprintf(local_e0,"%s\t%s",pSVar5->part_name,pcVar4);
-        iVar5 = iVar5 + 4;
         iVar6 = iVar6 + 1;
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_58c.base,local_e0);
       } while (iVar6 < iVar1);
@@ -75,14 +71,12 @@ int __cdecl core_bodypart_cpp_CBodyPart_initializeInEditor_FUN_0041b280(CBodyPar
       iVar5 = 0;
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_58c,0);
       if (0 < iVar1) {
-        iVar4 = 0;
         do {
-          if (*(int *)((int)local_2840.part_data.visibility_flags + iVar4) != 0) {
+          if (local_2840.part_data.visibility_flags[iVar5] != 0) {
             core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040
                       (&local_2840,this_ptr,iVar5);
           }
           iVar5 = iVar5 + 1;
-          iVar4 = iVar4 + 4;
         } while (iVar5 < iVar1);
       }
       core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_0041a050(this_ptr);

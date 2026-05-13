@@ -7,14 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1402,
-    "complexity_score": 418,
+    "complexity_score": 433,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 56,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 383,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "shadow_pointer_walk",
       "unrolled_memcpy"
     ],
     "total_lines": 1785
@@ -880,6 +881,14 @@
       "severity": "moderate",
       "text": "(pSVar4->euler2).x = CStack_a8.orientation.vec.x;",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 174,
+      "match": "pCVar6 = (T *)((pCVar6->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar6 = (CCloth *)((pCVar6->model).model_filename + 4);",
+      "type": "shadow_pointer_walk"
     },
     {
       "description": "Uninitialized variable: fStack_550",

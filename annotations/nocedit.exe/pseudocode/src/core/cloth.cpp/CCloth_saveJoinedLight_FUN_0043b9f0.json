@@ -148,6 +148,17 @@
     },
     "pcode_op_count": 309
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom shadow-pointer walk (two-step form) \u2014 `pCVar3` is advanced into scratch `pCVar4`, then rebound via a later `pCVar3 = pCVar4;`. Functionally identical to the single-line self-update; replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer and drop both the advance line and the rebind.",
+      "line": 33,
+      "match": "pCVar4 = (T *)((pCVar3->FIELD).SUBFIELD...ARRAY + CONST); ...; pCVar3 = pCVar4",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar4 = (CCloth *)((pCVar3->model).model_filename + 4);",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,

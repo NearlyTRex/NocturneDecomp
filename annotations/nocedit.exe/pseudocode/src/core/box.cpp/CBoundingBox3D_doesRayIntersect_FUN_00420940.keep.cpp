@@ -92,9 +92,9 @@ LAB_004209dc:
           fVar3 = SQRT(out_normal->z * out_normal->z +
                        out_normal->x * out_normal->x + out_normal->y * out_normal->y);
           if (fVar3 <= 0.0) {
+            out_normal->x = 0.0;
+            out_normal->y = 0.0;
             out_normal->z = 0.0;
-            out_normal->y = out_normal->z;
-            out_normal->x = out_normal->y;
             return 0.0;
           }
           fVar3 = 1.0 / fVar3;
@@ -166,7 +166,7 @@ LAB_004209dc:
       out_normal->y = local_44;
       return local_2c;
     }
-    if (bVar3 != true) {
+    if (bVar3 != 1) {
       return local_2c;
     }
   }

@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 3947,
-    "complexity_score": 1728,
+    "complexity_score": 1743,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 197,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 1728,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
     "total_lines": 5675
   },
   "cross_references": [
@@ -2810,5 +2812,14 @@
     },
     "file_variant": "keep"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar19` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar19->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 636,
+      "match": "pCVar19 = (T *)((pCVar19->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar19 = (CKeyActor *)((pCVar19->base).actor_name + 2);",
+      "type": "shadow_pointer_walk"
+    }
+  ]
 }

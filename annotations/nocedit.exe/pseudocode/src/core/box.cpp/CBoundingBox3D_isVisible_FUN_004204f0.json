@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 77,
+    "complexity_score": 62,
     "cross_reference_count": 79,
     "function_call_count": 5,
     "global_count": 11,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 62,
-    "suspect_count": 1,
-    "suspect_types": [
-      "self_copy_guard"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 207
   },
   "cross_references": [
@@ -755,6 +753,17 @@
     },
     "pcode_op_count": 718
   },
+  "resolved_suspects": [
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_14 != &local_38)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 32,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "if (&local_14 != &local_38) {",
+      "type": "self_copy_guard"
+    }
+  ],
   "stack_frame": {
     "frame_size": 124,
     "local_size": 120,
@@ -855,14 +864,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom dead self-copy guard: `if (&local_14 != &local_38)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 32,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
-      "severity": "moderate",
-      "text": "if (&local_14 != &local_38) {",
-      "type": "self_copy_guard"
-    }
-  ]
+  "suspects": []
 }

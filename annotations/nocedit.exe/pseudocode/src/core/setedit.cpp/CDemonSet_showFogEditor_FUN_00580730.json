@@ -7,13 +7,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1019,
-    "complexity_score": 461,
+    "complexity_score": 491,
     "cross_reference_count": 1,
     "function_call_count": 36,
     "global_count": 55,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 376,
-    "suspect_count": 7,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
       "unrolled_memcpy",
@@ -772,6 +772,30 @@
       "severity": "moderate",
       "text": "*(int *)((int)g_CameraFogEnabledFlags + iVar6) = pCVar3->cameras[0].fog_enabled;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 116,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar6->x = pCVar4->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 146,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar6->x = pCVar4->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 236,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar5->x = pCVar4->x;",
+      "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",

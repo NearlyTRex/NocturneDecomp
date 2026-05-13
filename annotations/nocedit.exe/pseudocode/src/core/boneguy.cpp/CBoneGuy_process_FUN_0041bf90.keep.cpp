@@ -26,7 +26,6 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
   CVector3f *pCVar13;
   CVector3f *pCVar12;
   CPathMap *path_map;
-  CBoneGuy *pCVar14;
   float fVar15;
   SDamageInfo local_1bc;
   SDamageInfo local_180;
@@ -116,9 +115,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
         pUVar1 = &(pCVar6->base).orient;
         (pCVar6->base).location.position.z = local_a4;
         if ((CVector3f *)pUVar1 != &local_88) {
-          (pUVar1->vec).x = local_88.x;
-          (pCVar6->base).orient.vec.y = local_88.y;
-          (pCVar6->base).orient.vec.z = local_88.z;
+          (pCVar6->base).orient.vec = local_88;
         }
         if (&pCVar6->physics_box != (CBox *)&local_ac) {
           (pCVar6->physics_box).position.x = local_ac;
@@ -127,9 +124,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
         }
         pCVar12 = &(pCVar6->physics_box).orientation;
         if ((CVector3f *)pCVar12 != &local_88) {
-          pCVar12->x = local_88.x;
-          (pCVar6->physics_box).orientation.y = local_88.y;
-          (pCVar6->physics_box).orientation.z = local_88.z;
+          (pCVar6->physics_box).orientation = local_88;
         }
         local_28 = (CQuaternion4f *)&local_28[4].y;
         local_20 = (CQuaternion4f *)&local_20[4].y;
@@ -141,14 +136,12 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
     iVar11 = 0;
     core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_005a0410
               (&(this_ptr->base).base.model);
-    pCVar14 = this_ptr;
     if (0 < this_ptr->box_count) {
       do {
         core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0
-                  (g_CDemonMissionPtr,&(pCVar14->boxes[0].body_part)->base,1);
-        pCVar14->boxes[0].body_part = (CBodyPart *)0x0;
+                  (g_CDemonMissionPtr,&(this_ptr->boxes[iVar11].body_part)->base,1);
+        this_ptr->boxes[iVar11].body_part = (CBodyPart *)0x0;
         iVar11 = iVar11 + 1;
-        pCVar14 = (CBoneGuy *)((pCVar14->base).base.base.orient_matrix.m + 1);
       } while (iVar11 < this_ptr->box_count);
     }
     this_ptr->blown_up = 0;
@@ -159,11 +152,9 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
       this_ptr->recombine_time = 2.5;
     }
   }
+  (this_ptr->base).base.model.accumulated_root_motion.x = 0.0;
+  (this_ptr->base).base.model.accumulated_root_motion.y = 0.0;
   (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-  (this_ptr->base).base.model.accumulated_root_motion.y =
-       (this_ptr->base).base.model.accumulated_root_motion.z;
-  (this_ptr->base).base.model.accumulated_root_motion.x =
-       (this_ptr->base).base.model.accumulated_root_motion.y;
   local_38 = delta_time * (this_ptr->base).speed;
   pCVar1 = &(this_ptr->base).base.model;
   while (0.0 < local_38) {
@@ -311,16 +302,12 @@ void __cdecl core_boneguy_cpp_CBoneGuy_process_FUN_0041bf90(CBoneGuy *this_ptr,f
         pCVar13 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                             ((this_ptr->base).base.carry_hands[1].carry_actor,&local_a0,&local_100);
         if (&local_100 != pCVar13) {
-          local_100.x = pCVar13->x;
-          local_100.y = pCVar13->y;
-          local_100.z = pCVar13->z;
+          local_100 = *pCVar13;
         }
         pCVar12 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                             ((this_ptr->base).base.carry_hands[1].carry_actor,&local_58,&local_f4);
         if (&local_f4 != pCVar12) {
-          local_f4.x = pCVar12->x;
-          local_f4.y = pCVar12->y;
-          local_f4.z = pCVar12->z;
+          local_f4 = *pCVar12;
         }
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1bc);
         local_1bc.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc10(15.0,25.0);
@@ -354,11 +341,9 @@ LAB_0041c60c:
       engine_console_cpp_CConsole_printf_FUN_00441890
                 (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr->base.base.base.actor_name);
     }
+    (this_ptr->base).base.model.accumulated_root_motion.x = 0.0;
+    (this_ptr->base).base.model.accumulated_root_motion.y = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-    (this_ptr->base).base.model.accumulated_root_motion.y =
-         (this_ptr->base).base.model.accumulated_root_motion.z;
-    (this_ptr->base).base.model.accumulated_root_motion.x =
-         (this_ptr->base).base.model.accumulated_root_motion.y;
   }
   if (0.0 < (this_ptr->base).attack_cooldown) {
     (this_ptr->base).attack_cooldown = (this_ptr->base).attack_cooldown - delta_time;
@@ -383,13 +368,12 @@ LAB_0041c60c:
     local_dc.z = delta_time * (this_ptr->base).base.velocity.z +
                  (this_ptr->base).base.position_delta.z +
                  (this_ptr->base).base.model.accumulated_root_motion.z;
+    (this_ptr->base).base.position_delta.x = 0.0;
+    (this_ptr->base).base.position_delta.y = 0.0;
     (this_ptr->base).base.position_delta.z = 0.0;
-    (this_ptr->base).base.position_delta.y = (this_ptr->base).base.position_delta.z;
-    pCVar12->x = (this_ptr->base).base.position_delta.y;
+    (this_ptr->base).base.model.accumulated_root_motion.x = 0.0;
+    (this_ptr->base).base.model.accumulated_root_motion.y = 0.0;
     (this_ptr->base).base.model.accumulated_root_motion.z = 0.0;
-    (this_ptr->base).base.model.accumulated_root_motion.y =
-         (this_ptr->base).base.model.accumulated_root_motion.z;
-    pCVar3->x = (this_ptr->base).base.model.accumulated_root_motion.y;
     core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&local_dc);
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_00429820((CCharacter *)this_ptr);

@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 222,
-    "complexity_score": 114,
+    "complexity_score": 129,
     "cross_reference_count": 3,
     "function_call_count": 15,
     "global_count": 9,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 114,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
     "total_lines": 336
   },
   "cross_references": [
@@ -299,7 +301,16 @@
     },
     "file_variant": "keep"
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 50,
+      "match": "pCVar6 = (T *)&(pCVar6->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar6 = (CCharacter *)&(pCVar6->base).orient_matrix.m[0].z;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

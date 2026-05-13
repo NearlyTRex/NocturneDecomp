@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 586,
-    "complexity_score": 272,
+    "complexity_score": 297,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 14,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 272,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 858
   },
   "cross_references": [],
@@ -649,7 +651,24 @@
     ],
     "severity": "medium"
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 97,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pCVar2->position).x = (this_ptr->home_pos).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 269,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(euler_angles->vec).x = pCVar9->x;",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

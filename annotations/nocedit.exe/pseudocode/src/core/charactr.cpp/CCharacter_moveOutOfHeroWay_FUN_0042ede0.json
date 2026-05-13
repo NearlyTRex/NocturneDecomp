@@ -7,14 +7,16 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 407,
-    "complexity_score": 158,
+    "complexity_score": 183,
     "cross_reference_count": 4,
     "function_call_count": 7,
     "global_count": 15,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 158,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
     "total_lines": 565
   },
   "cross_references": [
@@ -517,5 +519,22 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 83,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar7->x = CStack_68.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 128,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar7->x = CStack_98.x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
 }

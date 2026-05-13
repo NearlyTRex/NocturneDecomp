@@ -13,9 +13,6 @@ CColor3f * __cdecl core_boneguy_cpp_hsvToRgb_FUN_0041ba10(CColor3f *out_rgb,CCol
   float fVar8;
   float fVar9;
   double dVar8;
-  float local_1c;
-  float local_18;
-  float local_10;
   float fVar4;
   float fVar5;
   float fVar6;
@@ -36,9 +33,6 @@ CColor3f * __cdecl core_boneguy_cpp_hsvToRgb_FUN_0041ba10(CColor3f *out_rgb,CCol
     fVar5 = fVar9 - (float)(int)ROUND(ROUND(dVar8));
     fVar3 = (1.0 - fVar8 * fVar5) * fVar1;
     fVar4 = (1.0 - (1.0 - fVar5) * fVar8) * fVar1;
-    fVar9 = local_1c;
-    fVar6 = local_18;
-    fVar7 = local_10;
     switch(((int)ROUND(ROUND(dVar8)) + 600) % 6) {
     case 0:
       fVar9 = fVar2;
@@ -71,11 +65,8 @@ CColor3f * __cdecl core_boneguy_cpp_hsvToRgb_FUN_0041ba10(CColor3f *out_rgb,CCol
       fVar7 = fVar2;
     }
   }
-  local_10 = fVar7;
-  local_18 = fVar6;
-  local_1c = fVar9;
-  out_rgb->r = local_18;
-  out_rgb->g = local_10;
-  out_rgb->b = local_1c;
+  out_rgb->r = fVar6;
+  out_rgb->g = fVar7;
+  out_rgb->b = fVar9;
   return out_rgb;
 }

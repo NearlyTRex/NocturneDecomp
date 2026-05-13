@@ -8,13 +8,13 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 2746,
-    "complexity_score": 1230,
+    "complexity_score": 1250,
     "cross_reference_count": 1,
     "function_call_count": 50,
     "global_count": 68,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1140,
-    "suspect_count": 8,
+    "suspect_count": 10,
     "suspect_types": [
       "unrolled_memcpy",
       "unrolled_memset"
@@ -1720,10 +1720,26 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 119,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar16->x = (pCVar15->max).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 133,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->carry_object_world_center).x = pCVar16->x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 674,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pCVar16->x = local_174.x;",
       "type": "unrolled_memcpy"
     },
     {
