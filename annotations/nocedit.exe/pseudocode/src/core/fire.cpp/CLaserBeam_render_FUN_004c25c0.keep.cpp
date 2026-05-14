@@ -20,8 +20,6 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
   float fVar8;
   int iVar9;
   int iVar6;
-  SRenderVertex *pSVar7;
-  SRenderVertex *pSVar8;
   SRenderVertex *pSVar10;
   byte bVar9;
   float10 fVar10;
@@ -42,9 +40,6 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
   CVector3f local_1d4;
   CVector3i local_1c8;
   CVector3i local_1bc;
-  float local_1b0;
-  float local_1ac;
-  float local_1a8;
   CVector3f local_1a4;
   CVector3i local_198;
   float local_18c;
@@ -73,42 +68,15 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
   CVector3f local_f0;
   float local_e4;
   float local_e0;
-  float local_dc;
   CVector3i local_d8;
-  float local_cc;
-  float local_c8;
-  float local_c4;
   CVector3i local_c0;
-  float local_b4;
-  float local_b0;
-  float local_ac;
   CVector3i local_a8;
   CVector3f local_9c;
-  float local_90;
-  float local_8c;
-  float local_88;
-  int local_74;
-  float local_6c;
-  float local_68;
-  float local_60;
-  float local_5c;
-  float local_58;
   float local_54;
-  float local_50;
-  float local_4c;
-  float local_48;
   float local_44;
-  uint local_40;
-  float local_3c;
-  float local_38;
-  int local_34;
   int local_30;
-  int local_2c;
-  float local_28;
-  float local_24;
+  int local_24;
   int local_20;
-  int local_1c;
-  float local_18;
   float fVar1;
   float depth;
   float fVar2;
@@ -240,14 +208,14 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
         pCVar3->vertex_buffer_ptr[i].g = (this_ptr->color).g;
         pCVar3->vertex_buffer_ptr[i].b = (this_ptr->color).b;
       }
-      pCVar3->vertex_buffer_ptr->u = 0xf80000;
-      pCVar3->vertex_buffer_ptr->v = 0xf80000;
-      pCVar3->vertex_buffer_ptr[1].u = 0x80000;
-      pCVar3->vertex_buffer_ptr[1].v = 0xf80000;
-      pCVar3->vertex_buffer_ptr[2].u = 0x80000;
-      pCVar3->vertex_buffer_ptr[2].v = 0x80000;
-      pCVar3->vertex_buffer_ptr[3].u = 0xf80000;
-      pCVar3->vertex_buffer_ptr[3].v = 0x80000;
+      pCVar3->vertex_buffer_ptr->u = 0xf8 << 16;
+      pCVar3->vertex_buffer_ptr->v = 0xf8 << 16;
+      pCVar3->vertex_buffer_ptr[1].u = 0x8 << 16;
+      pCVar3->vertex_buffer_ptr[1].v = 0xf8 << 16;
+      pCVar3->vertex_buffer_ptr[2].u = 0x8 << 16;
+      pCVar3->vertex_buffer_ptr[2].v = 0x8 << 16;
+      pCVar3->vertex_buffer_ptr[3].u = 0xf8 << 16;
+      pCVar3->vertex_buffer_ptr[3].v = 0x8 << 16;
       engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(pCVar3,&local_248.base);
       iVar6 = iVar6 + 1;
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0048c640(g_CDemonRendererPtr2);
@@ -263,10 +231,10 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
               (g_CDemonRendererPtr2,&local_9c,(CVector3f *)0x0);
     fVar8 = this_ptr->cone_angle;
     local_54 = this_ptr->halo_spread;
-    local_24 = 1.12104e-44;
+    local_24 = 8;
     if (0.0 < fVar8) {
       fVar12 = (float10)fptan((float10)fVar8);
-      local_24 = 2.24208e-44;
+      local_24 = 16;
       local_54 = (float)(fVar12 * (float10)depth);
     }
     fVar5 = core_fire_cpp_computeScreenSpaceSize_FUN_004c24d0(0.0,this_ptr->halo_spread);
@@ -276,7 +244,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
     local_30 = 0x100;
     do {
       pCVar4 = g_CDemonRendererPtr2;
-      fVar12 = ((float10)local_20 / (float10)(int)local_24) * (float10)2 *
+      fVar12 = ((float10)local_20 / (float10)local_24) * (float10)2 *
                (float10)3.1415926535000001;
       fVar11 = (float10)fsin(fVar12);
       fVar12 = (float10)fcos(fVar12);
@@ -314,11 +282,11 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
           local_2d8.vertices[0].texture_u = 0;
         }
         else {
-          local_2d8.vertices[1].texture_v = 0x800000;
-          local_2d8.vertices[2].texture_u = 0x800000;
-          local_2d8.vertices[3].texture_u = 0x800000;
-          local_2d8.vertices[3].texture_v = 0x800000;
-          local_2d8.vertices[0].texture_u = 0x800000;
+          local_2d8.vertices[1].texture_v = 0x80 << 16;
+          local_2d8.vertices[2].texture_u = 0x80 << 16;
+          local_2d8.vertices[3].texture_u = 0x80 << 16;
+          local_2d8.vertices[3].texture_v = 0x80 << 16;
+          local_2d8.vertices[0].texture_u = 0x80 << 16;
         }
         for (int ci = 0; ci < 4; ci = ci + 1) {
           pCVar4->vertex_buffer_ptr[ci].r = (this_ptr->color).r;
@@ -400,14 +368,14 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_004c25c0(CLaserBeam *this_ptr)
     local_290.base.surface_normal.A.i = 0;
     local_290.vertices[0].vertex_index = 0;
     local_290.vertices[3].vertex_index = 3;
-    local_290.vertices[0].texture_u = 0x80000;
-    local_290.vertices[0].texture_v = 0x80000;
-    local_290.vertices[1].texture_u = 0xf80000;
-    local_290.vertices[1].texture_v = 0x80000;
-    local_290.vertices[2].texture_u = 0xf80000;
-    local_290.vertices[2].texture_v = 0xf80000;
-    local_290.vertices[3].texture_u = 0x80000;
-    local_290.vertices[3].texture_v = 0xf80000;
+    local_290.vertices[0].texture_u = 0x8 << 16;
+    local_290.vertices[0].texture_v = 0x8 << 16;
+    local_290.vertices[1].texture_u = 0xf8 << 16;
+    local_290.vertices[1].texture_v = 0x8 << 16;
+    local_290.vertices[2].texture_u = 0xf8 << 16;
+    local_290.vertices[2].texture_v = 0xf8 << 16;
+    local_290.vertices[3].texture_u = 0x8 << 16;
+    local_290.vertices[3].texture_v = 0xf8 << 16;
     local_290.vertices[1].vertex_index = 1;
     local_290.vertices[2].vertex_index = 2;
     for (int ci = 0; ci < 4; ci = ci + 1) {

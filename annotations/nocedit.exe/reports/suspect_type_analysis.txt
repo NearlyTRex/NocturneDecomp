@@ -4,16 +4,16 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1409 ( 38.2%)
-  unrolled_memcpy                  930 ( 25.2%)
-  unrolled_strcpy                  302 (  8.2%)
-  missing_cave_copy                170 (  4.6%)
-  shadow_pointer_walk              151 (  4.1%)
-  raw_address_constant             141 (  3.8%)
-  unrolled_strlen                   83 (  2.2%)
-  static_uninitvar                  68 (  1.8%)
+  pointer_cast                    1409 ( 38.7%)
+  unrolled_memcpy                  930 ( 25.6%)
+  unrolled_strcpy                  302 (  8.3%)
+  missing_cave_copy                170 (  4.7%)
+  shadow_pointer_walk              151 (  4.2%)
+  raw_address_constant              91 (  2.5%)
+  unrolled_strlen                   83 (  2.3%)
+  static_uninitvar                  68 (  1.9%)
   unrolled_memset                   67 (  1.8%)
-  warning_inlined_function          59 (  1.6%)
+  warning_inlined_function          53 (  1.5%)
   bitcast_double_pair               44 (  1.2%)
   unrolled_strchr                   43 (  1.2%)
   static_legacy_uninitvar           32 (  0.9%)
@@ -1037,18 +1037,17 @@ Functions:
   shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70
 
 ====================================================================================================
-TYPE: raw_address_constant (141 occurrences)
+TYPE: raw_address_constant (91 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    78x  0xf80000
-    16x  0xfe0000
+    40x  0xf80000
     12x  0xfeffff
      8x  0xfbffff
-     6x  0x780000
+     8x  0xfe0000
      4x  0xfdffff
+     4x  0x780000
      3x  0x16e99c8
-     2x  0xdc0000
      2x  0x16e9a08
      2x  0x16e9a48
      2x  0x766880
@@ -1061,18 +1060,6 @@ Unique patterns:
 
 Functions:
   core_chain.cpp_CChain_renderTransparent_FUN_004308f0
-  core_fire.cpp_CBulletHole_render_FUN_004bfac0
-  core_fire.cpp_CCrater_render_FUN_004c4620
-  core_fire.cpp_CExplosion_render_FUN_004c3b10
-  core_fire.cpp_CFireball_render_FUN_004c0e70
-  core_fire.cpp_CGunFlame_render_FUN_004c50b0
-  core_fire.cpp_CLaserBeam_render_FUN_004c25c0
-  core_fire.cpp_CLightningBolt_render_FUN_004c5720
-  core_fire.cpp_CPopcorn_render_FUN_004c64c0
-  core_fire.cpp_CRainDrop_render_FUN_004c6830
-  core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0
-  core_fire.cpp_CSpark_setupRenderState_FUN_004c0300
-  core_fire.cpp_CTrail_render_FUN_004c5e90
   core_glass.cpp_CGlass_shatter_FUN_004eaef0
   core_gore.cpp_CBloodPool_setupRenderState_FUN_004ecc40
   core_gore.cpp_CBloodSplat_setupRenderState_FUN_004ec470
@@ -1208,11 +1195,11 @@ Functions:
   shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
 
 ====================================================================================================
-TYPE: warning_inlined_function (59 occurrences)
+TYPE: warning_inlined_function (53 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    59x  WARNING: Inlined function:
+    53x  WARNING: Inlined function:
 
 Functions:
   core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0
@@ -1230,14 +1217,8 @@ Functions:
   core_dtrace.cpp_CDemonRaytrace_crunch_FUN_00495310
   core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0
   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880
-  core_fire.cpp_CExplosion_render_FUN_004c3b10
   core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80
-  core_fire.cpp_CGunFlame_render_FUN_004c50b0
-  core_fire.cpp_CLightningBolt_render_FUN_004c5720
-  core_fire.cpp_CRainDrop_render_FUN_004c6830
-  core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0
   core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0
-  core_fire.cpp_CSpark_setupRenderState_FUN_004c0300
   core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190
   core_game.cpp_CGame_displayActStats_FUN_004e3800
   core_game.cpp_CGame_finishAct_FUN_004e3b90

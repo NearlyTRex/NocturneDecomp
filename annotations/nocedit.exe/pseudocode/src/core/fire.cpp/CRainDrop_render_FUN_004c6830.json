@@ -4,20 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 284,
-    "complexity_score": 134,
+    "complexity_score": 94,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 26,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 94,
-    "suspect_count": 3,
-    "suspect_types": [
-      "raw_address_constant",
-      "warning_inlined_function"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 378
   },
   "cross_references": [],
@@ -298,6 +295,35 @@
     },
     "pcode_op_count": 1229
   },
+  "resolved_suspects": [
+    {
+      "description": "Decompiler inlined a function call",
+      "line": 2,
+      "match": "WARNING: Inlined function:",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
+      "type": "warning_inlined_function"
+    },
+    {
+      "description": "Raw hex literal 0xdc0000 matches address of g_LightBufferPool (+1727992 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 66,
+      "match": "0xdc0000",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_RenderVertexBuffer[0].v = 0xdc0000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xdc0000 matches address of g_LightBufferPool (+1727992 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 67,
+      "match": "0xdc0000",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "g_RenderVertexBuffer[1].v = 0xdc0000;",
+      "type": "raw_address_constant"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4136,
     "local_size": 4132,
@@ -398,32 +424,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Decompiler inlined a function call",
-      "line": 2,
-      "match": "WARNING: Inlined function:",
-      "severity": "mild",
-      "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
-      "type": "warning_inlined_function"
-    },
-    {
-      "description": "Raw hex literal 0xdc0000 matches address of g_LightBufferPool (+1727992 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 66,
-      "match": "0xdc0000",
-      "severity": "moderate",
-      "text": "g_RenderVertexBuffer[0].v = 0xdc0000;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex literal 0xdc0000 matches address of g_LightBufferPool (+1727992 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 67,
-      "match": "0xdc0000",
-      "severity": "moderate",
-      "text": "g_RenderVertexBuffer[1].v = 0xdc0000;",
-      "type": "raw_address_constant"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

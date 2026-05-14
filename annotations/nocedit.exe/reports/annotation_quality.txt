@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        54 ( 0.8%)
+  Functions with type issues:        51 ( 0.8%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          0
-    Undefined types in variables:      54
+    Undefined types in variables:      51
     Unresolved stack params:           0
 
-  Excluded (.keep / MMX / by-value):   165 functions
+  Excluded (.keep / MMX / by-value):   168 functions
     Wrong calling convention:          1
-    Undefined types in variables:      163
+    Undefined types in variables:      166
     Unresolved stack params:           1
 
 ====================================================================================================
@@ -81,7 +81,7 @@ Unresolved stack parameters (missing from signature) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types in variables (54)
+Undefined types in variables (51)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -184,23 +184,8 @@ Undefined types in variables (54)
     Locals:  local_40 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
-  CPopcorn_render
-    Address: 0x004c64c0  File: core/fire.cpp
-    Locals:  auStackY_1060 (undefined4[1002])
-    Suggested: Resolve undefined types to concrete types
-
-  CRainDrop_render
-    Address: 0x004c6830  File: core/fire.cpp
-    Locals:  auStackY_1020 (undefined4[984])
-    Suggested: Resolve undefined types to concrete types
-
   CSmokeParticle_setupRenderState
     Address: 0x004bf1f0  File: core/fire.cpp
-    Locals:  local_40 (undefined1)
-    Suggested: Resolve undefined types to concrete types
-
-  CSpark_setupRenderState
-    Address: 0x004c0300  File: core/fire.cpp
     Locals:  local_40 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
@@ -407,7 +392,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (163)
+Undefined types - .keep overrides (166)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -978,6 +963,21 @@ Undefined types - .keep overrides (163)
   CFireball_process
     Address: 0x004c0b30  File: core/fire.cpp
     Locals:  local_14 (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CPopcorn_render
+    Address: 0x004c64c0  File: core/fire.cpp
+    Locals:  auStackY_1060 (undefined4[1002])
+    Suggested: Resolve undefined types to concrete types
+
+  CRainDrop_render
+    Address: 0x004c6830  File: core/fire.cpp
+    Locals:  auStackY_1020 (undefined4[984])
+    Suggested: Resolve undefined types to concrete types
+
+  CSpark_setupRenderState
+    Address: 0x004c0300  File: core/fire.cpp
+    Locals:  local_40 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
   CGabriella_updateWeaponAndAimAnimation

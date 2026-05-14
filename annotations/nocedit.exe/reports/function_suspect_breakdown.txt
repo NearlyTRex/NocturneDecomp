@@ -4,21 +4,21 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 5743 functions
-  1 suspects: 107 functions
-  2 suspects: 183 functions
-  3 suspects: 94 functions
-  4 suspects: 81 functions
-  5 suspects: 48 functions
+  0 suspects: 5753 functions
+  1 suspects: 108 functions
+  2 suspects: 182 functions
+  3 suspects: 93 functions
+  4 suspects: 77 functions
+  5 suspects: 45 functions
   6 suspects: 48 functions
-  7 suspects: 19 functions
+  7 suspects: 18 functions
   8 suspects: 30 functions
   9 suspects: 12 functions
   10 suspects: 16 functions
   11 suspects: 8 functions
   12 suspects: 13 functions
   13 suspects: 1 functions
-  14 suspects: 9 functions
+  14 suspects: 8 functions
   15 suspects: 6 functions
   16 suspects: 6 functions
   17 suspects: 5 functions
@@ -267,8 +267,10 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_ladder.cpp_CLadder_renderOpaque_FUN_00502620  (290 lines)
       CStack_30.y = (int)ROUND(fStack_y * 256.0f);...
 
-  [stack_alignment_array] (1 functions)
+  [stack_alignment_array] (2 functions)
   ------------------------------------------------------------
+    core_fire.cpp_CSpark_setupRenderState_FUN_004c0300 ( 48 lines)
+      float afStackY_1000 [997];...
     core_icepick.cpp_CIcePick_updateShootBlend_FUN_004 ( 58 lines)
       float afStackY_180c [1519];...
 
@@ -537,8 +539,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: engine/fileio.cpp, Lines: 87, Types: ['unrolled_strcpy', 'unrolled_strlen']
   shape_design.c_centerVerticesAroundPoint_FUN_0045ea90
     File: shape/design.c, Lines: 87, Types: ['unrolled_strlen']
-  core_fire.cpp_CBulletHole_render_FUN_004bfac0
-    File: core/fire.cpp, Lines: 88, Types: ['raw_address_constant']
   engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004
     File: engine/fileio.cpp, Lines: 91, Types: ['unrolled_strcpy']
   core_setedit.cpp_loadGroundTypes_FUN_00578420
@@ -781,8 +781,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: shape/design.c, Lines: 90, Types: ['unrolled_strlen']
   engine_3d.c_renderPrimitiveAdaptivePlaneMasked_FUN_00404840
     File: engine/3d.c, Lines: 92, Types: ['pointer_cast', 'shadow_pointer_walk']
-  core_fire.cpp_CRainDrop_render_FUN_004c6830
-    File: core/fire.cpp, Lines: 94, Types: ['raw_address_constant', 'warning_inlined_function']
   shape_design.c_generateGlobe_FUN_00468910
     File: shape/design.c, Lines: 97, Types: ['unrolled_strlen']
   shape_design.c_generateOctant_FUN_00469420

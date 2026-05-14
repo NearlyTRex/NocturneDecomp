@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5720 (88.6%)
-With suspects: 734
-Total suspects: 3693
+Clean: 5729 (88.8%)
+With suspects: 725
+Total suspects: 3637
 
 ====================================================================================================
 core_bugs.cpp_CBugs_ctor_FUN_00424cb0 (3 suspects)
@@ -1414,40 +1414,10 @@ core_event.cpp_resolveActorByName_FUN_004aa400 (1 suspect)
   Line 14 [unrolled_strcpy]: do {
 
 ====================================================================================================
-core_fire.cpp_CBulletHole_render_FUN_004bfac0 (2 suspects)
+core_fire.cpp_CFireball_render_FUN_004c0e70 (2 suspects)
   File: core/fire.cpp
 ====================================================================================================
-  Line 30 [raw_address_constant]: g_RenderVertexBuffer[1].u = iVar2 + 0x780000;
-  Line 31 [raw_address_constant]: g_RenderVertexBuffer[0].v = iVar1 + 0x780000;
-
-====================================================================================================
-core_fire.cpp_CCrater_render_FUN_004c4620 (4 suspects)
-  File: core/fire.cpp
-====================================================================================================
-  Line 51 [raw_address_constant]: g_RenderVertexBuffer[0].v = 0xf80000;
-  Line 52 [raw_address_constant]: g_RenderVertexBuffer[1].u = 0xf80000;
-  Line 53 [raw_address_constant]: g_RenderVertexBuffer[1].v = 0xf80000;
-  Line 54 [raw_address_constant]: g_RenderVertexBuffer[2].u = 0xf80000;
-
-====================================================================================================
-core_fire.cpp_CExplosion_render_FUN_004c3b10 (5 suspects)
-  File: core/fire.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 68 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr[1].u = 0xfe0000;
-  Line 70 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr[2].u = 0xfe0000;
-  Line 71 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr[2].v = 0xfe0000;
-  Line 73 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr[3].v = 0xfe0000;
-
-====================================================================================================
-core_fire.cpp_CFireball_render_FUN_004c0e70 (6 suspects)
-  File: core/fire.cpp
-====================================================================================================
-  Line 70 [raw_address_constant]: g_RenderVertexBuffer[0].v = 0xf80000;
-  Line 71 [raw_address_constant]: g_RenderVertexBuffer[1].u = 0xf80000;
-  Line 72 [raw_address_constant]: g_RenderVertexBuffer[1].v = 0xf80000;
   Line 72 [static_uninitvar]: fVar2 = -local_1c;
-  Line 73 [raw_address_constant]: g_RenderVertexBuffer[2].u = 0xf80000;
   Line 151 [static_uninitvar]: fVar4 = -local_18 * local_e0.min.x;
 
 ====================================================================================================
@@ -1458,72 +1428,15 @@ core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80 (2 suspects)
   Line 14 [stack_alignment_array]: float afStackY_1000 [997];
 
 ====================================================================================================
-core_fire.cpp_CGunFlame_render_FUN_004c50b0 (5 suspects)
-  File: core/fire.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 120 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr[1].u = 0xfe0000;
-  Line 122 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr[2].u = 0xfe0000;
-  Line 123 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr[2].v = 0xfe0000;
-  Line 126 [raw_address_constant]: this_ptr_00->vertex_buffer_ptr[3].v = 0xfe0000;
-
-====================================================================================================
-core_fire.cpp_CLaserBeam_render_FUN_004c25c0 (14 suspects)
+core_fire.cpp_CLaserBeam_render_FUN_004c25c0 (6 suspects)
   File: core/fire.cpp
 ====================================================================================================
   Line 152 [unrolled_memcpy]: local_1d4.x = pCVar7->x;
   Line 194 [unrolled_memcpy]: local_168.x = local_150.x;
   Line 239 [unrolled_memcpy]: pCVar3->vertex_buffer_ptr->r = (this_ptr->color).r;
   Line 244 [unrolled_memcpy]: pCVar3->vertex_buffer_ptr[1].r = (this_ptr->color).r;
-  Line 257 [raw_address_constant]: pCVar3->vertex_buffer_ptr->u = 0xf80000;
-  Line 258 [raw_address_constant]: pCVar3->vertex_buffer_ptr->v = 0xf80000;
-  Line 260 [raw_address_constant]: pCVar3->vertex_buffer_ptr[1].v = 0xf80000;
-  Line 263 [raw_address_constant]: pCVar3->vertex_buffer_ptr[3].u = 0xf80000;
   Line 280 [suspect_float]: local_24 = 1.12104e-44;
   Line 283 [suspect_float]: local_24 = 2.24208e-44;
-  Line 447 [raw_address_constant]: local_290.vertices[1].texture_u = 0xf80000;
-  Line 449 [raw_address_constant]: local_290.vertices[2].texture_u = 0xf80000;
-  Line 450 [raw_address_constant]: local_290.vertices[2].texture_v = 0xf80000;
-  Line 452 [raw_address_constant]: local_290.vertices[3].texture_v = 0xf80000;
-
-====================================================================================================
-core_fire.cpp_CLightningBolt_render_FUN_004c5720 (7 suspects)
-  File: core/fire.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 60 [raw_address_constant]: g_RenderVertexBuffer[3].u = 0xf80000;
-  Line 61 [raw_address_constant]: g_RenderVertexBuffer[0].u = 0xf80000;
-  Line 64 [raw_address_constant]: g_RenderVertexBuffer[1].u = 0xf80000;
-  Line 65 [raw_address_constant]: g_RenderVertexBuffer[2].u = 0xf80000;
-  Line 69 [raw_address_constant]: g_RenderVertexBuffer[3].v = 0xf80000;
-  Line 70 [raw_address_constant]: g_RenderVertexBuffer[2].v = 0xf80000;
-
-====================================================================================================
-core_fire.cpp_CPopcorn_render_FUN_004c64c0 (4 suspects)
-  File: core/fire.cpp
-====================================================================================================
-  Line 61 [raw_address_constant]: g_RenderVertexBuffer[0].v = 0xf80000;
-  Line 62 [raw_address_constant]: g_RenderVertexBuffer[1].u = 0xf80000;
-  Line 63 [raw_address_constant]: g_RenderVertexBuffer[1].v = 0xf80000;
-  Line 64 [raw_address_constant]: g_RenderVertexBuffer[2].u = 0xf80000;
-
-====================================================================================================
-core_fire.cpp_CRainDrop_render_FUN_004c6830 (3 suspects)
-  File: core/fire.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 66 [raw_address_constant]: g_RenderVertexBuffer[0].v = 0xdc0000;
-  Line 67 [raw_address_constant]: g_RenderVertexBuffer[1].v = 0xdc0000;
-
-====================================================================================================
-core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0 (5 suspects)
-  File: core/fire.cpp
-====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
-  Line 71 [raw_address_constant]: g_RenderVertexBuffer[0].v = 0xf80000;
-  Line 72 [raw_address_constant]: g_RenderVertexBuffer[1].u = 0xf80000;
-  Line 73 [raw_address_constant]: g_RenderVertexBuffer[1].v = 0xf80000;
-  Line 74 [raw_address_constant]: g_RenderVertexBuffer[2].u = 0xf80000;
 
 ====================================================================================================
 core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0 (2 suspects)
@@ -1533,24 +1446,10 @@ core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0 (2 suspects)
   Line 14 [stack_alignment_array]: float afStackY_1000 [997];
 
 ====================================================================================================
-core_fire.cpp_CSpark_setupRenderState_FUN_004c0300 (6 suspects)
+core_fire.cpp_CSpark_setupRenderState_FUN_004c0300 (1 suspect)
   File: core/fire.cpp
 ====================================================================================================
-  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
   Line 14 [stack_alignment_array]: float afStackY_1000 [997];
-  Line 28 [raw_address_constant]: g_RenderVertexBuffer[0].v = 0xf80000;
-  Line 29 [raw_address_constant]: g_RenderVertexBuffer[1].u = 0xf80000;
-  Line 30 [raw_address_constant]: g_RenderVertexBuffer[1].v = 0xf80000;
-  Line 31 [raw_address_constant]: g_RenderVertexBuffer[2].u = 0xf80000;
-
-====================================================================================================
-core_fire.cpp_CTrail_render_FUN_004c5e90 (4 suspects)
-  File: core/fire.cpp
-====================================================================================================
-  Line 54 [raw_address_constant]: g_RenderVertexBuffer[0].v = 0xf80000;
-  Line 55 [raw_address_constant]: g_RenderVertexBuffer[1].u = 0xf80000;
-  Line 56 [raw_address_constant]: g_RenderVertexBuffer[1].v = 0xf80000;
-  Line 57 [raw_address_constant]: g_RenderVertexBuffer[2].u = 0xf80000;
 
 ====================================================================================================
 core_flies.cpp_CFlies_initFly_FUN_004cc760 (2 suspects)

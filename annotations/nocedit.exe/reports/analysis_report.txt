@@ -7,18 +7,18 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 5750 (89.1%)
-Functions with suspects: 704 (10.9%)
+Clean functions: 5760 (89.2%)
+Functions with suspects: 694 (10.8%)
 
-Total suspect patterns: 3693
-Average suspects per function: 0.57
+Total suspect patterns: 3637
+Average suspects per function: 0.56
 
 Virtual files: 214 total, 146 at 100%, 147 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
 
-Average complexity score: 54.2
+Average complexity score: 54.1
 
 COMPILATION STATUS
 ----------------------------------------
@@ -33,11 +33,11 @@ SUSPECT PATTERN BREAKDOWN
   unrolled_strcpy           302
   missing_cave_copy         170
   shadow_pointer_walk       151
-  raw_address_constant      141
+  raw_address_constant      91
   unrolled_strlen           83
   static_uninitvar          68
   unrolled_memset           67
-  warning_inlined_function  59
+  warning_inlined_function  53
   bitcast_double_pair       44
   unrolled_strchr           43
   static_legacy_uninitvar   32
@@ -112,7 +112,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 5700 more
+  ... and 5710 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -215,7 +215,7 @@ FUNCTIONS BY SUSPECT TYPE
     00403f20: engine_3d.c_renderPolygonTextureNormalizedLit_FUN_00403f20
     ... and 85 more
 
-  raw_address_constant (32 functions):
+  raw_address_constant (20 functions):
     00406860: engine_3d.c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860
     00404220: engine_3d.c_renderPolygonLitDetailedClamped_FUN_00404220
     00406290: engine_3d.c_renderPolygonTexturePerspectiveCorrectClamped_FUN_00406290
@@ -223,10 +223,10 @@ FUNCTIONS BY SUSPECT TYPE
     004ed3c0: core_gore.cpp_CFootstep_render_FUN_004ed3c0
     004ec470: core_gore.cpp_CBloodSplat_setupRenderState_FUN_004ec470
     004eaef0: core_glass.cpp_CGlass_shatter_FUN_004eaef0
-    004c50b0: core_fire.cpp_CGunFlame_render_FUN_004c50b0
-    004c64c0: core_fire.cpp_CPopcorn_render_FUN_004c64c0
-    004bf4c0: core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0
-    ... and 22 more
+    005ef190: core_weather.cpp_CWeather_renderParticles_FUN_005ef190
+    005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
+    005dc760: core_texlist.cpp_CTextureList_previewTexture_FUN_005dc760
+    ... and 10 more
 
   unrolled_strlen (37 functions):
     00550ce0: engine_pod.cpp_findFilesByExtension_FUN_00550ce0
@@ -256,7 +256,7 @@ FUNCTIONS BY SUSPECT TYPE
     00525840: core_mobster.cpp_CMobster_process_FUN_00525840
     ... and 17 more
 
-  warning_inlined_function (58 functions):
+  warning_inlined_function (52 functions):
     00541390: core_netgame.cpp_CNetGame_runLobby_FUN_00541390
     005f9470: core_zombie.cpp_CZombie_process_FUN_005f9470
     004257f0: core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0
@@ -267,7 +267,7 @@ FUNCTIONS BY SUSPECT TYPE
     0057ae50: core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50
     005874d0: core_setutil.cpp_C3DSLight_import3DS_FUN_005874d0
     00585c90: core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90
-    ... and 48 more
+    ... and 42 more
 
   bitcast_double_pair (9 functions):
     0055a810: core_script.cpp_CScript_step_FUN_0055a810

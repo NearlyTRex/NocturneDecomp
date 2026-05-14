@@ -12,8 +12,8 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6908
-  Functions with suspicious globals: 70
-  Total suspicious global references: 116
+  Functions with suspicious globals: 69
+  Total suspicious global references: 115
 
   Most commonly misresolved globals:
     g_SfxOptions                                       13 functions
@@ -38,7 +38,7 @@ SUMMARY
     g_SourcePaletteData                                1 functions
 
   .keep files with issues: 28 (these need manual review)
-  Raw .cpp files with issues: 42
+  Raw .cpp files with issues: 41
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -546,14 +546,6 @@ core_fire.cpp_CFireEffect_createShell_FUN_004c91e0  [.cpp]  (1 suspicious global
 
   g_ShellPool
     Used at lines: 13
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_fire.cpp_CRainDrop_render_FUN_004c6830  [.cpp]  (1 suspicious globals)
-  File: core/fire.cpp
-
-  g_CameraLoadImageReadBuffer
-    Used at lines: 77, 81
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

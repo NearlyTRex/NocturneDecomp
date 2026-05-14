@@ -59,14 +59,14 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
   if ((iVar7 != 0) &&
      (iVar7 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar7 == 0)) {
-    g_RenderVertexBuffer[0].u = 0x80000;
-    g_RenderVertexBuffer[0].v = 0xf80000;
-    g_RenderVertexBuffer[1].u = 0xf80000;
-    g_RenderVertexBuffer[1].v = 0xf80000;
-    g_RenderVertexBuffer[2].u = 0xf80000;
-    g_RenderVertexBuffer[2].v = 0x80000;
-    g_RenderVertexBuffer[3].u = 0x80000;
-    g_RenderVertexBuffer[3].v = 0x80000;
+    g_RenderVertexBuffer[0].u = 0x8 << 16;
+    g_RenderVertexBuffer[0].v = 0xf8 << 16;
+    g_RenderVertexBuffer[1].u = 0xf8 << 16;
+    g_RenderVertexBuffer[1].v = 0xf8 << 16;
+    g_RenderVertexBuffer[2].u = 0xf8 << 16;
+    g_RenderVertexBuffer[2].v = 0x8 << 16;
+    g_RenderVertexBuffer[3].u = 0x8 << 16;
+    g_RenderVertexBuffer[3].v = 0x8 << 16;
     engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
               (g_CDemonRendererPtr2,&g_BillboardCameraRight,(CVector3i *)0x0);
     fVar2 = -local_1c;

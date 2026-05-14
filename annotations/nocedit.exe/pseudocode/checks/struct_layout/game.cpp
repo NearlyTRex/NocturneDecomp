@@ -2,7 +2,7 @@
 // DO NOT EDIT BY HAND. Re-run the generator after updating types.
 //
 // Category: game
-// Structs : 533
+// Structs : 534
 
 #include "nocturne.h"
 
@@ -9459,6 +9459,24 @@ static_assert(__builtin_offsetof(SNetworkAddr, port) == 4,
               "offsetof(SNetworkAddr, port) != 4");
 static_assert(__builtin_offsetof(SNetworkAddr, other) == 6,
               "offsetof(SNetworkAddr, other) != 6");
+
+// ---- SPBMFileHeader (28 bytes) ----
+static_assert(sizeof(SPBMFileHeader) == 28,
+              "sizeof(SPBMFileHeader) != 28");
+static_assert(__builtin_offsetof(SPBMFileHeader, magic) == 0,
+              "offsetof(SPBMFileHeader, magic) != 0");
+static_assert(__builtin_offsetof(SPBMFileHeader, width) == 4,
+              "offsetof(SPBMFileHeader, width) != 4");
+static_assert(__builtin_offsetof(SPBMFileHeader, height) == 8,
+              "offsetof(SPBMFileHeader, height) != 8");
+static_assert(__builtin_offsetof(SPBMFileHeader, reserved1) == 12,
+              "offsetof(SPBMFileHeader, reserved1) != 12");
+static_assert(__builtin_offsetof(SPBMFileHeader, reserved2) == 16,
+              "offsetof(SPBMFileHeader, reserved2) != 16");
+static_assert(__builtin_offsetof(SPBMFileHeader, right_max) == 20,
+              "offsetof(SPBMFileHeader, right_max) != 20");
+static_assert(__builtin_offsetof(SPBMFileHeader, bottom_max) == 24,
+              "offsetof(SPBMFileHeader, bottom_max) != 24");
 
 // ---- SPaletteEntry (16 bytes) ----
 static_assert(sizeof(SPaletteEntry) == 16,
