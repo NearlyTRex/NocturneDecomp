@@ -156,7 +156,7 @@ section .text
     ADD EAX,EDX                         ; 00463c48
     PUSH EAX                            ; 00463c4a
     CALL shape_design.c_arePolygonsCoplanar_FUN_00461b70 ; 00463c4b
-        ;   XREF to: 00461b70 (UNCONDITIONAL_CALL)  ; int shape_design.c_arePolygonsCoplanar_FUN_00461b70(SShapeEditorPolygon * polygon1_ptr, SShapeEditorPolygon * polygon2_ptr, float scale_factor, int tolerance)
+        ;   XREF to: 00461b70 (UNCONDITIONAL_CALL)  ; int shape_design.c_arePolygonsCoplanar_FUN_00461b70(SShapeEditorPolygon * polygon1_ptr, SShapeEditorPolygon * polygon2_ptr, int scale_factor, int tolerance)
     ADD ESP,0x10                        ; 00463c50
     TEST EAX,EAX                        ; 00463c53
     JZ 0x00463c73                       ; 00463c55

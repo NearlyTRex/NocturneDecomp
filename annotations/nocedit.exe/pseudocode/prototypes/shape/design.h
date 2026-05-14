@@ -253,7 +253,7 @@ int __cdecl findVertexMatches(int *vertices1,int *vertices2,int count1,int count
 
 // Original: shape_design.c_arePolygonsCoplanar_FUN_00461b70
 // Address: 00461b70
-int __cdecl arePolygonsCoplanar(SShapeEditorPolygon *polygon1_ptr,SShapeEditorPolygon *polygon2_ptr,float scale_factor,int tolerance);
+int __cdecl arePolygonsCoplanar(SShapeEditorPolygon *polygon1_ptr,SShapeEditorPolygon *polygon2_ptr,int scale_factor,int tolerance);
 
 // Original: shape_design.c_clampedArccos_FUN_00461c50
 // Address: 00461c50

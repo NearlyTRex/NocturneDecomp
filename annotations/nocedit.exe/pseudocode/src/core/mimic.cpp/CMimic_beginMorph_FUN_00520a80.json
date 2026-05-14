@@ -7,18 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 102,
+    "complexity_score": 37,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 37,
-    "suspect_count": 5,
-    "suspect_types": [
-      "suspect_float",
-      "unrolled_memcpy",
-      "warning_type_propagation"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 118
   },
   "cross_references": [
@@ -163,6 +159,53 @@
     },
     "pcode_op_count": 236
   },
+  "resolved_suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 19,
+      "match": "1.4013e-45",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "this_ptr->morph_target_actor[0x8d].previous_transform_state.orientation.vec.x = 1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 16,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(this_ptr->morph_target_actor->scale).x = (this_ptr->base).base.base.scale.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 21,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pCVar2->location).position.x = (this_ptr->base).base.base.location.position.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 28,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(pCVar2->orient).vec.x = (pUVar1->vec).x;",
+      "type": "unrolled_memcpy"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -179,46 +222,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 19,
-      "match": "1.4013e-45",
-      "severity": "mild",
-      "text": "this_ptr->morph_target_actor[0x8d].previous_transform_state.orientation.vec.x = 1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 16,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(this_ptr->morph_target_actor->scale).x = (this_ptr->base).base.base.scale.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 21,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(pCVar2->location).position.x = (this_ptr->base).base.base.location.position.x;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 28,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "(pCVar2->orient).vec.x = (pUVar1->vec).x;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

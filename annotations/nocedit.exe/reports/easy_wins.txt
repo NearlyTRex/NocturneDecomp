@@ -14,6 +14,9 @@ PRIORITY 1: Files with 1-2 functions remaining
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
+  [warning_inlined_function] - 1 functions
+    shape_design.c_arePolygonsCoplanar_FUN_00461b70                        ( 25 lines)
+
   [stack_alignment_array] - 1 functions
     core_fire.cpp_CSpark_setupRenderState_FUN_004c0300                     ( 48 lines)
 
@@ -26,7 +29,7 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80 (40 lines)
         Types: ['stack_alignment_array', 'warning_inlined_function']
       core_fire.cpp_CLaserBeam_render_FUN_004c25c0 (474 lines)
-        Types: ['suspect_float', 'unrolled_memcpy']
+        Types: ['unrolled_memcpy']
       core_fire.cpp_CSpark_setupRenderState_FUN_004c0300 (48 lines)
         Types: ['stack_alignment_array']
       core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0 (40 lines)
@@ -48,6 +51,7 @@ ALL REMAINING FILES
   core/dracbrid.cpp                                             84.0%  (21/25 clean, 4 remaining)
   core/xform.cpp                                                83.6%  (51/61 clean, 10 remaining)
   core/hero.cpp                                                 83.3%  (40/48 clean, 8 remaining)
+  core/mimic.cpp                                                83.3%  (20/24 clean, 4 remaining)
   shape/superopt.cpp                                            82.8%  (154/186 clean, 32 remaining)
   core/trigger.cpp                                              82.6%  (19/23 clean, 4 remaining)
   core/wateract.cpp                                             82.6%  (19/23 clean, 4 remaining)
@@ -65,7 +69,6 @@ ALL REMAINING FILES
   core/netgame.cpp                                              79.7%  (51/64 clean, 13 remaining)
   core/script.cpp                                               79.2%  (76/96 clean, 20 remaining)
   core/turret.cpp                                               79.2%  (19/24 clean, 5 remaining)
-  core/mimic.cpp                                                79.2%  (19/24 clean, 5 remaining)
   core/dfilter.cpp                                              78.9%  (15/19 clean, 4 remaining)
   core/door.cpp                                                 78.6%  (22/28 clean, 6 remaining)
   core/icepick.cpp                                              78.3%  (18/23 clean, 5 remaining)
@@ -84,9 +87,9 @@ ALL REMAINING FILES
   core/menu.cpp                                                 72.7%  (16/22 clean, 6 remaining)
   shape/quantize.cpp                                            72.7%  (24/33 clean, 9 remaining)
   core/setdir.cpp                                               71.9%  (23/32 clean, 9 remaining)
-  shape/design.c                                                71.8%  (117/163 clean, 46 remaining)
   core/texlist.cpp                                              71.4%  (10/14 clean, 4 remaining)
   core/chain.cpp                                                71.4%  (15/21 clean, 6 remaining)
+  shape/design.c                                                71.2%  (116/163 clean, 47 remaining)
   core/dtrace.cpp                                               70.6%  (36/51 clean, 15 remaining)
   core/setcolid.cpp                                             70.0%  (28/40 clean, 12 remaining)
   engine/fileio.cpp                                             68.5%  (50/73 clean, 23 remaining)

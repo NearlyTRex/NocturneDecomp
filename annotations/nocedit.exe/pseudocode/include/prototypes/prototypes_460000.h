@@ -34,7 +34,7 @@ void __cdecl shape_design_c_traverseSpatialTree_FUN_004616f0(SSpatialTreeNode *t
 void __cdecl shape_design_c_configureSpatialSplittingPlane_FUN_004617c0(STreeNode *node);
 void __cdecl shape_design_c_showModelEditor_FUN_00461aa0(void);
 int __cdecl shape_design_c_findVertexMatches_FUN_00461ae0(int *vertices1,int *vertices2,int count1,int count2);
-int __cdecl shape_design_c_arePolygonsCoplanar_FUN_00461b70(SShapeEditorPolygon *polygon1_ptr,SShapeEditorPolygon *polygon2_ptr,float scale_factor,int tolerance);
+int __cdecl shape_design_c_arePolygonsCoplanar_FUN_00461b70(SShapeEditorPolygon *polygon1_ptr,SShapeEditorPolygon *polygon2_ptr,int scale_factor,int tolerance);
 double __cdecl shape_design_c_clampedArccos_FUN_00461c50(double dot_product);
 double __cdecl shape_design_c_calculateAngleBetweenPolygonNormals_FUN_00461cb0(SShapeEditorPolygon *normal1_ptr,SShapeEditorPolygon *normal2_ptr);
 int __cdecl shape_design_c_isAngleBelowThreshold_FUN_00461d30(SShapeEditorPolygon *polygon1,SShapeEditorPolygon *polygon2,double angle_threshold);

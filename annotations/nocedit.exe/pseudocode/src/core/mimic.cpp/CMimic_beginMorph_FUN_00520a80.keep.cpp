@@ -7,8 +7,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(CMimic *this_ptr)
 
 {
@@ -21,21 +19,14 @@ void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(CMimic *this_ptr)
     g_CurrentLineNumber = 0x499;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMimic::beginMorph() - can't do this unless morphActor has been created!");
   }
-  (this_ptr->morph_target_actor->scale).x = (this_ptr->base).base.base.scale.x;
-  (this_ptr->morph_target_actor->scale).y = (this_ptr->base).base.base.scale.y;
-  (this_ptr->morph_target_actor->scale).z = (this_ptr->base).base.base.scale.z;
-  this_ptr->morph_target_actor[0x8d].previous_transform_state.orientation.vec.x = 1.4013e-45;
+  this_ptr->morph_target_actor->scale = (this_ptr->base).base.base.scale;
+  ((CEnemy *)this_ptr->morph_target_actor)->special_form_flag = 1;
   pCVar2 = this_ptr->morph_target_actor;
-  (pCVar2->location).position.x = (this_ptr->base).base.base.location.position.x;
-  (pCVar2->location).position.y = (this_ptr->base).base.base.location.position.y;
-  (pCVar2->location).position.z = (this_ptr->base).base.base.location.position.z;
-  (pCVar2->location).area_id = (this_ptr->base).base.base.location.area_id;
+  pCVar2->location = (this_ptr->base).base.base.location;
   pCVar2 = this_ptr->morph_target_actor;
   pUVar1 = &(this_ptr->base).base.base.orient;
   if (&pCVar2->orient != pUVar1) {
-    (pCVar2->orient).vec.x = (pUVar1->vec).x;
-    (pCVar2->orient).vec.y = (this_ptr->base).base.base.orient.vec.y;
-    (pCVar2->orient).vec.z = (this_ptr->base).base.base.orient.vec.z;
+    pCVar2->orient = *pUVar1;
   }
   this_ptr->morph_blend = 0.0;
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00

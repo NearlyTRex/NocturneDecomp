@@ -7,7 +7,7 @@ SUMMARY
 Total functions analyzed: 6454
 Clean: 5729 (88.8%)
 With suspects: 725
-Total suspects: 3637
+Total suspects: 3630
 
 ====================================================================================================
 core_bugs.cpp_CBugs_ctor_FUN_00424cb0 (3 suspects)
@@ -1428,15 +1428,13 @@ core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80 (2 suspects)
   Line 14 [stack_alignment_array]: float afStackY_1000 [997];
 
 ====================================================================================================
-core_fire.cpp_CLaserBeam_render_FUN_004c25c0 (6 suspects)
+core_fire.cpp_CLaserBeam_render_FUN_004c25c0 (4 suspects)
   File: core/fire.cpp
 ====================================================================================================
   Line 152 [unrolled_memcpy]: local_1d4.x = pCVar7->x;
   Line 194 [unrolled_memcpy]: local_168.x = local_150.x;
   Line 239 [unrolled_memcpy]: pCVar3->vertex_buffer_ptr->r = (this_ptr->color).r;
   Line 244 [unrolled_memcpy]: pCVar3->vertex_buffer_ptr[1].r = (this_ptr->color).r;
-  Line 280 [suspect_float]: local_24 = 1.12104e-44;
-  Line 283 [suspect_float]: local_24 = 2.24208e-44;
 
 ====================================================================================================
 core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0 (2 suspects)
@@ -2292,16 +2290,6 @@ core_menu.cpp_showCalibrationTestPattern_FUN_00510a50 (1 suspect)
   File: core/menu.cpp
 ====================================================================================================
   Line 20 [unrolled_strcpy]: do {
-
-====================================================================================================
-core_mimic.cpp_CMimic_beginMorph_FUN_00520a80 (5 suspects)
-  File: core/mimic.cpp
-====================================================================================================
-  Line 2 [warning_type_propagation]: /* WARNING: Type propagation algorithm not settling */
-  Line 16 [unrolled_memcpy]: (this_ptr->morph_target_actor->scale).x = (this_ptr->base).base.base.scale.x;
-  Line 19 [suspect_float]: this_ptr->morph_target_actor[0x8d].previous_transform_state.orientation.vec.x = 1.4013e-45;
-  Line 21 [unrolled_memcpy]: (pCVar2->location).position.x = (this_ptr->base).base.base.location.position.x;
-  Line 28 [unrolled_memcpy]: (pCVar2->orient).vec.x = (pUVar1->vec).x;
 
 ====================================================================================================
 core_mimic.cpp_CMimic_ctor_FUN_0051f1d0 (2 suspects)
@@ -5841,6 +5829,12 @@ shape_cramtex.cpp_placementCollisionCheck_FUN_00448260 (3 suspects)
   Line 18 [pointer_cast]: (start_y == *(int *)((int)&g_CramRectangles[0].start_y + iVar1))) {
 
 ====================================================================================================
+shape_design.c_arePolygonsCoplanar_FUN_00461b70 (1 suspect)
+  File: shape/design.c
+====================================================================================================
+  Line 2 [warning_inlined_function]: /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
+
+====================================================================================================
 shape_design.c_bisectMesh_FUN_0046ed50 (12 suspects)
   File: shape/design.c
 ====================================================================================================
@@ -5865,12 +5859,11 @@ shape_design.c_centerVerticesAroundPoint_FUN_0045ea90 (2 suspects)
   Line 46 [unrolled_strlen]: do {
 
 ====================================================================================================
-shape_design.c_complexPolygonReduction_FUN_00463b30 (17 suspects)
+shape_design.c_complexPolygonReduction_FUN_00463b30 (16 suspects)
   File: shape/design.c
 ====================================================================================================
   Line 13 [unrolled_memcpy]: // 00463b5a: MOVSD.REP ES:EDI,ESI  ; g_PolygonReductionParams | g_PolygonReductionParams[1]
   Line 43 [unrolled_memcpy]: for (iVar4 = 0x14; iVar4 != 0; iVar4 = iVar4 + -1) {
-  Line 71 [suspect_float]: 3.58732e-43,8);
   Line 257 [pointer_cast]: *(int *)((int)local_20 + local_18 * 4) = local_14[local_1c * 3];
   Line 265 [pointer_cast]: ((int *)(local_1c * 4 + (int)local_20),
   Line 266 [pointer_cast]: (int *)(local_1c * 4 + 4 + (int)local_20));

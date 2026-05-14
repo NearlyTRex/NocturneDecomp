@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 150
-  Total diagnostics: 416
+  Functions with findings: 149
+  Total diagnostics: 413
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 150, raw .cpp files: 0
+  .keep.cpp files: 149, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -502,14 +502,6 @@ engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190  [.keep] [Cppchec
   Line  110: [selfAssignment] Redundant assignment of 'puVar7' to itself.
   Line  129: [selfAssignment] Redundant assignment of 'puVar5' to itself.
   Line  130: [selfAssignment] Redundant assignment of 'pCVar8' to itself.
-
-----------------------------------------------------------------------------------------------------
-shape_design.c_arePolygonsCoplanar_FUN_00461b70  [.keep] [Cppcheck (quick)]
-  File: shape/design.c  (3 diagnostics)
-
-  Line   21: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   25: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
-  Line   28: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
 shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180  [.keep] [Cppcheck (quick)]

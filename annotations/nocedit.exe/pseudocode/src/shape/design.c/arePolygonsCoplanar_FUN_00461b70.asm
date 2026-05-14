@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl shape_design_c_arePolygonsCoplanar_FUN_00461b70(SShapeEditorPolygon *polygon1_ptr,SShapeEditorPolygon *polygon2_ptr,float scale_factor,int tolerance)
+; int __cdecl shape_design_c_arePolygonsCoplanar_FUN_00461b70(SShapeEditorPolygon *polygon1_ptr,SShapeEditorPolygon *polygon2_ptr,int scale_factor,int tolerance)
 ;
 ; Parameters:
 ; SShapeEditorPolygon * Stack[0x4]:4   polygon1_ptr
 ; SShapeEditorPolygon * Stack[0x8]:4   polygon2_ptr
-; float            Stack[0xc]:4   scale_factor
+; int              Stack[0xc]:4   scale_factor
 ; int              Stack[0x10]:4   tolerance
 ; Local Variables:
 ; int              Stack[-0x2c]:4  local_2c

@@ -10,7 +10,7 @@ Total functions: 6454
 Clean functions: 5760 (89.2%)
 Functions with suspects: 694 (10.8%)
 
-Total suspect patterns: 3637
+Total suspect patterns: 3630
 Average suspects per function: 0.56
 
 Virtual files: 214 total, 146 at 100%, 147 at 90%+
@@ -29,7 +29,7 @@ Failed: 0
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
   pointer_cast              1409
-  unrolled_memcpy           930
+  unrolled_memcpy           927
   unrolled_strcpy           302
   missing_cave_copy         170
   shadow_pointer_walk       151
@@ -37,15 +37,15 @@ SUSPECT PATTERN BREAKDOWN
   unrolled_strlen           83
   static_uninitvar          68
   unrolled_memset           67
-  warning_inlined_function  53
+  warning_inlined_function  54
   bitcast_double_pair       44
   unrolled_strchr           43
   static_legacy_uninitvar   32
   decompiler_intrinsic      25
   stack_alignment_array     23
   warning_unreachable       22
-  warning_type_propagation  20
   static_invalid_pointer_cast 20
+  warning_type_propagation  19
   negative_offset           16
   self_copy_guard           14
   sub84_truncation          12
@@ -53,7 +53,6 @@ SUSPECT PATTERN BREAKDOWN
   stack_param               8
   unrolled_strcat           6
   unaffected_reg            6
-  suspect_float             4
   static_array_oob_cond     3
   static_object_index       3
   static_array_oob          2
@@ -163,7 +162,7 @@ FUNCTIONS BY SUSPECT TYPE
     00401140: engine_2d.c_plotPixel_FUN_00401140
     ... and 331 more
 
-  unrolled_memcpy (313 functions):
+  unrolled_memcpy (312 functions):
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     0054f650: engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
@@ -174,7 +173,7 @@ FUNCTIONS BY SUSPECT TYPE
     00407470: engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470
     00408070: engine_3d.c_clipAndDrawLine3D_FUN_00408070
     0048dcc0: engine_drender.cpp_CDemonRenderer_setupCameraAndViewport_FUN_0048dcc0
-    ... and 303 more
+    ... and 302 more
 
   unrolled_strcpy (122 functions):
     00550ce0: engine_pod.cpp_findFilesByExtension_FUN_00550ce0
@@ -256,7 +255,7 @@ FUNCTIONS BY SUSPECT TYPE
     00525840: core_mobster.cpp_CMobster_process_FUN_00525840
     ... and 17 more
 
-  warning_inlined_function (52 functions):
+  warning_inlined_function (53 functions):
     00541390: core_netgame.cpp_CNetGame_runLobby_FUN_00541390
     005f9470: core_zombie.cpp_CZombie_process_FUN_005f9470
     004257f0: core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0
@@ -267,7 +266,7 @@ FUNCTIONS BY SUSPECT TYPE
     0057ae50: core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50
     005874d0: core_setutil.cpp_C3DSLight_import3DS_FUN_005874d0
     00585c90: core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90
-    ... and 42 more
+    ... and 43 more
 
   bitcast_double_pair (9 functions):
     0055a810: core_script.cpp_CScript_step_FUN_0055a810
@@ -329,7 +328,9 @@ FUNCTIONS BY SUSPECT TYPE
     005f8550: core_xform.cpp_transformAndClipGeometry_FUN_005f8550
     0047a820: core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820
 
-  warning_type_propagation (20 functions):
+  static_invalid_pointer_cast (0 functions):
+
+  warning_type_propagation (19 functions):
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     00543150: core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
     005f9470: core_zombie.cpp_CZombie_process_FUN_005f9470
@@ -340,9 +341,7 @@ FUNCTIONS BY SUSPECT TYPE
     005267a0: core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0
     00558fd0: core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0
     005584a0: core_scat.cpp_CScat_blendAimBones_FUN_005584a0
-    ... and 10 more
-
-  static_invalid_pointer_cast (0 functions):
+    ... and 9 more
 
   negative_offset (7 functions):
     004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
@@ -389,11 +388,6 @@ FUNCTIONS BY SUSPECT TYPE
 
   unaffected_reg (1 functions):
     00556490: shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
-
-  suspect_float (3 functions):
-    004c25c0: core_fire.cpp_CLaserBeam_render_FUN_004c25c0
-    00520a80: core_mimic.cpp_CMimic_beginMorph_FUN_00520a80
-    00463b30: shape_design.c_complexPolygonReduction_FUN_00463b30
 
   static_array_oob_cond (0 functions):
 

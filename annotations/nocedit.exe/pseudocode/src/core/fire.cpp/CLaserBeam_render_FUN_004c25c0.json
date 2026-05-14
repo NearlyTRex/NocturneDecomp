@@ -7,15 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1296,
-    "complexity_score": 544,
+    "complexity_score": 519,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 474,
-    "suspect_count": 6,
+    "suspect_count": 4,
     "suspect_types": [
-      "suspect_float",
       "unrolled_memcpy"
     ],
     "total_lines": 1770
@@ -356,6 +355,24 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 280,
+      "match": "1.12104e-44",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_24 = 1.12104e-44;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 283,
+      "match": "2.24208e-44",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "local_24 = 2.24208e-44;",
+      "type": "suspect_float"
     },
     {
       "description": "Complex pointer cast",
@@ -1191,22 +1208,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 280,
-      "match": "1.12104e-44",
-      "severity": "mild",
-      "text": "local_24 = 1.12104e-44;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 283,
-      "match": "2.24208e-44",
-      "severity": "mild",
-      "text": "local_24 = 2.24208e-44;",
-      "type": "suspect_float"
-    },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
       "line": 152,

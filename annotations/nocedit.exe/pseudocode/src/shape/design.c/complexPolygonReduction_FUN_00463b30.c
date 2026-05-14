@@ -75,7 +75,7 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
     for (local_4c = 0; uVar2 = local_48, local_4c < g_PolygonCount; local_4c = local_4c + 1) {
       iVar3 = shape_design_c_arePolygonsCoplanar_FUN_00461b70
                         (g_ModelPolygonData + selected_polygon_index,g_ModelPolygonData + local_4c,
-                         3.58732e-43,8);
+                         0x100,8);
       if (((iVar3 != 0) &&
           (g_ModelPolygonData[selected_polygon_index].vertex_indices_count ==
            g_ModelPolygonData[local_4c].vertex_indices_count)) &&

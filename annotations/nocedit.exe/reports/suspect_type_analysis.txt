@@ -4,8 +4,8 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1409 ( 38.7%)
-  unrolled_memcpy                  930 ( 25.6%)
+  pointer_cast                    1409 ( 38.8%)
+  unrolled_memcpy                  927 ( 25.5%)
   unrolled_strcpy                  302 (  8.3%)
   missing_cave_copy                170 (  4.7%)
   shadow_pointer_walk              151 (  4.2%)
@@ -13,15 +13,15 @@ SUSPECT TYPE COUNTS
   unrolled_strlen                   83 (  2.3%)
   static_uninitvar                  68 (  1.9%)
   unrolled_memset                   67 (  1.8%)
-  warning_inlined_function          53 (  1.5%)
+  warning_inlined_function          54 (  1.5%)
   bitcast_double_pair               44 (  1.2%)
   unrolled_strchr                   43 (  1.2%)
   static_legacy_uninitvar           32 (  0.9%)
   decompiler_intrinsic              25 (  0.7%)
   stack_alignment_array             23 (  0.6%)
   warning_unreachable               22 (  0.6%)
-  warning_type_propagation          20 (  0.5%)
-  static_invalid_pointer_cast       20 (  0.5%)
+  static_invalid_pointer_cast       20 (  0.6%)
+  warning_type_propagation          19 (  0.5%)
   negative_offset                   16 (  0.4%)
   self_copy_guard                   14 (  0.4%)
   sub84_truncation                  12 (  0.3%)
@@ -29,7 +29,6 @@ SUSPECT TYPE COUNTS
   stack_param                        8 (  0.2%)
   unrolled_strcat                    6 (  0.2%)
   unaffected_reg                     6 (  0.2%)
-  suspect_float                      4 (  0.1%)
   static_array_oob_cond              3 (  0.1%)
   static_object_index                3 (  0.1%)
   static_array_oob                   2 (  0.1%)
@@ -406,11 +405,11 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (930 occurrences)
+TYPE: unrolled_memcpy (927 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   727x  field-by-field struct copy
+   724x  field-by-field struct copy
    104x  for (...; != 0; ... + -1)
     97x  MOVSD.REP
      2x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
@@ -529,7 +528,6 @@ Functions:
   core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_0050a8d0
   core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_00509b20
   core_manpuz.cpp_copyPanel_FUN_0050b9a0
-  core_mimic.cpp_CMimic_beginMorph_FUN_00520a80
   core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0
   core_mimic.cpp_CMimic_setupCloth_FUN_00520500
   core_mimic.cpp_CMimic_updatePose_FUN_0051f930
@@ -1195,11 +1193,11 @@ Functions:
   shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
 
 ====================================================================================================
-TYPE: warning_inlined_function (53 occurrences)
+TYPE: warning_inlined_function (54 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    53x  WARNING: Inlined function:
+    54x  WARNING: Inlined function:
 
 Functions:
   core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0
@@ -1240,6 +1238,7 @@ Functions:
   core_skeledit.cpp_CDeformableModel_importFacesS3D_FUN_0058b9b0
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
   core_zombie.cpp_CZombie_process_FUN_005f9470
+  shape_design.c_arePolygonsCoplanar_FUN_00461b70
   shape_design.c_cramTextureList_FUN_0046bb80
   shape_design.c_createKeyframeModel_FUN_00468320
   shape_design.c_exportModelToBIN_FUN_0045aa80
@@ -1407,35 +1406,6 @@ Functions:
   engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0
 
 ====================================================================================================
-TYPE: warning_type_propagation (20 occurrences)
-====================================================================================================
-
-Unique patterns:
-    20x  WARNING: Type propagation algorithm not settling
-
-Functions:
-  core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400
-  core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0
-  core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120
-  core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
-  core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550
-  core_mimic.cpp_CMimic_beginMorph_FUN_00520a80
-  core_mimic.cpp_CMimic_ctor_FUN_0051f1d0
-  core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0
-  core_mimic.cpp_CMimic_updatePose_FUN_0051f930
-  core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0
-  core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
-  core_platfrm.cpp_CPlatform_process_FUN_0054cc30
-  core_scat.cpp_CScat_blendAimBones_FUN_005584a0
-  core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0
-  core_script.cpp_CScript_step_FUN_0055a810
-  core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
-  core_tentacle.cpp_CTentacle_process_FUN_005db050
-  core_zombie.cpp_CZombie_processPickup_FUN_005fb530
-  core_zombie.cpp_CZombie_process_FUN_005f9470
-  engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
-
-====================================================================================================
 TYPE: static_invalid_pointer_cast (20 occurrences)
 ====================================================================================================
 
@@ -1456,6 +1426,34 @@ Functions:
   core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790
   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0
   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270
+
+====================================================================================================
+TYPE: warning_type_propagation (19 occurrences)
+====================================================================================================
+
+Unique patterns:
+    19x  WARNING: Type propagation algorithm not settling
+
+Functions:
+  core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400
+  core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0
+  core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004d7120
+  core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
+  core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550
+  core_mimic.cpp_CMimic_ctor_FUN_0051f1d0
+  core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0
+  core_mimic.cpp_CMimic_updatePose_FUN_0051f930
+  core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0
+  core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150
+  core_platfrm.cpp_CPlatform_process_FUN_0054cc30
+  core_scat.cpp_CScat_blendAimBones_FUN_005584a0
+  core_scat.cpp_CScat_updateWeaponAttachment_FUN_00558fd0
+  core_script.cpp_CScript_step_FUN_0055a810
+  core_tentacle.cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70
+  core_tentacle.cpp_CTentacle_process_FUN_005db050
+  core_zombie.cpp_CZombie_processPickup_FUN_005fb530
+  core_zombie.cpp_CZombie_process_FUN_005f9470
+  engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
 
 ====================================================================================================
 TYPE: negative_offset (16 occurrences)
@@ -1565,21 +1563,6 @@ Unique patterns:
 
 Functions:
   shape_quantize.cpp_quantizeRawPixelData_FUN_00556490
-
-====================================================================================================
-TYPE: suspect_float (4 occurrences)
-====================================================================================================
-
-Unique patterns:
-     1x  1.12104e-44
-     1x  2.24208e-44
-     1x  1.4013e-45
-     1x  3.58732e-43
-
-Functions:
-  core_fire.cpp_CLaserBeam_render_FUN_004c25c0
-  core_mimic.cpp_CMimic_beginMorph_FUN_00520a80
-  shape_design.c_complexPolygonReduction_FUN_00463b30
 
 ====================================================================================================
 TYPE: static_array_oob_cond (3 occurrences)
