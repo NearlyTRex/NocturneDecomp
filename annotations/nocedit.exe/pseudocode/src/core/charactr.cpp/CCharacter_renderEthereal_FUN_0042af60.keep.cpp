@@ -13,10 +13,8 @@ void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_0042af60(CCharacter
   int iVar2;
   CDeformableModel *this_ptr_01;
   int iVar1;
-  int iVar3;
   SPose local_1aac;
   CDeformableModelInstance *this_ptr_00;
-  CDemonRenderer *pCVar1;
   CBoundingBox3D *bounding_box;
   
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
@@ -40,15 +38,11 @@ void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_0042af60(CCharacter
   core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250(this_ptr_00,iVar1);
   core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800
             (this_ptr_00,INT_00823a90,0);
-  iVar1 = 0;
-  do {
-    pCVar1 = g_CDemonRendererPtr2;
-    *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->r + iVar1) = 0xb332;
-    *(uint *)((int)&pCVar1->vertex_buffer_ptr->g + iVar1) = 0xb332;
-    iVar3 = iVar1 + 0x30;
-    *(uint *)((int)&pCVar1->vertex_buffer_ptr->b + iVar1) = 0xffff;
-    iVar1 = iVar3;
-  } while (iVar3 != 96000);
+  for (iVar1 = 0; iVar1 < 2000; iVar1 = iVar1 + 1) {
+    g_CDemonRendererPtr2->vertex_buffer_ptr[iVar1].r = 0xb332;
+    g_CDemonRendererPtr2->vertex_buffer_ptr[iVar1].g = 0xb332;
+    g_CDemonRendererPtr2->vertex_buffer_ptr[iVar1].b = 0xffff;
+  }
   core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(&this_ptr->model,0x267,1);
   g_CDemonRendererPtr2->skip_uv_extraction = 0;
   core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0

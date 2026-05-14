@@ -48,9 +48,7 @@ void __cdecl core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *thi
               ((CDemonActor *)this_ptr,&local_18,&this_ptr->blight_pos);
     pUVar1 = &(this_ptr->light).base.base.position;
     if (pUVar1 != (UVector3 *)&local_18) {
-      (pUVar1->f).x = local_18.x;
-      (this_ptr->light).base.base.position.f.y = local_18.y;
-      (this_ptr->light).base.base.position.f.z = local_18.z;
+      pUVar1->f = local_18;
     }
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_54,&g_ZeroVector.f,&(this_ptr->light_orient).vec);

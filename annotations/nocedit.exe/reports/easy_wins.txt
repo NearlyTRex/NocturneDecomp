@@ -10,10 +10,6 @@ sorted by effort required (lowest effort first).
 PRIORITY 1: Files with 1-2 functions remaining
 ====================================================================================================
 
-  core/waypoint.cpp (1 remaining of 19)
-    - core_waypoint.cpp_CWaypoint_renderOpaque_FUN_005ebf70
-      Suspects: shadow_pointer_walk
-
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
@@ -22,19 +18,36 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
 PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
 
-  core/waypoint.cpp (94.7% complete)
-    1 functions remaining:
-      core_waypoint.cpp_CWaypoint_renderOpaque_FUN_005ebf70 (104 lines)
-        Types: ['shadow_pointer_walk']
-
-  core/boxactor.cpp (93.5% complete)
-    3 functions remaining:
-      core_boxactor.cpp_CLightActor_process_FUN_00422a50 (72 lines)
-        Types: ['unrolled_memcpy']
-      core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_00422640 (28 lines)
-        Types: ['unrolled_memcpy']
-      core_boxactor.cpp_CBoxActor_process_FUN_004219e0 (134 lines)
-        Types: ['unrolled_memcpy']
+  core/fire.cpp (92.4% complete)
+    14 functions remaining:
+      core_fire.cpp_CGunFlame_render_FUN_004c50b0 (157 lines)
+        Types: ['raw_address_constant', 'warning_inlined_function']
+      core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80 (40 lines)
+        Types: ['stack_alignment_array', 'warning_inlined_function']
+      core_fire.cpp_CPopcorn_render_FUN_004c64c0 (89 lines)
+        Types: ['raw_address_constant']
+      core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0 (89 lines)
+        Types: ['raw_address_constant', 'warning_inlined_function']
+      core_fire.cpp_CExplosion_render_FUN_004c3b10 (89 lines)
+        Types: ['raw_address_constant', 'warning_inlined_function']
+      core_fire.cpp_CLaserBeam_render_FUN_004c25c0 (474 lines)
+        Types: ['raw_address_constant', 'suspect_float', 'unrolled_memcpy']
+      core_fire.cpp_CCrater_render_FUN_004c4620 (67 lines)
+        Types: ['raw_address_constant']
+      core_fire.cpp_CFireball_render_FUN_004c0e70 (216 lines)
+        Types: ['raw_address_constant']
+      core_fire.cpp_CLightningBolt_render_FUN_004c5720 (205 lines)
+        Types: ['raw_address_constant', 'warning_inlined_function']
+      core_fire.cpp_CBulletHole_render_FUN_004bfac0 (88 lines)
+        Types: ['raw_address_constant']
+      core_fire.cpp_CTrail_render_FUN_004c5e90 (75 lines)
+        Types: ['raw_address_constant']
+      core_fire.cpp_CSpark_setupRenderState_FUN_004c0300 (48 lines)
+        Types: ['raw_address_constant', 'stack_alignment_array', 'warning_inlined_function']
+      core_fire.cpp_CRainDrop_render_FUN_004c6830 (94 lines)
+        Types: ['raw_address_constant', 'warning_inlined_function']
+      core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0 (40 lines)
+        Types: ['stack_alignment_array', 'warning_inlined_function']
 
 ====================================================================================================
 ALL REMAINING FILES
@@ -51,10 +64,8 @@ ALL REMAINING FILES
   core/msnedit.cpp                                              84.1%  (53/63 clean, 10 remaining)
   core/dracbrid.cpp                                             84.0%  (21/25 clean, 4 remaining)
   core/xform.cpp                                                83.6%  (51/61 clean, 10 remaining)
-  core/charactr.cpp                                             83.5%  (91/109 clean, 18 remaining)
   core/hero.cpp                                                 83.3%  (40/48 clean, 8 remaining)
   shape/superopt.cpp                                            82.8%  (154/186 clean, 32 remaining)
-  core/fire.cpp                                                 82.7%  (153/185 clean, 32 remaining)
   core/trigger.cpp                                              82.6%  (19/23 clean, 4 remaining)
   core/wateract.cpp                                             82.6%  (19/23 clean, 4 remaining)
   engine/pod.cpp                                                82.4%  (28/34 clean, 6 remaining)

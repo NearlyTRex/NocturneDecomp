@@ -39,16 +39,11 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70(CCharacter 
     this_ptr->walk_timeout = 0.0;
     pCVar2 = this_ptr->walk_to_target;
     this_ptr->is_walking = 0;
-    (this_ptr->base).location.position.x = (pCVar2->location).position.x;
-    (this_ptr->base).location.position.y = (pCVar2->location).position.y;
-    (this_ptr->base).location.position.z = (pCVar2->location).position.z;
-    (this_ptr->base).location.area_id = (pCVar2->location).area_id;
+    (this_ptr->base).location = pCVar2->location;
     pCVar6 = this_ptr->walk_to_target;
     pUVar1 = &(this_ptr->base).orient;
     if (pUVar1 != &pCVar6->orient) {
-      (pUVar1->vec).x = (pCVar6->orient).vec.x;
-      (this_ptr->base).orient.vec.y = (pCVar6->orient).vec.y;
-      (this_ptr->base).orient.vec.z = (pCVar6->orient).vec.z;
+      *pUVar1 = pCVar6->orient;
     }
     if (this_ptr->door_target != (CDoor *)0x0) {
       (*(((this_ptr->base).vtable._uc)->_uc).clearDoorTarget)(this_ptr);

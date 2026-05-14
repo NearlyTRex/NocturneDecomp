@@ -14,7 +14,6 @@ int __cdecl core_charactr_cpp_CCharacter_process_FUN_00429870(CCharacter *this_p
   float fVar3;
   int iVar4;
   int iVar3;
-  CCharacter *pCVar5;
   CScript *this_ptr_00;
   float fVar1;
   CPlatform *pCVar2;
@@ -44,15 +43,11 @@ int __cdecl core_charactr_cpp_CCharacter_process_FUN_00429870(CCharacter *this_p
   }
   if (this_ptr->render_active == 0) {
     if (this_ptr->closest_distance_threshold == 9999.0f) {
-      iVar3 = 0;
-      pCVar5 = this_ptr;
-      do {
-        if (pCVar5->carry_hands[0].carry_actor != (CDemonActor *)0x0) {
+      for (iVar3 = 0; iVar3 < 2; iVar3 = iVar3 + 1) {
+        if (this_ptr->carry_hands[iVar3].carry_actor != (CDemonActor *)0x0) {
           core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80(this_ptr,iVar3,0.0);
         }
-        iVar3 = iVar3 + 1;
-        pCVar5 = (CCharacter *)&(pCVar5->base).orient_matrix.m[0].z;
-      } while (iVar3 < 2);
+      }
     }
     fVar2 = (this_ptr->base).platform_position_delta.y;
     (this_ptr->base).platform_position_delta.y = 0.0;

@@ -17,7 +17,6 @@ int __cdecl core_waypoint_cpp_CWaypoint_renderOpaque_FUN_005ebf70(CWayPoint *thi
   CBoundingBox3D *pCVar5;
   CVector3f *pCVar3;
   CVector3f *pCVar6;
-  CWayPoint *pCVar4;
   int iVar7;
   CBoundingBox3D CStack_ac;
   CBoundingBox3D local_94;
@@ -51,10 +50,9 @@ int __cdecl core_waypoint_cpp_CWaypoint_renderOpaque_FUN_005ebf70(CWayPoint *thi
     iVar7 = 0;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_70);
-    pCVar4 = this_ptr;
     if (0 < this_ptr->num_adjacent_waypoints) {
       do {
-        this_ptr_00 = pCVar4->adjacency[0].waypoint;
+        this_ptr_00 = this_ptr->adjacency[iVar7].waypoint;
         if (this_ptr <= this_ptr_00) {
           g_ActiveRenderColor = 2;
           if ((this_ptr == pCVar1) || (this_ptr_00 == pCVar1)) {
@@ -80,7 +78,6 @@ int __cdecl core_waypoint_cpp_CWaypoint_renderOpaque_FUN_005ebf70(CWayPoint *thi
           engine_3d_c_drawLine2DFromIndices_FUN_00407cf0(0,1);
         }
         iVar7 = iVar7 + 1;
-        pCVar4 = (CWayPoint *)((pCVar4->base).base.actor_name + 8);
       } while (iVar7 < this_ptr->num_adjacent_waypoints);
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);

@@ -18,9 +18,6 @@ void __cdecl core_fire_cpp_CFireEffect_createBulletImpact_FUN_004c76a0(CFireEffe
   int iVar3;
   CBulletHole *pCVar4;
   char acStack_60 [52];
-  float local_2c;
-  float fStack_28;
-  float fStack_24;
   float local_20;
   float local_1c;
   float local_18;
@@ -38,12 +35,7 @@ void __cdecl core_fire_cpp_CFireEffect_createBulletImpact_FUN_004c76a0(CFireEffe
           local_20 = impact_pos->x - (pCVar4->position).x;
           local_1c = impact_pos->y - (pCVar4->position).y;
           local_18 = impact_pos->z - (pCVar4->position).z;
-          if (&local_2c != &local_20) {
-            local_2c = local_20;
-            fStack_28 = local_1c;
-            fStack_24 = local_18;
-          }
-          if (fStack_24 * fStack_24 + local_2c * local_2c + fStack_28 * fStack_28 <
+          if (local_18 * local_18 + local_20 * local_20 + local_1c * local_1c <
               (float)0.057799999999999997) goto LAB_004c7785;
           iVar3 = iVar3 + 1;
           pCVar4 = pCVar4 + 1;

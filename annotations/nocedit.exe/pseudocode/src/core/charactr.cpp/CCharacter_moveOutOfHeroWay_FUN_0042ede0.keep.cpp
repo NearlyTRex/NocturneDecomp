@@ -80,9 +80,7 @@ int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0(CCharacte
           CStack_68.y = (pCVar4->base).base.location.position.y + pCVar6->y;
           CStack_68.z = (pCVar4->base).base.location.position.z + pCVar6->z;
           if (pCVar7 != &CStack_68) {
-            pCVar7->x = CStack_68.x;
-            (this_ptr->move_away_target).y = CStack_68.y;
-            (this_ptr->move_away_target).z = CStack_68.z;
+            *pCVar7 = CStack_68;
           }
           iVar8 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                             (this_ptr,pCVar7,(CPathMap *)0x0,&g_ZeroVector.f,0.0,0.0);
@@ -125,9 +123,7 @@ int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0(CCharacte
           CStack_98.y = (pCVar4->base).base.location.position.y + pCVar9->y;
           CStack_98.z = (pCVar4->base).base.location.position.z + pCVar9->z;
           if (pCVar7 != &CStack_98) {
-            pCVar7->x = CStack_98.x;
-            (this_ptr->move_away_target).y = CStack_98.y;
-            (this_ptr->move_away_target).z = CStack_98.z;
+            *pCVar7 = CStack_98;
           }
           iVar8 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0
                             (this_ptr,pCVar7,(CPathMap *)0x0,&g_ZeroVector.f,0.0,0.0);

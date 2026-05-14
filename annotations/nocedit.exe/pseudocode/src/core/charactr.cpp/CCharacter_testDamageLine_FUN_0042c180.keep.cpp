@@ -36,9 +36,7 @@ int __cdecl core_charactr_cpp_CCharacter_testDamageLine_FUN_0042c180(CCharacter 
       pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                          (&this_ptr->base,&CStack_6c,&local_60);
       if (out_hit != pCVar3) {
-        out_hit->x = pCVar3->x;
-        out_hit->y = pCVar3->y;
-        out_hit->z = pCVar3->z;
+        *out_hit = *pCVar3;
       }
     }
     if (0.0 < (double)damage_info->damage_amount) {

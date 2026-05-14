@@ -116,9 +116,7 @@ void __cdecl core_charactr_cpp_CCharacter_processFire_FUN_0042a830(CCharacter *t
                             pSVar10->bone_index);
         pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                            (&this_ptr->base,&local_68,pCVar6);
-        (pCVar11->position).x = pCVar8->x;
-        (pCVar11->position).y = pCVar8->y;
-        (pCVar11->position).z = pCVar8->z;
+        pCVar11->position = *pCVar8;
         fVar3 = (float)0.5;
         local_24->flames[0].flame_size.x = pSVar10->size * fVar3;
         local_24->flames[0].flame_size.y = pSVar10->size;

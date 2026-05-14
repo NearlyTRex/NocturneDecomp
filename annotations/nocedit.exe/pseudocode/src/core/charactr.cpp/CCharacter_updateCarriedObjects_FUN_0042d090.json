@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 382,
-    "complexity_score": 132,
+    "complexity_score": 107,
     "cross_reference_count": 5,
     "function_call_count": 7,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 107,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 489
   },
   "cross_references": [
@@ -296,6 +294,15 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Watcom field-by-field struct copy (12 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
+      "line": 70,
+      "match": "field-by-field struct copy",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "CStack_214.m[0].w = CStack_124.m[0].w;",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 106,
       "match": "(int)&NAME used in byte-offset arithmetic",
@@ -541,23 +548,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Watcom field-by-field struct copy (12 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 70,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "CStack_214.m[0].w = CStack_124.m[0].w;",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "introduced_by": "keep",
-      "line": 64,
-      "match": "field-by-field struct copy",
-      "severity": "moderate",
-      "text": "carry_actor->location.position.x = pCVar2->x;",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

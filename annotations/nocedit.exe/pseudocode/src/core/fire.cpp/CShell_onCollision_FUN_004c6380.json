@@ -4,19 +4,17 @@
     "success": true,
     "warnings": []
   },
-  "compile_source": "cpp",
+  "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 128,
-    "complexity_score": 67,
+    "complexity_score": 52,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 10,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 52,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 180
   },
   "cross_references": [],
@@ -162,6 +160,17 @@
     },
     "pcode_op_count": 578
   },
+  "resolved_suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(uint *)((int)g_ShellBounceSoundHandles",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "(*(uint *)((int)g_ShellBounceSoundHandles + iVar4));",
+      "type": "pointer_cast"
+    }
+  ],
   "stack_frame": {
     "frame_size": 36,
     "local_size": 28,
@@ -192,16 +201,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 29,
-      "match": "(uint *)((int)g_ShellBounceSoundHandles",
-      "severity": "moderate",
-      "text": "(*(uint *)((int)g_ShellBounceSoundHandles + iVar4));",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

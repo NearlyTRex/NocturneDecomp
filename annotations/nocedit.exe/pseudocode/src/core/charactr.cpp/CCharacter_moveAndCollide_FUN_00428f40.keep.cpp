@@ -145,19 +145,13 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter
     }
     pCVar8 = this_ptr->collision_test_points + local_38 * 3;
     if (pCVar8 != &g_TempNormal0) {
-      pCVar8->x = g_TempNormal0.x;
-      pCVar8->y = g_TempNormal0.y;
-      pCVar8->z = g_TempNormal0.z;
+      *pCVar8 = g_TempNormal0;
     }
     if (local_24 != &g_TempNormal1) {
-      local_24->x = g_TempNormal1.x;
-      local_24->y = g_TempNormal1.y;
-      local_24->z = g_TempNormal1.z;
+      *local_24 = g_TempNormal1;
     }
     if (pCVar17 != &g_TempNormal2) {
-      pCVar17->x = g_TempNormal2.x;
-      pCVar17->y = g_TempNormal2.y;
-      pCVar17->z = g_TempNormal2.z;
+      *pCVar17 = g_TempNormal2;
     }
     if (0.0 <= local_c0) {
       if (1.0 < local_c0) {
@@ -177,19 +171,13 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter
       pCVar15 = this_ptr->collision_test_normals + local_38 * 3;
       this_ptr->closest_distance_threshold = fVar12;
       if (pCVar15 != &g_TempNormal0) {
-        pCVar15->x = g_TempNormal0.x;
-        pCVar15->y = g_TempNormal0.y;
-        pCVar15->z = g_TempNormal0.z;
+        *pCVar15 = g_TempNormal0;
       }
       if (local_2c != &g_TempNormal1) {
-        local_2c->x = g_TempNormal1.x;
-        local_2c->y = g_TempNormal1.y;
-        local_2c->z = g_TempNormal1.z;
+        *local_2c = g_TempNormal1;
       }
       if (pCVar16 != &g_TempNormal2) {
-        pCVar16->x = g_TempNormal2.x;
-        pCVar16->y = g_TempNormal2.y;
-        pCVar16->z = g_TempNormal2.z;
+        *pCVar16 = g_TempNormal2;
       }
       if ((this_ptr->base).location.position.y < this_ptr->closest_distance_threshold) {
         (this_ptr->base).location.position.y = this_ptr->closest_distance_threshold;

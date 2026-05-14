@@ -102,9 +102,7 @@ void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042a520(CCharacte
           pCVar9 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                              (&this_ptr->base,&local_5c,pCVar5);
           iVar7 = this_ptr->fire_count + -1;
-          local_3c[iVar7].base.location.position.x = pCVar9->x;
-          local_3c[iVar7].base.location.position.y = pCVar9->y;
-          local_3c[iVar7].base.location.position.z = pCVar9->z;
+          local_3c[iVar7].base.location.position = *pCVar9;
           local_3c[iVar7].globe_scalar = 0.0f;
           pSVar9->size = 0.5;
           fVar4 = (float)0.5;

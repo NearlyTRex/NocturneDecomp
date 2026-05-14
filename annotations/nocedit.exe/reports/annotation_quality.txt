@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,454
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        55 ( 0.9%)
+  Functions with type issues:        54 ( 0.8%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,12 +22,12 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          0
-    Undefined types in variables:      55
+    Undefined types in variables:      54
     Unresolved stack params:           0
 
-  Excluded (.keep / MMX / by-value):   164 functions
+  Excluded (.keep / MMX / by-value):   165 functions
     Wrong calling convention:          1
-    Undefined types in variables:      162
+    Undefined types in variables:      163
     Unresolved stack params:           1
 
 ====================================================================================================
@@ -81,7 +81,7 @@ Unresolved stack parameters (missing from signature) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types in variables (55)
+Undefined types in variables (54)
 --------------------------------------------------------------------------------
 
   CLodMesh_collapseEdge
@@ -172,11 +172,6 @@ Undefined types in variables (55)
   CComplexPolygon_mergeAdjacentEdges
     Address: 0x005c7dc0  File: shape/superopt.cpp
     Locals:  local_38 (undefined4 *), local_34 (undefined4 *)
-    Suggested: Resolve undefined types to concrete types
-
-  CCrater_activate
-    Address: 0x004c4200  File: core/fire.cpp
-    Locals:  local_2c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CFireEffect_load
@@ -412,7 +407,7 @@ Unresolved stack params - by-value struct passing (0)
   (none)
 
 --------------------------------------------------------------------------------
-Undefined types - .keep overrides (162)
+Undefined types - .keep overrides (163)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -973,6 +968,11 @@ Undefined types - .keep overrides (162)
   CEventList_updateSfxEntries
     Address: 0x004b0db0  File: core/event.cpp
     Locals:  local_20 (undefined8)
+    Suggested: Resolve undefined types to concrete types
+
+  CCrater_activate
+    Address: 0x004c4200  File: core/fire.cpp
+    Locals:  local_2c (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   CFireball_process

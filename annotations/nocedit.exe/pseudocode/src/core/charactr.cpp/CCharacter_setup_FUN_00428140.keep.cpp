@@ -15,11 +15,9 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_pt
   CSkeleton *pCVar3;
   int iVar3;
   CSkeleton *skeleton;
-  CCharacter *pCVar4;
   CCharacter *pCVar5;
   char *pcVar4;
   int iVar6;
-  CCharacter *pCVar6;
   char *pcVar8;
   CDemonActor *this_ptr_01;
   float fVar2;
@@ -33,9 +31,8 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_pt
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&CKeyFramedModelInstance_00823a98,"stake_b.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&CKeyFramedModelInstance_00823a98);
-  pCVar6 = this_ptr;
-  do {
-    this_ptr_01 = pCVar6->carry_hands[0].carry_actor;
+  for (iVar9 = 0; iVar9 < 2; iVar9 = iVar9 + 1) {
+    this_ptr_01 = this_ptr->carry_hands[iVar9].carry_actor;
     if (this_ptr_01 != (CDemonActor *)0x0) {
       core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
                 (this_ptr_01,"..\\core\\charactr.cpp",0x106);
@@ -52,8 +49,7 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_pt
                    this_ptr_01->actor_name,(pCVar5->base).actor_name);
       }
     }
-    pCVar6 = (CCharacter *)&(pCVar6->base).orient_matrix.m[0].z;
-  } while (pCVar6 != (CCharacter *)((this_ptr->base).create_event + 0x10));
+  }
   if ((this_ptr->model).model_name[0] != '\0') {
     (this_ptr->model).scale_factor = this_ptr->size_scale;
     core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(&this_ptr->model);
@@ -77,18 +73,11 @@ void __cdecl core_charactr_cpp_CCharacter_setup_FUN_00428140(CCharacter *this_pt
         iVar3 = iVar6;
       } while (iVar6 < skeleton->bone_count);
     }
-    iVar3 = 0;
-    pCVar4 = this_ptr;
-    pCVar6 = this_ptr;
     if (0 < this_ptr->fire_count) {
-      do {
-        pCVar4 = (CCharacter *)((pCVar4->base).actor_name + 0x18);
-        pCVar6->flames[0].which_flame = 4;
-        pCVar4->fires[0].size = 2.0;
-        iVar3 = iVar3 + 1;
-        pCVar4 = pCVar4;
-        pCVar6 = (CCharacter *)&(pCVar6->model).transformed_vertices[0x14].y;
-      } while (iVar3 < this_ptr->fire_count);
+      this_ptr->fires[0].size = 2.0;
+      for (iVar3 = 0; iVar3 < this_ptr->fire_count; iVar3 = iVar3 + 1) {
+        this_ptr->flames[iVar3].which_flame = 4;
+      }
     }
   }
   this_ptr_00 = &this_ptr->cloth_list;

@@ -9,10 +9,10 @@ Functions with findings from multiple tools are likely to have real issues.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with findings: 152
-  Total diagnostics: 419
+  Functions with findings: 150
+  Total diagnostics: 416
   Functions flagged by multiple tools: 0
-  .keep.cpp files: 152, raw .cpp files: 0
+  .keep.cpp files: 150, raw .cpp files: 0
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -416,14 +416,6 @@ core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004a7e80  [.keep] [Cppcheck (
   Line   49: [uninitvar] Uninitialized variable: fVar8
 
 ----------------------------------------------------------------------------------------------------
-core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0  [.keep] [Cppcheck (quick)]
-  File: core/fire.cpp  (3 diagnostics)
-
-  Line   46: [uninitvar] Uninitialized variable: fStack_24
-  Line   46: [uninitvar] Uninitialized variable: local_2c
-  Line   46: [uninitvar] Uninitialized variable: fStack_28
-
-----------------------------------------------------------------------------------------------------
 core_gabriela.cpp_CGabriella_processAI_FUN_004d4190  [.keep] [Cppcheck (quick)]
   File: core/gabriela.cpp  (3 diagnostics)
 
@@ -649,6 +641,13 @@ core_fire.cpp_CFireball_process_FUN_004c0b30  [.keep] [Cppcheck (quick)]
   Line   51: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
+core_fire.cpp_CFireball_render_FUN_004c0e70  [.keep] [Cppcheck (quick)]
+  File: core/fire.cpp  (2 diagnostics)
+
+  Line   72: [uninitvar] Uninitialized variable: local_1c
+  Line  151: [uninitvar] Uninitialized variable: local_18
+
+----------------------------------------------------------------------------------------------------
 core_flame.cpp_CFlame_updateGlobe_FUN_004cad90  [.keep] [Cppcheck (quick)]
   File: core/flame.cpp  (2 diagnostics)
 
@@ -844,12 +843,6 @@ cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70  [.keep] [Cppcheck (q
   Line   59: [shiftTooManyBitsSigned] Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-core_charactr.cpp_CCharacter_setup_FUN_00428140  [.keep] [Cppcheck (quick)]
-  File: core/charactr.cpp  (1 diagnostics)
-
-  Line   89: [selfAssignment] Redundant assignment of 'pCVar4' to itself.
-
-----------------------------------------------------------------------------------------------------
 core_cloth.cpp_CCloth_boneEditor_FUN_0043c880  [.keep] [Cppcheck (quick)]
   File: core/cloth.cpp  (1 diagnostics)
 
@@ -896,12 +889,6 @@ core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20  [.keep] 
   File: core/fileman.cpp  (1 diagnostics)
 
   Line   75: [invalidscanf] sscanf() without field width limits can crash with huge input data.
-
-----------------------------------------------------------------------------------------------------
-core_fire.cpp_CBulletTrail_render_FUN_004c21f0  [.keep] [Cppcheck (quick)]
-  File: core/fire.cpp  (1 diagnostics)
-
-  Line   71: [uninitvar] Uninitialized variable: iStack_1c
 
 ----------------------------------------------------------------------------------------------------
 core_game.cpp_CGame_renderOverlay_FUN_004d8040  [.keep] [Cppcheck (quick)]

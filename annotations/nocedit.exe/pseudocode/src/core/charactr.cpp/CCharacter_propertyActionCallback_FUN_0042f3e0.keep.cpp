@@ -22,7 +22,6 @@ int __cdecl core_charactr_cpp_CCharacter_propertyActionCallback_FUN_0042f3e0(CCh
   CDemonActor *pCVar4;
   CVector3f *pCVar5;
   CVector3f *pCVar7;
-  CCharacter *pCVar6;
   int iVar7;
   int iVar9;
   CPickList local_930;
@@ -40,27 +39,23 @@ int __cdecl core_charactr_cpp_CCharacter_propertyActionCallback_FUN_0042f3e0(CCh
   local_28 = 0;
   pUVar1 = &(this_ptr_00->base).orient;
   do {
-    iVar7 = 0;
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_588);
-    pCVar6 = this_ptr_00;
-    do {
-      if (-1 < pCVar6->carry_hands[0].bone_index) {
+    for (iVar7 = 0; iVar7 < 2; iVar7 = iVar7 + 1) {
+      if (-1 < this_ptr_00->carry_hands[iVar7].bone_index) {
         aiStack_38[local_588.base.item_count] = iVar7;
-        pCVar3 = pCVar6->carry_hands[0].carry_actor;
+        pCVar3 = this_ptr_00->carry_hands[iVar7].carry_actor;
         pCVar1 = (CDemonActor *)"(nothing)";
         if (pCVar3 != (CDemonActor *)0x0) {
           pCVar1 = pCVar3;
         }
-        iVar4 = pCVar6->carry_hands[0].bone_index;
+        iVar4 = this_ptr_00->carry_hands[iVar7].bone_index;
         pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                            (&this_ptr_00->model);
         _sprintf
                   (local_1e0,"Hand %d\t%s\t%s\n",iVar7,(pCVar2->bone_list + iVar4)->bone_name,pCVar1->actor_name);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_588.base,local_1e0);
       }
-      iVar7 = iVar7 + 1;
-      pCVar6 = (CCharacter *)&(pCVar6->base).orient_matrix.m[0].z;
-    } while (iVar7 < 2);
+    }
     if (local_588.base.item_count < 1) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                 (g_CEditorToolsPtr,"No hands an carry items!");
@@ -111,13 +106,9 @@ LAB_0042f571:
                             this_ptr_00->carry_hands[iVar4].bone_index);
         pCVar7 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                            ((CDemonActor *)this_ptr_00,&CStack_50,pCVar5);
-        (pCVar4->location).position.x = pCVar7->x;
-        (pCVar4->location).position.y = pCVar7->y;
-        (pCVar4->location).position.z = pCVar7->z;
+        (pCVar4->location).position = *pCVar7;
         if (&pCVar4->orient != pUVar1) {
-          (pCVar4->orient).vec.x = (pUVar1->vec).x;
-          (pCVar4->orient).vec.y = (this_ptr_00->base).orient.vec.y;
-          (pCVar4->orient).vec.z = (this_ptr_00->base).orient.vec.z;
+          pCVar4->orient = *pUVar1;
         }
         core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(pCVar4);
         core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(this_ptr_00,iVar4,pCVar4,0.0);

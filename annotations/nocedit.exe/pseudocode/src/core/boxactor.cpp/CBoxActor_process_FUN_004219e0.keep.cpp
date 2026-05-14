@@ -99,9 +99,7 @@ void __cdecl core_boxactor_cpp_CBoxActor_process_FUN_004219e0(CBoxActor *this_pt
     pUVar2 = &(this_ptr->base).orient;
     pCVar3 = &(this_ptr->physics_box).orientation;
     if ((CVector3f *)pUVar2 != pCVar3) {
-      (pUVar2->vec).x = pCVar3->x;
-      (this_ptr->base).orient.vec.y = (this_ptr->physics_box).orientation.y;
-      (this_ptr->base).orient.vec.z = (this_ptr->physics_box).orientation.z;
+      pUVar2->vec = *pCVar3;
     }
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
     pCVar9 = (*((this_ptr->base).vtable._ub)->getBoundingBox)

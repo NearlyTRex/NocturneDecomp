@@ -61,16 +61,12 @@ void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCha
       pCVar2 = core_xform_cpp_getTranslation_FUN_005f6110
                          (&CStack_f4,&translation_out);
       carry_actor = hand->carry_actor;
-      carry_actor->location.position.x = pCVar2->x;
-      carry_actor->location.position.y = pCVar2->y;
-      carry_actor->location.position.z = pCVar2->z;
+      carry_actor->location.position = *pCVar2;
       pCVar3 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690
                          (&CStack_f4,&CStack_34);
       carry_actor = hand->carry_actor;
       if (&carry_actor->orient.vec != pCVar3) {
-        (carry_actor->orient).vec.x = pCVar3->x;
-        (carry_actor->orient).vec.y = pCVar3->y;
-        (carry_actor->orient).vec.z = pCVar3->z;
+        carry_actor->orient.vec = *pCVar3;
       }
       core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(hand->carry_actor);
     }

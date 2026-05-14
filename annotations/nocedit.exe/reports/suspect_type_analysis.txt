@@ -4,26 +4,26 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  pointer_cast                    1450 ( 37.8%)
-  unrolled_memcpy                 1014 ( 26.4%)
-  unrolled_strcpy                  302 (  7.9%)
-  missing_cave_copy                170 (  4.4%)
-  shadow_pointer_walk              161 (  4.2%)
-  raw_address_constant             141 (  3.7%)
+  pointer_cast                    1409 ( 38.2%)
+  unrolled_memcpy                  930 ( 25.2%)
+  unrolled_strcpy                  302 (  8.2%)
+  missing_cave_copy                170 (  4.6%)
+  shadow_pointer_walk              151 (  4.1%)
+  raw_address_constant             141 (  3.8%)
   unrolled_strlen                   83 (  2.2%)
-  static_uninitvar                  70 (  1.8%)
-  unrolled_memset                   67 (  1.7%)
-  warning_inlined_function          60 (  1.6%)
-  bitcast_double_pair               44 (  1.1%)
-  unrolled_strchr                   43 (  1.1%)
-  static_legacy_uninitvar           32 (  0.8%)
+  static_uninitvar                  68 (  1.8%)
+  unrolled_memset                   67 (  1.8%)
+  warning_inlined_function          59 (  1.6%)
+  bitcast_double_pair               44 (  1.2%)
+  unrolled_strchr                   43 (  1.2%)
+  static_legacy_uninitvar           32 (  0.9%)
   decompiler_intrinsic              25 (  0.7%)
   stack_alignment_array             23 (  0.6%)
   warning_unreachable               22 (  0.6%)
   warning_type_propagation          20 (  0.5%)
   static_invalid_pointer_cast       20 (  0.5%)
-  self_copy_guard                   17 (  0.4%)
   negative_offset                   16 (  0.4%)
+  self_copy_guard                   14 (  0.4%)
   sub84_truncation                  12 (  0.3%)
   static_null_pointer                8 (  0.2%)
   stack_param                        8 (  0.2%)
@@ -37,11 +37,11 @@ SUSPECT TYPE COUNTS
   static_null_pointer_arithmetic     1 (  0.0%)
 
 ====================================================================================================
-TYPE: pointer_cast (1450 occurrences)
+TYPE: pointer_cast (1409 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   428x  (int)&NAME used in byte-offset arithmetic
+   399x  (int)&NAME used in byte-offset arithmetic
     42x  (int *)((int)this_ptr
     35x  (uint *)((int)this_ptr
     34x  (int *)((int)g_ScreenBufferArray
@@ -66,9 +66,6 @@ Functions:
   core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_004270f0
   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400
   core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0
-  core_charactr.cpp_CCharacter_renderBurn_FUN_0042ad00
-  core_charactr.cpp_CCharacter_renderCollision_FUN_00429b40
-  core_charactr.cpp_CCharacter_renderEthereal_FUN_0042af60
   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590
   core_cloth.cpp_CCloth_setup_FUN_00439710
   core_cloth.cpp_CCloth_step_FUN_0043abb0
@@ -119,12 +116,6 @@ Functions:
   core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0
   core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_00498fb0
   core_event.cpp_CEventList_getActorByVarName_FUN_004b0b80
-  core_fire.cpp_CFireEffect_renderDecals_FUN_004c74a0
-  core_fire.cpp_CFireEffect_render_FUN_004c7180
-  core_fire.cpp_CGlassParticle_init_FUN_004c1c00
-  core_fire.cpp_CGunFlame_init_FUN_004c4c00
-  core_fire.cpp_CLaserBeam_render_FUN_004c25c0
-  core_fire.cpp_CShell_onCollision_FUN_004c6380
   core_flies.cpp_CFlies_renderOpaque_FUN_004cc300
   core_flies.cpp_drawFlyPixel_FUN_004cc230
   core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870
@@ -415,19 +406,16 @@ Functions:
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
 
 ====================================================================================================
-TYPE: unrolled_memcpy (1014 occurrences)
+TYPE: unrolled_memcpy (930 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   807x  field-by-field struct copy
-   106x  for (...; != 0; ... + -1)
-    99x  MOVSD.REP
+   727x  field-by-field struct copy
+   104x  for (...; != 0; ... + -1)
+    97x  MOVSD.REP
      2x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
 
 Functions:
-  core_boxactor.cpp_CBoxActor_process_FUN_004219e0
-  core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_00422640
-  core_boxactor.cpp_CLightActor_process_FUN_00422a50
   core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_004272f0
   core_bugs.cpp_CBugs_setup_FUN_00424e50
   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00426420
@@ -437,17 +425,6 @@ Functions:
   core_chain.cpp_CChain_getBoundingBox_FUN_00430eb0
   core_chain.cpp_CChain_process_FUN_004300d0
   core_chain.cpp_CChain_setup_FUN_0042fd20
-  core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
-  core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0
-  core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40
-  core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
-  core_charactr.cpp_CCharacter_processFire_FUN_0042a830
-  core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70
-  core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0
-  core_charactr.cpp_CCharacter_renderCollision_FUN_00429b40
-  core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042a520
-  core_charactr.cpp_CCharacter_testDamageLine_FUN_0042c180
-  core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090
   core_cloth.cpp_CClothList_setWindVelocity_FUN_0043c3e0
   core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420
   core_cloth.cpp_CCloth_applyRotation_FUN_0043e1a0
@@ -516,21 +493,7 @@ Functions:
   core_emitter.cpp_CEmitter_renderOpaque_FUN_004a8860
   core_event.cpp_CEventList_executeCommand_FUN_004aacc0
   core_event.cpp_CEventList_process_FUN_004aaac0
-  core_fire.cpp_CBulletHole_init_FUN_004bf7f0
-  core_fire.cpp_CBulletTrail_init_FUN_004c2170
-  core_fire.cpp_CCrater_activate_FUN_004c4200
-  core_fire.cpp_CExplosion_activate_FUN_004c3970
-  core_fire.cpp_CFireEffect_createLaserPath_FUN_004c7f80
-  core_fire.cpp_CFireEffect_traceLaser_FUN_004c8230
-  core_fire.cpp_CFireball_render_FUN_004c0e70
-  core_fire.cpp_CGlassParticle_init_FUN_004c1c00
-  core_fire.cpp_CGunFlame_activate_FUN_004c4db0
-  core_fire.cpp_CLaserBeam_init_FUN_004c2420
   core_fire.cpp_CLaserBeam_render_FUN_004c25c0
-  core_fire.cpp_CLightningBolt_activateDirectional_FUN_004c5680
-  core_fire.cpp_CMuzzleFlash_init_FUN_004c1940
-  core_fire.cpp_CStake_spawn_FUN_004bfe90
-  core_fire.cpp_CToss_process_FUN_004c4000
   core_flies.cpp_CFlies_initFly_FUN_004cc760
   core_flies.cpp_CFlies_process_FUN_004cbf00
   core_flies.cpp_CFlies_renderOpaque_FUN_004cc300
@@ -951,7 +914,7 @@ Functions:
   core_tentacle.cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0
 
 ====================================================================================================
-TYPE: shadow_pointer_walk (161 occurrences)
+TYPE: shadow_pointer_walk (151 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -964,29 +927,22 @@ Unique patterns:
      4x  pSVar1 = (T *)&(pSVar1->FIELD).SUBFIELD
      4x  pCVar10 = (T *)&(pCVar10->FIELD).SUBFIELD
      3x  pCVar1 = (T *)pCVar1->ARRAY
-     3x  pCVar4 = (T *)((pCVar4->FIELD).SUBFIELD...ARRAY + CONST)
-     3x  pCVar6 = (T *)&(pCVar6->FIELD).SUBFIELD
      3x  pCVar5 = (T *)((pCVar5->FIELD).SUBFIELD...ARRAY + CONST)
      3x  pCVar5 = (T *)pCVar5->ARRAY
      3x  pCVar6 = (T *)pCVar6->ARRAY
      3x  pCVar15 = (T *)&(pCVar15->FIELD).SUBFIELD
-     3x  this_ptr = (T *)&(this_ptr->FIELD).SUBFIELD
-     3x  pCVar2 = (T *)&(pCVar2->FIELD).SUBFIELD
      2x  pCVar6 = (T *)((pCVar6->FIELD).SUBFIELD...ARRAY + CONST)
      2x  pCVar17 = (T *)((pCVar17->FIELD).SUBFIELD...ARRAY + CONST)
      2x  local_48 = (T *)((local_48->FIELD).SUBFIELD...ARRAY + CONST)
+     2x  pCVar11 = (T *)&(pCVar11->FIELD).SUBFIELD
+     2x  pCVar4 = (T *)((pCVar4->FIELD).SUBFIELD...ARRAY + CONST)
+     2x  local_28 = (T *)&(local_28->FIELD).SUBFIELD
+     2x  pCVar10 = (T *)pCVar10->ARRAY
 
 Functions:
   core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_00425340
   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427400
   core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0
-  core_charactr.cpp_CCharacter_archive_FUN_004283a0
-  core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30
-  core_charactr.cpp_CCharacter_onActorDeleted_FUN_0042f8a0
-  core_charactr.cpp_CCharacter_process_FUN_00429870
-  core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0
-  core_charactr.cpp_CCharacter_propertyDisplayCallback_FUN_0042f340
-  core_charactr.cpp_CCharacter_setup_FUN_00428140
   core_cloth.cpp_CClothList_render_FUN_0043c320
   core_cloth.cpp_CClothList_setWindVelocity_FUN_0043c3e0
   core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430
@@ -1044,7 +1000,6 @@ Functions:
   core_texlist.cpp_CTextureList_load_FUN_005dbe00
   core_texlist.cpp_CTextureList_save_FUN_005dc0d0
   core_wateract.cpp_CWaterActor_setup_FUN_005ea9f0
-  core_waypoint.cpp_CWaypoint_renderOpaque_FUN_005ebf70
   engine_3d.c_renderOverlayTextureEnable_FUN_00404020
   engine_3d.c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_00407720
   engine_3d.c_renderPolygonEngineAPIPremiumDirect_FUN_00407470
@@ -1185,11 +1140,11 @@ Functions:
   shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90
 
 ====================================================================================================
-TYPE: static_uninitvar (70 occurrences)
+TYPE: static_uninitvar (68 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    70x  Cppcheck: uninitialized variable
+    68x  Cppcheck: uninitialized variable
 
 Functions:
   core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420
@@ -1199,8 +1154,7 @@ Functions:
   core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00496220
   core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330
   core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004a7e80
-  core_fire.cpp_CBulletTrail_render_FUN_004c21f0
-  core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0
+  core_fire.cpp_CFireball_render_FUN_004c0e70
   core_gabriela.cpp_CGabriella_processAI_FUN_004d4190
   core_ghoul.cpp_CGhoul_process_FUN_004e6600
   core_path.cpp_CPathMap_findPathToDestination_FUN_00547320
@@ -1254,11 +1208,11 @@ Functions:
   shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
 
 ====================================================================================================
-TYPE: warning_inlined_function (60 occurrences)
+TYPE: warning_inlined_function (59 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    60x  WARNING: Inlined function:
+    59x  WARNING: Inlined function:
 
 Functions:
   core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0
@@ -1279,7 +1233,6 @@ Functions:
   core_fire.cpp_CExplosion_render_FUN_004c3b10
   core_fire.cpp_CFireball_setupRenderState_FUN_004c0d80
   core_fire.cpp_CGunFlame_render_FUN_004c50b0
-  core_fire.cpp_CLaserBeam_render_FUN_004c25c0
   core_fire.cpp_CLightningBolt_render_FUN_004c5720
   core_fire.cpp_CRainDrop_render_FUN_004c6830
   core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0
@@ -1524,28 +1477,6 @@ Functions:
   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270
 
 ====================================================================================================
-TYPE: self_copy_guard (17 occurrences)
-====================================================================================================
-
-Unique patterns:
-    17x  if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }
-
-Functions:
-  core_bugs.cpp_CBugs_updateBugRenderingData_FUN_004268e0
-  core_chain.cpp_CChain_process_FUN_004300d0
-  core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420
-  core_curtain.cpp_CCurtain_process_FUN_0044a920
-  core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0
-  core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00496e70
-  core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004a7e80
-  core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0
-  core_fire.cpp_CLaserBeam_render_FUN_004c25c0
-  core_ghoul.cpp_CGhoul_process_FUN_004e6600
-  core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
-  core_zombie.cpp_CZombie_process_FUN_005f9470
-  shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
-
-====================================================================================================
 TYPE: negative_offset (16 occurrences)
 ====================================================================================================
 
@@ -1568,6 +1499,26 @@ Functions:
   core_hero.cpp_CHero_dtor_FUN_004f2470
   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220
   engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00
+
+====================================================================================================
+TYPE: self_copy_guard (14 occurrences)
+====================================================================================================
+
+Unique patterns:
+    14x  if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }
+
+Functions:
+  core_bugs.cpp_CBugs_updateBugRenderingData_FUN_004268e0
+  core_chain.cpp_CChain_process_FUN_004300d0
+  core_cloth.cpp_CCloth_applyConstraints_FUN_0043a420
+  core_curtain.cpp_CCurtain_process_FUN_0044a920
+  core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0
+  core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00496e70
+  core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004a7e80
+  core_ghoul.cpp_CGhoul_process_FUN_004e6600
+  core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
+  core_zombie.cpp_CZombie_process_FUN_005f9470
+  shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
 
 ====================================================================================================
 TYPE: sub84_truncation (12 occurrences)

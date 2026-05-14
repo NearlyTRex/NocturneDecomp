@@ -64,9 +64,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
           if ((EStack_1c == DEATH_STATE_ALIVE) || ((pCVar4->model).model_name[0] == '\0')) {
             pCVar7 = &(pCVar4->base).location;
             if ((CLocation *)&CStack_ec != pCVar7) {
-              CStack_ec.x = (pCVar7->position).x;
-              CStack_ec.y = (pCVar4->base).location.position.y;
-              CStack_ec.z = (pCVar4->base).location.position.z;
+              CStack_ec = pCVar7->position;
             }
             CStack_ec.y = CStack_ec.y + 5.5f;
           }
@@ -76,9 +74,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
             pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                                (&pCVar4->base,&CStack_68,pCVar5);
             if (&CStack_ec != pCVar5) {
-              CStack_ec.x = pCVar5->x;
-              CStack_ec.y = pCVar5->y;
-              CStack_ec.z = pCVar5->z;
+              CStack_ec = *pCVar5;
             }
           }
           CStack_b0.x = CStack_ec.x - CStack_5c.x;
@@ -121,10 +117,9 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
               core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,2);
               iVar2 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_00572460
                                 (g_CDemonSetPtr,&CStack_5c,&CStack_ec);
-              if ((iVar2 == 0) && (pCStack_20 = pCVar4, &CStack_d4 != &CStack_44)) {
-                CStack_d4.x = CStack_44.x;
-                CStack_d4.y = CStack_44.y;
-                CStack_d4.z = CStack_44.z;
+              if (iVar2 == 0) {
+                pCStack_20 = pCVar4;
+                CStack_d4 = CStack_44;
               }
             }
           }
@@ -162,9 +157,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
     if ((EVar1 == DEATH_STATE_ALIVE) || ((pCVar4->model).model_name[0] == '\0')) {
       pCVar7 = &(pCVar4->base).location;
       if ((CLocation *)&CStack_74 != pCVar7) {
-        CStack_74.x = (pCVar7->position).x;
-        CStack_74.y = (pCVar4->base).location.position.y;
-        CStack_74.z = (pCVar4->base).location.position.z;
+        CStack_74 = pCVar7->position;
       }
       CStack_74.y = CStack_74.y + 5.5f;
     }
@@ -174,9 +167,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
       pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                          ((CDemonActor *)pCVar4,&CStack_98,pCVar5);
       if (&CStack_74 != pCVar5) {
-        CStack_74.x = pCVar5->x;
-        CStack_74.y = pCVar5->y;
-        CStack_74.z = pCVar5->z;
+        CStack_74 = *pCVar5;
       }
     }
     CStack_f8.x = CStack_74.x - CStack_8c.x;
@@ -187,9 +178,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
     pCVar5 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_bc,&CStack_e0)
     ;
     if (&CStack_d4 != pCVar5) {
-      CStack_d4.x = pCVar5->x;
-      CStack_d4.y = pCVar5->y;
-      CStack_d4.z = pCVar5->z;
+      CStack_d4 = *pCVar5;
     }
     if ((float)1.3962634015555599 < ABS(CStack_d4.y)) {
       this_ptr->look_at_candidate = (CCharacter *)0x0;

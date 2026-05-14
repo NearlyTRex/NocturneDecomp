@@ -7,16 +7,14 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 222,
-    "complexity_score": 129,
+    "complexity_score": 114,
     "cross_reference_count": 3,
     "function_call_count": 15,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 114,
-    "suspect_count": 1,
-    "suspect_types": [
-      "shadow_pointer_walk"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 336
   },
   "cross_references": [
@@ -266,6 +264,15 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 50,
+      "match": "pCVar6 = (T *)&(pCVar6->FIELD).SUBFIELD",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "pCVar6 = (CCharacter *)&(pCVar6->base).orient_matrix.m[0].z;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "stack_frame": {
@@ -284,33 +291,7 @@
       }
     ]
   },
-  "static_analysis": {
-    "analyzed_file": "CCharacter_setup_FUN_00428140.keep.cpp",
-    "cppcheck_quick": {
-      "diagnostic_count": 1,
-      "diagnostics": [
-        {
-          "check_id": "selfAssignment",
-          "column": 16,
-          "line": 89,
-          "message": "Redundant assignment of 'pCVar4' to itself.",
-          "severity": "warning"
-        }
-      ],
-      "error": null
-    },
-    "file_variant": "keep"
-  },
-  "suspects": [
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar6` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar6->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 50,
-      "match": "pCVar6 = (T *)&(pCVar6->FIELD).SUBFIELD",
-      "severity": "moderate",
-      "text": "pCVar6 = (CCharacter *)&(pCVar6->base).orient_matrix.m[0].z;",
-      "type": "shadow_pointer_walk"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

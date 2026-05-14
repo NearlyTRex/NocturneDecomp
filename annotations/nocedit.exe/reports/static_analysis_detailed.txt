@@ -5,7 +5,7 @@ STATIC ANALYSIS DETAILED REPORT
 All static analysis diagnostics grouped by tool and check type.
 
 ====================================================================================================
-Cppcheck (quick) (419 diagnostics)
+Cppcheck (quick) (416 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -429,7 +429,7 @@ shiftTooManyBitsSigned (104)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (70)
+uninitvar (68)
 ----------------------------------------------------------------------------------------------------
 
   core_cloth.cpp_CCloth_applyConstraints_FUN_0043a42 line 92
@@ -516,21 +516,13 @@ uninitvar (70)
     File: core/emitter.cpp
     Uninitialized variable: fVar8
 
-  core_fire.cpp_CBulletTrail_render_FUN_004c21f0     line 71
+  core_fire.cpp_CFireball_render_FUN_004c0e70        line 72
     File: core/fire.cpp
-    Uninitialized variable: iStack_1c
+    Uninitialized variable: local_1c
 
-  core_fire.cpp_CFireEffect_createBulletImpact_FUN_0 line 46
+  core_fire.cpp_CFireball_render_FUN_004c0e70        line 151
     File: core/fire.cpp
-    Uninitialized variable: fStack_24
-
-  core_fire.cpp_CFireEffect_createBulletImpact_FUN_0 line 46
-    File: core/fire.cpp
-    Uninitialized variable: local_2c
-
-  core_fire.cpp_CFireEffect_createBulletImpact_FUN_0 line 46
-    File: core/fire.cpp
-    Uninitialized variable: fStack_28
+    Uninitialized variable: local_18
 
   core_gabriela.cpp_CGabriella_processAI_FUN_004d419 line 93
     File: core/gabriela.cpp
@@ -713,7 +705,7 @@ uninitvar (70)
     Uninitialized variable: local_288
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (68)
+selfAssignment (67)
 ----------------------------------------------------------------------------------------------------
 
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 116
@@ -723,10 +715,6 @@ selfAssignment (68)
   cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af line 223
     File: cockpit/ckptutil.c
     Redundant assignment of 'g_TracedEdgeBuffer[iVar11].y1' to itself.
-
-  core_charactr.cpp_CCharacter_setup_FUN_00428140    line 89
-    File: core/charactr.cpp
-    Redundant assignment of 'pCVar4' to itself.
 
   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3 line 236
     File: core/dcamera.cpp
