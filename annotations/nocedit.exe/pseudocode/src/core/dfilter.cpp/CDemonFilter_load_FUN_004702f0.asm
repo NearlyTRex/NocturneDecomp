@@ -35,8 +35,8 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_stdio.c_fread_FUN_005fd990
-;   engine_dosio.c_getFile_FUN_00481a50
-;   engine_dosio.c_getFileSize_FUN_00481880
+;   engine_dosio.cpp_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFileSize_FUN_00481880
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;
 ; *****************************************************************************
@@ -54,8 +54,8 @@ section .text
     PUSH 0x61e5af                       ; 004702ff | = "rb"
     PUSH EDI                            ; 00470304
     PUSH 0x61e5b2                       ; 00470305 | = "art"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0047030a
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0047030a
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0047030f
     MOV ESI,EAX                         ; 00470312
     TEST EAX,EAX                        ; 00470314
@@ -70,8 +70,8 @@ section .text
     ADD ESP,0xc                         ; 0047032c
     PUSH EDI                            ; 0047032f
     PUSH 0x61e605                       ; 00470330 | = "art"
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 00470335
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 00470335
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 0047033a
     MOV dword ptr [ESP],EAX             ; 0047033d
     MOV EDX,EAX                         ; 00470340
@@ -141,8 +141,8 @@ section .text
     PUSH 0x61e6c2                       ; 004703f4 | = "rb"
     PUSH EDI                            ; 004703f9
     PUSH 0x61e6c5                       ; 004703fa | = "art"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004703ff
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004703ff
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00470404
     MOV ESI,EAX                         ; 00470407
     TEST EAX,EAX                        ; 00470409

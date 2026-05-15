@@ -94,9 +94,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonCamera::loadImage - no extention");
   }
   strcpy(pcVar10, ".ACT");
-  p_Var5 = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_144,"rb");
+  p_Var5 = engine_dosio_cpp_getFile_FUN_00481a50("backdrop",local_144,"rb");
   if ((p_Var5 != (_FILE *)0x0) ||
-     (p_Var5 = engine_dosio_c_getFile_FUN_00481a50("art",local_144,"rb"),
+     (p_Var5 = engine_dosio_cpp_getFile_FUN_00481a50("art",local_144,"rb"),
      p_Var5 != (_FILE *)0x0)) {
     _fread(&g_CameraImagePaletteData,0x100,3,p_Var5);
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\dcamera.cpp",0x99b);
@@ -109,7 +109,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
       core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonCamera::loadImage - no ext");
     }
     strcpy(pcVar11, ".fog");
-    local_14 = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_f4,"rb");
+    local_14 = engine_dosio_cpp_getFile_FUN_00481a50("backdrop",local_f4,"rb");
     if (local_14 != (_FILE *)0x0) {
       _fread(&g_CameraFogGrid,0x1000,1,local_14);
       p_Var3 = local_14;
@@ -127,7 +127,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
         iVar6 = _strcmp(local_a0,"LZW");
         if ((iVar6 == 0) ||
            (iVar2 = _strcmp(local_a0,"EFD"), iVar2 == 0)) {
-          iVar2 = engine_dosio_c_getFileSize_FUN_00481880("backdrop",local_f4);
+          iVar2 = engine_dosio_cpp_getFileSize_FUN_00481880("backdrop",local_f4);
           local_9c = iVar2 - 0x1003;
           if ((int)local_9c < 1) {
             g_CurrentFilename = "..\\core\\dcamera.cpp";
@@ -193,9 +193,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_0044f3e0(CDemonCamera *
       }
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_14,"..\\core\\dcamera.cpp",0xa09);
     }
-    p_Var3 = engine_dosio_c_getFile_FUN_00481a50("backdrop",filename,"rb");
+    p_Var3 = engine_dosio_cpp_getFile_FUN_00481a50("backdrop",filename,"rb");
     if ((p_Var3 != (_FILE *)0x0) ||
-       (p_Var3 = engine_dosio_c_getFile_FUN_00481a50("art",filename,"rb"),
+       (p_Var3 = engine_dosio_cpp_getFile_FUN_00481a50("art",filename,"rb"),
        p_Var3 != (_FILE *)0x0)) {
       iVar4 = 0;
       iVar2 = 0;

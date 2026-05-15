@@ -51,7 +51,7 @@
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420
 ;   core_mission.cpp_CDemonMission_startMission_FUN_00524760
 ;   crt_string.c__stricmp_FUN_005fe7f0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   engine_ini.cpp_CIniFile_ctor_FUN_004fba70
 ;   engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
@@ -73,8 +73,8 @@ section .text
     PUSH 0x62cc8b                       ; 004e1cba | = "rb"
     PUSH 0x62cc8e                       ; 004e1cbf | = "enemy.pod"
     PUSH 0x62cc98                       ; 004e1cc4 | s_EmptyChar_0062cc98
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004e1cc9
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004e1cc9
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004e1cce
     TEST EAX,EAX                        ; 004e1cd1
     JNZ 0x004e20a6                      ; 004e1cd3
@@ -243,8 +243,8 @@ section .text
     LEA EAX,[ESP + 0x5ac]               ; 004e1f3e
     PUSH EAX                            ; 004e1f45
     PUSH 0x62d211                       ; 004e1f46 | = "world"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004e1f4b
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004e1f4b
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004e1f50
     TEST EAX,EAX                        ; 004e1f53
     JZ 0x004e208f                       ; 004e1f55
@@ -455,8 +455,8 @@ section .text
     MOV EDX,dword ptr [ESI + 0x67b750]  ; 004e217c | PTR_s_hq_act1_msn_0067b750+1 | PTR_s_train_msn_0067b784+1
     PUSH EDX                            ; 004e2182
     PUSH 0x62ce4e                       ; 004e2183 | = "world"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004e2188
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004e2188
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004e218d
     TEST EAX,EAX                        ; 004e2190
     JNZ 0x004e232b                      ; 004e2192
@@ -593,8 +593,8 @@ section .text
     MOV EDX,dword ptr [ESI + 0x67b750]  ; 004e2302 | g_ChapterMissionFiles | PTR_s_gtown_msn_0062d684_0067b754
     PUSH EDX                            ; 004e2308
     PUSH 0x62cc74                       ; 004e2309 | = "world"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004e230e
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004e230e
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004e2313
     TEST EAX,EAX                        ; 004e2316
     JNZ 0x004e238a                      ; 004e2318
@@ -751,8 +751,8 @@ section .text
     MOV EAX,dword ptr [ESI + 0x67b750]  ; 004e248e | g_ChapterMissionFiles | PTR_s_gtown_msn_0062d684_0067b754
     PUSH EAX                            ; 004e2494
     PUSH 0x62cc74                       ; 004e2495 | = "world"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004e249a
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004e249a
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004e249f
     TEST EAX,EAX                        ; 004e24a2
     JNZ 0x004e24d4                      ; 004e24a4
@@ -929,8 +929,8 @@ section .text
     MOV EDX,dword ptr [ESI + 0x67b750]  ; 004e264d | g_ChapterMissionFiles | PTR_s_gtown_msn_0062d684_0067b754
     PUSH EDX                            ; 004e2653
     PUSH 0x62cc74                       ; 004e2654 | = "world"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004e2659
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004e2659
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004e265e
     TEST EAX,EAX                        ; 004e2661
     JNZ 0x004e2676                      ; 004e2663
@@ -1024,8 +1024,8 @@ section .text
     MOV ECX,dword ptr [ESI + 0x67b750]  ; 004e2732 | g_ChapterMissionFiles | PTR_s_gtown_msn_0062d684_0067b754
     PUSH ECX                            ; 004e2738
     PUSH 0x62cc74                       ; 004e2739 | = "world"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004e273e
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004e273e
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004e2743
     TEST EAX,EAX                        ; 004e2746
     JNZ 0x004e275b                      ; 004e2748
@@ -1089,8 +1089,8 @@ section .text
     MOV EAX,dword ptr [ESI + 0x67b750]  ; 004e27c6 | g_ChapterMissionFiles | PTR_s_gtown_msn_0062d684_0067b754
     PUSH EAX                            ; 004e27cc
     PUSH 0x62cc74                       ; 004e27cd | = "world"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004e27d2
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004e27d2
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004e27d7
     TEST EAX,EAX                        ; 004e27da
     JNZ 0x004e27ef                      ; 004e27dc

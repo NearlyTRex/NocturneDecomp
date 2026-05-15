@@ -16,7 +16,7 @@ void __cdecl engine_pod_cpp_CPod_dismount_FUN_00550b90(CPod *this_ptr,char *file
   SFoundFileInfo local_224;
 
   strcpy(local_224.found_path,filename);
-  iVar2 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_224);
+  iVar2 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_224);
   if ((iVar2 != 0) && (index = 0, 0 < this_ptr->pod_file_count)) {
     do {
       while (iVar3 = _stricmp

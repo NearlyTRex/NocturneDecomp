@@ -38,9 +38,9 @@
 ;   crt_stdlib.c__atexit_FUN_005ff060
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;   crt_string.c_memmove_FUN_005fe5e0
-;   engine_dosio.c_getFile_FUN_00481a50
-;   engine_dosio.c_getFileSize_FUN_00481880
-;   engine_dosio.c_splitPath_FUN_00481f20
+;   engine_dosio.cpp_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFileSize_FUN_00481880
+;   engine_dosio.cpp_splitPath_FUN_00481f20
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   sound_mp3.cpp_CMP3Decoder_ctor_FUN_005344f0
 ;   sound_mp3.cpp_CMP3Decoder_free_FUN_005349e0
@@ -77,8 +77,8 @@ section .text
         ;   XREF to: 005abdc0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_005abdc0()
     PUSH EBP                            ; 005aa424
     PUSH 0x650b55                       ; 005aa425 | = "sound"
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 005aa42a
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 005aa42a
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 005aa42f
     TEST EAX,EAX                        ; 005aa432
     JG 0x005aa46f                       ; 005aa434
@@ -119,8 +119,8 @@ section .text
     PUSH 0x0                            ; 005aa474
     PUSH 0x0                            ; 005aa476
     PUSH EBP                            ; 005aa478
-    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 005aa479
-        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00481f20 ; 005aa479
+        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 005aa47e
     CMP byte ptr [ESP],0x2e             ; 005aa481
     JNZ 0x005aa4a6                      ; 005aa485
@@ -153,8 +153,8 @@ section .text
     PUSH 0x650b5f                       ; 005aa4c0 | = "rb"
     PUSH EBP                            ; 005aa4c5
     PUSH 0x650b62                       ; 005aa4c6 | = "sound"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 005aa4cb
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 005aa4cb
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 005aa4d0
     ADD ESP,0xc                         ; 005aa4d2
     MOV ESI,EAX                         ; 005aa4d5

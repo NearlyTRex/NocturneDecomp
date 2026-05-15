@@ -2249,8 +2249,8 @@ section .text
         ;   Label: LAB_0055bdb5
     PUSH EAX                            ; 0055bdbc
     PUSH 0x641f1f                       ; 0055bdbd | = "art"
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 0055bdc2
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 0055bdc2
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 0055bdc7
     TEST EAX,EAX                        ; 0055bdca
     JLE 0x0055be01                      ; 0055bdcc

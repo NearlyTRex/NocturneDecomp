@@ -29,8 +29,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   engine_dosio.c_getFile_FUN_00481a50
-;   engine_dosio.c_getFileSize_FUN_00481880
+;   engine_dosio.cpp_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFileSize_FUN_00481880
 ;   sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630
 ;
 ; *****************************************************************************
@@ -46,8 +46,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x18]      ; 00534558
     PUSH ESI                            ; 0053455c
     PUSH 0x63b22a                       ; 0053455d | = "sound"
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 00534562
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 00534562
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 00534567
     MOV EBP,EAX                         ; 0053456a
     TEST EAX,EAX                        ; 0053456c
@@ -57,8 +57,8 @@ section .text
         ;   Label: LAB_00534570
     PUSH ESI                            ; 00534575
     PUSH 0x63b252                       ; 00534576 | = "sound"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0053457b
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0053457b
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00534580
     MOV EBX,EAX                         ; 00534583
     TEST EAX,EAX                        ; 00534585

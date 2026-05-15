@@ -36,7 +36,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_debugMalloc_FUN_0050f250
 ;
@@ -63,8 +63,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x74]      ; 004346b7
     PUSH EDX                            ; 004346bb
     PUSH 0x617e87                       ; 004346bc | = "art"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004346c1
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004346c1
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004346c6
     MOV EDI,EAX                         ; 004346c9
     TEST EAX,EAX                        ; 004346cb

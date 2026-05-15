@@ -51,8 +51,8 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004e4010(CGame *this_ptr)
   } while (iVar3 != 0x1000);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&local_34);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&local_34,"stats",0x280,0x1e0);
-  stream = engine_dosio_c_getFile_FUN_00481a50("data","credits.txt","rt")
-  ;
+  stream = engine_dosio_cpp_getFile_FUN_00481a50
+                     ("data","credits.txt","rt");
   if (stream == (_FILE *)0x0) {
     engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&local_34,0);
     return;

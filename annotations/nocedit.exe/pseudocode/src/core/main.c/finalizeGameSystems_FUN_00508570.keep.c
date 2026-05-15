@@ -21,7 +21,7 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
   char local_110 [256];
 
   shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\main.c",0x4f9);
-  file_ptr = engine_dosio_c_getFile_FUN_00481a50
+  file_ptr = engine_dosio_cpp_getFile_FUN_00481a50
                        (&s_EmptyChar_0063564e,"enemy.pod","rb");
   if (file_ptr == (_FILE *)0x0) {
     iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_ThemeFont,0x58);

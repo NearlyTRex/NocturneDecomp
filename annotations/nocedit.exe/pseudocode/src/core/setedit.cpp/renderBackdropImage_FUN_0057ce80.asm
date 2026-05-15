@@ -53,7 +53,7 @@
 ;   crt_stdio.c_fputc_FUN_006007a0
 ;   crt_stdio.c_fwrite_FUN_005fdc00
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_0048c8c0
 ;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
@@ -224,8 +224,8 @@ section .text
     LEA EAX,[ESP + 0x2584]              ; 0057d0a5
     PUSH EAX                            ; 0057d0ac
     PUSH 0x647d09                       ; 0057d0ad | = "backdrop"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057d0b2
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0057d0b2
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057d0b7
     MOV dword ptr [ESP + 0x265c],EAX    ; 0057d0ba
     TEST EAX,EAX                        ; 0057d0c1
@@ -302,8 +302,8 @@ section .text
     LEA EAX,[ESP + 0x25d4]              ; 0057d19e
     PUSH EAX                            ; 0057d1a5
     PUSH 0x647d5d                       ; 0057d1a6 | = "backdrop"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057d1ab
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0057d1ab
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057d1b0
     MOV dword ptr [ESP + 0x265c],EAX    ; 0057d1b3
     TEST EAX,EAX                        ; 0057d1ba

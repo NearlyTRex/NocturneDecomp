@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005fe7f0
-;   engine_dosio.c_splitPath_FUN_00481f20
+;   engine_dosio.cpp_splitPath_FUN_00481f20
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x120]     ; 005781b4
     PUSH EDX                            ; 005781bb
     XOR EBX,EBX                         ; 005781bc
-    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 005781be
-        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00481f20 ; 005781be
+        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
     MOV ECX,dword ptr [0x03654368]      ; 005781c3 | g_GroundTextureCount
     ADD ESP,0x14                        ; 005781c9
     TEST ECX,ECX                        ; 005781cc

@@ -36,7 +36,7 @@ void __cdecl sound_sndmain_cpp_convertMp3ToSfxMetadata_FUN_005acf20(char *mp3_fi
   char cVar1;
   
   bVar9 = 0;
-  iVar2 = engine_dosio_c_getFileSize_FUN_00481880((char *)0x0,mp3_filename);
+  iVar2 = engine_dosio_cpp_getFileSize_FUN_00481880((char *)0x0,mp3_filename);
   if (iVar2 < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0x176c;

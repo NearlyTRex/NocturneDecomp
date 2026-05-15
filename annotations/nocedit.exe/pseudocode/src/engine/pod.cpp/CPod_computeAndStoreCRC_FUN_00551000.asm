@@ -40,7 +40,7 @@
 ;   crt_stdio.c_fread_FUN_005fd990
 ;   crt_stdio.c_fseek_FUN_005ffacc
 ;   crt_stdio.c_fwrite_FUN_005fdc00
-;   engine_dosio.c_getFileSize_FUN_00481880
+;   engine_dosio.cpp_getFileSize_FUN_00481880
 ;   engine_pod.cpp_CPodFile_cleanup_FUN_00550090
 ;   engine_pod.cpp_CPodFile_ctor_FUN_0054f5a0
 ;   engine_pod.cpp_CPodFile_dtor_FUN_0054f610
@@ -109,8 +109,8 @@ section .text
         ;   Label: LAB_0055109d
     PUSH EBP                            ; 005510a4
     PUSH 0x64015e                       ; 005510a5 | s_EmptyChar_0064015e
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 005510aa
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 005510aa
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 005510af
     PUSH 0xf2                           ; 005510b2
     PUSH 0x64015f                       ; 005510b7 | = "..\\engine\\pod.cpp"

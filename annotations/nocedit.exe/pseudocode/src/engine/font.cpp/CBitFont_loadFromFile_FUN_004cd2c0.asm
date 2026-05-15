@@ -32,7 +32,7 @@
 ; Called Functions:
 ;   crt_stdio.c_fgets_FUN_005fefd0
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   engine_font.cpp_CBitFont_loadNewBitmap_FUN_004cd280
 ;   engine_font.cpp_CBitFont_openFontFile_FUN_004ccfc0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -51,8 +51,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x238]     ; 004cd2d5
     PUSH EDX                            ; 004cd2dc
     PUSH 0x62a585                       ; 004cd2dd | = "art"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004cd2e2
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004cd2e2
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 004cd2e7
     ADD ESP,0xc                         ; 004cd2e9
     TEST EAX,EAX                        ; 004cd2ec

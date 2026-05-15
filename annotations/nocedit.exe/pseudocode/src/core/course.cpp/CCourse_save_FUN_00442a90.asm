@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;
@@ -44,8 +44,8 @@ section .text
     PUSH 0x618fb3                       ; 00442a9c | = "wt"
     PUSH ESI                            ; 00442aa1
     PUSH 0x618fb6                       ; 00442aa2 | = "data"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00442aa7
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00442aa7
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 00442aac
     ADD ESP,0xc                         ; 00442aae
     MOV EBP,EAX                         ; 00442ab1

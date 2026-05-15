@@ -15,7 +15,7 @@ int __cdecl engine_fileio_cpp_checkFileOverwriteCondition_FUN_004b3120(char *tar
   char local_3f4 [500];
   char local_200 [500];
   
-  uVar1 = engine_dosio_c_getFileSizeWithFinder_FUN_00481960((char *)0x0,target_filename);
+  uVar1 = engine_dosio_cpp_getFileSizeWithFinder_FUN_00481960((char *)0x0,target_filename);
   if (-1 < (int)uVar1) {
     if (((source_directory != (char *)0x0) && (*source_directory != '\0')) &&
        (iVar2 = _stricmp

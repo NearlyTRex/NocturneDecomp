@@ -14,7 +14,7 @@ void __cdecl core_cloth_cpp_CCloth_save_FUN_00439260(CCloth *this_ptr,char *file
   SClothBone *pSVar2;
   int iVar2;
   
-  file = engine_dosio_c_getFile_FUN_00481a50("models",filename,"wt");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("models",filename,"wt");
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\cloth.cpp";
     g_CurrentLineNumber = 0x12d;

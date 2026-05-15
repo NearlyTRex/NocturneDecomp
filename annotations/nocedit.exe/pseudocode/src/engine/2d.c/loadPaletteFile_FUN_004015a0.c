@@ -11,7 +11,7 @@ void __cdecl engine_2d_c_loadPaletteFile_FUN_004015a0(char *filename)
 {
   _FILE *file;
   
-  file = engine_dosio_c_getFile_FUN_00481a50("art",filename,"rb");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("art",filename,"rb");
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\2d.c";
     g_CurrentLineNumber = 0x2c3;

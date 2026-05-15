@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e1591
-;   engine_dosio.c_reopenFileStream_FUN_00481b50 at 00481c13
+;   engine_dosio.cpp_reopenFileStream_FUN_00481b50 at 00481c13
 ;
 ; Called Functions:
 ;   crt_stdio.c_reportStreamError_FUN_00606020

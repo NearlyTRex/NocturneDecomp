@@ -79,7 +79,7 @@ void __cdecl engine_fileio_cpp_CFileManager_compareLocalVsPod_FUN_004b82a0(CFile
         pSVar6->found_path[1] = cVar2;
         pSVar6 = (SFoundFileInfo *)(pSVar6->found_path + 2);
       } while (cVar2 != '\0');
-      iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_234);
+      iVar3 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_234);
       if (iVar3 == 0) {
         _sprintf(local_1208,"%s\tNo local file",local_234.found_path);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5dc.base,local_1208);

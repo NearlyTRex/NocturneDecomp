@@ -153,8 +153,8 @@ section .text
     XOR EBX,EBX                         ; 004e0d98
     PUSH 0x62c9a4                       ; 004e0d9a | = "save"
     MOV dword ptr [ESP + 0x550],EBX     ; 004e0d9f
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004e0da6
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004e0da6
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 004e0dab
     ADD ESP,0xc                         ; 004e0dad
     MOV EDI,EAX                         ; 004e0db0
@@ -314,8 +314,8 @@ section .text
         ;   XREF to: 004e1111 (CONDITIONAL_JUMP)  ; LAB_004e1111
     PUSH 0x67b670                       ; 004e0f6c | = "save\\$$SAVE$$.TMP"
     PUSH 0x62ca5b                       ; 004e0f71 | s_EmptyChar_0062ca5b
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 004e0f76
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 004e0f76
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 004e0f7b
     PUSH EDI                            ; 004e0f7e
     MOV dword ptr [ESP + 0x544],EAX     ; 004e0f7f

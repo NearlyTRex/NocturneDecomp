@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   crt_fstream.cpp_openFile_FUN_00600e85 at 00600edd
-;   engine_dosio.c_reopenFileStream_FUN_00481b50 at 00481b7a
+;   engine_dosio.cpp_reopenFileStream_FUN_00481b50 at 00481b7a
 ;
 ; Called Functions:
 ;   crt_stdio.c_reportStreamError_FUN_00606020

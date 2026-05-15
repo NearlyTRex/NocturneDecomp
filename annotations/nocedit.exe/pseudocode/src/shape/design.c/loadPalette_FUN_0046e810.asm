@@ -39,7 +39,7 @@
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402930
 ;   engine_2d.c_loadPaletteFile_FUN_004015a0
-;   engine_dosio.c_getFileSize_FUN_00481880
+;   engine_dosio.cpp_getFileSize_FUN_00481880
 ;   wincore_wddvmem.cpp_setupColorPalette_FUN_005ed8f0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
 ;   wincore_windll.cpp_clearScreen_FUN_005b3e70
@@ -240,8 +240,8 @@ section .text
     PUSH EAX                            ; 0046e995
     MOV EAX,0x61dfb8                    ; 0046e996 | = "art"
     PUSH EAX                            ; 0046e99b | = "art"
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 0046e99c
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 0046e99c
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 0046e9a1
     CMP EAX,-0x1                        ; 0046e9a4
     JNZ 0x0046e9cf                      ; 0046e9a7
@@ -383,8 +383,8 @@ section .text
     PUSH EAX                            ; 0046eab2
     MOV EAX,0x61dffb                    ; 0046eab3 | = "art"
     PUSH EAX                            ; 0046eab8 | = "art"
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 0046eab9
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 0046eab9
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 0046eabe
     CMP EAX,-0x1                        ; 0046eac1
     JNZ 0x0046eaec                      ; 0046eac4

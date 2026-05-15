@@ -11,7 +11,7 @@ void __cdecl core_setdir_cpp_CDemonSet_refreshThumbs_FUN_00575b40(CDemonSet *thi
 {
   _FILE *file_handle;
   
-  file_handle = engine_dosio_c_getFile_FUN_00481a50("data",filename,"rb");
+  file_handle = engine_dosio_cpp_getFile_FUN_00481a50("data",filename,"rb");
   if (file_handle == (_FILE *)0x0) {
     core_setdir_cpp_CDemonSet_saveThumbsNoFile_FUN_00575f60(this_ptr);
     core_setdir_cpp_CDemonSet_writeThumbs_FUN_00575e40(this_ptr,filename);

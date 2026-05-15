@@ -44,6 +44,21 @@ inline std::ostream &std_ostream_from(_ostream *os) {
     return *reinterpret_cast<std::ostream *>(os);
 }
 
+// File-stream variants. Used when a function receives the full Watcom
+// ifstream*/ofstream* (typically a re-open / clear / seekg pattern on an
+// already-constructed stream). The Watcom struct layout begins with the
+// fstreambase_core subobject; std::ifstream / std::ofstream begin with their
+// own fstreambase-equivalent. The compat layer asserts these layouts are
+// reinterpret-cast-compatible at the boundary so methods like .clear() and
+// .seekg() resolve to the actual std implementation.
+inline std::ifstream &std_ifstream_from(ifstream *fs) {
+    return *reinterpret_cast<std::ifstream *>(fs);
+}
+
+inline std::ofstream &std_ofstream_from(ofstream *fs) {
+    return *reinterpret_cast<std::ofstream *>(fs);
+}
+
 // RAII wrappers for the codec keeps' "stream over a fixed buffer" pattern. They
 // hide three things:
 //   1. The choice of std::ostrstream / std::istrstream as the buffer-backed

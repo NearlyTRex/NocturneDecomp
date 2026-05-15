@@ -13,7 +13,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_load_FUN_0059b8d0(CDeformableMod
   _FILE *file_handle;
 
   strcpy(this_ptr->model_filename,filename);
-  file_handle = engine_dosio_c_getFile_FUN_00481a50("models",filename,"rt");
+  file_handle = engine_dosio_cpp_getFile_FUN_00481a50("models",filename,"rt");
   if (file_handle == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0x4b2;

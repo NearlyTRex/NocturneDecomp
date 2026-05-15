@@ -29,7 +29,7 @@ void __cdecl engine_2d_c_initGraphicsSystem_FUN_00401010(void)
   for (uVar3 = 1; uVar3 < 0x640; uVar3 = uVar3 + 1) {
     g_ReciprocalLookupTable[uVar3] = (uint)(0xffffffff / (ulonglong)uVar3);
   }
-  file = engine_dosio_c_getFile_FUN_00481a50("art","default.act","rb");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("art","default.act","rb");
   if (file == (_FILE *)0x0) {
     return;
   }

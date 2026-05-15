@@ -116,9 +116,9 @@ static int CFileManager_managePodFiles_check_iVar2_0_check_0_0(CFileManager_mana
             pcVar12[1] = cVar1;
             pcVar12 = pcVar12 + 2;
           } while (cVar1 != '\0');
-          engine_dosio_c_splitPath_FUN_00481f20
+          engine_dosio_cpp_splitPath_FUN_00481f20
                     (local_30,(char *)0x0,(char *)0x0,filename->base_name,(char *)0x0);
-          engine_dosio_c_makePath_FUN_00481f50
+          engine_dosio_cpp_makePath_FUN_00481f50
                     (local_34,(char *)0x0,(char *)0x0,filename->base_name,"pod");
           pSVar14 = &local_fbc;
           pcVar12 = local_30;
@@ -131,7 +131,7 @@ static int CFileManager_managePodFiles_check_iVar2_0_check_0_0(CFileManager_mana
             pSVar14->found_path[1] = cVar1;
             pSVar14 = (SFoundFileInfo *)(pSVar14->found_path + 2);
           } while (cVar1 != '\0');
-          iVar2 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_fbc);
+          iVar2 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_fbc);
           if (iVar2 == 0) {
             g_CurrentLineNumber = 0xc25;
             g_CurrentFilename = "..\\engine\\fileio.cpp";
@@ -151,7 +151,7 @@ static int CFileManager_managePodFiles_check_iVar2_0_check_0_0(CFileManager_mana
             pSVar14->found_path[1] = cVar1;
             pSVar14 = (SFoundFileInfo *)(pSVar14->found_path + 2);
           } while (cVar1 != '\0');
-          iVar2 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_b94);
+          iVar2 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_b94);
           if (iVar2 == 0) {
             filename->comparison_result = 4;
           }
@@ -202,7 +202,7 @@ static int CFileManager_managePodFiles_check_iVar2_0_check_0_0(CFileManager_mana
                 pSVar14->found_path[1] = cVar1;
                 pSVar14 = (SFoundFileInfo *)(pSVar14->found_path + 2);
               } while (cVar1 != '\0');
-              iVar2 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_da8);
+              iVar2 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_da8);
               if (iVar2 == 0) {
                 filename->count_missing_local = filename->count_missing_local + 1;
               }
@@ -305,7 +305,7 @@ LAB_004b8c1d:
     return 0;
 }
 
-// Chunk: check_iVar2_0_check_0_1 (lines 265-331 of original)
+// Chunk: check_iVar2_0_check_0_1 (lines 265-332 of original)
 static int CFileManager_managePodFiles_check_iVar2_0_check_0_1(CFileManager_managePodFiles_Ctx *ctx) {
     int &iVar2 = ctx->iVar2;
     char *&pcVar3 = ctx->pcVar3;
@@ -365,12 +365,13 @@ static int CFileManager_managePodFiles_check_iVar2_0_check_0_1(CFileManager_mana
               pcVar3[1] = cVar1;
               pcVar3 = pcVar3 + 2;
             } while (cVar1 != '\0');
-            engine_dosio_c_splitPath_FUN_00481f20(local_598,local_14,local_394,local_194,local_294);
-            engine_dosio_c_makePath_FUN_00481f50
+            engine_dosio_cpp_splitPath_FUN_00481f20
+                      (local_598,local_14,local_394,local_194,local_294);
+            engine_dosio_cpp_makePath_FUN_00481f50
                       (local_494,(char *)0x0,local_394,local_194,local_294);
-            engine_dosio_c_splitPath_FUN_00481f20
+            engine_dosio_cpp_splitPath_FUN_00481f20
                       (pcVar12,(char *)0x0,(char *)0x0,local_194,local_294);
-            engine_dosio_c_makePath_FUN_00481f50
+            engine_dosio_cpp_makePath_FUN_00481f50
                       (dest + 0x204,local_14,local_494,local_194,local_294);
             pcVar12 = local_194;
             pcVar3 = dest;
@@ -395,7 +396,7 @@ static int CFileManager_managePodFiles_check_iVar2_0_check_0_1(CFileManager_mana
     return 0;
 }
 
-// Chunk: check_iVar2_0_check_0_2 (lines 337-360 of original)
+// Chunk: check_iVar2_0_check_0_2 (lines 338-361 of original)
 static int CFileManager_managePodFiles_check_iVar2_0_check_0_2(CFileManager_managePodFiles_Ctx *ctx) {
     int &iVar2 = ctx->iVar2;
     char *&pcVar3 = ctx->pcVar3;
@@ -429,7 +430,7 @@ LAB_004b8df1:
     return 0;
 }
 
-// Chunk: check_iVar2_0_check_local_60_3 (lines 367-495 of original)
+// Chunk: check_iVar2_0_check_local_60_3 (lines 368-496 of original)
 static int CFileManager_managePodFiles_check_iVar2_0_check_local_60_3(CFileManager_managePodFiles_Ctx *ctx) {
     CFileManager *&this_ptr = ctx->this_ptr;
     int &iVar2 = ctx->iVar2;
@@ -571,7 +572,7 @@ LAB_004b9590:
     return 0;
 }
 
-// Chunk: check_iVar2_0_check_0_4 (lines 500-674 of original)
+// Chunk: check_iVar2_0_check_0_4 (lines 501-675 of original)
 static int CFileManager_managePodFiles_check_iVar2_0_check_0_4(CFileManager_managePodFiles_Ctx *ctx) {
     CFileManager *&this_ptr = ctx->this_ptr;
     int &iVar2 = ctx->iVar2;
@@ -601,14 +602,14 @@ static int CFileManager_managePodFiles_check_iVar2_0_check_0_4(CFileManager_mana
                 (local_44[local_20].count_newer_local == 0)) &&
                ((local_44[local_20].is_mounted != 0 &&
                 (((g_VersionControlDirectory[0] != '\0' &&
-                  (uVar5 = engine_dosio_c_getFileSizeWithFinder_FUN_00481960((char *)0x0,local_24),
-                  -1 < (int)uVar5)) && ((uVar5 & 8) == 0)))))) {
-              engine_dosio_c_setFileAttributes_FUN_004819f0(local_24,(byte)uVar5 | 8);
+                  (uVar5 = engine_dosio_cpp_getFileSizeWithFinder_FUN_00481960((char *)0x0,local_24)
+                  , -1 < (int)uVar5)) && ((uVar5 & 8) == 0)))))) {
+              engine_dosio_cpp_setFileAttributes_FUN_004819f0(local_24,(byte)uVar5 | 8);
             }
           }
           else {
             if (local_44[local_20].action_index == 5) {
-              engine_dosio_c_setFileAttributes_FUN_004819f0(local_24,0);
+              engine_dosio_cpp_setFileAttributes_FUN_004819f0(local_24,0);
               iVar2 = remove(local_24);
               if (iVar2 == 0) {
                 local_4c = local_4c + 1;
@@ -634,7 +635,7 @@ static int CFileManager_managePodFiles_check_iVar2_0_check_0_4(CFileManager_mana
             else {
               pcVar12 = local_44[local_20].pod_name;
               if (g_VersionControlDirectory[0] == '\0') {
-                uVar5 = engine_dosio_c_getFileSizeWithFinder_FUN_00481960((char *)0x0,pcVar12);
+                uVar5 = engine_dosio_cpp_getFileSizeWithFinder_FUN_00481960((char *)0x0,pcVar12);
                 if ((-1 < (int)uVar5) && ((uVar5 & 8) != 0)) {
                   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                             (g_CEditorToolsPtr,"%s exists and is read only.  Cannot copy POD.",pcVar12);
@@ -642,7 +643,7 @@ static int CFileManager_managePodFiles_check_iVar2_0_check_0_4(CFileManager_mana
                 }
               }
               else {
-                uVar5 = engine_dosio_c_getFileSizeWithFinder_FUN_00481960((char *)0x0,pcVar12);
+                uVar5 = engine_dosio_cpp_getFileSizeWithFinder_FUN_00481960((char *)0x0,pcVar12);
                 pcVar3 = local_44[local_20].checked_out_by;
                 if (-1 < (int)uVar5) {
                   if (((pcVar3 == (char *)0x0) || (*pcVar3 == '\0')) ||
@@ -665,7 +666,7 @@ static int CFileManager_managePodFiles_check_iVar2_0_check_0_4(CFileManager_mana
                   if (iVar2 == 0) goto LAB_004b8f32;
                 }
 LAB_004b9af4:
-                engine_dosio_c_setFileAttributes_FUN_004819f0(local_44[local_20].pod_name,0);
+                engine_dosio_cpp_setFileAttributes_FUN_004819f0(local_44[local_20].pod_name,0);
               }
               iVar2 = 0;
               pcVar12 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_94,local_20);
@@ -705,7 +706,7 @@ LAB_004b9af4:
                         core_main_c_displayErrorAndQuit_FUN_00506f10(pcVar12);
                       }
                       local_5c = local_5c + 1;
-                      iVar2 = engine_dosio_c_copyFileTimestamp_FUN_00481910
+                      iVar2 = engine_dosio_cpp_copyFileTimestamp_FUN_00481910
                                         (local_44[local_20].pod_name,
                                          (char *)local_44[local_20].timestamp);
                       if (iVar2 == 0) {
@@ -718,7 +719,7 @@ LAB_004b9af4:
                                             (local_44[local_20].checked_out_by,
                                              g_VersionControlSession.primary_username), iVar2 != 0))
                       {
-                        iVar2 = engine_dosio_c_setFileAttributes_FUN_004819f0
+                        iVar2 = engine_dosio_cpp_setFileAttributes_FUN_004819f0
                                           (local_44[local_20].pod_name,8);
                         if (iVar2 == 0) {
                           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -769,7 +770,7 @@ LAB_004b8f32:
     return 0;
 }
 
-// Chunk: check_iVar2_0_else_5 (lines 682-710 of original)
+// Chunk: check_iVar2_0_else_5 (lines 683-711 of original)
 static int CFileManager_managePodFiles_check_iVar2_0_else_5(CFileManager_managePodFiles_Ctx *ctx) {
     int &iVar2 = ctx->iVar2;
     char *&pcVar3 = ctx->pcVar3;

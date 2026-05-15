@@ -111,7 +111,7 @@ int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileMana
         pSVar8->found_path[1] = cVar2;
         pSVar8 = (SFoundFileInfo *)(pSVar8->found_path + 2);
       } while (cVar2 != '\0');
-      iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_14c8);
+      iVar3 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_14c8);
       if ((((iVar3 == 0) || (puVar7[3] + 2 < local_14c8.timestamp)) ||
           (local_14c8.timestamp < puVar7[3] - 2)) || (local_14c8.file_size != puVar7[1])) break;
       local_2c = local_2c + 0x14;
@@ -164,14 +164,14 @@ int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileMana
                     ((CCheckOutItem *)checkout_item_name,local_77c,local_12b4.found_path,
                      "Select file to check in","*");
   if (iVar3 == 0) goto LAB_004bb1fa;
-  iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_12b4);
+  iVar3 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_12b4);
   if (iVar3 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Error accessing %s.  File not checked in.",&local_12b4);
     goto LAB_004bb1fa;
   }
-  engine_dosio_c_ensureTrailingSlash_FUN_00481f80(checkout_item_name,local_20,local_370);
-  engine_dosio_c_makePath_FUN_00481f50
+  engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(checkout_item_name,local_20,local_370);
+  engine_dosio_cpp_makePath_FUN_00481f50
             (local_16dc.found_path,local_20,local_370,(char *)0x0,(char *)0x0);
   pSVar9 = &local_12b4;
   iVar3 = -1;
@@ -194,7 +194,7 @@ int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileMana
     pcVar9[1] = cVar2;
     pcVar9 = pcVar9 + 2;
   } while (cVar2 != '\0');
-  iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_16dc);
+  iVar3 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_16dc);
   if (iVar3 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Error accessing %s.  File not checked in.",&local_16dc);
@@ -244,8 +244,8 @@ int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileMana
     core_main_c_displayErrorAndQuit_FUN_00506f10("versionControlDirectory not set!");
   }
   _sprintf(local_b8c,"history\\%s.%s",pcVar9,"history");
-  engine_dosio_c_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_24,local_170);
-  engine_dosio_c_makePath_FUN_00481f50(local_984,local_24,local_170,(char *)0x0,(char *)0x0);
+  engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_24,local_170);
+  engine_dosio_cpp_makePath_FUN_00481f50(local_984,local_24,local_170,(char *)0x0,(char *)0x0);
   pcVar9 = local_b8c;
   iVar3 = -1;
   pcVar12 = local_984;
@@ -290,8 +290,8 @@ int __cdecl engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00(CFileMana
   }
 LAB_004bb723:
   _sprintf(local_574,"$$$.%s.$$$",&local_12b4);
-  engine_dosio_c_ensureTrailingSlash_FUN_00481f80(local_50,local_1c,local_270);
-  engine_dosio_c_makePath_FUN_00481f50(local_880,local_1c,local_270,(char *)0x0,(char *)0x0);
+  engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(local_50,local_1c,local_270);
+  engine_dosio_cpp_makePath_FUN_00481f50(local_880,local_1c,local_270,(char *)0x0,(char *)0x0);
   pcVar9 = local_574;
   iVar3 = -1;
   pcVar10 = local_880;
@@ -315,7 +315,7 @@ LAB_004bb723:
   } while (cVar2 != '\0');
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Creating temporary network file %s...",local_880);
-  engine_dosio_c_setFileAttributes_FUN_004819f0(local_880,0);
+  engine_dosio_cpp_setFileAttributes_FUN_004819f0(local_880,0);
   remove(local_880);
   p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (local_880,(char *)0x0,"wb","..\\engine\\fileio.cpp",0x591);
@@ -349,8 +349,8 @@ LAB_004bb83f:
       g_CurrentLineNumber = 0xdd;
       core_main_c_displayErrorAndQuit_FUN_00506f10("versionControlDirectory not set!");
     }
-    engine_dosio_c_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_18,local_470);
-    engine_dosio_c_makePath_FUN_00481f50(local_678,local_18,local_470,(char *)0x0,(char *)0x0);
+    engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_18,local_470);
+    engine_dosio_cpp_makePath_FUN_00481f50(local_678,local_18,local_470,(char *)0x0,(char *)0x0);
     pcVar10 = "checkout.txt";
     iVar3 = -1;
     pcVar9 = local_678;
@@ -421,7 +421,7 @@ LAB_004bba53:
       iVar3 = 0;
       engine_2d_c_clearInputAndWait_FUN_00403260();
       while( true ) {
-        engine_dosio_c_setFileAttributes_FUN_004819f0(local_16dc.found_path,0);
+        engine_dosio_cpp_setFileAttributes_FUN_004819f0(local_16dc.found_path,0);
         remove(local_16dc.found_path);
         iVar4 = rename(local_880,local_16dc.found_path);
         if (iVar4 == 0) break;
@@ -454,7 +454,7 @@ LAB_004bba53:
       if (0 < iVar3) {
         shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
       }
-      iVar3 = engine_dosio_c_copyFileTimestamp_FUN_00481910
+      iVar3 = engine_dosio_cpp_copyFileTimestamp_FUN_00481910
                         (local_16dc.found_path,(char *)local_12b4.timestamp);
       if (iVar3 == 0) {
         if (local_54 != (_FILE *)0x0) {
@@ -466,7 +466,7 @@ LAB_004bba53:
         engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_60);
       }
       else {
-        iVar3 = engine_dosio_c_setFileAttributes_FUN_004819f0(local_16dc.found_path,8);
+        iVar3 = engine_dosio_cpp_setFileAttributes_FUN_004819f0(local_16dc.found_path,8);
         if (iVar3 == 0) {
           if (local_54 != (_FILE *)0x0) {
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_54,"..\\engine\\fileio.cpp",0xc4);
@@ -530,10 +530,10 @@ LAB_004bbfdd:
                               (local_54,"..\\engine\\fileio.cpp",0xc4);
                     local_54 = (_FILE *)0x0;
                   }
-                  iVar3 = engine_dosio_c_getFileSizeWithFinder_FUN_00481960
+                  iVar3 = engine_dosio_cpp_getFileSizeWithFinder_FUN_00481960
                                     ((char *)0x0,local_12b4.found_path);
                   if (((-1 < iVar3) &&
-                      (iVar4 = engine_dosio_c_setFileAttributes_FUN_004819f0
+                      (iVar4 = engine_dosio_cpp_setFileAttributes_FUN_004819f0
                                          (local_12b4.found_path,(byte)iVar3 | 8), iVar4 == 0)) ||
                      (iVar3 < 0)) {
                     shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0

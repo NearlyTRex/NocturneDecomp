@@ -961,8 +961,8 @@ section .text
     LEA EAX,[EBP + 0xffffea52]          ; 004ab438
     PUSH EAX                            ; 004ab43e
     PUSH 0x62482b                       ; 004ab43f | = "art"
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 004ab444
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 004ab444
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     MOV ECX,EAX                         ; 004ab449
     ADD ESP,0x8                         ; 004ab44b
     TEST EAX,EAX                        ; 004ab44e

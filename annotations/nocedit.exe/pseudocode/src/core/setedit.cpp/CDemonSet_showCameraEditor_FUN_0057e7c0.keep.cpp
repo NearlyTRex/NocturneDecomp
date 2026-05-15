@@ -227,7 +227,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet 
         abStack_4be[2] = 0;
       }
       else {
-        engine_dosio_c_splitPath_FUN_00481f20
+        engine_dosio_cpp_splitPath_FUN_00481f20
                   (this_ptr->geometry_filename,(char *)0x0,(char *)0x0,(char *)(abStack_4be + 2),
                    (char *)0x0);
         pcVar14 = ".set";
@@ -452,7 +452,7 @@ LAB_0057eb3b:
                          (g_CEditorToolsPtr,"Merge .LC","models","*.lc",
                           local_9bc,0);
       if (iVar11 != 0) {
-        p_Var13 = engine_dosio_c_getFile_FUN_00481a50("models",local_9bc,"rt");
+        p_Var13 = engine_dosio_cpp_getFile_FUN_00481a50("models",local_9bc,"rt");
         if (p_Var13 == (_FILE *)0x0) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
           g_CurrentLineNumber = 0xe68;
@@ -541,7 +541,7 @@ LAB_0057eb3b:
                          (g_CEditorToolsPtr,"Merge2 .LC","models","*.lc",
                           local_2bc,0);
       if (iVar11 != 0) {
-        local_58 = engine_dosio_c_getFile_FUN_00481a50("models",local_2bc,"rt");
+        local_58 = engine_dosio_cpp_getFile_FUN_00481a50("models",local_2bc,"rt");
         if (local_58 == (_FILE *)0x0) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
           g_CurrentLineNumber = 0xeae;
@@ -588,11 +588,11 @@ LAB_0057f7c1:
                (float)0.10000000000000001 <= SQRT(fVar7 * fVar7 + fVar5 * fVar5 + fVar6 * fVar6)))
             goto LAB_0057fa69;
             _sprintf(local_6bc,"%s.raw",local_b60.name);
-            local_48 = engine_dosio_c_getFile_FUN_00481a50
+            local_48 = engine_dosio_cpp_getFile_FUN_00481a50
                                  ("backdrop",local_6bc,"rb");
             _sprintf(local_5bc,"%s.raw",pCVar15->name);
             iVar10 = 0;
-            p_Var13 = engine_dosio_c_getFile_FUN_00481a50
+            p_Var13 = engine_dosio_cpp_getFile_FUN_00481a50
                                 ("backdrop",local_5bc,"wb");
             do {
               p_Var14 = p_Var13;
@@ -603,11 +603,11 @@ LAB_0057f7c1:
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_48,"..\\core\\setedit.cpp",0xecd);
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var13,"..\\core\\setedit.cpp",0xece);
             _sprintf(local_6bc,"%s.act",local_b60.name);
-            local_48 = engine_dosio_c_getFile_FUN_00481a50
+            local_48 = engine_dosio_cpp_getFile_FUN_00481a50
                                  ("backdrop",local_6bc,"rb");
             _sprintf(local_5bc,"%s.act",(local_44 + iVar11)->name);
             iVar11 = 0;
-            p_Var14 = engine_dosio_c_getFile_FUN_00481a50
+            p_Var14 = engine_dosio_cpp_getFile_FUN_00481a50
                                 ("backdrop",local_5bc,"wb");
             p_Var13 = local_48;
             do {
@@ -648,10 +648,10 @@ LAB_0057fa1d:
           do {
             _sprintf(local_8bc,"%s.raw",local_28->name);
             _sprintf(local_1bc,"%s%d.raw",local_ac,local_18 + 1);
-            p_Var4 = engine_dosio_c_getFile_FUN_00481a50
+            p_Var4 = engine_dosio_cpp_getFile_FUN_00481a50
                                ("backdrop",local_8bc,"rb");
             iVar11 = 0;
-            p_Var5 = engine_dosio_c_getFile_FUN_00481a50
+            p_Var5 = engine_dosio_cpp_getFile_FUN_00481a50
                                ("backdrop",local_1bc,"wb");
             do {
               p_Var20 = p_Var5;
@@ -663,10 +663,10 @@ LAB_0057fa1d:
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\setedit.cpp",0xef6);
             _sprintf(local_8bc,"%s.act",local_24->name);
             _sprintf(local_1bc,"%s%d.act",local_ac,local_18 + 1);
-            p_Var13 = engine_dosio_c_getFile_FUN_00481a50
+            p_Var13 = engine_dosio_cpp_getFile_FUN_00481a50
                                 ("backdrop",local_8bc,"rb");
             iVar11 = 0;
-            p_Var14 = engine_dosio_c_getFile_FUN_00481a50
+            p_Var14 = engine_dosio_cpp_getFile_FUN_00481a50
                                 ("backdrop",local_1bc,"wb");
             do {
               p_Var17 = p_Var14;

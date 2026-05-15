@@ -20,7 +20,7 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_reload_FUN_0054c1e0(CPackedBi
   char local_e4 [100];
   char local_80 [100];
   
-  file = engine_dosio_c_getFile_FUN_00481a50("art",this_ptr->filename,"rb");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("art",this_ptr->filename,"rb");
   if (file == (_FILE *)0x0) {
     _sprintf
               (local_e4,"Unable to open %s in CPackedBitmapSet::reloadJoinedRAW",this_ptr->filename);

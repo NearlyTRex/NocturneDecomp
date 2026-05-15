@@ -20,7 +20,7 @@ void __cdecl core_script_cpp_CScript_saveToFile_FUN_00566180(CScript *this_ptr,c
   if (iVar1 < 1) {
     return;
   }
-  file_ptr = engine_dosio_c_getFile_FUN_00481a50("world",filename,"wt");
+  file_ptr = engine_dosio_cpp_getFile_FUN_00481a50("world",filename,"wt");
   if (file_ptr != (_FILE *)0x0) {
     iVar1 = 0;
     g_ScriptEditorHScrollBar.current_value = 0;

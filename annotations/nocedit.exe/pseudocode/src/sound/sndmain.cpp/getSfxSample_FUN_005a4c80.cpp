@@ -71,7 +71,7 @@ LAB_005a4cea:
     _atexit(&g_CMP3DecoderDestructorNode1);
   }
   local_14 = (_FILE *)0x0;
-  iVar3 = engine_dosio_c_getFileSize_FUN_00481880("sound",filename);
+  iVar3 = engine_dosio_cpp_getFileSize_FUN_00481880("sound",filename);
   pcVar4 = filename;
   pCVar8 = this_ptr;
   if (iVar3 < 1) goto LAB_005a4ef8;
@@ -84,7 +84,7 @@ LAB_005a4cea:
     pcVar4 = pcVar4 + 2;
     pCVar8 = (CSfxSample *)((pCVar8->sample_info).name + 2);
   } while (cVar2 != '\0');
-  engine_dosio_c_splitPath_FUN_00481f20(filename,(char *)0x0,(char *)0x0,(char *)0x0,&local_114);
+  engine_dosio_cpp_splitPath_FUN_00481f20(filename,(char *)0x0,(char *)0x0,(char *)0x0,&local_114);
   if (local_114 == '.') {
     uVar5 = 0xffffffff;
     pcVar4 = &local_114;
@@ -98,7 +98,7 @@ LAB_005a4cea:
   }
   iVar3 = _stricmp(&local_114,"wav");
   if (iVar3 == 0) {
-    local_14 = engine_dosio_c_getFile_FUN_00481a50("sound",filename,"rb");
+    local_14 = engine_dosio_cpp_getFile_FUN_00481a50("sound",filename,"rb");
     if (local_14 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
       g_CurrentLineNumber = 0x2fe;

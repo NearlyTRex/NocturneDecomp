@@ -28,7 +28,7 @@ void __cdecl engine_pod_cpp_CPod_dismount_FUN_00550b90(CPod *this_ptr,char *file
     pSVar5->found_path[1] = cVar2;
     pSVar5 = (SFoundFileInfo *)(pSVar5->found_path + 2);
   } while (cVar2 != '\0');
-  iVar2 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_224);
+  iVar2 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_224);
   if ((iVar2 != 0) && (index = 0, pCVar4 = this_ptr, 0 < this_ptr->pod_file_count)) {
     do {
       while (iVar3 = _stricmp

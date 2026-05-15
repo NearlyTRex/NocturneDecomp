@@ -107,7 +107,7 @@ LAB_004b7e34:
       uVar4 = 0;
     }
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\engine\\fileio.cpp",0xaf5);
-    iVar6 = engine_dosio_c_copyFileTimestamp_FUN_00481910(dest_filename,timestamp_source);
+    iVar6 = engine_dosio_cpp_copyFileTimestamp_FUN_00481910(dest_filename,timestamp_source);
     if (iVar6 == 0) {
       uVar4 = 0;
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740

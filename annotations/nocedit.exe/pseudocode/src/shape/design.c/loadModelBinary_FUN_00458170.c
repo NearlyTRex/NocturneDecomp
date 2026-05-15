@@ -57,7 +57,7 @@ int __cdecl shape_design_c_loadModelBinary_FUN_00458170(char *filename)
   char cVar1;
   
   local_20 = 1.0;
-  local_38 = engine_dosio_c_getFile_FUN_00481a50("models",filename,"rb");
+  local_38 = engine_dosio_cpp_getFile_FUN_00481a50("models",filename,"rb");
   if (local_38 == (_FILE *)0x0) {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_clearInputAndWait_FUN_00403260();

@@ -37,7 +37,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_addTextureSet_FUN_0058e0b0(CDefo
       splitpath(path,(char *)0x0,(char *)0x0,local_118,(char *)0x0);
       _sprintf(local_218,name_format,local_118);
       makepath(local_31c,(char *)0x0,(char *)0x0,local_218,".tga");
-      iVar2 = engine_dosio_c_getFileSize_FUN_00481880("art",local_31c);
+      iVar2 = engine_dosio_cpp_getFileSize_FUN_00481880("art",local_31c);
       path_buffer = this_ptr->texture_sets[iVar4].textures[iVar3].textures[0].texture_name;
       pcVar4 = path;
       if (iVar2 < 0) {

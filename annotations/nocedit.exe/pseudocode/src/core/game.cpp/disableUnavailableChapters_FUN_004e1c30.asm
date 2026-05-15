@@ -15,7 +15,7 @@
 ;   undefined4 PTR_s_gtown_msn_0062d684_0067b754
 ;
 ; Called Functions:
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_edittool.cpp_CPickList_enableItem_FUN_004a5410
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;
@@ -48,8 +48,8 @@ section .text
     MOV EDX,dword ptr [ESI + 0x67b750]  ; 004e1c5d | g_ChapterMissionFiles | PTR_s_gtown_msn_0062d684_0067b754
     PUSH EDX                            ; 004e1c63
     PUSH 0x62cc74                       ; 004e1c64 | = "world"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004e1c69
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004e1c69
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004e1c6e
     TEST EAX,EAX                        ; 004e1c71
     JNZ 0x004e1c82                      ; 004e1c73

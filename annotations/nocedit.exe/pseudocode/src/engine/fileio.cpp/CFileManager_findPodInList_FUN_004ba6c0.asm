@@ -21,7 +21,7 @@
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005fe7f0
-;   engine_dosio.c_getFullPath_FUN_004820c0
+;   engine_dosio.cpp_getFullPath_FUN_004820c0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
 ;
 ; *****************************************************************************
@@ -38,8 +38,8 @@ section .text
     LEA EAX,[ESP + 0x108]               ; 004ba6d7
     PUSH EAX                            ; 004ba6de
     XOR EBX,EBX                         ; 004ba6df
-    CALL engine_dosio.c_getFullPath_FUN_004820c0 ; 004ba6e1
-        ;   XREF to: 004820c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFullPath_FUN_004820c0(char * output_path, char * input_path)
+    CALL engine_dosio.cpp_getFullPath_FUN_004820c0 ; 004ba6e1
+        ;   XREF to: 004820c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFullPath_FUN_004820c0(char * output_path, char * input_path)
     ADD ESP,0x8                         ; 004ba6e6
     MOV EAX,dword ptr [ESI]             ; 004ba6e9
         ;   Label: LAB_004ba6e9
@@ -64,8 +64,8 @@ section .text
     PUSH EAX                            ; 004ba70a
     LEA EAX,[ESP + 0x4]                 ; 004ba70b
     PUSH EAX                            ; 004ba70f
-    CALL engine_dosio.c_getFullPath_FUN_004820c0 ; 004ba710
-        ;   XREF to: 004820c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFullPath_FUN_004820c0(char * output_path, char * input_path)
+    CALL engine_dosio.cpp_getFullPath_FUN_004820c0 ; 004ba710
+        ;   XREF to: 004820c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFullPath_FUN_004820c0(char * output_path, char * input_path)
     ADD ESP,0x8                         ; 004ba715
     MOV EAX,ESP                         ; 004ba718
     PUSH EAX                            ; 004ba71a

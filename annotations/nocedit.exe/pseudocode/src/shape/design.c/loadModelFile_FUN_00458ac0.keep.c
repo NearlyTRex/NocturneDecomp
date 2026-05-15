@@ -128,7 +128,7 @@ LAB_00458b67:
       return iVar4;
     }
   }
-  file = engine_dosio_c_getFile_FUN_00481a50("models",(char *)local_74,"rt");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("models",(char *)local_74,"rt");
   if (file == (_FILE *)0x0) {
     engine_2d_c_drawText_FUN_00401fd0("FILE ERROR! Nothing changed!",0,0x16);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

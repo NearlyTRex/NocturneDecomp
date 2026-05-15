@@ -15,8 +15,8 @@
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005fe7f0
-;   engine_dosio.c_getFileSize_FUN_00481880
-;   engine_dosio.c_splitPath_FUN_00481f20
+;   engine_dosio.cpp_getFileSize_FUN_00481880
+;   engine_dosio.cpp_splitPath_FUN_00481f20
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x104]     ; 005a5186
     PUSH EDX                            ; 005a518d
     PUSH 0x64fa53                       ; 005a518e | = "sound"
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 005a5193
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 005a5193
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 005a5198
     CMP EAX,0x200000                    ; 005a519b
     JLE 0x005a51ae                      ; 005a51a0
@@ -45,8 +45,8 @@ section .text
     PUSH 0x0                            ; 005a51b5
     MOV ECX,dword ptr [ESP + 0x114]     ; 005a51b7
     PUSH ECX                            ; 005a51be
-    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 005a51bf
-        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00481f20 ; 005a51bf
+        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 005a51c4
     PUSH 0x64fa59                       ; 005a51c7 | = "mp3"
     LEA EAX,[ESP + 0x4]                 ; 005a51cc

@@ -1,0 +1,109 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 13,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 13,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 36
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004818d0",
+    "address_range": [
+      [
+        "004818d0",
+        "0048190f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_dosio.cpp_getFileTimestamp_FUN_004818d0",
+    "signature": "uint __cdecl engine_dosio_cpp_getFileTimestamp_FUN_004818d0(char *directory_path,char *filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "00481760",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_findFile_FUN_00481760"
+    },
+    {
+      "addr": "004816c0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_getRelativeFilePath_FUN_004816c0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.388888888888889,
+    "instruction_count": 18,
+    "opcode_distribution": {
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 11,
+      "INT_ADD": 8,
+      "INT_AND": 11,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 10,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 5,
+      "INT_SUB": 7,
+      "LOAD": 4,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 79
+  },
+  "stack_frame": {
+    "frame_size": 544,
+    "local_size": 536,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_214",
+        "offset": -532,
+        "size": 532,
+        "type": "SFoundFileInfo"
+      },
+      {
+        "is_param": true,
+        "name": "directory_path",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

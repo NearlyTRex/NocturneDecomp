@@ -24,8 +24,8 @@ void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40(CP
   char local_7c [100];
   
   cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_0054bd60(this_ptr);
-  iVar1 = engine_dosio_c_getFileSize_FUN_00481880("art",filename);
-  file = engine_dosio_c_getFile_FUN_00481a50("art",filename,"rb");
+  iVar1 = engine_dosio_cpp_getFileSize_FUN_00481880("art",filename);
+  file = engine_dosio_cpp_getFile_FUN_00481a50("art",filename,"rb");
   if (file == (_FILE *)0x0) {
     _sprintf(local_1a8,"Unable to open %s in CPackedBitmapSet::loadJoinedRAW",filename);
     g_CurrentFilename = "..\\cockpit\\pkbmpset.cpp";

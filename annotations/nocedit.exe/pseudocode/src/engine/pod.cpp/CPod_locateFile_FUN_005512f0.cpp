@@ -15,7 +15,7 @@ CPodFile * __cdecl engine_pod_cpp_CPod_locateFile_FUN_005512f0(CPod *this_ptr,ch
   char local_224 [532];
   
   iVar2 = 0;
-  engine_dosio_c_getRelativeFilePath_FUN_004816c0(local_224,base_path,filename);
+  engine_dosio_cpp_getRelativeFilePath_FUN_004816c0(local_224,base_path,filename);
   pCVar3 = this_ptr;
   if (0 < this_ptr->pod_file_count) {
     do {

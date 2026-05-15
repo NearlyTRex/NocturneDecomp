@@ -70,7 +70,7 @@
 ;   crt_string.c__strcmp_FUN_005fef20
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_design.c_calculatePolygonNormal_FUN_0045caa0
 ;   shape_design.c_sortPolygonsByTexture_FUN_0045b8b0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -100,8 +100,8 @@ section .text
     PUSH EAX                            ; 0045aaa0
     MOV EAX,0x61b0a1                    ; 0045aaa1 | = "models"
     PUSH EAX                            ; 0045aaa6 | = "models"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0045aaa7
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0045aaa7
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0045aaac
     MOV dword ptr [EBP + -0xc],EAX      ; 0045aaaf
     JMP 0x0045ab3e                      ; 0045aab2
@@ -113,8 +113,8 @@ section .text
     PUSH EAX                            ; 0045aac0
     MOV EAX,0x61b0ab                    ; 0045aac1 | = "models"
     PUSH EAX                            ; 0045aac6 | = "models"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0045aac7
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0045aac7
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0045aacc
     MOV dword ptr [EBP + -0xc],EAX      ; 0045aacf
     MOV EAX,0x61b0b2                    ; 0045aad2 | = "; Model Display List\n"

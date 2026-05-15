@@ -7,12 +7,12 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1112,
-    "complexity_score": 500,
+    "complexity_score": 501,
     "cross_reference_count": 1,
     "function_call_count": 42,
     "global_count": 75,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 410,
+    "pseudocode_lines": 411,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
@@ -20,7 +20,7 @@
       "unrolled_strchr",
       "unrolled_strcpy"
     ],
-    "total_lines": 1522
+    "total_lines": 1523
   },
   "cross_references": [
     {
@@ -162,7 +162,7 @@
     {
       "addr": "00481a50",
       "is_variadic": false,
-      "name": "engine_dosio.c_getFile_FUN_00481a50"
+      "name": "engine_dosio.cpp_getFile_FUN_00481a50"
     },
     {
       "addr": "0048c450",
@@ -810,7 +810,7 @@
   "resolved_suspects": [
     {
       "description": "Direct stack address reference",
-      "line": 150,
+      "line": 151,
       "match": "&stack0xffffee80",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -819,7 +819,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 285,
+      "line": 286,
       "match": "(char *)(*piVar1 * 0x1a4 + (int)p_Stack_20",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -828,7 +828,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 326,
+      "line": 327,
       "match": "&stack0xffffee8c",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1127,7 +1127,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 148,
+      "line": 149,
       "match": "(uint *)((int)auStack_d80",
       "severity": "moderate",
       "text": "*(uint *)((int)auStack_d80 + iVar20) = uVar16 | uVar12;",
@@ -1135,7 +1135,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 283,
+      "line": 284,
       "match": "(int *)((int)auStack_96c",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)auStack_96c + iVar13);",
@@ -1143,7 +1143,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 295,
+      "line": 296,
       "match": "(int *)((int)pvStack_1c",
       "severity": "moderate",
       "text": "if (*(int *)((int)pvStack_1c + 0x144) == 0) {",
@@ -1159,7 +1159,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 184,
+      "line": 185,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "g_CDemonCameraInstance.base.position.f.x = (g_CSlewPtr->position).x;",

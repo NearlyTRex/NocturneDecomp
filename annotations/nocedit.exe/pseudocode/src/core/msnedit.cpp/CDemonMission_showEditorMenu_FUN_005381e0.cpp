@@ -238,8 +238,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
       iVar3 = shape_edittool_cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
                         (g_CEditorToolsPtr,"Update ALL mission files to latest version?");
       if (iVar3 != 0) {
-        engine_dosio_c_CFileFinder_ctor_FUN_00481c30(&local_434);
-        engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(&local_434,"world\\*.msn");
+        engine_dosio_cpp_CFileFinder_ctor_FUN_00481c30(&local_434);
+        engine_dosio_cpp_CFileFinder_openSearch_FUN_00481c70(&local_434,"world\\*.msn");
         while (local_434.filename[0] != '\0') {
           pCVar3 = engine_pod_cpp_CPod_locateFile_FUN_005512f0
                              ((CPod *)g_CDemonPodPtr,"world",local_434.filename,(int *)0x0)
@@ -257,9 +257,9 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
             shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                       (g_CEditorToolsPtr,"Not converting local file %s - it is also in a pod",&local_434);
           }
-          engine_dosio_c_CFileFinder_findNext_FUN_00481cf0(&local_434);
+          engine_dosio_cpp_CFileFinder_findNext_FUN_00481cf0(&local_434);
         }
-        engine_dosio_c_CFileFinder_dtor_FUN_00481c50(&local_434,0);
+        engine_dosio_cpp_CFileFinder_dtor_FUN_00481c50(&local_434,0);
       }
     }
     else if (0x56 < uVar2) {

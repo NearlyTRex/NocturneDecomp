@@ -46,7 +46,7 @@
 ;   crt_stdio.c_fwrite_FUN_005fdc00
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_stdlib.c_rand_FUN_005feb5c
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
 ;
@@ -178,8 +178,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0055447f
     PUSH EAX                            ; 00554483
     PUSH 0x640947                       ; 00554484 | = "art"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00554489
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00554489
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0055448e
     MOV ESI,EAX                         ; 00554491
     TEST EAX,EAX                        ; 00554493
@@ -220,8 +220,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00554504
     PUSH EAX                            ; 00554508
     PUSH 0x64099c                       ; 00554509 | = "art"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0055450e
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0055450e
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00554513
     MOV ESI,EAX                         ; 00554516
     TEST EAX,EAX                        ; 00554518

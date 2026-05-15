@@ -17,12 +17,12 @@ void __cdecl core_setedit_cpp_CDemonSet_exportLightsAndCameras_FUN_0057a0c0(CDem
   char local_214 [260];
   char local_110 [256];
   
-  engine_dosio_c_splitPath_FUN_00481f20
+  engine_dosio_cpp_splitPath_FUN_00481f20
             (this_ptr->geometry_filename,(char *)0x0,(char *)0x0,local_110,(char *)0x0);
-  engine_dosio_c_makePath_FUN_00481f50(local_214,(char *)0x0,(char *)0x0,local_110,"lc");
+  engine_dosio_cpp_makePath_FUN_00481f50(local_214,(char *)0x0,(char *)0x0,local_110,"lc");
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Exporting lights and cameras to %s",local_214);
-  file = engine_dosio_c_getFile_FUN_00481a50("models",local_214,"wt");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("models",local_214,"wt");
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
     g_CurrentLineNumber = 0x659;

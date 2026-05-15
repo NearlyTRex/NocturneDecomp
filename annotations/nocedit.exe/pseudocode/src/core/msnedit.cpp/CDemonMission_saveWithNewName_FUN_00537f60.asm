@@ -40,10 +40,10 @@
 ;   core_msnedit.cpp_CDemonMission_saveMissionAndScript_FUN_0053d190
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fputc_FUN_006007a0
-;   engine_dosio.c_getFile_FUN_00481a50
-;   engine_dosio.c_getFileSize_FUN_00481880
-;   engine_dosio.c_makePath_FUN_00481f50
-;   engine_dosio.c_splitPath_FUN_00481f20
+;   engine_dosio.cpp_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFileSize_FUN_00481880
+;   engine_dosio.cpp_makePath_FUN_00481f50
+;   engine_dosio.cpp_splitPath_FUN_00481f20
 ;   shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
 ;   shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -67,8 +67,8 @@ section .text
     PUSH 0x0                            ; 00537f84
     LEA EDI,[EBP + 0x44]                ; 00537f86
     PUSH EDI                            ; 00537f89
-    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 00537f8a
-        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00481f20 ; 00537f8a
+        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 00537f8f
     PUSH 0x0                            ; 00537f92
     LEA EAX,[ESP + 0x20c]               ; 00537f94
@@ -76,8 +76,8 @@ section .text
     PUSH 0x0                            ; 00537f9c
     PUSH 0x0                            ; 00537f9e
     PUSH EBX                            ; 00537fa0
-    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 00537fa1
-        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00481f20 ; 00537fa1
+        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 00537fa6
     MOV ESI,EBX                         ; 00537fa9
     PUSH EDI                            ; 00537fab
@@ -114,8 +114,8 @@ section .text
     PUSH 0x0                            ; 00537ff2
     LEA EAX,[ESP + 0x114]               ; 00537ff4
     PUSH EAX                            ; 00537ffb
-    CALL engine_dosio.c_makePath_FUN_00481f50 ; 00537ffc
-        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_makePath_FUN_00481f50 ; 00537ffc
+        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 00538001
     PUSH 0x63bd76                       ; 00538004 | = "txt"
     LEA EAX,[ESP + 0x20c]               ; 00538009
@@ -124,8 +124,8 @@ section .text
     PUSH 0x0                            ; 00538013
     LEA EAX,[ESP + 0x10]                ; 00538015
     PUSH EAX                            ; 00538019
-    CALL engine_dosio.c_makePath_FUN_00481f50 ; 0053801a
-        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_makePath_FUN_00481f50 ; 0053801a
+        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 0053801f
     LEA EAX,[ESP + 0x104]               ; 00538022
     PUSH EAX                            ; 00538029
@@ -134,8 +134,8 @@ section .text
     PUSH ECX                            ; 00538033 | = "world"
     MOV dword ptr [ESP + 0x410],EAX     ; 00538034
     MOV dword ptr [ESP + 0x414],ECX     ; 0053803b | = "world"
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 00538042
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 00538042
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 00538047
     MOV EBX,EAX                         ; 0053804a
     TEST EAX,EAX                        ; 0053804c
@@ -145,8 +145,8 @@ section .text
     LEA EAX,[ESP + 0x108]               ; 00538059
     PUSH EAX                            ; 00538060
     PUSH 0x63bd7a                       ; 00538061 | = "world"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00538066
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00538066
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0053806b
     MOV ESI,EAX                         ; 0053806e
     TEST EAX,EAX                        ; 00538070
@@ -166,8 +166,8 @@ section .text
     PUSH EBP                            ; 005380a3
     MOV EDX,dword ptr [ESP + 0x414]     ; 005380a4 | = "world"
     PUSH EDX                            ; 005380ab | = "world"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 005380ac
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 005380ac
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 005380b1
     MOV EDI,EAX                         ; 005380b4
     TEST EAX,EAX                        ; 005380b6

@@ -19,14 +19,14 @@ void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter *this_
   char *pcVar4;
   char cVar1;
   
-  p_Var2 = engine_dosio_c_getFile_FUN_00481a50("art",filename,"rb");
+  p_Var2 = engine_dosio_cpp_getFile_FUN_00481a50("art",filename,"rb");
   if (p_Var2 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\dfilter.cpp";
     g_CurrentLineNumber = 0xab;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonFilter::load - Bad filename : %s",filename);
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\dfilter.cpp",0xad);
-  iVar3 = engine_dosio_c_getFileSize_FUN_00481880("art",filename);
+  iVar3 = engine_dosio_cpp_getFileSize_FUN_00481880("art",filename);
   this_ptr->size = (int)ROUND(ROUND(SQRT((float10)iVar3)));
   this_ptr->count = iVar3 / this_ptr->size;
   if (this_ptr->size != this_ptr->count) {
@@ -48,7 +48,7 @@ void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter *this_
               ("CDemonFilter::load - Bad filter size %d",this_ptr->count);
   }
   core_dfilter_cpp_CDemonFilter_allocMemory_FUN_00470260(this_ptr);
-  file = engine_dosio_c_getFile_FUN_00481a50("art",filename,"rb");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("art",filename,"rb");
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\dfilter.cpp";
     g_CurrentLineNumber = 0xc6;

@@ -65,7 +65,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3
   }
   g_VersionControlSession.overwrite_own_choice = 0;
   g_VersionControlSession.overwrite_writeable_choice = 0;
-  uVar3 = engine_dosio_c_getFileSizeWithFinder_FUN_00481960((char *)0x0,filename);
+  uVar3 = engine_dosio_cpp_getFileSizeWithFinder_FUN_00481960((char *)0x0,filename);
   if (((int)uVar3 < 0) || ((uVar3 & 8) != 0)) {
     iVar3 = 1;
   }
@@ -92,8 +92,8 @@ LAB_004b39fc:
     g_CurrentLineNumber = 0xdd;
     core_main_c_displayErrorAndQuit_FUN_00506f10("versionControlDirectory not set!");
   }
-  engine_dosio_c_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_14,local_124);
-  engine_dosio_c_makePath_FUN_00481f50(local_228,local_14,local_124,(char *)0x0,(char *)0x0);
+  engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_14,local_124);
+  engine_dosio_cpp_makePath_FUN_00481f50(local_228,local_14,local_124,(char *)0x0,(char *)0x0);
   strcat(local_228,"checkout.txt");
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Marking %s as checked out...",filename);
@@ -181,7 +181,7 @@ LAB_004b3ae9:
             }
             shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                       (g_CEditorToolsPtr,"Clearing read-only bit for %s...",local_228);
-            uVar6 = engine_dosio_c_getFileSizeWithFinder_FUN_00481960((char *)0x0,filename);
+            uVar6 = engine_dosio_cpp_getFileSizeWithFinder_FUN_00481960((char *)0x0,filename);
             if (((int)uVar6 < 0) || ((uVar6 & 8) == 0)) {
 LAB_004b3f0c:
               if (-1 < (int)uVar6) {
@@ -190,7 +190,7 @@ LAB_004b3f0c:
               }
             }
             else {
-              iVar3 = engine_dosio_c_setFileAttributes_FUN_004819f0(filename,(byte)uVar6 & 0xf7);
+              iVar3 = engine_dosio_cpp_setFileAttributes_FUN_004819f0(filename,(byte)uVar6 & 0xf7);
               if (iVar3 != 0) goto LAB_004b3f0c;
             }
             pcVar11 = "Error turning off read-only bit for %s";

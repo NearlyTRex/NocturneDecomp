@@ -8,8 +8,8 @@
 ; _stat *          Stack[0x8]:4   file_info
 ;
 ; XREF[2]:
-;   engine_dosio.c_copyFileTimestamp_FUN_00481910 at 00481927
-;   engine_dosio.c_findFileNormally_FUN_004817c0 at 00481800
+;   engine_dosio.cpp_copyFileTimestamp_FUN_00481910 at 00481927
+;   engine_dosio.cpp_findFileNormally_FUN_004817c0 at 00481800
 ;
 ; *****************************************************************************
 

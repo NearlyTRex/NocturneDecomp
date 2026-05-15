@@ -24,7 +24,7 @@ void __cdecl core_setedit_cpp_addGroundType_FUN_00578290(char *filename,int grou
   
   bVar7 = 0;
   iVar4 = 0;
-  engine_dosio_c_splitPath_FUN_00481f20(filename,(char *)0x0,(char *)0x0,local_20c,(char *)0x0);
+  engine_dosio_cpp_splitPath_FUN_00481f20(filename,(char *)0x0,(char *)0x0,local_20c,(char *)0x0);
   if (0 < g_GroundTextureCount) {
     str1 = g_GroundTextureNames;
     do {
@@ -47,7 +47,7 @@ void __cdecl core_setedit_cpp_addGroundType_FUN_00578290(char *filename,int grou
       str1 = str1 + 1;
     } while (iVar4 < g_GroundTextureCount);
   }
-  engine_dosio_c_splitPath_FUN_00481f20(filename,(char *)0x0,(char *)0x0,local_10c,(char *)0x0);
+  engine_dosio_cpp_splitPath_FUN_00481f20(filename,(char *)0x0,(char *)0x0,local_10c,(char *)0x0);
   if (499 < g_GroundTextureCount) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
     g_CurrentLineNumber = 0x2ab;

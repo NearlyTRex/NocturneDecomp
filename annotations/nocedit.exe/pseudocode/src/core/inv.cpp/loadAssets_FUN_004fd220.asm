@@ -32,7 +32,7 @@
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0
 ;   engine_alphabit.cpp_CAlphaBitmap_scale_FUN_00410c20
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;
 ; *****************************************************************************
@@ -47,8 +47,8 @@ section .text
     MOV EAX,[0x00679398]                ; 004fd22c | g_WindowHeight
     PUSH 0x6303f1                       ; 004fd231 | = "data"
     MOV [0x02dcd790],EAX                ; 004fd236 | g_InventoryScreenHeight
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004fd23b
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004fd23b
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 004fd240
     ADD ESP,0xc                         ; 004fd242
     TEST EAX,EAX                        ; 004fd245
@@ -238,8 +238,8 @@ section .text
     XOR EBX,EBX                         ; 004fd477
     PUSH 0x6304c1                       ; 004fd479 | s_EmptyChar_006304c1
     MOV dword ptr [0x02dbaac0],EBX      ; 004fd47e | g_ItemDefinitionCount
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004fd484
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004fd484
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004fd489
     MOV EBX,EAX                         ; 004fd48c
     TEST EAX,EAX                        ; 004fd48e

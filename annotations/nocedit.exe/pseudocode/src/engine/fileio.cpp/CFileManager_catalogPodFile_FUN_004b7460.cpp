@@ -66,7 +66,7 @@ void __cdecl engine_fileio_cpp_CFileManager_catalogPodFile_FUN_004b7460(CFileMan
       time_ptr = _localtime
                            ((time_t *)((int)&(local_d00.directory_entries)->timestamp + iVar4));
       _strftime(local_2c,0x1e,"%m/%d/%y %I:%M:%S %p",time_ptr);
-      engine_dosio_c_splitPath_FUN_00481f20
+      engine_dosio_cpp_splitPath_FUN_00481f20
                 (*(char **)((int)&(local_d00.directory_entries)->name + iVar4),(char *)0x0,local_22c
                  ,local_12c,&local_32c);
       if (local_32c == '.') {

@@ -11,7 +11,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_save_FUN_00495040(CDemonRaytrace *th
 {
   _FILE *file_handle;
   
-  file_handle = engine_dosio_c_getFile_FUN_00481a50("data",filename,"wb");
+  file_handle = engine_dosio_cpp_getFile_FUN_00481a50("data",filename,"wb");
   if (file_handle == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\dtrace.cpp";
     g_CurrentLineNumber = 0x25f;

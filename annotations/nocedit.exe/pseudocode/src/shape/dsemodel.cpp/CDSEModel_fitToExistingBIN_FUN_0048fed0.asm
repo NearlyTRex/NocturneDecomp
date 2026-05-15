@@ -32,7 +32,7 @@
 ;   double g_ModelScalingNormalizationFactor = 0.00390625
 ;
 ; Called Functions:
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   engine_model.c_freeMRGLData_FUN_005280b0
 ;   engine_model.c_getMRGLBounds_FUN_00528140
 ;   engine_model.c_loadModelFile_FUN_00527ec0
@@ -59,8 +59,8 @@ section .text
     PUSH EAX                            ; 0048fee5
     MOV EAX,0x62250d                    ; 0048fee6 | = "models"
     PUSH EAX                            ; 0048feeb | = "models"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0048feec
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0048feec
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0048fef1
     MOV dword ptr [EBP + -0x14],EAX     ; 0048fef4
     CMP dword ptr [EBP + -0x14],0x0     ; 0048fef7

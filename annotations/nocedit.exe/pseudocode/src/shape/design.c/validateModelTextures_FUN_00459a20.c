@@ -79,7 +79,7 @@ LAB_00459b17:
           } while (cVar2 != '\0');
         }
       }
-      uVar4 = engine_dosio_c_getFileSize_FUN_00481880(directory_path,local_84);
+      uVar4 = engine_dosio_cpp_getFileSize_FUN_00481880(directory_path,local_84);
       bVar3 = false;
       if (mode == 0) {
         if (uVar4 < 0x4000) {

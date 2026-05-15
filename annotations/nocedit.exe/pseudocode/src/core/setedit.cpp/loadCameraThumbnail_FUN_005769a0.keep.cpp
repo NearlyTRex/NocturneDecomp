@@ -37,23 +37,23 @@ void __cdecl core_setedit_cpp_loadCameraThumbnail_FUN_005769a0(char *prefix,char
   }
   _sprintf(local_5c,"%s%s.raw",prefix,name);
   _sprintf(local_4c,"%s%s.act",prefix,name);
-  local_3c = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_5c,"rb");
+  local_3c = engine_dosio_cpp_getFile_FUN_00481a50("backdrop",local_5c,"rb");
   if (local_3c == (_FILE *)0x0) {
-    local_3c = engine_dosio_c_getFile_FUN_00481a50("art",local_5c,"rb");
+    local_3c = engine_dosio_cpp_getFile_FUN_00481a50("art",local_5c,"rb");
     if (local_3c == (_FILE *)0x0) {
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&g_MissingBackdropFiles.base,local_5c);
       goto LAB_00576a3d;
     }
-    uVar3 = engine_dosio_c_getFileSize_FUN_00481880("art",local_5c);
+    uVar3 = engine_dosio_cpp_getFileSize_FUN_00481880("art",local_5c);
     mode = "rb";
     directory = "art";
   }
   else {
-    uVar3 = engine_dosio_c_getFileSize_FUN_00481880("backdrop",local_5c);
+    uVar3 = engine_dosio_cpp_getFileSize_FUN_00481880("backdrop",local_5c);
     mode = "rb";
     directory = "backdrop";
   }
-  file = engine_dosio_c_getFile_FUN_00481a50(directory,local_4c,mode);
+  file = engine_dosio_cpp_getFile_FUN_00481a50(directory,local_4c,mode);
   if (file == (_FILE *)0x0) {
     g_CurrentLineNumber = 0xfd;
     g_CurrentFilename = "..\\core\\setedit.cpp";

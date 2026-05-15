@@ -11,7 +11,7 @@ void __cdecl engine_fileio_cpp_writeArtFileEntries_FUN_004bc9f0(char *filename,_
 {
   char local_104 [256];
   
-  engine_dosio_c_splitPath_FUN_00481f20
+  engine_dosio_cpp_splitPath_FUN_00481f20
             ((char *)raw_file,(char *)0x0,(char *)0x0,local_104,(char *)0x0);
   _fprintf(*(_FILE **)filename,"ART\\%s.RAW\n",local_104);
   _fprintf(*(_FILE **)filename,"ART\\%s.ACT\n",local_104);

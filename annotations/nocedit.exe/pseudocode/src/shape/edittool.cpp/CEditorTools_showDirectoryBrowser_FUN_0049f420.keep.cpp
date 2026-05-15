@@ -59,10 +59,10 @@ int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CE
   }
   memcpy(local_12c8,g_BrowserLastSelectedFile,0x104);
   if ((flags & 1) != 0) {
-    engine_dosio_c_splitPath_FUN_00481f20(initial_path,local_c,local_bc4,local_ec4,local_3c4);
-    engine_dosio_c_makePath_FUN_00481f50(local_13cc,local_c,local_bc4,(char *)0x0,(char *)0x0);
+    engine_dosio_cpp_splitPath_FUN_00481f20(initial_path,local_c,local_bc4,local_ec4,local_3c4);
+    engine_dosio_cpp_makePath_FUN_00481f50(local_13cc,local_c,local_bc4,(char *)0x0,(char *)0x0);
     chdir(local_13cc);
-    engine_dosio_c_makePath_FUN_00481f50(local_12c8,(char *)0x0,(char *)0x0,local_ec4,local_3c4);
+    engine_dosio_cpp_makePath_FUN_00481f50(local_12c8,(char *)0x0,(char *)0x0,local_ec4,local_3c4);
     chdir(local_12c8);
   }
   local_14 = 0;
@@ -72,14 +72,14 @@ LAB_0049f47a:
     _getcwd(local_17dc,0x104);
     _sprintf(local_1b20,"%s\n%s",title_text,local_17dc);
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1ec8);
-    engine_dosio_c_CFileFinder_ctor_FUN_00481c30(&local_18f0);
+    engine_dosio_cpp_CFileFinder_ctor_FUN_00481c30(&local_18f0);
     if (search_pattern == (char *)0x0) {
       search_pattern = "*.*";
     }
-    engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(&local_18f0,search_pattern);
+    engine_dosio_cpp_CFileFinder_openSearch_FUN_00481c70(&local_18f0,search_pattern);
     while (local_18f0.filename[0] != '\0') {
       if (((byte)local_18f0.file_size & 4) == 0) {
-        engine_dosio_c_splitPath_FUN_00481f20
+        engine_dosio_cpp_splitPath_FUN_00481f20
                   (local_18f0.filename,(char *)0x0,(char *)0x0,local_dc4,&local_4c4);
         if (local_4c4 == '.') {
           memmove(&local_4c4,local_4c3,strlen(&local_4c4));
@@ -90,7 +90,7 @@ LAB_0049f47a:
         strupr(local_fc);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1ec8.base,local_fc);
       }
-      engine_dosio_c_CFileFinder_findNext_FUN_00481cf0(&local_18f0);
+      engine_dosio_cpp_CFileFinder_findNext_FUN_00481cf0(&local_18f0);
     }
     shape_edittool_cpp_CStrList_sortAll_FUN_004a2ec0(&local_1ec8.base);
     iVar6 = local_1ec8.base.item_count;
@@ -101,7 +101,7 @@ LAB_0049f47a:
         do {
           shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_1ec8.base,local_9c4,iVar8,0);
           shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_1ec8.base,local_5c4,iVar8,1);
-          engine_dosio_c_makePath_FUN_00481f50
+          engine_dosio_cpp_makePath_FUN_00481f50
                     (local_15d4,(char *)0x0,(char *)0x0,local_9c4,local_5c4);
           iVar3 = _stricmp(local_15d4,local_12c8);
           if (iVar3 == 0) break;
@@ -113,7 +113,7 @@ LAB_0049f47a:
       }
       local_12c8[0] = '\0';
     }
-    engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(&local_18f0,"*.*");
+    engine_dosio_cpp_CFileFinder_openSearch_FUN_00481c70(&local_18f0,"*.*");
     while (local_18f0.filename[0] != '\0') {
       if (((byte)local_18f0.file_size & 4) != 0) {
         iVar5 = _strcmp(local_18f0.filename,"..");
@@ -123,7 +123,7 @@ LAB_0049f47a:
         else {
           iVar5 = _strcmp(local_18f0.filename,".");
           if (iVar5 == 0) goto LAB_0049f64e;
-          engine_dosio_c_splitPath_FUN_00481f20
+          engine_dosio_cpp_splitPath_FUN_00481f20
                     (local_18f0.filename,(char *)0x0,(char *)0x0,local_ac4,&local_6c4);
           if (local_6c4 == '.') {
             memmove(&local_6c4,local_6c3,strlen(&local_6c4));
@@ -135,7 +135,7 @@ LAB_0049f47a:
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1ec8.base,pcVar7);
       }
 LAB_0049f64e:
-      engine_dosio_c_CFileFinder_findNext_FUN_00481cf0(&local_18f0);
+      engine_dosio_cpp_CFileFinder_findNext_FUN_00481cf0(&local_18f0);
     }
     shape_edittool_cpp_CPickList_sort_FUN_004a57f0
               (&local_1ec8,iVar6,local_1ec8.base.item_count + -1);
@@ -152,28 +152,28 @@ LAB_0049f64e:
                   (this_ptr,"Can't change to %s",local_16d8);
         chdir(local_17dc);
       }
-      engine_dosio_c_CFileFinder_dtor_FUN_00481c50(&local_18f0,0);
+      engine_dosio_cpp_CFileFinder_dtor_FUN_00481c50(&local_18f0,0);
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1ec8,0);
       goto LAB_0049f47a;
     }
     if (iVar8 < iVar6) {
-      engine_dosio_c_splitPath_FUN_00481f20(local_17dc,local_10,local_7c4,local_cc4,local_2c4);
-      engine_dosio_c_makePath_FUN_00481f50(local_8c4,(char *)0x0,local_7c4,local_cc4,local_2c4);
+      engine_dosio_cpp_splitPath_FUN_00481f20(local_17dc,local_10,local_7c4,local_cc4,local_2c4);
+      engine_dosio_cpp_makePath_FUN_00481f50(local_8c4,(char *)0x0,local_7c4,local_cc4,local_2c4);
       shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_1ec8.base,local_cc4,iVar8,0);
       shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_1ec8.base,local_2c4,iVar8,1);
-      engine_dosio_c_makePath_FUN_00481f50(initial_path,local_10,local_8c4,local_cc4,local_2c4);
+      engine_dosio_cpp_makePath_FUN_00481f50(initial_path,local_10,local_8c4,local_cc4,local_2c4);
       local_14 = 1;
 LAB_0049f983:
-      engine_dosio_c_CFileFinder_dtor_FUN_00481c50(&local_18f0,0);
+      engine_dosio_cpp_CFileFinder_dtor_FUN_00481c50(&local_18f0,0);
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1ec8,0);
       chdir(local_14d0);
       return local_14;
     }
     shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_1ec8.base,local_10c4,iVar8,0);
     shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_1ec8.base,local_11c4,iVar8,1);
-    engine_dosio_c_makePath_FUN_00481f50(local_fc4,(char *)0x0,(char *)0x0,local_10c4,local_11c4);
+    engine_dosio_cpp_makePath_FUN_00481f50(local_fc4,(char *)0x0,(char *)0x0,local_10c4,local_11c4);
     chdir(local_fc4);
-    engine_dosio_c_CFileFinder_dtor_FUN_00481c50(&local_18f0,0);
+    engine_dosio_cpp_CFileFinder_dtor_FUN_00481c50(&local_18f0,0);
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1ec8,0);
   } while( true );
 }

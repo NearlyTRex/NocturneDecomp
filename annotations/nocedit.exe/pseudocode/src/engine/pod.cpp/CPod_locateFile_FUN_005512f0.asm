@@ -20,7 +20,7 @@
 ;   core_skeledit.cpp_warnIfFileExistsInPod_FUN_00589f40 at 00589f5f
 ;
 ; Called Functions:
-;   engine_dosio.c_getRelativeFilePath_FUN_004816c0
+;   engine_dosio.cpp_getRelativeFilePath_FUN_004816c0
 ;   engine_pod.cpp_CPodFile_findFileIndex_FUN_00550140
 ;
 ; *****************************************************************************
@@ -41,8 +41,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00551311
     PUSH EAX                            ; 00551315
     XOR EBX,EBX                         ; 00551316
-    CALL engine_dosio.c_getRelativeFilePath_FUN_004816c0 ; 00551318
-        ;   XREF to: 004816c0 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_getRelativeFilePath_FUN_004816c0(char * dest_path, char * directory, char * filename)
+    CALL engine_dosio.cpp_getRelativeFilePath_FUN_004816c0 ; 00551318
+        ;   XREF to: 004816c0 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_getRelativeFilePath_FUN_004816c0(char * dest_path, char * directory, char * filename)
     MOV ESI,dword ptr [EDI]             ; 0055131d
     ADD ESP,0xc                         ; 0055131f
     TEST ESI,ESI                        ; 00551322

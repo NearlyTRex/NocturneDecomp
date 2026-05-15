@@ -24,8 +24,8 @@ int __cdecl engine_fileio_cpp_CCheckOutList_load_FUN_004b2890(CCheckOutList *thi
   if (g_VersionControlDirectory[0] == '\0') {
     return 1;
   }
-  engine_dosio_c_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_14,local_118);
-  engine_dosio_c_makePath_FUN_00481f50(local_21c,local_14,local_118,(char *)0x0,(char *)0x0);
+  engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_14,local_118);
+  engine_dosio_cpp_makePath_FUN_00481f50(local_21c,local_14,local_118,(char *)0x0,(char *)0x0);
   strcat(local_21c,"checkout.txt");
   iVar4 = 0;
   do {

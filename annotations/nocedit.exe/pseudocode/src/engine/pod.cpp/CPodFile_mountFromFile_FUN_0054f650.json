@@ -7,17 +7,17 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 834,
-    "complexity_score": 392,
+    "complexity_score": 393,
     "cross_reference_count": 15,
     "function_call_count": 14,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 367,
+    "pseudocode_lines": 368,
     "suspect_count": 2,
     "suspect_types": [
       "unrolled_memcpy"
     ],
-    "total_lines": 1201
+    "total_lines": 1202
   },
   "cross_references": [
     {
@@ -157,17 +157,17 @@
     {
       "addr": "004817c0",
       "is_variadic": false,
-      "name": "engine_dosio.c_findFileNormally_FUN_004817c0"
+      "name": "engine_dosio.cpp_findFileNormally_FUN_004817c0"
     },
     {
       "addr": "004816c0",
       "is_variadic": false,
-      "name": "engine_dosio.c_getRelativeFilePath_FUN_004816c0"
+      "name": "engine_dosio.cpp_getRelativeFilePath_FUN_004816c0"
     },
     {
       "addr": "00481f20",
       "is_variadic": false,
-      "name": "engine_dosio.c_splitPath_FUN_00481f20"
+      "name": "engine_dosio.cpp_splitPath_FUN_00481f20"
     },
     {
       "addr": "00550090",
@@ -518,7 +518,7 @@
   "resolved_suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 112,
+      "line": 113,
       "match": "(SEpdDirEntry *)((int)pSVar11",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -527,17 +527,8 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 155,
+      "line": 156,
       "match": "._1_1_",
-      "resolution_source": "keep",
-      "severity": "mild",
-      "text": "if (((((char)local_30 == 'P') && (local_30._1_1_ == 'O')) && (local_30._2_1_ == 'D')) &&",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 155,
-      "match": "._2_1_",
       "resolution_source": "keep",
       "severity": "mild",
       "text": "if (((((char)local_30 == 'P') && (local_30._1_1_ == 'O')) && (local_30._2_1_ == 'D')) &&",
@@ -546,6 +537,15 @@
     {
       "description": "Unknown/mangled field access",
       "line": 156,
+      "match": "._2_1_",
+      "resolution_source": "keep",
+      "severity": "mild",
+      "text": "if (((((char)local_30 == 'P') && (local_30._1_1_ == 'O')) && (local_30._2_1_ == 'D')) &&",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 157,
       "match": "._3_1_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -554,7 +554,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 229,
+      "line": 230,
       "match": "._1_1_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -563,7 +563,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 230,
+      "line": 231,
       "match": "._2_1_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -572,7 +572,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 230,
+      "line": 231,
       "match": "._3_1_",
       "resolution_source": "keep",
       "severity": "mild",
@@ -581,7 +581,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 302,
+      "line": 303,
       "match": "(SPod1DirEntry *)((int)pSVar12",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -599,7 +599,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 78,
+      "line": 79,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -608,7 +608,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 129,
+      "line": 130,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -617,7 +617,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 161,
+      "line": 162,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -626,7 +626,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 172,
+      "line": 173,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -635,7 +635,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 183,
+      "line": 184,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -644,7 +644,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 235,
+      "line": 236,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -653,7 +653,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 275,
+      "line": 276,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -662,7 +662,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 319,
+      "line": 320,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -671,7 +671,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 105,
+      "line": 106,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -680,7 +680,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 128,
+      "line": 129,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -689,7 +689,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 138,
+      "line": 139,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -698,7 +698,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 139,
+      "line": 140,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -707,7 +707,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 140,
+      "line": 141,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -716,7 +716,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 142,
+      "line": 143,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -725,7 +725,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 295,
+      "line": 296,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -734,7 +734,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 318,
+      "line": 319,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -743,7 +743,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 328,
+      "line": 329,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -752,7 +752,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 329,
+      "line": 330,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -761,7 +761,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 330,
+      "line": 331,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -770,7 +770,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 332,
+      "line": 333,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -779,7 +779,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 359,
+      "line": 360,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -932,7 +932,7 @@
   "suspects": [
     {
       "description": "Watcom field-by-field struct copy (4 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 192,
+      "line": 193,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "this_ptr->file_count = local_490.file_count;",

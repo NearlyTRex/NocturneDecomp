@@ -40,8 +40,8 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030(CChe
     engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_1c);
     return 0;
   }
-  engine_dosio_c_ensureTrailingSlash_FUN_00481f80(this_ptr->name,local_14,local_11c);
-  engine_dosio_c_makePath_FUN_00481f50(local_220,local_14,local_11c,(char *)0x0,(char *)0x0);
+  engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(this_ptr->name,local_14,local_11c);
+  engine_dosio_cpp_makePath_FUN_00481f50(local_220,local_14,local_11c,(char *)0x0,(char *)0x0);
   iVar4 = -1;
   pcVar6 = local_220;
   do {
@@ -64,8 +64,8 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030(CChe
   } while (cVar2 != '\0');
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_86c);
   shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10(&local_86c,1);
-  engine_dosio_c_CFileFinder_ctor_FUN_00481c30(&local_334);
-  engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(&local_334,local_220);
+  engine_dosio_cpp_CFileFinder_ctor_FUN_00481c30(&local_334);
+  engine_dosio_cpp_CFileFinder_openSearch_FUN_00481c70(&local_334,local_220);
   while (local_334.filename[0] != '\0') {
     iVar4 = _sprintf(local_4c4,"%s\t",&local_334);
     iVar3 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(&local_1c,local_334.filename);
@@ -73,15 +73,15 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030(CChe
       _sprintf(local_4c4 + iVar4,"Checked out by %s",local_1c.items[iVar3].value);
     }
     shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_86c.base,local_4c4);
-    engine_dosio_c_CFileFinder_findNext_FUN_00481cf0(&local_334);
+    engine_dosio_cpp_CFileFinder_findNext_FUN_00481cf0(&local_334);
   }
   pcVar5 = (char *)0x0;
-  engine_dosio_c_CFileFinder_closeSearch_FUN_00481d70(&local_334);
+  engine_dosio_cpp_CFileFinder_closeSearch_FUN_00481d70(&local_334);
   while( true ) {
     pcVar5 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                (&local_86c,"Select file to check out",(int)pcVar5,0);
     if ((int)pcVar5 < 0) {
-      engine_dosio_c_CFileFinder_dtor_FUN_00481c50(&local_334,0);
+      engine_dosio_cpp_CFileFinder_dtor_FUN_00481c50(&local_334,0);
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_86c,0);
       engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_1c);
       return 0;
@@ -103,7 +103,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030(CChe
                 (g_CEditorToolsPtr,"%s is currently checked out by %s",pCVar4,pCVar4->value);
     }
   }
-  engine_dosio_c_CFileFinder_dtor_FUN_00481c50(&local_334,0);
+  engine_dosio_cpp_CFileFinder_dtor_FUN_00481c50(&local_334,0);
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_86c,0);
   engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_1c);
   return 1;

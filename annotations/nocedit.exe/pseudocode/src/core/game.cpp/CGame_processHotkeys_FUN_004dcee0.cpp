@@ -136,7 +136,7 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
     }
     if ((this_ptr->subtitle_system_enabled == 0) &&
        (iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_F9), iVar4 != 0)) {
-      file_ptr = engine_dosio_c_getFile_FUN_00481a50
+      file_ptr = engine_dosio_cpp_getFile_FUN_00481a50
                            ("save","quicksavedgame.noc","rb");
       if (file_ptr == (_FILE *)0x0) {
         fVar8 = 2.0;

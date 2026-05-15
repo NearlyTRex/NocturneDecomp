@@ -38,7 +38,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c_fread_FUN_005fd990
 ;   crt_stdio.c_fseek_FUN_005ffacc
-;   engine_dosio.c_getFileSize_FUN_00481880
+;   engine_dosio.cpp_getFileSize_FUN_00481880
 ;   engine_pod.cpp_CPodFile_computeFileCRC_FUN_005507f0
 ;   engine_pod.cpp_crc32UpdateByte_FUN_0054f2e0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -124,8 +124,8 @@ section .text
     ADD ESP,0xc                         ; 005502e6
     PUSH EDI                            ; 005502e9
     PUSH 0x64015e                       ; 005502ea | s_EmptyChar_0064015e
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 005502ef
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 005502ef
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 005502f4
     PUSH 0xf2                           ; 005502f7
     PUSH 0x64015f                       ; 005502fc | = "..\\engine\\pod.cpp"

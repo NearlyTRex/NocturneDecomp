@@ -572,8 +572,8 @@ section .text
     PUSH 0x0                            ; 0057ecb5
     MOV ESI,dword ptr [ESP + 0x4724]    ; 0057ecb7
     PUSH ESI                            ; 0057ecbe
-    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 0057ecbf
-        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00481f20 ; 0057ecbf
+        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 0057ecc4
     LEA EDI,[ESP + 0x42cc]              ; 0057ecc7
     MOV ESI,0x6481cc                    ; 0057ecce | = ".set"
@@ -1057,8 +1057,8 @@ section .text
     LEA EAX,[ESP + 0x3dd0]              ; 0057f269
     PUSH EAX                            ; 0057f270
     PUSH 0x648245                       ; 0057f271 | = "models"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057f276
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0057f276
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057f27b
     MOV ESI,EAX                         ; 0057f27e
     TEST EAX,EAX                        ; 0057f280
@@ -1337,8 +1337,8 @@ section .text
     LEA EAX,[ESP + 0x44d0]              ; 0057f603
     PUSH EAX                            ; 0057f60a
     PUSH 0x648332                       ; 0057f60b | = "models"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057f610
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0057f610
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057f615
     MOV dword ptr [ESP + 0x4730],EAX    ; 0057f618
     TEST EAX,EAX                        ; 0057f61f
@@ -1528,8 +1528,8 @@ section .text
     LEA EAX,[ESP + 0x40d0]              ; 0057f8b5
     PUSH EAX                            ; 0057f8bc
     PUSH 0x6483a8                       ; 0057f8bd | = "backdrop"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057f8c2
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0057f8c2
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057f8c7
     PUSH ESI                            ; 0057f8ca
     PUSH 0x6483b1                       ; 0057f8cb | = "%s.raw"
@@ -1544,8 +1544,8 @@ section .text
     PUSH EAX                            ; 0057f8f3
     PUSH 0x6483bb                       ; 0057f8f4 | = "backdrop"
     XOR ESI,ESI                         ; 0057f8f9
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057f8fb
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0057f8fb
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057f900
     MOV EDI,EAX                         ; 0057f903
     PUSH EDI                            ; 0057f905
@@ -1589,8 +1589,8 @@ section .text
     LEA EAX,[ESP + 0x40d0]              ; 0057f97d
     PUSH EAX                            ; 0057f984
     PUSH 0x6483f6                       ; 0057f985 | = "backdrop"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057f98a
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0057f98a
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057f98f
     ADD EBX,dword ptr [ESP + 0x4744]    ; 0057f992
     PUSH EBX                            ; 0057f999
@@ -1606,8 +1606,8 @@ section .text
     PUSH EAX                            ; 0057f9c2
     PUSH 0x648409                       ; 0057f9c3 | = "backdrop"
     XOR EBX,EBX                         ; 0057f9c8
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057f9ca
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0057f9ca
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057f9cf
     MOV EDI,EAX                         ; 0057f9d2
     MOV ESI,dword ptr [ESP + 0x4740]    ; 0057f9d4
@@ -1730,8 +1730,8 @@ section .text
     LEA EAX,[ESP + 0x3ed0]              ; 0057fb44
     PUSH EAX                            ; 0057fb4b
     PUSH 0x64847f                       ; 0057fb4c | = "backdrop"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057fb51
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0057fb51
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057fb56
     PUSH 0x648488                       ; 0057fb59 | = "wb"
     MOV EDI,EAX                         ; 0057fb5e
@@ -1739,8 +1739,8 @@ section .text
     PUSH EAX                            ; 0057fb67
     PUSH 0x64848b                       ; 0057fb68 | = "backdrop"
     XOR EBX,EBX                         ; 0057fb6d
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057fb6f
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0057fb6f
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057fb74
     MOV ESI,EAX                         ; 0057fb77
     PUSH ESI                            ; 0057fb79
@@ -1792,8 +1792,8 @@ section .text
     LEA EAX,[ESP + 0x3ed0]              ; 0057fc03
     PUSH EAX                            ; 0057fc0a
     PUSH 0x6484cf                       ; 0057fc0b | = "backdrop"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057fc10
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0057fc10
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057fc15
     PUSH 0x6484d8                       ; 0057fc18 | = "wb"
     MOV EDI,EAX                         ; 0057fc1d
@@ -1801,8 +1801,8 @@ section .text
     PUSH EAX                            ; 0057fc26
     PUSH 0x6484db                       ; 0057fc27 | = "backdrop"
     XOR EBX,EBX                         ; 0057fc2c
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057fc2e
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0057fc2e
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057fc33
     MOV ESI,EAX                         ; 0057fc36
     PUSH ESI                            ; 0057fc38

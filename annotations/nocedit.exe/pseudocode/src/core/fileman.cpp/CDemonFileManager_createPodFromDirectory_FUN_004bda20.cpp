@@ -199,7 +199,7 @@ LAB_004bdb2c:
                 pcVar8[1] = cVar2;
                 pcVar8 = pcVar8 + 2;
               } while (cVar2 != '\0');
-              iVar3 = engine_dosio_c_getFileSize_FUN_00481880("world",local_dc);
+              iVar3 = engine_dosio_cpp_getFileSize_FUN_00481880("world",local_dc);
               if (0 < iVar3) {
                 _fprintf((this_ptr->base).file_ptr,"WORLD\\%s\n",local_dc);
               }
@@ -226,7 +226,7 @@ LAB_004bdb2c:
                 pcVar10[1] = cVar2;
                 pcVar10 = pcVar10 + 2;
               } while (cVar2 != '\0');
-              iVar3 = engine_dosio_c_getFileSize_FUN_00481880("world",local_78);
+              iVar3 = engine_dosio_cpp_getFileSize_FUN_00481880("world",local_78);
               if (0 < iVar3) {
                 _fprintf((this_ptr->base).file_ptr,"WORLD\\%s\n",local_78);
               }

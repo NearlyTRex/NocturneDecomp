@@ -12,8 +12,8 @@
 ; char[4]          Stack[-0xc]:4  local_c
 ;
 ; Called Functions:
-;   engine_dosio.c_ensureTrailingSlash_FUN_00481f80
-;   engine_dosio.c_makePath_FUN_00481f50
+;   engine_dosio.cpp_ensureTrailingSlash_FUN_00481f80
+;   engine_dosio.cpp_makePath_FUN_00481f50
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     PUSH EAX                            ; 004b1df9
     MOV EDX,dword ptr [ESP + 0x118]     ; 004b1dfa
     PUSH EDX                            ; 004b1e01
-    CALL engine_dosio.c_ensureTrailingSlash_FUN_00481f80 ; 004b1e02
-        ;   XREF to: 00481f80 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_ensureTrailingSlash_FUN_00481f80(char * input_path, char * drive, char * output_path)
+    CALL engine_dosio.cpp_ensureTrailingSlash_FUN_00481f80 ; 004b1e02
+        ;   XREF to: 00481f80 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_ensureTrailingSlash_FUN_00481f80(char * input_path, char * drive, char * output_path)
     ADD ESP,0xc                         ; 004b1e07
     PUSH 0x0                            ; 004b1e0a
     PUSH 0x0                            ; 004b1e0c
@@ -40,8 +40,8 @@ section .text
     LEA EAX,[ESP + 0x10c]               ; 004b1e13
     PUSH EAX                            ; 004b1e1a
     PUSH EDI                            ; 004b1e1b
-    CALL engine_dosio.c_makePath_FUN_00481f50 ; 004b1e1c
-        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_makePath_FUN_00481f50 ; 004b1e1c
+        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004b1e21
     MOV ESI,dword ptr [ESP + 0x114]     ; 004b1e24
     PUSH EDI                            ; 004b1e2b

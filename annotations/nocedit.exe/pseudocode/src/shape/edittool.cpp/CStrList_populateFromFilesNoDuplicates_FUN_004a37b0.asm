@@ -31,13 +31,13 @@
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;   crt_string.c_memmove_FUN_005fe5e0
-;   engine_dosio.c_CFileFinder_closeSearch_FUN_00481d70
-;   engine_dosio.c_CFileFinder_ctor_FUN_00481c30
-;   engine_dosio.c_CFileFinder_dtor_FUN_00481c50
-;   engine_dosio.c_CFileFinder_findNext_FUN_00481cf0
-;   engine_dosio.c_CFileFinder_openSearch_FUN_00481c70
-;   engine_dosio.c_makePath_FUN_00481f50
-;   engine_dosio.c_splitPath_FUN_00481f20
+;   engine_dosio.cpp_CFileFinder_closeSearch_FUN_00481d70
+;   engine_dosio.cpp_CFileFinder_ctor_FUN_00481c30
+;   engine_dosio.cpp_CFileFinder_dtor_FUN_00481c50
+;   engine_dosio.cpp_CFileFinder_findNext_FUN_00481cf0
+;   engine_dosio.cpp_CFileFinder_openSearch_FUN_00481c70
+;   engine_dosio.cpp_makePath_FUN_00481f50
+;   engine_dosio.cpp_splitPath_FUN_00481f20
 ;   engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0
 ;   engine_pod.cpp_CPod_initSearch_FUN_00550ea0
 ;   shape_edittool.cpp_CStrList_add_FUN_004a2b80
@@ -96,8 +96,8 @@ section .text
     PUSH 0x0                            ; 004a3835
     LEA EAX,[ESP + 0x10]                ; 004a3837
     PUSH EAX                            ; 004a383b
-    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 004a383c
-        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00481f20 ; 004a383c
+        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004a3841
     CMP byte ptr [ESP + 0x534],0x2e     ; 004a3844
     JNZ 0x004a3878                      ; 004a384c
@@ -126,8 +126,8 @@ section .text
     PUSH 0x0                            ; 004a388a
     LEA EAX,[ESP + 0x440]               ; 004a388c
     PUSH EAX                            ; 004a3893
-    CALL engine_dosio.c_makePath_FUN_00481f50 ; 004a3894
-        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_makePath_FUN_00481f50 ; 004a3894
+        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004a3899
     LEA EAX,[ESP + 0x430]               ; 004a389c
     PUSH EAX                            ; 004a38a3
@@ -153,15 +153,15 @@ section .text
         ;   Label: LAB_004a38d1
     PUSH EAX                            ; 004a38d8
     MOV ESI,dword ptr [EBP]             ; 004a38d9
-    CALL engine_dosio.c_CFileFinder_ctor_FUN_00481c30 ; 004a38dc
-        ;   XREF to: 00481c30 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.c_CFileFinder_ctor_FUN_00481c30(CFileFinder * this_ptr)
+    CALL engine_dosio.cpp_CFileFinder_ctor_FUN_00481c30 ; 004a38dc
+        ;   XREF to: 00481c30 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.cpp_CFileFinder_ctor_FUN_00481c30(CFileFinder * this_ptr)
     ADD ESP,0x4                         ; 004a38e1
     LEA EAX,[ESP + 0x734]               ; 004a38e4
     PUSH EAX                            ; 004a38eb
     LEA EAX,[ESP + 0x320]               ; 004a38ec
     PUSH EAX                            ; 004a38f3
-    CALL engine_dosio.c_CFileFinder_openSearch_FUN_00481c70 ; 004a38f4
-        ;   XREF to: 00481c70 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_CFileFinder_openSearch_FUN_00481c70(CFileFinder * this_ptr, char * search_pattern)
+    CALL engine_dosio.cpp_CFileFinder_openSearch_FUN_00481c70 ; 004a38f4
+        ;   XREF to: 00481c70 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_CFileFinder_openSearch_FUN_00481c70(CFileFinder * this_ptr, char * search_pattern)
     ADD ESP,0x8                         ; 004a38f9
     CMP byte ptr [ESP + 0x31c],0x0      ; 004a38fc
     JZ 0x004a394f                       ; 004a3904
@@ -190,8 +190,8 @@ section .text
     LEA EAX,[ESP + 0x31c]               ; 004a3935
         ;   Label: LAB_004a3935
     PUSH EAX                            ; 004a393c
-    CALL engine_dosio.c_CFileFinder_findNext_FUN_00481cf0 ; 004a393d
-        ;   XREF to: 00481cf0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_CFileFinder_findNext_FUN_00481cf0(CFileFinder * this_ptr)
+    CALL engine_dosio.cpp_CFileFinder_findNext_FUN_00481cf0 ; 004a393d
+        ;   XREF to: 00481cf0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_CFileFinder_findNext_FUN_00481cf0(CFileFinder * this_ptr)
     ADD ESP,0x4                         ; 004a3942
     CMP byte ptr [ESP + 0x31c],0x0      ; 004a3945
     JNZ 0x004a3906                      ; 004a394d
@@ -199,14 +199,14 @@ section .text
     LEA EAX,[ESP + 0x31c]               ; 004a394f
         ;   Label: LAB_004a394f
     PUSH EAX                            ; 004a3956
-    CALL engine_dosio.c_CFileFinder_closeSearch_FUN_00481d70 ; 004a3957
-        ;   XREF to: 00481d70 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_CFileFinder_closeSearch_FUN_00481d70(CFileFinder * this_ptr)
+    CALL engine_dosio.cpp_CFileFinder_closeSearch_FUN_00481d70 ; 004a3957
+        ;   XREF to: 00481d70 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_CFileFinder_closeSearch_FUN_00481d70(CFileFinder * this_ptr)
     ADD ESP,0x4                         ; 004a395c
     PUSH 0x0                            ; 004a395f
     LEA EAX,[ESP + 0x320]               ; 004a3961
     PUSH EAX                            ; 004a3968
-    CALL engine_dosio.c_CFileFinder_dtor_FUN_00481c50 ; 004a3969
-        ;   XREF to: 00481c50 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.c_CFileFinder_dtor_FUN_00481c50(CFileFinder * this_ptr, uint flags)
+    CALL engine_dosio.cpp_CFileFinder_dtor_FUN_00481c50 ; 004a3969
+        ;   XREF to: 00481c50 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.cpp_CFileFinder_dtor_FUN_00481c50(CFileFinder * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004a396e
     ADD ESP,0x834                       ; 004a3971
     POP EBP                             ; 004a3977

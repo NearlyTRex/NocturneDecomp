@@ -902,8 +902,8 @@ section .text
     XOR EDX,EDX                         ; 00579685
     PUSH 0x6816d8                       ; 00579687 | g_GroundTypesBuffer
     MOV dword ptr [0x03654368],EDX      ; 0057968c | g_GroundTextureCount
-    CALL engine_dosio.c_ensureTrailingSlash_FUN_00481f80 ; 00579692
-        ;   XREF to: 00481f80 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_ensureTrailingSlash_FUN_00481f80(char * input_path, char * drive, char * output_path)
+    CALL engine_dosio.cpp_ensureTrailingSlash_FUN_00481f80 ; 00579692
+        ;   XREF to: 00481f80 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_ensureTrailingSlash_FUN_00481f80(char * input_path, char * drive, char * output_path)
     ADD ESP,0xc                         ; 00579697
     PUSH 0x0                            ; 0057969a
     LEA EAX,[ESP + 0x20dc]              ; 0057969c
@@ -912,8 +912,8 @@ section .text
     PUSH 0x0                            ; 005796a6
     MOV ECX,dword ptr [ESP + 0x2460]    ; 005796a8
     PUSH ECX                            ; 005796af
-    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 005796b0
-        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00481f20 ; 005796b0
+        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 005796b5
     PUSH 0x646e7e                       ; 005796b8 | = ".txt"
     LEA EAX,[ESP + 0x20dc]              ; 005796bd
@@ -924,8 +924,8 @@ section .text
     PUSH EAX                            ; 005796d4
     LEA EAX,[ESP + 0x1de0]              ; 005796d5
     PUSH EAX                            ; 005796dc
-    CALL engine_dosio.c_makePath_FUN_00481f50 ; 005796dd
-        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_makePath_FUN_00481f50 ; 005796dd
+        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 005796e2
     LEA EAX,[ESP + 0x1dd0]              ; 005796e5
     PUSH EAX                            ; 005796ec
@@ -1024,8 +1024,8 @@ section .text
     LEA EAX,[ESP + 0x1ee4]              ; 005797ce
     PUSH EAX                            ; 005797d5
     XOR EBX,EBX                         ; 005797d6
-    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 005797d8
-        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00481f20 ; 005797d8
+        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
     MOV ESI,dword ptr [0x03654368]      ; 005797dd | g_GroundTextureCount
     ADD ESP,0x14                        ; 005797e3
     TEST ESI,ESI                        ; 005797e6
@@ -1192,8 +1192,8 @@ section .text
     PUSH 0x0                            ; 005799cf
     LEA EAX,[ESP + 0x1ee4]              ; 005799d1
     PUSH EAX                            ; 005799d8
-    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 005799d9
-        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00481f20 ; 005799d9
+        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 005799de
     PUSH 0x0                            ; 005799e1
     CALL core_ground.cpp_getGroundTypeName_FUN_004eed80 ; 005799e3

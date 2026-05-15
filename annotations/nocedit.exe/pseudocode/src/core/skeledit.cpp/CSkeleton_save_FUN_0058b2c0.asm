@@ -27,7 +27,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   engine_pod.cpp_CPod_locateFile_FUN_005512f0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;   shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
@@ -84,8 +84,8 @@ section .text
         ;   Label: LAB_0058b31f
     PUSH EBX                            ; 0058b324
     PUSH 0x64a5ef                       ; 0058b325 | = "data"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0058b32a
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0058b32a
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0058b32f
     MOV ESI,EAX                         ; 0058b332
     TEST EAX,EAX                        ; 0058b334

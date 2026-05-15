@@ -88,7 +88,7 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
   }
   _mkdir("save");
   local_14 = 0;
-  file = engine_dosio_c_getFile_FUN_00481a50("save",local_558,"wt");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("save",local_558,"wt");
   if (file == (_FILE *)0x0) {
     pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Warning!  Your game didn't save.")
     ;
@@ -136,7 +136,7 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\game.cpp",0xd50);
   g_IncludeCommentsWhenWriting = 0;
   if (local_14 != 0) {
-    local_18 = engine_dosio_c_getFileSize_FUN_00481880
+    local_18 = engine_dosio_cpp_getFileSize_FUN_00481880
                          (&s_EmptyChar_0062ca5b,"save\\$$SAVE$$.TMP");
     crt_fstream_cpp_ifstream_ctor_FUN_005ff8f0(local_14c,0);
     crt_fstream_cpp_ofstream_ctor_FUN_005ff95c(local_cc,0);

@@ -33,7 +33,7 @@
 ;   crt_stdio.c_fputc_FUN_006007a0
 ;   crt_stdio.c_fseek_FUN_005ffacc
 ;   crt_watcom.c__mkdir_FUN_00600e10
-;   engine_dosio.c_copyFileTimestamp_FUN_00481910
+;   engine_dosio.cpp_copyFileTimestamp_FUN_00481910
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
@@ -172,8 +172,8 @@ section .text
     PUSH EAX                            ; 004b7e70
     MOV EBX,dword ptr [EBP + 0x1c]      ; 004b7e71
     PUSH EBX                            ; 004b7e74
-    CALL engine_dosio.c_copyFileTimestamp_FUN_00481910 ; 004b7e75
-        ;   XREF to: 00481910 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_copyFileTimestamp_FUN_00481910(char * source_file, char * dest_file)
+    CALL engine_dosio.cpp_copyFileTimestamp_FUN_00481910 ; 004b7e75
+        ;   XREF to: 00481910 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_copyFileTimestamp_FUN_00481910(char * source_file, char * dest_file)
     ADD ESP,0x8                         ; 004b7e7a
     TEST EAX,EAX                        ; 004b7e7d
     JNZ 0x004b7e98                      ; 004b7e7f

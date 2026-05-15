@@ -124,7 +124,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractPodFile_FUN_004b6e10(CFileMan
         pSVar10->found_path[1] = cVar2;
         pSVar10 = (SFoundFileInfo *)(pSVar10->found_path + 2);
       } while (cVar2 != '\0');
-      iVar4 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_658);
+      iVar4 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_658);
       if ((this_ptr->operation_mode != 0) && (((local_14 == 0 || (local_14 == 1)) && (iVar4 != 0))))
       {
         p_Var4 = _localtime((time_t *)&local_658.timestamp);

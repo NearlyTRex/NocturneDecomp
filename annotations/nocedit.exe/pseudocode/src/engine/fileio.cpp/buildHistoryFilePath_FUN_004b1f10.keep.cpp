@@ -20,8 +20,8 @@ void __cdecl engine_fileio_cpp_buildHistoryFilePath_FUN_004b1f10(char *filename,
     core_main_c_displayErrorAndQuit_FUN_00506f10("versionControlDirectory not set!");
   }
   _sprintf(local_214,"history\\%s.%s",filename,extension);
-  engine_dosio_c_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_10,local_110);
-  engine_dosio_c_makePath_FUN_00481f50(dest_buffer,local_10,local_110,(char *)0x0,(char *)0x0);
+  engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_10,local_110);
+  engine_dosio_cpp_makePath_FUN_00481f50(dest_buffer,local_10,local_110,(char *)0x0,(char *)0x0);
   strcat(dest_buffer,local_214);
   return;
 }

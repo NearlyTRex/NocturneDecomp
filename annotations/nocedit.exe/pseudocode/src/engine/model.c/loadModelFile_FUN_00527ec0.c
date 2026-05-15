@@ -38,14 +38,14 @@ LAB_00527ee6:
       return pSVar1;
     }
   }
-  count = engine_dosio_c_getFileSize_FUN_00481880("models",filename);
+  count = engine_dosio_cpp_getFileSize_FUN_00481880("models",filename);
   if (count == 0) {
     _sprintf(local_5c,"Unable to get file size: %s",filename);
     g_CurrentFilename = "..\\engine\\model.c";
     g_CurrentLineNumber = 0xf0;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_5c);
   }
-  file = engine_dosio_c_getFile_FUN_00481a50("models",filename,"rb");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("models",filename,"rb");
   if (file == (_FILE *)0x0) {
     _sprintf(local_5c,"Unable to open model: %s",filename);
     g_CurrentLineNumber = 0xf5;

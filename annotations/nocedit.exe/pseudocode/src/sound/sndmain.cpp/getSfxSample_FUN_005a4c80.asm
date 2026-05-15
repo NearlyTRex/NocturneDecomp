@@ -40,9 +40,9 @@
 ;   crt_stdlib.c__atexit_FUN_005ff060
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;   crt_string.c_memmove_FUN_005fe5e0
-;   engine_dosio.c_getFile_FUN_00481a50
-;   engine_dosio.c_getFileSize_FUN_00481880
-;   engine_dosio.c_splitPath_FUN_00481f20
+;   engine_dosio.cpp_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFileSize_FUN_00481880
+;   engine_dosio.cpp_splitPath_FUN_00481f20
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   sound_mp3.cpp_CMP3Decoder_ctor_FUN_005344f0
 ;   sound_mp3.cpp_CMP3Decoder_free_FUN_005349e0
@@ -129,8 +129,8 @@ section .text
     XOR EAX,EAX                         ; 005a4d39
     PUSH 0x64f907                       ; 005a4d3b | = "sound"
     MOV dword ptr [ESP + 0x108],EAX     ; 005a4d40
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 005a4d47
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 005a4d47
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 005a4d4c
     TEST EAX,EAX                        ; 005a4d4f
     JLE 0x005a4ef8                      ; 005a4d51
@@ -160,8 +160,8 @@ section .text
     PUSH 0x0                            ; 005a4d81
     MOV ECX,dword ptr [ESP + 0x128]     ; 005a4d83
     PUSH ECX                            ; 005a4d8a
-    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 005a4d8b
-        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00481f20 ; 005a4d8b
+        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 005a4d90
     CMP byte ptr [ESP],0x2e             ; 005a4d93
     JNZ 0x005a4db8                      ; 005a4d97
@@ -195,8 +195,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x11c]     ; 005a4dd7
     PUSH EDX                            ; 005a4dde
     PUSH 0x64f929                       ; 005a4ddf | = "sound"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 005a4de4
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 005a4de4
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 005a4de9
     MOV dword ptr [ESP + 0x100],EAX     ; 005a4dec
     TEST EAX,EAX                        ; 005a4df3

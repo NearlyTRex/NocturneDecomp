@@ -35,7 +35,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
 ;
@@ -254,8 +254,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x2c]      ; 0047901a
     PUSH EDX                            ; 0047901e
     PUSH 0x61fa12                       ; 0047901f | = "models"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00479024
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00479024
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     MOV EDI,EAX                         ; 00479029
     ADD ESP,0xc                         ; 0047902b
     JMP 0x00478e7f                      ; 0047902e

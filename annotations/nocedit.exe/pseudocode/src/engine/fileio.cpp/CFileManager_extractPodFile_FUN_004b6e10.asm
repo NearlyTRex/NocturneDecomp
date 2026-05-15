@@ -47,7 +47,7 @@
 ;   crt_time.c__strftime_FUN_006002d4
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
-;   engine_dosio.c_findFileNormally_FUN_004817c0
+;   engine_dosio.cpp_findFileNormally_FUN_004817c0
 ;   engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50
 ;   engine_fileio.cpp_CFileManager_findPodInList_FUN_004ba6c0
 ;   engine_fileio.cpp_CFileManager_parsePodConfigFile_FUN_004ba4f0
@@ -221,8 +221,8 @@ section .text
         ;   Label: LAB_004b6fc0
     LEA EAX,[ESP + 0x82c]               ; 004b6fc1
     PUSH EAX                            ; 004b6fc8
-    CALL engine_dosio.c_findFileNormally_FUN_004817c0 ; 004b6fc9
-        ;   XREF to: 004817c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
+    CALL engine_dosio.cpp_findFileNormally_FUN_004817c0 ; 004b6fc9
+        ;   XREF to: 004817c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
     ADD ESP,0x4                         ; 004b6fce
     MOV EDI,EAX                         ; 004b6fd1
     MOV EAX,dword ptr [ESP + 0xe88]     ; 004b6fd3

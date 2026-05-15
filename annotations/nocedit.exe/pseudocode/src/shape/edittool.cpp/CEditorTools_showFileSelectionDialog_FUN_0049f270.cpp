@@ -38,7 +38,8 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                   (&local_8bc.base,local_314,(int)output_buffer,0);
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
                   (&local_8bc.base,local_514,(int)output_buffer,1);
-        engine_dosio_c_makePath_FUN_00481f50(local_114,(char *)0x0,(char *)0x0,local_314,local_514);
+        engine_dosio_cpp_makePath_FUN_00481f50
+                  (local_114,(char *)0x0,(char *)0x0,local_314,local_514);
         iVar1 = _stricmp(local_114,output_filename);
         pcVar1 = output_buffer;
         if (iVar1 == 0) break;
@@ -54,7 +55,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
     else {
       shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_8bc.base,local_314,(int)pcVar2,0);
       shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_8bc.base,local_514,(int)pcVar2,1);
-      engine_dosio_c_makePath_FUN_00481f50
+      engine_dosio_cpp_makePath_FUN_00481f50
                 (output_filename,(char *)0x0,(char *)0x0,local_314,local_514);
       iVar2 = 1;
     }

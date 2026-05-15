@@ -23,7 +23,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;
 ; *****************************************************************************
@@ -57,8 +57,8 @@ section .text
     PUSH 0x64e860                       ; 0059b8fd | = "rt"
     PUSH EBX                            ; 0059b902
     PUSH 0x64e863                       ; 0059b903 | = "models"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0059b908
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0059b908
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0059b90d
     MOV EDI,EAX                         ; 0059b910
     TEST EAX,EAX                        ; 0059b912

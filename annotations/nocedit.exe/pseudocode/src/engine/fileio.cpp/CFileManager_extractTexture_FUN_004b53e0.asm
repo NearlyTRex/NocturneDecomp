@@ -30,7 +30,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;
 ; *****************************************************************************
@@ -125,8 +125,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004b5485
     PUSH EAX                            ; 004b5489
     PUSH 0x627607                       ; 004b548a | = "art"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004b548f
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004b548f
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004b5494
     TEST EAX,EAX                        ; 004b5497
     JNZ 0x004b54a1                      ; 004b5499

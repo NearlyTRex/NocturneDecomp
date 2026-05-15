@@ -153,8 +153,8 @@ section .text
     PUSH EAX                            ; 0046bc0e
     MOV EAX,0x61d4b4                    ; 0046bc0f | = "art"
     PUSH EAX                            ; 0046bc14 | = "art"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0046bc15
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0046bc15
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0046bc1a
     MOV dword ptr [EBP + 0xfffff7c0],EAX ; 0046bc1d
     JMP 0x0046bc55                      ; 0046bc23
@@ -2933,8 +2933,8 @@ section .text
     PUSH EAX                            ; 0046dac9
     MOV EAX,0x61dbcb                    ; 0046daca | = "art"
     PUSH EAX                            ; 0046dacf | = "art"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0046dad0
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0046dad0
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0046dad5
     MOV dword ptr [EBP + 0xfffff5bc],EAX ; 0046dad8
     CMP dword ptr [EBP + 0xfffff5bc],0x0 ; 0046dade
@@ -3052,8 +3052,8 @@ section .text
     PUSH EAX                            ; 0046dbf6
     MOV EAX,0x61dc43                    ; 0046dbf7 | = "art"
     PUSH EAX                            ; 0046dbfc | = "art"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0046dbfd
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0046dbfd
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0046dc02
     MOV dword ptr [EBP + 0xfffff5bc],EAX ; 0046dc05
     CMP dword ptr [EBP + 0xfffff5bc],0x0 ; 0046dc0b
@@ -3219,8 +3219,8 @@ section .text
     PUSH EAX                            ; 0046dda1
     MOV EAX,0x61dcb5                    ; 0046dda2 | = "art"
     PUSH EAX                            ; 0046dda7 | = "art"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0046dda8
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0046dda8
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0046ddad
     MOV dword ptr [EBP + 0xfffff5bc],EAX ; 0046ddb0
     CMP dword ptr [EBP + 0xfffff5bc],0x0 ; 0046ddb6
@@ -3300,8 +3300,8 @@ section .text
     PUSH EAX                            ; 0046de9b | = "tmp24.raw"
     MOV EAX,0x61dd60                    ; 0046de9c | = "art"
     PUSH EAX                            ; 0046dea1 | = "art"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0046dea2
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0046dea2
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0046dea7
     MOV dword ptr [EBP + 0xfffff5bc],EAX ; 0046deaa
     CMP dword ptr [EBP + 0xfffff5bc],0x0 ; 0046deb0

@@ -29,9 +29,9 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(CSfxSample *out_sample)
     }
   }
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
-  iVar1 = engine_dosio_c_getFileSize_FUN_00481880("sound",(char *)out_sample);
+  iVar1 = engine_dosio_cpp_getFileSize_FUN_00481880("sound",(char *)out_sample);
   if (0 < iVar1) {
-    engine_dosio_c_splitPath_FUN_00481f20
+    engine_dosio_cpp_splitPath_FUN_00481f20
               ((char *)out_sample,(char *)0x0,(char *)0x0,(char *)0x0,local_ext);
     if (local_ext[0] == '.') {
       memmove(local_ext,local_ext + 1,strlen(local_ext));
@@ -70,7 +70,7 @@ LAB_005aa53c:
       }
       return 1;
     }
-    file_handle = engine_dosio_c_getFile_FUN_00481a50
+    file_handle = engine_dosio_cpp_getFile_FUN_00481a50
                             ("sound",(char *)out_sample,"rb");
     if (file_handle != (_FILE *)0x0) {
       local_14 = _ftell(file_handle);

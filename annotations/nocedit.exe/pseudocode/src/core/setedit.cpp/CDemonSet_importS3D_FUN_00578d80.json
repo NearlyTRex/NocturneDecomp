@@ -7,19 +7,19 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 1607,
-    "complexity_score": 778,
+    "complexity_score": 779,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 77,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 673,
+    "pseudocode_lines": 674,
     "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "unrolled_memcpy",
       "unrolled_strchr"
     ],
-    "total_lines": 2280
+    "total_lines": 2281
   },
   "cross_references": [
     {
@@ -189,17 +189,17 @@
     {
       "addr": "00481f80",
       "is_variadic": false,
-      "name": "engine_dosio.c_ensureTrailingSlash_FUN_00481f80"
+      "name": "engine_dosio.cpp_ensureTrailingSlash_FUN_00481f80"
     },
     {
       "addr": "00481f50",
       "is_variadic": false,
-      "name": "engine_dosio.c_makePath_FUN_00481f50"
+      "name": "engine_dosio.cpp_makePath_FUN_00481f50"
     },
     {
       "addr": "00481f20",
       "is_variadic": false,
-      "name": "engine_dosio.c_splitPath_FUN_00481f20"
+      "name": "engine_dosio.cpp_splitPath_FUN_00481f20"
     },
     {
       "addr": "0049e790",
@@ -782,7 +782,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 472,
+      "line": 473,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -791,7 +791,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 492,
+      "line": 493,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -800,7 +800,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 516,
+      "line": 517,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -809,7 +809,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 524,
+      "line": 525,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -818,7 +818,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 533,
+      "line": 534,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -827,7 +827,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 548,
+      "line": 549,
       "match": "for (...; != 0; ... + -1)",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -1261,7 +1261,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 245,
+      "line": 246,
       "match": "(uint *)((int)g_S3DTextureGroundTypes",
       "severity": "moderate",
       "text": "*(uint *)((int)g_S3DTextureGroundTypes + iVar6) = uVar4;",
@@ -1269,7 +1269,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 264,
+      "line": 265,
       "match": "(uint *)((int)g_S3DTextureGroundTypes",
       "severity": "moderate",
       "text": "*(uint *)((int)g_S3DTextureGroundTypes + iVar6) = 0;",
@@ -1277,7 +1277,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 478,
+      "line": 479,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pCVar10->pos).x = local_2478.pos.x;",
@@ -1285,7 +1285,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 483,
+      "line": 484,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(pCVar10->orient).x = local_2478.orient.x;",
@@ -1293,7 +1293,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 487,
+      "line": 488,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar10->fov = local_2478.fov;",
@@ -1301,7 +1301,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (16 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 498,
+      "line": 499,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar10->camera_light_bounds[0].x_min = local_2478.camera_light_bounds[0].x_min;",
@@ -1309,7 +1309,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (7 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep.",
-      "line": 539,
+      "line": 540,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar10->move_filter = local_2478.move_filter;",
@@ -1317,7 +1317,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\n' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\n') in a .keep.",
-      "line": 201,
+      "line": 202,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1325,7 +1325,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\n' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\n') in a .keep.",
-      "line": 213,
+      "line": 214,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",

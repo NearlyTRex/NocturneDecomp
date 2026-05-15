@@ -45,8 +45,8 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c_fread_FUN_005fd990
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
-;   engine_dosio.c_getFile_FUN_00481a50
-;   engine_dosio.c_getFileSize_FUN_00481880
+;   engine_dosio.cpp_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFileSize_FUN_00481880
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_debugFree_FUN_0050f460
 ;   shape_memdbg.cpp_debugMalloc_FUN_0050f250
@@ -70,16 +70,16 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1b0]     ; 0054bf61
     PUSH EDX                            ; 0054bf68
     PUSH 0x63f433                       ; 0054bf69 | = "art"
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 0054bf6e
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 0054bf6e
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 0054bf73
     PUSH 0x63f437                       ; 0054bf76 | = "rb"
     MOV ECX,dword ptr [ESP + 0x1b4]     ; 0054bf7b
     PUSH ECX                            ; 0054bf82
     PUSH 0x63f43a                       ; 0054bf83 | = "art"
     MOV ESI,EAX                         ; 0054bf88
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0054bf8a
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0054bf8a
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0054bf8f
     MOV dword ptr [ESP + 0x190],EAX     ; 0054bf92
     TEST EAX,EAX                        ; 0054bf99

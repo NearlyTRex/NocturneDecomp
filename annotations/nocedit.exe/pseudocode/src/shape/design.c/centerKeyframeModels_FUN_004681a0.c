@@ -46,9 +46,9 @@ void __cdecl shape_design_c_centerKeyframeModels_FUN_004681a0(SMRGLKeyframeModel
       target_model = engine_model_c_loadModelFile_FUN_00527ec0(keyframe_model->filenames[local_24]);
       shape_design_c_applyVertexCentering_FUN_004680f0
                 (target_model,pCVar1 + reference_vertex_id,reference_vertex_id);
-      size = engine_dosio_c_getFileSize_FUN_00481880
+      size = engine_dosio_cpp_getFileSize_FUN_00481880
                        ("models",keyframe_model->filenames[local_24]);
-      file = engine_dosio_c_getFile_FUN_00481a50
+      file = engine_dosio_cpp_getFile_FUN_00481a50
                        ("models",keyframe_model->filenames[local_24],"wb");
       if (file == (_FILE *)0x0) {
         g_CurrentFilename = "..\\shape\\design.c";

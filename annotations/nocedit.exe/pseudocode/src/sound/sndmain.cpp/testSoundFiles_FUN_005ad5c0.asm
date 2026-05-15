@@ -43,8 +43,8 @@
 ;   crt_file.c_makepath_FUN_005febfc
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c_splitpath_FUN_005ff178
-;   engine_dosio.c_findFile_FUN_00481760
-;   engine_dosio.c_getFileSize_FUN_00481880
+;   engine_dosio.cpp_findFile_FUN_00481760
+;   engine_dosio.cpp_getFileSize_FUN_00481880
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
@@ -143,8 +143,8 @@ section .text
     LEA EAX,[ESP + 0xad4]               ; 005ad6a4
     PUSH EAX                            ; 005ad6ab
     PUSH 0x6512c7                       ; 005ad6ac | = "sound"
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 005ad6b1
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 005ad6b1
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 005ad6b6
     TEST EAX,EAX                        ; 005ad6b9
     JLE 0x005ad848                      ; 005ad6bb
@@ -294,8 +294,8 @@ section .text
         ;   Label: LAB_005ad848
     PUSH EAX                            ; 005ad84f
     PUSH 0x6512cd                       ; 005ad850 | = "sound"
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 005ad855
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 005ad855
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 005ad85a
     TEST EAX,EAX                        ; 005ad85d
     JG 0x005ad6c1                       ; 005ad85f
@@ -360,8 +360,8 @@ section .text
     ADD ESP,0xc                         ; 005ad91e
     LEA EAX,[ESP + 0x5bc]               ; 005ad921
     PUSH EAX                            ; 005ad928
-    CALL engine_dosio.c_findFile_FUN_00481760 ; 005ad929
-        ;   XREF to: 00481760 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_findFile_FUN_00481760(SFoundFileInfo * context)
+    CALL engine_dosio.cpp_findFile_FUN_00481760 ; 005ad929
+        ;   XREF to: 00481760 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFile_FUN_00481760(SFoundFileInfo * context)
     ADD ESP,0x4                         ; 005ad92e
     TEST EAX,EAX                        ; 005ad931
     JZ 0x005ada52                       ; 005ad933
@@ -389,8 +389,8 @@ section .text
     LEA EAX,[ESP + 0x9d0]               ; 005ad978
     PUSH EAX                            ; 005ad97f
     PUSH 0x651359                       ; 005ad980 | = "sound"
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 005ad985
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 005ad985
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 005ad98a
     TEST EAX,EAX                        ; 005ad98d
     JL 0x005ad9c3                       ; 005ad98f
@@ -423,8 +423,8 @@ section .text
     ADD ESP,0x14                        ; 005ad9e4
     LEA EAX,[ESP + 0x3a8]               ; 005ad9e7
     PUSH EAX                            ; 005ad9ee
-    CALL engine_dosio.c_findFile_FUN_00481760 ; 005ad9ef
-        ;   XREF to: 00481760 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_findFile_FUN_00481760(SFoundFileInfo * context)
+    CALL engine_dosio.cpp_findFile_FUN_00481760 ; 005ad9ef
+        ;   XREF to: 00481760 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFile_FUN_00481760(SFoundFileInfo * context)
     ADD ESP,0x4                         ; 005ad9f4
     TEST EAX,EAX                        ; 005ad9f7
     JZ 0x005ada90                       ; 005ad9f9

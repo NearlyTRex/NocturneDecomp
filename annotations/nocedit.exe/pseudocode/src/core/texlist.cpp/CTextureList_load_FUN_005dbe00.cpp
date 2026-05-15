@@ -69,7 +69,7 @@ LAB_005dbe50:
     pcVar3[1] = cVar2;
     pcVar3 = pcVar3 + 2;
   } while (cVar2 != '\0');
-  file = engine_dosio_c_getFile_FUN_00481a50("data",local_12c,"rt");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("data",local_12c,"rt");
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\texlist.cpp";
     g_CurrentLineNumber = 0x6a;

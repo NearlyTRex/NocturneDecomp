@@ -43,7 +43,7 @@
 ;   core_texlist.cpp_CTextureList_load_FUN_005dbe00
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fread_FUN_005fd990
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;
 ; *****************************************************************************
@@ -131,8 +131,8 @@ section .text
     PUSH EAX                            ; 004ef0d0
     MOV ECX,dword ptr [ESP + 0xb0]      ; 004ef0d1 | = "data"
     PUSH ECX                            ; 004ef0d8 | = "data"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004ef0d9
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004ef0d9
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004ef0de
     MOV ESI,EAX                         ; 004ef0e1
     TEST EAX,EAX                        ; 004ef0e3
@@ -286,8 +286,8 @@ section .text
     PUSH EAX                            ; 004ef243
     MOV EDI,dword ptr [ESP + 0xac]      ; 004ef244
     PUSH EDI                            ; 004ef24b | = "data"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004ef24c
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004ef24c
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004ef251
     MOV ESI,EAX                         ; 004ef254
     TEST EAX,EAX                        ; 004ef256

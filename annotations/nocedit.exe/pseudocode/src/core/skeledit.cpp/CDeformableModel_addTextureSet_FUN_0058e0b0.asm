@@ -27,7 +27,7 @@
 ;   crt_file.c_makepath_FUN_005febfc
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c_splitpath_FUN_005ff178
-;   engine_dosio.c_getFileSize_FUN_00481880
+;   engine_dosio.cpp_getFileSize_FUN_00481880
 ;
 ; *****************************************************************************
 
@@ -107,8 +107,8 @@ section .text
     MOV EAX,ESP                         ; 0058e18a
     PUSH EAX                            ; 0058e18c
     PUSH 0x64aefb                       ; 0058e18d | = "art"
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 0058e192
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 0058e192
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 0058e197
     MOV EDX,dword ptr [ESP + 0x308]     ; 0058e19a
     ADD EDX,dword ptr [ESP + 0x304]     ; 0058e1a1

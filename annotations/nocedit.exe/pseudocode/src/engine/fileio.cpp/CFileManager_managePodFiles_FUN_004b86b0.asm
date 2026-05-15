@@ -74,12 +74,12 @@
 ;   crt_stdio.c_setvbuf_FUN_00601490
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__stricmp_FUN_005fe7f0
-;   engine_dosio.c_copyFileTimestamp_FUN_00481910
-;   engine_dosio.c_findFileNormally_FUN_004817c0
-;   engine_dosio.c_getFileSizeWithFinder_FUN_00481960
-;   engine_dosio.c_makePath_FUN_00481f50
-;   engine_dosio.c_setFileAttributes_FUN_004819f0
-;   engine_dosio.c_splitPath_FUN_00481f20
+;   engine_dosio.cpp_copyFileTimestamp_FUN_00481910
+;   engine_dosio.cpp_findFileNormally_FUN_004817c0
+;   engine_dosio.cpp_getFileSizeWithFinder_FUN_00481960
+;   engine_dosio.cpp_makePath_FUN_00481f50
+;   engine_dosio.cpp_setFileAttributes_FUN_004819f0
+;   engine_dosio.cpp_splitPath_FUN_00481f20
 ;   engine_fileio.cpp_CCheckOutList_findEntry_FUN_004b2e60
 ;   engine_fileio.cpp_CCheckOutList_load_FUN_004b2890
 ;   ... and 36 more
@@ -303,8 +303,8 @@ section .text
     PUSH 0x0                            ; 004b8954
     PUSH 0x0                            ; 004b8956
     PUSH EDI                            ; 004b8958
-    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 004b8959
-        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00481f20 ; 004b8959
+        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004b895e
     PUSH 0x6284d0                       ; 004b8961 | = "pod"
     PUSH EBX                            ; 004b8966
@@ -313,8 +313,8 @@ section .text
     MOV ESI,EDI                         ; 004b896b
     MOV EDI,dword ptr [ESP + 0x2314]    ; 004b896d
     PUSH EDI                            ; 004b8974
-    CALL engine_dosio.c_makePath_FUN_00481f50 ; 004b8975
-        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_makePath_FUN_00481f50 ; 004b8975
+        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004b897a
     LEA EDI,[ESP + 0x137c]              ; 004b897d
     PUSH EDI                            ; 004b8984
@@ -335,8 +335,8 @@ section .text
         ;   Label: LAB_004b899d
     LEA EAX,[ESP + 0x137c]              ; 004b899e
     PUSH EAX                            ; 004b89a5
-    CALL engine_dosio.c_findFileNormally_FUN_004817c0 ; 004b89a6
-        ;   XREF to: 004817c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
+    CALL engine_dosio.cpp_findFileNormally_FUN_004817c0 ; 004b89a6
+        ;   XREF to: 004817c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
     ADD ESP,0x4                         ; 004b89ab
     TEST EAX,EAX                        ; 004b89ae
     JZ 0x004b90b4                       ; 004b89b0
@@ -366,8 +366,8 @@ section .text
         ;   Label: LAB_004b89f6
     LEA EAX,[ESP + 0x17a4]              ; 004b89f7
     PUSH EAX                            ; 004b89fe
-    CALL engine_dosio.c_findFileNormally_FUN_004817c0 ; 004b89ff
-        ;   XREF to: 004817c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
+    CALL engine_dosio.cpp_findFileNormally_FUN_004817c0 ; 004b89ff
+        ;   XREF to: 004817c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
     ADD ESP,0x4                         ; 004b8a04
     TEST EAX,EAX                        ; 004b8a07
     JZ 0x004b90e3                       ; 004b8a09
@@ -445,8 +445,8 @@ section .text
         ;   Label: LAB_004b8b20
     LEA EAX,[ESP + 0x1590]              ; 004b8b21
     PUSH EAX                            ; 004b8b28
-    CALL engine_dosio.c_findFileNormally_FUN_004817c0 ; 004b8b29
-        ;   XREF to: 004817c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
+    CALL engine_dosio.cpp_findFileNormally_FUN_004817c0 ; 004b8b29
+        ;   XREF to: 004817c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
     ADD ESP,0x4                         ; 004b8b2e
     TEST EAX,EAX                        ; 004b8b31
     JZ 0x004b917b                       ; 004b8b33
@@ -750,8 +750,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x2314]    ; 004b8f15
     PUSH ECX                            ; 004b8f1c
     PUSH EAX                            ; 004b8f1d
-    CALL engine_dosio.c_getFileSizeWithFinder_FUN_00481960 ; 004b8f1e
-        ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSizeWithFinder_FUN_00481960(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSizeWithFinder_FUN_00481960 ; 004b8f1e
+        ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSizeWithFinder_FUN_00481960(char * directory, char * filename)
     ADD ESP,0x8                         ; 004b8f23
     TEST EAX,EAX                        ; 004b8f26
     JL 0x004b8f32                       ; 004b8f28
@@ -1178,8 +1178,8 @@ section .text
     PUSH EAX                            ; 004b9480
     LEA EAX,[ESP + 0x1db0]              ; 004b9481
     PUSH EAX                            ; 004b9488
-    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 004b9489
-        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00481f20 ; 004b9489
+        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004b948e
     LEA EAX,[ESP + 0x20a4]              ; 004b9491
     PUSH EAX                            ; 004b9498
@@ -1190,8 +1190,8 @@ section .text
     PUSH 0x0                            ; 004b94a9
     LEA EAX,[ESP + 0x1eb4]              ; 004b94ab
     PUSH EAX                            ; 004b94b2
-    CALL engine_dosio.c_makePath_FUN_00481f50 ; 004b94b3
-        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_makePath_FUN_00481f50 ; 004b94b3
+        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004b94b8
     LEA EAX,[ESP + 0x20a4]              ; 004b94bb
     PUSH EAX                            ; 004b94c2
@@ -1201,8 +1201,8 @@ section .text
     PUSH 0x0                            ; 004b94cd
     MOV ESI,dword ptr [ESP + 0x230c]    ; 004b94cf
     PUSH ESI                            ; 004b94d6
-    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 004b94d7
-        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00481f20 ; 004b94d7
+        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004b94dc
     LEA EAX,[ESP + 0x20a4]              ; 004b94df
     PUSH EAX                            ; 004b94e6
@@ -1214,8 +1214,8 @@ section .text
     PUSH EAX                            ; 004b94fe
     LEA EAX,[EBX + 0x204]               ; 004b94ff
     PUSH EAX                            ; 004b9505
-    CALL engine_dosio.c_makePath_FUN_00481f50 ; 004b9506
-        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_makePath_FUN_00481f50 ; 004b9506
+        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004b950b
     LEA ESI,[ESP + 0x21a4]              ; 004b950e
     MOV EDI,EBX                         ; 004b9515
@@ -1658,8 +1658,8 @@ section .text
     PUSH EAX                            ; 004b99ae
     MOV EBX,dword ptr [ESP + 0x2318]    ; 004b99af
     PUSH EBX                            ; 004b99b6
-    CALL engine_dosio.c_setFileAttributes_FUN_004819f0 ; 004b99b7
-        ;   XREF to: 004819f0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_setFileAttributes_FUN_004819f0(char * filename, byte flags)
+    CALL engine_dosio.cpp_setFileAttributes_FUN_004819f0 ; 004b99b7
+        ;   XREF to: 004819f0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_setFileAttributes_FUN_004819f0(char * filename, byte flags)
     ADD ESP,0x8                         ; 004b99bc
     JMP 0x004b8f32                      ; 004b99bf
         ;   XREF to: 004b8f32 (UNCONDITIONAL_JUMP)  ; LAB_004b8f32
@@ -1670,8 +1670,8 @@ section .text
     PUSH 0x0                            ; 004b99c9
     MOV EBX,dword ptr [ESP + 0x2318]    ; 004b99cb
     PUSH EBX                            ; 004b99d2
-    CALL engine_dosio.c_setFileAttributes_FUN_004819f0 ; 004b99d3
-        ;   XREF to: 004819f0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_setFileAttributes_FUN_004819f0(char * filename, byte flags)
+    CALL engine_dosio.cpp_setFileAttributes_FUN_004819f0 ; 004b99d3
+        ;   XREF to: 004819f0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_setFileAttributes_FUN_004819f0(char * filename, byte flags)
     ADD ESP,0x8                         ; 004b99d8
     PUSH EBX                            ; 004b99db
     CALL crt_stdio.c_remove_FUN_005ff9d0 ; 004b99dc
@@ -1732,8 +1732,8 @@ section .text
     PUSH EBX                            ; 004b9a76
     PUSH 0x0                            ; 004b9a77
     MOV EBP,EBX                         ; 004b9a79
-    CALL engine_dosio.c_getFileSizeWithFinder_FUN_00481960 ; 004b9a7b
-        ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSizeWithFinder_FUN_00481960(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSizeWithFinder_FUN_00481960 ; 004b9a7b
+        ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSizeWithFinder_FUN_00481960(char * directory, char * filename)
     ADD ESP,0x8                         ; 004b9a80
     LEA ESI,[EDI + 0x308]               ; 004b9a83
     MOV dword ptr [ESP + 0x2300],EAX    ; 004b9a89
@@ -1777,8 +1777,8 @@ section .text
         ;   Label: LAB_004b9af4
     LEA EAX,[EDI + 0x100]               ; 004b9af6
     PUSH EAX                            ; 004b9afc
-    CALL engine_dosio.c_setFileAttributes_FUN_004819f0 ; 004b9afd
-        ;   XREF to: 004819f0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_setFileAttributes_FUN_004819f0(char * filename, byte flags)
+    CALL engine_dosio.cpp_setFileAttributes_FUN_004819f0 ; 004b9afd
+        ;   XREF to: 004819f0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_setFileAttributes_FUN_004819f0(char * filename, byte flags)
     ADD ESP,0x8                         ; 004b9b02
     MOV EBP,dword ptr [ESP + 0x2318]    ; 004b9b05
         ;   Label: LAB_004b9b05
@@ -1874,8 +1874,8 @@ section .text
     PUSH EBX                            ; 004b9c0f
         ;   Label: LAB_004b9c0f
     PUSH ESI                            ; 004b9c10
-    CALL engine_dosio.c_getFileSizeWithFinder_FUN_00481960 ; 004b9c11
-        ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSizeWithFinder_FUN_00481960(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSizeWithFinder_FUN_00481960 ; 004b9c11
+        ;   XREF to: 00481960 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSizeWithFinder_FUN_00481960(char * directory, char * filename)
     ADD ESP,0x8                         ; 004b9c16
     TEST EAX,EAX                        ; 004b9c19
     JL 0x004b9b05                       ; 004b9c1b
@@ -1970,8 +1970,8 @@ section .text
     INC ECX                             ; 004b9d1d
     PUSH EBX                            ; 004b9d1e
     MOV dword ptr [ESP + 0x22e4],ECX    ; 004b9d1f
-    CALL engine_dosio.c_copyFileTimestamp_FUN_00481910 ; 004b9d26
-        ;   XREF to: 00481910 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_copyFileTimestamp_FUN_00481910(char * source_file, char * dest_file)
+    CALL engine_dosio.cpp_copyFileTimestamp_FUN_00481910 ; 004b9d26
+        ;   XREF to: 00481910 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_copyFileTimestamp_FUN_00481910(char * source_file, char * dest_file)
     ADD ESP,0x8                         ; 004b9d2b
     TEST EAX,EAX                        ; 004b9d2e
     JZ 0x004b9dee                       ; 004b9d30
@@ -1994,8 +1994,8 @@ section .text
     PUSH EAX                            ; 004b9d60
     LEA EBX,[EDI + 0x100]               ; 004b9d61
     PUSH EBX                            ; 004b9d67
-    CALL engine_dosio.c_setFileAttributes_FUN_004819f0 ; 004b9d68
-        ;   XREF to: 004819f0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_setFileAttributes_FUN_004819f0(char * filename, byte flags)
+    CALL engine_dosio.cpp_setFileAttributes_FUN_004819f0 ; 004b9d68
+        ;   XREF to: 004819f0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_setFileAttributes_FUN_004819f0(char * filename, byte flags)
     ADD ESP,0x8                         ; 004b9d6d
     TEST EAX,EAX                        ; 004b9d70
     JZ 0x004b9e08                       ; 004b9d72

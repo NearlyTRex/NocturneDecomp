@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005fe7f0
-;   engine_dosio.c_splitPath_FUN_00481f20
+;   engine_dosio.cpp_splitPath_FUN_00481f20
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x228]     ; 0055183f
     PUSH EDX                            ; 00551846
     XOR EBX,EBX                         ; 00551847
-    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 00551849
-        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00481f20 ; 00551849
+        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
     MOV ECX,dword ptr [EDI]             ; 0055184e
     ADD ESP,0x14                        ; 00551850
     TEST ECX,ECX                        ; 00551853
@@ -53,8 +53,8 @@ section .text
     PUSH 0x0                            ; 00551865
     ADD EAX,0x4                         ; 00551867
     PUSH EAX                            ; 0055186a
-    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 0055186b
-        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00481f20 ; 0055186b
+        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 00551870
     MOV EAX,ESP                         ; 00551873
     PUSH EAX                            ; 00551875

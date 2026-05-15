@@ -37,9 +37,10 @@ void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650(_FILE *f
   if (0 < local_24.item_count) {
     do {
       full_path = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_24,local_14);
-      engine_dosio_c_splitPath_FUN_00481f20(full_path,(char *)0x0,(char *)0x0,local_224,local_124);
-      engine_dosio_c_makePath_FUN_00481f50(local_328,(char *)0x0,dest_directory,local_224,local_124)
+      engine_dosio_cpp_splitPath_FUN_00481f20(full_path,(char *)0x0,(char *)0x0,local_224,local_124)
       ;
+      engine_dosio_cpp_makePath_FUN_00481f50
+                (local_328,(char *)0x0,dest_directory,local_224,local_124);
       _fprintf((_FILE *)file_list_output->_ptr,"%s\n",local_328);
       pSVar6 = &local_53c;
       pcVar4 = full_path;
@@ -63,13 +64,13 @@ void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650(_FILE *f
         pSVar5->found_path[1] = cVar2;
         pSVar5 = (SFoundFileInfo *)(pSVar5->found_path + 2);
       } while (cVar2 != '\0');
-      iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_53c);
+      iVar3 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_53c);
       if (iVar3 == 0) {
         g_CurrentFilename = "..\\engine\\fileio.cpp";
         g_CurrentLineNumber = 0xfe7;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Can't get info on %s",&local_53c);
       }
-      iVar4 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_750);
+      iVar4 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_750);
       if ((((iVar4 == 0) || (local_53c.timestamp < local_750.timestamp - 1)) ||
           (local_750.timestamp + 1 < local_53c.timestamp)) ||
          (local_53c.file_size != local_750.file_size)) {
@@ -107,8 +108,8 @@ void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650(_FILE *f
         }
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\fileio.cpp",0x100d);
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\engine\\fileio.cpp",0x100e);
-        iVar4 = engine_dosio_c_copyFileTimestamp_FUN_00481910(local_328,(char *)local_53c.timestamp)
-        ;
+        iVar4 = engine_dosio_cpp_copyFileTimestamp_FUN_00481910
+                          (local_328,(char *)local_53c.timestamp);
         if (iVar4 == 0) {
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                     (g_CEditorToolsPtr,"WARNING: Error setting date/time on %s.\n(Most likely reason: Tried to set the file time to a time\nnewer than the current system time on your computer)",local_328);

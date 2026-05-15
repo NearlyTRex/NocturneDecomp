@@ -6,8 +6,8 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6454
-Clean functions: 5712 (88.5%)
-Files at 100%: 135
+Clean functions: 5713 (88.5%)
+Files at 100%: 136
 Files at 90%+: 145
 Files at 50%+: 213
 
@@ -125,6 +125,7 @@ FILES AT 100% (COMPLETE)
   engine/boss.c: 5 functions, 64 lines
   engine/colquant.c: 9 functions, 592 lines
   engine/console.cpp: 8 functions, 201 lines
+  engine/dosio.cpp: 26 functions, 477 lines
   engine/font.cpp: 49 functions, 2198 lines
   engine/ini.cpp: 18 functions, 453 lines
   engine/keys.cpp: 9 functions, 56 lines
@@ -150,7 +151,7 @@ FILES AT 100% (COMPLETE)
   wincore/winrun.cpp: 33 functions, 1140 lines
   wincore/winvideo.cpp: 5 functions, 262 lines
 
-Total: 135 files
+Total: 136 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
@@ -178,10 +179,6 @@ FILES AT 90-99% (ALMOST COMPLETE)
            - core_fire.cpp_CSpark_setupRenderState_FUN_004c0300 (48 lines) [stack_alignment_array]
            - core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0 (40 lines) [stack_alignment_array, warning_inlined_function]
 
-   96.2% | engine/dosio.c
-         25/26 clean, 1 remaining
-           - engine_dosio.c_reopenFileStream_FUN_00481b50 (30 lines) [pointer_cast]
-
    94.1% | core/flame.cpp
          16/17 clean, 1 remaining
            - core_flame.cpp_CFlame_renderTransparent_FUN_004ca110 (256 lines) [pointer_cast]
@@ -206,7 +203,7 @@ FILES AT 90-99% (ALMOST COMPLETE)
          9/10 clean, 1 remaining
            - engine_palette.cpp_CPaletteManager_scanTextures_FUN_00545060 (60 lines) [pointer_cast]
 
-Total: 10 files
+Total: 9 files
 
 ====================================================================================================
 FILES AT 50-89%
@@ -338,7 +335,7 @@ FILES AT 50-89%
            - engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0 (42 lines) [pointer_cast, unrolled_memcpy]
            - engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0 (188 lines) [pointer_cast, shadow_pointer_walk, unrolled_memcpy, warning_type_propagation]
            - engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230 (120 lines) [pointer_cast]
-           - engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 (367 lines) [unrolled_memcpy]
+           - engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 (368 lines) [unrolled_memcpy]
            - engine_pod.cpp_findFilesByExtension_FUN_00550ce0 (111 lines) [pointer_cast, unrolled_strcpy, unrolled_strlen]
            - engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0 (53 lines) [shadow_pointer_walk]
    81.8% | core/flies.cpp
@@ -959,11 +956,11 @@ FILES AT 50-89%
            - engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50 (127 lines) [unrolled_memcpy, unrolled_strcpy]
            - engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50 (108 lines) [pointer_cast, unrolled_strlen]
            - engine_fileio.cpp_readTimestampFile_FUN_004b23a0 (95 lines) [pointer_cast, unrolled_memcpy, unrolled_strcpy]
-           - engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740 (306 lines) [pointer_cast, unrolled_strcpy]
+           - engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740 (307 lines) [pointer_cast, unrolled_strcpy]
            - engine_fileio.cpp_establishUserIdentity_FUN_004b1c00 (62 lines) [unrolled_strcpy]
-           - engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650 (121 lines) [unrolled_strcpy]
-           - engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (809 lines) [pointer_cast, unrolled_strcpy, warning_unreachable]
-           - engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220 (483 lines) [negative_offset, pointer_cast, unrolled_strcat, unrolled_strcpy, unrolled_strlen, warning_unreachable]
+           - engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650 (122 lines) [unrolled_strcpy]
+           - engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (810 lines) [pointer_cast, unrolled_strcpy, warning_unreachable]
+           - engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220 (484 lines) [negative_offset, pointer_cast, unrolled_strcat, unrolled_strcpy, unrolled_strlen, warning_unreachable]
            - engine_fileio.cpp_CFileManager_setVersionControlCredentials_FUN_004bc5d0 (38 lines) [unrolled_strcpy]
            - engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0 (58 lines) [pointer_cast]
            - engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0 (137 lines) [pointer_cast, unrolled_strcpy]
@@ -1012,12 +1009,12 @@ FILES AT 50-89%
    51.7% | core/setedit.cpp
          30/58 clean, 28 remaining
            - core_setedit.cpp_CDemonSet_deleteCamera_FUN_0057e430 (115 lines) [unrolled_memcpy]
-           - core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (673 lines) [pointer_cast, unrolled_memcpy, unrolled_strchr]
+           - core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (674 lines) [pointer_cast, unrolled_memcpy, unrolled_strchr]
            - core_setedit.cpp_loadGroundTypes_FUN_00578420 (91 lines) [unrolled_strchr]
            - core_setedit.cpp_blitThumbnailToScreen_FUN_00577430 (98 lines) [pointer_cast]
            - core_setedit.cpp_blitThumbnailStripAndHitTest_FUN_00577730 (108 lines) [pointer_cast]
            - core_setedit.cpp_CDemonSet_deleteLight_FUN_0057b910 (127 lines) [shadow_pointer_walk, unrolled_memcpy]
-           - core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 (183 lines) [unrolled_strcpy]
+           - core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 (184 lines) [unrolled_strcpy]
            - core_setedit.cpp_loadCameraThumbnail_FUN_005769a0 (140 lines) [pointer_cast]
            - core_setedit.cpp_blitThumbnailToScreen8_FUN_00577120 (28 lines) [pointer_cast]
            - core_setedit.cpp_renderColoredBox_FUN_005817d0 (102 lines) [pointer_cast]
@@ -1026,11 +1023,11 @@ FILES AT 50-89%
            - core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 (699 lines) [pointer_cast, unrolled_memcpy, unrolled_strlen]
            - core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50 (164 lines) [unrolled_memcpy, unrolled_strcpy, warning_inlined_function]
            - core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170 (1474 lines) [unrolled_memcpy]
-           - core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70 (112 lines) [unrolled_strchr, unrolled_strcpy]
+           - core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70 (113 lines) [unrolled_strchr, unrolled_strcpy]
            - core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 (303 lines) [pointer_cast]
            - core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0 (442 lines) [unrolled_memcpy]
            - core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730 (376 lines) [pointer_cast, unrolled_memcpy, unrolled_strlen]
-           - core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 (410 lines) [pointer_cast, unrolled_memcpy, unrolled_strchr, unrolled_strcpy]
+           - core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 (411 lines) [pointer_cast, unrolled_memcpy, unrolled_strchr, unrolled_strcpy]
            - core_setedit.cpp_blitThumbnailToScreen16_FUN_00577200 (31 lines) [pointer_cast]
            - core_setedit.cpp_CDemonSet_drawCameraCoverageMap_FUN_0057ff70 (60 lines) [pointer_cast]
            - core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940 (131 lines) [pointer_cast, unrolled_memcpy]

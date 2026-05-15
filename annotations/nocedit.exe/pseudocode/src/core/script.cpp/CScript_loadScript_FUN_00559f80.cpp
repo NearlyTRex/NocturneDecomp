@@ -40,7 +40,7 @@ int __cdecl core_script_cpp_CScript_loadScript_FUN_00559f80(CScript *this_ptr,ch
   local_18 = &this_ptr->script_text;
   do {
     core_script_cpp_CScript_clear_FUN_00559870(this_ptr);
-    iVar4 = engine_dosio_c_getFileSize_FUN_00481880("world",filename);
+    iVar4 = engine_dosio_cpp_getFileSize_FUN_00481880("world",filename);
     if (iVar4 < 1) {
       return 1;
     }
@@ -67,7 +67,7 @@ int __cdecl core_script_cpp_CScript_loadScript_FUN_00559f80(CScript *this_ptr,ch
       pcVar3 = pcVar3 + 2;
     } while (cVar1 != '\0');
     core_script_cpp_CScript_dbLoad_FUN_005603c0(this_ptr,local_1e8);
-    p_Var5 = engine_dosio_c_getFile_FUN_00481a50("world",filename,"rt");
+    p_Var5 = engine_dosio_cpp_getFile_FUN_00481a50("world",filename,"rt");
     if (p_Var5 == (_FILE *)0x0) {
       return 1;
     }

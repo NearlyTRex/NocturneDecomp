@@ -38,7 +38,7 @@ int __cdecl core_cloth_cpp_CCloth_load_FUN_00438cf0(CCloth *this_ptr,char *filen
   float fVar5;
   float fVar2;
   
-  stream = engine_dosio_c_getFile_FUN_00481a50("models",filename,"rt");
+  stream = engine_dosio_cpp_getFile_FUN_00481a50("models",filename,"rt");
   if (stream == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\cloth.cpp";
     g_CurrentLineNumber = 0x9b;

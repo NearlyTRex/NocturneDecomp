@@ -23,7 +23,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractTexture_FUN_004b53e0(CFileMan
     core_main_c_displayErrorAndQuit_FUN_00506f10("fileManger::extractTexture - Extension not found");
   }
   strcpy(pcVar5,".ACT");
-  file_ptr = engine_dosio_c_getFile_FUN_00481a50("art",local_58,"rb");
+  file_ptr = engine_dosio_cpp_getFile_FUN_00481a50("art",local_58,"rb");
   if (file_ptr != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\engine\\fileio.cpp",0x6e7);
     _fprintf(this_ptr->file_ptr,"ART\\%s\n",local_58);

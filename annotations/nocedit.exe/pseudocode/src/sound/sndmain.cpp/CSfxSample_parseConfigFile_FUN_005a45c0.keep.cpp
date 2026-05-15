@@ -49,20 +49,20 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSampl
   (this_ptr->sample_info).max_distance = fVar6;
   this_ptr->loop_endpoints[0] = (this_ptr->sample_info).sample_count;
   this_ptr->loop_destinations[0] = -1;
-  engine_dosio_c_splitPath_FUN_00481f20
+  engine_dosio_cpp_splitPath_FUN_00481f20
             ((char *)this_ptr,(char *)0x0,(char *)0x0,local_238,(char *)0x0);
-  engine_dosio_c_makePath_FUN_00481f50(local_338,(char *)0x0,(char *)0x0,local_238,"klp");
-  iVar6 = engine_dosio_c_getFileSize_FUN_00481880("sound",local_338);
+  engine_dosio_cpp_makePath_FUN_00481f50(local_338,(char *)0x0,(char *)0x0,local_238,"klp");
+  iVar6 = engine_dosio_cpp_getFileSize_FUN_00481880("sound",local_338);
   if (0 < iVar6) {
     this_ptr->loop_marker_count = 1;
     iVar7 = (this_ptr->sample_info).sample_count;
     this_ptr->loop_destinations[0] = 0;
     this_ptr->loop_endpoints[0] = iVar7;
   }
-  engine_dosio_c_makePath_FUN_00481f50(local_138,(char *)0x0,(char *)0x0,local_238,"sfx");
-  iVar7 = engine_dosio_c_getFileSize_FUN_00481880("sound",local_138);
+  engine_dosio_cpp_makePath_FUN_00481f50(local_138,(char *)0x0,(char *)0x0,local_238,"sfx");
+  iVar7 = engine_dosio_cpp_getFileSize_FUN_00481880("sound",local_138);
   if ((iVar7 < 1) ||
-     (local_24 = engine_dosio_c_getFile_FUN_00481a50("sound",local_138,"rb"),
+     (local_24 = engine_dosio_cpp_getFile_FUN_00481a50("sound",local_138,"rb"),
      local_24 == (_FILE *)0x0)) {
     return;
   }

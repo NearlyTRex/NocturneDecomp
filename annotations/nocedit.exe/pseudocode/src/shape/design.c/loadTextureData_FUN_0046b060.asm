@@ -65,7 +65,7 @@
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fseek_FUN_005ffacc
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_design.c_readPixelRowFromFile_FUN_0046abf0
 ;   shape_design.c_sampleAndFilterPixel_FUN_0046ae20
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -93,8 +93,8 @@ section .text
     PUSH EAX                            ; 0046b07e
     MOV EAX,0x61d2a1                    ; 0046b07f | = "art"
     PUSH EAX                            ; 0046b084 | = "art"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0046b085
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0046b085
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0046b08a
     MOV dword ptr [EBP + -0xc],EAX      ; 0046b08d
     JMP 0x0046b0b4                      ; 0046b090

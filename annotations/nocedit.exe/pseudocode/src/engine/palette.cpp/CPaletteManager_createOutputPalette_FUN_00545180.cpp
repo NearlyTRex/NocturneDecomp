@@ -113,7 +113,7 @@ LAB_005452ba:
           pcVar5 = "rb";
           pcVar6 = &s_EmptyChar_0063e5a6;
         }
-        p_Var6 = engine_dosio_c_getFile_FUN_00481a50(pcVar6,local_6c,pcVar5);
+        p_Var6 = engine_dosio_cpp_getFile_FUN_00481a50(pcVar6,local_6c,pcVar5);
         if (p_Var6 == (_FILE *)0x0) {
           puVar8 = g_DefaultPalette;
           puVar12 = g_PaletteData;
@@ -152,7 +152,7 @@ LAB_00545332:
           pcVar6 = this_ptr->texture_names;
           pcVar5 = &s_EmptyChar_0063e5c1;
         }
-        iVar7 = engine_dosio_c_getFileSize_FUN_00481880(pcVar5,pcVar6 + local_10);
+        iVar7 = engine_dosio_cpp_getFileSize_FUN_00481880(pcVar5,pcVar6 + local_10);
         pcVar6 = this_ptr->texture_names + local_10;
         do {
           pcVar5 = pcVar6;
@@ -174,7 +174,7 @@ LAB_0054537a:
           pcVar14 = "rb";
           pcVar5 = &s_EmptyChar_0063e5cc;
         }
-        p_Var3 = engine_dosio_c_getFile_FUN_00481a50(pcVar5,pcVar6 + local_10,pcVar14);
+        p_Var3 = engine_dosio_cpp_getFile_FUN_00481a50(pcVar5,pcVar6 + local_10,pcVar14);
         if (p_Var3 == (_FILE *)0x0) {
           g_CurrentFilename = "..\\engine\\palette.cpp";
           g_CurrentLineNumber = 0xf1;
@@ -235,7 +235,7 @@ LAB_00545459:
       pcVar7 = "wb";
       pcVar6 = &s_EmptyChar_0063e68c;
     }
-    p_Var3 = engine_dosio_c_getFile_FUN_00481a50(pcVar6,output_filename,pcVar7);
+    p_Var3 = engine_dosio_cpp_getFile_FUN_00481a50(pcVar6,output_filename,pcVar7);
     if (p_Var3 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\engine\\palette.cpp";
       g_CurrentLineNumber = 0x122;

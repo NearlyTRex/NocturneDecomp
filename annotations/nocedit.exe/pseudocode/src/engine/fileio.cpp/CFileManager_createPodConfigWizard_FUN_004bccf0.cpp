@@ -31,13 +31,13 @@ int __cdecl engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0(CF
   if ((-1 < iVar1) && (iVar1 < 2)) {
     shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&local_14);
     if (iVar1 == 0) {
-      engine_dosio_c_CFileFinder_ctor_FUN_00481c30(&local_128);
-      engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(&local_128,"*.pod");
+      engine_dosio_cpp_CFileFinder_ctor_FUN_00481c30(&local_128);
+      engine_dosio_cpp_CFileFinder_openSearch_FUN_00481c70(&local_128,"*.pod");
       while (local_128.filename[0] != '\0') {
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_14,local_128.filename);
-        engine_dosio_c_CFileFinder_findNext_FUN_00481cf0(&local_128);
+        engine_dosio_cpp_CFileFinder_findNext_FUN_00481cf0(&local_128);
       }
-      engine_dosio_c_CFileFinder_dtor_FUN_00481c50(&local_128,0);
+      engine_dosio_cpp_CFileFinder_dtor_FUN_00481c50(&local_128,0);
     }
     engine_fileio_cpp_CFileManager_writePodConfigFile_FUN_004ba620(this_ptr,&local_14);
     shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_14,0);

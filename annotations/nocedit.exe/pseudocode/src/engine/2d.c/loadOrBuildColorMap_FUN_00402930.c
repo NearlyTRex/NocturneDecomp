@@ -46,14 +46,14 @@ LAB_00402972:
     core_main_c_displayErrorAndQuit_FUN_00506f10("hose!");
   }
   _sprintf(buffer,".map");
-  p_Var2 = engine_dosio_c_getFile_FUN_00481a50("fog",local_5c,"rb");
+  p_Var2 = engine_dosio_cpp_getFile_FUN_00481a50("fog",local_5c,"rb");
   if (p_Var2 != (_FILE *)0x0) {
     _fread(g_ColorCubeLookup,1,0x8000,p_Var2);
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\engine\\2d.c",0x77c);
     return;
   }
   engine_2d_c_buildColorLookupTable_FUN_00402870();
-  file = engine_dosio_c_getFile_FUN_00481a50("fog",local_5c,"wb");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("fog",local_5c,"wb");
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\2d.c";
     g_CurrentLineNumber = 0x777;

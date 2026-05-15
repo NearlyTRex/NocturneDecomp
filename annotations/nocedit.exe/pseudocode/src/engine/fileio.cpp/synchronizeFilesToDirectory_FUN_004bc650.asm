@@ -43,10 +43,10 @@
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   crt_stdio.c_fputc_FUN_006007a0
-;   engine_dosio.c_copyFileTimestamp_FUN_00481910
-;   engine_dosio.c_findFileNormally_FUN_004817c0
-;   engine_dosio.c_makePath_FUN_00481f50
-;   engine_dosio.c_splitPath_FUN_00481f20
+;   engine_dosio.cpp_copyFileTimestamp_FUN_00481910
+;   engine_dosio.cpp_findFileNormally_FUN_004817c0
+;   engine_dosio.cpp_makePath_FUN_00481f50
+;   engine_dosio.cpp_splitPath_FUN_00481f20
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_edittool.cpp_CStrList_ctor_FUN_004a2a20
@@ -103,8 +103,8 @@ section .text
     PUSH 0x0                            ; 004bc6ce
     PUSH 0x0                            ; 004bc6d0
     PUSH ESI                            ; 004bc6d2
-    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 004bc6d3
-        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00481f20 ; 004bc6d3
+        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004bc6d8
     LEA EAX,[ESP + 0x62c]               ; 004bc6db
     PUSH EAX                            ; 004bc6e2
@@ -115,8 +115,8 @@ section .text
     PUSH 0x0                            ; 004bc6f3
     LEA EAX,[ESP + 0x438]               ; 004bc6f5
     PUSH EAX                            ; 004bc6fc
-    CALL engine_dosio.c_makePath_FUN_00481f50 ; 004bc6fd
-        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_makePath_FUN_00481f50 ; 004bc6fd
+        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004bc702
     LEA EAX,[ESP + 0x428]               ; 004bc705
     PUSH EAX                            ; 004bc70c
@@ -164,8 +164,8 @@ section .text
         ;   Label: LAB_004bc767
     LEA EAX,[ESP + 0x214]               ; 004bc768
     PUSH EAX                            ; 004bc76f
-    CALL engine_dosio.c_findFileNormally_FUN_004817c0 ; 004bc770
-        ;   XREF to: 004817c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
+    CALL engine_dosio.cpp_findFileNormally_FUN_004817c0 ; 004bc770
+        ;   XREF to: 004817c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
     ADD ESP,0x4                         ; 004bc775
     TEST EAX,EAX                        ; 004bc778
     JZ 0x004bc80d                       ; 004bc77a
@@ -173,8 +173,8 @@ section .text
     MOV EAX,ESP                         ; 004bc780
         ;   Label: LAB_004bc780
     PUSH EAX                            ; 004bc782
-    CALL engine_dosio.c_findFileNormally_FUN_004817c0 ; 004bc783
-        ;   XREF to: 004817c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
+    CALL engine_dosio.cpp_findFileNormally_FUN_004817c0 ; 004bc783
+        ;   XREF to: 004817c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
     ADD ESP,0x4                         ; 004bc788
     TEST EAX,EAX                        ; 004bc78b
     JZ 0x004bc85b                       ; 004bc78d
@@ -358,8 +358,8 @@ section .text
     PUSH EBX                            ; 004bc9b0
     LEA EAX,[ESP + 0x42c]               ; 004bc9b1
     PUSH EAX                            ; 004bc9b8
-    CALL engine_dosio.c_copyFileTimestamp_FUN_00481910 ; 004bc9b9
-        ;   XREF to: 00481910 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_copyFileTimestamp_FUN_00481910(char * source_file, char * dest_file)
+    CALL engine_dosio.cpp_copyFileTimestamp_FUN_00481910 ; 004bc9b9
+        ;   XREF to: 00481910 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_copyFileTimestamp_FUN_00481910(char * source_file, char * dest_file)
     ADD ESP,0x8                         ; 004bc9be
     TEST EAX,EAX                        ; 004bc9c1
     JZ 0x004bc9cc                       ; 004bc9c3

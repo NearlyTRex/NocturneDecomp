@@ -63,8 +63,8 @@ section .text
     PUSH 0x635641                       ; 0050858c | = "rb"
     PUSH 0x635644                       ; 00508591 | = "enemy.pod"
     PUSH 0x63564e                       ; 00508596 | s_EmptyChar_0063564e
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0050859b
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0050859b
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 005085a0
     TEST EAX,EAX                        ; 005085a3
     JNZ 0x00508843                      ; 005085a5

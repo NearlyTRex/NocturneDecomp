@@ -29,7 +29,7 @@ void __cdecl core_setedit_cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0(CDemo
   }
   strcpy(pcVar3, ".thm");
   if ((force_rebuild == 0) &&
-     (p_Var2 = engine_dosio_c_getFile_FUN_00481a50("data",local_118,"rb"),
+     (p_Var2 = engine_dosio_cpp_getFile_FUN_00481a50("data",local_118,"rb"),
      p_Var2 != (_FILE *)0x0)) {
     _fread(g_ThumbnailImageBuffer,0x2ee000,1,p_Var2);
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\setedit.cpp",0x152);
@@ -76,7 +76,7 @@ void __cdecl core_setedit_cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0(CDemo
               (&g_MissingBackdropFiles,"Can't open the following background images.",-1,0);
   }
   shape_edittool_cpp_CPickList_clear_FUN_004a5770(&g_MissingBackdropFiles);
-  file = engine_dosio_c_getFile_FUN_00481a50("data",local_118,"wb");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("data",local_118,"wb");
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
     g_CurrentLineNumber = 0x17d;

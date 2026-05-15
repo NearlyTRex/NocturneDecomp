@@ -15,7 +15,7 @@ SMRGLHeaderExtended * __cdecl engine_model_c_loadModelChunk_FUN_00528970(char *f
   char local_60 [80];
   char cVar1;
   
-  file = engine_dosio_c_getFile_FUN_00481a50("models",filename,"rb");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("models",filename,"rb");
   if (file == (_FILE *)0x0) {
     _sprintf(local_60,"Unable to open model: %s",filename);
     g_CurrentFilename = "..\\engine\\model.c";

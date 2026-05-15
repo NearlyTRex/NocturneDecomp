@@ -730,8 +730,8 @@ section .text
     PUSH 0x0                            ; 0057cce3
     MOV ECX,dword ptr [ESP + 0xfbc]     ; 0057cce5
     PUSH ECX                            ; 0057ccec
-    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 0057cced
-        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00481f20 ; 0057cced
+        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 0057ccf2
     MOV ESI,0x647c8a                    ; 0057ccf5 | = ".set"
     LEA EDI,[ESP + 0xea4]               ; 0057ccfa

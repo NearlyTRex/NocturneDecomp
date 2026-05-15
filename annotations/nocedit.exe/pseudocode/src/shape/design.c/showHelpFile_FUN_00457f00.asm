@@ -24,7 +24,7 @@
 ;   crt_stdio.c_fgets_FUN_005fefd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
 ;   wincore_windll.cpp_clearScreen_FUN_005b3e70
@@ -50,8 +50,8 @@ section .text
     PUSH EAX                            ; 00457f21
     MOV EAX,0x61a86b                    ; 00457f22 | = "help"
     PUSH EAX                            ; 00457f27 | = "help"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00457f28
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00457f28
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00457f2d
     MOV dword ptr [EBP + -0x8],EAX      ; 00457f30
     CMP dword ptr [EBP + -0x8],0x0      ; 00457f33

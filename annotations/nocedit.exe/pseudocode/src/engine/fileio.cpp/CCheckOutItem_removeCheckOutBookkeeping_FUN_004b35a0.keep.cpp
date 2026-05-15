@@ -39,8 +39,8 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35
     g_CurrentLineNumber = 0xdd;
     core_main_c_displayErrorAndQuit_FUN_00506f10("versionControlDirectory not set!");
   }
-  engine_dosio_c_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_14,local_120);
-  engine_dosio_c_makePath_FUN_00481f50(local_224,local_14,local_120,(char *)0x0,(char *)0x0);
+  engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_14,local_120);
+  engine_dosio_cpp_makePath_FUN_00481f50(local_224,local_14,local_120,(char *)0x0,(char *)0x0);
   strcat(local_224,"checkout.txt");
   iVar3 = 0;
   do {

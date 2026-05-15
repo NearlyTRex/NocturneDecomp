@@ -19,7 +19,7 @@
 ;   core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575bc0
 ;   core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00575f60
 ;   core_setdir.cpp_CDemonSet_writeThumbs_FUN_00575e40
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;
 ; *****************************************************************************
@@ -34,8 +34,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 00575b4b
     PUSH EDX                            ; 00575b4f
     PUSH 0x6464e1                       ; 00575b50 | = "data"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00575b55
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00575b55
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 00575b5a
     ADD ESP,0xc                         ; 00575b5c
     TEST EAX,EAX                        ; 00575b5f

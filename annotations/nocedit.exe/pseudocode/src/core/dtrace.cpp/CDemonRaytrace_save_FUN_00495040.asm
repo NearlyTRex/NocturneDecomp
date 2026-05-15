@@ -23,7 +23,7 @@
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_saveBinary_FUN_00494f50
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;
 ; *****************************************************************************
@@ -37,8 +37,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 00495047
     PUSH EDX                            ; 0049504b
     PUSH 0x622a49                       ; 0049504c | = "data"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00495051
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00495051
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00495056
     MOV EBX,EAX                         ; 00495059
     TEST EAX,EAX                        ; 0049505b

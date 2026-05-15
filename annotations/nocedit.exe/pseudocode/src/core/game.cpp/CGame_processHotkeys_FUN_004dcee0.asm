@@ -41,7 +41,7 @@
 ;   core_sound.cpp_CSound_shutdown_FUN_005b2f70
 ;   crt_env.c_getenv_FUN_006013f0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0049f060
 ;   ... and 4 more
 ;
@@ -686,8 +686,8 @@ section .text
     PUSH 0x62b8e6                       ; 004dd576 | = "rb"
     PUSH 0x62b8e9                       ; 004dd57b | = "quicksavedgame.noc"
     PUSH 0x62b8fc                       ; 004dd580 | = "save"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004dd585
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004dd585
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004dd58a
     TEST EAX,EAX                        ; 004dd58d
     JZ 0x004dd5fd                       ; 004dd58f

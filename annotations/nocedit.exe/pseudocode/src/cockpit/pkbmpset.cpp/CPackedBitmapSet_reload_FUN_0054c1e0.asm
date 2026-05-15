@@ -40,7 +40,7 @@
 ;   crt_stdio.c_fread_FUN_005fd990
 ;   crt_stdio.c_fseek_FUN_005ffacc
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_debugFree_FUN_0050f460
 ;   shape_memdbg.cpp_debugMalloc_FUN_0050f250
@@ -60,8 +60,8 @@ section .text
     LEA EBX,[ESI + 0x8]                 ; 0054c1f6
     PUSH EBX                            ; 0054c1f9
     PUSH 0x63f5fe                       ; 0054c1fa | = "art"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0054c1ff
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0054c1ff
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0054c204
     MOV dword ptr [ESP + 0x134],EAX     ; 0054c207
     TEST EAX,EAX                        ; 0054c20e

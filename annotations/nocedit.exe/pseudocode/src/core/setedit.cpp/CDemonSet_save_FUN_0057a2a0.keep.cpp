@@ -26,7 +26,7 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
   CMatrix3x3f *local_18;
   
   this_ptr->set_file_version = 0x1c;
-  file = engine_dosio_c_getFile_FUN_00481a50("models",filename,"wt");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("models",filename,"wt");
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
     g_CurrentLineNumber = 0x6d6;

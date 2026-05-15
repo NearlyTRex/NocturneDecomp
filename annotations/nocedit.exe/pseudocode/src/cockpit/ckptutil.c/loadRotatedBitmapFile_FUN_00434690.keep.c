@@ -28,7 +28,7 @@ char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690(char *filen
       core_main_c_displayErrorAndQuit_FUN_00506f10(local_6c);
     }
   }
-  file = engine_dosio_c_getFile_FUN_00481a50("art",filename,"rb");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("art",filename,"rb");
   if (file == (_FILE *)0x0) {
     _sprintf(local_6c,"Unable to open bitmap file (%s).",filename);
     g_CurrentFilename = "..\\cockpit\\ckptutil.c";

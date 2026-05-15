@@ -112,7 +112,7 @@ LAB_004e17ac:
     }
     core_event_cpp_CEventList_resetGameFlags_FUN_004b0460(g_CEventListPtr);
     core_level_cpp_CLevelLoader_show_FUN_00503dc0(g_CLevelLoaderPtr,9,0,-1);
-    file_handle = engine_dosio_c_getFile_FUN_00481a50("save",local_638,"rt");
+    file_handle = engine_dosio_cpp_getFile_FUN_00481a50("save",local_638,"rt");
     local_18 = _ftell(file_handle);
     iVar4 = 1;
     iVar2 = _stricmp(g_CurrentSaveFile,local_638);
@@ -155,7 +155,7 @@ LAB_004e17ac:
     if (iVar2 == 0) {
 LAB_004e14f5:
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\game.cpp",0xdef);
-      local_30 = engine_dosio_c_getFileSize_FUN_00481880("save",local_638);
+      local_30 = engine_dosio_cpp_getFileSize_FUN_00481880("save",local_638);
       local_30 = local_30 + -4;
       crt_fstream_cpp_ifstream_ctor_FUN_005ff8f0(local_168,0);
       crt_fstream_cpp_ofstream_ctor_FUN_005ff95c(local_e8,0);

@@ -22,8 +22,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   engine_dosio.c_ensureTrailingSlash_FUN_00481f80
-;   engine_dosio.c_makePath_FUN_00481f50
+;   engine_dosio.cpp_ensureTrailingSlash_FUN_00481f80
+;   engine_dosio.cpp_makePath_FUN_00481f50
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
     LEA EAX,[ESP + 0x104]               ; 004b1e7b
     PUSH EAX                            ; 004b1e82
     PUSH 0x2d12ac8                      ; 004b1e83 | g_VersionControlDirectory
-    CALL engine_dosio.c_ensureTrailingSlash_FUN_00481f80 ; 004b1e88
-        ;   XREF to: 00481f80 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_ensureTrailingSlash_FUN_00481f80(char * input_path, char * drive, char * output_path)
+    CALL engine_dosio.cpp_ensureTrailingSlash_FUN_00481f80 ; 004b1e88
+        ;   XREF to: 00481f80 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_ensureTrailingSlash_FUN_00481f80(char * input_path, char * drive, char * output_path)
     ADD ESP,0xc                         ; 004b1e8d
     PUSH 0x0                            ; 004b1e90
     PUSH 0x0                            ; 004b1e92
@@ -53,8 +53,8 @@ section .text
     LEA EAX,[ESP + 0x10c]               ; 004b1e99
     PUSH EAX                            ; 004b1ea0
     PUSH EDI                            ; 004b1ea1
-    CALL engine_dosio.c_makePath_FUN_00481f50 ; 004b1ea2
-        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_makePath_FUN_00481f50 ; 004b1ea2
+        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004b1ea7
     MOV ESI,0x626096                    ; 004b1eaa | = "checkout.txt"
     PUSH EDI                            ; 004b1eaf

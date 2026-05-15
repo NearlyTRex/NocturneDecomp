@@ -41,7 +41,7 @@
 ;   crt_stdlib.c_atoi_FUN_005ffef0
 ;   crt_string.c__strtod_FUN_005ff0f3
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_design.c_centerKeyframeModels_FUN_004681a0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   wincore_windll.cpp_clearScreen_FUN_005b3e70
@@ -261,8 +261,8 @@ section .text
     PUSH EAX                            ; 0046850b
     MOV EAX,0x61cd21                    ; 0046850c | = "models"
     PUSH EAX                            ; 00468511 | = "models"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00468512
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00468512
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00468517
     MOV dword ptr [EBP + -0xc],EAX      ; 0046851a
     CMP dword ptr [EBP + -0xc],0x0      ; 0046851d

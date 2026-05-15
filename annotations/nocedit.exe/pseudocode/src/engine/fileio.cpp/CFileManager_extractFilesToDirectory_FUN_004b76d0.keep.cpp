@@ -106,7 +106,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
     } while (cVar2 != '\0');
     iVar4 = 1;
     if ((this_ptr->operation_mode != 0) &&
-       (iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_534), iVar3 != 0)) {
+       (iVar3 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_534), iVar3 != 0)) {
       p_Var4 = _localtime((time_t *)&local_534.timestamp);
       _strftime(local_320,0x100,"%A, %B, %d, %Y, %I:%M:%S %p",p_Var4);
       time_ptr = _localtime(local_1c + 2);

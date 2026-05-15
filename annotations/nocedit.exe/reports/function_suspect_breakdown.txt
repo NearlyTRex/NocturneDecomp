@@ -4,8 +4,8 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 5706 functions
-  1 suspects: 121 functions
+  0 suspects: 5707 functions
+  1 suspects: 120 functions
   2 suspects: 180 functions
   3 suspects: 107 functions
   4 suspects: 83 functions
@@ -44,7 +44,7 @@ SUSPECT COUNT DISTRIBUTION
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [pointer_cast] (49 functions)
+  [pointer_cast] (48 functions)
   ------------------------------------------------------------
     shape_design.c_findVertexListInModel_FUN_00468000  ( 14 lines)
       model_ptr = (SMRGLHeaderExtended *)((int)&(model_ptr->base)....
@@ -56,8 +56,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       puVar1 = (uint *)((int)&(this_ptr->vertex_data->position).x ...
     sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_ ( 23 lines)
       *(uint *)((int)&(this_ptr->options).delay_remaining + 4) = 0...
-    engine_dosio.c_reopenFileStream_FUN_00481b50       ( 30 lines)
-      *(int *)((int)(file_stream->_fstreambase_core).layout_info +...
     engine_fileio.cpp_CFileManager_deleteLocalFilesFro ( 33 lines)
       remove(*(char **)((int)&(local_438.directory_entries)->name ...
     core_platfrm.cpp_CPlatform_updateAttachedActors_FU ( 37 lines)
@@ -248,7 +246,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       do {...
     core_menu.cpp_getKeyDisplayName_FUN_005134e0       ( 86 lines)
       do {...
-    core_setedit.cpp_CDemonSet_showEditorMenu_FUN_0058 (183 lines)
+    core_setedit.cpp_CDemonSet_showEditorMenu_FUN_0058 (184 lines)
       do {...
 
   [shadow_pointer_walk] (10 functions)
@@ -608,7 +606,7 @@ FUNCTIONS WITH 2-3 SUSPECTS
   core_path.cpp_CPathMap_renderPathMap_FUN_00547fc0
     File: core/path.cpp, Lines: 118, Types: ['stack_alignment_array', 'warning_inlined_function']
   engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650
-    File: engine/fileio.cpp, Lines: 121, Types: ['unrolled_strcpy']
+    File: engine/fileio.cpp, Lines: 122, Types: ['unrolled_strcpy']
   core_door.cpp_CDoor_reposition_FUN_0047fd20
     File: core/door.cpp, Lines: 127, Types: ['unrolled_memcpy']
   core_ground.cpp_CGround_transformAndStoreVertices_FUN_004ef4
@@ -668,7 +666,7 @@ FUNCTIONS WITH 2-3 SUSPECTS
   core_inv.cpp_CInventory_renderAllItems_FUN_00500690
     File: core/inv.cpp, Lines: 366, Types: ['decompiler_intrinsic']
   engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
-    File: engine/pod.cpp, Lines: 367, Types: ['unrolled_memcpy']
+    File: engine/pod.cpp, Lines: 368, Types: ['unrolled_memcpy']
   core_game.cpp_CGame_processFrame_FUN_004da100
     File: core/game.cpp, Lines: 374, Types: ['unrolled_memcpy']
   engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00437c

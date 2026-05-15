@@ -13,7 +13,7 @@
 ;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
-;   engine_dosio.c_copyFileTimestamp_FUN_00481910
+;   engine_dosio.cpp_copyFileTimestamp_FUN_00481910
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;
 ; *****************************************************************************
@@ -25,8 +25,8 @@ section .text
     PUSH EDX                            ; 004b31e4
     MOV ECX,dword ptr [ESP + 0x8]       ; 004b31e5
     PUSH ECX                            ; 004b31e9
-    CALL engine_dosio.c_copyFileTimestamp_FUN_00481910 ; 004b31ea
-        ;   XREF to: 00481910 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_copyFileTimestamp_FUN_00481910(char * source_file, char * dest_file)
+    CALL engine_dosio.cpp_copyFileTimestamp_FUN_00481910 ; 004b31ea
+        ;   XREF to: 00481910 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_copyFileTimestamp_FUN_00481910(char * source_file, char * dest_file)
     ADD ESP,0x8                         ; 004b31ef
     TEST EAX,EAX                        ; 004b31f2
     JZ 0x004b31fc                       ; 004b31f4

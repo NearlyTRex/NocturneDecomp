@@ -19,7 +19,7 @@ void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_00470730(CFilterFx *this_p
   core_dfilter_cpp_CFilterFX_free_FUN_00470700(this_ptr);
   if (filename != (char *)0x0) {
     _sprintf(local_10c,"%s.txt",filename);
-    p_Var1 = engine_dosio_c_getFile_FUN_00481a50(filename,local_10c,"rt");
+    p_Var1 = engine_dosio_cpp_getFile_FUN_00481a50(filename,local_10c,"rt");
     if (p_Var1 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\dfilter.cpp";
       g_CurrentLineNumber = 0x15a;
@@ -31,7 +31,7 @@ void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_00470730(CFilterFx *this_p
                        (this_ptr->frame_count << 0xd,"..\\core\\dfilter.cpp",0x160);
     this_ptr->movie_data = pvVar2;
     _sprintf(local_10c,"%s.mov",filename);
-    file = engine_dosio_c_getFile_FUN_00481a50(filename,local_10c,"rb");
+    file = engine_dosio_cpp_getFile_FUN_00481a50(filename,local_10c,"rb");
     if (file == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\dfilter.cpp";
       g_CurrentLineNumber = 0x166;

@@ -22,7 +22,7 @@ void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_00431ac0(char *base_filen
     pcVar6 = local_ac + strlen(local_ac);
   }
   strcpy(pcVar6, ".ACT");
-  file = engine_dosio_c_getFile_FUN_00481a50("art",local_ac,"rb");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("art",local_ac,"rb");
   if (file == (_FILE *)0x0) {
     memcpy(output_buffer,g_DefaultPalette,0x300);
     return;

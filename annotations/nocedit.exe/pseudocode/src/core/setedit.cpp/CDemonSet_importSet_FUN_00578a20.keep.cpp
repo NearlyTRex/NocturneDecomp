@@ -31,8 +31,8 @@ void __cdecl core_setedit_cpp_CDemonSet_importSet_FUN_00578a20(CDemonSet *this_p
   file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (local_3d8,(char *)0x0,"rt","..\\core\\setedit.cpp",0x36c);
   if (file_ptr != (_FILE *)0x0) {
-    engine_dosio_c_splitPath_FUN_00481f20(local_3d8,(char *)0x0,(char *)0x0,local_2d8,&local_4d8);
-    engine_dosio_c_makePath_FUN_00481f50
+    engine_dosio_cpp_splitPath_FUN_00481f20(local_3d8,(char *)0x0,(char *)0x0,local_2d8,&local_4d8);
+    engine_dosio_cpp_makePath_FUN_00481f50
               (this_ptr->geometry_filename,(char *)0x0,(char *)0x0,local_2d8,"geo");
     if (local_4d8 == '.') {
       str1 = acStack_4d7;
@@ -54,10 +54,10 @@ void __cdecl core_setedit_cpp_CDemonSet_importSet_FUN_00578a20(CDemonSet *this_p
       core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(this_ptr,file_ptr);
     }
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\setedit.cpp",0x399);
-    engine_dosio_c_makePath_FUN_00481f50
+    engine_dosio_cpp_makePath_FUN_00481f50
               (local_1d8,(char *)0x0,"data",local_2d8,"zth");
     remove(local_1d8);
-    engine_dosio_c_makePath_FUN_00481f50
+    engine_dosio_cpp_makePath_FUN_00481f50
               (local_1d8,(char *)0x0,"data",local_2d8,"thm");
     remove(local_1d8);
     return;

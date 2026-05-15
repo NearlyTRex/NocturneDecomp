@@ -98,8 +98,8 @@ section .text
     PUSH 0x6458fd                       ; 00569450 | = "rt"
     PUSH ESI                            ; 00569455
     PUSH 0x645900                       ; 00569456 | = "models"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0056945b
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0056945b
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00569460
     MOV EBX,EAX                         ; 00569463
     TEST EAX,EAX                        ; 00569465
@@ -813,8 +813,8 @@ section .text
     PUSH 0x645a72                       ; 00569d04 | = "rb"
     PUSH EBX                            ; 00569d09
     PUSH 0x645a75                       ; 00569d0a | = "data"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00569d0f
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00569d0f
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00569d14
     TEST EAX,EAX                        ; 00569d17
     JZ 0x0056a150                       ; 00569d19

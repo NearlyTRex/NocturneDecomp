@@ -25,11 +25,11 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char 
   char local_10c [256];
 
   this_ptr->dialog_entry_count = 0;
-  iVar4 = engine_dosio_c_getFileSize_FUN_00481880("world",filename);
+  iVar4 = engine_dosio_cpp_getFileSize_FUN_00481880("world",filename);
   if (iVar4 < 1) {
     return;
   }
-  file_handle = engine_dosio_c_getFile_FUN_00481a50("world",filename,"rt");
+  file_handle = engine_dosio_cpp_getFile_FUN_00481a50("world",filename,"rt");
   if (file_handle == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\script.cpp";
     g_CurrentLineNumber = 0xec2;
@@ -65,10 +65,10 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char 
                 (g_CEditorToolsPtr,"Warning! Duplicate wav string %s detected in %s",local_334,filename);
     }
     _sprintf(local_2f8,"%s.wav",local_334);
-    iVar6 = engine_dosio_c_getFileSize_FUN_00481880("sound",local_2f8);
+    iVar6 = engine_dosio_cpp_getFileSize_FUN_00481880("sound",local_2f8);
     if (iVar6 < 1) {
       _sprintf(local_2f8,"%s.mp3",local_334);
-      iVar6 = engine_dosio_c_getFileSize_FUN_00481880("sound",local_2f8);
+      iVar6 = engine_dosio_cpp_getFileSize_FUN_00481880("sound",local_2f8);
       if (iVar6 < 1) {
         strcpy(local_2f8,local_334);
       }

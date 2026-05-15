@@ -52,7 +52,7 @@
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950
 ;   engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0
 ;   ... and 15 more
 ;
@@ -94,8 +94,8 @@ section .text
     PUSH 0x62d5db                       ; 004e4073 | = "rt"
     PUSH 0x62d5de                       ; 004e4078 | = "credits.txt"
     PUSH 0x62d5ea                       ; 004e407d | = "data"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004e4082
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004e4082
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004e4087
     MOV EBP,EAX                         ; 004e408a
     TEST EAX,EAX                        ; 004e408c

@@ -18,7 +18,7 @@
 ; Called Functions:
 ;   crt_stdio.c_fread_FUN_005fd990
 ;   crt_stdio.c_fseek_FUN_005ffacc
-;   engine_dosio.c_getFileSize_FUN_00481880
+;   engine_dosio.cpp_getFileSize_FUN_00481880
 ;   engine_pod.cpp_crc32UpdateByte_FUN_0054f2e0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
@@ -37,8 +37,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x20]      ; 0054f49b
     PUSH ESI                            ; 0054f49f
     PUSH 0x64015e                       ; 0054f4a0 | s_EmptyChar_0064015e
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 0054f4a5
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 0054f4a5
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 0054f4aa
     PUSH 0xf2                           ; 0054f4ad
     PUSH 0x64015f                       ; 0054f4b2 | = "..\\engine\\pod.cpp"

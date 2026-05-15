@@ -62,7 +62,7 @@ void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360(CSt
       pcVar4 = local_b04;
       pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(this_ptr,index);
       sscanf(pcVar2,format,pcVar3,pcVar4);
-      engine_dosio_c_makePath_FUN_00481f50(local_600,(char *)0x0,(char *)0x0,local_904,local_b04);
+      engine_dosio_cpp_makePath_FUN_00481f50(local_600,(char *)0x0,(char *)0x0,local_904,local_b04);
       iVar1 = _stricmp(search_key,local_600);
       if (iVar1 == 0) {
         return;
@@ -86,10 +86,10 @@ void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360(CSt
     pcVar3 = pcVar3 + (uint)bVar8 * -8 + 4;
   }
   if (file_path != (char *)0x0) {
-    engine_dosio_c_splitPath_FUN_00481f20(file_path,(char *)0x0,(char *)0x0,local_1fc,local_4fc);
-    engine_dosio_c_makePath_FUN_00481f50(local_704,(char *)0x0,(char *)0x0,local_1fc,local_4fc);
+    engine_dosio_cpp_splitPath_FUN_00481f20(file_path,(char *)0x0,(char *)0x0,local_1fc,local_4fc);
+    engine_dosio_cpp_makePath_FUN_00481f50(local_704,(char *)0x0,(char *)0x0,local_1fc,local_4fc);
   }
-  engine_dosio_c_splitPath_FUN_00481f20(search_key,(char *)0x0,(char *)0x0,local_2fc,&local_3fc);
+  engine_dosio_cpp_splitPath_FUN_00481f20(search_key,(char *)0x0,(char *)0x0,local_2fc,&local_3fc);
   if (local_3fc == '.') {
     uVar4 = 0xffffffff;
     pcVar3 = &local_3fc;

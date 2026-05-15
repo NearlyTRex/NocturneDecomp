@@ -5,9 +5,9 @@ FUNCTION SUSPECTS (GROUPED BY FUNCTION)
 SUMMARY
 --------------------------------------------------
 Total functions analyzed: 6454
-Clean: 5686 (88.1%)
-With suspects: 768
-Total suspects: 3901
+Clean: 5687 (88.1%)
+With suspects: 767
+Total suspects: 3900
 
 ====================================================================================================
 core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (1 suspect)
@@ -3764,11 +3764,11 @@ core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 (8 suspects)
 ====================================================================================================
   Line 74 [unrolled_strcpy]: do {
   Line 84 [unrolled_strchr]: do {
-  Line 148 [pointer_cast]: *(uint *)((int)auStack_d80 + iVar20) = uVar16 | uVar12;
+  Line 149 [pointer_cast]: *(uint *)((int)auStack_d80 + iVar20) = uVar16 | uVar12;
   Line 152 [pointer_cast]: *(int *)((int)auStack_1180 + iVar20) = (int)uVar11 / 3 + (int)fStack_50 + iStack_4c;
-  Line 184 [unrolled_memcpy]: g_CDemonCameraInstance.base.position.f.x = (g_CSlewPtr->position).x;
-  Line 283 [pointer_cast]: piVar1 = (int *)((int)auStack_96c + iVar13);
-  Line 295 [pointer_cast]: if (*(int *)((int)pvStack_1c + 0x144) == 0) {
+  Line 185 [unrolled_memcpy]: g_CDemonCameraInstance.base.position.f.x = (g_CSlewPtr->position).x;
+  Line 284 [pointer_cast]: piVar1 = (int *)((int)auStack_96c + iVar13);
+  Line 296 [pointer_cast]: if (*(int *)((int)pvStack_1c + 0x144) == 0) {
   Line 325 [static_null_pointer]: puVar14 = (uint *)p_Stack_20[0x19b185]._handle;
 
 ====================================================================================================
@@ -3781,17 +3781,17 @@ core_setedit.cpp_CDemonSet_editSpotLight_FUN_0057b500 (1 suspect)
 core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (11 suspects)
   File: core/setedit.cpp
 ====================================================================================================
-  Line 201 [unrolled_strchr]: do {
-  Line 213 [unrolled_strchr]: do {
+  Line 202 [unrolled_strchr]: do {
+  Line 214 [unrolled_strchr]: do {
   Line 220 [static_null_pointer]: *pcVar12 = '\0';
-  Line 245 [pointer_cast]: *(uint *)((int)g_S3DTextureGroundTypes + iVar6) = uVar4;
-  Line 264 [pointer_cast]: *(uint *)((int)g_S3DTextureGroundTypes + iVar6) = 0;
+  Line 246 [pointer_cast]: *(uint *)((int)g_S3DTextureGroundTypes + iVar6) = uVar4;
+  Line 265 [pointer_cast]: *(uint *)((int)g_S3DTextureGroundTypes + iVar6) = 0;
   Line 377 [static_invalid_pointer_cast]: iVar6 = _fscanf(file_handle,"%f,%f,%f\n",(float *)(local_38 + iVar5 * 3),(float *)piVar16,(float *)piVar15);
-  Line 478 [unrolled_memcpy]: (pCVar10->pos).x = local_2478.pos.x;
-  Line 483 [unrolled_memcpy]: (pCVar10->orient).x = local_2478.orient.x;
-  Line 487 [unrolled_memcpy]: pCVar10->fov = local_2478.fov;
-  Line 498 [unrolled_memcpy]: pCVar10->camera_light_bounds[0].x_min = local_2478.camera_light_bounds[0].x_min;
-  Line 539 [unrolled_memcpy]: pCVar10->move_filter = local_2478.move_filter;
+  Line 479 [unrolled_memcpy]: (pCVar10->pos).x = local_2478.pos.x;
+  Line 484 [unrolled_memcpy]: (pCVar10->orient).x = local_2478.orient.x;
+  Line 488 [unrolled_memcpy]: pCVar10->fov = local_2478.fov;
+  Line 499 [unrolled_memcpy]: pCVar10->camera_light_bounds[0].x_min = local_2478.camera_light_bounds[0].x_min;
+  Line 540 [unrolled_memcpy]: pCVar10->move_filter = local_2478.move_filter;
 
 ====================================================================================================
 core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50 (4 suspects)
@@ -3902,8 +3902,8 @@ core_setedit.cpp_CDemonSet_writeFileDependencies_FUN_00584e70 (4 suspects)
 ====================================================================================================
   Line 25 [unrolled_strcpy]: do {
   Line 35 [unrolled_strchr]: do {
-  Line 65 [unrolled_strcpy]: do {
-  Line 78 [unrolled_strcpy]: do {
+  Line 66 [unrolled_strcpy]: do {
+  Line 79 [unrolled_strcpy]: do {
 
 ====================================================================================================
 core_setedit.cpp_blitThumbnailStripAndHitTest_FUN_00577730 (6 suspects)
@@ -5456,12 +5456,6 @@ engine_clipper.c_clipPolygonToViewport_FUN_00438420 (2 suspects)
   Line 93 [pointer_cast]: ,*(SRenderVertex **)
 
 ====================================================================================================
-engine_dosio.c_reopenFileStream_FUN_00481b50 (1 suspect)
-  File: engine/dosio.c
-====================================================================================================
-  Line 11 [pointer_cast]: *(int *)((int)(file_stream->_fstreambase_core).layout_info + 4) + -0x38),0);
-
-====================================================================================================
 engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0 (12 suspects)
   File: engine/drender.cpp
 ====================================================================================================
@@ -5741,8 +5735,8 @@ engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740 (5 suspects)
   Line 57 [unrolled_strcpy]: do {
   Line 61 [pointer_cast]: cVar2 = *(char *)((int)&p_Var6->_ptr + 1);
   Line 62 [pointer_cast]: p_Var6 = (_FILE *)((int)&p_Var6->_ptr + 2);
-  Line 132 [unrolled_strcpy]: do {
-  Line 174 [unrolled_strcpy]: do {
+  Line 133 [unrolled_strcpy]: do {
+  Line 175 [unrolled_strcpy]: do {
 
 ====================================================================================================
 engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0 (6 suspects)
@@ -5805,9 +5799,9 @@ engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (12 suspects)
   Line 218 [unrolled_strcpy]: do {
   Line 255 [unrolled_strcpy]: do {
   Line 359 [unrolled_strcpy]: do {
-  Line 377 [unrolled_strcpy]: do {
-  Line 775 [unrolled_strcpy]: do {
-  Line 801 [pointer_cast]: pcVar12 = *(char **)((int)g_PodFileActionNames + iVar4);
+  Line 378 [unrolled_strcpy]: do {
+  Line 776 [unrolled_strcpy]: do {
+  Line 802 [pointer_cast]: pcVar12 = *(char **)((int)g_PodFileActionNames + iVar4);
 
 ====================================================================================================
 engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0 (1 suspect)
@@ -5918,8 +5912,8 @@ engine_fileio.cpp_readTimestampFile_FUN_004b23a0 (4 suspects)
 engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650 (2 suspects)
   File: engine/fileio.cpp
 ====================================================================================================
-  Line 39 [unrolled_strcpy]: do {
-  Line 50 [unrolled_strcpy]: do {
+  Line 40 [unrolled_strcpy]: do {
+  Line 51 [unrolled_strcpy]: do {
 
 ====================================================================================================
 engine_keyframe.c_loadAndInterpolateKeyframes_FUN_00501d40 (1 suspect)
@@ -5966,7 +5960,7 @@ engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 (2 suspects)
   File: engine/pod.cpp
 ====================================================================================================
   Line 94 [unrolled_memcpy]: this_ptr->directory_entries[local_28].size = local_ac.size;
-  Line 192 [unrolled_memcpy]: this_ptr->file_count = local_490.file_count;
+  Line 193 [unrolled_memcpy]: this_ptr->file_count = local_490.file_count;
 
 ====================================================================================================
 engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230 (3 suspects)

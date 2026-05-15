@@ -23,7 +23,7 @@
 ; Called Functions:
 ;   core_script.cpp_CScript_updateLineMetrics_FUN_00566800
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_edittool.cpp_CStrList_getItemCount_FUN_004a6ed0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
@@ -57,8 +57,8 @@ section .text
         ;   Label: LAB_005661a2
     PUSH EBX                            ; 005661a7
     PUSH 0x643f61                       ; 005661a8 | = "world"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 005661ad
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 005661ad
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 005661b2
     MOV EDI,EAX                         ; 005661b5
     TEST EAX,EAX                        ; 005661b7

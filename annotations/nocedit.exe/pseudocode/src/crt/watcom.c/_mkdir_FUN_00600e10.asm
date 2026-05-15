@@ -9,8 +9,8 @@
 ; XREF[8]:
 ;   core_fileman.cpp_refreshSoundDirectory_FUN_004be590 at 004be59f
 ;   core_game.cpp_CGame_saveGame_FUN_004e0cd0 at 004e0d86
-;   engine_dosio.c_getFile_FUN_00481a50 at 00481a9c
-;   engine_dosio.c_reopenFileStream_FUN_00481b50 at 00481ba7
+;   engine_dosio.cpp_getFile_FUN_00481a50 at 00481a9c
+;   engine_dosio.cpp_reopenFileStream_FUN_00481b50 at 00481ba7
 ;   engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50 at 004b7dc9
 ;   shape_meshlod.cpp_CLodMesh_initializeFromPrecomputedData_FUN_0051b8a0 at 0051b8af
 ;   shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_00516d50 at 00516d64

@@ -50,8 +50,8 @@
 ;   crt_stdlib.c_system_FUN_00602130
 ;   crt_string.c_splitpath_FUN_005ff178
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
-;   engine_dosio.c_getFile_FUN_00481a50
-;   engine_dosio.c_getFileSize_FUN_00481880
+;   engine_dosio.cpp_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFileSize_FUN_00481880
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   ... and 9 more
 ;
@@ -76,8 +76,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x798]     ; 00559fa4
     PUSH EDX                            ; 00559fab
     PUSH 0x6417af                       ; 00559fac | = "world"
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 00559fb1
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 00559fb1
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     MOV EBX,EAX                         ; 00559fb6
     ADD ESP,0x8                         ; 00559fb8
     TEST EAX,EAX                        ; 00559fbb
@@ -136,8 +136,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x79c]     ; 0055a033
     PUSH ESI                            ; 0055a03a
     PUSH 0x6417bd                       ; 0055a03b | = "world"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0055a040
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0055a040
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0055a045
     MOV ESI,EAX                         ; 0055a048
     TEST EAX,EAX                        ; 0055a04a

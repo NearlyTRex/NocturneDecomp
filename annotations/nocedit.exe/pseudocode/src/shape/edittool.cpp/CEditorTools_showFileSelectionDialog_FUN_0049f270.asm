@@ -34,7 +34,7 @@
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005fe7f0
-;   engine_dosio.c_makePath_FUN_00481f50
+;   engine_dosio.cpp_makePath_FUN_00481f50
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -114,8 +114,8 @@ section .text
     PUSH 0x0                            ; 0049f31a
     LEA EAX,[ESP + 0x7b8]               ; 0049f31c
     PUSH EAX                            ; 0049f323
-    CALL engine_dosio.c_makePath_FUN_00481f50 ; 0049f324
-        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_makePath_FUN_00481f50 ; 0049f324
+        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 0049f329
     PUSH ESI                            ; 0049f32c
     LEA EAX,[ESP + 0x7ac]               ; 0049f32d
@@ -166,8 +166,8 @@ section .text
     PUSH 0x0                            ; 0049f3a9
     PUSH 0x0                            ; 0049f3ab
     PUSH ESI                            ; 0049f3ad
-    CALL engine_dosio.c_makePath_FUN_00481f50 ; 0049f3ae
-        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_makePath_FUN_00481f50 ; 0049f3ae
+        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 0049f3b3
     PUSH 0x0                            ; 0049f3b6
     LEA EAX,[ESP + 0x4]                 ; 0049f3b8

@@ -2650,8 +2650,8 @@ section .text
     ADD ESP,0x14                        ; 0047e7b7
     LEA EAX,[EBP + 0xfffff1de]          ; 0047e7ba
     PUSH EAX                            ; 0047e7c0
-    CALL engine_dosio.c_findFile_FUN_00481760 ; 0047e7c1
-        ;   XREF to: 00481760 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_findFile_FUN_00481760(SFoundFileInfo * context)
+    CALL engine_dosio.cpp_findFile_FUN_00481760 ; 0047e7c1
+        ;   XREF to: 00481760 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFile_FUN_00481760(SFoundFileInfo * context)
     ADD ESP,0x4                         ; 0047e7c6
     TEST EAX,EAX                        ; 0047e7c9
     JZ 0x0047d967                       ; 0047e7cb

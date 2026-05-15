@@ -13,7 +13,7 @@ void __cdecl core_skeleton_cpp_CSkeleton_load_FUN_00599b10(CSkeleton *this_ptr,c
   _FILE *file_handle;
 
   strcpy(this_ptr->loaded_filename,filename);
-  file_handle = engine_dosio_c_getFile_FUN_00481a50("data",filename,"rt");
+  file_handle = engine_dosio_cpp_getFile_FUN_00481a50("data",filename,"rt");
   if (file_handle == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0xf6;

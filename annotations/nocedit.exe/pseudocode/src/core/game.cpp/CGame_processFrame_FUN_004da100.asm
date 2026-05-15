@@ -1031,8 +1031,8 @@ section .text
     LEA EAX,[EBP + 0xffffff7a]          ; 004dabd6
     PUSH EAX                            ; 004dabdc
     PUSH 0x62b231                       ; 004dabdd | = "movie"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004dabe2
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004dabe2
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004dabe7
     MOV dword ptr [EBP + 0x5a],EAX      ; 004dabea
     TEST EAX,EAX                        ; 004dabed

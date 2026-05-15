@@ -31,7 +31,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_file.c_makepath_FUN_005febfc
 ;   crt_string.c_splitpath_FUN_005ff178
-;   engine_dosio.c_findFileNormally_FUN_004817c0
+;   engine_dosio.cpp_findFileNormally_FUN_004817c0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;   shape_edittool.cpp_CStrList_ctor_FUN_004a2a20
 ;   shape_edittool.cpp_CStrList_dtor_FUN_004a2a40
@@ -95,8 +95,8 @@ section .text
         ;   Label: LAB_004bd7cb
     MOV EAX,ESP                         ; 004bd7cc
     PUSH EAX                            ; 004bd7ce
-    CALL engine_dosio.c_findFileNormally_FUN_004817c0 ; 004bd7cf
-        ;   XREF to: 004817c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
+    CALL engine_dosio.cpp_findFileNormally_FUN_004817c0 ; 004bd7cf
+        ;   XREF to: 004817c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
     ADD ESP,0x4                         ; 004bd7d4
     TEST EAX,EAX                        ; 004bd7d7
     JZ 0x004bd887                       ; 004bd7d9
@@ -128,8 +128,8 @@ section .text
     ADD ESP,0x14                        ; 004bd830
     LEA EAX,[ESP + 0x214]               ; 004bd833
     PUSH EAX                            ; 004bd83a
-    CALL engine_dosio.c_findFileNormally_FUN_004817c0 ; 004bd83b
-        ;   XREF to: 004817c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
+    CALL engine_dosio.cpp_findFileNormally_FUN_004817c0 ; 004bd83b
+        ;   XREF to: 004817c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
     ADD ESP,0x4                         ; 004bd840
     TEST EAX,EAX                        ; 004bd843
     JZ 0x004bd8ad                       ; 004bd845

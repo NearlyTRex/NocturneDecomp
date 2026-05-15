@@ -110,7 +110,7 @@ LAB_004b5706:
     g_CurrentLineNumber = 0x767;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too many files - get Mark");
   }
-  engine_dosio_c_splitPath_FUN_00481f20(local_64,(char *)0x0,local_47c,local_27c,local_37c);
+  engine_dosio_cpp_splitPath_FUN_00481f20(local_64,(char *)0x0,local_47c,local_27c,local_37c);
   iVar7 = _stricmp(local_47c,"art");
   if ((iVar7 != 0) &&
      (iVar7 = _stricmp(local_47c,"art\\"), iVar7 != 0)) {
@@ -121,12 +121,12 @@ LAB_004b5706:
      (iVar7 = _stricmp(local_37c,".raw"), iVar7 != 0)) {
     return;
   }
-  engine_dosio_c_makePath_FUN_00481f50(local_580,(char *)0x0,local_47c,local_27c,"OPA");
-  iVar7 = engine_dosio_c_getFileSize_FUN_00481880((char *)0x0,local_580);
+  engine_dosio_cpp_makePath_FUN_00481f50(local_580,(char *)0x0,local_47c,local_27c,"OPA");
+  iVar7 = engine_dosio_cpp_getFileSize_FUN_00481880((char *)0x0,local_580);
   if (iVar7 < 0) {
     return;
   }
-  iVar3 = engine_dosio_c_getFileSize_FUN_00481880((char *)0x0,local_64);
+  iVar3 = engine_dosio_cpp_getFileSize_FUN_00481880((char *)0x0,local_64);
   if (iVar7 != iVar3) {
     _sprintf(local_17c,"%s is not the same size as %s",local_580,local_64);
     g_CurrentFilename = "..\\engine\\fileio.cpp";

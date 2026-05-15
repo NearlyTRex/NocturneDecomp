@@ -17,7 +17,7 @@ void __cdecl shape_design_c_showHelpFile_FUN_00457f00(char *help_filename)
   
   local_14 = 0;
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  stream = engine_dosio_c_getFile_FUN_00481a50("help",help_filename,"rt");
+  stream = engine_dosio_cpp_getFile_FUN_00481a50("help",help_filename,"rt");
   if (stream != (_FILE *)0x0) {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     while (pcVar1 = _fgets(local_68,0x4f,stream), pcVar1 != (char *)0x0) {

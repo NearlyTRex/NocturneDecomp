@@ -47,7 +47,7 @@
 ;   crt_memory.c_memset_FUN_005fde40
 ;   crt_stdio.c_fread_FUN_005fd990
 ;   crt_stdio.c_fwrite_FUN_005fdc00
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530
@@ -165,8 +165,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00576e52
     PUSH EAX                            ; 00576e56
     PUSH 0x6466eb                       ; 00576e57 | = "data"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00576e5c
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00576e5c
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 00576e61
     ADD ESP,0xc                         ; 00576e63
     TEST EAX,EAX                        ; 00576e66
@@ -285,8 +285,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00576fbf
     PUSH EAX                            ; 00576fc3
     PUSH 0x646756                       ; 00576fc4 | = "data"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00576fc9
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00576fc9
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00576fce
     MOV EBX,EAX                         ; 00576fd1
     TEST EAX,EAX                        ; 00576fd3

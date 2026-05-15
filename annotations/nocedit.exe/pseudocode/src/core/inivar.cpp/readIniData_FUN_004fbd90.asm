@@ -34,7 +34,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_msnedit.cpp_CDemonMission_readIni_FUN_00537530
 ;   core_setedit.cpp_CDemonSet_readIni_FUN_00584900
-;   engine_dosio.c_setReadonlyAttribute_FUN_00600c30
+;   engine_dosio.cpp_setReadonlyAttribute_FUN_00600c30
 ;   engine_ini.cpp_CIniFile_ctor_FUN_004fba70
 ;   engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30
 ;   engine_ini.cpp_CIniFile_getString_FUN_004fbb20
@@ -52,8 +52,8 @@ section .text
     PUSH ESI                            ; 004fbd98
     PUSH 0x180                          ; 004fbd99
     PUSH 0x67cce0                       ; 004fbd9e | = ".\\system\\nocturne.ini"
-    CALL engine_dosio.c_setReadonlyAttribute_FUN_00600c30 ; 004fbda3
-        ;   XREF to: 00600c30 (UNCONDITIONAL_CALL)  ; DWORD engine_dosio.c_setReadonlyAttribute_FUN_00600c30(char * filename, DWORD file_attributes)
+    CALL engine_dosio.cpp_setReadonlyAttribute_FUN_00600c30 ; 004fbda3
+        ;   XREF to: 00600c30 (UNCONDITIONAL_CALL)  ; DWORD engine_dosio.cpp_setReadonlyAttribute_FUN_00600c30(char * filename, DWORD file_attributes)
     ADD ESP,0x8                         ; 004fbda8
     TEST EAX,EAX                        ; 004fbdab
     JNZ 0x004fc4e5                      ; 004fbdad

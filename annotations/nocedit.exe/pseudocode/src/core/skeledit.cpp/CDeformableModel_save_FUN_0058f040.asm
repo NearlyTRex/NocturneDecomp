@@ -30,7 +30,7 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   engine_pod.cpp_CPod_locateFile_FUN_005512f0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;   shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
@@ -87,8 +87,8 @@ section .text
         ;   Label: LAB_0058f09f
     PUSH EBX                            ; 0058f0a4
     PUSH 0x64b180                       ; 0058f0a5 | = "models"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0058f0aa
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0058f0aa
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0058f0af
     MOV ESI,EAX                         ; 0058f0b2
     TEST EAX,EAX                        ; 0058f0b4

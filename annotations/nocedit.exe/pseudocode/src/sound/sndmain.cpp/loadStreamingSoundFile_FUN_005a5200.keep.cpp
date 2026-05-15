@@ -40,11 +40,11 @@ LAB_005a5242:
   if (local_14 == (CSfxSample *)0x0) {
     return (CSfxSample *)0x0;
   }
-  engine_dosio_c_splitPath_FUN_00481f20(filename,(char *)0x0,(char *)0x0,(char *)0x0,local_114);
+  engine_dosio_cpp_splitPath_FUN_00481f20(filename,(char *)0x0,(char *)0x0,(char *)0x0,local_114);
   iVar7 = _stricmp(local_114,"mp3");
   if ((iVar7 == 0) ||
      (iVar7 = _stricmp(local_114,".mp3"), iVar7 == 0)) {
-    iVar7 = engine_dosio_c_getFileSize_FUN_00481880("sound",filename);
+    iVar7 = engine_dosio_cpp_getFileSize_FUN_00481880("sound",filename);
     if (iVar7 < 1) goto LAB_005a5505;
     this_ptr = (CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
                          (0x8630,"..\\sound\\sndmain.cpp",0x3c5);
@@ -80,7 +80,7 @@ LAB_005a5242:
     iVar7 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(local_14);
   }
   else {
-    p_Var4 = engine_dosio_c_getFile_FUN_00481a50("sound",filename,"rb");
+    p_Var4 = engine_dosio_cpp_getFile_FUN_00481a50("sound",filename,"rb");
     local_14->file_handle = p_Var4;
     if (p_Var4 == (_FILE *)0x0) goto LAB_005a5505;
     strcpy((local_14->sample_info).name, filename);

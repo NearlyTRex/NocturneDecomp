@@ -30,8 +30,8 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fputc_FUN_006007a0
-;   engine_dosio.c_getFile_FUN_00481a50
-;   engine_dosio.c_getFileSize_FUN_00481880
+;   engine_dosio.cpp_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFileSize_FUN_00481880
 ;   shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
 ;   shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -49,8 +49,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 00537dd8
     PUSH EDX                            ; 00537ddc
     PUSH EBP                            ; 00537ddd
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 00537dde
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 00537dde
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 00537de3
     MOV EBX,EAX                         ; 00537de6
     TEST EAX,EAX                        ; 00537de8
@@ -60,8 +60,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x18]      ; 00537df5
     PUSH ECX                            ; 00537df9
     PUSH EBP                            ; 00537dfa
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00537dfb
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00537dfb
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00537e00
     MOV ESI,EAX                         ; 00537e03
     TEST EAX,EAX                        ; 00537e05
@@ -82,8 +82,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x1c]      ; 00537e35
     PUSH ECX                            ; 00537e39
     PUSH EBP                            ; 00537e3a
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00537e3b
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00537e3b
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00537e40
     MOV EDI,EAX                         ; 00537e43
     TEST EAX,EAX                        ; 00537e45

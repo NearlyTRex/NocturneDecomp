@@ -43,8 +43,8 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_errno.c__errno_FUN_00601450
 ;   crt_stdio.c_setvbuf_FUN_00601490
-;   engine_dosio.c_ensureTrailingSlash_FUN_00481f80
-;   engine_dosio.c_makePath_FUN_00481f50
+;   engine_dosio.cpp_ensureTrailingSlash_FUN_00481f80
+;   engine_dosio.cpp_makePath_FUN_00481f50
 ;   engine_fileio.cpp_CCheckOutList_findEntry_FUN_004b2e60
 ;   engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
 ;   engine_fileio.cpp_CCheckOutList_remove_FUN_004b2d70
@@ -108,8 +108,8 @@ section .text
     LEA EAX,[ESP + 0x214]               ; 004b3621
     PUSH EAX                            ; 004b3628
     PUSH 0x2d12ac8                      ; 004b3629 | g_VersionControlDirectory
-    CALL engine_dosio.c_ensureTrailingSlash_FUN_00481f80 ; 004b362e
-        ;   XREF to: 00481f80 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_ensureTrailingSlash_FUN_00481f80(char * input_path, char * drive, char * output_path)
+    CALL engine_dosio.cpp_ensureTrailingSlash_FUN_00481f80 ; 004b362e
+        ;   XREF to: 00481f80 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_ensureTrailingSlash_FUN_00481f80(char * input_path, char * drive, char * output_path)
     ADD ESP,0xc                         ; 004b3633
     PUSH 0x0                            ; 004b3636
     PUSH 0x0                            ; 004b3638
@@ -118,8 +118,8 @@ section .text
     LEA EAX,[ESP + 0x21c]               ; 004b3642
     PUSH EAX                            ; 004b3649
     PUSH EDI                            ; 004b364a
-    CALL engine_dosio.c_makePath_FUN_00481f50 ; 004b364b
-        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_makePath_FUN_00481f50 ; 004b364b
+        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004b3650
     MOV ESI,0x626096                    ; 004b3653 | = "checkout.txt"
     PUSH EDI                            ; 004b3658

@@ -64,7 +64,7 @@ void __cdecl shape_multicrm_cpp_CMultiCram_run_FUN_0053ee70(CMultiCram *this_ptr
     shape_design_c_exportModelToBIN_FUN_0045aa80(local_11c,0x4e,0x35,1,0x59);
     for (local_18 = 0x61; local_18 < 0x7b; local_18 = local_18 + 1) {
       _sprintf(local_11c,"%s%c.bin",this_ptr->models[local_1c]->model_name,local_18);
-      file_ptr = engine_dosio_c_getFile_FUN_00481a50("models",local_11c,"rb");
+      file_ptr = engine_dosio_cpp_getFile_FUN_00481a50("models",local_11c,"rb");
       if (file_ptr != (_FILE *)0x0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\shape\\multicrm.cpp",0x80);
         shape_dsemodel_cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0

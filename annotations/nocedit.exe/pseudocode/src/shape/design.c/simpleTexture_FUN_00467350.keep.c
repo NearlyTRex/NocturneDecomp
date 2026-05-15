@@ -25,7 +25,7 @@ void __cdecl shape_design_c_simpleTexture_FUN_00467350(void)
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_70,0x28,0,0,"Enter texture name : ");
   if (local_70[0] != '\0') {
-    file_ptr = engine_dosio_c_getFile_FUN_00481a50("art",local_70,"rb");
+    file_ptr = engine_dosio_cpp_getFile_FUN_00481a50("art",local_70,"rb");
     if (file_ptr == (_FILE *)0x0) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("ERROR! Bad texture name!",0,0);

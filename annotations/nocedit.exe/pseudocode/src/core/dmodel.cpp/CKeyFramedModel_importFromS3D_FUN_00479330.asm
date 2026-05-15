@@ -347,8 +347,8 @@ section .text
     MOV EDX,dword ptr [EBP + 0x92]      ; 0047955c
     PUSH EDX                            ; 00479562
     PUSH 0x61fc9e                       ; 00479563 | = "models"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00479568
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00479568
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0047956d
     JMP 0x004793ab                      ; 00479570
         ;   XREF to: 004793ab (UNCONDITIONAL_JUMP)  ; LAB_004793ab

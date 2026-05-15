@@ -16,7 +16,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(CKeyFramedModel *
   char *pcVar4;
   
   core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(this_ptr);
-  file = engine_dosio_c_getFile_FUN_00481a50("models",filename,"rb");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("models",filename,"rb");
   pcVar4 = filename;
   pCVar3 = this_ptr;
   if (file == (_FILE *)0x0) {
@@ -37,7 +37,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(CKeyFramedModel *
   _ungetc(iVar2,file);
   if (iVar2 == 0x2f) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\dmodel.cpp",0xc3);
-    file = engine_dosio_c_getFile_FUN_00481a50("models",filename,"rt");
+    file = engine_dosio_cpp_getFile_FUN_00481a50("models",filename,"rt");
     if (file == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\dmodel.cpp";
       g_CurrentLineNumber = 0xc5;

@@ -47,7 +47,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv
                        );
   if (file_ptr != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\main.c",0x3be);
-    DVar7 = engine_dosio_c_setReadonlyAttribute_FUN_00600c30("stderr.txt",0x1c0);
+    DVar7 = engine_dosio_cpp_setReadonlyAttribute_FUN_00600c30("stderr.txt",0x1c0);
     if (DVar7 != 0) {
       g_CurrentFilename = "..\\core\\main.c";
       g_CurrentLineNumber = 0x3c0;
@@ -61,8 +61,8 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(int argc,char **argv
   core_inivar_cpp_readIniData_FUN_004fbd90();
   g_AGPTextureMode = 2;
   engine_pod_cpp_CPod_init_FUN_00550c30((CPod *)g_CDemonPodPtr);
-  engine_dosio_c_addGetFileInfoHook_FUN_00481710(engine_pod_cpp_findFileInPod_FUN_00551960);
-  engine_dosio_c_addGetFileInfoHook_FUN_00481710(engine_dosio_c_findFileNormally_FUN_004817c0);
+  engine_dosio_cpp_addGetFileInfoHook_FUN_00481710(engine_pod_cpp_findFileInPod_FUN_00551960);
+  engine_dosio_cpp_addGetFileInfoHook_FUN_00481710(engine_dosio_cpp_findFileNormally_FUN_004817c0);
   support_newmsg_cpp_readMessageFile_FUN_00543e40("msglist.txt");
   core_mmx_c_detectCPUFeatures_FUN_00524f10();
   if (g_MMXSupported == 0) {

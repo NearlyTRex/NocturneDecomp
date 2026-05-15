@@ -13,7 +13,7 @@ void __cdecl core_dfilter_cpp_CDemonFilter_save_FUN_00470510(CDemonFilter *this_
   _FILE *file;
   int iVar1;
   
-  file = engine_dosio_c_getFile_FUN_00481a50("art",filename,"wb");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("art",filename,"wb");
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\dfilter.cpp";
     g_CurrentLineNumber = 0xeb;

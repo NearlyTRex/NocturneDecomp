@@ -14,7 +14,7 @@ void __cdecl shape_design_c_exportVertexListFile_FUN_0045a610(void)
   int local_1c;
   int local_18;
   
-  file = engine_dosio_c_getFile_FUN_00481a50("models","input.lst","wt");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("models","input.lst","wt");
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\shape\\design.c";
     g_CurrentLineNumber = 0x6ca;

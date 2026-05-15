@@ -124,14 +124,14 @@ LAB_004bdb2c:
               splitpath
                         (local_3a5 + 1,(char *)0x0,(char *)0x0,local_dc,(char *)0x0);
               strcat(local_dc,".scr");
-              iVar3 = engine_dosio_c_getFileSize_FUN_00481880("world",local_dc);
+              iVar3 = engine_dosio_cpp_getFileSize_FUN_00481880("world",local_dc);
               if (0 < iVar3) {
                 _fprintf((this_ptr->base).file_ptr,"WORLD\\%s\n",local_dc);
               }
               splitpath
                         (local_3a5 + 1,(char *)0x0,(char *)0x0,local_78,(char *)0x0);
               strcat(local_78,".txt");
-              iVar3 = engine_dosio_c_getFileSize_FUN_00481880("world",local_78);
+              iVar3 = engine_dosio_cpp_getFileSize_FUN_00481880("world",local_78);
               if (0 < iVar3) {
                 _fprintf((this_ptr->base).file_ptr,"WORLD\\%s\n",local_78);
               }

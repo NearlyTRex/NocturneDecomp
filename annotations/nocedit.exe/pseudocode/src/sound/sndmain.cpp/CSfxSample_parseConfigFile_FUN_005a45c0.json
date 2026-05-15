@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 541,
-    "complexity_score": 228,
+    "complexity_score": 230,
     "cross_reference_count": 4,
     "function_call_count": 12,
     "global_count": 44,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 228,
+    "pseudocode_lines": 230,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 769
+    "total_lines": 771
   },
   "cross_references": [
     {
@@ -95,22 +95,22 @@
     {
       "addr": "00481a50",
       "is_variadic": false,
-      "name": "engine_dosio.c_getFile_FUN_00481a50"
+      "name": "engine_dosio.cpp_getFile_FUN_00481a50"
     },
     {
       "addr": "00481880",
       "is_variadic": false,
-      "name": "engine_dosio.c_getFileSize_FUN_00481880"
+      "name": "engine_dosio.cpp_getFileSize_FUN_00481880"
     },
     {
       "addr": "00481f50",
       "is_variadic": false,
-      "name": "engine_dosio.c_makePath_FUN_00481f50"
+      "name": "engine_dosio.cpp_makePath_FUN_00481f50"
     },
     {
       "addr": "00481f20",
       "is_variadic": false,
-      "name": "engine_dosio.c_splitPath_FUN_00481f20"
+      "name": "engine_dosio.cpp_splitPath_FUN_00481f20"
     },
     {
       "addr": "0050f9b0",
@@ -514,7 +514,7 @@
   "resolved_suspects": [
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 129,
+      "line": 131,
       "match": "SUB84(",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -523,7 +523,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 154,
+      "line": 156,
       "match": "SUB84(",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -532,7 +532,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 182,
+      "line": 184,
       "match": "SUB84(",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -541,7 +541,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 108,
+      "line": 110,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "resolution_source": "keep",
       "severity": "moderate",

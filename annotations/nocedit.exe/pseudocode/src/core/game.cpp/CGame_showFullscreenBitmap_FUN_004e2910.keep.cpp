@@ -37,7 +37,7 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
   }
   pcVar10 = this_ptr->bitmap_filename;
   this_ptr->cutscene_skippable = 0;
-  iVar2 = engine_dosio_c_getFileSize_FUN_00481880("art",pcVar10);
+  iVar2 = engine_dosio_cpp_getFileSize_FUN_00481880("art",pcVar10);
   if (iVar2 < 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't open %s",pcVar10);
@@ -57,7 +57,7 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
   }
   splitpath(pcVar10,(char *)0x0,(char *)0x0,local_130,(char *)0x0);
   strcat(local_130,".act");
-  p_Var4 = engine_dosio_c_getFile_FUN_00481a50("art",local_130,"rb");
+  p_Var4 = engine_dosio_cpp_getFile_FUN_00481a50("art",local_130,"rb");
   if (p_Var4 == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't open %s",local_130);
@@ -103,7 +103,7 @@ void __cdecl core_game_cpp_CGame_showFullscreenBitmap_FUN_004e2910(CGame *this_p
                        (this_ptr->bitmap_width * this_ptr->bitmap_height,"..\\core\\game.cpp",
                         0x1016);
     if (buffer != (void *)0x0) {
-      file = engine_dosio_c_getFile_FUN_00481a50
+      file = engine_dosio_cpp_getFile_FUN_00481a50
                        ("art",this_ptr->bitmap_filename,"rb");
       if (file == (_FILE *)0x0) {
         g_CurrentFilename = "..\\core\\game.cpp";

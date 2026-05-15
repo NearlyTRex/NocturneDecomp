@@ -56,7 +56,7 @@ LAB_004b5436:
     pcVar5[1] = cVar2;
     pcVar5 = pcVar5 + 2;
   } while (cVar2 != '\0');
-  file_ptr = engine_dosio_c_getFile_FUN_00481a50("art",local_58,"rb");
+  file_ptr = engine_dosio_cpp_getFile_FUN_00481a50("art",local_58,"rb");
   if (file_ptr != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\engine\\fileio.cpp",0x6e7);
     _fprintf(this_ptr->file_ptr,"ART\\%s\n",local_58);

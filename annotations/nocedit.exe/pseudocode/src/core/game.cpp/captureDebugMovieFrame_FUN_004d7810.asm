@@ -26,7 +26,7 @@
 ;   crt_stdio.c_fputc_FUN_006007a0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_drawText_FUN_00401fd0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;
 ; *****************************************************************************
@@ -106,8 +106,8 @@ section .text
     LEA EAX,[ESP + 0xcc]                ; 004d78c5
     PUSH EAX                            ; 004d78cc
     PUSH 0x62b231                       ; 004d78cd | = "movie"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004d78d2
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004d78d2
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004d78d7
     MOV dword ptr [ESP + 0x134],EAX     ; 004d78da
     TEST EAX,EAX                        ; 004d78e1

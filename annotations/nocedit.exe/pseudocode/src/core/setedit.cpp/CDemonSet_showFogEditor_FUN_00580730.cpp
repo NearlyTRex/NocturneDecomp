@@ -283,7 +283,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
         local_140[0] = '\0';
       }
       else {
-        engine_dosio_c_splitPath_FUN_00481f20
+        engine_dosio_cpp_splitPath_FUN_00481f20
                   (this_ptr->geometry_filename,(char *)0x0,(char *)0x0,local_140,(char *)0x0);
         pcVar8 = ".set";
         iVar5 = -1;

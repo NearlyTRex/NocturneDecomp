@@ -46,7 +46,7 @@
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__strcmp_FUN_005fef20
 ;   engine_2d.c_drawText_FUN_00401fd0
-;   engine_dosio.c_getFileSize_FUN_00481880
+;   engine_dosio.cpp_getFileSize_FUN_00481880
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
 ;   wincore_windll.cpp_clearScreen_FUN_005b3e70
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
@@ -196,8 +196,8 @@ section .text
     PUSH EAX                            ; 00459b45
     MOV EAX,dword ptr [EBP + 0x14]      ; 00459b46
     PUSH EAX                            ; 00459b49
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 00459b4a
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 00459b4a
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 00459b4f
     MOV dword ptr [EBP + -0x20],EAX     ; 00459b52
     MOV dword ptr [EBP + -0x1c],0x0     ; 00459b55

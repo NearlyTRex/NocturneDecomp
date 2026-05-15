@@ -103,7 +103,7 @@ void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
         if ((0.0 < local_14) && (local_14 < (float)127)) {
           local_264.cycle_length = (int)ROUND(ROUND(local_14 * (float)65536));
           local_264.header.base.type = 0x20;
-          file = engine_dosio_c_getFile_FUN_00481a50("models",local_10c,"wb");
+          file = engine_dosio_cpp_getFile_FUN_00481a50("models",local_10c,"wb");
           if (file == (_FILE *)0x0) {
             g_CurrentFilename = "..\\shape\\design.c";
             g_CurrentLineNumber = 0x2277;

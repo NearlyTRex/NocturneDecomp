@@ -28,8 +28,8 @@ void __cdecl engine_fileio_cpp_buildHistoryFilePath_FUN_004b1f10(char *filename,
   }
   pcVar3 = local_214;
   _sprintf(local_214,"history\\%s.%s",filename,extension);
-  engine_dosio_c_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_10,local_110);
-  engine_dosio_c_makePath_FUN_00481f50(dest_buffer,local_10,local_110,(char *)0x0,(char *)0x0);
+  engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_10,local_110);
+  engine_dosio_cpp_makePath_FUN_00481f50(dest_buffer,local_10,local_110,(char *)0x0,(char *)0x0);
   iVar2 = -1;
   pcVar4 = dest_buffer;
   do {

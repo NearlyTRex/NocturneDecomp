@@ -72,7 +72,7 @@ LAB_004ef09d:
     pcVar3[1] = cVar2;
     pcVar3 = pcVar3 + 2;
   } while (cVar2 != '\0');
-  file = engine_dosio_c_getFile_FUN_00481a50("data",local_cc,"rb");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("data",local_cc,"rb");
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\ground.cpp";
     g_CurrentLineNumber = 0x44;
@@ -140,7 +140,7 @@ LAB_004ef1f1:
     pcVar4[1] = cVar2;
     pcVar4 = pcVar4 + 2;
   } while (cVar2 != '\0');
-  file_00 = engine_dosio_c_getFile_FUN_00481a50("data",local_7c,"rb");
+  file_00 = engine_dosio_cpp_getFile_FUN_00481a50("data",local_7c,"rb");
   if (file_00 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\ground.cpp";
     g_CurrentLineNumber = 0x44;

@@ -7,15 +7,15 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 556,
-    "complexity_score": 278,
+    "complexity_score": 279,
     "cross_reference_count": 24,
     "function_call_count": 27,
     "global_count": 47,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 278,
+    "pseudocode_lines": 279,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 834
+    "total_lines": 835
   },
   "cross_references": [
     {
@@ -199,17 +199,17 @@
     {
       "addr": "00481a50",
       "is_variadic": false,
-      "name": "engine_dosio.c_getFile_FUN_00481a50"
+      "name": "engine_dosio.cpp_getFile_FUN_00481a50"
     },
     {
       "addr": "00481880",
       "is_variadic": false,
-      "name": "engine_dosio.c_getFileSize_FUN_00481880"
+      "name": "engine_dosio.cpp_getFileSize_FUN_00481880"
     },
     {
       "addr": "00481f20",
       "is_variadic": false,
-      "name": "engine_dosio.c_splitPath_FUN_00481f20"
+      "name": "engine_dosio.cpp_splitPath_FUN_00481f20"
     },
     {
       "addr": "0050f1b0",
@@ -822,7 +822,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 155,
+      "line": 156,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -831,7 +831,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 194,
+      "line": 195,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -858,7 +858,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar18` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 162,
+      "line": 163,
       "match": "pCVar18 = (T *)((pCVar18->FIELD).SUBFIELD...ARRAY + CONST)",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -867,7 +867,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar12` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar12->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 201,
+      "line": 202,
       "match": "pCVar12 = (T *)((pCVar12->FIELD).SUBFIELD...ARRAY + CONST)",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -876,7 +876,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 244,
+      "line": 245,
       "match": "pCVar4 = (T *)&(pCVar4->FIELD).SUBFIELD",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -885,7 +885,7 @@
     },
     {
       "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar4` (struct-field advance + constant `[0]` index + self-assign no-op). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep.",
-      "line": 243,
+      "line": 244,
       "match": "do { var = (T *)&var->...; var->arr[0]...; var = var; ...}",
       "resolution_source": "keep",
       "severity": "moderate",

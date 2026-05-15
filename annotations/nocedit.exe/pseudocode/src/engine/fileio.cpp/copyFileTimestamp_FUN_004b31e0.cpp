@@ -11,7 +11,7 @@ int __cdecl engine_fileio_cpp_copyFileTimestamp_FUN_004b31e0(char *source_file,c
 {
   int iVar1;
   
-  iVar1 = engine_dosio_c_copyFileTimestamp_FUN_00481910(source_file,dest_file);
+  iVar1 = engine_dosio_cpp_copyFileTimestamp_FUN_00481910(source_file,dest_file);
   if (iVar1 != 0) {
     return 1;
   }

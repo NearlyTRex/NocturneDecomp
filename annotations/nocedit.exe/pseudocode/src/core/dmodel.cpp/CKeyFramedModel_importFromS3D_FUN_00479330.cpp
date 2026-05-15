@@ -97,7 +97,7 @@ LAB_0047935f:
     pcVar14 = (char *)0x0;
 LAB_00479383:
     if (pcVar14 == (char *)0x0) {
-      local_20 = engine_dosio_c_getFile_FUN_00481a50("models",filename,"rt");
+      local_20 = engine_dosio_cpp_getFile_FUN_00481a50("models",filename,"rt");
       goto LAB_004793ab;
     }
   }

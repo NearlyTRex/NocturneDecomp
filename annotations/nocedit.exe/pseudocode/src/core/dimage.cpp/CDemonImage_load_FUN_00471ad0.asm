@@ -37,7 +37,7 @@
 ;   core_dimage.cpp_CDemonImage_packColor_FUN_00471a70
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c_fread_FUN_005fd990
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;
 ; *****************************************************************************
@@ -73,8 +73,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00471b09
     PUSH EAX                            ; 00471b0d
     PUSH 0x61ecc0                       ; 00471b0e | = "art"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00471b13
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00471b13
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00471b18
     MOV EBX,EAX                         ; 00471b1b
     TEST EAX,EAX                        ; 00471b1d
@@ -161,8 +161,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00471be0
     PUSH EAX                            ; 00471be4
     PUSH 0x61ed5d                       ; 00471be5 | = "art"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00471bea
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00471bea
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00471bef
     MOV EBX,EAX                         ; 00471bf2
     TEST EAX,EAX                        ; 00471bf4

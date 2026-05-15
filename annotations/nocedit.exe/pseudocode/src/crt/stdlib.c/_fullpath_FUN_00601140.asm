@@ -11,7 +11,7 @@
 ; XREF[3]:
 ;   crt_io.c_getFileStat_FUN_00607e64 at 00607ecd
 ;   crt_io.c_getTempDirectory_FUN_00609afc at 00609b47
-;   engine_dosio.c_getFullPath_FUN_004820c0 at 004820d1
+;   engine_dosio.cpp_getFullPath_FUN_004820c0 at 004820d1
 ;
 ; Referenced Globals:
 ;   GET_FULL_PATH_NAME_A_FUNC* g_GetFullPathNameAFunc = 00211f0e

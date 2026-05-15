@@ -70,7 +70,7 @@
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   engine_model.c_freeMRGLData_FUN_005280b0
 ;   engine_model.c_getMRGLBounds_FUN_00528140
 ;   engine_model.c_loadModelFile_FUN_00527ec0
@@ -99,8 +99,8 @@ section .text
     PUSH EAX                            ; 0045818c
     MOV EAX,0x61a8b5                    ; 0045818d | = "models"
     PUSH EAX                            ; 00458192 | = "models"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00458193
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00458193
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00458198
     MOV dword ptr [EBP + -0x28],EAX     ; 0045819b
     CMP dword ptr [EBP + -0x28],0x0     ; 0045819e

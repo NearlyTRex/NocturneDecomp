@@ -22,7 +22,7 @@ void * __cdecl cockpit_ckptutil_c_readBitmapFile_FUN_00431870(char *filename,voi
       core_main_c_displayErrorAndQuit_FUN_00506f10(local_60);
     }
   }
-  file = engine_dosio_c_getFile_FUN_00481a50("art",filename,"rb");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("art",filename,"rb");
   if (file == (_FILE *)0x0) {
     _sprintf(local_60,"Unable to open bitmap file (%s).",filename);
     g_CurrentFilename = "..\\cockpit\\ckptutil.c";

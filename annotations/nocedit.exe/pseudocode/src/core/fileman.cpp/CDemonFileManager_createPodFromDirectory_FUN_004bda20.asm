@@ -493,8 +493,8 @@ section .text
     LEA EAX,[ESP + 0x6bc]               ; 004bde52
     PUSH EAX                            ; 004bde59
     PUSH 0x629677                       ; 004bde5a | = "world"
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 004bde5f
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 004bde5f
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 004bde64
     TEST EAX,EAX                        ; 004bde67
     JLE 0x004bde84                      ; 004bde69
@@ -544,8 +544,8 @@ section .text
     LEA EAX,[ESP + 0x720]               ; 004bded0
     PUSH EAX                            ; 004bded7
     PUSH 0x62968c                       ; 004bded8 | = "world"
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 004bdedd
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 004bdedd
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 004bdee2
     TEST EAX,EAX                        ; 004bdee5
     JLE 0x004bdf02                      ; 004bdee7

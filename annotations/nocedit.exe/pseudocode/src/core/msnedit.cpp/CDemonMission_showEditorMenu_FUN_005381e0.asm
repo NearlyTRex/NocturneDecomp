@@ -748,14 +748,14 @@ section .text
         ;   XREF to: 005384ec (CONDITIONAL_JUMP)  ; LAB_005384ec
     LEA EAX,[ESP + 0x3a8]               ; 00538938
     PUSH EAX                            ; 0053893f
-    CALL engine_dosio.c_CFileFinder_ctor_FUN_00481c30 ; 00538940
-        ;   XREF to: 00481c30 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.c_CFileFinder_ctor_FUN_00481c30(CFileFinder * this_ptr)
+    CALL engine_dosio.cpp_CFileFinder_ctor_FUN_00481c30 ; 00538940
+        ;   XREF to: 00481c30 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.cpp_CFileFinder_ctor_FUN_00481c30(CFileFinder * this_ptr)
     ADD ESP,0x4                         ; 00538945
     PUSH 0x63b744                       ; 00538948 | = "world\\*.msn"
     LEA EAX,[ESP + 0x3ac]               ; 0053894d
     PUSH EAX                            ; 00538954
-    CALL engine_dosio.c_CFileFinder_openSearch_FUN_00481c70 ; 00538955
-        ;   XREF to: 00481c70 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_CFileFinder_openSearch_FUN_00481c70(CFileFinder * this_ptr, char * search_pattern)
+    CALL engine_dosio.cpp_CFileFinder_openSearch_FUN_00481c70 ; 00538955
+        ;   XREF to: 00481c70 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_CFileFinder_openSearch_FUN_00481c70(CFileFinder * this_ptr, char * search_pattern)
     ADD ESP,0x8                         ; 0053895a
     CMP byte ptr [ESP + 0x3a8],0x0      ; 0053895d
     JZ 0x00538a16                       ; 00538965
@@ -807,8 +807,8 @@ section .text
     LEA EAX,[ESP + 0x3a8]               ; 005389f8
         ;   Label: LAB_005389f8
     PUSH EAX                            ; 005389ff
-    CALL engine_dosio.c_CFileFinder_findNext_FUN_00481cf0 ; 00538a00
-        ;   XREF to: 00481cf0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_CFileFinder_findNext_FUN_00481cf0(CFileFinder * this_ptr)
+    CALL engine_dosio.cpp_CFileFinder_findNext_FUN_00481cf0 ; 00538a00
+        ;   XREF to: 00481cf0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_CFileFinder_findNext_FUN_00481cf0(CFileFinder * this_ptr)
     ADD ESP,0x4                         ; 00538a05
     CMP byte ptr [ESP + 0x3a8],0x0      ; 00538a08
     JNZ 0x0053896b                      ; 00538a10
@@ -817,8 +817,8 @@ section .text
         ;   Label: LAB_00538a16
     LEA EAX,[ESP + 0x3ac]               ; 00538a18
     PUSH EAX                            ; 00538a1f
-    CALL engine_dosio.c_CFileFinder_dtor_FUN_00481c50 ; 00538a20
-        ;   XREF to: 00481c50 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.c_CFileFinder_dtor_FUN_00481c50(CFileFinder * this_ptr, uint flags)
+    CALL engine_dosio.cpp_CFileFinder_dtor_FUN_00481c50 ; 00538a20
+        ;   XREF to: 00481c50 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.cpp_CFileFinder_dtor_FUN_00481c50(CFileFinder * this_ptr, uint flags)
     JMP 0x005384e9                      ; 00538a25
         ;   XREF to: 005384e9 (UNCONDITIONAL_JUMP)  ; LAB_005384e9
     LEA EAX,[ESP + 0x3a8]               ; 00538a2a

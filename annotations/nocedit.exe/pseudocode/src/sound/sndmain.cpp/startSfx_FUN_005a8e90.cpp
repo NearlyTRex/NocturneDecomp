@@ -111,9 +111,10 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
     pCVar13 = pCVar13;
     pCVar10 = (CSfxSlot *)((int)pCVar10 + (uint)bVar19 * -8 + 4);
   }
-  iVar7 = engine_dosio_c_getFileSize_FUN_00481880("sound",local_390);
+  iVar7 = engine_dosio_cpp_getFileSize_FUN_00481880("sound",local_390);
   if (iVar7 < 0x200001) {
-    engine_dosio_c_splitPath_FUN_00481f20(local_390,(char *)0x0,(char *)0x0,(char *)0x0,local_190);
+    engine_dosio_cpp_splitPath_FUN_00481f20(local_390,(char *)0x0,(char *)0x0,(char *)0x0,local_190)
+    ;
     iVar7 = _stricmp(local_190,"mp3");
     if ((iVar7 == 0) ||
        (iVar7 = _stricmp(local_190,".mp3"), iVar7 == 0))
@@ -138,12 +139,12 @@ LAB_005a8fc7:
     local_18 = (CSfxSample *)0x0;
 LAB_005a900a:
     if (local_18 != (CSfxSample *)0x0) {
-      engine_dosio_c_splitPath_FUN_00481f20(local_390,(char *)0x0,(char *)0x0,(char *)0x0,local_290)
-      ;
+      engine_dosio_cpp_splitPath_FUN_00481f20
+                (local_390,(char *)0x0,(char *)0x0,(char *)0x0,local_290);
       iVar7 = _stricmp(local_290,"mp3");
       if ((iVar7 == 0) ||
          (iVar7 = _stricmp(local_290,".mp3"), iVar7 == 0)) {
-        iVar7 = engine_dosio_c_getFileSize_FUN_00481880("sound",local_390);
+        iVar7 = engine_dosio_cpp_getFileSize_FUN_00481880("sound",local_390);
         if (0 < iVar7) {
           this_ptr = (CMP3Decoder *)shape_memdbg_cpp_debugAllocTracked1_FUN_0050f1b0
                                (0x8630,"..\\sound\\sndmain.cpp",0x3c5);
@@ -194,7 +195,7 @@ joined_r0x005a94f6:
         }
       }
       else {
-        p_Var9 = engine_dosio_c_getFile_FUN_00481a50("sound",local_390,"rb");
+        p_Var9 = engine_dosio_cpp_getFile_FUN_00481a50("sound",local_390,"rb");
         local_18->file_handle = p_Var9;
         pCVar12 = local_18;
         if (p_Var9 != (_FILE *)0x0) {

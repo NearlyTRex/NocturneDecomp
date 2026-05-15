@@ -42,7 +42,7 @@
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_string.c__stricmp_FUN_005fe7f0
-;   engine_dosio.c_splitPath_FUN_00481f20
+;   engine_dosio.cpp_splitPath_FUN_00481f20
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_edittool.cpp_CPickList_clear_FUN_004a5770
@@ -162,8 +162,8 @@ section .text
     LEA EAX,[ESP + 0xb88]               ; 00578739
     PUSH EAX                            ; 00578740
     XOR EBX,EBX                         ; 00578741
-    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 00578743
-        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00481f20 ; 00578743
+        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
     MOV EDX,dword ptr [0x03654368]      ; 00578748 | g_GroundTextureCount
     ADD ESP,0x14                        ; 0057874e
     TEST EDX,EDX                        ; 00578751

@@ -102,7 +102,7 @@ LAB_0046e929:
         pcVar7 = pcVar7 + 2;
       } while (cVar2 != '\0');
     }
-    iVar3 = engine_dosio_c_getFileSize_FUN_00481880("art",local_68);
+    iVar3 = engine_dosio_cpp_getFileSize_FUN_00481880("art",local_68);
     if (iVar3 == -1) {
       engine_2d_c_drawText_FUN_00401fd0("File not found.  Hit a key...",0,0x42);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
@@ -153,7 +153,7 @@ LAB_0046ea46:
         pcVar7 = pcVar7 + 2;
       } while (cVar2 != '\0');
     }
-    iVar3 = engine_dosio_c_getFileSize_FUN_00481880("art",local_68);
+    iVar3 = engine_dosio_cpp_getFileSize_FUN_00481880("art",local_68);
     if (iVar3 == -1) {
       engine_2d_c_drawText_FUN_00401fd0("File not found.  Hit a key...",0,0x58);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

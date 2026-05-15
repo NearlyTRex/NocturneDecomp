@@ -21,7 +21,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_save_FUN_0058f040(CDeformableMod
               (g_CEditorToolsPtr,"%s\\%s already exists in a mounted pod file:\n%s\nI'm still saving it to the local file,\nbut just thought you would want to know about the\none in the pod.","models",filename,
                pCVar1->filename);
   }
-  file_handle = engine_dosio_c_getFile_FUN_00481a50("models",filename,"wt");
+  file_handle = engine_dosio_cpp_getFile_FUN_00481a50("models",filename,"wt");
   if (file_handle == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0xb2c;

@@ -34,7 +34,7 @@
 ;   cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;
 ; *****************************************************************************
@@ -53,8 +53,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x184]     ; 0054bb5d
     PUSH EDX                            ; 0054bb64
     PUSH 0x63f34f                       ; 0054bb65 | = "art"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0054bb6a
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0054bb6a
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0054bb6f
     MOV EBX,EAX                         ; 0054bb72
     TEST EAX,EAX                        ; 0054bb74

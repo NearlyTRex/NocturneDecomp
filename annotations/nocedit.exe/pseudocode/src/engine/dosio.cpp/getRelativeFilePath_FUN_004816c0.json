@@ -1,0 +1,244 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "keep.cpp",
+  "complexity": {
+    "assembly_lines": 42,
+    "complexity_score": 20,
+    "cross_reference_count": 7,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 62
+  },
+  "cross_references": [
+    {
+      "addr": "00481960",
+      "from_addr": "0048197c",
+      "name": "engine_dosio.cpp_getFileSizeWithFinder_FUN_00481960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00481880",
+      "from_addr": "0048189b",
+      "name": "engine_dosio.cpp_getFileSize_FUN_00481880",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004818d0",
+      "from_addr": "004818eb",
+      "name": "engine_dosio.cpp_getFileTimestamp_FUN_004818d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00481a50",
+      "from_addr": "00481a77",
+      "name": "engine_dosio.cpp_getFile_FUN_00481a50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00481b50",
+      "from_addr": "00481b90",
+      "name": "engine_dosio.cpp_reopenFileStream_FUN_00481b50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054f650",
+      "from_addr": "0054f682",
+      "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005512f0",
+      "from_addr": "00551318",
+      "name": "engine_pod.cpp_CPod_locateFile_FUN_005512f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004816c0",
+    "address_range": [
+      [
+        "004816c0",
+        "00481706"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_dosio.cpp_getRelativeFilePath_FUN_004816c0",
+    "signature": "void __cdecl engine_dosio_cpp_getRelativeFilePath_FUN_004816c0(char *dest_path,char *directory,char *filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "005fdbd0",
+      "is_variadic": true,
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00621571",
+      "name": "s_s_s_00621571",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 7,
+    "call_sites": [
+      {
+        "call_addr": "0054f682",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00481a77",
+        "call_type": "direct",
+        "caller": "engine_dosio.cpp_getFile_FUN_00481a50",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00551318",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_CPod_locateFile_FUN_005512f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0048189b",
+        "call_type": "direct",
+        "caller": "engine_dosio.cpp_getFileSize_FUN_00481880",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0048197c",
+        "call_type": "direct",
+        "caller": "engine_dosio.cpp_getFileSizeWithFinder_FUN_00481960",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004818eb",
+        "call_type": "direct",
+        "caller": "engine_dosio.cpp_getFileTimestamp_FUN_004818d0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00481b90",
+        "call_type": "direct",
+        "caller": "engine_dosio.cpp_reopenFileStream_FUN_00481b50",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.212121212121212,
+    "instruction_count": 33,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 4,
+      "COPY": 27,
+      "INT_ADD": 15,
+      "INT_AND": 15,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 14,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 7,
+      "INT_SUB": 11,
+      "LOAD": 13,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 10
+    },
+    "pcode_op_count": 139
+  },
+  "resolved_suspects": [
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 11,
+      "match": "do {",
+      "resolution_source": "keep",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "dest_path",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "directory",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

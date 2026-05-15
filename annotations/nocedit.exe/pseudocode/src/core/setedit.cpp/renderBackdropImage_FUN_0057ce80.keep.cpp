@@ -66,7 +66,7 @@ void __cdecl core_setedit_cpp_renderBackdropImage_FUN_0057ce80(CVector3i *positi
   wincore_windll_cpp_clearZBufferNative_FUN_005b3ed4();
   core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(g_CDemonSetPtr,9999.9,0);
   _sprintf(local_f0,"%s.raw",name);
-  p_Var2 = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_f0,"wb");
+  p_Var2 = engine_dosio_cpp_getFile_FUN_00481a50("backdrop",local_f0,"wb");
   if (p_Var2 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
     g_CurrentLineNumber = 0xbd9;
@@ -101,7 +101,7 @@ void __cdecl core_setedit_cpp_renderBackdropImage_FUN_0057ce80(CVector3i *positi
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\setedit.cpp",0xbeb);
   _sprintf(local_a0,"%s.act",name);
-  p_Var2 = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_a0,"wb");
+  p_Var2 = engine_dosio_cpp_getFile_FUN_00481a50("backdrop",local_a0,"wb");
   if (p_Var2 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
     g_CurrentLineNumber = 0xbef;

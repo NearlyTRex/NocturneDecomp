@@ -35,7 +35,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   support_newmsg.cpp_getLocalizedString_FUN_005441f0
 ;
@@ -51,8 +51,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x18]      ; 00522d98
     PUSH EDX                            ; 00522d9c
     PUSH 0x6389c8                       ; 00522d9d | = "world"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00522da2
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00522da2
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00522da7
     MOV EBX,EAX                         ; 00522daa
     TEST EAX,EAX                        ; 00522dac

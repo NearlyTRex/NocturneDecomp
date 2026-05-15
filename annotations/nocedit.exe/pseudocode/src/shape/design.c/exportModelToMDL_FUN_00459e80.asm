@@ -37,7 +37,7 @@
 ; Called Functions:
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   engine_2d.c_drawText_FUN_00401fd0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_design.c_sortPolygonsByTexture_FUN_0045b8b0
 ;   shape_design.c_writeBinaryTreeNode_FUN_00457fd0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -81,8 +81,8 @@ section .text
     PUSH EAX                            ; 00459eba
     MOV EAX,0x61ad9e                    ; 00459ebb | = "models"
     PUSH EAX                            ; 00459ec0 | = "models"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00459ec1
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00459ec1
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00459ec6
     MOV dword ptr [EBP + -0x4],EAX      ; 00459ec9
     CMP dword ptr [EBP + -0x4],0x0      ; 00459ecc

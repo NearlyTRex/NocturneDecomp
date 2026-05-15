@@ -13,8 +13,8 @@ void __cdecl engine_fileio_cpp_buildFilePath_FUN_004b1de0(char *base_dir,char *f
   char local_10c [256];
   char local_c [4];
 
-  engine_dosio_c_ensureTrailingSlash_FUN_00481f80(base_dir,local_c,local_10c);
-  engine_dosio_c_makePath_FUN_00481f50(dest_path,local_c,local_10c,(char *)0x0,(char *)0x0);
+  engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(base_dir,local_c,local_10c);
+  engine_dosio_cpp_makePath_FUN_00481f50(dest_path,local_c,local_10c,(char *)0x0,(char *)0x0);
   strcat(dest_path,filename);
   return;
 }

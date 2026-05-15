@@ -663,8 +663,8 @@ section .text
     PUSH 0x0                            ; 00580e6d
     MOV EAX,dword ptr [ESP + 0x5c4]     ; 00580e6f
     PUSH EAX                            ; 00580e76
-    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 00580e77
-        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00481f20 ; 00580e77
+        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 00580e7c
     MOV ESI,0x648887                    ; 00580e7f | = ".set"
     LEA EDI,[ESP + 0x4a8]               ; 00580e84

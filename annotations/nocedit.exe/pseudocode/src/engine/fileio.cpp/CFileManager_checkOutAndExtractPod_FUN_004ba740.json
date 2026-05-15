@@ -7,18 +7,18 @@
   "compile_source": "keep.cpp",
   "complexity": {
     "assembly_lines": 730,
-    "complexity_score": 366,
+    "complexity_score": 367,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 40,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 306,
+    "pseudocode_lines": 307,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "unrolled_strcpy"
     ],
-    "total_lines": 1036
+    "total_lines": 1037
   },
   "cross_references": [],
   "function": {
@@ -62,22 +62,22 @@
     {
       "addr": "00481f80",
       "is_variadic": false,
-      "name": "engine_dosio.c_ensureTrailingSlash_FUN_00481f80"
+      "name": "engine_dosio.cpp_ensureTrailingSlash_FUN_00481f80"
     },
     {
       "addr": "00481960",
       "is_variadic": false,
-      "name": "engine_dosio.c_getFileSizeWithFinder_FUN_00481960"
+      "name": "engine_dosio.cpp_getFileSizeWithFinder_FUN_00481960"
     },
     {
       "addr": "00481f50",
       "is_variadic": false,
-      "name": "engine_dosio.c_makePath_FUN_00481f50"
+      "name": "engine_dosio.cpp_makePath_FUN_00481f50"
     },
     {
       "addr": "004819f0",
       "is_variadic": false,
-      "name": "engine_dosio.c_setFileAttributes_FUN_004819f0"
+      "name": "engine_dosio.cpp_setFileAttributes_FUN_004819f0"
     },
     {
       "addr": "004b5030",
@@ -515,7 +515,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 185,
+      "line": 186,
       "match": "do {",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -524,7 +524,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 290,
+      "line": 291,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -533,7 +533,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 123,
+      "line": 124,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -542,7 +542,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 123,
+      "line": 124,
       "match": "strlen + <p> + -1 + strcpy",
       "resolution_source": "keep",
       "severity": "moderate",
@@ -668,7 +668,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 132,
+      "line": 133,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -676,7 +676,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 174,
+      "line": 175,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

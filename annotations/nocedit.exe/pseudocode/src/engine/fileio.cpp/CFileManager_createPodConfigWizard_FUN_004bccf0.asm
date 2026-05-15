@@ -29,10 +29,10 @@
 ;   TerminatedCString s_pod_00629356
 ;
 ; Called Functions:
-;   engine_dosio.c_CFileFinder_ctor_FUN_00481c30
-;   engine_dosio.c_CFileFinder_dtor_FUN_00481c50
-;   engine_dosio.c_CFileFinder_findNext_FUN_00481cf0
-;   engine_dosio.c_CFileFinder_openSearch_FUN_00481c70
+;   engine_dosio.cpp_CFileFinder_ctor_FUN_00481c30
+;   engine_dosio.cpp_CFileFinder_dtor_FUN_00481c50
+;   engine_dosio.cpp_CFileFinder_findNext_FUN_00481cf0
+;   engine_dosio.cpp_CFileFinder_openSearch_FUN_00481c70
 ;   engine_fileio.cpp_CFileManager_writePodConfigFile_FUN_004ba620
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
@@ -109,14 +109,14 @@ section .text
         ;   XREF to: 004bce12 (CONDITIONAL_JUMP)  ; LAB_004bce12
     LEA EAX,[ESP + 0x3a8]               ; 004bcd9f
     PUSH EAX                            ; 004bcda6
-    CALL engine_dosio.c_CFileFinder_ctor_FUN_00481c30 ; 004bcda7
-        ;   XREF to: 00481c30 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.c_CFileFinder_ctor_FUN_00481c30(CFileFinder * this_ptr)
+    CALL engine_dosio.cpp_CFileFinder_ctor_FUN_00481c30 ; 004bcda7
+        ;   XREF to: 00481c30 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.cpp_CFileFinder_ctor_FUN_00481c30(CFileFinder * this_ptr)
     ADD ESP,0x4                         ; 004bcdac
     PUSH 0x629356                       ; 004bcdaf | = "*.pod"
     LEA EAX,[ESP + 0x3ac]               ; 004bcdb4
     PUSH EAX                            ; 004bcdbb
-    CALL engine_dosio.c_CFileFinder_openSearch_FUN_00481c70 ; 004bcdbc
-        ;   XREF to: 00481c70 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_CFileFinder_openSearch_FUN_00481c70(CFileFinder * this_ptr, char * search_pattern)
+    CALL engine_dosio.cpp_CFileFinder_openSearch_FUN_00481c70 ; 004bcdbc
+        ;   XREF to: 00481c70 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_CFileFinder_openSearch_FUN_00481c70(CFileFinder * this_ptr, char * search_pattern)
     ADD ESP,0x8                         ; 004bcdc1
     CMP byte ptr [ESP + 0x3a8],0x0      ; 004bcdc4
     JZ 0x004bce00                       ; 004bcdcc
@@ -131,8 +131,8 @@ section .text
     ADD ESP,0x8                         ; 004bcde3
     LEA EAX,[ESP + 0x3a8]               ; 004bcde6
     PUSH EAX                            ; 004bcded
-    CALL engine_dosio.c_CFileFinder_findNext_FUN_00481cf0 ; 004bcdee
-        ;   XREF to: 00481cf0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_CFileFinder_findNext_FUN_00481cf0(CFileFinder * this_ptr)
+    CALL engine_dosio.cpp_CFileFinder_findNext_FUN_00481cf0 ; 004bcdee
+        ;   XREF to: 00481cf0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_CFileFinder_findNext_FUN_00481cf0(CFileFinder * this_ptr)
     ADD ESP,0x4                         ; 004bcdf3
     CMP byte ptr [ESP + 0x3a8],0x0      ; 004bcdf6
     JNZ 0x004bcdce                      ; 004bcdfe
@@ -141,8 +141,8 @@ section .text
         ;   Label: LAB_004bce00
     LEA EAX,[ESP + 0x3ac]               ; 004bce02
     PUSH EAX                            ; 004bce09
-    CALL engine_dosio.c_CFileFinder_dtor_FUN_00481c50 ; 004bce0a
-        ;   XREF to: 00481c50 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.c_CFileFinder_dtor_FUN_00481c50(CFileFinder * this_ptr, uint flags)
+    CALL engine_dosio.cpp_CFileFinder_dtor_FUN_00481c50 ; 004bce0a
+        ;   XREF to: 00481c50 (UNCONDITIONAL_CALL)  ; CFileFinder * engine_dosio.cpp_CFileFinder_dtor_FUN_00481c50(CFileFinder * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004bce0f
     LEA EAX,[ESP + 0x4bc]               ; 004bce12
         ;   Label: LAB_004bce12

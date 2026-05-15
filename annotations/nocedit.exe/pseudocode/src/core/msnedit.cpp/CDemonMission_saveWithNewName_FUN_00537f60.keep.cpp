@@ -20,23 +20,23 @@ void __cdecl core_msnedit_cpp_CDemonMission_saveWithNewName_FUN_00537f60(CDemonM
   char local_118 [256];
   _FILE *file;
 
-  engine_dosio_c_splitPath_FUN_00481f20(this_ptr->mission_name,(char *)0x0,(char *)0x0,local_118,(char *)0x0);
-  engine_dosio_c_splitPath_FUN_00481f20(name,(char *)0x0,(char *)0x0,local_218,(char *)0x0);
+  engine_dosio_cpp_splitPath_FUN_00481f20(this_ptr->mission_name,(char *)0x0,(char *)0x0,local_118,(char *)0x0);
+  engine_dosio_cpp_splitPath_FUN_00481f20(name,(char *)0x0,(char *)0x0,local_218,(char *)0x0);
   strcpy(this_ptr->mission_name,name);
   core_msnedit_cpp_CDemonMission_saveMissionAndScript_FUN_0053d190(this_ptr,name);
   shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
             (g_CEditorToolsPtr,"Mission and script saved");
-  engine_dosio_c_makePath_FUN_00481f50(local_31c,(char *)0x0,(char *)0x0,local_118,"txt");
-  engine_dosio_c_makePath_FUN_00481f50(local_420,(char *)0x0,(char *)0x0,local_218,"txt");
-  iVar2 = engine_dosio_c_getFileSize_FUN_00481880("world",local_31c);
+  engine_dosio_cpp_makePath_FUN_00481f50(local_31c,(char *)0x0,(char *)0x0,local_118,"txt");
+  engine_dosio_cpp_makePath_FUN_00481f50(local_420,(char *)0x0,(char *)0x0,local_218,"txt");
+  iVar2 = engine_dosio_cpp_getFileSize_FUN_00481880("world",local_31c);
   if (-1 < iVar2) {
-    file_ptr = engine_dosio_c_getFile_FUN_00481a50("world",local_31c,"rb");
+    file_ptr = engine_dosio_cpp_getFile_FUN_00481a50("world",local_31c,"rb");
     if (file_ptr == (_FILE *)0x0) {
       g_CurrentLineNumber = 0x2eb;
       g_CurrentFilename = "..\\core\\msnedit.cpp";
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open world\\%s",local_31c);
     }
-    file_ptr_00 = engine_dosio_c_getFile_FUN_00481a50("world",local_420,"wb");
+    file_ptr_00 = engine_dosio_cpp_getFile_FUN_00481a50("world",local_420,"wb");
     if (file_ptr_00 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\msnedit.cpp";
       g_CurrentLineNumber = 0x2ed;

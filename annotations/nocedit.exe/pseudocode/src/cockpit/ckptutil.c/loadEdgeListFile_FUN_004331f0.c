@@ -18,7 +18,7 @@ void __cdecl cockpit_ckptutil_c_loadEdgeListFile_FUN_004331f0(char *filename,SEd
   int local_18;
   _FILE *local_14;
   
-  local_14 = engine_dosio_c_getFile_FUN_00481a50("art",filename,"rb");
+  local_14 = engine_dosio_cpp_getFile_FUN_00481a50("art",filename,"rb");
   if (local_14 == (_FILE *)0x0) {
     _sprintf(local_68,"Unable to open edge list file (%s).",filename);
     g_CurrentFilename = "..\\cockpit\\ckptutil.c";

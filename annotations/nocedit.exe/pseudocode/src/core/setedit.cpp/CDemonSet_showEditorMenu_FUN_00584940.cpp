@@ -72,7 +72,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
               local_68[0] = '\0';
             }
             else {
-              engine_dosio_c_splitPath_FUN_00481f20
+              engine_dosio_cpp_splitPath_FUN_00481f20
                         (this_ptr->geometry_filename,(char *)0x0,(char *)0x0,local_68,(char *)0x0);
               pcVar6 = ".set";
               iVar5 = -1;
@@ -173,10 +173,11 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
         pcVar5 = pcVar5 + 2;
       } while (cVar2 != '\0');
       if (this_ptr->geometry_filename[0] != '\0') {
-        engine_dosio_c_ensureTrailingSlash_FUN_00481f80(g_GroundTypesBuffer,local_14,local_168);
-        engine_dosio_c_splitPath_FUN_00481f20
+        engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(g_GroundTypesBuffer,local_14,local_168);
+        engine_dosio_cpp_splitPath_FUN_00481f20
                   (this_ptr->geometry_filename,(char *)0x0,(char *)0x0,local_268,(char *)0x0);
-        engine_dosio_c_makePath_FUN_00481f50(local_36c,local_14,local_168,local_268,".txt");
+        engine_dosio_cpp_makePath_FUN_00481f50
+                  (local_36c,local_14,local_168,local_268,".txt");
       }
       iVar3 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
                         (g_CEditorToolsPtr,"Select ground type file to edit","*.txt",

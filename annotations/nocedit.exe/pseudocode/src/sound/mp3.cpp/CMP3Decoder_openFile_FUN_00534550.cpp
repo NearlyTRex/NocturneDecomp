@@ -13,13 +13,13 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550(CMP3Decoder *this_p
   int iVar2;
   _FILE *file_handle;
   
-  iVar2 = engine_dosio_c_getFileSize_FUN_00481880("sound",filename);
+  iVar2 = engine_dosio_cpp_getFileSize_FUN_00481880("sound",filename);
   if (iVar2 < 1) {
     g_CurrentFilename = "..\\sound\\mp3.cpp";
     g_CurrentLineNumber = 0xe14;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open %s",filename);
   }
-  file_handle = engine_dosio_c_getFile_FUN_00481a50("sound",filename,"rb");
+  file_handle = engine_dosio_cpp_getFile_FUN_00481a50("sound",filename,"rb");
   if (file_handle == (_FILE *)0x0) {
     g_CurrentFilename = "..\\sound\\mp3.cpp";
     g_CurrentLineNumber = 0xe19;

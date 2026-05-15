@@ -5611,9 +5611,9 @@ WatcomTypeInfo g_CDoorTypeInfo = {
 };
 WatcomTypeInfo g_CFileFinderTypeInfo = {
     .type_flags = 0x00020100,
-    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)engine_dosio_c_CFileFinder_ctor_FUN_00481c30,
+    .ctor = (WATCOM_DEFAULT_CONSTRUCTOR_FUNC *)engine_dosio_cpp_CFileFinder_ctor_FUN_00481c30,
     .copy = (WATCOM_COPY_CONSTRUCTOR_FUNC *)crt_cpp_c_pureVirtualStub_FUN_005fee9f,
-    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)engine_dosio_c_CFileFinder_dtor_FUN_00481c50,
+    .dtor = (WATCOM_VIRTUAL_DESTRUCTOR_FUNC *)engine_dosio_cpp_CFileFinder_dtor_FUN_00481c50,
     .instance_size = 0x00000114,
     .class_name = (char *)s_CFileFinder_0067038d
 };

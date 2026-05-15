@@ -39,7 +39,7 @@
 ;   core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;
 ; *****************************************************************************
@@ -174,8 +174,8 @@ section .text
     LEA EDX,[ESP + 0x104]               ; 00584fcf
     PUSH EDX                            ; 00584fd6
     PUSH 0x649148                       ; 00584fd7 | = "backdrop"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00584fdc
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00584fdc
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     MOV EDX,EAX                         ; 00584fe1
     ADD ESP,0xc                         ; 00584fe3
     TEST EAX,EAX                        ; 00584fe6

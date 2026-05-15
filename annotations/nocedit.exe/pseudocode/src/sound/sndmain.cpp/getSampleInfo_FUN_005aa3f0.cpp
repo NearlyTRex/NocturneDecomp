@@ -43,9 +43,9 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(CSfxSample *out_sample)
     iVar4 = iVar4 + 0x180;
   } while (iVar4 < 0x6000);
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
-  iVar1 = engine_dosio_c_getFileSize_FUN_00481880("sound",(char *)out_sample);
+  iVar1 = engine_dosio_cpp_getFileSize_FUN_00481880("sound",(char *)out_sample);
   if (0 < iVar1) {
-    engine_dosio_c_splitPath_FUN_00481f20
+    engine_dosio_cpp_splitPath_FUN_00481f20
               ((char *)out_sample,(char *)0x0,(char *)0x0,(char *)0x0,&local_114);
     if (local_114 == '.') {
       uVar3 = 0xffffffff;
@@ -93,7 +93,7 @@ LAB_005aa53c:
       }
       return 1;
     }
-    file_handle = engine_dosio_c_getFile_FUN_00481a50
+    file_handle = engine_dosio_cpp_getFile_FUN_00481a50
                             ("sound",(char *)out_sample,"rb");
     if (file_handle != (_FILE *)0x0) {
       local_14 = _ftell(file_handle);

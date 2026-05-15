@@ -8,7 +8,7 @@
 ; long             Stack[0x8]:4   new_size
 ;
 ; XREF[2]:
-;   engine_dosio.c_truncateFile_FUN_00481a20 at 00481a35
+;   engine_dosio.cpp_truncateFile_FUN_00481a20 at 00481a35
 ;   engine_fileio.cpp_CCheckOutList_write_FUN_004b2eb0 at 004b2f78
 ;
 ; Referenced Globals:

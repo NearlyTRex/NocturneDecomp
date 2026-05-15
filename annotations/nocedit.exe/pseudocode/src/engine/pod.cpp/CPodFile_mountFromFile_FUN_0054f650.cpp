@@ -53,8 +53,8 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(CPodFile *this_pt
   bVar10 = 0;
   bVar3 = false;
   engine_pod_cpp_CPodFile_cleanup_FUN_00550090(this_ptr);
-  engine_dosio_c_getRelativeFilePath_FUN_004816c0(local_6a4.found_path,(char *)0x0,pod_filename);
-  iVar2 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_6a4);
+  engine_dosio_cpp_getRelativeFilePath_FUN_004816c0(local_6a4.found_path,(char *)0x0,pod_filename);
+  iVar2 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_6a4);
   if (iVar2 == 0) {
     return 0;
   }
@@ -74,7 +74,8 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(CPodFile *this_pt
                      (this_ptr->filename,(char *)0x0,"rb","..\\engine\\pod.cpp",0x150);
   local_20 = p_Var3;
   if (p_Var3 == (_FILE *)0x0) goto LAB_0054f6fe;
-  engine_dosio_c_splitPath_FUN_00481f20(pod_filename,(char *)0x0,(char *)0x0,(char *)0x0,local_260);
+  engine_dosio_cpp_splitPath_FUN_00481f20
+            (pod_filename,(char *)0x0,(char *)0x0,(char *)0x0,local_260);
   iVar4 = _stricmp(local_260,"epd");
   if (iVar4 == 0) {
 LAB_0054f786:

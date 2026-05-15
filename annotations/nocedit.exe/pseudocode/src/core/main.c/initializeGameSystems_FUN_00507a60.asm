@@ -98,8 +98,8 @@ section .text
     ADD ESP,0xc                         ; 00507ade
     PUSH 0x1c0                          ; 00507ae1
     PUSH 0x6352cc                       ; 00507ae6 | = "stderr.txt"
-    CALL engine_dosio.c_setReadonlyAttribute_FUN_00600c30 ; 00507aeb
-        ;   XREF to: 00600c30 (UNCONDITIONAL_CALL)  ; DWORD engine_dosio.c_setReadonlyAttribute_FUN_00600c30(char * filename, DWORD file_attributes)
+    CALL engine_dosio.cpp_setReadonlyAttribute_FUN_00600c30 ; 00507aeb
+        ;   XREF to: 00600c30 (UNCONDITIONAL_CALL)  ; DWORD engine_dosio.cpp_setReadonlyAttribute_FUN_00600c30(char * filename, DWORD file_attributes)
     ADD ESP,0x8                         ; 00507af0
     TEST EAX,EAX                        ; 00507af3
     JZ 0x00507b1a                       ; 00507af5
@@ -133,12 +133,12 @@ section .text
         ;   XREF to: 00550c30 (UNCONDITIONAL_CALL)  ; void engine_pod.cpp_CPod_init_FUN_00550c30(CPod * this_ptr)
     ADD ESP,0x4                         ; 00507b5d
     PUSH 0x551960                       ; 00507b60
-    CALL engine_dosio.c_addGetFileInfoHook_FUN_00481710 ; 00507b65
-        ;   XREF to: 00481710 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_addGetFileInfoHook_FUN_00481710(FileSearchHandlerFunc * handler)
+    CALL engine_dosio.cpp_addGetFileInfoHook_FUN_00481710 ; 00507b65
+        ;   XREF to: 00481710 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_addGetFileInfoHook_FUN_00481710(FileSearchHandlerFunc * handler)
     ADD ESP,0x4                         ; 00507b6a
     PUSH 0x4817c0                       ; 00507b6d
-    CALL engine_dosio.c_addGetFileInfoHook_FUN_00481710 ; 00507b72
-        ;   XREF to: 00481710 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_addGetFileInfoHook_FUN_00481710(FileSearchHandlerFunc * handler)
+    CALL engine_dosio.cpp_addGetFileInfoHook_FUN_00481710 ; 00507b72
+        ;   XREF to: 00481710 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_addGetFileInfoHook_FUN_00481710(FileSearchHandlerFunc * handler)
     ADD ESP,0x4                         ; 00507b77
     PUSH 0x63531c                       ; 00507b7a | = "msglist.txt"
     CALL support_newmsg.cpp_readMessageFile_FUN_00543e40 ; 00507b7f

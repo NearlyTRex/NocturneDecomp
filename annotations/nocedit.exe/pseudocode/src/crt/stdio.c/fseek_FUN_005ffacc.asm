@@ -18,7 +18,7 @@
 ;   core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 at 0058be34
 ;   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 at 00592ba0
 ;   crt_stdio.c_OpenFileAndInitialize_FUN_0060190c at 00601a06
-;   engine_dosio.c_getFile_FUN_00481a50 at 00481b1b
+;   engine_dosio.cpp_getFile_FUN_00481a50 at 00481b1b
 ;   ... and 23 more
 ;
 ; Referenced Globals:

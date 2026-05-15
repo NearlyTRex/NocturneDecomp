@@ -10,7 +10,7 @@
 ;   crt_time.c__time_FUN_006001f0 at 00600210
 ;   crt_time.c_dos_datetime_to_time_t_FUN_0060c1e0 at 0060c245
 ;   crt_unknown.c_FUN_00607858 at 006078d9
-;   engine_dosio.c_CFileFinder_convertStruct_FUN_00481dc0 at 00481f00
+;   engine_dosio.cpp_CFileFinder_convertStruct_FUN_00481dc0 at 00481f00
 ;   engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190 at 004bd3ab
 ;
 ; Referenced Globals:

@@ -42,8 +42,8 @@
 ;   crt_stdio.c_fread_FUN_005fd990
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_boss.c_modelStructNotSupported2_FUN_0041db80
-;   engine_dosio.c_getFile_FUN_00481a50
-;   engine_dosio.c_getFileSize_FUN_00481880
+;   engine_dosio.cpp_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFileSize_FUN_00481880
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_debugMalloc_FUN_0050f250
 ;
@@ -86,8 +86,8 @@ section .text
         ;   Label: LAB_00527eee
     PUSH EBX                            ; 00527eef
     PUSH 0x639aab                       ; 00527ef0 | = "models"
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 00527ef5
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 00527ef5
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 00527efa
     MOV EDI,EAX                         ; 00527efd
     TEST EAX,EAX                        ; 00527eff
@@ -113,8 +113,8 @@ section .text
         ;   Label: LAB_00527f39
     PUSH EBX                            ; 00527f3e
     PUSH 0x639ae3                       ; 00527f3f | = "models"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00527f44
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode) | s_t_00639a2e
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00527f44
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode) | s_t_00639a2e
     ADD ESP,0xc                         ; 00527f49
     MOV EBP,EAX                         ; 00527f4c
     TEST EAX,EAX                        ; 00527f4e

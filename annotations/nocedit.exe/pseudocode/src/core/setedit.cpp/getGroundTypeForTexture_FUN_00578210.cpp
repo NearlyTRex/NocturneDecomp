@@ -15,7 +15,7 @@ int __cdecl core_setedit_cpp_getGroundTypeForTexture_FUN_00578210(char *filename
   char local_10c [256];
   
   iVar2 = 0;
-  engine_dosio_c_splitPath_FUN_00481f20(filename,(char *)0x0,(char *)0x0,local_10c,(char *)0x0);
+  engine_dosio_cpp_splitPath_FUN_00481f20(filename,(char *)0x0,(char *)0x0,local_10c,(char *)0x0);
   if (0 < g_GroundTextureCount) {
     str1 = g_GroundTextureNames;
     do {

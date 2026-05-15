@@ -44,7 +44,7 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004ccff0(CBitFont *this_ptr
   strupr(this_ptr->bitmap_files[this_ptr->bitmap_count]);
   iVar5 = width * height;
   this_ptr->bitmap_widths[this_ptr->bitmap_count] = width;
-  iVar2 = engine_dosio_c_getFileSize_FUN_00481880("art",filename);
+  iVar2 = engine_dosio_cpp_getFileSize_FUN_00481880("art",filename);
   if (iVar2 < iVar5) {
     _sprintf(local_43c,"Invalid font file size (%s).",filename);
     g_CurrentFilename = "..\\engine\\font.cpp";
@@ -61,9 +61,9 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004ccff0(CBitFont *this_ptr
   }
   cockpit_ckptutil_c_readBitmapFile_FUN_00431870
             (filename,this_ptr->bitmap_data[this_ptr->bitmap_count],iVar5);
-  engine_dosio_c_splitPath_FUN_00481f20(filename,(char *)0x0,local_210,local_110,(char *)0x0);
-  engine_dosio_c_makePath_FUN_00481f50(local_310,(char *)0x0,local_210,local_110,"act");
-  file = engine_dosio_c_getFile_FUN_00481a50("art",local_310,"rb");
+  engine_dosio_cpp_splitPath_FUN_00481f20(filename,(char *)0x0,local_210,local_110,(char *)0x0);
+  engine_dosio_cpp_makePath_FUN_00481f50(local_310,(char *)0x0,local_210,local_110,"act");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("art",local_310,"rb");
   if (file != (_FILE *)0x0) {
     iVar4 = 0;
     do {

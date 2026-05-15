@@ -20,7 +20,7 @@ int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_005dcc00(CTextureCa
   char *pcVar7;
   char local_114 [256];
 
-  size = engine_dosio_c_getFileSize_FUN_00481880("art",texture_name);
+  size = engine_dosio_cpp_getFileSize_FUN_00481880("art",texture_name);
   if (size < 0x4000) {
     if (0x3ff < size) {
       if (size < 0x401) {
@@ -78,7 +78,7 @@ LAB_005dcc85:
     core_main_c_displayErrorAndQuit_FUN_00506f10("CTextureCache::load - Can't find extension");
   }
   _sprintf(pcVar7,".act");
-  p_Var3 = engine_dosio_c_getFile_FUN_00481a50("art",local_114,"rb");
+  p_Var3 = engine_dosio_cpp_getFile_FUN_00481a50("art",local_114,"rb");
   if (p_Var3 == (_FILE *)0x0) {
     memcpy(cache->texture_palette_ptrs[cache->current_texture_count],g_SourcePaletteData,0x300);
   }
@@ -110,7 +110,7 @@ LAB_005dcc85:
   strcpy(local_114,texture_name);
   pcVar7 = strchr(local_114,'.');
   _sprintf(pcVar7,".raw");
-  p_Var3 = engine_dosio_c_getFile_FUN_00481a50("art",local_114,"rb");
+  p_Var3 = engine_dosio_cpp_getFile_FUN_00481a50("art",local_114,"rb");
   if (p_Var3 == (_FILE *)0x0) {
     memset
               (cache->texture_data_ptrs[cache->current_texture_count],0,width * width);
@@ -122,7 +122,7 @@ LAB_005dcc85:
   strcpy(local_114,texture_name);
   pcVar7 = strchr(local_114,'.');
   _sprintf(pcVar7,".opa");
-  p_Var3 = engine_dosio_c_getFile_FUN_00481a50("art",local_114,"rb");
+  p_Var3 = engine_dosio_cpp_getFile_FUN_00481a50("art",local_114,"rb");
   if (p_Var3 == (_FILE *)0x0) {
     if (cache->texture_opacity_ptrs[cache->current_texture_count] != (void *)0x0) {
       shape_memdbg_cpp_debugFree_FUN_0050f460

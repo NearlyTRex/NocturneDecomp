@@ -46,8 +46,8 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c_fread_FUN_005fd990
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
-;   engine_dosio.c_getFile_FUN_00481a50
-;   engine_dosio.c_getFileSize_FUN_00481880
+;   engine_dosio.cpp_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFileSize_FUN_00481880
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_edittool.cpp_CStrList_add_FUN_004a2b80
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -91,8 +91,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 005769ec
     PUSH EAX                            ; 005769f0
     PUSH 0x6465e2                       ; 005769f1 | = "backdrop"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 005769f6
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 005769f6
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 005769fb
     MOV dword ptr [ESP + 0x20],EAX      ; 005769fe
     TEST EAX,EAX                        ; 00576a02
@@ -102,8 +102,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00576a0f
     PUSH EAX                            ; 00576a13
     PUSH 0x6465ee                       ; 00576a14 | = "art"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00576a19
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00576a19
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00576a1e
     MOV dword ptr [ESP + 0x20],EAX      ; 00576a21
     TEST EAX,EAX                        ; 00576a25
@@ -159,16 +159,16 @@ section .text
         ;   Label: LAB_00576aa8
     PUSH EAX                            ; 00576aaa
     PUSH 0x6465f2                       ; 00576aab | = "art"
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 00576ab0
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 00576ab0
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 00576ab5
     PUSH 0x6465f6                       ; 00576ab8 | = "rb"
     MOV EBX,EAX                         ; 00576abd
     LEA EAX,[ESP + 0x14]                ; 00576abf
     PUSH EAX                            ; 00576ac3
     PUSH 0x6465f9                       ; 00576ac4 | = "art"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00576ac9
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00576ac9
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
         ;   Label: LAB_00576ac9
     ADD ESP,0xc                         ; 00576ace
     MOV ESI,EAX                         ; 00576ad1
@@ -330,8 +330,8 @@ section .text
         ;   Label: LAB_00576cb2
     PUSH EAX                            ; 00576cb4
     PUSH 0x6465fd                       ; 00576cb5 | = "backdrop"
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 00576cba
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 00576cba
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 00576cbf
     PUSH 0x646606                       ; 00576cc2 | = "rb"
     MOV EBX,EAX                         ; 00576cc7

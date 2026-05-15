@@ -451,7 +451,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_0055a810(CScript *this_ptr,float *t
                 _sprintf(g_ScriptErrorBuffer,"Light \"%s\" does not exist",local_5d4);
                 return -1;
               }
-              iVar8 = engine_dosio_c_getFileSize_FUN_00481880("art",local_250);
+              iVar8 = engine_dosio_cpp_getFileSize_FUN_00481880("art",local_250);
               if (iVar8 < 1) {
                 _sprintf(g_ScriptErrorBuffer,"Can't open filter \"%s\"",local_250);
                 return -1;

@@ -118,7 +118,7 @@ LAB_0057d6df:
   g_CSlewPtr->slew_rate = this_ptr->cameras[camera_index].projection_scale;
   pvStack_24 = (void *)0x0;
   _sprintf(acStack_f0,"%s.raw",this_ptr->cameras[camera_index].name);
-  p_Var9 = engine_dosio_c_getFile_FUN_00481a50("backdrop",acStack_f0,"rb");
+  p_Var9 = engine_dosio_cpp_getFile_FUN_00481a50("backdrop",acStack_f0,"rb");
   p_Stack_20 = p_Var9;
   if (p_Var9 != (_FILE *)0x0) {
     pvStack_24 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
@@ -128,7 +128,7 @@ LAB_0057d6df:
     }
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Stack_20,"..\\core\\setedit.cpp",0xc68);
     _sprintf(acStack_f0,"%s.act",this_ptr->cameras[camera_index].name);
-    p_Stack_20 = engine_dosio_c_getFile_FUN_00481a50("backdrop",acStack_f0,"rb");
+    p_Stack_20 = engine_dosio_cpp_getFile_FUN_00481a50("backdrop",acStack_f0,"rb");
     if (p_Stack_20 != (_FILE *)0x0) {
       iVar20 = 0;
       do {

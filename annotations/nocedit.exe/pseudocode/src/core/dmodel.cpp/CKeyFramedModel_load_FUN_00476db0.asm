@@ -41,7 +41,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_ungetc_FUN_005fea10
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;
 ; *****************************************************************************
@@ -62,8 +62,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00476dc6
     PUSH EDX                            ; 00476dca
     PUSH 0x61f2e6                       ; 00476dcb | = "models"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00476dd0
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00476dd0
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00476dd5
     MOV EBP,EAX                         ; 00476dd8
     TEST EAX,EAX                        ; 00476dda
@@ -111,8 +111,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x1c]      ; 00476e38
     PUSH EBP                            ; 00476e3c
     PUSH 0x61f334                       ; 00476e3d | = "models"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00476e42
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00476e42
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00476e47
     MOV EBP,EAX                         ; 00476e4a
     TEST EAX,EAX                        ; 00476e4c

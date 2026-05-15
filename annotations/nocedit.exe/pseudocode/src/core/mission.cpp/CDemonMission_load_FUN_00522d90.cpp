@@ -13,8 +13,8 @@ void __cdecl core_mission_cpp_CDemonMission_load_FUN_00522d90(CDemonMission *thi
   char *text;
   int clear_screen;
   
-  file_handle = engine_dosio_c_getFile_FUN_00481a50("world",mission_filename,"rt")
-  ;
+  file_handle = engine_dosio_cpp_getFile_FUN_00481a50
+                          ("world",mission_filename,"rt");
   if (file_handle == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\mission.cpp";
     g_CurrentLineNumber = 0x9c;

@@ -13,7 +13,7 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004fbd90(void)
   CIniFile local_204;
   CGame *pCVar1;
   
-  DVar2 = engine_dosio_c_setReadonlyAttribute_FUN_00600c30(".\\system\\nocturne.ini",0x180);
+  DVar2 = engine_dosio_cpp_setReadonlyAttribute_FUN_00600c30(".\\system\\nocturne.ini",0x180);
   if (DVar2 != 0) {
     g_CurrentFilename = "..\\core\\inivar.cpp";
     g_CurrentLineNumber = 0x57;

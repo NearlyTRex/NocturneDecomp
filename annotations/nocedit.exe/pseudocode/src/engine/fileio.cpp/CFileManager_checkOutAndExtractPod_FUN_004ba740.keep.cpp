@@ -103,7 +103,7 @@ LAB_004ba895:
   }
   g_VersionControlSession.overwrite_own_choice = 0;
   g_VersionControlSession.overwrite_writeable_choice = 0;
-  uVar4 = engine_dosio_c_getFileSizeWithFinder_FUN_00481960((char *)0x0,local_340);
+  uVar4 = engine_dosio_cpp_getFileSizeWithFinder_FUN_00481960((char *)0x0,local_340);
   if (((int)uVar4 < 0) || ((uVar4 & 8) != 0)) {
     iVar4 = 1;
   }
@@ -122,8 +122,8 @@ LAB_004ba93f:
         g_CurrentLineNumber = 0xdd;
         core_main_c_displayErrorAndQuit_FUN_00506f10("versionControlDirectory not set!");
       }
-      engine_dosio_c_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_14,local_138);
-      engine_dosio_c_makePath_FUN_00481f50(local_23c,local_14,local_138,(char *)0x0,(char *)0x0);
+      engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_14,local_138);
+      engine_dosio_cpp_makePath_FUN_00481f50(local_23c,local_14,local_138,(char *)0x0,(char *)0x0);
       strcat(local_23c,"checkout.txt");
       iVar4 = 0;
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -208,9 +208,9 @@ LAB_004baa2c:
               }
               shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                         (g_CEditorToolsPtr,"Clearing read-only bit for %s...",local_23c);
-              uVar7 = engine_dosio_c_getFileSizeWithFinder_FUN_00481960((char *)0x0,filename);
+              uVar7 = engine_dosio_cpp_getFileSizeWithFinder_FUN_00481960((char *)0x0,filename);
               if (((((int)uVar7 < 0) || ((uVar7 & 8) == 0)) ||
-                  (iVar4 = engine_dosio_c_setFileAttributes_FUN_004819f0
+                  (iVar4 = engine_dosio_cpp_setFileAttributes_FUN_004819f0
                                      (filename,(byte)uVar7 & 0xf7), iVar4 != 0)) &&
                  (-1 < (int)uVar7)) {
                 engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_28);

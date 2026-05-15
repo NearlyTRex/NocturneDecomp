@@ -355,7 +355,7 @@ LAB_004aad41:
             while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2) != 0) {
               local_ec = local_ec + 1;
             }
-            iVar2 = engine_dosio_c_getFileSize_FUN_00481880("art",local_163c);
+            iVar2 = engine_dosio_cpp_getFileSize_FUN_00481880("art",local_163c);
             if (iVar2 < 0) {
               iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0("Bitmap doesn't exist");
               return iVar2;

@@ -1,0 +1,217 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 127,
+    "complexity_score": 48,
+    "cross_reference_count": 2,
+    "function_call_count": 5,
+    "global_count": 6,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 48,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 175
+  },
+  "cross_references": [
+    {
+      "addr": "00481cf0",
+      "from_addr": "00481d46",
+      "name": "engine_dosio.cpp_CFileFinder_findNext_FUN_00481cf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00481c70",
+      "from_addr": "00481cbf",
+      "name": "engine_dosio.cpp_CFileFinder_openSearch_FUN_00481c70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00481dc0",
+    "address_range": [
+      [
+        "00481dc0",
+        "00481f15"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_dosio.cpp_CFileFinder_convertStruct_FUN_00481dc0",
+    "signature": "void __cdecl engine_dosio_cpp_CFileFinder_convertStruct_FUN_00481dc0(CFileFinder *finder,LPWIN32_FIND_DATAA find_data)"
+  },
+  "function_calls": [
+    {
+      "addr": "00506f10",
+      "is_variadic": true,
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
+    },
+    {
+      "addr": "005fde40",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005fde40"
+    },
+    {
+      "addr": "00600f40",
+      "is_variadic": false,
+      "name": "crt_string.c__strncpy_FUN_00600f40"
+    },
+    {
+      "addr": "00600f80",
+      "is_variadic": false,
+      "name": "crt_time.c__mktime_FUN_00600f80"
+    },
+    {
+      "addr": "EXTERNAL:0000005c",
+      "is_variadic": false,
+      "name": "FileTimeToSystemTime"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00611540",
+      "name": "g_FileTimeToLocalFileTimeFunc",
+      "type": "FILE_TIME_TO_LOCAL_FILE_TIME_FUNC*",
+      "value": "00211d46"
+    },
+    {
+      "addr": "00611544",
+      "name": "g_FileTimeToSystemTimeFunc",
+      "type": "FILE_TIME_TO_SYSTEM_TIME_FUNC*",
+      "value": "00211d60"
+    },
+    {
+      "addr": "00621617",
+      "name": "s_engine_dosio_c_00621617",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00621629",
+      "name": "s_CFileFinder_convertStruc_00621629",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02f0ca48",
+      "name": "g_CurrentFilename",
+      "type": "char*",
+      "value": null
+    },
+    {
+      "addr": "02f0ca4c",
+      "name": "g_CurrentLineNumber",
+      "type": "int",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00481d46",
+        "call_type": "direct",
+        "caller": "engine_dosio.cpp_CFileFinder_findNext_FUN_00481cf0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00481cbf",
+        "call_type": "direct",
+        "caller": "engine_dosio.cpp_CFileFinder_openSearch_FUN_00481c70",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.784313725490196,
+    "instruction_count": 102,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 1,
+      "BRANCH": 2,
+      "CALL": 4,
+      "CALLIND": 2,
+      "CBRANCH": 8,
+      "COPY": 101,
+      "INT_ADD": 46,
+      "INT_AND": 64,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 58,
+      "INT_LESS": 4,
+      "INT_OR": 4,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 29,
+      "INT_SUB": 27,
+      "INT_XOR": 7,
+      "LOAD": 41,
+      "POPCOUNT": 29,
+      "RETURN": 2,
+      "STORE": 37
+    },
+    "pcode_op_count": 488
+  },
+  "stack_frame": {
+    "frame_size": 88,
+    "local_size": 80,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "_Stack_4c",
+        "offset": -76,
+        "size": 36,
+        "type": "_tm"
+      },
+      {
+        "is_param": false,
+        "name": "_Stack_28",
+        "offset": -40,
+        "size": 16,
+        "type": "_SYSTEMTIME"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "_FILETIME"
+      },
+      {
+        "is_param": true,
+        "name": "finder",
+        "offset": 4,
+        "size": 4,
+        "type": "CFileFinder *"
+      },
+      {
+        "is_param": true,
+        "name": "find_data",
+        "offset": 8,
+        "size": 4,
+        "type": "LPWIN32_FIND_DATAA"
+      }
+    ]
+  },
+  "suspects": []
+}

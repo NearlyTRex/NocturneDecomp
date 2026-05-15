@@ -8,7 +8,7 @@
 ; _utimbuf *       Stack[0x8]:4   timestamps
 ;
 ; XREF[1]:
-;   engine_dosio.c_copyFileTimestamp_FUN_00481910 at 00481945
+;   engine_dosio.cpp_copyFileTimestamp_FUN_00481910 at 00481945
 ;
 ; *****************************************************************************
 

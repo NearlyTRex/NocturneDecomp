@@ -1,0 +1,294 @@
+{
+  "compilation_status": {
+    "errors": [],
+    "success": true,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 44,
+    "complexity_score": 19,
+    "cross_reference_count": 10,
+    "function_call_count": 4,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 63
+  },
+  "cross_references": [
+    {
+      "addr": "005381e0",
+      "from_addr": "00538955",
+      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00537230",
+      "from_addr": "0053724f",
+      "name": "core_msnedit.cpp_convertAllMissionFiles_FUN_00537230",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005519c0",
+      "from_addr": "00551a09",
+      "name": "core_podmain.cpp_CDemonPod_load_FUN_005519c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00481960",
+      "from_addr": "0048199f",
+      "name": "engine_dosio.cpp_getFileSizeWithFinder_FUN_00481960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b5030",
+      "from_addr": "004b512f",
+      "name": "engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bccf0",
+      "from_addr": "004bcdbc",
+      "name": "engine_fileio.cpp_CFileManager_createPodConfigWizard_FUN_004bccf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049f420",
+      "from_addr": "0049f603",
+      "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a35b0",
+      "from_addr": "004a3701",
+      "name": "shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004a35b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a37b0",
+      "from_addr": "004a38f4",
+      "name": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a39e0",
+      "from_addr": "004a3ab4",
+      "name": "shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_004a39e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00481c70",
+    "address_range": [
+      [
+        "00481c70",
+        "00481ce9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_dosio.cpp_CFileFinder_openSearch_FUN_00481c70",
+    "signature": "int __cdecl engine_dosio_cpp_CFileFinder_openSearch_FUN_00481c70(CFileFinder *this_ptr,char *search_pattern)"
+  },
+  "function_calls": [
+    {
+      "addr": "00481d70",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_closeSearch_FUN_00481d70"
+    },
+    {
+      "addr": "00481dc0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_convertStruct_FUN_00481dc0"
+    },
+    {
+      "addr": "00481db0",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_CFileFinder_reset_FUN_00481db0"
+    },
+    {
+      "addr": "EXTERNAL:0000005e",
+      "is_variadic": false,
+      "name": "FindFirstFileA"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061154c",
+      "name": "g_FindFirstFileAFunc",
+      "type": "FIND_FIRST_FILE_A_FUNC*",
+      "value": "00211d84"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 11,
+    "call_sites": [
+      {
+        "call_addr": "004a3701",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004a35b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0049f603",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0049f509",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00551a09",
+        "call_type": "direct",
+        "caller": "core_podmain.cpp_CDemonPod_load_FUN_005519c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b512f",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a38f4",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a3ab4",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_004a39e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00538955",
+        "call_type": "direct",
+        "caller": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004bcdbc",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CFileManager_createPodConfigWizard_FUN_004bccf0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048199f",
+        "call_type": "direct",
+        "caller": "engine_dosio.cpp_getFileSizeWithFinder_FUN_00481960",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.352941176470588,
+    "instruction_count": 34,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 22,
+      "INT_ADD": 16,
+      "INT_AND": 16,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 16,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 8,
+      "INT_SUB": 14,
+      "LOAD": 9,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 13
+    },
+    "pcode_op_count": 148
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFileFinder *"
+      },
+      {
+        "is_param": true,
+        "name": "search_pattern",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

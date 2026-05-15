@@ -35,9 +35,9 @@
 ;   core_setutil.cpp_C3DSCamera_exportS3D_FUN_00586190
 ;   core_setutil.cpp_C3DSLight_exportS3D_FUN_00587850
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
-;   engine_dosio.c_getFile_FUN_00481a50
-;   engine_dosio.c_makePath_FUN_00481f50
-;   engine_dosio.c_splitPath_FUN_00481f20
+;   engine_dosio.cpp_getFile_FUN_00481a50
+;   engine_dosio.cpp_makePath_FUN_00481f50
+;   engine_dosio.cpp_splitPath_FUN_00481f20
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;
@@ -59,8 +59,8 @@ section .text
     PUSH 0x0                            ; 0057a0dd
     LEA EAX,[EBP + 0x14d0f0]            ; 0057a0df
     PUSH EAX                            ; 0057a0e5
-    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 0057a0e6
-        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00481f20 ; 0057a0e6
+        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 0057a0eb
     PUSH 0x64730f                       ; 0057a0ee | = "lc"
     LEA EAX,[ESP + 0x108]               ; 0057a0f3
@@ -69,8 +69,8 @@ section .text
     PUSH 0x0                            ; 0057a0fd
     LEA EAX,[ESP + 0x10]                ; 0057a0ff
     PUSH EAX                            ; 0057a103
-    CALL engine_dosio.c_makePath_FUN_00481f50 ; 0057a104
-        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_makePath_FUN_00481f50 ; 0057a104
+        ;   XREF to: 00481f50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_makePath_FUN_00481f50(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 0057a109
     MOV EAX,ESP                         ; 0057a10c
     PUSH EAX                            ; 0057a10e
@@ -84,8 +84,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0057a128
     PUSH EAX                            ; 0057a12c
     PUSH 0x647338                       ; 0057a12d | = "models"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057a132
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0057a132
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057a137
     MOV EDI,EAX                         ; 0057a13a
     TEST EAX,EAX                        ; 0057a13c

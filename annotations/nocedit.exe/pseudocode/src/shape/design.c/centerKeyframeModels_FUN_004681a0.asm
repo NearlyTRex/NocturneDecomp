@@ -32,8 +32,8 @@
 ;   crt_stdio.c_fwrite_FUN_005fdc00
 ;   crt_stdlib.c_atoi_FUN_005ffef0
 ;   engine_2d.c_getInputWithPrompt_FUN_004032c0
-;   engine_dosio.c_getFile_FUN_00481a50
-;   engine_dosio.c_getFileSize_FUN_00481880
+;   engine_dosio.cpp_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFileSize_FUN_00481880
 ;   engine_model.c_freeMRGLData_FUN_005280b0
 ;   engine_model.c_loadModelFile_FUN_00527ec0
 ;   shape_design.c_applyVertexCentering_FUN_004680f0
@@ -136,8 +136,8 @@ section .text
     PUSH EAX                            ; 0046826d
     MOV EAX,0x61cc45                    ; 0046826e | = "models"
     PUSH EAX                            ; 00468273 | = "models"
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 00468274
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 00468274
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 00468279
     MOV dword ptr [EBP + -0x6c],EAX     ; 0046827c
     MOV EAX,0x61cc4c                    ; 0046827f | = "wb"
@@ -150,8 +150,8 @@ section .text
     PUSH EAX                            ; 00468293
     MOV EAX,0x61cc4f                    ; 00468294 | = "models"
     PUSH EAX                            ; 00468299 | = "models"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0046829a
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0046829a
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0046829f
     MOV dword ptr [EBP + -0x68],EAX     ; 004682a2
     CMP dword ptr [EBP + -0x68],0x0     ; 004682a5

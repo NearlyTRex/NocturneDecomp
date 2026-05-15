@@ -15,15 +15,15 @@ void __cdecl core_msnedit_cpp_copyFile_FUN_00537dd0(char *src_filename,char *des
   int character;
   _FILE *file;
   
-  iVar1 = engine_dosio_c_getFileSize_FUN_00481880(directory,src_filename);
+  iVar1 = engine_dosio_cpp_getFileSize_FUN_00481880(directory,src_filename);
   if (-1 < iVar1) {
-    file_ptr = engine_dosio_c_getFile_FUN_00481a50(directory,src_filename,"rb");
+    file_ptr = engine_dosio_cpp_getFile_FUN_00481a50(directory,src_filename,"rb");
     if (file_ptr == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\msnedit.cpp";
       g_CurrentLineNumber = 0x2eb;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open world\\%s",src_filename);
     }
-    file_ptr_00 = engine_dosio_c_getFile_FUN_00481a50(directory,dest_filename,"wb");
+    file_ptr_00 = engine_dosio_cpp_getFile_FUN_00481a50(directory,dest_filename,"wb");
     if (file_ptr_00 == (_FILE *)0x0) {
       g_CurrentFilename = "..\\core\\msnedit.cpp";
       g_CurrentLineNumber = 0x2ed;

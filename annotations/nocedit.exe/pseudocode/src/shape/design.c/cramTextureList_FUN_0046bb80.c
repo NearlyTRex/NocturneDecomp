@@ -105,7 +105,7 @@ int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCram *cram)
                              "..\\shape\\design.c",0x28f8);
     }
     else {
-      local_850 = engine_dosio_c_getFile_FUN_00481a50
+      local_850 = engine_dosio_cpp_getFile_FUN_00481a50
                             ("art",g_TextureAtlasEntries[local_5c].tga_filename,
                              "rb");
     }
@@ -903,7 +903,7 @@ LAB_0046cf33:
         }
         shape_design_c_embedCopyrightWatermark_FUN_0046b9a0
                   (local_24,(char *)local_20,g_TextureAtlasDimension);
-        p_Var9 = engine_dosio_c_getFile_FUN_00481a50("art",local_258,"wb");
+        p_Var9 = engine_dosio_cpp_getFile_FUN_00481a50("art",local_258,"wb");
         if (p_Var9 == (_FILE *)0x0) {
           g_CurrentFilename = "..\\shape\\design.c";
           g_CurrentLineNumber = 0x2b7e;
@@ -950,7 +950,7 @@ LAB_0046dbbf:
           } while (cVar2 != '\0');
         }
         local_6c = pcVar13;
-        p_Var9 = engine_dosio_c_getFile_FUN_00481a50("art",local_460,"wb");
+        p_Var9 = engine_dosio_cpp_getFile_FUN_00481a50("art",local_460,"wb");
         if (p_Var9 == (_FILE *)0x0) {
           g_CurrentFilename = "..\\shape\\design.c";
           g_CurrentLineNumber = 0x2b8c;
@@ -1009,7 +1009,7 @@ LAB_0046dd49:
           _sprintf(local_154,"All pixels completely opaque, no .OPA file generated.");
         }
         else {
-          p_Var9 = engine_dosio_c_getFile_FUN_00481a50("art",local_35c,"wb");
+          p_Var9 = engine_dosio_cpp_getFile_FUN_00481a50("art",local_35c,"wb");
           if (p_Var9 == (_FILE *)0x0) {
             g_CurrentFilename = "..\\shape\\design.c";
             g_CurrentLineNumber = 0x2ba2;
@@ -1021,7 +1021,7 @@ LAB_0046dd49:
         }
         engine_2d_c_drawText_FUN_00401fd0(local_154,0,99);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-        p_Var9 = engine_dosio_c_getFile_FUN_00481a50
+        p_Var9 = engine_dosio_cpp_getFile_FUN_00481a50
                            ("art","tmp24.raw","wb");
         if (p_Var9 == (_FILE *)0x0) {
           g_CurrentFilename = "..\\shape\\design.c";

@@ -13,8 +13,8 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004fd220(void)
   int iVar2;
   
   g_InventoryScreenHeight = g_WindowHeight;
-  p_Var1 = engine_dosio_c_getFile_FUN_00481a50("data","invsize.txt","rt")
-  ;
+  p_Var1 = engine_dosio_cpp_getFile_FUN_00481a50
+                     ("data","invsize.txt","rt");
   if (p_Var1 != (_FILE *)0x0) {
     _fscanf(p_Var1,"%d,%d\n",&g_InventoryWidth,&g_InventoryHeight);
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var1,"..\\core\\inv.cpp",0x139);
@@ -61,7 +61,7 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004fd220(void)
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_00410c20(&g_HolyBulletIconBitmap,2,2);
   }
   g_ItemDefinitionCount = 0;
-  p_Var1 = engine_dosio_c_getFile_FUN_00481a50
+  p_Var1 = engine_dosio_cpp_getFile_FUN_00481a50
                      (&s_EmptyChar_006304c1,"itemlist.txt","rt");
   if (p_Var1 != (_FILE *)0x0) {
     while ((p_Var1->_flag & 0x10) == 0) {

@@ -36,7 +36,7 @@
 ;   crt_stdio.c_fwrite_FUN_005fdc00
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   engine_2d.c_buildColorLookupTable_FUN_00402870
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;
 ; *****************************************************************************
@@ -110,8 +110,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004029ae
     PUSH EAX                            ; 004029b2
     PUSH 0x613111                       ; 004029b3 | = "fog"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004029b8
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004029b8
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 004029bd
     ADD ESP,0xc                         ; 004029bf
     TEST EAX,EAX                        ; 004029c2
@@ -123,8 +123,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004029d0
     PUSH EAX                            ; 004029d4
     PUSH 0x613118                       ; 004029d5 | = "fog"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004029da
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004029da
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004029df
     MOV EBX,EAX                         ; 004029e2
     TEST EAX,EAX                        ; 004029e4

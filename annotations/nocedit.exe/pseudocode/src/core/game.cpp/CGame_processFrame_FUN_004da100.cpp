@@ -180,8 +180,8 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
           if (g_MovieRecordingActive != 0) {
             _sprintf(local_114,"noc%05d.raw",g_MovieRecordingFrameCounter);
             _sprintf(local_1dc,"Movie recording active: movie\\%s",local_114);
-            local_34 = engine_dosio_c_getFile_FUN_00481a50("movie",local_114,"wb")
-            ;
+            local_34 = engine_dosio_cpp_getFile_FUN_00481a50
+                                 ("movie",local_114,"wb");
             if (local_34 != (_FILE *)0x0) {
               local_38 = 0;
               if (0 < g_MovieRecordingHeight) {

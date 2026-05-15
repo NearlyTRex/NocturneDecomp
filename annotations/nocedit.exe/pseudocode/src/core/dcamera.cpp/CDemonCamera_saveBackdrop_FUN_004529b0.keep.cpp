@@ -51,7 +51,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
     g_ImageBytesPerPixel = 1;
   }
   _sprintf(local_274,"%s.fog",this_ptr->camera_name);
-  file_ptr = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_274,"rb");
+  file_ptr = engine_dosio_cpp_getFile_FUN_00481a50("backdrop",local_274,"rb");
   if (file_ptr != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\dcamera.cpp",0x12d5);
     return;

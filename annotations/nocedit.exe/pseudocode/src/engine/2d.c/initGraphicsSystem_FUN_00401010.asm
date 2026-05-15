@@ -30,7 +30,7 @@
 ;   crt_stdio.c_fread_FUN_005fd990
 ;   engine_2d.c_loadOrBuildColorMap_FUN_00402930
 ;   engine_2d.c_loadPaletteFile_FUN_004015a0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ecc10
 ;   wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0
@@ -94,8 +94,8 @@ section .text
     PUSH 0x61305f                       ; 004010ae | = "rb"
     PUSH 0x613062                       ; 004010b3 | = "default.act"
     PUSH 0x61306e                       ; 004010b8 | = "art"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 004010bd
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 004010bd
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 004010c2
     ADD ESP,0xc                         ; 004010c4
     TEST EAX,EAX                        ; 004010c7

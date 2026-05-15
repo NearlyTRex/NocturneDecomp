@@ -30,8 +30,8 @@ int __cdecl engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220(char *bas
   SFoundFileInfo *pSVar7;
   
   bVar9 = 0;
-  engine_dosio_c_ensureTrailingSlash_FUN_00481f80(base_directory,local_14,local_114);
-  engine_dosio_c_makePath_FUN_00481f50
+  engine_dosio_cpp_ensureTrailingSlash_FUN_00481f80(base_directory,local_14,local_114);
+  engine_dosio_cpp_makePath_FUN_00481f50
             (local_53c.found_path,local_14,local_114,(char *)0x0,(char *)0x0);
   pSVar5 = &local_53c;
   iVar4 = -1;
@@ -72,7 +72,7 @@ int __cdecl engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220(char *bas
   stream_ptr = (_FILE *)0x0;
 LAB_004b32cc:
   if ((stream_ptr == (_FILE *)0x0) ||
-     (iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_53c), iVar3 == 0)) {
+     (iVar3 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_53c), iVar3 == 0)) {
     if (stream_ptr != (_FILE *)0x0) {
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream_ptr,"..\\engine\\fileio.cpp",0xc4);
       stream_ptr = (_FILE *)0x0;
@@ -90,14 +90,14 @@ LAB_004b32cc:
       pSVar8->found_path[1] = cVar2;
       pSVar8 = (SFoundFileInfo *)(pSVar8->found_path + 2);
     } while (cVar2 != '\0');
-    iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_328);
+    iVar3 = engine_dosio_cpp_findFileNormally_FUN_004817c0(&local_328);
     if (iVar3 == 0) {
       local_328.file_size = 0xffffffff;
     }
     if (((local_328.file_size != local_53c.file_size) ||
         (local_53c.timestamp + 2 < local_328.timestamp)) ||
        (local_328.timestamp + 2 < local_53c.timestamp)) {
-      engine_dosio_c_setFileAttributes_FUN_004819f0(local_328.found_path,0);
+      engine_dosio_cpp_setFileAttributes_FUN_004819f0(local_328.found_path,0);
       remove(local_328.found_path);
       dest_file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                             (local_328.found_path,(char *)0x0,"wb",
@@ -125,7 +125,7 @@ LAB_004b32cc:
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar4);
         goto LAB_004b3306;
       }
-      iVar3 = engine_dosio_c_copyFileTimestamp_FUN_00481910
+      iVar3 = engine_dosio_cpp_copyFileTimestamp_FUN_00481910
                         (local_328.found_path,(char *)local_53c.timestamp);
       if (iVar3 == 0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -137,10 +137,11 @@ LAB_004b32cc:
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream_ptr,"..\\engine\\fileio.cpp",0xc4);
     }
     stream_ptr = (_FILE *)0x0;
-    uVar3 = engine_dosio_c_getFileSizeWithFinder_FUN_00481960((char *)0x0,local_328.found_path);
+    uVar3 = engine_dosio_cpp_getFileSizeWithFinder_FUN_00481960((char *)0x0,local_328.found_path);
     if (((((int)uVar3 < 0) || ((uVar3 & 8) != 0)) ||
-        (iVar3 = engine_dosio_c_setFileAttributes_FUN_004819f0(local_328.found_path,(byte)uVar3 | 8)
-        , iVar3 != 0)) && (-1 < (int)uVar3)) {
+        (iVar3 = engine_dosio_cpp_setFileAttributes_FUN_004819f0
+                           (local_328.found_path,(byte)uVar3 | 8), iVar3 != 0)) && (-1 < (int)uVar3)
+       ) {
       return 1;
     }
     pSVar5 = &local_328;

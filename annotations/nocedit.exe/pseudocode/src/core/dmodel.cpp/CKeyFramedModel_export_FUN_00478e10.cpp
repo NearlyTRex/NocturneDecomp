@@ -54,7 +54,7 @@ LAB_00478e35:
     pcVar2 = (char *)0x0;
 LAB_00478e57:
     if (pcVar2 == (char *)0x0) {
-      file = engine_dosio_c_getFile_FUN_00481a50("models",output_filename,"wt");
+      file = engine_dosio_cpp_getFile_FUN_00481a50("models",output_filename,"wt");
       goto LAB_00478e7f;
     }
   }

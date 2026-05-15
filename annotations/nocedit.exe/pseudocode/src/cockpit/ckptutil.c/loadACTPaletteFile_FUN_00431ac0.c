@@ -71,7 +71,7 @@ LAB_00431b33:
     pcVar6[1] = cVar2;
     pcVar6 = pcVar6 + 2;
   } while (cVar2 != '\0');
-  file = engine_dosio_c_getFile_FUN_00481a50("art",local_ac,"rb");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("art",local_ac,"rb");
   if (file == (_FILE *)0x0) {
     puVar6 = g_DefaultPalette;
     for (iVar3 = 0xc0; iVar3 != 0; iVar3 = iVar3 + -1) {

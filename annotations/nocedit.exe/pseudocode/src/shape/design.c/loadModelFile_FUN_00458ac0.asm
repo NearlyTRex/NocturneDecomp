@@ -48,7 +48,7 @@
 ;   crt_string.c_strtok_FUN_005fff50
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_design.c_calculateVertexNormals_FUN_0045be40
 ;   shape_design.c_loadModelBinary_FUN_00458170
 ;   shape_design.c_loadS3DModelFile_FUN_004593a0
@@ -249,8 +249,8 @@ section .text
     PUSH EAX                            ; 00458c59
     MOV EAX,0x61a9ef                    ; 00458c5a | = "models"
     PUSH EAX                            ; 00458c5f | = "models"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00458c60
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00458c60
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00458c65
     MOV dword ptr [EBP + -0x8],EAX      ; 00458c68
     CMP dword ptr [EBP + -0x8],0x0      ; 00458c6b

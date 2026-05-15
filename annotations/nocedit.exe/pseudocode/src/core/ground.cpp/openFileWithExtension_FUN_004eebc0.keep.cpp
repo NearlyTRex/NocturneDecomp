@@ -23,7 +23,7 @@ _FILE * __cdecl core_ground_cpp_openFileWithExtension_FUN_004eebc0(char *directo
   }
   pcVar5 = pcVar5 + 1;
   strcpy(pcVar5,new_extension);
-  p_Var2 = engine_dosio_c_getFile_FUN_00481a50(directory,local_60,open_mode);
+  p_Var2 = engine_dosio_cpp_getFile_FUN_00481a50(directory,local_60,open_mode);
   if (p_Var2 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\ground.cpp";
     g_CurrentLineNumber = 0x44;

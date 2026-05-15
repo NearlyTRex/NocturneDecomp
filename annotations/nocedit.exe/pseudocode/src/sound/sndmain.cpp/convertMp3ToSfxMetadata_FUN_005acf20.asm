@@ -47,7 +47,7 @@
 ;   crt_string.c_memmove_FUN_005fe5e0
 ;   crt_string.c_splitpath_FUN_005ff178
 ;   crt_string.c_strstr_FUN_005fedd0
-;   engine_dosio.c_getFileSize_FUN_00481880
+;   engine_dosio.cpp_getFileSize_FUN_00481880
 ;   shape_edittool.cpp_CStrList_add_FUN_004a2b80
 ;   shape_edittool.cpp_CStrList_ctor_FUN_004a2a20
 ;   shape_edittool.cpp_CStrList_dtor_FUN_004a2a40
@@ -68,8 +68,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x860]     ; 005acf2a
     PUSH EBP                            ; 005acf31
     PUSH 0x0                            ; 005acf32
-    CALL engine_dosio.c_getFileSize_FUN_00481880 ; 005acf34
-        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_getFileSize_FUN_00481880(char * directory, char * filename)
+    CALL engine_dosio.cpp_getFileSize_FUN_00481880 ; 005acf34
+        ;   XREF to: 00481880 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_getFileSize_FUN_00481880(char * directory, char * filename)
     ADD ESP,0x8                         ; 005acf39
     MOV EDI,EAX                         ; 005acf3c
     TEST EAX,EAX                        ; 005acf3e

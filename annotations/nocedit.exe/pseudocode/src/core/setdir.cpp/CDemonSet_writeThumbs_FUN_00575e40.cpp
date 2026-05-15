@@ -17,7 +17,7 @@ void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_00575e40(CDemonSet *this_
   CDemonSet *local_18;
   int local_14;
   
-  file_handle = engine_dosio_c_getFile_FUN_00481a50("data",filename,"wb");
+  file_handle = engine_dosio_cpp_getFile_FUN_00481a50("data",filename,"wb");
   if (file_handle == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\setdir.cpp";
     g_CurrentLineNumber = 0x3bf;

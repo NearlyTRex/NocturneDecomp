@@ -21,7 +21,7 @@ void __cdecl engine_font_cpp_CBitFont_loadFromFile_FUN_004cd2c0(CBitFont *this_p
   int local_14;
   int local_10;
   
-  stream = engine_dosio_c_getFile_FUN_00481a50("art",font_path,"rt");
+  stream = engine_dosio_cpp_getFile_FUN_00481a50("art",font_path,"rt");
   if (stream == (_FILE *)0x0) {
     return;
   }

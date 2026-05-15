@@ -30,7 +30,7 @@
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_0054a990
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;
 ; *****************************************************************************
@@ -55,8 +55,8 @@ section .text
     PUSH 0x63f1fe                       ; 0054b880 | = "rb"
     PUSH EBX                            ; 0054b885
     PUSH 0x63f201                       ; 0054b886 | = "art"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0054b88b
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0054b88b
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0054b890
     MOV ESI,EAX                         ; 0054b893
     TEST EAX,EAX                        ; 0054b895

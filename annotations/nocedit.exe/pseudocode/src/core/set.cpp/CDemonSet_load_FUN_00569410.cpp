@@ -52,7 +52,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
   pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Loading set");
   core_level_cpp_CLevelLoader_update_FUN_00504160(g_CLevelLoaderPtr,pcVar3,iVar10);
   core_set_cpp_CDemonSet_clear_FUN_005693c0(this_ptr);
-  p_Var4 = engine_dosio_c_getFile_FUN_00481a50("models",filename,"rt");
+  p_Var4 = engine_dosio_cpp_getFile_FUN_00481a50("models",filename,"rt");
   if (p_Var4 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\set.cpp";
     g_CurrentLineNumber = 0x122;
@@ -350,7 +350,7 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00569410(CDemonSet *this_ptr,char *
       pcVar9[1] = cVar1;
       pcVar9 = pcVar9 + 2;
     } while (cVar1 != '\0');
-    file_ptr = engine_dosio_c_getFile_FUN_00481a50("data",pcVar4,"rb");
+    file_ptr = engine_dosio_cpp_getFile_FUN_00481a50("data",pcVar4,"rb");
     if (file_ptr == (_FILE *)0x0) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("Warning!  No .GEO file.  Press any key",0,0);

@@ -7,13 +7,13 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6454
-Clean functions: 5712 (88.5%)
-Functions with suspects: 742 (11.5%)
+Clean functions: 5713 (88.5%)
+Functions with suspects: 741 (11.5%)
 
-Total suspect patterns: 3901
+Total suspect patterns: 3900
 Average suspects per function: 0.60
 
-Virtual files: 214 total, 135 at 100%, 145 at 90%+
+Virtual files: 214 total, 136 at 100%, 145 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3337, Average: 47.8
@@ -28,7 +28,7 @@ Failed: 0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  pointer_cast              1696
+  pointer_cast              1695
   unrolled_memcpy           925
   unrolled_strcpy           299
   missing_cave_copy         170
@@ -108,7 +108,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1740: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740 (4 lines)
   005b16d0: sound_sndwav.cpp_CWavOutDevice_lockSample_FUN_005b16d0 (4 lines)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
-  ... and 5662 more
+  ... and 5663 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -129,7 +129,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   005390f0: core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 (score: 1087, suspects: 8, lines: 997)
   004b5a50: engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (score: 1028, suspects: 37, lines: 643)
   00446160: shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (score: 997, suspects: 16, lines: 832)
-  004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (score: 944, suspects: 12, lines: 809)
+  004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (score: 945, suspects: 12, lines: 810)
   00562920: core_script.cpp_editParameterValue_FUN_00562920 (score: 924, suspects: 16, lines: 754)
   00582930: core_setedit.cpp_drawCameraFrustum_FUN_00582930 (score: 917, suspects: 0, lines: 917)
   005138e0: core_menu.cpp_configureCustomKeyBindings_FUN_005138e0 (score: 917, suspects: 0, lines: 917)
@@ -139,15 +139,14 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   00484410: core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 (score: 826, suspects: 6, lines: 756)
   005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 809, suspects: 0, lines: 809)
   004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00 (score: 794, suspects: 13, lines: 634)
+  00578d80: core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (score: 779, suspects: 9, lines: 674)
   0041e350: core_box.cpp_CBox_processPhysics_FUN_0041e350 (score: 779, suspects: 0, lines: 779)
-  00578d80: core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (score: 778, suspects: 9, lines: 673)
   0040eed0: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (score: 767, suspects: 1, lines: 752)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  pointer_cast (401 functions):
-    00481b50: engine_dosio.c_reopenFileStream_FUN_00481b50
+  pointer_cast (400 functions):
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
     00550230: engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230
@@ -157,7 +156,8 @@ FUNCTIONS BY SUSPECT TYPE
     00401b70: engine_2d.c_drawCharacterHighlighted_FUN_00401b70
     00403430: engine_2d.c_mapFrameBuffer_FUN_00403430
     00401900: engine_2d.c_drawCharacterMasked_FUN_00401900
-    ... and 391 more
+    00401140: engine_2d.c_plotPixel_FUN_00401140
+    ... and 390 more
 
   unrolled_memcpy (311 functions):
     005506c0: engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0

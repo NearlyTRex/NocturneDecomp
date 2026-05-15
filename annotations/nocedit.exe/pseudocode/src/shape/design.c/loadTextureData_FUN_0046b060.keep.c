@@ -38,7 +38,7 @@ void __cdecl shape_design_c_loadTextureData_FUN_0046b060(STextureAtlasEntry *ent
                           0x27a2);
   }
   else {
-    local_1c = engine_dosio_c_getFile_FUN_00481a50("art",entry->tga_filename,"rb")
+    local_1c = engine_dosio_cpp_getFile_FUN_00481a50("art",entry->tga_filename,"rb")
     ;
   }
   if (local_1c == (_FILE *)0x0) {

@@ -15,7 +15,7 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0(C
   _FILE *file;
   SFoundFileInfo local_224;
   
-  p_Var1 = engine_dosio_c_getFile_FUN_00481a50("data",filename,"rb");
+  p_Var1 = engine_dosio_cpp_getFile_FUN_00481a50("data",filename,"rb");
   if (p_Var1 == (_FILE *)0x0) {
     return 0;
   }
@@ -23,7 +23,7 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0(C
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var1,"..\\core\\dtrace.cpp",0x212);
   if (INT_02cee5ac == 1) {
     _sprintf(local_224.found_path,"data\\%s",filename);
-    iVar2 = engine_dosio_c_findFile_FUN_00481760(&local_224);
+    iVar2 = engine_dosio_cpp_findFile_FUN_00481760(&local_224);
     if ((iVar2 == 0) || (local_224.is_archive == 0)) {
       core_dtrace_cpp_CDemonRaytrace_save_FUN_00495040(this_ptr,filename);
       return 1;

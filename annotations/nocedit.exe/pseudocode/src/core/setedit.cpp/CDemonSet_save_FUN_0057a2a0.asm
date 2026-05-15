@@ -49,7 +49,7 @@
 ;   core_setutil.cpp_C3DSCamera_savePVS_FUN_00587450
 ;   core_setutil.cpp_C3DSLight_save_FUN_00587090
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;
 ; *****************************************************************************
@@ -70,8 +70,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057a2b8
     PUSH 0x647420                       ; 0057a2bb | = "models"
     MOV dword ptr [EAX + 0x15acac],0x1c ; 0057a2c0
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 0057a2ca
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 0057a2ca
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 0057a2cf
     MOV ESI,EAX                         ; 0057a2d2
     TEST EAX,EAX                        ; 0057a2d4

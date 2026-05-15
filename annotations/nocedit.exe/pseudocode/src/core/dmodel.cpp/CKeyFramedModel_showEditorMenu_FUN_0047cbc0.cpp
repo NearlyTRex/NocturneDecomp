@@ -534,7 +534,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                           (g_NetworkModelFilename,local_18,local_998,local_698,local_b98);
                 makepath
                           (&stack0xfffff150,(char *)0x0,"models",local_698,local_b98);
-                iVar18 = engine_dosio_c_findFile_FUN_00481760((SFoundFileInfo *)&stack0xfffff150);
+                iVar18 = engine_dosio_cpp_findFile_FUN_00481760((SFoundFileInfo *)&stack0xfffff150);
                 if ((iVar18 == 0) || (local_ca8 == 0)) {
                   iVar18 = core_dmodel_cpp_copyFile_FUN_0047c930
                                      (g_NetworkModelFilename,&stack0xfffff150,1);

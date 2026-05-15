@@ -38,7 +38,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
   uint uVar9;
   char cVar1;
   
-  p_Var2 = engine_dosio_c_getFile_FUN_00481a50
+  p_Var2 = engine_dosio_cpp_getFile_FUN_00481a50
                      (&s_EmptyChar_0062cc98,"enemy.pod","rb");
   if (p_Var2 != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\game.cpp",0xecf);
@@ -120,7 +120,7 @@ void __cdecl core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(CGame *this_ptr,
         iVar4 = 0;
         if (0 < local_6ec.base.item_count) {
           do {
-            p_Var3 = engine_dosio_c_getFile_FUN_00481a50
+            p_Var3 = engine_dosio_cpp_getFile_FUN_00481a50
                                ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar4),
                                 "rt");
             if (p_Var3 == (_FILE *)0x0) {
@@ -176,7 +176,7 @@ LAB_004e2250:
           iVar4 = 0;
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar8);
           while (iVar4 < local_6ec.base.item_count) {
-            p_Var3 = engine_dosio_c_getFile_FUN_00481a50
+            p_Var3 = engine_dosio_cpp_getFile_FUN_00481a50
                                ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar7),
                                 "rt");
             if (p_Var3 == (_FILE *)0x0) {
@@ -223,7 +223,7 @@ LAB_004e2250:
           }
           iVar7 = 0x34;
           for (iVar4 = 0; iVar4 < local_6ec.base.item_count; iVar4 = iVar4 + 1) {
-            p_Var3 = engine_dosio_c_getFile_FUN_00481a50
+            p_Var3 = engine_dosio_cpp_getFile_FUN_00481a50
                                ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar7),
                                 "rt");
             if (p_Var3 == (_FILE *)0x0) {
@@ -277,7 +277,7 @@ LAB_004e2250:
                              ("Chapter 11 - 'Not You Again'");
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar8);
           for (iVar4 = 0; iVar4 < local_6ec.base.item_count; iVar4 = iVar4 + 1) {
-            p_Var3 = engine_dosio_c_getFile_FUN_00481a50
+            p_Var3 = engine_dosio_cpp_getFile_FUN_00481a50
                                ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar7),
                                 "rt");
             if (p_Var3 == (_FILE *)0x0) {
@@ -310,7 +310,7 @@ LAB_004e2250:
                              ("Chapter 4 - 'Back from Hell'");
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar8);
           for (iVar4 = 0; iVar4 < local_6ec.base.item_count; iVar4 = iVar4 + 1) {
-            p_Var3 = engine_dosio_c_getFile_FUN_00481a50
+            p_Var3 = engine_dosio_cpp_getFile_FUN_00481a50
                                ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar7),
                                 "rt");
             if (p_Var3 == (_FILE *)0x0) {
@@ -334,7 +334,7 @@ LAB_004e2250:
                            ("Chapter 1 - 'Headquarters'");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ec.base,pcVar8);
         for (iVar4 = 0; iVar4 < local_6ec.base.item_count; iVar4 = iVar4 + 1) {
-          p_Var3 = engine_dosio_c_getFile_FUN_00481a50
+          p_Var3 = engine_dosio_cpp_getFile_FUN_00481a50
                              ("world",*(char **)((int)g_ChapterMissionFiles[0] + iVar7),
                               "rt");
           if (p_Var3 == (_FILE *)0x0) {
@@ -370,7 +370,7 @@ LAB_004e2376:
       pcVar7[1] = cVar2;
       pcVar7 = pcVar7 + 2;
     } while (cVar2 != '\0');
-    p_Var3 = engine_dosio_c_getFile_FUN_00481a50("world",local_144,"rt");
+    p_Var3 = engine_dosio_cpp_getFile_FUN_00481a50("world",local_144,"rt");
     if (p_Var3 == (_FILE *)0x0) {
       g_EditorFont = local_1c;
       return;

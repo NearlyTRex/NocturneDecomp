@@ -44,7 +44,7 @@
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   crt_time.c__localtime_FUN_00600288
 ;   crt_time.c__strftime_FUN_006002d4
-;   engine_dosio.c_findFileNormally_FUN_004817c0
+;   engine_dosio.cpp_findFileNormally_FUN_004817c0
 ;   engine_fileio.cpp_CFileManager_extractFileWithTimestamp_FUN_004b7d50
 ;   engine_pod.cpp_CPodFile_ctor_FUN_0054f5a0
 ;   engine_pod.cpp_CPodFile_dtor_FUN_0054f610
@@ -231,8 +231,8 @@ section .text
         ;   XREF to: 004b7975 (CONDITIONAL_JUMP)  ; LAB_004b7975
     LEA EAX,[ESP + 0xbdc]               ; 004b78b1
     PUSH EAX                            ; 004b78b8
-    CALL engine_dosio.c_findFileNormally_FUN_004817c0 ; 004b78b9
-        ;   XREF to: 004817c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
+    CALL engine_dosio.cpp_findFileNormally_FUN_004817c0 ; 004b78b9
+        ;   XREF to: 004817c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
     ADD ESP,0x4                         ; 004b78be
     TEST EAX,EAX                        ; 004b78c1
     JZ 0x004b7975                       ; 004b78c3

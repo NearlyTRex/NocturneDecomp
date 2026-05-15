@@ -66,7 +66,7 @@ LAB_00584f0b:
     do {
       if (local_18->cameras[0].is_panning == 0) {
         _sprintf(local_118,"%s.raw",pCVar2->name);
-        file_ptr = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_118,"rb");
+        file_ptr = engine_dosio_cpp_getFile_FUN_00481a50("backdrop",local_118,"rb");
         if (file_ptr == (_FILE *)0x0) {
           pcVar5 = "art";
           pcVar6 = local_218;

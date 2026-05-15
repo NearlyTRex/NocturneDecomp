@@ -61,7 +61,7 @@
 ;   crt_fstream.cpp_ostream_write_FUN_005ffcb3
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
-;   engine_dosio.c_getFile_FUN_00481a50
+;   engine_dosio.cpp_getFile_FUN_00481a50
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   support_codec.cpp_CCodec_dtor_FUN_0043e9b0
 ;   support_codec.cpp_CCodec_processFromBuffer_FUN_0043eb30
@@ -111,8 +111,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 00452a2e
     PUSH EAX                            ; 00452a32
     PUSH 0x61a354                       ; 00452a33 | = "backdrop"
-    CALL engine_dosio.c_getFile_FUN_00481a50 ; 00452a38
-        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.c_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
+    CALL engine_dosio.cpp_getFile_FUN_00481a50 ; 00452a38
+        ;   XREF to: 00481a50 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00481a50(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 00452a3d
     TEST EAX,EAX                        ; 00452a40
     JNZ 0x00452f77                      ; 00452a42

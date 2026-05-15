@@ -36,7 +36,7 @@
 ;   crt_string.c_strupr_FUN_00600770
 ;   crt_time.c__localtime_FUN_00600288
 ;   crt_time.c__strftime_FUN_006002d4
-;   engine_dosio.c_splitPath_FUN_00481f20
+;   engine_dosio.cpp_splitPath_FUN_00481f20
 ;   engine_pod.cpp_CPodFile_ctor_FUN_0054f5a0
 ;   engine_pod.cpp_CPodFile_dtor_FUN_0054f610
 ;   engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
@@ -157,8 +157,8 @@ section .text
     PUSH 0x0                            ; 004b756f
     MOV EDX,dword ptr [EBX + EAX*0x1]   ; 004b7571
     PUSH EDX                            ; 004b7574
-    CALL engine_dosio.c_splitPath_FUN_00481f20 ; 004b7575
-        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.c_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00481f20 ; 004b7575
+        ;   XREF to: 00481f20 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00481f20(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004b757a
     CMP byte ptr [ESP + 0x9d8],0x2e     ; 004b757d
     JNZ 0x004b75b1                      ; 004b7585

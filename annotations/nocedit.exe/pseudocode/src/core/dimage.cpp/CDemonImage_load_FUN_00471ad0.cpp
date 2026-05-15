@@ -36,7 +36,7 @@ void __cdecl core_dimage_cpp_CDemonImage_load_FUN_00471ad0(CDemonImage *this_ptr
     pcVar10[1] = cVar1;
     pcVar10 = pcVar10 + 2;
   } while (cVar1 != '\0');
-  p_Var6 = engine_dosio_c_getFile_FUN_00481a50("art",local_11c,"rb");
+  p_Var6 = engine_dosio_cpp_getFile_FUN_00481a50("art",local_11c,"rb");
   if (p_Var6 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\dimage.cpp";
     g_CurrentLineNumber = 0x68;
@@ -72,7 +72,7 @@ LAB_00471b94:
     pcVar10[1] = cVar1;
     pcVar10 = pcVar10 + 2;
   } while (cVar1 != '\0');
-  p_Var6 = engine_dosio_c_getFile_FUN_00481a50("art",local_11c,"rb");
+  p_Var6 = engine_dosio_cpp_getFile_FUN_00481a50("art",local_11c,"rb");
   if (p_Var6 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\dimage.cpp";
     g_CurrentLineNumber = 0x7f;

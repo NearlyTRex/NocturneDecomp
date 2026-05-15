@@ -18,7 +18,7 @@ void __cdecl core_course_cpp_CCourse_load_FUN_00442580(CCourse *this_ptr,char *f
   int local_14;
   
   core_course_cpp_CCourse_free_FUN_004426c0(this_ptr);
-  file = engine_dosio_c_getFile_FUN_00481a50("data",filename,"rt");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("data",filename,"rt");
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\course.cpp";
     g_CurrentLineNumber = 0x7c;

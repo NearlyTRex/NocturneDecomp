@@ -21,7 +21,7 @@ void __cdecl core_course_cpp_CCourse_save_FUN_00442a90(CCourse *this_ptr,char *f
   float *pfVar5;
   float *pfVar2;
   
-  file = engine_dosio_c_getFile_FUN_00481a50("data",filename,"wt");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("data",filename,"wt");
   if (file == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't create data\\%s");

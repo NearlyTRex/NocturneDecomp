@@ -265,7 +265,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showLightEditor_FUN_0057c5d0(CDemonSet *
           local_134[0] = '\0';
         }
         else {
-          engine_dosio_c_splitPath_FUN_00481f20
+          engine_dosio_cpp_splitPath_FUN_00481f20
                     (this_ptr->geometry_filename,(char *)0x0,(char *)0x0,local_134,(char *)0x0);
           pcVar6 = ".set";
           iVar6 = -1;

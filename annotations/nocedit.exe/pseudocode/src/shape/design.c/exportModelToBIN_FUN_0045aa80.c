@@ -53,7 +53,7 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int ren
   
   shape_design_c_sortPolygonsByTexture_FUN_0045b8b0();
   if (export_format == 0) {
-    local_1c = engine_dosio_c_getFile_FUN_00481a50("models",filename,"wt");
+    local_1c = engine_dosio_cpp_getFile_FUN_00481a50("models",filename,"wt");
     _fprintf(local_1c,"; Model Display List\n");
     _fprintf(local_1c,"; Copyright (C) 1994 Terminal Reality, Inc.\n");
     _fprintf(local_1c,"; All rights reserved\n\n");
@@ -62,7 +62,7 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int ren
     _fprintf(local_1c,"\tASSUME\tcs:code\n\n");
   }
   else {
-    local_1c = engine_dosio_c_getFile_FUN_00481a50("models",filename,"wb");
+    local_1c = engine_dosio_cpp_getFile_FUN_00481a50("models",filename,"wb");
   }
   if (local_1c == (_FILE *)0x0) {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();

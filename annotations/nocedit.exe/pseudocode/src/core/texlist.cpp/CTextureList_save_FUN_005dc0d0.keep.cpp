@@ -26,7 +26,7 @@ void __cdecl core_texlist_cpp_CTextureList_save_FUN_005dc0d0(CTextureList *this_
     core_main_c_displayErrorAndQuit_FUN_00506f10("CTextureList::save - No extension found");
   }
   strcpy(pcVar2,".tex");
-  file = engine_dosio_c_getFile_FUN_00481a50("data",local_114,"wt");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("data",local_114,"wt");
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\texlist.cpp";
     g_CurrentLineNumber = 0xb6;

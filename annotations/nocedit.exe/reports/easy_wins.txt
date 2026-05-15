@@ -10,10 +10,6 @@ sorted by effort required (lowest effort first).
 PRIORITY 1: Files with 1-2 functions remaining
 ====================================================================================================
 
-  engine/dosio.c (1 remaining of 26)
-    - engine_dosio.c_reopenFileStream_FUN_00481b50
-      Suspects: pointer_cast
-
   engine/palette.cpp (1 remaining of 10)
     - engine_palette.cpp_CPaletteManager_scanTextures_FUN_00545060
       Suspects: pointer_cast
@@ -52,13 +48,12 @@ PRIORITY 1: Files with 1-2 functions remaining
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
-  [pointer_cast] - 9 functions
+  [pointer_cast] - 8 functions
     shape_design.c_findVertexListInModel_FUN_00468000                      ( 14 lines)
     core_dcube.cpp_CDemonCube_testAABBIntersection_FUN_00457ca0            ( 21 lines)
     shape_superopt.cpp_CObj_restoreVertexPositions_FUN_005d3860            ( 22 lines)
     shape_superopt.cpp_CObj_saveVertexPositions_FUN_005d3760               ( 22 lines)
     sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005a7070         ( 23 lines)
-    engine_dosio.c_reopenFileStream_FUN_00481b50                           ( 30 lines)
     engine_fileio.cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50    ( 33 lines)
     core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_0054e320           ( 37 lines)
     core_course.cpp_CCourse_load_FUN_00442580                              ( 45 lines)
@@ -103,11 +98,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
         Types: ['stack_alignment_array']
       core_fire.cpp_CSmokeParticle_setupRenderState_FUN_004bf1f0 (40 lines)
         Types: ['stack_alignment_array', 'warning_inlined_function']
-
-  engine/dosio.c (96.2% complete)
-    1 functions remaining:
-      engine_dosio.c_reopenFileStream_FUN_00481b50 (30 lines)
-        Types: ['pointer_cast']
 
   core/flame.cpp (94.1% complete)
     1 functions remaining:

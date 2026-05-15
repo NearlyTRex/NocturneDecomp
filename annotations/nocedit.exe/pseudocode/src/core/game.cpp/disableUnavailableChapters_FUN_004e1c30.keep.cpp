@@ -14,7 +14,7 @@ void __cdecl core_game_cpp_disableUnavailableChapters_FUN_004e1c30(CPickList *pi
   int item_index;
 
   for (item_index = 0; item_index < (pick_list->base).item_count; item_index = item_index + 1) {
-    file_ptr = engine_dosio_c_getFile_FUN_00481a50
+    file_ptr = engine_dosio_cpp_getFile_FUN_00481a50
                          ("world",g_ChapterMissionFiles[chapter_index][item_index],
                           "rt");
     if (file_ptr == (_FILE *)0x0) {

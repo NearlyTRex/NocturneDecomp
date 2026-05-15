@@ -29,7 +29,7 @@ void __cdecl cockpit_ckptutil_c_saveEdgeListFile_FUN_00433480(char *filename,SEd
     g_CurrentLineNumber = 0x500;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Edge list array is empty!");
   }
-  file = engine_dosio_c_getFile_FUN_00481a50("art",filename,"wt");
+  file = engine_dosio_cpp_getFile_FUN_00481a50("art",filename,"wt");
   if (file == (_FILE *)0x0) {
     _sprintf(local_6c,"Could not create output file (%s).",filename);
     g_CurrentLineNumber = 0x507;

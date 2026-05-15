@@ -42,7 +42,7 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
-;   engine_dosio.c_findFileNormally_FUN_004817c0
+;   engine_dosio.cpp_findFileNormally_FUN_004817c0
 ;   engine_pod.cpp_CPodFile_ctor_FUN_0054f5a0
 ;   engine_pod.cpp_CPodFile_dtor_FUN_0054f610
 ;   engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650
@@ -158,8 +158,8 @@ section .text
         ;   Label: LAB_004b8399
     LEA EAX,[ESP + 0xfd8]               ; 004b839a
     PUSH EAX                            ; 004b83a1
-    CALL engine_dosio.c_findFileNormally_FUN_004817c0 ; 004b83a2
-        ;   XREF to: 004817c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.c_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
+    CALL engine_dosio.cpp_findFileNormally_FUN_004817c0 ; 004b83a2
+        ;   XREF to: 004817c0 (UNCONDITIONAL_CALL)  ; int engine_dosio.cpp_findFileNormally_FUN_004817c0(SFoundFileInfo * info)
     ADD ESP,0x4                         ; 004b83a7
     TEST EAX,EAX                        ; 004b83aa
     JZ 0x004b8588                       ; 004b83ac
